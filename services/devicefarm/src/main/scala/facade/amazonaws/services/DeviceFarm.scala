@@ -103,134 +103,148 @@ package object devicefarm {
 
   implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
-    def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
+    @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
       service.createDevicePool(params).promise.toFuture
-    def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] =
+    @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] =
       service.createInstanceProfile(params).promise.toFuture
-    def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResult] =
+    @inline def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResult] =
       service.createNetworkProfile(params).promise.toFuture
-    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
       service.createProject(params).promise.toFuture
-    def createRemoteAccessSessionFuture(
+    @inline def createRemoteAccessSessionFuture(
         params: CreateRemoteAccessSessionRequest
     ): Future[CreateRemoteAccessSessionResult] = service.createRemoteAccessSession(params).promise.toFuture
-    def createUploadFuture(params: CreateUploadRequest): Future[CreateUploadResult] =
+    @inline def createUploadFuture(params: CreateUploadRequest): Future[CreateUploadResult] =
       service.createUpload(params).promise.toFuture
-    def createVPCEConfigurationFuture(params: CreateVPCEConfigurationRequest): Future[CreateVPCEConfigurationResult] =
-      service.createVPCEConfiguration(params).promise.toFuture
-    def deleteDevicePoolFuture(params: DeleteDevicePoolRequest): Future[DeleteDevicePoolResult] =
+    @inline def createVPCEConfigurationFuture(
+        params: CreateVPCEConfigurationRequest
+    ): Future[CreateVPCEConfigurationResult] = service.createVPCEConfiguration(params).promise.toFuture
+    @inline def deleteDevicePoolFuture(params: DeleteDevicePoolRequest): Future[DeleteDevicePoolResult] =
       service.deleteDevicePool(params).promise.toFuture
-    def deleteInstanceProfileFuture(params: DeleteInstanceProfileRequest): Future[DeleteInstanceProfileResult] =
+    @inline def deleteInstanceProfileFuture(params: DeleteInstanceProfileRequest): Future[DeleteInstanceProfileResult] =
       service.deleteInstanceProfile(params).promise.toFuture
-    def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResult] =
+    @inline def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResult] =
       service.deleteNetworkProfile(params).promise.toFuture
-    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
       service.deleteProject(params).promise.toFuture
-    def deleteRemoteAccessSessionFuture(
+    @inline def deleteRemoteAccessSessionFuture(
         params: DeleteRemoteAccessSessionRequest
-    ): Future[DeleteRemoteAccessSessionResult]                             = service.deleteRemoteAccessSession(params).promise.toFuture
-    def deleteRunFuture(params: DeleteRunRequest): Future[DeleteRunResult] = service.deleteRun(params).promise.toFuture
-    def deleteUploadFuture(params: DeleteUploadRequest): Future[DeleteUploadResult] =
+    ): Future[DeleteRemoteAccessSessionResult] = service.deleteRemoteAccessSession(params).promise.toFuture
+    @inline def deleteRunFuture(params: DeleteRunRequest): Future[DeleteRunResult] =
+      service.deleteRun(params).promise.toFuture
+    @inline def deleteUploadFuture(params: DeleteUploadRequest): Future[DeleteUploadResult] =
       service.deleteUpload(params).promise.toFuture
-    def deleteVPCEConfigurationFuture(params: DeleteVPCEConfigurationRequest): Future[DeleteVPCEConfigurationResult] =
-      service.deleteVPCEConfiguration(params).promise.toFuture
-    def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResult] =
+    @inline def deleteVPCEConfigurationFuture(
+        params: DeleteVPCEConfigurationRequest
+    ): Future[DeleteVPCEConfigurationResult] = service.deleteVPCEConfiguration(params).promise.toFuture
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResult] =
       service.getAccountSettings(params).promise.toFuture
-    def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResult] = service.getDevice(params).promise.toFuture
-    def getDeviceInstanceFuture(params: GetDeviceInstanceRequest): Future[GetDeviceInstanceResult] =
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResult] =
+      service.getDevice(params).promise.toFuture
+    @inline def getDeviceInstanceFuture(params: GetDeviceInstanceRequest): Future[GetDeviceInstanceResult] =
       service.getDeviceInstance(params).promise.toFuture
-    def getDevicePoolCompatibilityFuture(
+    @inline def getDevicePoolCompatibilityFuture(
         params: GetDevicePoolCompatibilityRequest
     ): Future[GetDevicePoolCompatibilityResult] = service.getDevicePoolCompatibility(params).promise.toFuture
-    def getDevicePoolFuture(params: GetDevicePoolRequest): Future[GetDevicePoolResult] =
+    @inline def getDevicePoolFuture(params: GetDevicePoolRequest): Future[GetDevicePoolResult] =
       service.getDevicePool(params).promise.toFuture
-    def getInstanceProfileFuture(params: GetInstanceProfileRequest): Future[GetInstanceProfileResult] =
+    @inline def getInstanceProfileFuture(params: GetInstanceProfileRequest): Future[GetInstanceProfileResult] =
       service.getInstanceProfile(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
-    def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResult] =
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
+    @inline def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResult] =
       service.getNetworkProfile(params).promise.toFuture
-    def getOfferingStatusFuture(params: GetOfferingStatusRequest): Future[GetOfferingStatusResult] =
+    @inline def getOfferingStatusFuture(params: GetOfferingStatusRequest): Future[GetOfferingStatusResult] =
       service.getOfferingStatus(params).promise.toFuture
-    def getProjectFuture(params: GetProjectRequest): Future[GetProjectResult] =
+    @inline def getProjectFuture(params: GetProjectRequest): Future[GetProjectResult] =
       service.getProject(params).promise.toFuture
-    def getRemoteAccessSessionFuture(params: GetRemoteAccessSessionRequest): Future[GetRemoteAccessSessionResult] =
-      service.getRemoteAccessSession(params).promise.toFuture
-    def getRunFuture(params: GetRunRequest): Future[GetRunResult]          = service.getRun(params).promise.toFuture
-    def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult]    = service.getSuite(params).promise.toFuture
-    def getTestFuture(params: GetTestRequest): Future[GetTestResult]       = service.getTest(params).promise.toFuture
-    def getUploadFuture(params: GetUploadRequest): Future[GetUploadResult] = service.getUpload(params).promise.toFuture
-    def getVPCEConfigurationFuture(params: GetVPCEConfigurationRequest): Future[GetVPCEConfigurationResult] =
+    @inline def getRemoteAccessSessionFuture(
+        params: GetRemoteAccessSessionRequest
+    ): Future[GetRemoteAccessSessionResult]                               = service.getRemoteAccessSession(params).promise.toFuture
+    @inline def getRunFuture(params: GetRunRequest): Future[GetRunResult] = service.getRun(params).promise.toFuture
+    @inline def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult] =
+      service.getSuite(params).promise.toFuture
+    @inline def getTestFuture(params: GetTestRequest): Future[GetTestResult] = service.getTest(params).promise.toFuture
+    @inline def getUploadFuture(params: GetUploadRequest): Future[GetUploadResult] =
+      service.getUpload(params).promise.toFuture
+    @inline def getVPCEConfigurationFuture(params: GetVPCEConfigurationRequest): Future[GetVPCEConfigurationResult] =
       service.getVPCEConfiguration(params).promise.toFuture
-    def installToRemoteAccessSessionFuture(
+    @inline def installToRemoteAccessSessionFuture(
         params: InstallToRemoteAccessSessionRequest
     ): Future[InstallToRemoteAccessSessionResult] = service.installToRemoteAccessSession(params).promise.toFuture
-    def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
+    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
       service.listArtifacts(params).promise.toFuture
-    def listDeviceInstancesFuture(params: ListDeviceInstancesRequest): Future[ListDeviceInstancesResult] =
+    @inline def listDeviceInstancesFuture(params: ListDeviceInstancesRequest): Future[ListDeviceInstancesResult] =
       service.listDeviceInstances(params).promise.toFuture
-    def listDevicePoolsFuture(params: ListDevicePoolsRequest): Future[ListDevicePoolsResult] =
+    @inline def listDevicePoolsFuture(params: ListDevicePoolsRequest): Future[ListDevicePoolsResult] =
       service.listDevicePools(params).promise.toFuture
-    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResult] =
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResult] =
       service.listDevices(params).promise.toFuture
-    def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResult] =
+    @inline def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResult] =
       service.listInstanceProfiles(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
-    def listNetworkProfilesFuture(params: ListNetworkProfilesRequest): Future[ListNetworkProfilesResult] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
+      service.listJobs(params).promise.toFuture
+    @inline def listNetworkProfilesFuture(params: ListNetworkProfilesRequest): Future[ListNetworkProfilesResult] =
       service.listNetworkProfiles(params).promise.toFuture
-    def listOfferingPromotionsFuture(params: ListOfferingPromotionsRequest): Future[ListOfferingPromotionsResult] =
-      service.listOfferingPromotions(params).promise.toFuture
-    def listOfferingTransactionsFuture(
+    @inline def listOfferingPromotionsFuture(
+        params: ListOfferingPromotionsRequest
+    ): Future[ListOfferingPromotionsResult] = service.listOfferingPromotions(params).promise.toFuture
+    @inline def listOfferingTransactionsFuture(
         params: ListOfferingTransactionsRequest
     ): Future[ListOfferingTransactionsResult] = service.listOfferingTransactions(params).promise.toFuture
-    def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResult] =
+    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResult] =
       service.listOfferings(params).promise.toFuture
-    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
       service.listProjects(params).promise.toFuture
-    def listRemoteAccessSessionsFuture(
+    @inline def listRemoteAccessSessionsFuture(
         params: ListRemoteAccessSessionsRequest
-    ): Future[ListRemoteAccessSessionsResult]                           = service.listRemoteAccessSessions(params).promise.toFuture
-    def listRunsFuture(params: ListRunsRequest): Future[ListRunsResult] = service.listRuns(params).promise.toFuture
-    def listSamplesFuture(params: ListSamplesRequest): Future[ListSamplesResult] =
+    ): Future[ListRemoteAccessSessionsResult] = service.listRemoteAccessSessions(params).promise.toFuture
+    @inline def listRunsFuture(params: ListRunsRequest): Future[ListRunsResult] =
+      service.listRuns(params).promise.toFuture
+    @inline def listSamplesFuture(params: ListSamplesRequest): Future[ListSamplesResult] =
       service.listSamples(params).promise.toFuture
-    def listSuitesFuture(params: ListSuitesRequest): Future[ListSuitesResult] =
+    @inline def listSuitesFuture(params: ListSuitesRequest): Future[ListSuitesResult] =
       service.listSuites(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] = service.listTests(params).promise.toFuture
-    def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] =
+    @inline def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] =
+      service.listTests(params).promise.toFuture
+    @inline def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] =
       service.listUniqueProblems(params).promise.toFuture
-    def listUploadsFuture(params: ListUploadsRequest): Future[ListUploadsResult] =
+    @inline def listUploadsFuture(params: ListUploadsRequest): Future[ListUploadsResult] =
       service.listUploads(params).promise.toFuture
-    def listVPCEConfigurationsFuture(params: ListVPCEConfigurationsRequest): Future[ListVPCEConfigurationsResult] =
-      service.listVPCEConfigurations(params).promise.toFuture
-    def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResult] =
+    @inline def listVPCEConfigurationsFuture(
+        params: ListVPCEConfigurationsRequest
+    ): Future[ListVPCEConfigurationsResult] = service.listVPCEConfigurations(params).promise.toFuture
+    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResult] =
       service.purchaseOffering(params).promise.toFuture
-    def renewOfferingFuture(params: RenewOfferingRequest): Future[RenewOfferingResult] =
+    @inline def renewOfferingFuture(params: RenewOfferingRequest): Future[RenewOfferingResult] =
       service.renewOffering(params).promise.toFuture
-    def scheduleRunFuture(params: ScheduleRunRequest): Future[ScheduleRunResult] =
+    @inline def scheduleRunFuture(params: ScheduleRunRequest): Future[ScheduleRunResult] =
       service.scheduleRun(params).promise.toFuture
-    def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise.toFuture
-    def stopRemoteAccessSessionFuture(params: StopRemoteAccessSessionRequest): Future[StopRemoteAccessSessionResult] =
-      service.stopRemoteAccessSession(params).promise.toFuture
-    def stopRunFuture(params: StopRunRequest): Future[StopRunResult] = service.stopRun(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise.toFuture
+    @inline def stopRemoteAccessSessionFuture(
+        params: StopRemoteAccessSessionRequest
+    ): Future[StopRemoteAccessSessionResult]                                 = service.stopRemoteAccessSession(params).promise.toFuture
+    @inline def stopRunFuture(params: StopRunRequest): Future[StopRunResult] = service.stopRun(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateDeviceInstanceFuture(params: UpdateDeviceInstanceRequest): Future[UpdateDeviceInstanceResult] =
+    @inline def updateDeviceInstanceFuture(params: UpdateDeviceInstanceRequest): Future[UpdateDeviceInstanceResult] =
       service.updateDeviceInstance(params).promise.toFuture
-    def updateDevicePoolFuture(params: UpdateDevicePoolRequest): Future[UpdateDevicePoolResult] =
+    @inline def updateDevicePoolFuture(params: UpdateDevicePoolRequest): Future[UpdateDevicePoolResult] =
       service.updateDevicePool(params).promise.toFuture
-    def updateInstanceProfileFuture(params: UpdateInstanceProfileRequest): Future[UpdateInstanceProfileResult] =
+    @inline def updateInstanceProfileFuture(params: UpdateInstanceProfileRequest): Future[UpdateInstanceProfileResult] =
       service.updateInstanceProfile(params).promise.toFuture
-    def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResult] =
+    @inline def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResult] =
       service.updateNetworkProfile(params).promise.toFuture
-    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
       service.updateProject(params).promise.toFuture
-    def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] =
+    @inline def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] =
       service.updateUpload(params).promise.toFuture
-    def updateVPCEConfigurationFuture(params: UpdateVPCEConfigurationRequest): Future[UpdateVPCEConfigurationResult] =
-      service.updateVPCEConfiguration(params).promise.toFuture
+    @inline def updateVPCEConfigurationFuture(
+        params: UpdateVPCEConfigurationRequest
+    ): Future[UpdateVPCEConfigurationResult] = service.updateVPCEConfiguration(params).promise.toFuture
   }
 }
 
@@ -337,6 +351,7 @@ package devicefarm {
   }
 
   object AccountSettings {
+    @inline
     def apply(
         awsAccountNumber: js.UndefOr[AWSAccountNumber] = js.undefined,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
@@ -375,6 +390,7 @@ package devicefarm {
   }
 
   object Artifact {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         extension: js.UndefOr[String] = js.undefined,
@@ -483,6 +499,7 @@ package devicefarm {
   }
 
   object CPU {
+    @inline
     def apply(
         architecture: js.UndefOr[String] = js.undefined,
         clock: js.UndefOr[Double] = js.undefined,
@@ -511,6 +528,7 @@ package devicefarm {
   }
 
   object Counters {
+    @inline
     def apply(
         errored: js.UndefOr[Int] = js.undefined,
         failed: js.UndefOr[Int] = js.undefined,
@@ -545,6 +563,7 @@ package devicefarm {
   }
 
   object CreateDevicePoolRequest {
+    @inline
     def apply(
         name: Name,
         projectArn: AmazonResourceName,
@@ -573,6 +592,7 @@ package devicefarm {
   }
 
   object CreateDevicePoolResult {
+    @inline
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): CreateDevicePoolResult = {
@@ -592,6 +612,7 @@ package devicefarm {
   }
 
   object CreateInstanceProfileRequest {
+    @inline
     def apply(
         name: Name,
         description: js.UndefOr[Message] = js.undefined,
@@ -619,6 +640,7 @@ package devicefarm {
   }
 
   object CreateInstanceProfileResult {
+    @inline
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): CreateInstanceProfileResult = {
@@ -645,6 +667,7 @@ package devicefarm {
   }
 
   object CreateNetworkProfileRequest {
+    @inline
     def apply(
         name: Name,
         projectArn: AmazonResourceName,
@@ -684,6 +707,7 @@ package devicefarm {
   }
 
   object CreateNetworkProfileResult {
+    @inline
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): CreateNetworkProfileResult = {
@@ -703,6 +727,7 @@ package devicefarm {
   }
 
   object CreateProjectRequest {
+    @inline
     def apply(
         name: Name,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined
@@ -725,6 +750,7 @@ package devicefarm {
   }
 
   object CreateProjectResult {
+    @inline
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): CreateProjectResult = {
@@ -744,6 +770,7 @@ package devicefarm {
   }
 
   object CreateRemoteAccessSessionConfiguration {
+    @inline
     def apply(
         billingMethod: js.UndefOr[BillingMethod] = js.undefined,
         vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
@@ -775,6 +802,7 @@ package devicefarm {
   }
 
   object CreateRemoteAccessSessionRequest {
+    @inline
     def apply(
         deviceArn: AmazonResourceName,
         projectArn: AmazonResourceName,
@@ -817,6 +845,7 @@ package devicefarm {
   }
 
   object CreateRemoteAccessSessionResult {
+    @inline
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): CreateRemoteAccessSessionResult = {
@@ -838,6 +867,7 @@ package devicefarm {
   }
 
   object CreateUploadRequest {
+    @inline
     def apply(
         name: Name,
         projectArn: AmazonResourceName,
@@ -864,6 +894,7 @@ package devicefarm {
   }
 
   object CreateUploadResult {
+    @inline
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): CreateUploadResult = {
@@ -882,6 +913,7 @@ package devicefarm {
   }
 
   object CreateVPCEConfigurationRequest {
+    @inline
     def apply(
         serviceDnsName: ServiceDnsName,
         vpceConfigurationName: VPCEConfigurationName,
@@ -907,6 +939,7 @@ package devicefarm {
   }
 
   object CreateVPCEConfigurationResult {
+    @inline
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): CreateVPCEConfigurationResult = {
@@ -935,6 +968,7 @@ package devicefarm {
   }
 
   object CustomerArtifactPaths {
+    @inline
     def apply(
         androidPaths: js.UndefOr[AndroidPaths] = js.undefined,
         deviceHostPaths: js.UndefOr[DeviceHostPaths] = js.undefined,
@@ -957,6 +991,7 @@ package devicefarm {
   }
 
   object DeleteDevicePoolRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteDevicePoolRequest = {
@@ -975,6 +1010,7 @@ package devicefarm {
   trait DeleteDevicePoolResult extends js.Object {}
 
   object DeleteDevicePoolResult {
+    @inline
     def apply(
         ): DeleteDevicePoolResult = {
       val __obj = js.Dynamic.literal()
@@ -989,6 +1025,7 @@ package devicefarm {
   }
 
   object DeleteInstanceProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteInstanceProfileRequest = {
@@ -1004,6 +1041,7 @@ package devicefarm {
   trait DeleteInstanceProfileResult extends js.Object {}
 
   object DeleteInstanceProfileResult {
+    @inline
     def apply(
         ): DeleteInstanceProfileResult = {
       val __obj = js.Dynamic.literal()
@@ -1018,6 +1056,7 @@ package devicefarm {
   }
 
   object DeleteNetworkProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteNetworkProfileRequest = {
@@ -1033,6 +1072,7 @@ package devicefarm {
   trait DeleteNetworkProfileResult extends js.Object {}
 
   object DeleteNetworkProfileResult {
+    @inline
     def apply(
         ): DeleteNetworkProfileResult = {
       val __obj = js.Dynamic.literal()
@@ -1050,6 +1090,7 @@ package devicefarm {
   }
 
   object DeleteProjectRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteProjectRequest = {
@@ -1068,6 +1109,7 @@ package devicefarm {
   trait DeleteProjectResult extends js.Object {}
 
   object DeleteProjectResult {
+    @inline
     def apply(
         ): DeleteProjectResult = {
       val __obj = js.Dynamic.literal()
@@ -1085,6 +1127,7 @@ package devicefarm {
   }
 
   object DeleteRemoteAccessSessionRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteRemoteAccessSessionRequest = {
@@ -1103,6 +1146,7 @@ package devicefarm {
   trait DeleteRemoteAccessSessionResult extends js.Object {}
 
   object DeleteRemoteAccessSessionResult {
+    @inline
     def apply(
         ): DeleteRemoteAccessSessionResult = {
       val __obj = js.Dynamic.literal()
@@ -1120,6 +1164,7 @@ package devicefarm {
   }
 
   object DeleteRunRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteRunRequest = {
@@ -1138,6 +1183,7 @@ package devicefarm {
   trait DeleteRunResult extends js.Object {}
 
   object DeleteRunResult {
+    @inline
     def apply(
         ): DeleteRunResult = {
       val __obj = js.Dynamic.literal()
@@ -1155,6 +1201,7 @@ package devicefarm {
   }
 
   object DeleteUploadRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteUploadRequest = {
@@ -1173,6 +1220,7 @@ package devicefarm {
   trait DeleteUploadResult extends js.Object {}
 
   object DeleteUploadResult {
+    @inline
     def apply(
         ): DeleteUploadResult = {
       val __obj = js.Dynamic.literal()
@@ -1187,6 +1235,7 @@ package devicefarm {
   }
 
   object DeleteVPCEConfigurationRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): DeleteVPCEConfigurationRequest = {
@@ -1202,6 +1251,7 @@ package devicefarm {
   trait DeleteVPCEConfigurationResult extends js.Object {}
 
   object DeleteVPCEConfigurationResult {
+    @inline
     def apply(
         ): DeleteVPCEConfigurationResult = {
       val __obj = js.Dynamic.literal()
@@ -1239,6 +1289,7 @@ package devicefarm {
   }
 
   object Device {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         availability: js.UndefOr[DeviceAvailability] = js.undefined,
@@ -1343,6 +1394,7 @@ package devicefarm {
   }
 
   object DeviceFilter {
+    @inline
     def apply(
         attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
         operator: js.UndefOr[RuleOperator] = js.undefined,
@@ -1409,6 +1461,7 @@ package devicefarm {
   }
 
   object DeviceInstance {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         deviceArn: js.UndefOr[AmazonResourceName] = js.undefined,
@@ -1439,6 +1492,7 @@ package devicefarm {
   }
 
   object DeviceMinutes {
+    @inline
     def apply(
         metered: js.UndefOr[Double] = js.undefined,
         total: js.UndefOr[Double] = js.undefined,
@@ -1473,6 +1527,7 @@ package devicefarm {
   }
 
   object DevicePool {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         description: js.UndefOr[Message] = js.undefined,
@@ -1503,6 +1558,7 @@ package devicefarm {
   }
 
   object DevicePoolCompatibilityResult {
+    @inline
     def apply(
         compatible: js.UndefOr[Boolean] = js.undefined,
         device: js.UndefOr[Device] = js.undefined,
@@ -1533,6 +1589,7 @@ package devicefarm {
   }
 
   object DeviceSelectionConfiguration {
+    @inline
     def apply(
         filters: DeviceFilters,
         maxDevices: Int
@@ -1557,6 +1614,7 @@ package devicefarm {
   }
 
   object DeviceSelectionResult {
+    @inline
     def apply(
         filters: js.UndefOr[DeviceFilters] = js.undefined,
         matchedDevicesCount: js.UndefOr[Int] = js.undefined,
@@ -1583,6 +1641,7 @@ package devicefarm {
   }
 
   object ExecutionConfiguration {
+    @inline
     def apply(
         accountsCleanup: js.UndefOr[AccountsCleanup] = js.undefined,
         appPackagesCleanup: js.UndefOr[AppPackagesCleanup] = js.undefined,
@@ -1652,6 +1711,7 @@ package devicefarm {
   trait GetAccountSettingsRequest extends js.Object {}
 
   object GetAccountSettingsRequest {
+    @inline
     def apply(
         ): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
@@ -1669,6 +1729,7 @@ package devicefarm {
   }
 
   object GetAccountSettingsResult {
+    @inline
     def apply(
         accountSettings: js.UndefOr[AccountSettings] = js.undefined
     ): GetAccountSettingsResult = {
@@ -1684,6 +1745,7 @@ package devicefarm {
   }
 
   object GetDeviceInstanceRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetDeviceInstanceRequest = {
@@ -1701,6 +1763,7 @@ package devicefarm {
   }
 
   object GetDeviceInstanceResult {
+    @inline
     def apply(
         deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
     ): GetDeviceInstanceResult = {
@@ -1723,6 +1786,7 @@ package devicefarm {
   }
 
   object GetDevicePoolCompatibilityRequest {
+    @inline
     def apply(
         devicePoolArn: AmazonResourceName,
         appArn: js.UndefOr[AmazonResourceName] = js.undefined,
@@ -1752,6 +1816,7 @@ package devicefarm {
   }
 
   object GetDevicePoolCompatibilityResult {
+    @inline
     def apply(
         compatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined,
         incompatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined
@@ -1772,6 +1837,7 @@ package devicefarm {
   }
 
   object GetDevicePoolRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetDevicePoolRequest = {
@@ -1792,6 +1858,7 @@ package devicefarm {
   }
 
   object GetDevicePoolResult {
+    @inline
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): GetDevicePoolResult = {
@@ -1810,6 +1877,7 @@ package devicefarm {
   }
 
   object GetDeviceRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetDeviceRequest = {
@@ -1830,6 +1898,7 @@ package devicefarm {
   }
 
   object GetDeviceResult {
+    @inline
     def apply(
         device: js.UndefOr[Device] = js.undefined
     ): GetDeviceResult = {
@@ -1845,6 +1914,7 @@ package devicefarm {
   }
 
   object GetInstanceProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetInstanceProfileRequest = {
@@ -1862,6 +1932,7 @@ package devicefarm {
   }
 
   object GetInstanceProfileResult {
+    @inline
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): GetInstanceProfileResult = {
@@ -1880,6 +1951,7 @@ package devicefarm {
   }
 
   object GetJobRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetJobRequest = {
@@ -1900,6 +1972,7 @@ package devicefarm {
   }
 
   object GetJobResult {
+    @inline
     def apply(
         job: js.UndefOr[Job] = js.undefined
     ): GetJobResult = {
@@ -1915,6 +1988,7 @@ package devicefarm {
   }
 
   object GetNetworkProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetNetworkProfileRequest = {
@@ -1932,6 +2006,7 @@ package devicefarm {
   }
 
   object GetNetworkProfileResult {
+    @inline
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): GetNetworkProfileResult = {
@@ -1950,6 +2025,7 @@ package devicefarm {
   }
 
   object GetOfferingStatusRequest {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetOfferingStatusRequest = {
@@ -1970,6 +2046,7 @@ package devicefarm {
   }
 
   object GetOfferingStatusResult {
+    @inline
     def apply(
         current: js.UndefOr[OfferingStatusMap] = js.undefined,
         nextPeriod: js.UndefOr[OfferingStatusMap] = js.undefined,
@@ -1992,6 +2069,7 @@ package devicefarm {
   }
 
   object GetProjectRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetProjectRequest = {
@@ -2012,6 +2090,7 @@ package devicefarm {
   }
 
   object GetProjectResult {
+    @inline
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): GetProjectResult = {
@@ -2030,6 +2109,7 @@ package devicefarm {
   }
 
   object GetRemoteAccessSessionRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetRemoteAccessSessionRequest = {
@@ -2050,6 +2130,7 @@ package devicefarm {
   }
 
   object GetRemoteAccessSessionResult {
+    @inline
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): GetRemoteAccessSessionResult = {
@@ -2068,6 +2149,7 @@ package devicefarm {
   }
 
   object GetRunRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetRunRequest = {
@@ -2088,6 +2170,7 @@ package devicefarm {
   }
 
   object GetRunResult {
+    @inline
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): GetRunResult = {
@@ -2106,6 +2189,7 @@ package devicefarm {
   }
 
   object GetSuiteRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetSuiteRequest = {
@@ -2126,6 +2210,7 @@ package devicefarm {
   }
 
   object GetSuiteResult {
+    @inline
     def apply(
         suite: js.UndefOr[Suite] = js.undefined
     ): GetSuiteResult = {
@@ -2144,6 +2229,7 @@ package devicefarm {
   }
 
   object GetTestRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetTestRequest = {
@@ -2164,6 +2250,7 @@ package devicefarm {
   }
 
   object GetTestResult {
+    @inline
     def apply(
         test: js.UndefOr[Test] = js.undefined
     ): GetTestResult = {
@@ -2182,6 +2269,7 @@ package devicefarm {
   }
 
   object GetUploadRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetUploadRequest = {
@@ -2202,6 +2290,7 @@ package devicefarm {
   }
 
   object GetUploadResult {
+    @inline
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): GetUploadResult = {
@@ -2217,6 +2306,7 @@ package devicefarm {
   }
 
   object GetVPCEConfigurationRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): GetVPCEConfigurationRequest = {
@@ -2234,6 +2324,7 @@ package devicefarm {
   }
 
   object GetVPCEConfigurationResult {
+    @inline
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): GetVPCEConfigurationResult = {
@@ -2253,6 +2344,7 @@ package devicefarm {
   }
 
   object IncompatibilityMessage {
+    @inline
     def apply(
         message: js.UndefOr[Message] = js.undefined,
         `type`: js.UndefOr[DeviceAttribute] = js.undefined
@@ -2274,6 +2366,7 @@ package devicefarm {
   }
 
   object InstallToRemoteAccessSessionRequest {
+    @inline
     def apply(
         appArn: AmazonResourceName,
         remoteAccessSessionArn: AmazonResourceName
@@ -2296,6 +2389,7 @@ package devicefarm {
   }
 
   object InstallToRemoteAccessSessionResult {
+    @inline
     def apply(
         appUpload: js.UndefOr[Upload] = js.undefined
     ): InstallToRemoteAccessSessionResult = {
@@ -2319,6 +2413,7 @@ package devicefarm {
   }
 
   object InstanceProfile {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         description: js.UndefOr[Message] = js.undefined,
@@ -2380,6 +2475,7 @@ package devicefarm {
   }
 
   object Job {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         counters: js.UndefOr[Counters] = js.undefined,
@@ -2428,6 +2524,7 @@ package devicefarm {
   }
 
   object ListArtifactsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         `type`: ArtifactCategory,
@@ -2453,6 +2550,7 @@ package devicefarm {
   }
 
   object ListArtifactsResult {
+    @inline
     def apply(
         artifacts: js.UndefOr[Artifacts] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2471,6 +2569,7 @@ package devicefarm {
   }
 
   object ListDeviceInstancesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2489,6 +2588,7 @@ package devicefarm {
   }
 
   object ListDeviceInstancesResult {
+    @inline
     def apply(
         deviceInstances: js.UndefOr[DeviceInstances] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2511,6 +2611,7 @@ package devicefarm {
   }
 
   object ListDevicePoolsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -2536,6 +2637,7 @@ package devicefarm {
   }
 
   object ListDevicePoolsResult {
+    @inline
     def apply(
         devicePools: js.UndefOr[DevicePools] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2558,6 +2660,7 @@ package devicefarm {
   }
 
   object ListDevicesRequest {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         filters: js.UndefOr[DeviceFilters] = js.undefined,
@@ -2581,6 +2684,7 @@ package devicefarm {
   }
 
   object ListDevicesResult {
+    @inline
     def apply(
         devices: js.UndefOr[Devices] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2599,6 +2703,7 @@ package devicefarm {
   }
 
   object ListInstanceProfilesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2617,6 +2722,7 @@ package devicefarm {
   }
 
   object ListInstanceProfilesResult {
+    @inline
     def apply(
         instanceProfiles: js.UndefOr[InstanceProfiles] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2638,6 +2744,7 @@ package devicefarm {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2661,6 +2768,7 @@ package devicefarm {
   }
 
   object ListJobsResult {
+    @inline
     def apply(
         jobs: js.UndefOr[Jobs] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2680,6 +2788,7 @@ package devicefarm {
   }
 
   object ListNetworkProfilesRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -2702,6 +2811,7 @@ package devicefarm {
   }
 
   object ListNetworkProfilesResult {
+    @inline
     def apply(
         networkProfiles: js.UndefOr[NetworkProfiles] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2719,6 +2829,7 @@ package devicefarm {
   }
 
   object ListOfferingPromotionsRequest {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingPromotionsRequest = {
@@ -2735,6 +2846,7 @@ package devicefarm {
   }
 
   object ListOfferingPromotionsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offeringPromotions: js.UndefOr[OfferingPromotions] = js.undefined
@@ -2755,6 +2867,7 @@ package devicefarm {
   }
 
   object ListOfferingTransactionsRequest {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingTransactionsRequest = {
@@ -2774,6 +2887,7 @@ package devicefarm {
   }
 
   object ListOfferingTransactionsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offeringTransactions: js.UndefOr[OfferingTransactions] = js.undefined
@@ -2794,6 +2908,7 @@ package devicefarm {
   }
 
   object ListOfferingsRequest {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingsRequest = {
@@ -2813,6 +2928,7 @@ package devicefarm {
   }
 
   object ListOfferingsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offerings: js.UndefOr[Offerings] = js.undefined
@@ -2834,6 +2950,7 @@ package devicefarm {
   }
 
   object ListProjectsRequest {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2855,6 +2972,7 @@ package devicefarm {
   }
 
   object ListProjectsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         projects: js.UndefOr[Projects] = js.undefined
@@ -2876,6 +2994,7 @@ package devicefarm {
   }
 
   object ListRemoteAccessSessionsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2899,6 +3018,7 @@ package devicefarm {
   }
 
   object ListRemoteAccessSessionsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         remoteAccessSessions: js.UndefOr[RemoteAccessSessions] = js.undefined
@@ -2920,6 +3040,7 @@ package devicefarm {
   }
 
   object ListRunsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2943,6 +3064,7 @@ package devicefarm {
   }
 
   object ListRunsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         runs: js.UndefOr[Runs] = js.undefined
@@ -2964,6 +3086,7 @@ package devicefarm {
   }
 
   object ListSamplesRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2987,6 +3110,7 @@ package devicefarm {
   }
 
   object ListSamplesResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         samples: js.UndefOr[Samples] = js.undefined
@@ -3008,6 +3132,7 @@ package devicefarm {
   }
 
   object ListSuitesRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -3031,6 +3156,7 @@ package devicefarm {
   }
 
   object ListSuitesResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         suites: js.UndefOr[Suites] = js.undefined
@@ -3048,6 +3174,7 @@ package devicefarm {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName
     ): ListTagsForResourceRequest = {
@@ -3065,6 +3192,7 @@ package devicefarm {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -3084,6 +3212,7 @@ package devicefarm {
   }
 
   object ListTestsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -3107,6 +3236,7 @@ package devicefarm {
   }
 
   object ListTestsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         tests: js.UndefOr[Tests] = js.undefined
@@ -3128,6 +3258,7 @@ package devicefarm {
   }
 
   object ListUniqueProblemsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -3151,6 +3282,7 @@ package devicefarm {
   }
 
   object ListUniqueProblemsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         uniqueProblems: js.UndefOr[UniqueProblemsByExecutionResultMap] = js.undefined
@@ -3173,6 +3305,7 @@ package devicefarm {
   }
 
   object ListUploadsRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -3198,6 +3331,7 @@ package devicefarm {
   }
 
   object ListUploadsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         uploads: js.UndefOr[Uploads] = js.undefined
@@ -3216,6 +3350,7 @@ package devicefarm {
   }
 
   object ListVPCEConfigurationsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -3234,6 +3369,7 @@ package devicefarm {
   }
 
   object ListVPCEConfigurationsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         vpceConfigurations: js.UndefOr[VPCEConfigurations] = js.undefined
@@ -3256,6 +3392,7 @@ package devicefarm {
   }
 
   object Location {
+    @inline
     def apply(
         latitude: Double,
         longitude: Double
@@ -3279,6 +3416,7 @@ package devicefarm {
   }
 
   object MonetaryAmount {
+    @inline
     def apply(
         amount: js.UndefOr[Double] = js.undefined,
         currencyCode: js.UndefOr[CurrencyCode] = js.undefined
@@ -3310,6 +3448,7 @@ package devicefarm {
   }
 
   object NetworkProfile {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         description: js.UndefOr[Message] = js.undefined,
@@ -3361,6 +3500,7 @@ package devicefarm {
   }
 
   object Offering {
+    @inline
     def apply(
         description: js.UndefOr[Message] = js.undefined,
         id: js.UndefOr[OfferingIdentifier] = js.undefined,
@@ -3388,6 +3528,7 @@ package devicefarm {
   }
 
   object OfferingPromotion {
+    @inline
     def apply(
         description: js.UndefOr[Message] = js.undefined,
         id: js.UndefOr[OfferingPromotionIdentifier] = js.undefined
@@ -3411,6 +3552,7 @@ package devicefarm {
   }
 
   object OfferingStatus {
+    @inline
     def apply(
         effectiveOn: js.UndefOr[DateTime] = js.undefined,
         offering: js.UndefOr[Offering] = js.undefined,
@@ -3439,6 +3581,7 @@ package devicefarm {
   }
 
   object OfferingTransaction {
+    @inline
     def apply(
         cost: js.UndefOr[MonetaryAmount] = js.undefined,
         createdOn: js.UndefOr[DateTime] = js.undefined,
@@ -3485,6 +3628,7 @@ package devicefarm {
   }
 
   object Problem {
+    @inline
     def apply(
         device: js.UndefOr[Device] = js.undefined,
         job: js.UndefOr[ProblemDetail] = js.undefined,
@@ -3516,6 +3660,7 @@ package devicefarm {
   }
 
   object ProblemDetail {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
@@ -3539,6 +3684,7 @@ package devicefarm {
   }
 
   object Project {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         created: js.UndefOr[DateTime] = js.undefined,
@@ -3565,6 +3711,7 @@ package devicefarm {
   }
 
   object PurchaseOfferingRequest {
+    @inline
     def apply(
         offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
         offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
@@ -3587,6 +3734,7 @@ package devicefarm {
   }
 
   object PurchaseOfferingResult {
+    @inline
     def apply(
         offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
     ): PurchaseOfferingResult = {
@@ -3608,6 +3756,7 @@ package devicefarm {
   }
 
   object Radios {
+    @inline
     def apply(
         bluetooth: js.UndefOr[Boolean] = js.undefined,
         gps: js.UndefOr[Boolean] = js.undefined,
@@ -3633,6 +3782,7 @@ package devicefarm {
   }
 
   object RecurringCharge {
+    @inline
     def apply(
         cost: js.UndefOr[MonetaryAmount] = js.undefined,
         frequency: js.UndefOr[RecurringChargeFrequency] = js.undefined
@@ -3679,6 +3829,7 @@ package devicefarm {
   }
 
   object RemoteAccessSession {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         billingMethod: js.UndefOr[BillingMethod] = js.undefined,
@@ -3738,6 +3889,7 @@ package devicefarm {
   }
 
   object RenewOfferingRequest {
+    @inline
     def apply(
         offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
         quantity: js.UndefOr[Int] = js.undefined
@@ -3758,6 +3910,7 @@ package devicefarm {
   }
 
   object RenewOfferingResult {
+    @inline
     def apply(
         offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
     ): RenewOfferingResult = {
@@ -3777,6 +3930,7 @@ package devicefarm {
   }
 
   object Resolution {
+    @inline
     def apply(
         height: js.UndefOr[Int] = js.undefined,
         width: js.UndefOr[Int] = js.undefined
@@ -3799,6 +3953,7 @@ package devicefarm {
   }
 
   object Rule {
+    @inline
     def apply(
         attribute: js.UndefOr[DeviceAttribute] = js.undefined,
         operator: js.UndefOr[RuleOperator] = js.undefined,
@@ -3866,6 +4021,7 @@ package devicefarm {
   }
 
   object Run {
+    @inline
     def apply(
         appUpload: js.UndefOr[AmazonResourceName] = js.undefined,
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
@@ -3946,6 +4102,7 @@ package devicefarm {
   }
 
   object Sample {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         `type`: js.UndefOr[SampleType] = js.undefined,
@@ -4018,6 +4175,7 @@ package devicefarm {
   }
 
   object ScheduleRunConfiguration {
+    @inline
     def apply(
         auxiliaryApps: js.UndefOr[AmazonResourceNames] = js.undefined,
         billingMethod: js.UndefOr[BillingMethod] = js.undefined,
@@ -4059,6 +4217,7 @@ package devicefarm {
   }
 
   object ScheduleRunRequest {
+    @inline
     def apply(
         projectArn: AmazonResourceName,
         test: ScheduleRunTest,
@@ -4095,6 +4254,7 @@ package devicefarm {
   }
 
   object ScheduleRunResult {
+    @inline
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): ScheduleRunResult = {
@@ -4117,6 +4277,7 @@ package devicefarm {
   }
 
   object ScheduleRunTest {
+    @inline
     def apply(
         `type`: TestType,
         filter: js.UndefOr[Filter] = js.undefined,
@@ -4142,6 +4303,7 @@ package devicefarm {
   }
 
   object StopJobRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): StopJobRequest = {
@@ -4159,6 +4321,7 @@ package devicefarm {
   }
 
   object StopJobResult {
+    @inline
     def apply(
         job: js.UndefOr[Job] = js.undefined
     ): StopJobResult = {
@@ -4177,6 +4340,7 @@ package devicefarm {
   }
 
   object StopRemoteAccessSessionRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): StopRemoteAccessSessionRequest = {
@@ -4197,6 +4361,7 @@ package devicefarm {
   }
 
   object StopRemoteAccessSessionResult {
+    @inline
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): StopRemoteAccessSessionResult = {
@@ -4215,6 +4380,7 @@ package devicefarm {
   }
 
   object StopRunRequest {
+    @inline
     def apply(
         arn: AmazonResourceName
     ): StopRunRequest = {
@@ -4235,6 +4401,7 @@ package devicefarm {
   }
 
   object StopRunResult {
+    @inline
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): StopRunResult = {
@@ -4263,6 +4430,7 @@ package devicefarm {
   }
 
   object Suite {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         counters: js.UndefOr[Counters] = js.undefined,
@@ -4302,6 +4470,7 @@ package devicefarm {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -4322,6 +4491,7 @@ package devicefarm {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         Tags: TagList
@@ -4339,6 +4509,7 @@ package devicefarm {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4366,6 +4537,7 @@ package devicefarm {
   }
 
   object Test {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         counters: js.UndefOr[Counters] = js.undefined,
@@ -4455,6 +4627,7 @@ package devicefarm {
   }
 
   object TrialMinutes {
+    @inline
     def apply(
         remaining: js.UndefOr[Double] = js.undefined,
         total: js.UndefOr[Double] = js.undefined
@@ -4476,6 +4649,7 @@ package devicefarm {
   }
 
   object UniqueProblem {
+    @inline
     def apply(
         message: js.UndefOr[Message] = js.undefined,
         problems: js.UndefOr[Problems] = js.undefined
@@ -4494,6 +4668,7 @@ package devicefarm {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         TagKeys: TagKeyList
@@ -4511,6 +4686,7 @@ package devicefarm {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4527,6 +4703,7 @@ package devicefarm {
   }
 
   object UpdateDeviceInstanceRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         labels: js.UndefOr[InstanceLabels] = js.undefined,
@@ -4548,6 +4725,7 @@ package devicefarm {
   }
 
   object UpdateDeviceInstanceResult {
+    @inline
     def apply(
         deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
     ): UpdateDeviceInstanceResult = {
@@ -4571,6 +4749,7 @@ package devicefarm {
   }
 
   object UpdateDevicePoolRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         clearMaxDevices: js.UndefOr[Boolean] = js.undefined,
@@ -4601,6 +4780,7 @@ package devicefarm {
   }
 
   object UpdateDevicePoolResult {
+    @inline
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): UpdateDevicePoolResult = {
@@ -4621,6 +4801,7 @@ package devicefarm {
   }
 
   object UpdateInstanceProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         description: js.UndefOr[Message] = js.undefined,
@@ -4650,6 +4831,7 @@ package devicefarm {
   }
 
   object UpdateInstanceProfileResult {
+    @inline
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): UpdateInstanceProfileResult = {
@@ -4676,6 +4858,7 @@ package devicefarm {
   }
 
   object UpdateNetworkProfileRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         description: js.UndefOr[Message] = js.undefined,
@@ -4715,6 +4898,7 @@ package devicefarm {
   }
 
   object UpdateNetworkProfileResult {
+    @inline
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): UpdateNetworkProfileResult = {
@@ -4735,6 +4919,7 @@ package devicefarm {
   }
 
   object UpdateProjectRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
@@ -4759,6 +4944,7 @@ package devicefarm {
   }
 
   object UpdateProjectResult {
+    @inline
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): UpdateProjectResult = {
@@ -4777,6 +4963,7 @@ package devicefarm {
   }
 
   object UpdateUploadRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         contentType: js.UndefOr[ContentType] = js.undefined,
@@ -4800,6 +4987,7 @@ package devicefarm {
   }
 
   object UpdateUploadResult {
+    @inline
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): UpdateUploadResult = {
@@ -4819,6 +5007,7 @@ package devicefarm {
   }
 
   object UpdateVPCEConfigurationRequest {
+    @inline
     def apply(
         arn: AmazonResourceName,
         serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
@@ -4846,6 +5035,7 @@ package devicefarm {
   }
 
   object UpdateVPCEConfigurationResult {
+    @inline
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): UpdateVPCEConfigurationResult = {
@@ -4873,6 +5063,7 @@ package devicefarm {
   }
 
   object Upload {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         category: js.UndefOr[UploadCategory] = js.undefined,
@@ -5001,6 +5192,7 @@ package devicefarm {
   }
 
   object VPCEConfiguration {
+    @inline
     def apply(
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,

@@ -20,12 +20,12 @@ package object iotdata {
 
   implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
-    def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
+    @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
       service.deleteThingShadow(params).promise.toFuture
-    def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
+    @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
       service.getThingShadow(params).promise.toFuture
-    def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise.toFuture
-    def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
+    @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise.toFuture
+    @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
       service.updateThingShadow(params).promise.toFuture
   }
 }
@@ -59,6 +59,7 @@ package iotdata {
   }
 
   object DeleteThingShadowRequest {
+    @inline
     def apply(
         thingName: ThingName
     ): DeleteThingShadowRequest = {
@@ -79,6 +80,7 @@ package iotdata {
   }
 
   object DeleteThingShadowResponse {
+    @inline
     def apply(
         payload: JsonDocument
     ): DeleteThingShadowResponse = {
@@ -99,6 +101,7 @@ package iotdata {
   }
 
   object GetThingShadowRequest {
+    @inline
     def apply(
         thingName: ThingName
     ): GetThingShadowRequest = {
@@ -119,6 +122,7 @@ package iotdata {
   }
 
   object GetThingShadowResponse {
+    @inline
     def apply(
         payload: js.UndefOr[JsonDocument] = js.undefined
     ): GetThingShadowResponse = {
@@ -163,6 +167,7 @@ package iotdata {
   }
 
   object PublishRequest {
+    @inline
     def apply(
         topic: Topic,
         payload: js.UndefOr[Payload] = js.undefined,
@@ -236,6 +241,7 @@ package iotdata {
   }
 
   object UpdateThingShadowRequest {
+    @inline
     def apply(
         payload: JsonDocument,
         thingName: ThingName
@@ -258,6 +264,7 @@ package iotdata {
   }
 
   object UpdateThingShadowResponse {
+    @inline
     def apply(
         payload: js.UndefOr[JsonDocument] = js.undefined
     ): UpdateThingShadowResponse = {

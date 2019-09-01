@@ -43,37 +43,41 @@ package object transfer {
 
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
-    def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
+    @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
       service.createServer(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deleteServerFuture(params: DeleteServerRequest): Future[js.Object] =
+    @inline def deleteServerFuture(params: DeleteServerRequest): Future[js.Object] =
       service.deleteServer(params).promise.toFuture
-    def deleteSshPublicKeyFuture(params: DeleteSshPublicKeyRequest): Future[js.Object] =
+    @inline def deleteSshPublicKeyFuture(params: DeleteSshPublicKeyRequest): Future[js.Object] =
       service.deleteSshPublicKey(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
-    def describeServerFuture(params: DescribeServerRequest): Future[DescribeServerResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
+      service.deleteUser(params).promise.toFuture
+    @inline def describeServerFuture(params: DescribeServerRequest): Future[DescribeServerResponse] =
       service.describeServer(params).promise.toFuture
-    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise.toFuture
-    def importSshPublicKeyFuture(params: ImportSshPublicKeyRequest): Future[ImportSshPublicKeyResponse] =
+    @inline def importSshPublicKeyFuture(params: ImportSshPublicKeyRequest): Future[ImportSshPublicKeyResponse] =
       service.importSshPublicKey(params).promise.toFuture
-    def listServersFuture(params: ListServersRequest): Future[ListServersResponse] =
+    @inline def listServersFuture(params: ListServersRequest): Future[ListServersResponse] =
       service.listServers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def startServerFuture(params: StartServerRequest): Future[js.Object] = service.startServer(params).promise.toFuture
-    def stopServerFuture(params: StopServerRequest): Future[js.Object]   = service.stopServer(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def testIdentityProviderFuture(params: TestIdentityProviderRequest): Future[TestIdentityProviderResponse] =
+    @inline def startServerFuture(params: StartServerRequest): Future[js.Object] =
+      service.startServer(params).promise.toFuture
+    @inline def stopServerFuture(params: StopServerRequest): Future[js.Object] =
+      service.stopServer(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def testIdentityProviderFuture(params: TestIdentityProviderRequest): Future[TestIdentityProviderResponse] =
       service.testIdentityProvider(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
+    @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
       service.updateServer(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
   }
 }
@@ -116,6 +120,7 @@ package transfer {
   }
 
   object CreateServerRequest {
+    @inline
     def apply(
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
@@ -143,6 +148,7 @@ package transfer {
   }
 
   object CreateServerResponse {
+    @inline
     def apply(
         ServerId: ServerId
     ): CreateServerResponse = {
@@ -166,6 +172,7 @@ package transfer {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         Role: Role,
         ServerId: ServerId,
@@ -196,6 +203,7 @@ package transfer {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -215,6 +223,7 @@ package transfer {
   }
 
   object DeleteServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): DeleteServerRequest = {
@@ -234,6 +243,7 @@ package transfer {
   }
 
   object DeleteSshPublicKeyRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyId: SshPublicKeyId,
@@ -256,6 +266,7 @@ package transfer {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -275,6 +286,7 @@ package transfer {
   }
 
   object DescribeServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): DescribeServerRequest = {
@@ -292,6 +304,7 @@ package transfer {
   }
 
   object DescribeServerResponse {
+    @inline
     def apply(
         Server: DescribedServer
     ): DescribeServerResponse = {
@@ -310,6 +323,7 @@ package transfer {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -330,6 +344,7 @@ package transfer {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         User: DescribedUser
@@ -362,6 +377,7 @@ package transfer {
   }
 
   object DescribedServer {
+    @inline
     def apply(
         Arn: Arn,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
@@ -408,6 +424,7 @@ package transfer {
   }
 
   object DescribedUser {
+    @inline
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
@@ -440,6 +457,7 @@ package transfer {
   }
 
   object EndpointDetails {
+    @inline
     def apply(
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): EndpointDetails = {
@@ -466,6 +484,7 @@ package transfer {
   }
 
   object IdentityProviderDetails {
+    @inline
     def apply(
         InvocationRole: js.UndefOr[Role] = js.undefined,
         Url: js.UndefOr[Url] = js.undefined
@@ -495,6 +514,7 @@ package transfer {
   }
 
   object ImportSshPublicKeyRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyBody: SshPublicKeyBody,
@@ -521,6 +541,7 @@ package transfer {
   }
 
   object ImportSshPublicKeyResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyId: SshPublicKeyId,
@@ -543,6 +564,7 @@ package transfer {
   }
 
   object ListServersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -561,6 +583,7 @@ package transfer {
   }
 
   object ListServersResponse {
+    @inline
     def apply(
         Servers: ListedServers,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -582,6 +605,7 @@ package transfer {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -605,6 +629,7 @@ package transfer {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -626,6 +651,7 @@ package transfer {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -649,6 +675,7 @@ package transfer {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         Users: ListedUsers,
@@ -679,6 +706,7 @@ package transfer {
   }
 
   object ListedServer {
+    @inline
     def apply(
         Arn: Arn,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
@@ -715,6 +743,7 @@ package transfer {
   }
 
   object ListedUser {
+    @inline
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
@@ -745,6 +774,7 @@ package transfer {
   }
 
   object SshPublicKey {
+    @inline
     def apply(
         DateImported: DateImported,
         SshPublicKeyBody: SshPublicKeyBody,
@@ -766,6 +796,7 @@ package transfer {
   }
 
   object StartServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): StartServerRequest = {
@@ -798,6 +829,7 @@ package transfer {
   }
 
   object StopServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): StopServerRequest = {
@@ -819,6 +851,7 @@ package transfer {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -839,6 +872,7 @@ package transfer {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         Tags: Tags
@@ -860,6 +894,7 @@ package transfer {
   }
 
   object TestIdentityProviderRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName,
@@ -884,6 +919,7 @@ package transfer {
   }
 
   object TestIdentityProviderResponse {
+    @inline
     def apply(
         StatusCode: StatusCode,
         Url: Url,
@@ -908,6 +944,7 @@ package transfer {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         TagKeys: TagKeys
@@ -932,6 +969,7 @@ package transfer {
   }
 
   object UpdateServerRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
@@ -959,6 +997,7 @@ package transfer {
   }
 
   object UpdateServerResponse {
+    @inline
     def apply(
         ServerId: ServerId
     ): UpdateServerResponse = {
@@ -980,6 +1019,7 @@ package transfer {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName,
@@ -1009,6 +1049,7 @@ package transfer {
   }
 
   object UpdateUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName

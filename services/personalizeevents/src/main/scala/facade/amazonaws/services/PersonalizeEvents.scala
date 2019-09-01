@@ -16,7 +16,8 @@ package object personalizeevents {
 
   implicit final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
 
-    def putEventsFuture(params: PutEventsRequest): Future[js.Object] = service.putEvents(params).promise.toFuture
+    @inline def putEventsFuture(params: PutEventsRequest): Future[js.Object] =
+      service.putEvents(params).promise.toFuture
   }
 }
 
@@ -41,6 +42,7 @@ package personalizeevents {
   }
 
   object Event {
+    @inline
     def apply(
         eventType: StringType,
         properties: EventPropertiesJSON,
@@ -67,6 +69,7 @@ package personalizeevents {
   }
 
   object PutEventsRequest {
+    @inline
     def apply(
         eventList: EventList,
         sessionId: StringType,

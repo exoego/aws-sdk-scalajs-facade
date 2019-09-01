@@ -57,54 +57,63 @@ package object kinesis {
 
   implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
 
-    def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
+    @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
       service.addTagsToStream(params).promise.toFuture
-    def createStreamFuture(params: CreateStreamInput): Future[js.Object] = service.createStream(params).promise.toFuture
-    def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] =
+    @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] =
+      service.createStream(params).promise.toFuture
+    @inline def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] =
       service.decreaseStreamRetentionPeriod(params).promise.toFuture
-    def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] = service.deleteStream(params).promise.toFuture
-    def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] =
+    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] =
+      service.deleteStream(params).promise.toFuture
+    @inline def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] =
       service.deregisterStreamConsumer(params).promise.toFuture
-    def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
+    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
       service.describeLimits(params).promise.toFuture
-    def describeStreamConsumerFuture(params: DescribeStreamConsumerInput): Future[DescribeStreamConsumerOutput] =
-      service.describeStreamConsumer(params).promise.toFuture
-    def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
+    @inline def describeStreamConsumerFuture(
+        params: DescribeStreamConsumerInput
+    ): Future[DescribeStreamConsumerOutput] = service.describeStreamConsumer(params).promise.toFuture
+    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
       service.describeStream(params).promise.toFuture
-    def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] =
+    @inline def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] =
       service.describeStreamSummary(params).promise.toFuture
-    def disableEnhancedMonitoringFuture(params: DisableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] =
-      service.disableEnhancedMonitoring(params).promise.toFuture
-    def enableEnhancedMonitoringFuture(params: EnableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] =
-      service.enableEnhancedMonitoring(params).promise.toFuture
-    def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
+    @inline def disableEnhancedMonitoringFuture(
+        params: DisableEnhancedMonitoringInput
+    ): Future[EnhancedMonitoringOutput] = service.disableEnhancedMonitoring(params).promise.toFuture
+    @inline def enableEnhancedMonitoringFuture(
+        params: EnableEnhancedMonitoringInput
+    ): Future[EnhancedMonitoringOutput] = service.enableEnhancedMonitoring(params).promise.toFuture
+    @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
       service.getRecords(params).promise.toFuture
-    def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
+    @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
       service.getShardIterator(params).promise.toFuture
-    def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] =
+    @inline def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] =
       service.increaseStreamRetentionPeriod(params).promise.toFuture
-    def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] =
+    @inline def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] =
       service.listShards(params).promise.toFuture
-    def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] =
+    @inline def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] =
       service.listStreamConsumers(params).promise.toFuture
-    def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
+    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
       service.listStreams(params).promise.toFuture
-    def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
+    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
       service.listTagsForStream(params).promise.toFuture
-    def mergeShardsFuture(params: MergeShardsInput): Future[js.Object]   = service.mergeShards(params).promise.toFuture
-    def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] = service.putRecord(params).promise.toFuture
-    def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] =
+    @inline def mergeShardsFuture(params: MergeShardsInput): Future[js.Object] =
+      service.mergeShards(params).promise.toFuture
+    @inline def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] =
+      service.putRecord(params).promise.toFuture
+    @inline def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] =
       service.putRecords(params).promise.toFuture
-    def registerStreamConsumerFuture(params: RegisterStreamConsumerInput): Future[RegisterStreamConsumerOutput] =
-      service.registerStreamConsumer(params).promise.toFuture
-    def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] =
+    @inline def registerStreamConsumerFuture(
+        params: RegisterStreamConsumerInput
+    ): Future[RegisterStreamConsumerOutput] = service.registerStreamConsumer(params).promise.toFuture
+    @inline def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] =
       service.removeTagsFromStream(params).promise.toFuture
-    def splitShardFuture(params: SplitShardInput): Future[js.Object] = service.splitShard(params).promise.toFuture
-    def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] =
+    @inline def splitShardFuture(params: SplitShardInput): Future[js.Object] =
+      service.splitShard(params).promise.toFuture
+    @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] =
       service.startStreamEncryption(params).promise.toFuture
-    def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] =
+    @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] =
       service.stopStreamEncryption(params).promise.toFuture
-    def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] =
+    @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] =
       service.updateShardCount(params).promise.toFuture
   }
 }
@@ -154,6 +163,7 @@ package kinesis {
   }
 
   object AddTagsToStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         Tags: TagMap
@@ -179,6 +189,7 @@ package kinesis {
   }
 
   object Consumer {
+    @inline
     def apply(
         ConsumerARN: ConsumerARN,
         ConsumerCreationTimestamp: Timestamp,
@@ -209,6 +220,7 @@ package kinesis {
   }
 
   object ConsumerDescription {
+    @inline
     def apply(
         ConsumerARN: ConsumerARN,
         ConsumerCreationTimestamp: Timestamp,
@@ -246,6 +258,7 @@ package kinesis {
   }
 
   object CreateStreamInput {
+    @inline
     def apply(
         ShardCount: PositiveIntegerObject,
         StreamName: StreamName
@@ -269,6 +282,7 @@ package kinesis {
   }
 
   object DecreaseStreamRetentionPeriodInput {
+    @inline
     def apply(
         RetentionPeriodHours: RetentionPeriodHours,
         StreamName: StreamName
@@ -292,6 +306,7 @@ package kinesis {
   }
 
   object DeleteStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         EnforceConsumerDeletion: js.UndefOr[BooleanObject] = js.undefined
@@ -313,6 +328,7 @@ package kinesis {
   }
 
   object DeregisterStreamConsumerInput {
+    @inline
     def apply(
         ConsumerARN: js.UndefOr[ConsumerARN] = js.undefined,
         ConsumerName: js.UndefOr[ConsumerName] = js.undefined,
@@ -330,6 +346,7 @@ package kinesis {
   trait DescribeLimitsInput extends js.Object {}
 
   object DescribeLimitsInput {
+    @inline
     def apply(
         ): DescribeLimitsInput = {
       val __obj = js.Dynamic.literal()
@@ -345,6 +362,7 @@ package kinesis {
   }
 
   object DescribeLimitsOutput {
+    @inline
     def apply(
         OpenShardCount: ShardCountObject,
         ShardLimit: ShardCountObject
@@ -366,6 +384,7 @@ package kinesis {
   }
 
   object DescribeStreamConsumerInput {
+    @inline
     def apply(
         ConsumerARN: js.UndefOr[ConsumerARN] = js.undefined,
         ConsumerName: js.UndefOr[ConsumerName] = js.undefined,
@@ -385,6 +404,7 @@ package kinesis {
   }
 
   object DescribeStreamConsumerOutput {
+    @inline
     def apply(
         ConsumerDescription: ConsumerDescription
     ): DescribeStreamConsumerOutput = {
@@ -407,6 +427,7 @@ package kinesis {
   }
 
   object DescribeStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
@@ -431,6 +452,7 @@ package kinesis {
   }
 
   object DescribeStreamOutput {
+    @inline
     def apply(
         StreamDescription: StreamDescription
     ): DescribeStreamOutput = {
@@ -448,6 +470,7 @@ package kinesis {
   }
 
   object DescribeStreamSummaryInput {
+    @inline
     def apply(
         StreamName: StreamName
     ): DescribeStreamSummaryInput = {
@@ -465,6 +488,7 @@ package kinesis {
   }
 
   object DescribeStreamSummaryOutput {
+    @inline
     def apply(
         StreamDescriptionSummary: StreamDescriptionSummary
     ): DescribeStreamSummaryOutput = {
@@ -486,6 +510,7 @@ package kinesis {
   }
 
   object DisableEnhancedMonitoringInput {
+    @inline
     def apply(
         ShardLevelMetrics: MetricsNameList,
         StreamName: StreamName
@@ -509,6 +534,7 @@ package kinesis {
   }
 
   object EnableEnhancedMonitoringInput {
+    @inline
     def apply(
         ShardLevelMetrics: MetricsNameList,
         StreamName: StreamName
@@ -538,6 +564,7 @@ package kinesis {
   }
 
   object EnhancedMetrics {
+    @inline
     def apply(
         ShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
     ): EnhancedMetrics = {
@@ -558,6 +585,7 @@ package kinesis {
   }
 
   object EnhancedMonitoringOutput {
+    @inline
     def apply(
         CurrentShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined,
         DesiredShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined,
@@ -597,6 +625,7 @@ package kinesis {
   }
 
   object GetRecordsInput {
+    @inline
     def apply(
         ShardIterator: ShardIterator,
         Limit: js.UndefOr[GetRecordsInputLimit] = js.undefined
@@ -621,6 +650,7 @@ package kinesis {
   }
 
   object GetRecordsOutput {
+    @inline
     def apply(
         Records: RecordList,
         MillisBehindLatest: js.UndefOr[MillisBehindLatest] = js.undefined,
@@ -649,6 +679,7 @@ package kinesis {
   }
 
   object GetShardIteratorInput {
+    @inline
     def apply(
         ShardId: ShardId,
         ShardIteratorType: ShardIteratorType,
@@ -677,6 +708,7 @@ package kinesis {
   }
 
   object GetShardIteratorOutput {
+    @inline
     def apply(
         ShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetShardIteratorOutput = {
@@ -696,6 +728,7 @@ package kinesis {
   }
 
   object HashKeyRange {
+    @inline
     def apply(
         EndingHashKey: HashKey,
         StartingHashKey: HashKey
@@ -719,6 +752,7 @@ package kinesis {
   }
 
   object IncreaseStreamRetentionPeriodInput {
+    @inline
     def apply(
         RetentionPeriodHours: RetentionPeriodHours,
         StreamName: StreamName
@@ -811,6 +845,7 @@ package kinesis {
   }
 
   object ListShardsInput {
+    @inline
     def apply(
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
         MaxResults: js.UndefOr[ListShardsInputLimit] = js.undefined,
@@ -835,6 +870,7 @@ package kinesis {
   }
 
   object ListShardsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Shards: js.UndefOr[ShardList] = js.undefined
@@ -855,6 +891,7 @@ package kinesis {
   }
 
   object ListStreamConsumersInput {
+    @inline
     def apply(
         StreamARN: StreamARN,
         MaxResults: js.UndefOr[ListStreamConsumersInputLimit] = js.undefined,
@@ -879,6 +916,7 @@ package kinesis {
   }
 
   object ListStreamConsumersOutput {
+    @inline
     def apply(
         Consumers: js.UndefOr[ConsumerList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -900,6 +938,7 @@ package kinesis {
   }
 
   object ListStreamsInput {
+    @inline
     def apply(
         ExclusiveStartStreamName: js.UndefOr[StreamName] = js.undefined,
         Limit: js.UndefOr[ListStreamsInputLimit] = js.undefined
@@ -921,6 +960,7 @@ package kinesis {
   }
 
   object ListStreamsOutput {
+    @inline
     def apply(
         HasMoreStreams: BooleanObject,
         StreamNames: StreamNameList
@@ -945,6 +985,7 @@ package kinesis {
   }
 
   object ListTagsForStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         ExclusiveStartTagKey: js.UndefOr[TagKey] = js.undefined,
@@ -970,6 +1011,7 @@ package kinesis {
   }
 
   object ListTagsForStreamOutput {
+    @inline
     def apply(
         HasMoreTags: BooleanObject,
         Tags: TagList
@@ -994,6 +1036,7 @@ package kinesis {
   }
 
   object MergeShardsInput {
+    @inline
     def apply(
         AdjacentShardToMerge: ShardId,
         ShardToMerge: ShardId,
@@ -1054,6 +1097,7 @@ package kinesis {
   }
 
   object PutRecordInput {
+    @inline
     def apply(
         Data: Data,
         PartitionKey: PartitionKey,
@@ -1086,6 +1130,7 @@ package kinesis {
   }
 
   object PutRecordOutput {
+    @inline
     def apply(
         SequenceNumber: SequenceNumber,
         ShardId: ShardId,
@@ -1111,6 +1156,7 @@ package kinesis {
   }
 
   object PutRecordsInput {
+    @inline
     def apply(
         Records: PutRecordsRequestEntryList,
         StreamName: StreamName
@@ -1135,6 +1181,7 @@ package kinesis {
   }
 
   object PutRecordsOutput {
+    @inline
     def apply(
         Records: PutRecordsResultEntryList,
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
@@ -1161,6 +1208,7 @@ package kinesis {
   }
 
   object PutRecordsRequestEntry {
+    @inline
     def apply(
         Data: Data,
         PartitionKey: PartitionKey,
@@ -1188,6 +1236,7 @@ package kinesis {
   }
 
   object PutRecordsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1216,6 +1265,7 @@ package kinesis {
   }
 
   object Record {
+    @inline
     def apply(
         Data: Data,
         PartitionKey: PartitionKey,
@@ -1244,6 +1294,7 @@ package kinesis {
   }
 
   object RegisterStreamConsumerInput {
+    @inline
     def apply(
         ConsumerName: ConsumerName,
         StreamARN: StreamARN
@@ -1263,6 +1314,7 @@ package kinesis {
   }
 
   object RegisterStreamConsumerOutput {
+    @inline
     def apply(
         Consumer: Consumer
     ): RegisterStreamConsumerOutput = {
@@ -1284,6 +1336,7 @@ package kinesis {
   }
 
   object RemoveTagsFromStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         TagKeys: TagKeyList
@@ -1329,6 +1382,7 @@ package kinesis {
   }
 
   object SequenceNumberRange {
+    @inline
     def apply(
         StartingSequenceNumber: SequenceNumber,
         EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
@@ -1355,6 +1409,7 @@ package kinesis {
   }
 
   object Shard {
+    @inline
     def apply(
         HashKeyRange: HashKeyRange,
         SequenceNumberRange: SequenceNumberRange,
@@ -1396,6 +1451,7 @@ package kinesis {
   }
 
   object SplitShardInput {
+    @inline
     def apply(
         NewStartingHashKey: HashKey,
         ShardToSplit: ShardId,
@@ -1419,6 +1475,7 @@ package kinesis {
   }
 
   object StartStreamEncryptionInput {
+    @inline
     def apply(
         EncryptionType: EncryptionType,
         KeyId: KeyId,
@@ -1442,6 +1499,7 @@ package kinesis {
   }
 
   object StartingPosition {
+    @inline
     def apply(
         Type: ShardIteratorType,
         SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
@@ -1465,6 +1523,7 @@ package kinesis {
   }
 
   object StopStreamEncryptionInput {
+    @inline
     def apply(
         EncryptionType: EncryptionType,
         KeyId: KeyId,
@@ -1498,6 +1557,7 @@ package kinesis {
   }
 
   object StreamDescription {
+    @inline
     def apply(
         EnhancedMonitoring: EnhancedMonitoringList,
         HasMoreShards: BooleanObject,
@@ -1545,6 +1605,7 @@ package kinesis {
   }
 
   object StreamDescriptionSummary {
+    @inline
     def apply(
         EnhancedMonitoring: EnhancedMonitoringList,
         OpenShardCount: ShardCountObject,
@@ -1594,6 +1655,7 @@ package kinesis {
   }
 
   object SubscribeToShardEvent {
+    @inline
     def apply(
         ContinuationSequenceNumber: SequenceNumber,
         MillisBehindLatest: MillisBehindLatest,
@@ -1615,6 +1677,7 @@ package kinesis {
   }
 
   object SubscribeToShardEventStream {
+    @inline
     def apply(
         SubscribeToShardEvent: SubscribeToShardEvent
     ): SubscribeToShardEventStream = {
@@ -1634,6 +1697,7 @@ package kinesis {
   }
 
   object SubscribeToShardInput {
+    @inline
     def apply(
         ConsumerARN: ConsumerARN,
         ShardId: ShardId,
@@ -1655,6 +1719,7 @@ package kinesis {
   }
 
   object SubscribeToShardOutput {
+    @inline
     def apply(
         EventStream: SubscribeToShardEventStream
     ): SubscribeToShardOutput = {
@@ -1676,6 +1741,7 @@ package kinesis {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1697,6 +1763,7 @@ package kinesis {
   }
 
   object UpdateShardCountInput {
+    @inline
     def apply(
         ScalingType: ScalingType,
         StreamName: StreamName,
@@ -1720,6 +1787,7 @@ package kinesis {
   }
 
   object UpdateShardCountOutput {
+    @inline
     def apply(
         CurrentShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined,

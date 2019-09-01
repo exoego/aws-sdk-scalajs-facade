@@ -86,80 +86,84 @@ package object elb {
 
   implicit final class ELBOps(private val service: ELB) extends AnyVal {
 
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def applySecurityGroupsToLoadBalancerFuture(
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def applySecurityGroupsToLoadBalancerFuture(
         params: ApplySecurityGroupsToLoadBalancerInput
     ): Future[ApplySecurityGroupsToLoadBalancerOutput] =
       service.applySecurityGroupsToLoadBalancer(params).promise.toFuture
-    def attachLoadBalancerToSubnetsFuture(
+    @inline def attachLoadBalancerToSubnetsFuture(
         params: AttachLoadBalancerToSubnetsInput
     ): Future[AttachLoadBalancerToSubnetsOutput] = service.attachLoadBalancerToSubnets(params).promise.toFuture
-    def configureHealthCheckFuture(params: ConfigureHealthCheckInput): Future[ConfigureHealthCheckOutput] =
+    @inline def configureHealthCheckFuture(params: ConfigureHealthCheckInput): Future[ConfigureHealthCheckOutput] =
       service.configureHealthCheck(params).promise.toFuture
-    def createAppCookieStickinessPolicyFuture(
+    @inline def createAppCookieStickinessPolicyFuture(
         params: CreateAppCookieStickinessPolicyInput
     ): Future[CreateAppCookieStickinessPolicyOutput] = service.createAppCookieStickinessPolicy(params).promise.toFuture
-    def createLBCookieStickinessPolicyFuture(
+    @inline def createLBCookieStickinessPolicyFuture(
         params: CreateLBCookieStickinessPolicyInput
     ): Future[CreateLBCookieStickinessPolicyOutput] = service.createLBCookieStickinessPolicy(params).promise.toFuture
-    def createLoadBalancerFuture(params: CreateAccessPointInput): Future[CreateAccessPointOutput] =
+    @inline def createLoadBalancerFuture(params: CreateAccessPointInput): Future[CreateAccessPointOutput] =
       service.createLoadBalancer(params).promise.toFuture
-    def createLoadBalancerListenersFuture(
+    @inline def createLoadBalancerListenersFuture(
         params: CreateLoadBalancerListenerInput
     ): Future[CreateLoadBalancerListenerOutput] = service.createLoadBalancerListeners(params).promise.toFuture
-    def createLoadBalancerPolicyFuture(params: CreateLoadBalancerPolicyInput): Future[CreateLoadBalancerPolicyOutput] =
-      service.createLoadBalancerPolicy(params).promise.toFuture
-    def deleteLoadBalancerFuture(params: DeleteAccessPointInput): Future[DeleteAccessPointOutput] =
+    @inline def createLoadBalancerPolicyFuture(
+        params: CreateLoadBalancerPolicyInput
+    ): Future[CreateLoadBalancerPolicyOutput] = service.createLoadBalancerPolicy(params).promise.toFuture
+    @inline def deleteLoadBalancerFuture(params: DeleteAccessPointInput): Future[DeleteAccessPointOutput] =
       service.deleteLoadBalancer(params).promise.toFuture
-    def deleteLoadBalancerListenersFuture(
+    @inline def deleteLoadBalancerListenersFuture(
         params: DeleteLoadBalancerListenerInput
     ): Future[DeleteLoadBalancerListenerOutput] = service.deleteLoadBalancerListeners(params).promise.toFuture
-    def deleteLoadBalancerPolicyFuture(params: DeleteLoadBalancerPolicyInput): Future[DeleteLoadBalancerPolicyOutput] =
-      service.deleteLoadBalancerPolicy(params).promise.toFuture
-    def deregisterInstancesFromLoadBalancerFuture(params: DeregisterEndPointsInput): Future[DeregisterEndPointsOutput] =
-      service.deregisterInstancesFromLoadBalancer(params).promise.toFuture
-    def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
+    @inline def deleteLoadBalancerPolicyFuture(
+        params: DeleteLoadBalancerPolicyInput
+    ): Future[DeleteLoadBalancerPolicyOutput] = service.deleteLoadBalancerPolicy(params).promise.toFuture
+    @inline def deregisterInstancesFromLoadBalancerFuture(
+        params: DeregisterEndPointsInput
+    ): Future[DeregisterEndPointsOutput] = service.deregisterInstancesFromLoadBalancer(params).promise.toFuture
+    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
       service.describeAccountLimits(params).promise.toFuture
-    def describeInstanceHealthFuture(params: DescribeEndPointStateInput): Future[DescribeEndPointStateOutput] =
+    @inline def describeInstanceHealthFuture(params: DescribeEndPointStateInput): Future[DescribeEndPointStateOutput] =
       service.describeInstanceHealth(params).promise.toFuture
-    def describeLoadBalancerAttributesFuture(
+    @inline def describeLoadBalancerAttributesFuture(
         params: DescribeLoadBalancerAttributesInput
     ): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise.toFuture
-    def describeLoadBalancerPoliciesFuture(
+    @inline def describeLoadBalancerPoliciesFuture(
         params: DescribeLoadBalancerPoliciesInput
     ): Future[DescribeLoadBalancerPoliciesOutput] = service.describeLoadBalancerPolicies(params).promise.toFuture
-    def describeLoadBalancerPolicyTypesFuture(
+    @inline def describeLoadBalancerPolicyTypesFuture(
         params: DescribeLoadBalancerPolicyTypesInput
     ): Future[DescribeLoadBalancerPolicyTypesOutput] = service.describeLoadBalancerPolicyTypes(params).promise.toFuture
-    def describeLoadBalancersFuture(params: DescribeAccessPointsInput): Future[DescribeAccessPointsOutput] =
+    @inline def describeLoadBalancersFuture(params: DescribeAccessPointsInput): Future[DescribeAccessPointsOutput] =
       service.describeLoadBalancers(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
+    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
       service.describeTags(params).promise.toFuture
-    def detachLoadBalancerFromSubnetsFuture(
+    @inline def detachLoadBalancerFromSubnetsFuture(
         params: DetachLoadBalancerFromSubnetsInput
     ): Future[DetachLoadBalancerFromSubnetsOutput] = service.detachLoadBalancerFromSubnets(params).promise.toFuture
-    def disableAvailabilityZonesForLoadBalancerFuture(
+    @inline def disableAvailabilityZonesForLoadBalancerFuture(
         params: RemoveAvailabilityZonesInput
     ): Future[RemoveAvailabilityZonesOutput] = service.disableAvailabilityZonesForLoadBalancer(params).promise.toFuture
-    def enableAvailabilityZonesForLoadBalancerFuture(
+    @inline def enableAvailabilityZonesForLoadBalancerFuture(
         params: AddAvailabilityZonesInput
     ): Future[AddAvailabilityZonesOutput] = service.enableAvailabilityZonesForLoadBalancer(params).promise.toFuture
-    def modifyLoadBalancerAttributesFuture(
+    @inline def modifyLoadBalancerAttributesFuture(
         params: ModifyLoadBalancerAttributesInput
     ): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise.toFuture
-    def registerInstancesWithLoadBalancerFuture(params: RegisterEndPointsInput): Future[RegisterEndPointsOutput] =
-      service.registerInstancesWithLoadBalancer(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+    @inline def registerInstancesWithLoadBalancerFuture(
+        params: RegisterEndPointsInput
+    ): Future[RegisterEndPointsOutput] = service.registerInstancesWithLoadBalancer(params).promise.toFuture
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise.toFuture
-    def setLoadBalancerListenerSSLCertificateFuture(
+    @inline def setLoadBalancerListenerSSLCertificateFuture(
         params: SetLoadBalancerListenerSSLCertificateInput
     ): Future[SetLoadBalancerListenerSSLCertificateOutput] =
       service.setLoadBalancerListenerSSLCertificate(params).promise.toFuture
-    def setLoadBalancerPoliciesForBackendServerFuture(
+    @inline def setLoadBalancerPoliciesForBackendServerFuture(
         params: SetLoadBalancerPoliciesForBackendServerInput
     ): Future[SetLoadBalancerPoliciesForBackendServerOutput] =
       service.setLoadBalancerPoliciesForBackendServer(params).promise.toFuture
-    def setLoadBalancerPoliciesOfListenerFuture(
+    @inline def setLoadBalancerPoliciesOfListenerFuture(
         params: SetLoadBalancerPoliciesOfListenerInput
     ): Future[SetLoadBalancerPoliciesOfListenerOutput] =
       service.setLoadBalancerPoliciesOfListener(params).promise.toFuture
@@ -249,6 +253,7 @@ package elb {
   }
 
   object AccessLog {
+    @inline
     def apply(
         Enabled: AccessLogEnabled,
         EmitInterval: js.UndefOr[AccessLogInterval] = js.undefined,
@@ -276,6 +281,7 @@ package elb {
   }
 
   object AddAvailabilityZonesInput {
+    @inline
     def apply(
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
@@ -298,6 +304,7 @@ package elb {
   }
 
   object AddAvailabilityZonesOutput {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): AddAvailabilityZonesOutput = {
@@ -317,6 +324,7 @@ package elb {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagList
@@ -337,6 +345,7 @@ package elb {
   trait AddTagsOutput extends js.Object {}
 
   object AddTagsOutput {
+    @inline
     def apply(
         ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -355,6 +364,7 @@ package elb {
   }
 
   object AdditionalAttribute {
+    @inline
     def apply(
         Key: js.UndefOr[AdditionalAttributeKey] = js.undefined,
         Value: js.UndefOr[AdditionalAttributeValue] = js.undefined
@@ -376,6 +386,7 @@ package elb {
   }
 
   object AppCookieStickinessPolicy {
+    @inline
     def apply(
         CookieName: js.UndefOr[CookieName] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
@@ -397,6 +408,7 @@ package elb {
   }
 
   object ApplySecurityGroupsToLoadBalancerInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         SecurityGroups: SecurityGroups
@@ -419,6 +431,7 @@ package elb {
   }
 
   object ApplySecurityGroupsToLoadBalancerOutput {
+    @inline
     def apply(
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): ApplySecurityGroupsToLoadBalancerOutput = {
@@ -438,6 +451,7 @@ package elb {
   }
 
   object AttachLoadBalancerToSubnetsInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
@@ -460,6 +474,7 @@ package elb {
   }
 
   object AttachLoadBalancerToSubnetsOutput {
+    @inline
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): AttachLoadBalancerToSubnetsOutput = {
@@ -479,6 +494,7 @@ package elb {
   }
 
   object BackendServerDescription {
+    @inline
     def apply(
         InstancePort: js.UndefOr[InstancePort] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
@@ -500,6 +516,7 @@ package elb {
   }
 
   object ConfigureHealthCheckInput {
+    @inline
     def apply(
         HealthCheck: HealthCheck,
         LoadBalancerName: AccessPointName
@@ -522,6 +539,7 @@ package elb {
   }
 
   object ConfigureHealthCheckOutput {
+    @inline
     def apply(
         HealthCheck: js.UndefOr[HealthCheck] = js.undefined
     ): ConfigureHealthCheckOutput = {
@@ -541,6 +559,7 @@ package elb {
   }
 
   object ConnectionDraining {
+    @inline
     def apply(
         Enabled: ConnectionDrainingEnabled,
         Timeout: js.UndefOr[ConnectionDrainingTimeout] = js.undefined
@@ -563,6 +582,7 @@ package elb {
   }
 
   object ConnectionSettings {
+    @inline
     def apply(
         IdleTimeout: IdleTimeout
     ): ConnectionSettings = {
@@ -589,6 +609,7 @@ package elb {
   }
 
   object CreateAccessPointInput {
+    @inline
     def apply(
         Listeners: Listeners,
         LoadBalancerName: AccessPointName,
@@ -621,6 +642,7 @@ package elb {
   }
 
   object CreateAccessPointOutput {
+    @inline
     def apply(
         DNSName: js.UndefOr[DNSName] = js.undefined
     ): CreateAccessPointOutput = {
@@ -641,6 +663,7 @@ package elb {
   }
 
   object CreateAppCookieStickinessPolicyInput {
+    @inline
     def apply(
         CookieName: CookieName,
         LoadBalancerName: AccessPointName,
@@ -663,6 +686,7 @@ package elb {
   trait CreateAppCookieStickinessPolicyOutput extends js.Object {}
 
   object CreateAppCookieStickinessPolicyOutput {
+    @inline
     def apply(
         ): CreateAppCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -682,6 +706,7 @@ package elb {
   }
 
   object CreateLBCookieStickinessPolicyInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName,
@@ -704,6 +729,7 @@ package elb {
   trait CreateLBCookieStickinessPolicyOutput extends js.Object {}
 
   object CreateLBCookieStickinessPolicyOutput {
+    @inline
     def apply(
         ): CreateLBCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -722,6 +748,7 @@ package elb {
   }
 
   object CreateLoadBalancerListenerInput {
+    @inline
     def apply(
         Listeners: Listeners,
         LoadBalancerName: AccessPointName
@@ -742,6 +769,7 @@ package elb {
   trait CreateLoadBalancerListenerOutput extends js.Object {}
 
   object CreateLoadBalancerListenerOutput {
+    @inline
     def apply(
         ): CreateLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
@@ -762,6 +790,7 @@ package elb {
   }
 
   object CreateLoadBalancerPolicyInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName,
@@ -786,6 +815,7 @@ package elb {
   trait CreateLoadBalancerPolicyOutput extends js.Object {}
 
   object CreateLoadBalancerPolicyOutput {
+    @inline
     def apply(
         ): CreateLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -803,6 +833,7 @@ package elb {
   }
 
   object CrossZoneLoadBalancing {
+    @inline
     def apply(
         Enabled: CrossZoneLoadBalancingEnabled
     ): CrossZoneLoadBalancing = {
@@ -823,6 +854,7 @@ package elb {
   }
 
   object DeleteAccessPointInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName
     ): DeleteAccessPointInput = {
@@ -841,6 +873,7 @@ package elb {
   trait DeleteAccessPointOutput extends js.Object {}
 
   object DeleteAccessPointOutput {
+    @inline
     def apply(
         ): DeleteAccessPointOutput = {
       val __obj = js.Dynamic.literal()
@@ -859,6 +892,7 @@ package elb {
   }
 
   object DeleteLoadBalancerListenerInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         LoadBalancerPorts: Ports
@@ -879,6 +913,7 @@ package elb {
   trait DeleteLoadBalancerListenerOutput extends js.Object {}
 
   object DeleteLoadBalancerListenerOutput {
+    @inline
     def apply(
         ): DeleteLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
@@ -897,6 +932,7 @@ package elb {
   }
 
   object DeleteLoadBalancerPolicyInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName
@@ -917,6 +953,7 @@ package elb {
   trait DeleteLoadBalancerPolicyOutput extends js.Object {}
 
   object DeleteLoadBalancerPolicyOutput {
+    @inline
     def apply(
         ): DeleteLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -935,6 +972,7 @@ package elb {
   }
 
   object DeregisterEndPointsInput {
+    @inline
     def apply(
         Instances: Instances,
         LoadBalancerName: AccessPointName
@@ -957,6 +995,7 @@ package elb {
   }
 
   object DeregisterEndPointsOutput {
+    @inline
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): DeregisterEndPointsOutput = {
@@ -977,6 +1016,7 @@ package elb {
   }
 
   object DescribeAccessPointsInput {
+    @inline
     def apply(
         LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -1000,6 +1040,7 @@ package elb {
   }
 
   object DescribeAccessPointsOutput {
+    @inline
     def apply(
         LoadBalancerDescriptions: js.UndefOr[LoadBalancerDescriptions] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -1018,6 +1059,7 @@ package elb {
   }
 
   object DescribeAccountLimitsInput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
@@ -1036,6 +1078,7 @@ package elb {
   }
 
   object DescribeAccountLimitsOutput {
+    @inline
     def apply(
         Limits: js.UndefOr[Limits] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -1057,6 +1100,7 @@ package elb {
   }
 
   object DescribeEndPointStateInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         Instances: js.UndefOr[Instances] = js.undefined
@@ -1079,6 +1123,7 @@ package elb {
   }
 
   object DescribeEndPointStateOutput {
+    @inline
     def apply(
         InstanceStates: js.UndefOr[InstanceStates] = js.undefined
     ): DescribeEndPointStateOutput = {
@@ -1097,6 +1142,7 @@ package elb {
   }
 
   object DescribeLoadBalancerAttributesInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName
     ): DescribeLoadBalancerAttributesInput = {
@@ -1117,6 +1163,7 @@ package elb {
   }
 
   object DescribeLoadBalancerAttributesOutput {
+    @inline
     def apply(
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined
     ): DescribeLoadBalancerAttributesOutput = {
@@ -1136,6 +1183,7 @@ package elb {
   }
 
   object DescribeLoadBalancerPoliciesInput {
+    @inline
     def apply(
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
@@ -1156,6 +1204,7 @@ package elb {
   }
 
   object DescribeLoadBalancerPoliciesOutput {
+    @inline
     def apply(
         PolicyDescriptions: js.UndefOr[PolicyDescriptions] = js.undefined
     ): DescribeLoadBalancerPoliciesOutput = {
@@ -1174,6 +1223,7 @@ package elb {
   }
 
   object DescribeLoadBalancerPolicyTypesInput {
+    @inline
     def apply(
         PolicyTypeNames: js.UndefOr[PolicyTypeNames] = js.undefined
     ): DescribeLoadBalancerPolicyTypesInput = {
@@ -1192,6 +1242,7 @@ package elb {
   }
 
   object DescribeLoadBalancerPolicyTypesOutput {
+    @inline
     def apply(
         PolicyTypeDescriptions: js.UndefOr[PolicyTypeDescriptions] = js.undefined
     ): DescribeLoadBalancerPolicyTypesOutput = {
@@ -1210,6 +1261,7 @@ package elb {
   }
 
   object DescribeTagsInput {
+    @inline
     def apply(
         LoadBalancerNames: LoadBalancerNamesMax20
     ): DescribeTagsInput = {
@@ -1230,6 +1282,7 @@ package elb {
   }
 
   object DescribeTagsOutput {
+    @inline
     def apply(
         TagDescriptions: js.UndefOr[TagDescriptions] = js.undefined
     ): DescribeTagsOutput = {
@@ -1249,6 +1302,7 @@ package elb {
   }
 
   object DetachLoadBalancerFromSubnetsInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
@@ -1271,6 +1325,7 @@ package elb {
   }
 
   object DetachLoadBalancerFromSubnetsOutput {
+    @inline
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): DetachLoadBalancerFromSubnetsOutput = {
@@ -1293,6 +1348,7 @@ package elb {
   }
 
   object HealthCheck {
+    @inline
     def apply(
         HealthyThreshold: HealthyThreshold,
         Interval: HealthCheckInterval,
@@ -1321,6 +1377,7 @@ package elb {
   }
 
   object Instance {
+    @inline
     def apply(
         InstanceId: js.UndefOr[InstanceId] = js.undefined
     ): Instance = {
@@ -1342,6 +1399,7 @@ package elb {
   }
 
   object InstanceState {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -1367,6 +1425,7 @@ package elb {
   }
 
   object LBCookieStickinessPolicy {
+    @inline
     def apply(
         CookieExpirationPeriod: js.UndefOr[CookieExpirationPeriod] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
@@ -1388,6 +1447,7 @@ package elb {
   }
 
   object Limit {
+    @inline
     def apply(
         Max: js.UndefOr[Max] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
@@ -1413,6 +1473,7 @@ package elb {
   }
 
   object Listener {
+    @inline
     def apply(
         InstancePort: InstancePort,
         LoadBalancerPort: AccessPointPort,
@@ -1442,6 +1503,7 @@ package elb {
   }
 
   object ListenerDescription {
+    @inline
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
@@ -1466,6 +1528,7 @@ package elb {
   }
 
   object LoadBalancerAttributes {
+    @inline
     def apply(
         AccessLog: js.UndefOr[AccessLog] = js.undefined,
         AdditionalAttributes: js.UndefOr[AdditionalAttributes] = js.undefined,
@@ -1507,6 +1570,7 @@ package elb {
   }
 
   object LoadBalancerDescription {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BackendServerDescriptions: js.UndefOr[BackendServerDescriptions] = js.undefined,
@@ -1560,6 +1624,7 @@ package elb {
   }
 
   object ModifyLoadBalancerAttributesInput {
+    @inline
     def apply(
         LoadBalancerAttributes: LoadBalancerAttributes,
         LoadBalancerName: AccessPointName
@@ -1583,6 +1648,7 @@ package elb {
   }
 
   object ModifyLoadBalancerAttributesOutput {
+    @inline
     def apply(
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined,
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined
@@ -1605,6 +1671,7 @@ package elb {
   }
 
   object Policies {
+    @inline
     def apply(
         AppCookieStickinessPolicies: js.UndefOr[AppCookieStickinessPolicies] = js.undefined,
         LBCookieStickinessPolicies: js.UndefOr[LBCookieStickinessPolicies] = js.undefined,
@@ -1632,6 +1699,7 @@ package elb {
   }
 
   object PolicyAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
@@ -1653,6 +1721,7 @@ package elb {
   }
 
   object PolicyAttributeDescription {
+    @inline
     def apply(
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
@@ -1677,6 +1746,7 @@ package elb {
   }
 
   object PolicyAttributeTypeDescription {
+    @inline
     def apply(
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeType: js.UndefOr[AttributeType] = js.undefined,
@@ -1705,6 +1775,7 @@ package elb {
   }
 
   object PolicyDescription {
+    @inline
     def apply(
         PolicyAttributeDescriptions: js.UndefOr[PolicyAttributeDescriptions] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined,
@@ -1731,6 +1802,7 @@ package elb {
   }
 
   object PolicyTypeDescription {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         PolicyAttributeTypeDescriptions: js.UndefOr[PolicyAttributeTypeDescriptions] = js.undefined,
@@ -1756,6 +1828,7 @@ package elb {
   }
 
   object RegisterEndPointsInput {
+    @inline
     def apply(
         Instances: Instances,
         LoadBalancerName: AccessPointName
@@ -1778,6 +1851,7 @@ package elb {
   }
 
   object RegisterEndPointsOutput {
+    @inline
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): RegisterEndPointsOutput = {
@@ -1797,6 +1871,7 @@ package elb {
   }
 
   object RemoveAvailabilityZonesInput {
+    @inline
     def apply(
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
@@ -1819,6 +1894,7 @@ package elb {
   }
 
   object RemoveAvailabilityZonesOutput {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): RemoveAvailabilityZonesOutput = {
@@ -1838,6 +1914,7 @@ package elb {
   }
 
   object RemoveTagsInput {
+    @inline
     def apply(
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagKeyList
@@ -1858,6 +1935,7 @@ package elb {
   trait RemoveTagsOutput extends js.Object {}
 
   object RemoveTagsOutput {
+    @inline
     def apply(
         ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -1877,6 +1955,7 @@ package elb {
   }
 
   object SetLoadBalancerListenerSSLCertificateInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         LoadBalancerPort: AccessPointPort,
@@ -1899,6 +1978,7 @@ package elb {
   trait SetLoadBalancerListenerSSLCertificateOutput extends js.Object {}
 
   object SetLoadBalancerListenerSSLCertificateOutput {
+    @inline
     def apply(
         ): SetLoadBalancerListenerSSLCertificateOutput = {
       val __obj = js.Dynamic.literal()
@@ -1918,6 +1998,7 @@ package elb {
   }
 
   object SetLoadBalancerPoliciesForBackendServerInput {
+    @inline
     def apply(
         InstancePort: EndPointPort,
         LoadBalancerName: AccessPointName,
@@ -1940,6 +2021,7 @@ package elb {
   trait SetLoadBalancerPoliciesForBackendServerOutput extends js.Object {}
 
   object SetLoadBalancerPoliciesForBackendServerOutput {
+    @inline
     def apply(
         ): SetLoadBalancerPoliciesForBackendServerOutput = {
       val __obj = js.Dynamic.literal()
@@ -1959,6 +2041,7 @@ package elb {
   }
 
   object SetLoadBalancerPoliciesOfListenerInput {
+    @inline
     def apply(
         LoadBalancerName: AccessPointName,
         LoadBalancerPort: AccessPointPort,
@@ -1981,6 +2064,7 @@ package elb {
   trait SetLoadBalancerPoliciesOfListenerOutput extends js.Object {}
 
   object SetLoadBalancerPoliciesOfListenerOutput {
+    @inline
     def apply(
         ): SetLoadBalancerPoliciesOfListenerOutput = {
       val __obj = js.Dynamic.literal()
@@ -1999,6 +2083,7 @@ package elb {
   }
 
   object SourceSecurityGroup {
+    @inline
     def apply(
         GroupName: js.UndefOr[SecurityGroupName] = js.undefined,
         OwnerAlias: js.UndefOr[SecurityGroupOwnerAlias] = js.undefined
@@ -2020,6 +2105,7 @@ package elb {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -2043,6 +2129,7 @@ package elb {
   }
 
   object TagDescription {
+    @inline
     def apply(
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -2063,6 +2150,7 @@ package elb {
   }
 
   object TagKeyOnly {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined
     ): TagKeyOnly = {

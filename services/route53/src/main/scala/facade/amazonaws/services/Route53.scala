@@ -129,147 +129,153 @@ package object route53 {
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
 
-    def associateVPCWithHostedZoneFuture(
+    @inline def associateVPCWithHostedZoneFuture(
         params: AssociateVPCWithHostedZoneRequest
     ): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise.toFuture
-    def changeResourceRecordSetsFuture(
+    @inline def changeResourceRecordSetsFuture(
         params: ChangeResourceRecordSetsRequest
     ): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise.toFuture
-    def changeTagsForResourceFuture(params: ChangeTagsForResourceRequest): Future[ChangeTagsForResourceResponse] =
-      service.changeTagsForResource(params).promise.toFuture
-    def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] =
+    @inline def changeTagsForResourceFuture(
+        params: ChangeTagsForResourceRequest
+    ): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise.toFuture
+    @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] =
       service.createHealthCheck(params).promise.toFuture
-    def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] =
+    @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] =
       service.createHostedZone(params).promise.toFuture
-    def createQueryLoggingConfigFuture(
+    @inline def createQueryLoggingConfigFuture(
         params: CreateQueryLoggingConfigRequest
     ): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise.toFuture
-    def createReusableDelegationSetFuture(
+    @inline def createReusableDelegationSetFuture(
         params: CreateReusableDelegationSetRequest
     ): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise.toFuture
-    def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] =
+    @inline def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] =
       service.createTrafficPolicy(params).promise.toFuture
-    def createTrafficPolicyInstanceFuture(
+    @inline def createTrafficPolicyInstanceFuture(
         params: CreateTrafficPolicyInstanceRequest
     ): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise.toFuture
-    def createTrafficPolicyVersionFuture(
+    @inline def createTrafficPolicyVersionFuture(
         params: CreateTrafficPolicyVersionRequest
     ): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise.toFuture
-    def createVPCAssociationAuthorizationFuture(
+    @inline def createVPCAssociationAuthorizationFuture(
         params: CreateVPCAssociationAuthorizationRequest
     ): Future[CreateVPCAssociationAuthorizationResponse] =
       service.createVPCAssociationAuthorization(params).promise.toFuture
-    def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] =
+    @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] =
       service.deleteHealthCheck(params).promise.toFuture
-    def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] =
+    @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] =
       service.deleteHostedZone(params).promise.toFuture
-    def deleteQueryLoggingConfigFuture(
+    @inline def deleteQueryLoggingConfigFuture(
         params: DeleteQueryLoggingConfigRequest
     ): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise.toFuture
-    def deleteReusableDelegationSetFuture(
+    @inline def deleteReusableDelegationSetFuture(
         params: DeleteReusableDelegationSetRequest
     ): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise.toFuture
-    def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] =
+    @inline def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] =
       service.deleteTrafficPolicy(params).promise.toFuture
-    def deleteTrafficPolicyInstanceFuture(
+    @inline def deleteTrafficPolicyInstanceFuture(
         params: DeleteTrafficPolicyInstanceRequest
     ): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise.toFuture
-    def deleteVPCAssociationAuthorizationFuture(
+    @inline def deleteVPCAssociationAuthorizationFuture(
         params: DeleteVPCAssociationAuthorizationRequest
     ): Future[DeleteVPCAssociationAuthorizationResponse] =
       service.deleteVPCAssociationAuthorization(params).promise.toFuture
-    def disassociateVPCFromHostedZoneFuture(
+    @inline def disassociateVPCFromHostedZoneFuture(
         params: DisassociateVPCFromHostedZoneRequest
     ): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise.toFuture
-    def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] =
+    @inline def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] =
       service.getAccountLimit(params).promise.toFuture
-    def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] =
+    @inline def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] =
       service.getChange(params).promise.toFuture
-    def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] =
+    @inline def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] =
       service.getCheckerIpRanges(params).promise.toFuture
-    def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] =
+    @inline def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] =
       service.getGeoLocation(params).promise.toFuture
-    def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] =
+    @inline def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] =
       service.getHealthCheckCount(params).promise.toFuture
-    def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] =
+    @inline def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] =
       service.getHealthCheck(params).promise.toFuture
-    def getHealthCheckLastFailureReasonFuture(
+    @inline def getHealthCheckLastFailureReasonFuture(
         params: GetHealthCheckLastFailureReasonRequest
     ): Future[GetHealthCheckLastFailureReasonResponse] =
       service.getHealthCheckLastFailureReason(params).promise.toFuture
-    def getHealthCheckStatusFuture(params: GetHealthCheckStatusRequest): Future[GetHealthCheckStatusResponse] =
+    @inline def getHealthCheckStatusFuture(params: GetHealthCheckStatusRequest): Future[GetHealthCheckStatusResponse] =
       service.getHealthCheckStatus(params).promise.toFuture
-    def getHostedZoneCountFuture(params: GetHostedZoneCountRequest): Future[GetHostedZoneCountResponse] =
+    @inline def getHostedZoneCountFuture(params: GetHostedZoneCountRequest): Future[GetHostedZoneCountResponse] =
       service.getHostedZoneCount(params).promise.toFuture
-    def getHostedZoneFuture(params: GetHostedZoneRequest): Future[GetHostedZoneResponse] =
+    @inline def getHostedZoneFuture(params: GetHostedZoneRequest): Future[GetHostedZoneResponse] =
       service.getHostedZone(params).promise.toFuture
-    def getHostedZoneLimitFuture(params: GetHostedZoneLimitRequest): Future[GetHostedZoneLimitResponse] =
+    @inline def getHostedZoneLimitFuture(params: GetHostedZoneLimitRequest): Future[GetHostedZoneLimitResponse] =
       service.getHostedZoneLimit(params).promise.toFuture
-    def getQueryLoggingConfigFuture(params: GetQueryLoggingConfigRequest): Future[GetQueryLoggingConfigResponse] =
-      service.getQueryLoggingConfig(params).promise.toFuture
-    def getReusableDelegationSetFuture(
+    @inline def getQueryLoggingConfigFuture(
+        params: GetQueryLoggingConfigRequest
+    ): Future[GetQueryLoggingConfigResponse] = service.getQueryLoggingConfig(params).promise.toFuture
+    @inline def getReusableDelegationSetFuture(
         params: GetReusableDelegationSetRequest
     ): Future[GetReusableDelegationSetResponse] = service.getReusableDelegationSet(params).promise.toFuture
-    def getReusableDelegationSetLimitFuture(
+    @inline def getReusableDelegationSetLimitFuture(
         params: GetReusableDelegationSetLimitRequest
     ): Future[GetReusableDelegationSetLimitResponse] = service.getReusableDelegationSetLimit(params).promise.toFuture
-    def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] =
+    @inline def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] =
       service.getTrafficPolicy(params).promise.toFuture
-    def getTrafficPolicyInstanceCountFuture(
+    @inline def getTrafficPolicyInstanceCountFuture(
         params: GetTrafficPolicyInstanceCountRequest
     ): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise.toFuture
-    def getTrafficPolicyInstanceFuture(
+    @inline def getTrafficPolicyInstanceFuture(
         params: GetTrafficPolicyInstanceRequest
     ): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise.toFuture
-    def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] =
+    @inline def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] =
       service.listGeoLocations(params).promise.toFuture
-    def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] =
+    @inline def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] =
       service.listHealthChecks(params).promise.toFuture
-    def listHostedZonesByNameFuture(params: ListHostedZonesByNameRequest): Future[ListHostedZonesByNameResponse] =
-      service.listHostedZonesByName(params).promise.toFuture
-    def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] =
+    @inline def listHostedZonesByNameFuture(
+        params: ListHostedZonesByNameRequest
+    ): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise.toFuture
+    @inline def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] =
       service.listHostedZones(params).promise.toFuture
-    def listQueryLoggingConfigsFuture(params: ListQueryLoggingConfigsRequest): Future[ListQueryLoggingConfigsResponse] =
-      service.listQueryLoggingConfigs(params).promise.toFuture
-    def listResourceRecordSetsFuture(params: ListResourceRecordSetsRequest): Future[ListResourceRecordSetsResponse] =
-      service.listResourceRecordSets(params).promise.toFuture
-    def listReusableDelegationSetsFuture(
+    @inline def listQueryLoggingConfigsFuture(
+        params: ListQueryLoggingConfigsRequest
+    ): Future[ListQueryLoggingConfigsResponse] = service.listQueryLoggingConfigs(params).promise.toFuture
+    @inline def listResourceRecordSetsFuture(
+        params: ListResourceRecordSetsRequest
+    ): Future[ListResourceRecordSetsResponse] = service.listResourceRecordSets(params).promise.toFuture
+    @inline def listReusableDelegationSetsFuture(
         params: ListReusableDelegationSetsRequest
     ): Future[ListReusableDelegationSetsResponse] = service.listReusableDelegationSets(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTagsForResourcesFuture(params: ListTagsForResourcesRequest): Future[ListTagsForResourcesResponse] =
+    @inline def listTagsForResourcesFuture(params: ListTagsForResourcesRequest): Future[ListTagsForResourcesResponse] =
       service.listTagsForResources(params).promise.toFuture
-    def listTrafficPoliciesFuture(params: ListTrafficPoliciesRequest): Future[ListTrafficPoliciesResponse] =
+    @inline def listTrafficPoliciesFuture(params: ListTrafficPoliciesRequest): Future[ListTrafficPoliciesResponse] =
       service.listTrafficPolicies(params).promise.toFuture
-    def listTrafficPolicyInstancesByHostedZoneFuture(
+    @inline def listTrafficPolicyInstancesByHostedZoneFuture(
         params: ListTrafficPolicyInstancesByHostedZoneRequest
     ): Future[ListTrafficPolicyInstancesByHostedZoneResponse] =
       service.listTrafficPolicyInstancesByHostedZone(params).promise.toFuture
-    def listTrafficPolicyInstancesByPolicyFuture(
+    @inline def listTrafficPolicyInstancesByPolicyFuture(
         params: ListTrafficPolicyInstancesByPolicyRequest
     ): Future[ListTrafficPolicyInstancesByPolicyResponse] =
       service.listTrafficPolicyInstancesByPolicy(params).promise.toFuture
-    def listTrafficPolicyInstancesFuture(
+    @inline def listTrafficPolicyInstancesFuture(
         params: ListTrafficPolicyInstancesRequest
     ): Future[ListTrafficPolicyInstancesResponse] = service.listTrafficPolicyInstances(params).promise.toFuture
-    def listTrafficPolicyVersionsFuture(
+    @inline def listTrafficPolicyVersionsFuture(
         params: ListTrafficPolicyVersionsRequest
     ): Future[ListTrafficPolicyVersionsResponse] = service.listTrafficPolicyVersions(params).promise.toFuture
-    def listVPCAssociationAuthorizationsFuture(
+    @inline def listVPCAssociationAuthorizationsFuture(
         params: ListVPCAssociationAuthorizationsRequest
     ): Future[ListVPCAssociationAuthorizationsResponse] =
       service.listVPCAssociationAuthorizations(params).promise.toFuture
-    def testDNSAnswerFuture(params: TestDNSAnswerRequest): Future[TestDNSAnswerResponse] =
+    @inline def testDNSAnswerFuture(params: TestDNSAnswerRequest): Future[TestDNSAnswerResponse] =
       service.testDNSAnswer(params).promise.toFuture
-    def updateHealthCheckFuture(params: UpdateHealthCheckRequest): Future[UpdateHealthCheckResponse] =
+    @inline def updateHealthCheckFuture(params: UpdateHealthCheckRequest): Future[UpdateHealthCheckResponse] =
       service.updateHealthCheck(params).promise.toFuture
-    def updateHostedZoneCommentFuture(params: UpdateHostedZoneCommentRequest): Future[UpdateHostedZoneCommentResponse] =
-      service.updateHostedZoneComment(params).promise.toFuture
-    def updateTrafficPolicyCommentFuture(
+    @inline def updateHostedZoneCommentFuture(
+        params: UpdateHostedZoneCommentRequest
+    ): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise.toFuture
+    @inline def updateTrafficPolicyCommentFuture(
         params: UpdateTrafficPolicyCommentRequest
     ): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise.toFuture
-    def updateTrafficPolicyInstanceFuture(
+    @inline def updateTrafficPolicyInstanceFuture(
         params: UpdateTrafficPolicyInstanceRequest
     ): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise.toFuture
   }
@@ -397,6 +403,7 @@ package route53 {
   }
 
   object AccountLimit {
+    @inline
     def apply(
         Type: AccountLimitType,
         Value: LimitValue
@@ -438,6 +445,7 @@ package route53 {
   }
 
   object AlarmIdentifier {
+    @inline
     def apply(
         Name: AlarmName,
         Region: CloudWatchRegion
@@ -465,6 +473,7 @@ package route53 {
   }
 
   object AliasTarget {
+    @inline
     def apply(
         DNSName: DNSName,
         EvaluateTargetHealth: AliasHealthEnabled,
@@ -491,6 +500,7 @@ package route53 {
   }
 
   object AssociateVPCWithHostedZoneRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPC: VPC,
@@ -515,6 +525,7 @@ package route53 {
   }
 
   object AssociateVPCWithHostedZoneResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo
     ): AssociateVPCWithHostedZoneResponse = {
@@ -536,6 +547,7 @@ package route53 {
   }
 
   object Change {
+    @inline
     def apply(
         Action: ChangeAction,
         ResourceRecordSet: ResourceRecordSet
@@ -567,6 +579,7 @@ package route53 {
   }
 
   object ChangeBatch {
+    @inline
     def apply(
         Changes: Changes,
         Comment: js.UndefOr[ResourceDescription] = js.undefined
@@ -592,6 +605,7 @@ package route53 {
   }
 
   object ChangeInfo {
+    @inline
     def apply(
         Id: ResourceId,
         Status: ChangeStatus,
@@ -619,6 +633,7 @@ package route53 {
   }
 
   object ChangeResourceRecordSetsRequest {
+    @inline
     def apply(
         ChangeBatch: ChangeBatch,
         HostedZoneId: ResourceId
@@ -641,6 +656,7 @@ package route53 {
   }
 
   object ChangeResourceRecordSetsResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo
     ): ChangeResourceRecordSetsResponse = {
@@ -671,6 +687,7 @@ package route53 {
   }
 
   object ChangeTagsForResourceRequest {
+    @inline
     def apply(
         ResourceId: TagResourceId,
         ResourceType: TagResourceType,
@@ -695,6 +712,7 @@ package route53 {
   trait ChangeTagsForResourceResponse extends js.Object {}
 
   object ChangeTagsForResourceResponse {
+    @inline
     def apply(
         ): ChangeTagsForResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -719,6 +737,7 @@ package route53 {
   }
 
   object CloudWatchAlarmConfiguration {
+    @inline
     def apply(
         ComparisonOperator: ComparisonOperator,
         EvaluationPeriods: EvaluationPeriods,
@@ -815,6 +834,7 @@ package route53 {
   }
 
   object CreateHealthCheckRequest {
+    @inline
     def apply(
         CallerReference: HealthCheckNonce,
         HealthCheckConfig: HealthCheckConfig
@@ -838,6 +858,7 @@ package route53 {
   }
 
   object CreateHealthCheckResponse {
+    @inline
     def apply(
         HealthCheck: HealthCheck,
         Location: ResourceURI
@@ -864,6 +885,7 @@ package route53 {
   }
 
   object CreateHostedZoneRequest {
+    @inline
     def apply(
         CallerReference: Nonce,
         Name: DNSName,
@@ -896,6 +918,7 @@ package route53 {
   }
 
   object CreateHostedZoneResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo,
         DelegationSet: DelegationSet,
@@ -922,6 +945,7 @@ package route53 {
   }
 
   object CreateQueryLoggingConfigRequest {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: CloudWatchLogsLogGroupArn,
         HostedZoneId: ResourceId
@@ -942,6 +966,7 @@ package route53 {
   }
 
   object CreateQueryLoggingConfigResponse {
+    @inline
     def apply(
         Location: ResourceURI,
         QueryLoggingConfig: QueryLoggingConfig
@@ -962,6 +987,7 @@ package route53 {
   }
 
   object CreateReusableDelegationSetRequest {
+    @inline
     def apply(
         CallerReference: Nonce,
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined
@@ -982,6 +1008,7 @@ package route53 {
   }
 
   object CreateReusableDelegationSetResponse {
+    @inline
     def apply(
         DelegationSet: DelegationSet,
         Location: ResourceURI
@@ -1008,6 +1035,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyInstanceRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         Name: DNSName,
@@ -1037,6 +1065,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyInstanceResponse {
+    @inline
     def apply(
         Location: ResourceURI,
         TrafficPolicyInstance: TrafficPolicyInstance
@@ -1061,6 +1090,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyRequest {
+    @inline
     def apply(
         Document: TrafficPolicyDocument,
         Name: TrafficPolicyName,
@@ -1086,6 +1116,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyResponse {
+    @inline
     def apply(
         Location: ResourceURI,
         TrafficPolicy: TrafficPolicy
@@ -1110,6 +1141,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyVersionRequest {
+    @inline
     def apply(
         Document: TrafficPolicyDocument,
         Id: TrafficPolicyId,
@@ -1135,6 +1167,7 @@ package route53 {
   }
 
   object CreateTrafficPolicyVersionResponse {
+    @inline
     def apply(
         Location: ResourceURI,
         TrafficPolicy: TrafficPolicy
@@ -1158,6 +1191,7 @@ package route53 {
   }
 
   object CreateVPCAssociationAuthorizationRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPC: VPC
@@ -1181,6 +1215,7 @@ package route53 {
   }
 
   object CreateVPCAssociationAuthorizationResponse {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPC: VPC
@@ -1205,6 +1240,7 @@ package route53 {
   }
 
   object DelegationSet {
+    @inline
     def apply(
         NameServers: DelegationSetNameServers,
         CallerReference: js.UndefOr[Nonce] = js.undefined,
@@ -1229,6 +1265,7 @@ package route53 {
   }
 
   object DeleteHealthCheckRequest {
+    @inline
     def apply(
         HealthCheckId: HealthCheckId
     ): DeleteHealthCheckRequest = {
@@ -1247,6 +1284,7 @@ package route53 {
   trait DeleteHealthCheckResponse extends js.Object {}
 
   object DeleteHealthCheckResponse {
+    @inline
     def apply(
         ): DeleteHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
@@ -1264,6 +1302,7 @@ package route53 {
   }
 
   object DeleteHostedZoneRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): DeleteHostedZoneRequest = {
@@ -1284,6 +1323,7 @@ package route53 {
   }
 
   object DeleteHostedZoneResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo
     ): DeleteHostedZoneResponse = {
@@ -1301,6 +1341,7 @@ package route53 {
   }
 
   object DeleteQueryLoggingConfigRequest {
+    @inline
     def apply(
         Id: QueryLoggingConfigId
     ): DeleteQueryLoggingConfigRequest = {
@@ -1316,6 +1357,7 @@ package route53 {
   trait DeleteQueryLoggingConfigResponse extends js.Object {}
 
   object DeleteQueryLoggingConfigResponse {
+    @inline
     def apply(
         ): DeleteQueryLoggingConfigResponse = {
       val __obj = js.Dynamic.literal()
@@ -1333,6 +1375,7 @@ package route53 {
   }
 
   object DeleteReusableDelegationSetRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): DeleteReusableDelegationSetRequest = {
@@ -1351,6 +1394,7 @@ package route53 {
   trait DeleteReusableDelegationSetResponse extends js.Object {}
 
   object DeleteReusableDelegationSetResponse {
+    @inline
     def apply(
         ): DeleteReusableDelegationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1368,6 +1412,7 @@ package route53 {
   }
 
   object DeleteTrafficPolicyInstanceRequest {
+    @inline
     def apply(
         Id: TrafficPolicyInstanceId
     ): DeleteTrafficPolicyInstanceRequest = {
@@ -1386,6 +1431,7 @@ package route53 {
   trait DeleteTrafficPolicyInstanceResponse extends js.Object {}
 
   object DeleteTrafficPolicyInstanceResponse {
+    @inline
     def apply(
         ): DeleteTrafficPolicyInstanceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1404,6 +1450,7 @@ package route53 {
   }
 
   object DeleteTrafficPolicyRequest {
+    @inline
     def apply(
         Id: TrafficPolicyId,
         Version: TrafficPolicyVersion
@@ -1424,6 +1471,7 @@ package route53 {
   trait DeleteTrafficPolicyResponse extends js.Object {}
 
   object DeleteTrafficPolicyResponse {
+    @inline
     def apply(
         ): DeleteTrafficPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1442,6 +1490,7 @@ package route53 {
   }
 
   object DeleteVPCAssociationAuthorizationRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPC: VPC
@@ -1462,6 +1511,7 @@ package route53 {
   trait DeleteVPCAssociationAuthorizationResponse extends js.Object {}
 
   object DeleteVPCAssociationAuthorizationResponse {
+    @inline
     def apply(
         ): DeleteVPCAssociationAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1480,6 +1530,7 @@ package route53 {
   }
 
   object Dimension {
+    @inline
     def apply(
         Name: DimensionField,
         Value: DimensionField
@@ -1504,6 +1555,7 @@ package route53 {
   }
 
   object DisassociateVPCFromHostedZoneRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPC: VPC,
@@ -1528,6 +1580,7 @@ package route53 {
   }
 
   object DisassociateVPCFromHostedZoneResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo
     ): DisassociateVPCFromHostedZoneResponse = {
@@ -1550,6 +1603,7 @@ package route53 {
   }
 
   object GeoLocation {
+    @inline
     def apply(
         ContinentCode: js.UndefOr[GeoLocationContinentCode] = js.undefined,
         CountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
@@ -1577,6 +1631,7 @@ package route53 {
   }
 
   object GeoLocationDetails {
+    @inline
     def apply(
         ContinentCode: js.UndefOr[GeoLocationContinentCode] = js.undefined,
         ContinentName: js.UndefOr[GeoLocationContinentName] = js.undefined,
@@ -1605,6 +1660,7 @@ package route53 {
   }
 
   object GetAccountLimitRequest {
+    @inline
     def apply(
         Type: AccountLimitType
     ): GetAccountLimitRequest = {
@@ -1626,6 +1682,7 @@ package route53 {
   }
 
   object GetAccountLimitResponse {
+    @inline
     def apply(
         Count: UsageCount,
         Limit: AccountLimit
@@ -1648,6 +1705,7 @@ package route53 {
   }
 
   object GetChangeRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): GetChangeRequest = {
@@ -1668,6 +1726,7 @@ package route53 {
   }
 
   object GetChangeResponse {
+    @inline
     def apply(
         ChangeInfo: ChangeInfo
     ): GetChangeResponse = {
@@ -1686,6 +1745,7 @@ package route53 {
   trait GetCheckerIpRangesRequest extends js.Object {}
 
   object GetCheckerIpRangesRequest {
+    @inline
     def apply(
         ): GetCheckerIpRangesRequest = {
       val __obj = js.Dynamic.literal()
@@ -1703,6 +1763,7 @@ package route53 {
   }
 
   object GetCheckerIpRangesResponse {
+    @inline
     def apply(
         CheckerIpRanges: CheckerIpRanges
     ): GetCheckerIpRangesResponse = {
@@ -1725,6 +1786,7 @@ package route53 {
   }
 
   object GetGeoLocationRequest {
+    @inline
     def apply(
         ContinentCode: js.UndefOr[GeoLocationContinentCode] = js.undefined,
         CountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
@@ -1747,6 +1809,7 @@ package route53 {
   }
 
   object GetGeoLocationResponse {
+    @inline
     def apply(
         GeoLocationDetails: GeoLocationDetails
     ): GetGeoLocationResponse = {
@@ -1765,6 +1828,7 @@ package route53 {
   trait GetHealthCheckCountRequest extends js.Object {}
 
   object GetHealthCheckCountRequest {
+    @inline
     def apply(
         ): GetHealthCheckCountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1782,6 +1846,7 @@ package route53 {
   }
 
   object GetHealthCheckCountResponse {
+    @inline
     def apply(
         HealthCheckCount: HealthCheckCount
     ): GetHealthCheckCountResponse = {
@@ -1802,6 +1867,7 @@ package route53 {
   }
 
   object GetHealthCheckLastFailureReasonRequest {
+    @inline
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckLastFailureReasonRequest = {
@@ -1822,6 +1888,7 @@ package route53 {
   }
 
   object GetHealthCheckLastFailureReasonResponse {
+    @inline
     def apply(
         HealthCheckObservations: HealthCheckObservations
     ): GetHealthCheckLastFailureReasonResponse = {
@@ -1842,6 +1909,7 @@ package route53 {
   }
 
   object GetHealthCheckRequest {
+    @inline
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckRequest = {
@@ -1862,6 +1930,7 @@ package route53 {
   }
 
   object GetHealthCheckResponse {
+    @inline
     def apply(
         HealthCheck: HealthCheck
     ): GetHealthCheckResponse = {
@@ -1882,6 +1951,7 @@ package route53 {
   }
 
   object GetHealthCheckStatusRequest {
+    @inline
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckStatusRequest = {
@@ -1902,6 +1972,7 @@ package route53 {
   }
 
   object GetHealthCheckStatusResponse {
+    @inline
     def apply(
         HealthCheckObservations: HealthCheckObservations
     ): GetHealthCheckStatusResponse = {
@@ -1920,6 +1991,7 @@ package route53 {
   trait GetHostedZoneCountRequest extends js.Object {}
 
   object GetHostedZoneCountRequest {
+    @inline
     def apply(
         ): GetHostedZoneCountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1937,6 +2009,7 @@ package route53 {
   }
 
   object GetHostedZoneCountResponse {
+    @inline
     def apply(
         HostedZoneCount: HostedZoneCount
     ): GetHostedZoneCountResponse = {
@@ -1958,6 +2031,7 @@ package route53 {
   }
 
   object GetHostedZoneLimitRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         Type: HostedZoneLimitType
@@ -1981,6 +2055,7 @@ package route53 {
   }
 
   object GetHostedZoneLimitResponse {
+    @inline
     def apply(
         Count: UsageCount,
         Limit: HostedZoneLimit
@@ -2003,6 +2078,7 @@ package route53 {
   }
 
   object GetHostedZoneRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): GetHostedZoneRequest = {
@@ -2025,6 +2101,7 @@ package route53 {
   }
 
   object GetHostedZoneResponse {
+    @inline
     def apply(
         HostedZone: HostedZone,
         DelegationSet: js.UndefOr[DelegationSet] = js.undefined,
@@ -2046,6 +2123,7 @@ package route53 {
   }
 
   object GetQueryLoggingConfigRequest {
+    @inline
     def apply(
         Id: QueryLoggingConfigId
     ): GetQueryLoggingConfigRequest = {
@@ -2063,6 +2141,7 @@ package route53 {
   }
 
   object GetQueryLoggingConfigResponse {
+    @inline
     def apply(
         QueryLoggingConfig: QueryLoggingConfig
     ): GetQueryLoggingConfigResponse = {
@@ -2084,6 +2163,7 @@ package route53 {
   }
 
   object GetReusableDelegationSetLimitRequest {
+    @inline
     def apply(
         DelegationSetId: ResourceId,
         Type: ReusableDelegationSetLimitType
@@ -2107,6 +2187,7 @@ package route53 {
   }
 
   object GetReusableDelegationSetLimitResponse {
+    @inline
     def apply(
         Count: UsageCount,
         Limit: ReusableDelegationSetLimit
@@ -2129,6 +2210,7 @@ package route53 {
   }
 
   object GetReusableDelegationSetRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): GetReusableDelegationSetRequest = {
@@ -2149,6 +2231,7 @@ package route53 {
   }
 
   object GetReusableDelegationSetResponse {
+    @inline
     def apply(
         DelegationSet: DelegationSet
     ): GetReusableDelegationSetResponse = {
@@ -2167,6 +2250,7 @@ package route53 {
   trait GetTrafficPolicyInstanceCountRequest extends js.Object {}
 
   object GetTrafficPolicyInstanceCountRequest {
+    @inline
     def apply(
         ): GetTrafficPolicyInstanceCountRequest = {
       val __obj = js.Dynamic.literal()
@@ -2184,6 +2268,7 @@ package route53 {
   }
 
   object GetTrafficPolicyInstanceCountResponse {
+    @inline
     def apply(
         TrafficPolicyInstanceCount: TrafficPolicyInstanceCount
     ): GetTrafficPolicyInstanceCountResponse = {
@@ -2204,6 +2289,7 @@ package route53 {
   }
 
   object GetTrafficPolicyInstanceRequest {
+    @inline
     def apply(
         Id: TrafficPolicyInstanceId
     ): GetTrafficPolicyInstanceRequest = {
@@ -2224,6 +2310,7 @@ package route53 {
   }
 
   object GetTrafficPolicyInstanceResponse {
+    @inline
     def apply(
         TrafficPolicyInstance: TrafficPolicyInstance
     ): GetTrafficPolicyInstanceResponse = {
@@ -2245,6 +2332,7 @@ package route53 {
   }
 
   object GetTrafficPolicyRequest {
+    @inline
     def apply(
         Id: TrafficPolicyId,
         Version: TrafficPolicyVersion
@@ -2267,6 +2355,7 @@ package route53 {
   }
 
   object GetTrafficPolicyResponse {
+    @inline
     def apply(
         TrafficPolicy: TrafficPolicy
     ): GetTrafficPolicyResponse = {
@@ -2292,6 +2381,7 @@ package route53 {
   }
 
   object HealthCheck {
+    @inline
     def apply(
         CallerReference: HealthCheckNonce,
         HealthCheckConfig: HealthCheckConfig,
@@ -2340,6 +2430,7 @@ package route53 {
   }
 
   object HealthCheckConfig {
+    @inline
     def apply(
         Type: HealthCheckType,
         AlarmIdentifier: js.UndefOr[AlarmIdentifier] = js.undefined,
@@ -2396,6 +2487,7 @@ package route53 {
   }
 
   object HealthCheckObservation {
+    @inline
     def apply(
         IPAddress: js.UndefOr[IPAddress] = js.undefined,
         Region: js.UndefOr[HealthCheckRegion] = js.undefined,
@@ -2460,6 +2552,7 @@ package route53 {
   }
 
   object HostedZone {
+    @inline
     def apply(
         CallerReference: Nonce,
         Id: ResourceId,
@@ -2491,6 +2584,7 @@ package route53 {
   }
 
   object HostedZoneConfig {
+    @inline
     def apply(
         Comment: js.UndefOr[ResourceDescription] = js.undefined,
         PrivateZone: js.UndefOr[IsPrivateZone] = js.undefined
@@ -2512,6 +2606,7 @@ package route53 {
   }
 
   object HostedZoneLimit {
+    @inline
     def apply(
         Type: HostedZoneLimitType,
         Value: LimitValue
@@ -2550,6 +2645,7 @@ package route53 {
   }
 
   object LinkedService {
+    @inline
     def apply(
         Description: js.UndefOr[ResourceDescription] = js.undefined,
         ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
@@ -2573,6 +2669,7 @@ package route53 {
   }
 
   object ListGeoLocationsRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         StartContinentCode: js.UndefOr[GeoLocationContinentCode] = js.undefined,
@@ -2602,6 +2699,7 @@ package route53 {
   }
 
   object ListGeoLocationsResponse {
+    @inline
     def apply(
         GeoLocationDetailsList: GeoLocationDetailsList,
         IsTruncated: PageTruncated,
@@ -2633,6 +2731,7 @@ package route53 {
   }
 
   object ListHealthChecksRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
@@ -2657,6 +2756,7 @@ package route53 {
   }
 
   object ListHealthChecksResponse {
+    @inline
     def apply(
         HealthChecks: HealthChecks,
         IsTruncated: PageTruncated,
@@ -2687,6 +2787,7 @@ package route53 {
   }
 
   object ListHostedZonesByNameRequest {
+    @inline
     def apply(
         DNSName: js.UndefOr[DNSName] = js.undefined,
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined,
@@ -2715,6 +2816,7 @@ package route53 {
   }
 
   object ListHostedZonesByNameResponse {
+    @inline
     def apply(
         HostedZones: HostedZones,
         IsTruncated: PageTruncated,
@@ -2749,6 +2851,7 @@ package route53 {
   }
 
   object ListHostedZonesRequest {
+    @inline
     def apply(
         DelegationSetId: js.UndefOr[ResourceId] = js.undefined,
         Marker: js.UndefOr[PageMarker] = js.undefined,
@@ -2772,6 +2875,7 @@ package route53 {
   }
 
   object ListHostedZonesResponse {
+    @inline
     def apply(
         HostedZones: HostedZones,
         IsTruncated: PageTruncated,
@@ -2799,6 +2903,7 @@ package route53 {
   }
 
   object ListQueryLoggingConfigsRequest {
+    @inline
     def apply(
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2819,6 +2924,7 @@ package route53 {
   }
 
   object ListQueryLoggingConfigsResponse {
+    @inline
     def apply(
         QueryLoggingConfigs: QueryLoggingConfigs,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2845,6 +2951,7 @@ package route53 {
   }
 
   object ListResourceRecordSetsRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
@@ -2878,6 +2985,7 @@ package route53 {
   }
 
   object ListResourceRecordSetsResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -2909,6 +3017,7 @@ package route53 {
   }
 
   object ListReusableDelegationSetsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
@@ -2933,6 +3042,7 @@ package route53 {
   }
 
   object ListReusableDelegationSetsResponse {
+    @inline
     def apply(
         DelegationSets: DelegationSets,
         IsTruncated: PageTruncated,
@@ -2962,6 +3072,7 @@ package route53 {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceId: TagResourceId,
         ResourceType: TagResourceType
@@ -2984,6 +3095,7 @@ package route53 {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         ResourceTagSet: ResourceTagSet
     ): ListTagsForResourceResponse = {
@@ -3005,6 +3117,7 @@ package route53 {
   }
 
   object ListTagsForResourcesRequest {
+    @inline
     def apply(
         ResourceIds: TagResourceIdList,
         ResourceType: TagResourceType
@@ -3027,6 +3140,7 @@ package route53 {
   }
 
   object ListTagsForResourcesResponse {
+    @inline
     def apply(
         ResourceTagSets: ResourceTagSetList
     ): ListTagsForResourcesResponse = {
@@ -3048,6 +3162,7 @@ package route53 {
   }
 
   object ListTrafficPoliciesRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         TrafficPolicyIdMarker: js.UndefOr[TrafficPolicyId] = js.undefined
@@ -3071,6 +3186,7 @@ package route53 {
   }
 
   object ListTrafficPoliciesResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -3100,6 +3216,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesByHostedZoneRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
@@ -3134,6 +3251,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesByHostedZoneResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -3171,6 +3289,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesByPolicyRequest {
+    @inline
     def apply(
         TrafficPolicyId: TrafficPolicyId,
         TrafficPolicyVersion: TrafficPolicyVersion,
@@ -3210,6 +3329,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesByPolicyResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -3247,6 +3367,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesRequest {
+    @inline
     def apply(
         HostedZoneIdMarker: js.UndefOr[ResourceId] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
@@ -3280,6 +3401,7 @@ package route53 {
   }
 
   object ListTrafficPolicyInstancesResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -3316,6 +3438,7 @@ package route53 {
   }
 
   object ListTrafficPolicyVersionsRequest {
+    @inline
     def apply(
         Id: TrafficPolicyId,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
@@ -3345,6 +3468,7 @@ package route53 {
   }
 
   object ListTrafficPolicyVersionsResponse {
+    @inline
     def apply(
         IsTruncated: PageTruncated,
         MaxItems: PageMaxItems,
@@ -3373,6 +3497,7 @@ package route53 {
   }
 
   object ListVPCAssociationAuthorizationsRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3399,6 +3524,7 @@ package route53 {
   }
 
   object ListVPCAssociationAuthorizationsResponse {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         VPCs: VPCs,
@@ -3425,6 +3551,7 @@ package route53 {
   }
 
   object QueryLoggingConfig {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: CloudWatchLogsLogGroupArn,
         HostedZoneId: ResourceId,
@@ -3477,6 +3604,7 @@ package route53 {
   }
 
   object ResourceRecord {
+    @inline
     def apply(
         Value: RData
     ): ResourceRecord = {
@@ -3509,6 +3637,7 @@ package route53 {
   }
 
   object ResourceRecordSet {
+    @inline
     def apply(
         Name: DNSName,
         Type: RRType,
@@ -3612,6 +3741,7 @@ package route53 {
   }
 
   object ResourceTagSet {
+    @inline
     def apply(
         ResourceId: js.UndefOr[TagResourceId] = js.undefined,
         ResourceType: js.UndefOr[TagResourceType] = js.undefined,
@@ -3635,6 +3765,7 @@ package route53 {
   }
 
   object ReusableDelegationSetLimit {
+    @inline
     def apply(
         Type: ReusableDelegationSetLimitType,
         Value: LimitValue
@@ -3674,6 +3805,7 @@ package route53 {
   }
 
   object StatusReport {
+    @inline
     def apply(
         CheckedTime: js.UndefOr[TimeStamp] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -3695,6 +3827,7 @@ package route53 {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -3727,6 +3860,7 @@ package route53 {
   }
 
   object TestDNSAnswerRequest {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         RecordName: DNSName,
@@ -3762,6 +3896,7 @@ package route53 {
   }
 
   object TestDNSAnswerResponse {
+    @inline
     def apply(
         Nameserver: Nameserver,
         Protocol: TransportProtocol,
@@ -3797,6 +3932,7 @@ package route53 {
   }
 
   object TrafficPolicy {
+    @inline
     def apply(
         Document: TrafficPolicyDocument,
         Id: TrafficPolicyId,
@@ -3835,6 +3971,7 @@ package route53 {
   }
 
   object TrafficPolicyInstance {
+    @inline
     def apply(
         HostedZoneId: ResourceId,
         Id: TrafficPolicyInstanceId,
@@ -3875,6 +4012,7 @@ package route53 {
   }
 
   object TrafficPolicySummary {
+    @inline
     def apply(
         Id: TrafficPolicyId,
         LatestVersion: TrafficPolicyVersion,
@@ -3919,6 +4057,7 @@ package route53 {
   }
 
   object UpdateHealthCheckRequest {
+    @inline
     def apply(
         HealthCheckId: HealthCheckId,
         AlarmIdentifier: js.UndefOr[AlarmIdentifier] = js.undefined,
@@ -3973,6 +4112,7 @@ package route53 {
   }
 
   object UpdateHealthCheckResponse {
+    @inline
     def apply(
         HealthCheck: HealthCheck
     ): UpdateHealthCheckResponse = {
@@ -3994,6 +4134,7 @@ package route53 {
   }
 
   object UpdateHostedZoneCommentRequest {
+    @inline
     def apply(
         Id: ResourceId,
         Comment: js.UndefOr[ResourceDescription] = js.undefined
@@ -4016,6 +4157,7 @@ package route53 {
   }
 
   object UpdateHostedZoneCommentResponse {
+    @inline
     def apply(
         HostedZone: HostedZone
     ): UpdateHostedZoneCommentResponse = {
@@ -4038,6 +4180,7 @@ package route53 {
   }
 
   object UpdateTrafficPolicyCommentRequest {
+    @inline
     def apply(
         Comment: TrafficPolicyComment,
         Id: TrafficPolicyId,
@@ -4062,6 +4205,7 @@ package route53 {
   }
 
   object UpdateTrafficPolicyCommentResponse {
+    @inline
     def apply(
         TrafficPolicy: TrafficPolicy
     ): UpdateTrafficPolicyCommentResponse = {
@@ -4085,6 +4229,7 @@ package route53 {
   }
 
   object UpdateTrafficPolicyInstanceRequest {
+    @inline
     def apply(
         Id: TrafficPolicyInstanceId,
         TTL: TTL,
@@ -4111,6 +4256,7 @@ package route53 {
   }
 
   object UpdateTrafficPolicyInstanceResponse {
+    @inline
     def apply(
         TrafficPolicyInstance: TrafficPolicyInstance
     ): UpdateTrafficPolicyInstanceResponse = {
@@ -4132,6 +4278,7 @@ package route53 {
   }
 
   object VPC {
+    @inline
     def apply(
         VPCId: js.UndefOr[VPCId] = js.undefined,
         VPCRegion: js.UndefOr[VPCRegion] = js.undefined

@@ -93,67 +93,69 @@ package object sms {
 
   implicit final class SMSOps(private val service: SMS) extends AnyVal {
 
-    def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
       service.createApp(params).promise.toFuture
-    def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] =
+    @inline def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] =
       service.createReplicationJob(params).promise.toFuture
-    def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
       service.deleteApp(params).promise.toFuture
-    def deleteAppLaunchConfigurationFuture(
+    @inline def deleteAppLaunchConfigurationFuture(
         params: DeleteAppLaunchConfigurationRequest
     ): Future[DeleteAppLaunchConfigurationResponse] = service.deleteAppLaunchConfiguration(params).promise.toFuture
-    def deleteAppReplicationConfigurationFuture(
+    @inline def deleteAppReplicationConfigurationFuture(
         params: DeleteAppReplicationConfigurationRequest
     ): Future[DeleteAppReplicationConfigurationResponse] =
       service.deleteAppReplicationConfiguration(params).promise.toFuture
-    def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] =
+    @inline def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] =
       service.deleteReplicationJob(params).promise.toFuture
-    def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] =
+    @inline def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] =
       service.deleteServerCatalog(params).promise.toFuture
-    def disassociateConnectorFuture(params: DisassociateConnectorRequest): Future[DisassociateConnectorResponse] =
-      service.disassociateConnector(params).promise.toFuture
-    def generateChangeSetFuture(params: GenerateChangeSetRequest): Future[GenerateChangeSetResponse] =
+    @inline def disassociateConnectorFuture(
+        params: DisassociateConnectorRequest
+    ): Future[DisassociateConnectorResponse] = service.disassociateConnector(params).promise.toFuture
+    @inline def generateChangeSetFuture(params: GenerateChangeSetRequest): Future[GenerateChangeSetResponse] =
       service.generateChangeSet(params).promise.toFuture
-    def generateTemplateFuture(params: GenerateTemplateRequest): Future[GenerateTemplateResponse] =
+    @inline def generateTemplateFuture(params: GenerateTemplateRequest): Future[GenerateTemplateResponse] =
       service.generateTemplate(params).promise.toFuture
-    def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise.toFuture
-    def getAppLaunchConfigurationFuture(
+    @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise.toFuture
+    @inline def getAppLaunchConfigurationFuture(
         params: GetAppLaunchConfigurationRequest
     ): Future[GetAppLaunchConfigurationResponse] = service.getAppLaunchConfiguration(params).promise.toFuture
-    def getAppReplicationConfigurationFuture(
+    @inline def getAppReplicationConfigurationFuture(
         params: GetAppReplicationConfigurationRequest
     ): Future[GetAppReplicationConfigurationResponse] = service.getAppReplicationConfiguration(params).promise.toFuture
-    def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] =
+    @inline def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] =
       service.getConnectors(params).promise.toFuture
-    def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] =
+    @inline def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] =
       service.getReplicationJobs(params).promise.toFuture
-    def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] =
+    @inline def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] =
       service.getReplicationRuns(params).promise.toFuture
-    def getServersFuture(params: GetServersRequest): Future[GetServersResponse] =
+    @inline def getServersFuture(params: GetServersRequest): Future[GetServersResponse] =
       service.getServers(params).promise.toFuture
-    def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] =
+    @inline def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] =
       service.importServerCatalog(params).promise.toFuture
-    def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] =
+    @inline def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] =
       service.launchApp(params).promise.toFuture
-    def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise.toFuture
-    def putAppLaunchConfigurationFuture(
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] =
+      service.listApps(params).promise.toFuture
+    @inline def putAppLaunchConfigurationFuture(
         params: PutAppLaunchConfigurationRequest
     ): Future[PutAppLaunchConfigurationResponse] = service.putAppLaunchConfiguration(params).promise.toFuture
-    def putAppReplicationConfigurationFuture(
+    @inline def putAppReplicationConfigurationFuture(
         params: PutAppReplicationConfigurationRequest
     ): Future[PutAppReplicationConfigurationResponse] = service.putAppReplicationConfiguration(params).promise.toFuture
-    def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] =
+    @inline def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] =
       service.startAppReplication(params).promise.toFuture
-    def startOnDemandReplicationRunFuture(
+    @inline def startOnDemandReplicationRunFuture(
         params: StartOnDemandReplicationRunRequest
     ): Future[StartOnDemandReplicationRunResponse] = service.startOnDemandReplicationRun(params).promise.toFuture
-    def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] =
+    @inline def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] =
       service.stopAppReplication(params).promise.toFuture
-    def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] =
+    @inline def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] =
       service.terminateApp(params).promise.toFuture
-    def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] =
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] =
       service.updateApp(params).promise.toFuture
-    def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] =
+    @inline def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] =
       service.updateReplicationJob(params).promise.toFuture
   }
 }
@@ -317,6 +319,7 @@ package sms {
   }
 
   object AppSummary {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -374,6 +377,7 @@ package sms {
   }
 
   object Connector {
+    @inline
     def apply(
         associatedOn: js.UndefOr[Timestamp] = js.undefined,
         capabilityList: js.UndefOr[ConnectorCapabilityList] = js.undefined,
@@ -428,6 +432,7 @@ package sms {
   }
 
   object CreateAppRequest {
+    @inline
     def apply(
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         description: js.UndefOr[AppDescription] = js.undefined,
@@ -455,6 +460,7 @@ package sms {
   }
 
   object CreateAppResponse {
+    @inline
     def apply(
         appSummary: js.UndefOr[AppSummary] = js.undefined,
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
@@ -483,6 +489,7 @@ package sms {
   }
 
   object CreateReplicationJobRequest {
+    @inline
     def apply(
         seedReplicationTime: Timestamp,
         serverId: ServerId,
@@ -518,6 +525,7 @@ package sms {
   }
 
   object CreateReplicationJobResponse {
+    @inline
     def apply(
         replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined
     ): CreateReplicationJobResponse = {
@@ -533,6 +541,7 @@ package sms {
   }
 
   object DeleteAppLaunchConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): DeleteAppLaunchConfigurationRequest = {
@@ -546,6 +555,7 @@ package sms {
   trait DeleteAppLaunchConfigurationResponse extends js.Object {}
 
   object DeleteAppLaunchConfigurationResponse {
+    @inline
     def apply(
         ): DeleteAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -560,6 +570,7 @@ package sms {
   }
 
   object DeleteAppReplicationConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): DeleteAppReplicationConfigurationRequest = {
@@ -573,6 +584,7 @@ package sms {
   trait DeleteAppReplicationConfigurationResponse extends js.Object {}
 
   object DeleteAppReplicationConfigurationResponse {
+    @inline
     def apply(
         ): DeleteAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -589,6 +601,7 @@ package sms {
   }
 
   object DeleteAppRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         forceStopAppReplication: js.UndefOr[ForceStopAppReplication] = js.undefined,
@@ -606,6 +619,7 @@ package sms {
   trait DeleteAppResponse extends js.Object {}
 
   object DeleteAppResponse {
+    @inline
     def apply(
         ): DeleteAppResponse = {
       val __obj = js.Dynamic.literal()
@@ -620,6 +634,7 @@ package sms {
   }
 
   object DeleteReplicationJobRequest {
+    @inline
     def apply(
         replicationJobId: ReplicationJobId
     ): DeleteReplicationJobRequest = {
@@ -635,6 +650,7 @@ package sms {
   trait DeleteReplicationJobResponse extends js.Object {}
 
   object DeleteReplicationJobResponse {
+    @inline
     def apply(
         ): DeleteReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -647,6 +663,7 @@ package sms {
   trait DeleteServerCatalogRequest extends js.Object {}
 
   object DeleteServerCatalogRequest {
+    @inline
     def apply(
         ): DeleteServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
@@ -659,6 +676,7 @@ package sms {
   trait DeleteServerCatalogResponse extends js.Object {}
 
   object DeleteServerCatalogResponse {
+    @inline
     def apply(
         ): DeleteServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
@@ -673,6 +691,7 @@ package sms {
   }
 
   object DisassociateConnectorRequest {
+    @inline
     def apply(
         connectorId: ConnectorId
     ): DisassociateConnectorRequest = {
@@ -688,6 +707,7 @@ package sms {
   trait DisassociateConnectorResponse extends js.Object {}
 
   object DisassociateConnectorResponse {
+    @inline
     def apply(
         ): DisassociateConnectorResponse = {
       val __obj = js.Dynamic.literal()
@@ -703,6 +723,7 @@ package sms {
   }
 
   object GenerateChangeSetRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         changesetFormat: js.UndefOr[OutputFormat] = js.undefined
@@ -720,6 +741,7 @@ package sms {
   }
 
   object GenerateChangeSetResponse {
+    @inline
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): GenerateChangeSetResponse = {
@@ -736,6 +758,7 @@ package sms {
   }
 
   object GenerateTemplateRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         templateFormat: js.UndefOr[OutputFormat] = js.undefined
@@ -753,6 +776,7 @@ package sms {
   }
 
   object GenerateTemplateResponse {
+    @inline
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): GenerateTemplateResponse = {
@@ -768,6 +792,7 @@ package sms {
   }
 
   object GetAppLaunchConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppLaunchConfigurationRequest = {
@@ -785,6 +810,7 @@ package sms {
   }
 
   object GetAppLaunchConfigurationResponse {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined,
@@ -806,6 +832,7 @@ package sms {
   }
 
   object GetAppReplicationConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppReplicationConfigurationRequest = {
@@ -821,6 +848,7 @@ package sms {
   }
 
   object GetAppReplicationConfigurationResponse {
+    @inline
     def apply(
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
     ): GetAppReplicationConfigurationResponse = {
@@ -838,6 +866,7 @@ package sms {
   }
 
   object GetAppRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppRequest = {
@@ -855,6 +884,7 @@ package sms {
   }
 
   object GetAppResponse {
+    @inline
     def apply(
         appSummary: js.UndefOr[AppSummary] = js.undefined,
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
@@ -875,6 +905,7 @@ package sms {
   }
 
   object GetConnectorsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -893,6 +924,7 @@ package sms {
   }
 
   object GetConnectorsResponse {
+    @inline
     def apply(
         connectorList: js.UndefOr[ConnectorList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -912,6 +944,7 @@ package sms {
   }
 
   object GetReplicationJobsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -932,6 +965,7 @@ package sms {
   }
 
   object GetReplicationJobsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         replicationJobList: js.UndefOr[ReplicationJobList] = js.undefined
@@ -951,6 +985,7 @@ package sms {
   }
 
   object GetReplicationRunsRequest {
+    @inline
     def apply(
         replicationJobId: ReplicationJobId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -974,6 +1009,7 @@ package sms {
   }
 
   object GetReplicationRunsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         replicationJob: js.UndefOr[ReplicationJob] = js.undefined,
@@ -995,6 +1031,7 @@ package sms {
   }
 
   object GetServersRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1017,6 +1054,7 @@ package sms {
   }
 
   object GetServersResponse {
+    @inline
     def apply(
         lastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1036,6 +1074,7 @@ package sms {
   trait ImportServerCatalogRequest extends js.Object {}
 
   object ImportServerCatalogRequest {
+    @inline
     def apply(
         ): ImportServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
@@ -1048,6 +1087,7 @@ package sms {
   trait ImportServerCatalogResponse extends js.Object {}
 
   object ImportServerCatalogResponse {
+    @inline
     def apply(
         ): ImportServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
@@ -1062,6 +1102,7 @@ package sms {
   }
 
   object LaunchAppRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): LaunchAppRequest = {
@@ -1075,6 +1116,7 @@ package sms {
   trait LaunchAppResponse extends js.Object {}
 
   object LaunchAppResponse {
+    @inline
     def apply(
         ): LaunchAppResponse = {
       val __obj = js.Dynamic.literal()
@@ -1094,6 +1136,7 @@ package sms {
   }
 
   object LaunchDetails {
+    @inline
     def apply(
         latestLaunchTime: js.UndefOr[Timestamp] = js.undefined,
         stackId: js.UndefOr[StackId] = js.undefined,
@@ -1122,6 +1165,7 @@ package sms {
   }
 
   object ListAppsRequest {
+    @inline
     def apply(
         appIds: js.UndefOr[AppIds] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1142,6 +1186,7 @@ package sms {
   }
 
   object ListAppsResponse {
+    @inline
     def apply(
         apps: js.UndefOr[Apps] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1168,6 +1213,7 @@ package sms {
   }
 
   object PutAppLaunchConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined,
@@ -1187,6 +1233,7 @@ package sms {
   trait PutAppLaunchConfigurationResponse extends js.Object {}
 
   object PutAppLaunchConfigurationResponse {
+    @inline
     def apply(
         ): PutAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1202,6 +1249,7 @@ package sms {
   }
 
   object PutAppReplicationConfigurationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
@@ -1219,6 +1267,7 @@ package sms {
   trait PutAppReplicationConfigurationResponse extends js.Object {}
 
   object PutAppReplicationConfigurationResponse {
+    @inline
     def apply(
         ): PutAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1253,6 +1302,7 @@ package sms {
   }
 
   object ReplicationJob {
+    @inline
     def apply(
         description: js.UndefOr[Description] = js.undefined,
         encrypted: js.UndefOr[Encrypted] = js.undefined,
@@ -1331,6 +1381,7 @@ package sms {
   }
 
   object ReplicationRun {
+    @inline
     def apply(
         amiId: js.UndefOr[AmiId] = js.undefined,
         completedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1370,6 +1421,7 @@ package sms {
   }
 
   object ReplicationRunStageDetails {
+    @inline
     def apply(
         stage: js.UndefOr[ReplicationRunStage] = js.undefined,
         stageProgress: js.UndefOr[ReplicationRunStageProgress] = js.undefined
@@ -1410,6 +1462,7 @@ package sms {
   }
 
   object S3Location {
+    @inline
     def apply(
         bucket: js.UndefOr[BucketName] = js.undefined,
         key: js.UndefOr[KeyName] = js.undefined
@@ -1434,6 +1487,7 @@ package sms {
   }
 
   object Server {
+    @inline
     def apply(
         replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined,
         replicationJobTerminated: js.UndefOr[ReplicationJobTerminated] = js.undefined,
@@ -1472,6 +1526,7 @@ package sms {
   }
 
   object ServerGroup {
+    @inline
     def apply(
         name: js.UndefOr[ServerGroupName] = js.undefined,
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
@@ -1496,6 +1551,7 @@ package sms {
   }
 
   object ServerGroupLaunchConfiguration {
+    @inline
     def apply(
         launchOrder: js.UndefOr[LaunchOrder] = js.undefined,
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
@@ -1521,6 +1577,7 @@ package sms {
   }
 
   object ServerGroupReplicationConfiguration {
+    @inline
     def apply(
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
         serverReplicationConfigurations: js.UndefOr[ServerReplicationConfigurations] = js.undefined
@@ -1551,6 +1608,7 @@ package sms {
   }
 
   object ServerLaunchConfiguration {
+    @inline
     def apply(
         associatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
         ec2KeyName: js.UndefOr[EC2KeyName] = js.undefined,
@@ -1586,6 +1644,7 @@ package sms {
   }
 
   object ServerReplicationConfiguration {
+    @inline
     def apply(
         server: js.UndefOr[Server] = js.undefined,
         serverReplicationParameters: js.UndefOr[ServerReplicationParameters] = js.undefined
@@ -1614,6 +1673,7 @@ package sms {
   }
 
   object ServerReplicationParameters {
+    @inline
     def apply(
         encrypted: js.UndefOr[Encrypted] = js.undefined,
         frequency: js.UndefOr[Frequency] = js.undefined,
@@ -1647,6 +1707,7 @@ package sms {
   }
 
   object StartAppReplicationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): StartAppReplicationRequest = {
@@ -1660,6 +1721,7 @@ package sms {
   trait StartAppReplicationResponse extends js.Object {}
 
   object StartAppReplicationResponse {
+    @inline
     def apply(
         ): StartAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1675,6 +1737,7 @@ package sms {
   }
 
   object StartOnDemandReplicationRunRequest {
+    @inline
     def apply(
         replicationJobId: ReplicationJobId,
         description: js.UndefOr[Description] = js.undefined
@@ -1694,6 +1757,7 @@ package sms {
   }
 
   object StartOnDemandReplicationRunResponse {
+    @inline
     def apply(
         replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined
     ): StartOnDemandReplicationRunResponse = {
@@ -1709,6 +1773,7 @@ package sms {
   }
 
   object StopAppReplicationRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): StopAppReplicationRequest = {
@@ -1722,6 +1787,7 @@ package sms {
   trait StopAppReplicationResponse extends js.Object {}
 
   object StopAppReplicationResponse {
+    @inline
     def apply(
         ): StopAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1740,6 +1806,7 @@ package sms {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
@@ -1757,6 +1824,7 @@ package sms {
   }
 
   object TerminateAppRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): TerminateAppRequest = {
@@ -1770,6 +1838,7 @@ package sms {
   trait TerminateAppResponse extends js.Object {}
 
   object TerminateAppResponse {
+    @inline
     def apply(
         ): TerminateAppResponse = {
       val __obj = js.Dynamic.literal()
@@ -1789,6 +1858,7 @@ package sms {
   }
 
   object UpdateAppRequest {
+    @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
         description: js.UndefOr[AppDescription] = js.undefined,
@@ -1816,6 +1886,7 @@ package sms {
   }
 
   object UpdateAppResponse {
+    @inline
     def apply(
         appSummary: js.UndefOr[AppSummary] = js.undefined,
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
@@ -1843,6 +1914,7 @@ package sms {
   }
 
   object UpdateReplicationJobRequest {
+    @inline
     def apply(
         replicationJobId: ReplicationJobId,
         description: js.UndefOr[Description] = js.undefined,
@@ -1876,6 +1948,7 @@ package sms {
   trait UpdateReplicationJobResponse extends js.Object {}
 
   object UpdateReplicationJobResponse {
+    @inline
     def apply(
         ): UpdateReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -1893,6 +1966,7 @@ package sms {
   }
 
   object UserData {
+    @inline
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): UserData = {
@@ -1923,6 +1997,7 @@ package sms {
   }
 
   object VmServer {
+    @inline
     def apply(
         vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
         vmManagerType: js.UndefOr[VmManagerType] = js.undefined,
@@ -1950,6 +2025,7 @@ package sms {
   }
 
   object VmServerAddress {
+    @inline
     def apply(
         vmId: js.UndefOr[VmId] = js.undefined,
         vmManagerId: js.UndefOr[VmManagerId] = js.undefined

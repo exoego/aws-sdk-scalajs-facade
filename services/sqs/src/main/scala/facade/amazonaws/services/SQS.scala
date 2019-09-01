@@ -37,44 +37,47 @@ package object sqs {
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
-    def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
+    @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
       service.addPermission(params).promise.toFuture
-    def changeMessageVisibilityBatchFuture(
+    @inline def changeMessageVisibilityBatchFuture(
         params: ChangeMessageVisibilityBatchRequest
     ): Future[ChangeMessageVisibilityBatchResult] = service.changeMessageVisibilityBatch(params).promise.toFuture
-    def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] =
+    @inline def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] =
       service.changeMessageVisibility(params).promise.toFuture
-    def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] =
+    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] =
       service.createQueue(params).promise.toFuture
-    def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] =
+    @inline def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] =
       service.deleteMessageBatch(params).promise.toFuture
-    def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] =
+    @inline def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] =
       service.deleteMessage(params).promise.toFuture
-    def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] = service.deleteQueue(params).promise.toFuture
-    def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] =
+    @inline def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] =
+      service.deleteQueue(params).promise.toFuture
+    @inline def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] =
       service.getQueueAttributes(params).promise.toFuture
-    def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] =
+    @inline def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] =
       service.getQueueUrl(params).promise.toFuture
-    def listDeadLetterSourceQueuesFuture(
+    @inline def listDeadLetterSourceQueuesFuture(
         params: ListDeadLetterSourceQueuesRequest
     ): Future[ListDeadLetterSourceQueuesResult] = service.listDeadLetterSourceQueues(params).promise.toFuture
-    def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] =
+    @inline def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] =
       service.listQueueTags(params).promise.toFuture
-    def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] =
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] =
       service.listQueues(params).promise.toFuture
-    def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] = service.purgeQueue(params).promise.toFuture
-    def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] =
+    @inline def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] =
+      service.purgeQueue(params).promise.toFuture
+    @inline def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] =
       service.receiveMessage(params).promise.toFuture
-    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
       service.removePermission(params).promise.toFuture
-    def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] =
+    @inline def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] =
       service.sendMessageBatch(params).promise.toFuture
-    def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] =
+    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] =
       service.sendMessage(params).promise.toFuture
-    def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] =
+    @inline def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] =
       service.setQueueAttributes(params).promise.toFuture
-    def tagQueueFuture(params: TagQueueRequest): Future[js.Object]     = service.tagQueue(params).promise.toFuture
-    def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] = service.untagQueue(params).promise.toFuture
+    @inline def tagQueueFuture(params: TagQueueRequest): Future[js.Object] = service.tagQueue(params).promise.toFuture
+    @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] =
+      service.untagQueue(params).promise.toFuture
   }
 }
 
@@ -122,6 +125,7 @@ package sqs {
   }
 
   object AddPermissionRequest {
+    @inline
     def apply(
         AWSAccountIds: AWSAccountIdList,
         Actions: ActionNameList,
@@ -151,6 +155,7 @@ package sqs {
   }
 
   object BatchResultErrorEntry {
+    @inline
     def apply(
         Code: String,
         Id: String,
@@ -178,6 +183,7 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchRequest {
+    @inline
     def apply(
         Entries: ChangeMessageVisibilityBatchRequestEntryList,
         QueueUrl: String
@@ -206,6 +212,7 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchRequestEntry {
+    @inline
     def apply(
         Id: String,
         ReceiptHandle: String,
@@ -231,6 +238,7 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchResult {
+    @inline
     def apply(
         Failed: BatchResultErrorEntryList,
         Successful: ChangeMessageVisibilityBatchResultEntryList
@@ -253,6 +261,7 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchResultEntry {
+    @inline
     def apply(
         Id: String
     ): ChangeMessageVisibilityBatchResultEntry = {
@@ -272,6 +281,7 @@ package sqs {
   }
 
   object ChangeMessageVisibilityRequest {
+    @inline
     def apply(
         QueueUrl: String,
         ReceiptHandle: String,
@@ -298,6 +308,7 @@ package sqs {
   }
 
   object CreateQueueRequest {
+    @inline
     def apply(
         QueueName: String,
         Attributes: js.UndefOr[QueueAttributeMap] = js.undefined,
@@ -322,6 +333,7 @@ package sqs {
   }
 
   object CreateQueueResult {
+    @inline
     def apply(
         QueueUrl: js.UndefOr[String] = js.undefined
     ): CreateQueueResult = {
@@ -341,6 +353,7 @@ package sqs {
   }
 
   object DeleteMessageBatchRequest {
+    @inline
     def apply(
         Entries: DeleteMessageBatchRequestEntryList,
         QueueUrl: String
@@ -364,6 +377,7 @@ package sqs {
   }
 
   object DeleteMessageBatchRequestEntry {
+    @inline
     def apply(
         Id: String,
         ReceiptHandle: String
@@ -387,6 +401,7 @@ package sqs {
   }
 
   object DeleteMessageBatchResult {
+    @inline
     def apply(
         Failed: BatchResultErrorEntryList,
         Successful: DeleteMessageBatchResultEntryList
@@ -409,6 +424,7 @@ package sqs {
   }
 
   object DeleteMessageBatchResultEntry {
+    @inline
     def apply(
         Id: String
     ): DeleteMessageBatchResultEntry = {
@@ -430,6 +446,7 @@ package sqs {
   }
 
   object DeleteMessageRequest {
+    @inline
     def apply(
         QueueUrl: String,
         ReceiptHandle: String
@@ -452,6 +469,7 @@ package sqs {
   }
 
   object DeleteQueueRequest {
+    @inline
     def apply(
         QueueUrl: String
     ): DeleteQueueRequest = {
@@ -473,6 +491,7 @@ package sqs {
   }
 
   object GetQueueAttributesRequest {
+    @inline
     def apply(
         QueueUrl: String,
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
@@ -495,6 +514,7 @@ package sqs {
   }
 
   object GetQueueAttributesResult {
+    @inline
     def apply(
         Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
     ): GetQueueAttributesResult = {
@@ -514,6 +534,7 @@ package sqs {
   }
 
   object GetQueueUrlRequest {
+    @inline
     def apply(
         QueueName: String,
         QueueOwnerAWSAccountId: js.UndefOr[String] = js.undefined
@@ -536,6 +557,7 @@ package sqs {
   }
 
   object GetQueueUrlResult {
+    @inline
     def apply(
         QueueUrl: js.UndefOr[String] = js.undefined
     ): GetQueueUrlResult = {
@@ -554,6 +576,7 @@ package sqs {
   }
 
   object ListDeadLetterSourceQueuesRequest {
+    @inline
     def apply(
         QueueUrl: String
     ): ListDeadLetterSourceQueuesRequest = {
@@ -574,6 +597,7 @@ package sqs {
   }
 
   object ListDeadLetterSourceQueuesResult {
+    @inline
     def apply(
         queueUrls: QueueUrlList
     ): ListDeadLetterSourceQueuesResult = {
@@ -591,6 +615,7 @@ package sqs {
   }
 
   object ListQueueTagsRequest {
+    @inline
     def apply(
         QueueUrl: String
     ): ListQueueTagsRequest = {
@@ -608,6 +633,7 @@ package sqs {
   }
 
   object ListQueueTagsResult {
+    @inline
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListQueueTagsResult = {
@@ -626,6 +652,7 @@ package sqs {
   }
 
   object ListQueuesRequest {
+    @inline
     def apply(
         QueueNamePrefix: js.UndefOr[String] = js.undefined
     ): ListQueuesRequest = {
@@ -644,6 +671,7 @@ package sqs {
   }
 
   object ListQueuesResult {
+    @inline
     def apply(
         QueueUrls: js.UndefOr[QueueUrlList] = js.undefined
     ): ListQueuesResult = {
@@ -668,6 +696,7 @@ package sqs {
   }
 
   object Message {
+    @inline
     def apply(
         Attributes: js.UndefOr[MessageSystemAttributeMap] = js.undefined,
         Body: js.UndefOr[String] = js.undefined,
@@ -703,6 +732,7 @@ package sqs {
   }
 
   object MessageAttributeValue {
+    @inline
     def apply(
         DataType: String,
         BinaryListValues: js.UndefOr[BinaryList] = js.undefined,
@@ -753,6 +783,7 @@ package sqs {
   }
 
   object PurgeQueueRequest {
+    @inline
     def apply(
         QueueUrl: String
     ): PurgeQueueRequest = {
@@ -823,6 +854,7 @@ package sqs {
   }
 
   object ReceiveMessageRequest {
+    @inline
     def apply(
         QueueUrl: String,
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
@@ -855,6 +887,7 @@ package sqs {
   }
 
   object ReceiveMessageResult {
+    @inline
     def apply(
         Messages: js.UndefOr[MessageList] = js.undefined
     ): ReceiveMessageResult = {
@@ -874,6 +907,7 @@ package sqs {
   }
 
   object RemovePermissionRequest {
+    @inline
     def apply(
         Label: String,
         QueueUrl: String
@@ -897,6 +931,7 @@ package sqs {
   }
 
   object SendMessageBatchRequest {
+    @inline
     def apply(
         Entries: SendMessageBatchRequestEntryList,
         QueueUrl: String
@@ -924,6 +959,7 @@ package sqs {
   }
 
   object SendMessageBatchRequestEntry {
+    @inline
     def apply(
         Id: String,
         MessageBody: String,
@@ -955,6 +991,7 @@ package sqs {
   }
 
   object SendMessageBatchResult {
+    @inline
     def apply(
         Failed: BatchResultErrorEntryList,
         Successful: SendMessageBatchResultEntryList
@@ -981,6 +1018,7 @@ package sqs {
   }
 
   object SendMessageBatchResultEntry {
+    @inline
     def apply(
         Id: String,
         MD5OfMessageBody: String,
@@ -1014,6 +1052,7 @@ package sqs {
   }
 
   object SendMessageRequest {
+    @inline
     def apply(
         MessageBody: String,
         QueueUrl: String,
@@ -1047,6 +1086,7 @@ package sqs {
   }
 
   object SendMessageResult {
+    @inline
     def apply(
         MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
         MD5OfMessageBody: js.UndefOr[String] = js.undefined,
@@ -1072,6 +1112,7 @@ package sqs {
   }
 
   object SetQueueAttributesRequest {
+    @inline
     def apply(
         Attributes: QueueAttributeMap,
         QueueUrl: String
@@ -1092,6 +1133,7 @@ package sqs {
   }
 
   object TagQueueRequest {
+    @inline
     def apply(
         QueueUrl: String,
         Tags: TagMap
@@ -1112,6 +1154,7 @@ package sqs {
   }
 
   object UntagQueueRequest {
+    @inline
     def apply(
         QueueUrl: String,
         TagKeys: TagKeyList

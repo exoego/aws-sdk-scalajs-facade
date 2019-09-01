@@ -117,168 +117,184 @@ package object gamelift {
 
   implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
 
-    def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
+    @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
       service.acceptMatch(params).promise.toFuture
-    def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] =
+    @inline def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] =
       service.createAlias(params).promise.toFuture
-    def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] =
+    @inline def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] =
       service.createBuild(params).promise.toFuture
-    def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] =
+    @inline def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] =
       service.createFleet(params).promise.toFuture
-    def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] =
+    @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] =
       service.createGameSession(params).promise.toFuture
-    def createGameSessionQueueFuture(params: CreateGameSessionQueueInput): Future[CreateGameSessionQueueOutput] =
-      service.createGameSessionQueue(params).promise.toFuture
-    def createMatchmakingConfigurationFuture(
+    @inline def createGameSessionQueueFuture(
+        params: CreateGameSessionQueueInput
+    ): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise.toFuture
+    @inline def createMatchmakingConfigurationFuture(
         params: CreateMatchmakingConfigurationInput
     ): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise.toFuture
-    def createMatchmakingRuleSetFuture(params: CreateMatchmakingRuleSetInput): Future[CreateMatchmakingRuleSetOutput] =
-      service.createMatchmakingRuleSet(params).promise.toFuture
-    def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] =
+    @inline def createMatchmakingRuleSetFuture(
+        params: CreateMatchmakingRuleSetInput
+    ): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise.toFuture
+    @inline def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] =
       service.createPlayerSession(params).promise.toFuture
-    def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] =
+    @inline def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] =
       service.createPlayerSessions(params).promise.toFuture
-    def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] =
+    @inline def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] =
       service.createScript(params).promise.toFuture
-    def createVpcPeeringAuthorizationFuture(
+    @inline def createVpcPeeringAuthorizationFuture(
         params: CreateVpcPeeringAuthorizationInput
     ): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise.toFuture
-    def createVpcPeeringConnectionFuture(
+    @inline def createVpcPeeringConnectionFuture(
         params: CreateVpcPeeringConnectionInput
-    ): Future[CreateVpcPeeringConnectionOutput]                        = service.createVpcPeeringConnection(params).promise.toFuture
-    def deleteAliasFuture(params: DeleteAliasInput): Future[js.Object] = service.deleteAlias(params).promise.toFuture
-    def deleteBuildFuture(params: DeleteBuildInput): Future[js.Object] = service.deleteBuild(params).promise.toFuture
-    def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] = service.deleteFleet(params).promise.toFuture
-    def deleteGameSessionQueueFuture(params: DeleteGameSessionQueueInput): Future[DeleteGameSessionQueueOutput] =
-      service.deleteGameSessionQueue(params).promise.toFuture
-    def deleteMatchmakingConfigurationFuture(
+    ): Future[CreateVpcPeeringConnectionOutput] = service.createVpcPeeringConnection(params).promise.toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasInput): Future[js.Object] =
+      service.deleteAlias(params).promise.toFuture
+    @inline def deleteBuildFuture(params: DeleteBuildInput): Future[js.Object] =
+      service.deleteBuild(params).promise.toFuture
+    @inline def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] =
+      service.deleteFleet(params).promise.toFuture
+    @inline def deleteGameSessionQueueFuture(
+        params: DeleteGameSessionQueueInput
+    ): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise.toFuture
+    @inline def deleteMatchmakingConfigurationFuture(
         params: DeleteMatchmakingConfigurationInput
     ): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise.toFuture
-    def deleteMatchmakingRuleSetFuture(params: DeleteMatchmakingRuleSetInput): Future[DeleteMatchmakingRuleSetOutput] =
-      service.deleteMatchmakingRuleSet(params).promise.toFuture
-    def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] =
+    @inline def deleteMatchmakingRuleSetFuture(
+        params: DeleteMatchmakingRuleSetInput
+    ): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise.toFuture
+    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] =
       service.deleteScalingPolicy(params).promise.toFuture
-    def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] = service.deleteScript(params).promise.toFuture
-    def deleteVpcPeeringAuthorizationFuture(
+    @inline def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] =
+      service.deleteScript(params).promise.toFuture
+    @inline def deleteVpcPeeringAuthorizationFuture(
         params: DeleteVpcPeeringAuthorizationInput
     ): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise.toFuture
-    def deleteVpcPeeringConnectionFuture(
+    @inline def deleteVpcPeeringConnectionFuture(
         params: DeleteVpcPeeringConnectionInput
     ): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise.toFuture
-    def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] =
+    @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] =
       service.describeAlias(params).promise.toFuture
-    def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] =
+    @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] =
       service.describeBuild(params).promise.toFuture
-    def describeEC2InstanceLimitsFuture(
+    @inline def describeEC2InstanceLimitsFuture(
         params: DescribeEC2InstanceLimitsInput
     ): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise.toFuture
-    def describeFleetAttributesFuture(params: DescribeFleetAttributesInput): Future[DescribeFleetAttributesOutput] =
-      service.describeFleetAttributes(params).promise.toFuture
-    def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] =
+    @inline def describeFleetAttributesFuture(
+        params: DescribeFleetAttributesInput
+    ): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise.toFuture
+    @inline def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] =
       service.describeFleetCapacity(params).promise.toFuture
-    def describeFleetEventsFuture(params: DescribeFleetEventsInput): Future[DescribeFleetEventsOutput] =
+    @inline def describeFleetEventsFuture(params: DescribeFleetEventsInput): Future[DescribeFleetEventsOutput] =
       service.describeFleetEvents(params).promise.toFuture
-    def describeFleetPortSettingsFuture(
+    @inline def describeFleetPortSettingsFuture(
         params: DescribeFleetPortSettingsInput
     ): Future[DescribeFleetPortSettingsOutput] = service.describeFleetPortSettings(params).promise.toFuture
-    def describeFleetUtilizationFuture(params: DescribeFleetUtilizationInput): Future[DescribeFleetUtilizationOutput] =
-      service.describeFleetUtilization(params).promise.toFuture
-    def describeGameSessionDetailsFuture(
+    @inline def describeFleetUtilizationFuture(
+        params: DescribeFleetUtilizationInput
+    ): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise.toFuture
+    @inline def describeGameSessionDetailsFuture(
         params: DescribeGameSessionDetailsInput
     ): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise.toFuture
-    def describeGameSessionPlacementFuture(
+    @inline def describeGameSessionPlacementFuture(
         params: DescribeGameSessionPlacementInput
     ): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise.toFuture
-    def describeGameSessionQueuesFuture(
+    @inline def describeGameSessionQueuesFuture(
         params: DescribeGameSessionQueuesInput
     ): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise.toFuture
-    def describeGameSessionsFuture(params: DescribeGameSessionsInput): Future[DescribeGameSessionsOutput] =
+    @inline def describeGameSessionsFuture(params: DescribeGameSessionsInput): Future[DescribeGameSessionsOutput] =
       service.describeGameSessions(params).promise.toFuture
-    def describeInstancesFuture(params: DescribeInstancesInput): Future[DescribeInstancesOutput] =
+    @inline def describeInstancesFuture(params: DescribeInstancesInput): Future[DescribeInstancesOutput] =
       service.describeInstances(params).promise.toFuture
-    def describeMatchmakingConfigurationsFuture(
+    @inline def describeMatchmakingConfigurationsFuture(
         params: DescribeMatchmakingConfigurationsInput
     ): Future[DescribeMatchmakingConfigurationsOutput] =
       service.describeMatchmakingConfigurations(params).promise.toFuture
-    def describeMatchmakingFuture(params: DescribeMatchmakingInput): Future[DescribeMatchmakingOutput] =
+    @inline def describeMatchmakingFuture(params: DescribeMatchmakingInput): Future[DescribeMatchmakingOutput] =
       service.describeMatchmaking(params).promise.toFuture
-    def describeMatchmakingRuleSetsFuture(
+    @inline def describeMatchmakingRuleSetsFuture(
         params: DescribeMatchmakingRuleSetsInput
     ): Future[DescribeMatchmakingRuleSetsOutput] = service.describeMatchmakingRuleSets(params).promise.toFuture
-    def describePlayerSessionsFuture(params: DescribePlayerSessionsInput): Future[DescribePlayerSessionsOutput] =
-      service.describePlayerSessions(params).promise.toFuture
-    def describeRuntimeConfigurationFuture(
+    @inline def describePlayerSessionsFuture(
+        params: DescribePlayerSessionsInput
+    ): Future[DescribePlayerSessionsOutput] = service.describePlayerSessions(params).promise.toFuture
+    @inline def describeRuntimeConfigurationFuture(
         params: DescribeRuntimeConfigurationInput
     ): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise.toFuture
-    def describeScalingPoliciesFuture(params: DescribeScalingPoliciesInput): Future[DescribeScalingPoliciesOutput] =
-      service.describeScalingPolicies(params).promise.toFuture
-    def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] =
+    @inline def describeScalingPoliciesFuture(
+        params: DescribeScalingPoliciesInput
+    ): Future[DescribeScalingPoliciesOutput] = service.describeScalingPolicies(params).promise.toFuture
+    @inline def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] =
       service.describeScript(params).promise.toFuture
-    def describeVpcPeeringAuthorizationsFuture(
+    @inline def describeVpcPeeringAuthorizationsFuture(
         params: DescribeVpcPeeringAuthorizationsInput
     ): Future[DescribeVpcPeeringAuthorizationsOutput] =
       service.describeVpcPeeringAuthorizations(params).promise.toFuture
-    def describeVpcPeeringConnectionsFuture(
+    @inline def describeVpcPeeringConnectionsFuture(
         params: DescribeVpcPeeringConnectionsInput
     ): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise.toFuture
-    def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] =
+    @inline def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] =
       service.getGameSessionLogUrl(params).promise.toFuture
-    def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] =
+    @inline def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] =
       service.getInstanceAccess(params).promise.toFuture
-    def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] =
+    @inline def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] =
       service.listAliases(params).promise.toFuture
-    def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
+    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
       service.listBuilds(params).promise.toFuture
-    def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
+    @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
       service.listFleets(params).promise.toFuture
-    def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
+    @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
       service.listScripts(params).promise.toFuture
-    def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
       service.putScalingPolicy(params).promise.toFuture
-    def requestUploadCredentialsFuture(params: RequestUploadCredentialsInput): Future[RequestUploadCredentialsOutput] =
-      service.requestUploadCredentials(params).promise.toFuture
-    def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] =
+    @inline def requestUploadCredentialsFuture(
+        params: RequestUploadCredentialsInput
+    ): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise.toFuture
+    @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] =
       service.resolveAlias(params).promise.toFuture
-    def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] =
+    @inline def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] =
       service.searchGameSessions(params).promise.toFuture
-    def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] =
+    @inline def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] =
       service.startFleetActions(params).promise.toFuture
-    def startGameSessionPlacementFuture(
+    @inline def startGameSessionPlacementFuture(
         params: StartGameSessionPlacementInput
     ): Future[StartGameSessionPlacementOutput] = service.startGameSessionPlacement(params).promise.toFuture
-    def startMatchBackfillFuture(params: StartMatchBackfillInput): Future[StartMatchBackfillOutput] =
+    @inline def startMatchBackfillFuture(params: StartMatchBackfillInput): Future[StartMatchBackfillOutput] =
       service.startMatchBackfill(params).promise.toFuture
-    def startMatchmakingFuture(params: StartMatchmakingInput): Future[StartMatchmakingOutput] =
+    @inline def startMatchmakingFuture(params: StartMatchmakingInput): Future[StartMatchmakingOutput] =
       service.startMatchmaking(params).promise.toFuture
-    def stopFleetActionsFuture(params: StopFleetActionsInput): Future[StopFleetActionsOutput] =
+    @inline def stopFleetActionsFuture(params: StopFleetActionsInput): Future[StopFleetActionsOutput] =
       service.stopFleetActions(params).promise.toFuture
-    def stopGameSessionPlacementFuture(params: StopGameSessionPlacementInput): Future[StopGameSessionPlacementOutput] =
-      service.stopGameSessionPlacement(params).promise.toFuture
-    def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] =
+    @inline def stopGameSessionPlacementFuture(
+        params: StopGameSessionPlacementInput
+    ): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise.toFuture
+    @inline def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] =
       service.stopMatchmaking(params).promise.toFuture
-    def updateAliasFuture(params: UpdateAliasInput): Future[UpdateAliasOutput] =
+    @inline def updateAliasFuture(params: UpdateAliasInput): Future[UpdateAliasOutput] =
       service.updateAlias(params).promise.toFuture
-    def updateBuildFuture(params: UpdateBuildInput): Future[UpdateBuildOutput] =
+    @inline def updateBuildFuture(params: UpdateBuildInput): Future[UpdateBuildOutput] =
       service.updateBuild(params).promise.toFuture
-    def updateFleetAttributesFuture(params: UpdateFleetAttributesInput): Future[UpdateFleetAttributesOutput] =
+    @inline def updateFleetAttributesFuture(params: UpdateFleetAttributesInput): Future[UpdateFleetAttributesOutput] =
       service.updateFleetAttributes(params).promise.toFuture
-    def updateFleetCapacityFuture(params: UpdateFleetCapacityInput): Future[UpdateFleetCapacityOutput] =
+    @inline def updateFleetCapacityFuture(params: UpdateFleetCapacityInput): Future[UpdateFleetCapacityOutput] =
       service.updateFleetCapacity(params).promise.toFuture
-    def updateFleetPortSettingsFuture(params: UpdateFleetPortSettingsInput): Future[UpdateFleetPortSettingsOutput] =
-      service.updateFleetPortSettings(params).promise.toFuture
-    def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] =
+    @inline def updateFleetPortSettingsFuture(
+        params: UpdateFleetPortSettingsInput
+    ): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise.toFuture
+    @inline def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] =
       service.updateGameSession(params).promise.toFuture
-    def updateGameSessionQueueFuture(params: UpdateGameSessionQueueInput): Future[UpdateGameSessionQueueOutput] =
-      service.updateGameSessionQueue(params).promise.toFuture
-    def updateMatchmakingConfigurationFuture(
+    @inline def updateGameSessionQueueFuture(
+        params: UpdateGameSessionQueueInput
+    ): Future[UpdateGameSessionQueueOutput] = service.updateGameSessionQueue(params).promise.toFuture
+    @inline def updateMatchmakingConfigurationFuture(
         params: UpdateMatchmakingConfigurationInput
     ): Future[UpdateMatchmakingConfigurationOutput] = service.updateMatchmakingConfiguration(params).promise.toFuture
-    def updateRuntimeConfigurationFuture(
+    @inline def updateRuntimeConfigurationFuture(
         params: UpdateRuntimeConfigurationInput
     ): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise.toFuture
-    def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] =
+    @inline def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] =
       service.updateScript(params).promise.toFuture
-    def validateMatchmakingRuleSetFuture(
+    @inline def validateMatchmakingRuleSetFuture(
         params: ValidateMatchmakingRuleSetInput
     ): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise.toFuture
   }
@@ -415,6 +431,7 @@ package gamelift {
   }
 
   object AcceptMatchInput {
+    @inline
     def apply(
         AcceptanceType: AcceptanceType,
         PlayerIds: StringList,
@@ -434,6 +451,7 @@ package gamelift {
   trait AcceptMatchOutput extends js.Object {}
 
   object AcceptMatchOutput {
+    @inline
     def apply(
         ): AcceptMatchOutput = {
       val __obj = js.Dynamic.literal()
@@ -470,6 +488,7 @@ package gamelift {
   }
 
   object Alias {
+    @inline
     def apply(
         AliasArn: js.UndefOr[ArnStringModel] = js.undefined,
         AliasId: js.UndefOr[AliasId] = js.undefined,
@@ -503,6 +522,7 @@ package gamelift {
   }
 
   object AttributeValue {
+    @inline
     def apply(
         N: js.UndefOr[DoubleObject] = js.undefined,
         S: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -529,6 +549,7 @@ package gamelift {
   }
 
   object AwsCredentials {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[NonEmptyString] = js.undefined,
         SecretAccessKey: js.UndefOr[NonEmptyString] = js.undefined,
@@ -570,6 +591,7 @@ package gamelift {
   }
 
   object Build {
+    @inline
     def apply(
         BuildId: js.UndefOr[BuildId] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -621,6 +643,7 @@ package gamelift {
   }
 
   object CreateAliasInput {
+    @inline
     def apply(
         Name: NonBlankAndLengthConstraintString,
         RoutingStrategy: RoutingStrategy,
@@ -645,6 +668,7 @@ package gamelift {
   }
 
   object CreateAliasOutput {
+    @inline
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): CreateAliasOutput = {
@@ -666,6 +690,7 @@ package gamelift {
   }
 
   object CreateBuildInput {
+    @inline
     def apply(
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
@@ -692,6 +717,7 @@ package gamelift {
   }
 
   object CreateBuildOutput {
+    @inline
     def apply(
         Build: js.UndefOr[Build] = js.undefined,
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
@@ -730,6 +756,7 @@ package gamelift {
   }
 
   object CreateFleetInput {
+    @inline
     def apply(
         EC2InstanceType: EC2InstanceType,
         Name: NonZeroAndMaxString,
@@ -786,6 +813,7 @@ package gamelift {
   }
 
   object CreateFleetOutput {
+    @inline
     def apply(
         FleetAttributes: js.UndefOr[FleetAttributes] = js.undefined
     ): CreateFleetOutput = {
@@ -812,6 +840,7 @@ package gamelift {
   }
 
   object CreateGameSessionInput {
+    @inline
     def apply(
         MaximumPlayerSessionCount: WholeNumber,
         AliasId: js.UndefOr[AliasId] = js.undefined,
@@ -848,6 +877,7 @@ package gamelift {
   }
 
   object CreateGameSessionOutput {
+    @inline
     def apply(
         GameSession: js.UndefOr[GameSession] = js.undefined
     ): CreateGameSessionOutput = {
@@ -869,6 +899,7 @@ package gamelift {
   }
 
   object CreateGameSessionQueueInput {
+    @inline
     def apply(
         Name: GameSessionQueueName,
         Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
@@ -895,6 +926,7 @@ package gamelift {
   }
 
   object CreateGameSessionQueueOutput {
+    @inline
     def apply(
         GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
     ): CreateGameSessionQueueOutput = {
@@ -925,6 +957,7 @@ package gamelift {
   }
 
   object CreateMatchmakingConfigurationInput {
+    @inline
     def apply(
         AcceptanceRequired: BooleanModel,
         GameSessionQueueArns: QueueArnsList,
@@ -969,6 +1002,7 @@ package gamelift {
   }
 
   object CreateMatchmakingConfigurationOutput {
+    @inline
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): CreateMatchmakingConfigurationOutput = {
@@ -988,6 +1022,7 @@ package gamelift {
   }
 
   object CreateMatchmakingRuleSetInput {
+    @inline
     def apply(
         Name: MatchmakingIdStringModel,
         RuleSetBody: RuleSetBody
@@ -1010,6 +1045,7 @@ package gamelift {
   }
 
   object CreateMatchmakingRuleSetOutput {
+    @inline
     def apply(
         RuleSet: MatchmakingRuleSet
     ): CreateMatchmakingRuleSetOutput = {
@@ -1032,6 +1068,7 @@ package gamelift {
   }
 
   object CreatePlayerSessionInput {
+    @inline
     def apply(
         GameSessionId: ArnStringModel,
         PlayerId: NonZeroAndMaxString,
@@ -1056,6 +1093,7 @@ package gamelift {
   }
 
   object CreatePlayerSessionOutput {
+    @inline
     def apply(
         PlayerSession: js.UndefOr[PlayerSession] = js.undefined
     ): CreatePlayerSessionOutput = {
@@ -1076,6 +1114,7 @@ package gamelift {
   }
 
   object CreatePlayerSessionsInput {
+    @inline
     def apply(
         GameSessionId: ArnStringModel,
         PlayerIds: PlayerIdList,
@@ -1100,6 +1139,7 @@ package gamelift {
   }
 
   object CreatePlayerSessionsOutput {
+    @inline
     def apply(
         PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
     ): CreatePlayerSessionsOutput = {
@@ -1118,6 +1158,7 @@ package gamelift {
   }
 
   object CreateScriptInput {
+    @inline
     def apply(
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
@@ -1139,6 +1180,7 @@ package gamelift {
   }
 
   object CreateScriptOutput {
+    @inline
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): CreateScriptOutput = {
@@ -1158,6 +1200,7 @@ package gamelift {
   }
 
   object CreateVpcPeeringAuthorizationInput {
+    @inline
     def apply(
         GameLiftAwsAccountId: NonZeroAndMaxString,
         PeerVpcId: NonZeroAndMaxString
@@ -1180,6 +1223,7 @@ package gamelift {
   }
 
   object CreateVpcPeeringAuthorizationOutput {
+    @inline
     def apply(
         VpcPeeringAuthorization: js.UndefOr[VpcPeeringAuthorization] = js.undefined
     ): CreateVpcPeeringAuthorizationOutput = {
@@ -1200,6 +1244,7 @@ package gamelift {
   }
 
   object CreateVpcPeeringConnectionInput {
+    @inline
     def apply(
         FleetId: FleetId,
         PeerVpcAwsAccountId: NonZeroAndMaxString,
@@ -1219,6 +1264,7 @@ package gamelift {
   trait CreateVpcPeeringConnectionOutput extends js.Object {}
 
   object CreateVpcPeeringConnectionOutput {
+    @inline
     def apply(
         ): CreateVpcPeeringConnectionOutput = {
       val __obj = js.Dynamic.literal()
@@ -1236,6 +1282,7 @@ package gamelift {
   }
 
   object DeleteAliasInput {
+    @inline
     def apply(
         AliasId: AliasId
     ): DeleteAliasInput = {
@@ -1256,6 +1303,7 @@ package gamelift {
   }
 
   object DeleteBuildInput {
+    @inline
     def apply(
         BuildId: BuildId
     ): DeleteBuildInput = {
@@ -1276,6 +1324,7 @@ package gamelift {
   }
 
   object DeleteFleetInput {
+    @inline
     def apply(
         FleetId: FleetId
     ): DeleteFleetInput = {
@@ -1296,6 +1345,7 @@ package gamelift {
   }
 
   object DeleteGameSessionQueueInput {
+    @inline
     def apply(
         Name: GameSessionQueueName
     ): DeleteGameSessionQueueInput = {
@@ -1311,6 +1361,7 @@ package gamelift {
   trait DeleteGameSessionQueueOutput extends js.Object {}
 
   object DeleteGameSessionQueueOutput {
+    @inline
     def apply(
         ): DeleteGameSessionQueueOutput = {
       val __obj = js.Dynamic.literal()
@@ -1328,6 +1379,7 @@ package gamelift {
   }
 
   object DeleteMatchmakingConfigurationInput {
+    @inline
     def apply(
         Name: MatchmakingIdStringModel
     ): DeleteMatchmakingConfigurationInput = {
@@ -1343,6 +1395,7 @@ package gamelift {
   trait DeleteMatchmakingConfigurationOutput extends js.Object {}
 
   object DeleteMatchmakingConfigurationOutput {
+    @inline
     def apply(
         ): DeleteMatchmakingConfigurationOutput = {
       val __obj = js.Dynamic.literal()
@@ -1360,6 +1413,7 @@ package gamelift {
   }
 
   object DeleteMatchmakingRuleSetInput {
+    @inline
     def apply(
         Name: MatchmakingIdStringModel
     ): DeleteMatchmakingRuleSetInput = {
@@ -1378,6 +1432,7 @@ package gamelift {
   trait DeleteMatchmakingRuleSetOutput extends js.Object {}
 
   object DeleteMatchmakingRuleSetOutput {
+    @inline
     def apply(
         ): DeleteMatchmakingRuleSetOutput = {
       val __obj = js.Dynamic.literal()
@@ -1396,6 +1451,7 @@ package gamelift {
   }
 
   object DeleteScalingPolicyInput {
+    @inline
     def apply(
         FleetId: FleetId,
         Name: NonZeroAndMaxString
@@ -1415,6 +1471,7 @@ package gamelift {
   }
 
   object DeleteScriptInput {
+    @inline
     def apply(
         ScriptId: ScriptId
     ): DeleteScriptInput = {
@@ -1436,6 +1493,7 @@ package gamelift {
   }
 
   object DeleteVpcPeeringAuthorizationInput {
+    @inline
     def apply(
         GameLiftAwsAccountId: NonZeroAndMaxString,
         PeerVpcId: NonZeroAndMaxString
@@ -1453,6 +1511,7 @@ package gamelift {
   trait DeleteVpcPeeringAuthorizationOutput extends js.Object {}
 
   object DeleteVpcPeeringAuthorizationOutput {
+    @inline
     def apply(
         ): DeleteVpcPeeringAuthorizationOutput = {
       val __obj = js.Dynamic.literal()
@@ -1471,6 +1530,7 @@ package gamelift {
   }
 
   object DeleteVpcPeeringConnectionInput {
+    @inline
     def apply(
         FleetId: FleetId,
         VpcPeeringConnectionId: NonZeroAndMaxString
@@ -1488,6 +1548,7 @@ package gamelift {
   trait DeleteVpcPeeringConnectionOutput extends js.Object {}
 
   object DeleteVpcPeeringConnectionOutput {
+    @inline
     def apply(
         ): DeleteVpcPeeringConnectionOutput = {
       val __obj = js.Dynamic.literal()
@@ -1505,6 +1566,7 @@ package gamelift {
   }
 
   object DescribeAliasInput {
+    @inline
     def apply(
         AliasId: AliasId
     ): DescribeAliasInput = {
@@ -1525,6 +1587,7 @@ package gamelift {
   }
 
   object DescribeAliasOutput {
+    @inline
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): DescribeAliasOutput = {
@@ -1543,6 +1606,7 @@ package gamelift {
   }
 
   object DescribeBuildInput {
+    @inline
     def apply(
         BuildId: BuildId
     ): DescribeBuildInput = {
@@ -1563,6 +1627,7 @@ package gamelift {
   }
 
   object DescribeBuildOutput {
+    @inline
     def apply(
         Build: js.UndefOr[Build] = js.undefined
     ): DescribeBuildOutput = {
@@ -1581,6 +1646,7 @@ package gamelift {
   }
 
   object DescribeEC2InstanceLimitsInput {
+    @inline
     def apply(
         EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined
     ): DescribeEC2InstanceLimitsInput = {
@@ -1599,6 +1665,7 @@ package gamelift {
   }
 
   object DescribeEC2InstanceLimitsOutput {
+    @inline
     def apply(
         EC2InstanceLimits: js.UndefOr[EC2InstanceLimitList] = js.undefined
     ): DescribeEC2InstanceLimitsOutput = {
@@ -1619,6 +1686,7 @@ package gamelift {
   }
 
   object DescribeFleetAttributesInput {
+    @inline
     def apply(
         FleetIds: js.UndefOr[FleetIdList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -1642,6 +1710,7 @@ package gamelift {
   }
 
   object DescribeFleetAttributesOutput {
+    @inline
     def apply(
         FleetAttributes: js.UndefOr[FleetAttributesList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1664,6 +1733,7 @@ package gamelift {
   }
 
   object DescribeFleetCapacityInput {
+    @inline
     def apply(
         FleetIds: js.UndefOr[FleetIdList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -1687,6 +1757,7 @@ package gamelift {
   }
 
   object DescribeFleetCapacityOutput {
+    @inline
     def apply(
         FleetCapacity: js.UndefOr[FleetCapacityList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1711,6 +1782,7 @@ package gamelift {
   }
 
   object DescribeFleetEventsInput {
+    @inline
     def apply(
         FleetId: FleetId,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1740,6 +1812,7 @@ package gamelift {
   }
 
   object DescribeFleetEventsOutput {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1760,6 +1833,7 @@ package gamelift {
   }
 
   object DescribeFleetPortSettingsInput {
+    @inline
     def apply(
         FleetId: FleetId
     ): DescribeFleetPortSettingsInput = {
@@ -1780,6 +1854,7 @@ package gamelift {
   }
 
   object DescribeFleetPortSettingsOutput {
+    @inline
     def apply(
         InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined
     ): DescribeFleetPortSettingsOutput = {
@@ -1800,6 +1875,7 @@ package gamelift {
   }
 
   object DescribeFleetUtilizationInput {
+    @inline
     def apply(
         FleetIds: js.UndefOr[FleetIdList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -1823,6 +1899,7 @@ package gamelift {
   }
 
   object DescribeFleetUtilizationOutput {
+    @inline
     def apply(
         FleetUtilization: js.UndefOr[FleetUtilizationList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1848,6 +1925,7 @@ package gamelift {
   }
 
   object DescribeGameSessionDetailsInput {
+    @inline
     def apply(
         AliasId: js.UndefOr[AliasId] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
@@ -1877,6 +1955,7 @@ package gamelift {
   }
 
   object DescribeGameSessionDetailsOutput {
+    @inline
     def apply(
         GameSessionDetails: js.UndefOr[GameSessionDetailList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1897,6 +1976,7 @@ package gamelift {
   }
 
   object DescribeGameSessionPlacementInput {
+    @inline
     def apply(
         PlacementId: IdStringModel
     ): DescribeGameSessionPlacementInput = {
@@ -1917,6 +1997,7 @@ package gamelift {
   }
 
   object DescribeGameSessionPlacementOutput {
+    @inline
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): DescribeGameSessionPlacementOutput = {
@@ -1937,6 +2018,7 @@ package gamelift {
   }
 
   object DescribeGameSessionQueuesInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         Names: js.UndefOr[GameSessionQueueNameList] = js.undefined,
@@ -1960,6 +2042,7 @@ package gamelift {
   }
 
   object DescribeGameSessionQueuesOutput {
+    @inline
     def apply(
         GameSessionQueues: js.UndefOr[GameSessionQueueList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -1985,6 +2068,7 @@ package gamelift {
   }
 
   object DescribeGameSessionsInput {
+    @inline
     def apply(
         AliasId: js.UndefOr[AliasId] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
@@ -2014,6 +2098,7 @@ package gamelift {
   }
 
   object DescribeGameSessionsOutput {
+    @inline
     def apply(
         GameSessions: js.UndefOr[GameSessionList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2037,6 +2122,7 @@ package gamelift {
   }
 
   object DescribeInstancesInput {
+    @inline
     def apply(
         FleetId: FleetId,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -2064,6 +2150,7 @@ package gamelift {
   }
 
   object DescribeInstancesOutput {
+    @inline
     def apply(
         Instances: js.UndefOr[InstanceList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2087,6 +2174,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingConfigurationsInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         Names: js.UndefOr[MatchmakingIdList] = js.undefined,
@@ -2112,6 +2200,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingConfigurationsOutput {
+    @inline
     def apply(
         Configurations: js.UndefOr[MatchmakingConfigurationList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2132,6 +2221,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingInput {
+    @inline
     def apply(
         TicketIds: MatchmakingIdList
     ): DescribeMatchmakingInput = {
@@ -2152,6 +2242,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingOutput {
+    @inline
     def apply(
         TicketList: js.UndefOr[MatchmakingTicketList] = js.undefined
     ): DescribeMatchmakingOutput = {
@@ -2172,6 +2263,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingRuleSetsInput {
+    @inline
     def apply(
         Limit: js.UndefOr[RuleSetLimit] = js.undefined,
         Names: js.UndefOr[MatchmakingRuleSetNameList] = js.undefined,
@@ -2195,6 +2287,7 @@ package gamelift {
   }
 
   object DescribeMatchmakingRuleSetsOutput {
+    @inline
     def apply(
         RuleSets: MatchmakingRuleSetList,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2222,6 +2315,7 @@ package gamelift {
   }
 
   object DescribePlayerSessionsInput {
+    @inline
     def apply(
         GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -2253,6 +2347,7 @@ package gamelift {
   }
 
   object DescribePlayerSessionsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
@@ -2273,6 +2368,7 @@ package gamelift {
   }
 
   object DescribeRuntimeConfigurationInput {
+    @inline
     def apply(
         FleetId: FleetId
     ): DescribeRuntimeConfigurationInput = {
@@ -2293,6 +2389,7 @@ package gamelift {
   }
 
   object DescribeRuntimeConfigurationOutput {
+    @inline
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): DescribeRuntimeConfigurationOutput = {
@@ -2314,6 +2411,7 @@ package gamelift {
   }
 
   object DescribeScalingPoliciesInput {
+    @inline
     def apply(
         FleetId: FleetId,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -2341,6 +2439,7 @@ package gamelift {
   }
 
   object DescribeScalingPoliciesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicyList] = js.undefined
@@ -2358,6 +2457,7 @@ package gamelift {
   }
 
   object DescribeScriptInput {
+    @inline
     def apply(
         ScriptId: ScriptId
     ): DescribeScriptInput = {
@@ -2375,6 +2475,7 @@ package gamelift {
   }
 
   object DescribeScriptOutput {
+    @inline
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): DescribeScriptOutput = {
@@ -2388,6 +2489,7 @@ package gamelift {
   trait DescribeVpcPeeringAuthorizationsInput extends js.Object {}
 
   object DescribeVpcPeeringAuthorizationsInput {
+    @inline
     def apply(
         ): DescribeVpcPeeringAuthorizationsInput = {
       val __obj = js.Dynamic.literal()
@@ -2402,6 +2504,7 @@ package gamelift {
   }
 
   object DescribeVpcPeeringAuthorizationsOutput {
+    @inline
     def apply(
         VpcPeeringAuthorizations: js.UndefOr[VpcPeeringAuthorizationList] = js.undefined
     ): DescribeVpcPeeringAuthorizationsOutput = {
@@ -2420,6 +2523,7 @@ package gamelift {
   }
 
   object DescribeVpcPeeringConnectionsInput {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): DescribeVpcPeeringConnectionsInput = {
@@ -2438,6 +2542,7 @@ package gamelift {
   }
 
   object DescribeVpcPeeringConnectionsOutput {
+    @inline
     def apply(
         VpcPeeringConnections: js.UndefOr[VpcPeeringConnectionList] = js.undefined
     ): DescribeVpcPeeringConnectionsOutput = {
@@ -2457,6 +2562,7 @@ package gamelift {
   }
 
   object DesiredPlayerSession {
+    @inline
     def apply(
         PlayerData: js.UndefOr[PlayerData] = js.undefined,
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2503,6 +2609,7 @@ package gamelift {
   }
 
   object EC2InstanceCounts {
+    @inline
     def apply(
         ACTIVE: js.UndefOr[WholeNumber] = js.undefined,
         DESIRED: js.UndefOr[WholeNumber] = js.undefined,
@@ -2535,6 +2642,7 @@ package gamelift {
   }
 
   object EC2InstanceLimit {
+    @inline
     def apply(
         CurrentInstances: js.UndefOr[WholeNumber] = js.undefined,
         EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
@@ -2638,6 +2746,7 @@ package gamelift {
   }
 
   object Event {
+    @inline
     def apply(
         EventCode: js.UndefOr[EventCode] = js.undefined,
         EventId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -2785,6 +2894,7 @@ package gamelift {
   }
 
   object FleetAttributes {
+    @inline
     def apply(
         BuildId: js.UndefOr[BuildId] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2867,6 +2977,7 @@ package gamelift {
   }
 
   object FleetCapacity {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined,
         InstanceCounts: js.UndefOr[EC2InstanceCounts] = js.undefined,
@@ -2936,6 +3047,7 @@ package gamelift {
   }
 
   object FleetUtilization {
+    @inline
     def apply(
         ActiveGameSessionCount: js.UndefOr[WholeNumber] = js.undefined,
         ActiveServerProcessCount: js.UndefOr[WholeNumber] = js.undefined,
@@ -2967,6 +3079,7 @@ package gamelift {
   }
 
   object GameProperty {
+    @inline
     def apply(
         Key: GamePropertyKey,
         Value: GamePropertyValue
@@ -3017,6 +3130,7 @@ package gamelift {
   }
 
   object GameSession {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -3074,6 +3188,7 @@ package gamelift {
   }
 
   object GameSessionConnectionInfo {
+    @inline
     def apply(
         GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
         IpAddress: js.UndefOr[StringModel] = js.undefined,
@@ -3099,6 +3214,7 @@ package gamelift {
   }
 
   object GameSessionDetail {
+    @inline
     def apply(
         GameSession: js.UndefOr[GameSession] = js.undefined,
         ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined
@@ -3139,6 +3255,7 @@ package gamelift {
   }
 
   object GameSessionPlacement {
+    @inline
     def apply(
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
@@ -3211,6 +3328,7 @@ package gamelift {
   }
 
   object GameSessionQueue {
+    @inline
     def apply(
         Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
         GameSessionQueueArn: js.UndefOr[ArnStringModel] = js.undefined,
@@ -3241,6 +3359,7 @@ package gamelift {
   }
 
   object GameSessionQueueDestination {
+    @inline
     def apply(
         DestinationArn: js.UndefOr[ArnStringModel] = js.undefined
     ): GameSessionQueueDestination = {
@@ -3275,6 +3394,7 @@ package gamelift {
   }
 
   object GetGameSessionLogUrlInput {
+    @inline
     def apply(
         GameSessionId: ArnStringModel
     ): GetGameSessionLogUrlInput = {
@@ -3295,6 +3415,7 @@ package gamelift {
   }
 
   object GetGameSessionLogUrlOutput {
+    @inline
     def apply(
         PreSignedUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): GetGameSessionLogUrlOutput = {
@@ -3314,6 +3435,7 @@ package gamelift {
   }
 
   object GetInstanceAccessInput {
+    @inline
     def apply(
         FleetId: FleetId,
         InstanceId: InstanceId
@@ -3336,6 +3458,7 @@ package gamelift {
   }
 
   object GetInstanceAccessOutput {
+    @inline
     def apply(
         InstanceAccess: js.UndefOr[InstanceAccess] = js.undefined
     ): GetInstanceAccessOutput = {
@@ -3360,6 +3483,7 @@ package gamelift {
   }
 
   object Instance {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
@@ -3394,6 +3518,7 @@ package gamelift {
   }
 
   object InstanceAccess {
+    @inline
     def apply(
         Credentials: js.UndefOr[InstanceCredentials] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
@@ -3421,6 +3546,7 @@ package gamelift {
   }
 
   object InstanceCredentials {
+    @inline
     def apply(
         Secret: js.UndefOr[NonEmptyString] = js.undefined,
         UserName: js.UndefOr[NonEmptyString] = js.undefined
@@ -3452,6 +3578,7 @@ package gamelift {
   }
 
   object IpPermission {
+    @inline
     def apply(
         FromPort: PortNumber,
         IpRange: NonBlankString,
@@ -3488,6 +3615,7 @@ package gamelift {
   }
 
   object ListAliasesInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3513,6 +3641,7 @@ package gamelift {
   }
 
   object ListAliasesOutput {
+    @inline
     def apply(
         Aliases: js.UndefOr[AliasList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
@@ -3535,6 +3664,7 @@ package gamelift {
   }
 
   object ListBuildsInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3558,6 +3688,7 @@ package gamelift {
   }
 
   object ListBuildsOutput {
+    @inline
     def apply(
         Builds: js.UndefOr[BuildList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
@@ -3581,6 +3712,7 @@ package gamelift {
   }
 
   object ListFleetsInput {
+    @inline
     def apply(
         BuildId: js.UndefOr[BuildId] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
@@ -3606,6 +3738,7 @@ package gamelift {
   }
 
   object ListFleetsOutput {
+    @inline
     def apply(
         FleetIds: js.UndefOr[FleetIdList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -3624,6 +3757,7 @@ package gamelift {
   }
 
   object ListScriptsInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
@@ -3642,6 +3776,7 @@ package gamelift {
   }
 
   object ListScriptsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NonEmptyString] = js.undefined,
         Scripts: js.UndefOr[ScriptList] = js.undefined
@@ -3664,6 +3799,7 @@ package gamelift {
   }
 
   object MatchedPlayerSession {
+    @inline
     def apply(
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
@@ -3697,6 +3833,7 @@ package gamelift {
   }
 
   object MatchmakingConfiguration {
+    @inline
     def apply(
         AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
         AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
@@ -3763,6 +3900,7 @@ package gamelift {
   }
 
   object MatchmakingRuleSet {
+    @inline
     def apply(
         RuleSetBody: RuleSetBody,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -3796,6 +3934,7 @@ package gamelift {
   }
 
   object MatchmakingTicket {
+    @inline
     def apply(
         ConfigurationName: js.UndefOr[MatchmakingIdStringModel] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -3880,6 +4019,7 @@ package gamelift {
   }
 
   object PlacedPlayerSession {
+    @inline
     def apply(
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
@@ -3903,6 +4043,7 @@ package gamelift {
   }
 
   object Player {
+    @inline
     def apply(
         LatencyInMs: js.UndefOr[LatencyMap] = js.undefined,
         PlayerAttributes: js.UndefOr[PlayerAttributeMap] = js.undefined,
@@ -3929,6 +4070,7 @@ package gamelift {
   }
 
   object PlayerLatency {
+    @inline
     def apply(
         LatencyInMilliseconds: js.UndefOr[Float] = js.undefined,
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -3956,6 +4098,7 @@ package gamelift {
   }
 
   object PlayerLatencyPolicy {
+    @inline
     def apply(
         MaximumIndividualPlayerLatencyMilliseconds: js.UndefOr[WholeNumber] = js.undefined,
         PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined
@@ -3996,6 +4139,7 @@ package gamelift {
   }
 
   object PlayerSession {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
@@ -4071,6 +4215,7 @@ package gamelift {
   }
 
   object PutScalingPolicyInput {
+    @inline
     def apply(
         FleetId: FleetId,
         MetricName: MetricName,
@@ -4109,6 +4254,7 @@ package gamelift {
   }
 
   object PutScalingPolicyOutput {
+    @inline
     def apply(
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): PutScalingPolicyOutput = {
@@ -4127,6 +4273,7 @@ package gamelift {
   }
 
   object RequestUploadCredentialsInput {
+    @inline
     def apply(
         BuildId: BuildId
     ): RequestUploadCredentialsInput = {
@@ -4148,6 +4295,7 @@ package gamelift {
   }
 
   object RequestUploadCredentialsOutput {
+    @inline
     def apply(
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined
@@ -4168,6 +4316,7 @@ package gamelift {
   }
 
   object ResolveAliasInput {
+    @inline
     def apply(
         AliasId: AliasId
     ): ResolveAliasInput = {
@@ -4188,6 +4337,7 @@ package gamelift {
   }
 
   object ResolveAliasOutput {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): ResolveAliasOutput = {
@@ -4208,6 +4358,7 @@ package gamelift {
   }
 
   object ResourceCreationLimitPolicy {
+    @inline
     def apply(
         NewGameSessionsPerCreator: js.UndefOr[WholeNumber] = js.undefined,
         PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined
@@ -4238,6 +4389,7 @@ package gamelift {
   }
 
   object RoutingStrategy {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined,
         Message: js.UndefOr[FreeText] = js.undefined,
@@ -4291,6 +4443,7 @@ package gamelift {
   }
 
   object RuntimeConfiguration {
+    @inline
     def apply(
         GameSessionActivationTimeoutSeconds: js.UndefOr[GameSessionActivationTimeoutSeconds] = js.undefined,
         MaxConcurrentGameSessionActivations: js.UndefOr[MaxConcurrentGameSessionActivations] = js.undefined,
@@ -4320,6 +4473,7 @@ package gamelift {
   }
 
   object S3Location {
+    @inline
     def apply(
         Bucket: js.UndefOr[NonEmptyString] = js.undefined,
         Key: js.UndefOr[NonEmptyString] = js.undefined,
@@ -4373,6 +4527,7 @@ package gamelift {
   }
 
   object ScalingPolicy {
+    @inline
     def apply(
         ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
         EvaluationPeriods: js.UndefOr[PositiveInteger] = js.undefined,
@@ -4435,6 +4590,7 @@ package gamelift {
   }
 
   object Script {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -4468,6 +4624,7 @@ package gamelift {
   }
 
   object SearchGameSessionsInput {
+    @inline
     def apply(
         AliasId: js.UndefOr[AliasId] = js.undefined,
         FilterExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -4497,6 +4654,7 @@ package gamelift {
   }
 
   object SearchGameSessionsOutput {
+    @inline
     def apply(
         GameSessions: js.UndefOr[GameSessionList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -4519,6 +4677,7 @@ package gamelift {
   }
 
   object ServerProcess {
+    @inline
     def apply(
         ConcurrentExecutions: PositiveInteger,
         LaunchPath: NonZeroAndMaxString,
@@ -4541,6 +4700,7 @@ package gamelift {
   }
 
   object StartFleetActionsInput {
+    @inline
     def apply(
         Actions: FleetActionList,
         FleetId: FleetId
@@ -4558,6 +4718,7 @@ package gamelift {
   trait StartFleetActionsOutput extends js.Object {}
 
   object StartFleetActionsOutput {
+    @inline
     def apply(
         ): StartFleetActionsOutput = {
       val __obj = js.Dynamic.literal()
@@ -4582,6 +4743,7 @@ package gamelift {
   }
 
   object StartGameSessionPlacementInput {
+    @inline
     def apply(
         GameSessionQueueName: GameSessionQueueName,
         MaximumPlayerSessionCount: WholeNumber,
@@ -4616,6 +4778,7 @@ package gamelift {
   }
 
   object StartGameSessionPlacementOutput {
+    @inline
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): StartGameSessionPlacementOutput = {
@@ -4637,6 +4800,7 @@ package gamelift {
   }
 
   object StartMatchBackfillInput {
+    @inline
     def apply(
         ConfigurationName: MatchmakingIdStringModel,
         GameSessionArn: ArnStringModel,
@@ -4663,6 +4827,7 @@ package gamelift {
   }
 
   object StartMatchBackfillOutput {
+    @inline
     def apply(
         MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
     ): StartMatchBackfillOutput = {
@@ -4683,6 +4848,7 @@ package gamelift {
   }
 
   object StartMatchmakingInput {
+    @inline
     def apply(
         ConfigurationName: MatchmakingIdStringModel,
         Players: PlayerList,
@@ -4707,6 +4873,7 @@ package gamelift {
   }
 
   object StartMatchmakingOutput {
+    @inline
     def apply(
         MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
     ): StartMatchmakingOutput = {
@@ -4723,6 +4890,7 @@ package gamelift {
   }
 
   object StopFleetActionsInput {
+    @inline
     def apply(
         Actions: FleetActionList,
         FleetId: FleetId
@@ -4740,6 +4908,7 @@ package gamelift {
   trait StopFleetActionsOutput extends js.Object {}
 
   object StopFleetActionsOutput {
+    @inline
     def apply(
         ): StopFleetActionsOutput = {
       val __obj = js.Dynamic.literal()
@@ -4757,6 +4926,7 @@ package gamelift {
   }
 
   object StopGameSessionPlacementInput {
+    @inline
     def apply(
         PlacementId: IdStringModel
     ): StopGameSessionPlacementInput = {
@@ -4777,6 +4947,7 @@ package gamelift {
   }
 
   object StopGameSessionPlacementOutput {
+    @inline
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): StopGameSessionPlacementOutput = {
@@ -4795,6 +4966,7 @@ package gamelift {
   }
 
   object StopMatchmakingInput {
+    @inline
     def apply(
         TicketId: MatchmakingIdStringModel
     ): StopMatchmakingInput = {
@@ -4810,6 +4982,7 @@ package gamelift {
   trait StopMatchmakingOutput extends js.Object {}
 
   object StopMatchmakingOutput {
+    @inline
     def apply(
         ): StopMatchmakingOutput = {
       val __obj = js.Dynamic.literal()
@@ -4838,6 +5011,7 @@ package gamelift {
   }
 
   object TargetConfiguration {
+    @inline
     def apply(
         TargetValue: Double
     ): TargetConfiguration = {
@@ -4861,6 +5035,7 @@ package gamelift {
   }
 
   object UpdateAliasInput {
+    @inline
     def apply(
         AliasId: AliasId,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -4887,6 +5062,7 @@ package gamelift {
   }
 
   object UpdateAliasOutput {
+    @inline
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): UpdateAliasOutput = {
@@ -4907,6 +5083,7 @@ package gamelift {
   }
 
   object UpdateBuildInput {
+    @inline
     def apply(
         BuildId: BuildId,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -4931,6 +5108,7 @@ package gamelift {
   }
 
   object UpdateBuildOutput {
+    @inline
     def apply(
         Build: js.UndefOr[Build] = js.undefined
     ): UpdateBuildOutput = {
@@ -4954,6 +5132,7 @@ package gamelift {
   }
 
   object UpdateFleetAttributesInput {
+    @inline
     def apply(
         FleetId: FleetId,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -4988,6 +5167,7 @@ package gamelift {
   }
 
   object UpdateFleetAttributesOutput {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetAttributesOutput = {
@@ -5009,6 +5189,7 @@ package gamelift {
   }
 
   object UpdateFleetCapacityInput {
+    @inline
     def apply(
         FleetId: FleetId,
         DesiredInstances: js.UndefOr[WholeNumber] = js.undefined,
@@ -5035,6 +5216,7 @@ package gamelift {
   }
 
   object UpdateFleetCapacityOutput {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetCapacityOutput = {
@@ -5055,6 +5237,7 @@ package gamelift {
   }
 
   object UpdateFleetPortSettingsInput {
+    @inline
     def apply(
         FleetId: FleetId,
         InboundPermissionAuthorizations: js.UndefOr[IpPermissionsList] = js.undefined,
@@ -5083,6 +5266,7 @@ package gamelift {
   }
 
   object UpdateFleetPortSettingsOutput {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetPortSettingsOutput = {
@@ -5105,6 +5289,7 @@ package gamelift {
   }
 
   object UpdateGameSessionInput {
+    @inline
     def apply(
         GameSessionId: ArnStringModel,
         MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
@@ -5137,6 +5322,7 @@ package gamelift {
   }
 
   object UpdateGameSessionOutput {
+    @inline
     def apply(
         GameSession: js.UndefOr[GameSession] = js.undefined
     ): UpdateGameSessionOutput = {
@@ -5158,6 +5344,7 @@ package gamelift {
   }
 
   object UpdateGameSessionQueueInput {
+    @inline
     def apply(
         Name: GameSessionQueueName,
         Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
@@ -5184,6 +5371,7 @@ package gamelift {
   }
 
   object UpdateGameSessionQueueOutput {
+    @inline
     def apply(
         GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
     ): UpdateGameSessionQueueOutput = {
@@ -5214,6 +5402,7 @@ package gamelift {
   }
 
   object UpdateMatchmakingConfigurationInput {
+    @inline
     def apply(
         Name: MatchmakingIdStringModel,
         AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
@@ -5258,6 +5447,7 @@ package gamelift {
   }
 
   object UpdateMatchmakingConfigurationOutput {
+    @inline
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): UpdateMatchmakingConfigurationOutput = {
@@ -5277,6 +5467,7 @@ package gamelift {
   }
 
   object UpdateRuntimeConfigurationInput {
+    @inline
     def apply(
         FleetId: FleetId,
         RuntimeConfiguration: RuntimeConfiguration
@@ -5299,6 +5490,7 @@ package gamelift {
   }
 
   object UpdateRuntimeConfigurationOutput {
+    @inline
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): UpdateRuntimeConfigurationOutput = {
@@ -5318,6 +5510,7 @@ package gamelift {
   }
 
   object UpdateScriptInput {
+    @inline
     def apply(
         ScriptId: ScriptId,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -5343,6 +5536,7 @@ package gamelift {
   }
 
   object UpdateScriptOutput {
+    @inline
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): UpdateScriptOutput = {
@@ -5361,6 +5555,7 @@ package gamelift {
   }
 
   object ValidateMatchmakingRuleSetInput {
+    @inline
     def apply(
         RuleSetBody: RuleSetBody
     ): ValidateMatchmakingRuleSetInput = {
@@ -5381,6 +5576,7 @@ package gamelift {
   }
 
   object ValidateMatchmakingRuleSetOutput {
+    @inline
     def apply(
         Valid: js.UndefOr[BooleanModel] = js.undefined
     ): ValidateMatchmakingRuleSetOutput = {
@@ -5409,6 +5605,7 @@ package gamelift {
   }
 
   object VpcPeeringAuthorization {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -5446,6 +5643,7 @@ package gamelift {
   }
 
   object VpcPeeringConnection {
+    @inline
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameLiftVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -5475,6 +5673,7 @@ package gamelift {
   }
 
   object VpcPeeringConnectionStatus {
+    @inline
     def apply(
         Code: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Message: js.UndefOr[NonZeroAndMaxString] = js.undefined

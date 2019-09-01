@@ -405,388 +405,415 @@ package object iot {
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
-    def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
+    @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
       service.acceptCertificateTransfer(params).promise.toFuture
-    def addThingToBillingGroupFuture(params: AddThingToBillingGroupRequest): Future[AddThingToBillingGroupResponse] =
-      service.addThingToBillingGroup(params).promise.toFuture
-    def addThingToThingGroupFuture(params: AddThingToThingGroupRequest): Future[AddThingToThingGroupResponse] =
+    @inline def addThingToBillingGroupFuture(
+        params: AddThingToBillingGroupRequest
+    ): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise.toFuture
+    @inline def addThingToThingGroupFuture(params: AddThingToThingGroupRequest): Future[AddThingToThingGroupResponse] =
       service.addThingToThingGroup(params).promise.toFuture
-    def associateTargetsWithJobFuture(params: AssociateTargetsWithJobRequest): Future[AssociateTargetsWithJobResponse] =
-      service.associateTargetsWithJob(params).promise.toFuture
-    def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
+    @inline def associateTargetsWithJobFuture(
+        params: AssociateTargetsWithJobRequest
+    ): Future[AssociateTargetsWithJobResponse] = service.associateTargetsWithJob(params).promise.toFuture
+    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
       service.attachPolicy(params).promise.toFuture
-    def attachSecurityProfileFuture(params: AttachSecurityProfileRequest): Future[AttachSecurityProfileResponse] =
-      service.attachSecurityProfile(params).promise.toFuture
-    def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] =
+    @inline def attachSecurityProfileFuture(
+        params: AttachSecurityProfileRequest
+    ): Future[AttachSecurityProfileResponse] = service.attachSecurityProfile(params).promise.toFuture
+    @inline def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] =
       service.attachThingPrincipal(params).promise.toFuture
-    def cancelAuditMitigationActionsTaskFuture(
+    @inline def cancelAuditMitigationActionsTaskFuture(
         params: CancelAuditMitigationActionsTaskRequest
     ): Future[CancelAuditMitigationActionsTaskResponse] =
       service.cancelAuditMitigationActionsTask(params).promise.toFuture
-    def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] =
+    @inline def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] =
       service.cancelAuditTask(params).promise.toFuture
-    def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] =
+    @inline def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] =
       service.cancelCertificateTransfer(params).promise.toFuture
-    def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] =
+    @inline def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] =
       service.cancelJobExecution(params).promise.toFuture
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
-    def clearDefaultAuthorizerFuture(params: ClearDefaultAuthorizerRequest): Future[ClearDefaultAuthorizerResponse] =
-      service.clearDefaultAuthorizer(params).promise.toFuture
-    def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
+    @inline def clearDefaultAuthorizerFuture(
+        params: ClearDefaultAuthorizerRequest
+    ): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise.toFuture
+    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
       service.createAuthorizer(params).promise.toFuture
-    def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] =
+    @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] =
       service.createBillingGroup(params).promise.toFuture
-    def createCertificateFromCsrFuture(
+    @inline def createCertificateFromCsrFuture(
         params: CreateCertificateFromCsrRequest
     ): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise.toFuture
-    def createDynamicThingGroupFuture(params: CreateDynamicThingGroupRequest): Future[CreateDynamicThingGroupResponse] =
-      service.createDynamicThingGroup(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createDynamicThingGroupFuture(
+        params: CreateDynamicThingGroupRequest
+    ): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise.toFuture
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createKeysAndCertificateFuture(
+    @inline def createKeysAndCertificateFuture(
         params: CreateKeysAndCertificateRequest
     ): Future[CreateKeysAndCertificateResponse] = service.createKeysAndCertificate(params).promise.toFuture
-    def createMitigationActionFuture(params: CreateMitigationActionRequest): Future[CreateMitigationActionResponse] =
-      service.createMitigationAction(params).promise.toFuture
-    def createOTAUpdateFuture(params: CreateOTAUpdateRequest): Future[CreateOTAUpdateResponse] =
+    @inline def createMitigationActionFuture(
+        params: CreateMitigationActionRequest
+    ): Future[CreateMitigationActionResponse] = service.createMitigationAction(params).promise.toFuture
+    @inline def createOTAUpdateFuture(params: CreateOTAUpdateRequest): Future[CreateOTAUpdateResponse] =
       service.createOTAUpdate(params).promise.toFuture
-    def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
+    @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
       service.createPolicy(params).promise.toFuture
-    def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] =
+    @inline def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] =
       service.createPolicyVersion(params).promise.toFuture
-    def createRoleAliasFuture(params: CreateRoleAliasRequest): Future[CreateRoleAliasResponse] =
+    @inline def createRoleAliasFuture(params: CreateRoleAliasRequest): Future[CreateRoleAliasResponse] =
       service.createRoleAlias(params).promise.toFuture
-    def createScheduledAuditFuture(params: CreateScheduledAuditRequest): Future[CreateScheduledAuditResponse] =
+    @inline def createScheduledAuditFuture(params: CreateScheduledAuditRequest): Future[CreateScheduledAuditResponse] =
       service.createScheduledAudit(params).promise.toFuture
-    def createSecurityProfileFuture(params: CreateSecurityProfileRequest): Future[CreateSecurityProfileResponse] =
-      service.createSecurityProfile(params).promise.toFuture
-    def createStreamFuture(params: CreateStreamRequest): Future[CreateStreamResponse] =
+    @inline def createSecurityProfileFuture(
+        params: CreateSecurityProfileRequest
+    ): Future[CreateSecurityProfileResponse] = service.createSecurityProfile(params).promise.toFuture
+    @inline def createStreamFuture(params: CreateStreamRequest): Future[CreateStreamResponse] =
       service.createStream(params).promise.toFuture
-    def createThingFuture(params: CreateThingRequest): Future[CreateThingResponse] =
+    @inline def createThingFuture(params: CreateThingRequest): Future[CreateThingResponse] =
       service.createThing(params).promise.toFuture
-    def createThingGroupFuture(params: CreateThingGroupRequest): Future[CreateThingGroupResponse] =
+    @inline def createThingGroupFuture(params: CreateThingGroupRequest): Future[CreateThingGroupResponse] =
       service.createThingGroup(params).promise.toFuture
-    def createThingTypeFuture(params: CreateThingTypeRequest): Future[CreateThingTypeResponse] =
+    @inline def createThingTypeFuture(params: CreateThingTypeRequest): Future[CreateThingTypeResponse] =
       service.createThingType(params).promise.toFuture
-    def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] =
+    @inline def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] =
       service.createTopicRule(params).promise.toFuture
-    def deleteAccountAuditConfigurationFuture(
+    @inline def deleteAccountAuditConfigurationFuture(
         params: DeleteAccountAuditConfigurationRequest
     ): Future[DeleteAccountAuditConfigurationResponse] =
       service.deleteAccountAuditConfiguration(params).promise.toFuture
-    def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] =
+    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] =
       service.deleteAuthorizer(params).promise.toFuture
-    def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] =
+    @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] =
       service.deleteBillingGroup(params).promise.toFuture
-    def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] =
+    @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] =
       service.deleteCACertificate(params).promise.toFuture
-    def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
       service.deleteCertificate(params).promise.toFuture
-    def deleteDynamicThingGroupFuture(params: DeleteDynamicThingGroupRequest): Future[DeleteDynamicThingGroupResponse] =
-      service.deleteDynamicThingGroup(params).promise.toFuture
-    def deleteJobExecutionFuture(params: DeleteJobExecutionRequest): Future[js.Object] =
+    @inline def deleteDynamicThingGroupFuture(
+        params: DeleteDynamicThingGroupRequest
+    ): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise.toFuture
+    @inline def deleteJobExecutionFuture(params: DeleteJobExecutionRequest): Future[js.Object] =
       service.deleteJobExecution(params).promise.toFuture
-    def deleteJobFuture(params: DeleteJobRequest): Future[js.Object] = service.deleteJob(params).promise.toFuture
-    def deleteMitigationActionFuture(params: DeleteMitigationActionRequest): Future[DeleteMitigationActionResponse] =
-      service.deleteMitigationAction(params).promise.toFuture
-    def deleteOTAUpdateFuture(params: DeleteOTAUpdateRequest): Future[DeleteOTAUpdateResponse] =
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[js.Object] =
+      service.deleteJob(params).promise.toFuture
+    @inline def deleteMitigationActionFuture(
+        params: DeleteMitigationActionRequest
+    ): Future[DeleteMitigationActionResponse] = service.deleteMitigationAction(params).promise.toFuture
+    @inline def deleteOTAUpdateFuture(params: DeleteOTAUpdateRequest): Future[DeleteOTAUpdateResponse] =
       service.deleteOTAUpdate(params).promise.toFuture
-    def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
       service.deletePolicy(params).promise.toFuture
-    def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] =
+    @inline def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] =
       service.deletePolicyVersion(params).promise.toFuture
-    def deleteRegistrationCodeFuture(params: DeleteRegistrationCodeRequest): Future[DeleteRegistrationCodeResponse] =
-      service.deleteRegistrationCode(params).promise.toFuture
-    def deleteRoleAliasFuture(params: DeleteRoleAliasRequest): Future[DeleteRoleAliasResponse] =
+    @inline def deleteRegistrationCodeFuture(
+        params: DeleteRegistrationCodeRequest
+    ): Future[DeleteRegistrationCodeResponse] = service.deleteRegistrationCode(params).promise.toFuture
+    @inline def deleteRoleAliasFuture(params: DeleteRoleAliasRequest): Future[DeleteRoleAliasResponse] =
       service.deleteRoleAlias(params).promise.toFuture
-    def deleteScheduledAuditFuture(params: DeleteScheduledAuditRequest): Future[DeleteScheduledAuditResponse] =
+    @inline def deleteScheduledAuditFuture(params: DeleteScheduledAuditRequest): Future[DeleteScheduledAuditResponse] =
       service.deleteScheduledAudit(params).promise.toFuture
-    def deleteSecurityProfileFuture(params: DeleteSecurityProfileRequest): Future[DeleteSecurityProfileResponse] =
-      service.deleteSecurityProfile(params).promise.toFuture
-    def deleteStreamFuture(params: DeleteStreamRequest): Future[DeleteStreamResponse] =
+    @inline def deleteSecurityProfileFuture(
+        params: DeleteSecurityProfileRequest
+    ): Future[DeleteSecurityProfileResponse] = service.deleteSecurityProfile(params).promise.toFuture
+    @inline def deleteStreamFuture(params: DeleteStreamRequest): Future[DeleteStreamResponse] =
       service.deleteStream(params).promise.toFuture
-    def deleteThingFuture(params: DeleteThingRequest): Future[DeleteThingResponse] =
+    @inline def deleteThingFuture(params: DeleteThingRequest): Future[DeleteThingResponse] =
       service.deleteThing(params).promise.toFuture
-    def deleteThingGroupFuture(params: DeleteThingGroupRequest): Future[DeleteThingGroupResponse] =
+    @inline def deleteThingGroupFuture(params: DeleteThingGroupRequest): Future[DeleteThingGroupResponse] =
       service.deleteThingGroup(params).promise.toFuture
-    def deleteThingTypeFuture(params: DeleteThingTypeRequest): Future[DeleteThingTypeResponse] =
+    @inline def deleteThingTypeFuture(params: DeleteThingTypeRequest): Future[DeleteThingTypeResponse] =
       service.deleteThingType(params).promise.toFuture
-    def deleteTopicRuleFuture(params: DeleteTopicRuleRequest): Future[js.Object] =
+    @inline def deleteTopicRuleFuture(params: DeleteTopicRuleRequest): Future[js.Object] =
       service.deleteTopicRule(params).promise.toFuture
-    def deleteV2LoggingLevelFuture(params: DeleteV2LoggingLevelRequest): Future[js.Object] =
+    @inline def deleteV2LoggingLevelFuture(params: DeleteV2LoggingLevelRequest): Future[js.Object] =
       service.deleteV2LoggingLevel(params).promise.toFuture
-    def deprecateThingTypeFuture(params: DeprecateThingTypeRequest): Future[DeprecateThingTypeResponse] =
+    @inline def deprecateThingTypeFuture(params: DeprecateThingTypeRequest): Future[DeprecateThingTypeResponse] =
       service.deprecateThingType(params).promise.toFuture
-    def describeAccountAuditConfigurationFuture(
+    @inline def describeAccountAuditConfigurationFuture(
         params: DescribeAccountAuditConfigurationRequest
     ): Future[DescribeAccountAuditConfigurationResponse] =
       service.describeAccountAuditConfiguration(params).promise.toFuture
-    def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] =
+    @inline def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] =
       service.describeAuditFinding(params).promise.toFuture
-    def describeAuditMitigationActionsTaskFuture(
+    @inline def describeAuditMitigationActionsTaskFuture(
         params: DescribeAuditMitigationActionsTaskRequest
     ): Future[DescribeAuditMitigationActionsTaskResponse] =
       service.describeAuditMitigationActionsTask(params).promise.toFuture
-    def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] =
+    @inline def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] =
       service.describeAuditTask(params).promise.toFuture
-    def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] =
+    @inline def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] =
       service.describeAuthorizer(params).promise.toFuture
-    def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] =
+    @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] =
       service.describeBillingGroup(params).promise.toFuture
-    def describeCACertificateFuture(params: DescribeCACertificateRequest): Future[DescribeCACertificateResponse] =
-      service.describeCACertificate(params).promise.toFuture
-    def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
+    @inline def describeCACertificateFuture(
+        params: DescribeCACertificateRequest
+    ): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise.toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
       service.describeCertificate(params).promise.toFuture
-    def describeDefaultAuthorizerFuture(
+    @inline def describeDefaultAuthorizerFuture(
         params: DescribeDefaultAuthorizerRequest
     ): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise.toFuture
-    def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
+    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
       service.describeEndpoint(params).promise.toFuture
-    def describeEventConfigurationsFuture(
+    @inline def describeEventConfigurationsFuture(
         params: DescribeEventConfigurationsRequest
     ): Future[DescribeEventConfigurationsResponse] = service.describeEventConfigurations(params).promise.toFuture
-    def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
+    @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
       service.describeIndex(params).promise.toFuture
-    def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
+    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
       service.describeJobExecution(params).promise.toFuture
-    def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] =
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] =
       service.describeJob(params).promise.toFuture
-    def describeMitigationActionFuture(
+    @inline def describeMitigationActionFuture(
         params: DescribeMitigationActionRequest
     ): Future[DescribeMitigationActionResponse] = service.describeMitigationAction(params).promise.toFuture
-    def describeRoleAliasFuture(params: DescribeRoleAliasRequest): Future[DescribeRoleAliasResponse] =
+    @inline def describeRoleAliasFuture(params: DescribeRoleAliasRequest): Future[DescribeRoleAliasResponse] =
       service.describeRoleAlias(params).promise.toFuture
-    def describeScheduledAuditFuture(params: DescribeScheduledAuditRequest): Future[DescribeScheduledAuditResponse] =
-      service.describeScheduledAudit(params).promise.toFuture
-    def describeSecurityProfileFuture(params: DescribeSecurityProfileRequest): Future[DescribeSecurityProfileResponse] =
-      service.describeSecurityProfile(params).promise.toFuture
-    def describeStreamFuture(params: DescribeStreamRequest): Future[DescribeStreamResponse] =
+    @inline def describeScheduledAuditFuture(
+        params: DescribeScheduledAuditRequest
+    ): Future[DescribeScheduledAuditResponse] = service.describeScheduledAudit(params).promise.toFuture
+    @inline def describeSecurityProfileFuture(
+        params: DescribeSecurityProfileRequest
+    ): Future[DescribeSecurityProfileResponse] = service.describeSecurityProfile(params).promise.toFuture
+    @inline def describeStreamFuture(params: DescribeStreamRequest): Future[DescribeStreamResponse] =
       service.describeStream(params).promise.toFuture
-    def describeThingFuture(params: DescribeThingRequest): Future[DescribeThingResponse] =
+    @inline def describeThingFuture(params: DescribeThingRequest): Future[DescribeThingResponse] =
       service.describeThing(params).promise.toFuture
-    def describeThingGroupFuture(params: DescribeThingGroupRequest): Future[DescribeThingGroupResponse] =
+    @inline def describeThingGroupFuture(params: DescribeThingGroupRequest): Future[DescribeThingGroupResponse] =
       service.describeThingGroup(params).promise.toFuture
-    def describeThingRegistrationTaskFuture(
+    @inline def describeThingRegistrationTaskFuture(
         params: DescribeThingRegistrationTaskRequest
     ): Future[DescribeThingRegistrationTaskResponse] = service.describeThingRegistrationTask(params).promise.toFuture
-    def describeThingTypeFuture(params: DescribeThingTypeRequest): Future[DescribeThingTypeResponse] =
+    @inline def describeThingTypeFuture(params: DescribeThingTypeRequest): Future[DescribeThingTypeResponse] =
       service.describeThingType(params).promise.toFuture
-    def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
+    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
       service.detachPolicy(params).promise.toFuture
-    def detachSecurityProfileFuture(params: DetachSecurityProfileRequest): Future[DetachSecurityProfileResponse] =
-      service.detachSecurityProfile(params).promise.toFuture
-    def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] =
+    @inline def detachSecurityProfileFuture(
+        params: DetachSecurityProfileRequest
+    ): Future[DetachSecurityProfileResponse] = service.detachSecurityProfile(params).promise.toFuture
+    @inline def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] =
       service.detachThingPrincipal(params).promise.toFuture
-    def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] =
+    @inline def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] =
       service.disableTopicRule(params).promise.toFuture
-    def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] =
+    @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] =
       service.enableTopicRule(params).promise.toFuture
-    def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] =
+    @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] =
       service.getEffectivePolicies(params).promise.toFuture
-    def getIndexingConfigurationFuture(
+    @inline def getIndexingConfigurationFuture(
         params: GetIndexingConfigurationRequest
     ): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise.toFuture
-    def getJobDocumentFuture(params: GetJobDocumentRequest): Future[GetJobDocumentResponse] =
+    @inline def getJobDocumentFuture(params: GetJobDocumentRequest): Future[GetJobDocumentResponse] =
       service.getJobDocument(params).promise.toFuture
-    def getLoggingOptionsFuture(params: GetLoggingOptionsRequest): Future[GetLoggingOptionsResponse] =
+    @inline def getLoggingOptionsFuture(params: GetLoggingOptionsRequest): Future[GetLoggingOptionsResponse] =
       service.getLoggingOptions(params).promise.toFuture
-    def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] =
+    @inline def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] =
       service.getOTAUpdate(params).promise.toFuture
-    def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
-    def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
+    @inline def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
       service.getPolicyVersion(params).promise.toFuture
-    def getRegistrationCodeFuture(params: GetRegistrationCodeRequest): Future[GetRegistrationCodeResponse] =
+    @inline def getRegistrationCodeFuture(params: GetRegistrationCodeRequest): Future[GetRegistrationCodeResponse] =
       service.getRegistrationCode(params).promise.toFuture
-    def getStatisticsFuture(params: GetStatisticsRequest): Future[GetStatisticsResponse] =
+    @inline def getStatisticsFuture(params: GetStatisticsRequest): Future[GetStatisticsResponse] =
       service.getStatistics(params).promise.toFuture
-    def getTopicRuleFuture(params: GetTopicRuleRequest): Future[GetTopicRuleResponse] =
+    @inline def getTopicRuleFuture(params: GetTopicRuleRequest): Future[GetTopicRuleResponse] =
       service.getTopicRule(params).promise.toFuture
-    def getV2LoggingOptionsFuture(params: GetV2LoggingOptionsRequest): Future[GetV2LoggingOptionsResponse] =
+    @inline def getV2LoggingOptionsFuture(params: GetV2LoggingOptionsRequest): Future[GetV2LoggingOptionsResponse] =
       service.getV2LoggingOptions(params).promise.toFuture
-    def listActiveViolationsFuture(params: ListActiveViolationsRequest): Future[ListActiveViolationsResponse] =
+    @inline def listActiveViolationsFuture(params: ListActiveViolationsRequest): Future[ListActiveViolationsResponse] =
       service.listActiveViolations(params).promise.toFuture
-    def listAttachedPoliciesFuture(params: ListAttachedPoliciesRequest): Future[ListAttachedPoliciesResponse] =
+    @inline def listAttachedPoliciesFuture(params: ListAttachedPoliciesRequest): Future[ListAttachedPoliciesResponse] =
       service.listAttachedPolicies(params).promise.toFuture
-    def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] =
+    @inline def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] =
       service.listAuditFindings(params).promise.toFuture
-    def listAuditMitigationActionsExecutionsFuture(
+    @inline def listAuditMitigationActionsExecutionsFuture(
         params: ListAuditMitigationActionsExecutionsRequest
     ): Future[ListAuditMitigationActionsExecutionsResponse] =
       service.listAuditMitigationActionsExecutions(params).promise.toFuture
-    def listAuditMitigationActionsTasksFuture(
+    @inline def listAuditMitigationActionsTasksFuture(
         params: ListAuditMitigationActionsTasksRequest
     ): Future[ListAuditMitigationActionsTasksResponse] =
       service.listAuditMitigationActionsTasks(params).promise.toFuture
-    def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] =
+    @inline def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] =
       service.listAuditTasks(params).promise.toFuture
-    def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] =
+    @inline def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] =
       service.listAuthorizers(params).promise.toFuture
-    def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] =
+    @inline def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] =
       service.listBillingGroups(params).promise.toFuture
-    def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] =
+    @inline def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] =
       service.listCACertificates(params).promise.toFuture
-    def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] =
+    @inline def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] =
       service.listCertificatesByCA(params).promise.toFuture
-    def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
       service.listCertificates(params).promise.toFuture
-    def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
+    @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
       service.listIndices(params).promise.toFuture
-    def listJobExecutionsForJobFuture(params: ListJobExecutionsForJobRequest): Future[ListJobExecutionsForJobResponse] =
-      service.listJobExecutionsForJob(params).promise.toFuture
-    def listJobExecutionsForThingFuture(
+    @inline def listJobExecutionsForJobFuture(
+        params: ListJobExecutionsForJobRequest
+    ): Future[ListJobExecutionsForJobResponse] = service.listJobExecutionsForJob(params).promise.toFuture
+    @inline def listJobExecutionsForThingFuture(
         params: ListJobExecutionsForThingRequest
-    ): Future[ListJobExecutionsForThingResponse]                          = service.listJobExecutionsForThing(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
-    def listMitigationActionsFuture(params: ListMitigationActionsRequest): Future[ListMitigationActionsResponse] =
-      service.listMitigationActions(params).promise.toFuture
-    def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] =
+    ): Future[ListJobExecutionsForThingResponse] = service.listJobExecutionsForThing(params).promise.toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
+      service.listJobs(params).promise.toFuture
+    @inline def listMitigationActionsFuture(
+        params: ListMitigationActionsRequest
+    ): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise.toFuture
+    @inline def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] =
       service.listOTAUpdates(params).promise.toFuture
-    def listOutgoingCertificatesFuture(
+    @inline def listOutgoingCertificatesFuture(
         params: ListOutgoingCertificatesRequest
     ): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise.toFuture
-    def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
+    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
       service.listPolicies(params).promise.toFuture
-    def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
+    @inline def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
       service.listPolicyVersions(params).promise.toFuture
-    def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] =
+    @inline def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] =
       service.listPrincipalThings(params).promise.toFuture
-    def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] =
+    @inline def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] =
       service.listRoleAliases(params).promise.toFuture
-    def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] =
+    @inline def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] =
       service.listScheduledAudits(params).promise.toFuture
-    def listSecurityProfilesForTargetFuture(
+    @inline def listSecurityProfilesForTargetFuture(
         params: ListSecurityProfilesForTargetRequest
     ): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise.toFuture
-    def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
+    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
       service.listSecurityProfiles(params).promise.toFuture
-    def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] =
+    @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] =
       service.listStreams(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
+    @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
       service.listTargetsForPolicy(params).promise.toFuture
-    def listTargetsForSecurityProfileFuture(
+    @inline def listTargetsForSecurityProfileFuture(
         params: ListTargetsForSecurityProfileRequest
     ): Future[ListTargetsForSecurityProfileResponse] = service.listTargetsForSecurityProfile(params).promise.toFuture
-    def listThingGroupsForThingFuture(params: ListThingGroupsForThingRequest): Future[ListThingGroupsForThingResponse] =
-      service.listThingGroupsForThing(params).promise.toFuture
-    def listThingGroupsFuture(params: ListThingGroupsRequest): Future[ListThingGroupsResponse] =
+    @inline def listThingGroupsForThingFuture(
+        params: ListThingGroupsForThingRequest
+    ): Future[ListThingGroupsForThingResponse] = service.listThingGroupsForThing(params).promise.toFuture
+    @inline def listThingGroupsFuture(params: ListThingGroupsRequest): Future[ListThingGroupsResponse] =
       service.listThingGroups(params).promise.toFuture
-    def listThingPrincipalsFuture(params: ListThingPrincipalsRequest): Future[ListThingPrincipalsResponse] =
+    @inline def listThingPrincipalsFuture(params: ListThingPrincipalsRequest): Future[ListThingPrincipalsResponse] =
       service.listThingPrincipals(params).promise.toFuture
-    def listThingRegistrationTaskReportsFuture(
+    @inline def listThingRegistrationTaskReportsFuture(
         params: ListThingRegistrationTaskReportsRequest
     ): Future[ListThingRegistrationTaskReportsResponse] =
       service.listThingRegistrationTaskReports(params).promise.toFuture
-    def listThingRegistrationTasksFuture(
+    @inline def listThingRegistrationTasksFuture(
         params: ListThingRegistrationTasksRequest
     ): Future[ListThingRegistrationTasksResponse] = service.listThingRegistrationTasks(params).promise.toFuture
-    def listThingTypesFuture(params: ListThingTypesRequest): Future[ListThingTypesResponse] =
+    @inline def listThingTypesFuture(params: ListThingTypesRequest): Future[ListThingTypesResponse] =
       service.listThingTypes(params).promise.toFuture
-    def listThingsFuture(params: ListThingsRequest): Future[ListThingsResponse] =
+    @inline def listThingsFuture(params: ListThingsRequest): Future[ListThingsResponse] =
       service.listThings(params).promise.toFuture
-    def listThingsInBillingGroupFuture(
+    @inline def listThingsInBillingGroupFuture(
         params: ListThingsInBillingGroupRequest
     ): Future[ListThingsInBillingGroupResponse] = service.listThingsInBillingGroup(params).promise.toFuture
-    def listThingsInThingGroupFuture(params: ListThingsInThingGroupRequest): Future[ListThingsInThingGroupResponse] =
-      service.listThingsInThingGroup(params).promise.toFuture
-    def listTopicRulesFuture(params: ListTopicRulesRequest): Future[ListTopicRulesResponse] =
+    @inline def listThingsInThingGroupFuture(
+        params: ListThingsInThingGroupRequest
+    ): Future[ListThingsInThingGroupResponse] = service.listThingsInThingGroup(params).promise.toFuture
+    @inline def listTopicRulesFuture(params: ListTopicRulesRequest): Future[ListTopicRulesResponse] =
       service.listTopicRules(params).promise.toFuture
-    def listV2LoggingLevelsFuture(params: ListV2LoggingLevelsRequest): Future[ListV2LoggingLevelsResponse] =
+    @inline def listV2LoggingLevelsFuture(params: ListV2LoggingLevelsRequest): Future[ListV2LoggingLevelsResponse] =
       service.listV2LoggingLevels(params).promise.toFuture
-    def listViolationEventsFuture(params: ListViolationEventsRequest): Future[ListViolationEventsResponse] =
+    @inline def listViolationEventsFuture(params: ListViolationEventsRequest): Future[ListViolationEventsResponse] =
       service.listViolationEvents(params).promise.toFuture
-    def registerCACertificateFuture(params: RegisterCACertificateRequest): Future[RegisterCACertificateResponse] =
-      service.registerCACertificate(params).promise.toFuture
-    def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] =
+    @inline def registerCACertificateFuture(
+        params: RegisterCACertificateRequest
+    ): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise.toFuture
+    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] =
       service.registerCertificate(params).promise.toFuture
-    def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] =
+    @inline def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] =
       service.registerThing(params).promise.toFuture
-    def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] =
+    @inline def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] =
       service.rejectCertificateTransfer(params).promise.toFuture
-    def removeThingFromBillingGroupFuture(
+    @inline def removeThingFromBillingGroupFuture(
         params: RemoveThingFromBillingGroupRequest
     ): Future[RemoveThingFromBillingGroupResponse] = service.removeThingFromBillingGroup(params).promise.toFuture
-    def removeThingFromThingGroupFuture(
+    @inline def removeThingFromThingGroupFuture(
         params: RemoveThingFromThingGroupRequest
     ): Future[RemoveThingFromThingGroupResponse] = service.removeThingFromThingGroup(params).promise.toFuture
-    def replaceTopicRuleFuture(params: ReplaceTopicRuleRequest): Future[js.Object] =
+    @inline def replaceTopicRuleFuture(params: ReplaceTopicRuleRequest): Future[js.Object] =
       service.replaceTopicRule(params).promise.toFuture
-    def searchIndexFuture(params: SearchIndexRequest): Future[SearchIndexResponse] =
+    @inline def searchIndexFuture(params: SearchIndexRequest): Future[SearchIndexResponse] =
       service.searchIndex(params).promise.toFuture
-    def setDefaultAuthorizerFuture(params: SetDefaultAuthorizerRequest): Future[SetDefaultAuthorizerResponse] =
+    @inline def setDefaultAuthorizerFuture(params: SetDefaultAuthorizerRequest): Future[SetDefaultAuthorizerResponse] =
       service.setDefaultAuthorizer(params).promise.toFuture
-    def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
+    @inline def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
       service.setDefaultPolicyVersion(params).promise.toFuture
-    def setLoggingOptionsFuture(params: SetLoggingOptionsRequest): Future[js.Object] =
+    @inline def setLoggingOptionsFuture(params: SetLoggingOptionsRequest): Future[js.Object] =
       service.setLoggingOptions(params).promise.toFuture
-    def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] =
+    @inline def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] =
       service.setV2LoggingLevel(params).promise.toFuture
-    def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] =
+    @inline def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] =
       service.setV2LoggingOptions(params).promise.toFuture
-    def startAuditMitigationActionsTaskFuture(
+    @inline def startAuditMitigationActionsTaskFuture(
         params: StartAuditMitigationActionsTaskRequest
     ): Future[StartAuditMitigationActionsTaskResponse] =
       service.startAuditMitigationActionsTask(params).promise.toFuture
-    def startOnDemandAuditTaskFuture(params: StartOnDemandAuditTaskRequest): Future[StartOnDemandAuditTaskResponse] =
-      service.startOnDemandAuditTask(params).promise.toFuture
-    def startThingRegistrationTaskFuture(
+    @inline def startOnDemandAuditTaskFuture(
+        params: StartOnDemandAuditTaskRequest
+    ): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise.toFuture
+    @inline def startThingRegistrationTaskFuture(
         params: StartThingRegistrationTaskRequest
     ): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise.toFuture
-    def stopThingRegistrationTaskFuture(
+    @inline def stopThingRegistrationTaskFuture(
         params: StopThingRegistrationTaskRequest
     ): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def testAuthorizationFuture(params: TestAuthorizationRequest): Future[TestAuthorizationResponse] =
+    @inline def testAuthorizationFuture(params: TestAuthorizationRequest): Future[TestAuthorizationResponse] =
       service.testAuthorization(params).promise.toFuture
-    def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
+    @inline def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
       service.testInvokeAuthorizer(params).promise.toFuture
-    def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] =
+    @inline def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] =
       service.transferCertificate(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAccountAuditConfigurationFuture(
+    @inline def updateAccountAuditConfigurationFuture(
         params: UpdateAccountAuditConfigurationRequest
     ): Future[UpdateAccountAuditConfigurationResponse] =
       service.updateAccountAuditConfiguration(params).promise.toFuture
-    def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
+    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
       service.updateAuthorizer(params).promise.toFuture
-    def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] =
+    @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] =
       service.updateBillingGroup(params).promise.toFuture
-    def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] =
+    @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] =
       service.updateCACertificate(params).promise.toFuture
-    def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] =
+    @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] =
       service.updateCertificate(params).promise.toFuture
-    def updateDynamicThingGroupFuture(params: UpdateDynamicThingGroupRequest): Future[UpdateDynamicThingGroupResponse] =
-      service.updateDynamicThingGroup(params).promise.toFuture
-    def updateEventConfigurationsFuture(
+    @inline def updateDynamicThingGroupFuture(
+        params: UpdateDynamicThingGroupRequest
+    ): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise.toFuture
+    @inline def updateEventConfigurationsFuture(
         params: UpdateEventConfigurationsRequest
     ): Future[UpdateEventConfigurationsResponse] = service.updateEventConfigurations(params).promise.toFuture
-    def updateIndexingConfigurationFuture(
+    @inline def updateIndexingConfigurationFuture(
         params: UpdateIndexingConfigurationRequest
-    ): Future[UpdateIndexingConfigurationResponse]                   = service.updateIndexingConfiguration(params).promise.toFuture
-    def updateJobFuture(params: UpdateJobRequest): Future[js.Object] = service.updateJob(params).promise.toFuture
-    def updateMitigationActionFuture(params: UpdateMitigationActionRequest): Future[UpdateMitigationActionResponse] =
-      service.updateMitigationAction(params).promise.toFuture
-    def updateRoleAliasFuture(params: UpdateRoleAliasRequest): Future[UpdateRoleAliasResponse] =
+    ): Future[UpdateIndexingConfigurationResponse] = service.updateIndexingConfiguration(params).promise.toFuture
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[js.Object] =
+      service.updateJob(params).promise.toFuture
+    @inline def updateMitigationActionFuture(
+        params: UpdateMitigationActionRequest
+    ): Future[UpdateMitigationActionResponse] = service.updateMitigationAction(params).promise.toFuture
+    @inline def updateRoleAliasFuture(params: UpdateRoleAliasRequest): Future[UpdateRoleAliasResponse] =
       service.updateRoleAlias(params).promise.toFuture
-    def updateScheduledAuditFuture(params: UpdateScheduledAuditRequest): Future[UpdateScheduledAuditResponse] =
+    @inline def updateScheduledAuditFuture(params: UpdateScheduledAuditRequest): Future[UpdateScheduledAuditResponse] =
       service.updateScheduledAudit(params).promise.toFuture
-    def updateSecurityProfileFuture(params: UpdateSecurityProfileRequest): Future[UpdateSecurityProfileResponse] =
-      service.updateSecurityProfile(params).promise.toFuture
-    def updateStreamFuture(params: UpdateStreamRequest): Future[UpdateStreamResponse] =
+    @inline def updateSecurityProfileFuture(
+        params: UpdateSecurityProfileRequest
+    ): Future[UpdateSecurityProfileResponse] = service.updateSecurityProfile(params).promise.toFuture
+    @inline def updateStreamFuture(params: UpdateStreamRequest): Future[UpdateStreamResponse] =
       service.updateStream(params).promise.toFuture
-    def updateThingFuture(params: UpdateThingRequest): Future[UpdateThingResponse] =
+    @inline def updateThingFuture(params: UpdateThingRequest): Future[UpdateThingResponse] =
       service.updateThing(params).promise.toFuture
-    def updateThingGroupFuture(params: UpdateThingGroupRequest): Future[UpdateThingGroupResponse] =
+    @inline def updateThingGroupFuture(params: UpdateThingGroupRequest): Future[UpdateThingGroupResponse] =
       service.updateThingGroup(params).promise.toFuture
-    def updateThingGroupsForThingFuture(
+    @inline def updateThingGroupsForThingFuture(
         params: UpdateThingGroupsForThingRequest
     ): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise.toFuture
-    def validateSecurityProfileBehaviorsFuture(
+    @inline def validateSecurityProfileBehaviorsFuture(
         params: ValidateSecurityProfileBehaviorsRequest
     ): Future[ValidateSecurityProfileBehaviorsResponse] =
       service.validateSecurityProfileBehaviors(params).promise.toFuture
@@ -1072,6 +1099,7 @@ package iot {
   }
 
   object AbortConfig {
+    @inline
     def apply(
         criteriaList: AbortCriteriaList
     ): AbortConfig = {
@@ -1095,6 +1123,7 @@ package iot {
   }
 
   object AbortCriteria {
+    @inline
     def apply(
         action: AbortAction,
         failureType: JobExecutionFailureType,
@@ -1122,6 +1151,7 @@ package iot {
   }
 
   object AcceptCertificateTransferRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
@@ -1159,6 +1189,7 @@ package iot {
   }
 
   object Action {
+    @inline
     def apply(
         cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
         cloudwatchMetric: js.UndefOr[CloudwatchMetricAction] = js.undefined,
@@ -1222,6 +1253,7 @@ package iot {
   }
 
   object ActiveViolation {
+    @inline
     def apply(
         behavior: js.UndefOr[Behavior] = js.undefined,
         lastViolationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1252,6 +1284,7 @@ package iot {
   }
 
   object AddThingToBillingGroupRequest {
+    @inline
     def apply(
         billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
         billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
@@ -1271,6 +1304,7 @@ package iot {
   trait AddThingToBillingGroupResponse extends js.Object {}
 
   object AddThingToBillingGroupResponse {
+    @inline
     def apply(
         ): AddThingToBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1289,6 +1323,7 @@ package iot {
   }
 
   object AddThingToThingGroupRequest {
+    @inline
     def apply(
         overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
         thingArn: js.UndefOr[ThingArn] = js.undefined,
@@ -1310,6 +1345,7 @@ package iot {
   trait AddThingToThingGroupResponse extends js.Object {}
 
   object AddThingToThingGroupResponse {
+    @inline
     def apply(
         ): AddThingToThingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1328,6 +1364,7 @@ package iot {
   }
 
   object AddThingsToThingGroupParams {
+    @inline
     def apply(
         thingGroupNames: ThingGroupNames,
         overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined
@@ -1351,6 +1388,7 @@ package iot {
   }
 
   object AlertTarget {
+    @inline
     def apply(
         alertTargetArn: AlertTargetArn,
         roleArn: RoleArn
@@ -1382,6 +1420,7 @@ package iot {
   }
 
   object Allowed {
+    @inline
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): Allowed = {
@@ -1399,6 +1438,7 @@ package iot {
   }
 
   object AssociateTargetsWithJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         targets: JobTargets,
@@ -1422,6 +1462,7 @@ package iot {
   }
 
   object AssociateTargetsWithJobResponse {
+    @inline
     def apply(
         description: js.UndefOr[JobDescription] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
@@ -1442,6 +1483,7 @@ package iot {
   }
 
   object AttachPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         target: PolicyTarget
@@ -1465,6 +1507,7 @@ package iot {
   }
 
   object AttachPrincipalPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         principal: Principal
@@ -1485,6 +1528,7 @@ package iot {
   }
 
   object AttachSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         securityProfileTargetArn: SecurityProfileTargetArn
@@ -1502,6 +1546,7 @@ package iot {
   trait AttachSecurityProfileResponse extends js.Object {}
 
   object AttachSecurityProfileResponse {
+    @inline
     def apply(
         ): AttachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -1520,6 +1565,7 @@ package iot {
   }
 
   object AttachThingPrincipalRequest {
+    @inline
     def apply(
         principal: Principal,
         thingName: ThingName
@@ -1540,6 +1586,7 @@ package iot {
   trait AttachThingPrincipalResponse extends js.Object {}
 
   object AttachThingPrincipalResponse {
+    @inline
     def apply(
         ): AttachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
@@ -1558,6 +1605,7 @@ package iot {
   }
 
   object AttributePayload {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         merge: js.UndefOr[Flag] = js.undefined
@@ -1578,6 +1626,7 @@ package iot {
   }
 
   object AuditCheckConfiguration {
+    @inline
     def apply(
         enabled: js.UndefOr[Enabled] = js.undefined
     ): AuditCheckConfiguration = {
@@ -1601,6 +1650,7 @@ package iot {
   }
 
   object AuditCheckDetails {
+    @inline
     def apply(
         checkCompliant: js.UndefOr[CheckCompliant] = js.undefined,
         checkRunStatus: js.UndefOr[AuditCheckRunStatus] = js.undefined,
@@ -1653,6 +1703,7 @@ package iot {
   }
 
   object AuditFinding {
+    @inline
     def apply(
         checkName: js.UndefOr[AuditCheckName] = js.undefined,
         findingId: js.UndefOr[FindingId] = js.undefined,
@@ -1717,6 +1768,7 @@ package iot {
   }
 
   object AuditMitigationActionExecutionMetadata {
+    @inline
     def apply(
         actionId: js.UndefOr[MitigationActionId] = js.undefined,
         actionName: js.UndefOr[MitigationActionName] = js.undefined,
@@ -1764,6 +1816,7 @@ package iot {
   }
 
   object AuditMitigationActionsTaskMetadata {
+    @inline
     def apply(
         startTime: js.UndefOr[Timestamp] = js.undefined,
         taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined,
@@ -1797,6 +1850,7 @@ package iot {
   }
 
   object AuditMitigationActionsTaskTarget {
+    @inline
     def apply(
         auditCheckToReasonCodeFilter: js.UndefOr[AuditCheckToReasonCodeFilter] = js.undefined,
         auditTaskId: js.UndefOr[AuditTaskId] = js.undefined,
@@ -1823,6 +1877,7 @@ package iot {
   }
 
   object AuditNotificationTarget {
+    @inline
     def apply(
         enabled: js.UndefOr[Enabled] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
@@ -1853,6 +1908,7 @@ package iot {
   }
 
   object AuditTaskMetadata {
+    @inline
     def apply(
         taskId: js.UndefOr[AuditTaskId] = js.undefined,
         taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
@@ -1900,6 +1956,7 @@ package iot {
   }
 
   object AuthInfo {
+    @inline
     def apply(
         actionType: js.UndefOr[ActionType] = js.undefined,
         resources: js.UndefOr[Resources] = js.undefined
@@ -1924,6 +1981,7 @@ package iot {
   }
 
   object AuthResult {
+    @inline
     def apply(
         allowed: js.UndefOr[Allowed] = js.undefined,
         authDecision: js.UndefOr[AuthDecision] = js.undefined,
@@ -1957,6 +2015,7 @@ package iot {
   }
 
   object AuthorizerDescription {
+    @inline
     def apply(
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
@@ -1997,6 +2056,7 @@ package iot {
   }
 
   object AuthorizerSummary {
+    @inline
     def apply(
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
@@ -2024,6 +2084,7 @@ package iot {
   }
 
   object AwsJobExecutionsRolloutConfig {
+    @inline
     def apply(
         maximumPerMinute: js.UndefOr[MaximumPerMinute] = js.undefined
     ): AwsJobExecutionsRolloutConfig = {
@@ -2044,6 +2105,7 @@ package iot {
   }
 
   object Behavior {
+    @inline
     def apply(
         name: BehaviorName,
         criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
@@ -2073,6 +2135,7 @@ package iot {
   }
 
   object BehaviorCriteria {
+    @inline
     def apply(
         comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
         consecutiveDatapointsToAlarm: js.UndefOr[ConsecutiveDatapointsToAlarm] = js.undefined,
@@ -2105,6 +2168,7 @@ package iot {
   }
 
   object BillingGroupMetadata {
+    @inline
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined
     ): BillingGroupMetadata = {
@@ -2123,6 +2187,7 @@ package iot {
   }
 
   object BillingGroupProperties {
+    @inline
     def apply(
         billingGroupDescription: js.UndefOr[BillingGroupDescription] = js.undefined
     ): BillingGroupProperties = {
@@ -2144,6 +2209,7 @@ package iot {
   }
 
   object CACertificate {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -2178,6 +2244,7 @@ package iot {
   }
 
   object CACertificateDescription {
+    @inline
     def apply(
         autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
@@ -2226,6 +2293,7 @@ package iot {
   }
 
   object CancelAuditMitigationActionsTaskRequest {
+    @inline
     def apply(
         taskId: AuditMitigationActionsTaskId
     ): CancelAuditMitigationActionsTaskRequest = {
@@ -2241,6 +2309,7 @@ package iot {
   trait CancelAuditMitigationActionsTaskResponse extends js.Object {}
 
   object CancelAuditMitigationActionsTaskResponse {
+    @inline
     def apply(
         ): CancelAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
@@ -2255,6 +2324,7 @@ package iot {
   }
 
   object CancelAuditTaskRequest {
+    @inline
     def apply(
         taskId: AuditTaskId
     ): CancelAuditTaskRequest = {
@@ -2270,6 +2340,7 @@ package iot {
   trait CancelAuditTaskResponse extends js.Object {}
 
   object CancelAuditTaskResponse {
+    @inline
     def apply(
         ): CancelAuditTaskResponse = {
       val __obj = js.Dynamic.literal()
@@ -2287,6 +2358,7 @@ package iot {
   }
 
   object CancelCertificateTransferRequest {
+    @inline
     def apply(
         certificateId: CertificateId
     ): CancelCertificateTransferRequest = {
@@ -2308,6 +2380,7 @@ package iot {
   }
 
   object CancelJobExecutionRequest {
+    @inline
     def apply(
         jobId: JobId,
         thingName: ThingName,
@@ -2336,6 +2409,7 @@ package iot {
   }
 
   object CancelJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         comment: js.UndefOr[Comment] = js.undefined,
@@ -2361,6 +2435,7 @@ package iot {
   }
 
   object CancelJobResponse {
+    @inline
     def apply(
         description: js.UndefOr[JobDescription] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
@@ -2410,6 +2485,7 @@ package iot {
   }
 
   object Certificate {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -2446,6 +2522,7 @@ package iot {
   }
 
   object CertificateDescription {
+    @inline
     def apply(
         caCertificateId: js.UndefOr[CertificateId] = js.undefined,
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
@@ -2501,6 +2578,7 @@ package iot {
   }
 
   object CertificateValidity {
+    @inline
     def apply(
         notAfter: js.UndefOr[DateType] = js.undefined,
         notBefore: js.UndefOr[DateType] = js.undefined
@@ -2516,6 +2594,7 @@ package iot {
   trait ClearDefaultAuthorizerRequest extends js.Object {}
 
   object ClearDefaultAuthorizerRequest {
+    @inline
     def apply(
         ): ClearDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
@@ -2528,6 +2607,7 @@ package iot {
   trait ClearDefaultAuthorizerResponse extends js.Object {}
 
   object ClearDefaultAuthorizerResponse {
+    @inline
     def apply(
         ): ClearDefaultAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
@@ -2548,6 +2628,7 @@ package iot {
   }
 
   object CloudwatchAlarmAction {
+    @inline
     def apply(
         alarmName: AlarmName,
         roleArn: AwsArn,
@@ -2579,6 +2660,7 @@ package iot {
   }
 
   object CloudwatchMetricAction {
+    @inline
     def apply(
         metricName: String,
         metricNamespace: String,
@@ -2611,6 +2693,7 @@ package iot {
   }
 
   object CodeSigning {
+    @inline
     def apply(
         awsSignerJobId: js.UndefOr[SigningJobId] = js.undefined,
         customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined,
@@ -2634,6 +2717,7 @@ package iot {
   }
 
   object CodeSigningCertificateChain {
+    @inline
     def apply(
         certificateName: js.UndefOr[CertificateName] = js.undefined,
         inlineDocument: js.UndefOr[InlineDocument] = js.undefined
@@ -2654,6 +2738,7 @@ package iot {
   }
 
   object CodeSigningSignature {
+    @inline
     def apply(
         inlineDocument: js.UndefOr[Signature] = js.undefined
     ): CodeSigningSignature = {
@@ -2696,6 +2781,7 @@ package iot {
   }
 
   object Configuration {
+    @inline
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): Configuration = {
@@ -2715,6 +2801,7 @@ package iot {
   }
 
   object CreateAuthorizerRequest {
+    @inline
     def apply(
         authorizerFunctionArn: AuthorizerFunctionArn,
         authorizerName: AuthorizerName,
@@ -2741,6 +2828,7 @@ package iot {
   }
 
   object CreateAuthorizerResponse {
+    @inline
     def apply(
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
@@ -2760,6 +2848,7 @@ package iot {
   }
 
   object CreateBillingGroupRequest {
+    @inline
     def apply(
         billingGroupName: BillingGroupName,
         billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
@@ -2783,6 +2872,7 @@ package iot {
   }
 
   object CreateBillingGroupResponse {
+    @inline
     def apply(
         billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
         billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
@@ -2806,6 +2896,7 @@ package iot {
   }
 
   object CreateCertificateFromCsrRequest {
+    @inline
     def apply(
         certificateSigningRequest: CertificateSigningRequest,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
@@ -2830,6 +2921,7 @@ package iot {
   }
 
   object CreateCertificateFromCsrResponse {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -2854,6 +2946,7 @@ package iot {
   }
 
   object CreateDynamicThingGroupRequest {
+    @inline
     def apply(
         queryString: QueryString,
         thingGroupName: ThingGroupName,
@@ -2886,6 +2979,7 @@ package iot {
   }
 
   object CreateDynamicThingGroupResponse {
+    @inline
     def apply(
         indexName: js.UndefOr[IndexName] = js.undefined,
         queryString: js.UndefOr[QueryString] = js.undefined,
@@ -2921,6 +3015,7 @@ package iot {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         targets: JobTargets,
@@ -2962,6 +3057,7 @@ package iot {
   }
 
   object CreateJobResponse {
+    @inline
     def apply(
         description: js.UndefOr[JobDescription] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
@@ -2984,6 +3080,7 @@ package iot {
   }
 
   object CreateKeysAndCertificateRequest {
+    @inline
     def apply(
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
     ): CreateKeysAndCertificateRequest = {
@@ -3005,6 +3102,7 @@ package iot {
   }
 
   object CreateKeysAndCertificateResponse {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -3029,6 +3127,7 @@ package iot {
   }
 
   object CreateMitigationActionRequest {
+    @inline
     def apply(
         actionName: MitigationActionName,
         actionParams: MitigationActionParams,
@@ -3053,6 +3152,7 @@ package iot {
   }
 
   object CreateMitigationActionResponse {
+    @inline
     def apply(
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionId: js.UndefOr[MitigationActionId] = js.undefined
@@ -3078,6 +3178,7 @@ package iot {
   }
 
   object CreateOTAUpdateRequest {
+    @inline
     def apply(
         files: OTAUpdateFiles,
         otaUpdateId: OTAUpdateId,
@@ -3117,6 +3218,7 @@ package iot {
   }
 
   object CreateOTAUpdateResponse {
+    @inline
     def apply(
         awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
         awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
@@ -3144,6 +3246,7 @@ package iot {
   }
 
   object CreatePolicyRequest {
+    @inline
     def apply(
         policyDocument: PolicyDocument,
         policyName: PolicyName
@@ -3169,6 +3272,7 @@ package iot {
   }
 
   object CreatePolicyResponse {
+    @inline
     def apply(
         policyArn: js.UndefOr[PolicyArn] = js.undefined,
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
@@ -3195,6 +3299,7 @@ package iot {
   }
 
   object CreatePolicyVersionRequest {
+    @inline
     def apply(
         policyDocument: PolicyDocument,
         policyName: PolicyName,
@@ -3222,6 +3327,7 @@ package iot {
   }
 
   object CreatePolicyVersionResponse {
+    @inline
     def apply(
         isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
         policyArn: js.UndefOr[PolicyArn] = js.undefined,
@@ -3245,6 +3351,7 @@ package iot {
   }
 
   object CreateRoleAliasRequest {
+    @inline
     def apply(
         roleAlias: RoleAlias,
         roleArn: RoleArn,
@@ -3269,6 +3376,7 @@ package iot {
   }
 
   object CreateRoleAliasResponse {
+    @inline
     def apply(
         roleAlias: js.UndefOr[RoleAlias] = js.undefined,
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
@@ -3291,6 +3399,7 @@ package iot {
   }
 
   object CreateScheduledAuditRequest {
+    @inline
     def apply(
         frequency: AuditFrequency,
         scheduledAuditName: ScheduledAuditName,
@@ -3318,6 +3427,7 @@ package iot {
   }
 
   object CreateScheduledAuditResponse {
+    @inline
     def apply(
         scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
     ): CreateScheduledAuditResponse = {
@@ -3338,6 +3448,7 @@ package iot {
   }
 
   object CreateSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
@@ -3370,6 +3481,7 @@ package iot {
   }
 
   object CreateSecurityProfileResponse {
+    @inline
     def apply(
         securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined
@@ -3391,6 +3503,7 @@ package iot {
   }
 
   object CreateStreamRequest {
+    @inline
     def apply(
         files: StreamFiles,
         roleArn: RoleArn,
@@ -3419,6 +3532,7 @@ package iot {
   }
 
   object CreateStreamResponse {
+    @inline
     def apply(
         description: js.UndefOr[StreamDescription] = js.undefined,
         streamArn: js.UndefOr[StreamArn] = js.undefined,
@@ -3443,6 +3557,7 @@ package iot {
   }
 
   object CreateThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
@@ -3468,6 +3583,7 @@ package iot {
   }
 
   object CreateThingGroupResponse {
+    @inline
     def apply(
         thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
@@ -3493,6 +3609,7 @@ package iot {
   }
 
   object CreateThingRequest {
+    @inline
     def apply(
         thingName: ThingName,
         attributePayload: js.UndefOr[AttributePayload] = js.undefined,
@@ -3521,6 +3638,7 @@ package iot {
   }
 
   object CreateThingResponse {
+    @inline
     def apply(
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingId: js.UndefOr[ThingId] = js.undefined,
@@ -3545,6 +3663,7 @@ package iot {
   }
 
   object CreateThingTypeRequest {
+    @inline
     def apply(
         thingTypeName: ThingTypeName,
         tags: js.UndefOr[TagList] = js.undefined,
@@ -3571,6 +3690,7 @@ package iot {
   }
 
   object CreateThingTypeResponse {
+    @inline
     def apply(
         thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
         thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
@@ -3595,6 +3715,7 @@ package iot {
   }
 
   object CreateTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName,
         topicRulePayload: TopicRulePayload,
@@ -3622,6 +3743,7 @@ package iot {
   }
 
   object CustomCodeSigning {
+    @inline
     def apply(
         certificateChain: js.UndefOr[CodeSigningCertificateChain] = js.undefined,
         hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined,
@@ -3655,6 +3777,7 @@ package iot {
   }
 
   object DeleteAccountAuditConfigurationRequest {
+    @inline
     def apply(
         deleteScheduledAudits: js.UndefOr[DeleteScheduledAudits] = js.undefined
     ): DeleteAccountAuditConfigurationRequest = {
@@ -3668,6 +3791,7 @@ package iot {
   trait DeleteAccountAuditConfigurationResponse extends js.Object {}
 
   object DeleteAccountAuditConfigurationResponse {
+    @inline
     def apply(
         ): DeleteAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -3682,6 +3806,7 @@ package iot {
   }
 
   object DeleteAuthorizerRequest {
+    @inline
     def apply(
         authorizerName: AuthorizerName
     ): DeleteAuthorizerRequest = {
@@ -3697,6 +3822,7 @@ package iot {
   trait DeleteAuthorizerResponse extends js.Object {}
 
   object DeleteAuthorizerResponse {
+    @inline
     def apply(
         ): DeleteAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
@@ -3712,6 +3838,7 @@ package iot {
   }
 
   object DeleteBillingGroupRequest {
+    @inline
     def apply(
         billingGroupName: BillingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
@@ -3729,6 +3856,7 @@ package iot {
   trait DeleteBillingGroupResponse extends js.Object {}
 
   object DeleteBillingGroupResponse {
+    @inline
     def apply(
         ): DeleteBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -3746,6 +3874,7 @@ package iot {
   }
 
   object DeleteCACertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId
     ): DeleteCACertificateRequest = {
@@ -3764,6 +3893,7 @@ package iot {
   trait DeleteCACertificateResponse extends js.Object {}
 
   object DeleteCACertificateResponse {
+    @inline
     def apply(
         ): DeleteCACertificateResponse = {
       val __obj = js.Dynamic.literal()
@@ -3782,6 +3912,7 @@ package iot {
   }
 
   object DeleteCertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         forceDelete: js.UndefOr[ForceDelete] = js.undefined
@@ -3802,6 +3933,7 @@ package iot {
   }
 
   object DeleteDynamicThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
@@ -3819,6 +3951,7 @@ package iot {
   trait DeleteDynamicThingGroupResponse extends js.Object {}
 
   object DeleteDynamicThingGroupResponse {
+    @inline
     def apply(
         ): DeleteDynamicThingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -3836,6 +3969,7 @@ package iot {
   }
 
   object DeleteJobExecutionRequest {
+    @inline
     def apply(
         executionNumber: ExecutionNumber,
         jobId: JobId,
@@ -3860,6 +3994,7 @@ package iot {
   }
 
   object DeleteJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         force: js.UndefOr[ForceFlag] = js.undefined
@@ -3879,6 +4014,7 @@ package iot {
   }
 
   object DeleteMitigationActionRequest {
+    @inline
     def apply(
         actionName: MitigationActionName
     ): DeleteMitigationActionRequest = {
@@ -3894,6 +4030,7 @@ package iot {
   trait DeleteMitigationActionResponse extends js.Object {}
 
   object DeleteMitigationActionResponse {
+    @inline
     def apply(
         ): DeleteMitigationActionResponse = {
       val __obj = js.Dynamic.literal()
@@ -3910,6 +4047,7 @@ package iot {
   }
 
   object DeleteOTAUpdateRequest {
+    @inline
     def apply(
         otaUpdateId: OTAUpdateId,
         deleteStream: js.UndefOr[DeleteStream] = js.undefined,
@@ -3929,6 +4067,7 @@ package iot {
   trait DeleteOTAUpdateResponse extends js.Object {}
 
   object DeleteOTAUpdateResponse {
+    @inline
     def apply(
         ): DeleteOTAUpdateResponse = {
       val __obj = js.Dynamic.literal()
@@ -3946,6 +4085,7 @@ package iot {
   }
 
   object DeletePolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName
     ): DeletePolicyRequest = {
@@ -3967,6 +4107,7 @@ package iot {
   }
 
   object DeletePolicyVersionRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
@@ -3987,6 +4128,7 @@ package iot {
   trait DeleteRegistrationCodeRequest extends js.Object {}
 
   object DeleteRegistrationCodeRequest {
+    @inline
     def apply(
         ): DeleteRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
@@ -4002,6 +4144,7 @@ package iot {
   trait DeleteRegistrationCodeResponse extends js.Object {}
 
   object DeleteRegistrationCodeResponse {
+    @inline
     def apply(
         ): DeleteRegistrationCodeResponse = {
       val __obj = js.Dynamic.literal()
@@ -4016,6 +4159,7 @@ package iot {
   }
 
   object DeleteRoleAliasRequest {
+    @inline
     def apply(
         roleAlias: RoleAlias
     ): DeleteRoleAliasRequest = {
@@ -4031,6 +4175,7 @@ package iot {
   trait DeleteRoleAliasResponse extends js.Object {}
 
   object DeleteRoleAliasResponse {
+    @inline
     def apply(
         ): DeleteRoleAliasResponse = {
       val __obj = js.Dynamic.literal()
@@ -4045,6 +4190,7 @@ package iot {
   }
 
   object DeleteScheduledAuditRequest {
+    @inline
     def apply(
         scheduledAuditName: ScheduledAuditName
     ): DeleteScheduledAuditRequest = {
@@ -4060,6 +4206,7 @@ package iot {
   trait DeleteScheduledAuditResponse extends js.Object {}
 
   object DeleteScheduledAuditResponse {
+    @inline
     def apply(
         ): DeleteScheduledAuditResponse = {
       val __obj = js.Dynamic.literal()
@@ -4075,6 +4222,7 @@ package iot {
   }
 
   object DeleteSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
@@ -4092,6 +4240,7 @@ package iot {
   trait DeleteSecurityProfileResponse extends js.Object {}
 
   object DeleteSecurityProfileResponse {
+    @inline
     def apply(
         ): DeleteSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -4106,6 +4255,7 @@ package iot {
   }
 
   object DeleteStreamRequest {
+    @inline
     def apply(
         streamId: StreamId
     ): DeleteStreamRequest = {
@@ -4121,6 +4271,7 @@ package iot {
   trait DeleteStreamResponse extends js.Object {}
 
   object DeleteStreamResponse {
+    @inline
     def apply(
         ): DeleteStreamResponse = {
       val __obj = js.Dynamic.literal()
@@ -4136,6 +4287,7 @@ package iot {
   }
 
   object DeleteThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
@@ -4153,6 +4305,7 @@ package iot {
   trait DeleteThingGroupResponse extends js.Object {}
 
   object DeleteThingGroupResponse {
+    @inline
     def apply(
         ): DeleteThingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -4171,6 +4324,7 @@ package iot {
   }
 
   object DeleteThingRequest {
+    @inline
     def apply(
         thingName: ThingName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
@@ -4191,6 +4345,7 @@ package iot {
   trait DeleteThingResponse extends js.Object {}
 
   object DeleteThingResponse {
+    @inline
     def apply(
         ): DeleteThingResponse = {
       val __obj = js.Dynamic.literal()
@@ -4208,6 +4363,7 @@ package iot {
   }
 
   object DeleteThingTypeRequest {
+    @inline
     def apply(
         thingTypeName: ThingTypeName
     ): DeleteThingTypeRequest = {
@@ -4226,6 +4382,7 @@ package iot {
   trait DeleteThingTypeResponse extends js.Object {}
 
   object DeleteThingTypeResponse {
+    @inline
     def apply(
         ): DeleteThingTypeResponse = {
       val __obj = js.Dynamic.literal()
@@ -4243,6 +4400,7 @@ package iot {
   }
 
   object DeleteTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName
     ): DeleteTopicRuleRequest = {
@@ -4261,6 +4419,7 @@ package iot {
   }
 
   object DeleteV2LoggingLevelRequest {
+    @inline
     def apply(
         targetName: LogTargetName,
         targetType: LogTargetType
@@ -4284,6 +4443,7 @@ package iot {
   }
 
   object Denied {
+    @inline
     def apply(
         explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined,
         implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined
@@ -4305,6 +4465,7 @@ package iot {
   }
 
   object DeprecateThingTypeRequest {
+    @inline
     def apply(
         thingTypeName: ThingTypeName,
         undoDeprecate: js.UndefOr[UndoDeprecate] = js.undefined
@@ -4325,6 +4486,7 @@ package iot {
   trait DeprecateThingTypeResponse extends js.Object {}
 
   object DeprecateThingTypeResponse {
+    @inline
     def apply(
         ): DeprecateThingTypeResponse = {
       val __obj = js.Dynamic.literal()
@@ -4337,6 +4499,7 @@ package iot {
   trait DescribeAccountAuditConfigurationRequest extends js.Object {}
 
   object DescribeAccountAuditConfigurationRequest {
+    @inline
     def apply(
         ): DescribeAccountAuditConfigurationRequest = {
       val __obj = js.Dynamic.literal()
@@ -4353,6 +4516,7 @@ package iot {
   }
 
   object DescribeAccountAuditConfigurationResponse {
+    @inline
     def apply(
         auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
         auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
@@ -4374,6 +4538,7 @@ package iot {
   }
 
   object DescribeAuditFindingRequest {
+    @inline
     def apply(
         findingId: FindingId
     ): DescribeAuditFindingRequest = {
@@ -4391,6 +4556,7 @@ package iot {
   }
 
   object DescribeAuditFindingResponse {
+    @inline
     def apply(
         finding: js.UndefOr[AuditFinding] = js.undefined
     ): DescribeAuditFindingResponse = {
@@ -4406,6 +4572,7 @@ package iot {
   }
 
   object DescribeAuditMitigationActionsTaskRequest {
+    @inline
     def apply(
         taskId: AuditMitigationActionsTaskId
     ): DescribeAuditMitigationActionsTaskRequest = {
@@ -4429,6 +4596,7 @@ package iot {
   }
 
   object DescribeAuditMitigationActionsTaskResponse {
+    @inline
     def apply(
         actionsDefinition: js.UndefOr[MitigationActionList] = js.undefined,
         auditCheckToActionsMapping: js.UndefOr[AuditCheckToActionsMapping] = js.undefined,
@@ -4458,6 +4626,7 @@ package iot {
   }
 
   object DescribeAuditTaskRequest {
+    @inline
     def apply(
         taskId: AuditTaskId
     ): DescribeAuditTaskRequest = {
@@ -4480,6 +4649,7 @@ package iot {
   }
 
   object DescribeAuditTaskResponse {
+    @inline
     def apply(
         auditDetails: js.UndefOr[AuditDetails] = js.undefined,
         scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
@@ -4505,6 +4675,7 @@ package iot {
   }
 
   object DescribeAuthorizerRequest {
+    @inline
     def apply(
         authorizerName: AuthorizerName
     ): DescribeAuthorizerRequest = {
@@ -4522,6 +4693,7 @@ package iot {
   }
 
   object DescribeAuthorizerResponse {
+    @inline
     def apply(
         authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
     ): DescribeAuthorizerResponse = {
@@ -4537,6 +4709,7 @@ package iot {
   }
 
   object DescribeBillingGroupRequest {
+    @inline
     def apply(
         billingGroupName: BillingGroupName
     ): DescribeBillingGroupRequest = {
@@ -4559,6 +4732,7 @@ package iot {
   }
 
   object DescribeBillingGroupResponse {
+    @inline
     def apply(
         billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
         billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
@@ -4587,6 +4761,7 @@ package iot {
   }
 
   object DescribeCACertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId
     ): DescribeCACertificateRequest = {
@@ -4608,6 +4783,7 @@ package iot {
   }
 
   object DescribeCACertificateResponse {
+    @inline
     def apply(
         certificateDescription: js.UndefOr[CACertificateDescription] = js.undefined,
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined
@@ -4628,6 +4804,7 @@ package iot {
   }
 
   object DescribeCertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId
     ): DescribeCertificateRequest = {
@@ -4648,6 +4825,7 @@ package iot {
   }
 
   object DescribeCertificateResponse {
+    @inline
     def apply(
         certificateDescription: js.UndefOr[CertificateDescription] = js.undefined
     ): DescribeCertificateResponse = {
@@ -4661,6 +4839,7 @@ package iot {
   trait DescribeDefaultAuthorizerRequest extends js.Object {}
 
   object DescribeDefaultAuthorizerRequest {
+    @inline
     def apply(
         ): DescribeDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
@@ -4675,6 +4854,7 @@ package iot {
   }
 
   object DescribeDefaultAuthorizerResponse {
+    @inline
     def apply(
         authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
     ): DescribeDefaultAuthorizerResponse = {
@@ -4693,6 +4873,7 @@ package iot {
   }
 
   object DescribeEndpointRequest {
+    @inline
     def apply(
         endpointType: js.UndefOr[EndpointType] = js.undefined
     ): DescribeEndpointRequest = {
@@ -4711,6 +4892,7 @@ package iot {
   }
 
   object DescribeEndpointResponse {
+    @inline
     def apply(
         endpointAddress: js.UndefOr[EndpointAddress] = js.undefined
     ): DescribeEndpointResponse = {
@@ -4724,6 +4906,7 @@ package iot {
   trait DescribeEventConfigurationsRequest extends js.Object {}
 
   object DescribeEventConfigurationsRequest {
+    @inline
     def apply(
         ): DescribeEventConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
@@ -4740,6 +4923,7 @@ package iot {
   }
 
   object DescribeEventConfigurationsResponse {
+    @inline
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined,
         eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
@@ -4759,6 +4943,7 @@ package iot {
   }
 
   object DescribeIndexRequest {
+    @inline
     def apply(
         indexName: IndexName
     ): DescribeIndexRequest = {
@@ -4778,6 +4963,7 @@ package iot {
   }
 
   object DescribeIndexResponse {
+    @inline
     def apply(
         indexName: js.UndefOr[IndexName] = js.undefined,
         indexStatus: js.UndefOr[IndexStatus] = js.undefined,
@@ -4799,6 +4985,7 @@ package iot {
   }
 
   object DescribeJobExecutionRequest {
+    @inline
     def apply(
         jobId: JobId,
         thingName: ThingName,
@@ -4820,6 +5007,7 @@ package iot {
   }
 
   object DescribeJobExecutionResponse {
+    @inline
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): DescribeJobExecutionResponse = {
@@ -4835,6 +5023,7 @@ package iot {
   }
 
   object DescribeJobRequest {
+    @inline
     def apply(
         jobId: JobId
     ): DescribeJobRequest = {
@@ -4853,6 +5042,7 @@ package iot {
   }
 
   object DescribeJobResponse {
+    @inline
     def apply(
         documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
         job: js.UndefOr[Job] = js.undefined
@@ -4870,6 +5060,7 @@ package iot {
   }
 
   object DescribeMitigationActionRequest {
+    @inline
     def apply(
         actionName: MitigationActionName
     ): DescribeMitigationActionRequest = {
@@ -4894,6 +5085,7 @@ package iot {
   }
 
   object DescribeMitigationActionResponse {
+    @inline
     def apply(
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionId: js.UndefOr[MitigationActionId] = js.undefined,
@@ -4923,6 +5115,7 @@ package iot {
   }
 
   object DescribeRoleAliasRequest {
+    @inline
     def apply(
         roleAlias: RoleAlias
     ): DescribeRoleAliasRequest = {
@@ -4940,6 +5133,7 @@ package iot {
   }
 
   object DescribeRoleAliasResponse {
+    @inline
     def apply(
         roleAliasDescription: js.UndefOr[RoleAliasDescription] = js.undefined
     ): DescribeRoleAliasResponse = {
@@ -4955,6 +5149,7 @@ package iot {
   }
 
   object DescribeScheduledAuditRequest {
+    @inline
     def apply(
         scheduledAuditName: ScheduledAuditName
     ): DescribeScheduledAuditRequest = {
@@ -4977,6 +5172,7 @@ package iot {
   }
 
   object DescribeScheduledAuditResponse {
+    @inline
     def apply(
         dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
         dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
@@ -5002,6 +5198,7 @@ package iot {
   }
 
   object DescribeSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName
     ): DescribeSecurityProfileRequest = {
@@ -5027,6 +5224,7 @@ package iot {
   }
 
   object DescribeSecurityProfileResponse {
+    @inline
     def apply(
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
@@ -5062,6 +5260,7 @@ package iot {
   }
 
   object DescribeStreamRequest {
+    @inline
     def apply(
         streamId: StreamId
     ): DescribeStreamRequest = {
@@ -5079,6 +5278,7 @@ package iot {
   }
 
   object DescribeStreamResponse {
+    @inline
     def apply(
         streamInfo: js.UndefOr[StreamInfo] = js.undefined
     ): DescribeStreamResponse = {
@@ -5094,6 +5294,7 @@ package iot {
   }
 
   object DescribeThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName
     ): DescribeThingGroupRequest = {
@@ -5120,6 +5321,7 @@ package iot {
   }
 
   object DescribeThingGroupResponse {
+    @inline
     def apply(
         indexName: js.UndefOr[IndexName] = js.undefined,
         queryString: js.UndefOr[QueryString] = js.undefined,
@@ -5153,6 +5355,7 @@ package iot {
   }
 
   object DescribeThingRegistrationTaskRequest {
+    @inline
     def apply(
         taskId: TaskId
     ): DescribeThingRegistrationTaskRequest = {
@@ -5181,6 +5384,7 @@ package iot {
   }
 
   object DescribeThingRegistrationTaskResponse {
+    @inline
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined,
         failureCount: js.UndefOr[Count] = js.undefined,
@@ -5221,6 +5425,7 @@ package iot {
   }
 
   object DescribeThingRequest {
+    @inline
     def apply(
         thingName: ThingName
     ): DescribeThingRequest = {
@@ -5248,6 +5453,7 @@ package iot {
   }
 
   object DescribeThingResponse {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
@@ -5280,6 +5486,7 @@ package iot {
   }
 
   object DescribeThingTypeRequest {
+    @inline
     def apply(
         thingTypeName: ThingTypeName
     ): DescribeThingTypeRequest = {
@@ -5304,6 +5511,7 @@ package iot {
   }
 
   object DescribeThingTypeResponse {
+    @inline
     def apply(
         thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
         thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
@@ -5330,6 +5538,7 @@ package iot {
   }
 
   object Destination {
+    @inline
     def apply(
         s3Destination: js.UndefOr[S3Destination] = js.undefined
     ): Destination = {
@@ -5346,6 +5555,7 @@ package iot {
   }
 
   object DetachPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         target: PolicyTarget
@@ -5369,6 +5579,7 @@ package iot {
   }
 
   object DetachPrincipalPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         principal: Principal
@@ -5389,6 +5600,7 @@ package iot {
   }
 
   object DetachSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         securityProfileTargetArn: SecurityProfileTargetArn
@@ -5406,6 +5618,7 @@ package iot {
   trait DetachSecurityProfileResponse extends js.Object {}
 
   object DetachSecurityProfileResponse {
+    @inline
     def apply(
         ): DetachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -5424,6 +5637,7 @@ package iot {
   }
 
   object DetachThingPrincipalRequest {
+    @inline
     def apply(
         principal: Principal,
         thingName: ThingName
@@ -5444,6 +5658,7 @@ package iot {
   trait DetachThingPrincipalResponse extends js.Object {}
 
   object DetachThingPrincipalResponse {
+    @inline
     def apply(
         ): DetachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
@@ -5467,6 +5682,7 @@ package iot {
   }
 
   object DisableTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName
     ): DisableTopicRuleRequest = {
@@ -5510,6 +5726,7 @@ package iot {
   }
 
   object DynamoDBAction {
+    @inline
     def apply(
         hashKeyField: HashKeyField,
         hashKeyValue: HashKeyValue,
@@ -5550,6 +5767,7 @@ package iot {
   }
 
   object DynamoDBv2Action {
+    @inline
     def apply(
         putItem: PutItemInput,
         roleArn: AwsArn
@@ -5581,6 +5799,7 @@ package iot {
   }
 
   object EffectivePolicy {
+    @inline
     def apply(
         policyArn: js.UndefOr[PolicyArn] = js.undefined,
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
@@ -5607,6 +5826,7 @@ package iot {
   }
 
   object ElasticsearchAction {
+    @inline
     def apply(
         endpoint: ElasticsearchEndpoint,
         id: ElasticsearchId,
@@ -5636,6 +5856,7 @@ package iot {
   }
 
   object EnableIoTLoggingParams {
+    @inline
     def apply(
         logLevel: LogLevel,
         roleArnForLogging: RoleArn
@@ -5658,6 +5879,7 @@ package iot {
   }
 
   object EnableTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName
     ): EnableTopicRuleRequest = {
@@ -5679,6 +5901,7 @@ package iot {
   }
 
   object ErrorInfo {
+    @inline
     def apply(
         code: js.UndefOr[Code] = js.undefined,
         message: js.UndefOr[OTAUpdateErrorMessage] = js.undefined
@@ -5729,6 +5952,7 @@ package iot {
   }
 
   object ExplicitDeny {
+    @inline
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): ExplicitDeny = {
@@ -5749,6 +5973,7 @@ package iot {
   }
 
   object ExponentialRolloutRate {
+    @inline
     def apply(
         baseRatePerMinute: RolloutRatePerMinute,
         incrementFactor: IncrementFactor,
@@ -5774,6 +5999,7 @@ package iot {
   }
 
   object FileLocation {
+    @inline
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined,
         stream: js.UndefOr[Stream] = js.undefined
@@ -5796,6 +6022,7 @@ package iot {
   }
 
   object FirehoseAction {
+    @inline
     def apply(
         deliveryStreamName: DeliveryStreamName,
         roleArn: AwsArn,
@@ -5819,6 +6046,7 @@ package iot {
   }
 
   object GetEffectivePoliciesRequest {
+    @inline
     def apply(
         cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
         principal: js.UndefOr[Principal] = js.undefined,
@@ -5838,6 +6066,7 @@ package iot {
   }
 
   object GetEffectivePoliciesResponse {
+    @inline
     def apply(
         effectivePolicies: js.UndefOr[EffectivePolicies] = js.undefined
     ): GetEffectivePoliciesResponse = {
@@ -5851,6 +6080,7 @@ package iot {
   trait GetIndexingConfigurationRequest extends js.Object {}
 
   object GetIndexingConfigurationRequest {
+    @inline
     def apply(
         ): GetIndexingConfigurationRequest = {
       val __obj = js.Dynamic.literal()
@@ -5866,6 +6096,7 @@ package iot {
   }
 
   object GetIndexingConfigurationResponse {
+    @inline
     def apply(
         thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
@@ -5887,6 +6118,7 @@ package iot {
   }
 
   object GetJobDocumentRequest {
+    @inline
     def apply(
         jobId: JobId
     ): GetJobDocumentRequest = {
@@ -5904,6 +6136,7 @@ package iot {
   }
 
   object GetJobDocumentResponse {
+    @inline
     def apply(
         document: js.UndefOr[JobDocument] = js.undefined
     ): GetJobDocumentResponse = {
@@ -5920,6 +6153,7 @@ package iot {
   trait GetLoggingOptionsRequest extends js.Object {}
 
   object GetLoggingOptionsRequest {
+    @inline
     def apply(
         ): GetLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -5938,6 +6172,7 @@ package iot {
   }
 
   object GetLoggingOptionsResponse {
+    @inline
     def apply(
         logLevel: js.UndefOr[LogLevel] = js.undefined,
         roleArn: js.UndefOr[AwsArn] = js.undefined
@@ -5955,6 +6190,7 @@ package iot {
   }
 
   object GetOTAUpdateRequest {
+    @inline
     def apply(
         otaUpdateId: OTAUpdateId
     ): GetOTAUpdateRequest = {
@@ -5972,6 +6208,7 @@ package iot {
   }
 
   object GetOTAUpdateResponse {
+    @inline
     def apply(
         otaUpdateInfo: js.UndefOr[OTAUpdateInfo] = js.undefined
     ): GetOTAUpdateResponse = {
@@ -5990,6 +6227,7 @@ package iot {
   }
 
   object GetPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName
     ): GetPolicyRequest = {
@@ -6016,6 +6254,7 @@ package iot {
   }
 
   object GetPolicyResponse {
+    @inline
     def apply(
         creationDate: js.UndefOr[DateType] = js.undefined,
         defaultVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
@@ -6047,6 +6286,7 @@ package iot {
   }
 
   object GetPolicyVersionRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
@@ -6076,6 +6316,7 @@ package iot {
   }
 
   object GetPolicyVersionResponse {
+    @inline
     def apply(
         creationDate: js.UndefOr[DateType] = js.undefined,
         generationId: js.UndefOr[GenerationId] = js.undefined,
@@ -6106,6 +6347,7 @@ package iot {
   trait GetRegistrationCodeRequest extends js.Object {}
 
   object GetRegistrationCodeRequest {
+    @inline
     def apply(
         ): GetRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
@@ -6123,6 +6365,7 @@ package iot {
   }
 
   object GetRegistrationCodeResponse {
+    @inline
     def apply(
         registrationCode: js.UndefOr[RegistrationCode] = js.undefined
     ): GetRegistrationCodeResponse = {
@@ -6141,6 +6384,7 @@ package iot {
   }
 
   object GetStatisticsRequest {
+    @inline
     def apply(
         queryString: QueryString,
         aggregationField: js.UndefOr[AggregationField] = js.undefined,
@@ -6164,6 +6408,7 @@ package iot {
   }
 
   object GetStatisticsResponse {
+    @inline
     def apply(
         statistics: js.UndefOr[Statistics] = js.undefined
     ): GetStatisticsResponse = {
@@ -6182,6 +6427,7 @@ package iot {
   }
 
   object GetTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName
     ): GetTopicRuleRequest = {
@@ -6203,6 +6449,7 @@ package iot {
   }
 
   object GetTopicRuleResponse {
+    @inline
     def apply(
         rule: js.UndefOr[TopicRule] = js.undefined,
         ruleArn: js.UndefOr[RuleArn] = js.undefined
@@ -6218,6 +6465,7 @@ package iot {
   trait GetV2LoggingOptionsRequest extends js.Object {}
 
   object GetV2LoggingOptionsRequest {
+    @inline
     def apply(
         ): GetV2LoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -6234,6 +6482,7 @@ package iot {
   }
 
   object GetV2LoggingOptionsResponse {
+    @inline
     def apply(
         defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
         disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
@@ -6257,6 +6506,7 @@ package iot {
   }
 
   object GroupNameAndArn {
+    @inline
     def apply(
         groupArn: js.UndefOr[ThingGroupArn] = js.undefined,
         groupName: js.UndefOr[ThingGroupName] = js.undefined
@@ -6277,6 +6527,7 @@ package iot {
   }
 
   object ImplicitDeny {
+    @inline
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): ImplicitDeny = {
@@ -6305,6 +6556,7 @@ package iot {
   }
 
   object IotAnalyticsAction {
+    @inline
     def apply(
         channelArn: js.UndefOr[AwsArn] = js.undefined,
         channelName: js.UndefOr[ChannelName] = js.undefined,
@@ -6329,6 +6581,7 @@ package iot {
   }
 
   object IotEventsAction {
+    @inline
     def apply(
         inputName: InputName,
         roleArn: AwsArn,
@@ -6369,6 +6622,7 @@ package iot {
   }
 
   object Job {
+    @inline
     def apply(
         abortConfig: js.UndefOr[AbortConfig] = js.undefined,
         comment: js.UndefOr[Comment] = js.undefined,
@@ -6431,6 +6685,7 @@ package iot {
   }
 
   object JobExecution {
+    @inline
     def apply(
         approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
@@ -6494,6 +6749,7 @@ package iot {
   }
 
   object JobExecutionStatusDetails {
+    @inline
     def apply(
         detailsMap: js.UndefOr[DetailsMap] = js.undefined
     ): JobExecutionStatusDetails = {
@@ -6516,6 +6772,7 @@ package iot {
   }
 
   object JobExecutionSummary {
+    @inline
     def apply(
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
         lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
@@ -6543,6 +6800,7 @@ package iot {
   }
 
   object JobExecutionSummaryForJob {
+    @inline
     def apply(
         jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
         thingArn: js.UndefOr[ThingArn] = js.undefined
@@ -6564,6 +6822,7 @@ package iot {
   }
 
   object JobExecutionSummaryForThing {
+    @inline
     def apply(
         jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
@@ -6585,6 +6844,7 @@ package iot {
   }
 
   object JobExecutionsRolloutConfig {
+    @inline
     def apply(
         exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined,
         maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined
@@ -6613,6 +6873,7 @@ package iot {
   }
 
   object JobProcessDetails {
+    @inline
     def apply(
         numberOfCanceledThings: js.UndefOr[CanceledThings] = js.undefined,
         numberOfFailedThings: js.UndefOr[FailedThings] = js.undefined,
@@ -6663,6 +6924,7 @@ package iot {
   }
 
   object JobSummary {
+    @inline
     def apply(
         completedAt: js.UndefOr[DateType] = js.undefined,
         createdAt: js.UndefOr[DateType] = js.undefined,
@@ -6696,6 +6958,7 @@ package iot {
   }
 
   object KeyPair {
+    @inline
     def apply(
         PrivateKey: js.UndefOr[PrivateKey] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
@@ -6718,6 +6981,7 @@ package iot {
   }
 
   object KinesisAction {
+    @inline
     def apply(
         roleArn: AwsArn,
         streamName: StreamName,
@@ -6742,6 +7006,7 @@ package iot {
   }
 
   object LambdaAction {
+    @inline
     def apply(
         functionArn: FunctionArn
     ): LambdaAction = {
@@ -6762,6 +7027,7 @@ package iot {
   }
 
   object ListActiveViolationsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -6784,6 +7050,7 @@ package iot {
   }
 
   object ListActiveViolationsResponse {
+    @inline
     def apply(
         activeViolations: js.UndefOr[ActiveViolations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -6804,6 +7071,7 @@ package iot {
   }
 
   object ListAttachedPoliciesRequest {
+    @inline
     def apply(
         target: PolicyTarget,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -6828,6 +7096,7 @@ package iot {
   }
 
   object ListAttachedPoliciesResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
@@ -6851,6 +7120,7 @@ package iot {
   }
 
   object ListAuditFindingsRequest {
+    @inline
     def apply(
         checkName: js.UndefOr[AuditCheckName] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
@@ -6879,6 +7149,7 @@ package iot {
   }
 
   object ListAuditFindingsResponse {
+    @inline
     def apply(
         findings: js.UndefOr[AuditFindings] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -6900,6 +7171,7 @@ package iot {
   }
 
   object ListAuditMitigationActionsExecutionsRequest {
+    @inline
     def apply(
         findingId: FindingId,
         taskId: AuditMitigationActionsTaskId,
@@ -6926,6 +7198,7 @@ package iot {
   }
 
   object ListAuditMitigationActionsExecutionsResponse {
+    @inline
     def apply(
         actionsExecutions: js.UndefOr[AuditMitigationActionExecutionMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -6949,6 +7222,7 @@ package iot {
   }
 
   object ListAuditMitigationActionsTasksRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         startTime: Timestamp,
@@ -6979,6 +7253,7 @@ package iot {
   }
 
   object ListAuditMitigationActionsTasksResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[AuditMitigationActionsTaskMetadataList] = js.undefined
@@ -7001,6 +7276,7 @@ package iot {
   }
 
   object ListAuditTasksRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         startTime: Timestamp,
@@ -7029,6 +7305,7 @@ package iot {
   }
 
   object ListAuditTasksResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined
@@ -7049,6 +7326,7 @@ package iot {
   }
 
   object ListAuthorizersRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7071,6 +7349,7 @@ package iot {
   }
 
   object ListAuthorizersResponse {
+    @inline
     def apply(
         authorizers: js.UndefOr[Authorizers] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
@@ -7090,6 +7369,7 @@ package iot {
   }
 
   object ListBillingGroupsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined,
@@ -7110,6 +7390,7 @@ package iot {
   }
 
   object ListBillingGroupsResponse {
+    @inline
     def apply(
         billingGroups: js.UndefOr[BillingGroupNameAndArnList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7132,6 +7413,7 @@ package iot {
   }
 
   object ListCACertificatesRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7155,6 +7437,7 @@ package iot {
   }
 
   object ListCACertificatesResponse {
+    @inline
     def apply(
         certificates: js.UndefOr[CACertificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
@@ -7178,6 +7461,7 @@ package iot {
   }
 
   object ListCertificatesByCARequest {
+    @inline
     def apply(
         caCertificateId: CertificateId,
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
@@ -7205,6 +7489,7 @@ package iot {
   }
 
   object ListCertificatesByCAResponse {
+    @inline
     def apply(
         certificates: js.UndefOr[Certificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
@@ -7227,6 +7512,7 @@ package iot {
   }
 
   object ListCertificatesRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7250,6 +7536,7 @@ package iot {
   }
 
   object ListCertificatesResponse {
+    @inline
     def apply(
         certificates: js.UndefOr[Certificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
@@ -7268,6 +7555,7 @@ package iot {
   }
 
   object ListIndicesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7286,6 +7574,7 @@ package iot {
   }
 
   object ListIndicesResponse {
+    @inline
     def apply(
         indexNames: js.UndefOr[IndexNamesList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7306,6 +7595,7 @@ package iot {
   }
 
   object ListJobExecutionsForJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
@@ -7330,6 +7620,7 @@ package iot {
   }
 
   object ListJobExecutionsForJobResponse {
+    @inline
     def apply(
         executionSummaries: js.UndefOr[JobExecutionSummaryForJobList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7350,6 +7641,7 @@ package iot {
   }
 
   object ListJobExecutionsForThingRequest {
+    @inline
     def apply(
         thingName: ThingName,
         maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
@@ -7374,6 +7666,7 @@ package iot {
   }
 
   object ListJobExecutionsForThingResponse {
+    @inline
     def apply(
         executionSummaries: js.UndefOr[JobExecutionSummaryForThingList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7396,6 +7689,7 @@ package iot {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -7422,6 +7716,7 @@ package iot {
   }
 
   object ListJobsResponse {
+    @inline
     def apply(
         jobs: js.UndefOr[JobSummaryList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7441,6 +7736,7 @@ package iot {
   }
 
   object ListMitigationActionsRequest {
+    @inline
     def apply(
         actionType: js.UndefOr[MitigationActionType] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7461,6 +7757,7 @@ package iot {
   }
 
   object ListMitigationActionsResponse {
+    @inline
     def apply(
         actionIdentifiers: js.UndefOr[MitigationActionIdentifierList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7480,6 +7777,7 @@ package iot {
   }
 
   object ListOTAUpdatesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -7500,6 +7798,7 @@ package iot {
   }
 
   object ListOTAUpdatesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined
@@ -7522,6 +7821,7 @@ package iot {
   }
 
   object ListOutgoingCertificatesRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7545,6 +7845,7 @@ package iot {
   }
 
   object ListOutgoingCertificatesResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         outgoingCertificates: js.UndefOr[OutgoingCertificates] = js.undefined
@@ -7567,6 +7868,7 @@ package iot {
   }
 
   object ListPoliciesRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7590,6 +7892,7 @@ package iot {
   }
 
   object ListPoliciesResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
@@ -7613,6 +7916,7 @@ package iot {
   }
 
   object ListPolicyPrincipalsRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
@@ -7640,6 +7944,7 @@ package iot {
   }
 
   object ListPolicyPrincipalsResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         principals: js.UndefOr[Principals] = js.undefined
@@ -7660,6 +7965,7 @@ package iot {
   }
 
   object ListPolicyVersionsRequest {
+    @inline
     def apply(
         policyName: PolicyName
     ): ListPolicyVersionsRequest = {
@@ -7680,6 +7986,7 @@ package iot {
   }
 
   object ListPolicyVersionsResponse {
+    @inline
     def apply(
         policyVersions: js.UndefOr[PolicyVersions] = js.undefined
     ): ListPolicyVersionsResponse = {
@@ -7701,6 +8008,7 @@ package iot {
   }
 
   object ListPrincipalPoliciesRequest {
+    @inline
     def apply(
         principal: Principal,
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
@@ -7728,6 +8036,7 @@ package iot {
   }
 
   object ListPrincipalPoliciesResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
@@ -7750,6 +8059,7 @@ package iot {
   }
 
   object ListPrincipalThingsRequest {
+    @inline
     def apply(
         principal: Principal,
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
@@ -7775,6 +8085,7 @@ package iot {
   }
 
   object ListPrincipalThingsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
@@ -7794,6 +8105,7 @@ package iot {
   }
 
   object ListRoleAliasesRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -7814,6 +8126,7 @@ package iot {
   }
 
   object ListRoleAliasesResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         roleAliases: js.UndefOr[RoleAliases] = js.undefined
@@ -7832,6 +8145,7 @@ package iot {
   }
 
   object ListScheduledAuditsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7850,6 +8164,7 @@ package iot {
   }
 
   object ListScheduledAuditsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined
@@ -7870,6 +8185,7 @@ package iot {
   }
 
   object ListSecurityProfilesForTargetRequest {
+    @inline
     def apply(
         securityProfileTargetArn: SecurityProfileTargetArn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7894,6 +8210,7 @@ package iot {
   }
 
   object ListSecurityProfilesForTargetResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings] = js.undefined
@@ -7914,6 +8231,7 @@ package iot {
   }
 
   object ListSecurityProfilesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -7932,6 +8250,7 @@ package iot {
   }
 
   object ListSecurityProfilesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers] = js.undefined
@@ -7953,6 +8272,7 @@ package iot {
   }
 
   object ListStreamsRequest {
+    @inline
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7973,6 +8293,7 @@ package iot {
   }
 
   object ListStreamsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         streams: js.UndefOr[StreamsSummary] = js.undefined
@@ -7991,6 +8312,7 @@ package iot {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -8011,6 +8333,7 @@ package iot {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -8030,6 +8353,7 @@ package iot {
   }
 
   object ListTargetsForPolicyRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         marker: js.UndefOr[Marker] = js.undefined,
@@ -8052,6 +8376,7 @@ package iot {
   }
 
   object ListTargetsForPolicyResponse {
+    @inline
     def apply(
         nextMarker: js.UndefOr[Marker] = js.undefined,
         targets: js.UndefOr[PolicyTargets] = js.undefined
@@ -8071,6 +8396,7 @@ package iot {
   }
 
   object ListTargetsForSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -8093,6 +8419,7 @@ package iot {
   }
 
   object ListTargetsForSecurityProfileResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargets: js.UndefOr[SecurityProfileTargets] = js.undefined
@@ -8112,6 +8439,7 @@ package iot {
   }
 
   object ListThingGroupsForThingRequest {
+    @inline
     def apply(
         thingName: ThingName,
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
@@ -8134,6 +8462,7 @@ package iot {
   }
 
   object ListThingGroupsForThingResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
@@ -8155,6 +8484,7 @@ package iot {
   }
 
   object ListThingGroupsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         namePrefixFilter: js.UndefOr[ThingGroupName] = js.undefined,
@@ -8179,6 +8509,7 @@ package iot {
   }
 
   object ListThingGroupsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
@@ -8199,6 +8530,7 @@ package iot {
   }
 
   object ListThingPrincipalsRequest {
+    @inline
     def apply(
         thingName: ThingName
     ): ListThingPrincipalsRequest = {
@@ -8219,6 +8551,7 @@ package iot {
   }
 
   object ListThingPrincipalsResponse {
+    @inline
     def apply(
         principals: js.UndefOr[Principals] = js.undefined
     ): ListThingPrincipalsResponse = {
@@ -8237,6 +8570,7 @@ package iot {
   }
 
   object ListThingRegistrationTaskReportsRequest {
+    @inline
     def apply(
         reportType: ReportType,
         taskId: TaskId,
@@ -8262,6 +8596,7 @@ package iot {
   }
 
   object ListThingRegistrationTaskReportsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         reportType: js.UndefOr[ReportType] = js.undefined,
@@ -8283,6 +8618,7 @@ package iot {
   }
 
   object ListThingRegistrationTasksRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -8303,6 +8639,7 @@ package iot {
   }
 
   object ListThingRegistrationTasksResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         taskIds: js.UndefOr[TaskIdList] = js.undefined
@@ -8325,6 +8662,7 @@ package iot {
   }
 
   object ListThingTypesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -8348,6 +8686,7 @@ package iot {
   }
 
   object ListThingTypesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingTypes: js.UndefOr[ThingTypeList] = js.undefined
@@ -8367,6 +8706,7 @@ package iot {
   }
 
   object ListThingsInBillingGroupRequest {
+    @inline
     def apply(
         billingGroupName: BillingGroupName,
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
@@ -8389,6 +8729,7 @@ package iot {
   }
 
   object ListThingsInBillingGroupResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
@@ -8409,6 +8750,7 @@ package iot {
   }
 
   object ListThingsInThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
@@ -8433,6 +8775,7 @@ package iot {
   }
 
   object ListThingsInThingGroupResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
@@ -8457,6 +8800,7 @@ package iot {
   }
 
   object ListThingsRequest {
+    @inline
     def apply(
         attributeName: js.UndefOr[AttributeName] = js.undefined,
         attributeValue: js.UndefOr[AttributeValue] = js.undefined,
@@ -8484,6 +8828,7 @@ package iot {
   }
 
   object ListThingsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingAttributeList] = js.undefined
@@ -8507,6 +8852,7 @@ package iot {
   }
 
   object ListTopicRulesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[GEMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -8532,6 +8878,7 @@ package iot {
   }
 
   object ListTopicRulesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         rules: js.UndefOr[TopicRuleList] = js.undefined
@@ -8551,6 +8898,7 @@ package iot {
   }
 
   object ListV2LoggingLevelsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[SkyfallMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -8571,6 +8919,7 @@ package iot {
   }
 
   object ListV2LoggingLevelsResponse {
+    @inline
     def apply(
         logTargetConfigurations: js.UndefOr[LogTargetConfigurations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -8593,6 +8942,7 @@ package iot {
   }
 
   object ListViolationEventsRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         startTime: Timestamp,
@@ -8621,6 +8971,7 @@ package iot {
   }
 
   object ListViolationEventsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         violationEvents: js.UndefOr[ViolationEvents] = js.undefined
@@ -8652,6 +9003,7 @@ package iot {
   }
 
   object LogTarget {
+    @inline
     def apply(
         targetType: LogTargetType,
         targetName: js.UndefOr[LogTargetName] = js.undefined
@@ -8675,6 +9027,7 @@ package iot {
   }
 
   object LogTargetConfiguration {
+    @inline
     def apply(
         logLevel: js.UndefOr[LogLevel] = js.undefined,
         logTarget: js.UndefOr[LogTarget] = js.undefined
@@ -8703,6 +9056,7 @@ package iot {
   }
 
   object LoggingOptionsPayload {
+    @inline
     def apply(
         roleArn: AwsArn,
         logLevel: js.UndefOr[LogLevel] = js.undefined
@@ -8734,6 +9088,7 @@ package iot {
   }
 
   object MetricValue {
+    @inline
     def apply(
         cidrs: js.UndefOr[Cidrs] = js.undefined,
         count: js.UndefOr[UnsignedLong] = js.undefined,
@@ -8759,6 +9114,7 @@ package iot {
   }
 
   object MitigationAction {
+    @inline
     def apply(
         actionParams: js.UndefOr[MitigationActionParams] = js.undefined,
         id: js.UndefOr[MitigationActionId] = js.undefined,
@@ -8785,6 +9141,7 @@ package iot {
   }
 
   object MitigationActionIdentifier {
+    @inline
     def apply(
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionName: js.UndefOr[MitigationActionName] = js.undefined,
@@ -8812,6 +9169,7 @@ package iot {
   }
 
   object MitigationActionParams {
+    @inline
     def apply(
         addThingsToThingGroupParams: js.UndefOr[AddThingsToThingGroupParams] = js.undefined,
         enableIoTLoggingParams: js.UndefOr[EnableIoTLoggingParams] = js.undefined,
@@ -8872,6 +9230,7 @@ package iot {
   }
 
   object NonCompliantResource {
+    @inline
     def apply(
         additionalInfo: js.UndefOr[StringMap] = js.undefined,
         resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
@@ -8898,6 +9257,7 @@ package iot {
   }
 
   object OTAUpdateFile {
+    @inline
     def apply(
         attributes: js.UndefOr[AttributesMap] = js.undefined,
         codeSigning: js.UndefOr[CodeSigning] = js.undefined,
@@ -8937,6 +9297,7 @@ package iot {
   }
 
   object OTAUpdateInfo {
+    @inline
     def apply(
         additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
         awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
@@ -8994,6 +9355,7 @@ package iot {
   }
 
   object OTAUpdateSummary {
+    @inline
     def apply(
         creationDate: js.UndefOr[DateType] = js.undefined,
         otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
@@ -9021,6 +9383,7 @@ package iot {
   }
 
   object OutgoingCertificate {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -9050,6 +9413,7 @@ package iot {
   }
 
   object Policy {
+    @inline
     def apply(
         policyArn: js.UndefOr[PolicyArn] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
@@ -9078,6 +9442,7 @@ package iot {
   }
 
   object PolicyVersion {
+    @inline
     def apply(
         createDate: js.UndefOr[DateType] = js.undefined,
         isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
@@ -9101,6 +9466,7 @@ package iot {
   }
 
   object PolicyVersionIdentifier {
+    @inline
     def apply(
         policyName: js.UndefOr[PolicyName] = js.undefined,
         policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
@@ -9122,6 +9488,7 @@ package iot {
   }
 
   object PresignedUrlConfig {
+    @inline
     def apply(
         expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
@@ -9142,6 +9509,7 @@ package iot {
   }
 
   object PublishFindingToSnsParams {
+    @inline
     def apply(
         topicArn: SnsTopicArn
     ): PublishFindingToSnsParams = {
@@ -9162,6 +9530,7 @@ package iot {
   }
 
   object PutItemInput {
+    @inline
     def apply(
         tableName: TableName
     ): PutItemInput = {
@@ -9183,6 +9552,7 @@ package iot {
   }
 
   object RateIncreaseCriteria {
+    @inline
     def apply(
         numberOfNotifiedThings: js.UndefOr[NumberOfThings] = js.undefined,
         numberOfSucceededThings: js.UndefOr[NumberOfThings] = js.undefined
@@ -9207,6 +9577,7 @@ package iot {
   }
 
   object RegisterCACertificateRequest {
+    @inline
     def apply(
         caCertificate: CertificatePem,
         verificationCertificate: CertificatePem,
@@ -9236,6 +9607,7 @@ package iot {
   }
 
   object RegisterCACertificateResponse {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined
@@ -9259,6 +9631,7 @@ package iot {
   }
 
   object RegisterCertificateRequest {
+    @inline
     def apply(
         certificatePem: CertificatePem,
         caCertificatePem: js.UndefOr[CertificatePem] = js.undefined,
@@ -9286,6 +9659,7 @@ package iot {
   }
 
   object RegisterCertificateResponse {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined
@@ -9304,6 +9678,7 @@ package iot {
   }
 
   object RegisterThingRequest {
+    @inline
     def apply(
         templateBody: TemplateBody,
         parameters: js.UndefOr[Parameters] = js.undefined
@@ -9324,6 +9699,7 @@ package iot {
   }
 
   object RegisterThingResponse {
+    @inline
     def apply(
         certificatePem: js.UndefOr[CertificatePem] = js.undefined,
         resourceArns: js.UndefOr[ResourceArns] = js.undefined
@@ -9345,6 +9721,7 @@ package iot {
   }
 
   object RegistrationConfig {
+    @inline
     def apply(
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         templateBody: js.UndefOr[TemplateBody] = js.undefined
@@ -9366,6 +9743,7 @@ package iot {
   }
 
   object RejectCertificateTransferRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         rejectReason: js.UndefOr[Message] = js.undefined
@@ -9390,6 +9768,7 @@ package iot {
   }
 
   object RelatedResource {
+    @inline
     def apply(
         additionalInfo: js.UndefOr[StringMap] = js.undefined,
         resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
@@ -9412,6 +9791,7 @@ package iot {
   }
 
   object RemoveThingFromBillingGroupRequest {
+    @inline
     def apply(
         billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
         billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
@@ -9431,6 +9811,7 @@ package iot {
   trait RemoveThingFromBillingGroupResponse extends js.Object {}
 
   object RemoveThingFromBillingGroupResponse {
+    @inline
     def apply(
         ): RemoveThingFromBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -9448,6 +9829,7 @@ package iot {
   }
 
   object RemoveThingFromThingGroupRequest {
+    @inline
     def apply(
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
@@ -9467,6 +9849,7 @@ package iot {
   trait RemoveThingFromThingGroupResponse extends js.Object {}
 
   object RemoveThingFromThingGroupResponse {
+    @inline
     def apply(
         ): RemoveThingFromThingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -9484,6 +9867,7 @@ package iot {
   }
 
   object ReplaceDefaultPolicyVersionParams {
+    @inline
     def apply(
         templateName: PolicyTemplateName
     ): ReplaceDefaultPolicyVersionParams = {
@@ -9505,6 +9889,7 @@ package iot {
   }
 
   object ReplaceTopicRuleRequest {
+    @inline
     def apply(
         ruleName: RuleName,
         topicRulePayload: TopicRulePayload
@@ -9536,6 +9921,7 @@ package iot {
   }
 
   object RepublishAction {
+    @inline
     def apply(
         roleArn: AwsArn,
         topic: TopicPattern,
@@ -9565,6 +9951,7 @@ package iot {
   }
 
   object ResourceIdentifier {
+    @inline
     def apply(
         account: js.UndefOr[AwsAccountId] = js.undefined,
         caCertificateId: js.UndefOr[CertificateId] = js.undefined,
@@ -9612,6 +9999,7 @@ package iot {
   }
 
   object RoleAliasDescription {
+    @inline
     def apply(
         creationDate: js.UndefOr[DateType] = js.undefined,
         credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
@@ -9647,6 +10035,7 @@ package iot {
   }
 
   object S3Action {
+    @inline
     def apply(
         bucketName: BucketName,
         key: Key,
@@ -9674,6 +10063,7 @@ package iot {
   }
 
   object S3Destination {
+    @inline
     def apply(
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         prefix: js.UndefOr[Prefix] = js.undefined
@@ -9696,6 +10086,7 @@ package iot {
   }
 
   object S3Location {
+    @inline
     def apply(
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         key: js.UndefOr[S3Key] = js.undefined,
@@ -9719,6 +10110,7 @@ package iot {
   }
 
   object SalesforceAction {
+    @inline
     def apply(
         token: SalesforceToken,
         url: SalesforceEndpoint
@@ -9745,6 +10137,7 @@ package iot {
   }
 
   object ScheduledAuditMetadata {
+    @inline
     def apply(
         dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
         dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
@@ -9772,6 +10165,7 @@ package iot {
   }
 
   object SearchIndexRequest {
+    @inline
     def apply(
         queryString: QueryString,
         indexName: js.UndefOr[IndexName] = js.undefined,
@@ -9799,6 +10193,7 @@ package iot {
   }
 
   object SearchIndexResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined,
@@ -9822,6 +10217,7 @@ package iot {
   }
 
   object SecurityProfileIdentifier {
+    @inline
     def apply(
         arn: SecurityProfileArn,
         name: SecurityProfileName
@@ -9844,6 +10240,7 @@ package iot {
   }
 
   object SecurityProfileTarget {
+    @inline
     def apply(
         arn: SecurityProfileTargetArn
     ): SecurityProfileTarget = {
@@ -9865,6 +10262,7 @@ package iot {
   }
 
   object SecurityProfileTargetMapping {
+    @inline
     def apply(
         securityProfileIdentifier: js.UndefOr[SecurityProfileIdentifier] = js.undefined,
         target: js.UndefOr[SecurityProfileTarget] = js.undefined
@@ -9884,6 +10282,7 @@ package iot {
   }
 
   object SetDefaultAuthorizerRequest {
+    @inline
     def apply(
         authorizerName: AuthorizerName
     ): SetDefaultAuthorizerRequest = {
@@ -9902,6 +10301,7 @@ package iot {
   }
 
   object SetDefaultAuthorizerResponse {
+    @inline
     def apply(
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
@@ -9923,6 +10323,7 @@ package iot {
   }
 
   object SetDefaultPolicyVersionRequest {
+    @inline
     def apply(
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
@@ -9945,6 +10346,7 @@ package iot {
   }
 
   object SetLoggingOptionsRequest {
+    @inline
     def apply(
         loggingOptionsPayload: LoggingOptionsPayload
     ): SetLoggingOptionsRequest = {
@@ -9963,6 +10365,7 @@ package iot {
   }
 
   object SetV2LoggingLevelRequest {
+    @inline
     def apply(
         logLevel: LogLevel,
         logTarget: LogTarget
@@ -9984,6 +10387,7 @@ package iot {
   }
 
   object SetV2LoggingOptionsRequest {
+    @inline
     def apply(
         defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
         disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
@@ -10008,6 +10412,7 @@ package iot {
   }
 
   object SigningProfileParameter {
+    @inline
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined,
@@ -10032,6 +10437,7 @@ package iot {
   }
 
   object SnsAction {
+    @inline
     def apply(
         roleArn: AwsArn,
         targetArn: AwsArn,
@@ -10058,6 +10464,7 @@ package iot {
   }
 
   object SqsAction {
+    @inline
     def apply(
         queueUrl: QueueUrl,
         roleArn: AwsArn,
@@ -10082,6 +10489,7 @@ package iot {
   }
 
   object StartAuditMitigationActionsTaskRequest {
+    @inline
     def apply(
         auditCheckToActionsMapping: AuditCheckToActionsMapping,
         clientRequestToken: ClientRequestToken,
@@ -10105,6 +10513,7 @@ package iot {
   }
 
   object StartAuditMitigationActionsTaskResponse {
+    @inline
     def apply(
         taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined
     ): StartAuditMitigationActionsTaskResponse = {
@@ -10120,6 +10529,7 @@ package iot {
   }
 
   object StartOnDemandAuditTaskRequest {
+    @inline
     def apply(
         targetCheckNames: TargetAuditCheckNames
     ): StartOnDemandAuditTaskRequest = {
@@ -10137,6 +10547,7 @@ package iot {
   }
 
   object StartOnDemandAuditTaskResponse {
+    @inline
     def apply(
         taskId: js.UndefOr[AuditTaskId] = js.undefined
     ): StartOnDemandAuditTaskResponse = {
@@ -10157,6 +10568,7 @@ package iot {
   }
 
   object StartSigningJobParameter {
+    @inline
     def apply(
         destination: js.UndefOr[Destination] = js.undefined,
         signingProfileName: js.UndefOr[SigningProfileName] = js.undefined,
@@ -10179,6 +10591,7 @@ package iot {
   }
 
   object StartThingRegistrationTaskRequest {
+    @inline
     def apply(
         inputFileBucket: RegistryS3BucketName,
         inputFileKey: RegistryS3KeyName,
@@ -10202,6 +10615,7 @@ package iot {
   }
 
   object StartThingRegistrationTaskResponse {
+    @inline
     def apply(
         taskId: js.UndefOr[TaskId] = js.undefined
     ): StartThingRegistrationTaskResponse = {
@@ -10220,6 +10634,7 @@ package iot {
   }
 
   object StatisticalThreshold {
+    @inline
     def apply(
         statistic: js.UndefOr[EvaluationStatistic] = js.undefined
     ): StatisticalThreshold = {
@@ -10238,6 +10653,7 @@ package iot {
   }
 
   object Statistics {
+    @inline
     def apply(
         count: js.UndefOr[Count] = js.undefined
     ): Statistics = {
@@ -10268,6 +10684,7 @@ package iot {
   }
 
   object StepFunctionsAction {
+    @inline
     def apply(
         roleArn: AwsArn,
         stateMachineName: StateMachineName,
@@ -10289,6 +10706,7 @@ package iot {
   }
 
   object StopThingRegistrationTaskRequest {
+    @inline
     def apply(
         taskId: TaskId
     ): StopThingRegistrationTaskRequest = {
@@ -10304,6 +10722,7 @@ package iot {
   trait StopThingRegistrationTaskResponse extends js.Object {}
 
   object StopThingRegistrationTaskResponse {
+    @inline
     def apply(
         ): StopThingRegistrationTaskResponse = {
       val __obj = js.Dynamic.literal()
@@ -10322,6 +10741,7 @@ package iot {
   }
 
   object Stream {
+    @inline
     def apply(
         fileId: js.UndefOr[FileId] = js.undefined,
         streamId: js.UndefOr[StreamId] = js.undefined
@@ -10343,6 +10763,7 @@ package iot {
   }
 
   object StreamFile {
+    @inline
     def apply(
         fileId: js.UndefOr[FileId] = js.undefined,
         s3Location: js.UndefOr[S3Location] = js.undefined
@@ -10370,6 +10791,7 @@ package iot {
   }
 
   object StreamInfo {
+    @inline
     def apply(
         createdAt: js.UndefOr[DateType] = js.undefined,
         description: js.UndefOr[StreamDescription] = js.undefined,
@@ -10405,6 +10827,7 @@ package iot {
   }
 
   object StreamSummary {
+    @inline
     def apply(
         description: js.UndefOr[StreamDescription] = js.undefined,
         streamArn: js.UndefOr[StreamArn] = js.undefined,
@@ -10430,6 +10853,7 @@ package iot {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -10448,6 +10872,7 @@ package iot {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagList
@@ -10465,6 +10890,7 @@ package iot {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -10495,6 +10921,7 @@ package iot {
   }
 
   object TaskStatistics {
+    @inline
     def apply(
         canceledChecks: js.UndefOr[CanceledChecksCount] = js.undefined,
         compliantChecks: js.UndefOr[CompliantChecksCount] = js.undefined,
@@ -10531,6 +10958,7 @@ package iot {
   }
 
   object TaskStatisticsForAuditCheck {
+    @inline
     def apply(
         canceledFindingsCount: js.UndefOr[CanceledFindingsCount] = js.undefined,
         failedFindingsCount: js.UndefOr[FailedFindingsCount] = js.undefined,
@@ -10559,6 +10987,7 @@ package iot {
   }
 
   object TestAuthorizationRequest {
+    @inline
     def apply(
         authInfos: AuthInfos,
         clientId: js.UndefOr[ClientId] = js.undefined,
@@ -10586,6 +11015,7 @@ package iot {
   }
 
   object TestAuthorizationResponse {
+    @inline
     def apply(
         authResults: js.UndefOr[AuthResults] = js.undefined
     ): TestAuthorizationResponse = {
@@ -10603,6 +11033,7 @@ package iot {
   }
 
   object TestInvokeAuthorizerRequest {
+    @inline
     def apply(
         authorizerName: AuthorizerName,
         token: Token,
@@ -10628,6 +11059,7 @@ package iot {
   }
 
   object TestInvokeAuthorizerResponse {
+    @inline
     def apply(
         disconnectAfterInSeconds: js.UndefOr[Seconds] = js.undefined,
         isAuthenticated: js.UndefOr[IsAuthenticated] = js.undefined,
@@ -10658,6 +11090,7 @@ package iot {
   }
 
   object ThingAttribute {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         thingArn: js.UndefOr[ThingArn] = js.undefined,
@@ -10685,6 +11118,7 @@ package iot {
   }
 
   object ThingConnectivity {
+    @inline
     def apply(
         connected: js.UndefOr[Boolean] = js.undefined,
         timestamp: js.UndefOr[ConnectivityTimestamp] = js.undefined
@@ -10718,6 +11152,7 @@ package iot {
   }
 
   object ThingDocument {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         connectivity: js.UndefOr[ThingConnectivity] = js.undefined,
@@ -10752,6 +11187,7 @@ package iot {
   }
 
   object ThingGroupDocument {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         parentGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
@@ -10778,6 +11214,7 @@ package iot {
   }
 
   object ThingGroupIndexingConfiguration {
+    @inline
     def apply(
         thingGroupIndexingMode: ThingGroupIndexingMode
     ): ThingGroupIndexingConfiguration = {
@@ -10807,6 +11244,7 @@ package iot {
   }
 
   object ThingGroupMetadata {
+    @inline
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined,
         parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
@@ -10830,6 +11268,7 @@ package iot {
   }
 
   object ThingGroupProperties {
+    @inline
     def apply(
         attributePayload: js.UndefOr[AttributePayload] = js.undefined,
         thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined
@@ -10851,6 +11290,7 @@ package iot {
   }
 
   object ThingIndexingConfiguration {
+    @inline
     def apply(
         thingIndexingMode: ThingIndexingMode,
         thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined
@@ -10886,6 +11326,7 @@ package iot {
   }
 
   object ThingTypeDefinition {
+    @inline
     def apply(
         thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
         thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
@@ -10912,6 +11353,7 @@ package iot {
   }
 
   object ThingTypeMetadata {
+    @inline
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined,
         deprecated: js.UndefOr[Boolean] = js.undefined,
@@ -10935,6 +11377,7 @@ package iot {
   }
 
   object ThingTypeProperties {
+    @inline
     def apply(
         searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined,
         thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined
@@ -10955,6 +11398,7 @@ package iot {
   }
 
   object TimeoutConfig {
+    @inline
     def apply(
         inProgressTimeoutInMinutes: js.UndefOr[InProgressTimeoutInMinutes] = js.undefined
     ): TimeoutConfig = {
@@ -10982,6 +11426,7 @@ package iot {
   }
 
   object TopicRule {
+    @inline
     def apply(
         actions: js.UndefOr[ActionList] = js.undefined,
         awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
@@ -11018,6 +11463,7 @@ package iot {
   }
 
   object TopicRuleListItem {
+    @inline
     def apply(
         createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
         ruleArn: js.UndefOr[RuleArn] = js.undefined,
@@ -11049,6 +11495,7 @@ package iot {
   }
 
   object TopicRulePayload {
+    @inline
     def apply(
         actions: ActionList,
         sql: SQL,
@@ -11081,6 +11528,7 @@ package iot {
   }
 
   object TransferCertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         targetAwsAccount: AwsAccountId,
@@ -11105,6 +11553,7 @@ package iot {
   }
 
   object TransferCertificateResponse {
+    @inline
     def apply(
         transferredCertificateArn: js.UndefOr[CertificateArn] = js.undefined
     ): TransferCertificateResponse = {
@@ -11129,6 +11578,7 @@ package iot {
   }
 
   object TransferData {
+    @inline
     def apply(
         acceptDate: js.UndefOr[DateType] = js.undefined,
         rejectDate: js.UndefOr[DateType] = js.undefined,
@@ -11153,6 +11603,7 @@ package iot {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -11170,6 +11621,7 @@ package iot {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -11186,6 +11638,7 @@ package iot {
   }
 
   object UpdateAccountAuditConfigurationRequest {
+    @inline
     def apply(
         auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
         auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
@@ -11205,6 +11658,7 @@ package iot {
   trait UpdateAccountAuditConfigurationResponse extends js.Object {}
 
   object UpdateAccountAuditConfigurationResponse {
+    @inline
     def apply(
         ): UpdateAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -11223,6 +11677,7 @@ package iot {
   }
 
   object UpdateAuthorizerRequest {
+    @inline
     def apply(
         authorizerName: AuthorizerName,
         authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
@@ -11249,6 +11704,7 @@ package iot {
   }
 
   object UpdateAuthorizerResponse {
+    @inline
     def apply(
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
@@ -11268,6 +11724,7 @@ package iot {
   }
 
   object UpdateBillingGroupRequest {
+    @inline
     def apply(
         billingGroupName: BillingGroupName,
         billingGroupProperties: BillingGroupProperties,
@@ -11289,6 +11746,7 @@ package iot {
   }
 
   object UpdateBillingGroupResponse {
+    @inline
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateBillingGroupResponse = {
@@ -11307,6 +11765,7 @@ package iot {
   }
 
   object UpdateCACertificateParams {
+    @inline
     def apply(
         action: CACertificateUpdateAction
     ): UpdateCACertificateParams = {
@@ -11331,6 +11790,7 @@ package iot {
   }
 
   object UpdateCACertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         newAutoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
@@ -11362,6 +11822,7 @@ package iot {
   }
 
   object UpdateCertificateRequest {
+    @inline
     def apply(
         certificateId: CertificateId,
         newStatus: CertificateStatus
@@ -11384,6 +11845,7 @@ package iot {
   }
 
   object UpdateDeviceCertificateParams {
+    @inline
     def apply(
         action: DeviceCertificateUpdateAction
     ): UpdateDeviceCertificateParams = {
@@ -11406,6 +11868,7 @@ package iot {
   }
 
   object UpdateDynamicThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         thingGroupProperties: ThingGroupProperties,
@@ -11433,6 +11896,7 @@ package iot {
   }
 
   object UpdateDynamicThingGroupResponse {
+    @inline
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateDynamicThingGroupResponse = {
@@ -11448,6 +11912,7 @@ package iot {
   }
 
   object UpdateEventConfigurationsRequest {
+    @inline
     def apply(
         eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined
     ): UpdateEventConfigurationsRequest = {
@@ -11461,6 +11926,7 @@ package iot {
   trait UpdateEventConfigurationsResponse extends js.Object {}
 
   object UpdateEventConfigurationsResponse {
+    @inline
     def apply(
         ): UpdateEventConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
@@ -11476,6 +11942,7 @@ package iot {
   }
 
   object UpdateIndexingConfigurationRequest {
+    @inline
     def apply(
         thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
@@ -11495,6 +11962,7 @@ package iot {
   trait UpdateIndexingConfigurationResponse extends js.Object {}
 
   object UpdateIndexingConfigurationResponse {
+    @inline
     def apply(
         ): UpdateIndexingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -11514,6 +11982,7 @@ package iot {
   }
 
   object UpdateJobRequest {
+    @inline
     def apply(
         jobId: JobId,
         abortConfig: js.UndefOr[AbortConfig] = js.undefined,
@@ -11545,6 +12014,7 @@ package iot {
   }
 
   object UpdateMitigationActionRequest {
+    @inline
     def apply(
         actionName: MitigationActionName,
         actionParams: js.UndefOr[MitigationActionParams] = js.undefined,
@@ -11567,6 +12037,7 @@ package iot {
   }
 
   object UpdateMitigationActionResponse {
+    @inline
     def apply(
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionId: js.UndefOr[MitigationActionId] = js.undefined
@@ -11586,6 +12057,7 @@ package iot {
   }
 
   object UpdateRoleAliasRequest {
+    @inline
     def apply(
         roleAlias: RoleAlias,
         credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
@@ -11610,6 +12082,7 @@ package iot {
   }
 
   object UpdateRoleAliasResponse {
+    @inline
     def apply(
         roleAlias: js.UndefOr[RoleAlias] = js.undefined,
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
@@ -11631,6 +12104,7 @@ package iot {
   }
 
   object UpdateScheduledAuditRequest {
+    @inline
     def apply(
         scheduledAuditName: ScheduledAuditName,
         dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
@@ -11656,6 +12130,7 @@ package iot {
   }
 
   object UpdateScheduledAuditResponse {
+    @inline
     def apply(
         scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
     ): UpdateScheduledAuditResponse = {
@@ -11679,6 +12154,7 @@ package iot {
   }
 
   object UpdateSecurityProfileRequest {
+    @inline
     def apply(
         securityProfileName: SecurityProfileName,
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
@@ -11726,6 +12202,7 @@ package iot {
   }
 
   object UpdateSecurityProfileResponse {
+    @inline
     def apply(
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
@@ -11764,6 +12241,7 @@ package iot {
   }
 
   object UpdateStreamRequest {
+    @inline
     def apply(
         streamId: StreamId,
         description: js.UndefOr[StreamDescription] = js.undefined,
@@ -11790,6 +12268,7 @@ package iot {
   }
 
   object UpdateStreamResponse {
+    @inline
     def apply(
         description: js.UndefOr[StreamDescription] = js.undefined,
         streamArn: js.UndefOr[StreamArn] = js.undefined,
@@ -11813,6 +12292,7 @@ package iot {
   }
 
   object UpdateThingGroupRequest {
+    @inline
     def apply(
         thingGroupName: ThingGroupName,
         thingGroupProperties: ThingGroupProperties,
@@ -11834,6 +12314,7 @@ package iot {
   }
 
   object UpdateThingGroupResponse {
+    @inline
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateThingGroupResponse = {
@@ -11852,6 +12333,7 @@ package iot {
   }
 
   object UpdateThingGroupsForThingRequest {
+    @inline
     def apply(
         overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
         thingGroupsToAdd: js.UndefOr[ThingGroupList] = js.undefined,
@@ -11871,6 +12353,7 @@ package iot {
   trait UpdateThingGroupsForThingResponse extends js.Object {}
 
   object UpdateThingGroupsForThingResponse {
+    @inline
     def apply(
         ): UpdateThingGroupsForThingResponse = {
       val __obj = js.Dynamic.literal()
@@ -11892,6 +12375,7 @@ package iot {
   }
 
   object UpdateThingRequest {
+    @inline
     def apply(
         thingName: ThingName,
         attributePayload: js.UndefOr[AttributePayload] = js.undefined,
@@ -11918,6 +12402,7 @@ package iot {
   trait UpdateThingResponse extends js.Object {}
 
   object UpdateThingResponse {
+    @inline
     def apply(
         ): UpdateThingResponse = {
       val __obj = js.Dynamic.literal()
@@ -11932,6 +12417,7 @@ package iot {
   }
 
   object ValidateSecurityProfileBehaviorsRequest {
+    @inline
     def apply(
         behaviors: Behaviors
     ): ValidateSecurityProfileBehaviorsRequest = {
@@ -11950,6 +12436,7 @@ package iot {
   }
 
   object ValidateSecurityProfileBehaviorsResponse {
+    @inline
     def apply(
         valid: js.UndefOr[Valid] = js.undefined,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined
@@ -11970,6 +12457,7 @@ package iot {
   }
 
   object ValidationError {
+    @inline
     def apply(
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined
     ): ValidationError = {
@@ -11994,6 +12482,7 @@ package iot {
   }
 
   object ViolationEvent {
+    @inline
     def apply(
         behavior: js.UndefOr[Behavior] = js.undefined,
         metricValue: js.UndefOr[MetricValue] = js.undefined,

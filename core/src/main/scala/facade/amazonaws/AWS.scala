@@ -14,6 +14,7 @@ trait ParamsWithEndpoint extends js.Object {
   var endpoint: js.UndefOr[String]  = js.undefined
 }
 object ParamsWithEndpoint {
+  @inline
   def apply(
       params: js.UndefOr[AWSConfig] = js.undefined,
       endpoint: js.UndefOr[String] = js.undefined
@@ -29,6 +30,7 @@ trait S3ParamsWithEndpoint extends ParamsWithEndpoint {
   var useDualstack: js.UndefOr[Boolean] = js.undefined
 }
 object S3ParamsWithEndpoint {
+  @inline
   def apply(
       params: js.UndefOr[AWSConfig] = js.undefined,
       endpoint: js.UndefOr[String] = js.undefined,

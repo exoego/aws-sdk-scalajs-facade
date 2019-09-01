@@ -19,9 +19,9 @@ package object comprehendmedical {
 
   implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
 
-    def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
+    @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
       service.detectEntities(params).promise.toFuture
-    def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
+    @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
       service.detectPHI(params).promise.toFuture
   }
 }
@@ -52,6 +52,7 @@ package comprehendmedical {
   }
 
   object Attribute {
+    @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
@@ -90,6 +91,7 @@ package comprehendmedical {
   }
 
   object DetectEntitiesRequest {
+    @inline
     def apply(
         Text: BoundedLengthString
     ): DetectEntitiesRequest = {
@@ -109,6 +111,7 @@ package comprehendmedical {
   }
 
   object DetectEntitiesResponse {
+    @inline
     def apply(
         Entities: EntityList,
         PaginationToken: js.UndefOr[String] = js.undefined,
@@ -130,6 +133,7 @@ package comprehendmedical {
   }
 
   object DetectPHIRequest {
+    @inline
     def apply(
         Text: BoundedLengthString
     ): DetectPHIRequest = {
@@ -148,6 +152,7 @@ package comprehendmedical {
   }
 
   object DetectPHIResponse {
+    @inline
     def apply(
         Entities: EntityList,
         PaginationToken: js.UndefOr[String] = js.undefined
@@ -178,6 +183,7 @@ package comprehendmedical {
   }
 
   object Entity {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeList] = js.undefined,
         BeginOffset: js.UndefOr[Int] = js.undefined,
@@ -289,6 +295,7 @@ package comprehendmedical {
   }
 
   object Trait {
+    @inline
     def apply(
         Name: js.UndefOr[AttributeName] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
@@ -310,6 +317,7 @@ package comprehendmedical {
   }
 
   object UnmappedAttribute {
+    @inline
     def apply(
         Attribute: js.UndefOr[Attribute] = js.undefined,
         Type: js.UndefOr[EntityType] = js.undefined

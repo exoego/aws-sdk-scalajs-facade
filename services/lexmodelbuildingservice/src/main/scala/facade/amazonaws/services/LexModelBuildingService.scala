@@ -78,75 +78,78 @@ package object lexmodelbuildingservice {
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
 
-    def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
+    @inline def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
       service.createBotVersion(params).promise.toFuture
-    def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] =
+    @inline def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] =
       service.createIntentVersion(params).promise.toFuture
-    def createSlotTypeVersionFuture(params: CreateSlotTypeVersionRequest): Future[CreateSlotTypeVersionResponse] =
-      service.createSlotTypeVersion(params).promise.toFuture
-    def deleteBotAliasFuture(params: DeleteBotAliasRequest): Future[js.Object] =
+    @inline def createSlotTypeVersionFuture(
+        params: CreateSlotTypeVersionRequest
+    ): Future[CreateSlotTypeVersionResponse] = service.createSlotTypeVersion(params).promise.toFuture
+    @inline def deleteBotAliasFuture(params: DeleteBotAliasRequest): Future[js.Object] =
       service.deleteBotAlias(params).promise.toFuture
-    def deleteBotChannelAssociationFuture(params: DeleteBotChannelAssociationRequest): Future[js.Object] =
+    @inline def deleteBotChannelAssociationFuture(params: DeleteBotChannelAssociationRequest): Future[js.Object] =
       service.deleteBotChannelAssociation(params).promise.toFuture
-    def deleteBotFuture(params: DeleteBotRequest): Future[js.Object] = service.deleteBot(params).promise.toFuture
-    def deleteBotVersionFuture(params: DeleteBotVersionRequest): Future[js.Object] =
+    @inline def deleteBotFuture(params: DeleteBotRequest): Future[js.Object] =
+      service.deleteBot(params).promise.toFuture
+    @inline def deleteBotVersionFuture(params: DeleteBotVersionRequest): Future[js.Object] =
       service.deleteBotVersion(params).promise.toFuture
-    def deleteIntentFuture(params: DeleteIntentRequest): Future[js.Object] =
+    @inline def deleteIntentFuture(params: DeleteIntentRequest): Future[js.Object] =
       service.deleteIntent(params).promise.toFuture
-    def deleteIntentVersionFuture(params: DeleteIntentVersionRequest): Future[js.Object] =
+    @inline def deleteIntentVersionFuture(params: DeleteIntentVersionRequest): Future[js.Object] =
       service.deleteIntentVersion(params).promise.toFuture
-    def deleteSlotTypeFuture(params: DeleteSlotTypeRequest): Future[js.Object] =
+    @inline def deleteSlotTypeFuture(params: DeleteSlotTypeRequest): Future[js.Object] =
       service.deleteSlotType(params).promise.toFuture
-    def deleteSlotTypeVersionFuture(params: DeleteSlotTypeVersionRequest): Future[js.Object] =
+    @inline def deleteSlotTypeVersionFuture(params: DeleteSlotTypeVersionRequest): Future[js.Object] =
       service.deleteSlotTypeVersion(params).promise.toFuture
-    def deleteUtterancesFuture(params: DeleteUtterancesRequest): Future[js.Object] =
+    @inline def deleteUtterancesFuture(params: DeleteUtterancesRequest): Future[js.Object] =
       service.deleteUtterances(params).promise.toFuture
-    def getBotAliasFuture(params: GetBotAliasRequest): Future[GetBotAliasResponse] =
+    @inline def getBotAliasFuture(params: GetBotAliasRequest): Future[GetBotAliasResponse] =
       service.getBotAlias(params).promise.toFuture
-    def getBotAliasesFuture(params: GetBotAliasesRequest): Future[GetBotAliasesResponse] =
+    @inline def getBotAliasesFuture(params: GetBotAliasesRequest): Future[GetBotAliasesResponse] =
       service.getBotAliases(params).promise.toFuture
-    def getBotChannelAssociationFuture(
+    @inline def getBotChannelAssociationFuture(
         params: GetBotChannelAssociationRequest
     ): Future[GetBotChannelAssociationResponse] = service.getBotChannelAssociation(params).promise.toFuture
-    def getBotChannelAssociationsFuture(
+    @inline def getBotChannelAssociationsFuture(
         params: GetBotChannelAssociationsRequest
-    ): Future[GetBotChannelAssociationsResponse]                    = service.getBotChannelAssociations(params).promise.toFuture
-    def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise.toFuture
-    def getBotVersionsFuture(params: GetBotVersionsRequest): Future[GetBotVersionsResponse] =
+    ): Future[GetBotChannelAssociationsResponse]                            = service.getBotChannelAssociations(params).promise.toFuture
+    @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise.toFuture
+    @inline def getBotVersionsFuture(params: GetBotVersionsRequest): Future[GetBotVersionsResponse] =
       service.getBotVersions(params).promise.toFuture
-    def getBotsFuture(params: GetBotsRequest): Future[GetBotsResponse] = service.getBots(params).promise.toFuture
-    def getBuiltinIntentFuture(params: GetBuiltinIntentRequest): Future[GetBuiltinIntentResponse] =
+    @inline def getBotsFuture(params: GetBotsRequest): Future[GetBotsResponse] =
+      service.getBots(params).promise.toFuture
+    @inline def getBuiltinIntentFuture(params: GetBuiltinIntentRequest): Future[GetBuiltinIntentResponse] =
       service.getBuiltinIntent(params).promise.toFuture
-    def getBuiltinIntentsFuture(params: GetBuiltinIntentsRequest): Future[GetBuiltinIntentsResponse] =
+    @inline def getBuiltinIntentsFuture(params: GetBuiltinIntentsRequest): Future[GetBuiltinIntentsResponse] =
       service.getBuiltinIntents(params).promise.toFuture
-    def getBuiltinSlotTypesFuture(params: GetBuiltinSlotTypesRequest): Future[GetBuiltinSlotTypesResponse] =
+    @inline def getBuiltinSlotTypesFuture(params: GetBuiltinSlotTypesRequest): Future[GetBuiltinSlotTypesResponse] =
       service.getBuiltinSlotTypes(params).promise.toFuture
-    def getExportFuture(params: GetExportRequest): Future[GetExportResponse] =
+    @inline def getExportFuture(params: GetExportRequest): Future[GetExportResponse] =
       service.getExport(params).promise.toFuture
-    def getImportFuture(params: GetImportRequest): Future[GetImportResponse] =
+    @inline def getImportFuture(params: GetImportRequest): Future[GetImportResponse] =
       service.getImport(params).promise.toFuture
-    def getIntentFuture(params: GetIntentRequest): Future[GetIntentResponse] =
+    @inline def getIntentFuture(params: GetIntentRequest): Future[GetIntentResponse] =
       service.getIntent(params).promise.toFuture
-    def getIntentVersionsFuture(params: GetIntentVersionsRequest): Future[GetIntentVersionsResponse] =
+    @inline def getIntentVersionsFuture(params: GetIntentVersionsRequest): Future[GetIntentVersionsResponse] =
       service.getIntentVersions(params).promise.toFuture
-    def getIntentsFuture(params: GetIntentsRequest): Future[GetIntentsResponse] =
+    @inline def getIntentsFuture(params: GetIntentsRequest): Future[GetIntentsResponse] =
       service.getIntents(params).promise.toFuture
-    def getSlotTypeFuture(params: GetSlotTypeRequest): Future[GetSlotTypeResponse] =
+    @inline def getSlotTypeFuture(params: GetSlotTypeRequest): Future[GetSlotTypeResponse] =
       service.getSlotType(params).promise.toFuture
-    def getSlotTypeVersionsFuture(params: GetSlotTypeVersionsRequest): Future[GetSlotTypeVersionsResponse] =
+    @inline def getSlotTypeVersionsFuture(params: GetSlotTypeVersionsRequest): Future[GetSlotTypeVersionsResponse] =
       service.getSlotTypeVersions(params).promise.toFuture
-    def getSlotTypesFuture(params: GetSlotTypesRequest): Future[GetSlotTypesResponse] =
+    @inline def getSlotTypesFuture(params: GetSlotTypesRequest): Future[GetSlotTypesResponse] =
       service.getSlotTypes(params).promise.toFuture
-    def getUtterancesViewFuture(params: GetUtterancesViewRequest): Future[GetUtterancesViewResponse] =
+    @inline def getUtterancesViewFuture(params: GetUtterancesViewRequest): Future[GetUtterancesViewResponse] =
       service.getUtterancesView(params).promise.toFuture
-    def putBotAliasFuture(params: PutBotAliasRequest): Future[PutBotAliasResponse] =
+    @inline def putBotAliasFuture(params: PutBotAliasRequest): Future[PutBotAliasResponse] =
       service.putBotAlias(params).promise.toFuture
-    def putBotFuture(params: PutBotRequest): Future[PutBotResponse] = service.putBot(params).promise.toFuture
-    def putIntentFuture(params: PutIntentRequest): Future[PutIntentResponse] =
+    @inline def putBotFuture(params: PutBotRequest): Future[PutBotResponse] = service.putBot(params).promise.toFuture
+    @inline def putIntentFuture(params: PutIntentRequest): Future[PutIntentResponse] =
       service.putIntent(params).promise.toFuture
-    def putSlotTypeFuture(params: PutSlotTypeRequest): Future[PutSlotTypeResponse] =
+    @inline def putSlotTypeFuture(params: PutSlotTypeRequest): Future[PutSlotTypeResponse] =
       service.putSlotType(params).promise.toFuture
-    def startImportFuture(params: StartImportRequest): Future[StartImportResponse] =
+    @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] =
       service.startImport(params).promise.toFuture
   }
 }
@@ -213,6 +216,7 @@ package lexmodelbuildingservice {
   }
 
   object BotAliasMetadata {
+    @inline
     def apply(
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
@@ -251,6 +255,7 @@ package lexmodelbuildingservice {
   }
 
   object BotChannelAssociation {
+    @inline
     def apply(
         botAlias: js.UndefOr[AliasName] = js.undefined,
         botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
@@ -290,6 +295,7 @@ package lexmodelbuildingservice {
   }
 
   object BotMetadata {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -319,6 +325,7 @@ package lexmodelbuildingservice {
   }
 
   object BuiltinIntentMetadata {
+    @inline
     def apply(
         signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         supportedLocales: js.UndefOr[LocaleList] = js.undefined
@@ -339,6 +346,7 @@ package lexmodelbuildingservice {
   }
 
   object BuiltinIntentSlot {
+    @inline
     def apply(
         name: js.UndefOr[String] = js.undefined
     ): BuiltinIntentSlot = {
@@ -358,6 +366,7 @@ package lexmodelbuildingservice {
   }
 
   object BuiltinSlotTypeMetadata {
+    @inline
     def apply(
         signature: js.UndefOr[BuiltinSlotTypeSignature] = js.undefined,
         supportedLocales: js.UndefOr[LocaleList] = js.undefined
@@ -396,6 +405,7 @@ package lexmodelbuildingservice {
   }
 
   object CodeHook {
+    @inline
     def apply(
         messageVersion: MessageVersion,
         uri: LambdaARN
@@ -424,6 +434,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateBotVersionRequest {
+    @inline
     def apply(
         name: BotName,
         checksum: js.UndefOr[String] = js.undefined
@@ -457,6 +468,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateBotVersionResponse {
+    @inline
     def apply(
         abortStatement: js.UndefOr[Statement] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
@@ -501,6 +513,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateIntentVersionRequest {
+    @inline
     def apply(
         name: IntentName,
         checksum: js.UndefOr[String] = js.undefined
@@ -534,6 +547,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateIntentVersionResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         conclusionStatement: js.UndefOr[Statement] = js.undefined,
@@ -578,6 +592,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateSlotTypeVersionRequest {
+    @inline
     def apply(
         name: SlotTypeName,
         checksum: js.UndefOr[String] = js.undefined
@@ -604,6 +619,7 @@ package lexmodelbuildingservice {
   }
 
   object CreateSlotTypeVersionResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -634,6 +650,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotAliasRequest {
+    @inline
     def apply(
         botName: BotName,
         name: AliasName
@@ -655,6 +672,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotChannelAssociationRequest {
+    @inline
     def apply(
         botAlias: AliasName,
         botName: BotName,
@@ -676,6 +694,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotRequest {
+    @inline
     def apply(
         name: BotName
     ): DeleteBotRequest = {
@@ -694,6 +713,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotVersionRequest {
+    @inline
     def apply(
         name: BotName,
         version: NumericalVersion
@@ -713,6 +733,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteIntentRequest {
+    @inline
     def apply(
         name: IntentName
     ): DeleteIntentRequest = {
@@ -731,6 +752,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteIntentVersionRequest {
+    @inline
     def apply(
         name: IntentName,
         version: NumericalVersion
@@ -750,6 +772,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteSlotTypeRequest {
+    @inline
     def apply(
         name: SlotTypeName
     ): DeleteSlotTypeRequest = {
@@ -768,6 +791,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteSlotTypeVersionRequest {
+    @inline
     def apply(
         name: SlotTypeName,
         version: NumericalVersion
@@ -788,6 +812,7 @@ package lexmodelbuildingservice {
   }
 
   object DeleteUtterancesRequest {
+    @inline
     def apply(
         botName: BotName,
         userId: UserId
@@ -815,6 +840,7 @@ package lexmodelbuildingservice {
   }
 
   object EnumerationValue {
+    @inline
     def apply(
         value: Value,
         synonyms: js.UndefOr[SynonymList] = js.undefined
@@ -853,6 +879,7 @@ package lexmodelbuildingservice {
   }
 
   object FollowUpPrompt {
+    @inline
     def apply(
         prompt: Prompt,
         rejectionStatement: Statement
@@ -879,6 +906,7 @@ package lexmodelbuildingservice {
   }
 
   object FulfillmentActivity {
+    @inline
     def apply(
         `type`: FulfillmentActivityType,
         codeHook: js.UndefOr[CodeHook] = js.undefined
@@ -906,6 +934,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasRequest {
+    @inline
     def apply(
         botName: BotName,
         name: AliasName
@@ -931,6 +960,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasResponse {
+    @inline
     def apply(
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
@@ -961,6 +991,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasesRequest {
+    @inline
     def apply(
         botName: BotName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -985,6 +1016,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasesResponse {
+    @inline
     def apply(
         BotAliases: js.UndefOr[BotAliasMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1004,6 +1036,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationRequest {
+    @inline
     def apply(
         botAlias: AliasName,
         botName: BotName,
@@ -1033,6 +1066,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationResponse {
+    @inline
     def apply(
         botAlias: js.UndefOr[AliasName] = js.undefined,
         botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
@@ -1068,6 +1102,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationsRequest {
+    @inline
     def apply(
         botAlias: AliasNameOrListAll,
         botName: BotName,
@@ -1094,6 +1129,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationsResponse {
+    @inline
     def apply(
         botChannelAssociations: js.UndefOr[BotChannelAssociationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1112,6 +1148,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotRequest {
+    @inline
     def apply(
         name: BotName,
         versionOrAlias: String
@@ -1145,6 +1182,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotResponse {
+    @inline
     def apply(
         abortStatement: js.UndefOr[Statement] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
@@ -1190,6 +1228,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotVersionsRequest {
+    @inline
     def apply(
         name: BotName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1212,6 +1251,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotVersionsResponse {
+    @inline
     def apply(
         bots: js.UndefOr[BotMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1231,6 +1271,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nameContains: js.UndefOr[BotName] = js.undefined,
@@ -1251,6 +1292,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBotsResponse {
+    @inline
     def apply(
         bots: js.UndefOr[BotMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1268,6 +1310,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentRequest {
+    @inline
     def apply(
         signature: BuiltinIntentSignature
     ): GetBuiltinIntentRequest = {
@@ -1287,6 +1330,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentResponse {
+    @inline
     def apply(
         signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         slots: js.UndefOr[BuiltinIntentSlotList] = js.undefined,
@@ -1309,6 +1353,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentsRequest {
+    @inline
     def apply(
         locale: js.UndefOr[Locale] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1331,6 +1376,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentsResponse {
+    @inline
     def apply(
         intents: js.UndefOr[BuiltinIntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1351,6 +1397,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinSlotTypesRequest {
+    @inline
     def apply(
         locale: js.UndefOr[Locale] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1373,6 +1420,7 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinSlotTypesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList] = js.undefined
@@ -1393,6 +1441,7 @@ package lexmodelbuildingservice {
   }
 
   object GetExportRequest {
+    @inline
     def apply(
         exportType: ExportType,
         name: Name,
@@ -1422,6 +1471,7 @@ package lexmodelbuildingservice {
   }
 
   object GetExportResponse {
+    @inline
     def apply(
         exportStatus: js.UndefOr[ExportStatus] = js.undefined,
         exportType: js.UndefOr[ExportType] = js.undefined,
@@ -1449,6 +1499,7 @@ package lexmodelbuildingservice {
   }
 
   object GetImportRequest {
+    @inline
     def apply(
         importId: String
     ): GetImportRequest = {
@@ -1472,6 +1523,7 @@ package lexmodelbuildingservice {
   }
 
   object GetImportResponse {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         failureReason: js.UndefOr[StringList] = js.undefined,
@@ -1500,6 +1552,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentRequest {
+    @inline
     def apply(
         name: IntentName,
         version: Version
@@ -1533,6 +1586,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         conclusionStatement: js.UndefOr[Statement] = js.undefined,
@@ -1578,6 +1632,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentVersionsRequest {
+    @inline
     def apply(
         name: IntentName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1600,6 +1655,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentVersionsResponse {
+    @inline
     def apply(
         intents: js.UndefOr[IntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1619,6 +1675,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nameContains: js.UndefOr[IntentName] = js.undefined,
@@ -1639,6 +1696,7 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentsResponse {
+    @inline
     def apply(
         intents: js.UndefOr[IntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1657,6 +1715,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeRequest {
+    @inline
     def apply(
         name: SlotTypeName,
         version: Version
@@ -1683,6 +1742,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1714,6 +1774,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeVersionsRequest {
+    @inline
     def apply(
         name: SlotTypeName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1736,6 +1797,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeVersionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
@@ -1755,6 +1817,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nameContains: js.UndefOr[SlotTypeName] = js.undefined,
@@ -1775,6 +1838,7 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
@@ -1794,6 +1858,7 @@ package lexmodelbuildingservice {
   }
 
   object GetUtterancesViewRequest {
+    @inline
     def apply(
         botName: BotName,
         botVersions: BotVersions,
@@ -1816,6 +1881,7 @@ package lexmodelbuildingservice {
   }
 
   object GetUtterancesViewResponse {
+    @inline
     def apply(
         botName: js.UndefOr[BotName] = js.undefined,
         utterances: js.UndefOr[ListsOfUtterances] = js.undefined
@@ -1845,6 +1911,7 @@ package lexmodelbuildingservice {
   }
 
   object Intent {
+    @inline
     def apply(
         intentName: IntentName,
         intentVersion: Version
@@ -1871,6 +1938,7 @@ package lexmodelbuildingservice {
   }
 
   object IntentMetadata {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -1914,6 +1982,7 @@ package lexmodelbuildingservice {
   }
 
   object Message {
+    @inline
     def apply(
         content: ContentString,
         contentType: ContentType,
@@ -1947,6 +2016,7 @@ package lexmodelbuildingservice {
   }
 
   object Prompt {
+    @inline
     def apply(
         maxAttempts: PromptMaxAttempts,
         messages: MessageList,
@@ -1972,6 +2042,7 @@ package lexmodelbuildingservice {
   }
 
   object PutBotAliasRequest {
+    @inline
     def apply(
         botName: BotName,
         botVersion: Version,
@@ -2003,6 +2074,7 @@ package lexmodelbuildingservice {
   }
 
   object PutBotAliasResponse {
+    @inline
     def apply(
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
@@ -2041,6 +2113,7 @@ package lexmodelbuildingservice {
   }
 
   object PutBotRequest {
+    @inline
     def apply(
         childDirected: Boolean,
         locale: Locale,
@@ -2095,6 +2168,7 @@ package lexmodelbuildingservice {
   }
 
   object PutBotResponse {
+    @inline
     def apply(
         abortStatement: js.UndefOr[Statement] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
@@ -2152,6 +2226,7 @@ package lexmodelbuildingservice {
   }
 
   object PutIntentRequest {
+    @inline
     def apply(
         name: IntentName,
         checksum: js.UndefOr[String] = js.undefined,
@@ -2208,6 +2283,7 @@ package lexmodelbuildingservice {
   }
 
   object PutIntentResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         conclusionStatement: js.UndefOr[Statement] = js.undefined,
@@ -2258,6 +2334,7 @@ package lexmodelbuildingservice {
   }
 
   object PutSlotTypeRequest {
+    @inline
     def apply(
         name: SlotTypeName,
         checksum: js.UndefOr[String] = js.undefined,
@@ -2293,6 +2370,7 @@ package lexmodelbuildingservice {
   }
 
   object PutSlotTypeResponse {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined,
         createVersion: js.UndefOr[Boolean] = js.undefined,
@@ -2343,6 +2421,7 @@ package lexmodelbuildingservice {
   }
 
   object Slot {
+    @inline
     def apply(
         name: SlotName,
         slotConstraint: SlotConstraint,
@@ -2390,6 +2469,7 @@ package lexmodelbuildingservice {
   }
 
   object SlotTypeMetadata {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -2422,6 +2502,7 @@ package lexmodelbuildingservice {
   }
 
   object StartImportRequest {
+    @inline
     def apply(
         mergeStrategy: MergeStrategy,
         payload: Blob,
@@ -2448,6 +2529,7 @@ package lexmodelbuildingservice {
   }
 
   object StartImportResponse {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         importId: js.UndefOr[String] = js.undefined,
@@ -2477,6 +2559,7 @@ package lexmodelbuildingservice {
   }
 
   object Statement {
+    @inline
     def apply(
         messages: MessageList,
         responseCard: js.UndefOr[ResponseCard] = js.undefined
@@ -2520,6 +2603,7 @@ package lexmodelbuildingservice {
   }
 
   object UtteranceData {
+    @inline
     def apply(
         count: js.UndefOr[Count] = js.undefined,
         distinctUsers: js.UndefOr[Count] = js.undefined,
@@ -2547,6 +2631,7 @@ package lexmodelbuildingservice {
   }
 
   object UtteranceList {
+    @inline
     def apply(
         botVersion: js.UndefOr[Version] = js.undefined,
         utterances: js.UndefOr[ListOfUtterance] = js.undefined

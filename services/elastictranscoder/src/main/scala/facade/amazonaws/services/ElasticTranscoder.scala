@@ -110,37 +110,38 @@ package object elastictranscoder {
 
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
+    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
       service.createPipeline(params).promise.toFuture
-    def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
+    @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
       service.createPreset(params).promise.toFuture
-    def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
+    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
       service.deletePipeline(params).promise.toFuture
-    def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
+    @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
       service.deletePreset(params).promise.toFuture
-    def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
+    @inline def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
       service.listJobsByPipeline(params).promise.toFuture
-    def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
+    @inline def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
       service.listJobsByStatus(params).promise.toFuture
-    def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
+    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
       service.listPipelines(params).promise.toFuture
-    def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
+    @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
       service.listPresets(params).promise.toFuture
-    def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] = service.readJob(params).promise.toFuture
-    def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
+    @inline def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] =
+      service.readJob(params).promise.toFuture
+    @inline def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
       service.readPipeline(params).promise.toFuture
-    def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
+    @inline def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
       service.readPreset(params).promise.toFuture
-    def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
+    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
       service.updatePipeline(params).promise.toFuture
-    def updatePipelineNotificationsFuture(
+    @inline def updatePipelineNotificationsFuture(
         params: UpdatePipelineNotificationsRequest
     ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise.toFuture
-    def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
+    @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
       service.updatePipelineStatus(params).promise.toFuture
   }
 }
@@ -190,6 +191,7 @@ package elastictranscoder {
   }
 
   object Artwork {
+    @inline
     def apply(
         AlbumArtFormat: js.UndefOr[JpgOrPng] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
@@ -223,6 +225,7 @@ package elastictranscoder {
   }
 
   object AudioCodecOptions {
+    @inline
     def apply(
         BitDepth: js.UndefOr[AudioBitDepth] = js.undefined,
         BitOrder: js.UndefOr[AudioBitOrder] = js.undefined,
@@ -252,6 +255,7 @@ package elastictranscoder {
   }
 
   object AudioParameters {
+    @inline
     def apply(
         AudioPackingMode: js.UndefOr[AudioPackingMode] = js.undefined,
         BitRate: js.UndefOr[AudioBitRate] = js.undefined,
@@ -280,6 +284,7 @@ package elastictranscoder {
   }
 
   object CancelJobRequest {
+    @inline
     def apply(
         Id: Id
     ): CancelJobRequest = {
@@ -298,6 +303,7 @@ package elastictranscoder {
   trait CancelJobResponse extends js.Object {}
 
   object CancelJobResponse {
+    @inline
     def apply(
         ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -317,6 +323,7 @@ package elastictranscoder {
   }
 
   object CaptionFormat {
+    @inline
     def apply(
         Encryption: js.UndefOr[Encryption] = js.undefined,
         Format: js.UndefOr[CaptionFormatFormat] = js.undefined,
@@ -343,6 +350,7 @@ package elastictranscoder {
   }
 
   object CaptionSource {
+    @inline
     def apply(
         Encryption: js.UndefOr[Encryption] = js.undefined,
         Key: js.UndefOr[LongKey] = js.undefined,
@@ -371,6 +379,7 @@ package elastictranscoder {
   }
 
   object Captions {
+    @inline
     def apply(
         CaptionFormats: js.UndefOr[CaptionFormats] = js.undefined,
         CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
@@ -394,6 +403,7 @@ package elastictranscoder {
   }
 
   object Clip {
+    @inline
     def apply(
         TimeSpan: js.UndefOr[TimeSpan] = js.undefined
     ): Clip = {
@@ -422,6 +432,7 @@ package elastictranscoder {
   }
 
   object CreateJobOutput {
+    @inline
     def apply(
         AlbumArt: js.UndefOr[JobAlbumArt] = js.undefined,
         Captions: js.UndefOr[Captions] = js.undefined,
@@ -464,6 +475,7 @@ package elastictranscoder {
   }
 
   object CreateJobPlaylist {
+    @inline
     def apply(
         Format: js.UndefOr[PlaylistFormat] = js.undefined,
         HlsContentProtection: js.UndefOr[HlsContentProtection] = js.undefined,
@@ -497,6 +509,7 @@ package elastictranscoder {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         PipelineId: Id,
         Input: js.UndefOr[JobInput] = js.undefined,
@@ -531,6 +544,7 @@ package elastictranscoder {
   }
 
   object CreateJobResponse {
+    @inline
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): CreateJobResponse = {
@@ -556,6 +570,7 @@ package elastictranscoder {
   }
 
   object CreatePipelineRequest {
+    @inline
     def apply(
         InputBucket: BucketName,
         Name: Name,
@@ -591,6 +606,7 @@ package elastictranscoder {
   }
 
   object CreatePipelineResponse {
+    @inline
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
@@ -616,6 +632,7 @@ package elastictranscoder {
   }
 
   object CreatePresetRequest {
+    @inline
     def apply(
         Container: PresetContainer,
         Name: Name,
@@ -647,6 +664,7 @@ package elastictranscoder {
   }
 
   object CreatePresetResponse {
+    @inline
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined,
         Warning: js.UndefOr[String] = js.undefined
@@ -667,6 +685,7 @@ package elastictranscoder {
   }
 
   object DeletePipelineRequest {
+    @inline
     def apply(
         Id: Id
     ): DeletePipelineRequest = {
@@ -685,6 +704,7 @@ package elastictranscoder {
   trait DeletePipelineResponse extends js.Object {}
 
   object DeletePipelineResponse {
+    @inline
     def apply(
         ): DeletePipelineResponse = {
       val __obj = js.Dynamic.literal()
@@ -702,6 +722,7 @@ package elastictranscoder {
   }
 
   object DeletePresetRequest {
+    @inline
     def apply(
         Id: Id
     ): DeletePresetRequest = {
@@ -720,6 +741,7 @@ package elastictranscoder {
   trait DeletePresetResponse extends js.Object {}
 
   object DeletePresetResponse {
+    @inline
     def apply(
         ): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
@@ -741,6 +763,7 @@ package elastictranscoder {
   }
 
   object DetectedProperties {
+    @inline
     def apply(
         DurationMillis: js.UndefOr[NullableLong] = js.undefined,
         FileSize: js.UndefOr[NullableLong] = js.undefined,
@@ -770,6 +793,7 @@ package elastictranscoder {
   }
 
   object Encryption {
+    @inline
     def apply(
         InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
         Key: js.UndefOr[Base64EncodedString] = js.undefined,
@@ -799,6 +823,7 @@ package elastictranscoder {
   }
 
   object HlsContentProtection {
+    @inline
     def apply(
         InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
         Key: js.UndefOr[Base64EncodedString] = js.undefined,
@@ -828,6 +853,7 @@ package elastictranscoder {
   }
 
   object InputCaptions {
+    @inline
     def apply(
         CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
         MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined
@@ -859,6 +885,7 @@ package elastictranscoder {
   }
 
   object Job {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
@@ -900,6 +927,7 @@ package elastictranscoder {
   }
 
   object JobAlbumArt {
+    @inline
     def apply(
         Artwork: js.UndefOr[Artworks] = js.undefined,
         MergePolicy: js.UndefOr[MergePolicy] = js.undefined
@@ -929,6 +957,7 @@ package elastictranscoder {
   }
 
   object JobInput {
+    @inline
     def apply(
         AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
         Container: js.UndefOr[JobContainer] = js.undefined,
@@ -986,6 +1015,7 @@ package elastictranscoder {
   }
 
   object JobOutput {
+    @inline
     def apply(
         AlbumArt: js.UndefOr[JobAlbumArt] = js.undefined,
         AppliedColorSpaceConversion: js.UndefOr[String] = js.undefined,
@@ -1048,6 +1078,7 @@ package elastictranscoder {
   }
 
   object JobWatermark {
+    @inline
     def apply(
         Encryption: js.UndefOr[Encryption] = js.undefined,
         InputKey: js.UndefOr[WatermarkKey] = js.undefined,
@@ -1072,6 +1103,7 @@ package elastictranscoder {
   }
 
   object ListJobsByPipelineRequest {
+    @inline
     def apply(
         PipelineId: Id,
         Ascending: js.UndefOr[Ascending] = js.undefined,
@@ -1097,6 +1129,7 @@ package elastictranscoder {
   }
 
   object ListJobsByPipelineResponse {
+    @inline
     def apply(
         Jobs: js.UndefOr[Jobs] = js.undefined,
         NextPageToken: js.UndefOr[Id] = js.undefined
@@ -1119,6 +1152,7 @@ package elastictranscoder {
   }
 
   object ListJobsByStatusRequest {
+    @inline
     def apply(
         Status: JobStatus,
         Ascending: js.UndefOr[Ascending] = js.undefined,
@@ -1144,6 +1178,7 @@ package elastictranscoder {
   }
 
   object ListJobsByStatusResponse {
+    @inline
     def apply(
         Jobs: js.UndefOr[Jobs] = js.undefined,
         NextPageToken: js.UndefOr[Id] = js.undefined
@@ -1165,6 +1200,7 @@ package elastictranscoder {
   }
 
   object ListPipelinesRequest {
+    @inline
     def apply(
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
@@ -1186,6 +1222,7 @@ package elastictranscoder {
   }
 
   object ListPipelinesResponse {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[Id] = js.undefined,
         Pipelines: js.UndefOr[Pipelines] = js.undefined
@@ -1207,6 +1244,7 @@ package elastictranscoder {
   }
 
   object ListPresetsRequest {
+    @inline
     def apply(
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
@@ -1228,6 +1266,7 @@ package elastictranscoder {
   }
 
   object ListPresetsResponse {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[Id] = js.undefined,
         Presets: js.UndefOr[Presets] = js.undefined
@@ -1253,6 +1292,7 @@ package elastictranscoder {
   }
 
   object Notifications {
+    @inline
     def apply(
         Completed: js.UndefOr[SnsTopic] = js.undefined,
         Error: js.UndefOr[SnsTopic] = js.undefined,
@@ -1279,6 +1319,7 @@ package elastictranscoder {
   }
 
   object Permission {
+    @inline
     def apply(
         Access: js.UndefOr[AccessControls] = js.undefined,
         Grantee: js.UndefOr[Grantee] = js.undefined,
@@ -1311,6 +1352,7 @@ package elastictranscoder {
   }
 
   object Pipeline {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         AwsKmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
@@ -1351,6 +1393,7 @@ package elastictranscoder {
   }
 
   object PipelineOutputConfig {
+    @inline
     def apply(
         Bucket: js.UndefOr[BucketName] = js.undefined,
         Permissions: js.UndefOr[Permissions] = js.undefined,
@@ -1380,6 +1423,7 @@ package elastictranscoder {
   }
 
   object PlayReadyDrm {
+    @inline
     def apply(
         Format: js.UndefOr[PlayReadyDrmFormatString] = js.undefined,
         InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
@@ -1414,6 +1458,7 @@ package elastictranscoder {
   }
 
   object Playlist {
+    @inline
     def apply(
         Format: js.UndefOr[PlaylistFormat] = js.undefined,
         HlsContentProtection: js.UndefOr[HlsContentProtection] = js.undefined,
@@ -1452,6 +1497,7 @@ package elastictranscoder {
   }
 
   object Preset {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Audio: js.UndefOr[AudioParameters] = js.undefined,
@@ -1497,6 +1543,7 @@ package elastictranscoder {
   }
 
   object PresetWatermark {
+    @inline
     def apply(
         HorizontalAlign: js.UndefOr[HorizontalAlign] = js.undefined,
         HorizontalOffset: js.UndefOr[PixelsOrPercent] = js.undefined,
@@ -1533,6 +1580,7 @@ package elastictranscoder {
   }
 
   object ReadJobRequest {
+    @inline
     def apply(
         Id: Id
     ): ReadJobRequest = {
@@ -1553,6 +1601,7 @@ package elastictranscoder {
   }
 
   object ReadJobResponse {
+    @inline
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): ReadJobResponse = {
@@ -1571,6 +1620,7 @@ package elastictranscoder {
   }
 
   object ReadPipelineRequest {
+    @inline
     def apply(
         Id: Id
     ): ReadPipelineRequest = {
@@ -1592,6 +1642,7 @@ package elastictranscoder {
   }
 
   object ReadPipelineResponse {
+    @inline
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
@@ -1612,6 +1663,7 @@ package elastictranscoder {
   }
 
   object ReadPresetRequest {
+    @inline
     def apply(
         Id: Id
     ): ReadPresetRequest = {
@@ -1632,6 +1684,7 @@ package elastictranscoder {
   }
 
   object ReadPresetResponse {
+    @inline
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): ReadPresetResponse = {
@@ -1654,6 +1707,7 @@ package elastictranscoder {
   }
 
   object TestRoleRequest {
+    @inline
     def apply(
         InputBucket: BucketName,
         OutputBucket: BucketName,
@@ -1682,6 +1736,7 @@ package elastictranscoder {
   }
 
   object TestRoleResponse {
+    @inline
     def apply(
         Messages: js.UndefOr[ExceptionMessages] = js.undefined,
         Success: js.UndefOr[Success] = js.undefined
@@ -1709,6 +1764,7 @@ package elastictranscoder {
   }
 
   object Thumbnails {
+    @inline
     def apply(
         AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
         Format: js.UndefOr[JpgOrPng] = js.undefined,
@@ -1742,6 +1798,7 @@ package elastictranscoder {
   }
 
   object TimeSpan {
+    @inline
     def apply(
         Duration: js.UndefOr[Time] = js.undefined,
         StartTime: js.UndefOr[Time] = js.undefined
@@ -1764,6 +1821,7 @@ package elastictranscoder {
   }
 
   object Timing {
+    @inline
     def apply(
         FinishTimeMillis: js.UndefOr[NullableLong] = js.undefined,
         StartTimeMillis: js.UndefOr[NullableLong] = js.undefined,
@@ -1787,6 +1845,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineNotificationsRequest {
+    @inline
     def apply(
         Id: Id,
         Notifications: Notifications
@@ -1809,6 +1868,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineNotificationsResponse {
+    @inline
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined
     ): UpdatePipelineNotificationsResponse = {
@@ -1834,6 +1894,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineRequest {
+    @inline
     def apply(
         Id: Id,
         AwsKmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
@@ -1869,6 +1930,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineResponse {
+    @inline
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
@@ -1890,6 +1952,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineStatusRequest {
+    @inline
     def apply(
         Id: Id,
         Status: PipelineStatus
@@ -1912,6 +1975,7 @@ package elastictranscoder {
   }
 
   object UpdatePipelineStatusResponse {
+    @inline
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined
     ): UpdatePipelineStatusResponse = {
@@ -1944,6 +2008,7 @@ package elastictranscoder {
   }
 
   object VideoParameters {
+    @inline
     def apply(
         AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
         BitRate: js.UndefOr[VideoBitRate] = js.undefined,
@@ -1992,6 +2057,7 @@ package elastictranscoder {
   }
 
   object Warning {
+    @inline
     def apply(
         Code: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined

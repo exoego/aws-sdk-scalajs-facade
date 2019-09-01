@@ -38,6 +38,7 @@ trait AWSConfig extends js.Object {
 }
 
 object AWSConfig {
+  @inline
   def apply(computeChecksums: js.UndefOr[Boolean] = js.undefined,
             convertResponseTypes: js.UndefOr[Boolean] = js.undefined,
             correctClockSkew: js.UndefOr[Boolean] = js.undefined,
@@ -117,6 +118,7 @@ trait HttpOptions extends js.Object {
 }
 
 object HttpOptions {
+  @inline
   def apply(proxy: js.UndefOr[String] = js.undefined,
             agent: js.UndefOr[js.Any] = js.undefined,
             connectTimeout: js.UndefOr[Int] = js.undefined,
@@ -148,6 +150,7 @@ trait ParamValidation extends js.Object {
 }
 
 object ParamValidation {
+  @inline
   def apply(min: js.UndefOr[Boolean] = js.undefined,
             max: js.UndefOr[Boolean] = js.undefined,
             pattern: js.UndefOr[Boolean] = js.undefined,
@@ -166,6 +169,7 @@ trait RetryDelayOptions extends js.Object {
   var customBackoff: js.UndefOr[Double => Double] = js.undefined
 }
 object RetryDelayOptions {
+  @inline
   def apply(base: js.UndefOr[Double] = js.undefined,
             customBackoff: js.UndefOr[Double => Double] = js.undefined): RetryDelayOptions = {
     val __obj = js.Dynamic.literal()

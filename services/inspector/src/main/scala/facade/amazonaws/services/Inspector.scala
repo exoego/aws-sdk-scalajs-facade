@@ -110,83 +110,93 @@ package object inspector {
 
   implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
 
-    def addAttributesToFindingsFuture(params: AddAttributesToFindingsRequest): Future[AddAttributesToFindingsResponse] =
-      service.addAttributesToFindings(params).promise.toFuture
-    def createAssessmentTargetFuture(params: CreateAssessmentTargetRequest): Future[CreateAssessmentTargetResponse] =
-      service.createAssessmentTarget(params).promise.toFuture
-    def createAssessmentTemplateFuture(
+    @inline def addAttributesToFindingsFuture(
+        params: AddAttributesToFindingsRequest
+    ): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise.toFuture
+    @inline def createAssessmentTargetFuture(
+        params: CreateAssessmentTargetRequest
+    ): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise.toFuture
+    @inline def createAssessmentTemplateFuture(
         params: CreateAssessmentTemplateRequest
     ): Future[CreateAssessmentTemplateResponse] = service.createAssessmentTemplate(params).promise.toFuture
-    def createExclusionsPreviewFuture(params: CreateExclusionsPreviewRequest): Future[CreateExclusionsPreviewResponse] =
-      service.createExclusionsPreview(params).promise.toFuture
-    def createResourceGroupFuture(params: CreateResourceGroupRequest): Future[CreateResourceGroupResponse] =
+    @inline def createExclusionsPreviewFuture(
+        params: CreateExclusionsPreviewRequest
+    ): Future[CreateExclusionsPreviewResponse] = service.createExclusionsPreview(params).promise.toFuture
+    @inline def createResourceGroupFuture(params: CreateResourceGroupRequest): Future[CreateResourceGroupResponse] =
       service.createResourceGroup(params).promise.toFuture
-    def deleteAssessmentRunFuture(params: DeleteAssessmentRunRequest): Future[js.Object] =
+    @inline def deleteAssessmentRunFuture(params: DeleteAssessmentRunRequest): Future[js.Object] =
       service.deleteAssessmentRun(params).promise.toFuture
-    def deleteAssessmentTargetFuture(params: DeleteAssessmentTargetRequest): Future[js.Object] =
+    @inline def deleteAssessmentTargetFuture(params: DeleteAssessmentTargetRequest): Future[js.Object] =
       service.deleteAssessmentTarget(params).promise.toFuture
-    def deleteAssessmentTemplateFuture(params: DeleteAssessmentTemplateRequest): Future[js.Object] =
+    @inline def deleteAssessmentTemplateFuture(params: DeleteAssessmentTemplateRequest): Future[js.Object] =
       service.deleteAssessmentTemplate(params).promise.toFuture
-    def describeAssessmentRunsFuture(params: DescribeAssessmentRunsRequest): Future[DescribeAssessmentRunsResponse] =
-      service.describeAssessmentRuns(params).promise.toFuture
-    def describeAssessmentTargetsFuture(
+    @inline def describeAssessmentRunsFuture(
+        params: DescribeAssessmentRunsRequest
+    ): Future[DescribeAssessmentRunsResponse] = service.describeAssessmentRuns(params).promise.toFuture
+    @inline def describeAssessmentTargetsFuture(
         params: DescribeAssessmentTargetsRequest
     ): Future[DescribeAssessmentTargetsResponse] = service.describeAssessmentTargets(params).promise.toFuture
-    def describeAssessmentTemplatesFuture(
+    @inline def describeAssessmentTemplatesFuture(
         params: DescribeAssessmentTemplatesRequest
     ): Future[DescribeAssessmentTemplatesResponse] = service.describeAssessmentTemplates(params).promise.toFuture
-    def describeCrossAccountAccessRoleFuture(): Future[DescribeCrossAccountAccessRoleResponse] =
+    @inline def describeCrossAccountAccessRoleFuture(): Future[DescribeCrossAccountAccessRoleResponse] =
       service.describeCrossAccountAccessRole().promise.toFuture
-    def describeExclusionsFuture(params: DescribeExclusionsRequest): Future[DescribeExclusionsResponse] =
+    @inline def describeExclusionsFuture(params: DescribeExclusionsRequest): Future[DescribeExclusionsResponse] =
       service.describeExclusions(params).promise.toFuture
-    def describeFindingsFuture(params: DescribeFindingsRequest): Future[DescribeFindingsResponse] =
+    @inline def describeFindingsFuture(params: DescribeFindingsRequest): Future[DescribeFindingsResponse] =
       service.describeFindings(params).promise.toFuture
-    def describeResourceGroupsFuture(params: DescribeResourceGroupsRequest): Future[DescribeResourceGroupsResponse] =
-      service.describeResourceGroups(params).promise.toFuture
-    def describeRulesPackagesFuture(params: DescribeRulesPackagesRequest): Future[DescribeRulesPackagesResponse] =
-      service.describeRulesPackages(params).promise.toFuture
-    def getAssessmentReportFuture(params: GetAssessmentReportRequest): Future[GetAssessmentReportResponse] =
+    @inline def describeResourceGroupsFuture(
+        params: DescribeResourceGroupsRequest
+    ): Future[DescribeResourceGroupsResponse] = service.describeResourceGroups(params).promise.toFuture
+    @inline def describeRulesPackagesFuture(
+        params: DescribeRulesPackagesRequest
+    ): Future[DescribeRulesPackagesResponse] = service.describeRulesPackages(params).promise.toFuture
+    @inline def getAssessmentReportFuture(params: GetAssessmentReportRequest): Future[GetAssessmentReportResponse] =
       service.getAssessmentReport(params).promise.toFuture
-    def getExclusionsPreviewFuture(params: GetExclusionsPreviewRequest): Future[GetExclusionsPreviewResponse] =
+    @inline def getExclusionsPreviewFuture(params: GetExclusionsPreviewRequest): Future[GetExclusionsPreviewResponse] =
       service.getExclusionsPreview(params).promise.toFuture
-    def getTelemetryMetadataFuture(params: GetTelemetryMetadataRequest): Future[GetTelemetryMetadataResponse] =
+    @inline def getTelemetryMetadataFuture(params: GetTelemetryMetadataRequest): Future[GetTelemetryMetadataResponse] =
       service.getTelemetryMetadata(params).promise.toFuture
-    def listAssessmentRunAgentsFuture(params: ListAssessmentRunAgentsRequest): Future[ListAssessmentRunAgentsResponse] =
-      service.listAssessmentRunAgents(params).promise.toFuture
-    def listAssessmentRunsFuture(params: ListAssessmentRunsRequest): Future[ListAssessmentRunsResponse] =
+    @inline def listAssessmentRunAgentsFuture(
+        params: ListAssessmentRunAgentsRequest
+    ): Future[ListAssessmentRunAgentsResponse] = service.listAssessmentRunAgents(params).promise.toFuture
+    @inline def listAssessmentRunsFuture(params: ListAssessmentRunsRequest): Future[ListAssessmentRunsResponse] =
       service.listAssessmentRuns(params).promise.toFuture
-    def listAssessmentTargetsFuture(params: ListAssessmentTargetsRequest): Future[ListAssessmentTargetsResponse] =
-      service.listAssessmentTargets(params).promise.toFuture
-    def listAssessmentTemplatesFuture(params: ListAssessmentTemplatesRequest): Future[ListAssessmentTemplatesResponse] =
-      service.listAssessmentTemplates(params).promise.toFuture
-    def listEventSubscriptionsFuture(params: ListEventSubscriptionsRequest): Future[ListEventSubscriptionsResponse] =
-      service.listEventSubscriptions(params).promise.toFuture
-    def listExclusionsFuture(params: ListExclusionsRequest): Future[ListExclusionsResponse] =
+    @inline def listAssessmentTargetsFuture(
+        params: ListAssessmentTargetsRequest
+    ): Future[ListAssessmentTargetsResponse] = service.listAssessmentTargets(params).promise.toFuture
+    @inline def listAssessmentTemplatesFuture(
+        params: ListAssessmentTemplatesRequest
+    ): Future[ListAssessmentTemplatesResponse] = service.listAssessmentTemplates(params).promise.toFuture
+    @inline def listEventSubscriptionsFuture(
+        params: ListEventSubscriptionsRequest
+    ): Future[ListEventSubscriptionsResponse] = service.listEventSubscriptions(params).promise.toFuture
+    @inline def listExclusionsFuture(params: ListExclusionsRequest): Future[ListExclusionsResponse] =
       service.listExclusions(params).promise.toFuture
-    def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
+    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
       service.listFindings(params).promise.toFuture
-    def listRulesPackagesFuture(params: ListRulesPackagesRequest): Future[ListRulesPackagesResponse] =
+    @inline def listRulesPackagesFuture(params: ListRulesPackagesRequest): Future[ListRulesPackagesResponse] =
       service.listRulesPackages(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def previewAgentsFuture(params: PreviewAgentsRequest): Future[PreviewAgentsResponse] =
+    @inline def previewAgentsFuture(params: PreviewAgentsRequest): Future[PreviewAgentsResponse] =
       service.previewAgents(params).promise.toFuture
-    def registerCrossAccountAccessRoleFuture(params: RegisterCrossAccountAccessRoleRequest): Future[js.Object] =
+    @inline def registerCrossAccountAccessRoleFuture(params: RegisterCrossAccountAccessRoleRequest): Future[js.Object] =
       service.registerCrossAccountAccessRole(params).promise.toFuture
-    def removeAttributesFromFindingsFuture(
+    @inline def removeAttributesFromFindingsFuture(
         params: RemoveAttributesFromFindingsRequest
     ): Future[RemoveAttributesFromFindingsResponse] = service.removeAttributesFromFindings(params).promise.toFuture
-    def setTagsForResourceFuture(params: SetTagsForResourceRequest): Future[js.Object] =
+    @inline def setTagsForResourceFuture(params: SetTagsForResourceRequest): Future[js.Object] =
       service.setTagsForResource(params).promise.toFuture
-    def startAssessmentRunFuture(params: StartAssessmentRunRequest): Future[StartAssessmentRunResponse] =
+    @inline def startAssessmentRunFuture(params: StartAssessmentRunRequest): Future[StartAssessmentRunResponse] =
       service.startAssessmentRun(params).promise.toFuture
-    def stopAssessmentRunFuture(params: StopAssessmentRunRequest): Future[js.Object] =
+    @inline def stopAssessmentRunFuture(params: StopAssessmentRunRequest): Future[js.Object] =
       service.stopAssessmentRun(params).promise.toFuture
-    def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] =
+    @inline def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] =
       service.subscribeToEvent(params).promise.toFuture
-    def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] =
+    @inline def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] =
       service.unsubscribeFromEvent(params).promise.toFuture
-    def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] =
+    @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] =
       service.updateAssessmentTarget(params).promise.toFuture
   }
 }
@@ -258,6 +268,7 @@ package inspector {
   }
 
   object AddAttributesToFindingsRequest {
+    @inline
     def apply(
         attributes: UserAttributeList,
         findingArns: AddRemoveAttributesFindingArnList
@@ -277,6 +288,7 @@ package inspector {
   }
 
   object AddAttributesToFindingsResponse {
+    @inline
     def apply(
         failedItems: FailedItems
     ): AddAttributesToFindingsResponse = {
@@ -298,6 +310,7 @@ package inspector {
   }
 
   object AgentFilter {
+    @inline
     def apply(
         agentHealthCodes: AgentHealthCodeList,
         agentHealths: AgentHealthList
@@ -346,6 +359,7 @@ package inspector {
   }
 
   object AgentPreview {
+    @inline
     def apply(
         agentId: AgentId,
         agentHealth: js.UndefOr[AgentHealth] = js.undefined,
@@ -395,6 +409,7 @@ package inspector {
   }
 
   object AssessmentRun {
+    @inline
     def apply(
         arn: Arn,
         assessmentTemplateArn: Arn,
@@ -449,6 +464,7 @@ package inspector {
   }
 
   object AssessmentRunAgent {
+    @inline
     def apply(
         agentHealth: AgentHealth,
         agentHealthCode: AgentHealthCode,
@@ -487,6 +503,7 @@ package inspector {
   }
 
   object AssessmentRunFilter {
+    @inline
     def apply(
         completionTimeRange: js.UndefOr[TimestampRange] = js.undefined,
         durationRange: js.UndefOr[DurationRange] = js.undefined,
@@ -522,6 +539,7 @@ package inspector {
   }
 
   object AssessmentRunNotification {
+    @inline
     def apply(
         date: Timestamp,
         error: Boolean,
@@ -596,6 +614,7 @@ package inspector {
   }
 
   object AssessmentRunStateChange {
+    @inline
     def apply(
         state: AssessmentRunState,
         stateChangedAt: Timestamp
@@ -622,6 +641,7 @@ package inspector {
   }
 
   object AssessmentTarget {
+    @inline
     def apply(
         arn: Arn,
         createdAt: Timestamp,
@@ -650,6 +670,7 @@ package inspector {
   }
 
   object AssessmentTargetFilter {
+    @inline
     def apply(
         assessmentTargetNamePattern: js.UndefOr[NamePattern] = js.undefined
     ): AssessmentTargetFilter = {
@@ -678,6 +699,7 @@ package inspector {
   }
 
   object AssessmentTemplate {
+    @inline
     def apply(
         arn: Arn,
         assessmentRunCount: ArnCount,
@@ -716,6 +738,7 @@ package inspector {
   }
 
   object AssessmentTemplateFilter {
+    @inline
     def apply(
         durationRange: js.UndefOr[DurationRange] = js.undefined,
         namePattern: js.UndefOr[NamePattern] = js.undefined,
@@ -745,6 +768,7 @@ package inspector {
   }
 
   object AssetAttributes {
+    @inline
     def apply(
         schemaVersion: NumericVersion,
         agentId: js.UndefOr[AgentId] = js.undefined,
@@ -786,6 +810,7 @@ package inspector {
   }
 
   object Attribute {
+    @inline
     def apply(
         key: AttributeKey,
         value: js.UndefOr[AttributeValue] = js.undefined
@@ -806,6 +831,7 @@ package inspector {
   }
 
   object CreateAssessmentTargetRequest {
+    @inline
     def apply(
         assessmentTargetName: AssessmentTargetName,
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
@@ -825,6 +851,7 @@ package inspector {
   }
 
   object CreateAssessmentTargetResponse {
+    @inline
     def apply(
         assessmentTargetArn: Arn
     ): CreateAssessmentTargetResponse = {
@@ -846,6 +873,7 @@ package inspector {
   }
 
   object CreateAssessmentTemplateRequest {
+    @inline
     def apply(
         assessmentTargetArn: Arn,
         assessmentTemplateName: AssessmentTemplateName,
@@ -873,6 +901,7 @@ package inspector {
   }
 
   object CreateAssessmentTemplateResponse {
+    @inline
     def apply(
         assessmentTemplateArn: Arn
     ): CreateAssessmentTemplateResponse = {
@@ -890,6 +919,7 @@ package inspector {
   }
 
   object CreateExclusionsPreviewRequest {
+    @inline
     def apply(
         assessmentTemplateArn: Arn
     ): CreateExclusionsPreviewRequest = {
@@ -907,6 +937,7 @@ package inspector {
   }
 
   object CreateExclusionsPreviewResponse {
+    @inline
     def apply(
         previewToken: UUID
     ): CreateExclusionsPreviewResponse = {
@@ -924,6 +955,7 @@ package inspector {
   }
 
   object CreateResourceGroupRequest {
+    @inline
     def apply(
         resourceGroupTags: ResourceGroupTags
     ): CreateResourceGroupRequest = {
@@ -941,6 +973,7 @@ package inspector {
   }
 
   object CreateResourceGroupResponse {
+    @inline
     def apply(
         resourceGroupArn: Arn
     ): CreateResourceGroupResponse = {
@@ -958,6 +991,7 @@ package inspector {
   }
 
   object DeleteAssessmentRunRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn
     ): DeleteAssessmentRunRequest = {
@@ -975,6 +1009,7 @@ package inspector {
   }
 
   object DeleteAssessmentTargetRequest {
+    @inline
     def apply(
         assessmentTargetArn: Arn
     ): DeleteAssessmentTargetRequest = {
@@ -992,6 +1027,7 @@ package inspector {
   }
 
   object DeleteAssessmentTemplateRequest {
+    @inline
     def apply(
         assessmentTemplateArn: Arn
     ): DeleteAssessmentTemplateRequest = {
@@ -1009,6 +1045,7 @@ package inspector {
   }
 
   object DescribeAssessmentRunsRequest {
+    @inline
     def apply(
         assessmentRunArns: BatchDescribeArnList
     ): DescribeAssessmentRunsRequest = {
@@ -1027,6 +1064,7 @@ package inspector {
   }
 
   object DescribeAssessmentRunsResponse {
+    @inline
     def apply(
         assessmentRuns: AssessmentRunList,
         failedItems: FailedItems
@@ -1046,6 +1084,7 @@ package inspector {
   }
 
   object DescribeAssessmentTargetsRequest {
+    @inline
     def apply(
         assessmentTargetArns: BatchDescribeArnList
     ): DescribeAssessmentTargetsRequest = {
@@ -1064,6 +1103,7 @@ package inspector {
   }
 
   object DescribeAssessmentTargetsResponse {
+    @inline
     def apply(
         assessmentTargets: AssessmentTargetList,
         failedItems: FailedItems
@@ -1083,6 +1123,7 @@ package inspector {
   }
 
   object DescribeAssessmentTemplatesRequest {
+    @inline
     def apply(
         assessmentTemplateArns: BatchDescribeArnList
     ): DescribeAssessmentTemplatesRequest = {
@@ -1101,6 +1142,7 @@ package inspector {
   }
 
   object DescribeAssessmentTemplatesResponse {
+    @inline
     def apply(
         assessmentTemplates: AssessmentTemplateList,
         failedItems: FailedItems
@@ -1122,6 +1164,7 @@ package inspector {
   }
 
   object DescribeCrossAccountAccessRoleResponse {
+    @inline
     def apply(
         registeredAt: Timestamp,
         roleArn: Arn,
@@ -1144,6 +1187,7 @@ package inspector {
   }
 
   object DescribeExclusionsRequest {
+    @inline
     def apply(
         exclusionArns: BatchDescribeExclusionsArnList,
         locale: js.UndefOr[Locale] = js.undefined
@@ -1164,6 +1208,7 @@ package inspector {
   }
 
   object DescribeExclusionsResponse {
+    @inline
     def apply(
         exclusions: ExclusionMap,
         failedItems: FailedItems
@@ -1184,6 +1229,7 @@ package inspector {
   }
 
   object DescribeFindingsRequest {
+    @inline
     def apply(
         findingArns: BatchDescribeArnList,
         locale: js.UndefOr[Locale] = js.undefined
@@ -1204,6 +1250,7 @@ package inspector {
   }
 
   object DescribeFindingsResponse {
+    @inline
     def apply(
         failedItems: FailedItems,
         findings: FindingList
@@ -1223,6 +1270,7 @@ package inspector {
   }
 
   object DescribeResourceGroupsRequest {
+    @inline
     def apply(
         resourceGroupArns: BatchDescribeArnList
     ): DescribeResourceGroupsRequest = {
@@ -1241,6 +1289,7 @@ package inspector {
   }
 
   object DescribeResourceGroupsResponse {
+    @inline
     def apply(
         failedItems: FailedItems,
         resourceGroups: ResourceGroupList
@@ -1261,6 +1310,7 @@ package inspector {
   }
 
   object DescribeRulesPackagesRequest {
+    @inline
     def apply(
         rulesPackageArns: BatchDescribeArnList,
         locale: js.UndefOr[Locale] = js.undefined
@@ -1281,6 +1331,7 @@ package inspector {
   }
 
   object DescribeRulesPackagesResponse {
+    @inline
     def apply(
         failedItems: FailedItems,
         rulesPackages: RulesPackageList
@@ -1304,6 +1355,7 @@ package inspector {
   }
 
   object DurationRange {
+    @inline
     def apply(
         maxSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
         minSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined
@@ -1325,6 +1377,7 @@ package inspector {
   }
 
   object EventSubscription {
+    @inline
     def apply(
         event: InspectorEvent,
         subscribedAt: Timestamp
@@ -1352,6 +1405,7 @@ package inspector {
   }
 
   object Exclusion {
+    @inline
     def apply(
         arn: Arn,
         description: Text,
@@ -1386,6 +1440,7 @@ package inspector {
   }
 
   object ExclusionPreview {
+    @inline
     def apply(
         description: Text,
         recommendation: Text,
@@ -1415,6 +1470,7 @@ package inspector {
   }
 
   object FailedItemDetails {
+    @inline
     def apply(
         failureCode: FailedItemErrorCode,
         retryable: Boolean
@@ -1467,6 +1523,7 @@ package inspector {
   }
 
   object Finding {
+    @inline
     def apply(
         arn: Arn,
         attributes: AttributeList,
@@ -1528,6 +1585,7 @@ package inspector {
   }
 
   object FindingFilter {
+    @inline
     def apply(
         agentIds: js.UndefOr[AgentIdList] = js.undefined,
         attributes: js.UndefOr[AttributeList] = js.undefined,
@@ -1559,6 +1617,7 @@ package inspector {
   }
 
   object GetAssessmentReportRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn,
         reportFileFormat: ReportFileFormat,
@@ -1581,6 +1640,7 @@ package inspector {
   }
 
   object GetAssessmentReportResponse {
+    @inline
     def apply(
         status: ReportStatus,
         url: js.UndefOr[Url] = js.undefined
@@ -1604,6 +1664,7 @@ package inspector {
   }
 
   object GetExclusionsPreviewRequest {
+    @inline
     def apply(
         assessmentTemplateArn: Arn,
         previewToken: UUID,
@@ -1631,6 +1692,7 @@ package inspector {
   }
 
   object GetExclusionsPreviewResponse {
+    @inline
     def apply(
         previewStatus: PreviewStatus,
         exclusionPreviews: js.UndefOr[ExclusionPreviewList] = js.undefined,
@@ -1652,6 +1714,7 @@ package inspector {
   }
 
   object GetTelemetryMetadataRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn
     ): GetTelemetryMetadataRequest = {
@@ -1669,6 +1732,7 @@ package inspector {
   }
 
   object GetTelemetryMetadataResponse {
+    @inline
     def apply(
         telemetryMetadata: TelemetryMetadataList
     ): GetTelemetryMetadataResponse = {
@@ -1703,6 +1767,7 @@ package inspector {
   }
 
   object InspectorServiceAttributes {
+    @inline
     def apply(
         schemaVersion: NumericVersion,
         assessmentRunArn: js.UndefOr[Arn] = js.undefined,
@@ -1727,6 +1792,7 @@ package inspector {
   }
 
   object ListAssessmentRunAgentsRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn,
         filter: js.UndefOr[AgentFilter] = js.undefined,
@@ -1751,6 +1817,7 @@ package inspector {
   }
 
   object ListAssessmentRunAgentsResponse {
+    @inline
     def apply(
         assessmentRunAgents: AssessmentRunAgentList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1773,6 +1840,7 @@ package inspector {
   }
 
   object ListAssessmentRunsRequest {
+    @inline
     def apply(
         assessmentTemplateArns: js.UndefOr[ListParentArnList] = js.undefined,
         filter: js.UndefOr[AssessmentRunFilter] = js.undefined,
@@ -1795,6 +1863,7 @@ package inspector {
   }
 
   object ListAssessmentRunsResponse {
+    @inline
     def apply(
         assessmentRunArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1816,6 +1885,7 @@ package inspector {
   }
 
   object ListAssessmentTargetsRequest {
+    @inline
     def apply(
         filter: js.UndefOr[AssessmentTargetFilter] = js.undefined,
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
@@ -1836,6 +1906,7 @@ package inspector {
   }
 
   object ListAssessmentTargetsResponse {
+    @inline
     def apply(
         assessmentTargetArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1858,6 +1929,7 @@ package inspector {
   }
 
   object ListAssessmentTemplatesRequest {
+    @inline
     def apply(
         assessmentTargetArns: js.UndefOr[ListParentArnList] = js.undefined,
         filter: js.UndefOr[AssessmentTemplateFilter] = js.undefined,
@@ -1880,6 +1952,7 @@ package inspector {
   }
 
   object ListAssessmentTemplatesResponse {
+    @inline
     def apply(
         assessmentTemplateArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1901,6 +1974,7 @@ package inspector {
   }
 
   object ListEventSubscriptionsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[ListEventSubscriptionsMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1921,6 +1995,7 @@ package inspector {
   }
 
   object ListEventSubscriptionsResponse {
+    @inline
     def apply(
         subscriptions: SubscriptionList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1942,6 +2017,7 @@ package inspector {
   }
 
   object ListExclusionsRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn,
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
@@ -1964,6 +2040,7 @@ package inspector {
   }
 
   object ListExclusionsResponse {
+    @inline
     def apply(
         exclusionArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1986,6 +2063,7 @@ package inspector {
   }
 
   object ListFindingsRequest {
+    @inline
     def apply(
         assessmentRunArns: js.UndefOr[ListParentArnList] = js.undefined,
         filter: js.UndefOr[FindingFilter] = js.undefined,
@@ -2008,6 +2086,7 @@ package inspector {
   }
 
   object ListFindingsResponse {
+    @inline
     def apply(
         findingArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2028,6 +2107,7 @@ package inspector {
   }
 
   object ListRulesPackagesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2046,6 +2126,7 @@ package inspector {
   }
 
   object ListRulesPackagesResponse {
+    @inline
     def apply(
         rulesPackageArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2065,6 +2146,7 @@ package inspector {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
@@ -2082,6 +2164,7 @@ package inspector {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: TagList
     ): ListTagsForResourceResponse = {
@@ -2117,6 +2200,7 @@ package inspector {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
         networkInterfaceId: js.UndefOr[Text] = js.undefined,
@@ -2152,6 +2236,7 @@ package inspector {
   }
 
   object PreviewAgentsRequest {
+    @inline
     def apply(
         previewAgentsArn: Arn,
         maxResults: js.UndefOr[PreviewAgentsMaxResults] = js.undefined,
@@ -2174,6 +2259,7 @@ package inspector {
   }
 
   object PreviewAgentsResponse {
+    @inline
     def apply(
         agentPreviews: AgentPreviewList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2204,6 +2290,7 @@ package inspector {
   }
 
   object PrivateIp {
+    @inline
     def apply(
         privateDnsName: js.UndefOr[Text] = js.undefined,
         privateIpAddress: js.UndefOr[Text] = js.undefined
@@ -2221,6 +2308,7 @@ package inspector {
   }
 
   object RegisterCrossAccountAccessRoleRequest {
+    @inline
     def apply(
         roleArn: Arn
     ): RegisterCrossAccountAccessRoleRequest = {
@@ -2239,6 +2327,7 @@ package inspector {
   }
 
   object RemoveAttributesFromFindingsRequest {
+    @inline
     def apply(
         attributeKeys: UserAttributeKeyList,
         findingArns: AddRemoveAttributesFindingArnList
@@ -2258,6 +2347,7 @@ package inspector {
   }
 
   object RemoveAttributesFromFindingsResponse {
+    @inline
     def apply(
         failedItems: FailedItems
     ): RemoveAttributesFromFindingsResponse = {
@@ -2302,6 +2392,7 @@ package inspector {
   }
 
   object ResourceGroup {
+    @inline
     def apply(
         arn: Arn,
         createdAt: Timestamp,
@@ -2327,6 +2418,7 @@ package inspector {
   }
 
   object ResourceGroupTag {
+    @inline
     def apply(
         key: TagKey,
         value: js.UndefOr[TagValue] = js.undefined
@@ -2353,6 +2445,7 @@ package inspector {
   }
 
   object RulesPackage {
+    @inline
     def apply(
         arn: Arn,
         name: RulesPackageName,
@@ -2382,6 +2475,7 @@ package inspector {
   }
 
   object Scope {
+    @inline
     def apply(
         key: js.UndefOr[ScopeType] = js.undefined,
         value: js.UndefOr[ScopeValue] = js.undefined
@@ -2410,6 +2504,7 @@ package inspector {
   }
 
   object SecurityGroup {
+    @inline
     def apply(
         groupId: js.UndefOr[Text] = js.undefined,
         groupName: js.UndefOr[Text] = js.undefined
@@ -2428,6 +2523,7 @@ package inspector {
   }
 
   object SetTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: js.UndefOr[TagList] = js.undefined
@@ -2458,6 +2554,7 @@ package inspector {
   }
 
   object StartAssessmentRunRequest {
+    @inline
     def apply(
         assessmentTemplateArn: Arn,
         assessmentRunName: js.UndefOr[AssessmentRunName] = js.undefined
@@ -2477,6 +2574,7 @@ package inspector {
   }
 
   object StartAssessmentRunResponse {
+    @inline
     def apply(
         assessmentRunArn: Arn
     ): StartAssessmentRunResponse = {
@@ -2502,6 +2600,7 @@ package inspector {
   }
 
   object StopAssessmentRunRequest {
+    @inline
     def apply(
         assessmentRunArn: Arn,
         stopAction: js.UndefOr[StopAction] = js.undefined
@@ -2523,6 +2622,7 @@ package inspector {
   }
 
   object SubscribeToEventRequest {
+    @inline
     def apply(
         event: InspectorEvent,
         resourceArn: Arn,
@@ -2549,6 +2649,7 @@ package inspector {
   }
 
   object Subscription {
+    @inline
     def apply(
         eventSubscriptions: EventSubscriptionList,
         resourceArn: Arn,
@@ -2574,6 +2675,7 @@ package inspector {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: js.UndefOr[TagValue] = js.undefined
@@ -2598,6 +2700,7 @@ package inspector {
   }
 
   object TelemetryMetadata {
+    @inline
     def apply(
         count: Double,
         messageType: MessageType,
@@ -2623,6 +2726,7 @@ package inspector {
   }
 
   object TimestampRange {
+    @inline
     def apply(
         beginDate: js.UndefOr[Timestamp] = js.undefined,
         endDate: js.UndefOr[Timestamp] = js.undefined
@@ -2642,6 +2746,7 @@ package inspector {
   }
 
   object UnsubscribeFromEventRequest {
+    @inline
     def apply(
         event: InspectorEvent,
         resourceArn: Arn,
@@ -2665,6 +2770,7 @@ package inspector {
   }
 
   object UpdateAssessmentTargetRequest {
+    @inline
     def apply(
         assessmentTargetArn: Arn,
         assessmentTargetName: AssessmentTargetName,

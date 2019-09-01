@@ -20,7 +20,8 @@ package object kinesisvideomedia {
 
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 
-    def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] = service.getMedia(params).promise.toFuture
+    @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] =
+      service.getMedia(params).promise.toFuture
   }
 }
 
@@ -41,6 +42,7 @@ package kinesisvideomedia {
   }
 
   object GetMediaInput {
+    @inline
     def apply(
         StartSelector: StartSelector,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -63,6 +65,7 @@ package kinesisvideomedia {
   }
 
   object GetMediaOutput {
+    @inline
     def apply(
         ContentType: js.UndefOr[ContentType] = js.undefined,
         Payload: js.UndefOr[Payload] = js.undefined
@@ -89,6 +92,7 @@ package kinesisvideomedia {
   }
 
   object StartSelector {
+    @inline
     def apply(
         StartSelectorType: StartSelectorType,
         AfterFragmentNumber: js.UndefOr[FragmentNumberString] = js.undefined,

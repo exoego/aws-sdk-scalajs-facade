@@ -70,147 +70,159 @@ package object opsworks {
 
   implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
 
-    def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] =
+    @inline def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] =
       service.assignInstance(params).promise.toFuture
-    def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] =
+    @inline def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] =
       service.assignVolume(params).promise.toFuture
-    def associateElasticIpFuture(params: AssociateElasticIpRequest): Future[js.Object] =
+    @inline def associateElasticIpFuture(params: AssociateElasticIpRequest): Future[js.Object] =
       service.associateElasticIp(params).promise.toFuture
-    def attachElasticLoadBalancerFuture(params: AttachElasticLoadBalancerRequest): Future[js.Object] =
+    @inline def attachElasticLoadBalancerFuture(params: AttachElasticLoadBalancerRequest): Future[js.Object] =
       service.attachElasticLoadBalancer(params).promise.toFuture
-    def cloneStackFuture(params: CloneStackRequest): Future[CloneStackResult] =
+    @inline def cloneStackFuture(params: CloneStackRequest): Future[CloneStackResult] =
       service.cloneStack(params).promise.toFuture
-    def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise.toFuture
-    def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
+      service.createApp(params).promise.toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
       service.createDeployment(params).promise.toFuture
-    def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResult] =
+    @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResult] =
       service.createInstance(params).promise.toFuture
-    def createLayerFuture(params: CreateLayerRequest): Future[CreateLayerResult] =
+    @inline def createLayerFuture(params: CreateLayerRequest): Future[CreateLayerResult] =
       service.createLayer(params).promise.toFuture
-    def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
+    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
       service.createStack(params).promise.toFuture
-    def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
+    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
       service.createUserProfile(params).promise.toFuture
-    def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] = service.deleteApp(params).promise.toFuture
-    def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] =
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] =
+      service.deleteApp(params).promise.toFuture
+    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] =
       service.deleteInstance(params).promise.toFuture
-    def deleteLayerFuture(params: DeleteLayerRequest): Future[js.Object] = service.deleteLayer(params).promise.toFuture
-    def deleteStackFuture(params: DeleteStackRequest): Future[js.Object] = service.deleteStack(params).promise.toFuture
-    def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
+    @inline def deleteLayerFuture(params: DeleteLayerRequest): Future[js.Object] =
+      service.deleteLayer(params).promise.toFuture
+    @inline def deleteStackFuture(params: DeleteStackRequest): Future[js.Object] =
+      service.deleteStack(params).promise.toFuture
+    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
       service.deleteUserProfile(params).promise.toFuture
-    def deregisterEcsClusterFuture(params: DeregisterEcsClusterRequest): Future[js.Object] =
+    @inline def deregisterEcsClusterFuture(params: DeregisterEcsClusterRequest): Future[js.Object] =
       service.deregisterEcsCluster(params).promise.toFuture
-    def deregisterElasticIpFuture(params: DeregisterElasticIpRequest): Future[js.Object] =
+    @inline def deregisterElasticIpFuture(params: DeregisterElasticIpRequest): Future[js.Object] =
       service.deregisterElasticIp(params).promise.toFuture
-    def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[js.Object] =
+    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[js.Object] =
       service.deregisterInstance(params).promise.toFuture
-    def deregisterRdsDbInstanceFuture(params: DeregisterRdsDbInstanceRequest): Future[js.Object] =
+    @inline def deregisterRdsDbInstanceFuture(params: DeregisterRdsDbInstanceRequest): Future[js.Object] =
       service.deregisterRdsDbInstance(params).promise.toFuture
-    def deregisterVolumeFuture(params: DeregisterVolumeRequest): Future[js.Object] =
+    @inline def deregisterVolumeFuture(params: DeregisterVolumeRequest): Future[js.Object] =
       service.deregisterVolume(params).promise.toFuture
-    def describeAgentVersionsFuture(params: DescribeAgentVersionsRequest): Future[DescribeAgentVersionsResult] =
+    @inline def describeAgentVersionsFuture(params: DescribeAgentVersionsRequest): Future[DescribeAgentVersionsResult] =
       service.describeAgentVersions(params).promise.toFuture
-    def describeAppsFuture(params: DescribeAppsRequest): Future[DescribeAppsResult] =
+    @inline def describeAppsFuture(params: DescribeAppsRequest): Future[DescribeAppsResult] =
       service.describeApps(params).promise.toFuture
-    def describeCommandsFuture(params: DescribeCommandsRequest): Future[DescribeCommandsResult] =
+    @inline def describeCommandsFuture(params: DescribeCommandsRequest): Future[DescribeCommandsResult] =
       service.describeCommands(params).promise.toFuture
-    def describeDeploymentsFuture(params: DescribeDeploymentsRequest): Future[DescribeDeploymentsResult] =
+    @inline def describeDeploymentsFuture(params: DescribeDeploymentsRequest): Future[DescribeDeploymentsResult] =
       service.describeDeployments(params).promise.toFuture
-    def describeEcsClustersFuture(params: DescribeEcsClustersRequest): Future[DescribeEcsClustersResult] =
+    @inline def describeEcsClustersFuture(params: DescribeEcsClustersRequest): Future[DescribeEcsClustersResult] =
       service.describeEcsClusters(params).promise.toFuture
-    def describeElasticIpsFuture(params: DescribeElasticIpsRequest): Future[DescribeElasticIpsResult] =
+    @inline def describeElasticIpsFuture(params: DescribeElasticIpsRequest): Future[DescribeElasticIpsResult] =
       service.describeElasticIps(params).promise.toFuture
-    def describeElasticLoadBalancersFuture(
+    @inline def describeElasticLoadBalancersFuture(
         params: DescribeElasticLoadBalancersRequest
     ): Future[DescribeElasticLoadBalancersResult] = service.describeElasticLoadBalancers(params).promise.toFuture
-    def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
+    @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
       service.describeInstances(params).promise.toFuture
-    def describeLayersFuture(params: DescribeLayersRequest): Future[DescribeLayersResult] =
+    @inline def describeLayersFuture(params: DescribeLayersRequest): Future[DescribeLayersResult] =
       service.describeLayers(params).promise.toFuture
-    def describeLoadBasedAutoScalingFuture(
+    @inline def describeLoadBasedAutoScalingFuture(
         params: DescribeLoadBasedAutoScalingRequest
     ): Future[DescribeLoadBasedAutoScalingResult] = service.describeLoadBasedAutoScaling(params).promise.toFuture
-    def describeMyUserProfileFuture(): Future[DescribeMyUserProfileResult] =
+    @inline def describeMyUserProfileFuture(): Future[DescribeMyUserProfileResult] =
       service.describeMyUserProfile().promise.toFuture
-    def describeOperatingSystemsFuture(): Future[DescribeOperatingSystemsResponse] =
+    @inline def describeOperatingSystemsFuture(): Future[DescribeOperatingSystemsResponse] =
       service.describeOperatingSystems().promise.toFuture
-    def describePermissionsFuture(params: DescribePermissionsRequest): Future[DescribePermissionsResult] =
+    @inline def describePermissionsFuture(params: DescribePermissionsRequest): Future[DescribePermissionsResult] =
       service.describePermissions(params).promise.toFuture
-    def describeRaidArraysFuture(params: DescribeRaidArraysRequest): Future[DescribeRaidArraysResult] =
+    @inline def describeRaidArraysFuture(params: DescribeRaidArraysRequest): Future[DescribeRaidArraysResult] =
       service.describeRaidArrays(params).promise.toFuture
-    def describeRdsDbInstancesFuture(params: DescribeRdsDbInstancesRequest): Future[DescribeRdsDbInstancesResult] =
-      service.describeRdsDbInstances(params).promise.toFuture
-    def describeServiceErrorsFuture(params: DescribeServiceErrorsRequest): Future[DescribeServiceErrorsResult] =
+    @inline def describeRdsDbInstancesFuture(
+        params: DescribeRdsDbInstancesRequest
+    ): Future[DescribeRdsDbInstancesResult] = service.describeRdsDbInstances(params).promise.toFuture
+    @inline def describeServiceErrorsFuture(params: DescribeServiceErrorsRequest): Future[DescribeServiceErrorsResult] =
       service.describeServiceErrors(params).promise.toFuture
-    def describeStackProvisioningParametersFuture(
+    @inline def describeStackProvisioningParametersFuture(
         params: DescribeStackProvisioningParametersRequest
     ): Future[DescribeStackProvisioningParametersResult] =
       service.describeStackProvisioningParameters(params).promise.toFuture
-    def describeStackSummaryFuture(params: DescribeStackSummaryRequest): Future[DescribeStackSummaryResult] =
+    @inline def describeStackSummaryFuture(params: DescribeStackSummaryRequest): Future[DescribeStackSummaryResult] =
       service.describeStackSummary(params).promise.toFuture
-    def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
+    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
       service.describeStacks(params).promise.toFuture
-    def describeTimeBasedAutoScalingFuture(
+    @inline def describeTimeBasedAutoScalingFuture(
         params: DescribeTimeBasedAutoScalingRequest
     ): Future[DescribeTimeBasedAutoScalingResult] = service.describeTimeBasedAutoScaling(params).promise.toFuture
-    def describeUserProfilesFuture(params: DescribeUserProfilesRequest): Future[DescribeUserProfilesResult] =
+    @inline def describeUserProfilesFuture(params: DescribeUserProfilesRequest): Future[DescribeUserProfilesResult] =
       service.describeUserProfiles(params).promise.toFuture
-    def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] =
+    @inline def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] =
       service.describeVolumes(params).promise.toFuture
-    def detachElasticLoadBalancerFuture(params: DetachElasticLoadBalancerRequest): Future[js.Object] =
+    @inline def detachElasticLoadBalancerFuture(params: DetachElasticLoadBalancerRequest): Future[js.Object] =
       service.detachElasticLoadBalancer(params).promise.toFuture
-    def disassociateElasticIpFuture(params: DisassociateElasticIpRequest): Future[js.Object] =
+    @inline def disassociateElasticIpFuture(params: DisassociateElasticIpRequest): Future[js.Object] =
       service.disassociateElasticIp(params).promise.toFuture
-    def getHostnameSuggestionFuture(params: GetHostnameSuggestionRequest): Future[GetHostnameSuggestionResult] =
+    @inline def getHostnameSuggestionFuture(params: GetHostnameSuggestionRequest): Future[GetHostnameSuggestionResult] =
       service.getHostnameSuggestion(params).promise.toFuture
-    def grantAccessFuture(params: GrantAccessRequest): Future[GrantAccessResult] =
+    @inline def grantAccessFuture(params: GrantAccessRequest): Future[GrantAccessResult] =
       service.grantAccess(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResult] = service.listTags(params).promise.toFuture
-    def rebootInstanceFuture(params: RebootInstanceRequest): Future[js.Object] =
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResult] =
+      service.listTags(params).promise.toFuture
+    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[js.Object] =
       service.rebootInstance(params).promise.toFuture
-    def registerEcsClusterFuture(params: RegisterEcsClusterRequest): Future[RegisterEcsClusterResult] =
+    @inline def registerEcsClusterFuture(params: RegisterEcsClusterRequest): Future[RegisterEcsClusterResult] =
       service.registerEcsCluster(params).promise.toFuture
-    def registerElasticIpFuture(params: RegisterElasticIpRequest): Future[RegisterElasticIpResult] =
+    @inline def registerElasticIpFuture(params: RegisterElasticIpRequest): Future[RegisterElasticIpResult] =
       service.registerElasticIp(params).promise.toFuture
-    def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResult] =
+    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResult] =
       service.registerInstance(params).promise.toFuture
-    def registerRdsDbInstanceFuture(params: RegisterRdsDbInstanceRequest): Future[js.Object] =
+    @inline def registerRdsDbInstanceFuture(params: RegisterRdsDbInstanceRequest): Future[js.Object] =
       service.registerRdsDbInstance(params).promise.toFuture
-    def registerVolumeFuture(params: RegisterVolumeRequest): Future[RegisterVolumeResult] =
+    @inline def registerVolumeFuture(params: RegisterVolumeRequest): Future[RegisterVolumeResult] =
       service.registerVolume(params).promise.toFuture
-    def setLoadBasedAutoScalingFuture(params: SetLoadBasedAutoScalingRequest): Future[js.Object] =
+    @inline def setLoadBasedAutoScalingFuture(params: SetLoadBasedAutoScalingRequest): Future[js.Object] =
       service.setLoadBasedAutoScaling(params).promise.toFuture
-    def setPermissionFuture(params: SetPermissionRequest): Future[js.Object] =
+    @inline def setPermissionFuture(params: SetPermissionRequest): Future[js.Object] =
       service.setPermission(params).promise.toFuture
-    def setTimeBasedAutoScalingFuture(params: SetTimeBasedAutoScalingRequest): Future[js.Object] =
+    @inline def setTimeBasedAutoScalingFuture(params: SetTimeBasedAutoScalingRequest): Future[js.Object] =
       service.setTimeBasedAutoScaling(params).promise.toFuture
-    def startInstanceFuture(params: StartInstanceRequest): Future[js.Object] =
+    @inline def startInstanceFuture(params: StartInstanceRequest): Future[js.Object] =
       service.startInstance(params).promise.toFuture
-    def startStackFuture(params: StartStackRequest): Future[js.Object] = service.startStack(params).promise.toFuture
-    def stopInstanceFuture(params: StopInstanceRequest): Future[js.Object] =
+    @inline def startStackFuture(params: StartStackRequest): Future[js.Object] =
+      service.startStack(params).promise.toFuture
+    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[js.Object] =
       service.stopInstance(params).promise.toFuture
-    def stopStackFuture(params: StopStackRequest): Future[js.Object]     = service.stopStack(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def unassignInstanceFuture(params: UnassignInstanceRequest): Future[js.Object] =
+    @inline def stopStackFuture(params: StopStackRequest): Future[js.Object] =
+      service.stopStack(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def unassignInstanceFuture(params: UnassignInstanceRequest): Future[js.Object] =
       service.unassignInstance(params).promise.toFuture
-    def unassignVolumeFuture(params: UnassignVolumeRequest): Future[js.Object] =
+    @inline def unassignVolumeFuture(params: UnassignVolumeRequest): Future[js.Object] =
       service.unassignVolume(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateAppFuture(params: UpdateAppRequest): Future[js.Object] = service.updateApp(params).promise.toFuture
-    def updateElasticIpFuture(params: UpdateElasticIpRequest): Future[js.Object] =
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[js.Object] =
+      service.updateApp(params).promise.toFuture
+    @inline def updateElasticIpFuture(params: UpdateElasticIpRequest): Future[js.Object] =
       service.updateElasticIp(params).promise.toFuture
-    def updateInstanceFuture(params: UpdateInstanceRequest): Future[js.Object] =
+    @inline def updateInstanceFuture(params: UpdateInstanceRequest): Future[js.Object] =
       service.updateInstance(params).promise.toFuture
-    def updateLayerFuture(params: UpdateLayerRequest): Future[js.Object] = service.updateLayer(params).promise.toFuture
-    def updateMyUserProfileFuture(params: UpdateMyUserProfileRequest): Future[js.Object] =
+    @inline def updateLayerFuture(params: UpdateLayerRequest): Future[js.Object] =
+      service.updateLayer(params).promise.toFuture
+    @inline def updateMyUserProfileFuture(params: UpdateMyUserProfileRequest): Future[js.Object] =
       service.updateMyUserProfile(params).promise.toFuture
-    def updateRdsDbInstanceFuture(params: UpdateRdsDbInstanceRequest): Future[js.Object] =
+    @inline def updateRdsDbInstanceFuture(params: UpdateRdsDbInstanceRequest): Future[js.Object] =
       service.updateRdsDbInstance(params).promise.toFuture
-    def updateStackFuture(params: UpdateStackRequest): Future[js.Object] = service.updateStack(params).promise.toFuture
-    def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] =
+    @inline def updateStackFuture(params: UpdateStackRequest): Future[js.Object] =
+      service.updateStack(params).promise.toFuture
+    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] =
       service.updateUserProfile(params).promise.toFuture
-    def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] =
+    @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] =
       service.updateVolume(params).promise.toFuture
   }
 }
@@ -315,6 +327,7 @@ package opsworks {
   }
 
   object AgentVersion {
+    @inline
     def apply(
         ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -348,6 +361,7 @@ package opsworks {
   }
 
   object App {
+    @inline
     def apply(
         AppId: js.UndefOr[String] = js.undefined,
         AppSource: js.UndefOr[Source] = js.undefined,
@@ -418,6 +432,7 @@ package opsworks {
   }
 
   object AssignInstanceRequest {
+    @inline
     def apply(
         InstanceId: String,
         LayerIds: Strings
@@ -438,6 +453,7 @@ package opsworks {
   }
 
   object AssignVolumeRequest {
+    @inline
     def apply(
         VolumeId: String,
         InstanceId: js.UndefOr[String] = js.undefined
@@ -458,6 +474,7 @@ package opsworks {
   }
 
   object AssociateElasticIpRequest {
+    @inline
     def apply(
         ElasticIp: String,
         InstanceId: js.UndefOr[String] = js.undefined
@@ -478,6 +495,7 @@ package opsworks {
   }
 
   object AttachElasticLoadBalancerRequest {
+    @inline
     def apply(
         ElasticLoadBalancerName: String,
         LayerId: String
@@ -506,6 +524,7 @@ package opsworks {
   }
 
   object AutoScalingThresholds {
+    @inline
     def apply(
         Alarms: js.UndefOr[Strings] = js.undefined,
         CpuThreshold: js.UndefOr[Double] = js.undefined,
@@ -546,6 +565,7 @@ package opsworks {
   }
 
   object BlockDeviceMapping {
+    @inline
     def apply(
         DeviceName: js.UndefOr[String] = js.undefined,
         Ebs: js.UndefOr[EbsBlockDevice] = js.undefined,
@@ -571,6 +591,7 @@ package opsworks {
   }
 
   object ChefConfiguration {
+    @inline
     def apply(
         BerkshelfVersion: js.UndefOr[String] = js.undefined,
         ManageBerkshelf: js.UndefOr[Boolean] = js.undefined
@@ -609,6 +630,7 @@ package opsworks {
   }
 
   object CloneStackRequest {
+    @inline
     def apply(
         ServiceRoleArn: String,
         SourceStackId: String,
@@ -675,6 +697,7 @@ package opsworks {
   }
 
   object CloneStackResult {
+    @inline
     def apply(
         StackId: js.UndefOr[String] = js.undefined
     ): CloneStackResult = {
@@ -694,6 +717,7 @@ package opsworks {
   }
 
   object CloudWatchLogsConfiguration {
+    @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
         LogStreams: js.UndefOr[CloudWatchLogsLogStreams] = js.undefined
@@ -929,6 +953,7 @@ package opsworks {
   }
 
   object CloudWatchLogsLogStream {
+    @inline
     def apply(
         BatchCount: js.UndefOr[Int] = js.undefined,
         BatchSize: js.UndefOr[Int] = js.undefined,
@@ -986,6 +1011,7 @@ package opsworks {
   }
 
   object Command {
+    @inline
     def apply(
         AcknowledgedAt: js.UndefOr[DateTime] = js.undefined,
         CommandId: js.UndefOr[String] = js.undefined,
@@ -1030,6 +1056,7 @@ package opsworks {
   }
 
   object CreateAppRequest {
+    @inline
     def apply(
         Name: String,
         StackId: String,
@@ -1072,6 +1099,7 @@ package opsworks {
   }
 
   object CreateAppResult {
+    @inline
     def apply(
         AppId: js.UndefOr[String] = js.undefined
     ): CreateAppResult = {
@@ -1093,6 +1121,7 @@ package opsworks {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         Command: DeploymentCommand,
         StackId: String,
@@ -1125,6 +1154,7 @@ package opsworks {
   }
 
   object CreateDeploymentResult {
+    @inline
     def apply(
         DeploymentId: js.UndefOr[String] = js.undefined
     ): CreateDeploymentResult = {
@@ -1157,6 +1187,7 @@ package opsworks {
   }
 
   object CreateInstanceRequest {
+    @inline
     def apply(
         InstanceType: String,
         LayerIds: Strings,
@@ -1211,6 +1242,7 @@ package opsworks {
   }
 
   object CreateInstanceResult {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined
     ): CreateInstanceResult = {
@@ -1243,6 +1275,7 @@ package opsworks {
   }
 
   object CreateLayerRequest {
+    @inline
     def apply(
         Name: String,
         Shortname: String,
@@ -1301,6 +1334,7 @@ package opsworks {
   }
 
   object CreateLayerResult {
+    @inline
     def apply(
         LayerId: js.UndefOr[String] = js.undefined
     ): CreateLayerResult = {
@@ -1334,6 +1368,7 @@ package opsworks {
   }
 
   object CreateStackRequest {
+    @inline
     def apply(
         DefaultInstanceProfileArn: String,
         Name: String,
@@ -1392,6 +1427,7 @@ package opsworks {
   }
 
   object CreateStackResult {
+    @inline
     def apply(
         StackId: js.UndefOr[String] = js.undefined
     ): CreateStackResult = {
@@ -1410,6 +1446,7 @@ package opsworks {
   }
 
   object CreateUserProfileRequest {
+    @inline
     def apply(
         IamUserArn: String,
         AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
@@ -1436,6 +1473,7 @@ package opsworks {
   }
 
   object CreateUserProfileResult {
+    @inline
     def apply(
         IamUserArn: js.UndefOr[String] = js.undefined
     ): CreateUserProfileResult = {
@@ -1456,6 +1494,7 @@ package opsworks {
   }
 
   object DataSource {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
@@ -1475,6 +1514,7 @@ package opsworks {
   }
 
   object DeleteAppRequest {
+    @inline
     def apply(
         AppId: String
     ): DeleteAppRequest = {
@@ -1494,6 +1534,7 @@ package opsworks {
   }
 
   object DeleteInstanceRequest {
+    @inline
     def apply(
         InstanceId: String,
         DeleteElasticIp: js.UndefOr[Boolean] = js.undefined,
@@ -1515,6 +1556,7 @@ package opsworks {
   }
 
   object DeleteLayerRequest {
+    @inline
     def apply(
         LayerId: String
     ): DeleteLayerRequest = {
@@ -1532,6 +1574,7 @@ package opsworks {
   }
 
   object DeleteStackRequest {
+    @inline
     def apply(
         StackId: String
     ): DeleteStackRequest = {
@@ -1549,6 +1592,7 @@ package opsworks {
   }
 
   object DeleteUserProfileRequest {
+    @inline
     def apply(
         IamUserArn: String
     ): DeleteUserProfileRequest = {
@@ -1580,6 +1624,7 @@ package opsworks {
   }
 
   object Deployment {
+    @inline
     def apply(
         AppId: js.UndefOr[String] = js.undefined,
         Command: js.UndefOr[DeploymentCommand] = js.undefined,
@@ -1621,6 +1666,7 @@ package opsworks {
   }
 
   object DeploymentCommand {
+    @inline
     def apply(
         Name: DeploymentCommandName,
         Args: js.UndefOr[DeploymentCommandArgs] = js.undefined
@@ -1672,6 +1718,7 @@ package opsworks {
   }
 
   object DeregisterEcsClusterRequest {
+    @inline
     def apply(
         EcsClusterArn: String
     ): DeregisterEcsClusterRequest = {
@@ -1689,6 +1736,7 @@ package opsworks {
   }
 
   object DeregisterElasticIpRequest {
+    @inline
     def apply(
         ElasticIp: String
     ): DeregisterElasticIpRequest = {
@@ -1706,6 +1754,7 @@ package opsworks {
   }
 
   object DeregisterInstanceRequest {
+    @inline
     def apply(
         InstanceId: String
     ): DeregisterInstanceRequest = {
@@ -1723,6 +1772,7 @@ package opsworks {
   }
 
   object DeregisterRdsDbInstanceRequest {
+    @inline
     def apply(
         RdsDbInstanceArn: String
     ): DeregisterRdsDbInstanceRequest = {
@@ -1740,6 +1790,7 @@ package opsworks {
   }
 
   object DeregisterVolumeRequest {
+    @inline
     def apply(
         VolumeId: String
     ): DeregisterVolumeRequest = {
@@ -1758,6 +1809,7 @@ package opsworks {
   }
 
   object DescribeAgentVersionsRequest {
+    @inline
     def apply(
         ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
@@ -1778,6 +1830,7 @@ package opsworks {
   }
 
   object DescribeAgentVersionsResult {
+    @inline
     def apply(
         AgentVersions: js.UndefOr[AgentVersions] = js.undefined
     ): DescribeAgentVersionsResult = {
@@ -1794,6 +1847,7 @@ package opsworks {
   }
 
   object DescribeAppsRequest {
+    @inline
     def apply(
         AppIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
@@ -1814,6 +1868,7 @@ package opsworks {
   }
 
   object DescribeAppsResult {
+    @inline
     def apply(
         Apps: js.UndefOr[Apps] = js.undefined
     ): DescribeAppsResult = {
@@ -1831,6 +1886,7 @@ package opsworks {
   }
 
   object DescribeCommandsRequest {
+    @inline
     def apply(
         CommandIds: js.UndefOr[Strings] = js.undefined,
         DeploymentId: js.UndefOr[String] = js.undefined,
@@ -1853,6 +1909,7 @@ package opsworks {
   }
 
   object DescribeCommandsResult {
+    @inline
     def apply(
         Commands: js.UndefOr[Commands] = js.undefined
     ): DescribeCommandsResult = {
@@ -1870,6 +1927,7 @@ package opsworks {
   }
 
   object DescribeDeploymentsRequest {
+    @inline
     def apply(
         AppId: js.UndefOr[String] = js.undefined,
         DeploymentIds: js.UndefOr[Strings] = js.undefined,
@@ -1892,6 +1950,7 @@ package opsworks {
   }
 
   object DescribeDeploymentsResult {
+    @inline
     def apply(
         Deployments: js.UndefOr[Deployments] = js.undefined
     ): DescribeDeploymentsResult = {
@@ -1910,6 +1969,7 @@ package opsworks {
   }
 
   object DescribeEcsClustersRequest {
+    @inline
     def apply(
         EcsClusterArns: js.UndefOr[Strings] = js.undefined,
         MaxResults: js.UndefOr[Int] = js.undefined,
@@ -1935,6 +1995,7 @@ package opsworks {
   }
 
   object DescribeEcsClustersResult {
+    @inline
     def apply(
         EcsClusters: js.UndefOr[EcsClusters] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1954,6 +2015,7 @@ package opsworks {
   }
 
   object DescribeElasticIpsRequest {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
         Ips: js.UndefOr[Strings] = js.undefined,
@@ -1976,6 +2038,7 @@ package opsworks {
   }
 
   object DescribeElasticIpsResult {
+    @inline
     def apply(
         ElasticIps: js.UndefOr[ElasticIps] = js.undefined
     ): DescribeElasticIpsResult = {
@@ -1992,6 +2055,7 @@ package opsworks {
   }
 
   object DescribeElasticLoadBalancersRequest {
+    @inline
     def apply(
         LayerIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
@@ -2012,6 +2076,7 @@ package opsworks {
   }
 
   object DescribeElasticLoadBalancersResult {
+    @inline
     def apply(
         ElasticLoadBalancers: js.UndefOr[ElasticLoadBalancers] = js.undefined
     ): DescribeElasticLoadBalancersResult = {
@@ -2029,6 +2094,7 @@ package opsworks {
   }
 
   object DescribeInstancesRequest {
+    @inline
     def apply(
         InstanceIds: js.UndefOr[Strings] = js.undefined,
         LayerId: js.UndefOr[String] = js.undefined,
@@ -2051,6 +2117,7 @@ package opsworks {
   }
 
   object DescribeInstancesResult {
+    @inline
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): DescribeInstancesResult = {
@@ -2067,6 +2134,7 @@ package opsworks {
   }
 
   object DescribeLayersRequest {
+    @inline
     def apply(
         LayerIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
@@ -2087,6 +2155,7 @@ package opsworks {
   }
 
   object DescribeLayersResult {
+    @inline
     def apply(
         Layers: js.UndefOr[Layers] = js.undefined
     ): DescribeLayersResult = {
@@ -2102,6 +2171,7 @@ package opsworks {
   }
 
   object DescribeLoadBasedAutoScalingRequest {
+    @inline
     def apply(
         LayerIds: Strings
     ): DescribeLoadBasedAutoScalingRequest = {
@@ -2122,6 +2192,7 @@ package opsworks {
   }
 
   object DescribeLoadBasedAutoScalingResult {
+    @inline
     def apply(
         LoadBasedAutoScalingConfigurations: js.UndefOr[LoadBasedAutoScalingConfigurations] = js.undefined
     ): DescribeLoadBasedAutoScalingResult = {
@@ -2142,6 +2213,7 @@ package opsworks {
   }
 
   object DescribeMyUserProfileResult {
+    @inline
     def apply(
         UserProfile: js.UndefOr[SelfUserProfile] = js.undefined
     ): DescribeMyUserProfileResult = {
@@ -2160,6 +2232,7 @@ package opsworks {
   }
 
   object DescribeOperatingSystemsResponse {
+    @inline
     def apply(
         OperatingSystems: js.UndefOr[OperatingSystems] = js.undefined
     ): DescribeOperatingSystemsResponse = {
@@ -2176,6 +2249,7 @@ package opsworks {
   }
 
   object DescribePermissionsRequest {
+    @inline
     def apply(
         IamUserArn: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
@@ -2196,6 +2270,7 @@ package opsworks {
   }
 
   object DescribePermissionsResult {
+    @inline
     def apply(
         Permissions: js.UndefOr[Permissions] = js.undefined
     ): DescribePermissionsResult = {
@@ -2213,6 +2288,7 @@ package opsworks {
   }
 
   object DescribeRaidArraysRequest {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
         RaidArrayIds: js.UndefOr[Strings] = js.undefined,
@@ -2235,6 +2311,7 @@ package opsworks {
   }
 
   object DescribeRaidArraysResult {
+    @inline
     def apply(
         RaidArrays: js.UndefOr[RaidArrays] = js.undefined
     ): DescribeRaidArraysResult = {
@@ -2251,6 +2328,7 @@ package opsworks {
   }
 
   object DescribeRdsDbInstancesRequest {
+    @inline
     def apply(
         StackId: String,
         RdsDbInstanceArns: js.UndefOr[Strings] = js.undefined
@@ -2273,6 +2351,7 @@ package opsworks {
   }
 
   object DescribeRdsDbInstancesResult {
+    @inline
     def apply(
         RdsDbInstances: js.UndefOr[RdsDbInstances] = js.undefined
     ): DescribeRdsDbInstancesResult = {
@@ -2290,6 +2369,7 @@ package opsworks {
   }
 
   object DescribeServiceErrorsRequest {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
         ServiceErrorIds: js.UndefOr[Strings] = js.undefined,
@@ -2312,6 +2392,7 @@ package opsworks {
   }
 
   object DescribeServiceErrorsResult {
+    @inline
     def apply(
         ServiceErrors: js.UndefOr[ServiceErrors] = js.undefined
     ): DescribeServiceErrorsResult = {
@@ -2327,6 +2408,7 @@ package opsworks {
   }
 
   object DescribeStackProvisioningParametersRequest {
+    @inline
     def apply(
         StackId: String
     ): DescribeStackProvisioningParametersRequest = {
@@ -2348,6 +2430,7 @@ package opsworks {
   }
 
   object DescribeStackProvisioningParametersResult {
+    @inline
     def apply(
         AgentInstallerUrl: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined
@@ -2365,6 +2448,7 @@ package opsworks {
   }
 
   object DescribeStackSummaryRequest {
+    @inline
     def apply(
         StackId: String
     ): DescribeStackSummaryRequest = {
@@ -2385,6 +2469,7 @@ package opsworks {
   }
 
   object DescribeStackSummaryResult {
+    @inline
     def apply(
         StackSummary: js.UndefOr[StackSummary] = js.undefined
     ): DescribeStackSummaryResult = {
@@ -2400,6 +2485,7 @@ package opsworks {
   }
 
   object DescribeStacksRequest {
+    @inline
     def apply(
         StackIds: js.UndefOr[Strings] = js.undefined
     ): DescribeStacksRequest = {
@@ -2418,6 +2504,7 @@ package opsworks {
   }
 
   object DescribeStacksResult {
+    @inline
     def apply(
         Stacks: js.UndefOr[Stacks] = js.undefined
     ): DescribeStacksResult = {
@@ -2433,6 +2520,7 @@ package opsworks {
   }
 
   object DescribeTimeBasedAutoScalingRequest {
+    @inline
     def apply(
         InstanceIds: Strings
     ): DescribeTimeBasedAutoScalingRequest = {
@@ -2453,6 +2541,7 @@ package opsworks {
   }
 
   object DescribeTimeBasedAutoScalingResult {
+    @inline
     def apply(
         TimeBasedAutoScalingConfigurations: js.UndefOr[TimeBasedAutoScalingConfigurations] = js.undefined
     ): DescribeTimeBasedAutoScalingResult = {
@@ -2470,6 +2559,7 @@ package opsworks {
   }
 
   object DescribeUserProfilesRequest {
+    @inline
     def apply(
         IamUserArns: js.UndefOr[Strings] = js.undefined
     ): DescribeUserProfilesRequest = {
@@ -2488,6 +2578,7 @@ package opsworks {
   }
 
   object DescribeUserProfilesResult {
+    @inline
     def apply(
         UserProfiles: js.UndefOr[UserProfiles] = js.undefined
     ): DescribeUserProfilesResult = {
@@ -2506,6 +2597,7 @@ package opsworks {
   }
 
   object DescribeVolumesRequest {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
         RaidArrayId: js.UndefOr[String] = js.undefined,
@@ -2530,6 +2622,7 @@ package opsworks {
   }
 
   object DescribeVolumesResult {
+    @inline
     def apply(
         Volumes: js.UndefOr[Volumes] = js.undefined
     ): DescribeVolumesResult = {
@@ -2546,6 +2639,7 @@ package opsworks {
   }
 
   object DetachElasticLoadBalancerRequest {
+    @inline
     def apply(
         ElasticLoadBalancerName: String,
         LayerId: String
@@ -2565,6 +2659,7 @@ package opsworks {
   }
 
   object DisassociateElasticIpRequest {
+    @inline
     def apply(
         ElasticIp: String
     ): DisassociateElasticIpRequest = {
@@ -2589,6 +2684,7 @@ package opsworks {
   }
 
   object EbsBlockDevice {
+    @inline
     def apply(
         DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[Int] = js.undefined,
@@ -2618,6 +2714,7 @@ package opsworks {
   }
 
   object EcsCluster {
+    @inline
     def apply(
         EcsClusterArn: js.UndefOr[String] = js.undefined,
         EcsClusterName: js.UndefOr[String] = js.undefined,
@@ -2646,6 +2743,7 @@ package opsworks {
   }
 
   object ElasticIp {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined,
@@ -2680,6 +2778,7 @@ package opsworks {
   }
 
   object ElasticLoadBalancer {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[Strings] = js.undefined,
         DnsName: js.UndefOr[String] = js.undefined,
@@ -2716,6 +2815,7 @@ package opsworks {
   }
 
   object EnvironmentVariable {
+    @inline
     def apply(
         Key: String,
         Value: String,
@@ -2737,6 +2837,7 @@ package opsworks {
   }
 
   object GetHostnameSuggestionRequest {
+    @inline
     def apply(
         LayerId: String
     ): GetHostnameSuggestionRequest = {
@@ -2758,6 +2859,7 @@ package opsworks {
   }
 
   object GetHostnameSuggestionResult {
+    @inline
     def apply(
         Hostname: js.UndefOr[String] = js.undefined,
         LayerId: js.UndefOr[String] = js.undefined
@@ -2776,6 +2878,7 @@ package opsworks {
   }
 
   object GrantAccessRequest {
+    @inline
     def apply(
         InstanceId: String,
         ValidForInMinutes: js.UndefOr[ValidForInMinutes] = js.undefined
@@ -2798,6 +2901,7 @@ package opsworks {
   }
 
   object GrantAccessResult {
+    @inline
     def apply(
         TemporaryCredential: js.UndefOr[TemporaryCredential] = js.undefined
     ): GrantAccessResult = {
@@ -2856,6 +2960,7 @@ package opsworks {
   }
 
   object Instance {
+    @inline
     def apply(
         AgentVersion: js.UndefOr[String] = js.undefined,
         AmiId: js.UndefOr[String] = js.undefined,
@@ -2955,6 +3060,7 @@ package opsworks {
   }
 
   object InstanceIdentity {
+    @inline
     def apply(
         Document: js.UndefOr[String] = js.undefined,
         Signature: js.UndefOr[String] = js.undefined
@@ -2994,6 +3100,7 @@ package opsworks {
   }
 
   object InstancesCount {
+    @inline
     def apply(
         Assigning: js.UndefOr[Int] = js.undefined,
         Booting: js.UndefOr[Int] = js.undefined,
@@ -3072,6 +3179,7 @@ package opsworks {
   }
 
   object Layer {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Attributes: js.UndefOr[LayerAttributes] = js.undefined,
@@ -3230,6 +3338,7 @@ package opsworks {
   }
 
   object LifecycleEventConfiguration {
+    @inline
     def apply(
         Shutdown: js.UndefOr[ShutdownEventConfiguration] = js.undefined
     ): LifecycleEventConfiguration = {
@@ -3247,6 +3356,7 @@ package opsworks {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3272,6 +3382,7 @@ package opsworks {
   }
 
   object ListTagsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -3295,6 +3406,7 @@ package opsworks {
   }
 
   object LoadBasedAutoScalingConfiguration {
+    @inline
     def apply(
         DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
         Enable: js.UndefOr[Boolean] = js.undefined,
@@ -3325,6 +3437,7 @@ package opsworks {
   }
 
   object OperatingSystem {
+    @inline
     def apply(
         ConfigurationManagers: js.UndefOr[OperatingSystemConfigurationManagers] = js.undefined,
         Id: js.UndefOr[String] = js.undefined,
@@ -3356,6 +3469,7 @@ package opsworks {
   }
 
   object OperatingSystemConfigurationManager {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -3380,6 +3494,7 @@ package opsworks {
   }
 
   object Permission {
+    @inline
     def apply(
         AllowSsh: js.UndefOr[Boolean] = js.undefined,
         AllowSudo: js.UndefOr[Boolean] = js.undefined,
@@ -3418,6 +3533,7 @@ package opsworks {
   }
 
   object RaidArray {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         CreatedAt: js.UndefOr[DateTime] = js.undefined,
@@ -3468,6 +3584,7 @@ package opsworks {
   }
 
   object RdsDbInstance {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         DbInstanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -3499,6 +3616,7 @@ package opsworks {
   }
 
   object RebootInstanceRequest {
+    @inline
     def apply(
         InstanceId: String
     ): RebootInstanceRequest = {
@@ -3524,6 +3642,7 @@ package opsworks {
   }
 
   object Recipes {
+    @inline
     def apply(
         Configure: js.UndefOr[Strings] = js.undefined,
         Deploy: js.UndefOr[Strings] = js.undefined,
@@ -3548,6 +3667,7 @@ package opsworks {
   }
 
   object RegisterEcsClusterRequest {
+    @inline
     def apply(
         EcsClusterArn: String,
         StackId: String
@@ -3570,6 +3690,7 @@ package opsworks {
   }
 
   object RegisterEcsClusterResult {
+    @inline
     def apply(
         EcsClusterArn: js.UndefOr[String] = js.undefined
     ): RegisterEcsClusterResult = {
@@ -3586,6 +3707,7 @@ package opsworks {
   }
 
   object RegisterElasticIpRequest {
+    @inline
     def apply(
         ElasticIp: String,
         StackId: String
@@ -3608,6 +3730,7 @@ package opsworks {
   }
 
   object RegisterElasticIpResult {
+    @inline
     def apply(
         ElasticIp: js.UndefOr[String] = js.undefined
     ): RegisterElasticIpResult = {
@@ -3629,6 +3752,7 @@ package opsworks {
   }
 
   object RegisterInstanceRequest {
+    @inline
     def apply(
         StackId: String,
         Hostname: js.UndefOr[String] = js.undefined,
@@ -3661,6 +3785,7 @@ package opsworks {
   }
 
   object RegisterInstanceResult {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined
     ): RegisterInstanceResult = {
@@ -3679,6 +3804,7 @@ package opsworks {
   }
 
   object RegisterRdsDbInstanceRequest {
+    @inline
     def apply(
         DbPassword: String,
         DbUser: String,
@@ -3703,6 +3829,7 @@ package opsworks {
   }
 
   object RegisterVolumeRequest {
+    @inline
     def apply(
         StackId: String,
         Ec2VolumeId: js.UndefOr[String] = js.undefined
@@ -3725,6 +3852,7 @@ package opsworks {
   }
 
   object RegisterVolumeResult {
+    @inline
     def apply(
         VolumeId: js.UndefOr[String] = js.undefined
     ): RegisterVolumeResult = {
@@ -3745,6 +3873,7 @@ package opsworks {
   }
 
   object ReportedOs {
+    @inline
     def apply(
         Family: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -3777,6 +3906,7 @@ package opsworks {
   }
 
   object SelfUserProfile {
+    @inline
     def apply(
         IamUserArn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -3806,6 +3936,7 @@ package opsworks {
   }
 
   object ServiceError {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[DateTime] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined,
@@ -3834,6 +3965,7 @@ package opsworks {
   }
 
   object SetLoadBasedAutoScalingRequest {
+    @inline
     def apply(
         LayerId: String,
         DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
@@ -3861,6 +3993,7 @@ package opsworks {
   }
 
   object SetPermissionRequest {
+    @inline
     def apply(
         IamUserArn: String,
         StackId: String,
@@ -3887,6 +4020,7 @@ package opsworks {
   }
 
   object SetTimeBasedAutoScalingRequest {
+    @inline
     def apply(
         InstanceId: String,
         AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined
@@ -3910,6 +4044,7 @@ package opsworks {
   }
 
   object ShutdownEventConfiguration {
+    @inline
     def apply(
         DelayUntilElbConnectionsDrained: js.UndefOr[Boolean] = js.undefined,
         ExecutionTimeout: js.UndefOr[Int] = js.undefined
@@ -3937,6 +4072,7 @@ package opsworks {
   }
 
   object Source {
+    @inline
     def apply(
         Password: js.UndefOr[String] = js.undefined,
         Revision: js.UndefOr[String] = js.undefined,
@@ -3976,6 +4112,7 @@ package opsworks {
   }
 
   object SslConfiguration {
+    @inline
     def apply(
         Certificate: String,
         PrivateKey: String,
@@ -4021,6 +4158,7 @@ package opsworks {
   }
 
   object Stack {
+    @inline
     def apply(
         AgentVersion: js.UndefOr[String] = js.undefined,
         Arn: js.UndefOr[String] = js.undefined,
@@ -4092,6 +4230,7 @@ package opsworks {
   }
 
   object StackConfigurationManager {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -4117,6 +4256,7 @@ package opsworks {
   }
 
   object StackSummary {
+    @inline
     def apply(
         AppsCount: js.UndefOr[Int] = js.undefined,
         Arn: js.UndefOr[String] = js.undefined,
@@ -4142,6 +4282,7 @@ package opsworks {
   }
 
   object StartInstanceRequest {
+    @inline
     def apply(
         InstanceId: String
     ): StartInstanceRequest = {
@@ -4159,6 +4300,7 @@ package opsworks {
   }
 
   object StartStackRequest {
+    @inline
     def apply(
         StackId: String
     ): StartStackRequest = {
@@ -4177,6 +4319,7 @@ package opsworks {
   }
 
   object StopInstanceRequest {
+    @inline
     def apply(
         InstanceId: String,
         Force: js.UndefOr[Boolean] = js.undefined
@@ -4196,6 +4339,7 @@ package opsworks {
   }
 
   object StopStackRequest {
+    @inline
     def apply(
         StackId: String
     ): StopStackRequest = {
@@ -4214,6 +4358,7 @@ package opsworks {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         Tags: Tags
@@ -4239,6 +4384,7 @@ package opsworks {
   }
 
   object TemporaryCredential {
+    @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
         Password: js.UndefOr[String] = js.undefined,
@@ -4264,6 +4410,7 @@ package opsworks {
   }
 
   object TimeBasedAutoScalingConfiguration {
+    @inline
     def apply(
         AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined
@@ -4281,6 +4428,7 @@ package opsworks {
   }
 
   object UnassignInstanceRequest {
+    @inline
     def apply(
         InstanceId: String
     ): UnassignInstanceRequest = {
@@ -4298,6 +4446,7 @@ package opsworks {
   }
 
   object UnassignVolumeRequest {
+    @inline
     def apply(
         VolumeId: String
     ): UnassignVolumeRequest = {
@@ -4316,6 +4465,7 @@ package opsworks {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         TagKeys: TagKeys
@@ -4345,6 +4495,7 @@ package opsworks {
   }
 
   object UpdateAppRequest {
+    @inline
     def apply(
         AppId: String,
         AppSource: js.UndefOr[Source] = js.undefined,
@@ -4383,6 +4534,7 @@ package opsworks {
   }
 
   object UpdateElasticIpRequest {
+    @inline
     def apply(
         ElasticIp: String,
         Name: js.UndefOr[String] = js.undefined
@@ -4413,6 +4565,7 @@ package opsworks {
   }
 
   object UpdateInstanceRequest {
+    @inline
     def apply(
         InstanceId: String,
         AgentVersion: js.UndefOr[String] = js.undefined,
@@ -4468,6 +4621,7 @@ package opsworks {
   }
 
   object UpdateLayerRequest {
+    @inline
     def apply(
         LayerId: String,
         Attributes: js.UndefOr[LayerAttributes] = js.undefined,
@@ -4521,6 +4675,7 @@ package opsworks {
   }
 
   object UpdateMyUserProfileRequest {
+    @inline
     def apply(
         SshPublicKey: js.UndefOr[String] = js.undefined
     ): UpdateMyUserProfileRequest = {
@@ -4538,6 +4693,7 @@ package opsworks {
   }
 
   object UpdateRdsDbInstanceRequest {
+    @inline
     def apply(
         RdsDbInstanceArn: String,
         DbPassword: js.UndefOr[String] = js.undefined,
@@ -4576,6 +4732,7 @@ package opsworks {
   }
 
   object UpdateStackRequest {
+    @inline
     def apply(
         StackId: String,
         AgentVersion: js.UndefOr[String] = js.undefined,
@@ -4634,6 +4791,7 @@ package opsworks {
   }
 
   object UpdateUserProfileRequest {
+    @inline
     def apply(
         IamUserArn: String,
         AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
@@ -4659,6 +4817,7 @@ package opsworks {
   }
 
   object UpdateVolumeRequest {
+    @inline
     def apply(
         VolumeId: String,
         MountPoint: js.UndefOr[String] = js.undefined,
@@ -4687,6 +4846,7 @@ package opsworks {
   }
 
   object UserProfile {
+    @inline
     def apply(
         AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
         IamUserArn: js.UndefOr[String] = js.undefined,
@@ -4733,6 +4893,7 @@ package opsworks {
   }
 
   object Volume {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         Device: js.UndefOr[String] = js.undefined,
@@ -4783,6 +4944,7 @@ package opsworks {
   }
 
   object VolumeConfiguration {
+    @inline
     def apply(
         MountPoint: String,
         NumberOfDisks: Int,
@@ -4834,6 +4996,7 @@ package opsworks {
   }
 
   object WeeklyAutoScalingSchedule {
+    @inline
     def apply(
         Friday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
         Monday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,

@@ -76,114 +76,124 @@ package object elasticache {
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
-    def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
       service.addTagsToResource(params).promise.toFuture
-    def authorizeCacheSecurityGroupIngressFuture(
+    @inline def authorizeCacheSecurityGroupIngressFuture(
         params: AuthorizeCacheSecurityGroupIngressMessage
     ): Future[AuthorizeCacheSecurityGroupIngressResult] =
       service.authorizeCacheSecurityGroupIngress(params).promise.toFuture
-    def batchApplyUpdateActionFuture(params: BatchApplyUpdateActionMessage): Future[UpdateActionResultsMessage] =
-      service.batchApplyUpdateAction(params).promise.toFuture
-    def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
+    @inline def batchApplyUpdateActionFuture(
+        params: BatchApplyUpdateActionMessage
+    ): Future[UpdateActionResultsMessage] = service.batchApplyUpdateAction(params).promise.toFuture
+    @inline def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
       service.batchStopUpdateAction(params).promise.toFuture
-    def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
+    @inline def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
       service.copySnapshot(params).promise.toFuture
-    def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
+    @inline def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
       service.createCacheCluster(params).promise.toFuture
-    def createCacheParameterGroupFuture(
+    @inline def createCacheParameterGroupFuture(
         params: CreateCacheParameterGroupMessage
     ): Future[CreateCacheParameterGroupResult] = service.createCacheParameterGroup(params).promise.toFuture
-    def createCacheSecurityGroupFuture(
+    @inline def createCacheSecurityGroupFuture(
         params: CreateCacheSecurityGroupMessage
     ): Future[CreateCacheSecurityGroupResult] = service.createCacheSecurityGroup(params).promise.toFuture
-    def createCacheSubnetGroupFuture(params: CreateCacheSubnetGroupMessage): Future[CreateCacheSubnetGroupResult] =
-      service.createCacheSubnetGroup(params).promise.toFuture
-    def createReplicationGroupFuture(params: CreateReplicationGroupMessage): Future[CreateReplicationGroupResult] =
-      service.createReplicationGroup(params).promise.toFuture
-    def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] =
+    @inline def createCacheSubnetGroupFuture(
+        params: CreateCacheSubnetGroupMessage
+    ): Future[CreateCacheSubnetGroupResult] = service.createCacheSubnetGroup(params).promise.toFuture
+    @inline def createReplicationGroupFuture(
+        params: CreateReplicationGroupMessage
+    ): Future[CreateReplicationGroupResult] = service.createReplicationGroup(params).promise.toFuture
+    @inline def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] =
       service.createSnapshot(params).promise.toFuture
-    def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] =
+    @inline def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] =
       service.decreaseReplicaCount(params).promise.toFuture
-    def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] =
+    @inline def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] =
       service.deleteCacheCluster(params).promise.toFuture
-    def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] =
+    @inline def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] =
       service.deleteCacheParameterGroup(params).promise.toFuture
-    def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] =
+    @inline def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] =
       service.deleteCacheSecurityGroup(params).promise.toFuture
-    def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] =
+    @inline def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] =
       service.deleteCacheSubnetGroup(params).promise.toFuture
-    def deleteReplicationGroupFuture(params: DeleteReplicationGroupMessage): Future[DeleteReplicationGroupResult] =
-      service.deleteReplicationGroup(params).promise.toFuture
-    def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] =
+    @inline def deleteReplicationGroupFuture(
+        params: DeleteReplicationGroupMessage
+    ): Future[DeleteReplicationGroupResult] = service.deleteReplicationGroup(params).promise.toFuture
+    @inline def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] =
       service.deleteSnapshot(params).promise.toFuture
-    def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] =
+    @inline def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] =
       service.describeCacheClusters(params).promise.toFuture
-    def describeCacheEngineVersionsFuture(
+    @inline def describeCacheEngineVersionsFuture(
         params: DescribeCacheEngineVersionsMessage
     ): Future[CacheEngineVersionMessage] = service.describeCacheEngineVersions(params).promise.toFuture
-    def describeCacheParameterGroupsFuture(
+    @inline def describeCacheParameterGroupsFuture(
         params: DescribeCacheParameterGroupsMessage
     ): Future[CacheParameterGroupsMessage] = service.describeCacheParameterGroups(params).promise.toFuture
-    def describeCacheParametersFuture(params: DescribeCacheParametersMessage): Future[CacheParameterGroupDetails] =
-      service.describeCacheParameters(params).promise.toFuture
-    def describeCacheSecurityGroupsFuture(
+    @inline def describeCacheParametersFuture(
+        params: DescribeCacheParametersMessage
+    ): Future[CacheParameterGroupDetails] = service.describeCacheParameters(params).promise.toFuture
+    @inline def describeCacheSecurityGroupsFuture(
         params: DescribeCacheSecurityGroupsMessage
     ): Future[CacheSecurityGroupMessage] = service.describeCacheSecurityGroups(params).promise.toFuture
-    def describeCacheSubnetGroupsFuture(params: DescribeCacheSubnetGroupsMessage): Future[CacheSubnetGroupMessage] =
-      service.describeCacheSubnetGroups(params).promise.toFuture
-    def describeEngineDefaultParametersFuture(
+    @inline def describeCacheSubnetGroupsFuture(
+        params: DescribeCacheSubnetGroupsMessage
+    ): Future[CacheSubnetGroupMessage] = service.describeCacheSubnetGroups(params).promise.toFuture
+    @inline def describeEngineDefaultParametersFuture(
         params: DescribeEngineDefaultParametersMessage
     ): Future[DescribeEngineDefaultParametersResult] = service.describeEngineDefaultParameters(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeReplicationGroupsFuture(params: DescribeReplicationGroupsMessage): Future[ReplicationGroupMessage] =
-      service.describeReplicationGroups(params).promise.toFuture
-    def describeReservedCacheNodesFuture(params: DescribeReservedCacheNodesMessage): Future[ReservedCacheNodeMessage] =
-      service.describeReservedCacheNodes(params).promise.toFuture
-    def describeReservedCacheNodesOfferingsFuture(
+    @inline def describeReplicationGroupsFuture(
+        params: DescribeReplicationGroupsMessage
+    ): Future[ReplicationGroupMessage] = service.describeReplicationGroups(params).promise.toFuture
+    @inline def describeReservedCacheNodesFuture(
+        params: DescribeReservedCacheNodesMessage
+    ): Future[ReservedCacheNodeMessage] = service.describeReservedCacheNodes(params).promise.toFuture
+    @inline def describeReservedCacheNodesOfferingsFuture(
         params: DescribeReservedCacheNodesOfferingsMessage
     ): Future[ReservedCacheNodesOfferingMessage] = service.describeReservedCacheNodesOfferings(params).promise.toFuture
-    def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
+    @inline def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
       service.describeServiceUpdates(params).promise.toFuture
-    def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
+    @inline def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
       service.describeSnapshots(params).promise.toFuture
-    def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
+    @inline def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
       service.describeUpdateActions(params).promise.toFuture
-    def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
+    @inline def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
       service.increaseReplicaCount(params).promise.toFuture
-    def listAllowedNodeTypeModificationsFuture(
+    @inline def listAllowedNodeTypeModificationsFuture(
         params: ListAllowedNodeTypeModificationsMessage
     ): Future[AllowedNodeTypeModificationsMessage] = service.listAllowedNodeTypeModifications(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
       service.listTagsForResource(params).promise.toFuture
-    def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] =
+    @inline def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] =
       service.modifyCacheCluster(params).promise.toFuture
-    def modifyCacheParameterGroupFuture(
+    @inline def modifyCacheParameterGroupFuture(
         params: ModifyCacheParameterGroupMessage
     ): Future[CacheParameterGroupNameMessage] = service.modifyCacheParameterGroup(params).promise.toFuture
-    def modifyCacheSubnetGroupFuture(params: ModifyCacheSubnetGroupMessage): Future[ModifyCacheSubnetGroupResult] =
-      service.modifyCacheSubnetGroup(params).promise.toFuture
-    def modifyReplicationGroupFuture(params: ModifyReplicationGroupMessage): Future[ModifyReplicationGroupResult] =
-      service.modifyReplicationGroup(params).promise.toFuture
-    def modifyReplicationGroupShardConfigurationFuture(
+    @inline def modifyCacheSubnetGroupFuture(
+        params: ModifyCacheSubnetGroupMessage
+    ): Future[ModifyCacheSubnetGroupResult] = service.modifyCacheSubnetGroup(params).promise.toFuture
+    @inline def modifyReplicationGroupFuture(
+        params: ModifyReplicationGroupMessage
+    ): Future[ModifyReplicationGroupResult] = service.modifyReplicationGroup(params).promise.toFuture
+    @inline def modifyReplicationGroupShardConfigurationFuture(
         params: ModifyReplicationGroupShardConfigurationMessage
     ): Future[ModifyReplicationGroupShardConfigurationResult] =
       service.modifyReplicationGroupShardConfiguration(params).promise.toFuture
-    def purchaseReservedCacheNodesOfferingFuture(
+    @inline def purchaseReservedCacheNodesOfferingFuture(
         params: PurchaseReservedCacheNodesOfferingMessage
     ): Future[PurchaseReservedCacheNodesOfferingResult] =
       service.purchaseReservedCacheNodesOffering(params).promise.toFuture
-    def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] =
+    @inline def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] =
       service.rebootCacheCluster(params).promise.toFuture
-    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] =
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] =
       service.removeTagsFromResource(params).promise.toFuture
-    def resetCacheParameterGroupFuture(
+    @inline def resetCacheParameterGroupFuture(
         params: ResetCacheParameterGroupMessage
     ): Future[CacheParameterGroupNameMessage] = service.resetCacheParameterGroup(params).promise.toFuture
-    def revokeCacheSecurityGroupIngressFuture(
+    @inline def revokeCacheSecurityGroupIngressFuture(
         params: RevokeCacheSecurityGroupIngressMessage
     ): Future[RevokeCacheSecurityGroupIngressResult] = service.revokeCacheSecurityGroupIngress(params).promise.toFuture
-    def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] =
+    @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] =
       service.testFailover(params).promise.toFuture
   }
 }
@@ -284,6 +294,7 @@ package elasticache {
   }
 
   object AddTagsToResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -307,6 +318,7 @@ package elasticache {
   }
 
   object AllowedNodeTypeModificationsMessage {
+    @inline
     def apply(
         ScaleDownModifications: js.UndefOr[NodeTypeList] = js.undefined,
         ScaleUpModifications: js.UndefOr[NodeTypeList] = js.undefined
@@ -329,6 +341,7 @@ package elasticache {
   }
 
   object AuthorizeCacheSecurityGroupIngressMessage {
+    @inline
     def apply(
         CacheSecurityGroupName: String,
         EC2SecurityGroupName: String,
@@ -350,6 +363,7 @@ package elasticache {
   }
 
   object AuthorizeCacheSecurityGroupIngressResult {
+    @inline
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): AuthorizeCacheSecurityGroupIngressResult = {
@@ -377,6 +391,7 @@ package elasticache {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
@@ -393,6 +408,7 @@ package elasticache {
   }
 
   object BatchApplyUpdateActionMessage {
+    @inline
     def apply(
         ReplicationGroupIds: ReplicationGroupIdList,
         ServiceUpdateName: String
@@ -413,6 +429,7 @@ package elasticache {
   }
 
   object BatchStopUpdateActionMessage {
+    @inline
     def apply(
         ReplicationGroupIds: ReplicationGroupIdList,
         ServiceUpdateName: String
@@ -459,6 +476,7 @@ package elasticache {
   }
 
   object CacheCluster {
+    @inline
     def apply(
         AtRestEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         AuthTokenEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -534,6 +552,7 @@ package elasticache {
   }
 
   object CacheClusterMessage {
+    @inline
     def apply(
         CacheClusters: js.UndefOr[CacheClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -558,6 +577,7 @@ package elasticache {
   }
 
   object CacheEngineVersion {
+    @inline
     def apply(
         CacheEngineDescription: js.UndefOr[String] = js.undefined,
         CacheEngineVersionDescription: js.UndefOr[String] = js.undefined,
@@ -589,6 +609,7 @@ package elasticache {
   }
 
   object CacheEngineVersionMessage {
+    @inline
     def apply(
         CacheEngineVersions: js.UndefOr[CacheEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -640,6 +661,7 @@ package elasticache {
   }
 
   object CacheNode {
+    @inline
     def apply(
         CacheNodeCreateTime: js.UndefOr[TStamp] = js.undefined,
         CacheNodeId: js.UndefOr[String] = js.undefined,
@@ -678,6 +700,7 @@ package elasticache {
   }
 
   object CacheNodeTypeSpecificParameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         CacheNodeTypeSpecificValues: js.UndefOr[CacheNodeTypeSpecificValueList] = js.undefined,
@@ -715,6 +738,7 @@ package elasticache {
   }
 
   object CacheNodeTypeSpecificValue {
+    @inline
     def apply(
         CacheNodeType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -737,6 +761,7 @@ package elasticache {
   }
 
   object CacheParameterGroup {
+    @inline
     def apply(
         CacheParameterGroupFamily: js.UndefOr[String] = js.undefined,
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -763,6 +788,7 @@ package elasticache {
   }
 
   object CacheParameterGroupDetails {
+    @inline
     def apply(
         CacheNodeTypeSpecificParameters: js.UndefOr[CacheNodeTypeSpecificParametersList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -789,6 +815,7 @@ package elasticache {
   }
 
   object CacheParameterGroupNameMessage {
+    @inline
     def apply(
         CacheParameterGroupName: js.UndefOr[String] = js.undefined
     ): CacheParameterGroupNameMessage = {
@@ -809,6 +836,7 @@ package elasticache {
   }
 
   object CacheParameterGroupStatus {
+    @inline
     def apply(
         CacheNodeIdsToReboot: js.UndefOr[CacheNodeIdsList] = js.undefined,
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -832,6 +860,7 @@ package elasticache {
   }
 
   object CacheParameterGroupsMessage {
+    @inline
     def apply(
         CacheParameterGroups: js.UndefOr[CacheParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -858,6 +887,7 @@ package elasticache {
   }
 
   object CacheSecurityGroup {
+    @inline
     def apply(
         CacheSecurityGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -883,6 +913,7 @@ package elasticache {
   }
 
   object CacheSecurityGroupMembership {
+    @inline
     def apply(
         CacheSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -904,6 +935,7 @@ package elasticache {
   }
 
   object CacheSecurityGroupMessage {
+    @inline
     def apply(
         CacheSecurityGroups: js.UndefOr[CacheSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -929,6 +961,7 @@ package elasticache {
   }
 
   object CacheSubnetGroup {
+    @inline
     def apply(
         CacheSubnetGroupDescription: js.UndefOr[String] = js.undefined,
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
@@ -956,6 +989,7 @@ package elasticache {
   }
 
   object CacheSubnetGroupMessage {
+    @inline
     def apply(
         CacheSubnetGroups: js.UndefOr[CacheSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -985,6 +1019,7 @@ package elasticache {
   }
 
   object ConfigureShard {
+    @inline
     def apply(
         NewReplicaCount: Int,
         NodeGroupId: AllowedNodeGroupId,
@@ -1013,6 +1048,7 @@ package elasticache {
   }
 
   object CopySnapshotMessage {
+    @inline
     def apply(
         SourceSnapshotName: String,
         TargetSnapshotName: String,
@@ -1034,6 +1070,7 @@ package elasticache {
   }
 
   object CopySnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CopySnapshotResult = {
@@ -1074,6 +1111,7 @@ package elasticache {
   }
 
   object CreateCacheClusterMessage {
+    @inline
     def apply(
         CacheClusterId: String,
         AZMode: js.UndefOr[AZMode] = js.undefined,
@@ -1141,6 +1179,7 @@ package elasticache {
   }
 
   object CreateCacheClusterResult {
+    @inline
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): CreateCacheClusterResult = {
@@ -1161,6 +1200,7 @@ package elasticache {
   }
 
   object CreateCacheParameterGroupMessage {
+    @inline
     def apply(
         CacheParameterGroupFamily: String,
         CacheParameterGroupName: String,
@@ -1182,6 +1222,7 @@ package elasticache {
   }
 
   object CreateCacheParameterGroupResult {
+    @inline
     def apply(
         CacheParameterGroup: js.UndefOr[CacheParameterGroup] = js.undefined
     ): CreateCacheParameterGroupResult = {
@@ -1201,6 +1242,7 @@ package elasticache {
   }
 
   object CreateCacheSecurityGroupMessage {
+    @inline
     def apply(
         CacheSecurityGroupName: String,
         Description: String
@@ -1220,6 +1262,7 @@ package elasticache {
   }
 
   object CreateCacheSecurityGroupResult {
+    @inline
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): CreateCacheSecurityGroupResult = {
@@ -1240,6 +1283,7 @@ package elasticache {
   }
 
   object CreateCacheSubnetGroupMessage {
+    @inline
     def apply(
         CacheSubnetGroupDescription: String,
         CacheSubnetGroupName: String,
@@ -1261,6 +1305,7 @@ package elasticache {
   }
 
   object CreateCacheSubnetGroupResult {
+    @inline
     def apply(
         CacheSubnetGroup: js.UndefOr[CacheSubnetGroup] = js.undefined
     ): CreateCacheSubnetGroupResult = {
@@ -1306,6 +1351,7 @@ package elasticache {
   }
 
   object CreateReplicationGroupMessage {
+    @inline
     def apply(
         ReplicationGroupDescription: String,
         ReplicationGroupId: String,
@@ -1379,6 +1425,7 @@ package elasticache {
   }
 
   object CreateReplicationGroupResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): CreateReplicationGroupResult = {
@@ -1399,6 +1446,7 @@ package elasticache {
   }
 
   object CreateSnapshotMessage {
+    @inline
     def apply(
         SnapshotName: String,
         CacheClusterId: js.UndefOr[String] = js.undefined,
@@ -1420,6 +1468,7 @@ package elasticache {
   }
 
   object CreateSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CreateSnapshotResult = {
@@ -1439,6 +1488,7 @@ package elasticache {
   }
 
   object DecreaseReplicaCountMessage {
+    @inline
     def apply(
         ApplyImmediately: Boolean,
         ReplicationGroupId: String,
@@ -1464,6 +1514,7 @@ package elasticache {
   }
 
   object DecreaseReplicaCountResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): DecreaseReplicaCountResult = {
@@ -1483,6 +1534,7 @@ package elasticache {
   }
 
   object DeleteCacheClusterMessage {
+    @inline
     def apply(
         CacheClusterId: String,
         FinalSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -1502,6 +1554,7 @@ package elasticache {
   }
 
   object DeleteCacheClusterResult {
+    @inline
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): DeleteCacheClusterResult = {
@@ -1520,6 +1573,7 @@ package elasticache {
   }
 
   object DeleteCacheParameterGroupMessage {
+    @inline
     def apply(
         CacheParameterGroupName: String
     ): DeleteCacheParameterGroupMessage = {
@@ -1540,6 +1594,7 @@ package elasticache {
   }
 
   object DeleteCacheSecurityGroupMessage {
+    @inline
     def apply(
         CacheSecurityGroupName: String
     ): DeleteCacheSecurityGroupMessage = {
@@ -1560,6 +1615,7 @@ package elasticache {
   }
 
   object DeleteCacheSubnetGroupMessage {
+    @inline
     def apply(
         CacheSubnetGroupName: String
     ): DeleteCacheSubnetGroupMessage = {
@@ -1582,6 +1638,7 @@ package elasticache {
   }
 
   object DeleteReplicationGroupMessage {
+    @inline
     def apply(
         ReplicationGroupId: String,
         FinalSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -1603,6 +1660,7 @@ package elasticache {
   }
 
   object DeleteReplicationGroupResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): DeleteReplicationGroupResult = {
@@ -1621,6 +1679,7 @@ package elasticache {
   }
 
   object DeleteSnapshotMessage {
+    @inline
     def apply(
         SnapshotName: String
     ): DeleteSnapshotMessage = {
@@ -1638,6 +1697,7 @@ package elasticache {
   }
 
   object DeleteSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): DeleteSnapshotResult = {
@@ -1660,6 +1720,7 @@ package elasticache {
   }
 
   object DescribeCacheClustersMessage {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1693,6 +1754,7 @@ package elasticache {
   }
 
   object DescribeCacheEngineVersionsMessage {
+    @inline
     def apply(
         CacheParameterGroupFamily: js.UndefOr[String] = js.undefined,
         DefaultOnly: js.UndefOr[Boolean] = js.undefined,
@@ -1725,6 +1787,7 @@ package elasticache {
   }
 
   object DescribeCacheParameterGroupsMessage {
+    @inline
     def apply(
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1750,6 +1813,7 @@ package elasticache {
   }
 
   object DescribeCacheParametersMessage {
+    @inline
     def apply(
         CacheParameterGroupName: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1778,6 +1842,7 @@ package elasticache {
   }
 
   object DescribeCacheSecurityGroupsMessage {
+    @inline
     def apply(
         CacheSecurityGroupName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1802,6 +1867,7 @@ package elasticache {
   }
 
   object DescribeCacheSubnetGroupsMessage {
+    @inline
     def apply(
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1826,6 +1892,7 @@ package elasticache {
   }
 
   object DescribeEngineDefaultParametersMessage {
+    @inline
     def apply(
         CacheParameterGroupFamily: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1847,6 +1914,7 @@ package elasticache {
   }
 
   object DescribeEngineDefaultParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
@@ -1871,6 +1939,7 @@ package elasticache {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -1903,6 +1972,7 @@ package elasticache {
   }
 
   object DescribeReplicationGroupsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1932,6 +2002,7 @@ package elasticache {
   }
 
   object DescribeReservedCacheNodesMessage {
+    @inline
     def apply(
         CacheNodeType: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[String] = js.undefined,
@@ -1972,6 +2043,7 @@ package elasticache {
   }
 
   object DescribeReservedCacheNodesOfferingsMessage {
+    @inline
     def apply(
         CacheNodeType: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[String] = js.undefined,
@@ -2004,6 +2076,7 @@ package elasticache {
   }
 
   object DescribeServiceUpdatesMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2029,6 +2102,7 @@ package elasticache {
   }
 
   object DescribeSnapshotsListMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Snapshots: js.UndefOr[SnapshotList] = js.undefined
@@ -2055,6 +2129,7 @@ package elasticache {
   }
 
   object DescribeSnapshotsMessage {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2089,6 +2164,7 @@ package elasticache {
   }
 
   object DescribeUpdateActionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2125,6 +2201,7 @@ package elasticache {
   }
 
   object EC2SecurityGroup {
+    @inline
     def apply(
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
@@ -2148,6 +2225,7 @@ package elasticache {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
@@ -2171,6 +2249,7 @@ package elasticache {
   }
 
   object EngineDefaults {
+    @inline
     def apply(
         CacheNodeTypeSpecificParameters: js.UndefOr[CacheNodeTypeSpecificParametersList] = js.undefined,
         CacheParameterGroupFamily: js.UndefOr[String] = js.undefined,
@@ -2202,6 +2281,7 @@ package elasticache {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         Message: js.UndefOr[String] = js.undefined,
@@ -2227,6 +2307,7 @@ package elasticache {
   }
 
   object EventsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2247,6 +2328,7 @@ package elasticache {
   }
 
   object IncreaseReplicaCountMessage {
+    @inline
     def apply(
         ApplyImmediately: Boolean,
         ReplicationGroupId: String,
@@ -2270,6 +2352,7 @@ package elasticache {
   }
 
   object IncreaseReplicaCountResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): IncreaseReplicaCountResult = {
@@ -2289,6 +2372,7 @@ package elasticache {
   }
 
   object ListAllowedNodeTypeModificationsMessage {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined
@@ -2309,6 +2393,7 @@ package elasticache {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceName: String
     ): ListTagsForResourceMessage = {
@@ -2345,6 +2430,7 @@ package elasticache {
   }
 
   object ModifyCacheClusterMessage {
+    @inline
     def apply(
         CacheClusterId: String,
         AZMode: js.UndefOr[AZMode] = js.undefined,
@@ -2396,6 +2482,7 @@ package elasticache {
   }
 
   object ModifyCacheClusterResult {
+    @inline
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): ModifyCacheClusterResult = {
@@ -2415,6 +2502,7 @@ package elasticache {
   }
 
   object ModifyCacheParameterGroupMessage {
+    @inline
     def apply(
         CacheParameterGroupName: String,
         ParameterNameValues: ParameterNameValueList
@@ -2439,6 +2527,7 @@ package elasticache {
   }
 
   object ModifyCacheSubnetGroupMessage {
+    @inline
     def apply(
         CacheSubnetGroupName: String,
         CacheSubnetGroupDescription: js.UndefOr[String] = js.undefined,
@@ -2462,6 +2551,7 @@ package elasticache {
   }
 
   object ModifyCacheSubnetGroupResult {
+    @inline
     def apply(
         CacheSubnetGroup: js.UndefOr[CacheSubnetGroup] = js.undefined
     ): ModifyCacheSubnetGroupResult = {
@@ -2497,6 +2587,7 @@ package elasticache {
   }
 
   object ModifyReplicationGroupMessage {
+    @inline
     def apply(
         ReplicationGroupId: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -2552,6 +2643,7 @@ package elasticache {
   }
 
   object ModifyReplicationGroupResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): ModifyReplicationGroupResult = {
@@ -2575,6 +2667,7 @@ package elasticache {
   }
 
   object ModifyReplicationGroupShardConfigurationMessage {
+    @inline
     def apply(
         ApplyImmediately: Boolean,
         NodeGroupCount: Int,
@@ -2602,6 +2695,7 @@ package elasticache {
   }
 
   object ModifyReplicationGroupShardConfigurationResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): ModifyReplicationGroupShardConfigurationResult = {
@@ -2625,6 +2719,7 @@ package elasticache {
   }
 
   object NodeGroup {
+    @inline
     def apply(
         NodeGroupId: js.UndefOr[String] = js.undefined,
         NodeGroupMembers: js.UndefOr[NodeGroupMemberList] = js.undefined,
@@ -2657,6 +2752,7 @@ package elasticache {
   }
 
   object NodeGroupConfiguration {
+    @inline
     def apply(
         NodeGroupId: js.UndefOr[AllowedNodeGroupId] = js.undefined,
         PrimaryAvailabilityZone: js.UndefOr[String] = js.undefined,
@@ -2687,6 +2783,7 @@ package elasticache {
   }
 
   object NodeGroupMember {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         CacheNodeId: js.UndefOr[String] = js.undefined,
@@ -2723,6 +2820,7 @@ package elasticache {
   }
 
   object NodeGroupMemberUpdateStatus {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         CacheNodeId: js.UndefOr[String] = js.undefined,
@@ -2760,6 +2858,7 @@ package elasticache {
   }
 
   object NodeGroupUpdateStatus {
+    @inline
     def apply(
         NodeGroupId: js.UndefOr[String] = js.undefined,
         NodeGroupMemberUpdateStatus: js.UndefOr[NodeGroupMemberUpdateStatusList] = js.undefined
@@ -2788,6 +2887,7 @@ package elasticache {
   }
 
   object NodeSnapshot {
+    @inline
     def apply(
         CacheClusterId: js.UndefOr[String] = js.undefined,
         CacheNodeCreateTime: js.UndefOr[TStamp] = js.undefined,
@@ -2838,6 +2938,7 @@ package elasticache {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         TopicArn: js.UndefOr[String] = js.undefined,
         TopicStatus: js.UndefOr[String] = js.undefined
@@ -2866,6 +2967,7 @@ package elasticache {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ChangeType: js.UndefOr[ChangeType] = js.undefined,
@@ -2901,6 +3003,7 @@ package elasticache {
   }
 
   object ParameterNameValue {
+    @inline
     def apply(
         ParameterName: js.UndefOr[String] = js.undefined,
         ParameterValue: js.UndefOr[String] = js.undefined
@@ -2931,6 +3034,7 @@ package elasticache {
   }
 
   object PendingModifiedValues {
+    @inline
     def apply(
         CacheNodeIdsToRemove: js.UndefOr[CacheNodeIdsList] = js.undefined,
         CacheNodeType: js.UndefOr[String] = js.undefined,
@@ -2957,6 +3061,7 @@ package elasticache {
   }
 
   object ProcessedUpdateAction {
+    @inline
     def apply(
         ReplicationGroupId: js.UndefOr[String] = js.undefined,
         ServiceUpdateName: js.UndefOr[String] = js.undefined,
@@ -2981,6 +3086,7 @@ package elasticache {
   }
 
   object PurchaseReservedCacheNodesOfferingMessage {
+    @inline
     def apply(
         ReservedCacheNodesOfferingId: String,
         CacheNodeCount: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3002,6 +3108,7 @@ package elasticache {
   }
 
   object PurchaseReservedCacheNodesOfferingResult {
+    @inline
     def apply(
         ReservedCacheNode: js.UndefOr[ReservedCacheNode] = js.undefined
     ): PurchaseReservedCacheNodesOfferingResult = {
@@ -3021,6 +3128,7 @@ package elasticache {
   }
 
   object RebootCacheClusterMessage {
+    @inline
     def apply(
         CacheClusterId: String,
         CacheNodeIdsToReboot: CacheNodeIdsList
@@ -3040,6 +3148,7 @@ package elasticache {
   }
 
   object RebootCacheClusterResult {
+    @inline
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): RebootCacheClusterResult = {
@@ -3059,6 +3168,7 @@ package elasticache {
   }
 
   object RecurringCharge {
+    @inline
     def apply(
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
@@ -3080,6 +3190,7 @@ package elasticache {
   }
 
   object RemoveTagsFromResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: KeyList
@@ -3117,6 +3228,7 @@ package elasticache {
   }
 
   object ReplicationGroup {
+    @inline
     def apply(
         AtRestEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         AuthTokenEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3166,6 +3278,7 @@ package elasticache {
   }
 
   object ReplicationGroupMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationGroups: js.UndefOr[ReplicationGroupList] = js.undefined
@@ -3188,6 +3301,7 @@ package elasticache {
   }
 
   object ReplicationGroupPendingModifiedValues {
+    @inline
     def apply(
         AutomaticFailoverStatus: js.UndefOr[PendingAutomaticFailoverStatus] = js.undefined,
         PrimaryClusterId: js.UndefOr[String] = js.undefined,
@@ -3222,6 +3336,7 @@ package elasticache {
   }
 
   object ReservedCacheNode {
+    @inline
     def apply(
         CacheNodeCount: js.UndefOr[Int] = js.undefined,
         CacheNodeType: js.UndefOr[String] = js.undefined,
@@ -3267,6 +3382,7 @@ package elasticache {
   }
 
   object ReservedCacheNodeMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedCacheNodes: js.UndefOr[ReservedCacheNodeList] = js.undefined
@@ -3294,6 +3410,7 @@ package elasticache {
   }
 
   object ReservedCacheNodesOffering {
+    @inline
     def apply(
         CacheNodeType: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Int] = js.undefined,
@@ -3329,6 +3446,7 @@ package elasticache {
   }
 
   object ReservedCacheNodesOfferingMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedCacheNodesOfferings: js.UndefOr[ReservedCacheNodesOfferingList] = js.undefined
@@ -3353,6 +3471,7 @@ package elasticache {
   }
 
   object ResetCacheParameterGroupMessage {
+    @inline
     def apply(
         CacheParameterGroupName: String,
         ParameterNameValues: js.UndefOr[ParameterNameValueList] = js.undefined,
@@ -3378,6 +3497,7 @@ package elasticache {
   }
 
   object ReshardingConfiguration {
+    @inline
     def apply(
         NodeGroupId: js.UndefOr[AllowedNodeGroupId] = js.undefined,
         PreferredAvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined
@@ -3400,6 +3520,7 @@ package elasticache {
   }
 
   object ReshardingStatus {
+    @inline
     def apply(
         SlotMigration: js.UndefOr[SlotMigration] = js.undefined
     ): ReshardingStatus = {
@@ -3420,6 +3541,7 @@ package elasticache {
   }
 
   object RevokeCacheSecurityGroupIngressMessage {
+    @inline
     def apply(
         CacheSecurityGroupName: String,
         EC2SecurityGroupName: String,
@@ -3441,6 +3563,7 @@ package elasticache {
   }
 
   object RevokeCacheSecurityGroupIngressResult {
+    @inline
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): RevokeCacheSecurityGroupIngressResult = {
@@ -3460,6 +3583,7 @@ package elasticache {
   }
 
   object SecurityGroupMembership {
+    @inline
     def apply(
         SecurityGroupId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -3491,6 +3615,7 @@ package elasticache {
   }
 
   object ServiceUpdate {
+    @inline
     def apply(
         AutoUpdateAfterRecommendedApplyByDate: js.UndefOr[BooleanOptional] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
@@ -3556,6 +3681,7 @@ package elasticache {
   }
 
   object ServiceUpdatesMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ServiceUpdates: js.UndefOr[ServiceUpdateList] = js.undefined
@@ -3584,6 +3710,7 @@ package elasticache {
   }
 
   object SlotMigration {
+    @inline
     def apply(
         ProgressPercentage: js.UndefOr[Double] = js.undefined
     ): SlotMigration = {
@@ -3625,6 +3752,7 @@ package elasticache {
   }
 
   object Snapshot {
+    @inline
     def apply(
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AutomaticFailover: js.UndefOr[AutomaticFailoverStatus] = js.undefined,
@@ -3714,6 +3842,7 @@ package elasticache {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined
@@ -3735,6 +3864,7 @@ package elasticache {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -3755,6 +3885,7 @@ package elasticache {
   }
 
   object TagListMessage {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
@@ -3771,6 +3902,7 @@ package elasticache {
   }
 
   object TestFailoverMessage {
+    @inline
     def apply(
         NodeGroupId: AllowedNodeGroupId,
         ReplicationGroupId: String
@@ -3790,6 +3922,7 @@ package elasticache {
   }
 
   object TestFailoverResult {
+    @inline
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): TestFailoverResult = {
@@ -3809,6 +3942,7 @@ package elasticache {
   }
 
   object TimeRangeFilter {
+    @inline
     def apply(
         EndTime: js.UndefOr[TStamp] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
@@ -3832,6 +3966,7 @@ package elasticache {
   }
 
   object UnprocessedUpdateAction {
+    @inline
     def apply(
         ErrorMessage: js.UndefOr[String] = js.undefined,
         ErrorType: js.UndefOr[String] = js.undefined,
@@ -3869,6 +4004,7 @@ package elasticache {
   }
 
   object UpdateAction {
+    @inline
     def apply(
         EstimatedUpdateTime: js.UndefOr[String] = js.undefined,
         NodeGroupUpdateStatus: js.UndefOr[NodeGroupUpdateStatusList] = js.undefined,
@@ -3917,6 +4053,7 @@ package elasticache {
   }
 
   object UpdateActionResultsMessage {
+    @inline
     def apply(
         ProcessedUpdateActions: js.UndefOr[ProcessedUpdateActionList] = js.undefined,
         UnprocessedUpdateActions: js.UndefOr[UnprocessedUpdateActionList] = js.undefined
@@ -3947,6 +4084,7 @@ package elasticache {
   }
 
   object UpdateActionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         UpdateActions: js.UndefOr[UpdateActionList] = js.undefined

@@ -221,263 +221,274 @@ package object glue {
 
   implicit final class GlueOps(private val service: Glue) extends AnyVal {
 
-    def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
+    @inline def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
       service.batchCreatePartition(params).promise.toFuture
-    def batchDeleteConnectionFuture(params: BatchDeleteConnectionRequest): Future[BatchDeleteConnectionResponse] =
-      service.batchDeleteConnection(params).promise.toFuture
-    def batchDeletePartitionFuture(params: BatchDeletePartitionRequest): Future[BatchDeletePartitionResponse] =
+    @inline def batchDeleteConnectionFuture(
+        params: BatchDeleteConnectionRequest
+    ): Future[BatchDeleteConnectionResponse] = service.batchDeleteConnection(params).promise.toFuture
+    @inline def batchDeletePartitionFuture(params: BatchDeletePartitionRequest): Future[BatchDeletePartitionResponse] =
       service.batchDeletePartition(params).promise.toFuture
-    def batchDeleteTableFuture(params: BatchDeleteTableRequest): Future[BatchDeleteTableResponse] =
+    @inline def batchDeleteTableFuture(params: BatchDeleteTableRequest): Future[BatchDeleteTableResponse] =
       service.batchDeleteTable(params).promise.toFuture
-    def batchDeleteTableVersionFuture(params: BatchDeleteTableVersionRequest): Future[BatchDeleteTableVersionResponse] =
-      service.batchDeleteTableVersion(params).promise.toFuture
-    def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] =
+    @inline def batchDeleteTableVersionFuture(
+        params: BatchDeleteTableVersionRequest
+    ): Future[BatchDeleteTableVersionResponse] = service.batchDeleteTableVersion(params).promise.toFuture
+    @inline def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] =
       service.batchGetCrawlers(params).promise.toFuture
-    def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] =
+    @inline def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] =
       service.batchGetDevEndpoints(params).promise.toFuture
-    def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] =
+    @inline def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] =
       service.batchGetJobs(params).promise.toFuture
-    def batchGetPartitionFuture(params: BatchGetPartitionRequest): Future[BatchGetPartitionResponse] =
+    @inline def batchGetPartitionFuture(params: BatchGetPartitionRequest): Future[BatchGetPartitionResponse] =
       service.batchGetPartition(params).promise.toFuture
-    def batchGetTriggersFuture(params: BatchGetTriggersRequest): Future[BatchGetTriggersResponse] =
+    @inline def batchGetTriggersFuture(params: BatchGetTriggersRequest): Future[BatchGetTriggersResponse] =
       service.batchGetTriggers(params).promise.toFuture
-    def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] =
+    @inline def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] =
       service.batchGetWorkflows(params).promise.toFuture
-    def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] =
+    @inline def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] =
       service.batchStopJobRun(params).promise.toFuture
-    def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] =
+    @inline def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] =
       service.cancelMLTaskRun(params).promise.toFuture
-    def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] =
+    @inline def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] =
       service.createClassifier(params).promise.toFuture
-    def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] =
+    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] =
       service.createConnection(params).promise.toFuture
-    def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] =
+    @inline def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] =
       service.createCrawler(params).promise.toFuture
-    def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] =
+    @inline def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] =
       service.createDatabase(params).promise.toFuture
-    def createDevEndpointFuture(params: CreateDevEndpointRequest): Future[CreateDevEndpointResponse] =
+    @inline def createDevEndpointFuture(params: CreateDevEndpointRequest): Future[CreateDevEndpointResponse] =
       service.createDevEndpoint(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] =
+    @inline def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] =
       service.createMLTransform(params).promise.toFuture
-    def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] =
+    @inline def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] =
       service.createPartition(params).promise.toFuture
-    def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] =
+    @inline def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] =
       service.createScript(params).promise.toFuture
-    def createSecurityConfigurationFuture(
+    @inline def createSecurityConfigurationFuture(
         params: CreateSecurityConfigurationRequest
     ): Future[CreateSecurityConfigurationResponse] = service.createSecurityConfiguration(params).promise.toFuture
-    def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] =
+    @inline def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] =
       service.createTable(params).promise.toFuture
-    def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] =
+    @inline def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] =
       service.createTrigger(params).promise.toFuture
-    def createUserDefinedFunctionFuture(
+    @inline def createUserDefinedFunctionFuture(
         params: CreateUserDefinedFunctionRequest
     ): Future[CreateUserDefinedFunctionResponse] = service.createUserDefinedFunction(params).promise.toFuture
-    def createWorkflowFuture(params: CreateWorkflowRequest): Future[CreateWorkflowResponse] =
+    @inline def createWorkflowFuture(params: CreateWorkflowRequest): Future[CreateWorkflowResponse] =
       service.createWorkflow(params).promise.toFuture
-    def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] =
+    @inline def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] =
       service.deleteClassifier(params).promise.toFuture
-    def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] =
+    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] =
       service.deleteConnection(params).promise.toFuture
-    def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] =
+    @inline def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] =
       service.deleteCrawler(params).promise.toFuture
-    def deleteDatabaseFuture(params: DeleteDatabaseRequest): Future[DeleteDatabaseResponse] =
+    @inline def deleteDatabaseFuture(params: DeleteDatabaseRequest): Future[DeleteDatabaseResponse] =
       service.deleteDatabase(params).promise.toFuture
-    def deleteDevEndpointFuture(params: DeleteDevEndpointRequest): Future[DeleteDevEndpointResponse] =
+    @inline def deleteDevEndpointFuture(params: DeleteDevEndpointRequest): Future[DeleteDevEndpointResponse] =
       service.deleteDevEndpoint(params).promise.toFuture
-    def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] =
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] =
       service.deleteJob(params).promise.toFuture
-    def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] =
+    @inline def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] =
       service.deleteMLTransform(params).promise.toFuture
-    def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] =
+    @inline def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] =
       service.deletePartition(params).promise.toFuture
-    def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
       service.deleteResourcePolicy(params).promise.toFuture
-    def deleteSecurityConfigurationFuture(
+    @inline def deleteSecurityConfigurationFuture(
         params: DeleteSecurityConfigurationRequest
     ): Future[DeleteSecurityConfigurationResponse] = service.deleteSecurityConfiguration(params).promise.toFuture
-    def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] =
+    @inline def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] =
       service.deleteTable(params).promise.toFuture
-    def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] =
+    @inline def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] =
       service.deleteTableVersion(params).promise.toFuture
-    def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] =
+    @inline def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] =
       service.deleteTrigger(params).promise.toFuture
-    def deleteUserDefinedFunctionFuture(
+    @inline def deleteUserDefinedFunctionFuture(
         params: DeleteUserDefinedFunctionRequest
     ): Future[DeleteUserDefinedFunctionResponse] = service.deleteUserDefinedFunction(params).promise.toFuture
-    def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] =
+    @inline def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] =
       service.deleteWorkflow(params).promise.toFuture
-    def getCatalogImportStatusFuture(params: GetCatalogImportStatusRequest): Future[GetCatalogImportStatusResponse] =
-      service.getCatalogImportStatus(params).promise.toFuture
-    def getClassifierFuture(params: GetClassifierRequest): Future[GetClassifierResponse] =
+    @inline def getCatalogImportStatusFuture(
+        params: GetCatalogImportStatusRequest
+    ): Future[GetCatalogImportStatusResponse] = service.getCatalogImportStatus(params).promise.toFuture
+    @inline def getClassifierFuture(params: GetClassifierRequest): Future[GetClassifierResponse] =
       service.getClassifier(params).promise.toFuture
-    def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] =
+    @inline def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] =
       service.getClassifiers(params).promise.toFuture
-    def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
+    @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
       service.getConnection(params).promise.toFuture
-    def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] =
+    @inline def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] =
       service.getConnections(params).promise.toFuture
-    def getCrawlerFuture(params: GetCrawlerRequest): Future[GetCrawlerResponse] =
+    @inline def getCrawlerFuture(params: GetCrawlerRequest): Future[GetCrawlerResponse] =
       service.getCrawler(params).promise.toFuture
-    def getCrawlerMetricsFuture(params: GetCrawlerMetricsRequest): Future[GetCrawlerMetricsResponse] =
+    @inline def getCrawlerMetricsFuture(params: GetCrawlerMetricsRequest): Future[GetCrawlerMetricsResponse] =
       service.getCrawlerMetrics(params).promise.toFuture
-    def getCrawlersFuture(params: GetCrawlersRequest): Future[GetCrawlersResponse] =
+    @inline def getCrawlersFuture(params: GetCrawlersRequest): Future[GetCrawlersResponse] =
       service.getCrawlers(params).promise.toFuture
-    def getDataCatalogEncryptionSettingsFuture(
+    @inline def getDataCatalogEncryptionSettingsFuture(
         params: GetDataCatalogEncryptionSettingsRequest
     ): Future[GetDataCatalogEncryptionSettingsResponse] =
       service.getDataCatalogEncryptionSettings(params).promise.toFuture
-    def getDatabaseFuture(params: GetDatabaseRequest): Future[GetDatabaseResponse] =
+    @inline def getDatabaseFuture(params: GetDatabaseRequest): Future[GetDatabaseResponse] =
       service.getDatabase(params).promise.toFuture
-    def getDatabasesFuture(params: GetDatabasesRequest): Future[GetDatabasesResponse] =
+    @inline def getDatabasesFuture(params: GetDatabasesRequest): Future[GetDatabasesResponse] =
       service.getDatabases(params).promise.toFuture
-    def getDataflowGraphFuture(params: GetDataflowGraphRequest): Future[GetDataflowGraphResponse] =
+    @inline def getDataflowGraphFuture(params: GetDataflowGraphRequest): Future[GetDataflowGraphResponse] =
       service.getDataflowGraph(params).promise.toFuture
-    def getDevEndpointFuture(params: GetDevEndpointRequest): Future[GetDevEndpointResponse] =
+    @inline def getDevEndpointFuture(params: GetDevEndpointRequest): Future[GetDevEndpointResponse] =
       service.getDevEndpoint(params).promise.toFuture
-    def getDevEndpointsFuture(params: GetDevEndpointsRequest): Future[GetDevEndpointsResponse] =
+    @inline def getDevEndpointsFuture(params: GetDevEndpointsRequest): Future[GetDevEndpointsResponse] =
       service.getDevEndpoints(params).promise.toFuture
-    def getJobBookmarkFuture(params: GetJobBookmarkRequest): Future[GetJobBookmarkResponse] =
+    @inline def getJobBookmarkFuture(params: GetJobBookmarkRequest): Future[GetJobBookmarkResponse] =
       service.getJobBookmark(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
-    def getJobRunFuture(params: GetJobRunRequest): Future[GetJobRunResponse] =
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
+    @inline def getJobRunFuture(params: GetJobRunRequest): Future[GetJobRunResponse] =
       service.getJobRun(params).promise.toFuture
-    def getJobRunsFuture(params: GetJobRunsRequest): Future[GetJobRunsResponse] =
+    @inline def getJobRunsFuture(params: GetJobRunsRequest): Future[GetJobRunsResponse] =
       service.getJobRuns(params).promise.toFuture
-    def getJobsFuture(params: GetJobsRequest): Future[GetJobsResponse] = service.getJobs(params).promise.toFuture
-    def getMLTaskRunFuture(params: GetMLTaskRunRequest): Future[GetMLTaskRunResponse] =
+    @inline def getJobsFuture(params: GetJobsRequest): Future[GetJobsResponse] =
+      service.getJobs(params).promise.toFuture
+    @inline def getMLTaskRunFuture(params: GetMLTaskRunRequest): Future[GetMLTaskRunResponse] =
       service.getMLTaskRun(params).promise.toFuture
-    def getMLTaskRunsFuture(params: GetMLTaskRunsRequest): Future[GetMLTaskRunsResponse] =
+    @inline def getMLTaskRunsFuture(params: GetMLTaskRunsRequest): Future[GetMLTaskRunsResponse] =
       service.getMLTaskRuns(params).promise.toFuture
-    def getMLTransformFuture(params: GetMLTransformRequest): Future[GetMLTransformResponse] =
+    @inline def getMLTransformFuture(params: GetMLTransformRequest): Future[GetMLTransformResponse] =
       service.getMLTransform(params).promise.toFuture
-    def getMLTransformsFuture(params: GetMLTransformsRequest): Future[GetMLTransformsResponse] =
+    @inline def getMLTransformsFuture(params: GetMLTransformsRequest): Future[GetMLTransformsResponse] =
       service.getMLTransforms(params).promise.toFuture
-    def getMappingFuture(params: GetMappingRequest): Future[GetMappingResponse] =
+    @inline def getMappingFuture(params: GetMappingRequest): Future[GetMappingResponse] =
       service.getMapping(params).promise.toFuture
-    def getPartitionFuture(params: GetPartitionRequest): Future[GetPartitionResponse] =
+    @inline def getPartitionFuture(params: GetPartitionRequest): Future[GetPartitionResponse] =
       service.getPartition(params).promise.toFuture
-    def getPartitionsFuture(params: GetPartitionsRequest): Future[GetPartitionsResponse] =
+    @inline def getPartitionsFuture(params: GetPartitionsRequest): Future[GetPartitionsResponse] =
       service.getPartitions(params).promise.toFuture
-    def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] = service.getPlan(params).promise.toFuture
-    def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
+    @inline def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] =
+      service.getPlan(params).promise.toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
       service.getResourcePolicy(params).promise.toFuture
-    def getSecurityConfigurationFuture(
+    @inline def getSecurityConfigurationFuture(
         params: GetSecurityConfigurationRequest
     ): Future[GetSecurityConfigurationResponse] = service.getSecurityConfiguration(params).promise.toFuture
-    def getSecurityConfigurationsFuture(
+    @inline def getSecurityConfigurationsFuture(
         params: GetSecurityConfigurationsRequest
-    ): Future[GetSecurityConfigurationsResponse]                          = service.getSecurityConfigurations(params).promise.toFuture
-    def getTableFuture(params: GetTableRequest): Future[GetTableResponse] = service.getTable(params).promise.toFuture
-    def getTableVersionFuture(params: GetTableVersionRequest): Future[GetTableVersionResponse] =
+    ): Future[GetSecurityConfigurationsResponse] = service.getSecurityConfigurations(params).promise.toFuture
+    @inline def getTableFuture(params: GetTableRequest): Future[GetTableResponse] =
+      service.getTable(params).promise.toFuture
+    @inline def getTableVersionFuture(params: GetTableVersionRequest): Future[GetTableVersionResponse] =
       service.getTableVersion(params).promise.toFuture
-    def getTableVersionsFuture(params: GetTableVersionsRequest): Future[GetTableVersionsResponse] =
+    @inline def getTableVersionsFuture(params: GetTableVersionsRequest): Future[GetTableVersionsResponse] =
       service.getTableVersions(params).promise.toFuture
-    def getTablesFuture(params: GetTablesRequest): Future[GetTablesResponse] =
+    @inline def getTablesFuture(params: GetTablesRequest): Future[GetTablesResponse] =
       service.getTables(params).promise.toFuture
-    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
-    def getTriggerFuture(params: GetTriggerRequest): Future[GetTriggerResponse] =
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
+      service.getTags(params).promise.toFuture
+    @inline def getTriggerFuture(params: GetTriggerRequest): Future[GetTriggerResponse] =
       service.getTrigger(params).promise.toFuture
-    def getTriggersFuture(params: GetTriggersRequest): Future[GetTriggersResponse] =
+    @inline def getTriggersFuture(params: GetTriggersRequest): Future[GetTriggersResponse] =
       service.getTriggers(params).promise.toFuture
-    def getUserDefinedFunctionFuture(params: GetUserDefinedFunctionRequest): Future[GetUserDefinedFunctionResponse] =
-      service.getUserDefinedFunction(params).promise.toFuture
-    def getUserDefinedFunctionsFuture(params: GetUserDefinedFunctionsRequest): Future[GetUserDefinedFunctionsResponse] =
-      service.getUserDefinedFunctions(params).promise.toFuture
-    def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] =
+    @inline def getUserDefinedFunctionFuture(
+        params: GetUserDefinedFunctionRequest
+    ): Future[GetUserDefinedFunctionResponse] = service.getUserDefinedFunction(params).promise.toFuture
+    @inline def getUserDefinedFunctionsFuture(
+        params: GetUserDefinedFunctionsRequest
+    ): Future[GetUserDefinedFunctionsResponse] = service.getUserDefinedFunctions(params).promise.toFuture
+    @inline def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] =
       service.getWorkflow(params).promise.toFuture
-    def getWorkflowRunFuture(params: GetWorkflowRunRequest): Future[GetWorkflowRunResponse] =
+    @inline def getWorkflowRunFuture(params: GetWorkflowRunRequest): Future[GetWorkflowRunResponse] =
       service.getWorkflowRun(params).promise.toFuture
-    def getWorkflowRunPropertiesFuture(
+    @inline def getWorkflowRunPropertiesFuture(
         params: GetWorkflowRunPropertiesRequest
     ): Future[GetWorkflowRunPropertiesResponse] = service.getWorkflowRunProperties(params).promise.toFuture
-    def getWorkflowRunsFuture(params: GetWorkflowRunsRequest): Future[GetWorkflowRunsResponse] =
+    @inline def getWorkflowRunsFuture(params: GetWorkflowRunsRequest): Future[GetWorkflowRunsResponse] =
       service.getWorkflowRuns(params).promise.toFuture
-    def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] =
+    @inline def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] =
       service.importCatalogToGlue(params).promise.toFuture
-    def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] =
+    @inline def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] =
       service.listCrawlers(params).promise.toFuture
-    def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] =
+    @inline def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] =
       service.listDevEndpoints(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
-    def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
+      service.listJobs(params).promise.toFuture
+    @inline def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] =
       service.listTriggers(params).promise.toFuture
-    def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] =
+    @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] =
       service.listWorkflows(params).promise.toFuture
-    def putDataCatalogEncryptionSettingsFuture(
+    @inline def putDataCatalogEncryptionSettingsFuture(
         params: PutDataCatalogEncryptionSettingsRequest
     ): Future[PutDataCatalogEncryptionSettingsResponse] =
       service.putDataCatalogEncryptionSettings(params).promise.toFuture
-    def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
       service.putResourcePolicy(params).promise.toFuture
-    def putWorkflowRunPropertiesFuture(
+    @inline def putWorkflowRunPropertiesFuture(
         params: PutWorkflowRunPropertiesRequest
     ): Future[PutWorkflowRunPropertiesResponse] = service.putWorkflowRunProperties(params).promise.toFuture
-    def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] =
+    @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] =
       service.resetJobBookmark(params).promise.toFuture
-    def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] =
+    @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] =
       service.searchTables(params).promise.toFuture
-    def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] =
+    @inline def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] =
       service.startCrawler(params).promise.toFuture
-    def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] =
+    @inline def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] =
       service.startCrawlerSchedule(params).promise.toFuture
-    def startExportLabelsTaskRunFuture(
+    @inline def startExportLabelsTaskRunFuture(
         params: StartExportLabelsTaskRunRequest
     ): Future[StartExportLabelsTaskRunResponse] = service.startExportLabelsTaskRun(params).promise.toFuture
-    def startImportLabelsTaskRunFuture(
+    @inline def startImportLabelsTaskRunFuture(
         params: StartImportLabelsTaskRunRequest
     ): Future[StartImportLabelsTaskRunResponse] = service.startImportLabelsTaskRun(params).promise.toFuture
-    def startJobRunFuture(params: StartJobRunRequest): Future[StartJobRunResponse] =
+    @inline def startJobRunFuture(params: StartJobRunRequest): Future[StartJobRunResponse] =
       service.startJobRun(params).promise.toFuture
-    def startMLEvaluationTaskRunFuture(
+    @inline def startMLEvaluationTaskRunFuture(
         params: StartMLEvaluationTaskRunRequest
     ): Future[StartMLEvaluationTaskRunResponse] = service.startMLEvaluationTaskRun(params).promise.toFuture
-    def startMLLabelingSetGenerationTaskRunFuture(
+    @inline def startMLLabelingSetGenerationTaskRunFuture(
         params: StartMLLabelingSetGenerationTaskRunRequest
     ): Future[StartMLLabelingSetGenerationTaskRunResponse] =
       service.startMLLabelingSetGenerationTaskRun(params).promise.toFuture
-    def startTriggerFuture(params: StartTriggerRequest): Future[StartTriggerResponse] =
+    @inline def startTriggerFuture(params: StartTriggerRequest): Future[StartTriggerResponse] =
       service.startTrigger(params).promise.toFuture
-    def startWorkflowRunFuture(params: StartWorkflowRunRequest): Future[StartWorkflowRunResponse] =
+    @inline def startWorkflowRunFuture(params: StartWorkflowRunRequest): Future[StartWorkflowRunResponse] =
       service.startWorkflowRun(params).promise.toFuture
-    def stopCrawlerFuture(params: StopCrawlerRequest): Future[StopCrawlerResponse] =
+    @inline def stopCrawlerFuture(params: StopCrawlerRequest): Future[StopCrawlerResponse] =
       service.stopCrawler(params).promise.toFuture
-    def stopCrawlerScheduleFuture(params: StopCrawlerScheduleRequest): Future[StopCrawlerScheduleResponse] =
+    @inline def stopCrawlerScheduleFuture(params: StopCrawlerScheduleRequest): Future[StopCrawlerScheduleResponse] =
       service.stopCrawlerSchedule(params).promise.toFuture
-    def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] =
+    @inline def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] =
       service.stopTrigger(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] =
+    @inline def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] =
       service.updateClassifier(params).promise.toFuture
-    def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] =
+    @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] =
       service.updateConnection(params).promise.toFuture
-    def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] =
+    @inline def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] =
       service.updateCrawler(params).promise.toFuture
-    def updateCrawlerScheduleFuture(params: UpdateCrawlerScheduleRequest): Future[UpdateCrawlerScheduleResponse] =
-      service.updateCrawlerSchedule(params).promise.toFuture
-    def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] =
+    @inline def updateCrawlerScheduleFuture(
+        params: UpdateCrawlerScheduleRequest
+    ): Future[UpdateCrawlerScheduleResponse] = service.updateCrawlerSchedule(params).promise.toFuture
+    @inline def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] =
       service.updateDatabase(params).promise.toFuture
-    def updateDevEndpointFuture(params: UpdateDevEndpointRequest): Future[UpdateDevEndpointResponse] =
+    @inline def updateDevEndpointFuture(params: UpdateDevEndpointRequest): Future[UpdateDevEndpointResponse] =
       service.updateDevEndpoint(params).promise.toFuture
-    def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] =
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] =
       service.updateJob(params).promise.toFuture
-    def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] =
+    @inline def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] =
       service.updateMLTransform(params).promise.toFuture
-    def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] =
+    @inline def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] =
       service.updatePartition(params).promise.toFuture
-    def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] =
+    @inline def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] =
       service.updateTable(params).promise.toFuture
-    def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] =
+    @inline def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] =
       service.updateTrigger(params).promise.toFuture
-    def updateUserDefinedFunctionFuture(
+    @inline def updateUserDefinedFunctionFuture(
         params: UpdateUserDefinedFunctionRequest
     ): Future[UpdateUserDefinedFunctionResponse] = service.updateUserDefinedFunction(params).promise.toFuture
-    def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] =
+    @inline def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] =
       service.updateWorkflow(params).promise.toFuture
   }
 }
@@ -655,6 +666,7 @@ package glue {
   }
 
   object Action {
+    @inline
     def apply(
         Arguments: js.UndefOr[GenericMap] = js.undefined,
         CrawlerName: js.UndefOr[NameString] = js.undefined,
@@ -683,6 +695,7 @@ package glue {
   }
 
   object BatchCreatePartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionInputList: PartitionInputList,
@@ -706,6 +719,7 @@ package glue {
   }
 
   object BatchCreatePartitionResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchCreatePartitionResponse = {
@@ -722,6 +736,7 @@ package glue {
   }
 
   object BatchDeleteConnectionRequest {
+    @inline
     def apply(
         ConnectionNameList: DeleteConnectionNameList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -742,6 +757,7 @@ package glue {
   }
 
   object BatchDeleteConnectionResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[ErrorByName] = js.undefined,
         Succeeded: js.UndefOr[NameStringList] = js.undefined
@@ -762,6 +778,7 @@ package glue {
   }
 
   object BatchDeletePartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionsToDelete: BatchDeletePartitionValueList,
@@ -785,6 +802,7 @@ package glue {
   }
 
   object BatchDeletePartitionResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchDeletePartitionResponse = {
@@ -802,6 +820,7 @@ package glue {
   }
 
   object BatchDeleteTableRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TablesToDelete: BatchDeleteTableNameList,
@@ -823,6 +842,7 @@ package glue {
   }
 
   object BatchDeleteTableResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[TableErrors] = js.undefined
     ): BatchDeleteTableResponse = {
@@ -841,6 +861,7 @@ package glue {
   }
 
   object BatchDeleteTableVersionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -864,6 +885,7 @@ package glue {
   }
 
   object BatchDeleteTableVersionResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[TableVersionErrors] = js.undefined
     ): BatchDeleteTableVersionResponse = {
@@ -879,6 +901,7 @@ package glue {
   }
 
   object BatchGetCrawlersRequest {
+    @inline
     def apply(
         CrawlerNames: CrawlerNameList
     ): BatchGetCrawlersRequest = {
@@ -897,6 +920,7 @@ package glue {
   }
 
   object BatchGetCrawlersResponse {
+    @inline
     def apply(
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         CrawlersNotFound: js.UndefOr[CrawlerNameList] = js.undefined
@@ -914,6 +938,7 @@ package glue {
   }
 
   object BatchGetDevEndpointsRequest {
+    @inline
     def apply(
         DevEndpointNames: DevEndpointNames
     ): BatchGetDevEndpointsRequest = {
@@ -932,6 +957,7 @@ package glue {
   }
 
   object BatchGetDevEndpointsResponse {
+    @inline
     def apply(
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         DevEndpointsNotFound: js.UndefOr[DevEndpointNames] = js.undefined
@@ -949,6 +975,7 @@ package glue {
   }
 
   object BatchGetJobsRequest {
+    @inline
     def apply(
         JobNames: JobNameList
     ): BatchGetJobsRequest = {
@@ -967,6 +994,7 @@ package glue {
   }
 
   object BatchGetJobsResponse {
+    @inline
     def apply(
         Jobs: js.UndefOr[JobList] = js.undefined,
         JobsNotFound: js.UndefOr[JobNameList] = js.undefined
@@ -987,6 +1015,7 @@ package glue {
   }
 
   object BatchGetPartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionsToGet: BatchGetPartitionValueList,
@@ -1011,6 +1040,7 @@ package glue {
   }
 
   object BatchGetPartitionResponse {
+    @inline
     def apply(
         Partitions: js.UndefOr[PartitionList] = js.undefined,
         UnprocessedKeys: js.UndefOr[BatchGetPartitionValueList] = js.undefined
@@ -1028,6 +1058,7 @@ package glue {
   }
 
   object BatchGetTriggersRequest {
+    @inline
     def apply(
         TriggerNames: TriggerNameList
     ): BatchGetTriggersRequest = {
@@ -1046,6 +1077,7 @@ package glue {
   }
 
   object BatchGetTriggersResponse {
+    @inline
     def apply(
         Triggers: js.UndefOr[TriggerList] = js.undefined,
         TriggersNotFound: js.UndefOr[TriggerNameList] = js.undefined
@@ -1064,6 +1096,7 @@ package glue {
   }
 
   object BatchGetWorkflowsRequest {
+    @inline
     def apply(
         Names: WorkflowNames,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined
@@ -1084,6 +1117,7 @@ package glue {
   }
 
   object BatchGetWorkflowsResponse {
+    @inline
     def apply(
         MissingWorkflows: js.UndefOr[WorkflowNames] = js.undefined,
         Workflows: js.UndefOr[Workflows] = js.undefined
@@ -1106,6 +1140,7 @@ package glue {
   }
 
   object BatchStopJobRunError {
+    @inline
     def apply(
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         JobName: js.UndefOr[NameString] = js.undefined,
@@ -1126,6 +1161,7 @@ package glue {
   }
 
   object BatchStopJobRunRequest {
+    @inline
     def apply(
         JobName: NameString,
         JobRunIds: BatchStopJobRunJobRunIdList
@@ -1146,6 +1182,7 @@ package glue {
   }
 
   object BatchStopJobRunResponse {
+    @inline
     def apply(
         Errors: js.UndefOr[BatchStopJobRunErrorList] = js.undefined,
         SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList] = js.undefined
@@ -1167,6 +1204,7 @@ package glue {
   }
 
   object BatchStopJobRunSuccessfulSubmission {
+    @inline
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined
@@ -1185,6 +1223,7 @@ package glue {
   }
 
   object CancelMLTaskRunRequest {
+    @inline
     def apply(
         TaskRunId: HashString,
         TransformId: HashString
@@ -1206,6 +1245,7 @@ package glue {
   }
 
   object CancelMLTaskRunResponse {
+    @inline
     def apply(
         Status: js.UndefOr[TaskStatusType] = js.undefined,
         TaskRunId: js.UndefOr[HashString] = js.undefined,
@@ -1236,6 +1276,7 @@ package glue {
   }
 
   object CatalogEntry {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString
@@ -1260,6 +1301,7 @@ package glue {
   }
 
   object CatalogImportStatus {
+    @inline
     def apply(
         ImportCompleted: js.UndefOr[Boolean] = js.undefined,
         ImportTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1283,6 +1325,7 @@ package glue {
   }
 
   object CatalogTarget {
+    @inline
     def apply(
         DatabaseName: NameString,
         Tables: CatalogTablesList
@@ -1309,6 +1352,7 @@ package glue {
   }
 
   object Classifier {
+    @inline
     def apply(
         CsvClassifier: js.UndefOr[CsvClassifier] = js.undefined,
         GrokClassifier: js.UndefOr[GrokClassifier] = js.undefined,
@@ -1334,6 +1378,7 @@ package glue {
   }
 
   object CloudWatchEncryption {
+    @inline
     def apply(
         CloudWatchEncryptionMode: js.UndefOr[CloudWatchEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
@@ -1363,6 +1408,7 @@ package glue {
   }
 
   object CodeGenEdge {
+    @inline
     def apply(
         Source: CodeGenIdentifier,
         Target: CodeGenIdentifier,
@@ -1390,6 +1436,7 @@ package glue {
   }
 
   object CodeGenNode {
+    @inline
     def apply(
         Args: CodeGenNodeArgs,
         Id: CodeGenIdentifier,
@@ -1418,6 +1465,7 @@ package glue {
   }
 
   object CodeGenNodeArg {
+    @inline
     def apply(
         Name: CodeGenArgName,
         Value: CodeGenArgValue,
@@ -1445,6 +1493,7 @@ package glue {
   }
 
   object Column {
+    @inline
     def apply(
         Name: NameString,
         Comment: js.UndefOr[CommentString] = js.undefined,
@@ -1485,6 +1534,7 @@ package glue {
   }
 
   object Condition {
+    @inline
     def apply(
         CrawlState: js.UndefOr[CrawlState] = js.undefined,
         CrawlerName: js.UndefOr[NameString] = js.undefined,
@@ -1515,6 +1565,7 @@ package glue {
   }
 
   object ConfusionMatrix {
+    @inline
     def apply(
         NumFalseNegatives: js.UndefOr[RecordsCount] = js.undefined,
         NumFalsePositives: js.UndefOr[RecordsCount] = js.undefined,
@@ -1547,6 +1598,7 @@ package glue {
   }
 
   object Connection {
+    @inline
     def apply(
         ConnectionProperties: js.UndefOr[ConnectionProperties] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -1588,6 +1640,7 @@ package glue {
   }
 
   object ConnectionInput {
+    @inline
     def apply(
         ConnectionProperties: ConnectionProperties,
         ConnectionType: ConnectionType,
@@ -1623,6 +1676,7 @@ package glue {
   }
 
   object ConnectionPasswordEncryption {
+    @inline
     def apply(
         ReturnConnectionPasswordEncrypted: Boolean,
         AwsKmsKeyId: js.UndefOr[NameString] = js.undefined
@@ -1686,6 +1740,7 @@ package glue {
   }
 
   object ConnectionsList {
+    @inline
     def apply(
         Connections: js.UndefOr[OrchestrationStringList] = js.undefined
     ): ConnectionsList = {
@@ -1709,6 +1764,7 @@ package glue {
   }
 
   object Crawl {
+    @inline
     def apply(
         CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined,
@@ -1762,6 +1818,7 @@ package glue {
   }
 
   object Crawler {
+    @inline
     def apply(
         Classifiers: js.UndefOr[ClassifierNameList] = js.undefined,
         Configuration: js.UndefOr[CrawlerConfiguration] = js.undefined,
@@ -1821,6 +1878,7 @@ package glue {
   }
 
   object CrawlerMetrics {
+    @inline
     def apply(
         CrawlerName: js.UndefOr[NameString] = js.undefined,
         LastRuntimeSeconds: js.UndefOr[NonNegativeDouble] = js.undefined,
@@ -1853,6 +1911,7 @@ package glue {
   }
 
   object CrawlerNodeDetails {
+    @inline
     def apply(
         Crawls: js.UndefOr[CrawlList] = js.undefined
     ): CrawlerNodeDetails = {
@@ -1882,6 +1941,7 @@ package glue {
   }
 
   object CrawlerTargets {
+    @inline
     def apply(
         CatalogTargets: js.UndefOr[CatalogTargetList] = js.undefined,
         DynamoDBTargets: js.UndefOr[DynamoDBTargetList] = js.undefined,
@@ -1906,6 +1966,7 @@ package glue {
   }
 
   object CreateClassifierRequest {
+    @inline
     def apply(
         CsvClassifier: js.UndefOr[CreateCsvClassifierRequest] = js.undefined,
         GrokClassifier: js.UndefOr[CreateGrokClassifierRequest] = js.undefined,
@@ -1925,6 +1986,7 @@ package glue {
   trait CreateClassifierResponse extends js.Object {}
 
   object CreateClassifierResponse {
+    @inline
     def apply(
         ): CreateClassifierResponse = {
       val __obj = js.Dynamic.literal()
@@ -1940,6 +2002,7 @@ package glue {
   }
 
   object CreateConnectionRequest {
+    @inline
     def apply(
         ConnectionInput: ConnectionInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -1957,6 +2020,7 @@ package glue {
   trait CreateConnectionResponse extends js.Object {}
 
   object CreateConnectionResponse {
+    @inline
     def apply(
         ): CreateConnectionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1982,6 +2046,7 @@ package glue {
   }
 
   object CreateCrawlerRequest {
+    @inline
     def apply(
         Name: NameString,
         Role: Role,
@@ -2021,6 +2086,7 @@ package glue {
   trait CreateCrawlerResponse extends js.Object {}
 
   object CreateCrawlerResponse {
+    @inline
     def apply(
         ): CreateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
@@ -2044,6 +2110,7 @@ package glue {
   }
 
   object CreateCsvClassifierRequest {
+    @inline
     def apply(
         Name: NameString,
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
@@ -2074,6 +2141,7 @@ package glue {
   }
 
   object CreateDatabaseRequest {
+    @inline
     def apply(
         DatabaseInput: DatabaseInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -2091,6 +2159,7 @@ package glue {
   trait CreateDatabaseResponse extends js.Object {}
 
   object CreateDatabaseResponse {
+    @inline
     def apply(
         ): CreateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
@@ -2118,6 +2187,7 @@ package glue {
   }
 
   object CreateDevEndpointRequest {
+    @inline
     def apply(
         EndpointName: GenericString,
         RoleArn: RoleArn,
@@ -2178,6 +2248,7 @@ package glue {
   }
 
   object CreateDevEndpointResponse {
+    @inline
     def apply(
         Arguments: js.UndefOr[MapValue] = js.undefined,
         AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
@@ -2235,6 +2306,7 @@ package glue {
   }
 
   object CreateGrokClassifierRequest {
+    @inline
     def apply(
         Classification: Classification,
         GrokPattern: GrokPattern,
@@ -2275,6 +2347,7 @@ package glue {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         Command: JobCommand,
         Name: NameString,
@@ -2326,6 +2399,7 @@ package glue {
   }
 
   object CreateJobResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateJobResponse = {
@@ -2345,6 +2419,7 @@ package glue {
   }
 
   object CreateJsonClassifierRequest {
+    @inline
     def apply(
         JsonPath: JsonPath,
         Name: NameString
@@ -2373,6 +2448,7 @@ package glue {
   }
 
   object CreateMLTransformRequest {
+    @inline
     def apply(
         InputRecordTables: GlueTables,
         Name: NameString,
@@ -2408,6 +2484,7 @@ package glue {
   }
 
   object CreateMLTransformResponse {
+    @inline
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): CreateMLTransformResponse = {
@@ -2426,6 +2503,7 @@ package glue {
   }
 
   object CreatePartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionInput: PartitionInput,
@@ -2447,6 +2525,7 @@ package glue {
   trait CreatePartitionResponse extends js.Object {}
 
   object CreatePartitionResponse {
+    @inline
     def apply(
         ): CreatePartitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2463,6 +2542,7 @@ package glue {
   }
 
   object CreateScriptRequest {
+    @inline
     def apply(
         DagEdges: js.UndefOr[DagEdges] = js.undefined,
         DagNodes: js.UndefOr[DagNodes] = js.undefined,
@@ -2483,6 +2563,7 @@ package glue {
   }
 
   object CreateScriptResponse {
+    @inline
     def apply(
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
@@ -2501,6 +2582,7 @@ package glue {
   }
 
   object CreateSecurityConfigurationRequest {
+    @inline
     def apply(
         EncryptionConfiguration: EncryptionConfiguration,
         Name: NameString
@@ -2521,6 +2603,7 @@ package glue {
   }
 
   object CreateSecurityConfigurationResponse {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
@@ -2540,6 +2623,7 @@ package glue {
   }
 
   object CreateTableRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableInput: TableInput,
@@ -2559,6 +2643,7 @@ package glue {
   trait CreateTableResponse extends js.Object {}
 
   object CreateTableResponse {
+    @inline
     def apply(
         ): CreateTableResponse = {
       val __obj = js.Dynamic.literal()
@@ -2581,6 +2666,7 @@ package glue {
   }
 
   object CreateTriggerRequest {
+    @inline
     def apply(
         Actions: ActionList,
         Name: NameString,
@@ -2614,6 +2700,7 @@ package glue {
   }
 
   object CreateTriggerResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateTriggerResponse = {
@@ -2631,6 +2718,7 @@ package glue {
   }
 
   object CreateUserDefinedFunctionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         FunctionInput: UserDefinedFunctionInput,
@@ -2650,6 +2738,7 @@ package glue {
   trait CreateUserDefinedFunctionResponse extends js.Object {}
 
   object CreateUserDefinedFunctionResponse {
+    @inline
     def apply(
         ): CreateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2667,6 +2756,7 @@ package glue {
   }
 
   object CreateWorkflowRequest {
+    @inline
     def apply(
         Name: NameString,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
@@ -2690,6 +2780,7 @@ package glue {
   }
 
   object CreateWorkflowResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateWorkflowResponse = {
@@ -2710,6 +2801,7 @@ package glue {
   }
 
   object CreateXMLClassifierRequest {
+    @inline
     def apply(
         Classification: Classification,
         Name: NameString,
@@ -2743,6 +2835,7 @@ package glue {
   }
 
   object CsvClassifier {
+    @inline
     def apply(
         Name: NameString,
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
@@ -2790,6 +2883,7 @@ package glue {
   }
 
   object DataCatalogEncryptionSettings {
+    @inline
     def apply(
         ConnectionPasswordEncryption: js.UndefOr[ConnectionPasswordEncryption] = js.undefined,
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined
@@ -2812,6 +2906,7 @@ package glue {
   }
 
   object DataLakePrincipal {
+    @inline
     def apply(
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
@@ -2837,6 +2932,7 @@ package glue {
   }
 
   object Database {
+    @inline
     def apply(
         Name: NameString,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
@@ -2873,6 +2969,7 @@ package glue {
   }
 
   object DatabaseInput {
+    @inline
     def apply(
         Name: NameString,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
@@ -2908,6 +3005,7 @@ package glue {
   }
 
   object DeleteClassifierRequest {
+    @inline
     def apply(
         Name: NameString
     ): DeleteClassifierRequest = {
@@ -2923,6 +3021,7 @@ package glue {
   trait DeleteClassifierResponse extends js.Object {}
 
   object DeleteClassifierResponse {
+    @inline
     def apply(
         ): DeleteClassifierResponse = {
       val __obj = js.Dynamic.literal()
@@ -2938,6 +3037,7 @@ package glue {
   }
 
   object DeleteConnectionRequest {
+    @inline
     def apply(
         ConnectionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -2955,6 +3055,7 @@ package glue {
   trait DeleteConnectionResponse extends js.Object {}
 
   object DeleteConnectionResponse {
+    @inline
     def apply(
         ): DeleteConnectionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2969,6 +3070,7 @@ package glue {
   }
 
   object DeleteCrawlerRequest {
+    @inline
     def apply(
         Name: NameString
     ): DeleteCrawlerRequest = {
@@ -2984,6 +3086,7 @@ package glue {
   trait DeleteCrawlerResponse extends js.Object {}
 
   object DeleteCrawlerResponse {
+    @inline
     def apply(
         ): DeleteCrawlerResponse = {
       val __obj = js.Dynamic.literal()
@@ -2999,6 +3102,7 @@ package glue {
   }
 
   object DeleteDatabaseRequest {
+    @inline
     def apply(
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -3016,6 +3120,7 @@ package glue {
   trait DeleteDatabaseResponse extends js.Object {}
 
   object DeleteDatabaseResponse {
+    @inline
     def apply(
         ): DeleteDatabaseResponse = {
       val __obj = js.Dynamic.literal()
@@ -3030,6 +3135,7 @@ package glue {
   }
 
   object DeleteDevEndpointRequest {
+    @inline
     def apply(
         EndpointName: GenericString
     ): DeleteDevEndpointRequest = {
@@ -3045,6 +3151,7 @@ package glue {
   trait DeleteDevEndpointResponse extends js.Object {}
 
   object DeleteDevEndpointResponse {
+    @inline
     def apply(
         ): DeleteDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
@@ -3059,6 +3166,7 @@ package glue {
   }
 
   object DeleteJobRequest {
+    @inline
     def apply(
         JobName: NameString
     ): DeleteJobRequest = {
@@ -3076,6 +3184,7 @@ package glue {
   }
 
   object DeleteJobResponse {
+    @inline
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): DeleteJobResponse = {
@@ -3091,6 +3200,7 @@ package glue {
   }
 
   object DeleteMLTransformRequest {
+    @inline
     def apply(
         TransformId: HashString
     ): DeleteMLTransformRequest = {
@@ -3108,6 +3218,7 @@ package glue {
   }
 
   object DeleteMLTransformResponse {
+    @inline
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): DeleteMLTransformResponse = {
@@ -3126,6 +3237,7 @@ package glue {
   }
 
   object DeletePartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionValues: ValueStringList,
@@ -3147,6 +3259,7 @@ package glue {
   trait DeletePartitionResponse extends js.Object {}
 
   object DeletePartitionResponse {
+    @inline
     def apply(
         ): DeletePartitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -3161,6 +3274,7 @@ package glue {
   }
 
   object DeleteResourcePolicyRequest {
+    @inline
     def apply(
         PolicyHashCondition: js.UndefOr[HashString] = js.undefined
     ): DeleteResourcePolicyRequest = {
@@ -3174,6 +3288,7 @@ package glue {
   trait DeleteResourcePolicyResponse extends js.Object {}
 
   object DeleteResourcePolicyResponse {
+    @inline
     def apply(
         ): DeleteResourcePolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -3188,6 +3303,7 @@ package glue {
   }
 
   object DeleteSecurityConfigurationRequest {
+    @inline
     def apply(
         Name: NameString
     ): DeleteSecurityConfigurationRequest = {
@@ -3203,6 +3319,7 @@ package glue {
   trait DeleteSecurityConfigurationResponse extends js.Object {}
 
   object DeleteSecurityConfigurationResponse {
+    @inline
     def apply(
         ): DeleteSecurityConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -3219,6 +3336,7 @@ package glue {
   }
 
   object DeleteTableRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         Name: NameString,
@@ -3238,6 +3356,7 @@ package glue {
   trait DeleteTableResponse extends js.Object {}
 
   object DeleteTableResponse {
+    @inline
     def apply(
         ): DeleteTableResponse = {
       val __obj = js.Dynamic.literal()
@@ -3255,6 +3374,7 @@ package glue {
   }
 
   object DeleteTableVersionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -3276,6 +3396,7 @@ package glue {
   trait DeleteTableVersionResponse extends js.Object {}
 
   object DeleteTableVersionResponse {
+    @inline
     def apply(
         ): DeleteTableVersionResponse = {
       val __obj = js.Dynamic.literal()
@@ -3290,6 +3411,7 @@ package glue {
   }
 
   object DeleteTriggerRequest {
+    @inline
     def apply(
         Name: NameString
     ): DeleteTriggerRequest = {
@@ -3307,6 +3429,7 @@ package glue {
   }
 
   object DeleteTriggerResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): DeleteTriggerResponse = {
@@ -3324,6 +3447,7 @@ package glue {
   }
 
   object DeleteUserDefinedFunctionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         FunctionName: NameString,
@@ -3343,6 +3467,7 @@ package glue {
   trait DeleteUserDefinedFunctionResponse extends js.Object {}
 
   object DeleteUserDefinedFunctionResponse {
+    @inline
     def apply(
         ): DeleteUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
@@ -3357,6 +3482,7 @@ package glue {
   }
 
   object DeleteWorkflowRequest {
+    @inline
     def apply(
         Name: NameString
     ): DeleteWorkflowRequest = {
@@ -3374,6 +3500,7 @@ package glue {
   }
 
   object DeleteWorkflowResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): DeleteWorkflowResponse = {
@@ -3415,6 +3542,7 @@ package glue {
   }
 
   object DevEndpoint {
+    @inline
     def apply(
         Arguments: js.UndefOr[MapValue] = js.undefined,
         AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
@@ -3482,6 +3610,7 @@ package glue {
   }
 
   object DevEndpointCustomLibraries {
+    @inline
     def apply(
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined
@@ -3502,6 +3631,7 @@ package glue {
   }
 
   object DynamoDBTarget {
+    @inline
     def apply(
         Path: js.UndefOr[Path] = js.undefined
     ): DynamoDBTarget = {
@@ -3521,6 +3651,7 @@ package glue {
   }
 
   object Edge {
+    @inline
     def apply(
         DestinationId: js.UndefOr[NameString] = js.undefined,
         SourceId: js.UndefOr[NameString] = js.undefined
@@ -3542,6 +3673,7 @@ package glue {
   }
 
   object EncryptionAtRest {
+    @inline
     def apply(
         CatalogEncryptionMode: CatalogEncryptionMode,
         SseAwsKmsKeyId: js.UndefOr[NameString] = js.undefined
@@ -3566,6 +3698,7 @@ package glue {
   }
 
   object EncryptionConfiguration {
+    @inline
     def apply(
         CloudWatchEncryption: js.UndefOr[CloudWatchEncryption] = js.undefined,
         JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption] = js.undefined,
@@ -3589,6 +3722,7 @@ package glue {
   }
 
   object ErrorDetail {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[NameString] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined
@@ -3610,6 +3744,7 @@ package glue {
   }
 
   object EvaluationMetrics {
+    @inline
     def apply(
         TransformType: TransformType,
         FindMatchesMetrics: js.UndefOr[FindMatchesMetrics] = js.undefined
@@ -3632,6 +3767,7 @@ package glue {
   }
 
   object ExecutionProperty {
+    @inline
     def apply(
         MaxConcurrentRuns: js.UndefOr[MaxConcurrentRuns] = js.undefined
     ): ExecutionProperty = {
@@ -3658,6 +3794,7 @@ package glue {
   }
 
   object ExportLabelsTaskRunProperties {
+    @inline
     def apply(
         OutputS3Path: js.UndefOr[UriString] = js.undefined
     ): ExportLabelsTaskRunProperties = {
@@ -3680,6 +3817,7 @@ package glue {
   }
 
   object FindMatchesMetrics {
+    @inline
     def apply(
         AreaUnderPRCurve: js.UndefOr[GenericBoundedDouble] = js.undefined,
         ConfusionMatrix: js.UndefOr[ConfusionMatrix] = js.undefined,
@@ -3709,6 +3847,7 @@ package glue {
   }
 
   object FindMatchesParameters {
+    @inline
     def apply(
         AccuracyCostTradeoff: js.UndefOr[GenericBoundedDouble] = js.undefined,
         EnforceProvidedLabels: js.UndefOr[NullableBoolean] = js.undefined,
@@ -3735,6 +3874,7 @@ package glue {
   }
 
   object FindMatchesTaskRunProperties {
+    @inline
     def apply(
         JobId: js.UndefOr[HashString] = js.undefined,
         JobName: js.UndefOr[NameString] = js.undefined,
@@ -3754,6 +3894,7 @@ package glue {
   }
 
   object GetCatalogImportStatusRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetCatalogImportStatusRequest = {
@@ -3769,6 +3910,7 @@ package glue {
   }
 
   object GetCatalogImportStatusResponse {
+    @inline
     def apply(
         ImportStatus: js.UndefOr[CatalogImportStatus] = js.undefined
     ): GetCatalogImportStatusResponse = {
@@ -3784,6 +3926,7 @@ package glue {
   }
 
   object GetClassifierRequest {
+    @inline
     def apply(
         Name: NameString
     ): GetClassifierRequest = {
@@ -3801,6 +3944,7 @@ package glue {
   }
 
   object GetClassifierResponse {
+    @inline
     def apply(
         Classifier: js.UndefOr[Classifier] = js.undefined
     ): GetClassifierResponse = {
@@ -3817,6 +3961,7 @@ package glue {
   }
 
   object GetClassifiersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -3835,6 +3980,7 @@ package glue {
   }
 
   object GetClassifiersResponse {
+    @inline
     def apply(
         Classifiers: js.UndefOr[ClassifierList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -3854,6 +4000,7 @@ package glue {
   }
 
   object GetConnectionRequest {
+    @inline
     def apply(
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
@@ -3875,6 +4022,7 @@ package glue {
   }
 
   object GetConnectionResponse {
+    @inline
     def apply(
         Connection: js.UndefOr[Connection] = js.undefined
     ): GetConnectionResponse = {
@@ -3894,6 +4042,7 @@ package glue {
   }
 
   object GetConnectionsFilter {
+    @inline
     def apply(
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
         MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined
@@ -3915,6 +4064,7 @@ package glue {
   }
 
   object GetConnectionsRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         Filter: js.UndefOr[GetConnectionsFilter] = js.undefined,
@@ -3939,6 +4089,7 @@ package glue {
   }
 
   object GetConnectionsResponse {
+    @inline
     def apply(
         ConnectionList: js.UndefOr[ConnectionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -3958,6 +4109,7 @@ package glue {
   }
 
   object GetCrawlerMetricsRequest {
+    @inline
     def apply(
         CrawlerNameList: js.UndefOr[CrawlerNameList] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -3978,6 +4130,7 @@ package glue {
   }
 
   object GetCrawlerMetricsResponse {
+    @inline
     def apply(
         CrawlerMetricsList: js.UndefOr[CrawlerMetricsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -3995,6 +4148,7 @@ package glue {
   }
 
   object GetCrawlerRequest {
+    @inline
     def apply(
         Name: NameString
     ): GetCrawlerRequest = {
@@ -4012,6 +4166,7 @@ package glue {
   }
 
   object GetCrawlerResponse {
+    @inline
     def apply(
         Crawler: js.UndefOr[Crawler] = js.undefined
     ): GetCrawlerResponse = {
@@ -4028,6 +4183,7 @@ package glue {
   }
 
   object GetCrawlersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -4046,6 +4202,7 @@ package glue {
   }
 
   object GetCrawlersResponse {
+    @inline
     def apply(
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -4063,6 +4220,7 @@ package glue {
   }
 
   object GetDataCatalogEncryptionSettingsRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDataCatalogEncryptionSettingsRequest = {
@@ -4078,6 +4236,7 @@ package glue {
   }
 
   object GetDataCatalogEncryptionSettingsResponse {
+    @inline
     def apply(
         DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings] = js.undefined
     ): GetDataCatalogEncryptionSettingsResponse = {
@@ -4096,6 +4255,7 @@ package glue {
   }
 
   object GetDatabaseRequest {
+    @inline
     def apply(
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -4115,6 +4275,7 @@ package glue {
   }
 
   object GetDatabaseResponse {
+    @inline
     def apply(
         Database: js.UndefOr[Database] = js.undefined
     ): GetDatabaseResponse = {
@@ -4132,6 +4293,7 @@ package glue {
   }
 
   object GetDatabasesRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -4152,6 +4314,7 @@ package glue {
   }
 
   object GetDatabasesResponse {
+    @inline
     def apply(
         DatabaseList: DatabaseList,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -4171,6 +4334,7 @@ package glue {
   }
 
   object GetDataflowGraphRequest {
+    @inline
     def apply(
         PythonScript: js.UndefOr[PythonScript] = js.undefined
     ): GetDataflowGraphRequest = {
@@ -4187,6 +4351,7 @@ package glue {
   }
 
   object GetDataflowGraphResponse {
+    @inline
     def apply(
         DagEdges: js.UndefOr[DagEdges] = js.undefined,
         DagNodes: js.UndefOr[DagNodes] = js.undefined
@@ -4204,6 +4369,7 @@ package glue {
   }
 
   object GetDevEndpointRequest {
+    @inline
     def apply(
         EndpointName: GenericString
     ): GetDevEndpointRequest = {
@@ -4221,6 +4387,7 @@ package glue {
   }
 
   object GetDevEndpointResponse {
+    @inline
     def apply(
         DevEndpoint: js.UndefOr[DevEndpoint] = js.undefined
     ): GetDevEndpointResponse = {
@@ -4237,6 +4404,7 @@ package glue {
   }
 
   object GetDevEndpointsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4255,6 +4423,7 @@ package glue {
   }
 
   object GetDevEndpointsResponse {
+    @inline
     def apply(
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4273,6 +4442,7 @@ package glue {
   }
 
   object GetJobBookmarkRequest {
+    @inline
     def apply(
         JobName: JobName,
         RunId: js.UndefOr[RunId] = js.undefined
@@ -4292,6 +4462,7 @@ package glue {
   }
 
   object GetJobBookmarkResponse {
+    @inline
     def apply(
         JobBookmarkEntry: js.UndefOr[JobBookmarkEntry] = js.undefined
     ): GetJobBookmarkResponse = {
@@ -4307,6 +4478,7 @@ package glue {
   }
 
   object GetJobRequest {
+    @inline
     def apply(
         JobName: NameString
     ): GetJobRequest = {
@@ -4324,6 +4496,7 @@ package glue {
   }
 
   object GetJobResponse {
+    @inline
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): GetJobResponse = {
@@ -4341,6 +4514,7 @@ package glue {
   }
 
   object GetJobRunRequest {
+    @inline
     def apply(
         JobName: NameString,
         RunId: IdString,
@@ -4362,6 +4536,7 @@ package glue {
   }
 
   object GetJobRunResponse {
+    @inline
     def apply(
         JobRun: js.UndefOr[JobRun] = js.undefined
     ): GetJobRunResponse = {
@@ -4379,6 +4554,7 @@ package glue {
   }
 
   object GetJobRunsRequest {
+    @inline
     def apply(
         JobName: NameString,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -4401,6 +4577,7 @@ package glue {
   }
 
   object GetJobRunsResponse {
+    @inline
     def apply(
         JobRuns: js.UndefOr[JobRunList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4419,6 +4596,7 @@ package glue {
   }
 
   object GetJobsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4437,6 +4615,7 @@ package glue {
   }
 
   object GetJobsResponse {
+    @inline
     def apply(
         Jobs: js.UndefOr[JobList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4455,6 +4634,7 @@ package glue {
   }
 
   object GetMLTaskRunRequest {
+    @inline
     def apply(
         TaskRunId: HashString,
         TransformId: HashString
@@ -4483,6 +4663,7 @@ package glue {
   }
 
   object GetMLTaskRunResponse {
+    @inline
     def apply(
         CompletedOn: js.UndefOr[Timestamp] = js.undefined,
         ErrorString: js.UndefOr[GenericString] = js.undefined,
@@ -4520,6 +4701,7 @@ package glue {
   }
 
   object GetMLTaskRunsRequest {
+    @inline
     def apply(
         TransformId: HashString,
         Filter: js.UndefOr[TaskRunFilterCriteria] = js.undefined,
@@ -4546,6 +4728,7 @@ package glue {
   }
 
   object GetMLTaskRunsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         TaskRuns: js.UndefOr[TaskRunList] = js.undefined
@@ -4563,6 +4746,7 @@ package glue {
   }
 
   object GetMLTransformRequest {
+    @inline
     def apply(
         TransformId: HashString
     ): GetMLTransformRequest = {
@@ -4596,6 +4780,7 @@ package glue {
   }
 
   object GetMLTransformResponse {
+    @inline
     def apply(
         CreatedOn: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -4646,6 +4831,7 @@ package glue {
   }
 
   object GetMLTransformsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[TransformFilterCriteria] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -4668,6 +4854,7 @@ package glue {
   }
 
   object GetMLTransformsResponse {
+    @inline
     def apply(
         Transforms: TransformList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -4689,6 +4876,7 @@ package glue {
   }
 
   object GetMappingRequest {
+    @inline
     def apply(
         Source: CatalogEntry,
         Location: js.UndefOr[Location] = js.undefined,
@@ -4710,6 +4898,7 @@ package glue {
   }
 
   object GetMappingResponse {
+    @inline
     def apply(
         Mapping: MappingList
     ): GetMappingResponse = {
@@ -4730,6 +4919,7 @@ package glue {
   }
 
   object GetPartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionValues: ValueStringList,
@@ -4753,6 +4943,7 @@ package glue {
   }
 
   object GetPartitionResponse {
+    @inline
     def apply(
         Partition: js.UndefOr[Partition] = js.undefined
     ): GetPartitionResponse = {
@@ -4774,6 +4965,7 @@ package glue {
   }
 
   object GetPartitionsRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -4804,6 +4996,7 @@ package glue {
   }
 
   object GetPartitionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         Partitions: js.UndefOr[PartitionList] = js.undefined
@@ -4825,6 +5018,7 @@ package glue {
   }
 
   object GetPlanRequest {
+    @inline
     def apply(
         Mapping: MappingList,
         Source: CatalogEntry,
@@ -4851,6 +5045,7 @@ package glue {
   }
 
   object GetPlanResponse {
+    @inline
     def apply(
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
@@ -4866,6 +5061,7 @@ package glue {
   trait GetResourcePolicyRequest extends js.Object {}
 
   object GetResourcePolicyRequest {
+    @inline
     def apply(
         ): GetResourcePolicyRequest = {
       val __obj = js.Dynamic.literal()
@@ -4883,6 +5079,7 @@ package glue {
   }
 
   object GetResourcePolicyResponse {
+    @inline
     def apply(
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
         PolicyHash: js.UndefOr[HashString] = js.undefined,
@@ -4904,6 +5101,7 @@ package glue {
   }
 
   object GetSecurityConfigurationRequest {
+    @inline
     def apply(
         Name: NameString
     ): GetSecurityConfigurationRequest = {
@@ -4921,6 +5119,7 @@ package glue {
   }
 
   object GetSecurityConfigurationResponse {
+    @inline
     def apply(
         SecurityConfiguration: js.UndefOr[SecurityConfiguration] = js.undefined
     ): GetSecurityConfigurationResponse = {
@@ -4937,6 +5136,7 @@ package glue {
   }
 
   object GetSecurityConfigurationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -4955,6 +5155,7 @@ package glue {
   }
 
   object GetSecurityConfigurationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
@@ -4974,6 +5175,7 @@ package glue {
   }
 
   object GetTableRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         Name: NameString,
@@ -4995,6 +5197,7 @@ package glue {
   }
 
   object GetTableResponse {
+    @inline
     def apply(
         Table: js.UndefOr[Table] = js.undefined
     ): GetTableResponse = {
@@ -5013,6 +5216,7 @@ package glue {
   }
 
   object GetTableVersionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -5036,6 +5240,7 @@ package glue {
   }
 
   object GetTableVersionResponse {
+    @inline
     def apply(
         TableVersion: js.UndefOr[TableVersion] = js.undefined
     ): GetTableVersionResponse = {
@@ -5055,6 +5260,7 @@ package glue {
   }
 
   object GetTableVersionsRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -5081,6 +5287,7 @@ package glue {
   }
 
   object GetTableVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         TableVersions: js.UndefOr[GetTableVersionsList] = js.undefined
@@ -5102,6 +5309,7 @@ package glue {
   }
 
   object GetTablesRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
@@ -5128,6 +5336,7 @@ package glue {
   }
 
   object GetTablesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         TableList: js.UndefOr[TableList] = js.undefined
@@ -5145,6 +5354,7 @@ package glue {
   }
 
   object GetTagsRequest {
+    @inline
     def apply(
         ResourceArn: GlueResourceArn
     ): GetTagsRequest = {
@@ -5162,6 +5372,7 @@ package glue {
   }
 
   object GetTagsResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): GetTagsResponse = {
@@ -5177,6 +5388,7 @@ package glue {
   }
 
   object GetTriggerRequest {
+    @inline
     def apply(
         Name: NameString
     ): GetTriggerRequest = {
@@ -5194,6 +5406,7 @@ package glue {
   }
 
   object GetTriggerResponse {
+    @inline
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): GetTriggerResponse = {
@@ -5211,6 +5424,7 @@ package glue {
   }
 
   object GetTriggersRequest {
+    @inline
     def apply(
         DependentJobName: js.UndefOr[NameString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -5231,6 +5445,7 @@ package glue {
   }
 
   object GetTriggersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Triggers: js.UndefOr[TriggerList] = js.undefined
@@ -5250,6 +5465,7 @@ package glue {
   }
 
   object GetUserDefinedFunctionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         FunctionName: NameString,
@@ -5271,6 +5487,7 @@ package glue {
   }
 
   object GetUserDefinedFunctionResponse {
+    @inline
     def apply(
         UserDefinedFunction: js.UndefOr[UserDefinedFunction] = js.undefined
     ): GetUserDefinedFunctionResponse = {
@@ -5290,6 +5507,7 @@ package glue {
   }
 
   object GetUserDefinedFunctionsRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         Pattern: NameString,
@@ -5316,6 +5534,7 @@ package glue {
   }
 
   object GetUserDefinedFunctionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList] = js.undefined
@@ -5334,6 +5553,7 @@ package glue {
   }
 
   object GetWorkflowRequest {
+    @inline
     def apply(
         Name: NameString,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined
@@ -5353,6 +5573,7 @@ package glue {
   }
 
   object GetWorkflowResponse {
+    @inline
     def apply(
         Workflow: js.UndefOr[Workflow] = js.undefined
     ): GetWorkflowResponse = {
@@ -5369,6 +5590,7 @@ package glue {
   }
 
   object GetWorkflowRunPropertiesRequest {
+    @inline
     def apply(
         Name: NameString,
         RunId: IdString
@@ -5388,6 +5610,7 @@ package glue {
   }
 
   object GetWorkflowRunPropertiesResponse {
+    @inline
     def apply(
         RunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined
     ): GetWorkflowRunPropertiesResponse = {
@@ -5405,6 +5628,7 @@ package glue {
   }
 
   object GetWorkflowRunRequest {
+    @inline
     def apply(
         Name: NameString,
         RunId: IdString,
@@ -5426,6 +5650,7 @@ package glue {
   }
 
   object GetWorkflowRunResponse {
+    @inline
     def apply(
         Run: js.UndefOr[WorkflowRun] = js.undefined
     ): GetWorkflowRunResponse = {
@@ -5444,6 +5669,7 @@ package glue {
   }
 
   object GetWorkflowRunsRequest {
+    @inline
     def apply(
         Name: NameString,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined,
@@ -5468,6 +5694,7 @@ package glue {
   }
 
   object GetWorkflowRunsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Runs: js.UndefOr[WorkflowRuns] = js.undefined
@@ -5491,6 +5718,7 @@ package glue {
   }
 
   object GlueTable {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
@@ -5523,6 +5751,7 @@ package glue {
   }
 
   object GrokClassifier {
+    @inline
     def apply(
         Classification: Classification,
         GrokPattern: GrokPattern,
@@ -5552,6 +5781,7 @@ package glue {
   }
 
   object ImportCatalogToGlueRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): ImportCatalogToGlueRequest = {
@@ -5565,6 +5795,7 @@ package glue {
   trait ImportCatalogToGlueResponse extends js.Object {}
 
   object ImportCatalogToGlueResponse {
+    @inline
     def apply(
         ): ImportCatalogToGlueResponse = {
       val __obj = js.Dynamic.literal()
@@ -5583,6 +5814,7 @@ package glue {
   }
 
   object ImportLabelsTaskRunProperties {
+    @inline
     def apply(
         InputS3Path: js.UndefOr[UriString] = js.undefined,
         Replace: js.UndefOr[ReplaceBoolean] = js.undefined
@@ -5605,6 +5837,7 @@ package glue {
   }
 
   object JdbcTarget {
+    @inline
     def apply(
         ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
         Exclusions: js.UndefOr[PathList] = js.undefined,
@@ -5645,6 +5878,7 @@ package glue {
   }
 
   object Job {
+    @inline
     def apply(
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
         Command: js.UndefOr[JobCommand] = js.undefined,
@@ -5705,6 +5939,7 @@ package glue {
   }
 
   object JobBookmarkEntry {
+    @inline
     def apply(
         Attempt: js.UndefOr[IntegerValue] = js.undefined,
         JobBookmark: js.UndefOr[JsonValue] = js.undefined,
@@ -5736,6 +5971,7 @@ package glue {
   }
 
   object JobBookmarksEncryption {
+    @inline
     def apply(
         JobBookmarksEncryptionMode: js.UndefOr[JobBookmarksEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
@@ -5767,6 +6003,7 @@ package glue {
   }
 
   object JobCommand {
+    @inline
     def apply(
         Name: js.UndefOr[GenericString] = js.undefined,
         PythonVersion: js.UndefOr[PythonVersionString] = js.undefined,
@@ -5789,6 +6026,7 @@ package glue {
   }
 
   object JobNodeDetails {
+    @inline
     def apply(
         JobRuns: js.UndefOr[JobRunList] = js.undefined
     ): JobNodeDetails = {
@@ -5828,6 +6066,7 @@ package glue {
   }
 
   object JobRun {
+    @inline
     def apply(
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
         Arguments: js.UndefOr[GenericMap] = js.undefined,
@@ -5915,6 +6154,7 @@ package glue {
   }
 
   object JobUpdate {
+    @inline
     def apply(
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
         Command: js.UndefOr[JobCommand] = js.undefined,
@@ -5967,6 +6207,7 @@ package glue {
   }
 
   object JsonClassifier {
+    @inline
     def apply(
         JsonPath: JsonPath,
         Name: NameString,
@@ -5995,6 +6236,7 @@ package glue {
   }
 
   object LabelingSetGenerationTaskRunProperties {
+    @inline
     def apply(
         OutputS3Path: js.UndefOr[UriString] = js.undefined
     ): LabelingSetGenerationTaskRunProperties = {
@@ -6025,6 +6267,7 @@ package glue {
   }
 
   object LastCrawlInfo {
+    @inline
     def apply(
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined,
         LogGroup: js.UndefOr[LogGroup] = js.undefined,
@@ -6060,6 +6303,7 @@ package glue {
   }
 
   object ListCrawlersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
@@ -6080,6 +6324,7 @@ package glue {
   }
 
   object ListCrawlersResponse {
+    @inline
     def apply(
         CrawlerNames: js.UndefOr[CrawlerNameList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -6099,6 +6344,7 @@ package glue {
   }
 
   object ListDevEndpointsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined,
@@ -6119,6 +6365,7 @@ package glue {
   }
 
   object ListDevEndpointsResponse {
+    @inline
     def apply(
         DevEndpointNames: js.UndefOr[DevEndpointNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -6138,6 +6385,7 @@ package glue {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined,
@@ -6158,6 +6406,7 @@ package glue {
   }
 
   object ListJobsResponse {
+    @inline
     def apply(
         JobNames: js.UndefOr[JobNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -6178,6 +6427,7 @@ package glue {
   }
 
   object ListTriggersRequest {
+    @inline
     def apply(
         DependentJobName: js.UndefOr[NameString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -6200,6 +6450,7 @@ package glue {
   }
 
   object ListTriggersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         TriggerNames: js.UndefOr[TriggerNameList] = js.undefined
@@ -6218,6 +6469,7 @@ package glue {
   }
 
   object ListWorkflowsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -6236,6 +6488,7 @@ package glue {
   }
 
   object ListWorkflowsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Workflows: js.UndefOr[WorkflowNames] = js.undefined
@@ -6258,6 +6511,7 @@ package glue {
   }
 
   object Location {
+    @inline
     def apply(
         DynamoDB: js.UndefOr[CodeGenNodeArgs] = js.undefined,
         Jdbc: js.UndefOr[CodeGenNodeArgs] = js.undefined,
@@ -6309,6 +6563,7 @@ package glue {
   }
 
   object MLTransform {
+    @inline
     def apply(
         CreatedOn: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -6364,6 +6619,7 @@ package glue {
   }
 
   object MappingEntry {
+    @inline
     def apply(
         SourcePath: js.UndefOr[SchemaPathString] = js.undefined,
         SourceTable: js.UndefOr[TableName] = js.undefined,
@@ -6397,6 +6653,7 @@ package glue {
   }
 
   object Node {
+    @inline
     def apply(
         CrawlerDetails: js.UndefOr[CrawlerNodeDetails] = js.undefined,
         JobDetails: js.UndefOr[JobNodeDetails] = js.undefined,
@@ -6433,6 +6690,7 @@ package glue {
   }
 
   object NotificationProperty {
+    @inline
     def apply(
         NotifyDelayAfter: js.UndefOr[NotifyDelayAfter] = js.undefined
     ): NotificationProperty = {
@@ -6452,6 +6710,7 @@ package glue {
   }
 
   object Order {
+    @inline
     def apply(
         Column: NameString,
         SortOrder: IntegerFlag
@@ -6481,6 +6740,7 @@ package glue {
   }
 
   object Partition {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatabaseName: js.UndefOr[NameString] = js.undefined,
@@ -6514,6 +6774,7 @@ package glue {
   }
 
   object PartitionError {
+    @inline
     def apply(
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         PartitionValues: js.UndefOr[ValueStringList] = js.undefined
@@ -6538,6 +6799,7 @@ package glue {
   }
 
   object PartitionInput {
+    @inline
     def apply(
         LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
         LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -6564,6 +6826,7 @@ package glue {
   }
 
   object PartitionValueList {
+    @inline
     def apply(
         Values: ValueStringList
     ): PartitionValueList = {
@@ -6602,6 +6865,7 @@ package glue {
   }
 
   object PhysicalConnectionRequirements {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[NameString] = js.undefined,
         SecurityGroupIdList: js.UndefOr[SecurityGroupIdList] = js.undefined,
@@ -6625,6 +6889,7 @@ package glue {
   }
 
   object Predecessor {
+    @inline
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined,
         RunId: js.UndefOr[IdString] = js.undefined
@@ -6646,6 +6911,7 @@ package glue {
   }
 
   object Predicate {
+    @inline
     def apply(
         Conditions: js.UndefOr[ConditionList] = js.undefined,
         Logical: js.UndefOr[Logical] = js.undefined
@@ -6667,6 +6933,7 @@ package glue {
   }
 
   object PrincipalPermissions {
+    @inline
     def apply(
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined
@@ -6697,6 +6964,7 @@ package glue {
   }
 
   object PropertyPredicate {
+    @inline
     def apply(
         Comparator: js.UndefOr[Comparator] = js.undefined,
         Key: js.UndefOr[ValueString] = js.undefined,
@@ -6717,6 +6985,7 @@ package glue {
   }
 
   object PutDataCatalogEncryptionSettingsRequest {
+    @inline
     def apply(
         DataCatalogEncryptionSettings: DataCatalogEncryptionSettings,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -6734,6 +7003,7 @@ package glue {
   trait PutDataCatalogEncryptionSettingsResponse extends js.Object {}
 
   object PutDataCatalogEncryptionSettingsResponse {
+    @inline
     def apply(
         ): PutDataCatalogEncryptionSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -6750,6 +7020,7 @@ package glue {
   }
 
   object PutResourcePolicyRequest {
+    @inline
     def apply(
         PolicyInJson: PolicyJsonString,
         PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined,
@@ -6771,6 +7042,7 @@ package glue {
   }
 
   object PutResourcePolicyResponse {
+    @inline
     def apply(
         PolicyHash: js.UndefOr[HashString] = js.undefined
     ): PutResourcePolicyResponse = {
@@ -6788,6 +7060,7 @@ package glue {
   }
 
   object PutWorkflowRunPropertiesRequest {
+    @inline
     def apply(
         Name: NameString,
         RunId: IdString,
@@ -6807,6 +7080,7 @@ package glue {
   trait PutWorkflowRunPropertiesResponse extends js.Object {}
 
   object PutWorkflowRunPropertiesResponse {
+    @inline
     def apply(
         ): PutWorkflowRunPropertiesResponse = {
       val __obj = js.Dynamic.literal()
@@ -6822,6 +7096,7 @@ package glue {
   }
 
   object ResetJobBookmarkRequest {
+    @inline
     def apply(
         JobName: JobName,
         RunId: js.UndefOr[RunId] = js.undefined
@@ -6841,6 +7116,7 @@ package glue {
   }
 
   object ResetJobBookmarkResponse {
+    @inline
     def apply(
         JobBookmarkEntry: js.UndefOr[JobBookmarkEntry] = js.undefined
     ): ResetJobBookmarkResponse = {
@@ -6868,6 +7144,7 @@ package glue {
   }
 
   object ResourceUri {
+    @inline
     def apply(
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         Uri: js.UndefOr[URI] = js.undefined
@@ -6889,6 +7166,7 @@ package glue {
   }
 
   object S3Encryption {
+    @inline
     def apply(
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         S3EncryptionMode: js.UndefOr[S3EncryptionMode] = js.undefined
@@ -6918,6 +7196,7 @@ package glue {
   }
 
   object S3Target {
+    @inline
     def apply(
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
@@ -6939,6 +7218,7 @@ package glue {
   }
 
   object Schedule {
+    @inline
     def apply(
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
         State: js.UndefOr[ScheduleState] = js.undefined
@@ -6968,6 +7248,7 @@ package glue {
   }
 
   object SchemaChangePolicy {
+    @inline
     def apply(
         DeleteBehavior: js.UndefOr[DeleteBehavior] = js.undefined,
         UpdateBehavior: js.UndefOr[UpdateBehavior] = js.undefined
@@ -6989,6 +7270,7 @@ package glue {
   }
 
   object SchemaColumn {
+    @inline
     def apply(
         DataType: js.UndefOr[ColumnTypeString] = js.undefined,
         Name: js.UndefOr[ColumnNameString] = js.undefined
@@ -7011,6 +7293,7 @@ package glue {
   }
 
   object SearchTablesRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         Filters: js.UndefOr[SearchPropertyPredicates] = js.undefined,
@@ -7037,6 +7320,7 @@ package glue {
   }
 
   object SearchTablesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         TableList: js.UndefOr[TableList] = js.undefined
@@ -7059,6 +7343,7 @@ package glue {
   }
 
   object SecurityConfiguration {
+    @inline
     def apply(
         CreatedTimeStamp: js.UndefOr[TimestampValue] = js.undefined,
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
@@ -7082,6 +7367,7 @@ package glue {
   }
 
   object Segment {
+    @inline
     def apply(
         SegmentNumber: NonNegativeInteger,
         TotalSegments: TotalSegmentsInteger
@@ -7106,6 +7392,7 @@ package glue {
   }
 
   object SerDeInfo {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined,
@@ -7130,6 +7417,7 @@ package glue {
   }
 
   object SkewedInfo {
+    @inline
     def apply(
         SkewedColumnNames: js.UndefOr[NameStringList] = js.undefined,
         SkewedColumnValueLocationMaps: js.UndefOr[LocationMap] = js.undefined,
@@ -7159,6 +7447,7 @@ package glue {
   }
 
   object SortCriterion {
+    @inline
     def apply(
         FieldName: js.UndefOr[ValueString] = js.undefined,
         Sort: js.UndefOr[Sort] = js.undefined
@@ -7183,6 +7472,7 @@ package glue {
   }
 
   object StartCrawlerRequest {
+    @inline
     def apply(
         Name: NameString
     ): StartCrawlerRequest = {
@@ -7198,6 +7488,7 @@ package glue {
   trait StartCrawlerResponse extends js.Object {}
 
   object StartCrawlerResponse {
+    @inline
     def apply(
         ): StartCrawlerResponse = {
       val __obj = js.Dynamic.literal()
@@ -7212,6 +7503,7 @@ package glue {
   }
 
   object StartCrawlerScheduleRequest {
+    @inline
     def apply(
         CrawlerName: NameString
     ): StartCrawlerScheduleRequest = {
@@ -7227,6 +7519,7 @@ package glue {
   trait StartCrawlerScheduleResponse extends js.Object {}
 
   object StartCrawlerScheduleResponse {
+    @inline
     def apply(
         ): StartCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -7242,6 +7535,7 @@ package glue {
   }
 
   object StartExportLabelsTaskRunRequest {
+    @inline
     def apply(
         OutputS3Path: UriString,
         TransformId: HashString
@@ -7261,6 +7555,7 @@ package glue {
   }
 
   object StartExportLabelsTaskRunResponse {
+    @inline
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartExportLabelsTaskRunResponse = {
@@ -7278,6 +7573,7 @@ package glue {
   }
 
   object StartImportLabelsTaskRunRequest {
+    @inline
     def apply(
         InputS3Path: UriString,
         TransformId: HashString,
@@ -7299,6 +7595,7 @@ package glue {
   }
 
   object StartImportLabelsTaskRunResponse {
+    @inline
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartImportLabelsTaskRunResponse = {
@@ -7323,6 +7620,7 @@ package glue {
   }
 
   object StartJobRunRequest {
+    @inline
     def apply(
         JobName: NameString,
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
@@ -7358,6 +7656,7 @@ package glue {
   }
 
   object StartJobRunResponse {
+    @inline
     def apply(
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): StartJobRunResponse = {
@@ -7373,6 +7672,7 @@ package glue {
   }
 
   object StartMLEvaluationTaskRunRequest {
+    @inline
     def apply(
         TransformId: HashString
     ): StartMLEvaluationTaskRunRequest = {
@@ -7390,6 +7690,7 @@ package glue {
   }
 
   object StartMLEvaluationTaskRunResponse {
+    @inline
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartMLEvaluationTaskRunResponse = {
@@ -7406,6 +7707,7 @@ package glue {
   }
 
   object StartMLLabelingSetGenerationTaskRunRequest {
+    @inline
     def apply(
         OutputS3Path: UriString,
         TransformId: HashString
@@ -7425,6 +7727,7 @@ package glue {
   }
 
   object StartMLLabelingSetGenerationTaskRunResponse {
+    @inline
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartMLLabelingSetGenerationTaskRunResponse = {
@@ -7440,6 +7743,7 @@ package glue {
   }
 
   object StartTriggerRequest {
+    @inline
     def apply(
         Name: NameString
     ): StartTriggerRequest = {
@@ -7457,6 +7761,7 @@ package glue {
   }
 
   object StartTriggerResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StartTriggerResponse = {
@@ -7472,6 +7777,7 @@ package glue {
   }
 
   object StartWorkflowRunRequest {
+    @inline
     def apply(
         Name: NameString
     ): StartWorkflowRunRequest = {
@@ -7489,6 +7795,7 @@ package glue {
   }
 
   object StartWorkflowRunResponse {
+    @inline
     def apply(
         RunId: js.UndefOr[IdString] = js.undefined
     ): StartWorkflowRunResponse = {
@@ -7504,6 +7811,7 @@ package glue {
   }
 
   object StopCrawlerRequest {
+    @inline
     def apply(
         Name: NameString
     ): StopCrawlerRequest = {
@@ -7519,6 +7827,7 @@ package glue {
   trait StopCrawlerResponse extends js.Object {}
 
   object StopCrawlerResponse {
+    @inline
     def apply(
         ): StopCrawlerResponse = {
       val __obj = js.Dynamic.literal()
@@ -7533,6 +7842,7 @@ package glue {
   }
 
   object StopCrawlerScheduleRequest {
+    @inline
     def apply(
         CrawlerName: NameString
     ): StopCrawlerScheduleRequest = {
@@ -7548,6 +7858,7 @@ package glue {
   trait StopCrawlerScheduleResponse extends js.Object {}
 
   object StopCrawlerScheduleResponse {
+    @inline
     def apply(
         ): StopCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -7562,6 +7873,7 @@ package glue {
   }
 
   object StopTriggerRequest {
+    @inline
     def apply(
         Name: NameString
     ): StopTriggerRequest = {
@@ -7579,6 +7891,7 @@ package glue {
   }
 
   object StopTriggerResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StopTriggerResponse = {
@@ -7608,6 +7921,7 @@ package glue {
   }
 
   object StorageDescriptor {
+    @inline
     def apply(
         BucketColumns: js.UndefOr[NameStringList] = js.undefined,
         Columns: js.UndefOr[ColumnList] = js.undefined,
@@ -7664,6 +7978,7 @@ package glue {
   }
 
   object Table {
+    @inline
     def apply(
         Name: NameString,
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
@@ -7719,6 +8034,7 @@ package glue {
   }
 
   object TableError {
+    @inline
     def apply(
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         TableName: js.UndefOr[NameString] = js.undefined
@@ -7750,6 +8066,7 @@ package glue {
   }
 
   object TableInput {
+    @inline
     def apply(
         Name: NameString,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -7793,6 +8110,7 @@ package glue {
   }
 
   object TableVersion {
+    @inline
     def apply(
         Table: js.UndefOr[Table] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
@@ -7815,6 +8133,7 @@ package glue {
   }
 
   object TableVersionError {
+    @inline
     def apply(
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         TableName: js.UndefOr[NameString] = js.undefined,
@@ -7835,6 +8154,7 @@ package glue {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: GlueResourceArn,
         TagsToAdd: TagsMap
@@ -7852,6 +8172,7 @@ package glue {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -7878,6 +8199,7 @@ package glue {
   }
 
   object TaskRun {
+    @inline
     def apply(
         CompletedOn: js.UndefOr[Timestamp] = js.undefined,
         ErrorString: js.UndefOr[GenericString] = js.undefined,
@@ -7917,6 +8239,7 @@ package glue {
   }
 
   object TaskRunFilterCriteria {
+    @inline
     def apply(
         StartedAfter: js.UndefOr[Timestamp] = js.undefined,
         StartedBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -7945,6 +8268,7 @@ package glue {
   }
 
   object TaskRunProperties {
+    @inline
     def apply(
         ExportLabelsTaskRunProperties: js.UndefOr[ExportLabelsTaskRunProperties] = js.undefined,
         FindMatchesTaskRunProperties: js.UndefOr[FindMatchesTaskRunProperties] = js.undefined,
@@ -7988,6 +8312,7 @@ package glue {
   }
 
   object TaskRunSortCriteria {
+    @inline
     def apply(
         Column: TaskRunSortColumnType,
         SortDirection: SortDirectionType
@@ -8040,6 +8365,7 @@ package glue {
   }
 
   object TransformFilterCriteria {
+    @inline
     def apply(
         CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
         CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -8073,6 +8399,7 @@ package glue {
   }
 
   object TransformParameters {
+    @inline
     def apply(
         TransformType: TransformType,
         FindMatchesParameters: js.UndefOr[FindMatchesParameters] = js.undefined
@@ -8106,6 +8433,7 @@ package glue {
   }
 
   object TransformSortCriteria {
+    @inline
     def apply(
         Column: TransformSortColumnType,
         SortDirection: SortDirectionType
@@ -8150,6 +8478,7 @@ package glue {
   }
 
   object Trigger {
+    @inline
     def apply(
         Actions: js.UndefOr[ActionList] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -8184,6 +8513,7 @@ package glue {
   }
 
   object TriggerNodeDetails {
+    @inline
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): TriggerNodeDetails = {
@@ -8229,6 +8559,7 @@ package glue {
   }
 
   object TriggerUpdate {
+    @inline
     def apply(
         Actions: js.UndefOr[ActionList] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -8253,6 +8584,7 @@ package glue {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: GlueResourceArn,
         TagsToRemove: TagKeysList
@@ -8270,6 +8602,7 @@ package glue {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -8294,6 +8627,7 @@ package glue {
   }
 
   object UpdateClassifierRequest {
+    @inline
     def apply(
         CsvClassifier: js.UndefOr[UpdateCsvClassifierRequest] = js.undefined,
         GrokClassifier: js.UndefOr[UpdateGrokClassifierRequest] = js.undefined,
@@ -8313,6 +8647,7 @@ package glue {
   trait UpdateClassifierResponse extends js.Object {}
 
   object UpdateClassifierResponse {
+    @inline
     def apply(
         ): UpdateClassifierResponse = {
       val __obj = js.Dynamic.literal()
@@ -8329,6 +8664,7 @@ package glue {
   }
 
   object UpdateConnectionRequest {
+    @inline
     def apply(
         ConnectionInput: ConnectionInput,
         Name: NameString,
@@ -8348,6 +8684,7 @@ package glue {
   trait UpdateConnectionResponse extends js.Object {}
 
   object UpdateConnectionResponse {
+    @inline
     def apply(
         ): UpdateConnectionResponse = {
       val __obj = js.Dynamic.literal()
@@ -8372,6 +8709,7 @@ package glue {
   }
 
   object UpdateCrawlerRequest {
+    @inline
     def apply(
         Name: NameString,
         Classifiers: js.UndefOr[ClassifierNameList] = js.undefined,
@@ -8409,6 +8747,7 @@ package glue {
   trait UpdateCrawlerResponse extends js.Object {}
 
   object UpdateCrawlerResponse {
+    @inline
     def apply(
         ): UpdateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
@@ -8424,6 +8763,7 @@ package glue {
   }
 
   object UpdateCrawlerScheduleRequest {
+    @inline
     def apply(
         CrawlerName: NameString,
         Schedule: js.UndefOr[CronExpression] = js.undefined
@@ -8441,6 +8781,7 @@ package glue {
   trait UpdateCrawlerScheduleResponse extends js.Object {}
 
   object UpdateCrawlerScheduleResponse {
+    @inline
     def apply(
         ): UpdateCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -8464,6 +8805,7 @@ package glue {
   }
 
   object UpdateCsvClassifierRequest {
+    @inline
     def apply(
         Name: NameString,
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
@@ -8495,6 +8837,7 @@ package glue {
   }
 
   object UpdateDatabaseRequest {
+    @inline
     def apply(
         DatabaseInput: DatabaseInput,
         Name: NameString,
@@ -8514,6 +8857,7 @@ package glue {
   trait UpdateDatabaseResponse extends js.Object {}
 
   object UpdateDatabaseResponse {
+    @inline
     def apply(
         ): UpdateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
@@ -8535,6 +8879,7 @@ package glue {
   }
 
   object UpdateDevEndpointRequest {
+    @inline
     def apply(
         EndpointName: GenericString,
         AddArguments: js.UndefOr[MapValue] = js.undefined,
@@ -8564,6 +8909,7 @@ package glue {
   trait UpdateDevEndpointResponse extends js.Object {}
 
   object UpdateDevEndpointResponse {
+    @inline
     def apply(
         ): UpdateDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
@@ -8584,6 +8930,7 @@ package glue {
   }
 
   object UpdateGrokClassifierRequest {
+    @inline
     def apply(
         Name: NameString,
         Classification: js.UndefOr[Classification] = js.undefined,
@@ -8608,6 +8955,7 @@ package glue {
   }
 
   object UpdateJobRequest {
+    @inline
     def apply(
         JobName: NameString,
         JobUpdate: JobUpdate
@@ -8627,6 +8975,7 @@ package glue {
   }
 
   object UpdateJobResponse {
+    @inline
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): UpdateJobResponse = {
@@ -8646,6 +8995,7 @@ package glue {
   }
 
   object UpdateJsonClassifierRequest {
+    @inline
     def apply(
         Name: NameString,
         JsonPath: js.UndefOr[JsonPath] = js.undefined
@@ -8674,6 +9024,7 @@ package glue {
   }
 
   object UpdateMLTransformRequest {
+    @inline
     def apply(
         TransformId: HashString,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -8709,6 +9060,7 @@ package glue {
   }
 
   object UpdateMLTransformResponse {
+    @inline
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): UpdateMLTransformResponse = {
@@ -8728,6 +9080,7 @@ package glue {
   }
 
   object UpdatePartitionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         PartitionInput: PartitionInput,
@@ -8751,6 +9104,7 @@ package glue {
   trait UpdatePartitionResponse extends js.Object {}
 
   object UpdatePartitionResponse {
+    @inline
     def apply(
         ): UpdatePartitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -8768,6 +9122,7 @@ package glue {
   }
 
   object UpdateTableRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         TableInput: TableInput,
@@ -8789,6 +9144,7 @@ package glue {
   trait UpdateTableResponse extends js.Object {}
 
   object UpdateTableResponse {
+    @inline
     def apply(
         ): UpdateTableResponse = {
       val __obj = js.Dynamic.literal()
@@ -8804,6 +9160,7 @@ package glue {
   }
 
   object UpdateTriggerRequest {
+    @inline
     def apply(
         Name: NameString,
         TriggerUpdate: TriggerUpdate
@@ -8823,6 +9180,7 @@ package glue {
   }
 
   object UpdateTriggerResponse {
+    @inline
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): UpdateTriggerResponse = {
@@ -8841,6 +9199,7 @@ package glue {
   }
 
   object UpdateUserDefinedFunctionRequest {
+    @inline
     def apply(
         DatabaseName: NameString,
         FunctionInput: UserDefinedFunctionInput,
@@ -8862,6 +9221,7 @@ package glue {
   trait UpdateUserDefinedFunctionResponse extends js.Object {}
 
   object UpdateUserDefinedFunctionResponse {
+    @inline
     def apply(
         ): UpdateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
@@ -8878,6 +9238,7 @@ package glue {
   }
 
   object UpdateWorkflowRequest {
+    @inline
     def apply(
         Name: NameString,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
@@ -8899,6 +9260,7 @@ package glue {
   }
 
   object UpdateWorkflowResponse {
+    @inline
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): UpdateWorkflowResponse = {
@@ -8919,6 +9281,7 @@ package glue {
   }
 
   object UpdateXMLClassifierRequest {
+    @inline
     def apply(
         Name: NameString,
         Classification: js.UndefOr[Classification] = js.undefined,
@@ -8948,6 +9311,7 @@ package glue {
   }
 
   object UserDefinedFunction {
+    @inline
     def apply(
         ClassName: js.UndefOr[NameString] = js.undefined,
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
@@ -8980,6 +9344,7 @@ package glue {
   }
 
   object UserDefinedFunctionInput {
+    @inline
     def apply(
         ClassName: js.UndefOr[NameString] = js.undefined,
         FunctionName: js.UndefOr[NameString] = js.undefined,
@@ -9020,6 +9385,7 @@ package glue {
   }
 
   object Workflow {
+    @inline
     def apply(
         CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
@@ -9051,6 +9417,7 @@ package glue {
   }
 
   object WorkflowGraph {
+    @inline
     def apply(
         Edges: js.UndefOr[EdgeList] = js.undefined,
         Nodes: js.UndefOr[NodeList] = js.undefined
@@ -9078,6 +9445,7 @@ package glue {
   }
 
   object WorkflowRun {
+    @inline
     def apply(
         CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
         Graph: js.UndefOr[WorkflowGraph] = js.undefined,
@@ -9115,6 +9483,7 @@ package glue {
   }
 
   object WorkflowRunStatistics {
+    @inline
     def apply(
         FailedActions: js.UndefOr[IntegerValue] = js.undefined,
         RunningActions: js.UndefOr[IntegerValue] = js.undefined,
@@ -9155,6 +9524,7 @@ package glue {
   }
 
   object XMLClassifier {
+    @inline
     def apply(
         Classification: Classification,
         Name: NameString,

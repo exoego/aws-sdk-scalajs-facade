@@ -92,124 +92,129 @@ package object pinpointemail {
 
   implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
-    def createConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
       service.createConfigurationSetEventDestination(params).promise.toFuture
-    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
-      service.createConfigurationSet(params).promise.toFuture
-    def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] =
-      service.createDedicatedIpPool(params).promise.toFuture
-    def createDeliverabilityTestReportFuture(
+    @inline def createConfigurationSetFuture(
+        params: CreateConfigurationSetRequest
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    @inline def createDedicatedIpPoolFuture(
+        params: CreateDedicatedIpPoolRequest
+    ): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise.toFuture
+    @inline def createDeliverabilityTestReportFuture(
         params: CreateDeliverabilityTestReportRequest
     ): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise.toFuture
-    def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
+    @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
       service.createEmailIdentity(params).promise.toFuture
-    def deleteConfigurationSetEventDestinationFuture(
+    @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
       service.deleteConfigurationSetEventDestination(params).promise.toFuture
-    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
-      service.deleteConfigurationSet(params).promise.toFuture
-    def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] =
-      service.deleteDedicatedIpPool(params).promise.toFuture
-    def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
+    @inline def deleteConfigurationSetFuture(
+        params: DeleteConfigurationSetRequest
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    @inline def deleteDedicatedIpPoolFuture(
+        params: DeleteDedicatedIpPoolRequest
+    ): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise.toFuture
+    @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
       service.deleteEmailIdentity(params).promise.toFuture
-    def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
+    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
       service.getAccount(params).promise.toFuture
-    def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
+    @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
       service.getBlacklistReports(params).promise.toFuture
-    def getConfigurationSetEventDestinationsFuture(
+    @inline def getConfigurationSetEventDestinationsFuture(
         params: GetConfigurationSetEventDestinationsRequest
     ): Future[GetConfigurationSetEventDestinationsResponse] =
       service.getConfigurationSetEventDestinations(params).promise.toFuture
-    def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
+    @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
       service.getConfigurationSet(params).promise.toFuture
-    def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
+    @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
       service.getDedicatedIp(params).promise.toFuture
-    def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
+    @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
       service.getDedicatedIps(params).promise.toFuture
-    def getDeliverabilityDashboardOptionsFuture(
+    @inline def getDeliverabilityDashboardOptionsFuture(
         params: GetDeliverabilityDashboardOptionsRequest
     ): Future[GetDeliverabilityDashboardOptionsResponse] =
       service.getDeliverabilityDashboardOptions(params).promise.toFuture
-    def getDeliverabilityTestReportFuture(
+    @inline def getDeliverabilityTestReportFuture(
         params: GetDeliverabilityTestReportRequest
     ): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise.toFuture
-    def getDomainDeliverabilityCampaignFuture(
+    @inline def getDomainDeliverabilityCampaignFuture(
         params: GetDomainDeliverabilityCampaignRequest
     ): Future[GetDomainDeliverabilityCampaignResponse] =
       service.getDomainDeliverabilityCampaign(params).promise.toFuture
-    def getDomainStatisticsReportFuture(
+    @inline def getDomainStatisticsReportFuture(
         params: GetDomainStatisticsReportRequest
     ): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise.toFuture
-    def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
+    @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
       service.getEmailIdentity(params).promise.toFuture
-    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
-      service.listConfigurationSets(params).promise.toFuture
-    def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
+    @inline def listConfigurationSetsFuture(
+        params: ListConfigurationSetsRequest
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
       service.listDedicatedIpPools(params).promise.toFuture
-    def listDeliverabilityTestReportsFuture(
+    @inline def listDeliverabilityTestReportsFuture(
         params: ListDeliverabilityTestReportsRequest
     ): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise.toFuture
-    def listDomainDeliverabilityCampaignsFuture(
+    @inline def listDomainDeliverabilityCampaignsFuture(
         params: ListDomainDeliverabilityCampaignsRequest
     ): Future[ListDomainDeliverabilityCampaignsResponse] =
       service.listDomainDeliverabilityCampaigns(params).promise.toFuture
-    def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
+    @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
       service.listEmailIdentities(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putAccountDedicatedIpWarmupAttributesFuture(
+    @inline def putAccountDedicatedIpWarmupAttributesFuture(
         params: PutAccountDedicatedIpWarmupAttributesRequest
     ): Future[PutAccountDedicatedIpWarmupAttributesResponse] =
       service.putAccountDedicatedIpWarmupAttributes(params).promise.toFuture
-    def putAccountSendingAttributesFuture(
+    @inline def putAccountSendingAttributesFuture(
         params: PutAccountSendingAttributesRequest
     ): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise.toFuture
-    def putConfigurationSetDeliveryOptionsFuture(
+    @inline def putConfigurationSetDeliveryOptionsFuture(
         params: PutConfigurationSetDeliveryOptionsRequest
     ): Future[PutConfigurationSetDeliveryOptionsResponse] =
       service.putConfigurationSetDeliveryOptions(params).promise.toFuture
-    def putConfigurationSetReputationOptionsFuture(
+    @inline def putConfigurationSetReputationOptionsFuture(
         params: PutConfigurationSetReputationOptionsRequest
     ): Future[PutConfigurationSetReputationOptionsResponse] =
       service.putConfigurationSetReputationOptions(params).promise.toFuture
-    def putConfigurationSetSendingOptionsFuture(
+    @inline def putConfigurationSetSendingOptionsFuture(
         params: PutConfigurationSetSendingOptionsRequest
     ): Future[PutConfigurationSetSendingOptionsResponse] =
       service.putConfigurationSetSendingOptions(params).promise.toFuture
-    def putConfigurationSetTrackingOptionsFuture(
+    @inline def putConfigurationSetTrackingOptionsFuture(
         params: PutConfigurationSetTrackingOptionsRequest
     ): Future[PutConfigurationSetTrackingOptionsResponse] =
       service.putConfigurationSetTrackingOptions(params).promise.toFuture
-    def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
+    @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
       service.putDedicatedIpInPool(params).promise.toFuture
-    def putDedicatedIpWarmupAttributesFuture(
+    @inline def putDedicatedIpWarmupAttributesFuture(
         params: PutDedicatedIpWarmupAttributesRequest
     ): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise.toFuture
-    def putDeliverabilityDashboardOptionFuture(
+    @inline def putDeliverabilityDashboardOptionFuture(
         params: PutDeliverabilityDashboardOptionRequest
     ): Future[PutDeliverabilityDashboardOptionResponse] =
       service.putDeliverabilityDashboardOption(params).promise.toFuture
-    def putEmailIdentityDkimAttributesFuture(
+    @inline def putEmailIdentityDkimAttributesFuture(
         params: PutEmailIdentityDkimAttributesRequest
     ): Future[PutEmailIdentityDkimAttributesResponse] = service.putEmailIdentityDkimAttributes(params).promise.toFuture
-    def putEmailIdentityFeedbackAttributesFuture(
+    @inline def putEmailIdentityFeedbackAttributesFuture(
         params: PutEmailIdentityFeedbackAttributesRequest
     ): Future[PutEmailIdentityFeedbackAttributesResponse] =
       service.putEmailIdentityFeedbackAttributes(params).promise.toFuture
-    def putEmailIdentityMailFromAttributesFuture(
+    @inline def putEmailIdentityMailFromAttributesFuture(
         params: PutEmailIdentityMailFromAttributesRequest
     ): Future[PutEmailIdentityMailFromAttributesResponse] =
       service.putEmailIdentityMailFromAttributes(params).promise.toFuture
-    def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
+    @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
       service.sendEmail(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateConfigurationSetEventDestinationFuture(
+    @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
       service.updateConfigurationSetEventDestination(params).promise.toFuture
@@ -334,6 +339,7 @@ package pinpointemail {
   }
 
   object BlacklistEntry {
+    @inline
     def apply(
         Description: js.UndefOr[BlacklistingDescription] = js.undefined,
         ListingTime: js.UndefOr[Timestamp] = js.undefined,
@@ -357,6 +363,7 @@ package pinpointemail {
   }
 
   object Body {
+    @inline
     def apply(
         Html: js.UndefOr[Content] = js.undefined,
         Text: js.UndefOr[Content] = js.undefined
@@ -377,6 +384,7 @@ package pinpointemail {
   }
 
   object CloudWatchDestination {
+    @inline
     def apply(
         DimensionConfigurations: CloudWatchDimensionConfigurations
     ): CloudWatchDestination = {
@@ -399,6 +407,7 @@ package pinpointemail {
   }
 
   object CloudWatchDimensionConfiguration {
+    @inline
     def apply(
         DefaultDimensionValue: DefaultDimensionValue,
         DimensionName: DimensionName,
@@ -424,6 +433,7 @@ package pinpointemail {
   }
 
   object Content {
+    @inline
     def apply(
         Data: MessageData,
         Charset: js.UndefOr[Charset] = js.undefined
@@ -448,6 +458,7 @@ package pinpointemail {
   }
 
   object CreateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestinationDefinition,
@@ -470,6 +481,7 @@ package pinpointemail {
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object CreateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -492,6 +504,7 @@ package pinpointemail {
   }
 
   object CreateConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
@@ -520,6 +533,7 @@ package pinpointemail {
   trait CreateConfigurationSetResponse extends js.Object {}
 
   object CreateConfigurationSetResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -538,6 +552,7 @@ package pinpointemail {
   }
 
   object CreateDedicatedIpPoolRequest {
+    @inline
     def apply(
         PoolName: PoolName,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -558,6 +573,7 @@ package pinpointemail {
   trait CreateDedicatedIpPoolResponse extends js.Object {}
 
   object CreateDedicatedIpPoolResponse {
+    @inline
     def apply(
         ): CreateDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
@@ -578,6 +594,7 @@ package pinpointemail {
   }
 
   object CreateDeliverabilityTestReportRequest {
+    @inline
     def apply(
         Content: EmailContent,
         FromEmailAddress: EmailAddress,
@@ -605,6 +622,7 @@ package pinpointemail {
   }
 
   object CreateDeliverabilityTestReportResponse {
+    @inline
     def apply(
         DeliverabilityTestStatus: DeliverabilityTestStatus,
         ReportId: ReportId
@@ -628,6 +646,7 @@ package pinpointemail {
   }
 
   object CreateEmailIdentityRequest {
+    @inline
     def apply(
         EmailIdentity: Identity,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -653,6 +672,7 @@ package pinpointemail {
   }
 
   object CreateEmailIdentityResponse {
+    @inline
     def apply(
         DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
@@ -677,6 +697,7 @@ package pinpointemail {
   }
 
   object DailyVolume {
+    @inline
     def apply(
         DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
         StartDate: js.UndefOr[Timestamp] = js.undefined,
@@ -703,6 +724,7 @@ package pinpointemail {
   }
 
   object DedicatedIp {
+    @inline
     def apply(
         Ip: Ip,
         WarmupPercentage: Percentage100Wrapper,
@@ -730,6 +752,7 @@ package pinpointemail {
   }
 
   object DeleteConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestinationName: EventDestinationName
@@ -750,6 +773,7 @@ package pinpointemail {
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
 
   object DeleteConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -767,6 +791,7 @@ package pinpointemail {
   }
 
   object DeleteConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetRequest = {
@@ -785,6 +810,7 @@ package pinpointemail {
   trait DeleteConfigurationSetResponse extends js.Object {}
 
   object DeleteConfigurationSetResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -802,6 +828,7 @@ package pinpointemail {
   }
 
   object DeleteDedicatedIpPoolRequest {
+    @inline
     def apply(
         PoolName: PoolName
     ): DeleteDedicatedIpPoolRequest = {
@@ -820,6 +847,7 @@ package pinpointemail {
   trait DeleteDedicatedIpPoolResponse extends js.Object {}
 
   object DeleteDedicatedIpPoolResponse {
+    @inline
     def apply(
         ): DeleteDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
@@ -837,6 +865,7 @@ package pinpointemail {
   }
 
   object DeleteEmailIdentityRequest {
+    @inline
     def apply(
         EmailIdentity: Identity
     ): DeleteEmailIdentityRequest = {
@@ -855,6 +884,7 @@ package pinpointemail {
   trait DeleteEmailIdentityResponse extends js.Object {}
 
   object DeleteEmailIdentityResponse {
+    @inline
     def apply(
         ): DeleteEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
@@ -888,6 +918,7 @@ package pinpointemail {
   }
 
   object DeliverabilityTestReport {
+    @inline
     def apply(
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
         DeliverabilityTestStatus: js.UndefOr[DeliverabilityTestStatus] = js.undefined,
@@ -927,6 +958,7 @@ package pinpointemail {
   }
 
   object DeliveryOptions {
+    @inline
     def apply(
         SendingPoolName: js.UndefOr[PoolName] = js.undefined,
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
@@ -949,6 +981,7 @@ package pinpointemail {
   }
 
   object Destination {
+    @inline
     def apply(
         BccAddresses: js.UndefOr[EmailAddressList] = js.undefined,
         CcAddresses: js.UndefOr[EmailAddressList] = js.undefined,
@@ -984,6 +1017,7 @@ package pinpointemail {
   }
 
   object DkimAttributes {
+    @inline
     def apply(
         SigningEnabled: js.UndefOr[Enabled] = js.undefined,
         Status: js.UndefOr[DkimStatus] = js.undefined,
@@ -1037,6 +1071,7 @@ package pinpointemail {
   }
 
   object DomainDeliverabilityCampaign {
+    @inline
     def apply(
         CampaignId: js.UndefOr[CampaignId] = js.undefined,
         DeleteRate: js.UndefOr[Percentage] = js.undefined,
@@ -1083,6 +1118,7 @@ package pinpointemail {
   }
 
   object DomainDeliverabilityTrackingOption {
+    @inline
     def apply(
         Domain: js.UndefOr[Domain] = js.undefined,
         InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption] = js.undefined,
@@ -1111,6 +1147,7 @@ package pinpointemail {
   }
 
   object DomainIspPlacement {
+    @inline
     def apply(
         InboxPercentage: js.UndefOr[Percentage] = js.undefined,
         InboxRawCount: js.UndefOr[Volume] = js.undefined,
@@ -1138,6 +1175,7 @@ package pinpointemail {
   }
 
   object EmailContent {
+    @inline
     def apply(
         Raw: js.UndefOr[RawMessage] = js.undefined,
         Simple: js.UndefOr[Message] = js.undefined
@@ -1164,6 +1202,7 @@ package pinpointemail {
   }
 
   object EventDestination {
+    @inline
     def apply(
         MatchingEventTypes: EventTypes,
         Name: EventDestinationName,
@@ -1203,6 +1242,7 @@ package pinpointemail {
   }
 
   object EventDestinationDefinition {
+    @inline
     def apply(
         CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
@@ -1247,6 +1287,7 @@ package pinpointemail {
   trait GetAccountRequest extends js.Object {}
 
   object GetAccountRequest {
+    @inline
     def apply(
         ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1268,6 +1309,7 @@ package pinpointemail {
   }
 
   object GetAccountResponse {
+    @inline
     def apply(
         DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined,
         EnforcementStatus: js.UndefOr[GeneralEnforcementStatus] = js.undefined,
@@ -1296,6 +1338,7 @@ package pinpointemail {
   }
 
   object GetBlacklistReportsRequest {
+    @inline
     def apply(
         BlacklistItemNames: BlacklistItemNames
     ): GetBlacklistReportsRequest = {
@@ -1316,6 +1359,7 @@ package pinpointemail {
   }
 
   object GetBlacklistReportsResponse {
+    @inline
     def apply(
         BlacklistReport: BlacklistReport
     ): GetBlacklistReportsResponse = {
@@ -1336,6 +1380,7 @@ package pinpointemail {
   }
 
   object GetConfigurationSetEventDestinationsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetEventDestinationsRequest = {
@@ -1356,6 +1401,7 @@ package pinpointemail {
   }
 
   object GetConfigurationSetEventDestinationsResponse {
+    @inline
     def apply(
         EventDestinations: js.UndefOr[EventDestinations] = js.undefined
     ): GetConfigurationSetEventDestinationsResponse = {
@@ -1374,6 +1420,7 @@ package pinpointemail {
   }
 
   object GetConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetRequest = {
@@ -1399,6 +1446,7 @@ package pinpointemail {
   }
 
   object GetConfigurationSetResponse {
+    @inline
     def apply(
         ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
@@ -1427,6 +1475,7 @@ package pinpointemail {
   }
 
   object GetDedicatedIpRequest {
+    @inline
     def apply(
         Ip: Ip
     ): GetDedicatedIpRequest = {
@@ -1447,6 +1496,7 @@ package pinpointemail {
   }
 
   object GetDedicatedIpResponse {
+    @inline
     def apply(
         DedicatedIp: js.UndefOr[DedicatedIp] = js.undefined
     ): GetDedicatedIpResponse = {
@@ -1467,6 +1517,7 @@ package pinpointemail {
   }
 
   object GetDedicatedIpsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined,
@@ -1490,6 +1541,7 @@ package pinpointemail {
   }
 
   object GetDedicatedIpsResponse {
+    @inline
     def apply(
         DedicatedIps: js.UndefOr[DedicatedIpList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1509,6 +1561,7 @@ package pinpointemail {
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object {}
 
   object GetDeliverabilityDashboardOptionsRequest {
+    @inline
     def apply(
         ): GetDeliverabilityDashboardOptionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -1530,6 +1583,7 @@ package pinpointemail {
   }
 
   object GetDeliverabilityDashboardOptionsResponse {
+    @inline
     def apply(
         DashboardEnabled: Enabled,
         AccountStatus: js.UndefOr[DeliverabilityDashboardAccountStatus] = js.undefined,
@@ -1560,6 +1614,7 @@ package pinpointemail {
   }
 
   object GetDeliverabilityTestReportRequest {
+    @inline
     def apply(
         ReportId: ReportId
     ): GetDeliverabilityTestReportRequest = {
@@ -1584,6 +1639,7 @@ package pinpointemail {
   }
 
   object GetDeliverabilityTestReportResponse {
+    @inline
     def apply(
         DeliverabilityTestReport: DeliverabilityTestReport,
         IspPlacements: IspPlacements,
@@ -1612,6 +1668,7 @@ package pinpointemail {
   }
 
   object GetDomainDeliverabilityCampaignRequest {
+    @inline
     def apply(
         CampaignId: CampaignId
     ): GetDomainDeliverabilityCampaignRequest = {
@@ -1632,6 +1689,7 @@ package pinpointemail {
   }
 
   object GetDomainDeliverabilityCampaignResponse {
+    @inline
     def apply(
         DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
     ): GetDomainDeliverabilityCampaignResponse = {
@@ -1654,6 +1712,7 @@ package pinpointemail {
   }
 
   object GetDomainStatisticsReportRequest {
+    @inline
     def apply(
         Domain: Identity,
         EndDate: Timestamp,
@@ -1679,6 +1738,7 @@ package pinpointemail {
   }
 
   object GetDomainStatisticsReportResponse {
+    @inline
     def apply(
         DailyVolumes: DailyVolumes,
         OverallVolume: OverallVolume
@@ -1701,6 +1761,7 @@ package pinpointemail {
   }
 
   object GetEmailIdentityRequest {
+    @inline
     def apply(
         EmailIdentity: Identity
     ): GetEmailIdentityRequest = {
@@ -1726,6 +1787,7 @@ package pinpointemail {
   }
 
   object GetEmailIdentityResponse {
+    @inline
     def apply(
         DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
         FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
@@ -1756,6 +1818,7 @@ package pinpointemail {
   }
 
   object IdentityInfo {
+    @inline
     def apply(
         IdentityName: js.UndefOr[Identity] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
@@ -1792,6 +1855,7 @@ package pinpointemail {
   }
 
   object InboxPlacementTrackingOption {
+    @inline
     def apply(
         Global: js.UndefOr[Enabled] = js.undefined,
         TrackedIsps: js.UndefOr[IspNameList] = js.undefined
@@ -1813,6 +1877,7 @@ package pinpointemail {
   }
 
   object IspPlacement {
+    @inline
     def apply(
         IspName: js.UndefOr[IspName] = js.undefined,
         PlacementStatistics: js.UndefOr[PlacementStatistics] = js.undefined
@@ -1834,6 +1899,7 @@ package pinpointemail {
   }
 
   object KinesisFirehoseDestination {
+    @inline
     def apply(
         DeliveryStreamArn: AmazonResourceName,
         IamRoleArn: AmazonResourceName
@@ -1857,6 +1923,7 @@ package pinpointemail {
   }
 
   object ListConfigurationSetsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
@@ -1878,6 +1945,7 @@ package pinpointemail {
   }
 
   object ListConfigurationSetsResponse {
+    @inline
     def apply(
         ConfigurationSets: js.UndefOr[ConfigurationSetNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1899,6 +1967,7 @@ package pinpointemail {
   }
 
   object ListDedicatedIpPoolsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
@@ -1920,6 +1989,7 @@ package pinpointemail {
   }
 
   object ListDedicatedIpPoolsResponse {
+    @inline
     def apply(
         DedicatedIpPools: js.UndefOr[ListOfDedicatedIpPools] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1941,6 +2011,7 @@ package pinpointemail {
   }
 
   object ListDeliverabilityTestReportsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
@@ -1962,6 +2033,7 @@ package pinpointemail {
   }
 
   object ListDeliverabilityTestReportsResponse {
+    @inline
     def apply(
         DeliverabilityTestReports: DeliverabilityTestReports,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1988,6 +2060,7 @@ package pinpointemail {
   }
 
   object ListDomainDeliverabilityCampaignsRequest {
+    @inline
     def apply(
         EndDate: Timestamp,
         StartDate: Timestamp,
@@ -2017,6 +2090,7 @@ package pinpointemail {
   }
 
   object ListDomainDeliverabilityCampaignsResponse {
+    @inline
     def apply(
         DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2040,6 +2114,7 @@ package pinpointemail {
   }
 
   object ListEmailIdentitiesRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
@@ -2061,6 +2136,7 @@ package pinpointemail {
   }
 
   object ListEmailIdentitiesResponse {
+    @inline
     def apply(
         EmailIdentities: js.UndefOr[IdentityInfoList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2078,6 +2154,7 @@ package pinpointemail {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
@@ -2095,6 +2172,7 @@ package pinpointemail {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: TagList
     ): ListTagsForResourceResponse = {
@@ -2117,6 +2195,7 @@ package pinpointemail {
   }
 
   object MailFromAttributes {
+    @inline
     def apply(
         BehaviorOnMxFailure: BehaviorOnMxFailure,
         MailFromDomain: MailFromDomainName,
@@ -2158,6 +2237,7 @@ package pinpointemail {
   }
 
   object Message {
+    @inline
     def apply(
         Body: Body,
         Subject: Content
@@ -2181,6 +2261,7 @@ package pinpointemail {
   }
 
   object MessageTag {
+    @inline
     def apply(
         Name: MessageTagName,
         Value: MessageTagValue
@@ -2205,6 +2286,7 @@ package pinpointemail {
   }
 
   object OverallVolume {
+    @inline
     def apply(
         DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
         ReadRatePercent: js.UndefOr[Percentage] = js.undefined,
@@ -2227,6 +2309,7 @@ package pinpointemail {
   }
 
   object PinpointDestination {
+    @inline
     def apply(
         ApplicationArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): PinpointDestination = {
@@ -2249,6 +2332,7 @@ package pinpointemail {
   }
 
   object PlacementStatistics {
+    @inline
     def apply(
         DkimPercentage: js.UndefOr[Percentage] = js.undefined,
         InboxPercentage: js.UndefOr[Percentage] = js.undefined,
@@ -2275,6 +2359,7 @@ package pinpointemail {
   }
 
   object PutAccountDedicatedIpWarmupAttributesRequest {
+    @inline
     def apply(
         AutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountDedicatedIpWarmupAttributesRequest = {
@@ -2291,6 +2376,7 @@ package pinpointemail {
   trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object {}
 
   object PutAccountDedicatedIpWarmupAttributesResponse {
+    @inline
     def apply(
         ): PutAccountDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2308,6 +2394,7 @@ package pinpointemail {
   }
 
   object PutAccountSendingAttributesRequest {
+    @inline
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountSendingAttributesRequest = {
@@ -2324,6 +2411,7 @@ package pinpointemail {
   trait PutAccountSendingAttributesResponse extends js.Object {}
 
   object PutAccountSendingAttributesResponse {
+    @inline
     def apply(
         ): PutAccountSendingAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2343,6 +2431,7 @@ package pinpointemail {
   }
 
   object PutConfigurationSetDeliveryOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined,
@@ -2365,6 +2454,7 @@ package pinpointemail {
   trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
 
   object PutConfigurationSetDeliveryOptionsResponse {
+    @inline
     def apply(
         ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2383,6 +2473,7 @@ package pinpointemail {
   }
 
   object PutConfigurationSetReputationOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
@@ -2403,6 +2494,7 @@ package pinpointemail {
   trait PutConfigurationSetReputationOptionsResponse extends js.Object {}
 
   object PutConfigurationSetReputationOptionsResponse {
+    @inline
     def apply(
         ): PutConfigurationSetReputationOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2421,6 +2513,7 @@ package pinpointemail {
   }
 
   object PutConfigurationSetSendingOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
@@ -2441,6 +2534,7 @@ package pinpointemail {
   trait PutConfigurationSetSendingOptionsResponse extends js.Object {}
 
   object PutConfigurationSetSendingOptionsResponse {
+    @inline
     def apply(
         ): PutConfigurationSetSendingOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2459,6 +2553,7 @@ package pinpointemail {
   }
 
   object PutConfigurationSetTrackingOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
@@ -2479,6 +2574,7 @@ package pinpointemail {
   trait PutConfigurationSetTrackingOptionsResponse extends js.Object {}
 
   object PutConfigurationSetTrackingOptionsResponse {
+    @inline
     def apply(
         ): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2497,6 +2593,7 @@ package pinpointemail {
   }
 
   object PutDedicatedIpInPoolRequest {
+    @inline
     def apply(
         DestinationPoolName: PoolName,
         Ip: Ip
@@ -2517,6 +2614,7 @@ package pinpointemail {
   trait PutDedicatedIpInPoolResponse extends js.Object {}
 
   object PutDedicatedIpInPoolResponse {
+    @inline
     def apply(
         ): PutDedicatedIpInPoolResponse = {
       val __obj = js.Dynamic.literal()
@@ -2535,6 +2633,7 @@ package pinpointemail {
   }
 
   object PutDedicatedIpWarmupAttributesRequest {
+    @inline
     def apply(
         Ip: Ip,
         WarmupPercentage: Percentage100Wrapper
@@ -2555,6 +2654,7 @@ package pinpointemail {
   trait PutDedicatedIpWarmupAttributesResponse extends js.Object {}
 
   object PutDedicatedIpWarmupAttributesResponse {
+    @inline
     def apply(
         ): PutDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2574,6 +2674,7 @@ package pinpointemail {
   }
 
   object PutDeliverabilityDashboardOptionRequest {
+    @inline
     def apply(
         DashboardEnabled: Enabled,
         SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined
@@ -2594,6 +2695,7 @@ package pinpointemail {
   trait PutDeliverabilityDashboardOptionResponse extends js.Object {}
 
   object PutDeliverabilityDashboardOptionResponse {
+    @inline
     def apply(
         ): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2612,6 +2714,7 @@ package pinpointemail {
   }
 
   object PutEmailIdentityDkimAttributesRequest {
+    @inline
     def apply(
         EmailIdentity: Identity,
         SigningEnabled: js.UndefOr[Enabled] = js.undefined
@@ -2632,6 +2735,7 @@ package pinpointemail {
   trait PutEmailIdentityDkimAttributesResponse extends js.Object {}
 
   object PutEmailIdentityDkimAttributesResponse {
+    @inline
     def apply(
         ): PutEmailIdentityDkimAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2650,6 +2754,7 @@ package pinpointemail {
   }
 
   object PutEmailIdentityFeedbackAttributesRequest {
+    @inline
     def apply(
         EmailIdentity: Identity,
         EmailForwardingEnabled: js.UndefOr[Enabled] = js.undefined
@@ -2670,6 +2775,7 @@ package pinpointemail {
   trait PutEmailIdentityFeedbackAttributesResponse extends js.Object {}
 
   object PutEmailIdentityFeedbackAttributesResponse {
+    @inline
     def apply(
         ): PutEmailIdentityFeedbackAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2689,6 +2795,7 @@ package pinpointemail {
   }
 
   object PutEmailIdentityMailFromAttributesRequest {
+    @inline
     def apply(
         EmailIdentity: Identity,
         BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined,
@@ -2711,6 +2818,7 @@ package pinpointemail {
   trait PutEmailIdentityMailFromAttributesResponse extends js.Object {}
 
   object PutEmailIdentityMailFromAttributesResponse {
+    @inline
     def apply(
         ): PutEmailIdentityMailFromAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2728,6 +2836,7 @@ package pinpointemail {
   }
 
   object RawMessage {
+    @inline
     def apply(
         Data: RawMessageData
     ): RawMessage = {
@@ -2749,6 +2858,7 @@ package pinpointemail {
   }
 
   object ReputationOptions {
+    @inline
     def apply(
         LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
@@ -2775,6 +2885,7 @@ package pinpointemail {
   }
 
   object SendEmailRequest {
+    @inline
     def apply(
         Content: EmailContent,
         Destination: Destination,
@@ -2809,6 +2920,7 @@ package pinpointemail {
   }
 
   object SendEmailResponse {
+    @inline
     def apply(
         MessageId: js.UndefOr[OutboundMessageId] = js.undefined
     ): SendEmailResponse = {
@@ -2829,6 +2941,7 @@ package pinpointemail {
   }
 
   object SendQuota {
+    @inline
     def apply(
         Max24HourSend: js.UndefOr[Max24HourSend] = js.undefined,
         MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
@@ -2851,6 +2964,7 @@ package pinpointemail {
   }
 
   object SendingOptions {
+    @inline
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): SendingOptions = {
@@ -2869,6 +2983,7 @@ package pinpointemail {
   }
 
   object SnsDestination {
+    @inline
     def apply(
         TopicArn: AmazonResourceName
     ): SnsDestination = {
@@ -2895,6 +3010,7 @@ package pinpointemail {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -2915,6 +3031,7 @@ package pinpointemail {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         Tags: TagList
@@ -2932,6 +3049,7 @@ package pinpointemail {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2960,6 +3078,7 @@ package pinpointemail {
   }
 
   object TrackingOptions {
+    @inline
     def apply(
         CustomRedirectDomain: CustomRedirectDomain
     ): TrackingOptions = {
@@ -2978,6 +3097,7 @@ package pinpointemail {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
@@ -2995,6 +3115,7 @@ package pinpointemail {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3014,6 +3135,7 @@ package pinpointemail {
   }
 
   object UpdateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestinationDefinition,
@@ -3036,6 +3158,7 @@ package pinpointemail {
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object UpdateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -3056,6 +3179,7 @@ package pinpointemail {
   }
 
   object VolumeStatistics {
+    @inline
     def apply(
         InboxRawCount: js.UndefOr[Volume] = js.undefined,
         ProjectedInbox: js.UndefOr[Volume] = js.undefined,

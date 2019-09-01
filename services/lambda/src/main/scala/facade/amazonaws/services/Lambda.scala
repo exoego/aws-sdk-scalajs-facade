@@ -86,81 +86,91 @@ package object lambda {
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
 
-    def addLayerVersionPermissionFuture(
+    @inline def addLayerVersionPermissionFuture(
         params: AddLayerVersionPermissionRequest
     ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise.toFuture
-    def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] =
+    @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] =
       service.addPermission(params).promise.toFuture
-    def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] =
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] =
       service.createAlias(params).promise.toFuture
-    def createEventSourceMappingFuture(
+    @inline def createEventSourceMappingFuture(
         params: CreateEventSourceMappingRequest
     ): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise.toFuture
-    def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] =
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] =
       service.createFunction(params).promise.toFuture
-    def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise.toFuture
-    def deleteEventSourceMappingFuture(
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] =
+      service.deleteAlias(params).promise.toFuture
+    @inline def deleteEventSourceMappingFuture(
         params: DeleteEventSourceMappingRequest
     ): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise.toFuture
-    def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] =
+    @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] =
       service.deleteFunctionConcurrency(params).promise.toFuture
-    def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] =
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] =
       service.deleteFunction(params).promise.toFuture
-    def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] =
+    @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] =
       service.deleteLayerVersion(params).promise.toFuture
-    def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
       service.getAccountSettings(params).promise.toFuture
-    def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] = service.getAlias(params).promise.toFuture
-    def getEventSourceMappingFuture(params: GetEventSourceMappingRequest): Future[EventSourceMappingConfiguration] =
-      service.getEventSourceMapping(params).promise.toFuture
-    def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] =
+    @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] =
+      service.getAlias(params).promise.toFuture
+    @inline def getEventSourceMappingFuture(
+        params: GetEventSourceMappingRequest
+    ): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise.toFuture
+    @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] =
       service.getFunctionConfiguration(params).promise.toFuture
-    def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
       service.getFunction(params).promise.toFuture
-    def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
+    @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
       service.getLayerVersionByArn(params).promise.toFuture
-    def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] =
+    @inline def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] =
       service.getLayerVersion(params).promise.toFuture
-    def getLayerVersionPolicyFuture(params: GetLayerVersionPolicyRequest): Future[GetLayerVersionPolicyResponse] =
-      service.getLayerVersionPolicy(params).promise.toFuture
-    def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
+    @inline def getLayerVersionPolicyFuture(
+        params: GetLayerVersionPolicyRequest
+    ): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise.toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
-    def invokeFuture(params: InvocationRequest): Future[InvocationResponse] = service.invoke(params).promise.toFuture
-    def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
+    @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] =
+      service.invoke(params).promise.toFuture
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture
-    def listEventSourceMappingsFuture(params: ListEventSourceMappingsRequest): Future[ListEventSourceMappingsResponse] =
-      service.listEventSourceMappings(params).promise.toFuture
-    def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
+    @inline def listEventSourceMappingsFuture(
+        params: ListEventSourceMappingsRequest
+    ): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise.toFuture
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
       service.listFunctions(params).promise.toFuture
-    def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] =
+    @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] =
       service.listLayerVersions(params).promise.toFuture
-    def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] =
+    @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] =
       service.listLayers(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def listVersionsByFunctionFuture(params: ListVersionsByFunctionRequest): Future[ListVersionsByFunctionResponse] =
-      service.listVersionsByFunction(params).promise.toFuture
-    def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] =
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def listVersionsByFunctionFuture(
+        params: ListVersionsByFunctionRequest
+    ): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise.toFuture
+    @inline def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] =
       service.publishLayerVersion(params).promise.toFuture
-    def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] =
+    @inline def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] =
       service.publishVersion(params).promise.toFuture
-    def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] =
+    @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] =
       service.putFunctionConcurrency(params).promise.toFuture
-    def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] =
+    @inline def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] =
       service.removeLayerVersionPermission(params).promise.toFuture
-    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
       service.removePermission(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] =
+    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] =
       service.updateAlias(params).promise.toFuture
-    def updateEventSourceMappingFuture(
+    @inline def updateEventSourceMappingFuture(
         params: UpdateEventSourceMappingRequest
     ): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise.toFuture
-    def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] =
+    @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] =
       service.updateFunctionCode(params).promise.toFuture
-    def updateFunctionConfigurationFuture(params: UpdateFunctionConfigurationRequest): Future[FunctionConfiguration] =
-      service.updateFunctionConfiguration(params).promise.toFuture
+    @inline def updateFunctionConfigurationFuture(
+        params: UpdateFunctionConfigurationRequest
+    ): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise.toFuture
   }
 }
 
@@ -235,6 +245,7 @@ package lambda {
   }
 
   object AccountLimit {
+    @inline
     def apply(
         CodeSizeUnzipped: js.UndefOr[Double] = js.undefined,
         CodeSizeZipped: js.UndefOr[Double] = js.undefined,
@@ -264,6 +275,7 @@ package lambda {
   }
 
   object AccountUsage {
+    @inline
     def apply(
         FunctionCount: js.UndefOr[Double] = js.undefined,
         TotalCodeSize: js.UndefOr[Double] = js.undefined
@@ -287,6 +299,7 @@ package lambda {
   }
 
   object AddLayerVersionPermissionRequest {
+    @inline
     def apply(
         Action: LayerPermissionAllowedAction,
         LayerName: LayerName,
@@ -317,6 +330,7 @@ package lambda {
   }
 
   object AddLayerVersionPermissionResponse {
+    @inline
     def apply(
         RevisionId: js.UndefOr[String] = js.undefined,
         Statement: js.UndefOr[String] = js.undefined
@@ -342,6 +356,7 @@ package lambda {
   }
 
   object AddPermissionRequest {
+    @inline
     def apply(
         Action: Action,
         FunctionName: FunctionName,
@@ -375,6 +390,7 @@ package lambda {
   }
 
   object AddPermissionResponse {
+    @inline
     def apply(
         Statement: js.UndefOr[String] = js.undefined
     ): AddPermissionResponse = {
@@ -398,6 +414,7 @@ package lambda {
   }
 
   object AliasConfiguration {
+    @inline
     def apply(
         AliasArn: js.UndefOr[FunctionArn] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -426,6 +443,7 @@ package lambda {
   }
 
   object AliasRoutingConfiguration {
+    @inline
     def apply(
         AdditionalVersionWeights: js.UndefOr[AdditionalVersionWeights] = js.undefined
     ): AliasRoutingConfiguration = {
@@ -441,6 +459,7 @@ package lambda {
   }
 
   object Concurrency {
+    @inline
     def apply(
         ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
     ): Concurrency = {
@@ -462,6 +481,7 @@ package lambda {
   }
 
   object CreateAliasRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         FunctionVersion: Version,
@@ -492,6 +512,7 @@ package lambda {
   }
 
   object CreateEventSourceMappingRequest {
+    @inline
     def apply(
         EventSourceArn: Arn,
         FunctionName: FunctionName,
@@ -536,6 +557,7 @@ package lambda {
   }
 
   object CreateFunctionRequest {
+    @inline
     def apply(
         Code: FunctionCode,
         FunctionName: FunctionName,
@@ -586,6 +608,7 @@ package lambda {
   }
 
   object DeadLetterConfig {
+    @inline
     def apply(
         TargetArn: js.UndefOr[ResourceArn] = js.undefined
     ): DeadLetterConfig = {
@@ -602,6 +625,7 @@ package lambda {
   }
 
   object DeleteAliasRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         Name: Alias
@@ -621,6 +645,7 @@ package lambda {
   }
 
   object DeleteEventSourceMappingRequest {
+    @inline
     def apply(
         UUID: String
     ): DeleteEventSourceMappingRequest = {
@@ -638,6 +663,7 @@ package lambda {
   }
 
   object DeleteFunctionConcurrencyRequest {
+    @inline
     def apply(
         FunctionName: FunctionName
     ): DeleteFunctionConcurrencyRequest = {
@@ -656,6 +682,7 @@ package lambda {
   }
 
   object DeleteFunctionRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
@@ -676,6 +703,7 @@ package lambda {
   }
 
   object DeleteLayerVersionRequest {
+    @inline
     def apply(
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
@@ -698,6 +726,7 @@ package lambda {
   }
 
   object Environment {
+    @inline
     def apply(
         Variables: js.UndefOr[EnvironmentVariables] = js.undefined
     ): Environment = {
@@ -717,6 +746,7 @@ package lambda {
   }
 
   object EnvironmentError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[SensitiveString] = js.undefined
@@ -738,6 +768,7 @@ package lambda {
   }
 
   object EnvironmentResponse {
+    @inline
     def apply(
         Error: js.UndefOr[EnvironmentError] = js.undefined,
         Variables: js.UndefOr[EnvironmentVariables] = js.undefined
@@ -765,6 +796,7 @@ package lambda {
   }
 
   object EventSourceMappingConfiguration {
+    @inline
     def apply(
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
@@ -808,6 +840,7 @@ package lambda {
   }
 
   object FunctionCode {
+    @inline
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined,
@@ -833,6 +866,7 @@ package lambda {
   }
 
   object FunctionCodeLocation {
+    @inline
     def apply(
         Location: js.UndefOr[String] = js.undefined,
         RepositoryType: js.UndefOr[String] = js.undefined
@@ -872,6 +906,7 @@ package lambda {
   }
 
   object FunctionConfiguration {
+    @inline
     def apply(
         CodeSha256: js.UndefOr[String] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined,
@@ -929,6 +964,7 @@ package lambda {
   trait GetAccountSettingsRequest extends js.Object {}
 
   object GetAccountSettingsRequest {
+    @inline
     def apply(
         ): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
@@ -944,6 +980,7 @@ package lambda {
   }
 
   object GetAccountSettingsResponse {
+    @inline
     def apply(
         AccountLimit: js.UndefOr[AccountLimit] = js.undefined,
         AccountUsage: js.UndefOr[AccountUsage] = js.undefined
@@ -962,6 +999,7 @@ package lambda {
   }
 
   object GetAliasRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         Name: Alias
@@ -981,6 +1019,7 @@ package lambda {
   }
 
   object GetEventSourceMappingRequest {
+    @inline
     def apply(
         UUID: String
     ): GetEventSourceMappingRequest = {
@@ -999,6 +1038,7 @@ package lambda {
   }
 
   object GetFunctionConfigurationRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
@@ -1019,6 +1059,7 @@ package lambda {
   }
 
   object GetFunctionRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
@@ -1041,6 +1082,7 @@ package lambda {
   }
 
   object GetFunctionResponse {
+    @inline
     def apply(
         Code: js.UndefOr[FunctionCodeLocation] = js.undefined,
         Concurrency: js.UndefOr[Concurrency] = js.undefined,
@@ -1062,6 +1104,7 @@ package lambda {
   }
 
   object GetLayerVersionByArnRequest {
+    @inline
     def apply(
         Arn: LayerVersionArn
     ): GetLayerVersionByArnRequest = {
@@ -1080,6 +1123,7 @@ package lambda {
   }
 
   object GetLayerVersionPolicyRequest {
+    @inline
     def apply(
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
@@ -1100,6 +1144,7 @@ package lambda {
   }
 
   object GetLayerVersionPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[String] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
@@ -1118,6 +1163,7 @@ package lambda {
   }
 
   object GetLayerVersionRequest {
+    @inline
     def apply(
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
@@ -1144,6 +1190,7 @@ package lambda {
   }
 
   object GetLayerVersionResponse {
+    @inline
     def apply(
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
@@ -1174,6 +1221,7 @@ package lambda {
   }
 
   object GetPolicyRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
@@ -1194,6 +1242,7 @@ package lambda {
   }
 
   object GetPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[String] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
@@ -1216,6 +1265,7 @@ package lambda {
   }
 
   object InvocationRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         ClientContext: js.UndefOr[String] = js.undefined,
@@ -1247,6 +1297,7 @@ package lambda {
   }
 
   object InvocationResponse {
+    @inline
     def apply(
         ExecutedVersion: js.UndefOr[Version] = js.undefined,
         FunctionError: js.UndefOr[String] = js.undefined,
@@ -1280,6 +1331,7 @@ package lambda {
   }
 
   object InvokeAsyncRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         InvokeArgs: BlobStream
@@ -1303,6 +1355,7 @@ package lambda {
   }
 
   object InvokeAsyncResponse {
+    @inline
     def apply(
         Status: js.UndefOr[HttpStatus] = js.undefined
     ): InvokeAsyncResponse = {
@@ -1322,6 +1375,7 @@ package lambda {
   }
 
   object Layer {
+    @inline
     def apply(
         Arn: js.UndefOr[LayerVersionArn] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined
@@ -1345,6 +1399,7 @@ package lambda {
   }
 
   object LayerVersionContentInput {
+    @inline
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined,
@@ -1371,6 +1426,7 @@ package lambda {
   }
 
   object LayerVersionContentOutput {
+    @inline
     def apply(
         CodeSha256: js.UndefOr[String] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined,
@@ -1398,6 +1454,7 @@ package lambda {
   }
 
   object LayerVersionsListItem {
+    @inline
     def apply(
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         CreatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1428,6 +1485,7 @@ package lambda {
   }
 
   object LayersListItem {
+    @inline
     def apply(
         LatestMatchingVersion: js.UndefOr[LayerVersionsListItem] = js.undefined,
         LayerArn: js.UndefOr[LayerArn] = js.undefined,
@@ -1450,6 +1508,7 @@ package lambda {
   }
 
   object ListAliasesRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         FunctionVersion: js.UndefOr[Version] = js.undefined,
@@ -1474,6 +1533,7 @@ package lambda {
   }
 
   object ListAliasesResponse {
+    @inline
     def apply(
         Aliases: js.UndefOr[AliasList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
@@ -1494,6 +1554,7 @@ package lambda {
   }
 
   object ListEventSourceMappingsRequest {
+    @inline
     def apply(
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
         FunctionName: js.UndefOr[FunctionName] = js.undefined,
@@ -1516,6 +1577,7 @@ package lambda {
   }
 
   object ListEventSourceMappingsResponse {
+    @inline
     def apply(
         EventSourceMappings: js.UndefOr[EventSourceMappingsList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
@@ -1536,6 +1598,7 @@ package lambda {
   }
 
   object ListFunctionsRequest {
+    @inline
     def apply(
         FunctionVersion: js.UndefOr[FunctionVersion] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1561,6 +1624,7 @@ package lambda {
   }
 
   object ListFunctionsResponse {
+    @inline
     def apply(
         Functions: js.UndefOr[FunctionList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
@@ -1581,6 +1645,7 @@ package lambda {
   }
 
   object ListLayerVersionsRequest {
+    @inline
     def apply(
         LayerName: LayerName,
         CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
@@ -1605,6 +1670,7 @@ package lambda {
   }
 
   object ListLayerVersionsResponse {
+    @inline
     def apply(
         LayerVersions: js.UndefOr[LayerVersionsList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
@@ -1624,6 +1690,7 @@ package lambda {
   }
 
   object ListLayersRequest {
+    @inline
     def apply(
         CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1644,6 +1711,7 @@ package lambda {
   }
 
   object ListLayersResponse {
+    @inline
     def apply(
         Layers: js.UndefOr[LayersList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
@@ -1661,6 +1729,7 @@ package lambda {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         Resource: FunctionArn
     ): ListTagsRequest = {
@@ -1678,6 +1747,7 @@ package lambda {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsResponse = {
@@ -1695,6 +1765,7 @@ package lambda {
   }
 
   object ListVersionsByFunctionRequest {
+    @inline
     def apply(
         FunctionName: NamespacedFunctionName,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1717,6 +1788,7 @@ package lambda {
   }
 
   object ListVersionsByFunctionResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[String] = js.undefined,
         Versions: js.UndefOr[FunctionList] = js.undefined
@@ -1745,6 +1817,7 @@ package lambda {
   }
 
   object PublishLayerVersionRequest {
+    @inline
     def apply(
         Content: LayerVersionContentInput,
         LayerName: LayerName,
@@ -1777,6 +1850,7 @@ package lambda {
   }
 
   object PublishLayerVersionResponse {
+    @inline
     def apply(
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
@@ -1809,6 +1883,7 @@ package lambda {
   }
 
   object PublishVersionRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         CodeSha256: js.UndefOr[String] = js.undefined,
@@ -1833,6 +1908,7 @@ package lambda {
   }
 
   object PutFunctionConcurrencyRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         ReservedConcurrentExecutions: ReservedConcurrentExecutions
@@ -1855,6 +1931,7 @@ package lambda {
   }
 
   object RemoveLayerVersionPermissionRequest {
+    @inline
     def apply(
         LayerName: LayerName,
         StatementId: StatementId,
@@ -1881,6 +1958,7 @@ package lambda {
   }
 
   object RemovePermissionRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         StatementId: NamespacedStatementId,
@@ -1945,6 +2023,7 @@ package lambda {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Resource: FunctionArn,
         Tags: Tags
@@ -1967,6 +2046,7 @@ package lambda {
   }
 
   object TracingConfig {
+    @inline
     def apply(
         Mode: js.UndefOr[TracingMode] = js.undefined
     ): TracingConfig = {
@@ -1985,6 +2065,7 @@ package lambda {
   }
 
   object TracingConfigResponse {
+    @inline
     def apply(
         Mode: js.UndefOr[TracingMode] = js.undefined
     ): TracingConfigResponse = {
@@ -2008,6 +2089,7 @@ package lambda {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Resource: FunctionArn,
         TagKeys: TagKeyList
@@ -2032,6 +2114,7 @@ package lambda {
   }
 
   object UpdateAliasRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         Name: Alias,
@@ -2062,6 +2145,7 @@ package lambda {
   }
 
   object UpdateEventSourceMappingRequest {
+    @inline
     def apply(
         UUID: String,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
@@ -2092,6 +2176,7 @@ package lambda {
   }
 
   object UpdateFunctionCodeRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         DryRun: js.UndefOr[Boolean] = js.undefined,
@@ -2136,6 +2221,7 @@ package lambda {
   }
 
   object UpdateFunctionConfigurationRequest {
+    @inline
     def apply(
         FunctionName: FunctionName,
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
@@ -2183,6 +2269,7 @@ package lambda {
   }
 
   object VpcConfig {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined
@@ -2205,6 +2292,7 @@ package lambda {
   }
 
   object VpcConfigResponse {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,

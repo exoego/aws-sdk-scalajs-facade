@@ -122,116 +122,127 @@ package object codecommit {
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 
-    def batchDescribeMergeConflictsFuture(
+    @inline def batchDescribeMergeConflictsFuture(
         params: BatchDescribeMergeConflictsInput
     ): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise.toFuture
-    def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] =
+    @inline def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] =
       service.batchGetCommits(params).promise.toFuture
-    def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
+    @inline def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
       service.batchGetRepositories(params).promise.toFuture
-    def createBranchFuture(params: CreateBranchInput): Future[js.Object] = service.createBranch(params).promise.toFuture
-    def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] =
+    @inline def createBranchFuture(params: CreateBranchInput): Future[js.Object] =
+      service.createBranch(params).promise.toFuture
+    @inline def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] =
       service.createCommit(params).promise.toFuture
-    def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] =
+    @inline def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] =
       service.createPullRequest(params).promise.toFuture
-    def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
+    @inline def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
       service.createRepository(params).promise.toFuture
-    def createUnreferencedMergeCommitFuture(
+    @inline def createUnreferencedMergeCommitFuture(
         params: CreateUnreferencedMergeCommitInput
     ): Future[CreateUnreferencedMergeCommitOutput] = service.createUnreferencedMergeCommit(params).promise.toFuture
-    def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
+    @inline def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
       service.deleteBranch(params).promise.toFuture
-    def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
+    @inline def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
       service.deleteCommentContent(params).promise.toFuture
-    def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] =
+    @inline def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] =
       service.deleteFile(params).promise.toFuture
-    def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
+    @inline def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
       service.deleteRepository(params).promise.toFuture
-    def describeMergeConflictsFuture(params: DescribeMergeConflictsInput): Future[DescribeMergeConflictsOutput] =
-      service.describeMergeConflicts(params).promise.toFuture
-    def describePullRequestEventsFuture(
+    @inline def describeMergeConflictsFuture(
+        params: DescribeMergeConflictsInput
+    ): Future[DescribeMergeConflictsOutput] = service.describeMergeConflicts(params).promise.toFuture
+    @inline def describePullRequestEventsFuture(
         params: DescribePullRequestEventsInput
-    ): Future[DescribePullRequestEventsOutput]                           = service.describePullRequestEvents(params).promise.toFuture
-    def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput]       = service.getBlob(params).promise.toFuture
-    def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] = service.getBranch(params).promise.toFuture
-    def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] =
+    ): Future[DescribePullRequestEventsOutput]                             = service.describePullRequestEvents(params).promise.toFuture
+    @inline def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput] = service.getBlob(params).promise.toFuture
+    @inline def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] =
+      service.getBranch(params).promise.toFuture
+    @inline def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] =
       service.getComment(params).promise.toFuture
-    def getCommentsForComparedCommitFuture(
+    @inline def getCommentsForComparedCommitFuture(
         params: GetCommentsForComparedCommitInput
     ): Future[GetCommentsForComparedCommitOutput] = service.getCommentsForComparedCommit(params).promise.toFuture
-    def getCommentsForPullRequestFuture(
+    @inline def getCommentsForPullRequestFuture(
         params: GetCommentsForPullRequestInput
-    ): Future[GetCommentsForPullRequestOutput]                           = service.getCommentsForPullRequest(params).promise.toFuture
-    def getCommitFuture(params: GetCommitInput): Future[GetCommitOutput] = service.getCommit(params).promise.toFuture
-    def getDifferencesFuture(params: GetDifferencesInput): Future[GetDifferencesOutput] =
+    ): Future[GetCommentsForPullRequestOutput] = service.getCommentsForPullRequest(params).promise.toFuture
+    @inline def getCommitFuture(params: GetCommitInput): Future[GetCommitOutput] =
+      service.getCommit(params).promise.toFuture
+    @inline def getDifferencesFuture(params: GetDifferencesInput): Future[GetDifferencesOutput] =
       service.getDifferences(params).promise.toFuture
-    def getFileFuture(params: GetFileInput): Future[GetFileOutput]       = service.getFile(params).promise.toFuture
-    def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] = service.getFolder(params).promise.toFuture
-    def getMergeCommitFuture(params: GetMergeCommitInput): Future[GetMergeCommitOutput] =
+    @inline def getFileFuture(params: GetFileInput): Future[GetFileOutput] = service.getFile(params).promise.toFuture
+    @inline def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] =
+      service.getFolder(params).promise.toFuture
+    @inline def getMergeCommitFuture(params: GetMergeCommitInput): Future[GetMergeCommitOutput] =
       service.getMergeCommit(params).promise.toFuture
-    def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] =
+    @inline def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] =
       service.getMergeConflicts(params).promise.toFuture
-    def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] =
+    @inline def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] =
       service.getMergeOptions(params).promise.toFuture
-    def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
+    @inline def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
       service.getPullRequest(params).promise.toFuture
-    def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
+    @inline def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
       service.getRepository(params).promise.toFuture
-    def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] =
+    @inline def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] =
       service.getRepositoryTriggers(params).promise.toFuture
-    def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] =
+    @inline def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] =
       service.listBranches(params).promise.toFuture
-    def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] =
+    @inline def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] =
       service.listPullRequests(params).promise.toFuture
-    def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
+    @inline def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
       service.listRepositories(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def mergeBranchesByFastForwardFuture(
+    @inline def mergeBranchesByFastForwardFuture(
         params: MergeBranchesByFastForwardInput
     ): Future[MergeBranchesByFastForwardOutput] = service.mergeBranchesByFastForward(params).promise.toFuture
-    def mergeBranchesBySquashFuture(params: MergeBranchesBySquashInput): Future[MergeBranchesBySquashOutput] =
+    @inline def mergeBranchesBySquashFuture(params: MergeBranchesBySquashInput): Future[MergeBranchesBySquashOutput] =
       service.mergeBranchesBySquash(params).promise.toFuture
-    def mergeBranchesByThreeWayFuture(params: MergeBranchesByThreeWayInput): Future[MergeBranchesByThreeWayOutput] =
-      service.mergeBranchesByThreeWay(params).promise.toFuture
-    def mergePullRequestByFastForwardFuture(
+    @inline def mergeBranchesByThreeWayFuture(
+        params: MergeBranchesByThreeWayInput
+    ): Future[MergeBranchesByThreeWayOutput] = service.mergeBranchesByThreeWay(params).promise.toFuture
+    @inline def mergePullRequestByFastForwardFuture(
         params: MergePullRequestByFastForwardInput
     ): Future[MergePullRequestByFastForwardOutput] = service.mergePullRequestByFastForward(params).promise.toFuture
-    def mergePullRequestBySquashFuture(params: MergePullRequestBySquashInput): Future[MergePullRequestBySquashOutput] =
-      service.mergePullRequestBySquash(params).promise.toFuture
-    def mergePullRequestByThreeWayFuture(
+    @inline def mergePullRequestBySquashFuture(
+        params: MergePullRequestBySquashInput
+    ): Future[MergePullRequestBySquashOutput] = service.mergePullRequestBySquash(params).promise.toFuture
+    @inline def mergePullRequestByThreeWayFuture(
         params: MergePullRequestByThreeWayInput
     ): Future[MergePullRequestByThreeWayOutput] = service.mergePullRequestByThreeWay(params).promise.toFuture
-    def postCommentForComparedCommitFuture(
+    @inline def postCommentForComparedCommitFuture(
         params: PostCommentForComparedCommitInput
     ): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise.toFuture
-    def postCommentForPullRequestFuture(
+    @inline def postCommentForPullRequestFuture(
         params: PostCommentForPullRequestInput
     ): Future[PostCommentForPullRequestOutput] = service.postCommentForPullRequest(params).promise.toFuture
-    def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] =
+    @inline def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] =
       service.postCommentReply(params).promise.toFuture
-    def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise.toFuture
-    def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
+    @inline def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise.toFuture
+    @inline def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
       service.putRepositoryTriggers(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def testRepositoryTriggersFuture(params: TestRepositoryTriggersInput): Future[TestRepositoryTriggersOutput] =
-      service.testRepositoryTriggers(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def testRepositoryTriggersFuture(
+        params: TestRepositoryTriggersInput
+    ): Future[TestRepositoryTriggersOutput] = service.testRepositoryTriggers(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
+    @inline def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
       service.updateComment(params).promise.toFuture
-    def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
+    @inline def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
       service.updateDefaultBranch(params).promise.toFuture
-    def updatePullRequestDescriptionFuture(
+    @inline def updatePullRequestDescriptionFuture(
         params: UpdatePullRequestDescriptionInput
     ): Future[UpdatePullRequestDescriptionOutput] = service.updatePullRequestDescription(params).promise.toFuture
-    def updatePullRequestStatusFuture(params: UpdatePullRequestStatusInput): Future[UpdatePullRequestStatusOutput] =
-      service.updatePullRequestStatus(params).promise.toFuture
-    def updatePullRequestTitleFuture(params: UpdatePullRequestTitleInput): Future[UpdatePullRequestTitleOutput] =
-      service.updatePullRequestTitle(params).promise.toFuture
-    def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] =
+    @inline def updatePullRequestStatusFuture(
+        params: UpdatePullRequestStatusInput
+    ): Future[UpdatePullRequestStatusOutput] = service.updatePullRequestStatus(params).promise.toFuture
+    @inline def updatePullRequestTitleFuture(
+        params: UpdatePullRequestTitleInput
+    ): Future[UpdatePullRequestTitleOutput] = service.updatePullRequestTitle(params).promise.toFuture
+    @inline def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] =
       service.updateRepositoryDescription(params).promise.toFuture
-    def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] =
+    @inline def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] =
       service.updateRepositoryName(params).promise.toFuture
   }
 }
@@ -329,6 +340,7 @@ package codecommit {
   }
 
   object BatchDescribeMergeConflictsError {
+    @inline
     def apply(
         exceptionName: ExceptionName,
         filePath: Path,
@@ -359,6 +371,7 @@ package codecommit {
   }
 
   object BatchDescribeMergeConflictsInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         mergeOption: MergeOptionTypeEnum,
@@ -401,6 +414,7 @@ package codecommit {
   }
 
   object BatchDescribeMergeConflictsOutput {
+    @inline
     def apply(
         conflicts: Conflicts,
         destinationCommitId: ObjectId,
@@ -433,6 +447,7 @@ package codecommit {
   }
 
   object BatchGetCommitsError {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
@@ -453,6 +468,7 @@ package codecommit {
   }
 
   object BatchGetCommitsInput {
+    @inline
     def apply(
         commitIds: CommitIdsInputList,
         repositoryName: RepositoryName
@@ -473,6 +489,7 @@ package codecommit {
   }
 
   object BatchGetCommitsOutput {
+    @inline
     def apply(
         commits: js.UndefOr[CommitObjectsList] = js.undefined,
         errors: js.UndefOr[BatchGetCommitsErrorsList] = js.undefined
@@ -493,6 +510,7 @@ package codecommit {
   }
 
   object BatchGetRepositoriesInput {
+    @inline
     def apply(
         repositoryNames: RepositoryNameList
     ): BatchGetRepositoriesInput = {
@@ -514,6 +532,7 @@ package codecommit {
   }
 
   object BatchGetRepositoriesOutput {
+    @inline
     def apply(
         repositories: js.UndefOr[RepositoryMetadataList] = js.undefined,
         repositoriesNotFound: js.UndefOr[RepositoryNotFoundList] = js.undefined
@@ -536,6 +555,7 @@ package codecommit {
   }
 
   object BlobMetadata {
+    @inline
     def apply(
         blobId: js.UndefOr[ObjectId] = js.undefined,
         mode: js.UndefOr[Mode] = js.undefined,
@@ -559,6 +579,7 @@ package codecommit {
   }
 
   object BranchInfo {
+    @inline
     def apply(
         branchName: js.UndefOr[BranchName] = js.undefined,
         commitId: js.UndefOr[CommitId] = js.undefined
@@ -594,6 +615,7 @@ package codecommit {
   }
 
   object Comment {
+    @inline
     def apply(
         authorArn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -632,6 +654,7 @@ package codecommit {
   }
 
   object CommentsForComparedCommit {
+    @inline
     def apply(
         afterBlobId: js.UndefOr[ObjectId] = js.undefined,
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -669,6 +692,7 @@ package codecommit {
   }
 
   object CommentsForPullRequest {
+    @inline
     def apply(
         afterBlobId: js.UndefOr[ObjectId] = js.undefined,
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -707,6 +731,7 @@ package codecommit {
   }
 
   object Commit {
+    @inline
     def apply(
         additionalData: js.UndefOr[AdditionalData] = js.undefined,
         author: js.UndefOr[UserInfo] = js.undefined,
@@ -738,6 +763,7 @@ package codecommit {
   }
 
   object Conflict {
+    @inline
     def apply(
         conflictMetadata: js.UndefOr[ConflictMetadata] = js.undefined,
         mergeHunks: js.UndefOr[MergeHunks] = js.undefined
@@ -774,6 +800,7 @@ package codecommit {
   }
 
   object ConflictMetadata {
+    @inline
     def apply(
         contentConflict: js.UndefOr[IsContentConflict] = js.undefined,
         fileModeConflict: js.UndefOr[IsFileModeConflict] = js.undefined,
@@ -812,6 +839,7 @@ package codecommit {
   }
 
   object ConflictResolution {
+    @inline
     def apply(
         deleteFiles: js.UndefOr[DeleteFileEntries] = js.undefined,
         replaceContents: js.UndefOr[ReplaceContentEntries] = js.undefined,
@@ -845,6 +873,7 @@ package codecommit {
   }
 
   object CreateBranchInput {
+    @inline
     def apply(
         branchName: BranchName,
         commitId: CommitId,
@@ -875,6 +904,7 @@ package codecommit {
   }
 
   object CreateCommitInput {
+    @inline
     def apply(
         branchName: BranchName,
         repositoryName: RepositoryName,
@@ -914,6 +944,7 @@ package codecommit {
   }
 
   object CreateCommitOutput {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         filesAdded: js.UndefOr[FilesMetadata] = js.undefined,
@@ -940,6 +971,7 @@ package codecommit {
   }
 
   object CreatePullRequestInput {
+    @inline
     def apply(
         targets: TargetList,
         title: Title,
@@ -963,6 +995,7 @@ package codecommit {
   }
 
   object CreatePullRequestOutput {
+    @inline
     def apply(
         pullRequest: PullRequest
     ): CreatePullRequestOutput = {
@@ -985,6 +1018,7 @@ package codecommit {
   }
 
   object CreateRepositoryInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined,
@@ -1009,6 +1043,7 @@ package codecommit {
   }
 
   object CreateRepositoryOutput {
+    @inline
     def apply(
         repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
     ): CreateRepositoryOutput = {
@@ -1034,6 +1069,7 @@ package codecommit {
   }
 
   object CreateUnreferencedMergeCommitInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         mergeOption: MergeOptionTypeEnum,
@@ -1074,6 +1110,7 @@ package codecommit {
   }
 
   object CreateUnreferencedMergeCommitOutput {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
@@ -1095,6 +1132,7 @@ package codecommit {
   }
 
   object DeleteBranchInput {
+    @inline
     def apply(
         branchName: BranchName,
         repositoryName: RepositoryName
@@ -1117,6 +1155,7 @@ package codecommit {
   }
 
   object DeleteBranchOutput {
+    @inline
     def apply(
         deletedBranch: js.UndefOr[BranchInfo] = js.undefined
     ): DeleteBranchOutput = {
@@ -1132,6 +1171,7 @@ package codecommit {
   }
 
   object DeleteCommentContentInput {
+    @inline
     def apply(
         commentId: CommentId
     ): DeleteCommentContentInput = {
@@ -1149,6 +1189,7 @@ package codecommit {
   }
 
   object DeleteCommentContentOutput {
+    @inline
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): DeleteCommentContentOutput = {
@@ -1167,6 +1208,7 @@ package codecommit {
   }
 
   object DeleteFileEntry {
+    @inline
     def apply(
         filePath: Path
     ): DeleteFileEntry = {
@@ -1191,6 +1233,7 @@ package codecommit {
   }
 
   object DeleteFileInput {
+    @inline
     def apply(
         branchName: BranchName,
         filePath: Path,
@@ -1225,6 +1268,7 @@ package codecommit {
   }
 
   object DeleteFileOutput {
+    @inline
     def apply(
         blobId: ObjectId,
         commitId: ObjectId,
@@ -1251,6 +1295,7 @@ package codecommit {
   }
 
   object DeleteRepositoryInput {
+    @inline
     def apply(
         repositoryName: RepositoryName
     ): DeleteRepositoryInput = {
@@ -1271,6 +1316,7 @@ package codecommit {
   }
 
   object DeleteRepositoryOutput {
+    @inline
     def apply(
         repositoryId: js.UndefOr[RepositoryId] = js.undefined
     ): DeleteRepositoryOutput = {
@@ -1294,6 +1340,7 @@ package codecommit {
   }
 
   object DescribeMergeConflictsInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         filePath: Path,
@@ -1334,6 +1381,7 @@ package codecommit {
   }
 
   object DescribeMergeConflictsOutput {
+    @inline
     def apply(
         conflictMetadata: ConflictMetadata,
         destinationCommitId: ObjectId,
@@ -1365,6 +1413,7 @@ package codecommit {
   }
 
   object DescribePullRequestEventsInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         actorArn: js.UndefOr[Arn] = js.undefined,
@@ -1391,6 +1440,7 @@ package codecommit {
   }
 
   object DescribePullRequestEventsOutput {
+    @inline
     def apply(
         pullRequestEvents: PullRequestEventList,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1415,6 +1465,7 @@ package codecommit {
   }
 
   object Difference {
+    @inline
     def apply(
         afterBlob: js.UndefOr[BlobMetadata] = js.undefined,
         beforeBlob: js.UndefOr[BlobMetadata] = js.undefined,
@@ -1440,6 +1491,7 @@ package codecommit {
   }
 
   object File {
+    @inline
     def apply(
         absolutePath: js.UndefOr[Path] = js.undefined,
         blobId: js.UndefOr[ObjectId] = js.undefined,
@@ -1466,6 +1518,7 @@ package codecommit {
   }
 
   object FileMetadata {
+    @inline
     def apply(
         absolutePath: js.UndefOr[Path] = js.undefined,
         blobId: js.UndefOr[ObjectId] = js.undefined,
@@ -1498,6 +1551,7 @@ package codecommit {
   }
 
   object FileModes {
+    @inline
     def apply(
         base: js.UndefOr[FileModeTypeEnum] = js.undefined,
         destination: js.UndefOr[FileModeTypeEnum] = js.undefined,
@@ -1522,6 +1576,7 @@ package codecommit {
   }
 
   object FileSizes {
+    @inline
     def apply(
         base: js.UndefOr[FileSize] = js.undefined,
         destination: js.UndefOr[FileSize] = js.undefined,
@@ -1546,6 +1601,7 @@ package codecommit {
   }
 
   object Folder {
+    @inline
     def apply(
         absolutePath: js.UndefOr[Path] = js.undefined,
         relativePath: js.UndefOr[Path] = js.undefined,
@@ -1569,6 +1625,7 @@ package codecommit {
   }
 
   object GetBlobInput {
+    @inline
     def apply(
         blobId: ObjectId,
         repositoryName: RepositoryName
@@ -1591,6 +1648,7 @@ package codecommit {
   }
 
   object GetBlobOutput {
+    @inline
     def apply(
         content: blob
     ): GetBlobOutput = {
@@ -1612,6 +1670,7 @@ package codecommit {
   }
 
   object GetBranchInput {
+    @inline
     def apply(
         branchName: js.UndefOr[BranchName] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
@@ -1632,6 +1691,7 @@ package codecommit {
   }
 
   object GetBranchOutput {
+    @inline
     def apply(
         branch: js.UndefOr[BranchInfo] = js.undefined
     ): GetBranchOutput = {
@@ -1647,6 +1707,7 @@ package codecommit {
   }
 
   object GetCommentInput {
+    @inline
     def apply(
         commentId: CommentId
     ): GetCommentInput = {
@@ -1664,6 +1725,7 @@ package codecommit {
   }
 
   object GetCommentOutput {
+    @inline
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): GetCommentOutput = {
@@ -1683,6 +1745,7 @@ package codecommit {
   }
 
   object GetCommentsForComparedCommitInput {
+    @inline
     def apply(
         afterCommitId: CommitId,
         repositoryName: RepositoryName,
@@ -1709,6 +1772,7 @@ package codecommit {
   }
 
   object GetCommentsForComparedCommitOutput {
+    @inline
     def apply(
         commentsForComparedCommitData: js.UndefOr[CommentsForComparedCommitData] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1733,6 +1797,7 @@ package codecommit {
   }
 
   object GetCommentsForPullRequestInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -1761,6 +1826,7 @@ package codecommit {
   }
 
   object GetCommentsForPullRequestOutput {
+    @inline
     def apply(
         commentsForPullRequestData: js.UndefOr[CommentsForPullRequestData] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1784,6 +1850,7 @@ package codecommit {
   }
 
   object GetCommitInput {
+    @inline
     def apply(
         commitId: ObjectId,
         repositoryName: RepositoryName
@@ -1806,6 +1873,7 @@ package codecommit {
   }
 
   object GetCommitOutput {
+    @inline
     def apply(
         commit: Commit
     ): GetCommitOutput = {
@@ -1829,6 +1897,7 @@ package codecommit {
   }
 
   object GetDifferencesInput {
+    @inline
     def apply(
         afterCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -1859,6 +1928,7 @@ package codecommit {
   }
 
   object GetDifferencesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         differences: js.UndefOr[DifferenceList] = js.undefined
@@ -1878,6 +1948,7 @@ package codecommit {
   }
 
   object GetFileInput {
+    @inline
     def apply(
         filePath: Path,
         repositoryName: RepositoryName,
@@ -1904,6 +1975,7 @@ package codecommit {
   }
 
   object GetFileOutput {
+    @inline
     def apply(
         blobId: ObjectId,
         commitId: ObjectId,
@@ -1933,6 +2005,7 @@ package codecommit {
   }
 
   object GetFolderInput {
+    @inline
     def apply(
         folderPath: Path,
         repositoryName: RepositoryName,
@@ -1960,6 +2033,7 @@ package codecommit {
   }
 
   object GetFolderOutput {
+    @inline
     def apply(
         commitId: ObjectId,
         folderPath: Path,
@@ -1993,6 +2067,7 @@ package codecommit {
   }
 
   object GetMergeCommitInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -2023,6 +2098,7 @@ package codecommit {
   }
 
   object GetMergeCommitOutput {
+    @inline
     def apply(
         baseCommitId: js.UndefOr[ObjectId] = js.undefined,
         destinationCommitId: js.UndefOr[ObjectId] = js.undefined,
@@ -2051,6 +2127,7 @@ package codecommit {
   }
 
   object GetMergeConflictsInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         mergeOption: MergeOptionTypeEnum,
@@ -2089,6 +2166,7 @@ package codecommit {
   }
 
   object GetMergeConflictsOutput {
+    @inline
     def apply(
         conflictMetadataList: ConflictMetadataList,
         destinationCommitId: ObjectId,
@@ -2120,6 +2198,7 @@ package codecommit {
   }
 
   object GetMergeOptionsInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -2150,6 +2229,7 @@ package codecommit {
   }
 
   object GetMergeOptionsOutput {
+    @inline
     def apply(
         baseCommitId: ObjectId,
         destinationCommitId: ObjectId,
@@ -2173,6 +2253,7 @@ package codecommit {
   }
 
   object GetPullRequestInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId
     ): GetPullRequestInput = {
@@ -2190,6 +2271,7 @@ package codecommit {
   }
 
   object GetPullRequestOutput {
+    @inline
     def apply(
         pullRequest: PullRequest
     ): GetPullRequestOutput = {
@@ -2210,6 +2292,7 @@ package codecommit {
   }
 
   object GetRepositoryInput {
+    @inline
     def apply(
         repositoryName: RepositoryName
     ): GetRepositoryInput = {
@@ -2230,6 +2313,7 @@ package codecommit {
   }
 
   object GetRepositoryOutput {
+    @inline
     def apply(
         repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
     ): GetRepositoryOutput = {
@@ -2248,6 +2332,7 @@ package codecommit {
   }
 
   object GetRepositoryTriggersInput {
+    @inline
     def apply(
         repositoryName: RepositoryName
     ): GetRepositoryTriggersInput = {
@@ -2269,6 +2354,7 @@ package codecommit {
   }
 
   object GetRepositoryTriggersOutput {
+    @inline
     def apply(
         configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined,
         triggers: js.UndefOr[RepositoryTriggersList] = js.undefined
@@ -2291,6 +2377,7 @@ package codecommit {
   }
 
   object IsBinaryFile {
+    @inline
     def apply(
         base: js.UndefOr[CapitalBoolean] = js.undefined,
         destination: js.UndefOr[CapitalBoolean] = js.undefined,
@@ -2314,6 +2401,7 @@ package codecommit {
   }
 
   object ListBranchesInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2337,6 +2425,7 @@ package codecommit {
   }
 
   object ListBranchesOutput {
+    @inline
     def apply(
         branches: js.UndefOr[BranchNameList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2358,6 +2447,7 @@ package codecommit {
   }
 
   object ListPullRequestsInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         authorArn: js.UndefOr[Arn] = js.undefined,
@@ -2384,6 +2474,7 @@ package codecommit {
   }
 
   object ListPullRequestsOutput {
+    @inline
     def apply(
         pullRequestIds: PullRequestIdList,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2408,6 +2499,7 @@ package codecommit {
   }
 
   object ListRepositoriesInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         order: js.UndefOr[OrderEnum] = js.undefined,
@@ -2431,6 +2523,7 @@ package codecommit {
   }
 
   object ListRepositoriesOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         repositories: js.UndefOr[RepositoryNameIdPairList] = js.undefined
@@ -2449,6 +2542,7 @@ package codecommit {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2469,6 +2563,7 @@ package codecommit {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
@@ -2491,6 +2586,7 @@ package codecommit {
   }
 
   object Location {
+    @inline
     def apply(
         filePath: js.UndefOr[Path] = js.undefined,
         filePosition: js.UndefOr[Position] = js.undefined,
@@ -2513,6 +2609,7 @@ package codecommit {
   }
 
   object MergeBranchesByFastForwardInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -2537,6 +2634,7 @@ package codecommit {
   }
 
   object MergeBranchesByFastForwardOutput {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
@@ -2564,6 +2662,7 @@ package codecommit {
   }
 
   object MergeBranchesBySquashInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -2604,6 +2703,7 @@ package codecommit {
   }
 
   object MergeBranchesBySquashOutput {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
@@ -2631,6 +2731,7 @@ package codecommit {
   }
 
   object MergeBranchesByThreeWayInput {
+    @inline
     def apply(
         destinationCommitSpecifier: CommitName,
         repositoryName: RepositoryName,
@@ -2671,6 +2772,7 @@ package codecommit {
   }
 
   object MergeBranchesByThreeWayOutput {
+    @inline
     def apply(
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
@@ -2694,6 +2796,7 @@ package codecommit {
   }
 
   object MergeHunk {
+    @inline
     def apply(
         base: js.UndefOr[MergeHunkDetail] = js.undefined,
         destination: js.UndefOr[MergeHunkDetail] = js.undefined,
@@ -2720,6 +2823,7 @@ package codecommit {
   }
 
   object MergeHunkDetail {
+    @inline
     def apply(
         endLine: js.UndefOr[LineNumber] = js.undefined,
         hunkContent: js.UndefOr[HunkContent] = js.undefined,
@@ -2745,6 +2849,7 @@ package codecommit {
   }
 
   object MergeMetadata {
+    @inline
     def apply(
         isMerged: js.UndefOr[IsMerged] = js.undefined,
         mergeCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -2770,6 +2875,7 @@ package codecommit {
   }
 
   object MergeOperations {
+    @inline
     def apply(
         destination: js.UndefOr[ChangeTypeEnum] = js.undefined,
         source: js.UndefOr[ChangeTypeEnum] = js.undefined
@@ -2797,6 +2903,7 @@ package codecommit {
   }
 
   object MergePullRequestByFastForwardInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         repositoryName: RepositoryName,
@@ -2818,6 +2925,7 @@ package codecommit {
   }
 
   object MergePullRequestByFastForwardOutput {
+    @inline
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestByFastForwardOutput = {
@@ -2842,6 +2950,7 @@ package codecommit {
   }
 
   object MergePullRequestBySquashInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         repositoryName: RepositoryName,
@@ -2879,6 +2988,7 @@ package codecommit {
   }
 
   object MergePullRequestBySquashOutput {
+    @inline
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestBySquashOutput = {
@@ -2903,6 +3013,7 @@ package codecommit {
   }
 
   object MergePullRequestByThreeWayInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         repositoryName: RepositoryName,
@@ -2940,6 +3051,7 @@ package codecommit {
   }
 
   object MergePullRequestByThreeWayOutput {
+    @inline
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestByThreeWayOutput = {
@@ -2969,6 +3081,7 @@ package codecommit {
   }
 
   object ObjectTypes {
+    @inline
     def apply(
         base: js.UndefOr[ObjectTypeEnum] = js.undefined,
         destination: js.UndefOr[ObjectTypeEnum] = js.undefined,
@@ -3000,6 +3113,7 @@ package codecommit {
   }
 
   object PostCommentForComparedCommitInput {
+    @inline
     def apply(
         afterCommitId: CommitId,
         content: Content,
@@ -3033,6 +3147,7 @@ package codecommit {
   }
 
   object PostCommentForComparedCommitOutput {
+    @inline
     def apply(
         afterBlobId: js.UndefOr[ObjectId] = js.undefined,
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -3066,6 +3181,7 @@ package codecommit {
   }
 
   object PostCommentForPullRequestInput {
+    @inline
     def apply(
         afterCommitId: CommitId,
         beforeCommitId: CommitId,
@@ -3102,6 +3218,7 @@ package codecommit {
   }
 
   object PostCommentForPullRequestOutput {
+    @inline
     def apply(
         afterBlobId: js.UndefOr[ObjectId] = js.undefined,
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -3133,6 +3250,7 @@ package codecommit {
   }
 
   object PostCommentReplyInput {
+    @inline
     def apply(
         content: Content,
         inReplyTo: CommentId,
@@ -3154,6 +3272,7 @@ package codecommit {
   }
 
   object PostCommentReplyOutput {
+    @inline
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): PostCommentReplyOutput = {
@@ -3180,6 +3299,7 @@ package codecommit {
   }
 
   object PullRequest {
+    @inline
     def apply(
         authorArn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -3217,6 +3337,7 @@ package codecommit {
   }
 
   object PullRequestCreatedEventMetadata {
+    @inline
     def apply(
         destinationCommitId: js.UndefOr[CommitId] = js.undefined,
         mergeBase: js.UndefOr[CommitId] = js.undefined,
@@ -3248,6 +3369,7 @@ package codecommit {
   }
 
   object PullRequestEvent {
+    @inline
     def apply(
         actorArn: js.UndefOr[Arn] = js.undefined,
         eventDate: js.UndefOr[EventDate] = js.undefined,
@@ -3308,6 +3430,7 @@ package codecommit {
   }
 
   object PullRequestMergedStateChangedEventMetadata {
+    @inline
     def apply(
         destinationReference: js.UndefOr[ReferenceName] = js.undefined,
         mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
@@ -3333,6 +3456,7 @@ package codecommit {
   }
 
   object PullRequestSourceReferenceUpdatedEventMetadata {
+    @inline
     def apply(
         afterCommitId: js.UndefOr[CommitId] = js.undefined,
         beforeCommitId: js.UndefOr[CommitId] = js.undefined,
@@ -3357,6 +3481,7 @@ package codecommit {
   }
 
   object PullRequestStatusChangedEventMetadata {
+    @inline
     def apply(
         pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined
     ): PullRequestStatusChangedEventMetadata = {
@@ -3388,6 +3513,7 @@ package codecommit {
   }
 
   object PullRequestTarget {
+    @inline
     def apply(
         destinationCommit: js.UndefOr[CommitId] = js.undefined,
         destinationReference: js.UndefOr[ReferenceName] = js.undefined,
@@ -3421,6 +3547,7 @@ package codecommit {
   }
 
   object PutFileEntry {
+    @inline
     def apply(
         filePath: Path,
         fileContent: js.UndefOr[FileContent] = js.undefined,
@@ -3452,6 +3579,7 @@ package codecommit {
   }
 
   object PutFileInput {
+    @inline
     def apply(
         branchName: BranchName,
         fileContent: FileContent,
@@ -3487,6 +3615,7 @@ package codecommit {
   }
 
   object PutFileOutput {
+    @inline
     def apply(
         blobId: ObjectId,
         commitId: ObjectId,
@@ -3512,6 +3641,7 @@ package codecommit {
   }
 
   object PutRepositoryTriggersInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         triggers: RepositoryTriggersList
@@ -3534,6 +3664,7 @@ package codecommit {
   }
 
   object PutRepositoryTriggersOutput {
+    @inline
     def apply(
         configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined
     ): PutRepositoryTriggersOutput = {
@@ -3562,6 +3693,7 @@ package codecommit {
   }
 
   object ReplaceContentEntry {
+    @inline
     def apply(
         filePath: Path,
         replacementType: ReplacementTypeEnum,
@@ -3606,6 +3738,7 @@ package codecommit {
   }
 
   object RepositoryMetadata {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         accountId: js.UndefOr[AccountId] = js.undefined,
@@ -3643,6 +3776,7 @@ package codecommit {
   }
 
   object RepositoryNameIdPair {
+    @inline
     def apply(
         repositoryId: js.UndefOr[RepositoryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
@@ -3667,6 +3801,7 @@ package codecommit {
   }
 
   object RepositoryTrigger {
+    @inline
     def apply(
         destinationArn: Arn,
         events: RepositoryTriggerEventList,
@@ -3705,6 +3840,7 @@ package codecommit {
   }
 
   object RepositoryTriggerExecutionFailure {
+    @inline
     def apply(
         failureMessage: js.UndefOr[RepositoryTriggerExecutionFailureMessage] = js.undefined,
         trigger: js.UndefOr[RepositoryTriggerName] = js.undefined
@@ -3726,6 +3862,7 @@ package codecommit {
   }
 
   object SetFileModeEntry {
+    @inline
     def apply(
         fileMode: FileModeTypeEnum,
         filePath: Path
@@ -3756,6 +3893,7 @@ package codecommit {
   }
 
   object SourceFileSpecifier {
+    @inline
     def apply(
         filePath: Path,
         isMove: js.UndefOr[IsMove] = js.undefined
@@ -3780,6 +3918,7 @@ package codecommit {
   }
 
   object SubModule {
+    @inline
     def apply(
         absolutePath: js.UndefOr[Path] = js.undefined,
         commitId: js.UndefOr[ObjectId] = js.undefined,
@@ -3805,6 +3944,7 @@ package codecommit {
   }
 
   object SymbolicLink {
+    @inline
     def apply(
         absolutePath: js.UndefOr[Path] = js.undefined,
         blobId: js.UndefOr[ObjectId] = js.undefined,
@@ -3827,6 +3967,7 @@ package codecommit {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagsMap
@@ -3851,6 +3992,7 @@ package codecommit {
   }
 
   object Target {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         sourceReference: ReferenceName,
@@ -3876,6 +4018,7 @@ package codecommit {
   }
 
   object TestRepositoryTriggersInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         triggers: RepositoryTriggersList
@@ -3899,6 +4042,7 @@ package codecommit {
   }
 
   object TestRepositoryTriggersOutput {
+    @inline
     def apply(
         failedExecutions: js.UndefOr[RepositoryTriggerExecutionFailureList] = js.undefined,
         successfulExecutions: js.UndefOr[RepositoryTriggerNameList] = js.undefined
@@ -3917,6 +4061,7 @@ package codecommit {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeysList
@@ -3937,6 +4082,7 @@ package codecommit {
   }
 
   object UpdateCommentInput {
+    @inline
     def apply(
         commentId: CommentId,
         content: Content
@@ -3956,6 +4102,7 @@ package codecommit {
   }
 
   object UpdateCommentOutput {
+    @inline
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): UpdateCommentOutput = {
@@ -3975,6 +4122,7 @@ package codecommit {
   }
 
   object UpdateDefaultBranchInput {
+    @inline
     def apply(
         defaultBranchName: BranchName,
         repositoryName: RepositoryName
@@ -3995,6 +4143,7 @@ package codecommit {
   }
 
   object UpdatePullRequestDescriptionInput {
+    @inline
     def apply(
         description: Description,
         pullRequestId: PullRequestId
@@ -4014,6 +4163,7 @@ package codecommit {
   }
 
   object UpdatePullRequestDescriptionOutput {
+    @inline
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestDescriptionOutput = {
@@ -4032,6 +4182,7 @@ package codecommit {
   }
 
   object UpdatePullRequestStatusInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         pullRequestStatus: PullRequestStatusEnum
@@ -4051,6 +4202,7 @@ package codecommit {
   }
 
   object UpdatePullRequestStatusOutput {
+    @inline
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestStatusOutput = {
@@ -4069,6 +4221,7 @@ package codecommit {
   }
 
   object UpdatePullRequestTitleInput {
+    @inline
     def apply(
         pullRequestId: PullRequestId,
         title: Title
@@ -4088,6 +4241,7 @@ package codecommit {
   }
 
   object UpdatePullRequestTitleOutput {
+    @inline
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestTitleOutput = {
@@ -4109,6 +4263,7 @@ package codecommit {
   }
 
   object UpdateRepositoryDescriptionInput {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined
@@ -4132,6 +4287,7 @@ package codecommit {
   }
 
   object UpdateRepositoryNameInput {
+    @inline
     def apply(
         newName: RepositoryName,
         oldName: RepositoryName
@@ -4156,6 +4312,7 @@ package codecommit {
   }
 
   object UserInfo {
+    @inline
     def apply(
         date: js.UndefOr[Date] = js.undefined,
         email: js.UndefOr[Email] = js.undefined,

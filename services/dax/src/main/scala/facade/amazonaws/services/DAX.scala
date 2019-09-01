@@ -38,49 +38,51 @@ package object dax {
 
   implicit final class DAXOps(private val service: DAX) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =
+    @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =
       service.createParameterGroup(params).promise.toFuture
-    def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] =
+    @inline def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] =
       service.createSubnetGroup(params).promise.toFuture
-    def decreaseReplicationFactorFuture(
+    @inline def decreaseReplicationFactorFuture(
         params: DecreaseReplicationFactorRequest
     ): Future[DecreaseReplicationFactorResponse] = service.decreaseReplicationFactor(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] =
+    @inline def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] =
       service.deleteParameterGroup(params).promise.toFuture
-    def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] =
+    @inline def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] =
       service.deleteSubnetGroup(params).promise.toFuture
-    def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
+    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
       service.describeClusters(params).promise.toFuture
-    def describeDefaultParametersFuture(
+    @inline def describeDefaultParametersFuture(
         params: DescribeDefaultParametersRequest
     ): Future[DescribeDefaultParametersResponse] = service.describeDefaultParameters(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
-    def describeParameterGroupsFuture(params: DescribeParameterGroupsRequest): Future[DescribeParameterGroupsResponse] =
-      service.describeParameterGroups(params).promise.toFuture
-    def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] =
+    @inline def describeParameterGroupsFuture(
+        params: DescribeParameterGroupsRequest
+    ): Future[DescribeParameterGroupsResponse] = service.describeParameterGroups(params).promise.toFuture
+    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] =
       service.describeParameters(params).promise.toFuture
-    def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] =
+    @inline def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] =
       service.describeSubnetGroups(params).promise.toFuture
-    def increaseReplicationFactorFuture(
+    @inline def increaseReplicationFactorFuture(
         params: IncreaseReplicationFactorRequest
-    ): Future[IncreaseReplicationFactorResponse]                          = service.increaseReplicationFactor(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] =
+    ): Future[IncreaseReplicationFactorResponse] = service.increaseReplicationFactor(params).promise.toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] =
       service.rebootNode(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] =
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] =
       service.updateCluster(params).promise.toFuture
-    def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] =
+    @inline def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] =
       service.updateParameterGroup(params).promise.toFuture
-    def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] =
+    @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] =
       service.updateSubnetGroup(params).promise.toFuture
   }
 }
@@ -153,6 +155,7 @@ package dax {
   }
 
   object Cluster {
+    @inline
     def apply(
         ActiveNodes: js.UndefOr[IntegerOptional] = js.undefined,
         ClusterArn: js.UndefOr[String] = js.undefined,
@@ -216,6 +219,7 @@ package dax {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         ClusterName: String,
         IamRoleArn: String,
@@ -259,6 +263,7 @@ package dax {
   }
 
   object CreateClusterResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
@@ -275,6 +280,7 @@ package dax {
   }
 
   object CreateParameterGroupRequest {
+    @inline
     def apply(
         ParameterGroupName: String,
         Description: js.UndefOr[String] = js.undefined
@@ -294,6 +300,7 @@ package dax {
   }
 
   object CreateParameterGroupResponse {
+    @inline
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): CreateParameterGroupResponse = {
@@ -311,6 +318,7 @@ package dax {
   }
 
   object CreateSubnetGroupRequest {
+    @inline
     def apply(
         SubnetGroupName: String,
         SubnetIds: SubnetIdentifierList,
@@ -332,6 +340,7 @@ package dax {
   }
 
   object CreateSubnetGroupResponse {
+    @inline
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): CreateSubnetGroupResponse = {
@@ -350,6 +359,7 @@ package dax {
   }
 
   object DecreaseReplicationFactorRequest {
+    @inline
     def apply(
         ClusterName: String,
         NewReplicationFactor: Int,
@@ -373,6 +383,7 @@ package dax {
   }
 
   object DecreaseReplicationFactorResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DecreaseReplicationFactorResponse = {
@@ -388,6 +399,7 @@ package dax {
   }
 
   object DeleteClusterRequest {
+    @inline
     def apply(
         ClusterName: String
     ): DeleteClusterRequest = {
@@ -405,6 +417,7 @@ package dax {
   }
 
   object DeleteClusterResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
@@ -420,6 +433,7 @@ package dax {
   }
 
   object DeleteParameterGroupRequest {
+    @inline
     def apply(
         ParameterGroupName: String
     ): DeleteParameterGroupRequest = {
@@ -437,6 +451,7 @@ package dax {
   }
 
   object DeleteParameterGroupResponse {
+    @inline
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteParameterGroupResponse = {
@@ -452,6 +467,7 @@ package dax {
   }
 
   object DeleteSubnetGroupRequest {
+    @inline
     def apply(
         SubnetGroupName: String
     ): DeleteSubnetGroupRequest = {
@@ -469,6 +485,7 @@ package dax {
   }
 
   object DeleteSubnetGroupResponse {
+    @inline
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteSubnetGroupResponse = {
@@ -486,6 +503,7 @@ package dax {
   }
 
   object DescribeClustersRequest {
+    @inline
     def apply(
         ClusterNames: js.UndefOr[ClusterNameList] = js.undefined,
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
@@ -506,6 +524,7 @@ package dax {
   }
 
   object DescribeClustersResponse {
+    @inline
     def apply(
         Clusters: js.UndefOr[ClusterList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -524,6 +543,7 @@ package dax {
   }
 
   object DescribeDefaultParametersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -542,6 +562,7 @@ package dax {
   }
 
   object DescribeDefaultParametersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
@@ -565,6 +586,7 @@ package dax {
   }
 
   object DescribeEventsRequest {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -593,6 +615,7 @@ package dax {
   }
 
   object DescribeEventsResponse {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -612,6 +635,7 @@ package dax {
   }
 
   object DescribeParameterGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -632,6 +656,7 @@ package dax {
   }
 
   object DescribeParameterGroupsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
@@ -652,6 +677,7 @@ package dax {
   }
 
   object DescribeParametersRequest {
+    @inline
     def apply(
         ParameterGroupName: String,
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
@@ -676,6 +702,7 @@ package dax {
   }
 
   object DescribeParametersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
@@ -695,6 +722,7 @@ package dax {
   }
 
   object DescribeSubnetGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -715,6 +743,7 @@ package dax {
   }
 
   object DescribeSubnetGroupsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         SubnetGroups: js.UndefOr[SubnetGroupList] = js.undefined
@@ -736,6 +765,7 @@ package dax {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
@@ -759,6 +789,7 @@ package dax {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         Message: js.UndefOr[String] = js.undefined,
@@ -782,6 +813,7 @@ package dax {
   }
 
   object IncreaseReplicationFactorRequest {
+    @inline
     def apply(
         ClusterName: String,
         NewReplicationFactor: Int,
@@ -803,6 +835,7 @@ package dax {
   }
 
   object IncreaseReplicationFactorResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): IncreaseReplicationFactorResponse = {
@@ -827,6 +860,7 @@ package dax {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ResourceName: String,
         NextToken: js.UndefOr[String] = js.undefined
@@ -847,6 +881,7 @@ package dax {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -872,6 +907,7 @@ package dax {
   }
 
   object Node {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         Endpoint: js.UndefOr[Endpoint] = js.undefined,
@@ -901,6 +937,7 @@ package dax {
   }
 
   object NodeTypeSpecificValue {
+    @inline
     def apply(
         NodeType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -922,6 +959,7 @@ package dax {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         TopicArn: js.UndefOr[String] = js.undefined,
         TopicStatus: js.UndefOr[String] = js.undefined
@@ -951,6 +989,7 @@ package dax {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ChangeType: js.UndefOr[ChangeType] = js.undefined,
@@ -988,6 +1027,7 @@ package dax {
   }
 
   object ParameterGroup {
+    @inline
     def apply(
         Description: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
@@ -1010,6 +1050,7 @@ package dax {
   }
 
   object ParameterGroupStatus {
+    @inline
     def apply(
         NodeIdsToReboot: js.UndefOr[NodeIdentifierList] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
@@ -1033,6 +1074,7 @@ package dax {
   }
 
   object ParameterNameValue {
+    @inline
     def apply(
         ParameterName: js.UndefOr[String] = js.undefined,
         ParameterValue: js.UndefOr[String] = js.undefined
@@ -1058,6 +1100,7 @@ package dax {
   }
 
   object RebootNodeRequest {
+    @inline
     def apply(
         ClusterName: String,
         NodeId: String
@@ -1077,6 +1120,7 @@ package dax {
   }
 
   object RebootNodeResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RebootNodeResponse = {
@@ -1095,6 +1139,7 @@ package dax {
   }
 
   object SSEDescription {
+    @inline
     def apply(
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
@@ -1113,6 +1158,7 @@ package dax {
   }
 
   object SSESpecification {
+    @inline
     def apply(
         Enabled: SSEEnabled
     ): SSESpecification = {
@@ -1143,6 +1189,7 @@ package dax {
   }
 
   object SecurityGroupMembership {
+    @inline
     def apply(
         SecurityGroupIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -1172,6 +1219,7 @@ package dax {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[String] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined
@@ -1197,6 +1245,7 @@ package dax {
   }
 
   object SubnetGroup {
+    @inline
     def apply(
         Description: js.UndefOr[String] = js.undefined,
         SubnetGroupName: js.UndefOr[String] = js.undefined,
@@ -1224,6 +1273,7 @@ package dax {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -1242,6 +1292,7 @@ package dax {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -1261,6 +1312,7 @@ package dax {
   }
 
   object TagResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): TagResourceResponse = {
@@ -1277,6 +1329,7 @@ package dax {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: KeyList
@@ -1296,6 +1349,7 @@ package dax {
   }
 
   object UntagResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): UntagResourceResponse = {
@@ -1317,6 +1371,7 @@ package dax {
   }
 
   object UpdateClusterRequest {
+    @inline
     def apply(
         ClusterName: String,
         Description: js.UndefOr[String] = js.undefined,
@@ -1348,6 +1403,7 @@ package dax {
   }
 
   object UpdateClusterResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): UpdateClusterResponse = {
@@ -1364,6 +1420,7 @@ package dax {
   }
 
   object UpdateParameterGroupRequest {
+    @inline
     def apply(
         ParameterGroupName: String,
         ParameterNameValues: ParameterNameValueList
@@ -1383,6 +1440,7 @@ package dax {
   }
 
   object UpdateParameterGroupResponse {
+    @inline
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): UpdateParameterGroupResponse = {
@@ -1400,6 +1458,7 @@ package dax {
   }
 
   object UpdateSubnetGroupRequest {
+    @inline
     def apply(
         SubnetGroupName: String,
         Description: js.UndefOr[String] = js.undefined,
@@ -1421,6 +1480,7 @@ package dax {
   }
 
   object UpdateSubnetGroupResponse {
+    @inline
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): UpdateSubnetGroupResponse = {

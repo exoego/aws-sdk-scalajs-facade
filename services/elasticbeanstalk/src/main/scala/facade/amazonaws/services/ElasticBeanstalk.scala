@@ -167,110 +167,115 @@ package object elasticbeanstalk {
 
   implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
 
-    def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
+    @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
       service.abortEnvironmentUpdate(params).promise.toFuture
-    def applyEnvironmentManagedActionFuture(
+    @inline def applyEnvironmentManagedActionFuture(
         params: ApplyEnvironmentManagedActionRequest
     ): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise.toFuture
-    def checkDNSAvailabilityFuture(params: CheckDNSAvailabilityMessage): Future[CheckDNSAvailabilityResultMessage] =
-      service.checkDNSAvailability(params).promise.toFuture
-    def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
+    @inline def checkDNSAvailabilityFuture(
+        params: CheckDNSAvailabilityMessage
+    ): Future[CheckDNSAvailabilityResultMessage] = service.checkDNSAvailability(params).promise.toFuture
+    @inline def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
       service.composeEnvironments(params).promise.toFuture
-    def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] =
+    @inline def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] =
       service.createApplication(params).promise.toFuture
-    def createApplicationVersionFuture(
+    @inline def createApplicationVersionFuture(
         params: CreateApplicationVersionMessage
     ): Future[ApplicationVersionDescriptionMessage] = service.createApplicationVersion(params).promise.toFuture
-    def createConfigurationTemplateFuture(
+    @inline def createConfigurationTemplateFuture(
         params: CreateConfigurationTemplateMessage
     ): Future[ConfigurationSettingsDescription] = service.createConfigurationTemplate(params).promise.toFuture
-    def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] =
       service.createEnvironment(params).promise.toFuture
-    def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] =
+    @inline def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] =
       service.createPlatformVersion(params).promise.toFuture
-    def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] =
+    @inline def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] =
       service.createStorageLocation().promise.toFuture
-    def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] =
+    @inline def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] =
       service.deleteApplication(params).promise.toFuture
-    def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] =
+    @inline def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] =
       service.deleteApplicationVersion(params).promise.toFuture
-    def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] =
+    @inline def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] =
       service.deleteConfigurationTemplate(params).promise.toFuture
-    def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] =
+    @inline def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] =
       service.deleteEnvironmentConfiguration(params).promise.toFuture
-    def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] =
+    @inline def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] =
       service.deletePlatformVersion(params).promise.toFuture
-    def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] =
+    @inline def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] =
       service.describeAccountAttributes().promise.toFuture
-    def describeApplicationVersionsFuture(
+    @inline def describeApplicationVersionsFuture(
         params: DescribeApplicationVersionsMessage
     ): Future[ApplicationVersionDescriptionsMessage] = service.describeApplicationVersions(params).promise.toFuture
-    def describeApplicationsFuture(params: DescribeApplicationsMessage): Future[ApplicationDescriptionsMessage] =
-      service.describeApplications(params).promise.toFuture
-    def describeConfigurationOptionsFuture(
+    @inline def describeApplicationsFuture(
+        params: DescribeApplicationsMessage
+    ): Future[ApplicationDescriptionsMessage] = service.describeApplications(params).promise.toFuture
+    @inline def describeConfigurationOptionsFuture(
         params: DescribeConfigurationOptionsMessage
     ): Future[ConfigurationOptionsDescription] = service.describeConfigurationOptions(params).promise.toFuture
-    def describeConfigurationSettingsFuture(
+    @inline def describeConfigurationSettingsFuture(
         params: DescribeConfigurationSettingsMessage
     ): Future[ConfigurationSettingsDescriptions] = service.describeConfigurationSettings(params).promise.toFuture
-    def describeEnvironmentHealthFuture(
+    @inline def describeEnvironmentHealthFuture(
         params: DescribeEnvironmentHealthRequest
     ): Future[DescribeEnvironmentHealthResult] = service.describeEnvironmentHealth(params).promise.toFuture
-    def describeEnvironmentManagedActionHistoryFuture(
+    @inline def describeEnvironmentManagedActionHistoryFuture(
         params: DescribeEnvironmentManagedActionHistoryRequest
     ): Future[DescribeEnvironmentManagedActionHistoryResult] =
       service.describeEnvironmentManagedActionHistory(params).promise.toFuture
-    def describeEnvironmentManagedActionsFuture(
+    @inline def describeEnvironmentManagedActionsFuture(
         params: DescribeEnvironmentManagedActionsRequest
     ): Future[DescribeEnvironmentManagedActionsResult] =
       service.describeEnvironmentManagedActions(params).promise.toFuture
-    def describeEnvironmentResourcesFuture(
+    @inline def describeEnvironmentResourcesFuture(
         params: DescribeEnvironmentResourcesMessage
     ): Future[EnvironmentResourceDescriptionsMessage] = service.describeEnvironmentResources(params).promise.toFuture
-    def describeEnvironmentsFuture(params: DescribeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
-      service.describeEnvironments(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] =
+    @inline def describeEnvironmentsFuture(
+        params: DescribeEnvironmentsMessage
+    ): Future[EnvironmentDescriptionsMessage] = service.describeEnvironments(params).promise.toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeInstancesHealthFuture(params: DescribeInstancesHealthRequest): Future[DescribeInstancesHealthResult] =
-      service.describeInstancesHealth(params).promise.toFuture
-    def describePlatformVersionFuture(params: DescribePlatformVersionRequest): Future[DescribePlatformVersionResult] =
-      service.describePlatformVersion(params).promise.toFuture
-    def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
+    @inline def describeInstancesHealthFuture(
+        params: DescribeInstancesHealthRequest
+    ): Future[DescribeInstancesHealthResult] = service.describeInstancesHealth(params).promise.toFuture
+    @inline def describePlatformVersionFuture(
+        params: DescribePlatformVersionRequest
+    ): Future[DescribePlatformVersionResult] = service.describePlatformVersion(params).promise.toFuture
+    @inline def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
       service.listAvailableSolutionStacks().promise.toFuture
-    def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
+    @inline def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
       service.listPlatformVersions(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
       service.listTagsForResource(params).promise.toFuture
-    def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] =
+    @inline def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] =
       service.rebuildEnvironment(params).promise.toFuture
-    def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] =
+    @inline def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] =
       service.requestEnvironmentInfo(params).promise.toFuture
-    def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] =
+    @inline def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] =
       service.restartAppServer(params).promise.toFuture
-    def retrieveEnvironmentInfoFuture(
+    @inline def retrieveEnvironmentInfoFuture(
         params: RetrieveEnvironmentInfoMessage
     ): Future[RetrieveEnvironmentInfoResultMessage] = service.retrieveEnvironmentInfo(params).promise.toFuture
-    def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] =
+    @inline def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] =
       service.swapEnvironmentCNAMEs(params).promise.toFuture
-    def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] =
       service.terminateEnvironment(params).promise.toFuture
-    def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] =
+    @inline def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] =
       service.updateApplication(params).promise.toFuture
-    def updateApplicationResourceLifecycleFuture(
+    @inline def updateApplicationResourceLifecycleFuture(
         params: UpdateApplicationResourceLifecycleMessage
     ): Future[ApplicationResourceLifecycleDescriptionMessage] =
       service.updateApplicationResourceLifecycle(params).promise.toFuture
-    def updateApplicationVersionFuture(
+    @inline def updateApplicationVersionFuture(
         params: UpdateApplicationVersionMessage
     ): Future[ApplicationVersionDescriptionMessage] = service.updateApplicationVersion(params).promise.toFuture
-    def updateConfigurationTemplateFuture(
+    @inline def updateConfigurationTemplateFuture(
         params: UpdateConfigurationTemplateMessage
     ): Future[ConfigurationSettingsDescription] = service.updateConfigurationTemplate(params).promise.toFuture
-    def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] =
       service.updateEnvironment(params).promise.toFuture
-    def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] =
+    @inline def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] =
       service.updateTagsForResource(params).promise.toFuture
-    def validateConfigurationSettingsFuture(
+    @inline def validateConfigurationSettingsFuture(
         params: ValidateConfigurationSettingsMessage
     ): Future[ConfigurationSettingsValidationMessages] = service.validateConfigurationSettings(params).promise.toFuture
   }
@@ -369,6 +374,7 @@ package elasticbeanstalk {
   }
 
   object AbortEnvironmentUpdateMessage {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
@@ -421,6 +427,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescription {
+    @inline
     def apply(
         ApplicationArn: js.UndefOr[ApplicationArn] = js.undefined,
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
@@ -453,6 +460,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescriptionMessage {
+    @inline
     def apply(
         Application: js.UndefOr[ApplicationDescription] = js.undefined
     ): ApplicationDescriptionMessage = {
@@ -471,6 +479,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescriptionsMessage {
+    @inline
     def apply(
         Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined
     ): ApplicationDescriptionsMessage = {
@@ -492,6 +501,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationMetrics {
+    @inline
     def apply(
         Duration: js.UndefOr[NullableInteger] = js.undefined,
         Latency: js.UndefOr[Latency] = js.undefined,
@@ -517,6 +527,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationResourceLifecycleConfig {
+    @inline
     def apply(
         ServiceRole: js.UndefOr[String] = js.undefined,
         VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig] = js.undefined
@@ -535,6 +546,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationResourceLifecycleDescriptionMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined
@@ -564,6 +576,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionDescription {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         ApplicationVersionArn: js.UndefOr[ApplicationVersionArn] = js.undefined,
@@ -600,6 +613,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionDescriptionMessage {
+    @inline
     def apply(
         ApplicationVersion: js.UndefOr[ApplicationVersionDescription] = js.undefined
     ): ApplicationVersionDescriptionMessage = {
@@ -619,6 +633,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionDescriptionsMessage {
+    @inline
     def apply(
         ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -641,6 +656,7 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionLifecycleConfig {
+    @inline
     def apply(
         MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined,
         MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined
@@ -673,6 +689,7 @@ package elasticbeanstalk {
   }
 
   object ApplyEnvironmentManagedActionRequest {
+    @inline
     def apply(
         ActionId: String,
         EnvironmentId: js.UndefOr[String] = js.undefined,
@@ -700,6 +717,7 @@ package elasticbeanstalk {
   }
 
   object ApplyEnvironmentManagedActionResult {
+    @inline
     def apply(
         ActionDescription: js.UndefOr[String] = js.undefined,
         ActionId: js.UndefOr[String] = js.undefined,
@@ -724,6 +742,7 @@ package elasticbeanstalk {
   }
 
   object AutoScalingGroup {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): AutoScalingGroup = {
@@ -746,6 +765,7 @@ package elasticbeanstalk {
   }
 
   object BuildConfiguration {
+    @inline
     def apply(
         CodeBuildServiceRole: NonEmptyString,
         Image: NonEmptyString,
@@ -774,6 +794,7 @@ package elasticbeanstalk {
   }
 
   object Builder {
+    @inline
     def apply(
         ARN: js.UndefOr[ARN] = js.undefined
     ): Builder = {
@@ -799,6 +820,7 @@ package elasticbeanstalk {
   }
 
   object CPUUtilization {
+    @inline
     def apply(
         IOWait: js.UndefOr[NullableDouble] = js.undefined,
         IRQ: js.UndefOr[NullableDouble] = js.undefined,
@@ -831,6 +853,7 @@ package elasticbeanstalk {
   }
 
   object CheckDNSAvailabilityMessage {
+    @inline
     def apply(
         CNAMEPrefix: DNSCnamePrefix
     ): CheckDNSAvailabilityMessage = {
@@ -852,6 +875,7 @@ package elasticbeanstalk {
   }
 
   object CheckDNSAvailabilityResultMessage {
+    @inline
     def apply(
         Available: js.UndefOr[CnameAvailability] = js.undefined,
         FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined
@@ -874,6 +898,7 @@ package elasticbeanstalk {
   }
 
   object ComposeEnvironmentsMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined,
@@ -922,6 +947,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionDescription {
+    @inline
     def apply(
         ChangeSeverity: js.UndefOr[ConfigurationOptionSeverity] = js.undefined,
         DefaultValue: js.UndefOr[ConfigurationOptionDefaultValue] = js.undefined,
@@ -963,6 +989,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionSetting {
+    @inline
     def apply(
         Namespace: js.UndefOr[OptionNamespace] = js.undefined,
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
@@ -996,6 +1023,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionsDescription {
+    @inline
     def apply(
         Options: js.UndefOr[ConfigurationOptionDescriptionsList] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
@@ -1027,6 +1055,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationSettingsDescription {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         DateCreated: js.UndefOr[CreationDate] = js.undefined,
@@ -1063,6 +1092,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationSettingsDescriptions {
+    @inline
     def apply(
         ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList] = js.undefined
     ): ConfigurationSettingsDescriptions = {
@@ -1081,6 +1111,7 @@ package elasticbeanstalk {
   }
 
   object ConfigurationSettingsValidationMessages {
+    @inline
     def apply(
         Messages: js.UndefOr[ValidationMessagesList] = js.undefined
     ): ConfigurationSettingsValidationMessages = {
@@ -1102,6 +1133,7 @@ package elasticbeanstalk {
   }
 
   object CreateApplicationMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         Description: js.UndefOr[Description] = js.undefined,
@@ -1136,6 +1168,7 @@ package elasticbeanstalk {
   }
 
   object CreateApplicationVersionMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         VersionLabel: VersionLabel,
@@ -1180,6 +1213,7 @@ package elasticbeanstalk {
   }
 
   object CreateConfigurationTemplateMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         TemplateName: ConfigurationTemplateName,
@@ -1228,6 +1262,7 @@ package elasticbeanstalk {
   }
 
   object CreateEnvironmentMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CNAMEPrefix: js.UndefOr[DNSCnamePrefix] = js.undefined,
@@ -1277,6 +1312,7 @@ package elasticbeanstalk {
   }
 
   object CreatePlatformVersionRequest {
+    @inline
     def apply(
         PlatformDefinitionBundle: S3Location,
         PlatformName: PlatformName,
@@ -1305,6 +1341,7 @@ package elasticbeanstalk {
   }
 
   object CreatePlatformVersionResult {
+    @inline
     def apply(
         Builder: js.UndefOr[Builder] = js.undefined,
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
@@ -1325,6 +1362,7 @@ package elasticbeanstalk {
   }
 
   object CreateStorageLocationResultMessage {
+    @inline
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined
     ): CreateStorageLocationResultMessage = {
@@ -1344,6 +1382,7 @@ package elasticbeanstalk {
   }
 
   object CustomAmi {
+    @inline
     def apply(
         ImageId: js.UndefOr[ImageId] = js.undefined,
         VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
@@ -1365,6 +1404,7 @@ package elasticbeanstalk {
   }
 
   object DeleteApplicationMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined
@@ -1389,6 +1429,7 @@ package elasticbeanstalk {
   }
 
   object DeleteApplicationVersionMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         VersionLabel: VersionLabel,
@@ -1414,6 +1455,7 @@ package elasticbeanstalk {
   }
 
   object DeleteConfigurationTemplateMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         TemplateName: ConfigurationTemplateName
@@ -1437,6 +1479,7 @@ package elasticbeanstalk {
   }
 
   object DeleteEnvironmentConfigurationMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         EnvironmentName: EnvironmentName
@@ -1456,6 +1499,7 @@ package elasticbeanstalk {
   }
 
   object DeletePlatformVersionRequest {
+    @inline
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DeletePlatformVersionRequest = {
@@ -1471,6 +1515,7 @@ package elasticbeanstalk {
   }
 
   object DeletePlatformVersionResult {
+    @inline
     def apply(
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
     ): DeletePlatformVersionResult = {
@@ -1492,6 +1537,7 @@ package elasticbeanstalk {
   }
 
   object Deployment {
+    @inline
     def apply(
         DeploymentId: js.UndefOr[NullableLong] = js.undefined,
         DeploymentTime: js.UndefOr[DeploymentTimestamp] = js.undefined,
@@ -1513,6 +1559,7 @@ package elasticbeanstalk {
   }
 
   object DescribeAccountAttributesResult {
+    @inline
     def apply(
         ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined
     ): DescribeAccountAttributesResult = {
@@ -1534,6 +1581,7 @@ package elasticbeanstalk {
   }
 
   object DescribeApplicationVersionsMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1558,6 +1606,7 @@ package elasticbeanstalk {
   }
 
   object DescribeApplicationsMessage {
+    @inline
     def apply(
         ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined
     ): DescribeApplicationsMessage = {
@@ -1581,6 +1630,7 @@ package elasticbeanstalk {
   }
 
   object DescribeConfigurationOptionsMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -1611,6 +1661,7 @@ package elasticbeanstalk {
   }
 
   object DescribeConfigurationSettingsMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -1637,6 +1688,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentHealthRequest {
+    @inline
     def apply(
         AttributeNames: js.UndefOr[EnvironmentHealthAttributes] = js.undefined,
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
@@ -1666,6 +1718,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentHealthResult {
+    @inline
     def apply(
         ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
         Causes: js.UndefOr[Causes] = js.undefined,
@@ -1701,6 +1754,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionHistoryRequest {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -1726,6 +1780,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionHistoryResult {
+    @inline
     def apply(
         ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1750,6 +1805,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionsRequest {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[String] = js.undefined,
         EnvironmentName: js.UndefOr[String] = js.undefined,
@@ -1772,6 +1828,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionsResult {
+    @inline
     def apply(
         ManagedActions: js.UndefOr[ManagedActions] = js.undefined
     ): DescribeEnvironmentManagedActionsResult = {
@@ -1791,6 +1848,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentResourcesMessage {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
@@ -1818,6 +1876,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentsMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         EnvironmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
@@ -1861,6 +1920,7 @@ package elasticbeanstalk {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         EndTime: js.UndefOr[TimeFilterEnd] = js.undefined,
@@ -1904,6 +1964,7 @@ package elasticbeanstalk {
   }
 
   object DescribeInstancesHealthRequest {
+    @inline
     def apply(
         AttributeNames: js.UndefOr[InstancesHealthAttributes] = js.undefined,
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
@@ -1930,6 +1991,7 @@ package elasticbeanstalk {
   }
 
   object DescribeInstancesHealthResult {
+    @inline
     def apply(
         InstanceHealthList: js.UndefOr[InstanceHealthList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1949,6 +2011,7 @@ package elasticbeanstalk {
   }
 
   object DescribePlatformVersionRequest {
+    @inline
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DescribePlatformVersionRequest = {
@@ -1964,6 +2027,7 @@ package elasticbeanstalk {
   }
 
   object DescribePlatformVersionResult {
+    @inline
     def apply(
         PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined
     ): DescribePlatformVersionResult = {
@@ -2001,6 +2065,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentDescription {
+    @inline
     def apply(
         AbortableOperationInProgress: js.UndefOr[AbortableOperationInProgress] = js.undefined,
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
@@ -2060,6 +2125,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentDescriptionsMessage {
+    @inline
     def apply(
         Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -2121,6 +2187,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentInfoDescription {
+    @inline
     def apply(
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined,
@@ -2153,6 +2220,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentLink {
+    @inline
     def apply(
         EnvironmentName: js.UndefOr[String] = js.undefined,
         LinkName: js.UndefOr[String] = js.undefined
@@ -2180,6 +2248,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentResourceDescription {
+    @inline
     def apply(
         AutoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -2212,6 +2281,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentResourceDescriptionsMessage {
+    @inline
     def apply(
         EnvironmentResources: js.UndefOr[EnvironmentResourceDescription] = js.undefined
     ): EnvironmentResourceDescriptionsMessage = {
@@ -2230,6 +2300,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentResourcesDescription {
+    @inline
     def apply(
         LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined
     ): EnvironmentResourcesDescription = {
@@ -2260,6 +2331,7 @@ package elasticbeanstalk {
   }
 
   object EnvironmentTier {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined,
@@ -2290,6 +2362,7 @@ package elasticbeanstalk {
   }
 
   object EventDescription {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -2325,6 +2398,7 @@ package elasticbeanstalk {
   }
 
   object EventDescriptionsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -2378,6 +2452,7 @@ package elasticbeanstalk {
   }
 
   object Instance {
+    @inline
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): Instance = {
@@ -2403,6 +2478,7 @@ package elasticbeanstalk {
   }
 
   object InstanceHealthSummary {
+    @inline
     def apply(
         Degraded: js.UndefOr[NullableInteger] = js.undefined,
         Info: js.UndefOr[NullableInteger] = js.undefined,
@@ -2472,6 +2548,7 @@ package elasticbeanstalk {
   }
 
   object Latency {
+    @inline
     def apply(
         P10: js.UndefOr[NullableDouble] = js.undefined,
         P50: js.UndefOr[NullableDouble] = js.undefined,
@@ -2504,6 +2581,7 @@ package elasticbeanstalk {
   }
 
   object LaunchConfiguration {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LaunchConfiguration = {
@@ -2522,6 +2600,7 @@ package elasticbeanstalk {
   }
 
   object LaunchTemplate {
+    @inline
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): LaunchTemplate = {
@@ -2541,6 +2620,7 @@ package elasticbeanstalk {
   }
 
   object ListAvailableSolutionStacksResultMessage {
+    @inline
     def apply(
         SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList] = js.undefined,
         SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList] = js.undefined
@@ -2560,6 +2640,7 @@ package elasticbeanstalk {
   }
 
   object ListPlatformVersionsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[PlatformFilters] = js.undefined,
         MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
@@ -2580,6 +2661,7 @@ package elasticbeanstalk {
   }
 
   object ListPlatformVersionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined
@@ -2597,6 +2679,7 @@ package elasticbeanstalk {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): ListTagsForResourceMessage = {
@@ -2618,6 +2701,7 @@ package elasticbeanstalk {
   }
 
   object Listener {
+    @inline
     def apply(
         Port: js.UndefOr[Int] = js.undefined,
         Protocol: js.UndefOr[String] = js.undefined
@@ -2638,6 +2722,7 @@ package elasticbeanstalk {
   }
 
   object LoadBalancer {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LoadBalancer = {
@@ -2658,6 +2743,7 @@ package elasticbeanstalk {
   }
 
   object LoadBalancerDescription {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined,
         Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined,
@@ -2684,6 +2770,7 @@ package elasticbeanstalk {
   }
 
   object ManagedAction {
+    @inline
     def apply(
         ActionDescription: js.UndefOr[String] = js.undefined,
         ActionId: js.UndefOr[String] = js.undefined,
@@ -2717,6 +2804,7 @@ package elasticbeanstalk {
   }
 
   object ManagedActionHistoryItem {
+    @inline
     def apply(
         ActionDescription: js.UndefOr[String] = js.undefined,
         ActionId: js.UndefOr[String] = js.undefined,
@@ -2751,6 +2839,7 @@ package elasticbeanstalk {
   }
 
   object MaxAgeRule {
+    @inline
     def apply(
         Enabled: BoxedBoolean,
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -2777,6 +2866,7 @@ package elasticbeanstalk {
   }
 
   object MaxCountRule {
+    @inline
     def apply(
         Enabled: BoxedBoolean,
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -2802,6 +2892,7 @@ package elasticbeanstalk {
   }
 
   object OptionRestrictionRegex {
+    @inline
     def apply(
         Label: js.UndefOr[RegexLabel] = js.undefined,
         Pattern: js.UndefOr[RegexPattern] = js.undefined
@@ -2824,6 +2915,7 @@ package elasticbeanstalk {
   }
 
   object OptionSpecification {
+    @inline
     def apply(
         Namespace: js.UndefOr[OptionNamespace] = js.undefined,
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
@@ -2863,6 +2955,7 @@ package elasticbeanstalk {
   }
 
   object PlatformDescription {
+    @inline
     def apply(
         CustomAmiList: js.UndefOr[CustomAmiList] = js.undefined,
         DateCreated: js.UndefOr[CreationDate] = js.undefined,
@@ -2919,6 +3012,7 @@ package elasticbeanstalk {
   }
 
   object PlatformFilter {
+    @inline
     def apply(
         Operator: js.UndefOr[PlatformFilterOperator] = js.undefined,
         Type: js.UndefOr[PlatformFilterType] = js.undefined,
@@ -2942,6 +3036,7 @@ package elasticbeanstalk {
   }
 
   object PlatformFramework {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -2963,6 +3058,7 @@ package elasticbeanstalk {
   }
 
   object PlatformProgrammingLanguage {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -3000,6 +3096,7 @@ package elasticbeanstalk {
   }
 
   object PlatformSummary {
+    @inline
     def apply(
         OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
         OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
@@ -3033,6 +3130,7 @@ package elasticbeanstalk {
   }
 
   object Queue {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         URL: js.UndefOr[String] = js.undefined
@@ -3054,6 +3152,7 @@ package elasticbeanstalk {
   }
 
   object RebuildEnvironmentMessage {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
@@ -3076,6 +3175,7 @@ package elasticbeanstalk {
   }
 
   object RequestEnvironmentInfoMessage {
+    @inline
     def apply(
         InfoType: EnvironmentInfoType,
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
@@ -3100,6 +3200,7 @@ package elasticbeanstalk {
   }
 
   object ResourceQuota {
+    @inline
     def apply(
         Maximum: js.UndefOr[BoxedInt] = js.undefined
     ): ResourceQuota = {
@@ -3122,6 +3223,7 @@ package elasticbeanstalk {
   }
 
   object ResourceQuotas {
+    @inline
     def apply(
         ApplicationQuota: js.UndefOr[ResourceQuota] = js.undefined,
         ApplicationVersionQuota: js.UndefOr[ResourceQuota] = js.undefined,
@@ -3148,6 +3250,7 @@ package elasticbeanstalk {
   }
 
   object ResourceTagsDescriptionMessage {
+    @inline
     def apply(
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceTags: js.UndefOr[TagList] = js.undefined
@@ -3169,6 +3272,7 @@ package elasticbeanstalk {
   }
 
   object RestartAppServerMessage {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
@@ -3191,6 +3295,7 @@ package elasticbeanstalk {
   }
 
   object RetrieveEnvironmentInfoMessage {
+    @inline
     def apply(
         InfoType: EnvironmentInfoType,
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
@@ -3215,6 +3320,7 @@ package elasticbeanstalk {
   }
 
   object RetrieveEnvironmentInfoResultMessage {
+    @inline
     def apply(
         EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList] = js.undefined
     ): RetrieveEnvironmentInfoResultMessage = {
@@ -3234,6 +3340,7 @@ package elasticbeanstalk {
   }
 
   object S3Location {
+    @inline
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined
@@ -3263,6 +3370,7 @@ package elasticbeanstalk {
   }
 
   object SingleInstanceHealth {
+    @inline
     def apply(
         ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
@@ -3300,6 +3408,7 @@ package elasticbeanstalk {
   }
 
   object SolutionStackDescription {
+    @inline
     def apply(
         PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
@@ -3322,6 +3431,7 @@ package elasticbeanstalk {
   }
 
   object SourceBuildInformation {
+    @inline
     def apply(
         SourceLocation: SourceLocation,
         SourceRepository: SourceRepository,
@@ -3347,6 +3457,7 @@ package elasticbeanstalk {
   }
 
   object SourceConfiguration {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
@@ -3384,6 +3495,7 @@ package elasticbeanstalk {
   }
 
   object StatusCodes {
+    @inline
     def apply(
         Status2xx: js.UndefOr[NullableInteger] = js.undefined,
         Status3xx: js.UndefOr[NullableInteger] = js.undefined,
@@ -3411,6 +3523,7 @@ package elasticbeanstalk {
   }
 
   object SwapEnvironmentCNAMEsMessage {
+    @inline
     def apply(
         DestinationEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         DestinationEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -3438,6 +3551,7 @@ package elasticbeanstalk {
   }
 
   object SystemStatus {
+    @inline
     def apply(
         CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
         LoadAverage: js.UndefOr[LoadAverage] = js.undefined
@@ -3459,6 +3573,7 @@ package elasticbeanstalk {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -3482,6 +3597,7 @@ package elasticbeanstalk {
   }
 
   object TerminateEnvironmentMessage {
+    @inline
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
@@ -3506,6 +3622,7 @@ package elasticbeanstalk {
   }
 
   object Trigger {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): Trigger = {
@@ -3525,6 +3642,7 @@ package elasticbeanstalk {
   }
 
   object UpdateApplicationMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         Description: js.UndefOr[Description] = js.undefined
@@ -3545,6 +3663,7 @@ package elasticbeanstalk {
   }
 
   object UpdateApplicationResourceLifecycleMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         ResourceLifecycleConfig: ApplicationResourceLifecycleConfig
@@ -3569,6 +3688,7 @@ package elasticbeanstalk {
   }
 
   object UpdateApplicationVersionMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         VersionLabel: VersionLabel,
@@ -3597,6 +3717,7 @@ package elasticbeanstalk {
   }
 
   object UpdateConfigurationTemplateMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         TemplateName: ConfigurationTemplateName,
@@ -3636,6 +3757,7 @@ package elasticbeanstalk {
   }
 
   object UpdateEnvironmentMessage {
+    @inline
     def apply(
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -3675,6 +3797,7 @@ package elasticbeanstalk {
   }
 
   object UpdateTagsForResourceMessage {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         TagsToAdd: js.UndefOr[TagList] = js.undefined,
@@ -3702,6 +3825,7 @@ package elasticbeanstalk {
   }
 
   object ValidateConfigurationSettingsMessage {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         OptionSettings: ConfigurationOptionSettingsList,
@@ -3731,6 +3855,7 @@ package elasticbeanstalk {
   }
 
   object ValidationMessage {
+    @inline
     def apply(
         Message: js.UndefOr[ValidationMessageString] = js.undefined,
         Namespace: js.UndefOr[OptionNamespace] = js.undefined,

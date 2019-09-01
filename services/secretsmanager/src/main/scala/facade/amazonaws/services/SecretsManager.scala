@@ -55,40 +55,41 @@ package object secretsmanager {
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
-    def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
+    @inline def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
       service.cancelRotateSecret(params).promise.toFuture
-    def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] =
+    @inline def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] =
       service.createSecret(params).promise.toFuture
-    def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
       service.deleteResourcePolicy(params).promise.toFuture
-    def deleteSecretFuture(params: DeleteSecretRequest): Future[DeleteSecretResponse] =
+    @inline def deleteSecretFuture(params: DeleteSecretRequest): Future[DeleteSecretResponse] =
       service.deleteSecret(params).promise.toFuture
-    def describeSecretFuture(params: DescribeSecretRequest): Future[DescribeSecretResponse] =
+    @inline def describeSecretFuture(params: DescribeSecretRequest): Future[DescribeSecretResponse] =
       service.describeSecret(params).promise.toFuture
-    def getRandomPasswordFuture(params: GetRandomPasswordRequest): Future[GetRandomPasswordResponse] =
+    @inline def getRandomPasswordFuture(params: GetRandomPasswordRequest): Future[GetRandomPasswordResponse] =
       service.getRandomPassword(params).promise.toFuture
-    def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
       service.getResourcePolicy(params).promise.toFuture
-    def getSecretValueFuture(params: GetSecretValueRequest): Future[GetSecretValueResponse] =
+    @inline def getSecretValueFuture(params: GetSecretValueRequest): Future[GetSecretValueResponse] =
       service.getSecretValue(params).promise.toFuture
-    def listSecretVersionIdsFuture(params: ListSecretVersionIdsRequest): Future[ListSecretVersionIdsResponse] =
+    @inline def listSecretVersionIdsFuture(params: ListSecretVersionIdsRequest): Future[ListSecretVersionIdsResponse] =
       service.listSecretVersionIds(params).promise.toFuture
-    def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] =
+    @inline def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] =
       service.listSecrets(params).promise.toFuture
-    def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
       service.putResourcePolicy(params).promise.toFuture
-    def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] =
+    @inline def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] =
       service.putSecretValue(params).promise.toFuture
-    def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] =
+    @inline def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] =
       service.restoreSecret(params).promise.toFuture
-    def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] =
+    @inline def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] =
       service.rotateSecret(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] =
+    @inline def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] =
       service.updateSecret(params).promise.toFuture
-    def updateSecretVersionStageFuture(
+    @inline def updateSecretVersionStageFuture(
         params: UpdateSecretVersionStageRequest
     ): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise.toFuture
   }
@@ -127,6 +128,7 @@ package secretsmanager {
   }
 
   object CancelRotateSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType
     ): CancelRotateSecretRequest = {
@@ -146,6 +148,7 @@ package secretsmanager {
   }
 
   object CancelRotateSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -171,6 +174,7 @@ package secretsmanager {
   }
 
   object CreateSecretRequest {
+    @inline
     def apply(
         Name: NameType,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
@@ -202,6 +206,7 @@ package secretsmanager {
   }
 
   object CreateSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -221,6 +226,7 @@ package secretsmanager {
   }
 
   object DeleteResourcePolicyRequest {
+    @inline
     def apply(
         SecretId: SecretIdType
     ): DeleteResourcePolicyRequest = {
@@ -239,6 +245,7 @@ package secretsmanager {
   }
 
   object DeleteResourcePolicyResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[NameType] = js.undefined
@@ -258,6 +265,7 @@ package secretsmanager {
   }
 
   object DeleteSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         ForceDeleteWithoutRecovery: js.UndefOr[BooleanType] = js.undefined,
@@ -283,6 +291,7 @@ package secretsmanager {
   }
 
   object DeleteSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         DeletionDate: js.UndefOr[DeletionDateType] = js.undefined,
@@ -302,6 +311,7 @@ package secretsmanager {
   }
 
   object DescribeSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType
     ): DescribeSecretRequest = {
@@ -332,6 +342,7 @@ package secretsmanager {
   }
 
   object DescribeSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
@@ -380,6 +391,7 @@ package secretsmanager {
   }
 
   object GetRandomPasswordRequest {
+    @inline
     def apply(
         ExcludeCharacters: js.UndefOr[ExcludeCharactersType] = js.undefined,
         ExcludeLowercase: js.UndefOr[ExcludeLowercaseType] = js.undefined,
@@ -409,6 +421,7 @@ package secretsmanager {
   }
 
   object GetRandomPasswordResponse {
+    @inline
     def apply(
         RandomPassword: js.UndefOr[RandomPasswordType] = js.undefined
     ): GetRandomPasswordResponse = {
@@ -424,6 +437,7 @@ package secretsmanager {
   }
 
   object GetResourcePolicyRequest {
+    @inline
     def apply(
         SecretId: SecretIdType
     ): GetResourcePolicyRequest = {
@@ -443,6 +457,7 @@ package secretsmanager {
   }
 
   object GetResourcePolicyResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[NameType] = js.undefined,
@@ -464,6 +479,7 @@ package secretsmanager {
   }
 
   object GetSecretValueRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
@@ -491,6 +507,7 @@ package secretsmanager {
   }
 
   object GetSecretValueResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         CreatedDate: js.UndefOr[CreatedDateType] = js.undefined,
@@ -521,6 +538,7 @@ package secretsmanager {
   }
 
   object ListSecretVersionIdsRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         IncludeDeprecated: js.UndefOr[BooleanType] = js.undefined,
@@ -547,6 +565,7 @@ package secretsmanager {
   }
 
   object ListSecretVersionIdsResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -569,6 +588,7 @@ package secretsmanager {
   }
 
   object ListSecretsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResultsType] = js.undefined,
         NextToken: js.UndefOr[NextTokenType] = js.undefined
@@ -587,6 +607,7 @@ package secretsmanager {
   }
 
   object ListSecretsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextTokenType] = js.undefined,
         SecretList: js.UndefOr[SecretListType] = js.undefined
@@ -605,6 +626,7 @@ package secretsmanager {
   }
 
   object PutResourcePolicyRequest {
+    @inline
     def apply(
         ResourcePolicy: NonEmptyResourcePolicyType,
         SecretId: SecretIdType
@@ -625,6 +647,7 @@ package secretsmanager {
   }
 
   object PutResourcePolicyResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[NameType] = js.undefined
@@ -646,6 +669,7 @@ package secretsmanager {
   }
 
   object PutSecretValueRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
@@ -674,6 +698,7 @@ package secretsmanager {
   }
 
   object PutSecretValueResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -695,6 +720,7 @@ package secretsmanager {
   }
 
   object RestoreSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType
     ): RestoreSecretRequest = {
@@ -713,6 +739,7 @@ package secretsmanager {
   }
 
   object RestoreSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined
@@ -733,6 +760,7 @@ package secretsmanager {
   }
 
   object RotateSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
@@ -758,6 +786,7 @@ package secretsmanager {
   }
 
   object RotateSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -780,6 +809,7 @@ package secretsmanager {
   }
 
   object RotationRulesType {
+    @inline
     def apply(
         AutomaticallyAfterDays: js.UndefOr[AutomaticallyRotateAfterDaysType] = js.undefined
     ): RotationRulesType = {
@@ -811,6 +841,7 @@ package secretsmanager {
   }
 
   object SecretListEntry {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
@@ -858,6 +889,7 @@ package secretsmanager {
   }
 
   object SecretVersionsListEntry {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[CreatedDateType] = js.undefined,
         LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
@@ -883,6 +915,7 @@ package secretsmanager {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKeyType] = js.undefined,
         Value: js.UndefOr[TagValueType] = js.undefined
@@ -901,6 +934,7 @@ package secretsmanager {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         Tags: TagListType
@@ -921,6 +955,7 @@ package secretsmanager {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         TagKeys: TagKeyListType
@@ -945,6 +980,7 @@ package secretsmanager {
   }
 
   object UpdateSecretRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
@@ -974,6 +1010,7 @@ package secretsmanager {
   }
 
   object UpdateSecretResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
@@ -996,6 +1033,7 @@ package secretsmanager {
   }
 
   object UpdateSecretVersionStageRequest {
+    @inline
     def apply(
         SecretId: SecretIdType,
         VersionStage: SecretVersionStageType,
@@ -1020,6 +1058,7 @@ package secretsmanager {
   }
 
   object UpdateSecretVersionStageResponse {
+    @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined

@@ -82,60 +82,65 @@ package object machinelearning {
 
   implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =
       service.createBatchPrediction(params).promise.toFuture
-    def createDataSourceFromRDSFuture(params: CreateDataSourceFromRDSInput): Future[CreateDataSourceFromRDSOutput] =
-      service.createDataSourceFromRDS(params).promise.toFuture
-    def createDataSourceFromRedshiftFuture(
+    @inline def createDataSourceFromRDSFuture(
+        params: CreateDataSourceFromRDSInput
+    ): Future[CreateDataSourceFromRDSOutput] = service.createDataSourceFromRDS(params).promise.toFuture
+    @inline def createDataSourceFromRedshiftFuture(
         params: CreateDataSourceFromRedshiftInput
     ): Future[CreateDataSourceFromRedshiftOutput] = service.createDataSourceFromRedshift(params).promise.toFuture
-    def createDataSourceFromS3Future(params: CreateDataSourceFromS3Input): Future[CreateDataSourceFromS3Output] =
-      service.createDataSourceFromS3(params).promise.toFuture
-    def createEvaluationFuture(params: CreateEvaluationInput): Future[CreateEvaluationOutput] =
+    @inline def createDataSourceFromS3Future(
+        params: CreateDataSourceFromS3Input
+    ): Future[CreateDataSourceFromS3Output] = service.createDataSourceFromS3(params).promise.toFuture
+    @inline def createEvaluationFuture(params: CreateEvaluationInput): Future[CreateEvaluationOutput] =
       service.createEvaluation(params).promise.toFuture
-    def createMLModelFuture(params: CreateMLModelInput): Future[CreateMLModelOutput] =
+    @inline def createMLModelFuture(params: CreateMLModelInput): Future[CreateMLModelOutput] =
       service.createMLModel(params).promise.toFuture
-    def createRealtimeEndpointFuture(params: CreateRealtimeEndpointInput): Future[CreateRealtimeEndpointOutput] =
-      service.createRealtimeEndpoint(params).promise.toFuture
-    def deleteBatchPredictionFuture(params: DeleteBatchPredictionInput): Future[DeleteBatchPredictionOutput] =
+    @inline def createRealtimeEndpointFuture(
+        params: CreateRealtimeEndpointInput
+    ): Future[CreateRealtimeEndpointOutput] = service.createRealtimeEndpoint(params).promise.toFuture
+    @inline def deleteBatchPredictionFuture(params: DeleteBatchPredictionInput): Future[DeleteBatchPredictionOutput] =
       service.deleteBatchPrediction(params).promise.toFuture
-    def deleteDataSourceFuture(params: DeleteDataSourceInput): Future[DeleteDataSourceOutput] =
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceInput): Future[DeleteDataSourceOutput] =
       service.deleteDataSource(params).promise.toFuture
-    def deleteEvaluationFuture(params: DeleteEvaluationInput): Future[DeleteEvaluationOutput] =
+    @inline def deleteEvaluationFuture(params: DeleteEvaluationInput): Future[DeleteEvaluationOutput] =
       service.deleteEvaluation(params).promise.toFuture
-    def deleteMLModelFuture(params: DeleteMLModelInput): Future[DeleteMLModelOutput] =
+    @inline def deleteMLModelFuture(params: DeleteMLModelInput): Future[DeleteMLModelOutput] =
       service.deleteMLModel(params).promise.toFuture
-    def deleteRealtimeEndpointFuture(params: DeleteRealtimeEndpointInput): Future[DeleteRealtimeEndpointOutput] =
-      service.deleteRealtimeEndpoint(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
+    @inline def deleteRealtimeEndpointFuture(
+        params: DeleteRealtimeEndpointInput
+    ): Future[DeleteRealtimeEndpointOutput] = service.deleteRealtimeEndpoint(params).promise.toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
       service.deleteTags(params).promise.toFuture
-    def describeBatchPredictionsFuture(params: DescribeBatchPredictionsInput): Future[DescribeBatchPredictionsOutput] =
-      service.describeBatchPredictions(params).promise.toFuture
-    def describeDataSourcesFuture(params: DescribeDataSourcesInput): Future[DescribeDataSourcesOutput] =
+    @inline def describeBatchPredictionsFuture(
+        params: DescribeBatchPredictionsInput
+    ): Future[DescribeBatchPredictionsOutput] = service.describeBatchPredictions(params).promise.toFuture
+    @inline def describeDataSourcesFuture(params: DescribeDataSourcesInput): Future[DescribeDataSourcesOutput] =
       service.describeDataSources(params).promise.toFuture
-    def describeEvaluationsFuture(params: DescribeEvaluationsInput): Future[DescribeEvaluationsOutput] =
+    @inline def describeEvaluationsFuture(params: DescribeEvaluationsInput): Future[DescribeEvaluationsOutput] =
       service.describeEvaluations(params).promise.toFuture
-    def describeMLModelsFuture(params: DescribeMLModelsInput): Future[DescribeMLModelsOutput] =
+    @inline def describeMLModelsFuture(params: DescribeMLModelsInput): Future[DescribeMLModelsOutput] =
       service.describeMLModels(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
+    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
       service.describeTags(params).promise.toFuture
-    def getBatchPredictionFuture(params: GetBatchPredictionInput): Future[GetBatchPredictionOutput] =
+    @inline def getBatchPredictionFuture(params: GetBatchPredictionInput): Future[GetBatchPredictionOutput] =
       service.getBatchPrediction(params).promise.toFuture
-    def getDataSourceFuture(params: GetDataSourceInput): Future[GetDataSourceOutput] =
+    @inline def getDataSourceFuture(params: GetDataSourceInput): Future[GetDataSourceOutput] =
       service.getDataSource(params).promise.toFuture
-    def getEvaluationFuture(params: GetEvaluationInput): Future[GetEvaluationOutput] =
+    @inline def getEvaluationFuture(params: GetEvaluationInput): Future[GetEvaluationOutput] =
       service.getEvaluation(params).promise.toFuture
-    def getMLModelFuture(params: GetMLModelInput): Future[GetMLModelOutput] =
+    @inline def getMLModelFuture(params: GetMLModelInput): Future[GetMLModelOutput] =
       service.getMLModel(params).promise.toFuture
-    def predictFuture(params: PredictInput): Future[PredictOutput] = service.predict(params).promise.toFuture
-    def updateBatchPredictionFuture(params: UpdateBatchPredictionInput): Future[UpdateBatchPredictionOutput] =
+    @inline def predictFuture(params: PredictInput): Future[PredictOutput] = service.predict(params).promise.toFuture
+    @inline def updateBatchPredictionFuture(params: UpdateBatchPredictionInput): Future[UpdateBatchPredictionOutput] =
       service.updateBatchPrediction(params).promise.toFuture
-    def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] =
+    @inline def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] =
       service.updateDataSource(params).promise.toFuture
-    def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] =
+    @inline def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] =
       service.updateEvaluation(params).promise.toFuture
-    def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] =
+    @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] =
       service.updateMLModel(params).promise.toFuture
   }
 }
@@ -188,6 +193,7 @@ package machinelearning {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         ResourceId: EntityId,
         ResourceType: TaggableResourceType,
@@ -213,6 +219,7 @@ package machinelearning {
   }
 
   object AddTagsOutput {
+    @inline
     def apply(
         ResourceId: js.UndefOr[EntityId] = js.undefined,
         ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
@@ -260,6 +267,7 @@ package machinelearning {
   }
 
   object BatchPrediction {
+    @inline
     def apply(
         BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
         BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
@@ -335,6 +343,7 @@ package machinelearning {
   }
 
   object CreateBatchPredictionInput {
+    @inline
     def apply(
         BatchPredictionDataSourceId: EntityId,
         BatchPredictionId: EntityId,
@@ -364,6 +373,7 @@ package machinelearning {
   }
 
   object CreateBatchPredictionOutput {
+    @inline
     def apply(
         BatchPredictionId: js.UndefOr[EntityId] = js.undefined
     ): CreateBatchPredictionOutput = {
@@ -383,6 +393,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromRDSInput {
+    @inline
     def apply(
         DataSourceId: EntityId,
         RDSData: RDSDataSpec,
@@ -412,6 +423,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromRDSOutput {
+    @inline
     def apply(
         DataSourceId: js.UndefOr[EntityId] = js.undefined
     ): CreateDataSourceFromRDSOutput = {
@@ -431,6 +443,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromRedshiftInput {
+    @inline
     def apply(
         DataSourceId: EntityId,
         DataSpec: RedshiftDataSpec,
@@ -460,6 +473,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromRedshiftOutput {
+    @inline
     def apply(
         DataSourceId: js.UndefOr[EntityId] = js.undefined
     ): CreateDataSourceFromRedshiftOutput = {
@@ -478,6 +492,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromS3Input {
+    @inline
     def apply(
         DataSourceId: EntityId,
         DataSpec: S3DataSpec,
@@ -505,6 +520,7 @@ package machinelearning {
   }
 
   object CreateDataSourceFromS3Output {
+    @inline
     def apply(
         DataSourceId: js.UndefOr[EntityId] = js.undefined
     ): CreateDataSourceFromS3Output = {
@@ -523,6 +539,7 @@ package machinelearning {
   }
 
   object CreateEvaluationInput {
+    @inline
     def apply(
         EvaluationDataSourceId: EntityId,
         EvaluationId: EntityId,
@@ -550,6 +567,7 @@ package machinelearning {
   }
 
   object CreateEvaluationOutput {
+    @inline
     def apply(
         EvaluationId: js.UndefOr[EntityId] = js.undefined
     ): CreateEvaluationOutput = {
@@ -571,6 +589,7 @@ package machinelearning {
   }
 
   object CreateMLModelInput {
+    @inline
     def apply(
         MLModelId: EntityId,
         MLModelType: MLModelType,
@@ -604,6 +623,7 @@ package machinelearning {
   }
 
   object CreateMLModelOutput {
+    @inline
     def apply(
         MLModelId: js.UndefOr[EntityId] = js.undefined
     ): CreateMLModelOutput = {
@@ -619,6 +639,7 @@ package machinelearning {
   }
 
   object CreateRealtimeEndpointInput {
+    @inline
     def apply(
         MLModelId: EntityId
     ): CreateRealtimeEndpointInput = {
@@ -643,6 +664,7 @@ package machinelearning {
   }
 
   object CreateRealtimeEndpointOutput {
+    @inline
     def apply(
         MLModelId: js.UndefOr[EntityId] = js.undefined,
         RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined
@@ -681,6 +703,7 @@ package machinelearning {
   }
 
   object DataSource {
+    @inline
     def apply(
         ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
         ComputeTime: js.UndefOr[LongType] = js.undefined,
@@ -750,6 +773,7 @@ package machinelearning {
   }
 
   object DeleteBatchPredictionInput {
+    @inline
     def apply(
         BatchPredictionId: EntityId
     ): DeleteBatchPredictionInput = {
@@ -771,6 +795,7 @@ package machinelearning {
   }
 
   object DeleteBatchPredictionOutput {
+    @inline
     def apply(
         BatchPredictionId: js.UndefOr[EntityId] = js.undefined
     ): DeleteBatchPredictionOutput = {
@@ -786,6 +811,7 @@ package machinelearning {
   }
 
   object DeleteDataSourceInput {
+    @inline
     def apply(
         DataSourceId: EntityId
     ): DeleteDataSourceInput = {
@@ -806,6 +832,7 @@ package machinelearning {
   }
 
   object DeleteDataSourceOutput {
+    @inline
     def apply(
         DataSourceId: js.UndefOr[EntityId] = js.undefined
     ): DeleteDataSourceOutput = {
@@ -821,6 +848,7 @@ package machinelearning {
   }
 
   object DeleteEvaluationInput {
+    @inline
     def apply(
         EvaluationId: EntityId
     ): DeleteEvaluationInput = {
@@ -842,6 +870,7 @@ package machinelearning {
   }
 
   object DeleteEvaluationOutput {
+    @inline
     def apply(
         EvaluationId: js.UndefOr[EntityId] = js.undefined
     ): DeleteEvaluationOutput = {
@@ -857,6 +886,7 @@ package machinelearning {
   }
 
   object DeleteMLModelInput {
+    @inline
     def apply(
         MLModelId: EntityId
     ): DeleteMLModelInput = {
@@ -878,6 +908,7 @@ package machinelearning {
   }
 
   object DeleteMLModelOutput {
+    @inline
     def apply(
         MLModelId: js.UndefOr[EntityId] = js.undefined
     ): DeleteMLModelOutput = {
@@ -893,6 +924,7 @@ package machinelearning {
   }
 
   object DeleteRealtimeEndpointInput {
+    @inline
     def apply(
         MLModelId: EntityId
     ): DeleteRealtimeEndpointInput = {
@@ -915,6 +947,7 @@ package machinelearning {
   }
 
   object DeleteRealtimeEndpointOutput {
+    @inline
     def apply(
         MLModelId: js.UndefOr[EntityId] = js.undefined,
         RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined
@@ -934,6 +967,7 @@ package machinelearning {
   }
 
   object DeleteTagsInput {
+    @inline
     def apply(
         ResourceId: EntityId,
         ResourceType: TaggableResourceType,
@@ -959,6 +993,7 @@ package machinelearning {
   }
 
   object DeleteTagsOutput {
+    @inline
     def apply(
         ResourceId: js.UndefOr[EntityId] = js.undefined,
         ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
@@ -986,6 +1021,7 @@ package machinelearning {
   }
 
   object DescribeBatchPredictionsInput {
+    @inline
     def apply(
         EQ: js.UndefOr[ComparatorValue] = js.undefined,
         FilterVariable: js.UndefOr[BatchPredictionFilterVariable] = js.undefined,
@@ -1025,6 +1061,7 @@ package machinelearning {
   }
 
   object DescribeBatchPredictionsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[StringType] = js.undefined,
         Results: js.UndefOr[BatchPredictions] = js.undefined
@@ -1052,6 +1089,7 @@ package machinelearning {
   }
 
   object DescribeDataSourcesInput {
+    @inline
     def apply(
         EQ: js.UndefOr[ComparatorValue] = js.undefined,
         FilterVariable: js.UndefOr[DataSourceFilterVariable] = js.undefined,
@@ -1091,6 +1129,7 @@ package machinelearning {
   }
 
   object DescribeDataSourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[StringType] = js.undefined,
         Results: js.UndefOr[DataSources] = js.undefined
@@ -1118,6 +1157,7 @@ package machinelearning {
   }
 
   object DescribeEvaluationsInput {
+    @inline
     def apply(
         EQ: js.UndefOr[ComparatorValue] = js.undefined,
         FilterVariable: js.UndefOr[EvaluationFilterVariable] = js.undefined,
@@ -1157,6 +1197,7 @@ package machinelearning {
   }
 
   object DescribeEvaluationsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[StringType] = js.undefined,
         Results: js.UndefOr[Evaluations] = js.undefined
@@ -1184,6 +1225,7 @@ package machinelearning {
   }
 
   object DescribeMLModelsInput {
+    @inline
     def apply(
         EQ: js.UndefOr[ComparatorValue] = js.undefined,
         FilterVariable: js.UndefOr[MLModelFilterVariable] = js.undefined,
@@ -1223,6 +1265,7 @@ package machinelearning {
   }
 
   object DescribeMLModelsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[StringType] = js.undefined,
         Results: js.UndefOr[MLModels] = js.undefined
@@ -1241,6 +1284,7 @@ package machinelearning {
   }
 
   object DescribeTagsInput {
+    @inline
     def apply(
         ResourceId: EntityId,
         ResourceType: TaggableResourceType
@@ -1265,6 +1309,7 @@ package machinelearning {
   }
 
   object DescribeTagsOutput {
+    @inline
     def apply(
         ResourceId: js.UndefOr[EntityId] = js.undefined,
         ResourceType: js.UndefOr[TaggableResourceType] = js.undefined,
@@ -1329,6 +1374,7 @@ package machinelearning {
   }
 
   object Evaluation {
+    @inline
     def apply(
         ComputeTime: js.UndefOr[LongType] = js.undefined,
         CreatedAt: js.UndefOr[EpochTime] = js.undefined,
@@ -1394,6 +1440,7 @@ package machinelearning {
   }
 
   object GetBatchPredictionInput {
+    @inline
     def apply(
         BatchPredictionId: EntityId
     ): GetBatchPredictionInput = {
@@ -1430,6 +1477,7 @@ package machinelearning {
   }
 
   object GetBatchPredictionOutput {
+    @inline
     def apply(
         BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
         BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
@@ -1480,6 +1528,7 @@ package machinelearning {
   }
 
   object GetDataSourceInput {
+    @inline
     def apply(
         DataSourceId: EntityId,
         Verbose: js.UndefOr[Verbose] = js.undefined
@@ -1521,6 +1570,7 @@ package machinelearning {
   }
 
   object GetDataSourceOutput {
+    @inline
     def apply(
         ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
         ComputeTime: js.UndefOr[LongType] = js.undefined,
@@ -1574,6 +1624,7 @@ package machinelearning {
   }
 
   object GetEvaluationInput {
+    @inline
     def apply(
         EvaluationId: EntityId
     ): GetEvaluationInput = {
@@ -1608,6 +1659,7 @@ package machinelearning {
   }
 
   object GetEvaluationOutput {
+    @inline
     def apply(
         ComputeTime: js.UndefOr[LongType] = js.undefined,
         CreatedAt: js.UndefOr[EpochTime] = js.undefined,
@@ -1652,6 +1704,7 @@ package machinelearning {
   }
 
   object GetMLModelInput {
+    @inline
     def apply(
         MLModelId: EntityId,
         Verbose: js.UndefOr[Verbose] = js.undefined
@@ -1694,6 +1747,7 @@ package machinelearning {
   }
 
   object GetMLModelOutput {
+    @inline
     def apply(
         ComputeTime: js.UndefOr[LongType] = js.undefined,
         CreatedAt: js.UndefOr[EpochTime] = js.undefined,
@@ -1814,6 +1868,7 @@ package machinelearning {
   }
 
   object MLModel {
+    @inline
     def apply(
         Algorithm: js.UndefOr[Algorithm] = js.undefined,
         ComputeTime: js.UndefOr[LongType] = js.undefined,
@@ -1910,6 +1965,7 @@ package machinelearning {
   }
 
   object PerformanceMetrics {
+    @inline
     def apply(
         Properties: js.UndefOr[PerformanceMetricsProperties] = js.undefined
     ): PerformanceMetrics = {
@@ -1927,6 +1983,7 @@ package machinelearning {
   }
 
   object PredictInput {
+    @inline
     def apply(
         MLModelId: EntityId,
         PredictEndpoint: VipURL,
@@ -1948,6 +2005,7 @@ package machinelearning {
   }
 
   object PredictOutput {
+    @inline
     def apply(
         Prediction: js.UndefOr[Prediction] = js.undefined
     ): PredictOutput = {
@@ -1973,6 +2031,7 @@ package machinelearning {
   }
 
   object Prediction {
+    @inline
     def apply(
         details: js.UndefOr[DetailsMap] = js.undefined,
         predictedLabel: js.UndefOr[Label] = js.undefined,
@@ -2015,6 +2074,7 @@ package machinelearning {
   }
 
   object RDSDataSpec {
+    @inline
     def apply(
         DatabaseCredentials: RDSDatabaseCredentials,
         DatabaseInformation: RDSDatabase,
@@ -2056,6 +2116,7 @@ package machinelearning {
   }
 
   object RDSDatabase {
+    @inline
     def apply(
         DatabaseName: RDSDatabaseName,
         InstanceIdentifier: RDSInstanceIdentifier
@@ -2079,6 +2140,7 @@ package machinelearning {
   }
 
   object RDSDatabaseCredentials {
+    @inline
     def apply(
         Password: RDSDatabasePassword,
         Username: RDSDatabaseUsername
@@ -2106,6 +2168,7 @@ package machinelearning {
   }
 
   object RDSMetadata {
+    @inline
     def apply(
         DataPipelineId: js.UndefOr[EDPPipelineId] = js.undefined,
         Database: js.UndefOr[RDSDatabase] = js.undefined,
@@ -2137,6 +2200,7 @@ package machinelearning {
   }
 
   object RealtimeEndpointInfo {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[EpochTime] = js.undefined,
         EndpointStatus: js.UndefOr[RealtimeEndpointStatus] = js.undefined,
@@ -2176,6 +2240,7 @@ package machinelearning {
   }
 
   object RedshiftDataSpec {
+    @inline
     def apply(
         DatabaseCredentials: RedshiftDatabaseCredentials,
         DatabaseInformation: RedshiftDatabase,
@@ -2209,6 +2274,7 @@ package machinelearning {
   }
 
   object RedshiftDatabase {
+    @inline
     def apply(
         ClusterIdentifier: RedshiftClusterIdentifier,
         DatabaseName: RedshiftDatabaseName
@@ -2232,6 +2298,7 @@ package machinelearning {
   }
 
   object RedshiftDatabaseCredentials {
+    @inline
     def apply(
         Password: RedshiftDatabasePassword,
         Username: RedshiftDatabaseUsername
@@ -2256,6 +2323,7 @@ package machinelearning {
   }
 
   object RedshiftMetadata {
+    @inline
     def apply(
         DatabaseUserName: js.UndefOr[RedshiftDatabaseUsername] = js.undefined,
         RedshiftDatabase: js.UndefOr[RedshiftDatabase] = js.undefined,
@@ -2290,6 +2358,7 @@ package machinelearning {
   }
 
   object S3DataSpec {
+    @inline
     def apply(
         DataLocationS3: S3Url,
         DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
@@ -2329,6 +2398,7 @@ package machinelearning {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -2361,6 +2431,7 @@ package machinelearning {
   }
 
   object UpdateBatchPredictionInput {
+    @inline
     def apply(
         BatchPredictionId: EntityId,
         BatchPredictionName: EntityName
@@ -2384,6 +2455,7 @@ package machinelearning {
   }
 
   object UpdateBatchPredictionOutput {
+    @inline
     def apply(
         BatchPredictionId: js.UndefOr[EntityId] = js.undefined
     ): UpdateBatchPredictionOutput = {
@@ -2400,6 +2472,7 @@ package machinelearning {
   }
 
   object UpdateDataSourceInput {
+    @inline
     def apply(
         DataSourceId: EntityId,
         DataSourceName: EntityName
@@ -2423,6 +2496,7 @@ package machinelearning {
   }
 
   object UpdateDataSourceOutput {
+    @inline
     def apply(
         DataSourceId: js.UndefOr[EntityId] = js.undefined
     ): UpdateDataSourceOutput = {
@@ -2439,6 +2513,7 @@ package machinelearning {
   }
 
   object UpdateEvaluationInput {
+    @inline
     def apply(
         EvaluationId: EntityId,
         EvaluationName: EntityName
@@ -2462,6 +2537,7 @@ package machinelearning {
   }
 
   object UpdateEvaluationOutput {
+    @inline
     def apply(
         EvaluationId: js.UndefOr[EntityId] = js.undefined
     ): UpdateEvaluationOutput = {
@@ -2479,6 +2555,7 @@ package machinelearning {
   }
 
   object UpdateMLModelInput {
+    @inline
     def apply(
         MLModelId: EntityId,
         MLModelName: js.UndefOr[EntityName] = js.undefined,
@@ -2504,6 +2581,7 @@ package machinelearning {
   }
 
   object UpdateMLModelOutput {
+    @inline
     def apply(
         MLModelId: js.UndefOr[EntityId] = js.undefined
     ): UpdateMLModelOutput = {

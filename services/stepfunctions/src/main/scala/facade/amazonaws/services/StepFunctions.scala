@@ -38,51 +38,51 @@ package object stepfunctions {
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
-    def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
+    @inline def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
       service.createActivity(params).promise.toFuture
-    def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =
+    @inline def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =
       service.createStateMachine(params).promise.toFuture
-    def deleteActivityFuture(params: DeleteActivityInput): Future[DeleteActivityOutput] =
+    @inline def deleteActivityFuture(params: DeleteActivityInput): Future[DeleteActivityOutput] =
       service.deleteActivity(params).promise.toFuture
-    def deleteStateMachineFuture(params: DeleteStateMachineInput): Future[DeleteStateMachineOutput] =
+    @inline def deleteStateMachineFuture(params: DeleteStateMachineInput): Future[DeleteStateMachineOutput] =
       service.deleteStateMachine(params).promise.toFuture
-    def describeActivityFuture(params: DescribeActivityInput): Future[DescribeActivityOutput] =
+    @inline def describeActivityFuture(params: DescribeActivityInput): Future[DescribeActivityOutput] =
       service.describeActivity(params).promise.toFuture
-    def describeExecutionFuture(params: DescribeExecutionInput): Future[DescribeExecutionOutput] =
+    @inline def describeExecutionFuture(params: DescribeExecutionInput): Future[DescribeExecutionOutput] =
       service.describeExecution(params).promise.toFuture
-    def describeStateMachineForExecutionFuture(
+    @inline def describeStateMachineForExecutionFuture(
         params: DescribeStateMachineForExecutionInput
     ): Future[DescribeStateMachineForExecutionOutput] =
       service.describeStateMachineForExecution(params).promise.toFuture
-    def describeStateMachineFuture(params: DescribeStateMachineInput): Future[DescribeStateMachineOutput] =
+    @inline def describeStateMachineFuture(params: DescribeStateMachineInput): Future[DescribeStateMachineOutput] =
       service.describeStateMachine(params).promise.toFuture
-    def getActivityTaskFuture(params: GetActivityTaskInput): Future[GetActivityTaskOutput] =
+    @inline def getActivityTaskFuture(params: GetActivityTaskInput): Future[GetActivityTaskOutput] =
       service.getActivityTask(params).promise.toFuture
-    def getExecutionHistoryFuture(params: GetExecutionHistoryInput): Future[GetExecutionHistoryOutput] =
+    @inline def getExecutionHistoryFuture(params: GetExecutionHistoryInput): Future[GetExecutionHistoryOutput] =
       service.getExecutionHistory(params).promise.toFuture
-    def listActivitiesFuture(params: ListActivitiesInput): Future[ListActivitiesOutput] =
+    @inline def listActivitiesFuture(params: ListActivitiesInput): Future[ListActivitiesOutput] =
       service.listActivities(params).promise.toFuture
-    def listExecutionsFuture(params: ListExecutionsInput): Future[ListExecutionsOutput] =
+    @inline def listExecutionsFuture(params: ListExecutionsInput): Future[ListExecutionsOutput] =
       service.listExecutions(params).promise.toFuture
-    def listStateMachinesFuture(params: ListStateMachinesInput): Future[ListStateMachinesOutput] =
+    @inline def listStateMachinesFuture(params: ListStateMachinesInput): Future[ListStateMachinesOutput] =
       service.listStateMachines(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def sendTaskFailureFuture(params: SendTaskFailureInput): Future[SendTaskFailureOutput] =
+    @inline def sendTaskFailureFuture(params: SendTaskFailureInput): Future[SendTaskFailureOutput] =
       service.sendTaskFailure(params).promise.toFuture
-    def sendTaskHeartbeatFuture(params: SendTaskHeartbeatInput): Future[SendTaskHeartbeatOutput] =
+    @inline def sendTaskHeartbeatFuture(params: SendTaskHeartbeatInput): Future[SendTaskHeartbeatOutput] =
       service.sendTaskHeartbeat(params).promise.toFuture
-    def sendTaskSuccessFuture(params: SendTaskSuccessInput): Future[SendTaskSuccessOutput] =
+    @inline def sendTaskSuccessFuture(params: SendTaskSuccessInput): Future[SendTaskSuccessOutput] =
       service.sendTaskSuccess(params).promise.toFuture
-    def startExecutionFuture(params: StartExecutionInput): Future[StartExecutionOutput] =
+    @inline def startExecutionFuture(params: StartExecutionInput): Future[StartExecutionOutput] =
       service.startExecution(params).promise.toFuture
-    def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] =
+    @inline def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] =
       service.stopExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
-    def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] =
+    @inline def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] =
       service.updateStateMachine(params).promise.toFuture
   }
 }
@@ -129,6 +129,7 @@ package stepfunctions {
   }
 
   object ActivityFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -151,6 +152,7 @@ package stepfunctions {
   }
 
   object ActivityListItem {
+    @inline
     def apply(
         activityArn: Arn,
         creationDate: Timestamp,
@@ -176,6 +178,7 @@ package stepfunctions {
   }
 
   object ActivityScheduleFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -199,6 +202,7 @@ package stepfunctions {
   }
 
   object ActivityScheduledEventDetails {
+    @inline
     def apply(
         resource: Arn,
         heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
@@ -225,6 +229,7 @@ package stepfunctions {
   }
 
   object ActivityStartedEventDetails {
+    @inline
     def apply(
         workerName: js.UndefOr[Identity] = js.undefined
     ): ActivityStartedEventDetails = {
@@ -243,6 +248,7 @@ package stepfunctions {
   }
 
   object ActivitySucceededEventDetails {
+    @inline
     def apply(
         output: js.UndefOr[SensitiveData] = js.undefined
     ): ActivitySucceededEventDetails = {
@@ -262,6 +268,7 @@ package stepfunctions {
   }
 
   object ActivityTimedOutEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -280,6 +287,7 @@ package stepfunctions {
   }
 
   object CreateActivityInput {
+    @inline
     def apply(
         name: Name,
         tags: js.UndefOr[TagList] = js.undefined
@@ -300,6 +308,7 @@ package stepfunctions {
   }
 
   object CreateActivityOutput {
+    @inline
     def apply(
         activityArn: Arn,
         creationDate: Timestamp
@@ -322,6 +331,7 @@ package stepfunctions {
   }
 
   object CreateStateMachineInput {
+    @inline
     def apply(
         definition: Definition,
         name: Name,
@@ -346,6 +356,7 @@ package stepfunctions {
   }
 
   object CreateStateMachineOutput {
+    @inline
     def apply(
         creationDate: Timestamp,
         stateMachineArn: Arn
@@ -365,6 +376,7 @@ package stepfunctions {
   }
 
   object DeleteActivityInput {
+    @inline
     def apply(
         activityArn: Arn
     ): DeleteActivityInput = {
@@ -380,6 +392,7 @@ package stepfunctions {
   trait DeleteActivityOutput extends js.Object {}
 
   object DeleteActivityOutput {
+    @inline
     def apply(
         ): DeleteActivityOutput = {
       val __obj = js.Dynamic.literal()
@@ -394,6 +407,7 @@ package stepfunctions {
   }
 
   object DeleteStateMachineInput {
+    @inline
     def apply(
         stateMachineArn: Arn
     ): DeleteStateMachineInput = {
@@ -409,6 +423,7 @@ package stepfunctions {
   trait DeleteStateMachineOutput extends js.Object {}
 
   object DeleteStateMachineOutput {
+    @inline
     def apply(
         ): DeleteStateMachineOutput = {
       val __obj = js.Dynamic.literal()
@@ -423,6 +438,7 @@ package stepfunctions {
   }
 
   object DescribeActivityInput {
+    @inline
     def apply(
         activityArn: Arn
     ): DescribeActivityInput = {
@@ -442,6 +458,7 @@ package stepfunctions {
   }
 
   object DescribeActivityOutput {
+    @inline
     def apply(
         activityArn: Arn,
         creationDate: Timestamp,
@@ -463,6 +480,7 @@ package stepfunctions {
   }
 
   object DescribeExecutionInput {
+    @inline
     def apply(
         executionArn: Arn
     ): DescribeExecutionInput = {
@@ -487,6 +505,7 @@ package stepfunctions {
   }
 
   object DescribeExecutionOutput {
+    @inline
     def apply(
         executionArn: Arn,
         input: SensitiveData,
@@ -518,6 +537,7 @@ package stepfunctions {
   }
 
   object DescribeStateMachineForExecutionInput {
+    @inline
     def apply(
         executionArn: Arn
     ): DescribeStateMachineForExecutionInput = {
@@ -539,6 +559,7 @@ package stepfunctions {
   }
 
   object DescribeStateMachineForExecutionOutput {
+    @inline
     def apply(
         definition: Definition,
         name: Name,
@@ -564,6 +585,7 @@ package stepfunctions {
   }
 
   object DescribeStateMachineInput {
+    @inline
     def apply(
         stateMachineArn: Arn
     ): DescribeStateMachineInput = {
@@ -586,6 +608,7 @@ package stepfunctions {
   }
 
   object DescribeStateMachineOutput {
+    @inline
     def apply(
         creationDate: Timestamp,
         definition: Definition,
@@ -617,6 +640,7 @@ package stepfunctions {
   }
 
   object ExecutionAbortedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -638,6 +662,7 @@ package stepfunctions {
   }
 
   object ExecutionFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -663,6 +688,7 @@ package stepfunctions {
   }
 
   object ExecutionListItem {
+    @inline
     def apply(
         executionArn: Arn,
         name: Name,
@@ -694,6 +720,7 @@ package stepfunctions {
   }
 
   object ExecutionStartedEventDetails {
+    @inline
     def apply(
         input: js.UndefOr[SensitiveData] = js.undefined,
         roleArn: js.UndefOr[Arn] = js.undefined
@@ -724,6 +751,7 @@ package stepfunctions {
   }
 
   object ExecutionSucceededEventDetails {
+    @inline
     def apply(
         output: js.UndefOr[SensitiveData] = js.undefined
     ): ExecutionSucceededEventDetails = {
@@ -743,6 +771,7 @@ package stepfunctions {
   }
 
   object ExecutionTimedOutEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -761,6 +790,7 @@ package stepfunctions {
   }
 
   object GetActivityTaskInput {
+    @inline
     def apply(
         activityArn: Arn,
         workerName: js.UndefOr[Name] = js.undefined
@@ -781,6 +811,7 @@ package stepfunctions {
   }
 
   object GetActivityTaskOutput {
+    @inline
     def apply(
         input: js.UndefOr[SensitiveDataJobInput] = js.undefined,
         taskToken: js.UndefOr[TaskToken] = js.undefined
@@ -801,6 +832,7 @@ package stepfunctions {
   }
 
   object GetExecutionHistoryInput {
+    @inline
     def apply(
         executionArn: Arn,
         maxResults: js.UndefOr[PageSize] = js.undefined,
@@ -825,6 +857,7 @@ package stepfunctions {
   }
 
   object GetExecutionHistoryOutput {
+    @inline
     def apply(
         events: HistoryEventList,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -877,6 +910,7 @@ package stepfunctions {
   }
 
   object HistoryEvent {
+    @inline
     def apply(
         id: EventId,
         timestamp: Timestamp,
@@ -1100,6 +1134,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -1121,6 +1156,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionScheduleFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -1143,6 +1179,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionScheduledEventDetails {
+    @inline
     def apply(
         resource: Arn,
         input: js.UndefOr[SensitiveData] = js.undefined,
@@ -1168,6 +1205,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionStartFailedEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -1188,6 +1226,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionSucceededEventDetails {
+    @inline
     def apply(
         output: js.UndefOr[SensitiveData] = js.undefined
     ): LambdaFunctionSucceededEventDetails = {
@@ -1207,6 +1246,7 @@ package stepfunctions {
   }
 
   object LambdaFunctionTimedOutEventDetails {
+    @inline
     def apply(
         cause: js.UndefOr[SensitiveCause] = js.undefined,
         error: js.UndefOr[SensitiveError] = js.undefined
@@ -1225,6 +1265,7 @@ package stepfunctions {
   }
 
   object ListActivitiesInput {
+    @inline
     def apply(
         maxResults: js.UndefOr[PageSize] = js.undefined,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -1243,6 +1284,7 @@ package stepfunctions {
   }
 
   object ListActivitiesOutput {
+    @inline
     def apply(
         activities: ActivityList,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -1265,6 +1307,7 @@ package stepfunctions {
   }
 
   object ListExecutionsInput {
+    @inline
     def apply(
         stateMachineArn: Arn,
         maxResults: js.UndefOr[PageSize] = js.undefined,
@@ -1289,6 +1332,7 @@ package stepfunctions {
   }
 
   object ListExecutionsOutput {
+    @inline
     def apply(
         executions: ExecutionList,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -1309,6 +1353,7 @@ package stepfunctions {
   }
 
   object ListStateMachinesInput {
+    @inline
     def apply(
         maxResults: js.UndefOr[PageSize] = js.undefined,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -1327,6 +1372,7 @@ package stepfunctions {
   }
 
   object ListStateMachinesOutput {
+    @inline
     def apply(
         stateMachines: StateMachineList,
         nextToken: js.UndefOr[PageToken] = js.undefined
@@ -1346,6 +1392,7 @@ package stepfunctions {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceInput = {
@@ -1363,6 +1410,7 @@ package stepfunctions {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
@@ -1380,6 +1428,7 @@ package stepfunctions {
   }
 
   object SendTaskFailureInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         cause: js.UndefOr[SensitiveCause] = js.undefined,
@@ -1399,6 +1448,7 @@ package stepfunctions {
   trait SendTaskFailureOutput extends js.Object {}
 
   object SendTaskFailureOutput {
+    @inline
     def apply(
         ): SendTaskFailureOutput = {
       val __obj = js.Dynamic.literal()
@@ -1413,6 +1463,7 @@ package stepfunctions {
   }
 
   object SendTaskHeartbeatInput {
+    @inline
     def apply(
         taskToken: TaskToken
     ): SendTaskHeartbeatInput = {
@@ -1428,6 +1479,7 @@ package stepfunctions {
   trait SendTaskHeartbeatOutput extends js.Object {}
 
   object SendTaskHeartbeatOutput {
+    @inline
     def apply(
         ): SendTaskHeartbeatOutput = {
       val __obj = js.Dynamic.literal()
@@ -1443,6 +1495,7 @@ package stepfunctions {
   }
 
   object SendTaskSuccessInput {
+    @inline
     def apply(
         output: SensitiveData,
         taskToken: TaskToken
@@ -1460,6 +1513,7 @@ package stepfunctions {
   trait SendTaskSuccessOutput extends js.Object {}
 
   object SendTaskSuccessOutput {
+    @inline
     def apply(
         ): SendTaskSuccessOutput = {
       val __obj = js.Dynamic.literal()
@@ -1476,6 +1530,7 @@ package stepfunctions {
   }
 
   object StartExecutionInput {
+    @inline
     def apply(
         stateMachineArn: Arn,
         input: js.UndefOr[SensitiveData] = js.undefined,
@@ -1498,6 +1553,7 @@ package stepfunctions {
   }
 
   object StartExecutionOutput {
+    @inline
     def apply(
         executionArn: Arn,
         startDate: Timestamp
@@ -1521,6 +1577,7 @@ package stepfunctions {
   }
 
   object StateEnteredEventDetails {
+    @inline
     def apply(
         name: Name,
         input: js.UndefOr[SensitiveData] = js.undefined
@@ -1544,6 +1601,7 @@ package stepfunctions {
   }
 
   object StateExitedEventDetails {
+    @inline
     def apply(
         name: Name,
         output: js.UndefOr[SensitiveData] = js.undefined
@@ -1568,6 +1626,7 @@ package stepfunctions {
   }
 
   object StateMachineListItem {
+    @inline
     def apply(
         creationDate: Timestamp,
         name: Name,
@@ -1598,6 +1657,7 @@ package stepfunctions {
   }
 
   object StopExecutionInput {
+    @inline
     def apply(
         executionArn: Arn,
         cause: js.UndefOr[SensitiveCause] = js.undefined,
@@ -1619,6 +1679,7 @@ package stepfunctions {
   }
 
   object StopExecutionOutput {
+    @inline
     def apply(
         stopDate: Timestamp
     ): StopExecutionOutput = {
@@ -1640,6 +1701,7 @@ package stepfunctions {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
@@ -1658,6 +1720,7 @@ package stepfunctions {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: TagList
@@ -1675,6 +1738,7 @@ package stepfunctions {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1695,6 +1759,7 @@ package stepfunctions {
   }
 
   object TaskFailedEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1725,6 +1790,7 @@ package stepfunctions {
   }
 
   object TaskScheduledEventDetails {
+    @inline
     def apply(
         parameters: ConnectorParameters,
         region: Name,
@@ -1756,6 +1822,7 @@ package stepfunctions {
   }
 
   object TaskStartFailedEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1783,6 +1850,7 @@ package stepfunctions {
   }
 
   object TaskStartedEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name
@@ -1808,6 +1876,7 @@ package stepfunctions {
   }
 
   object TaskSubmitFailedEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1836,6 +1905,7 @@ package stepfunctions {
   }
 
   object TaskSubmittedEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1862,6 +1932,7 @@ package stepfunctions {
   }
 
   object TaskSucceededEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1889,6 +1960,7 @@ package stepfunctions {
   }
 
   object TaskTimedOutEventDetails {
+    @inline
     def apply(
         resource: Name,
         resourceType: Name,
@@ -1913,6 +1985,7 @@ package stepfunctions {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tagKeys: TagKeyList
@@ -1930,6 +2003,7 @@ package stepfunctions {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1946,6 +2020,7 @@ package stepfunctions {
   }
 
   object UpdateStateMachineInput {
+    @inline
     def apply(
         stateMachineArn: Arn,
         definition: js.UndefOr[Definition] = js.undefined,
@@ -1967,6 +2042,7 @@ package stepfunctions {
   }
 
   object UpdateStateMachineOutput {
+    @inline
     def apply(
         updateDate: Timestamp
     ): UpdateStateMachineOutput = {

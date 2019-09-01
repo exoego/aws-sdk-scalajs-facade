@@ -50,56 +50,58 @@ package object cloudsearch {
 
   implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
-    def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
+    @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
       service.buildSuggesters(params).promise.toFuture
-    def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =
       service.createDomain(params).promise.toFuture
-    def defineAnalysisSchemeFuture(params: DefineAnalysisSchemeRequest): Future[DefineAnalysisSchemeResponse] =
+    @inline def defineAnalysisSchemeFuture(params: DefineAnalysisSchemeRequest): Future[DefineAnalysisSchemeResponse] =
       service.defineAnalysisScheme(params).promise.toFuture
-    def defineExpressionFuture(params: DefineExpressionRequest): Future[DefineExpressionResponse] =
+    @inline def defineExpressionFuture(params: DefineExpressionRequest): Future[DefineExpressionResponse] =
       service.defineExpression(params).promise.toFuture
-    def defineIndexFieldFuture(params: DefineIndexFieldRequest): Future[DefineIndexFieldResponse] =
+    @inline def defineIndexFieldFuture(params: DefineIndexFieldRequest): Future[DefineIndexFieldResponse] =
       service.defineIndexField(params).promise.toFuture
-    def defineSuggesterFuture(params: DefineSuggesterRequest): Future[DefineSuggesterResponse] =
+    @inline def defineSuggesterFuture(params: DefineSuggesterRequest): Future[DefineSuggesterResponse] =
       service.defineSuggester(params).promise.toFuture
-    def deleteAnalysisSchemeFuture(params: DeleteAnalysisSchemeRequest): Future[DeleteAnalysisSchemeResponse] =
+    @inline def deleteAnalysisSchemeFuture(params: DeleteAnalysisSchemeRequest): Future[DeleteAnalysisSchemeResponse] =
       service.deleteAnalysisScheme(params).promise.toFuture
-    def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] =
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] =
       service.deleteDomain(params).promise.toFuture
-    def deleteExpressionFuture(params: DeleteExpressionRequest): Future[DeleteExpressionResponse] =
+    @inline def deleteExpressionFuture(params: DeleteExpressionRequest): Future[DeleteExpressionResponse] =
       service.deleteExpression(params).promise.toFuture
-    def deleteIndexFieldFuture(params: DeleteIndexFieldRequest): Future[DeleteIndexFieldResponse] =
+    @inline def deleteIndexFieldFuture(params: DeleteIndexFieldRequest): Future[DeleteIndexFieldResponse] =
       service.deleteIndexField(params).promise.toFuture
-    def deleteSuggesterFuture(params: DeleteSuggesterRequest): Future[DeleteSuggesterResponse] =
+    @inline def deleteSuggesterFuture(params: DeleteSuggesterRequest): Future[DeleteSuggesterResponse] =
       service.deleteSuggester(params).promise.toFuture
-    def describeAnalysisSchemesFuture(params: DescribeAnalysisSchemesRequest): Future[DescribeAnalysisSchemesResponse] =
-      service.describeAnalysisSchemes(params).promise.toFuture
-    def describeAvailabilityOptionsFuture(
+    @inline def describeAnalysisSchemesFuture(
+        params: DescribeAnalysisSchemesRequest
+    ): Future[DescribeAnalysisSchemesResponse] = service.describeAnalysisSchemes(params).promise.toFuture
+    @inline def describeAvailabilityOptionsFuture(
         params: DescribeAvailabilityOptionsRequest
     ): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise.toFuture
-    def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] =
+    @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] =
       service.describeDomains(params).promise.toFuture
-    def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] =
+    @inline def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] =
       service.describeExpressions(params).promise.toFuture
-    def describeIndexFieldsFuture(params: DescribeIndexFieldsRequest): Future[DescribeIndexFieldsResponse] =
+    @inline def describeIndexFieldsFuture(params: DescribeIndexFieldsRequest): Future[DescribeIndexFieldsResponse] =
       service.describeIndexFields(params).promise.toFuture
-    def describeScalingParametersFuture(
+    @inline def describeScalingParametersFuture(
         params: DescribeScalingParametersRequest
     ): Future[DescribeScalingParametersResponse] = service.describeScalingParameters(params).promise.toFuture
-    def describeServiceAccessPoliciesFuture(
+    @inline def describeServiceAccessPoliciesFuture(
         params: DescribeServiceAccessPoliciesRequest
     ): Future[DescribeServiceAccessPoliciesResponse] = service.describeServiceAccessPolicies(params).promise.toFuture
-    def describeSuggestersFuture(params: DescribeSuggestersRequest): Future[DescribeSuggestersResponse] =
+    @inline def describeSuggestersFuture(params: DescribeSuggestersRequest): Future[DescribeSuggestersResponse] =
       service.describeSuggesters(params).promise.toFuture
-    def indexDocumentsFuture(params: IndexDocumentsRequest): Future[IndexDocumentsResponse] =
+    @inline def indexDocumentsFuture(params: IndexDocumentsRequest): Future[IndexDocumentsResponse] =
       service.indexDocuments(params).promise.toFuture
-    def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise.toFuture
-    def updateAvailabilityOptionsFuture(
+    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise.toFuture
+    @inline def updateAvailabilityOptionsFuture(
         params: UpdateAvailabilityOptionsRequest
     ): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise.toFuture
-    def updateScalingParametersFuture(params: UpdateScalingParametersRequest): Future[UpdateScalingParametersResponse] =
-      service.updateScalingParameters(params).promise.toFuture
-    def updateServiceAccessPoliciesFuture(
+    @inline def updateScalingParametersFuture(
+        params: UpdateScalingParametersRequest
+    ): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise.toFuture
+    @inline def updateServiceAccessPoliciesFuture(
         params: UpdateServiceAccessPoliciesRequest
     ): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise.toFuture
   }
@@ -159,6 +161,7 @@ package cloudsearch {
   }
 
   object AccessPoliciesStatus {
+    @inline
     def apply(
         Options: PolicyDocument,
         Status: OptionStatus
@@ -194,6 +197,7 @@ package cloudsearch {
   }
 
   object AnalysisOptions {
+    @inline
     def apply(
         AlgorithmicStemming: js.UndefOr[AlgorithmicStemming] = js.undefined,
         JapaneseTokenizationDictionary: js.UndefOr[String] = js.undefined,
@@ -224,6 +228,7 @@ package cloudsearch {
   }
 
   object AnalysisScheme {
+    @inline
     def apply(
         AnalysisSchemeLanguage: AnalysisSchemeLanguage,
         AnalysisSchemeName: StandardName,
@@ -330,6 +335,7 @@ package cloudsearch {
   }
 
   object AnalysisSchemeStatus {
+    @inline
     def apply(
         Options: AnalysisScheme,
         Status: OptionStatus
@@ -353,6 +359,7 @@ package cloudsearch {
   }
 
   object AvailabilityOptionsStatus {
+    @inline
     def apply(
         Options: MultiAZ,
         Status: OptionStatus
@@ -384,6 +391,7 @@ package cloudsearch {
   }
 
   object BuildSuggestersRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): BuildSuggestersRequest = {
@@ -404,6 +412,7 @@ package cloudsearch {
   }
 
   object BuildSuggestersResponse {
+    @inline
     def apply(
         FieldNames: js.UndefOr[FieldNameList] = js.undefined
     ): BuildSuggestersResponse = {
@@ -422,6 +431,7 @@ package cloudsearch {
   }
 
   object CreateDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): CreateDomainRequest = {
@@ -442,6 +452,7 @@ package cloudsearch {
   }
 
   object CreateDomainResponse {
+    @inline
     def apply(
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined
     ): CreateDomainResponse = {
@@ -464,6 +475,7 @@ package cloudsearch {
   }
 
   object DateArrayOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -495,6 +507,7 @@ package cloudsearch {
   }
 
   object DateOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -524,6 +537,7 @@ package cloudsearch {
   }
 
   object DefineAnalysisSchemeRequest {
+    @inline
     def apply(
         AnalysisScheme: AnalysisScheme,
         DomainName: DomainName
@@ -546,6 +560,7 @@ package cloudsearch {
   }
 
   object DefineAnalysisSchemeResponse {
+    @inline
     def apply(
         AnalysisScheme: AnalysisSchemeStatus
     ): DefineAnalysisSchemeResponse = {
@@ -567,6 +582,7 @@ package cloudsearch {
   }
 
   object DefineExpressionRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Expression: Expression
@@ -589,6 +605,7 @@ package cloudsearch {
   }
 
   object DefineExpressionResponse {
+    @inline
     def apply(
         Expression: ExpressionStatus
     ): DefineExpressionResponse = {
@@ -610,6 +627,7 @@ package cloudsearch {
   }
 
   object DefineIndexFieldRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         IndexField: IndexField
@@ -632,6 +650,7 @@ package cloudsearch {
   }
 
   object DefineIndexFieldResponse {
+    @inline
     def apply(
         IndexField: IndexFieldStatus
     ): DefineIndexFieldResponse = {
@@ -653,6 +672,7 @@ package cloudsearch {
   }
 
   object DefineSuggesterRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Suggester: Suggester
@@ -675,6 +695,7 @@ package cloudsearch {
   }
 
   object DefineSuggesterResponse {
+    @inline
     def apply(
         Suggester: SuggesterStatus
     ): DefineSuggesterResponse = {
@@ -696,6 +717,7 @@ package cloudsearch {
   }
 
   object DeleteAnalysisSchemeRequest {
+    @inline
     def apply(
         AnalysisSchemeName: StandardName,
         DomainName: DomainName
@@ -718,6 +740,7 @@ package cloudsearch {
   }
 
   object DeleteAnalysisSchemeResponse {
+    @inline
     def apply(
         AnalysisScheme: AnalysisSchemeStatus
     ): DeleteAnalysisSchemeResponse = {
@@ -738,6 +761,7 @@ package cloudsearch {
   }
 
   object DeleteDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DeleteDomainRequest = {
@@ -758,6 +782,7 @@ package cloudsearch {
   }
 
   object DeleteDomainResponse {
+    @inline
     def apply(
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined
     ): DeleteDomainResponse = {
@@ -777,6 +802,7 @@ package cloudsearch {
   }
 
   object DeleteExpressionRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         ExpressionName: StandardName
@@ -799,6 +825,7 @@ package cloudsearch {
   }
 
   object DeleteExpressionResponse {
+    @inline
     def apply(
         Expression: ExpressionStatus
     ): DeleteExpressionResponse = {
@@ -820,6 +847,7 @@ package cloudsearch {
   }
 
   object DeleteIndexFieldRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         IndexFieldName: DynamicFieldName
@@ -842,6 +870,7 @@ package cloudsearch {
   }
 
   object DeleteIndexFieldResponse {
+    @inline
     def apply(
         IndexField: IndexFieldStatus
     ): DeleteIndexFieldResponse = {
@@ -863,6 +892,7 @@ package cloudsearch {
   }
 
   object DeleteSuggesterRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         SuggesterName: StandardName
@@ -885,6 +915,7 @@ package cloudsearch {
   }
 
   object DeleteSuggesterResponse {
+    @inline
     def apply(
         Suggester: SuggesterStatus
     ): DeleteSuggesterResponse = {
@@ -907,6 +938,7 @@ package cloudsearch {
   }
 
   object DescribeAnalysisSchemesRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AnalysisSchemeNames: js.UndefOr[StandardNameList] = js.undefined,
@@ -931,6 +963,7 @@ package cloudsearch {
   }
 
   object DescribeAnalysisSchemesResponse {
+    @inline
     def apply(
         AnalysisSchemes: AnalysisSchemeStatusList
     ): DescribeAnalysisSchemesResponse = {
@@ -952,6 +985,7 @@ package cloudsearch {
   }
 
   object DescribeAvailabilityOptionsRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined
@@ -974,6 +1008,7 @@ package cloudsearch {
   }
 
   object DescribeAvailabilityOptionsResponse {
+    @inline
     def apply(
         AvailabilityOptions: js.UndefOr[AvailabilityOptionsStatus] = js.undefined
     ): DescribeAvailabilityOptionsResponse = {
@@ -992,6 +1027,7 @@ package cloudsearch {
   }
 
   object DescribeDomainsRequest {
+    @inline
     def apply(
         DomainNames: js.UndefOr[DomainNameList] = js.undefined
     ): DescribeDomainsRequest = {
@@ -1010,6 +1046,7 @@ package cloudsearch {
   }
 
   object DescribeDomainsResponse {
+    @inline
     def apply(
         DomainStatusList: DomainStatusList
     ): DescribeDomainsResponse = {
@@ -1032,6 +1069,7 @@ package cloudsearch {
   }
 
   object DescribeExpressionsRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined,
@@ -1056,6 +1094,7 @@ package cloudsearch {
   }
 
   object DescribeExpressionsResponse {
+    @inline
     def apply(
         Expressions: ExpressionStatusList
     ): DescribeExpressionsResponse = {
@@ -1078,6 +1117,7 @@ package cloudsearch {
   }
 
   object DescribeIndexFieldsRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined,
@@ -1102,6 +1142,7 @@ package cloudsearch {
   }
 
   object DescribeIndexFieldsResponse {
+    @inline
     def apply(
         IndexFields: IndexFieldStatusList
     ): DescribeIndexFieldsResponse = {
@@ -1122,6 +1163,7 @@ package cloudsearch {
   }
 
   object DescribeScalingParametersRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DescribeScalingParametersRequest = {
@@ -1142,6 +1184,7 @@ package cloudsearch {
   }
 
   object DescribeScalingParametersResponse {
+    @inline
     def apply(
         ScalingParameters: ScalingParametersStatus
     ): DescribeScalingParametersResponse = {
@@ -1163,6 +1206,7 @@ package cloudsearch {
   }
 
   object DescribeServiceAccessPoliciesRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined
@@ -1185,6 +1229,7 @@ package cloudsearch {
   }
 
   object DescribeServiceAccessPoliciesResponse {
+    @inline
     def apply(
         AccessPolicies: AccessPoliciesStatus
     ): DescribeServiceAccessPoliciesResponse = {
@@ -1207,6 +1252,7 @@ package cloudsearch {
   }
 
   object DescribeSuggestersRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined,
@@ -1231,6 +1277,7 @@ package cloudsearch {
   }
 
   object DescribeSuggestersResponse {
+    @inline
     def apply(
         Suggesters: SuggesterStatusList
     ): DescribeSuggestersResponse = {
@@ -1259,6 +1306,7 @@ package cloudsearch {
   }
 
   object DocumentSuggesterOptions {
+    @inline
     def apply(
         SourceField: FieldName,
         FuzzyMatching: js.UndefOr[SuggesterFuzzyMatching] = js.undefined,
@@ -1295,6 +1343,7 @@ package cloudsearch {
   }
 
   object DomainStatus {
+    @inline
     def apply(
         DomainId: DomainId,
         DomainName: DomainName,
@@ -1343,6 +1392,7 @@ package cloudsearch {
   }
 
   object DoubleArrayOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[Double] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1374,6 +1424,7 @@ package cloudsearch {
   }
 
   object DoubleOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[Double] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1403,6 +1454,7 @@ package cloudsearch {
   }
 
   object Expression {
+    @inline
     def apply(
         ExpressionName: StandardName,
         ExpressionValue: ExpressionValue
@@ -1426,6 +1478,7 @@ package cloudsearch {
   }
 
   object ExpressionStatus {
+    @inline
     def apply(
         Options: Expression,
         Status: OptionStatus
@@ -1448,6 +1501,7 @@ package cloudsearch {
   }
 
   object IndexDocumentsRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): IndexDocumentsRequest = {
@@ -1468,6 +1522,7 @@ package cloudsearch {
   }
 
   object IndexDocumentsResponse {
+    @inline
     def apply(
         FieldNames: js.UndefOr[FieldNameList] = js.undefined
     ): IndexDocumentsResponse = {
@@ -1498,6 +1553,7 @@ package cloudsearch {
   }
 
   object IndexField {
+    @inline
     def apply(
         IndexFieldName: DynamicFieldName,
         IndexFieldType: IndexFieldType,
@@ -1543,6 +1599,7 @@ package cloudsearch {
   }
 
   object IndexFieldStatus {
+    @inline
     def apply(
         Options: IndexField,
         Status: OptionStatus
@@ -1602,6 +1659,7 @@ package cloudsearch {
   }
 
   object IntArrayOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[Double] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1633,6 +1691,7 @@ package cloudsearch {
   }
 
   object IntOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[Double] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1678,6 +1737,7 @@ package cloudsearch {
   }
 
   object LatLonOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1710,6 +1770,7 @@ package cloudsearch {
   }
 
   object Limits {
+    @inline
     def apply(
         MaximumPartitionCount: MaximumPartitionCount,
         MaximumReplicationCount: MaximumReplicationCount
@@ -1732,6 +1793,7 @@ package cloudsearch {
   }
 
   object ListDomainNamesResponse {
+    @inline
     def apply(
         DomainNames: js.UndefOr[DomainNameMap] = js.undefined
     ): ListDomainNamesResponse = {
@@ -1754,6 +1816,7 @@ package cloudsearch {
   }
 
   object LiteralArrayOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1785,6 +1848,7 @@ package cloudsearch {
   }
 
   object LiteralOptions {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
         FacetEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1833,6 +1897,7 @@ package cloudsearch {
   }
 
   object OptionStatus {
+    @inline
     def apply(
         CreationDate: UpdateTimestamp,
         State: OptionState,
@@ -1896,6 +1961,7 @@ package cloudsearch {
   }
 
   object ScalingParameters {
+    @inline
     def apply(
         DesiredInstanceType: js.UndefOr[PartitionInstanceType] = js.undefined,
         DesiredPartitionCount: js.UndefOr[UIntValue] = js.undefined,
@@ -1919,6 +1985,7 @@ package cloudsearch {
   }
 
   object ScalingParametersStatus {
+    @inline
     def apply(
         Options: ScalingParameters,
         Status: OptionStatus
@@ -1941,6 +2008,7 @@ package cloudsearch {
   }
 
   object ServiceEndpoint {
+    @inline
     def apply(
         Endpoint: js.UndefOr[ServiceUrl] = js.undefined
     ): ServiceEndpoint = {
@@ -1960,6 +2028,7 @@ package cloudsearch {
   }
 
   object Suggester {
+    @inline
     def apply(
         DocumentSuggesterOptions: DocumentSuggesterOptions,
         SuggesterName: StandardName
@@ -1991,6 +2060,7 @@ package cloudsearch {
   }
 
   object SuggesterStatus {
+    @inline
     def apply(
         Options: Suggester,
         Status: OptionStatus
@@ -2017,6 +2087,7 @@ package cloudsearch {
   }
 
   object TextArrayOptions {
+    @inline
     def apply(
         AnalysisScheme: js.UndefOr[Word] = js.undefined,
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
@@ -2048,6 +2119,7 @@ package cloudsearch {
   }
 
   object TextOptions {
+    @inline
     def apply(
         AnalysisScheme: js.UndefOr[Word] = js.undefined,
         DefaultValue: js.UndefOr[FieldValue] = js.undefined,
@@ -2077,6 +2149,7 @@ package cloudsearch {
   }
 
   object UpdateAvailabilityOptionsRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         MultiAZ: Boolean
@@ -2099,6 +2172,7 @@ package cloudsearch {
   }
 
   object UpdateAvailabilityOptionsResponse {
+    @inline
     def apply(
         AvailabilityOptions: js.UndefOr[AvailabilityOptionsStatus] = js.undefined
     ): UpdateAvailabilityOptionsResponse = {
@@ -2118,6 +2192,7 @@ package cloudsearch {
   }
 
   object UpdateScalingParametersRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         ScalingParameters: ScalingParameters
@@ -2140,6 +2215,7 @@ package cloudsearch {
   }
 
   object UpdateScalingParametersResponse {
+    @inline
     def apply(
         ScalingParameters: ScalingParametersStatus
     ): UpdateScalingParametersResponse = {
@@ -2161,6 +2237,7 @@ package cloudsearch {
   }
 
   object UpdateServiceAccessPoliciesRequest {
+    @inline
     def apply(
         AccessPolicies: PolicyDocument,
         DomainName: DomainName
@@ -2183,6 +2260,7 @@ package cloudsearch {
   }
 
   object UpdateServiceAccessPoliciesResponse {
+    @inline
     def apply(
         AccessPolicies: AccessPoliciesStatus
     ): UpdateServiceAccessPoliciesResponse = {

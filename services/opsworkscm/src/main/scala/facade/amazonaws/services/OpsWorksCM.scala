@@ -38,41 +38,41 @@ package object opsworkscm {
 
   implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
-    def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
+    @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
       service.associateNode(params).promise.toFuture
-    def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
+    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
       service.createBackup(params).promise.toFuture
-    def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
+    @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
       service.createServer(params).promise.toFuture
-    def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
+    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
       service.deleteBackup(params).promise.toFuture
-    def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] =
+    @inline def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] =
       service.deleteServer(params).promise.toFuture
-    def describeAccountAttributesFuture(
+    @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesRequest
     ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise.toFuture
-    def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
+    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
       service.describeBackups(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
-    def describeNodeAssociationStatusFuture(
+    @inline def describeNodeAssociationStatusFuture(
         params: DescribeNodeAssociationStatusRequest
     ): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise.toFuture
-    def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] =
+    @inline def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] =
       service.describeServers(params).promise.toFuture
-    def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] =
+    @inline def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] =
       service.disassociateNode(params).promise.toFuture
-    def exportServerEngineAttributeFuture(
+    @inline def exportServerEngineAttributeFuture(
         params: ExportServerEngineAttributeRequest
     ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise.toFuture
-    def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
+    @inline def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
       service.restoreServer(params).promise.toFuture
-    def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
+    @inline def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
       service.startMaintenance(params).promise.toFuture
-    def updateServerEngineAttributesFuture(
+    @inline def updateServerEngineAttributesFuture(
         params: UpdateServerEngineAttributesRequest
     ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise.toFuture
-    def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
+    @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
       service.updateServer(params).promise.toFuture
   }
 }
@@ -120,6 +120,7 @@ package opsworkscm {
   }
 
   object AccountAttribute {
+    @inline
     def apply(
         Maximum: js.UndefOr[Int] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -141,6 +142,7 @@ package opsworkscm {
   }
 
   object AssociateNodeRequest {
+    @inline
     def apply(
         EngineAttributes: EngineAttributes,
         NodeName: NodeName,
@@ -162,6 +164,7 @@ package opsworkscm {
   }
 
   object AssociateNodeResponse {
+    @inline
     def apply(
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): AssociateNodeResponse = {
@@ -205,6 +208,7 @@ package opsworkscm {
   }
 
   object Backup {
+    @inline
     def apply(
         BackupArn: js.UndefOr[String] = js.undefined,
         BackupId: js.UndefOr[BackupId] = js.undefined,
@@ -285,6 +289,7 @@ package opsworkscm {
   }
 
   object CreateBackupRequest {
+    @inline
     def apply(
         ServerName: ServerName,
         Description: js.UndefOr[String] = js.undefined
@@ -304,6 +309,7 @@ package opsworkscm {
   }
 
   object CreateBackupResponse {
+    @inline
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): CreateBackupResponse = {
@@ -335,6 +341,7 @@ package opsworkscm {
   }
 
   object CreateServerRequest {
+    @inline
     def apply(
         InstanceProfileArn: InstanceProfileArn,
         InstanceType: String,
@@ -386,6 +393,7 @@ package opsworkscm {
   }
 
   object CreateServerResponse {
+    @inline
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): CreateServerResponse = {
@@ -401,6 +409,7 @@ package opsworkscm {
   }
 
   object DeleteBackupRequest {
+    @inline
     def apply(
         BackupId: BackupId
     ): DeleteBackupRequest = {
@@ -416,6 +425,7 @@ package opsworkscm {
   trait DeleteBackupResponse extends js.Object {}
 
   object DeleteBackupResponse {
+    @inline
     def apply(
         ): DeleteBackupResponse = {
       val __obj = js.Dynamic.literal()
@@ -430,6 +440,7 @@ package opsworkscm {
   }
 
   object DeleteServerRequest {
+    @inline
     def apply(
         ServerName: ServerName
     ): DeleteServerRequest = {
@@ -445,6 +456,7 @@ package opsworkscm {
   trait DeleteServerResponse extends js.Object {}
 
   object DeleteServerResponse {
+    @inline
     def apply(
         ): DeleteServerResponse = {
       val __obj = js.Dynamic.literal()
@@ -457,6 +469,7 @@ package opsworkscm {
   trait DescribeAccountAttributesRequest extends js.Object {}
 
   object DescribeAccountAttributesRequest {
+    @inline
     def apply(
         ): DescribeAccountAttributesRequest = {
       val __obj = js.Dynamic.literal()
@@ -471,6 +484,7 @@ package opsworkscm {
   }
 
   object DescribeAccountAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AccountAttributes] = js.undefined
     ): DescribeAccountAttributesResponse = {
@@ -489,6 +503,7 @@ package opsworkscm {
   }
 
   object DescribeBackupsRequest {
+    @inline
     def apply(
         BackupId: js.UndefOr[BackupId] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -511,6 +526,7 @@ package opsworkscm {
   }
 
   object DescribeBackupsResponse {
+    @inline
     def apply(
         Backups: js.UndefOr[Backups] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -530,6 +546,7 @@ package opsworkscm {
   }
 
   object DescribeEventsRequest {
+    @inline
     def apply(
         ServerName: ServerName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -552,6 +569,7 @@ package opsworkscm {
   }
 
   object DescribeEventsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         ServerEvents: js.UndefOr[ServerEvents] = js.undefined
@@ -570,6 +588,7 @@ package opsworkscm {
   }
 
   object DescribeNodeAssociationStatusRequest {
+    @inline
     def apply(
         NodeAssociationStatusToken: NodeAssociationStatusToken,
         ServerName: ServerName
@@ -590,6 +609,7 @@ package opsworkscm {
   }
 
   object DescribeNodeAssociationStatusResponse {
+    @inline
     def apply(
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
         NodeAssociationStatus: js.UndefOr[NodeAssociationStatus] = js.undefined
@@ -609,6 +629,7 @@ package opsworkscm {
   }
 
   object DescribeServersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -629,6 +650,7 @@ package opsworkscm {
   }
 
   object DescribeServersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Servers: js.UndefOr[Servers] = js.undefined
@@ -648,6 +670,7 @@ package opsworkscm {
   }
 
   object DisassociateNodeRequest {
+    @inline
     def apply(
         NodeName: NodeName,
         ServerName: ServerName,
@@ -669,6 +692,7 @@ package opsworkscm {
   }
 
   object DisassociateNodeResponse {
+    @inline
     def apply(
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): DisassociateNodeResponse = {
@@ -690,6 +714,7 @@ package opsworkscm {
   }
 
   object EngineAttribute {
+    @inline
     def apply(
         Name: js.UndefOr[EngineAttributeName] = js.undefined,
         Value: js.UndefOr[EngineAttributeValue] = js.undefined
@@ -709,6 +734,7 @@ package opsworkscm {
   }
 
   object ExportServerEngineAttributeRequest {
+    @inline
     def apply(
         ExportAttributeName: String,
         ServerName: ServerName,
@@ -731,6 +757,7 @@ package opsworkscm {
   }
 
   object ExportServerEngineAttributeResponse {
+    @inline
     def apply(
         EngineAttribute: js.UndefOr[EngineAttribute] = js.undefined,
         ServerName: js.UndefOr[ServerName] = js.undefined
@@ -772,6 +799,7 @@ package opsworkscm {
   }
 
   object RestoreServerRequest {
+    @inline
     def apply(
         BackupId: BackupId,
         ServerName: ServerName,
@@ -793,6 +821,7 @@ package opsworkscm {
   trait RestoreServerResponse extends js.Object {}
 
   object RestoreServerResponse {
+    @inline
     def apply(
         ): RestoreServerResponse = {
       val __obj = js.Dynamic.literal()
@@ -832,6 +861,7 @@ package opsworkscm {
   }
 
   object Server {
+    @inline
     def apply(
         AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
         BackupRetentionCount: js.UndefOr[Int] = js.undefined,
@@ -899,6 +929,7 @@ package opsworkscm {
   }
 
   object ServerEvent {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
         LogUrl: js.UndefOr[String] = js.undefined,
@@ -955,6 +986,7 @@ package opsworkscm {
   }
 
   object StartMaintenanceRequest {
+    @inline
     def apply(
         ServerName: ServerName,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
@@ -974,6 +1006,7 @@ package opsworkscm {
   }
 
   object StartMaintenanceResponse {
+    @inline
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): StartMaintenanceResponse = {
@@ -991,6 +1024,7 @@ package opsworkscm {
   }
 
   object UpdateServerEngineAttributesRequest {
+    @inline
     def apply(
         AttributeName: AttributeName,
         ServerName: ServerName,
@@ -1012,6 +1046,7 @@ package opsworkscm {
   }
 
   object UpdateServerEngineAttributesResponse {
+    @inline
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): UpdateServerEngineAttributesResponse = {
@@ -1031,6 +1066,7 @@ package opsworkscm {
   }
 
   object UpdateServerRequest {
+    @inline
     def apply(
         ServerName: ServerName,
         BackupRetentionCount: js.UndefOr[Int] = js.undefined,
@@ -1058,6 +1094,7 @@ package opsworkscm {
   }
 
   object UpdateServerResponse {
+    @inline
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): UpdateServerResponse = {

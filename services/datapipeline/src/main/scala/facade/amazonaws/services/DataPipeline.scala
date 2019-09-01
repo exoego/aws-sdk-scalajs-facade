@@ -41,42 +41,42 @@ package object datapipeline {
 
   implicit final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
 
-    def activatePipelineFuture(params: ActivatePipelineInput): Future[ActivatePipelineOutput] =
+    @inline def activatePipelineFuture(params: ActivatePipelineInput): Future[ActivatePipelineOutput] =
       service.activatePipeline(params).promise.toFuture
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] =
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] =
       service.createPipeline(params).promise.toFuture
-    def deactivatePipelineFuture(params: DeactivatePipelineInput): Future[DeactivatePipelineOutput] =
+    @inline def deactivatePipelineFuture(params: DeactivatePipelineInput): Future[DeactivatePipelineOutput] =
       service.deactivatePipeline(params).promise.toFuture
-    def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] =
+    @inline def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] =
       service.deletePipeline(params).promise.toFuture
-    def describeObjectsFuture(params: DescribeObjectsInput): Future[DescribeObjectsOutput] =
+    @inline def describeObjectsFuture(params: DescribeObjectsInput): Future[DescribeObjectsOutput] =
       service.describeObjects(params).promise.toFuture
-    def describePipelinesFuture(params: DescribePipelinesInput): Future[DescribePipelinesOutput] =
+    @inline def describePipelinesFuture(params: DescribePipelinesInput): Future[DescribePipelinesOutput] =
       service.describePipelines(params).promise.toFuture
-    def evaluateExpressionFuture(params: EvaluateExpressionInput): Future[EvaluateExpressionOutput] =
+    @inline def evaluateExpressionFuture(params: EvaluateExpressionInput): Future[EvaluateExpressionOutput] =
       service.evaluateExpression(params).promise.toFuture
-    def getPipelineDefinitionFuture(params: GetPipelineDefinitionInput): Future[GetPipelineDefinitionOutput] =
+    @inline def getPipelineDefinitionFuture(params: GetPipelineDefinitionInput): Future[GetPipelineDefinitionOutput] =
       service.getPipelineDefinition(params).promise.toFuture
-    def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] =
+    @inline def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] =
       service.listPipelines(params).promise.toFuture
-    def pollForTaskFuture(params: PollForTaskInput): Future[PollForTaskOutput] =
+    @inline def pollForTaskFuture(params: PollForTaskInput): Future[PollForTaskOutput] =
       service.pollForTask(params).promise.toFuture
-    def putPipelineDefinitionFuture(params: PutPipelineDefinitionInput): Future[PutPipelineDefinitionOutput] =
+    @inline def putPipelineDefinitionFuture(params: PutPipelineDefinitionInput): Future[PutPipelineDefinitionOutput] =
       service.putPipelineDefinition(params).promise.toFuture
-    def queryObjectsFuture(params: QueryObjectsInput): Future[QueryObjectsOutput] =
+    @inline def queryObjectsFuture(params: QueryObjectsInput): Future[QueryObjectsOutput] =
       service.queryObjects(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise.toFuture
-    def reportTaskProgressFuture(params: ReportTaskProgressInput): Future[ReportTaskProgressOutput] =
+    @inline def reportTaskProgressFuture(params: ReportTaskProgressInput): Future[ReportTaskProgressOutput] =
       service.reportTaskProgress(params).promise.toFuture
-    def reportTaskRunnerHeartbeatFuture(
+    @inline def reportTaskRunnerHeartbeatFuture(
         params: ReportTaskRunnerHeartbeatInput
-    ): Future[ReportTaskRunnerHeartbeatOutput]                     = service.reportTaskRunnerHeartbeat(params).promise.toFuture
-    def setStatusFuture(params: SetStatusInput): Future[js.Object] = service.setStatus(params).promise.toFuture
-    def setTaskStatusFuture(params: SetTaskStatusInput): Future[SetTaskStatusOutput] =
+    ): Future[ReportTaskRunnerHeartbeatOutput]                             = service.reportTaskRunnerHeartbeat(params).promise.toFuture
+    @inline def setStatusFuture(params: SetStatusInput): Future[js.Object] = service.setStatus(params).promise.toFuture
+    @inline def setTaskStatusFuture(params: SetTaskStatusInput): Future[SetTaskStatusOutput] =
       service.setTaskStatus(params).promise.toFuture
-    def validatePipelineDefinitionFuture(
+    @inline def validatePipelineDefinitionFuture(
         params: ValidatePipelineDefinitionInput
     ): Future[ValidatePipelineDefinitionOutput] = service.validatePipelineDefinition(params).promise.toFuture
   }
@@ -122,6 +122,7 @@ package datapipeline {
   }
 
   object ActivatePipelineInput {
+    @inline
     def apply(
         pipelineId: id,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
@@ -144,6 +145,7 @@ package datapipeline {
   trait ActivatePipelineOutput extends js.Object {}
 
   object ActivatePipelineOutput {
+    @inline
     def apply(
         ): ActivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
@@ -162,6 +164,7 @@ package datapipeline {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         pipelineId: id,
         tags: tagList
@@ -182,6 +185,7 @@ package datapipeline {
   trait AddTagsOutput extends js.Object {}
 
   object AddTagsOutput {
+    @inline
     def apply(
         ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -202,6 +206,7 @@ package datapipeline {
   }
 
   object CreatePipelineInput {
+    @inline
     def apply(
         name: id,
         uniqueId: id,
@@ -228,6 +233,7 @@ package datapipeline {
   }
 
   object CreatePipelineOutput {
+    @inline
     def apply(
         pipelineId: id
     ): CreatePipelineOutput = {
@@ -249,6 +255,7 @@ package datapipeline {
   }
 
   object DeactivatePipelineInput {
+    @inline
     def apply(
         pipelineId: id,
         cancelActive: js.UndefOr[cancelActive] = js.undefined
@@ -269,6 +276,7 @@ package datapipeline {
   trait DeactivatePipelineOutput extends js.Object {}
 
   object DeactivatePipelineOutput {
+    @inline
     def apply(
         ): DeactivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
@@ -286,6 +294,7 @@ package datapipeline {
   }
 
   object DeletePipelineInput {
+    @inline
     def apply(
         pipelineId: id
     ): DeletePipelineInput = {
@@ -309,6 +318,7 @@ package datapipeline {
   }
 
   object DescribeObjectsInput {
+    @inline
     def apply(
         objectIds: idList,
         pipelineId: id,
@@ -337,6 +347,7 @@ package datapipeline {
   }
 
   object DescribeObjectsOutput {
+    @inline
     def apply(
         pipelineObjects: PipelineObjectList,
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
@@ -361,6 +372,7 @@ package datapipeline {
   }
 
   object DescribePipelinesInput {
+    @inline
     def apply(
         pipelineIds: idList
     ): DescribePipelinesInput = {
@@ -381,6 +393,7 @@ package datapipeline {
   }
 
   object DescribePipelinesOutput {
+    @inline
     def apply(
         pipelineDescriptionList: PipelineDescriptionList
     ): DescribePipelinesOutput = {
@@ -403,6 +416,7 @@ package datapipeline {
   }
 
   object EvaluateExpressionInput {
+    @inline
     def apply(
         expression: longString,
         objectId: id,
@@ -427,6 +441,7 @@ package datapipeline {
   }
 
   object EvaluateExpressionOutput {
+    @inline
     def apply(
         evaluatedExpression: longString
     ): EvaluateExpressionOutput = {
@@ -449,6 +464,7 @@ package datapipeline {
   }
 
   object Field {
+    @inline
     def apply(
         key: fieldNameString,
         refValue: js.UndefOr[fieldNameString] = js.undefined,
@@ -474,6 +490,7 @@ package datapipeline {
   }
 
   object GetPipelineDefinitionInput {
+    @inline
     def apply(
         pipelineId: id,
         version: js.UndefOr[String] = js.undefined
@@ -498,6 +515,7 @@ package datapipeline {
   }
 
   object GetPipelineDefinitionOutput {
+    @inline
     def apply(
         parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
@@ -522,6 +540,7 @@ package datapipeline {
   }
 
   object InstanceIdentity {
+    @inline
     def apply(
         document: js.UndefOr[String] = js.undefined,
         signature: js.UndefOr[String] = js.undefined
@@ -558,6 +577,7 @@ package datapipeline {
   }
 
   object ListPipelinesInput {
+    @inline
     def apply(
         marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesInput = {
@@ -578,6 +598,7 @@ package datapipeline {
   }
 
   object ListPipelinesOutput {
+    @inline
     def apply(
         pipelineIdList: pipelineList,
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
@@ -603,6 +624,7 @@ package datapipeline {
   }
 
   object Operator {
+    @inline
     def apply(
         `type`: js.UndefOr[OperatorType] = js.undefined,
         values: js.UndefOr[stringList] = js.undefined
@@ -634,6 +656,7 @@ package datapipeline {
   }
 
   object ParameterAttribute {
+    @inline
     def apply(
         key: attributeNameString,
         stringValue: attributeValueString
@@ -657,6 +680,7 @@ package datapipeline {
   }
 
   object ParameterObject {
+    @inline
     def apply(
         attributes: ParameterAttributeList,
         id: fieldNameString
@@ -680,6 +704,7 @@ package datapipeline {
   }
 
   object ParameterValue {
+    @inline
     def apply(
         id: fieldNameString,
         stringValue: fieldStringValue
@@ -714,6 +739,7 @@ package datapipeline {
   }
 
   object PipelineDescription {
+    @inline
     def apply(
         fields: fieldList,
         name: id,
@@ -743,6 +769,7 @@ package datapipeline {
   }
 
   object PipelineIdName {
+    @inline
     def apply(
         id: js.UndefOr[id] = js.undefined,
         name: js.UndefOr[id] = js.undefined
@@ -773,6 +800,7 @@ package datapipeline {
   }
 
   object PipelineObject {
+    @inline
     def apply(
         fields: fieldList,
         id: id,
@@ -799,6 +827,7 @@ package datapipeline {
   }
 
   object PollForTaskInput {
+    @inline
     def apply(
         workerGroup: String,
         hostname: js.UndefOr[id] = js.undefined,
@@ -823,6 +852,7 @@ package datapipeline {
   }
 
   object PollForTaskOutput {
+    @inline
     def apply(
         taskObject: js.UndefOr[TaskObject] = js.undefined
     ): PollForTaskOutput = {
@@ -844,6 +874,7 @@ package datapipeline {
   }
 
   object PutPipelineDefinitionInput {
+    @inline
     def apply(
         pipelineId: id,
         pipelineObjects: PipelineObjectList,
@@ -872,6 +903,7 @@ package datapipeline {
   }
 
   object PutPipelineDefinitionOutput {
+    @inline
     def apply(
         errored: Boolean,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
@@ -896,6 +928,7 @@ package datapipeline {
   }
 
   object Query {
+    @inline
     def apply(
         selectors: js.UndefOr[SelectorList] = js.undefined
     ): Query = {
@@ -918,6 +951,7 @@ package datapipeline {
   }
 
   object QueryObjectsInput {
+    @inline
     def apply(
         pipelineId: id,
         sphere: String,
@@ -948,6 +982,7 @@ package datapipeline {
   }
 
   object QueryObjectsOutput {
+    @inline
     def apply(
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         ids: js.UndefOr[idList] = js.undefined,
@@ -971,6 +1006,7 @@ package datapipeline {
   }
 
   object RemoveTagsInput {
+    @inline
     def apply(
         pipelineId: id,
         tagKeys: stringList
@@ -991,6 +1027,7 @@ package datapipeline {
   trait RemoveTagsOutput extends js.Object {}
 
   object RemoveTagsOutput {
+    @inline
     def apply(
         ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -1009,6 +1046,7 @@ package datapipeline {
   }
 
   object ReportTaskProgressInput {
+    @inline
     def apply(
         taskId: taskId,
         fields: js.UndefOr[fieldList] = js.undefined
@@ -1031,6 +1069,7 @@ package datapipeline {
   }
 
   object ReportTaskProgressOutput {
+    @inline
     def apply(
         canceled: Boolean
     ): ReportTaskProgressOutput = {
@@ -1053,6 +1092,7 @@ package datapipeline {
   }
 
   object ReportTaskRunnerHeartbeatInput {
+    @inline
     def apply(
         taskrunnerId: id,
         hostname: js.UndefOr[id] = js.undefined,
@@ -1077,6 +1117,7 @@ package datapipeline {
   }
 
   object ReportTaskRunnerHeartbeatOutput {
+    @inline
     def apply(
         terminate: Boolean
     ): ReportTaskRunnerHeartbeatOutput = {
@@ -1098,6 +1139,7 @@ package datapipeline {
   }
 
   object Selector {
+    @inline
     def apply(
         fieldName: js.UndefOr[String] = js.undefined,
         operator: js.UndefOr[Operator] = js.undefined
@@ -1120,6 +1162,7 @@ package datapipeline {
   }
 
   object SetStatusInput {
+    @inline
     def apply(
         objectIds: idList,
         pipelineId: id,
@@ -1148,6 +1191,7 @@ package datapipeline {
   }
 
   object SetTaskStatusInput {
+    @inline
     def apply(
         taskId: taskId,
         taskStatus: TaskStatus,
@@ -1174,6 +1218,7 @@ package datapipeline {
   trait SetTaskStatusOutput extends js.Object {}
 
   object SetTaskStatusOutput {
+    @inline
     def apply(
         ): SetTaskStatusOutput = {
       val __obj = js.Dynamic.literal()
@@ -1192,6 +1237,7 @@ package datapipeline {
   }
 
   object Tag {
+    @inline
     def apply(
         key: tagKey,
         value: tagValue
@@ -1225,6 +1271,7 @@ package datapipeline {
   }
 
   object TaskObject {
+    @inline
     def apply(
         attemptId: js.UndefOr[id] = js.undefined,
         objects: js.UndefOr[PipelineObjectMap] = js.undefined,
@@ -1260,6 +1307,7 @@ package datapipeline {
   }
 
   object ValidatePipelineDefinitionInput {
+    @inline
     def apply(
         pipelineId: id,
         pipelineObjects: PipelineObjectList,
@@ -1288,6 +1336,7 @@ package datapipeline {
   }
 
   object ValidatePipelineDefinitionOutput {
+    @inline
     def apply(
         errored: Boolean,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
@@ -1313,6 +1362,7 @@ package datapipeline {
   }
 
   object ValidationError {
+    @inline
     def apply(
         errors: js.UndefOr[validationMessages] = js.undefined,
         id: js.UndefOr[id] = js.undefined
@@ -1334,6 +1384,7 @@ package datapipeline {
   }
 
   object ValidationWarning {
+    @inline
     def apply(
         id: js.UndefOr[id] = js.undefined,
         warnings: js.UndefOr[validationMessages] = js.undefined

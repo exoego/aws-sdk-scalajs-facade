@@ -515,310 +515,328 @@ package object ssm {
 
   implicit final class SSMOps(private val service: SSM) extends AnyVal {
 
-    def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
       service.addTagsToResource(params).promise.toFuture
-    def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =
+    @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =
       service.cancelCommand(params).promise.toFuture
-    def cancelMaintenanceWindowExecutionFuture(
+    @inline def cancelMaintenanceWindowExecutionFuture(
         params: CancelMaintenanceWindowExecutionRequest
     ): Future[CancelMaintenanceWindowExecutionResult] =
       service.cancelMaintenanceWindowExecution(params).promise.toFuture
-    def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] =
+    @inline def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] =
       service.createActivation(params).promise.toFuture
-    def createAssociationBatchFuture(params: CreateAssociationBatchRequest): Future[CreateAssociationBatchResult] =
-      service.createAssociationBatch(params).promise.toFuture
-    def createAssociationFuture(params: CreateAssociationRequest): Future[CreateAssociationResult] =
+    @inline def createAssociationBatchFuture(
+        params: CreateAssociationBatchRequest
+    ): Future[CreateAssociationBatchResult] = service.createAssociationBatch(params).promise.toFuture
+    @inline def createAssociationFuture(params: CreateAssociationRequest): Future[CreateAssociationResult] =
       service.createAssociation(params).promise.toFuture
-    def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] =
+    @inline def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] =
       service.createDocument(params).promise.toFuture
-    def createMaintenanceWindowFuture(params: CreateMaintenanceWindowRequest): Future[CreateMaintenanceWindowResult] =
-      service.createMaintenanceWindow(params).promise.toFuture
-    def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] =
+    @inline def createMaintenanceWindowFuture(
+        params: CreateMaintenanceWindowRequest
+    ): Future[CreateMaintenanceWindowResult] = service.createMaintenanceWindow(params).promise.toFuture
+    @inline def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] =
       service.createOpsItem(params).promise.toFuture
-    def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] =
+    @inline def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] =
       service.createPatchBaseline(params).promise.toFuture
-    def createResourceDataSyncFuture(params: CreateResourceDataSyncRequest): Future[CreateResourceDataSyncResult] =
-      service.createResourceDataSync(params).promise.toFuture
-    def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] =
+    @inline def createResourceDataSyncFuture(
+        params: CreateResourceDataSyncRequest
+    ): Future[CreateResourceDataSyncResult] = service.createResourceDataSync(params).promise.toFuture
+    @inline def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] =
       service.deleteActivation(params).promise.toFuture
-    def deleteAssociationFuture(params: DeleteAssociationRequest): Future[DeleteAssociationResult] =
+    @inline def deleteAssociationFuture(params: DeleteAssociationRequest): Future[DeleteAssociationResult] =
       service.deleteAssociation(params).promise.toFuture
-    def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] =
+    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] =
       service.deleteDocument(params).promise.toFuture
-    def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] =
+    @inline def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] =
       service.deleteInventory(params).promise.toFuture
-    def deleteMaintenanceWindowFuture(params: DeleteMaintenanceWindowRequest): Future[DeleteMaintenanceWindowResult] =
-      service.deleteMaintenanceWindow(params).promise.toFuture
-    def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] =
+    @inline def deleteMaintenanceWindowFuture(
+        params: DeleteMaintenanceWindowRequest
+    ): Future[DeleteMaintenanceWindowResult] = service.deleteMaintenanceWindow(params).promise.toFuture
+    @inline def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] =
       service.deleteParameter(params).promise.toFuture
-    def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] =
+    @inline def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] =
       service.deleteParameters(params).promise.toFuture
-    def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] =
+    @inline def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] =
       service.deletePatchBaseline(params).promise.toFuture
-    def deleteResourceDataSyncFuture(params: DeleteResourceDataSyncRequest): Future[DeleteResourceDataSyncResult] =
-      service.deleteResourceDataSync(params).promise.toFuture
-    def deregisterManagedInstanceFuture(
+    @inline def deleteResourceDataSyncFuture(
+        params: DeleteResourceDataSyncRequest
+    ): Future[DeleteResourceDataSyncResult] = service.deleteResourceDataSync(params).promise.toFuture
+    @inline def deregisterManagedInstanceFuture(
         params: DeregisterManagedInstanceRequest
     ): Future[DeregisterManagedInstanceResult] = service.deregisterManagedInstance(params).promise.toFuture
-    def deregisterPatchBaselineForPatchGroupFuture(
+    @inline def deregisterPatchBaselineForPatchGroupFuture(
         params: DeregisterPatchBaselineForPatchGroupRequest
     ): Future[DeregisterPatchBaselineForPatchGroupResult] =
       service.deregisterPatchBaselineForPatchGroup(params).promise.toFuture
-    def deregisterTargetFromMaintenanceWindowFuture(
+    @inline def deregisterTargetFromMaintenanceWindowFuture(
         params: DeregisterTargetFromMaintenanceWindowRequest
     ): Future[DeregisterTargetFromMaintenanceWindowResult] =
       service.deregisterTargetFromMaintenanceWindow(params).promise.toFuture
-    def deregisterTaskFromMaintenanceWindowFuture(
+    @inline def deregisterTaskFromMaintenanceWindowFuture(
         params: DeregisterTaskFromMaintenanceWindowRequest
     ): Future[DeregisterTaskFromMaintenanceWindowResult] =
       service.deregisterTaskFromMaintenanceWindow(params).promise.toFuture
-    def describeActivationsFuture(params: DescribeActivationsRequest): Future[DescribeActivationsResult] =
+    @inline def describeActivationsFuture(params: DescribeActivationsRequest): Future[DescribeActivationsResult] =
       service.describeActivations(params).promise.toFuture
-    def describeAssociationExecutionTargetsFuture(
+    @inline def describeAssociationExecutionTargetsFuture(
         params: DescribeAssociationExecutionTargetsRequest
     ): Future[DescribeAssociationExecutionTargetsResult] =
       service.describeAssociationExecutionTargets(params).promise.toFuture
-    def describeAssociationExecutionsFuture(
+    @inline def describeAssociationExecutionsFuture(
         params: DescribeAssociationExecutionsRequest
     ): Future[DescribeAssociationExecutionsResult] = service.describeAssociationExecutions(params).promise.toFuture
-    def describeAssociationFuture(params: DescribeAssociationRequest): Future[DescribeAssociationResult] =
+    @inline def describeAssociationFuture(params: DescribeAssociationRequest): Future[DescribeAssociationResult] =
       service.describeAssociation(params).promise.toFuture
-    def describeAutomationExecutionsFuture(
+    @inline def describeAutomationExecutionsFuture(
         params: DescribeAutomationExecutionsRequest
     ): Future[DescribeAutomationExecutionsResult] = service.describeAutomationExecutions(params).promise.toFuture
-    def describeAutomationStepExecutionsFuture(
+    @inline def describeAutomationStepExecutionsFuture(
         params: DescribeAutomationStepExecutionsRequest
     ): Future[DescribeAutomationStepExecutionsResult] =
       service.describeAutomationStepExecutions(params).promise.toFuture
-    def describeAvailablePatchesFuture(
+    @inline def describeAvailablePatchesFuture(
         params: DescribeAvailablePatchesRequest
     ): Future[DescribeAvailablePatchesResult] = service.describeAvailablePatches(params).promise.toFuture
-    def describeDocumentFuture(params: DescribeDocumentRequest): Future[DescribeDocumentResult] =
+    @inline def describeDocumentFuture(params: DescribeDocumentRequest): Future[DescribeDocumentResult] =
       service.describeDocument(params).promise.toFuture
-    def describeDocumentPermissionFuture(
+    @inline def describeDocumentPermissionFuture(
         params: DescribeDocumentPermissionRequest
     ): Future[DescribeDocumentPermissionResponse] = service.describeDocumentPermission(params).promise.toFuture
-    def describeEffectiveInstanceAssociationsFuture(
+    @inline def describeEffectiveInstanceAssociationsFuture(
         params: DescribeEffectiveInstanceAssociationsRequest
     ): Future[DescribeEffectiveInstanceAssociationsResult] =
       service.describeEffectiveInstanceAssociations(params).promise.toFuture
-    def describeEffectivePatchesForPatchBaselineFuture(
+    @inline def describeEffectivePatchesForPatchBaselineFuture(
         params: DescribeEffectivePatchesForPatchBaselineRequest
     ): Future[DescribeEffectivePatchesForPatchBaselineResult] =
       service.describeEffectivePatchesForPatchBaseline(params).promise.toFuture
-    def describeInstanceAssociationsStatusFuture(
+    @inline def describeInstanceAssociationsStatusFuture(
         params: DescribeInstanceAssociationsStatusRequest
     ): Future[DescribeInstanceAssociationsStatusResult] =
       service.describeInstanceAssociationsStatus(params).promise.toFuture
-    def describeInstanceInformationFuture(
+    @inline def describeInstanceInformationFuture(
         params: DescribeInstanceInformationRequest
     ): Future[DescribeInstanceInformationResult] = service.describeInstanceInformation(params).promise.toFuture
-    def describeInstancePatchStatesForPatchGroupFuture(
+    @inline def describeInstancePatchStatesForPatchGroupFuture(
         params: DescribeInstancePatchStatesForPatchGroupRequest
     ): Future[DescribeInstancePatchStatesForPatchGroupResult] =
       service.describeInstancePatchStatesForPatchGroup(params).promise.toFuture
-    def describeInstancePatchStatesFuture(
+    @inline def describeInstancePatchStatesFuture(
         params: DescribeInstancePatchStatesRequest
     ): Future[DescribeInstancePatchStatesResult] = service.describeInstancePatchStates(params).promise.toFuture
-    def describeInstancePatchesFuture(params: DescribeInstancePatchesRequest): Future[DescribeInstancePatchesResult] =
-      service.describeInstancePatches(params).promise.toFuture
-    def describeInventoryDeletionsFuture(
+    @inline def describeInstancePatchesFuture(
+        params: DescribeInstancePatchesRequest
+    ): Future[DescribeInstancePatchesResult] = service.describeInstancePatches(params).promise.toFuture
+    @inline def describeInventoryDeletionsFuture(
         params: DescribeInventoryDeletionsRequest
     ): Future[DescribeInventoryDeletionsResult] = service.describeInventoryDeletions(params).promise.toFuture
-    def describeMaintenanceWindowExecutionTaskInvocationsFuture(
+    @inline def describeMaintenanceWindowExecutionTaskInvocationsFuture(
         params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest
     ): Future[DescribeMaintenanceWindowExecutionTaskInvocationsResult] =
       service.describeMaintenanceWindowExecutionTaskInvocations(params).promise.toFuture
-    def describeMaintenanceWindowExecutionTasksFuture(
+    @inline def describeMaintenanceWindowExecutionTasksFuture(
         params: DescribeMaintenanceWindowExecutionTasksRequest
     ): Future[DescribeMaintenanceWindowExecutionTasksResult] =
       service.describeMaintenanceWindowExecutionTasks(params).promise.toFuture
-    def describeMaintenanceWindowExecutionsFuture(
+    @inline def describeMaintenanceWindowExecutionsFuture(
         params: DescribeMaintenanceWindowExecutionsRequest
     ): Future[DescribeMaintenanceWindowExecutionsResult] =
       service.describeMaintenanceWindowExecutions(params).promise.toFuture
-    def describeMaintenanceWindowScheduleFuture(
+    @inline def describeMaintenanceWindowScheduleFuture(
         params: DescribeMaintenanceWindowScheduleRequest
     ): Future[DescribeMaintenanceWindowScheduleResult] =
       service.describeMaintenanceWindowSchedule(params).promise.toFuture
-    def describeMaintenanceWindowTargetsFuture(
+    @inline def describeMaintenanceWindowTargetsFuture(
         params: DescribeMaintenanceWindowTargetsRequest
     ): Future[DescribeMaintenanceWindowTargetsResult] =
       service.describeMaintenanceWindowTargets(params).promise.toFuture
-    def describeMaintenanceWindowTasksFuture(
+    @inline def describeMaintenanceWindowTasksFuture(
         params: DescribeMaintenanceWindowTasksRequest
     ): Future[DescribeMaintenanceWindowTasksResult] = service.describeMaintenanceWindowTasks(params).promise.toFuture
-    def describeMaintenanceWindowsForTargetFuture(
+    @inline def describeMaintenanceWindowsForTargetFuture(
         params: DescribeMaintenanceWindowsForTargetRequest
     ): Future[DescribeMaintenanceWindowsForTargetResult] =
       service.describeMaintenanceWindowsForTarget(params).promise.toFuture
-    def describeMaintenanceWindowsFuture(
+    @inline def describeMaintenanceWindowsFuture(
         params: DescribeMaintenanceWindowsRequest
     ): Future[DescribeMaintenanceWindowsResult] = service.describeMaintenanceWindows(params).promise.toFuture
-    def describeOpsItemsFuture(params: DescribeOpsItemsRequest): Future[DescribeOpsItemsResponse] =
+    @inline def describeOpsItemsFuture(params: DescribeOpsItemsRequest): Future[DescribeOpsItemsResponse] =
       service.describeOpsItems(params).promise.toFuture
-    def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] =
+    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] =
       service.describeParameters(params).promise.toFuture
-    def describePatchBaselinesFuture(params: DescribePatchBaselinesRequest): Future[DescribePatchBaselinesResult] =
-      service.describePatchBaselines(params).promise.toFuture
-    def describePatchGroupStateFuture(params: DescribePatchGroupStateRequest): Future[DescribePatchGroupStateResult] =
-      service.describePatchGroupState(params).promise.toFuture
-    def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] =
+    @inline def describePatchBaselinesFuture(
+        params: DescribePatchBaselinesRequest
+    ): Future[DescribePatchBaselinesResult] = service.describePatchBaselines(params).promise.toFuture
+    @inline def describePatchGroupStateFuture(
+        params: DescribePatchGroupStateRequest
+    ): Future[DescribePatchGroupStateResult] = service.describePatchGroupState(params).promise.toFuture
+    @inline def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] =
       service.describePatchGroups(params).promise.toFuture
-    def describePatchPropertiesFuture(params: DescribePatchPropertiesRequest): Future[DescribePatchPropertiesResult] =
-      service.describePatchProperties(params).promise.toFuture
-    def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] =
+    @inline def describePatchPropertiesFuture(
+        params: DescribePatchPropertiesRequest
+    ): Future[DescribePatchPropertiesResult] = service.describePatchProperties(params).promise.toFuture
+    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] =
       service.describeSessions(params).promise.toFuture
-    def getAutomationExecutionFuture(params: GetAutomationExecutionRequest): Future[GetAutomationExecutionResult] =
-      service.getAutomationExecution(params).promise.toFuture
-    def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] =
+    @inline def getAutomationExecutionFuture(
+        params: GetAutomationExecutionRequest
+    ): Future[GetAutomationExecutionResult] = service.getAutomationExecution(params).promise.toFuture
+    @inline def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] =
       service.getCommandInvocation(params).promise.toFuture
-    def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] =
+    @inline def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] =
       service.getConnectionStatus(params).promise.toFuture
-    def getDefaultPatchBaselineFuture(params: GetDefaultPatchBaselineRequest): Future[GetDefaultPatchBaselineResult] =
-      service.getDefaultPatchBaseline(params).promise.toFuture
-    def getDeployablePatchSnapshotForInstanceFuture(
+    @inline def getDefaultPatchBaselineFuture(
+        params: GetDefaultPatchBaselineRequest
+    ): Future[GetDefaultPatchBaselineResult] = service.getDefaultPatchBaseline(params).promise.toFuture
+    @inline def getDeployablePatchSnapshotForInstanceFuture(
         params: GetDeployablePatchSnapshotForInstanceRequest
     ): Future[GetDeployablePatchSnapshotForInstanceResult] =
       service.getDeployablePatchSnapshotForInstance(params).promise.toFuture
-    def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResult] =
+    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResult] =
       service.getDocument(params).promise.toFuture
-    def getInventoryFuture(params: GetInventoryRequest): Future[GetInventoryResult] =
+    @inline def getInventoryFuture(params: GetInventoryRequest): Future[GetInventoryResult] =
       service.getInventory(params).promise.toFuture
-    def getInventorySchemaFuture(params: GetInventorySchemaRequest): Future[GetInventorySchemaResult] =
+    @inline def getInventorySchemaFuture(params: GetInventorySchemaRequest): Future[GetInventorySchemaResult] =
       service.getInventorySchema(params).promise.toFuture
-    def getMaintenanceWindowExecutionFuture(
+    @inline def getMaintenanceWindowExecutionFuture(
         params: GetMaintenanceWindowExecutionRequest
     ): Future[GetMaintenanceWindowExecutionResult] = service.getMaintenanceWindowExecution(params).promise.toFuture
-    def getMaintenanceWindowExecutionTaskFuture(
+    @inline def getMaintenanceWindowExecutionTaskFuture(
         params: GetMaintenanceWindowExecutionTaskRequest
     ): Future[GetMaintenanceWindowExecutionTaskResult] =
       service.getMaintenanceWindowExecutionTask(params).promise.toFuture
-    def getMaintenanceWindowExecutionTaskInvocationFuture(
+    @inline def getMaintenanceWindowExecutionTaskInvocationFuture(
         params: GetMaintenanceWindowExecutionTaskInvocationRequest
     ): Future[GetMaintenanceWindowExecutionTaskInvocationResult] =
       service.getMaintenanceWindowExecutionTaskInvocation(params).promise.toFuture
-    def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] =
+    @inline def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] =
       service.getMaintenanceWindow(params).promise.toFuture
-    def getMaintenanceWindowTaskFuture(
+    @inline def getMaintenanceWindowTaskFuture(
         params: GetMaintenanceWindowTaskRequest
     ): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise.toFuture
-    def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] =
+    @inline def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] =
       service.getOpsItem(params).promise.toFuture
-    def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] =
+    @inline def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] =
       service.getOpsSummary(params).promise.toFuture
-    def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] =
+    @inline def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] =
       service.getParameter(params).promise.toFuture
-    def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] =
+    @inline def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] =
       service.getParameterHistory(params).promise.toFuture
-    def getParametersByPathFuture(params: GetParametersByPathRequest): Future[GetParametersByPathResult] =
+    @inline def getParametersByPathFuture(params: GetParametersByPathRequest): Future[GetParametersByPathResult] =
       service.getParametersByPath(params).promise.toFuture
-    def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] =
+    @inline def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] =
       service.getParameters(params).promise.toFuture
-    def getPatchBaselineForPatchGroupFuture(
+    @inline def getPatchBaselineForPatchGroupFuture(
         params: GetPatchBaselineForPatchGroupRequest
     ): Future[GetPatchBaselineForPatchGroupResult] = service.getPatchBaselineForPatchGroup(params).promise.toFuture
-    def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] =
+    @inline def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] =
       service.getPatchBaseline(params).promise.toFuture
-    def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] =
+    @inline def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] =
       service.getServiceSetting(params).promise.toFuture
-    def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] =
+    @inline def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] =
       service.labelParameterVersion(params).promise.toFuture
-    def listAssociationVersionsFuture(params: ListAssociationVersionsRequest): Future[ListAssociationVersionsResult] =
-      service.listAssociationVersions(params).promise.toFuture
-    def listAssociationsFuture(params: ListAssociationsRequest): Future[ListAssociationsResult] =
+    @inline def listAssociationVersionsFuture(
+        params: ListAssociationVersionsRequest
+    ): Future[ListAssociationVersionsResult] = service.listAssociationVersions(params).promise.toFuture
+    @inline def listAssociationsFuture(params: ListAssociationsRequest): Future[ListAssociationsResult] =
       service.listAssociations(params).promise.toFuture
-    def listCommandInvocationsFuture(params: ListCommandInvocationsRequest): Future[ListCommandInvocationsResult] =
-      service.listCommandInvocations(params).promise.toFuture
-    def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] =
+    @inline def listCommandInvocationsFuture(
+        params: ListCommandInvocationsRequest
+    ): Future[ListCommandInvocationsResult] = service.listCommandInvocations(params).promise.toFuture
+    @inline def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] =
       service.listCommands(params).promise.toFuture
-    def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] =
+    @inline def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] =
       service.listComplianceItems(params).promise.toFuture
-    def listComplianceSummariesFuture(params: ListComplianceSummariesRequest): Future[ListComplianceSummariesResult] =
-      service.listComplianceSummaries(params).promise.toFuture
-    def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] =
+    @inline def listComplianceSummariesFuture(
+        params: ListComplianceSummariesRequest
+    ): Future[ListComplianceSummariesResult] = service.listComplianceSummaries(params).promise.toFuture
+    @inline def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] =
       service.listDocumentVersions(params).promise.toFuture
-    def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] =
+    @inline def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] =
       service.listDocuments(params).promise.toFuture
-    def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] =
+    @inline def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] =
       service.listInventoryEntries(params).promise.toFuture
-    def listResourceComplianceSummariesFuture(
+    @inline def listResourceComplianceSummariesFuture(
         params: ListResourceComplianceSummariesRequest
     ): Future[ListResourceComplianceSummariesResult] = service.listResourceComplianceSummaries(params).promise.toFuture
-    def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] =
+    @inline def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] =
       service.listResourceDataSync(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
       service.listTagsForResource(params).promise.toFuture
-    def modifyDocumentPermissionFuture(
+    @inline def modifyDocumentPermissionFuture(
         params: ModifyDocumentPermissionRequest
     ): Future[ModifyDocumentPermissionResponse] = service.modifyDocumentPermission(params).promise.toFuture
-    def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] =
+    @inline def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] =
       service.putComplianceItems(params).promise.toFuture
-    def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] =
+    @inline def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] =
       service.putInventory(params).promise.toFuture
-    def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] =
+    @inline def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] =
       service.putParameter(params).promise.toFuture
-    def registerDefaultPatchBaselineFuture(
+    @inline def registerDefaultPatchBaselineFuture(
         params: RegisterDefaultPatchBaselineRequest
     ): Future[RegisterDefaultPatchBaselineResult] = service.registerDefaultPatchBaseline(params).promise.toFuture
-    def registerPatchBaselineForPatchGroupFuture(
+    @inline def registerPatchBaselineForPatchGroupFuture(
         params: RegisterPatchBaselineForPatchGroupRequest
     ): Future[RegisterPatchBaselineForPatchGroupResult] =
       service.registerPatchBaselineForPatchGroup(params).promise.toFuture
-    def registerTargetWithMaintenanceWindowFuture(
+    @inline def registerTargetWithMaintenanceWindowFuture(
         params: RegisterTargetWithMaintenanceWindowRequest
     ): Future[RegisterTargetWithMaintenanceWindowResult] =
       service.registerTargetWithMaintenanceWindow(params).promise.toFuture
-    def registerTaskWithMaintenanceWindowFuture(
+    @inline def registerTaskWithMaintenanceWindowFuture(
         params: RegisterTaskWithMaintenanceWindowRequest
     ): Future[RegisterTaskWithMaintenanceWindowResult] =
       service.registerTaskWithMaintenanceWindow(params).promise.toFuture
-    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResult] =
-      service.removeTagsFromResource(params).promise.toFuture
-    def resetServiceSettingFuture(params: ResetServiceSettingRequest): Future[ResetServiceSettingResult] =
+    @inline def removeTagsFromResourceFuture(
+        params: RemoveTagsFromResourceRequest
+    ): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise.toFuture
+    @inline def resetServiceSettingFuture(params: ResetServiceSettingRequest): Future[ResetServiceSettingResult] =
       service.resetServiceSetting(params).promise.toFuture
-    def resumeSessionFuture(params: ResumeSessionRequest): Future[ResumeSessionResponse] =
+    @inline def resumeSessionFuture(params: ResumeSessionRequest): Future[ResumeSessionResponse] =
       service.resumeSession(params).promise.toFuture
-    def sendAutomationSignalFuture(params: SendAutomationSignalRequest): Future[SendAutomationSignalResult] =
+    @inline def sendAutomationSignalFuture(params: SendAutomationSignalRequest): Future[SendAutomationSignalResult] =
       service.sendAutomationSignal(params).promise.toFuture
-    def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] =
+    @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] =
       service.sendCommand(params).promise.toFuture
-    def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] =
+    @inline def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] =
       service.startAssociationsOnce(params).promise.toFuture
-    def startAutomationExecutionFuture(
+    @inline def startAutomationExecutionFuture(
         params: StartAutomationExecutionRequest
     ): Future[StartAutomationExecutionResult] = service.startAutomationExecution(params).promise.toFuture
-    def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] =
+    @inline def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] =
       service.startSession(params).promise.toFuture
-    def stopAutomationExecutionFuture(params: StopAutomationExecutionRequest): Future[StopAutomationExecutionResult] =
-      service.stopAutomationExecution(params).promise.toFuture
-    def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] =
+    @inline def stopAutomationExecutionFuture(
+        params: StopAutomationExecutionRequest
+    ): Future[StopAutomationExecutionResult] = service.stopAutomationExecution(params).promise.toFuture
+    @inline def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] =
       service.terminateSession(params).promise.toFuture
-    def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] =
+    @inline def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] =
       service.updateAssociation(params).promise.toFuture
-    def updateAssociationStatusFuture(params: UpdateAssociationStatusRequest): Future[UpdateAssociationStatusResult] =
-      service.updateAssociationStatus(params).promise.toFuture
-    def updateDocumentDefaultVersionFuture(
+    @inline def updateAssociationStatusFuture(
+        params: UpdateAssociationStatusRequest
+    ): Future[UpdateAssociationStatusResult] = service.updateAssociationStatus(params).promise.toFuture
+    @inline def updateDocumentDefaultVersionFuture(
         params: UpdateDocumentDefaultVersionRequest
     ): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise.toFuture
-    def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] =
+    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] =
       service.updateDocument(params).promise.toFuture
-    def updateMaintenanceWindowFuture(params: UpdateMaintenanceWindowRequest): Future[UpdateMaintenanceWindowResult] =
-      service.updateMaintenanceWindow(params).promise.toFuture
-    def updateMaintenanceWindowTargetFuture(
+    @inline def updateMaintenanceWindowFuture(
+        params: UpdateMaintenanceWindowRequest
+    ): Future[UpdateMaintenanceWindowResult] = service.updateMaintenanceWindow(params).promise.toFuture
+    @inline def updateMaintenanceWindowTargetFuture(
         params: UpdateMaintenanceWindowTargetRequest
     ): Future[UpdateMaintenanceWindowTargetResult] = service.updateMaintenanceWindowTarget(params).promise.toFuture
-    def updateMaintenanceWindowTaskFuture(
+    @inline def updateMaintenanceWindowTaskFuture(
         params: UpdateMaintenanceWindowTaskRequest
     ): Future[UpdateMaintenanceWindowTaskResult] = service.updateMaintenanceWindowTask(params).promise.toFuture
-    def updateManagedInstanceRoleFuture(
+    @inline def updateManagedInstanceRoleFuture(
         params: UpdateManagedInstanceRoleRequest
     ): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise.toFuture
-    def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] =
+    @inline def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] =
       service.updateOpsItem(params).promise.toFuture
-    def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
+    @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
       service.updatePatchBaseline(params).promise.toFuture
-    def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
+    @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
       service.updateServiceSetting(params).promise.toFuture
   }
 }
@@ -1060,6 +1078,7 @@ package ssm {
   }
 
   object Activation {
+    @inline
     def apply(
         ActivationId: js.UndefOr[ActivationId] = js.undefined,
         CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
@@ -1095,6 +1114,7 @@ package ssm {
   }
 
   object AddTagsToResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         ResourceType: ResourceTypeForTagging,
@@ -1114,6 +1134,7 @@ package ssm {
   trait AddTagsToResourceResult extends js.Object {}
 
   object AddTagsToResourceResult {
+    @inline
     def apply(
         ): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -1140,6 +1161,7 @@ package ssm {
   }
 
   object Association {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -1205,6 +1227,7 @@ package ssm {
   }
 
   object AssociationDescription {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -1274,6 +1297,7 @@ package ssm {
   }
 
   object AssociationExecution {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -1308,6 +1332,7 @@ package ssm {
   }
 
   object AssociationExecutionFilter {
+    @inline
     def apply(
         Key: AssociationExecutionFilterKey,
         Type: AssociationFilterOperatorType,
@@ -1348,6 +1373,7 @@ package ssm {
   }
 
   object AssociationExecutionTarget {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -1383,6 +1409,7 @@ package ssm {
   }
 
   object AssociationExecutionTargetsFilter {
+    @inline
     def apply(
         Key: AssociationExecutionTargetsFilterKey,
         Value: AssociationExecutionTargetsFilterValue
@@ -1414,6 +1441,7 @@ package ssm {
   }
 
   object AssociationFilter {
+    @inline
     def apply(
         key: AssociationFilterKey,
         value: AssociationFilterValue
@@ -1468,6 +1496,7 @@ package ssm {
   }
 
   object AssociationOverview {
+    @inline
     def apply(
         AssociationStatusAggregatedCount: js.UndefOr[AssociationStatusAggregatedCount] = js.undefined,
         DetailedStatus: js.UndefOr[StatusName] = js.undefined,
@@ -1495,6 +1524,7 @@ package ssm {
   }
 
   object AssociationStatus {
+    @inline
     def apply(
         Date: DateTime,
         Message: StatusMessage,
@@ -1541,6 +1571,7 @@ package ssm {
   }
 
   object AssociationVersionInfo {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -1587,6 +1618,7 @@ package ssm {
   }
 
   object AttachmentContent {
+    @inline
     def apply(
         Hash: js.UndefOr[AttachmentHash] = js.undefined,
         HashType: js.UndefOr[AttachmentHashType] = js.undefined,
@@ -1619,6 +1651,7 @@ package ssm {
   }
 
   object AttachmentInformation {
+    @inline
     def apply(
         Name: js.UndefOr[AttachmentName] = js.undefined
     ): AttachmentInformation = {
@@ -1638,6 +1671,7 @@ package ssm {
   }
 
   object AttachmentsSource {
+    @inline
     def apply(
         Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
         Values: js.UndefOr[AttachmentsSourceValues] = js.undefined
@@ -1688,6 +1722,7 @@ package ssm {
   }
 
   object AutomationExecution {
+    @inline
     def apply(
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
@@ -1759,6 +1794,7 @@ package ssm {
   }
 
   object AutomationExecutionFilter {
+    @inline
     def apply(
         Key: AutomationExecutionFilterKey,
         Values: AutomationExecutionFilterValueList
@@ -1826,6 +1862,7 @@ package ssm {
   }
 
   object AutomationExecutionMetadata {
+    @inline
     def apply(
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
@@ -1912,6 +1949,7 @@ package ssm {
   }
 
   object CancelCommandRequest {
+    @inline
     def apply(
         CommandId: CommandId,
         InstanceIds: js.UndefOr[InstanceIdList] = js.undefined
@@ -1932,6 +1970,7 @@ package ssm {
   trait CancelCommandResult extends js.Object {}
 
   object CancelCommandResult {
+    @inline
     def apply(
         ): CancelCommandResult = {
       val __obj = js.Dynamic.literal()
@@ -1946,6 +1985,7 @@ package ssm {
   }
 
   object CancelMaintenanceWindowExecutionRequest {
+    @inline
     def apply(
         WindowExecutionId: MaintenanceWindowExecutionId
     ): CancelMaintenanceWindowExecutionRequest = {
@@ -1963,6 +2003,7 @@ package ssm {
   }
 
   object CancelMaintenanceWindowExecutionResult {
+    @inline
     def apply(
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): CancelMaintenanceWindowExecutionResult = {
@@ -1982,6 +2023,7 @@ package ssm {
   }
 
   object CloudWatchOutputConfig {
+    @inline
     def apply(
         CloudWatchLogGroupName: js.UndefOr[CloudWatchLogGroupName] = js.undefined,
         CloudWatchOutputEnabled: js.UndefOr[CloudWatchOutputEnabled] = js.undefined
@@ -2024,6 +2066,7 @@ package ssm {
   }
 
   object Command {
+    @inline
     def apply(
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         CommandId: js.UndefOr[CommandId] = js.undefined,
@@ -2087,6 +2130,7 @@ package ssm {
   }
 
   object CommandFilter {
+    @inline
     def apply(
         key: CommandFilterKey,
         value: CommandFilterValue
@@ -2134,6 +2178,7 @@ package ssm {
   }
 
   object CommandInvocation {
+    @inline
     def apply(
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         CommandId: js.UndefOr[CommandId] = js.undefined,
@@ -2207,6 +2252,7 @@ package ssm {
   }
 
   object CommandPlugin {
+    @inline
     def apply(
         Name: js.UndefOr[CommandPluginName] = js.undefined,
         Output: js.UndefOr[CommandPluginOutput] = js.undefined,
@@ -2272,6 +2318,7 @@ package ssm {
   }
 
   object ComplianceExecutionSummary {
+    @inline
     def apply(
         ExecutionTime: DateTime,
         ExecutionId: js.UndefOr[ComplianceExecutionId] = js.undefined,
@@ -2304,6 +2351,7 @@ package ssm {
   }
 
   object ComplianceItem {
+    @inline
     def apply(
         ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
         Details: js.UndefOr[ComplianceItemDetails] = js.undefined,
@@ -2342,6 +2390,7 @@ package ssm {
   }
 
   object ComplianceItemEntry {
+    @inline
     def apply(
         Severity: ComplianceSeverity,
         Status: ComplianceStatus,
@@ -2400,6 +2449,7 @@ package ssm {
   }
 
   object ComplianceStringFilter {
+    @inline
     def apply(
         Key: js.UndefOr[ComplianceStringFilterKey] = js.undefined,
         Type: js.UndefOr[ComplianceQueryOperatorType] = js.undefined,
@@ -2424,6 +2474,7 @@ package ssm {
   }
 
   object ComplianceSummaryItem {
+    @inline
     def apply(
         ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
         CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
@@ -2447,6 +2498,7 @@ package ssm {
   }
 
   object CompliantSummary {
+    @inline
     def apply(
         CompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
@@ -2476,6 +2528,7 @@ package ssm {
   }
 
   object CreateActivationRequest {
+    @inline
     def apply(
         IamRole: IamRole,
         DefaultInstanceName: js.UndefOr[DefaultInstanceName] = js.undefined,
@@ -2504,6 +2557,7 @@ package ssm {
   }
 
   object CreateActivationResult {
+    @inline
     def apply(
         ActivationCode: js.UndefOr[ActivationCode] = js.undefined,
         ActivationId: js.UndefOr[ActivationId] = js.undefined
@@ -2521,6 +2575,7 @@ package ssm {
   }
 
   object CreateAssociationBatchRequest {
+    @inline
     def apply(
         Entries: CreateAssociationBatchRequestEntries
     ): CreateAssociationBatchRequest = {
@@ -2552,6 +2607,7 @@ package ssm {
   }
 
   object CreateAssociationBatchRequestEntry {
+    @inline
     def apply(
         Name: DocumentARN,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -2594,6 +2650,7 @@ package ssm {
   }
 
   object CreateAssociationBatchResult {
+    @inline
     def apply(
         Failed: js.UndefOr[FailedCreateAssociationList] = js.undefined,
         Successful: js.UndefOr[AssociationDescriptionList] = js.undefined
@@ -2622,6 +2679,7 @@ package ssm {
   }
 
   object CreateAssociationRequest {
+    @inline
     def apply(
         Name: DocumentARN,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -2663,6 +2721,7 @@ package ssm {
   }
 
   object CreateAssociationResult {
+    @inline
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): CreateAssociationResult = {
@@ -2685,6 +2744,7 @@ package ssm {
   }
 
   object CreateDocumentRequest {
+    @inline
     def apply(
         Content: DocumentContent,
         Name: DocumentName,
@@ -2716,6 +2776,7 @@ package ssm {
   }
 
   object CreateDocumentResult {
+    @inline
     def apply(
         DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
     ): CreateDocumentResult = {
@@ -2741,6 +2802,7 @@ package ssm {
   }
 
   object CreateMaintenanceWindowRequest {
+    @inline
     def apply(
         AllowUnassociatedTargets: MaintenanceWindowAllowUnassociatedTargets,
         Cutoff: MaintenanceWindowCutoff,
@@ -2778,6 +2840,7 @@ package ssm {
   }
 
   object CreateMaintenanceWindowResult {
+    @inline
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): CreateMaintenanceWindowResult = {
@@ -2800,6 +2863,7 @@ package ssm {
   }
 
   object CreateOpsItemRequest {
+    @inline
     def apply(
         Description: OpsItemDescription,
         Source: OpsItemSource,
@@ -2831,6 +2895,7 @@ package ssm {
   }
 
   object CreateOpsItemResponse {
+    @inline
     def apply(
         OpsItemId: js.UndefOr[String] = js.undefined
     ): CreateOpsItemResponse = {
@@ -2858,6 +2923,7 @@ package ssm {
   }
 
   object CreatePatchBaselineRequest {
+    @inline
     def apply(
         Name: BaselineName,
         ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
@@ -2903,6 +2969,7 @@ package ssm {
   }
 
   object CreatePatchBaselineResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): CreatePatchBaselineResult = {
@@ -2919,6 +2986,7 @@ package ssm {
   }
 
   object CreateResourceDataSyncRequest {
+    @inline
     def apply(
         S3Destination: ResourceDataSyncS3Destination,
         SyncName: ResourceDataSyncName
@@ -2936,6 +3004,7 @@ package ssm {
   trait CreateResourceDataSyncResult extends js.Object {}
 
   object CreateResourceDataSyncResult {
+    @inline
     def apply(
         ): CreateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
@@ -2950,6 +3019,7 @@ package ssm {
   }
 
   object DeleteActivationRequest {
+    @inline
     def apply(
         ActivationId: ActivationId
     ): DeleteActivationRequest = {
@@ -2965,6 +3035,7 @@ package ssm {
   trait DeleteActivationResult extends js.Object {}
 
   object DeleteActivationResult {
+    @inline
     def apply(
         ): DeleteActivationResult = {
       val __obj = js.Dynamic.literal()
@@ -2981,6 +3052,7 @@ package ssm {
   }
 
   object DeleteAssociationRequest {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -2998,6 +3070,7 @@ package ssm {
   trait DeleteAssociationResult extends js.Object {}
 
   object DeleteAssociationResult {
+    @inline
     def apply(
         ): DeleteAssociationResult = {
       val __obj = js.Dynamic.literal()
@@ -3014,6 +3087,7 @@ package ssm {
   }
 
   object DeleteDocumentRequest {
+    @inline
     def apply(
         Name: DocumentName,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -3033,6 +3107,7 @@ package ssm {
   trait DeleteDocumentResult extends js.Object {}
 
   object DeleteDocumentResult {
+    @inline
     def apply(
         ): DeleteDocumentResult = {
       val __obj = js.Dynamic.literal()
@@ -3050,6 +3125,7 @@ package ssm {
   }
 
   object DeleteInventoryRequest {
+    @inline
     def apply(
         TypeName: InventoryItemTypeName,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
@@ -3075,6 +3151,7 @@ package ssm {
   }
 
   object DeleteInventoryResult {
+    @inline
     def apply(
         DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
         DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
@@ -3094,6 +3171,7 @@ package ssm {
   }
 
   object DeleteMaintenanceWindowRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId
     ): DeleteMaintenanceWindowRequest = {
@@ -3111,6 +3189,7 @@ package ssm {
   }
 
   object DeleteMaintenanceWindowResult {
+    @inline
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): DeleteMaintenanceWindowResult = {
@@ -3126,6 +3205,7 @@ package ssm {
   }
 
   object DeleteParameterRequest {
+    @inline
     def apply(
         Name: PSParameterName
     ): DeleteParameterRequest = {
@@ -3141,6 +3221,7 @@ package ssm {
   trait DeleteParameterResult extends js.Object {}
 
   object DeleteParameterResult {
+    @inline
     def apply(
         ): DeleteParameterResult = {
       val __obj = js.Dynamic.literal()
@@ -3155,6 +3236,7 @@ package ssm {
   }
 
   object DeleteParametersRequest {
+    @inline
     def apply(
         Names: ParameterNameList
     ): DeleteParametersRequest = {
@@ -3173,6 +3255,7 @@ package ssm {
   }
 
   object DeleteParametersResult {
+    @inline
     def apply(
         DeletedParameters: js.UndefOr[ParameterNameList] = js.undefined,
         InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined
@@ -3190,6 +3273,7 @@ package ssm {
   }
 
   object DeletePatchBaselineRequest {
+    @inline
     def apply(
         BaselineId: BaselineId
     ): DeletePatchBaselineRequest = {
@@ -3207,6 +3291,7 @@ package ssm {
   }
 
   object DeletePatchBaselineResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): DeletePatchBaselineResult = {
@@ -3222,6 +3307,7 @@ package ssm {
   }
 
   object DeleteResourceDataSyncRequest {
+    @inline
     def apply(
         SyncName: ResourceDataSyncName
     ): DeleteResourceDataSyncRequest = {
@@ -3237,6 +3323,7 @@ package ssm {
   trait DeleteResourceDataSyncResult extends js.Object {}
 
   object DeleteResourceDataSyncResult {
+    @inline
     def apply(
         ): DeleteResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
@@ -3251,6 +3338,7 @@ package ssm {
   }
 
   object DeregisterManagedInstanceRequest {
+    @inline
     def apply(
         InstanceId: ManagedInstanceId
     ): DeregisterManagedInstanceRequest = {
@@ -3266,6 +3354,7 @@ package ssm {
   trait DeregisterManagedInstanceResult extends js.Object {}
 
   object DeregisterManagedInstanceResult {
+    @inline
     def apply(
         ): DeregisterManagedInstanceResult = {
       val __obj = js.Dynamic.literal()
@@ -3281,6 +3370,7 @@ package ssm {
   }
 
   object DeregisterPatchBaselineForPatchGroupRequest {
+    @inline
     def apply(
         BaselineId: BaselineId,
         PatchGroup: PatchGroup
@@ -3301,6 +3391,7 @@ package ssm {
   }
 
   object DeregisterPatchBaselineForPatchGroupResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
@@ -3320,6 +3411,7 @@ package ssm {
   }
 
   object DeregisterTargetFromMaintenanceWindowRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTargetId: MaintenanceWindowTargetId,
@@ -3342,6 +3434,7 @@ package ssm {
   }
 
   object DeregisterTargetFromMaintenanceWindowResult {
+    @inline
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
@@ -3360,6 +3453,7 @@ package ssm {
   }
 
   object DeregisterTaskFromMaintenanceWindowRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId
@@ -3380,6 +3474,7 @@ package ssm {
   }
 
   object DeregisterTaskFromMaintenanceWindowResult {
+    @inline
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
@@ -3401,6 +3496,7 @@ package ssm {
   }
 
   object DescribeActivationsFilter {
+    @inline
     def apply(
         FilterKey: js.UndefOr[DescribeActivationsFilterKeys] = js.undefined,
         FilterValues: js.UndefOr[StringList] = js.undefined
@@ -3428,6 +3524,7 @@ package ssm {
   }
 
   object DescribeActivationsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[DescribeActivationsFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3448,6 +3545,7 @@ package ssm {
   }
 
   object DescribeActivationsResult {
+    @inline
     def apply(
         ActivationList: js.UndefOr[ActivationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3469,6 +3567,7 @@ package ssm {
   }
 
   object DescribeAssociationExecutionTargetsRequest {
+    @inline
     def apply(
         AssociationId: AssociationId,
         ExecutionId: AssociationExecutionId,
@@ -3495,6 +3594,7 @@ package ssm {
   }
 
   object DescribeAssociationExecutionTargetsResult {
+    @inline
     def apply(
         AssociationExecutionTargets: js.UndefOr[AssociationExecutionTargetsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3517,6 +3617,7 @@ package ssm {
   }
 
   object DescribeAssociationExecutionsRequest {
+    @inline
     def apply(
         AssociationId: AssociationId,
         Filters: js.UndefOr[AssociationExecutionFilterList] = js.undefined,
@@ -3541,6 +3642,7 @@ package ssm {
   }
 
   object DescribeAssociationExecutionsResult {
+    @inline
     def apply(
         AssociationExecutions: js.UndefOr[AssociationExecutionsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3561,6 +3663,7 @@ package ssm {
   }
 
   object DescribeAssociationRequest {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -3582,6 +3685,7 @@ package ssm {
   }
 
   object DescribeAssociationResult {
+    @inline
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): DescribeAssociationResult = {
@@ -3599,6 +3703,7 @@ package ssm {
   }
 
   object DescribeAutomationExecutionsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[AutomationExecutionFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3619,6 +3724,7 @@ package ssm {
   }
 
   object DescribeAutomationExecutionsResult {
+    @inline
     def apply(
         AutomationExecutionMetadataList: js.UndefOr[AutomationExecutionMetadataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3642,6 +3748,7 @@ package ssm {
   }
 
   object DescribeAutomationStepExecutionsRequest {
+    @inline
     def apply(
         AutomationExecutionId: AutomationExecutionId,
         Filters: js.UndefOr[StepExecutionFilterList] = js.undefined,
@@ -3668,6 +3775,7 @@ package ssm {
   }
 
   object DescribeAutomationStepExecutionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StepExecutions: js.UndefOr[StepExecutionList] = js.undefined
@@ -3687,6 +3795,7 @@ package ssm {
   }
 
   object DescribeAvailablePatchesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
@@ -3707,6 +3816,7 @@ package ssm {
   }
 
   object DescribeAvailablePatchesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Patches: js.UndefOr[PatchList] = js.undefined
@@ -3725,6 +3835,7 @@ package ssm {
   }
 
   object DescribeDocumentPermissionRequest {
+    @inline
     def apply(
         Name: DocumentName,
         PermissionType: DocumentPermissionType
@@ -3744,6 +3855,7 @@ package ssm {
   }
 
   object DescribeDocumentPermissionResponse {
+    @inline
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DescribeDocumentPermissionResponse = {
@@ -3761,6 +3873,7 @@ package ssm {
   }
 
   object DescribeDocumentRequest {
+    @inline
     def apply(
         Name: DocumentARN,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -3782,6 +3895,7 @@ package ssm {
   }
 
   object DescribeDocumentResult {
+    @inline
     def apply(
         Document: js.UndefOr[DocumentDescription] = js.undefined
     ): DescribeDocumentResult = {
@@ -3799,6 +3913,7 @@ package ssm {
   }
 
   object DescribeEffectiveInstanceAssociationsRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[EffectiveInstanceAssociationMaxResults] = js.undefined,
@@ -3821,6 +3936,7 @@ package ssm {
   }
 
   object DescribeEffectiveInstanceAssociationsResult {
+    @inline
     def apply(
         Associations: js.UndefOr[InstanceAssociationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3840,6 +3956,7 @@ package ssm {
   }
 
   object DescribeEffectivePatchesForPatchBaselineRequest {
+    @inline
     def apply(
         BaselineId: BaselineId,
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
@@ -3862,6 +3979,7 @@ package ssm {
   }
 
   object DescribeEffectivePatchesForPatchBaselineResult {
+    @inline
     def apply(
         EffectivePatches: js.UndefOr[EffectivePatchList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3881,6 +3999,7 @@ package ssm {
   }
 
   object DescribeInstanceAssociationsStatusRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3903,6 +4022,7 @@ package ssm {
   }
 
   object DescribeInstanceAssociationsStatusResult {
+    @inline
     def apply(
         InstanceAssociationStatusInfos: js.UndefOr[InstanceAssociationStatusInfos] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3925,6 +4045,7 @@ package ssm {
   }
 
   object DescribeInstanceInformationRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[InstanceInformationStringFilterList] = js.undefined,
         InstanceInformationFilterList: js.UndefOr[InstanceInformationFilterList] = js.undefined,
@@ -3949,6 +4070,7 @@ package ssm {
   }
 
   object DescribeInstanceInformationResult {
+    @inline
     def apply(
         InstanceInformationList: js.UndefOr[InstanceInformationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3969,6 +4091,7 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesForPatchGroupRequest {
+    @inline
     def apply(
         PatchGroup: PatchGroup,
         Filters: js.UndefOr[InstancePatchStateFilterList] = js.undefined,
@@ -3993,6 +4116,7 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesForPatchGroupResult {
+    @inline
     def apply(
         InstancePatchStates: js.UndefOr[InstancePatchStatesList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4012,6 +4136,7 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesRequest {
+    @inline
     def apply(
         InstanceIds: InstanceIdList,
         MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
@@ -4034,6 +4159,7 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesResult {
+    @inline
     def apply(
         InstancePatchStates: js.UndefOr[InstancePatchStateList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4054,6 +4180,7 @@ package ssm {
   }
 
   object DescribeInstancePatchesRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
@@ -4078,6 +4205,7 @@ package ssm {
   }
 
   object DescribeInstancePatchesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Patches: js.UndefOr[PatchComplianceDataList] = js.undefined
@@ -4097,6 +4225,7 @@ package ssm {
   }
 
   object DescribeInventoryDeletionsRequest {
+    @inline
     def apply(
         DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4117,6 +4246,7 @@ package ssm {
   }
 
   object DescribeInventoryDeletionsResult {
+    @inline
     def apply(
         InventoryDeletions: js.UndefOr[InventoryDeletionsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4138,6 +4268,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
+    @inline
     def apply(
         TaskId: MaintenanceWindowExecutionTaskId,
         WindowExecutionId: MaintenanceWindowExecutionId,
@@ -4164,6 +4295,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionTaskInvocationsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutionTaskInvocationIdentities: js.UndefOr[MaintenanceWindowExecutionTaskInvocationIdentityList] =
@@ -4187,6 +4319,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionTasksRequest {
+    @inline
     def apply(
         WindowExecutionId: MaintenanceWindowExecutionId,
         Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
@@ -4211,6 +4344,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionTasksResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutionTaskIdentities: js.UndefOr[MaintenanceWindowExecutionTaskIdentityList] = js.undefined
@@ -4233,6 +4367,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionsRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
@@ -4257,6 +4392,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutions: js.UndefOr[MaintenanceWindowExecutionList] = js.undefined
@@ -4279,6 +4415,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowScheduleRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
@@ -4305,6 +4442,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowScheduleResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScheduledWindowExecutions: js.UndefOr[ScheduledWindowExecutionList] = js.undefined
@@ -4327,6 +4465,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTargetsRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
@@ -4351,6 +4490,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTargetsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[MaintenanceWindowTargetList] = js.undefined
@@ -4371,6 +4511,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTasksRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
@@ -4395,6 +4536,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTasksResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tasks: js.UndefOr[MaintenanceWindowTaskList] = js.undefined
@@ -4415,6 +4557,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsForTargetRequest {
+    @inline
     def apply(
         ResourceType: MaintenanceWindowResourceType,
         Targets: Targets,
@@ -4439,6 +4582,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsForTargetResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowsForTargetList] = js.undefined
@@ -4458,6 +4602,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
@@ -4478,6 +4623,7 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowIdentityList] = js.undefined
@@ -4497,6 +4643,7 @@ package ssm {
   }
 
   object DescribeOpsItemsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[OpsItemMaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -4517,6 +4664,7 @@ package ssm {
   }
 
   object DescribeOpsItemsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         OpsItemSummaries: js.UndefOr[OpsItemSummaries] = js.undefined
@@ -4537,6 +4685,7 @@ package ssm {
   }
 
   object DescribeParametersRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[ParametersFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4559,6 +4708,7 @@ package ssm {
   }
 
   object DescribeParametersResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterMetadataList] = js.undefined
@@ -4578,6 +4728,7 @@ package ssm {
   }
 
   object DescribePatchBaselinesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
@@ -4598,6 +4749,7 @@ package ssm {
   }
 
   object DescribePatchBaselinesResult {
+    @inline
     def apply(
         BaselineIdentities: js.UndefOr[PatchBaselineIdentityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4615,6 +4767,7 @@ package ssm {
   }
 
   object DescribePatchGroupStateRequest {
+    @inline
     def apply(
         PatchGroup: PatchGroup
     ): DescribePatchGroupStateRequest = {
@@ -4639,6 +4792,7 @@ package ssm {
   }
 
   object DescribePatchGroupStateResult {
+    @inline
     def apply(
         Instances: js.UndefOr[Int] = js.undefined,
         InstancesWithFailedPatches: js.UndefOr[Int] = js.undefined,
@@ -4684,6 +4838,7 @@ package ssm {
   }
 
   object DescribePatchGroupsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
@@ -4704,6 +4859,7 @@ package ssm {
   }
 
   object DescribePatchGroupsResult {
+    @inline
     def apply(
         Mappings: js.UndefOr[PatchGroupPatchBaselineMappingList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4725,6 +4881,7 @@ package ssm {
   }
 
   object DescribePatchPropertiesRequest {
+    @inline
     def apply(
         OperatingSystem: OperatingSystem,
         Property: PatchProperty,
@@ -4751,6 +4908,7 @@ package ssm {
   }
 
   object DescribePatchPropertiesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Properties: js.UndefOr[PatchPropertiesList] = js.undefined
@@ -4771,6 +4929,7 @@ package ssm {
   }
 
   object DescribeSessionsRequest {
+    @inline
     def apply(
         State: SessionState,
         Filters: js.UndefOr[SessionFilterList] = js.undefined,
@@ -4795,6 +4954,7 @@ package ssm {
   }
 
   object DescribeSessionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Sessions: js.UndefOr[SessionList] = js.undefined
@@ -4817,6 +4977,7 @@ package ssm {
   }
 
   object DocumentDefaultVersionDescription {
+    @inline
     def apply(
         DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
         DefaultVersionName: js.UndefOr[DocumentVersionName] = js.undefined,
@@ -4859,6 +5020,7 @@ package ssm {
   }
 
   object DocumentDescription {
+    @inline
     def apply(
         AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
@@ -4918,6 +5080,7 @@ package ssm {
   }
 
   object DocumentFilter {
+    @inline
     def apply(
         key: DocumentFilterKey,
         value: DocumentFilterValue
@@ -4972,6 +5135,7 @@ package ssm {
   }
 
   object DocumentIdentifier {
+    @inline
     def apply(
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
@@ -5018,6 +5182,7 @@ package ssm {
   }
 
   object DocumentKeyValuesFilter {
+    @inline
     def apply(
         Key: js.UndefOr[DocumentKeyValuesFilterKey] = js.undefined,
         Values: js.UndefOr[DocumentKeyValuesFilterValues] = js.undefined
@@ -5041,6 +5206,7 @@ package ssm {
   }
 
   object DocumentParameter {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[DocumentParameterDefaultValue] = js.undefined,
         Description: js.UndefOr[DocumentParameterDescrption] = js.undefined,
@@ -5108,6 +5274,7 @@ package ssm {
   }
 
   object DocumentVersionInfo {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
@@ -5141,6 +5308,7 @@ package ssm {
   }
 
   object EffectivePatch {
+    @inline
     def apply(
         Patch: js.UndefOr[Patch] = js.undefined,
         PatchStatus: js.UndefOr[PatchStatus] = js.undefined
@@ -5170,6 +5338,7 @@ package ssm {
   }
 
   object FailedCreateAssociation {
+    @inline
     def apply(
         Entry: js.UndefOr[CreateAssociationBatchRequestEntry] = js.undefined,
         Fault: js.UndefOr[Fault] = js.undefined,
@@ -5194,6 +5363,7 @@ package ssm {
   }
 
   object FailureDetails {
+    @inline
     def apply(
         Details: js.UndefOr[AutomationParameterMap] = js.undefined,
         FailureStage: js.UndefOr[String] = js.undefined,
@@ -5221,6 +5391,7 @@ package ssm {
   }
 
   object GetAutomationExecutionRequest {
+    @inline
     def apply(
         AutomationExecutionId: AutomationExecutionId
     ): GetAutomationExecutionRequest = {
@@ -5238,6 +5409,7 @@ package ssm {
   }
 
   object GetAutomationExecutionResult {
+    @inline
     def apply(
         AutomationExecution: js.UndefOr[AutomationExecution] = js.undefined
     ): GetAutomationExecutionResult = {
@@ -5255,6 +5427,7 @@ package ssm {
   }
 
   object GetCommandInvocationRequest {
+    @inline
     def apply(
         CommandId: CommandId,
         InstanceId: InstanceId,
@@ -5292,6 +5465,7 @@ package ssm {
   }
 
   object GetCommandInvocationResult {
+    @inline
     def apply(
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         CommandId: js.UndefOr[CommandId] = js.undefined,
@@ -5339,6 +5513,7 @@ package ssm {
   }
 
   object GetConnectionStatusRequest {
+    @inline
     def apply(
         Target: SessionTarget
     ): GetConnectionStatusRequest = {
@@ -5357,6 +5532,7 @@ package ssm {
   }
 
   object GetConnectionStatusResponse {
+    @inline
     def apply(
         Status: js.UndefOr[ConnectionStatus] = js.undefined,
         Target: js.UndefOr[SessionTarget] = js.undefined
@@ -5374,6 +5550,7 @@ package ssm {
   }
 
   object GetDefaultPatchBaselineRequest {
+    @inline
     def apply(
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): GetDefaultPatchBaselineRequest = {
@@ -5390,6 +5567,7 @@ package ssm {
   }
 
   object GetDefaultPatchBaselineResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
@@ -5408,6 +5586,7 @@ package ssm {
   }
 
   object GetDeployablePatchSnapshotForInstanceRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         SnapshotId: SnapshotId
@@ -5430,6 +5609,7 @@ package ssm {
   }
 
   object GetDeployablePatchSnapshotForInstanceResult {
+    @inline
     def apply(
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
         Product: js.UndefOr[Product] = js.undefined,
@@ -5454,6 +5634,7 @@ package ssm {
   }
 
   object GetDocumentRequest {
+    @inline
     def apply(
         Name: DocumentARN,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
@@ -5485,6 +5666,7 @@ package ssm {
   }
 
   object GetDocumentResult {
+    @inline
     def apply(
         AttachmentsContent: js.UndefOr[AttachmentContentList] = js.undefined,
         Content: js.UndefOr[DocumentContent] = js.undefined,
@@ -5520,6 +5702,7 @@ package ssm {
   }
 
   object GetInventoryRequest {
+    @inline
     def apply(
         Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
         Filters: js.UndefOr[InventoryFilterList] = js.undefined,
@@ -5544,6 +5727,7 @@ package ssm {
   }
 
   object GetInventoryResult {
+    @inline
     def apply(
         Entities: js.UndefOr[InventoryResultEntityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5565,6 +5749,7 @@ package ssm {
   }
 
   object GetInventorySchemaRequest {
+    @inline
     def apply(
         Aggregator: js.UndefOr[AggregatorSchemaOnly] = js.undefined,
         MaxResults: js.UndefOr[GetInventorySchemaMaxResults] = js.undefined,
@@ -5589,6 +5774,7 @@ package ssm {
   }
 
   object GetInventorySchemaResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Schemas: js.UndefOr[InventoryItemSchemaResultList] = js.undefined
@@ -5606,6 +5792,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionRequest {
+    @inline
     def apply(
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionRequest = {
@@ -5628,6 +5815,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionResult {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
@@ -5655,6 +5843,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskInvocationRequest {
+    @inline
     def apply(
         InvocationId: MaintenanceWindowExecutionTaskInvocationId,
         TaskId: MaintenanceWindowExecutionTaskId,
@@ -5687,6 +5876,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskInvocationResult {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         ExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskExecutionId] = js.undefined,
@@ -5725,6 +5915,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskRequest {
+    @inline
     def apply(
         TaskId: MaintenanceWindowExecutionTaskId,
         WindowExecutionId: MaintenanceWindowExecutionId
@@ -5756,6 +5947,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskResult {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -5795,6 +5987,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId
     ): GetMaintenanceWindowRequest = {
@@ -5825,6 +6018,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowResult {
+    @inline
     def apply(
         AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
@@ -5867,6 +6061,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowTaskRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId
@@ -5899,6 +6094,7 @@ package ssm {
   }
 
   object GetMaintenanceWindowTaskResult {
+    @inline
     def apply(
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -5940,6 +6136,7 @@ package ssm {
   }
 
   object GetOpsItemRequest {
+    @inline
     def apply(
         OpsItemId: OpsItemId
     ): GetOpsItemRequest = {
@@ -5957,6 +6154,7 @@ package ssm {
   }
 
   object GetOpsItemResponse {
+    @inline
     def apply(
         OpsItem: js.UndefOr[OpsItem] = js.undefined
     ): GetOpsItemResponse = {
@@ -5975,6 +6173,7 @@ package ssm {
   }
 
   object GetOpsSummaryRequest {
+    @inline
     def apply(
         Aggregators: OpsAggregatorList,
         Filters: js.UndefOr[OpsFilterList] = js.undefined,
@@ -5999,6 +6198,7 @@ package ssm {
   }
 
   object GetOpsSummaryResult {
+    @inline
     def apply(
         Entities: js.UndefOr[OpsEntityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -6019,6 +6219,7 @@ package ssm {
   }
 
   object GetParameterHistoryRequest {
+    @inline
     def apply(
         Name: PSParameterName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -6043,6 +6244,7 @@ package ssm {
   }
 
   object GetParameterHistoryResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterHistoryList] = js.undefined
@@ -6061,6 +6263,7 @@ package ssm {
   }
 
   object GetParameterRequest {
+    @inline
     def apply(
         Name: PSParameterName,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
@@ -6080,6 +6283,7 @@ package ssm {
   }
 
   object GetParameterResult {
+    @inline
     def apply(
         Parameter: js.UndefOr[Parameter] = js.undefined
     ): GetParameterResult = {
@@ -6100,6 +6304,7 @@ package ssm {
   }
 
   object GetParametersByPathRequest {
+    @inline
     def apply(
         Path: PSParameterName,
         MaxResults: js.UndefOr[GetParametersByPathMaxResults] = js.undefined,
@@ -6128,6 +6333,7 @@ package ssm {
   }
 
   object GetParametersByPathResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
@@ -6146,6 +6352,7 @@ package ssm {
   }
 
   object GetParametersRequest {
+    @inline
     def apply(
         Names: ParameterNameList,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
@@ -6166,6 +6373,7 @@ package ssm {
   }
 
   object GetParametersResult {
+    @inline
     def apply(
         InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
@@ -6184,6 +6392,7 @@ package ssm {
   }
 
   object GetPatchBaselineForPatchGroupRequest {
+    @inline
     def apply(
         PatchGroup: PatchGroup,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
@@ -6205,6 +6414,7 @@ package ssm {
   }
 
   object GetPatchBaselineForPatchGroupResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
@@ -6224,6 +6434,7 @@ package ssm {
   }
 
   object GetPatchBaselineRequest {
+    @inline
     def apply(
         BaselineId: BaselineId
     ): GetPatchBaselineRequest = {
@@ -6255,6 +6466,7 @@ package ssm {
   }
 
   object GetPatchBaselineResult {
+    @inline
     def apply(
         ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
         ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
@@ -6305,6 +6517,7 @@ package ssm {
   }
 
   object GetServiceSettingRequest {
+    @inline
     def apply(
         SettingId: ServiceSettingId
     ): GetServiceSettingRequest = {
@@ -6325,6 +6538,7 @@ package ssm {
   }
 
   object GetServiceSettingResult {
+    @inline
     def apply(
         ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
     ): GetServiceSettingResult = {
@@ -6344,6 +6558,7 @@ package ssm {
   }
 
   object InstanceAggregatedAssociationOverview {
+    @inline
     def apply(
         DetailedStatus: js.UndefOr[StatusName] = js.undefined,
         InstanceAssociationStatusAggregatedCount: js.UndefOr[InstanceAssociationStatusAggregatedCount] = js.undefined
@@ -6369,6 +6584,7 @@ package ssm {
   }
 
   object InstanceAssociation {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -6393,6 +6609,7 @@ package ssm {
   }
 
   object InstanceAssociationOutputLocation {
+    @inline
     def apply(
         S3Location: js.UndefOr[S3OutputLocation] = js.undefined
     ): InstanceAssociationOutputLocation = {
@@ -6411,6 +6628,7 @@ package ssm {
   }
 
   object InstanceAssociationOutputUrl {
+    @inline
     def apply(
         S3OutputUrl: js.UndefOr[S3OutputUrl] = js.undefined
     ): InstanceAssociationOutputUrl = {
@@ -6440,6 +6658,7 @@ package ssm {
   }
 
   object InstanceAssociationStatusInfo {
+    @inline
     def apply(
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -6498,6 +6717,7 @@ package ssm {
   }
 
   object InstanceInformation {
+    @inline
     def apply(
         ActivationId: js.UndefOr[ActivationId] = js.undefined,
         AgentVersion: js.UndefOr[Version] = js.undefined,
@@ -6558,6 +6778,7 @@ package ssm {
   }
 
   object InstanceInformationFilter {
+    @inline
     def apply(
         key: InstanceInformationFilterKey,
         valueSet: InstanceInformationFilterValueSet
@@ -6605,6 +6826,7 @@ package ssm {
   }
 
   object InstanceInformationStringFilter {
+    @inline
     def apply(
         Key: InstanceInformationStringFilterKey,
         Values: InstanceInformationFilterValueSet
@@ -6642,6 +6864,7 @@ package ssm {
   }
 
   object InstancePatchState {
+    @inline
     def apply(
         BaselineId: BaselineId,
         InstanceId: InstanceId,
@@ -6696,6 +6919,7 @@ package ssm {
   }
 
   object InstancePatchStateFilter {
+    @inline
     def apply(
         Key: InstancePatchStateFilterKey,
         Type: InstancePatchStateOperatorType,
@@ -6731,6 +6955,7 @@ package ssm {
   }
 
   object InventoryAggregator {
+    @inline
     def apply(
         Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
         Expression: js.UndefOr[InventoryAggregatorExpression] = js.undefined,
@@ -6773,6 +6998,7 @@ package ssm {
   }
 
   object InventoryDeletionStatusItem {
+    @inline
     def apply(
         DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
         DeletionStartTime: js.UndefOr[InventoryDeletionStartTime] = js.undefined,
@@ -6805,6 +7031,7 @@ package ssm {
   }
 
   object InventoryDeletionSummary {
+    @inline
     def apply(
         RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
         SummaryItems: js.UndefOr[InventoryDeletionSummaryItems] = js.undefined,
@@ -6829,6 +7056,7 @@ package ssm {
   }
 
   object InventoryDeletionSummaryItem {
+    @inline
     def apply(
         Count: js.UndefOr[ResourceCount] = js.undefined,
         RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
@@ -6853,6 +7081,7 @@ package ssm {
   }
 
   object InventoryFilter {
+    @inline
     def apply(
         Key: InventoryFilterKey,
         Values: InventoryFilterValueList,
@@ -6878,6 +7107,7 @@ package ssm {
   }
 
   object InventoryGroup {
+    @inline
     def apply(
         Filters: InventoryFilterList,
         Name: InventoryGroupName
@@ -6905,6 +7135,7 @@ package ssm {
   }
 
   object InventoryItem {
+    @inline
     def apply(
         CaptureTime: InventoryItemCaptureTime,
         SchemaVersion: InventoryItemSchemaVersion,
@@ -6936,6 +7167,7 @@ package ssm {
   }
 
   object InventoryItemAttribute {
+    @inline
     def apply(
         DataType: InventoryAttributeDataType,
         Name: InventoryItemAttributeName
@@ -6961,6 +7193,7 @@ package ssm {
   }
 
   object InventoryItemSchema {
+    @inline
     def apply(
         Attributes: InventoryItemAttributeList,
         TypeName: InventoryItemTypeName,
@@ -6999,6 +7232,7 @@ package ssm {
   }
 
   object InventoryResultEntity {
+    @inline
     def apply(
         Data: js.UndefOr[InventoryResultItemMap] = js.undefined,
         Id: js.UndefOr[InventoryResultEntityId] = js.undefined
@@ -7023,6 +7257,7 @@ package ssm {
   }
 
   object InventoryResultItem {
+    @inline
     def apply(
         Content: InventoryItemEntryList,
         SchemaVersion: InventoryItemSchemaVersion,
@@ -7057,6 +7292,7 @@ package ssm {
   }
 
   object LabelParameterVersionRequest {
+    @inline
     def apply(
         Labels: ParameterLabelList,
         Name: PSParameterName,
@@ -7078,6 +7314,7 @@ package ssm {
   }
 
   object LabelParameterVersionResult {
+    @inline
     def apply(
         InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined
     ): LabelParameterVersionResult = {
@@ -7103,6 +7340,7 @@ package ssm {
   }
 
   object ListAssociationVersionsRequest {
+    @inline
     def apply(
         AssociationId: AssociationId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7125,6 +7363,7 @@ package ssm {
   }
 
   object ListAssociationVersionsResult {
+    @inline
     def apply(
         AssociationVersions: js.UndefOr[AssociationVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7144,6 +7383,7 @@ package ssm {
   }
 
   object ListAssociationsRequest {
+    @inline
     def apply(
         AssociationFilterList: js.UndefOr[AssociationFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7164,6 +7404,7 @@ package ssm {
   }
 
   object ListAssociationsResult {
+    @inline
     def apply(
         Associations: js.UndefOr[AssociationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7186,6 +7427,7 @@ package ssm {
   }
 
   object ListCommandInvocationsRequest {
+    @inline
     def apply(
         CommandId: js.UndefOr[CommandId] = js.undefined,
         Details: js.UndefOr[Boolean] = js.undefined,
@@ -7212,6 +7454,7 @@ package ssm {
   }
 
   object ListCommandInvocationsResult {
+    @inline
     def apply(
         CommandInvocations: js.UndefOr[CommandInvocationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7233,6 +7476,7 @@ package ssm {
   }
 
   object ListCommandsRequest {
+    @inline
     def apply(
         CommandId: js.UndefOr[CommandId] = js.undefined,
         Filters: js.UndefOr[CommandFilterList] = js.undefined,
@@ -7257,6 +7501,7 @@ package ssm {
   }
 
   object ListCommandsResult {
+    @inline
     def apply(
         Commands: js.UndefOr[CommandList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7278,6 +7523,7 @@ package ssm {
   }
 
   object ListComplianceItemsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7302,6 +7548,7 @@ package ssm {
   }
 
   object ListComplianceItemsResult {
+    @inline
     def apply(
         ComplianceItems: js.UndefOr[ComplianceItemList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7321,6 +7568,7 @@ package ssm {
   }
 
   object ListComplianceSummariesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7341,6 +7589,7 @@ package ssm {
   }
 
   object ListComplianceSummariesResult {
+    @inline
     def apply(
         ComplianceSummaryItems: js.UndefOr[ComplianceSummaryItemList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7360,6 +7609,7 @@ package ssm {
   }
 
   object ListDocumentVersionsRequest {
+    @inline
     def apply(
         Name: DocumentName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7382,6 +7632,7 @@ package ssm {
   }
 
   object ListDocumentVersionsResult {
+    @inline
     def apply(
         DocumentVersions: js.UndefOr[DocumentVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7402,6 +7653,7 @@ package ssm {
   }
 
   object ListDocumentsRequest {
+    @inline
     def apply(
         DocumentFilterList: js.UndefOr[DocumentFilterList] = js.undefined,
         Filters: js.UndefOr[DocumentKeyValuesFilterList] = js.undefined,
@@ -7424,6 +7676,7 @@ package ssm {
   }
 
   object ListDocumentsResult {
+    @inline
     def apply(
         DocumentIdentifiers: js.UndefOr[DocumentIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7445,6 +7698,7 @@ package ssm {
   }
 
   object ListInventoryEntriesRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         TypeName: InventoryItemTypeName,
@@ -7475,6 +7729,7 @@ package ssm {
   }
 
   object ListInventoryEntriesResult {
+    @inline
     def apply(
         CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
         Entries: js.UndefOr[InventoryItemEntryList] = js.undefined,
@@ -7502,6 +7757,7 @@ package ssm {
   }
 
   object ListResourceComplianceSummariesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -7522,6 +7778,7 @@ package ssm {
   }
 
   object ListResourceComplianceSummariesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceComplianceSummaryItems: js.UndefOr[ResourceComplianceSummaryItemList] = js.undefined
@@ -7542,6 +7799,7 @@ package ssm {
   }
 
   object ListResourceDataSyncRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -7560,6 +7818,7 @@ package ssm {
   }
 
   object ListResourceDataSyncResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceDataSyncItems: js.UndefOr[ResourceDataSyncItemList] = js.undefined
@@ -7578,6 +7837,7 @@ package ssm {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         ResourceType: ResourceTypeForTagging
@@ -7597,6 +7857,7 @@ package ssm {
   }
 
   object ListTagsForResourceResult {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResult = {
@@ -7619,6 +7880,7 @@ package ssm {
   }
 
   object LoggingInfo {
+    @inline
     def apply(
         S3BucketName: S3BucketName,
         S3Region: S3Region,
@@ -7644,6 +7906,7 @@ package ssm {
   }
 
   object MaintenanceWindowAutomationParameters {
+    @inline
     def apply(
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined
@@ -7669,6 +7932,7 @@ package ssm {
   }
 
   object MaintenanceWindowExecution {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
@@ -7719,6 +7983,7 @@ package ssm {
   }
 
   object MaintenanceWindowExecutionTaskIdentity {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
@@ -7762,6 +8027,7 @@ package ssm {
   }
 
   object MaintenanceWindowExecutionTaskInvocationIdentity {
+    @inline
     def apply(
         EndTime: js.UndefOr[DateTime] = js.undefined,
         ExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskExecutionId] = js.undefined,
@@ -7803,6 +8069,7 @@ package ssm {
   }
 
   object MaintenanceWindowFilter {
+    @inline
     def apply(
         Key: js.UndefOr[MaintenanceWindowFilterKey] = js.undefined,
         Values: js.UndefOr[MaintenanceWindowFilterValues] = js.undefined
@@ -7833,6 +8100,7 @@ package ssm {
   }
 
   object MaintenanceWindowIdentity {
+    @inline
     def apply(
         Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
@@ -7872,6 +8140,7 @@ package ssm {
   }
 
   object MaintenanceWindowIdentityForTarget {
+    @inline
     def apply(
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
@@ -7899,6 +8168,7 @@ package ssm {
   }
 
   object MaintenanceWindowLambdaParameters {
+    @inline
     def apply(
         ClientContext: js.UndefOr[MaintenanceWindowLambdaClientContext] = js.undefined,
         Payload: js.UndefOr[MaintenanceWindowLambdaPayload] = js.undefined,
@@ -7941,6 +8211,7 @@ package ssm {
   }
 
   object MaintenanceWindowRunCommandParameters {
+    @inline
     def apply(
         Comment: js.UndefOr[Comment] = js.undefined,
         DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
@@ -7981,6 +8252,7 @@ package ssm {
   }
 
   object MaintenanceWindowStepFunctionsParameters {
+    @inline
     def apply(
         Input: js.UndefOr[MaintenanceWindowStepFunctionsInput] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowStepFunctionsName] = js.undefined
@@ -8007,6 +8279,7 @@ package ssm {
   }
 
   object MaintenanceWindowTarget {
+    @inline
     def apply(
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
@@ -8049,6 +8322,7 @@ package ssm {
   }
 
   object MaintenanceWindowTask {
+    @inline
     def apply(
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -8094,6 +8368,7 @@ package ssm {
   }
 
   object MaintenanceWindowTaskInvocationParameters {
+    @inline
     def apply(
         Automation: js.UndefOr[MaintenanceWindowAutomationParameters] = js.undefined,
         Lambda: js.UndefOr[MaintenanceWindowLambdaParameters] = js.undefined,
@@ -8118,6 +8393,7 @@ package ssm {
   }
 
   object MaintenanceWindowTaskParameterValueExpression {
+    @inline
     def apply(
         Values: js.UndefOr[MaintenanceWindowTaskParameterValueList] = js.undefined
     ): MaintenanceWindowTaskParameterValueExpression = {
@@ -8145,6 +8421,7 @@ package ssm {
   }
 
   object ModifyDocumentPermissionRequest {
+    @inline
     def apply(
         Name: DocumentName,
         PermissionType: DocumentPermissionType,
@@ -8166,6 +8443,7 @@ package ssm {
   trait ModifyDocumentPermissionResponse extends js.Object {}
 
   object ModifyDocumentPermissionResponse {
+    @inline
     def apply(
         ): ModifyDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
@@ -8184,6 +8462,7 @@ package ssm {
   }
 
   object NonCompliantSummary {
+    @inline
     def apply(
         NonCompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
@@ -8206,6 +8485,7 @@ package ssm {
   }
 
   object NotificationConfig {
+    @inline
     def apply(
         NotificationArn: js.UndefOr[NotificationArn] = js.undefined,
         NotificationEvents: js.UndefOr[NotificationEventList] = js.undefined,
@@ -8264,6 +8544,7 @@ package ssm {
   }
 
   object OpsAggregator {
+    @inline
     def apply(
         AggregatorType: js.UndefOr[OpsAggregatorType] = js.undefined,
         Aggregators: js.UndefOr[OpsAggregatorList] = js.undefined,
@@ -8293,6 +8574,7 @@ package ssm {
   }
 
   object OpsEntity {
+    @inline
     def apply(
         Data: js.UndefOr[OpsEntityItemMap] = js.undefined,
         Id: js.UndefOr[OpsEntityId] = js.undefined
@@ -8313,6 +8595,7 @@ package ssm {
   }
 
   object OpsEntityItem {
+    @inline
     def apply(
         Content: js.UndefOr[OpsEntityItemEntryList] = js.undefined
     ): OpsEntityItem = {
@@ -8333,6 +8616,7 @@ package ssm {
   }
 
   object OpsFilter {
+    @inline
     def apply(
         Key: OpsFilterKey,
         Values: OpsFilterValueList,
@@ -8381,6 +8665,7 @@ package ssm {
   }
 
   object OpsItem {
+    @inline
     def apply(
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -8433,6 +8718,7 @@ package ssm {
   }
 
   object OpsItemDataValue {
+    @inline
     def apply(
         Type: js.UndefOr[OpsItemDataType] = js.undefined,
         Value: js.UndefOr[OpsItemDataValueString] = js.undefined
@@ -8455,6 +8741,7 @@ package ssm {
   }
 
   object OpsItemFilter {
+    @inline
     def apply(
         Key: OpsItemFilterKey,
         Operator: OpsItemFilterOperator,
@@ -8522,6 +8809,7 @@ package ssm {
   }
 
   object OpsItemNotification {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined
     ): OpsItemNotification = {
@@ -8557,6 +8845,7 @@ package ssm {
   }
 
   object OpsItemSummary {
+    @inline
     def apply(
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -8594,6 +8883,7 @@ package ssm {
   }
 
   object OutputSource {
+    @inline
     def apply(
         OutputSourceId: js.UndefOr[OutputSourceId] = js.undefined,
         OutputSourceType: js.UndefOr[OutputSourceType] = js.undefined
@@ -8621,6 +8911,7 @@ package ssm {
   }
 
   object Parameter {
+    @inline
     def apply(
         ARN: js.UndefOr[String] = js.undefined,
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
@@ -8664,6 +8955,7 @@ package ssm {
   }
 
   object ParameterHistory {
+    @inline
     def apply(
         AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
         Description: js.UndefOr[ParameterDescription] = js.undefined,
@@ -8706,6 +8998,7 @@ package ssm {
   }
 
   object ParameterInlinePolicy {
+    @inline
     def apply(
         PolicyStatus: js.UndefOr[String] = js.undefined,
         PolicyText: js.UndefOr[String] = js.undefined,
@@ -8737,6 +9030,7 @@ package ssm {
   }
 
   object ParameterMetadata {
+    @inline
     def apply(
         AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
         Description: js.UndefOr[ParameterDescription] = js.undefined,
@@ -8777,6 +9071,7 @@ package ssm {
   }
 
   object ParameterStringFilter {
+    @inline
     def apply(
         Key: ParameterStringFilterKey,
         Option: js.UndefOr[ParameterStringQueryOption] = js.undefined,
@@ -8818,6 +9113,7 @@ package ssm {
   }
 
   object ParametersFilter {
+    @inline
     def apply(
         Key: ParametersFilterKey,
         Values: ParametersFilterValueList
@@ -8860,6 +9156,7 @@ package ssm {
   }
 
   object Patch {
+    @inline
     def apply(
         Classification: js.UndefOr[PatchClassification] = js.undefined,
         ContentUrl: js.UndefOr[PatchContentUrl] = js.undefined,
@@ -8913,6 +9210,7 @@ package ssm {
   }
 
   object PatchBaselineIdentity {
+    @inline
     def apply(
         BaselineDescription: js.UndefOr[BaselineDescription] = js.undefined,
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
@@ -8944,6 +9242,7 @@ package ssm {
   }
 
   object PatchComplianceData {
+    @inline
     def apply(
         Classification: PatchClassification,
         InstalledTime: DateTime,
@@ -9009,6 +9308,7 @@ package ssm {
   }
 
   object PatchFilter {
+    @inline
     def apply(
         Key: PatchFilterKey,
         Values: PatchFilterValueList
@@ -9031,6 +9331,7 @@ package ssm {
   }
 
   object PatchFilterGroup {
+    @inline
     def apply(
         PatchFilters: PatchFilterList
     ): PatchFilterGroup = {
@@ -9068,6 +9369,7 @@ package ssm {
   }
 
   object PatchGroupPatchBaselineMapping {
+    @inline
     def apply(
         BaselineIdentity: js.UndefOr[PatchBaselineIdentity] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
@@ -9096,6 +9398,7 @@ package ssm {
   }
 
   object PatchOrchestratorFilter {
+    @inline
     def apply(
         Key: js.UndefOr[PatchOrchestratorFilterKey] = js.undefined,
         Values: js.UndefOr[PatchOrchestratorFilterValues] = js.undefined
@@ -9130,6 +9433,7 @@ package ssm {
   }
 
   object PatchRule {
+    @inline
     def apply(
         ApproveAfterDays: ApproveAfterDays,
         PatchFilterGroup: PatchFilterGroup,
@@ -9156,6 +9460,7 @@ package ssm {
   }
 
   object PatchRuleGroup {
+    @inline
     def apply(
         PatchRules: PatchRuleList
     ): PatchRuleGroup = {
@@ -9185,6 +9490,7 @@ package ssm {
   }
 
   object PatchSource {
+    @inline
     def apply(
         Configuration: PatchSourceConfiguration,
         Name: PatchSourceName,
@@ -9211,6 +9517,7 @@ package ssm {
   }
 
   object PatchStatus {
+    @inline
     def apply(
         ApprovalDate: js.UndefOr[DateTime] = js.undefined,
         ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
@@ -9252,6 +9559,7 @@ package ssm {
   }
 
   object ProgressCounters {
+    @inline
     def apply(
         CancelledSteps: js.UndefOr[Int] = js.undefined,
         FailedSteps: js.UndefOr[Int] = js.undefined,
@@ -9280,6 +9588,7 @@ package ssm {
   }
 
   object PutComplianceItemsRequest {
+    @inline
     def apply(
         ComplianceType: ComplianceTypeName,
         ExecutionSummary: ComplianceExecutionSummary,
@@ -9305,6 +9614,7 @@ package ssm {
   trait PutComplianceItemsResult extends js.Object {}
 
   object PutComplianceItemsResult {
+    @inline
     def apply(
         ): PutComplianceItemsResult = {
       val __obj = js.Dynamic.literal()
@@ -9320,6 +9630,7 @@ package ssm {
   }
 
   object PutInventoryRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         Items: InventoryItemList
@@ -9339,6 +9650,7 @@ package ssm {
   }
 
   object PutInventoryResult {
+    @inline
     def apply(
         Message: js.UndefOr[PutInventoryMessage] = js.undefined
     ): PutInventoryResult = {
@@ -9363,6 +9675,7 @@ package ssm {
   }
 
   object PutParameterRequest {
+    @inline
     def apply(
         Name: PSParameterName,
         Type: ParameterType,
@@ -9398,6 +9711,7 @@ package ssm {
   }
 
   object PutParameterResult {
+    @inline
     def apply(
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): PutParameterResult = {
@@ -9413,6 +9727,7 @@ package ssm {
   }
 
   object RegisterDefaultPatchBaselineRequest {
+    @inline
     def apply(
         BaselineId: BaselineId
     ): RegisterDefaultPatchBaselineRequest = {
@@ -9430,6 +9745,7 @@ package ssm {
   }
 
   object RegisterDefaultPatchBaselineResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): RegisterDefaultPatchBaselineResult = {
@@ -9446,6 +9762,7 @@ package ssm {
   }
 
   object RegisterPatchBaselineForPatchGroupRequest {
+    @inline
     def apply(
         BaselineId: BaselineId,
         PatchGroup: PatchGroup
@@ -9466,6 +9783,7 @@ package ssm {
   }
 
   object RegisterPatchBaselineForPatchGroupResult {
+    @inline
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
@@ -9489,6 +9807,7 @@ package ssm {
   }
 
   object RegisterTargetWithMaintenanceWindowRequest {
+    @inline
     def apply(
         ResourceType: MaintenanceWindowResourceType,
         Targets: Targets,
@@ -9518,6 +9837,7 @@ package ssm {
   }
 
   object RegisterTargetWithMaintenanceWindowResult {
+    @inline
     def apply(
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): RegisterTargetWithMaintenanceWindowResult = {
@@ -9546,6 +9866,7 @@ package ssm {
   }
 
   object RegisterTaskWithMaintenanceWindowRequest {
+    @inline
     def apply(
         MaxConcurrency: MaxConcurrency,
         MaxErrors: MaxErrors,
@@ -9589,6 +9910,7 @@ package ssm {
   }
 
   object RegisterTaskWithMaintenanceWindowResult {
+    @inline
     def apply(
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): RegisterTaskWithMaintenanceWindowResult = {
@@ -9607,6 +9929,7 @@ package ssm {
   }
 
   object RelatedOpsItem {
+    @inline
     def apply(
         OpsItemId: String
     ): RelatedOpsItem = {
@@ -9626,6 +9949,7 @@ package ssm {
   }
 
   object RemoveTagsFromResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         ResourceType: ResourceTypeForTagging,
@@ -9645,6 +9969,7 @@ package ssm {
   trait RemoveTagsFromResourceResult extends js.Object {}
 
   object RemoveTagsFromResourceResult {
+    @inline
     def apply(
         ): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -9662,6 +9987,7 @@ package ssm {
   }
 
   object ResetServiceSettingRequest {
+    @inline
     def apply(
         SettingId: ServiceSettingId
     ): ResetServiceSettingRequest = {
@@ -9682,6 +10008,7 @@ package ssm {
   }
 
   object ResetServiceSettingResult {
+    @inline
     def apply(
         ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
     ): ResetServiceSettingResult = {
@@ -9701,6 +10028,7 @@ package ssm {
   }
 
   object ResolvedTargets {
+    @inline
     def apply(
         ParameterValues: js.UndefOr[TargetParameterList] = js.undefined,
         Truncated: js.UndefOr[Boolean] = js.undefined
@@ -9728,6 +10056,7 @@ package ssm {
   }
 
   object ResourceComplianceSummaryItem {
+    @inline
     def apply(
         ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
         CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
@@ -9766,6 +10095,7 @@ package ssm {
   }
 
   object ResourceDataSyncItem {
+    @inline
     def apply(
         LastStatus: js.UndefOr[LastResourceDataSyncStatus] = js.undefined,
         LastSuccessfulSyncTime: js.UndefOr[LastSuccessfulResourceDataSyncTime] = js.undefined,
@@ -9800,6 +10130,7 @@ package ssm {
   }
 
   object ResourceDataSyncS3Destination {
+    @inline
     def apply(
         BucketName: ResourceDataSyncS3BucketName,
         Region: ResourceDataSyncS3Region,
@@ -9854,6 +10185,7 @@ package ssm {
   }
 
   object ResultAttribute {
+    @inline
     def apply(
         TypeName: InventoryItemTypeName
     ): ResultAttribute = {
@@ -9871,6 +10203,7 @@ package ssm {
   }
 
   object ResumeSessionRequest {
+    @inline
     def apply(
         SessionId: SessionId
     ): ResumeSessionRequest = {
@@ -9890,6 +10223,7 @@ package ssm {
   }
 
   object ResumeSessionResponse {
+    @inline
     def apply(
         SessionId: js.UndefOr[SessionId] = js.undefined,
         StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
@@ -9914,6 +10248,7 @@ package ssm {
   }
 
   object S3OutputLocation {
+    @inline
     def apply(
         OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
         OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
@@ -9936,6 +10271,7 @@ package ssm {
   }
 
   object S3OutputUrl {
+    @inline
     def apply(
         OutputUrl: js.UndefOr[Url] = js.undefined
     ): S3OutputUrl = {
@@ -9956,6 +10292,7 @@ package ssm {
   }
 
   object ScheduledWindowExecution {
+    @inline
     def apply(
         ExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
@@ -9977,6 +10314,7 @@ package ssm {
   }
 
   object SendAutomationSignalRequest {
+    @inline
     def apply(
         AutomationExecutionId: AutomationExecutionId,
         SignalType: SignalType,
@@ -9996,6 +10334,7 @@ package ssm {
   trait SendAutomationSignalResult extends js.Object {}
 
   object SendAutomationSignalResult {
+    @inline
     def apply(
         ): SendAutomationSignalResult = {
       val __obj = js.Dynamic.literal()
@@ -10026,6 +10365,7 @@ package ssm {
   }
 
   object SendCommandRequest {
+    @inline
     def apply(
         DocumentName: DocumentARN,
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
@@ -10075,6 +10415,7 @@ package ssm {
   }
 
   object SendCommandResult {
+    @inline
     def apply(
         Command: js.UndefOr[Command] = js.undefined
     ): SendCommandResult = {
@@ -10100,6 +10441,7 @@ package ssm {
   }
 
   object ServiceSetting {
+    @inline
     def apply(
         ARN: js.UndefOr[String] = js.undefined,
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
@@ -10136,6 +10478,7 @@ package ssm {
   }
 
   object Session {
+    @inline
     def apply(
         Details: js.UndefOr[SessionDetails] = js.undefined,
         DocumentName: js.UndefOr[DocumentName] = js.undefined,
@@ -10171,6 +10514,7 @@ package ssm {
   }
 
   object SessionFilter {
+    @inline
     def apply(
         key: SessionFilterKey,
         value: SessionFilterValue
@@ -10204,6 +10548,7 @@ package ssm {
   }
 
   object SessionManagerOutputUrl {
+    @inline
     def apply(
         CloudWatchOutputUrl: js.UndefOr[SessionManagerCloudWatchOutputUrl] = js.undefined,
         S3OutputUrl: js.UndefOr[SessionManagerS3OutputUrl] = js.undefined
@@ -10247,6 +10592,7 @@ package ssm {
   }
 
   object SeveritySummary {
+    @inline
     def apply(
         CriticalCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         HighCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
@@ -10282,6 +10628,7 @@ package ssm {
   }
 
   object StartAssociationsOnceRequest {
+    @inline
     def apply(
         AssociationIds: AssociationIdList
     ): StartAssociationsOnceRequest = {
@@ -10297,6 +10644,7 @@ package ssm {
   trait StartAssociationsOnceResult extends js.Object {}
 
   object StartAssociationsOnceResult {
+    @inline
     def apply(
         ): StartAssociationsOnceResult = {
       val __obj = js.Dynamic.literal()
@@ -10321,6 +10669,7 @@ package ssm {
   }
 
   object StartAutomationExecutionRequest {
+    @inline
     def apply(
         DocumentName: DocumentARN,
         ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
@@ -10358,6 +10707,7 @@ package ssm {
   }
 
   object StartAutomationExecutionResult {
+    @inline
     def apply(
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined
     ): StartAutomationExecutionResult = {
@@ -10375,6 +10725,7 @@ package ssm {
   }
 
   object StartSessionRequest {
+    @inline
     def apply(
         Target: SessionTarget,
         DocumentName: js.UndefOr[DocumentARN] = js.undefined,
@@ -10398,6 +10749,7 @@ package ssm {
   }
 
   object StartSessionResponse {
+    @inline
     def apply(
         SessionId: js.UndefOr[SessionId] = js.undefined,
         StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
@@ -10441,6 +10793,7 @@ package ssm {
   }
 
   object StepExecution {
+    @inline
     def apply(
         Action: js.UndefOr[AutomationActionName] = js.undefined,
         ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
@@ -10502,6 +10855,7 @@ package ssm {
   }
 
   object StepExecutionFilter {
+    @inline
     def apply(
         Key: StepExecutionFilterKey,
         Values: StepExecutionFilterValueList
@@ -10535,6 +10889,7 @@ package ssm {
   }
 
   object StopAutomationExecutionRequest {
+    @inline
     def apply(
         AutomationExecutionId: AutomationExecutionId,
         Type: js.UndefOr[StopType] = js.undefined
@@ -10552,6 +10907,7 @@ package ssm {
   trait StopAutomationExecutionResult extends js.Object {}
 
   object StopAutomationExecutionResult {
+    @inline
     def apply(
         ): StopAutomationExecutionResult = {
       val __obj = js.Dynamic.literal()
@@ -10577,6 +10933,7 @@ package ssm {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -10613,6 +10970,7 @@ package ssm {
   }
 
   object Target {
+    @inline
     def apply(
         Key: js.UndefOr[TargetKey] = js.undefined,
         Values: js.UndefOr[TargetValues] = js.undefined
@@ -10637,6 +10995,7 @@ package ssm {
   }
 
   object TargetLocation {
+    @inline
     def apply(
         Accounts: js.UndefOr[Accounts] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
@@ -10662,6 +11021,7 @@ package ssm {
   }
 
   object TerminateSessionRequest {
+    @inline
     def apply(
         SessionId: SessionId
     ): TerminateSessionRequest = {
@@ -10679,6 +11039,7 @@ package ssm {
   }
 
   object TerminateSessionResponse {
+    @inline
     def apply(
         SessionId: js.UndefOr[SessionId] = js.undefined
     ): TerminateSessionResponse = {
@@ -10706,6 +11067,7 @@ package ssm {
   }
 
   object UpdateAssociationRequest {
+    @inline
     def apply(
         AssociationId: AssociationId,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -10749,6 +11111,7 @@ package ssm {
   }
 
   object UpdateAssociationResult {
+    @inline
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): UpdateAssociationResult = {
@@ -10766,6 +11129,7 @@ package ssm {
   }
 
   object UpdateAssociationStatusRequest {
+    @inline
     def apply(
         AssociationStatus: AssociationStatus,
         InstanceId: InstanceId,
@@ -10787,6 +11151,7 @@ package ssm {
   }
 
   object UpdateAssociationStatusResult {
+    @inline
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): UpdateAssociationStatusResult = {
@@ -10803,6 +11168,7 @@ package ssm {
   }
 
   object UpdateDocumentDefaultVersionRequest {
+    @inline
     def apply(
         DocumentVersion: DocumentVersionNumber,
         Name: DocumentName
@@ -10822,6 +11188,7 @@ package ssm {
   }
 
   object UpdateDocumentDefaultVersionResult {
+    @inline
     def apply(
         Description: js.UndefOr[DocumentDefaultVersionDescription] = js.undefined
     ): UpdateDocumentDefaultVersionResult = {
@@ -10843,6 +11210,7 @@ package ssm {
   }
 
   object UpdateDocumentRequest {
+    @inline
     def apply(
         Content: DocumentContent,
         Name: DocumentName,
@@ -10872,6 +11240,7 @@ package ssm {
   }
 
   object UpdateDocumentResult {
+    @inline
     def apply(
         DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
     ): UpdateDocumentResult = {
@@ -10898,6 +11267,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
@@ -10947,6 +11317,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowResult {
+    @inline
     def apply(
         AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
         Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
@@ -10988,6 +11359,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTargetRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTargetId: MaintenanceWindowTargetId,
@@ -11022,6 +11394,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTargetResult {
+    @inline
     def apply(
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
@@ -11060,6 +11433,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTaskRequest {
+    @inline
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId,
@@ -11115,6 +11489,7 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTaskResult {
+    @inline
     def apply(
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -11155,6 +11530,7 @@ package ssm {
   }
 
   object UpdateManagedInstanceRoleRequest {
+    @inline
     def apply(
         IamRole: IamRole,
         InstanceId: ManagedInstanceId
@@ -11172,6 +11548,7 @@ package ssm {
   trait UpdateManagedInstanceRoleResult extends js.Object {}
 
   object UpdateManagedInstanceRoleResult {
+    @inline
     def apply(
         ): UpdateManagedInstanceRoleResult = {
       val __obj = js.Dynamic.literal()
@@ -11194,6 +11571,7 @@ package ssm {
   }
 
   object UpdateOpsItemRequest {
+    @inline
     def apply(
         OpsItemId: OpsItemId,
         Description: js.UndefOr[OpsItemDescription] = js.undefined,
@@ -11225,6 +11603,7 @@ package ssm {
   trait UpdateOpsItemResponse extends js.Object {}
 
   object UpdateOpsItemResponse {
+    @inline
     def apply(
         ): UpdateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
@@ -11250,6 +11629,7 @@ package ssm {
   }
 
   object UpdatePatchBaselineRequest {
+    @inline
     def apply(
         BaselineId: BaselineId,
         ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
@@ -11306,6 +11686,7 @@ package ssm {
   }
 
   object UpdatePatchBaselineResult {
+    @inline
     def apply(
         ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
         ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
@@ -11355,6 +11736,7 @@ package ssm {
   }
 
   object UpdateServiceSettingRequest {
+    @inline
     def apply(
         SettingId: ServiceSettingId,
         SettingValue: ServiceSettingValue
@@ -11375,6 +11757,7 @@ package ssm {
   trait UpdateServiceSettingResult extends js.Object {}
 
   object UpdateServiceSettingResult {
+    @inline
     def apply(
         ): UpdateServiceSettingResult = {
       val __obj = js.Dynamic.literal()

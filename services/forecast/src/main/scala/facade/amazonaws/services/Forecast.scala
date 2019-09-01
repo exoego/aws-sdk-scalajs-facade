@@ -56,59 +56,63 @@ package object forecast {
 
   implicit final class ForecastOps(private val service: Forecast) extends AnyVal {
 
-    def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
-    def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
+    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
       service.createDatasetGroup(params).promise.toFuture
-    def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] =
-      service.createDatasetImportJob(params).promise.toFuture
-    def createForecastExportJobFuture(params: CreateForecastExportJobRequest): Future[CreateForecastExportJobResponse] =
-      service.createForecastExportJob(params).promise.toFuture
-    def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] =
+    @inline def createDatasetImportJobFuture(
+        params: CreateDatasetImportJobRequest
+    ): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise.toFuture
+    @inline def createForecastExportJobFuture(
+        params: CreateForecastExportJobRequest
+    ): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise.toFuture
+    @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] =
       service.createForecast(params).promise.toFuture
-    def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] =
+    @inline def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] =
       service.createPredictor(params).promise.toFuture
-    def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
       service.deleteDataset(params).promise.toFuture
-    def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
+    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
       service.deleteDatasetGroup(params).promise.toFuture
-    def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] =
+    @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] =
       service.deleteDatasetImportJob(params).promise.toFuture
-    def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] =
+    @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] =
       service.deleteForecastExportJob(params).promise.toFuture
-    def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] =
+    @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] =
       service.deleteForecast(params).promise.toFuture
-    def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] =
+    @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] =
       service.deletePredictor(params).promise.toFuture
-    def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
       service.describeDataset(params).promise.toFuture
-    def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
+    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
       service.describeDatasetGroup(params).promise.toFuture
-    def describeDatasetImportJobFuture(
+    @inline def describeDatasetImportJobFuture(
         params: DescribeDatasetImportJobRequest
     ): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise.toFuture
-    def describeForecastExportJobFuture(
+    @inline def describeForecastExportJobFuture(
         params: DescribeForecastExportJobRequest
     ): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise.toFuture
-    def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] =
+    @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] =
       service.describeForecast(params).promise.toFuture
-    def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] =
+    @inline def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] =
       service.describePredictor(params).promise.toFuture
-    def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] =
+    @inline def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] =
       service.getAccuracyMetrics(params).promise.toFuture
-    def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
+    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
       service.listDatasetGroups(params).promise.toFuture
-    def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] =
-      service.listDatasetImportJobs(params).promise.toFuture
-    def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
+    @inline def listDatasetImportJobsFuture(
+        params: ListDatasetImportJobsRequest
+    ): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise.toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
       service.listDatasets(params).promise.toFuture
-    def listForecastExportJobsFuture(params: ListForecastExportJobsRequest): Future[ListForecastExportJobsResponse] =
-      service.listForecastExportJobs(params).promise.toFuture
-    def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] =
+    @inline def listForecastExportJobsFuture(
+        params: ListForecastExportJobsRequest
+    ): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise.toFuture
+    @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] =
       service.listForecasts(params).promise.toFuture
-    def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] =
+    @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] =
       service.listPredictors(params).promise.toFuture
-    def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] =
+    @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] =
       service.updateDatasetGroup(params).promise.toFuture
   }
 }
@@ -172,6 +176,7 @@ package forecast {
   }
 
   object CategoricalParameterRange {
+    @inline
     def apply(
         Name: Name,
         Values: Values
@@ -197,6 +202,7 @@ package forecast {
   }
 
   object ContinuousParameterRange {
+    @inline
     def apply(
         MaxValue: Double,
         MinValue: Double,
@@ -222,6 +228,7 @@ package forecast {
   }
 
   object CreateDatasetGroupRequest {
+    @inline
     def apply(
         DatasetGroupName: Name,
         Domain: Domain,
@@ -243,6 +250,7 @@ package forecast {
   }
 
   object CreateDatasetGroupResponse {
+    @inline
     def apply(
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetGroupResponse = {
@@ -261,6 +269,7 @@ package forecast {
   }
 
   object CreateDatasetImportJobRequest {
+    @inline
     def apply(
         DataSource: DataSource,
         DatasetArn: Arn,
@@ -284,6 +293,7 @@ package forecast {
   }
 
   object CreateDatasetImportJobResponse {
+    @inline
     def apply(
         DatasetImportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetImportJobResponse = {
@@ -304,6 +314,7 @@ package forecast {
   }
 
   object CreateDatasetRequest {
+    @inline
     def apply(
         DatasetName: Name,
         DatasetType: DatasetType,
@@ -331,6 +342,7 @@ package forecast {
   }
 
   object CreateDatasetResponse {
+    @inline
     def apply(
         DatasetArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetResponse = {
@@ -348,6 +360,7 @@ package forecast {
   }
 
   object CreateForecastExportJobRequest {
+    @inline
     def apply(
         Destination: DataDestination,
         ForecastArn: Arn,
@@ -369,6 +382,7 @@ package forecast {
   }
 
   object CreateForecastExportJobResponse {
+    @inline
     def apply(
         ForecastExportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateForecastExportJobResponse = {
@@ -385,6 +399,7 @@ package forecast {
   }
 
   object CreateForecastRequest {
+    @inline
     def apply(
         ForecastName: Name,
         PredictorArn: Arn
@@ -404,6 +419,7 @@ package forecast {
   }
 
   object CreateForecastResponse {
+    @inline
     def apply(
         ForecastArn: js.UndefOr[Arn] = js.undefined
     ): CreateForecastResponse = {
@@ -429,6 +445,7 @@ package forecast {
   }
 
   object CreatePredictorRequest {
+    @inline
     def apply(
         FeaturizationConfig: FeaturizationConfig,
         ForecastHorizon: Int,
@@ -466,6 +483,7 @@ package forecast {
   }
 
   object CreatePredictorResponse {
+    @inline
     def apply(
         PredictorArn: js.UndefOr[Arn] = js.undefined
     ): CreatePredictorResponse = {
@@ -484,6 +502,7 @@ package forecast {
   }
 
   object DataDestination {
+    @inline
     def apply(
         S3Config: S3Config
     ): DataDestination = {
@@ -504,6 +523,7 @@ package forecast {
   }
 
   object DataSource {
+    @inline
     def apply(
         S3Config: S3Config
     ): DataSource = {
@@ -527,6 +547,7 @@ package forecast {
   }
 
   object DatasetGroupSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -557,6 +578,7 @@ package forecast {
   }
 
   object DatasetImportJobSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DataSource: js.UndefOr[DataSource] = js.undefined,
@@ -592,6 +614,7 @@ package forecast {
   }
 
   object DatasetSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetArn: js.UndefOr[Arn] = js.undefined,
@@ -625,6 +648,7 @@ package forecast {
   }
 
   object DeleteDatasetGroupRequest {
+    @inline
     def apply(
         DatasetGroupArn: Arn
     ): DeleteDatasetGroupRequest = {
@@ -642,6 +666,7 @@ package forecast {
   }
 
   object DeleteDatasetImportJobRequest {
+    @inline
     def apply(
         DatasetImportJobArn: Arn
     ): DeleteDatasetImportJobRequest = {
@@ -659,6 +684,7 @@ package forecast {
   }
 
   object DeleteDatasetRequest {
+    @inline
     def apply(
         DatasetArn: Arn
     ): DeleteDatasetRequest = {
@@ -676,6 +702,7 @@ package forecast {
   }
 
   object DeleteForecastExportJobRequest {
+    @inline
     def apply(
         ForecastExportJobArn: Arn
     ): DeleteForecastExportJobRequest = {
@@ -693,6 +720,7 @@ package forecast {
   }
 
   object DeleteForecastRequest {
+    @inline
     def apply(
         ForecastArn: Arn
     ): DeleteForecastRequest = {
@@ -710,6 +738,7 @@ package forecast {
   }
 
   object DeletePredictorRequest {
+    @inline
     def apply(
         PredictorArn: Arn
     ): DeletePredictorRequest = {
@@ -727,6 +756,7 @@ package forecast {
   }
 
   object DescribeDatasetGroupRequest {
+    @inline
     def apply(
         DatasetGroupArn: Arn
     ): DescribeDatasetGroupRequest = {
@@ -750,6 +780,7 @@ package forecast {
   }
 
   object DescribeDatasetGroupResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetArns: js.UndefOr[ArnList] = js.undefined,
@@ -777,6 +808,7 @@ package forecast {
   }
 
   object DescribeDatasetImportJobRequest {
+    @inline
     def apply(
         DatasetImportJobArn: Arn
     ): DescribeDatasetImportJobRequest = {
@@ -804,6 +836,7 @@ package forecast {
   }
 
   object DescribeDatasetImportJobResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DataSize: js.UndefOr[Double] = js.undefined,
@@ -839,6 +872,7 @@ package forecast {
   }
 
   object DescribeDatasetRequest {
+    @inline
     def apply(
         DatasetArn: Arn
     ): DescribeDatasetRequest = {
@@ -865,6 +899,7 @@ package forecast {
   }
 
   object DescribeDatasetResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DataFrequency: js.UndefOr[Frequency] = js.undefined,
@@ -898,6 +933,7 @@ package forecast {
   }
 
   object DescribeForecastExportJobRequest {
+    @inline
     def apply(
         ForecastExportJobArn: Arn
     ): DescribeForecastExportJobRequest = {
@@ -922,6 +958,7 @@ package forecast {
   }
 
   object DescribeForecastExportJobResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Destination: js.UndefOr[DataDestination] = js.undefined,
@@ -951,6 +988,7 @@ package forecast {
   }
 
   object DescribeForecastRequest {
+    @inline
     def apply(
         ForecastArn: Arn
     ): DescribeForecastRequest = {
@@ -975,6 +1013,7 @@ package forecast {
   }
 
   object DescribeForecastResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -1004,6 +1043,7 @@ package forecast {
   }
 
   object DescribePredictorRequest {
+    @inline
     def apply(
         PredictorArn: Arn
     ): DescribePredictorRequest = {
@@ -1038,6 +1078,7 @@ package forecast {
   }
 
   object DescribePredictorResponse {
+    @inline
     def apply(
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
         AutoMLAlgorithmArns: js.UndefOr[ArnList] = js.undefined,
@@ -1104,6 +1145,7 @@ package forecast {
   }
 
   object EncryptionConfig {
+    @inline
     def apply(
         KMSKeyArn: KMSKeyArn,
         RoleArn: Arn
@@ -1128,6 +1170,7 @@ package forecast {
   }
 
   object EvaluationParameters {
+    @inline
     def apply(
         BackTestWindowOffset: js.UndefOr[Int] = js.undefined,
         NumberOfBacktestWindows: js.UndefOr[Int] = js.undefined
@@ -1149,6 +1192,7 @@ package forecast {
   }
 
   object EvaluationResult {
+    @inline
     def apply(
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
         TestWindows: js.UndefOr[TestWindows] = js.undefined
@@ -1185,6 +1229,7 @@ package forecast {
   }
 
   object Featurization {
+    @inline
     def apply(
         AttributeName: Name,
         FeaturizationPipeline: js.UndefOr[FeaturizationPipeline] = js.undefined
@@ -1211,6 +1256,7 @@ package forecast {
   }
 
   object FeaturizationConfig {
+    @inline
     def apply(
         ForecastFrequency: Frequency,
         Featurizations: js.UndefOr[Featurizations] = js.undefined,
@@ -1241,6 +1287,7 @@ package forecast {
   }
 
   object FeaturizationMethod {
+    @inline
     def apply(
         FeaturizationMethodName: FeaturizationMethodName,
         FeaturizationMethodParameters: js.UndefOr[FeaturizationMethodParameters] = js.undefined
@@ -1273,6 +1320,7 @@ package forecast {
   }
 
   object Filter {
+    @inline
     def apply(
         Condition: FilterConditionString,
         Key: String,
@@ -1310,6 +1358,7 @@ package forecast {
   }
 
   object ForecastExportJobSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Destination: js.UndefOr[DataDestination] = js.undefined,
@@ -1347,6 +1396,7 @@ package forecast {
   }
 
   object ForecastSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[String] = js.undefined,
@@ -1376,6 +1426,7 @@ package forecast {
   }
 
   object GetAccuracyMetricsRequest {
+    @inline
     def apply(
         PredictorArn: Arn
     ): GetAccuracyMetricsRequest = {
@@ -1393,6 +1444,7 @@ package forecast {
   }
 
   object GetAccuracyMetricsResponse {
+    @inline
     def apply(
         PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults] = js.undefined
     ): GetAccuracyMetricsResponse = {
@@ -1415,6 +1467,7 @@ package forecast {
   }
 
   object HyperParameterTuningJobConfig {
+    @inline
     def apply(
         ParameterRanges: js.UndefOr[ParameterRanges] = js.undefined
     ): HyperParameterTuningJobConfig = {
@@ -1434,6 +1487,7 @@ package forecast {
   }
 
   object InputDataConfig {
+    @inline
     def apply(
         DatasetGroupArn: Arn,
         SupplementaryFeatures: js.UndefOr[SupplementaryFeatures] = js.undefined
@@ -1459,6 +1513,7 @@ package forecast {
   }
 
   object IntegerParameterRange {
+    @inline
     def apply(
         MaxValue: Int,
         MinValue: Int,
@@ -1483,6 +1538,7 @@ package forecast {
   }
 
   object ListDatasetGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1501,6 +1557,7 @@ package forecast {
   }
 
   object ListDatasetGroupsResponse {
+    @inline
     def apply(
         DatasetGroups: js.UndefOr[DatasetGroups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1520,6 +1577,7 @@ package forecast {
   }
 
   object ListDatasetImportJobsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1540,6 +1598,7 @@ package forecast {
   }
 
   object ListDatasetImportJobsResponse {
+    @inline
     def apply(
         DatasetImportJobs: js.UndefOr[DatasetImportJobs] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1558,6 +1617,7 @@ package forecast {
   }
 
   object ListDatasetsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1576,6 +1636,7 @@ package forecast {
   }
 
   object ListDatasetsResponse {
+    @inline
     def apply(
         Datasets: js.UndefOr[Datasets] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1595,6 +1656,7 @@ package forecast {
   }
 
   object ListForecastExportJobsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1615,6 +1677,7 @@ package forecast {
   }
 
   object ListForecastExportJobsResponse {
+    @inline
     def apply(
         ForecastExportJobs: js.UndefOr[ForecastExportJobs] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1634,6 +1697,7 @@ package forecast {
   }
 
   object ListForecastsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1654,6 +1718,7 @@ package forecast {
   }
 
   object ListForecastsResponse {
+    @inline
     def apply(
         Forecasts: js.UndefOr[Forecasts] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1673,6 +1738,7 @@ package forecast {
   }
 
   object ListPredictorsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1693,6 +1759,7 @@ package forecast {
   }
 
   object ListPredictorsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Predictors: js.UndefOr[Predictors] = js.undefined
@@ -1714,6 +1781,7 @@ package forecast {
   }
 
   object Metrics {
+    @inline
     def apply(
         RMSE: js.UndefOr[Double] = js.undefined,
         WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses] = js.undefined
@@ -1736,6 +1804,7 @@ package forecast {
   }
 
   object ParameterRanges {
+    @inline
     def apply(
         CategoricalParameterRanges: js.UndefOr[CategoricalParameterRanges] = js.undefined,
         ContinuousParameterRanges: js.UndefOr[ContinuousParameterRanges] = js.undefined,
@@ -1768,6 +1837,7 @@ package forecast {
   }
 
   object PredictorSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -1800,6 +1870,7 @@ package forecast {
   }
 
   object S3Config {
+    @inline
     def apply(
         Path: S3Path,
         RoleArn: Arn,
@@ -1833,6 +1904,7 @@ package forecast {
   }
 
   object Schema {
+    @inline
     def apply(
         Attributes: js.UndefOr[SchemaAttributes] = js.undefined
     ): Schema = {
@@ -1852,6 +1924,7 @@ package forecast {
   }
 
   object SchemaAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[Name] = js.undefined,
         AttributeType: js.UndefOr[AttributeType] = js.undefined
@@ -1879,6 +1952,7 @@ package forecast {
   }
 
   object Statistics {
+    @inline
     def apply(
         Avg: js.UndefOr[Double] = js.undefined,
         Count: js.UndefOr[Int] = js.undefined,
@@ -1913,6 +1987,7 @@ package forecast {
   }
 
   object SupplementaryFeature {
+    @inline
     def apply(
         Name: Name,
         Value: Value
@@ -1933,6 +2008,7 @@ package forecast {
   }
 
   object UpdateDatasetGroupRequest {
+    @inline
     def apply(
         DatasetArns: ArnList,
         DatasetGroupArn: Arn
@@ -1950,6 +2026,7 @@ package forecast {
   trait UpdateDatasetGroupResponse extends js.Object {}
 
   object UpdateDatasetGroupResponse {
+    @inline
     def apply(
         ): UpdateDatasetGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1968,6 +2045,7 @@ package forecast {
   }
 
   object WeightedQuantileLoss {
+    @inline
     def apply(
         LossValue: js.UndefOr[Double] = js.undefined,
         Quantile: js.UndefOr[Double] = js.undefined
@@ -1993,6 +2071,7 @@ package forecast {
   }
 
   object WindowSummary {
+    @inline
     def apply(
         EvaluationType: js.UndefOr[EvaluationType] = js.undefined,
         ItemCount: js.UndefOr[Int] = js.undefined,

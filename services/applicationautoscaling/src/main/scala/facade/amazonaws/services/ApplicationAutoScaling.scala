@@ -46,29 +46,33 @@ package object applicationautoscaling {
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
-    def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
+    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
       service.deleteScalingPolicy(params).promise.toFuture
-    def deleteScheduledActionFuture(params: DeleteScheduledActionRequest): Future[DeleteScheduledActionResponse] =
-      service.deleteScheduledAction(params).promise.toFuture
-    def deregisterScalableTargetFuture(
+    @inline def deleteScheduledActionFuture(
+        params: DeleteScheduledActionRequest
+    ): Future[DeleteScheduledActionResponse] = service.deleteScheduledAction(params).promise.toFuture
+    @inline def deregisterScalableTargetFuture(
         params: DeregisterScalableTargetRequest
     ): Future[DeregisterScalableTargetResponse] = service.deregisterScalableTarget(params).promise.toFuture
-    def describeScalableTargetsFuture(params: DescribeScalableTargetsRequest): Future[DescribeScalableTargetsResponse] =
-      service.describeScalableTargets(params).promise.toFuture
-    def describeScalingActivitiesFuture(
+    @inline def describeScalableTargetsFuture(
+        params: DescribeScalableTargetsRequest
+    ): Future[DescribeScalableTargetsResponse] = service.describeScalableTargets(params).promise.toFuture
+    @inline def describeScalingActivitiesFuture(
         params: DescribeScalingActivitiesRequest
     ): Future[DescribeScalingActivitiesResponse] = service.describeScalingActivities(params).promise.toFuture
-    def describeScalingPoliciesFuture(params: DescribeScalingPoliciesRequest): Future[DescribeScalingPoliciesResponse] =
-      service.describeScalingPolicies(params).promise.toFuture
-    def describeScheduledActionsFuture(
+    @inline def describeScalingPoliciesFuture(
+        params: DescribeScalingPoliciesRequest
+    ): Future[DescribeScalingPoliciesResponse] = service.describeScalingPolicies(params).promise.toFuture
+    @inline def describeScheduledActionsFuture(
         params: DescribeScheduledActionsRequest
     ): Future[DescribeScheduledActionsResponse] = service.describeScheduledActions(params).promise.toFuture
-    def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
       service.putScalingPolicy(params).promise.toFuture
-    def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
+    @inline def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
       service.putScheduledAction(params).promise.toFuture
-    def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] =
-      service.registerScalableTarget(params).promise.toFuture
+    @inline def registerScalableTargetFuture(
+        params: RegisterScalableTargetRequest
+    ): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise.toFuture
   }
 }
 
@@ -115,6 +119,7 @@ package applicationautoscaling {
   }
 
   object Alarm {
+    @inline
     def apply(
         AlarmARN: ResourceId,
         AlarmName: ResourceId
@@ -145,6 +150,7 @@ package applicationautoscaling {
   }
 
   object CustomizedMetricSpecification {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: MetricNamespace,
@@ -173,6 +179,7 @@ package applicationautoscaling {
   }
 
   object DeleteScalingPolicyRequest {
+    @inline
     def apply(
         PolicyName: ResourceIdMaxLen1600,
         ResourceId: ResourceIdMaxLen1600,
@@ -194,6 +201,7 @@ package applicationautoscaling {
   trait DeleteScalingPolicyResponse extends js.Object {}
 
   object DeleteScalingPolicyResponse {
+    @inline
     def apply(
         ): DeleteScalingPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -211,6 +219,7 @@ package applicationautoscaling {
   }
 
   object DeleteScheduledActionRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
@@ -232,6 +241,7 @@ package applicationautoscaling {
   trait DeleteScheduledActionResponse extends js.Object {}
 
   object DeleteScheduledActionResponse {
+    @inline
     def apply(
         ): DeleteScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
@@ -248,6 +258,7 @@ package applicationautoscaling {
   }
 
   object DeregisterScalableTargetRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
@@ -267,6 +278,7 @@ package applicationautoscaling {
   trait DeregisterScalableTargetResponse extends js.Object {}
 
   object DeregisterScalableTargetResponse {
+    @inline
     def apply(
         ): DeregisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
@@ -285,6 +297,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalableTargetsRequest {
+    @inline
     def apply(
         ServiceNamespace: ServiceNamespace,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -311,6 +324,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalableTargetsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalableTargets: js.UndefOr[ScalableTargets] = js.undefined
@@ -332,6 +346,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalingActivitiesRequest {
+    @inline
     def apply(
         ServiceNamespace: ServiceNamespace,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -358,6 +373,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalingActivitiesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingActivities: js.UndefOr[ScalingActivities] = js.undefined
@@ -380,6 +396,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalingPoliciesRequest {
+    @inline
     def apply(
         ServiceNamespace: ServiceNamespace,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -408,6 +425,7 @@ package applicationautoscaling {
   }
 
   object DescribeScalingPoliciesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
@@ -430,6 +448,7 @@ package applicationautoscaling {
   }
 
   object DescribeScheduledActionsRequest {
+    @inline
     def apply(
         ServiceNamespace: ServiceNamespace,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -458,6 +477,7 @@ package applicationautoscaling {
   }
 
   object DescribeScheduledActionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScheduledActions: js.UndefOr[ScheduledActions] = js.undefined
@@ -487,6 +507,7 @@ package applicationautoscaling {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         Name: MetricDimensionName,
         Value: MetricDimensionValue
@@ -557,6 +578,7 @@ package applicationautoscaling {
   }
 
   object PredefinedMetricSpecification {
+    @inline
     def apply(
         PredefinedMetricType: MetricType,
         ResourceLabel: js.UndefOr[ResourceLabel] = js.undefined
@@ -582,6 +604,7 @@ package applicationautoscaling {
   }
 
   object PutScalingPolicyRequest {
+    @inline
     def apply(
         PolicyName: PolicyName,
         ResourceId: ResourceIdMaxLen1600,
@@ -616,6 +639,7 @@ package applicationautoscaling {
   }
 
   object PutScalingPolicyResponse {
+    @inline
     def apply(
         PolicyARN: ResourceIdMaxLen1600,
         Alarms: js.UndefOr[Alarms] = js.undefined
@@ -642,6 +666,7 @@ package applicationautoscaling {
   }
 
   object PutScheduledActionRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
@@ -671,6 +696,7 @@ package applicationautoscaling {
   trait PutScheduledActionResponse extends js.Object {}
 
   object PutScheduledActionResponse {
+    @inline
     def apply(
         ): PutScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
@@ -690,6 +716,7 @@ package applicationautoscaling {
   }
 
   object RegisterScalableTargetRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
@@ -715,6 +742,7 @@ package applicationautoscaling {
   trait RegisterScalableTargetResponse extends js.Object {}
 
   object RegisterScalableTargetResponse {
+    @inline
     def apply(
         ): RegisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
@@ -768,6 +796,7 @@ package applicationautoscaling {
   }
 
   object ScalableTarget {
+    @inline
     def apply(
         CreationTime: TimestampType,
         MaxCapacity: ResourceCapacity,
@@ -801,6 +830,7 @@ package applicationautoscaling {
   }
 
   object ScalableTargetAction {
+    @inline
     def apply(
         MaxCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
         MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined
@@ -831,6 +861,7 @@ package applicationautoscaling {
   }
 
   object ScalingActivity {
+    @inline
     def apply(
         ActivityId: ResourceId,
         Cause: XmlString,
@@ -891,6 +922,7 @@ package applicationautoscaling {
   }
 
   object ScalingPolicy {
+    @inline
     def apply(
         CreationTime: TimestampType,
         PolicyARN: ResourceIdMaxLen1600,
@@ -942,6 +974,7 @@ package applicationautoscaling {
   }
 
   object ScheduledAction {
+    @inline
     def apply(
         CreationTime: TimestampType,
         ResourceId: ResourceIdMaxLen1600,
@@ -1004,6 +1037,7 @@ package applicationautoscaling {
   }
 
   object StepAdjustment {
+    @inline
     def apply(
         ScalingAdjustment: ScalingAdjustment,
         MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
@@ -1032,6 +1066,7 @@ package applicationautoscaling {
   }
 
   object StepScalingPolicyConfiguration {
+    @inline
     def apply(
         AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
         Cooldown: js.UndefOr[Cooldown] = js.undefined,
@@ -1063,6 +1098,7 @@ package applicationautoscaling {
   }
 
   object TargetTrackingScalingPolicyConfiguration {
+    @inline
     def apply(
         TargetValue: MetricScale,
         CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,

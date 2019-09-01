@@ -25,10 +25,11 @@ package object marketplacecommerceanalytics {
   implicit final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics)
       extends AnyVal {
 
-    def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
+    @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
       service.generateDataSet(params).promise.toFuture
-    def startSupportDataExportFuture(params: StartSupportDataExportRequest): Future[StartSupportDataExportResult] =
-      service.startSupportDataExport(params).promise.toFuture
+    @inline def startSupportDataExportFuture(
+        params: StartSupportDataExportRequest
+    ): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise.toFuture
   }
 }
 
@@ -107,6 +108,7 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetRequest {
+    @inline
     def apply(
         dataSetPublicationDate: DataSetPublicationDate,
         dataSetType: DataSetType,
@@ -139,6 +141,7 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetResult {
+    @inline
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): GenerateDataSetResult = {
@@ -171,6 +174,7 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportRequest {
+    @inline
     def apply(
         dataSetType: SupportDataSetType,
         destinationS3BucketName: DestinationS3BucketName,
@@ -203,6 +207,7 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportResult {
+    @inline
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): StartSupportDataExportResult = {

@@ -40,35 +40,38 @@ package object efs {
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
 
-    def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
+    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
       service.createFileSystem(params).promise.toFuture
-    def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =
+    @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =
       service.createMountTarget(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise.toFuture
-    def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] =
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
+      service.createTags(params).promise.toFuture
+    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] =
       service.deleteFileSystem(params).promise.toFuture
-    def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] =
+    @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] =
       service.deleteMountTarget(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
       service.describeFileSystems(params).promise.toFuture
-    def describeLifecycleConfigurationFuture(
+    @inline def describeLifecycleConfigurationFuture(
         params: DescribeLifecycleConfigurationRequest
     ): Future[LifecycleConfigurationDescription] = service.describeLifecycleConfiguration(params).promise.toFuture
-    def describeMountTargetSecurityGroupsFuture(
+    @inline def describeMountTargetSecurityGroupsFuture(
         params: DescribeMountTargetSecurityGroupsRequest
     ): Future[DescribeMountTargetSecurityGroupsResponse] =
       service.describeMountTargetSecurityGroups(params).promise.toFuture
-    def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] =
+    @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] =
       service.describeMountTargets(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
       service.describeTags(params).promise.toFuture
-    def modifyMountTargetSecurityGroupsFuture(params: ModifyMountTargetSecurityGroupsRequest): Future[js.Object] =
-      service.modifyMountTargetSecurityGroups(params).promise.toFuture
-    def putLifecycleConfigurationFuture(
+    @inline def modifyMountTargetSecurityGroupsFuture(
+        params: ModifyMountTargetSecurityGroupsRequest
+    ): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise.toFuture
+    @inline def putLifecycleConfigurationFuture(
         params: PutLifecycleConfigurationRequest
     ): Future[LifecycleConfigurationDescription] = service.putLifecycleConfiguration(params).promise.toFuture
-    def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] =
+    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] =
       service.updateFileSystem(params).promise.toFuture
   }
 }
@@ -113,6 +116,7 @@ package efs {
   }
 
   object CreateFileSystemRequest {
+    @inline
     def apply(
         CreationToken: CreationToken,
         Encrypted: js.UndefOr[Encrypted] = js.undefined,
@@ -150,6 +154,7 @@ package efs {
   }
 
   object CreateMountTargetRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         SubnetId: SubnetId,
@@ -177,6 +182,7 @@ package efs {
   }
 
   object CreateTagsRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         Tags: Tags
@@ -199,6 +205,7 @@ package efs {
   }
 
   object DeleteFileSystemRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId
     ): DeleteFileSystemRequest = {
@@ -219,6 +226,7 @@ package efs {
   }
 
   object DeleteMountTargetRequest {
+    @inline
     def apply(
         MountTargetId: MountTargetId
     ): DeleteMountTargetRequest = {
@@ -240,6 +248,7 @@ package efs {
   }
 
   object DeleteTagsRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         TagKeys: TagKeys
@@ -265,6 +274,7 @@ package efs {
   }
 
   object DescribeFileSystemsRequest {
+    @inline
     def apply(
         CreationToken: js.UndefOr[CreationToken] = js.undefined,
         FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
@@ -288,6 +298,7 @@ package efs {
   }
 
   object DescribeFileSystemsResponse {
+    @inline
     def apply(
         FileSystems: js.UndefOr[FileSystemDescriptions] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -307,6 +318,7 @@ package efs {
   }
 
   object DescribeLifecycleConfigurationRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId
     ): DescribeLifecycleConfigurationRequest = {
@@ -327,6 +339,7 @@ package efs {
   }
 
   object DescribeMountTargetSecurityGroupsRequest {
+    @inline
     def apply(
         MountTargetId: MountTargetId
     ): DescribeMountTargetSecurityGroupsRequest = {
@@ -344,6 +357,7 @@ package efs {
   }
 
   object DescribeMountTargetSecurityGroupsResponse {
+    @inline
     def apply(
         SecurityGroups: SecurityGroups
     ): DescribeMountTargetSecurityGroupsResponse = {
@@ -367,6 +381,7 @@ package efs {
   }
 
   object DescribeMountTargetsRequest {
+    @inline
     def apply(
         FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -393,6 +408,7 @@ package efs {
   }
 
   object DescribeMountTargetsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         MountTargets: js.UndefOr[MountTargetDescriptions] = js.undefined,
@@ -417,6 +433,7 @@ package efs {
   }
 
   object DescribeTagsRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -443,6 +460,7 @@ package efs {
   }
 
   object DescribeTagsResponse {
+    @inline
     def apply(
         Tags: Tags,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -480,6 +498,7 @@ package efs {
   }
 
   object FileSystemDescription {
+    @inline
     def apply(
         CreationTime: Timestamp,
         CreationToken: CreationToken,
@@ -531,6 +550,7 @@ package efs {
   }
 
   object FileSystemSize {
+    @inline
     def apply(
         Value: FileSystemSizeValue,
         Timestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -564,6 +584,7 @@ package efs {
   }
 
   object LifecycleConfigurationDescription {
+    @inline
     def apply(
         LifecyclePolicies: js.UndefOr[LifecyclePolicies] = js.undefined
     ): LifecycleConfigurationDescription = {
@@ -582,6 +603,7 @@ package efs {
   }
 
   object LifecyclePolicy {
+    @inline
     def apply(
         TransitionToIA: js.UndefOr[TransitionToIARules] = js.undefined
     ): LifecyclePolicy = {
@@ -601,6 +623,7 @@ package efs {
   }
 
   object ModifyMountTargetSecurityGroupsRequest {
+    @inline
     def apply(
         MountTargetId: MountTargetId,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
@@ -629,6 +652,7 @@ package efs {
   }
 
   object MountTargetDescription {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         LifeCycleState: LifeCycleState,
@@ -666,6 +690,7 @@ package efs {
   }
 
   object PutLifecycleConfigurationRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         LifecyclePolicies: LifecyclePolicies
@@ -689,6 +714,7 @@ package efs {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -726,6 +752,7 @@ package efs {
   }
 
   object UpdateFileSystemRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         ProvisionedThroughputInMibps: js.UndefOr[ProvisionedThroughputInMibps] = js.undefined,

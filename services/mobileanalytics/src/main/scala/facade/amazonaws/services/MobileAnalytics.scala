@@ -18,7 +18,7 @@ package object mobileanalytics {
 
   implicit final class MobileAnalyticsOps(private val service: MobileAnalytics) extends AnyVal {
 
-    def putEventsFuture(params: PutEventsInput): Future[js.Object] = service.putEvents(params).promise.toFuture
+    @inline def putEventsFuture(params: PutEventsInput): Future[js.Object] = service.putEvents(params).promise.toFuture
   }
 }
 
@@ -53,6 +53,7 @@ package mobileanalytics {
   }
 
   object Event {
+    @inline
     def apply(
         eventType: String50Chars,
         timestamp: ISO8601Timestamp,
@@ -85,6 +86,7 @@ package mobileanalytics {
   }
 
   object PutEventsInput {
+    @inline
     def apply(
         clientContext: String,
         events: EventListDefinition,
@@ -112,6 +114,7 @@ package mobileanalytics {
   }
 
   object Session {
+    @inline
     def apply(
         duration: js.UndefOr[Double] = js.undefined,
         id: js.UndefOr[String50Chars] = js.undefined,

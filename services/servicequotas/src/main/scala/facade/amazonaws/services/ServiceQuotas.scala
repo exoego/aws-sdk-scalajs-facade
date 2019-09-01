@@ -43,57 +43,57 @@ package object servicequotas {
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
-    def associateServiceQuotaTemplateFuture(
+    @inline def associateServiceQuotaTemplateFuture(
         params: AssociateServiceQuotaTemplateRequest
     ): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise.toFuture
-    def deleteServiceQuotaIncreaseRequestFromTemplateFuture(
+    @inline def deleteServiceQuotaIncreaseRequestFromTemplateFuture(
         params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest
     ): Future[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] =
       service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise.toFuture
-    def disassociateServiceQuotaTemplateFuture(
+    @inline def disassociateServiceQuotaTemplateFuture(
         params: DisassociateServiceQuotaTemplateRequest
     ): Future[DisassociateServiceQuotaTemplateResponse] =
       service.disassociateServiceQuotaTemplate(params).promise.toFuture
-    def getAWSDefaultServiceQuotaFuture(
+    @inline def getAWSDefaultServiceQuotaFuture(
         params: GetAWSDefaultServiceQuotaRequest
     ): Future[GetAWSDefaultServiceQuotaResponse] = service.getAWSDefaultServiceQuota(params).promise.toFuture
-    def getAssociationForServiceQuotaTemplateFuture(
+    @inline def getAssociationForServiceQuotaTemplateFuture(
         params: GetAssociationForServiceQuotaTemplateRequest
     ): Future[GetAssociationForServiceQuotaTemplateResponse] =
       service.getAssociationForServiceQuotaTemplate(params).promise.toFuture
-    def getRequestedServiceQuotaChangeFuture(
+    @inline def getRequestedServiceQuotaChangeFuture(
         params: GetRequestedServiceQuotaChangeRequest
     ): Future[GetRequestedServiceQuotaChangeResponse] = service.getRequestedServiceQuotaChange(params).promise.toFuture
-    def getServiceQuotaFuture(params: GetServiceQuotaRequest): Future[GetServiceQuotaResponse] =
+    @inline def getServiceQuotaFuture(params: GetServiceQuotaRequest): Future[GetServiceQuotaResponse] =
       service.getServiceQuota(params).promise.toFuture
-    def getServiceQuotaIncreaseRequestFromTemplateFuture(
+    @inline def getServiceQuotaIncreaseRequestFromTemplateFuture(
         params: GetServiceQuotaIncreaseRequestFromTemplateRequest
     ): Future[GetServiceQuotaIncreaseRequestFromTemplateResponse] =
       service.getServiceQuotaIncreaseRequestFromTemplate(params).promise.toFuture
-    def listAWSDefaultServiceQuotasFuture(
+    @inline def listAWSDefaultServiceQuotasFuture(
         params: ListAWSDefaultServiceQuotasRequest
     ): Future[ListAWSDefaultServiceQuotasResponse] = service.listAWSDefaultServiceQuotas(params).promise.toFuture
-    def listRequestedServiceQuotaChangeHistoryByQuotaFuture(
+    @inline def listRequestedServiceQuotaChangeHistoryByQuotaFuture(
         params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest
     ): Future[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] =
       service.listRequestedServiceQuotaChangeHistoryByQuota(params).promise.toFuture
-    def listRequestedServiceQuotaChangeHistoryFuture(
+    @inline def listRequestedServiceQuotaChangeHistoryFuture(
         params: ListRequestedServiceQuotaChangeHistoryRequest
     ): Future[ListRequestedServiceQuotaChangeHistoryResponse] =
       service.listRequestedServiceQuotaChangeHistory(params).promise.toFuture
-    def listServiceQuotaIncreaseRequestsInTemplateFuture(
+    @inline def listServiceQuotaIncreaseRequestsInTemplateFuture(
         params: ListServiceQuotaIncreaseRequestsInTemplateRequest
     ): Future[ListServiceQuotaIncreaseRequestsInTemplateResponse] =
       service.listServiceQuotaIncreaseRequestsInTemplate(params).promise.toFuture
-    def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] =
+    @inline def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] =
       service.listServiceQuotas(params).promise.toFuture
-    def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
       service.listServices(params).promise.toFuture
-    def putServiceQuotaIncreaseRequestIntoTemplateFuture(
+    @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(
         params: PutServiceQuotaIncreaseRequestIntoTemplateRequest
     ): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] =
       service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise.toFuture
-    def requestServiceQuotaIncreaseFuture(
+    @inline def requestServiceQuotaIncreaseFuture(
         params: RequestServiceQuotaIncreaseRequest
     ): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise.toFuture
   }
@@ -153,6 +153,7 @@ package servicequotas {
   trait AssociateServiceQuotaTemplateRequest extends js.Object {}
 
   object AssociateServiceQuotaTemplateRequest {
+    @inline
     def apply(
         ): AssociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
@@ -165,6 +166,7 @@ package servicequotas {
   trait AssociateServiceQuotaTemplateResponse extends js.Object {}
 
   object AssociateServiceQuotaTemplateResponse {
+    @inline
     def apply(
         ): AssociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -181,6 +183,7 @@ package servicequotas {
   }
 
   object DeleteServiceQuotaIncreaseRequestFromTemplateRequest {
+    @inline
     def apply(
         AwsRegion: AwsRegion,
         QuotaCode: QuotaCode,
@@ -200,6 +203,7 @@ package servicequotas {
   trait DeleteServiceQuotaIncreaseRequestFromTemplateResponse extends js.Object {}
 
   object DeleteServiceQuotaIncreaseRequestFromTemplateResponse {
+    @inline
     def apply(
         ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -212,6 +216,7 @@ package servicequotas {
   trait DisassociateServiceQuotaTemplateRequest extends js.Object {}
 
   object DisassociateServiceQuotaTemplateRequest {
+    @inline
     def apply(
         ): DisassociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
@@ -224,6 +229,7 @@ package servicequotas {
   trait DisassociateServiceQuotaTemplateResponse extends js.Object {}
 
   object DisassociateServiceQuotaTemplateResponse {
+    @inline
     def apply(
         ): DisassociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -258,6 +264,7 @@ package servicequotas {
   }
 
   object ErrorReason {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined
@@ -276,6 +283,7 @@ package servicequotas {
   }
 
   object GetAWSDefaultServiceQuotaRequest {
+    @inline
     def apply(
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
@@ -295,6 +303,7 @@ package servicequotas {
   }
 
   object GetAWSDefaultServiceQuotaResponse {
+    @inline
     def apply(
         Quota: js.UndefOr[ServiceQuota] = js.undefined
     ): GetAWSDefaultServiceQuotaResponse = {
@@ -308,6 +317,7 @@ package servicequotas {
   trait GetAssociationForServiceQuotaTemplateRequest extends js.Object {}
 
   object GetAssociationForServiceQuotaTemplateRequest {
+    @inline
     def apply(
         ): GetAssociationForServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
@@ -322,6 +332,7 @@ package servicequotas {
   }
 
   object GetAssociationForServiceQuotaTemplateResponse {
+    @inline
     def apply(
         ServiceQuotaTemplateAssociationStatus: js.UndefOr[ServiceQuotaTemplateAssociationStatus] = js.undefined
     ): GetAssociationForServiceQuotaTemplateResponse = {
@@ -339,6 +350,7 @@ package servicequotas {
   }
 
   object GetRequestedServiceQuotaChangeRequest {
+    @inline
     def apply(
         RequestId: RequestId
     ): GetRequestedServiceQuotaChangeRequest = {
@@ -356,6 +368,7 @@ package servicequotas {
   }
 
   object GetRequestedServiceQuotaChangeResponse {
+    @inline
     def apply(
         RequestedQuota: js.UndefOr[RequestedServiceQuotaChange] = js.undefined
     ): GetRequestedServiceQuotaChangeResponse = {
@@ -373,6 +386,7 @@ package servicequotas {
   }
 
   object GetServiceQuotaIncreaseRequestFromTemplateRequest {
+    @inline
     def apply(
         AwsRegion: AwsRegion,
         QuotaCode: QuotaCode,
@@ -394,6 +408,7 @@ package servicequotas {
   }
 
   object GetServiceQuotaIncreaseRequestFromTemplateResponse {
+    @inline
     def apply(
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): GetServiceQuotaIncreaseRequestFromTemplateResponse = {
@@ -412,6 +427,7 @@ package servicequotas {
   }
 
   object GetServiceQuotaRequest {
+    @inline
     def apply(
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
@@ -431,6 +447,7 @@ package servicequotas {
   }
 
   object GetServiceQuotaResponse {
+    @inline
     def apply(
         Quota: js.UndefOr[ServiceQuota] = js.undefined
     ): GetServiceQuotaResponse = {
@@ -448,6 +465,7 @@ package servicequotas {
   }
 
   object ListAWSDefaultServiceQuotasRequest {
+    @inline
     def apply(
         ServiceCode: ServiceCode,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -470,6 +488,7 @@ package servicequotas {
   }
 
   object ListAWSDefaultServiceQuotasResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Quotas: js.UndefOr[ServiceQuotaListDefinition] = js.undefined
@@ -491,6 +510,7 @@ package servicequotas {
   }
 
   object ListRequestedServiceQuotaChangeHistoryByQuotaRequest {
+    @inline
     def apply(
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode,
@@ -517,6 +537,7 @@ package servicequotas {
   }
 
   object ListRequestedServiceQuotaChangeHistoryByQuotaResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RequestedQuotas: js.UndefOr[RequestedServiceQuotaChangeHistoryListDefinition] = js.undefined
@@ -537,6 +558,7 @@ package servicequotas {
   }
 
   object ListRequestedServiceQuotaChangeHistoryRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -559,6 +581,7 @@ package servicequotas {
   }
 
   object ListRequestedServiceQuotaChangeHistoryResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RequestedQuotas: js.UndefOr[RequestedServiceQuotaChangeHistoryListDefinition] = js.undefined
@@ -579,6 +602,7 @@ package servicequotas {
   }
 
   object ListServiceQuotaIncreaseRequestsInTemplateRequest {
+    @inline
     def apply(
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -601,6 +625,7 @@ package servicequotas {
   }
 
   object ListServiceQuotaIncreaseRequestsInTemplateResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServiceQuotaIncreaseRequestInTemplateList: js.UndefOr[ServiceQuotaIncreaseRequestInTemplateList] = js.undefined
@@ -622,6 +647,7 @@ package servicequotas {
   }
 
   object ListServiceQuotasRequest {
+    @inline
     def apply(
         ServiceCode: ServiceCode,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -644,6 +670,7 @@ package servicequotas {
   }
 
   object ListServiceQuotasResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Quotas: js.UndefOr[ServiceQuotaListDefinition] = js.undefined
@@ -662,6 +689,7 @@ package servicequotas {
   }
 
   object ListServicesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -680,6 +708,7 @@ package servicequotas {
   }
 
   object ListServicesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Services: js.UndefOr[ServiceInfoListDefinition] = js.undefined
@@ -703,6 +732,7 @@ package servicequotas {
   }
 
   object MetricInfo {
+    @inline
     def apply(
         MetricDimensions: js.UndefOr[MetricDimensionsMapDefinition] = js.undefined,
         MetricName: js.UndefOr[QuotaMetricName] = js.undefined,
@@ -741,6 +771,7 @@ package servicequotas {
   }
 
   object PutServiceQuotaIncreaseRequestIntoTemplateRequest {
+    @inline
     def apply(
         AwsRegion: AwsRegion,
         DesiredValue: QuotaValue,
@@ -764,6 +795,7 @@ package servicequotas {
   }
 
   object PutServiceQuotaIncreaseRequestIntoTemplateResponse {
+    @inline
     def apply(
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): PutServiceQuotaIncreaseRequestIntoTemplateResponse = {
@@ -785,6 +817,7 @@ package servicequotas {
   }
 
   object QuotaPeriod {
+    @inline
     def apply(
         PeriodUnit: js.UndefOr[PeriodUnit] = js.undefined,
         PeriodValue: js.UndefOr[PeriodValue] = js.undefined
@@ -804,6 +837,7 @@ package servicequotas {
   }
 
   object RequestServiceQuotaIncreaseRequest {
+    @inline
     def apply(
         DesiredValue: QuotaValue,
         QuotaCode: QuotaCode,
@@ -825,6 +859,7 @@ package servicequotas {
   }
 
   object RequestServiceQuotaIncreaseResponse {
+    @inline
     def apply(
         RequestedQuota: js.UndefOr[RequestedServiceQuotaChange] = js.undefined
     ): RequestServiceQuotaIncreaseResponse = {
@@ -866,6 +901,7 @@ package servicequotas {
   }
 
   object RequestedServiceQuotaChange {
+    @inline
     def apply(
         CaseId: js.UndefOr[CustomerServiceEngagementId] = js.undefined,
         Created: js.UndefOr[DateTime] = js.undefined,
@@ -911,6 +947,7 @@ package servicequotas {
   }
 
   object ServiceInfo {
+    @inline
     def apply(
         ServiceCode: js.UndefOr[ServiceCode] = js.undefined,
         ServiceName: js.UndefOr[ServiceName] = js.undefined
@@ -942,6 +979,7 @@ package servicequotas {
   }
 
   object ServiceQuota {
+    @inline
     def apply(
         Adjustable: js.UndefOr[QuotaAdjustable] = js.undefined,
         ErrorReason: js.UndefOr[ErrorReason] = js.undefined,
@@ -989,6 +1027,7 @@ package servicequotas {
   }
 
   object ServiceQuotaIncreaseRequestInTemplate {
+    @inline
     def apply(
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
         DesiredValue: js.UndefOr[QuotaValue] = js.undefined,

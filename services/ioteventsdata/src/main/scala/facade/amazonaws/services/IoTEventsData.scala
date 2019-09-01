@@ -37,13 +37,13 @@ package object ioteventsdata {
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
-    def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
+    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
-    def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =
+    @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =
       service.batchUpdateDetector(params).promise.toFuture
-    def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] =
+    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] =
       service.describeDetector(params).promise.toFuture
-    def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
+    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
       service.listDetectors(params).promise.toFuture
   }
 }
@@ -71,6 +71,7 @@ package ioteventsdata {
   }
 
   object BatchPutMessageErrorEntry {
+    @inline
     def apply(
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -90,6 +91,7 @@ package ioteventsdata {
   }
 
   object BatchPutMessageRequest {
+    @inline
     def apply(
         messages: Messages
     ): BatchPutMessageRequest = {
@@ -107,6 +109,7 @@ package ioteventsdata {
   }
 
   object BatchPutMessageResponse {
+    @inline
     def apply(
         BatchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
@@ -129,6 +132,7 @@ package ioteventsdata {
   }
 
   object BatchUpdateDetectorErrorEntry {
+    @inline
     def apply(
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -148,6 +152,7 @@ package ioteventsdata {
   }
 
   object BatchUpdateDetectorRequest {
+    @inline
     def apply(
         detectors: UpdateDetectorRequests
     ): BatchUpdateDetectorRequest = {
@@ -165,6 +170,7 @@ package ioteventsdata {
   }
 
   object BatchUpdateDetectorResponse {
+    @inline
     def apply(
         batchUpdateDetectorErrorEntries: js.UndefOr[BatchUpdateDetectorErrorEntries] = js.undefined
     ): BatchUpdateDetectorResponse = {
@@ -183,6 +189,7 @@ package ioteventsdata {
   }
 
   object DescribeDetectorRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         keyValue: js.UndefOr[KeyValue] = js.undefined
@@ -202,6 +209,7 @@ package ioteventsdata {
   }
 
   object DescribeDetectorResponse {
+    @inline
     def apply(
         detector: js.UndefOr[Detector] = js.undefined
     ): DescribeDetectorResponse = {
@@ -225,6 +233,7 @@ package ioteventsdata {
   }
 
   object Detector {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         detectorModelName: js.UndefOr[DetectorModelName] = js.undefined,
@@ -255,6 +264,7 @@ package ioteventsdata {
   }
 
   object DetectorState {
+    @inline
     def apply(
         stateName: StateName,
         timers: Timers,
@@ -281,6 +291,7 @@ package ioteventsdata {
   }
 
   object DetectorStateDefinition {
+    @inline
     def apply(
         stateName: StateName,
         timers: TimerDefinitions,
@@ -305,6 +316,7 @@ package ioteventsdata {
   }
 
   object DetectorStateSummary {
+    @inline
     def apply(
         stateName: js.UndefOr[StateName] = js.undefined
     ): DetectorStateSummary = {
@@ -328,6 +340,7 @@ package ioteventsdata {
   }
 
   object DetectorSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         detectorModelName: js.UndefOr[DetectorModelName] = js.undefined,
@@ -374,6 +387,7 @@ package ioteventsdata {
   }
 
   object ListDetectorsRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -398,6 +412,7 @@ package ioteventsdata {
   }
 
   object ListDetectorsResponse {
+    @inline
     def apply(
         detectorSummaries: js.UndefOr[DetectorSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -420,6 +435,7 @@ package ioteventsdata {
   }
 
   object Message {
+    @inline
     def apply(
         inputName: InputName,
         messageId: MessageId,
@@ -445,6 +461,7 @@ package ioteventsdata {
   }
 
   object Timer {
+    @inline
     def apply(
         name: TimerName,
         timestamp: Timestamp
@@ -468,6 +485,7 @@ package ioteventsdata {
   }
 
   object TimerDefinition {
+    @inline
     def apply(
         name: TimerName,
         seconds: Seconds
@@ -493,6 +511,7 @@ package ioteventsdata {
   }
 
   object UpdateDetectorRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         messageId: MessageId,
@@ -520,6 +539,7 @@ package ioteventsdata {
   }
 
   object Variable {
+    @inline
     def apply(
         name: VariableName,
         value: VariableValue
@@ -543,6 +563,7 @@ package ioteventsdata {
   }
 
   object VariableDefinition {
+    @inline
     def apply(
         name: VariableName,
         value: VariableValue

@@ -37,38 +37,42 @@ package object snowball {
 
   implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
 
-    def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
+    @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
       service.cancelCluster(params).promise.toFuture
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] = service.cancelJob(params).promise.toFuture
-    def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] =
+      service.cancelJob(params).promise.toFuture
+    @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] =
       service.createAddress(params).promise.toFuture
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] =
       service.createCluster(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise.toFuture
-    def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
+      service.createJob(params).promise.toFuture
+    @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] =
       service.describeAddress(params).promise.toFuture
-    def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
+    @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
       service.describeAddresses(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] =
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] =
       service.describeCluster(params).promise.toFuture
-    def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
       service.describeJob(params).promise.toFuture
-    def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] =
+    @inline def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] =
       service.getJobManifest(params).promise.toFuture
-    def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] =
+    @inline def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] =
       service.getJobUnlockCode(params).promise.toFuture
-    def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
+    @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
       service.getSnowballUsage(params).promise.toFuture
-    def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
+    @inline def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
       service.listClusterJobs(params).promise.toFuture
-    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
       service.listClusters(params).promise.toFuture
-    def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] =
+    @inline def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] =
       service.listCompatibleImages(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
-    def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
+      service.listJobs(params).promise.toFuture
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] =
       service.updateCluster(params).promise.toFuture
-    def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise.toFuture
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] =
+      service.updateJob(params).promise.toFuture
   }
 }
 
@@ -120,6 +124,7 @@ package snowball {
   }
 
   object Address {
+    @inline
     def apply(
         AddressId: js.UndefOr[AddressId] = js.undefined,
         City: js.UndefOr[String] = js.undefined,
@@ -161,6 +166,7 @@ package snowball {
   }
 
   object CancelClusterRequest {
+    @inline
     def apply(
         ClusterId: ClusterId
     ): CancelClusterRequest = {
@@ -176,6 +182,7 @@ package snowball {
   trait CancelClusterResult extends js.Object {}
 
   object CancelClusterResult {
+    @inline
     def apply(
         ): CancelClusterResult = {
       val __obj = js.Dynamic.literal()
@@ -190,6 +197,7 @@ package snowball {
   }
 
   object CancelJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): CancelJobRequest = {
@@ -205,6 +213,7 @@ package snowball {
   trait CancelJobResult extends js.Object {}
 
   object CancelJobResult {
+    @inline
     def apply(
         ): CancelJobResult = {
       val __obj = js.Dynamic.literal()
@@ -225,6 +234,7 @@ package snowball {
   }
 
   object ClusterListEntry {
+    @inline
     def apply(
         ClusterId: js.UndefOr[String] = js.undefined,
         ClusterState: js.UndefOr[ClusterState] = js.undefined,
@@ -261,6 +271,7 @@ package snowball {
   }
 
   object ClusterMetadata {
+    @inline
     def apply(
         AddressId: js.UndefOr[AddressId] = js.undefined,
         ClusterId: js.UndefOr[String] = js.undefined,
@@ -314,6 +325,7 @@ package snowball {
   }
 
   object CompatibleImage {
+    @inline
     def apply(
         AmiId: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -331,6 +343,7 @@ package snowball {
   }
 
   object CreateAddressRequest {
+    @inline
     def apply(
         Address: Address
     ): CreateAddressRequest = {
@@ -348,6 +361,7 @@ package snowball {
   }
 
   object CreateAddressResult {
+    @inline
     def apply(
         AddressId: js.UndefOr[String] = js.undefined
     ): CreateAddressResult = {
@@ -372,6 +386,7 @@ package snowball {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         AddressId: AddressId,
         JobType: JobType,
@@ -407,6 +422,7 @@ package snowball {
   }
 
   object CreateClusterResult {
+    @inline
     def apply(
         ClusterId: js.UndefOr[ClusterId] = js.undefined
     ): CreateClusterResult = {
@@ -433,6 +449,7 @@ package snowball {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         AddressId: js.UndefOr[AddressId] = js.undefined,
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
@@ -472,6 +489,7 @@ package snowball {
   }
 
   object CreateJobResult {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): CreateJobResult = {
@@ -493,6 +511,7 @@ package snowball {
   }
 
   object DataTransfer {
+    @inline
     def apply(
         BytesTransferred: js.UndefOr[Double] = js.undefined,
         ObjectsTransferred: js.UndefOr[Double] = js.undefined,
@@ -514,6 +533,7 @@ package snowball {
   }
 
   object DescribeAddressRequest {
+    @inline
     def apply(
         AddressId: AddressId
     ): DescribeAddressRequest = {
@@ -531,6 +551,7 @@ package snowball {
   }
 
   object DescribeAddressResult {
+    @inline
     def apply(
         Address: js.UndefOr[Address] = js.undefined
     ): DescribeAddressResult = {
@@ -547,6 +568,7 @@ package snowball {
   }
 
   object DescribeAddressesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -565,6 +587,7 @@ package snowball {
   }
 
   object DescribeAddressesResult {
+    @inline
     def apply(
         Addresses: js.UndefOr[AddressList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -582,6 +605,7 @@ package snowball {
   }
 
   object DescribeClusterRequest {
+    @inline
     def apply(
         ClusterId: ClusterId
     ): DescribeClusterRequest = {
@@ -599,6 +623,7 @@ package snowball {
   }
 
   object DescribeClusterResult {
+    @inline
     def apply(
         ClusterMetadata: js.UndefOr[ClusterMetadata] = js.undefined
     ): DescribeClusterResult = {
@@ -614,6 +639,7 @@ package snowball {
   }
 
   object DescribeJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeJobRequest = {
@@ -632,6 +658,7 @@ package snowball {
   }
 
   object DescribeJobResult {
+    @inline
     def apply(
         JobMetadata: js.UndefOr[JobMetadata] = js.undefined,
         SubJobMetadata: js.UndefOr[JobMetadataList] = js.undefined
@@ -653,6 +680,7 @@ package snowball {
   }
 
   object Ec2AmiResource {
+    @inline
     def apply(
         AmiId: AmiId,
         SnowballAmiId: js.UndefOr[String] = js.undefined
@@ -675,6 +703,7 @@ package snowball {
   }
 
   object EventTriggerDefinition {
+    @inline
     def apply(
         EventResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): EventTriggerDefinition = {
@@ -690,6 +719,7 @@ package snowball {
   }
 
   object GetJobManifestRequest {
+    @inline
     def apply(
         JobId: JobId
     ): GetJobManifestRequest = {
@@ -707,6 +737,7 @@ package snowball {
   }
 
   object GetJobManifestResult {
+    @inline
     def apply(
         ManifestURI: js.UndefOr[String] = js.undefined
     ): GetJobManifestResult = {
@@ -722,6 +753,7 @@ package snowball {
   }
 
   object GetJobUnlockCodeRequest {
+    @inline
     def apply(
         JobId: JobId
     ): GetJobUnlockCodeRequest = {
@@ -739,6 +771,7 @@ package snowball {
   }
 
   object GetJobUnlockCodeResult {
+    @inline
     def apply(
         UnlockCode: js.UndefOr[String] = js.undefined
     ): GetJobUnlockCodeResult = {
@@ -752,6 +785,7 @@ package snowball {
   trait GetSnowballUsageRequest extends js.Object {}
 
   object GetSnowballUsageRequest {
+    @inline
     def apply(
         ): GetSnowballUsageRequest = {
       val __obj = js.Dynamic.literal()
@@ -767,6 +801,7 @@ package snowball {
   }
 
   object GetSnowballUsageResult {
+    @inline
     def apply(
         SnowballLimit: js.UndefOr[Int] = js.undefined,
         SnowballsInUse: js.UndefOr[Int] = js.undefined
@@ -793,6 +828,7 @@ package snowball {
   }
 
   object JobListEntry {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -828,6 +864,7 @@ package snowball {
   }
 
   object JobLogs {
+    @inline
     def apply(
         JobCompletionReportURI: js.UndefOr[String] = js.undefined,
         JobFailureLogURI: js.UndefOr[String] = js.undefined,
@@ -866,6 +903,7 @@ package snowball {
   }
 
   object JobMetadata {
+    @inline
     def apply(
         AddressId: js.UndefOr[AddressId] = js.undefined,
         ClusterId: js.UndefOr[String] = js.undefined,
@@ -920,6 +958,7 @@ package snowball {
   }
 
   object JobResource {
+    @inline
     def apply(
         Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined,
         LambdaResources: js.UndefOr[LambdaResourceList] = js.undefined,
@@ -985,6 +1024,7 @@ package snowball {
   }
 
   object KeyRange {
+    @inline
     def apply(
         BeginMarker: js.UndefOr[String] = js.undefined,
         EndMarker: js.UndefOr[String] = js.undefined
@@ -1006,6 +1046,7 @@ package snowball {
   }
 
   object LambdaResource {
+    @inline
     def apply(
         EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined,
         LambdaArn: js.UndefOr[ResourceARN] = js.undefined
@@ -1025,6 +1066,7 @@ package snowball {
   }
 
   object ListClusterJobsRequest {
+    @inline
     def apply(
         ClusterId: ClusterId,
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
@@ -1047,6 +1089,7 @@ package snowball {
   }
 
   object ListClusterJobsResult {
+    @inline
     def apply(
         JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1065,6 +1108,7 @@ package snowball {
   }
 
   object ListClustersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1083,6 +1127,7 @@ package snowball {
   }
 
   object ListClustersResult {
+    @inline
     def apply(
         ClusterListEntries: js.UndefOr[ClusterListEntryList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1101,6 +1146,7 @@ package snowball {
   }
 
   object ListCompatibleImagesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1119,6 +1165,7 @@ package snowball {
   }
 
   object ListCompatibleImagesResult {
+    @inline
     def apply(
         CompatibleImages: js.UndefOr[CompatibleImageList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1137,6 +1184,7 @@ package snowball {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1155,6 +1203,7 @@ package snowball {
   }
 
   object ListJobsResult {
+    @inline
     def apply(
         JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1178,6 +1227,7 @@ package snowball {
   }
 
   object Notification {
+    @inline
     def apply(
         JobStatesToNotify: js.UndefOr[JobStateList] = js.undefined,
         NotifyAll: js.UndefOr[Boolean] = js.undefined,
@@ -1201,6 +1251,7 @@ package snowball {
   }
 
   object S3Resource {
+    @inline
     def apply(
         BucketArn: js.UndefOr[ResourceARN] = js.undefined,
         KeyRange: js.UndefOr[KeyRange] = js.undefined
@@ -1222,6 +1273,7 @@ package snowball {
   }
 
   object Shipment {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         TrackingNumber: js.UndefOr[String] = js.undefined
@@ -1244,6 +1296,7 @@ package snowball {
   }
 
   object ShippingDetails {
+    @inline
     def apply(
         InboundShipment: js.UndefOr[Shipment] = js.undefined,
         OutboundShipment: js.UndefOr[Shipment] = js.undefined,
@@ -1298,6 +1351,7 @@ package snowball {
   }
 
   object UpdateClusterRequest {
+    @inline
     def apply(
         ClusterId: ClusterId,
         AddressId: js.UndefOr[AddressId] = js.undefined,
@@ -1327,6 +1381,7 @@ package snowball {
   trait UpdateClusterResult extends js.Object {}
 
   object UpdateClusterResult {
+    @inline
     def apply(
         ): UpdateClusterResult = {
       val __obj = js.Dynamic.literal()
@@ -1349,6 +1404,7 @@ package snowball {
   }
 
   object UpdateJobRequest {
+    @inline
     def apply(
         JobId: JobId,
         AddressId: js.UndefOr[AddressId] = js.undefined,
@@ -1382,6 +1438,7 @@ package snowball {
   trait UpdateJobResult extends js.Object {}
 
   object UpdateJobResult {
+    @inline
     def apply(
         ): UpdateJobResult = {
       val __obj = js.Dynamic.literal()

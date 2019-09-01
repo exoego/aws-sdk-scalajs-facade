@@ -17,7 +17,7 @@ package object ec2instanceconnect {
 
   implicit final class EC2InstanceConnectOps(private val service: EC2InstanceConnect) extends AnyVal {
 
-    def sendSSHPublicKeyFuture(params: SendSSHPublicKeyRequest): Future[SendSSHPublicKeyResponse] =
+    @inline def sendSSHPublicKeyFuture(params: SendSSHPublicKeyRequest): Future[SendSSHPublicKeyResponse] =
       service.sendSSHPublicKey(params).promise.toFuture
   }
 }
@@ -40,6 +40,7 @@ package ec2instanceconnect {
   }
 
   object SendSSHPublicKeyRequest {
+    @inline
     def apply(
         AvailabilityZone: AvailabilityZone,
         InstanceId: InstanceId,
@@ -64,6 +65,7 @@ package ec2instanceconnect {
   }
 
   object SendSSHPublicKeyResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[RequestId] = js.undefined,
         Success: js.UndefOr[Success] = js.undefined

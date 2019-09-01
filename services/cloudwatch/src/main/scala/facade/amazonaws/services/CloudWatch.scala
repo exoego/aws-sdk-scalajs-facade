@@ -96,50 +96,53 @@ package object cloudwatch {
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 
-    def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] = service.deleteAlarms(params).promise.toFuture
-    def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
+    @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] =
+      service.deleteAlarms(params).promise.toFuture
+    @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
       service.deleteAnomalyDetector(params).promise.toFuture
-    def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
+    @inline def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
       service.deleteDashboards(params).promise.toFuture
-    def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
+    @inline def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
       service.describeAlarmHistory(params).promise.toFuture
-    def describeAlarmsForMetricFuture(params: DescribeAlarmsForMetricInput): Future[DescribeAlarmsForMetricOutput] =
-      service.describeAlarmsForMetric(params).promise.toFuture
-    def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
+    @inline def describeAlarmsForMetricFuture(
+        params: DescribeAlarmsForMetricInput
+    ): Future[DescribeAlarmsForMetricOutput] = service.describeAlarmsForMetric(params).promise.toFuture
+    @inline def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
       service.describeAlarms(params).promise.toFuture
-    def describeAnomalyDetectorsFuture(params: DescribeAnomalyDetectorsInput): Future[DescribeAnomalyDetectorsOutput] =
-      service.describeAnomalyDetectors(params).promise.toFuture
-    def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
+    @inline def describeAnomalyDetectorsFuture(
+        params: DescribeAnomalyDetectorsInput
+    ): Future[DescribeAnomalyDetectorsOutput] = service.describeAnomalyDetectors(params).promise.toFuture
+    @inline def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
       service.disableAlarmActions(params).promise.toFuture
-    def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
+    @inline def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
       service.enableAlarmActions(params).promise.toFuture
-    def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
+    @inline def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
       service.getDashboard(params).promise.toFuture
-    def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
+    @inline def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
       service.getMetricData(params).promise.toFuture
-    def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
+    @inline def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
       service.getMetricStatistics(params).promise.toFuture
-    def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
+    @inline def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
       service.getMetricWidgetImage(params).promise.toFuture
-    def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
+    @inline def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
       service.listDashboards(params).promise.toFuture
-    def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
+    @inline def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
       service.listMetrics(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
+    @inline def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
       service.putAnomalyDetector(params).promise.toFuture
-    def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
+    @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
       service.putDashboard(params).promise.toFuture
-    def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
+    @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
       service.putMetricAlarm(params).promise.toFuture
-    def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
+    @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
       service.putMetricData(params).promise.toFuture
-    def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
+    @inline def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
       service.setAlarmState(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
   }
 }
@@ -190,6 +193,7 @@ package cloudwatch {
   }
 
   object AlarmHistoryItem {
+    @inline
     def apply(
         AlarmName: js.UndefOr[AlarmName] = js.undefined,
         HistoryData: js.UndefOr[HistoryData] = js.undefined,
@@ -220,6 +224,7 @@ package cloudwatch {
   }
 
   object AnomalyDetector {
+    @inline
     def apply(
         Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
@@ -247,6 +252,7 @@ package cloudwatch {
   }
 
   object AnomalyDetectorConfiguration {
+    @inline
     def apply(
         ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges] = js.undefined,
         MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone] = js.undefined
@@ -292,6 +298,7 @@ package cloudwatch {
   }
 
   object DashboardEntry {
+    @inline
     def apply(
         DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
         DashboardName: js.UndefOr[DashboardName] = js.undefined,
@@ -317,6 +324,7 @@ package cloudwatch {
   }
 
   object DashboardValidationMessage {
+    @inline
     def apply(
         DataPath: js.UndefOr[DataPath] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined
@@ -344,6 +352,7 @@ package cloudwatch {
   }
 
   object Datapoint {
+    @inline
     def apply(
         Average: js.UndefOr[DatapointValue] = js.undefined,
         ExtendedStatistics: js.UndefOr[DatapointValueMap] = js.undefined,
@@ -373,6 +382,7 @@ package cloudwatch {
   }
 
   object DeleteAlarmsInput {
+    @inline
     def apply(
         AlarmNames: AlarmNames
     ): DeleteAlarmsInput = {
@@ -393,6 +403,7 @@ package cloudwatch {
   }
 
   object DeleteAnomalyDetectorInput {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: Namespace,
@@ -414,6 +425,7 @@ package cloudwatch {
   trait DeleteAnomalyDetectorOutput extends js.Object {}
 
   object DeleteAnomalyDetectorOutput {
+    @inline
     def apply(
         ): DeleteAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
@@ -428,6 +440,7 @@ package cloudwatch {
   }
 
   object DeleteDashboardsInput {
+    @inline
     def apply(
         DashboardNames: DashboardNames
     ): DeleteDashboardsInput = {
@@ -443,6 +456,7 @@ package cloudwatch {
   trait DeleteDashboardsOutput extends js.Object {}
 
   object DeleteDashboardsOutput {
+    @inline
     def apply(
         ): DeleteDashboardsOutput = {
       val __obj = js.Dynamic.literal()
@@ -462,6 +476,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmHistoryInput {
+    @inline
     def apply(
         AlarmName: js.UndefOr[AlarmName] = js.undefined,
         EndDate: js.UndefOr[Timestamp] = js.undefined,
@@ -488,6 +503,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmHistoryOutput {
+    @inline
     def apply(
         AlarmHistoryItems: js.UndefOr[AlarmHistoryItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -511,6 +527,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmsForMetricInput {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: Namespace,
@@ -540,6 +557,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmsForMetricOutput {
+    @inline
     def apply(
         MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined
     ): DescribeAlarmsForMetricOutput = {
@@ -560,6 +578,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmsInput {
+    @inline
     def apply(
         ActionPrefix: js.UndefOr[ActionPrefix] = js.undefined,
         AlarmNamePrefix: js.UndefOr[AlarmNamePrefix] = js.undefined,
@@ -586,6 +605,7 @@ package cloudwatch {
   }
 
   object DescribeAlarmsOutput {
+    @inline
     def apply(
         MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -607,6 +627,7 @@ package cloudwatch {
   }
 
   object DescribeAnomalyDetectorsInput {
+    @inline
     def apply(
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
         MaxResults: js.UndefOr[MaxReturnedResultsCount] = js.undefined,
@@ -631,6 +652,7 @@ package cloudwatch {
   }
 
   object DescribeAnomalyDetectorsOutput {
+    @inline
     def apply(
         AnomalyDetectors: js.UndefOr[AnomalyDetectors] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -652,6 +674,7 @@ package cloudwatch {
   }
 
   object Dimension {
+    @inline
     def apply(
         Name: DimensionName,
         Value: DimensionValue
@@ -675,6 +698,7 @@ package cloudwatch {
   }
 
   object DimensionFilter {
+    @inline
     def apply(
         Name: DimensionName,
         Value: js.UndefOr[DimensionValue] = js.undefined
@@ -694,6 +718,7 @@ package cloudwatch {
   }
 
   object DisableAlarmActionsInput {
+    @inline
     def apply(
         AlarmNames: AlarmNames
     ): DisableAlarmActionsInput = {
@@ -711,6 +736,7 @@ package cloudwatch {
   }
 
   object EnableAlarmActionsInput {
+    @inline
     def apply(
         AlarmNames: AlarmNames
     ): EnableAlarmActionsInput = {
@@ -728,6 +754,7 @@ package cloudwatch {
   }
 
   object GetDashboardInput {
+    @inline
     def apply(
         DashboardName: DashboardName
     ): GetDashboardInput = {
@@ -747,6 +774,7 @@ package cloudwatch {
   }
 
   object GetDashboardOutput {
+    @inline
     def apply(
         DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
         DashboardBody: js.UndefOr[DashboardBody] = js.undefined,
@@ -771,6 +799,7 @@ package cloudwatch {
   }
 
   object GetMetricDataInput {
+    @inline
     def apply(
         EndTime: Timestamp,
         MetricDataQueries: MetricDataQueries,
@@ -800,6 +829,7 @@ package cloudwatch {
   }
 
   object GetMetricDataOutput {
+    @inline
     def apply(
         Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
         MetricDataResults: js.UndefOr[MetricDataResults] = js.undefined,
@@ -827,6 +857,7 @@ package cloudwatch {
   }
 
   object GetMetricStatisticsInput {
+    @inline
     def apply(
         EndTime: Timestamp,
         MetricName: MetricName,
@@ -861,6 +892,7 @@ package cloudwatch {
   }
 
   object GetMetricStatisticsOutput {
+    @inline
     def apply(
         Datapoints: js.UndefOr[Datapoints] = js.undefined,
         Label: js.UndefOr[MetricLabel] = js.undefined
@@ -879,6 +911,7 @@ package cloudwatch {
   }
 
   object GetMetricWidgetImageInput {
+    @inline
     def apply(
         MetricWidget: MetricWidget,
         OutputFormat: js.UndefOr[OutputFormat] = js.undefined
@@ -898,6 +931,7 @@ package cloudwatch {
   }
 
   object GetMetricWidgetImageOutput {
+    @inline
     def apply(
         MetricWidgetImage: js.UndefOr[MetricWidgetImage] = js.undefined
     ): GetMetricWidgetImageOutput = {
@@ -922,6 +956,7 @@ package cloudwatch {
   }
 
   object ListDashboardsInput {
+    @inline
     def apply(
         DashboardNamePrefix: js.UndefOr[DashboardNamePrefix] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -940,6 +975,7 @@ package cloudwatch {
   }
 
   object ListDashboardsOutput {
+    @inline
     def apply(
         DashboardEntries: js.UndefOr[DashboardEntries] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -960,6 +996,7 @@ package cloudwatch {
   }
 
   object ListMetricsInput {
+    @inline
     def apply(
         Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
@@ -982,6 +1019,7 @@ package cloudwatch {
   }
 
   object ListMetricsOutput {
+    @inline
     def apply(
         Metrics: js.UndefOr[Metrics] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -999,6 +1037,7 @@ package cloudwatch {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName
     ): ListTagsForResourceInput = {
@@ -1016,6 +1055,7 @@ package cloudwatch {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
@@ -1035,6 +1075,7 @@ package cloudwatch {
   }
 
   object MessageData {
+    @inline
     def apply(
         Code: js.UndefOr[MessageDataCode] = js.undefined,
         Value: js.UndefOr[MessageDataValue] = js.undefined
@@ -1057,6 +1098,7 @@ package cloudwatch {
   }
 
   object Metric {
+    @inline
     def apply(
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
@@ -1105,6 +1147,7 @@ package cloudwatch {
   }
 
   object MetricAlarm {
+    @inline
     def apply(
         ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
         AlarmActions: js.UndefOr[ResourceList] = js.undefined,
@@ -1187,6 +1230,7 @@ package cloudwatch {
   }
 
   object MetricDataQuery {
+    @inline
     def apply(
         Id: MetricId,
         Expression: js.UndefOr[MetricExpression] = js.undefined,
@@ -1220,6 +1264,7 @@ package cloudwatch {
   }
 
   object MetricDataResult {
+    @inline
     def apply(
         Id: js.UndefOr[MetricId] = js.undefined,
         Label: js.UndefOr[MetricLabel] = js.undefined,
@@ -1256,6 +1301,7 @@ package cloudwatch {
   }
 
   object MetricDatum {
+    @inline
     def apply(
         MetricName: MetricName,
         Counts: js.UndefOr[Counts] = js.undefined,
@@ -1295,6 +1341,7 @@ package cloudwatch {
   }
 
   object MetricStat {
+    @inline
     def apply(
         Metric: Metric,
         Period: Period,
@@ -1322,6 +1369,7 @@ package cloudwatch {
   }
 
   object PutAnomalyDetectorInput {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: Namespace,
@@ -1345,6 +1393,7 @@ package cloudwatch {
   trait PutAnomalyDetectorOutput extends js.Object {}
 
   object PutAnomalyDetectorOutput {
+    @inline
     def apply(
         ): PutAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
@@ -1360,6 +1409,7 @@ package cloudwatch {
   }
 
   object PutDashboardInput {
+    @inline
     def apply(
         DashboardBody: DashboardBody,
         DashboardName: DashboardName
@@ -1379,6 +1429,7 @@ package cloudwatch {
   }
 
   object PutDashboardOutput {
+    @inline
     def apply(
         DashboardValidationMessages: js.UndefOr[DashboardValidationMessages] = js.undefined
     ): PutDashboardOutput = {
@@ -1417,6 +1468,7 @@ package cloudwatch {
   }
 
   object PutMetricAlarmInput {
+    @inline
     def apply(
         AlarmName: AlarmName,
         ComparisonOperator: ComparisonOperator,
@@ -1479,6 +1531,7 @@ package cloudwatch {
   }
 
   object PutMetricDataInput {
+    @inline
     def apply(
         MetricData: MetricData,
         Namespace: Namespace
@@ -1502,6 +1555,7 @@ package cloudwatch {
   }
 
   object Range {
+    @inline
     def apply(
         EndTime: Timestamp,
         StartTime: Timestamp
@@ -1531,6 +1585,7 @@ package cloudwatch {
   }
 
   object SetAlarmStateInput {
+    @inline
     def apply(
         AlarmName: AlarmName,
         StateReason: StateReason,
@@ -1640,6 +1695,7 @@ package cloudwatch {
   }
 
   object StatisticSet {
+    @inline
     def apply(
         Maximum: DatapointValue,
         Minimum: DatapointValue,
@@ -1675,6 +1731,7 @@ package cloudwatch {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -1695,6 +1752,7 @@ package cloudwatch {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         Tags: TagList
@@ -1712,6 +1770,7 @@ package cloudwatch {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1727,6 +1786,7 @@ package cloudwatch {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         TagKeys: TagKeyList
@@ -1744,6 +1804,7 @@ package cloudwatch {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()

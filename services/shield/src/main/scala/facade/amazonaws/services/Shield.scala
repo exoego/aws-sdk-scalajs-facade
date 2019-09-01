@@ -42,43 +42,44 @@ package object shield {
 
   implicit final class ShieldOps(private val service: Shield) extends AnyVal {
 
-    def associateDRTLogBucketFuture(params: AssociateDRTLogBucketRequest): Future[AssociateDRTLogBucketResponse] =
-      service.associateDRTLogBucket(params).promise.toFuture
-    def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
+    @inline def associateDRTLogBucketFuture(
+        params: AssociateDRTLogBucketRequest
+    ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise.toFuture
+    @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
       service.associateDRTRole(params).promise.toFuture
-    def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
+    @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
       service.createProtection(params).promise.toFuture
-    def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
+    @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
       service.createSubscription(params).promise.toFuture
-    def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
+    @inline def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
       service.deleteProtection(params).promise.toFuture
-    def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
+    @inline def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
       service.describeAttack(params).promise.toFuture
-    def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
+    @inline def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
       service.describeDRTAccess(params).promise.toFuture
-    def describeEmergencyContactSettingsFuture(
+    @inline def describeEmergencyContactSettingsFuture(
         params: DescribeEmergencyContactSettingsRequest
     ): Future[DescribeEmergencyContactSettingsResponse] =
       service.describeEmergencyContactSettings(params).promise.toFuture
-    def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] =
+    @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] =
       service.describeProtection(params).promise.toFuture
-    def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
+    @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
       service.describeSubscription(params).promise.toFuture
-    def disassociateDRTLogBucketFuture(
+    @inline def disassociateDRTLogBucketFuture(
         params: DisassociateDRTLogBucketRequest
     ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise.toFuture
-    def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
+    @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
       service.disassociateDRTRole(params).promise.toFuture
-    def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
+    @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
       service.getSubscriptionState(params).promise.toFuture
-    def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
+    @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
       service.listAttacks(params).promise.toFuture
-    def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] =
+    @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] =
       service.listProtections(params).promise.toFuture
-    def updateEmergencyContactSettingsFuture(
+    @inline def updateEmergencyContactSettingsFuture(
         params: UpdateEmergencyContactSettingsRequest
     ): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise.toFuture
-    def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] =
+    @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] =
       service.updateSubscription(params).promise.toFuture
   }
 }
@@ -122,6 +123,7 @@ package shield {
   }
 
   object AssociateDRTLogBucketRequest {
+    @inline
     def apply(
         LogBucket: LogBucket
     ): AssociateDRTLogBucketRequest = {
@@ -137,6 +139,7 @@ package shield {
   trait AssociateDRTLogBucketResponse extends js.Object {}
 
   object AssociateDRTLogBucketResponse {
+    @inline
     def apply(
         ): AssociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
@@ -151,6 +154,7 @@ package shield {
   }
 
   object AssociateDRTRoleRequest {
+    @inline
     def apply(
         RoleArn: RoleArn
     ): AssociateDRTRoleRequest = {
@@ -166,6 +170,7 @@ package shield {
   trait AssociateDRTRoleResponse extends js.Object {}
 
   object AssociateDRTRoleResponse {
+    @inline
     def apply(
         ): AssociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
@@ -190,6 +195,7 @@ package shield {
   }
 
   object AttackDetail {
+    @inline
     def apply(
         AttackCounters: js.UndefOr[SummarizedCounterList] = js.undefined,
         AttackId: js.UndefOr[AttackId] = js.undefined,
@@ -233,6 +239,7 @@ package shield {
   }
 
   object AttackProperty {
+    @inline
     def apply(
         AttackLayer: js.UndefOr[AttackLayer] = js.undefined,
         AttackPropertyIdentifier: js.UndefOr[AttackPropertyIdentifier] = js.undefined,
@@ -287,6 +294,7 @@ package shield {
   }
 
   object AttackSummary {
+    @inline
     def apply(
         AttackId: js.UndefOr[String] = js.undefined,
         AttackVectors: js.UndefOr[AttackVectorDescriptionList] = js.undefined,
@@ -313,6 +321,7 @@ package shield {
   }
 
   object AttackVectorDescription {
+    @inline
     def apply(
         VectorType: String
     ): AttackVectorDescription = {
@@ -341,6 +350,7 @@ package shield {
   }
 
   object Contributor {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
@@ -359,6 +369,7 @@ package shield {
   }
 
   object CreateProtectionRequest {
+    @inline
     def apply(
         Name: ProtectionName,
         ResourceArn: ResourceArn
@@ -378,6 +389,7 @@ package shield {
   }
 
   object CreateProtectionResponse {
+    @inline
     def apply(
         ProtectionId: js.UndefOr[ProtectionId] = js.undefined
     ): CreateProtectionResponse = {
@@ -391,6 +403,7 @@ package shield {
   trait CreateSubscriptionRequest extends js.Object {}
 
   object CreateSubscriptionRequest {
+    @inline
     def apply(
         ): CreateSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
@@ -403,6 +416,7 @@ package shield {
   trait CreateSubscriptionResponse extends js.Object {}
 
   object CreateSubscriptionResponse {
+    @inline
     def apply(
         ): CreateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
@@ -417,6 +431,7 @@ package shield {
   }
 
   object DeleteProtectionRequest {
+    @inline
     def apply(
         ProtectionId: ProtectionId
     ): DeleteProtectionRequest = {
@@ -432,6 +447,7 @@ package shield {
   trait DeleteProtectionResponse extends js.Object {}
 
   object DeleteProtectionResponse {
+    @inline
     def apply(
         ): DeleteProtectionResponse = {
       val __obj = js.Dynamic.literal()
@@ -445,6 +461,7 @@ package shield {
   trait DeleteSubscriptionRequest extends js.Object {}
 
   object DeleteSubscriptionRequest {
+    @inline
     def apply(
         ): DeleteSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
@@ -458,6 +475,7 @@ package shield {
   trait DeleteSubscriptionResponse extends js.Object {}
 
   object DeleteSubscriptionResponse {
+    @inline
     def apply(
         ): DeleteSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
@@ -472,6 +490,7 @@ package shield {
   }
 
   object DescribeAttackRequest {
+    @inline
     def apply(
         AttackId: AttackId
     ): DescribeAttackRequest = {
@@ -489,6 +508,7 @@ package shield {
   }
 
   object DescribeAttackResponse {
+    @inline
     def apply(
         Attack: js.UndefOr[AttackDetail] = js.undefined
     ): DescribeAttackResponse = {
@@ -502,6 +522,7 @@ package shield {
   trait DescribeDRTAccessRequest extends js.Object {}
 
   object DescribeDRTAccessRequest {
+    @inline
     def apply(
         ): DescribeDRTAccessRequest = {
       val __obj = js.Dynamic.literal()
@@ -517,6 +538,7 @@ package shield {
   }
 
   object DescribeDRTAccessResponse {
+    @inline
     def apply(
         LogBucketList: js.UndefOr[LogBucketList] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined
@@ -532,6 +554,7 @@ package shield {
   trait DescribeEmergencyContactSettingsRequest extends js.Object {}
 
   object DescribeEmergencyContactSettingsRequest {
+    @inline
     def apply(
         ): DescribeEmergencyContactSettingsRequest = {
       val __obj = js.Dynamic.literal()
@@ -546,6 +569,7 @@ package shield {
   }
 
   object DescribeEmergencyContactSettingsResponse {
+    @inline
     def apply(
         EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
     ): DescribeEmergencyContactSettingsResponse = {
@@ -562,6 +586,7 @@ package shield {
   }
 
   object DescribeProtectionRequest {
+    @inline
     def apply(
         ProtectionId: js.UndefOr[ProtectionId] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
@@ -579,6 +604,7 @@ package shield {
   }
 
   object DescribeProtectionResponse {
+    @inline
     def apply(
         Protection: js.UndefOr[Protection] = js.undefined
     ): DescribeProtectionResponse = {
@@ -592,6 +618,7 @@ package shield {
   trait DescribeSubscriptionRequest extends js.Object {}
 
   object DescribeSubscriptionRequest {
+    @inline
     def apply(
         ): DescribeSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
@@ -606,6 +633,7 @@ package shield {
   }
 
   object DescribeSubscriptionResponse {
+    @inline
     def apply(
         Subscription: js.UndefOr[Subscription] = js.undefined
     ): DescribeSubscriptionResponse = {
@@ -621,6 +649,7 @@ package shield {
   }
 
   object DisassociateDRTLogBucketRequest {
+    @inline
     def apply(
         LogBucket: LogBucket
     ): DisassociateDRTLogBucketRequest = {
@@ -636,6 +665,7 @@ package shield {
   trait DisassociateDRTLogBucketResponse extends js.Object {}
 
   object DisassociateDRTLogBucketResponse {
+    @inline
     def apply(
         ): DisassociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
@@ -648,6 +678,7 @@ package shield {
   trait DisassociateDRTRoleRequest extends js.Object {}
 
   object DisassociateDRTRoleRequest {
+    @inline
     def apply(
         ): DisassociateDRTRoleRequest = {
       val __obj = js.Dynamic.literal()
@@ -660,6 +691,7 @@ package shield {
   trait DisassociateDRTRoleResponse extends js.Object {}
 
   object DisassociateDRTRoleResponse {
+    @inline
     def apply(
         ): DisassociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
@@ -677,6 +709,7 @@ package shield {
   }
 
   object EmergencyContact {
+    @inline
     def apply(
         EmailAddress: EmailAddress
     ): EmergencyContact = {
@@ -692,6 +725,7 @@ package shield {
   trait GetSubscriptionStateRequest extends js.Object {}
 
   object GetSubscriptionStateRequest {
+    @inline
     def apply(
         ): GetSubscriptionStateRequest = {
       val __obj = js.Dynamic.literal()
@@ -706,6 +740,7 @@ package shield {
   }
 
   object GetSubscriptionStateResponse {
+    @inline
     def apply(
         SubscriptionState: SubscriptionState
     ): GetSubscriptionStateResponse = {
@@ -727,6 +762,7 @@ package shield {
   }
 
   object Limit {
+    @inline
     def apply(
         Max: js.UndefOr[Double] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
@@ -748,6 +784,7 @@ package shield {
   }
 
   object ListAttacksRequest {
+    @inline
     def apply(
         EndTime: js.UndefOr[TimeRange] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -772,6 +809,7 @@ package shield {
   }
 
   object ListAttacksResponse {
+    @inline
     def apply(
         AttackSummaries: js.UndefOr[AttackSummaries] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -790,6 +828,7 @@ package shield {
   }
 
   object ListProtectionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -808,6 +847,7 @@ package shield {
   }
 
   object ListProtectionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         Protections: js.UndefOr[Protections] = js.undefined
@@ -828,6 +868,7 @@ package shield {
   }
 
   object Mitigation {
+    @inline
     def apply(
         MitigationName: js.UndefOr[String] = js.undefined
     ): Mitigation = {
@@ -848,6 +889,7 @@ package shield {
   }
 
   object Protection {
+    @inline
     def apply(
         Id: js.UndefOr[ProtectionId] = js.undefined,
         Name: js.UndefOr[ProtectionName] = js.undefined,
@@ -873,6 +915,7 @@ package shield {
   }
 
   object SubResourceSummary {
+    @inline
     def apply(
         AttackVectors: js.UndefOr[SummarizedAttackVectorList] = js.undefined,
         Counters: js.UndefOr[SummarizedCounterList] = js.undefined,
@@ -908,6 +951,7 @@ package shield {
   }
 
   object Subscription {
+    @inline
     def apply(
         AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -942,6 +986,7 @@ package shield {
   }
 
   object SummarizedAttackVector {
+    @inline
     def apply(
         VectorType: String,
         VectorCounters: js.UndefOr[SummarizedCounterList] = js.undefined
@@ -969,6 +1014,7 @@ package shield {
   }
 
   object SummarizedCounter {
+    @inline
     def apply(
         Average: js.UndefOr[Double] = js.undefined,
         Max: js.UndefOr[Double] = js.undefined,
@@ -998,6 +1044,7 @@ package shield {
   }
 
   object TimeRange {
+    @inline
     def apply(
         FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
         ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined
@@ -1024,6 +1071,7 @@ package shield {
   }
 
   object UpdateEmergencyContactSettingsRequest {
+    @inline
     def apply(
         EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
     ): UpdateEmergencyContactSettingsRequest = {
@@ -1037,6 +1085,7 @@ package shield {
   trait UpdateEmergencyContactSettingsResponse extends js.Object {}
 
   object UpdateEmergencyContactSettingsResponse {
+    @inline
     def apply(
         ): UpdateEmergencyContactSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1051,6 +1100,7 @@ package shield {
   }
 
   object UpdateSubscriptionRequest {
+    @inline
     def apply(
         AutoRenew: js.UndefOr[AutoRenew] = js.undefined
     ): UpdateSubscriptionRequest = {
@@ -1064,6 +1114,7 @@ package shield {
   trait UpdateSubscriptionResponse extends js.Object {}
 
   object UpdateSubscriptionResponse {
+    @inline
     def apply(
         ): UpdateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()

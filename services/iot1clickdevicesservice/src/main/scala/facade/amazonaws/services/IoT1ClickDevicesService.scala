@@ -24,30 +24,32 @@ package object iot1clickdevicesservice {
 
   implicit final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
 
-    def claimDevicesByClaimCodeFuture(params: ClaimDevicesByClaimCodeRequest): Future[ClaimDevicesByClaimCodeResponse] =
-      service.claimDevicesByClaimCode(params).promise.toFuture
-    def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
+    @inline def claimDevicesByClaimCodeFuture(
+        params: ClaimDevicesByClaimCodeRequest
+    ): Future[ClaimDevicesByClaimCodeResponse] = service.claimDevicesByClaimCode(params).promise.toFuture
+    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
       service.describeDevice(params).promise.toFuture
-    def finalizeDeviceClaimFuture(params: FinalizeDeviceClaimRequest): Future[FinalizeDeviceClaimResponse] =
+    @inline def finalizeDeviceClaimFuture(params: FinalizeDeviceClaimRequest): Future[FinalizeDeviceClaimResponse] =
       service.finalizeDeviceClaim(params).promise.toFuture
-    def getDeviceMethodsFuture(params: GetDeviceMethodsRequest): Future[GetDeviceMethodsResponse] =
+    @inline def getDeviceMethodsFuture(params: GetDeviceMethodsRequest): Future[GetDeviceMethodsResponse] =
       service.getDeviceMethods(params).promise.toFuture
-    def initiateDeviceClaimFuture(params: InitiateDeviceClaimRequest): Future[InitiateDeviceClaimResponse] =
+    @inline def initiateDeviceClaimFuture(params: InitiateDeviceClaimRequest): Future[InitiateDeviceClaimResponse] =
       service.initiateDeviceClaim(params).promise.toFuture
-    def invokeDeviceMethodFuture(params: InvokeDeviceMethodRequest): Future[InvokeDeviceMethodResponse] =
+    @inline def invokeDeviceMethodFuture(params: InvokeDeviceMethodRequest): Future[InvokeDeviceMethodResponse] =
       service.invokeDeviceMethod(params).promise.toFuture
-    def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
+    @inline def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
       service.listDeviceEvents(params).promise.toFuture
-    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
       service.listDevices(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] =
       service.unclaimDevice(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] =
+    @inline def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] =
       service.updateDeviceState(params).promise.toFuture
   }
 }
@@ -78,6 +80,7 @@ package iot1clickdevicesservice {
   trait Attributes extends js.Object {}
 
   object Attributes {
+    @inline
     def apply(
         ): Attributes = {
       val __obj = js.Dynamic.literal()
@@ -92,6 +95,7 @@ package iot1clickdevicesservice {
   }
 
   object ClaimDevicesByClaimCodeRequest {
+    @inline
     def apply(
         ClaimCode: __string
     ): ClaimDevicesByClaimCodeRequest = {
@@ -110,6 +114,7 @@ package iot1clickdevicesservice {
   }
 
   object ClaimDevicesByClaimCodeResponse {
+    @inline
     def apply(
         ClaimCode: js.UndefOr[__stringMin12Max40] = js.undefined,
         Total: js.UndefOr[__integer] = js.undefined
@@ -127,6 +132,7 @@ package iot1clickdevicesservice {
   }
 
   object DescribeDeviceRequest {
+    @inline
     def apply(
         DeviceId: __string
     ): DescribeDeviceRequest = {
@@ -144,6 +150,7 @@ package iot1clickdevicesservice {
   }
 
   object DescribeDeviceResponse {
+    @inline
     def apply(
         DeviceDescription: js.UndefOr[DeviceDescription] = js.undefined
     ): DescribeDeviceResponse = {
@@ -161,6 +168,7 @@ package iot1clickdevicesservice {
   }
 
   object Device {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         DeviceId: js.UndefOr[__string] = js.undefined,
@@ -186,6 +194,7 @@ package iot1clickdevicesservice {
   }
 
   object DeviceDescription {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[DeviceAttributes] = js.undefined,
@@ -214,6 +223,7 @@ package iot1clickdevicesservice {
   }
 
   object DeviceEvent {
+    @inline
     def apply(
         Device: js.UndefOr[Device] = js.undefined,
         StdEvent: js.UndefOr[__string] = js.undefined
@@ -232,6 +242,7 @@ package iot1clickdevicesservice {
   }
 
   object DeviceMethod {
+    @inline
     def apply(
         DeviceType: js.UndefOr[__string] = js.undefined,
         MethodName: js.UndefOr[__string] = js.undefined
@@ -250,6 +261,7 @@ package iot1clickdevicesservice {
   }
 
   object FinalizeDeviceClaimRequest {
+    @inline
     def apply(
         DeviceId: __string,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
@@ -269,6 +281,7 @@ package iot1clickdevicesservice {
   }
 
   object FinalizeDeviceClaimResponse {
+    @inline
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): FinalizeDeviceClaimResponse = {
@@ -284,6 +297,7 @@ package iot1clickdevicesservice {
   }
 
   object GetDeviceMethodsRequest {
+    @inline
     def apply(
         DeviceId: __string
     ): GetDeviceMethodsRequest = {
@@ -301,6 +315,7 @@ package iot1clickdevicesservice {
   }
 
   object GetDeviceMethodsResponse {
+    @inline
     def apply(
         DeviceMethods: js.UndefOr[__listOfDeviceMethod] = js.undefined
     ): GetDeviceMethodsResponse = {
@@ -316,6 +331,7 @@ package iot1clickdevicesservice {
   }
 
   object InitiateDeviceClaimRequest {
+    @inline
     def apply(
         DeviceId: __string
     ): InitiateDeviceClaimRequest = {
@@ -333,6 +349,7 @@ package iot1clickdevicesservice {
   }
 
   object InitiateDeviceClaimResponse {
+    @inline
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): InitiateDeviceClaimResponse = {
@@ -350,6 +367,7 @@ package iot1clickdevicesservice {
   }
 
   object InvokeDeviceMethodRequest {
+    @inline
     def apply(
         DeviceId: __string,
         DeviceMethod: js.UndefOr[DeviceMethod] = js.undefined,
@@ -371,6 +389,7 @@ package iot1clickdevicesservice {
   }
 
   object InvokeDeviceMethodResponse {
+    @inline
     def apply(
         DeviceMethodResponse: js.UndefOr[__string] = js.undefined
     ): InvokeDeviceMethodResponse = {
@@ -390,6 +409,7 @@ package iot1clickdevicesservice {
   }
 
   object ListDeviceEventsRequest {
+    @inline
     def apply(
         DeviceId: __string,
         FromTimeStamp: __timestampIso8601,
@@ -416,6 +436,7 @@ package iot1clickdevicesservice {
   }
 
   object ListDeviceEventsResponse {
+    @inline
     def apply(
         Events: js.UndefOr[__listOfDeviceEvent] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -435,6 +456,7 @@ package iot1clickdevicesservice {
   }
 
   object ListDevicesRequest {
+    @inline
     def apply(
         DeviceType: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -455,6 +477,7 @@ package iot1clickdevicesservice {
   }
 
   object ListDevicesResponse {
+    @inline
     def apply(
         Devices: js.UndefOr[__listOfDeviceDescription] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -472,6 +495,7 @@ package iot1clickdevicesservice {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -489,6 +513,7 @@ package iot1clickdevicesservice {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -505,6 +530,7 @@ package iot1clickdevicesservice {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: __mapOf__string
@@ -524,6 +550,7 @@ package iot1clickdevicesservice {
   }
 
   object UnclaimDeviceRequest {
+    @inline
     def apply(
         DeviceId: __string
     ): UnclaimDeviceRequest = {
@@ -541,6 +568,7 @@ package iot1clickdevicesservice {
   }
 
   object UnclaimDeviceResponse {
+    @inline
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): UnclaimDeviceResponse = {
@@ -557,6 +585,7 @@ package iot1clickdevicesservice {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -577,6 +606,7 @@ package iot1clickdevicesservice {
   }
 
   object UpdateDeviceStateRequest {
+    @inline
     def apply(
         DeviceId: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
@@ -594,6 +624,7 @@ package iot1clickdevicesservice {
   trait UpdateDeviceStateResponse extends js.Object {}
 
   object UpdateDeviceStateResponse {
+    @inline
     def apply(
         ): UpdateDeviceStateResponse = {
       val __obj = js.Dynamic.literal()

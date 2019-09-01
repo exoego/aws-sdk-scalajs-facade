@@ -59,50 +59,51 @@ package object cognitoidentity {
 
   implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
-    def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] =
+    @inline def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] =
       service.createIdentityPool(params).promise.toFuture
-    def deleteIdentitiesFuture(params: DeleteIdentitiesInput): Future[DeleteIdentitiesResponse] =
+    @inline def deleteIdentitiesFuture(params: DeleteIdentitiesInput): Future[DeleteIdentitiesResponse] =
       service.deleteIdentities(params).promise.toFuture
-    def deleteIdentityPoolFuture(params: DeleteIdentityPoolInput): Future[js.Object] =
+    @inline def deleteIdentityPoolFuture(params: DeleteIdentityPoolInput): Future[js.Object] =
       service.deleteIdentityPool(params).promise.toFuture
-    def describeIdentityFuture(params: DescribeIdentityInput): Future[IdentityDescription] =
+    @inline def describeIdentityFuture(params: DescribeIdentityInput): Future[IdentityDescription] =
       service.describeIdentity(params).promise.toFuture
-    def describeIdentityPoolFuture(params: DescribeIdentityPoolInput): Future[IdentityPool] =
+    @inline def describeIdentityPoolFuture(params: DescribeIdentityPoolInput): Future[IdentityPool] =
       service.describeIdentityPool(params).promise.toFuture
-    def getCredentialsForIdentityFuture(
+    @inline def getCredentialsForIdentityFuture(
         params: GetCredentialsForIdentityInput
-    ): Future[GetCredentialsForIdentityResponse]               = service.getCredentialsForIdentity(params).promise.toFuture
-    def getIdFuture(params: GetIdInput): Future[GetIdResponse] = service.getId(params).promise.toFuture
-    def getIdentityPoolRolesFuture(params: GetIdentityPoolRolesInput): Future[GetIdentityPoolRolesResponse] =
+    ): Future[GetCredentialsForIdentityResponse]                       = service.getCredentialsForIdentity(params).promise.toFuture
+    @inline def getIdFuture(params: GetIdInput): Future[GetIdResponse] = service.getId(params).promise.toFuture
+    @inline def getIdentityPoolRolesFuture(params: GetIdentityPoolRolesInput): Future[GetIdentityPoolRolesResponse] =
       service.getIdentityPoolRoles(params).promise.toFuture
-    def getOpenIdTokenForDeveloperIdentityFuture(
+    @inline def getOpenIdTokenForDeveloperIdentityFuture(
         params: GetOpenIdTokenForDeveloperIdentityInput
     ): Future[GetOpenIdTokenForDeveloperIdentityResponse] =
       service.getOpenIdTokenForDeveloperIdentity(params).promise.toFuture
-    def getOpenIdTokenFuture(params: GetOpenIdTokenInput): Future[GetOpenIdTokenResponse] =
+    @inline def getOpenIdTokenFuture(params: GetOpenIdTokenInput): Future[GetOpenIdTokenResponse] =
       service.getOpenIdToken(params).promise.toFuture
-    def listIdentitiesFuture(params: ListIdentitiesInput): Future[ListIdentitiesResponse] =
+    @inline def listIdentitiesFuture(params: ListIdentitiesInput): Future[ListIdentitiesResponse] =
       service.listIdentities(params).promise.toFuture
-    def listIdentityPoolsFuture(params: ListIdentityPoolsInput): Future[ListIdentityPoolsResponse] =
+    @inline def listIdentityPoolsFuture(params: ListIdentityPoolsInput): Future[ListIdentityPoolsResponse] =
       service.listIdentityPools(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def lookupDeveloperIdentityFuture(params: LookupDeveloperIdentityInput): Future[LookupDeveloperIdentityResponse] =
-      service.lookupDeveloperIdentity(params).promise.toFuture
-    def mergeDeveloperIdentitiesFuture(
+    @inline def lookupDeveloperIdentityFuture(
+        params: LookupDeveloperIdentityInput
+    ): Future[LookupDeveloperIdentityResponse] = service.lookupDeveloperIdentity(params).promise.toFuture
+    @inline def mergeDeveloperIdentitiesFuture(
         params: MergeDeveloperIdentitiesInput
     ): Future[MergeDeveloperIdentitiesResponse] = service.mergeDeveloperIdentities(params).promise.toFuture
-    def setIdentityPoolRolesFuture(params: SetIdentityPoolRolesInput): Future[js.Object] =
+    @inline def setIdentityPoolRolesFuture(params: SetIdentityPoolRolesInput): Future[js.Object] =
       service.setIdentityPoolRoles(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def unlinkDeveloperIdentityFuture(params: UnlinkDeveloperIdentityInput): Future[js.Object] =
+    @inline def unlinkDeveloperIdentityFuture(params: UnlinkDeveloperIdentityInput): Future[js.Object] =
       service.unlinkDeveloperIdentity(params).promise.toFuture
-    def unlinkIdentityFuture(params: UnlinkIdentityInput): Future[js.Object] =
+    @inline def unlinkIdentityFuture(params: UnlinkIdentityInput): Future[js.Object] =
       service.unlinkIdentity(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateIdentityPoolFuture(params: IdentityPool): Future[IdentityPool] =
+    @inline def updateIdentityPoolFuture(params: IdentityPool): Future[IdentityPool] =
       service.updateIdentityPool(params).promise.toFuture
   }
 }
@@ -159,6 +160,7 @@ package cognitoidentity {
   }
 
   object CognitoIdentityProvider {
+    @inline
     def apply(
         ClientId: js.UndefOr[CognitoIdentityProviderClientId] = js.undefined,
         ProviderName: js.UndefOr[CognitoIdentityProviderName] = js.undefined,
@@ -188,6 +190,7 @@ package cognitoidentity {
   }
 
   object CreateIdentityPoolInput {
+    @inline
     def apply(
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolName: IdentityPoolName,
@@ -227,6 +230,7 @@ package cognitoidentity {
   }
 
   object Credentials {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[AccessKeyString] = js.undefined,
         Expiration: js.UndefOr[DateType] = js.undefined,
@@ -251,6 +255,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentitiesInput {
+    @inline
     def apply(
         IdentityIdsToDelete: IdentityIdList
     ): DeleteIdentitiesInput = {
@@ -271,6 +276,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentitiesResponse {
+    @inline
     def apply(
         UnprocessedIdentityIds: js.UndefOr[UnprocessedIdentityIdList] = js.undefined
     ): DeleteIdentitiesResponse = {
@@ -289,6 +295,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentityPoolInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DeleteIdentityPoolInput = {
@@ -309,6 +316,7 @@ package cognitoidentity {
   }
 
   object DescribeIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId
     ): DescribeIdentityInput = {
@@ -329,6 +337,7 @@ package cognitoidentity {
   }
 
   object DescribeIdentityPoolInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityPoolInput = {
@@ -358,6 +367,7 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         CustomRoleArn: js.UndefOr[ARNString] = js.undefined,
@@ -383,6 +393,7 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityResponse {
+    @inline
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
@@ -405,6 +416,7 @@ package cognitoidentity {
   }
 
   object GetIdInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         AccountId: js.UndefOr[AccountId] = js.undefined,
@@ -429,6 +441,7 @@ package cognitoidentity {
   }
 
   object GetIdResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): GetIdResponse = {
@@ -447,6 +460,7 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetIdentityPoolRolesInput = {
@@ -469,6 +483,7 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesResponse {
+    @inline
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined,
@@ -494,6 +509,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         Logins: LoginsMap,
@@ -521,6 +537,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
@@ -542,6 +559,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         Logins: js.UndefOr[LoginsMap] = js.undefined
@@ -565,6 +583,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
@@ -588,6 +607,7 @@ package cognitoidentity {
   }
 
   object IdentityDescription {
+    @inline
     def apply(
         CreationDate: js.UndefOr[DateType] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
@@ -620,6 +640,7 @@ package cognitoidentity {
   }
 
   object IdentityPool {
+    @inline
     def apply(
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolId: IdentityPoolId,
@@ -659,6 +680,7 @@ package cognitoidentity {
   }
 
   object IdentityPoolShortDescription {
+    @inline
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         IdentityPoolName: js.UndefOr[IdentityPoolName] = js.undefined
@@ -682,6 +704,7 @@ package cognitoidentity {
   }
 
   object ListIdentitiesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         MaxResults: QueryLimit,
@@ -710,6 +733,7 @@ package cognitoidentity {
   }
 
   object ListIdentitiesResponse {
+    @inline
     def apply(
         Identities: js.UndefOr[IdentitiesList] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -733,6 +757,7 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsInput {
+    @inline
     def apply(
         MaxResults: QueryLimit,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -756,6 +781,7 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsResponse {
+    @inline
     def apply(
         IdentityPools: js.UndefOr[IdentityPoolsList] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -773,6 +799,7 @@ package cognitoidentity {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString
     ): ListTagsForResourceInput = {
@@ -790,6 +817,7 @@ package cognitoidentity {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -812,6 +840,7 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         DeveloperUserIdentifier: js.UndefOr[DeveloperUserIdentifier] = js.undefined,
@@ -842,6 +871,7 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityResponse {
+    @inline
     def apply(
         DeveloperUserIdentifierList: js.UndefOr[DeveloperUserIdentifierList] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
@@ -869,6 +899,7 @@ package cognitoidentity {
   }
 
   object MappingRule {
+    @inline
     def apply(
         Claim: ClaimName,
         MatchType: MappingRuleMatchType,
@@ -907,6 +938,7 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesInput {
+    @inline
     def apply(
         DestinationUserIdentifier: DeveloperUserIdentifier,
         DeveloperProviderName: DeveloperProviderName,
@@ -933,6 +965,7 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): MergeDeveloperIdentitiesResponse = {
@@ -953,6 +986,7 @@ package cognitoidentity {
   }
 
   object RoleMapping {
+    @inline
     def apply(
         Type: RoleMappingType,
         AmbiguousRoleResolution: js.UndefOr[AmbiguousRoleResolutionType] = js.undefined,
@@ -984,6 +1018,7 @@ package cognitoidentity {
   }
 
   object RulesConfigurationType {
+    @inline
     def apply(
         Rules: MappingRulesList
     ): RulesConfigurationType = {
@@ -1006,6 +1041,7 @@ package cognitoidentity {
   }
 
   object SetIdentityPoolRolesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         Roles: RolesMap,
@@ -1028,6 +1064,7 @@ package cognitoidentity {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString,
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
@@ -1045,6 +1082,7 @@ package cognitoidentity {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1065,6 +1103,7 @@ package cognitoidentity {
   }
 
   object UnlinkDeveloperIdentityInput {
+    @inline
     def apply(
         DeveloperProviderName: DeveloperProviderName,
         DeveloperUserIdentifier: DeveloperUserIdentifier,
@@ -1093,6 +1132,7 @@ package cognitoidentity {
   }
 
   object UnlinkIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         Logins: LoginsMap,
@@ -1118,6 +1158,7 @@ package cognitoidentity {
   }
 
   object UnprocessedIdentityId {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
@@ -1136,6 +1177,7 @@ package cognitoidentity {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString,
         TagKeys: js.UndefOr[IdentityPoolTagsListType] = js.undefined
@@ -1153,6 +1195,7 @@ package cognitoidentity {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

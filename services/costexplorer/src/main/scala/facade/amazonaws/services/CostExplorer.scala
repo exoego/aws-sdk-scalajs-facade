@@ -87,26 +87,28 @@ package object costexplorer {
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
-    def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
+    @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
       service.getCostAndUsage(params).promise.toFuture
-    def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
+    @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
       service.getCostForecast(params).promise.toFuture
-    def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
+    @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
       service.getDimensionValues(params).promise.toFuture
-    def getReservationCoverageFuture(params: GetReservationCoverageRequest): Future[GetReservationCoverageResponse] =
-      service.getReservationCoverage(params).promise.toFuture
-    def getReservationPurchaseRecommendationFuture(
+    @inline def getReservationCoverageFuture(
+        params: GetReservationCoverageRequest
+    ): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise.toFuture
+    @inline def getReservationPurchaseRecommendationFuture(
         params: GetReservationPurchaseRecommendationRequest
     ): Future[GetReservationPurchaseRecommendationResponse] =
       service.getReservationPurchaseRecommendation(params).promise.toFuture
-    def getReservationUtilizationFuture(
+    @inline def getReservationUtilizationFuture(
         params: GetReservationUtilizationRequest
     ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise.toFuture
-    def getRightsizingRecommendationFuture(
+    @inline def getRightsizingRecommendationFuture(
         params: GetRightsizingRecommendationRequest
-    ): Future[GetRightsizingRecommendationResponse]                    = service.getRightsizingRecommendation(params).promise.toFuture
-    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
-    def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
+    ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise.toFuture
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
+      service.getTags(params).promise.toFuture
+    @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
       service.getUsageForecast(params).promise.toFuture
   }
 }
@@ -160,6 +162,7 @@ package costexplorer {
   }
 
   object Coverage {
+    @inline
     def apply(
         CoverageCost: js.UndefOr[CoverageCost] = js.undefined,
         CoverageHours: js.UndefOr[CoverageHours] = js.undefined,
@@ -184,6 +187,7 @@ package costexplorer {
   }
 
   object CoverageByTime {
+    @inline
     def apply(
         Groups: js.UndefOr[ReservationCoverageGroups] = js.undefined,
         TimePeriod: js.UndefOr[DateInterval] = js.undefined,
@@ -206,6 +210,7 @@ package costexplorer {
   }
 
   object CoverageCost {
+    @inline
     def apply(
         OnDemandCost: js.UndefOr[OnDemandCost] = js.undefined
     ): CoverageCost = {
@@ -227,6 +232,7 @@ package costexplorer {
   }
 
   object CoverageHours {
+    @inline
     def apply(
         CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage] = js.undefined,
         OnDemandHours: js.UndefOr[OnDemandHours] = js.undefined,
@@ -255,6 +261,7 @@ package costexplorer {
   }
 
   object CoverageNormalizedUnits {
+    @inline
     def apply(
         CoverageNormalizedUnitsPercentage: js.UndefOr[CoverageNormalizedUnitsPercentage] = js.undefined,
         OnDemandNormalizedUnits: js.UndefOr[OnDemandNormalizedUnits] = js.undefined,
@@ -291,6 +298,7 @@ package costexplorer {
   }
 
   object CurrentInstance {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[GenericString] = js.undefined,
         MonthlyCost: js.UndefOr[GenericString] = js.undefined,
@@ -332,6 +340,7 @@ package costexplorer {
   }
 
   object DateInterval {
+    @inline
     def apply(
         End: YearMonthDay,
         Start: YearMonthDay
@@ -409,6 +418,7 @@ package costexplorer {
   }
 
   object DimensionValues {
+    @inline
     def apply(
         Key: js.UndefOr[Dimension] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
@@ -430,6 +440,7 @@ package costexplorer {
   }
 
   object DimensionValuesWithAttributes {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
@@ -457,6 +468,7 @@ package costexplorer {
   }
 
   object EC2InstanceDetails {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
         CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
@@ -497,6 +509,7 @@ package costexplorer {
   }
 
   object EC2ResourceDetails {
+    @inline
     def apply(
         HourlyOnDemandRate: js.UndefOr[GenericString] = js.undefined,
         InstanceType: js.UndefOr[GenericString] = js.undefined,
@@ -533,6 +546,7 @@ package costexplorer {
   }
 
   object EC2ResourceUtilization {
+    @inline
     def apply(
         MaxCpuUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
         MaxMemoryUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
@@ -561,6 +575,7 @@ package costexplorer {
   }
 
   object EC2Specification {
+    @inline
     def apply(
         OfferingClass: js.UndefOr[OfferingClass] = js.undefined
     ): EC2Specification = {
@@ -583,6 +598,7 @@ package costexplorer {
   }
 
   object ESInstanceDetails {
+    @inline
     def apply(
         CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
         InstanceClass: js.UndefOr[GenericString] = js.undefined,
@@ -614,6 +630,7 @@ package costexplorer {
   }
 
   object ElastiCacheInstanceDetails {
+    @inline
     def apply(
         CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
         Family: js.UndefOr[GenericString] = js.undefined,
@@ -655,6 +672,7 @@ package costexplorer {
   }
 
   object Expression {
+    @inline
     def apply(
         And: js.UndefOr[Expressions] = js.undefined,
         Dimensions: js.UndefOr[DimensionValues] = js.undefined,
@@ -684,6 +702,7 @@ package costexplorer {
   }
 
   object ForecastResult {
+    @inline
     def apply(
         MeanValue: js.UndefOr[GenericString] = js.undefined,
         PredictionIntervalLowerBound: js.UndefOr[GenericString] = js.undefined,
@@ -714,6 +733,7 @@ package costexplorer {
   }
 
   object GetCostAndUsageRequest {
+    @inline
     def apply(
         TimePeriod: DateInterval,
         Filter: js.UndefOr[Expression] = js.undefined,
@@ -743,6 +763,7 @@ package costexplorer {
   }
 
   object GetCostAndUsageResponse {
+    @inline
     def apply(
         GroupDefinitions: js.UndefOr[GroupDefinitions] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -766,6 +787,7 @@ package costexplorer {
   }
 
   object GetCostForecastRequest {
+    @inline
     def apply(
         Granularity: Granularity,
         Metric: Metric,
@@ -792,6 +814,7 @@ package costexplorer {
   }
 
   object GetCostForecastResponse {
+    @inline
     def apply(
         ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
         Total: js.UndefOr[MetricValue] = js.undefined
@@ -813,6 +836,7 @@ package costexplorer {
   }
 
   object GetDimensionValuesRequest {
+    @inline
     def apply(
         Dimension: Dimension,
         TimePeriod: DateInterval,
@@ -841,6 +865,7 @@ package costexplorer {
   }
 
   object GetDimensionValuesResponse {
+    @inline
     def apply(
         DimensionValues: DimensionValuesWithAttributesList,
         ReturnSize: PageSize,
@@ -872,6 +897,7 @@ package costexplorer {
   }
 
   object GetReservationCoverageRequest {
+    @inline
     def apply(
         TimePeriod: DateInterval,
         Filter: js.UndefOr[Expression] = js.undefined,
@@ -901,6 +927,7 @@ package costexplorer {
   }
 
   object GetReservationCoverageResponse {
+    @inline
     def apply(
         CoveragesByTime: CoveragesByTime,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -930,6 +957,7 @@ package costexplorer {
   }
 
   object GetReservationPurchaseRecommendationRequest {
+    @inline
     def apply(
         Service: GenericString,
         AccountId: js.UndefOr[GenericString] = js.undefined,
@@ -965,6 +993,7 @@ package costexplorer {
   }
 
   object GetReservationPurchaseRecommendationResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[ReservationPurchaseRecommendationMetadata] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -988,6 +1017,7 @@ package costexplorer {
   }
 
   object GetReservationUtilizationRequest {
+    @inline
     def apply(
         TimePeriod: DateInterval,
         Filter: js.UndefOr[Expression] = js.undefined,
@@ -1015,6 +1045,7 @@ package costexplorer {
   }
 
   object GetReservationUtilizationResponse {
+    @inline
     def apply(
         UtilizationsByTime: UtilizationsByTime,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -1039,6 +1070,7 @@ package costexplorer {
   }
 
   object GetRightsizingRecommendationRequest {
+    @inline
     def apply(
         Service: GenericString,
         Filter: js.UndefOr[Expression] = js.undefined,
@@ -1065,6 +1097,7 @@ package costexplorer {
   }
 
   object GetRightsizingRecommendationResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[RightsizingRecommendationMetadata] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -1091,6 +1124,7 @@ package costexplorer {
   }
 
   object GetTagsRequest {
+    @inline
     def apply(
         TimePeriod: DateInterval,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
@@ -1117,6 +1151,7 @@ package costexplorer {
   }
 
   object GetTagsResponse {
+    @inline
     def apply(
         ReturnSize: PageSize,
         Tags: TagList,
@@ -1144,6 +1179,7 @@ package costexplorer {
   }
 
   object GetUsageForecastRequest {
+    @inline
     def apply(
         Granularity: Granularity,
         Metric: Metric,
@@ -1170,6 +1206,7 @@ package costexplorer {
   }
 
   object GetUsageForecastResponse {
+    @inline
     def apply(
         ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
         Total: js.UndefOr[MetricValue] = js.undefined
@@ -1199,6 +1236,7 @@ package costexplorer {
   }
 
   object Group {
+    @inline
     def apply(
         Keys: js.UndefOr[Keys] = js.undefined,
         Metrics: js.UndefOr[Metrics] = js.undefined
@@ -1220,6 +1258,7 @@ package costexplorer {
   }
 
   object GroupDefinition {
+    @inline
     def apply(
         Key: js.UndefOr[GroupDefinitionKey] = js.undefined,
         Type: js.UndefOr[GroupDefinitionType] = js.undefined
@@ -1251,6 +1290,7 @@ package costexplorer {
   }
 
   object InstanceDetails {
+    @inline
     def apply(
         EC2InstanceDetails: js.UndefOr[EC2InstanceDetails] = js.undefined,
         ESInstanceDetails: js.UndefOr[ESInstanceDetails] = js.undefined,
@@ -1310,6 +1350,7 @@ package costexplorer {
   }
 
   object MetricValue {
+    @inline
     def apply(
         Amount: js.UndefOr[MetricAmount] = js.undefined,
         Unit: js.UndefOr[MetricUnit] = js.undefined
@@ -1330,6 +1371,7 @@ package costexplorer {
   }
 
   object ModifyRecommendationDetail {
+    @inline
     def apply(
         TargetInstances: js.UndefOr[TargetInstancesList] = js.undefined
     ): ModifyRecommendationDetail = {
@@ -1376,6 +1418,7 @@ package costexplorer {
   }
 
   object RDSInstanceDetails {
+    @inline
     def apply(
         CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
         DatabaseEdition: js.UndefOr[GenericString] = js.undefined,
@@ -1414,6 +1457,7 @@ package costexplorer {
   }
 
   object RedshiftInstanceDetails {
+    @inline
     def apply(
         CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
         Family: js.UndefOr[GenericString] = js.undefined,
@@ -1453,6 +1497,7 @@ package costexplorer {
   }
 
   object ReservationAggregates {
+    @inline
     def apply(
         AmortizedRecurringFee: js.UndefOr[AmortizedRecurringFee] = js.undefined,
         AmortizedUpfrontFee: js.UndefOr[AmortizedUpfrontFee] = js.undefined,
@@ -1502,6 +1547,7 @@ package costexplorer {
   }
 
   object ReservationCoverageGroup {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         Coverage: js.UndefOr[Coverage] = js.undefined
@@ -1528,6 +1574,7 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendation {
+    @inline
     def apply(
         AccountScope: js.UndefOr[AccountScope] = js.undefined,
         LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
@@ -1576,6 +1623,7 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendationDetail {
+    @inline
     def apply(
         AccountId: js.UndefOr[GenericString] = js.undefined,
         AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
@@ -1659,6 +1707,7 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendationMetadata {
+    @inline
     def apply(
         GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
         RecommendationId: js.UndefOr[GenericString] = js.undefined
@@ -1681,6 +1730,7 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendationSummary {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[GenericString] = js.undefined,
         TotalEstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
@@ -1710,6 +1760,7 @@ package costexplorer {
   }
 
   object ReservationUtilizationGroup {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         Key: js.UndefOr[ReservationGroupKey] = js.undefined,
@@ -1734,6 +1785,7 @@ package costexplorer {
   }
 
   object ResourceDetails {
+    @inline
     def apply(
         EC2ResourceDetails: js.UndefOr[EC2ResourceDetails] = js.undefined
     ): ResourceDetails = {
@@ -1752,6 +1804,7 @@ package costexplorer {
   }
 
   object ResourceUtilization {
+    @inline
     def apply(
         EC2ResourceUtilization: js.UndefOr[EC2ResourceUtilization] = js.undefined
     ): ResourceUtilization = {
@@ -1773,6 +1826,7 @@ package costexplorer {
   }
 
   object ResultByTime {
+    @inline
     def apply(
         Estimated: js.UndefOr[Estimated] = js.undefined,
         Groups: js.UndefOr[Groups] = js.undefined,
@@ -1801,6 +1855,7 @@ package costexplorer {
   }
 
   object RightsizingRecommendation {
+    @inline
     def apply(
         AccountId: js.UndefOr[GenericString] = js.undefined,
         CurrentInstance: js.UndefOr[CurrentInstance] = js.undefined,
@@ -1833,6 +1888,7 @@ package costexplorer {
   }
 
   object RightsizingRecommendationMetadata {
+    @inline
     def apply(
         GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
         LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
@@ -1858,6 +1914,7 @@ package costexplorer {
   }
 
   object RightsizingRecommendationSummary {
+    @inline
     def apply(
         EstimatedTotalMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
         SavingsCurrencyCode: js.UndefOr[GenericString] = js.undefined,
@@ -1891,6 +1948,7 @@ package costexplorer {
   }
 
   object ServiceSpecification {
+    @inline
     def apply(
         EC2Specification: js.UndefOr[EC2Specification] = js.undefined
     ): ServiceSpecification = {
@@ -1910,6 +1968,7 @@ package costexplorer {
   }
 
   object TagValues {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
@@ -1935,6 +1994,7 @@ package costexplorer {
   }
 
   object TargetInstance {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[GenericString] = js.undefined,
         DefaultTargetInstance: js.UndefOr[GenericBoolean] = js.undefined,
@@ -1973,6 +2033,7 @@ package costexplorer {
   }
 
   object TerminateRecommendationDetail {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[GenericString] = js.undefined,
         EstimatedMonthlySavings: js.UndefOr[GenericString] = js.undefined
@@ -1995,6 +2056,7 @@ package costexplorer {
   }
 
   object UtilizationByTime {
+    @inline
     def apply(
         Groups: js.UndefOr[ReservationUtilizationGroups] = js.undefined,
         TimePeriod: js.UndefOr[DateInterval] = js.undefined,

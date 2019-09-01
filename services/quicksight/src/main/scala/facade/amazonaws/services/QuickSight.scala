@@ -28,37 +28,40 @@ package object quicksight {
 
   implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture
-    def createGroupMembershipFuture(params: CreateGroupMembershipRequest): Future[CreateGroupMembershipResponse] =
-      service.createGroupMembership(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
+    @inline def createGroupMembershipFuture(
+        params: CreateGroupMembershipRequest
+    ): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise.toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
       service.deleteGroup(params).promise.toFuture
-    def deleteGroupMembershipFuture(params: DeleteGroupMembershipRequest): Future[DeleteGroupMembershipResponse] =
-      service.deleteGroupMembership(params).promise.toFuture
-    def deleteUserByPrincipalIdFuture(params: DeleteUserByPrincipalIdRequest): Future[DeleteUserByPrincipalIdResponse] =
-      service.deleteUserByPrincipalId(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+    @inline def deleteGroupMembershipFuture(
+        params: DeleteGroupMembershipRequest
+    ): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise.toFuture
+    @inline def deleteUserByPrincipalIdFuture(
+        params: DeleteUserByPrincipalIdRequest
+    ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise.toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
-    def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
+    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
       service.describeGroup(params).promise.toFuture
-    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise.toFuture
-    def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
+    @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
       service.getDashboardEmbedUrl(params).promise.toFuture
-    def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
+    @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
       service.listGroupMemberships(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
       service.listGroups(params).promise.toFuture
-    def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
+    @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
       service.listUserGroups(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
+    @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
       service.registerUser(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
       service.updateGroup(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
   }
 }
@@ -97,6 +100,7 @@ package quicksight {
   }
 
   object CreateGroupMembershipRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -122,6 +126,7 @@ package quicksight {
   }
 
   object CreateGroupMembershipResponse {
+    @inline
     def apply(
         GroupMember: js.UndefOr[GroupMember] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -147,6 +152,7 @@ package quicksight {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -175,6 +181,7 @@ package quicksight {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -197,6 +204,7 @@ package quicksight {
   }
 
   object DeleteGroupMembershipRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -221,6 +229,7 @@ package quicksight {
   }
 
   object DeleteGroupMembershipResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -240,6 +249,7 @@ package quicksight {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -262,6 +272,7 @@ package quicksight {
   }
 
   object DeleteGroupResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -284,6 +295,7 @@ package quicksight {
   }
 
   object DeleteUserByPrincipalIdRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -306,6 +318,7 @@ package quicksight {
   }
 
   object DeleteUserByPrincipalIdResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -325,6 +338,7 @@ package quicksight {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -347,6 +361,7 @@ package quicksight {
   }
 
   object DeleteUserResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -366,6 +381,7 @@ package quicksight {
   }
 
   object DescribeGroupRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -389,6 +405,7 @@ package quicksight {
   }
 
   object DescribeGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -410,6 +427,7 @@ package quicksight {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -433,6 +451,7 @@ package quicksight {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
@@ -458,6 +477,7 @@ package quicksight {
   }
 
   object GetDashboardEmbedUrlRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         DashboardId: String,
@@ -489,6 +509,7 @@ package quicksight {
   }
 
   object GetDashboardEmbedUrlResponse {
+    @inline
     def apply(
         EmbedUrl: js.UndefOr[EmbeddingUrl] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -514,6 +535,7 @@ package quicksight {
   }
 
   object Group {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[GroupDescription] = js.undefined,
@@ -539,6 +561,7 @@ package quicksight {
   }
 
   object GroupMember {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         MemberName: js.UndefOr[GroupMemberName] = js.undefined
@@ -567,6 +590,7 @@ package quicksight {
   }
 
   object ListGroupMembershipsRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -595,6 +619,7 @@ package quicksight {
   }
 
   object ListGroupMembershipsResponse {
+    @inline
     def apply(
         GroupMemberList: js.UndefOr[GroupMemberList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -619,6 +644,7 @@ package quicksight {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -645,6 +671,7 @@ package quicksight {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         GroupList: js.UndefOr[GroupList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -670,6 +697,7 @@ package quicksight {
   }
 
   object ListUserGroupsRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -698,6 +726,7 @@ package quicksight {
   }
 
   object ListUserGroupsResponse {
+    @inline
     def apply(
         GroupList: js.UndefOr[GroupList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -722,6 +751,7 @@ package quicksight {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Namespace: Namespace,
@@ -748,6 +778,7 @@ package quicksight {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -776,6 +807,7 @@ package quicksight {
   }
 
   object RegisterUserRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Email: String,
@@ -810,6 +842,7 @@ package quicksight {
   }
 
   object RegisterUserResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
@@ -834,6 +867,7 @@ package quicksight {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         GroupName: GroupName,
@@ -859,6 +893,7 @@ package quicksight {
   }
 
   object UpdateGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -882,6 +917,7 @@ package quicksight {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         AwsAccountId: AwsAccountId,
         Email: String,
@@ -909,6 +945,7 @@ package quicksight {
   }
 
   object UpdateUserResponse {
+    @inline
     def apply(
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
@@ -937,6 +974,7 @@ package quicksight {
   }
 
   object User {
+    @inline
     def apply(
         Active: js.UndefOr[Boolean] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,

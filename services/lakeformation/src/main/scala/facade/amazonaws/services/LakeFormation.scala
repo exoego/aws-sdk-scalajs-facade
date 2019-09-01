@@ -37,32 +37,34 @@ package object lakeformation {
 
   implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
-    def batchGrantPermissionsFuture(params: BatchGrantPermissionsRequest): Future[BatchGrantPermissionsResponse] =
-      service.batchGrantPermissions(params).promise.toFuture
-    def batchRevokePermissionsFuture(params: BatchRevokePermissionsRequest): Future[BatchRevokePermissionsResponse] =
-      service.batchRevokePermissions(params).promise.toFuture
-    def deregisterResourceFuture(params: DeregisterResourceRequest): Future[DeregisterResourceResponse] =
+    @inline def batchGrantPermissionsFuture(
+        params: BatchGrantPermissionsRequest
+    ): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise.toFuture
+    @inline def batchRevokePermissionsFuture(
+        params: BatchRevokePermissionsRequest
+    ): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise.toFuture
+    @inline def deregisterResourceFuture(params: DeregisterResourceRequest): Future[DeregisterResourceResponse] =
       service.deregisterResource(params).promise.toFuture
-    def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
+    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
       service.describeResource(params).promise.toFuture
-    def getDataLakeSettingsFuture(params: GetDataLakeSettingsRequest): Future[GetDataLakeSettingsResponse] =
+    @inline def getDataLakeSettingsFuture(params: GetDataLakeSettingsRequest): Future[GetDataLakeSettingsResponse] =
       service.getDataLakeSettings(params).promise.toFuture
-    def getEffectivePermissionsForPathFuture(
+    @inline def getEffectivePermissionsForPathFuture(
         params: GetEffectivePermissionsForPathRequest
     ): Future[GetEffectivePermissionsForPathResponse] = service.getEffectivePermissionsForPath(params).promise.toFuture
-    def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] =
+    @inline def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] =
       service.grantPermissions(params).promise.toFuture
-    def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
+    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
       service.listPermissions(params).promise.toFuture
-    def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
       service.listResources(params).promise.toFuture
-    def putDataLakeSettingsFuture(params: PutDataLakeSettingsRequest): Future[PutDataLakeSettingsResponse] =
+    @inline def putDataLakeSettingsFuture(params: PutDataLakeSettingsRequest): Future[PutDataLakeSettingsResponse] =
       service.putDataLakeSettings(params).promise.toFuture
-    def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] =
+    @inline def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] =
       service.registerResource(params).promise.toFuture
-    def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] =
+    @inline def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] =
       service.revokePermissions(params).promise.toFuture
-    def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
+    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
       service.updateResource(params).promise.toFuture
   }
 }
@@ -98,6 +100,7 @@ package lakeformation {
   }
 
   object BatchGrantPermissionsRequest {
+    @inline
     def apply(
         Entries: BatchPermissionsRequestEntryList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -117,6 +120,7 @@ package lakeformation {
   }
 
   object BatchGrantPermissionsResponse {
+    @inline
     def apply(
         Failures: js.UndefOr[BatchPermissionsFailureList] = js.undefined
     ): BatchGrantPermissionsResponse = {
@@ -136,6 +140,7 @@ package lakeformation {
   }
 
   object BatchPermissionsFailureEntry {
+    @inline
     def apply(
         Error: js.UndefOr[ErrorDetail] = js.undefined,
         RequestEntry: js.UndefOr[BatchPermissionsRequestEntry] = js.undefined
@@ -160,6 +165,7 @@ package lakeformation {
   }
 
   object BatchPermissionsRequestEntry {
+    @inline
     def apply(
         Id: Identifier,
         Permissions: js.UndefOr[PermissionList] = js.undefined,
@@ -188,6 +194,7 @@ package lakeformation {
   }
 
   object BatchRevokePermissionsRequest {
+    @inline
     def apply(
         Entries: BatchPermissionsRequestEntryList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -207,6 +214,7 @@ package lakeformation {
   }
 
   object BatchRevokePermissionsResponse {
+    @inline
     def apply(
         Failures: js.UndefOr[BatchPermissionsFailureList] = js.undefined
     ): BatchRevokePermissionsResponse = {
@@ -223,6 +231,7 @@ package lakeformation {
   trait CatalogResource extends js.Object {}
 
   object CatalogResource {
+    @inline
     def apply(
         ): CatalogResource = {
       val __obj = js.Dynamic.literal()
@@ -240,6 +249,7 @@ package lakeformation {
   }
 
   object ColumnWildcard {
+    @inline
     def apply(
         ExcludedColumnNames: js.UndefOr[ColumnNames] = js.undefined
     ): ColumnWildcard = {
@@ -274,6 +284,7 @@ package lakeformation {
   }
 
   object DataLakePrincipal {
+    @inline
     def apply(
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
@@ -305,6 +316,7 @@ package lakeformation {
   }
 
   object DataLakeSettings {
+    @inline
     def apply(
         CreateDatabaseDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
@@ -331,6 +343,7 @@ package lakeformation {
   }
 
   object DataLocationResource {
+    @inline
     def apply(
         ResourceArn: ResourceArnString
     ): DataLocationResource = {
@@ -351,6 +364,7 @@ package lakeformation {
   }
 
   object DatabaseResource {
+    @inline
     def apply(
         Name: NameString
     ): DatabaseResource = {
@@ -368,6 +382,7 @@ package lakeformation {
   }
 
   object DeregisterResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArnString
     ): DeregisterResourceRequest = {
@@ -383,6 +398,7 @@ package lakeformation {
   trait DeregisterResourceResponse extends js.Object {}
 
   object DeregisterResourceResponse {
+    @inline
     def apply(
         ): DeregisterResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -397,6 +413,7 @@ package lakeformation {
   }
 
   object DescribeResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArnString
     ): DescribeResourceRequest = {
@@ -414,6 +431,7 @@ package lakeformation {
   }
 
   object DescribeResourceResponse {
+    @inline
     def apply(
         ResourceInfo: js.UndefOr[ResourceInfo] = js.undefined
     ): DescribeResourceResponse = {
@@ -433,6 +451,7 @@ package lakeformation {
   }
 
   object ErrorDetail {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[NameString] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined
@@ -463,6 +482,7 @@ package lakeformation {
   }
 
   object FilterCondition {
+    @inline
     def apply(
         ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
         Field: js.UndefOr[FieldNameString] = js.undefined,
@@ -482,6 +502,7 @@ package lakeformation {
   }
 
   object GetDataLakeSettingsRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDataLakeSettingsRequest = {
@@ -497,6 +518,7 @@ package lakeformation {
   }
 
   object GetDataLakeSettingsResponse {
+    @inline
     def apply(
         DataLakeSettings: js.UndefOr[DataLakeSettings] = js.undefined
     ): GetDataLakeSettingsResponse = {
@@ -515,6 +537,7 @@ package lakeformation {
   }
 
   object GetEffectivePermissionsForPathRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
@@ -539,6 +562,7 @@ package lakeformation {
   }
 
   object GetEffectivePermissionsForPathResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         Permissions: js.UndefOr[PrincipalResourcePermissionsList] = js.undefined
@@ -560,6 +584,7 @@ package lakeformation {
   }
 
   object GrantPermissionsRequest {
+    @inline
     def apply(
         Permissions: PermissionList,
         Principal: DataLakePrincipal,
@@ -585,6 +610,7 @@ package lakeformation {
   trait GrantPermissionsResponse extends js.Object {}
 
   object GrantPermissionsResponse {
+    @inline
     def apply(
         ): GrantPermissionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -604,6 +630,7 @@ package lakeformation {
   }
 
   object ListPermissionsRequest {
+    @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -630,6 +657,7 @@ package lakeformation {
   }
 
   object ListPermissionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         PrincipalResourcePermissions: js.UndefOr[PrincipalResourcePermissionsList] = js.undefined
@@ -651,6 +679,7 @@ package lakeformation {
   }
 
   object ListResourcesRequest {
+    @inline
     def apply(
         FilterConditionList: js.UndefOr[FilterConditionList] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -671,6 +700,7 @@ package lakeformation {
   }
 
   object ListResourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         ResourceInfoList: js.UndefOr[ResourceInfoList] = js.undefined
@@ -708,6 +738,7 @@ package lakeformation {
   }
 
   object PrincipalPermissions {
+    @inline
     def apply(
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined
@@ -731,6 +762,7 @@ package lakeformation {
   }
 
   object PrincipalResourcePermissions {
+    @inline
     def apply(
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         PermissionsWithGrantOption: js.UndefOr[PermissionList] = js.undefined,
@@ -755,6 +787,7 @@ package lakeformation {
   }
 
   object PutDataLakeSettingsRequest {
+    @inline
     def apply(
         DataLakeSettings: DataLakeSettings,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
@@ -772,6 +805,7 @@ package lakeformation {
   trait PutDataLakeSettingsResponse extends js.Object {}
 
   object PutDataLakeSettingsResponse {
+    @inline
     def apply(
         ): PutDataLakeSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -788,6 +822,7 @@ package lakeformation {
   }
 
   object RegisterResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         RoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
@@ -807,6 +842,7 @@ package lakeformation {
   trait RegisterResourceResponse extends js.Object {}
 
   object RegisterResourceResponse {
+    @inline
     def apply(
         ): RegisterResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -828,6 +864,7 @@ package lakeformation {
   }
 
   object Resource {
+    @inline
     def apply(
         Catalog: js.UndefOr[CatalogResource] = js.undefined,
         DataLocation: js.UndefOr[DataLocationResource] = js.undefined,
@@ -856,6 +893,7 @@ package lakeformation {
   }
 
   object ResourceInfo {
+    @inline
     def apply(
         LastModified: js.UndefOr[LastModifiedTimestamp] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArnString] = js.undefined,
@@ -879,6 +917,7 @@ package lakeformation {
   }
 
   object RevokePermissionsRequest {
+    @inline
     def apply(
         Permissions: PermissionList,
         Principal: DataLakePrincipal,
@@ -904,6 +943,7 @@ package lakeformation {
   trait RevokePermissionsResponse extends js.Object {}
 
   object RevokePermissionsResponse {
+    @inline
     def apply(
         ): RevokePermissionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -922,6 +962,7 @@ package lakeformation {
   }
 
   object TableResource {
+    @inline
     def apply(
         DatabaseName: NameString,
         Name: NameString
@@ -948,6 +989,7 @@ package lakeformation {
   }
 
   object TableWithColumnsResource {
+    @inline
     def apply(
         ColumnNames: js.UndefOr[ColumnNames] = js.undefined,
         ColumnWildcard: js.UndefOr[ColumnWildcard] = js.undefined,
@@ -970,6 +1012,7 @@ package lakeformation {
   }
 
   object UpdateResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         RoleArn: IAMRoleArn
@@ -987,6 +1030,7 @@ package lakeformation {
   trait UpdateResourceResponse extends js.Object {}
 
   object UpdateResourceResponse {
+    @inline
     def apply(
         ): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()

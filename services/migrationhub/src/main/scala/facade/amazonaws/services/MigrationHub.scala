@@ -39,46 +39,48 @@ package object migrationhub {
 
   implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
 
-    def associateCreatedArtifactFuture(
+    @inline def associateCreatedArtifactFuture(
         params: AssociateCreatedArtifactRequest
     ): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise.toFuture
-    def associateDiscoveredResourceFuture(
+    @inline def associateDiscoveredResourceFuture(
         params: AssociateDiscoveredResourceRequest
     ): Future[AssociateDiscoveredResourceResult] = service.associateDiscoveredResource(params).promise.toFuture
-    def createProgressUpdateStreamFuture(
+    @inline def createProgressUpdateStreamFuture(
         params: CreateProgressUpdateStreamRequest
     ): Future[CreateProgressUpdateStreamResult] = service.createProgressUpdateStream(params).promise.toFuture
-    def deleteProgressUpdateStreamFuture(
+    @inline def deleteProgressUpdateStreamFuture(
         params: DeleteProgressUpdateStreamRequest
     ): Future[DeleteProgressUpdateStreamResult] = service.deleteProgressUpdateStream(params).promise.toFuture
-    def describeApplicationStateFuture(
+    @inline def describeApplicationStateFuture(
         params: DescribeApplicationStateRequest
     ): Future[DescribeApplicationStateResult] = service.describeApplicationState(params).promise.toFuture
-    def describeMigrationTaskFuture(params: DescribeMigrationTaskRequest): Future[DescribeMigrationTaskResult] =
+    @inline def describeMigrationTaskFuture(params: DescribeMigrationTaskRequest): Future[DescribeMigrationTaskResult] =
       service.describeMigrationTask(params).promise.toFuture
-    def disassociateCreatedArtifactFuture(
+    @inline def disassociateCreatedArtifactFuture(
         params: DisassociateCreatedArtifactRequest
     ): Future[DisassociateCreatedArtifactResult] = service.disassociateCreatedArtifact(params).promise.toFuture
-    def disassociateDiscoveredResourceFuture(
+    @inline def disassociateDiscoveredResourceFuture(
         params: DisassociateDiscoveredResourceRequest
     ): Future[DisassociateDiscoveredResourceResult] = service.disassociateDiscoveredResource(params).promise.toFuture
-    def importMigrationTaskFuture(params: ImportMigrationTaskRequest): Future[ImportMigrationTaskResult] =
+    @inline def importMigrationTaskFuture(params: ImportMigrationTaskRequest): Future[ImportMigrationTaskResult] =
       service.importMigrationTask(params).promise.toFuture
-    def listCreatedArtifactsFuture(params: ListCreatedArtifactsRequest): Future[ListCreatedArtifactsResult] =
+    @inline def listCreatedArtifactsFuture(params: ListCreatedArtifactsRequest): Future[ListCreatedArtifactsResult] =
       service.listCreatedArtifacts(params).promise.toFuture
-    def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResult] =
-      service.listDiscoveredResources(params).promise.toFuture
-    def listMigrationTasksFuture(params: ListMigrationTasksRequest): Future[ListMigrationTasksResult] =
+    @inline def listDiscoveredResourcesFuture(
+        params: ListDiscoveredResourcesRequest
+    ): Future[ListDiscoveredResourcesResult] = service.listDiscoveredResources(params).promise.toFuture
+    @inline def listMigrationTasksFuture(params: ListMigrationTasksRequest): Future[ListMigrationTasksResult] =
       service.listMigrationTasks(params).promise.toFuture
-    def listProgressUpdateStreamsFuture(
+    @inline def listProgressUpdateStreamsFuture(
         params: ListProgressUpdateStreamsRequest
     ): Future[ListProgressUpdateStreamsResult] = service.listProgressUpdateStreams(params).promise.toFuture
-    def notifyApplicationStateFuture(params: NotifyApplicationStateRequest): Future[NotifyApplicationStateResult] =
-      service.notifyApplicationState(params).promise.toFuture
-    def notifyMigrationTaskStateFuture(
+    @inline def notifyApplicationStateFuture(
+        params: NotifyApplicationStateRequest
+    ): Future[NotifyApplicationStateResult] = service.notifyApplicationState(params).promise.toFuture
+    @inline def notifyMigrationTaskStateFuture(
         params: NotifyMigrationTaskStateRequest
     ): Future[NotifyMigrationTaskStateResult] = service.notifyMigrationTaskState(params).promise.toFuture
-    def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] =
+    @inline def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] =
       service.putResourceAttributes(params).promise.toFuture
   }
 }
@@ -147,6 +149,7 @@ package migrationhub {
   }
 
   object AssociateCreatedArtifactRequest {
+    @inline
     def apply(
         CreatedArtifact: CreatedArtifact,
         MigrationTaskName: MigrationTaskName,
@@ -168,6 +171,7 @@ package migrationhub {
   trait AssociateCreatedArtifactResult extends js.Object {}
 
   object AssociateCreatedArtifactResult {
+    @inline
     def apply(
         ): AssociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
@@ -185,6 +189,7 @@ package migrationhub {
   }
 
   object AssociateDiscoveredResourceRequest {
+    @inline
     def apply(
         DiscoveredResource: DiscoveredResource,
         MigrationTaskName: MigrationTaskName,
@@ -206,6 +211,7 @@ package migrationhub {
   trait AssociateDiscoveredResourceResult extends js.Object {}
 
   object AssociateDiscoveredResourceResult {
+    @inline
     def apply(
         ): AssociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -221,6 +227,7 @@ package migrationhub {
   }
 
   object CreateProgressUpdateStreamRequest {
+    @inline
     def apply(
         ProgressUpdateStreamName: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
@@ -238,6 +245,7 @@ package migrationhub {
   trait CreateProgressUpdateStreamResult extends js.Object {}
 
   object CreateProgressUpdateStreamResult {
+    @inline
     def apply(
         ): CreateProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
@@ -256,6 +264,7 @@ package migrationhub {
   }
 
   object CreatedArtifact {
+    @inline
     def apply(
         Name: CreatedArtifactName,
         Description: js.UndefOr[CreatedArtifactDescription] = js.undefined
@@ -276,6 +285,7 @@ package migrationhub {
   }
 
   object DeleteProgressUpdateStreamRequest {
+    @inline
     def apply(
         ProgressUpdateStreamName: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
@@ -293,6 +303,7 @@ package migrationhub {
   trait DeleteProgressUpdateStreamResult extends js.Object {}
 
   object DeleteProgressUpdateStreamResult {
+    @inline
     def apply(
         ): DeleteProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
@@ -307,6 +318,7 @@ package migrationhub {
   }
 
   object DescribeApplicationStateRequest {
+    @inline
     def apply(
         ApplicationId: ApplicationId
     ): DescribeApplicationStateRequest = {
@@ -325,6 +337,7 @@ package migrationhub {
   }
 
   object DescribeApplicationStateResult {
+    @inline
     def apply(
         ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
         LastUpdatedTime: js.UndefOr[UpdateDateTime] = js.undefined
@@ -343,6 +356,7 @@ package migrationhub {
   }
 
   object DescribeMigrationTaskRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream
@@ -362,6 +376,7 @@ package migrationhub {
   }
 
   object DescribeMigrationTaskResult {
+    @inline
     def apply(
         MigrationTask: js.UndefOr[MigrationTask] = js.undefined
     ): DescribeMigrationTaskResult = {
@@ -380,6 +395,7 @@ package migrationhub {
   }
 
   object DisassociateCreatedArtifactRequest {
+    @inline
     def apply(
         CreatedArtifactName: CreatedArtifactName,
         MigrationTaskName: MigrationTaskName,
@@ -401,6 +417,7 @@ package migrationhub {
   trait DisassociateCreatedArtifactResult extends js.Object {}
 
   object DisassociateCreatedArtifactResult {
+    @inline
     def apply(
         ): DisassociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
@@ -418,6 +435,7 @@ package migrationhub {
   }
 
   object DisassociateDiscoveredResourceRequest {
+    @inline
     def apply(
         ConfigurationId: ConfigurationId,
         MigrationTaskName: MigrationTaskName,
@@ -439,6 +457,7 @@ package migrationhub {
   trait DisassociateDiscoveredResourceResult extends js.Object {}
 
   object DisassociateDiscoveredResourceResult {
+    @inline
     def apply(
         ): DisassociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -457,6 +476,7 @@ package migrationhub {
   }
 
   object DiscoveredResource {
+    @inline
     def apply(
         ConfigurationId: ConfigurationId,
         Description: js.UndefOr[DiscoveredResourceDescription] = js.undefined
@@ -486,6 +506,7 @@ package migrationhub {
   }
 
   object ImportMigrationTaskRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream,
@@ -505,6 +526,7 @@ package migrationhub {
   trait ImportMigrationTaskResult extends js.Object {}
 
   object ImportMigrationTaskResult {
+    @inline
     def apply(
         ): ImportMigrationTaskResult = {
       val __obj = js.Dynamic.literal()
@@ -538,6 +560,7 @@ package migrationhub {
   }
 
   object ListCreatedArtifactsRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream,
@@ -562,6 +585,7 @@ package migrationhub {
   }
 
   object ListCreatedArtifactsResult {
+    @inline
     def apply(
         CreatedArtifactList: js.UndefOr[CreatedArtifactList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -582,6 +606,7 @@ package migrationhub {
   }
 
   object ListDiscoveredResourcesRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream,
@@ -606,6 +631,7 @@ package migrationhub {
   }
 
   object ListDiscoveredResourcesResult {
+    @inline
     def apply(
         DiscoveredResourceList: js.UndefOr[DiscoveredResourceList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -625,6 +651,7 @@ package migrationhub {
   }
 
   object ListMigrationTasksRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
@@ -645,6 +672,7 @@ package migrationhub {
   }
 
   object ListMigrationTasksResult {
+    @inline
     def apply(
         MigrationTaskSummaryList: js.UndefOr[MigrationTaskSummaryList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -663,6 +691,7 @@ package migrationhub {
   }
 
   object ListProgressUpdateStreamsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -681,6 +710,7 @@ package migrationhub {
   }
 
   object ListProgressUpdateStreamsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         ProgressUpdateStreamSummaryList: js.UndefOr[ProgressUpdateStreamSummaryList] = js.undefined
@@ -707,6 +737,7 @@ package migrationhub {
   }
 
   object MigrationTask {
+    @inline
     def apply(
         MigrationTaskName: js.UndefOr[MigrationTaskName] = js.undefined,
         ProgressUpdateStream: js.UndefOr[ProgressUpdateStream] = js.undefined,
@@ -738,6 +769,7 @@ package migrationhub {
   }
 
   object MigrationTaskSummary {
+    @inline
     def apply(
         MigrationTaskName: js.UndefOr[MigrationTaskName] = js.undefined,
         ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
@@ -765,6 +797,7 @@ package migrationhub {
   }
 
   object NotifyApplicationStateRequest {
+    @inline
     def apply(
         ApplicationId: ApplicationId,
         Status: ApplicationStatus,
@@ -784,6 +817,7 @@ package migrationhub {
   trait NotifyApplicationStateResult extends js.Object {}
 
   object NotifyApplicationStateResult {
+    @inline
     def apply(
         ): NotifyApplicationStateResult = {
       val __obj = js.Dynamic.literal()
@@ -803,6 +837,7 @@ package migrationhub {
   }
 
   object NotifyMigrationTaskStateRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         NextUpdateSeconds: NextUpdateSeconds,
@@ -828,6 +863,7 @@ package migrationhub {
   trait NotifyMigrationTaskStateResult extends js.Object {}
 
   object NotifyMigrationTaskStateResult {
+    @inline
     def apply(
         ): NotifyMigrationTaskStateResult = {
       val __obj = js.Dynamic.literal()
@@ -853,6 +889,7 @@ package migrationhub {
   }
 
   object ProgressUpdateStreamSummary {
+    @inline
     def apply(
         ProgressUpdateStreamName: js.UndefOr[ProgressUpdateStream] = js.undefined
     ): ProgressUpdateStreamSummary = {
@@ -871,6 +908,7 @@ package migrationhub {
   }
 
   object PutResourceAttributesRequest {
+    @inline
     def apply(
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream,
@@ -892,6 +930,7 @@ package migrationhub {
   trait PutResourceAttributesResult extends js.Object {}
 
   object PutResourceAttributesResult {
+    @inline
     def apply(
         ): PutResourceAttributesResult = {
       val __obj = js.Dynamic.literal()
@@ -918,6 +957,7 @@ package migrationhub {
   }
 
   object ResourceAttribute {
+    @inline
     def apply(
         Type: ResourceAttributeType,
         Value: ResourceAttributeValue
@@ -995,6 +1035,7 @@ package migrationhub {
   }
 
   object Task {
+    @inline
     def apply(
         Status: Status,
         ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,

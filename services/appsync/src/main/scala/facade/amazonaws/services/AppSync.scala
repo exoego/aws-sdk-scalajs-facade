@@ -41,76 +41,80 @@ package object appsync {
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
-    def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
+    @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
       service.createApiKey(params).promise.toFuture
-    def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
+    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
       service.createDataSource(params).promise.toFuture
-    def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] =
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] =
       service.createFunction(params).promise.toFuture
-    def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] =
+    @inline def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] =
       service.createGraphqlApi(params).promise.toFuture
-    def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] =
+    @inline def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] =
       service.createResolver(params).promise.toFuture
-    def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
+    @inline def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
       service.createType(params).promise.toFuture
-    def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
+    @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
       service.deleteApiKey(params).promise.toFuture
-    def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
       service.deleteDataSource(params).promise.toFuture
-    def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] =
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] =
       service.deleteFunction(params).promise.toFuture
-    def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] =
+    @inline def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] =
       service.deleteGraphqlApi(params).promise.toFuture
-    def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] =
+    @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] =
       service.deleteResolver(params).promise.toFuture
-    def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
+    @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
       service.deleteType(params).promise.toFuture
-    def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
+    @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
       service.getDataSource(params).promise.toFuture
-    def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
       service.getFunction(params).promise.toFuture
-    def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] =
+    @inline def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] =
       service.getGraphqlApi(params).promise.toFuture
-    def getIntrospectionSchemaFuture(params: GetIntrospectionSchemaRequest): Future[GetIntrospectionSchemaResponse] =
-      service.getIntrospectionSchema(params).promise.toFuture
-    def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] =
+    @inline def getIntrospectionSchemaFuture(
+        params: GetIntrospectionSchemaRequest
+    ): Future[GetIntrospectionSchemaResponse] = service.getIntrospectionSchema(params).promise.toFuture
+    @inline def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] =
       service.getResolver(params).promise.toFuture
-    def getSchemaCreationStatusFuture(params: GetSchemaCreationStatusRequest): Future[GetSchemaCreationStatusResponse] =
-      service.getSchemaCreationStatus(params).promise.toFuture
-    def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] = service.getType(params).promise.toFuture
-    def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] =
+    @inline def getSchemaCreationStatusFuture(
+        params: GetSchemaCreationStatusRequest
+    ): Future[GetSchemaCreationStatusResponse] = service.getSchemaCreationStatus(params).promise.toFuture
+    @inline def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] =
+      service.getType(params).promise.toFuture
+    @inline def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] =
       service.listApiKeys(params).promise.toFuture
-    def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
+    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
       service.listDataSources(params).promise.toFuture
-    def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
       service.listFunctions(params).promise.toFuture
-    def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] =
+    @inline def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] =
       service.listGraphqlApis(params).promise.toFuture
-    def listResolversByFunctionFuture(params: ListResolversByFunctionRequest): Future[ListResolversByFunctionResponse] =
-      service.listResolversByFunction(params).promise.toFuture
-    def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
+    @inline def listResolversByFunctionFuture(
+        params: ListResolversByFunctionRequest
+    ): Future[ListResolversByFunctionResponse] = service.listResolversByFunction(params).promise.toFuture
+    @inline def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
       service.listResolvers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
+    @inline def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
       service.listTypes(params).promise.toFuture
-    def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
+    @inline def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
       service.startSchemaCreation(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
+    @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
       service.updateApiKey(params).promise.toFuture
-    def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
+    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
       service.updateDataSource(params).promise.toFuture
-    def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] =
+    @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] =
       service.updateFunction(params).promise.toFuture
-    def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] =
+    @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] =
       service.updateGraphqlApi(params).promise.toFuture
-    def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] =
+    @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] =
       service.updateResolver(params).promise.toFuture
-    def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] =
+    @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] =
       service.updateType(params).promise.toFuture
   }
 }
@@ -173,6 +177,7 @@ package appsync {
   }
 
   object AdditionalAuthenticationProvider {
+    @inline
     def apply(
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
@@ -210,6 +215,7 @@ package appsync {
   }
 
   object ApiKey {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         expires: js.UndefOr[Double] = js.undefined,
@@ -242,6 +248,7 @@ package appsync {
   }
 
   object AuthorizationConfig {
+    @inline
     def apply(
         authorizationType: AuthorizationType,
         awsIamConfig: js.UndefOr[AwsIamConfig] = js.undefined
@@ -271,6 +278,7 @@ package appsync {
   }
 
   object AwsIamConfig {
+    @inline
     def apply(
         signingRegion: js.UndefOr[String] = js.undefined,
         signingServiceName: js.UndefOr[String] = js.undefined
@@ -293,6 +301,7 @@ package appsync {
   }
 
   object CognitoUserPoolConfig {
+    @inline
     def apply(
         awsRegion: String,
         userPoolId: String,
@@ -316,6 +325,7 @@ package appsync {
   }
 
   object CreateApiKeyRequest {
+    @inline
     def apply(
         apiId: String,
         description: js.UndefOr[String] = js.undefined,
@@ -337,6 +347,7 @@ package appsync {
   }
 
   object CreateApiKeyResponse {
+    @inline
     def apply(
         apiKey: js.UndefOr[ApiKey] = js.undefined
     ): CreateApiKeyResponse = {
@@ -361,6 +372,7 @@ package appsync {
   }
 
   object CreateDataSourceRequest {
+    @inline
     def apply(
         apiId: String,
         name: ResourceName,
@@ -396,6 +408,7 @@ package appsync {
   }
 
   object CreateDataSourceResponse {
+    @inline
     def apply(
         dataSource: js.UndefOr[DataSource] = js.undefined
     ): CreateDataSourceResponse = {
@@ -417,6 +430,7 @@ package appsync {
   }
 
   object CreateFunctionRequest {
+    @inline
     def apply(
         apiId: String,
         dataSourceName: ResourceName,
@@ -446,6 +460,7 @@ package appsync {
   }
 
   object CreateFunctionResponse {
+    @inline
     def apply(
         functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined
     ): CreateFunctionResponse = {
@@ -467,6 +482,7 @@ package appsync {
   }
 
   object CreateGraphqlApiRequest {
+    @inline
     def apply(
         authenticationType: AuthenticationType,
         name: String,
@@ -498,6 +514,7 @@ package appsync {
   }
 
   object CreateGraphqlApiResponse {
+    @inline
     def apply(
         graphqlApi: js.UndefOr[GraphqlApi] = js.undefined
     ): CreateGraphqlApiResponse = {
@@ -520,6 +537,7 @@ package appsync {
   }
 
   object CreateResolverRequest {
+    @inline
     def apply(
         apiId: String,
         fieldName: ResourceName,
@@ -551,6 +569,7 @@ package appsync {
   }
 
   object CreateResolverResponse {
+    @inline
     def apply(
         resolver: js.UndefOr[Resolver] = js.undefined
     ): CreateResolverResponse = {
@@ -568,6 +587,7 @@ package appsync {
   }
 
   object CreateTypeRequest {
+    @inline
     def apply(
         apiId: String,
         definition: String,
@@ -589,6 +609,7 @@ package appsync {
   }
 
   object CreateTypeResponse {
+    @inline
     def apply(
         `type`: js.UndefOr[Type] = js.undefined
     ): CreateTypeResponse = {
@@ -616,6 +637,7 @@ package appsync {
   }
 
   object DataSource {
+    @inline
     def apply(
         dataSourceArn: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -669,6 +691,7 @@ package appsync {
   }
 
   object DeleteApiKeyRequest {
+    @inline
     def apply(
         apiId: String,
         id: String
@@ -686,6 +709,7 @@ package appsync {
   trait DeleteApiKeyResponse extends js.Object {}
 
   object DeleteApiKeyResponse {
+    @inline
     def apply(
         ): DeleteApiKeyResponse = {
       val __obj = js.Dynamic.literal()
@@ -701,6 +725,7 @@ package appsync {
   }
 
   object DeleteDataSourceRequest {
+    @inline
     def apply(
         apiId: String,
         name: ResourceName
@@ -718,6 +743,7 @@ package appsync {
   trait DeleteDataSourceResponse extends js.Object {}
 
   object DeleteDataSourceResponse {
+    @inline
     def apply(
         ): DeleteDataSourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -733,6 +759,7 @@ package appsync {
   }
 
   object DeleteFunctionRequest {
+    @inline
     def apply(
         apiId: String,
         functionId: ResourceName
@@ -750,6 +777,7 @@ package appsync {
   trait DeleteFunctionResponse extends js.Object {}
 
   object DeleteFunctionResponse {
+    @inline
     def apply(
         ): DeleteFunctionResponse = {
       val __obj = js.Dynamic.literal()
@@ -764,6 +792,7 @@ package appsync {
   }
 
   object DeleteGraphqlApiRequest {
+    @inline
     def apply(
         apiId: String
     ): DeleteGraphqlApiRequest = {
@@ -779,6 +808,7 @@ package appsync {
   trait DeleteGraphqlApiResponse extends js.Object {}
 
   object DeleteGraphqlApiResponse {
+    @inline
     def apply(
         ): DeleteGraphqlApiResponse = {
       val __obj = js.Dynamic.literal()
@@ -795,6 +825,7 @@ package appsync {
   }
 
   object DeleteResolverRequest {
+    @inline
     def apply(
         apiId: String,
         fieldName: ResourceName,
@@ -814,6 +845,7 @@ package appsync {
   trait DeleteResolverResponse extends js.Object {}
 
   object DeleteResolverResponse {
+    @inline
     def apply(
         ): DeleteResolverResponse = {
       val __obj = js.Dynamic.literal()
@@ -829,6 +861,7 @@ package appsync {
   }
 
   object DeleteTypeRequest {
+    @inline
     def apply(
         apiId: String,
         typeName: ResourceName
@@ -846,6 +879,7 @@ package appsync {
   trait DeleteTypeResponse extends js.Object {}
 
   object DeleteTypeResponse {
+    @inline
     def apply(
         ): DeleteTypeResponse = {
       val __obj = js.Dynamic.literal()
@@ -865,6 +899,7 @@ package appsync {
   }
 
   object DynamodbDataSourceConfig {
+    @inline
     def apply(
         awsRegion: String,
         tableName: String,
@@ -890,6 +925,7 @@ package appsync {
   }
 
   object ElasticsearchDataSourceConfig {
+    @inline
     def apply(
         awsRegion: String,
         endpoint: String
@@ -927,6 +963,7 @@ package appsync {
   }
 
   object FunctionConfiguration {
+    @inline
     def apply(
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -957,6 +994,7 @@ package appsync {
   }
 
   object GetDataSourceRequest {
+    @inline
     def apply(
         apiId: String,
         name: ResourceName
@@ -976,6 +1014,7 @@ package appsync {
   }
 
   object GetDataSourceResponse {
+    @inline
     def apply(
         dataSource: js.UndefOr[DataSource] = js.undefined
     ): GetDataSourceResponse = {
@@ -992,6 +1031,7 @@ package appsync {
   }
 
   object GetFunctionRequest {
+    @inline
     def apply(
         apiId: String,
         functionId: ResourceName
@@ -1011,6 +1051,7 @@ package appsync {
   }
 
   object GetFunctionResponse {
+    @inline
     def apply(
         functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined
     ): GetFunctionResponse = {
@@ -1026,6 +1067,7 @@ package appsync {
   }
 
   object GetGraphqlApiRequest {
+    @inline
     def apply(
         apiId: String
     ): GetGraphqlApiRequest = {
@@ -1043,6 +1085,7 @@ package appsync {
   }
 
   object GetGraphqlApiResponse {
+    @inline
     def apply(
         graphqlApi: js.UndefOr[GraphqlApi] = js.undefined
     ): GetGraphqlApiResponse = {
@@ -1060,6 +1103,7 @@ package appsync {
   }
 
   object GetIntrospectionSchemaRequest {
+    @inline
     def apply(
         apiId: String,
         format: OutputType,
@@ -1081,6 +1125,7 @@ package appsync {
   }
 
   object GetIntrospectionSchemaResponse {
+    @inline
     def apply(
         schema: js.UndefOr[Blob] = js.undefined
     ): GetIntrospectionSchemaResponse = {
@@ -1098,6 +1143,7 @@ package appsync {
   }
 
   object GetResolverRequest {
+    @inline
     def apply(
         apiId: String,
         fieldName: ResourceName,
@@ -1119,6 +1165,7 @@ package appsync {
   }
 
   object GetResolverResponse {
+    @inline
     def apply(
         resolver: js.UndefOr[Resolver] = js.undefined
     ): GetResolverResponse = {
@@ -1134,6 +1181,7 @@ package appsync {
   }
 
   object GetSchemaCreationStatusRequest {
+    @inline
     def apply(
         apiId: String
     ): GetSchemaCreationStatusRequest = {
@@ -1152,6 +1200,7 @@ package appsync {
   }
 
   object GetSchemaCreationStatusResponse {
+    @inline
     def apply(
         details: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[SchemaStatus] = js.undefined
@@ -1171,6 +1220,7 @@ package appsync {
   }
 
   object GetTypeRequest {
+    @inline
     def apply(
         apiId: String,
         format: TypeDefinitionFormat,
@@ -1192,6 +1242,7 @@ package appsync {
   }
 
   object GetTypeResponse {
+    @inline
     def apply(
         `type`: js.UndefOr[Type] = js.undefined
     ): GetTypeResponse = {
@@ -1219,6 +1270,7 @@ package appsync {
   }
 
   object GraphqlApi {
+    @inline
     def apply(
         additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
         apiId: js.UndefOr[String] = js.undefined,
@@ -1258,6 +1310,7 @@ package appsync {
   }
 
   object HttpDataSourceConfig {
+    @inline
     def apply(
         authorizationConfig: js.UndefOr[AuthorizationConfig] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined
@@ -1278,6 +1331,7 @@ package appsync {
   }
 
   object LambdaDataSourceConfig {
+    @inline
     def apply(
         lambdaFunctionArn: String
     ): LambdaDataSourceConfig = {
@@ -1297,6 +1351,7 @@ package appsync {
   }
 
   object ListApiKeysRequest {
+    @inline
     def apply(
         apiId: String,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1319,6 +1374,7 @@ package appsync {
   }
 
   object ListApiKeysResponse {
+    @inline
     def apply(
         apiKeys: js.UndefOr[ApiKeys] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1338,6 +1394,7 @@ package appsync {
   }
 
   object ListDataSourcesRequest {
+    @inline
     def apply(
         apiId: String,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1360,6 +1417,7 @@ package appsync {
   }
 
   object ListDataSourcesResponse {
+    @inline
     def apply(
         dataSources: js.UndefOr[DataSources] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1379,6 +1437,7 @@ package appsync {
   }
 
   object ListFunctionsRequest {
+    @inline
     def apply(
         apiId: String,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1401,6 +1460,7 @@ package appsync {
   }
 
   object ListFunctionsResponse {
+    @inline
     def apply(
         functions: js.UndefOr[Functions] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1419,6 +1479,7 @@ package appsync {
   }
 
   object ListGraphqlApisRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1437,6 +1498,7 @@ package appsync {
   }
 
   object ListGraphqlApisResponse {
+    @inline
     def apply(
         graphqlApis: js.UndefOr[GraphqlApis] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1457,6 +1519,7 @@ package appsync {
   }
 
   object ListResolversByFunctionRequest {
+    @inline
     def apply(
         apiId: String,
         functionId: String,
@@ -1481,6 +1544,7 @@ package appsync {
   }
 
   object ListResolversByFunctionResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         resolvers: js.UndefOr[Resolvers] = js.undefined
@@ -1501,6 +1565,7 @@ package appsync {
   }
 
   object ListResolversRequest {
+    @inline
     def apply(
         apiId: String,
         typeName: String,
@@ -1525,6 +1590,7 @@ package appsync {
   }
 
   object ListResolversResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         resolvers: js.UndefOr[Resolvers] = js.undefined
@@ -1542,6 +1608,7 @@ package appsync {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
@@ -1559,6 +1626,7 @@ package appsync {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1577,6 +1645,7 @@ package appsync {
   }
 
   object ListTypesRequest {
+    @inline
     def apply(
         apiId: String,
         format: TypeDefinitionFormat,
@@ -1601,6 +1670,7 @@ package appsync {
   }
 
   object ListTypesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         types: js.UndefOr[TypeList] = js.undefined
@@ -1623,6 +1693,7 @@ package appsync {
   }
 
   object LogConfig {
+    @inline
     def apply(
         cloudWatchLogsRoleArn: String,
         fieldLogLevel: FieldLogLevel,
@@ -1650,6 +1721,7 @@ package appsync {
   }
 
   object OpenIDConnectConfig {
+    @inline
     def apply(
         issuer: String,
         authTTL: js.UndefOr[Double] = js.undefined,
@@ -1683,6 +1755,7 @@ package appsync {
   }
 
   object PipelineConfig {
+    @inline
     def apply(
         functions: js.UndefOr[FunctionsIds] = js.undefined
     ): PipelineConfig = {
@@ -1705,6 +1778,7 @@ package appsync {
   }
 
   object RdsHttpEndpointConfig {
+    @inline
     def apply(
         awsRegion: js.UndefOr[String] = js.undefined,
         awsSecretStoreArn: js.UndefOr[String] = js.undefined,
@@ -1732,6 +1806,7 @@ package appsync {
   }
 
   object RelationalDatabaseDataSourceConfig {
+    @inline
     def apply(
         rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig] = js.undefined,
         relationalDatabaseSourceType: js.UndefOr[RelationalDatabaseSourceType] = js.undefined
@@ -1767,6 +1842,7 @@ package appsync {
   }
 
   object Resolver {
+    @inline
     def apply(
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         fieldName: js.UndefOr[ResourceName] = js.undefined,
@@ -1815,6 +1891,7 @@ package appsync {
   }
 
   object StartSchemaCreationRequest {
+    @inline
     def apply(
         apiId: String,
         definition: Blob
@@ -1834,6 +1911,7 @@ package appsync {
   }
 
   object StartSchemaCreationResponse {
+    @inline
     def apply(
         status: js.UndefOr[SchemaStatus] = js.undefined
     ): StartSchemaCreationResponse = {
@@ -1850,6 +1928,7 @@ package appsync {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagMap
@@ -1867,6 +1946,7 @@ package appsync {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1888,6 +1968,7 @@ package appsync {
   }
 
   object Type {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         definition: js.UndefOr[String] = js.undefined,
@@ -1919,6 +2000,7 @@ package appsync {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -1936,6 +2018,7 @@ package appsync {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1953,6 +2036,7 @@ package appsync {
   }
 
   object UpdateApiKeyRequest {
+    @inline
     def apply(
         apiId: String,
         id: String,
@@ -1976,6 +2060,7 @@ package appsync {
   }
 
   object UpdateApiKeyResponse {
+    @inline
     def apply(
         apiKey: js.UndefOr[ApiKey] = js.undefined
     ): UpdateApiKeyResponse = {
@@ -2000,6 +2085,7 @@ package appsync {
   }
 
   object UpdateDataSourceRequest {
+    @inline
     def apply(
         apiId: String,
         name: ResourceName,
@@ -2035,6 +2121,7 @@ package appsync {
   }
 
   object UpdateDataSourceResponse {
+    @inline
     def apply(
         dataSource: js.UndefOr[DataSource] = js.undefined
     ): UpdateDataSourceResponse = {
@@ -2057,6 +2144,7 @@ package appsync {
   }
 
   object UpdateFunctionRequest {
+    @inline
     def apply(
         apiId: String,
         dataSourceName: ResourceName,
@@ -2088,6 +2176,7 @@ package appsync {
   }
 
   object UpdateFunctionResponse {
+    @inline
     def apply(
         functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined
     ): UpdateFunctionResponse = {
@@ -2109,6 +2198,7 @@ package appsync {
   }
 
   object UpdateGraphqlApiRequest {
+    @inline
     def apply(
         apiId: String,
         name: String,
@@ -2140,6 +2230,7 @@ package appsync {
   }
 
   object UpdateGraphqlApiResponse {
+    @inline
     def apply(
         graphqlApi: js.UndefOr[GraphqlApi] = js.undefined
     ): UpdateGraphqlApiResponse = {
@@ -2162,6 +2253,7 @@ package appsync {
   }
 
   object UpdateResolverRequest {
+    @inline
     def apply(
         apiId: String,
         fieldName: ResourceName,
@@ -2193,6 +2285,7 @@ package appsync {
   }
 
   object UpdateResolverResponse {
+    @inline
     def apply(
         resolver: js.UndefOr[Resolver] = js.undefined
     ): UpdateResolverResponse = {
@@ -2211,6 +2304,7 @@ package appsync {
   }
 
   object UpdateTypeRequest {
+    @inline
     def apply(
         apiId: String,
         format: TypeDefinitionFormat,
@@ -2234,6 +2328,7 @@ package appsync {
   }
 
   object UpdateTypeResponse {
+    @inline
     def apply(
         `type`: js.UndefOr[Type] = js.undefined
     ): UpdateTypeResponse = {
@@ -2255,6 +2350,7 @@ package appsync {
   }
 
   object UserPoolConfig {
+    @inline
     def apply(
         awsRegion: String,
         defaultAction: DefaultAction,

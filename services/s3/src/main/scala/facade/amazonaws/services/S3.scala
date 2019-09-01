@@ -251,182 +251,196 @@ package object s3 {
 
   implicit final class S3Ops(private val service: S3) extends AnyVal {
 
-    def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
+    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
       service.abortMultipartUpload(params).promise.toFuture
-    def completeMultipartUploadFuture(params: CompleteMultipartUploadRequest): Future[CompleteMultipartUploadOutput] =
-      service.completeMultipartUpload(params).promise.toFuture
-    def copyObjectFuture(params: CopyObjectRequest): Future[CopyObjectOutput] =
+    @inline def completeMultipartUploadFuture(
+        params: CompleteMultipartUploadRequest
+    ): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise.toFuture
+    @inline def copyObjectFuture(params: CopyObjectRequest): Future[CopyObjectOutput] =
       service.copyObject(params).promise.toFuture
-    def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketOutput] =
+    @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketOutput] =
       service.createBucket(params).promise.toFuture
-    def createMultipartUploadFuture(params: CreateMultipartUploadRequest): Future[CreateMultipartUploadOutput] =
+    @inline def createMultipartUploadFuture(params: CreateMultipartUploadRequest): Future[CreateMultipartUploadOutput] =
       service.createMultipartUpload(params).promise.toFuture
-    def deleteBucketAnalyticsConfigurationFuture(params: DeleteBucketAnalyticsConfigurationRequest): Future[js.Object] =
-      service.deleteBucketAnalyticsConfiguration(params).promise.toFuture
-    def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] =
+    @inline def deleteBucketAnalyticsConfigurationFuture(
+        params: DeleteBucketAnalyticsConfigurationRequest
+    ): Future[js.Object] = service.deleteBucketAnalyticsConfiguration(params).promise.toFuture
+    @inline def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] =
       service.deleteBucketCors(params).promise.toFuture
-    def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] =
+    @inline def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] =
       service.deleteBucketEncryption(params).promise.toFuture
-    def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] =
+    @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] =
       service.deleteBucket(params).promise.toFuture
-    def deleteBucketInventoryConfigurationFuture(params: DeleteBucketInventoryConfigurationRequest): Future[js.Object] =
-      service.deleteBucketInventoryConfiguration(params).promise.toFuture
-    def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] =
+    @inline def deleteBucketInventoryConfigurationFuture(
+        params: DeleteBucketInventoryConfigurationRequest
+    ): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise.toFuture
+    @inline def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] =
       service.deleteBucketLifecycle(params).promise.toFuture
-    def deleteBucketMetricsConfigurationFuture(params: DeleteBucketMetricsConfigurationRequest): Future[js.Object] =
-      service.deleteBucketMetricsConfiguration(params).promise.toFuture
-    def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] =
+    @inline def deleteBucketMetricsConfigurationFuture(
+        params: DeleteBucketMetricsConfigurationRequest
+    ): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise.toFuture
+    @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] =
       service.deleteBucketPolicy(params).promise.toFuture
-    def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] =
+    @inline def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] =
       service.deleteBucketReplication(params).promise.toFuture
-    def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] =
+    @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] =
       service.deleteBucketTagging(params).promise.toFuture
-    def deleteBucketWebsiteFuture(params: DeleteBucketWebsiteRequest): Future[js.Object] =
+    @inline def deleteBucketWebsiteFuture(params: DeleteBucketWebsiteRequest): Future[js.Object] =
       service.deleteBucketWebsite(params).promise.toFuture
-    def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectOutput] =
+    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectOutput] =
       service.deleteObject(params).promise.toFuture
-    def deleteObjectTaggingFuture(params: DeleteObjectTaggingRequest): Future[DeleteObjectTaggingOutput] =
+    @inline def deleteObjectTaggingFuture(params: DeleteObjectTaggingRequest): Future[DeleteObjectTaggingOutput] =
       service.deleteObjectTagging(params).promise.toFuture
-    def deleteObjectsFuture(params: DeleteObjectsRequest): Future[DeleteObjectsOutput] =
+    @inline def deleteObjectsFuture(params: DeleteObjectsRequest): Future[DeleteObjectsOutput] =
       service.deleteObjects(params).promise.toFuture
-    def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
+    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
       service.deletePublicAccessBlock(params).promise.toFuture
-    def getBucketAccelerateConfigurationFuture(
+    @inline def getBucketAccelerateConfigurationFuture(
         params: GetBucketAccelerateConfigurationRequest
     ): Future[GetBucketAccelerateConfigurationOutput] =
       service.getBucketAccelerateConfiguration(params).promise.toFuture
-    def getBucketAclFuture(params: GetBucketAclRequest): Future[GetBucketAclOutput] =
+    @inline def getBucketAclFuture(params: GetBucketAclRequest): Future[GetBucketAclOutput] =
       service.getBucketAcl(params).promise.toFuture
-    def getBucketAnalyticsConfigurationFuture(
+    @inline def getBucketAnalyticsConfigurationFuture(
         params: GetBucketAnalyticsConfigurationRequest
     ): Future[GetBucketAnalyticsConfigurationOutput] = service.getBucketAnalyticsConfiguration(params).promise.toFuture
-    def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] =
+    @inline def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] =
       service.getBucketCors(params).promise.toFuture
-    def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] =
+    @inline def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] =
       service.getBucketEncryption(params).promise.toFuture
-    def getBucketInventoryConfigurationFuture(
+    @inline def getBucketInventoryConfigurationFuture(
         params: GetBucketInventoryConfigurationRequest
     ): Future[GetBucketInventoryConfigurationOutput] = service.getBucketInventoryConfiguration(params).promise.toFuture
-    def getBucketLifecycleConfigurationFuture(
+    @inline def getBucketLifecycleConfigurationFuture(
         params: GetBucketLifecycleConfigurationRequest
     ): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise.toFuture
-    def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
+    @inline def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
       service.getBucketLocation(params).promise.toFuture
-    def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
+    @inline def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
       service.getBucketLogging(params).promise.toFuture
-    def getBucketMetricsConfigurationFuture(
+    @inline def getBucketMetricsConfigurationFuture(
         params: GetBucketMetricsConfigurationRequest
     ): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise.toFuture
-    def getBucketNotificationConfigurationFuture(
+    @inline def getBucketNotificationConfigurationFuture(
         params: GetBucketNotificationConfigurationRequest
     ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise.toFuture
-    def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
+    @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
       service.getBucketPolicy(params).promise.toFuture
-    def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
+    @inline def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
       service.getBucketPolicyStatus(params).promise.toFuture
-    def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] =
+    @inline def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] =
       service.getBucketReplication(params).promise.toFuture
-    def getBucketRequestPaymentFuture(params: GetBucketRequestPaymentRequest): Future[GetBucketRequestPaymentOutput] =
-      service.getBucketRequestPayment(params).promise.toFuture
-    def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingOutput] =
+    @inline def getBucketRequestPaymentFuture(
+        params: GetBucketRequestPaymentRequest
+    ): Future[GetBucketRequestPaymentOutput] = service.getBucketRequestPayment(params).promise.toFuture
+    @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingOutput] =
       service.getBucketTagging(params).promise.toFuture
-    def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] =
+    @inline def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] =
       service.getBucketVersioning(params).promise.toFuture
-    def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] =
+    @inline def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] =
       service.getBucketWebsite(params).promise.toFuture
-    def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] =
+    @inline def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] =
       service.getObjectAcl(params).promise.toFuture
-    def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] = service.getObject(params).promise.toFuture
-    def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] =
+    @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] =
+      service.getObject(params).promise.toFuture
+    @inline def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] =
       service.getObjectLegalHold(params).promise.toFuture
-    def getObjectLockConfigurationFuture(
+    @inline def getObjectLockConfigurationFuture(
         params: GetObjectLockConfigurationRequest
     ): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise.toFuture
-    def getObjectRetentionFuture(params: GetObjectRetentionRequest): Future[GetObjectRetentionOutput] =
+    @inline def getObjectRetentionFuture(params: GetObjectRetentionRequest): Future[GetObjectRetentionOutput] =
       service.getObjectRetention(params).promise.toFuture
-    def getObjectTaggingFuture(params: GetObjectTaggingRequest): Future[GetObjectTaggingOutput] =
+    @inline def getObjectTaggingFuture(params: GetObjectTaggingRequest): Future[GetObjectTaggingOutput] =
       service.getObjectTagging(params).promise.toFuture
-    def getObjectTorrentFuture(params: GetObjectTorrentRequest): Future[GetObjectTorrentOutput] =
+    @inline def getObjectTorrentFuture(params: GetObjectTorrentRequest): Future[GetObjectTorrentOutput] =
       service.getObjectTorrent(params).promise.toFuture
-    def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
+    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
       service.getPublicAccessBlock(params).promise.toFuture
-    def headBucketFuture(params: HeadBucketRequest): Future[js.Object] = service.headBucket(params).promise.toFuture
-    def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] =
+    @inline def headBucketFuture(params: HeadBucketRequest): Future[js.Object] =
+      service.headBucket(params).promise.toFuture
+    @inline def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] =
       service.headObject(params).promise.toFuture
-    def listBucketAnalyticsConfigurationsFuture(
+    @inline def listBucketAnalyticsConfigurationsFuture(
         params: ListBucketAnalyticsConfigurationsRequest
     ): Future[ListBucketAnalyticsConfigurationsOutput] =
       service.listBucketAnalyticsConfigurations(params).promise.toFuture
-    def listBucketInventoryConfigurationsFuture(
+    @inline def listBucketInventoryConfigurationsFuture(
         params: ListBucketInventoryConfigurationsRequest
     ): Future[ListBucketInventoryConfigurationsOutput] =
       service.listBucketInventoryConfigurations(params).promise.toFuture
-    def listBucketMetricsConfigurationsFuture(
+    @inline def listBucketMetricsConfigurationsFuture(
         params: ListBucketMetricsConfigurationsRequest
-    ): Future[ListBucketMetricsConfigurationsOutput]   = service.listBucketMetricsConfigurations(params).promise.toFuture
-    def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise.toFuture
-    def listMultipartUploadsFuture(params: ListMultipartUploadsRequest): Future[ListMultipartUploadsOutput] =
+    ): Future[ListBucketMetricsConfigurationsOutput]           = service.listBucketMetricsConfigurations(params).promise.toFuture
+    @inline def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise.toFuture
+    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsRequest): Future[ListMultipartUploadsOutput] =
       service.listMultipartUploads(params).promise.toFuture
-    def listObjectVersionsFuture(params: ListObjectVersionsRequest): Future[ListObjectVersionsOutput] =
+    @inline def listObjectVersionsFuture(params: ListObjectVersionsRequest): Future[ListObjectVersionsOutput] =
       service.listObjectVersions(params).promise.toFuture
-    def listObjectsFuture(params: ListObjectsRequest): Future[ListObjectsOutput] =
+    @inline def listObjectsFuture(params: ListObjectsRequest): Future[ListObjectsOutput] =
       service.listObjects(params).promise.toFuture
-    def listObjectsV2Future(params: ListObjectsV2Request): Future[ListObjectsV2Output] =
+    @inline def listObjectsV2Future(params: ListObjectsV2Request): Future[ListObjectsV2Output] =
       service.listObjectsV2(params).promise.toFuture
-    def listPartsFuture(params: ListPartsRequest): Future[ListPartsOutput] = service.listParts(params).promise.toFuture
-    def putBucketAccelerateConfigurationFuture(params: PutBucketAccelerateConfigurationRequest): Future[js.Object] =
-      service.putBucketAccelerateConfiguration(params).promise.toFuture
-    def putBucketAclFuture(params: PutBucketAclRequest): Future[js.Object] =
+    @inline def listPartsFuture(params: ListPartsRequest): Future[ListPartsOutput] =
+      service.listParts(params).promise.toFuture
+    @inline def putBucketAccelerateConfigurationFuture(
+        params: PutBucketAccelerateConfigurationRequest
+    ): Future[js.Object] = service.putBucketAccelerateConfiguration(params).promise.toFuture
+    @inline def putBucketAclFuture(params: PutBucketAclRequest): Future[js.Object] =
       service.putBucketAcl(params).promise.toFuture
-    def putBucketAnalyticsConfigurationFuture(params: PutBucketAnalyticsConfigurationRequest): Future[js.Object] =
-      service.putBucketAnalyticsConfiguration(params).promise.toFuture
-    def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] =
+    @inline def putBucketAnalyticsConfigurationFuture(
+        params: PutBucketAnalyticsConfigurationRequest
+    ): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise.toFuture
+    @inline def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] =
       service.putBucketCors(params).promise.toFuture
-    def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] =
+    @inline def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] =
       service.putBucketEncryption(params).promise.toFuture
-    def putBucketInventoryConfigurationFuture(params: PutBucketInventoryConfigurationRequest): Future[js.Object] =
-      service.putBucketInventoryConfiguration(params).promise.toFuture
-    def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] =
-      service.putBucketLifecycleConfiguration(params).promise.toFuture
-    def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
+    @inline def putBucketInventoryConfigurationFuture(
+        params: PutBucketInventoryConfigurationRequest
+    ): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise.toFuture
+    @inline def putBucketLifecycleConfigurationFuture(
+        params: PutBucketLifecycleConfigurationRequest
+    ): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise.toFuture
+    @inline def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
       service.putBucketLogging(params).promise.toFuture
-    def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
+    @inline def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
       service.putBucketMetricsConfiguration(params).promise.toFuture
-    def putBucketNotificationConfigurationFuture(params: PutBucketNotificationConfigurationRequest): Future[js.Object] =
-      service.putBucketNotificationConfiguration(params).promise.toFuture
-    def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
+    @inline def putBucketNotificationConfigurationFuture(
+        params: PutBucketNotificationConfigurationRequest
+    ): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise.toFuture
+    @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
       service.putBucketPolicy(params).promise.toFuture
-    def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =
+    @inline def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =
       service.putBucketReplication(params).promise.toFuture
-    def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] =
+    @inline def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] =
       service.putBucketRequestPayment(params).promise.toFuture
-    def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] =
+    @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] =
       service.putBucketTagging(params).promise.toFuture
-    def putBucketVersioningFuture(params: PutBucketVersioningRequest): Future[js.Object] =
+    @inline def putBucketVersioningFuture(params: PutBucketVersioningRequest): Future[js.Object] =
       service.putBucketVersioning(params).promise.toFuture
-    def putBucketWebsiteFuture(params: PutBucketWebsiteRequest): Future[js.Object] =
+    @inline def putBucketWebsiteFuture(params: PutBucketWebsiteRequest): Future[js.Object] =
       service.putBucketWebsite(params).promise.toFuture
-    def putObjectAclFuture(params: PutObjectAclRequest): Future[PutObjectAclOutput] =
+    @inline def putObjectAclFuture(params: PutObjectAclRequest): Future[PutObjectAclOutput] =
       service.putObjectAcl(params).promise.toFuture
-    def putObjectFuture(params: PutObjectRequest): Future[PutObjectOutput] = service.putObject(params).promise.toFuture
-    def putObjectLegalHoldFuture(params: PutObjectLegalHoldRequest): Future[PutObjectLegalHoldOutput] =
+    @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectOutput] =
+      service.putObject(params).promise.toFuture
+    @inline def putObjectLegalHoldFuture(params: PutObjectLegalHoldRequest): Future[PutObjectLegalHoldOutput] =
       service.putObjectLegalHold(params).promise.toFuture
-    def putObjectLockConfigurationFuture(
+    @inline def putObjectLockConfigurationFuture(
         params: PutObjectLockConfigurationRequest
     ): Future[PutObjectLockConfigurationOutput] = service.putObjectLockConfiguration(params).promise.toFuture
-    def putObjectRetentionFuture(params: PutObjectRetentionRequest): Future[PutObjectRetentionOutput] =
+    @inline def putObjectRetentionFuture(params: PutObjectRetentionRequest): Future[PutObjectRetentionOutput] =
       service.putObjectRetention(params).promise.toFuture
-    def putObjectTaggingFuture(params: PutObjectTaggingRequest): Future[PutObjectTaggingOutput] =
+    @inline def putObjectTaggingFuture(params: PutObjectTaggingRequest): Future[PutObjectTaggingOutput] =
       service.putObjectTagging(params).promise.toFuture
-    def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
+    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
       service.putPublicAccessBlock(params).promise.toFuture
-    def restoreObjectFuture(params: RestoreObjectRequest): Future[RestoreObjectOutput] =
+    @inline def restoreObjectFuture(params: RestoreObjectRequest): Future[RestoreObjectOutput] =
       service.restoreObject(params).promise.toFuture
-    def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] =
+    @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] =
       service.selectObjectContent(params).promise.toFuture
-    def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] =
+    @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] =
       service.uploadPartCopy(params).promise.toFuture
-    def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] =
+    @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] =
       service.uploadPart(params).promise.toFuture
   }
 }
@@ -573,6 +587,7 @@ package s3 {
   }
 
   object AbortIncompleteMultipartUpload {
+    @inline
     def apply(
         DaysAfterInitiation: js.UndefOr[DaysAfterInitiation] = js.undefined
     ): AbortIncompleteMultipartUpload = {
@@ -588,6 +603,7 @@ package s3 {
   }
 
   object AbortMultipartUploadOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): AbortMultipartUploadOutput = {
@@ -606,6 +622,7 @@ package s3 {
   }
 
   object AbortMultipartUploadRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -632,6 +649,7 @@ package s3 {
   }
 
   object AccelerateConfiguration {
+    @inline
     def apply(
         Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
     ): AccelerateConfiguration = {
@@ -651,6 +669,7 @@ package s3 {
   }
 
   object AccessControlPolicy {
+    @inline
     def apply(
         Grants: js.UndefOr[Grants] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
@@ -671,6 +690,7 @@ package s3 {
   }
 
   object AccessControlTranslation {
+    @inline
     def apply(
         Owner: OwnerOverride
     ): AccessControlTranslation = {
@@ -692,6 +712,7 @@ package s3 {
   }
 
   object AnalyticsAndOperator {
+    @inline
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
@@ -715,6 +736,7 @@ package s3 {
   }
 
   object AnalyticsConfiguration {
+    @inline
     def apply(
         Id: AnalyticsId,
         StorageClassAnalysis: StorageClassAnalysis,
@@ -739,6 +761,7 @@ package s3 {
   }
 
   object AnalyticsExportDestination {
+    @inline
     def apply(
         S3BucketDestination: AnalyticsS3BucketDestination
     ): AnalyticsExportDestination = {
@@ -761,6 +784,7 @@ package s3 {
   }
 
   object AnalyticsFilter {
+    @inline
     def apply(
         And: js.UndefOr[AnalyticsAndOperator] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -786,6 +810,7 @@ package s3 {
   }
 
   object AnalyticsS3BucketDestination {
+    @inline
     def apply(
         Bucket: BucketName,
         Format: AnalyticsS3ExportFileFormat,
@@ -819,6 +844,7 @@ package s3 {
   }
 
   object Bucket {
+    @inline
     def apply(
         CreationDate: js.UndefOr[CreationDate] = js.undefined,
         Name: js.UndefOr[BucketName] = js.undefined
@@ -855,6 +881,7 @@ package s3 {
   }
 
   object BucketLifecycleConfiguration {
+    @inline
     def apply(
         Rules: LifecycleRules
     ): BucketLifecycleConfiguration = {
@@ -905,6 +932,7 @@ package s3 {
   }
 
   object BucketLoggingStatus {
+    @inline
     def apply(
         LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
     ): BucketLoggingStatus = {
@@ -938,6 +966,7 @@ package s3 {
   }
 
   object CORSConfiguration {
+    @inline
     def apply(
         CORSRules: CORSRules
     ): CORSConfiguration = {
@@ -962,6 +991,7 @@ package s3 {
   }
 
   object CORSRule {
+    @inline
     def apply(
         AllowedMethods: AllowedMethods,
         AllowedOrigins: AllowedOrigins,
@@ -996,6 +1026,7 @@ package s3 {
   }
 
   object CSVInput {
+    @inline
     def apply(
         AllowQuotedRecordDelimiter: js.UndefOr[AllowQuotedRecordDelimiter] = js.undefined,
         Comments: js.UndefOr[Comments] = js.undefined,
@@ -1032,6 +1063,7 @@ package s3 {
   }
 
   object CSVOutput {
+    @inline
     def apply(
         FieldDelimiter: js.UndefOr[FieldDelimiter] = js.undefined,
         QuoteCharacter: js.UndefOr[QuoteCharacter] = js.undefined,
@@ -1062,6 +1094,7 @@ package s3 {
   }
 
   object CloudFunctionConfiguration {
+    @inline
     def apply(
         CloudFunction: js.UndefOr[CloudFunction] = js.undefined,
         Event: js.UndefOr[Event] = js.undefined,
@@ -1088,6 +1121,7 @@ package s3 {
   }
 
   object CommonPrefix {
+    @inline
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): CommonPrefix = {
@@ -1111,6 +1145,7 @@ package s3 {
   }
 
   object CompleteMultipartUploadOutput {
+    @inline
     def apply(
         Bucket: js.UndefOr[BucketName] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
@@ -1146,6 +1181,7 @@ package s3 {
   }
 
   object CompleteMultipartUploadRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -1174,6 +1210,7 @@ package s3 {
   }
 
   object CompletedMultipartUpload {
+    @inline
     def apply(
         Parts: js.UndefOr[CompletedPartList] = js.undefined
     ): CompletedMultipartUpload = {
@@ -1193,6 +1230,7 @@ package s3 {
   }
 
   object CompletedPart {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         PartNumber: js.UndefOr[PartNumber] = js.undefined
@@ -1222,6 +1260,7 @@ package s3 {
   }
 
   object Condition {
+    @inline
     def apply(
         HttpErrorCodeReturnedEquals: js.UndefOr[HttpErrorCodeReturnedEquals] = js.undefined,
         KeyPrefixEquals: js.UndefOr[KeyPrefixEquals] = js.undefined
@@ -1242,6 +1281,7 @@ package s3 {
   trait ContinuationEvent extends js.Object {}
 
   object ContinuationEvent {
+    @inline
     def apply(
         ): ContinuationEvent = {
       val __obj = js.Dynamic.literal()
@@ -1265,6 +1305,7 @@ package s3 {
   }
 
   object CopyObjectOutput {
+    @inline
     def apply(
         CopyObjectResult: js.UndefOr[CopyObjectResult] = js.undefined,
         CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
@@ -1334,6 +1375,7 @@ package s3 {
   }
 
   object CopyObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         CopySource: CopySource,
@@ -1439,6 +1481,7 @@ package s3 {
   }
 
   object CopyObjectResult {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
@@ -1460,6 +1503,7 @@ package s3 {
   }
 
   object CopyPartResult {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
@@ -1480,6 +1524,7 @@ package s3 {
   }
 
   object CreateBucketConfiguration {
+    @inline
     def apply(
         LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
     ): CreateBucketConfiguration = {
@@ -1495,6 +1540,7 @@ package s3 {
   }
 
   object CreateBucketOutput {
+    @inline
     def apply(
         Location: js.UndefOr[Location] = js.undefined
     ): CreateBucketOutput = {
@@ -1518,6 +1564,7 @@ package s3 {
   }
 
   object CreateBucketRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ACL: js.UndefOr[BucketCannedACL] = js.undefined,
@@ -1565,6 +1612,7 @@ package s3 {
   }
 
   object CreateMultipartUploadOutput {
+    @inline
     def apply(
         AbortDate: js.UndefOr[AbortDate] = js.undefined,
         AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
@@ -1626,6 +1674,7 @@ package s3 {
   }
 
   object CreateMultipartUploadRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -1704,6 +1753,7 @@ package s3 {
   }
 
   object DefaultRetention {
+    @inline
     def apply(
         Days: js.UndefOr[Days] = js.undefined,
         Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
@@ -1727,6 +1777,7 @@ package s3 {
   }
 
   object Delete {
+    @inline
     def apply(
         Objects: ObjectIdentifierList,
         Quiet: js.UndefOr[Quiet] = js.undefined
@@ -1747,6 +1798,7 @@ package s3 {
   }
 
   object DeleteBucketAnalyticsConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: AnalyticsId
@@ -1766,6 +1818,7 @@ package s3 {
   }
 
   object DeleteBucketCorsRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketCorsRequest = {
@@ -1783,6 +1836,7 @@ package s3 {
   }
 
   object DeleteBucketEncryptionRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketEncryptionRequest = {
@@ -1801,6 +1855,7 @@ package s3 {
   }
 
   object DeleteBucketInventoryConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: InventoryId
@@ -1820,6 +1875,7 @@ package s3 {
   }
 
   object DeleteBucketLifecycleRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketLifecycleRequest = {
@@ -1838,6 +1894,7 @@ package s3 {
   }
 
   object DeleteBucketMetricsConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: MetricsId
@@ -1857,6 +1914,7 @@ package s3 {
   }
 
   object DeleteBucketPolicyRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketPolicyRequest = {
@@ -1874,6 +1932,7 @@ package s3 {
   }
 
   object DeleteBucketReplicationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketReplicationRequest = {
@@ -1891,6 +1950,7 @@ package s3 {
   }
 
   object DeleteBucketRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketRequest = {
@@ -1908,6 +1968,7 @@ package s3 {
   }
 
   object DeleteBucketTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketTaggingRequest = {
@@ -1925,6 +1986,7 @@ package s3 {
   }
 
   object DeleteBucketWebsiteRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeleteBucketWebsiteRequest = {
@@ -1949,6 +2011,7 @@ package s3 {
   }
 
   object DeleteMarkerEntry {
+    @inline
     def apply(
         IsLatest: js.UndefOr[IsLatest] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -1975,6 +2038,7 @@ package s3 {
   }
 
   object DeleteMarkerReplication {
+    @inline
     def apply(
         Status: js.UndefOr[DeleteMarkerReplicationStatus] = js.undefined
     ): DeleteMarkerReplication = {
@@ -1999,6 +2063,7 @@ package s3 {
   }
 
   object DeleteObjectOutput {
+    @inline
     def apply(
         DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
@@ -2023,6 +2088,7 @@ package s3 {
   }
 
   object DeleteObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -2052,6 +2118,7 @@ package s3 {
   }
 
   object DeleteObjectTaggingOutput {
+    @inline
     def apply(
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectTaggingOutput = {
@@ -2069,6 +2136,7 @@ package s3 {
   }
 
   object DeleteObjectTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -2092,6 +2160,7 @@ package s3 {
   }
 
   object DeleteObjectsOutput {
+    @inline
     def apply(
         Deleted: js.UndefOr[DeletedObjects] = js.undefined,
         Errors: js.UndefOr[Errors] = js.undefined,
@@ -2115,6 +2184,7 @@ package s3 {
   }
 
   object DeleteObjectsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Delete: Delete,
@@ -2142,6 +2212,7 @@ package s3 {
   }
 
   object DeletePublicAccessBlockRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): DeletePublicAccessBlockRequest = {
@@ -2165,6 +2236,7 @@ package s3 {
   }
 
   object DeletedObject {
+    @inline
     def apply(
         DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
         DeleteMarkerVersionId: js.UndefOr[DeleteMarkerVersionId] = js.undefined,
@@ -2193,6 +2265,7 @@ package s3 {
   }
 
   object Destination {
+    @inline
     def apply(
         Bucket: BucketName,
         AccessControlTranslation: js.UndefOr[AccessControlTranslation] = js.undefined,
@@ -2232,6 +2305,7 @@ package s3 {
   }
 
   object Encryption {
+    @inline
     def apply(
         EncryptionType: ServerSideEncryption,
         KMSContext: js.UndefOr[KMSContext] = js.undefined,
@@ -2256,6 +2330,7 @@ package s3 {
   }
 
   object EncryptionConfiguration {
+    @inline
     def apply(
         ReplicaKmsKeyID: js.UndefOr[ReplicaKmsKeyID] = js.undefined
     ): EncryptionConfiguration = {
@@ -2272,6 +2347,7 @@ package s3 {
   trait EndEvent extends js.Object {}
 
   object EndEvent {
+    @inline
     def apply(
         ): EndEvent = {
       val __obj = js.Dynamic.literal()
@@ -2292,6 +2368,7 @@ package s3 {
   }
 
   object Error {
+    @inline
     def apply(
         Code: js.UndefOr[Code] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -2316,6 +2393,7 @@ package s3 {
   }
 
   object ErrorDocument {
+    @inline
     def apply(
         Key: ObjectKey
     ): ErrorDocument = {
@@ -2391,6 +2469,7 @@ package s3 {
   }
 
   object FilterRule {
+    @inline
     def apply(
         Name: js.UndefOr[FilterRuleName] = js.undefined,
         Value: js.UndefOr[FilterRuleValue] = js.undefined
@@ -2415,6 +2494,7 @@ package s3 {
   }
 
   object GetBucketAccelerateConfigurationOutput {
+    @inline
     def apply(
         Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
     ): GetBucketAccelerateConfigurationOutput = {
@@ -2430,6 +2510,7 @@ package s3 {
   }
 
   object GetBucketAccelerateConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketAccelerateConfigurationRequest = {
@@ -2448,6 +2529,7 @@ package s3 {
   }
 
   object GetBucketAclOutput {
+    @inline
     def apply(
         Grants: js.UndefOr[Grants] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
@@ -2465,6 +2547,7 @@ package s3 {
   }
 
   object GetBucketAclRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketAclRequest = {
@@ -2482,6 +2565,7 @@ package s3 {
   }
 
   object GetBucketAnalyticsConfigurationOutput {
+    @inline
     def apply(
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfiguration] = js.undefined
     ): GetBucketAnalyticsConfigurationOutput = {
@@ -2498,6 +2582,7 @@ package s3 {
   }
 
   object GetBucketAnalyticsConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: AnalyticsId
@@ -2517,6 +2602,7 @@ package s3 {
   }
 
   object GetBucketCorsOutput {
+    @inline
     def apply(
         CORSRules: js.UndefOr[CORSRules] = js.undefined
     ): GetBucketCorsOutput = {
@@ -2532,6 +2618,7 @@ package s3 {
   }
 
   object GetBucketCorsRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketCorsRequest = {
@@ -2549,6 +2636,7 @@ package s3 {
   }
 
   object GetBucketEncryptionOutput {
+    @inline
     def apply(
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined
     ): GetBucketEncryptionOutput = {
@@ -2566,6 +2654,7 @@ package s3 {
   }
 
   object GetBucketEncryptionRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketEncryptionRequest = {
@@ -2583,6 +2672,7 @@ package s3 {
   }
 
   object GetBucketInventoryConfigurationOutput {
+    @inline
     def apply(
         InventoryConfiguration: js.UndefOr[InventoryConfiguration] = js.undefined
     ): GetBucketInventoryConfigurationOutput = {
@@ -2599,6 +2689,7 @@ package s3 {
   }
 
   object GetBucketInventoryConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: InventoryId
@@ -2618,6 +2709,7 @@ package s3 {
   }
 
   object GetBucketLifecycleConfigurationOutput {
+    @inline
     def apply(
         Rules: js.UndefOr[LifecycleRules] = js.undefined
     ): GetBucketLifecycleConfigurationOutput = {
@@ -2633,6 +2725,7 @@ package s3 {
   }
 
   object GetBucketLifecycleConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketLifecycleConfigurationRequest = {
@@ -2650,6 +2743,7 @@ package s3 {
   }
 
   object GetBucketLifecycleOutput {
+    @inline
     def apply(
         Rules: js.UndefOr[Rules] = js.undefined
     ): GetBucketLifecycleOutput = {
@@ -2665,6 +2759,7 @@ package s3 {
   }
 
   object GetBucketLifecycleRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketLifecycleRequest = {
@@ -2682,6 +2777,7 @@ package s3 {
   }
 
   object GetBucketLocationOutput {
+    @inline
     def apply(
         LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
     ): GetBucketLocationOutput = {
@@ -2697,6 +2793,7 @@ package s3 {
   }
 
   object GetBucketLocationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketLocationRequest = {
@@ -2714,6 +2811,7 @@ package s3 {
   }
 
   object GetBucketLoggingOutput {
+    @inline
     def apply(
         LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
     ): GetBucketLoggingOutput = {
@@ -2729,6 +2827,7 @@ package s3 {
   }
 
   object GetBucketLoggingRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketLoggingRequest = {
@@ -2746,6 +2845,7 @@ package s3 {
   }
 
   object GetBucketMetricsConfigurationOutput {
+    @inline
     def apply(
         MetricsConfiguration: js.UndefOr[MetricsConfiguration] = js.undefined
     ): GetBucketMetricsConfigurationOutput = {
@@ -2762,6 +2862,7 @@ package s3 {
   }
 
   object GetBucketMetricsConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: MetricsId
@@ -2781,6 +2882,7 @@ package s3 {
   }
 
   object GetBucketNotificationConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketNotificationConfigurationRequest = {
@@ -2798,6 +2900,7 @@ package s3 {
   }
 
   object GetBucketPolicyOutput {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): GetBucketPolicyOutput = {
@@ -2813,6 +2916,7 @@ package s3 {
   }
 
   object GetBucketPolicyRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketPolicyRequest = {
@@ -2830,6 +2934,7 @@ package s3 {
   }
 
   object GetBucketPolicyStatusOutput {
+    @inline
     def apply(
         PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
     ): GetBucketPolicyStatusOutput = {
@@ -2845,6 +2950,7 @@ package s3 {
   }
 
   object GetBucketPolicyStatusRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketPolicyStatusRequest = {
@@ -2862,6 +2968,7 @@ package s3 {
   }
 
   object GetBucketReplicationOutput {
+    @inline
     def apply(
         ReplicationConfiguration: js.UndefOr[ReplicationConfiguration] = js.undefined
     ): GetBucketReplicationOutput = {
@@ -2877,6 +2984,7 @@ package s3 {
   }
 
   object GetBucketReplicationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketReplicationRequest = {
@@ -2894,6 +3002,7 @@ package s3 {
   }
 
   object GetBucketRequestPaymentOutput {
+    @inline
     def apply(
         Payer: js.UndefOr[Payer] = js.undefined
     ): GetBucketRequestPaymentOutput = {
@@ -2909,6 +3018,7 @@ package s3 {
   }
 
   object GetBucketRequestPaymentRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketRequestPaymentRequest = {
@@ -2926,6 +3036,7 @@ package s3 {
   }
 
   object GetBucketTaggingOutput {
+    @inline
     def apply(
         TagSet: TagSet
     ): GetBucketTaggingOutput = {
@@ -2943,6 +3054,7 @@ package s3 {
   }
 
   object GetBucketTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketTaggingRequest = {
@@ -2961,6 +3073,7 @@ package s3 {
   }
 
   object GetBucketVersioningOutput {
+    @inline
     def apply(
         MFADelete: js.UndefOr[MFADeleteStatus] = js.undefined,
         Status: js.UndefOr[BucketVersioningStatus] = js.undefined
@@ -2978,6 +3091,7 @@ package s3 {
   }
 
   object GetBucketVersioningRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketVersioningRequest = {
@@ -2998,6 +3112,7 @@ package s3 {
   }
 
   object GetBucketWebsiteOutput {
+    @inline
     def apply(
         ErrorDocument: js.UndefOr[ErrorDocument] = js.undefined,
         IndexDocument: js.UndefOr[IndexDocument] = js.undefined,
@@ -3019,6 +3134,7 @@ package s3 {
   }
 
   object GetBucketWebsiteRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetBucketWebsiteRequest = {
@@ -3038,6 +3154,7 @@ package s3 {
   }
 
   object GetObjectAclOutput {
+    @inline
     def apply(
         Grants: js.UndefOr[Grants] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined,
@@ -3060,6 +3177,7 @@ package s3 {
   }
 
   object GetObjectAclRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3083,6 +3201,7 @@ package s3 {
   }
 
   object GetObjectLegalHoldOutput {
+    @inline
     def apply(
         LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined
     ): GetObjectLegalHoldOutput = {
@@ -3101,6 +3220,7 @@ package s3 {
   }
 
   object GetObjectLegalHoldRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3124,6 +3244,7 @@ package s3 {
   }
 
   object GetObjectLockConfigurationOutput {
+    @inline
     def apply(
         ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined
     ): GetObjectLockConfigurationOutput = {
@@ -3139,6 +3260,7 @@ package s3 {
   }
 
   object GetObjectLockConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetObjectLockConfigurationRequest = {
@@ -3186,6 +3308,7 @@ package s3 {
   }
 
   object GetObjectOutput {
+    @inline
     def apply(
         AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
         Body: js.UndefOr[Body] = js.undefined,
@@ -3283,6 +3406,7 @@ package s3 {
   }
 
   object GetObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3338,6 +3462,7 @@ package s3 {
   }
 
   object GetObjectRetentionOutput {
+    @inline
     def apply(
         Retention: js.UndefOr[ObjectLockRetention] = js.undefined
     ): GetObjectRetentionOutput = {
@@ -3356,6 +3481,7 @@ package s3 {
   }
 
   object GetObjectRetentionRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3380,6 +3506,7 @@ package s3 {
   }
 
   object GetObjectTaggingOutput {
+    @inline
     def apply(
         TagSet: TagSet,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -3401,6 +3528,7 @@ package s3 {
   }
 
   object GetObjectTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3423,6 +3551,7 @@ package s3 {
   }
 
   object GetObjectTorrentOutput {
+    @inline
     def apply(
         Body: js.UndefOr[Body] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
@@ -3442,6 +3571,7 @@ package s3 {
   }
 
   object GetObjectTorrentRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3463,6 +3593,7 @@ package s3 {
   }
 
   object GetPublicAccessBlockOutput {
+    @inline
     def apply(
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
@@ -3480,6 +3611,7 @@ package s3 {
   }
 
   object GetPublicAccessBlockRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): GetPublicAccessBlockRequest = {
@@ -3500,6 +3632,7 @@ package s3 {
   }
 
   object GlacierJobParameters {
+    @inline
     def apply(
         Tier: Tier
     ): GlacierJobParameters = {
@@ -3521,6 +3654,7 @@ package s3 {
   }
 
   object Grant {
+    @inline
     def apply(
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[Permission] = js.undefined
@@ -3545,6 +3679,7 @@ package s3 {
   }
 
   object Grantee {
+    @inline
     def apply(
         Type: Type,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -3570,6 +3705,7 @@ package s3 {
   }
 
   object HeadBucketRequest {
+    @inline
     def apply(
         Bucket: BucketName
     ): HeadBucketRequest = {
@@ -3614,6 +3750,7 @@ package s3 {
   }
 
   object HeadObjectOutput {
+    @inline
     def apply(
         AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
@@ -3699,6 +3836,7 @@ package s3 {
   }
 
   object HeadObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -3743,6 +3881,7 @@ package s3 {
   }
 
   object IndexDocument {
+    @inline
     def apply(
         Suffix: Suffix
     ): IndexDocument = {
@@ -3764,6 +3903,7 @@ package s3 {
   }
 
   object Initiator {
+    @inline
     def apply(
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         ID: js.UndefOr[ID] = js.undefined
@@ -3787,6 +3927,7 @@ package s3 {
   }
 
   object InputSerialization {
+    @inline
     def apply(
         CSV: js.UndefOr[CSVInput] = js.undefined,
         CompressionType: js.UndefOr[CompressionType] = js.undefined,
@@ -3817,6 +3958,7 @@ package s3 {
   }
 
   object InventoryConfiguration {
+    @inline
     def apply(
         Destination: InventoryDestination,
         Id: InventoryId,
@@ -3849,6 +3991,7 @@ package s3 {
   }
 
   object InventoryDestination {
+    @inline
     def apply(
         S3BucketDestination: InventoryS3BucketDestination
     ): InventoryDestination = {
@@ -3870,6 +4013,7 @@ package s3 {
   }
 
   object InventoryEncryption {
+    @inline
     def apply(
         SSEKMS: js.UndefOr[SSEKMS] = js.undefined,
         SSES3: js.UndefOr[SSES3] = js.undefined
@@ -3890,6 +4034,7 @@ package s3 {
   }
 
   object InventoryFilter {
+    @inline
     def apply(
         Prefix: Prefix
     ): InventoryFilter = {
@@ -3964,6 +4109,7 @@ package s3 {
   }
 
   object InventoryS3BucketDestination {
+    @inline
     def apply(
         Bucket: BucketName,
         Format: InventoryFormat,
@@ -3992,6 +4138,7 @@ package s3 {
   }
 
   object InventorySchedule {
+    @inline
     def apply(
         Frequency: InventoryFrequency
     ): InventorySchedule = {
@@ -4012,6 +4159,7 @@ package s3 {
   }
 
   object JSONInput {
+    @inline
     def apply(
         Type: js.UndefOr[JSONType] = js.undefined
     ): JSONInput = {
@@ -4030,6 +4178,7 @@ package s3 {
   }
 
   object JSONOutput {
+    @inline
     def apply(
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): JSONOutput = {
@@ -4058,6 +4207,7 @@ package s3 {
   }
 
   object LambdaFunctionConfiguration {
+    @inline
     def apply(
         Events: EventList,
         LambdaFunctionArn: LambdaFunctionArn,
@@ -4084,6 +4234,7 @@ package s3 {
   }
 
   object LifecycleConfiguration {
+    @inline
     def apply(
         Rules: Rules
     ): LifecycleConfiguration = {
@@ -4106,6 +4257,7 @@ package s3 {
   }
 
   object LifecycleExpiration {
+    @inline
     def apply(
         Date: js.UndefOr[Date] = js.undefined,
         Days: js.UndefOr[Days] = js.undefined,
@@ -4138,6 +4290,7 @@ package s3 {
   }
 
   object LifecycleRule {
+    @inline
     def apply(
         Status: ExpirationStatus,
         AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload] = js.undefined,
@@ -4181,6 +4334,7 @@ package s3 {
   }
 
   object LifecycleRuleAndOperator {
+    @inline
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
@@ -4203,6 +4357,7 @@ package s3 {
   }
 
   object LifecycleRuleFilter {
+    @inline
     def apply(
         And: js.UndefOr[LifecycleRuleAndOperator] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4225,6 +4380,7 @@ package s3 {
   }
 
   object ListBucketAnalyticsConfigurationsOutput {
+    @inline
     def apply(
         AnalyticsConfigurationList: js.UndefOr[AnalyticsConfigurationList] = js.undefined,
         ContinuationToken: js.UndefOr[Token] = js.undefined,
@@ -4249,6 +4405,7 @@ package s3 {
   }
 
   object ListBucketAnalyticsConfigurationsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
@@ -4271,6 +4428,7 @@ package s3 {
   }
 
   object ListBucketInventoryConfigurationsOutput {
+    @inline
     def apply(
         ContinuationToken: js.UndefOr[Token] = js.undefined,
         InventoryConfigurationList: js.UndefOr[InventoryConfigurationList] = js.undefined,
@@ -4295,6 +4453,7 @@ package s3 {
   }
 
   object ListBucketInventoryConfigurationsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
@@ -4317,6 +4476,7 @@ package s3 {
   }
 
   object ListBucketMetricsConfigurationsOutput {
+    @inline
     def apply(
         ContinuationToken: js.UndefOr[Token] = js.undefined,
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
@@ -4339,6 +4499,7 @@ package s3 {
   }
 
   object ListBucketMetricsConfigurationsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
@@ -4359,6 +4520,7 @@ package s3 {
   }
 
   object ListBucketsOutput {
+    @inline
     def apply(
         Buckets: js.UndefOr[Buckets] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
@@ -4387,6 +4549,7 @@ package s3 {
   }
 
   object ListMultipartUploadsOutput {
+    @inline
     def apply(
         Bucket: js.UndefOr[BucketName] = js.undefined,
         CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
@@ -4430,6 +4593,7 @@ package s3 {
   }
 
   object ListMultipartUploadsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
@@ -4471,6 +4635,7 @@ package s3 {
   }
 
   object ListObjectVersionsOutput {
+    @inline
     def apply(
         CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
         DeleteMarkers: js.UndefOr[DeleteMarkers] = js.undefined,
@@ -4516,6 +4681,7 @@ package s3 {
   }
 
   object ListObjectVersionsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
@@ -4554,6 +4720,7 @@ package s3 {
   }
 
   object ListObjectsOutput {
+    @inline
     def apply(
         CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
         Contents: js.UndefOr[ObjectList] = js.undefined,
@@ -4593,6 +4760,7 @@ package s3 {
   }
 
   object ListObjectsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
@@ -4633,6 +4801,7 @@ package s3 {
   }
 
   object ListObjectsV2Output {
+    @inline
     def apply(
         CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
         Contents: js.UndefOr[ObjectList] = js.undefined,
@@ -4678,6 +4847,7 @@ package s3 {
   }
 
   object ListObjectsV2Request {
+    @inline
     def apply(
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined,
@@ -4724,6 +4894,7 @@ package s3 {
   }
 
   object ListPartsOutput {
+    @inline
     def apply(
         AbortDate: js.UndefOr[AbortDate] = js.undefined,
         AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
@@ -4770,6 +4941,7 @@ package s3 {
   }
 
   object ListPartsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -4802,6 +4974,7 @@ package s3 {
   }
 
   object LoggingEnabled {
+    @inline
     def apply(
         TargetBucket: TargetBucket,
         TargetPrefix: TargetPrefix,
@@ -4848,6 +5021,7 @@ package s3 {
   }
 
   object MetadataEntry {
+    @inline
     def apply(
         Name: js.UndefOr[MetadataKey] = js.undefined,
         Value: js.UndefOr[MetadataValue] = js.undefined
@@ -4869,6 +5043,7 @@ package s3 {
   }
 
   object MetricsAndOperator {
+    @inline
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
@@ -4890,6 +5065,7 @@ package s3 {
   }
 
   object MetricsConfiguration {
+    @inline
     def apply(
         Id: MetricsId,
         Filter: js.UndefOr[MetricsFilter] = js.undefined
@@ -4914,6 +5090,7 @@ package s3 {
   }
 
   object MetricsFilter {
+    @inline
     def apply(
         And: js.UndefOr[MetricsAndOperator] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4941,6 +5118,7 @@ package s3 {
   }
 
   object MultipartUpload {
+    @inline
     def apply(
         Initiated: js.UndefOr[Initiated] = js.undefined,
         Initiator: js.UndefOr[Initiator] = js.undefined,
@@ -4969,6 +5147,7 @@ package s3 {
   }
 
   object NoncurrentVersionExpiration {
+    @inline
     def apply(
         NoncurrentDays: js.UndefOr[Days] = js.undefined
     ): NoncurrentVersionExpiration = {
@@ -4988,6 +5167,7 @@ package s3 {
   }
 
   object NoncurrentVersionTransition {
+    @inline
     def apply(
         NoncurrentDays: js.UndefOr[Days] = js.undefined,
         StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
@@ -5010,6 +5190,7 @@ package s3 {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         LambdaFunctionConfigurations: js.UndefOr[LambdaFunctionConfigurationList] = js.undefined,
         QueueConfigurations: js.UndefOr[QueueConfigurationList] = js.undefined,
@@ -5033,6 +5214,7 @@ package s3 {
   }
 
   object NotificationConfigurationDeprecated {
+    @inline
     def apply(
         CloudFunctionConfiguration: js.UndefOr[CloudFunctionConfiguration] = js.undefined,
         QueueConfiguration: js.UndefOr[QueueConfigurationDeprecated] = js.undefined,
@@ -5057,6 +5239,7 @@ package s3 {
   }
 
   object NotificationConfigurationFilter {
+    @inline
     def apply(
         Key: js.UndefOr[S3KeyFilter] = js.undefined
     ): NotificationConfigurationFilter = {
@@ -5080,6 +5263,7 @@ package s3 {
   }
 
   object Object {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -5131,6 +5315,7 @@ package s3 {
   }
 
   object ObjectIdentifier {
+    @inline
     def apply(
         Key: ObjectKey,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -5154,6 +5339,7 @@ package s3 {
   }
 
   object ObjectLockConfiguration {
+    @inline
     def apply(
         ObjectLockEnabled: js.UndefOr[ObjectLockEnabled] = js.undefined,
         Rule: js.UndefOr[ObjectLockRule] = js.undefined
@@ -5180,6 +5366,7 @@ package s3 {
   }
 
   object ObjectLockLegalHold {
+    @inline
     def apply(
         Status: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined
     ): ObjectLockLegalHold = {
@@ -5213,6 +5400,7 @@ package s3 {
   }
 
   object ObjectLockRetention {
+    @inline
     def apply(
         Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
         RetainUntilDate: js.UndefOr[Date] = js.undefined
@@ -5240,6 +5428,7 @@ package s3 {
   }
 
   object ObjectLockRule {
+    @inline
     def apply(
         DefaultRetention: js.UndefOr[DefaultRetention] = js.undefined
     ): ObjectLockRule = {
@@ -5279,6 +5468,7 @@ package s3 {
   }
 
   object ObjectVersion {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         IsLatest: js.UndefOr[IsLatest] = js.undefined,
@@ -5317,6 +5507,7 @@ package s3 {
   }
 
   object OutputLocation {
+    @inline
     def apply(
         S3: js.UndefOr[S3Location] = js.undefined
     ): OutputLocation = {
@@ -5336,6 +5527,7 @@ package s3 {
   }
 
   object OutputSerialization {
+    @inline
     def apply(
         CSV: js.UndefOr[CSVOutput] = js.undefined,
         JSON: js.UndefOr[JSONOutput] = js.undefined
@@ -5357,6 +5549,7 @@ package s3 {
   }
 
   object Owner {
+    @inline
     def apply(
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         ID: js.UndefOr[ID] = js.undefined
@@ -5381,6 +5574,7 @@ package s3 {
   trait ParquetInput extends js.Object {}
 
   object ParquetInput {
+    @inline
     def apply(
         ): ParquetInput = {
       val __obj = js.Dynamic.literal()
@@ -5401,6 +5595,7 @@ package s3 {
   }
 
   object Part {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined,
@@ -5442,6 +5637,7 @@ package s3 {
   }
 
   object PolicyStatus {
+    @inline
     def apply(
         IsPublic: js.UndefOr[IsPublic] = js.undefined
     ): PolicyStatus = {
@@ -5462,6 +5658,7 @@ package s3 {
   }
 
   object Progress {
+    @inline
     def apply(
         BytesProcessed: js.UndefOr[BytesProcessed] = js.undefined,
         BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
@@ -5484,6 +5681,7 @@ package s3 {
   }
 
   object ProgressEvent {
+    @inline
     def apply(
         Details: js.UndefOr[Progress] = js.undefined
     ): ProgressEvent = {
@@ -5512,6 +5710,7 @@ package s3 {
   }
 
   object PublicAccessBlockConfiguration {
+    @inline
     def apply(
         BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
         BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
@@ -5534,6 +5733,7 @@ package s3 {
   }
 
   object PutBucketAccelerateConfigurationRequest {
+    @inline
     def apply(
         AccelerateConfiguration: AccelerateConfiguration,
         Bucket: BucketName
@@ -5561,6 +5761,7 @@ package s3 {
   }
 
   object PutBucketAclRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ACL: js.UndefOr[BucketCannedACL] = js.undefined,
@@ -5596,6 +5797,7 @@ package s3 {
   }
 
   object PutBucketAnalyticsConfigurationRequest {
+    @inline
     def apply(
         AnalyticsConfiguration: AnalyticsConfiguration,
         Bucket: BucketName,
@@ -5619,6 +5821,7 @@ package s3 {
   }
 
   object PutBucketCorsRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         CORSConfiguration: CORSConfiguration,
@@ -5642,6 +5845,7 @@ package s3 {
   }
 
   object PutBucketEncryptionRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration,
@@ -5665,6 +5869,7 @@ package s3 {
   }
 
   object PutBucketInventoryConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: InventoryId,
@@ -5687,6 +5892,7 @@ package s3 {
   }
 
   object PutBucketLifecycleConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration] = js.undefined
@@ -5708,6 +5914,7 @@ package s3 {
   }
 
   object PutBucketLifecycleRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
@@ -5731,6 +5938,7 @@ package s3 {
   }
 
   object PutBucketLoggingRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         BucketLoggingStatus: BucketLoggingStatus,
@@ -5754,6 +5962,7 @@ package s3 {
   }
 
   object PutBucketMetricsConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Id: MetricsId,
@@ -5776,6 +5985,7 @@ package s3 {
   }
 
   object PutBucketNotificationConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfiguration
@@ -5797,6 +6007,7 @@ package s3 {
   }
 
   object PutBucketNotificationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfigurationDeprecated,
@@ -5821,6 +6032,7 @@ package s3 {
   }
 
   object PutBucketPolicyRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Policy: Policy,
@@ -5849,6 +6061,7 @@ package s3 {
   }
 
   object PutBucketReplicationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ReplicationConfiguration: ReplicationConfiguration,
@@ -5874,6 +6087,7 @@ package s3 {
   }
 
   object PutBucketRequestPaymentRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         RequestPaymentConfiguration: RequestPaymentConfiguration,
@@ -5897,6 +6111,7 @@ package s3 {
   }
 
   object PutBucketTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Tagging: Tagging,
@@ -5921,6 +6136,7 @@ package s3 {
   }
 
   object PutBucketVersioningRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         VersioningConfiguration: VersioningConfiguration,
@@ -5946,6 +6162,7 @@ package s3 {
   }
 
   object PutBucketWebsiteRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         WebsiteConfiguration: WebsiteConfiguration,
@@ -5967,6 +6184,7 @@ package s3 {
   }
 
   object PutObjectAclOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectAclOutput = {
@@ -5993,6 +6211,7 @@ package s3 {
   }
 
   object PutObjectAclRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6032,6 +6251,7 @@ package s3 {
   }
 
   object PutObjectLegalHoldOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectLegalHoldOutput = {
@@ -6052,6 +6272,7 @@ package s3 {
   }
 
   object PutObjectLegalHoldRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6079,6 +6300,7 @@ package s3 {
   }
 
   object PutObjectLockConfigurationOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectLockConfigurationOutput = {
@@ -6098,6 +6320,7 @@ package s3 {
   }
 
   object PutObjectLockConfigurationRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
@@ -6131,6 +6354,7 @@ package s3 {
   }
 
   object PutObjectOutput {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
@@ -6191,6 +6415,7 @@ package s3 {
   }
 
   object PutObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6270,6 +6495,7 @@ package s3 {
   }
 
   object PutObjectRetentionOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectRetentionOutput = {
@@ -6291,6 +6517,7 @@ package s3 {
   }
 
   object PutObjectRetentionRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6322,6 +6549,7 @@ package s3 {
   }
 
   object PutObjectTaggingOutput {
+    @inline
     def apply(
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingOutput = {
@@ -6341,6 +6569,7 @@ package s3 {
   }
 
   object PutObjectTaggingRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6368,6 +6597,7 @@ package s3 {
   }
 
   object PutPublicAccessBlockRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration,
@@ -6395,6 +6625,7 @@ package s3 {
   }
 
   object QueueConfiguration {
+    @inline
     def apply(
         Events: EventList,
         QueueArn: QueueArn,
@@ -6424,6 +6655,7 @@ package s3 {
   }
 
   object QueueConfigurationDeprecated {
+    @inline
     def apply(
         Event: js.UndefOr[Event] = js.undefined,
         Events: js.UndefOr[EventList] = js.undefined,
@@ -6455,6 +6687,7 @@ package s3 {
   }
 
   object RecordsEvent {
+    @inline
     def apply(
         Payload: js.UndefOr[Body] = js.undefined
     ): RecordsEvent = {
@@ -6477,6 +6710,7 @@ package s3 {
   }
 
   object Redirect {
+    @inline
     def apply(
         HostName: js.UndefOr[HostName] = js.undefined,
         HttpRedirectCode: js.UndefOr[HttpRedirectCode] = js.undefined,
@@ -6504,6 +6738,7 @@ package s3 {
   }
 
   object RedirectAllRequestsTo {
+    @inline
     def apply(
         HostName: HostName,
         Protocol: js.UndefOr[Protocol] = js.undefined
@@ -6527,6 +6762,7 @@ package s3 {
   }
 
   object ReplicationConfiguration {
+    @inline
     def apply(
         Role: Role,
         Rules: ReplicationRules
@@ -6556,6 +6792,7 @@ package s3 {
   }
 
   object ReplicationRule {
+    @inline
     def apply(
         Destination: Destination,
         Status: ReplicationRuleStatus,
@@ -6591,6 +6828,7 @@ package s3 {
   }
 
   object ReplicationRuleAndOperator {
+    @inline
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
@@ -6613,6 +6851,7 @@ package s3 {
   }
 
   object ReplicationRuleFilter {
+    @inline
     def apply(
         And: js.UndefOr[ReplicationRuleAndOperator] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -6669,6 +6908,7 @@ package s3 {
   }
 
   object RequestPaymentConfiguration {
+    @inline
     def apply(
         Payer: Payer
     ): RequestPaymentConfiguration = {
@@ -6689,6 +6929,7 @@ package s3 {
   }
 
   object RequestProgress {
+    @inline
     def apply(
         Enabled: js.UndefOr[EnableRequestProgress] = js.undefined
     ): RequestProgress = {
@@ -6705,6 +6946,7 @@ package s3 {
   }
 
   object RestoreObjectOutput {
+    @inline
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         RestoreOutputPath: js.UndefOr[RestoreOutputPath] = js.undefined
@@ -6726,6 +6968,7 @@ package s3 {
   }
 
   object RestoreObjectRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -6760,6 +7003,7 @@ package s3 {
   }
 
   object RestoreRequest {
+    @inline
     def apply(
         Days: js.UndefOr[Days] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -6797,6 +7041,7 @@ package s3 {
   }
 
   object RoutingRule {
+    @inline
     def apply(
         Redirect: Redirect,
         Condition: js.UndefOr[Condition] = js.undefined
@@ -6826,6 +7071,7 @@ package s3 {
   }
 
   object Rule {
+    @inline
     def apply(
         Prefix: Prefix,
         Status: ExpirationStatus,
@@ -6866,6 +7112,7 @@ package s3 {
   }
 
   object S3KeyFilter {
+    @inline
     def apply(
         FilterRules: js.UndefOr[FilterRuleList] = js.undefined
     ): S3KeyFilter = {
@@ -6891,6 +7138,7 @@ package s3 {
   }
 
   object S3Location {
+    @inline
     def apply(
         BucketName: BucketName,
         Prefix: LocationPrefix,
@@ -6925,6 +7173,7 @@ package s3 {
   }
 
   object SSEKMS {
+    @inline
     def apply(
         KeyId: SSEKMSKeyId
     ): SSEKMS = {
@@ -6943,6 +7192,7 @@ package s3 {
   trait SSES3 extends js.Object {}
 
   object SSES3 {
+    @inline
     def apply(
         ): SSES3 = {
       val __obj = js.Dynamic.literal()
@@ -6964,6 +7214,7 @@ package s3 {
   }
 
   object SelectObjectContentEventStream {
+    @inline
     def apply(
         Cont: js.UndefOr[ContinuationEvent] = js.undefined,
         End: js.UndefOr[EndEvent] = js.undefined,
@@ -6987,6 +7238,7 @@ package s3 {
   }
 
   object SelectObjectContentOutput {
+    @inline
     def apply(
         Payload: js.UndefOr[SelectObjectContentEventStream] = js.undefined
     ): SelectObjectContentOutput = {
@@ -7014,6 +7266,7 @@ package s3 {
   }
 
   object SelectObjectContentRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Expression: Expression,
@@ -7055,6 +7308,7 @@ package s3 {
   }
 
   object SelectParameters {
+    @inline
     def apply(
         Expression: Expression,
         ExpressionType: ExpressionType,
@@ -7089,6 +7343,7 @@ package s3 {
   }
 
   object ServerSideEncryptionByDefault {
+    @inline
     def apply(
         SSEAlgorithm: ServerSideEncryption,
         KMSMasterKeyID: js.UndefOr[SSEKMSKeyId] = js.undefined
@@ -7111,6 +7366,7 @@ package s3 {
   }
 
   object ServerSideEncryptionConfiguration {
+    @inline
     def apply(
         Rules: ServerSideEncryptionRules
     ): ServerSideEncryptionConfiguration = {
@@ -7131,6 +7387,7 @@ package s3 {
   }
 
   object ServerSideEncryptionRule {
+    @inline
     def apply(
         ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
     ): ServerSideEncryptionRule = {
@@ -7151,6 +7408,7 @@ package s3 {
   }
 
   object SourceSelectionCriteria {
+    @inline
     def apply(
         SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects] = js.undefined
     ): SourceSelectionCriteria = {
@@ -7169,6 +7427,7 @@ package s3 {
   }
 
   object SseKmsEncryptedObjects {
+    @inline
     def apply(
         Status: SseKmsEncryptedObjectsStatus
     ): SseKmsEncryptedObjects = {
@@ -7198,6 +7457,7 @@ package s3 {
   }
 
   object Stats {
+    @inline
     def apply(
         BytesProcessed: js.UndefOr[BytesProcessed] = js.undefined,
         BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
@@ -7220,6 +7480,7 @@ package s3 {
   }
 
   object StatsEvent {
+    @inline
     def apply(
         Details: js.UndefOr[Stats] = js.undefined
     ): StatsEvent = {
@@ -7252,6 +7513,7 @@ package s3 {
   }
 
   object StorageClassAnalysis {
+    @inline
     def apply(
         DataExport: js.UndefOr[StorageClassAnalysisDataExport] = js.undefined
     ): StorageClassAnalysis = {
@@ -7271,6 +7533,7 @@ package s3 {
   }
 
   object StorageClassAnalysisDataExport {
+    @inline
     def apply(
         Destination: AnalyticsExportDestination,
         OutputSchemaVersion: StorageClassAnalysisSchemaVersion
@@ -7300,6 +7563,7 @@ package s3 {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: ObjectKey,
         Value: Value
@@ -7322,6 +7586,7 @@ package s3 {
   }
 
   object Tagging {
+    @inline
     def apply(
         TagSet: TagSet
     ): Tagging = {
@@ -7350,6 +7615,7 @@ package s3 {
   }
 
   object TargetGrant {
+    @inline
     def apply(
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[BucketLogsPermission] = js.undefined
@@ -7381,6 +7647,7 @@ package s3 {
   }
 
   object TopicConfiguration {
+    @inline
     def apply(
         Events: EventList,
         TopicArn: TopicArn,
@@ -7410,6 +7677,7 @@ package s3 {
   }
 
   object TopicConfigurationDeprecated {
+    @inline
     def apply(
         Event: js.UndefOr[Event] = js.undefined,
         Events: js.UndefOr[EventList] = js.undefined,
@@ -7436,6 +7704,7 @@ package s3 {
   }
 
   object Transition {
+    @inline
     def apply(
         Date: js.UndefOr[Date] = js.undefined,
         Days: js.UndefOr[Days] = js.undefined,
@@ -7479,6 +7748,7 @@ package s3 {
   }
 
   object UploadPartCopyOutput {
+    @inline
     def apply(
         CopyPartResult: js.UndefOr[CopyPartResult] = js.undefined,
         CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
@@ -7522,6 +7792,7 @@ package s3 {
   }
 
   object UploadPartCopyRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         CopySource: CopySource,
@@ -7584,6 +7855,7 @@ package s3 {
   }
 
   object UploadPartOutput {
+    @inline
     def apply(
         ETag: js.UndefOr[ETag] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
@@ -7619,6 +7891,7 @@ package s3 {
   }
 
   object UploadPartRequest {
+    @inline
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
@@ -7660,6 +7933,7 @@ package s3 {
   }
 
   object VersioningConfiguration {
+    @inline
     def apply(
         MFADelete: js.UndefOr[MFADelete] = js.undefined,
         Status: js.UndefOr[BucketVersioningStatus] = js.undefined
@@ -7683,6 +7957,7 @@ package s3 {
   }
 
   object WebsiteConfiguration {
+    @inline
     def apply(
         ErrorDocument: js.UndefOr[ErrorDocument] = js.undefined,
         IndexDocument: js.UndefOr[IndexDocument] = js.undefined,

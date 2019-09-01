@@ -30,15 +30,15 @@ package object translate {
 
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
-    def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
+    @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
       service.deleteTerminology(params).promise.toFuture
-    def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
+    @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
       service.getTerminology(params).promise.toFuture
-    def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
+    @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
       service.importTerminology(params).promise.toFuture
-    def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
+    @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
       service.listTerminologies(params).promise.toFuture
-    def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
+    @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
       service.translateText(params).promise.toFuture
   }
 }
@@ -66,6 +66,7 @@ package translate {
   }
 
   object AppliedTerminology {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceName] = js.undefined,
         Terms: js.UndefOr[TermList] = js.undefined
@@ -83,6 +84,7 @@ package translate {
   }
 
   object DeleteTerminologyRequest {
+    @inline
     def apply(
         Name: ResourceName
     ): DeleteTerminologyRequest = {
@@ -104,6 +106,7 @@ package translate {
   }
 
   object EncryptionKey {
+    @inline
     def apply(
         Id: EncryptionKeyID,
         Type: EncryptionKeyType
@@ -130,6 +133,7 @@ package translate {
   }
 
   object GetTerminologyRequest {
+    @inline
     def apply(
         Name: ResourceName,
         TerminologyDataFormat: TerminologyDataFormat
@@ -150,6 +154,7 @@ package translate {
   }
 
   object GetTerminologyResponse {
+    @inline
     def apply(
         TerminologyDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
         TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
@@ -171,6 +176,7 @@ package translate {
   }
 
   object ImportTerminologyRequest {
+    @inline
     def apply(
         MergeStrategy: MergeStrategy,
         Name: ResourceName,
@@ -196,6 +202,7 @@ package translate {
   }
 
   object ImportTerminologyResponse {
+    @inline
     def apply(
         TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
     ): ImportTerminologyResponse = {
@@ -212,6 +219,7 @@ package translate {
   }
 
   object ListTerminologiesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -230,6 +238,7 @@ package translate {
   }
 
   object ListTerminologiesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TerminologyPropertiesList: js.UndefOr[TerminologyPropertiesList] = js.undefined
@@ -259,6 +268,7 @@ package translate {
   }
 
   object Term {
+    @inline
     def apply(
         SourceText: js.UndefOr[String] = js.undefined,
         TargetText: js.UndefOr[String] = js.undefined
@@ -280,6 +290,7 @@ package translate {
   }
 
   object TerminologyData {
+    @inline
     def apply(
         File: TerminologyFile,
         Format: TerminologyDataFormat
@@ -310,6 +321,7 @@ package translate {
   }
 
   object TerminologyDataLocation {
+    @inline
     def apply(
         Location: String,
         RepositoryType: String
@@ -341,6 +353,7 @@ package translate {
   }
 
   object TerminologyProperties {
+    @inline
     def apply(
         Arn: js.UndefOr[TerminologyArn] = js.undefined,
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
@@ -377,6 +390,7 @@ package translate {
   }
 
   object TranslateTextRequest {
+    @inline
     def apply(
         SourceLanguageCode: LanguageCodeString,
         TargetLanguageCode: LanguageCodeString,
@@ -403,6 +417,7 @@ package translate {
   }
 
   object TranslateTextResponse {
+    @inline
     def apply(
         SourceLanguageCode: LanguageCodeString,
         TargetLanguageCode: LanguageCodeString,

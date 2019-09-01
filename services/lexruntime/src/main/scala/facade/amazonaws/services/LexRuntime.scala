@@ -35,14 +35,15 @@ package object lexruntime {
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
-    def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
+    @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
       service.deleteSession(params).promise.toFuture
-    def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
+    @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
       service.getSession(params).promise.toFuture
-    def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
+    @inline def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
       service.postContent(params).promise.toFuture
-    def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise.toFuture
-    def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
+    @inline def postTextFuture(params: PostTextRequest): Future[PostTextResponse] =
+      service.postText(params).promise.toFuture
+    @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
       service.putSession(params).promise.toFuture
   }
 }
@@ -70,6 +71,7 @@ package lexruntime {
   }
 
   object Button {
+    @inline
     def apply(
         text: ButtonTextStringWithLength,
         value: ButtonValueStringWithLength
@@ -105,6 +107,7 @@ package lexruntime {
   }
 
   object DeleteSessionRequest {
+    @inline
     def apply(
         botAlias: BotAlias,
         botName: BotName,
@@ -129,6 +132,7 @@ package lexruntime {
   }
 
   object DeleteSessionResponse {
+    @inline
     def apply(
         botAlias: js.UndefOr[BotAlias] = js.undefined,
         botName: js.UndefOr[BotName] = js.undefined,
@@ -159,6 +163,7 @@ package lexruntime {
   }
 
   object DialogAction {
+    @inline
     def apply(
         `type`: DialogActionType,
         fulfillmentState: js.UndefOr[FulfillmentState] = js.undefined,
@@ -225,6 +230,7 @@ package lexruntime {
   }
 
   object GenericAttachment {
+    @inline
     def apply(
         attachmentLinkUrl: js.UndefOr[StringUrlWithLength] = js.undefined,
         buttons: js.UndefOr[listOfButtons] = js.undefined,
@@ -250,6 +256,7 @@ package lexruntime {
   }
 
   object GetSessionRequest {
+    @inline
     def apply(
         botAlias: BotAlias,
         botName: BotName,
@@ -274,6 +281,7 @@ package lexruntime {
   }
 
   object GetSessionResponse {
+    @inline
     def apply(
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
         recentIntentSummaryView: js.UndefOr[IntentSummaryList] = js.undefined,
@@ -303,6 +311,7 @@ package lexruntime {
   }
 
   object IntentSummary {
+    @inline
     def apply(
         dialogActionType: DialogActionType,
         confirmationStatus: js.UndefOr[ConfirmationStatus] = js.undefined,
@@ -346,6 +355,7 @@ package lexruntime {
   }
 
   object PostContentRequest {
+    @inline
     def apply(
         botAlias: BotAlias,
         botName: BotName,
@@ -386,6 +396,7 @@ package lexruntime {
   }
 
   object PostContentResponse {
+    @inline
     def apply(
         audioStream: js.UndefOr[BlobStream] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
@@ -424,6 +435,7 @@ package lexruntime {
   }
 
   object PostTextRequest {
+    @inline
     def apply(
         botAlias: BotAlias,
         botName: BotName,
@@ -458,6 +470,7 @@ package lexruntime {
   }
 
   object PostTextResponse {
+    @inline
     def apply(
         dialogState: js.UndefOr[DialogState] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
@@ -492,6 +505,7 @@ package lexruntime {
   }
 
   object PutSessionRequest {
+    @inline
     def apply(
         botAlias: BotAlias,
         botName: BotName,
@@ -528,6 +542,7 @@ package lexruntime {
   }
 
   object PutSessionResponse {
+    @inline
     def apply(
         audioStream: js.UndefOr[BlobStream] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
@@ -566,6 +581,7 @@ package lexruntime {
   }
 
   object ResponseCard {
+    @inline
     def apply(
         contentType: js.UndefOr[ContentType] = js.undefined,
         genericAttachments: js.UndefOr[genericAttachmentList] = js.undefined,

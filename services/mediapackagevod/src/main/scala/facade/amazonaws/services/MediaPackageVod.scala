@@ -27,33 +27,34 @@ package object mediapackagevod {
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
-    def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
+    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
       service.createAsset(params).promise.toFuture
-    def createPackagingConfigurationFuture(
+    @inline def createPackagingConfigurationFuture(
         params: CreatePackagingConfigurationRequest
     ): Future[CreatePackagingConfigurationResponse] = service.createPackagingConfiguration(params).promise.toFuture
-    def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] =
+    @inline def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] =
       service.createPackagingGroup(params).promise.toFuture
-    def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
+    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
       service.deleteAsset(params).promise.toFuture
-    def deletePackagingConfigurationFuture(
+    @inline def deletePackagingConfigurationFuture(
         params: DeletePackagingConfigurationRequest
     ): Future[DeletePackagingConfigurationResponse] = service.deletePackagingConfiguration(params).promise.toFuture
-    def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] =
+    @inline def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] =
       service.deletePackagingGroup(params).promise.toFuture
-    def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
+    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
       service.describeAsset(params).promise.toFuture
-    def describePackagingConfigurationFuture(
+    @inline def describePackagingConfigurationFuture(
         params: DescribePackagingConfigurationRequest
     ): Future[DescribePackagingConfigurationResponse] = service.describePackagingConfiguration(params).promise.toFuture
-    def describePackagingGroupFuture(params: DescribePackagingGroupRequest): Future[DescribePackagingGroupResponse] =
-      service.describePackagingGroup(params).promise.toFuture
-    def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
+    @inline def describePackagingGroupFuture(
+        params: DescribePackagingGroupRequest
+    ): Future[DescribePackagingGroupResponse] = service.describePackagingGroup(params).promise.toFuture
+    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
       service.listAssets(params).promise.toFuture
-    def listPackagingConfigurationsFuture(
+    @inline def listPackagingConfigurationsFuture(
         params: ListPackagingConfigurationsRequest
     ): Future[ListPackagingConfigurationsResponse] = service.listPackagingConfigurations(params).promise.toFuture
-    def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] =
+    @inline def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] =
       service.listPackagingGroups(params).promise.toFuture
   }
 }
@@ -109,6 +110,7 @@ package mediapackagevod {
   }
 
   object AssetShallow {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
@@ -137,6 +139,7 @@ package mediapackagevod {
   }
 
   object CmafEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): CmafEncryption = {
@@ -159,6 +162,7 @@ package mediapackagevod {
   }
 
   object CmafPackage {
+    @inline
     def apply(
         HlsManifests: __listOfHlsManifest,
         Encryption: js.UndefOr[CmafEncryption] = js.undefined,
@@ -187,6 +191,7 @@ package mediapackagevod {
   }
 
   object CreateAssetRequest {
+    @inline
     def apply(
         Id: __string,
         PackagingGroupId: __string,
@@ -218,6 +223,7 @@ package mediapackagevod {
   }
 
   object CreateAssetResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
@@ -253,6 +259,7 @@ package mediapackagevod {
   }
 
   object CreatePackagingConfigurationRequest {
+    @inline
     def apply(
         Id: __string,
         PackagingGroupId: __string,
@@ -286,6 +293,7 @@ package mediapackagevod {
   }
 
   object CreatePackagingConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
@@ -316,6 +324,7 @@ package mediapackagevod {
   }
 
   object CreatePackagingGroupRequest {
+    @inline
     def apply(
         Id: __string
     ): CreatePackagingGroupRequest = {
@@ -334,6 +343,7 @@ package mediapackagevod {
   }
 
   object CreatePackagingGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
@@ -354,6 +364,7 @@ package mediapackagevod {
   }
 
   object DashEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): DashEncryption = {
@@ -377,6 +388,7 @@ package mediapackagevod {
   }
 
   object DashManifest {
+    @inline
     def apply(
         ManifestName: js.UndefOr[__string] = js.undefined,
         MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
@@ -403,6 +415,7 @@ package mediapackagevod {
   }
 
   object DashPackage {
+    @inline
     def apply(
         DashManifests: __listOfDashManifest,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
@@ -424,6 +437,7 @@ package mediapackagevod {
   }
 
   object DeleteAssetRequest {
+    @inline
     def apply(
         Id: __string
     ): DeleteAssetRequest = {
@@ -439,6 +453,7 @@ package mediapackagevod {
   trait DeleteAssetResponse extends js.Object {}
 
   object DeleteAssetResponse {
+    @inline
     def apply(
         ): DeleteAssetResponse = {
       val __obj = js.Dynamic.literal()
@@ -453,6 +468,7 @@ package mediapackagevod {
   }
 
   object DeletePackagingConfigurationRequest {
+    @inline
     def apply(
         Id: __string
     ): DeletePackagingConfigurationRequest = {
@@ -468,6 +484,7 @@ package mediapackagevod {
   trait DeletePackagingConfigurationResponse extends js.Object {}
 
   object DeletePackagingConfigurationResponse {
+    @inline
     def apply(
         ): DeletePackagingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -482,6 +499,7 @@ package mediapackagevod {
   }
 
   object DeletePackagingGroupRequest {
+    @inline
     def apply(
         Id: __string
     ): DeletePackagingGroupRequest = {
@@ -497,6 +515,7 @@ package mediapackagevod {
   trait DeletePackagingGroupResponse extends js.Object {}
 
   object DeletePackagingGroupResponse {
+    @inline
     def apply(
         ): DeletePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -511,6 +530,7 @@ package mediapackagevod {
   }
 
   object DescribeAssetRequest {
+    @inline
     def apply(
         Id: __string
     ): DescribeAssetRequest = {
@@ -534,6 +554,7 @@ package mediapackagevod {
   }
 
   object DescribeAssetResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
@@ -561,6 +582,7 @@ package mediapackagevod {
   }
 
   object DescribePackagingConfigurationRequest {
+    @inline
     def apply(
         Id: __string
     ): DescribePackagingConfigurationRequest = {
@@ -584,6 +606,7 @@ package mediapackagevod {
   }
 
   object DescribePackagingConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
@@ -611,6 +634,7 @@ package mediapackagevod {
   }
 
   object DescribePackagingGroupRequest {
+    @inline
     def apply(
         Id: __string
     ): DescribePackagingGroupRequest = {
@@ -629,6 +653,7 @@ package mediapackagevod {
   }
 
   object DescribePackagingGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
@@ -650,6 +675,7 @@ package mediapackagevod {
   }
 
   object EgressEndpoint {
+    @inline
     def apply(
         PackagingConfigurationId: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
@@ -679,6 +705,7 @@ package mediapackagevod {
   }
 
   object HlsEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
@@ -710,6 +737,7 @@ package mediapackagevod {
   }
 
   object HlsManifest {
+    @inline
     def apply(
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
         IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
@@ -743,6 +771,7 @@ package mediapackagevod {
   }
 
   object HlsPackage {
+    @inline
     def apply(
         HlsManifests: __listOfHlsManifest,
         Encryption: js.UndefOr[HlsEncryption] = js.undefined,
@@ -768,6 +797,7 @@ package mediapackagevod {
   }
 
   object ListAssetsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined,
@@ -788,6 +818,7 @@ package mediapackagevod {
   }
 
   object ListAssetsResponse {
+    @inline
     def apply(
         Assets: js.UndefOr[__listOfAssetShallow] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -807,6 +838,7 @@ package mediapackagevod {
   }
 
   object ListPackagingConfigurationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined,
@@ -827,6 +859,7 @@ package mediapackagevod {
   }
 
   object ListPackagingConfigurationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingConfigurations: js.UndefOr[__listOfPackagingConfiguration] = js.undefined
@@ -845,6 +878,7 @@ package mediapackagevod {
   }
 
   object ListPackagingGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -863,6 +897,7 @@ package mediapackagevod {
   }
 
   object ListPackagingGroupsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingGroups: js.UndefOr[__listOfPackagingGroup] = js.undefined
@@ -883,6 +918,7 @@ package mediapackagevod {
   }
 
   object MssEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): MssEncryption = {
@@ -904,6 +940,7 @@ package mediapackagevod {
   }
 
   object MssManifest {
+    @inline
     def apply(
         ManifestName: js.UndefOr[__string] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
@@ -926,6 +963,7 @@ package mediapackagevod {
   }
 
   object MssPackage {
+    @inline
     def apply(
         MssManifests: __listOfMssManifest,
         Encryption: js.UndefOr[MssEncryption] = js.undefined,
@@ -956,6 +994,7 @@ package mediapackagevod {
   }
 
   object PackagingConfiguration {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
@@ -987,6 +1026,7 @@ package mediapackagevod {
   }
 
   object PackagingGroup {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
@@ -1016,6 +1056,7 @@ package mediapackagevod {
   }
 
   object SpekeKeyProvider {
+    @inline
     def apply(
         RoleArn: __string,
         SystemIds: __listOf__string,
@@ -1050,6 +1091,7 @@ package mediapackagevod {
   }
 
   object StreamSelection {
+    @inline
     def apply(
         MaxVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
         MinVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,

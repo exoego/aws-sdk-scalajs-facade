@@ -103,54 +103,66 @@ package object amplify {
 
   implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
 
-    def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise.toFuture
-    def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
+      service.createApp(params).promise.toFuture
+    @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
       service.createBranch(params).promise.toFuture
-    def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
       service.createDeployment(params).promise.toFuture
-    def createDomainAssociationFuture(params: CreateDomainAssociationRequest): Future[CreateDomainAssociationResult] =
-      service.createDomainAssociation(params).promise.toFuture
-    def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] =
+    @inline def createDomainAssociationFuture(
+        params: CreateDomainAssociationRequest
+    ): Future[CreateDomainAssociationResult] = service.createDomainAssociation(params).promise.toFuture
+    @inline def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] =
       service.createWebhook(params).promise.toFuture
-    def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] = service.deleteApp(params).promise.toFuture
-    def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] =
+      service.deleteApp(params).promise.toFuture
+    @inline def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
       service.deleteBranch(params).promise.toFuture
-    def deleteDomainAssociationFuture(params: DeleteDomainAssociationRequest): Future[DeleteDomainAssociationResult] =
-      service.deleteDomainAssociation(params).promise.toFuture
-    def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] = service.deleteJob(params).promise.toFuture
-    def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
+    @inline def deleteDomainAssociationFuture(
+        params: DeleteDomainAssociationRequest
+    ): Future[DeleteDomainAssociationResult] = service.deleteDomainAssociation(params).promise.toFuture
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] =
+      service.deleteJob(params).promise.toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
       service.deleteWebhook(params).promise.toFuture
-    def getAppFuture(params: GetAppRequest): Future[GetAppResult]          = service.getApp(params).promise.toFuture
-    def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] = service.getBranch(params).promise.toFuture
-    def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
+    @inline def getAppFuture(params: GetAppRequest): Future[GetAppResult] = service.getApp(params).promise.toFuture
+    @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] =
+      service.getBranch(params).promise.toFuture
+    @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
       service.getDomainAssociation(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
-    def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] =
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
+    @inline def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] =
       service.getWebhook(params).promise.toFuture
-    def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] = service.listApps(params).promise.toFuture
-    def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] =
+      service.listApps(params).promise.toFuture
+    @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
       service.listBranches(params).promise.toFuture
-    def listDomainAssociationsFuture(params: ListDomainAssociationsRequest): Future[ListDomainAssociationsResult] =
-      service.listDomainAssociations(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listDomainAssociationsFuture(
+        params: ListDomainAssociationsRequest
+    ): Future[ListDomainAssociationsResult] = service.listDomainAssociations(params).promise.toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
+      service.listJobs(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] =
+    @inline def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] =
       service.listWebhooks(params).promise.toFuture
-    def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] =
+    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] =
       service.startDeployment(params).promise.toFuture
-    def startJobFuture(params: StartJobRequest): Future[StartJobResult] = service.startJob(params).promise.toFuture
-    def stopJobFuture(params: StopJobRequest): Future[StopJobResult]    = service.stopJob(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def startJobFuture(params: StartJobRequest): Future[StartJobResult] =
+      service.startJob(params).promise.toFuture
+    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] = service.updateApp(params).promise.toFuture
-    def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] =
+      service.updateApp(params).promise.toFuture
+    @inline def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
       service.updateBranch(params).promise.toFuture
-    def updateDomainAssociationFuture(params: UpdateDomainAssociationRequest): Future[UpdateDomainAssociationResult] =
-      service.updateDomainAssociation(params).promise.toFuture
-    def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] =
+    @inline def updateDomainAssociationFuture(
+        params: UpdateDomainAssociationRequest
+    ): Future[UpdateDomainAssociationResult] = service.updateDomainAssociation(params).promise.toFuture
+    @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] =
       service.updateWebhook(params).promise.toFuture
   }
 }
@@ -225,6 +237,7 @@ package amplify {
   }
 
   object App {
+    @inline
     def apply(
         appArn: AppArn,
         appId: AppId,
@@ -293,6 +306,7 @@ package amplify {
   }
 
   object AutoBranchCreationConfig {
+    @inline
     def apply(
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
@@ -343,6 +357,7 @@ package amplify {
   }
 
   object Branch {
+    @inline
     def apply(
         activeJobId: ActiveJobId,
         branchArn: BranchArn,
@@ -419,6 +434,7 @@ package amplify {
   }
 
   object CreateAppRequest {
+    @inline
     def apply(
         name: Name,
         accessToken: js.UndefOr[AccessToken] = js.undefined,
@@ -470,6 +486,7 @@ package amplify {
   }
 
   object CreateAppResult {
+    @inline
     def apply(
         app: App
     ): CreateAppResult = {
@@ -503,6 +520,7 @@ package amplify {
   }
 
   object CreateBranchRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -549,6 +567,7 @@ package amplify {
   }
 
   object CreateBranchResult {
+    @inline
     def apply(
         branch: Branch
     ): CreateBranchResult = {
@@ -571,6 +590,7 @@ package amplify {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -597,6 +617,7 @@ package amplify {
   }
 
   object CreateDeploymentResult {
+    @inline
     def apply(
         fileUploadUrls: FileUploadUrls,
         zipUploadUrl: UploadUrl,
@@ -624,6 +645,7 @@ package amplify {
   }
 
   object CreateDomainAssociationRequest {
+    @inline
     def apply(
         appId: AppId,
         domainName: DomainName,
@@ -650,6 +672,7 @@ package amplify {
   }
 
   object CreateDomainAssociationResult {
+    @inline
     def apply(
         domainAssociation: DomainAssociation
     ): CreateDomainAssociationResult = {
@@ -672,6 +695,7 @@ package amplify {
   }
 
   object CreateWebhookRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -696,6 +720,7 @@ package amplify {
   }
 
   object CreateWebhookResult {
+    @inline
     def apply(
         webhook: Webhook
     ): CreateWebhookResult = {
@@ -719,6 +744,7 @@ package amplify {
   }
 
   object CustomRule {
+    @inline
     def apply(
         source: Source,
         target: Target,
@@ -745,6 +771,7 @@ package amplify {
   }
 
   object DeleteAppRequest {
+    @inline
     def apply(
         appId: AppId
     ): DeleteAppRequest = {
@@ -765,6 +792,7 @@ package amplify {
   }
 
   object DeleteAppResult {
+    @inline
     def apply(
         app: App
     ): DeleteAppResult = {
@@ -786,6 +814,7 @@ package amplify {
   }
 
   object DeleteBranchRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName
@@ -808,6 +837,7 @@ package amplify {
   }
 
   object DeleteBranchResult {
+    @inline
     def apply(
         branch: Branch
     ): DeleteBranchResult = {
@@ -829,6 +859,7 @@ package amplify {
   }
 
   object DeleteDomainAssociationRequest {
+    @inline
     def apply(
         appId: AppId,
         domainName: DomainName
@@ -848,6 +879,7 @@ package amplify {
   }
 
   object DeleteDomainAssociationResult {
+    @inline
     def apply(
         domainAssociation: DomainAssociation
     ): DeleteDomainAssociationResult = {
@@ -870,6 +902,7 @@ package amplify {
   }
 
   object DeleteJobRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -894,6 +927,7 @@ package amplify {
   }
 
   object DeleteJobResult {
+    @inline
     def apply(
         jobSummary: JobSummary
     ): DeleteJobResult = {
@@ -914,6 +948,7 @@ package amplify {
   }
 
   object DeleteWebhookRequest {
+    @inline
     def apply(
         webhookId: WebhookId
     ): DeleteWebhookRequest = {
@@ -934,6 +969,7 @@ package amplify {
   }
 
   object DeleteWebhookResult {
+    @inline
     def apply(
         webhook: Webhook
     ): DeleteWebhookResult = {
@@ -960,6 +996,7 @@ package amplify {
   }
 
   object DomainAssociation {
+    @inline
     def apply(
         domainAssociationArn: DomainAssociationArn,
         domainName: DomainName,
@@ -1018,6 +1055,7 @@ package amplify {
   }
 
   object GetAppRequest {
+    @inline
     def apply(
         appId: AppId
     ): GetAppRequest = {
@@ -1035,6 +1073,7 @@ package amplify {
   }
 
   object GetAppResult {
+    @inline
     def apply(
         app: App
     ): GetAppResult = {
@@ -1056,6 +1095,7 @@ package amplify {
   }
 
   object GetBranchRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName
@@ -1075,6 +1115,7 @@ package amplify {
   }
 
   object GetBranchResult {
+    @inline
     def apply(
         branch: Branch
     ): GetBranchResult = {
@@ -1096,6 +1137,7 @@ package amplify {
   }
 
   object GetDomainAssociationRequest {
+    @inline
     def apply(
         appId: AppId,
         domainName: DomainName
@@ -1118,6 +1160,7 @@ package amplify {
   }
 
   object GetDomainAssociationResult {
+    @inline
     def apply(
         domainAssociation: DomainAssociation
     ): GetDomainAssociationResult = {
@@ -1140,6 +1183,7 @@ package amplify {
   }
 
   object GetJobRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -1161,6 +1205,7 @@ package amplify {
   }
 
   object GetJobResult {
+    @inline
     def apply(
         job: Job
     ): GetJobResult = {
@@ -1181,6 +1226,7 @@ package amplify {
   }
 
   object GetWebhookRequest {
+    @inline
     def apply(
         webhookId: WebhookId
     ): GetWebhookRequest = {
@@ -1201,6 +1247,7 @@ package amplify {
   }
 
   object GetWebhookResult {
+    @inline
     def apply(
         webhook: Webhook
     ): GetWebhookResult = {
@@ -1222,6 +1269,7 @@ package amplify {
   }
 
   object Job {
+    @inline
     def apply(
         steps: Steps,
         summary: JobSummary
@@ -1264,6 +1312,7 @@ package amplify {
   }
 
   object JobSummary {
+    @inline
     def apply(
         commitId: CommitId,
         commitMessage: CommitMessage,
@@ -1310,6 +1359,7 @@ package amplify {
   }
 
   object ListAppsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1331,6 +1381,7 @@ package amplify {
   }
 
   object ListAppsResult {
+    @inline
     def apply(
         apps: Apps,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1355,6 +1406,7 @@ package amplify {
   }
 
   object ListBranchesRequest {
+    @inline
     def apply(
         appId: AppId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1380,6 +1432,7 @@ package amplify {
   }
 
   object ListBranchesResult {
+    @inline
     def apply(
         branches: Branches,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1404,6 +1457,7 @@ package amplify {
   }
 
   object ListDomainAssociationsRequest {
+    @inline
     def apply(
         appId: AppId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1429,6 +1483,7 @@ package amplify {
   }
 
   object ListDomainAssociationsResult {
+    @inline
     def apply(
         domainAssociations: DomainAssociations,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1454,6 +1509,7 @@ package amplify {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -1481,6 +1537,7 @@ package amplify {
   }
 
   object ListJobsResult {
+    @inline
     def apply(
         jobSummaries: JobSummaries,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1503,6 +1560,7 @@ package amplify {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
@@ -1523,6 +1581,7 @@ package amplify {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1543,6 +1602,7 @@ package amplify {
   }
 
   object ListWebhooksRequest {
+    @inline
     def apply(
         appId: AppId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1568,6 +1628,7 @@ package amplify {
   }
 
   object ListWebhooksResult {
+    @inline
     def apply(
         webhooks: Webhooks,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1599,6 +1660,7 @@ package amplify {
   }
 
   object ProductionBranch {
+    @inline
     def apply(
         branchName: js.UndefOr[BranchName] = js.undefined,
         lastDeployTime: js.UndefOr[LastDeployTime] = js.undefined,
@@ -1635,6 +1697,7 @@ package amplify {
   }
 
   object StartDeploymentRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -1661,6 +1724,7 @@ package amplify {
   }
 
   object StartDeploymentResult {
+    @inline
     def apply(
         jobSummary: JobSummary
     ): StartDeploymentResult = {
@@ -1688,6 +1752,7 @@ package amplify {
   }
 
   object StartJobRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -1722,6 +1787,7 @@ package amplify {
   }
 
   object StartJobResult {
+    @inline
     def apply(
         jobSummary: JobSummary
     ): StartJobResult = {
@@ -1750,6 +1816,7 @@ package amplify {
   }
 
   object Step {
+    @inline
     def apply(
         endTime: EndTime,
         startTime: StartTime,
@@ -1788,6 +1855,7 @@ package amplify {
   }
 
   object StopJobRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -1812,6 +1880,7 @@ package amplify {
   }
 
   object StopJobResult {
+    @inline
     def apply(
         jobSummary: JobSummary
     ): StopJobResult = {
@@ -1834,6 +1903,7 @@ package amplify {
   }
 
   object SubDomain {
+    @inline
     def apply(
         dnsRecord: DNSRecord,
         subDomainSetting: SubDomainSetting,
@@ -1859,6 +1929,7 @@ package amplify {
   }
 
   object SubDomainSetting {
+    @inline
     def apply(
         branchName: BranchName,
         prefix: DomainPrefix
@@ -1882,6 +1953,7 @@ package amplify {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagMap
@@ -1902,6 +1974,7 @@ package amplify {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1920,6 +1993,7 @@ package amplify {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -1940,6 +2014,7 @@ package amplify {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1970,6 +2045,7 @@ package amplify {
   }
 
   object UpdateAppRequest {
+    @inline
     def apply(
         appId: AppId,
         autoBranchCreationConfig: js.UndefOr[AutoBranchCreationConfig] = js.undefined,
@@ -2018,6 +2094,7 @@ package amplify {
   }
 
   object UpdateAppResult {
+    @inline
     def apply(
         app: App
     ): UpdateAppResult = {
@@ -2050,6 +2127,7 @@ package amplify {
   }
 
   object UpdateBranchRequest {
+    @inline
     def apply(
         appId: AppId,
         branchName: BranchName,
@@ -2094,6 +2172,7 @@ package amplify {
   }
 
   object UpdateBranchResult {
+    @inline
     def apply(
         branch: Branch
     ): UpdateBranchResult = {
@@ -2117,6 +2196,7 @@ package amplify {
   }
 
   object UpdateDomainAssociationRequest {
+    @inline
     def apply(
         appId: AppId,
         domainName: DomainName,
@@ -2143,6 +2223,7 @@ package amplify {
   }
 
   object UpdateDomainAssociationResult {
+    @inline
     def apply(
         domainAssociation: DomainAssociation
     ): UpdateDomainAssociationResult = {
@@ -2165,6 +2246,7 @@ package amplify {
   }
 
   object UpdateWebhookRequest {
+    @inline
     def apply(
         webhookId: WebhookId,
         branchName: js.UndefOr[BranchName] = js.undefined,
@@ -2189,6 +2271,7 @@ package amplify {
   }
 
   object UpdateWebhookResult {
+    @inline
     def apply(
         webhook: Webhook
     ): UpdateWebhookResult = {
@@ -2215,6 +2298,7 @@ package amplify {
   }
 
   object Webhook {
+    @inline
     def apply(
         branchName: BranchName,
         createTime: CreateTime,

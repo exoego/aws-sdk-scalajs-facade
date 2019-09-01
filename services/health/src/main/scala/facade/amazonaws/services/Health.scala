@@ -60,19 +60,20 @@ package object health {
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
 
-    def describeAffectedEntitiesFuture(
+    @inline def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest
     ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture
-    def describeEntityAggregatesFuture(
+    @inline def describeEntityAggregatesFuture(
         params: DescribeEntityAggregatesRequest
     ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise.toFuture
-    def describeEventAggregatesFuture(params: DescribeEventAggregatesRequest): Future[DescribeEventAggregatesResponse] =
-      service.describeEventAggregates(params).promise.toFuture
-    def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
+    @inline def describeEventAggregatesFuture(
+        params: DescribeEventAggregatesRequest
+    ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise.toFuture
+    @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
       service.describeEventDetails(params).promise.toFuture
-    def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
+    @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
       service.describeEventTypes(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
   }
 }
@@ -110,6 +111,7 @@ package health {
   }
 
   object AffectedEntity {
+    @inline
     def apply(
         awsAccountId: js.UndefOr[accountId] = js.undefined,
         entityArn: js.UndefOr[entityArn] = js.undefined,
@@ -143,6 +145,7 @@ package health {
   }
 
   object DateTimeRange {
+    @inline
     def apply(
         from: js.UndefOr[timestamp] = js.undefined,
         to: js.UndefOr[timestamp] = js.undefined
@@ -163,6 +166,7 @@ package health {
   }
 
   object DescribeAffectedEntitiesRequest {
+    @inline
     def apply(
         filter: EntityFilter,
         locale: js.UndefOr[locale] = js.undefined,
@@ -187,6 +191,7 @@ package health {
   }
 
   object DescribeAffectedEntitiesResponse {
+    @inline
     def apply(
         entities: js.UndefOr[EntityList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
@@ -204,6 +209,7 @@ package health {
   }
 
   object DescribeEntityAggregatesRequest {
+    @inline
     def apply(
         eventArns: js.UndefOr[EventArnsList] = js.undefined
     ): DescribeEntityAggregatesRequest = {
@@ -219,6 +225,7 @@ package health {
   }
 
   object DescribeEntityAggregatesResponse {
+    @inline
     def apply(
         entityAggregates: js.UndefOr[EntityAggregateList] = js.undefined
     ): DescribeEntityAggregatesResponse = {
@@ -237,6 +244,7 @@ package health {
   }
 
   object DescribeEventAggregatesRequest {
+    @inline
     def apply(
         aggregateField: eventAggregateField,
         filter: js.UndefOr[EventFilter] = js.undefined,
@@ -261,6 +269,7 @@ package health {
   }
 
   object DescribeEventAggregatesResponse {
+    @inline
     def apply(
         eventAggregates: js.UndefOr[EventAggregateList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
@@ -279,6 +288,7 @@ package health {
   }
 
   object DescribeEventDetailsRequest {
+    @inline
     def apply(
         eventArns: eventArnList,
         locale: js.UndefOr[locale] = js.undefined
@@ -299,6 +309,7 @@ package health {
   }
 
   object DescribeEventDetailsResponse {
+    @inline
     def apply(
         failedSet: js.UndefOr[DescribeEventDetailsFailedSet] = js.undefined,
         successfulSet: js.UndefOr[DescribeEventDetailsSuccessfulSet] = js.undefined
@@ -319,6 +330,7 @@ package health {
   }
 
   object DescribeEventTypesRequest {
+    @inline
     def apply(
         filter: js.UndefOr[EventTypeFilter] = js.undefined,
         locale: js.UndefOr[locale] = js.undefined,
@@ -341,6 +353,7 @@ package health {
   }
 
   object DescribeEventTypesResponse {
+    @inline
     def apply(
         eventTypes: js.UndefOr[EventTypeList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
@@ -361,6 +374,7 @@ package health {
   }
 
   object DescribeEventsRequest {
+    @inline
     def apply(
         filter: js.UndefOr[EventFilter] = js.undefined,
         locale: js.UndefOr[locale] = js.undefined,
@@ -383,6 +397,7 @@ package health {
   }
 
   object DescribeEventsResponse {
+    @inline
     def apply(
         events: js.UndefOr[EventList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
@@ -404,6 +419,7 @@ package health {
   }
 
   object EntityAggregate {
+    @inline
     def apply(
         count: js.UndefOr[count] = js.undefined,
         eventArn: js.UndefOr[eventArn] = js.undefined
@@ -429,6 +445,7 @@ package health {
   }
 
   object EntityFilter {
+    @inline
     def apply(
         eventArns: eventArnList,
         entityArns: js.UndefOr[entityArnList] = js.undefined,
@@ -468,6 +485,7 @@ package health {
   }
 
   object Event {
+    @inline
     def apply(
         arn: js.UndefOr[eventArn] = js.undefined,
         availabilityZone: js.UndefOr[availabilityZone] = js.undefined,
@@ -505,6 +523,7 @@ package health {
   }
 
   object EventAggregate {
+    @inline
     def apply(
         aggregateValue: js.UndefOr[aggregateValue] = js.undefined,
         count: js.UndefOr[count] = js.undefined
@@ -525,6 +544,7 @@ package health {
   }
 
   object EventDescription {
+    @inline
     def apply(
         latestDescription: js.UndefOr[eventDescription] = js.undefined
     ): EventDescription = {
@@ -545,6 +565,7 @@ package health {
   }
 
   object EventDetails {
+    @inline
     def apply(
         event: js.UndefOr[Event] = js.undefined,
         eventDescription: js.UndefOr[EventDescription] = js.undefined,
@@ -569,6 +590,7 @@ package health {
   }
 
   object EventDetailsErrorItem {
+    @inline
     def apply(
         errorMessage: js.UndefOr[String] = js.undefined,
         errorName: js.UndefOr[String] = js.undefined,
@@ -603,6 +625,7 @@ package health {
   }
 
   object EventFilter {
+    @inline
     def apply(
         availabilityZones: js.UndefOr[availabilityZones] = js.undefined,
         endTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
@@ -647,6 +670,7 @@ package health {
   }
 
   object EventType {
+    @inline
     def apply(
         category: js.UndefOr[eventTypeCategory] = js.undefined,
         code: js.UndefOr[eventTypeCode] = js.undefined,
@@ -671,6 +695,7 @@ package health {
   }
 
   object EventTypeFilter {
+    @inline
     def apply(
         eventTypeCategories: js.UndefOr[EventTypeCategoryList] = js.undefined,
         eventTypeCodes: js.UndefOr[EventTypeCodeList] = js.undefined,

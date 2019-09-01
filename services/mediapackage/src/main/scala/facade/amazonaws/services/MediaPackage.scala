@@ -35,34 +35,36 @@ package object mediapackage {
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
-    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
-    def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
+    @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
       service.createOriginEndpoint(params).promise.toFuture
-    def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
       service.deleteChannel(params).promise.toFuture
-    def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
+    @inline def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
       service.deleteOriginEndpoint(params).promise.toFuture
-    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
-    def describeOriginEndpointFuture(params: DescribeOriginEndpointRequest): Future[DescribeOriginEndpointResponse] =
-      service.describeOriginEndpoint(params).promise.toFuture
-    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+    @inline def describeOriginEndpointFuture(
+        params: DescribeOriginEndpointRequest
+    ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise.toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
-    def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
+    @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
       service.listOriginEndpoints(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def rotateIngestEndpointCredentialsFuture(
+    @inline def rotateIngestEndpointCredentialsFuture(
         params: RotateIngestEndpointCredentialsRequest
     ): Future[RotateIngestEndpointCredentialsResponse] =
       service.rotateIngestEndpointCredentials(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise.toFuture
-    def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
+    @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
       service.updateOriginEndpoint(params).promise.toFuture
   }
 }
@@ -135,6 +137,7 @@ package mediapackage {
   }
 
   object Channel {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -162,6 +165,7 @@ package mediapackage {
   }
 
   object CmafEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
         KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined
@@ -190,6 +194,7 @@ package mediapackage {
   }
 
   object CmafPackage {
+    @inline
     def apply(
         Encryption: js.UndefOr[CmafEncryption] = js.undefined,
         HlsManifests: js.UndefOr[__listOfHlsManifest] = js.undefined,
@@ -220,6 +225,7 @@ package mediapackage {
   }
 
   object CmafPackageCreateOrUpdateParameters {
+    @inline
     def apply(
         Encryption: js.UndefOr[CmafEncryption] = js.undefined,
         HlsManifests: js.UndefOr[__listOfHlsManifestCreateOrUpdateParameters] = js.undefined,
@@ -248,6 +254,7 @@ package mediapackage {
   }
 
   object CreateChannelRequest {
+    @inline
     def apply(
         Id: __string,
         Description: js.UndefOr[__string] = js.undefined,
@@ -273,6 +280,7 @@ package mediapackage {
   }
 
   object CreateChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -310,6 +318,7 @@ package mediapackage {
   }
 
   object CreateOriginEndpointRequest {
+    @inline
     def apply(
         ChannelId: __string,
         Id: __string,
@@ -362,6 +371,7 @@ package mediapackage {
   }
 
   object CreateOriginEndpointResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
@@ -407,6 +417,7 @@ package mediapackage {
   }
 
   object DashEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
         KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined
@@ -443,6 +454,7 @@ package mediapackage {
   }
 
   object DashPackage {
+    @inline
     def apply(
         AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
         AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
@@ -486,6 +498,7 @@ package mediapackage {
   }
 
   object DeleteChannelRequest {
+    @inline
     def apply(
         Id: __string
     ): DeleteChannelRequest = {
@@ -501,6 +514,7 @@ package mediapackage {
   trait DeleteChannelResponse extends js.Object {}
 
   object DeleteChannelResponse {
+    @inline
     def apply(
         ): DeleteChannelResponse = {
       val __obj = js.Dynamic.literal()
@@ -515,6 +529,7 @@ package mediapackage {
   }
 
   object DeleteOriginEndpointRequest {
+    @inline
     def apply(
         Id: __string
     ): DeleteOriginEndpointRequest = {
@@ -530,6 +545,7 @@ package mediapackage {
   trait DeleteOriginEndpointResponse extends js.Object {}
 
   object DeleteOriginEndpointResponse {
+    @inline
     def apply(
         ): DeleteOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
@@ -544,6 +560,7 @@ package mediapackage {
   }
 
   object DescribeChannelRequest {
+    @inline
     def apply(
         Id: __string
     ): DescribeChannelRequest = {
@@ -565,6 +582,7 @@ package mediapackage {
   }
 
   object DescribeChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -588,6 +606,7 @@ package mediapackage {
   }
 
   object DescribeOriginEndpointRequest {
+    @inline
     def apply(
         Id: __string
     ): DescribeOriginEndpointRequest = {
@@ -618,6 +637,7 @@ package mediapackage {
   }
 
   object DescribeOriginEndpointResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
@@ -673,6 +693,7 @@ package mediapackage {
   }
 
   object HlsEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
@@ -705,6 +726,7 @@ package mediapackage {
   }
 
   object HlsIngest {
+    @inline
     def apply(
         IngestEndpoints: js.UndefOr[__listOfIngestEndpoint] = js.undefined
     ): HlsIngest = {
@@ -730,6 +752,7 @@ package mediapackage {
   }
 
   object HlsManifest {
+    @inline
     def apply(
         Id: __string,
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
@@ -774,6 +797,7 @@ package mediapackage {
   }
 
   object HlsManifestCreateOrUpdateParameters {
+    @inline
     def apply(
         Id: __string,
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
@@ -824,6 +848,7 @@ package mediapackage {
   }
 
   object HlsPackage {
+    @inline
     def apply(
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
         AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
@@ -869,6 +894,7 @@ package mediapackage {
   }
 
   object IngestEndpoint {
+    @inline
     def apply(
         Id: js.UndefOr[__string] = js.undefined,
         Password: js.UndefOr[__string] = js.undefined,
@@ -891,6 +917,7 @@ package mediapackage {
   }
 
   object ListChannelsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -909,6 +936,7 @@ package mediapackage {
   }
 
   object ListChannelsResponse {
+    @inline
     def apply(
         Channels: js.UndefOr[__listOfChannel] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -928,6 +956,7 @@ package mediapackage {
   }
 
   object ListOriginEndpointsRequest {
+    @inline
     def apply(
         ChannelId: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -948,6 +977,7 @@ package mediapackage {
   }
 
   object ListOriginEndpointsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         OriginEndpoints: js.UndefOr[__listOfOriginEndpoint] = js.undefined
@@ -965,6 +995,7 @@ package mediapackage {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -982,6 +1013,7 @@ package mediapackage {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1007,6 +1039,7 @@ package mediapackage {
   }
 
   object MssEncryption {
+    @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): MssEncryption = {
@@ -1030,6 +1063,7 @@ package mediapackage {
   }
 
   object MssPackage {
+    @inline
     def apply(
         Encryption: js.UndefOr[MssEncryption] = js.undefined,
         ManifestWindowSeconds: js.UndefOr[__integer] = js.undefined,
@@ -1067,6 +1101,7 @@ package mediapackage {
   }
 
   object OriginEndpoint {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
@@ -1124,6 +1159,7 @@ package mediapackage {
   }
 
   object RotateChannelCredentialsRequest {
+    @inline
     def apply(
         Id: __string
     ): RotateChannelCredentialsRequest = {
@@ -1146,6 +1182,7 @@ package mediapackage {
   }
 
   object RotateChannelCredentialsResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -1170,6 +1207,7 @@ package mediapackage {
   }
 
   object RotateIngestEndpointCredentialsRequest {
+    @inline
     def apply(
         Id: __string,
         IngestEndpointId: __string
@@ -1193,6 +1231,7 @@ package mediapackage {
   }
 
   object RotateIngestEndpointCredentialsResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -1231,6 +1270,7 @@ package mediapackage {
   }
 
   object SpekeKeyProvider {
+    @inline
     def apply(
         ResourceId: __string,
         RoleArn: __string,
@@ -1269,6 +1309,7 @@ package mediapackage {
   }
 
   object StreamSelection {
+    @inline
     def apply(
         MaxVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
         MinVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
@@ -1289,6 +1330,7 @@ package mediapackage {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: __mapOf__string
@@ -1309,6 +1351,7 @@ package mediapackage {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -1332,6 +1375,7 @@ package mediapackage {
   }
 
   object UpdateChannelRequest {
+    @inline
     def apply(
         Id: __string,
         Description: js.UndefOr[__string] = js.undefined
@@ -1355,6 +1399,7 @@ package mediapackage {
   }
 
   object UpdateChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -1390,6 +1435,7 @@ package mediapackage {
   }
 
   object UpdateOriginEndpointRequest {
+    @inline
     def apply(
         Id: __string,
         CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters] = js.undefined,
@@ -1438,6 +1484,7 @@ package mediapackage {
   }
 
   object UpdateOriginEndpointResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,

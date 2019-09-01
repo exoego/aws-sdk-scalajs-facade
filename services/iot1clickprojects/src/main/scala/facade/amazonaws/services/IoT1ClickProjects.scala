@@ -37,40 +37,41 @@ package object iot1clickprojects {
 
   implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
 
-    def associateDeviceWithPlacementFuture(
+    @inline def associateDeviceWithPlacementFuture(
         params: AssociateDeviceWithPlacementRequest
     ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise.toFuture
-    def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] =
+    @inline def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] =
       service.createPlacement(params).promise.toFuture
-    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
       service.createProject(params).promise.toFuture
-    def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] =
+    @inline def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] =
       service.deletePlacement(params).promise.toFuture
-    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
       service.deleteProject(params).promise.toFuture
-    def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] =
+    @inline def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] =
       service.describePlacement(params).promise.toFuture
-    def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
+    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
       service.describeProject(params).promise.toFuture
-    def disassociateDeviceFromPlacementFuture(
+    @inline def disassociateDeviceFromPlacementFuture(
         params: DisassociateDeviceFromPlacementRequest
     ): Future[DisassociateDeviceFromPlacementResponse] =
       service.disassociateDeviceFromPlacement(params).promise.toFuture
-    def getDevicesInPlacementFuture(params: GetDevicesInPlacementRequest): Future[GetDevicesInPlacementResponse] =
-      service.getDevicesInPlacement(params).promise.toFuture
-    def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] =
+    @inline def getDevicesInPlacementFuture(
+        params: GetDevicesInPlacementRequest
+    ): Future[GetDevicesInPlacementResponse] = service.getDevicesInPlacement(params).promise.toFuture
+    @inline def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] =
       service.listPlacements(params).promise.toFuture
-    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
       service.listProjects(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] =
+    @inline def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] =
       service.updatePlacement(params).promise.toFuture
-    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
       service.updateProject(params).promise.toFuture
   }
 }
@@ -112,6 +113,7 @@ package iot1clickprojects {
   }
 
   object AssociateDeviceWithPlacementRequest {
+    @inline
     def apply(
         deviceId: DeviceId,
         deviceTemplateName: DeviceTemplateName,
@@ -133,6 +135,7 @@ package iot1clickprojects {
   trait AssociateDeviceWithPlacementResponse extends js.Object {}
 
   object AssociateDeviceWithPlacementResponse {
+    @inline
     def apply(
         ): AssociateDeviceWithPlacementResponse = {
       val __obj = js.Dynamic.literal()
@@ -149,6 +152,7 @@ package iot1clickprojects {
   }
 
   object CreatePlacementRequest {
+    @inline
     def apply(
         placementName: PlacementName,
         projectName: ProjectName,
@@ -168,6 +172,7 @@ package iot1clickprojects {
   trait CreatePlacementResponse extends js.Object {}
 
   object CreatePlacementResponse {
+    @inline
     def apply(
         ): CreatePlacementResponse = {
       val __obj = js.Dynamic.literal()
@@ -185,6 +190,7 @@ package iot1clickprojects {
   }
 
   object CreateProjectRequest {
+    @inline
     def apply(
         projectName: ProjectName,
         description: js.UndefOr[Description] = js.undefined,
@@ -206,6 +212,7 @@ package iot1clickprojects {
   trait CreateProjectResponse extends js.Object {}
 
   object CreateProjectResponse {
+    @inline
     def apply(
         ): CreateProjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -221,6 +228,7 @@ package iot1clickprojects {
   }
 
   object DeletePlacementRequest {
+    @inline
     def apply(
         placementName: PlacementName,
         projectName: ProjectName
@@ -238,6 +246,7 @@ package iot1clickprojects {
   trait DeletePlacementResponse extends js.Object {}
 
   object DeletePlacementResponse {
+    @inline
     def apply(
         ): DeletePlacementResponse = {
       val __obj = js.Dynamic.literal()
@@ -252,6 +261,7 @@ package iot1clickprojects {
   }
 
   object DeleteProjectRequest {
+    @inline
     def apply(
         projectName: ProjectName
     ): DeleteProjectRequest = {
@@ -267,6 +277,7 @@ package iot1clickprojects {
   trait DeleteProjectResponse extends js.Object {}
 
   object DeleteProjectResponse {
+    @inline
     def apply(
         ): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -282,6 +293,7 @@ package iot1clickprojects {
   }
 
   object DescribePlacementRequest {
+    @inline
     def apply(
         placementName: PlacementName,
         projectName: ProjectName
@@ -301,6 +313,7 @@ package iot1clickprojects {
   }
 
   object DescribePlacementResponse {
+    @inline
     def apply(
         placement: PlacementDescription
     ): DescribePlacementResponse = {
@@ -318,6 +331,7 @@ package iot1clickprojects {
   }
 
   object DescribeProjectRequest {
+    @inline
     def apply(
         projectName: ProjectName
     ): DescribeProjectRequest = {
@@ -335,6 +349,7 @@ package iot1clickprojects {
   }
 
   object DescribeProjectResponse {
+    @inline
     def apply(
         project: ProjectDescription
     ): DescribeProjectResponse = {
@@ -356,6 +371,7 @@ package iot1clickprojects {
   }
 
   object DeviceTemplate {
+    @inline
     def apply(
         callbackOverrides: js.UndefOr[DeviceCallbackOverrideMap] = js.undefined,
         deviceType: js.UndefOr[DeviceType] = js.undefined
@@ -375,6 +391,7 @@ package iot1clickprojects {
   }
 
   object DisassociateDeviceFromPlacementRequest {
+    @inline
     def apply(
         deviceTemplateName: DeviceTemplateName,
         placementName: PlacementName,
@@ -394,6 +411,7 @@ package iot1clickprojects {
   trait DisassociateDeviceFromPlacementResponse extends js.Object {}
 
   object DisassociateDeviceFromPlacementResponse {
+    @inline
     def apply(
         ): DisassociateDeviceFromPlacementResponse = {
       val __obj = js.Dynamic.literal()
@@ -409,6 +427,7 @@ package iot1clickprojects {
   }
 
   object GetDevicesInPlacementRequest {
+    @inline
     def apply(
         placementName: PlacementName,
         projectName: ProjectName
@@ -428,6 +447,7 @@ package iot1clickprojects {
   }
 
   object GetDevicesInPlacementResponse {
+    @inline
     def apply(
         devices: DeviceMap
     ): GetDevicesInPlacementResponse = {
@@ -447,6 +467,7 @@ package iot1clickprojects {
   }
 
   object ListPlacementsRequest {
+    @inline
     def apply(
         projectName: ProjectName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -469,6 +490,7 @@ package iot1clickprojects {
   }
 
   object ListPlacementsResponse {
+    @inline
     def apply(
         placements: PlacementSummaryList,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -489,6 +511,7 @@ package iot1clickprojects {
   }
 
   object ListProjectsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -507,6 +530,7 @@ package iot1clickprojects {
   }
 
   object ListProjectsResponse {
+    @inline
     def apply(
         projects: ProjectSummaryList,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -526,6 +550,7 @@ package iot1clickprojects {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ProjectArn
     ): ListTagsForResourceRequest = {
@@ -543,6 +568,7 @@ package iot1clickprojects {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -565,6 +591,7 @@ package iot1clickprojects {
   }
 
   object PlacementDescription {
+    @inline
     def apply(
         attributes: PlacementAttributeMap,
         createdDate: Time,
@@ -596,6 +623,7 @@ package iot1clickprojects {
   }
 
   object PlacementSummary {
+    @inline
     def apply(
         createdDate: Time,
         placementName: PlacementName,
@@ -623,6 +651,7 @@ package iot1clickprojects {
   }
 
   object PlacementTemplate {
+    @inline
     def apply(
         defaultAttributes: js.UndefOr[DefaultPlacementAttributeMap] = js.undefined,
         deviceTemplates: js.UndefOr[DeviceTemplateMap] = js.undefined
@@ -649,6 +678,7 @@ package iot1clickprojects {
   }
 
   object ProjectDescription {
+    @inline
     def apply(
         createdDate: Time,
         projectName: ProjectName,
@@ -685,6 +715,7 @@ package iot1clickprojects {
   }
 
   object ProjectSummary {
+    @inline
     def apply(
         createdDate: Time,
         projectName: ProjectName,
@@ -711,6 +742,7 @@ package iot1clickprojects {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ProjectArn,
         tags: TagMap
@@ -728,6 +760,7 @@ package iot1clickprojects {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -743,6 +776,7 @@ package iot1clickprojects {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ProjectArn,
         tagKeys: TagKeyList
@@ -760,6 +794,7 @@ package iot1clickprojects {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -776,6 +811,7 @@ package iot1clickprojects {
   }
 
   object UpdatePlacementRequest {
+    @inline
     def apply(
         placementName: PlacementName,
         projectName: ProjectName,
@@ -795,6 +831,7 @@ package iot1clickprojects {
   trait UpdatePlacementResponse extends js.Object {}
 
   object UpdatePlacementResponse {
+    @inline
     def apply(
         ): UpdatePlacementResponse = {
       val __obj = js.Dynamic.literal()
@@ -811,6 +848,7 @@ package iot1clickprojects {
   }
 
   object UpdateProjectRequest {
+    @inline
     def apply(
         projectName: ProjectName,
         description: js.UndefOr[Description] = js.undefined,
@@ -830,6 +868,7 @@ package iot1clickprojects {
   trait UpdateProjectResponse extends js.Object {}
 
   object UpdateProjectResponse {
+    @inline
     def apply(
         ): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()

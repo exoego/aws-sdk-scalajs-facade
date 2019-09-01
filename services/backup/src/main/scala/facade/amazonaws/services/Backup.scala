@@ -55,96 +55,102 @@ package object backup {
 
   implicit final class BackupOps(private val service: Backup) extends AnyVal {
 
-    def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] =
+    @inline def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] =
       service.createBackupPlan(params).promise.toFuture
-    def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] =
+    @inline def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] =
       service.createBackupSelection(params).promise.toFuture
-    def createBackupVaultFuture(params: CreateBackupVaultInput): Future[CreateBackupVaultOutput] =
+    @inline def createBackupVaultFuture(params: CreateBackupVaultInput): Future[CreateBackupVaultOutput] =
       service.createBackupVault(params).promise.toFuture
-    def deleteBackupPlanFuture(params: DeleteBackupPlanInput): Future[DeleteBackupPlanOutput] =
+    @inline def deleteBackupPlanFuture(params: DeleteBackupPlanInput): Future[DeleteBackupPlanOutput] =
       service.deleteBackupPlan(params).promise.toFuture
-    def deleteBackupSelectionFuture(params: DeleteBackupSelectionInput): Future[js.Object] =
+    @inline def deleteBackupSelectionFuture(params: DeleteBackupSelectionInput): Future[js.Object] =
       service.deleteBackupSelection(params).promise.toFuture
-    def deleteBackupVaultAccessPolicyFuture(params: DeleteBackupVaultAccessPolicyInput): Future[js.Object] =
+    @inline def deleteBackupVaultAccessPolicyFuture(params: DeleteBackupVaultAccessPolicyInput): Future[js.Object] =
       service.deleteBackupVaultAccessPolicy(params).promise.toFuture
-    def deleteBackupVaultFuture(params: DeleteBackupVaultInput): Future[js.Object] =
+    @inline def deleteBackupVaultFuture(params: DeleteBackupVaultInput): Future[js.Object] =
       service.deleteBackupVault(params).promise.toFuture
-    def deleteBackupVaultNotificationsFuture(params: DeleteBackupVaultNotificationsInput): Future[js.Object] =
+    @inline def deleteBackupVaultNotificationsFuture(params: DeleteBackupVaultNotificationsInput): Future[js.Object] =
       service.deleteBackupVaultNotifications(params).promise.toFuture
-    def deleteRecoveryPointFuture(params: DeleteRecoveryPointInput): Future[js.Object] =
+    @inline def deleteRecoveryPointFuture(params: DeleteRecoveryPointInput): Future[js.Object] =
       service.deleteRecoveryPoint(params).promise.toFuture
-    def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] =
+    @inline def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] =
       service.describeBackupJob(params).promise.toFuture
-    def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] =
+    @inline def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] =
       service.describeBackupVault(params).promise.toFuture
-    def describeProtectedResourceFuture(
+    @inline def describeProtectedResourceFuture(
         params: DescribeProtectedResourceInput
     ): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise.toFuture
-    def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] =
+    @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] =
       service.describeRecoveryPoint(params).promise.toFuture
-    def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] =
+    @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] =
       service.describeRestoreJob(params).promise.toFuture
-    def exportBackupPlanTemplateFuture(params: ExportBackupPlanTemplateInput): Future[ExportBackupPlanTemplateOutput] =
-      service.exportBackupPlanTemplate(params).promise.toFuture
-    def getBackupPlanFromJSONFuture(params: GetBackupPlanFromJSONInput): Future[GetBackupPlanFromJSONOutput] =
+    @inline def exportBackupPlanTemplateFuture(
+        params: ExportBackupPlanTemplateInput
+    ): Future[ExportBackupPlanTemplateOutput] = service.exportBackupPlanTemplate(params).promise.toFuture
+    @inline def getBackupPlanFromJSONFuture(params: GetBackupPlanFromJSONInput): Future[GetBackupPlanFromJSONOutput] =
       service.getBackupPlanFromJSON(params).promise.toFuture
-    def getBackupPlanFromTemplateFuture(
+    @inline def getBackupPlanFromTemplateFuture(
         params: GetBackupPlanFromTemplateInput
     ): Future[GetBackupPlanFromTemplateOutput] = service.getBackupPlanFromTemplate(params).promise.toFuture
-    def getBackupPlanFuture(params: GetBackupPlanInput): Future[GetBackupPlanOutput] =
+    @inline def getBackupPlanFuture(params: GetBackupPlanInput): Future[GetBackupPlanOutput] =
       service.getBackupPlan(params).promise.toFuture
-    def getBackupSelectionFuture(params: GetBackupSelectionInput): Future[GetBackupSelectionOutput] =
+    @inline def getBackupSelectionFuture(params: GetBackupSelectionInput): Future[GetBackupSelectionOutput] =
       service.getBackupSelection(params).promise.toFuture
-    def getBackupVaultAccessPolicyFuture(
+    @inline def getBackupVaultAccessPolicyFuture(
         params: GetBackupVaultAccessPolicyInput
     ): Future[GetBackupVaultAccessPolicyOutput] = service.getBackupVaultAccessPolicy(params).promise.toFuture
-    def getBackupVaultNotificationsFuture(
+    @inline def getBackupVaultNotificationsFuture(
         params: GetBackupVaultNotificationsInput
     ): Future[GetBackupVaultNotificationsOutput] = service.getBackupVaultNotifications(params).promise.toFuture
-    def getRecoveryPointRestoreMetadataFuture(
+    @inline def getRecoveryPointRestoreMetadataFuture(
         params: GetRecoveryPointRestoreMetadataInput
     ): Future[GetRecoveryPointRestoreMetadataOutput] = service.getRecoveryPointRestoreMetadata(params).promise.toFuture
-    def getSupportedResourceTypesFuture(): Future[GetSupportedResourceTypesOutput] =
+    @inline def getSupportedResourceTypesFuture(): Future[GetSupportedResourceTypesOutput] =
       service.getSupportedResourceTypes().promise.toFuture
-    def listBackupJobsFuture(params: ListBackupJobsInput): Future[ListBackupJobsOutput] =
+    @inline def listBackupJobsFuture(params: ListBackupJobsInput): Future[ListBackupJobsOutput] =
       service.listBackupJobs(params).promise.toFuture
-    def listBackupPlanTemplatesFuture(params: ListBackupPlanTemplatesInput): Future[ListBackupPlanTemplatesOutput] =
-      service.listBackupPlanTemplates(params).promise.toFuture
-    def listBackupPlanVersionsFuture(params: ListBackupPlanVersionsInput): Future[ListBackupPlanVersionsOutput] =
-      service.listBackupPlanVersions(params).promise.toFuture
-    def listBackupPlansFuture(params: ListBackupPlansInput): Future[ListBackupPlansOutput] =
+    @inline def listBackupPlanTemplatesFuture(
+        params: ListBackupPlanTemplatesInput
+    ): Future[ListBackupPlanTemplatesOutput] = service.listBackupPlanTemplates(params).promise.toFuture
+    @inline def listBackupPlanVersionsFuture(
+        params: ListBackupPlanVersionsInput
+    ): Future[ListBackupPlanVersionsOutput] = service.listBackupPlanVersions(params).promise.toFuture
+    @inline def listBackupPlansFuture(params: ListBackupPlansInput): Future[ListBackupPlansOutput] =
       service.listBackupPlans(params).promise.toFuture
-    def listBackupSelectionsFuture(params: ListBackupSelectionsInput): Future[ListBackupSelectionsOutput] =
+    @inline def listBackupSelectionsFuture(params: ListBackupSelectionsInput): Future[ListBackupSelectionsOutput] =
       service.listBackupSelections(params).promise.toFuture
-    def listBackupVaultsFuture(params: ListBackupVaultsInput): Future[ListBackupVaultsOutput] =
+    @inline def listBackupVaultsFuture(params: ListBackupVaultsInput): Future[ListBackupVaultsOutput] =
       service.listBackupVaults(params).promise.toFuture
-    def listProtectedResourcesFuture(params: ListProtectedResourcesInput): Future[ListProtectedResourcesOutput] =
-      service.listProtectedResources(params).promise.toFuture
-    def listRecoveryPointsByBackupVaultFuture(
+    @inline def listProtectedResourcesFuture(
+        params: ListProtectedResourcesInput
+    ): Future[ListProtectedResourcesOutput] = service.listProtectedResources(params).promise.toFuture
+    @inline def listRecoveryPointsByBackupVaultFuture(
         params: ListRecoveryPointsByBackupVaultInput
     ): Future[ListRecoveryPointsByBackupVaultOutput] = service.listRecoveryPointsByBackupVault(params).promise.toFuture
-    def listRecoveryPointsByResourceFuture(
+    @inline def listRecoveryPointsByResourceFuture(
         params: ListRecoveryPointsByResourceInput
     ): Future[ListRecoveryPointsByResourceOutput] = service.listRecoveryPointsByResource(params).promise.toFuture
-    def listRestoreJobsFuture(params: ListRestoreJobsInput): Future[ListRestoreJobsOutput] =
+    @inline def listRestoreJobsFuture(params: ListRestoreJobsInput): Future[ListRestoreJobsOutput] =
       service.listRestoreJobs(params).promise.toFuture
-    def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise.toFuture
-    def putBackupVaultAccessPolicyFuture(params: PutBackupVaultAccessPolicyInput): Future[js.Object] =
+    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] =
+      service.listTags(params).promise.toFuture
+    @inline def putBackupVaultAccessPolicyFuture(params: PutBackupVaultAccessPolicyInput): Future[js.Object] =
       service.putBackupVaultAccessPolicy(params).promise.toFuture
-    def putBackupVaultNotificationsFuture(params: PutBackupVaultNotificationsInput): Future[js.Object] =
+    @inline def putBackupVaultNotificationsFuture(params: PutBackupVaultNotificationsInput): Future[js.Object] =
       service.putBackupVaultNotifications(params).promise.toFuture
-    def startBackupJobFuture(params: StartBackupJobInput): Future[StartBackupJobOutput] =
+    @inline def startBackupJobFuture(params: StartBackupJobInput): Future[StartBackupJobOutput] =
       service.startBackupJob(params).promise.toFuture
-    def startRestoreJobFuture(params: StartRestoreJobInput): Future[StartRestoreJobOutput] =
+    @inline def startRestoreJobFuture(params: StartRestoreJobInput): Future[StartRestoreJobOutput] =
       service.startRestoreJob(params).promise.toFuture
-    def stopBackupJobFuture(params: StopBackupJobInput): Future[js.Object] =
+    @inline def stopBackupJobFuture(params: StopBackupJobInput): Future[js.Object] =
       service.stopBackupJob(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] =
+    @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] =
       service.updateBackupPlan(params).promise.toFuture
-    def updateRecoveryPointLifecycleFuture(
+    @inline def updateRecoveryPointLifecycleFuture(
         params: UpdateRecoveryPointLifecycleInput
     ): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise.toFuture
   }
@@ -241,6 +247,7 @@ package backup {
   }
 
   object BackupJob {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
@@ -305,6 +312,7 @@ package backup {
   }
 
   object BackupPlan {
+    @inline
     def apply(
         BackupPlanName: BackupPlanName,
         Rules: BackupRules
@@ -328,6 +336,7 @@ package backup {
   }
 
   object BackupPlanInput {
+    @inline
     def apply(
         BackupPlanName: BackupPlanName,
         Rules: BackupRulesInput
@@ -351,6 +360,7 @@ package backup {
   }
 
   object BackupPlanTemplatesListMember {
+    @inline
     def apply(
         BackupPlanTemplateId: js.UndefOr[String] = js.undefined,
         BackupPlanTemplateName: js.UndefOr[String] = js.undefined
@@ -378,6 +388,7 @@ package backup {
   }
 
   object BackupPlansListMember {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -417,6 +428,7 @@ package backup {
   }
 
   object BackupRule {
+    @inline
     def apply(
         RuleName: BackupRuleName,
         TargetBackupVaultName: BackupVaultName,
@@ -457,6 +469,7 @@ package backup {
   }
 
   object BackupRuleInput {
+    @inline
     def apply(
         RuleName: BackupRuleName,
         TargetBackupVaultName: BackupVaultName,
@@ -492,6 +505,7 @@ package backup {
   }
 
   object BackupSelection {
+    @inline
     def apply(
         IamRoleArn: IAMRoleArn,
         SelectionName: BackupSelectionName,
@@ -523,6 +537,7 @@ package backup {
   }
 
   object BackupSelectionsListMember {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -578,6 +593,7 @@ package backup {
   }
 
   object BackupVaultListMember {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -609,6 +625,7 @@ package backup {
   }
 
   object CalculatedLifecycle {
+    @inline
     def apply(
         DeleteAt: js.UndefOr[timestamp] = js.undefined,
         MoveToColdStorageAt: js.UndefOr[timestamp] = js.undefined
@@ -631,6 +648,7 @@ package backup {
   }
 
   object Condition {
+    @inline
     def apply(
         ConditionKey: ConditionKey,
         ConditionType: ConditionType,
@@ -660,6 +678,7 @@ package backup {
   }
 
   object CreateBackupPlanInput {
+    @inline
     def apply(
         BackupPlan: BackupPlanInput,
         BackupPlanTags: js.UndefOr[Tags] = js.undefined,
@@ -684,6 +703,7 @@ package backup {
   }
 
   object CreateBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -707,6 +727,7 @@ package backup {
   }
 
   object CreateBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         BackupSelection: BackupSelection,
@@ -730,6 +751,7 @@ package backup {
   }
 
   object CreateBackupSelectionOutput {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -752,6 +774,7 @@ package backup {
   }
 
   object CreateBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         BackupVaultTags: js.UndefOr[Tags] = js.undefined,
@@ -777,6 +800,7 @@ package backup {
   }
 
   object CreateBackupVaultOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -796,6 +820,7 @@ package backup {
   }
 
   object DeleteBackupPlanInput {
+    @inline
     def apply(
         BackupPlanId: String
     ): DeleteBackupPlanInput = {
@@ -816,6 +841,7 @@ package backup {
   }
 
   object DeleteBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -838,6 +864,7 @@ package backup {
   }
 
   object DeleteBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         SelectionId: String
@@ -857,6 +884,7 @@ package backup {
   }
 
   object DeleteBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultAccessPolicyInput = {
@@ -874,6 +902,7 @@ package backup {
   }
 
   object DeleteBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: String
     ): DeleteBackupVaultInput = {
@@ -891,6 +920,7 @@ package backup {
   }
 
   object DeleteBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultNotificationsInput = {
@@ -909,6 +939,7 @@ package backup {
   }
 
   object DeleteRecoveryPointInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -928,6 +959,7 @@ package backup {
   }
 
   object DescribeBackupJobInput {
+    @inline
     def apply(
         BackupJobId: String
     ): DescribeBackupJobInput = {
@@ -961,6 +993,7 @@ package backup {
   }
 
   object DescribeBackupJobOutput {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
@@ -1008,6 +1041,7 @@ package backup {
   }
 
   object DescribeBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: String
     ): DescribeBackupVaultInput = {
@@ -1030,6 +1064,7 @@ package backup {
   }
 
   object DescribeBackupVaultOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[String] = js.undefined,
@@ -1055,6 +1090,7 @@ package backup {
   }
 
   object DescribeProtectedResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN
     ): DescribeProtectedResourceInput = {
@@ -1074,6 +1110,7 @@ package backup {
   }
 
   object DescribeProtectedResourceOutput {
+    @inline
     def apply(
         LastBackupTime: js.UndefOr[timestamp] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -1094,6 +1131,7 @@ package backup {
   }
 
   object DescribeRecoveryPointInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -1129,6 +1167,7 @@ package backup {
   }
 
   object DescribeRecoveryPointOutput {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -1176,6 +1215,7 @@ package backup {
   }
 
   object DescribeRestoreJobInput {
+    @inline
     def apply(
         RestoreJobId: RestoreJobId
     ): DescribeRestoreJobInput = {
@@ -1203,6 +1243,7 @@ package backup {
   }
 
   object DescribeRestoreJobOutput {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
@@ -1240,6 +1281,7 @@ package backup {
   }
 
   object ExportBackupPlanTemplateInput {
+    @inline
     def apply(
         BackupPlanId: String
     ): ExportBackupPlanTemplateInput = {
@@ -1257,6 +1299,7 @@ package backup {
   }
 
   object ExportBackupPlanTemplateOutput {
+    @inline
     def apply(
         BackupPlanTemplateJson: js.UndefOr[String] = js.undefined
     ): ExportBackupPlanTemplateOutput = {
@@ -1272,6 +1315,7 @@ package backup {
   }
 
   object GetBackupPlanFromJSONInput {
+    @inline
     def apply(
         BackupPlanTemplateJson: String
     ): GetBackupPlanFromJSONInput = {
@@ -1289,6 +1333,7 @@ package backup {
   }
 
   object GetBackupPlanFromJSONOutput {
+    @inline
     def apply(
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromJSONOutput = {
@@ -1304,6 +1349,7 @@ package backup {
   }
 
   object GetBackupPlanFromTemplateInput {
+    @inline
     def apply(
         BackupPlanTemplateId: String
     ): GetBackupPlanFromTemplateInput = {
@@ -1321,6 +1367,7 @@ package backup {
   }
 
   object GetBackupPlanFromTemplateOutput {
+    @inline
     def apply(
         BackupPlanDocument: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromTemplateOutput = {
@@ -1337,6 +1384,7 @@ package backup {
   }
 
   object GetBackupPlanInput {
+    @inline
     def apply(
         BackupPlanId: String,
         VersionId: js.UndefOr[String] = js.undefined
@@ -1363,6 +1411,7 @@ package backup {
   }
 
   object GetBackupPlanOutput {
+    @inline
     def apply(
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
@@ -1393,6 +1442,7 @@ package backup {
   }
 
   object GetBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         SelectionId: String
@@ -1416,6 +1466,7 @@ package backup {
   }
 
   object GetBackupSelectionOutput {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         BackupSelection: js.UndefOr[BackupSelection] = js.undefined,
@@ -1439,6 +1490,7 @@ package backup {
   }
 
   object GetBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultAccessPolicyInput = {
@@ -1458,6 +1510,7 @@ package backup {
   }
 
   object GetBackupVaultAccessPolicyOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -1477,6 +1530,7 @@ package backup {
   }
 
   object GetBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultNotificationsInput = {
@@ -1497,6 +1551,7 @@ package backup {
   }
 
   object GetBackupVaultNotificationsOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultEvents: js.UndefOr[BackupVaultEvents] = js.undefined,
@@ -1519,6 +1574,7 @@ package backup {
   }
 
   object GetRecoveryPointRestoreMetadataInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -1540,6 +1596,7 @@ package backup {
   }
 
   object GetRecoveryPointRestoreMetadataOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
@@ -1559,6 +1616,7 @@ package backup {
   }
 
   object GetSupportedResourceTypesOutput {
+    @inline
     def apply(
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetSupportedResourceTypesOutput = {
@@ -1578,6 +1636,7 @@ package backup {
   }
 
   object Lifecycle {
+    @inline
     def apply(
         DeleteAfterDays: js.UndefOr[Double] = js.undefined,
         MoveToColdStorageAfterDays: js.UndefOr[Double] = js.undefined
@@ -1604,6 +1663,7 @@ package backup {
   }
 
   object ListBackupJobsInput {
+    @inline
     def apply(
         ByBackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         ByCreatedAfter: js.UndefOr[timestamp] = js.undefined,
@@ -1634,6 +1694,7 @@ package backup {
   }
 
   object ListBackupJobsOutput {
+    @inline
     def apply(
         BackupJobs: js.UndefOr[BackupJobsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1652,6 +1713,7 @@ package backup {
   }
 
   object ListBackupPlanTemplatesInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1670,6 +1732,7 @@ package backup {
   }
 
   object ListBackupPlanTemplatesOutput {
+    @inline
     def apply(
         BackupPlanTemplatesList: js.UndefOr[BackupPlanTemplatesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1689,6 +1752,7 @@ package backup {
   }
 
   object ListBackupPlanVersionsInput {
+    @inline
     def apply(
         BackupPlanId: String,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1711,6 +1775,7 @@ package backup {
   }
 
   object ListBackupPlanVersionsOutput {
+    @inline
     def apply(
         BackupPlanVersionsList: js.UndefOr[BackupPlanVersionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1730,6 +1795,7 @@ package backup {
   }
 
   object ListBackupPlansInput {
+    @inline
     def apply(
         IncludeDeleted: js.UndefOr[Boolean] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1750,6 +1816,7 @@ package backup {
   }
 
   object ListBackupPlansOutput {
+    @inline
     def apply(
         BackupPlansList: js.UndefOr[BackupPlansList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1769,6 +1836,7 @@ package backup {
   }
 
   object ListBackupSelectionsInput {
+    @inline
     def apply(
         BackupPlanId: String,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1791,6 +1859,7 @@ package backup {
   }
 
   object ListBackupSelectionsOutput {
+    @inline
     def apply(
         BackupSelectionsList: js.UndefOr[BackupSelectionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1809,6 +1878,7 @@ package backup {
   }
 
   object ListBackupVaultsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1827,6 +1897,7 @@ package backup {
   }
 
   object ListBackupVaultsOutput {
+    @inline
     def apply(
         BackupVaultList: js.UndefOr[BackupVaultList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1845,6 +1916,7 @@ package backup {
   }
 
   object ListProtectedResourcesInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1863,6 +1935,7 @@ package backup {
   }
 
   object ListProtectedResourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Results: js.UndefOr[ProtectedResourcesList] = js.undefined
@@ -1887,6 +1960,7 @@ package backup {
   }
 
   object ListRecoveryPointsByBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         ByBackupPlanId: js.UndefOr[String] = js.undefined,
@@ -1919,6 +1993,7 @@ package backup {
   }
 
   object ListRecoveryPointsByBackupVaultOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByBackupVaultList] = js.undefined
@@ -1938,6 +2013,7 @@ package backup {
   }
 
   object ListRecoveryPointsByResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1960,6 +2036,7 @@ package backup {
   }
 
   object ListRecoveryPointsByResourceOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByResourceList] = js.undefined
@@ -1978,6 +2055,7 @@ package backup {
   }
 
   object ListRestoreJobsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1996,6 +2074,7 @@ package backup {
   }
 
   object ListRestoreJobsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RestoreJobs: js.UndefOr[RestoreJobsList] = js.undefined
@@ -2015,6 +2094,7 @@ package backup {
   }
 
   object ListTagsInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2037,6 +2117,7 @@ package backup {
   }
 
   object ListTagsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -2059,6 +2140,7 @@ package backup {
   }
 
   object ProtectedResource {
+    @inline
     def apply(
         LastBackupTime: js.UndefOr[timestamp] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -2079,6 +2161,7 @@ package backup {
   }
 
   object PutBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         Policy: js.UndefOr[IAMPolicy] = js.undefined
@@ -2100,6 +2183,7 @@ package backup {
   }
 
   object PutBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultEvents: BackupVaultEvents,
         BackupVaultName: BackupVaultName,
@@ -2139,6 +2223,7 @@ package backup {
   }
 
   object RecoveryPointByBackupVault {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -2192,6 +2277,7 @@ package backup {
   }
 
   object RecoveryPointByResource {
+    @inline
     def apply(
         BackupSizeBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -2223,6 +2309,7 @@ package backup {
   }
 
   object RecoveryPointCreator {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -2276,6 +2363,7 @@ package backup {
   }
 
   object RestoreJobsListMember {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
@@ -2320,6 +2408,7 @@ package backup {
   }
 
   object StartBackupJobInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         IamRoleArn: IAMRoleArn,
@@ -2353,6 +2442,7 @@ package backup {
   }
 
   object StartBackupJobOutput {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -2376,6 +2466,7 @@ package backup {
   }
 
   object StartRestoreJobInput {
+    @inline
     def apply(
         IamRoleArn: IAMRoleArn,
         Metadata: Metadata,
@@ -2401,6 +2492,7 @@ package backup {
   }
 
   object StartRestoreJobOutput {
+    @inline
     def apply(
         RestoreJobId: js.UndefOr[RestoreJobId] = js.undefined
     ): StartRestoreJobOutput = {
@@ -2416,6 +2508,7 @@ package backup {
   }
 
   object StopBackupJobInput {
+    @inline
     def apply(
         BackupJobId: String
     ): StopBackupJobInput = {
@@ -2442,6 +2535,7 @@ package backup {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         Tags: Tags
@@ -2462,6 +2556,7 @@ package backup {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         TagKeyList: TagKeyList
@@ -2482,6 +2577,7 @@ package backup {
   }
 
   object UpdateBackupPlanInput {
+    @inline
     def apply(
         BackupPlan: BackupPlanInput,
         BackupPlanId: String
@@ -2504,6 +2600,7 @@ package backup {
   }
 
   object UpdateBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -2527,6 +2624,7 @@ package backup {
   }
 
   object UpdateRecoveryPointLifecycleInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN,
@@ -2551,6 +2649,7 @@ package backup {
   }
 
   object UpdateRecoveryPointLifecycleOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         CalculatedLifecycle: js.UndefOr[CalculatedLifecycle] = js.undefined,

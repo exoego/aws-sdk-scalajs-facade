@@ -36,38 +36,38 @@ package object budgetsservice {
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
-    def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
+    @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
       service.createBudget(params).promise.toFuture
-    def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
+    @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
       service.createNotification(params).promise.toFuture
-    def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
+    @inline def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
       service.createSubscriber(params).promise.toFuture
-    def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
+    @inline def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
       service.deleteBudget(params).promise.toFuture
-    def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
+    @inline def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
       service.deleteNotification(params).promise.toFuture
-    def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
+    @inline def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
       service.deleteSubscriber(params).promise.toFuture
-    def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
+    @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
       service.describeBudget(params).promise.toFuture
-    def describeBudgetPerformanceHistoryFuture(
+    @inline def describeBudgetPerformanceHistoryFuture(
         params: DescribeBudgetPerformanceHistoryRequest
     ): Future[DescribeBudgetPerformanceHistoryResponse] =
       service.describeBudgetPerformanceHistory(params).promise.toFuture
-    def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
+    @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
       service.describeBudgets(params).promise.toFuture
-    def describeNotificationsForBudgetFuture(
+    @inline def describeNotificationsForBudgetFuture(
         params: DescribeNotificationsForBudgetRequest
     ): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise.toFuture
-    def describeSubscribersForNotificationFuture(
+    @inline def describeSubscribersForNotificationFuture(
         params: DescribeSubscribersForNotificationRequest
     ): Future[DescribeSubscribersForNotificationResponse] =
       service.describeSubscribersForNotification(params).promise.toFuture
-    def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
+    @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
       service.updateBudget(params).promise.toFuture
-    def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
+    @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
       service.updateNotification(params).promise.toFuture
-    def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
+    @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
       service.updateSubscriber(params).promise.toFuture
   }
 }
@@ -120,6 +120,7 @@ package budgetsservice {
   }
 
   object Budget {
+    @inline
     def apply(
         BudgetName: BudgetName,
         BudgetType: BudgetType,
@@ -163,6 +164,7 @@ package budgetsservice {
   }
 
   object BudgetPerformanceHistory {
+    @inline
     def apply(
         BudgetName: js.UndefOr[BudgetName] = js.undefined,
         BudgetType: js.UndefOr[BudgetType] = js.undefined,
@@ -208,6 +210,7 @@ package budgetsservice {
   }
 
   object BudgetedAndActualAmounts {
+    @inline
     def apply(
         ActualAmount: js.UndefOr[Spend] = js.undefined,
         BudgetedAmount: js.UndefOr[Spend] = js.undefined,
@@ -232,6 +235,7 @@ package budgetsservice {
   }
 
   object CalculatedSpend {
+    @inline
     def apply(
         ActualSpend: Spend,
         ForecastedSpend: js.UndefOr[Spend] = js.undefined
@@ -277,6 +281,7 @@ package budgetsservice {
   }
 
   object CostTypes {
+    @inline
     def apply(
         IncludeCredit: js.UndefOr[NullableBoolean] = js.undefined,
         IncludeDiscount: js.UndefOr[NullableBoolean] = js.undefined,
@@ -317,6 +322,7 @@ package budgetsservice {
   }
 
   object CreateBudgetRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         Budget: Budget,
@@ -341,6 +347,7 @@ package budgetsservice {
   trait CreateBudgetResponse extends js.Object {}
 
   object CreateBudgetResponse {
+    @inline
     def apply(
         ): CreateBudgetResponse = {
       val __obj = js.Dynamic.literal()
@@ -361,6 +368,7 @@ package budgetsservice {
   }
 
   object CreateNotificationRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -385,6 +393,7 @@ package budgetsservice {
   trait CreateNotificationResponse extends js.Object {}
 
   object CreateNotificationResponse {
+    @inline
     def apply(
         ): CreateNotificationResponse = {
       val __obj = js.Dynamic.literal()
@@ -405,6 +414,7 @@ package budgetsservice {
   }
 
   object CreateSubscriberRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -429,6 +439,7 @@ package budgetsservice {
   trait CreateSubscriberResponse extends js.Object {}
 
   object CreateSubscriberResponse {
+    @inline
     def apply(
         ): CreateSubscriberResponse = {
       val __obj = js.Dynamic.literal()
@@ -447,6 +458,7 @@ package budgetsservice {
   }
 
   object DeleteBudgetRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName
@@ -467,6 +479,7 @@ package budgetsservice {
   trait DeleteBudgetResponse extends js.Object {}
 
   object DeleteBudgetResponse {
+    @inline
     def apply(
         ): DeleteBudgetResponse = {
       val __obj = js.Dynamic.literal()
@@ -486,6 +499,7 @@ package budgetsservice {
   }
 
   object DeleteNotificationRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -508,6 +522,7 @@ package budgetsservice {
   trait DeleteNotificationResponse extends js.Object {}
 
   object DeleteNotificationResponse {
+    @inline
     def apply(
         ): DeleteNotificationResponse = {
       val __obj = js.Dynamic.literal()
@@ -528,6 +543,7 @@ package budgetsservice {
   }
 
   object DeleteSubscriberRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -552,6 +568,7 @@ package budgetsservice {
   trait DeleteSubscriberResponse extends js.Object {}
 
   object DeleteSubscriberResponse {
+    @inline
     def apply(
         ): DeleteSubscriberResponse = {
       val __obj = js.Dynamic.literal()
@@ -570,6 +587,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetPerformanceHistoryRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -596,6 +614,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetPerformanceHistoryResponse {
+    @inline
     def apply(
         BudgetPerformanceHistory: js.UndefOr[BudgetPerformanceHistory] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -617,6 +636,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName
@@ -639,6 +659,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetResponse {
+    @inline
     def apply(
         Budget: js.UndefOr[Budget] = js.undefined
     ): DescribeBudgetResponse = {
@@ -659,6 +680,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetsRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -684,6 +706,7 @@ package budgetsservice {
   }
 
   object DescribeBudgetsResponse {
+    @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -707,6 +730,7 @@ package budgetsservice {
   }
 
   object DescribeNotificationsForBudgetRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -734,6 +758,7 @@ package budgetsservice {
   }
 
   object DescribeNotificationsForBudgetResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Notifications: js.UndefOr[Notifications] = js.undefined
@@ -758,6 +783,7 @@ package budgetsservice {
   }
 
   object DescribeSubscribersForNotificationRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -787,6 +813,7 @@ package budgetsservice {
   }
 
   object DescribeSubscribersForNotificationResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Subscribers: js.UndefOr[Subscribers] = js.undefined
@@ -817,6 +844,7 @@ package budgetsservice {
   }
 
   object Notification {
+    @inline
     def apply(
         ComparisonOperator: ComparisonOperator,
         NotificationType: NotificationType,
@@ -863,6 +891,7 @@ package budgetsservice {
   }
 
   object NotificationWithSubscribers {
+    @inline
     def apply(
         Notification: Notification,
         Subscribers: Subscribers
@@ -889,6 +918,7 @@ package budgetsservice {
   }
 
   object Spend {
+    @inline
     def apply(
         Amount: NumericValue,
         Unit: UnitValue
@@ -915,6 +945,7 @@ package budgetsservice {
   }
 
   object Subscriber {
+    @inline
     def apply(
         Address: SubscriberAddress,
         SubscriptionType: SubscriptionType
@@ -958,6 +989,7 @@ package budgetsservice {
   }
 
   object TimePeriod {
+    @inline
     def apply(
         End: js.UndefOr[GenericTimestamp] = js.undefined,
         Start: js.UndefOr[GenericTimestamp] = js.undefined
@@ -991,6 +1023,7 @@ package budgetsservice {
   }
 
   object UpdateBudgetRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         NewBudget: Budget
@@ -1011,6 +1044,7 @@ package budgetsservice {
   trait UpdateBudgetResponse extends js.Object {}
 
   object UpdateBudgetResponse {
+    @inline
     def apply(
         ): UpdateBudgetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1031,6 +1065,7 @@ package budgetsservice {
   }
 
   object UpdateNotificationRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -1055,6 +1090,7 @@ package budgetsservice {
   trait UpdateNotificationResponse extends js.Object {}
 
   object UpdateNotificationResponse {
+    @inline
     def apply(
         ): UpdateNotificationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1076,6 +1112,7 @@ package budgetsservice {
   }
 
   object UpdateSubscriberRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         BudgetName: BudgetName,
@@ -1102,6 +1139,7 @@ package budgetsservice {
   trait UpdateSubscriberResponse extends js.Object {}
 
   object UpdateSubscriberResponse {
+    @inline
     def apply(
         ): UpdateSubscriberResponse = {
       val __obj = js.Dynamic.literal()

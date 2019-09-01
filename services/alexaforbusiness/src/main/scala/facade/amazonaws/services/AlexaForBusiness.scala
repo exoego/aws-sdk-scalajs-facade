@@ -177,219 +177,233 @@ package object alexaforbusiness {
 
   implicit final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
 
-    def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
+    @inline def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
       service.approveSkill(params).promise.toFuture
-    def associateContactWithAddressBookFuture(
+    @inline def associateContactWithAddressBookFuture(
         params: AssociateContactWithAddressBookRequest
     ): Future[AssociateContactWithAddressBookResponse] =
       service.associateContactWithAddressBook(params).promise.toFuture
-    def associateDeviceWithNetworkProfileFuture(
+    @inline def associateDeviceWithNetworkProfileFuture(
         params: AssociateDeviceWithNetworkProfileRequest
     ): Future[AssociateDeviceWithNetworkProfileResponse] =
       service.associateDeviceWithNetworkProfile(params).promise.toFuture
-    def associateDeviceWithRoomFuture(params: AssociateDeviceWithRoomRequest): Future[AssociateDeviceWithRoomResponse] =
-      service.associateDeviceWithRoom(params).promise.toFuture
-    def associateSkillGroupWithRoomFuture(
+    @inline def associateDeviceWithRoomFuture(
+        params: AssociateDeviceWithRoomRequest
+    ): Future[AssociateDeviceWithRoomResponse] = service.associateDeviceWithRoom(params).promise.toFuture
+    @inline def associateSkillGroupWithRoomFuture(
         params: AssociateSkillGroupWithRoomRequest
     ): Future[AssociateSkillGroupWithRoomResponse] = service.associateSkillGroupWithRoom(params).promise.toFuture
-    def associateSkillWithSkillGroupFuture(
+    @inline def associateSkillWithSkillGroupFuture(
         params: AssociateSkillWithSkillGroupRequest
     ): Future[AssociateSkillWithSkillGroupResponse] = service.associateSkillWithSkillGroup(params).promise.toFuture
-    def associateSkillWithUsersFuture(params: AssociateSkillWithUsersRequest): Future[AssociateSkillWithUsersResponse] =
-      service.associateSkillWithUsers(params).promise.toFuture
-    def createAddressBookFuture(params: CreateAddressBookRequest): Future[CreateAddressBookResponse] =
+    @inline def associateSkillWithUsersFuture(
+        params: AssociateSkillWithUsersRequest
+    ): Future[AssociateSkillWithUsersResponse] = service.associateSkillWithUsers(params).promise.toFuture
+    @inline def createAddressBookFuture(params: CreateAddressBookRequest): Future[CreateAddressBookResponse] =
       service.createAddressBook(params).promise.toFuture
-    def createBusinessReportScheduleFuture(
+    @inline def createBusinessReportScheduleFuture(
         params: CreateBusinessReportScheduleRequest
     ): Future[CreateBusinessReportScheduleResponse] = service.createBusinessReportSchedule(params).promise.toFuture
-    def createConferenceProviderFuture(
+    @inline def createConferenceProviderFuture(
         params: CreateConferenceProviderRequest
     ): Future[CreateConferenceProviderResponse] = service.createConferenceProvider(params).promise.toFuture
-    def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] =
+    @inline def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] =
       service.createContact(params).promise.toFuture
-    def createGatewayGroupFuture(params: CreateGatewayGroupRequest): Future[CreateGatewayGroupResponse] =
+    @inline def createGatewayGroupFuture(params: CreateGatewayGroupRequest): Future[CreateGatewayGroupResponse] =
       service.createGatewayGroup(params).promise.toFuture
-    def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResponse] =
+    @inline def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResponse] =
       service.createNetworkProfile(params).promise.toFuture
-    def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] =
+    @inline def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] =
       service.createProfile(params).promise.toFuture
-    def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
+    @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
       service.createRoom(params).promise.toFuture
-    def createSkillGroupFuture(params: CreateSkillGroupRequest): Future[CreateSkillGroupResponse] =
+    @inline def createSkillGroupFuture(params: CreateSkillGroupRequest): Future[CreateSkillGroupResponse] =
       service.createSkillGroup(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deleteAddressBookFuture(params: DeleteAddressBookRequest): Future[DeleteAddressBookResponse] =
+    @inline def deleteAddressBookFuture(params: DeleteAddressBookRequest): Future[DeleteAddressBookResponse] =
       service.deleteAddressBook(params).promise.toFuture
-    def deleteBusinessReportScheduleFuture(
+    @inline def deleteBusinessReportScheduleFuture(
         params: DeleteBusinessReportScheduleRequest
     ): Future[DeleteBusinessReportScheduleResponse] = service.deleteBusinessReportSchedule(params).promise.toFuture
-    def deleteConferenceProviderFuture(
+    @inline def deleteConferenceProviderFuture(
         params: DeleteConferenceProviderRequest
     ): Future[DeleteConferenceProviderResponse] = service.deleteConferenceProvider(params).promise.toFuture
-    def deleteContactFuture(params: DeleteContactRequest): Future[DeleteContactResponse] =
+    @inline def deleteContactFuture(params: DeleteContactRequest): Future[DeleteContactResponse] =
       service.deleteContact(params).promise.toFuture
-    def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
+    @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
       service.deleteDevice(params).promise.toFuture
-    def deleteDeviceUsageDataFuture(params: DeleteDeviceUsageDataRequest): Future[DeleteDeviceUsageDataResponse] =
-      service.deleteDeviceUsageData(params).promise.toFuture
-    def deleteGatewayGroupFuture(params: DeleteGatewayGroupRequest): Future[DeleteGatewayGroupResponse] =
+    @inline def deleteDeviceUsageDataFuture(
+        params: DeleteDeviceUsageDataRequest
+    ): Future[DeleteDeviceUsageDataResponse] = service.deleteDeviceUsageData(params).promise.toFuture
+    @inline def deleteGatewayGroupFuture(params: DeleteGatewayGroupRequest): Future[DeleteGatewayGroupResponse] =
       service.deleteGatewayGroup(params).promise.toFuture
-    def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResponse] =
+    @inline def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResponse] =
       service.deleteNetworkProfile(params).promise.toFuture
-    def deleteProfileFuture(params: DeleteProfileRequest): Future[DeleteProfileResponse] =
+    @inline def deleteProfileFuture(params: DeleteProfileRequest): Future[DeleteProfileResponse] =
       service.deleteProfile(params).promise.toFuture
-    def deleteRoomFuture(params: DeleteRoomRequest): Future[DeleteRoomResponse] =
+    @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[DeleteRoomResponse] =
       service.deleteRoom(params).promise.toFuture
-    def deleteRoomSkillParameterFuture(
+    @inline def deleteRoomSkillParameterFuture(
         params: DeleteRoomSkillParameterRequest
     ): Future[DeleteRoomSkillParameterResponse] = service.deleteRoomSkillParameter(params).promise.toFuture
-    def deleteSkillAuthorizationFuture(
+    @inline def deleteSkillAuthorizationFuture(
         params: DeleteSkillAuthorizationRequest
     ): Future[DeleteSkillAuthorizationResponse] = service.deleteSkillAuthorization(params).promise.toFuture
-    def deleteSkillGroupFuture(params: DeleteSkillGroupRequest): Future[DeleteSkillGroupResponse] =
+    @inline def deleteSkillGroupFuture(params: DeleteSkillGroupRequest): Future[DeleteSkillGroupResponse] =
       service.deleteSkillGroup(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
-    def disassociateContactFromAddressBookFuture(
+    @inline def disassociateContactFromAddressBookFuture(
         params: DisassociateContactFromAddressBookRequest
     ): Future[DisassociateContactFromAddressBookResponse] =
       service.disassociateContactFromAddressBook(params).promise.toFuture
-    def disassociateDeviceFromRoomFuture(
+    @inline def disassociateDeviceFromRoomFuture(
         params: DisassociateDeviceFromRoomRequest
     ): Future[DisassociateDeviceFromRoomResponse] = service.disassociateDeviceFromRoom(params).promise.toFuture
-    def disassociateSkillFromSkillGroupFuture(
+    @inline def disassociateSkillFromSkillGroupFuture(
         params: DisassociateSkillFromSkillGroupRequest
     ): Future[DisassociateSkillFromSkillGroupResponse] =
       service.disassociateSkillFromSkillGroup(params).promise.toFuture
-    def disassociateSkillFromUsersFuture(
+    @inline def disassociateSkillFromUsersFuture(
         params: DisassociateSkillFromUsersRequest
     ): Future[DisassociateSkillFromUsersResponse] = service.disassociateSkillFromUsers(params).promise.toFuture
-    def disassociateSkillGroupFromRoomFuture(
+    @inline def disassociateSkillGroupFromRoomFuture(
         params: DisassociateSkillGroupFromRoomRequest
     ): Future[DisassociateSkillGroupFromRoomResponse] = service.disassociateSkillGroupFromRoom(params).promise.toFuture
-    def forgetSmartHomeAppliancesFuture(
+    @inline def forgetSmartHomeAppliancesFuture(
         params: ForgetSmartHomeAppliancesRequest
     ): Future[ForgetSmartHomeAppliancesResponse] = service.forgetSmartHomeAppliances(params).promise.toFuture
-    def getAddressBookFuture(params: GetAddressBookRequest): Future[GetAddressBookResponse] =
+    @inline def getAddressBookFuture(params: GetAddressBookRequest): Future[GetAddressBookResponse] =
       service.getAddressBook(params).promise.toFuture
-    def getConferencePreferenceFuture(params: GetConferencePreferenceRequest): Future[GetConferencePreferenceResponse] =
-      service.getConferencePreference(params).promise.toFuture
-    def getConferenceProviderFuture(params: GetConferenceProviderRequest): Future[GetConferenceProviderResponse] =
-      service.getConferenceProvider(params).promise.toFuture
-    def getContactFuture(params: GetContactRequest): Future[GetContactResponse] =
+    @inline def getConferencePreferenceFuture(
+        params: GetConferencePreferenceRequest
+    ): Future[GetConferencePreferenceResponse] = service.getConferencePreference(params).promise.toFuture
+    @inline def getConferenceProviderFuture(
+        params: GetConferenceProviderRequest
+    ): Future[GetConferenceProviderResponse] = service.getConferenceProvider(params).promise.toFuture
+    @inline def getContactFuture(params: GetContactRequest): Future[GetContactResponse] =
       service.getContact(params).promise.toFuture
-    def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
       service.getDevice(params).promise.toFuture
-    def getGatewayFuture(params: GetGatewayRequest): Future[GetGatewayResponse] =
+    @inline def getGatewayFuture(params: GetGatewayRequest): Future[GetGatewayResponse] =
       service.getGateway(params).promise.toFuture
-    def getGatewayGroupFuture(params: GetGatewayGroupRequest): Future[GetGatewayGroupResponse] =
+    @inline def getGatewayGroupFuture(params: GetGatewayGroupRequest): Future[GetGatewayGroupResponse] =
       service.getGatewayGroup(params).promise.toFuture
-    def getInvitationConfigurationFuture(
+    @inline def getInvitationConfigurationFuture(
         params: GetInvitationConfigurationRequest
     ): Future[GetInvitationConfigurationResponse] = service.getInvitationConfiguration(params).promise.toFuture
-    def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResponse] =
+    @inline def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResponse] =
       service.getNetworkProfile(params).promise.toFuture
-    def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
+    @inline def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
       service.getProfile(params).promise.toFuture
-    def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] = service.getRoom(params).promise.toFuture
-    def getRoomSkillParameterFuture(params: GetRoomSkillParameterRequest): Future[GetRoomSkillParameterResponse] =
-      service.getRoomSkillParameter(params).promise.toFuture
-    def getSkillGroupFuture(params: GetSkillGroupRequest): Future[GetSkillGroupResponse] =
+    @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] =
+      service.getRoom(params).promise.toFuture
+    @inline def getRoomSkillParameterFuture(
+        params: GetRoomSkillParameterRequest
+    ): Future[GetRoomSkillParameterResponse] = service.getRoomSkillParameter(params).promise.toFuture
+    @inline def getSkillGroupFuture(params: GetSkillGroupRequest): Future[GetSkillGroupResponse] =
       service.getSkillGroup(params).promise.toFuture
-    def listBusinessReportSchedulesFuture(
+    @inline def listBusinessReportSchedulesFuture(
         params: ListBusinessReportSchedulesRequest
     ): Future[ListBusinessReportSchedulesResponse] = service.listBusinessReportSchedules(params).promise.toFuture
-    def listConferenceProvidersFuture(params: ListConferenceProvidersRequest): Future[ListConferenceProvidersResponse] =
-      service.listConferenceProviders(params).promise.toFuture
-    def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
+    @inline def listConferenceProvidersFuture(
+        params: ListConferenceProvidersRequest
+    ): Future[ListConferenceProvidersResponse] = service.listConferenceProviders(params).promise.toFuture
+    @inline def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
       service.listDeviceEvents(params).promise.toFuture
-    def listGatewayGroupsFuture(params: ListGatewayGroupsRequest): Future[ListGatewayGroupsResponse] =
+    @inline def listGatewayGroupsFuture(params: ListGatewayGroupsRequest): Future[ListGatewayGroupsResponse] =
       service.listGatewayGroups(params).promise.toFuture
-    def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
+    @inline def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
       service.listGateways(params).promise.toFuture
-    def listSkillsFuture(params: ListSkillsRequest): Future[ListSkillsResponse] =
+    @inline def listSkillsFuture(params: ListSkillsRequest): Future[ListSkillsResponse] =
       service.listSkills(params).promise.toFuture
-    def listSkillsStoreCategoriesFuture(
+    @inline def listSkillsStoreCategoriesFuture(
         params: ListSkillsStoreCategoriesRequest
     ): Future[ListSkillsStoreCategoriesResponse] = service.listSkillsStoreCategories(params).promise.toFuture
-    def listSkillsStoreSkillsByCategoryFuture(
+    @inline def listSkillsStoreSkillsByCategoryFuture(
         params: ListSkillsStoreSkillsByCategoryRequest
     ): Future[ListSkillsStoreSkillsByCategoryResponse] =
       service.listSkillsStoreSkillsByCategory(params).promise.toFuture
-    def listSmartHomeAppliancesFuture(params: ListSmartHomeAppliancesRequest): Future[ListSmartHomeAppliancesResponse] =
-      service.listSmartHomeAppliances(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def putConferencePreferenceFuture(params: PutConferencePreferenceRequest): Future[PutConferencePreferenceResponse] =
-      service.putConferencePreference(params).promise.toFuture
-    def putInvitationConfigurationFuture(
+    @inline def listSmartHomeAppliancesFuture(
+        params: ListSmartHomeAppliancesRequest
+    ): Future[ListSmartHomeAppliancesResponse] = service.listSmartHomeAppliances(params).promise.toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def putConferencePreferenceFuture(
+        params: PutConferencePreferenceRequest
+    ): Future[PutConferencePreferenceResponse] = service.putConferencePreference(params).promise.toFuture
+    @inline def putInvitationConfigurationFuture(
         params: PutInvitationConfigurationRequest
     ): Future[PutInvitationConfigurationResponse] = service.putInvitationConfiguration(params).promise.toFuture
-    def putRoomSkillParameterFuture(params: PutRoomSkillParameterRequest): Future[PutRoomSkillParameterResponse] =
-      service.putRoomSkillParameter(params).promise.toFuture
-    def putSkillAuthorizationFuture(params: PutSkillAuthorizationRequest): Future[PutSkillAuthorizationResponse] =
-      service.putSkillAuthorization(params).promise.toFuture
-    def registerAVSDeviceFuture(params: RegisterAVSDeviceRequest): Future[RegisterAVSDeviceResponse] =
+    @inline def putRoomSkillParameterFuture(
+        params: PutRoomSkillParameterRequest
+    ): Future[PutRoomSkillParameterResponse] = service.putRoomSkillParameter(params).promise.toFuture
+    @inline def putSkillAuthorizationFuture(
+        params: PutSkillAuthorizationRequest
+    ): Future[PutSkillAuthorizationResponse] = service.putSkillAuthorization(params).promise.toFuture
+    @inline def registerAVSDeviceFuture(params: RegisterAVSDeviceRequest): Future[RegisterAVSDeviceResponse] =
       service.registerAVSDevice(params).promise.toFuture
-    def rejectSkillFuture(params: RejectSkillRequest): Future[RejectSkillResponse] =
+    @inline def rejectSkillFuture(params: RejectSkillRequest): Future[RejectSkillResponse] =
       service.rejectSkill(params).promise.toFuture
-    def resolveRoomFuture(params: ResolveRoomRequest): Future[ResolveRoomResponse] =
+    @inline def resolveRoomFuture(params: ResolveRoomRequest): Future[ResolveRoomResponse] =
       service.resolveRoom(params).promise.toFuture
-    def revokeInvitationFuture(params: RevokeInvitationRequest): Future[RevokeInvitationResponse] =
+    @inline def revokeInvitationFuture(params: RevokeInvitationRequest): Future[RevokeInvitationResponse] =
       service.revokeInvitation(params).promise.toFuture
-    def searchAddressBooksFuture(params: SearchAddressBooksRequest): Future[SearchAddressBooksResponse] =
+    @inline def searchAddressBooksFuture(params: SearchAddressBooksRequest): Future[SearchAddressBooksResponse] =
       service.searchAddressBooks(params).promise.toFuture
-    def searchContactsFuture(params: SearchContactsRequest): Future[SearchContactsResponse] =
+    @inline def searchContactsFuture(params: SearchContactsRequest): Future[SearchContactsResponse] =
       service.searchContacts(params).promise.toFuture
-    def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] =
+    @inline def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] =
       service.searchDevices(params).promise.toFuture
-    def searchNetworkProfilesFuture(params: SearchNetworkProfilesRequest): Future[SearchNetworkProfilesResponse] =
-      service.searchNetworkProfiles(params).promise.toFuture
-    def searchProfilesFuture(params: SearchProfilesRequest): Future[SearchProfilesResponse] =
+    @inline def searchNetworkProfilesFuture(
+        params: SearchNetworkProfilesRequest
+    ): Future[SearchNetworkProfilesResponse] = service.searchNetworkProfiles(params).promise.toFuture
+    @inline def searchProfilesFuture(params: SearchProfilesRequest): Future[SearchProfilesResponse] =
       service.searchProfiles(params).promise.toFuture
-    def searchRoomsFuture(params: SearchRoomsRequest): Future[SearchRoomsResponse] =
+    @inline def searchRoomsFuture(params: SearchRoomsRequest): Future[SearchRoomsResponse] =
       service.searchRooms(params).promise.toFuture
-    def searchSkillGroupsFuture(params: SearchSkillGroupsRequest): Future[SearchSkillGroupsResponse] =
+    @inline def searchSkillGroupsFuture(params: SearchSkillGroupsRequest): Future[SearchSkillGroupsResponse] =
       service.searchSkillGroups(params).promise.toFuture
-    def searchUsersFuture(params: SearchUsersRequest): Future[SearchUsersResponse] =
+    @inline def searchUsersFuture(params: SearchUsersRequest): Future[SearchUsersResponse] =
       service.searchUsers(params).promise.toFuture
-    def sendAnnouncementFuture(params: SendAnnouncementRequest): Future[SendAnnouncementResponse] =
+    @inline def sendAnnouncementFuture(params: SendAnnouncementRequest): Future[SendAnnouncementResponse] =
       service.sendAnnouncement(params).promise.toFuture
-    def sendInvitationFuture(params: SendInvitationRequest): Future[SendInvitationResponse] =
+    @inline def sendInvitationFuture(params: SendInvitationRequest): Future[SendInvitationResponse] =
       service.sendInvitation(params).promise.toFuture
-    def startDeviceSyncFuture(params: StartDeviceSyncRequest): Future[StartDeviceSyncResponse] =
+    @inline def startDeviceSyncFuture(params: StartDeviceSyncRequest): Future[StartDeviceSyncResponse] =
       service.startDeviceSync(params).promise.toFuture
-    def startSmartHomeApplianceDiscoveryFuture(
+    @inline def startSmartHomeApplianceDiscoveryFuture(
         params: StartSmartHomeApplianceDiscoveryRequest
     ): Future[StartSmartHomeApplianceDiscoveryResponse] =
       service.startSmartHomeApplianceDiscovery(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAddressBookFuture(params: UpdateAddressBookRequest): Future[UpdateAddressBookResponse] =
+    @inline def updateAddressBookFuture(params: UpdateAddressBookRequest): Future[UpdateAddressBookResponse] =
       service.updateAddressBook(params).promise.toFuture
-    def updateBusinessReportScheduleFuture(
+    @inline def updateBusinessReportScheduleFuture(
         params: UpdateBusinessReportScheduleRequest
     ): Future[UpdateBusinessReportScheduleResponse] = service.updateBusinessReportSchedule(params).promise.toFuture
-    def updateConferenceProviderFuture(
+    @inline def updateConferenceProviderFuture(
         params: UpdateConferenceProviderRequest
     ): Future[UpdateConferenceProviderResponse] = service.updateConferenceProvider(params).promise.toFuture
-    def updateContactFuture(params: UpdateContactRequest): Future[UpdateContactResponse] =
+    @inline def updateContactFuture(params: UpdateContactRequest): Future[UpdateContactResponse] =
       service.updateContact(params).promise.toFuture
-    def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
+    @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
       service.updateDevice(params).promise.toFuture
-    def updateGatewayFuture(params: UpdateGatewayRequest): Future[UpdateGatewayResponse] =
+    @inline def updateGatewayFuture(params: UpdateGatewayRequest): Future[UpdateGatewayResponse] =
       service.updateGateway(params).promise.toFuture
-    def updateGatewayGroupFuture(params: UpdateGatewayGroupRequest): Future[UpdateGatewayGroupResponse] =
+    @inline def updateGatewayGroupFuture(params: UpdateGatewayGroupRequest): Future[UpdateGatewayGroupResponse] =
       service.updateGatewayGroup(params).promise.toFuture
-    def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResponse] =
+    @inline def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResponse] =
       service.updateNetworkProfile(params).promise.toFuture
-    def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] =
+    @inline def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] =
       service.updateProfile(params).promise.toFuture
-    def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
+    @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
       service.updateRoom(params).promise.toFuture
-    def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] =
+    @inline def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] =
       service.updateSkillGroup(params).promise.toFuture
   }
 }
@@ -555,6 +569,7 @@ package alexaforbusiness {
   }
 
   object AddressBook {
+    @inline
     def apply(
         AddressBookArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[AddressBookDescription] = js.undefined,
@@ -579,6 +594,7 @@ package alexaforbusiness {
   }
 
   object AddressBookData {
+    @inline
     def apply(
         AddressBookArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[AddressBookDescription] = js.undefined,
@@ -598,6 +614,7 @@ package alexaforbusiness {
   }
 
   object ApproveSkillRequest {
+    @inline
     def apply(
         SkillId: SkillId
     ): ApproveSkillRequest = {
@@ -613,6 +630,7 @@ package alexaforbusiness {
   trait ApproveSkillResponse extends js.Object {}
 
   object ApproveSkillResponse {
+    @inline
     def apply(
         ): ApproveSkillResponse = {
       val __obj = js.Dynamic.literal()
@@ -628,6 +646,7 @@ package alexaforbusiness {
   }
 
   object AssociateContactWithAddressBookRequest {
+    @inline
     def apply(
         AddressBookArn: Arn,
         ContactArn: Arn
@@ -645,6 +664,7 @@ package alexaforbusiness {
   trait AssociateContactWithAddressBookResponse extends js.Object {}
 
   object AssociateContactWithAddressBookResponse {
+    @inline
     def apply(
         ): AssociateContactWithAddressBookResponse = {
       val __obj = js.Dynamic.literal()
@@ -660,6 +680,7 @@ package alexaforbusiness {
   }
 
   object AssociateDeviceWithNetworkProfileRequest {
+    @inline
     def apply(
         DeviceArn: Arn,
         NetworkProfileArn: Arn
@@ -677,6 +698,7 @@ package alexaforbusiness {
   trait AssociateDeviceWithNetworkProfileResponse extends js.Object {}
 
   object AssociateDeviceWithNetworkProfileResponse {
+    @inline
     def apply(
         ): AssociateDeviceWithNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -692,6 +714,7 @@ package alexaforbusiness {
   }
 
   object AssociateDeviceWithRoomRequest {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined,
         RoomArn: js.UndefOr[Arn] = js.undefined
@@ -707,6 +730,7 @@ package alexaforbusiness {
   trait AssociateDeviceWithRoomResponse extends js.Object {}
 
   object AssociateDeviceWithRoomResponse {
+    @inline
     def apply(
         ): AssociateDeviceWithRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -722,6 +746,7 @@ package alexaforbusiness {
   }
 
   object AssociateSkillGroupWithRoomRequest {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
@@ -737,6 +762,7 @@ package alexaforbusiness {
   trait AssociateSkillGroupWithRoomResponse extends js.Object {}
 
   object AssociateSkillGroupWithRoomResponse {
+    @inline
     def apply(
         ): AssociateSkillGroupWithRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -752,6 +778,7 @@ package alexaforbusiness {
   }
 
   object AssociateSkillWithSkillGroupRequest {
+    @inline
     def apply(
         SkillId: SkillId,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
@@ -769,6 +796,7 @@ package alexaforbusiness {
   trait AssociateSkillWithSkillGroupResponse extends js.Object {}
 
   object AssociateSkillWithSkillGroupResponse {
+    @inline
     def apply(
         ): AssociateSkillWithSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -783,6 +811,7 @@ package alexaforbusiness {
   }
 
   object AssociateSkillWithUsersRequest {
+    @inline
     def apply(
         SkillId: SkillId
     ): AssociateSkillWithUsersRequest = {
@@ -798,6 +827,7 @@ package alexaforbusiness {
   trait AssociateSkillWithUsersResponse extends js.Object {}
 
   object AssociateSkillWithUsersResponse {
+    @inline
     def apply(
         ): AssociateSkillWithUsersResponse = {
       val __obj = js.Dynamic.literal()
@@ -818,6 +848,7 @@ package alexaforbusiness {
   }
 
   object Audio {
+    @inline
     def apply(
         Locale: Locale,
         Location: AudioLocation
@@ -844,6 +875,7 @@ package alexaforbusiness {
   }
 
   object BusinessReport {
+    @inline
     def apply(
         DeliveryTime: js.UndefOr[BusinessReportDeliveryTime] = js.undefined,
         DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
@@ -870,6 +902,7 @@ package alexaforbusiness {
   }
 
   object BusinessReportContentRange {
+    @inline
     def apply(
         Interval: js.UndefOr[BusinessReportInterval] = js.undefined
     ): BusinessReportContentRange = {
@@ -910,6 +943,7 @@ package alexaforbusiness {
   }
 
   object BusinessReportRecurrence {
+    @inline
     def apply(
         StartDate: js.UndefOr[Date] = js.undefined
     ): BusinessReportRecurrence = {
@@ -929,6 +963,7 @@ package alexaforbusiness {
   }
 
   object BusinessReportS3Location {
+    @inline
     def apply(
         BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
         Path: js.UndefOr[BusinessReportS3Path] = js.undefined
@@ -956,6 +991,7 @@ package alexaforbusiness {
   }
 
   object BusinessReportSchedule {
+    @inline
     def apply(
         ContentRange: js.UndefOr[BusinessReportContentRange] = js.undefined,
         Format: js.UndefOr[BusinessReportFormat] = js.undefined,
@@ -997,6 +1033,7 @@ package alexaforbusiness {
   }
 
   object Category {
+    @inline
     def apply(
         CategoryId: js.UndefOr[CategoryId] = js.undefined,
         CategoryName: js.UndefOr[CategoryName] = js.undefined
@@ -1025,6 +1062,7 @@ package alexaforbusiness {
   }
 
   object ConferencePreference {
+    @inline
     def apply(
         DefaultConferenceProviderArn: js.UndefOr[Arn] = js.undefined
     ): ConferencePreference = {
@@ -1050,6 +1088,7 @@ package alexaforbusiness {
   }
 
   object ConferenceProvider {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
@@ -1108,6 +1147,7 @@ package alexaforbusiness {
   }
 
   object Contact {
+    @inline
     def apply(
         ContactArn: js.UndefOr[Arn] = js.undefined,
         DisplayName: js.UndefOr[ContactName] = js.undefined,
@@ -1144,6 +1184,7 @@ package alexaforbusiness {
   }
 
   object ContactData {
+    @inline
     def apply(
         ContactArn: js.UndefOr[Arn] = js.undefined,
         DisplayName: js.UndefOr[ContactName] = js.undefined,
@@ -1176,6 +1217,7 @@ package alexaforbusiness {
   }
 
   object Content {
+    @inline
     def apply(
         AudioList: js.UndefOr[AudioList] = js.undefined,
         SsmlList: js.UndefOr[SsmlList] = js.undefined,
@@ -1197,6 +1239,7 @@ package alexaforbusiness {
   }
 
   object CreateAddressBookRequest {
+    @inline
     def apply(
         Name: AddressBookName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1218,6 +1261,7 @@ package alexaforbusiness {
   }
 
   object CreateAddressBookResponse {
+    @inline
     def apply(
         AddressBookArn: js.UndefOr[Arn] = js.undefined
     ): CreateAddressBookResponse = {
@@ -1239,6 +1283,7 @@ package alexaforbusiness {
   }
 
   object CreateBusinessReportScheduleRequest {
+    @inline
     def apply(
         ContentRange: BusinessReportContentRange,
         Format: BusinessReportFormat,
@@ -1268,6 +1313,7 @@ package alexaforbusiness {
   }
 
   object CreateBusinessReportScheduleResponse {
+    @inline
     def apply(
         ScheduleArn: js.UndefOr[Arn] = js.undefined
     ): CreateBusinessReportScheduleResponse = {
@@ -1288,6 +1334,7 @@ package alexaforbusiness {
   }
 
   object CreateConferenceProviderRequest {
+    @inline
     def apply(
         ConferenceProviderName: ConferenceProviderName,
         ConferenceProviderType: ConferenceProviderType,
@@ -1315,6 +1362,7 @@ package alexaforbusiness {
   }
 
   object CreateConferenceProviderResponse {
+    @inline
     def apply(
         ConferenceProviderArn: js.UndefOr[Arn] = js.undefined
     ): CreateConferenceProviderResponse = {
@@ -1336,6 +1384,7 @@ package alexaforbusiness {
   }
 
   object CreateContactRequest {
+    @inline
     def apply(
         FirstName: ContactName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1365,6 +1414,7 @@ package alexaforbusiness {
   }
 
   object CreateContactResponse {
+    @inline
     def apply(
         ContactArn: js.UndefOr[Arn] = js.undefined
     ): CreateContactResponse = {
@@ -1382,6 +1432,7 @@ package alexaforbusiness {
   }
 
   object CreateGatewayGroupRequest {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestToken,
         Name: GatewayGroupName,
@@ -1403,6 +1454,7 @@ package alexaforbusiness {
   }
 
   object CreateGatewayGroupResponse {
+    @inline
     def apply(
         GatewayGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateGatewayGroupResponse = {
@@ -1427,6 +1479,7 @@ package alexaforbusiness {
   }
 
   object CreateNetworkProfileRequest {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestToken,
         NetworkProfileName: NetworkProfileName,
@@ -1462,6 +1515,7 @@ package alexaforbusiness {
   }
 
   object CreateNetworkProfileResponse {
+    @inline
     def apply(
         NetworkProfileArn: js.UndefOr[Arn] = js.undefined
     ): CreateNetworkProfileResponse = {
@@ -1487,6 +1541,7 @@ package alexaforbusiness {
   }
 
   object CreateProfileRequest {
+    @inline
     def apply(
         Address: Address,
         DistanceUnit: DistanceUnit,
@@ -1524,6 +1579,7 @@ package alexaforbusiness {
   }
 
   object CreateProfileResponse {
+    @inline
     def apply(
         ProfileArn: js.UndefOr[Arn] = js.undefined
     ): CreateProfileResponse = {
@@ -1544,6 +1600,7 @@ package alexaforbusiness {
   }
 
   object CreateRoomRequest {
+    @inline
     def apply(
         RoomName: RoomName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1571,6 +1628,7 @@ package alexaforbusiness {
   }
 
   object CreateRoomResponse {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined
     ): CreateRoomResponse = {
@@ -1588,6 +1646,7 @@ package alexaforbusiness {
   }
 
   object CreateSkillGroupRequest {
+    @inline
     def apply(
         SkillGroupName: SkillGroupName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1609,6 +1668,7 @@ package alexaforbusiness {
   }
 
   object CreateSkillGroupResponse {
+    @inline
     def apply(
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateSkillGroupResponse = {
@@ -1629,6 +1689,7 @@ package alexaforbusiness {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         UserId: user_UserId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1656,6 +1717,7 @@ package alexaforbusiness {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         UserArn: js.UndefOr[Arn] = js.undefined
     ): CreateUserResponse = {
@@ -1671,6 +1733,7 @@ package alexaforbusiness {
   }
 
   object DeleteAddressBookRequest {
+    @inline
     def apply(
         AddressBookArn: Arn
     ): DeleteAddressBookRequest = {
@@ -1686,6 +1749,7 @@ package alexaforbusiness {
   trait DeleteAddressBookResponse extends js.Object {}
 
   object DeleteAddressBookResponse {
+    @inline
     def apply(
         ): DeleteAddressBookResponse = {
       val __obj = js.Dynamic.literal()
@@ -1700,6 +1764,7 @@ package alexaforbusiness {
   }
 
   object DeleteBusinessReportScheduleRequest {
+    @inline
     def apply(
         ScheduleArn: Arn
     ): DeleteBusinessReportScheduleRequest = {
@@ -1715,6 +1780,7 @@ package alexaforbusiness {
   trait DeleteBusinessReportScheduleResponse extends js.Object {}
 
   object DeleteBusinessReportScheduleResponse {
+    @inline
     def apply(
         ): DeleteBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -1729,6 +1795,7 @@ package alexaforbusiness {
   }
 
   object DeleteConferenceProviderRequest {
+    @inline
     def apply(
         ConferenceProviderArn: Arn
     ): DeleteConferenceProviderRequest = {
@@ -1744,6 +1811,7 @@ package alexaforbusiness {
   trait DeleteConferenceProviderResponse extends js.Object {}
 
   object DeleteConferenceProviderResponse {
+    @inline
     def apply(
         ): DeleteConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
@@ -1758,6 +1826,7 @@ package alexaforbusiness {
   }
 
   object DeleteContactRequest {
+    @inline
     def apply(
         ContactArn: Arn
     ): DeleteContactRequest = {
@@ -1773,6 +1842,7 @@ package alexaforbusiness {
   trait DeleteContactResponse extends js.Object {}
 
   object DeleteContactResponse {
+    @inline
     def apply(
         ): DeleteContactResponse = {
       val __obj = js.Dynamic.literal()
@@ -1787,6 +1857,7 @@ package alexaforbusiness {
   }
 
   object DeleteDeviceRequest {
+    @inline
     def apply(
         DeviceArn: Arn
     ): DeleteDeviceRequest = {
@@ -1802,6 +1873,7 @@ package alexaforbusiness {
   trait DeleteDeviceResponse extends js.Object {}
 
   object DeleteDeviceResponse {
+    @inline
     def apply(
         ): DeleteDeviceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1817,6 +1889,7 @@ package alexaforbusiness {
   }
 
   object DeleteDeviceUsageDataRequest {
+    @inline
     def apply(
         DeviceArn: Arn,
         DeviceUsageType: DeviceUsageType
@@ -1834,6 +1907,7 @@ package alexaforbusiness {
   trait DeleteDeviceUsageDataResponse extends js.Object {}
 
   object DeleteDeviceUsageDataResponse {
+    @inline
     def apply(
         ): DeleteDeviceUsageDataResponse = {
       val __obj = js.Dynamic.literal()
@@ -1848,6 +1922,7 @@ package alexaforbusiness {
   }
 
   object DeleteGatewayGroupRequest {
+    @inline
     def apply(
         GatewayGroupArn: Arn
     ): DeleteGatewayGroupRequest = {
@@ -1863,6 +1938,7 @@ package alexaforbusiness {
   trait DeleteGatewayGroupResponse extends js.Object {}
 
   object DeleteGatewayGroupResponse {
+    @inline
     def apply(
         ): DeleteGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1877,6 +1953,7 @@ package alexaforbusiness {
   }
 
   object DeleteNetworkProfileRequest {
+    @inline
     def apply(
         NetworkProfileArn: Arn
     ): DeleteNetworkProfileRequest = {
@@ -1892,6 +1969,7 @@ package alexaforbusiness {
   trait DeleteNetworkProfileResponse extends js.Object {}
 
   object DeleteNetworkProfileResponse {
+    @inline
     def apply(
         ): DeleteNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -1906,6 +1984,7 @@ package alexaforbusiness {
   }
 
   object DeleteProfileRequest {
+    @inline
     def apply(
         ProfileArn: js.UndefOr[Arn] = js.undefined
     ): DeleteProfileRequest = {
@@ -1919,6 +1998,7 @@ package alexaforbusiness {
   trait DeleteProfileResponse extends js.Object {}
 
   object DeleteProfileResponse {
+    @inline
     def apply(
         ): DeleteProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -1933,6 +2013,7 @@ package alexaforbusiness {
   }
 
   object DeleteRoomRequest {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined
     ): DeleteRoomRequest = {
@@ -1946,6 +2027,7 @@ package alexaforbusiness {
   trait DeleteRoomResponse extends js.Object {}
 
   object DeleteRoomResponse {
+    @inline
     def apply(
         ): DeleteRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -1962,6 +2044,7 @@ package alexaforbusiness {
   }
 
   object DeleteRoomSkillParameterRequest {
+    @inline
     def apply(
         ParameterKey: RoomSkillParameterKey,
         SkillId: SkillId,
@@ -1981,6 +2064,7 @@ package alexaforbusiness {
   trait DeleteRoomSkillParameterResponse extends js.Object {}
 
   object DeleteRoomSkillParameterResponse {
+    @inline
     def apply(
         ): DeleteRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
@@ -1996,6 +2080,7 @@ package alexaforbusiness {
   }
 
   object DeleteSkillAuthorizationRequest {
+    @inline
     def apply(
         SkillId: SkillId,
         RoomArn: js.UndefOr[Arn] = js.undefined
@@ -2013,6 +2098,7 @@ package alexaforbusiness {
   trait DeleteSkillAuthorizationResponse extends js.Object {}
 
   object DeleteSkillAuthorizationResponse {
+    @inline
     def apply(
         ): DeleteSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
@@ -2027,6 +2113,7 @@ package alexaforbusiness {
   }
 
   object DeleteSkillGroupRequest {
+    @inline
     def apply(
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
     ): DeleteSkillGroupRequest = {
@@ -2040,6 +2127,7 @@ package alexaforbusiness {
   trait DeleteSkillGroupResponse extends js.Object {}
 
   object DeleteSkillGroupResponse {
+    @inline
     def apply(
         ): DeleteSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -2055,6 +2143,7 @@ package alexaforbusiness {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         EnrollmentId: EnrollmentId,
         UserArn: js.UndefOr[Arn] = js.undefined
@@ -2072,6 +2161,7 @@ package alexaforbusiness {
   trait DeleteUserResponse extends js.Object {}
 
   object DeleteUserResponse {
+    @inline
     def apply(
         ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -2092,6 +2182,7 @@ package alexaforbusiness {
   }
 
   object DeveloperInfo {
+    @inline
     def apply(
         DeveloperName: js.UndefOr[DeveloperName] = js.undefined,
         Email: js.UndefOr[Email] = js.undefined,
@@ -2125,6 +2216,7 @@ package alexaforbusiness {
   }
 
   object Device {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined,
         DeviceName: js.UndefOr[DeviceName] = js.undefined,
@@ -2172,6 +2264,7 @@ package alexaforbusiness {
   }
 
   object DeviceData {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined,
         DeviceName: js.UndefOr[DeviceName] = js.undefined,
@@ -2214,6 +2307,7 @@ package alexaforbusiness {
   }
 
   object DeviceEvent {
+    @inline
     def apply(
         Timestamp: js.UndefOr[DeviceEventTime] = js.undefined,
         Type: js.UndefOr[DeviceEventType] = js.undefined,
@@ -2245,6 +2339,7 @@ package alexaforbusiness {
   }
 
   object DeviceNetworkProfileInfo {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined,
         CertificateExpirationTime: js.UndefOr[CertificateTime] = js.undefined,
@@ -2280,6 +2375,7 @@ package alexaforbusiness {
   }
 
   object DeviceStatusDetail {
+    @inline
     def apply(
         Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined,
         Feature: js.UndefOr[Feature] = js.undefined
@@ -2339,6 +2435,7 @@ package alexaforbusiness {
   }
 
   object DeviceStatusInfo {
+    @inline
     def apply(
         ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
         DeviceStatusDetails: js.UndefOr[DeviceStatusDetails] = js.undefined
@@ -2363,6 +2460,7 @@ package alexaforbusiness {
   }
 
   object DisassociateContactFromAddressBookRequest {
+    @inline
     def apply(
         AddressBookArn: Arn,
         ContactArn: Arn
@@ -2380,6 +2478,7 @@ package alexaforbusiness {
   trait DisassociateContactFromAddressBookResponse extends js.Object {}
 
   object DisassociateContactFromAddressBookResponse {
+    @inline
     def apply(
         ): DisassociateContactFromAddressBookResponse = {
       val __obj = js.Dynamic.literal()
@@ -2394,6 +2493,7 @@ package alexaforbusiness {
   }
 
   object DisassociateDeviceFromRoomRequest {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined
     ): DisassociateDeviceFromRoomRequest = {
@@ -2407,6 +2507,7 @@ package alexaforbusiness {
   trait DisassociateDeviceFromRoomResponse extends js.Object {}
 
   object DisassociateDeviceFromRoomResponse {
+    @inline
     def apply(
         ): DisassociateDeviceFromRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -2422,6 +2523,7 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillFromSkillGroupRequest {
+    @inline
     def apply(
         SkillId: SkillId,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
@@ -2439,6 +2541,7 @@ package alexaforbusiness {
   trait DisassociateSkillFromSkillGroupResponse extends js.Object {}
 
   object DisassociateSkillFromSkillGroupResponse {
+    @inline
     def apply(
         ): DisassociateSkillFromSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -2453,6 +2556,7 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillFromUsersRequest {
+    @inline
     def apply(
         SkillId: SkillId
     ): DisassociateSkillFromUsersRequest = {
@@ -2468,6 +2572,7 @@ package alexaforbusiness {
   trait DisassociateSkillFromUsersResponse extends js.Object {}
 
   object DisassociateSkillFromUsersResponse {
+    @inline
     def apply(
         ): DisassociateSkillFromUsersResponse = {
       val __obj = js.Dynamic.literal()
@@ -2483,6 +2588,7 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillGroupFromRoomRequest {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
@@ -2498,6 +2604,7 @@ package alexaforbusiness {
   trait DisassociateSkillGroupFromRoomResponse extends js.Object {}
 
   object DisassociateSkillGroupFromRoomResponse {
+    @inline
     def apply(
         ): DisassociateSkillGroupFromRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -2561,6 +2668,7 @@ package alexaforbusiness {
   }
 
   object Filter {
+    @inline
     def apply(
         Key: FilterKey,
         Values: FilterValueList
@@ -2580,6 +2688,7 @@ package alexaforbusiness {
   }
 
   object ForgetSmartHomeAppliancesRequest {
+    @inline
     def apply(
         RoomArn: Arn
     ): ForgetSmartHomeAppliancesRequest = {
@@ -2595,6 +2704,7 @@ package alexaforbusiness {
   trait ForgetSmartHomeAppliancesResponse extends js.Object {}
 
   object ForgetSmartHomeAppliancesResponse {
+    @inline
     def apply(
         ): ForgetSmartHomeAppliancesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2616,6 +2726,7 @@ package alexaforbusiness {
   }
 
   object Gateway {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[GatewayDescription] = js.undefined,
@@ -2644,6 +2755,7 @@ package alexaforbusiness {
   }
 
   object GatewayGroup {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
@@ -2668,6 +2780,7 @@ package alexaforbusiness {
   }
 
   object GatewayGroupSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
@@ -2694,6 +2807,7 @@ package alexaforbusiness {
   }
 
   object GatewaySummary {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[GatewayDescription] = js.undefined,
@@ -2717,6 +2831,7 @@ package alexaforbusiness {
   }
 
   object GetAddressBookRequest {
+    @inline
     def apply(
         AddressBookArn: Arn
     ): GetAddressBookRequest = {
@@ -2734,6 +2849,7 @@ package alexaforbusiness {
   }
 
   object GetAddressBookResponse {
+    @inline
     def apply(
         AddressBook: js.UndefOr[AddressBook] = js.undefined
     ): GetAddressBookResponse = {
@@ -2747,6 +2863,7 @@ package alexaforbusiness {
   trait GetConferencePreferenceRequest extends js.Object {}
 
   object GetConferencePreferenceRequest {
+    @inline
     def apply(
         ): GetConferencePreferenceRequest = {
       val __obj = js.Dynamic.literal()
@@ -2761,6 +2878,7 @@ package alexaforbusiness {
   }
 
   object GetConferencePreferenceResponse {
+    @inline
     def apply(
         Preference: js.UndefOr[ConferencePreference] = js.undefined
     ): GetConferencePreferenceResponse = {
@@ -2776,6 +2894,7 @@ package alexaforbusiness {
   }
 
   object GetConferenceProviderRequest {
+    @inline
     def apply(
         ConferenceProviderArn: Arn
     ): GetConferenceProviderRequest = {
@@ -2793,6 +2912,7 @@ package alexaforbusiness {
   }
 
   object GetConferenceProviderResponse {
+    @inline
     def apply(
         ConferenceProvider: js.UndefOr[ConferenceProvider] = js.undefined
     ): GetConferenceProviderResponse = {
@@ -2808,6 +2928,7 @@ package alexaforbusiness {
   }
 
   object GetContactRequest {
+    @inline
     def apply(
         ContactArn: Arn
     ): GetContactRequest = {
@@ -2825,6 +2946,7 @@ package alexaforbusiness {
   }
 
   object GetContactResponse {
+    @inline
     def apply(
         Contact: js.UndefOr[Contact] = js.undefined
     ): GetContactResponse = {
@@ -2840,6 +2962,7 @@ package alexaforbusiness {
   }
 
   object GetDeviceRequest {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined
     ): GetDeviceRequest = {
@@ -2855,6 +2978,7 @@ package alexaforbusiness {
   }
 
   object GetDeviceResponse {
+    @inline
     def apply(
         Device: js.UndefOr[Device] = js.undefined
     ): GetDeviceResponse = {
@@ -2870,6 +2994,7 @@ package alexaforbusiness {
   }
 
   object GetGatewayGroupRequest {
+    @inline
     def apply(
         GatewayGroupArn: Arn
     ): GetGatewayGroupRequest = {
@@ -2887,6 +3012,7 @@ package alexaforbusiness {
   }
 
   object GetGatewayGroupResponse {
+    @inline
     def apply(
         GatewayGroup: js.UndefOr[GatewayGroup] = js.undefined
     ): GetGatewayGroupResponse = {
@@ -2902,6 +3028,7 @@ package alexaforbusiness {
   }
 
   object GetGatewayRequest {
+    @inline
     def apply(
         GatewayArn: Arn
     ): GetGatewayRequest = {
@@ -2919,6 +3046,7 @@ package alexaforbusiness {
   }
 
   object GetGatewayResponse {
+    @inline
     def apply(
         Gateway: js.UndefOr[Gateway] = js.undefined
     ): GetGatewayResponse = {
@@ -2932,6 +3060,7 @@ package alexaforbusiness {
   trait GetInvitationConfigurationRequest extends js.Object {}
 
   object GetInvitationConfigurationRequest {
+    @inline
     def apply(
         ): GetInvitationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
@@ -2948,6 +3077,7 @@ package alexaforbusiness {
   }
 
   object GetInvitationConfigurationResponse {
+    @inline
     def apply(
         ContactEmail: js.UndefOr[Email] = js.undefined,
         OrganizationName: js.UndefOr[OrganizationName] = js.undefined,
@@ -2967,6 +3097,7 @@ package alexaforbusiness {
   }
 
   object GetNetworkProfileRequest {
+    @inline
     def apply(
         NetworkProfileArn: Arn
     ): GetNetworkProfileRequest = {
@@ -2984,6 +3115,7 @@ package alexaforbusiness {
   }
 
   object GetNetworkProfileResponse {
+    @inline
     def apply(
         NetworkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): GetNetworkProfileResponse = {
@@ -2999,6 +3131,7 @@ package alexaforbusiness {
   }
 
   object GetProfileRequest {
+    @inline
     def apply(
         ProfileArn: js.UndefOr[Arn] = js.undefined
     ): GetProfileRequest = {
@@ -3014,6 +3147,7 @@ package alexaforbusiness {
   }
 
   object GetProfileResponse {
+    @inline
     def apply(
         Profile: js.UndefOr[Profile] = js.undefined
     ): GetProfileResponse = {
@@ -3029,6 +3163,7 @@ package alexaforbusiness {
   }
 
   object GetRoomRequest {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined
     ): GetRoomRequest = {
@@ -3044,6 +3179,7 @@ package alexaforbusiness {
   }
 
   object GetRoomResponse {
+    @inline
     def apply(
         Room: js.UndefOr[Room] = js.undefined
     ): GetRoomResponse = {
@@ -3061,6 +3197,7 @@ package alexaforbusiness {
   }
 
   object GetRoomSkillParameterRequest {
+    @inline
     def apply(
         ParameterKey: RoomSkillParameterKey,
         SkillId: SkillId,
@@ -3082,6 +3219,7 @@ package alexaforbusiness {
   }
 
   object GetRoomSkillParameterResponse {
+    @inline
     def apply(
         RoomSkillParameter: js.UndefOr[RoomSkillParameter] = js.undefined
     ): GetRoomSkillParameterResponse = {
@@ -3097,6 +3235,7 @@ package alexaforbusiness {
   }
 
   object GetSkillGroupRequest {
+    @inline
     def apply(
         SkillGroupArn: js.UndefOr[Arn] = js.undefined
     ): GetSkillGroupRequest = {
@@ -3112,6 +3251,7 @@ package alexaforbusiness {
   }
 
   object GetSkillGroupResponse {
+    @inline
     def apply(
         SkillGroup: js.UndefOr[SkillGroup] = js.undefined
     ): GetSkillGroupResponse = {
@@ -3131,6 +3271,7 @@ package alexaforbusiness {
   }
 
   object IPDialIn {
+    @inline
     def apply(
         CommsProtocol: CommsProtocol,
         Endpoint: Endpoint
@@ -3151,6 +3292,7 @@ package alexaforbusiness {
   }
 
   object ListBusinessReportSchedulesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3169,6 +3311,7 @@ package alexaforbusiness {
   }
 
   object ListBusinessReportSchedulesResponse {
+    @inline
     def apply(
         BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3187,6 +3330,7 @@ package alexaforbusiness {
   }
 
   object ListConferenceProvidersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3205,6 +3349,7 @@ package alexaforbusiness {
   }
 
   object ListConferenceProvidersResponse {
+    @inline
     def apply(
         ConferenceProviders: js.UndefOr[ConferenceProvidersList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3225,6 +3370,7 @@ package alexaforbusiness {
   }
 
   object ListDeviceEventsRequest {
+    @inline
     def apply(
         DeviceArn: Arn,
         EventType: js.UndefOr[DeviceEventType] = js.undefined,
@@ -3249,6 +3395,7 @@ package alexaforbusiness {
   }
 
   object ListDeviceEventsResponse {
+    @inline
     def apply(
         DeviceEvents: js.UndefOr[DeviceEventList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3267,6 +3414,7 @@ package alexaforbusiness {
   }
 
   object ListGatewayGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3285,6 +3433,7 @@ package alexaforbusiness {
   }
 
   object ListGatewayGroupsResponse {
+    @inline
     def apply(
         GatewayGroups: js.UndefOr[GatewayGroupSummaries] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3304,6 +3453,7 @@ package alexaforbusiness {
   }
 
   object ListGatewaysRequest {
+    @inline
     def apply(
         GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3324,6 +3474,7 @@ package alexaforbusiness {
   }
 
   object ListGatewaysResponse {
+    @inline
     def apply(
         Gateways: js.UndefOr[GatewaySummaries] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3345,6 +3496,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsRequest {
+    @inline
     def apply(
         EnablementType: js.UndefOr[EnablementTypeFilter] = js.undefined,
         MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
@@ -3369,6 +3521,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SkillSummaries: js.UndefOr[SkillSummaryList] = js.undefined
@@ -3387,6 +3540,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreCategoriesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3405,6 +3559,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreCategoriesResponse {
+    @inline
     def apply(
         CategoryList: js.UndefOr[CategoryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3424,6 +3579,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreSkillsByCategoryRequest {
+    @inline
     def apply(
         CategoryId: CategoryId,
         MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
@@ -3446,6 +3602,7 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreSkillsByCategoryResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SkillsStoreSkills: js.UndefOr[SkillsStoreSkillList] = js.undefined
@@ -3465,6 +3622,7 @@ package alexaforbusiness {
   }
 
   object ListSmartHomeAppliancesRequest {
+    @inline
     def apply(
         RoomArn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3487,6 +3645,7 @@ package alexaforbusiness {
   }
 
   object ListSmartHomeAppliancesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SmartHomeAppliances: js.UndefOr[SmartHomeApplianceList] = js.undefined
@@ -3506,6 +3665,7 @@ package alexaforbusiness {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         Arn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -3528,6 +3688,7 @@ package alexaforbusiness {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -3557,6 +3718,7 @@ package alexaforbusiness {
   }
 
   object MeetingSetting {
+    @inline
     def apply(
         RequirePin: RequirePin
     ): MeetingSetting = {
@@ -3592,6 +3754,7 @@ package alexaforbusiness {
   }
 
   object NetworkProfile {
+    @inline
     def apply(
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
         CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
@@ -3634,6 +3797,7 @@ package alexaforbusiness {
   }
 
   object NetworkProfileData {
+    @inline
     def apply(
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
@@ -3677,6 +3841,7 @@ package alexaforbusiness {
   }
 
   object PSTNDialIn {
+    @inline
     def apply(
         CountryCode: CountryCode,
         OneClickIdDelay: OneClickIdDelay,
@@ -3704,6 +3869,7 @@ package alexaforbusiness {
   }
 
   object PhoneNumber {
+    @inline
     def apply(
         Number: RawPhoneNumber,
         Type: PhoneNumberType
@@ -3746,6 +3912,7 @@ package alexaforbusiness {
   }
 
   object Profile {
+    @inline
     def apply(
         Address: js.UndefOr[Address] = js.undefined,
         AddressBookArn: js.UndefOr[Arn] = js.undefined,
@@ -3796,6 +3963,7 @@ package alexaforbusiness {
   }
 
   object ProfileData {
+    @inline
     def apply(
         Address: js.UndefOr[Address] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
@@ -3827,6 +3995,7 @@ package alexaforbusiness {
   }
 
   object PutConferencePreferenceRequest {
+    @inline
     def apply(
         ConferencePreference: ConferencePreference
     ): PutConferencePreferenceRequest = {
@@ -3842,6 +4011,7 @@ package alexaforbusiness {
   trait PutConferencePreferenceResponse extends js.Object {}
 
   object PutConferencePreferenceResponse {
+    @inline
     def apply(
         ): PutConferencePreferenceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3858,6 +4028,7 @@ package alexaforbusiness {
   }
 
   object PutInvitationConfigurationRequest {
+    @inline
     def apply(
         OrganizationName: OrganizationName,
         ContactEmail: js.UndefOr[Email] = js.undefined,
@@ -3877,6 +4048,7 @@ package alexaforbusiness {
   trait PutInvitationConfigurationResponse extends js.Object {}
 
   object PutInvitationConfigurationResponse {
+    @inline
     def apply(
         ): PutInvitationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -3893,6 +4065,7 @@ package alexaforbusiness {
   }
 
   object PutRoomSkillParameterRequest {
+    @inline
     def apply(
         RoomSkillParameter: RoomSkillParameter,
         SkillId: SkillId,
@@ -3912,6 +4085,7 @@ package alexaforbusiness {
   trait PutRoomSkillParameterResponse extends js.Object {}
 
   object PutRoomSkillParameterResponse {
+    @inline
     def apply(
         ): PutRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
@@ -3928,6 +4102,7 @@ package alexaforbusiness {
   }
 
   object PutSkillAuthorizationRequest {
+    @inline
     def apply(
         AuthorizationResult: AuthorizationResult,
         SkillId: SkillId,
@@ -3947,6 +4122,7 @@ package alexaforbusiness {
   trait PutSkillAuthorizationResponse extends js.Object {}
 
   object PutSkillAuthorizationResponse {
+    @inline
     def apply(
         ): PutSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
@@ -3965,6 +4141,7 @@ package alexaforbusiness {
   }
 
   object RegisterAVSDeviceRequest {
+    @inline
     def apply(
         AmazonId: AmazonId,
         ClientId: ClientId,
@@ -3990,6 +4167,7 @@ package alexaforbusiness {
   }
 
   object RegisterAVSDeviceResponse {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined
     ): RegisterAVSDeviceResponse = {
@@ -4005,6 +4183,7 @@ package alexaforbusiness {
   }
 
   object RejectSkillRequest {
+    @inline
     def apply(
         SkillId: SkillId
     ): RejectSkillRequest = {
@@ -4020,6 +4199,7 @@ package alexaforbusiness {
   trait RejectSkillResponse extends js.Object {}
 
   object RejectSkillResponse {
+    @inline
     def apply(
         ): RejectSkillResponse = {
       val __obj = js.Dynamic.literal()
@@ -4043,6 +4223,7 @@ package alexaforbusiness {
   }
 
   object ResolveRoomRequest {
+    @inline
     def apply(
         SkillId: SkillId,
         UserId: UserId
@@ -4064,6 +4245,7 @@ package alexaforbusiness {
   }
 
   object ResolveRoomResponse {
+    @inline
     def apply(
         RoomArn: js.UndefOr[Arn] = js.undefined,
         RoomName: js.UndefOr[RoomName] = js.undefined,
@@ -4084,6 +4266,7 @@ package alexaforbusiness {
   }
 
   object RevokeInvitationRequest {
+    @inline
     def apply(
         EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
         UserArn: js.UndefOr[Arn] = js.undefined
@@ -4099,6 +4282,7 @@ package alexaforbusiness {
   trait RevokeInvitationResponse extends js.Object {}
 
   object RevokeInvitationResponse {
+    @inline
     def apply(
         ): RevokeInvitationResponse = {
       val __obj = js.Dynamic.literal()
@@ -4120,6 +4304,7 @@ package alexaforbusiness {
   }
 
   object Room {
+    @inline
     def apply(
         Description: js.UndefOr[RoomDescription] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
@@ -4151,6 +4336,7 @@ package alexaforbusiness {
   }
 
   object RoomData {
+    @inline
     def apply(
         Description: js.UndefOr[RoomDescription] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
@@ -4180,6 +4366,7 @@ package alexaforbusiness {
   }
 
   object RoomSkillParameter {
+    @inline
     def apply(
         ParameterKey: RoomSkillParameterKey,
         ParameterValue: RoomSkillParameterValue
@@ -4202,6 +4389,7 @@ package alexaforbusiness {
   }
 
   object SearchAddressBooksRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4225,6 +4413,7 @@ package alexaforbusiness {
   }
 
   object SearchAddressBooksResponse {
+    @inline
     def apply(
         AddressBooks: js.UndefOr[AddressBookDataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -4247,6 +4436,7 @@ package alexaforbusiness {
   }
 
   object SearchContactsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4270,6 +4460,7 @@ package alexaforbusiness {
   }
 
   object SearchContactsResponse {
+    @inline
     def apply(
         Contacts: js.UndefOr[ContactDataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -4292,6 +4483,7 @@ package alexaforbusiness {
   }
 
   object SearchDevicesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4315,6 +4507,7 @@ package alexaforbusiness {
   }
 
   object SearchDevicesResponse {
+    @inline
     def apply(
         Devices: js.UndefOr[DeviceDataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -4337,6 +4530,7 @@ package alexaforbusiness {
   }
 
   object SearchNetworkProfilesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4360,6 +4554,7 @@ package alexaforbusiness {
   }
 
   object SearchNetworkProfilesResponse {
+    @inline
     def apply(
         NetworkProfiles: js.UndefOr[NetworkProfileDataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -4382,6 +4577,7 @@ package alexaforbusiness {
   }
 
   object SearchProfilesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4405,6 +4601,7 @@ package alexaforbusiness {
   }
 
   object SearchProfilesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Profiles: js.UndefOr[ProfileDataList] = js.undefined,
@@ -4427,6 +4624,7 @@ package alexaforbusiness {
   }
 
   object SearchRoomsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4450,6 +4648,7 @@ package alexaforbusiness {
   }
 
   object SearchRoomsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Rooms: js.UndefOr[RoomDataList] = js.undefined,
@@ -4472,6 +4671,7 @@ package alexaforbusiness {
   }
 
   object SearchSkillGroupsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4495,6 +4695,7 @@ package alexaforbusiness {
   }
 
   object SearchSkillGroupsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SkillGroups: js.UndefOr[SkillGroupDataList] = js.undefined,
@@ -4517,6 +4718,7 @@ package alexaforbusiness {
   }
 
   object SearchUsersRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -4540,6 +4742,7 @@ package alexaforbusiness {
   }
 
   object SearchUsersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TotalCount: js.UndefOr[TotalCount] = js.undefined,
@@ -4562,6 +4765,7 @@ package alexaforbusiness {
   }
 
   object SendAnnouncementRequest {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestToken,
         Content: Content,
@@ -4585,6 +4789,7 @@ package alexaforbusiness {
   }
 
   object SendAnnouncementResponse {
+    @inline
     def apply(
         AnnouncementArn: js.UndefOr[Arn] = js.undefined
     ): SendAnnouncementResponse = {
@@ -4600,6 +4805,7 @@ package alexaforbusiness {
   }
 
   object SendInvitationRequest {
+    @inline
     def apply(
         UserArn: js.UndefOr[Arn] = js.undefined
     ): SendInvitationRequest = {
@@ -4613,6 +4819,7 @@ package alexaforbusiness {
   trait SendInvitationResponse extends js.Object {}
 
   object SendInvitationResponse {
+    @inline
     def apply(
         ): SendInvitationResponse = {
       val __obj = js.Dynamic.literal()
@@ -4631,6 +4838,7 @@ package alexaforbusiness {
   }
 
   object SipAddress {
+    @inline
     def apply(
         Type: SipType,
         Uri: SipUri
@@ -4668,6 +4876,7 @@ package alexaforbusiness {
   }
 
   object SkillDetails {
+    @inline
     def apply(
         BulletPoints: js.UndefOr[BulletPoints] = js.undefined,
         DeveloperInfo: js.UndefOr[DeveloperInfo] = js.undefined,
@@ -4708,6 +4917,7 @@ package alexaforbusiness {
   }
 
   object SkillGroup {
+    @inline
     def apply(
         Description: js.UndefOr[SkillGroupDescription] = js.undefined,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -4732,6 +4942,7 @@ package alexaforbusiness {
   }
 
   object SkillGroupData {
+    @inline
     def apply(
         Description: js.UndefOr[SkillGroupDescription] = js.undefined,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -4758,6 +4969,7 @@ package alexaforbusiness {
   }
 
   object SkillSummary {
+    @inline
     def apply(
         EnablementType: js.UndefOr[EnablementType] = js.undefined,
         SkillId: js.UndefOr[SkillId] = js.undefined,
@@ -4805,6 +5017,7 @@ package alexaforbusiness {
   }
 
   object SkillsStoreSkill {
+    @inline
     def apply(
         IconUrl: js.UndefOr[IconUrl] = js.undefined,
         SampleUtterances: js.UndefOr[SampleUtterances] = js.undefined,
@@ -4837,6 +5050,7 @@ package alexaforbusiness {
   }
 
   object SmartHomeAppliance {
+    @inline
     def apply(
         Description: js.UndefOr[ApplianceDescription] = js.undefined,
         FriendlyName: js.UndefOr[ApplianceFriendlyName] = js.undefined,
@@ -4860,6 +5074,7 @@ package alexaforbusiness {
   }
 
   object Sort {
+    @inline
     def apply(
         Key: SortKey,
         Value: SortValue
@@ -4890,6 +5105,7 @@ package alexaforbusiness {
   }
 
   object Ssml {
+    @inline
     def apply(
         Locale: Locale,
         Value: SsmlValue
@@ -4911,6 +5127,7 @@ package alexaforbusiness {
   }
 
   object StartDeviceSyncRequest {
+    @inline
     def apply(
         Features: Features,
         DeviceArn: js.UndefOr[Arn] = js.undefined,
@@ -4930,6 +5147,7 @@ package alexaforbusiness {
   trait StartDeviceSyncResponse extends js.Object {}
 
   object StartDeviceSyncResponse {
+    @inline
     def apply(
         ): StartDeviceSyncResponse = {
       val __obj = js.Dynamic.literal()
@@ -4944,6 +5162,7 @@ package alexaforbusiness {
   }
 
   object StartSmartHomeApplianceDiscoveryRequest {
+    @inline
     def apply(
         RoomArn: Arn
     ): StartSmartHomeApplianceDiscoveryRequest = {
@@ -4959,6 +5178,7 @@ package alexaforbusiness {
   trait StartSmartHomeApplianceDiscoveryResponse extends js.Object {}
 
   object StartSmartHomeApplianceDiscoveryResponse {
+    @inline
     def apply(
         ): StartSmartHomeApplianceDiscoveryResponse = {
       val __obj = js.Dynamic.literal()
@@ -4977,6 +5197,7 @@ package alexaforbusiness {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -4997,6 +5218,7 @@ package alexaforbusiness {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         Tags: TagList
@@ -5014,6 +5236,7 @@ package alexaforbusiness {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5039,6 +5262,7 @@ package alexaforbusiness {
   }
 
   object Text {
+    @inline
     def apply(
         Locale: Locale,
         Value: TextValue
@@ -5059,6 +5283,7 @@ package alexaforbusiness {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         TagKeys: TagKeyList
@@ -5076,6 +5301,7 @@ package alexaforbusiness {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5092,6 +5318,7 @@ package alexaforbusiness {
   }
 
   object UpdateAddressBookRequest {
+    @inline
     def apply(
         AddressBookArn: Arn,
         Description: js.UndefOr[AddressBookDescription] = js.undefined,
@@ -5111,6 +5338,7 @@ package alexaforbusiness {
   trait UpdateAddressBookResponse extends js.Object {}
 
   object UpdateAddressBookResponse {
+    @inline
     def apply(
         ): UpdateAddressBookResponse = {
       val __obj = js.Dynamic.literal()
@@ -5130,6 +5358,7 @@ package alexaforbusiness {
   }
 
   object UpdateBusinessReportScheduleRequest {
+    @inline
     def apply(
         ScheduleArn: Arn,
         Format: js.UndefOr[BusinessReportFormat] = js.undefined,
@@ -5155,6 +5384,7 @@ package alexaforbusiness {
   trait UpdateBusinessReportScheduleResponse extends js.Object {}
 
   object UpdateBusinessReportScheduleResponse {
+    @inline
     def apply(
         ): UpdateBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -5173,6 +5403,7 @@ package alexaforbusiness {
   }
 
   object UpdateConferenceProviderRequest {
+    @inline
     def apply(
         ConferenceProviderArn: Arn,
         ConferenceProviderType: ConferenceProviderType,
@@ -5196,6 +5427,7 @@ package alexaforbusiness {
   trait UpdateConferenceProviderResponse extends js.Object {}
 
   object UpdateConferenceProviderResponse {
+    @inline
     def apply(
         ): UpdateConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
@@ -5216,6 +5448,7 @@ package alexaforbusiness {
   }
 
   object UpdateContactRequest {
+    @inline
     def apply(
         ContactArn: Arn,
         DisplayName: js.UndefOr[ContactName] = js.undefined,
@@ -5243,6 +5476,7 @@ package alexaforbusiness {
   trait UpdateContactResponse extends js.Object {}
 
   object UpdateContactResponse {
+    @inline
     def apply(
         ): UpdateContactResponse = {
       val __obj = js.Dynamic.literal()
@@ -5258,6 +5492,7 @@ package alexaforbusiness {
   }
 
   object UpdateDeviceRequest {
+    @inline
     def apply(
         DeviceArn: js.UndefOr[Arn] = js.undefined,
         DeviceName: js.UndefOr[DeviceName] = js.undefined
@@ -5273,6 +5508,7 @@ package alexaforbusiness {
   trait UpdateDeviceResponse extends js.Object {}
 
   object UpdateDeviceResponse {
+    @inline
     def apply(
         ): UpdateDeviceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5289,6 +5525,7 @@ package alexaforbusiness {
   }
 
   object UpdateGatewayGroupRequest {
+    @inline
     def apply(
         GatewayGroupArn: Arn,
         Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
@@ -5308,6 +5545,7 @@ package alexaforbusiness {
   trait UpdateGatewayGroupResponse extends js.Object {}
 
   object UpdateGatewayGroupResponse {
+    @inline
     def apply(
         ): UpdateGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -5325,6 +5563,7 @@ package alexaforbusiness {
   }
 
   object UpdateGatewayRequest {
+    @inline
     def apply(
         GatewayArn: Arn,
         Description: js.UndefOr[GatewayDescription] = js.undefined,
@@ -5346,6 +5585,7 @@ package alexaforbusiness {
   trait UpdateGatewayResponse extends js.Object {}
 
   object UpdateGatewayResponse {
+    @inline
     def apply(
         ): UpdateGatewayResponse = {
       val __obj = js.Dynamic.literal()
@@ -5366,6 +5606,7 @@ package alexaforbusiness {
   }
 
   object UpdateNetworkProfileRequest {
+    @inline
     def apply(
         NetworkProfileArn: Arn,
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
@@ -5393,6 +5634,7 @@ package alexaforbusiness {
   trait UpdateNetworkProfileResponse extends js.Object {}
 
   object UpdateNetworkProfileResponse {
+    @inline
     def apply(
         ): UpdateNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -5418,6 +5660,7 @@ package alexaforbusiness {
   }
 
   object UpdateProfileRequest {
+    @inline
     def apply(
         Address: js.UndefOr[Address] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
@@ -5453,6 +5696,7 @@ package alexaforbusiness {
   trait UpdateProfileResponse extends js.Object {}
 
   object UpdateProfileResponse {
+    @inline
     def apply(
         ): UpdateProfileResponse = {
       val __obj = js.Dynamic.literal()
@@ -5471,6 +5715,7 @@ package alexaforbusiness {
   }
 
   object UpdateRoomRequest {
+    @inline
     def apply(
         Description: js.UndefOr[RoomDescription] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
@@ -5492,6 +5737,7 @@ package alexaforbusiness {
   trait UpdateRoomResponse extends js.Object {}
 
   object UpdateRoomResponse {
+    @inline
     def apply(
         ): UpdateRoomResponse = {
       val __obj = js.Dynamic.literal()
@@ -5508,6 +5754,7 @@ package alexaforbusiness {
   }
 
   object UpdateSkillGroupRequest {
+    @inline
     def apply(
         Description: js.UndefOr[SkillGroupDescription] = js.undefined,
         SkillGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -5525,6 +5772,7 @@ package alexaforbusiness {
   trait UpdateSkillGroupResponse extends js.Object {}
 
   object UpdateSkillGroupResponse {
+    @inline
     def apply(
         ): UpdateSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -5547,6 +5795,7 @@ package alexaforbusiness {
   }
 
   object UserData {
+    @inline
     def apply(
         Email: js.UndefOr[Email] = js.undefined,
         EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,

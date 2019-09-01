@@ -70,59 +70,60 @@ package object datasync {
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
-    def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
+    @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
       service.cancelTaskExecution(params).promise.toFuture
-    def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
+    @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
       service.createAgent(params).promise.toFuture
-    def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
+    @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
       service.createLocationEfs(params).promise.toFuture
-    def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
+    @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
       service.createLocationNfs(params).promise.toFuture
-    def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
+    @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
       service.createLocationS3(params).promise.toFuture
-    def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
+    @inline def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
       service.createLocationSmb(params).promise.toFuture
-    def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
+    @inline def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
       service.createTask(params).promise.toFuture
-    def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
+    @inline def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
       service.deleteAgent(params).promise.toFuture
-    def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] =
+    @inline def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] =
       service.deleteLocation(params).promise.toFuture
-    def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] =
+    @inline def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] =
       service.deleteTask(params).promise.toFuture
-    def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] =
+    @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] =
       service.describeAgent(params).promise.toFuture
-    def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
+    @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
       service.describeLocationEfs(params).promise.toFuture
-    def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
+    @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
       service.describeLocationNfs(params).promise.toFuture
-    def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
+    @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
       service.describeLocationS3(params).promise.toFuture
-    def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
+    @inline def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
       service.describeLocationSmb(params).promise.toFuture
-    def describeTaskExecutionFuture(params: DescribeTaskExecutionRequest): Future[DescribeTaskExecutionResponse] =
-      service.describeTaskExecution(params).promise.toFuture
-    def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
+    @inline def describeTaskExecutionFuture(
+        params: DescribeTaskExecutionRequest
+    ): Future[DescribeTaskExecutionResponse] = service.describeTaskExecution(params).promise.toFuture
+    @inline def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
       service.describeTask(params).promise.toFuture
-    def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] =
+    @inline def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] =
       service.listAgents(params).promise.toFuture
-    def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] =
+    @inline def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] =
       service.listLocations(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] =
+    @inline def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] =
       service.listTaskExecutions(params).promise.toFuture
-    def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
+    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
       service.listTasks(params).promise.toFuture
-    def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] =
+    @inline def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] =
       service.startTaskExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] =
+    @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] =
       service.updateAgent(params).promise.toFuture
-    def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] =
+    @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] =
       service.updateTask(params).promise.toFuture
   }
 }
@@ -173,6 +174,7 @@ package datasync {
   }
 
   object AgentListEntry {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
@@ -206,6 +208,7 @@ package datasync {
   }
 
   object CancelTaskExecutionRequest {
+    @inline
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): CancelTaskExecutionRequest = {
@@ -221,6 +224,7 @@ package datasync {
   trait CancelTaskExecutionResponse extends js.Object {}
 
   object CancelTaskExecutionResponse {
+    @inline
     def apply(
         ): CancelTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
@@ -240,6 +244,7 @@ package datasync {
   }
 
   object CreateAgentRequest {
+    @inline
     def apply(
         ActivationKey: ActivationKey,
         AgentName: js.UndefOr[TagValue] = js.undefined,
@@ -267,6 +272,7 @@ package datasync {
   }
 
   object CreateAgentResponse {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined
     ): CreateAgentResponse = {
@@ -285,6 +291,7 @@ package datasync {
   }
 
   object CreateLocationEfsRequest {
+    @inline
     def apply(
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
@@ -311,6 +318,7 @@ package datasync {
   }
 
   object CreateLocationEfsResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationEfsResponse = {
@@ -330,6 +338,7 @@ package datasync {
   }
 
   object CreateLocationNfsRequest {
+    @inline
     def apply(
         OnPremConfig: OnPremConfig,
         ServerHostname: ServerHostname,
@@ -355,6 +364,7 @@ package datasync {
   }
 
   object CreateLocationNfsResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationNfsResponse = {
@@ -373,6 +383,7 @@ package datasync {
   }
 
   object CreateLocationS3Request {
+    @inline
     def apply(
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
@@ -396,6 +407,7 @@ package datasync {
   }
 
   object CreateLocationS3Response {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationS3Response = {
@@ -418,6 +430,7 @@ package datasync {
   }
 
   object CreateLocationSmbRequest {
+    @inline
     def apply(
         AgentArns: AgentArnList,
         Password: SmbPassword,
@@ -449,6 +462,7 @@ package datasync {
   }
 
   object CreateLocationSmbResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationSmbResponse = {
@@ -470,6 +484,7 @@ package datasync {
   }
 
   object CreateTaskRequest {
+    @inline
     def apply(
         DestinationLocationArn: LocationArn,
         SourceLocationArn: LocationArn,
@@ -499,6 +514,7 @@ package datasync {
   }
 
   object CreateTaskResponse {
+    @inline
     def apply(
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): CreateTaskResponse = {
@@ -514,6 +530,7 @@ package datasync {
   }
 
   object DeleteAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn
     ): DeleteAgentRequest = {
@@ -529,6 +546,7 @@ package datasync {
   trait DeleteAgentResponse extends js.Object {}
 
   object DeleteAgentResponse {
+    @inline
     def apply(
         ): DeleteAgentResponse = {
       val __obj = js.Dynamic.literal()
@@ -546,6 +564,7 @@ package datasync {
   }
 
   object DeleteLocationRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DeleteLocationRequest = {
@@ -561,6 +580,7 @@ package datasync {
   trait DeleteLocationResponse extends js.Object {}
 
   object DeleteLocationResponse {
+    @inline
     def apply(
         ): DeleteLocationResponse = {
       val __obj = js.Dynamic.literal()
@@ -578,6 +598,7 @@ package datasync {
   }
 
   object DeleteTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn
     ): DeleteTaskRequest = {
@@ -593,6 +614,7 @@ package datasync {
   trait DeleteTaskResponse extends js.Object {}
 
   object DeleteTaskResponse {
+    @inline
     def apply(
         ): DeleteTaskResponse = {
       val __obj = js.Dynamic.literal()
@@ -610,6 +632,7 @@ package datasync {
   }
 
   object DescribeAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn
     ): DescribeAgentRequest = {
@@ -633,6 +656,7 @@ package datasync {
   }
 
   object DescribeAgentResponse {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -660,6 +684,7 @@ package datasync {
   }
 
   object DescribeLocationEfsRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationEfsRequest = {
@@ -680,6 +705,7 @@ package datasync {
   }
 
   object DescribeLocationEfsResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
@@ -701,6 +727,7 @@ package datasync {
   }
 
   object DescribeLocationNfsRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationNfsRequest = {
@@ -722,6 +749,7 @@ package datasync {
   }
 
   object DescribeLocationNfsResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
@@ -745,6 +773,7 @@ package datasync {
   }
 
   object DescribeLocationS3Request {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationS3Request = {
@@ -765,6 +794,7 @@ package datasync {
   }
 
   object DescribeLocationS3Response {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
@@ -786,6 +816,7 @@ package datasync {
   }
 
   object DescribeLocationSmbRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationSmbRequest = {
@@ -809,6 +840,7 @@ package datasync {
   }
 
   object DescribeLocationSmbResponse {
+    @inline
     def apply(
         AgentArns: js.UndefOr[AgentArnList] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -836,6 +868,7 @@ package datasync {
   }
 
   object DescribeTaskExecutionRequest {
+    @inline
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): DescribeTaskExecutionRequest = {
@@ -864,6 +897,7 @@ package datasync {
   }
 
   object DescribeTaskExecutionResponse {
+    @inline
     def apply(
         BytesTransferred: js.UndefOr[Double] = js.undefined,
         BytesWritten: js.UndefOr[Double] = js.undefined,
@@ -901,6 +935,7 @@ package datasync {
   }
 
   object DescribeTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn
     ): DescribeTaskRequest = {
@@ -931,6 +966,7 @@ package datasync {
   }
 
   object DescribeTaskResponse {
+    @inline
     def apply(
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -980,6 +1016,7 @@ package datasync {
   }
 
   object Ec2Config {
+    @inline
     def apply(
         SecurityGroupArns: Ec2SecurityGroupArnList,
         SubnetArn: Ec2SubnetArn
@@ -1010,6 +1047,7 @@ package datasync {
   }
 
   object FilterRule {
+    @inline
     def apply(
         FilterType: js.UndefOr[FilterType] = js.undefined,
         Value: js.UndefOr[FilterValue] = js.undefined
@@ -1043,6 +1081,7 @@ package datasync {
   }
 
   object ListAgentsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1061,6 +1100,7 @@ package datasync {
   }
 
   object ListAgentsResponse {
+    @inline
     def apply(
         Agents: js.UndefOr[AgentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1079,6 +1119,7 @@ package datasync {
   }
 
   object ListLocationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1097,6 +1138,7 @@ package datasync {
   }
 
   object ListLocationsResponse {
+    @inline
     def apply(
         Locations: js.UndefOr[LocationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1116,6 +1158,7 @@ package datasync {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: TaggableResourceArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1138,6 +1181,7 @@ package datasync {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1160,6 +1204,7 @@ package datasync {
   }
 
   object ListTaskExecutionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1180,6 +1225,7 @@ package datasync {
   }
 
   object ListTaskExecutionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined
@@ -1198,6 +1244,7 @@ package datasync {
   }
 
   object ListTasksRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1216,6 +1263,7 @@ package datasync {
   }
 
   object ListTasksResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tasks: js.UndefOr[TaskList] = js.undefined
@@ -1237,6 +1285,7 @@ package datasync {
   }
 
   object LocationListEntry {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined
@@ -1264,6 +1313,7 @@ package datasync {
   }
 
   object NfsMountOptions {
+    @inline
     def apply(
         Version: js.UndefOr[NfsVersion] = js.undefined
     ): NfsMountOptions = {
@@ -1291,6 +1341,7 @@ package datasync {
   }
 
   object OnPremConfig {
+    @inline
     def apply(
         AgentArns: AgentArnList
     ): OnPremConfig = {
@@ -1320,6 +1371,7 @@ package datasync {
   }
 
   object Options {
+    @inline
     def apply(
         Atime: js.UndefOr[Atime] = js.undefined,
         BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
@@ -1387,6 +1439,7 @@ package datasync {
   }
 
   object PrivateLinkConfig {
+    @inline
     def apply(
         PrivateLinkEndpoint: js.UndefOr[Endpoint] = js.undefined,
         SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
@@ -1412,6 +1465,7 @@ package datasync {
   }
 
   object S3Config {
+    @inline
     def apply(
         BucketAccessRoleArn: IamRoleArn
     ): S3Config = {
@@ -1432,6 +1486,7 @@ package datasync {
   }
 
   object SmbMountOptions {
+    @inline
     def apply(
         Version: js.UndefOr[SmbVersion] = js.undefined
     ): SmbMountOptions = {
@@ -1457,6 +1512,7 @@ package datasync {
   }
 
   object StartTaskExecutionRequest {
+    @inline
     def apply(
         TaskArn: TaskArn,
         Includes: js.UndefOr[FilterList] = js.undefined,
@@ -1478,6 +1534,7 @@ package datasync {
   }
 
   object StartTaskExecutionResponse {
+    @inline
     def apply(
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): StartTaskExecutionResponse = {
@@ -1497,6 +1554,7 @@ package datasync {
   }
 
   object TagListEntry {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1517,6 +1575,7 @@ package datasync {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: TaggableResourceArn,
         Tags: TagList
@@ -1534,6 +1593,7 @@ package datasync {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1552,6 +1612,7 @@ package datasync {
   }
 
   object TaskExecutionListEntry {
+    @inline
     def apply(
         Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
@@ -1579,6 +1640,7 @@ package datasync {
   }
 
   object TaskExecutionResultDetail {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorDetail: js.UndefOr[String] = js.undefined,
@@ -1624,6 +1686,7 @@ package datasync {
   }
 
   object TaskListEntry {
+    @inline
     def apply(
         Name: js.UndefOr[TagValue] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined,
@@ -1662,6 +1725,7 @@ package datasync {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Keys: TagKeyList,
         ResourceArn: TaggableResourceArn
@@ -1679,6 +1743,7 @@ package datasync {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1694,6 +1759,7 @@ package datasync {
   }
 
   object UpdateAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn,
         Name: js.UndefOr[TagValue] = js.undefined
@@ -1711,6 +1777,7 @@ package datasync {
   trait UpdateAgentResponse extends js.Object {}
 
   object UpdateAgentResponse {
+    @inline
     def apply(
         ): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
@@ -1732,6 +1799,7 @@ package datasync {
   }
 
   object UpdateTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn,
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
@@ -1755,6 +1823,7 @@ package datasync {
   trait UpdateTaskResponse extends js.Object {}
 
   object UpdateTaskResponse {
+    @inline
     def apply(
         ): UpdateTaskResponse = {
       val __obj = js.Dynamic.literal()

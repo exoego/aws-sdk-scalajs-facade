@@ -77,58 +77,61 @@ package object applicationdiscovery {
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
-    def associateConfigurationItemsToApplicationFuture(
+    @inline def associateConfigurationItemsToApplicationFuture(
         params: AssociateConfigurationItemsToApplicationRequest
     ): Future[AssociateConfigurationItemsToApplicationResponse] =
       service.associateConfigurationItemsToApplication(params).promise.toFuture
-    def batchDeleteImportDataFuture(params: BatchDeleteImportDataRequest): Future[BatchDeleteImportDataResponse] =
-      service.batchDeleteImportData(params).promise.toFuture
-    def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
+    @inline def batchDeleteImportDataFuture(
+        params: BatchDeleteImportDataRequest
+    ): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise.toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
       service.createTags(params).promise.toFuture
-    def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
+    @inline def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
       service.deleteApplications(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
       service.deleteTags(params).promise.toFuture
-    def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
+    @inline def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
       service.describeAgents(params).promise.toFuture
-    def describeConfigurationsFuture(params: DescribeConfigurationsRequest): Future[DescribeConfigurationsResponse] =
-      service.describeConfigurations(params).promise.toFuture
-    def describeContinuousExportsFuture(
+    @inline def describeConfigurationsFuture(
+        params: DescribeConfigurationsRequest
+    ): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise.toFuture
+    @inline def describeContinuousExportsFuture(
         params: DescribeContinuousExportsRequest
     ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise.toFuture
-    def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
+    @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
       service.describeExportTasks(params).promise.toFuture
-    def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
+    @inline def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
       service.describeImportTasks(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
       service.describeTags(params).promise.toFuture
-    def disassociateConfigurationItemsFromApplicationFuture(
+    @inline def disassociateConfigurationItemsFromApplicationFuture(
         params: DisassociateConfigurationItemsFromApplicationRequest
     ): Future[DisassociateConfigurationItemsFromApplicationResponse] =
       service.disassociateConfigurationItemsFromApplication(params).promise.toFuture
-    def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
+    @inline def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
       service.getDiscoverySummary(params).promise.toFuture
-    def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
+    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
       service.listConfigurations(params).promise.toFuture
-    def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
+    @inline def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
       service.listServerNeighbors(params).promise.toFuture
-    def startContinuousExportFuture(params: StartContinuousExportRequest): Future[StartContinuousExportResponse] =
-      service.startContinuousExport(params).promise.toFuture
-    def startDataCollectionByAgentIdsFuture(
+    @inline def startContinuousExportFuture(
+        params: StartContinuousExportRequest
+    ): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise.toFuture
+    @inline def startDataCollectionByAgentIdsFuture(
         params: StartDataCollectionByAgentIdsRequest
     ): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise.toFuture
-    def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
+    @inline def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
       service.startExportTask(params).promise.toFuture
-    def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
+    @inline def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
       service.startImportTask(params).promise.toFuture
-    def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
+    @inline def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
       service.stopContinuousExport(params).promise.toFuture
-    def stopDataCollectionByAgentIdsFuture(
+    @inline def stopDataCollectionByAgentIdsFuture(
         params: StopDataCollectionByAgentIdsRequest
     ): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise.toFuture
-    def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise.toFuture
   }
 }
@@ -191,6 +194,7 @@ package applicationdiscovery {
   }
 
   object AgentConfigurationStatus {
+    @inline
     def apply(
         agentId: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -222,6 +226,7 @@ package applicationdiscovery {
   }
 
   object AgentInfo {
+    @inline
     def apply(
         agentId: js.UndefOr[AgentId] = js.undefined,
         agentNetworkInfoList: js.UndefOr[AgentNetworkInfoList] = js.undefined,
@@ -259,6 +264,7 @@ package applicationdiscovery {
   }
 
   object AgentNetworkInfo {
+    @inline
     def apply(
         ipAddress: js.UndefOr[String] = js.undefined,
         macAddress: js.UndefOr[String] = js.undefined
@@ -288,6 +294,7 @@ package applicationdiscovery {
   }
 
   object AssociateConfigurationItemsToApplicationRequest {
+    @inline
     def apply(
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
@@ -305,6 +312,7 @@ package applicationdiscovery {
   trait AssociateConfigurationItemsToApplicationResponse extends js.Object {}
 
   object AssociateConfigurationItemsToApplicationResponse {
+    @inline
     def apply(
         ): AssociateConfigurationItemsToApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -324,6 +332,7 @@ package applicationdiscovery {
   }
 
   object BatchDeleteImportDataError {
+    @inline
     def apply(
         errorCode: js.UndefOr[BatchDeleteImportDataErrorCode] = js.undefined,
         errorDescription: js.UndefOr[BatchDeleteImportDataErrorDescription] = js.undefined,
@@ -351,6 +360,7 @@ package applicationdiscovery {
   }
 
   object BatchDeleteImportDataRequest {
+    @inline
     def apply(
         importTaskIds: ToDeleteIdentifierList
     ): BatchDeleteImportDataRequest = {
@@ -368,6 +378,7 @@ package applicationdiscovery {
   }
 
   object BatchDeleteImportDataResponse {
+    @inline
     def apply(
         errors: js.UndefOr[BatchDeleteImportDataErrorList] = js.undefined
     ): BatchDeleteImportDataResponse = {
@@ -399,6 +410,7 @@ package applicationdiscovery {
   }
 
   object ConfigurationTag {
+    @inline
     def apply(
         configurationId: js.UndefOr[ConfigurationId] = js.undefined,
         configurationType: js.UndefOr[ConfigurationItemType] = js.undefined,
@@ -432,6 +444,7 @@ package applicationdiscovery {
   }
 
   object ContinuousExportDescription {
+    @inline
     def apply(
         dataSource: js.UndefOr[DataSource] = js.undefined,
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
@@ -476,6 +489,7 @@ package applicationdiscovery {
   }
 
   object CreateApplicationRequest {
+    @inline
     def apply(
         name: String,
         description: js.UndefOr[String] = js.undefined
@@ -495,6 +509,7 @@ package applicationdiscovery {
   }
 
   object CreateApplicationResponse {
+    @inline
     def apply(
         configurationId: js.UndefOr[String] = js.undefined
     ): CreateApplicationResponse = {
@@ -511,6 +526,7 @@ package applicationdiscovery {
   }
 
   object CreateTagsRequest {
+    @inline
     def apply(
         configurationIds: ConfigurationIdList,
         tags: TagSet
@@ -528,6 +544,7 @@ package applicationdiscovery {
   trait CreateTagsResponse extends js.Object {}
 
   object CreateTagsResponse {
+    @inline
     def apply(
         ): CreateTagsResponse = {
       val __obj = js.Dynamic.literal()
@@ -551,6 +568,7 @@ package applicationdiscovery {
   }
 
   object CustomerAgentInfo {
+    @inline
     def apply(
         activeAgents: Int,
         blackListedAgents: Int,
@@ -589,6 +607,7 @@ package applicationdiscovery {
   }
 
   object CustomerConnectorInfo {
+    @inline
     def apply(
         activeConnectors: Int,
         blackListedConnectors: Int,
@@ -624,6 +643,7 @@ package applicationdiscovery {
   }
 
   object DeleteApplicationsRequest {
+    @inline
     def apply(
         configurationIds: ApplicationIdsList
     ): DeleteApplicationsRequest = {
@@ -639,6 +659,7 @@ package applicationdiscovery {
   trait DeleteApplicationsResponse extends js.Object {}
 
   object DeleteApplicationsResponse {
+    @inline
     def apply(
         ): DeleteApplicationsResponse = {
       val __obj = js.Dynamic.literal()
@@ -654,6 +675,7 @@ package applicationdiscovery {
   }
 
   object DeleteTagsRequest {
+    @inline
     def apply(
         configurationIds: ConfigurationIdList,
         tags: js.UndefOr[TagSet] = js.undefined
@@ -671,6 +693,7 @@ package applicationdiscovery {
   trait DeleteTagsResponse extends js.Object {}
 
   object DeleteTagsResponse {
+    @inline
     def apply(
         ): DeleteTagsResponse = {
       val __obj = js.Dynamic.literal()
@@ -688,6 +711,7 @@ package applicationdiscovery {
   }
 
   object DescribeAgentsRequest {
+    @inline
     def apply(
         agentIds: js.UndefOr[AgentIds] = js.undefined,
         filters: js.UndefOr[Filters] = js.undefined,
@@ -710,6 +734,7 @@ package applicationdiscovery {
   }
 
   object DescribeAgentsResponse {
+    @inline
     def apply(
         agentsInfo: js.UndefOr[AgentsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -727,6 +752,7 @@ package applicationdiscovery {
   }
 
   object DescribeConfigurationsRequest {
+    @inline
     def apply(
         configurationIds: ConfigurationIdList
     ): DescribeConfigurationsRequest = {
@@ -744,6 +770,7 @@ package applicationdiscovery {
   }
 
   object DescribeConfigurationsResponse {
+    @inline
     def apply(
         configurations: js.UndefOr[DescribeConfigurationsAttributes] = js.undefined
     ): DescribeConfigurationsResponse = {
@@ -761,6 +788,7 @@ package applicationdiscovery {
   }
 
   object DescribeContinuousExportsRequest {
+    @inline
     def apply(
         exportIds: js.UndefOr[ContinuousExportIds] = js.undefined,
         maxResults: js.UndefOr[DescribeContinuousExportsMaxResults] = js.undefined,
@@ -781,6 +809,7 @@ package applicationdiscovery {
   }
 
   object DescribeContinuousExportsResponse {
+    @inline
     def apply(
         descriptions: js.UndefOr[ContinuousExportDescriptions] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -800,6 +829,7 @@ package applicationdiscovery {
   }
 
   object DescribeExportConfigurationsRequest {
+    @inline
     def apply(
         exportIds: js.UndefOr[ExportIds] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -820,6 +850,7 @@ package applicationdiscovery {
   }
 
   object DescribeExportConfigurationsResponse {
+    @inline
     def apply(
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -840,6 +871,7 @@ package applicationdiscovery {
   }
 
   object DescribeExportTasksRequest {
+    @inline
     def apply(
         exportIds: js.UndefOr[ExportIds] = js.undefined,
         filters: js.UndefOr[ExportFilters] = js.undefined,
@@ -862,6 +894,7 @@ package applicationdiscovery {
   }
 
   object DescribeExportTasksResponse {
+    @inline
     def apply(
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -881,6 +914,7 @@ package applicationdiscovery {
   }
 
   object DescribeImportTasksRequest {
+    @inline
     def apply(
         filters: js.UndefOr[DescribeImportTasksFilterList] = js.undefined,
         maxResults: js.UndefOr[DescribeImportTasksMaxResults] = js.undefined,
@@ -901,6 +935,7 @@ package applicationdiscovery {
   }
 
   object DescribeImportTasksResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[ImportTaskList] = js.undefined
@@ -920,6 +955,7 @@ package applicationdiscovery {
   }
 
   object DescribeTagsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[TagFilters] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -940,6 +976,7 @@ package applicationdiscovery {
   }
 
   object DescribeTagsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[ConfigurationTagSet] = js.undefined
@@ -958,6 +995,7 @@ package applicationdiscovery {
   }
 
   object DisassociateConfigurationItemsFromApplicationRequest {
+    @inline
     def apply(
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
@@ -975,6 +1013,7 @@ package applicationdiscovery {
   trait DisassociateConfigurationItemsFromApplicationResponse extends js.Object {}
 
   object DisassociateConfigurationItemsFromApplicationResponse {
+    @inline
     def apply(
         ): DisassociateConfigurationItemsFromApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -989,6 +1028,7 @@ package applicationdiscovery {
   }
 
   object ExportConfigurationsResponse {
+    @inline
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): ExportConfigurationsResponse = {
@@ -1016,6 +1056,7 @@ package applicationdiscovery {
   }
 
   object ExportFilter {
+    @inline
     def apply(
         condition: Condition,
         name: FilterName,
@@ -1047,6 +1088,7 @@ package applicationdiscovery {
   }
 
   object ExportInfo {
+    @inline
     def apply(
         exportId: ConfigurationsExportId,
         exportRequestTime: ExportRequestTime,
@@ -1094,6 +1136,7 @@ package applicationdiscovery {
   }
 
   object Filter {
+    @inline
     def apply(
         condition: Condition,
         name: String,
@@ -1113,6 +1156,7 @@ package applicationdiscovery {
   trait GetDiscoverySummaryRequest extends js.Object {}
 
   object GetDiscoverySummaryRequest {
+    @inline
     def apply(
         ): GetDiscoverySummaryRequest = {
       val __obj = js.Dynamic.literal()
@@ -1132,6 +1176,7 @@ package applicationdiscovery {
   }
 
   object GetDiscoverySummaryResponse {
+    @inline
     def apply(
         agentSummary: js.UndefOr[CustomerAgentInfo] = js.undefined,
         applications: js.UndefOr[Double] = js.undefined,
@@ -1204,6 +1249,7 @@ package applicationdiscovery {
   }
 
   object ImportTask {
+    @inline
     def apply(
         applicationImportFailure: js.UndefOr[Int] = js.undefined,
         applicationImportSuccess: js.UndefOr[Int] = js.undefined,
@@ -1251,6 +1297,7 @@ package applicationdiscovery {
   }
 
   object ImportTaskFilter {
+    @inline
     def apply(
         name: js.UndefOr[ImportTaskFilterName] = js.undefined,
         values: js.UndefOr[ImportTaskFilterValueList] = js.undefined
@@ -1280,6 +1327,7 @@ package applicationdiscovery {
   }
 
   object ListConfigurationsRequest {
+    @inline
     def apply(
         configurationType: ConfigurationItemType,
         filters: js.UndefOr[Filters] = js.undefined,
@@ -1306,6 +1354,7 @@ package applicationdiscovery {
   }
 
   object ListConfigurationsResponse {
+    @inline
     def apply(
         configurations: js.UndefOr[Configurations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1327,6 +1376,7 @@ package applicationdiscovery {
   }
 
   object ListServerNeighborsRequest {
+    @inline
     def apply(
         configurationId: ConfigurationId,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -1354,6 +1404,7 @@ package applicationdiscovery {
   }
 
   object ListServerNeighborsResponse {
+    @inline
     def apply(
         neighbors: NeighborDetailsList,
         knownDependencyCount: js.UndefOr[Double] = js.undefined,
@@ -1382,6 +1433,7 @@ package applicationdiscovery {
   }
 
   object NeighborConnectionDetail {
+    @inline
     def apply(
         connectionsCount: Double,
         destinationServerId: ConfigurationId,
@@ -1411,6 +1463,7 @@ package applicationdiscovery {
   }
 
   object OrderByElement {
+    @inline
     def apply(
         fieldName: String,
         sortOrder: js.UndefOr[orderString] = js.undefined
@@ -1428,6 +1481,7 @@ package applicationdiscovery {
   trait StartContinuousExportRequest extends js.Object {}
 
   object StartContinuousExportRequest {
+    @inline
     def apply(
         ): StartContinuousExportRequest = {
       val __obj = js.Dynamic.literal()
@@ -1446,6 +1500,7 @@ package applicationdiscovery {
   }
 
   object StartContinuousExportResponse {
+    @inline
     def apply(
         dataSource: js.UndefOr[DataSource] = js.undefined,
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
@@ -1469,6 +1524,7 @@ package applicationdiscovery {
   }
 
   object StartDataCollectionByAgentIdsRequest {
+    @inline
     def apply(
         agentIds: AgentIds
     ): StartDataCollectionByAgentIdsRequest = {
@@ -1486,6 +1542,7 @@ package applicationdiscovery {
   }
 
   object StartDataCollectionByAgentIdsResponse {
+    @inline
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StartDataCollectionByAgentIdsResponse = {
@@ -1506,6 +1563,7 @@ package applicationdiscovery {
   }
 
   object StartExportTaskRequest {
+    @inline
     def apply(
         endTime: js.UndefOr[TimeStamp] = js.undefined,
         exportDataFormat: js.UndefOr[ExportDataFormats] = js.undefined,
@@ -1527,6 +1585,7 @@ package applicationdiscovery {
   }
 
   object StartExportTaskResponse {
+    @inline
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): StartExportTaskResponse = {
@@ -1544,6 +1603,7 @@ package applicationdiscovery {
   }
 
   object StartImportTaskRequest {
+    @inline
     def apply(
         importUrl: ImportURL,
         name: ImportTaskName,
@@ -1565,6 +1625,7 @@ package applicationdiscovery {
   }
 
   object StartImportTaskResponse {
+    @inline
     def apply(
         task: js.UndefOr[ImportTask] = js.undefined
     ): StartImportTaskResponse = {
@@ -1580,6 +1641,7 @@ package applicationdiscovery {
   }
 
   object StopContinuousExportRequest {
+    @inline
     def apply(
         exportId: ConfigurationsExportId
     ): StopContinuousExportRequest = {
@@ -1598,6 +1660,7 @@ package applicationdiscovery {
   }
 
   object StopContinuousExportResponse {
+    @inline
     def apply(
         startTime: js.UndefOr[TimeStamp] = js.undefined,
         stopTime: js.UndefOr[TimeStamp] = js.undefined
@@ -1615,6 +1678,7 @@ package applicationdiscovery {
   }
 
   object StopDataCollectionByAgentIdsRequest {
+    @inline
     def apply(
         agentIds: AgentIds
     ): StopDataCollectionByAgentIdsRequest = {
@@ -1632,6 +1696,7 @@ package applicationdiscovery {
   }
 
   object StopDataCollectionByAgentIdsResponse {
+    @inline
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StopDataCollectionByAgentIdsResponse = {
@@ -1653,6 +1718,7 @@ package applicationdiscovery {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: TagValue
@@ -1676,6 +1742,7 @@ package applicationdiscovery {
   }
 
   object TagFilter {
+    @inline
     def apply(
         name: FilterName,
         values: FilterValues
@@ -1697,6 +1764,7 @@ package applicationdiscovery {
   }
 
   object UpdateApplicationRequest {
+    @inline
     def apply(
         configurationId: ApplicationId,
         description: js.UndefOr[String] = js.undefined,
@@ -1716,6 +1784,7 @@ package applicationdiscovery {
   trait UpdateApplicationResponse extends js.Object {}
 
   object UpdateApplicationResponse {
+    @inline
     def apply(
         ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()

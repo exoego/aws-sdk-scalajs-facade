@@ -113,101 +113,107 @@ package object ecs {
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
+    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
       service.createService(params).promise.toFuture
-    def createTaskSetFuture(params: CreateTaskSetRequest): Future[CreateTaskSetResponse] =
+    @inline def createTaskSetFuture(params: CreateTaskSetRequest): Future[CreateTaskSetResponse] =
       service.createTaskSet(params).promise.toFuture
-    def deleteAccountSettingFuture(params: DeleteAccountSettingRequest): Future[DeleteAccountSettingResponse] =
+    @inline def deleteAccountSettingFuture(params: DeleteAccountSettingRequest): Future[DeleteAccountSettingResponse] =
       service.deleteAccountSetting(params).promise.toFuture
-    def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] =
+    @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] =
       service.deleteAttributes(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
+    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
       service.deleteService(params).promise.toFuture
-    def deleteTaskSetFuture(params: DeleteTaskSetRequest): Future[DeleteTaskSetResponse] =
+    @inline def deleteTaskSetFuture(params: DeleteTaskSetRequest): Future[DeleteTaskSetResponse] =
       service.deleteTaskSet(params).promise.toFuture
-    def deregisterContainerInstanceFuture(
+    @inline def deregisterContainerInstanceFuture(
         params: DeregisterContainerInstanceRequest
     ): Future[DeregisterContainerInstanceResponse] = service.deregisterContainerInstance(params).promise.toFuture
-    def deregisterTaskDefinitionFuture(
+    @inline def deregisterTaskDefinitionFuture(
         params: DeregisterTaskDefinitionRequest
     ): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise.toFuture
-    def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
+    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
       service.describeClusters(params).promise.toFuture
-    def describeContainerInstancesFuture(
+    @inline def describeContainerInstancesFuture(
         params: DescribeContainerInstancesRequest
     ): Future[DescribeContainerInstancesResponse] = service.describeContainerInstances(params).promise.toFuture
-    def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
+    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
       service.describeServices(params).promise.toFuture
-    def describeTaskDefinitionFuture(params: DescribeTaskDefinitionRequest): Future[DescribeTaskDefinitionResponse] =
-      service.describeTaskDefinition(params).promise.toFuture
-    def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] =
+    @inline def describeTaskDefinitionFuture(
+        params: DescribeTaskDefinitionRequest
+    ): Future[DescribeTaskDefinitionResponse] = service.describeTaskDefinition(params).promise.toFuture
+    @inline def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] =
       service.describeTaskSets(params).promise.toFuture
-    def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] =
+    @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] =
       service.describeTasks(params).promise.toFuture
-    def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] =
+    @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] =
       service.discoverPollEndpoint(params).promise.toFuture
-    def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] =
+    @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] =
       service.listAccountSettings(params).promise.toFuture
-    def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] =
+    @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] =
       service.listAttributes(params).promise.toFuture
-    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
       service.listClusters(params).promise.toFuture
-    def listContainerInstancesFuture(params: ListContainerInstancesRequest): Future[ListContainerInstancesResponse] =
-      service.listContainerInstances(params).promise.toFuture
-    def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
+    @inline def listContainerInstancesFuture(
+        params: ListContainerInstancesRequest
+    ): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise.toFuture
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
       service.listServices(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTaskDefinitionFamiliesFuture(
+    @inline def listTaskDefinitionFamiliesFuture(
         params: ListTaskDefinitionFamiliesRequest
     ): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise.toFuture
-    def listTaskDefinitionsFuture(params: ListTaskDefinitionsRequest): Future[ListTaskDefinitionsResponse] =
+    @inline def listTaskDefinitionsFuture(params: ListTaskDefinitionsRequest): Future[ListTaskDefinitionsResponse] =
       service.listTaskDefinitions(params).promise.toFuture
-    def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
+    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
       service.listTasks(params).promise.toFuture
-    def putAccountSettingDefaultFuture(
+    @inline def putAccountSettingDefaultFuture(
         params: PutAccountSettingDefaultRequest
     ): Future[PutAccountSettingDefaultResponse] = service.putAccountSettingDefault(params).promise.toFuture
-    def putAccountSettingFuture(params: PutAccountSettingRequest): Future[PutAccountSettingResponse] =
+    @inline def putAccountSettingFuture(params: PutAccountSettingRequest): Future[PutAccountSettingResponse] =
       service.putAccountSetting(params).promise.toFuture
-    def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] =
+    @inline def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] =
       service.putAttributes(params).promise.toFuture
-    def registerContainerInstanceFuture(
+    @inline def registerContainerInstanceFuture(
         params: RegisterContainerInstanceRequest
     ): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise.toFuture
-    def registerTaskDefinitionFuture(params: RegisterTaskDefinitionRequest): Future[RegisterTaskDefinitionResponse] =
-      service.registerTaskDefinition(params).promise.toFuture
-    def runTaskFuture(params: RunTaskRequest): Future[RunTaskResponse] = service.runTask(params).promise.toFuture
-    def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] =
+    @inline def registerTaskDefinitionFuture(
+        params: RegisterTaskDefinitionRequest
+    ): Future[RegisterTaskDefinitionResponse] = service.registerTaskDefinition(params).promise.toFuture
+    @inline def runTaskFuture(params: RunTaskRequest): Future[RunTaskResponse] =
+      service.runTask(params).promise.toFuture
+    @inline def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] =
       service.startTask(params).promise.toFuture
-    def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] = service.stopTask(params).promise.toFuture
-    def submitAttachmentStateChangesFuture(
+    @inline def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] =
+      service.stopTask(params).promise.toFuture
+    @inline def submitAttachmentStateChangesFuture(
         params: SubmitAttachmentStateChangesRequest
     ): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise.toFuture
-    def submitContainerStateChangeFuture(
+    @inline def submitContainerStateChangeFuture(
         params: SubmitContainerStateChangeRequest
     ): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise.toFuture
-    def submitTaskStateChangeFuture(params: SubmitTaskStateChangeRequest): Future[SubmitTaskStateChangeResponse] =
-      service.submitTaskStateChange(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def submitTaskStateChangeFuture(
+        params: SubmitTaskStateChangeRequest
+    ): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] =
+    @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] =
       service.updateContainerAgent(params).promise.toFuture
-    def updateContainerInstancesStateFuture(
+    @inline def updateContainerInstancesStateFuture(
         params: UpdateContainerInstancesStateRequest
     ): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise.toFuture
-    def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
+    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
       service.updateService(params).promise.toFuture
-    def updateServicePrimaryTaskSetFuture(
+    @inline def updateServicePrimaryTaskSetFuture(
         params: UpdateServicePrimaryTaskSetRequest
     ): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise.toFuture
-    def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] =
+    @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] =
       service.updateTaskSet(params).promise.toFuture
   }
 }
@@ -315,6 +321,7 @@ package ecs {
   }
 
   object Attachment {
+    @inline
     def apply(
         details: js.UndefOr[AttachmentDetails] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
@@ -340,6 +347,7 @@ package ecs {
   }
 
   object AttachmentStateChange {
+    @inline
     def apply(
         attachmentArn: String,
         status: String
@@ -365,6 +373,7 @@ package ecs {
   }
 
   object Attribute {
+    @inline
     def apply(
         name: String,
         targetId: js.UndefOr[String] = js.undefined,
@@ -393,6 +402,7 @@ package ecs {
   }
 
   object AwsVpcConfiguration {
+    @inline
     def apply(
         subnets: StringList,
         assignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
@@ -426,6 +436,7 @@ package ecs {
   }
 
   object Cluster {
+    @inline
     def apply(
         activeServicesCount: js.UndefOr[Int] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
@@ -472,6 +483,7 @@ package ecs {
   }
 
   object ClusterSetting {
+    @inline
     def apply(
         name: js.UndefOr[ClusterSettingName] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -524,6 +536,7 @@ package ecs {
   }
 
   object Container {
+    @inline
     def apply(
         containerArn: js.UndefOr[String] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
@@ -611,6 +624,7 @@ package ecs {
   }
 
   object ContainerDefinition {
+    @inline
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         cpu: js.UndefOr[Int] = js.undefined,
@@ -705,6 +719,7 @@ package ecs {
   }
 
   object ContainerDependency {
+    @inline
     def apply(
         condition: ContainerCondition,
         containerName: String
@@ -742,6 +757,7 @@ package ecs {
   }
 
   object ContainerInstance {
+    @inline
     def apply(
         agentConnected: js.UndefOr[Boolean] = js.undefined,
         agentUpdateStatus: js.UndefOr[AgentUpdateStatus] = js.undefined,
@@ -812,6 +828,7 @@ package ecs {
   }
 
   object ContainerOverride {
+    @inline
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         cpu: js.UndefOr[BoxedInteger] = js.undefined,
@@ -846,6 +863,7 @@ package ecs {
   }
 
   object ContainerStateChange {
+    @inline
     def apply(
         containerName: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
@@ -871,6 +889,7 @@ package ecs {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         clusterName: js.UndefOr[String] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined,
@@ -890,6 +909,7 @@ package ecs {
   }
 
   object CreateClusterResponse {
+    @inline
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
@@ -924,6 +944,7 @@ package ecs {
   }
 
   object CreateServiceRequest {
+    @inline
     def apply(
         serviceName: String,
         clientToken: js.UndefOr[String] = js.undefined,
@@ -981,6 +1002,7 @@ package ecs {
   }
 
   object CreateServiceResponse {
+    @inline
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): CreateServiceResponse = {
@@ -1006,6 +1028,7 @@ package ecs {
   }
 
   object CreateTaskSetRequest {
+    @inline
     def apply(
         cluster: String,
         service: String,
@@ -1043,6 +1066,7 @@ package ecs {
   }
 
   object CreateTaskSetResponse {
+    @inline
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): CreateTaskSetResponse = {
@@ -1059,6 +1083,7 @@ package ecs {
   }
 
   object DeleteAccountSettingRequest {
+    @inline
     def apply(
         name: SettingName,
         principalArn: js.UndefOr[String] = js.undefined
@@ -1078,6 +1103,7 @@ package ecs {
   }
 
   object DeleteAccountSettingResponse {
+    @inline
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): DeleteAccountSettingResponse = {
@@ -1094,6 +1120,7 @@ package ecs {
   }
 
   object DeleteAttributesRequest {
+    @inline
     def apply(
         attributes: Attributes,
         cluster: js.UndefOr[String] = js.undefined
@@ -1113,6 +1140,7 @@ package ecs {
   }
 
   object DeleteAttributesResponse {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined
     ): DeleteAttributesResponse = {
@@ -1128,6 +1156,7 @@ package ecs {
   }
 
   object DeleteClusterRequest {
+    @inline
     def apply(
         cluster: String
     ): DeleteClusterRequest = {
@@ -1145,6 +1174,7 @@ package ecs {
   }
 
   object DeleteClusterResponse {
+    @inline
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
@@ -1162,6 +1192,7 @@ package ecs {
   }
 
   object DeleteServiceRequest {
+    @inline
     def apply(
         service: String,
         cluster: js.UndefOr[String] = js.undefined,
@@ -1183,6 +1214,7 @@ package ecs {
   }
 
   object DeleteServiceResponse {
+    @inline
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): DeleteServiceResponse = {
@@ -1201,6 +1233,7 @@ package ecs {
   }
 
   object DeleteTaskSetRequest {
+    @inline
     def apply(
         cluster: String,
         service: String,
@@ -1224,6 +1257,7 @@ package ecs {
   }
 
   object DeleteTaskSetResponse {
+    @inline
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): DeleteTaskSetResponse = {
@@ -1252,6 +1286,7 @@ package ecs {
   }
 
   object Deployment {
+    @inline
     def apply(
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         desiredCount: js.UndefOr[Int] = js.undefined,
@@ -1291,6 +1326,7 @@ package ecs {
   }
 
   object DeploymentConfiguration {
+    @inline
     def apply(
         maximumPercent: js.UndefOr[BoxedInteger] = js.undefined,
         minimumHealthyPercent: js.UndefOr[BoxedInteger] = js.undefined
@@ -1311,6 +1347,7 @@ package ecs {
   }
 
   object DeploymentController {
+    @inline
     def apply(
         `type`: DeploymentControllerType
     ): DeploymentController = {
@@ -1338,6 +1375,7 @@ package ecs {
   }
 
   object DeregisterContainerInstanceRequest {
+    @inline
     def apply(
         containerInstance: String,
         cluster: js.UndefOr[String] = js.undefined,
@@ -1359,6 +1397,7 @@ package ecs {
   }
 
   object DeregisterContainerInstanceResponse {
+    @inline
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): DeregisterContainerInstanceResponse = {
@@ -1374,6 +1413,7 @@ package ecs {
   }
 
   object DeregisterTaskDefinitionRequest {
+    @inline
     def apply(
         taskDefinition: String
     ): DeregisterTaskDefinitionRequest = {
@@ -1391,6 +1431,7 @@ package ecs {
   }
 
   object DeregisterTaskDefinitionResponse {
+    @inline
     def apply(
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
     ): DeregisterTaskDefinitionResponse = {
@@ -1407,6 +1448,7 @@ package ecs {
   }
 
   object DescribeClustersRequest {
+    @inline
     def apply(
         clusters: js.UndefOr[StringList] = js.undefined,
         include: js.UndefOr[ClusterFieldList] = js.undefined
@@ -1425,6 +1467,7 @@ package ecs {
   }
 
   object DescribeClustersResponse {
+    @inline
     def apply(
         clusters: js.UndefOr[Clusters] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
@@ -1444,6 +1487,7 @@ package ecs {
   }
 
   object DescribeContainerInstancesRequest {
+    @inline
     def apply(
         containerInstances: StringList,
         cluster: js.UndefOr[String] = js.undefined,
@@ -1466,6 +1510,7 @@ package ecs {
   }
 
   object DescribeContainerInstancesResponse {
+    @inline
     def apply(
         containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
@@ -1485,6 +1530,7 @@ package ecs {
   }
 
   object DescribeServicesRequest {
+    @inline
     def apply(
         services: StringList,
         cluster: js.UndefOr[String] = js.undefined,
@@ -1507,6 +1553,7 @@ package ecs {
   }
 
   object DescribeServicesResponse {
+    @inline
     def apply(
         failures: js.UndefOr[Failures] = js.undefined,
         services: js.UndefOr[Services] = js.undefined
@@ -1525,6 +1572,7 @@ package ecs {
   }
 
   object DescribeTaskDefinitionRequest {
+    @inline
     def apply(
         taskDefinition: String,
         include: js.UndefOr[TaskDefinitionFieldList] = js.undefined
@@ -1545,6 +1593,7 @@ package ecs {
   }
 
   object DescribeTaskDefinitionResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
@@ -1564,6 +1613,7 @@ package ecs {
   }
 
   object DescribeTaskSetsRequest {
+    @inline
     def apply(
         cluster: String,
         service: String,
@@ -1586,6 +1636,7 @@ package ecs {
   }
 
   object DescribeTaskSetsResponse {
+    @inline
     def apply(
         failures: js.UndefOr[Failures] = js.undefined,
         taskSets: js.UndefOr[TaskSets] = js.undefined
@@ -1605,6 +1656,7 @@ package ecs {
   }
 
   object DescribeTasksRequest {
+    @inline
     def apply(
         tasks: StringList,
         cluster: js.UndefOr[String] = js.undefined,
@@ -1627,6 +1679,7 @@ package ecs {
   }
 
   object DescribeTasksResponse {
+    @inline
     def apply(
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
@@ -1657,6 +1710,7 @@ package ecs {
   }
 
   object Device {
+    @inline
     def apply(
         hostPath: String,
         containerPath: js.UndefOr[String] = js.undefined,
@@ -1687,6 +1741,7 @@ package ecs {
   }
 
   object DiscoverPollEndpointRequest {
+    @inline
     def apply(
         cluster: js.UndefOr[String] = js.undefined,
         containerInstance: js.UndefOr[String] = js.undefined
@@ -1705,6 +1760,7 @@ package ecs {
   }
 
   object DiscoverPollEndpointResponse {
+    @inline
     def apply(
         endpoint: js.UndefOr[String] = js.undefined,
         telemetryEndpoint: js.UndefOr[String] = js.undefined
@@ -1729,6 +1785,7 @@ package ecs {
   }
 
   object DockerVolumeConfiguration {
+    @inline
     def apply(
         autoprovision: js.UndefOr[BoxedBoolean] = js.undefined,
         driver: js.UndefOr[String] = js.undefined,
@@ -1756,6 +1813,7 @@ package ecs {
   }
 
   object Failure {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
@@ -1784,6 +1842,7 @@ package ecs {
   }
 
   object HealthCheck {
+    @inline
     def apply(
         command: StringList,
         interval: js.UndefOr[BoxedInteger] = js.undefined,
@@ -1821,6 +1880,7 @@ package ecs {
   }
 
   object HostEntry {
+    @inline
     def apply(
         hostname: String,
         ipAddress: String
@@ -1843,6 +1903,7 @@ package ecs {
   }
 
   object HostVolumeProperties {
+    @inline
     def apply(
         sourcePath: js.UndefOr[String] = js.undefined
     ): HostVolumeProperties = {
@@ -1870,6 +1931,7 @@ package ecs {
   }
 
   object KernelCapabilities {
+    @inline
     def apply(
         add: js.UndefOr[StringList] = js.undefined,
         drop: js.UndefOr[StringList] = js.undefined
@@ -1891,6 +1953,7 @@ package ecs {
   }
 
   object KeyValuePair {
+    @inline
     def apply(
         name: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -1924,6 +1987,7 @@ package ecs {
   }
 
   object LinuxParameters {
+    @inline
     def apply(
         capabilities: js.UndefOr[KernelCapabilities] = js.undefined,
         devices: js.UndefOr[DevicesList] = js.undefined,
@@ -1956,6 +2020,7 @@ package ecs {
   }
 
   object ListAccountSettingsRequest {
+    @inline
     def apply(
         effectiveSettings: js.UndefOr[Boolean] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -1982,6 +2047,7 @@ package ecs {
   }
 
   object ListAccountSettingsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         settings: js.UndefOr[Settings] = js.undefined
@@ -2004,6 +2070,7 @@ package ecs {
   }
 
   object ListAttributesRequest {
+    @inline
     def apply(
         targetType: TargetType,
         attributeName: js.UndefOr[String] = js.undefined,
@@ -2032,6 +2099,7 @@ package ecs {
   }
 
   object ListAttributesResponse {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -2050,6 +2118,7 @@ package ecs {
   }
 
   object ListClustersRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[BoxedInteger] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -2068,6 +2137,7 @@ package ecs {
   }
 
   object ListClustersResponse {
+    @inline
     def apply(
         clusterArns: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -2089,6 +2159,7 @@ package ecs {
   }
 
   object ListContainerInstancesRequest {
+    @inline
     def apply(
         cluster: js.UndefOr[String] = js.undefined,
         filter: js.UndefOr[String] = js.undefined,
@@ -2113,6 +2184,7 @@ package ecs {
   }
 
   object ListContainerInstancesResponse {
+    @inline
     def apply(
         containerInstanceArns: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -2134,6 +2206,7 @@ package ecs {
   }
 
   object ListServicesRequest {
+    @inline
     def apply(
         cluster: js.UndefOr[String] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
@@ -2158,6 +2231,7 @@ package ecs {
   }
 
   object ListServicesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         serviceArns: js.UndefOr[StringList] = js.undefined
@@ -2175,6 +2249,7 @@ package ecs {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: String
     ): ListTagsForResourceRequest = {
@@ -2192,6 +2267,7 @@ package ecs {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2210,6 +2286,7 @@ package ecs {
   }
 
   object ListTaskDefinitionFamiliesRequest {
+    @inline
     def apply(
         familyPrefix: js.UndefOr[String] = js.undefined,
         maxResults: js.UndefOr[BoxedInteger] = js.undefined,
@@ -2232,6 +2309,7 @@ package ecs {
   }
 
   object ListTaskDefinitionFamiliesResponse {
+    @inline
     def apply(
         families: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -2253,6 +2331,7 @@ package ecs {
   }
 
   object ListTaskDefinitionsRequest {
+    @inline
     def apply(
         familyPrefix: js.UndefOr[String] = js.undefined,
         maxResults: js.UndefOr[BoxedInteger] = js.undefined,
@@ -2277,6 +2356,7 @@ package ecs {
   }
 
   object ListTaskDefinitionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         taskDefinitionArns: js.UndefOr[StringList] = js.undefined
@@ -2302,6 +2382,7 @@ package ecs {
   }
 
   object ListTasksRequest {
+    @inline
     def apply(
         cluster: js.UndefOr[String] = js.undefined,
         containerInstance: js.UndefOr[String] = js.undefined,
@@ -2334,6 +2415,7 @@ package ecs {
   }
 
   object ListTasksResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         taskArns: js.UndefOr[StringList] = js.undefined
@@ -2360,6 +2442,7 @@ package ecs {
   }
 
   object LoadBalancer {
+    @inline
     def apply(
         containerName: js.UndefOr[String] = js.undefined,
         containerPort: js.UndefOr[BoxedInteger] = js.undefined,
@@ -2386,6 +2469,7 @@ package ecs {
   }
 
   object LogConfiguration {
+    @inline
     def apply(
         logDriver: LogDriver,
         options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined,
@@ -2424,6 +2508,7 @@ package ecs {
   }
 
   object MountPoint {
+    @inline
     def apply(
         containerPath: js.UndefOr[String] = js.undefined,
         readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -2449,6 +2534,7 @@ package ecs {
   }
 
   object NetworkBinding {
+    @inline
     def apply(
         bindIP: js.UndefOr[String] = js.undefined,
         containerPort: js.UndefOr[BoxedInteger] = js.undefined,
@@ -2473,6 +2559,7 @@ package ecs {
   }
 
   object NetworkConfiguration {
+    @inline
     def apply(
         awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
     ): NetworkConfiguration = {
@@ -2493,6 +2580,7 @@ package ecs {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         attachmentId: js.UndefOr[String] = js.undefined,
         ipv6Address: js.UndefOr[String] = js.undefined,
@@ -2532,6 +2620,7 @@ package ecs {
   }
 
   object PlacementConstraint {
+    @inline
     def apply(
         expression: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[PlacementConstraintType] = js.undefined
@@ -2560,6 +2649,7 @@ package ecs {
   }
 
   object PlacementStrategy {
+    @inline
     def apply(
         field: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[PlacementStrategyType] = js.undefined
@@ -2589,6 +2679,7 @@ package ecs {
   }
 
   object PlatformDevice {
+    @inline
     def apply(
         id: String,
         `type`: PlatformDeviceType
@@ -2621,6 +2712,7 @@ package ecs {
   }
 
   object PortMapping {
+    @inline
     def apply(
         containerPort: js.UndefOr[BoxedInteger] = js.undefined,
         hostPort: js.UndefOr[BoxedInteger] = js.undefined,
@@ -2654,6 +2746,7 @@ package ecs {
   }
 
   object ProxyConfiguration {
+    @inline
     def apply(
         containerName: String,
         properties: js.UndefOr[ProxyConfigurationProperties] = js.undefined,
@@ -2682,6 +2775,7 @@ package ecs {
   }
 
   object PutAccountSettingDefaultRequest {
+    @inline
     def apply(
         name: SettingName,
         value: String
@@ -2701,6 +2795,7 @@ package ecs {
   }
 
   object PutAccountSettingDefaultResponse {
+    @inline
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): PutAccountSettingDefaultResponse = {
@@ -2718,6 +2813,7 @@ package ecs {
   }
 
   object PutAccountSettingRequest {
+    @inline
     def apply(
         name: SettingName,
         value: String,
@@ -2739,6 +2835,7 @@ package ecs {
   }
 
   object PutAccountSettingResponse {
+    @inline
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): PutAccountSettingResponse = {
@@ -2755,6 +2852,7 @@ package ecs {
   }
 
   object PutAttributesRequest {
+    @inline
     def apply(
         attributes: Attributes,
         cluster: js.UndefOr[String] = js.undefined
@@ -2774,6 +2872,7 @@ package ecs {
   }
 
   object PutAttributesResponse {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined
     ): PutAttributesResponse = {
@@ -2797,6 +2896,7 @@ package ecs {
   }
 
   object RegisterContainerInstanceRequest {
+    @inline
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined,
         cluster: js.UndefOr[String] = js.undefined,
@@ -2830,6 +2930,7 @@ package ecs {
   }
 
   object RegisterContainerInstanceResponse {
+    @inline
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): RegisterContainerInstanceResponse = {
@@ -2858,6 +2959,7 @@ package ecs {
   }
 
   object RegisterTaskDefinitionRequest {
+    @inline
     def apply(
         containerDefinitions: ContainerDefinitions,
         family: String,
@@ -2902,6 +3004,7 @@ package ecs {
   }
 
   object RegisterTaskDefinitionResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
@@ -2922,6 +3025,7 @@ package ecs {
   }
 
   object RepositoryCredentials {
+    @inline
     def apply(
         credentialsParameter: String
     ): RepositoryCredentials = {
@@ -2947,6 +3051,7 @@ package ecs {
   }
 
   object Resource {
+    @inline
     def apply(
         doubleValue: js.UndefOr[Double] = js.undefined,
         integerValue: js.UndefOr[Int] = js.undefined,
@@ -2976,6 +3081,7 @@ package ecs {
   }
 
   object ResourceRequirement {
+    @inline
     def apply(
         `type`: ResourceType,
         value: String
@@ -3014,6 +3120,7 @@ package ecs {
   }
 
   object RunTaskRequest {
+    @inline
     def apply(
         taskDefinition: String,
         cluster: js.UndefOr[String] = js.undefined,
@@ -3058,6 +3165,7 @@ package ecs {
   }
 
   object RunTaskResponse {
+    @inline
     def apply(
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
@@ -3079,6 +3187,7 @@ package ecs {
   }
 
   object Scale {
+    @inline
     def apply(
         unit: js.UndefOr[ScaleUnit] = js.undefined,
         value: js.UndefOr[Double] = js.undefined
@@ -3123,6 +3232,7 @@ package ecs {
   }
 
   object Secret {
+    @inline
     def apply(
         name: String,
         valueFrom: String
@@ -3172,6 +3282,7 @@ package ecs {
   }
 
   object Service {
+    @inline
     def apply(
         clusterArn: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -3248,6 +3359,7 @@ package ecs {
   }
 
   object ServiceEvent {
+    @inline
     def apply(
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
@@ -3279,6 +3391,7 @@ package ecs {
   }
 
   object ServiceRegistry {
+    @inline
     def apply(
         containerName: js.UndefOr[String] = js.undefined,
         containerPort: js.UndefOr[BoxedInteger] = js.undefined,
@@ -3305,6 +3418,7 @@ package ecs {
   }
 
   object Setting {
+    @inline
     def apply(
         name: js.UndefOr[SettingName] = js.undefined,
         principalArn: js.UndefOr[String] = js.undefined,
@@ -3365,6 +3479,7 @@ package ecs {
   }
 
   object StartTaskRequest {
+    @inline
     def apply(
         containerInstances: StringList,
         taskDefinition: String,
@@ -3401,6 +3516,7 @@ package ecs {
   }
 
   object StartTaskResponse {
+    @inline
     def apply(
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
@@ -3420,6 +3536,7 @@ package ecs {
   }
 
   object StopTaskRequest {
+    @inline
     def apply(
         task: String,
         cluster: js.UndefOr[String] = js.undefined,
@@ -3441,6 +3558,7 @@ package ecs {
   }
 
   object StopTaskResponse {
+    @inline
     def apply(
         task: js.UndefOr[Task] = js.undefined
     ): StopTaskResponse = {
@@ -3457,6 +3575,7 @@ package ecs {
   }
 
   object SubmitAttachmentStateChangesRequest {
+    @inline
     def apply(
         attachments: AttachmentStateChanges,
         cluster: js.UndefOr[String] = js.undefined
@@ -3476,6 +3595,7 @@ package ecs {
   }
 
   object SubmitAttachmentStateChangesResponse {
+    @inline
     def apply(
         acknowledgment: js.UndefOr[String] = js.undefined
     ): SubmitAttachmentStateChangesResponse = {
@@ -3497,6 +3617,7 @@ package ecs {
   }
 
   object SubmitContainerStateChangeRequest {
+    @inline
     def apply(
         cluster: js.UndefOr[String] = js.undefined,
         containerName: js.UndefOr[String] = js.undefined,
@@ -3524,6 +3645,7 @@ package ecs {
   }
 
   object SubmitContainerStateChangeResponse {
+    @inline
     def apply(
         acknowledgment: js.UndefOr[String] = js.undefined
     ): SubmitContainerStateChangeResponse = {
@@ -3547,6 +3669,7 @@ package ecs {
   }
 
   object SubmitTaskStateChangeRequest {
+    @inline
     def apply(
         attachments: js.UndefOr[AttachmentStateChanges] = js.undefined,
         cluster: js.UndefOr[String] = js.undefined,
@@ -3578,6 +3701,7 @@ package ecs {
   }
 
   object SubmitTaskStateChangeResponse {
+    @inline
     def apply(
         acknowledgment: js.UndefOr[String] = js.undefined
     ): SubmitTaskStateChangeResponse = {
@@ -3600,6 +3724,7 @@ package ecs {
   }
 
   object SystemControl {
+    @inline
     def apply(
         namespace: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -3629,6 +3754,7 @@ package ecs {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
@@ -3647,6 +3773,7 @@ package ecs {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tags: Tags
@@ -3664,6 +3791,7 @@ package ecs {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3715,6 +3843,7 @@ package ecs {
   }
 
   object Task {
+    @inline
     def apply(
         attachments: js.UndefOr[Attachments] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
@@ -3806,6 +3935,7 @@ package ecs {
   }
 
   object TaskDefinition {
+    @inline
     def apply(
         compatibilities: js.UndefOr[CompatibilityList] = js.undefined,
         containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
@@ -3875,6 +4005,7 @@ package ecs {
   }
 
   object TaskDefinitionPlacementConstraint {
+    @inline
     def apply(
         expression: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[TaskDefinitionPlacementConstraintType] = js.undefined
@@ -3916,6 +4047,7 @@ package ecs {
   }
 
   object TaskOverride {
+    @inline
     def apply(
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
@@ -3958,6 +4090,7 @@ package ecs {
   }
 
   object TaskSet {
+    @inline
     def apply(
         clusterArn: js.UndefOr[String] = js.undefined,
         computedDesiredCount: js.UndefOr[Int] = js.undefined,
@@ -4026,6 +4159,7 @@ package ecs {
   }
 
   object Tmpfs {
+    @inline
     def apply(
         containerPath: String,
         size: Int,
@@ -4059,6 +4193,7 @@ package ecs {
   }
 
   object Ulimit {
+    @inline
     def apply(
         hardLimit: Int,
         name: UlimitName,
@@ -4119,6 +4254,7 @@ package ecs {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tagKeys: TagKeys
@@ -4136,6 +4272,7 @@ package ecs {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4151,6 +4288,7 @@ package ecs {
   }
 
   object UpdateContainerAgentRequest {
+    @inline
     def apply(
         containerInstance: String,
         cluster: js.UndefOr[String] = js.undefined
@@ -4170,6 +4308,7 @@ package ecs {
   }
 
   object UpdateContainerAgentResponse {
+    @inline
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): UpdateContainerAgentResponse = {
@@ -4187,6 +4326,7 @@ package ecs {
   }
 
   object UpdateContainerInstancesStateRequest {
+    @inline
     def apply(
         containerInstances: StringList,
         status: ContainerInstanceStatus,
@@ -4209,6 +4349,7 @@ package ecs {
   }
 
   object UpdateContainerInstancesStateResponse {
+    @inline
     def apply(
         containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
@@ -4228,6 +4369,7 @@ package ecs {
   }
 
   object UpdateServicePrimaryTaskSetRequest {
+    @inline
     def apply(
         cluster: String,
         primaryTaskSet: String,
@@ -4249,6 +4391,7 @@ package ecs {
   }
 
   object UpdateServicePrimaryTaskSetResponse {
+    @inline
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): UpdateServicePrimaryTaskSetResponse = {
@@ -4272,6 +4415,7 @@ package ecs {
   }
 
   object UpdateServiceRequest {
+    @inline
     def apply(
         service: String,
         cluster: js.UndefOr[String] = js.undefined,
@@ -4307,6 +4451,7 @@ package ecs {
   }
 
   object UpdateServiceResponse {
+    @inline
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): UpdateServiceResponse = {
@@ -4325,6 +4470,7 @@ package ecs {
   }
 
   object UpdateTaskSetRequest {
+    @inline
     def apply(
         cluster: String,
         scale: Scale,
@@ -4348,6 +4494,7 @@ package ecs {
   }
 
   object UpdateTaskSetResponse {
+    @inline
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): UpdateTaskSetResponse = {
@@ -4368,6 +4515,7 @@ package ecs {
   }
 
   object VersionInfo {
+    @inline
     def apply(
         agentHash: js.UndefOr[String] = js.undefined,
         agentVersion: js.UndefOr[String] = js.undefined,
@@ -4392,6 +4540,7 @@ package ecs {
   }
 
   object Volume {
+    @inline
     def apply(
         dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration] = js.undefined,
         host: js.UndefOr[HostVolumeProperties] = js.undefined,
@@ -4417,6 +4566,7 @@ package ecs {
   }
 
   object VolumeFrom {
+    @inline
     def apply(
         readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
         sourceContainer: js.UndefOr[String] = js.undefined

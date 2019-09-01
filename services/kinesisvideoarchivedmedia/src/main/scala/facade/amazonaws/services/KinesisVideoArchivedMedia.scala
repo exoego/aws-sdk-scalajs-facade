@@ -34,15 +34,16 @@ package object kinesisvideoarchivedmedia {
 
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
-    def getDASHStreamingSessionURLFuture(
+    @inline def getDASHStreamingSessionURLFuture(
         params: GetDASHStreamingSessionURLInput
     ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise.toFuture
-    def getHLSStreamingSessionURLFuture(
+    @inline def getHLSStreamingSessionURLFuture(
         params: GetHLSStreamingSessionURLInput
     ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise.toFuture
-    def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] =
-      service.getMediaForFragmentList(params).promise.toFuture
-    def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
+    @inline def getMediaForFragmentListFuture(
+        params: GetMediaForFragmentListInput
+    ): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise.toFuture
+    @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
       service.listFragments(params).promise.toFuture
   }
 }
@@ -93,6 +94,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object DASHFragmentSelector {
+    @inline
     def apply(
         FragmentSelectorType: js.UndefOr[DASHFragmentSelectorType] = js.undefined,
         TimestampRange: js.UndefOr[DASHTimestampRange] = js.undefined
@@ -132,6 +134,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object DASHTimestampRange {
+    @inline
     def apply(
         EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StartTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -156,6 +159,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object Fragment {
+    @inline
     def apply(
         FragmentLengthInMilliseconds: js.UndefOr[Double] = js.undefined,
         FragmentNumber: js.UndefOr[String] = js.undefined,
@@ -191,6 +195,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object FragmentSelector {
+    @inline
     def apply(
         FragmentSelectorType: FragmentSelectorType,
         TimestampRange: TimestampRange
@@ -224,6 +229,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetDASHStreamingSessionURLInput {
+    @inline
     def apply(
         DASHFragmentSelector: js.UndefOr[DASHFragmentSelector] = js.undefined,
         DisplayFragmentNumber: js.UndefOr[DASHDisplayFragmentNumber] = js.undefined,
@@ -255,6 +261,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetDASHStreamingSessionURLOutput {
+    @inline
     def apply(
         DASHStreamingSessionURL: js.UndefOr[DASHStreamingSessionURL] = js.undefined
     ): GetDASHStreamingSessionURLOutput = {
@@ -278,6 +285,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetHLSStreamingSessionURLInput {
+    @inline
     def apply(
         ContainerFormat: js.UndefOr[ContainerFormat] = js.undefined,
         DiscontinuityMode: js.UndefOr[HLSDiscontinuityMode] = js.undefined,
@@ -311,6 +319,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetHLSStreamingSessionURLOutput {
+    @inline
     def apply(
         HLSStreamingSessionURL: js.UndefOr[HLSStreamingSessionURL] = js.undefined
     ): GetHLSStreamingSessionURLOutput = {
@@ -327,6 +336,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetMediaForFragmentListInput {
+    @inline
     def apply(
         Fragments: FragmentNumberList,
         StreamName: StreamName
@@ -347,6 +357,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object GetMediaForFragmentListOutput {
+    @inline
     def apply(
         ContentType: js.UndefOr[ContentType] = js.undefined,
         Payload: js.UndefOr[Payload] = js.undefined
@@ -382,6 +393,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object HLSFragmentSelector {
+    @inline
     def apply(
         FragmentSelectorType: js.UndefOr[HLSFragmentSelectorType] = js.undefined,
         TimestampRange: js.UndefOr[HLSTimestampRange] = js.undefined
@@ -421,6 +433,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object HLSTimestampRange {
+    @inline
     def apply(
         EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StartTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -441,6 +454,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object ListFragmentsInput {
+    @inline
     def apply(
         StreamName: StreamName,
         FragmentSelector: js.UndefOr[FragmentSelector] = js.undefined,
@@ -465,6 +479,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object ListFragmentsOutput {
+    @inline
     def apply(
         Fragments: js.UndefOr[FragmentList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -486,6 +501,7 @@ package kinesisvideoarchivedmedia {
   }
 
   object TimestampRange {
+    @inline
     def apply(
         EndTimestamp: Timestamp,
         StartTimestamp: Timestamp

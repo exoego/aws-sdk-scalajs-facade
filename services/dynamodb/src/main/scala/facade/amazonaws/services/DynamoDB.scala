@@ -150,76 +150,79 @@ package object dynamodb {
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
-    def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
+    @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
       service.batchGetItem(params).promise.toFuture
-    def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =
+    @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =
       service.batchWriteItem(params).promise.toFuture
-    def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] =
+    @inline def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] =
       service.createBackup(params).promise.toFuture
-    def createGlobalTableFuture(params: CreateGlobalTableInput): Future[CreateGlobalTableOutput] =
+    @inline def createGlobalTableFuture(params: CreateGlobalTableInput): Future[CreateGlobalTableOutput] =
       service.createGlobalTable(params).promise.toFuture
-    def createTableFuture(params: CreateTableInput): Future[CreateTableOutput] =
+    @inline def createTableFuture(params: CreateTableInput): Future[CreateTableOutput] =
       service.createTable(params).promise.toFuture
-    def deleteBackupFuture(params: DeleteBackupInput): Future[DeleteBackupOutput] =
+    @inline def deleteBackupFuture(params: DeleteBackupInput): Future[DeleteBackupOutput] =
       service.deleteBackup(params).promise.toFuture
-    def deleteItemFuture(params: DeleteItemInput): Future[DeleteItemOutput] =
+    @inline def deleteItemFuture(params: DeleteItemInput): Future[DeleteItemOutput] =
       service.deleteItem(params).promise.toFuture
-    def deleteTableFuture(params: DeleteTableInput): Future[DeleteTableOutput] =
+    @inline def deleteTableFuture(params: DeleteTableInput): Future[DeleteTableOutput] =
       service.deleteTable(params).promise.toFuture
-    def describeBackupFuture(params: DescribeBackupInput): Future[DescribeBackupOutput] =
+    @inline def describeBackupFuture(params: DescribeBackupInput): Future[DescribeBackupOutput] =
       service.describeBackup(params).promise.toFuture
-    def describeContinuousBackupsFuture(
+    @inline def describeContinuousBackupsFuture(
         params: DescribeContinuousBackupsInput
     ): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise.toFuture
-    def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
+    @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
       service.describeEndpoints(params).promise.toFuture
-    def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] =
+    @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] =
       service.describeGlobalTable(params).promise.toFuture
-    def describeGlobalTableSettingsFuture(
+    @inline def describeGlobalTableSettingsFuture(
         params: DescribeGlobalTableSettingsInput
     ): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise.toFuture
-    def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
+    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
       service.describeLimits(params).promise.toFuture
-    def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] =
+    @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] =
       service.describeTable(params).promise.toFuture
-    def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] =
+    @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] =
       service.describeTimeToLive(params).promise.toFuture
-    def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise.toFuture
-    def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] =
+    @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise.toFuture
+    @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] =
       service.listBackups(params).promise.toFuture
-    def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] =
+    @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] =
       service.listGlobalTables(params).promise.toFuture
-    def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] =
+    @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] =
       service.listTables(params).promise.toFuture
-    def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] =
+    @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] =
       service.listTagsOfResource(params).promise.toFuture
-    def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise.toFuture
-    def queryFuture(params: QueryInput): Future[QueryOutput]       = service.query(params).promise.toFuture
-    def restoreTableFromBackupFuture(params: RestoreTableFromBackupInput): Future[RestoreTableFromBackupOutput] =
-      service.restoreTableFromBackup(params).promise.toFuture
-    def restoreTableToPointInTimeFuture(
+    @inline def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise.toFuture
+    @inline def queryFuture(params: QueryInput): Future[QueryOutput]       = service.query(params).promise.toFuture
+    @inline def restoreTableFromBackupFuture(
+        params: RestoreTableFromBackupInput
+    ): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise.toFuture
+    @inline def restoreTableToPointInTimeFuture(
         params: RestoreTableToPointInTimeInput
-    ): Future[RestoreTableToPointInTimeOutput]                         = service.restoreTableToPointInTime(params).promise.toFuture
-    def scanFuture(params: ScanInput): Future[ScanOutput]              = service.scan(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def transactGetItemsFuture(params: TransactGetItemsInput): Future[TransactGetItemsOutput] =
+    ): Future[RestoreTableToPointInTimeOutput]                    = service.restoreTableToPointInTime(params).promise.toFuture
+    @inline def scanFuture(params: ScanInput): Future[ScanOutput] = service.scan(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def transactGetItemsFuture(params: TransactGetItemsInput): Future[TransactGetItemsOutput] =
       service.transactGetItems(params).promise.toFuture
-    def transactWriteItemsFuture(params: TransactWriteItemsInput): Future[TransactWriteItemsOutput] =
+    @inline def transactWriteItemsFuture(params: TransactWriteItemsInput): Future[TransactWriteItemsOutput] =
       service.transactWriteItems(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateContinuousBackupsFuture(params: UpdateContinuousBackupsInput): Future[UpdateContinuousBackupsOutput] =
-      service.updateContinuousBackups(params).promise.toFuture
-    def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] =
+    @inline def updateContinuousBackupsFuture(
+        params: UpdateContinuousBackupsInput
+    ): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise.toFuture
+    @inline def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] =
       service.updateGlobalTable(params).promise.toFuture
-    def updateGlobalTableSettingsFuture(
+    @inline def updateGlobalTableSettingsFuture(
         params: UpdateGlobalTableSettingsInput
     ): Future[UpdateGlobalTableSettingsOutput] = service.updateGlobalTableSettings(params).promise.toFuture
-    def updateItemFuture(params: UpdateItemInput): Future[UpdateItemOutput] =
+    @inline def updateItemFuture(params: UpdateItemInput): Future[UpdateItemOutput] =
       service.updateItem(params).promise.toFuture
-    def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] =
+    @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] =
       service.updateTable(params).promise.toFuture
-    def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] =
+    @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] =
       service.updateTimeToLive(params).promise.toFuture
   }
 }
@@ -292,6 +295,7 @@ package dynamodb {
   }
 
   object AttributeDefinition {
+    @inline
     def apply(
         AttributeName: KeySchemaAttributeName,
         AttributeType: ScalarAttributeType
@@ -325,6 +329,7 @@ package dynamodb {
   }
 
   object AttributeValue {
+    @inline
     def apply(
         B: js.UndefOr[BinaryAttributeValue] = js.undefined,
         BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
@@ -404,6 +409,7 @@ package dynamodb {
   }
 
   object AttributeValueUpdate {
+    @inline
     def apply(
         Action: js.UndefOr[AttributeAction] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
@@ -427,6 +433,7 @@ package dynamodb {
   }
 
   object AutoScalingPolicyDescription {
+    @inline
     def apply(
         PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined,
         TargetTrackingScalingPolicyConfiguration: js.UndefOr[
@@ -452,6 +459,7 @@ package dynamodb {
   }
 
   object AutoScalingPolicyUpdate {
+    @inline
     def apply(
         TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
         PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined
@@ -478,6 +486,7 @@ package dynamodb {
   }
 
   object AutoScalingSettingsDescription {
+    @inline
     def apply(
         AutoScalingDisabled: js.UndefOr[BooleanObject] = js.undefined,
         AutoScalingRoleArn: js.UndefOr[String] = js.undefined,
@@ -508,6 +517,7 @@ package dynamodb {
   }
 
   object AutoScalingSettingsUpdate {
+    @inline
     def apply(
         AutoScalingDisabled: js.UndefOr[BooleanObject] = js.undefined,
         AutoScalingRoleArn: js.UndefOr[AutoScalingRoleArn] = js.undefined,
@@ -537,6 +547,7 @@ package dynamodb {
   }
 
   object AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
+    @inline
     def apply(
         TargetValue: Double,
         DisableScaleIn: js.UndefOr[BooleanObject] = js.undefined,
@@ -566,6 +577,7 @@ package dynamodb {
   }
 
   object AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+    @inline
     def apply(
         TargetValue: Double,
         DisableScaleIn: js.UndefOr[BooleanObject] = js.undefined,
@@ -594,6 +606,7 @@ package dynamodb {
   }
 
   object BackupDescription {
+    @inline
     def apply(
         BackupDetails: js.UndefOr[BackupDetails] = js.undefined,
         SourceTableDetails: js.UndefOr[SourceTableDetails] = js.undefined,
@@ -624,6 +637,7 @@ package dynamodb {
   }
 
   object BackupDetails {
+    @inline
     def apply(
         BackupArn: BackupArn,
         BackupCreationDateTime: BackupCreationDateTime,
@@ -673,6 +687,7 @@ package dynamodb {
   }
 
   object BackupSummary {
+    @inline
     def apply(
         BackupArn: js.UndefOr[BackupArn] = js.undefined,
         BackupCreationDateTime: js.UndefOr[BackupCreationDateTime] = js.undefined,
@@ -727,6 +742,7 @@ package dynamodb {
   }
 
   object BatchGetItemInput {
+    @inline
     def apply(
         RequestItems: BatchGetRequestMap,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
@@ -751,6 +767,7 @@ package dynamodb {
   }
 
   object BatchGetItemOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         Responses: js.UndefOr[BatchGetResponseMap] = js.undefined,
@@ -775,6 +792,7 @@ package dynamodb {
   }
 
   object BatchWriteItemInput {
+    @inline
     def apply(
         RequestItems: BatchWriteItemRequestMap,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
@@ -803,6 +821,7 @@ package dynamodb {
   }
 
   object BatchWriteItemOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined,
@@ -833,6 +852,7 @@ package dynamodb {
   }
 
   object BillingModeSummary {
+    @inline
     def apply(
         BillingMode: js.UndefOr[BillingMode] = js.undefined,
         LastUpdateToPayPerRequestDateTime: js.UndefOr[Date] = js.undefined
@@ -857,6 +877,7 @@ package dynamodb {
   }
 
   object Capacity {
+    @inline
     def apply(
         CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
         ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
@@ -904,6 +925,7 @@ package dynamodb {
   }
 
   object Condition {
+    @inline
     def apply(
         ComparisonOperator: ComparisonOperator,
         AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined
@@ -931,6 +953,7 @@ package dynamodb {
   }
 
   object ConditionCheck {
+    @inline
     def apply(
         ConditionExpression: ConditionExpression,
         Key: Key,
@@ -978,6 +1001,7 @@ package dynamodb {
   }
 
   object ConsumedCapacity {
+    @inline
     def apply(
         CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
         GlobalSecondaryIndexes: js.UndefOr[SecondaryIndexesCapacityMap] = js.undefined,
@@ -1009,6 +1033,7 @@ package dynamodb {
   }
 
   object ContinuousBackupsDescription {
+    @inline
     def apply(
         ContinuousBackupsStatus: ContinuousBackupsStatus,
         PointInTimeRecoveryDescription: js.UndefOr[PointInTimeRecoveryDescription] = js.undefined
@@ -1038,6 +1063,7 @@ package dynamodb {
   }
 
   object CreateBackupInput {
+    @inline
     def apply(
         BackupName: BackupName,
         TableName: TableName
@@ -1057,6 +1083,7 @@ package dynamodb {
   }
 
   object CreateBackupOutput {
+    @inline
     def apply(
         BackupDetails: js.UndefOr[BackupDetails] = js.undefined
     ): CreateBackupOutput = {
@@ -1078,6 +1105,7 @@ package dynamodb {
   }
 
   object CreateGlobalSecondaryIndexAction {
+    @inline
     def apply(
         IndexName: IndexName,
         KeySchema: KeySchema,
@@ -1102,6 +1130,7 @@ package dynamodb {
   }
 
   object CreateGlobalTableInput {
+    @inline
     def apply(
         GlobalTableName: TableName,
         ReplicationGroup: ReplicaList
@@ -1121,6 +1150,7 @@ package dynamodb {
   }
 
   object CreateGlobalTableOutput {
+    @inline
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): CreateGlobalTableOutput = {
@@ -1139,6 +1169,7 @@ package dynamodb {
   }
 
   object CreateReplicaAction {
+    @inline
     def apply(
         RegionName: RegionName
     ): CreateReplicaAction = {
@@ -1168,6 +1199,7 @@ package dynamodb {
   }
 
   object CreateTableInput {
+    @inline
     def apply(
         AttributeDefinitions: AttributeDefinitions,
         KeySchema: KeySchema,
@@ -1206,6 +1238,7 @@ package dynamodb {
   }
 
   object CreateTableOutput {
+    @inline
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): CreateTableOutput = {
@@ -1229,6 +1262,7 @@ package dynamodb {
   }
 
   object Delete {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -1260,6 +1294,7 @@ package dynamodb {
   }
 
   object DeleteBackupInput {
+    @inline
     def apply(
         BackupArn: BackupArn
     ): DeleteBackupInput = {
@@ -1277,6 +1312,7 @@ package dynamodb {
   }
 
   object DeleteBackupOutput {
+    @inline
     def apply(
         BackupDescription: js.UndefOr[BackupDescription] = js.undefined
     ): DeleteBackupOutput = {
@@ -1295,6 +1331,7 @@ package dynamodb {
   }
 
   object DeleteGlobalSecondaryIndexAction {
+    @inline
     def apply(
         IndexName: IndexName
     ): DeleteGlobalSecondaryIndexAction = {
@@ -1324,6 +1361,7 @@ package dynamodb {
   }
 
   object DeleteItemInput {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -1368,6 +1406,7 @@ package dynamodb {
   }
 
   object DeleteItemOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeMap] = js.undefined,
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
@@ -1390,6 +1429,7 @@ package dynamodb {
   }
 
   object DeleteReplicaAction {
+    @inline
     def apply(
         RegionName: RegionName
     ): DeleteReplicaAction = {
@@ -1410,6 +1450,7 @@ package dynamodb {
   }
 
   object DeleteRequest {
+    @inline
     def apply(
         Key: Key
     ): DeleteRequest = {
@@ -1430,6 +1471,7 @@ package dynamodb {
   }
 
   object DeleteTableInput {
+    @inline
     def apply(
         TableName: TableName
     ): DeleteTableInput = {
@@ -1450,6 +1492,7 @@ package dynamodb {
   }
 
   object DeleteTableOutput {
+    @inline
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): DeleteTableOutput = {
@@ -1465,6 +1508,7 @@ package dynamodb {
   }
 
   object DescribeBackupInput {
+    @inline
     def apply(
         BackupArn: BackupArn
     ): DescribeBackupInput = {
@@ -1482,6 +1526,7 @@ package dynamodb {
   }
 
   object DescribeBackupOutput {
+    @inline
     def apply(
         BackupDescription: js.UndefOr[BackupDescription] = js.undefined
     ): DescribeBackupOutput = {
@@ -1497,6 +1542,7 @@ package dynamodb {
   }
 
   object DescribeContinuousBackupsInput {
+    @inline
     def apply(
         TableName: TableName
     ): DescribeContinuousBackupsInput = {
@@ -1514,6 +1560,7 @@ package dynamodb {
   }
 
   object DescribeContinuousBackupsOutput {
+    @inline
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): DescribeContinuousBackupsOutput = {
@@ -1529,6 +1576,7 @@ package dynamodb {
   trait DescribeEndpointsRequest extends js.Object {}
 
   object DescribeEndpointsRequest {
+    @inline
     def apply(
         ): DescribeEndpointsRequest = {
       val __obj = js.Dynamic.literal()
@@ -1543,6 +1591,7 @@ package dynamodb {
   }
 
   object DescribeEndpointsResponse {
+    @inline
     def apply(
         Endpoints: Endpoints
     ): DescribeEndpointsResponse = {
@@ -1560,6 +1609,7 @@ package dynamodb {
   }
 
   object DescribeGlobalTableInput {
+    @inline
     def apply(
         GlobalTableName: TableName
     ): DescribeGlobalTableInput = {
@@ -1577,6 +1627,7 @@ package dynamodb {
   }
 
   object DescribeGlobalTableOutput {
+    @inline
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): DescribeGlobalTableOutput = {
@@ -1592,6 +1643,7 @@ package dynamodb {
   }
 
   object DescribeGlobalTableSettingsInput {
+    @inline
     def apply(
         GlobalTableName: TableName
     ): DescribeGlobalTableSettingsInput = {
@@ -1610,6 +1662,7 @@ package dynamodb {
   }
 
   object DescribeGlobalTableSettingsOutput {
+    @inline
     def apply(
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
@@ -1628,6 +1681,7 @@ package dynamodb {
   trait DescribeLimitsInput extends js.Object {}
 
   object DescribeLimitsInput {
+    @inline
     def apply(
         ): DescribeLimitsInput = {
       val __obj = js.Dynamic.literal()
@@ -1648,6 +1702,7 @@ package dynamodb {
   }
 
   object DescribeLimitsOutput {
+    @inline
     def apply(
         AccountMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         AccountMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
@@ -1680,6 +1735,7 @@ package dynamodb {
   }
 
   object DescribeTableInput {
+    @inline
     def apply(
         TableName: TableName
     ): DescribeTableInput = {
@@ -1700,6 +1756,7 @@ package dynamodb {
   }
 
   object DescribeTableOutput {
+    @inline
     def apply(
         Table: js.UndefOr[TableDescription] = js.undefined
     ): DescribeTableOutput = {
@@ -1715,6 +1772,7 @@ package dynamodb {
   }
 
   object DescribeTimeToLiveInput {
+    @inline
     def apply(
         TableName: TableName
     ): DescribeTimeToLiveInput = {
@@ -1732,6 +1790,7 @@ package dynamodb {
   }
 
   object DescribeTimeToLiveOutput {
+    @inline
     def apply(
         TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined
     ): DescribeTimeToLiveOutput = {
@@ -1751,6 +1810,7 @@ package dynamodb {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: String,
         CachePeriodInMinutes: Double
@@ -1779,6 +1839,7 @@ package dynamodb {
   }
 
   object ExpectedAttributeValue {
+    @inline
     def apply(
         AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined,
         ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
@@ -1806,6 +1867,7 @@ package dynamodb {
   }
 
   object Get {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -1838,6 +1900,7 @@ package dynamodb {
   }
 
   object GetItemInput {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -1871,6 +1934,7 @@ package dynamodb {
   }
 
   object GetItemOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         Item: js.UndefOr[AttributeMap] = js.undefined
@@ -1894,6 +1958,7 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndex {
+    @inline
     def apply(
         IndexName: IndexName,
         KeySchema: KeySchema,
@@ -1928,6 +1993,7 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndexDescription {
+    @inline
     def apply(
         Backfilling: js.UndefOr[Backfilling] = js.undefined,
         IndexArn: js.UndefOr[String] = js.undefined,
@@ -1965,6 +2031,7 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndexInfo {
+    @inline
     def apply(
         IndexName: js.UndefOr[IndexName] = js.undefined,
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
@@ -1994,6 +2061,7 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndexUpdate {
+    @inline
     def apply(
         Create: js.UndefOr[CreateGlobalSecondaryIndexAction] = js.undefined,
         Delete: js.UndefOr[DeleteGlobalSecondaryIndexAction] = js.undefined,
@@ -2017,6 +2085,7 @@ package dynamodb {
   }
 
   object GlobalTable {
+    @inline
     def apply(
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicationGroup: js.UndefOr[ReplicaList] = js.undefined
@@ -2041,6 +2110,7 @@ package dynamodb {
   }
 
   object GlobalTableDescription {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         GlobalTableArn: js.UndefOr[GlobalTableArnString] = js.undefined,
@@ -2069,6 +2139,7 @@ package dynamodb {
   }
 
   object GlobalTableGlobalSecondaryIndexSettingsUpdate {
+    @inline
     def apply(
         IndexName: IndexName,
         ProvisionedWriteCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
@@ -2116,6 +2187,7 @@ package dynamodb {
   }
 
   object ItemCollectionMetrics {
+    @inline
     def apply(
         ItemCollectionKey: js.UndefOr[ItemCollectionKeyAttributeMap] = js.undefined,
         SizeEstimateRangeGB: js.UndefOr[ItemCollectionSizeEstimateRange] = js.undefined
@@ -2136,6 +2208,7 @@ package dynamodb {
   }
 
   object ItemResponse {
+    @inline
     def apply(
         Item: js.UndefOr[AttributeMap] = js.undefined
     ): ItemResponse = {
@@ -2157,6 +2230,7 @@ package dynamodb {
   }
 
   object KeySchemaElement {
+    @inline
     def apply(
         AttributeName: KeySchemaAttributeName,
         KeyType: KeyType
@@ -2191,6 +2265,7 @@ package dynamodb {
   }
 
   object KeysAndAttributes {
+    @inline
     def apply(
         Keys: KeyList,
         AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
@@ -2221,6 +2296,7 @@ package dynamodb {
   }
 
   object ListBackupsInput {
+    @inline
     def apply(
         BackupType: js.UndefOr[BackupTypeFilter] = js.undefined,
         ExclusiveStartBackupArn: js.UndefOr[BackupArn] = js.undefined,
@@ -2247,6 +2323,7 @@ package dynamodb {
   }
 
   object ListBackupsOutput {
+    @inline
     def apply(
         BackupSummaries: js.UndefOr[BackupSummaries] = js.undefined,
         LastEvaluatedBackupArn: js.UndefOr[BackupArn] = js.undefined
@@ -2266,6 +2343,7 @@ package dynamodb {
   }
 
   object ListGlobalTablesInput {
+    @inline
     def apply(
         ExclusiveStartGlobalTableName: js.UndefOr[TableName] = js.undefined,
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
@@ -2288,6 +2366,7 @@ package dynamodb {
   }
 
   object ListGlobalTablesOutput {
+    @inline
     def apply(
         GlobalTables: js.UndefOr[GlobalTableList] = js.undefined,
         LastEvaluatedGlobalTableName: js.UndefOr[TableName] = js.undefined
@@ -2311,6 +2390,7 @@ package dynamodb {
   }
 
   object ListTablesInput {
+    @inline
     def apply(
         ExclusiveStartTableName: js.UndefOr[TableName] = js.undefined,
         Limit: js.UndefOr[ListTablesInputLimit] = js.undefined
@@ -2332,6 +2412,7 @@ package dynamodb {
   }
 
   object ListTablesOutput {
+    @inline
     def apply(
         LastEvaluatedTableName: js.UndefOr[TableName] = js.undefined,
         TableNames: js.UndefOr[TableNameList] = js.undefined
@@ -2350,6 +2431,7 @@ package dynamodb {
   }
 
   object ListTagsOfResourceInput {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         NextToken: js.UndefOr[NextTokenString] = js.undefined
@@ -2370,6 +2452,7 @@ package dynamodb {
   }
 
   object ListTagsOfResourceOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextTokenString] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -2392,6 +2475,7 @@ package dynamodb {
   }
 
   object LocalSecondaryIndex {
+    @inline
     def apply(
         IndexName: IndexName,
         KeySchema: KeySchema,
@@ -2421,6 +2505,7 @@ package dynamodb {
   }
 
   object LocalSecondaryIndexDescription {
+    @inline
     def apply(
         IndexArn: js.UndefOr[String] = js.undefined,
         IndexName: js.UndefOr[IndexName] = js.undefined,
@@ -2451,6 +2536,7 @@ package dynamodb {
   }
 
   object LocalSecondaryIndexInfo {
+    @inline
     def apply(
         IndexName: js.UndefOr[IndexName] = js.undefined,
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
@@ -2475,6 +2561,7 @@ package dynamodb {
   }
 
   object PointInTimeRecoveryDescription {
+    @inline
     def apply(
         EarliestRestorableDateTime: js.UndefOr[Date] = js.undefined,
         LatestRestorableDateTime: js.UndefOr[Date] = js.undefined,
@@ -2501,6 +2588,7 @@ package dynamodb {
   }
 
   object PointInTimeRecoverySpecification {
+    @inline
     def apply(
         PointInTimeRecoveryEnabled: BooleanObject
     ): PointInTimeRecoverySpecification = {
@@ -2529,6 +2617,7 @@ package dynamodb {
   }
 
   object Projection {
+    @inline
     def apply(
         NonKeyAttributes: js.UndefOr[NonKeyAttributeNameList] = js.undefined,
         ProjectionType: js.UndefOr[ProjectionType] = js.undefined
@@ -2559,6 +2648,7 @@ package dynamodb {
   }
 
   object ProvisionedThroughput {
+    @inline
     def apply(
         ReadCapacityUnits: PositiveLongObject,
         WriteCapacityUnits: PositiveLongObject
@@ -2585,6 +2675,7 @@ package dynamodb {
   }
 
   object ProvisionedThroughputDescription {
+    @inline
     def apply(
         LastDecreaseDateTime: js.UndefOr[Date] = js.undefined,
         LastIncreaseDateTime: js.UndefOr[Date] = js.undefined,
@@ -2616,6 +2707,7 @@ package dynamodb {
   }
 
   object Put {
+    @inline
     def apply(
         Item: PutItemInputAttributeMap,
         TableName: TableName,
@@ -2659,6 +2751,7 @@ package dynamodb {
   }
 
   object PutItemInput {
+    @inline
     def apply(
         Item: PutItemInputAttributeMap,
         TableName: TableName,
@@ -2703,6 +2796,7 @@ package dynamodb {
   }
 
   object PutItemOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeMap] = js.undefined,
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
@@ -2725,6 +2819,7 @@ package dynamodb {
   }
 
   object PutRequest {
+    @inline
     def apply(
         Item: PutItemInputAttributeMap
     ): PutRequest = {
@@ -2761,6 +2856,7 @@ package dynamodb {
   }
 
   object QueryInput {
+    @inline
     def apply(
         TableName: TableName,
         AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
@@ -2819,6 +2915,7 @@ package dynamodb {
   }
 
   object QueryOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         Count: js.UndefOr[Int] = js.undefined,
@@ -2845,6 +2942,7 @@ package dynamodb {
   }
 
   object Replica {
+    @inline
     def apply(
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): Replica = {
@@ -2863,6 +2961,7 @@ package dynamodb {
   }
 
   object ReplicaDescription {
+    @inline
     def apply(
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): ReplicaDescription = {
@@ -2886,6 +2985,7 @@ package dynamodb {
   }
 
   object ReplicaGlobalSecondaryIndexSettingsDescription {
+    @inline
     def apply(
         IndexName: IndexName,
         IndexStatus: js.UndefOr[IndexStatus] = js.undefined,
@@ -2926,6 +3026,7 @@ package dynamodb {
   }
 
   object ReplicaGlobalSecondaryIndexSettingsUpdate {
+    @inline
     def apply(
         IndexName: IndexName,
         ProvisionedReadCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
@@ -2961,6 +3062,7 @@ package dynamodb {
   }
 
   object ReplicaSettingsDescription {
+    @inline
     def apply(
         RegionName: RegionName,
         ReplicaBillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
@@ -3011,6 +3113,7 @@ package dynamodb {
   }
 
   object ReplicaSettingsUpdate {
+    @inline
     def apply(
         RegionName: RegionName,
         ReplicaGlobalSecondaryIndexSettingsUpdate: js.UndefOr[ReplicaGlobalSecondaryIndexSettingsUpdateList] =
@@ -3057,6 +3160,7 @@ package dynamodb {
   }
 
   object ReplicaUpdate {
+    @inline
     def apply(
         Create: js.UndefOr[CreateReplicaAction] = js.undefined,
         Delete: js.UndefOr[DeleteReplicaAction] = js.undefined
@@ -3080,6 +3184,7 @@ package dynamodb {
   }
 
   object RestoreSummary {
+    @inline
     def apply(
         RestoreDateTime: Date,
         RestoreInProgress: RestoreInProgress,
@@ -3104,6 +3209,7 @@ package dynamodb {
   }
 
   object RestoreTableFromBackupInput {
+    @inline
     def apply(
         BackupArn: BackupArn,
         TargetTableName: TableName
@@ -3123,6 +3229,7 @@ package dynamodb {
   }
 
   object RestoreTableFromBackupOutput {
+    @inline
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): RestoreTableFromBackupOutput = {
@@ -3141,6 +3248,7 @@ package dynamodb {
   }
 
   object RestoreTableToPointInTimeInput {
+    @inline
     def apply(
         SourceTableName: TableName,
         TargetTableName: TableName,
@@ -3164,6 +3272,7 @@ package dynamodb {
   }
 
   object RestoreTableToPointInTimeOutput {
+    @inline
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): RestoreTableToPointInTimeOutput = {
@@ -3223,6 +3332,7 @@ package dynamodb {
   }
 
   object SSEDescription {
+    @inline
     def apply(
         KMSMasterKeyArn: js.UndefOr[KMSMasterKeyArn] = js.undefined,
         SSEType: js.UndefOr[SSEType] = js.undefined,
@@ -3247,6 +3357,7 @@ package dynamodb {
   }
 
   object SSESpecification {
+    @inline
     def apply(
         Enabled: js.UndefOr[SSEEnabled] = js.undefined,
         KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
@@ -3309,6 +3420,7 @@ package dynamodb {
   }
 
   object ScanInput {
+    @inline
     def apply(
         TableName: TableName,
         AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
@@ -3365,6 +3477,7 @@ package dynamodb {
   }
 
   object ScanOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         Count: js.UndefOr[Int] = js.undefined,
@@ -3408,6 +3521,7 @@ package dynamodb {
   }
 
   object SourceTableDetails {
+    @inline
     def apply(
         KeySchema: KeySchema,
         ProvisionedThroughput: ProvisionedThroughput,
@@ -3448,6 +3562,7 @@ package dynamodb {
   }
 
   object SourceTableFeatureDetails {
+    @inline
     def apply(
         GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexes] = js.undefined,
         LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexes] = js.undefined,
@@ -3475,6 +3590,7 @@ package dynamodb {
   }
 
   object StreamSpecification {
+    @inline
     def apply(
         StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
@@ -3521,6 +3637,7 @@ package dynamodb {
   }
 
   object TableDescription {
+    @inline
     def apply(
         AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
         BillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
@@ -3585,6 +3702,7 @@ package dynamodb {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKeyString,
         Value: TagValueString
@@ -3605,6 +3723,7 @@ package dynamodb {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         Tags: TagList
@@ -3628,6 +3747,7 @@ package dynamodb {
   }
 
   object TimeToLiveDescription {
+    @inline
     def apply(
         AttributeName: js.UndefOr[TimeToLiveAttributeName] = js.undefined,
         TimeToLiveStatus: js.UndefOr[TimeToLiveStatus] = js.undefined
@@ -3649,6 +3769,7 @@ package dynamodb {
   }
 
   object TimeToLiveSpecification {
+    @inline
     def apply(
         AttributeName: TimeToLiveAttributeName,
         Enabled: TimeToLiveEnabled
@@ -3680,6 +3801,7 @@ package dynamodb {
   }
 
   object TransactGetItem {
+    @inline
     def apply(
         Get: Get
     ): TransactGetItem = {
@@ -3698,6 +3820,7 @@ package dynamodb {
   }
 
   object TransactGetItemsInput {
+    @inline
     def apply(
         TransactItems: TransactGetItemList,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
@@ -3718,6 +3841,7 @@ package dynamodb {
   }
 
   object TransactGetItemsOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         Responses: js.UndefOr[ItemResponseList] = js.undefined
@@ -3741,6 +3865,7 @@ package dynamodb {
   }
 
   object TransactWriteItem {
+    @inline
     def apply(
         ConditionCheck: js.UndefOr[ConditionCheck] = js.undefined,
         Delete: js.UndefOr[Delete] = js.undefined,
@@ -3765,6 +3890,7 @@ package dynamodb {
   }
 
   object TransactWriteItemsInput {
+    @inline
     def apply(
         TransactItems: TransactWriteItemList,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -3791,6 +3917,7 @@ package dynamodb {
   }
 
   object TransactWriteItemsOutput {
+    @inline
     def apply(
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined
@@ -3809,6 +3936,7 @@ package dynamodb {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: ResourceArnString,
         TagKeys: TagKeyList
@@ -3837,6 +3965,7 @@ package dynamodb {
   }
 
   object Update {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -3871,6 +4000,7 @@ package dynamodb {
   }
 
   object UpdateContinuousBackupsInput {
+    @inline
     def apply(
         PointInTimeRecoverySpecification: PointInTimeRecoverySpecification,
         TableName: TableName
@@ -3890,6 +4020,7 @@ package dynamodb {
   }
 
   object UpdateContinuousBackupsOutput {
+    @inline
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): UpdateContinuousBackupsOutput = {
@@ -3911,6 +4042,7 @@ package dynamodb {
   }
 
   object UpdateGlobalSecondaryIndexAction {
+    @inline
     def apply(
         IndexName: IndexName,
         ProvisionedThroughput: ProvisionedThroughput
@@ -3931,6 +4063,7 @@ package dynamodb {
   }
 
   object UpdateGlobalTableInput {
+    @inline
     def apply(
         GlobalTableName: TableName,
         ReplicaUpdates: ReplicaUpdateList
@@ -3950,6 +4083,7 @@ package dynamodb {
   }
 
   object UpdateGlobalTableOutput {
+    @inline
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): UpdateGlobalTableOutput = {
@@ -3970,6 +4104,7 @@ package dynamodb {
   }
 
   object UpdateGlobalTableSettingsInput {
+    @inline
     def apply(
         GlobalTableName: TableName,
         GlobalTableBillingMode: js.UndefOr[BillingMode] = js.undefined,
@@ -4007,6 +4142,7 @@ package dynamodb {
   }
 
   object UpdateGlobalTableSettingsOutput {
+    @inline
     def apply(
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
@@ -4038,6 +4174,7 @@ package dynamodb {
   }
 
   object UpdateItemInput {
+    @inline
     def apply(
         Key: Key,
         TableName: TableName,
@@ -4086,6 +4223,7 @@ package dynamodb {
   }
 
   object UpdateItemOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeMap] = js.undefined,
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
@@ -4114,6 +4252,7 @@ package dynamodb {
   }
 
   object UpdateTableInput {
+    @inline
     def apply(
         TableName: TableName,
         AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
@@ -4148,6 +4287,7 @@ package dynamodb {
   }
 
   object UpdateTableOutput {
+    @inline
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): UpdateTableOutput = {
@@ -4167,6 +4307,7 @@ package dynamodb {
   }
 
   object UpdateTimeToLiveInput {
+    @inline
     def apply(
         TableName: TableName,
         TimeToLiveSpecification: TimeToLiveSpecification
@@ -4186,6 +4327,7 @@ package dynamodb {
   }
 
   object UpdateTimeToLiveOutput {
+    @inline
     def apply(
         TimeToLiveSpecification: js.UndefOr[TimeToLiveSpecification] = js.undefined
     ): UpdateTimeToLiveOutput = {
@@ -4205,6 +4347,7 @@ package dynamodb {
   }
 
   object WriteRequest {
+    @inline
     def apply(
         DeleteRequest: js.UndefOr[DeleteRequest] = js.undefined,
         PutRequest: js.UndefOr[PutRequest] = js.undefined

@@ -99,75 +99,76 @@ package object iotanalytics {
 
   implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 
-    def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
+    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
-    def cancelPipelineReprocessingFuture(
+    @inline def cancelPipelineReprocessingFuture(
         params: CancelPipelineReprocessingRequest
     ): Future[CancelPipelineReprocessingResponse] = service.cancelPipelineReprocessing(params).promise.toFuture
-    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
-    def createDatasetContentFuture(params: CreateDatasetContentRequest): Future[CreateDatasetContentResponse] =
+    @inline def createDatasetContentFuture(params: CreateDatasetContentRequest): Future[CreateDatasetContentResponse] =
       service.createDatasetContent(params).promise.toFuture
-    def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
-    def createDatastoreFuture(params: CreateDatastoreRequest): Future[CreateDatastoreResponse] =
+    @inline def createDatastoreFuture(params: CreateDatastoreRequest): Future[CreateDatastoreResponse] =
       service.createDatastore(params).promise.toFuture
-    def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
+    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
       service.createPipeline(params).promise.toFuture
-    def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] =
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] =
       service.deleteChannel(params).promise.toFuture
-    def deleteDatasetContentFuture(params: DeleteDatasetContentRequest): Future[js.Object] =
+    @inline def deleteDatasetContentFuture(params: DeleteDatasetContentRequest): Future[js.Object] =
       service.deleteDatasetContent(params).promise.toFuture
-    def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
       service.deleteDataset(params).promise.toFuture
-    def deleteDatastoreFuture(params: DeleteDatastoreRequest): Future[js.Object] =
+    @inline def deleteDatastoreFuture(params: DeleteDatastoreRequest): Future[js.Object] =
       service.deleteDatastore(params).promise.toFuture
-    def deletePipelineFuture(params: DeletePipelineRequest): Future[js.Object] =
+    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[js.Object] =
       service.deletePipeline(params).promise.toFuture
-    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
-    def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
       service.describeDataset(params).promise.toFuture
-    def describeDatastoreFuture(params: DescribeDatastoreRequest): Future[DescribeDatastoreResponse] =
+    @inline def describeDatastoreFuture(params: DescribeDatastoreRequest): Future[DescribeDatastoreResponse] =
       service.describeDatastore(params).promise.toFuture
-    def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] =
-      service.describeLoggingOptions(params).promise.toFuture
-    def describePipelineFuture(params: DescribePipelineRequest): Future[DescribePipelineResponse] =
+    @inline def describeLoggingOptionsFuture(
+        params: DescribeLoggingOptionsRequest
+    ): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise.toFuture
+    @inline def describePipelineFuture(params: DescribePipelineRequest): Future[DescribePipelineResponse] =
       service.describePipeline(params).promise.toFuture
-    def getDatasetContentFuture(params: GetDatasetContentRequest): Future[GetDatasetContentResponse] =
+    @inline def getDatasetContentFuture(params: GetDatasetContentRequest): Future[GetDatasetContentResponse] =
       service.getDatasetContent(params).promise.toFuture
-    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
-    def listDatasetContentsFuture(params: ListDatasetContentsRequest): Future[ListDatasetContentsResponse] =
+    @inline def listDatasetContentsFuture(params: ListDatasetContentsRequest): Future[ListDatasetContentsResponse] =
       service.listDatasetContents(params).promise.toFuture
-    def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
       service.listDatasets(params).promise.toFuture
-    def listDatastoresFuture(params: ListDatastoresRequest): Future[ListDatastoresResponse] =
+    @inline def listDatastoresFuture(params: ListDatastoresRequest): Future[ListDatastoresResponse] =
       service.listDatastores(params).promise.toFuture
-    def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
+    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
       service.listPipelines(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
+    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
       service.putLoggingOptions(params).promise.toFuture
-    def runPipelineActivityFuture(params: RunPipelineActivityRequest): Future[RunPipelineActivityResponse] =
+    @inline def runPipelineActivityFuture(params: RunPipelineActivityRequest): Future[RunPipelineActivityResponse] =
       service.runPipelineActivity(params).promise.toFuture
-    def sampleChannelDataFuture(params: SampleChannelDataRequest): Future[SampleChannelDataResponse] =
+    @inline def sampleChannelDataFuture(params: SampleChannelDataRequest): Future[SampleChannelDataResponse] =
       service.sampleChannelData(params).promise.toFuture
-    def startPipelineReprocessingFuture(
+    @inline def startPipelineReprocessingFuture(
         params: StartPipelineReprocessingRequest
     ): Future[StartPipelineReprocessingResponse] = service.startPipelineReprocessing(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateChannelFuture(params: UpdateChannelRequest): Future[js.Object] =
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[js.Object] =
       service.updateChannel(params).promise.toFuture
-    def updateDatasetFuture(params: UpdateDatasetRequest): Future[js.Object] =
+    @inline def updateDatasetFuture(params: UpdateDatasetRequest): Future[js.Object] =
       service.updateDataset(params).promise.toFuture
-    def updateDatastoreFuture(params: UpdateDatastoreRequest): Future[js.Object] =
+    @inline def updateDatastoreFuture(params: UpdateDatastoreRequest): Future[js.Object] =
       service.updateDatastore(params).promise.toFuture
-    def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] =
+    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] =
       service.updatePipeline(params).promise.toFuture
   }
 }
@@ -230,6 +231,7 @@ package iotanalytics {
   }
 
   object AddAttributesActivity {
+    @inline
     def apply(
         attributes: AttributeNameMapping,
         name: ActivityName,
@@ -256,6 +258,7 @@ package iotanalytics {
   }
 
   object BatchPutMessageErrorEntry {
+    @inline
     def apply(
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -276,6 +279,7 @@ package iotanalytics {
   }
 
   object BatchPutMessageRequest {
+    @inline
     def apply(
         channelName: ChannelName,
         messages: Messages
@@ -295,6 +299,7 @@ package iotanalytics {
   }
 
   object BatchPutMessageResponse {
+    @inline
     def apply(
         batchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
@@ -313,6 +318,7 @@ package iotanalytics {
   }
 
   object CancelPipelineReprocessingRequest {
+    @inline
     def apply(
         pipelineName: PipelineName,
         reprocessingId: ReprocessingId
@@ -330,6 +336,7 @@ package iotanalytics {
   trait CancelPipelineReprocessingResponse extends js.Object {}
 
   object CancelPipelineReprocessingResponse {
+    @inline
     def apply(
         ): CancelPipelineReprocessingResponse = {
       val __obj = js.Dynamic.literal()
@@ -353,6 +360,7 @@ package iotanalytics {
   }
 
   object Channel {
+    @inline
     def apply(
         arn: js.UndefOr[ChannelArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -385,6 +393,7 @@ package iotanalytics {
   }
 
   object ChannelActivity {
+    @inline
     def apply(
         channelName: ChannelName,
         name: ActivityName,
@@ -409,6 +418,7 @@ package iotanalytics {
   }
 
   object ChannelStatistics {
+    @inline
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): ChannelStatistics = {
@@ -436,6 +446,7 @@ package iotanalytics {
   }
 
   object ChannelStorage {
+    @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedChannelS3Storage] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedChannelS3Storage] = js.undefined
@@ -457,6 +468,7 @@ package iotanalytics {
   }
 
   object ChannelStorageSummary {
+    @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedChannelS3StorageSummary] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedChannelS3StorageSummary] = js.undefined
@@ -481,6 +493,7 @@ package iotanalytics {
   }
 
   object ChannelSummary {
+    @inline
     def apply(
         channelName: js.UndefOr[ChannelName] = js.undefined,
         channelStorage: js.UndefOr[ChannelStorageSummary] = js.undefined,
@@ -517,6 +530,7 @@ package iotanalytics {
   }
 
   object ContainerDatasetAction {
+    @inline
     def apply(
         executionRoleArn: RoleArn,
         image: Image,
@@ -543,6 +557,7 @@ package iotanalytics {
   }
 
   object CreateChannelRequest {
+    @inline
     def apply(
         channelName: ChannelName,
         channelStorage: js.UndefOr[ChannelStorage] = js.undefined,
@@ -568,6 +583,7 @@ package iotanalytics {
   }
 
   object CreateChannelResponse {
+    @inline
     def apply(
         channelArn: js.UndefOr[ChannelArn] = js.undefined,
         channelName: js.UndefOr[ChannelName] = js.undefined,
@@ -587,6 +603,7 @@ package iotanalytics {
   }
 
   object CreateDatasetContentRequest {
+    @inline
     def apply(
         datasetName: DatasetName
     ): CreateDatasetContentRequest = {
@@ -604,6 +621,7 @@ package iotanalytics {
   }
 
   object CreateDatasetContentResponse {
+    @inline
     def apply(
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): CreateDatasetContentResponse = {
@@ -625,6 +643,7 @@ package iotanalytics {
   }
 
   object CreateDatasetRequest {
+    @inline
     def apply(
         actions: DatasetActions,
         datasetName: DatasetName,
@@ -656,6 +675,7 @@ package iotanalytics {
   }
 
   object CreateDatasetResponse {
+    @inline
     def apply(
         datasetArn: js.UndefOr[DatasetArn] = js.undefined,
         datasetName: js.UndefOr[DatasetName] = js.undefined,
@@ -678,6 +698,7 @@ package iotanalytics {
   }
 
   object CreateDatastoreRequest {
+    @inline
     def apply(
         datastoreName: DatastoreName,
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
@@ -703,6 +724,7 @@ package iotanalytics {
   }
 
   object CreateDatastoreResponse {
+    @inline
     def apply(
         datastoreArn: js.UndefOr[DatastoreArn] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
@@ -724,6 +746,7 @@ package iotanalytics {
   }
 
   object CreatePipelineRequest {
+    @inline
     def apply(
         pipelineActivities: PipelineActivities,
         pipelineName: PipelineName,
@@ -746,6 +769,7 @@ package iotanalytics {
   }
 
   object CreatePipelineResponse {
+    @inline
     def apply(
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
         pipelineName: js.UndefOr[PipelineName] = js.undefined
@@ -768,6 +792,7 @@ package iotanalytics {
   }
 
   object CustomerManagedChannelS3Storage {
+    @inline
     def apply(
         bucket: BucketName,
         roleArn: RoleArn,
@@ -794,6 +819,7 @@ package iotanalytics {
   }
 
   object CustomerManagedChannelS3StorageSummary {
+    @inline
     def apply(
         bucket: js.UndefOr[BucketName] = js.undefined,
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
@@ -818,6 +844,7 @@ package iotanalytics {
   }
 
   object CustomerManagedDatastoreS3Storage {
+    @inline
     def apply(
         bucket: BucketName,
         roleArn: RoleArn,
@@ -844,6 +871,7 @@ package iotanalytics {
   }
 
   object CustomerManagedDatastoreS3StorageSummary {
+    @inline
     def apply(
         bucket: js.UndefOr[BucketName] = js.undefined,
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
@@ -875,6 +903,7 @@ package iotanalytics {
   }
 
   object Dataset {
+    @inline
     def apply(
         actions: js.UndefOr[DatasetActions] = js.undefined,
         arn: js.UndefOr[DatasetArn] = js.undefined,
@@ -913,6 +942,7 @@ package iotanalytics {
   }
 
   object DatasetAction {
+    @inline
     def apply(
         actionName: js.UndefOr[DatasetActionName] = js.undefined,
         containerAction: js.UndefOr[ContainerDatasetAction] = js.undefined,
@@ -936,6 +966,7 @@ package iotanalytics {
   }
 
   object DatasetActionSummary {
+    @inline
     def apply(
         actionName: js.UndefOr[DatasetActionName] = js.undefined,
         actionType: js.UndefOr[DatasetActionType] = js.undefined
@@ -964,6 +995,7 @@ package iotanalytics {
   }
 
   object DatasetContentDeliveryDestination {
+    @inline
     def apply(
         iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined,
         s3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined
@@ -989,6 +1021,7 @@ package iotanalytics {
   }
 
   object DatasetContentDeliveryRule {
+    @inline
     def apply(
         destination: DatasetContentDeliveryDestination,
         entryName: js.UndefOr[EntryName] = js.undefined
@@ -1020,6 +1053,7 @@ package iotanalytics {
   }
 
   object DatasetContentStatus {
+    @inline
     def apply(
         reason: js.UndefOr[Reason] = js.undefined,
         state: js.UndefOr[DatasetContentState] = js.undefined
@@ -1043,6 +1077,7 @@ package iotanalytics {
   }
 
   object DatasetContentSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         scheduleTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1067,6 +1102,7 @@ package iotanalytics {
   }
 
   object DatasetContentVersionValue {
+    @inline
     def apply(
         datasetName: DatasetName
     ): DatasetContentVersionValue = {
@@ -1088,6 +1124,7 @@ package iotanalytics {
   }
 
   object DatasetEntry {
+    @inline
     def apply(
         dataURI: js.UndefOr[PresignedURI] = js.undefined,
         entryName: js.UndefOr[EntryName] = js.undefined
@@ -1121,6 +1158,7 @@ package iotanalytics {
   }
 
   object DatasetSummary {
+    @inline
     def apply(
         actions: js.UndefOr[DatasetActionSummaries] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1150,6 +1188,7 @@ package iotanalytics {
   }
 
   object DatasetTrigger {
+    @inline
     def apply(
         dataset: js.UndefOr[TriggeringDataset] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined
@@ -1176,6 +1215,7 @@ package iotanalytics {
   }
 
   object Datastore {
+    @inline
     def apply(
         arn: js.UndefOr[DatastoreArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1207,6 +1247,7 @@ package iotanalytics {
   }
 
   object DatastoreActivity {
+    @inline
     def apply(
         datastoreName: DatastoreName,
         name: ActivityName
@@ -1229,6 +1270,7 @@ package iotanalytics {
   }
 
   object DatastoreStatistics {
+    @inline
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): DatastoreStatistics = {
@@ -1256,6 +1298,7 @@ package iotanalytics {
   }
 
   object DatastoreStorage {
+    @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage] = js.undefined
@@ -1277,6 +1320,7 @@ package iotanalytics {
   }
 
   object DatastoreStorageSummary {
+    @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary] = js.undefined
@@ -1301,6 +1345,7 @@ package iotanalytics {
   }
 
   object DatastoreSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
@@ -1324,6 +1369,7 @@ package iotanalytics {
   }
 
   object DeleteChannelRequest {
+    @inline
     def apply(
         channelName: ChannelName
     ): DeleteChannelRequest = {
@@ -1342,6 +1388,7 @@ package iotanalytics {
   }
 
   object DeleteDatasetContentRequest {
+    @inline
     def apply(
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
@@ -1361,6 +1408,7 @@ package iotanalytics {
   }
 
   object DeleteDatasetRequest {
+    @inline
     def apply(
         datasetName: DatasetName
     ): DeleteDatasetRequest = {
@@ -1378,6 +1426,7 @@ package iotanalytics {
   }
 
   object DeleteDatastoreRequest {
+    @inline
     def apply(
         datastoreName: DatastoreName
     ): DeleteDatastoreRequest = {
@@ -1395,6 +1444,7 @@ package iotanalytics {
   }
 
   object DeletePipelineRequest {
+    @inline
     def apply(
         pipelineName: PipelineName
     ): DeletePipelineRequest = {
@@ -1416,6 +1466,7 @@ package iotanalytics {
   }
 
   object DeltaTime {
+    @inline
     def apply(
         offsetSeconds: OffsetSeconds,
         timeExpression: TimeExpression
@@ -1436,6 +1487,7 @@ package iotanalytics {
   }
 
   object DescribeChannelRequest {
+    @inline
     def apply(
         channelName: ChannelName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
@@ -1456,6 +1508,7 @@ package iotanalytics {
   }
 
   object DescribeChannelResponse {
+    @inline
     def apply(
         channel: js.UndefOr[Channel] = js.undefined,
         statistics: js.UndefOr[ChannelStatistics] = js.undefined
@@ -1473,6 +1526,7 @@ package iotanalytics {
   }
 
   object DescribeDatasetRequest {
+    @inline
     def apply(
         datasetName: DatasetName
     ): DescribeDatasetRequest = {
@@ -1490,6 +1544,7 @@ package iotanalytics {
   }
 
   object DescribeDatasetResponse {
+    @inline
     def apply(
         dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
@@ -1506,6 +1561,7 @@ package iotanalytics {
   }
 
   object DescribeDatastoreRequest {
+    @inline
     def apply(
         datastoreName: DatastoreName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
@@ -1526,6 +1582,7 @@ package iotanalytics {
   }
 
   object DescribeDatastoreResponse {
+    @inline
     def apply(
         datastore: js.UndefOr[Datastore] = js.undefined,
         statistics: js.UndefOr[DatastoreStatistics] = js.undefined
@@ -1541,6 +1598,7 @@ package iotanalytics {
   trait DescribeLoggingOptionsRequest extends js.Object {}
 
   object DescribeLoggingOptionsRequest {
+    @inline
     def apply(
         ): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -1555,6 +1613,7 @@ package iotanalytics {
   }
 
   object DescribeLoggingOptionsResponse {
+    @inline
     def apply(
         loggingOptions: js.UndefOr[LoggingOptions] = js.undefined
     ): DescribeLoggingOptionsResponse = {
@@ -1570,6 +1629,7 @@ package iotanalytics {
   }
 
   object DescribePipelineRequest {
+    @inline
     def apply(
         pipelineName: PipelineName
     ): DescribePipelineRequest = {
@@ -1587,6 +1647,7 @@ package iotanalytics {
   }
 
   object DescribePipelineResponse {
+    @inline
     def apply(
         pipeline: js.UndefOr[Pipeline] = js.undefined
     ): DescribePipelineResponse = {
@@ -1609,6 +1670,7 @@ package iotanalytics {
   }
 
   object DeviceRegistryEnrichActivity {
+    @inline
     def apply(
         attribute: AttributeName,
         name: ActivityName,
@@ -1641,6 +1703,7 @@ package iotanalytics {
   }
 
   object DeviceShadowEnrichActivity {
+    @inline
     def apply(
         attribute: AttributeName,
         name: ActivityName,
@@ -1670,6 +1733,7 @@ package iotanalytics {
   }
 
   object EstimatedResourceSize {
+    @inline
     def apply(
         estimatedOn: js.UndefOr[Timestamp] = js.undefined,
         estimatedSizeInBytes: js.UndefOr[SizeInBytes] = js.undefined
@@ -1692,6 +1756,7 @@ package iotanalytics {
   }
 
   object FilterActivity {
+    @inline
     def apply(
         filter: FilterExpression,
         name: ActivityName,
@@ -1714,6 +1779,7 @@ package iotanalytics {
   }
 
   object GetDatasetContentRequest {
+    @inline
     def apply(
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
@@ -1735,6 +1801,7 @@ package iotanalytics {
   }
 
   object GetDatasetContentResponse {
+    @inline
     def apply(
         entries: js.UndefOr[DatasetEntries] = js.undefined,
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
@@ -1758,6 +1825,7 @@ package iotanalytics {
   }
 
   object GlueConfiguration {
+    @inline
     def apply(
         databaseName: GlueDatabaseName,
         tableName: GlueTableName
@@ -1781,6 +1849,7 @@ package iotanalytics {
   }
 
   object IotEventsDestinationConfiguration {
+    @inline
     def apply(
         inputName: IotEventsInputName,
         roleArn: RoleArn
@@ -1806,6 +1875,7 @@ package iotanalytics {
   }
 
   object LambdaActivity {
+    @inline
     def apply(
         batchSize: ActivityBatchSize,
         lambdaName: LambdaName,
@@ -1830,6 +1900,7 @@ package iotanalytics {
   }
 
   object ListChannelsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1848,6 +1919,7 @@ package iotanalytics {
   }
 
   object ListChannelsResponse {
+    @inline
     def apply(
         channelSummaries: js.UndefOr[ChannelSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1869,6 +1941,7 @@ package iotanalytics {
   }
 
   object ListDatasetContentsRequest {
+    @inline
     def apply(
         datasetName: DatasetName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1895,6 +1968,7 @@ package iotanalytics {
   }
 
   object ListDatasetContentsResponse {
+    @inline
     def apply(
         datasetContentSummaries: js.UndefOr[DatasetContentSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1913,6 +1987,7 @@ package iotanalytics {
   }
 
   object ListDatasetsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1931,6 +2006,7 @@ package iotanalytics {
   }
 
   object ListDatasetsResponse {
+    @inline
     def apply(
         datasetSummaries: js.UndefOr[DatasetSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1949,6 +2025,7 @@ package iotanalytics {
   }
 
   object ListDatastoresRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1967,6 +2044,7 @@ package iotanalytics {
   }
 
   object ListDatastoresResponse {
+    @inline
     def apply(
         datastoreSummaries: js.UndefOr[DatastoreSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1985,6 +2063,7 @@ package iotanalytics {
   }
 
   object ListPipelinesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2003,6 +2082,7 @@ package iotanalytics {
   }
 
   object ListPipelinesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelineSummaries: js.UndefOr[PipelineSummaries] = js.undefined
@@ -2020,6 +2100,7 @@ package iotanalytics {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
@@ -2037,6 +2118,7 @@ package iotanalytics {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2063,6 +2145,7 @@ package iotanalytics {
   }
 
   object LoggingOptions {
+    @inline
     def apply(
         enabled: LoggingEnabled,
         level: LoggingLevel,
@@ -2090,6 +2173,7 @@ package iotanalytics {
   }
 
   object MathActivity {
+    @inline
     def apply(
         attribute: AttributeName,
         math: MathExpression,
@@ -2117,6 +2201,7 @@ package iotanalytics {
   }
 
   object Message {
+    @inline
     def apply(
         messageId: MessageId,
         payload: MessagePayload
@@ -2139,6 +2224,7 @@ package iotanalytics {
   }
 
   object OutputFileUriValue {
+    @inline
     def apply(
         fileName: OutputFileName
     ): OutputFileUriValue = {
@@ -2164,6 +2250,7 @@ package iotanalytics {
   }
 
   object Pipeline {
+    @inline
     def apply(
         activities: js.UndefOr[PipelineActivities] = js.undefined,
         arn: js.UndefOr[PipelineArn] = js.undefined,
@@ -2201,6 +2288,7 @@ package iotanalytics {
   }
 
   object PipelineActivity {
+    @inline
     def apply(
         addAttributes: js.UndefOr[AddAttributesActivity] = js.undefined,
         channel: js.UndefOr[ChannelActivity] = js.undefined,
@@ -2240,6 +2328,7 @@ package iotanalytics {
   }
 
   object PipelineSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2261,6 +2350,7 @@ package iotanalytics {
   }
 
   object PutLoggingOptionsRequest {
+    @inline
     def apply(
         loggingOptions: LoggingOptions
     ): PutLoggingOptionsRequest = {
@@ -2281,6 +2371,7 @@ package iotanalytics {
   }
 
   object QueryFilter {
+    @inline
     def apply(
         deltaTime: js.UndefOr[DeltaTime] = js.undefined
     ): QueryFilter = {
@@ -2301,6 +2392,7 @@ package iotanalytics {
   }
 
   object RemoveAttributesActivity {
+    @inline
     def apply(
         attributes: AttributeNames,
         name: ActivityName,
@@ -2336,6 +2428,7 @@ package iotanalytics {
   }
 
   object ReprocessingSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         id: js.UndefOr[ReprocessingId] = js.undefined,
@@ -2359,6 +2452,7 @@ package iotanalytics {
   }
 
   object ResourceConfiguration {
+    @inline
     def apply(
         computeType: ComputeType,
         volumeSizeInGB: VolumeSizeInGB
@@ -2382,6 +2476,7 @@ package iotanalytics {
   }
 
   object RetentionPeriod {
+    @inline
     def apply(
         numberOfDays: js.UndefOr[RetentionPeriodInDays] = js.undefined,
         unlimited: js.UndefOr[UnlimitedRetentionPeriod] = js.undefined
@@ -2400,6 +2495,7 @@ package iotanalytics {
   }
 
   object RunPipelineActivityRequest {
+    @inline
     def apply(
         payloads: MessagePayloads,
         pipelineActivity: PipelineActivity
@@ -2420,6 +2516,7 @@ package iotanalytics {
   }
 
   object RunPipelineActivityResponse {
+    @inline
     def apply(
         logResult: js.UndefOr[LogResult] = js.undefined,
         payloads: js.UndefOr[MessagePayloads] = js.undefined
@@ -2443,6 +2540,7 @@ package iotanalytics {
   }
 
   object S3DestinationConfiguration {
+    @inline
     def apply(
         bucket: BucketName,
         key: BucketKeyExpression,
@@ -2469,6 +2567,7 @@ package iotanalytics {
   }
 
   object SampleChannelDataRequest {
+    @inline
     def apply(
         channelName: ChannelName,
         endTime: js.UndefOr[EndTime] = js.undefined,
@@ -2492,6 +2591,7 @@ package iotanalytics {
   }
 
   object SampleChannelDataResponse {
+    @inline
     def apply(
         payloads: js.UndefOr[MessagePayloads] = js.undefined
     ): SampleChannelDataResponse = {
@@ -2510,6 +2610,7 @@ package iotanalytics {
   }
 
   object Schedule {
+    @inline
     def apply(
         expression: js.UndefOr[ScheduleExpression] = js.undefined
     ): Schedule = {
@@ -2530,6 +2631,7 @@ package iotanalytics {
   }
 
   object SelectAttributesActivity {
+    @inline
     def apply(
         attributes: AttributeNames,
         name: ActivityName,
@@ -2552,6 +2654,7 @@ package iotanalytics {
   trait ServiceManagedChannelS3Storage extends js.Object {}
 
   object ServiceManagedChannelS3Storage {
+    @inline
     def apply(
         ): ServiceManagedChannelS3Storage = {
       val __obj = js.Dynamic.literal()
@@ -2567,6 +2670,7 @@ package iotanalytics {
   trait ServiceManagedChannelS3StorageSummary extends js.Object {}
 
   object ServiceManagedChannelS3StorageSummary {
+    @inline
     def apply(
         ): ServiceManagedChannelS3StorageSummary = {
       val __obj = js.Dynamic.literal()
@@ -2582,6 +2686,7 @@ package iotanalytics {
   trait ServiceManagedDatastoreS3Storage extends js.Object {}
 
   object ServiceManagedDatastoreS3Storage {
+    @inline
     def apply(
         ): ServiceManagedDatastoreS3Storage = {
       val __obj = js.Dynamic.literal()
@@ -2597,6 +2702,7 @@ package iotanalytics {
   trait ServiceManagedDatastoreS3StorageSummary extends js.Object {}
 
   object ServiceManagedDatastoreS3StorageSummary {
+    @inline
     def apply(
         ): ServiceManagedDatastoreS3StorageSummary = {
       val __obj = js.Dynamic.literal()
@@ -2615,6 +2721,7 @@ package iotanalytics {
   }
 
   object SqlQueryDatasetAction {
+    @inline
     def apply(
         sqlQuery: SqlQuery,
         filters: js.UndefOr[QueryFilters] = js.undefined
@@ -2636,6 +2743,7 @@ package iotanalytics {
   }
 
   object StartPipelineReprocessingRequest {
+    @inline
     def apply(
         pipelineName: PipelineName,
         endTime: js.UndefOr[EndTime] = js.undefined,
@@ -2657,6 +2765,7 @@ package iotanalytics {
   }
 
   object StartPipelineReprocessingResponse {
+    @inline
     def apply(
         reprocessingId: js.UndefOr[ReprocessingId] = js.undefined
     ): StartPipelineReprocessingResponse = {
@@ -2676,6 +2785,7 @@ package iotanalytics {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: TagValue
@@ -2696,6 +2806,7 @@ package iotanalytics {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagList
@@ -2713,6 +2824,7 @@ package iotanalytics {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2730,6 +2842,7 @@ package iotanalytics {
   }
 
   object TriggeringDataset {
+    @inline
     def apply(
         name: DatasetName
     ): TriggeringDataset = {
@@ -2748,6 +2861,7 @@ package iotanalytics {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -2765,6 +2879,7 @@ package iotanalytics {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2781,6 +2896,7 @@ package iotanalytics {
   }
 
   object UpdateChannelRequest {
+    @inline
     def apply(
         channelName: ChannelName,
         channelStorage: js.UndefOr[ChannelStorage] = js.undefined,
@@ -2807,6 +2923,7 @@ package iotanalytics {
   }
 
   object UpdateDatasetRequest {
+    @inline
     def apply(
         actions: DatasetActions,
         datasetName: DatasetName,
@@ -2836,6 +2953,7 @@ package iotanalytics {
   }
 
   object UpdateDatastoreRequest {
+    @inline
     def apply(
         datastoreName: DatastoreName,
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
@@ -2858,6 +2976,7 @@ package iotanalytics {
   }
 
   object UpdatePipelineRequest {
+    @inline
     def apply(
         pipelineActivities: PipelineActivities,
         pipelineName: PipelineName
@@ -2884,6 +3003,7 @@ package iotanalytics {
   }
 
   object Variable {
+    @inline
     def apply(
         name: VariableName,
         datasetContentVersionValue: js.UndefOr[DatasetContentVersionValue] = js.undefined,
@@ -2915,6 +3035,7 @@ package iotanalytics {
   }
 
   object VersioningConfiguration {
+    @inline
     def apply(
         maxVersions: js.UndefOr[MaxVersions] = js.undefined,
         unlimited: js.UndefOr[UnlimitedVersioning] = js.undefined

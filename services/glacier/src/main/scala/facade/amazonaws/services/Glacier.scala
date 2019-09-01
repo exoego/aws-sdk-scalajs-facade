@@ -39,69 +39,75 @@ package object glacier {
 
   implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
 
-    def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
+    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
       service.abortMultipartUpload(params).promise.toFuture
-    def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] =
+    @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] =
       service.abortVaultLock(params).promise.toFuture
-    def addTagsToVaultFuture(params: AddTagsToVaultInput): Future[js.Object] =
+    @inline def addTagsToVaultFuture(params: AddTagsToVaultInput): Future[js.Object] =
       service.addTagsToVault(params).promise.toFuture
-    def completeMultipartUploadFuture(params: CompleteMultipartUploadInput): Future[ArchiveCreationOutput] =
+    @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadInput): Future[ArchiveCreationOutput] =
       service.completeMultipartUpload(params).promise.toFuture
-    def completeVaultLockFuture(params: CompleteVaultLockInput): Future[js.Object] =
+    @inline def completeVaultLockFuture(params: CompleteVaultLockInput): Future[js.Object] =
       service.completeVaultLock(params).promise.toFuture
-    def createVaultFuture(params: CreateVaultInput): Future[CreateVaultOutput] =
+    @inline def createVaultFuture(params: CreateVaultInput): Future[CreateVaultOutput] =
       service.createVault(params).promise.toFuture
-    def deleteArchiveFuture(params: DeleteArchiveInput): Future[js.Object] =
+    @inline def deleteArchiveFuture(params: DeleteArchiveInput): Future[js.Object] =
       service.deleteArchive(params).promise.toFuture
-    def deleteVaultAccessPolicyFuture(params: DeleteVaultAccessPolicyInput): Future[js.Object] =
+    @inline def deleteVaultAccessPolicyFuture(params: DeleteVaultAccessPolicyInput): Future[js.Object] =
       service.deleteVaultAccessPolicy(params).promise.toFuture
-    def deleteVaultFuture(params: DeleteVaultInput): Future[js.Object] = service.deleteVault(params).promise.toFuture
-    def deleteVaultNotificationsFuture(params: DeleteVaultNotificationsInput): Future[js.Object] =
+    @inline def deleteVaultFuture(params: DeleteVaultInput): Future[js.Object] =
+      service.deleteVault(params).promise.toFuture
+    @inline def deleteVaultNotificationsFuture(params: DeleteVaultNotificationsInput): Future[js.Object] =
       service.deleteVaultNotifications(params).promise.toFuture
-    def describeJobFuture(params: DescribeJobInput): Future[GlacierJobDescription] =
+    @inline def describeJobFuture(params: DescribeJobInput): Future[GlacierJobDescription] =
       service.describeJob(params).promise.toFuture
-    def describeVaultFuture(params: DescribeVaultInput): Future[DescribeVaultOutput] =
+    @inline def describeVaultFuture(params: DescribeVaultInput): Future[DescribeVaultOutput] =
       service.describeVault(params).promise.toFuture
-    def getDataRetrievalPolicyFuture(params: GetDataRetrievalPolicyInput): Future[GetDataRetrievalPolicyOutput] =
-      service.getDataRetrievalPolicy(params).promise.toFuture
-    def getJobOutputFuture(params: GetJobOutputInput): Future[GetJobOutputOutput] =
+    @inline def getDataRetrievalPolicyFuture(
+        params: GetDataRetrievalPolicyInput
+    ): Future[GetDataRetrievalPolicyOutput] = service.getDataRetrievalPolicy(params).promise.toFuture
+    @inline def getJobOutputFuture(params: GetJobOutputInput): Future[GetJobOutputOutput] =
       service.getJobOutput(params).promise.toFuture
-    def getVaultAccessPolicyFuture(params: GetVaultAccessPolicyInput): Future[GetVaultAccessPolicyOutput] =
+    @inline def getVaultAccessPolicyFuture(params: GetVaultAccessPolicyInput): Future[GetVaultAccessPolicyOutput] =
       service.getVaultAccessPolicy(params).promise.toFuture
-    def getVaultLockFuture(params: GetVaultLockInput): Future[GetVaultLockOutput] =
+    @inline def getVaultLockFuture(params: GetVaultLockInput): Future[GetVaultLockOutput] =
       service.getVaultLock(params).promise.toFuture
-    def getVaultNotificationsFuture(params: GetVaultNotificationsInput): Future[GetVaultNotificationsOutput] =
+    @inline def getVaultNotificationsFuture(params: GetVaultNotificationsInput): Future[GetVaultNotificationsOutput] =
       service.getVaultNotifications(params).promise.toFuture
-    def initiateJobFuture(params: InitiateJobInput): Future[InitiateJobOutput] =
+    @inline def initiateJobFuture(params: InitiateJobInput): Future[InitiateJobOutput] =
       service.initiateJob(params).promise.toFuture
-    def initiateMultipartUploadFuture(params: InitiateMultipartUploadInput): Future[InitiateMultipartUploadOutput] =
-      service.initiateMultipartUpload(params).promise.toFuture
-    def initiateVaultLockFuture(params: InitiateVaultLockInput): Future[InitiateVaultLockOutput] =
+    @inline def initiateMultipartUploadFuture(
+        params: InitiateMultipartUploadInput
+    ): Future[InitiateMultipartUploadOutput] = service.initiateMultipartUpload(params).promise.toFuture
+    @inline def initiateVaultLockFuture(params: InitiateVaultLockInput): Future[InitiateVaultLockOutput] =
       service.initiateVaultLock(params).promise.toFuture
-    def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] = service.listJobs(params).promise.toFuture
-    def listMultipartUploadsFuture(params: ListMultipartUploadsInput): Future[ListMultipartUploadsOutput] =
+    @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] =
+      service.listJobs(params).promise.toFuture
+    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsInput): Future[ListMultipartUploadsOutput] =
       service.listMultipartUploads(params).promise.toFuture
-    def listPartsFuture(params: ListPartsInput): Future[ListPartsOutput] = service.listParts(params).promise.toFuture
-    def listProvisionedCapacityFuture(params: ListProvisionedCapacityInput): Future[ListProvisionedCapacityOutput] =
-      service.listProvisionedCapacity(params).promise.toFuture
-    def listTagsForVaultFuture(params: ListTagsForVaultInput): Future[ListTagsForVaultOutput] =
+    @inline def listPartsFuture(params: ListPartsInput): Future[ListPartsOutput] =
+      service.listParts(params).promise.toFuture
+    @inline def listProvisionedCapacityFuture(
+        params: ListProvisionedCapacityInput
+    ): Future[ListProvisionedCapacityOutput] = service.listProvisionedCapacity(params).promise.toFuture
+    @inline def listTagsForVaultFuture(params: ListTagsForVaultInput): Future[ListTagsForVaultOutput] =
       service.listTagsForVault(params).promise.toFuture
-    def listVaultsFuture(params: ListVaultsInput): Future[ListVaultsOutput] =
+    @inline def listVaultsFuture(params: ListVaultsInput): Future[ListVaultsOutput] =
       service.listVaults(params).promise.toFuture
-    def purchaseProvisionedCapacityFuture(
+    @inline def purchaseProvisionedCapacityFuture(
         params: PurchaseProvisionedCapacityInput
     ): Future[PurchaseProvisionedCapacityOutput] = service.purchaseProvisionedCapacity(params).promise.toFuture
-    def removeTagsFromVaultFuture(params: RemoveTagsFromVaultInput): Future[js.Object] =
+    @inline def removeTagsFromVaultFuture(params: RemoveTagsFromVaultInput): Future[js.Object] =
       service.removeTagsFromVault(params).promise.toFuture
-    def setDataRetrievalPolicyFuture(params: SetDataRetrievalPolicyInput): Future[js.Object] =
+    @inline def setDataRetrievalPolicyFuture(params: SetDataRetrievalPolicyInput): Future[js.Object] =
       service.setDataRetrievalPolicy(params).promise.toFuture
-    def setVaultAccessPolicyFuture(params: SetVaultAccessPolicyInput): Future[js.Object] =
+    @inline def setVaultAccessPolicyFuture(params: SetVaultAccessPolicyInput): Future[js.Object] =
       service.setVaultAccessPolicy(params).promise.toFuture
-    def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] =
+    @inline def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] =
       service.setVaultNotifications(params).promise.toFuture
-    def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] =
+    @inline def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] =
       service.uploadArchive(params).promise.toFuture
-    def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] =
+    @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] =
       service.uploadMultipartPart(params).promise.toFuture
   }
 }
@@ -163,6 +169,7 @@ package glacier {
   }
 
   object AbortMultipartUploadInput {
+    @inline
     def apply(
         accountId: String,
         uploadId: String,
@@ -188,6 +195,7 @@ package glacier {
   }
 
   object AbortVaultLockInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -220,6 +228,7 @@ package glacier {
   }
 
   object AddTagsToVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -247,6 +256,7 @@ package glacier {
   }
 
   object ArchiveCreationOutput {
+    @inline
     def apply(
         archiveId: js.UndefOr[String] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
@@ -274,6 +284,7 @@ package glacier {
   }
 
   object CSVInput {
+    @inline
     def apply(
         Comments: js.UndefOr[String] = js.undefined,
         FieldDelimiter: js.UndefOr[String] = js.undefined,
@@ -306,6 +317,7 @@ package glacier {
   }
 
   object CSVOutput {
+    @inline
     def apply(
         FieldDelimiter: js.UndefOr[String] = js.undefined,
         QuoteCharacter: js.UndefOr[String] = js.undefined,
@@ -358,6 +370,7 @@ package glacier {
   }
 
   object CompleteMultipartUploadInput {
+    @inline
     def apply(
         accountId: String,
         uploadId: String,
@@ -388,6 +401,7 @@ package glacier {
   }
 
   object CompleteVaultLockInput {
+    @inline
     def apply(
         accountId: String,
         lockId: String,
@@ -413,6 +427,7 @@ package glacier {
   }
 
   object CreateVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -435,6 +450,7 @@ package glacier {
   }
 
   object CreateVaultOutput {
+    @inline
     def apply(
         location: js.UndefOr[String] = js.undefined
     ): CreateVaultOutput = {
@@ -453,6 +469,7 @@ package glacier {
   }
 
   object DataRetrievalPolicy {
+    @inline
     def apply(
         Rules: js.UndefOr[DataRetrievalRulesList] = js.undefined
     ): DataRetrievalPolicy = {
@@ -472,6 +489,7 @@ package glacier {
   }
 
   object DataRetrievalRule {
+    @inline
     def apply(
         BytesPerHour: js.UndefOr[NullableLong] = js.undefined,
         Strategy: js.UndefOr[String] = js.undefined
@@ -494,6 +512,7 @@ package glacier {
   }
 
   object DeleteArchiveInput {
+    @inline
     def apply(
         accountId: String,
         archiveId: String,
@@ -519,6 +538,7 @@ package glacier {
   }
 
   object DeleteVaultAccessPolicyInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -542,6 +562,7 @@ package glacier {
   }
 
   object DeleteVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -565,6 +586,7 @@ package glacier {
   }
 
   object DeleteVaultNotificationsInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -589,6 +611,7 @@ package glacier {
   }
 
   object DescribeJobInput {
+    @inline
     def apply(
         accountId: String,
         jobId: String,
@@ -614,6 +637,7 @@ package glacier {
   }
 
   object DescribeVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -641,6 +665,7 @@ package glacier {
   }
 
   object DescribeVaultOutput {
+    @inline
     def apply(
         CreationDate: js.UndefOr[String] = js.undefined,
         LastInventoryDate: js.UndefOr[String] = js.undefined,
@@ -671,6 +696,7 @@ package glacier {
   }
 
   object Encryption {
+    @inline
     def apply(
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
         KMSContext: js.UndefOr[String] = js.undefined,
@@ -714,6 +740,7 @@ package glacier {
   }
 
   object GetDataRetrievalPolicyInput {
+    @inline
     def apply(
         accountId: String
     ): GetDataRetrievalPolicyInput = {
@@ -734,6 +761,7 @@ package glacier {
   }
 
   object GetDataRetrievalPolicyOutput {
+    @inline
     def apply(
         Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
     ): GetDataRetrievalPolicyOutput = {
@@ -755,6 +783,7 @@ package glacier {
   }
 
   object GetJobOutputInput {
+    @inline
     def apply(
         accountId: String,
         jobId: String,
@@ -787,6 +816,7 @@ package glacier {
   }
 
   object GetJobOutputOutput {
+    @inline
     def apply(
         acceptRanges: js.UndefOr[String] = js.undefined,
         archiveDescription: js.UndefOr[String] = js.undefined,
@@ -818,6 +848,7 @@ package glacier {
   }
 
   object GetVaultAccessPolicyInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -840,6 +871,7 @@ package glacier {
   }
 
   object GetVaultAccessPolicyOutput {
+    @inline
     def apply(
         policy: js.UndefOr[VaultAccessPolicy] = js.undefined
     ): GetVaultAccessPolicyOutput = {
@@ -859,6 +891,7 @@ package glacier {
   }
 
   object GetVaultLockInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -884,6 +917,7 @@ package glacier {
   }
 
   object GetVaultLockOutput {
+    @inline
     def apply(
         CreationDate: js.UndefOr[String] = js.undefined,
         ExpirationDate: js.UndefOr[String] = js.undefined,
@@ -909,6 +943,7 @@ package glacier {
   }
 
   object GetVaultNotificationsInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -931,6 +966,7 @@ package glacier {
   }
 
   object GetVaultNotificationsOutput {
+    @inline
     def apply(
         vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
     ): GetVaultNotificationsOutput = {
@@ -969,6 +1005,7 @@ package glacier {
   }
 
   object GlacierJobDescription {
+    @inline
     def apply(
         Action: js.UndefOr[ActionCode] = js.undefined,
         ArchiveId: js.UndefOr[String] = js.undefined,
@@ -1030,6 +1067,7 @@ package glacier {
   }
 
   object Grant {
+    @inline
     def apply(
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[Permission] = js.undefined
@@ -1054,6 +1092,7 @@ package glacier {
   }
 
   object Grantee {
+    @inline
     def apply(
         Type: Type,
         DisplayName: js.UndefOr[String] = js.undefined,
@@ -1084,6 +1123,7 @@ package glacier {
   }
 
   object InitiateJobInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1110,6 +1150,7 @@ package glacier {
   }
 
   object InitiateJobOutput {
+    @inline
     def apply(
         jobId: js.UndefOr[String] = js.undefined,
         jobOutputPath: js.UndefOr[String] = js.undefined,
@@ -1135,6 +1176,7 @@ package glacier {
   }
 
   object InitiateMultipartUploadInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1162,6 +1204,7 @@ package glacier {
   }
 
   object InitiateMultipartUploadOutput {
+    @inline
     def apply(
         location: js.UndefOr[String] = js.undefined,
         uploadId: js.UndefOr[String] = js.undefined
@@ -1184,6 +1227,7 @@ package glacier {
   }
 
   object InitiateVaultLockInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1208,6 +1252,7 @@ package glacier {
   }
 
   object InitiateVaultLockOutput {
+    @inline
     def apply(
         lockId: js.UndefOr[String] = js.undefined
     ): InitiateVaultLockOutput = {
@@ -1226,6 +1271,7 @@ package glacier {
   }
 
   object InputSerialization {
+    @inline
     def apply(
         csv: js.UndefOr[CSVInput] = js.undefined
     ): InputSerialization = {
@@ -1248,6 +1294,7 @@ package glacier {
   }
 
   object InventoryRetrievalJobDescription {
+    @inline
     def apply(
         EndDate: js.UndefOr[DateTime] = js.undefined,
         Format: js.UndefOr[String] = js.undefined,
@@ -1277,6 +1324,7 @@ package glacier {
   }
 
   object InventoryRetrievalJobInput {
+    @inline
     def apply(
         EndDate: js.UndefOr[String] = js.undefined,
         Limit: js.UndefOr[String] = js.undefined,
@@ -1310,6 +1358,7 @@ package glacier {
   }
 
   object JobParameters {
+    @inline
     def apply(
         ArchiveId: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -1353,6 +1402,7 @@ package glacier {
   }
 
   object ListJobsInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1384,6 +1434,7 @@ package glacier {
   }
 
   object ListJobsOutput {
+    @inline
     def apply(
         JobList: js.UndefOr[JobList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1407,6 +1458,7 @@ package glacier {
   }
 
   object ListMultipartUploadsInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1434,6 +1486,7 @@ package glacier {
   }
 
   object ListMultipartUploadsOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         UploadsList: js.UndefOr[UploadsList] = js.undefined
@@ -1458,6 +1511,7 @@ package glacier {
   }
 
   object ListPartsInput {
+    @inline
     def apply(
         accountId: String,
         uploadId: String,
@@ -1492,6 +1546,7 @@ package glacier {
   }
 
   object ListPartsOutput {
+    @inline
     def apply(
         ArchiveDescription: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[String] = js.undefined,
@@ -1519,6 +1574,7 @@ package glacier {
   }
 
   object ListProvisionedCapacityInput {
+    @inline
     def apply(
         accountId: String
     ): ListProvisionedCapacityInput = {
@@ -1536,6 +1592,7 @@ package glacier {
   }
 
   object ListProvisionedCapacityOutput {
+    @inline
     def apply(
         ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList] = js.undefined
     ): ListProvisionedCapacityOutput = {
@@ -1555,6 +1612,7 @@ package glacier {
   }
 
   object ListTagsForVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String
@@ -1577,6 +1635,7 @@ package glacier {
   }
 
   object ListTagsForVaultOutput {
+    @inline
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForVaultOutput = {
@@ -1597,6 +1656,7 @@ package glacier {
   }
 
   object ListVaultsInput {
+    @inline
     def apply(
         accountId: String,
         limit: js.UndefOr[String] = js.undefined,
@@ -1622,6 +1682,7 @@ package glacier {
   }
 
   object ListVaultsOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         VaultList: js.UndefOr[VaultList] = js.undefined
@@ -1642,6 +1703,7 @@ package glacier {
   }
 
   object OutputLocation {
+    @inline
     def apply(
         S3: js.UndefOr[S3Location] = js.undefined
     ): OutputLocation = {
@@ -1660,6 +1722,7 @@ package glacier {
   }
 
   object OutputSerialization {
+    @inline
     def apply(
         csv: js.UndefOr[CSVOutput] = js.undefined
     ): OutputSerialization = {
@@ -1679,6 +1742,7 @@ package glacier {
   }
 
   object PartListElement {
+    @inline
     def apply(
         RangeInBytes: js.UndefOr[String] = js.undefined,
         SHA256TreeHash: js.UndefOr[String] = js.undefined
@@ -1711,6 +1775,7 @@ package glacier {
   }
 
   object ProvisionedCapacityDescription {
+    @inline
     def apply(
         CapacityId: js.UndefOr[String] = js.undefined,
         ExpirationDate: js.UndefOr[String] = js.undefined,
@@ -1730,6 +1795,7 @@ package glacier {
   }
 
   object PurchaseProvisionedCapacityInput {
+    @inline
     def apply(
         accountId: String
     ): PurchaseProvisionedCapacityInput = {
@@ -1747,6 +1813,7 @@ package glacier {
   }
 
   object PurchaseProvisionedCapacityOutput {
+    @inline
     def apply(
         capacityId: js.UndefOr[String] = js.undefined
     ): PurchaseProvisionedCapacityOutput = {
@@ -1774,6 +1841,7 @@ package glacier {
   }
 
   object RemoveTagsFromVaultInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1805,6 +1873,7 @@ package glacier {
   }
 
   object S3Location {
+    @inline
     def apply(
         AccessControlList: js.UndefOr[AccessControlPolicyList] = js.undefined,
         BucketName: js.UndefOr[String] = js.undefined,
@@ -1840,6 +1909,7 @@ package glacier {
   }
 
   object SelectParameters {
+    @inline
     def apply(
         Expression: js.UndefOr[String] = js.undefined,
         ExpressionType: js.UndefOr[ExpressionType] = js.undefined,
@@ -1865,6 +1935,7 @@ package glacier {
   }
 
   object SetDataRetrievalPolicyInput {
+    @inline
     def apply(
         accountId: String,
         Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
@@ -1889,6 +1960,7 @@ package glacier {
   }
 
   object SetVaultAccessPolicyInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1915,6 +1987,7 @@ package glacier {
   }
 
   object SetVaultNotificationsInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1967,6 +2040,7 @@ package glacier {
   }
 
   object UploadArchiveInput {
+    @inline
     def apply(
         accountId: String,
         vaultName: String,
@@ -1999,6 +2073,7 @@ package glacier {
   }
 
   object UploadListElement {
+    @inline
     def apply(
         ArchiveDescription: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[String] = js.undefined,
@@ -2030,6 +2105,7 @@ package glacier {
   }
 
   object UploadMultipartPartInput {
+    @inline
     def apply(
         accountId: String,
         uploadId: String,
@@ -2060,6 +2136,7 @@ package glacier {
   }
 
   object UploadMultipartPartOutput {
+    @inline
     def apply(
         checksum: js.UndefOr[String] = js.undefined
     ): UploadMultipartPartOutput = {
@@ -2078,6 +2155,7 @@ package glacier {
   }
 
   object VaultAccessPolicy {
+    @inline
     def apply(
         Policy: js.UndefOr[String] = js.undefined
     ): VaultAccessPolicy = {
@@ -2096,6 +2174,7 @@ package glacier {
   }
 
   object VaultLockPolicy {
+    @inline
     def apply(
         Policy: js.UndefOr[String] = js.undefined
     ): VaultLockPolicy = {
@@ -2115,6 +2194,7 @@ package glacier {
   }
 
   object VaultNotificationConfig {
+    @inline
     def apply(
         Events: js.UndefOr[NotificationEventList] = js.undefined,
         SNSTopic: js.UndefOr[String] = js.undefined

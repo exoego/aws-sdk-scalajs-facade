@@ -48,241 +48,259 @@ package object greengrass {
 
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
-    def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
+    @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
       service.associateRoleToGroup(params).promise.toFuture
-    def associateServiceRoleToAccountFuture(
+    @inline def associateServiceRoleToAccountFuture(
         params: AssociateServiceRoleToAccountRequest
     ): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise.toFuture
-    def createConnectorDefinitionFuture(
+    @inline def createConnectorDefinitionFuture(
         params: CreateConnectorDefinitionRequest
     ): Future[CreateConnectorDefinitionResponse] = service.createConnectorDefinition(params).promise.toFuture
-    def createConnectorDefinitionVersionFuture(
+    @inline def createConnectorDefinitionVersionFuture(
         params: CreateConnectorDefinitionVersionRequest
     ): Future[CreateConnectorDefinitionVersionResponse] =
       service.createConnectorDefinitionVersion(params).promise.toFuture
-    def createCoreDefinitionFuture(params: CreateCoreDefinitionRequest): Future[CreateCoreDefinitionResponse] =
+    @inline def createCoreDefinitionFuture(params: CreateCoreDefinitionRequest): Future[CreateCoreDefinitionResponse] =
       service.createCoreDefinition(params).promise.toFuture
-    def createCoreDefinitionVersionFuture(
+    @inline def createCoreDefinitionVersionFuture(
         params: CreateCoreDefinitionVersionRequest
     ): Future[CreateCoreDefinitionVersionResponse] = service.createCoreDefinitionVersion(params).promise.toFuture
-    def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
       service.createDeployment(params).promise.toFuture
-    def createDeviceDefinitionFuture(params: CreateDeviceDefinitionRequest): Future[CreateDeviceDefinitionResponse] =
-      service.createDeviceDefinition(params).promise.toFuture
-    def createDeviceDefinitionVersionFuture(
+    @inline def createDeviceDefinitionFuture(
+        params: CreateDeviceDefinitionRequest
+    ): Future[CreateDeviceDefinitionResponse] = service.createDeviceDefinition(params).promise.toFuture
+    @inline def createDeviceDefinitionVersionFuture(
         params: CreateDeviceDefinitionVersionRequest
     ): Future[CreateDeviceDefinitionVersionResponse] = service.createDeviceDefinitionVersion(params).promise.toFuture
-    def createFunctionDefinitionFuture(
+    @inline def createFunctionDefinitionFuture(
         params: CreateFunctionDefinitionRequest
     ): Future[CreateFunctionDefinitionResponse] = service.createFunctionDefinition(params).promise.toFuture
-    def createFunctionDefinitionVersionFuture(
+    @inline def createFunctionDefinitionVersionFuture(
         params: CreateFunctionDefinitionVersionRequest
     ): Future[CreateFunctionDefinitionVersionResponse] =
       service.createFunctionDefinitionVersion(params).promise.toFuture
-    def createGroupCertificateAuthorityFuture(
+    @inline def createGroupCertificateAuthorityFuture(
         params: CreateGroupCertificateAuthorityRequest
     ): Future[CreateGroupCertificateAuthorityResponse] =
       service.createGroupCertificateAuthority(params).promise.toFuture
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture
-    def createGroupVersionFuture(params: CreateGroupVersionRequest): Future[CreateGroupVersionResponse] =
+    @inline def createGroupVersionFuture(params: CreateGroupVersionRequest): Future[CreateGroupVersionResponse] =
       service.createGroupVersion(params).promise.toFuture
-    def createLoggerDefinitionFuture(params: CreateLoggerDefinitionRequest): Future[CreateLoggerDefinitionResponse] =
-      service.createLoggerDefinition(params).promise.toFuture
-    def createLoggerDefinitionVersionFuture(
+    @inline def createLoggerDefinitionFuture(
+        params: CreateLoggerDefinitionRequest
+    ): Future[CreateLoggerDefinitionResponse] = service.createLoggerDefinition(params).promise.toFuture
+    @inline def createLoggerDefinitionVersionFuture(
         params: CreateLoggerDefinitionVersionRequest
     ): Future[CreateLoggerDefinitionVersionResponse] = service.createLoggerDefinitionVersion(params).promise.toFuture
-    def createResourceDefinitionFuture(
+    @inline def createResourceDefinitionFuture(
         params: CreateResourceDefinitionRequest
     ): Future[CreateResourceDefinitionResponse] = service.createResourceDefinition(params).promise.toFuture
-    def createResourceDefinitionVersionFuture(
+    @inline def createResourceDefinitionVersionFuture(
         params: CreateResourceDefinitionVersionRequest
     ): Future[CreateResourceDefinitionVersionResponse] =
       service.createResourceDefinitionVersion(params).promise.toFuture
-    def createSoftwareUpdateJobFuture(params: CreateSoftwareUpdateJobRequest): Future[CreateSoftwareUpdateJobResponse] =
-      service.createSoftwareUpdateJob(params).promise.toFuture
-    def createSubscriptionDefinitionFuture(
+    @inline def createSoftwareUpdateJobFuture(
+        params: CreateSoftwareUpdateJobRequest
+    ): Future[CreateSoftwareUpdateJobResponse] = service.createSoftwareUpdateJob(params).promise.toFuture
+    @inline def createSubscriptionDefinitionFuture(
         params: CreateSubscriptionDefinitionRequest
     ): Future[CreateSubscriptionDefinitionResponse] = service.createSubscriptionDefinition(params).promise.toFuture
-    def createSubscriptionDefinitionVersionFuture(
+    @inline def createSubscriptionDefinitionVersionFuture(
         params: CreateSubscriptionDefinitionVersionRequest
     ): Future[CreateSubscriptionDefinitionVersionResponse] =
       service.createSubscriptionDefinitionVersion(params).promise.toFuture
-    def deleteConnectorDefinitionFuture(
+    @inline def deleteConnectorDefinitionFuture(
         params: DeleteConnectorDefinitionRequest
     ): Future[DeleteConnectorDefinitionResponse] = service.deleteConnectorDefinition(params).promise.toFuture
-    def deleteCoreDefinitionFuture(params: DeleteCoreDefinitionRequest): Future[DeleteCoreDefinitionResponse] =
+    @inline def deleteCoreDefinitionFuture(params: DeleteCoreDefinitionRequest): Future[DeleteCoreDefinitionResponse] =
       service.deleteCoreDefinition(params).promise.toFuture
-    def deleteDeviceDefinitionFuture(params: DeleteDeviceDefinitionRequest): Future[DeleteDeviceDefinitionResponse] =
-      service.deleteDeviceDefinition(params).promise.toFuture
-    def deleteFunctionDefinitionFuture(
+    @inline def deleteDeviceDefinitionFuture(
+        params: DeleteDeviceDefinitionRequest
+    ): Future[DeleteDeviceDefinitionResponse] = service.deleteDeviceDefinition(params).promise.toFuture
+    @inline def deleteFunctionDefinitionFuture(
         params: DeleteFunctionDefinitionRequest
     ): Future[DeleteFunctionDefinitionResponse] = service.deleteFunctionDefinition(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
       service.deleteGroup(params).promise.toFuture
-    def deleteLoggerDefinitionFuture(params: DeleteLoggerDefinitionRequest): Future[DeleteLoggerDefinitionResponse] =
-      service.deleteLoggerDefinition(params).promise.toFuture
-    def deleteResourceDefinitionFuture(
+    @inline def deleteLoggerDefinitionFuture(
+        params: DeleteLoggerDefinitionRequest
+    ): Future[DeleteLoggerDefinitionResponse] = service.deleteLoggerDefinition(params).promise.toFuture
+    @inline def deleteResourceDefinitionFuture(
         params: DeleteResourceDefinitionRequest
     ): Future[DeleteResourceDefinitionResponse] = service.deleteResourceDefinition(params).promise.toFuture
-    def deleteSubscriptionDefinitionFuture(
+    @inline def deleteSubscriptionDefinitionFuture(
         params: DeleteSubscriptionDefinitionRequest
     ): Future[DeleteSubscriptionDefinitionResponse] = service.deleteSubscriptionDefinition(params).promise.toFuture
-    def disassociateRoleFromGroupFuture(
+    @inline def disassociateRoleFromGroupFuture(
         params: DisassociateRoleFromGroupRequest
     ): Future[DisassociateRoleFromGroupResponse] = service.disassociateRoleFromGroup(params).promise.toFuture
-    def disassociateServiceRoleFromAccountFuture(
+    @inline def disassociateServiceRoleFromAccountFuture(
         params: DisassociateServiceRoleFromAccountRequest
     ): Future[DisassociateServiceRoleFromAccountResponse] =
       service.disassociateServiceRoleFromAccount(params).promise.toFuture
-    def getAssociatedRoleFuture(params: GetAssociatedRoleRequest): Future[GetAssociatedRoleResponse] =
+    @inline def getAssociatedRoleFuture(params: GetAssociatedRoleRequest): Future[GetAssociatedRoleResponse] =
       service.getAssociatedRole(params).promise.toFuture
-    def getBulkDeploymentStatusFuture(params: GetBulkDeploymentStatusRequest): Future[GetBulkDeploymentStatusResponse] =
-      service.getBulkDeploymentStatus(params).promise.toFuture
-    def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] =
+    @inline def getBulkDeploymentStatusFuture(
+        params: GetBulkDeploymentStatusRequest
+    ): Future[GetBulkDeploymentStatusResponse] = service.getBulkDeploymentStatus(params).promise.toFuture
+    @inline def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] =
       service.getConnectivityInfo(params).promise.toFuture
-    def getConnectorDefinitionFuture(params: GetConnectorDefinitionRequest): Future[GetConnectorDefinitionResponse] =
-      service.getConnectorDefinition(params).promise.toFuture
-    def getConnectorDefinitionVersionFuture(
+    @inline def getConnectorDefinitionFuture(
+        params: GetConnectorDefinitionRequest
+    ): Future[GetConnectorDefinitionResponse] = service.getConnectorDefinition(params).promise.toFuture
+    @inline def getConnectorDefinitionVersionFuture(
         params: GetConnectorDefinitionVersionRequest
     ): Future[GetConnectorDefinitionVersionResponse] = service.getConnectorDefinitionVersion(params).promise.toFuture
-    def getCoreDefinitionFuture(params: GetCoreDefinitionRequest): Future[GetCoreDefinitionResponse] =
+    @inline def getCoreDefinitionFuture(params: GetCoreDefinitionRequest): Future[GetCoreDefinitionResponse] =
       service.getCoreDefinition(params).promise.toFuture
-    def getCoreDefinitionVersionFuture(
+    @inline def getCoreDefinitionVersionFuture(
         params: GetCoreDefinitionVersionRequest
     ): Future[GetCoreDefinitionVersionResponse] = service.getCoreDefinitionVersion(params).promise.toFuture
-    def getDeploymentStatusFuture(params: GetDeploymentStatusRequest): Future[GetDeploymentStatusResponse] =
+    @inline def getDeploymentStatusFuture(params: GetDeploymentStatusRequest): Future[GetDeploymentStatusResponse] =
       service.getDeploymentStatus(params).promise.toFuture
-    def getDeviceDefinitionFuture(params: GetDeviceDefinitionRequest): Future[GetDeviceDefinitionResponse] =
+    @inline def getDeviceDefinitionFuture(params: GetDeviceDefinitionRequest): Future[GetDeviceDefinitionResponse] =
       service.getDeviceDefinition(params).promise.toFuture
-    def getDeviceDefinitionVersionFuture(
+    @inline def getDeviceDefinitionVersionFuture(
         params: GetDeviceDefinitionVersionRequest
     ): Future[GetDeviceDefinitionVersionResponse] = service.getDeviceDefinitionVersion(params).promise.toFuture
-    def getFunctionDefinitionFuture(params: GetFunctionDefinitionRequest): Future[GetFunctionDefinitionResponse] =
-      service.getFunctionDefinition(params).promise.toFuture
-    def getFunctionDefinitionVersionFuture(
+    @inline def getFunctionDefinitionFuture(
+        params: GetFunctionDefinitionRequest
+    ): Future[GetFunctionDefinitionResponse] = service.getFunctionDefinition(params).promise.toFuture
+    @inline def getFunctionDefinitionVersionFuture(
         params: GetFunctionDefinitionVersionRequest
     ): Future[GetFunctionDefinitionVersionResponse] = service.getFunctionDefinitionVersion(params).promise.toFuture
-    def getGroupCertificateAuthorityFuture(
+    @inline def getGroupCertificateAuthorityFuture(
         params: GetGroupCertificateAuthorityRequest
     ): Future[GetGroupCertificateAuthorityResponse] = service.getGroupCertificateAuthority(params).promise.toFuture
-    def getGroupCertificateConfigurationFuture(
+    @inline def getGroupCertificateConfigurationFuture(
         params: GetGroupCertificateConfigurationRequest
     ): Future[GetGroupCertificateConfigurationResponse] =
       service.getGroupCertificateConfiguration(params).promise.toFuture
-    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise.toFuture
-    def getGroupVersionFuture(params: GetGroupVersionRequest): Future[GetGroupVersionResponse] =
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] =
+      service.getGroup(params).promise.toFuture
+    @inline def getGroupVersionFuture(params: GetGroupVersionRequest): Future[GetGroupVersionResponse] =
       service.getGroupVersion(params).promise.toFuture
-    def getLoggerDefinitionFuture(params: GetLoggerDefinitionRequest): Future[GetLoggerDefinitionResponse] =
+    @inline def getLoggerDefinitionFuture(params: GetLoggerDefinitionRequest): Future[GetLoggerDefinitionResponse] =
       service.getLoggerDefinition(params).promise.toFuture
-    def getLoggerDefinitionVersionFuture(
+    @inline def getLoggerDefinitionVersionFuture(
         params: GetLoggerDefinitionVersionRequest
     ): Future[GetLoggerDefinitionVersionResponse] = service.getLoggerDefinitionVersion(params).promise.toFuture
-    def getResourceDefinitionFuture(params: GetResourceDefinitionRequest): Future[GetResourceDefinitionResponse] =
-      service.getResourceDefinition(params).promise.toFuture
-    def getResourceDefinitionVersionFuture(
+    @inline def getResourceDefinitionFuture(
+        params: GetResourceDefinitionRequest
+    ): Future[GetResourceDefinitionResponse] = service.getResourceDefinition(params).promise.toFuture
+    @inline def getResourceDefinitionVersionFuture(
         params: GetResourceDefinitionVersionRequest
     ): Future[GetResourceDefinitionVersionResponse] = service.getResourceDefinitionVersion(params).promise.toFuture
-    def getServiceRoleForAccountFuture(
+    @inline def getServiceRoleForAccountFuture(
         params: GetServiceRoleForAccountRequest
     ): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise.toFuture
-    def getSubscriptionDefinitionFuture(
+    @inline def getSubscriptionDefinitionFuture(
         params: GetSubscriptionDefinitionRequest
     ): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise.toFuture
-    def getSubscriptionDefinitionVersionFuture(
+    @inline def getSubscriptionDefinitionVersionFuture(
         params: GetSubscriptionDefinitionVersionRequest
     ): Future[GetSubscriptionDefinitionVersionResponse] =
       service.getSubscriptionDefinitionVersion(params).promise.toFuture
-    def listBulkDeploymentDetailedReportsFuture(
+    @inline def listBulkDeploymentDetailedReportsFuture(
         params: ListBulkDeploymentDetailedReportsRequest
     ): Future[ListBulkDeploymentDetailedReportsResponse] =
       service.listBulkDeploymentDetailedReports(params).promise.toFuture
-    def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] =
+    @inline def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] =
       service.listBulkDeployments(params).promise.toFuture
-    def listConnectorDefinitionVersionsFuture(
+    @inline def listConnectorDefinitionVersionsFuture(
         params: ListConnectorDefinitionVersionsRequest
     ): Future[ListConnectorDefinitionVersionsResponse] =
       service.listConnectorDefinitionVersions(params).promise.toFuture
-    def listConnectorDefinitionsFuture(
+    @inline def listConnectorDefinitionsFuture(
         params: ListConnectorDefinitionsRequest
     ): Future[ListConnectorDefinitionsResponse] = service.listConnectorDefinitions(params).promise.toFuture
-    def listCoreDefinitionVersionsFuture(
+    @inline def listCoreDefinitionVersionsFuture(
         params: ListCoreDefinitionVersionsRequest
     ): Future[ListCoreDefinitionVersionsResponse] = service.listCoreDefinitionVersions(params).promise.toFuture
-    def listCoreDefinitionsFuture(params: ListCoreDefinitionsRequest): Future[ListCoreDefinitionsResponse] =
+    @inline def listCoreDefinitionsFuture(params: ListCoreDefinitionsRequest): Future[ListCoreDefinitionsResponse] =
       service.listCoreDefinitions(params).promise.toFuture
-    def listDeploymentsFuture(params: ListDeploymentsRequest): Future[ListDeploymentsResponse] =
+    @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[ListDeploymentsResponse] =
       service.listDeployments(params).promise.toFuture
-    def listDeviceDefinitionVersionsFuture(
+    @inline def listDeviceDefinitionVersionsFuture(
         params: ListDeviceDefinitionVersionsRequest
     ): Future[ListDeviceDefinitionVersionsResponse] = service.listDeviceDefinitionVersions(params).promise.toFuture
-    def listDeviceDefinitionsFuture(params: ListDeviceDefinitionsRequest): Future[ListDeviceDefinitionsResponse] =
-      service.listDeviceDefinitions(params).promise.toFuture
-    def listFunctionDefinitionVersionsFuture(
+    @inline def listDeviceDefinitionsFuture(
+        params: ListDeviceDefinitionsRequest
+    ): Future[ListDeviceDefinitionsResponse] = service.listDeviceDefinitions(params).promise.toFuture
+    @inline def listFunctionDefinitionVersionsFuture(
         params: ListFunctionDefinitionVersionsRequest
     ): Future[ListFunctionDefinitionVersionsResponse] = service.listFunctionDefinitionVersions(params).promise.toFuture
-    def listFunctionDefinitionsFuture(params: ListFunctionDefinitionsRequest): Future[ListFunctionDefinitionsResponse] =
-      service.listFunctionDefinitions(params).promise.toFuture
-    def listGroupCertificateAuthoritiesFuture(
+    @inline def listFunctionDefinitionsFuture(
+        params: ListFunctionDefinitionsRequest
+    ): Future[ListFunctionDefinitionsResponse] = service.listFunctionDefinitions(params).promise.toFuture
+    @inline def listGroupCertificateAuthoritiesFuture(
         params: ListGroupCertificateAuthoritiesRequest
     ): Future[ListGroupCertificateAuthoritiesResponse] =
       service.listGroupCertificateAuthorities(params).promise.toFuture
-    def listGroupVersionsFuture(params: ListGroupVersionsRequest): Future[ListGroupVersionsResponse] =
+    @inline def listGroupVersionsFuture(params: ListGroupVersionsRequest): Future[ListGroupVersionsResponse] =
       service.listGroupVersions(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
       service.listGroups(params).promise.toFuture
-    def listLoggerDefinitionVersionsFuture(
+    @inline def listLoggerDefinitionVersionsFuture(
         params: ListLoggerDefinitionVersionsRequest
     ): Future[ListLoggerDefinitionVersionsResponse] = service.listLoggerDefinitionVersions(params).promise.toFuture
-    def listLoggerDefinitionsFuture(params: ListLoggerDefinitionsRequest): Future[ListLoggerDefinitionsResponse] =
-      service.listLoggerDefinitions(params).promise.toFuture
-    def listResourceDefinitionVersionsFuture(
+    @inline def listLoggerDefinitionsFuture(
+        params: ListLoggerDefinitionsRequest
+    ): Future[ListLoggerDefinitionsResponse] = service.listLoggerDefinitions(params).promise.toFuture
+    @inline def listResourceDefinitionVersionsFuture(
         params: ListResourceDefinitionVersionsRequest
     ): Future[ListResourceDefinitionVersionsResponse] = service.listResourceDefinitionVersions(params).promise.toFuture
-    def listResourceDefinitionsFuture(params: ListResourceDefinitionsRequest): Future[ListResourceDefinitionsResponse] =
-      service.listResourceDefinitions(params).promise.toFuture
-    def listSubscriptionDefinitionVersionsFuture(
+    @inline def listResourceDefinitionsFuture(
+        params: ListResourceDefinitionsRequest
+    ): Future[ListResourceDefinitionsResponse] = service.listResourceDefinitions(params).promise.toFuture
+    @inline def listSubscriptionDefinitionVersionsFuture(
         params: ListSubscriptionDefinitionVersionsRequest
     ): Future[ListSubscriptionDefinitionVersionsResponse] =
       service.listSubscriptionDefinitionVersions(params).promise.toFuture
-    def listSubscriptionDefinitionsFuture(
+    @inline def listSubscriptionDefinitionsFuture(
         params: ListSubscriptionDefinitionsRequest
     ): Future[ListSubscriptionDefinitionsResponse] = service.listSubscriptionDefinitions(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def resetDeploymentsFuture(params: ResetDeploymentsRequest): Future[ResetDeploymentsResponse] =
+    @inline def resetDeploymentsFuture(params: ResetDeploymentsRequest): Future[ResetDeploymentsResponse] =
       service.resetDeployments(params).promise.toFuture
-    def startBulkDeploymentFuture(params: StartBulkDeploymentRequest): Future[StartBulkDeploymentResponse] =
+    @inline def startBulkDeploymentFuture(params: StartBulkDeploymentRequest): Future[StartBulkDeploymentResponse] =
       service.startBulkDeployment(params).promise.toFuture
-    def stopBulkDeploymentFuture(params: StopBulkDeploymentRequest): Future[StopBulkDeploymentResponse] =
+    @inline def stopBulkDeploymentFuture(params: StopBulkDeploymentRequest): Future[StopBulkDeploymentResponse] =
       service.stopBulkDeployment(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateConnectivityInfoFuture(params: UpdateConnectivityInfoRequest): Future[UpdateConnectivityInfoResponse] =
-      service.updateConnectivityInfo(params).promise.toFuture
-    def updateConnectorDefinitionFuture(
+    @inline def updateConnectivityInfoFuture(
+        params: UpdateConnectivityInfoRequest
+    ): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise.toFuture
+    @inline def updateConnectorDefinitionFuture(
         params: UpdateConnectorDefinitionRequest
     ): Future[UpdateConnectorDefinitionResponse] = service.updateConnectorDefinition(params).promise.toFuture
-    def updateCoreDefinitionFuture(params: UpdateCoreDefinitionRequest): Future[UpdateCoreDefinitionResponse] =
+    @inline def updateCoreDefinitionFuture(params: UpdateCoreDefinitionRequest): Future[UpdateCoreDefinitionResponse] =
       service.updateCoreDefinition(params).promise.toFuture
-    def updateDeviceDefinitionFuture(params: UpdateDeviceDefinitionRequest): Future[UpdateDeviceDefinitionResponse] =
-      service.updateDeviceDefinition(params).promise.toFuture
-    def updateFunctionDefinitionFuture(
+    @inline def updateDeviceDefinitionFuture(
+        params: UpdateDeviceDefinitionRequest
+    ): Future[UpdateDeviceDefinitionResponse] = service.updateDeviceDefinition(params).promise.toFuture
+    @inline def updateFunctionDefinitionFuture(
         params: UpdateFunctionDefinitionRequest
     ): Future[UpdateFunctionDefinitionResponse] = service.updateFunctionDefinition(params).promise.toFuture
-    def updateGroupCertificateConfigurationFuture(
+    @inline def updateGroupCertificateConfigurationFuture(
         params: UpdateGroupCertificateConfigurationRequest
     ): Future[UpdateGroupCertificateConfigurationResponse] =
       service.updateGroupCertificateConfiguration(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
       service.updateGroup(params).promise.toFuture
-    def updateLoggerDefinitionFuture(params: UpdateLoggerDefinitionRequest): Future[UpdateLoggerDefinitionResponse] =
-      service.updateLoggerDefinition(params).promise.toFuture
-    def updateResourceDefinitionFuture(
+    @inline def updateLoggerDefinitionFuture(
+        params: UpdateLoggerDefinitionRequest
+    ): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise.toFuture
+    @inline def updateResourceDefinitionFuture(
         params: UpdateResourceDefinitionRequest
     ): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise.toFuture
-    def updateSubscriptionDefinitionFuture(
+    @inline def updateSubscriptionDefinitionFuture(
         params: UpdateSubscriptionDefinitionRequest
     ): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise.toFuture
   }
@@ -488,6 +506,7 @@ package greengrass {
   }
 
   object AssociateRoleToGroupRequest {
+    @inline
     def apply(
         GroupId: __string,
         RoleArn: __string
@@ -507,6 +526,7 @@ package greengrass {
   }
 
   object AssociateRoleToGroupResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateRoleToGroupResponse = {
@@ -522,6 +542,7 @@ package greengrass {
   }
 
   object AssociateServiceRoleToAccountRequest {
+    @inline
     def apply(
         RoleArn: __string
     ): AssociateServiceRoleToAccountRequest = {
@@ -539,6 +560,7 @@ package greengrass {
   }
 
   object AssociateServiceRoleToAccountResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateServiceRoleToAccountResponse = {
@@ -559,6 +581,7 @@ package greengrass {
   }
 
   object BulkDeployment {
+    @inline
     def apply(
         BulkDeploymentArn: js.UndefOr[__string] = js.undefined,
         BulkDeploymentId: js.UndefOr[__string] = js.undefined,
@@ -583,6 +606,7 @@ package greengrass {
   }
 
   object BulkDeploymentMetrics {
+    @inline
     def apply(
         InvalidInputRecords: js.UndefOr[__integer] = js.undefined,
         RecordsProcessed: js.UndefOr[__integer] = js.undefined,
@@ -612,6 +636,7 @@ package greengrass {
   }
 
   object BulkDeploymentResult {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[__string] = js.undefined,
         DeploymentArn: js.UndefOr[__string] = js.undefined,
@@ -661,6 +686,7 @@ package greengrass {
   }
 
   object ConnectivityInfo {
+    @inline
     def apply(
         HostAddress: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
@@ -687,6 +713,7 @@ package greengrass {
   }
 
   object Connector {
+    @inline
     def apply(
         ConnectorArn: __string,
         Id: __string,
@@ -711,6 +738,7 @@ package greengrass {
   }
 
   object ConnectorDefinitionVersion {
+    @inline
     def apply(
         Connectors: js.UndefOr[__listOfConnector] = js.undefined
     ): ConnectorDefinitionVersion = {
@@ -732,6 +760,7 @@ package greengrass {
   }
 
   object Core {
+    @inline
     def apply(
         CertificateArn: __string,
         Id: __string,
@@ -758,6 +787,7 @@ package greengrass {
   }
 
   object CoreDefinitionVersion {
+    @inline
     def apply(
         Cores: js.UndefOr[__listOfCore] = js.undefined
     ): CoreDefinitionVersion = {
@@ -776,6 +806,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
@@ -803,6 +834,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -832,6 +864,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionVersionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -856,6 +889,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -883,6 +917,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[CoreDefinitionVersion] = js.undefined,
@@ -910,6 +945,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -939,6 +975,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionVersionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -963,6 +1000,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -988,6 +1026,7 @@ package greengrass {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         DeploymentType: DeploymentType,
         GroupId: __string,
@@ -1014,6 +1053,7 @@ package greengrass {
   }
 
   object CreateDeploymentResponse {
+    @inline
     def apply(
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
@@ -1034,6 +1074,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[DeviceDefinitionVersion] = js.undefined,
@@ -1061,6 +1102,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1090,6 +1132,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionVersionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1114,6 +1157,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1138,6 +1182,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[FunctionDefinitionVersion] = js.undefined,
@@ -1165,6 +1210,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1198,6 +1244,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionVersionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1224,6 +1271,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1246,6 +1294,7 @@ package greengrass {
   }
 
   object CreateGroupCertificateAuthorityRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined
@@ -1265,6 +1314,7 @@ package greengrass {
   }
 
   object CreateGroupCertificateAuthorityResponse {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityResponse = {
@@ -1285,6 +1335,7 @@ package greengrass {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[GroupVersion] = js.undefined,
@@ -1312,6 +1363,7 @@ package greengrass {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1347,6 +1399,7 @@ package greengrass {
   }
 
   object CreateGroupVersionRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1395,6 +1448,7 @@ package greengrass {
   }
 
   object CreateGroupVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1419,6 +1473,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[LoggerDefinitionVersion] = js.undefined,
@@ -1446,6 +1501,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1475,6 +1531,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionVersionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1499,6 +1556,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1523,6 +1581,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[ResourceDefinitionVersion] = js.undefined,
@@ -1550,6 +1609,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1579,6 +1639,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionVersionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1603,6 +1664,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1630,6 +1692,7 @@ package greengrass {
   }
 
   object CreateSoftwareUpdateJobRequest {
+    @inline
     def apply(
         S3UrlSignerRole: S3UrlSignerRole,
         SoftwareToUpdate: SoftwareToUpdate,
@@ -1660,6 +1723,7 @@ package greengrass {
   }
 
   object CreateSoftwareUpdateJobResponse {
+    @inline
     def apply(
         IotJobArn: js.UndefOr[__string] = js.undefined,
         IotJobId: js.UndefOr[__string] = js.undefined
@@ -1680,6 +1744,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[SubscriptionDefinitionVersion] = js.undefined,
@@ -1707,6 +1772,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1736,6 +1802,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionVersionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1760,6 +1827,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1791,6 +1859,7 @@ package greengrass {
   }
 
   object DefinitionInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1820,6 +1889,7 @@ package greengrass {
   }
 
   object DeleteConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string
     ): DeleteConnectorDefinitionRequest = {
@@ -1835,6 +1905,7 @@ package greengrass {
   trait DeleteConnectorDefinitionResponse extends js.Object {}
 
   object DeleteConnectorDefinitionResponse {
+    @inline
     def apply(
         ): DeleteConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1849,6 +1920,7 @@ package greengrass {
   }
 
   object DeleteCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string
     ): DeleteCoreDefinitionRequest = {
@@ -1864,6 +1936,7 @@ package greengrass {
   trait DeleteCoreDefinitionResponse extends js.Object {}
 
   object DeleteCoreDefinitionResponse {
+    @inline
     def apply(
         ): DeleteCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1878,6 +1951,7 @@ package greengrass {
   }
 
   object DeleteDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string
     ): DeleteDeviceDefinitionRequest = {
@@ -1893,6 +1967,7 @@ package greengrass {
   trait DeleteDeviceDefinitionResponse extends js.Object {}
 
   object DeleteDeviceDefinitionResponse {
+    @inline
     def apply(
         ): DeleteDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1907,6 +1982,7 @@ package greengrass {
   }
 
   object DeleteFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string
     ): DeleteFunctionDefinitionRequest = {
@@ -1922,6 +1998,7 @@ package greengrass {
   trait DeleteFunctionDefinitionResponse extends js.Object {}
 
   object DeleteFunctionDefinitionResponse {
+    @inline
     def apply(
         ): DeleteFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1936,6 +2013,7 @@ package greengrass {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): DeleteGroupRequest = {
@@ -1951,6 +2029,7 @@ package greengrass {
   trait DeleteGroupResponse extends js.Object {}
 
   object DeleteGroupResponse {
+    @inline
     def apply(
         ): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1965,6 +2044,7 @@ package greengrass {
   }
 
   object DeleteLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string
     ): DeleteLoggerDefinitionRequest = {
@@ -1980,6 +2060,7 @@ package greengrass {
   trait DeleteLoggerDefinitionResponse extends js.Object {}
 
   object DeleteLoggerDefinitionResponse {
+    @inline
     def apply(
         ): DeleteLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1994,6 +2075,7 @@ package greengrass {
   }
 
   object DeleteResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string
     ): DeleteResourceDefinitionRequest = {
@@ -2009,6 +2091,7 @@ package greengrass {
   trait DeleteResourceDefinitionResponse extends js.Object {}
 
   object DeleteResourceDefinitionResponse {
+    @inline
     def apply(
         ): DeleteResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2023,6 +2106,7 @@ package greengrass {
   }
 
   object DeleteSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string
     ): DeleteSubscriptionDefinitionRequest = {
@@ -2038,6 +2122,7 @@ package greengrass {
   trait DeleteSubscriptionDefinitionResponse extends js.Object {}
 
   object DeleteSubscriptionDefinitionResponse {
+    @inline
     def apply(
         ): DeleteSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2059,6 +2144,7 @@ package greengrass {
   }
 
   object Deployment {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[__string] = js.undefined,
         DeploymentArn: js.UndefOr[__string] = js.undefined,
@@ -2100,6 +2186,7 @@ package greengrass {
   }
 
   object Device {
+    @inline
     def apply(
         CertificateArn: __string,
         Id: __string,
@@ -2126,6 +2213,7 @@ package greengrass {
   }
 
   object DeviceDefinitionVersion {
+    @inline
     def apply(
         Devices: js.UndefOr[__listOfDevice] = js.undefined
     ): DeviceDefinitionVersion = {
@@ -2141,6 +2229,7 @@ package greengrass {
   }
 
   object DisassociateRoleFromGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): DisassociateRoleFromGroupRequest = {
@@ -2158,6 +2247,7 @@ package greengrass {
   }
 
   object DisassociateRoleFromGroupResponse {
+    @inline
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateRoleFromGroupResponse = {
@@ -2171,6 +2261,7 @@ package greengrass {
   trait DisassociateServiceRoleFromAccountRequest extends js.Object {}
 
   object DisassociateServiceRoleFromAccountRequest {
+    @inline
     def apply(
         ): DisassociateServiceRoleFromAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -2185,6 +2276,7 @@ package greengrass {
   }
 
   object DisassociateServiceRoleFromAccountResponse {
+    @inline
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateServiceRoleFromAccountResponse = {
@@ -2211,6 +2303,7 @@ package greengrass {
   }
 
   object ErrorDetail {
+    @inline
     def apply(
         DetailedErrorCode: js.UndefOr[__string] = js.undefined,
         DetailedErrorMessage: js.UndefOr[__string] = js.undefined
@@ -2233,6 +2326,7 @@ package greengrass {
   }
 
   object Function {
+    @inline
     def apply(
         Id: __string,
         FunctionArn: js.UndefOr[__string] = js.undefined,
@@ -2263,6 +2357,7 @@ package greengrass {
   }
 
   object FunctionConfiguration {
+    @inline
     def apply(
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
         Environment: js.UndefOr[FunctionConfigurationEnvironment] = js.undefined,
@@ -2296,6 +2391,7 @@ package greengrass {
   }
 
   object FunctionConfigurationEnvironment {
+    @inline
     def apply(
         AccessSysfs: js.UndefOr[__boolean] = js.undefined,
         Execution: js.UndefOr[FunctionExecutionConfig] = js.undefined,
@@ -2320,6 +2416,7 @@ package greengrass {
   }
 
   object FunctionDefaultConfig {
+    @inline
     def apply(
         Execution: js.UndefOr[FunctionDefaultExecutionConfig] = js.undefined
     ): FunctionDefaultConfig = {
@@ -2339,6 +2436,7 @@ package greengrass {
   }
 
   object FunctionDefaultExecutionConfig {
+    @inline
     def apply(
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
@@ -2360,6 +2458,7 @@ package greengrass {
   }
 
   object FunctionDefinitionVersion {
+    @inline
     def apply(
         DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
         Functions: js.UndefOr[__listOfFunction] = js.undefined
@@ -2381,6 +2480,7 @@ package greengrass {
   }
 
   object FunctionExecutionConfig {
+    @inline
     def apply(
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
@@ -2412,6 +2512,7 @@ package greengrass {
   }
 
   object FunctionRunAsConfig {
+    @inline
     def apply(
         Gid: js.UndefOr[__integer] = js.undefined,
         Uid: js.UndefOr[__integer] = js.undefined
@@ -2429,6 +2530,7 @@ package greengrass {
   }
 
   object GetAssociatedRoleRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetAssociatedRoleRequest = {
@@ -2447,6 +2549,7 @@ package greengrass {
   }
 
   object GetAssociatedRoleResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
@@ -2464,6 +2567,7 @@ package greengrass {
   }
 
   object GetBulkDeploymentStatusRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string
     ): GetBulkDeploymentStatusRequest = {
@@ -2486,6 +2590,7 @@ package greengrass {
   }
 
   object GetBulkDeploymentStatusResponse {
+    @inline
     def apply(
         BulkDeploymentMetrics: js.UndefOr[BulkDeploymentMetrics] = js.undefined,
         BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus] = js.undefined,
@@ -2511,6 +2616,7 @@ package greengrass {
   }
 
   object GetConnectivityInfoRequest {
+    @inline
     def apply(
         ThingName: __string
     ): GetConnectivityInfoRequest = {
@@ -2529,6 +2635,7 @@ package greengrass {
   }
 
   object GetConnectivityInfoResponse {
+    @inline
     def apply(
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined,
         Message: js.UndefOr[__string] = js.undefined
@@ -2546,6 +2653,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string
     ): GetConnectorDefinitionRequest = {
@@ -2570,6 +2678,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2601,6 +2710,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionVersionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         ConnectorDefinitionVersionId: __string,
@@ -2627,6 +2737,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2652,6 +2763,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string
     ): GetCoreDefinitionRequest = {
@@ -2676,6 +2788,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2706,6 +2819,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionVersionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         CoreDefinitionVersionId: __string
@@ -2730,6 +2844,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2756,6 +2871,7 @@ package greengrass {
   }
 
   object GetDeploymentStatusRequest {
+    @inline
     def apply(
         DeploymentId: __string,
         GroupId: __string
@@ -2779,6 +2895,7 @@ package greengrass {
   }
 
   object GetDeploymentStatusResponse {
+    @inline
     def apply(
         DeploymentStatus: js.UndefOr[__string] = js.undefined,
         DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
@@ -2802,6 +2919,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string
     ): GetDeviceDefinitionRequest = {
@@ -2826,6 +2944,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2857,6 +2976,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionVersionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         DeviceDefinitionVersionId: __string,
@@ -2883,6 +3003,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2908,6 +3029,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string
     ): GetFunctionDefinitionRequest = {
@@ -2932,6 +3054,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2963,6 +3086,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionVersionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         FunctionDefinitionVersionId: __string,
@@ -2989,6 +3113,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3015,6 +3140,7 @@ package greengrass {
   }
 
   object GetGroupCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityId: __string,
         GroupId: __string
@@ -3036,6 +3162,7 @@ package greengrass {
   }
 
   object GetGroupCertificateAuthorityResponse {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined,
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined,
@@ -3059,6 +3186,7 @@ package greengrass {
   }
 
   object GetGroupCertificateConfigurationRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetGroupCertificateConfigurationRequest = {
@@ -3078,6 +3206,7 @@ package greengrass {
   }
 
   object GetGroupCertificateConfigurationResponse {
+    @inline
     def apply(
         CertificateAuthorityExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
@@ -3101,6 +3230,7 @@ package greengrass {
   }
 
   object GetGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetGroupRequest = {
@@ -3125,6 +3255,7 @@ package greengrass {
   }
 
   object GetGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3155,6 +3286,7 @@ package greengrass {
   }
 
   object GetGroupVersionRequest {
+    @inline
     def apply(
         GroupId: __string,
         GroupVersionId: __string
@@ -3178,6 +3310,7 @@ package greengrass {
   }
 
   object GetGroupVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3201,6 +3334,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string
     ): GetLoggerDefinitionRequest = {
@@ -3225,6 +3359,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3256,6 +3391,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionVersionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         LoggerDefinitionVersionId: __string,
@@ -3281,6 +3417,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3304,6 +3441,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string
     ): GetResourceDefinitionRequest = {
@@ -3328,6 +3466,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3358,6 +3497,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionVersionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         ResourceDefinitionVersionId: __string
@@ -3381,6 +3521,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3402,6 +3543,7 @@ package greengrass {
   trait GetServiceRoleForAccountRequest extends js.Object {}
 
   object GetServiceRoleForAccountRequest {
+    @inline
     def apply(
         ): GetServiceRoleForAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -3417,6 +3559,7 @@ package greengrass {
   }
 
   object GetServiceRoleForAccountResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
@@ -3434,6 +3577,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string
     ): GetSubscriptionDefinitionRequest = {
@@ -3458,6 +3602,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3489,6 +3634,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionVersionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         SubscriptionDefinitionVersionId: __string,
@@ -3515,6 +3661,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3544,6 +3691,7 @@ package greengrass {
   }
 
   object GroupCertificateAuthorityProperties {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined,
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined
@@ -3574,6 +3722,7 @@ package greengrass {
   }
 
   object GroupInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3605,6 +3754,7 @@ package greengrass {
   }
 
   object GroupOwnerSetting {
+    @inline
     def apply(
         AutoAddGroupOwner: js.UndefOr[__boolean] = js.undefined,
         GroupOwner: js.UndefOr[__string] = js.undefined
@@ -3631,6 +3781,7 @@ package greengrass {
   }
 
   object GroupVersion {
+    @inline
     def apply(
         ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
         CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
@@ -3672,6 +3823,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentDetailedReportsRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3694,6 +3846,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentDetailedReportsResponse {
+    @inline
     def apply(
         Deployments: js.UndefOr[BulkDeploymentResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3712,6 +3865,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3730,6 +3884,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentsResponse {
+    @inline
     def apply(
         BulkDeployments: js.UndefOr[BulkDeployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3749,6 +3904,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionVersionsRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3771,6 +3927,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3789,6 +3946,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3807,6 +3965,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3826,6 +3985,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionVersionsRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3848,6 +4008,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3866,6 +4027,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3884,6 +4046,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3903,6 +4066,7 @@ package greengrass {
   }
 
   object ListDeploymentsRequest {
+    @inline
     def apply(
         GroupId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3925,6 +4089,7 @@ package greengrass {
   }
 
   object ListDeploymentsResponse {
+    @inline
     def apply(
         Deployments: js.UndefOr[Deployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3944,6 +4109,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionVersionsRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3966,6 +4132,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3984,6 +4151,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4002,6 +4170,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4021,6 +4190,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionVersionsRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4043,6 +4213,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4061,6 +4232,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4079,6 +4251,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4096,6 +4269,7 @@ package greengrass {
   }
 
   object ListGroupCertificateAuthoritiesRequest {
+    @inline
     def apply(
         GroupId: __string
     ): ListGroupCertificateAuthoritiesRequest = {
@@ -4113,6 +4287,7 @@ package greengrass {
   }
 
   object ListGroupCertificateAuthoritiesResponse {
+    @inline
     def apply(
         GroupCertificateAuthorities: js.UndefOr[__listOfGroupCertificateAuthorityProperties] = js.undefined
     ): ListGroupCertificateAuthoritiesResponse = {
@@ -4132,6 +4307,7 @@ package greengrass {
   }
 
   object ListGroupVersionsRequest {
+    @inline
     def apply(
         GroupId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4154,6 +4330,7 @@ package greengrass {
   }
 
   object ListGroupVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4172,6 +4349,7 @@ package greengrass {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4190,6 +4368,7 @@ package greengrass {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[__listOfGroupInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4209,6 +4388,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionVersionsRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4231,6 +4411,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4249,6 +4430,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4267,6 +4449,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4286,6 +4469,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionVersionsRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4308,6 +4492,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4326,6 +4511,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4344,6 +4530,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4363,6 +4550,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionVersionsRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4385,6 +4573,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4403,6 +4592,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4421,6 +4611,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4438,6 +4629,7 @@ package greengrass {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -4455,6 +4647,7 @@ package greengrass {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -4474,6 +4667,7 @@ package greengrass {
   }
 
   object LocalDeviceResourceData {
+    @inline
     def apply(
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
         SourcePath: js.UndefOr[__string] = js.undefined
@@ -4496,6 +4690,7 @@ package greengrass {
   }
 
   object LocalVolumeResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
@@ -4522,6 +4717,7 @@ package greengrass {
   }
 
   object Logger {
+    @inline
     def apply(
         Component: LoggerComponent,
         Id: __string,
@@ -4557,6 +4753,7 @@ package greengrass {
   }
 
   object LoggerDefinitionVersion {
+    @inline
     def apply(
         Loggers: js.UndefOr[__listOfLogger] = js.undefined
     ): LoggerDefinitionVersion = {
@@ -4604,6 +4801,7 @@ package greengrass {
   }
 
   object ResetDeploymentsRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -4626,6 +4824,7 @@ package greengrass {
   }
 
   object ResetDeploymentsResponse {
+    @inline
     def apply(
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
@@ -4648,6 +4847,7 @@ package greengrass {
   }
 
   object Resource {
+    @inline
     def apply(
         Id: __string,
         Name: __string,
@@ -4673,6 +4873,7 @@ package greengrass {
   }
 
   object ResourceAccessPolicy {
+    @inline
     def apply(
         ResourceId: __string,
         Permission: js.UndefOr[Permission] = js.undefined
@@ -4699,6 +4900,7 @@ package greengrass {
   }
 
   object ResourceDataContainer {
+    @inline
     def apply(
         LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData] = js.undefined,
         LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData] = js.undefined,
@@ -4731,6 +4933,7 @@ package greengrass {
   }
 
   object ResourceDefinitionVersion {
+    @inline
     def apply(
         Resources: js.UndefOr[__listOfResource] = js.undefined
     ): ResourceDefinitionVersion = {
@@ -4750,6 +4953,7 @@ package greengrass {
   }
 
   object S3MachineLearningModelResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         S3Uri: js.UndefOr[__string] = js.undefined
@@ -4771,6 +4975,7 @@ package greengrass {
   }
 
   object SageMakerMachineLearningModelResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         SageMakerJobArn: js.UndefOr[__string] = js.undefined
@@ -4792,6 +4997,7 @@ package greengrass {
   }
 
   object SecretsManagerSecretResourceData {
+    @inline
     def apply(
         ARN: js.UndefOr[__string] = js.undefined,
         AdditionalStagingLabelsToDownload: js.UndefOr[__listOf__string] = js.undefined
@@ -4824,6 +5030,7 @@ package greengrass {
   }
 
   object StartBulkDeploymentRequest {
+    @inline
     def apply(
         ExecutionRoleArn: __string,
         InputFileUri: __string,
@@ -4848,6 +5055,7 @@ package greengrass {
   }
 
   object StartBulkDeploymentResponse {
+    @inline
     def apply(
         BulkDeploymentArn: js.UndefOr[__string] = js.undefined,
         BulkDeploymentId: js.UndefOr[__string] = js.undefined
@@ -4865,6 +5073,7 @@ package greengrass {
   }
 
   object StopBulkDeploymentRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string
     ): StopBulkDeploymentRequest = {
@@ -4880,6 +5089,7 @@ package greengrass {
   trait StopBulkDeploymentResponse extends js.Object {}
 
   object StopBulkDeploymentResponse {
+    @inline
     def apply(
         ): StopBulkDeploymentResponse = {
       val __obj = js.Dynamic.literal()
@@ -4900,6 +5110,7 @@ package greengrass {
   }
 
   object Subscription {
+    @inline
     def apply(
         Id: __string,
         Source: __string,
@@ -4926,6 +5137,7 @@ package greengrass {
   }
 
   object SubscriptionDefinitionVersion {
+    @inline
     def apply(
         Subscriptions: js.UndefOr[__listOfSubscription] = js.undefined
     ): SubscriptionDefinitionVersion = {
@@ -4945,6 +5157,7 @@ package greengrass {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         tags: js.UndefOr[Tags] = js.undefined
@@ -4965,6 +5178,7 @@ package greengrass {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -5004,6 +5218,7 @@ package greengrass {
   }
 
   object UpdateConnectivityInfoRequest {
+    @inline
     def apply(
         ThingName: __string,
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined
@@ -5024,6 +5239,7 @@ package greengrass {
   }
 
   object UpdateConnectivityInfoResponse {
+    @inline
     def apply(
         Message: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
@@ -5042,6 +5258,7 @@ package greengrass {
   }
 
   object UpdateConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5059,6 +5276,7 @@ package greengrass {
   trait UpdateConnectorDefinitionResponse extends js.Object {}
 
   object UpdateConnectorDefinitionResponse {
+    @inline
     def apply(
         ): UpdateConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5074,6 +5292,7 @@ package greengrass {
   }
 
   object UpdateCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5091,6 +5310,7 @@ package greengrass {
   trait UpdateCoreDefinitionResponse extends js.Object {}
 
   object UpdateCoreDefinitionResponse {
+    @inline
     def apply(
         ): UpdateCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5106,6 +5326,7 @@ package greengrass {
   }
 
   object UpdateDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5123,6 +5344,7 @@ package greengrass {
   trait UpdateDeviceDefinitionResponse extends js.Object {}
 
   object UpdateDeviceDefinitionResponse {
+    @inline
     def apply(
         ): UpdateDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5138,6 +5360,7 @@ package greengrass {
   }
 
   object UpdateFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5155,6 +5378,7 @@ package greengrass {
   trait UpdateFunctionDefinitionResponse extends js.Object {}
 
   object UpdateFunctionDefinitionResponse {
+    @inline
     def apply(
         ): UpdateFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5170,6 +5394,7 @@ package greengrass {
   }
 
   object UpdateGroupCertificateConfigurationRequest {
+    @inline
     def apply(
         GroupId: __string,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined
@@ -5193,6 +5418,7 @@ package greengrass {
   }
 
   object UpdateGroupCertificateConfigurationResponse {
+    @inline
     def apply(
         CertificateAuthorityExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
@@ -5217,6 +5443,7 @@ package greengrass {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         GroupId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5234,6 +5461,7 @@ package greengrass {
   trait UpdateGroupResponse extends js.Object {}
 
   object UpdateGroupResponse {
+    @inline
     def apply(
         ): UpdateGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -5249,6 +5477,7 @@ package greengrass {
   }
 
   object UpdateLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5266,6 +5495,7 @@ package greengrass {
   trait UpdateLoggerDefinitionResponse extends js.Object {}
 
   object UpdateLoggerDefinitionResponse {
+    @inline
     def apply(
         ): UpdateLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5281,6 +5511,7 @@ package greengrass {
   }
 
   object UpdateResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5298,6 +5529,7 @@ package greengrass {
   trait UpdateResourceDefinitionResponse extends js.Object {}
 
   object UpdateResourceDefinitionResponse {
+    @inline
     def apply(
         ): UpdateResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5313,6 +5545,7 @@ package greengrass {
   }
 
   object UpdateSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5330,6 +5563,7 @@ package greengrass {
   trait UpdateSubscriptionDefinitionResponse extends js.Object {}
 
   object UpdateSubscriptionDefinitionResponse {
+    @inline
     def apply(
         ): UpdateSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5373,6 +5607,7 @@ package greengrass {
   }
 
   object VersionInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,

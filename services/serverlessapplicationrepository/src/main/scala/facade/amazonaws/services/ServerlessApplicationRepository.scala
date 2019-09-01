@@ -28,36 +28,37 @@ package object serverlessapplicationrepository {
   implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
       extends AnyVal {
 
-    def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
-    def createApplicationVersionFuture(
+    @inline def createApplicationVersionFuture(
         params: CreateApplicationVersionRequest
     ): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise.toFuture
-    def createCloudFormationChangeSetFuture(
+    @inline def createCloudFormationChangeSetFuture(
         params: CreateCloudFormationChangeSetRequest
     ): Future[CreateCloudFormationChangeSetResponse] = service.createCloudFormationChangeSet(params).promise.toFuture
-    def createCloudFormationTemplateFuture(
+    @inline def createCloudFormationTemplateFuture(
         params: CreateCloudFormationTemplateRequest
     ): Future[CreateCloudFormationTemplateResponse] = service.createCloudFormationTemplate(params).promise.toFuture
-    def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
+    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
       service.deleteApplication(params).promise.toFuture
-    def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] =
+    @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] =
       service.getApplication(params).promise.toFuture
-    def getApplicationPolicyFuture(params: GetApplicationPolicyRequest): Future[GetApplicationPolicyResponse] =
+    @inline def getApplicationPolicyFuture(params: GetApplicationPolicyRequest): Future[GetApplicationPolicyResponse] =
       service.getApplicationPolicy(params).promise.toFuture
-    def getCloudFormationTemplateFuture(
+    @inline def getCloudFormationTemplateFuture(
         params: GetCloudFormationTemplateRequest
     ): Future[GetCloudFormationTemplateResponse] = service.getCloudFormationTemplate(params).promise.toFuture
-    def listApplicationDependenciesFuture(
+    @inline def listApplicationDependenciesFuture(
         params: ListApplicationDependenciesRequest
     ): Future[ListApplicationDependenciesResponse] = service.listApplicationDependencies(params).promise.toFuture
-    def listApplicationVersionsFuture(params: ListApplicationVersionsRequest): Future[ListApplicationVersionsResponse] =
-      service.listApplicationVersions(params).promise.toFuture
-    def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
+    @inline def listApplicationVersionsFuture(
+        params: ListApplicationVersionsRequest
+    ): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise.toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
       service.listApplications(params).promise.toFuture
-    def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] =
+    @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] =
       service.putApplicationPolicy(params).promise.toFuture
-    def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise.toFuture
   }
 }
@@ -103,6 +104,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationDependencySummary {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: __string
@@ -127,6 +129,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationPolicyStatement {
+    @inline
     def apply(
         Actions: __listOf__string,
         Principals: __listOf__string,
@@ -158,6 +161,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationSummary {
+    @inline
     def apply(
         ApplicationId: __string,
         Author: __string,
@@ -217,6 +221,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationRequest {
+    @inline
     def apply(
         Author: __string,
         Description: __string,
@@ -272,6 +277,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -312,6 +318,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationVersionRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: __string,
@@ -347,6 +354,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationVersionResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -390,6 +398,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationChangeSetRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         StackName: __string,
@@ -434,6 +443,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationChangeSetResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         ChangeSetId: js.UndefOr[__string] = js.undefined,
@@ -456,6 +466,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationTemplateRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
@@ -481,6 +492,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationTemplateResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -508,6 +520,7 @@ package serverlessapplicationrepository {
   }
 
   object DeleteApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApplicationRequest = {
@@ -525,6 +538,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationPolicyRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApplicationPolicyRequest = {
@@ -542,6 +556,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationPolicyResponse {
+    @inline
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): GetApplicationPolicyResponse = {
@@ -558,6 +573,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
@@ -587,6 +603,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -623,6 +640,7 @@ package serverlessapplicationrepository {
   }
 
   object GetCloudFormationTemplateRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         TemplateId: __string
@@ -648,6 +666,7 @@ package serverlessapplicationrepository {
   }
 
   object GetCloudFormationTemplateResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -678,6 +697,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationDependenciesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
@@ -702,6 +722,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationDependenciesResponse {
+    @inline
     def apply(
         Dependencies: js.UndefOr[__listOfApplicationDependencySummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -721,6 +742,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationVersionsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
@@ -743,6 +765,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionSummary] = js.undefined
@@ -761,6 +784,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationsRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -779,6 +803,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationsResponse {
+    @inline
     def apply(
         Applications: js.UndefOr[__listOfApplicationSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -811,6 +836,7 @@ package serverlessapplicationrepository {
   }
 
   object ParameterDefinition {
+    @inline
     def apply(
         Name: __string,
         ReferencedByResources: __listOf__string,
@@ -856,6 +882,7 @@ package serverlessapplicationrepository {
   }
 
   object ParameterValue {
+    @inline
     def apply(
         Name: __string,
         Value: __string
@@ -876,6 +903,7 @@ package serverlessapplicationrepository {
   }
 
   object PutApplicationPolicyRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         Statements: __listOfApplicationPolicyStatement
@@ -895,6 +923,7 @@ package serverlessapplicationrepository {
   }
 
   object PutApplicationPolicyResponse {
+    @inline
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): PutApplicationPolicyResponse = {
@@ -915,6 +944,7 @@ package serverlessapplicationrepository {
   }
 
   object RollbackConfiguration {
+    @inline
     def apply(
         MonitoringTimeInMinutes: js.UndefOr[__integer] = js.undefined,
         RollbackTriggers: js.UndefOr[__listOfRollbackTrigger] = js.undefined
@@ -937,6 +967,7 @@ package serverlessapplicationrepository {
   }
 
   object RollbackTrigger {
+    @inline
     def apply(
         Arn: __string,
         Type: __string
@@ -969,6 +1000,7 @@ package serverlessapplicationrepository {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: __string,
         Value: __string
@@ -994,6 +1026,7 @@ package serverlessapplicationrepository {
   }
 
   object UpdateApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         Author: js.UndefOr[__string] = js.undefined,
@@ -1033,6 +1066,7 @@ package serverlessapplicationrepository {
   }
 
   object UpdateApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -1079,6 +1113,7 @@ package serverlessapplicationrepository {
   }
 
   object Version {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationTime: __string,
@@ -1118,6 +1153,7 @@ package serverlessapplicationrepository {
   }
 
   object VersionSummary {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationTime: __string,

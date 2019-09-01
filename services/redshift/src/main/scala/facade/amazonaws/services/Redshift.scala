@@ -89,196 +89,210 @@ package object redshift {
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
-    def acceptReservedNodeExchangeFuture(
+    @inline def acceptReservedNodeExchangeFuture(
         params: AcceptReservedNodeExchangeInputMessage
     ): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise.toFuture
-    def authorizeClusterSecurityGroupIngressFuture(
+    @inline def authorizeClusterSecurityGroupIngressFuture(
         params: AuthorizeClusterSecurityGroupIngressMessage
     ): Future[AuthorizeClusterSecurityGroupIngressResult] =
       service.authorizeClusterSecurityGroupIngress(params).promise.toFuture
-    def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] =
-      service.authorizeSnapshotAccess(params).promise.toFuture
-    def batchDeleteClusterSnapshotsFuture(
+    @inline def authorizeSnapshotAccessFuture(
+        params: AuthorizeSnapshotAccessMessage
+    ): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise.toFuture
+    @inline def batchDeleteClusterSnapshotsFuture(
         params: BatchDeleteClusterSnapshotsRequest
     ): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise.toFuture
-    def batchModifyClusterSnapshotsFuture(
+    @inline def batchModifyClusterSnapshotsFuture(
         params: BatchModifyClusterSnapshotsMessage
     ): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise.toFuture
-    def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] =
+    @inline def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] =
       service.cancelResize(params).promise.toFuture
-    def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] =
+    @inline def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] =
       service.copyClusterSnapshot(params).promise.toFuture
-    def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] =
+    @inline def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] =
       service.createCluster(params).promise.toFuture
-    def createClusterParameterGroupFuture(
+    @inline def createClusterParameterGroupFuture(
         params: CreateClusterParameterGroupMessage
     ): Future[CreateClusterParameterGroupResult] = service.createClusterParameterGroup(params).promise.toFuture
-    def createClusterSecurityGroupFuture(
+    @inline def createClusterSecurityGroupFuture(
         params: CreateClusterSecurityGroupMessage
     ): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise.toFuture
-    def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] =
+    @inline def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] =
       service.createClusterSnapshot(params).promise.toFuture
-    def createClusterSubnetGroupFuture(
+    @inline def createClusterSubnetGroupFuture(
         params: CreateClusterSubnetGroupMessage
     ): Future[CreateClusterSubnetGroupResult] = service.createClusterSubnetGroup(params).promise.toFuture
-    def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] =
-      service.createEventSubscription(params).promise.toFuture
-    def createHsmClientCertificateFuture(
+    @inline def createEventSubscriptionFuture(
+        params: CreateEventSubscriptionMessage
+    ): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise.toFuture
+    @inline def createHsmClientCertificateFuture(
         params: CreateHsmClientCertificateMessage
     ): Future[CreateHsmClientCertificateResult] = service.createHsmClientCertificate(params).promise.toFuture
-    def createHsmConfigurationFuture(params: CreateHsmConfigurationMessage): Future[CreateHsmConfigurationResult] =
-      service.createHsmConfiguration(params).promise.toFuture
-    def createSnapshotCopyGrantFuture(params: CreateSnapshotCopyGrantMessage): Future[CreateSnapshotCopyGrantResult] =
-      service.createSnapshotCopyGrant(params).promise.toFuture
-    def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] =
+    @inline def createHsmConfigurationFuture(
+        params: CreateHsmConfigurationMessage
+    ): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise.toFuture
+    @inline def createSnapshotCopyGrantFuture(
+        params: CreateSnapshotCopyGrantMessage
+    ): Future[CreateSnapshotCopyGrantResult] = service.createSnapshotCopyGrant(params).promise.toFuture
+    @inline def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.createSnapshotSchedule(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsMessage): Future[js.Object] = service.createTags(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
+    @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] =
+      service.createTags(params).promise.toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
       service.deleteCluster(params).promise.toFuture
-    def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
+    @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
       service.deleteClusterParameterGroup(params).promise.toFuture
-    def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] =
+    @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] =
       service.deleteClusterSecurityGroup(params).promise.toFuture
-    def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] =
+    @inline def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] =
       service.deleteClusterSnapshot(params).promise.toFuture
-    def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] =
+    @inline def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] =
       service.deleteClusterSubnetGroup(params).promise.toFuture
-    def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] =
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] =
       service.deleteEventSubscription(params).promise.toFuture
-    def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] =
+    @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] =
       service.deleteHsmClientCertificate(params).promise.toFuture
-    def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
+    @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
       service.deleteHsmConfiguration(params).promise.toFuture
-    def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
+    @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
       service.deleteSnapshotCopyGrant(params).promise.toFuture
-    def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
+    @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
       service.deleteSnapshotSchedule(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributeList] =
-      service.describeAccountAttributes(params).promise.toFuture
-    def describeClusterDbRevisionsFuture(params: DescribeClusterDbRevisionsMessage): Future[ClusterDbRevisionsMessage] =
-      service.describeClusterDbRevisions(params).promise.toFuture
-    def describeClusterParameterGroupsFuture(
+    @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeAccountAttributesFuture(
+        params: DescribeAccountAttributesMessage
+    ): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise.toFuture
+    @inline def describeClusterDbRevisionsFuture(
+        params: DescribeClusterDbRevisionsMessage
+    ): Future[ClusterDbRevisionsMessage] = service.describeClusterDbRevisions(params).promise.toFuture
+    @inline def describeClusterParameterGroupsFuture(
         params: DescribeClusterParameterGroupsMessage
     ): Future[ClusterParameterGroupsMessage] = service.describeClusterParameterGroups(params).promise.toFuture
-    def describeClusterParametersFuture(
+    @inline def describeClusterParametersFuture(
         params: DescribeClusterParametersMessage
     ): Future[ClusterParameterGroupDetails] = service.describeClusterParameters(params).promise.toFuture
-    def describeClusterSecurityGroupsFuture(
+    @inline def describeClusterSecurityGroupsFuture(
         params: DescribeClusterSecurityGroupsMessage
     ): Future[ClusterSecurityGroupMessage] = service.describeClusterSecurityGroups(params).promise.toFuture
-    def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] =
+    @inline def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] =
       service.describeClusterSnapshots(params).promise.toFuture
-    def describeClusterSubnetGroupsFuture(
+    @inline def describeClusterSubnetGroupsFuture(
         params: DescribeClusterSubnetGroupsMessage
     ): Future[ClusterSubnetGroupMessage] = service.describeClusterSubnetGroups(params).promise.toFuture
-    def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] =
+    @inline def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] =
       service.describeClusterTracks(params).promise.toFuture
-    def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] =
+    @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] =
       service.describeClusterVersions(params).promise.toFuture
-    def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] =
+    @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] =
       service.describeClusters(params).promise.toFuture
-    def describeDefaultClusterParametersFuture(
+    @inline def describeDefaultClusterParametersFuture(
         params: DescribeDefaultClusterParametersMessage
     ): Future[DescribeDefaultClusterParametersResult] =
       service.describeDefaultClusterParameters(params).promise.toFuture
-    def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
       service.describeEventCategories(params).promise.toFuture
-    def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] =
-      service.describeEventSubscriptions(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
+    @inline def describeEventSubscriptionsFuture(
+        params: DescribeEventSubscriptionsMessage
+    ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise.toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeHsmClientCertificatesFuture(
+    @inline def describeHsmClientCertificatesFuture(
         params: DescribeHsmClientCertificatesMessage
     ): Future[HsmClientCertificateMessage] = service.describeHsmClientCertificates(params).promise.toFuture
-    def describeHsmConfigurationsFuture(params: DescribeHsmConfigurationsMessage): Future[HsmConfigurationMessage] =
-      service.describeHsmConfigurations(params).promise.toFuture
-    def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
+    @inline def describeHsmConfigurationsFuture(
+        params: DescribeHsmConfigurationsMessage
+    ): Future[HsmConfigurationMessage] = service.describeHsmConfigurations(params).promise.toFuture
+    @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
       service.describeLoggingStatus(params).promise.toFuture
-    def describeOrderableClusterOptionsFuture(
+    @inline def describeOrderableClusterOptionsFuture(
         params: DescribeOrderableClusterOptionsMessage
     ): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise.toFuture
-    def describeReservedNodeOfferingsFuture(
+    @inline def describeReservedNodeOfferingsFuture(
         params: DescribeReservedNodeOfferingsMessage
     ): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise.toFuture
-    def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] =
+    @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] =
       service.describeReservedNodes(params).promise.toFuture
-    def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
+    @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
       service.describeResize(params).promise.toFuture
-    def describeSnapshotCopyGrantsFuture(params: DescribeSnapshotCopyGrantsMessage): Future[SnapshotCopyGrantMessage] =
-      service.describeSnapshotCopyGrants(params).promise.toFuture
-    def describeSnapshotSchedulesFuture(
+    @inline def describeSnapshotCopyGrantsFuture(
+        params: DescribeSnapshotCopyGrantsMessage
+    ): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise.toFuture
+    @inline def describeSnapshotSchedulesFuture(
         params: DescribeSnapshotSchedulesMessage
-    ): Future[DescribeSnapshotSchedulesOutputMessage]           = service.describeSnapshotSchedules(params).promise.toFuture
-    def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise.toFuture
-    def describeTableRestoreStatusFuture(params: DescribeTableRestoreStatusMessage): Future[TableRestoreStatusMessage] =
-      service.describeTableRestoreStatus(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
+    ): Future[DescribeSnapshotSchedulesOutputMessage]                   = service.describeSnapshotSchedules(params).promise.toFuture
+    @inline def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise.toFuture
+    @inline def describeTableRestoreStatusFuture(
+        params: DescribeTableRestoreStatusMessage
+    ): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise.toFuture
+    @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
       service.describeTags(params).promise.toFuture
-    def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
+    @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
       service.disableLogging(params).promise.toFuture
-    def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
+    @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
       service.disableSnapshotCopy(params).promise.toFuture
-    def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] =
+    @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] =
       service.enableLogging(params).promise.toFuture
-    def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] =
+    @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] =
       service.enableSnapshotCopy(params).promise.toFuture
-    def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] =
+    @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] =
       service.getClusterCredentials(params).promise.toFuture
-    def getReservedNodeExchangeOfferingsFuture(
+    @inline def getReservedNodeExchangeOfferingsFuture(
         params: GetReservedNodeExchangeOfferingsInputMessage
     ): Future[GetReservedNodeExchangeOfferingsOutputMessage] =
       service.getReservedNodeExchangeOfferings(params).promise.toFuture
-    def modifyClusterDbRevisionFuture(params: ModifyClusterDbRevisionMessage): Future[ModifyClusterDbRevisionResult] =
-      service.modifyClusterDbRevision(params).promise.toFuture
-    def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] =
+    @inline def modifyClusterDbRevisionFuture(
+        params: ModifyClusterDbRevisionMessage
+    ): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise.toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] =
       service.modifyCluster(params).promise.toFuture
-    def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] =
+    @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] =
       service.modifyClusterIamRoles(params).promise.toFuture
-    def modifyClusterMaintenanceFuture(
+    @inline def modifyClusterMaintenanceFuture(
         params: ModifyClusterMaintenanceMessage
     ): Future[ModifyClusterMaintenanceResult] = service.modifyClusterMaintenance(params).promise.toFuture
-    def modifyClusterParameterGroupFuture(
+    @inline def modifyClusterParameterGroupFuture(
         params: ModifyClusterParameterGroupMessage
     ): Future[ClusterParameterGroupNameMessage] = service.modifyClusterParameterGroup(params).promise.toFuture
-    def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] =
+    @inline def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] =
       service.modifyClusterSnapshot(params).promise.toFuture
-    def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] =
+    @inline def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] =
       service.modifyClusterSnapshotSchedule(params).promise.toFuture
-    def modifyClusterSubnetGroupFuture(
+    @inline def modifyClusterSubnetGroupFuture(
         params: ModifyClusterSubnetGroupMessage
     ): Future[ModifyClusterSubnetGroupResult] = service.modifyClusterSubnetGroup(params).promise.toFuture
-    def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] =
-      service.modifyEventSubscription(params).promise.toFuture
-    def modifySnapshotCopyRetentionPeriodFuture(
+    @inline def modifyEventSubscriptionFuture(
+        params: ModifyEventSubscriptionMessage
+    ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise.toFuture
+    @inline def modifySnapshotCopyRetentionPeriodFuture(
         params: ModifySnapshotCopyRetentionPeriodMessage
     ): Future[ModifySnapshotCopyRetentionPeriodResult] =
       service.modifySnapshotCopyRetentionPeriod(params).promise.toFuture
-    def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
+    @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.modifySnapshotSchedule(params).promise.toFuture
-    def purchaseReservedNodeOfferingFuture(
+    @inline def purchaseReservedNodeOfferingFuture(
         params: PurchaseReservedNodeOfferingMessage
     ): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise.toFuture
-    def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] =
+    @inline def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] =
       service.rebootCluster(params).promise.toFuture
-    def resetClusterParameterGroupFuture(
+    @inline def resetClusterParameterGroupFuture(
         params: ResetClusterParameterGroupMessage
     ): Future[ClusterParameterGroupNameMessage] = service.resetClusterParameterGroup(params).promise.toFuture
-    def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] =
+    @inline def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] =
       service.resizeCluster(params).promise.toFuture
-    def restoreFromClusterSnapshotFuture(
+    @inline def restoreFromClusterSnapshotFuture(
         params: RestoreFromClusterSnapshotMessage
     ): Future[RestoreFromClusterSnapshotResult] = service.restoreFromClusterSnapshot(params).promise.toFuture
-    def restoreTableFromClusterSnapshotFuture(
+    @inline def restoreTableFromClusterSnapshotFuture(
         params: RestoreTableFromClusterSnapshotMessage
     ): Future[RestoreTableFromClusterSnapshotResult] = service.restoreTableFromClusterSnapshot(params).promise.toFuture
-    def revokeClusterSecurityGroupIngressFuture(
+    @inline def revokeClusterSecurityGroupIngressFuture(
         params: RevokeClusterSecurityGroupIngressMessage
     ): Future[RevokeClusterSecurityGroupIngressResult] =
       service.revokeClusterSecurityGroupIngress(params).promise.toFuture
-    def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] =
+    @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] =
       service.revokeSnapshotAccess(params).promise.toFuture
-    def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] =
+    @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] =
       service.rotateEncryptionKey(params).promise.toFuture
   }
 }
@@ -438,6 +452,7 @@ package redshift {
   }
 
   object AcceptReservedNodeExchangeInputMessage {
+    @inline
     def apply(
         ReservedNodeId: String,
         TargetReservedNodeOfferingId: String
@@ -457,6 +472,7 @@ package redshift {
   }
 
   object AcceptReservedNodeExchangeOutputMessage {
+    @inline
     def apply(
         ExchangedReservedNode: js.UndefOr[ReservedNode] = js.undefined
     ): AcceptReservedNodeExchangeOutputMessage = {
@@ -476,6 +492,7 @@ package redshift {
   }
 
   object AccountAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
@@ -493,6 +510,7 @@ package redshift {
   }
 
   object AccountAttributeList {
+    @inline
     def apply(
         AccountAttributes: js.UndefOr[AttributeList] = js.undefined
     ): AccountAttributeList = {
@@ -512,6 +530,7 @@ package redshift {
   }
 
   object AccountWithRestoreAccess {
+    @inline
     def apply(
         AccountAlias: js.UndefOr[String] = js.undefined,
         AccountId: js.UndefOr[String] = js.undefined
@@ -532,6 +551,7 @@ package redshift {
   }
 
   object AttributeValueTarget {
+    @inline
     def apply(
         AttributeValue: js.UndefOr[String] = js.undefined
     ): AttributeValueTarget = {
@@ -553,6 +573,7 @@ package redshift {
   }
 
   object AuthorizeClusterSecurityGroupIngressMessage {
+    @inline
     def apply(
         ClusterSecurityGroupName: String,
         CIDRIP: js.UndefOr[String] = js.undefined,
@@ -576,6 +597,7 @@ package redshift {
   }
 
   object AuthorizeClusterSecurityGroupIngressResult {
+    @inline
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): AuthorizeClusterSecurityGroupIngressResult = {
@@ -596,6 +618,7 @@ package redshift {
   }
 
   object AuthorizeSnapshotAccessMessage {
+    @inline
     def apply(
         AccountWithRestoreAccess: String,
         SnapshotIdentifier: String,
@@ -619,6 +642,7 @@ package redshift {
   }
 
   object AuthorizeSnapshotAccessResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): AuthorizeSnapshotAccessResult = {
@@ -638,6 +662,7 @@ package redshift {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         SupportedPlatforms: js.UndefOr[SupportedPlatformsList] = js.undefined
@@ -655,6 +680,7 @@ package redshift {
   }
 
   object BatchDeleteClusterSnapshotsRequest {
+    @inline
     def apply(
         Identifiers: DeleteClusterSnapshotMessageList
     ): BatchDeleteClusterSnapshotsRequest = {
@@ -673,6 +699,7 @@ package redshift {
   }
 
   object BatchDeleteClusterSnapshotsResult {
+    @inline
     def apply(
         Errors: js.UndefOr[BatchSnapshotOperationErrorList] = js.undefined,
         Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
@@ -692,6 +719,7 @@ package redshift {
   }
 
   object BatchModifyClusterSnapshotsMessage {
+    @inline
     def apply(
         SnapshotIdentifierList: SnapshotIdentifierList,
         Force: js.UndefOr[Boolean] = js.undefined,
@@ -716,6 +744,7 @@ package redshift {
   }
 
   object BatchModifyClusterSnapshotsOutputMessage {
+    @inline
     def apply(
         Errors: js.UndefOr[BatchSnapshotOperationErrors] = js.undefined,
         Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
@@ -733,6 +762,7 @@ package redshift {
   }
 
   object CancelResizeMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): CancelResizeMessage = {
@@ -797,6 +827,7 @@ package redshift {
   }
 
   object Cluster {
+    @inline
     def apply(
         AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
@@ -924,6 +955,7 @@ package redshift {
   }
 
   object ClusterAssociatedToSchedule {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         ScheduleAssociationState: js.UndefOr[ScheduleState] = js.undefined
@@ -946,6 +978,7 @@ package redshift {
   }
 
   object ClusterCredentials {
+    @inline
     def apply(
         DbPassword: js.UndefOr[SensitiveString] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
@@ -971,6 +1004,7 @@ package redshift {
   }
 
   object ClusterDbRevision {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         CurrentDatabaseRevision: js.UndefOr[String] = js.undefined,
@@ -995,6 +1029,7 @@ package redshift {
   }
 
   object ClusterDbRevisionsMessage {
+    @inline
     def apply(
         ClusterDbRevisions: js.UndefOr[ClusterDbRevisionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1016,6 +1051,7 @@ package redshift {
   }
 
   object ClusterIamRole {
+    @inline
     def apply(
         ApplyStatus: js.UndefOr[String] = js.undefined,
         IamRoleArn: js.UndefOr[String] = js.undefined
@@ -1038,6 +1074,7 @@ package redshift {
   }
 
   object ClusterNode {
+    @inline
     def apply(
         NodeRole: js.UndefOr[String] = js.undefined,
         PrivateIPAddress: js.UndefOr[String] = js.undefined,
@@ -1063,6 +1100,7 @@ package redshift {
   }
 
   object ClusterParameterGroup {
+    @inline
     def apply(
         Description: js.UndefOr[String] = js.undefined,
         ParameterGroupFamily: js.UndefOr[String] = js.undefined,
@@ -1088,6 +1126,7 @@ package redshift {
   }
 
   object ClusterParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -1109,6 +1148,7 @@ package redshift {
   }
 
   object ClusterParameterGroupNameMessage {
+    @inline
     def apply(
         ParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterGroupStatus: js.UndefOr[String] = js.undefined
@@ -1131,6 +1171,7 @@ package redshift {
   }
 
   object ClusterParameterGroupStatus {
+    @inline
     def apply(
         ClusterParameterStatusList: js.UndefOr[ClusterParameterStatusList] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
@@ -1156,6 +1197,7 @@ package redshift {
   }
 
   object ClusterParameterGroupsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
@@ -1178,6 +1220,7 @@ package redshift {
   }
 
   object ClusterParameterStatus {
+    @inline
     def apply(
         ParameterApplyErrorDescription: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
@@ -1206,6 +1249,7 @@ package redshift {
   }
 
   object ClusterSecurityGroup {
+    @inline
     def apply(
         ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -1233,6 +1277,7 @@ package redshift {
   }
 
   object ClusterSecurityGroupMembership {
+    @inline
     def apply(
         ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -1254,6 +1299,7 @@ package redshift {
   }
 
   object ClusterSecurityGroupMessage {
+    @inline
     def apply(
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1277,6 +1323,7 @@ package redshift {
   }
 
   object ClusterSnapshotCopyStatus {
+    @inline
     def apply(
         DestinationRegion: js.UndefOr[String] = js.undefined,
         ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
@@ -1308,6 +1355,7 @@ package redshift {
   }
 
   object ClusterSubnetGroup {
+    @inline
     def apply(
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -1337,6 +1385,7 @@ package redshift {
   }
 
   object ClusterSubnetGroupMessage {
+    @inline
     def apply(
         ClusterSubnetGroups: js.UndefOr[ClusterSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1359,6 +1408,7 @@ package redshift {
   }
 
   object ClusterVersion {
+    @inline
     def apply(
         ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
         ClusterVersion: js.UndefOr[String] = js.undefined,
@@ -1384,6 +1434,7 @@ package redshift {
   }
 
   object ClusterVersionsMessage {
+    @inline
     def apply(
         ClusterVersions: js.UndefOr[ClusterVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1405,6 +1456,7 @@ package redshift {
   }
 
   object ClustersMessage {
+    @inline
     def apply(
         Clusters: js.UndefOr[ClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1428,6 +1480,7 @@ package redshift {
   }
 
   object CopyClusterSnapshotMessage {
+    @inline
     def apply(
         SourceSnapshotIdentifier: String,
         TargetSnapshotIdentifier: String,
@@ -1455,6 +1508,7 @@ package redshift {
   }
 
   object CopyClusterSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CopyClusterSnapshotResult = {
@@ -1502,6 +1556,7 @@ package redshift {
   }
 
   object CreateClusterMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         MasterUserPassword: String,
@@ -1597,6 +1652,7 @@ package redshift {
   }
 
   object CreateClusterParameterGroupMessage {
+    @inline
     def apply(
         Description: String,
         ParameterGroupFamily: String,
@@ -1620,6 +1676,7 @@ package redshift {
   }
 
   object CreateClusterParameterGroupResult {
+    @inline
     def apply(
         ClusterParameterGroup: js.UndefOr[ClusterParameterGroup] = js.undefined
     ): CreateClusterParameterGroupResult = {
@@ -1635,6 +1692,7 @@ package redshift {
   }
 
   object CreateClusterResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResult = {
@@ -1655,6 +1713,7 @@ package redshift {
   }
 
   object CreateClusterSecurityGroupMessage {
+    @inline
     def apply(
         ClusterSecurityGroupName: String,
         Description: String,
@@ -1676,6 +1735,7 @@ package redshift {
   }
 
   object CreateClusterSecurityGroupResult {
+    @inline
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): CreateClusterSecurityGroupResult = {
@@ -1697,6 +1757,7 @@ package redshift {
   }
 
   object CreateClusterSnapshotMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         SnapshotIdentifier: String,
@@ -1722,6 +1783,7 @@ package redshift {
   }
 
   object CreateClusterSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CreateClusterSnapshotResult = {
@@ -1743,6 +1805,7 @@ package redshift {
   }
 
   object CreateClusterSubnetGroupMessage {
+    @inline
     def apply(
         ClusterSubnetGroupName: String,
         Description: String,
@@ -1766,6 +1829,7 @@ package redshift {
   }
 
   object CreateClusterSubnetGroupResult {
+    @inline
     def apply(
         ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
     ): CreateClusterSubnetGroupResult = {
@@ -1791,6 +1855,7 @@ package redshift {
   }
 
   object CreateEventSubscriptionMessage {
+    @inline
     def apply(
         SnsTopicArn: String,
         SubscriptionName: String,
@@ -1822,6 +1887,7 @@ package redshift {
   }
 
   object CreateEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
@@ -1841,6 +1907,7 @@ package redshift {
   }
 
   object CreateHsmClientCertificateMessage {
+    @inline
     def apply(
         HsmClientCertificateIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1860,6 +1927,7 @@ package redshift {
   }
 
   object CreateHsmClientCertificateResult {
+    @inline
     def apply(
         HsmClientCertificate: js.UndefOr[HsmClientCertificate] = js.undefined
     ): CreateHsmClientCertificateResult = {
@@ -1884,6 +1952,7 @@ package redshift {
   }
 
   object CreateHsmConfigurationMessage {
+    @inline
     def apply(
         Description: String,
         HsmConfigurationIdentifier: String,
@@ -1913,6 +1982,7 @@ package redshift {
   }
 
   object CreateHsmConfigurationResult {
+    @inline
     def apply(
         HsmConfiguration: js.UndefOr[HsmConfiguration] = js.undefined
     ): CreateHsmConfigurationResult = {
@@ -1933,6 +2003,7 @@ package redshift {
   }
 
   object CreateSnapshotCopyGrantMessage {
+    @inline
     def apply(
         SnapshotCopyGrantName: String,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -1954,6 +2025,7 @@ package redshift {
   }
 
   object CreateSnapshotCopyGrantResult {
+    @inline
     def apply(
         SnapshotCopyGrant: js.UndefOr[SnapshotCopyGrant] = js.undefined
     ): CreateSnapshotCopyGrantResult = {
@@ -1974,6 +2046,7 @@ package redshift {
   }
 
   object CreateSnapshotScheduleMessage {
+    @inline
     def apply(
         DryRun: js.UndefOr[BooleanOptional] = js.undefined,
         NextInvocations: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2003,6 +2076,7 @@ package redshift {
   }
 
   object CreateTagsMessage {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -2023,6 +2097,7 @@ package redshift {
   }
 
   object CustomerStorageMessage {
+    @inline
     def apply(
         TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
         TotalProvisionedStorageInMegaBytes: js.UndefOr[Double] = js.undefined
@@ -2052,6 +2127,7 @@ package redshift {
   }
 
   object DataTransferProgress {
+    @inline
     def apply(
         CurrentRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
         DataTransferredInMegaBytes: js.UndefOr[Double] = js.undefined,
@@ -2088,6 +2164,7 @@ package redshift {
   }
 
   object DefaultClusterParameters {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ParameterGroupFamily: js.UndefOr[String] = js.undefined,
@@ -2112,6 +2189,7 @@ package redshift {
   }
 
   object DeferredMaintenanceWindow {
+    @inline
     def apply(
         DeferMaintenanceEndTime: js.UndefOr[TStamp] = js.undefined,
         DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -2141,6 +2219,7 @@ package redshift {
   }
 
   object DeleteClusterMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         FinalClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -2171,6 +2250,7 @@ package redshift {
   }
 
   object DeleteClusterParameterGroupMessage {
+    @inline
     def apply(
         ParameterGroupName: String
     ): DeleteClusterParameterGroupMessage = {
@@ -2188,6 +2268,7 @@ package redshift {
   }
 
   object DeleteClusterResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResult = {
@@ -2206,6 +2287,7 @@ package redshift {
   }
 
   object DeleteClusterSecurityGroupMessage {
+    @inline
     def apply(
         ClusterSecurityGroupName: String
     ): DeleteClusterSecurityGroupMessage = {
@@ -2227,6 +2309,7 @@ package redshift {
   }
 
   object DeleteClusterSnapshotMessage {
+    @inline
     def apply(
         SnapshotIdentifier: String,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
@@ -2248,6 +2331,7 @@ package redshift {
   }
 
   object DeleteClusterSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): DeleteClusterSnapshotResult = {
@@ -2266,6 +2350,7 @@ package redshift {
   }
 
   object DeleteClusterSubnetGroupMessage {
+    @inline
     def apply(
         ClusterSubnetGroupName: String
     ): DeleteClusterSubnetGroupMessage = {
@@ -2286,6 +2371,7 @@ package redshift {
   }
 
   object DeleteEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
@@ -2306,6 +2392,7 @@ package redshift {
   }
 
   object DeleteHsmClientCertificateMessage {
+    @inline
     def apply(
         HsmClientCertificateIdentifier: String
     ): DeleteHsmClientCertificateMessage = {
@@ -2326,6 +2413,7 @@ package redshift {
   }
 
   object DeleteHsmConfigurationMessage {
+    @inline
     def apply(
         HsmConfigurationIdentifier: String
     ): DeleteHsmConfigurationMessage = {
@@ -2346,6 +2434,7 @@ package redshift {
   }
 
   object DeleteSnapshotCopyGrantMessage {
+    @inline
     def apply(
         SnapshotCopyGrantName: String
     ): DeleteSnapshotCopyGrantMessage = {
@@ -2363,6 +2452,7 @@ package redshift {
   }
 
   object DeleteSnapshotScheduleMessage {
+    @inline
     def apply(
         ScheduleIdentifier: String
     ): DeleteSnapshotScheduleMessage = {
@@ -2384,6 +2474,7 @@ package redshift {
   }
 
   object DeleteTagsMessage {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: TagKeyList
@@ -2403,6 +2494,7 @@ package redshift {
   }
 
   object DescribeAccountAttributesMessage {
+    @inline
     def apply(
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
     ): DescribeAccountAttributesMessage = {
@@ -2420,6 +2512,7 @@ package redshift {
   }
 
   object DescribeClusterDbRevisionsMessage {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2446,6 +2539,7 @@ package redshift {
   }
 
   object DescribeClusterParameterGroupsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2475,6 +2569,7 @@ package redshift {
   }
 
   object DescribeClusterParametersMessage {
+    @inline
     def apply(
         ParameterGroupName: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2505,6 +2600,7 @@ package redshift {
   }
 
   object DescribeClusterSecurityGroupsMessage {
+    @inline
     def apply(
         ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2542,6 +2638,7 @@ package redshift {
   }
 
   object DescribeClusterSnapshotsMessage {
+    @inline
     def apply(
         ClusterExists: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -2586,6 +2683,7 @@ package redshift {
   }
 
   object DescribeClusterSubnetGroupsMessage {
+    @inline
     def apply(
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2611,6 +2709,7 @@ package redshift {
   }
 
   object DescribeClusterTracksMessage {
+    @inline
     def apply(
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2636,6 +2735,7 @@ package redshift {
   }
 
   object DescribeClusterVersionsMessage {
+    @inline
     def apply(
         ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
         ClusterVersion: js.UndefOr[String] = js.undefined,
@@ -2666,6 +2766,7 @@ package redshift {
   }
 
   object DescribeClustersMessage {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2694,6 +2795,7 @@ package redshift {
   }
 
   object DescribeDefaultClusterParametersMessage {
+    @inline
     def apply(
         ParameterGroupFamily: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2715,6 +2817,7 @@ package redshift {
   }
 
   object DescribeDefaultClusterParametersResult {
+    @inline
     def apply(
         DefaultClusterParameters: js.UndefOr[DefaultClusterParameters] = js.undefined
     ): DescribeDefaultClusterParametersResult = {
@@ -2733,6 +2836,7 @@ package redshift {
   }
 
   object DescribeEventCategoriesMessage {
+    @inline
     def apply(
         SourceType: js.UndefOr[String] = js.undefined
     ): DescribeEventCategoriesMessage = {
@@ -2755,6 +2859,7 @@ package redshift {
   }
 
   object DescribeEventSubscriptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2787,6 +2892,7 @@ package redshift {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -2821,6 +2927,7 @@ package redshift {
   }
 
   object DescribeHsmClientCertificatesMessage {
+    @inline
     def apply(
         HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2853,6 +2960,7 @@ package redshift {
   }
 
   object DescribeHsmConfigurationsMessage {
+    @inline
     def apply(
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2881,6 +2989,7 @@ package redshift {
   }
 
   object DescribeLoggingStatusMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): DescribeLoggingStatusMessage = {
@@ -2904,6 +3013,7 @@ package redshift {
   }
 
   object DescribeOrderableClusterOptionsMessage {
+    @inline
     def apply(
         ClusterVersion: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2930,6 +3040,7 @@ package redshift {
   }
 
   object DescribeReservedNodeOfferingsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2954,6 +3065,7 @@ package redshift {
   }
 
   object DescribeReservedNodesMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2976,6 +3088,7 @@ package redshift {
   }
 
   object DescribeResizeMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): DescribeResizeMessage = {
@@ -3000,6 +3113,7 @@ package redshift {
   }
 
   object DescribeSnapshotCopyGrantsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3028,6 +3142,7 @@ package redshift {
   }
 
   object DescribeSnapshotSchedulesMessage {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -3054,6 +3169,7 @@ package redshift {
   }
 
   object DescribeSnapshotSchedulesOutputMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         SnapshotSchedules: js.UndefOr[SnapshotScheduleList] = js.undefined
@@ -3077,6 +3193,7 @@ package redshift {
   }
 
   object DescribeTableRestoreStatusMessage {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -3106,6 +3223,7 @@ package redshift {
   }
 
   object DescribeTagsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3134,6 +3252,7 @@ package redshift {
   }
 
   object DisableLoggingMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): DisableLoggingMessage = {
@@ -3154,6 +3273,7 @@ package redshift {
   }
 
   object DisableSnapshotCopyMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): DisableSnapshotCopyMessage = {
@@ -3171,6 +3291,7 @@ package redshift {
   }
 
   object DisableSnapshotCopyResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DisableSnapshotCopyResult = {
@@ -3192,6 +3313,7 @@ package redshift {
   }
 
   object EC2SecurityGroup {
+    @inline
     def apply(
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
@@ -3217,6 +3339,7 @@ package redshift {
   }
 
   object ElasticIpStatus {
+    @inline
     def apply(
         ElasticIp: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -3239,6 +3362,7 @@ package redshift {
   }
 
   object EnableLoggingMessage {
+    @inline
     def apply(
         BucketName: String,
         ClusterIdentifier: String,
@@ -3267,6 +3391,7 @@ package redshift {
   }
 
   object EnableSnapshotCopyMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         DestinationRegion: String,
@@ -3294,6 +3419,7 @@ package redshift {
   }
 
   object EnableSnapshotCopyResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): EnableSnapshotCopyResult = {
@@ -3313,6 +3439,7 @@ package redshift {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
@@ -3339,6 +3466,7 @@ package redshift {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
@@ -3370,6 +3498,7 @@ package redshift {
   }
 
   object EventCategoriesMap {
+    @inline
     def apply(
         Events: js.UndefOr[EventInfoMapList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -3390,6 +3519,7 @@ package redshift {
   }
 
   object EventCategoriesMessage {
+    @inline
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
@@ -3411,6 +3541,7 @@ package redshift {
   }
 
   object EventInfoMap {
+    @inline
     def apply(
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         EventDescription: js.UndefOr[String] = js.undefined,
@@ -3445,6 +3576,7 @@ package redshift {
   }
 
   object EventSubscription {
+    @inline
     def apply(
         CustSubscriptionId: js.UndefOr[String] = js.undefined,
         CustomerAwsId: js.UndefOr[String] = js.undefined,
@@ -3484,6 +3616,7 @@ package redshift {
   }
 
   object EventSubscriptionsMessage {
+    @inline
     def apply(
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3505,6 +3638,7 @@ package redshift {
   }
 
   object EventsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3530,6 +3664,7 @@ package redshift {
   }
 
   object GetClusterCredentialsMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         DbUser: String,
@@ -3562,6 +3697,7 @@ package redshift {
   }
 
   object GetReservedNodeExchangeOfferingsInputMessage {
+    @inline
     def apply(
         ReservedNodeId: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -3584,6 +3720,7 @@ package redshift {
   }
 
   object GetReservedNodeExchangeOfferingsOutputMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
@@ -3606,6 +3743,7 @@ package redshift {
   }
 
   object HsmClientCertificate {
+    @inline
     def apply(
         HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
         HsmClientCertificatePublicKey: js.UndefOr[String] = js.undefined,
@@ -3633,6 +3771,7 @@ package redshift {
   }
 
   object HsmClientCertificateMessage {
+    @inline
     def apply(
         HsmClientCertificates: js.UndefOr[HsmClientCertificateList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3657,6 +3796,7 @@ package redshift {
   }
 
   object HsmConfiguration {
+    @inline
     def apply(
         Description: js.UndefOr[String] = js.undefined,
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
@@ -3686,6 +3826,7 @@ package redshift {
   }
 
   object HsmConfigurationMessage {
+    @inline
     def apply(
         HsmConfigurations: js.UndefOr[HsmConfigurationList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3708,6 +3849,7 @@ package redshift {
   }
 
   object HsmStatus {
+    @inline
     def apply(
         HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
@@ -3736,6 +3878,7 @@ package redshift {
   }
 
   object IPRange {
+    @inline
     def apply(
         CIDRIP: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
@@ -3763,6 +3906,7 @@ package redshift {
   }
 
   object LoggingStatus {
+    @inline
     def apply(
         BucketName: js.UndefOr[String] = js.undefined,
         LastFailureMessage: js.UndefOr[String] = js.undefined,
@@ -3795,6 +3939,7 @@ package redshift {
   }
 
   object MaintenanceTrack {
+    @inline
     def apply(
         DatabaseVersion: js.UndefOr[String] = js.undefined,
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
@@ -3815,6 +3960,7 @@ package redshift {
   }
 
   object ModifyClusterDbRevisionMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         RevisionTarget: String
@@ -3834,6 +3980,7 @@ package redshift {
   }
 
   object ModifyClusterDbRevisionResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterDbRevisionResult = {
@@ -3854,6 +4001,7 @@ package redshift {
   }
 
   object ModifyClusterIamRolesMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
@@ -3875,6 +4023,7 @@ package redshift {
   }
 
   object ModifyClusterIamRolesResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterIamRolesResult = {
@@ -3895,6 +4044,7 @@ package redshift {
   }
 
   object ModifyClusterMaintenanceMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         DeferMaintenance: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3926,6 +4076,7 @@ package redshift {
   }
 
   object ModifyClusterMaintenanceResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterMaintenanceResult = {
@@ -3965,6 +4116,7 @@ package redshift {
   }
 
   object ModifyClusterMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
@@ -4040,6 +4192,7 @@ package redshift {
   }
 
   object ModifyClusterParameterGroupMessage {
+    @inline
     def apply(
         ParameterGroupName: String,
         Parameters: ParametersList
@@ -4059,6 +4212,7 @@ package redshift {
   }
 
   object ModifyClusterResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterResult = {
@@ -4076,6 +4230,7 @@ package redshift {
   }
 
   object ModifyClusterSnapshotMessage {
+    @inline
     def apply(
         SnapshotIdentifier: String,
         Force: js.UndefOr[Boolean] = js.undefined,
@@ -4099,6 +4254,7 @@ package redshift {
   }
 
   object ModifyClusterSnapshotResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): ModifyClusterSnapshotResult = {
@@ -4116,6 +4272,7 @@ package redshift {
   }
 
   object ModifyClusterSnapshotScheduleMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         DisassociateSchedule: js.UndefOr[BooleanOptional] = js.undefined,
@@ -4142,6 +4299,7 @@ package redshift {
   }
 
   object ModifyClusterSubnetGroupMessage {
+    @inline
     def apply(
         ClusterSubnetGroupName: String,
         SubnetIds: SubnetIdentifierList,
@@ -4163,6 +4321,7 @@ package redshift {
   }
 
   object ModifyClusterSubnetGroupResult {
+    @inline
     def apply(
         ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
     ): ModifyClusterSubnetGroupResult = {
@@ -4187,6 +4346,7 @@ package redshift {
   }
 
   object ModifyEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String,
         Enabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -4216,6 +4376,7 @@ package redshift {
   }
 
   object ModifyEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
@@ -4236,6 +4397,7 @@ package redshift {
   }
 
   object ModifySnapshotCopyRetentionPeriodMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         RetentionPeriod: Int,
@@ -4257,6 +4419,7 @@ package redshift {
   }
 
   object ModifySnapshotCopyRetentionPeriodResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifySnapshotCopyRetentionPeriodResult = {
@@ -4273,6 +4436,7 @@ package redshift {
   }
 
   object ModifySnapshotScheduleMessage {
+    @inline
     def apply(
         ScheduleDefinitions: ScheduleDefinitionList,
         ScheduleIdentifier: String
@@ -4298,6 +4462,7 @@ package redshift {
   }
 
   object OrderableClusterOption {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         ClusterType: js.UndefOr[String] = js.undefined,
@@ -4323,6 +4488,7 @@ package redshift {
   }
 
   object OrderableClusterOptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OrderableClusterOptions: js.UndefOr[OrderableClusterOptionsList] = js.undefined
@@ -4351,6 +4517,7 @@ package redshift {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyType: js.UndefOr[ParameterApplyType] = js.undefined,
@@ -4402,6 +4569,7 @@ package redshift {
   }
 
   object PendingModifiedValues {
+    @inline
     def apply(
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -4443,6 +4611,7 @@ package redshift {
   }
 
   object PurchaseReservedNodeOfferingMessage {
+    @inline
     def apply(
         ReservedNodeOfferingId: String,
         NodeCount: js.UndefOr[IntegerOptional] = js.undefined
@@ -4462,6 +4631,7 @@ package redshift {
   }
 
   object PurchaseReservedNodeOfferingResult {
+    @inline
     def apply(
         ReservedNode: js.UndefOr[ReservedNode] = js.undefined
     ): PurchaseReservedNodeOfferingResult = {
@@ -4480,6 +4650,7 @@ package redshift {
   }
 
   object RebootClusterMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): RebootClusterMessage = {
@@ -4497,6 +4668,7 @@ package redshift {
   }
 
   object RebootClusterResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RebootClusterResult = {
@@ -4516,6 +4688,7 @@ package redshift {
   }
 
   object RecurringCharge {
+    @inline
     def apply(
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
@@ -4548,6 +4721,7 @@ package redshift {
   }
 
   object ReservedNode {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Int] = js.undefined,
@@ -4598,6 +4772,7 @@ package redshift {
   }
 
   object ReservedNodeOffering {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Int] = js.undefined,
@@ -4640,6 +4815,7 @@ package redshift {
   }
 
   object ReservedNodeOfferingsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
@@ -4661,6 +4837,7 @@ package redshift {
   }
 
   object ReservedNodesMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodes: js.UndefOr[ReservedNodeList] = js.undefined
@@ -4683,6 +4860,7 @@ package redshift {
   }
 
   object ResetClusterParameterGroupMessage {
+    @inline
     def apply(
         ParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -4708,6 +4886,7 @@ package redshift {
   }
 
   object ResizeClusterMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         NumberOfNodes: Int,
@@ -4733,6 +4912,7 @@ package redshift {
   }
 
   object ResizeClusterResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ResizeClusterResult = {
@@ -4752,6 +4932,7 @@ package redshift {
   }
 
   object ResizeInfo {
+    @inline
     def apply(
         AllowCancelResize: js.UndefOr[Boolean] = js.undefined,
         ResizeType: js.UndefOr[String] = js.undefined
@@ -4787,6 +4968,7 @@ package redshift {
   }
 
   object ResizeProgressMessage {
+    @inline
     def apply(
         AvgResizeRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
         DataTransferProgressPercent: js.UndefOr[DoubleOptional] = js.undefined,
@@ -4867,6 +5049,7 @@ package redshift {
   }
 
   object RestoreFromClusterSnapshotMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         SnapshotIdentifier: String,
@@ -4948,6 +5131,7 @@ package redshift {
   }
 
   object RestoreFromClusterSnapshotResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RestoreFromClusterSnapshotResult = {
@@ -4971,6 +5155,7 @@ package redshift {
   }
 
   object RestoreStatus {
+    @inline
     def apply(
         CurrentRestoreRateInMegaBytesPerSecond: js.UndefOr[Double] = js.undefined,
         ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
@@ -5010,6 +5195,7 @@ package redshift {
   }
 
   object RestoreTableFromClusterSnapshotMessage {
+    @inline
     def apply(
         ClusterIdentifier: String,
         NewTableName: String,
@@ -5041,6 +5227,7 @@ package redshift {
   }
 
   object RestoreTableFromClusterSnapshotResult {
+    @inline
     def apply(
         TableRestoreStatus: js.UndefOr[TableRestoreStatus] = js.undefined
     ): RestoreTableFromClusterSnapshotResult = {
@@ -5061,6 +5248,7 @@ package redshift {
   }
 
   object RevisionTarget {
+    @inline
     def apply(
         DatabaseRevision: js.UndefOr[String] = js.undefined,
         DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
@@ -5088,6 +5276,7 @@ package redshift {
   }
 
   object RevokeClusterSecurityGroupIngressMessage {
+    @inline
     def apply(
         ClusterSecurityGroupName: String,
         CIDRIP: js.UndefOr[String] = js.undefined,
@@ -5111,6 +5300,7 @@ package redshift {
   }
 
   object RevokeClusterSecurityGroupIngressResult {
+    @inline
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): RevokeClusterSecurityGroupIngressResult = {
@@ -5131,6 +5321,7 @@ package redshift {
   }
 
   object RevokeSnapshotAccessMessage {
+    @inline
     def apply(
         AccountWithRestoreAccess: String,
         SnapshotIdentifier: String,
@@ -5154,6 +5345,7 @@ package redshift {
   }
 
   object RevokeSnapshotAccessResult {
+    @inline
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): RevokeSnapshotAccessResult = {
@@ -5172,6 +5364,7 @@ package redshift {
   }
 
   object RotateEncryptionKeyMessage {
+    @inline
     def apply(
         ClusterIdentifier: String
     ): RotateEncryptionKeyMessage = {
@@ -5189,6 +5382,7 @@ package redshift {
   }
 
   object RotateEncryptionKeyResult {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RotateEncryptionKeyResult = {
@@ -5247,6 +5441,7 @@ package redshift {
   }
 
   object Snapshot {
+    @inline
     def apply(
         AccountsWithRestoreAccess: js.UndefOr[AccountsWithRestoreAccessList] = js.undefined,
         ActualIncrementalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
@@ -5358,6 +5553,7 @@ package redshift {
   }
 
   object SnapshotCopyGrant {
+    @inline
     def apply(
         KmsKeyId: js.UndefOr[String] = js.undefined,
         SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
@@ -5381,6 +5577,7 @@ package redshift {
   }
 
   object SnapshotCopyGrantMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         SnapshotCopyGrants: js.UndefOr[SnapshotCopyGrantList] = js.undefined
@@ -5404,6 +5601,7 @@ package redshift {
   }
 
   object SnapshotErrorMessage {
+    @inline
     def apply(
         FailureCode: js.UndefOr[String] = js.undefined,
         FailureReason: js.UndefOr[String] = js.undefined,
@@ -5431,6 +5629,7 @@ package redshift {
   }
 
   object SnapshotMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Snapshots: js.UndefOr[SnapshotList] = js.undefined
@@ -5457,6 +5656,7 @@ package redshift {
   }
 
   object SnapshotSchedule {
+    @inline
     def apply(
         AssociatedClusterCount: js.UndefOr[IntegerOptional] = js.undefined,
         AssociatedClusters: js.UndefOr[AssociatedClusterList] = js.undefined,
@@ -5488,6 +5688,7 @@ package redshift {
   }
 
   object SnapshotSortingEntity {
+    @inline
     def apply(
         Attribute: SnapshotAttributeToSortBy,
         SortOrder: js.UndefOr[SortByOrder] = js.undefined
@@ -5529,6 +5730,7 @@ package redshift {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
@@ -5551,6 +5753,7 @@ package redshift {
   }
 
   object SupportedOperation {
+    @inline
     def apply(
         OperationName: js.UndefOr[String] = js.undefined
     ): SupportedOperation = {
@@ -5569,6 +5772,7 @@ package redshift {
   }
 
   object SupportedPlatform {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): SupportedPlatform = {
@@ -5600,6 +5804,7 @@ package redshift {
   }
 
   object TableRestoreStatus {
+    @inline
     def apply(
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined,
@@ -5645,6 +5850,7 @@ package redshift {
   }
 
   object TableRestoreStatusMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         TableRestoreStatusDetails: js.UndefOr[TableRestoreStatusList] = js.undefined
@@ -5678,6 +5884,7 @@ package redshift {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -5700,6 +5907,7 @@ package redshift {
   }
 
   object TaggedResource {
+    @inline
     def apply(
         ResourceName: js.UndefOr[String] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined,
@@ -5723,6 +5931,7 @@ package redshift {
   }
 
   object TaggedResourceListMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         TaggedResources: js.UndefOr[TaggedResourceList] = js.undefined
@@ -5741,6 +5950,7 @@ package redshift {
   }
 
   object TrackListMessage {
+    @inline
     def apply(
         MaintenanceTracks: js.UndefOr[TrackList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -5763,6 +5973,7 @@ package redshift {
   }
 
   object UpdateTarget {
+    @inline
     def apply(
         DatabaseVersion: js.UndefOr[String] = js.undefined,
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
@@ -5786,6 +5997,7 @@ package redshift {
   }
 
   object VpcSecurityGroupMembership {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined

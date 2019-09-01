@@ -61,59 +61,64 @@ package object route53domains {
 
   implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
 
-    def checkDomainAvailabilityFuture(params: CheckDomainAvailabilityRequest): Future[CheckDomainAvailabilityResponse] =
-      service.checkDomainAvailability(params).promise.toFuture
-    def checkDomainTransferabilityFuture(
+    @inline def checkDomainAvailabilityFuture(
+        params: CheckDomainAvailabilityRequest
+    ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise.toFuture
+    @inline def checkDomainTransferabilityFuture(
         params: CheckDomainTransferabilityRequest
     ): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise.toFuture
-    def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] =
+    @inline def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] =
       service.deleteTagsForDomain(params).promise.toFuture
-    def disableDomainAutoRenewFuture(params: DisableDomainAutoRenewRequest): Future[DisableDomainAutoRenewResponse] =
-      service.disableDomainAutoRenew(params).promise.toFuture
-    def disableDomainTransferLockFuture(
+    @inline def disableDomainAutoRenewFuture(
+        params: DisableDomainAutoRenewRequest
+    ): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise.toFuture
+    @inline def disableDomainTransferLockFuture(
         params: DisableDomainTransferLockRequest
     ): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise.toFuture
-    def enableDomainAutoRenewFuture(params: EnableDomainAutoRenewRequest): Future[EnableDomainAutoRenewResponse] =
-      service.enableDomainAutoRenew(params).promise.toFuture
-    def enableDomainTransferLockFuture(
+    @inline def enableDomainAutoRenewFuture(
+        params: EnableDomainAutoRenewRequest
+    ): Future[EnableDomainAutoRenewResponse] = service.enableDomainAutoRenew(params).promise.toFuture
+    @inline def enableDomainTransferLockFuture(
         params: EnableDomainTransferLockRequest
     ): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise.toFuture
-    def getContactReachabilityStatusFuture(
+    @inline def getContactReachabilityStatusFuture(
         params: GetContactReachabilityStatusRequest
     ): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise.toFuture
-    def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] =
+    @inline def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] =
       service.getDomainDetail(params).promise.toFuture
-    def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] =
+    @inline def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] =
       service.getDomainSuggestions(params).promise.toFuture
-    def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] =
+    @inline def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] =
       service.getOperationDetail(params).promise.toFuture
-    def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
       service.listDomains(params).promise.toFuture
-    def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
+    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
       service.listOperations(params).promise.toFuture
-    def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] =
+    @inline def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] =
       service.listTagsForDomain(params).promise.toFuture
-    def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
+    @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
       service.registerDomain(params).promise.toFuture
-    def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
+    @inline def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
       service.renewDomain(params).promise.toFuture
-    def resendContactReachabilityEmailFuture(
+    @inline def resendContactReachabilityEmailFuture(
         params: ResendContactReachabilityEmailRequest
     ): Future[ResendContactReachabilityEmailResponse] = service.resendContactReachabilityEmail(params).promise.toFuture
-    def retrieveDomainAuthCodeFuture(params: RetrieveDomainAuthCodeRequest): Future[RetrieveDomainAuthCodeResponse] =
-      service.retrieveDomainAuthCode(params).promise.toFuture
-    def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
+    @inline def retrieveDomainAuthCodeFuture(
+        params: RetrieveDomainAuthCodeRequest
+    ): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise.toFuture
+    @inline def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
       service.transferDomain(params).promise.toFuture
-    def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
+    @inline def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
       service.updateDomainContact(params).promise.toFuture
-    def updateDomainContactPrivacyFuture(
+    @inline def updateDomainContactPrivacyFuture(
         params: UpdateDomainContactPrivacyRequest
     ): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise.toFuture
-    def updateDomainNameserversFuture(params: UpdateDomainNameserversRequest): Future[UpdateDomainNameserversResponse] =
-      service.updateDomainNameservers(params).promise.toFuture
-    def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] =
+    @inline def updateDomainNameserversFuture(
+        params: UpdateDomainNameserversRequest
+    ): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise.toFuture
+    @inline def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] =
       service.updateTagsForDomain(params).promise.toFuture
-    def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] =
+    @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] =
       service.viewBilling(params).promise.toFuture
   }
 }
@@ -178,6 +183,7 @@ package route53domains {
   }
 
   object BillingRecord {
+    @inline
     def apply(
         BillDate: js.UndefOr[Timestamp] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
@@ -205,6 +211,7 @@ package route53domains {
   }
 
   object CheckDomainAvailabilityRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         IdnLangCode: js.UndefOr[LangCode] = js.undefined
@@ -227,6 +234,7 @@ package route53domains {
   }
 
   object CheckDomainAvailabilityResponse {
+    @inline
     def apply(
         Availability: DomainAvailability
     ): CheckDomainAvailabilityResponse = {
@@ -248,6 +256,7 @@ package route53domains {
   }
 
   object CheckDomainTransferabilityRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AuthCode: js.UndefOr[DomainAuthCode] = js.undefined
@@ -270,6 +279,7 @@ package route53domains {
   }
 
   object CheckDomainTransferabilityResponse {
+    @inline
     def apply(
         Transferability: DomainTransferability
     ): CheckDomainTransferabilityResponse = {
@@ -303,6 +313,7 @@ package route53domains {
   }
 
   object ContactDetail {
+    @inline
     def apply(
         AddressLine1: js.UndefOr[AddressLine] = js.undefined,
         AddressLine2: js.UndefOr[AddressLine] = js.undefined,
@@ -824,6 +835,7 @@ package route53domains {
   }
 
   object DeleteTagsForDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         TagsToDelete: TagKeyList
@@ -841,6 +853,7 @@ package route53domains {
   trait DeleteTagsForDomainResponse extends js.Object {}
 
   object DeleteTagsForDomainResponse {
+    @inline
     def apply(
         ): DeleteTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -855,6 +868,7 @@ package route53domains {
   }
 
   object DisableDomainAutoRenewRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DisableDomainAutoRenewRequest = {
@@ -870,6 +884,7 @@ package route53domains {
   trait DisableDomainAutoRenewResponse extends js.Object {}
 
   object DisableDomainAutoRenewResponse {
+    @inline
     def apply(
         ): DisableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
@@ -887,6 +902,7 @@ package route53domains {
   }
 
   object DisableDomainTransferLockRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DisableDomainTransferLockRequest = {
@@ -907,6 +923,7 @@ package route53domains {
   }
 
   object DisableDomainTransferLockResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): DisableDomainTransferLockResponse = {
@@ -960,6 +977,7 @@ package route53domains {
   }
 
   object DomainSuggestion {
+    @inline
     def apply(
         Availability: js.UndefOr[String] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined
@@ -983,6 +1001,7 @@ package route53domains {
   }
 
   object DomainSummary {
+    @inline
     def apply(
         DomainName: DomainName,
         AutoRenew: js.UndefOr[Boolean] = js.undefined,
@@ -1009,6 +1028,7 @@ package route53domains {
   }
 
   object DomainTransferability {
+    @inline
     def apply(
         Transferable: js.UndefOr[Transferable] = js.undefined
     ): DomainTransferability = {
@@ -1032,6 +1052,7 @@ package route53domains {
   }
 
   object EnableDomainAutoRenewRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): EnableDomainAutoRenewRequest = {
@@ -1047,6 +1068,7 @@ package route53domains {
   trait EnableDomainAutoRenewResponse extends js.Object {}
 
   object EnableDomainAutoRenewResponse {
+    @inline
     def apply(
         ): EnableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
@@ -1064,6 +1086,7 @@ package route53domains {
   }
 
   object EnableDomainTransferLockRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): EnableDomainTransferLockRequest = {
@@ -1084,6 +1107,7 @@ package route53domains {
   }
 
   object EnableDomainTransferLockResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): EnableDomainTransferLockResponse = {
@@ -1105,6 +1129,7 @@ package route53domains {
   }
 
   object ExtraParam {
+    @inline
     def apply(
         Name: ExtraParamName,
         Value: ExtraParamValue
@@ -1184,6 +1209,7 @@ package route53domains {
   }
 
   object GetContactReachabilityStatusRequest {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined
     ): GetContactReachabilityStatusRequest = {
@@ -1200,6 +1226,7 @@ package route53domains {
   }
 
   object GetContactReachabilityStatusResponse {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined,
         status: js.UndefOr[ReachabilityStatus] = js.undefined
@@ -1220,6 +1247,7 @@ package route53domains {
   }
 
   object GetDomainDetailRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): GetDomainDetailRequest = {
@@ -1260,6 +1288,7 @@ package route53domains {
   }
 
   object GetDomainDetailResponse {
+    @inline
     def apply(
         AdminContact: ContactDetail,
         DomainName: DomainName,
@@ -1319,6 +1348,7 @@ package route53domains {
   }
 
   object GetDomainSuggestionsRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         OnlyAvailable: Boolean,
@@ -1340,6 +1370,7 @@ package route53domains {
   }
 
   object GetDomainSuggestionsResponse {
+    @inline
     def apply(
         SuggestionsList: js.UndefOr[DomainSuggestionsList] = js.undefined
     ): GetDomainSuggestionsResponse = {
@@ -1358,6 +1389,7 @@ package route53domains {
   }
 
   object GetOperationDetailRequest {
+    @inline
     def apply(
         OperationId: OperationId
     ): GetOperationDetailRequest = {
@@ -1383,6 +1415,7 @@ package route53domains {
   }
 
   object GetOperationDetailResponse {
+    @inline
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined,
         Message: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1420,6 +1453,7 @@ package route53domains {
   }
 
   object ListDomainsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
@@ -1441,6 +1475,7 @@ package route53domains {
   }
 
   object ListDomainsResponse {
+    @inline
     def apply(
         Domains: DomainSummaryList,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined
@@ -1465,6 +1500,7 @@ package route53domains {
   }
 
   object ListOperationsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
@@ -1488,6 +1524,7 @@ package route53domains {
   }
 
   object ListOperationsResponse {
+    @inline
     def apply(
         Operations: OperationSummaryList,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined
@@ -1510,6 +1547,7 @@ package route53domains {
   }
 
   object ListTagsForDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): ListTagsForDomainRequest = {
@@ -1530,6 +1568,7 @@ package route53domains {
   }
 
   object ListTagsForDomainResponse {
+    @inline
     def apply(
         TagList: TagList
     ): ListTagsForDomainResponse = {
@@ -1551,6 +1590,7 @@ package route53domains {
   }
 
   object Nameserver {
+    @inline
     def apply(
         Name: HostName,
         GlueIps: js.UndefOr[GlueIpList] = js.undefined
@@ -1594,6 +1634,7 @@ package route53domains {
   }
 
   object OperationSummary {
+    @inline
     def apply(
         OperationId: OperationId,
         Status: OperationStatus,
@@ -1677,6 +1718,7 @@ package route53domains {
   }
 
   object RegisterDomainRequest {
+    @inline
     def apply(
         AdminContact: ContactDetail,
         DomainName: DomainName,
@@ -1721,6 +1763,7 @@ package route53domains {
   }
 
   object RegisterDomainResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): RegisterDomainResponse = {
@@ -1743,6 +1786,7 @@ package route53domains {
   }
 
   object RenewDomainRequest {
+    @inline
     def apply(
         CurrentExpiryYear: CurrentExpiryYear,
         DomainName: DomainName,
@@ -1764,6 +1808,7 @@ package route53domains {
   }
 
   object RenewDomainResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): RenewDomainResponse = {
@@ -1781,6 +1826,7 @@ package route53domains {
   }
 
   object ResendContactReachabilityEmailRequest {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined
     ): ResendContactReachabilityEmailRequest = {
@@ -1798,6 +1844,7 @@ package route53domains {
   }
 
   object ResendContactReachabilityEmailResponse {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined,
         emailAddress: js.UndefOr[Email] = js.undefined,
@@ -1820,6 +1867,7 @@ package route53domains {
   }
 
   object RetrieveDomainAuthCodeRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): RetrieveDomainAuthCodeRequest = {
@@ -1840,6 +1888,7 @@ package route53domains {
   }
 
   object RetrieveDomainAuthCodeResponse {
+    @inline
     def apply(
         AuthCode: DomainAuthCode
     ): RetrieveDomainAuthCodeResponse = {
@@ -1869,6 +1918,7 @@ package route53domains {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1900,6 +1950,7 @@ package route53domains {
   }
 
   object TransferDomainRequest {
+    @inline
     def apply(
         AdminContact: ContactDetail,
         DomainName: DomainName,
@@ -1948,6 +1999,7 @@ package route53domains {
   }
 
   object TransferDomainResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): TransferDomainResponse = {
@@ -1997,6 +2049,7 @@ package route53domains {
   }
 
   object UpdateDomainContactPrivacyRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AdminPrivacy: js.UndefOr[Boolean] = js.undefined,
@@ -2023,6 +2076,7 @@ package route53domains {
   }
 
   object UpdateDomainContactPrivacyResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): UpdateDomainContactPrivacyResponse = {
@@ -2046,6 +2100,7 @@ package route53domains {
   }
 
   object UpdateDomainContactRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AdminContact: js.UndefOr[ContactDetail] = js.undefined,
@@ -2072,6 +2127,7 @@ package route53domains {
   }
 
   object UpdateDomainContactResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): UpdateDomainContactResponse = {
@@ -2095,6 +2151,7 @@ package route53domains {
   }
 
   object UpdateDomainNameserversRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         Nameservers: NameserverList,
@@ -2119,6 +2176,7 @@ package route53domains {
   }
 
   object UpdateDomainNameserversResponse {
+    @inline
     def apply(
         OperationId: OperationId
     ): UpdateDomainNameserversResponse = {
@@ -2140,6 +2198,7 @@ package route53domains {
   }
 
   object UpdateTagsForDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         TagsToUpdate: js.UndefOr[TagList] = js.undefined
@@ -2157,6 +2216,7 @@ package route53domains {
   trait UpdateTagsForDomainResponse extends js.Object {}
 
   object UpdateTagsForDomainResponse {
+    @inline
     def apply(
         ): UpdateTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -2177,6 +2237,7 @@ package route53domains {
   }
 
   object ViewBillingRequest {
+    @inline
     def apply(
         End: js.UndefOr[Timestamp] = js.undefined,
         Marker: js.UndefOr[PageMarker] = js.undefined,
@@ -2202,6 +2263,7 @@ package route53domains {
   }
 
   object ViewBillingResponse {
+    @inline
     def apply(
         BillingRecords: js.UndefOr[BillingRecords] = js.undefined,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined

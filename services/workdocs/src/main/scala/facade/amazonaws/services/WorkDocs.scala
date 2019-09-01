@@ -92,92 +92,95 @@ package object workdocs {
 
   implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
 
-    def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
+    @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
       service.abortDocumentVersionUpload(params).promise.toFuture
-    def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =
+    @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =
       service.activateUser(params).promise.toFuture
-    def addResourcePermissionsFuture(params: AddResourcePermissionsRequest): Future[AddResourcePermissionsResponse] =
-      service.addResourcePermissions(params).promise.toFuture
-    def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] =
+    @inline def addResourcePermissionsFuture(
+        params: AddResourcePermissionsRequest
+    ): Future[AddResourcePermissionsResponse] = service.addResourcePermissions(params).promise.toFuture
+    @inline def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] =
       service.createComment(params).promise.toFuture
-    def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] =
+    @inline def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] =
       service.createCustomMetadata(params).promise.toFuture
-    def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] =
+    @inline def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] =
       service.createFolder(params).promise.toFuture
-    def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] =
+    @inline def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] =
       service.createLabels(params).promise.toFuture
-    def createNotificationSubscriptionFuture(
+    @inline def createNotificationSubscriptionFuture(
         params: CreateNotificationSubscriptionRequest
     ): Future[CreateNotificationSubscriptionResponse] = service.createNotificationSubscription(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] =
+    @inline def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] =
       service.deactivateUser(params).promise.toFuture
-    def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] =
+    @inline def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] =
       service.deleteComment(params).promise.toFuture
-    def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] =
+    @inline def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] =
       service.deleteCustomMetadata(params).promise.toFuture
-    def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] =
+    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] =
       service.deleteDocument(params).promise.toFuture
-    def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] =
+    @inline def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] =
       service.deleteFolderContents(params).promise.toFuture
-    def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] =
+    @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] =
       service.deleteFolder(params).promise.toFuture
-    def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] =
+    @inline def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] =
       service.deleteLabels(params).promise.toFuture
-    def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] =
+    @inline def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] =
       service.deleteNotificationSubscription(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
-    def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
+      service.deleteUser(params).promise.toFuture
+    @inline def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] =
       service.describeActivities(params).promise.toFuture
-    def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] =
+    @inline def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] =
       service.describeComments(params).promise.toFuture
-    def describeDocumentVersionsFuture(
+    @inline def describeDocumentVersionsFuture(
         params: DescribeDocumentVersionsRequest
     ): Future[DescribeDocumentVersionsResponse] = service.describeDocumentVersions(params).promise.toFuture
-    def describeFolderContentsFuture(params: DescribeFolderContentsRequest): Future[DescribeFolderContentsResponse] =
-      service.describeFolderContents(params).promise.toFuture
-    def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] =
+    @inline def describeFolderContentsFuture(
+        params: DescribeFolderContentsRequest
+    ): Future[DescribeFolderContentsResponse] = service.describeFolderContents(params).promise.toFuture
+    @inline def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] =
       service.describeGroups(params).promise.toFuture
-    def describeNotificationSubscriptionsFuture(
+    @inline def describeNotificationSubscriptionsFuture(
         params: DescribeNotificationSubscriptionsRequest
     ): Future[DescribeNotificationSubscriptionsResponse] =
       service.describeNotificationSubscriptions(params).promise.toFuture
-    def describeResourcePermissionsFuture(
+    @inline def describeResourcePermissionsFuture(
         params: DescribeResourcePermissionsRequest
     ): Future[DescribeResourcePermissionsResponse] = service.describeResourcePermissions(params).promise.toFuture
-    def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] =
+    @inline def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] =
       service.describeRootFolders(params).promise.toFuture
-    def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] =
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] =
       service.describeUsers(params).promise.toFuture
-    def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] =
+    @inline def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] =
       service.getCurrentUser(params).promise.toFuture
-    def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] =
+    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] =
       service.getDocument(params).promise.toFuture
-    def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] =
+    @inline def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] =
       service.getDocumentPath(params).promise.toFuture
-    def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] =
+    @inline def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] =
       service.getDocumentVersion(params).promise.toFuture
-    def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] =
+    @inline def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] =
       service.getFolder(params).promise.toFuture
-    def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] =
+    @inline def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] =
       service.getFolderPath(params).promise.toFuture
-    def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] =
+    @inline def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] =
       service.getResources(params).promise.toFuture
-    def initiateDocumentVersionUploadFuture(
+    @inline def initiateDocumentVersionUploadFuture(
         params: InitiateDocumentVersionUploadRequest
     ): Future[InitiateDocumentVersionUploadResponse] = service.initiateDocumentVersionUpload(params).promise.toFuture
-    def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] =
+    @inline def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] =
       service.removeAllResourcePermissions(params).promise.toFuture
-    def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] =
+    @inline def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] =
       service.removeResourcePermission(params).promise.toFuture
-    def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] =
+    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] =
       service.updateDocument(params).promise.toFuture
-    def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] =
+    @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] =
       service.updateDocumentVersion(params).promise.toFuture
-    def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] =
+    @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] =
       service.updateFolder(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
   }
 }
@@ -250,6 +253,7 @@ package workdocs {
   }
 
   object AbortDocumentVersionUploadRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         VersionId: DocumentVersionIdType,
@@ -272,6 +276,7 @@ package workdocs {
   }
 
   object ActivateUserRequest {
+    @inline
     def apply(
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -291,6 +296,7 @@ package workdocs {
   }
 
   object ActivateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): ActivateUserResponse = {
@@ -317,6 +323,7 @@ package workdocs {
   }
 
   object Activity {
+    @inline
     def apply(
         CommentMetadata: js.UndefOr[CommentMetadata] = js.undefined,
         Initiator: js.UndefOr[UserMetadata] = js.undefined,
@@ -425,6 +432,7 @@ package workdocs {
   }
 
   object AddResourcePermissionsRequest {
+    @inline
     def apply(
         Principals: SharePrincipalList,
         ResourceId: ResourceIdType,
@@ -448,6 +456,7 @@ package workdocs {
   }
 
   object AddResourcePermissionsResponse {
+    @inline
     def apply(
         ShareResults: js.UndefOr[ShareResultsList] = js.undefined
     ): AddResourcePermissionsResponse = {
@@ -481,6 +490,7 @@ package workdocs {
   }
 
   object Comment {
+    @inline
     def apply(
         CommentId: CommentIdType,
         Contributor: js.UndefOr[User] = js.undefined,
@@ -521,6 +531,7 @@ package workdocs {
   }
 
   object CommentMetadata {
+    @inline
     def apply(
         CommentId: js.UndefOr[CommentIdType] = js.undefined,
         CommentStatus: js.UndefOr[CommentStatusType] = js.undefined,
@@ -566,6 +577,7 @@ package workdocs {
   }
 
   object CreateCommentRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         Text: CommentTextType,
@@ -597,6 +609,7 @@ package workdocs {
   }
 
   object CreateCommentResponse {
+    @inline
     def apply(
         Comment: js.UndefOr[Comment] = js.undefined
     ): CreateCommentResponse = {
@@ -615,6 +628,7 @@ package workdocs {
   }
 
   object CreateCustomMetadataRequest {
+    @inline
     def apply(
         CustomMetadata: CustomMetadataMap,
         ResourceId: ResourceIdType,
@@ -636,6 +650,7 @@ package workdocs {
   trait CreateCustomMetadataResponse extends js.Object {}
 
   object CreateCustomMetadataResponse {
+    @inline
     def apply(
         ): CreateCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
@@ -652,6 +667,7 @@ package workdocs {
   }
 
   object CreateFolderRequest {
+    @inline
     def apply(
         ParentFolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -673,6 +689,7 @@ package workdocs {
   }
 
   object CreateFolderResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
     ): CreateFolderResponse = {
@@ -690,6 +707,7 @@ package workdocs {
   }
 
   object CreateLabelsRequest {
+    @inline
     def apply(
         Labels: SharedLabels,
         ResourceId: ResourceIdType,
@@ -709,6 +727,7 @@ package workdocs {
   trait CreateLabelsResponse extends js.Object {}
 
   object CreateLabelsResponse {
+    @inline
     def apply(
         ): CreateLabelsResponse = {
       val __obj = js.Dynamic.literal()
@@ -726,6 +745,7 @@ package workdocs {
   }
 
   object CreateNotificationSubscriptionRequest {
+    @inline
     def apply(
         Endpoint: SubscriptionEndPointType,
         OrganizationId: IdType,
@@ -749,6 +769,7 @@ package workdocs {
   }
 
   object CreateNotificationSubscriptionResponse {
+    @inline
     def apply(
         Subscription: js.UndefOr[Subscription] = js.undefined
     ): CreateNotificationSubscriptionResponse = {
@@ -772,6 +793,7 @@ package workdocs {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         GivenName: UserAttributeValueType,
         Password: PasswordType,
@@ -805,6 +827,7 @@ package workdocs {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): CreateUserResponse = {
@@ -821,6 +844,7 @@ package workdocs {
   }
 
   object DeactivateUserRequest {
+    @inline
     def apply(
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -843,6 +867,7 @@ package workdocs {
   }
 
   object DeleteCommentRequest {
+    @inline
     def apply(
         CommentId: CommentIdType,
         DocumentId: ResourceIdType,
@@ -870,6 +895,7 @@ package workdocs {
   }
 
   object DeleteCustomMetadataRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -893,6 +919,7 @@ package workdocs {
   trait DeleteCustomMetadataResponse extends js.Object {}
 
   object DeleteCustomMetadataResponse {
+    @inline
     def apply(
         ): DeleteCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
@@ -908,6 +935,7 @@ package workdocs {
   }
 
   object DeleteDocumentRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -928,6 +956,7 @@ package workdocs {
   }
 
   object DeleteFolderContentsRequest {
+    @inline
     def apply(
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -948,6 +977,7 @@ package workdocs {
   }
 
   object DeleteFolderRequest {
+    @inline
     def apply(
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -970,6 +1000,7 @@ package workdocs {
   }
 
   object DeleteLabelsRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -991,6 +1022,7 @@ package workdocs {
   trait DeleteLabelsResponse extends js.Object {}
 
   object DeleteLabelsResponse {
+    @inline
     def apply(
         ): DeleteLabelsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1006,6 +1038,7 @@ package workdocs {
   }
 
   object DeleteNotificationSubscriptionRequest {
+    @inline
     def apply(
         OrganizationId: IdType,
         SubscriptionId: IdType
@@ -1026,6 +1059,7 @@ package workdocs {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -1054,6 +1088,7 @@ package workdocs {
   }
 
   object DescribeActivitiesRequest {
+    @inline
     def apply(
         ActivityTypes: js.UndefOr[ActivityNamesFilterType] = js.undefined,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1090,6 +1125,7 @@ package workdocs {
   }
 
   object DescribeActivitiesResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[MarkerType] = js.undefined,
         UserActivities: js.UndefOr[UserActivities] = js.undefined
@@ -1111,6 +1147,7 @@ package workdocs {
   }
 
   object DescribeCommentsRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         VersionId: DocumentVersionIdType,
@@ -1137,6 +1174,7 @@ package workdocs {
   }
 
   object DescribeCommentsResponse {
+    @inline
     def apply(
         Comments: js.UndefOr[CommentList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
@@ -1159,6 +1197,7 @@ package workdocs {
   }
 
   object DescribeDocumentVersionsRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1187,6 +1226,7 @@ package workdocs {
   }
 
   object DescribeDocumentVersionsResponse {
+    @inline
     def apply(
         DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
@@ -1211,6 +1251,7 @@ package workdocs {
   }
 
   object DescribeFolderContentsRequest {
+    @inline
     def apply(
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1244,6 +1285,7 @@ package workdocs {
   }
 
   object DescribeFolderContentsResponse {
+    @inline
     def apply(
         Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
@@ -1267,6 +1309,7 @@ package workdocs {
   }
 
   object DescribeGroupsRequest {
+    @inline
     def apply(
         SearchQuery: SearchQueryType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1293,6 +1336,7 @@ package workdocs {
   }
 
   object DescribeGroupsResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
@@ -1312,6 +1356,7 @@ package workdocs {
   }
 
   object DescribeNotificationSubscriptionsRequest {
+    @inline
     def apply(
         OrganizationId: IdType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1334,6 +1379,7 @@ package workdocs {
   }
 
   object DescribeNotificationSubscriptionsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionList] = js.undefined
@@ -1355,6 +1401,7 @@ package workdocs {
   }
 
   object DescribeResourcePermissionsRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1381,6 +1428,7 @@ package workdocs {
   }
 
   object DescribeResourcePermissionsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Principals: js.UndefOr[PrincipalList] = js.undefined
@@ -1400,6 +1448,7 @@ package workdocs {
   }
 
   object DescribeRootFoldersRequest {
+    @inline
     def apply(
         AuthenticationToken: AuthenticationHeaderType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1422,6 +1471,7 @@ package workdocs {
   }
 
   object DescribeRootFoldersResponse {
+    @inline
     def apply(
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
@@ -1448,6 +1498,7 @@ package workdocs {
   }
 
   object DescribeUsersRequest {
+    @inline
     def apply(
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         Fields: js.UndefOr[FieldNamesType] = js.undefined,
@@ -1483,6 +1534,7 @@ package workdocs {
   }
 
   object DescribeUsersResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
@@ -1512,6 +1564,7 @@ package workdocs {
   }
 
   object DocumentMetadata {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         CreatorId: js.UndefOr[IdType] = js.undefined,
@@ -1578,6 +1631,7 @@ package workdocs {
   }
 
   object DocumentVersionMetadata {
+    @inline
     def apply(
         ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
@@ -1644,6 +1698,7 @@ package workdocs {
   }
 
   object FolderMetadata {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         CreatorId: js.UndefOr[IdType] = js.undefined,
@@ -1679,6 +1734,7 @@ package workdocs {
   }
 
   object GetCurrentUserRequest {
+    @inline
     def apply(
         AuthenticationToken: AuthenticationHeaderType
     ): GetCurrentUserRequest = {
@@ -1696,6 +1752,7 @@ package workdocs {
   }
 
   object GetCurrentUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): GetCurrentUserResponse = {
@@ -1715,6 +1772,7 @@ package workdocs {
   }
 
   object GetDocumentPathRequest {
+    @inline
     def apply(
         DocumentId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1740,6 +1798,7 @@ package workdocs {
   }
 
   object GetDocumentPathResponse {
+    @inline
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetDocumentPathResponse = {
@@ -1757,6 +1816,7 @@ package workdocs {
   }
 
   object GetDocumentRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1779,6 +1839,7 @@ package workdocs {
   }
 
   object GetDocumentResponse {
+    @inline
     def apply(
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined
@@ -1800,6 +1861,7 @@ package workdocs {
   }
 
   object GetDocumentVersionRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         VersionId: DocumentVersionIdType,
@@ -1826,6 +1888,7 @@ package workdocs {
   }
 
   object GetDocumentVersionResponse {
+    @inline
     def apply(
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined
@@ -1847,6 +1910,7 @@ package workdocs {
   }
 
   object GetFolderPathRequest {
+    @inline
     def apply(
         FolderId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1872,6 +1936,7 @@ package workdocs {
   }
 
   object GetFolderPathResponse {
+    @inline
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetFolderPathResponse = {
@@ -1889,6 +1954,7 @@ package workdocs {
   }
 
   object GetFolderRequest {
+    @inline
     def apply(
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -1911,6 +1977,7 @@ package workdocs {
   }
 
   object GetFolderResponse {
+    @inline
     def apply(
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
@@ -1932,6 +1999,7 @@ package workdocs {
   }
 
   object GetResourcesRequest {
+    @inline
     def apply(
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         CollectionType: js.UndefOr[ResourceCollectionType] = js.undefined,
@@ -1957,6 +2025,7 @@ package workdocs {
   }
 
   object GetResourcesResponse {
+    @inline
     def apply(
         Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
@@ -1980,6 +2049,7 @@ package workdocs {
   }
 
   object GroupMetadata {
+    @inline
     def apply(
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[GroupNameType] = js.undefined
@@ -2004,6 +2074,7 @@ package workdocs {
   }
 
   object InitiateDocumentVersionUploadRequest {
+    @inline
     def apply(
         ParentFolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -2036,6 +2107,7 @@ package workdocs {
   }
 
   object InitiateDocumentVersionUploadResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
         UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined
@@ -2073,6 +2145,7 @@ package workdocs {
   }
 
   object NotificationOptions {
+    @inline
     def apply(
         EmailMessage: js.UndefOr[MessageType] = js.undefined,
         SendEmail: js.UndefOr[BooleanType] = js.undefined
@@ -2101,6 +2174,7 @@ package workdocs {
   }
 
   object Participants {
+    @inline
     def apply(
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Users: js.UndefOr[UserMetadataList] = js.undefined
@@ -2122,6 +2196,7 @@ package workdocs {
   }
 
   object PermissionInfo {
+    @inline
     def apply(
         Role: js.UndefOr[RoleType] = js.undefined,
         Type: js.UndefOr[RolePermissionType] = js.undefined
@@ -2144,6 +2219,7 @@ package workdocs {
   }
 
   object Principal {
+    @inline
     def apply(
         Id: js.UndefOr[IdType] = js.undefined,
         Roles: js.UndefOr[PermissionInfoList] = js.undefined,
@@ -2174,6 +2250,7 @@ package workdocs {
   }
 
   object RemoveAllResourcePermissionsRequest {
+    @inline
     def apply(
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
@@ -2196,6 +2273,7 @@ package workdocs {
   }
 
   object RemoveResourcePermissionRequest {
+    @inline
     def apply(
         PrincipalId: IdType,
         ResourceId: ResourceIdType,
@@ -2234,6 +2312,7 @@ package workdocs {
   }
 
   object ResourceMetadata {
+    @inline
     def apply(
         Id: js.UndefOr[ResourceIdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined,
@@ -2264,6 +2343,7 @@ package workdocs {
   }
 
   object ResourcePath {
+    @inline
     def apply(
         Components: js.UndefOr[ResourcePathComponentList] = js.undefined
     ): ResourcePath = {
@@ -2283,6 +2363,7 @@ package workdocs {
   }
 
   object ResourcePathComponent {
+    @inline
     def apply(
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
@@ -2344,6 +2425,7 @@ package workdocs {
   }
 
   object SharePrincipal {
+    @inline
     def apply(
         Id: IdType,
         Role: RoleType,
@@ -2373,6 +2455,7 @@ package workdocs {
   }
 
   object ShareResult {
+    @inline
     def apply(
         InviteePrincipalId: js.UndefOr[IdType] = js.undefined,
         PrincipalId: js.UndefOr[IdType] = js.undefined,
@@ -2409,6 +2492,7 @@ package workdocs {
   }
 
   object StorageRuleType {
+    @inline
     def apply(
         StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
         StorageType: js.UndefOr[StorageType] = js.undefined
@@ -2438,6 +2522,7 @@ package workdocs {
   }
 
   object Subscription {
+    @inline
     def apply(
         EndPoint: js.UndefOr[SubscriptionEndPointType] = js.undefined,
         Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
@@ -2473,6 +2558,7 @@ package workdocs {
   }
 
   object UpdateDocumentRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -2501,6 +2587,7 @@ package workdocs {
   }
 
   object UpdateDocumentVersionRequest {
+    @inline
     def apply(
         DocumentId: ResourceIdType,
         VersionId: DocumentVersionIdType,
@@ -2528,6 +2615,7 @@ package workdocs {
   }
 
   object UpdateFolderRequest {
+    @inline
     def apply(
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -2561,6 +2649,7 @@ package workdocs {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
@@ -2594,6 +2683,7 @@ package workdocs {
   }
 
   object UpdateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
@@ -2613,6 +2703,7 @@ package workdocs {
   }
 
   object UploadMetadata {
+    @inline
     def apply(
         SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
         UploadUrl: js.UndefOr[UrlType] = js.undefined
@@ -2647,6 +2738,7 @@ package workdocs {
   }
 
   object User {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
@@ -2704,6 +2796,7 @@ package workdocs {
   }
 
   object UserMetadata {
+    @inline
     def apply(
         EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
         GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
@@ -2749,6 +2842,7 @@ package workdocs {
   }
 
   object UserStorageMetadata {
+    @inline
     def apply(
         StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
         StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined

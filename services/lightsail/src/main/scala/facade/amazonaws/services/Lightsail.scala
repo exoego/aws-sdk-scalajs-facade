@@ -112,241 +112,253 @@ package object lightsail {
 
   implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
-    def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
+    @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
       service.allocateStaticIp(params).promise.toFuture
-    def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =
+    @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =
       service.attachDisk(params).promise.toFuture
-    def attachInstancesToLoadBalancerFuture(
+    @inline def attachInstancesToLoadBalancerFuture(
         params: AttachInstancesToLoadBalancerRequest
     ): Future[AttachInstancesToLoadBalancerResult] = service.attachInstancesToLoadBalancer(params).promise.toFuture
-    def attachLoadBalancerTlsCertificateFuture(
+    @inline def attachLoadBalancerTlsCertificateFuture(
         params: AttachLoadBalancerTlsCertificateRequest
     ): Future[AttachLoadBalancerTlsCertificateResult] =
       service.attachLoadBalancerTlsCertificate(params).promise.toFuture
-    def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] =
+    @inline def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] =
       service.attachStaticIp(params).promise.toFuture
-    def closeInstancePublicPortsFuture(
+    @inline def closeInstancePublicPortsFuture(
         params: CloseInstancePublicPortsRequest
     ): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise.toFuture
-    def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
+    @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
       service.copySnapshot(params).promise.toFuture
-    def createCloudFormationStackFuture(
+    @inline def createCloudFormationStackFuture(
         params: CreateCloudFormationStackRequest
     ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise.toFuture
-    def createDiskFromSnapshotFuture(params: CreateDiskFromSnapshotRequest): Future[CreateDiskFromSnapshotResult] =
-      service.createDiskFromSnapshot(params).promise.toFuture
-    def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] =
+    @inline def createDiskFromSnapshotFuture(
+        params: CreateDiskFromSnapshotRequest
+    ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise.toFuture
+    @inline def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] =
       service.createDisk(params).promise.toFuture
-    def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] =
+    @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] =
       service.createDiskSnapshot(params).promise.toFuture
-    def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] =
+    @inline def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] =
       service.createDomainEntry(params).promise.toFuture
-    def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
       service.createDomain(params).promise.toFuture
-    def createInstanceSnapshotFuture(params: CreateInstanceSnapshotRequest): Future[CreateInstanceSnapshotResult] =
-      service.createInstanceSnapshot(params).promise.toFuture
-    def createInstancesFromSnapshotFuture(
+    @inline def createInstanceSnapshotFuture(
+        params: CreateInstanceSnapshotRequest
+    ): Future[CreateInstanceSnapshotResult] = service.createInstanceSnapshot(params).promise.toFuture
+    @inline def createInstancesFromSnapshotFuture(
         params: CreateInstancesFromSnapshotRequest
     ): Future[CreateInstancesFromSnapshotResult] = service.createInstancesFromSnapshot(params).promise.toFuture
-    def createInstancesFuture(params: CreateInstancesRequest): Future[CreateInstancesResult] =
+    @inline def createInstancesFuture(params: CreateInstancesRequest): Future[CreateInstancesResult] =
       service.createInstances(params).promise.toFuture
-    def createKeyPairFuture(params: CreateKeyPairRequest): Future[CreateKeyPairResult] =
+    @inline def createKeyPairFuture(params: CreateKeyPairRequest): Future[CreateKeyPairResult] =
       service.createKeyPair(params).promise.toFuture
-    def createLoadBalancerFuture(params: CreateLoadBalancerRequest): Future[CreateLoadBalancerResult] =
+    @inline def createLoadBalancerFuture(params: CreateLoadBalancerRequest): Future[CreateLoadBalancerResult] =
       service.createLoadBalancer(params).promise.toFuture
-    def createLoadBalancerTlsCertificateFuture(
+    @inline def createLoadBalancerTlsCertificateFuture(
         params: CreateLoadBalancerTlsCertificateRequest
     ): Future[CreateLoadBalancerTlsCertificateResult] =
       service.createLoadBalancerTlsCertificate(params).promise.toFuture
-    def createRelationalDatabaseFromSnapshotFuture(
+    @inline def createRelationalDatabaseFromSnapshotFuture(
         params: CreateRelationalDatabaseFromSnapshotRequest
     ): Future[CreateRelationalDatabaseFromSnapshotResult] =
       service.createRelationalDatabaseFromSnapshot(params).promise.toFuture
-    def createRelationalDatabaseFuture(
+    @inline def createRelationalDatabaseFuture(
         params: CreateRelationalDatabaseRequest
     ): Future[CreateRelationalDatabaseResult] = service.createRelationalDatabase(params).promise.toFuture
-    def createRelationalDatabaseSnapshotFuture(
+    @inline def createRelationalDatabaseSnapshotFuture(
         params: CreateRelationalDatabaseSnapshotRequest
     ): Future[CreateRelationalDatabaseSnapshotResult] =
       service.createRelationalDatabaseSnapshot(params).promise.toFuture
-    def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
+    @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
       service.deleteDisk(params).promise.toFuture
-    def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
+    @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
       service.deleteDiskSnapshot(params).promise.toFuture
-    def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] =
+    @inline def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] =
       service.deleteDomainEntry(params).promise.toFuture
-    def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
       service.deleteDomain(params).promise.toFuture
-    def deleteInstanceFuture(params: DeleteInstanceRequest): Future[DeleteInstanceResult] =
+    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[DeleteInstanceResult] =
       service.deleteInstance(params).promise.toFuture
-    def deleteInstanceSnapshotFuture(params: DeleteInstanceSnapshotRequest): Future[DeleteInstanceSnapshotResult] =
-      service.deleteInstanceSnapshot(params).promise.toFuture
-    def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[DeleteKeyPairResult] =
+    @inline def deleteInstanceSnapshotFuture(
+        params: DeleteInstanceSnapshotRequest
+    ): Future[DeleteInstanceSnapshotResult] = service.deleteInstanceSnapshot(params).promise.toFuture
+    @inline def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[DeleteKeyPairResult] =
       service.deleteKeyPair(params).promise.toFuture
-    def deleteKnownHostKeysFuture(params: DeleteKnownHostKeysRequest): Future[DeleteKnownHostKeysResult] =
+    @inline def deleteKnownHostKeysFuture(params: DeleteKnownHostKeysRequest): Future[DeleteKnownHostKeysResult] =
       service.deleteKnownHostKeys(params).promise.toFuture
-    def deleteLoadBalancerFuture(params: DeleteLoadBalancerRequest): Future[DeleteLoadBalancerResult] =
+    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerRequest): Future[DeleteLoadBalancerResult] =
       service.deleteLoadBalancer(params).promise.toFuture
-    def deleteLoadBalancerTlsCertificateFuture(
+    @inline def deleteLoadBalancerTlsCertificateFuture(
         params: DeleteLoadBalancerTlsCertificateRequest
     ): Future[DeleteLoadBalancerTlsCertificateResult] =
       service.deleteLoadBalancerTlsCertificate(params).promise.toFuture
-    def deleteRelationalDatabaseFuture(
+    @inline def deleteRelationalDatabaseFuture(
         params: DeleteRelationalDatabaseRequest
     ): Future[DeleteRelationalDatabaseResult] = service.deleteRelationalDatabase(params).promise.toFuture
-    def deleteRelationalDatabaseSnapshotFuture(
+    @inline def deleteRelationalDatabaseSnapshotFuture(
         params: DeleteRelationalDatabaseSnapshotRequest
     ): Future[DeleteRelationalDatabaseSnapshotResult] =
       service.deleteRelationalDatabaseSnapshot(params).promise.toFuture
-    def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] =
+    @inline def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] =
       service.detachDisk(params).promise.toFuture
-    def detachInstancesFromLoadBalancerFuture(
+    @inline def detachInstancesFromLoadBalancerFuture(
         params: DetachInstancesFromLoadBalancerRequest
     ): Future[DetachInstancesFromLoadBalancerResult] = service.detachInstancesFromLoadBalancer(params).promise.toFuture
-    def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] =
+    @inline def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] =
       service.detachStaticIp(params).promise.toFuture
-    def downloadDefaultKeyPairFuture(params: DownloadDefaultKeyPairRequest): Future[DownloadDefaultKeyPairResult] =
-      service.downloadDefaultKeyPair(params).promise.toFuture
-    def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] =
+    @inline def downloadDefaultKeyPairFuture(
+        params: DownloadDefaultKeyPairRequest
+    ): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise.toFuture
+    @inline def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] =
       service.exportSnapshot(params).promise.toFuture
-    def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
+    @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
       service.getActiveNames(params).promise.toFuture
-    def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
+    @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
       service.getBlueprints(params).promise.toFuture
-    def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
+    @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
       service.getBundles(params).promise.toFuture
-    def getCloudFormationStackRecordsFuture(
+    @inline def getCloudFormationStackRecordsFuture(
         params: GetCloudFormationStackRecordsRequest
-    ): Future[GetCloudFormationStackRecordsResult]                   = service.getCloudFormationStackRecords(params).promise.toFuture
-    def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] = service.getDisk(params).promise.toFuture
-    def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
+    ): Future[GetCloudFormationStackRecordsResult]                           = service.getCloudFormationStackRecords(params).promise.toFuture
+    @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] = service.getDisk(params).promise.toFuture
+    @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
       service.getDiskSnapshot(params).promise.toFuture
-    def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] =
+    @inline def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] =
       service.getDiskSnapshots(params).promise.toFuture
-    def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult]    = service.getDisks(params).promise.toFuture
-    def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] = service.getDomain(params).promise.toFuture
-    def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] =
+    @inline def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult] =
+      service.getDisks(params).promise.toFuture
+    @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] =
+      service.getDomain(params).promise.toFuture
+    @inline def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] =
       service.getDomains(params).promise.toFuture
-    def getExportSnapshotRecordsFuture(
+    @inline def getExportSnapshotRecordsFuture(
         params: GetExportSnapshotRecordsRequest
     ): Future[GetExportSnapshotRecordsResult] = service.getExportSnapshotRecords(params).promise.toFuture
-    def getInstanceAccessDetailsFuture(
+    @inline def getInstanceAccessDetailsFuture(
         params: GetInstanceAccessDetailsRequest
     ): Future[GetInstanceAccessDetailsResult] = service.getInstanceAccessDetails(params).promise.toFuture
-    def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResult] =
+    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResult] =
       service.getInstance(params).promise.toFuture
-    def getInstanceMetricDataFuture(params: GetInstanceMetricDataRequest): Future[GetInstanceMetricDataResult] =
+    @inline def getInstanceMetricDataFuture(params: GetInstanceMetricDataRequest): Future[GetInstanceMetricDataResult] =
       service.getInstanceMetricData(params).promise.toFuture
-    def getInstancePortStatesFuture(params: GetInstancePortStatesRequest): Future[GetInstancePortStatesResult] =
+    @inline def getInstancePortStatesFuture(params: GetInstancePortStatesRequest): Future[GetInstancePortStatesResult] =
       service.getInstancePortStates(params).promise.toFuture
-    def getInstanceSnapshotFuture(params: GetInstanceSnapshotRequest): Future[GetInstanceSnapshotResult] =
+    @inline def getInstanceSnapshotFuture(params: GetInstanceSnapshotRequest): Future[GetInstanceSnapshotResult] =
       service.getInstanceSnapshot(params).promise.toFuture
-    def getInstanceSnapshotsFuture(params: GetInstanceSnapshotsRequest): Future[GetInstanceSnapshotsResult] =
+    @inline def getInstanceSnapshotsFuture(params: GetInstanceSnapshotsRequest): Future[GetInstanceSnapshotsResult] =
       service.getInstanceSnapshots(params).promise.toFuture
-    def getInstanceStateFuture(params: GetInstanceStateRequest): Future[GetInstanceStateResult] =
+    @inline def getInstanceStateFuture(params: GetInstanceStateRequest): Future[GetInstanceStateResult] =
       service.getInstanceState(params).promise.toFuture
-    def getInstancesFuture(params: GetInstancesRequest): Future[GetInstancesResult] =
+    @inline def getInstancesFuture(params: GetInstancesRequest): Future[GetInstancesResult] =
       service.getInstances(params).promise.toFuture
-    def getKeyPairFuture(params: GetKeyPairRequest): Future[GetKeyPairResult] =
+    @inline def getKeyPairFuture(params: GetKeyPairRequest): Future[GetKeyPairResult] =
       service.getKeyPair(params).promise.toFuture
-    def getKeyPairsFuture(params: GetKeyPairsRequest): Future[GetKeyPairsResult] =
+    @inline def getKeyPairsFuture(params: GetKeyPairsRequest): Future[GetKeyPairsResult] =
       service.getKeyPairs(params).promise.toFuture
-    def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] =
+    @inline def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] =
       service.getLoadBalancer(params).promise.toFuture
-    def getLoadBalancerMetricDataFuture(
+    @inline def getLoadBalancerMetricDataFuture(
         params: GetLoadBalancerMetricDataRequest
     ): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise.toFuture
-    def getLoadBalancerTlsCertificatesFuture(
+    @inline def getLoadBalancerTlsCertificatesFuture(
         params: GetLoadBalancerTlsCertificatesRequest
     ): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise.toFuture
-    def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] =
+    @inline def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] =
       service.getLoadBalancers(params).promise.toFuture
-    def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] =
+    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] =
       service.getOperation(params).promise.toFuture
-    def getOperationsForResourceFuture(
+    @inline def getOperationsForResourceFuture(
         params: GetOperationsForResourceRequest
     ): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise.toFuture
-    def getOperationsFuture(params: GetOperationsRequest): Future[GetOperationsResult] =
+    @inline def getOperationsFuture(params: GetOperationsRequest): Future[GetOperationsResult] =
       service.getOperations(params).promise.toFuture
-    def getRegionsFuture(params: GetRegionsRequest): Future[GetRegionsResult] =
+    @inline def getRegionsFuture(params: GetRegionsRequest): Future[GetRegionsResult] =
       service.getRegions(params).promise.toFuture
-    def getRelationalDatabaseBlueprintsFuture(
+    @inline def getRelationalDatabaseBlueprintsFuture(
         params: GetRelationalDatabaseBlueprintsRequest
     ): Future[GetRelationalDatabaseBlueprintsResult] = service.getRelationalDatabaseBlueprints(params).promise.toFuture
-    def getRelationalDatabaseBundlesFuture(
+    @inline def getRelationalDatabaseBundlesFuture(
         params: GetRelationalDatabaseBundlesRequest
     ): Future[GetRelationalDatabaseBundlesResult] = service.getRelationalDatabaseBundles(params).promise.toFuture
-    def getRelationalDatabaseEventsFuture(
+    @inline def getRelationalDatabaseEventsFuture(
         params: GetRelationalDatabaseEventsRequest
     ): Future[GetRelationalDatabaseEventsResult] = service.getRelationalDatabaseEvents(params).promise.toFuture
-    def getRelationalDatabaseFuture(params: GetRelationalDatabaseRequest): Future[GetRelationalDatabaseResult] =
+    @inline def getRelationalDatabaseFuture(params: GetRelationalDatabaseRequest): Future[GetRelationalDatabaseResult] =
       service.getRelationalDatabase(params).promise.toFuture
-    def getRelationalDatabaseLogEventsFuture(
+    @inline def getRelationalDatabaseLogEventsFuture(
         params: GetRelationalDatabaseLogEventsRequest
     ): Future[GetRelationalDatabaseLogEventsResult] = service.getRelationalDatabaseLogEvents(params).promise.toFuture
-    def getRelationalDatabaseLogStreamsFuture(
+    @inline def getRelationalDatabaseLogStreamsFuture(
         params: GetRelationalDatabaseLogStreamsRequest
     ): Future[GetRelationalDatabaseLogStreamsResult] = service.getRelationalDatabaseLogStreams(params).promise.toFuture
-    def getRelationalDatabaseMasterUserPasswordFuture(
+    @inline def getRelationalDatabaseMasterUserPasswordFuture(
         params: GetRelationalDatabaseMasterUserPasswordRequest
     ): Future[GetRelationalDatabaseMasterUserPasswordResult] =
       service.getRelationalDatabaseMasterUserPassword(params).promise.toFuture
-    def getRelationalDatabaseMetricDataFuture(
+    @inline def getRelationalDatabaseMetricDataFuture(
         params: GetRelationalDatabaseMetricDataRequest
     ): Future[GetRelationalDatabaseMetricDataResult] = service.getRelationalDatabaseMetricData(params).promise.toFuture
-    def getRelationalDatabaseParametersFuture(
+    @inline def getRelationalDatabaseParametersFuture(
         params: GetRelationalDatabaseParametersRequest
     ): Future[GetRelationalDatabaseParametersResult] = service.getRelationalDatabaseParameters(params).promise.toFuture
-    def getRelationalDatabaseSnapshotFuture(
+    @inline def getRelationalDatabaseSnapshotFuture(
         params: GetRelationalDatabaseSnapshotRequest
     ): Future[GetRelationalDatabaseSnapshotResult] = service.getRelationalDatabaseSnapshot(params).promise.toFuture
-    def getRelationalDatabaseSnapshotsFuture(
+    @inline def getRelationalDatabaseSnapshotsFuture(
         params: GetRelationalDatabaseSnapshotsRequest
     ): Future[GetRelationalDatabaseSnapshotsResult] = service.getRelationalDatabaseSnapshots(params).promise.toFuture
-    def getRelationalDatabasesFuture(params: GetRelationalDatabasesRequest): Future[GetRelationalDatabasesResult] =
-      service.getRelationalDatabases(params).promise.toFuture
-    def getStaticIpFuture(params: GetStaticIpRequest): Future[GetStaticIpResult] =
+    @inline def getRelationalDatabasesFuture(
+        params: GetRelationalDatabasesRequest
+    ): Future[GetRelationalDatabasesResult] = service.getRelationalDatabases(params).promise.toFuture
+    @inline def getStaticIpFuture(params: GetStaticIpRequest): Future[GetStaticIpResult] =
       service.getStaticIp(params).promise.toFuture
-    def getStaticIpsFuture(params: GetStaticIpsRequest): Future[GetStaticIpsResult] =
+    @inline def getStaticIpsFuture(params: GetStaticIpsRequest): Future[GetStaticIpsResult] =
       service.getStaticIps(params).promise.toFuture
-    def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] =
+    @inline def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] =
       service.importKeyPair(params).promise.toFuture
-    def isVpcPeeredFuture(params: IsVpcPeeredRequest): Future[IsVpcPeeredResult] =
+    @inline def isVpcPeeredFuture(params: IsVpcPeeredRequest): Future[IsVpcPeeredResult] =
       service.isVpcPeered(params).promise.toFuture
-    def openInstancePublicPortsFuture(params: OpenInstancePublicPortsRequest): Future[OpenInstancePublicPortsResult] =
-      service.openInstancePublicPorts(params).promise.toFuture
-    def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] = service.peerVpc(params).promise.toFuture
-    def putInstancePublicPortsFuture(params: PutInstancePublicPortsRequest): Future[PutInstancePublicPortsResult] =
-      service.putInstancePublicPorts(params).promise.toFuture
-    def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] =
+    @inline def openInstancePublicPortsFuture(
+        params: OpenInstancePublicPortsRequest
+    ): Future[OpenInstancePublicPortsResult]                                 = service.openInstancePublicPorts(params).promise.toFuture
+    @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] = service.peerVpc(params).promise.toFuture
+    @inline def putInstancePublicPortsFuture(
+        params: PutInstancePublicPortsRequest
+    ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise.toFuture
+    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] =
       service.rebootInstance(params).promise.toFuture
-    def rebootRelationalDatabaseFuture(
+    @inline def rebootRelationalDatabaseFuture(
         params: RebootRelationalDatabaseRequest
     ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise.toFuture
-    def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
+    @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
       service.releaseStaticIp(params).promise.toFuture
-    def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
+    @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
       service.startInstance(params).promise.toFuture
-    def startRelationalDatabaseFuture(params: StartRelationalDatabaseRequest): Future[StartRelationalDatabaseResult] =
-      service.startRelationalDatabase(params).promise.toFuture
-    def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] =
+    @inline def startRelationalDatabaseFuture(
+        params: StartRelationalDatabaseRequest
+    ): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise.toFuture
+    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] =
       service.stopInstance(params).promise.toFuture
-    def stopRelationalDatabaseFuture(params: StopRelationalDatabaseRequest): Future[StopRelationalDatabaseResult] =
-      service.stopRelationalDatabase(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
+    @inline def stopRelationalDatabaseFuture(
+        params: StopRelationalDatabaseRequest
+    ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
       service.tagResource(params).promise.toFuture
-    def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] = service.unpeerVpc(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
+    @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] =
+      service.unpeerVpc(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
       service.untagResource(params).promise.toFuture
-    def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] =
+    @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] =
       service.updateDomainEntry(params).promise.toFuture
-    def updateLoadBalancerAttributeFuture(
+    @inline def updateLoadBalancerAttributeFuture(
         params: UpdateLoadBalancerAttributeRequest
     ): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise.toFuture
-    def updateRelationalDatabaseFuture(
+    @inline def updateRelationalDatabaseFuture(
         params: UpdateRelationalDatabaseRequest
     ): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise.toFuture
-    def updateRelationalDatabaseParametersFuture(
+    @inline def updateRelationalDatabaseParametersFuture(
         params: UpdateRelationalDatabaseParametersRequest
     ): Future[UpdateRelationalDatabaseParametersResult] =
       service.updateRelationalDatabaseParameters(params).promise.toFuture
@@ -533,6 +545,7 @@ package lightsail {
   }
 
   object AllocateStaticIpRequest {
+    @inline
     def apply(
         staticIpName: ResourceName
     ): AllocateStaticIpRequest = {
@@ -550,6 +563,7 @@ package lightsail {
   }
 
   object AllocateStaticIpResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AllocateStaticIpResult = {
@@ -567,6 +581,7 @@ package lightsail {
   }
 
   object AttachDiskRequest {
+    @inline
     def apply(
         diskName: ResourceName,
         diskPath: NonEmptyString,
@@ -588,6 +603,7 @@ package lightsail {
   }
 
   object AttachDiskResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachDiskResult = {
@@ -604,6 +620,7 @@ package lightsail {
   }
 
   object AttachInstancesToLoadBalancerRequest {
+    @inline
     def apply(
         instanceNames: ResourceNameList,
         loadBalancerName: ResourceName
@@ -623,6 +640,7 @@ package lightsail {
   }
 
   object AttachInstancesToLoadBalancerResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachInstancesToLoadBalancerResult = {
@@ -639,6 +657,7 @@ package lightsail {
   }
 
   object AttachLoadBalancerTlsCertificateRequest {
+    @inline
     def apply(
         certificateName: ResourceName,
         loadBalancerName: ResourceName
@@ -658,6 +677,7 @@ package lightsail {
   }
 
   object AttachLoadBalancerTlsCertificateResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachLoadBalancerTlsCertificateResult = {
@@ -674,6 +694,7 @@ package lightsail {
   }
 
   object AttachStaticIpRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         staticIpName: ResourceName
@@ -693,6 +714,7 @@ package lightsail {
   }
 
   object AttachStaticIpResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachStaticIpResult = {
@@ -712,6 +734,7 @@ package lightsail {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         state: js.UndefOr[NonEmptyString] = js.undefined,
         zoneName: js.UndefOr[NonEmptyString] = js.undefined
@@ -743,6 +766,7 @@ package lightsail {
   }
 
   object Blueprint {
+    @inline
     def apply(
         blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -800,6 +824,7 @@ package lightsail {
   }
 
   object Bundle {
+    @inline
     def apply(
         bundleId: js.UndefOr[NonEmptyString] = js.undefined,
         cpuCount: js.UndefOr[Int] = js.undefined,
@@ -836,6 +861,7 @@ package lightsail {
   }
 
   object CloseInstancePublicPortsRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         portInfo: PortInfo
@@ -855,6 +881,7 @@ package lightsail {
   }
 
   object CloseInstancePublicPortsResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CloseInstancePublicPortsResult = {
@@ -881,6 +908,7 @@ package lightsail {
   }
 
   object CloudFormationStackRecord {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -915,6 +943,7 @@ package lightsail {
   }
 
   object CloudFormationStackRecordSourceInfo {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         name: js.UndefOr[NonEmptyString] = js.undefined,
@@ -942,6 +971,7 @@ package lightsail {
   }
 
   object CopySnapshotRequest {
+    @inline
     def apply(
         sourceRegion: RegionName,
         sourceSnapshotName: ResourceName,
@@ -963,6 +993,7 @@ package lightsail {
   }
 
   object CopySnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CopySnapshotResult = {
@@ -978,6 +1009,7 @@ package lightsail {
   }
 
   object CreateCloudFormationStackRequest {
+    @inline
     def apply(
         instances: InstanceEntryList
     ): CreateCloudFormationStackRequest = {
@@ -995,6 +1027,7 @@ package lightsail {
   }
 
   object CreateCloudFormationStackResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateCloudFormationStackResult = {
@@ -1014,6 +1047,7 @@ package lightsail {
   }
 
   object CreateDiskFromSnapshotRequest {
+    @inline
     def apply(
         availabilityZone: NonEmptyString,
         diskName: ResourceName,
@@ -1039,6 +1073,7 @@ package lightsail {
   }
 
   object CreateDiskFromSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskFromSnapshotResult = {
@@ -1057,6 +1092,7 @@ package lightsail {
   }
 
   object CreateDiskRequest {
+    @inline
     def apply(
         availabilityZone: NonEmptyString,
         diskName: ResourceName,
@@ -1080,6 +1116,7 @@ package lightsail {
   }
 
   object CreateDiskResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskResult = {
@@ -1098,6 +1135,7 @@ package lightsail {
   }
 
   object CreateDiskSnapshotRequest {
+    @inline
     def apply(
         diskSnapshotName: ResourceName,
         diskName: js.UndefOr[ResourceName] = js.undefined,
@@ -1121,6 +1159,7 @@ package lightsail {
   }
 
   object CreateDiskSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskSnapshotResult = {
@@ -1137,6 +1176,7 @@ package lightsail {
   }
 
   object CreateDomainEntryRequest {
+    @inline
     def apply(
         domainEntry: DomainEntry,
         domainName: DomainName
@@ -1156,6 +1196,7 @@ package lightsail {
   }
 
   object CreateDomainEntryResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CreateDomainEntryResult = {
@@ -1172,6 +1213,7 @@ package lightsail {
   }
 
   object CreateDomainRequest {
+    @inline
     def apply(
         domainName: DomainName,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1191,6 +1233,7 @@ package lightsail {
   }
 
   object CreateDomainResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CreateDomainResult = {
@@ -1208,6 +1251,7 @@ package lightsail {
   }
 
   object CreateInstanceSnapshotRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         instanceSnapshotName: ResourceName,
@@ -1229,6 +1273,7 @@ package lightsail {
   }
 
   object CreateInstanceSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstanceSnapshotResult = {
@@ -1251,6 +1296,7 @@ package lightsail {
   }
 
   object CreateInstancesFromSnapshotRequest {
+    @inline
     def apply(
         availabilityZone: String,
         bundleId: NonEmptyString,
@@ -1282,6 +1328,7 @@ package lightsail {
   }
 
   object CreateInstancesFromSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstancesFromSnapshotResult = {
@@ -1304,6 +1351,7 @@ package lightsail {
   }
 
   object CreateInstancesRequest {
+    @inline
     def apply(
         availabilityZone: String,
         blueprintId: NonEmptyString,
@@ -1335,6 +1383,7 @@ package lightsail {
   }
 
   object CreateInstancesResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstancesResult = {
@@ -1351,6 +1400,7 @@ package lightsail {
   }
 
   object CreateKeyPairRequest {
+    @inline
     def apply(
         keyPairName: ResourceName,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1373,6 +1423,7 @@ package lightsail {
   }
 
   object CreateKeyPairResult {
+    @inline
     def apply(
         keyPair: js.UndefOr[KeyPair] = js.undefined,
         operation: js.UndefOr[Operation] = js.undefined,
@@ -1400,6 +1451,7 @@ package lightsail {
   }
 
   object CreateLoadBalancerRequest {
+    @inline
     def apply(
         instancePort: Port,
         loadBalancerName: ResourceName,
@@ -1431,6 +1483,7 @@ package lightsail {
   }
 
   object CreateLoadBalancerResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateLoadBalancerResult = {
@@ -1450,6 +1503,7 @@ package lightsail {
   }
 
   object CreateLoadBalancerTlsCertificateRequest {
+    @inline
     def apply(
         certificateDomainName: DomainName,
         certificateName: ResourceName,
@@ -1477,6 +1531,7 @@ package lightsail {
   }
 
   object CreateLoadBalancerTlsCertificateResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateLoadBalancerTlsCertificateResult = {
@@ -1500,6 +1555,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseFromSnapshotRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         availabilityZone: js.UndefOr[String] = js.undefined,
@@ -1539,6 +1595,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseFromSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseFromSnapshotResult = {
@@ -1564,6 +1621,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseRequest {
+    @inline
     def apply(
         masterDatabaseName: String,
         masterUsername: String,
@@ -1603,6 +1661,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseResult = {
@@ -1620,6 +1679,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseSnapshotRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         relationalDatabaseSnapshotName: ResourceName,
@@ -1641,6 +1701,7 @@ package lightsail {
   }
 
   object CreateRelationalDatabaseSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseSnapshotResult = {
@@ -1656,6 +1717,7 @@ package lightsail {
   }
 
   object DeleteDiskRequest {
+    @inline
     def apply(
         diskName: ResourceName
     ): DeleteDiskRequest = {
@@ -1673,6 +1735,7 @@ package lightsail {
   }
 
   object DeleteDiskResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteDiskResult = {
@@ -1688,6 +1751,7 @@ package lightsail {
   }
 
   object DeleteDiskSnapshotRequest {
+    @inline
     def apply(
         diskSnapshotName: ResourceName
     ): DeleteDiskSnapshotRequest = {
@@ -1705,6 +1769,7 @@ package lightsail {
   }
 
   object DeleteDiskSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteDiskSnapshotResult = {
@@ -1721,6 +1786,7 @@ package lightsail {
   }
 
   object DeleteDomainEntryRequest {
+    @inline
     def apply(
         domainEntry: DomainEntry,
         domainName: DomainName
@@ -1740,6 +1806,7 @@ package lightsail {
   }
 
   object DeleteDomainEntryResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteDomainEntryResult = {
@@ -1755,6 +1822,7 @@ package lightsail {
   }
 
   object DeleteDomainRequest {
+    @inline
     def apply(
         domainName: DomainName
     ): DeleteDomainRequest = {
@@ -1772,6 +1840,7 @@ package lightsail {
   }
 
   object DeleteDomainResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteDomainResult = {
@@ -1787,6 +1856,7 @@ package lightsail {
   }
 
   object DeleteInstanceRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): DeleteInstanceRequest = {
@@ -1804,6 +1874,7 @@ package lightsail {
   }
 
   object DeleteInstanceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteInstanceResult = {
@@ -1819,6 +1890,7 @@ package lightsail {
   }
 
   object DeleteInstanceSnapshotRequest {
+    @inline
     def apply(
         instanceSnapshotName: ResourceName
     ): DeleteInstanceSnapshotRequest = {
@@ -1836,6 +1908,7 @@ package lightsail {
   }
 
   object DeleteInstanceSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteInstanceSnapshotResult = {
@@ -1851,6 +1924,7 @@ package lightsail {
   }
 
   object DeleteKeyPairRequest {
+    @inline
     def apply(
         keyPairName: ResourceName
     ): DeleteKeyPairRequest = {
@@ -1868,6 +1942,7 @@ package lightsail {
   }
 
   object DeleteKeyPairResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteKeyPairResult = {
@@ -1883,6 +1958,7 @@ package lightsail {
   }
 
   object DeleteKnownHostKeysRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): DeleteKnownHostKeysRequest = {
@@ -1900,6 +1976,7 @@ package lightsail {
   }
 
   object DeleteKnownHostKeysResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteKnownHostKeysResult = {
@@ -1915,6 +1992,7 @@ package lightsail {
   }
 
   object DeleteLoadBalancerRequest {
+    @inline
     def apply(
         loadBalancerName: ResourceName
     ): DeleteLoadBalancerRequest = {
@@ -1932,6 +2010,7 @@ package lightsail {
   }
 
   object DeleteLoadBalancerResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteLoadBalancerResult = {
@@ -1949,6 +2028,7 @@ package lightsail {
   }
 
   object DeleteLoadBalancerTlsCertificateRequest {
+    @inline
     def apply(
         certificateName: ResourceName,
         loadBalancerName: ResourceName,
@@ -1970,6 +2050,7 @@ package lightsail {
   }
 
   object DeleteLoadBalancerTlsCertificateResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteLoadBalancerTlsCertificateResult = {
@@ -1987,6 +2068,7 @@ package lightsail {
   }
 
   object DeleteRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         finalRelationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
@@ -2010,6 +2092,7 @@ package lightsail {
   }
 
   object DeleteRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteRelationalDatabaseResult = {
@@ -2025,6 +2108,7 @@ package lightsail {
   }
 
   object DeleteRelationalDatabaseSnapshotRequest {
+    @inline
     def apply(
         relationalDatabaseSnapshotName: ResourceName
     ): DeleteRelationalDatabaseSnapshotRequest = {
@@ -2042,6 +2126,7 @@ package lightsail {
   }
 
   object DeleteRelationalDatabaseSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteRelationalDatabaseSnapshotResult = {
@@ -2061,6 +2146,7 @@ package lightsail {
   }
 
   object DestinationInfo {
+    @inline
     def apply(
         id: js.UndefOr[NonEmptyString] = js.undefined,
         service: js.UndefOr[NonEmptyString] = js.undefined
@@ -2078,6 +2164,7 @@ package lightsail {
   }
 
   object DetachDiskRequest {
+    @inline
     def apply(
         diskName: ResourceName
     ): DetachDiskRequest = {
@@ -2095,6 +2182,7 @@ package lightsail {
   }
 
   object DetachDiskResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachDiskResult = {
@@ -2111,6 +2199,7 @@ package lightsail {
   }
 
   object DetachInstancesFromLoadBalancerRequest {
+    @inline
     def apply(
         instanceNames: ResourceNameList,
         loadBalancerName: ResourceName
@@ -2130,6 +2219,7 @@ package lightsail {
   }
 
   object DetachInstancesFromLoadBalancerResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachInstancesFromLoadBalancerResult = {
@@ -2145,6 +2235,7 @@ package lightsail {
   }
 
   object DetachStaticIpRequest {
+    @inline
     def apply(
         staticIpName: ResourceName
     ): DetachStaticIpRequest = {
@@ -2162,6 +2253,7 @@ package lightsail {
   }
 
   object DetachStaticIpResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachStaticIpResult = {
@@ -2195,6 +2287,7 @@ package lightsail {
   }
 
   object Disk {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         attachedTo: js.UndefOr[ResourceName] = js.undefined,
@@ -2246,6 +2339,7 @@ package lightsail {
   }
 
   object DiskInfo {
+    @inline
     def apply(
         isSystemDisk: js.UndefOr[Boolean] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -2271,6 +2365,7 @@ package lightsail {
   }
 
   object DiskMap {
+    @inline
     def apply(
         newDiskName: js.UndefOr[ResourceName] = js.undefined,
         originalDiskPath: js.UndefOr[NonEmptyString] = js.undefined
@@ -2304,6 +2399,7 @@ package lightsail {
   }
 
   object DiskSnapshot {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -2348,6 +2444,7 @@ package lightsail {
   }
 
   object DiskSnapshotInfo {
+    @inline
     def apply(
         sizeInGb: js.UndefOr[Int] = js.undefined
     ): DiskSnapshotInfo = {
@@ -2392,6 +2489,7 @@ package lightsail {
   }
 
   object Domain {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -2429,6 +2527,7 @@ package lightsail {
   }
 
   object DomainEntry {
+    @inline
     def apply(
         id: js.UndefOr[NonEmptyString] = js.undefined,
         isAlias: js.UndefOr[Boolean] = js.undefined,
@@ -2452,6 +2551,7 @@ package lightsail {
   trait DownloadDefaultKeyPairRequest extends js.Object {}
 
   object DownloadDefaultKeyPairRequest {
+    @inline
     def apply(
         ): DownloadDefaultKeyPairRequest = {
       val __obj = js.Dynamic.literal()
@@ -2467,6 +2567,7 @@ package lightsail {
   }
 
   object DownloadDefaultKeyPairResult {
+    @inline
     def apply(
         privateKeyBase64: js.UndefOr[Base64] = js.undefined,
         publicKeyBase64: js.UndefOr[Base64] = js.undefined
@@ -2494,6 +2595,7 @@ package lightsail {
   }
 
   object ExportSnapshotRecord {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -2533,6 +2635,7 @@ package lightsail {
   }
 
   object ExportSnapshotRecordSourceInfo {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -2569,6 +2672,7 @@ package lightsail {
   }
 
   object ExportSnapshotRequest {
+    @inline
     def apply(
         sourceSnapshotName: ResourceName
     ): ExportSnapshotRequest = {
@@ -2586,6 +2690,7 @@ package lightsail {
   }
 
   object ExportSnapshotResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): ExportSnapshotResult = {
@@ -2601,6 +2706,7 @@ package lightsail {
   }
 
   object GetActiveNamesRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetActiveNamesRequest = {
@@ -2617,6 +2723,7 @@ package lightsail {
   }
 
   object GetActiveNamesResult {
+    @inline
     def apply(
         activeNames: js.UndefOr[StringList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2635,6 +2742,7 @@ package lightsail {
   }
 
   object GetBlueprintsRequest {
+    @inline
     def apply(
         includeInactive: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
@@ -2653,6 +2761,7 @@ package lightsail {
   }
 
   object GetBlueprintsResult {
+    @inline
     def apply(
         blueprints: js.UndefOr[BlueprintList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2671,6 +2780,7 @@ package lightsail {
   }
 
   object GetBundlesRequest {
+    @inline
     def apply(
         includeInactive: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
@@ -2689,6 +2799,7 @@ package lightsail {
   }
 
   object GetBundlesResult {
+    @inline
     def apply(
         bundles: js.UndefOr[BundleList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2706,6 +2817,7 @@ package lightsail {
   }
 
   object GetCloudFormationStackRecordsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetCloudFormationStackRecordsRequest = {
@@ -2722,6 +2834,7 @@ package lightsail {
   }
 
   object GetCloudFormationStackRecordsResult {
+    @inline
     def apply(
         cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2741,6 +2854,7 @@ package lightsail {
   }
 
   object GetDiskRequest {
+    @inline
     def apply(
         diskName: ResourceName
     ): GetDiskRequest = {
@@ -2758,6 +2872,7 @@ package lightsail {
   }
 
   object GetDiskResult {
+    @inline
     def apply(
         disk: js.UndefOr[Disk] = js.undefined
     ): GetDiskResult = {
@@ -2773,6 +2888,7 @@ package lightsail {
   }
 
   object GetDiskSnapshotRequest {
+    @inline
     def apply(
         diskSnapshotName: ResourceName
     ): GetDiskSnapshotRequest = {
@@ -2790,6 +2906,7 @@ package lightsail {
   }
 
   object GetDiskSnapshotResult {
+    @inline
     def apply(
         diskSnapshot: js.UndefOr[DiskSnapshot] = js.undefined
     ): GetDiskSnapshotResult = {
@@ -2805,6 +2922,7 @@ package lightsail {
   }
 
   object GetDiskSnapshotsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDiskSnapshotsRequest = {
@@ -2821,6 +2939,7 @@ package lightsail {
   }
 
   object GetDiskSnapshotsResult {
+    @inline
     def apply(
         diskSnapshots: js.UndefOr[DiskSnapshotList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2838,6 +2957,7 @@ package lightsail {
   }
 
   object GetDisksRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDisksRequest = {
@@ -2854,6 +2974,7 @@ package lightsail {
   }
 
   object GetDisksResult {
+    @inline
     def apply(
         disks: js.UndefOr[DiskList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2871,6 +2992,7 @@ package lightsail {
   }
 
   object GetDomainRequest {
+    @inline
     def apply(
         domainName: DomainName
     ): GetDomainRequest = {
@@ -2888,6 +3010,7 @@ package lightsail {
   }
 
   object GetDomainResult {
+    @inline
     def apply(
         domain: js.UndefOr[Domain] = js.undefined
     ): GetDomainResult = {
@@ -2903,6 +3026,7 @@ package lightsail {
   }
 
   object GetDomainsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDomainsRequest = {
@@ -2919,6 +3043,7 @@ package lightsail {
   }
 
   object GetDomainsResult {
+    @inline
     def apply(
         domains: js.UndefOr[DomainList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2936,6 +3061,7 @@ package lightsail {
   }
 
   object GetExportSnapshotRecordsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetExportSnapshotRecordsRequest = {
@@ -2952,6 +3078,7 @@ package lightsail {
   }
 
   object GetExportSnapshotRecordsResult {
+    @inline
     def apply(
         exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -2970,6 +3097,7 @@ package lightsail {
   }
 
   object GetInstanceAccessDetailsRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         protocol: js.UndefOr[InstanceAccessProtocol] = js.undefined
@@ -2989,6 +3117,7 @@ package lightsail {
   }
 
   object GetInstanceAccessDetailsResult {
+    @inline
     def apply(
         accessDetails: js.UndefOr[InstanceAccessDetails] = js.undefined
     ): GetInstanceAccessDetailsResult = {
@@ -3010,6 +3139,7 @@ package lightsail {
   }
 
   object GetInstanceMetricDataRequest {
+    @inline
     def apply(
         endTime: timestamp,
         instanceName: ResourceName,
@@ -3040,6 +3170,7 @@ package lightsail {
   }
 
   object GetInstanceMetricDataResult {
+    @inline
     def apply(
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[InstanceMetricName] = js.undefined
@@ -3057,6 +3188,7 @@ package lightsail {
   }
 
   object GetInstancePortStatesRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): GetInstancePortStatesRequest = {
@@ -3074,6 +3206,7 @@ package lightsail {
   }
 
   object GetInstancePortStatesResult {
+    @inline
     def apply(
         portStates: js.UndefOr[InstancePortStateList] = js.undefined
     ): GetInstancePortStatesResult = {
@@ -3089,6 +3222,7 @@ package lightsail {
   }
 
   object GetInstanceRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): GetInstanceRequest = {
@@ -3106,6 +3240,7 @@ package lightsail {
   }
 
   object GetInstanceResult {
+    @inline
     def apply(
         instance: js.UndefOr[Instance] = js.undefined
     ): GetInstanceResult = {
@@ -3121,6 +3256,7 @@ package lightsail {
   }
 
   object GetInstanceSnapshotRequest {
+    @inline
     def apply(
         instanceSnapshotName: ResourceName
     ): GetInstanceSnapshotRequest = {
@@ -3138,6 +3274,7 @@ package lightsail {
   }
 
   object GetInstanceSnapshotResult {
+    @inline
     def apply(
         instanceSnapshot: js.UndefOr[InstanceSnapshot] = js.undefined
     ): GetInstanceSnapshotResult = {
@@ -3153,6 +3290,7 @@ package lightsail {
   }
 
   object GetInstanceSnapshotsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetInstanceSnapshotsRequest = {
@@ -3169,6 +3307,7 @@ package lightsail {
   }
 
   object GetInstanceSnapshotsResult {
+    @inline
     def apply(
         instanceSnapshots: js.UndefOr[InstanceSnapshotList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3186,6 +3325,7 @@ package lightsail {
   }
 
   object GetInstanceStateRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): GetInstanceStateRequest = {
@@ -3203,6 +3343,7 @@ package lightsail {
   }
 
   object GetInstanceStateResult {
+    @inline
     def apply(
         state: js.UndefOr[InstanceState] = js.undefined
     ): GetInstanceStateResult = {
@@ -3218,6 +3359,7 @@ package lightsail {
   }
 
   object GetInstancesRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetInstancesRequest = {
@@ -3234,6 +3376,7 @@ package lightsail {
   }
 
   object GetInstancesResult {
+    @inline
     def apply(
         instances: js.UndefOr[InstanceList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3251,6 +3394,7 @@ package lightsail {
   }
 
   object GetKeyPairRequest {
+    @inline
     def apply(
         keyPairName: ResourceName
     ): GetKeyPairRequest = {
@@ -3268,6 +3412,7 @@ package lightsail {
   }
 
   object GetKeyPairResult {
+    @inline
     def apply(
         keyPair: js.UndefOr[KeyPair] = js.undefined
     ): GetKeyPairResult = {
@@ -3283,6 +3428,7 @@ package lightsail {
   }
 
   object GetKeyPairsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetKeyPairsRequest = {
@@ -3299,6 +3445,7 @@ package lightsail {
   }
 
   object GetKeyPairsResult {
+    @inline
     def apply(
         keyPairs: js.UndefOr[KeyPairList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3322,6 +3469,7 @@ package lightsail {
   }
 
   object GetLoadBalancerMetricDataRequest {
+    @inline
     def apply(
         endTime: timestamp,
         loadBalancerName: ResourceName,
@@ -3352,6 +3500,7 @@ package lightsail {
   }
 
   object GetLoadBalancerMetricDataResult {
+    @inline
     def apply(
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[LoadBalancerMetricName] = js.undefined
@@ -3369,6 +3518,7 @@ package lightsail {
   }
 
   object GetLoadBalancerRequest {
+    @inline
     def apply(
         loadBalancerName: ResourceName
     ): GetLoadBalancerRequest = {
@@ -3386,6 +3536,7 @@ package lightsail {
   }
 
   object GetLoadBalancerResult {
+    @inline
     def apply(
         loadBalancer: js.UndefOr[LoadBalancer] = js.undefined
     ): GetLoadBalancerResult = {
@@ -3401,6 +3552,7 @@ package lightsail {
   }
 
   object GetLoadBalancerTlsCertificatesRequest {
+    @inline
     def apply(
         loadBalancerName: ResourceName
     ): GetLoadBalancerTlsCertificatesRequest = {
@@ -3418,6 +3570,7 @@ package lightsail {
   }
 
   object GetLoadBalancerTlsCertificatesResult {
+    @inline
     def apply(
         tlsCertificates: js.UndefOr[LoadBalancerTlsCertificateList] = js.undefined
     ): GetLoadBalancerTlsCertificatesResult = {
@@ -3433,6 +3586,7 @@ package lightsail {
   }
 
   object GetLoadBalancersRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetLoadBalancersRequest = {
@@ -3449,6 +3603,7 @@ package lightsail {
   }
 
   object GetLoadBalancersResult {
+    @inline
     def apply(
         loadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3466,6 +3621,7 @@ package lightsail {
   }
 
   object GetOperationRequest {
+    @inline
     def apply(
         operationId: NonEmptyString
     ): GetOperationRequest = {
@@ -3483,6 +3639,7 @@ package lightsail {
   }
 
   object GetOperationResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): GetOperationResult = {
@@ -3499,6 +3656,7 @@ package lightsail {
   }
 
   object GetOperationsForResourceRequest {
+    @inline
     def apply(
         resourceName: ResourceName,
         pageToken: js.UndefOr[String] = js.undefined
@@ -3520,6 +3678,7 @@ package lightsail {
   }
 
   object GetOperationsForResourceResult {
+    @inline
     def apply(
         nextPageCount: js.UndefOr[String] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined,
@@ -3539,6 +3698,7 @@ package lightsail {
   }
 
   object GetOperationsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetOperationsRequest = {
@@ -3555,6 +3715,7 @@ package lightsail {
   }
 
   object GetOperationsResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         operations: js.UndefOr[OperationList] = js.undefined
@@ -3573,6 +3734,7 @@ package lightsail {
   }
 
   object GetRegionsRequest {
+    @inline
     def apply(
         includeAvailabilityZones: js.UndefOr[Boolean] = js.undefined,
         includeRelationalDatabaseAvailabilityZones: js.UndefOr[Boolean] = js.undefined
@@ -3592,6 +3754,7 @@ package lightsail {
   }
 
   object GetRegionsResult {
+    @inline
     def apply(
         regions: js.UndefOr[RegionList] = js.undefined
     ): GetRegionsResult = {
@@ -3607,6 +3770,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseBlueprintsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBlueprintsRequest = {
@@ -3623,6 +3787,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseBlueprintsResult {
+    @inline
     def apply(
         blueprints: js.UndefOr[RelationalDatabaseBlueprintList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3640,6 +3805,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseBundlesRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBundlesRequest = {
@@ -3656,6 +3822,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseBundlesResult {
+    @inline
     def apply(
         bundles: js.UndefOr[RelationalDatabaseBundleList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
@@ -3675,6 +3842,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseEventsRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         durationInMinutes: js.UndefOr[Int] = js.undefined,
@@ -3697,6 +3865,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseEventsResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabaseEvents: js.UndefOr[RelationalDatabaseEventList] = js.undefined
@@ -3719,6 +3888,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseLogEventsRequest {
+    @inline
     def apply(
         logStreamName: String,
         relationalDatabaseName: ResourceName,
@@ -3748,6 +3918,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseLogEventsResult {
+    @inline
     def apply(
         nextBackwardToken: js.UndefOr[String] = js.undefined,
         nextForwardToken: js.UndefOr[String] = js.undefined,
@@ -3767,6 +3938,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseLogStreamsRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName
     ): GetRelationalDatabaseLogStreamsRequest = {
@@ -3784,6 +3956,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseLogStreamsResult {
+    @inline
     def apply(
         logStreams: js.UndefOr[StringList] = js.undefined
     ): GetRelationalDatabaseLogStreamsResult = {
@@ -3800,6 +3973,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseMasterUserPasswordRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         passwordVersion: js.UndefOr[RelationalDatabasePasswordVersion] = js.undefined
@@ -3820,6 +3994,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseMasterUserPasswordResult {
+    @inline
     def apply(
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         masterUserPassword: js.UndefOr[SensitiveString] = js.undefined
@@ -3843,6 +4018,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseMetricDataRequest {
+    @inline
     def apply(
         endTime: IsoDate,
         metricName: RelationalDatabaseMetricName,
@@ -3873,6 +4049,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseMetricDataResult {
+    @inline
     def apply(
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[RelationalDatabaseMetricName] = js.undefined
@@ -3891,6 +4068,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseParametersRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         pageToken: js.UndefOr[String] = js.undefined
@@ -3911,6 +4089,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseParametersResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         parameters: js.UndefOr[RelationalDatabaseParameterList] = js.undefined
@@ -3928,6 +4107,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName
     ): GetRelationalDatabaseRequest = {
@@ -3945,6 +4125,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseResult {
+    @inline
     def apply(
         relationalDatabase: js.UndefOr[RelationalDatabase] = js.undefined
     ): GetRelationalDatabaseResult = {
@@ -3960,6 +4141,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseSnapshotRequest {
+    @inline
     def apply(
         relationalDatabaseSnapshotName: ResourceName
     ): GetRelationalDatabaseSnapshotRequest = {
@@ -3977,6 +4159,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseSnapshotResult {
+    @inline
     def apply(
         relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot] = js.undefined
     ): GetRelationalDatabaseSnapshotResult = {
@@ -3994,6 +4177,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseSnapshotsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseSnapshotsRequest = {
@@ -4010,6 +4194,7 @@ package lightsail {
   }
 
   object GetRelationalDatabaseSnapshotsResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabaseSnapshots: js.UndefOr[RelationalDatabaseSnapshotList] = js.undefined
@@ -4029,6 +4214,7 @@ package lightsail {
   }
 
   object GetRelationalDatabasesRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabasesRequest = {
@@ -4045,6 +4231,7 @@ package lightsail {
   }
 
   object GetRelationalDatabasesResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabases: js.UndefOr[RelationalDatabaseList] = js.undefined
@@ -4062,6 +4249,7 @@ package lightsail {
   }
 
   object GetStaticIpRequest {
+    @inline
     def apply(
         staticIpName: ResourceName
     ): GetStaticIpRequest = {
@@ -4079,6 +4267,7 @@ package lightsail {
   }
 
   object GetStaticIpResult {
+    @inline
     def apply(
         staticIp: js.UndefOr[StaticIp] = js.undefined
     ): GetStaticIpResult = {
@@ -4094,6 +4283,7 @@ package lightsail {
   }
 
   object GetStaticIpsRequest {
+    @inline
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetStaticIpsRequest = {
@@ -4110,6 +4300,7 @@ package lightsail {
   }
 
   object GetStaticIpsResult {
+    @inline
     def apply(
         nextPageToken: js.UndefOr[String] = js.undefined,
         staticIps: js.UndefOr[StaticIpList] = js.undefined
@@ -4136,6 +4327,7 @@ package lightsail {
   }
 
   object HostKeyAttributes {
+    @inline
     def apply(
         algorithm: js.UndefOr[String] = js.undefined,
         fingerprintSHA1: js.UndefOr[String] = js.undefined,
@@ -4164,6 +4356,7 @@ package lightsail {
   }
 
   object ImportKeyPairRequest {
+    @inline
     def apply(
         keyPairName: ResourceName,
         publicKeyBase64: Base64
@@ -4183,6 +4376,7 @@ package lightsail {
   }
 
   object ImportKeyPairResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): ImportKeyPairResult = {
@@ -4219,6 +4413,7 @@ package lightsail {
   }
 
   object Instance {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -4282,6 +4477,7 @@ package lightsail {
   }
 
   object InstanceAccessDetails {
+    @inline
     def apply(
         certKey: js.UndefOr[String] = js.undefined,
         expiresAt: js.UndefOr[IsoDate] = js.undefined,
@@ -4329,6 +4525,7 @@ package lightsail {
   }
 
   object InstanceEntry {
+    @inline
     def apply(
         availabilityZone: String,
         instanceType: NonEmptyString,
@@ -4359,6 +4556,7 @@ package lightsail {
   }
 
   object InstanceHardware {
+    @inline
     def apply(
         cpuCount: js.UndefOr[Int] = js.undefined,
         disks: js.UndefOr[DiskList] = js.undefined,
@@ -4424,6 +4622,7 @@ package lightsail {
   }
 
   object InstanceHealthSummary {
+    @inline
     def apply(
         instanceHealth: js.UndefOr[InstanceHealthState] = js.undefined,
         instanceHealthReason: js.UndefOr[InstanceHealthReason] = js.undefined,
@@ -4467,6 +4666,7 @@ package lightsail {
   }
 
   object InstanceNetworking {
+    @inline
     def apply(
         monthlyTransfer: js.UndefOr[MonthlyTransfer] = js.undefined,
         ports: js.UndefOr[InstancePortInfoList] = js.undefined
@@ -4500,6 +4700,7 @@ package lightsail {
   }
 
   object InstancePortInfo {
+    @inline
     def apply(
         accessDirection: js.UndefOr[AccessDirection] = js.undefined,
         accessFrom: js.UndefOr[String] = js.undefined,
@@ -4533,6 +4734,7 @@ package lightsail {
   }
 
   object InstancePortState {
+    @inline
     def apply(
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
@@ -4571,6 +4773,7 @@ package lightsail {
   }
 
   object InstanceSnapshot {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -4619,6 +4822,7 @@ package lightsail {
   }
 
   object InstanceSnapshotInfo {
+    @inline
     def apply(
         fromBlueprintId: js.UndefOr[NonEmptyString] = js.undefined,
         fromBundleId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -4650,6 +4854,7 @@ package lightsail {
   }
 
   object InstanceState {
+    @inline
     def apply(
         code: js.UndefOr[Int] = js.undefined,
         name: js.UndefOr[String] = js.undefined
@@ -4665,6 +4870,7 @@ package lightsail {
   trait IsVpcPeeredRequest extends js.Object {}
 
   object IsVpcPeeredRequest {
+    @inline
     def apply(
         ): IsVpcPeeredRequest = {
       val __obj = js.Dynamic.literal()
@@ -4679,6 +4885,7 @@ package lightsail {
   }
 
   object IsVpcPeeredResult {
+    @inline
     def apply(
         isPeered: js.UndefOr[Boolean] = js.undefined
     ): IsVpcPeeredResult = {
@@ -4704,6 +4911,7 @@ package lightsail {
   }
 
   object KeyPair {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -4751,6 +4959,7 @@ package lightsail {
   }
 
   object LoadBalancer {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         configurationOptions: js.UndefOr[LoadBalancerConfigurationOptions] = js.undefined,
@@ -4882,6 +5091,7 @@ package lightsail {
   }
 
   object LoadBalancerTlsCertificate {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -4957,6 +5167,7 @@ package lightsail {
   }
 
   object LoadBalancerTlsCertificateDomainValidationOption {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined,
         validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus] = js.undefined
@@ -4981,6 +5192,7 @@ package lightsail {
   }
 
   object LoadBalancerTlsCertificateDomainValidationRecord {
+    @inline
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined,
         name: js.UndefOr[NonEmptyString] = js.undefined,
@@ -5035,6 +5247,7 @@ package lightsail {
   }
 
   object LoadBalancerTlsCertificateRenewalSummary {
+    @inline
     def apply(
         domainValidationOptions: js.UndefOr[LoadBalancerTlsCertificateDomainValidationOptionList] = js.undefined,
         renewalStatus: js.UndefOr[LoadBalancerTlsCertificateRenewalStatus] = js.undefined
@@ -5099,6 +5312,7 @@ package lightsail {
   }
 
   object LoadBalancerTlsCertificateSummary {
+    @inline
     def apply(
         isAttached: js.UndefOr[Boolean] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined
@@ -5120,6 +5334,7 @@ package lightsail {
   }
 
   object LogEvent {
+    @inline
     def apply(
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         message: js.UndefOr[String] = js.undefined
@@ -5146,6 +5361,7 @@ package lightsail {
   }
 
   object MetricDatapoint {
+    @inline
     def apply(
         average: js.UndefOr[double] = js.undefined,
         maximum: js.UndefOr[double] = js.undefined,
@@ -5248,6 +5464,7 @@ package lightsail {
   }
 
   object MonthlyTransfer {
+    @inline
     def apply(
         gbPerMonthAllocated: js.UndefOr[Int] = js.undefined
     ): MonthlyTransfer = {
@@ -5272,6 +5489,7 @@ package lightsail {
   }
 
   object OpenInstancePublicPortsRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         portInfo: PortInfo
@@ -5291,6 +5509,7 @@ package lightsail {
   }
 
   object OpenInstancePublicPortsResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): OpenInstancePublicPortsResult = {
@@ -5320,6 +5539,7 @@ package lightsail {
   }
 
   object Operation {
+    @inline
     def apply(
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         errorCode: js.UndefOr[String] = js.undefined,
@@ -5469,6 +5689,7 @@ package lightsail {
   }
 
   object PasswordData {
+    @inline
     def apply(
         ciphertext: js.UndefOr[String] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined
@@ -5484,6 +5705,7 @@ package lightsail {
   trait PeerVpcRequest extends js.Object {}
 
   object PeerVpcRequest {
+    @inline
     def apply(
         ): PeerVpcRequest = {
       val __obj = js.Dynamic.literal()
@@ -5498,6 +5720,7 @@ package lightsail {
   }
 
   object PeerVpcResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): PeerVpcResult = {
@@ -5518,6 +5741,7 @@ package lightsail {
   }
 
   object PendingMaintenanceAction {
+    @inline
     def apply(
         action: js.UndefOr[NonEmptyString] = js.undefined,
         currentApplyDate: js.UndefOr[IsoDate] = js.undefined,
@@ -5542,6 +5766,7 @@ package lightsail {
   }
 
   object PendingModifiedRelationalDatabaseValues {
+    @inline
     def apply(
         backupRetentionEnabled: js.UndefOr[Boolean] = js.undefined,
         engineVersion: js.UndefOr[String] = js.undefined,
@@ -5573,6 +5798,7 @@ package lightsail {
   }
 
   object PortInfo {
+    @inline
     def apply(
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
@@ -5609,6 +5835,7 @@ package lightsail {
   }
 
   object PutInstancePublicPortsRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         portInfos: PortInfoList
@@ -5628,6 +5855,7 @@ package lightsail {
   }
 
   object PutInstancePublicPortsResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): PutInstancePublicPortsResult = {
@@ -5643,6 +5871,7 @@ package lightsail {
   }
 
   object RebootInstanceRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): RebootInstanceRequest = {
@@ -5660,6 +5889,7 @@ package lightsail {
   }
 
   object RebootInstanceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): RebootInstanceResult = {
@@ -5675,6 +5905,7 @@ package lightsail {
   }
 
   object RebootRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName
     ): RebootRelationalDatabaseRequest = {
@@ -5692,6 +5923,7 @@ package lightsail {
   }
 
   object RebootRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): RebootRelationalDatabaseResult = {
@@ -5723,6 +5955,7 @@ package lightsail {
   }
 
   object Region {
+    @inline
     def apply(
         availabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         continentCode: js.UndefOr[String] = js.undefined,
@@ -5813,6 +6046,7 @@ package lightsail {
   }
 
   object RelationalDatabase {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         backupRetentionEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -5894,6 +6128,7 @@ package lightsail {
   }
 
   object RelationalDatabaseBlueprint {
+    @inline
     def apply(
         blueprintId: js.UndefOr[String] = js.undefined,
         engine: js.UndefOr[RelationalDatabaseEngine] = js.undefined,
@@ -5930,6 +6165,7 @@ package lightsail {
   }
 
   object RelationalDatabaseBundle {
+    @inline
     def apply(
         bundleId: js.UndefOr[String] = js.undefined,
         cpuCount: js.UndefOr[Int] = js.undefined,
@@ -5965,6 +6201,7 @@ package lightsail {
   }
 
   object RelationalDatabaseEndpoint {
+    @inline
     def apply(
         address: js.UndefOr[NonEmptyString] = js.undefined,
         port: js.UndefOr[Int] = js.undefined
@@ -5994,6 +6231,7 @@ package lightsail {
   }
 
   object RelationalDatabaseEvent {
+    @inline
     def apply(
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         eventCategories: js.UndefOr[StringList] = js.undefined,
@@ -6020,6 +6258,7 @@ package lightsail {
   }
 
   object RelationalDatabaseHardware {
+    @inline
     def apply(
         cpuCount: js.UndefOr[Int] = js.undefined,
         diskSizeInGb: js.UndefOr[Int] = js.undefined,
@@ -6069,6 +6308,7 @@ package lightsail {
   }
 
   object RelationalDatabaseParameter {
+    @inline
     def apply(
         allowedValues: js.UndefOr[String] = js.undefined,
         applyMethod: js.UndefOr[String] = js.undefined,
@@ -6123,6 +6363,7 @@ package lightsail {
   }
 
   object RelationalDatabaseSnapshot {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -6174,6 +6415,7 @@ package lightsail {
   }
 
   object ReleaseStaticIpRequest {
+    @inline
     def apply(
         staticIpName: ResourceName
     ): ReleaseStaticIpRequest = {
@@ -6191,6 +6433,7 @@ package lightsail {
   }
 
   object ReleaseStaticIpResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): ReleaseStaticIpResult = {
@@ -6210,6 +6453,7 @@ package lightsail {
   }
 
   object ResourceLocation {
+    @inline
     def apply(
         availabilityZone: js.UndefOr[String] = js.undefined,
         regionName: js.UndefOr[RegionName] = js.undefined
@@ -6263,6 +6507,7 @@ package lightsail {
   }
 
   object StartInstanceRequest {
+    @inline
     def apply(
         instanceName: ResourceName
     ): StartInstanceRequest = {
@@ -6280,6 +6525,7 @@ package lightsail {
   }
 
   object StartInstanceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StartInstanceResult = {
@@ -6295,6 +6541,7 @@ package lightsail {
   }
 
   object StartRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName
     ): StartRelationalDatabaseRequest = {
@@ -6312,6 +6559,7 @@ package lightsail {
   }
 
   object StartRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StartRelationalDatabaseResult = {
@@ -6338,6 +6586,7 @@ package lightsail {
   }
 
   object StaticIp {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         attachedTo: js.UndefOr[ResourceName] = js.undefined,
@@ -6370,6 +6619,7 @@ package lightsail {
   }
 
   object StopInstanceRequest {
+    @inline
     def apply(
         instanceName: ResourceName,
         force: js.UndefOr[Boolean] = js.undefined
@@ -6389,6 +6639,7 @@ package lightsail {
   }
 
   object StopInstanceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StopInstanceResult = {
@@ -6405,6 +6656,7 @@ package lightsail {
   }
 
   object StopRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined
@@ -6426,6 +6678,7 @@ package lightsail {
   }
 
   object StopRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StopRelationalDatabaseResult = {
@@ -6446,6 +6699,7 @@ package lightsail {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
@@ -6464,6 +6718,7 @@ package lightsail {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceName: ResourceName,
         tags: TagList
@@ -6483,6 +6738,7 @@ package lightsail {
   }
 
   object TagResourceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): TagResourceResult = {
@@ -6496,6 +6752,7 @@ package lightsail {
   trait UnpeerVpcRequest extends js.Object {}
 
   object UnpeerVpcRequest {
+    @inline
     def apply(
         ): UnpeerVpcRequest = {
       val __obj = js.Dynamic.literal()
@@ -6510,6 +6767,7 @@ package lightsail {
   }
 
   object UnpeerVpcResult {
+    @inline
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): UnpeerVpcResult = {
@@ -6526,6 +6784,7 @@ package lightsail {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceName: ResourceName,
         tagKeys: TagKeyList
@@ -6545,6 +6804,7 @@ package lightsail {
   }
 
   object UntagResourceResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UntagResourceResult = {
@@ -6561,6 +6821,7 @@ package lightsail {
   }
 
   object UpdateDomainEntryRequest {
+    @inline
     def apply(
         domainEntry: DomainEntry,
         domainName: DomainName
@@ -6580,6 +6841,7 @@ package lightsail {
   }
 
   object UpdateDomainEntryResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateDomainEntryResult = {
@@ -6597,6 +6859,7 @@ package lightsail {
   }
 
   object UpdateLoadBalancerAttributeRequest {
+    @inline
     def apply(
         attributeName: LoadBalancerAttributeName,
         attributeValue: StringMax256,
@@ -6618,6 +6881,7 @@ package lightsail {
   }
 
   object UpdateLoadBalancerAttributeResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateLoadBalancerAttributeResult = {
@@ -6634,6 +6898,7 @@ package lightsail {
   }
 
   object UpdateRelationalDatabaseParametersRequest {
+    @inline
     def apply(
         parameters: RelationalDatabaseParameterList,
         relationalDatabaseName: ResourceName
@@ -6653,6 +6918,7 @@ package lightsail {
   }
 
   object UpdateRelationalDatabaseParametersResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateRelationalDatabaseParametersResult = {
@@ -6676,6 +6942,7 @@ package lightsail {
   }
 
   object UpdateRelationalDatabaseRequest {
+    @inline
     def apply(
         relationalDatabaseName: ResourceName,
         applyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -6711,6 +6978,7 @@ package lightsail {
   }
 
   object UpdateRelationalDatabaseResult {
+    @inline
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateRelationalDatabaseResult = {

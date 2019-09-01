@@ -92,107 +92,111 @@ package object appstream {
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
-    def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
+    @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
       service.associateFleet(params).promise.toFuture
-    def batchAssociateUserStackFuture(params: BatchAssociateUserStackRequest): Future[BatchAssociateUserStackResult] =
-      service.batchAssociateUserStack(params).promise.toFuture
-    def batchDisassociateUserStackFuture(
+    @inline def batchAssociateUserStackFuture(
+        params: BatchAssociateUserStackRequest
+    ): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise.toFuture
+    @inline def batchDisassociateUserStackFuture(
         params: BatchDisassociateUserStackRequest
     ): Future[BatchDisassociateUserStackResult] = service.batchDisassociateUserStack(params).promise.toFuture
-    def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] =
+    @inline def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] =
       service.copyImage(params).promise.toFuture
-    def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] =
+    @inline def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] =
       service.createDirectoryConfig(params).promise.toFuture
-    def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
       service.createFleet(params).promise.toFuture
-    def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] =
+    @inline def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] =
       service.createImageBuilder(params).promise.toFuture
-    def createImageBuilderStreamingURLFuture(
+    @inline def createImageBuilderStreamingURLFuture(
         params: CreateImageBuilderStreamingURLRequest
     ): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise.toFuture
-    def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
+    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
       service.createStack(params).promise.toFuture
-    def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
+    @inline def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
       service.createStreamingURL(params).promise.toFuture
-    def createUsageReportSubscriptionFuture(
+    @inline def createUsageReportSubscriptionFuture(
         params: CreateUsageReportSubscriptionRequest
     ): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
       service.createUser(params).promise.toFuture
-    def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
+    @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
       service.deleteDirectoryConfig(params).promise.toFuture
-    def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] =
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] =
       service.deleteFleet(params).promise.toFuture
-    def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] =
+    @inline def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] =
       service.deleteImageBuilder(params).promise.toFuture
-    def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] =
+    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] =
       service.deleteImage(params).promise.toFuture
-    def deleteImagePermissionsFuture(params: DeleteImagePermissionsRequest): Future[DeleteImagePermissionsResult] =
-      service.deleteImagePermissions(params).promise.toFuture
-    def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
+    @inline def deleteImagePermissionsFuture(
+        params: DeleteImagePermissionsRequest
+    ): Future[DeleteImagePermissionsResult] = service.deleteImagePermissions(params).promise.toFuture
+    @inline def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
       service.deleteStack(params).promise.toFuture
-    def deleteUsageReportSubscriptionFuture(
+    @inline def deleteUsageReportSubscriptionFuture(
         params: DeleteUsageReportSubscriptionRequest
     ): Future[DeleteUsageReportSubscriptionResult] = service.deleteUsageReportSubscription(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
       service.deleteUser(params).promise.toFuture
-    def describeDirectoryConfigsFuture(
+    @inline def describeDirectoryConfigsFuture(
         params: DescribeDirectoryConfigsRequest
     ): Future[DescribeDirectoryConfigsResult] = service.describeDirectoryConfigs(params).promise.toFuture
-    def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
+    @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
       service.describeFleets(params).promise.toFuture
-    def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] =
+    @inline def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] =
       service.describeImageBuilders(params).promise.toFuture
-    def describeImagePermissionsFuture(
+    @inline def describeImagePermissionsFuture(
         params: DescribeImagePermissionsRequest
     ): Future[DescribeImagePermissionsResult] = service.describeImagePermissions(params).promise.toFuture
-    def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
+    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
       service.describeImages(params).promise.toFuture
-    def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] =
+    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] =
       service.describeSessions(params).promise.toFuture
-    def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
+    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
       service.describeStacks(params).promise.toFuture
-    def describeUsageReportSubscriptionsFuture(
+    @inline def describeUsageReportSubscriptionsFuture(
         params: DescribeUsageReportSubscriptionsRequest
     ): Future[DescribeUsageReportSubscriptionsResult] =
       service.describeUsageReportSubscriptions(params).promise.toFuture
-    def describeUserStackAssociationsFuture(
+    @inline def describeUserStackAssociationsFuture(
         params: DescribeUserStackAssociationsRequest
     ): Future[DescribeUserStackAssociationsResult] = service.describeUserStackAssociations(params).promise.toFuture
-    def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] =
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] =
       service.describeUsers(params).promise.toFuture
-    def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] =
+    @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] =
       service.disableUser(params).promise.toFuture
-    def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] =
+    @inline def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] =
       service.disassociateFleet(params).promise.toFuture
-    def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] =
+    @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] =
       service.enableUser(params).promise.toFuture
-    def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] =
+    @inline def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] =
       service.expireSession(params).promise.toFuture
-    def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] =
+    @inline def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] =
       service.listAssociatedFleets(params).promise.toFuture
-    def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] =
+    @inline def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] =
       service.listAssociatedStacks(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] =
+    @inline def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] =
       service.startFleet(params).promise.toFuture
-    def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] =
+    @inline def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] =
       service.startImageBuilder(params).promise.toFuture
-    def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] = service.stopFleet(params).promise.toFuture
-    def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] =
+    @inline def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] =
+      service.stopFleet(params).promise.toFuture
+    @inline def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] =
       service.stopImageBuilder(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] =
+    @inline def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] =
       service.updateDirectoryConfig(params).promise.toFuture
-    def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] =
+    @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] =
       service.updateFleet(params).promise.toFuture
-    def updateImagePermissionsFuture(params: UpdateImagePermissionsRequest): Future[UpdateImagePermissionsResult] =
-      service.updateImagePermissions(params).promise.toFuture
-    def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] =
+    @inline def updateImagePermissionsFuture(
+        params: UpdateImagePermissionsRequest
+    ): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise.toFuture
+    @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] =
       service.updateStack(params).promise.toFuture
   }
 }
@@ -277,6 +281,7 @@ package appstream {
   }
 
   object AccessEndpoint {
+    @inline
     def apply(
         EndpointType: AccessEndpointType,
         VpceId: js.UndefOr[String] = js.undefined
@@ -329,6 +334,7 @@ package appstream {
   }
 
   object Application {
+    @inline
     def apply(
         DisplayName: js.UndefOr[String] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
@@ -360,6 +366,7 @@ package appstream {
   }
 
   object ApplicationSettings {
+    @inline
     def apply(
         Enabled: Boolean,
         SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined
@@ -384,6 +391,7 @@ package appstream {
   }
 
   object ApplicationSettingsResponse {
+    @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
         S3BucketName: js.UndefOr[String] = js.undefined,
@@ -404,6 +412,7 @@ package appstream {
   }
 
   object AssociateFleetRequest {
+    @inline
     def apply(
         FleetName: String,
         StackName: String
@@ -421,6 +430,7 @@ package appstream {
   trait AssociateFleetResult extends js.Object {}
 
   object AssociateFleetResult {
+    @inline
     def apply(
         ): AssociateFleetResult = {
       val __obj = js.Dynamic.literal()
@@ -443,6 +453,7 @@ package appstream {
   }
 
   object BatchAssociateUserStackRequest {
+    @inline
     def apply(
         UserStackAssociations: UserStackAssociationList
     ): BatchAssociateUserStackRequest = {
@@ -460,6 +471,7 @@ package appstream {
   }
 
   object BatchAssociateUserStackResult {
+    @inline
     def apply(
         errors: js.UndefOr[UserStackAssociationErrorList] = js.undefined
     ): BatchAssociateUserStackResult = {
@@ -475,6 +487,7 @@ package appstream {
   }
 
   object BatchDisassociateUserStackRequest {
+    @inline
     def apply(
         UserStackAssociations: UserStackAssociationList
     ): BatchDisassociateUserStackRequest = {
@@ -492,6 +505,7 @@ package appstream {
   }
 
   object BatchDisassociateUserStackResult {
+    @inline
     def apply(
         errors: js.UndefOr[UserStackAssociationErrorList] = js.undefined
     ): BatchDisassociateUserStackResult = {
@@ -510,6 +524,7 @@ package appstream {
   }
 
   object ComputeCapacity {
+    @inline
     def apply(
         DesiredInstances: Int
     ): ComputeCapacity = {
@@ -533,6 +548,7 @@ package appstream {
   }
 
   object ComputeCapacityStatus {
+    @inline
     def apply(
         Desired: Int,
         Available: js.UndefOr[Int] = js.undefined,
@@ -559,6 +575,7 @@ package appstream {
   }
 
   object CopyImageRequest {
+    @inline
     def apply(
         DestinationImageName: Name,
         DestinationRegion: RegionName,
@@ -584,6 +601,7 @@ package appstream {
   }
 
   object CopyImageResponse {
+    @inline
     def apply(
         DestinationImageName: js.UndefOr[Name] = js.undefined
     ): CopyImageResponse = {
@@ -601,6 +619,7 @@ package appstream {
   }
 
   object CreateDirectoryConfigRequest {
+    @inline
     def apply(
         DirectoryName: DirectoryName,
         OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList,
@@ -622,6 +641,7 @@ package appstream {
   }
 
   object CreateDirectoryConfigResult {
+    @inline
     def apply(
         DirectoryConfig: js.UndefOr[DirectoryConfig] = js.undefined
     ): CreateDirectoryConfigResult = {
@@ -651,6 +671,7 @@ package appstream {
   }
 
   object CreateFleetRequest {
+    @inline
     def apply(
         ComputeCapacity: ComputeCapacity,
         InstanceType: String,
@@ -702,6 +723,7 @@ package appstream {
   }
 
   object CreateFleetResult {
+    @inline
     def apply(
         Fleet: js.UndefOr[Fleet] = js.undefined
     ): CreateFleetResult = {
@@ -728,6 +750,7 @@ package appstream {
   }
 
   object CreateImageBuilderRequest {
+    @inline
     def apply(
         InstanceType: String,
         Name: Name,
@@ -769,6 +792,7 @@ package appstream {
   }
 
   object CreateImageBuilderResult {
+    @inline
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): CreateImageBuilderResult = {
@@ -785,6 +809,7 @@ package appstream {
   }
 
   object CreateImageBuilderStreamingURLRequest {
+    @inline
     def apply(
         Name: String,
         Validity: js.UndefOr[Double] = js.undefined
@@ -805,6 +830,7 @@ package appstream {
   }
 
   object CreateImageBuilderStreamingURLResult {
+    @inline
     def apply(
         Expires: js.UndefOr[Timestamp] = js.undefined,
         StreamingURL: js.UndefOr[String] = js.undefined
@@ -831,6 +857,7 @@ package appstream {
   }
 
   object CreateStackRequest {
+    @inline
     def apply(
         Name: Name,
         AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
@@ -866,6 +893,7 @@ package appstream {
   }
 
   object CreateStackResult {
+    @inline
     def apply(
         Stack: js.UndefOr[Stack] = js.undefined
     ): CreateStackResult = {
@@ -886,6 +914,7 @@ package appstream {
   }
 
   object CreateStreamingURLRequest {
+    @inline
     def apply(
         FleetName: String,
         StackName: String,
@@ -914,6 +943,7 @@ package appstream {
   }
 
   object CreateStreamingURLResult {
+    @inline
     def apply(
         Expires: js.UndefOr[Timestamp] = js.undefined,
         StreamingURL: js.UndefOr[String] = js.undefined
@@ -929,6 +959,7 @@ package appstream {
   trait CreateUsageReportSubscriptionRequest extends js.Object {}
 
   object CreateUsageReportSubscriptionRequest {
+    @inline
     def apply(
         ): CreateUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
@@ -944,6 +975,7 @@ package appstream {
   }
 
   object CreateUsageReportSubscriptionResult {
+    @inline
     def apply(
         S3BucketName: js.UndefOr[String] = js.undefined,
         Schedule: js.UndefOr[UsageReportSchedule] = js.undefined
@@ -965,6 +997,7 @@ package appstream {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         UserName: Username,
@@ -988,6 +1021,7 @@ package appstream {
   trait CreateUserResult extends js.Object {}
 
   object CreateUserResult {
+    @inline
     def apply(
         ): CreateUserResult = {
       val __obj = js.Dynamic.literal()
@@ -1002,6 +1036,7 @@ package appstream {
   }
 
   object DeleteDirectoryConfigRequest {
+    @inline
     def apply(
         DirectoryName: DirectoryName
     ): DeleteDirectoryConfigRequest = {
@@ -1017,6 +1052,7 @@ package appstream {
   trait DeleteDirectoryConfigResult extends js.Object {}
 
   object DeleteDirectoryConfigResult {
+    @inline
     def apply(
         ): DeleteDirectoryConfigResult = {
       val __obj = js.Dynamic.literal()
@@ -1031,6 +1067,7 @@ package appstream {
   }
 
   object DeleteFleetRequest {
+    @inline
     def apply(
         Name: String
     ): DeleteFleetRequest = {
@@ -1046,6 +1083,7 @@ package appstream {
   trait DeleteFleetResult extends js.Object {}
 
   object DeleteFleetResult {
+    @inline
     def apply(
         ): DeleteFleetResult = {
       val __obj = js.Dynamic.literal()
@@ -1060,6 +1098,7 @@ package appstream {
   }
 
   object DeleteImageBuilderRequest {
+    @inline
     def apply(
         Name: Name
     ): DeleteImageBuilderRequest = {
@@ -1077,6 +1116,7 @@ package appstream {
   }
 
   object DeleteImageBuilderResult {
+    @inline
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): DeleteImageBuilderResult = {
@@ -1093,6 +1133,7 @@ package appstream {
   }
 
   object DeleteImagePermissionsRequest {
+    @inline
     def apply(
         Name: Name,
         SharedAccountId: AwsAccountId
@@ -1110,6 +1151,7 @@ package appstream {
   trait DeleteImagePermissionsResult extends js.Object {}
 
   object DeleteImagePermissionsResult {
+    @inline
     def apply(
         ): DeleteImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
@@ -1124,6 +1166,7 @@ package appstream {
   }
 
   object DeleteImageRequest {
+    @inline
     def apply(
         Name: Name
     ): DeleteImageRequest = {
@@ -1141,6 +1184,7 @@ package appstream {
   }
 
   object DeleteImageResult {
+    @inline
     def apply(
         Image: js.UndefOr[Image] = js.undefined
     ): DeleteImageResult = {
@@ -1156,6 +1200,7 @@ package appstream {
   }
 
   object DeleteStackRequest {
+    @inline
     def apply(
         Name: String
     ): DeleteStackRequest = {
@@ -1171,6 +1216,7 @@ package appstream {
   trait DeleteStackResult extends js.Object {}
 
   object DeleteStackResult {
+    @inline
     def apply(
         ): DeleteStackResult = {
       val __obj = js.Dynamic.literal()
@@ -1183,6 +1229,7 @@ package appstream {
   trait DeleteUsageReportSubscriptionRequest extends js.Object {}
 
   object DeleteUsageReportSubscriptionRequest {
+    @inline
     def apply(
         ): DeleteUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
@@ -1195,6 +1242,7 @@ package appstream {
   trait DeleteUsageReportSubscriptionResult extends js.Object {}
 
   object DeleteUsageReportSubscriptionResult {
+    @inline
     def apply(
         ): DeleteUsageReportSubscriptionResult = {
       val __obj = js.Dynamic.literal()
@@ -1210,6 +1258,7 @@ package appstream {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         UserName: Username
@@ -1227,6 +1276,7 @@ package appstream {
   trait DeleteUserResult extends js.Object {}
 
   object DeleteUserResult {
+    @inline
     def apply(
         ): DeleteUserResult = {
       val __obj = js.Dynamic.literal()
@@ -1243,6 +1293,7 @@ package appstream {
   }
 
   object DescribeDirectoryConfigsRequest {
+    @inline
     def apply(
         DirectoryNames: js.UndefOr[DirectoryNameList] = js.undefined,
         MaxResults: js.UndefOr[Int] = js.undefined,
@@ -1263,6 +1314,7 @@ package appstream {
   }
 
   object DescribeDirectoryConfigsResult {
+    @inline
     def apply(
         DirectoryConfigs: js.UndefOr[DirectoryConfigList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1281,6 +1333,7 @@ package appstream {
   }
 
   object DescribeFleetsRequest {
+    @inline
     def apply(
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1299,6 +1352,7 @@ package appstream {
   }
 
   object DescribeFleetsResult {
+    @inline
     def apply(
         Fleets: js.UndefOr[FleetList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1318,6 +1372,7 @@ package appstream {
   }
 
   object DescribeImageBuildersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[Int] = js.undefined,
         Names: js.UndefOr[StringList] = js.undefined,
@@ -1338,6 +1393,7 @@ package appstream {
   }
 
   object DescribeImageBuildersResult {
+    @inline
     def apply(
         ImageBuilders: js.UndefOr[ImageBuilderList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1358,6 +1414,7 @@ package appstream {
   }
 
   object DescribeImagePermissionsRequest {
+    @inline
     def apply(
         Name: Name,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1383,6 +1440,7 @@ package appstream {
   }
 
   object DescribeImagePermissionsResult {
+    @inline
     def apply(
         Name: js.UndefOr[Name] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -1408,6 +1466,7 @@ package appstream {
   }
 
   object DescribeImagesRequest {
+    @inline
     def apply(
         Arns: js.UndefOr[ArnList] = js.undefined,
         MaxResults: js.UndefOr[DescribeImagesMaxResults] = js.undefined,
@@ -1432,6 +1491,7 @@ package appstream {
   }
 
   object DescribeImagesResult {
+    @inline
     def apply(
         Images: js.UndefOr[ImageList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1454,6 +1514,7 @@ package appstream {
   }
 
   object DescribeSessionsRequest {
+    @inline
     def apply(
         FleetName: String,
         StackName: String,
@@ -1482,6 +1543,7 @@ package appstream {
   }
 
   object DescribeSessionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Sessions: js.UndefOr[SessionList] = js.undefined
@@ -1500,6 +1562,7 @@ package appstream {
   }
 
   object DescribeStacksRequest {
+    @inline
     def apply(
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1518,6 +1581,7 @@ package appstream {
   }
 
   object DescribeStacksResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Stacks: js.UndefOr[StackList] = js.undefined
@@ -1536,6 +1600,7 @@ package appstream {
   }
 
   object DescribeUsageReportSubscriptionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1554,6 +1619,7 @@ package appstream {
   }
 
   object DescribeUsageReportSubscriptionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         UsageReportSubscriptions: js.UndefOr[UsageReportSubscriptionList] = js.undefined
@@ -1575,6 +1641,7 @@ package appstream {
   }
 
   object DescribeUserStackAssociationsRequest {
+    @inline
     def apply(
         AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1599,6 +1666,7 @@ package appstream {
   }
 
   object DescribeUserStackAssociationsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined
@@ -1618,6 +1686,7 @@ package appstream {
   }
 
   object DescribeUsersRequest {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         MaxResults: js.UndefOr[Int] = js.undefined,
@@ -1640,6 +1709,7 @@ package appstream {
   }
 
   object DescribeUsersResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Users: js.UndefOr[UserList] = js.undefined
@@ -1663,6 +1733,7 @@ package appstream {
   }
 
   object DirectoryConfig {
+    @inline
     def apply(
         DirectoryName: DirectoryName,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1691,6 +1762,7 @@ package appstream {
   }
 
   object DisableUserRequest {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         UserName: Username
@@ -1708,6 +1780,7 @@ package appstream {
   trait DisableUserResult extends js.Object {}
 
   object DisableUserResult {
+    @inline
     def apply(
         ): DisableUserResult = {
       val __obj = js.Dynamic.literal()
@@ -1723,6 +1796,7 @@ package appstream {
   }
 
   object DisassociateFleetRequest {
+    @inline
     def apply(
         FleetName: String,
         StackName: String
@@ -1740,6 +1814,7 @@ package appstream {
   trait DisassociateFleetResult extends js.Object {}
 
   object DisassociateFleetResult {
+    @inline
     def apply(
         ): DisassociateFleetResult = {
       val __obj = js.Dynamic.literal()
@@ -1758,6 +1833,7 @@ package appstream {
   }
 
   object DomainJoinInfo {
+    @inline
     def apply(
         DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
         OrganizationalUnitDistinguishedName: js.UndefOr[OrganizationalUnitDistinguishedName] = js.undefined
@@ -1778,6 +1854,7 @@ package appstream {
   }
 
   object EnableUserRequest {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         UserName: Username
@@ -1795,6 +1872,7 @@ package appstream {
   trait EnableUserResult extends js.Object {}
 
   object EnableUserResult {
+    @inline
     def apply(
         ): EnableUserResult = {
       val __obj = js.Dynamic.literal()
@@ -1809,6 +1887,7 @@ package appstream {
   }
 
   object ExpireSessionRequest {
+    @inline
     def apply(
         SessionId: String
     ): ExpireSessionRequest = {
@@ -1824,6 +1903,7 @@ package appstream {
   trait ExpireSessionResult extends js.Object {}
 
   object ExpireSessionResult {
+    @inline
     def apply(
         ): ExpireSessionResult = {
       val __obj = js.Dynamic.literal()
@@ -1858,6 +1938,7 @@ package appstream {
   }
 
   object Fleet {
+    @inline
     def apply(
         Arn: Arn,
         ComputeCapacityStatus: ComputeCapacityStatus,
@@ -1930,6 +2011,7 @@ package appstream {
   }
 
   object FleetError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[FleetErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined
@@ -2044,6 +2126,7 @@ package appstream {
   }
 
   object Image {
+    @inline
     def apply(
         Name: String,
         Applications: js.UndefOr[Applications] = js.undefined,
@@ -2112,6 +2195,7 @@ package appstream {
   }
 
   object ImageBuilder {
+    @inline
     def apply(
         Name: String,
         AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
@@ -2185,6 +2269,7 @@ package appstream {
   }
 
   object ImageBuilderStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[ImageBuilderStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -2213,6 +2298,7 @@ package appstream {
   }
 
   object ImagePermissions {
+    @inline
     def apply(
         allowFleet: js.UndefOr[BooleanObject] = js.undefined,
         allowImageBuilder: js.UndefOr[BooleanObject] = js.undefined
@@ -2244,6 +2330,7 @@ package appstream {
   }
 
   object ImageStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[ImageStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -2273,6 +2360,7 @@ package appstream {
   }
 
   object LastReportGenerationExecutionError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[UsageReportExecutionErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined
@@ -2291,6 +2379,7 @@ package appstream {
   }
 
   object ListAssociatedFleetsRequest {
+    @inline
     def apply(
         StackName: String,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2311,6 +2400,7 @@ package appstream {
   }
 
   object ListAssociatedFleetsResult {
+    @inline
     def apply(
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2329,6 +2419,7 @@ package appstream {
   }
 
   object ListAssociatedStacksRequest {
+    @inline
     def apply(
         FleetName: String,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2349,6 +2440,7 @@ package appstream {
   }
 
   object ListAssociatedStacksResult {
+    @inline
     def apply(
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2366,6 +2458,7 @@ package appstream {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn
     ): ListTagsForResourceRequest = {
@@ -2383,6 +2476,7 @@ package appstream {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2409,6 +2503,7 @@ package appstream {
   }
 
   object NetworkAccessConfiguration {
+    @inline
     def apply(
         EniId: js.UndefOr[String] = js.undefined,
         EniPrivateIpAddress: js.UndefOr[String] = js.undefined
@@ -2446,6 +2541,7 @@ package appstream {
   }
 
   object ResourceError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[FleetErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -2469,6 +2565,7 @@ package appstream {
   }
 
   object ServiceAccountCredentials {
+    @inline
     def apply(
         AccountName: AccountName,
         AccountPassword: AccountPassword
@@ -2500,6 +2597,7 @@ package appstream {
   }
 
   object Session {
+    @inline
     def apply(
         FleetName: String,
         Id: String,
@@ -2559,6 +2657,7 @@ package appstream {
   }
 
   object SharedImagePermissions {
+    @inline
     def apply(
         imagePermissions: ImagePermissions,
         sharedAccountId: AwsAccountId
@@ -2592,6 +2691,7 @@ package appstream {
   }
 
   object Stack {
+    @inline
     def apply(
         Name: String,
         AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
@@ -2661,6 +2761,7 @@ package appstream {
   }
 
   object StackError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[StackErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined
@@ -2685,6 +2786,7 @@ package appstream {
   }
 
   object StartFleetRequest {
+    @inline
     def apply(
         Name: String
     ): StartFleetRequest = {
@@ -2700,6 +2802,7 @@ package appstream {
   trait StartFleetResult extends js.Object {}
 
   object StartFleetResult {
+    @inline
     def apply(
         ): StartFleetResult = {
       val __obj = js.Dynamic.literal()
@@ -2715,6 +2818,7 @@ package appstream {
   }
 
   object StartImageBuilderRequest {
+    @inline
     def apply(
         Name: String,
         AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined
@@ -2734,6 +2838,7 @@ package appstream {
   }
 
   object StartImageBuilderResult {
+    @inline
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): StartImageBuilderResult = {
@@ -2749,6 +2854,7 @@ package appstream {
   }
 
   object StopFleetRequest {
+    @inline
     def apply(
         Name: String
     ): StopFleetRequest = {
@@ -2764,6 +2870,7 @@ package appstream {
   trait StopFleetResult extends js.Object {}
 
   object StopFleetResult {
+    @inline
     def apply(
         ): StopFleetResult = {
       val __obj = js.Dynamic.literal()
@@ -2778,6 +2885,7 @@ package appstream {
   }
 
   object StopImageBuilderRequest {
+    @inline
     def apply(
         Name: String
     ): StopImageBuilderRequest = {
@@ -2795,6 +2903,7 @@ package appstream {
   }
 
   object StopImageBuilderResult {
+    @inline
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): StopImageBuilderResult = {
@@ -2815,6 +2924,7 @@ package appstream {
   }
 
   object StorageConnector {
+    @inline
     def apply(
         ConnectorType: StorageConnectorType,
         Domains: js.UndefOr[DomainList] = js.undefined,
@@ -2848,6 +2958,7 @@ package appstream {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         Tags: Tags
@@ -2865,6 +2976,7 @@ package appstream {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2880,6 +2992,7 @@ package appstream {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         TagKeys: TagKeyList
@@ -2897,6 +3010,7 @@ package appstream {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2913,6 +3027,7 @@ package appstream {
   }
 
   object UpdateDirectoryConfigRequest {
+    @inline
     def apply(
         DirectoryName: DirectoryName,
         OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
@@ -2938,6 +3053,7 @@ package appstream {
   }
 
   object UpdateDirectoryConfigResult {
+    @inline
     def apply(
         DirectoryConfig: js.UndefOr[DirectoryConfig] = js.undefined
     ): UpdateDirectoryConfigResult = {
@@ -2967,6 +3083,7 @@ package appstream {
   }
 
   object UpdateFleetRequest {
+    @inline
     def apply(
         AttributesToDelete: js.UndefOr[FleetAttributes] = js.undefined,
         ComputeCapacity: js.UndefOr[ComputeCapacity] = js.undefined,
@@ -3016,6 +3133,7 @@ package appstream {
   }
 
   object UpdateFleetResult {
+    @inline
     def apply(
         Fleet: js.UndefOr[Fleet] = js.undefined
     ): UpdateFleetResult = {
@@ -3033,6 +3151,7 @@ package appstream {
   }
 
   object UpdateImagePermissionsRequest {
+    @inline
     def apply(
         ImagePermissions: ImagePermissions,
         Name: Name,
@@ -3052,6 +3171,7 @@ package appstream {
   trait UpdateImagePermissionsResult extends js.Object {}
 
   object UpdateImagePermissionsResult {
+    @inline
     def apply(
         ): UpdateImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
@@ -3076,6 +3196,7 @@ package appstream {
   }
 
   object UpdateStackRequest {
+    @inline
     def apply(
         Name: String,
         AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
@@ -3113,6 +3234,7 @@ package appstream {
   }
 
   object UpdateStackResult {
+    @inline
     def apply(
         Stack: js.UndefOr[Stack] = js.undefined
     ): UpdateStackResult = {
@@ -3148,6 +3270,7 @@ package appstream {
   }
 
   object UsageReportSubscription {
+    @inline
     def apply(
         LastGeneratedReportDate: js.UndefOr[Timestamp] = js.undefined,
         S3BucketName: js.UndefOr[String] = js.undefined,
@@ -3179,6 +3302,7 @@ package appstream {
   }
 
   object User {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         Arn: js.UndefOr[Arn] = js.undefined,
@@ -3214,6 +3338,7 @@ package appstream {
   }
 
   object UserSetting {
+    @inline
     def apply(
         Action: Action,
         Permission: Permission
@@ -3239,6 +3364,7 @@ package appstream {
   }
 
   object UserStackAssociation {
+    @inline
     def apply(
         AuthenticationType: AuthenticationType,
         StackName: String,
@@ -3267,6 +3393,7 @@ package appstream {
   }
 
   object UserStackAssociationError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[UserStackAssociationErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -3306,6 +3433,7 @@ package appstream {
   }
 
   object VpcConfig {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIdList] = js.undefined

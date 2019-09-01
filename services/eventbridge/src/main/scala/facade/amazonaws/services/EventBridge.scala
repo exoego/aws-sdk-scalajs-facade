@@ -74,66 +74,72 @@ package object eventbridge {
 
   implicit final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
 
-    def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
+    @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
       service.activateEventSource(params).promise.toFuture
-    def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] =
+    @inline def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] =
       service.createEventBus(params).promise.toFuture
-    def createPartnerEventSourceFuture(
+    @inline def createPartnerEventSourceFuture(
         params: CreatePartnerEventSourceRequest
     ): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise.toFuture
-    def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] =
+    @inline def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] =
       service.deactivateEventSource(params).promise.toFuture
-    def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] =
+    @inline def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] =
       service.deleteEventBus(params).promise.toFuture
-    def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] =
+    @inline def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] =
       service.deletePartnerEventSource(params).promise.toFuture
-    def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] = service.deleteRule(params).promise.toFuture
-    def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] =
+      service.deleteRule(params).promise.toFuture
+    @inline def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
       service.describeEventBus(params).promise.toFuture
-    def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] =
+    @inline def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] =
       service.describeEventSource(params).promise.toFuture
-    def describePartnerEventSourceFuture(
+    @inline def describePartnerEventSourceFuture(
         params: DescribePartnerEventSourceRequest
     ): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise.toFuture
-    def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
+    @inline def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
       service.describeRule(params).promise.toFuture
-    def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] = service.disableRule(params).promise.toFuture
-    def enableRuleFuture(params: EnableRuleRequest): Future[js.Object]   = service.enableRule(params).promise.toFuture
-    def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] =
+    @inline def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] =
+      service.disableRule(params).promise.toFuture
+    @inline def enableRuleFuture(params: EnableRuleRequest): Future[js.Object] =
+      service.enableRule(params).promise.toFuture
+    @inline def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] =
       service.listEventBuses(params).promise.toFuture
-    def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] =
+    @inline def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] =
       service.listEventSources(params).promise.toFuture
-    def listPartnerEventSourceAccountsFuture(
+    @inline def listPartnerEventSourceAccountsFuture(
         params: ListPartnerEventSourceAccountsRequest
     ): Future[ListPartnerEventSourceAccountsResponse] = service.listPartnerEventSourceAccounts(params).promise.toFuture
-    def listPartnerEventSourcesFuture(params: ListPartnerEventSourcesRequest): Future[ListPartnerEventSourcesResponse] =
-      service.listPartnerEventSources(params).promise.toFuture
-    def listRuleNamesByTargetFuture(params: ListRuleNamesByTargetRequest): Future[ListRuleNamesByTargetResponse] =
-      service.listRuleNamesByTarget(params).promise.toFuture
-    def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
+    @inline def listPartnerEventSourcesFuture(
+        params: ListPartnerEventSourcesRequest
+    ): Future[ListPartnerEventSourcesResponse] = service.listPartnerEventSources(params).promise.toFuture
+    @inline def listRuleNamesByTargetFuture(
+        params: ListRuleNamesByTargetRequest
+    ): Future[ListRuleNamesByTargetResponse] = service.listRuleNamesByTarget(params).promise.toFuture
+    @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
       service.listRules(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
+    @inline def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
       service.listTargetsByRule(params).promise.toFuture
-    def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
+    @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
       service.putEvents(params).promise.toFuture
-    def putPartnerEventsFuture(params: PutPartnerEventsRequest): Future[PutPartnerEventsResponse] =
+    @inline def putPartnerEventsFuture(params: PutPartnerEventsRequest): Future[PutPartnerEventsResponse] =
       service.putPartnerEvents(params).promise.toFuture
-    def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
+    @inline def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
       service.putPermission(params).promise.toFuture
-    def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] = service.putRule(params).promise.toFuture
-    def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
+    @inline def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] =
+      service.putRule(params).promise.toFuture
+    @inline def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
       service.putTargets(params).promise.toFuture
-    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
       service.removePermission(params).promise.toFuture
-    def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
+    @inline def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
       service.removeTargets(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
+    @inline def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
       service.testEventPattern(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
   }
 }
@@ -189,6 +195,7 @@ package eventbridge {
   }
 
   object ActivateEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): ActivateEventSourceRequest = {
@@ -218,6 +225,7 @@ package eventbridge {
   }
 
   object AwsVpcConfiguration {
+    @inline
     def apply(
         Subnets: StringList,
         AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
@@ -242,6 +250,7 @@ package eventbridge {
   }
 
   object BatchArrayProperties {
+    @inline
     def apply(
         Size: js.UndefOr[Int] = js.undefined
     ): BatchArrayProperties = {
@@ -263,6 +272,7 @@ package eventbridge {
   }
 
   object BatchParameters {
+    @inline
     def apply(
         JobDefinition: String,
         JobName: String,
@@ -289,6 +299,7 @@ package eventbridge {
   }
 
   object BatchRetryStrategy {
+    @inline
     def apply(
         Attempts: js.UndefOr[Int] = js.undefined
     ): BatchRetryStrategy = {
@@ -310,6 +321,7 @@ package eventbridge {
   }
 
   object Condition {
+    @inline
     def apply(
         Key: String,
         Type: String,
@@ -332,6 +344,7 @@ package eventbridge {
   }
 
   object CreateEventBusRequest {
+    @inline
     def apply(
         Name: EventBusName,
         EventSourceName: js.UndefOr[EventSourceName] = js.undefined
@@ -351,6 +364,7 @@ package eventbridge {
   }
 
   object CreateEventBusResponse {
+    @inline
     def apply(
         EventBusArn: js.UndefOr[String] = js.undefined
     ): CreateEventBusResponse = {
@@ -367,6 +381,7 @@ package eventbridge {
   }
 
   object CreatePartnerEventSourceRequest {
+    @inline
     def apply(
         Account: AccountId,
         Name: EventSourceName
@@ -386,6 +401,7 @@ package eventbridge {
   }
 
   object CreatePartnerEventSourceResponse {
+    @inline
     def apply(
         EventSourceArn: js.UndefOr[String] = js.undefined
     ): CreatePartnerEventSourceResponse = {
@@ -401,6 +417,7 @@ package eventbridge {
   }
 
   object DeactivateEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DeactivateEventSourceRequest = {
@@ -418,6 +435,7 @@ package eventbridge {
   }
 
   object DeleteEventBusRequest {
+    @inline
     def apply(
         Name: EventBusName
     ): DeleteEventBusRequest = {
@@ -436,6 +454,7 @@ package eventbridge {
   }
 
   object DeletePartnerEventSourceRequest {
+    @inline
     def apply(
         Account: AccountId,
         Name: EventSourceName
@@ -457,6 +476,7 @@ package eventbridge {
   }
 
   object DeleteRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -478,6 +498,7 @@ package eventbridge {
   }
 
   object DescribeEventBusRequest {
+    @inline
     def apply(
         Name: js.UndefOr[EventBusName] = js.undefined
     ): DescribeEventBusRequest = {
@@ -495,6 +516,7 @@ package eventbridge {
   }
 
   object DescribeEventBusResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -514,6 +536,7 @@ package eventbridge {
   }
 
   object DescribeEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DescribeEventSourceRequest = {
@@ -536,6 +559,7 @@ package eventbridge {
   }
 
   object DescribeEventSourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
@@ -561,6 +585,7 @@ package eventbridge {
   }
 
   object DescribePartnerEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DescribePartnerEventSourceRequest = {
@@ -579,6 +604,7 @@ package eventbridge {
   }
 
   object DescribePartnerEventSourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -597,6 +623,7 @@ package eventbridge {
   }
 
   object DescribeRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -624,6 +651,7 @@ package eventbridge {
   }
 
   object DescribeRuleResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[RuleArn] = js.undefined,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -656,6 +684,7 @@ package eventbridge {
   }
 
   object DisableRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -683,6 +712,7 @@ package eventbridge {
   }
 
   object EcsParameters {
+    @inline
     def apply(
         TaskDefinitionArn: Arn,
         Group: js.UndefOr[String] = js.undefined,
@@ -711,6 +741,7 @@ package eventbridge {
   }
 
   object EnableRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -735,6 +766,7 @@ package eventbridge {
   }
 
   object EventBus {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -762,6 +794,7 @@ package eventbridge {
   }
 
   object EventSource {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
@@ -799,6 +832,7 @@ package eventbridge {
   }
 
   object InputTransformer {
+    @inline
     def apply(
         InputTemplate: TransformerInput,
         InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined
@@ -821,6 +855,7 @@ package eventbridge {
   }
 
   object KinesisParameters {
+    @inline
     def apply(
         PartitionKeyPath: TargetPartitionKeyPath
     ): KinesisParameters = {
@@ -847,6 +882,7 @@ package eventbridge {
   }
 
   object ListEventBusesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NamePrefix: js.UndefOr[EventBusName] = js.undefined,
@@ -867,6 +903,7 @@ package eventbridge {
   }
 
   object ListEventBusesResponse {
+    @inline
     def apply(
         EventBuses: js.UndefOr[EventBusList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -886,6 +923,7 @@ package eventbridge {
   }
 
   object ListEventSourcesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NamePrefix: js.UndefOr[EventSourceNamePrefix] = js.undefined,
@@ -906,6 +944,7 @@ package eventbridge {
   }
 
   object ListEventSourcesResponse {
+    @inline
     def apply(
         EventSources: js.UndefOr[EventSourceList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -925,6 +964,7 @@ package eventbridge {
   }
 
   object ListPartnerEventSourceAccountsRequest {
+    @inline
     def apply(
         EventSourceName: EventSourceName,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -947,6 +987,7 @@ package eventbridge {
   }
 
   object ListPartnerEventSourceAccountsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSourceAccounts: js.UndefOr[PartnerEventSourceAccountList] = js.undefined
@@ -968,6 +1009,7 @@ package eventbridge {
   }
 
   object ListPartnerEventSourcesRequest {
+    @inline
     def apply(
         NamePrefix: PartnerEventSourceNamePrefix,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -990,6 +1032,7 @@ package eventbridge {
   }
 
   object ListPartnerEventSourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSources: js.UndefOr[PartnerEventSourceList] = js.undefined
@@ -1010,6 +1053,7 @@ package eventbridge {
   }
 
   object ListRuleNamesByTargetRequest {
+    @inline
     def apply(
         TargetArn: TargetArn,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -1034,6 +1078,7 @@ package eventbridge {
   }
 
   object ListRuleNamesByTargetResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RuleNames: js.UndefOr[RuleNameList] = js.undefined
@@ -1054,6 +1099,7 @@ package eventbridge {
   }
 
   object ListRulesRequest {
+    @inline
     def apply(
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -1076,6 +1122,7 @@ package eventbridge {
   }
 
   object ListRulesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Rules: js.UndefOr[RuleResponseList] = js.undefined
@@ -1093,6 +1140,7 @@ package eventbridge {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn
     ): ListTagsForResourceRequest = {
@@ -1110,6 +1158,7 @@ package eventbridge {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1128,6 +1177,7 @@ package eventbridge {
   }
 
   object ListTargetsByRuleRequest {
+    @inline
     def apply(
         Rule: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -1152,6 +1202,7 @@ package eventbridge {
   }
 
   object ListTargetsByRuleResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[TargetList] = js.undefined
@@ -1172,6 +1223,7 @@ package eventbridge {
   }
 
   object NetworkConfiguration {
+    @inline
     def apply(
         awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
     ): NetworkConfiguration = {
@@ -1191,6 +1243,7 @@ package eventbridge {
   }
 
   object PartnerEventSource {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -1214,6 +1267,7 @@ package eventbridge {
   }
 
   object PartnerEventSourceAccount {
+    @inline
     def apply(
         Account: js.UndefOr[AccountId] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1235,6 +1289,7 @@ package eventbridge {
   }
 
   object PutEventsRequest {
+    @inline
     def apply(
         Entries: PutEventsRequestEntryList
     ): PutEventsRequest = {
@@ -1260,6 +1315,7 @@ package eventbridge {
   }
 
   object PutEventsRequestEntry {
+    @inline
     def apply(
         Detail: js.UndefOr[String] = js.undefined,
         DetailType: js.UndefOr[String] = js.undefined,
@@ -1286,6 +1342,7 @@ package eventbridge {
   }
 
   object PutEventsResponse {
+    @inline
     def apply(
         Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1308,6 +1365,7 @@ package eventbridge {
   }
 
   object PutEventsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1327,6 +1385,7 @@ package eventbridge {
   }
 
   object PutPartnerEventsRequest {
+    @inline
     def apply(
         Entries: PutPartnerEventsRequestEntryList
     ): PutPartnerEventsRequest = {
@@ -1351,6 +1410,7 @@ package eventbridge {
   }
 
   object PutPartnerEventsRequestEntry {
+    @inline
     def apply(
         Detail: js.UndefOr[String] = js.undefined,
         DetailType: js.UndefOr[String] = js.undefined,
@@ -1375,6 +1435,7 @@ package eventbridge {
   }
 
   object PutPartnerEventsResponse {
+    @inline
     def apply(
         Entries: js.UndefOr[PutPartnerEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1397,6 +1458,7 @@ package eventbridge {
   }
 
   object PutPartnerEventsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1420,6 +1482,7 @@ package eventbridge {
   }
 
   object PutPermissionRequest {
+    @inline
     def apply(
         Action: Action,
         Principal: Principal,
@@ -1452,6 +1515,7 @@ package eventbridge {
   }
 
   object PutRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -1483,6 +1547,7 @@ package eventbridge {
   }
 
   object PutRuleResponse {
+    @inline
     def apply(
         RuleArn: js.UndefOr[RuleArn] = js.undefined
     ): PutRuleResponse = {
@@ -1500,6 +1565,7 @@ package eventbridge {
   }
 
   object PutTargetsRequest {
+    @inline
     def apply(
         Rule: RuleName,
         Targets: TargetList,
@@ -1522,6 +1588,7 @@ package eventbridge {
   }
 
   object PutTargetsResponse {
+    @inline
     def apply(
         FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1544,6 +1611,7 @@ package eventbridge {
   }
 
   object PutTargetsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1564,6 +1632,7 @@ package eventbridge {
   }
 
   object RemovePermissionRequest {
+    @inline
     def apply(
         StatementId: StatementId,
         EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
@@ -1586,6 +1655,7 @@ package eventbridge {
   }
 
   object RemoveTargetsRequest {
+    @inline
     def apply(
         Ids: TargetIdList,
         Rule: RuleName,
@@ -1610,6 +1680,7 @@ package eventbridge {
   }
 
   object RemoveTargetsResponse {
+    @inline
     def apply(
         FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1632,6 +1703,7 @@ package eventbridge {
   }
 
   object RemoveTargetsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1662,6 +1734,7 @@ package eventbridge {
   }
 
   object Rule {
+    @inline
     def apply(
         Arn: js.UndefOr[RuleArn] = js.undefined,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -1703,6 +1776,7 @@ package eventbridge {
   }
 
   object RunCommandParameters {
+    @inline
     def apply(
         RunCommandTargets: RunCommandTargets
     ): RunCommandParameters = {
@@ -1724,6 +1798,7 @@ package eventbridge {
   }
 
   object RunCommandTarget {
+    @inline
     def apply(
         Key: RunCommandTargetKey,
         Values: RunCommandTargetValues
@@ -1746,6 +1821,7 @@ package eventbridge {
   }
 
   object SqsParameters {
+    @inline
     def apply(
         MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined
     ): SqsParameters = {
@@ -1765,6 +1841,7 @@ package eventbridge {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -1785,6 +1862,7 @@ package eventbridge {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn,
         Tags: TagList
@@ -1802,6 +1880,7 @@ package eventbridge {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1830,6 +1909,7 @@ package eventbridge {
   }
 
   object Target {
+    @inline
     def apply(
         Arn: TargetArn,
         Id: TargetId,
@@ -1868,6 +1948,7 @@ package eventbridge {
   }
 
   object TestEventPatternRequest {
+    @inline
     def apply(
         Event: String,
         EventPattern: EventPattern
@@ -1887,6 +1968,7 @@ package eventbridge {
   }
 
   object TestEventPatternResponse {
+    @inline
     def apply(
         Result: js.UndefOr[Boolean] = js.undefined
     ): TestEventPatternResponse = {
@@ -1903,6 +1985,7 @@ package eventbridge {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn,
         TagKeys: TagKeyList
@@ -1920,6 +2003,7 @@ package eventbridge {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

@@ -57,41 +57,44 @@ package object support {
 
   implicit final class SupportOps(private val service: Support) extends AnyVal {
 
-    def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
+    @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
       service.addAttachmentsToSet(params).promise.toFuture
-    def addCommunicationToCaseFuture(params: AddCommunicationToCaseRequest): Future[AddCommunicationToCaseResponse] =
-      service.addCommunicationToCase(params).promise.toFuture
-    def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
+    @inline def addCommunicationToCaseFuture(
+        params: AddCommunicationToCaseRequest
+    ): Future[AddCommunicationToCaseResponse] = service.addCommunicationToCase(params).promise.toFuture
+    @inline def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
       service.createCase(params).promise.toFuture
-    def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
+    @inline def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
       service.describeAttachment(params).promise.toFuture
-    def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
+    @inline def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
       service.describeCases(params).promise.toFuture
-    def describeCommunicationsFuture(params: DescribeCommunicationsRequest): Future[DescribeCommunicationsResponse] =
-      service.describeCommunications(params).promise.toFuture
-    def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
+    @inline def describeCommunicationsFuture(
+        params: DescribeCommunicationsRequest
+    ): Future[DescribeCommunicationsResponse] = service.describeCommunications(params).promise.toFuture
+    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
       service.describeServices(params).promise.toFuture
-    def describeSeverityLevelsFuture(params: DescribeSeverityLevelsRequest): Future[DescribeSeverityLevelsResponse] =
-      service.describeSeverityLevels(params).promise.toFuture
-    def describeTrustedAdvisorCheckRefreshStatusesFuture(
+    @inline def describeSeverityLevelsFuture(
+        params: DescribeSeverityLevelsRequest
+    ): Future[DescribeSeverityLevelsResponse] = service.describeSeverityLevels(params).promise.toFuture
+    @inline def describeTrustedAdvisorCheckRefreshStatusesFuture(
         params: DescribeTrustedAdvisorCheckRefreshStatusesRequest
     ): Future[DescribeTrustedAdvisorCheckRefreshStatusesResponse] =
       service.describeTrustedAdvisorCheckRefreshStatuses(params).promise.toFuture
-    def describeTrustedAdvisorCheckResultFuture(
+    @inline def describeTrustedAdvisorCheckResultFuture(
         params: DescribeTrustedAdvisorCheckResultRequest
     ): Future[DescribeTrustedAdvisorCheckResultResponse] =
       service.describeTrustedAdvisorCheckResult(params).promise.toFuture
-    def describeTrustedAdvisorCheckSummariesFuture(
+    @inline def describeTrustedAdvisorCheckSummariesFuture(
         params: DescribeTrustedAdvisorCheckSummariesRequest
     ): Future[DescribeTrustedAdvisorCheckSummariesResponse] =
       service.describeTrustedAdvisorCheckSummaries(params).promise.toFuture
-    def describeTrustedAdvisorChecksFuture(
+    @inline def describeTrustedAdvisorChecksFuture(
         params: DescribeTrustedAdvisorChecksRequest
     ): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise.toFuture
-    def refreshTrustedAdvisorCheckFuture(
+    @inline def refreshTrustedAdvisorCheckFuture(
         params: RefreshTrustedAdvisorCheckRequest
     ): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise.toFuture
-    def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
+    @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
       service.resolveCase(params).promise.toFuture
   }
 }
@@ -141,6 +144,7 @@ package support {
   }
 
   object AddAttachmentsToSetRequest {
+    @inline
     def apply(
         attachments: Attachments,
         attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined
@@ -164,6 +168,7 @@ package support {
   }
 
   object AddAttachmentsToSetResponse {
+    @inline
     def apply(
         attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
         expiryTime: js.UndefOr[ExpiryTime] = js.undefined
@@ -187,6 +192,7 @@ package support {
   }
 
   object AddCommunicationToCaseRequest {
+    @inline
     def apply(
         communicationBody: CommunicationBody,
         attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
@@ -213,6 +219,7 @@ package support {
   }
 
   object AddCommunicationToCaseResponse {
+    @inline
     def apply(
         result: js.UndefOr[Result] = js.undefined
     ): AddCommunicationToCaseResponse = {
@@ -232,6 +239,7 @@ package support {
   }
 
   object Attachment {
+    @inline
     def apply(
         data: js.UndefOr[Data] = js.undefined,
         fileName: js.UndefOr[FileName] = js.undefined
@@ -253,6 +261,7 @@ package support {
   }
 
   object AttachmentDetails {
+    @inline
     def apply(
         attachmentId: js.UndefOr[AttachmentId] = js.undefined,
         fileName: js.UndefOr[FileName] = js.undefined
@@ -344,6 +353,7 @@ package support {
   }
 
   object CaseDetails {
+    @inline
     def apply(
         caseId: js.UndefOr[CaseId] = js.undefined,
         categoryCode: js.UndefOr[CategoryCode] = js.undefined,
@@ -393,6 +403,7 @@ package support {
   }
 
   object Category {
+    @inline
     def apply(
         code: js.UndefOr[CategoryCode] = js.undefined,
         name: js.UndefOr[CategoryName] = js.undefined
@@ -417,6 +428,7 @@ package support {
   }
 
   object Communication {
+    @inline
     def apply(
         attachmentSet: js.UndefOr[AttachmentSet] = js.undefined,
         body: js.UndefOr[CommunicationBody] = js.undefined,
@@ -451,6 +463,7 @@ package support {
   }
 
   object CreateCaseRequest {
+    @inline
     def apply(
         communicationBody: CommunicationBody,
         subject: Subject,
@@ -487,6 +500,7 @@ package support {
   }
 
   object CreateCaseResponse {
+    @inline
     def apply(
         caseId: js.UndefOr[CaseId] = js.undefined
     ): CreateCaseResponse = {
@@ -510,6 +524,7 @@ package support {
   }
 
   object DescribeAttachmentRequest {
+    @inline
     def apply(
         attachmentId: AttachmentId
     ): DescribeAttachmentRequest = {
@@ -530,6 +545,7 @@ package support {
   }
 
   object DescribeAttachmentResponse {
+    @inline
     def apply(
         attachment: js.UndefOr[Attachment] = js.undefined
     ): DescribeAttachmentResponse = {
@@ -556,6 +572,7 @@ package support {
   }
 
   object DescribeCasesRequest {
+    @inline
     def apply(
         afterTime: js.UndefOr[AfterTime] = js.undefined,
         beforeTime: js.UndefOr[BeforeTime] = js.undefined,
@@ -591,6 +608,7 @@ package support {
   }
 
   object DescribeCasesResponse {
+    @inline
     def apply(
         cases: js.UndefOr[CaseList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -615,6 +633,7 @@ package support {
   }
 
   object DescribeCommunicationsRequest {
+    @inline
     def apply(
         caseId: CaseId,
         afterTime: js.UndefOr[AfterTime] = js.undefined,
@@ -644,6 +663,7 @@ package support {
   }
 
   object DescribeCommunicationsResponse {
+    @inline
     def apply(
         communications: js.UndefOr[CommunicationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -665,6 +685,7 @@ package support {
   }
 
   object DescribeServicesRequest {
+    @inline
     def apply(
         language: js.UndefOr[Language] = js.undefined,
         serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined
@@ -685,6 +706,7 @@ package support {
   }
 
   object DescribeServicesResponse {
+    @inline
     def apply(
         services: js.UndefOr[ServiceList] = js.undefined
     ): DescribeServicesResponse = {
@@ -703,6 +725,7 @@ package support {
   }
 
   object DescribeSeverityLevelsRequest {
+    @inline
     def apply(
         language: js.UndefOr[Language] = js.undefined
     ): DescribeSeverityLevelsRequest = {
@@ -721,6 +744,7 @@ package support {
   }
 
   object DescribeSeverityLevelsResponse {
+    @inline
     def apply(
         severityLevels: js.UndefOr[SeverityLevelsList] = js.undefined
     ): DescribeSeverityLevelsResponse = {
@@ -739,6 +763,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesRequest {
+    @inline
     def apply(
         checkIds: StringList
     ): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
@@ -759,6 +784,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesResponse {
+    @inline
     def apply(
         statuses: TrustedAdvisorCheckRefreshStatusList
     ): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
@@ -780,6 +806,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckResultRequest {
+    @inline
     def apply(
         checkId: String,
         language: js.UndefOr[String] = js.undefined
@@ -802,6 +829,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckResultResponse {
+    @inline
     def apply(
         result: js.UndefOr[TrustedAdvisorCheckResult] = js.undefined
     ): DescribeTrustedAdvisorCheckResultResponse = {
@@ -820,6 +848,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckSummariesRequest {
+    @inline
     def apply(
         checkIds: StringList
     ): DescribeTrustedAdvisorCheckSummariesRequest = {
@@ -840,6 +869,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckSummariesResponse {
+    @inline
     def apply(
         summaries: TrustedAdvisorCheckSummaryList
     ): DescribeTrustedAdvisorCheckSummariesResponse = {
@@ -860,6 +890,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorChecksRequest {
+    @inline
     def apply(
         language: String
     ): DescribeTrustedAdvisorChecksRequest = {
@@ -880,6 +911,7 @@ package support {
   }
 
   object DescribeTrustedAdvisorChecksResponse {
+    @inline
     def apply(
         checks: TrustedAdvisorCheckList
     ): DescribeTrustedAdvisorChecksResponse = {
@@ -909,6 +941,7 @@ package support {
   }
 
   object RecentCaseCommunications {
+    @inline
     def apply(
         communications: js.UndefOr[CommunicationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -929,6 +962,7 @@ package support {
   }
 
   object RefreshTrustedAdvisorCheckRequest {
+    @inline
     def apply(
         checkId: String
     ): RefreshTrustedAdvisorCheckRequest = {
@@ -949,6 +983,7 @@ package support {
   }
 
   object RefreshTrustedAdvisorCheckResponse {
+    @inline
     def apply(
         status: TrustedAdvisorCheckRefreshStatus
     ): RefreshTrustedAdvisorCheckResponse = {
@@ -969,6 +1004,7 @@ package support {
   }
 
   object ResolveCaseRequest {
+    @inline
     def apply(
         caseId: js.UndefOr[CaseId] = js.undefined
     ): ResolveCaseRequest = {
@@ -988,6 +1024,7 @@ package support {
   }
 
   object ResolveCaseResponse {
+    @inline
     def apply(
         finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
         initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined
@@ -1010,6 +1047,7 @@ package support {
   }
 
   object Service {
+    @inline
     def apply(
         categories: js.UndefOr[CategoryList] = js.undefined,
         code: js.UndefOr[ServiceCode] = js.undefined,
@@ -1033,6 +1071,7 @@ package support {
   }
 
   object SeverityLevel {
+    @inline
     def apply(
         code: js.UndefOr[SeverityLevelCode] = js.undefined,
         name: js.UndefOr[SeverityLevelName] = js.undefined
@@ -1053,6 +1092,7 @@ package support {
   }
 
   object TrustedAdvisorCategorySpecificSummary {
+    @inline
     def apply(
         costOptimizing: js.UndefOr[TrustedAdvisorCostOptimizingSummary] = js.undefined
     ): TrustedAdvisorCategorySpecificSummary = {
@@ -1075,6 +1115,7 @@ package support {
   }
 
   object TrustedAdvisorCheckDescription {
+    @inline
     def apply(
         category: String,
         description: String,
@@ -1105,6 +1146,7 @@ package support {
   }
 
   object TrustedAdvisorCheckRefreshStatus {
+    @inline
     def apply(
         checkId: String,
         millisUntilNextRefreshable: Double,
@@ -1134,6 +1176,7 @@ package support {
   }
 
   object TrustedAdvisorCheckResult {
+    @inline
     def apply(
         categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
         checkId: String,
@@ -1169,6 +1212,7 @@ package support {
   }
 
   object TrustedAdvisorCheckSummary {
+    @inline
     def apply(
         categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
         checkId: String,
@@ -1200,6 +1244,7 @@ package support {
   }
 
   object TrustedAdvisorCostOptimizingSummary {
+    @inline
     def apply(
         estimatedMonthlySavings: Double,
         estimatedPercentMonthlySavings: Double
@@ -1226,6 +1271,7 @@ package support {
   }
 
   object TrustedAdvisorResourceDetail {
+    @inline
     def apply(
         metadata: StringList,
         resourceId: String,
@@ -1257,6 +1303,7 @@ package support {
   }
 
   object TrustedAdvisorResourcesSummary {
+    @inline
     def apply(
         resourcesFlagged: Double,
         resourcesIgnored: Double,

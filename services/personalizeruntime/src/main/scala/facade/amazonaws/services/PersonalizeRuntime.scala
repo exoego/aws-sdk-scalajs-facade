@@ -17,9 +17,10 @@ package object personalizeruntime {
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
 
-    def getPersonalizedRankingFuture(params: GetPersonalizedRankingRequest): Future[GetPersonalizedRankingResponse] =
-      service.getPersonalizedRanking(params).promise.toFuture
-    def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
+    @inline def getPersonalizedRankingFuture(
+        params: GetPersonalizedRankingRequest
+    ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise.toFuture
+    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
       service.getRecommendations(params).promise.toFuture
   }
 }
@@ -43,6 +44,7 @@ package personalizeruntime {
   }
 
   object GetPersonalizedRankingRequest {
+    @inline
     def apply(
         campaignArn: Arn,
         inputList: InputList,
@@ -64,6 +66,7 @@ package personalizeruntime {
   }
 
   object GetPersonalizedRankingResponse {
+    @inline
     def apply(
         personalizedRanking: js.UndefOr[ItemList] = js.undefined
     ): GetPersonalizedRankingResponse = {
@@ -82,6 +85,7 @@ package personalizeruntime {
   }
 
   object GetRecommendationsRequest {
+    @inline
     def apply(
         campaignArn: Arn,
         itemId: js.UndefOr[ItemID] = js.undefined,
@@ -105,6 +109,7 @@ package personalizeruntime {
   }
 
   object GetRecommendationsResponse {
+    @inline
     def apply(
         itemList: js.UndefOr[ItemList] = js.undefined
     ): GetRecommendationsResponse = {
@@ -124,6 +129,7 @@ package personalizeruntime {
   }
 
   object PredictedItem {
+    @inline
     def apply(
         itemId: js.UndefOr[ItemID] = js.undefined
     ): PredictedItem = {

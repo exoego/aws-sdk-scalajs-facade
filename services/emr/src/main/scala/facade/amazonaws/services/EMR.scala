@@ -100,67 +100,69 @@ package object emr {
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
 
-    def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
+    @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
       service.addInstanceFleet(params).promise.toFuture
-    def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
+    @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
       service.addInstanceGroups(params).promise.toFuture
-    def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
+    @inline def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
       service.addJobFlowSteps(params).promise.toFuture
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
       service.cancelSteps(params).promise.toFuture
-    def createSecurityConfigurationFuture(
+    @inline def createSecurityConfigurationFuture(
         params: CreateSecurityConfigurationInput
     ): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise.toFuture
-    def deleteSecurityConfigurationFuture(
+    @inline def deleteSecurityConfigurationFuture(
         params: DeleteSecurityConfigurationInput
     ): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
+    @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
       service.describeCluster(params).promise.toFuture
-    def describeSecurityConfigurationFuture(
+    @inline def describeSecurityConfigurationFuture(
         params: DescribeSecurityConfigurationInput
     ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise.toFuture
-    def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
+    @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
       service.describeStep(params).promise.toFuture
-    def getBlockPublicAccessConfigurationFuture(
+    @inline def getBlockPublicAccessConfigurationFuture(
         params: GetBlockPublicAccessConfigurationInput
     ): Future[GetBlockPublicAccessConfigurationOutput] =
       service.getBlockPublicAccessConfiguration(params).promise.toFuture
-    def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
+    @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
       service.listBootstrapActions(params).promise.toFuture
-    def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
+    @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
       service.listClusters(params).promise.toFuture
-    def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
+    @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
       service.listInstanceFleets(params).promise.toFuture
-    def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
+    @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
       service.listInstanceGroups(params).promise.toFuture
-    def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
+    @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
       service.listInstances(params).promise.toFuture
-    def listSecurityConfigurationsFuture(
+    @inline def listSecurityConfigurationsFuture(
         params: ListSecurityConfigurationsInput
-    ): Future[ListSecurityConfigurationsOutput]                          = service.listSecurityConfigurations(params).promise.toFuture
-    def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise.toFuture
-    def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
+    ): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise.toFuture
+    @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] =
+      service.listSteps(params).promise.toFuture
+    @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
       service.modifyInstanceFleet(params).promise.toFuture
-    def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
+    @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
       service.modifyInstanceGroups(params).promise.toFuture
-    def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
+    @inline def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
       service.putAutoScalingPolicy(params).promise.toFuture
-    def putBlockPublicAccessConfigurationFuture(
+    @inline def putBlockPublicAccessConfigurationFuture(
         params: PutBlockPublicAccessConfigurationInput
     ): Future[PutBlockPublicAccessConfigurationOutput] =
       service.putBlockPublicAccessConfiguration(params).promise.toFuture
-    def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] =
-      service.removeAutoScalingPolicy(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+    @inline def removeAutoScalingPolicyFuture(
+        params: RemoveAutoScalingPolicyInput
+    ): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise.toFuture
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise.toFuture
-    def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
+    @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
       service.runJobFlow(params).promise.toFuture
-    def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
+    @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
       service.setTerminationProtection(params).promise.toFuture
-    def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
+    @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
       service.setVisibleToAllUsers(params).promise.toFuture
-    def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
+    @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
       service.terminateJobFlows(params).promise.toFuture
   }
 }
@@ -232,6 +234,7 @@ package emr {
   }
 
   object AddInstanceFleetInput {
+    @inline
     def apply(
         ClusterId: XmlStringMaxLen256,
         InstanceFleet: InstanceFleetConfig
@@ -252,6 +255,7 @@ package emr {
   }
 
   object AddInstanceFleetOutput {
+    @inline
     def apply(
         ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined
@@ -273,6 +277,7 @@ package emr {
   }
 
   object AddInstanceGroupsInput {
+    @inline
     def apply(
         InstanceGroups: InstanceGroupConfigList,
         JobFlowId: XmlStringMaxLen256
@@ -296,6 +301,7 @@ package emr {
   }
 
   object AddInstanceGroupsOutput {
+    @inline
     def apply(
         InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
@@ -317,6 +323,7 @@ package emr {
   }
 
   object AddJobFlowStepsInput {
+    @inline
     def apply(
         JobFlowId: XmlStringMaxLen256,
         Steps: StepConfigList
@@ -339,6 +346,7 @@ package emr {
   }
 
   object AddJobFlowStepsOutput {
+    @inline
     def apply(
         StepIds: js.UndefOr[StepIdsList] = js.undefined
     ): AddJobFlowStepsOutput = {
@@ -358,6 +366,7 @@ package emr {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         ResourceId: ResourceId,
         Tags: TagList
@@ -378,6 +387,7 @@ package emr {
   trait AddTagsOutput extends js.Object {}
 
   object AddTagsOutput {
+    @inline
     def apply(
         ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -407,6 +417,7 @@ package emr {
   }
 
   object Application {
+    @inline
     def apply(
         AdditionalInfo: js.UndefOr[StringMap] = js.undefined,
         Args: js.UndefOr[StringList] = js.undefined,
@@ -432,6 +443,7 @@ package emr {
   }
 
   object AutoScalingPolicy {
+    @inline
     def apply(
         Constraints: ScalingConstraints,
         Rules: ScalingRuleList
@@ -456,6 +468,7 @@ package emr {
   }
 
   object AutoScalingPolicyDescription {
+    @inline
     def apply(
         Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
         Rules: js.UndefOr[ScalingRuleList] = js.undefined,
@@ -490,6 +503,7 @@ package emr {
   }
 
   object AutoScalingPolicyStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -519,6 +533,7 @@ package emr {
   }
 
   object AutoScalingPolicyStatus {
+    @inline
     def apply(
         State: js.UndefOr[AutoScalingPolicyState] = js.undefined,
         StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason] = js.undefined
@@ -540,6 +555,7 @@ package emr {
   }
 
   object BlockPublicAccessConfiguration {
+    @inline
     def apply(
         BlockPublicSecurityGroupRules: Boolean,
         PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges] = js.undefined
@@ -565,6 +581,7 @@ package emr {
   }
 
   object BlockPublicAccessConfigurationMetadata {
+    @inline
     def apply(
         CreatedByArn: ArnType,
         CreationDateTime: Date
@@ -588,6 +605,7 @@ package emr {
   }
 
   object BootstrapActionConfig {
+    @inline
     def apply(
         Name: XmlStringMaxLen256,
         ScriptBootstrapAction: ScriptBootstrapActionConfig
@@ -610,6 +628,7 @@ package emr {
   }
 
   object BootstrapActionDetail {
+    @inline
     def apply(
         BootstrapActionConfig: js.UndefOr[BootstrapActionConfig] = js.undefined
     ): BootstrapActionDetail = {
@@ -630,6 +649,7 @@ package emr {
   }
 
   object CancelStepsInfo {
+    @inline
     def apply(
         Reason: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
@@ -653,6 +673,7 @@ package emr {
   }
 
   object CancelStepsInput {
+    @inline
     def apply(
         ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         StepIds: js.UndefOr[StepIdsList] = js.undefined
@@ -673,6 +694,7 @@ package emr {
   }
 
   object CancelStepsOutput {
+    @inline
     def apply(
         CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined
     ): CancelStepsOutput = {
@@ -706,6 +728,7 @@ package emr {
   }
 
   object CloudWatchAlarmDefinition {
+    @inline
     def apply(
         ComparisonOperator: ComparisonOperator,
         MetricName: String,
@@ -766,6 +789,7 @@ package emr {
   }
 
   object Cluster {
+    @inline
     def apply(
         Applications: js.UndefOr[ApplicationList] = js.undefined,
         AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
@@ -847,6 +871,7 @@ package emr {
   }
 
   object ClusterStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[ClusterStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -893,6 +918,7 @@ package emr {
   }
 
   object ClusterStatus {
+    @inline
     def apply(
         State: js.UndefOr[ClusterState] = js.undefined,
         StateChangeReason: js.UndefOr[ClusterStateChangeReason] = js.undefined,
@@ -918,6 +944,7 @@ package emr {
   }
 
   object ClusterSummary {
+    @inline
     def apply(
         Id: js.UndefOr[ClusterId] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -944,6 +971,7 @@ package emr {
   }
 
   object ClusterTimeline {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
@@ -968,6 +996,7 @@ package emr {
   }
 
   object Command {
+    @inline
     def apply(
         Args: js.UndefOr[StringList] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -1002,6 +1031,7 @@ package emr {
   }
 
   object Configuration {
+    @inline
     def apply(
         Classification: js.UndefOr[String] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
@@ -1022,6 +1052,7 @@ package emr {
   }
 
   object CreateSecurityConfigurationInput {
+    @inline
     def apply(
         Name: XmlString,
         SecurityConfiguration: String
@@ -1042,6 +1073,7 @@ package emr {
   }
 
   object CreateSecurityConfigurationOutput {
+    @inline
     def apply(
         CreationDateTime: Date,
         Name: XmlString
@@ -1061,6 +1093,7 @@ package emr {
   }
 
   object DeleteSecurityConfigurationInput {
+    @inline
     def apply(
         Name: XmlString
     ): DeleteSecurityConfigurationInput = {
@@ -1076,6 +1109,7 @@ package emr {
   trait DeleteSecurityConfigurationOutput extends js.Object {}
 
   object DeleteSecurityConfigurationOutput {
+    @inline
     def apply(
         ): DeleteSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal()
@@ -1093,6 +1127,7 @@ package emr {
   }
 
   object DescribeClusterInput {
+    @inline
     def apply(
         ClusterId: ClusterId
     ): DescribeClusterInput = {
@@ -1113,6 +1148,7 @@ package emr {
   }
 
   object DescribeClusterOutput {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DescribeClusterOutput = {
@@ -1134,6 +1170,7 @@ package emr {
   }
 
   object DescribeJobFlowsInput {
+    @inline
     def apply(
         CreatedAfter: js.UndefOr[Date] = js.undefined,
         CreatedBefore: js.UndefOr[Date] = js.undefined,
@@ -1158,6 +1195,7 @@ package emr {
   }
 
   object DescribeJobFlowsOutput {
+    @inline
     def apply(
         JobFlows: js.UndefOr[JobFlowDetailList] = js.undefined
     ): DescribeJobFlowsOutput = {
@@ -1173,6 +1211,7 @@ package emr {
   }
 
   object DescribeSecurityConfigurationInput {
+    @inline
     def apply(
         Name: XmlString
     ): DescribeSecurityConfigurationInput = {
@@ -1192,6 +1231,7 @@ package emr {
   }
 
   object DescribeSecurityConfigurationOutput {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         Name: js.UndefOr[XmlString] = js.undefined,
@@ -1215,6 +1255,7 @@ package emr {
   }
 
   object DescribeStepInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         StepId: StepId
@@ -1237,6 +1278,7 @@ package emr {
   }
 
   object DescribeStepOutput {
+    @inline
     def apply(
         Step: js.UndefOr[Step] = js.undefined
     ): DescribeStepOutput = {
@@ -1256,6 +1298,7 @@ package emr {
   }
 
   object EbsBlockDevice {
+    @inline
     def apply(
         Device: js.UndefOr[String] = js.undefined,
         VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined
@@ -1277,6 +1320,7 @@ package emr {
   }
 
   object EbsBlockDeviceConfig {
+    @inline
     def apply(
         VolumeSpecification: VolumeSpecification,
         VolumesPerInstance: js.UndefOr[Int] = js.undefined
@@ -1300,6 +1344,7 @@ package emr {
   }
 
   object EbsConfiguration {
+    @inline
     def apply(
         EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
         EbsOptimized: js.UndefOr[BooleanObject] = js.undefined
@@ -1321,6 +1366,7 @@ package emr {
   }
 
   object EbsVolume {
+    @inline
     def apply(
         Device: js.UndefOr[String] = js.undefined,
         VolumeId: js.UndefOr[String] = js.undefined
@@ -1351,6 +1397,7 @@ package emr {
   }
 
   object Ec2InstanceAttributes {
+    @inline
     def apply(
         AdditionalMasterSecurityGroups: js.UndefOr[StringList] = js.undefined,
         AdditionalSlaveSecurityGroups: js.UndefOr[StringList] = js.undefined,
@@ -1403,6 +1450,7 @@ package emr {
   }
 
   object FailureDetails {
+    @inline
     def apply(
         LogFile: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined,
@@ -1420,6 +1468,7 @@ package emr {
   trait GetBlockPublicAccessConfigurationInput extends js.Object {}
 
   object GetBlockPublicAccessConfigurationInput {
+    @inline
     def apply(
         ): GetBlockPublicAccessConfigurationInput = {
       val __obj = js.Dynamic.literal()
@@ -1435,6 +1484,7 @@ package emr {
   }
 
   object GetBlockPublicAccessConfigurationOutput {
+    @inline
     def apply(
         BlockPublicAccessConfiguration: BlockPublicAccessConfiguration,
         BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
@@ -1460,6 +1510,7 @@ package emr {
   }
 
   object HadoopJarStepConfig {
+    @inline
     def apply(
         Jar: XmlString,
         Args: js.UndefOr[XmlStringList] = js.undefined,
@@ -1489,6 +1540,7 @@ package emr {
   }
 
   object HadoopStepConfig {
+    @inline
     def apply(
         Args: js.UndefOr[StringList] = js.undefined,
         Jar: js.UndefOr[String] = js.undefined,
@@ -1524,6 +1576,7 @@ package emr {
   }
 
   object Instance {
+    @inline
     def apply(
         EbsVolumes: js.UndefOr[EbsVolumeList] = js.undefined,
         Ec2InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -1582,6 +1635,7 @@ package emr {
   }
 
   object InstanceFleet {
+    @inline
     def apply(
         Id: js.UndefOr[InstanceFleetId] = js.undefined,
         InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
@@ -1629,6 +1683,7 @@ package emr {
   }
 
   object InstanceFleetConfig {
+    @inline
     def apply(
         InstanceFleetType: InstanceFleetType,
         InstanceTypeConfigs: js.UndefOr[InstanceTypeConfigList] = js.undefined,
@@ -1663,6 +1718,7 @@ package emr {
   }
 
   object InstanceFleetModifyConfig {
+    @inline
     def apply(
         InstanceFleetId: InstanceFleetId,
         TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
@@ -1689,6 +1745,7 @@ package emr {
   }
 
   object InstanceFleetProvisioningSpecifications {
+    @inline
     def apply(
         SpotSpecification: SpotProvisioningSpecification
     ): InstanceFleetProvisioningSpecifications = {
@@ -1725,6 +1782,7 @@ package emr {
   }
 
   object InstanceFleetStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[InstanceFleetStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -1758,6 +1816,7 @@ package emr {
   }
 
   object InstanceFleetStatus {
+    @inline
     def apply(
         State: js.UndefOr[InstanceFleetState] = js.undefined,
         StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason] = js.undefined,
@@ -1784,6 +1843,7 @@ package emr {
   }
 
   object InstanceFleetTimeline {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
@@ -1830,6 +1890,7 @@ package emr {
   }
 
   object InstanceGroup {
+    @inline
     def apply(
         AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
         BidPrice: js.UndefOr[String] = js.undefined,
@@ -1892,6 +1953,7 @@ package emr {
   }
 
   object InstanceGroupConfig {
+    @inline
     def apply(
         InstanceCount: Int,
         InstanceRole: InstanceRoleType,
@@ -1941,6 +2003,7 @@ package emr {
   }
 
   object InstanceGroupDetail {
+    @inline
     def apply(
         CreationDateTime: Date,
         InstanceRequestCount: Int,
@@ -1991,6 +2054,7 @@ package emr {
   }
 
   object InstanceGroupModifyConfig {
+    @inline
     def apply(
         InstanceGroupId: XmlStringMaxLen256,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
@@ -2052,6 +2116,7 @@ package emr {
   }
 
   object InstanceGroupStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[InstanceGroupStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -2083,6 +2148,7 @@ package emr {
   }
 
   object InstanceGroupStatus {
+    @inline
     def apply(
         State: js.UndefOr[InstanceGroupState] = js.undefined,
         StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason] = js.undefined,
@@ -2107,6 +2173,7 @@ package emr {
   }
 
   object InstanceGroupTimeline {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
@@ -2139,6 +2206,7 @@ package emr {
   }
 
   object InstanceResizePolicy {
+    @inline
     def apply(
         InstanceTerminationTimeout: js.UndefOr[Int] = js.undefined,
         InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
@@ -2182,6 +2250,7 @@ package emr {
   }
 
   object InstanceStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[InstanceStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -2216,6 +2285,7 @@ package emr {
   }
 
   object InstanceStatus {
+    @inline
     def apply(
         State: js.UndefOr[InstanceState] = js.undefined,
         StateChangeReason: js.UndefOr[InstanceStateChangeReason] = js.undefined,
@@ -2240,6 +2310,7 @@ package emr {
   }
 
   object InstanceTimeline {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
@@ -2269,6 +2340,7 @@ package emr {
   }
 
   object InstanceTypeConfig {
+    @inline
     def apply(
         InstanceType: InstanceType,
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
@@ -2309,6 +2381,7 @@ package emr {
   }
 
   object InstanceTypeSpecification {
+    @inline
     def apply(
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
@@ -2354,6 +2427,7 @@ package emr {
   }
 
   object JobFlowDetail {
+    @inline
     def apply(
         ExecutionStatusDetail: JobFlowExecutionStatusDetail,
         Instances: JobFlowInstancesDetail,
@@ -2423,6 +2497,7 @@ package emr {
   }
 
   object JobFlowExecutionStatusDetail {
+    @inline
     def apply(
         CreationDateTime: Date,
         State: JobFlowExecutionState,
@@ -2469,6 +2544,7 @@ package emr {
   }
 
   object JobFlowInstancesConfig {
+    @inline
     def apply(
         AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
         AdditionalSlaveSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
@@ -2543,6 +2619,7 @@ package emr {
   }
 
   object JobFlowInstancesDetail {
+    @inline
     def apply(
         InstanceCount: Int,
         MasterInstanceType: InstanceType,
@@ -2593,6 +2670,7 @@ package emr {
   }
 
   object KerberosAttributes {
+    @inline
     def apply(
         KdcAdminPassword: XmlStringMaxLen256,
         Realm: XmlStringMaxLen256,
@@ -2624,6 +2702,7 @@ package emr {
   }
 
   object KeyValue {
+    @inline
     def apply(
         Key: js.UndefOr[XmlString] = js.undefined,
         Value: js.UndefOr[XmlString] = js.undefined
@@ -2645,6 +2724,7 @@ package emr {
   }
 
   object ListBootstrapActionsInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2668,6 +2748,7 @@ package emr {
   }
 
   object ListBootstrapActionsOutput {
+    @inline
     def apply(
         BootstrapActions: js.UndefOr[CommandList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2691,6 +2772,7 @@ package emr {
   }
 
   object ListClustersInput {
+    @inline
     def apply(
         ClusterStates: js.UndefOr[ClusterStateList] = js.undefined,
         CreatedAfter: js.UndefOr[Date] = js.undefined,
@@ -2716,6 +2798,7 @@ package emr {
   }
 
   object ListClustersOutput {
+    @inline
     def apply(
         Clusters: js.UndefOr[ClusterSummaryList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2734,6 +2817,7 @@ package emr {
   }
 
   object ListInstanceFleetsInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2754,6 +2838,7 @@ package emr {
   }
 
   object ListInstanceFleetsOutput {
+    @inline
     def apply(
         InstanceFleets: js.UndefOr[InstanceFleetList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2775,6 +2860,7 @@ package emr {
   }
 
   object ListInstanceGroupsInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2798,6 +2884,7 @@ package emr {
   }
 
   object ListInstanceGroupsOutput {
+    @inline
     def apply(
         InstanceGroups: js.UndefOr[InstanceGroupList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2824,6 +2911,7 @@ package emr {
   }
 
   object ListInstancesInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
@@ -2857,6 +2945,7 @@ package emr {
   }
 
   object ListInstancesOutput {
+    @inline
     def apply(
         Instances: js.UndefOr[InstanceList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2874,6 +2963,7 @@ package emr {
   }
 
   object ListSecurityConfigurationsInput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListSecurityConfigurationsInput = {
@@ -2890,6 +2980,7 @@ package emr {
   }
 
   object ListSecurityConfigurationsOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
@@ -2913,6 +3004,7 @@ package emr {
   }
 
   object ListStepsInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2940,6 +3032,7 @@ package emr {
   }
 
   object ListStepsOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         Steps: js.UndefOr[StepSummaryList] = js.undefined
@@ -2968,6 +3061,7 @@ package emr {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -2986,6 +3080,7 @@ package emr {
   }
 
   object ModifyInstanceFleetInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         InstanceFleet: InstanceFleetModifyConfig
@@ -3009,6 +3104,7 @@ package emr {
   }
 
   object ModifyInstanceGroupsInput {
+    @inline
     def apply(
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined
@@ -3030,6 +3126,7 @@ package emr {
   }
 
   object PlacementType {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[XmlString] = js.undefined,
         AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined
@@ -3051,6 +3148,7 @@ package emr {
   }
 
   object PortRange {
+    @inline
     def apply(
         MinRange: Port,
         MaxRange: js.UndefOr[Port] = js.undefined
@@ -3072,6 +3170,7 @@ package emr {
   }
 
   object PutAutoScalingPolicyInput {
+    @inline
     def apply(
         AutoScalingPolicy: AutoScalingPolicy,
         ClusterId: ClusterId,
@@ -3095,6 +3194,7 @@ package emr {
   }
 
   object PutAutoScalingPolicyOutput {
+    @inline
     def apply(
         AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
@@ -3114,6 +3214,7 @@ package emr {
   }
 
   object PutBlockPublicAccessConfigurationInput {
+    @inline
     def apply(
         BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
     ): PutBlockPublicAccessConfigurationInput = {
@@ -3129,6 +3230,7 @@ package emr {
   trait PutBlockPublicAccessConfigurationOutput extends js.Object {}
 
   object PutBlockPublicAccessConfigurationOutput {
+    @inline
     def apply(
         ): PutBlockPublicAccessConfigurationOutput = {
       val __obj = js.Dynamic.literal()
@@ -3144,6 +3246,7 @@ package emr {
   }
 
   object RemoveAutoScalingPolicyInput {
+    @inline
     def apply(
         ClusterId: ClusterId,
         InstanceGroupId: InstanceGroupId
@@ -3161,6 +3264,7 @@ package emr {
   trait RemoveAutoScalingPolicyOutput extends js.Object {}
 
   object RemoveAutoScalingPolicyOutput {
+    @inline
     def apply(
         ): RemoveAutoScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -3179,6 +3283,7 @@ package emr {
   }
 
   object RemoveTagsInput {
+    @inline
     def apply(
         ResourceId: ResourceId,
         TagKeys: StringList
@@ -3199,6 +3304,7 @@ package emr {
   trait RemoveTagsOutput extends js.Object {}
 
   object RemoveTagsOutput {
+    @inline
     def apply(
         ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -3245,6 +3351,7 @@ package emr {
   }
 
   object RunJobFlowInput {
+    @inline
     def apply(
         Instances: JobFlowInstancesConfig,
         Name: XmlStringMaxLen256,
@@ -3309,6 +3416,7 @@ package emr {
   }
 
   object RunJobFlowOutput {
+    @inline
     def apply(
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): RunJobFlowOutput = {
@@ -3335,6 +3443,7 @@ package emr {
   }
 
   object ScalingAction {
+    @inline
     def apply(
         SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration,
         Market: js.UndefOr[MarketType] = js.undefined
@@ -3358,6 +3467,7 @@ package emr {
   }
 
   object ScalingConstraints {
+    @inline
     def apply(
         MaxCapacity: Int,
         MinCapacity: Int
@@ -3383,6 +3493,7 @@ package emr {
   }
 
   object ScalingRule {
+    @inline
     def apply(
         Action: ScalingAction,
         Name: String,
@@ -3409,6 +3520,7 @@ package emr {
   }
 
   object ScalingTrigger {
+    @inline
     def apply(
         CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
     ): ScalingTrigger = {
@@ -3430,6 +3542,7 @@ package emr {
   }
 
   object ScriptBootstrapActionConfig {
+    @inline
     def apply(
         Path: XmlString,
         Args: js.UndefOr[XmlStringList] = js.undefined
@@ -3453,6 +3566,7 @@ package emr {
   }
 
   object SecurityConfigurationSummary {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         Name: js.UndefOr[XmlString] = js.undefined
@@ -3474,6 +3588,7 @@ package emr {
   }
 
   object SetTerminationProtectionInput {
+    @inline
     def apply(
         JobFlowIds: XmlStringList,
         TerminationProtected: Boolean
@@ -3498,6 +3613,7 @@ package emr {
   }
 
   object SetVisibleToAllUsersInput {
+    @inline
     def apply(
         JobFlowIds: XmlStringList,
         VisibleToAllUsers: Boolean
@@ -3521,6 +3637,7 @@ package emr {
   }
 
   object ShrinkPolicy {
+    @inline
     def apply(
         DecommissionTimeout: js.UndefOr[Int] = js.undefined,
         InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined
@@ -3543,6 +3660,7 @@ package emr {
   }
 
   object SimpleScalingPolicyConfiguration {
+    @inline
     def apply(
         ScalingAdjustment: Int,
         AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
@@ -3571,6 +3689,7 @@ package emr {
   }
 
   object SpotProvisioningSpecification {
+    @inline
     def apply(
         TimeoutAction: SpotProvisioningTimeoutAction,
         TimeoutDurationMinutes: WholeNumber,
@@ -3616,6 +3735,7 @@ package emr {
   }
 
   object Step {
+    @inline
     def apply(
         ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
         Config: js.UndefOr[HadoopStepConfig] = js.undefined,
@@ -3644,6 +3764,7 @@ package emr {
   }
 
   object StepConfig {
+    @inline
     def apply(
         HadoopJarStep: HadoopJarStepConfig,
         Name: XmlStringMaxLen256,
@@ -3669,6 +3790,7 @@ package emr {
   }
 
   object StepDetail {
+    @inline
     def apply(
         ExecutionStatusDetail: StepExecutionStatusDetail,
         StepConfig: StepConfig
@@ -3707,6 +3829,7 @@ package emr {
   }
 
   object StepExecutionStatusDetail {
+    @inline
     def apply(
         CreationDateTime: Date,
         State: StepExecutionState,
@@ -3748,6 +3871,7 @@ package emr {
   }
 
   object StepStateChangeReason {
+    @inline
     def apply(
         Code: js.UndefOr[StepStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
@@ -3777,6 +3901,7 @@ package emr {
   }
 
   object StepStatus {
+    @inline
     def apply(
         FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
         State: js.UndefOr[StepState] = js.undefined,
@@ -3805,6 +3930,7 @@ package emr {
   }
 
   object StepSummary {
+    @inline
     def apply(
         ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
         Config: js.UndefOr[HadoopStepConfig] = js.undefined,
@@ -3833,6 +3959,7 @@ package emr {
   }
 
   object StepTimeline {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
@@ -3856,6 +3983,7 @@ package emr {
   }
 
   object SupportedProductConfig {
+    @inline
     def apply(
         Args: js.UndefOr[XmlStringList] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
@@ -3877,6 +4005,7 @@ package emr {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -3897,6 +4026,7 @@ package emr {
   }
 
   object TerminateJobFlowsInput {
+    @inline
     def apply(
         JobFlowIds: XmlStringList
     ): TerminateJobFlowsInput = {
@@ -3981,6 +4111,7 @@ package emr {
   }
 
   object VolumeSpecification {
+    @inline
     def apply(
         SizeInGB: Int,
         VolumeType: String,

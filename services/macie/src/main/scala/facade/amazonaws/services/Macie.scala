@@ -27,19 +27,20 @@ package object macie {
 
   implicit final class MacieOps(private val service: Macie) extends AnyVal {
 
-    def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
+    @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
       service.associateMemberAccount(params).promise.toFuture
-    def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
+    @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
       service.associateS3Resources(params).promise.toFuture
-    def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
+    @inline def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
       service.disassociateMemberAccount(params).promise.toFuture
-    def disassociateS3ResourcesFuture(params: DisassociateS3ResourcesRequest): Future[DisassociateS3ResourcesResult] =
-      service.disassociateS3Resources(params).promise.toFuture
-    def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
+    @inline def disassociateS3ResourcesFuture(
+        params: DisassociateS3ResourcesRequest
+    ): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise.toFuture
+    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
       service.listMemberAccounts(params).promise.toFuture
-    def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
+    @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
       service.listS3Resources(params).promise.toFuture
-    def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
+    @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
       service.updateS3Resources(params).promise.toFuture
   }
 }
@@ -75,6 +76,7 @@ package macie {
   }
 
   object AssociateMemberAccountRequest {
+    @inline
     def apply(
         memberAccountId: AWSAccountId
     ): AssociateMemberAccountRequest = {
@@ -93,6 +95,7 @@ package macie {
   }
 
   object AssociateS3ResourcesRequest {
+    @inline
     def apply(
         s3Resources: S3ResourcesClassification,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
@@ -112,6 +115,7 @@ package macie {
   }
 
   object AssociateS3ResourcesResult {
+    @inline
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): AssociateS3ResourcesResult = {
@@ -131,6 +135,7 @@ package macie {
   }
 
   object ClassificationType {
+    @inline
     def apply(
         continuous: S3ContinuousClassificationType,
         oneTime: S3OneTimeClassificationType
@@ -154,6 +159,7 @@ package macie {
   }
 
   object ClassificationTypeUpdate {
+    @inline
     def apply(
         continuous: js.UndefOr[S3ContinuousClassificationType] = js.undefined,
         oneTime: js.UndefOr[S3OneTimeClassificationType] = js.undefined
@@ -171,6 +177,7 @@ package macie {
   }
 
   object DisassociateMemberAccountRequest {
+    @inline
     def apply(
         memberAccountId: AWSAccountId
     ): DisassociateMemberAccountRequest = {
@@ -189,6 +196,7 @@ package macie {
   }
 
   object DisassociateS3ResourcesRequest {
+    @inline
     def apply(
         associatedS3Resources: S3Resources,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
@@ -208,6 +216,7 @@ package macie {
   }
 
   object DisassociateS3ResourcesResult {
+    @inline
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): DisassociateS3ResourcesResult = {
@@ -228,6 +237,7 @@ package macie {
   }
 
   object FailedS3Resource {
+    @inline
     def apply(
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[ExceptionMessage] = js.undefined,
@@ -277,6 +287,7 @@ package macie {
   }
 
   object ListMemberAccountsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -295,6 +306,7 @@ package macie {
   }
 
   object ListMemberAccountsResult {
+    @inline
     def apply(
         memberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -314,6 +326,7 @@ package macie {
   }
 
   object ListS3ResourcesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
@@ -334,6 +347,7 @@ package macie {
   }
 
   object ListS3ResourcesResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         s3Resources: js.UndefOr[S3ResourcesClassification] = js.undefined
@@ -354,6 +368,7 @@ package macie {
   }
 
   object MemberAccount {
+    @inline
     def apply(
         accountId: js.UndefOr[AWSAccountId] = js.undefined
     ): MemberAccount = {
@@ -386,6 +401,7 @@ package macie {
   }
 
   object S3Resource {
+    @inline
     def apply(
         bucketName: BucketName,
         prefix: js.UndefOr[Prefix] = js.undefined
@@ -410,6 +426,7 @@ package macie {
   }
 
   object S3ResourceClassification {
+    @inline
     def apply(
         bucketName: BucketName,
         classificationType: ClassificationType,
@@ -436,6 +453,7 @@ package macie {
   }
 
   object S3ResourceClassificationUpdate {
+    @inline
     def apply(
         bucketName: BucketName,
         classificationTypeUpdate: ClassificationTypeUpdate,
@@ -458,6 +476,7 @@ package macie {
   }
 
   object UpdateS3ResourcesRequest {
+    @inline
     def apply(
         s3ResourcesUpdate: S3ResourcesClassificationUpdate,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
@@ -477,6 +496,7 @@ package macie {
   }
 
   object UpdateS3ResourcesResult {
+    @inline
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): UpdateS3ResourcesResult = {

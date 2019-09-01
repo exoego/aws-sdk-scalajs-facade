@@ -64,143 +64,154 @@ package object neptune {
 
   implicit final class NeptuneOps(private val service: Neptune) extends AnyVal {
 
-    def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] =
+    @inline def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] =
       service.addRoleToDBCluster(params).promise.toFuture
-    def addSourceIdentifierToSubscriptionFuture(
+    @inline def addSourceIdentifierToSubscriptionFuture(
         params: AddSourceIdentifierToSubscriptionMessage
     ): Future[AddSourceIdentifierToSubscriptionResult] =
       service.addSourceIdentifierToSubscription(params).promise.toFuture
-    def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] =
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] =
       service.addTagsToResource(params).promise.toFuture
-    def applyPendingMaintenanceActionFuture(
+    @inline def applyPendingMaintenanceActionFuture(
         params: ApplyPendingMaintenanceActionMessage
     ): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise.toFuture
-    def copyDBClusterParameterGroupFuture(
+    @inline def copyDBClusterParameterGroupFuture(
         params: CopyDBClusterParameterGroupMessage
     ): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise.toFuture
-    def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] =
+    @inline def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] =
       service.copyDBClusterSnapshot(params).promise.toFuture
-    def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] =
+    @inline def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] =
       service.copyDBParameterGroup(params).promise.toFuture
-    def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] =
+    @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] =
       service.createDBCluster(params).promise.toFuture
-    def createDBClusterParameterGroupFuture(
+    @inline def createDBClusterParameterGroupFuture(
         params: CreateDBClusterParameterGroupMessage
     ): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise.toFuture
-    def createDBClusterSnapshotFuture(params: CreateDBClusterSnapshotMessage): Future[CreateDBClusterSnapshotResult] =
-      service.createDBClusterSnapshot(params).promise.toFuture
-    def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] =
+    @inline def createDBClusterSnapshotFuture(
+        params: CreateDBClusterSnapshotMessage
+    ): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise.toFuture
+    @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] =
       service.createDBInstance(params).promise.toFuture
-    def createDBParameterGroupFuture(params: CreateDBParameterGroupMessage): Future[CreateDBParameterGroupResult] =
-      service.createDBParameterGroup(params).promise.toFuture
-    def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] =
+    @inline def createDBParameterGroupFuture(
+        params: CreateDBParameterGroupMessage
+    ): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise.toFuture
+    @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] =
       service.createDBSubnetGroup(params).promise.toFuture
-    def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] =
-      service.createEventSubscription(params).promise.toFuture
-    def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] =
+    @inline def createEventSubscriptionFuture(
+        params: CreateEventSubscriptionMessage
+    ): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise.toFuture
+    @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] =
       service.deleteDBCluster(params).promise.toFuture
-    def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] =
+    @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] =
       service.deleteDBClusterParameterGroup(params).promise.toFuture
-    def deleteDBClusterSnapshotFuture(params: DeleteDBClusterSnapshotMessage): Future[DeleteDBClusterSnapshotResult] =
-      service.deleteDBClusterSnapshot(params).promise.toFuture
-    def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] =
+    @inline def deleteDBClusterSnapshotFuture(
+        params: DeleteDBClusterSnapshotMessage
+    ): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise.toFuture
+    @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] =
       service.deleteDBInstance(params).promise.toFuture
-    def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] =
+    @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] =
       service.deleteDBParameterGroup(params).promise.toFuture
-    def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] =
+    @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] =
       service.deleteDBSubnetGroup(params).promise.toFuture
-    def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] =
-      service.deleteEventSubscription(params).promise.toFuture
-    def describeDBClusterParameterGroupsFuture(
+    @inline def deleteEventSubscriptionFuture(
+        params: DeleteEventSubscriptionMessage
+    ): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise.toFuture
+    @inline def describeDBClusterParameterGroupsFuture(
         params: DescribeDBClusterParameterGroupsMessage
     ): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise.toFuture
-    def describeDBClusterParametersFuture(
+    @inline def describeDBClusterParametersFuture(
         params: DescribeDBClusterParametersMessage
     ): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise.toFuture
-    def describeDBClusterSnapshotAttributesFuture(
+    @inline def describeDBClusterSnapshotAttributesFuture(
         params: DescribeDBClusterSnapshotAttributesMessage
     ): Future[DescribeDBClusterSnapshotAttributesResult] =
       service.describeDBClusterSnapshotAttributes(params).promise.toFuture
-    def describeDBClusterSnapshotsFuture(params: DescribeDBClusterSnapshotsMessage): Future[DBClusterSnapshotMessage] =
-      service.describeDBClusterSnapshots(params).promise.toFuture
-    def describeDBClustersFuture(params: DescribeDBClustersMessage): Future[DBClusterMessage] =
+    @inline def describeDBClusterSnapshotsFuture(
+        params: DescribeDBClusterSnapshotsMessage
+    ): Future[DBClusterSnapshotMessage] = service.describeDBClusterSnapshots(params).promise.toFuture
+    @inline def describeDBClustersFuture(params: DescribeDBClustersMessage): Future[DBClusterMessage] =
       service.describeDBClusters(params).promise.toFuture
-    def describeDBEngineVersionsFuture(params: DescribeDBEngineVersionsMessage): Future[DBEngineVersionMessage] =
-      service.describeDBEngineVersions(params).promise.toFuture
-    def describeDBInstancesFuture(params: DescribeDBInstancesMessage): Future[DBInstanceMessage] =
+    @inline def describeDBEngineVersionsFuture(
+        params: DescribeDBEngineVersionsMessage
+    ): Future[DBEngineVersionMessage] = service.describeDBEngineVersions(params).promise.toFuture
+    @inline def describeDBInstancesFuture(params: DescribeDBInstancesMessage): Future[DBInstanceMessage] =
       service.describeDBInstances(params).promise.toFuture
-    def describeDBParameterGroupsFuture(params: DescribeDBParameterGroupsMessage): Future[DBParameterGroupsMessage] =
-      service.describeDBParameterGroups(params).promise.toFuture
-    def describeDBParametersFuture(params: DescribeDBParametersMessage): Future[DBParameterGroupDetails] =
+    @inline def describeDBParameterGroupsFuture(
+        params: DescribeDBParameterGroupsMessage
+    ): Future[DBParameterGroupsMessage] = service.describeDBParameterGroups(params).promise.toFuture
+    @inline def describeDBParametersFuture(params: DescribeDBParametersMessage): Future[DBParameterGroupDetails] =
       service.describeDBParameters(params).promise.toFuture
-    def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] =
+    @inline def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] =
       service.describeDBSubnetGroups(params).promise.toFuture
-    def describeEngineDefaultClusterParametersFuture(
+    @inline def describeEngineDefaultClusterParametersFuture(
         params: DescribeEngineDefaultClusterParametersMessage
     ): Future[DescribeEngineDefaultClusterParametersResult] =
       service.describeEngineDefaultClusterParameters(params).promise.toFuture
-    def describeEngineDefaultParametersFuture(
+    @inline def describeEngineDefaultParametersFuture(
         params: DescribeEngineDefaultParametersMessage
     ): Future[DescribeEngineDefaultParametersResult] = service.describeEngineDefaultParameters(params).promise.toFuture
-    def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
       service.describeEventCategories(params).promise.toFuture
-    def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] =
-      service.describeEventSubscriptions(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
+    @inline def describeEventSubscriptionsFuture(
+        params: DescribeEventSubscriptionsMessage
+    ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise.toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeOrderableDBInstanceOptionsFuture(
+    @inline def describeOrderableDBInstanceOptionsFuture(
         params: DescribeOrderableDBInstanceOptionsMessage
     ): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise.toFuture
-    def describePendingMaintenanceActionsFuture(
+    @inline def describePendingMaintenanceActionsFuture(
         params: DescribePendingMaintenanceActionsMessage
     ): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise.toFuture
-    def describeValidDBInstanceModificationsFuture(
+    @inline def describeValidDBInstanceModificationsFuture(
         params: DescribeValidDBInstanceModificationsMessage
     ): Future[DescribeValidDBInstanceModificationsResult] =
       service.describeValidDBInstanceModifications(params).promise.toFuture
-    def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] =
+    @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] =
       service.failoverDBCluster(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
       service.listTagsForResource(params).promise.toFuture
-    def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] =
+    @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] =
       service.modifyDBCluster(params).promise.toFuture
-    def modifyDBClusterParameterGroupFuture(
+    @inline def modifyDBClusterParameterGroupFuture(
         params: ModifyDBClusterParameterGroupMessage
     ): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise.toFuture
-    def modifyDBClusterSnapshotAttributeFuture(
+    @inline def modifyDBClusterSnapshotAttributeFuture(
         params: ModifyDBClusterSnapshotAttributeMessage
     ): Future[ModifyDBClusterSnapshotAttributeResult] =
       service.modifyDBClusterSnapshotAttribute(params).promise.toFuture
-    def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] =
+    @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] =
       service.modifyDBInstance(params).promise.toFuture
-    def modifyDBParameterGroupFuture(params: ModifyDBParameterGroupMessage): Future[DBParameterGroupNameMessage] =
-      service.modifyDBParameterGroup(params).promise.toFuture
-    def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] =
+    @inline def modifyDBParameterGroupFuture(
+        params: ModifyDBParameterGroupMessage
+    ): Future[DBParameterGroupNameMessage] = service.modifyDBParameterGroup(params).promise.toFuture
+    @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] =
       service.modifyDBSubnetGroup(params).promise.toFuture
-    def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] =
-      service.modifyEventSubscription(params).promise.toFuture
-    def promoteReadReplicaDBClusterFuture(
+    @inline def modifyEventSubscriptionFuture(
+        params: ModifyEventSubscriptionMessage
+    ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise.toFuture
+    @inline def promoteReadReplicaDBClusterFuture(
         params: PromoteReadReplicaDBClusterMessage
     ): Future[PromoteReadReplicaDBClusterResult] = service.promoteReadReplicaDBCluster(params).promise.toFuture
-    def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] =
+    @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] =
       service.rebootDBInstance(params).promise.toFuture
-    def removeRoleFromDBClusterFuture(params: RemoveRoleFromDBClusterMessage): Future[js.Object] =
+    @inline def removeRoleFromDBClusterFuture(params: RemoveRoleFromDBClusterMessage): Future[js.Object] =
       service.removeRoleFromDBCluster(params).promise.toFuture
-    def removeSourceIdentifierFromSubscriptionFuture(
+    @inline def removeSourceIdentifierFromSubscriptionFuture(
         params: RemoveSourceIdentifierFromSubscriptionMessage
     ): Future[RemoveSourceIdentifierFromSubscriptionResult] =
       service.removeSourceIdentifierFromSubscription(params).promise.toFuture
-    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] =
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] =
       service.removeTagsFromResource(params).promise.toFuture
-    def resetDBClusterParameterGroupFuture(
+    @inline def resetDBClusterParameterGroupFuture(
         params: ResetDBClusterParameterGroupMessage
     ): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise.toFuture
-    def resetDBParameterGroupFuture(params: ResetDBParameterGroupMessage): Future[DBParameterGroupNameMessage] =
+    @inline def resetDBParameterGroupFuture(params: ResetDBParameterGroupMessage): Future[DBParameterGroupNameMessage] =
       service.resetDBParameterGroup(params).promise.toFuture
-    def restoreDBClusterFromSnapshotFuture(
+    @inline def restoreDBClusterFromSnapshotFuture(
         params: RestoreDBClusterFromSnapshotMessage
     ): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise.toFuture
-    def restoreDBClusterToPointInTimeFuture(
+    @inline def restoreDBClusterToPointInTimeFuture(
         params: RestoreDBClusterToPointInTimeMessage
     ): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise.toFuture
   }
@@ -324,6 +335,7 @@ package neptune {
   }
 
   object AddRoleToDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         RoleArn: String
@@ -344,6 +356,7 @@ package neptune {
   }
 
   object AddSourceIdentifierToSubscriptionMessage {
+    @inline
     def apply(
         SourceIdentifier: String,
         SubscriptionName: String
@@ -363,6 +376,7 @@ package neptune {
   }
 
   object AddSourceIdentifierToSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): AddSourceIdentifierToSubscriptionResult = {
@@ -379,6 +393,7 @@ package neptune {
   }
 
   object AddTagsToResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -407,6 +422,7 @@ package neptune {
   }
 
   object ApplyPendingMaintenanceActionMessage {
+    @inline
     def apply(
         ApplyAction: String,
         OptInType: String,
@@ -428,6 +444,7 @@ package neptune {
   }
 
   object ApplyPendingMaintenanceActionResult {
+    @inline
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
@@ -448,6 +465,7 @@ package neptune {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
@@ -467,6 +485,7 @@ package neptune {
   }
 
   object CharacterSet {
+    @inline
     def apply(
         CharacterSetDescription: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined
@@ -489,6 +508,7 @@ package neptune {
   }
 
   object CloudwatchLogsExportConfiguration {
+    @inline
     def apply(
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
@@ -509,6 +529,7 @@ package neptune {
   }
 
   object CopyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         SourceDBClusterParameterGroupIdentifier: String,
         TargetDBClusterParameterGroupDescription: String,
@@ -532,6 +553,7 @@ package neptune {
   }
 
   object CopyDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
@@ -552,6 +574,7 @@ package neptune {
   }
 
   object CopyDBClusterSnapshotMessage {
+    @inline
     def apply(
         SourceDBClusterSnapshotIdentifier: String,
         TargetDBClusterSnapshotIdentifier: String,
@@ -579,6 +602,7 @@ package neptune {
   }
 
   object CopyDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
@@ -597,6 +621,7 @@ package neptune {
   }
 
   object CopyDBParameterGroupMessage {
+    @inline
     def apply(
         SourceDBParameterGroupIdentifier: String,
         TargetDBParameterGroupDescription: String,
@@ -620,6 +645,7 @@ package neptune {
   }
 
   object CopyDBParameterGroupResult {
+    @inline
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CopyDBParameterGroupResult = {
@@ -657,6 +683,7 @@ package neptune {
   }
 
   object CreateDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -731,6 +758,7 @@ package neptune {
   }
 
   object CreateDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         DBParameterGroupFamily: String,
@@ -754,6 +782,7 @@ package neptune {
   }
 
   object CreateDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
@@ -769,6 +798,7 @@ package neptune {
   }
 
   object CreateDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
@@ -786,6 +816,7 @@ package neptune {
   }
 
   object CreateDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         DBClusterSnapshotIdentifier: String,
@@ -807,6 +838,7 @@ package neptune {
   }
 
   object CreateDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
@@ -863,6 +895,7 @@ package neptune {
   }
 
   object CreateDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceClass: String,
         DBInstanceIdentifier: String,
@@ -972,6 +1005,7 @@ package neptune {
   }
 
   object CreateDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
@@ -990,6 +1024,7 @@ package neptune {
   }
 
   object CreateDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         DBParameterGroupName: String,
@@ -1013,6 +1048,7 @@ package neptune {
   }
 
   object CreateDBParameterGroupResult {
+    @inline
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CreateDBParameterGroupResult = {
@@ -1031,6 +1067,7 @@ package neptune {
   }
 
   object CreateDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupDescription: String,
         DBSubnetGroupName: String,
@@ -1054,6 +1091,7 @@ package neptune {
   }
 
   object CreateDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
@@ -1075,6 +1113,7 @@ package neptune {
   }
 
   object CreateEventSubscriptionMessage {
+    @inline
     def apply(
         SnsTopicArn: String,
         SubscriptionName: String,
@@ -1104,6 +1143,7 @@ package neptune {
   }
 
   object CreateEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
@@ -1158,6 +1198,7 @@ package neptune {
   }
 
   object DBCluster {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
@@ -1259,6 +1300,7 @@ package neptune {
   }
 
   object DBClusterMember {
+    @inline
     def apply(
         DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -1283,6 +1325,7 @@ package neptune {
   }
 
   object DBClusterMessage {
+    @inline
     def apply(
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1304,6 +1347,7 @@ package neptune {
   }
 
   object DBClusterOptionGroupStatus {
+    @inline
     def apply(
         DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -1328,6 +1372,7 @@ package neptune {
   }
 
   object DBClusterParameterGroup {
+    @inline
     def apply(
         DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -1354,6 +1399,7 @@ package neptune {
   }
 
   object DBClusterParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -1371,6 +1417,7 @@ package neptune {
   }
 
   object DBClusterParameterGroupNameMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
@@ -1389,6 +1436,7 @@ package neptune {
   }
 
   object DBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1410,6 +1458,7 @@ package neptune {
   }
 
   object DBClusterRole {
+    @inline
     def apply(
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -1450,6 +1499,7 @@ package neptune {
   }
 
   object DBClusterSnapshot {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
@@ -1514,6 +1564,7 @@ package neptune {
   }
 
   object DBClusterSnapshotAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
@@ -1536,6 +1587,7 @@ package neptune {
   }
 
   object DBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -1558,6 +1610,7 @@ package neptune {
   }
 
   object DBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1589,6 +1642,7 @@ package neptune {
   }
 
   object DBEngineVersion {
+    @inline
     def apply(
         DBEngineDescription: js.UndefOr[String] = js.undefined,
         DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
@@ -1631,6 +1685,7 @@ package neptune {
   }
 
   object DBEngineVersionMessage {
+    @inline
     def apply(
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1703,6 +1758,7 @@ package neptune {
   }
 
   object DBInstance {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
@@ -1841,6 +1897,7 @@ package neptune {
   }
 
   object DBInstanceMessage {
+    @inline
     def apply(
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1864,6 +1921,7 @@ package neptune {
   }
 
   object DBInstanceStatusInfo {
+    @inline
     def apply(
         Message: js.UndefOr[String] = js.undefined,
         Normal: js.UndefOr[Boolean] = js.undefined,
@@ -1892,6 +1950,7 @@ package neptune {
   }
 
   object DBParameterGroup {
+    @inline
     def apply(
         DBParameterGroupArn: js.UndefOr[String] = js.undefined,
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
@@ -1914,6 +1973,7 @@ package neptune {
   }
 
   object DBParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -1931,6 +1991,7 @@ package neptune {
   }
 
   object DBParameterGroupNameMessage {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBParameterGroupNameMessage = {
@@ -1955,6 +2016,7 @@ package neptune {
   }
 
   object DBParameterGroupStatus {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined
@@ -1973,6 +2035,7 @@ package neptune {
   }
 
   object DBParameterGroupsMessage {
+    @inline
     def apply(
         DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1994,6 +2057,7 @@ package neptune {
   }
 
   object DBSecurityGroupMembership {
+    @inline
     def apply(
         DBSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -2020,6 +2084,7 @@ package neptune {
   }
 
   object DBSubnetGroup {
+    @inline
     def apply(
         DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
@@ -2046,6 +2111,7 @@ package neptune {
   }
 
   object DBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2065,6 +2131,7 @@ package neptune {
   }
 
   object DeleteDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -2088,6 +2155,7 @@ package neptune {
   }
 
   object DeleteDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
@@ -2105,6 +2173,7 @@ package neptune {
   }
 
   object DeleteDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
@@ -2120,6 +2189,7 @@ package neptune {
   }
 
   object DeleteDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
@@ -2137,6 +2207,7 @@ package neptune {
   }
 
   object DeleteDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
@@ -2154,6 +2225,7 @@ package neptune {
   }
 
   object DeleteDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -2177,6 +2249,7 @@ package neptune {
   }
 
   object DeleteDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
@@ -2192,6 +2265,7 @@ package neptune {
   }
 
   object DeleteDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String
     ): DeleteDBParameterGroupMessage = {
@@ -2209,6 +2283,7 @@ package neptune {
   }
 
   object DeleteDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
@@ -2226,6 +2301,7 @@ package neptune {
   }
 
   object DeleteEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
@@ -2243,6 +2319,7 @@ package neptune {
   }
 
   object DeleteEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): DeleteEventSubscriptionResult = {
@@ -2261,6 +2338,7 @@ package neptune {
   }
 
   object DescribeDBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2288,6 +2366,7 @@ package neptune {
   }
 
   object DescribeDBClusterParametersMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2313,6 +2392,7 @@ package neptune {
   }
 
   object DescribeDBClusterSnapshotAttributesMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
@@ -2330,6 +2410,7 @@ package neptune {
   }
 
   object DescribeDBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
@@ -2354,6 +2435,7 @@ package neptune {
   }
 
   object DescribeDBClusterSnapshotsMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -2388,6 +2470,7 @@ package neptune {
   }
 
   object DescribeDBClustersMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2417,6 +2500,7 @@ package neptune {
   }
 
   object DescribeDBEngineVersionsMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         DefaultOnly: js.UndefOr[Boolean] = js.undefined,
@@ -2453,6 +2537,7 @@ package neptune {
   }
 
   object DescribeDBInstancesMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2477,6 +2562,7 @@ package neptune {
   }
 
   object DescribeDBParameterGroupsMessage {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2502,6 +2588,7 @@ package neptune {
   }
 
   object DescribeDBParametersMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2530,6 +2617,7 @@ package neptune {
   }
 
   object DescribeDBSubnetGroupsMessage {
+    @inline
     def apply(
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2554,6 +2642,7 @@ package neptune {
   }
 
   object DescribeEngineDefaultClusterParametersMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2577,6 +2666,7 @@ package neptune {
   }
 
   object DescribeEngineDefaultClusterParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
@@ -2595,6 +2685,7 @@ package neptune {
   }
 
   object DescribeEngineDefaultParametersMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -2618,6 +2709,7 @@ package neptune {
   }
 
   object DescribeEngineDefaultParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
@@ -2634,6 +2726,7 @@ package neptune {
   }
 
   object DescribeEventCategoriesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -2654,6 +2747,7 @@ package neptune {
   }
 
   object DescribeEventSubscriptionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2683,6 +2777,7 @@ package neptune {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -2721,6 +2816,7 @@ package neptune {
   }
 
   object DescribeOrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Engine: String,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -2755,6 +2851,7 @@ package neptune {
   }
 
   object DescribePendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2776,6 +2873,7 @@ package neptune {
   }
 
   object DescribeValidDBInstanceModificationsMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String
     ): DescribeValidDBInstanceModificationsMessage = {
@@ -2793,6 +2891,7 @@ package neptune {
   }
 
   object DescribeValidDBInstanceModificationsResult {
+    @inline
     def apply(
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
@@ -2816,6 +2915,7 @@ package neptune {
   }
 
   object DomainMembership {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined,
         FQDN: js.UndefOr[String] = js.undefined,
@@ -2841,6 +2941,7 @@ package neptune {
   }
 
   object DoubleRange {
+    @inline
     def apply(
         From: js.UndefOr[Double] = js.undefined,
         To: js.UndefOr[Double] = js.undefined
@@ -2863,6 +2964,7 @@ package neptune {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         HostedZoneId: js.UndefOr[String] = js.undefined,
@@ -2887,6 +2989,7 @@ package neptune {
   }
 
   object EngineDefaults {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2914,6 +3017,7 @@ package neptune {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
@@ -2943,6 +3047,7 @@ package neptune {
   }
 
   object EventCategoriesMap {
+    @inline
     def apply(
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -2960,6 +3065,7 @@ package neptune {
   }
 
   object EventCategoriesMessage {
+    @inline
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
@@ -2987,6 +3093,7 @@ package neptune {
   }
 
   object EventSubscription {
+    @inline
     def apply(
         CustSubscriptionId: js.UndefOr[String] = js.undefined,
         CustomerAwsId: js.UndefOr[String] = js.undefined,
@@ -3021,6 +3128,7 @@ package neptune {
   }
 
   object EventSubscriptionsMessage {
+    @inline
     def apply(
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3039,6 +3147,7 @@ package neptune {
   }
 
   object EventsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3057,6 +3166,7 @@ package neptune {
   }
 
   object FailoverDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
@@ -3076,6 +3186,7 @@ package neptune {
   }
 
   object FailoverDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
@@ -3095,6 +3206,7 @@ package neptune {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: String,
         Values: FilterValueList
@@ -3115,6 +3227,7 @@ package neptune {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
@@ -3147,6 +3260,7 @@ package neptune {
   }
 
   object ModifyDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -3199,6 +3313,7 @@ package neptune {
   }
 
   object ModifyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
@@ -3218,6 +3333,7 @@ package neptune {
   }
 
   object ModifyDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
@@ -3236,6 +3352,7 @@ package neptune {
   }
 
   object ModifyDBClusterSnapshotAttributeMessage {
+    @inline
     def apply(
         AttributeName: String,
         DBClusterSnapshotIdentifier: String,
@@ -3259,6 +3376,7 @@ package neptune {
   }
 
   object ModifyDBClusterSnapshotAttributeResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
@@ -3311,6 +3429,7 @@ package neptune {
   }
 
   object ModifyDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3408,6 +3527,7 @@ package neptune {
   }
 
   object ModifyDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
@@ -3424,6 +3544,7 @@ package neptune {
   }
 
   object ModifyDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Parameters: ParametersList
@@ -3445,6 +3566,7 @@ package neptune {
   }
 
   object ModifyDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String,
         SubnetIds: SubnetIdentifierList,
@@ -3466,6 +3588,7 @@ package neptune {
   }
 
   object ModifyDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
@@ -3485,6 +3608,7 @@ package neptune {
   }
 
   object ModifyEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String,
         Enabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3510,6 +3634,7 @@ package neptune {
   }
 
   object ModifyEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
@@ -3529,6 +3654,7 @@ package neptune {
   }
 
   object OptionGroupMembership {
+    @inline
     def apply(
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -3569,6 +3695,7 @@ package neptune {
   }
 
   object OrderableDBInstanceOption {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -3631,6 +3758,7 @@ package neptune {
   }
 
   object OrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
@@ -3662,6 +3790,7 @@ package neptune {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
@@ -3699,6 +3828,7 @@ package neptune {
   }
 
   object PendingCloudwatchLogsExports {
+    @inline
     def apply(
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
@@ -3724,6 +3854,7 @@ package neptune {
   }
 
   object PendingMaintenanceAction {
+    @inline
     def apply(
         Action: js.UndefOr[String] = js.undefined,
         AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
@@ -3750,6 +3881,7 @@ package neptune {
   }
 
   object PendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
@@ -3785,6 +3917,7 @@ package neptune {
   }
 
   object PendingModifiedValues {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3828,6 +3961,7 @@ package neptune {
   }
 
   object PromoteReadReplicaDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): PromoteReadReplicaDBClusterMessage = {
@@ -3845,6 +3979,7 @@ package neptune {
   }
 
   object PromoteReadReplicaDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): PromoteReadReplicaDBClusterResult = {
@@ -3865,6 +4000,7 @@ package neptune {
   }
 
   object Range {
+    @inline
     def apply(
         From: js.UndefOr[Int] = js.undefined,
         Step: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3885,6 +4021,7 @@ package neptune {
   }
 
   object RebootDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
@@ -3904,6 +4041,7 @@ package neptune {
   }
 
   object RebootDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
@@ -3920,6 +4058,7 @@ package neptune {
   }
 
   object RemoveRoleFromDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         RoleArn: String
@@ -3940,6 +4079,7 @@ package neptune {
   }
 
   object RemoveSourceIdentifierFromSubscriptionMessage {
+    @inline
     def apply(
         SourceIdentifier: String,
         SubscriptionName: String
@@ -3959,6 +4099,7 @@ package neptune {
   }
 
   object RemoveSourceIdentifierFromSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): RemoveSourceIdentifierFromSubscriptionResult = {
@@ -3975,6 +4116,7 @@ package neptune {
   }
 
   object RemoveTagsFromResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: KeyList
@@ -3996,6 +4138,7 @@ package neptune {
   }
 
   object ResetDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -4019,6 +4162,7 @@ package neptune {
   }
 
   object ResetDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -4044,6 +4188,7 @@ package neptune {
   }
 
   object ResourcePendingMaintenanceActions {
+    @inline
     def apply(
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
@@ -4077,6 +4222,7 @@ package neptune {
   }
 
   object RestoreDBClusterFromSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -4128,6 +4274,7 @@ package neptune {
   }
 
   object RestoreDBClusterFromSnapshotResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
@@ -4156,6 +4303,7 @@ package neptune {
   }
 
   object RestoreDBClusterToPointInTimeMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         SourceDBClusterIdentifier: String,
@@ -4205,6 +4353,7 @@ package neptune {
   }
 
   object RestoreDBClusterToPointInTimeResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
@@ -4246,6 +4395,7 @@ package neptune {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
@@ -4269,6 +4419,7 @@ package neptune {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -4286,6 +4437,7 @@ package neptune {
   }
 
   object TagListMessage {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
@@ -4304,6 +4456,7 @@ package neptune {
   }
 
   object Timezone {
+    @inline
     def apply(
         TimezoneName: js.UndefOr[String] = js.undefined
     ): Timezone = {
@@ -4326,6 +4479,7 @@ package neptune {
   }
 
   object UpgradeTarget {
+    @inline
     def apply(
         AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -4352,6 +4506,7 @@ package neptune {
   }
 
   object ValidDBInstanceModificationsMessage {
+    @inline
     def apply(
         Storage: js.UndefOr[ValidStorageOptionsList] = js.undefined
     ): ValidDBInstanceModificationsMessage = {
@@ -4374,6 +4529,7 @@ package neptune {
   }
 
   object ValidStorageOptions {
+    @inline
     def apply(
         IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
         ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
@@ -4399,6 +4555,7 @@ package neptune {
   }
 
   object VpcSecurityGroupMembership {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined

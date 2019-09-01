@@ -27,21 +27,21 @@ package object eks {
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
       service.describeCluster(params).promise.toFuture
-    def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
+    @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
       service.describeUpdate(params).promise.toFuture
-    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
       service.listClusters(params).promise.toFuture
-    def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
+    @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
       service.listUpdates(params).promise.toFuture
-    def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
+    @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
       service.updateClusterConfig(params).promise.toFuture
-    def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
+    @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
       service.updateClusterVersion(params).promise.toFuture
   }
 }
@@ -71,6 +71,7 @@ package eks {
   }
 
   object Certificate {
+    @inline
     def apply(
         data: js.UndefOr[String] = js.undefined
     ): Certificate = {
@@ -100,6 +101,7 @@ package eks {
   }
 
   object Cluster {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         certificateAuthority: js.UndefOr[Certificate] = js.undefined,
@@ -151,6 +153,7 @@ package eks {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         name: ClusterName,
         resourcesVpcConfig: VpcConfigRequest,
@@ -178,6 +181,7 @@ package eks {
   }
 
   object CreateClusterResponse {
+    @inline
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
@@ -193,6 +197,7 @@ package eks {
   }
 
   object DeleteClusterRequest {
+    @inline
     def apply(
         name: String
     ): DeleteClusterRequest = {
@@ -210,6 +215,7 @@ package eks {
   }
 
   object DeleteClusterResponse {
+    @inline
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
@@ -225,6 +231,7 @@ package eks {
   }
 
   object DescribeClusterRequest {
+    @inline
     def apply(
         name: String
     ): DescribeClusterRequest = {
@@ -242,6 +249,7 @@ package eks {
   }
 
   object DescribeClusterResponse {
+    @inline
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DescribeClusterResponse = {
@@ -258,6 +266,7 @@ package eks {
   }
 
   object DescribeUpdateRequest {
+    @inline
     def apply(
         name: String,
         updateId: String
@@ -277,6 +286,7 @@ package eks {
   }
 
   object DescribeUpdateResponse {
+    @inline
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): DescribeUpdateResponse = {
@@ -321,6 +331,7 @@ package eks {
   }
 
   object ErrorDetail {
+    @inline
     def apply(
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[String] = js.undefined,
@@ -341,6 +352,7 @@ package eks {
   }
 
   object ListClustersRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[ListClustersRequestMaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -359,6 +371,7 @@ package eks {
   }
 
   object ListClustersResponse {
+    @inline
     def apply(
         clusters: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -378,6 +391,7 @@ package eks {
   }
 
   object ListUpdatesRequest {
+    @inline
     def apply(
         name: String,
         maxResults: js.UndefOr[ListUpdatesRequestMaxResults] = js.undefined,
@@ -400,6 +414,7 @@ package eks {
   }
 
   object ListUpdatesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         updateIds: js.UndefOr[StringList] = js.undefined
@@ -421,6 +436,7 @@ package eks {
   }
 
   object LogSetup {
+    @inline
     def apply(
         enabled: js.UndefOr[BoxedBoolean] = js.undefined,
         types: js.UndefOr[LogTypes] = js.undefined
@@ -451,6 +467,7 @@ package eks {
   }
 
   object Logging {
+    @inline
     def apply(
         clusterLogging: js.UndefOr[LogSetups] = js.undefined
     ): Logging = {
@@ -474,6 +491,7 @@ package eks {
   }
 
   object Update {
+    @inline
     def apply(
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         errors: js.UndefOr[ErrorDetails] = js.undefined,
@@ -502,6 +520,7 @@ package eks {
   }
 
   object UpdateClusterConfigRequest {
+    @inline
     def apply(
         name: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
@@ -525,6 +544,7 @@ package eks {
   }
 
   object UpdateClusterConfigResponse {
+    @inline
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): UpdateClusterConfigResponse = {
@@ -542,6 +562,7 @@ package eks {
   }
 
   object UpdateClusterVersionRequest {
+    @inline
     def apply(
         name: String,
         version: String,
@@ -563,6 +584,7 @@ package eks {
   }
 
   object UpdateClusterVersionResponse {
+    @inline
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): UpdateClusterVersionResponse = {
@@ -582,6 +604,7 @@ package eks {
   }
 
   object UpdateParam {
+    @inline
     def apply(
         `type`: js.UndefOr[UpdateParamType] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -633,6 +656,7 @@ package eks {
   }
 
   object VpcConfigRequest {
+    @inline
     def apply(
         endpointPrivateAccess: js.UndefOr[BoxedBoolean] = js.undefined,
         endpointPublicAccess: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -661,6 +685,7 @@ package eks {
   }
 
   object VpcConfigResponse {
+    @inline
     def apply(
         endpointPrivateAccess: js.UndefOr[Boolean] = js.undefined,
         endpointPublicAccess: js.UndefOr[Boolean] = js.undefined,

@@ -127,123 +127,130 @@ package object autoscaling {
 
   implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
-    def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
+    @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
       service.attachInstances(params).promise.toFuture
-    def attachLoadBalancerTargetGroupsFuture(
+    @inline def attachLoadBalancerTargetGroupsFuture(
         params: AttachLoadBalancerTargetGroupsType
     ): Future[AttachLoadBalancerTargetGroupsResultType] =
       service.attachLoadBalancerTargetGroups(params).promise.toFuture
-    def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] =
+    @inline def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] =
       service.attachLoadBalancers(params).promise.toFuture
-    def batchDeleteScheduledActionFuture(
+    @inline def batchDeleteScheduledActionFuture(
         params: BatchDeleteScheduledActionType
     ): Future[BatchDeleteScheduledActionAnswer] = service.batchDeleteScheduledAction(params).promise.toFuture
-    def batchPutScheduledUpdateGroupActionFuture(
+    @inline def batchPutScheduledUpdateGroupActionFuture(
         params: BatchPutScheduledUpdateGroupActionType
     ): Future[BatchPutScheduledUpdateGroupActionAnswer] =
       service.batchPutScheduledUpdateGroupAction(params).promise.toFuture
-    def completeLifecycleActionFuture(params: CompleteLifecycleActionType): Future[CompleteLifecycleActionAnswer] =
-      service.completeLifecycleAction(params).promise.toFuture
-    def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] =
+    @inline def completeLifecycleActionFuture(
+        params: CompleteLifecycleActionType
+    ): Future[CompleteLifecycleActionAnswer] = service.completeLifecycleAction(params).promise.toFuture
+    @inline def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] =
       service.createAutoScalingGroup(params).promise.toFuture
-    def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] =
+    @inline def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] =
       service.createLaunchConfiguration(params).promise.toFuture
-    def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] =
+    @inline def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] =
       service.createOrUpdateTags(params).promise.toFuture
-    def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] =
+    @inline def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] =
       service.deleteAutoScalingGroup(params).promise.toFuture
-    def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] =
+    @inline def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] =
       service.deleteLaunchConfiguration(params).promise.toFuture
-    def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] =
+    @inline def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] =
       service.deleteLifecycleHook(params).promise.toFuture
-    def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] =
+    @inline def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] =
       service.deleteNotificationConfiguration(params).promise.toFuture
-    def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] = service.deletePolicy(params).promise.toFuture
-    def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] =
+    @inline def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] =
+      service.deletePolicy(params).promise.toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] =
       service.deleteScheduledAction(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] =
+    @inline def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] =
       service.describeAccountLimits().promise.toFuture
-    def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] =
+    @inline def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] =
       service.describeAdjustmentTypes().promise.toFuture
-    def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] =
+    @inline def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] =
       service.describeAutoScalingGroups(params).promise.toFuture
-    def describeAutoScalingInstancesFuture(params: DescribeAutoScalingInstancesType): Future[AutoScalingInstancesType] =
-      service.describeAutoScalingInstances(params).promise.toFuture
-    def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
+    @inline def describeAutoScalingInstancesFuture(
+        params: DescribeAutoScalingInstancesType
+    ): Future[AutoScalingInstancesType] = service.describeAutoScalingInstances(params).promise.toFuture
+    @inline def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
       service.describeAutoScalingNotificationTypes().promise.toFuture
-    def describeLaunchConfigurationsFuture(params: LaunchConfigurationNamesType): Future[LaunchConfigurationsType] =
-      service.describeLaunchConfigurations(params).promise.toFuture
-    def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] =
+    @inline def describeLaunchConfigurationsFuture(
+        params: LaunchConfigurationNamesType
+    ): Future[LaunchConfigurationsType] = service.describeLaunchConfigurations(params).promise.toFuture
+    @inline def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] =
       service.describeLifecycleHookTypes().promise.toFuture
-    def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] =
+    @inline def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] =
       service.describeLifecycleHooks(params).promise.toFuture
-    def describeLoadBalancerTargetGroupsFuture(
+    @inline def describeLoadBalancerTargetGroupsFuture(
         params: DescribeLoadBalancerTargetGroupsRequest
     ): Future[DescribeLoadBalancerTargetGroupsResponse] =
       service.describeLoadBalancerTargetGroups(params).promise.toFuture
-    def describeLoadBalancersFuture(params: DescribeLoadBalancersRequest): Future[DescribeLoadBalancersResponse] =
-      service.describeLoadBalancers(params).promise.toFuture
-    def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] =
+    @inline def describeLoadBalancersFuture(
+        params: DescribeLoadBalancersRequest
+    ): Future[DescribeLoadBalancersResponse] = service.describeLoadBalancers(params).promise.toFuture
+    @inline def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] =
       service.describeMetricCollectionTypes().promise.toFuture
-    def describeNotificationConfigurationsFuture(
+    @inline def describeNotificationConfigurationsFuture(
         params: DescribeNotificationConfigurationsType
     ): Future[DescribeNotificationConfigurationsAnswer] =
       service.describeNotificationConfigurations(params).promise.toFuture
-    def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] =
+    @inline def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] =
       service.describePolicies(params).promise.toFuture
-    def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] =
+    @inline def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] =
       service.describeScalingActivities(params).promise.toFuture
-    def describeScalingProcessTypesFuture(): Future[ProcessesType] =
+    @inline def describeScalingProcessTypesFuture(): Future[ProcessesType] =
       service.describeScalingProcessTypes().promise.toFuture
-    def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] =
+    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] =
       service.describeScheduledActions(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsType): Future[TagsType] = service.describeTags(params).promise.toFuture
-    def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] =
+    @inline def describeTagsFuture(params: DescribeTagsType): Future[TagsType] =
+      service.describeTags(params).promise.toFuture
+    @inline def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] =
       service.describeTerminationPolicyTypes().promise.toFuture
-    def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] =
+    @inline def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] =
       service.detachInstances(params).promise.toFuture
-    def detachLoadBalancerTargetGroupsFuture(
+    @inline def detachLoadBalancerTargetGroupsFuture(
         params: DetachLoadBalancerTargetGroupsType
     ): Future[DetachLoadBalancerTargetGroupsResultType] =
       service.detachLoadBalancerTargetGroups(params).promise.toFuture
-    def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] =
+    @inline def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] =
       service.detachLoadBalancers(params).promise.toFuture
-    def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] =
+    @inline def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] =
       service.disableMetricsCollection(params).promise.toFuture
-    def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] =
+    @inline def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] =
       service.enableMetricsCollection(params).promise.toFuture
-    def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] =
+    @inline def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] =
       service.enterStandby(params).promise.toFuture
-    def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] =
+    @inline def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] =
       service.executePolicy(params).promise.toFuture
-    def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] =
+    @inline def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] =
       service.exitStandby(params).promise.toFuture
-    def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] =
+    @inline def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] =
       service.putLifecycleHook(params).promise.toFuture
-    def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] =
+    @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] =
       service.putNotificationConfiguration(params).promise.toFuture
-    def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] =
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] =
       service.putScalingPolicy(params).promise.toFuture
-    def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] =
+    @inline def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] =
       service.putScheduledUpdateGroupAction(params).promise.toFuture
-    def recordLifecycleActionHeartbeatFuture(
+    @inline def recordLifecycleActionHeartbeatFuture(
         params: RecordLifecycleActionHeartbeatType
     ): Future[RecordLifecycleActionHeartbeatAnswer] = service.recordLifecycleActionHeartbeat(params).promise.toFuture
-    def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
+    @inline def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
       service.resumeProcesses(params).promise.toFuture
-    def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] =
+    @inline def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] =
       service.setDesiredCapacity(params).promise.toFuture
-    def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] =
+    @inline def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] =
       service.setInstanceHealth(params).promise.toFuture
-    def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
+    @inline def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
       service.setInstanceProtection(params).promise.toFuture
-    def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
+    @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
       service.suspendProcesses(params).promise.toFuture
-    def terminateInstanceInAutoScalingGroupFuture(
+    @inline def terminateInstanceInAutoScalingGroupFuture(
         params: TerminateInstanceInAutoScalingGroupType
     ): Future[ActivityType] = service.terminateInstanceInAutoScalingGroup(params).promise.toFuture
-    def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] =
+    @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] =
       service.updateAutoScalingGroup(params).promise.toFuture
   }
 }
@@ -333,6 +340,7 @@ package autoscaling {
   }
 
   object ActivitiesType {
+    @inline
     def apply(
         Activities: Activities,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -364,6 +372,7 @@ package autoscaling {
   }
 
   object Activity {
+    @inline
     def apply(
         ActivityId: XmlString,
         AutoScalingGroupName: XmlStringMaxLen255,
@@ -399,6 +408,7 @@ package autoscaling {
   }
 
   object ActivityType {
+    @inline
     def apply(
         Activity: js.UndefOr[Activity] = js.undefined
     ): ActivityType = {
@@ -417,6 +427,7 @@ package autoscaling {
   }
 
   object AdjustmentType {
+    @inline
     def apply(
         AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): AdjustmentType = {
@@ -436,6 +447,7 @@ package autoscaling {
   }
 
   object Alarm {
+    @inline
     def apply(
         AlarmARN: js.UndefOr[ResourceName] = js.undefined,
         AlarmName: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -454,6 +466,7 @@ package autoscaling {
   }
 
   object AttachInstancesQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
@@ -471,6 +484,7 @@ package autoscaling {
   trait AttachLoadBalancerTargetGroupsResultType extends js.Object {}
 
   object AttachLoadBalancerTargetGroupsResultType {
+    @inline
     def apply(
         ): AttachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
@@ -486,6 +500,7 @@ package autoscaling {
   }
 
   object AttachLoadBalancerTargetGroupsType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TargetGroupARNs: TargetGroupARNs
@@ -503,6 +518,7 @@ package autoscaling {
   trait AttachLoadBalancersResultType extends js.Object {}
 
   object AttachLoadBalancersResultType {
+    @inline
     def apply(
         ): AttachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
@@ -518,6 +534,7 @@ package autoscaling {
   }
 
   object AttachLoadBalancersType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LoadBalancerNames: LoadBalancerNames
@@ -564,6 +581,7 @@ package autoscaling {
   }
 
   object AutoScalingGroup {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         AvailabilityZones: AvailabilityZones,
@@ -633,6 +651,7 @@ package autoscaling {
   }
 
   object AutoScalingGroupNamesType {
+    @inline
     def apply(
         AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -653,6 +672,7 @@ package autoscaling {
   }
 
   object AutoScalingGroupsType {
+    @inline
     def apply(
         AutoScalingGroups: AutoScalingGroups,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -682,6 +702,7 @@ package autoscaling {
   }
 
   object AutoScalingInstanceDetails {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         AvailabilityZone: XmlStringMaxLen255,
@@ -714,6 +735,7 @@ package autoscaling {
   }
 
   object AutoScalingInstancesType {
+    @inline
     def apply(
         AutoScalingInstances: js.UndefOr[AutoScalingInstances] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -731,6 +753,7 @@ package autoscaling {
   }
 
   object BatchDeleteScheduledActionAnswer {
+    @inline
     def apply(
         FailedScheduledActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
     ): BatchDeleteScheduledActionAnswer = {
@@ -747,6 +770,7 @@ package autoscaling {
   }
 
   object BatchDeleteScheduledActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionNames: ScheduledActionNames
@@ -766,6 +790,7 @@ package autoscaling {
   }
 
   object BatchPutScheduledUpdateGroupActionAnswer {
+    @inline
     def apply(
         FailedScheduledUpdateGroupActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
     ): BatchPutScheduledUpdateGroupActionAnswer = {
@@ -784,6 +809,7 @@ package autoscaling {
   }
 
   object BatchPutScheduledUpdateGroupActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
@@ -809,6 +835,7 @@ package autoscaling {
   }
 
   object BlockDeviceMapping {
+    @inline
     def apply(
         DeviceName: XmlStringMaxLen255,
         Ebs: js.UndefOr[Ebs] = js.undefined,
@@ -830,6 +857,7 @@ package autoscaling {
   trait CompleteLifecycleActionAnswer extends js.Object {}
 
   object CompleteLifecycleActionAnswer {
+    @inline
     def apply(
         ): CompleteLifecycleActionAnswer = {
       val __obj = js.Dynamic.literal()
@@ -848,6 +876,7 @@ package autoscaling {
   }
 
   object CompleteLifecycleActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleActionResult: LifecycleActionResult,
@@ -893,6 +922,7 @@ package autoscaling {
   }
 
   object CreateAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         MaxSize: AutoScalingGroupMaxSize,
@@ -971,6 +1001,7 @@ package autoscaling {
   }
 
   object CreateLaunchConfigurationType {
+    @inline
     def apply(
         LaunchConfigurationName: XmlStringMaxLen255,
         AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
@@ -1024,6 +1055,7 @@ package autoscaling {
   }
 
   object CreateOrUpdateTagsType {
+    @inline
     def apply(
         Tags: Tags
     ): CreateOrUpdateTagsType = {
@@ -1052,6 +1084,7 @@ package autoscaling {
   }
 
   object CustomizedMetricSpecification {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: MetricNamespace,
@@ -1078,6 +1111,7 @@ package autoscaling {
   }
 
   object DeleteAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ForceDelete: js.UndefOr[ForceDelete] = js.undefined
@@ -1095,6 +1129,7 @@ package autoscaling {
   trait DeleteLifecycleHookAnswer extends js.Object {}
 
   object DeleteLifecycleHookAnswer {
+    @inline
     def apply(
         ): DeleteLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
@@ -1110,6 +1145,7 @@ package autoscaling {
   }
 
   object DeleteLifecycleHookType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255
@@ -1130,6 +1166,7 @@ package autoscaling {
   }
 
   object DeleteNotificationConfigurationType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TopicARN: ResourceName
@@ -1150,6 +1187,7 @@ package autoscaling {
   }
 
   object DeletePolicyType {
+    @inline
     def apply(
         PolicyName: ResourceName,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined
@@ -1170,6 +1208,7 @@ package autoscaling {
   }
 
   object DeleteScheduledActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionName: ResourceName
@@ -1189,6 +1228,7 @@ package autoscaling {
   }
 
   object DeleteTagsType {
+    @inline
     def apply(
         Tags: Tags
     ): DeleteTagsType = {
@@ -1209,6 +1249,7 @@ package autoscaling {
   }
 
   object DescribeAccountLimitsAnswer {
+    @inline
     def apply(
         MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups] = js.undefined,
         MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations] = js.undefined,
@@ -1238,6 +1279,7 @@ package autoscaling {
   }
 
   object DescribeAdjustmentTypesAnswer {
+    @inline
     def apply(
         AdjustmentTypes: js.UndefOr[AdjustmentTypes] = js.undefined
     ): DescribeAdjustmentTypesAnswer = {
@@ -1255,6 +1297,7 @@ package autoscaling {
   }
 
   object DescribeAutoScalingInstancesType {
+    @inline
     def apply(
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1274,6 +1317,7 @@ package autoscaling {
   }
 
   object DescribeAutoScalingNotificationTypesAnswer {
+    @inline
     def apply(
         AutoScalingNotificationTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
     ): DescribeAutoScalingNotificationTypesAnswer = {
@@ -1291,6 +1335,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHookTypesAnswer {
+    @inline
     def apply(
         LifecycleHookTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
     ): DescribeLifecycleHookTypesAnswer = {
@@ -1306,6 +1351,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHooksAnswer {
+    @inline
     def apply(
         LifecycleHooks: js.UndefOr[LifecycleHooks] = js.undefined
     ): DescribeLifecycleHooksAnswer = {
@@ -1322,6 +1368,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHooksType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookNames: js.UndefOr[LifecycleHookNames] = js.undefined
@@ -1343,6 +1390,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancerTargetGroupsRequest {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1365,6 +1413,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancerTargetGroupsResponse {
+    @inline
     def apply(
         LoadBalancerTargetGroups: js.UndefOr[LoadBalancerTargetGroupStates] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1384,6 +1433,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancersRequest {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1406,6 +1456,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancersResponse {
+    @inline
     def apply(
         LoadBalancers: js.UndefOr[LoadBalancerStates] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1424,6 +1475,7 @@ package autoscaling {
   }
 
   object DescribeMetricCollectionTypesAnswer {
+    @inline
     def apply(
         Granularities: js.UndefOr[MetricGranularityTypes] = js.undefined,
         Metrics: js.UndefOr[MetricCollectionTypes] = js.undefined
@@ -1442,6 +1494,7 @@ package autoscaling {
   }
 
   object DescribeNotificationConfigurationsAnswer {
+    @inline
     def apply(
         NotificationConfigurations: NotificationConfigurations,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1463,6 +1516,7 @@ package autoscaling {
   }
 
   object DescribeNotificationConfigurationsType {
+    @inline
     def apply(
         AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1486,6 +1540,7 @@ package autoscaling {
   }
 
   object DescribePoliciesType {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1512,6 +1567,7 @@ package autoscaling {
   }
 
   object DescribeScalingActivitiesType {
+    @inline
     def apply(
         ActivityIds: js.UndefOr[ActivityIds] = js.undefined,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
@@ -1538,6 +1594,7 @@ package autoscaling {
   }
 
   object DescribeScheduledActionsType {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         EndTime: js.UndefOr[TimestampType] = js.undefined,
@@ -1565,6 +1622,7 @@ package autoscaling {
   }
 
   object DescribeTagsType {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1584,6 +1642,7 @@ package autoscaling {
   }
 
   object DescribeTerminationPolicyTypesAnswer {
+    @inline
     def apply(
         TerminationPolicyTypes: js.UndefOr[TerminationPolicies] = js.undefined
     ): DescribeTerminationPolicyTypesAnswer = {
@@ -1599,6 +1658,7 @@ package autoscaling {
   }
 
   object DetachInstancesAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): DetachInstancesAnswer = {
@@ -1616,6 +1676,7 @@ package autoscaling {
   }
 
   object DetachInstancesQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
@@ -1635,6 +1696,7 @@ package autoscaling {
   trait DetachLoadBalancerTargetGroupsResultType extends js.Object {}
 
   object DetachLoadBalancerTargetGroupsResultType {
+    @inline
     def apply(
         ): DetachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
@@ -1650,6 +1712,7 @@ package autoscaling {
   }
 
   object DetachLoadBalancerTargetGroupsType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TargetGroupARNs: TargetGroupARNs
@@ -1667,6 +1730,7 @@ package autoscaling {
   trait DetachLoadBalancersResultType extends js.Object {}
 
   object DetachLoadBalancersResultType {
+    @inline
     def apply(
         ): DetachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
@@ -1682,6 +1746,7 @@ package autoscaling {
   }
 
   object DetachLoadBalancersType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LoadBalancerNames: LoadBalancerNames
@@ -1702,6 +1767,7 @@ package autoscaling {
   }
 
   object DisableMetricsCollectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         Metrics: js.UndefOr[Metrics] = js.undefined
@@ -1729,6 +1795,7 @@ package autoscaling {
   }
 
   object Ebs {
+    @inline
     def apply(
         DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined,
         Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
@@ -1756,6 +1823,7 @@ package autoscaling {
   }
 
   object EnableMetricsCollectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         Granularity: XmlStringMaxLen255,
@@ -1781,6 +1849,7 @@ package autoscaling {
   }
 
   object EnabledMetric {
+    @inline
     def apply(
         Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -1798,6 +1867,7 @@ package autoscaling {
   }
 
   object EnterStandbyAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): EnterStandbyAnswer = {
@@ -1815,6 +1885,7 @@ package autoscaling {
   }
 
   object EnterStandbyQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
@@ -1840,6 +1911,7 @@ package autoscaling {
   }
 
   object ExecutePolicyType {
+    @inline
     def apply(
         PolicyName: ResourceName,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
@@ -1865,6 +1937,7 @@ package autoscaling {
   }
 
   object ExitStandbyAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): ExitStandbyAnswer = {
@@ -1881,6 +1954,7 @@ package autoscaling {
   }
 
   object ExitStandbyQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
@@ -1905,6 +1979,7 @@ package autoscaling {
   }
 
   object FailedScheduledUpdateGroupActionRequest {
+    @inline
     def apply(
         ScheduledActionName: XmlStringMaxLen255,
         ErrorCode: js.UndefOr[XmlStringMaxLen64] = js.undefined,
@@ -1930,6 +2005,7 @@ package autoscaling {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: js.UndefOr[XmlString] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
@@ -1956,6 +2032,7 @@ package autoscaling {
   }
 
   object Instance {
+    @inline
     def apply(
         AvailabilityZone: XmlStringMaxLen255,
         HealthStatus: XmlStringMaxLen32,
@@ -1988,6 +2065,7 @@ package autoscaling {
   }
 
   object InstanceMonitoring {
+    @inline
     def apply(
         Enabled: js.UndefOr[MonitoringEnabled] = js.undefined
     ): InstanceMonitoring = {
@@ -2012,6 +2090,7 @@ package autoscaling {
   }
 
   object InstancesDistribution {
+    @inline
     def apply(
         OnDemandAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
         OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity] = js.undefined,
@@ -2062,6 +2141,7 @@ package autoscaling {
   }
 
   object LaunchConfiguration {
+    @inline
     def apply(
         CreatedTime: TimestampType,
         ImageId: XmlStringMaxLen255,
@@ -2117,6 +2197,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationNameType {
+    @inline
     def apply(
         LaunchConfigurationName: ResourceName
     ): LaunchConfigurationNameType = {
@@ -2136,6 +2217,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationNamesType {
+    @inline
     def apply(
         LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -2156,6 +2238,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationsType {
+    @inline
     def apply(
         LaunchConfigurations: LaunchConfigurations,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -2180,6 +2263,7 @@ package autoscaling {
   }
 
   object LaunchTemplate {
+    @inline
     def apply(
         LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         Overrides: js.UndefOr[Overrides] = js.undefined
@@ -2202,6 +2286,7 @@ package autoscaling {
   }
 
   object LaunchTemplateOverrides {
+    @inline
     def apply(
         InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): LaunchTemplateOverrides = {
@@ -2223,6 +2308,7 @@ package autoscaling {
   }
 
   object LaunchTemplateSpecification {
+    @inline
     def apply(
         LaunchTemplateId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchTemplateName: js.UndefOr[LaunchTemplateName] = js.undefined,
@@ -2253,6 +2339,7 @@ package autoscaling {
   }
 
   object LifecycleHook {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
@@ -2302,6 +2389,7 @@ package autoscaling {
   }
 
   object LifecycleHookSpecification {
+    @inline
     def apply(
         LifecycleHookName: AsciiStringMaxLen255,
         LifecycleTransition: LifecycleTransition,
@@ -2371,6 +2459,7 @@ package autoscaling {
   }
 
   object LoadBalancerState {
+    @inline
     def apply(
         LoadBalancerName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         State: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -2393,6 +2482,7 @@ package autoscaling {
   }
 
   object LoadBalancerTargetGroupState {
+    @inline
     def apply(
         LoadBalancerTargetGroupARN: js.UndefOr[XmlStringMaxLen511] = js.undefined,
         State: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -2415,6 +2505,7 @@ package autoscaling {
   }
 
   object MetricCollectionType {
+    @inline
     def apply(
         Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): MetricCollectionType = {
@@ -2434,6 +2525,7 @@ package autoscaling {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         Name: MetricDimensionName,
         Value: MetricDimensionValue
@@ -2456,6 +2548,7 @@ package autoscaling {
   }
 
   object MetricGranularityType {
+    @inline
     def apply(
         Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): MetricGranularityType = {
@@ -2497,6 +2590,7 @@ package autoscaling {
   }
 
   object MixedInstancesPolicy {
+    @inline
     def apply(
         InstancesDistribution: js.UndefOr[InstancesDistribution] = js.undefined,
         LaunchTemplate: js.UndefOr[LaunchTemplate] = js.undefined
@@ -2519,6 +2613,7 @@ package autoscaling {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         NotificationType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -2539,6 +2634,7 @@ package autoscaling {
   }
 
   object PoliciesType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
@@ -2560,6 +2656,7 @@ package autoscaling {
   }
 
   object PolicyARNType {
+    @inline
     def apply(
         Alarms: js.UndefOr[Alarms] = js.undefined,
         PolicyARN: js.UndefOr[ResourceName] = js.undefined
@@ -2581,6 +2678,7 @@ package autoscaling {
   }
 
   object PredefinedMetricSpecification {
+    @inline
     def apply(
         PredefinedMetricType: MetricType,
         ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
@@ -2604,6 +2702,7 @@ package autoscaling {
   }
 
   object ProcessType {
+    @inline
     def apply(
         ProcessName: XmlStringMaxLen255
     ): ProcessType = {
@@ -2621,6 +2720,7 @@ package autoscaling {
   }
 
   object ProcessesType {
+    @inline
     def apply(
         Processes: js.UndefOr[Processes] = js.undefined
     ): ProcessesType = {
@@ -2634,6 +2734,7 @@ package autoscaling {
   trait PutLifecycleHookAnswer extends js.Object {}
 
   object PutLifecycleHookAnswer {
+    @inline
     def apply(
         ): PutLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
@@ -2655,6 +2756,7 @@ package autoscaling {
   }
 
   object PutLifecycleHookType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255,
@@ -2688,6 +2790,7 @@ package autoscaling {
   }
 
   object PutNotificationConfigurationType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         NotificationTypes: AutoScalingNotificationTypes,
@@ -2720,6 +2823,7 @@ package autoscaling {
   }
 
   object PutScalingPolicyType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         PolicyName: XmlStringMaxLen255,
@@ -2769,6 +2873,7 @@ package autoscaling {
   }
 
   object PutScheduledUpdateGroupActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionName: XmlStringMaxLen255,
@@ -2800,6 +2905,7 @@ package autoscaling {
   trait RecordLifecycleActionHeartbeatAnswer extends js.Object {}
 
   object RecordLifecycleActionHeartbeatAnswer {
+    @inline
     def apply(
         ): RecordLifecycleActionHeartbeatAnswer = {
       val __obj = js.Dynamic.literal()
@@ -2817,6 +2923,7 @@ package autoscaling {
   }
 
   object RecordLifecycleActionHeartbeatType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255,
@@ -2888,6 +2995,7 @@ package autoscaling {
   }
 
   object ScalingPolicy {
+    @inline
     def apply(
         AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Alarms: js.UndefOr[Alarms] = js.undefined,
@@ -2932,6 +3040,7 @@ package autoscaling {
   }
 
   object ScalingProcessQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScalingProcesses: js.UndefOr[ProcessNames] = js.undefined
@@ -2952,6 +3061,7 @@ package autoscaling {
   }
 
   object ScheduledActionsType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions] = js.undefined
@@ -2983,6 +3093,7 @@ package autoscaling {
   }
 
   object ScheduledUpdateGroupAction {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
@@ -3026,6 +3137,7 @@ package autoscaling {
   }
 
   object ScheduledUpdateGroupActionRequest {
+    @inline
     def apply(
         ScheduledActionName: XmlStringMaxLen255,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
@@ -3057,6 +3169,7 @@ package autoscaling {
   }
 
   object SetDesiredCapacityType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         DesiredCapacity: AutoScalingGroupDesiredCapacity,
@@ -3080,6 +3193,7 @@ package autoscaling {
   }
 
   object SetInstanceHealthQuery {
+    @inline
     def apply(
         HealthStatus: XmlStringMaxLen32,
         InstanceId: XmlStringMaxLen19,
@@ -3099,6 +3213,7 @@ package autoscaling {
   trait SetInstanceProtectionAnswer extends js.Object {}
 
   object SetInstanceProtectionAnswer {
+    @inline
     def apply(
         ): SetInstanceProtectionAnswer = {
       val __obj = js.Dynamic.literal()
@@ -3115,6 +3230,7 @@ package autoscaling {
   }
 
   object SetInstanceProtectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: InstanceIds,
@@ -3149,6 +3265,7 @@ package autoscaling {
   }
 
   object StepAdjustment {
+    @inline
     def apply(
         ScalingAdjustment: PolicyIncrement,
         MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
@@ -3174,6 +3291,7 @@ package autoscaling {
   }
 
   object SuspendedProcess {
+    @inline
     def apply(
         ProcessName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         SuspensionReason: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -3198,6 +3316,7 @@ package autoscaling {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
@@ -3230,6 +3349,7 @@ package autoscaling {
   }
 
   object TagDescription {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
@@ -3254,6 +3374,7 @@ package autoscaling {
   }
 
   object TagsType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         Tags: js.UndefOr[TagDescriptionList] = js.undefined
@@ -3277,6 +3398,7 @@ package autoscaling {
   }
 
   object TargetTrackingConfiguration {
+    @inline
     def apply(
         TargetValue: MetricScale,
         CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,
@@ -3305,6 +3427,7 @@ package autoscaling {
   }
 
   object TerminateInstanceInAutoScalingGroupType {
+    @inline
     def apply(
         InstanceId: XmlStringMaxLen19,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
@@ -3339,6 +3462,7 @@ package autoscaling {
   }
 
   object UpdateAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,

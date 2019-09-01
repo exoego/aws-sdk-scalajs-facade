@@ -69,86 +69,88 @@ package object securityhub {
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
-    def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture
-    def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] =
-      service.batchDisableStandards(params).promise.toFuture
-    def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
+    @inline def batchDisableStandardsFuture(
+        params: BatchDisableStandardsRequest
+    ): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise.toFuture
+    @inline def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
       service.batchEnableStandards(params).promise.toFuture
-    def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
+    @inline def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
       service.batchImportFindings(params).promise.toFuture
-    def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
+    @inline def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
       service.createActionTarget(params).promise.toFuture
-    def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
+    @inline def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
       service.createInsight(params).promise.toFuture
-    def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
+    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
       service.createMembers(params).promise.toFuture
-    def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
+    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
       service.declineInvitations(params).promise.toFuture
-    def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
+    @inline def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
       service.deleteActionTarget(params).promise.toFuture
-    def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
+    @inline def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
       service.deleteInsight(params).promise.toFuture
-    def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
+    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
       service.deleteInvitations(params).promise.toFuture
-    def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
+    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
       service.deleteMembers(params).promise.toFuture
-    def describeActionTargetsFuture(params: DescribeActionTargetsRequest): Future[DescribeActionTargetsResponse] =
-      service.describeActionTargets(params).promise.toFuture
-    def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
+    @inline def describeActionTargetsFuture(
+        params: DescribeActionTargetsRequest
+    ): Future[DescribeActionTargetsResponse] = service.describeActionTargets(params).promise.toFuture
+    @inline def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
       service.describeHub(params).promise.toFuture
-    def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
+    @inline def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
       service.describeProducts(params).promise.toFuture
-    def disableImportFindingsForProductFuture(
+    @inline def disableImportFindingsForProductFuture(
         params: DisableImportFindingsForProductRequest
     ): Future[DisableImportFindingsForProductResponse] =
       service.disableImportFindingsForProduct(params).promise.toFuture
-    def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
+    @inline def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
       service.disableSecurityHub(params).promise.toFuture
-    def disassociateFromMasterAccountFuture(
+    @inline def disassociateFromMasterAccountFuture(
         params: DisassociateFromMasterAccountRequest
     ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
-    def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
+    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
       service.disassociateMembers(params).promise.toFuture
-    def enableImportFindingsForProductFuture(
+    @inline def enableImportFindingsForProductFuture(
         params: EnableImportFindingsForProductRequest
     ): Future[EnableImportFindingsForProductResponse] = service.enableImportFindingsForProduct(params).promise.toFuture
-    def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
+    @inline def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
       service.enableSecurityHub(params).promise.toFuture
-    def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
+    @inline def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
       service.getEnabledStandards(params).promise.toFuture
-    def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
+    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
       service.getFindings(params).promise.toFuture
-    def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
+    @inline def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
       service.getInsightResults(params).promise.toFuture
-    def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
+    @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
       service.getInsights(params).promise.toFuture
-    def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
+    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
       service.getInvitationsCount(params).promise.toFuture
-    def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
+    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
       service.getMasterAccount(params).promise.toFuture
-    def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
+    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
       service.getMembers(params).promise.toFuture
-    def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
+    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
       service.inviteMembers(params).promise.toFuture
-    def listEnabledProductsForImportFuture(
+    @inline def listEnabledProductsForImportFuture(
         params: ListEnabledProductsForImportRequest
     ): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise.toFuture
-    def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
       service.listInvitations(params).promise.toFuture
-    def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
+    @inline def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
       service.updateActionTarget(params).promise.toFuture
-    def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
+    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
       service.updateFindings(params).promise.toFuture
-    def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
+    @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
       service.updateInsight(params).promise.toFuture
   }
 }
@@ -214,6 +216,7 @@ package securityhub {
   }
 
   object AcceptInvitationRequest {
+    @inline
     def apply(
         InvitationId: NonEmptyString,
         MasterId: NonEmptyString
@@ -231,6 +234,7 @@ package securityhub {
   trait AcceptInvitationResponse extends js.Object {}
 
   object AcceptInvitationResponse {
+    @inline
     def apply(
         ): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
@@ -249,6 +253,7 @@ package securityhub {
   }
 
   object AccountDetails {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Email: js.UndefOr[NonEmptyString] = js.undefined
@@ -271,6 +276,7 @@ package securityhub {
   }
 
   object ActionTarget {
+    @inline
     def apply(
         ActionTargetArn: NonEmptyString,
         Description: NonEmptyString,
@@ -303,6 +309,7 @@ package securityhub {
   }
 
   object AwsEc2InstanceDetails {
+    @inline
     def apply(
         IamInstanceProfileArn: js.UndefOr[NonEmptyString] = js.undefined,
         ImageId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -339,6 +346,7 @@ package securityhub {
   }
 
   object AwsIamAccessKeyDetails {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[NonEmptyString] = js.undefined,
         Status: js.UndefOr[AwsIamAccessKeyStatus] = js.undefined,
@@ -369,6 +377,7 @@ package securityhub {
   }
 
   object AwsS3BucketDetails {
+    @inline
     def apply(
         OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
         OwnerName: js.UndefOr[NonEmptyString] = js.undefined
@@ -420,6 +429,7 @@ package securityhub {
   }
 
   object AwsSecurityFinding {
+    @inline
     def apply(
         AwsAccountId: NonEmptyString,
         CreatedAt: NonEmptyString,
@@ -580,6 +590,7 @@ package securityhub {
   }
 
   object AwsSecurityFindingFilters {
+    @inline
     def apply(
         AwsAccountId: js.UndefOr[StringFilterList] = js.undefined,
         CompanyName: js.UndefOr[StringFilterList] = js.undefined,
@@ -803,6 +814,7 @@ package securityhub {
   }
 
   object BatchDisableStandardsRequest {
+    @inline
     def apply(
         StandardsSubscriptionArns: StandardsSubscriptionArns
     ): BatchDisableStandardsRequest = {
@@ -820,6 +832,7 @@ package securityhub {
   }
 
   object BatchDisableStandardsResponse {
+    @inline
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchDisableStandardsResponse = {
@@ -835,6 +848,7 @@ package securityhub {
   }
 
   object BatchEnableStandardsRequest {
+    @inline
     def apply(
         StandardsSubscriptionRequests: StandardsSubscriptionRequests
     ): BatchEnableStandardsRequest = {
@@ -852,6 +866,7 @@ package securityhub {
   }
 
   object BatchEnableStandardsResponse {
+    @inline
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchEnableStandardsResponse = {
@@ -867,6 +882,7 @@ package securityhub {
   }
 
   object BatchImportFindingsRequest {
+    @inline
     def apply(
         Findings: AwsSecurityFindingList
     ): BatchImportFindingsRequest = {
@@ -886,6 +902,7 @@ package securityhub {
   }
 
   object BatchImportFindingsResponse {
+    @inline
     def apply(
         FailedCount: Int,
         SuccessCount: Int,
@@ -910,6 +927,7 @@ package securityhub {
   }
 
   object Compliance {
+    @inline
     def apply(
         Status: js.UndefOr[ComplianceStatus] = js.undefined
     ): Compliance = {
@@ -940,6 +958,7 @@ package securityhub {
   }
 
   object ContainerDetails {
+    @inline
     def apply(
         ImageId: js.UndefOr[NonEmptyString] = js.undefined,
         ImageName: js.UndefOr[NonEmptyString] = js.undefined,
@@ -963,6 +982,7 @@ package securityhub {
   }
 
   object CreateActionTargetRequest {
+    @inline
     def apply(
         Description: NonEmptyString,
         Id: NonEmptyString,
@@ -984,6 +1004,7 @@ package securityhub {
   }
 
   object CreateActionTargetResponse {
+    @inline
     def apply(
         ActionTargetArn: NonEmptyString
     ): CreateActionTargetResponse = {
@@ -1003,6 +1024,7 @@ package securityhub {
   }
 
   object CreateInsightRequest {
+    @inline
     def apply(
         Filters: AwsSecurityFindingFilters,
         GroupByAttribute: NonEmptyString,
@@ -1024,6 +1046,7 @@ package securityhub {
   }
 
   object CreateInsightResponse {
+    @inline
     def apply(
         InsightArn: NonEmptyString
     ): CreateInsightResponse = {
@@ -1041,6 +1064,7 @@ package securityhub {
   }
 
   object CreateMembersRequest {
+    @inline
     def apply(
         AccountDetails: js.UndefOr[AccountDetailsList] = js.undefined
     ): CreateMembersRequest = {
@@ -1056,6 +1080,7 @@ package securityhub {
   }
 
   object CreateMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): CreateMembersResponse = {
@@ -1076,6 +1101,7 @@ package securityhub {
   }
 
   object DateFilter {
+    @inline
     def apply(
         DateRange: js.UndefOr[DateRange] = js.undefined,
         End: js.UndefOr[NonEmptyString] = js.undefined,
@@ -1099,6 +1125,7 @@ package securityhub {
   }
 
   object DateRange {
+    @inline
     def apply(
         Unit: js.UndefOr[DateRangeUnit] = js.undefined,
         Value: js.UndefOr[Int] = js.undefined
@@ -1122,6 +1149,7 @@ package securityhub {
   }
 
   object DeclineInvitationsRequest {
+    @inline
     def apply(
         AccountIds: AccountIdList
     ): DeclineInvitationsRequest = {
@@ -1139,6 +1167,7 @@ package securityhub {
   }
 
   object DeclineInvitationsResponse {
+    @inline
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeclineInvitationsResponse = {
@@ -1154,6 +1183,7 @@ package securityhub {
   }
 
   object DeleteActionTargetRequest {
+    @inline
     def apply(
         ActionTargetArn: NonEmptyString
     ): DeleteActionTargetRequest = {
@@ -1171,6 +1201,7 @@ package securityhub {
   }
 
   object DeleteActionTargetResponse {
+    @inline
     def apply(
         ActionTargetArn: NonEmptyString
     ): DeleteActionTargetResponse = {
@@ -1188,6 +1219,7 @@ package securityhub {
   }
 
   object DeleteInsightRequest {
+    @inline
     def apply(
         InsightArn: NonEmptyString
     ): DeleteInsightRequest = {
@@ -1205,6 +1237,7 @@ package securityhub {
   }
 
   object DeleteInsightResponse {
+    @inline
     def apply(
         InsightArn: NonEmptyString
     ): DeleteInsightResponse = {
@@ -1222,6 +1255,7 @@ package securityhub {
   }
 
   object DeleteInvitationsRequest {
+    @inline
     def apply(
         AccountIds: AccountIdList
     ): DeleteInvitationsRequest = {
@@ -1239,6 +1273,7 @@ package securityhub {
   }
 
   object DeleteInvitationsResponse {
+    @inline
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeleteInvitationsResponse = {
@@ -1254,6 +1289,7 @@ package securityhub {
   }
 
   object DeleteMembersRequest {
+    @inline
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DeleteMembersRequest = {
@@ -1269,6 +1305,7 @@ package securityhub {
   }
 
   object DeleteMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeleteMembersResponse = {
@@ -1286,6 +1323,7 @@ package securityhub {
   }
 
   object DescribeActionTargetsRequest {
+    @inline
     def apply(
         ActionTargetArns: js.UndefOr[ArnList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1306,6 +1344,7 @@ package securityhub {
   }
 
   object DescribeActionTargetsResponse {
+    @inline
     def apply(
         ActionTargets: ActionTargetList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1325,6 +1364,7 @@ package securityhub {
   }
 
   object DescribeHubRequest {
+    @inline
     def apply(
         HubArn: js.UndefOr[NonEmptyString] = js.undefined
     ): DescribeHubRequest = {
@@ -1341,6 +1381,7 @@ package securityhub {
   }
 
   object DescribeHubResponse {
+    @inline
     def apply(
         HubArn: js.UndefOr[NonEmptyString] = js.undefined,
         SubscribedAt: js.UndefOr[NonEmptyString] = js.undefined
@@ -1359,6 +1400,7 @@ package securityhub {
   }
 
   object DescribeProductsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1377,6 +1419,7 @@ package securityhub {
   }
 
   object DescribeProductsResponse {
+    @inline
     def apply(
         Products: ProductsList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1396,6 +1439,7 @@ package securityhub {
   }
 
   object DisableImportFindingsForProductRequest {
+    @inline
     def apply(
         ProductSubscriptionArn: NonEmptyString
     ): DisableImportFindingsForProductRequest = {
@@ -1411,6 +1455,7 @@ package securityhub {
   trait DisableImportFindingsForProductResponse extends js.Object {}
 
   object DisableImportFindingsForProductResponse {
+    @inline
     def apply(
         ): DisableImportFindingsForProductResponse = {
       val __obj = js.Dynamic.literal()
@@ -1423,6 +1468,7 @@ package securityhub {
   trait DisableSecurityHubRequest extends js.Object {}
 
   object DisableSecurityHubRequest {
+    @inline
     def apply(
         ): DisableSecurityHubRequest = {
       val __obj = js.Dynamic.literal()
@@ -1435,6 +1481,7 @@ package securityhub {
   trait DisableSecurityHubResponse extends js.Object {}
 
   object DisableSecurityHubResponse {
+    @inline
     def apply(
         ): DisableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
@@ -1447,6 +1494,7 @@ package securityhub {
   trait DisassociateFromMasterAccountRequest extends js.Object {}
 
   object DisassociateFromMasterAccountRequest {
+    @inline
     def apply(
         ): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1459,6 +1507,7 @@ package securityhub {
   trait DisassociateFromMasterAccountResponse extends js.Object {}
 
   object DisassociateFromMasterAccountResponse {
+    @inline
     def apply(
         ): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
@@ -1473,6 +1522,7 @@ package securityhub {
   }
 
   object DisassociateMembersRequest {
+    @inline
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DisassociateMembersRequest = {
@@ -1486,6 +1536,7 @@ package securityhub {
   trait DisassociateMembersResponse extends js.Object {}
 
   object DisassociateMembersResponse {
+    @inline
     def apply(
         ): DisassociateMembersResponse = {
       val __obj = js.Dynamic.literal()
@@ -1500,6 +1551,7 @@ package securityhub {
   }
 
   object EnableImportFindingsForProductRequest {
+    @inline
     def apply(
         ProductArn: NonEmptyString
     ): EnableImportFindingsForProductRequest = {
@@ -1517,6 +1569,7 @@ package securityhub {
   }
 
   object EnableImportFindingsForProductResponse {
+    @inline
     def apply(
         ProductSubscriptionArn: js.UndefOr[NonEmptyString] = js.undefined
     ): EnableImportFindingsForProductResponse = {
@@ -1532,6 +1585,7 @@ package securityhub {
   }
 
   object EnableSecurityHubRequest {
+    @inline
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): EnableSecurityHubRequest = {
@@ -1545,6 +1599,7 @@ package securityhub {
   trait EnableSecurityHubResponse extends js.Object {}
 
   object EnableSecurityHubResponse {
+    @inline
     def apply(
         ): EnableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
@@ -1561,6 +1616,7 @@ package securityhub {
   }
 
   object GetEnabledStandardsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1583,6 +1639,7 @@ package securityhub {
   }
 
   object GetEnabledStandardsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
@@ -1603,6 +1660,7 @@ package securityhub {
   }
 
   object GetFindingsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1625,6 +1683,7 @@ package securityhub {
   }
 
   object GetFindingsResponse {
+    @inline
     def apply(
         Findings: AwsSecurityFindingList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1644,6 +1703,7 @@ package securityhub {
   }
 
   object GetInsightResultsRequest {
+    @inline
     def apply(
         InsightArn: NonEmptyString
     ): GetInsightResultsRequest = {
@@ -1661,6 +1721,7 @@ package securityhub {
   }
 
   object GetInsightResultsResponse {
+    @inline
     def apply(
         InsightResults: InsightResults
     ): GetInsightResultsResponse = {
@@ -1680,6 +1741,7 @@ package securityhub {
   }
 
   object GetInsightsRequest {
+    @inline
     def apply(
         InsightArns: js.UndefOr[ArnList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1700,6 +1762,7 @@ package securityhub {
   }
 
   object GetInsightsResponse {
+    @inline
     def apply(
         Insights: InsightList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1717,6 +1780,7 @@ package securityhub {
   trait GetInvitationsCountRequest extends js.Object {}
 
   object GetInvitationsCountRequest {
+    @inline
     def apply(
         ): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1731,6 +1795,7 @@ package securityhub {
   }
 
   object GetInvitationsCountResponse {
+    @inline
     def apply(
         InvitationsCount: js.UndefOr[Int] = js.undefined
     ): GetInvitationsCountResponse = {
@@ -1744,6 +1809,7 @@ package securityhub {
   trait GetMasterAccountRequest extends js.Object {}
 
   object GetMasterAccountRequest {
+    @inline
     def apply(
         ): GetMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1758,6 +1824,7 @@ package securityhub {
   }
 
   object GetMasterAccountResponse {
+    @inline
     def apply(
         Master: js.UndefOr[Invitation] = js.undefined
     ): GetMasterAccountResponse = {
@@ -1773,6 +1840,7 @@ package securityhub {
   }
 
   object GetMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIdList
     ): GetMembersRequest = {
@@ -1791,6 +1859,7 @@ package securityhub {
   }
 
   object GetMembersResponse {
+    @inline
     def apply(
         Members: js.UndefOr[MemberList] = js.undefined,
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
@@ -1813,6 +1882,7 @@ package securityhub {
   }
 
   object ImportFindingsError {
+    @inline
     def apply(
         ErrorCode: NonEmptyString,
         ErrorMessage: NonEmptyString,
@@ -1840,6 +1910,7 @@ package securityhub {
   }
 
   object Insight {
+    @inline
     def apply(
         Filters: AwsSecurityFindingFilters,
         GroupByAttribute: NonEmptyString,
@@ -1867,6 +1938,7 @@ package securityhub {
   }
 
   object InsightResultValue {
+    @inline
     def apply(
         Count: Int,
         GroupByAttributeValue: NonEmptyString
@@ -1891,6 +1963,7 @@ package securityhub {
   }
 
   object InsightResults {
+    @inline
     def apply(
         GroupByAttribute: NonEmptyString,
         InsightArn: NonEmptyString,
@@ -1918,6 +1991,7 @@ package securityhub {
   }
 
   object Invitation {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -1939,6 +2013,7 @@ package securityhub {
   }
 
   object InviteMembersRequest {
+    @inline
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): InviteMembersRequest = {
@@ -1954,6 +2029,7 @@ package securityhub {
   }
 
   object InviteMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): InviteMembersResponse = {
@@ -1972,6 +2048,7 @@ package securityhub {
   }
 
   object IpFilter {
+    @inline
     def apply(
         Cidr: js.UndefOr[NonEmptyString] = js.undefined
     ): IpFilter = {
@@ -1990,6 +2067,7 @@ package securityhub {
   }
 
   object KeywordFilter {
+    @inline
     def apply(
         Value: js.UndefOr[NonEmptyString] = js.undefined
     ): KeywordFilter = {
@@ -2006,6 +2084,7 @@ package securityhub {
   }
 
   object ListEnabledProductsForImportRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2024,6 +2103,7 @@ package securityhub {
   }
 
   object ListEnabledProductsForImportResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ProductSubscriptions: js.UndefOr[ProductSubscriptionArnList] = js.undefined
@@ -2042,6 +2122,7 @@ package securityhub {
   }
 
   object ListInvitationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2060,6 +2141,7 @@ package securityhub {
   }
 
   object ListInvitationsResponse {
+    @inline
     def apply(
         Invitations: js.UndefOr[InvitationList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
@@ -2079,6 +2161,7 @@ package securityhub {
   }
 
   object ListMembersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2099,6 +2182,7 @@ package securityhub {
   }
 
   object ListMembersResponse {
+    @inline
     def apply(
         Members: js.UndefOr[MemberList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
@@ -2116,6 +2200,7 @@ package securityhub {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
@@ -2133,6 +2218,7 @@ package securityhub {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2154,6 +2240,7 @@ package securityhub {
   }
 
   object Malware {
+    @inline
     def apply(
         Name: NonEmptyString,
         Path: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2228,6 +2315,7 @@ package securityhub {
   }
 
   object MapFilter {
+    @inline
     def apply(
         Comparison: js.UndefOr[MapFilterComparison] = js.undefined,
         Key: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2261,6 +2349,7 @@ package securityhub {
   }
 
   object Member {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Email: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2299,6 +2388,7 @@ package securityhub {
   }
 
   object Network {
+    @inline
     def apply(
         DestinationDomain: js.UndefOr[NonEmptyString] = js.undefined,
         DestinationIpV4: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2346,6 +2436,7 @@ package securityhub {
   }
 
   object Note {
+    @inline
     def apply(
         Text: NonEmptyString,
         UpdatedAt: NonEmptyString,
@@ -2371,6 +2462,7 @@ package securityhub {
   }
 
   object NoteUpdate {
+    @inline
     def apply(
         Text: NonEmptyString,
         UpdatedBy: NonEmptyString
@@ -2395,6 +2487,7 @@ package securityhub {
   }
 
   object NumberFilter {
+    @inline
     def apply(
         Eq: js.UndefOr[Double] = js.undefined,
         Gte: js.UndefOr[Double] = js.undefined,
@@ -2430,6 +2523,7 @@ package securityhub {
   }
 
   object ProcessDetails {
+    @inline
     def apply(
         LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2465,6 +2559,7 @@ package securityhub {
   }
 
   object Product {
+    @inline
     def apply(
         ProductArn: NonEmptyString,
         ActivationUrl: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2502,6 +2597,7 @@ package securityhub {
   }
 
   object Recommendation {
+    @inline
     def apply(
         Text: js.UndefOr[NonEmptyString] = js.undefined,
         Url: js.UndefOr[NonEmptyString] = js.undefined
@@ -2530,6 +2626,7 @@ package securityhub {
   }
 
   object RelatedFinding {
+    @inline
     def apply(
         Id: NonEmptyString,
         ProductArn: NonEmptyString
@@ -2552,6 +2649,7 @@ package securityhub {
   }
 
   object Remediation {
+    @inline
     def apply(
         Recommendation: js.UndefOr[Recommendation] = js.undefined
     ): Remediation = {
@@ -2575,6 +2673,7 @@ package securityhub {
   }
 
   object Resource {
+    @inline
     def apply(
         Id: NonEmptyString,
         Type: NonEmptyString,
@@ -2609,6 +2708,7 @@ package securityhub {
   }
 
   object ResourceDetails {
+    @inline
     def apply(
         AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
         AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails] = js.undefined,
@@ -2636,6 +2736,7 @@ package securityhub {
   }
 
   object Result {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         ProcessingResult: js.UndefOr[NonEmptyString] = js.undefined
@@ -2657,6 +2758,7 @@ package securityhub {
   }
 
   object Severity {
+    @inline
     def apply(
         Normalized: Int,
         Product: js.UndefOr[Double] = js.undefined
@@ -2680,6 +2782,7 @@ package securityhub {
   }
 
   object SortCriterion {
+    @inline
     def apply(
         Field: js.UndefOr[NonEmptyString] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
@@ -2720,6 +2823,7 @@ package securityhub {
   }
 
   object StandardsSubscription {
+    @inline
     def apply(
         StandardsArn: NonEmptyString,
         StandardsInput: StandardsInputParameterMap,
@@ -2747,6 +2851,7 @@ package securityhub {
   }
 
   object StandardsSubscriptionRequest {
+    @inline
     def apply(
         StandardsArn: NonEmptyString,
         StandardsInput: js.UndefOr[StandardsInputParameterMap] = js.undefined
@@ -2770,6 +2875,7 @@ package securityhub {
   }
 
   object StringFilter {
+    @inline
     def apply(
         Comparison: js.UndefOr[StringFilterComparison] = js.undefined,
         Value: js.UndefOr[NonEmptyString] = js.undefined
@@ -2795,6 +2901,7 @@ package securityhub {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         Tags: TagMap
@@ -2812,6 +2919,7 @@ package securityhub {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2834,6 +2942,7 @@ package securityhub {
   }
 
   object ThreatIntelIndicator {
+    @inline
     def apply(
         Category: js.UndefOr[ThreatIntelIndicatorCategory] = js.undefined,
         LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2902,6 +3011,7 @@ package securityhub {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         TagKeys: TagKeyList
@@ -2919,6 +3029,7 @@ package securityhub {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2935,6 +3046,7 @@ package securityhub {
   }
 
   object UpdateActionTargetRequest {
+    @inline
     def apply(
         ActionTargetArn: NonEmptyString,
         Description: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2954,6 +3066,7 @@ package securityhub {
   trait UpdateActionTargetResponse extends js.Object {}
 
   object UpdateActionTargetResponse {
+    @inline
     def apply(
         ): UpdateActionTargetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2970,6 +3083,7 @@ package securityhub {
   }
 
   object UpdateFindingsRequest {
+    @inline
     def apply(
         Filters: AwsSecurityFindingFilters,
         Note: js.UndefOr[NoteUpdate] = js.undefined,
@@ -2989,6 +3103,7 @@ package securityhub {
   trait UpdateFindingsResponse extends js.Object {}
 
   object UpdateFindingsResponse {
+    @inline
     def apply(
         ): UpdateFindingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -3006,6 +3121,7 @@ package securityhub {
   }
 
   object UpdateInsightRequest {
+    @inline
     def apply(
         InsightArn: NonEmptyString,
         Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
@@ -3027,6 +3143,7 @@ package securityhub {
   trait UpdateInsightResponse extends js.Object {}
 
   object UpdateInsightResponse {
+    @inline
     def apply(
         ): UpdateInsightResponse = {
       val __obj = js.Dynamic.literal()

@@ -68,43 +68,47 @@ package object codebuild {
 
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
-    def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
+    @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
       service.batchDeleteBuilds(params).promise.toFuture
-    def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
+    @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
       service.batchGetBuilds(params).promise.toFuture
-    def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
+    @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
       service.batchGetProjects(params).promise.toFuture
-    def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
+    @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
       service.createProject(params).promise.toFuture
-    def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
+    @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
       service.createWebhook(params).promise.toFuture
-    def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
+    @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
       service.deleteProject(params).promise.toFuture
-    def deleteSourceCredentialsFuture(params: DeleteSourceCredentialsInput): Future[DeleteSourceCredentialsOutput] =
-      service.deleteSourceCredentials(params).promise.toFuture
-    def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
+    @inline def deleteSourceCredentialsFuture(
+        params: DeleteSourceCredentialsInput
+    ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise.toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
       service.deleteWebhook(params).promise.toFuture
-    def importSourceCredentialsFuture(params: ImportSourceCredentialsInput): Future[ImportSourceCredentialsOutput] =
-      service.importSourceCredentials(params).promise.toFuture
-    def invalidateProjectCacheFuture(params: InvalidateProjectCacheInput): Future[InvalidateProjectCacheOutput] =
-      service.invalidateProjectCache(params).promise.toFuture
-    def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
+    @inline def importSourceCredentialsFuture(
+        params: ImportSourceCredentialsInput
+    ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise.toFuture
+    @inline def invalidateProjectCacheFuture(
+        params: InvalidateProjectCacheInput
+    ): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise.toFuture
+    @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
       service.listBuildsForProject(params).promise.toFuture
-    def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
+    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
       service.listBuilds(params).promise.toFuture
-    def listCuratedEnvironmentImagesFuture(
+    @inline def listCuratedEnvironmentImagesFuture(
         params: ListCuratedEnvironmentImagesInput
     ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise.toFuture
-    def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
+    @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
       service.listProjects(params).promise.toFuture
-    def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
+    @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
       service.listSourceCredentials(params).promise.toFuture
-    def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
+    @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
       service.startBuild(params).promise.toFuture
-    def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] = service.stopBuild(params).promise.toFuture
-    def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
+    @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] =
+      service.stopBuild(params).promise.toFuture
+    @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
       service.updateProject(params).promise.toFuture
-    def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
+    @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
       service.updateWebhook(params).promise.toFuture
   }
 }
@@ -176,6 +180,7 @@ package codebuild {
   }
 
   object BatchDeleteBuildsInput {
+    @inline
     def apply(
         ids: BuildIds
     ): BatchDeleteBuildsInput = {
@@ -194,6 +199,7 @@ package codebuild {
   }
 
   object BatchDeleteBuildsOutput {
+    @inline
     def apply(
         buildsDeleted: js.UndefOr[BuildIds] = js.undefined,
         buildsNotDeleted: js.UndefOr[BuildsNotDeleted] = js.undefined
@@ -211,6 +217,7 @@ package codebuild {
   }
 
   object BatchGetBuildsInput {
+    @inline
     def apply(
         ids: BuildIds
     ): BatchGetBuildsInput = {
@@ -229,6 +236,7 @@ package codebuild {
   }
 
   object BatchGetBuildsOutput {
+    @inline
     def apply(
         builds: js.UndefOr[Builds] = js.undefined,
         buildsNotFound: js.UndefOr[BuildIds] = js.undefined
@@ -246,6 +254,7 @@ package codebuild {
   }
 
   object BatchGetProjectsInput {
+    @inline
     def apply(
         names: ProjectNames
     ): BatchGetProjectsInput = {
@@ -264,6 +273,7 @@ package codebuild {
   }
 
   object BatchGetProjectsOutput {
+    @inline
     def apply(
         projects: js.UndefOr[Projects] = js.undefined,
         projectsNotFound: js.UndefOr[ProjectNames] = js.undefined
@@ -309,6 +319,7 @@ package codebuild {
   }
 
   object Build {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         artifacts: js.UndefOr[BuildArtifacts] = js.undefined,
@@ -382,6 +393,7 @@ package codebuild {
   }
 
   object BuildArtifacts {
+    @inline
     def apply(
         artifactIdentifier: js.UndefOr[String] = js.undefined,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
@@ -411,6 +423,7 @@ package codebuild {
   }
 
   object BuildNotDeleted {
+    @inline
     def apply(
         id: js.UndefOr[NonEmptyString] = js.undefined,
         statusCode: js.UndefOr[String] = js.undefined
@@ -436,6 +449,7 @@ package codebuild {
   }
 
   object BuildPhase {
+    @inline
     def apply(
         contexts: js.UndefOr[PhaseContexts] = js.undefined,
         durationInSeconds: js.UndefOr[WrapperLong] = js.undefined,
@@ -512,6 +526,7 @@ package codebuild {
   }
 
   object CloudWatchLogsConfig {
+    @inline
     def apply(
         status: LogsConfigStatusType,
         groupName: js.UndefOr[String] = js.undefined,
@@ -558,6 +573,7 @@ package codebuild {
   }
 
   object CreateProjectInput {
+    @inline
     def apply(
         artifacts: ProjectArtifacts,
         environment: ProjectEnvironment,
@@ -609,6 +625,7 @@ package codebuild {
   }
 
   object CreateProjectOutput {
+    @inline
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): CreateProjectOutput = {
@@ -626,6 +643,7 @@ package codebuild {
   }
 
   object CreateWebhookInput {
+    @inline
     def apply(
         projectName: ProjectName,
         branchFilter: js.UndefOr[String] = js.undefined,
@@ -647,6 +665,7 @@ package codebuild {
   }
 
   object CreateWebhookOutput {
+    @inline
     def apply(
         webhook: js.UndefOr[Webhook] = js.undefined
     ): CreateWebhookOutput = {
@@ -668,6 +687,7 @@ package codebuild {
   }
 
   object DeleteProjectInput {
+    @inline
     def apply(
         name: NonEmptyString
     ): DeleteProjectInput = {
@@ -683,6 +703,7 @@ package codebuild {
   trait DeleteProjectOutput extends js.Object {}
 
   object DeleteProjectOutput {
+    @inline
     def apply(
         ): DeleteProjectOutput = {
       val __obj = js.Dynamic.literal()
@@ -697,6 +718,7 @@ package codebuild {
   }
 
   object DeleteSourceCredentialsInput {
+    @inline
     def apply(
         arn: NonEmptyString
     ): DeleteSourceCredentialsInput = {
@@ -714,6 +736,7 @@ package codebuild {
   }
 
   object DeleteSourceCredentialsOutput {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined
     ): DeleteSourceCredentialsOutput = {
@@ -729,6 +752,7 @@ package codebuild {
   }
 
   object DeleteWebhookInput {
+    @inline
     def apply(
         projectName: ProjectName
     ): DeleteWebhookInput = {
@@ -744,6 +768,7 @@ package codebuild {
   trait DeleteWebhookOutput extends js.Object {}
 
   object DeleteWebhookOutput {
+    @inline
     def apply(
         ): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
@@ -763,6 +788,7 @@ package codebuild {
   }
 
   object EnvironmentImage {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -786,6 +812,7 @@ package codebuild {
   }
 
   object EnvironmentLanguage {
+    @inline
     def apply(
         images: js.UndefOr[EnvironmentImages] = js.undefined,
         language: js.UndefOr[LanguageType] = js.undefined
@@ -807,6 +834,7 @@ package codebuild {
   }
 
   object EnvironmentPlatform {
+    @inline
     def apply(
         languages: js.UndefOr[EnvironmentLanguages] = js.undefined,
         platform: js.UndefOr[PlatformType] = js.undefined
@@ -836,6 +864,7 @@ package codebuild {
   }
 
   object EnvironmentVariable {
+    @inline
     def apply(
         name: NonEmptyString,
         value: String,
@@ -867,6 +896,7 @@ package codebuild {
   }
 
   object GitSubmodulesConfig {
+    @inline
     def apply(
         fetchSubmodules: WrapperBoolean
     ): GitSubmodulesConfig = {
@@ -895,6 +925,7 @@ package codebuild {
   }
 
   object ImportSourceCredentialsInput {
+    @inline
     def apply(
         authType: AuthType,
         serverType: ServerType,
@@ -920,6 +951,7 @@ package codebuild {
   }
 
   object ImportSourceCredentialsOutput {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined
     ): ImportSourceCredentialsOutput = {
@@ -935,6 +967,7 @@ package codebuild {
   }
 
   object InvalidateProjectCacheInput {
+    @inline
     def apply(
         projectName: NonEmptyString
     ): InvalidateProjectCacheInput = {
@@ -950,6 +983,7 @@ package codebuild {
   trait InvalidateProjectCacheOutput extends js.Object {}
 
   object InvalidateProjectCacheOutput {
+    @inline
     def apply(
         ): InvalidateProjectCacheOutput = {
       val __obj = js.Dynamic.literal()
@@ -981,6 +1015,7 @@ package codebuild {
   }
 
   object ListBuildsForProjectInput {
+    @inline
     def apply(
         projectName: NonEmptyString,
         nextToken: js.UndefOr[String] = js.undefined,
@@ -1003,6 +1038,7 @@ package codebuild {
   }
 
   object ListBuildsForProjectOutput {
+    @inline
     def apply(
         ids: js.UndefOr[BuildIds] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1021,6 +1057,7 @@ package codebuild {
   }
 
   object ListBuildsInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         sortOrder: js.UndefOr[SortOrderType] = js.undefined
@@ -1039,6 +1076,7 @@ package codebuild {
   }
 
   object ListBuildsOutput {
+    @inline
     def apply(
         ids: js.UndefOr[BuildIds] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1054,6 +1092,7 @@ package codebuild {
   trait ListCuratedEnvironmentImagesInput extends js.Object {}
 
   object ListCuratedEnvironmentImagesInput {
+    @inline
     def apply(
         ): ListCuratedEnvironmentImagesInput = {
       val __obj = js.Dynamic.literal()
@@ -1068,6 +1107,7 @@ package codebuild {
   }
 
   object ListCuratedEnvironmentImagesOutput {
+    @inline
     def apply(
         platforms: js.UndefOr[EnvironmentPlatforms] = js.undefined
     ): ListCuratedEnvironmentImagesOutput = {
@@ -1085,6 +1125,7 @@ package codebuild {
   }
 
   object ListProjectsInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NonEmptyString] = js.undefined,
         sortBy: js.UndefOr[ProjectSortByType] = js.undefined,
@@ -1105,6 +1146,7 @@ package codebuild {
   }
 
   object ListProjectsOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         projects: js.UndefOr[ProjectNames] = js.undefined
@@ -1120,6 +1162,7 @@ package codebuild {
   trait ListSourceCredentialsInput extends js.Object {}
 
   object ListSourceCredentialsInput {
+    @inline
     def apply(
         ): ListSourceCredentialsInput = {
       val __obj = js.Dynamic.literal()
@@ -1134,6 +1177,7 @@ package codebuild {
   }
 
   object ListSourceCredentialsOutput {
+    @inline
     def apply(
         sourceCredentialsInfos: js.UndefOr[SourceCredentialsInfos] = js.undefined
     ): ListSourceCredentialsOutput = {
@@ -1153,6 +1197,7 @@ package codebuild {
   }
 
   object LogsConfig {
+    @inline
     def apply(
         cloudWatchLogs: js.UndefOr[CloudWatchLogsConfig] = js.undefined,
         s3Logs: js.UndefOr[S3LogsConfig] = js.undefined
@@ -1185,6 +1230,7 @@ package codebuild {
   }
 
   object LogsLocation {
+    @inline
     def apply(
         cloudWatchLogs: js.UndefOr[CloudWatchLogsConfig] = js.undefined,
         deepLink: js.UndefOr[String] = js.undefined,
@@ -1214,6 +1260,7 @@ package codebuild {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         networkInterfaceId: js.UndefOr[NonEmptyString] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined
@@ -1235,6 +1282,7 @@ package codebuild {
   }
 
   object PhaseContext {
+    @inline
     def apply(
         message: js.UndefOr[String] = js.undefined,
         statusCode: js.UndefOr[String] = js.undefined
@@ -1285,6 +1333,7 @@ package codebuild {
   }
 
   object Project {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         artifacts: js.UndefOr[ProjectArtifacts] = js.undefined,
@@ -1353,6 +1402,7 @@ package codebuild {
   }
 
   object ProjectArtifacts {
+    @inline
     def apply(
         `type`: ArtifactsType,
         artifactIdentifier: js.UndefOr[String] = js.undefined,
@@ -1390,6 +1440,7 @@ package codebuild {
   }
 
   object ProjectBadge {
+    @inline
     def apply(
         badgeEnabled: js.UndefOr[Boolean] = js.undefined,
         badgeRequestUrl: js.UndefOr[String] = js.undefined
@@ -1412,6 +1463,7 @@ package codebuild {
   }
 
   object ProjectCache {
+    @inline
     def apply(
         `type`: CacheType,
         location: js.UndefOr[String] = js.undefined,
@@ -1443,6 +1495,7 @@ package codebuild {
   }
 
   object ProjectEnvironment {
+    @inline
     def apply(
         computeType: ComputeType,
         image: NonEmptyString,
@@ -1493,6 +1546,7 @@ package codebuild {
   }
 
   object ProjectSource {
+    @inline
     def apply(
         `type`: SourceType,
         auth: js.UndefOr[SourceAuth] = js.undefined,
@@ -1530,6 +1584,7 @@ package codebuild {
   }
 
   object ProjectSourceVersion {
+    @inline
     def apply(
         sourceIdentifier: String,
         sourceVersion: String
@@ -1556,6 +1611,7 @@ package codebuild {
   }
 
   object RegistryCredential {
+    @inline
     def apply(
         credential: NonEmptyString,
         credentialProvider: CredentialProviderType
@@ -1580,6 +1636,7 @@ package codebuild {
   }
 
   object S3LogsConfig {
+    @inline
     def apply(
         status: LogsConfigStatusType,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
@@ -1621,6 +1678,7 @@ package codebuild {
   }
 
   object SourceAuth {
+    @inline
     def apply(
         `type`: SourceAuthType,
         resource: js.UndefOr[String] = js.undefined
@@ -1651,6 +1709,7 @@ package codebuild {
   }
 
   object SourceCredentialsInfo {
+    @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         authType: js.UndefOr[AuthType] = js.undefined,
@@ -1710,6 +1769,7 @@ package codebuild {
   }
 
   object StartBuildInput {
+    @inline
     def apply(
         projectName: NonEmptyString,
         artifactsOverride: js.UndefOr[ProjectArtifacts] = js.undefined,
@@ -1797,6 +1857,7 @@ package codebuild {
   }
 
   object StartBuildOutput {
+    @inline
     def apply(
         build: js.UndefOr[Build] = js.undefined
     ): StartBuildOutput = {
@@ -1823,6 +1884,7 @@ package codebuild {
   }
 
   object StopBuildInput {
+    @inline
     def apply(
         id: NonEmptyString
     ): StopBuildInput = {
@@ -1840,6 +1902,7 @@ package codebuild {
   }
 
   object StopBuildOutput {
+    @inline
     def apply(
         build: js.UndefOr[Build] = js.undefined
     ): StopBuildOutput = {
@@ -1860,6 +1923,7 @@ package codebuild {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[KeyInput] = js.undefined,
         value: js.UndefOr[ValueInput] = js.undefined
@@ -1894,6 +1958,7 @@ package codebuild {
   }
 
   object UpdateProjectInput {
+    @inline
     def apply(
         name: NonEmptyString,
         artifacts: js.UndefOr[ProjectArtifacts] = js.undefined,
@@ -1945,6 +2010,7 @@ package codebuild {
   }
 
   object UpdateProjectOutput {
+    @inline
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): UpdateProjectOutput = {
@@ -1963,6 +2029,7 @@ package codebuild {
   }
 
   object UpdateWebhookInput {
+    @inline
     def apply(
         projectName: ProjectName,
         branchFilter: js.UndefOr[String] = js.undefined,
@@ -1986,6 +2053,7 @@ package codebuild {
   }
 
   object UpdateWebhookOutput {
+    @inline
     def apply(
         webhook: js.UndefOr[Webhook] = js.undefined
     ): UpdateWebhookOutput = {
@@ -2006,6 +2074,7 @@ package codebuild {
   }
 
   object VpcConfig {
+    @inline
     def apply(
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         subnets: js.UndefOr[Subnets] = js.undefined,
@@ -2033,6 +2102,7 @@ package codebuild {
   }
 
   object Webhook {
+    @inline
     def apply(
         branchFilter: js.UndefOr[String] = js.undefined,
         filterGroups: js.UndefOr[FilterGroups] = js.undefined,
@@ -2063,6 +2133,7 @@ package codebuild {
   }
 
   object WebhookFilter {
+    @inline
     def apply(
         pattern: String,
         `type`: WebhookFilterType,

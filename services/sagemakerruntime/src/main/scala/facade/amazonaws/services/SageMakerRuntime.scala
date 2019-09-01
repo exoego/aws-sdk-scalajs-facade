@@ -16,7 +16,7 @@ package object sagemakerruntime {
 
   implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
 
-    def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] =
+    @inline def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] =
       service.invokeEndpoint(params).promise.toFuture
   }
 }
@@ -40,6 +40,7 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointInput {
+    @inline
     def apply(
         Body: BodyBlob,
         EndpointName: EndpointName,
@@ -68,6 +69,7 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointOutput {
+    @inline
     def apply(
         Body: BodyBlob,
         ContentType: js.UndefOr[Header] = js.undefined,

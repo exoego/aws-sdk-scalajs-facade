@@ -70,79 +70,83 @@ package object personalize {
 
   implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
-    def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
+    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
       service.createCampaign(params).promise.toFuture
-    def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
-    def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
+    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
       service.createDatasetGroup(params).promise.toFuture
-    def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] =
-      service.createDatasetImportJob(params).promise.toFuture
-    def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] =
+    @inline def createDatasetImportJobFuture(
+        params: CreateDatasetImportJobRequest
+    ): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise.toFuture
+    @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] =
       service.createEventTracker(params).promise.toFuture
-    def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
+    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
       service.createSchema(params).promise.toFuture
-    def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] =
+    @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] =
       service.createSolution(params).promise.toFuture
-    def createSolutionVersionFuture(params: CreateSolutionVersionRequest): Future[CreateSolutionVersionResponse] =
-      service.createSolutionVersion(params).promise.toFuture
-    def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] =
+    @inline def createSolutionVersionFuture(
+        params: CreateSolutionVersionRequest
+    ): Future[CreateSolutionVersionResponse] = service.createSolutionVersion(params).promise.toFuture
+    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] =
       service.deleteCampaign(params).promise.toFuture
-    def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
       service.deleteDataset(params).promise.toFuture
-    def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
+    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
       service.deleteDatasetGroup(params).promise.toFuture
-    def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] =
+    @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] =
       service.deleteEventTracker(params).promise.toFuture
-    def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
+    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
       service.deleteSchema(params).promise.toFuture
-    def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] =
+    @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] =
       service.deleteSolution(params).promise.toFuture
-    def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
+    @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
       service.describeAlgorithm(params).promise.toFuture
-    def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
+    @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
       service.describeCampaign(params).promise.toFuture
-    def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
       service.describeDataset(params).promise.toFuture
-    def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
+    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
       service.describeDatasetGroup(params).promise.toFuture
-    def describeDatasetImportJobFuture(
+    @inline def describeDatasetImportJobFuture(
         params: DescribeDatasetImportJobRequest
     ): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise.toFuture
-    def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] =
+    @inline def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] =
       service.describeEventTracker(params).promise.toFuture
-    def describeFeatureTransformationFuture(
+    @inline def describeFeatureTransformationFuture(
         params: DescribeFeatureTransformationRequest
     ): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise.toFuture
-    def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] =
+    @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] =
       service.describeRecipe(params).promise.toFuture
-    def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
+    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
       service.describeSchema(params).promise.toFuture
-    def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] =
+    @inline def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] =
       service.describeSolution(params).promise.toFuture
-    def describeSolutionVersionFuture(params: DescribeSolutionVersionRequest): Future[DescribeSolutionVersionResponse] =
-      service.describeSolutionVersion(params).promise.toFuture
-    def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
+    @inline def describeSolutionVersionFuture(
+        params: DescribeSolutionVersionRequest
+    ): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise.toFuture
+    @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
       service.getSolutionMetrics(params).promise.toFuture
-    def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
+    @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
       service.listCampaigns(params).promise.toFuture
-    def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
+    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
       service.listDatasetGroups(params).promise.toFuture
-    def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] =
-      service.listDatasetImportJobs(params).promise.toFuture
-    def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
+    @inline def listDatasetImportJobsFuture(
+        params: ListDatasetImportJobsRequest
+    ): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise.toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
       service.listDatasets(params).promise.toFuture
-    def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] =
+    @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] =
       service.listEventTrackers(params).promise.toFuture
-    def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] =
+    @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] =
       service.listRecipes(params).promise.toFuture
-    def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
+    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
       service.listSchemas(params).promise.toFuture
-    def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] =
+    @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] =
       service.listSolutionVersions(params).promise.toFuture
-    def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] =
+    @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] =
       service.listSolutions(params).promise.toFuture
-    def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
+    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
       service.updateCampaign(params).promise.toFuture
   }
 }
@@ -214,6 +218,7 @@ package personalize {
   }
 
   object Algorithm {
+    @inline
     def apply(
         algorithmArn: js.UndefOr[Arn] = js.undefined,
         algorithmImage: js.UndefOr[AlgorithmImage] = js.undefined,
@@ -253,6 +258,7 @@ package personalize {
   }
 
   object AlgorithmImage {
+    @inline
     def apply(
         dockerURI: DockerURI,
         name: js.UndefOr[Name] = js.undefined
@@ -276,6 +282,7 @@ package personalize {
   }
 
   object AutoMLConfig {
+    @inline
     def apply(
         metricName: js.UndefOr[MetricName] = js.undefined,
         recipeList: js.UndefOr[ArnList] = js.undefined
@@ -296,6 +303,7 @@ package personalize {
   }
 
   object AutoMLResult {
+    @inline
     def apply(
         bestRecipeArn: js.UndefOr[Arn] = js.undefined
     ): AutoMLResult = {
@@ -322,6 +330,7 @@ package personalize {
   }
 
   object Campaign {
+    @inline
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
@@ -361,6 +370,7 @@ package personalize {
   }
 
   object CampaignSummary {
+    @inline
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
@@ -394,6 +404,7 @@ package personalize {
   }
 
   object CampaignUpdateSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
@@ -423,6 +434,7 @@ package personalize {
   }
 
   object CategoricalHyperParameterRange {
+    @inline
     def apply(
         name: js.UndefOr[ParameterName] = js.undefined,
         values: js.UndefOr[CategoricalValues] = js.undefined
@@ -445,6 +457,7 @@ package personalize {
   }
 
   object ContinuousHyperParameterRange {
+    @inline
     def apply(
         maxValue: js.UndefOr[ContinuousMaxValue] = js.undefined,
         minValue: js.UndefOr[ContinuousMinValue] = js.undefined,
@@ -466,6 +479,7 @@ package personalize {
   }
 
   object CreateCampaignRequest {
+    @inline
     def apply(
         minProvisionedTPS: TransactionsPerSecond,
         name: Name,
@@ -487,6 +501,7 @@ package personalize {
   }
 
   object CreateCampaignResponse {
+    @inline
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined
     ): CreateCampaignResponse = {
@@ -504,6 +519,7 @@ package personalize {
   }
 
   object CreateDatasetGroupRequest {
+    @inline
     def apply(
         name: Name,
         kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
@@ -525,6 +541,7 @@ package personalize {
   }
 
   object CreateDatasetGroupResponse {
+    @inline
     def apply(
         datasetGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetGroupResponse = {
@@ -543,6 +560,7 @@ package personalize {
   }
 
   object CreateDatasetImportJobRequest {
+    @inline
     def apply(
         dataSource: DataSource,
         datasetArn: Arn,
@@ -566,6 +584,7 @@ package personalize {
   }
 
   object CreateDatasetImportJobResponse {
+    @inline
     def apply(
         datasetImportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetImportJobResponse = {
@@ -584,6 +603,7 @@ package personalize {
   }
 
   object CreateDatasetRequest {
+    @inline
     def apply(
         datasetGroupArn: Arn,
         datasetType: DatasetType,
@@ -607,6 +627,7 @@ package personalize {
   }
 
   object CreateDatasetResponse {
+    @inline
     def apply(
         datasetArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetResponse = {
@@ -623,6 +644,7 @@ package personalize {
   }
 
   object CreateEventTrackerRequest {
+    @inline
     def apply(
         datasetGroupArn: Arn,
         name: Name
@@ -643,6 +665,7 @@ package personalize {
   }
 
   object CreateEventTrackerResponse {
+    @inline
     def apply(
         eventTrackerArn: js.UndefOr[Arn] = js.undefined,
         trackingId: js.UndefOr[TrackingId] = js.undefined
@@ -661,6 +684,7 @@ package personalize {
   }
 
   object CreateSchemaRequest {
+    @inline
     def apply(
         name: Name,
         schema: AvroSchema
@@ -680,6 +704,7 @@ package personalize {
   }
 
   object CreateSchemaResponse {
+    @inline
     def apply(
         schemaArn: js.UndefOr[Arn] = js.undefined
     ): CreateSchemaResponse = {
@@ -701,6 +726,7 @@ package personalize {
   }
 
   object CreateSolutionRequest {
+    @inline
     def apply(
         datasetGroupArn: Arn,
         name: Name,
@@ -730,6 +756,7 @@ package personalize {
   }
 
   object CreateSolutionResponse {
+    @inline
     def apply(
         solutionArn: js.UndefOr[Arn] = js.undefined
     ): CreateSolutionResponse = {
@@ -745,6 +772,7 @@ package personalize {
   }
 
   object CreateSolutionVersionRequest {
+    @inline
     def apply(
         solutionArn: Arn
     ): CreateSolutionVersionRequest = {
@@ -762,6 +790,7 @@ package personalize {
   }
 
   object CreateSolutionVersionResponse {
+    @inline
     def apply(
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
     ): CreateSolutionVersionResponse = {
@@ -780,6 +809,7 @@ package personalize {
   }
 
   object DataSource {
+    @inline
     def apply(
         dataLocation: js.UndefOr[S3Location] = js.undefined
     ): DataSource = {
@@ -805,6 +835,7 @@ package personalize {
   }
 
   object Dataset {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetArn: js.UndefOr[Arn] = js.undefined,
@@ -845,6 +876,7 @@ package personalize {
   }
 
   object DatasetGroup {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -882,6 +914,7 @@ package personalize {
   }
 
   object DatasetGroupSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -920,6 +953,7 @@ package personalize {
   }
 
   object DatasetImportJob {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         dataSource: js.UndefOr[DataSource] = js.undefined,
@@ -959,6 +993,7 @@ package personalize {
   }
 
   object DatasetImportJobSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetImportJobArn: js.UndefOr[Arn] = js.undefined,
@@ -991,6 +1026,7 @@ package personalize {
   }
 
   object DatasetSchema {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -1020,6 +1056,7 @@ package personalize {
   }
 
   object DatasetSchemaSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -1049,6 +1086,7 @@ package personalize {
   }
 
   object DatasetSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetArn: js.UndefOr[Arn] = js.undefined,
@@ -1079,6 +1117,7 @@ package personalize {
   }
 
   object DefaultCategoricalHyperParameterRange {
+    @inline
     def apply(
         isTunable: js.UndefOr[Tunable] = js.undefined,
         name: js.UndefOr[ParameterName] = js.undefined,
@@ -1104,6 +1143,7 @@ package personalize {
   }
 
   object DefaultContinuousHyperParameterRange {
+    @inline
     def apply(
         isTunable: js.UndefOr[Tunable] = js.undefined,
         maxValue: js.UndefOr[ContinuousMaxValue] = js.undefined,
@@ -1130,6 +1170,7 @@ package personalize {
   }
 
   object DefaultHyperParameterRanges {
+    @inline
     def apply(
         categoricalHyperParameterRanges: js.UndefOr[DefaultCategoricalHyperParameterRanges] = js.undefined,
         continuousHyperParameterRanges: js.UndefOr[DefaultContinuousHyperParameterRanges] = js.undefined,
@@ -1161,6 +1202,7 @@ package personalize {
   }
 
   object DefaultIntegerHyperParameterRange {
+    @inline
     def apply(
         isTunable: js.UndefOr[Tunable] = js.undefined,
         maxValue: js.UndefOr[IntegerMaxValue] = js.undefined,
@@ -1182,6 +1224,7 @@ package personalize {
   }
 
   object DeleteCampaignRequest {
+    @inline
     def apply(
         campaignArn: Arn
     ): DeleteCampaignRequest = {
@@ -1199,6 +1242,7 @@ package personalize {
   }
 
   object DeleteDatasetGroupRequest {
+    @inline
     def apply(
         datasetGroupArn: Arn
     ): DeleteDatasetGroupRequest = {
@@ -1216,6 +1260,7 @@ package personalize {
   }
 
   object DeleteDatasetRequest {
+    @inline
     def apply(
         datasetArn: Arn
     ): DeleteDatasetRequest = {
@@ -1233,6 +1278,7 @@ package personalize {
   }
 
   object DeleteEventTrackerRequest {
+    @inline
     def apply(
         eventTrackerArn: Arn
     ): DeleteEventTrackerRequest = {
@@ -1250,6 +1296,7 @@ package personalize {
   }
 
   object DeleteSchemaRequest {
+    @inline
     def apply(
         schemaArn: Arn
     ): DeleteSchemaRequest = {
@@ -1267,6 +1314,7 @@ package personalize {
   }
 
   object DeleteSolutionRequest {
+    @inline
     def apply(
         solutionArn: Arn
     ): DeleteSolutionRequest = {
@@ -1284,6 +1332,7 @@ package personalize {
   }
 
   object DescribeAlgorithmRequest {
+    @inline
     def apply(
         algorithmArn: Arn
     ): DescribeAlgorithmRequest = {
@@ -1301,6 +1350,7 @@ package personalize {
   }
 
   object DescribeAlgorithmResponse {
+    @inline
     def apply(
         algorithm: js.UndefOr[Algorithm] = js.undefined
     ): DescribeAlgorithmResponse = {
@@ -1316,6 +1366,7 @@ package personalize {
   }
 
   object DescribeCampaignRequest {
+    @inline
     def apply(
         campaignArn: Arn
     ): DescribeCampaignRequest = {
@@ -1333,6 +1384,7 @@ package personalize {
   }
 
   object DescribeCampaignResponse {
+    @inline
     def apply(
         campaign: js.UndefOr[Campaign] = js.undefined
     ): DescribeCampaignResponse = {
@@ -1348,6 +1400,7 @@ package personalize {
   }
 
   object DescribeDatasetGroupRequest {
+    @inline
     def apply(
         datasetGroupArn: Arn
     ): DescribeDatasetGroupRequest = {
@@ -1365,6 +1418,7 @@ package personalize {
   }
 
   object DescribeDatasetGroupResponse {
+    @inline
     def apply(
         datasetGroup: js.UndefOr[DatasetGroup] = js.undefined
     ): DescribeDatasetGroupResponse = {
@@ -1380,6 +1434,7 @@ package personalize {
   }
 
   object DescribeDatasetImportJobRequest {
+    @inline
     def apply(
         datasetImportJobArn: Arn
     ): DescribeDatasetImportJobRequest = {
@@ -1397,6 +1452,7 @@ package personalize {
   }
 
   object DescribeDatasetImportJobResponse {
+    @inline
     def apply(
         datasetImportJob: js.UndefOr[DatasetImportJob] = js.undefined
     ): DescribeDatasetImportJobResponse = {
@@ -1412,6 +1468,7 @@ package personalize {
   }
 
   object DescribeDatasetRequest {
+    @inline
     def apply(
         datasetArn: Arn
     ): DescribeDatasetRequest = {
@@ -1429,6 +1486,7 @@ package personalize {
   }
 
   object DescribeDatasetResponse {
+    @inline
     def apply(
         dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
@@ -1444,6 +1502,7 @@ package personalize {
   }
 
   object DescribeEventTrackerRequest {
+    @inline
     def apply(
         eventTrackerArn: Arn
     ): DescribeEventTrackerRequest = {
@@ -1461,6 +1520,7 @@ package personalize {
   }
 
   object DescribeEventTrackerResponse {
+    @inline
     def apply(
         eventTracker: js.UndefOr[EventTracker] = js.undefined
     ): DescribeEventTrackerResponse = {
@@ -1476,6 +1536,7 @@ package personalize {
   }
 
   object DescribeFeatureTransformationRequest {
+    @inline
     def apply(
         featureTransformationArn: Arn
     ): DescribeFeatureTransformationRequest = {
@@ -1493,6 +1554,7 @@ package personalize {
   }
 
   object DescribeFeatureTransformationResponse {
+    @inline
     def apply(
         featureTransformation: js.UndefOr[FeatureTransformation] = js.undefined
     ): DescribeFeatureTransformationResponse = {
@@ -1508,6 +1570,7 @@ package personalize {
   }
 
   object DescribeRecipeRequest {
+    @inline
     def apply(
         recipeArn: Arn
     ): DescribeRecipeRequest = {
@@ -1525,6 +1588,7 @@ package personalize {
   }
 
   object DescribeRecipeResponse {
+    @inline
     def apply(
         recipe: js.UndefOr[Recipe] = js.undefined
     ): DescribeRecipeResponse = {
@@ -1540,6 +1604,7 @@ package personalize {
   }
 
   object DescribeSchemaRequest {
+    @inline
     def apply(
         schemaArn: Arn
     ): DescribeSchemaRequest = {
@@ -1557,6 +1622,7 @@ package personalize {
   }
 
   object DescribeSchemaResponse {
+    @inline
     def apply(
         schema: js.UndefOr[DatasetSchema] = js.undefined
     ): DescribeSchemaResponse = {
@@ -1572,6 +1638,7 @@ package personalize {
   }
 
   object DescribeSolutionRequest {
+    @inline
     def apply(
         solutionArn: Arn
     ): DescribeSolutionRequest = {
@@ -1589,6 +1656,7 @@ package personalize {
   }
 
   object DescribeSolutionResponse {
+    @inline
     def apply(
         solution: js.UndefOr[Solution] = js.undefined
     ): DescribeSolutionResponse = {
@@ -1604,6 +1672,7 @@ package personalize {
   }
 
   object DescribeSolutionVersionRequest {
+    @inline
     def apply(
         solutionVersionArn: Arn
     ): DescribeSolutionVersionRequest = {
@@ -1621,6 +1690,7 @@ package personalize {
   }
 
   object DescribeSolutionVersionResponse {
+    @inline
     def apply(
         solutionVersion: js.UndefOr[SolutionVersion] = js.undefined
     ): DescribeSolutionVersionResponse = {
@@ -1646,6 +1716,7 @@ package personalize {
   }
 
   object EventTracker {
+    @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
@@ -1682,6 +1753,7 @@ package personalize {
   }
 
   object EventTrackerSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         eventTrackerArn: js.UndefOr[Arn] = js.undefined,
@@ -1713,6 +1785,7 @@ package personalize {
   }
 
   object FeatureTransformation {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         defaultParameters: js.UndefOr[FeaturizationParameters] = js.undefined,
@@ -1738,6 +1811,7 @@ package personalize {
   }
 
   object GetSolutionMetricsRequest {
+    @inline
     def apply(
         solutionVersionArn: Arn
     ): GetSolutionMetricsRequest = {
@@ -1756,6 +1830,7 @@ package personalize {
   }
 
   object GetSolutionMetricsResponse {
+    @inline
     def apply(
         metrics: js.UndefOr[Metrics] = js.undefined,
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
@@ -1778,6 +1853,7 @@ package personalize {
   }
 
   object HPOConfig {
+    @inline
     def apply(
         algorithmHyperParameterRanges: js.UndefOr[HyperParameterRanges] = js.undefined,
         hpoObjective: js.UndefOr[HPOObjective] = js.undefined,
@@ -1804,6 +1880,7 @@ package personalize {
   }
 
   object HPOObjective {
+    @inline
     def apply(
         metricName: js.UndefOr[MetricName] = js.undefined,
         metricRegex: js.UndefOr[MetricRegex] = js.undefined,
@@ -1827,6 +1904,7 @@ package personalize {
   }
 
   object HPOResourceConfig {
+    @inline
     def apply(
         maxNumberOfTrainingJobs: js.UndefOr[HPOResource] = js.undefined,
         maxParallelTrainingJobs: js.UndefOr[HPOResource] = js.undefined
@@ -1849,6 +1927,7 @@ package personalize {
   }
 
   object HyperParameterRanges {
+    @inline
     def apply(
         categoricalHyperParameterRanges: js.UndefOr[CategoricalHyperParameterRanges] = js.undefined,
         continuousHyperParameterRanges: js.UndefOr[ContinuousHyperParameterRanges] = js.undefined,
@@ -1879,6 +1958,7 @@ package personalize {
   }
 
   object IntegerHyperParameterRange {
+    @inline
     def apply(
         maxValue: js.UndefOr[IntegerMaxValue] = js.undefined,
         minValue: js.UndefOr[IntegerMinValue] = js.undefined,
@@ -1900,6 +1980,7 @@ package personalize {
   }
 
   object ListCampaignsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1920,6 +2001,7 @@ package personalize {
   }
 
   object ListCampaignsResponse {
+    @inline
     def apply(
         campaigns: js.UndefOr[Campaigns] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1938,6 +2020,7 @@ package personalize {
   }
 
   object ListDatasetGroupsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1956,6 +2039,7 @@ package personalize {
   }
 
   object ListDatasetGroupsResponse {
+    @inline
     def apply(
         datasetGroups: js.UndefOr[DatasetGroups] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1975,6 +2059,7 @@ package personalize {
   }
 
   object ListDatasetImportJobsRequest {
+    @inline
     def apply(
         datasetArn: js.UndefOr[Arn] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1995,6 +2080,7 @@ package personalize {
   }
 
   object ListDatasetImportJobsResponse {
+    @inline
     def apply(
         datasetImportJobs: js.UndefOr[DatasetImportJobs] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2014,6 +2100,7 @@ package personalize {
   }
 
   object ListDatasetsRequest {
+    @inline
     def apply(
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2034,6 +2121,7 @@ package personalize {
   }
 
   object ListDatasetsResponse {
+    @inline
     def apply(
         datasets: js.UndefOr[Datasets] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2053,6 +2141,7 @@ package personalize {
   }
 
   object ListEventTrackersRequest {
+    @inline
     def apply(
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2073,6 +2162,7 @@ package personalize {
   }
 
   object ListEventTrackersResponse {
+    @inline
     def apply(
         eventTrackers: js.UndefOr[EventTrackers] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2092,6 +2182,7 @@ package personalize {
   }
 
   object ListRecipesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2112,6 +2203,7 @@ package personalize {
   }
 
   object ListRecipesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recipes: js.UndefOr[Recipes] = js.undefined
@@ -2130,6 +2222,7 @@ package personalize {
   }
 
   object ListSchemasRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2148,6 +2241,7 @@ package personalize {
   }
 
   object ListSchemasResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         schemas: js.UndefOr[Schemas] = js.undefined
@@ -2167,6 +2261,7 @@ package personalize {
   }
 
   object ListSolutionVersionsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2187,6 +2282,7 @@ package personalize {
   }
 
   object ListSolutionVersionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutionVersions: js.UndefOr[SolutionVersions] = js.undefined
@@ -2206,6 +2302,7 @@ package personalize {
   }
 
   object ListSolutionsRequest {
+    @inline
     def apply(
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2226,6 +2323,7 @@ package personalize {
   }
 
   object ListSolutionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutions: js.UndefOr[Solutions] = js.undefined
@@ -2254,6 +2352,7 @@ package personalize {
   }
 
   object Recipe {
+    @inline
     def apply(
         algorithmArn: js.UndefOr[Arn] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
@@ -2298,6 +2397,7 @@ package personalize {
   }
 
   object RecipeSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -2336,6 +2436,7 @@ package personalize {
   }
 
   object Solution {
+    @inline
     def apply(
         autoMLResult: js.UndefOr[AutoMLResult] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
@@ -2382,6 +2483,7 @@ package personalize {
   }
 
   object SolutionConfig {
+    @inline
     def apply(
         algorithmHyperParameters: js.UndefOr[HyperParameters] = js.undefined,
         autoMLConfig: js.UndefOr[AutoMLConfig] = js.undefined,
@@ -2414,6 +2516,7 @@ package personalize {
   }
 
   object SolutionSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -2451,6 +2554,7 @@ package personalize {
   }
 
   object SolutionVersion {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
@@ -2495,6 +2599,7 @@ package personalize {
   }
 
   object SolutionVersionSummary {
+    @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
@@ -2520,6 +2625,7 @@ package personalize {
   }
 
   object UpdateCampaignRequest {
+    @inline
     def apply(
         campaignArn: Arn,
         minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined,
@@ -2541,6 +2647,7 @@ package personalize {
   }
 
   object UpdateCampaignResponse {
+    @inline
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined
     ): UpdateCampaignResponse = {

@@ -66,135 +66,148 @@ package object chime {
 
   implicit final class ChimeOps(private val service: Chime) extends AnyVal {
 
-    def associatePhoneNumberWithUserFuture(
+    @inline def associatePhoneNumberWithUserFuture(
         params: AssociatePhoneNumberWithUserRequest
     ): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise.toFuture
-    def associatePhoneNumbersWithVoiceConnectorFuture(
+    @inline def associatePhoneNumbersWithVoiceConnectorFuture(
         params: AssociatePhoneNumbersWithVoiceConnectorRequest
     ): Future[AssociatePhoneNumbersWithVoiceConnectorResponse] =
       service.associatePhoneNumbersWithVoiceConnector(params).promise.toFuture
-    def batchDeletePhoneNumberFuture(params: BatchDeletePhoneNumberRequest): Future[BatchDeletePhoneNumberResponse] =
-      service.batchDeletePhoneNumber(params).promise.toFuture
-    def batchSuspendUserFuture(params: BatchSuspendUserRequest): Future[BatchSuspendUserResponse] =
+    @inline def batchDeletePhoneNumberFuture(
+        params: BatchDeletePhoneNumberRequest
+    ): Future[BatchDeletePhoneNumberResponse] = service.batchDeletePhoneNumber(params).promise.toFuture
+    @inline def batchSuspendUserFuture(params: BatchSuspendUserRequest): Future[BatchSuspendUserResponse] =
       service.batchSuspendUser(params).promise.toFuture
-    def batchUnsuspendUserFuture(params: BatchUnsuspendUserRequest): Future[BatchUnsuspendUserResponse] =
+    @inline def batchUnsuspendUserFuture(params: BatchUnsuspendUserRequest): Future[BatchUnsuspendUserResponse] =
       service.batchUnsuspendUser(params).promise.toFuture
-    def batchUpdatePhoneNumberFuture(params: BatchUpdatePhoneNumberRequest): Future[BatchUpdatePhoneNumberResponse] =
-      service.batchUpdatePhoneNumber(params).promise.toFuture
-    def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] =
+    @inline def batchUpdatePhoneNumberFuture(
+        params: BatchUpdatePhoneNumberRequest
+    ): Future[BatchUpdatePhoneNumberResponse] = service.batchUpdatePhoneNumber(params).promise.toFuture
+    @inline def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] =
       service.batchUpdateUser(params).promise.toFuture
-    def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
+    @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
       service.createAccount(params).promise.toFuture
-    def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] =
+    @inline def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] =
       service.createBot(params).promise.toFuture
-    def createPhoneNumberOrderFuture(params: CreatePhoneNumberOrderRequest): Future[CreatePhoneNumberOrderResponse] =
-      service.createPhoneNumberOrder(params).promise.toFuture
-    def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
+    @inline def createPhoneNumberOrderFuture(
+        params: CreatePhoneNumberOrderRequest
+    ): Future[CreatePhoneNumberOrderResponse] = service.createPhoneNumberOrder(params).promise.toFuture
+    @inline def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
       service.createVoiceConnector(params).promise.toFuture
-    def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] =
+    @inline def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] =
       service.deleteAccount(params).promise.toFuture
-    def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] =
+    @inline def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] =
       service.deleteEventsConfiguration(params).promise.toFuture
-    def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
+    @inline def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
       service.deletePhoneNumber(params).promise.toFuture
-    def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
+    @inline def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
       service.deleteVoiceConnector(params).promise.toFuture
-    def deleteVoiceConnectorOriginationFuture(params: DeleteVoiceConnectorOriginationRequest): Future[js.Object] =
-      service.deleteVoiceConnectorOrigination(params).promise.toFuture
-    def deleteVoiceConnectorTerminationCredentialsFuture(
+    @inline def deleteVoiceConnectorOriginationFuture(
+        params: DeleteVoiceConnectorOriginationRequest
+    ): Future[js.Object] = service.deleteVoiceConnectorOrigination(params).promise.toFuture
+    @inline def deleteVoiceConnectorTerminationCredentialsFuture(
         params: DeleteVoiceConnectorTerminationCredentialsRequest
     ): Future[js.Object] = service.deleteVoiceConnectorTerminationCredentials(params).promise.toFuture
-    def deleteVoiceConnectorTerminationFuture(params: DeleteVoiceConnectorTerminationRequest): Future[js.Object] =
-      service.deleteVoiceConnectorTermination(params).promise.toFuture
-    def disassociatePhoneNumberFromUserFuture(
+    @inline def deleteVoiceConnectorTerminationFuture(
+        params: DeleteVoiceConnectorTerminationRequest
+    ): Future[js.Object] = service.deleteVoiceConnectorTermination(params).promise.toFuture
+    @inline def disassociatePhoneNumberFromUserFuture(
         params: DisassociatePhoneNumberFromUserRequest
     ): Future[DisassociatePhoneNumberFromUserResponse] =
       service.disassociatePhoneNumberFromUser(params).promise.toFuture
-    def disassociatePhoneNumbersFromVoiceConnectorFuture(
+    @inline def disassociatePhoneNumbersFromVoiceConnectorFuture(
         params: DisassociatePhoneNumbersFromVoiceConnectorRequest
     ): Future[DisassociatePhoneNumbersFromVoiceConnectorResponse] =
       service.disassociatePhoneNumbersFromVoiceConnector(params).promise.toFuture
-    def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
+    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
       service.getAccount(params).promise.toFuture
-    def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
       service.getAccountSettings(params).promise.toFuture
-    def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise.toFuture
-    def getEventsConfigurationFuture(params: GetEventsConfigurationRequest): Future[GetEventsConfigurationResponse] =
-      service.getEventsConfiguration(params).promise.toFuture
-    def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] = service.getGlobalSettings().promise.toFuture
-    def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] =
+    @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise.toFuture
+    @inline def getEventsConfigurationFuture(
+        params: GetEventsConfigurationRequest
+    ): Future[GetEventsConfigurationResponse] = service.getEventsConfiguration(params).promise.toFuture
+    @inline def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] =
+      service.getGlobalSettings().promise.toFuture
+    @inline def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] =
       service.getPhoneNumber(params).promise.toFuture
-    def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] =
+    @inline def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] =
       service.getPhoneNumberOrder(params).promise.toFuture
-    def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise.toFuture
-    def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] =
+    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] =
+      service.getUser(params).promise.toFuture
+    @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] =
       service.getUserSettings(params).promise.toFuture
-    def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] =
+    @inline def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] =
       service.getVoiceConnector(params).promise.toFuture
-    def getVoiceConnectorOriginationFuture(
+    @inline def getVoiceConnectorOriginationFuture(
         params: GetVoiceConnectorOriginationRequest
     ): Future[GetVoiceConnectorOriginationResponse] = service.getVoiceConnectorOrigination(params).promise.toFuture
-    def getVoiceConnectorTerminationFuture(
+    @inline def getVoiceConnectorTerminationFuture(
         params: GetVoiceConnectorTerminationRequest
     ): Future[GetVoiceConnectorTerminationResponse] = service.getVoiceConnectorTermination(params).promise.toFuture
-    def getVoiceConnectorTerminationHealthFuture(
+    @inline def getVoiceConnectorTerminationHealthFuture(
         params: GetVoiceConnectorTerminationHealthRequest
     ): Future[GetVoiceConnectorTerminationHealthResponse] =
       service.getVoiceConnectorTerminationHealth(params).promise.toFuture
-    def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] =
+    @inline def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] =
       service.inviteUsers(params).promise.toFuture
-    def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
+    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
       service.listAccounts(params).promise.toFuture
-    def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] = service.listBots(params).promise.toFuture
-    def listPhoneNumberOrdersFuture(params: ListPhoneNumberOrdersRequest): Future[ListPhoneNumberOrdersResponse] =
-      service.listPhoneNumberOrders(params).promise.toFuture
-    def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
+    @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] =
+      service.listBots(params).promise.toFuture
+    @inline def listPhoneNumberOrdersFuture(
+        params: ListPhoneNumberOrdersRequest
+    ): Future[ListPhoneNumberOrdersResponse] = service.listPhoneNumberOrders(params).promise.toFuture
+    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
       service.listPhoneNumbers(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def listVoiceConnectorTerminationCredentialsFuture(
+    @inline def listVoiceConnectorTerminationCredentialsFuture(
         params: ListVoiceConnectorTerminationCredentialsRequest
     ): Future[ListVoiceConnectorTerminationCredentialsResponse] =
       service.listVoiceConnectorTerminationCredentials(params).promise.toFuture
-    def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] =
+    @inline def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] =
       service.listVoiceConnectors(params).promise.toFuture
-    def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] =
+    @inline def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] =
       service.logoutUser(params).promise.toFuture
-    def putEventsConfigurationFuture(params: PutEventsConfigurationRequest): Future[PutEventsConfigurationResponse] =
-      service.putEventsConfiguration(params).promise.toFuture
-    def putVoiceConnectorOriginationFuture(
+    @inline def putEventsConfigurationFuture(
+        params: PutEventsConfigurationRequest
+    ): Future[PutEventsConfigurationResponse] = service.putEventsConfiguration(params).promise.toFuture
+    @inline def putVoiceConnectorOriginationFuture(
         params: PutVoiceConnectorOriginationRequest
     ): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise.toFuture
-    def putVoiceConnectorTerminationCredentialsFuture(
+    @inline def putVoiceConnectorTerminationCredentialsFuture(
         params: PutVoiceConnectorTerminationCredentialsRequest
     ): Future[js.Object] = service.putVoiceConnectorTerminationCredentials(params).promise.toFuture
-    def putVoiceConnectorTerminationFuture(
+    @inline def putVoiceConnectorTerminationFuture(
         params: PutVoiceConnectorTerminationRequest
     ): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise.toFuture
-    def regenerateSecurityTokenFuture(params: RegenerateSecurityTokenRequest): Future[RegenerateSecurityTokenResponse] =
-      service.regenerateSecurityToken(params).promise.toFuture
-    def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] =
+    @inline def regenerateSecurityTokenFuture(
+        params: RegenerateSecurityTokenRequest
+    ): Future[RegenerateSecurityTokenResponse] = service.regenerateSecurityToken(params).promise.toFuture
+    @inline def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] =
       service.resetPersonalPIN(params).promise.toFuture
-    def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] =
+    @inline def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] =
       service.restorePhoneNumber(params).promise.toFuture
-    def searchAvailablePhoneNumbersFuture(
+    @inline def searchAvailablePhoneNumbersFuture(
         params: SearchAvailablePhoneNumbersRequest
     ): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise.toFuture
-    def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] =
+    @inline def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] =
       service.updateAccount(params).promise.toFuture
-    def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] =
-      service.updateAccountSettings(params).promise.toFuture
-    def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] =
+    @inline def updateAccountSettingsFuture(
+        params: UpdateAccountSettingsRequest
+    ): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise.toFuture
+    @inline def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] =
       service.updateBot(params).promise.toFuture
-    def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] =
+    @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] =
       service.updateGlobalSettings(params).promise.toFuture
-    def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] =
+    @inline def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] =
       service.updatePhoneNumber(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
-    def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] =
+    @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] =
       service.updateUserSettings(params).promise.toFuture
-    def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] =
+    @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] =
       service.updateVoiceConnector(params).promise.toFuture
   }
 }
@@ -312,6 +325,7 @@ package chime {
   }
 
   object Account {
+    @inline
     def apply(
         AccountId: String,
         AwsAccountId: String,
@@ -345,6 +359,7 @@ package chime {
   }
 
   object AccountSettings {
+    @inline
     def apply(
         DisableRemoteControl: js.UndefOr[Boolean] = js.undefined,
         EnableDialOut: js.UndefOr[Boolean] = js.undefined
@@ -373,6 +388,7 @@ package chime {
   }
 
   object AssociatePhoneNumberWithUserRequest {
+    @inline
     def apply(
         AccountId: String,
         E164PhoneNumber: E164PhoneNumber,
@@ -392,6 +408,7 @@ package chime {
   trait AssociatePhoneNumberWithUserResponse extends js.Object {}
 
   object AssociatePhoneNumberWithUserResponse {
+    @inline
     def apply(
         ): AssociatePhoneNumberWithUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -407,6 +424,7 @@ package chime {
   }
 
   object AssociatePhoneNumbersWithVoiceConnectorRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString,
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
@@ -426,6 +444,7 @@ package chime {
   }
 
   object AssociatePhoneNumbersWithVoiceConnectorResponse {
+    @inline
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): AssociatePhoneNumbersWithVoiceConnectorResponse = {
@@ -441,6 +460,7 @@ package chime {
   }
 
   object BatchDeletePhoneNumberRequest {
+    @inline
     def apply(
         PhoneNumberIds: NonEmptyStringList
     ): BatchDeletePhoneNumberRequest = {
@@ -458,6 +478,7 @@ package chime {
   }
 
   object BatchDeletePhoneNumberResponse {
+    @inline
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): BatchDeletePhoneNumberResponse = {
@@ -474,6 +495,7 @@ package chime {
   }
 
   object BatchSuspendUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserIdList: UserIdList
@@ -493,6 +515,7 @@ package chime {
   }
 
   object BatchSuspendUserResponse {
+    @inline
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchSuspendUserResponse = {
@@ -509,6 +532,7 @@ package chime {
   }
 
   object BatchUnsuspendUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserIdList: UserIdList
@@ -528,6 +552,7 @@ package chime {
   }
 
   object BatchUnsuspendUserResponse {
+    @inline
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchUnsuspendUserResponse = {
@@ -543,6 +568,7 @@ package chime {
   }
 
   object BatchUpdatePhoneNumberRequest {
+    @inline
     def apply(
         UpdatePhoneNumberRequestItems: UpdatePhoneNumberRequestItemList
     ): BatchUpdatePhoneNumberRequest = {
@@ -560,6 +586,7 @@ package chime {
   }
 
   object BatchUpdatePhoneNumberResponse {
+    @inline
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): BatchUpdatePhoneNumberResponse = {
@@ -576,6 +603,7 @@ package chime {
   }
 
   object BatchUpdateUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UpdateUserRequestItems: UpdateUserRequestItemList
@@ -595,6 +623,7 @@ package chime {
   }
 
   object BatchUpdateUserResponse {
+    @inline
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchUpdateUserResponse = {
@@ -621,6 +650,7 @@ package chime {
   }
 
   object Bot {
+    @inline
     def apply(
         BotEmail: js.UndefOr[SensitiveString] = js.undefined,
         BotId: js.UndefOr[String] = js.undefined,
@@ -661,6 +691,7 @@ package chime {
   }
 
   object BusinessCallingSettings {
+    @inline
     def apply(
         CdrBucket: js.UndefOr[String] = js.undefined
     ): BusinessCallingSettings = {
@@ -676,6 +707,7 @@ package chime {
   }
 
   object CreateAccountRequest {
+    @inline
     def apply(
         Name: AccountName
     ): CreateAccountRequest = {
@@ -693,6 +725,7 @@ package chime {
   }
 
   object CreateAccountResponse {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): CreateAccountResponse = {
@@ -710,6 +743,7 @@ package chime {
   }
 
   object CreateBotRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         DisplayName: SensitiveString,
@@ -731,6 +765,7 @@ package chime {
   }
 
   object CreateBotResponse {
+    @inline
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): CreateBotResponse = {
@@ -747,6 +782,7 @@ package chime {
   }
 
   object CreatePhoneNumberOrderRequest {
+    @inline
     def apply(
         E164PhoneNumbers: E164PhoneNumberList,
         ProductType: PhoneNumberProductType
@@ -766,6 +802,7 @@ package chime {
   }
 
   object CreatePhoneNumberOrderResponse {
+    @inline
     def apply(
         PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
     ): CreatePhoneNumberOrderResponse = {
@@ -782,6 +819,7 @@ package chime {
   }
 
   object CreateVoiceConnectorRequest {
+    @inline
     def apply(
         Name: VoiceConnectorName,
         RequireEncryption: Boolean
@@ -801,6 +839,7 @@ package chime {
   }
 
   object CreateVoiceConnectorResponse {
+    @inline
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): CreateVoiceConnectorResponse = {
@@ -820,6 +859,7 @@ package chime {
   }
 
   object Credential {
+    @inline
     def apply(
         Password: js.UndefOr[SensitiveString] = js.undefined,
         Username: js.UndefOr[SensitiveString] = js.undefined
@@ -837,6 +877,7 @@ package chime {
   }
 
   object DeleteAccountRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString
     ): DeleteAccountRequest = {
@@ -852,6 +893,7 @@ package chime {
   trait DeleteAccountResponse extends js.Object {}
 
   object DeleteAccountResponse {
+    @inline
     def apply(
         ): DeleteAccountResponse = {
       val __obj = js.Dynamic.literal()
@@ -867,6 +909,7 @@ package chime {
   }
 
   object DeleteEventsConfigurationRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString
@@ -886,6 +929,7 @@ package chime {
   }
 
   object DeletePhoneNumberRequest {
+    @inline
     def apply(
         PhoneNumberId: String
     ): DeletePhoneNumberRequest = {
@@ -903,6 +947,7 @@ package chime {
   }
 
   object DeleteVoiceConnectorOriginationRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorOriginationRequest = {
@@ -920,6 +965,7 @@ package chime {
   }
 
   object DeleteVoiceConnectorRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorRequest = {
@@ -938,6 +984,7 @@ package chime {
   }
 
   object DeleteVoiceConnectorTerminationCredentialsRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString,
         Usernames: js.UndefOr[SensitiveStringList] = js.undefined
@@ -957,6 +1004,7 @@ package chime {
   }
 
   object DeleteVoiceConnectorTerminationRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorTerminationRequest = {
@@ -975,6 +1023,7 @@ package chime {
   }
 
   object DisassociatePhoneNumberFromUserRequest {
+    @inline
     def apply(
         AccountId: String,
         UserId: String
@@ -992,6 +1041,7 @@ package chime {
   trait DisassociatePhoneNumberFromUserResponse extends js.Object {}
 
   object DisassociatePhoneNumberFromUserResponse {
+    @inline
     def apply(
         ): DisassociatePhoneNumberFromUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -1007,6 +1057,7 @@ package chime {
   }
 
   object DisassociatePhoneNumbersFromVoiceConnectorRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString,
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
@@ -1026,6 +1077,7 @@ package chime {
   }
 
   object DisassociatePhoneNumbersFromVoiceConnectorResponse {
+    @inline
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): DisassociatePhoneNumbersFromVoiceConnectorResponse = {
@@ -1082,6 +1134,7 @@ package chime {
   }
 
   object EventsConfiguration {
+    @inline
     def apply(
         BotId: js.UndefOr[String] = js.undefined,
         LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
@@ -1103,6 +1156,7 @@ package chime {
   }
 
   object GetAccountRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString
     ): GetAccountRequest = {
@@ -1120,6 +1174,7 @@ package chime {
   }
 
   object GetAccountResponse {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): GetAccountResponse = {
@@ -1135,6 +1190,7 @@ package chime {
   }
 
   object GetAccountSettingsRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString
     ): GetAccountSettingsRequest = {
@@ -1152,6 +1208,7 @@ package chime {
   }
 
   object GetAccountSettingsResponse {
+    @inline
     def apply(
         AccountSettings: js.UndefOr[AccountSettings] = js.undefined
     ): GetAccountSettingsResponse = {
@@ -1168,6 +1225,7 @@ package chime {
   }
 
   object GetBotRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString
@@ -1187,6 +1245,7 @@ package chime {
   }
 
   object GetBotResponse {
+    @inline
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): GetBotResponse = {
@@ -1203,6 +1262,7 @@ package chime {
   }
 
   object GetEventsConfigurationRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString
@@ -1222,6 +1282,7 @@ package chime {
   }
 
   object GetEventsConfigurationResponse {
+    @inline
     def apply(
         EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
     ): GetEventsConfigurationResponse = {
@@ -1238,6 +1299,7 @@ package chime {
   }
 
   object GetGlobalSettingsResponse {
+    @inline
     def apply(
         BusinessCalling: js.UndefOr[BusinessCallingSettings] = js.undefined,
         VoiceConnector: js.UndefOr[VoiceConnectorSettings] = js.undefined
@@ -1255,6 +1317,7 @@ package chime {
   }
 
   object GetPhoneNumberOrderRequest {
+    @inline
     def apply(
         PhoneNumberOrderId: GuidString
     ): GetPhoneNumberOrderRequest = {
@@ -1272,6 +1335,7 @@ package chime {
   }
 
   object GetPhoneNumberOrderResponse {
+    @inline
     def apply(
         PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
     ): GetPhoneNumberOrderResponse = {
@@ -1287,6 +1351,7 @@ package chime {
   }
 
   object GetPhoneNumberRequest {
+    @inline
     def apply(
         PhoneNumberId: String
     ): GetPhoneNumberRequest = {
@@ -1304,6 +1369,7 @@ package chime {
   }
 
   object GetPhoneNumberResponse {
+    @inline
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): GetPhoneNumberResponse = {
@@ -1320,6 +1386,7 @@ package chime {
   }
 
   object GetUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserId: NonEmptyString
@@ -1339,6 +1406,7 @@ package chime {
   }
 
   object GetUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): GetUserResponse = {
@@ -1355,6 +1423,7 @@ package chime {
   }
 
   object GetUserSettingsRequest {
+    @inline
     def apply(
         AccountId: String,
         UserId: String
@@ -1374,6 +1443,7 @@ package chime {
   }
 
   object GetUserSettingsResponse {
+    @inline
     def apply(
         UserSettings: js.UndefOr[UserSettings] = js.undefined
     ): GetUserSettingsResponse = {
@@ -1389,6 +1459,7 @@ package chime {
   }
 
   object GetVoiceConnectorOriginationRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorOriginationRequest = {
@@ -1406,6 +1477,7 @@ package chime {
   }
 
   object GetVoiceConnectorOriginationResponse {
+    @inline
     def apply(
         Origination: js.UndefOr[Origination] = js.undefined
     ): GetVoiceConnectorOriginationResponse = {
@@ -1421,6 +1493,7 @@ package chime {
   }
 
   object GetVoiceConnectorRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorRequest = {
@@ -1438,6 +1511,7 @@ package chime {
   }
 
   object GetVoiceConnectorResponse {
+    @inline
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): GetVoiceConnectorResponse = {
@@ -1453,6 +1527,7 @@ package chime {
   }
 
   object GetVoiceConnectorTerminationHealthRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorTerminationHealthRequest = {
@@ -1470,6 +1545,7 @@ package chime {
   }
 
   object GetVoiceConnectorTerminationHealthResponse {
+    @inline
     def apply(
         TerminationHealth: js.UndefOr[TerminationHealth] = js.undefined
     ): GetVoiceConnectorTerminationHealthResponse = {
@@ -1485,6 +1561,7 @@ package chime {
   }
 
   object GetVoiceConnectorTerminationRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorTerminationRequest = {
@@ -1502,6 +1579,7 @@ package chime {
   }
 
   object GetVoiceConnectorTerminationResponse {
+    @inline
     def apply(
         Termination: js.UndefOr[Termination] = js.undefined
     ): GetVoiceConnectorTerminationResponse = {
@@ -1523,6 +1601,7 @@ package chime {
   }
 
   object Invite {
+    @inline
     def apply(
         EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
         EmailStatus: js.UndefOr[EmailStatus] = js.undefined,
@@ -1553,6 +1632,7 @@ package chime {
   }
 
   object InviteUsersRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserEmailList: UserEmailList
@@ -1572,6 +1652,7 @@ package chime {
   }
 
   object InviteUsersResponse {
+    @inline
     def apply(
         Invites: js.UndefOr[InviteList] = js.undefined
     ): InviteUsersResponse = {
@@ -1599,6 +1680,7 @@ package chime {
   }
 
   object ListAccountsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
         Name: js.UndefOr[AccountName] = js.undefined,
@@ -1621,6 +1703,7 @@ package chime {
   }
 
   object ListAccountsResponse {
+    @inline
     def apply(
         Accounts: js.UndefOr[AccountList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1640,6 +1723,7 @@ package chime {
   }
 
   object ListBotsRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
@@ -1662,6 +1746,7 @@ package chime {
   }
 
   object ListBotsResponse {
+    @inline
     def apply(
         Bots: js.UndefOr[BotList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1680,6 +1765,7 @@ package chime {
   }
 
   object ListPhoneNumberOrdersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1698,6 +1784,7 @@ package chime {
   }
 
   object ListPhoneNumberOrdersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         PhoneNumberOrders: js.UndefOr[PhoneNumberOrderList] = js.undefined
@@ -1720,6 +1807,7 @@ package chime {
   }
 
   object ListPhoneNumbersRequest {
+    @inline
     def apply(
         FilterName: js.UndefOr[PhoneNumberAssociationName] = js.undefined,
         FilterValue: js.UndefOr[String] = js.undefined,
@@ -1746,6 +1834,7 @@ package chime {
   }
 
   object ListPhoneNumbersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
@@ -1766,6 +1855,7 @@ package chime {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
@@ -1790,6 +1880,7 @@ package chime {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Users: js.UndefOr[UserList] = js.undefined
@@ -1807,6 +1898,7 @@ package chime {
   }
 
   object ListVoiceConnectorTerminationCredentialsRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString
     ): ListVoiceConnectorTerminationCredentialsRequest = {
@@ -1824,6 +1916,7 @@ package chime {
   }
 
   object ListVoiceConnectorTerminationCredentialsResponse {
+    @inline
     def apply(
         Usernames: js.UndefOr[SensitiveStringList] = js.undefined
     ): ListVoiceConnectorTerminationCredentialsResponse = {
@@ -1840,6 +1933,7 @@ package chime {
   }
 
   object ListVoiceConnectorsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1858,6 +1952,7 @@ package chime {
   }
 
   object ListVoiceConnectorsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         VoiceConnectors: js.UndefOr[VoiceConnectorList] = js.undefined
@@ -1876,6 +1971,7 @@ package chime {
   }
 
   object LogoutUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserId: NonEmptyString
@@ -1893,6 +1989,7 @@ package chime {
   trait LogoutUserResponse extends js.Object {}
 
   object LogoutUserResponse {
+    @inline
     def apply(
         ): LogoutUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -1911,6 +2008,7 @@ package chime {
   }
 
   object OrderedPhoneNumber {
+    @inline
     def apply(
         E164PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
         Status: js.UndefOr[OrderedPhoneNumberStatus] = js.undefined
@@ -1940,6 +2038,7 @@ package chime {
   }
 
   object Origination {
+    @inline
     def apply(
         Disabled: js.UndefOr[Boolean] = js.undefined,
         Routes: js.UndefOr[OriginationRouteList] = js.undefined
@@ -1964,6 +2063,7 @@ package chime {
   }
 
   object OriginationRoute {
+    @inline
     def apply(
         Host: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
@@ -2006,6 +2106,7 @@ package chime {
   }
 
   object PhoneNumber {
+    @inline
     def apply(
         Associations: js.UndefOr[PhoneNumberAssociationList] = js.undefined,
         Capabilities: js.UndefOr[PhoneNumberCapabilities] = js.undefined,
@@ -2044,6 +2145,7 @@ package chime {
   }
 
   object PhoneNumberAssociation {
+    @inline
     def apply(
         AssociatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         Name: js.UndefOr[PhoneNumberAssociationName] = js.undefined,
@@ -2079,6 +2181,7 @@ package chime {
   }
 
   object PhoneNumberCapabilities {
+    @inline
     def apply(
         InboundCall: js.UndefOr[NullableBoolean] = js.undefined,
         InboundMMS: js.UndefOr[NullableBoolean] = js.undefined,
@@ -2109,6 +2212,7 @@ package chime {
   }
 
   object PhoneNumberError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -2136,6 +2240,7 @@ package chime {
   }
 
   object PhoneNumberOrder {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         OrderedPhoneNumbers: js.UndefOr[OrderedPhoneNumberList] = js.undefined,
@@ -2211,6 +2316,7 @@ package chime {
   }
 
   object PutEventsConfigurationRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString,
@@ -2236,6 +2342,7 @@ package chime {
   }
 
   object PutEventsConfigurationResponse {
+    @inline
     def apply(
         EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
     ): PutEventsConfigurationResponse = {
@@ -2252,6 +2359,7 @@ package chime {
   }
 
   object PutVoiceConnectorOriginationRequest {
+    @inline
     def apply(
         Origination: Origination,
         VoiceConnectorId: NonEmptyString
@@ -2271,6 +2379,7 @@ package chime {
   }
 
   object PutVoiceConnectorOriginationResponse {
+    @inline
     def apply(
         Origination: js.UndefOr[Origination] = js.undefined
     ): PutVoiceConnectorOriginationResponse = {
@@ -2287,6 +2396,7 @@ package chime {
   }
 
   object PutVoiceConnectorTerminationCredentialsRequest {
+    @inline
     def apply(
         VoiceConnectorId: NonEmptyString,
         Credentials: js.UndefOr[CredentialList] = js.undefined
@@ -2307,6 +2417,7 @@ package chime {
   }
 
   object PutVoiceConnectorTerminationRequest {
+    @inline
     def apply(
         Termination: Termination,
         VoiceConnectorId: NonEmptyString
@@ -2326,6 +2437,7 @@ package chime {
   }
 
   object PutVoiceConnectorTerminationResponse {
+    @inline
     def apply(
         Termination: js.UndefOr[Termination] = js.undefined
     ): PutVoiceConnectorTerminationResponse = {
@@ -2342,6 +2454,7 @@ package chime {
   }
 
   object RegenerateSecurityTokenRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString
@@ -2361,6 +2474,7 @@ package chime {
   }
 
   object RegenerateSecurityTokenResponse {
+    @inline
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): RegenerateSecurityTokenResponse = {
@@ -2385,6 +2499,7 @@ package chime {
   }
 
   object ResetPersonalPINRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserId: NonEmptyString
@@ -2404,6 +2519,7 @@ package chime {
   }
 
   object ResetPersonalPINResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): ResetPersonalPINResponse = {
@@ -2419,6 +2535,7 @@ package chime {
   }
 
   object RestorePhoneNumberRequest {
+    @inline
     def apply(
         PhoneNumberId: NonEmptyString
     ): RestorePhoneNumberRequest = {
@@ -2436,6 +2553,7 @@ package chime {
   }
 
   object RestorePhoneNumberResponse {
+    @inline
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): RestorePhoneNumberResponse = {
@@ -2457,6 +2575,7 @@ package chime {
   }
 
   object SearchAvailablePhoneNumbersRequest {
+    @inline
     def apply(
         AreaCode: js.UndefOr[String] = js.undefined,
         City: js.UndefOr[String] = js.undefined,
@@ -2484,6 +2603,7 @@ package chime {
   }
 
   object SearchAvailablePhoneNumbersResponse {
+    @inline
     def apply(
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
     ): SearchAvailablePhoneNumbersResponse = {
@@ -2504,6 +2624,7 @@ package chime {
   }
 
   object TelephonySettings {
+    @inline
     def apply(
         InboundCalling: Boolean,
         OutboundCalling: Boolean,
@@ -2532,6 +2653,7 @@ package chime {
   }
 
   object Termination {
+    @inline
     def apply(
         CallingRegions: js.UndefOr[CallingRegionList] = js.undefined,
         CidrAllowedList: js.UndefOr[StringList] = js.undefined,
@@ -2559,6 +2681,7 @@ package chime {
   }
 
   object TerminationHealth {
+    @inline
     def apply(
         Source: js.UndefOr[String] = js.undefined,
         Timestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
@@ -2577,6 +2700,7 @@ package chime {
   }
 
   object UpdateAccountRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         Name: js.UndefOr[AccountName] = js.undefined
@@ -2596,6 +2720,7 @@ package chime {
   }
 
   object UpdateAccountResponse {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): UpdateAccountResponse = {
@@ -2612,6 +2737,7 @@ package chime {
   }
 
   object UpdateAccountSettingsRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         AccountSettings: AccountSettings
@@ -2629,6 +2755,7 @@ package chime {
   trait UpdateAccountSettingsResponse extends js.Object {}
 
   object UpdateAccountSettingsResponse {
+    @inline
     def apply(
         ): UpdateAccountSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2645,6 +2772,7 @@ package chime {
   }
 
   object UpdateBotRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         BotId: NonEmptyString,
@@ -2666,6 +2794,7 @@ package chime {
   }
 
   object UpdateBotResponse {
+    @inline
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): UpdateBotResponse = {
@@ -2682,6 +2811,7 @@ package chime {
   }
 
   object UpdateGlobalSettingsRequest {
+    @inline
     def apply(
         BusinessCalling: BusinessCallingSettings,
         VoiceConnector: VoiceConnectorSettings
@@ -2702,6 +2832,7 @@ package chime {
   }
 
   object UpdatePhoneNumberRequest {
+    @inline
     def apply(
         PhoneNumberId: String,
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
@@ -2725,6 +2856,7 @@ package chime {
   }
 
   object UpdatePhoneNumberRequestItem {
+    @inline
     def apply(
         PhoneNumberId: NonEmptyString,
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
@@ -2744,6 +2876,7 @@ package chime {
   }
 
   object UpdatePhoneNumberResponse {
+    @inline
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): UpdatePhoneNumberResponse = {
@@ -2761,6 +2894,7 @@ package chime {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         AccountId: NonEmptyString,
         UserId: NonEmptyString,
@@ -2786,6 +2920,7 @@ package chime {
   }
 
   object UpdateUserRequestItem {
+    @inline
     def apply(
         UserId: NonEmptyString,
         LicenseType: js.UndefOr[License] = js.undefined
@@ -2805,6 +2940,7 @@ package chime {
   }
 
   object UpdateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
@@ -2822,6 +2958,7 @@ package chime {
   }
 
   object UpdateUserSettingsRequest {
+    @inline
     def apply(
         AccountId: String,
         UserId: String,
@@ -2845,6 +2982,7 @@ package chime {
   }
 
   object UpdateVoiceConnectorRequest {
+    @inline
     def apply(
         Name: VoiceConnectorName,
         RequireEncryption: Boolean,
@@ -2866,6 +3004,7 @@ package chime {
   }
 
   object UpdateVoiceConnectorResponse {
+    @inline
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): UpdateVoiceConnectorResponse = {
@@ -2894,6 +3033,7 @@ package chime {
   }
 
   object User {
+    @inline
     def apply(
         UserId: String,
         AccountId: js.UndefOr[String] = js.undefined,
@@ -2936,6 +3076,7 @@ package chime {
   }
 
   object UserError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -2958,6 +3099,7 @@ package chime {
   }
 
   object UserSettings {
+    @inline
     def apply(
         Telephony: TelephonySettings
     ): UserSettings = {
@@ -2983,6 +3125,7 @@ package chime {
   }
 
   object VoiceConnector {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         Name: js.UndefOr[VoiceConnectorName] = js.undefined,
@@ -3011,6 +3154,7 @@ package chime {
   }
 
   object VoiceConnectorSettings {
+    @inline
     def apply(
         CdrBucket: js.UndefOr[String] = js.undefined
     ): VoiceConnectorSettings = {

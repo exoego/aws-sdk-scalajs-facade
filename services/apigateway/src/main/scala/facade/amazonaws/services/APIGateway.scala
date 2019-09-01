@@ -75,213 +75,237 @@ package object apigateway {
 
   implicit final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
 
-    def createApiKeyFuture(params: CreateApiKeyRequest): Future[ApiKey] = service.createApiKey(params).promise.toFuture
-    def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[Authorizer] =
+    @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[ApiKey] =
+      service.createApiKey(params).promise.toFuture
+    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[Authorizer] =
       service.createAuthorizer(params).promise.toFuture
-    def createBasePathMappingFuture(params: CreateBasePathMappingRequest): Future[BasePathMapping] =
+    @inline def createBasePathMappingFuture(params: CreateBasePathMappingRequest): Future[BasePathMapping] =
       service.createBasePathMapping(params).promise.toFuture
-    def createDeploymentFuture(params: CreateDeploymentRequest): Future[Deployment] =
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[Deployment] =
       service.createDeployment(params).promise.toFuture
-    def createDocumentationPartFuture(params: CreateDocumentationPartRequest): Future[DocumentationPart] =
+    @inline def createDocumentationPartFuture(params: CreateDocumentationPartRequest): Future[DocumentationPart] =
       service.createDocumentationPart(params).promise.toFuture
-    def createDocumentationVersionFuture(params: CreateDocumentationVersionRequest): Future[DocumentationVersion] =
-      service.createDocumentationVersion(params).promise.toFuture
-    def createDomainNameFuture(params: CreateDomainNameRequest): Future[DomainName] =
+    @inline def createDocumentationVersionFuture(
+        params: CreateDocumentationVersionRequest
+    ): Future[DocumentationVersion] = service.createDocumentationVersion(params).promise.toFuture
+    @inline def createDomainNameFuture(params: CreateDomainNameRequest): Future[DomainName] =
       service.createDomainName(params).promise.toFuture
-    def createModelFuture(params: CreateModelRequest): Future[Model] = service.createModel(params).promise.toFuture
-    def createRequestValidatorFuture(params: CreateRequestValidatorRequest): Future[RequestValidator] =
+    @inline def createModelFuture(params: CreateModelRequest): Future[Model] =
+      service.createModel(params).promise.toFuture
+    @inline def createRequestValidatorFuture(params: CreateRequestValidatorRequest): Future[RequestValidator] =
       service.createRequestValidator(params).promise.toFuture
-    def createResourceFuture(params: CreateResourceRequest): Future[Resource] =
+    @inline def createResourceFuture(params: CreateResourceRequest): Future[Resource] =
       service.createResource(params).promise.toFuture
-    def createRestApiFuture(params: CreateRestApiRequest): Future[RestApi] =
+    @inline def createRestApiFuture(params: CreateRestApiRequest): Future[RestApi] =
       service.createRestApi(params).promise.toFuture
-    def createStageFuture(params: CreateStageRequest): Future[Stage] = service.createStage(params).promise.toFuture
-    def createUsagePlanFuture(params: CreateUsagePlanRequest): Future[UsagePlan] =
+    @inline def createStageFuture(params: CreateStageRequest): Future[Stage] =
+      service.createStage(params).promise.toFuture
+    @inline def createUsagePlanFuture(params: CreateUsagePlanRequest): Future[UsagePlan] =
       service.createUsagePlan(params).promise.toFuture
-    def createUsagePlanKeyFuture(params: CreateUsagePlanKeyRequest): Future[UsagePlanKey] =
+    @inline def createUsagePlanKeyFuture(params: CreateUsagePlanKeyRequest): Future[UsagePlanKey] =
       service.createUsagePlanKey(params).promise.toFuture
-    def createVpcLinkFuture(params: CreateVpcLinkRequest): Future[VpcLink] =
+    @inline def createVpcLinkFuture(params: CreateVpcLinkRequest): Future[VpcLink] =
       service.createVpcLink(params).promise.toFuture
-    def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[js.Object] =
+    @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[js.Object] =
       service.deleteApiKey(params).promise.toFuture
-    def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[js.Object] =
+    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[js.Object] =
       service.deleteAuthorizer(params).promise.toFuture
-    def deleteBasePathMappingFuture(params: DeleteBasePathMappingRequest): Future[js.Object] =
+    @inline def deleteBasePathMappingFuture(params: DeleteBasePathMappingRequest): Future[js.Object] =
       service.deleteBasePathMapping(params).promise.toFuture
-    def deleteClientCertificateFuture(params: DeleteClientCertificateRequest): Future[js.Object] =
+    @inline def deleteClientCertificateFuture(params: DeleteClientCertificateRequest): Future[js.Object] =
       service.deleteClientCertificate(params).promise.toFuture
-    def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] =
+    @inline def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] =
       service.deleteDeployment(params).promise.toFuture
-    def deleteDocumentationPartFuture(params: DeleteDocumentationPartRequest): Future[js.Object] =
+    @inline def deleteDocumentationPartFuture(params: DeleteDocumentationPartRequest): Future[js.Object] =
       service.deleteDocumentationPart(params).promise.toFuture
-    def deleteDocumentationVersionFuture(params: DeleteDocumentationVersionRequest): Future[js.Object] =
+    @inline def deleteDocumentationVersionFuture(params: DeleteDocumentationVersionRequest): Future[js.Object] =
       service.deleteDocumentationVersion(params).promise.toFuture
-    def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[js.Object] =
+    @inline def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[js.Object] =
       service.deleteDomainName(params).promise.toFuture
-    def deleteGatewayResponseFuture(params: DeleteGatewayResponseRequest): Future[js.Object] =
+    @inline def deleteGatewayResponseFuture(params: DeleteGatewayResponseRequest): Future[js.Object] =
       service.deleteGatewayResponse(params).promise.toFuture
-    def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[js.Object] =
+    @inline def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[js.Object] =
       service.deleteIntegration(params).promise.toFuture
-    def deleteIntegrationResponseFuture(params: DeleteIntegrationResponseRequest): Future[js.Object] =
+    @inline def deleteIntegrationResponseFuture(params: DeleteIntegrationResponseRequest): Future[js.Object] =
       service.deleteIntegrationResponse(params).promise.toFuture
-    def deleteMethodFuture(params: DeleteMethodRequest): Future[js.Object] =
+    @inline def deleteMethodFuture(params: DeleteMethodRequest): Future[js.Object] =
       service.deleteMethod(params).promise.toFuture
-    def deleteMethodResponseFuture(params: DeleteMethodResponseRequest): Future[js.Object] =
+    @inline def deleteMethodResponseFuture(params: DeleteMethodResponseRequest): Future[js.Object] =
       service.deleteMethodResponse(params).promise.toFuture
-    def deleteModelFuture(params: DeleteModelRequest): Future[js.Object] = service.deleteModel(params).promise.toFuture
-    def deleteRequestValidatorFuture(params: DeleteRequestValidatorRequest): Future[js.Object] =
+    @inline def deleteModelFuture(params: DeleteModelRequest): Future[js.Object] =
+      service.deleteModel(params).promise.toFuture
+    @inline def deleteRequestValidatorFuture(params: DeleteRequestValidatorRequest): Future[js.Object] =
       service.deleteRequestValidator(params).promise.toFuture
-    def deleteResourceFuture(params: DeleteResourceRequest): Future[js.Object] =
+    @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[js.Object] =
       service.deleteResource(params).promise.toFuture
-    def deleteRestApiFuture(params: DeleteRestApiRequest): Future[js.Object] =
+    @inline def deleteRestApiFuture(params: DeleteRestApiRequest): Future[js.Object] =
       service.deleteRestApi(params).promise.toFuture
-    def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] = service.deleteStage(params).promise.toFuture
-    def deleteUsagePlanFuture(params: DeleteUsagePlanRequest): Future[js.Object] =
+    @inline def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] =
+      service.deleteStage(params).promise.toFuture
+    @inline def deleteUsagePlanFuture(params: DeleteUsagePlanRequest): Future[js.Object] =
       service.deleteUsagePlan(params).promise.toFuture
-    def deleteUsagePlanKeyFuture(params: DeleteUsagePlanKeyRequest): Future[js.Object] =
+    @inline def deleteUsagePlanKeyFuture(params: DeleteUsagePlanKeyRequest): Future[js.Object] =
       service.deleteUsagePlanKey(params).promise.toFuture
-    def deleteVpcLinkFuture(params: DeleteVpcLinkRequest): Future[js.Object] =
+    @inline def deleteVpcLinkFuture(params: DeleteVpcLinkRequest): Future[js.Object] =
       service.deleteVpcLink(params).promise.toFuture
-    def flushStageAuthorizersCacheFuture(params: FlushStageAuthorizersCacheRequest): Future[js.Object] =
+    @inline def flushStageAuthorizersCacheFuture(params: FlushStageAuthorizersCacheRequest): Future[js.Object] =
       service.flushStageAuthorizersCache(params).promise.toFuture
-    def flushStageCacheFuture(params: FlushStageCacheRequest): Future[js.Object] =
+    @inline def flushStageCacheFuture(params: FlushStageCacheRequest): Future[js.Object] =
       service.flushStageCache(params).promise.toFuture
-    def generateClientCertificateFuture(params: GenerateClientCertificateRequest): Future[ClientCertificate] =
+    @inline def generateClientCertificateFuture(params: GenerateClientCertificateRequest): Future[ClientCertificate] =
       service.generateClientCertificate(params).promise.toFuture
-    def getAccountFuture(params: GetAccountRequest): Future[Account] = service.getAccount(params).promise.toFuture
-    def getApiKeyFuture(params: GetApiKeyRequest): Future[ApiKey]    = service.getApiKey(params).promise.toFuture
-    def getApiKeysFuture(params: GetApiKeysRequest): Future[ApiKeys] = service.getApiKeys(params).promise.toFuture
-    def getAuthorizerFuture(params: GetAuthorizerRequest): Future[Authorizer] =
+    @inline def getAccountFuture(params: GetAccountRequest): Future[Account] =
+      service.getAccount(params).promise.toFuture
+    @inline def getApiKeyFuture(params: GetApiKeyRequest): Future[ApiKey] = service.getApiKey(params).promise.toFuture
+    @inline def getApiKeysFuture(params: GetApiKeysRequest): Future[ApiKeys] =
+      service.getApiKeys(params).promise.toFuture
+    @inline def getAuthorizerFuture(params: GetAuthorizerRequest): Future[Authorizer] =
       service.getAuthorizer(params).promise.toFuture
-    def getAuthorizersFuture(params: GetAuthorizersRequest): Future[Authorizers] =
+    @inline def getAuthorizersFuture(params: GetAuthorizersRequest): Future[Authorizers] =
       service.getAuthorizers(params).promise.toFuture
-    def getBasePathMappingFuture(params: GetBasePathMappingRequest): Future[BasePathMapping] =
+    @inline def getBasePathMappingFuture(params: GetBasePathMappingRequest): Future[BasePathMapping] =
       service.getBasePathMapping(params).promise.toFuture
-    def getBasePathMappingsFuture(params: GetBasePathMappingsRequest): Future[BasePathMappings] =
+    @inline def getBasePathMappingsFuture(params: GetBasePathMappingsRequest): Future[BasePathMappings] =
       service.getBasePathMappings(params).promise.toFuture
-    def getClientCertificateFuture(params: GetClientCertificateRequest): Future[ClientCertificate] =
+    @inline def getClientCertificateFuture(params: GetClientCertificateRequest): Future[ClientCertificate] =
       service.getClientCertificate(params).promise.toFuture
-    def getClientCertificatesFuture(params: GetClientCertificatesRequest): Future[ClientCertificates] =
+    @inline def getClientCertificatesFuture(params: GetClientCertificatesRequest): Future[ClientCertificates] =
       service.getClientCertificates(params).promise.toFuture
-    def getDeploymentFuture(params: GetDeploymentRequest): Future[Deployment] =
+    @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[Deployment] =
       service.getDeployment(params).promise.toFuture
-    def getDeploymentsFuture(params: GetDeploymentsRequest): Future[Deployments] =
+    @inline def getDeploymentsFuture(params: GetDeploymentsRequest): Future[Deployments] =
       service.getDeployments(params).promise.toFuture
-    def getDocumentationPartFuture(params: GetDocumentationPartRequest): Future[DocumentationPart] =
+    @inline def getDocumentationPartFuture(params: GetDocumentationPartRequest): Future[DocumentationPart] =
       service.getDocumentationPart(params).promise.toFuture
-    def getDocumentationPartsFuture(params: GetDocumentationPartsRequest): Future[DocumentationParts] =
+    @inline def getDocumentationPartsFuture(params: GetDocumentationPartsRequest): Future[DocumentationParts] =
       service.getDocumentationParts(params).promise.toFuture
-    def getDocumentationVersionFuture(params: GetDocumentationVersionRequest): Future[DocumentationVersion] =
+    @inline def getDocumentationVersionFuture(params: GetDocumentationVersionRequest): Future[DocumentationVersion] =
       service.getDocumentationVersion(params).promise.toFuture
-    def getDocumentationVersionsFuture(params: GetDocumentationVersionsRequest): Future[DocumentationVersions] =
+    @inline def getDocumentationVersionsFuture(params: GetDocumentationVersionsRequest): Future[DocumentationVersions] =
       service.getDocumentationVersions(params).promise.toFuture
-    def getDomainNameFuture(params: GetDomainNameRequest): Future[DomainName] =
+    @inline def getDomainNameFuture(params: GetDomainNameRequest): Future[DomainName] =
       service.getDomainName(params).promise.toFuture
-    def getDomainNamesFuture(params: GetDomainNamesRequest): Future[DomainNames] =
+    @inline def getDomainNamesFuture(params: GetDomainNamesRequest): Future[DomainNames] =
       service.getDomainNames(params).promise.toFuture
-    def getExportFuture(params: GetExportRequest): Future[ExportResponse] = service.getExport(params).promise.toFuture
-    def getGatewayResponseFuture(params: GetGatewayResponseRequest): Future[GatewayResponse] =
+    @inline def getExportFuture(params: GetExportRequest): Future[ExportResponse] =
+      service.getExport(params).promise.toFuture
+    @inline def getGatewayResponseFuture(params: GetGatewayResponseRequest): Future[GatewayResponse] =
       service.getGatewayResponse(params).promise.toFuture
-    def getGatewayResponsesFuture(params: GetGatewayResponsesRequest): Future[GatewayResponses] =
+    @inline def getGatewayResponsesFuture(params: GetGatewayResponsesRequest): Future[GatewayResponses] =
       service.getGatewayResponses(params).promise.toFuture
-    def getIntegrationFuture(params: GetIntegrationRequest): Future[Integration] =
+    @inline def getIntegrationFuture(params: GetIntegrationRequest): Future[Integration] =
       service.getIntegration(params).promise.toFuture
-    def getIntegrationResponseFuture(params: GetIntegrationResponseRequest): Future[IntegrationResponse] =
+    @inline def getIntegrationResponseFuture(params: GetIntegrationResponseRequest): Future[IntegrationResponse] =
       service.getIntegrationResponse(params).promise.toFuture
-    def getMethodFuture(params: GetMethodRequest): Future[Method] = service.getMethod(params).promise.toFuture
-    def getMethodResponseFuture(params: GetMethodResponseRequest): Future[MethodResponse] =
+    @inline def getMethodFuture(params: GetMethodRequest): Future[Method] = service.getMethod(params).promise.toFuture
+    @inline def getMethodResponseFuture(params: GetMethodResponseRequest): Future[MethodResponse] =
       service.getMethodResponse(params).promise.toFuture
-    def getModelFuture(params: GetModelRequest): Future[Model] = service.getModel(params).promise.toFuture
-    def getModelTemplateFuture(params: GetModelTemplateRequest): Future[Template] =
+    @inline def getModelFuture(params: GetModelRequest): Future[Model] = service.getModel(params).promise.toFuture
+    @inline def getModelTemplateFuture(params: GetModelTemplateRequest): Future[Template] =
       service.getModelTemplate(params).promise.toFuture
-    def getModelsFuture(params: GetModelsRequest): Future[Models] = service.getModels(params).promise.toFuture
-    def getRequestValidatorFuture(params: GetRequestValidatorRequest): Future[RequestValidator] =
+    @inline def getModelsFuture(params: GetModelsRequest): Future[Models] = service.getModels(params).promise.toFuture
+    @inline def getRequestValidatorFuture(params: GetRequestValidatorRequest): Future[RequestValidator] =
       service.getRequestValidator(params).promise.toFuture
-    def getRequestValidatorsFuture(params: GetRequestValidatorsRequest): Future[RequestValidators] =
+    @inline def getRequestValidatorsFuture(params: GetRequestValidatorsRequest): Future[RequestValidators] =
       service.getRequestValidators(params).promise.toFuture
-    def getResourceFuture(params: GetResourceRequest): Future[Resource] = service.getResource(params).promise.toFuture
-    def getResourcesFuture(params: GetResourcesRequest): Future[Resources] =
+    @inline def getResourceFuture(params: GetResourceRequest): Future[Resource] =
+      service.getResource(params).promise.toFuture
+    @inline def getResourcesFuture(params: GetResourcesRequest): Future[Resources] =
       service.getResources(params).promise.toFuture
-    def getRestApiFuture(params: GetRestApiRequest): Future[RestApi]    = service.getRestApi(params).promise.toFuture
-    def getRestApisFuture(params: GetRestApisRequest): Future[RestApis] = service.getRestApis(params).promise.toFuture
-    def getSdkFuture(params: GetSdkRequest): Future[SdkResponse]        = service.getSdk(params).promise.toFuture
-    def getSdkTypeFuture(params: GetSdkTypeRequest): Future[SdkType]    = service.getSdkType(params).promise.toFuture
-    def getSdkTypesFuture(params: GetSdkTypesRequest): Future[SdkTypes] = service.getSdkTypes(params).promise.toFuture
-    def getStageFuture(params: GetStageRequest): Future[Stage]          = service.getStage(params).promise.toFuture
-    def getStagesFuture(params: GetStagesRequest): Future[Stages]       = service.getStages(params).promise.toFuture
-    def getTagsFuture(params: GetTagsRequest): Future[Tags]             = service.getTags(params).promise.toFuture
-    def getUsageFuture(params: GetUsageRequest): Future[Usage]          = service.getUsage(params).promise.toFuture
-    def getUsagePlanFuture(params: GetUsagePlanRequest): Future[UsagePlan] =
+    @inline def getRestApiFuture(params: GetRestApiRequest): Future[RestApi] =
+      service.getRestApi(params).promise.toFuture
+    @inline def getRestApisFuture(params: GetRestApisRequest): Future[RestApis] =
+      service.getRestApis(params).promise.toFuture
+    @inline def getSdkFuture(params: GetSdkRequest): Future[SdkResponse] = service.getSdk(params).promise.toFuture
+    @inline def getSdkTypeFuture(params: GetSdkTypeRequest): Future[SdkType] =
+      service.getSdkType(params).promise.toFuture
+    @inline def getSdkTypesFuture(params: GetSdkTypesRequest): Future[SdkTypes] =
+      service.getSdkTypes(params).promise.toFuture
+    @inline def getStageFuture(params: GetStageRequest): Future[Stage]    = service.getStage(params).promise.toFuture
+    @inline def getStagesFuture(params: GetStagesRequest): Future[Stages] = service.getStages(params).promise.toFuture
+    @inline def getTagsFuture(params: GetTagsRequest): Future[Tags]       = service.getTags(params).promise.toFuture
+    @inline def getUsageFuture(params: GetUsageRequest): Future[Usage]    = service.getUsage(params).promise.toFuture
+    @inline def getUsagePlanFuture(params: GetUsagePlanRequest): Future[UsagePlan] =
       service.getUsagePlan(params).promise.toFuture
-    def getUsagePlanKeyFuture(params: GetUsagePlanKeyRequest): Future[UsagePlanKey] =
+    @inline def getUsagePlanKeyFuture(params: GetUsagePlanKeyRequest): Future[UsagePlanKey] =
       service.getUsagePlanKey(params).promise.toFuture
-    def getUsagePlanKeysFuture(params: GetUsagePlanKeysRequest): Future[UsagePlanKeys] =
+    @inline def getUsagePlanKeysFuture(params: GetUsagePlanKeysRequest): Future[UsagePlanKeys] =
       service.getUsagePlanKeys(params).promise.toFuture
-    def getUsagePlansFuture(params: GetUsagePlansRequest): Future[UsagePlans] =
+    @inline def getUsagePlansFuture(params: GetUsagePlansRequest): Future[UsagePlans] =
       service.getUsagePlans(params).promise.toFuture
-    def getVpcLinkFuture(params: GetVpcLinkRequest): Future[VpcLink]    = service.getVpcLink(params).promise.toFuture
-    def getVpcLinksFuture(params: GetVpcLinksRequest): Future[VpcLinks] = service.getVpcLinks(params).promise.toFuture
-    def importApiKeysFuture(params: ImportApiKeysRequest): Future[ApiKeyIds] =
+    @inline def getVpcLinkFuture(params: GetVpcLinkRequest): Future[VpcLink] =
+      service.getVpcLink(params).promise.toFuture
+    @inline def getVpcLinksFuture(params: GetVpcLinksRequest): Future[VpcLinks] =
+      service.getVpcLinks(params).promise.toFuture
+    @inline def importApiKeysFuture(params: ImportApiKeysRequest): Future[ApiKeyIds] =
       service.importApiKeys(params).promise.toFuture
-    def importDocumentationPartsFuture(params: ImportDocumentationPartsRequest): Future[DocumentationPartIds] =
+    @inline def importDocumentationPartsFuture(params: ImportDocumentationPartsRequest): Future[DocumentationPartIds] =
       service.importDocumentationParts(params).promise.toFuture
-    def importRestApiFuture(params: ImportRestApiRequest): Future[RestApi] =
+    @inline def importRestApiFuture(params: ImportRestApiRequest): Future[RestApi] =
       service.importRestApi(params).promise.toFuture
-    def putGatewayResponseFuture(params: PutGatewayResponseRequest): Future[GatewayResponse] =
+    @inline def putGatewayResponseFuture(params: PutGatewayResponseRequest): Future[GatewayResponse] =
       service.putGatewayResponse(params).promise.toFuture
-    def putIntegrationFuture(params: PutIntegrationRequest): Future[Integration] =
+    @inline def putIntegrationFuture(params: PutIntegrationRequest): Future[Integration] =
       service.putIntegration(params).promise.toFuture
-    def putIntegrationResponseFuture(params: PutIntegrationResponseRequest): Future[IntegrationResponse] =
+    @inline def putIntegrationResponseFuture(params: PutIntegrationResponseRequest): Future[IntegrationResponse] =
       service.putIntegrationResponse(params).promise.toFuture
-    def putMethodFuture(params: PutMethodRequest): Future[Method] = service.putMethod(params).promise.toFuture
-    def putMethodResponseFuture(params: PutMethodResponseRequest): Future[MethodResponse] =
+    @inline def putMethodFuture(params: PutMethodRequest): Future[Method] = service.putMethod(params).promise.toFuture
+    @inline def putMethodResponseFuture(params: PutMethodResponseRequest): Future[MethodResponse] =
       service.putMethodResponse(params).promise.toFuture
-    def putRestApiFuture(params: PutRestApiRequest): Future[RestApi]     = service.putRestApi(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
+    @inline def putRestApiFuture(params: PutRestApiRequest): Future[RestApi] =
+      service.putRestApi(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
       service.testInvokeAuthorizer(params).promise.toFuture
-    def testInvokeMethodFuture(params: TestInvokeMethodRequest): Future[TestInvokeMethodResponse] =
+    @inline def testInvokeMethodFuture(params: TestInvokeMethodRequest): Future[TestInvokeMethodResponse] =
       service.testInvokeMethod(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateAccountFuture(params: UpdateAccountRequest): Future[Account] =
+    @inline def updateAccountFuture(params: UpdateAccountRequest): Future[Account] =
       service.updateAccount(params).promise.toFuture
-    def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[ApiKey] = service.updateApiKey(params).promise.toFuture
-    def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[Authorizer] =
+    @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[ApiKey] =
+      service.updateApiKey(params).promise.toFuture
+    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[Authorizer] =
       service.updateAuthorizer(params).promise.toFuture
-    def updateBasePathMappingFuture(params: UpdateBasePathMappingRequest): Future[BasePathMapping] =
+    @inline def updateBasePathMappingFuture(params: UpdateBasePathMappingRequest): Future[BasePathMapping] =
       service.updateBasePathMapping(params).promise.toFuture
-    def updateClientCertificateFuture(params: UpdateClientCertificateRequest): Future[ClientCertificate] =
+    @inline def updateClientCertificateFuture(params: UpdateClientCertificateRequest): Future[ClientCertificate] =
       service.updateClientCertificate(params).promise.toFuture
-    def updateDeploymentFuture(params: UpdateDeploymentRequest): Future[Deployment] =
+    @inline def updateDeploymentFuture(params: UpdateDeploymentRequest): Future[Deployment] =
       service.updateDeployment(params).promise.toFuture
-    def updateDocumentationPartFuture(params: UpdateDocumentationPartRequest): Future[DocumentationPart] =
+    @inline def updateDocumentationPartFuture(params: UpdateDocumentationPartRequest): Future[DocumentationPart] =
       service.updateDocumentationPart(params).promise.toFuture
-    def updateDocumentationVersionFuture(params: UpdateDocumentationVersionRequest): Future[DocumentationVersion] =
-      service.updateDocumentationVersion(params).promise.toFuture
-    def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[DomainName] =
+    @inline def updateDocumentationVersionFuture(
+        params: UpdateDocumentationVersionRequest
+    ): Future[DocumentationVersion] = service.updateDocumentationVersion(params).promise.toFuture
+    @inline def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[DomainName] =
       service.updateDomainName(params).promise.toFuture
-    def updateGatewayResponseFuture(params: UpdateGatewayResponseRequest): Future[GatewayResponse] =
+    @inline def updateGatewayResponseFuture(params: UpdateGatewayResponseRequest): Future[GatewayResponse] =
       service.updateGatewayResponse(params).promise.toFuture
-    def updateIntegrationFuture(params: UpdateIntegrationRequest): Future[Integration] =
+    @inline def updateIntegrationFuture(params: UpdateIntegrationRequest): Future[Integration] =
       service.updateIntegration(params).promise.toFuture
-    def updateIntegrationResponseFuture(params: UpdateIntegrationResponseRequest): Future[IntegrationResponse] =
+    @inline def updateIntegrationResponseFuture(params: UpdateIntegrationResponseRequest): Future[IntegrationResponse] =
       service.updateIntegrationResponse(params).promise.toFuture
-    def updateMethodFuture(params: UpdateMethodRequest): Future[Method] = service.updateMethod(params).promise.toFuture
-    def updateMethodResponseFuture(params: UpdateMethodResponseRequest): Future[MethodResponse] =
+    @inline def updateMethodFuture(params: UpdateMethodRequest): Future[Method] =
+      service.updateMethod(params).promise.toFuture
+    @inline def updateMethodResponseFuture(params: UpdateMethodResponseRequest): Future[MethodResponse] =
       service.updateMethodResponse(params).promise.toFuture
-    def updateModelFuture(params: UpdateModelRequest): Future[Model] = service.updateModel(params).promise.toFuture
-    def updateRequestValidatorFuture(params: UpdateRequestValidatorRequest): Future[RequestValidator] =
+    @inline def updateModelFuture(params: UpdateModelRequest): Future[Model] =
+      service.updateModel(params).promise.toFuture
+    @inline def updateRequestValidatorFuture(params: UpdateRequestValidatorRequest): Future[RequestValidator] =
       service.updateRequestValidator(params).promise.toFuture
-    def updateResourceFuture(params: UpdateResourceRequest): Future[Resource] =
+    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[Resource] =
       service.updateResource(params).promise.toFuture
-    def updateRestApiFuture(params: UpdateRestApiRequest): Future[RestApi] =
+    @inline def updateRestApiFuture(params: UpdateRestApiRequest): Future[RestApi] =
       service.updateRestApi(params).promise.toFuture
-    def updateStageFuture(params: UpdateStageRequest): Future[Stage] = service.updateStage(params).promise.toFuture
-    def updateUsageFuture(params: UpdateUsageRequest): Future[Usage] = service.updateUsage(params).promise.toFuture
-    def updateUsagePlanFuture(params: UpdateUsagePlanRequest): Future[UsagePlan] =
+    @inline def updateStageFuture(params: UpdateStageRequest): Future[Stage] =
+      service.updateStage(params).promise.toFuture
+    @inline def updateUsageFuture(params: UpdateUsageRequest): Future[Usage] =
+      service.updateUsage(params).promise.toFuture
+    @inline def updateUsagePlanFuture(params: UpdateUsagePlanRequest): Future[UsagePlan] =
       service.updateUsagePlan(params).promise.toFuture
-    def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[VpcLink] =
+    @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[VpcLink] =
       service.updateVpcLink(params).promise.toFuture
   }
 }
@@ -424,6 +448,7 @@ package apigateway {
   }
 
   object AccessLogSettings {
+    @inline
     def apply(
         destinationArn: js.UndefOr[String] = js.undefined,
         format: js.UndefOr[String] = js.undefined
@@ -465,6 +490,7 @@ package apigateway {
   }
 
   object Account {
+    @inline
     def apply(
         apiKeyVersion: js.UndefOr[String] = js.undefined,
         cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
@@ -500,6 +526,7 @@ package apigateway {
   }
 
   object ApiKey {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         customerId: js.UndefOr[String] = js.undefined,
@@ -537,6 +564,7 @@ package apigateway {
   }
 
   object ApiKeyIds {
+    @inline
     def apply(
         ids: js.UndefOr[ListOfString] = js.undefined,
         warnings: js.UndefOr[ListOfString] = js.undefined
@@ -568,6 +596,7 @@ package apigateway {
   }
 
   object ApiKeys {
+    @inline
     def apply(
         items: js.UndefOr[ListOfApiKey] = js.undefined,
         position: js.UndefOr[String] = js.undefined,
@@ -598,6 +627,7 @@ package apigateway {
   }
 
   object ApiStage {
+    @inline
     def apply(
         apiId: js.UndefOr[String] = js.undefined,
         stage: js.UndefOr[String] = js.undefined,
@@ -631,6 +661,7 @@ package apigateway {
   }
 
   object Authorizer {
+    @inline
     def apply(
         authType: js.UndefOr[String] = js.undefined,
         authorizerCredentials: js.UndefOr[String] = js.undefined,
@@ -685,6 +716,7 @@ package apigateway {
   }
 
   object Authorizers {
+    @inline
     def apply(
         items: js.UndefOr[ListOfAuthorizer] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -709,6 +741,7 @@ package apigateway {
   }
 
   object BasePathMapping {
+    @inline
     def apply(
         basePath: js.UndefOr[String] = js.undefined,
         restApiId: js.UndefOr[String] = js.undefined,
@@ -734,6 +767,7 @@ package apigateway {
   }
 
   object BasePathMappings {
+    @inline
     def apply(
         items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -787,6 +821,7 @@ package apigateway {
   }
 
   object CanarySettings {
+    @inline
     def apply(
         deploymentId: js.UndefOr[String] = js.undefined,
         percentTraffic: js.UndefOr[Double] = js.undefined,
@@ -818,6 +853,7 @@ package apigateway {
   }
 
   object ClientCertificate {
+    @inline
     def apply(
         clientCertificateId: js.UndefOr[String] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -849,6 +885,7 @@ package apigateway {
   }
 
   object ClientCertificates {
+    @inline
     def apply(
         items: js.UndefOr[ListOfClientCertificate] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -890,6 +927,7 @@ package apigateway {
   }
 
   object CreateApiKeyRequest {
+    @inline
     def apply(
         customerId: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -931,6 +969,7 @@ package apigateway {
   }
 
   object CreateAuthorizerRequest {
+    @inline
     def apply(
         name: String,
         restApiId: String,
@@ -976,6 +1015,7 @@ package apigateway {
   }
 
   object CreateBasePathMappingRequest {
+    @inline
     def apply(
         domainName: String,
         restApiId: String,
@@ -1010,6 +1050,7 @@ package apigateway {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         restApiId: String,
         cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
@@ -1048,6 +1089,7 @@ package apigateway {
   }
 
   object CreateDocumentationPartRequest {
+    @inline
     def apply(
         location: DocumentationPartLocation,
         properties: String,
@@ -1075,6 +1117,7 @@ package apigateway {
   }
 
   object CreateDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String,
@@ -1111,6 +1154,7 @@ package apigateway {
   }
 
   object CreateDomainNameRequest {
+    @inline
     def apply(
         domainName: String,
         certificateArn: js.UndefOr[String] = js.undefined,
@@ -1155,6 +1199,7 @@ package apigateway {
   }
 
   object CreateModelRequest {
+    @inline
     def apply(
         contentType: String,
         name: String,
@@ -1186,6 +1231,7 @@ package apigateway {
   }
 
   object CreateRequestValidatorRequest {
+    @inline
     def apply(
         restApiId: String,
         name: js.UndefOr[String] = js.undefined,
@@ -1216,6 +1262,7 @@ package apigateway {
   }
 
   object CreateResourceRequest {
+    @inline
     def apply(
         parentId: String,
         pathPart: String,
@@ -1249,6 +1296,7 @@ package apigateway {
   }
 
   object CreateRestApiRequest {
+    @inline
     def apply(
         name: String,
         apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
@@ -1297,6 +1345,7 @@ package apigateway {
   }
 
   object CreateStageRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -1339,6 +1388,7 @@ package apigateway {
   }
 
   object CreateUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         keyType: String,
@@ -1368,6 +1418,7 @@ package apigateway {
   }
 
   object CreateUsagePlanRequest {
+    @inline
     def apply(
         name: String,
         apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
@@ -1401,6 +1452,7 @@ package apigateway {
   }
 
   object CreateVpcLinkRequest {
+    @inline
     def apply(
         name: String,
         targetArns: ListOfString,
@@ -1427,6 +1479,7 @@ package apigateway {
   }
 
   object DeleteApiKeyRequest {
+    @inline
     def apply(
         apiKey: String
     ): DeleteApiKeyRequest = {
@@ -1448,6 +1501,7 @@ package apigateway {
   }
 
   object DeleteAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String
@@ -1471,6 +1525,7 @@ package apigateway {
   }
 
   object DeleteBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String
@@ -1493,6 +1548,7 @@ package apigateway {
   }
 
   object DeleteClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String
     ): DeleteClientCertificateRequest = {
@@ -1514,6 +1570,7 @@ package apigateway {
   }
 
   object DeleteDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String
@@ -1537,6 +1594,7 @@ package apigateway {
   }
 
   object DeleteDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String
@@ -1560,6 +1618,7 @@ package apigateway {
   }
 
   object DeleteDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String
@@ -1582,6 +1641,7 @@ package apigateway {
   }
 
   object DeleteDomainNameRequest {
+    @inline
     def apply(
         domainName: String
     ): DeleteDomainNameRequest = {
@@ -1603,6 +1663,7 @@ package apigateway {
   }
 
   object DeleteGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String
@@ -1627,6 +1688,7 @@ package apigateway {
   }
 
   object DeleteIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1654,6 +1716,7 @@ package apigateway {
   }
 
   object DeleteIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1682,6 +1745,7 @@ package apigateway {
   }
 
   object DeleteMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1709,6 +1773,7 @@ package apigateway {
   }
 
   object DeleteMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1736,6 +1801,7 @@ package apigateway {
   }
 
   object DeleteModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String
@@ -1759,6 +1825,7 @@ package apigateway {
   }
 
   object DeleteRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String
@@ -1782,6 +1849,7 @@ package apigateway {
   }
 
   object DeleteResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String
@@ -1804,6 +1872,7 @@ package apigateway {
   }
 
   object DeleteRestApiRequest {
+    @inline
     def apply(
         restApiId: String
     ): DeleteRestApiRequest = {
@@ -1825,6 +1894,7 @@ package apigateway {
   }
 
   object DeleteStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -1848,6 +1918,7 @@ package apigateway {
   }
 
   object DeleteUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String
@@ -1870,6 +1941,7 @@ package apigateway {
   }
 
   object DeleteUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String
     ): DeleteUsagePlanRequest = {
@@ -1890,6 +1962,7 @@ package apigateway {
   }
 
   object DeleteVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String
     ): DeleteVpcLinkRequest = {
@@ -1915,6 +1988,7 @@ package apigateway {
   }
 
   object Deployment {
+    @inline
     def apply(
         apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1941,6 +2015,7 @@ package apigateway {
   }
 
   object DeploymentCanarySettings {
+    @inline
     def apply(
         percentTraffic: js.UndefOr[Double] = js.undefined,
         stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -1966,6 +2041,7 @@ package apigateway {
   }
 
   object Deployments {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDeployment] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -1992,6 +2068,7 @@ package apigateway {
   }
 
   object DocumentationPart {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         location: js.UndefOr[DocumentationPartLocation] = js.undefined,
@@ -2017,6 +2094,7 @@ package apigateway {
   }
 
   object DocumentationPartIds {
+    @inline
     def apply(
         ids: js.UndefOr[ListOfString] = js.undefined,
         warnings: js.UndefOr[ListOfString] = js.undefined
@@ -2041,6 +2119,7 @@ package apigateway {
   }
 
   object DocumentationPartLocation {
+    @inline
     def apply(
         `type`: DocumentationPartType,
         method: js.UndefOr[String] = js.undefined,
@@ -2104,6 +2183,7 @@ package apigateway {
   }
 
   object DocumentationParts {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2129,6 +2209,7 @@ package apigateway {
   }
 
   object DocumentationVersion {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -2155,6 +2236,7 @@ package apigateway {
   }
 
   object DocumentationVersions {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2192,6 +2274,7 @@ package apigateway {
   }
 
   object DomainName {
+    @inline
     def apply(
         certificateArn: js.UndefOr[String] = js.undefined,
         certificateName: js.UndefOr[String] = js.undefined,
@@ -2249,6 +2332,7 @@ package apigateway {
   }
 
   object DomainNames {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDomainName] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2269,6 +2353,7 @@ package apigateway {
   }
 
   object EndpointConfiguration {
+    @inline
     def apply(
         types: js.UndefOr[ListOfEndpointType] = js.undefined
     ): EndpointConfiguration = {
@@ -2300,6 +2385,7 @@ package apigateway {
   }
 
   object ExportResponse {
+    @inline
     def apply(
         body: js.UndefOr[Blob] = js.undefined,
         contentDisposition: js.UndefOr[String] = js.undefined,
@@ -2323,6 +2409,7 @@ package apigateway {
   }
 
   object FlushStageAuthorizersCacheRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -2346,6 +2433,7 @@ package apigateway {
   }
 
   object FlushStageCacheRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -2384,6 +2472,7 @@ package apigateway {
   }
 
   object GatewayResponse {
+    @inline
     def apply(
         defaultResponse: js.UndefOr[Boolean] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -2471,6 +2560,7 @@ package apigateway {
   }
 
   object GatewayResponses {
+    @inline
     def apply(
         items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2492,6 +2582,7 @@ package apigateway {
   }
 
   object GenerateClientCertificateRequest {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[MapOfStringToString] = js.undefined
@@ -2510,6 +2601,7 @@ package apigateway {
   trait GetAccountRequest extends js.Object {}
 
   object GetAccountRequest {
+    @inline
     def apply(
         ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -2528,6 +2620,7 @@ package apigateway {
   }
 
   object GetApiKeyRequest {
+    @inline
     def apply(
         apiKey: String,
         includeValue: js.UndefOr[NullableBoolean] = js.undefined
@@ -2554,6 +2647,7 @@ package apigateway {
   }
 
   object GetApiKeysRequest {
+    @inline
     def apply(
         customerId: js.UndefOr[String] = js.undefined,
         includeValues: js.UndefOr[NullableBoolean] = js.undefined,
@@ -2581,6 +2675,7 @@ package apigateway {
   }
 
   object GetAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String
@@ -2605,6 +2700,7 @@ package apigateway {
   }
 
   object GetAuthorizersRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2630,6 +2726,7 @@ package apigateway {
   }
 
   object GetBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String
@@ -2654,6 +2751,7 @@ package apigateway {
   }
 
   object GetBasePathMappingsRequest {
+    @inline
     def apply(
         domainName: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2678,6 +2776,7 @@ package apigateway {
   }
 
   object GetClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String
     ): GetClientCertificateRequest = {
@@ -2699,6 +2798,7 @@ package apigateway {
   }
 
   object GetClientCertificatesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2721,6 +2821,7 @@ package apigateway {
   }
 
   object GetDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -2747,6 +2848,7 @@ package apigateway {
   }
 
   object GetDeploymentsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2772,6 +2874,7 @@ package apigateway {
   }
 
   object GetDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String
@@ -2800,6 +2903,7 @@ package apigateway {
   }
 
   object GetDocumentationPartsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2833,6 +2937,7 @@ package apigateway {
   }
 
   object GetDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String
@@ -2857,6 +2962,7 @@ package apigateway {
   }
 
   object GetDocumentationVersionsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2881,6 +2987,7 @@ package apigateway {
   }
 
   object GetDomainNameRequest {
+    @inline
     def apply(
         domainName: String
     ): GetDomainNameRequest = {
@@ -2902,6 +3009,7 @@ package apigateway {
   }
 
   object GetDomainNamesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2926,6 +3034,7 @@ package apigateway {
   }
 
   object GetExportRequest {
+    @inline
     def apply(
         exportType: String,
         restApiId: String,
@@ -2955,6 +3064,7 @@ package apigateway {
   }
 
   object GetGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String
@@ -2979,6 +3089,7 @@ package apigateway {
   }
 
   object GetGatewayResponsesRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3005,6 +3116,7 @@ package apigateway {
   }
 
   object GetIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3032,6 +3144,7 @@ package apigateway {
   }
 
   object GetIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3060,6 +3173,7 @@ package apigateway {
   }
 
   object GetMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3087,6 +3201,7 @@ package apigateway {
   }
 
   object GetMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3115,6 +3230,7 @@ package apigateway {
   }
 
   object GetModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String,
@@ -3140,6 +3256,7 @@ package apigateway {
   }
 
   object GetModelTemplateRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String
@@ -3164,6 +3281,7 @@ package apigateway {
   }
 
   object GetModelsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3189,6 +3307,7 @@ package apigateway {
   }
 
   object GetRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String
@@ -3213,6 +3332,7 @@ package apigateway {
   }
 
   object GetRequestValidatorsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3239,6 +3359,7 @@ package apigateway {
   }
 
   object GetResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String,
@@ -3266,6 +3387,7 @@ package apigateway {
   }
 
   object GetResourcesRequest {
+    @inline
     def apply(
         restApiId: String,
         embed: js.UndefOr[ListOfString] = js.undefined,
@@ -3292,6 +3414,7 @@ package apigateway {
   }
 
   object GetRestApiRequest {
+    @inline
     def apply(
         restApiId: String
     ): GetRestApiRequest = {
@@ -3313,6 +3436,7 @@ package apigateway {
   }
 
   object GetRestApisRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3336,6 +3460,7 @@ package apigateway {
   }
 
   object GetSdkRequest {
+    @inline
     def apply(
         restApiId: String,
         sdkType: String,
@@ -3362,6 +3487,7 @@ package apigateway {
   }
 
   object GetSdkTypeRequest {
+    @inline
     def apply(
         id: String
     ): GetSdkTypeRequest = {
@@ -3383,6 +3509,7 @@ package apigateway {
   }
 
   object GetSdkTypesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3404,6 +3531,7 @@ package apigateway {
   }
 
   object GetStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -3427,6 +3555,7 @@ package apigateway {
   }
 
   object GetStagesRequest {
+    @inline
     def apply(
         restApiId: String,
         deploymentId: js.UndefOr[String] = js.undefined
@@ -3451,6 +3580,7 @@ package apigateway {
   }
 
   object GetTagsRequest {
+    @inline
     def apply(
         resourceArn: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3476,6 +3606,7 @@ package apigateway {
   }
 
   object GetUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String
@@ -3501,6 +3632,7 @@ package apigateway {
   }
 
   object GetUsagePlanKeysRequest {
+    @inline
     def apply(
         usagePlanId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3527,6 +3659,7 @@ package apigateway {
   }
 
   object GetUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String
     ): GetUsagePlanRequest = {
@@ -3549,6 +3682,7 @@ package apigateway {
   }
 
   object GetUsagePlansRequest {
+    @inline
     def apply(
         keyId: js.UndefOr[String] = js.undefined,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3576,6 +3710,7 @@ package apigateway {
   }
 
   object GetUsageRequest {
+    @inline
     def apply(
         endDate: String,
         startDate: String,
@@ -3606,6 +3741,7 @@ package apigateway {
   }
 
   object GetVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String
     ): GetVpcLinkRequest = {
@@ -3627,6 +3763,7 @@ package apigateway {
   }
 
   object GetVpcLinksRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3649,6 +3786,7 @@ package apigateway {
   }
 
   object ImportApiKeysRequest {
+    @inline
     def apply(
         body: Blob,
         format: ApiKeysFormat,
@@ -3676,6 +3814,7 @@ package apigateway {
   }
 
   object ImportDocumentationPartsRequest {
+    @inline
     def apply(
         body: Blob,
         restApiId: String,
@@ -3704,6 +3843,7 @@ package apigateway {
   }
 
   object ImportRestApiRequest {
+    @inline
     def apply(
         body: Blob,
         failOnWarnings: js.UndefOr[Boolean] = js.undefined,
@@ -3743,6 +3883,7 @@ package apigateway {
   }
 
   object Integration {
+    @inline
     def apply(
         cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
         cacheNamespace: js.UndefOr[String] = js.undefined,
@@ -3793,6 +3934,7 @@ package apigateway {
   }
 
   object IntegrationResponse {
+    @inline
     def apply(
         contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -3860,6 +4002,7 @@ package apigateway {
   }
 
   object Method {
+    @inline
     def apply(
         apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
         authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
@@ -3910,6 +4053,7 @@ package apigateway {
   }
 
   object MethodResponse {
+    @inline
     def apply(
         responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
@@ -3941,6 +4085,7 @@ package apigateway {
   }
 
   object MethodSetting {
+    @inline
     def apply(
         cacheDataEncrypted: js.UndefOr[Boolean] = js.undefined,
         cacheTtlInSeconds: js.UndefOr[Int] = js.undefined,
@@ -3982,6 +4127,7 @@ package apigateway {
   }
 
   object MethodSnapshot {
+    @inline
     def apply(
         apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
         authorizationType: js.UndefOr[String] = js.undefined
@@ -4010,6 +4156,7 @@ package apigateway {
   }
 
   object Model {
+    @inline
     def apply(
         contentType: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4039,6 +4186,7 @@ package apigateway {
   }
 
   object Models {
+    @inline
     def apply(
         items: js.UndefOr[ListOfModel] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4073,6 +4221,7 @@ package apigateway {
   }
 
   object PatchOperation {
+    @inline
     def apply(
         from: js.UndefOr[String] = js.undefined,
         op: js.UndefOr[Op] = js.undefined,
@@ -4101,6 +4250,7 @@ package apigateway {
   }
 
   object PutGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String,
@@ -4144,6 +4294,7 @@ package apigateway {
   }
 
   object PutIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4201,6 +4352,7 @@ package apigateway {
   }
 
   object PutIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4245,6 +4397,7 @@ package apigateway {
   }
 
   object PutMethodRequest {
+    @inline
     def apply(
         authorizationType: String,
         httpMethod: String,
@@ -4290,6 +4443,7 @@ package apigateway {
   }
 
   object PutMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4331,6 +4485,7 @@ package apigateway {
   }
 
   object PutRestApiRequest {
+    @inline
     def apply(
         body: Blob,
         restApiId: String,
@@ -4369,6 +4524,7 @@ package apigateway {
   }
 
   object QuotaSettings {
+    @inline
     def apply(
         limit: js.UndefOr[Int] = js.undefined,
         offset: js.UndefOr[Int] = js.undefined,
@@ -4397,6 +4553,7 @@ package apigateway {
   }
 
   object RequestValidator {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -4427,6 +4584,7 @@ package apigateway {
   }
 
   object RequestValidators {
+    @inline
     def apply(
         items: js.UndefOr[ListOfRequestValidator] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4453,6 +4611,7 @@ package apigateway {
   }
 
   object Resource {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         parentId: js.UndefOr[String] = js.undefined,
@@ -4482,6 +4641,7 @@ package apigateway {
   }
 
   object Resources {
+    @inline
     def apply(
         items: js.UndefOr[ListOfResource] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4515,6 +4675,7 @@ package apigateway {
   }
 
   object RestApi {
+    @inline
     def apply(
         apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
         binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
@@ -4558,6 +4719,7 @@ package apigateway {
   }
 
   object RestApis {
+    @inline
     def apply(
         items: js.UndefOr[ListOfRestApi] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4582,6 +4744,7 @@ package apigateway {
   }
 
   object SdkConfigurationProperty {
+    @inline
     def apply(
         defaultValue: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4610,6 +4773,7 @@ package apigateway {
   }
 
   object SdkResponse {
+    @inline
     def apply(
         body: js.UndefOr[Blob] = js.undefined,
         contentDisposition: js.UndefOr[String] = js.undefined,
@@ -4635,6 +4799,7 @@ package apigateway {
   }
 
   object SdkType {
+    @inline
     def apply(
         configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4660,6 +4825,7 @@ package apigateway {
   }
 
   object SdkTypes {
+    @inline
     def apply(
         items: js.UndefOr[ListOfSdkType] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4705,6 +4871,7 @@ package apigateway {
   }
 
   object Stage {
+    @inline
     def apply(
         accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
         cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -4756,6 +4923,7 @@ package apigateway {
   }
 
   object StageKey {
+    @inline
     def apply(
         restApiId: js.UndefOr[String] = js.undefined,
         stageName: js.UndefOr[String] = js.undefined
@@ -4778,6 +4946,7 @@ package apigateway {
   }
 
   object Stages {
+    @inline
     def apply(
         item: js.UndefOr[ListOfStage] = js.undefined
     ): Stages = {
@@ -4797,6 +4966,7 @@ package apigateway {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tags: MapOfStringToString
@@ -4819,6 +4989,7 @@ package apigateway {
   }
 
   object Tags {
+    @inline
     def apply(
         tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): Tags = {
@@ -4839,6 +5010,7 @@ package apigateway {
   }
 
   object Template {
+    @inline
     def apply(
         value: js.UndefOr[String] = js.undefined
     ): Template = {
@@ -4864,6 +5036,7 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String,
@@ -4904,6 +5077,7 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerResponse {
+    @inline
     def apply(
         authorization: js.UndefOr[MapOfStringToList] = js.undefined,
         claims: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -4942,6 +5116,7 @@ package apigateway {
   }
 
   object TestInvokeMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4985,6 +5160,7 @@ package apigateway {
   }
 
   object TestInvokeMethodResponse {
+    @inline
     def apply(
         body: js.UndefOr[String] = js.undefined,
         headers: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -5014,6 +5190,7 @@ package apigateway {
   }
 
   object ThrottleSettings {
+    @inline
     def apply(
         burstLimit: js.UndefOr[Int] = js.undefined,
         rateLimit: js.UndefOr[Double] = js.undefined
@@ -5044,6 +5221,7 @@ package apigateway {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tagKeys: ListOfString
@@ -5066,6 +5244,7 @@ package apigateway {
   }
 
   object UpdateAccountRequest {
+    @inline
     def apply(
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
     ): UpdateAccountRequest = {
@@ -5085,6 +5264,7 @@ package apigateway {
   }
 
   object UpdateApiKeyRequest {
+    @inline
     def apply(
         apiKey: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5109,6 +5289,7 @@ package apigateway {
   }
 
   object UpdateAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String,
@@ -5135,6 +5316,7 @@ package apigateway {
   }
 
   object UpdateBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String,
@@ -5160,6 +5342,7 @@ package apigateway {
   }
 
   object UpdateClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5184,6 +5367,7 @@ package apigateway {
   }
 
   object UpdateDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -5210,6 +5394,7 @@ package apigateway {
   }
 
   object UpdateDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String,
@@ -5236,6 +5421,7 @@ package apigateway {
   }
 
   object UpdateDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String,
@@ -5261,6 +5447,7 @@ package apigateway {
   }
 
   object UpdateDomainNameRequest {
+    @inline
     def apply(
         domainName: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5285,6 +5472,7 @@ package apigateway {
   }
 
   object UpdateGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String,
@@ -5312,6 +5500,7 @@ package apigateway {
   }
 
   object UpdateIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5342,6 +5531,7 @@ package apigateway {
   }
 
   object UpdateIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5373,6 +5563,7 @@ package apigateway {
   }
 
   object UpdateMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5403,6 +5594,7 @@ package apigateway {
   }
 
   object UpdateMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5433,6 +5625,7 @@ package apigateway {
   }
 
   object UpdateModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String,
@@ -5459,6 +5652,7 @@ package apigateway {
   }
 
   object UpdateRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String,
@@ -5485,6 +5679,7 @@ package apigateway {
   }
 
   object UpdateResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String,
@@ -5510,6 +5705,7 @@ package apigateway {
   }
 
   object UpdateRestApiRequest {
+    @inline
     def apply(
         restApiId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5534,6 +5730,7 @@ package apigateway {
   }
 
   object UpdateStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String,
@@ -5559,6 +5756,7 @@ package apigateway {
   }
 
   object UpdateUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5583,6 +5781,7 @@ package apigateway {
   }
 
   object UpdateUsageRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String,
@@ -5608,6 +5807,7 @@ package apigateway {
   }
 
   object UpdateVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5636,6 +5836,7 @@ package apigateway {
   }
 
   object Usage {
+    @inline
     def apply(
         endDate: js.UndefOr[String] = js.undefined,
         items: js.UndefOr[MapOfKeyUsages] = js.undefined,
@@ -5672,6 +5873,7 @@ package apigateway {
   }
 
   object UsagePlan {
+    @inline
     def apply(
         apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -5710,6 +5912,7 @@ package apigateway {
   }
 
   object UsagePlanKey {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -5737,6 +5940,7 @@ package apigateway {
   }
 
   object UsagePlanKeys {
+    @inline
     def apply(
         items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -5760,6 +5964,7 @@ package apigateway {
   }
 
   object UsagePlans {
+    @inline
     def apply(
         items: js.UndefOr[ListOfUsagePlan] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -5788,6 +5993,7 @@ package apigateway {
   }
 
   object VpcLink {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
@@ -5830,6 +6036,7 @@ package apigateway {
   }
 
   object VpcLinks {
+    @inline
     def apply(
         items: js.UndefOr[ListOfVpcLink] = js.undefined,
         position: js.UndefOr[String] = js.undefined

@@ -30,31 +30,33 @@ package object cloudtrail {
 
   implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
-    def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise.toFuture
-    def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =
+    @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] =
+      service.addTags(params).promise.toFuture
+    @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =
       service.createTrail(params).promise.toFuture
-    def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] =
+    @inline def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] =
       service.deleteTrail(params).promise.toFuture
-    def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] =
+    @inline def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] =
       service.describeTrails(params).promise.toFuture
-    def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
+    @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
       service.getEventSelectors(params).promise.toFuture
-    def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
+    @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
       service.getTrailStatus(params).promise.toFuture
-    def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
+    @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
       service.listPublicKeys(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
       service.lookupEvents(params).promise.toFuture
-    def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
+    @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
       service.putEventSelectors(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] =
+    @inline def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] =
       service.removeTags(params).promise.toFuture
-    def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] =
+    @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] =
       service.startLogging(params).promise.toFuture
-    def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] =
+    @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] =
       service.stopLogging(params).promise.toFuture
-    def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] =
+    @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] =
       service.updateTrail(params).promise.toFuture
   }
 }
@@ -91,6 +93,7 @@ package cloudtrail {
   }
 
   object AddTagsRequest {
+    @inline
     def apply(
         ResourceId: String,
         TagsList: js.UndefOr[TagsList] = js.undefined
@@ -111,6 +114,7 @@ package cloudtrail {
   trait AddTagsResponse extends js.Object {}
 
   object AddTagsResponse {
+    @inline
     def apply(
         ): AddTagsResponse = {
       val __obj = js.Dynamic.literal()
@@ -138,6 +142,7 @@ package cloudtrail {
   }
 
   object CreateTrailRequest {
+    @inline
     def apply(
         Name: String,
         S3BucketName: String,
@@ -194,6 +199,7 @@ package cloudtrail {
   }
 
   object CreateTrailResponse {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
         CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
@@ -253,6 +259,7 @@ package cloudtrail {
   }
 
   object DataResource {
+    @inline
     def apply(
         Type: js.UndefOr[String] = js.undefined,
         Values: js.UndefOr[DataResourceValues] = js.undefined
@@ -273,6 +280,7 @@ package cloudtrail {
   }
 
   object DeleteTrailRequest {
+    @inline
     def apply(
         Name: String
     ): DeleteTrailRequest = {
@@ -291,6 +299,7 @@ package cloudtrail {
   trait DeleteTrailResponse extends js.Object {}
 
   object DeleteTrailResponse {
+    @inline
     def apply(
         ): DeleteTrailResponse = {
       val __obj = js.Dynamic.literal()
@@ -309,6 +318,7 @@ package cloudtrail {
   }
 
   object DescribeTrailsRequest {
+    @inline
     def apply(
         includeShadowTrails: js.UndefOr[Boolean] = js.undefined,
         trailNameList: js.UndefOr[TrailNameList] = js.undefined
@@ -329,6 +339,7 @@ package cloudtrail {
   }
 
   object DescribeTrailsResponse {
+    @inline
     def apply(
         trailList: js.UndefOr[TrailList] = js.undefined
     ): DescribeTrailsResponse = {
@@ -355,6 +366,7 @@ package cloudtrail {
   }
 
   object Event {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[String] = js.undefined,
         CloudTrailEvent: js.UndefOr[String] = js.undefined,
@@ -392,6 +404,7 @@ package cloudtrail {
   }
 
   object EventSelector {
+    @inline
     def apply(
         DataResources: js.UndefOr[DataResources] = js.undefined,
         IncludeManagementEvents: js.UndefOr[Boolean] = js.undefined,
@@ -411,6 +424,7 @@ package cloudtrail {
   }
 
   object GetEventSelectorsRequest {
+    @inline
     def apply(
         TrailName: String
     ): GetEventSelectorsRequest = {
@@ -429,6 +443,7 @@ package cloudtrail {
   }
 
   object GetEventSelectorsResponse {
+    @inline
     def apply(
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
@@ -449,6 +464,7 @@ package cloudtrail {
   }
 
   object GetTrailStatusRequest {
+    @inline
     def apply(
         Name: String
     ): GetTrailStatusRequest = {
@@ -485,6 +501,7 @@ package cloudtrail {
   }
 
   object GetTrailStatusResponse {
+    @inline
     def apply(
         IsLogging: js.UndefOr[Boolean] = js.undefined,
         LatestCloudWatchLogsDeliveryError: js.UndefOr[String] = js.undefined,
@@ -551,6 +568,7 @@ package cloudtrail {
   }
 
   object ListPublicKeysRequest {
+    @inline
     def apply(
         EndTime: js.UndefOr[Date] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -574,6 +592,7 @@ package cloudtrail {
   }
 
   object ListPublicKeysResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined
@@ -595,6 +614,7 @@ package cloudtrail {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ResourceIdList: ResourceIdList,
         NextToken: js.UndefOr[String] = js.undefined
@@ -618,6 +638,7 @@ package cloudtrail {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         ResourceTagList: js.UndefOr[ResourceTagList] = js.undefined
@@ -639,6 +660,7 @@ package cloudtrail {
   }
 
   object LookupAttribute {
+    @inline
     def apply(
         AttributeKey: LookupAttributeKey,
         AttributeValue: String
@@ -680,6 +702,7 @@ package cloudtrail {
   }
 
   object LookupEventsRequest {
+    @inline
     def apply(
         EndTime: js.UndefOr[Date] = js.undefined,
         LookupAttributes: js.UndefOr[LookupAttributesList] = js.undefined,
@@ -707,6 +730,7 @@ package cloudtrail {
   }
 
   object LookupEventsResponse {
+    @inline
     def apply(
         Events: js.UndefOr[EventsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -730,6 +754,7 @@ package cloudtrail {
   }
 
   object PublicKey {
+    @inline
     def apply(
         Fingerprint: js.UndefOr[String] = js.undefined,
         ValidityEndTime: js.UndefOr[Date] = js.undefined,
@@ -752,6 +777,7 @@ package cloudtrail {
   }
 
   object PutEventSelectorsRequest {
+    @inline
     def apply(
         EventSelectors: EventSelectors,
         TrailName: String
@@ -772,6 +798,7 @@ package cloudtrail {
   }
 
   object PutEventSelectorsResponse {
+    @inline
     def apply(
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
@@ -801,6 +828,7 @@ package cloudtrail {
   }
 
   object RemoveTagsRequest {
+    @inline
     def apply(
         ResourceId: String,
         TagsList: js.UndefOr[TagsList] = js.undefined
@@ -821,6 +849,7 @@ package cloudtrail {
   trait RemoveTagsResponse extends js.Object {}
 
   object RemoveTagsResponse {
+    @inline
     def apply(
         ): RemoveTagsResponse = {
       val __obj = js.Dynamic.literal()
@@ -839,6 +868,7 @@ package cloudtrail {
   }
 
   object Resource {
+    @inline
     def apply(
         ResourceName: js.UndefOr[String] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined
@@ -860,6 +890,7 @@ package cloudtrail {
   }
 
   object ResourceTag {
+    @inline
     def apply(
         ResourceId: js.UndefOr[String] = js.undefined,
         TagsList: js.UndefOr[TagsList] = js.undefined
@@ -880,6 +911,7 @@ package cloudtrail {
   }
 
   object StartLoggingRequest {
+    @inline
     def apply(
         Name: String
     ): StartLoggingRequest = {
@@ -898,6 +930,7 @@ package cloudtrail {
   trait StartLoggingResponse extends js.Object {}
 
   object StartLoggingResponse {
+    @inline
     def apply(
         ): StartLoggingResponse = {
       val __obj = js.Dynamic.literal()
@@ -915,6 +948,7 @@ package cloudtrail {
   }
 
   object StopLoggingRequest {
+    @inline
     def apply(
         Name: String
     ): StopLoggingRequest = {
@@ -933,6 +967,7 @@ package cloudtrail {
   trait StopLoggingResponse extends js.Object {}
 
   object StopLoggingResponse {
+    @inline
     def apply(
         ): StopLoggingResponse = {
       val __obj = js.Dynamic.literal()
@@ -951,6 +986,7 @@ package cloudtrail {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: String,
         Value: js.UndefOr[String] = js.undefined
@@ -987,6 +1023,7 @@ package cloudtrail {
   }
 
   object Trail {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
         CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
@@ -1047,6 +1084,7 @@ package cloudtrail {
   }
 
   object UpdateTrailRequest {
+    @inline
     def apply(
         Name: String,
         CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
@@ -1103,6 +1141,7 @@ package cloudtrail {
   }
 
   object UpdateTrailResponse {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
         CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,

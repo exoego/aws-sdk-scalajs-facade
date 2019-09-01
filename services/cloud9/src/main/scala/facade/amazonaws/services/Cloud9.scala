@@ -31,29 +31,29 @@ package object cloud9 {
 
   implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
-    def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
+    @inline def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
       service.createEnvironmentEC2(params).promise.toFuture
-    def createEnvironmentMembershipFuture(
+    @inline def createEnvironmentMembershipFuture(
         params: CreateEnvironmentMembershipRequest
     ): Future[CreateEnvironmentMembershipResult] = service.createEnvironmentMembership(params).promise.toFuture
-    def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[DeleteEnvironmentResult] =
+    @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[DeleteEnvironmentResult] =
       service.deleteEnvironment(params).promise.toFuture
-    def deleteEnvironmentMembershipFuture(
+    @inline def deleteEnvironmentMembershipFuture(
         params: DeleteEnvironmentMembershipRequest
     ): Future[DeleteEnvironmentMembershipResult] = service.deleteEnvironmentMembership(params).promise.toFuture
-    def describeEnvironmentMembershipsFuture(
+    @inline def describeEnvironmentMembershipsFuture(
         params: DescribeEnvironmentMembershipsRequest
     ): Future[DescribeEnvironmentMembershipsResult] = service.describeEnvironmentMemberships(params).promise.toFuture
-    def describeEnvironmentStatusFuture(
+    @inline def describeEnvironmentStatusFuture(
         params: DescribeEnvironmentStatusRequest
     ): Future[DescribeEnvironmentStatusResult] = service.describeEnvironmentStatus(params).promise.toFuture
-    def describeEnvironmentsFuture(params: DescribeEnvironmentsRequest): Future[DescribeEnvironmentsResult] =
+    @inline def describeEnvironmentsFuture(params: DescribeEnvironmentsRequest): Future[DescribeEnvironmentsResult] =
       service.describeEnvironments(params).promise.toFuture
-    def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[ListEnvironmentsResult] =
+    @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[ListEnvironmentsResult] =
       service.listEnvironments(params).promise.toFuture
-    def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] =
+    @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] =
       service.updateEnvironment(params).promise.toFuture
-    def updateEnvironmentMembershipFuture(
+    @inline def updateEnvironmentMembershipFuture(
         params: UpdateEnvironmentMembershipRequest
     ): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise.toFuture
   }
@@ -98,6 +98,7 @@ package cloud9 {
   }
 
   object CreateEnvironmentEC2Request {
+    @inline
     def apply(
         instanceType: InstanceType,
         name: EnvironmentName,
@@ -127,6 +128,7 @@ package cloud9 {
   }
 
   object CreateEnvironmentEC2Result {
+    @inline
     def apply(
         environmentId: js.UndefOr[EnvironmentId] = js.undefined
     ): CreateEnvironmentEC2Result = {
@@ -144,6 +146,7 @@ package cloud9 {
   }
 
   object CreateEnvironmentMembershipRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId,
         permissions: MemberPermissions,
@@ -165,6 +168,7 @@ package cloud9 {
   }
 
   object CreateEnvironmentMembershipResult {
+    @inline
     def apply(
         membership: js.UndefOr[EnvironmentMember] = js.undefined
     ): CreateEnvironmentMembershipResult = {
@@ -181,6 +185,7 @@ package cloud9 {
   }
 
   object DeleteEnvironmentMembershipRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId,
         userArn: UserArn
@@ -198,6 +203,7 @@ package cloud9 {
   trait DeleteEnvironmentMembershipResult extends js.Object {}
 
   object DeleteEnvironmentMembershipResult {
+    @inline
     def apply(
         ): DeleteEnvironmentMembershipResult = {
       val __obj = js.Dynamic.literal()
@@ -212,6 +218,7 @@ package cloud9 {
   }
 
   object DeleteEnvironmentRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId
     ): DeleteEnvironmentRequest = {
@@ -227,6 +234,7 @@ package cloud9 {
   trait DeleteEnvironmentResult extends js.Object {}
 
   object DeleteEnvironmentResult {
+    @inline
     def apply(
         ): DeleteEnvironmentResult = {
       val __obj = js.Dynamic.literal()
@@ -245,6 +253,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentMembershipsRequest {
+    @inline
     def apply(
         environmentId: js.UndefOr[EnvironmentId] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -269,6 +278,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentMembershipsResult {
+    @inline
     def apply(
         memberships: js.UndefOr[EnvironmentMembersList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -286,6 +296,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentStatusRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId
     ): DescribeEnvironmentStatusRequest = {
@@ -304,6 +315,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentStatusResult {
+    @inline
     def apply(
         message: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[EnvironmentStatus] = js.undefined
@@ -321,6 +333,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentsRequest {
+    @inline
     def apply(
         environmentIds: BoundedEnvironmentIdList
     ): DescribeEnvironmentsRequest = {
@@ -338,6 +351,7 @@ package cloud9 {
   }
 
   object DescribeEnvironmentsResult {
+    @inline
     def apply(
         environments: js.UndefOr[EnvironmentList] = js.undefined
     ): DescribeEnvironmentsResult = {
@@ -362,6 +376,7 @@ package cloud9 {
   }
 
   object Environment {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
@@ -394,6 +409,7 @@ package cloud9 {
   }
 
   object EnvironmentLifecycle {
+    @inline
     def apply(
         failureResource: js.UndefOr[String] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
@@ -428,6 +444,7 @@ package cloud9 {
   }
 
   object EnvironmentMember {
+    @inline
     def apply(
         environmentId: js.UndefOr[EnvironmentId] = js.undefined,
         lastAccess: js.UndefOr[Timestamp] = js.undefined,
@@ -471,6 +488,7 @@ package cloud9 {
   }
 
   object ListEnvironmentsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -489,6 +507,7 @@ package cloud9 {
   }
 
   object ListEnvironmentsResult {
+    @inline
     def apply(
         environmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -523,6 +542,7 @@ package cloud9 {
   }
 
   object UpdateEnvironmentMembershipRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId,
         permissions: MemberPermissions,
@@ -544,6 +564,7 @@ package cloud9 {
   }
 
   object UpdateEnvironmentMembershipResult {
+    @inline
     def apply(
         membership: js.UndefOr[EnvironmentMember] = js.undefined
     ): UpdateEnvironmentMembershipResult = {
@@ -561,6 +582,7 @@ package cloud9 {
   }
 
   object UpdateEnvironmentRequest {
+    @inline
     def apply(
         environmentId: EnvironmentId,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
@@ -580,6 +602,7 @@ package cloud9 {
   trait UpdateEnvironmentResult extends js.Object {}
 
   object UpdateEnvironmentResult {
+    @inline
     def apply(
         ): UpdateEnvironmentResult = {
       val __obj = js.Dynamic.literal()

@@ -28,14 +28,16 @@ package object cur {
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
-    def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] =
-      service.deleteReportDefinition(params).promise.toFuture
-    def describeReportDefinitionsFuture(
+    @inline def deleteReportDefinitionFuture(
+        params: DeleteReportDefinitionRequest
+    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise.toFuture
+    @inline def describeReportDefinitionsFuture(
         params: DescribeReportDefinitionsRequest
     ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise.toFuture
-    def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] =
-      service.modifyReportDefinition(params).promise.toFuture
-    def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
+    @inline def modifyReportDefinitionFuture(
+        params: ModifyReportDefinitionRequest
+    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise.toFuture
+    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
       service.putReportDefinition(params).promise.toFuture
   }
 }
@@ -120,6 +122,7 @@ package cur {
   }
 
   object DeleteReportDefinitionRequest {
+    @inline
     def apply(
         ReportName: js.UndefOr[ReportName] = js.undefined
     ): DeleteReportDefinitionRequest = {
@@ -138,6 +141,7 @@ package cur {
   }
 
   object DeleteReportDefinitionResponse {
+    @inline
     def apply(
         ResponseMessage: js.UndefOr[DeleteResponseMessage] = js.undefined
     ): DeleteReportDefinitionResponse = {
@@ -157,6 +161,7 @@ package cur {
   }
 
   object DescribeReportDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -178,6 +183,7 @@ package cur {
   }
 
   object DescribeReportDefinitionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[GenericString] = js.undefined,
         ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined
@@ -196,6 +202,7 @@ package cur {
   }
 
   object ModifyReportDefinitionRequest {
+    @inline
     def apply(
         ReportDefinition: ReportDefinition,
         ReportName: ReportName
@@ -213,6 +220,7 @@ package cur {
   trait ModifyReportDefinitionResponse extends js.Object {}
 
   object ModifyReportDefinitionResponse {
+    @inline
     def apply(
         ): ModifyReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -230,6 +238,7 @@ package cur {
   }
 
   object PutReportDefinitionRequest {
+    @inline
     def apply(
         ReportDefinition: ReportDefinition
     ): PutReportDefinitionRequest = {
@@ -248,6 +257,7 @@ package cur {
   trait PutReportDefinitionResponse extends js.Object {}
 
   object PutReportDefinitionResponse {
+    @inline
     def apply(
         ): PutReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -275,6 +285,7 @@ package cur {
   }
 
   object ReportDefinition {
+    @inline
     def apply(
         AdditionalSchemaElements: SchemaElementList,
         Compression: CompressionFormat,

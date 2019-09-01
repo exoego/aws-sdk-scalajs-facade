@@ -57,48 +57,49 @@ package object servicediscovery {
 
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
-    def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
+    @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
       service.createHttpNamespace(params).promise.toFuture
-    def createPrivateDnsNamespaceFuture(
+    @inline def createPrivateDnsNamespaceFuture(
         params: CreatePrivateDnsNamespaceRequest
     ): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise.toFuture
-    def createPublicDnsNamespaceFuture(
+    @inline def createPublicDnsNamespaceFuture(
         params: CreatePublicDnsNamespaceRequest
     ): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise.toFuture
-    def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
+    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
       service.createService(params).promise.toFuture
-    def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
       service.deleteNamespace(params).promise.toFuture
-    def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
+    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
       service.deleteService(params).promise.toFuture
-    def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] =
+    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] =
       service.deregisterInstance(params).promise.toFuture
-    def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] =
+    @inline def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] =
       service.discoverInstances(params).promise.toFuture
-    def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] =
+    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] =
       service.getInstance(params).promise.toFuture
-    def getInstancesHealthStatusFuture(
+    @inline def getInstancesHealthStatusFuture(
         params: GetInstancesHealthStatusRequest
     ): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise.toFuture
-    def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] =
+    @inline def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] =
       service.getNamespace(params).promise.toFuture
-    def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] =
+    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] =
       service.getOperation(params).promise.toFuture
-    def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] =
+    @inline def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] =
       service.getService(params).promise.toFuture
-    def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] =
+    @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] =
       service.listInstances(params).promise.toFuture
-    def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
+    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
       service.listNamespaces(params).promise.toFuture
-    def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
+    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
       service.listOperations(params).promise.toFuture
-    def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
       service.listServices(params).promise.toFuture
-    def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
+    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
       service.registerInstance(params).promise.toFuture
-    def updateInstanceCustomHealthStatusFuture(params: UpdateInstanceCustomHealthStatusRequest): Future[js.Object] =
-      service.updateInstanceCustomHealthStatus(params).promise.toFuture
-    def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
+    @inline def updateInstanceCustomHealthStatusFuture(
+        params: UpdateInstanceCustomHealthStatusRequest
+    ): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise.toFuture
+    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
       service.updateService(params).promise.toFuture
   }
 }
@@ -144,6 +145,7 @@ package servicediscovery {
   }
 
   object CreateHttpNamespaceRequest {
+    @inline
     def apply(
         Name: NamespaceName,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
@@ -165,6 +167,7 @@ package servicediscovery {
   }
 
   object CreateHttpNamespaceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreateHttpNamespaceResponse = {
@@ -183,6 +186,7 @@ package servicediscovery {
   }
 
   object CreatePrivateDnsNamespaceRequest {
+    @inline
     def apply(
         Name: NamespaceName,
         Vpc: ResourceId,
@@ -206,6 +210,7 @@ package servicediscovery {
   }
 
   object CreatePrivateDnsNamespaceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreatePrivateDnsNamespaceResponse = {
@@ -223,6 +228,7 @@ package servicediscovery {
   }
 
   object CreatePublicDnsNamespaceRequest {
+    @inline
     def apply(
         Name: NamespaceName,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
@@ -244,6 +250,7 @@ package servicediscovery {
   }
 
   object CreatePublicDnsNamespaceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreatePublicDnsNamespaceResponse = {
@@ -265,6 +272,7 @@ package servicediscovery {
   }
 
   object CreateServiceRequest {
+    @inline
     def apply(
         Name: ServiceName,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
@@ -294,6 +302,7 @@ package servicediscovery {
   }
 
   object CreateServiceResponse {
+    @inline
     def apply(
         Service: js.UndefOr[Service] = js.undefined
     ): CreateServiceResponse = {
@@ -316,6 +325,7 @@ package servicediscovery {
   }
 
   object DeleteNamespaceRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): DeleteNamespaceRequest = {
@@ -333,6 +343,7 @@ package servicediscovery {
   }
 
   object DeleteNamespaceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): DeleteNamespaceResponse = {
@@ -348,6 +359,7 @@ package servicediscovery {
   }
 
   object DeleteServiceRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): DeleteServiceRequest = {
@@ -363,6 +375,7 @@ package servicediscovery {
   trait DeleteServiceResponse extends js.Object {}
 
   object DeleteServiceResponse {
+    @inline
     def apply(
         ): DeleteServiceResponse = {
       val __obj = js.Dynamic.literal()
@@ -378,6 +391,7 @@ package servicediscovery {
   }
 
   object DeregisterInstanceRequest {
+    @inline
     def apply(
         InstanceId: ResourceId,
         ServiceId: ResourceId
@@ -397,6 +411,7 @@ package servicediscovery {
   }
 
   object DeregisterInstanceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): DeregisterInstanceResponse = {
@@ -416,6 +431,7 @@ package servicediscovery {
   }
 
   object DiscoverInstancesRequest {
+    @inline
     def apply(
         NamespaceName: NamespaceName,
         ServiceName: ServiceName,
@@ -441,6 +457,7 @@ package servicediscovery {
   }
 
   object DiscoverInstancesResponse {
+    @inline
     def apply(
         Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined
     ): DiscoverInstancesResponse = {
@@ -461,6 +478,7 @@ package servicediscovery {
   }
 
   object DnsConfig {
+    @inline
     def apply(
         DnsRecords: DnsRecordList,
         NamespaceId: js.UndefOr[ResourceId] = js.undefined,
@@ -485,6 +503,7 @@ package servicediscovery {
   }
 
   object DnsConfigChange {
+    @inline
     def apply(
         DnsRecords: DnsRecordList
     ): DnsConfigChange = {
@@ -505,6 +524,7 @@ package servicediscovery {
   }
 
   object DnsProperties {
+    @inline
     def apply(
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined
     ): DnsProperties = {
@@ -524,6 +544,7 @@ package servicediscovery {
   }
 
   object DnsRecord {
+    @inline
     def apply(
         TTL: RecordTTL,
         Type: RecordType
@@ -552,6 +573,7 @@ package servicediscovery {
   }
 
   object GetInstanceRequest {
+    @inline
     def apply(
         InstanceId: ResourceId,
         ServiceId: ResourceId
@@ -571,6 +593,7 @@ package servicediscovery {
   }
 
   object GetInstanceResponse {
+    @inline
     def apply(
         Instance: js.UndefOr[Instance] = js.undefined
     ): GetInstanceResponse = {
@@ -589,6 +612,7 @@ package servicediscovery {
   }
 
   object GetInstancesHealthStatusRequest {
+    @inline
     def apply(
         ServiceId: ResourceId,
         Instances: js.UndefOr[InstanceIdList] = js.undefined,
@@ -613,6 +637,7 @@ package servicediscovery {
   }
 
   object GetInstancesHealthStatusResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[InstanceHealthStatusMap] = js.undefined
@@ -630,6 +655,7 @@ package servicediscovery {
   }
 
   object GetNamespaceRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): GetNamespaceRequest = {
@@ -647,6 +673,7 @@ package servicediscovery {
   }
 
   object GetNamespaceResponse {
+    @inline
     def apply(
         Namespace: js.UndefOr[Namespace] = js.undefined
     ): GetNamespaceResponse = {
@@ -662,6 +689,7 @@ package servicediscovery {
   }
 
   object GetOperationRequest {
+    @inline
     def apply(
         OperationId: ResourceId
     ): GetOperationRequest = {
@@ -679,6 +707,7 @@ package servicediscovery {
   }
 
   object GetOperationResponse {
+    @inline
     def apply(
         Operation: js.UndefOr[Operation] = js.undefined
     ): GetOperationResponse = {
@@ -694,6 +723,7 @@ package servicediscovery {
   }
 
   object GetServiceRequest {
+    @inline
     def apply(
         Id: ResourceId
     ): GetServiceRequest = {
@@ -711,6 +741,7 @@ package servicediscovery {
   }
 
   object GetServiceResponse {
+    @inline
     def apply(
         Service: js.UndefOr[Service] = js.undefined
     ): GetServiceResponse = {
@@ -748,6 +779,7 @@ package servicediscovery {
   }
 
   object HealthCheckConfig {
+    @inline
     def apply(
         Type: HealthCheckType,
         FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined,
@@ -788,6 +820,7 @@ package servicediscovery {
   }
 
   object HealthCheckCustomConfig {
+    @inline
     def apply(
         FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined
     ): HealthCheckCustomConfig = {
@@ -834,6 +867,7 @@ package servicediscovery {
   }
 
   object HttpInstanceSummary {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
@@ -860,6 +894,7 @@ package servicediscovery {
   }
 
   object HttpProperties {
+    @inline
     def apply(
         HttpName: js.UndefOr[NamespaceName] = js.undefined
     ): HttpProperties = {
@@ -880,6 +915,7 @@ package servicediscovery {
   }
 
   object Instance {
+    @inline
     def apply(
         Id: ResourceId,
         Attributes: js.UndefOr[Attributes] = js.undefined,
@@ -905,6 +941,7 @@ package servicediscovery {
   }
 
   object InstanceSummary {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined,
         Id: js.UndefOr[ResourceId] = js.undefined
@@ -924,6 +961,7 @@ package servicediscovery {
   }
 
   object ListInstancesRequest {
+    @inline
     def apply(
         ServiceId: ResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -946,6 +984,7 @@ package servicediscovery {
   }
 
   object ListInstancesResponse {
+    @inline
     def apply(
         Instances: js.UndefOr[InstanceSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -965,6 +1004,7 @@ package servicediscovery {
   }
 
   object ListNamespacesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[NamespaceFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -985,6 +1025,7 @@ package servicediscovery {
   }
 
   object ListNamespacesResponse {
+    @inline
     def apply(
         Namespaces: js.UndefOr[NamespaceSummariesList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1004,6 +1045,7 @@ package servicediscovery {
   }
 
   object ListOperationsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[OperationFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1024,6 +1066,7 @@ package servicediscovery {
   }
 
   object ListOperationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Operations: js.UndefOr[OperationSummaryList] = js.undefined
@@ -1043,6 +1086,7 @@ package servicediscovery {
   }
 
   object ListServicesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[ServiceFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1063,6 +1107,7 @@ package servicediscovery {
   }
 
   object ListServicesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Services: js.UndefOr[ServiceSummariesList] = js.undefined
@@ -1091,6 +1136,7 @@ package servicediscovery {
   }
 
   object Namespace {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1127,6 +1173,7 @@ package servicediscovery {
   }
 
   object NamespaceFilter {
+    @inline
     def apply(
         Name: NamespaceFilterName,
         Values: FilterValues,
@@ -1158,6 +1205,7 @@ package servicediscovery {
   }
 
   object NamespaceProperties {
+    @inline
     def apply(
         DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
         HttpProperties: js.UndefOr[HttpProperties] = js.undefined
@@ -1185,6 +1233,7 @@ package servicediscovery {
   }
 
   object NamespaceSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1232,6 +1281,7 @@ package servicediscovery {
   }
 
   object Operation {
+    @inline
     def apply(
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
         ErrorCode: js.UndefOr[Code] = js.undefined,
@@ -1266,6 +1316,7 @@ package servicediscovery {
   }
 
   object OperationFilter {
+    @inline
     def apply(
         Name: OperationFilterName,
         Values: FilterValues,
@@ -1310,6 +1361,7 @@ package servicediscovery {
   }
 
   object OperationSummary {
+    @inline
     def apply(
         Id: js.UndefOr[OperationId] = js.undefined,
         Status: js.UndefOr[OperationStatus] = js.undefined
@@ -1359,6 +1411,7 @@ package servicediscovery {
   }
 
   object RegisterInstanceRequest {
+    @inline
     def apply(
         Attributes: Attributes,
         InstanceId: ResourceId,
@@ -1382,6 +1435,7 @@ package servicediscovery {
   }
 
   object RegisterInstanceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): RegisterInstanceResponse = {
@@ -1417,6 +1471,7 @@ package servicediscovery {
   }
 
   object Service {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1457,6 +1512,7 @@ package servicediscovery {
   }
 
   object ServiceChange {
+    @inline
     def apply(
         DnsConfig: DnsConfigChange,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
@@ -1483,6 +1539,7 @@ package servicediscovery {
   }
 
   object ServiceFilter {
+    @inline
     def apply(
         Name: ServiceFilterName,
         Values: FilterValues,
@@ -1521,6 +1578,7 @@ package servicediscovery {
   }
 
   object ServiceSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1554,6 +1612,7 @@ package servicediscovery {
   }
 
   object UpdateInstanceCustomHealthStatusRequest {
+    @inline
     def apply(
         InstanceId: ResourceId,
         ServiceId: ResourceId,
@@ -1576,6 +1635,7 @@ package servicediscovery {
   }
 
   object UpdateServiceRequest {
+    @inline
     def apply(
         Id: ResourceId,
         Service: ServiceChange
@@ -1595,6 +1655,7 @@ package servicediscovery {
   }
 
   object UpdateServiceResponse {
+    @inline
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): UpdateServiceResponse = {

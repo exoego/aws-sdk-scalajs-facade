@@ -58,61 +58,62 @@ package object appmesh {
 
   implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
-    def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
+    @inline def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
       service.createMesh(params).promise.toFuture
-    def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =
+    @inline def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =
       service.createRoute(params).promise.toFuture
-    def createVirtualNodeFuture(params: CreateVirtualNodeInput): Future[CreateVirtualNodeOutput] =
+    @inline def createVirtualNodeFuture(params: CreateVirtualNodeInput): Future[CreateVirtualNodeOutput] =
       service.createVirtualNode(params).promise.toFuture
-    def createVirtualRouterFuture(params: CreateVirtualRouterInput): Future[CreateVirtualRouterOutput] =
+    @inline def createVirtualRouterFuture(params: CreateVirtualRouterInput): Future[CreateVirtualRouterOutput] =
       service.createVirtualRouter(params).promise.toFuture
-    def createVirtualServiceFuture(params: CreateVirtualServiceInput): Future[CreateVirtualServiceOutput] =
+    @inline def createVirtualServiceFuture(params: CreateVirtualServiceInput): Future[CreateVirtualServiceOutput] =
       service.createVirtualService(params).promise.toFuture
-    def deleteMeshFuture(params: DeleteMeshInput): Future[DeleteMeshOutput] =
+    @inline def deleteMeshFuture(params: DeleteMeshInput): Future[DeleteMeshOutput] =
       service.deleteMesh(params).promise.toFuture
-    def deleteRouteFuture(params: DeleteRouteInput): Future[DeleteRouteOutput] =
+    @inline def deleteRouteFuture(params: DeleteRouteInput): Future[DeleteRouteOutput] =
       service.deleteRoute(params).promise.toFuture
-    def deleteVirtualNodeFuture(params: DeleteVirtualNodeInput): Future[DeleteVirtualNodeOutput] =
+    @inline def deleteVirtualNodeFuture(params: DeleteVirtualNodeInput): Future[DeleteVirtualNodeOutput] =
       service.deleteVirtualNode(params).promise.toFuture
-    def deleteVirtualRouterFuture(params: DeleteVirtualRouterInput): Future[DeleteVirtualRouterOutput] =
+    @inline def deleteVirtualRouterFuture(params: DeleteVirtualRouterInput): Future[DeleteVirtualRouterOutput] =
       service.deleteVirtualRouter(params).promise.toFuture
-    def deleteVirtualServiceFuture(params: DeleteVirtualServiceInput): Future[DeleteVirtualServiceOutput] =
+    @inline def deleteVirtualServiceFuture(params: DeleteVirtualServiceInput): Future[DeleteVirtualServiceOutput] =
       service.deleteVirtualService(params).promise.toFuture
-    def describeMeshFuture(params: DescribeMeshInput): Future[DescribeMeshOutput] =
+    @inline def describeMeshFuture(params: DescribeMeshInput): Future[DescribeMeshOutput] =
       service.describeMesh(params).promise.toFuture
-    def describeRouteFuture(params: DescribeRouteInput): Future[DescribeRouteOutput] =
+    @inline def describeRouteFuture(params: DescribeRouteInput): Future[DescribeRouteOutput] =
       service.describeRoute(params).promise.toFuture
-    def describeVirtualNodeFuture(params: DescribeVirtualNodeInput): Future[DescribeVirtualNodeOutput] =
+    @inline def describeVirtualNodeFuture(params: DescribeVirtualNodeInput): Future[DescribeVirtualNodeOutput] =
       service.describeVirtualNode(params).promise.toFuture
-    def describeVirtualRouterFuture(params: DescribeVirtualRouterInput): Future[DescribeVirtualRouterOutput] =
+    @inline def describeVirtualRouterFuture(params: DescribeVirtualRouterInput): Future[DescribeVirtualRouterOutput] =
       service.describeVirtualRouter(params).promise.toFuture
-    def describeVirtualServiceFuture(params: DescribeVirtualServiceInput): Future[DescribeVirtualServiceOutput] =
-      service.describeVirtualService(params).promise.toFuture
-    def listMeshesFuture(params: ListMeshesInput): Future[ListMeshesOutput] =
+    @inline def describeVirtualServiceFuture(
+        params: DescribeVirtualServiceInput
+    ): Future[DescribeVirtualServiceOutput] = service.describeVirtualService(params).promise.toFuture
+    @inline def listMeshesFuture(params: ListMeshesInput): Future[ListMeshesOutput] =
       service.listMeshes(params).promise.toFuture
-    def listRoutesFuture(params: ListRoutesInput): Future[ListRoutesOutput] =
+    @inline def listRoutesFuture(params: ListRoutesInput): Future[ListRoutesOutput] =
       service.listRoutes(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def listVirtualNodesFuture(params: ListVirtualNodesInput): Future[ListVirtualNodesOutput] =
+    @inline def listVirtualNodesFuture(params: ListVirtualNodesInput): Future[ListVirtualNodesOutput] =
       service.listVirtualNodes(params).promise.toFuture
-    def listVirtualRoutersFuture(params: ListVirtualRoutersInput): Future[ListVirtualRoutersOutput] =
+    @inline def listVirtualRoutersFuture(params: ListVirtualRoutersInput): Future[ListVirtualRoutersOutput] =
       service.listVirtualRouters(params).promise.toFuture
-    def listVirtualServicesFuture(params: ListVirtualServicesInput): Future[ListVirtualServicesOutput] =
+    @inline def listVirtualServicesFuture(params: ListVirtualServicesInput): Future[ListVirtualServicesOutput] =
       service.listVirtualServices(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
-    def updateMeshFuture(params: UpdateMeshInput): Future[UpdateMeshOutput] =
+    @inline def updateMeshFuture(params: UpdateMeshInput): Future[UpdateMeshOutput] =
       service.updateMesh(params).promise.toFuture
-    def updateRouteFuture(params: UpdateRouteInput): Future[UpdateRouteOutput] =
+    @inline def updateRouteFuture(params: UpdateRouteInput): Future[UpdateRouteOutput] =
       service.updateRoute(params).promise.toFuture
-    def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] =
+    @inline def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] =
       service.updateVirtualNode(params).promise.toFuture
-    def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] =
+    @inline def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] =
       service.updateVirtualRouter(params).promise.toFuture
-    def updateVirtualServiceFuture(params: UpdateVirtualServiceInput): Future[UpdateVirtualServiceOutput] =
+    @inline def updateVirtualServiceFuture(params: UpdateVirtualServiceInput): Future[UpdateVirtualServiceOutput] =
       service.updateVirtualService(params).promise.toFuture
   }
 }
@@ -162,6 +163,7 @@ package appmesh {
   }
 
   object AccessLog {
+    @inline
     def apply(
         file: js.UndefOr[FileAccessLog] = js.undefined
     ): AccessLog = {
@@ -181,6 +183,7 @@ package appmesh {
   }
 
   object AwsCloudMapInstanceAttribute {
+    @inline
     def apply(
         key: AwsCloudMapInstanceAttributeKey,
         value: AwsCloudMapInstanceAttributeValue
@@ -206,6 +209,7 @@ package appmesh {
   }
 
   object AwsCloudMapServiceDiscovery {
+    @inline
     def apply(
         namespaceName: AwsCloudMapName,
         serviceName: AwsCloudMapName,
@@ -231,6 +235,7 @@ package appmesh {
   }
 
   object Backend {
+    @inline
     def apply(
         virtualService: js.UndefOr[VirtualServiceBackend] = js.undefined
     ): Backend = {
@@ -252,6 +257,7 @@ package appmesh {
   }
 
   object CreateMeshInput {
+    @inline
     def apply(
         meshName: ResourceName,
         clientToken: js.UndefOr[String] = js.undefined,
@@ -278,6 +284,7 @@ package appmesh {
   }
 
   object CreateMeshOutput {
+    @inline
     def apply(
         mesh: MeshData
     ): CreateMeshOutput = {
@@ -303,6 +310,7 @@ package appmesh {
   }
 
   object CreateRouteInput {
+    @inline
     def apply(
         meshName: ResourceName,
         routeName: ResourceName,
@@ -333,6 +341,7 @@ package appmesh {
   }
 
   object CreateRouteOutput {
+    @inline
     def apply(
         route: RouteData
     ): CreateRouteOutput = {
@@ -357,6 +366,7 @@ package appmesh {
   }
 
   object CreateVirtualNodeInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualNodeSpec,
@@ -385,6 +395,7 @@ package appmesh {
   }
 
   object CreateVirtualNodeOutput {
+    @inline
     def apply(
         virtualNode: VirtualNodeData
     ): CreateVirtualNodeOutput = {
@@ -409,6 +420,7 @@ package appmesh {
   }
 
   object CreateVirtualRouterInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualRouterSpec,
@@ -437,6 +449,7 @@ package appmesh {
   }
 
   object CreateVirtualRouterOutput {
+    @inline
     def apply(
         virtualRouter: VirtualRouterData
     ): CreateVirtualRouterOutput = {
@@ -461,6 +474,7 @@ package appmesh {
   }
 
   object CreateVirtualServiceInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualServiceSpec,
@@ -489,6 +503,7 @@ package appmesh {
   }
 
   object CreateVirtualServiceOutput {
+    @inline
     def apply(
         virtualService: VirtualServiceData
     ): CreateVirtualServiceOutput = {
@@ -509,6 +524,7 @@ package appmesh {
   }
 
   object DeleteMeshInput {
+    @inline
     def apply(
         meshName: ResourceName
     ): DeleteMeshInput = {
@@ -529,6 +545,7 @@ package appmesh {
   }
 
   object DeleteMeshOutput {
+    @inline
     def apply(
         mesh: MeshData
     ): DeleteMeshOutput = {
@@ -551,6 +568,7 @@ package appmesh {
   }
 
   object DeleteRouteInput {
+    @inline
     def apply(
         meshName: ResourceName,
         routeName: ResourceName,
@@ -575,6 +593,7 @@ package appmesh {
   }
 
   object DeleteRouteOutput {
+    @inline
     def apply(
         route: RouteData
     ): DeleteRouteOutput = {
@@ -596,6 +615,7 @@ package appmesh {
   }
 
   object DeleteVirtualNodeInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualNodeName: ResourceName
@@ -618,6 +638,7 @@ package appmesh {
   }
 
   object DeleteVirtualNodeOutput {
+    @inline
     def apply(
         virtualNode: VirtualNodeData
     ): DeleteVirtualNodeOutput = {
@@ -639,6 +660,7 @@ package appmesh {
   }
 
   object DeleteVirtualRouterInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualRouterName: ResourceName
@@ -661,6 +683,7 @@ package appmesh {
   }
 
   object DeleteVirtualRouterOutput {
+    @inline
     def apply(
         virtualRouter: VirtualRouterData
     ): DeleteVirtualRouterOutput = {
@@ -682,6 +705,7 @@ package appmesh {
   }
 
   object DeleteVirtualServiceInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualServiceName: ServiceName
@@ -704,6 +728,7 @@ package appmesh {
   }
 
   object DeleteVirtualServiceOutput {
+    @inline
     def apply(
         virtualService: VirtualServiceData
     ): DeleteVirtualServiceOutput = {
@@ -724,6 +749,7 @@ package appmesh {
   }
 
   object DescribeMeshInput {
+    @inline
     def apply(
         meshName: ResourceName
     ): DescribeMeshInput = {
@@ -744,6 +770,7 @@ package appmesh {
   }
 
   object DescribeMeshOutput {
+    @inline
     def apply(
         mesh: MeshData
     ): DescribeMeshOutput = {
@@ -766,6 +793,7 @@ package appmesh {
   }
 
   object DescribeRouteInput {
+    @inline
     def apply(
         meshName: ResourceName,
         routeName: ResourceName,
@@ -790,6 +818,7 @@ package appmesh {
   }
 
   object DescribeRouteOutput {
+    @inline
     def apply(
         route: RouteData
     ): DescribeRouteOutput = {
@@ -811,6 +840,7 @@ package appmesh {
   }
 
   object DescribeVirtualNodeInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualNodeName: ResourceName
@@ -833,6 +863,7 @@ package appmesh {
   }
 
   object DescribeVirtualNodeOutput {
+    @inline
     def apply(
         virtualNode: VirtualNodeData
     ): DescribeVirtualNodeOutput = {
@@ -854,6 +885,7 @@ package appmesh {
   }
 
   object DescribeVirtualRouterInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualRouterName: ResourceName
@@ -876,6 +908,7 @@ package appmesh {
   }
 
   object DescribeVirtualRouterOutput {
+    @inline
     def apply(
         virtualRouter: VirtualRouterData
     ): DescribeVirtualRouterOutput = {
@@ -897,6 +930,7 @@ package appmesh {
   }
 
   object DescribeVirtualServiceInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualServiceName: ServiceName
@@ -919,6 +953,7 @@ package appmesh {
   }
 
   object DescribeVirtualServiceOutput {
+    @inline
     def apply(
         virtualService: VirtualServiceData
     ): DescribeVirtualServiceOutput = {
@@ -940,6 +975,7 @@ package appmesh {
   }
 
   object DnsServiceDiscovery {
+    @inline
     def apply(
         hostname: Hostname
     ): DnsServiceDiscovery = {
@@ -960,6 +996,7 @@ package appmesh {
   }
 
   object EgressFilter {
+    @inline
     def apply(
         `type`: EgressFilterType
     ): EgressFilter = {
@@ -987,6 +1024,7 @@ package appmesh {
   }
 
   object FileAccessLog {
+    @inline
     def apply(
         path: FilePath
     ): FileAccessLog = {
@@ -1011,6 +1049,7 @@ package appmesh {
   }
 
   object HeaderMatchMethod {
+    @inline
     def apply(
         exact: js.UndefOr[HeaderMatch] = js.undefined,
         prefix: js.UndefOr[HeaderMatch] = js.undefined,
@@ -1043,6 +1082,7 @@ package appmesh {
   }
 
   object HealthCheckPolicy {
+    @inline
     def apply(
         healthyThreshold: HealthCheckThreshold,
         intervalMillis: HealthCheckIntervalMillis,
@@ -1090,6 +1130,7 @@ package appmesh {
   }
 
   object HttpRoute {
+    @inline
     def apply(
         action: HttpRouteAction,
         `match`: HttpRouteMatch
@@ -1113,6 +1154,7 @@ package appmesh {
   }
 
   object HttpRouteAction {
+    @inline
     def apply(
         weightedTargets: WeightedTargets
     ): HttpRouteAction = {
@@ -1135,6 +1177,7 @@ package appmesh {
   }
 
   object HttpRouteHeader {
+    @inline
     def apply(
         name: HeaderName,
         invert: js.UndefOr[Boolean] = js.undefined,
@@ -1163,6 +1206,7 @@ package appmesh {
   }
 
   object HttpRouteMatch {
+    @inline
     def apply(
         prefix: String,
         headers: js.UndefOr[HttpRouteHeaders] = js.undefined,
@@ -1197,6 +1241,7 @@ package appmesh {
   }
 
   object ListMeshesInput {
+    @inline
     def apply(
         limit: js.UndefOr[ListMeshesLimit] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1218,6 +1263,7 @@ package appmesh {
   }
 
   object ListMeshesOutput {
+    @inline
     def apply(
         meshes: MeshList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1243,6 +1289,7 @@ package appmesh {
   }
 
   object ListRoutesInput {
+    @inline
     def apply(
         meshName: ResourceName,
         virtualRouterName: ResourceName,
@@ -1270,6 +1317,7 @@ package appmesh {
   }
 
   object ListRoutesOutput {
+    @inline
     def apply(
         routes: RouteList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1294,6 +1342,7 @@ package appmesh {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         limit: js.UndefOr[TagsLimit] = js.undefined,
@@ -1319,6 +1368,7 @@ package appmesh {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         tags: TagList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1343,6 +1393,7 @@ package appmesh {
   }
 
   object ListVirtualNodesInput {
+    @inline
     def apply(
         meshName: ResourceName,
         limit: js.UndefOr[ListVirtualNodesLimit] = js.undefined,
@@ -1368,6 +1419,7 @@ package appmesh {
   }
 
   object ListVirtualNodesOutput {
+    @inline
     def apply(
         virtualNodes: VirtualNodeList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1392,6 +1444,7 @@ package appmesh {
   }
 
   object ListVirtualRoutersInput {
+    @inline
     def apply(
         meshName: ResourceName,
         limit: js.UndefOr[ListVirtualRoutersLimit] = js.undefined,
@@ -1417,6 +1470,7 @@ package appmesh {
   }
 
   object ListVirtualRoutersOutput {
+    @inline
     def apply(
         virtualRouters: VirtualRouterList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1441,6 +1495,7 @@ package appmesh {
   }
 
   object ListVirtualServicesInput {
+    @inline
     def apply(
         meshName: ResourceName,
         limit: js.UndefOr[ListVirtualServicesLimit] = js.undefined,
@@ -1466,6 +1521,7 @@ package appmesh {
   }
 
   object ListVirtualServicesOutput {
+    @inline
     def apply(
         virtualServices: VirtualServiceList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1489,6 +1545,7 @@ package appmesh {
   }
 
   object Listener {
+    @inline
     def apply(
         portMapping: PortMapping,
         healthCheck: js.UndefOr[HealthCheckPolicy] = js.undefined
@@ -1511,6 +1568,7 @@ package appmesh {
   }
 
   object Logging {
+    @inline
     def apply(
         accessLog: js.UndefOr[AccessLog] = js.undefined
     ): Logging = {
@@ -1530,6 +1588,7 @@ package appmesh {
   }
 
   object MatchRange {
+    @inline
     def apply(
         end: Double,
         start: Double
@@ -1555,6 +1614,7 @@ package appmesh {
   }
 
   object MeshData {
+    @inline
     def apply(
         meshName: ResourceName,
         metadata: ResourceMetadata,
@@ -1582,6 +1642,7 @@ package appmesh {
   }
 
   object MeshRef {
+    @inline
     def apply(
         arn: Arn,
         meshName: ResourceName
@@ -1604,6 +1665,7 @@ package appmesh {
   }
 
   object MeshSpec {
+    @inline
     def apply(
         egressFilter: js.UndefOr[EgressFilter] = js.undefined
     ): MeshSpec = {
@@ -1622,6 +1684,7 @@ package appmesh {
   }
 
   object MeshStatus {
+    @inline
     def apply(
         status: js.UndefOr[MeshStatusCode] = js.undefined
     ): MeshStatus = {
@@ -1649,6 +1712,7 @@ package appmesh {
   }
 
   object PortMapping {
+    @inline
     def apply(
         port: PortNumber,
         protocol: PortProtocol
@@ -1682,6 +1746,7 @@ package appmesh {
   }
 
   object ResourceMetadata {
+    @inline
     def apply(
         arn: Arn,
         createdAt: Timestamp,
@@ -1715,6 +1780,7 @@ package appmesh {
   }
 
   object RouteData {
+    @inline
     def apply(
         meshName: ResourceName,
         metadata: ResourceMetadata,
@@ -1748,6 +1814,7 @@ package appmesh {
   }
 
   object RouteRef {
+    @inline
     def apply(
         arn: Arn,
         meshName: ResourceName,
@@ -1776,6 +1843,7 @@ package appmesh {
   }
 
   object RouteSpec {
+    @inline
     def apply(
         httpRoute: js.UndefOr[HttpRoute] = js.undefined,
         priority: js.UndefOr[RoutePriority] = js.undefined,
@@ -1798,6 +1866,7 @@ package appmesh {
   }
 
   object RouteStatus {
+    @inline
     def apply(
         status: RouteStatusCode
     ): RouteStatus = {
@@ -1827,6 +1896,7 @@ package appmesh {
   }
 
   object ServiceDiscovery {
+    @inline
     def apply(
         awsCloudMap: js.UndefOr[AwsCloudMapServiceDiscovery] = js.undefined,
         dns: js.UndefOr[DnsServiceDiscovery] = js.undefined
@@ -1851,6 +1921,7 @@ package appmesh {
   }
 
   object TagRef {
+    @inline
     def apply(
         key: TagKey,
         value: js.UndefOr[TagValue] = js.undefined
@@ -1874,6 +1945,7 @@ package appmesh {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: TagList
@@ -1894,6 +1966,7 @@ package appmesh {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1911,6 +1984,7 @@ package appmesh {
   }
 
   object TcpRoute {
+    @inline
     def apply(
         action: TcpRouteAction
     ): TcpRoute = {
@@ -1932,6 +2006,7 @@ package appmesh {
   }
 
   object TcpRouteAction {
+    @inline
     def apply(
         weightedTargets: WeightedTargets
     ): TcpRouteAction = {
@@ -1953,6 +2028,7 @@ package appmesh {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tagKeys: TagKeyList
@@ -1973,6 +2049,7 @@ package appmesh {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1992,6 +2069,7 @@ package appmesh {
   }
 
   object UpdateMeshInput {
+    @inline
     def apply(
         meshName: ResourceName,
         clientToken: js.UndefOr[String] = js.undefined,
@@ -2016,6 +2094,7 @@ package appmesh {
   }
 
   object UpdateMeshOutput {
+    @inline
     def apply(
         mesh: MeshData
     ): UpdateMeshOutput = {
@@ -2040,6 +2119,7 @@ package appmesh {
   }
 
   object UpdateRouteInput {
+    @inline
     def apply(
         meshName: ResourceName,
         routeName: ResourceName,
@@ -2068,6 +2148,7 @@ package appmesh {
   }
 
   object UpdateRouteOutput {
+    @inline
     def apply(
         route: RouteData
     ): UpdateRouteOutput = {
@@ -2091,6 +2172,7 @@ package appmesh {
   }
 
   object UpdateVirtualNodeInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualNodeSpec,
@@ -2117,6 +2199,7 @@ package appmesh {
   }
 
   object UpdateVirtualNodeOutput {
+    @inline
     def apply(
         virtualNode: VirtualNodeData
     ): UpdateVirtualNodeOutput = {
@@ -2140,6 +2223,7 @@ package appmesh {
   }
 
   object UpdateVirtualRouterInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualRouterSpec,
@@ -2166,6 +2250,7 @@ package appmesh {
   }
 
   object UpdateVirtualRouterOutput {
+    @inline
     def apply(
         virtualRouter: VirtualRouterData
     ): UpdateVirtualRouterOutput = {
@@ -2189,6 +2274,7 @@ package appmesh {
   }
 
   object UpdateVirtualServiceInput {
+    @inline
     def apply(
         meshName: ResourceName,
         spec: VirtualServiceSpec,
@@ -2215,6 +2301,7 @@ package appmesh {
   }
 
   object UpdateVirtualServiceOutput {
+    @inline
     def apply(
         virtualService: VirtualServiceData
     ): UpdateVirtualServiceOutput = {
@@ -2239,6 +2326,7 @@ package appmesh {
   }
 
   object VirtualNodeData {
+    @inline
     def apply(
         meshName: ResourceName,
         metadata: ResourceMetadata,
@@ -2269,6 +2357,7 @@ package appmesh {
   }
 
   object VirtualNodeRef {
+    @inline
     def apply(
         arn: Arn,
         meshName: ResourceName,
@@ -2293,6 +2382,7 @@ package appmesh {
   }
 
   object VirtualNodeServiceProvider {
+    @inline
     def apply(
         virtualNodeName: ResourceName
     ): VirtualNodeServiceProvider = {
@@ -2316,6 +2406,7 @@ package appmesh {
   }
 
   object VirtualNodeSpec {
+    @inline
     def apply(
         backends: js.UndefOr[Backends] = js.undefined,
         listeners: js.UndefOr[Listeners] = js.undefined,
@@ -2340,6 +2431,7 @@ package appmesh {
   }
 
   object VirtualNodeStatus {
+    @inline
     def apply(
         status: VirtualNodeStatusCode
     ): VirtualNodeStatus = {
@@ -2372,6 +2464,7 @@ package appmesh {
   }
 
   object VirtualRouterData {
+    @inline
     def apply(
         meshName: ResourceName,
         metadata: ResourceMetadata,
@@ -2400,6 +2493,7 @@ package appmesh {
   }
 
   object VirtualRouterListener {
+    @inline
     def apply(
         portMapping: PortMapping
     ): VirtualRouterListener = {
@@ -2422,6 +2516,7 @@ package appmesh {
   }
 
   object VirtualRouterRef {
+    @inline
     def apply(
         arn: Arn,
         meshName: ResourceName,
@@ -2446,6 +2541,7 @@ package appmesh {
   }
 
   object VirtualRouterServiceProvider {
+    @inline
     def apply(
         virtualRouterName: ResourceName
     ): VirtualRouterServiceProvider = {
@@ -2466,6 +2562,7 @@ package appmesh {
   }
 
   object VirtualRouterSpec {
+    @inline
     def apply(
         listeners: js.UndefOr[VirtualRouterListeners] = js.undefined
     ): VirtualRouterSpec = {
@@ -2484,6 +2581,7 @@ package appmesh {
   }
 
   object VirtualRouterStatus {
+    @inline
     def apply(
         status: VirtualRouterStatusCode
     ): VirtualRouterStatus = {
@@ -2512,6 +2610,7 @@ package appmesh {
   }
 
   object VirtualServiceBackend {
+    @inline
     def apply(
         virtualServiceName: ServiceName
     ): VirtualServiceBackend = {
@@ -2536,6 +2635,7 @@ package appmesh {
   }
 
   object VirtualServiceData {
+    @inline
     def apply(
         meshName: ResourceName,
         metadata: ResourceMetadata,
@@ -2565,6 +2665,7 @@ package appmesh {
   }
 
   object VirtualServiceProvider {
+    @inline
     def apply(
         virtualNode: js.UndefOr[VirtualNodeServiceProvider] = js.undefined,
         virtualRouter: js.UndefOr[VirtualRouterServiceProvider] = js.undefined
@@ -2587,6 +2688,7 @@ package appmesh {
   }
 
   object VirtualServiceRef {
+    @inline
     def apply(
         arn: Arn,
         meshName: ResourceName,
@@ -2611,6 +2713,7 @@ package appmesh {
   }
 
   object VirtualServiceSpec {
+    @inline
     def apply(
         provider: js.UndefOr[VirtualServiceProvider] = js.undefined
     ): VirtualServiceSpec = {
@@ -2629,6 +2732,7 @@ package appmesh {
   }
 
   object VirtualServiceStatus {
+    @inline
     def apply(
         status: VirtualServiceStatusCode
     ): VirtualServiceStatus = {
@@ -2661,6 +2765,7 @@ package appmesh {
   }
 
   object WeightedTarget {
+    @inline
     def apply(
         virtualNode: ResourceName,
         weight: PercentInt

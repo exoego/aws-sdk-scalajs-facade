@@ -89,45 +89,47 @@ package object xray {
 
   implicit final class XRayOps(private val service: XRay) extends AnyVal {
 
-    def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
+    @inline def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
       service.batchGetTraces(params).promise.toFuture
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] =
       service.createGroup(params).promise.toFuture
-    def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] =
+    @inline def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] =
       service.createSamplingRule(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] =
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] =
       service.deleteGroup(params).promise.toFuture
-    def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] =
+    @inline def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] =
       service.deleteSamplingRule(params).promise.toFuture
-    def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] =
+    @inline def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] =
       service.getEncryptionConfig(params).promise.toFuture
-    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult]    = service.getGroup(params).promise.toFuture
-    def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] = service.getGroups(params).promise.toFuture
-    def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] =
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult] =
+      service.getGroup(params).promise.toFuture
+    @inline def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] =
+      service.getGroups(params).promise.toFuture
+    @inline def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] =
       service.getSamplingRules(params).promise.toFuture
-    def getSamplingStatisticSummariesFuture(
+    @inline def getSamplingStatisticSummariesFuture(
         params: GetSamplingStatisticSummariesRequest
     ): Future[GetSamplingStatisticSummariesResult] = service.getSamplingStatisticSummaries(params).promise.toFuture
-    def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] =
+    @inline def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] =
       service.getSamplingTargets(params).promise.toFuture
-    def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] =
+    @inline def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] =
       service.getServiceGraph(params).promise.toFuture
-    def getTimeSeriesServiceStatisticsFuture(
+    @inline def getTimeSeriesServiceStatisticsFuture(
         params: GetTimeSeriesServiceStatisticsRequest
     ): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise.toFuture
-    def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] =
+    @inline def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] =
       service.getTraceGraph(params).promise.toFuture
-    def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] =
+    @inline def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] =
       service.getTraceSummaries(params).promise.toFuture
-    def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] =
+    @inline def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] =
       service.putEncryptionConfig(params).promise.toFuture
-    def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] =
+    @inline def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] =
       service.putTelemetryRecords(params).promise.toFuture
-    def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] =
+    @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] =
       service.putTraceSegments(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] =
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] =
       service.updateGroup(params).promise.toFuture
-    def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] =
+    @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] =
       service.updateSamplingRule(params).promise.toFuture
   }
 }
@@ -175,6 +177,7 @@ package xray {
   }
 
   object Alias {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Names: js.UndefOr[AliasNames] = js.undefined,
@@ -199,6 +202,7 @@ package xray {
   }
 
   object AnnotationValue {
+    @inline
     def apply(
         BooleanValue: js.UndefOr[NullableBoolean] = js.undefined,
         NumberValue: js.UndefOr[NullableDouble] = js.undefined,
@@ -221,6 +225,7 @@ package xray {
   }
 
   object AvailabilityZoneDetail {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZoneDetail = {
@@ -244,6 +249,7 @@ package xray {
   }
 
   object BackendConnectionErrors {
+    @inline
     def apply(
         ConnectionRefusedCount: js.UndefOr[NullableInteger] = js.undefined,
         HTTPCode4XXCount: js.UndefOr[NullableInteger] = js.undefined,
@@ -270,6 +276,7 @@ package xray {
   }
 
   object BatchGetTracesRequest {
+    @inline
     def apply(
         TraceIds: TraceIdList,
         NextToken: js.UndefOr[String] = js.undefined
@@ -291,6 +298,7 @@ package xray {
   }
 
   object BatchGetTracesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Traces: js.UndefOr[TraceList] = js.undefined,
@@ -311,6 +319,7 @@ package xray {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         GroupName: GroupName,
         FilterExpression: js.UndefOr[FilterExpression] = js.undefined
@@ -330,6 +339,7 @@ package xray {
   }
 
   object CreateGroupResult {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): CreateGroupResult = {
@@ -345,6 +355,7 @@ package xray {
   }
 
   object CreateSamplingRuleRequest {
+    @inline
     def apply(
         SamplingRule: SamplingRule
     ): CreateSamplingRuleRequest = {
@@ -362,6 +373,7 @@ package xray {
   }
 
   object CreateSamplingRuleResult {
+    @inline
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): CreateSamplingRuleResult = {
@@ -378,6 +390,7 @@ package xray {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
@@ -393,6 +406,7 @@ package xray {
   trait DeleteGroupResult extends js.Object {}
 
   object DeleteGroupResult {
+    @inline
     def apply(
         ): DeleteGroupResult = {
       val __obj = js.Dynamic.literal()
@@ -408,6 +422,7 @@ package xray {
   }
 
   object DeleteSamplingRuleRequest {
+    @inline
     def apply(
         RuleARN: js.UndefOr[String] = js.undefined,
         RuleName: js.UndefOr[String] = js.undefined
@@ -425,6 +440,7 @@ package xray {
   }
 
   object DeleteSamplingRuleResult {
+    @inline
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): DeleteSamplingRuleResult = {
@@ -448,6 +464,7 @@ package xray {
   }
 
   object Edge {
+    @inline
     def apply(
         Aliases: js.UndefOr[AliasList] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -480,6 +497,7 @@ package xray {
   }
 
   object EdgeStatistics {
+    @inline
     def apply(
         ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
         FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
@@ -508,6 +526,7 @@ package xray {
   }
 
   object EncryptionConfig {
+    @inline
     def apply(
         KeyId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[EncryptionStatus] = js.undefined,
@@ -544,6 +563,7 @@ package xray {
   }
 
   object ErrorRootCause {
+    @inline
     def apply(
         Services: js.UndefOr[ErrorRootCauseServices] = js.undefined
     ): ErrorRootCause = {
@@ -564,6 +584,7 @@ package xray {
   }
 
   object ErrorRootCauseEntity {
+    @inline
     def apply(
         Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -591,6 +612,7 @@ package xray {
   }
 
   object ErrorRootCauseService {
+    @inline
     def apply(
         AccountId: js.UndefOr[String] = js.undefined,
         EntityPath: js.UndefOr[ErrorRootCauseEntityPath] = js.undefined,
@@ -621,6 +643,7 @@ package xray {
   }
 
   object ErrorStatistics {
+    @inline
     def apply(
         OtherCount: js.UndefOr[NullableLong] = js.undefined,
         ThrottleCount: js.UndefOr[NullableLong] = js.undefined,
@@ -643,6 +666,7 @@ package xray {
   }
 
   object FaultRootCause {
+    @inline
     def apply(
         Services: js.UndefOr[FaultRootCauseServices] = js.undefined
     ): FaultRootCause = {
@@ -663,6 +687,7 @@ package xray {
   }
 
   object FaultRootCauseEntity {
+    @inline
     def apply(
         Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -690,6 +715,7 @@ package xray {
   }
 
   object FaultRootCauseService {
+    @inline
     def apply(
         AccountId: js.UndefOr[String] = js.undefined,
         EntityPath: js.UndefOr[FaultRootCauseEntityPath] = js.undefined,
@@ -719,6 +745,7 @@ package xray {
   }
 
   object FaultStatistics {
+    @inline
     def apply(
         OtherCount: js.UndefOr[NullableLong] = js.undefined,
         TotalCount: js.UndefOr[NullableLong] = js.undefined
@@ -734,6 +761,7 @@ package xray {
   trait GetEncryptionConfigRequest extends js.Object {}
 
   object GetEncryptionConfigRequest {
+    @inline
     def apply(
         ): GetEncryptionConfigRequest = {
       val __obj = js.Dynamic.literal()
@@ -748,6 +776,7 @@ package xray {
   }
 
   object GetEncryptionConfigResult {
+    @inline
     def apply(
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
     ): GetEncryptionConfigResult = {
@@ -764,6 +793,7 @@ package xray {
   }
 
   object GetGroupRequest {
+    @inline
     def apply(
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
@@ -781,6 +811,7 @@ package xray {
   }
 
   object GetGroupResult {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): GetGroupResult = {
@@ -796,6 +827,7 @@ package xray {
   }
 
   object GetGroupsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[GetGroupsNextToken] = js.undefined
     ): GetGroupsRequest = {
@@ -812,6 +844,7 @@ package xray {
   }
 
   object GetGroupsResult {
+    @inline
     def apply(
         Groups: js.UndefOr[GroupSummaryList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -829,6 +862,7 @@ package xray {
   }
 
   object GetSamplingRulesRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): GetSamplingRulesRequest = {
@@ -845,6 +879,7 @@ package xray {
   }
 
   object GetSamplingRulesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         SamplingRuleRecords: js.UndefOr[SamplingRuleRecordList] = js.undefined
@@ -862,6 +897,7 @@ package xray {
   }
 
   object GetSamplingStatisticSummariesRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): GetSamplingStatisticSummariesRequest = {
@@ -878,6 +914,7 @@ package xray {
   }
 
   object GetSamplingStatisticSummariesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         SamplingStatisticSummaries: js.UndefOr[SamplingStatisticSummaryList] = js.undefined
@@ -897,6 +934,7 @@ package xray {
   }
 
   object GetSamplingTargetsRequest {
+    @inline
     def apply(
         SamplingStatisticsDocuments: SamplingStatisticsDocumentList
     ): GetSamplingTargetsRequest = {
@@ -916,6 +954,7 @@ package xray {
   }
 
   object GetSamplingTargetsResult {
+    @inline
     def apply(
         LastRuleModification: js.UndefOr[Timestamp] = js.undefined,
         SamplingTargetDocuments: js.UndefOr[SamplingTargetDocumentList] = js.undefined,
@@ -939,6 +978,7 @@ package xray {
   }
 
   object GetServiceGraphRequest {
+    @inline
     def apply(
         EndTime: Timestamp,
         StartTime: Timestamp,
@@ -968,6 +1008,7 @@ package xray {
   }
 
   object GetServiceGraphResult {
+    @inline
     def apply(
         ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -997,6 +1038,7 @@ package xray {
   }
 
   object GetTimeSeriesServiceStatisticsRequest {
+    @inline
     def apply(
         EndTime: Timestamp,
         StartTime: Timestamp,
@@ -1028,6 +1070,7 @@ package xray {
   }
 
   object GetTimeSeriesServiceStatisticsResult {
+    @inline
     def apply(
         ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -1050,6 +1093,7 @@ package xray {
   }
 
   object GetTraceGraphRequest {
+    @inline
     def apply(
         TraceIds: TraceIdList,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1070,6 +1114,7 @@ package xray {
   }
 
   object GetTraceGraphResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Services: js.UndefOr[ServiceList] = js.undefined
@@ -1093,6 +1138,7 @@ package xray {
   }
 
   object GetTraceSummariesRequest {
+    @inline
     def apply(
         EndTime: Timestamp,
         StartTime: Timestamp,
@@ -1125,6 +1171,7 @@ package xray {
   }
 
   object GetTraceSummariesResult {
+    @inline
     def apply(
         ApproximateTime: js.UndefOr[Timestamp] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -1151,6 +1198,7 @@ package xray {
   }
 
   object Group {
+    @inline
     def apply(
         FilterExpression: js.UndefOr[String] = js.undefined,
         GroupARN: js.UndefOr[String] = js.undefined,
@@ -1175,6 +1223,7 @@ package xray {
   }
 
   object GroupSummary {
+    @inline
     def apply(
         FilterExpression: js.UndefOr[String] = js.undefined,
         GroupARN: js.UndefOr[String] = js.undefined,
@@ -1198,6 +1247,7 @@ package xray {
   }
 
   object HistogramEntry {
+    @inline
     def apply(
         Count: js.UndefOr[Int] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
@@ -1222,6 +1272,7 @@ package xray {
   }
 
   object Http {
+    @inline
     def apply(
         ClientIp: js.UndefOr[String] = js.undefined,
         HttpMethod: js.UndefOr[String] = js.undefined,
@@ -1248,6 +1299,7 @@ package xray {
   }
 
   object InstanceIdDetail {
+    @inline
     def apply(
         Id: js.UndefOr[String] = js.undefined
     ): InstanceIdDetail = {
@@ -1264,6 +1316,7 @@ package xray {
   }
 
   object PutEncryptionConfigRequest {
+    @inline
     def apply(
         Type: EncryptionType,
         KeyId: js.UndefOr[EncryptionKeyId] = js.undefined
@@ -1283,6 +1336,7 @@ package xray {
   }
 
   object PutEncryptionConfigResult {
+    @inline
     def apply(
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
     ): PutEncryptionConfigResult = {
@@ -1301,6 +1355,7 @@ package xray {
   }
 
   object PutTelemetryRecordsRequest {
+    @inline
     def apply(
         TelemetryRecords: TelemetryRecordList,
         EC2InstanceId: js.UndefOr[EC2InstanceId] = js.undefined,
@@ -1322,6 +1377,7 @@ package xray {
   trait PutTelemetryRecordsResult extends js.Object {}
 
   object PutTelemetryRecordsResult {
+    @inline
     def apply(
         ): PutTelemetryRecordsResult = {
       val __obj = js.Dynamic.literal()
@@ -1336,6 +1392,7 @@ package xray {
   }
 
   object PutTraceSegmentsRequest {
+    @inline
     def apply(
         TraceSegmentDocuments: TraceSegmentDocumentList
     ): PutTraceSegmentsRequest = {
@@ -1353,6 +1410,7 @@ package xray {
   }
 
   object PutTraceSegmentsResult {
+    @inline
     def apply(
         UnprocessedTraceSegments: js.UndefOr[UnprocessedTraceSegmentList] = js.undefined
     ): PutTraceSegmentsResult = {
@@ -1371,6 +1429,7 @@ package xray {
   }
 
   object ResourceARNDetail {
+    @inline
     def apply(
         ARN: js.UndefOr[String] = js.undefined
     ): ResourceARNDetail = {
@@ -1389,6 +1448,7 @@ package xray {
   }
 
   object ResponseTimeRootCause {
+    @inline
     def apply(
         Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined
     ): ResponseTimeRootCause = {
@@ -1409,6 +1469,7 @@ package xray {
   }
 
   object ResponseTimeRootCauseEntity {
+    @inline
     def apply(
         Coverage: js.UndefOr[NullableDouble] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -1436,6 +1497,7 @@ package xray {
   }
 
   object ResponseTimeRootCauseService {
+    @inline
     def apply(
         AccountId: js.UndefOr[String] = js.undefined,
         EntityPath: js.UndefOr[ResponseTimeRootCauseEntityPath] = js.undefined,
@@ -1465,6 +1527,7 @@ package xray {
   }
 
   object RootCauseException {
+    @inline
     def apply(
         Message: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -1497,6 +1560,7 @@ package xray {
   }
 
   object SamplingRule {
+    @inline
     def apply(
         FixedRate: FixedRate,
         HTTPMethod: HTTPMethod,
@@ -1543,6 +1607,7 @@ package xray {
   }
 
   object SamplingRuleRecord {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
         ModifiedAt: js.UndefOr[Timestamp] = js.undefined,
@@ -1576,6 +1641,7 @@ package xray {
   }
 
   object SamplingRuleUpdate {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeMap] = js.undefined,
         FixedRate: js.UndefOr[NullableDouble] = js.undefined,
@@ -1620,6 +1686,7 @@ package xray {
   }
 
   object SamplingStatisticSummary {
+    @inline
     def apply(
         BorrowCount: js.UndefOr[Int] = js.undefined,
         RequestCount: js.UndefOr[Int] = js.undefined,
@@ -1651,6 +1718,7 @@ package xray {
   }
 
   object SamplingStatisticsDocument {
+    @inline
     def apply(
         ClientID: ClientID,
         RequestCount: RequestCount,
@@ -1682,6 +1750,7 @@ package xray {
   }
 
   object SamplingStrategy {
+    @inline
     def apply(
         Name: js.UndefOr[SamplingStrategyName] = js.undefined,
         Value: js.UndefOr[NullableDouble] = js.undefined
@@ -1713,6 +1782,7 @@ package xray {
   }
 
   object SamplingTargetDocument {
+    @inline
     def apply(
         FixedRate: js.UndefOr[Double] = js.undefined,
         Interval: js.UndefOr[NullableInteger] = js.undefined,
@@ -1741,6 +1811,7 @@ package xray {
   }
 
   object Segment {
+    @inline
     def apply(
         Document: js.UndefOr[SegmentDocument] = js.undefined,
         Id: js.UndefOr[SegmentId] = js.undefined
@@ -1773,6 +1844,7 @@ package xray {
   }
 
   object Service {
+    @inline
     def apply(
         AccountId: js.UndefOr[String] = js.undefined,
         DurationHistogram: js.UndefOr[Histogram] = js.undefined,
@@ -1818,6 +1890,7 @@ package xray {
   }
 
   object ServiceId {
+    @inline
     def apply(
         AccountId: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -1846,6 +1919,7 @@ package xray {
   }
 
   object ServiceStatistics {
+    @inline
     def apply(
         ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
         FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
@@ -1877,6 +1951,7 @@ package xray {
   }
 
   object TelemetryRecord {
+    @inline
     def apply(
         Timestamp: Timestamp,
         BackendConnectionErrors: js.UndefOr[BackendConnectionErrors] = js.undefined,
@@ -1917,6 +1992,7 @@ package xray {
   }
 
   object TimeSeriesServiceStatistics {
+    @inline
     def apply(
         EdgeSummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined,
         ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
@@ -1943,6 +2019,7 @@ package xray {
   }
 
   object Trace {
+    @inline
     def apply(
         Duration: js.UndefOr[NullableDouble] = js.undefined,
         Id: js.UndefOr[TraceId] = js.undefined,
@@ -1984,6 +2061,7 @@ package xray {
   }
 
   object TraceSummary {
+    @inline
     def apply(
         Annotations: js.UndefOr[Annotations] = js.undefined,
         AvailabilityZones: js.UndefOr[TraceAvailabilityZones] = js.undefined,
@@ -2041,6 +2119,7 @@ package xray {
   }
 
   object TraceUser {
+    @inline
     def apply(
         ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
         UserName: js.UndefOr[String] = js.undefined
@@ -2063,6 +2142,7 @@ package xray {
   }
 
   object UnprocessedStatistics {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined,
@@ -2087,6 +2167,7 @@ package xray {
   }
 
   object UnprocessedTraceSegment {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[String] = js.undefined,
@@ -2108,6 +2189,7 @@ package xray {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
@@ -2127,6 +2209,7 @@ package xray {
   }
 
   object UpdateGroupResult {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): UpdateGroupResult = {
@@ -2142,6 +2225,7 @@ package xray {
   }
 
   object UpdateSamplingRuleRequest {
+    @inline
     def apply(
         SamplingRuleUpdate: SamplingRuleUpdate
     ): UpdateSamplingRuleRequest = {
@@ -2159,6 +2243,7 @@ package xray {
   }
 
   object UpdateSamplingRuleResult {
+    @inline
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): UpdateSamplingRuleResult = {
@@ -2178,6 +2263,7 @@ package xray {
   }
 
   object ValueWithServiceIds {
+    @inline
     def apply(
         AnnotationValue: js.UndefOr[AnnotationValue] = js.undefined,
         ServiceIds: js.UndefOr[ServiceIds] = js.undefined

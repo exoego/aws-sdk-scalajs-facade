@@ -19,27 +19,30 @@ package object pinpointsmsvoice {
 
   implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
-    def createConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
       service.createConfigurationSetEventDestination(params).promise.toFuture
-    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
-      service.createConfigurationSet(params).promise.toFuture
-    def deleteConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetFuture(
+        params: CreateConfigurationSetRequest
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
       service.deleteConfigurationSetEventDestination(params).promise.toFuture
-    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
-      service.deleteConfigurationSet(params).promise.toFuture
-    def getConfigurationSetEventDestinationsFuture(
+    @inline def deleteConfigurationSetFuture(
+        params: DeleteConfigurationSetRequest
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    @inline def getConfigurationSetEventDestinationsFuture(
         params: GetConfigurationSetEventDestinationsRequest
     ): Future[GetConfigurationSetEventDestinationsResponse] =
       service.getConfigurationSetEventDestinations(params).promise.toFuture
-    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
-      service.listConfigurationSets(params).promise.toFuture
-    def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
+    @inline def listConfigurationSetsFuture(
+        params: ListConfigurationSetsRequest
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
       service.sendVoiceMessage(params).promise.toFuture
-    def updateConfigurationSetEventDestinationFuture(
+    @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
       service.updateConfigurationSetEventDestination(params).promise.toFuture
@@ -81,6 +84,7 @@ package pinpointsmsvoice {
   }
 
   object CallInstructionsMessageType {
+    @inline
     def apply(
         Text: js.UndefOr[NonEmptyString] = js.undefined
     ): CallInstructionsMessageType = {
@@ -100,6 +104,7 @@ package pinpointsmsvoice {
   }
 
   object CloudWatchLogsDestination {
+    @inline
     def apply(
         IamRoleArn: js.UndefOr[String] = js.undefined,
         LogGroupArn: js.UndefOr[String] = js.undefined
@@ -122,6 +127,7 @@ package pinpointsmsvoice {
   }
 
   object CreateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: __string,
         EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined,
@@ -144,6 +150,7 @@ package pinpointsmsvoice {
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object CreateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -161,6 +168,7 @@ package pinpointsmsvoice {
   }
 
   object CreateConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters] = js.undefined
     ): CreateConfigurationSetRequest = {
@@ -177,6 +185,7 @@ package pinpointsmsvoice {
   trait CreateConfigurationSetResponse extends js.Object {}
 
   object CreateConfigurationSetResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -192,6 +201,7 @@ package pinpointsmsvoice {
   }
 
   object DeleteConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: __string,
         EventDestinationName: __string
@@ -212,6 +222,7 @@ package pinpointsmsvoice {
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
 
   object DeleteConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -226,6 +237,7 @@ package pinpointsmsvoice {
   }
 
   object DeleteConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: __string
     ): DeleteConfigurationSetRequest = {
@@ -244,6 +256,7 @@ package pinpointsmsvoice {
   trait DeleteConfigurationSetResponse extends js.Object {}
 
   object DeleteConfigurationSetResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -266,6 +279,7 @@ package pinpointsmsvoice {
   }
 
   object EventDestination {
+    @inline
     def apply(
         CloudWatchLogsDestination: js.UndefOr[CloudWatchLogsDestination] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
@@ -302,6 +316,7 @@ package pinpointsmsvoice {
   }
 
   object EventDestinationDefinition {
+    @inline
     def apply(
         CloudWatchLogsDestination: js.UndefOr[CloudWatchLogsDestination] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
@@ -344,6 +359,7 @@ package pinpointsmsvoice {
   }
 
   object GetConfigurationSetEventDestinationsRequest {
+    @inline
     def apply(
         ConfigurationSetName: __string
     ): GetConfigurationSetEventDestinationsRequest = {
@@ -364,6 +380,7 @@ package pinpointsmsvoice {
   }
 
   object GetConfigurationSetEventDestinationsResponse {
+    @inline
     def apply(
         EventDestinations: js.UndefOr[EventDestinations] = js.undefined
     ): GetConfigurationSetEventDestinationsResponse = {
@@ -383,6 +400,7 @@ package pinpointsmsvoice {
   }
 
   object KinesisFirehoseDestination {
+    @inline
     def apply(
         DeliveryStreamArn: js.UndefOr[String] = js.undefined,
         IamRoleArn: js.UndefOr[String] = js.undefined
@@ -401,6 +419,7 @@ package pinpointsmsvoice {
   }
 
   object ListConfigurationSetsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         PageSize: js.UndefOr[__string] = js.undefined
@@ -422,6 +441,7 @@ package pinpointsmsvoice {
   }
 
   object ListConfigurationSetsResponse {
+    @inline
     def apply(
         ConfigurationSets: js.UndefOr[ConfigurationSets] = js.undefined,
         NextToken: js.UndefOr[NextTokenString] = js.undefined
@@ -444,6 +464,7 @@ package pinpointsmsvoice {
   }
 
   object PlainTextMessageType {
+    @inline
     def apply(
         LanguageCode: js.UndefOr[String] = js.undefined,
         Text: js.UndefOr[NonEmptyString] = js.undefined,
@@ -468,6 +489,7 @@ package pinpointsmsvoice {
   }
 
   object SSMLMessageType {
+    @inline
     def apply(
         LanguageCode: js.UndefOr[String] = js.undefined,
         Text: js.UndefOr[NonEmptyString] = js.undefined,
@@ -494,6 +516,7 @@ package pinpointsmsvoice {
   }
 
   object SendVoiceMessageRequest {
+    @inline
     def apply(
         CallerId: js.UndefOr[String] = js.undefined,
         ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters] = js.undefined,
@@ -520,6 +543,7 @@ package pinpointsmsvoice {
   }
 
   object SendVoiceMessageResponse {
+    @inline
     def apply(
         MessageId: js.UndefOr[String] = js.undefined
     ): SendVoiceMessageResponse = {
@@ -538,6 +562,7 @@ package pinpointsmsvoice {
   }
 
   object SnsDestination {
+    @inline
     def apply(
         TopicArn: js.UndefOr[String] = js.undefined
     ): SnsDestination = {
@@ -558,6 +583,7 @@ package pinpointsmsvoice {
   }
 
   object UpdateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: __string,
         EventDestinationName: __string,
@@ -580,6 +606,7 @@ package pinpointsmsvoice {
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object UpdateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -599,6 +626,7 @@ package pinpointsmsvoice {
   }
 
   object VoiceMessageContent {
+    @inline
     def apply(
         CallInstructionsMessage: js.UndefOr[CallInstructionsMessageType] = js.undefined,
         PlainTextMessage: js.UndefOr[PlainTextMessageType] = js.undefined,

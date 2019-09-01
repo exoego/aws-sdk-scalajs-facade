@@ -44,33 +44,34 @@ package object fms {
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
-    def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
+    @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
       service.associateAdminAccount(params).promise.toFuture
-    def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
+    @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
       service.deleteNotificationChannel(params).promise.toFuture
-    def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
       service.deletePolicy(params).promise.toFuture
-    def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
+    @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
       service.disassociateAdminAccount(params).promise.toFuture
-    def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
+    @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
       service.getAdminAccount(params).promise.toFuture
-    def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
+    @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
       service.getComplianceDetail(params).promise.toFuture
-    def getNotificationChannelFuture(params: GetNotificationChannelRequest): Future[GetNotificationChannelResponse] =
-      service.getNotificationChannel(params).promise.toFuture
-    def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
+    @inline def getNotificationChannelFuture(
+        params: GetNotificationChannelRequest
+    ): Future[GetNotificationChannelResponse] = service.getNotificationChannel(params).promise.toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
-    def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
+    @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
       service.getProtectionStatus(params).promise.toFuture
-    def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
+    @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
       service.listComplianceStatus(params).promise.toFuture
-    def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
+    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
       service.listMemberAccounts(params).promise.toFuture
-    def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
+    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
       service.listPolicies(params).promise.toFuture
-    def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
+    @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
       service.putNotificationChannel(params).promise.toFuture
-    def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
+    @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
       service.putPolicy(params).promise.toFuture
   }
 }
@@ -114,6 +115,7 @@ package fms {
   }
 
   object AssociateAdminAccountRequest {
+    @inline
     def apply(
         AdminAccount: AWSAccountId
     ): AssociateAdminAccountRequest = {
@@ -136,6 +138,7 @@ package fms {
   }
 
   object ComplianceViolator {
+    @inline
     def apply(
         ResourceId: js.UndefOr[ResourceId] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
@@ -159,6 +162,7 @@ package fms {
   trait DeleteNotificationChannelRequest extends js.Object {}
 
   object DeleteNotificationChannelRequest {
+    @inline
     def apply(
         ): DeleteNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
@@ -174,6 +178,7 @@ package fms {
   }
 
   object DeletePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         DeleteAllPolicyResources: js.UndefOr[Boolean] = js.undefined
@@ -199,6 +204,7 @@ package fms {
   trait DisassociateAdminAccountRequest extends js.Object {}
 
   object DisassociateAdminAccountRequest {
+    @inline
     def apply(
         ): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -218,6 +224,7 @@ package fms {
   }
 
   object EvaluationResult {
+    @inline
     def apply(
         ComplianceStatus: js.UndefOr[PolicyComplianceStatusType] = js.undefined,
         EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
@@ -235,6 +242,7 @@ package fms {
   trait GetAdminAccountRequest extends js.Object {}
 
   object GetAdminAccountRequest {
+    @inline
     def apply(
         ): GetAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -250,6 +258,7 @@ package fms {
   }
 
   object GetAdminAccountResponse {
+    @inline
     def apply(
         AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
         RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined
@@ -268,6 +277,7 @@ package fms {
   }
 
   object GetComplianceDetailRequest {
+    @inline
     def apply(
         MemberAccount: AWSAccountId,
         PolicyId: PolicyId
@@ -287,6 +297,7 @@ package fms {
   }
 
   object GetComplianceDetailResponse {
+    @inline
     def apply(
         PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail] = js.undefined
     ): GetComplianceDetailResponse = {
@@ -300,6 +311,7 @@ package fms {
   trait GetNotificationChannelRequest extends js.Object {}
 
   object GetNotificationChannelRequest {
+    @inline
     def apply(
         ): GetNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
@@ -315,6 +327,7 @@ package fms {
   }
 
   object GetNotificationChannelResponse {
+    @inline
     def apply(
         SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
         SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined
@@ -332,6 +345,7 @@ package fms {
   }
 
   object GetPolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId
     ): GetPolicyRequest = {
@@ -350,6 +364,7 @@ package fms {
   }
 
   object GetPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
@@ -372,6 +387,7 @@ package fms {
   }
 
   object GetProtectionStatusRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         EndTime: js.UndefOr[TimeStamp] = js.undefined,
@@ -402,6 +418,7 @@ package fms {
   }
 
   object GetProtectionStatusResponse {
+    @inline
     def apply(
         AdminAccountId: js.UndefOr[AWSAccountId] = js.undefined,
         Data: js.UndefOr[ProtectionData] = js.undefined,
@@ -425,6 +442,7 @@ package fms {
   }
 
   object ListComplianceStatusRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
@@ -447,6 +465,7 @@ package fms {
   }
 
   object ListComplianceStatusResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined
@@ -467,6 +486,7 @@ package fms {
   }
 
   object ListMemberAccountsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -485,6 +505,7 @@ package fms {
   }
 
   object ListMemberAccountsResponse {
+    @inline
     def apply(
         MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -503,6 +524,7 @@ package fms {
   }
 
   object ListPoliciesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -521,6 +543,7 @@ package fms {
   }
 
   object ListPoliciesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyList: js.UndefOr[PolicySummaryList] = js.undefined
@@ -551,6 +574,7 @@ package fms {
   }
 
   object Policy {
+    @inline
     def apply(
         ExcludeResourceTags: Boolean,
         PolicyName: ResourceName,
@@ -597,6 +621,7 @@ package fms {
   }
 
   object PolicyComplianceDetail {
+    @inline
     def apply(
         EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
         ExpiredAt: js.UndefOr[TimeStamp] = js.undefined,
@@ -633,6 +658,7 @@ package fms {
   }
 
   object PolicyComplianceStatus {
+    @inline
     def apply(
         EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
         IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
@@ -675,6 +701,7 @@ package fms {
   }
 
   object PolicySummary {
+    @inline
     def apply(
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
@@ -701,6 +728,7 @@ package fms {
   }
 
   object PutNotificationChannelRequest {
+    @inline
     def apply(
         SnsRoleName: ResourceArn,
         SnsTopicArn: ResourceArn
@@ -720,6 +748,7 @@ package fms {
   }
 
   object PutPolicyRequest {
+    @inline
     def apply(
         Policy: Policy
     ): PutPolicyRequest = {
@@ -738,6 +767,7 @@ package fms {
   }
 
   object PutPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
@@ -759,6 +789,7 @@ package fms {
   }
 
   object ResourceTag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -782,6 +813,7 @@ package fms {
   }
 
   object SecurityServicePolicyData {
+    @inline
     def apply(
         Type: SecurityServiceType,
         ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined

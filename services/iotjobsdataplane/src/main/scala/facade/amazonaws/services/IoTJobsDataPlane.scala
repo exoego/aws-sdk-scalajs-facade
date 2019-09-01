@@ -30,14 +30,15 @@ package object iotjobsdataplane {
 
   implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
-    def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
+    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
       service.describeJobExecution(params).promise.toFuture
-    def getPendingJobExecutionsFuture(params: GetPendingJobExecutionsRequest): Future[GetPendingJobExecutionsResponse] =
-      service.getPendingJobExecutions(params).promise.toFuture
-    def startNextPendingJobExecutionFuture(
+    @inline def getPendingJobExecutionsFuture(
+        params: GetPendingJobExecutionsRequest
+    ): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise.toFuture
+    @inline def startNextPendingJobExecutionFuture(
         params: StartNextPendingJobExecutionRequest
     ): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise.toFuture
-    def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] =
+    @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] =
       service.updateJobExecution(params).promise.toFuture
   }
 }
@@ -66,6 +67,7 @@ package iotjobsdataplane {
   }
 
   object DescribeJobExecutionRequest {
+    @inline
     def apply(
         jobId: DescribeJobExecutionJobId,
         thingName: ThingName,
@@ -89,6 +91,7 @@ package iotjobsdataplane {
   }
 
   object DescribeJobExecutionResponse {
+    @inline
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): DescribeJobExecutionResponse = {
@@ -104,6 +107,7 @@ package iotjobsdataplane {
   }
 
   object GetPendingJobExecutionsRequest {
+    @inline
     def apply(
         thingName: ThingName
     ): GetPendingJobExecutionsRequest = {
@@ -122,6 +126,7 @@ package iotjobsdataplane {
   }
 
   object GetPendingJobExecutionsResponse {
+    @inline
     def apply(
         inProgressJobs: js.UndefOr[JobExecutionSummaryList] = js.undefined,
         queuedJobs: js.UndefOr[JobExecutionSummaryList] = js.undefined
@@ -152,6 +157,7 @@ package iotjobsdataplane {
   }
 
   object JobExecution {
+    @inline
     def apply(
         approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
@@ -194,6 +200,7 @@ package iotjobsdataplane {
   }
 
   object JobExecutionState {
+    @inline
     def apply(
         status: js.UndefOr[JobExecutionStatus] = js.undefined,
         statusDetails: js.UndefOr[DetailsMap] = js.undefined,
@@ -235,6 +242,7 @@ package iotjobsdataplane {
   }
 
   object JobExecutionSummary {
+    @inline
     def apply(
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
@@ -262,6 +270,7 @@ package iotjobsdataplane {
   }
 
   object StartNextPendingJobExecutionRequest {
+    @inline
     def apply(
         thingName: ThingName,
         statusDetails: js.UndefOr[DetailsMap] = js.undefined,
@@ -283,6 +292,7 @@ package iotjobsdataplane {
   }
 
   object StartNextPendingJobExecutionResponse {
+    @inline
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): StartNextPendingJobExecutionResponse = {
@@ -306,6 +316,7 @@ package iotjobsdataplane {
   }
 
   object UpdateJobExecutionRequest {
+    @inline
     def apply(
         jobId: JobId,
         status: JobExecutionStatus,
@@ -340,6 +351,7 @@ package iotjobsdataplane {
   }
 
   object UpdateJobExecutionResponse {
+    @inline
     def apply(
         executionState: js.UndefOr[JobExecutionState] = js.undefined,
         jobDocument: js.UndefOr[JobDocument] = js.undefined

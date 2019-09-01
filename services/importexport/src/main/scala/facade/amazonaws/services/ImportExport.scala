@@ -53,13 +53,18 @@ package object importexport {
 
   implicit final class ImportExportOps(private val service: ImportExport) extends AnyVal {
 
-    def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] = service.cancelJob(params).promise.toFuture
-    def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] = service.createJob(params).promise.toFuture
-    def getShippingLabelFuture(params: GetShippingLabelInput): Future[GetShippingLabelOutput] =
+    @inline def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] =
+      service.cancelJob(params).promise.toFuture
+    @inline def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] =
+      service.createJob(params).promise.toFuture
+    @inline def getShippingLabelFuture(params: GetShippingLabelInput): Future[GetShippingLabelOutput] =
       service.getShippingLabel(params).promise.toFuture
-    def getStatusFuture(params: GetStatusInput): Future[GetStatusOutput] = service.getStatus(params).promise.toFuture
-    def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput]    = service.listJobs(params).promise.toFuture
-    def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] = service.updateJob(params).promise.toFuture
+    @inline def getStatusFuture(params: GetStatusInput): Future[GetStatusOutput] =
+      service.getStatus(params).promise.toFuture
+    @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] =
+      service.listJobs(params).promise.toFuture
+    @inline def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] =
+      service.updateJob(params).promise.toFuture
   }
 }
 
@@ -87,6 +92,7 @@ package importexport {
   }
 
   object Artifact {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         URL: js.UndefOr[URL] = js.undefined
@@ -116,6 +122,7 @@ package importexport {
   }
 
   object CancelJobInput {
+    @inline
     def apply(
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
@@ -138,6 +145,7 @@ package importexport {
   }
 
   object CancelJobOutput {
+    @inline
     def apply(
         Success: js.UndefOr[Success] = js.undefined
     ): CancelJobOutput = {
@@ -168,6 +176,7 @@ package importexport {
   }
 
   object CreateJobInput {
+    @inline
     def apply(
         JobType: JobType,
         Manifest: Manifest,
@@ -201,6 +210,7 @@ package importexport {
   }
 
   object CreateJobOutput {
+    @inline
     def apply(
         ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
         JobId: js.UndefOr[JobId] = js.undefined,
@@ -253,6 +263,7 @@ package importexport {
   }
 
   object GetShippingLabelInput {
+    @inline
     def apply(
         jobIds: JobIdList,
         APIVersion: js.UndefOr[APIVersion] = js.undefined,
@@ -293,6 +304,7 @@ package importexport {
   }
 
   object GetShippingLabelOutput {
+    @inline
     def apply(
         ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
         Warning: js.UndefOr[GenericString] = js.undefined
@@ -314,6 +326,7 @@ package importexport {
   }
 
   object GetStatusInput {
+    @inline
     def apply(
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
@@ -351,6 +364,7 @@ package importexport {
   }
 
   object GetStatusOutput {
+    @inline
     def apply(
         ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
         Carrier: js.UndefOr[Carrier] = js.undefined,
@@ -466,6 +480,7 @@ package importexport {
   }
 
   object Job {
+    @inline
     def apply(
         CreationDate: js.UndefOr[CreationDate] = js.undefined,
         IsCanceled: js.UndefOr[IsCanceled] = js.undefined,
@@ -502,6 +517,7 @@ package importexport {
   }
 
   object ListJobsInput {
+    @inline
     def apply(
         APIVersion: js.UndefOr[APIVersion] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -525,6 +541,7 @@ package importexport {
   }
 
   object ListJobsOutput {
+    @inline
     def apply(
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         Jobs: js.UndefOr[JobsList] = js.undefined
@@ -613,6 +630,7 @@ package importexport {
   }
 
   object UpdateJobInput {
+    @inline
     def apply(
         JobId: JobId,
         JobType: JobType,
@@ -643,6 +661,7 @@ package importexport {
   }
 
   object UpdateJobOutput {
+    @inline
     def apply(
         ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
         Success: js.UndefOr[Success] = js.undefined,

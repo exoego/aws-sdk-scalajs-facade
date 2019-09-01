@@ -34,15 +34,16 @@ package object rdsdataservice {
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
 
-    def batchExecuteStatementFuture(params: BatchExecuteStatementRequest): Future[BatchExecuteStatementResponse] =
-      service.batchExecuteStatement(params).promise.toFuture
-    def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
+    @inline def batchExecuteStatementFuture(
+        params: BatchExecuteStatementRequest
+    ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise.toFuture
+    @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
       service.beginTransaction(params).promise.toFuture
-    def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
+    @inline def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
       service.commitTransaction(params).promise.toFuture
-    def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
+    @inline def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
       service.executeStatement(params).promise.toFuture
-    def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
+    @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
       service.rollbackTransaction(params).promise.toFuture
   }
 }
@@ -79,6 +80,7 @@ package rdsdataservice {
   }
 
   object BatchExecuteStatementRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         secretArn: Arn,
@@ -112,6 +114,7 @@ package rdsdataservice {
   }
 
   object BatchExecuteStatementResponse {
+    @inline
     def apply(
         updateResults: js.UndefOr[UpdateResults] = js.undefined
     ): BatchExecuteStatementResponse = {
@@ -134,6 +137,7 @@ package rdsdataservice {
   }
 
   object BeginTransactionRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         secretArn: Arn,
@@ -161,6 +165,7 @@ package rdsdataservice {
   }
 
   object BeginTransactionResponse {
+    @inline
     def apply(
         transactionId: js.UndefOr[Id] = js.undefined
     ): BeginTransactionResponse = {
@@ -192,6 +197,7 @@ package rdsdataservice {
   }
 
   object ColumnMetadata {
+    @inline
     def apply(
         arrayBaseColumnType: js.UndefOr[Int] = js.undefined,
         isAutoIncrement: js.UndefOr[Boolean] = js.undefined,
@@ -238,6 +244,7 @@ package rdsdataservice {
   }
 
   object CommitTransactionRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         secretArn: Arn,
@@ -262,6 +269,7 @@ package rdsdataservice {
   }
 
   object CommitTransactionResponse {
+    @inline
     def apply(
         transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
     ): CommitTransactionResponse = {
@@ -285,6 +293,7 @@ package rdsdataservice {
   }
 
   object ExecuteSqlRequest {
+    @inline
     def apply(
         awsSecretStoreArn: Arn,
         dbClusterOrInstanceArn: Arn,
@@ -314,6 +323,7 @@ package rdsdataservice {
   }
 
   object ExecuteSqlResponse {
+    @inline
     def apply(
         sqlStatementResults: js.UndefOr[SqlStatementResults] = js.undefined
     ): ExecuteSqlResponse = {
@@ -341,6 +351,7 @@ package rdsdataservice {
   }
 
   object ExecuteStatementRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         secretArn: Arn,
@@ -381,6 +392,7 @@ package rdsdataservice {
   }
 
   object ExecuteStatementResponse {
+    @inline
     def apply(
         columnMetadata: js.UndefOr[Metadata] = js.undefined,
         generatedFields: js.UndefOr[FieldList] = js.undefined,
@@ -410,6 +422,7 @@ package rdsdataservice {
   }
 
   object Field {
+    @inline
     def apply(
         blobValue: js.UndefOr[Blob] = js.undefined,
         booleanValue: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -438,6 +451,7 @@ package rdsdataservice {
   }
 
   object Record {
+    @inline
     def apply(
         values: js.UndefOr[Row] = js.undefined
     ): Record = {
@@ -457,6 +471,7 @@ package rdsdataservice {
   }
 
   object ResultFrame {
+    @inline
     def apply(
         records: js.UndefOr[Records] = js.undefined,
         resultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined
@@ -478,6 +493,7 @@ package rdsdataservice {
   }
 
   object ResultSetMetadata {
+    @inline
     def apply(
         columnCount: js.UndefOr[Double] = js.undefined,
         columnMetadata: js.UndefOr[Metadata] = js.undefined
@@ -501,6 +517,7 @@ package rdsdataservice {
   }
 
   object RollbackTransactionRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         secretArn: Arn,
@@ -526,6 +543,7 @@ package rdsdataservice {
   }
 
   object RollbackTransactionResponse {
+    @inline
     def apply(
         transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
     ): RollbackTransactionResponse = {
@@ -545,6 +563,7 @@ package rdsdataservice {
   }
 
   object SqlParameter {
+    @inline
     def apply(
         name: js.UndefOr[ParameterName] = js.undefined,
         value: js.UndefOr[Field] = js.undefined
@@ -566,6 +585,7 @@ package rdsdataservice {
   }
 
   object SqlStatementResult {
+    @inline
     def apply(
         numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
         resultFrame: js.UndefOr[ResultFrame] = js.undefined
@@ -586,6 +606,7 @@ package rdsdataservice {
   }
 
   object StructValue {
+    @inline
     def apply(
         attributes: js.UndefOr[ArrayValueList] = js.undefined
     ): StructValue = {
@@ -604,6 +625,7 @@ package rdsdataservice {
   }
 
   object UpdateResult {
+    @inline
     def apply(
         generatedFields: js.UndefOr[FieldList] = js.undefined
     ): UpdateResult = {
@@ -631,6 +653,7 @@ package rdsdataservice {
   }
 
   object Value {
+    @inline
     def apply(
         arrayValues: js.UndefOr[ArrayValueList] = js.undefined,
         bigIntValue: js.UndefOr[BoxedLong] = js.undefined,

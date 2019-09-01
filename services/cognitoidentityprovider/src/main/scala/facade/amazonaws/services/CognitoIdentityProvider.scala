@@ -165,213 +165,235 @@ package object cognitoidentityprovider {
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
-    def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
+    @inline def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
       service.addCustomAttributes(params).promise.toFuture
-    def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] =
+    @inline def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] =
       service.adminAddUserToGroup(params).promise.toFuture
-    def adminConfirmSignUpFuture(params: AdminConfirmSignUpRequest): Future[AdminConfirmSignUpResponse] =
+    @inline def adminConfirmSignUpFuture(params: AdminConfirmSignUpRequest): Future[AdminConfirmSignUpResponse] =
       service.adminConfirmSignUp(params).promise.toFuture
-    def adminCreateUserFuture(params: AdminCreateUserRequest): Future[AdminCreateUserResponse] =
+    @inline def adminCreateUserFuture(params: AdminCreateUserRequest): Future[AdminCreateUserResponse] =
       service.adminCreateUser(params).promise.toFuture
-    def adminDeleteUserAttributesFuture(
+    @inline def adminDeleteUserAttributesFuture(
         params: AdminDeleteUserAttributesRequest
     ): Future[AdminDeleteUserAttributesResponse] = service.adminDeleteUserAttributes(params).promise.toFuture
-    def adminDeleteUserFuture(params: AdminDeleteUserRequest): Future[js.Object] =
+    @inline def adminDeleteUserFuture(params: AdminDeleteUserRequest): Future[js.Object] =
       service.adminDeleteUser(params).promise.toFuture
-    def adminDisableProviderForUserFuture(
+    @inline def adminDisableProviderForUserFuture(
         params: AdminDisableProviderForUserRequest
     ): Future[AdminDisableProviderForUserResponse] = service.adminDisableProviderForUser(params).promise.toFuture
-    def adminDisableUserFuture(params: AdminDisableUserRequest): Future[AdminDisableUserResponse] =
+    @inline def adminDisableUserFuture(params: AdminDisableUserRequest): Future[AdminDisableUserResponse] =
       service.adminDisableUser(params).promise.toFuture
-    def adminEnableUserFuture(params: AdminEnableUserRequest): Future[AdminEnableUserResponse] =
+    @inline def adminEnableUserFuture(params: AdminEnableUserRequest): Future[AdminEnableUserResponse] =
       service.adminEnableUser(params).promise.toFuture
-    def adminForgetDeviceFuture(params: AdminForgetDeviceRequest): Future[js.Object] =
+    @inline def adminForgetDeviceFuture(params: AdminForgetDeviceRequest): Future[js.Object] =
       service.adminForgetDevice(params).promise.toFuture
-    def adminGetDeviceFuture(params: AdminGetDeviceRequest): Future[AdminGetDeviceResponse] =
+    @inline def adminGetDeviceFuture(params: AdminGetDeviceRequest): Future[AdminGetDeviceResponse] =
       service.adminGetDevice(params).promise.toFuture
-    def adminGetUserFuture(params: AdminGetUserRequest): Future[AdminGetUserResponse] =
+    @inline def adminGetUserFuture(params: AdminGetUserRequest): Future[AdminGetUserResponse] =
       service.adminGetUser(params).promise.toFuture
-    def adminInitiateAuthFuture(params: AdminInitiateAuthRequest): Future[AdminInitiateAuthResponse] =
+    @inline def adminInitiateAuthFuture(params: AdminInitiateAuthRequest): Future[AdminInitiateAuthResponse] =
       service.adminInitiateAuth(params).promise.toFuture
-    def adminLinkProviderForUserFuture(
+    @inline def adminLinkProviderForUserFuture(
         params: AdminLinkProviderForUserRequest
     ): Future[AdminLinkProviderForUserResponse] = service.adminLinkProviderForUser(params).promise.toFuture
-    def adminListDevicesFuture(params: AdminListDevicesRequest): Future[AdminListDevicesResponse] =
+    @inline def adminListDevicesFuture(params: AdminListDevicesRequest): Future[AdminListDevicesResponse] =
       service.adminListDevices(params).promise.toFuture
-    def adminListGroupsForUserFuture(params: AdminListGroupsForUserRequest): Future[AdminListGroupsForUserResponse] =
-      service.adminListGroupsForUser(params).promise.toFuture
-    def adminListUserAuthEventsFuture(params: AdminListUserAuthEventsRequest): Future[AdminListUserAuthEventsResponse] =
-      service.adminListUserAuthEvents(params).promise.toFuture
-    def adminRemoveUserFromGroupFuture(params: AdminRemoveUserFromGroupRequest): Future[js.Object] =
+    @inline def adminListGroupsForUserFuture(
+        params: AdminListGroupsForUserRequest
+    ): Future[AdminListGroupsForUserResponse] = service.adminListGroupsForUser(params).promise.toFuture
+    @inline def adminListUserAuthEventsFuture(
+        params: AdminListUserAuthEventsRequest
+    ): Future[AdminListUserAuthEventsResponse] = service.adminListUserAuthEvents(params).promise.toFuture
+    @inline def adminRemoveUserFromGroupFuture(params: AdminRemoveUserFromGroupRequest): Future[js.Object] =
       service.adminRemoveUserFromGroup(params).promise.toFuture
-    def adminResetUserPasswordFuture(params: AdminResetUserPasswordRequest): Future[AdminResetUserPasswordResponse] =
-      service.adminResetUserPassword(params).promise.toFuture
-    def adminRespondToAuthChallengeFuture(
+    @inline def adminResetUserPasswordFuture(
+        params: AdminResetUserPasswordRequest
+    ): Future[AdminResetUserPasswordResponse] = service.adminResetUserPassword(params).promise.toFuture
+    @inline def adminRespondToAuthChallengeFuture(
         params: AdminRespondToAuthChallengeRequest
     ): Future[AdminRespondToAuthChallengeResponse] = service.adminRespondToAuthChallenge(params).promise.toFuture
-    def adminSetUserMFAPreferenceFuture(
+    @inline def adminSetUserMFAPreferenceFuture(
         params: AdminSetUserMFAPreferenceRequest
     ): Future[AdminSetUserMFAPreferenceResponse] = service.adminSetUserMFAPreference(params).promise.toFuture
-    def adminSetUserPasswordFuture(params: AdminSetUserPasswordRequest): Future[AdminSetUserPasswordResponse] =
+    @inline def adminSetUserPasswordFuture(params: AdminSetUserPasswordRequest): Future[AdminSetUserPasswordResponse] =
       service.adminSetUserPassword(params).promise.toFuture
-    def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] =
+    @inline def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] =
       service.adminSetUserSettings(params).promise.toFuture
-    def adminUpdateAuthEventFeedbackFuture(
+    @inline def adminUpdateAuthEventFeedbackFuture(
         params: AdminUpdateAuthEventFeedbackRequest
     ): Future[AdminUpdateAuthEventFeedbackResponse] = service.adminUpdateAuthEventFeedback(params).promise.toFuture
-    def adminUpdateDeviceStatusFuture(params: AdminUpdateDeviceStatusRequest): Future[AdminUpdateDeviceStatusResponse] =
-      service.adminUpdateDeviceStatus(params).promise.toFuture
-    def adminUpdateUserAttributesFuture(
+    @inline def adminUpdateDeviceStatusFuture(
+        params: AdminUpdateDeviceStatusRequest
+    ): Future[AdminUpdateDeviceStatusResponse] = service.adminUpdateDeviceStatus(params).promise.toFuture
+    @inline def adminUpdateUserAttributesFuture(
         params: AdminUpdateUserAttributesRequest
     ): Future[AdminUpdateUserAttributesResponse] = service.adminUpdateUserAttributes(params).promise.toFuture
-    def adminUserGlobalSignOutFuture(params: AdminUserGlobalSignOutRequest): Future[AdminUserGlobalSignOutResponse] =
-      service.adminUserGlobalSignOut(params).promise.toFuture
-    def associateSoftwareTokenFuture(params: AssociateSoftwareTokenRequest): Future[AssociateSoftwareTokenResponse] =
-      service.associateSoftwareToken(params).promise.toFuture
-    def changePasswordFuture(params: ChangePasswordRequest): Future[ChangePasswordResponse] =
+    @inline def adminUserGlobalSignOutFuture(
+        params: AdminUserGlobalSignOutRequest
+    ): Future[AdminUserGlobalSignOutResponse] = service.adminUserGlobalSignOut(params).promise.toFuture
+    @inline def associateSoftwareTokenFuture(
+        params: AssociateSoftwareTokenRequest
+    ): Future[AssociateSoftwareTokenResponse] = service.associateSoftwareToken(params).promise.toFuture
+    @inline def changePasswordFuture(params: ChangePasswordRequest): Future[ChangePasswordResponse] =
       service.changePassword(params).promise.toFuture
-    def confirmDeviceFuture(params: ConfirmDeviceRequest): Future[ConfirmDeviceResponse] =
+    @inline def confirmDeviceFuture(params: ConfirmDeviceRequest): Future[ConfirmDeviceResponse] =
       service.confirmDevice(params).promise.toFuture
-    def confirmForgotPasswordFuture(params: ConfirmForgotPasswordRequest): Future[ConfirmForgotPasswordResponse] =
-      service.confirmForgotPassword(params).promise.toFuture
-    def confirmSignUpFuture(params: ConfirmSignUpRequest): Future[ConfirmSignUpResponse] =
+    @inline def confirmForgotPasswordFuture(
+        params: ConfirmForgotPasswordRequest
+    ): Future[ConfirmForgotPasswordResponse] = service.confirmForgotPassword(params).promise.toFuture
+    @inline def confirmSignUpFuture(params: ConfirmSignUpRequest): Future[ConfirmSignUpResponse] =
       service.confirmSignUp(params).promise.toFuture
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture
-    def createIdentityProviderFuture(params: CreateIdentityProviderRequest): Future[CreateIdentityProviderResponse] =
-      service.createIdentityProvider(params).promise.toFuture
-    def createResourceServerFuture(params: CreateResourceServerRequest): Future[CreateResourceServerResponse] =
+    @inline def createIdentityProviderFuture(
+        params: CreateIdentityProviderRequest
+    ): Future[CreateIdentityProviderResponse] = service.createIdentityProvider(params).promise.toFuture
+    @inline def createResourceServerFuture(params: CreateResourceServerRequest): Future[CreateResourceServerResponse] =
       service.createResourceServer(params).promise.toFuture
-    def createUserImportJobFuture(params: CreateUserImportJobRequest): Future[CreateUserImportJobResponse] =
+    @inline def createUserImportJobFuture(params: CreateUserImportJobRequest): Future[CreateUserImportJobResponse] =
       service.createUserImportJob(params).promise.toFuture
-    def createUserPoolClientFuture(params: CreateUserPoolClientRequest): Future[CreateUserPoolClientResponse] =
+    @inline def createUserPoolClientFuture(params: CreateUserPoolClientRequest): Future[CreateUserPoolClientResponse] =
       service.createUserPoolClient(params).promise.toFuture
-    def createUserPoolDomainFuture(params: CreateUserPoolDomainRequest): Future[CreateUserPoolDomainResponse] =
+    @inline def createUserPoolDomainFuture(params: CreateUserPoolDomainRequest): Future[CreateUserPoolDomainResponse] =
       service.createUserPoolDomain(params).promise.toFuture
-    def createUserPoolFuture(params: CreateUserPoolRequest): Future[CreateUserPoolResponse] =
+    @inline def createUserPoolFuture(params: CreateUserPoolRequest): Future[CreateUserPoolResponse] =
       service.createUserPool(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] = service.deleteGroup(params).promise.toFuture
-    def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[js.Object] =
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] =
+      service.deleteGroup(params).promise.toFuture
+    @inline def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[js.Object] =
       service.deleteIdentityProvider(params).promise.toFuture
-    def deleteResourceServerFuture(params: DeleteResourceServerRequest): Future[js.Object] =
+    @inline def deleteResourceServerFuture(params: DeleteResourceServerRequest): Future[js.Object] =
       service.deleteResourceServer(params).promise.toFuture
-    def deleteUserAttributesFuture(params: DeleteUserAttributesRequest): Future[DeleteUserAttributesResponse] =
+    @inline def deleteUserAttributesFuture(params: DeleteUserAttributesRequest): Future[DeleteUserAttributesResponse] =
       service.deleteUserAttributes(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
-    def deleteUserPoolClientFuture(params: DeleteUserPoolClientRequest): Future[js.Object] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
+      service.deleteUser(params).promise.toFuture
+    @inline def deleteUserPoolClientFuture(params: DeleteUserPoolClientRequest): Future[js.Object] =
       service.deleteUserPoolClient(params).promise.toFuture
-    def deleteUserPoolDomainFuture(params: DeleteUserPoolDomainRequest): Future[DeleteUserPoolDomainResponse] =
+    @inline def deleteUserPoolDomainFuture(params: DeleteUserPoolDomainRequest): Future[DeleteUserPoolDomainResponse] =
       service.deleteUserPoolDomain(params).promise.toFuture
-    def deleteUserPoolFuture(params: DeleteUserPoolRequest): Future[js.Object] =
+    @inline def deleteUserPoolFuture(params: DeleteUserPoolRequest): Future[js.Object] =
       service.deleteUserPool(params).promise.toFuture
-    def describeIdentityProviderFuture(
+    @inline def describeIdentityProviderFuture(
         params: DescribeIdentityProviderRequest
     ): Future[DescribeIdentityProviderResponse] = service.describeIdentityProvider(params).promise.toFuture
-    def describeResourceServerFuture(params: DescribeResourceServerRequest): Future[DescribeResourceServerResponse] =
-      service.describeResourceServer(params).promise.toFuture
-    def describeRiskConfigurationFuture(
+    @inline def describeResourceServerFuture(
+        params: DescribeResourceServerRequest
+    ): Future[DescribeResourceServerResponse] = service.describeResourceServer(params).promise.toFuture
+    @inline def describeRiskConfigurationFuture(
         params: DescribeRiskConfigurationRequest
     ): Future[DescribeRiskConfigurationResponse] = service.describeRiskConfiguration(params).promise.toFuture
-    def describeUserImportJobFuture(params: DescribeUserImportJobRequest): Future[DescribeUserImportJobResponse] =
-      service.describeUserImportJob(params).promise.toFuture
-    def describeUserPoolClientFuture(params: DescribeUserPoolClientRequest): Future[DescribeUserPoolClientResponse] =
-      service.describeUserPoolClient(params).promise.toFuture
-    def describeUserPoolDomainFuture(params: DescribeUserPoolDomainRequest): Future[DescribeUserPoolDomainResponse] =
-      service.describeUserPoolDomain(params).promise.toFuture
-    def describeUserPoolFuture(params: DescribeUserPoolRequest): Future[DescribeUserPoolResponse] =
+    @inline def describeUserImportJobFuture(
+        params: DescribeUserImportJobRequest
+    ): Future[DescribeUserImportJobResponse] = service.describeUserImportJob(params).promise.toFuture
+    @inline def describeUserPoolClientFuture(
+        params: DescribeUserPoolClientRequest
+    ): Future[DescribeUserPoolClientResponse] = service.describeUserPoolClient(params).promise.toFuture
+    @inline def describeUserPoolDomainFuture(
+        params: DescribeUserPoolDomainRequest
+    ): Future[DescribeUserPoolDomainResponse] = service.describeUserPoolDomain(params).promise.toFuture
+    @inline def describeUserPoolFuture(params: DescribeUserPoolRequest): Future[DescribeUserPoolResponse] =
       service.describeUserPool(params).promise.toFuture
-    def forgetDeviceFuture(params: ForgetDeviceRequest): Future[js.Object] =
+    @inline def forgetDeviceFuture(params: ForgetDeviceRequest): Future[js.Object] =
       service.forgetDevice(params).promise.toFuture
-    def forgotPasswordFuture(params: ForgotPasswordRequest): Future[ForgotPasswordResponse] =
+    @inline def forgotPasswordFuture(params: ForgotPasswordRequest): Future[ForgotPasswordResponse] =
       service.forgotPassword(params).promise.toFuture
-    def getCSVHeaderFuture(params: GetCSVHeaderRequest): Future[GetCSVHeaderResponse] =
+    @inline def getCSVHeaderFuture(params: GetCSVHeaderRequest): Future[GetCSVHeaderResponse] =
       service.getCSVHeader(params).promise.toFuture
-    def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
       service.getDevice(params).promise.toFuture
-    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise.toFuture
-    def getIdentityProviderByIdentifierFuture(
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] =
+      service.getGroup(params).promise.toFuture
+    @inline def getIdentityProviderByIdentifierFuture(
         params: GetIdentityProviderByIdentifierRequest
     ): Future[GetIdentityProviderByIdentifierResponse] =
       service.getIdentityProviderByIdentifier(params).promise.toFuture
-    def getSigningCertificateFuture(params: GetSigningCertificateRequest): Future[GetSigningCertificateResponse] =
-      service.getSigningCertificate(params).promise.toFuture
-    def getUICustomizationFuture(params: GetUICustomizationRequest): Future[GetUICustomizationResponse] =
+    @inline def getSigningCertificateFuture(
+        params: GetSigningCertificateRequest
+    ): Future[GetSigningCertificateResponse] = service.getSigningCertificate(params).promise.toFuture
+    @inline def getUICustomizationFuture(params: GetUICustomizationRequest): Future[GetUICustomizationResponse] =
       service.getUICustomization(params).promise.toFuture
-    def getUserAttributeVerificationCodeFuture(
+    @inline def getUserAttributeVerificationCodeFuture(
         params: GetUserAttributeVerificationCodeRequest
     ): Future[GetUserAttributeVerificationCodeResponse] =
       service.getUserAttributeVerificationCode(params).promise.toFuture
-    def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise.toFuture
-    def getUserPoolMfaConfigFuture(params: GetUserPoolMfaConfigRequest): Future[GetUserPoolMfaConfigResponse] =
+    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] =
+      service.getUser(params).promise.toFuture
+    @inline def getUserPoolMfaConfigFuture(params: GetUserPoolMfaConfigRequest): Future[GetUserPoolMfaConfigResponse] =
       service.getUserPoolMfaConfig(params).promise.toFuture
-    def globalSignOutFuture(params: GlobalSignOutRequest): Future[GlobalSignOutResponse] =
+    @inline def globalSignOutFuture(params: GlobalSignOutRequest): Future[GlobalSignOutResponse] =
       service.globalSignOut(params).promise.toFuture
-    def initiateAuthFuture(params: InitiateAuthRequest): Future[InitiateAuthResponse] =
+    @inline def initiateAuthFuture(params: InitiateAuthRequest): Future[InitiateAuthResponse] =
       service.initiateAuth(params).promise.toFuture
-    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
       service.listDevices(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
       service.listGroups(params).promise.toFuture
-    def listIdentityProvidersFuture(params: ListIdentityProvidersRequest): Future[ListIdentityProvidersResponse] =
-      service.listIdentityProviders(params).promise.toFuture
-    def listResourceServersFuture(params: ListResourceServersRequest): Future[ListResourceServersResponse] =
+    @inline def listIdentityProvidersFuture(
+        params: ListIdentityProvidersRequest
+    ): Future[ListIdentityProvidersResponse] = service.listIdentityProviders(params).promise.toFuture
+    @inline def listResourceServersFuture(params: ListResourceServersRequest): Future[ListResourceServersResponse] =
       service.listResourceServers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listUserImportJobsFuture(params: ListUserImportJobsRequest): Future[ListUserImportJobsResponse] =
+    @inline def listUserImportJobsFuture(params: ListUserImportJobsRequest): Future[ListUserImportJobsResponse] =
       service.listUserImportJobs(params).promise.toFuture
-    def listUserPoolClientsFuture(params: ListUserPoolClientsRequest): Future[ListUserPoolClientsResponse] =
+    @inline def listUserPoolClientsFuture(params: ListUserPoolClientsRequest): Future[ListUserPoolClientsResponse] =
       service.listUserPoolClients(params).promise.toFuture
-    def listUserPoolsFuture(params: ListUserPoolsRequest): Future[ListUserPoolsResponse] =
+    @inline def listUserPoolsFuture(params: ListUserPoolsRequest): Future[ListUserPoolsResponse] =
       service.listUserPools(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] =
+    @inline def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] =
       service.listUsersInGroup(params).promise.toFuture
-    def resendConfirmationCodeFuture(params: ResendConfirmationCodeRequest): Future[ResendConfirmationCodeResponse] =
-      service.resendConfirmationCode(params).promise.toFuture
-    def respondToAuthChallengeFuture(params: RespondToAuthChallengeRequest): Future[RespondToAuthChallengeResponse] =
-      service.respondToAuthChallenge(params).promise.toFuture
-    def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] =
+    @inline def resendConfirmationCodeFuture(
+        params: ResendConfirmationCodeRequest
+    ): Future[ResendConfirmationCodeResponse] = service.resendConfirmationCode(params).promise.toFuture
+    @inline def respondToAuthChallengeFuture(
+        params: RespondToAuthChallengeRequest
+    ): Future[RespondToAuthChallengeResponse] = service.respondToAuthChallenge(params).promise.toFuture
+    @inline def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] =
       service.setRiskConfiguration(params).promise.toFuture
-    def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] =
+    @inline def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] =
       service.setUICustomization(params).promise.toFuture
-    def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] =
+    @inline def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] =
       service.setUserMFAPreference(params).promise.toFuture
-    def setUserPoolMfaConfigFuture(params: SetUserPoolMfaConfigRequest): Future[SetUserPoolMfaConfigResponse] =
+    @inline def setUserPoolMfaConfigFuture(params: SetUserPoolMfaConfigRequest): Future[SetUserPoolMfaConfigResponse] =
       service.setUserPoolMfaConfig(params).promise.toFuture
-    def setUserSettingsFuture(params: SetUserSettingsRequest): Future[SetUserSettingsResponse] =
+    @inline def setUserSettingsFuture(params: SetUserSettingsRequest): Future[SetUserSettingsResponse] =
       service.setUserSettings(params).promise.toFuture
-    def signUpFuture(params: SignUpRequest): Future[SignUpResponse] = service.signUp(params).promise.toFuture
-    def startUserImportJobFuture(params: StartUserImportJobRequest): Future[StartUserImportJobResponse] =
+    @inline def signUpFuture(params: SignUpRequest): Future[SignUpResponse] = service.signUp(params).promise.toFuture
+    @inline def startUserImportJobFuture(params: StartUserImportJobRequest): Future[StartUserImportJobResponse] =
       service.startUserImportJob(params).promise.toFuture
-    def stopUserImportJobFuture(params: StopUserImportJobRequest): Future[StopUserImportJobResponse] =
+    @inline def stopUserImportJobFuture(params: StopUserImportJobRequest): Future[StopUserImportJobResponse] =
       service.stopUserImportJob(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAuthEventFeedbackFuture(params: UpdateAuthEventFeedbackRequest): Future[UpdateAuthEventFeedbackResponse] =
-      service.updateAuthEventFeedback(params).promise.toFuture
-    def updateDeviceStatusFuture(params: UpdateDeviceStatusRequest): Future[UpdateDeviceStatusResponse] =
+    @inline def updateAuthEventFeedbackFuture(
+        params: UpdateAuthEventFeedbackRequest
+    ): Future[UpdateAuthEventFeedbackResponse] = service.updateAuthEventFeedback(params).promise.toFuture
+    @inline def updateDeviceStatusFuture(params: UpdateDeviceStatusRequest): Future[UpdateDeviceStatusResponse] =
       service.updateDeviceStatus(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
       service.updateGroup(params).promise.toFuture
-    def updateIdentityProviderFuture(params: UpdateIdentityProviderRequest): Future[UpdateIdentityProviderResponse] =
-      service.updateIdentityProvider(params).promise.toFuture
-    def updateResourceServerFuture(params: UpdateResourceServerRequest): Future[UpdateResourceServerResponse] =
+    @inline def updateIdentityProviderFuture(
+        params: UpdateIdentityProviderRequest
+    ): Future[UpdateIdentityProviderResponse] = service.updateIdentityProvider(params).promise.toFuture
+    @inline def updateResourceServerFuture(params: UpdateResourceServerRequest): Future[UpdateResourceServerResponse] =
       service.updateResourceServer(params).promise.toFuture
-    def updateUserAttributesFuture(params: UpdateUserAttributesRequest): Future[UpdateUserAttributesResponse] =
+    @inline def updateUserAttributesFuture(params: UpdateUserAttributesRequest): Future[UpdateUserAttributesResponse] =
       service.updateUserAttributes(params).promise.toFuture
-    def updateUserPoolClientFuture(params: UpdateUserPoolClientRequest): Future[UpdateUserPoolClientResponse] =
+    @inline def updateUserPoolClientFuture(params: UpdateUserPoolClientRequest): Future[UpdateUserPoolClientResponse] =
       service.updateUserPoolClient(params).promise.toFuture
-    def updateUserPoolDomainFuture(params: UpdateUserPoolDomainRequest): Future[UpdateUserPoolDomainResponse] =
+    @inline def updateUserPoolDomainFuture(params: UpdateUserPoolDomainRequest): Future[UpdateUserPoolDomainResponse] =
       service.updateUserPoolDomain(params).promise.toFuture
-    def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] =
+    @inline def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] =
       service.updateUserPool(params).promise.toFuture
-    def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] =
+    @inline def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] =
       service.verifySoftwareToken(params).promise.toFuture
-    def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] =
+    @inline def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] =
       service.verifyUserAttribute(params).promise.toFuture
   }
 }
@@ -528,6 +550,7 @@ package cognitoidentityprovider {
   }
 
   object AccountTakeoverActionType {
+    @inline
     def apply(
         EventAction: AccountTakeoverEventActionType,
         Notify: AccountTakeoverActionNotifyType
@@ -552,6 +575,7 @@ package cognitoidentityprovider {
   }
 
   object AccountTakeoverActionsType {
+    @inline
     def apply(
         HighAction: js.UndefOr[AccountTakeoverActionType] = js.undefined,
         LowAction: js.UndefOr[AccountTakeoverActionType] = js.undefined,
@@ -584,6 +608,7 @@ package cognitoidentityprovider {
   }
 
   object AccountTakeoverRiskConfigurationType {
+    @inline
     def apply(
         Actions: AccountTakeoverActionsType,
         NotifyConfiguration: js.UndefOr[NotifyConfigurationType] = js.undefined
@@ -607,6 +632,7 @@ package cognitoidentityprovider {
   }
 
   object AddCustomAttributesRequest {
+    @inline
     def apply(
         CustomAttributes: CustomAttributesListType,
         UserPoolId: UserPoolIdType
@@ -627,6 +653,7 @@ package cognitoidentityprovider {
   trait AddCustomAttributesResponse extends js.Object {}
 
   object AddCustomAttributesResponse {
+    @inline
     def apply(
         ): AddCustomAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -643,6 +670,7 @@ package cognitoidentityprovider {
   }
 
   object AdminAddUserToGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType,
@@ -668,6 +696,7 @@ package cognitoidentityprovider {
   }
 
   object AdminConfirmSignUpRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -688,6 +717,7 @@ package cognitoidentityprovider {
   trait AdminConfirmSignUpResponse extends js.Object {}
 
   object AdminConfirmSignUpResponse {
+    @inline
     def apply(
         ): AdminConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
@@ -707,6 +737,7 @@ package cognitoidentityprovider {
   }
 
   object AdminCreateUserConfigType {
+    @inline
     def apply(
         AllowAdminCreateUserOnly: js.UndefOr[BooleanType] = js.undefined,
         InviteMessageTemplate: js.UndefOr[MessageTemplateType] = js.undefined,
@@ -738,6 +769,7 @@ package cognitoidentityprovider {
   }
 
   object AdminCreateUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
@@ -772,6 +804,7 @@ package cognitoidentityprovider {
   }
 
   object AdminCreateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[UserType] = js.undefined
     ): AdminCreateUserResponse = {
@@ -792,6 +825,7 @@ package cognitoidentityprovider {
   }
 
   object AdminDeleteUserAttributesRequest {
+    @inline
     def apply(
         UserAttributeNames: AttributeNameListType,
         UserPoolId: UserPoolIdType,
@@ -814,6 +848,7 @@ package cognitoidentityprovider {
   trait AdminDeleteUserAttributesResponse extends js.Object {}
 
   object AdminDeleteUserAttributesResponse {
+    @inline
     def apply(
         ): AdminDeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -832,6 +867,7 @@ package cognitoidentityprovider {
   }
 
   object AdminDeleteUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -852,6 +888,7 @@ package cognitoidentityprovider {
   }
 
   object AdminDisableProviderForUserRequest {
+    @inline
     def apply(
         User: ProviderUserIdentifierType,
         UserPoolId: StringType
@@ -869,6 +906,7 @@ package cognitoidentityprovider {
   trait AdminDisableProviderForUserResponse extends js.Object {}
 
   object AdminDisableProviderForUserResponse {
+    @inline
     def apply(
         ): AdminDisableProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -887,6 +925,7 @@ package cognitoidentityprovider {
   }
 
   object AdminDisableUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -907,6 +946,7 @@ package cognitoidentityprovider {
   trait AdminDisableUserResponse extends js.Object {}
 
   object AdminDisableUserResponse {
+    @inline
     def apply(
         ): AdminDisableUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -925,6 +965,7 @@ package cognitoidentityprovider {
   }
 
   object AdminEnableUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -945,6 +986,7 @@ package cognitoidentityprovider {
   trait AdminEnableUserResponse extends js.Object {}
 
   object AdminEnableUserResponse {
+    @inline
     def apply(
         ): AdminEnableUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -964,6 +1006,7 @@ package cognitoidentityprovider {
   }
 
   object AdminForgetDeviceRequest {
+    @inline
     def apply(
         DeviceKey: DeviceKeyType,
         UserPoolId: UserPoolIdType,
@@ -990,6 +1033,7 @@ package cognitoidentityprovider {
   }
 
   object AdminGetDeviceRequest {
+    @inline
     def apply(
         DeviceKey: DeviceKeyType,
         UserPoolId: UserPoolIdType,
@@ -1014,6 +1058,7 @@ package cognitoidentityprovider {
   }
 
   object AdminGetDeviceResponse {
+    @inline
     def apply(
         Device: DeviceType
     ): AdminGetDeviceResponse = {
@@ -1035,6 +1080,7 @@ package cognitoidentityprovider {
   }
 
   object AdminGetUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -1065,6 +1111,7 @@ package cognitoidentityprovider {
   }
 
   object AdminGetUserResponse {
+    @inline
     def apply(
         Username: UsernameType,
         Enabled: js.UndefOr[BooleanType] = js.undefined,
@@ -1107,6 +1154,7 @@ package cognitoidentityprovider {
   }
 
   object AdminInitiateAuthRequest {
+    @inline
     def apply(
         AuthFlow: AuthFlowType,
         ClientId: ClientIdType,
@@ -1142,6 +1190,7 @@ package cognitoidentityprovider {
   }
 
   object AdminInitiateAuthResponse {
+    @inline
     def apply(
         AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
         ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
@@ -1165,6 +1214,7 @@ package cognitoidentityprovider {
   }
 
   object AdminLinkProviderForUserRequest {
+    @inline
     def apply(
         DestinationUser: ProviderUserIdentifierType,
         SourceUser: ProviderUserIdentifierType,
@@ -1184,6 +1234,7 @@ package cognitoidentityprovider {
   trait AdminLinkProviderForUserResponse extends js.Object {}
 
   object AdminLinkProviderForUserResponse {
+    @inline
     def apply(
         ): AdminLinkProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -1204,6 +1255,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListDevicesRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
@@ -1231,6 +1283,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListDevicesResponse {
+    @inline
     def apply(
         Devices: js.UndefOr[DeviceListType] = js.undefined,
         PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined
@@ -1251,6 +1304,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListGroupsForUserRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
@@ -1275,6 +1329,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListGroupsForUserResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[GroupListType] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -1295,6 +1350,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListUserAuthEventsRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
@@ -1319,6 +1375,7 @@ package cognitoidentityprovider {
   }
 
   object AdminListUserAuthEventsResponse {
+    @inline
     def apply(
         AuthEvents: js.UndefOr[AuthEventsType] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -1338,6 +1395,7 @@ package cognitoidentityprovider {
   }
 
   object AdminRemoveUserFromGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType,
@@ -1363,6 +1421,7 @@ package cognitoidentityprovider {
   }
 
   object AdminResetUserPasswordRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -1383,6 +1442,7 @@ package cognitoidentityprovider {
   trait AdminResetUserPasswordResponse extends js.Object {}
 
   object AdminResetUserPasswordResponse {
+    @inline
     def apply(
         ): AdminResetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
@@ -1406,6 +1466,7 @@ package cognitoidentityprovider {
   }
 
   object AdminRespondToAuthChallengeRequest {
+    @inline
     def apply(
         ChallengeName: ChallengeNameType,
         ClientId: ClientIdType,
@@ -1441,6 +1502,7 @@ package cognitoidentityprovider {
   }
 
   object AdminRespondToAuthChallengeResponse {
+    @inline
     def apply(
         AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
         ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
@@ -1465,6 +1527,7 @@ package cognitoidentityprovider {
   }
 
   object AdminSetUserMFAPreferenceRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
@@ -1486,6 +1549,7 @@ package cognitoidentityprovider {
   trait AdminSetUserMFAPreferenceResponse extends js.Object {}
 
   object AdminSetUserMFAPreferenceResponse {
+    @inline
     def apply(
         ): AdminSetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1503,6 +1567,7 @@ package cognitoidentityprovider {
   }
 
   object AdminSetUserPasswordRequest {
+    @inline
     def apply(
         Password: PasswordType,
         UserPoolId: UserPoolIdType,
@@ -1524,6 +1589,7 @@ package cognitoidentityprovider {
   trait AdminSetUserPasswordResponse extends js.Object {}
 
   object AdminSetUserPasswordResponse {
+    @inline
     def apply(
         ): AdminSetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
@@ -1543,6 +1609,7 @@ package cognitoidentityprovider {
   }
 
   object AdminSetUserSettingsRequest {
+    @inline
     def apply(
         MFAOptions: MFAOptionListType,
         UserPoolId: UserPoolIdType,
@@ -1565,6 +1632,7 @@ package cognitoidentityprovider {
   trait AdminSetUserSettingsResponse extends js.Object {}
 
   object AdminSetUserSettingsResponse {
+    @inline
     def apply(
         ): AdminSetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1582,6 +1650,7 @@ package cognitoidentityprovider {
   }
 
   object AdminUpdateAuthEventFeedbackRequest {
+    @inline
     def apply(
         EventId: EventIdType,
         FeedbackValue: FeedbackValueType,
@@ -1603,6 +1672,7 @@ package cognitoidentityprovider {
   trait AdminUpdateAuthEventFeedbackResponse extends js.Object {}
 
   object AdminUpdateAuthEventFeedbackResponse {
+    @inline
     def apply(
         ): AdminUpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
@@ -1623,6 +1693,7 @@ package cognitoidentityprovider {
   }
 
   object AdminUpdateDeviceStatusRequest {
+    @inline
     def apply(
         DeviceKey: DeviceKeyType,
         UserPoolId: UserPoolIdType,
@@ -1647,6 +1718,7 @@ package cognitoidentityprovider {
   trait AdminUpdateDeviceStatusResponse extends js.Object {}
 
   object AdminUpdateDeviceStatusResponse {
+    @inline
     def apply(
         ): AdminUpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
@@ -1666,6 +1738,7 @@ package cognitoidentityprovider {
   }
 
   object AdminUpdateUserAttributesRequest {
+    @inline
     def apply(
         UserAttributes: AttributeListType,
         UserPoolId: UserPoolIdType,
@@ -1688,6 +1761,7 @@ package cognitoidentityprovider {
   trait AdminUpdateUserAttributesResponse extends js.Object {}
 
   object AdminUpdateUserAttributesResponse {
+    @inline
     def apply(
         ): AdminUpdateUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -1706,6 +1780,7 @@ package cognitoidentityprovider {
   }
 
   object AdminUserGlobalSignOutRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType
@@ -1726,6 +1801,7 @@ package cognitoidentityprovider {
   trait AdminUserGlobalSignOutResponse extends js.Object {}
 
   object AdminUserGlobalSignOutResponse {
+    @inline
     def apply(
         ): AdminUserGlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
@@ -1762,6 +1838,7 @@ package cognitoidentityprovider {
   }
 
   object AnalyticsConfigurationType {
+    @inline
     def apply(
         ApplicationId: HexStringType,
         ExternalId: StringType,
@@ -1789,6 +1866,7 @@ package cognitoidentityprovider {
   }
 
   object AnalyticsMetadataType {
+    @inline
     def apply(
         AnalyticsEndpointId: js.UndefOr[StringType] = js.undefined
     ): AnalyticsMetadataType = {
@@ -1805,6 +1883,7 @@ package cognitoidentityprovider {
   }
 
   object AssociateSoftwareTokenRequest {
+    @inline
     def apply(
         AccessToken: js.UndefOr[TokenModelType] = js.undefined,
         Session: js.UndefOr[SessionType] = js.undefined
@@ -1823,6 +1902,7 @@ package cognitoidentityprovider {
   }
 
   object AssociateSoftwareTokenResponse {
+    @inline
     def apply(
         SecretCode: js.UndefOr[SecretCodeType] = js.undefined,
         Session: js.UndefOr[SessionType] = js.undefined
@@ -1853,6 +1933,7 @@ package cognitoidentityprovider {
   }
 
   object AttributeType {
+    @inline
     def apply(
         Name: AttributeNameType,
         Value: js.UndefOr[AttributeValueType] = js.undefined
@@ -1882,6 +1963,7 @@ package cognitoidentityprovider {
   }
 
   object AuthEventType {
+    @inline
     def apply(
         ChallengeResponses: js.UndefOr[ChallengeResponseListType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
@@ -1932,6 +2014,7 @@ package cognitoidentityprovider {
   }
 
   object AuthenticationResultType {
+    @inline
     def apply(
         AccessToken: js.UndefOr[TokenModelType] = js.undefined,
         ExpiresIn: js.UndefOr[IntegerType] = js.undefined,
@@ -2003,6 +2086,7 @@ package cognitoidentityprovider {
   }
 
   object ChallengeResponseType {
+    @inline
     def apply(
         ChallengeName: js.UndefOr[ChallengeName] = js.undefined,
         ChallengeResponse: js.UndefOr[ChallengeResponse] = js.undefined
@@ -2025,6 +2109,7 @@ package cognitoidentityprovider {
   }
 
   object ChangePasswordRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         PreviousPassword: PasswordType,
@@ -2047,6 +2132,7 @@ package cognitoidentityprovider {
   trait ChangePasswordResponse extends js.Object {}
 
   object ChangePasswordResponse {
+    @inline
     def apply(
         ): ChangePasswordResponse = {
       val __obj = js.Dynamic.literal()
@@ -2066,6 +2152,7 @@ package cognitoidentityprovider {
   }
 
   object CodeDeliveryDetailsType {
+    @inline
     def apply(
         AttributeName: js.UndefOr[AttributeNameType] = js.undefined,
         DeliveryMedium: js.UndefOr[DeliveryMediumType] = js.undefined,
@@ -2088,6 +2175,7 @@ package cognitoidentityprovider {
   }
 
   object CompromisedCredentialsActionsType {
+    @inline
     def apply(
         EventAction: CompromisedCredentialsEventActionType
     ): CompromisedCredentialsActionsType = {
@@ -2116,6 +2204,7 @@ package cognitoidentityprovider {
   }
 
   object CompromisedCredentialsRiskConfigurationType {
+    @inline
     def apply(
         Actions: CompromisedCredentialsActionsType,
         EventFilter: js.UndefOr[EventFiltersType] = js.undefined
@@ -2141,6 +2230,7 @@ package cognitoidentityprovider {
   }
 
   object ConfirmDeviceRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         DeviceKey: DeviceKeyType,
@@ -2169,6 +2259,7 @@ package cognitoidentityprovider {
   }
 
   object ConfirmDeviceResponse {
+    @inline
     def apply(
         UserConfirmationNecessary: js.UndefOr[BooleanType] = js.undefined
     ): ConfirmDeviceResponse = {
@@ -2195,6 +2286,7 @@ package cognitoidentityprovider {
   }
 
   object ConfirmForgotPasswordRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         ConfirmationCode: ConfirmationCodeType,
@@ -2225,6 +2317,7 @@ package cognitoidentityprovider {
   trait ConfirmForgotPasswordResponse extends js.Object {}
 
   object ConfirmForgotPasswordResponse {
+    @inline
     def apply(
         ): ConfirmForgotPasswordResponse = {
       val __obj = js.Dynamic.literal()
@@ -2248,6 +2341,7 @@ package cognitoidentityprovider {
   }
 
   object ConfirmSignUpRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         ConfirmationCode: ConfirmationCodeType,
@@ -2278,6 +2372,7 @@ package cognitoidentityprovider {
   trait ConfirmSignUpResponse extends js.Object {}
 
   object ConfirmSignUpResponse {
+    @inline
     def apply(
         ): ConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
@@ -2299,6 +2394,7 @@ package cognitoidentityprovider {
   }
 
   object ContextDataType {
+    @inline
     def apply(
         HttpHeaders: HttpHeaderList,
         IpAddress: StringType,
@@ -2328,6 +2424,7 @@ package cognitoidentityprovider {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType,
@@ -2353,6 +2450,7 @@ package cognitoidentityprovider {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[GroupType] = js.undefined
     ): CreateGroupResponse = {
@@ -2373,6 +2471,7 @@ package cognitoidentityprovider {
   }
 
   object CreateIdentityProviderRequest {
+    @inline
     def apply(
         ProviderDetails: ProviderDetailsType,
         ProviderName: ProviderNameTypeV1,
@@ -2400,6 +2499,7 @@ package cognitoidentityprovider {
   }
 
   object CreateIdentityProviderResponse {
+    @inline
     def apply(
         IdentityProvider: IdentityProviderType
     ): CreateIdentityProviderResponse = {
@@ -2420,6 +2520,7 @@ package cognitoidentityprovider {
   }
 
   object CreateResourceServerRequest {
+    @inline
     def apply(
         Identifier: ResourceServerIdentifierType,
         Name: ResourceServerNameType,
@@ -2443,6 +2544,7 @@ package cognitoidentityprovider {
   }
 
   object CreateResourceServerResponse {
+    @inline
     def apply(
         ResourceServer: ResourceServerType
     ): CreateResourceServerResponse = {
@@ -2465,6 +2567,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserImportJobRequest {
+    @inline
     def apply(
         CloudWatchLogsRoleArn: ArnType,
         JobName: UserImportJobNameType,
@@ -2489,6 +2592,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserImportJobResponse {
+    @inline
     def apply(
         UserImportJob: js.UndefOr[UserImportJobType] = js.undefined
     ): CreateUserImportJobResponse = {
@@ -2521,6 +2625,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolClientRequest {
+    @inline
     def apply(
         ClientName: ClientNameType,
         UserPoolId: UserPoolIdType,
@@ -2573,6 +2678,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolClientResponse {
+    @inline
     def apply(
         UserPoolClient: js.UndefOr[UserPoolClientType] = js.undefined
     ): CreateUserPoolClientResponse = {
@@ -2590,6 +2696,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolDomainRequest {
+    @inline
     def apply(
         Domain: DomainType,
         UserPoolId: UserPoolIdType,
@@ -2611,6 +2718,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolDomainResponse {
+    @inline
     def apply(
         CloudFrontDomain: js.UndefOr[DomainType] = js.undefined
     ): CreateUserPoolDomainResponse = {
@@ -2647,6 +2755,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolRequest {
+    @inline
     def apply(
         PoolName: UserPoolNameType,
         AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
@@ -2705,6 +2814,7 @@ package cognitoidentityprovider {
   }
 
   object CreateUserPoolResponse {
+    @inline
     def apply(
         UserPool: js.UndefOr[UserPoolType] = js.undefined
     ): CreateUserPoolResponse = {
@@ -2723,6 +2833,7 @@ package cognitoidentityprovider {
   }
 
   object CustomDomainConfigType {
+    @inline
     def apply(
         CertificateArn: ArnType
     ): CustomDomainConfigType = {
@@ -2748,6 +2859,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType
@@ -2768,6 +2880,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteIdentityProviderRequest {
+    @inline
     def apply(
         ProviderName: ProviderNameType,
         UserPoolId: UserPoolIdType
@@ -2788,6 +2901,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteResourceServerRequest {
+    @inline
     def apply(
         Identifier: ResourceServerIdentifierType,
         UserPoolId: UserPoolIdType
@@ -2811,6 +2925,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteUserAttributesRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         UserAttributeNames: AttributeNameListType
@@ -2831,6 +2946,7 @@ package cognitoidentityprovider {
   trait DeleteUserAttributesResponse extends js.Object {}
 
   object DeleteUserAttributesResponse {
+    @inline
     def apply(
         ): DeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2849,6 +2965,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteUserPoolClientRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         UserPoolId: UserPoolIdType
@@ -2869,6 +2986,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteUserPoolDomainRequest {
+    @inline
     def apply(
         Domain: DomainType,
         UserPoolId: UserPoolIdType
@@ -2886,6 +3004,7 @@ package cognitoidentityprovider {
   trait DeleteUserPoolDomainResponse extends js.Object {}
 
   object DeleteUserPoolDomainResponse {
+    @inline
     def apply(
         ): DeleteUserPoolDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -2903,6 +3022,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteUserPoolRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType
     ): DeleteUserPoolRequest = {
@@ -2923,6 +3043,7 @@ package cognitoidentityprovider {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType
     ): DeleteUserRequest = {
@@ -2948,6 +3069,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeIdentityProviderRequest {
+    @inline
     def apply(
         ProviderName: ProviderNameType,
         UserPoolId: UserPoolIdType
@@ -2967,6 +3089,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeIdentityProviderResponse {
+    @inline
     def apply(
         IdentityProvider: IdentityProviderType
     ): DescribeIdentityProviderResponse = {
@@ -2985,6 +3108,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeResourceServerRequest {
+    @inline
     def apply(
         Identifier: ResourceServerIdentifierType,
         UserPoolId: UserPoolIdType
@@ -3004,6 +3128,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeResourceServerResponse {
+    @inline
     def apply(
         ResourceServer: ResourceServerType
     ): DescribeResourceServerResponse = {
@@ -3022,6 +3147,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeRiskConfigurationRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         ClientId: js.UndefOr[ClientIdType] = js.undefined
@@ -3041,6 +3167,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeRiskConfigurationResponse {
+    @inline
     def apply(
         RiskConfiguration: RiskConfigurationType
     ): DescribeRiskConfigurationResponse = {
@@ -3062,6 +3189,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserImportJobRequest {
+    @inline
     def apply(
         JobId: UserImportJobIdType,
         UserPoolId: UserPoolIdType
@@ -3084,6 +3212,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserImportJobResponse {
+    @inline
     def apply(
         UserImportJob: js.UndefOr[UserImportJobType] = js.undefined
     ): DescribeUserImportJobResponse = {
@@ -3103,6 +3232,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolClientRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         UserPoolId: UserPoolIdType
@@ -3125,6 +3255,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolClientResponse {
+    @inline
     def apply(
         UserPoolClient: js.UndefOr[UserPoolClientType] = js.undefined
     ): DescribeUserPoolClientResponse = {
@@ -3140,6 +3271,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolDomainRequest {
+    @inline
     def apply(
         Domain: DomainType
     ): DescribeUserPoolDomainRequest = {
@@ -3157,6 +3289,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolDomainResponse {
+    @inline
     def apply(
         DomainDescription: js.UndefOr[DomainDescriptionType] = js.undefined
     ): DescribeUserPoolDomainResponse = {
@@ -3175,6 +3308,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType
     ): DescribeUserPoolRequest = {
@@ -3195,6 +3329,7 @@ package cognitoidentityprovider {
   }
 
   object DescribeUserPoolResponse {
+    @inline
     def apply(
         UserPool: js.UndefOr[UserPoolType] = js.undefined
     ): DescribeUserPoolResponse = {
@@ -3214,6 +3349,7 @@ package cognitoidentityprovider {
   }
 
   object DeviceConfigurationType {
+    @inline
     def apply(
         ChallengeRequiredOnNewDevice: js.UndefOr[BooleanType] = js.undefined,
         DeviceOnlyRememberedOnUserPrompt: js.UndefOr[BooleanType] = js.undefined
@@ -3246,6 +3382,7 @@ package cognitoidentityprovider {
   }
 
   object DeviceSecretVerifierConfigType {
+    @inline
     def apply(
         PasswordVerifier: js.UndefOr[StringType] = js.undefined,
         Salt: js.UndefOr[StringType] = js.undefined
@@ -3270,6 +3407,7 @@ package cognitoidentityprovider {
   }
 
   object DeviceType {
+    @inline
     def apply(
         DeviceAttributes: js.UndefOr[AttributeListType] = js.undefined,
         DeviceCreateDate: js.UndefOr[DateType] = js.undefined,
@@ -3305,6 +3443,7 @@ package cognitoidentityprovider {
   }
 
   object DomainDescriptionType {
+    @inline
     def apply(
         AWSAccountId: js.UndefOr[AWSAccountIdType] = js.undefined,
         CloudFrontDistribution: js.UndefOr[StringType] = js.undefined,
@@ -3349,6 +3488,7 @@ package cognitoidentityprovider {
   }
 
   object EmailConfigurationType {
+    @inline
     def apply(
         EmailSendingAccount: js.UndefOr[EmailSendingAccountType] = js.undefined,
         ReplyToEmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
@@ -3382,6 +3522,7 @@ package cognitoidentityprovider {
   }
 
   object EventContextDataType {
+    @inline
     def apply(
         City: js.UndefOr[StringType] = js.undefined,
         Country: js.UndefOr[StringType] = js.undefined,
@@ -3410,6 +3551,7 @@ package cognitoidentityprovider {
   }
 
   object EventFeedbackType {
+    @inline
     def apply(
         FeedbackValue: FeedbackValueType,
         Provider: StringType,
@@ -3450,6 +3592,7 @@ package cognitoidentityprovider {
   }
 
   object EventRiskType {
+    @inline
     def apply(
         RiskDecision: js.UndefOr[RiskDecisionType] = js.undefined,
         RiskLevel: js.UndefOr[RiskLevelType] = js.undefined
@@ -3494,6 +3637,7 @@ package cognitoidentityprovider {
   }
 
   object ForgetDeviceRequest {
+    @inline
     def apply(
         DeviceKey: DeviceKeyType,
         AccessToken: js.UndefOr[TokenModelType] = js.undefined
@@ -3520,6 +3664,7 @@ package cognitoidentityprovider {
   }
 
   object ForgotPasswordRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         Username: UsernameType,
@@ -3548,6 +3693,7 @@ package cognitoidentityprovider {
   }
 
   object ForgotPasswordResponse {
+    @inline
     def apply(
         CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType] = js.undefined
     ): ForgotPasswordResponse = {
@@ -3566,6 +3712,7 @@ package cognitoidentityprovider {
   }
 
   object GetCSVHeaderRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType
     ): GetCSVHeaderRequest = {
@@ -3587,6 +3734,7 @@ package cognitoidentityprovider {
   }
 
   object GetCSVHeaderResponse {
+    @inline
     def apply(
         CSVHeader: js.UndefOr[ListOfStringTypes] = js.undefined,
         UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined
@@ -3608,6 +3756,7 @@ package cognitoidentityprovider {
   }
 
   object GetDeviceRequest {
+    @inline
     def apply(
         DeviceKey: DeviceKeyType,
         AccessToken: js.UndefOr[TokenModelType] = js.undefined
@@ -3630,6 +3779,7 @@ package cognitoidentityprovider {
   }
 
   object GetDeviceResponse {
+    @inline
     def apply(
         Device: DeviceType
     ): GetDeviceResponse = {
@@ -3648,6 +3798,7 @@ package cognitoidentityprovider {
   }
 
   object GetGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType
@@ -3667,6 +3818,7 @@ package cognitoidentityprovider {
   }
 
   object GetGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[GroupType] = js.undefined
     ): GetGroupResponse = {
@@ -3683,6 +3835,7 @@ package cognitoidentityprovider {
   }
 
   object GetIdentityProviderByIdentifierRequest {
+    @inline
     def apply(
         IdpIdentifier: IdpIdentifierType,
         UserPoolId: UserPoolIdType
@@ -3702,6 +3855,7 @@ package cognitoidentityprovider {
   }
 
   object GetIdentityProviderByIdentifierResponse {
+    @inline
     def apply(
         IdentityProvider: IdentityProviderType
     ): GetIdentityProviderByIdentifierResponse = {
@@ -3722,6 +3876,7 @@ package cognitoidentityprovider {
   }
 
   object GetSigningCertificateRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType
     ): GetSigningCertificateRequest = {
@@ -3742,6 +3897,7 @@ package cognitoidentityprovider {
   }
 
   object GetSigningCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[StringType] = js.undefined
     ): GetSigningCertificateResponse = {
@@ -3758,6 +3914,7 @@ package cognitoidentityprovider {
   }
 
   object GetUICustomizationRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         ClientId: js.UndefOr[ClientIdType] = js.undefined
@@ -3777,6 +3934,7 @@ package cognitoidentityprovider {
   }
 
   object GetUICustomizationResponse {
+    @inline
     def apply(
         UICustomization: UICustomizationType
     ): GetUICustomizationResponse = {
@@ -3798,6 +3956,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserAttributeVerificationCodeRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         AttributeName: AttributeNameType
@@ -3820,6 +3979,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserAttributeVerificationCodeResponse {
+    @inline
     def apply(
         CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType] = js.undefined
     ): GetUserAttributeVerificationCodeResponse = {
@@ -3835,6 +3995,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserPoolMfaConfigRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType
     ): GetUserPoolMfaConfigRequest = {
@@ -3854,6 +4015,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserPoolMfaConfigResponse {
+    @inline
     def apply(
         MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
         SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType] = js.undefined,
@@ -3878,6 +4040,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType
     ): GetUserRequest = {
@@ -3902,6 +4065,7 @@ package cognitoidentityprovider {
   }
 
   object GetUserResponse {
+    @inline
     def apply(
         UserAttributes: AttributeListType,
         Username: UsernameType,
@@ -3930,6 +4094,7 @@ package cognitoidentityprovider {
   }
 
   object GlobalSignOutRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType
     ): GlobalSignOutRequest = {
@@ -3948,6 +4113,7 @@ package cognitoidentityprovider {
   trait GlobalSignOutResponse extends js.Object {}
 
   object GlobalSignOutResponse {
+    @inline
     def apply(
         ): GlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
@@ -3971,6 +4137,7 @@ package cognitoidentityprovider {
   }
 
   object GroupType {
+    @inline
     def apply(
         CreationDate: js.UndefOr[DateType] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
@@ -4002,6 +4169,7 @@ package cognitoidentityprovider {
   }
 
   object HttpHeader {
+    @inline
     def apply(
         headerName: js.UndefOr[StringType] = js.undefined,
         headerValue: js.UndefOr[StringType] = js.undefined
@@ -4029,6 +4197,7 @@ package cognitoidentityprovider {
   }
 
   object IdentityProviderType {
+    @inline
     def apply(
         AttributeMapping: js.UndefOr[AttributeMappingType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
@@ -4076,6 +4245,7 @@ package cognitoidentityprovider {
   }
 
   object InitiateAuthRequest {
+    @inline
     def apply(
         AuthFlow: AuthFlowType,
         ClientId: ClientIdType,
@@ -4109,6 +4279,7 @@ package cognitoidentityprovider {
   }
 
   object InitiateAuthResponse {
+    @inline
     def apply(
         AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
         ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
@@ -4142,6 +4313,7 @@ package cognitoidentityprovider {
   }
 
   object LambdaConfigType {
+    @inline
     def apply(
         CreateAuthChallenge: js.UndefOr[ArnType] = js.undefined,
         CustomMessage: js.UndefOr[ArnType] = js.undefined,
@@ -4182,6 +4354,7 @@ package cognitoidentityprovider {
   }
 
   object ListDevicesRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         Limit: js.UndefOr[QueryLimitType] = js.undefined,
@@ -4207,6 +4380,7 @@ package cognitoidentityprovider {
   }
 
   object ListDevicesResponse {
+    @inline
     def apply(
         Devices: js.UndefOr[DeviceListType] = js.undefined,
         PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined
@@ -4226,6 +4400,7 @@ package cognitoidentityprovider {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         Limit: js.UndefOr[QueryLimitType] = js.undefined,
@@ -4248,6 +4423,7 @@ package cognitoidentityprovider {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[GroupListType] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -4267,6 +4443,7 @@ package cognitoidentityprovider {
   }
 
   object ListIdentityProvidersRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         MaxResults: js.UndefOr[ListProvidersLimitType] = js.undefined,
@@ -4289,6 +4466,7 @@ package cognitoidentityprovider {
   }
 
   object ListIdentityProvidersResponse {
+    @inline
     def apply(
         Providers: ProvidersListType,
         NextToken: js.UndefOr[PaginationKeyType] = js.undefined
@@ -4310,6 +4488,7 @@ package cognitoidentityprovider {
   }
 
   object ListResourceServersRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         MaxResults: js.UndefOr[ListResourceServersLimitType] = js.undefined,
@@ -4332,6 +4511,7 @@ package cognitoidentityprovider {
   }
 
   object ListResourceServersResponse {
+    @inline
     def apply(
         ResourceServers: ResourceServersListType,
         NextToken: js.UndefOr[PaginationKeyType] = js.undefined
@@ -4351,6 +4531,7 @@ package cognitoidentityprovider {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: ArnType
     ): ListTagsForResourceRequest = {
@@ -4368,6 +4549,7 @@ package cognitoidentityprovider {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[UserPoolTagsType] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -4388,6 +4570,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserImportJobsRequest {
+    @inline
     def apply(
         MaxResults: PoolQueryLimitType,
         UserPoolId: UserPoolIdType,
@@ -4413,6 +4596,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserImportJobsResponse {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationKeyType] = js.undefined,
         UserImportJobs: js.UndefOr[UserImportJobsListType] = js.undefined
@@ -4435,6 +4619,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserPoolClientsRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         MaxResults: js.UndefOr[QueryLimit] = js.undefined,
@@ -4460,6 +4645,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserPoolClientsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationKey] = js.undefined,
         UserPoolClients: js.UndefOr[UserPoolClientListType] = js.undefined
@@ -4481,6 +4667,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserPoolsRequest {
+    @inline
     def apply(
         MaxResults: PoolQueryLimitType,
         NextToken: js.UndefOr[PaginationKeyType] = js.undefined
@@ -4504,6 +4691,7 @@ package cognitoidentityprovider {
   }
 
   object ListUserPoolsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationKeyType] = js.undefined,
         UserPools: js.UndefOr[UserPoolListType] = js.undefined
@@ -4524,6 +4712,7 @@ package cognitoidentityprovider {
   }
 
   object ListUsersInGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType,
@@ -4548,6 +4737,7 @@ package cognitoidentityprovider {
   }
 
   object ListUsersInGroupResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationKey] = js.undefined,
         Users: js.UndefOr[UsersListType] = js.undefined
@@ -4572,6 +4762,7 @@ package cognitoidentityprovider {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         AttributesToGet: js.UndefOr[SearchedAttributeNamesListType] = js.undefined,
@@ -4601,6 +4792,7 @@ package cognitoidentityprovider {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined,
         Users: js.UndefOr[UsersListType] = js.undefined
@@ -4622,6 +4814,7 @@ package cognitoidentityprovider {
   }
 
   object MFAOptionType {
+    @inline
     def apply(
         AttributeName: js.UndefOr[AttributeNameType] = js.undefined,
         DeliveryMedium: js.UndefOr[DeliveryMediumType] = js.undefined
@@ -4651,6 +4844,7 @@ package cognitoidentityprovider {
   }
 
   object MessageTemplateType {
+    @inline
     def apply(
         EmailMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
         EmailSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
@@ -4674,6 +4868,7 @@ package cognitoidentityprovider {
   }
 
   object NewDeviceMetadataType {
+    @inline
     def apply(
         DeviceGroupKey: js.UndefOr[StringType] = js.undefined,
         DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined
@@ -4699,6 +4894,7 @@ package cognitoidentityprovider {
   }
 
   object NotifyConfigurationType {
+    @inline
     def apply(
         SourceArn: ArnType,
         BlockEmail: js.UndefOr[NotifyEmailType] = js.undefined,
@@ -4731,6 +4927,7 @@ package cognitoidentityprovider {
   }
 
   object NotifyEmailType {
+    @inline
     def apply(
         Subject: EmailNotificationSubjectType,
         HtmlBody: js.UndefOr[EmailNotificationBodyType] = js.undefined,
@@ -4756,6 +4953,7 @@ package cognitoidentityprovider {
   }
 
   object NumberAttributeConstraintsType {
+    @inline
     def apply(
         MaxValue: js.UndefOr[StringType] = js.undefined,
         MinValue: js.UndefOr[StringType] = js.undefined
@@ -4789,6 +4987,7 @@ package cognitoidentityprovider {
   }
 
   object PasswordPolicyType {
+    @inline
     def apply(
         MinimumLength: js.UndefOr[PasswordPolicyMinLengthType] = js.undefined,
         RequireLowercase: js.UndefOr[BooleanType] = js.undefined,
@@ -4822,6 +5021,7 @@ package cognitoidentityprovider {
   }
 
   object ProviderDescription {
+    @inline
     def apply(
         CreationDate: js.UndefOr[DateType] = js.undefined,
         LastModifiedDate: js.UndefOr[DateType] = js.undefined,
@@ -4848,6 +5048,7 @@ package cognitoidentityprovider {
   }
 
   object ProviderUserIdentifierType {
+    @inline
     def apply(
         ProviderAttributeName: js.UndefOr[StringType] = js.undefined,
         ProviderAttributeValue: js.UndefOr[StringType] = js.undefined,
@@ -4874,6 +5075,7 @@ package cognitoidentityprovider {
   }
 
   object ResendConfirmationCodeRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         Username: UsernameType,
@@ -4902,6 +5104,7 @@ package cognitoidentityprovider {
   }
 
   object ResendConfirmationCodeResponse {
+    @inline
     def apply(
         CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType] = js.undefined
     ): ResendConfirmationCodeResponse = {
@@ -4921,6 +5124,7 @@ package cognitoidentityprovider {
   }
 
   object ResourceServerScopeType {
+    @inline
     def apply(
         ScopeDescription: ResourceServerScopeDescriptionType,
         ScopeName: ResourceServerScopeNameType
@@ -4946,6 +5150,7 @@ package cognitoidentityprovider {
   }
 
   object ResourceServerType {
+    @inline
     def apply(
         Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined,
         Name: js.UndefOr[ResourceServerNameType] = js.undefined,
@@ -4975,6 +5180,7 @@ package cognitoidentityprovider {
   }
 
   object RespondToAuthChallengeRequest {
+    @inline
     def apply(
         ChallengeName: ChallengeNameType,
         ClientId: ClientIdType,
@@ -5008,6 +5214,7 @@ package cognitoidentityprovider {
   }
 
   object RespondToAuthChallengeResponse {
+    @inline
     def apply(
         AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
         ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
@@ -5037,6 +5244,7 @@ package cognitoidentityprovider {
   }
 
   object RiskConfigurationType {
+    @inline
     def apply(
         AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined,
         ClientId: js.UndefOr[ClientIdType] = js.undefined,
@@ -5080,6 +5288,7 @@ package cognitoidentityprovider {
   }
 
   object RiskExceptionConfigurationType {
+    @inline
     def apply(
         BlockedIPRangeList: js.UndefOr[BlockedIPRangeListType] = js.undefined,
         SkippedIPRangeList: js.UndefOr[SkippedIPRangeListType] = js.undefined
@@ -5109,6 +5318,7 @@ package cognitoidentityprovider {
   }
 
   object SMSMfaSettingsType {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanType] = js.undefined,
         PreferredMfa: js.UndefOr[BooleanType] = js.undefined
@@ -5135,6 +5345,7 @@ package cognitoidentityprovider {
   }
 
   object SchemaAttributeType {
+    @inline
     def apply(
         AttributeDataType: js.UndefOr[AttributeDataType] = js.undefined,
         DeveloperOnlyAttribute: js.UndefOr[BooleanType] = js.undefined,
@@ -5170,6 +5381,7 @@ package cognitoidentityprovider {
   }
 
   object SetRiskConfigurationRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined,
@@ -5201,6 +5413,7 @@ package cognitoidentityprovider {
   }
 
   object SetRiskConfigurationResponse {
+    @inline
     def apply(
         RiskConfiguration: RiskConfigurationType
     ): SetRiskConfigurationResponse = {
@@ -5221,6 +5434,7 @@ package cognitoidentityprovider {
   }
 
   object SetUICustomizationRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         CSS: js.UndefOr[CSSType] = js.undefined,
@@ -5244,6 +5458,7 @@ package cognitoidentityprovider {
   }
 
   object SetUICustomizationResponse {
+    @inline
     def apply(
         UICustomization: UICustomizationType
     ): SetUICustomizationResponse = {
@@ -5263,6 +5478,7 @@ package cognitoidentityprovider {
   }
 
   object SetUserMFAPreferenceRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         SMSMfaSettings: js.UndefOr[SMSMfaSettingsType] = js.undefined,
@@ -5282,6 +5498,7 @@ package cognitoidentityprovider {
   trait SetUserMFAPreferenceResponse extends js.Object {}
 
   object SetUserMFAPreferenceResponse {
+    @inline
     def apply(
         ): SetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5299,6 +5516,7 @@ package cognitoidentityprovider {
   }
 
   object SetUserPoolMfaConfigRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
@@ -5326,6 +5544,7 @@ package cognitoidentityprovider {
   }
 
   object SetUserPoolMfaConfigResponse {
+    @inline
     def apply(
         MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
         SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType] = js.undefined,
@@ -5351,6 +5570,7 @@ package cognitoidentityprovider {
   }
 
   object SetUserSettingsRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         MFAOptions: MFAOptionListType
@@ -5371,6 +5591,7 @@ package cognitoidentityprovider {
   trait SetUserSettingsResponse extends js.Object {}
 
   object SetUserSettingsResponse {
+    @inline
     def apply(
         ): SetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -5395,6 +5616,7 @@ package cognitoidentityprovider {
   }
 
   object SignUpRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         Password: PasswordType,
@@ -5431,6 +5653,7 @@ package cognitoidentityprovider {
   }
 
   object SignUpResponse {
+    @inline
     def apply(
         UserConfirmed: BooleanType,
         UserSub: StringType,
@@ -5456,6 +5679,7 @@ package cognitoidentityprovider {
   }
 
   object SmsConfigurationType {
+    @inline
     def apply(
         SnsCallerArn: ArnType,
         ExternalId: js.UndefOr[StringType] = js.undefined
@@ -5479,6 +5703,7 @@ package cognitoidentityprovider {
   }
 
   object SmsMfaConfigType {
+    @inline
     def apply(
         SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
         SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined
@@ -5499,6 +5724,7 @@ package cognitoidentityprovider {
   }
 
   object SoftwareTokenMfaConfigType {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanType] = js.undefined
     ): SoftwareTokenMfaConfigType = {
@@ -5518,6 +5744,7 @@ package cognitoidentityprovider {
   }
 
   object SoftwareTokenMfaSettingsType {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanType] = js.undefined,
         PreferredMfa: js.UndefOr[BooleanType] = js.undefined
@@ -5539,6 +5766,7 @@ package cognitoidentityprovider {
   }
 
   object StartUserImportJobRequest {
+    @inline
     def apply(
         JobId: UserImportJobIdType,
         UserPoolId: UserPoolIdType
@@ -5561,6 +5789,7 @@ package cognitoidentityprovider {
   }
 
   object StartUserImportJobResponse {
+    @inline
     def apply(
         UserImportJob: js.UndefOr[UserImportJobType] = js.undefined
     ): StartUserImportJobResponse = {
@@ -5587,6 +5816,7 @@ package cognitoidentityprovider {
   }
 
   object StopUserImportJobRequest {
+    @inline
     def apply(
         JobId: UserImportJobIdType,
         UserPoolId: UserPoolIdType
@@ -5609,6 +5839,7 @@ package cognitoidentityprovider {
   }
 
   object StopUserImportJobResponse {
+    @inline
     def apply(
         UserImportJob: js.UndefOr[UserImportJobType] = js.undefined
     ): StopUserImportJobResponse = {
@@ -5628,6 +5859,7 @@ package cognitoidentityprovider {
   }
 
   object StringAttributeConstraintsType {
+    @inline
     def apply(
         MaxLength: js.UndefOr[StringType] = js.undefined,
         MinLength: js.UndefOr[StringType] = js.undefined
@@ -5646,6 +5878,7 @@ package cognitoidentityprovider {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ArnType,
         Tags: js.UndefOr[UserPoolTagsType] = js.undefined
@@ -5663,6 +5896,7 @@ package cognitoidentityprovider {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5686,6 +5920,7 @@ package cognitoidentityprovider {
   }
 
   object UICustomizationType {
+    @inline
     def apply(
         CSS: js.UndefOr[CSSType] = js.undefined,
         CSSVersion: js.UndefOr[CSSVersionType] = js.undefined,
@@ -5714,6 +5949,7 @@ package cognitoidentityprovider {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ArnType,
         TagKeys: js.UndefOr[UserPoolTagsListType] = js.undefined
@@ -5731,6 +5967,7 @@ package cognitoidentityprovider {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5749,6 +5986,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateAuthEventFeedbackRequest {
+    @inline
     def apply(
         EventId: EventIdType,
         FeedbackToken: TokenModelType,
@@ -5772,6 +6010,7 @@ package cognitoidentityprovider {
   trait UpdateAuthEventFeedbackResponse extends js.Object {}
 
   object UpdateAuthEventFeedbackResponse {
+    @inline
     def apply(
         ): UpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
@@ -5791,6 +6030,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateDeviceStatusRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         DeviceKey: DeviceKeyType,
@@ -5813,6 +6053,7 @@ package cognitoidentityprovider {
   trait UpdateDeviceStatusResponse extends js.Object {}
 
   object UpdateDeviceStatusResponse {
+    @inline
     def apply(
         ): UpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
@@ -5831,6 +6072,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         GroupName: GroupNameType,
         UserPoolId: UserPoolIdType,
@@ -5856,6 +6098,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateGroupResponse {
+    @inline
     def apply(
         Group: js.UndefOr[GroupType] = js.undefined
     ): UpdateGroupResponse = {
@@ -5875,6 +6118,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateIdentityProviderRequest {
+    @inline
     def apply(
         ProviderName: ProviderNameType,
         UserPoolId: UserPoolIdType,
@@ -5900,6 +6144,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateIdentityProviderResponse {
+    @inline
     def apply(
         IdentityProvider: IdentityProviderType
     ): UpdateIdentityProviderResponse = {
@@ -5920,6 +6165,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateResourceServerRequest {
+    @inline
     def apply(
         Identifier: ResourceServerIdentifierType,
         Name: ResourceServerNameType,
@@ -5943,6 +6189,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateResourceServerResponse {
+    @inline
     def apply(
         ResourceServer: ResourceServerType
     ): UpdateResourceServerResponse = {
@@ -5964,6 +6211,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserAttributesRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         UserAttributes: AttributeListType
@@ -5986,6 +6234,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserAttributesResponse {
+    @inline
     def apply(
         CodeDeliveryDetailsList: js.UndefOr[CodeDeliveryDetailsListType] = js.undefined
     ): UpdateUserAttributesResponse = {
@@ -6018,6 +6267,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserPoolClientRequest {
+    @inline
     def apply(
         ClientId: ClientIdType,
         UserPoolId: UserPoolIdType,
@@ -6070,6 +6320,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserPoolClientResponse {
+    @inline
     def apply(
         UserPoolClient: js.UndefOr[UserPoolClientType] = js.undefined
     ): UpdateUserPoolClientResponse = {
@@ -6090,6 +6341,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserPoolDomainRequest {
+    @inline
     def apply(
         CustomDomainConfig: CustomDomainConfigType,
         Domain: DomainType,
@@ -6114,6 +6366,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserPoolDomainResponse {
+    @inline
     def apply(
         CloudFrontDomain: js.UndefOr[DomainType] = js.undefined
     ): UpdateUserPoolDomainResponse = {
@@ -6147,6 +6400,7 @@ package cognitoidentityprovider {
   }
 
   object UpdateUserPoolRequest {
+    @inline
     def apply(
         UserPoolId: UserPoolIdType,
         AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
@@ -6197,6 +6451,7 @@ package cognitoidentityprovider {
   trait UpdateUserPoolResponse extends js.Object {}
 
   object UpdateUserPoolResponse {
+    @inline
     def apply(
         ): UpdateUserPoolResponse = {
       val __obj = js.Dynamic.literal()
@@ -6214,6 +6469,7 @@ package cognitoidentityprovider {
   }
 
   object UserContextDataType {
+    @inline
     def apply(
         EncodedData: js.UndefOr[StringType] = js.undefined
     ): UserContextDataType = {
@@ -6257,6 +6513,7 @@ package cognitoidentityprovider {
   }
 
   object UserImportJobType {
+    @inline
     def apply(
         CloudWatchLogsRoleArn: js.UndefOr[ArnType] = js.undefined,
         CompletionDate: js.UndefOr[DateType] = js.undefined,
@@ -6299,6 +6556,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolAddOnsType {
+    @inline
     def apply(
         AdvancedSecurityMode: AdvancedSecurityModeType
     ): UserPoolAddOnsType = {
@@ -6321,6 +6579,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolClientDescription {
+    @inline
     def apply(
         ClientId: js.UndefOr[ClientIdType] = js.undefined,
         ClientName: js.UndefOr[ClientNameType] = js.undefined,
@@ -6360,6 +6619,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolClientType {
+    @inline
     def apply(
         AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
@@ -6421,6 +6681,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolDescriptionType {
+    @inline
     def apply(
         CreationDate: js.UndefOr[DateType] = js.undefined,
         Id: js.UndefOr[UserPoolIdType] = js.undefined,
@@ -6457,6 +6718,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolPolicyType {
+    @inline
     def apply(
         PasswordPolicy: js.UndefOr[PasswordPolicyType] = js.undefined
     ): UserPoolPolicyType = {
@@ -6503,6 +6765,7 @@ package cognitoidentityprovider {
   }
 
   object UserPoolType {
+    @inline
     def apply(
         AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
         AliasAttributes: js.UndefOr[AliasAttributesListType] = js.undefined,
@@ -6601,6 +6864,7 @@ package cognitoidentityprovider {
   }
 
   object UserType {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeListType] = js.undefined,
         Enabled: js.UndefOr[BooleanType] = js.undefined,
@@ -6643,6 +6907,7 @@ package cognitoidentityprovider {
   }
 
   object VerificationMessageTemplateType {
+    @inline
     def apply(
         DefaultEmailOption: js.UndefOr[DefaultEmailOptionType] = js.undefined,
         EmailMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
@@ -6678,6 +6943,7 @@ package cognitoidentityprovider {
   }
 
   object VerifySoftwareTokenRequest {
+    @inline
     def apply(
         UserCode: SoftwareTokenMFAUserCodeType,
         AccessToken: js.UndefOr[TokenModelType] = js.undefined,
@@ -6702,6 +6968,7 @@ package cognitoidentityprovider {
   }
 
   object VerifySoftwareTokenResponse {
+    @inline
     def apply(
         Session: js.UndefOr[SessionType] = js.undefined,
         Status: js.UndefOr[VerifySoftwareTokenResponseType] = js.undefined
@@ -6731,6 +6998,7 @@ package cognitoidentityprovider {
   }
 
   object VerifyUserAttributeRequest {
+    @inline
     def apply(
         AccessToken: TokenModelType,
         AttributeName: AttributeNameType,
@@ -6753,6 +7021,7 @@ package cognitoidentityprovider {
   trait VerifyUserAttributeResponse extends js.Object {}
 
   object VerifyUserAttributeResponse {
+    @inline
     def apply(
         ): VerifyUserAttributeResponse = {
       val __obj = js.Dynamic.literal()

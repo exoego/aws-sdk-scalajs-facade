@@ -46,92 +46,93 @@ package object worklink {
 
   implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
-    def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] =
+    @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] =
       service.associateDomain(params).promise.toFuture
-    def associateWebsiteAuthorizationProviderFuture(
+    @inline def associateWebsiteAuthorizationProviderFuture(
         params: AssociateWebsiteAuthorizationProviderRequest
     ): Future[AssociateWebsiteAuthorizationProviderResponse] =
       service.associateWebsiteAuthorizationProvider(params).promise.toFuture
-    def associateWebsiteCertificateAuthorityFuture(
+    @inline def associateWebsiteCertificateAuthorityFuture(
         params: AssociateWebsiteCertificateAuthorityRequest
     ): Future[AssociateWebsiteCertificateAuthorityResponse] =
       service.associateWebsiteCertificateAuthority(params).promise.toFuture
-    def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
       service.createFleet(params).promise.toFuture
-    def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
       service.deleteFleet(params).promise.toFuture
-    def describeAuditStreamConfigurationFuture(
+    @inline def describeAuditStreamConfigurationFuture(
         params: DescribeAuditStreamConfigurationRequest
     ): Future[DescribeAuditStreamConfigurationResponse] =
       service.describeAuditStreamConfiguration(params).promise.toFuture
-    def describeCompanyNetworkConfigurationFuture(
+    @inline def describeCompanyNetworkConfigurationFuture(
         params: DescribeCompanyNetworkConfigurationRequest
     ): Future[DescribeCompanyNetworkConfigurationResponse] =
       service.describeCompanyNetworkConfiguration(params).promise.toFuture
-    def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
+    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
       service.describeDevice(params).promise.toFuture
-    def describeDevicePolicyConfigurationFuture(
+    @inline def describeDevicePolicyConfigurationFuture(
         params: DescribeDevicePolicyConfigurationRequest
     ): Future[DescribeDevicePolicyConfigurationResponse] =
       service.describeDevicePolicyConfiguration(params).promise.toFuture
-    def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] =
+    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] =
       service.describeDomain(params).promise.toFuture
-    def describeFleetMetadataFuture(params: DescribeFleetMetadataRequest): Future[DescribeFleetMetadataResponse] =
-      service.describeFleetMetadata(params).promise.toFuture
-    def describeIdentityProviderConfigurationFuture(
+    @inline def describeFleetMetadataFuture(
+        params: DescribeFleetMetadataRequest
+    ): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise.toFuture
+    @inline def describeIdentityProviderConfigurationFuture(
         params: DescribeIdentityProviderConfigurationRequest
     ): Future[DescribeIdentityProviderConfigurationResponse] =
       service.describeIdentityProviderConfiguration(params).promise.toFuture
-    def describeWebsiteCertificateAuthorityFuture(
+    @inline def describeWebsiteCertificateAuthorityFuture(
         params: DescribeWebsiteCertificateAuthorityRequest
     ): Future[DescribeWebsiteCertificateAuthorityResponse] =
       service.describeWebsiteCertificateAuthority(params).promise.toFuture
-    def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] =
+    @inline def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] =
       service.disassociateDomain(params).promise.toFuture
-    def disassociateWebsiteAuthorizationProviderFuture(
+    @inline def disassociateWebsiteAuthorizationProviderFuture(
         params: DisassociateWebsiteAuthorizationProviderRequest
     ): Future[DisassociateWebsiteAuthorizationProviderResponse] =
       service.disassociateWebsiteAuthorizationProvider(params).promise.toFuture
-    def disassociateWebsiteCertificateAuthorityFuture(
+    @inline def disassociateWebsiteCertificateAuthorityFuture(
         params: DisassociateWebsiteCertificateAuthorityRequest
     ): Future[DisassociateWebsiteCertificateAuthorityResponse] =
       service.disassociateWebsiteCertificateAuthority(params).promise.toFuture
-    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
       service.listDevices(params).promise.toFuture
-    def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
       service.listDomains(params).promise.toFuture
-    def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
+    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
       service.listFleets(params).promise.toFuture
-    def listWebsiteAuthorizationProvidersFuture(
+    @inline def listWebsiteAuthorizationProvidersFuture(
         params: ListWebsiteAuthorizationProvidersRequest
     ): Future[ListWebsiteAuthorizationProvidersResponse] =
       service.listWebsiteAuthorizationProviders(params).promise.toFuture
-    def listWebsiteCertificateAuthoritiesFuture(
+    @inline def listWebsiteCertificateAuthoritiesFuture(
         params: ListWebsiteCertificateAuthoritiesRequest
     ): Future[ListWebsiteCertificateAuthoritiesResponse] =
       service.listWebsiteCertificateAuthorities(params).promise.toFuture
-    def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] =
+    @inline def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] =
       service.restoreDomainAccess(params).promise.toFuture
-    def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] =
+    @inline def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] =
       service.revokeDomainAccess(params).promise.toFuture
-    def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] =
+    @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] =
       service.signOutUser(params).promise.toFuture
-    def updateAuditStreamConfigurationFuture(
+    @inline def updateAuditStreamConfigurationFuture(
         params: UpdateAuditStreamConfigurationRequest
     ): Future[UpdateAuditStreamConfigurationResponse] = service.updateAuditStreamConfiguration(params).promise.toFuture
-    def updateCompanyNetworkConfigurationFuture(
+    @inline def updateCompanyNetworkConfigurationFuture(
         params: UpdateCompanyNetworkConfigurationRequest
     ): Future[UpdateCompanyNetworkConfigurationResponse] =
       service.updateCompanyNetworkConfiguration(params).promise.toFuture
-    def updateDevicePolicyConfigurationFuture(
+    @inline def updateDevicePolicyConfigurationFuture(
         params: UpdateDevicePolicyConfigurationRequest
     ): Future[UpdateDevicePolicyConfigurationResponse] =
       service.updateDevicePolicyConfiguration(params).promise.toFuture
-    def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] =
+    @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] =
       service.updateDomainMetadata(params).promise.toFuture
-    def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] =
+    @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] =
       service.updateFleetMetadata(params).promise.toFuture
-    def updateIdentityProviderConfigurationFuture(
+    @inline def updateIdentityProviderConfigurationFuture(
         params: UpdateIdentityProviderConfigurationRequest
     ): Future[UpdateIdentityProviderConfigurationResponse] =
       service.updateIdentityProviderConfiguration(params).promise.toFuture
@@ -215,6 +216,7 @@ package worklink {
   }
 
   object AssociateDomainRequest {
+    @inline
     def apply(
         AcmCertificateArn: AcmCertificateArn,
         DomainName: DomainName,
@@ -236,6 +238,7 @@ package worklink {
   trait AssociateDomainResponse extends js.Object {}
 
   object AssociateDomainResponse {
+    @inline
     def apply(
         ): AssociateDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -252,6 +255,7 @@ package worklink {
   }
 
   object AssociateWebsiteAuthorizationProviderRequest {
+    @inline
     def apply(
         AuthorizationProviderType: AuthorizationProviderType,
         FleetArn: FleetArn,
@@ -273,6 +277,7 @@ package worklink {
   }
 
   object AssociateWebsiteAuthorizationProviderResponse {
+    @inline
     def apply(
         AuthorizationProviderId: js.UndefOr[Id] = js.undefined
     ): AssociateWebsiteAuthorizationProviderResponse = {
@@ -290,6 +295,7 @@ package worklink {
   }
 
   object AssociateWebsiteCertificateAuthorityRequest {
+    @inline
     def apply(
         Certificate: Certificate,
         FleetArn: FleetArn,
@@ -311,6 +317,7 @@ package worklink {
   }
 
   object AssociateWebsiteCertificateAuthorityResponse {
+    @inline
     def apply(
         WebsiteCaId: js.UndefOr[Id] = js.undefined
     ): AssociateWebsiteCertificateAuthorityResponse = {
@@ -334,6 +341,7 @@ package worklink {
   }
 
   object CreateFleetRequest {
+    @inline
     def apply(
         FleetName: FleetName,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -357,6 +365,7 @@ package worklink {
   }
 
   object CreateFleetResponse {
+    @inline
     def apply(
         FleetArn: js.UndefOr[FleetArn] = js.undefined
     ): CreateFleetResponse = {
@@ -372,6 +381,7 @@ package worklink {
   }
 
   object DeleteFleetRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DeleteFleetRequest = {
@@ -387,6 +397,7 @@ package worklink {
   trait DeleteFleetResponse extends js.Object {}
 
   object DeleteFleetResponse {
+    @inline
     def apply(
         ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
@@ -401,6 +412,7 @@ package worklink {
   }
 
   object DescribeAuditStreamConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DescribeAuditStreamConfigurationRequest = {
@@ -418,6 +430,7 @@ package worklink {
   }
 
   object DescribeAuditStreamConfigurationResponse {
+    @inline
     def apply(
         AuditStreamArn: js.UndefOr[AuditStreamArn] = js.undefined
     ): DescribeAuditStreamConfigurationResponse = {
@@ -433,6 +446,7 @@ package worklink {
   }
 
   object DescribeCompanyNetworkConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DescribeCompanyNetworkConfigurationRequest = {
@@ -452,6 +466,7 @@ package worklink {
   }
 
   object DescribeCompanyNetworkConfigurationResponse {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
@@ -471,6 +486,7 @@ package worklink {
   }
 
   object DescribeDevicePolicyConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DescribeDevicePolicyConfigurationRequest = {
@@ -488,6 +504,7 @@ package worklink {
   }
 
   object DescribeDevicePolicyConfigurationResponse {
+    @inline
     def apply(
         DeviceCaCertificate: js.UndefOr[Certificate] = js.undefined
     ): DescribeDevicePolicyConfigurationResponse = {
@@ -504,6 +521,7 @@ package worklink {
   }
 
   object DescribeDeviceRequest {
+    @inline
     def apply(
         DeviceId: Id,
         FleetArn: FleetArn
@@ -531,6 +549,7 @@ package worklink {
   }
 
   object DescribeDeviceResponse {
+    @inline
     def apply(
         FirstAccessedTime: js.UndefOr[DateTime] = js.undefined,
         LastAccessedTime: js.UndefOr[DateTime] = js.undefined,
@@ -563,6 +582,7 @@ package worklink {
   }
 
   object DescribeDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         FleetArn: FleetArn
@@ -586,6 +606,7 @@ package worklink {
   }
 
   object DescribeDomainResponse {
+    @inline
     def apply(
         AcmCertificateArn: js.UndefOr[AcmCertificateArn] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -609,6 +630,7 @@ package worklink {
   }
 
   object DescribeFleetMetadataRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DescribeFleetMetadataRequest = {
@@ -632,6 +654,7 @@ package worklink {
   }
 
   object DescribeFleetMetadataResponse {
+    @inline
     def apply(
         CompanyCode: js.UndefOr[CompanyCode] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -661,6 +684,7 @@ package worklink {
   }
 
   object DescribeIdentityProviderConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn
     ): DescribeIdentityProviderConfigurationRequest = {
@@ -680,6 +704,7 @@ package worklink {
   }
 
   object DescribeIdentityProviderConfigurationResponse {
+    @inline
     def apply(
         IdentityProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
@@ -704,6 +729,7 @@ package worklink {
   }
 
   object DescribeWebsiteCertificateAuthorityRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         WebsiteCaId: Id
@@ -725,6 +751,7 @@ package worklink {
   }
 
   object DescribeWebsiteCertificateAuthorityResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[Certificate] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -755,6 +782,7 @@ package worklink {
   }
 
   object DeviceSummary {
+    @inline
     def apply(
         DeviceId: js.UndefOr[Id] = js.undefined,
         DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined
@@ -773,6 +801,7 @@ package worklink {
   }
 
   object DisassociateDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         FleetArn: FleetArn
@@ -790,6 +819,7 @@ package worklink {
   trait DisassociateDomainResponse extends js.Object {}
 
   object DisassociateDomainResponse {
+    @inline
     def apply(
         ): DisassociateDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -805,6 +835,7 @@ package worklink {
   }
 
   object DisassociateWebsiteAuthorizationProviderRequest {
+    @inline
     def apply(
         AuthorizationProviderId: Id,
         FleetArn: FleetArn
@@ -822,6 +853,7 @@ package worklink {
   trait DisassociateWebsiteAuthorizationProviderResponse extends js.Object {}
 
   object DisassociateWebsiteAuthorizationProviderResponse {
+    @inline
     def apply(
         ): DisassociateWebsiteAuthorizationProviderResponse = {
       val __obj = js.Dynamic.literal()
@@ -837,6 +869,7 @@ package worklink {
   }
 
   object DisassociateWebsiteCertificateAuthorityRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         WebsiteCaId: Id
@@ -854,6 +887,7 @@ package worklink {
   trait DisassociateWebsiteCertificateAuthorityResponse extends js.Object {}
 
   object DisassociateWebsiteCertificateAuthorityResponse {
+    @inline
     def apply(
         ): DisassociateWebsiteCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
@@ -898,6 +932,7 @@ package worklink {
   }
 
   object DomainSummary {
+    @inline
     def apply(
         CreatedTime: DateTime,
         DomainName: DomainName,
@@ -941,6 +976,7 @@ package worklink {
   }
 
   object FleetSummary {
+    @inline
     def apply(
         CompanyCode: js.UndefOr[CompanyCode] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -976,6 +1012,7 @@ package worklink {
   }
 
   object ListDevicesRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -998,6 +1035,7 @@ package worklink {
   }
 
   object ListDevicesResponse {
+    @inline
     def apply(
         Devices: js.UndefOr[DeviceSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1017,6 +1055,7 @@ package worklink {
   }
 
   object ListDomainsRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1039,6 +1078,7 @@ package worklink {
   }
 
   object ListDomainsResponse {
+    @inline
     def apply(
         Domains: js.UndefOr[DomainSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1057,6 +1097,7 @@ package worklink {
   }
 
   object ListFleetsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1075,6 +1116,7 @@ package worklink {
   }
 
   object ListFleetsResponse {
+    @inline
     def apply(
         FleetSummaryList: js.UndefOr[FleetSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1094,6 +1136,7 @@ package worklink {
   }
 
   object ListWebsiteAuthorizationProvidersRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1116,6 +1159,7 @@ package worklink {
   }
 
   object ListWebsiteAuthorizationProvidersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WebsiteAuthorizationProviders: js.UndefOr[WebsiteAuthorizationProvidersSummaryList] = js.undefined
@@ -1137,6 +1181,7 @@ package worklink {
   }
 
   object ListWebsiteCertificateAuthoritiesRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1159,6 +1204,7 @@ package worklink {
   }
 
   object ListWebsiteCertificateAuthoritiesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WebsiteCertificateAuthorities: js.UndefOr[WebsiteCaSummaryList] = js.undefined
@@ -1179,6 +1225,7 @@ package worklink {
   }
 
   object RestoreDomainAccessRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         FleetArn: FleetArn
@@ -1196,6 +1243,7 @@ package worklink {
   trait RestoreDomainAccessResponse extends js.Object {}
 
   object RestoreDomainAccessResponse {
+    @inline
     def apply(
         ): RestoreDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
@@ -1211,6 +1259,7 @@ package worklink {
   }
 
   object RevokeDomainAccessRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         FleetArn: FleetArn
@@ -1228,6 +1277,7 @@ package worklink {
   trait RevokeDomainAccessResponse extends js.Object {}
 
   object RevokeDomainAccessResponse {
+    @inline
     def apply(
         ): RevokeDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
@@ -1243,6 +1293,7 @@ package worklink {
   }
 
   object SignOutUserRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         Username: Username
@@ -1260,6 +1311,7 @@ package worklink {
   trait SignOutUserResponse extends js.Object {}
 
   object SignOutUserResponse {
+    @inline
     def apply(
         ): SignOutUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -1275,6 +1327,7 @@ package worklink {
   }
 
   object UpdateAuditStreamConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         AuditStreamArn: js.UndefOr[AuditStreamArn] = js.undefined
@@ -1292,6 +1345,7 @@ package worklink {
   trait UpdateAuditStreamConfigurationResponse extends js.Object {}
 
   object UpdateAuditStreamConfigurationResponse {
+    @inline
     def apply(
         ): UpdateAuditStreamConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1309,6 +1363,7 @@ package worklink {
   }
 
   object UpdateCompanyNetworkConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         SecurityGroupIds: SecurityGroupIds,
@@ -1330,6 +1385,7 @@ package worklink {
   trait UpdateCompanyNetworkConfigurationResponse extends js.Object {}
 
   object UpdateCompanyNetworkConfigurationResponse {
+    @inline
     def apply(
         ): UpdateCompanyNetworkConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1345,6 +1401,7 @@ package worklink {
   }
 
   object UpdateDevicePolicyConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         DeviceCaCertificate: js.UndefOr[CertificateChain] = js.undefined
@@ -1362,6 +1419,7 @@ package worklink {
   trait UpdateDevicePolicyConfigurationResponse extends js.Object {}
 
   object UpdateDevicePolicyConfigurationResponse {
+    @inline
     def apply(
         ): UpdateDevicePolicyConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1378,6 +1436,7 @@ package worklink {
   }
 
   object UpdateDomainMetadataRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         FleetArn: FleetArn,
@@ -1397,6 +1456,7 @@ package worklink {
   trait UpdateDomainMetadataResponse extends js.Object {}
 
   object UpdateDomainMetadataResponse {
+    @inline
     def apply(
         ): UpdateDomainMetadataResponse = {
       val __obj = js.Dynamic.literal()
@@ -1413,6 +1473,7 @@ package worklink {
   }
 
   object UpdateFleetMetadataRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -1434,6 +1495,7 @@ package worklink {
   trait UpdateFleetMetadataResponse extends js.Object {}
 
   object UpdateFleetMetadataResponse {
+    @inline
     def apply(
         ): UpdateFleetMetadataResponse = {
       val __obj = js.Dynamic.literal()
@@ -1450,6 +1512,7 @@ package worklink {
   }
 
   object UpdateIdentityProviderConfigurationRequest {
+    @inline
     def apply(
         FleetArn: FleetArn,
         IdentityProviderType: IdentityProviderType,
@@ -1471,6 +1534,7 @@ package worklink {
   trait UpdateIdentityProviderConfigurationResponse extends js.Object {}
 
   object UpdateIdentityProviderConfigurationResponse {
+    @inline
     def apply(
         ): UpdateIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1491,6 +1555,7 @@ package worklink {
   }
 
   object WebsiteAuthorizationProviderSummary {
+    @inline
     def apply(
         AuthorizationProviderType: AuthorizationProviderType,
         AuthorizationProviderId: js.UndefOr[Id] = js.undefined,
@@ -1519,6 +1584,7 @@ package worklink {
   }
 
   object WebsiteCaSummary {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
