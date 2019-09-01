@@ -6,7 +6,7 @@ A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws
 
 You may find the below peer facades useful when developing app with AWS.
 
-* [exoego/aws-lambda-scalajs-facade](https://github.com/exoego/scala-js-nodejs) offers type definition and utilities for AWS Lambda events.
+* [exoego/aws-lambda-scalajs-facade](https://github.com/exoego/aws-lambda-scalajs-facade) offers type definition and utilities for AWS Lambda events.
 * [exoego/scala-js-nodejs](https://github.com/exoego/scala-js-nodejs) offers type definition and utilities for Node.js API.
 
 
