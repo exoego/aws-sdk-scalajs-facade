@@ -10,6 +10,9 @@ categories:
       - 'fix'
       - 'bugfix'
       - 'bug'
+  - title: '📚 Docs'
+    labels:
+      - 'docs'
   - title: '🧰 Maintenance'
     labels:
       - 'chore'
