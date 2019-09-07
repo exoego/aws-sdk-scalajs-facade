@@ -63,7 +63,7 @@ object SharedConfig {
       tagRelease,
       runClean,
       releaseStepCommandAndRemaining("+publishSigned"),
-      releaseStepCommand("sonatypeReleaseAll"),
+      releaseStepCommand("sonatypeBundleRelease"),
       setNextVersion,
       commitNextVersion
     ),
