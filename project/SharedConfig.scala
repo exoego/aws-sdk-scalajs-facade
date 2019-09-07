@@ -52,7 +52,6 @@ object SharedConfig {
     publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
     publishArtifact in packageDoc := false,
     sources in (Compile, doc) := Seq.empty,
-    releaseCrossBuild := true,
     releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
@@ -62,8 +61,10 @@ object SharedConfig {
       commitReleaseVersion,
       tagRelease,
       runClean,
+      releaseStepCommandAndRemaining("sonatypePrepare"),
+      releaseStepCommandAndRemaining("sonatypeOpen"),
       releaseStepCommandAndRemaining("+publishSigned"),
-      releaseStepCommand("sonatypeReleaseAll"),
+      releaseStepCommand("sonatypeRelease"),
       setNextVersion,
       commitNextVersion
     ),
