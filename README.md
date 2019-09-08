@@ -41,10 +41,18 @@ for {
 
 ### Using AWS Object
 
-Note) To use `AWS` object, the artifact `"net.exoego" %%% "aws-sdk-scalajs-facade" % VERSION` should be added to `libraryDependencies`.
+`AWS` object is defined in `core` project.
+`"aws-sdk-scalajs-facade-<service_name>"` depends on `core` project so your project do not need to explicitly depend on `core`.
 
-As same as in aws-sdk-js, this facade offers `AWS` companion object.
-The `AWS` companion object aggregates all service classes so you can instantiate service class like below.
+By default, `AWS` object expose only `config` field to be used for configuring aws-sdk globally.
+```scala
+import facade.amazonaws.AWS
+
+AWS.config.region = "..."
+AWS.config.s3 = ???
+```
+
+By adding the artifact `"net.exoego" %%% "aws-sdk-scalajs-facade" % VERSION` to `libraryDependencies`, `AWS` object aggregates all service classes so you can instantiate service class as same as in aws-sdk-js, like below:
 
 
 ```scala
