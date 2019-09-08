@@ -13,7 +13,7 @@ You may find the below peer facades useful when developing app with AWS.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.25.0-v2-518-0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.26.0-v2.524.0"
 ```
 
 Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-vN-NNN-N`,

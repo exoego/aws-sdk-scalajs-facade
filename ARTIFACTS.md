@@ -1,6 +1,6 @@
 You can include all-in-one dependencyby adding below single dependency.
 ```scala
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.25.0-v2-518-0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.26.0-v2.524.0"
 ```
 This dependency contains all AWS and, also offers companion object `AWS` as same as `aws-sdk-js`.
 However, this artifact is quite huge (100MB+!!). 
@@ -9,7 +9,7 @@ If you need only a few AWS (e.g. S3 and DynamoDB), you may consider to depend on
 It will shorten download time and linking time (`fullOptJS`/`fastOptJS`).
 
 ```scala
-val awsSdkScalajsFacadeVersion = "0.25.0-v2-518-0"
+val awsSdkScalajsFacadeVersion = "0.26.0-v2.524.0"
 libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-acm" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-acmpca" % awsSdkScalajsFacadeVersion,
