@@ -58,7 +58,6 @@ object SharedConfig {
       tagRelease,
       runClean,
       releaseStepCommandAndRemaining("sonatypePrepare"),
-      releaseStepCommandAndRemaining("sonatypeOpen"),
       releaseStepCommandAndRemaining("+publishSigned"),
       releaseStepCommand("sonatypeRelease"),
       setNextVersion,
