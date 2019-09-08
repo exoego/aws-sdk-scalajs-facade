@@ -17,9 +17,11 @@ package object gamelift {
   type BuildId                             = String
   type BuildList                           = js.Array[Build]
   type BuildStatus                         = String
+  type CertificateType                     = String
   type ComparisonOperatorType              = String
   type CustomEventData                     = String
   type DesiredPlayerSessionList            = js.Array[DesiredPlayerSession]
+  type DnsName                             = String
   type DoubleObject                        = Double
   type EC2InstanceLimitList                = js.Array[EC2InstanceLimit]
   type EC2InstanceType                     = String
@@ -621,6 +623,31 @@ package gamelift {
     val values = js.Object.freeze(js.Array(INITIALIZED, READY, FAILED))
   }
 
+  @js.native
+  trait CertificateConfiguration extends js.Object {
+    var CertificateType: CertificateType
+  }
+
+  object CertificateConfiguration {
+    @inline
+    def apply(
+        CertificateType: CertificateType
+    ): CertificateConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CertificateType" -> CertificateType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CertificateConfiguration]
+    }
+  }
+
+  object CertificateTypeEnum {
+    val DISABLED  = "DISABLED"
+    val GENERATED = "GENERATED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, GENERATED))
+  }
+
   object ComparisonOperatorTypeEnum {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold"
     val GreaterThanThreshold          = "GreaterThanThreshold"
@@ -739,6 +766,7 @@ package gamelift {
     var EC2InstanceType: EC2InstanceType
     var Name: NonZeroAndMaxString
     var BuildId: js.UndefOr[BuildId]
+    var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var EC2InboundPermissions: js.UndefOr[IpPermissionsList]
     var FleetType: js.UndefOr[FleetType]
@@ -761,6 +789,7 @@ package gamelift {
         EC2InstanceType: EC2InstanceType,
         Name: NonZeroAndMaxString,
         BuildId: js.UndefOr[BuildId] = js.undefined,
+        CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
@@ -782,6 +811,7 @@ package gamelift {
       )
 
       BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      CertificateConfiguration.foreach(__v => __obj.updateDynamic("CertificateConfiguration")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EC2InboundPermissions.foreach(__v => __obj.updateDynamic("EC2InboundPermissions")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
@@ -2872,6 +2902,7 @@ package gamelift {
   @js.native
   trait FleetAttributes extends js.Object {
     var BuildId: js.UndefOr[BuildId]
+    var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
     var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var FleetArn: js.UndefOr[ArnStringModel]
@@ -2897,6 +2928,7 @@ package gamelift {
     @inline
     def apply(
         BuildId: js.UndefOr[BuildId] = js.undefined,
+        CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
@@ -2919,6 +2951,7 @@ package gamelift {
     ): FleetAttributes = {
       val __obj = js.Dynamic.literal()
       BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      CertificateConfiguration.foreach(__v => __obj.updateDynamic("CertificateConfiguration")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
@@ -3114,6 +3147,7 @@ package gamelift {
     var CreationTime: js.UndefOr[Timestamp]
     var CreatorId: js.UndefOr[NonZeroAndMaxString]
     var CurrentPlayerSessionCount: js.UndefOr[WholeNumber]
+    var DnsName: js.UndefOr[DnsName]
     var FleetId: js.UndefOr[FleetId]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
@@ -3135,6 +3169,7 @@ package gamelift {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        DnsName: js.UndefOr[DnsName] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
@@ -3155,6 +3190,7 @@ package gamelift {
       CurrentPlayerSessionCount.foreach(
         __v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
       GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
@@ -3181,6 +3217,7 @@ package gamelift {
     */
   @js.native
   trait GameSessionConnectionInfo extends js.Object {
+    var DnsName: js.UndefOr[DnsName]
     var GameSessionArn: js.UndefOr[ArnStringModel]
     var IpAddress: js.UndefOr[StringModel]
     var MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList]
@@ -3190,12 +3227,14 @@ package gamelift {
   object GameSessionConnectionInfo {
     @inline
     def apply(
+        DnsName: js.UndefOr[DnsName] = js.undefined,
         GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
         IpAddress: js.UndefOr[StringModel] = js.undefined,
         MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList] = js.undefined,
         Port: js.UndefOr[PositiveInteger] = js.undefined
     ): GameSessionConnectionInfo = {
       val __obj = js.Dynamic.literal()
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       GameSessionArn.foreach(__v => __obj.updateDynamic("GameSessionArn")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       MatchedPlayerSessions.foreach(__v => __obj.updateDynamic("MatchedPlayerSessions")(__v.asInstanceOf[js.Any]))
@@ -3235,6 +3274,7 @@ package gamelift {
     */
   @js.native
   trait GameSessionPlacement extends js.Object {
+    var DnsName: js.UndefOr[DnsName]
     var EndTime: js.UndefOr[Timestamp]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionArn: js.UndefOr[NonZeroAndMaxString]
@@ -3257,6 +3297,7 @@ package gamelift {
   object GameSessionPlacement {
     @inline
     def apply(
+        DnsName: js.UndefOr[DnsName] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionArn: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -3276,6 +3317,7 @@ package gamelift {
         Status: js.UndefOr[GameSessionPlacementState] = js.undefined
     ): GameSessionPlacement = {
       val __obj = js.Dynamic.literal()
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
       GameSessionArn.foreach(__v => __obj.updateDynamic("GameSessionArn")(__v.asInstanceOf[js.Any]))
@@ -3304,8 +3346,9 @@ package gamelift {
     val FULFILLED = "FULFILLED"
     val CANCELLED = "CANCELLED"
     val TIMED_OUT = "TIMED_OUT"
+    val FAILED    = "FAILED"
 
-    val values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT))
+    val values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED))
   }
 
   /**
@@ -3474,6 +3517,7 @@ package gamelift {
   @js.native
   trait Instance extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
+    var DnsName: js.UndefOr[DnsName]
     var FleetId: js.UndefOr[FleetId]
     var InstanceId: js.UndefOr[InstanceId]
     var IpAddress: js.UndefOr[IpAddress]
@@ -3486,6 +3530,7 @@ package gamelift {
     @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DnsName: js.UndefOr[DnsName] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
@@ -3495,6 +3540,7 @@ package gamelift {
     ): Instance = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
@@ -4127,6 +4173,7 @@ package gamelift {
   @js.native
   trait PlayerSession extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
+    var DnsName: js.UndefOr[DnsName]
     var FleetId: js.UndefOr[FleetId]
     var GameSessionId: js.UndefOr[NonZeroAndMaxString]
     var IpAddress: js.UndefOr[IpAddress]
@@ -4142,6 +4189,7 @@ package gamelift {
     @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DnsName: js.UndefOr[DnsName] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
@@ -4154,6 +4202,7 @@ package gamelift {
     ): PlayerSession = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))

@@ -242,6 +242,7 @@ package object mediaconvert {
   type S3ServerSideEncryptionType                  = String
   type ScalingBehavior                             = String
   type SccDestinationFramerate                     = String
+  type SimulateReservedQueue                       = String
   type StatusUpdateInterval                        = String
   type TeletextPageType                            = String
   type TimecodeBurninPosition                      = String
@@ -1951,6 +1952,7 @@ package mediaconvert {
     var JobTemplate: js.UndefOr[__string]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
+    var SimulateReservedQueue: js.UndefOr[SimulateReservedQueue]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var UserMetadata: js.UndefOr[__mapOf__string]
   }
@@ -1966,6 +1968,7 @@ package mediaconvert {
         JobTemplate: js.UndefOr[__string] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
+        SimulateReservedQueue: js.UndefOr[SimulateReservedQueue] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobRequest = {
@@ -1980,6 +1983,7 @@ package mediaconvert {
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      SimulateReservedQueue.foreach(__v => __obj.updateDynamic("SimulateReservedQueue")(__v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
       UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
@@ -5301,6 +5305,7 @@ package mediaconvert {
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var RetryCount: js.UndefOr[__integer]
+    var SimulateReservedQueue: js.UndefOr[SimulateReservedQueue]
     var Status: js.UndefOr[JobStatus]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Timing: js.UndefOr[Timing]
@@ -5326,6 +5331,7 @@ package mediaconvert {
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         RetryCount: js.UndefOr[__integer] = js.undefined,
+        SimulateReservedQueue: js.UndefOr[SimulateReservedQueue] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Timing: js.UndefOr[Timing] = js.undefined,
@@ -5350,6 +5356,7 @@ package mediaconvert {
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       RetryCount.foreach(__v => __obj.updateDynamic("RetryCount")(__v.asInstanceOf[js.Any]))
+      SimulateReservedQueue.foreach(__v => __obj.updateDynamic("SimulateReservedQueue")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
       Timing.foreach(__v => __obj.updateDynamic("Timing")(__v.asInstanceOf[js.Any]))
@@ -8071,6 +8078,16 @@ package mediaconvert {
       Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SccDestinationSettings]
     }
+  }
+
+  /**
+    * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+    */
+  object SimulateReservedQueueEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**

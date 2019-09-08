@@ -110,6 +110,8 @@ package object codepipeline {
   type ThirdPartyJobList                      = js.Array[ThirdPartyJob]
   type Time                                   = js.Date
   type Timestamp                              = js.Date
+  type TriggerDetail                          = String
+  type TriggerType                            = String
   type Url                                    = String
   type UrlTemplate                            = String
   type Version                                = String
@@ -1037,6 +1039,8 @@ package codepipeline {
 
   /**
     * The Amazon S3 bucket where artifacts are stored for the pipeline.
+    *
+    * '''Note:'''You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
     */
   @js.native
   trait ArtifactStore extends js.Object {
@@ -1479,6 +1483,28 @@ package codepipeline {
       percentComplete.foreach(__v => __obj.updateDynamic("percentComplete")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionDetails]
+    }
+  }
+
+  /**
+    * The interaction or event that started a pipeline execution.
+    */
+  @js.native
+  trait ExecutionTrigger extends js.Object {
+    var triggerDetail: js.UndefOr[TriggerDetail]
+    var triggerType: js.UndefOr[TriggerType]
+  }
+
+  object ExecutionTrigger {
+    @inline
+    def apply(
+        triggerDetail: js.UndefOr[TriggerDetail] = js.undefined,
+        triggerType: js.UndefOr[TriggerType] = js.undefined
+    ): ExecutionTrigger = {
+      val __obj = js.Dynamic.literal()
+      triggerDetail.foreach(__v => __obj.updateDynamic("triggerDetail")(__v.asInstanceOf[js.Any]))
+      triggerType.foreach(__v => __obj.updateDynamic("triggerType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionTrigger]
     }
   }
 
@@ -2323,6 +2349,7 @@ package codepipeline {
     var sourceRevisions: js.UndefOr[SourceRevisionList]
     var startTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[PipelineExecutionStatus]
+    var trigger: js.UndefOr[ExecutionTrigger]
   }
 
   object PipelineExecutionSummary {
@@ -2332,7 +2359,8 @@ package codepipeline {
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined,
         sourceRevisions: js.UndefOr[SourceRevisionList] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
-        status: js.UndefOr[PipelineExecutionStatus] = js.undefined
+        status: js.UndefOr[PipelineExecutionStatus] = js.undefined,
+        trigger: js.UndefOr[ExecutionTrigger] = js.undefined
     ): PipelineExecutionSummary = {
       val __obj = js.Dynamic.literal()
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
@@ -2340,6 +2368,7 @@ package codepipeline {
       sourceRevisions.foreach(__v => __obj.updateDynamic("sourceRevisions")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      trigger.foreach(__v => __obj.updateDynamic("trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecutionSummary]
     }
   }
@@ -3228,6 +3257,26 @@ package codepipeline {
       lastChangedBy.foreach(__v => __obj.updateDynamic("lastChangedBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitionState]
     }
+  }
+
+  object TriggerTypeEnum {
+    val CreatePipeline         = "CreatePipeline"
+    val StartPipelineExecution = "StartPipelineExecution"
+    val PollForSourceChanges   = "PollForSourceChanges"
+    val Webhook                = "Webhook"
+    val CloudWatchEvent        = "CloudWatchEvent"
+    val PutActionRevision      = "PutActionRevision"
+
+    val values = js.Object.freeze(
+      js.Array(
+        CreatePipeline,
+        StartPipelineExecution,
+        PollForSourceChanges,
+        Webhook,
+        CloudWatchEvent,
+        PutActionRevision
+      )
+    )
   }
 
   @js.native

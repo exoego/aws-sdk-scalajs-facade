@@ -37,6 +37,7 @@ package object applicationautoscaling {
   type ScalingActivityStatusCode = String
   type ScalingAdjustment         = Int
   type ScalingPolicies           = js.Array[ScalingPolicy]
+  type ScalingSuspended          = Boolean
   type ScheduledActionName       = String
   type ScheduledActions          = js.Array[ScheduledAction]
   type ServiceNamespace          = String
@@ -713,6 +714,7 @@ package applicationautoscaling {
     var MaxCapacity: js.UndefOr[ResourceCapacity]
     var MinCapacity: js.UndefOr[ResourceCapacity]
     var RoleARN: js.UndefOr[ResourceIdMaxLen1600]
+    var SuspendedState: js.UndefOr[SuspendedState]
   }
 
   object RegisterScalableTargetRequest {
@@ -723,7 +725,8 @@ package applicationautoscaling {
         ServiceNamespace: ServiceNamespace,
         MaxCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
         MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
-        RoleARN: js.UndefOr[ResourceIdMaxLen1600] = js.undefined
+        RoleARN: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
+        SuspendedState: js.UndefOr[SuspendedState] = js.undefined
     ): RegisterScalableTargetRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
@@ -734,6 +737,7 @@ package applicationautoscaling {
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      SuspendedState.foreach(__v => __obj.updateDynamic("SuspendedState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterScalableTargetRequest]
     }
   }
@@ -793,6 +797,7 @@ package applicationautoscaling {
     var RoleARN: ResourceIdMaxLen1600
     var ScalableDimension: ScalableDimension
     var ServiceNamespace: ServiceNamespace
+    var SuspendedState: js.UndefOr[SuspendedState]
   }
 
   object ScalableTarget {
@@ -804,7 +809,8 @@ package applicationautoscaling {
         ResourceId: ResourceIdMaxLen1600,
         RoleARN: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace
+        ServiceNamespace: ServiceNamespace,
+        SuspendedState: js.UndefOr[SuspendedState] = js.undefined
     ): ScalableTarget = {
       val __obj = js.Dynamic.literal(
         "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
@@ -816,6 +822,7 @@ package applicationautoscaling {
         "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
+      SuspendedState.foreach(__v => __obj.updateDynamic("SuspendedState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalableTarget]
     }
   }
@@ -1081,6 +1088,37 @@ package applicationautoscaling {
       MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
       StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepScalingPolicyConfiguration]
+    }
+  }
+
+  /**
+    * Specifies whether the scaling activities for a scalable target are in a suspended state.
+    */
+  @js.native
+  trait SuspendedState extends js.Object {
+    var DynamicScalingInSuspended: js.UndefOr[ScalingSuspended]
+    var DynamicScalingOutSuspended: js.UndefOr[ScalingSuspended]
+    var ScheduledScalingSuspended: js.UndefOr[ScalingSuspended]
+  }
+
+  object SuspendedState {
+    @inline
+    def apply(
+        DynamicScalingInSuspended: js.UndefOr[ScalingSuspended] = js.undefined,
+        DynamicScalingOutSuspended: js.UndefOr[ScalingSuspended] = js.undefined,
+        ScheduledScalingSuspended: js.UndefOr[ScalingSuspended] = js.undefined
+    ): SuspendedState = {
+      val __obj = js.Dynamic.literal()
+      DynamicScalingInSuspended.foreach(
+        __v => __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any])
+      )
+      DynamicScalingOutSuspended.foreach(
+        __v => __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any])
+      )
+      ScheduledScalingSuspended.foreach(
+        __v => __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[SuspendedState]
     }
   }
 

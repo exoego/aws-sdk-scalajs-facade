@@ -1044,6 +1044,7 @@ package elasticache {
   trait CopySnapshotMessage extends js.Object {
     var SourceSnapshotName: String
     var TargetSnapshotName: String
+    var KmsKeyId: js.UndefOr[String]
     var TargetBucket: js.UndefOr[String]
   }
 
@@ -1052,6 +1053,7 @@ package elasticache {
     def apply(
         SourceSnapshotName: String,
         TargetSnapshotName: String,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
         TargetBucket: js.UndefOr[String] = js.undefined
     ): CopySnapshotMessage = {
       val __obj = js.Dynamic.literal(
@@ -1059,6 +1061,7 @@ package elasticache {
         "TargetSnapshotName" -> TargetSnapshotName.asInstanceOf[js.Any]
       )
 
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       TargetBucket.foreach(__v => __obj.updateDynamic("TargetBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotMessage]
     }
@@ -1332,6 +1335,7 @@ package elasticache {
     var CacheSubnetGroupName: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList]
     var NotificationTopicArn: js.UndefOr[String]
     var NumCacheClusters: js.UndefOr[IntegerOptional]
@@ -1365,6 +1369,7 @@ package elasticache {
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
         NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NumCacheClusters: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1397,6 +1402,7 @@ package elasticache {
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       NodeGroupConfiguration.foreach(__v => __obj.updateDynamic("NodeGroupConfiguration")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheClusters.foreach(__v => __obj.updateDynamic("NumCacheClusters")(__v.asInstanceOf[js.Any]))
@@ -1442,6 +1448,7 @@ package elasticache {
   trait CreateSnapshotMessage extends js.Object {
     var SnapshotName: String
     var CacheClusterId: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var ReplicationGroupId: js.UndefOr[String]
   }
 
@@ -1450,6 +1457,7 @@ package elasticache {
     def apply(
         SnapshotName: String,
         CacheClusterId: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined
     ): CreateSnapshotMessage = {
       val __obj = js.Dynamic.literal(
@@ -1457,6 +1465,7 @@ package elasticache {
       )
 
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotMessage]
     }
@@ -3216,6 +3225,7 @@ package elasticache {
     var ClusterEnabled: js.UndefOr[BooleanOptional]
     var ConfigurationEndpoint: js.UndefOr[Endpoint]
     var Description: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var MemberClusters: js.UndefOr[ClusterIdList]
     var NodeGroups: js.UndefOr[NodeGroupList]
     var PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues]
@@ -3237,6 +3247,7 @@ package elasticache {
         ClusterEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         ConfigurationEndpoint: js.UndefOr[Endpoint] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
         MemberClusters: js.UndefOr[ClusterIdList] = js.undefined,
         NodeGroups: js.UndefOr[NodeGroupList] = js.undefined,
         PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues] = js.undefined,
@@ -3255,6 +3266,7 @@ package elasticache {
       ClusterEnabled.foreach(__v => __obj.updateDynamic("ClusterEnabled")(__v.asInstanceOf[js.Any]))
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MemberClusters.foreach(__v => __obj.updateDynamic("MemberClusters")(__v.asInstanceOf[js.Any]))
       NodeGroups.foreach(__v => __obj.updateDynamic("NodeGroups")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
@@ -3734,6 +3746,7 @@ package elasticache {
     var CacheSubnetGroupName: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var NodeSnapshots: js.UndefOr[NodeSnapshotList]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
     var NumNodeGroups: js.UndefOr[IntegerOptional]
@@ -3763,6 +3776,7 @@ package elasticache {
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
         NodeSnapshots: js.UndefOr[NodeSnapshotList] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
         NumNodeGroups: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3789,6 +3803,7 @@ package elasticache {
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       NodeSnapshots.foreach(__v => __obj.updateDynamic("NodeSnapshots")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       NumNodeGroups.foreach(__v => __obj.updateDynamic("NumNodeGroups")(__v.asInstanceOf[js.Any]))
