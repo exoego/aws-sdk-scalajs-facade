@@ -51,6 +51,7 @@ package object lambda {
   type MasterRegion                    = String
   type MaxLayerListItems               = Int
   type MaxListItems                    = Int
+  type MaximumBatchingWindowInSeconds  = Int
   type MemorySize                      = Int
   type NameSpacedFunctionArn           = String
   type NamespacedFunctionName          = String
@@ -507,6 +508,7 @@ package lambda {
     var FunctionName: FunctionName
     var BatchSize: js.UndefOr[BatchSize]
     var Enabled: js.UndefOr[Enabled]
+    var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
   }
@@ -518,6 +520,7 @@ package lambda {
         FunctionName: FunctionName,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
+        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined
     ): CreateEventSourceMappingRequest = {
@@ -528,6 +531,9 @@ package lambda {
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      MaximumBatchingWindowInSeconds.foreach(
+        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      )
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(
         __v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
@@ -790,6 +796,7 @@ package lambda {
     var FunctionArn: js.UndefOr[FunctionArn]
     var LastModified: js.UndefOr[Date]
     var LastProcessingResult: js.UndefOr[String]
+    var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
     var State: js.UndefOr[String]
     var StateTransitionReason: js.UndefOr[String]
     var UUID: js.UndefOr[String]
@@ -803,6 +810,7 @@ package lambda {
         FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
         LastModified: js.UndefOr[Date] = js.undefined,
         LastProcessingResult: js.UndefOr[String] = js.undefined,
+        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         StateTransitionReason: js.UndefOr[String] = js.undefined,
         UUID: js.UndefOr[String] = js.undefined
@@ -813,6 +821,9 @@ package lambda {
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
+      MaximumBatchingWindowInSeconds.foreach(
+        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      )
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
       UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
@@ -2142,6 +2153,7 @@ package lambda {
     var BatchSize: js.UndefOr[BatchSize]
     var Enabled: js.UndefOr[Enabled]
     var FunctionName: js.UndefOr[FunctionName]
+    var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
   }
 
   object UpdateEventSourceMappingRequest {
@@ -2150,7 +2162,8 @@ package lambda {
         UUID: String,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
-        FunctionName: js.UndefOr[FunctionName] = js.undefined
+        FunctionName: js.UndefOr[FunctionName] = js.undefined,
+        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined
     ): UpdateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
@@ -2159,6 +2172,9 @@ package lambda {
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      MaximumBatchingWindowInSeconds.foreach(
+        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }
   }

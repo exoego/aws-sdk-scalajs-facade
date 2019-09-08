@@ -8,33 +8,35 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object stepfunctions {
-  type ActivityList          = js.Array[ActivityListItem]
-  type Arn                   = String
-  type ConnectorParameters   = String
-  type Definition            = String
-  type EventId               = Double
-  type ExecutionList         = js.Array[ExecutionListItem]
-  type ExecutionStatus       = String
-  type HistoryEventList      = js.Array[HistoryEvent]
-  type HistoryEventType      = String
-  type Identity              = String
-  type Name                  = String
-  type PageSize              = Int
-  type PageToken             = String
-  type ReverseOrder          = Boolean
-  type SensitiveCause        = String
-  type SensitiveData         = String
-  type SensitiveDataJobInput = String
-  type SensitiveError        = String
-  type StateMachineList      = js.Array[StateMachineListItem]
-  type StateMachineStatus    = String
-  type TagKey                = String
-  type TagKeyList            = js.Array[TagKey]
-  type TagList               = js.Array[Tag]
-  type TagValue              = String
-  type TaskToken             = String
-  type TimeoutInSeconds      = Double
-  type Timestamp             = js.Date
+  type ActivityList            = js.Array[ActivityListItem]
+  type Arn                     = String
+  type ConnectorParameters     = String
+  type Definition              = String
+  type EventId                 = Double
+  type ExecutionList           = js.Array[ExecutionListItem]
+  type ExecutionStatus         = String
+  type HistoryEventList        = js.Array[HistoryEvent]
+  type HistoryEventType        = String
+  type Identity                = String
+  type ListExecutionsPageToken = String
+  type Name                    = String
+  type PageSize                = Int
+  type PageToken               = String
+  type ReverseOrder            = Boolean
+  type SensitiveCause          = String
+  type SensitiveData           = String
+  type SensitiveDataJobInput   = String
+  type SensitiveError          = String
+  type StateMachineList        = js.Array[StateMachineListItem]
+  type StateMachineStatus      = String
+  type TagKey                  = String
+  type TagKeyList              = js.Array[TagKey]
+  type TagList                 = js.Array[Tag]
+  type TagValue                = String
+  type TaskToken               = String
+  type TimeoutInSeconds        = Double
+  type Timestamp               = js.Date
+  type UnsignedInteger         = Int
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
@@ -896,6 +898,11 @@ package stepfunctions {
     var lambdaFunctionStartFailedEventDetails: js.UndefOr[LambdaFunctionStartFailedEventDetails]
     var lambdaFunctionSucceededEventDetails: js.UndefOr[LambdaFunctionSucceededEventDetails]
     var lambdaFunctionTimedOutEventDetails: js.UndefOr[LambdaFunctionTimedOutEventDetails]
+    var mapIterationAbortedEventDetails: js.UndefOr[MapIterationEventDetails]
+    var mapIterationFailedEventDetails: js.UndefOr[MapIterationEventDetails]
+    var mapIterationStartedEventDetails: js.UndefOr[MapIterationEventDetails]
+    var mapIterationSucceededEventDetails: js.UndefOr[MapIterationEventDetails]
+    var mapStateStartedEventDetails: js.UndefOr[MapStateStartedEventDetails]
     var previousEventId: js.UndefOr[EventId]
     var stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails]
     var stateExitedEventDetails: js.UndefOr[StateExitedEventDetails]
@@ -932,6 +939,11 @@ package stepfunctions {
         lambdaFunctionStartFailedEventDetails: js.UndefOr[LambdaFunctionStartFailedEventDetails] = js.undefined,
         lambdaFunctionSucceededEventDetails: js.UndefOr[LambdaFunctionSucceededEventDetails] = js.undefined,
         lambdaFunctionTimedOutEventDetails: js.UndefOr[LambdaFunctionTimedOutEventDetails] = js.undefined,
+        mapIterationAbortedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
+        mapIterationFailedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
+        mapIterationStartedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
+        mapIterationSucceededEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
+        mapStateStartedEventDetails: js.UndefOr[MapStateStartedEventDetails] = js.undefined,
         previousEventId: js.UndefOr[EventId] = js.undefined,
         stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails] = js.undefined,
         stateExitedEventDetails: js.UndefOr[StateExitedEventDetails] = js.undefined,
@@ -1001,6 +1013,21 @@ package stepfunctions {
       lambdaFunctionTimedOutEventDetails.foreach(
         __v => __obj.updateDynamic("lambdaFunctionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
       )
+      mapIterationAbortedEventDetails.foreach(
+        __v => __obj.updateDynamic("mapIterationAbortedEventDetails")(__v.asInstanceOf[js.Any])
+      )
+      mapIterationFailedEventDetails.foreach(
+        __v => __obj.updateDynamic("mapIterationFailedEventDetails")(__v.asInstanceOf[js.Any])
+      )
+      mapIterationStartedEventDetails.foreach(
+        __v => __obj.updateDynamic("mapIterationStartedEventDetails")(__v.asInstanceOf[js.Any])
+      )
+      mapIterationSucceededEventDetails.foreach(
+        __v => __obj.updateDynamic("mapIterationSucceededEventDetails")(__v.asInstanceOf[js.Any])
+      )
+      mapStateStartedEventDetails.foreach(
+        __v => __obj.updateDynamic("mapStateStartedEventDetails")(__v.asInstanceOf[js.Any])
+      )
       previousEventId.foreach(__v => __obj.updateDynamic("previousEventId")(__v.asInstanceOf[js.Any]))
       stateEnteredEventDetails.foreach(__v => __obj.updateDynamic("stateEnteredEventDetails")(__v.asInstanceOf[js.Any]))
       stateExitedEventDetails.foreach(__v => __obj.updateDynamic("stateExitedEventDetails")(__v.asInstanceOf[js.Any]))
@@ -1028,47 +1055,57 @@ package stepfunctions {
 
   object HistoryEventTypeEnum {
     val ActivityFailed               = "ActivityFailed"
-    val ActivityScheduleFailed       = "ActivityScheduleFailed"
     val ActivityScheduled            = "ActivityScheduled"
+    val ActivityScheduleFailed       = "ActivityScheduleFailed"
     val ActivityStarted              = "ActivityStarted"
     val ActivitySucceeded            = "ActivitySucceeded"
     val ActivityTimedOut             = "ActivityTimedOut"
     val ChoiceStateEntered           = "ChoiceStateEntered"
     val ChoiceStateExited            = "ChoiceStateExited"
-    val TaskFailed                   = "TaskFailed"
-    val TaskScheduled                = "TaskScheduled"
-    val TaskStartFailed              = "TaskStartFailed"
-    val TaskStarted                  = "TaskStarted"
-    val TaskSubmitFailed             = "TaskSubmitFailed"
-    val TaskSubmitted                = "TaskSubmitted"
-    val TaskSucceeded                = "TaskSucceeded"
-    val TaskTimedOut                 = "TaskTimedOut"
+    val ExecutionAborted             = "ExecutionAborted"
     val ExecutionFailed              = "ExecutionFailed"
     val ExecutionStarted             = "ExecutionStarted"
     val ExecutionSucceeded           = "ExecutionSucceeded"
-    val ExecutionAborted             = "ExecutionAborted"
     val ExecutionTimedOut            = "ExecutionTimedOut"
     val FailStateEntered             = "FailStateEntered"
     val LambdaFunctionFailed         = "LambdaFunctionFailed"
-    val LambdaFunctionScheduleFailed = "LambdaFunctionScheduleFailed"
     val LambdaFunctionScheduled      = "LambdaFunctionScheduled"
-    val LambdaFunctionStartFailed    = "LambdaFunctionStartFailed"
+    val LambdaFunctionScheduleFailed = "LambdaFunctionScheduleFailed"
     val LambdaFunctionStarted        = "LambdaFunctionStarted"
+    val LambdaFunctionStartFailed    = "LambdaFunctionStartFailed"
     val LambdaFunctionSucceeded      = "LambdaFunctionSucceeded"
     val LambdaFunctionTimedOut       = "LambdaFunctionTimedOut"
-    val SucceedStateEntered          = "SucceedStateEntered"
-    val SucceedStateExited           = "SucceedStateExited"
-    val TaskStateAborted             = "TaskStateAborted"
-    val TaskStateEntered             = "TaskStateEntered"
-    val TaskStateExited              = "TaskStateExited"
-    val PassStateEntered             = "PassStateEntered"
-    val PassStateExited              = "PassStateExited"
+    val MapIterationAborted          = "MapIterationAborted"
+    val MapIterationFailed           = "MapIterationFailed"
+    val MapIterationStarted          = "MapIterationStarted"
+    val MapIterationSucceeded        = "MapIterationSucceeded"
+    val MapStateAborted              = "MapStateAborted"
+    val MapStateEntered              = "MapStateEntered"
+    val MapStateExited               = "MapStateExited"
+    val MapStateFailed               = "MapStateFailed"
+    val MapStateStarted              = "MapStateStarted"
+    val MapStateSucceeded            = "MapStateSucceeded"
     val ParallelStateAborted         = "ParallelStateAborted"
     val ParallelStateEntered         = "ParallelStateEntered"
     val ParallelStateExited          = "ParallelStateExited"
     val ParallelStateFailed          = "ParallelStateFailed"
     val ParallelStateStarted         = "ParallelStateStarted"
     val ParallelStateSucceeded       = "ParallelStateSucceeded"
+    val PassStateEntered             = "PassStateEntered"
+    val PassStateExited              = "PassStateExited"
+    val SucceedStateEntered          = "SucceedStateEntered"
+    val SucceedStateExited           = "SucceedStateExited"
+    val TaskFailed                   = "TaskFailed"
+    val TaskScheduled                = "TaskScheduled"
+    val TaskStarted                  = "TaskStarted"
+    val TaskStartFailed              = "TaskStartFailed"
+    val TaskStateAborted             = "TaskStateAborted"
+    val TaskStateEntered             = "TaskStateEntered"
+    val TaskStateExited              = "TaskStateExited"
+    val TaskSubmitFailed             = "TaskSubmitFailed"
+    val TaskSubmitted                = "TaskSubmitted"
+    val TaskSucceeded                = "TaskSucceeded"
+    val TaskTimedOut                 = "TaskTimedOut"
     val WaitStateAborted             = "WaitStateAborted"
     val WaitStateEntered             = "WaitStateEntered"
     val WaitStateExited              = "WaitStateExited"
@@ -1076,47 +1113,57 @@ package stepfunctions {
     val values = js.Object.freeze(
       js.Array(
         ActivityFailed,
-        ActivityScheduleFailed,
         ActivityScheduled,
+        ActivityScheduleFailed,
         ActivityStarted,
         ActivitySucceeded,
         ActivityTimedOut,
         ChoiceStateEntered,
         ChoiceStateExited,
-        TaskFailed,
-        TaskScheduled,
-        TaskStartFailed,
-        TaskStarted,
-        TaskSubmitFailed,
-        TaskSubmitted,
-        TaskSucceeded,
-        TaskTimedOut,
+        ExecutionAborted,
         ExecutionFailed,
         ExecutionStarted,
         ExecutionSucceeded,
-        ExecutionAborted,
         ExecutionTimedOut,
         FailStateEntered,
         LambdaFunctionFailed,
-        LambdaFunctionScheduleFailed,
         LambdaFunctionScheduled,
-        LambdaFunctionStartFailed,
+        LambdaFunctionScheduleFailed,
         LambdaFunctionStarted,
+        LambdaFunctionStartFailed,
         LambdaFunctionSucceeded,
         LambdaFunctionTimedOut,
-        SucceedStateEntered,
-        SucceedStateExited,
-        TaskStateAborted,
-        TaskStateEntered,
-        TaskStateExited,
-        PassStateEntered,
-        PassStateExited,
+        MapIterationAborted,
+        MapIterationFailed,
+        MapIterationStarted,
+        MapIterationSucceeded,
+        MapStateAborted,
+        MapStateEntered,
+        MapStateExited,
+        MapStateFailed,
+        MapStateStarted,
+        MapStateSucceeded,
         ParallelStateAborted,
         ParallelStateEntered,
         ParallelStateExited,
         ParallelStateFailed,
         ParallelStateStarted,
         ParallelStateSucceeded,
+        PassStateEntered,
+        PassStateExited,
+        SucceedStateEntered,
+        SucceedStateExited,
+        TaskFailed,
+        TaskScheduled,
+        TaskStarted,
+        TaskStartFailed,
+        TaskStateAborted,
+        TaskStateEntered,
+        TaskStateExited,
+        TaskSubmitFailed,
+        TaskSubmitted,
+        TaskSucceeded,
+        TaskTimedOut,
         WaitStateAborted,
         WaitStateEntered,
         WaitStateExited
@@ -1302,7 +1349,7 @@ package stepfunctions {
   trait ListExecutionsInput extends js.Object {
     var stateMachineArn: Arn
     var maxResults: js.UndefOr[PageSize]
-    var nextToken: js.UndefOr[PageToken]
+    var nextToken: js.UndefOr[ListExecutionsPageToken]
     var statusFilter: js.UndefOr[ExecutionStatus]
   }
 
@@ -1311,7 +1358,7 @@ package stepfunctions {
     def apply(
         stateMachineArn: Arn,
         maxResults: js.UndefOr[PageSize] = js.undefined,
-        nextToken: js.UndefOr[PageToken] = js.undefined,
+        nextToken: js.UndefOr[ListExecutionsPageToken] = js.undefined,
         statusFilter: js.UndefOr[ExecutionStatus] = js.undefined
     ): ListExecutionsInput = {
       val __obj = js.Dynamic.literal(
@@ -1328,14 +1375,14 @@ package stepfunctions {
   @js.native
   trait ListExecutionsOutput extends js.Object {
     var executions: ExecutionList
-    var nextToken: js.UndefOr[PageToken]
+    var nextToken: js.UndefOr[ListExecutionsPageToken]
   }
 
   object ListExecutionsOutput {
     @inline
     def apply(
         executions: ExecutionList,
-        nextToken: js.UndefOr[PageToken] = js.undefined
+        nextToken: js.UndefOr[ListExecutionsPageToken] = js.undefined
     ): ListExecutionsOutput = {
       val __obj = js.Dynamic.literal(
         "executions" -> executions.asInstanceOf[js.Any]
@@ -1417,6 +1464,47 @@ package stepfunctions {
       val __obj = js.Dynamic.literal()
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  /**
+    * Contains details about an iteration of a Map state.
+    */
+  @js.native
+  trait MapIterationEventDetails extends js.Object {
+    var Index: js.UndefOr[UnsignedInteger]
+    var Name: js.UndefOr[Name]
+  }
+
+  object MapIterationEventDetails {
+    @inline
+    def apply(
+        Index: js.UndefOr[UnsignedInteger] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined
+    ): MapIterationEventDetails = {
+      val __obj = js.Dynamic.literal()
+      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MapIterationEventDetails]
+    }
+  }
+
+  /**
+    * Details about a Map state that was started.
+    */
+  @js.native
+  trait MapStateStartedEventDetails extends js.Object {
+    var Length: js.UndefOr[UnsignedInteger]
+  }
+
+  object MapStateStartedEventDetails {
+    @inline
+    def apply(
+        Length: js.UndefOr[UnsignedInteger] = js.undefined
+    ): MapStateStartedEventDetails = {
+      val __obj = js.Dynamic.literal()
+      Length.foreach(__v => __obj.updateDynamic("Length")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MapStateStartedEventDetails]
     }
   }
 
@@ -1693,6 +1781,8 @@ package stepfunctions {
 
   /**
     * Tags are key-value pairs that can be associated with Step Functions state machines and activities.
+    *  An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]].
+    *  Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
   trait Tag extends js.Object {

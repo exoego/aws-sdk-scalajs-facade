@@ -91,6 +91,7 @@ package eks {
     var clientRequestToken: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var endpoint: js.UndefOr[String]
+    var identity: js.UndefOr[Identity]
     var logging: js.UndefOr[Logging]
     var name: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
@@ -108,6 +109,7 @@ package eks {
         clientRequestToken: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined,
+        identity: js.UndefOr[Identity] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
@@ -122,6 +124,7 @@ package eks {
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
+      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
@@ -345,6 +348,25 @@ package eks {
     }
   }
 
+  /**
+    * An object representing an identity provider for authentication credentials.
+    */
+  @js.native
+  trait Identity extends js.Object {
+    var oidc: js.UndefOr[OIDC]
+  }
+
+  object Identity {
+    @inline
+    def apply(
+        oidc: js.UndefOr[OIDC] = js.undefined
+    ): Identity = {
+      val __obj = js.Dynamic.literal()
+      oidc.foreach(__v => __obj.updateDynamic("oidc")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Identity]
+    }
+  }
+
   @js.native
   trait ListClustersRequest extends js.Object {
     var maxResults: js.UndefOr[ListClustersRequestMaxResults]
@@ -474,6 +496,25 @@ package eks {
       val __obj = js.Dynamic.literal()
       clusterLogging.foreach(__v => __obj.updateDynamic("clusterLogging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Logging]
+    }
+  }
+
+  /**
+    * An object representing the [[https://openid.net/connect/|OpenID Connect]] identity provider information for the cluster.
+    */
+  @js.native
+  trait OIDC extends js.Object {
+    var issuer: js.UndefOr[String]
+  }
+
+  object OIDC {
+    @inline
+    def apply(
+        issuer: js.UndefOr[String] = js.undefined
+    ): OIDC = {
+      val __obj = js.Dynamic.literal()
+      issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OIDC]
     }
   }
 

@@ -1,8 +1,7 @@
 package facade.amazonaws.services.s3
 
-import scala.concurrent.{Future, Promise => ScalaPromise}
+import scala.concurrent.Future
 import scala.scalajs.js
-import scala.scalajs.js.{JSON, JavaScriptException}
 
 object S3Extension {
   implicit class S3Ops(s3: S3) {
@@ -28,26 +27,15 @@ object S3Extension {
       params
 
     } else {
-      val deepCloned = JSON.parse(JSON.stringify(params))
+      val deepCloned = js.JSON.parse(js.JSON.stringify(params))
       deepCloned.Expires = expires
       deepCloned.asInstanceOf[js.Object]
     }
 
-    val getSignedUrlPromise = ScalaPromise[String]()
-    // Workaround for asynchronous getSignedUrl since getSignedUrl does not return js.Promise.
     s3.asInstanceOf[js.Dynamic]
-      .getSignedUrl(
-        operation,
-        paramsWithExpires,
-        (err: js.Any, url: String) => {
-          if (err == null) {
-            getSignedUrlPromise.success(url)
-          } else {
-            getSignedUrlPromise.failure(JavaScriptException(err))
-          }
-        }
-      )
-    getSignedUrlPromise.future
+      .getSignedUrlPromise(operation, paramsWithExpires)
+      .asInstanceOf[js.Promise[String]]
+      .toFuture
   }
 
   @deprecated("Use getSignedUrlFuture instead", "0.25.0")

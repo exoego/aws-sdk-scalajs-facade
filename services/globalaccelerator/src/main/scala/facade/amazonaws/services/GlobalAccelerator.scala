@@ -393,16 +393,18 @@ package globalaccelerator {
 
   @js.native
   trait DescribeAcceleratorAttributesRequest extends js.Object {
-    var AcceleratorArn: js.UndefOr[GenericString]
+    var AcceleratorArn: GenericString
   }
 
   object DescribeAcceleratorAttributesRequest {
     @inline
     def apply(
-        AcceleratorArn: js.UndefOr[GenericString] = js.undefined
+        AcceleratorArn: GenericString
     ): DescribeAcceleratorAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-      AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DescribeAcceleratorAttributesRequest]
     }
   }
@@ -530,6 +532,7 @@ package globalaccelerator {
     */
   @js.native
   trait EndpointConfiguration extends js.Object {
+    var ClientIPPreservationEnabled: js.UndefOr[GenericBoolean]
     var EndpointId: js.UndefOr[GenericString]
     var Weight: js.UndefOr[EndpointWeight]
   }
@@ -537,10 +540,14 @@ package globalaccelerator {
   object EndpointConfiguration {
     @inline
     def apply(
+        ClientIPPreservationEnabled: js.UndefOr[GenericBoolean] = js.undefined,
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointConfiguration = {
       val __obj = js.Dynamic.literal()
+      ClientIPPreservationEnabled.foreach(
+        __v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
+      )
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointConfiguration]
@@ -552,6 +559,7 @@ package globalaccelerator {
     */
   @js.native
   trait EndpointDescription extends js.Object {
+    var ClientIPPreservationEnabled: js.UndefOr[GenericBoolean]
     var EndpointId: js.UndefOr[GenericString]
     var HealthReason: js.UndefOr[GenericString]
     var HealthState: js.UndefOr[HealthState]
@@ -561,12 +569,16 @@ package globalaccelerator {
   object EndpointDescription {
     @inline
     def apply(
+        ClientIPPreservationEnabled: js.UndefOr[GenericBoolean] = js.undefined,
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         HealthReason: js.UndefOr[GenericString] = js.undefined,
         HealthState: js.UndefOr[HealthState] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointDescription = {
       val __obj = js.Dynamic.literal()
+      ClientIPPreservationEnabled.foreach(
+        __v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
+      )
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       HealthReason.foreach(__v => __obj.updateDynamic("HealthReason")(__v.asInstanceOf[js.Any]))
       HealthState.foreach(__v => __obj.updateDynamic("HealthState")(__v.asInstanceOf[js.Any]))
@@ -847,7 +859,7 @@ package globalaccelerator {
 
   @js.native
   trait UpdateAcceleratorAttributesRequest extends js.Object {
-    var AcceleratorArn: js.UndefOr[GenericString]
+    var AcceleratorArn: GenericString
     var FlowLogsEnabled: js.UndefOr[GenericBoolean]
     var FlowLogsS3Bucket: js.UndefOr[GenericString]
     var FlowLogsS3Prefix: js.UndefOr[GenericString]
@@ -856,13 +868,15 @@ package globalaccelerator {
   object UpdateAcceleratorAttributesRequest {
     @inline
     def apply(
-        AcceleratorArn: js.UndefOr[GenericString] = js.undefined,
+        AcceleratorArn: GenericString,
         FlowLogsEnabled: js.UndefOr[GenericBoolean] = js.undefined,
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
         FlowLogsS3Prefix: js.UndefOr[GenericString] = js.undefined
     ): UpdateAcceleratorAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-      AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
+      )
+
       FlowLogsEnabled.foreach(__v => __obj.updateDynamic("FlowLogsEnabled")(__v.asInstanceOf[js.Any]))
       FlowLogsS3Bucket.foreach(__v => __obj.updateDynamic("FlowLogsS3Bucket")(__v.asInstanceOf[js.Any]))
       FlowLogsS3Prefix.foreach(__v => __obj.updateDynamic("FlowLogsS3Prefix")(__v.asInstanceOf[js.Any]))

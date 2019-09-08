@@ -21,9 +21,11 @@ package object sqs {
   type MessageAttributeName                         = String
   type MessageAttributeNameList                     = js.Array[MessageAttributeName]
   type MessageBodyAttributeMap                      = js.Dictionary[MessageAttributeValue]
+  type MessageBodySystemAttributeMap                = js.Dictionary[MessageSystemAttributeValue]
   type MessageList                                  = js.Array[Message]
   type MessageSystemAttributeMap                    = js.Dictionary[String]
   type MessageSystemAttributeName                   = String
+  type MessageSystemAttributeNameForSends           = String
   type QueueAttributeMap                            = js.Dictionary[String]
   type QueueAttributeName                           = String
   type QueueUrlList                                 = js.Array[String]
@@ -760,6 +762,7 @@ package sqs {
     val SequenceNumber                   = "SequenceNumber"
     val MessageDeduplicationId           = "MessageDeduplicationId"
     val MessageGroupId                   = "MessageGroupId"
+    val AWSTraceHeader                   = "AWSTraceHeader"
 
     val values = js.Object.freeze(
       js.Array(
@@ -769,9 +772,50 @@ package sqs {
         ApproximateFirstReceiveTimestamp,
         SequenceNumber,
         MessageDeduplicationId,
-        MessageGroupId
+        MessageGroupId,
+        AWSTraceHeader
       )
     )
+  }
+
+  object MessageSystemAttributeNameForSendsEnum {
+    val AWSTraceHeader = "AWSTraceHeader"
+
+    val values = js.Object.freeze(js.Array(AWSTraceHeader))
+  }
+
+  /**
+    * The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
+    *  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.
+    */
+  @js.native
+  trait MessageSystemAttributeValue extends js.Object {
+    var DataType: String
+    var BinaryListValues: js.UndefOr[BinaryList]
+    var BinaryValue: js.UndefOr[Binary]
+    var StringListValues: js.UndefOr[StringList]
+    var StringValue: js.UndefOr[String]
+  }
+
+  object MessageSystemAttributeValue {
+    @inline
+    def apply(
+        DataType: String,
+        BinaryListValues: js.UndefOr[BinaryList] = js.undefined,
+        BinaryValue: js.UndefOr[Binary] = js.undefined,
+        StringListValues: js.UndefOr[StringList] = js.undefined,
+        StringValue: js.UndefOr[String] = js.undefined
+    ): MessageSystemAttributeValue = {
+      val __obj = js.Dynamic.literal(
+        "DataType" -> DataType.asInstanceOf[js.Any]
+      )
+
+      BinaryListValues.foreach(__v => __obj.updateDynamic("BinaryListValues")(__v.asInstanceOf[js.Any]))
+      BinaryValue.foreach(__v => __obj.updateDynamic("BinaryValue")(__v.asInstanceOf[js.Any]))
+      StringListValues.foreach(__v => __obj.updateDynamic("StringListValues")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageSystemAttributeValue]
+    }
   }
 
   /**
@@ -956,6 +1000,7 @@ package sqs {
     var MessageAttributes: js.UndefOr[MessageBodyAttributeMap]
     var MessageDeduplicationId: js.UndefOr[String]
     var MessageGroupId: js.UndefOr[String]
+    var MessageSystemAttributes: js.UndefOr[MessageBodySystemAttributeMap]
   }
 
   object SendMessageBatchRequestEntry {
@@ -966,7 +1011,8 @@ package sqs {
         DelaySeconds: js.UndefOr[Int] = js.undefined,
         MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
         MessageDeduplicationId: js.UndefOr[String] = js.undefined,
-        MessageGroupId: js.UndefOr[String] = js.undefined
+        MessageGroupId: js.UndefOr[String] = js.undefined,
+        MessageSystemAttributes: js.UndefOr[MessageBodySystemAttributeMap] = js.undefined
     ): SendMessageBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
         "Id"          -> Id.asInstanceOf[js.Any],
@@ -977,6 +1023,7 @@ package sqs {
       MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
       MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
       MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
+      MessageSystemAttributes.foreach(__v => __obj.updateDynamic("MessageSystemAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchRequestEntry]
     }
   }
@@ -1014,6 +1061,7 @@ package sqs {
     var MD5OfMessageBody: String
     var MessageId: String
     var MD5OfMessageAttributes: js.UndefOr[String]
+    var MD5OfMessageSystemAttributes: js.UndefOr[String]
     var SequenceNumber: js.UndefOr[String]
   }
 
@@ -1024,6 +1072,7 @@ package sqs {
         MD5OfMessageBody: String,
         MessageId: String,
         MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
+        MD5OfMessageSystemAttributes: js.UndefOr[String] = js.undefined,
         SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageBatchResultEntry = {
       val __obj = js.Dynamic.literal(
@@ -1033,6 +1082,9 @@ package sqs {
       )
 
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
+      MD5OfMessageSystemAttributes.foreach(
+        __v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
+      )
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchResultEntry]
     }
@@ -1049,6 +1101,7 @@ package sqs {
     var MessageAttributes: js.UndefOr[MessageBodyAttributeMap]
     var MessageDeduplicationId: js.UndefOr[String]
     var MessageGroupId: js.UndefOr[String]
+    var MessageSystemAttributes: js.UndefOr[MessageBodySystemAttributeMap]
   }
 
   object SendMessageRequest {
@@ -1059,7 +1112,8 @@ package sqs {
         DelaySeconds: js.UndefOr[Int] = js.undefined,
         MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
         MessageDeduplicationId: js.UndefOr[String] = js.undefined,
-        MessageGroupId: js.UndefOr[String] = js.undefined
+        MessageGroupId: js.UndefOr[String] = js.undefined,
+        MessageSystemAttributes: js.UndefOr[MessageBodySystemAttributeMap] = js.undefined
     ): SendMessageRequest = {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any],
@@ -1070,6 +1124,7 @@ package sqs {
       MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
       MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
       MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
+      MessageSystemAttributes.foreach(__v => __obj.updateDynamic("MessageSystemAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageRequest]
     }
   }
@@ -1081,6 +1136,7 @@ package sqs {
   trait SendMessageResult extends js.Object {
     var MD5OfMessageAttributes: js.UndefOr[String]
     var MD5OfMessageBody: js.UndefOr[String]
+    var MD5OfMessageSystemAttributes: js.UndefOr[String]
     var MessageId: js.UndefOr[String]
     var SequenceNumber: js.UndefOr[String]
   }
@@ -1090,12 +1146,16 @@ package sqs {
     def apply(
         MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
         MD5OfMessageBody: js.UndefOr[String] = js.undefined,
+        MD5OfMessageSystemAttributes: js.UndefOr[String] = js.undefined,
         MessageId: js.UndefOr[String] = js.undefined,
         SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageResult = {
       val __obj = js.Dynamic.literal()
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
       MD5OfMessageBody.foreach(__v => __obj.updateDynamic("MD5OfMessageBody")(__v.asInstanceOf[js.Any]))
+      MD5OfMessageSystemAttributes.foreach(
+        __v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
+      )
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageResult]

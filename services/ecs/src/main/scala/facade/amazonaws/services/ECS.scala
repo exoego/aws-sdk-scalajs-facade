@@ -43,9 +43,13 @@ package object ecs {
   type DockerLabelsMap                       = js.Dictionary[String]
   type EnvironmentVariables                  = js.Array[KeyValuePair]
   type Failures                              = js.Array[Failure]
+  type FirelensConfigurationOptionsMap       = js.Dictionary[String]
+  type FirelensConfigurationType             = String
   type GpuIds                                = js.Array[String]
   type HealthStatus                          = String
   type HostEntryList                         = js.Array[HostEntry]
+  type InferenceAcceleratorOverrides         = js.Array[InferenceAcceleratorOverride]
+  type InferenceAccelerators                 = js.Array[InferenceAccelerator]
   type IpcMode                               = String
   type LaunchType                            = String
   type LoadBalancers                         = js.Array[LoadBalancer]
@@ -203,6 +207,9 @@ package object ecs {
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
+    @inline def updateClusterSettingsFuture(
+        params: UpdateClusterSettingsRequest
+    ): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise.toFuture
     @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] =
       service.updateContainerAgent(params).promise.toFuture
     @inline def updateContainerInstancesStateFuture(
@@ -280,6 +287,7 @@ package ecs {
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest): Request[SubmitTaskStateChangeResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def updateClusterSettings(params: UpdateClusterSettingsRequest): Request[UpdateClusterSettingsResponse] = js.native
     def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse]    = js.native
     def updateContainerInstancesState(
         params: UpdateContainerInstancesStateRequest
@@ -523,6 +531,7 @@ package ecs {
     var containerArn: js.UndefOr[String]
     var cpu: js.UndefOr[String]
     var exitCode: js.UndefOr[BoxedInteger]
+    var firelensConfiguration: js.UndefOr[FirelensConfiguration]
     var gpuIds: js.UndefOr[GpuIds]
     var healthStatus: js.UndefOr[HealthStatus]
     var lastStatus: js.UndefOr[String]
@@ -532,6 +541,7 @@ package ecs {
     var networkBindings: js.UndefOr[NetworkBindings]
     var networkInterfaces: js.UndefOr[NetworkInterfaces]
     var reason: js.UndefOr[String]
+    var runtimeId: js.UndefOr[String]
     var taskArn: js.UndefOr[String]
   }
 
@@ -541,6 +551,7 @@ package ecs {
         containerArn: js.UndefOr[String] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
+        firelensConfiguration: js.UndefOr[FirelensConfiguration] = js.undefined,
         gpuIds: js.UndefOr[GpuIds] = js.undefined,
         healthStatus: js.UndefOr[HealthStatus] = js.undefined,
         lastStatus: js.UndefOr[String] = js.undefined,
@@ -550,12 +561,14 @@ package ecs {
         networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
         networkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
+        runtimeId: js.UndefOr[String] = js.undefined,
         taskArn: js.UndefOr[String] = js.undefined
     ): Container = {
       val __obj = js.Dynamic.literal()
       containerArn.foreach(__v => __obj.updateDynamic("containerArn")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      firelensConfiguration.foreach(__v => __obj.updateDynamic("firelensConfiguration")(__v.asInstanceOf[js.Any]))
       gpuIds.foreach(__v => __obj.updateDynamic("gpuIds")(__v.asInstanceOf[js.Any]))
       healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
       lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
@@ -565,6 +578,7 @@ package ecs {
       networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
       networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
       taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Container]
     }
@@ -596,6 +610,7 @@ package ecs {
     var environment: js.UndefOr[EnvironmentVariables]
     var essential: js.UndefOr[BoxedBoolean]
     var extraHosts: js.UndefOr[HostEntryList]
+    var firelensConfiguration: js.UndefOr[FirelensConfiguration]
     var healthCheck: js.UndefOr[HealthCheck]
     var hostname: js.UndefOr[String]
     var image: js.UndefOr[String]
@@ -638,6 +653,7 @@ package ecs {
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
         essential: js.UndefOr[BoxedBoolean] = js.undefined,
         extraHosts: js.UndefOr[HostEntryList] = js.undefined,
+        firelensConfiguration: js.UndefOr[FirelensConfiguration] = js.undefined,
         healthCheck: js.UndefOr[HealthCheck] = js.undefined,
         hostname: js.UndefOr[String] = js.undefined,
         image: js.UndefOr[String] = js.undefined,
@@ -677,6 +693,7 @@ package ecs {
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       essential.foreach(__v => __obj.updateDynamic("essential")(__v.asInstanceOf[js.Any]))
       extraHosts.foreach(__v => __obj.updateDynamic("extraHosts")(__v.asInstanceOf[js.Any]))
+      firelensConfiguration.foreach(__v => __obj.updateDynamic("firelensConfiguration")(__v.asInstanceOf[js.Any]))
       healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
       hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
@@ -859,6 +876,7 @@ package ecs {
     var exitCode: js.UndefOr[BoxedInteger]
     var networkBindings: js.UndefOr[NetworkBindings]
     var reason: js.UndefOr[String]
+    var runtimeId: js.UndefOr[String]
     var status: js.UndefOr[String]
   }
 
@@ -869,6 +887,7 @@ package ecs {
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
         networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
+        runtimeId: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): ContainerStateChange = {
       val __obj = js.Dynamic.literal()
@@ -876,6 +895,7 @@ package ecs {
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
       networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerStateChange]
     }
@@ -1826,6 +1846,37 @@ package ecs {
   }
 
   /**
+    * The FireLens configuration for the container. This is used to specify and configure a log router for container logs.
+    */
+  @js.native
+  trait FirelensConfiguration extends js.Object {
+    var `type`: FirelensConfigurationType
+    var options: js.UndefOr[FirelensConfigurationOptionsMap]
+  }
+
+  object FirelensConfiguration {
+    @inline
+    def apply(
+        `type`: FirelensConfigurationType,
+        options: js.UndefOr[FirelensConfigurationOptionsMap] = js.undefined
+    ): FirelensConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirelensConfiguration]
+    }
+  }
+
+  object FirelensConfigurationTypeEnum {
+    val fluentd   = "fluentd"
+    val fluentbit = "fluentbit"
+
+    val values = js.Object.freeze(js.Array(fluentd, fluentbit))
+  }
+
+  /**
     * An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).
     *  The following are notes about container health check support:
     * * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]].
@@ -1910,6 +1961,52 @@ package ecs {
       val __obj = js.Dynamic.literal()
       sourcePath.foreach(__v => __obj.updateDynamic("sourcePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HostVolumeProperties]
+    }
+  }
+
+  /**
+    * Details on a Elastic Inference accelerator. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait InferenceAccelerator extends js.Object {
+    var deviceName: String
+    var deviceType: String
+  }
+
+  object InferenceAccelerator {
+    @inline
+    def apply(
+        deviceName: String,
+        deviceType: String
+    ): InferenceAccelerator = {
+      val __obj = js.Dynamic.literal(
+        "deviceName" -> deviceName.asInstanceOf[js.Any],
+        "deviceType" -> deviceType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InferenceAccelerator]
+    }
+  }
+
+  /**
+    * Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait InferenceAcceleratorOverride extends js.Object {
+    var deviceName: js.UndefOr[String]
+    var deviceType: js.UndefOr[String]
+  }
+
+  object InferenceAcceleratorOverride {
+    @inline
+    def apply(
+        deviceName: js.UndefOr[String] = js.undefined,
+        deviceType: js.UndefOr[String] = js.undefined
+    ): InferenceAcceleratorOverride = {
+      val __obj = js.Dynamic.literal()
+      deviceName.foreach(__v => __obj.updateDynamic("deviceName")(__v.asInstanceOf[js.Any]))
+      deviceType.foreach(__v => __obj.updateDynamic("deviceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferenceAcceleratorOverride]
     }
   }
 
@@ -2428,10 +2525,7 @@ package ecs {
   }
 
   /**
-    * Details on a load balancer to be used with a service or task set.
-    *  If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target group.
-    *  If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task set in the deployment. The load balancer can also have up to two listeners, a required listener for production traffic and an optional listener that allows you to test new revisions of the service before routing production traffic to it.
-    *  Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+    * Details on the load balancer or load balancers to use with a service or task set.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -2493,8 +2587,9 @@ package ecs {
     val fluentd     = "fluentd"
     val awslogs     = "awslogs"
     val splunk      = "splunk"
+    val awsfirelens = "awsfirelens"
 
-    val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk))
+    val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
   }
 
   /**
@@ -2612,6 +2707,8 @@ package ecs {
 
   /**
     * An object representing a constraint on task placement. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *
+    * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
     */
   @js.native
   trait PlacementConstraint extends js.Object {
@@ -2946,6 +3043,7 @@ package ecs {
     var family: String
     var cpu: js.UndefOr[String]
     var executionRoleArn: js.UndefOr[String]
+    var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
     var ipcMode: js.UndefOr[IpcMode]
     var memory: js.UndefOr[String]
     var networkMode: js.UndefOr[NetworkMode]
@@ -2965,6 +3063,7 @@ package ecs {
         family: String,
         cpu: js.UndefOr[String] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
+        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
         ipcMode: js.UndefOr[IpcMode] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
         networkMode: js.UndefOr[NetworkMode] = js.undefined,
@@ -2983,6 +3082,7 @@ package ecs {
 
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
+      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
       ipcMode.foreach(__v => __obj.updateDynamic("ipcMode")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       networkMode.foreach(__v => __obj.updateDynamic("networkMode")(__v.asInstanceOf[js.Any]))
@@ -3072,7 +3172,7 @@ package ecs {
   }
 
   /**
-    * The type and amount of a resource to assign to a container. The only supported resource is a GPU. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
+    * The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] or [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
     */
   @js.native
   trait ResourceRequirement extends js.Object {
@@ -3096,9 +3196,10 @@ package ecs {
   }
 
   object ResourceTypeEnum {
-    val GPU = "GPU"
+    val GPU                  = "GPU"
+    val InferenceAccelerator = "InferenceAccelerator"
 
-    val values = js.Object.freeze(js.Array(GPU))
+    val values = js.Object.freeze(js.Array(GPU, InferenceAccelerator))
   }
 
   @js.native
@@ -3612,6 +3713,7 @@ package ecs {
     var exitCode: js.UndefOr[BoxedInteger]
     var networkBindings: js.UndefOr[NetworkBindings]
     var reason: js.UndefOr[String]
+    var runtimeId: js.UndefOr[String]
     var status: js.UndefOr[String]
     var task: js.UndefOr[String]
   }
@@ -3624,6 +3726,7 @@ package ecs {
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
         networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
+        runtimeId: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         task: js.UndefOr[String] = js.undefined
     ): SubmitContainerStateChangeRequest = {
@@ -3633,6 +3736,7 @@ package ecs {
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
       networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       task.foreach(__v => __obj.updateDynamic("task")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubmitContainerStateChangeRequest]
@@ -3823,6 +3927,7 @@ package ecs {
     var executionStoppedAt: js.UndefOr[Timestamp]
     var group: js.UndefOr[String]
     var healthStatus: js.UndefOr[HealthStatus]
+    var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
     var lastStatus: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
     var memory: js.UndefOr[String]
@@ -3857,6 +3962,7 @@ package ecs {
         executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
         group: js.UndefOr[String] = js.undefined,
         healthStatus: js.UndefOr[HealthStatus] = js.undefined,
+        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
         lastStatus: js.UndefOr[String] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
@@ -3888,6 +3994,7 @@ package ecs {
       executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
       healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
+      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
       lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
@@ -3994,9 +4101,9 @@ package ecs {
   }
 
   /**
-    * An object representing a constraint on task placement in the task definition.
-    *  If you are using the Fargate launch type, task placement constraints are not supported.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * An object representing a constraint on task placement in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *
+    * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
     */
   @js.native
   trait TaskDefinitionPlacementConstraint extends js.Object {
@@ -4043,6 +4150,7 @@ package ecs {
   trait TaskOverride extends js.Object {
     var containerOverrides: js.UndefOr[ContainerOverrides]
     var executionRoleArn: js.UndefOr[String]
+    var inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides]
     var taskRoleArn: js.UndefOr[String]
   }
 
@@ -4051,11 +4159,15 @@ package ecs {
     def apply(
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
+        inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides] = js.undefined,
         taskRoleArn: js.UndefOr[String] = js.undefined
     ): TaskOverride = {
       val __obj = js.Dynamic.literal()
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
+      inferenceAcceleratorOverrides.foreach(
+        __v => __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
+      )
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskOverride]
     }
@@ -4278,6 +4390,43 @@ package ecs {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateClusterSettingsRequest extends js.Object {
+    var cluster: String
+    var settings: ClusterSettings
+  }
+
+  object UpdateClusterSettingsRequest {
+    @inline
+    def apply(
+        cluster: String,
+        settings: ClusterSettings
+    ): UpdateClusterSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "cluster"  -> cluster.asInstanceOf[js.Any],
+        "settings" -> settings.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateClusterSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateClusterSettingsResponse extends js.Object {
+    var cluster: js.UndefOr[Cluster]
+  }
+
+  object UpdateClusterSettingsResponse {
+    @inline
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): UpdateClusterSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterSettingsResponse]
     }
   }
 

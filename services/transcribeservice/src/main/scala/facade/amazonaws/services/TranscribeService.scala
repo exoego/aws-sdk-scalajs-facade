@@ -447,8 +447,8 @@ package transcribeservice {
   trait StartTranscriptionJobRequest extends js.Object {
     var LanguageCode: LanguageCode
     var Media: Media
-    var MediaFormat: MediaFormat
     var TranscriptionJobName: TranscriptionJobName
+    var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var OutputBucketName: js.UndefOr[OutputBucketName]
     var Settings: js.UndefOr[Settings]
@@ -459,8 +459,8 @@ package transcribeservice {
     def apply(
         LanguageCode: LanguageCode,
         Media: Media,
-        MediaFormat: MediaFormat,
         TranscriptionJobName: TranscriptionJobName,
+        MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined
@@ -468,10 +468,10 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
         "Media"                -> Media.asInstanceOf[js.Any],
-        "MediaFormat"          -> MediaFormat.asInstanceOf[js.Any],
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
 
+      MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       OutputBucketName.foreach(__v => __obj.updateDynamic("OutputBucketName")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))

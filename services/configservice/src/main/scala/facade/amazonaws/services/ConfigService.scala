@@ -8,146 +8,153 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object configservice {
-  type ARN                                     = String
-  type AccountAggregationSourceAccountList     = js.Array[AccountId]
-  type AccountAggregationSourceList            = js.Array[AccountAggregationSource]
-  type AccountId                               = String
-  type AggregateComplianceByConfigRuleList     = js.Array[AggregateComplianceByConfigRule]
-  type AggregateComplianceCountList            = js.Array[AggregateComplianceCount]
-  type AggregateEvaluationResultList           = js.Array[AggregateEvaluationResult]
-  type AggregatedSourceStatusList              = js.Array[AggregatedSourceStatus]
-  type AggregatedSourceStatusType              = String
-  type AggregatedSourceStatusTypeList          = js.Array[AggregatedSourceStatusType]
-  type AggregatedSourceType                    = String
-  type AggregationAuthorizationList            = js.Array[AggregationAuthorization]
-  type AggregatorRegionList                    = js.Array[String]
-  type AllSupported                            = Boolean
-  type AmazonResourceName                      = String
-  type AvailabilityZone                        = String
-  type AwsRegion                               = String
-  type BaseConfigurationItems                  = js.Array[BaseConfigurationItem]
-  type BaseResourceId                          = String
-  type ChannelName                             = String
-  type ChronologicalOrder                      = String
-  type ComplianceByConfigRules                 = js.Array[ComplianceByConfigRule]
-  type ComplianceByResources                   = js.Array[ComplianceByResource]
-  type ComplianceResourceTypes                 = js.Array[StringWithCharLimit256]
-  type ComplianceSummariesByResourceType       = js.Array[ComplianceSummaryByResourceType]
-  type ComplianceType                          = String
-  type ComplianceTypes                         = js.Array[ComplianceType]
-  type ConfigRuleComplianceSummaryGroupKey     = String
-  type ConfigRuleEvaluationStatusList          = js.Array[ConfigRuleEvaluationStatus]
-  type ConfigRuleName                          = String
-  type ConfigRuleNames                         = js.Array[StringWithCharLimit64]
-  type ConfigRuleState                         = String
-  type ConfigRules                             = js.Array[ConfigRule]
-  type Configuration                           = String
-  type ConfigurationAggregatorArn              = String
-  type ConfigurationAggregatorList             = js.Array[ConfigurationAggregator]
-  type ConfigurationAggregatorName             = String
-  type ConfigurationAggregatorNameList         = js.Array[ConfigurationAggregatorName]
-  type ConfigurationItemCaptureTime            = js.Date
-  type ConfigurationItemList                   = js.Array[ConfigurationItem]
-  type ConfigurationItemMD5Hash                = String
-  type ConfigurationItemStatus                 = String
-  type ConfigurationRecorderList               = js.Array[ConfigurationRecorder]
-  type ConfigurationRecorderNameList           = js.Array[RecorderName]
-  type ConfigurationRecorderStatusList         = js.Array[ConfigurationRecorderStatus]
-  type ConfigurationStateId                    = String
-  type CosmosPageLimit                         = Int
-  type Date                                    = js.Date
-  type DeliveryChannelList                     = js.Array[DeliveryChannel]
-  type DeliveryChannelNameList                 = js.Array[ChannelName]
-  type DeliveryChannelStatusList               = js.Array[DeliveryChannelStatus]
-  type DeliveryStatus                          = String
-  type DescribePendingAggregationRequestsLimit = Int
-  type DiscoveredResourceIdentifierList        = js.Array[AggregateResourceIdentifier]
-  type EarlierTime                             = js.Date
-  type EmptiableStringWithCharLimit256         = String
-  type EvaluationResults                       = js.Array[EvaluationResult]
-  type Evaluations                             = js.Array[Evaluation]
-  type EventSource                             = String
-  type ExcludedAccounts                        = js.Array[AccountId]
-  type Expression                              = String
-  type FailedRemediationBatches                = js.Array[FailedRemediationBatch]
-  type FieldInfoList                           = js.Array[FieldInfo]
-  type FieldName                               = String
-  type GroupByAPILimit                         = Int
-  type GroupedResourceCountList                = js.Array[GroupedResourceCount]
-  type IncludeGlobalResourceTypes              = Boolean
-  type LaterTime                               = js.Date
-  type Limit                                   = Int
-  type MaximumExecutionFrequency               = String
-  type MemberAccountRuleStatus                 = String
-  type MessageType                             = String
-  type Name                                    = String
-  type NextToken                               = String
-  type OrderingTimestamp                       = js.Date
-  type OrganizationConfigRuleDetailedStatus    = js.Array[MemberAccountStatus]
-  type OrganizationConfigRuleNames             = js.Array[StringWithCharLimit64]
-  type OrganizationConfigRuleStatuses          = js.Array[OrganizationConfigRuleStatus]
-  type OrganizationConfigRuleTriggerType       = String
-  type OrganizationConfigRuleTriggerTypes      = js.Array[OrganizationConfigRuleTriggerType]
-  type OrganizationConfigRules                 = js.Array[OrganizationConfigRule]
-  type OrganizationRuleStatus                  = String
-  type Owner                                   = String
-  type PendingAggregationRequestList           = js.Array[PendingAggregationRequest]
-  type RecorderName                            = String
-  type RecorderStatus                          = String
-  type ReevaluateConfigRuleNames               = js.Array[StringWithCharLimit64]
-  type RelatedEvent                            = String
-  type RelatedEventList                        = js.Array[RelatedEvent]
-  type RelationshipList                        = js.Array[Relationship]
-  type RelationshipName                        = String
-  type RemediationConfigurations               = js.Array[RemediationConfiguration]
-  type RemediationExecutionState               = String
-  type RemediationExecutionStatuses            = js.Array[RemediationExecutionStatus]
-  type RemediationExecutionStepState           = String
-  type RemediationExecutionSteps               = js.Array[RemediationExecutionStep]
-  type RemediationParameters                   = js.Dictionary[RemediationParameterValue]
-  type RemediationTargetType                   = String
-  type ResourceCountGroupKey                   = String
-  type ResourceCounts                          = js.Array[ResourceCount]
-  type ResourceCreationTime                    = js.Date
-  type ResourceDeletionTime                    = js.Date
-  type ResourceId                              = String
-  type ResourceIdList                          = js.Array[ResourceId]
-  type ResourceIdentifierList                  = js.Array[ResourceIdentifier]
-  type ResourceIdentifiersList                 = js.Array[AggregateResourceIdentifier]
-  type ResourceKeys                            = js.Array[ResourceKey]
-  type ResourceName                            = String
-  type ResourceType                            = String
-  type ResourceTypeList                        = js.Array[ResourceType]
-  type ResourceTypes                           = js.Array[StringWithCharLimit256]
-  type ResourceTypesScope                      = js.Array[StringWithCharLimit256]
-  type ResourceValueType                       = String
-  type Results                                 = js.Array[String]
-  type RetentionConfigurationList              = js.Array[RetentionConfiguration]
-  type RetentionConfigurationName              = String
-  type RetentionConfigurationNameList          = js.Array[RetentionConfigurationName]
-  type RetentionPeriodInDays                   = Int
-  type RuleLimit                               = Int
-  type SourceDetails                           = js.Array[SourceDetail]
-  type StaticParameterValues                   = js.Array[StringWithCharLimit256]
-  type StringWithCharLimit1024                 = String
-  type StringWithCharLimit128                  = String
-  type StringWithCharLimit2048                 = String
-  type StringWithCharLimit256                  = String
-  type StringWithCharLimit256Min0              = String
-  type StringWithCharLimit64                   = String
-  type StringWithCharLimit768                  = String
-  type SupplementaryConfiguration              = js.Dictionary[SupplementaryConfigurationValue]
-  type SupplementaryConfigurationName          = String
-  type SupplementaryConfigurationValue         = String
-  type TagKey                                  = String
-  type TagKeyList                              = js.Array[TagKey]
-  type TagList                                 = js.Array[Tag]
-  type TagValue                                = String
-  type Tags                                    = js.Dictionary[Value]
-  type TagsList                                = js.Array[Tag]
-  type UnprocessedResourceIdentifierList       = js.Array[AggregateResourceIdentifier]
-  type Value                                   = String
-  type Version                                 = String
+  type ARN                                      = String
+  type AccountAggregationSourceAccountList      = js.Array[AccountId]
+  type AccountAggregationSourceList             = js.Array[AccountAggregationSource]
+  type AccountId                                = String
+  type AggregateComplianceByConfigRuleList      = js.Array[AggregateComplianceByConfigRule]
+  type AggregateComplianceCountList             = js.Array[AggregateComplianceCount]
+  type AggregateEvaluationResultList            = js.Array[AggregateEvaluationResult]
+  type AggregatedSourceStatusList               = js.Array[AggregatedSourceStatus]
+  type AggregatedSourceStatusType               = String
+  type AggregatedSourceStatusTypeList           = js.Array[AggregatedSourceStatusType]
+  type AggregatedSourceType                     = String
+  type AggregationAuthorizationList             = js.Array[AggregationAuthorization]
+  type AggregatorRegionList                     = js.Array[String]
+  type AllSupported                             = Boolean
+  type AmazonResourceName                       = String
+  type AutoRemediationAttemptSeconds            = Double
+  type AutoRemediationAttempts                  = Int
+  type AvailabilityZone                         = String
+  type AwsRegion                                = String
+  type BaseConfigurationItems                   = js.Array[BaseConfigurationItem]
+  type BaseResourceId                           = String
+  type ChannelName                              = String
+  type ChronologicalOrder                       = String
+  type ComplianceByConfigRules                  = js.Array[ComplianceByConfigRule]
+  type ComplianceByResources                    = js.Array[ComplianceByResource]
+  type ComplianceResourceTypes                  = js.Array[StringWithCharLimit256]
+  type ComplianceSummariesByResourceType        = js.Array[ComplianceSummaryByResourceType]
+  type ComplianceType                           = String
+  type ComplianceTypes                          = js.Array[ComplianceType]
+  type ConfigRuleComplianceSummaryGroupKey      = String
+  type ConfigRuleEvaluationStatusList           = js.Array[ConfigRuleEvaluationStatus]
+  type ConfigRuleName                           = String
+  type ConfigRuleNames                          = js.Array[ConfigRuleName]
+  type ConfigRuleState                          = String
+  type ConfigRules                              = js.Array[ConfigRule]
+  type Configuration                            = String
+  type ConfigurationAggregatorArn               = String
+  type ConfigurationAggregatorList              = js.Array[ConfigurationAggregator]
+  type ConfigurationAggregatorName              = String
+  type ConfigurationAggregatorNameList          = js.Array[ConfigurationAggregatorName]
+  type ConfigurationItemCaptureTime             = js.Date
+  type ConfigurationItemList                    = js.Array[ConfigurationItem]
+  type ConfigurationItemMD5Hash                 = String
+  type ConfigurationItemStatus                  = String
+  type ConfigurationRecorderList                = js.Array[ConfigurationRecorder]
+  type ConfigurationRecorderNameList            = js.Array[RecorderName]
+  type ConfigurationRecorderStatusList          = js.Array[ConfigurationRecorderStatus]
+  type ConfigurationStateId                     = String
+  type CosmosPageLimit                          = Int
+  type Date                                     = js.Date
+  type DeliveryChannelList                      = js.Array[DeliveryChannel]
+  type DeliveryChannelNameList                  = js.Array[ChannelName]
+  type DeliveryChannelStatusList                = js.Array[DeliveryChannelStatus]
+  type DeliveryStatus                           = String
+  type DescribePendingAggregationRequestsLimit  = Int
+  type DiscoveredResourceIdentifierList         = js.Array[AggregateResourceIdentifier]
+  type EarlierTime                              = js.Date
+  type EmptiableStringWithCharLimit256          = String
+  type EvaluationResults                        = js.Array[EvaluationResult]
+  type Evaluations                              = js.Array[Evaluation]
+  type EventSource                              = String
+  type ExcludedAccounts                         = js.Array[AccountId]
+  type Expression                               = String
+  type FailedDeleteRemediationExceptionsBatches = js.Array[FailedDeleteRemediationExceptionsBatch]
+  type FailedRemediationBatches                 = js.Array[FailedRemediationBatch]
+  type FailedRemediationExceptionBatches        = js.Array[FailedRemediationExceptionBatch]
+  type FieldInfoList                            = js.Array[FieldInfo]
+  type FieldName                                = String
+  type GroupByAPILimit                          = Int
+  type GroupedResourceCountList                 = js.Array[GroupedResourceCount]
+  type IncludeGlobalResourceTypes               = Boolean
+  type LaterTime                                = js.Date
+  type Limit                                    = Int
+  type MaximumExecutionFrequency                = String
+  type MemberAccountRuleStatus                  = String
+  type MessageType                              = String
+  type Name                                     = String
+  type NextToken                                = String
+  type OrderingTimestamp                        = js.Date
+  type OrganizationConfigRuleDetailedStatus     = js.Array[MemberAccountStatus]
+  type OrganizationConfigRuleNames              = js.Array[StringWithCharLimit64]
+  type OrganizationConfigRuleStatuses           = js.Array[OrganizationConfigRuleStatus]
+  type OrganizationConfigRuleTriggerType        = String
+  type OrganizationConfigRuleTriggerTypes       = js.Array[OrganizationConfigRuleTriggerType]
+  type OrganizationConfigRules                  = js.Array[OrganizationConfigRule]
+  type OrganizationRuleStatus                   = String
+  type Owner                                    = String
+  type PendingAggregationRequestList            = js.Array[PendingAggregationRequest]
+  type Percentage                               = Int
+  type RecorderName                             = String
+  type RecorderStatus                           = String
+  type ReevaluateConfigRuleNames                = js.Array[StringWithCharLimit64]
+  type RelatedEvent                             = String
+  type RelatedEventList                         = js.Array[RelatedEvent]
+  type RelationshipList                         = js.Array[Relationship]
+  type RelationshipName                         = String
+  type RemediationConfigurations                = js.Array[RemediationConfiguration]
+  type RemediationExceptionResourceKeys         = js.Array[RemediationExceptionResourceKey]
+  type RemediationExceptions                    = js.Array[RemediationException]
+  type RemediationExecutionState                = String
+  type RemediationExecutionStatuses             = js.Array[RemediationExecutionStatus]
+  type RemediationExecutionStepState            = String
+  type RemediationExecutionSteps                = js.Array[RemediationExecutionStep]
+  type RemediationParameters                    = js.Dictionary[RemediationParameterValue]
+  type RemediationTargetType                    = String
+  type ResourceCountGroupKey                    = String
+  type ResourceCounts                           = js.Array[ResourceCount]
+  type ResourceCreationTime                     = js.Date
+  type ResourceDeletionTime                     = js.Date
+  type ResourceId                               = String
+  type ResourceIdList                           = js.Array[ResourceId]
+  type ResourceIdentifierList                   = js.Array[ResourceIdentifier]
+  type ResourceIdentifiersList                  = js.Array[AggregateResourceIdentifier]
+  type ResourceKeys                             = js.Array[ResourceKey]
+  type ResourceName                             = String
+  type ResourceType                             = String
+  type ResourceTypeList                         = js.Array[ResourceType]
+  type ResourceTypes                            = js.Array[StringWithCharLimit256]
+  type ResourceTypesScope                       = js.Array[StringWithCharLimit256]
+  type ResourceValueType                        = String
+  type Results                                  = js.Array[String]
+  type RetentionConfigurationList               = js.Array[RetentionConfiguration]
+  type RetentionConfigurationName               = String
+  type RetentionConfigurationNameList           = js.Array[RetentionConfigurationName]
+  type RetentionPeriodInDays                    = Int
+  type RuleLimit                                = Int
+  type SourceDetails                            = js.Array[SourceDetail]
+  type StaticParameterValues                    = js.Array[StringWithCharLimit256]
+  type StringWithCharLimit1024                  = String
+  type StringWithCharLimit128                   = String
+  type StringWithCharLimit2048                  = String
+  type StringWithCharLimit256                   = String
+  type StringWithCharLimit256Min0               = String
+  type StringWithCharLimit64                    = String
+  type StringWithCharLimit768                   = String
+  type SupplementaryConfiguration               = js.Dictionary[SupplementaryConfigurationValue]
+  type SupplementaryConfigurationName           = String
+  type SupplementaryConfigurationValue          = String
+  type TagKey                                   = String
+  type TagKeyList                               = js.Array[TagKey]
+  type TagList                                  = js.Array[Tag]
+  type TagValue                                 = String
+  type Tags                                     = js.Dictionary[Value]
+  type TagsList                                 = js.Array[Tag]
+  type UnprocessedResourceIdentifierList        = js.Array[AggregateResourceIdentifier]
+  type Value                                    = String
+  type Version                                  = String
 
   implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
 
@@ -179,6 +186,9 @@ package object configservice {
     @inline def deleteRemediationConfigurationFuture(
         params: DeleteRemediationConfigurationRequest
     ): Future[DeleteRemediationConfigurationResponse] = service.deleteRemediationConfiguration(params).promise.toFuture
+    @inline def deleteRemediationExceptionsFuture(
+        params: DeleteRemediationExceptionsRequest
+    ): Future[DeleteRemediationExceptionsResponse] = service.deleteRemediationExceptions(params).promise.toFuture
     @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] =
       service.deleteRetentionConfiguration(params).promise.toFuture
     @inline def deliverConfigSnapshotFuture(
@@ -241,6 +251,9 @@ package object configservice {
         params: DescribeRemediationConfigurationsRequest
     ): Future[DescribeRemediationConfigurationsResponse] =
       service.describeRemediationConfigurations(params).promise.toFuture
+    @inline def describeRemediationExceptionsFuture(
+        params: DescribeRemediationExceptionsRequest
+    ): Future[DescribeRemediationExceptionsResponse] = service.describeRemediationExceptions(params).promise.toFuture
     @inline def describeRemediationExecutionStatusFuture(
         params: DescribeRemediationExecutionStatusRequest
     ): Future[DescribeRemediationExecutionStatusResponse] =
@@ -316,6 +329,9 @@ package object configservice {
     @inline def putRemediationConfigurationsFuture(
         params: PutRemediationConfigurationsRequest
     ): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise.toFuture
+    @inline def putRemediationExceptionsFuture(
+        params: PutRemediationExceptionsRequest
+    ): Future[PutRemediationExceptionsResponse] = service.putRemediationExceptions(params).promise.toFuture
     @inline def putRetentionConfigurationFuture(
         params: PutRetentionConfigurationRequest
     ): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise.toFuture
@@ -360,7 +376,10 @@ package configservice {
     def deletePendingAggregationRequest(params: DeletePendingAggregationRequestRequest): Request[js.Object] = js.native
     def deleteRemediationConfiguration(
         params: DeleteRemediationConfigurationRequest
-    ): Request[DeleteRemediationConfigurationResponse]                                                      = js.native
+    ): Request[DeleteRemediationConfigurationResponse] = js.native
+    def deleteRemediationExceptions(
+        params: DeleteRemediationExceptionsRequest
+    ): Request[DeleteRemediationExceptionsResponse]                                                         = js.native
     def deleteRetentionConfiguration(params: DeleteRetentionConfigurationRequest): Request[js.Object]       = js.native
     def deliverConfigSnapshot(params: DeliverConfigSnapshotRequest): Request[DeliverConfigSnapshotResponse] = js.native
     def describeAggregateComplianceByConfigRules(
@@ -408,6 +427,9 @@ package configservice {
     def describeRemediationConfigurations(
         params: DescribeRemediationConfigurationsRequest
     ): Request[DescribeRemediationConfigurationsResponse] = js.native
+    def describeRemediationExceptions(
+        params: DescribeRemediationExceptionsRequest
+    ): Request[DescribeRemediationExceptionsResponse] = js.native
     def describeRemediationExecutionStatus(
         params: DescribeRemediationExecutionStatusRequest
     ): Request[DescribeRemediationExecutionStatusResponse] = js.native
@@ -466,6 +488,8 @@ package configservice {
     def putRemediationConfigurations(
         params: PutRemediationConfigurationsRequest
     ): Request[PutRemediationConfigurationsResponse] = js.native
+    def putRemediationExceptions(params: PutRemediationExceptionsRequest): Request[PutRemediationExceptionsResponse] =
+      js.native
     def putRetentionConfiguration(
         params: PutRetentionConfigurationRequest
     ): Request[PutRetentionConfigurationResponse]                                                        = js.native
@@ -1652,14 +1676,14 @@ package configservice {
 
   @js.native
   trait DeleteRemediationConfigurationRequest extends js.Object {
-    var ConfigRuleName: StringWithCharLimit64
+    var ConfigRuleName: ConfigRuleName
     var ResourceType: js.UndefOr[String]
   }
 
   object DeleteRemediationConfigurationRequest {
     @inline
     def apply(
-        ConfigRuleName: StringWithCharLimit64,
+        ConfigRuleName: ConfigRuleName,
         ResourceType: js.UndefOr[String] = js.undefined
     ): DeleteRemediationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
@@ -1681,6 +1705,43 @@ package configservice {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRemediationConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteRemediationExceptionsRequest extends js.Object {
+    var ConfigRuleName: ConfigRuleName
+    var ResourceKeys: RemediationExceptionResourceKeys
+  }
+
+  object DeleteRemediationExceptionsRequest {
+    @inline
+    def apply(
+        ConfigRuleName: ConfigRuleName,
+        ResourceKeys: RemediationExceptionResourceKeys
+    ): DeleteRemediationExceptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
+        "ResourceKeys"   -> ResourceKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteRemediationExceptionsRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRemediationExceptionsResponse extends js.Object {
+    var FailedBatches: js.UndefOr[FailedDeleteRemediationExceptionsBatches]
+  }
+
+  object DeleteRemediationExceptionsResponse {
+    @inline
+    def apply(
+        FailedBatches: js.UndefOr[FailedDeleteRemediationExceptionsBatches] = js.undefined
+    ): DeleteRemediationExceptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      FailedBatches.foreach(__v => __obj.updateDynamic("FailedBatches")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRemediationExceptionsResponse]
     }
   }
 
@@ -2511,19 +2572,65 @@ package configservice {
   }
 
   @js.native
-  trait DescribeRemediationExecutionStatusRequest extends js.Object {
-    var ConfigRuleName: StringWithCharLimit64
+  trait DescribeRemediationExceptionsRequest extends js.Object {
+    var ConfigRuleName: ConfigRuleName
     var Limit: js.UndefOr[Limit]
-    var NextToken: js.UndefOr[StringWithCharLimit256]
+    var NextToken: js.UndefOr[String]
+    var ResourceKeys: js.UndefOr[RemediationExceptionResourceKeys]
+  }
+
+  object DescribeRemediationExceptionsRequest {
+    @inline
+    def apply(
+        ConfigRuleName: ConfigRuleName,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        ResourceKeys: js.UndefOr[RemediationExceptionResourceKeys] = js.undefined
+    ): DescribeRemediationExceptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceKeys.foreach(__v => __obj.updateDynamic("ResourceKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRemediationExceptionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRemediationExceptionsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var RemediationExceptions: js.UndefOr[RemediationExceptions]
+  }
+
+  object DescribeRemediationExceptionsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        RemediationExceptions: js.UndefOr[RemediationExceptions] = js.undefined
+    ): DescribeRemediationExceptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RemediationExceptions.foreach(__v => __obj.updateDynamic("RemediationExceptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRemediationExceptionsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRemediationExecutionStatusRequest extends js.Object {
+    var ConfigRuleName: ConfigRuleName
+    var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[String]
     var ResourceKeys: js.UndefOr[ResourceKeys]
   }
 
   object DescribeRemediationExecutionStatusRequest {
     @inline
     def apply(
-        ConfigRuleName: StringWithCharLimit64,
+        ConfigRuleName: ConfigRuleName,
         Limit: js.UndefOr[Limit] = js.undefined,
-        NextToken: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
         ResourceKeys: js.UndefOr[ResourceKeys] = js.undefined
     ): DescribeRemediationExecutionStatusRequest = {
       val __obj = js.Dynamic.literal(
@@ -2539,14 +2646,14 @@ package configservice {
 
   @js.native
   trait DescribeRemediationExecutionStatusResponse extends js.Object {
-    var NextToken: js.UndefOr[StringWithCharLimit256]
+    var NextToken: js.UndefOr[String]
     var RemediationExecutionStatuses: js.UndefOr[RemediationExecutionStatuses]
   }
 
   object DescribeRemediationExecutionStatusResponse {
     @inline
     def apply(
-        NextToken: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
         RemediationExecutionStatuses: js.UndefOr[RemediationExecutionStatuses] = js.undefined
     ): DescribeRemediationExecutionStatusResponse = {
       val __obj = js.Dynamic.literal()
@@ -2723,6 +2830,47 @@ package configservice {
   }
 
   /**
+    * The controls that AWS Config uses for executing remediations.
+    */
+  @js.native
+  trait ExecutionControls extends js.Object {
+    var SsmControls: js.UndefOr[SsmControls]
+  }
+
+  object ExecutionControls {
+    @inline
+    def apply(
+        SsmControls: js.UndefOr[SsmControls] = js.undefined
+    ): ExecutionControls = {
+      val __obj = js.Dynamic.literal()
+      SsmControls.foreach(__v => __obj.updateDynamic("SsmControls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionControls]
+    }
+  }
+
+  /**
+    * List of each of the failed delete remediation exceptions with specific reasons.
+    */
+  @js.native
+  trait FailedDeleteRemediationExceptionsBatch extends js.Object {
+    var FailedItems: js.UndefOr[RemediationExceptionResourceKeys]
+    var FailureMessage: js.UndefOr[String]
+  }
+
+  object FailedDeleteRemediationExceptionsBatch {
+    @inline
+    def apply(
+        FailedItems: js.UndefOr[RemediationExceptionResourceKeys] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined
+    ): FailedDeleteRemediationExceptionsBatch = {
+      val __obj = js.Dynamic.literal()
+      FailedItems.foreach(__v => __obj.updateDynamic("FailedItems")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedDeleteRemediationExceptionsBatch]
+    }
+  }
+
+  /**
     * List of each of the failed remediations with specific reasons.
     */
   @js.native
@@ -2741,6 +2889,28 @@ package configservice {
       FailedItems.foreach(__v => __obj.updateDynamic("FailedItems")(__v.asInstanceOf[js.Any]))
       FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedRemediationBatch]
+    }
+  }
+
+  /**
+    * List of each of the failed remediation exceptions with specific reasons.
+    */
+  @js.native
+  trait FailedRemediationExceptionBatch extends js.Object {
+    var FailedItems: js.UndefOr[RemediationExceptions]
+    var FailureMessage: js.UndefOr[String]
+  }
+
+  object FailedRemediationExceptionBatch {
+    @inline
+    def apply(
+        FailedItems: js.UndefOr[RemediationExceptions] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined
+    ): FailedRemediationExceptionBatch = {
+      val __obj = js.Dynamic.literal()
+      FailedItems.foreach(__v => __obj.updateDynamic("FailedItems")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedRemediationExceptionBatch]
     }
   }
 
@@ -3494,6 +3664,9 @@ package configservice {
     )
   }
 
+  /**
+    * Organization config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
+    */
   @js.native
   trait MemberAccountStatus extends js.Object {
     var AccountId: AccountId
@@ -3570,6 +3743,9 @@ package configservice {
     }
   }
 
+  /**
+    * An organization config rule that has information about config rules that AWS Config creates in member accounts.
+    */
   @js.native
   trait OrganizationConfigRule extends js.Object {
     var OrganizationConfigRuleArn: StringWithCharLimit256
@@ -3607,6 +3783,9 @@ package configservice {
     }
   }
 
+  /**
+    * Returns the status for an organization config rule in an organization.
+    */
   @js.native
   trait OrganizationConfigRuleStatus extends js.Object {
     var OrganizationConfigRuleName: StringWithCharLimit64
@@ -3647,6 +3826,9 @@ package configservice {
     )
   }
 
+  /**
+    * An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+    */
   @js.native
   trait OrganizationCustomRuleMetadata extends js.Object {
     var LambdaFunctionArn: StringWithCharLimit256
@@ -3691,6 +3873,9 @@ package configservice {
     }
   }
 
+  /**
+    * An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+    */
   @js.native
   trait OrganizationManagedRuleMetadata extends js.Object {
     var RuleIdentifier: StringWithCharLimit256
@@ -4067,6 +4252,49 @@ package configservice {
   }
 
   @js.native
+  trait PutRemediationExceptionsRequest extends js.Object {
+    var ConfigRuleName: ConfigRuleName
+    var ResourceKeys: RemediationExceptionResourceKeys
+    var ExpirationTime: js.UndefOr[Date]
+    var Message: js.UndefOr[StringWithCharLimit1024]
+  }
+
+  object PutRemediationExceptionsRequest {
+    @inline
+    def apply(
+        ConfigRuleName: ConfigRuleName,
+        ResourceKeys: RemediationExceptionResourceKeys,
+        ExpirationTime: js.UndefOr[Date] = js.undefined,
+        Message: js.UndefOr[StringWithCharLimit1024] = js.undefined
+    ): PutRemediationExceptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
+        "ResourceKeys"   -> ResourceKeys.asInstanceOf[js.Any]
+      )
+
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRemediationExceptionsRequest]
+    }
+  }
+
+  @js.native
+  trait PutRemediationExceptionsResponse extends js.Object {
+    var FailedBatches: js.UndefOr[FailedRemediationExceptionBatches]
+  }
+
+  object PutRemediationExceptionsResponse {
+    @inline
+    def apply(
+        FailedBatches: js.UndefOr[FailedRemediationExceptionBatches] = js.undefined
+    ): PutRemediationExceptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      FailedBatches.foreach(__v => __obj.updateDynamic("FailedBatches")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRemediationExceptionsResponse]
+    }
+  }
+
+  @js.native
   trait PutRetentionConfigurationRequest extends js.Object {
     var RetentionPeriodInDays: RetentionPeriodInDays
   }
@@ -4194,22 +4422,34 @@ package configservice {
     */
   @js.native
   trait RemediationConfiguration extends js.Object {
-    var ConfigRuleName: StringWithCharLimit64
+    var ConfigRuleName: ConfigRuleName
     var TargetId: StringWithCharLimit256
     var TargetType: RemediationTargetType
+    var Arn: js.UndefOr[StringWithCharLimit1024]
+    var Automatic: js.UndefOr[Boolean]
+    var CreatedByService: js.UndefOr[StringWithCharLimit1024]
+    var ExecutionControls: js.UndefOr[ExecutionControls]
+    var MaximumAutomaticAttempts: js.UndefOr[AutoRemediationAttempts]
     var Parameters: js.UndefOr[RemediationParameters]
     var ResourceType: js.UndefOr[String]
+    var RetryAttemptSeconds: js.UndefOr[AutoRemediationAttemptSeconds]
     var TargetVersion: js.UndefOr[String]
   }
 
   object RemediationConfiguration {
     @inline
     def apply(
-        ConfigRuleName: StringWithCharLimit64,
+        ConfigRuleName: ConfigRuleName,
         TargetId: StringWithCharLimit256,
         TargetType: RemediationTargetType,
+        Arn: js.UndefOr[StringWithCharLimit1024] = js.undefined,
+        Automatic: js.UndefOr[Boolean] = js.undefined,
+        CreatedByService: js.UndefOr[StringWithCharLimit1024] = js.undefined,
+        ExecutionControls: js.UndefOr[ExecutionControls] = js.undefined,
+        MaximumAutomaticAttempts: js.UndefOr[AutoRemediationAttempts] = js.undefined,
         Parameters: js.UndefOr[RemediationParameters] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined,
+        RetryAttemptSeconds: js.UndefOr[AutoRemediationAttemptSeconds] = js.undefined,
         TargetVersion: js.UndefOr[String] = js.undefined
     ): RemediationConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -4218,10 +4458,71 @@ package configservice {
         "TargetType"     -> TargetType.asInstanceOf[js.Any]
       )
 
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Automatic.foreach(__v => __obj.updateDynamic("Automatic")(__v.asInstanceOf[js.Any]))
+      CreatedByService.foreach(__v => __obj.updateDynamic("CreatedByService")(__v.asInstanceOf[js.Any]))
+      ExecutionControls.foreach(__v => __obj.updateDynamic("ExecutionControls")(__v.asInstanceOf[js.Any]))
+      MaximumAutomaticAttempts.foreach(__v => __obj.updateDynamic("MaximumAutomaticAttempts")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      RetryAttemptSeconds.foreach(__v => __obj.updateDynamic("RetryAttemptSeconds")(__v.asInstanceOf[js.Any]))
       TargetVersion.foreach(__v => __obj.updateDynamic("TargetVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemediationConfiguration]
+    }
+  }
+
+  /**
+    * An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type.
+    */
+  @js.native
+  trait RemediationException extends js.Object {
+    var ConfigRuleName: ConfigRuleName
+    var ResourceId: StringWithCharLimit1024
+    var ResourceType: StringWithCharLimit256
+    var ExpirationTime: js.UndefOr[Date]
+    var Message: js.UndefOr[StringWithCharLimit1024]
+  }
+
+  object RemediationException {
+    @inline
+    def apply(
+        ConfigRuleName: ConfigRuleName,
+        ResourceId: StringWithCharLimit1024,
+        ResourceType: StringWithCharLimit256,
+        ExpirationTime: js.UndefOr[Date] = js.undefined,
+        Message: js.UndefOr[StringWithCharLimit1024] = js.undefined
+    ): RemediationException = {
+      val __obj = js.Dynamic.literal(
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType"   -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationException]
+    }
+  }
+
+  /**
+    * The details that identify a resource within AWS Config, including the resource type and resource ID.
+    */
+  @js.native
+  trait RemediationExceptionResourceKey extends js.Object {
+    var ResourceId: js.UndefOr[StringWithCharLimit1024]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object RemediationExceptionResourceKey {
+    @inline
+    def apply(
+        ResourceId: js.UndefOr[StringWithCharLimit1024] = js.undefined,
+        ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): RemediationExceptionResourceKey = {
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationExceptionResourceKey]
     }
   }
 
@@ -4483,55 +4784,82 @@ package configservice {
     val `AWS::EC2::VPC`                             = "AWS::EC2::VPC"
     val `AWS::EC2::VPNConnection`                   = "AWS::EC2::VPNConnection"
     val `AWS::EC2::VPNGateway`                      = "AWS::EC2::VPNGateway"
+    val `AWS::EC2::RegisteredHAInstance`            = "AWS::EC2::RegisteredHAInstance"
+    val `AWS::EC2::NatGateway`                      = "AWS::EC2::NatGateway"
+    val `AWS::EC2::EgressOnlyInternetGateway`       = "AWS::EC2::EgressOnlyInternetGateway"
+    val `AWS::EC2::VPCEndpoint`                     = "AWS::EC2::VPCEndpoint"
+    val `AWS::EC2::VPCEndpointService`              = "AWS::EC2::VPCEndpointService"
+    val `AWS::EC2::FlowLog`                         = "AWS::EC2::FlowLog"
+    val `AWS::EC2::VPCPeeringConnection`            = "AWS::EC2::VPCPeeringConnection"
     val `AWS::IAM::Group`                           = "AWS::IAM::Group"
     val `AWS::IAM::Policy`                          = "AWS::IAM::Policy"
     val `AWS::IAM::Role`                            = "AWS::IAM::Role"
     val `AWS::IAM::User`                            = "AWS::IAM::User"
+    val `AWS::ElasticLoadBalancingV2::LoadBalancer` = "AWS::ElasticLoadBalancingV2::LoadBalancer"
     val `AWS::ACM::Certificate`                     = "AWS::ACM::Certificate"
     val `AWS::RDS::DBInstance`                      = "AWS::RDS::DBInstance"
+    val `AWS::RDS::DBParameterGroup`                = "AWS::RDS::DBParameterGroup"
+    val `AWS::RDS::DBOptionGroup`                   = "AWS::RDS::DBOptionGroup"
     val `AWS::RDS::DBSubnetGroup`                   = "AWS::RDS::DBSubnetGroup"
     val `AWS::RDS::DBSecurityGroup`                 = "AWS::RDS::DBSecurityGroup"
     val `AWS::RDS::DBSnapshot`                      = "AWS::RDS::DBSnapshot"
+    val `AWS::RDS::DBCluster`                       = "AWS::RDS::DBCluster"
+    val `AWS::RDS::DBClusterParameterGroup`         = "AWS::RDS::DBClusterParameterGroup"
+    val `AWS::RDS::DBClusterSnapshot`               = "AWS::RDS::DBClusterSnapshot"
     val `AWS::RDS::EventSubscription`               = "AWS::RDS::EventSubscription"
-    val `AWS::ElasticLoadBalancingV2::LoadBalancer` = "AWS::ElasticLoadBalancingV2::LoadBalancer"
     val `AWS::S3::Bucket`                           = "AWS::S3::Bucket"
-    val `AWS::SSM::ManagedInstanceInventory`        = "AWS::SSM::ManagedInstanceInventory"
+    val `AWS::S3::AccountPublicAccessBlock`         = "AWS::S3::AccountPublicAccessBlock"
     val `AWS::Redshift::Cluster`                    = "AWS::Redshift::Cluster"
     val `AWS::Redshift::ClusterSnapshot`            = "AWS::Redshift::ClusterSnapshot"
     val `AWS::Redshift::ClusterParameterGroup`      = "AWS::Redshift::ClusterParameterGroup"
     val `AWS::Redshift::ClusterSecurityGroup`       = "AWS::Redshift::ClusterSecurityGroup"
     val `AWS::Redshift::ClusterSubnetGroup`         = "AWS::Redshift::ClusterSubnetGroup"
     val `AWS::Redshift::EventSubscription`          = "AWS::Redshift::EventSubscription"
+    val `AWS::SSM::ManagedInstanceInventory`        = "AWS::SSM::ManagedInstanceInventory"
     val `AWS::CloudWatch::Alarm`                    = "AWS::CloudWatch::Alarm"
     val `AWS::CloudFormation::Stack`                = "AWS::CloudFormation::Stack"
-    val `AWS::DynamoDB::Table`                      = "AWS::DynamoDB::Table"
+    val `AWS::ElasticLoadBalancing::LoadBalancer`   = "AWS::ElasticLoadBalancing::LoadBalancer"
     val `AWS::AutoScaling::AutoScalingGroup`        = "AWS::AutoScaling::AutoScalingGroup"
     val `AWS::AutoScaling::LaunchConfiguration`     = "AWS::AutoScaling::LaunchConfiguration"
     val `AWS::AutoScaling::ScalingPolicy`           = "AWS::AutoScaling::ScalingPolicy"
     val `AWS::AutoScaling::ScheduledAction`         = "AWS::AutoScaling::ScheduledAction"
+    val `AWS::DynamoDB::Table`                      = "AWS::DynamoDB::Table"
     val `AWS::CodeBuild::Project`                   = "AWS::CodeBuild::Project"
     val `AWS::WAF::RateBasedRule`                   = "AWS::WAF::RateBasedRule"
     val `AWS::WAF::Rule`                            = "AWS::WAF::Rule"
+    val `AWS::WAF::RuleGroup`                       = "AWS::WAF::RuleGroup"
     val `AWS::WAF::WebACL`                          = "AWS::WAF::WebACL"
     val `AWS::WAFRegional::RateBasedRule`           = "AWS::WAFRegional::RateBasedRule"
     val `AWS::WAFRegional::Rule`                    = "AWS::WAFRegional::Rule"
+    val `AWS::WAFRegional::RuleGroup`               = "AWS::WAFRegional::RuleGroup"
     val `AWS::WAFRegional::WebACL`                  = "AWS::WAFRegional::WebACL"
     val `AWS::CloudFront::Distribution`             = "AWS::CloudFront::Distribution"
     val `AWS::CloudFront::StreamingDistribution`    = "AWS::CloudFront::StreamingDistribution"
-    val `AWS::WAF::RuleGroup`                       = "AWS::WAF::RuleGroup"
-    val `AWS::WAFRegional::RuleGroup`               = "AWS::WAFRegional::RuleGroup"
+    val `AWS::Lambda::Alias`                        = "AWS::Lambda::Alias"
     val `AWS::Lambda::Function`                     = "AWS::Lambda::Function"
     val `AWS::ElasticBeanstalk::Application`        = "AWS::ElasticBeanstalk::Application"
     val `AWS::ElasticBeanstalk::ApplicationVersion` = "AWS::ElasticBeanstalk::ApplicationVersion"
     val `AWS::ElasticBeanstalk::Environment`        = "AWS::ElasticBeanstalk::Environment"
-    val `AWS::ElasticLoadBalancing::LoadBalancer`   = "AWS::ElasticLoadBalancing::LoadBalancer"
+    val `AWS::MobileHub::Project`                   = "AWS::MobileHub::Project"
     val `AWS::XRay::EncryptionConfig`               = "AWS::XRay::EncryptionConfig"
     val `AWS::SSM::AssociationCompliance`           = "AWS::SSM::AssociationCompliance"
     val `AWS::SSM::PatchCompliance`                 = "AWS::SSM::PatchCompliance"
     val `AWS::Shield::Protection`                   = "AWS::Shield::Protection"
     val `AWS::ShieldRegional::Protection`           = "AWS::ShieldRegional::Protection"
     val `AWS::Config::ResourceCompliance`           = "AWS::Config::ResourceCompliance"
+    val `AWS::LicenseManager::LicenseConfiguration` = "AWS::LicenseManager::LicenseConfiguration"
+    val `AWS::ApiGateway::DomainName`               = "AWS::ApiGateway::DomainName"
+    val `AWS::ApiGateway::Method`                   = "AWS::ApiGateway::Method"
+    val `AWS::ApiGateway::Stage`                    = "AWS::ApiGateway::Stage"
+    val `AWS::ApiGateway::RestApi`                  = "AWS::ApiGateway::RestApi"
+    val `AWS::ApiGatewayV2::DomainName`             = "AWS::ApiGatewayV2::DomainName"
+    val `AWS::ApiGatewayV2::Stage`                  = "AWS::ApiGatewayV2::Stage"
+    val `AWS::ApiGatewayV2::Api`                    = "AWS::ApiGatewayV2::Api"
     val `AWS::CodePipeline::Pipeline`               = "AWS::CodePipeline::Pipeline"
+    val `AWS::ServiceCatalog::CloudFormationProvisionedProduct` =
+      "AWS::ServiceCatalog::CloudFormationProvisionedProduct"
+    val `AWS::ServiceCatalog::CloudFormationProduct` = "AWS::ServiceCatalog::CloudFormationProduct"
+    val `AWS::ServiceCatalog::Portfolio`             = "AWS::ServiceCatalog::Portfolio"
 
     val values = js.Object.freeze(
       js.Array(
@@ -4550,55 +4878,81 @@ package configservice {
         `AWS::EC2::VPC`,
         `AWS::EC2::VPNConnection`,
         `AWS::EC2::VPNGateway`,
+        `AWS::EC2::RegisteredHAInstance`,
+        `AWS::EC2::NatGateway`,
+        `AWS::EC2::EgressOnlyInternetGateway`,
+        `AWS::EC2::VPCEndpoint`,
+        `AWS::EC2::VPCEndpointService`,
+        `AWS::EC2::FlowLog`,
+        `AWS::EC2::VPCPeeringConnection`,
         `AWS::IAM::Group`,
         `AWS::IAM::Policy`,
         `AWS::IAM::Role`,
         `AWS::IAM::User`,
+        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
         `AWS::ACM::Certificate`,
         `AWS::RDS::DBInstance`,
+        `AWS::RDS::DBParameterGroup`,
+        `AWS::RDS::DBOptionGroup`,
         `AWS::RDS::DBSubnetGroup`,
         `AWS::RDS::DBSecurityGroup`,
         `AWS::RDS::DBSnapshot`,
+        `AWS::RDS::DBCluster`,
+        `AWS::RDS::DBClusterParameterGroup`,
+        `AWS::RDS::DBClusterSnapshot`,
         `AWS::RDS::EventSubscription`,
-        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
         `AWS::S3::Bucket`,
-        `AWS::SSM::ManagedInstanceInventory`,
+        `AWS::S3::AccountPublicAccessBlock`,
         `AWS::Redshift::Cluster`,
         `AWS::Redshift::ClusterSnapshot`,
         `AWS::Redshift::ClusterParameterGroup`,
         `AWS::Redshift::ClusterSecurityGroup`,
         `AWS::Redshift::ClusterSubnetGroup`,
         `AWS::Redshift::EventSubscription`,
+        `AWS::SSM::ManagedInstanceInventory`,
         `AWS::CloudWatch::Alarm`,
         `AWS::CloudFormation::Stack`,
-        `AWS::DynamoDB::Table`,
+        `AWS::ElasticLoadBalancing::LoadBalancer`,
         `AWS::AutoScaling::AutoScalingGroup`,
         `AWS::AutoScaling::LaunchConfiguration`,
         `AWS::AutoScaling::ScalingPolicy`,
         `AWS::AutoScaling::ScheduledAction`,
+        `AWS::DynamoDB::Table`,
         `AWS::CodeBuild::Project`,
         `AWS::WAF::RateBasedRule`,
         `AWS::WAF::Rule`,
+        `AWS::WAF::RuleGroup`,
         `AWS::WAF::WebACL`,
         `AWS::WAFRegional::RateBasedRule`,
         `AWS::WAFRegional::Rule`,
+        `AWS::WAFRegional::RuleGroup`,
         `AWS::WAFRegional::WebACL`,
         `AWS::CloudFront::Distribution`,
         `AWS::CloudFront::StreamingDistribution`,
-        `AWS::WAF::RuleGroup`,
-        `AWS::WAFRegional::RuleGroup`,
+        `AWS::Lambda::Alias`,
         `AWS::Lambda::Function`,
         `AWS::ElasticBeanstalk::Application`,
         `AWS::ElasticBeanstalk::ApplicationVersion`,
         `AWS::ElasticBeanstalk::Environment`,
-        `AWS::ElasticLoadBalancing::LoadBalancer`,
+        `AWS::MobileHub::Project`,
         `AWS::XRay::EncryptionConfig`,
         `AWS::SSM::AssociationCompliance`,
         `AWS::SSM::PatchCompliance`,
         `AWS::Shield::Protection`,
         `AWS::ShieldRegional::Protection`,
         `AWS::Config::ResourceCompliance`,
-        `AWS::CodePipeline::Pipeline`
+        `AWS::LicenseManager::LicenseConfiguration`,
+        `AWS::ApiGateway::DomainName`,
+        `AWS::ApiGateway::Method`,
+        `AWS::ApiGateway::Stage`,
+        `AWS::ApiGateway::RestApi`,
+        `AWS::ApiGatewayV2::DomainName`,
+        `AWS::ApiGatewayV2::Stage`,
+        `AWS::ApiGatewayV2::Api`,
+        `AWS::CodePipeline::Pipeline`,
+        `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
+        `AWS::ServiceCatalog::CloudFormationProduct`,
+        `AWS::ServiceCatalog::Portfolio`
       )
     )
   }
@@ -4608,16 +4962,18 @@ package configservice {
     */
   @js.native
   trait ResourceValue extends js.Object {
-    var Value: js.UndefOr[ResourceValueType]
+    var Value: ResourceValueType
   }
 
   object ResourceValue {
     @inline
     def apply(
-        Value: js.UndefOr[ResourceValueType] = js.undefined
+        Value: ResourceValueType
     ): ResourceValue = {
-      val __obj = js.Dynamic.literal()
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[ResourceValue]
     }
   }
@@ -4781,6 +5137,30 @@ package configservice {
   }
 
   /**
+    * AWS Systems Manager (SSM) specific remediation controls.
+    */
+  @js.native
+  trait SsmControls extends js.Object {
+    var ConcurrentExecutionRatePercentage: js.UndefOr[Percentage]
+    var ErrorPercentage: js.UndefOr[Percentage]
+  }
+
+  object SsmControls {
+    @inline
+    def apply(
+        ConcurrentExecutionRatePercentage: js.UndefOr[Percentage] = js.undefined,
+        ErrorPercentage: js.UndefOr[Percentage] = js.undefined
+    ): SsmControls = {
+      val __obj = js.Dynamic.literal()
+      ConcurrentExecutionRatePercentage.foreach(
+        __v => __obj.updateDynamic("ConcurrentExecutionRatePercentage")(__v.asInstanceOf[js.Any])
+      )
+      ErrorPercentage.foreach(__v => __obj.updateDynamic("ErrorPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SsmControls]
+    }
+  }
+
+  /**
     * <p/>
     */
   @js.native
@@ -4838,14 +5218,14 @@ package configservice {
 
   @js.native
   trait StartRemediationExecutionRequest extends js.Object {
-    var ConfigRuleName: StringWithCharLimit64
+    var ConfigRuleName: ConfigRuleName
     var ResourceKeys: ResourceKeys
   }
 
   object StartRemediationExecutionRequest {
     @inline
     def apply(
-        ConfigRuleName: StringWithCharLimit64,
+        ConfigRuleName: ConfigRuleName,
         ResourceKeys: ResourceKeys
     ): StartRemediationExecutionRequest = {
       val __obj = js.Dynamic.literal(
@@ -4881,20 +5261,25 @@ package configservice {
     */
   @js.native
   trait StaticValue extends js.Object {
-    var Values: js.UndefOr[StaticParameterValues]
+    var Values: StaticParameterValues
   }
 
   object StaticValue {
     @inline
     def apply(
-        Values: js.UndefOr[StaticParameterValues] = js.undefined
+        Values: StaticParameterValues
     ): StaticValue = {
-      val __obj = js.Dynamic.literal()
-      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[StaticValue]
     }
   }
 
+  /**
+    * Status filter object to filter results based on specific member account ID or status type for an organization config rule.
+    */
   @js.native
   trait StatusDetailFilters extends js.Object {
     var AccountId: js.UndefOr[AccountId]
