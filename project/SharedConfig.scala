@@ -5,6 +5,7 @@ import sbtrelease.ReleasePlugin.autoImport._
 import sbtrelease.ReleaseStateTransformations._
 import autoImport._
 import com.typesafe.sbt.pgp.PgpKeys
+import xerial.sbt.Sonatype.SonatypeKeys
 
 object SharedConfig {
   val libraryName = "aws-sdk-scalajs-facade"
@@ -35,12 +36,7 @@ object SharedConfig {
   )
 
   val publishSetting = Seq(
-    publishTo in ThisBuild := Some(
-      if (isSnapshot.value)
-        Opts.resolver.sonatypeSnapshots
-      else
-        Opts.resolver.sonatypeStaging
-    ),
+    publishTo in ThisBuild := SonatypeKeys.sonatypePublishToBundle.value,
     publishMavenStyle := true,
     publishArtifact in Test := false,
     publishArtifact in (Compile, packageDoc) := true,
@@ -52,7 +48,6 @@ object SharedConfig {
     publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
     publishArtifact in packageDoc := false,
     sources in (Compile, doc) := Seq.empty,
-    releaseCrossBuild := true,
     releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
@@ -63,7 +58,7 @@ object SharedConfig {
       tagRelease,
       runClean,
       releaseStepCommandAndRemaining("+publishSigned"),
-      releaseStepCommand("sonatypeReleaseAll"),
+      releaseStepCommand("sonatypeBundleRelease"),
       setNextVersion,
       commitNextVersion
     ),
