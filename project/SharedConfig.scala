@@ -1,10 +1,9 @@
 import sbt._
 import Keys._
-import org.scalajs.sbtplugin.ScalaJSPlugin._
+import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import com.jsuereth.sbtpgp.SbtPgp.autoImport._
 import sbtrelease.ReleasePlugin.autoImport._
 import sbtrelease.ReleaseStateTransformations._
-import autoImport._
-import com.typesafe.sbt.pgp.PgpKeys
 import xerial.sbt.Sonatype.SonatypeKeys
 
 object SharedConfig {
