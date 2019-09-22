@@ -2,20 +2,18 @@ dist: xenial
 language: scala
 
 scala:
-  - 2.12.9
-  - 2.13.0
+  - 2.12.10
+  - 2.13.1
 
 jdk:
   - openjdk11
 
 script:
-  - sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test
-
-matrix:
-  include:
-    - scala: 2.13.0
-      script: sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
-      env: JOB_NAME=FORMAT_CHECK_ONLY
+  - if [[ $TRAVIS_SCALA_VERSION == 2.13.* ]]; then
+      sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck all/test;
+    else
+      sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test;
+    fi
 
 before_cache:
   - rm -fv $HOME/.ivy2/.sbt.ivy.lock
