@@ -10,7 +10,7 @@ lazy val core = (project in file("core"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
-    name := s"${SharedConfig.libraryName}-core",
+    name := s"${SharedConfig.libraryName}-core-nodejs-v8",
     libraryDependencies ++= Seq(
       Dependencies.scalajs.nodejs.value
     )
@@ -24,7 +24,7 @@ def defineAwsProject(service: String): Project = {
     .settings(SharedConfig.settings)
     .settings(SharedConfig.publishSetting)
     .settings(
-      name := s"${SharedConfig.libraryName}-$lowerServiceName",
+      name := s"${SharedConfig.libraryName}-$lowerServiceName-nodejs-v8",
       libraryDependencies ++= Seq(
         Dependencies.scalajs.nodejs.value
       )
@@ -233,7 +233,7 @@ lazy val all = (project in file("all"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
-    name := s"${SharedConfig.libraryName}",
+    name := s"${SharedConfig.libraryName}-nodejs-v8",
     libraryDependencies ++= Seq(
       Dependencies.scalajs.nodejs.value,
       Dependencies.shared.scalatest.value
