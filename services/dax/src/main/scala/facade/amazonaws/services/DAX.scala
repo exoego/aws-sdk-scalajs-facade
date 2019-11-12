@@ -37,7 +37,6 @@ package object dax {
   type TagList                     = js.Array[Tag]
 
   implicit final class DAXOps(private val service: DAX) extends AnyVal {
-
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =

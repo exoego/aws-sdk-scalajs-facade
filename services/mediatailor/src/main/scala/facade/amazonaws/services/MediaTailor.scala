@@ -16,7 +16,6 @@ package object mediatailor {
   type __string                       = String
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
-
     @inline def deletePlaybackConfigurationFuture(
         params: DeletePlaybackConfigurationRequest
     ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise.toFuture

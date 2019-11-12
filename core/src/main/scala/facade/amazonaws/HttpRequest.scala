@@ -9,7 +9,6 @@ class HttpRequest(
     val endpoint: Endpoint,
     region: String
 ) extends js.Object {
-
   /**
     * The part of the path excluding the query string.
     */

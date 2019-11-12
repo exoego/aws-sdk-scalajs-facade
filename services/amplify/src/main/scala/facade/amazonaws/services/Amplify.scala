@@ -102,7 +102,6 @@ package object amplify {
   type Webhooks                         = js.Array[Webhook]
 
   implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
-
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
       service.createApp(params).promise.toFuture
     @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =

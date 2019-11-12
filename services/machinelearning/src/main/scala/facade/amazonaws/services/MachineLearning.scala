@@ -81,7 +81,6 @@ package object machinelearning {
   type floatLabel                      = Float
 
   implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
-
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
     @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =
       service.createBatchPrediction(params).promise.toFuture

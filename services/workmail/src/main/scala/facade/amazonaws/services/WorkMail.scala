@@ -38,7 +38,6 @@ package object workmail {
   type WorkMailIdentifier    = String
 
   implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
-
     @inline def associateDelegateToResourceFuture(
         params: AssociateDelegateToResourceRequest
     ): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise.toFuture

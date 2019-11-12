@@ -88,7 +88,6 @@ package object cloudwatchlogs {
   type Value                       = String
 
   implicit final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
-
     @inline def associateKmsKeyFuture(params: AssociateKmsKeyRequest): Future[js.Object] =
       service.associateKmsKey(params).promise.toFuture
     @inline def cancelExportTaskFuture(params: CancelExportTaskRequest): Future[js.Object] =

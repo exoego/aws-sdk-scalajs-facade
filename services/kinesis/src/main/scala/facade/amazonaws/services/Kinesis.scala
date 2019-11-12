@@ -56,7 +56,6 @@ package object kinesis {
   type Timestamp                     = js.Date
 
   implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
-
     @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
       service.addTagsToStream(params).promise.toFuture
     @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] =

@@ -121,7 +121,6 @@ package object codecommit {
   type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
-
     @inline def batchDescribeMergeConflictsFuture(
         params: BatchDescribeMergeConflictsInput
     ): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise.toFuture

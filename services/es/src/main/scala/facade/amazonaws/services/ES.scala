@@ -72,7 +72,6 @@ package object es {
   type VolumeType                                 = String
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
-
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise.toFuture
     @inline def cancelElasticsearchServiceSoftwareUpdateFuture(
         params: CancelElasticsearchServiceSoftwareUpdateRequest

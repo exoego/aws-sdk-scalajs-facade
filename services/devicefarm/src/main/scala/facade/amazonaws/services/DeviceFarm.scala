@@ -102,7 +102,6 @@ package object devicefarm {
   type VideoCapture                       = Boolean
 
   implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
-
     @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
       service.createDevicePool(params).promise.toFuture
     @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] =

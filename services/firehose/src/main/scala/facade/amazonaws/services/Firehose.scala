@@ -91,7 +91,6 @@ package object firehose {
   type Username                                = String
 
   implicit final class FirehoseOps(private val service: Firehose) extends AnyVal {
-
     @inline def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
       service.createDeliveryStream(params).promise.toFuture
     @inline def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] =

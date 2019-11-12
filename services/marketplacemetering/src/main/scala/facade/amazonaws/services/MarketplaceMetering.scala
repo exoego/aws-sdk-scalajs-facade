@@ -21,7 +21,6 @@ package object marketplacemetering {
   type VersionInteger          = Int
 
   implicit final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
-
     @inline def batchMeterUsageFuture(params: BatchMeterUsageRequest): Future[BatchMeterUsageResult] =
       service.batchMeterUsage(params).promise.toFuture
     @inline def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] =

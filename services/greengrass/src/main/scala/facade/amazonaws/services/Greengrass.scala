@@ -47,7 +47,6 @@ package object greengrass {
   type __string                                    = String
 
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
-
     @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
       service.associateRoleToGroup(params).promise.toFuture
     @inline def associateServiceRoleToAccountFuture(

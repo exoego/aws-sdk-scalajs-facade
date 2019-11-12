@@ -36,7 +36,6 @@ package object kafka {
   type __timestampIso8601            = js.Date
 
   implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
-
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =

@@ -288,7 +288,6 @@ package object medialive {
   type __stringMin6Max6                              = String
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
-
     @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
       service.batchUpdateSchedule(params).promise.toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =

@@ -29,7 +29,6 @@ package object transcribeservice {
   type VocabularyState           = String
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
-
     @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
       service.createVocabulary(params).promise.toFuture
     @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =

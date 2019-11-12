@@ -220,7 +220,6 @@ package object glue {
   type Workflows                               = js.Array[Workflow]
 
   implicit final class GlueOps(private val service: Glue) extends AnyVal {
-
     @inline def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
       service.batchCreatePartition(params).promise.toFuture
     @inline def batchDeleteConnectionFuture(

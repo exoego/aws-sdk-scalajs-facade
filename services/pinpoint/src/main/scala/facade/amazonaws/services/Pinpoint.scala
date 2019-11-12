@@ -66,7 +66,6 @@ package object pinpoint {
   type __timestampIso8601              = js.Date
 
   implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
-
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
       service.createApp(params).promise.toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =

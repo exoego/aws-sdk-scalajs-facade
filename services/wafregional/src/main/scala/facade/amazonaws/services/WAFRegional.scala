@@ -100,7 +100,6 @@ package object wafregional {
   type XssMatchTuples                = js.Array[XssMatchTuple]
 
   implicit final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
-
     @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
       service.associateWebACL(params).promise.toFuture
     @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] =

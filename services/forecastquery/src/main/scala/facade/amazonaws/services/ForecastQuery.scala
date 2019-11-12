@@ -20,7 +20,6 @@ package object forecastquery {
   type Timestamp      = String
 
   implicit final class ForecastQueryOps(private val service: ForecastQuery) extends AnyVal {
-
     @inline def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] =
       service.queryForecast(params).promise.toFuture
   }

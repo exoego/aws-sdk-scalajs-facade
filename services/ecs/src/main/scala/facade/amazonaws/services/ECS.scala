@@ -116,7 +116,6 @@ package object ecs {
   type VolumeList                            = js.Array[Volume]
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
-
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =

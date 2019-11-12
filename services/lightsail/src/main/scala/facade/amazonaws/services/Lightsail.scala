@@ -111,7 +111,6 @@ package object lightsail {
   type timestamp                                            = js.Date
 
   implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
-
     @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
       service.allocateStaticIp(params).promise.toFuture
     @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =

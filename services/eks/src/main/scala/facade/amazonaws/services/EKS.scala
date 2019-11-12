@@ -26,7 +26,6 @@ package object eks {
   type UpdateType                    = String
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
-
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =

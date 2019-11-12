@@ -34,7 +34,6 @@ package object mediastore {
   type TimeStamp                     = js.Date
 
   implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
-
     @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
       service.createContainer(params).promise.toFuture
     @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =

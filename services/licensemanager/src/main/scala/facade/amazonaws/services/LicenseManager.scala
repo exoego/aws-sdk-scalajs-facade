@@ -33,7 +33,6 @@ package object licensemanager {
   type TagList                          = js.Array[Tag]
 
   implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
-
     @inline def createLicenseConfigurationFuture(
         params: CreateLicenseConfigurationRequest
     ): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise.toFuture

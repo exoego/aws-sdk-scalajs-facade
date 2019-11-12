@@ -33,7 +33,6 @@ package object rdsdataservice {
   type UpdateResults       = js.Array[UpdateResult]
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
-
     @inline def batchExecuteStatementFuture(
         params: BatchExecuteStatementRequest
     ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise.toFuture

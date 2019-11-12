@@ -109,7 +109,6 @@ package object elastictranscoder {
   type ZeroTo512String             = String
 
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
-
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =

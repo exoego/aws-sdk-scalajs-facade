@@ -25,7 +25,6 @@ object S3Extension {
   def getSignedUrlFuture(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] = {
     val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
       params
-
     } else {
       val deepCloned = js.JSON.parse(js.JSON.stringify(params))
       deepCloned.Expires = expires

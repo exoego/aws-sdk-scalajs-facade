@@ -26,7 +26,6 @@ package object mediaconnect {
   type __string                        = String
 
   implicit final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
-
     @inline def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] =
       service.addFlowOutputs(params).promise.toFuture
     @inline def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] =

@@ -149,7 +149,6 @@ package object dynamodb {
   type WriteRequests                                      = js.Array[WriteRequest]
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
-
     @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
       service.batchGetItem(params).promise.toFuture
     @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =

@@ -128,7 +128,6 @@ package object directoryservice {
   type VpcId                                      = String
 
   implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
-
     @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] =
       service.acceptSharedDirectory(params).promise.toFuture
     @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] =

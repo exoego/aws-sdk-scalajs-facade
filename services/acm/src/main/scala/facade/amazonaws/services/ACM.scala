@@ -55,7 +55,6 @@ package object acm {
   type ValidationMethod    = String
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
-
     @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
       service.addTagsToCertificate(params).promise.toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =

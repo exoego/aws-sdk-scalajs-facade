@@ -109,7 +109,6 @@ package object inspector {
   type Version                                = String
 
   implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
-
     @inline def addAttributesToFindingsFuture(
         params: AddAttributesToFindingsRequest
     ): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise.toFuture

@@ -27,7 +27,6 @@ package object cur {
   type TimeUnit               = String
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
-
     @inline def deleteReportDefinitionFuture(
         params: DeleteReportDefinitionRequest
     ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise.toFuture

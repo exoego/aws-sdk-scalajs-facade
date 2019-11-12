@@ -69,7 +69,6 @@ package object datasync {
   type VpcEndpointId                   = String
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
-
     @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
       service.cancelTaskExecution(params).promise.toFuture
     @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =

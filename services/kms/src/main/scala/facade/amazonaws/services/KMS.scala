@@ -61,7 +61,6 @@ package object kms {
   type WrappingKeySpec            = String
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
-
     @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
       service.cancelKeyDeletion(params).promise.toFuture
     @inline def connectCustomKeyStoreFuture(

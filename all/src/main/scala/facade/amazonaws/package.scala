@@ -874,6 +874,5 @@ package object amazonaws {
     type XRay = services.xray.XRay
     def XRay(): services.xray.XRay                  = new services.xray.XRay()
     def XRay(config: AWSConfig): services.xray.XRay = new services.xray.XRay(config)
-
   }
 }

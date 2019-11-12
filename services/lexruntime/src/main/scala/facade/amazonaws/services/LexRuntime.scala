@@ -34,7 +34,6 @@ package object lexruntime {
   type listOfButtons               = js.Array[Button]
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
-
     @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
       service.deleteSession(params).promise.toFuture
     @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =

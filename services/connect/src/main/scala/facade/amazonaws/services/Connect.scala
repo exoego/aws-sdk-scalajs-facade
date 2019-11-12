@@ -66,7 +66,6 @@ package object connect {
   type timestamp                       = js.Date
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
-
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =

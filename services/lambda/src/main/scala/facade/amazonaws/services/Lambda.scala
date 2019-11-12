@@ -86,7 +86,6 @@ package object lambda {
   type Weight                          = Double
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
-
     @inline def addLayerVersionPermissionFuture(
         params: AddLayerVersionPermissionRequest
     ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise.toFuture

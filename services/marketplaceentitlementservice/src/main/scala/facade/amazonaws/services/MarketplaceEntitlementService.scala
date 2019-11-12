@@ -20,7 +20,6 @@ package object marketplaceentitlementservice {
 
   implicit final class MarketplaceEntitlementServiceOps(private val service: MarketplaceEntitlementService)
       extends AnyVal {
-
     @inline def getEntitlementsFuture(params: GetEntitlementsRequest): Future[GetEntitlementsResult] =
       service.getEntitlements(params).promise.toFuture
   }

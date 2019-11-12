@@ -89,7 +89,6 @@ package object rekognition {
   type VideoJobStatus        = String
 
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
-
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
       service.compareFaces(params).promise.toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] =
