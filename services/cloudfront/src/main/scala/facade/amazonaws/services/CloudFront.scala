@@ -63,7 +63,6 @@ package object cloudfront {
   type timestamp                                 = js.Date
 
   implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
-
     @inline def createCloudFrontOriginAccessIdentityFuture(
         params: CreateCloudFrontOriginAccessIdentityRequest
     ): Future[CreateCloudFrontOriginAccessIdentityResult] =

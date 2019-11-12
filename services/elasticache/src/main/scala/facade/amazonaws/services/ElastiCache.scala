@@ -75,7 +75,6 @@ package object elasticache {
   type UpdateActionStatusList              = js.Array[UpdateActionStatus]
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
-
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
       service.addTagsToResource(params).promise.toFuture
     @inline def authorizeCacheSecurityGroupIngressFuture(

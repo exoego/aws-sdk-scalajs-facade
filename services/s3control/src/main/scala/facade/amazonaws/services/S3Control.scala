@@ -64,7 +64,6 @@ package object s3control {
   type TimeStamp                   = js.Date
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
-
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
       service.createJob(params).promise.toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =

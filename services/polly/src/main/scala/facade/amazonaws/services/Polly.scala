@@ -50,7 +50,6 @@ package object polly {
   type VoiceName                      = String
 
   implicit final class PollyOps(private val service: Polly) extends AnyVal {
-
     @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] =
       service.deleteLexicon(params).promise.toFuture
     @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] =

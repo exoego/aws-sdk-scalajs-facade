@@ -36,7 +36,6 @@ package object lakeformation {
   type Token                            = String
 
   implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
-
     @inline def batchGrantPermissionsFuture(
         params: BatchGrantPermissionsRequest
     ): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise.toFuture

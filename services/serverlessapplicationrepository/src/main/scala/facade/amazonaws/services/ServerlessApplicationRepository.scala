@@ -27,7 +27,6 @@ package object serverlessapplicationrepository {
 
   implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
       extends AnyVal {
-
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
     @inline def createApplicationVersionFuture(

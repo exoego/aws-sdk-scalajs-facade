@@ -164,7 +164,6 @@ package object cognitoidentityprovider {
   type VerifySoftwareTokenResponseType    = String
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
-
     @inline def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
       service.addCustomAttributes(params).promise.toFuture
     @inline def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] =

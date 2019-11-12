@@ -33,7 +33,6 @@ package object kinesisvideoarchivedmedia {
   type Timestamp   = js.Date
 
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
-
     @inline def getDASHStreamingSessionURLFuture(
         params: GetDASHStreamingSessionURLInput
     ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise.toFuture

@@ -40,7 +40,6 @@ package object appsync {
   type TypeList                          = js.Array[Type]
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
-
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
       service.createApiKey(params).promise.toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =

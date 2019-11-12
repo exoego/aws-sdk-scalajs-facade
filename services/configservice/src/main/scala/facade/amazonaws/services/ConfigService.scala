@@ -157,7 +157,6 @@ package object configservice {
   type Version                                  = String
 
   implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
-
     @inline def batchGetAggregateResourceConfigFuture(
         params: BatchGetAggregateResourceConfigRequest
     ): Future[BatchGetAggregateResourceConfigResponse] =

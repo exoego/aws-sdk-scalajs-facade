@@ -15,7 +15,6 @@ package object personalizeevents {
   type UserId              = String
 
   implicit final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
-
     @inline def putEventsFuture(params: PutEventsRequest): Future[js.Object] =
       service.putEvents(params).promise.toFuture
   }

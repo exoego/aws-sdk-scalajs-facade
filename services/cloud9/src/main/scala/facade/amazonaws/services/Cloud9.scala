@@ -30,7 +30,6 @@ package object cloud9 {
   type UserArn                    = String
 
   implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
-
     @inline def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
       service.createEnvironmentEC2(params).promise.toFuture
     @inline def createEnvironmentMembershipFuture(

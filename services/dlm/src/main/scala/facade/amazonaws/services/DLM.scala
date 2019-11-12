@@ -36,7 +36,6 @@ package object dlm {
   type VariableTagsList           = js.Array[Tag]
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
-
     @inline def createLifecyclePolicyFuture(
         params: CreateLifecyclePolicyRequest
     ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise.toFuture

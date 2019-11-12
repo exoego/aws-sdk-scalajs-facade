@@ -43,7 +43,6 @@ package object fms {
   type ViolationReason            = String
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
-
     @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
       service.associateAdminAccount(params).promise.toFuture
     @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =

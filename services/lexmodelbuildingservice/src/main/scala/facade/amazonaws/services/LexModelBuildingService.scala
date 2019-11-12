@@ -77,7 +77,6 @@ package object lexmodelbuildingservice {
   type Version                     = String
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
-
     @inline def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
       service.createBotVersion(params).promise.toFuture
     @inline def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] =

@@ -30,7 +30,6 @@ package object mediastoredata {
   type statusCode         = Int
 
   implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
-
     @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] =
       service.deleteObject(params).promise.toFuture
     @inline def describeObjectFuture(params: DescribeObjectRequest): Future[DescribeObjectResponse] =

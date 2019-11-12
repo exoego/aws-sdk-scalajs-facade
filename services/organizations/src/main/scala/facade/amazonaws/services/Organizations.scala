@@ -78,7 +78,6 @@ package object organizations {
   type Timestamp                  = js.Date
 
   implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
-
     @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] =
       service.acceptHandshake(params).promise.toFuture
     @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =

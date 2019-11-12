@@ -92,7 +92,6 @@ package object sms {
   type VmServerAddressList                  = js.Array[VmServerAddress]
 
   implicit final class SMSOps(private val service: SMS) extends AnyVal {
-
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
       service.createApp(params).promise.toFuture
     @inline def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] =

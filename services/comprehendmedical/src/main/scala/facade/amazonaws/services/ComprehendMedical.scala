@@ -18,7 +18,6 @@ package object comprehendmedical {
   type UnmappedAttributeList = js.Array[UnmappedAttribute]
 
   implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
-
     @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
       service.detectEntities(params).promise.toFuture
     @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =

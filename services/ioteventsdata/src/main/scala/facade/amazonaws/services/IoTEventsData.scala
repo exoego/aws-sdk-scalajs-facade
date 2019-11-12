@@ -36,7 +36,6 @@ package object ioteventsdata {
   type Variables              = js.Array[Variable]
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
-
     @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
     @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =

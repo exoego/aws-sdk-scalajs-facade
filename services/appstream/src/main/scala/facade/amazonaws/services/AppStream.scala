@@ -91,7 +91,6 @@ package object appstream {
   type VisibilityType                           = String
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
-
     @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
       service.associateFleet(params).promise.toFuture
     @inline def batchAssociateUserStackFuture(

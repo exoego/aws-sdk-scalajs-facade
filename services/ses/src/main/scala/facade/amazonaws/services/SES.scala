@@ -118,7 +118,6 @@ package object ses {
   type VerificationTokenList  = js.Array[VerificationToken]
 
   implicit final class SESOps(private val service: SES) extends AnyVal {
-
     @inline def cloneReceiptRuleSetFuture(params: CloneReceiptRuleSetRequest): Future[CloneReceiptRuleSetResponse] =
       service.cloneReceiptRuleSet(params).promise.toFuture
     @inline def createConfigurationSetEventDestinationFuture(

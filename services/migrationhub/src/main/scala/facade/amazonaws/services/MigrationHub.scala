@@ -38,7 +38,6 @@ package object migrationhub {
   type UpdateDateTime                  = js.Date
 
   implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
-
     @inline def associateCreatedArtifactFuture(
         params: AssociateCreatedArtifactRequest
     ): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise.toFuture

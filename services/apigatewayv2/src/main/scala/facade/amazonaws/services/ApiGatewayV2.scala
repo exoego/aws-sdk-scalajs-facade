@@ -68,7 +68,6 @@ package object apigatewayv2 {
   type __timestampIso8601                 = js.Date
 
   implicit final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
-
     @inline def createApiFuture(params: CreateApiRequest): Future[CreateApiResponse] =
       service.createApi(params).promise.toFuture
     @inline def createApiMappingFuture(params: CreateApiMappingRequest): Future[CreateApiMappingResponse] =

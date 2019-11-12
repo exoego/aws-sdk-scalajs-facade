@@ -59,7 +59,6 @@ package object health {
   type timestamp                         = js.Date
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
-
     @inline def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest
     ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture

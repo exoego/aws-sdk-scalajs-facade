@@ -39,7 +39,6 @@ package object stepfunctions {
   type UnsignedInteger         = Int
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
-
     @inline def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
       service.createActivity(params).promise.toFuture
     @inline def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =

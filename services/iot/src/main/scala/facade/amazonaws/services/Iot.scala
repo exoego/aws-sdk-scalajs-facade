@@ -404,7 +404,6 @@ package object iot {
   type WaitingForDataCollectionChecksCount = Int
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
-
     @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
       service.acceptCertificateTransfer(params).promise.toFuture
     @inline def addThingToBillingGroupFuture(

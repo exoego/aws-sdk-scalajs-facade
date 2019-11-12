@@ -97,7 +97,6 @@ package object directconnect {
   type VirtualInterfaceType   = String
 
   implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
-
     @inline def acceptDirectConnectGatewayAssociationProposalFuture(
         params: AcceptDirectConnectGatewayAssociationProposalRequest
     ): Future[AcceptDirectConnectGatewayAssociationProposalResult] =

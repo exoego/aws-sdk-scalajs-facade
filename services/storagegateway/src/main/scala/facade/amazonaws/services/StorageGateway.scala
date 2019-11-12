@@ -131,7 +131,6 @@ package object storagegateway {
   type double                     = Double
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
-
     @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
       service.activateGateway(params).promise.toFuture
     @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] =

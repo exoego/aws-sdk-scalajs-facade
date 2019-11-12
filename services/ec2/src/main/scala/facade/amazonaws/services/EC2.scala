@@ -541,7 +541,6 @@ package object ec2 {
   type scope                                            = String
 
   implicit final class EC2Ops(private val service: EC2) extends AnyVal {
-
     @inline def acceptReservedInstancesExchangeQuoteFuture(
         params: AcceptReservedInstancesExchangeQuoteRequest
     ): Future[AcceptReservedInstancesExchangeQuoteResult] =

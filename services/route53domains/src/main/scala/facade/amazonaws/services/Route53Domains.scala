@@ -60,7 +60,6 @@ package object route53domains {
   type ZipCode               = String
 
   implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
-
     @inline def checkDomainAvailabilityFuture(
         params: CheckDomainAvailabilityRequest
     ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise.toFuture

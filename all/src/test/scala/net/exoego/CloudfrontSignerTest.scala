@@ -6,7 +6,6 @@ import org.scalatest._
 import scala.scalajs.js
 
 class CloudfrontSignerTest extends FunSuite {
-
   test("SignerOptionsWithPolicy.apply(PolicyStatement)") {
     val tPolicy = new signer.PolicyStatements(
       js.Array(
@@ -24,5 +23,4 @@ class CloudfrontSignerTest extends FunSuite {
         .policy === """{"Statement":[{"Resource":"https://example.com/hoge/*","Condition":{"DateLessThan":{"AWS:EpochTime":100}}}]}"""
     )
   }
-
 }

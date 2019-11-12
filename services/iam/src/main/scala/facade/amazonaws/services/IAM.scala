@@ -159,7 +159,6 @@ package object iam {
   type virtualMFADeviceName                            = String
 
   implicit final class IAMOps(private val service: IAM) extends AnyVal {
-
     @inline def addClientIDToOpenIDConnectProviderFuture(
         params: AddClientIDToOpenIDConnectProviderRequest
     ): Future[js.Object] = service.addClientIDToOpenIDConnectProvider(params).promise.toFuture

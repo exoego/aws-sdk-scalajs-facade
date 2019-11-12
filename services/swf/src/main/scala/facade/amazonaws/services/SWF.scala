@@ -84,7 +84,6 @@ package object swf {
   type WorkflowTypeInfoList                              = js.Array[WorkflowTypeInfo]
 
   implicit final class SWFOps(private val service: SWF) extends AnyVal {
-
     @inline def countClosedWorkflowExecutionsFuture(
         params: CountClosedWorkflowExecutionsInput
     ): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise.toFuture

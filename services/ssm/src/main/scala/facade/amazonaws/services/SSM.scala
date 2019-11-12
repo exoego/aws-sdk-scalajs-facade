@@ -514,7 +514,6 @@ package object ssm {
   type Version                                 = String
 
   implicit final class SSMOps(private val service: SSM) extends AnyVal {
-
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
       service.addTagsToResource(params).promise.toFuture
     @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =

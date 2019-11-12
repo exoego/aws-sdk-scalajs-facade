@@ -35,7 +35,6 @@ package object ram {
   type TagValueList                   = js.Array[TagValue]
 
   implicit final class RAMOps(private val service: RAM) extends AnyVal {
-
     @inline def acceptResourceShareInvitationFuture(
         params: AcceptResourceShareInvitationRequest
     ): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise.toFuture

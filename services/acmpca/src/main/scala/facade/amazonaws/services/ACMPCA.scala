@@ -56,7 +56,6 @@ package object acmpca {
   type ValidityPeriodType               = String
 
   implicit final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
-
     @inline def createCertificateAuthorityAuditReportFuture(
         params: CreateCertificateAuthorityAuditReportRequest
     ): Future[CreateCertificateAuthorityAuditReportResponse] =

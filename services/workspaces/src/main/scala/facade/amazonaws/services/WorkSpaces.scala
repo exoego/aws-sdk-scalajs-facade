@@ -103,7 +103,6 @@ package object workspaces {
   type WorkspacesIpGroupsList                = js.Array[WorkspacesIpGroup]
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
-
     @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] =
       service.associateIpGroups(params).promise.toFuture
     @inline def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] =

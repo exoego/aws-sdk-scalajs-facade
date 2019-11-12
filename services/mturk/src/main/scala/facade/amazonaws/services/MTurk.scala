@@ -54,7 +54,6 @@ package object mturk {
   type WorkerBlockList                = js.Array[WorkerBlock]
 
   implicit final class MTurkOps(private val service: MTurk) extends AnyVal {
-
     @inline def acceptQualificationRequestFuture(
         params: AcceptQualificationRequestRequest
     ): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise.toFuture

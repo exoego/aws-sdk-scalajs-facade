@@ -68,7 +68,6 @@ package object securityhub {
   type WorkflowState                 = String
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
-
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture
     @inline def batchDisableStandardsFuture(

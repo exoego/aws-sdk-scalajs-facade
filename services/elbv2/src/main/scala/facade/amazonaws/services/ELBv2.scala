@@ -137,7 +137,6 @@ package object elbv2 {
   type ZoneName                                              = String
 
   implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
-
     @inline def addListenerCertificatesFuture(
         params: AddListenerCertificatesInput
     ): Future[AddListenerCertificatesOutput]                               = service.addListenerCertificates(params).promise.toFuture

@@ -46,7 +46,6 @@ package object applicationautoscaling {
   type XmlString                 = String
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
-
     @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
       service.deleteScalingPolicy(params).promise.toFuture
     @inline def deleteScheduledActionFuture(

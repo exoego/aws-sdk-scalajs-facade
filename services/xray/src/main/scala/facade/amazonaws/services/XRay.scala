@@ -88,7 +88,6 @@ package object xray {
   type Version                         = Int
 
   implicit final class XRayOps(private val service: XRay) extends AnyVal {
-
     @inline def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
       service.batchGetTraces(params).promise.toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] =

@@ -13,7 +13,6 @@ package object apigatewaymanagementapi {
   type __timestampIso8601 = js.Date
 
   implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
-
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[js.Object] =
       service.deleteConnection(params).promise.toFuture
     @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =

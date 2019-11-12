@@ -88,7 +88,6 @@ package object redshift {
   type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
-
     @inline def acceptReservedNodeExchangeFuture(
         params: AcceptReservedNodeExchangeInputMessage
     ): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise.toFuture

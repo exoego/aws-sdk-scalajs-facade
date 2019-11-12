@@ -95,7 +95,6 @@ package object cloudwatch {
   type Values            = js.Array[DatapointValue]
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
-
     @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] =
       service.deleteAlarms(params).promise.toFuture
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =

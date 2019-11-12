@@ -40,7 +40,6 @@ package object sts {
   type webIdentitySubjectType    = String
 
   implicit final class STSOps(private val service: STS) extends AnyVal {
-
     @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
       service.assumeRole(params).promise.toFuture
     @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =

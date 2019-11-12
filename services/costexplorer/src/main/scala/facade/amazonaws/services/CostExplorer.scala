@@ -86,7 +86,6 @@ package object costexplorer {
   type YearMonthDay                             = String
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
-
     @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
       service.getCostAndUsage(params).promise.toFuture
     @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =

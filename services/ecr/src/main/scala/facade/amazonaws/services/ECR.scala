@@ -68,7 +68,6 @@ package object ecr {
   type Url                              = String
 
   implicit final class ECROps(private val service: ECR) extends AnyVal {
-
     @inline def batchCheckLayerAvailabilityFuture(
         params: BatchCheckLayerAvailabilityRequest
     ): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise.toFuture

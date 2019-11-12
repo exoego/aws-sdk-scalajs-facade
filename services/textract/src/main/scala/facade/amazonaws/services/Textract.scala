@@ -41,7 +41,6 @@ package object textract {
   type Warnings         = js.Array[Warning]
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
-
     @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
       service.analyzeDocument(params).promise.toFuture
     @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] =

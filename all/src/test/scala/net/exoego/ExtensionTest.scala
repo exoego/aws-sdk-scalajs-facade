@@ -5,7 +5,6 @@ import facade.amazonaws.services.s3
 import org.scalatest._
 
 class ExtensionTest extends FunSuite {
-
   test("can instantiate") {
     val s3 = AWS.S3()
     assert(s3 !== null)
@@ -21,5 +20,4 @@ class ExtensionTest extends FunSuite {
         )
       )
   }
-
 }

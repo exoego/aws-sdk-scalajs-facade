@@ -26,7 +26,6 @@ package object mediapackagevod {
   type __string                       = String
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
-
     @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
       service.createAsset(params).promise.toFuture
     @inline def createPackagingConfigurationFuture(

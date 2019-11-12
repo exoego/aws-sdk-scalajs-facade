@@ -62,7 +62,6 @@ package object comprehend {
   type TopicsDetectionJobPropertiesList           = js.Array[TopicsDetectionJobProperties]
 
   implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
-
     @inline def batchDetectDominantLanguageFuture(
         params: BatchDetectDominantLanguageRequest
     ): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise.toFuture

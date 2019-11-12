@@ -410,7 +410,6 @@ package object mediaconvert {
   type __timestampUnix                                         = js.Date
 
   implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
-
     @inline def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] =
       service.associateCertificate(params).promise.toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =

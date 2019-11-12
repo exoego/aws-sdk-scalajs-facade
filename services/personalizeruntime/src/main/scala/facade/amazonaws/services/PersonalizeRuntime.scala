@@ -16,7 +16,6 @@ package object personalizeruntime {
   type UserID     = String
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
-
     @inline def getPersonalizedRankingFuture(
         params: GetPersonalizedRankingRequest
     ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise.toFuture

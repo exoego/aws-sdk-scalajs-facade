@@ -160,7 +160,6 @@ package object cloudformation {
   type Version                          = String
 
   implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
-
     @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] =
       service.cancelUpdateStack(params).promise.toFuture
     @inline def continueUpdateRollbackFuture(

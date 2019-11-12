@@ -65,7 +65,6 @@ package object chime {
   type VoiceConnectorName               = String
 
   implicit final class ChimeOps(private val service: Chime) extends AnyVal {
-
     @inline def associatePhoneNumberWithUserFuture(
         params: AssociatePhoneNumberWithUserRequest
     ): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise.toFuture

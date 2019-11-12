@@ -250,7 +250,6 @@ package object s3 {
   type Years                             = Int
 
   implicit final class S3Ops(private val service: S3) extends AnyVal {
-
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
       service.abortMultipartUpload(params).promise.toFuture
     @inline def completeMultipartUploadFuture(

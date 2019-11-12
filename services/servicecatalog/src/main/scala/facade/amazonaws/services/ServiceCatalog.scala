@@ -219,7 +219,6 @@ package object servicecatalog {
   type Verbose                                 = Boolean
 
   implicit final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
-
     @inline def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] =
       service.acceptPortfolioShare(params).promise.toFuture
     @inline def associateBudgetWithResourceFuture(

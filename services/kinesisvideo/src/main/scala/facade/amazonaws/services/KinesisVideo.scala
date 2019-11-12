@@ -31,7 +31,6 @@ package object kinesisvideo {
   type Version                      = String
 
   implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
-
     @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
       service.createStream(params).promise.toFuture
     @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
