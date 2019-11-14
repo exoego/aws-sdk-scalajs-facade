@@ -16,6 +16,9 @@ package object opsworkscm {
   type BackupStatus                   = String
   type BackupType                     = String
   type Backups                        = js.Array[Backup]
+  type CustomCertificate              = String
+  type CustomDomain                   = String
+  type CustomPrivateKey               = String
   type EngineAttributeName            = String
   type EngineAttributeValue           = String
   type EngineAttributes               = js.Array[EngineAttribute]
@@ -327,6 +330,9 @@ package opsworkscm {
     var AssociatePublicIpAddress: js.UndefOr[Boolean]
     var BackupId: js.UndefOr[BackupId]
     var BackupRetentionCount: js.UndefOr[BackupRetentionCountDefinition]
+    var CustomCertificate: js.UndefOr[CustomCertificate]
+    var CustomDomain: js.UndefOr[CustomDomain]
+    var CustomPrivateKey: js.UndefOr[CustomPrivateKey]
     var DisableAutomatedBackup: js.UndefOr[Boolean]
     var Engine: js.UndefOr[String]
     var EngineAttributes: js.UndefOr[EngineAttributes]
@@ -349,6 +355,9 @@ package opsworkscm {
         AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
         BackupId: js.UndefOr[BackupId] = js.undefined,
         BackupRetentionCount: js.UndefOr[BackupRetentionCountDefinition] = js.undefined,
+        CustomCertificate: js.UndefOr[CustomCertificate] = js.undefined,
+        CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
+        CustomPrivateKey: js.UndefOr[CustomPrivateKey] = js.undefined,
         DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
@@ -370,6 +379,9 @@ package opsworkscm {
       AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
       BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
       BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
+      CustomCertificate.foreach(__v => __obj.updateDynamic("CustomCertificate")(__v.asInstanceOf[js.Any]))
+      CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
+      CustomPrivateKey.foreach(__v => __obj.updateDynamic("CustomPrivateKey")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
@@ -838,6 +850,7 @@ package opsworkscm {
     var BackupRetentionCount: js.UndefOr[Int]
     var CloudFormationStackArn: js.UndefOr[String]
     var CreatedAt: js.UndefOr[Timestamp]
+    var CustomDomain: js.UndefOr[CustomDomain]
     var DisableAutomatedBackup: js.UndefOr[Boolean]
     var Endpoint: js.UndefOr[String]
     var Engine: js.UndefOr[String]
@@ -866,6 +879,7 @@ package opsworkscm {
         BackupRetentionCount: js.UndefOr[Int] = js.undefined,
         CloudFormationStackArn: js.UndefOr[String] = js.undefined,
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
         DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
         Endpoint: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
@@ -891,6 +905,7 @@ package opsworkscm {
       BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
       CloudFormationStackArn.foreach(__v => __obj.updateDynamic("CloudFormationStackArn")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))

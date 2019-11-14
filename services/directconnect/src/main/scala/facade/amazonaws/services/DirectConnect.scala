@@ -70,6 +70,7 @@ package object directconnect {
   type PaginationToken       = String
   type PartnerName           = String
   type PortSpeed             = String
+  type ProviderList          = js.Array[ProviderName]
   type ProviderName          = String
   type Region                = String
   type ResourceArn           = String
@@ -83,9 +84,8 @@ package object directconnect {
   type TagList               = js.Array[Tag]
   type TagValue              = String
   type VLAN                  = Int
-  @deprecated("Deprecated in AWS SDK", "forever")
-  type VirtualGatewayId   = String
-  type VirtualGatewayList = js.Array[VirtualGateway]
+  type VirtualGatewayId      = String
+  type VirtualGatewayList    = js.Array[VirtualGateway]
   @deprecated("Deprecated in AWS SDK", "forever")
   type VirtualGatewayRegion   = String
   type VirtualGatewayState    = String
@@ -854,6 +854,7 @@ package directconnect {
     var location: js.UndefOr[LocationCode]
     var ownerAccount: js.UndefOr[OwnerAccount]
     var partnerName: js.UndefOr[PartnerName]
+    var providerName: js.UndefOr[ProviderName]
     var region: js.UndefOr[Region]
     var tags: js.UndefOr[TagList]
     var vlan: js.UndefOr[VLAN]
@@ -875,6 +876,7 @@ package directconnect {
         location: js.UndefOr[LocationCode] = js.undefined,
         ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
         partnerName: js.UndefOr[PartnerName] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         region: js.UndefOr[Region] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         vlan: js.UndefOr[VLAN] = js.undefined
@@ -893,6 +895,7 @@ package directconnect {
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
       partnerName.foreach(__v => __obj.updateDynamic("partnerName")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       vlan.foreach(__v => __obj.updateDynamic("vlan")(__v.asInstanceOf[js.Any]))
@@ -972,6 +975,7 @@ package directconnect {
     var connectionName: ConnectionName
     var location: LocationCode
     var lagId: js.UndefOr[LagId]
+    var providerName: js.UndefOr[ProviderName]
     var tags: js.UndefOr[TagList]
   }
 
@@ -982,6 +986,7 @@ package directconnect {
         connectionName: ConnectionName,
         location: LocationCode,
         lagId: js.UndefOr[LagId] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateConnectionRequest = {
       val __obj = js.Dynamic.literal(
@@ -991,6 +996,7 @@ package directconnect {
       )
 
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectionRequest]
     }
@@ -1138,6 +1144,7 @@ package directconnect {
     var interconnectName: InterconnectName
     var location: LocationCode
     var lagId: js.UndefOr[LagId]
+    var providerName: js.UndefOr[ProviderName]
     var tags: js.UndefOr[TagList]
   }
 
@@ -1148,6 +1155,7 @@ package directconnect {
         interconnectName: InterconnectName,
         location: LocationCode,
         lagId: js.UndefOr[LagId] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateInterconnectRequest = {
       val __obj = js.Dynamic.literal(
@@ -1157,6 +1165,7 @@ package directconnect {
       )
 
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInterconnectRequest]
     }
@@ -1170,6 +1179,7 @@ package directconnect {
     var numberOfConnections: Count
     var childConnectionTags: js.UndefOr[TagList]
     var connectionId: js.UndefOr[ConnectionId]
+    var providerName: js.UndefOr[ProviderName]
     var tags: js.UndefOr[TagList]
   }
 
@@ -1182,6 +1192,7 @@ package directconnect {
         numberOfConnections: Count,
         childConnectionTags: js.UndefOr[TagList] = js.undefined,
         connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLagRequest = {
       val __obj = js.Dynamic.literal(
@@ -1193,6 +1204,7 @@ package directconnect {
 
       childConnectionTags.foreach(__v => __obj.updateDynamic("childConnectionTags")(__v.asInstanceOf[js.Any]))
       connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLagRequest]
     }
@@ -2226,6 +2238,7 @@ package directconnect {
     var lagId: js.UndefOr[LagId]
     var loaIssueTime: js.UndefOr[LoaIssueTime]
     var location: js.UndefOr[LocationCode]
+    var providerName: js.UndefOr[ProviderName]
     var region: js.UndefOr[Region]
     var tags: js.UndefOr[TagList]
   }
@@ -2244,6 +2257,7 @@ package directconnect {
         lagId: js.UndefOr[LagId] = js.undefined,
         loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
         location: js.UndefOr[LocationCode] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         region: js.UndefOr[Region] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): Interconnect = {
@@ -2259,6 +2273,7 @@ package directconnect {
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
       loaIssueTime.foreach(__v => __obj.updateDynamic("loaIssueTime")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Interconnect]
@@ -2312,6 +2327,7 @@ package directconnect {
     var minimumLinks: js.UndefOr[Count]
     var numberOfConnections: js.UndefOr[Count]
     var ownerAccount: js.UndefOr[OwnerAccount]
+    var providerName: js.UndefOr[ProviderName]
     var region: js.UndefOr[Region]
     var tags: js.UndefOr[TagList]
   }
@@ -2333,6 +2349,7 @@ package directconnect {
         minimumLinks: js.UndefOr[Count] = js.undefined,
         numberOfConnections: js.UndefOr[Count] = js.undefined,
         ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined,
         region: js.UndefOr[Region] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): Lag = {
@@ -2351,6 +2368,7 @@ package directconnect {
       minimumLinks.foreach(__v => __obj.updateDynamic("minimumLinks")(__v.asInstanceOf[js.Any]))
       numberOfConnections.foreach(__v => __obj.updateDynamic("numberOfConnections")(__v.asInstanceOf[js.Any]))
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
+      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Lag]
@@ -2419,6 +2437,7 @@ package directconnect {
   @js.native
   trait Location extends js.Object {
     var availablePortSpeeds: js.UndefOr[AvailablePortSpeeds]
+    var availableProviders: js.UndefOr[ProviderList]
     var locationCode: js.UndefOr[LocationCode]
     var locationName: js.UndefOr[LocationName]
     var region: js.UndefOr[Region]
@@ -2428,12 +2447,14 @@ package directconnect {
     @inline
     def apply(
         availablePortSpeeds: js.UndefOr[AvailablePortSpeeds] = js.undefined,
+        availableProviders: js.UndefOr[ProviderList] = js.undefined,
         locationCode: js.UndefOr[LocationCode] = js.undefined,
         locationName: js.UndefOr[LocationName] = js.undefined,
         region: js.UndefOr[Region] = js.undefined
     ): Location = {
       val __obj = js.Dynamic.literal()
       availablePortSpeeds.foreach(__v => __obj.updateDynamic("availablePortSpeeds")(__v.asInstanceOf[js.Any]))
+      availableProviders.foreach(__v => __obj.updateDynamic("availableProviders")(__v.asInstanceOf[js.Any]))
       locationCode.foreach(__v => __obj.updateDynamic("locationCode")(__v.asInstanceOf[js.Any]))
       locationName.foreach(__v => __obj.updateDynamic("locationName")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
@@ -2675,7 +2696,7 @@ package directconnect {
   }
 
   /**
-    * Information about the transit virtual interface.
+    * Information about a transit virtual interface.
     */
   @js.native
   trait NewTransitVirtualInterface extends js.Object {
@@ -2721,7 +2742,7 @@ package directconnect {
   }
 
   /**
-    * Information about a transit virtual interface.
+    * Information about a transit virtual interface to be provisioned on a connection.
     */
   @js.native
   trait NewTransitVirtualInterfaceAllocation extends js.Object {

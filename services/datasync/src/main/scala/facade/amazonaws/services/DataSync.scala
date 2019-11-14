@@ -38,6 +38,7 @@ package object datasync {
   type NextToken                       = String
   type NfsVersion                      = String
   type NonEmptySubdirectory            = String
+  type OverwriteMode                   = String
   type PLSecurityGroupArnList          = js.Array[Ec2SecurityGroupArn]
   type PLSubnetArnList                 = js.Array[Ec2SubnetArn]
   type PhaseStatus                     = String
@@ -45,6 +46,7 @@ package object datasync {
   type PreserveDeletedFiles            = String
   type PreserveDevices                 = String
   type S3BucketArn                     = String
+  type S3StorageClass                  = String
   type ServerHostname                  = String
   type SmbDomain                       = String
   type SmbPassword                     = String
@@ -62,6 +64,7 @@ package object datasync {
   type TaskExecutionList               = js.Array[TaskExecutionListEntry]
   type TaskExecutionStatus             = String
   type TaskList                        = js.Array[TaskListEntry]
+  type TaskQueueing                    = String
   type TaskStatus                      = String
   type Time                            = js.Date
   type Uid                             = String
@@ -377,6 +380,7 @@ package datasync {
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
+    var S3StorageClass: js.UndefOr[S3StorageClass]
     var Subdirectory: js.UndefOr[Subdirectory]
     var Tags: js.UndefOr[TagList]
   }
@@ -386,6 +390,7 @@ package datasync {
     def apply(
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
+        S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
         Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationS3Request = {
@@ -394,6 +399,7 @@ package datasync {
         "S3Config"    -> S3Config.asInstanceOf[js.Any]
       )
 
+      S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
       Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationS3Request]
@@ -790,6 +796,7 @@ package datasync {
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
     var S3Config: js.UndefOr[S3Config]
+    var S3StorageClass: js.UndefOr[S3StorageClass]
   }
 
   object DescribeLocationS3Response {
@@ -798,13 +805,15 @@ package datasync {
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined,
-        S3Config: js.UndefOr[S3Config] = js.undefined
+        S3Config: js.UndefOr[S3Config] = js.undefined,
+        S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined
     ): DescribeLocationS3Response = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       S3Config.foreach(__v => __obj.updateDynamic("S3Config")(__v.asInstanceOf[js.Any]))
+      S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationS3Response]
     }
   }
@@ -1362,9 +1371,11 @@ package datasync {
     var BytesPerSecond: js.UndefOr[BytesPerSecond]
     var Gid: js.UndefOr[Gid]
     var Mtime: js.UndefOr[Mtime]
+    var OverwriteMode: js.UndefOr[OverwriteMode]
     var PosixPermissions: js.UndefOr[PosixPermissions]
     var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
     var PreserveDevices: js.UndefOr[PreserveDevices]
+    var TaskQueueing: js.UndefOr[TaskQueueing]
     var Uid: js.UndefOr[Uid]
     var VerifyMode: js.UndefOr[VerifyMode]
   }
@@ -1376,9 +1387,11 @@ package datasync {
         BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
         Gid: js.UndefOr[Gid] = js.undefined,
         Mtime: js.UndefOr[Mtime] = js.undefined,
+        OverwriteMode: js.UndefOr[OverwriteMode] = js.undefined,
         PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
         PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
         PreserveDevices: js.UndefOr[PreserveDevices] = js.undefined,
+        TaskQueueing: js.UndefOr[TaskQueueing] = js.undefined,
         Uid: js.UndefOr[Uid] = js.undefined,
         VerifyMode: js.UndefOr[VerifyMode] = js.undefined
     ): Options = {
@@ -1387,13 +1400,22 @@ package datasync {
       BytesPerSecond.foreach(__v => __obj.updateDynamic("BytesPerSecond")(__v.asInstanceOf[js.Any]))
       Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
       Mtime.foreach(__v => __obj.updateDynamic("Mtime")(__v.asInstanceOf[js.Any]))
+      OverwriteMode.foreach(__v => __obj.updateDynamic("OverwriteMode")(__v.asInstanceOf[js.Any]))
       PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))
       PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
       PreserveDevices.foreach(__v => __obj.updateDynamic("PreserveDevices")(__v.asInstanceOf[js.Any]))
+      TaskQueueing.foreach(__v => __obj.updateDynamic("TaskQueueing")(__v.asInstanceOf[js.Any]))
       Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
       VerifyMode.foreach(__v => __obj.updateDynamic("VerifyMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Options]
     }
+  }
+
+  object OverwriteModeEnum {
+    val ALWAYS = "ALWAYS"
+    val NEVER  = "NEVER"
+
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   object PhaseStatusEnum {
@@ -1474,6 +1496,18 @@ package datasync {
 
       __obj.asInstanceOf[S3Config]
     }
+  }
+
+  object S3StorageClassEnum {
+    val STANDARD            = "STANDARD"
+    val STANDARD_IA         = "STANDARD_IA"
+    val ONEZONE_IA          = "ONEZONE_IA"
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
+    val GLACIER             = "GLACIER"
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+
+    val values =
+      js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
 
   /**
@@ -1664,6 +1698,7 @@ package datasync {
   }
 
   object TaskExecutionStatusEnum {
+    val QUEUED       = "QUEUED"
     val LAUNCHING    = "LAUNCHING"
     val PREPARING    = "PREPARING"
     val TRANSFERRING = "TRANSFERRING"
@@ -1671,7 +1706,7 @@ package datasync {
     val SUCCESS      = "SUCCESS"
     val ERROR        = "ERROR"
 
-    val values = js.Object.freeze(js.Array(LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
+    val values = js.Object.freeze(js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
   }
 
   /**
@@ -1699,13 +1734,21 @@ package datasync {
     }
   }
 
+  object TaskQueueingEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
   object TaskStatusEnum {
     val AVAILABLE   = "AVAILABLE"
     val CREATING    = "CREATING"
+    val QUEUED      = "QUEUED"
     val RUNNING     = "RUNNING"
     val UNAVAILABLE = "UNAVAILABLE"
 
-    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, RUNNING, UNAVAILABLE))
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
   }
 
   object UidEnum {
@@ -1833,8 +1876,9 @@ package datasync {
 
   object VerifyModeEnum {
     val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT"
+    val ONLY_FILES_TRANSFERRED   = "ONLY_FILES_TRANSFERRED"
     val NONE                     = "NONE"
 
-    val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, NONE))
+    val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE))
   }
 }

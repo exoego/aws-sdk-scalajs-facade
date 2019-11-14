@@ -60,6 +60,8 @@ package object snowball {
       service.getJobUnlockCode(params).promise.toFuture
     @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
       service.getSnowballUsage(params).promise.toFuture
+    @inline def getSoftwareUpdatesFuture(params: GetSoftwareUpdatesRequest): Future[GetSoftwareUpdatesResult] =
+      service.getSoftwareUpdates(params).promise.toFuture
     @inline def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
       service.listClusterJobs(params).promise.toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
@@ -93,6 +95,7 @@ package snowball {
     def getJobManifest(params: GetJobManifestRequest): Request[GetJobManifestResult]                   = js.native
     def getJobUnlockCode(params: GetJobUnlockCodeRequest): Request[GetJobUnlockCodeResult]             = js.native
     def getSnowballUsage(params: GetSnowballUsageRequest): Request[GetSnowballUsageResult]             = js.native
+    def getSoftwareUpdates(params: GetSoftwareUpdatesRequest): Request[GetSoftwareUpdatesResult]       = js.native
     def listClusterJobs(params: ListClusterJobsRequest): Request[ListClusterJobsResult]                = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResult]                         = js.native
     def listCompatibleImages(params: ListCompatibleImagesRequest): Request[ListCompatibleImagesResult] = js.native
@@ -315,7 +318,7 @@ package snowball {
   }
 
   /**
-    * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see [[http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html|Using Amazon EC2 Compute Instances]] in the <i>AWS Snowball Developer Guide</i>.
+    * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
     */
   @js.native
   trait CompatibleImage extends js.Object {
@@ -809,6 +812,40 @@ package snowball {
       SnowballLimit.foreach(__v => __obj.updateDynamic("SnowballLimit")(__v.asInstanceOf[js.Any]))
       SnowballsInUse.foreach(__v => __obj.updateDynamic("SnowballsInUse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSnowballUsageResult]
+    }
+  }
+
+  @js.native
+  trait GetSoftwareUpdatesRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object GetSoftwareUpdatesRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): GetSoftwareUpdatesRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetSoftwareUpdatesRequest]
+    }
+  }
+
+  @js.native
+  trait GetSoftwareUpdatesResult extends js.Object {
+    var UpdatesURI: js.UndefOr[String]
+  }
+
+  object GetSoftwareUpdatesResult {
+    @inline
+    def apply(
+        UpdatesURI: js.UndefOr[String] = js.undefined
+    ): GetSoftwareUpdatesResult = {
+      val __obj = js.Dynamic.literal()
+      UpdatesURI.foreach(__v => __obj.updateDynamic("UpdatesURI")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSoftwareUpdatesResult]
     }
   }
 

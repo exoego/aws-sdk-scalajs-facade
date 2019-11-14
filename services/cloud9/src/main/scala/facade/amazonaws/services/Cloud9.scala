@@ -423,11 +423,13 @@ package cloud9 {
   }
 
   object EnvironmentLifecycleStatusEnum {
+    val CREATING      = "CREATING"
     val CREATED       = "CREATED"
+    val CREATE_FAILED = "CREATE_FAILED"
     val DELETING      = "DELETING"
     val DELETE_FAILED = "DELETE_FAILED"
 
-    val values = js.Object.freeze(js.Array(CREATED, DELETING, DELETE_FAILED))
+    val values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
   }
 
   /**

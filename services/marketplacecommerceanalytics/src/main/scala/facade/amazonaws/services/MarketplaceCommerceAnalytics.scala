@@ -14,7 +14,6 @@ package object marketplacecommerceanalytics {
   type DataSetType             = String
   type DestinationS3BucketName = String
   type DestinationS3Prefix     = String
-  type ExceptionMessage        = String
   type FromDate                = js.Date
   type OptionalKey             = String
   type OptionalValue           = String
@@ -53,12 +52,16 @@ package marketplacecommerceanalytics {
     val daily_business_canceled_product_subscribers        = "daily_business_canceled_product_subscribers"
     val monthly_revenue_billing_and_revenue_data           = "monthly_revenue_billing_and_revenue_data"
     val monthly_revenue_annual_subscriptions               = "monthly_revenue_annual_subscriptions"
+    val monthly_revenue_field_demonstration_usage          = "monthly_revenue_field_demonstration_usage"
+    val monthly_revenue_flexible_payment_schedule          = "monthly_revenue_flexible_payment_schedule"
     val disbursed_amount_by_product                        = "disbursed_amount_by_product"
     val disbursed_amount_by_product_with_uncollected_funds = "disbursed_amount_by_product_with_uncollected_funds"
     val disbursed_amount_by_instance_hours                 = "disbursed_amount_by_instance_hours"
     val disbursed_amount_by_customer_geo                   = "disbursed_amount_by_customer_geo"
     val disbursed_amount_by_age_of_uncollected_funds       = "disbursed_amount_by_age_of_uncollected_funds"
     val disbursed_amount_by_age_of_disbursed_funds         = "disbursed_amount_by_age_of_disbursed_funds"
+    val disbursed_amount_by_age_of_past_due_funds          = "disbursed_amount_by_age_of_past_due_funds"
+    val disbursed_amount_by_uncollected_funds_breakdown    = "disbursed_amount_by_uncollected_funds_breakdown"
     val customer_profile_by_industry                       = "customer_profile_by_industry"
     val customer_profile_by_revenue                        = "customer_profile_by_revenue"
     val customer_profile_by_geography                      = "customer_profile_by_geography"
@@ -77,12 +80,16 @@ package marketplacecommerceanalytics {
         daily_business_canceled_product_subscribers,
         monthly_revenue_billing_and_revenue_data,
         monthly_revenue_annual_subscriptions,
+        monthly_revenue_field_demonstration_usage,
+        monthly_revenue_flexible_payment_schedule,
         disbursed_amount_by_product,
         disbursed_amount_by_product_with_uncollected_funds,
         disbursed_amount_by_instance_hours,
         disbursed_amount_by_customer_geo,
         disbursed_amount_by_age_of_uncollected_funds,
         disbursed_amount_by_age_of_disbursed_funds,
+        disbursed_amount_by_age_of_past_due_funds,
+        disbursed_amount_by_uncollected_funds_breakdown,
         customer_profile_by_industry,
         customer_profile_by_revenue,
         customer_profile_by_geography,
@@ -148,14 +155,6 @@ package marketplacecommerceanalytics {
       dataSetRequestId.foreach(__v => __obj.updateDynamic("dataSetRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateDataSetResult]
     }
-  }
-
-  /**
-    * This exception is thrown when an internal service error occurs.
-    */
-  @js.native
-  trait MarketplaceCommerceAnalyticsExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 
   /**

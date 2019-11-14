@@ -14,6 +14,7 @@ package object batch {
   type CEState                      = String
   type CEStatus                     = String
   type CEType                       = String
+  type CRAllocationStrategy         = String
   type CRType                       = String
   type ComputeEnvironmentDetailList = js.Array[ComputeEnvironmentDetail]
   type ComputeEnvironmentOrders     = js.Array[ComputeEnvironmentOrder]
@@ -276,6 +277,14 @@ package batch {
     val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
 
+  object CRAllocationStrategyEnum {
+    val BEST_FIT                = "BEST_FIT"
+    val BEST_FIT_PROGRESSIVE    = "BEST_FIT_PROGRESSIVE"
+    val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED"
+
+    val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
+  }
+
   object CRTypeEnum {
     val EC2  = "EC2"
     val SPOT = "SPOT"
@@ -397,6 +406,7 @@ package batch {
     var minvCpus: Int
     var subnets: StringList
     var `type`: CRType
+    var allocationStrategy: js.UndefOr[CRAllocationStrategy]
     var bidPercentage: js.UndefOr[Int]
     var desiredvCpus: js.UndefOr[Int]
     var ec2KeyPair: js.UndefOr[String]
@@ -417,6 +427,7 @@ package batch {
         minvCpus: Int,
         subnets: StringList,
         `type`: CRType,
+        allocationStrategy: js.UndefOr[CRAllocationStrategy] = js.undefined,
         bidPercentage: js.UndefOr[Int] = js.undefined,
         desiredvCpus: js.UndefOr[Int] = js.undefined,
         ec2KeyPair: js.UndefOr[String] = js.undefined,
@@ -436,6 +447,7 @@ package batch {
         "type"          -> `type`.asInstanceOf[js.Any]
       )
 
+      allocationStrategy.foreach(__v => __obj.updateDynamic("allocationStrategy")(__v.asInstanceOf[js.Any]))
       bidPercentage.foreach(__v => __obj.updateDynamic("bidPercentage")(__v.asInstanceOf[js.Any]))
       desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
       ec2KeyPair.foreach(__v => __obj.updateDynamic("ec2KeyPair")(__v.asInstanceOf[js.Any]))

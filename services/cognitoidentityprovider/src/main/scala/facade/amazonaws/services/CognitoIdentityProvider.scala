@@ -692,19 +692,22 @@ package cognitoidentityprovider {
   trait AdminConfirmSignUpRequest extends js.Object {
     var UserPoolId: UserPoolIdType
     var Username: UsernameType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
   }
 
   object AdminConfirmSignUpRequest {
     @inline
     def apply(
         UserPoolId: UserPoolIdType,
-        Username: UsernameType
+        Username: UsernameType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): AdminConfirmSignUpRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username"   -> Username.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminConfirmSignUpRequest]
     }
   }
@@ -759,6 +762,7 @@ package cognitoidentityprovider {
   trait AdminCreateUserRequest extends js.Object {
     var UserPoolId: UserPoolIdType
     var Username: UsernameType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var DesiredDeliveryMediums: js.UndefOr[DeliveryMediumListType]
     var ForceAliasCreation: js.UndefOr[ForceAliasCreation]
     var MessageAction: js.UndefOr[MessageActionType]
@@ -772,6 +776,7 @@ package cognitoidentityprovider {
     def apply(
         UserPoolId: UserPoolIdType,
         Username: UsernameType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         DesiredDeliveryMediums: js.UndefOr[DeliveryMediumListType] = js.undefined,
         ForceAliasCreation: js.UndefOr[ForceAliasCreation] = js.undefined,
         MessageAction: js.UndefOr[MessageActionType] = js.undefined,
@@ -784,6 +789,7 @@ package cognitoidentityprovider {
         "Username"   -> Username.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       DesiredDeliveryMediums.foreach(__v => __obj.updateDynamic("DesiredDeliveryMediums")(__v.asInstanceOf[js.Any]))
       ForceAliasCreation.foreach(__v => __obj.updateDynamic("ForceAliasCreation")(__v.asInstanceOf[js.Any]))
       MessageAction.foreach(__v => __obj.updateDynamic("MessageAction")(__v.asInstanceOf[js.Any]))
@@ -1417,19 +1423,22 @@ package cognitoidentityprovider {
   trait AdminResetUserPasswordRequest extends js.Object {
     var UserPoolId: UserPoolIdType
     var Username: UsernameType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
   }
 
   object AdminResetUserPasswordRequest {
     @inline
     def apply(
         UserPoolId: UserPoolIdType,
-        Username: UsernameType
+        Username: UsernameType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): AdminResetUserPasswordRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username"   -> Username.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminResetUserPasswordRequest]
     }
   }
@@ -1460,6 +1469,7 @@ package cognitoidentityprovider {
     var UserPoolId: UserPoolIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
     var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var ContextData: js.UndefOr[ContextDataType]
     var Session: js.UndefOr[SessionType]
   }
@@ -1472,6 +1482,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
         ChallengeResponses: js.UndefOr[ChallengeResponsesType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         ContextData: js.UndefOr[ContextDataType] = js.undefined,
         Session: js.UndefOr[SessionType] = js.undefined
     ): AdminRespondToAuthChallengeRequest = {
@@ -1483,6 +1494,7 @@ package cognitoidentityprovider {
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
       ChallengeResponses.foreach(__v => __obj.updateDynamic("ChallengeResponses")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       ContextData.foreach(__v => __obj.updateDynamic("ContextData")(__v.asInstanceOf[js.Any]))
       Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminRespondToAuthChallengeRequest]
@@ -1598,7 +1610,7 @@ package cognitoidentityprovider {
   }
 
   /**
-    * Represents the request to set user settings as an administrator.
+    * You can use this parameter to set an MFA configuration that uses the SMS delivery medium.
     */
   @js.native
   trait AdminSetUserSettingsRequest extends js.Object {
@@ -1734,6 +1746,7 @@ package cognitoidentityprovider {
     var UserAttributes: AttributeListType
     var UserPoolId: UserPoolIdType
     var Username: UsernameType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
   }
 
   object AdminUpdateUserAttributesRequest {
@@ -1741,7 +1754,8 @@ package cognitoidentityprovider {
     def apply(
         UserAttributes: AttributeListType,
         UserPoolId: UserPoolIdType,
-        Username: UsernameType
+        Username: UsernameType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): AdminUpdateUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "UserAttributes" -> UserAttributes.asInstanceOf[js.Any],
@@ -1749,6 +1763,7 @@ package cognitoidentityprovider {
         "Username"       -> Username.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminUpdateUserAttributesRequest]
     }
   }
@@ -2280,6 +2295,7 @@ package cognitoidentityprovider {
     var Password: PasswordType
     var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var SecretHash: js.UndefOr[SecretHashType]
     var UserContextData: js.UndefOr[UserContextDataType]
   }
@@ -2292,6 +2308,7 @@ package cognitoidentityprovider {
         Password: PasswordType,
         Username: UsernameType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         SecretHash: js.UndefOr[SecretHashType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): ConfirmForgotPasswordRequest = {
@@ -2303,6 +2320,7 @@ package cognitoidentityprovider {
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       SecretHash.foreach(__v => __obj.updateDynamic("SecretHash")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmForgotPasswordRequest]
@@ -2334,6 +2352,7 @@ package cognitoidentityprovider {
     var ConfirmationCode: ConfirmationCodeType
     var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var ForceAliasCreation: js.UndefOr[ForceAliasCreation]
     var SecretHash: js.UndefOr[SecretHashType]
     var UserContextData: js.UndefOr[UserContextDataType]
@@ -2346,6 +2365,7 @@ package cognitoidentityprovider {
         ConfirmationCode: ConfirmationCodeType,
         Username: UsernameType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         ForceAliasCreation: js.UndefOr[ForceAliasCreation] = js.undefined,
         SecretHash: js.UndefOr[SecretHashType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
@@ -2357,6 +2377,7 @@ package cognitoidentityprovider {
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       ForceAliasCreation.foreach(__v => __obj.updateDynamic("ForceAliasCreation")(__v.asInstanceOf[js.Any]))
       SecretHash.foreach(__v => __obj.updateDynamic("SecretHash")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
@@ -3658,6 +3679,7 @@ package cognitoidentityprovider {
     var ClientId: ClientIdType
     var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var SecretHash: js.UndefOr[SecretHashType]
     var UserContextData: js.UndefOr[UserContextDataType]
   }
@@ -3668,6 +3690,7 @@ package cognitoidentityprovider {
         ClientId: ClientIdType,
         Username: UsernameType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         SecretHash: js.UndefOr[SecretHashType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): ForgotPasswordRequest = {
@@ -3677,6 +3700,7 @@ package cognitoidentityprovider {
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       SecretHash.foreach(__v => __obj.updateDynamic("SecretHash")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForgotPasswordRequest]
@@ -3952,19 +3976,22 @@ package cognitoidentityprovider {
   trait GetUserAttributeVerificationCodeRequest extends js.Object {
     var AccessToken: TokenModelType
     var AttributeName: AttributeNameType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
   }
 
   object GetUserAttributeVerificationCodeRequest {
     @inline
     def apply(
         AccessToken: TokenModelType,
-        AttributeName: AttributeNameType
+        AttributeName: AttributeNameType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): GetUserAttributeVerificationCodeRequest = {
       val __obj = js.Dynamic.literal(
         "AccessToken"   -> AccessToken.asInstanceOf[js.Any],
         "AttributeName" -> AttributeName.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserAttributeVerificationCodeRequest]
     }
   }
@@ -4804,7 +4831,9 @@ package cognitoidentityprovider {
   }
 
   /**
-    * Specifies the different settings for multi-factor authentication (MFA).
+    * <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.
+    *  To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a> actions.
+    *  To look up information about either type of MFA configuration, use the [[AdminGetUserResponse.UserMFASettingList]] or [[GetUserResponse.UserMFASettingList]] responses.
     */
   @js.native
   trait MFAOptionType extends js.Object {
@@ -5069,6 +5098,7 @@ package cognitoidentityprovider {
     var ClientId: ClientIdType
     var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var SecretHash: js.UndefOr[SecretHashType]
     var UserContextData: js.UndefOr[UserContextDataType]
   }
@@ -5079,6 +5109,7 @@ package cognitoidentityprovider {
         ClientId: ClientIdType,
         Username: UsernameType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         SecretHash: js.UndefOr[SecretHashType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): ResendConfirmationCodeRequest = {
@@ -5088,6 +5119,7 @@ package cognitoidentityprovider {
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       SecretHash.foreach(__v => __obj.updateDynamic("SecretHash")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResendConfirmationCodeRequest]
@@ -5174,6 +5206,7 @@ package cognitoidentityprovider {
     var ClientId: ClientIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
     var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var Session: js.UndefOr[SessionType]
     var UserContextData: js.UndefOr[UserContextDataType]
   }
@@ -5185,6 +5218,7 @@ package cognitoidentityprovider {
         ClientId: ClientIdType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
         ChallengeResponses: js.UndefOr[ChallengeResponsesType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         Session: js.UndefOr[SessionType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): RespondToAuthChallengeRequest = {
@@ -5195,6 +5229,7 @@ package cognitoidentityprovider {
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
       ChallengeResponses.foreach(__v => __obj.updateDynamic("ChallengeResponses")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RespondToAuthChallengeRequest]
@@ -5308,7 +5343,7 @@ package cognitoidentityprovider {
   }
 
   /**
-    * The SMS multi-factor authentication (MFA) settings type.
+    * The type used for enabling SMS MFA at the user level.
     */
   @js.native
   trait SMSMfaSettingsType extends js.Object {
@@ -5608,6 +5643,7 @@ package cognitoidentityprovider {
     var Password: PasswordType
     var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
     var SecretHash: js.UndefOr[SecretHashType]
     var UserAttributes: js.UndefOr[AttributeListType]
     var UserContextData: js.UndefOr[UserContextDataType]
@@ -5621,6 +5657,7 @@ package cognitoidentityprovider {
         Password: PasswordType,
         Username: UsernameType,
         AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
         SecretHash: js.UndefOr[SecretHashType] = js.undefined,
         UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
@@ -5633,6 +5670,7 @@ package cognitoidentityprovider {
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       SecretHash.foreach(__v => __obj.updateDynamic("SecretHash")(__v.asInstanceOf[js.Any]))
       UserAttributes.foreach(__v => __obj.updateDynamic("UserAttributes")(__v.asInstanceOf[js.Any]))
       UserContextData.foreach(__v => __obj.updateDynamic("UserContextData")(__v.asInstanceOf[js.Any]))
@@ -5669,7 +5707,7 @@ package cognitoidentityprovider {
   }
 
   /**
-    * The SMS configuration type.
+    * The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account.
     */
   @js.native
   trait SmsConfigurationType extends js.Object {
@@ -5873,20 +5911,20 @@ package cognitoidentityprovider {
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: ArnType
-    var Tags: js.UndefOr[UserPoolTagsType]
+    var Tags: UserPoolTagsType
   }
 
   object TagResourceRequest {
     @inline
     def apply(
         ResourceArn: ArnType,
-        Tags: js.UndefOr[UserPoolTagsType] = js.undefined
+        Tags: UserPoolTagsType
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -5944,20 +5982,20 @@ package cognitoidentityprovider {
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: ArnType
-    var TagKeys: js.UndefOr[UserPoolTagsListType]
+    var TagKeys: UserPoolTagsListType
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
         ResourceArn: ArnType,
-        TagKeys: js.UndefOr[UserPoolTagsListType] = js.undefined
+        TagKeys: UserPoolTagsListType
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -6207,19 +6245,22 @@ package cognitoidentityprovider {
   trait UpdateUserAttributesRequest extends js.Object {
     var AccessToken: TokenModelType
     var UserAttributes: AttributeListType
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
   }
 
   object UpdateUserAttributesRequest {
     @inline
     def apply(
         AccessToken: TokenModelType,
-        UserAttributes: AttributeListType
+        UserAttributes: AttributeListType,
+        ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): UpdateUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "AccessToken"    -> AccessToken.asInstanceOf[js.Any],
         "UserAttributes" -> UserAttributes.asInstanceOf[js.Any]
       )
 
+      ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserAttributesRequest]
     }
   }

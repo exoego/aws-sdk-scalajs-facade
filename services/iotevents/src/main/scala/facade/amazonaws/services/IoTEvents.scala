@@ -22,6 +22,7 @@ package object iotevents {
   type DetectorModelVersion          = String
   type DetectorModelVersionStatus    = String
   type DetectorModelVersionSummaries = js.Array[DetectorModelVersionSummary]
+  type EvaluationMethod              = String
   type EventName                     = String
   type Events                        = js.Array[Event]
   type FirehoseSeparator             = String
@@ -211,6 +212,7 @@ package iotevents {
     var detectorModelName: DetectorModelName
     var roleArn: AmazonResourceName
     var detectorModelDescription: js.UndefOr[DetectorModelDescription]
+    var evaluationMethod: js.UndefOr[EvaluationMethod]
     var key: js.UndefOr[AttributeJsonPath]
     var tags: js.UndefOr[Tags]
   }
@@ -222,6 +224,7 @@ package iotevents {
         detectorModelName: DetectorModelName,
         roleArn: AmazonResourceName,
         detectorModelDescription: js.UndefOr[DetectorModelDescription] = js.undefined,
+        evaluationMethod: js.UndefOr[EvaluationMethod] = js.undefined,
         key: js.UndefOr[AttributeJsonPath] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateDetectorModelRequest = {
@@ -232,6 +235,7 @@ package iotevents {
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
+      evaluationMethod.foreach(__v => __obj.updateDynamic("evaluationMethod")(__v.asInstanceOf[js.Any]))
       key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorModelRequest]
@@ -519,6 +523,7 @@ package iotevents {
     var detectorModelDescription: js.UndefOr[DetectorModelDescription]
     var detectorModelName: js.UndefOr[DetectorModelName]
     var detectorModelVersion: js.UndefOr[DetectorModelVersion]
+    var evaluationMethod: js.UndefOr[EvaluationMethod]
     var key: js.UndefOr[AttributeJsonPath]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var roleArn: js.UndefOr[AmazonResourceName]
@@ -533,6 +538,7 @@ package iotevents {
         detectorModelDescription: js.UndefOr[DetectorModelDescription] = js.undefined,
         detectorModelName: js.UndefOr[DetectorModelName] = js.undefined,
         detectorModelVersion: js.UndefOr[DetectorModelVersion] = js.undefined,
+        evaluationMethod: js.UndefOr[EvaluationMethod] = js.undefined,
         key: js.UndefOr[AttributeJsonPath] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         roleArn: js.UndefOr[AmazonResourceName] = js.undefined,
@@ -544,6 +550,7 @@ package iotevents {
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
       detectorModelName.foreach(__v => __obj.updateDynamic("detectorModelName")(__v.asInstanceOf[js.Any]))
       detectorModelVersion.foreach(__v => __obj.updateDynamic("detectorModelVersion")(__v.asInstanceOf[js.Any]))
+      evaluationMethod.foreach(__v => __obj.updateDynamic("evaluationMethod")(__v.asInstanceOf[js.Any]))
       key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
@@ -622,6 +629,7 @@ package iotevents {
     var detectorModelArn: js.UndefOr[DetectorModelArn]
     var detectorModelName: js.UndefOr[DetectorModelName]
     var detectorModelVersion: js.UndefOr[DetectorModelVersion]
+    var evaluationMethod: js.UndefOr[EvaluationMethod]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var roleArn: js.UndefOr[AmazonResourceName]
     var status: js.UndefOr[DetectorModelVersionStatus]
@@ -634,6 +642,7 @@ package iotevents {
         detectorModelArn: js.UndefOr[DetectorModelArn] = js.undefined,
         detectorModelName: js.UndefOr[DetectorModelName] = js.undefined,
         detectorModelVersion: js.UndefOr[DetectorModelVersion] = js.undefined,
+        evaluationMethod: js.UndefOr[EvaluationMethod] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         roleArn: js.UndefOr[AmazonResourceName] = js.undefined,
         status: js.UndefOr[DetectorModelVersionStatus] = js.undefined
@@ -643,11 +652,19 @@ package iotevents {
       detectorModelArn.foreach(__v => __obj.updateDynamic("detectorModelArn")(__v.asInstanceOf[js.Any]))
       detectorModelName.foreach(__v => __obj.updateDynamic("detectorModelName")(__v.asInstanceOf[js.Any]))
       detectorModelVersion.foreach(__v => __obj.updateDynamic("detectorModelVersion")(__v.asInstanceOf[js.Any]))
+      evaluationMethod.foreach(__v => __obj.updateDynamic("evaluationMethod")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectorModelVersionSummary]
     }
+  }
+
+  object EvaluationMethodEnum {
+    val BATCH  = "BATCH"
+    val SERIAL = "SERIAL"
+
+    val values = js.Object.freeze(js.Array(BATCH, SERIAL))
   }
 
   /**
@@ -678,7 +695,7 @@ package iotevents {
   }
 
   /**
-    * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose stream.
+    * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait FirehoseAction extends js.Object {
@@ -866,7 +883,7 @@ package iotevents {
   }
 
   /**
-    * Calls a Lambda function, passing in information about the detector model instance and the event which triggered the action.
+    * Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.
     */
   @js.native
   trait LambdaAction extends js.Object {
@@ -1248,7 +1265,7 @@ package iotevents {
   }
 
   /**
-    * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+    * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
     */
   @js.native
   trait SqsAction extends js.Object {
@@ -1429,6 +1446,7 @@ package iotevents {
     var detectorModelName: DetectorModelName
     var roleArn: AmazonResourceName
     var detectorModelDescription: js.UndefOr[DetectorModelDescription]
+    var evaluationMethod: js.UndefOr[EvaluationMethod]
   }
 
   object UpdateDetectorModelRequest {
@@ -1437,7 +1455,8 @@ package iotevents {
         detectorModelDefinition: DetectorModelDefinition,
         detectorModelName: DetectorModelName,
         roleArn: AmazonResourceName,
-        detectorModelDescription: js.UndefOr[DetectorModelDescription] = js.undefined
+        detectorModelDescription: js.UndefOr[DetectorModelDescription] = js.undefined,
+        evaluationMethod: js.UndefOr[EvaluationMethod] = js.undefined
     ): UpdateDetectorModelRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any],
@@ -1446,6 +1465,7 @@ package iotevents {
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
+      evaluationMethod.foreach(__v => __obj.updateDynamic("evaluationMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDetectorModelRequest]
     }
   }

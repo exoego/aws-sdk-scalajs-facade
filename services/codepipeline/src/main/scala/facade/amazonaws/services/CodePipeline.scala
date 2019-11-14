@@ -23,6 +23,7 @@ package object codepipeline {
   type ActionExecutionStatus                  = String
   type ActionExecutionToken                   = String
   type ActionName                             = String
+  type ActionNamespace                        = String
   type ActionOwner                            = String
   type ActionProvider                         = String
   type ActionRunOrder                         = Int
@@ -73,6 +74,9 @@ package object codepipeline {
   type NextToken                              = String
   type Nonce                                  = String
   type OutputArtifactList                     = js.Array[OutputArtifact]
+  type OutputVariablesKey                     = String
+  type OutputVariablesMap                     = js.Dictionary[OutputVariablesValue]
+  type OutputVariablesValue                   = String
   type Percentage                             = Int
   type PipelineArn                            = String
   type PipelineExecutionId                    = String
@@ -83,6 +87,7 @@ package object codepipeline {
   type PipelineStageDeclarationList           = js.Array[StageDeclaration]
   type PipelineVersion                        = Int
   type QueryParamMap                          = js.Dictionary[ActionConfigurationQueryableValue]
+  type ResolvedActionConfigurationMap         = js.Dictionary[String]
   type ResourceArn                            = String
   type Revision                               = String
   type RevisionChangeIdentifier               = String
@@ -454,7 +459,7 @@ package codepipeline {
   }
 
   /**
-    * Represents the context of an action within the stage of a pipeline to a job worker.
+    * Represents the context of an action in the stage of a pipeline to a job worker.
     */
   @js.native
   trait ActionContext extends js.Object {
@@ -484,6 +489,7 @@ package codepipeline {
     var name: ActionName
     var configuration: js.UndefOr[ActionConfigurationMap]
     var inputArtifacts: js.UndefOr[InputArtifactList]
+    var namespace: js.UndefOr[ActionNamespace]
     var outputArtifacts: js.UndefOr[OutputArtifactList]
     var region: js.UndefOr[AWSRegionName]
     var roleArn: js.UndefOr[RoleArn]
@@ -497,6 +503,7 @@ package codepipeline {
         name: ActionName,
         configuration: js.UndefOr[ActionConfigurationMap] = js.undefined,
         inputArtifacts: js.UndefOr[InputArtifactList] = js.undefined,
+        namespace: js.UndefOr[ActionNamespace] = js.undefined,
         outputArtifacts: js.UndefOr[OutputArtifactList] = js.undefined,
         region: js.UndefOr[AWSRegionName] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
@@ -509,6 +516,7 @@ package codepipeline {
 
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
       outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
@@ -633,7 +641,9 @@ package codepipeline {
     var actionTypeId: js.UndefOr[ActionTypeId]
     var configuration: js.UndefOr[ActionConfigurationMap]
     var inputArtifacts: js.UndefOr[ArtifactDetailList]
+    var namespace: js.UndefOr[ActionNamespace]
     var region: js.UndefOr[AWSRegionName]
+    var resolvedConfiguration: js.UndefOr[ResolvedActionConfigurationMap]
     var roleArn: js.UndefOr[RoleArn]
   }
 
@@ -643,14 +653,18 @@ package codepipeline {
         actionTypeId: js.UndefOr[ActionTypeId] = js.undefined,
         configuration: js.UndefOr[ActionConfigurationMap] = js.undefined,
         inputArtifacts: js.UndefOr[ArtifactDetailList] = js.undefined,
+        namespace: js.UndefOr[ActionNamespace] = js.undefined,
         region: js.UndefOr[AWSRegionName] = js.undefined,
+        resolvedConfiguration: js.UndefOr[ResolvedActionConfigurationMap] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): ActionExecutionInput = {
       val __obj = js.Dynamic.literal()
       actionTypeId.foreach(__v => __obj.updateDynamic("actionTypeId")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      resolvedConfiguration.foreach(__v => __obj.updateDynamic("resolvedConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionInput]
     }
@@ -663,17 +677,20 @@ package codepipeline {
   trait ActionExecutionOutput extends js.Object {
     var executionResult: js.UndefOr[ActionExecutionResult]
     var outputArtifacts: js.UndefOr[ArtifactDetailList]
+    var outputVariables: js.UndefOr[OutputVariablesMap]
   }
 
   object ActionExecutionOutput {
     @inline
     def apply(
         executionResult: js.UndefOr[ActionExecutionResult] = js.undefined,
-        outputArtifacts: js.UndefOr[ArtifactDetailList] = js.undefined
+        outputArtifacts: js.UndefOr[ArtifactDetailList] = js.undefined,
+        outputVariables: js.UndefOr[OutputVariablesMap] = js.undefined
     ): ActionExecutionOutput = {
       val __obj = js.Dynamic.literal()
       executionResult.foreach(__v => __obj.updateDynamic("executionResult")(__v.asInstanceOf[js.Any]))
       outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
+      outputVariables.foreach(__v => __obj.updateDynamic("outputVariables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionOutput]
     }
   }
@@ -904,7 +921,7 @@ package codepipeline {
   }
 
   /**
-    * Represents information about an artifact that will be worked upon by actions in the pipeline.
+    * Represents information about an artifact that is worked on by actions in the pipeline.
     */
   @js.native
   trait Artifact extends js.Object {
@@ -1037,7 +1054,7 @@ package codepipeline {
   }
 
   /**
-    * The Amazon S3 bucket where artifacts are stored for the pipeline.
+    * The Amazon S3 bucket where artifacts for the pipeline are stored.
     *
     * '''Note:'''You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
     */
@@ -1828,7 +1845,7 @@ package codepipeline {
   }
 
   /**
-    * Represents additional information about a job required for a job worker to complete the job.
+    * Represents other information about a job required for a job worker to complete the job.
     */
   @js.native
   trait JobData extends js.Object {
@@ -2651,6 +2668,7 @@ package codepipeline {
     var continuationToken: js.UndefOr[ContinuationToken]
     var currentRevision: js.UndefOr[CurrentRevision]
     var executionDetails: js.UndefOr[ExecutionDetails]
+    var outputVariables: js.UndefOr[OutputVariablesMap]
   }
 
   object PutJobSuccessResultInput {
@@ -2659,7 +2677,8 @@ package codepipeline {
         jobId: JobId,
         continuationToken: js.UndefOr[ContinuationToken] = js.undefined,
         currentRevision: js.UndefOr[CurrentRevision] = js.undefined,
-        executionDetails: js.UndefOr[ExecutionDetails] = js.undefined
+        executionDetails: js.UndefOr[ExecutionDetails] = js.undefined,
+        outputVariables: js.UndefOr[OutputVariablesMap] = js.undefined
     ): PutJobSuccessResultInput = {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
@@ -2668,6 +2687,7 @@ package codepipeline {
       continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
       currentRevision.foreach(__v => __obj.updateDynamic("currentRevision")(__v.asInstanceOf[js.Any]))
       executionDetails.foreach(__v => __obj.updateDynamic("executionDetails")(__v.asInstanceOf[js.Any]))
+      outputVariables.foreach(__v => __obj.updateDynamic("outputVariables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutJobSuccessResultInput]
     }
   }
@@ -3086,7 +3106,7 @@ package codepipeline {
   }
 
   /**
-    * A tag is a key/value pair that is used to manage the resource.
+    * A tag is a key-value pair that is used to manage the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3144,7 +3164,7 @@ package codepipeline {
   }
 
   /**
-    * A response to a <code>PollForThirdPartyJobs </code>request returned by AWS CodePipeline when there is a job to be worked upon by a partner action.
+    * A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action.
     */
   @js.native
   trait ThirdPartyJob extends js.Object {

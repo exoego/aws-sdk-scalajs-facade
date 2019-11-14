@@ -530,9 +530,10 @@ package ecs {
     var containerArn: js.UndefOr[String]
     var cpu: js.UndefOr[String]
     var exitCode: js.UndefOr[BoxedInteger]
-    var firelensConfiguration: js.UndefOr[FirelensConfiguration]
     var gpuIds: js.UndefOr[GpuIds]
     var healthStatus: js.UndefOr[HealthStatus]
+    var image: js.UndefOr[String]
+    var imageDigest: js.UndefOr[String]
     var lastStatus: js.UndefOr[String]
     var memory: js.UndefOr[String]
     var memoryReservation: js.UndefOr[String]
@@ -550,9 +551,10 @@ package ecs {
         containerArn: js.UndefOr[String] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
-        firelensConfiguration: js.UndefOr[FirelensConfiguration] = js.undefined,
         gpuIds: js.UndefOr[GpuIds] = js.undefined,
         healthStatus: js.UndefOr[HealthStatus] = js.undefined,
+        image: js.UndefOr[String] = js.undefined,
+        imageDigest: js.UndefOr[String] = js.undefined,
         lastStatus: js.UndefOr[String] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
         memoryReservation: js.UndefOr[String] = js.undefined,
@@ -567,9 +569,10 @@ package ecs {
       containerArn.foreach(__v => __obj.updateDynamic("containerArn")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
-      firelensConfiguration.foreach(__v => __obj.updateDynamic("firelensConfiguration")(__v.asInstanceOf[js.Any]))
       gpuIds.foreach(__v => __obj.updateDynamic("gpuIds")(__v.asInstanceOf[js.Any]))
       healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
       lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
@@ -873,6 +876,7 @@ package ecs {
   trait ContainerStateChange extends js.Object {
     var containerName: js.UndefOr[String]
     var exitCode: js.UndefOr[BoxedInteger]
+    var imageDigest: js.UndefOr[String]
     var networkBindings: js.UndefOr[NetworkBindings]
     var reason: js.UndefOr[String]
     var runtimeId: js.UndefOr[String]
@@ -884,6 +888,7 @@ package ecs {
     def apply(
         containerName: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[BoxedInteger] = js.undefined,
+        imageDigest: js.UndefOr[String] = js.undefined,
         networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
         runtimeId: js.UndefOr[String] = js.undefined,
@@ -892,6 +897,7 @@ package ecs {
       val __obj = js.Dynamic.literal()
       containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
       networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
@@ -1845,7 +1851,7 @@ package ecs {
   }
 
   /**
-    * The FireLens configuration for the container. This is used to specify and configure a log router for container logs.
+    * The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html|Custom Log Routing]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait FirelensConfiguration extends js.Object {

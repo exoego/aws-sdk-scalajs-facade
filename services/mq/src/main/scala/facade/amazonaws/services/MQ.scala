@@ -847,6 +847,7 @@ package mq {
     var Logs: js.UndefOr[LogsSummary]
     var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
     var PendingEngineVersion: js.UndefOr[__string]
+    var PendingHostInstanceType: js.UndefOr[__string]
     var PendingSecurityGroups: js.UndefOr[__listOf__string]
     var PubliclyAccessible: js.UndefOr[__boolean]
     var SecurityGroups: js.UndefOr[__listOf__string]
@@ -874,6 +875,7 @@ package mq {
         Logs: js.UndefOr[LogsSummary] = js.undefined,
         MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
         PendingEngineVersion: js.UndefOr[__string] = js.undefined,
+        PendingHostInstanceType: js.UndefOr[__string] = js.undefined,
         PendingSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
@@ -900,6 +902,7 @@ package mq {
         __v => __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
       )
       PendingEngineVersion.foreach(__v => __obj.updateDynamic("PendingEngineVersion")(__v.asInstanceOf[js.Any]))
+      PendingHostInstanceType.foreach(__v => __obj.updateDynamic("PendingHostInstanceType")(__v.asInstanceOf[js.Any]))
       PendingSecurityGroups.foreach(__v => __obj.updateDynamic("PendingSecurityGroups")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -1479,6 +1482,7 @@ package mq {
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var Configuration: js.UndefOr[ConfigurationId]
     var EngineVersion: js.UndefOr[__string]
+    var HostInstanceType: js.UndefOr[__string]
     var Logs: js.UndefOr[Logs]
     var SecurityGroups: js.UndefOr[__listOf__string]
   }
@@ -1490,6 +1494,7 @@ package mq {
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
+        HostInstanceType: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateBrokerRequest = {
@@ -1500,6 +1505,7 @@ package mq {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerRequest]
@@ -1512,6 +1518,7 @@ package mq {
     var BrokerId: js.UndefOr[__string]
     var Configuration: js.UndefOr[ConfigurationId]
     var EngineVersion: js.UndefOr[__string]
+    var HostInstanceType: js.UndefOr[__string]
     var Logs: js.UndefOr[Logs]
     var SecurityGroups: js.UndefOr[__listOf__string]
   }
@@ -1523,6 +1530,7 @@ package mq {
         BrokerId: js.UndefOr[__string] = js.undefined,
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
+        HostInstanceType: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateBrokerResponse = {
@@ -1531,6 +1539,7 @@ package mq {
       BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerResponse]

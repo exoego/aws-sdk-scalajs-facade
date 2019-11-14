@@ -2700,6 +2700,14 @@ package gamelift {
     val `c4.2xlarge`  = "c4.2xlarge"
     val `c4.4xlarge`  = "c4.4xlarge"
     val `c4.8xlarge`  = "c4.8xlarge"
+    val `c5.large`    = "c5.large"
+    val `c5.xlarge`   = "c5.xlarge"
+    val `c5.2xlarge`  = "c5.2xlarge"
+    val `c5.4xlarge`  = "c5.4xlarge"
+    val `c5.9xlarge`  = "c5.9xlarge"
+    val `c5.12xlarge` = "c5.12xlarge"
+    val `c5.18xlarge` = "c5.18xlarge"
+    val `c5.24xlarge` = "c5.24xlarge"
     val `r3.large`    = "r3.large"
     val `r3.xlarge`   = "r3.xlarge"
     val `r3.2xlarge`  = "r3.2xlarge"
@@ -2711,6 +2719,14 @@ package gamelift {
     val `r4.4xlarge`  = "r4.4xlarge"
     val `r4.8xlarge`  = "r4.8xlarge"
     val `r4.16xlarge` = "r4.16xlarge"
+    val `r5.large`    = "r5.large"
+    val `r5.xlarge`   = "r5.xlarge"
+    val `r5.2xlarge`  = "r5.2xlarge"
+    val `r5.4xlarge`  = "r5.4xlarge"
+    val `r5.8xlarge`  = "r5.8xlarge"
+    val `r5.12xlarge` = "r5.12xlarge"
+    val `r5.16xlarge` = "r5.16xlarge"
+    val `r5.24xlarge` = "r5.24xlarge"
     val `m3.medium`   = "m3.medium"
     val `m3.large`    = "m3.large"
     val `m3.xlarge`   = "m3.xlarge"
@@ -2720,6 +2736,14 @@ package gamelift {
     val `m4.2xlarge`  = "m4.2xlarge"
     val `m4.4xlarge`  = "m4.4xlarge"
     val `m4.10xlarge` = "m4.10xlarge"
+    val `m5.large`    = "m5.large"
+    val `m5.xlarge`   = "m5.xlarge"
+    val `m5.2xlarge`  = "m5.2xlarge"
+    val `m5.4xlarge`  = "m5.4xlarge"
+    val `m5.8xlarge`  = "m5.8xlarge"
+    val `m5.12xlarge` = "m5.12xlarge"
+    val `m5.16xlarge` = "m5.16xlarge"
+    val `m5.24xlarge` = "m5.24xlarge"
 
     val values = js.Object.freeze(
       js.Array(
@@ -2737,6 +2761,14 @@ package gamelift {
         `c4.2xlarge`,
         `c4.4xlarge`,
         `c4.8xlarge`,
+        `c5.large`,
+        `c5.xlarge`,
+        `c5.2xlarge`,
+        `c5.4xlarge`,
+        `c5.9xlarge`,
+        `c5.12xlarge`,
+        `c5.18xlarge`,
+        `c5.24xlarge`,
         `r3.large`,
         `r3.xlarge`,
         `r3.2xlarge`,
@@ -2748,6 +2780,14 @@ package gamelift {
         `r4.4xlarge`,
         `r4.8xlarge`,
         `r4.16xlarge`,
+        `r5.large`,
+        `r5.xlarge`,
+        `r5.2xlarge`,
+        `r5.4xlarge`,
+        `r5.8xlarge`,
+        `r5.12xlarge`,
+        `r5.16xlarge`,
+        `r5.24xlarge`,
         `m3.medium`,
         `m3.large`,
         `m3.xlarge`,
@@ -2756,7 +2796,15 @@ package gamelift {
         `m4.xlarge`,
         `m4.2xlarge`,
         `m4.4xlarge`,
-        `m4.10xlarge`
+        `m4.10xlarge`,
+        `m5.large`,
+        `m5.xlarge`,
+        `m5.2xlarge`,
+        `m5.4xlarge`,
+        `m5.8xlarge`,
+        `m5.12xlarge`,
+        `m5.16xlarge`,
+        `m5.24xlarge`
       )
     )
   }
@@ -4040,10 +4088,11 @@ package gamelift {
   }
 
   object OperatingSystemEnum {
-    val WINDOWS_2012 = "WINDOWS_2012"
-    val AMAZON_LINUX = "AMAZON_LINUX"
+    val WINDOWS_2012   = "WINDOWS_2012"
+    val AMAZON_LINUX   = "AMAZON_LINUX"
+    val AMAZON_LINUX_2 = "AMAZON_LINUX_2"
 
-    val values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX))
+    val values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2))
   }
 
   /**

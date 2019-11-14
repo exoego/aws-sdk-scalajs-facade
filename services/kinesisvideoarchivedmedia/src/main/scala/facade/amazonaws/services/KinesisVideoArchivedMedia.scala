@@ -369,10 +369,11 @@ package kinesisvideoarchivedmedia {
   }
 
   object HLSDiscontinuityModeEnum {
-    val ALWAYS = "ALWAYS"
-    val NEVER  = "NEVER"
+    val ALWAYS           = "ALWAYS"
+    val NEVER            = "NEVER"
+    val ON_DISCONTINUITY = "ON_DISCONTINUITY"
 
-    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER, ON_DISCONTINUITY))
   }
 
   object HLSDisplayFragmentTimestampEnum {

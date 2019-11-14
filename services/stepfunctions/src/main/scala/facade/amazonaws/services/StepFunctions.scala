@@ -1471,19 +1471,19 @@ package stepfunctions {
     */
   @js.native
   trait MapIterationEventDetails extends js.Object {
-    var Index: js.UndefOr[UnsignedInteger]
-    var Name: js.UndefOr[Name]
+    var index: js.UndefOr[UnsignedInteger]
+    var name: js.UndefOr[Name]
   }
 
   object MapIterationEventDetails {
     @inline
     def apply(
-        Index: js.UndefOr[UnsignedInteger] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined
+        index: js.UndefOr[UnsignedInteger] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
     ): MapIterationEventDetails = {
       val __obj = js.Dynamic.literal()
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MapIterationEventDetails]
     }
   }
@@ -1493,16 +1493,16 @@ package stepfunctions {
     */
   @js.native
   trait MapStateStartedEventDetails extends js.Object {
-    var Length: js.UndefOr[UnsignedInteger]
+    var length: js.UndefOr[UnsignedInteger]
   }
 
   object MapStateStartedEventDetails {
     @inline
     def apply(
-        Length: js.UndefOr[UnsignedInteger] = js.undefined
+        length: js.UndefOr[UnsignedInteger] = js.undefined
     ): MapStateStartedEventDetails = {
       val __obj = js.Dynamic.literal()
-      Length.foreach(__v => __obj.updateDynamic("Length")(__v.asInstanceOf[js.Any]))
+      length.foreach(__v => __obj.updateDynamic("length")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MapStateStartedEventDetails]
     }
   }

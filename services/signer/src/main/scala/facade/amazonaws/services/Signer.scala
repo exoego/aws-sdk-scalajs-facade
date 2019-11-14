@@ -39,6 +39,10 @@ package object signer {
   type SigningProfiles       = js.Array[SigningProfile]
   type SigningStatus         = String
   type StatusReason          = String
+  type TagKey                = String
+  type TagKeyList            = js.Array[TagKey]
+  type TagMap                = js.Dictionary[TagValue]
+  type TagValue              = String
   type Version               = String
   type key                   = String
 
@@ -57,10 +61,16 @@ package object signer {
       service.listSigningPlatforms(params).promise.toFuture
     @inline def listSigningProfilesFuture(params: ListSigningProfilesRequest): Future[ListSigningProfilesResponse] =
       service.listSigningProfiles(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def putSigningProfileFuture(params: PutSigningProfileRequest): Future[PutSigningProfileResponse] =
       service.putSigningProfile(params).promise.toFuture
     @inline def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] =
       service.startSigningJob(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
   }
 }
 
@@ -77,8 +87,11 @@ package signer {
     def listSigningJobs(params: ListSigningJobsRequest): Request[ListSigningJobsResponse]                = js.native
     def listSigningPlatforms(params: ListSigningPlatformsRequest): Request[ListSigningPlatformsResponse] = js.native
     def listSigningProfiles(params: ListSigningProfilesRequest): Request[ListSigningProfilesResponse]    = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
     def putSigningProfile(params: PutSigningProfileRequest): Request[PutSigningProfileResponse]          = js.native
     def startSigningJob(params: StartSigningJobRequest): Request[StartSigningJobResponse]                = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
   }
 
   @js.native
@@ -202,7 +215,7 @@ package signer {
   }
 
   /**
-    * The encryption algorithm options that are available to an AWS Signer job.
+    * The encryption algorithm options that are available to a code signing job.
     */
   @js.native
   trait EncryptionAlgorithmOptions extends js.Object {
@@ -300,31 +313,37 @@ package signer {
 
   @js.native
   trait GetSigningProfileResponse extends js.Object {
+    var arn: js.UndefOr[String]
     var overrides: js.UndefOr[SigningPlatformOverrides]
     var platformId: js.UndefOr[PlatformId]
     var profileName: js.UndefOr[ProfileName]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
     var status: js.UndefOr[SigningProfileStatus]
+    var tags: js.UndefOr[TagMap]
   }
 
   object GetSigningProfileResponse {
     @inline
     def apply(
+        arn: js.UndefOr[String] = js.undefined,
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
-        status: js.UndefOr[SigningProfileStatus] = js.undefined
+        status: js.UndefOr[SigningProfileStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): GetSigningProfileResponse = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSigningProfileResponse]
     }
   }
@@ -337,7 +356,7 @@ package signer {
   }
 
   /**
-    * The hash algorithms that are available to an AWS Signer job.
+    * The hash algorithms that are available to a code signing job.
     */
   @js.native
   trait HashAlgorithmOptions extends js.Object {
@@ -502,12 +521,47 @@ package signer {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait PutSigningProfileRequest extends js.Object {
     var platformId: PlatformId
     var profileName: ProfileName
     var signingMaterial: SigningMaterial
     var overrides: js.UndefOr[SigningPlatformOverrides]
     var signingParameters: js.UndefOr[SigningParameters]
+    var tags: js.UndefOr[TagMap]
   }
 
   object PutSigningProfileRequest {
@@ -517,7 +571,8 @@ package signer {
         profileName: ProfileName,
         signingMaterial: SigningMaterial,
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
-        signingParameters: js.UndefOr[SigningParameters] = js.undefined
+        signingParameters: js.UndefOr[SigningParameters] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): PutSigningProfileRequest = {
       val __obj = js.Dynamic.literal(
         "platformId"      -> platformId.asInstanceOf[js.Any],
@@ -527,6 +582,7 @@ package signer {
 
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSigningProfileRequest]
     }
   }
@@ -548,7 +604,7 @@ package signer {
   }
 
   /**
-    * The name and prefix of the S3 bucket where AWS Signer saves your signed objects.
+    * The name and prefix of the S3 bucket where code signing saves your signed objects.
     */
   @js.native
   trait S3Destination extends js.Object {
@@ -570,7 +626,7 @@ package signer {
   }
 
   /**
-    * The S3 bucket name and key where AWS Signer saved your signed code image.
+    * The S3 bucket name and key where code signing saved your signed code image.
     */
   @js.native
   trait S3SignedObject extends js.Object {
@@ -638,7 +694,7 @@ package signer {
   }
 
   /**
-    * The configuration of an AWS Signer operation.
+    * The configuration of a code signing operation.
     */
   @js.native
   trait SigningConfiguration extends js.Object {
@@ -684,7 +740,7 @@ package signer {
   }
 
   /**
-    * The image format of an AWS Signer platform or profile.
+    * The image format of a code signing platform or profile.
     */
   @js.native
   trait SigningImageFormat extends js.Object {
@@ -763,7 +819,7 @@ package signer {
   }
 
   /**
-    * Contains information about the signing configurations and parameters that is used to perform an AWS Signer job.
+    * Contains information about the signing configurations and parameters that is used to perform a code signing job.
     */
   @js.native
   trait SigningPlatform extends js.Object {
@@ -803,7 +859,7 @@ package signer {
   }
 
   /**
-    * Any overrides that are applied to the signing configuration of an AWS Signer platform.
+    * Any overrides that are applied to the signing configuration of a code signing platform.
     */
   @js.native
   trait SigningPlatformOverrides extends js.Object {
@@ -822,32 +878,38 @@ package signer {
   }
 
   /**
-    * Contains information about the ACM certificates and AWS Signer configuration parameters that can be used by a given AWS Signer user.
+    * Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.
     */
   @js.native
   trait SigningProfile extends js.Object {
+    var arn: js.UndefOr[String]
     var platformId: js.UndefOr[PlatformId]
     var profileName: js.UndefOr[ProfileName]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
     var status: js.UndefOr[SigningProfileStatus]
+    var tags: js.UndefOr[TagMap]
   }
 
   object SigningProfile {
     @inline
     def apply(
+        arn: js.UndefOr[String] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
-        status: js.UndefOr[SigningProfileStatus] = js.undefined
+        status: js.UndefOr[SigningProfileStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): SigningProfile = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningProfile]
     }
   }
@@ -926,6 +988,74 @@ package signer {
       val __obj = js.Dynamic.literal()
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobResponse]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

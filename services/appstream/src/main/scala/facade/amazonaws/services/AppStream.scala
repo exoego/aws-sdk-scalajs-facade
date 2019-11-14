@@ -29,6 +29,8 @@ package object appstream {
   type DisplayName                              = String
   type Domain                                   = String
   type DomainList                               = js.Array[Domain]
+  type EmbedHostDomain                          = String
+  type EmbedHostDomains                         = js.Array[EmbedHostDomain]
   type FeedbackURL                              = String
   type FleetAttribute                           = String
   type FleetAttributes                          = js.Array[FleetAttribute]
@@ -271,7 +273,7 @@ package appstream {
   }
 
   /**
-    * Describes a virtual private cloud (VPC) interface endpoint that lets you create a private connection between the VPC that you specify and AppStream 2.0. When you specify a VPC interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify a VPC interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
+    * Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
     */
   @js.native
   trait AccessEndpoint extends js.Object {
@@ -661,6 +663,7 @@ package appstream {
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
     var FleetType: js.UndefOr[FleetType]
+    var IamRoleArn: js.UndefOr[Arn]
     var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
@@ -681,6 +684,7 @@ package appstream {
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
+        IamRoleArn: js.UndefOr[Arn] = js.undefined,
         IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
@@ -704,6 +708,7 @@ package appstream {
         __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       IdleDisconnectTimeoutInSeconds.foreach(
         __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
@@ -742,6 +747,7 @@ package appstream {
     var DisplayName: js.UndefOr[DisplayName]
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var IamRoleArn: js.UndefOr[Arn]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var Tags: js.UndefOr[Tags]
@@ -759,6 +765,7 @@ package appstream {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        IamRoleArn: js.UndefOr[Arn] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -777,6 +784,7 @@ package appstream {
       EnableDefaultInternetAccess.foreach(
         __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -848,6 +856,7 @@ package appstream {
     var ApplicationSettings: js.UndefOr[ApplicationSettings]
     var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
+    var EmbedHostDomains: js.UndefOr[EmbedHostDomains]
     var FeedbackURL: js.UndefOr[FeedbackURL]
     var RedirectURL: js.UndefOr[RedirectURL]
     var StorageConnectors: js.UndefOr[StorageConnectorList]
@@ -863,6 +872,7 @@ package appstream {
         ApplicationSettings: js.UndefOr[ApplicationSettings] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
+        EmbedHostDomains: js.UndefOr[EmbedHostDomains] = js.undefined,
         FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
@@ -877,6 +887,7 @@ package appstream {
       ApplicationSettings.foreach(__v => __obj.updateDynamic("ApplicationSettings")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      EmbedHostDomains.foreach(__v => __obj.updateDynamic("EmbedHostDomains")(__v.asInstanceOf[js.Any]))
       FeedbackURL.foreach(__v => __obj.updateDynamic("FeedbackURL")(__v.asInstanceOf[js.Any]))
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StorageConnectors.foreach(__v => __obj.updateDynamic("StorageConnectors")(__v.asInstanceOf[js.Any]))
@@ -1929,6 +1940,7 @@ package appstream {
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
     var FleetErrors: js.UndefOr[FleetErrors]
     var FleetType: js.UndefOr[FleetType]
+    var IamRoleArn: js.UndefOr[Arn]
     var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
@@ -1952,6 +1964,7 @@ package appstream {
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
         FleetErrors: js.UndefOr[FleetErrors] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
+        IamRoleArn: js.UndefOr[Arn] = js.undefined,
         IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
@@ -1978,6 +1991,7 @@ package appstream {
       )
       FleetErrors.foreach(__v => __obj.updateDynamic("FleetErrors")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       IdleDisconnectTimeoutInSeconds.foreach(
         __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
@@ -1996,8 +2010,11 @@ package appstream {
     val VPC_CONFIGURATION                    = "VPC_CONFIGURATION"
     val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
     val DOMAIN_JOIN_INFO                     = "DOMAIN_JOIN_INFO"
+    val IAM_ROLE_ARN                         = "IAM_ROLE_ARN"
 
-    val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO))
+    val values = js.Object.freeze(
+      js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
+    )
   }
 
   /**
@@ -2029,6 +2046,7 @@ package appstream {
     val NETWORK_INTERFACE_LIMIT_EXCEEDED                = "NETWORK_INTERFACE_LIMIT_EXCEEDED"
     val INTERNAL_SERVICE_ERROR                          = "INTERNAL_SERVICE_ERROR"
     val IAM_SERVICE_ROLE_IS_MISSING                     = "IAM_SERVICE_ROLE_IS_MISSING"
+    val MACHINE_ROLE_IS_MISSING                         = "MACHINE_ROLE_IS_MISSING"
     val STS_DISABLED_IN_REGION                          = "STS_DISABLED_IN_REGION"
     val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES            = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"
@@ -2060,6 +2078,7 @@ package appstream {
         NETWORK_INTERFACE_LIMIT_EXCEEDED,
         INTERNAL_SERVICE_ERROR,
         IAM_SERVICE_ROLE_IS_MISSING,
+        MACHINE_ROLE_IS_MISSING,
         STS_DISABLED_IN_REGION,
         SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
         IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
@@ -2183,6 +2202,7 @@ package appstream {
     var DisplayName: js.UndefOr[String]
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var IamRoleArn: js.UndefOr[Arn]
     var ImageArn: js.UndefOr[Arn]
     var ImageBuilderErrors: js.UndefOr[ResourceErrors]
     var InstanceType: js.UndefOr[String]
@@ -2205,6 +2225,7 @@ package appstream {
         DisplayName: js.UndefOr[String] = js.undefined,
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        IamRoleArn: js.UndefOr[Arn] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageBuilderErrors: js.UndefOr[ResourceErrors] = js.undefined,
         InstanceType: js.UndefOr[String] = js.undefined,
@@ -2228,6 +2249,7 @@ package appstream {
       EnableDefaultInternetAccess.foreach(
         __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageBuilderErrors.foreach(__v => __obj.updateDynamic("ImageBuilderErrors")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -2682,6 +2704,7 @@ package appstream {
     var CreatedTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[String]
     var DisplayName: js.UndefOr[String]
+    var EmbedHostDomains: js.UndefOr[EmbedHostDomains]
     var FeedbackURL: js.UndefOr[FeedbackURL]
     var RedirectURL: js.UndefOr[RedirectURL]
     var StackErrors: js.UndefOr[StackErrors]
@@ -2699,6 +2722,7 @@ package appstream {
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         DisplayName: js.UndefOr[String] = js.undefined,
+        EmbedHostDomains: js.UndefOr[EmbedHostDomains] = js.undefined,
         FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StackErrors: js.UndefOr[StackErrors] = js.undefined,
@@ -2715,6 +2739,7 @@ package appstream {
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      EmbedHostDomains.foreach(__v => __obj.updateDynamic("EmbedHostDomains")(__v.asInstanceOf[js.Any]))
       FeedbackURL.foreach(__v => __obj.updateDynamic("FeedbackURL")(__v.asInstanceOf[js.Any]))
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StackErrors.foreach(__v => __obj.updateDynamic("StackErrors")(__v.asInstanceOf[js.Any]))
@@ -2733,6 +2758,8 @@ package appstream {
     val FEEDBACK_URL                   = "FEEDBACK_URL"
     val THEME_NAME                     = "THEME_NAME"
     val USER_SETTINGS                  = "USER_SETTINGS"
+    val EMBED_HOST_DOMAINS             = "EMBED_HOST_DOMAINS"
+    val IAM_ROLE_ARN                   = "IAM_ROLE_ARN"
     val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS"
 
     val values = js.Object.freeze(
@@ -2745,6 +2772,8 @@ package appstream {
         FEEDBACK_URL,
         THEME_NAME,
         USER_SETTINGS,
+        EMBED_HOST_DOMAINS,
+        IAM_ROLE_ARN,
         ACCESS_ENDPOINTS
       )
     )
@@ -3072,6 +3101,7 @@ package appstream {
     var DisplayName: js.UndefOr[DisplayName]
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var IamRoleArn: js.UndefOr[Arn]
     var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
@@ -3092,6 +3122,7 @@ package appstream {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        IamRoleArn: js.UndefOr[Arn] = js.undefined,
         IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
@@ -3113,6 +3144,7 @@ package appstream {
       EnableDefaultInternetAccess.foreach(
         __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       IdleDisconnectTimeoutInSeconds.foreach(
         __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
@@ -3188,6 +3220,7 @@ package appstream {
     var DeleteStorageConnectors: js.UndefOr[Boolean]
     var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
+    var EmbedHostDomains: js.UndefOr[EmbedHostDomains]
     var FeedbackURL: js.UndefOr[FeedbackURL]
     var RedirectURL: js.UndefOr[RedirectURL]
     var StorageConnectors: js.UndefOr[StorageConnectorList]
@@ -3204,6 +3237,7 @@ package appstream {
         DeleteStorageConnectors: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
+        EmbedHostDomains: js.UndefOr[EmbedHostDomains] = js.undefined,
         FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
@@ -3219,6 +3253,7 @@ package appstream {
       DeleteStorageConnectors.foreach(__v => __obj.updateDynamic("DeleteStorageConnectors")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      EmbedHostDomains.foreach(__v => __obj.updateDynamic("EmbedHostDomains")(__v.asInstanceOf[js.Any]))
       FeedbackURL.foreach(__v => __obj.updateDynamic("FeedbackURL")(__v.asInstanceOf[js.Any]))
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StorageConnectors.foreach(__v => __obj.updateDynamic("StorageConnectors")(__v.asInstanceOf[js.Any]))

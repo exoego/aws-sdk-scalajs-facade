@@ -28,6 +28,7 @@ package object codebuild {
   type EnvironmentType                = String
   type EnvironmentVariableType        = String
   type EnvironmentVariables           = js.Array[EnvironmentVariable]
+  type ExportedEnvironmentVariables   = js.Array[ExportedEnvironmentVariable]
   type FilterGroup                    = js.Array[WebhookFilter]
   type FilterGroups                   = js.Array[FilterGroup]
   type GitCloneDepth                  = Int
@@ -292,12 +293,14 @@ package codebuild {
     var arn: js.UndefOr[NonEmptyString]
     var artifacts: js.UndefOr[BuildArtifacts]
     var buildComplete: js.UndefOr[Boolean]
+    var buildNumber: js.UndefOr[WrapperLong]
     var buildStatus: js.UndefOr[StatusType]
     var cache: js.UndefOr[ProjectCache]
     var currentPhase: js.UndefOr[String]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var endTime: js.UndefOr[Timestamp]
     var environment: js.UndefOr[ProjectEnvironment]
+    var exportedEnvironmentVariables: js.UndefOr[ExportedEnvironmentVariables]
     var id: js.UndefOr[NonEmptyString]
     var initiator: js.UndefOr[String]
     var logs: js.UndefOr[LogsLocation]
@@ -323,12 +326,14 @@ package codebuild {
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         artifacts: js.UndefOr[BuildArtifacts] = js.undefined,
         buildComplete: js.UndefOr[Boolean] = js.undefined,
+        buildNumber: js.UndefOr[WrapperLong] = js.undefined,
         buildStatus: js.UndefOr[StatusType] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
         currentPhase: js.UndefOr[String] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
+        exportedEnvironmentVariables: js.UndefOr[ExportedEnvironmentVariables] = js.undefined,
         id: js.UndefOr[NonEmptyString] = js.undefined,
         initiator: js.UndefOr[String] = js.undefined,
         logs: js.UndefOr[LogsLocation] = js.undefined,
@@ -351,12 +356,16 @@ package codebuild {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
       buildComplete.foreach(__v => __obj.updateDynamic("buildComplete")(__v.asInstanceOf[js.Any]))
+      buildNumber.foreach(__v => __obj.updateDynamic("buildNumber")(__v.asInstanceOf[js.Any]))
       buildStatus.foreach(__v => __obj.updateDynamic("buildStatus")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       currentPhase.foreach(__v => __obj.updateDynamic("currentPhase")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      exportedEnvironmentVariables.foreach(
+        __v => __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any])
+      )
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
       logs.foreach(__v => __obj.updateDynamic("logs")(__v.asInstanceOf[js.Any]))
@@ -882,8 +891,31 @@ package codebuild {
   object EnvironmentVariableTypeEnum {
     val PLAINTEXT       = "PLAINTEXT"
     val PARAMETER_STORE = "PARAMETER_STORE"
+    val SECRETS_MANAGER = "SECRETS_MANAGER"
 
-    val values = js.Object.freeze(js.Array(PLAINTEXT, PARAMETER_STORE))
+    val values = js.Object.freeze(js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER))
+  }
+
+  /**
+    * Information about an exported environment variable.
+    */
+  @js.native
+  trait ExportedEnvironmentVariable extends js.Object {
+    var name: js.UndefOr[NonEmptyString]
+    var value: js.UndefOr[String]
+  }
+
+  object ExportedEnvironmentVariable {
+    @inline
+    def apply(
+        name: js.UndefOr[NonEmptyString] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): ExportedEnvironmentVariable = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportedEnvironmentVariable]
+    }
   }
 
   /**

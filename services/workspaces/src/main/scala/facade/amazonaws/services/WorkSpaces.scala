@@ -68,6 +68,7 @@ package object workspaces {
   type RunningMode                           = String
   type RunningModeAutoStopTimeoutInMinutes   = Int
   type SecurityGroupId                       = String
+  type SnapshotList                          = js.Array[Snapshot]
   type StartWorkspaceRequests                = js.Array[StartRequest]
   type StopWorkspaceRequests                 = js.Array[StopRequest]
   type SubnetId                              = String
@@ -142,6 +143,9 @@ package object workspaces {
     @inline def describeWorkspaceImagesFuture(
         params: DescribeWorkspaceImagesRequest
     ): Future[DescribeWorkspaceImagesResult] = service.describeWorkspaceImages(params).promise.toFuture
+    @inline def describeWorkspaceSnapshotsFuture(
+        params: DescribeWorkspaceSnapshotsRequest
+    ): Future[DescribeWorkspaceSnapshotsResult] = service.describeWorkspaceSnapshots(params).promise.toFuture
     @inline def describeWorkspacesConnectionStatusFuture(
         params: DescribeWorkspacesConnectionStatusRequest
     ): Future[DescribeWorkspacesConnectionStatusResult] =
@@ -170,6 +174,8 @@ package object workspaces {
       service.rebootWorkspaces(params).promise.toFuture
     @inline def rebuildWorkspacesFuture(params: RebuildWorkspacesRequest): Future[RebuildWorkspacesResult] =
       service.rebuildWorkspaces(params).promise.toFuture
+    @inline def restoreWorkspaceFuture(params: RestoreWorkspaceRequest): Future[RestoreWorkspaceResult] =
+      service.restoreWorkspace(params).promise.toFuture
     @inline def revokeIpRulesFuture(params: RevokeIpRulesRequest): Future[RevokeIpRulesResult] =
       service.revokeIpRules(params).promise.toFuture
     @inline def startWorkspacesFuture(params: StartWorkspacesRequest): Future[StartWorkspacesResult] =
@@ -213,6 +219,9 @@ package workspaces {
     ): Request[DescribeWorkspaceDirectoriesResult] = js.native
     def describeWorkspaceImages(params: DescribeWorkspaceImagesRequest): Request[DescribeWorkspaceImagesResult] =
       js.native
+    def describeWorkspaceSnapshots(
+        params: DescribeWorkspaceSnapshotsRequest
+    ): Request[DescribeWorkspaceSnapshotsResult]                                                 = js.native
     def describeWorkspaces(params: DescribeWorkspacesRequest): Request[DescribeWorkspacesResult] = js.native
     def describeWorkspacesConnectionStatus(
         params: DescribeWorkspacesConnectionStatusRequest
@@ -229,6 +238,7 @@ package workspaces {
     def modifyWorkspaceState(params: ModifyWorkspaceStateRequest): Request[ModifyWorkspaceStateResult] = js.native
     def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult]             = js.native
     def rebuildWorkspaces(params: RebuildWorkspacesRequest): Request[RebuildWorkspacesResult]          = js.native
+    def restoreWorkspace(params: RestoreWorkspaceRequest): Request[RestoreWorkspaceResult]             = js.native
     def revokeIpRules(params: RevokeIpRulesRequest): Request[RevokeIpRulesResult]                      = js.native
     def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult]                = js.native
     def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult]                   = js.native
@@ -1029,6 +1039,43 @@ package workspaces {
   }
 
   @js.native
+  trait DescribeWorkspaceSnapshotsRequest extends js.Object {
+    var WorkspaceId: WorkspaceId
+  }
+
+  object DescribeWorkspaceSnapshotsRequest {
+    @inline
+    def apply(
+        WorkspaceId: WorkspaceId
+    ): DescribeWorkspaceSnapshotsRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorkspaceSnapshotsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorkspaceSnapshotsResult extends js.Object {
+    var RebuildSnapshots: js.UndefOr[SnapshotList]
+    var RestoreSnapshots: js.UndefOr[SnapshotList]
+  }
+
+  object DescribeWorkspaceSnapshotsResult {
+    @inline
+    def apply(
+        RebuildSnapshots: js.UndefOr[SnapshotList] = js.undefined,
+        RestoreSnapshots: js.UndefOr[SnapshotList] = js.undefined
+    ): DescribeWorkspaceSnapshotsResult = {
+      val __obj = js.Dynamic.literal()
+      RebuildSnapshots.foreach(__v => __obj.updateDynamic("RebuildSnapshots")(__v.asInstanceOf[js.Any]))
+      RestoreSnapshots.foreach(__v => __obj.updateDynamic("RestoreSnapshots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceSnapshotsResult]
+    }
+  }
+
+  @js.native
   trait DescribeWorkspacesConnectionStatusRequest extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var WorkspaceIds: js.UndefOr[WorkspaceIdList]
@@ -1178,7 +1225,7 @@ package workspaces {
   }
 
   /**
-    * Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
+    * Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
     */
   @js.native
   trait FailedWorkspaceChangeRequest extends js.Object {
@@ -1630,6 +1677,37 @@ package workspaces {
   }
 
   @js.native
+  trait RestoreWorkspaceRequest extends js.Object {
+    var WorkspaceId: WorkspaceId
+  }
+
+  object RestoreWorkspaceRequest {
+    @inline
+    def apply(
+        WorkspaceId: WorkspaceId
+    ): RestoreWorkspaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RestoreWorkspaceRequest]
+    }
+  }
+
+  @js.native
+  trait RestoreWorkspaceResult extends js.Object {}
+
+  object RestoreWorkspaceResult {
+    @inline
+    def apply(
+        ): RestoreWorkspaceResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RestoreWorkspaceResult]
+    }
+  }
+
+  @js.native
   trait RevokeIpRulesRequest extends js.Object {
     var GroupId: IpGroupId
     var UserRules: IpRevokedRuleList
@@ -1687,6 +1765,25 @@ package workspaces {
     val ALWAYS_ON = "ALWAYS_ON"
 
     val values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
+  }
+
+  /**
+    * Describes a snapshot.
+    */
+  @js.native
+  trait Snapshot extends js.Object {
+    var SnapshotTime: js.UndefOr[Timestamp]
+  }
+
+  object Snapshot {
+    @inline
+    def apply(
+        SnapshotTime: js.UndefOr[Timestamp] = js.undefined
+    ): Snapshot = {
+      val __obj = js.Dynamic.literal()
+      SnapshotTime.foreach(__v => __obj.updateDynamic("SnapshotTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Snapshot]
+    }
   }
 
   /**
@@ -2292,6 +2389,7 @@ package workspaces {
     val REBOOTING         = "REBOOTING"
     val STARTING          = "STARTING"
     val REBUILDING        = "REBUILDING"
+    val RESTORING         = "RESTORING"
     val MAINTENANCE       = "MAINTENANCE"
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE"
     val TERMINATING       = "TERMINATING"
@@ -2311,6 +2409,7 @@ package workspaces {
         REBOOTING,
         STARTING,
         REBUILDING,
+        RESTORING,
         MAINTENANCE,
         ADMIN_MAINTENANCE,
         TERMINATING,

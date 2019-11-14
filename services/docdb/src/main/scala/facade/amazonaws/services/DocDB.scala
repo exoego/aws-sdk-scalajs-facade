@@ -13,6 +13,7 @@ package object docdb {
   type AvailabilityZoneList            = js.Array[AvailabilityZone]
   type AvailabilityZones               = js.Array[String]
   type BooleanOptional                 = Boolean
+  type CertificateList                 = js.Array[Certificate]
   type DBClusterList                   = js.Array[DBCluster]
   type DBClusterMemberList             = js.Array[DBClusterMember]
   type DBClusterParameterGroupList     = js.Array[DBClusterParameterGroup]
@@ -78,6 +79,8 @@ package object docdb {
       service.deleteDBInstance(params).promise.toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] =
       service.deleteDBSubnetGroup(params).promise.toFuture
+    @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] =
+      service.describeCertificates(params).promise.toFuture
     @inline def describeDBClusterParameterGroupsFuture(
         params: DescribeDBClusterParameterGroupsMessage
     ): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise.toFuture
@@ -177,8 +180,9 @@ package docdb {
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] =
       js.native
-    def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
-    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object]        = js.native
+    def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult]     = js.native
+    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object]            = js.native
+    def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
     def describeDBClusterParameterGroups(
         params: DescribeDBClusterParameterGroupsMessage
     ): Request[DBClusterParameterGroupsMessage] = js.native
@@ -323,6 +327,59 @@ package docdb {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
+    }
+  }
+
+  /**
+    * A certificate authority (CA) certificate for an AWS account.
+    */
+  @js.native
+  trait Certificate extends js.Object {
+    var CertificateArn: js.UndefOr[String]
+    var CertificateIdentifier: js.UndefOr[String]
+    var CertificateType: js.UndefOr[String]
+    var Thumbprint: js.UndefOr[String]
+    var ValidFrom: js.UndefOr[TStamp]
+    var ValidTill: js.UndefOr[TStamp]
+  }
+
+  object Certificate {
+    @inline
+    def apply(
+        CertificateArn: js.UndefOr[String] = js.undefined,
+        CertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CertificateType: js.UndefOr[String] = js.undefined,
+        Thumbprint: js.UndefOr[String] = js.undefined,
+        ValidFrom: js.UndefOr[TStamp] = js.undefined,
+        ValidTill: js.UndefOr[TStamp] = js.undefined
+    ): Certificate = {
+      val __obj = js.Dynamic.literal()
+      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      CertificateType.foreach(__v => __obj.updateDynamic("CertificateType")(__v.asInstanceOf[js.Any]))
+      Thumbprint.foreach(__v => __obj.updateDynamic("Thumbprint")(__v.asInstanceOf[js.Any]))
+      ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
+      ValidTill.foreach(__v => __obj.updateDynamic("ValidTill")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
+    }
+  }
+
+  @js.native
+  trait CertificateMessage extends js.Object {
+    var Certificates: js.UndefOr[CertificateList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object CertificateMessage {
+    @inline
+    def apply(
+        Certificates: js.UndefOr[CertificateList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): CertificateMessage = {
+      val __obj = js.Dynamic.literal()
+      Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CertificateMessage]
     }
   }
 
@@ -1233,6 +1290,7 @@ package docdb {
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
     var AvailabilityZone: js.UndefOr[String]
     var BackupRetentionPeriod: js.UndefOr[Int]
+    var CACertificateIdentifier: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBInstanceArn: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
@@ -1263,6 +1321,7 @@ package docdb {
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceArn: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -1290,6 +1349,7 @@ package docdb {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
@@ -1584,6 +1644,31 @@ package docdb {
       )
 
       __obj.asInstanceOf[DeleteDBSubnetGroupMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeCertificatesMessage extends js.Object {
+    var CertificateIdentifier: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeCertificatesMessage {
+    @inline
+    def apply(
+        CertificateIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeCertificatesMessage = {
+      val __obj = js.Dynamic.literal()
+      CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCertificatesMessage]
     }
   }
 
@@ -2436,6 +2521,7 @@ package docdb {
     var DBInstanceIdentifier: String
     var ApplyImmediately: js.UndefOr[Boolean]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var CACertificateIdentifier: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
     var NewDBInstanceIdentifier: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
@@ -2448,6 +2534,7 @@ package docdb {
         DBInstanceIdentifier: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
@@ -2459,6 +2546,7 @@ package docdb {
 
       ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       NewDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("NewDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(

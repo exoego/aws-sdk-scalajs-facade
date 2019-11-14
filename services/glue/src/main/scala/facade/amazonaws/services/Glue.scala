@@ -1690,19 +1690,22 @@ package glue {
   }
 
   object ConnectionPropertyKeyEnum {
-    val HOST                   = "HOST"
-    val PORT                   = "PORT"
-    val USERNAME               = "USERNAME"
-    val PASSWORD               = "PASSWORD"
-    val ENCRYPTED_PASSWORD     = "ENCRYPTED_PASSWORD"
-    val JDBC_DRIVER_JAR_URI    = "JDBC_DRIVER_JAR_URI"
-    val JDBC_DRIVER_CLASS_NAME = "JDBC_DRIVER_CLASS_NAME"
-    val JDBC_ENGINE            = "JDBC_ENGINE"
-    val JDBC_ENGINE_VERSION    = "JDBC_ENGINE_VERSION"
-    val CONFIG_FILES           = "CONFIG_FILES"
-    val INSTANCE_ID            = "INSTANCE_ID"
-    val JDBC_CONNECTION_URL    = "JDBC_CONNECTION_URL"
-    val JDBC_ENFORCE_SSL       = "JDBC_ENFORCE_SSL"
+    val HOST                             = "HOST"
+    val PORT                             = "PORT"
+    val USERNAME                         = "USERNAME"
+    val PASSWORD                         = "PASSWORD"
+    val ENCRYPTED_PASSWORD               = "ENCRYPTED_PASSWORD"
+    val JDBC_DRIVER_JAR_URI              = "JDBC_DRIVER_JAR_URI"
+    val JDBC_DRIVER_CLASS_NAME           = "JDBC_DRIVER_CLASS_NAME"
+    val JDBC_ENGINE                      = "JDBC_ENGINE"
+    val JDBC_ENGINE_VERSION              = "JDBC_ENGINE_VERSION"
+    val CONFIG_FILES                     = "CONFIG_FILES"
+    val INSTANCE_ID                      = "INSTANCE_ID"
+    val JDBC_CONNECTION_URL              = "JDBC_CONNECTION_URL"
+    val JDBC_ENFORCE_SSL                 = "JDBC_ENFORCE_SSL"
+    val CUSTOM_JDBC_CERT                 = "CUSTOM_JDBC_CERT"
+    val SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION"
+    val CUSTOM_JDBC_CERT_STRING          = "CUSTOM_JDBC_CERT_STRING"
 
     val values = js.Object.freeze(
       js.Array(
@@ -1718,7 +1721,10 @@ package glue {
         CONFIG_FILES,
         INSTANCE_ID,
         JDBC_CONNECTION_URL,
-        JDBC_ENFORCE_SSL
+        JDBC_ENFORCE_SSL,
+        CUSTOM_JDBC_CERT,
+        SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+        CUSTOM_JDBC_CERT_STRING
       )
     )
   }
@@ -2174,6 +2180,7 @@ package glue {
     var Arguments: js.UndefOr[MapValue]
     var ExtraJarsS3Path: js.UndefOr[GenericString]
     var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var NumberOfNodes: js.UndefOr[IntegerValue]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var PublicKey: js.UndefOr[GenericString]
@@ -2193,6 +2200,7 @@ package glue {
         Arguments: js.UndefOr[MapValue] = js.undefined,
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         PublicKey: js.UndefOr[GenericString] = js.undefined,
@@ -2211,6 +2219,7 @@ package glue {
       Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
       ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
       ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
@@ -2233,6 +2242,7 @@ package glue {
     var ExtraJarsS3Path: js.UndefOr[GenericString]
     var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
     var FailureReason: js.UndefOr[GenericString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var NumberOfNodes: js.UndefOr[IntegerValue]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var RoleArn: js.UndefOr[RoleArn]
@@ -2256,6 +2266,7 @@ package glue {
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
         FailureReason: js.UndefOr[GenericString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
@@ -2276,6 +2287,7 @@ package glue {
       ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
       ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -3521,6 +3533,7 @@ package glue {
     var ExtraJarsS3Path: js.UndefOr[GenericString]
     var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
     var FailureReason: js.UndefOr[GenericString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var LastModifiedTimestamp: js.UndefOr[TimestampValue]
     var LastUpdateStatus: js.UndefOr[GenericString]
     var NumberOfNodes: js.UndefOr[IntegerValue]
@@ -3550,6 +3563,7 @@ package glue {
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
         FailureReason: js.UndefOr[GenericString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         LastModifiedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
         LastUpdateStatus: js.UndefOr[GenericString] = js.undefined,
         NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
@@ -3576,6 +3590,7 @@ package glue {
       ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
       ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
       LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
@@ -7439,6 +7454,9 @@ package glue {
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
+  /**
+    * Specifies a field to sort by and a sort order.
+    */
   @js.native
   trait SortCriterion extends js.Object {
     var FieldName: js.UndefOr[ValueString]

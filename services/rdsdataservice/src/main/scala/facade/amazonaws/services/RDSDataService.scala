@@ -9,16 +9,21 @@ import facade.amazonaws._
 
 package object rdsdataservice {
   type Arn                 = String
+  type ArrayOfArray        = js.Array[ArrayValue]
   type ArrayValueList      = js.Array[Value]
   type Blob                = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BooleanArray        = js.Array[BoxedBoolean]
   type BoxedBoolean        = Boolean
   type BoxedDouble         = Double
   type BoxedFloat          = Float
   type BoxedInteger        = Int
   type BoxedLong           = Double
   type DbName              = String
+  type DecimalReturnType   = String
+  type DoubleArray         = js.Array[BoxedDouble]
   type FieldList           = js.Array[Field]
   type Id                  = String
+  type LongArray           = js.Array[BoxedLong]
   type Metadata            = js.Array[ColumnMetadata]
   type ParameterName       = String
   type Records             = js.Array[Record]
@@ -29,6 +34,7 @@ package object rdsdataservice {
   type SqlRecords          = js.Array[FieldList]
   type SqlStatement        = String
   type SqlStatementResults = js.Array[SqlStatementResult]
+  type StringArray         = js.Array[String]
   type TransactionStatus   = String
   type UpdateResults       = js.Array[UpdateResult]
 
@@ -58,14 +64,44 @@ package rdsdataservice {
     def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse]             = js.native
     def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse]                = js.native
     def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse]       = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def executeSql(
+    @deprecated("The ExecuteSql API is deprecated, please use the ExecuteStatement API.", "forever") def executeSql(
         params: ExecuteSqlRequest
     ): Request[ExecuteSqlResponse] = js.native
   }
 
   /**
-    * <p>The request parameters represent the input of a SQL statement over an array of
-    *             data.</p>
+    * Contains an array.
+    */
+  @js.native
+  trait ArrayValue extends js.Object {
+    var arrayValues: js.UndefOr[ArrayOfArray]
+    var booleanValues: js.UndefOr[BooleanArray]
+    var doubleValues: js.UndefOr[DoubleArray]
+    var longValues: js.UndefOr[LongArray]
+    var stringValues: js.UndefOr[StringArray]
+  }
+
+  object ArrayValue {
+    @inline
+    def apply(
+        arrayValues: js.UndefOr[ArrayOfArray] = js.undefined,
+        booleanValues: js.UndefOr[BooleanArray] = js.undefined,
+        doubleValues: js.UndefOr[DoubleArray] = js.undefined,
+        longValues: js.UndefOr[LongArray] = js.undefined,
+        stringValues: js.UndefOr[StringArray] = js.undefined
+    ): ArrayValue = {
+      val __obj = js.Dynamic.literal()
+      arrayValues.foreach(__v => __obj.updateDynamic("arrayValues")(__v.asInstanceOf[js.Any]))
+      booleanValues.foreach(__v => __obj.updateDynamic("booleanValues")(__v.asInstanceOf[js.Any]))
+      doubleValues.foreach(__v => __obj.updateDynamic("doubleValues")(__v.asInstanceOf[js.Any]))
+      longValues.foreach(__v => __obj.updateDynamic("longValues")(__v.asInstanceOf[js.Any]))
+      stringValues.foreach(__v => __obj.updateDynamic("stringValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArrayValue]
+    }
+  }
+
+  /**
+    * The request parameters represent the input of a SQL statement over an array of data.
     */
   @js.native
   trait BatchExecuteStatementRequest extends js.Object {
@@ -104,8 +140,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The response elements represent the output of a SQL statement over an array of
-    *             data.</p>
+    * The response elements represent the output of a SQL statement over an array of data.
     */
   @js.native
   trait BatchExecuteStatementResponse extends js.Object {
@@ -124,8 +159,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The request parameters represent the input of a request to start a SQL
-    *             transaction.</p>
+    * The request parameters represent the input of a request to start a SQL transaction.
     */
   @js.native
   trait BeginTransactionRequest extends js.Object {
@@ -155,8 +189,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The response elements represent the output of a request to start a SQL
-    *             transaction.</p>
+    * The response elements represent the output of a request to start a SQL transaction.
     */
   @js.native
   trait BeginTransactionResponse extends js.Object {
@@ -278,9 +311,15 @@ package rdsdataservice {
     }
   }
 
+  object DecimalReturnTypeEnum {
+    val DOUBLE_OR_LONG = "DOUBLE_OR_LONG"
+    val STRING         = "STRING"
+
+    val values = js.Object.freeze(js.Array(DOUBLE_OR_LONG, STRING))
+  }
+
   /**
-    * <p>The request parameters represent the input of a request to run one or more SQL
-    *             statements.</p>
+    * The request parameters represent the input of a request to run one or more SQL statements.
     */
   @js.native
   trait ExecuteSqlRequest extends js.Object {
@@ -313,8 +352,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The response elements represent the output of a request to run one or more SQL
-    *             statements.</p>
+    * The response elements represent the output of a request to run one or more SQL statements.
     */
   @js.native
   trait ExecuteSqlResponse extends js.Object {
@@ -333,8 +371,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The request parameters represent the input of a request to run a SQL statement against
-    *             a database.</p>
+    * The request parameters represent the input of a request to run a SQL statement against a database.
     */
   @js.native
   trait ExecuteStatementRequest extends js.Object {
@@ -345,6 +382,7 @@ package rdsdataservice {
     var database: js.UndefOr[DbName]
     var includeResultMetadata: js.UndefOr[Boolean]
     var parameters: js.UndefOr[SqlParametersList]
+    var resultSetOptions: js.UndefOr[ResultSetOptions]
     var schema: js.UndefOr[DbName]
     var transactionId: js.UndefOr[Id]
   }
@@ -359,6 +397,7 @@ package rdsdataservice {
         database: js.UndefOr[DbName] = js.undefined,
         includeResultMetadata: js.UndefOr[Boolean] = js.undefined,
         parameters: js.UndefOr[SqlParametersList] = js.undefined,
+        resultSetOptions: js.UndefOr[ResultSetOptions] = js.undefined,
         schema: js.UndefOr[DbName] = js.undefined,
         transactionId: js.UndefOr[Id] = js.undefined
     ): ExecuteStatementRequest = {
@@ -372,6 +411,7 @@ package rdsdataservice {
       database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
       includeResultMetadata.foreach(__v => __obj.updateDynamic("includeResultMetadata")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      resultSetOptions.foreach(__v => __obj.updateDynamic("resultSetOptions")(__v.asInstanceOf[js.Any]))
       schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       transactionId.foreach(__v => __obj.updateDynamic("transactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementRequest]
@@ -379,8 +419,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The response elements represent the output of a request to run a SQL statement against
-    *             a database.</p>
+    * The response elements represent the output of a request to run a SQL statement against a database.
     */
   @js.native
   trait ExecuteStatementResponse extends js.Object {
@@ -412,6 +451,7 @@ package rdsdataservice {
     */
   @js.native
   trait Field extends js.Object {
+    var arrayValue: js.UndefOr[ArrayValue]
     var blobValue: js.UndefOr[Blob]
     var booleanValue: js.UndefOr[BoxedBoolean]
     var doubleValue: js.UndefOr[BoxedDouble]
@@ -423,6 +463,7 @@ package rdsdataservice {
   object Field {
     @inline
     def apply(
+        arrayValue: js.UndefOr[ArrayValue] = js.undefined,
         blobValue: js.UndefOr[Blob] = js.undefined,
         booleanValue: js.UndefOr[BoxedBoolean] = js.undefined,
         doubleValue: js.UndefOr[BoxedDouble] = js.undefined,
@@ -431,6 +472,7 @@ package rdsdataservice {
         stringValue: js.UndefOr[String] = js.undefined
     ): Field = {
       val __obj = js.Dynamic.literal()
+      arrayValue.foreach(__v => __obj.updateDynamic("arrayValue")(__v.asInstanceOf[js.Any]))
       blobValue.foreach(__v => __obj.updateDynamic("blobValue")(__v.asInstanceOf[js.Any]))
       booleanValue.foreach(__v => __obj.updateDynamic("booleanValue")(__v.asInstanceOf[js.Any]))
       doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
@@ -505,8 +547,26 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The request parameters represent the input of a request to perform a rollback of a
-    *             transaction.</p>
+    * Options that control how the result set is returned.
+    */
+  @js.native
+  trait ResultSetOptions extends js.Object {
+    var decimalReturnType: js.UndefOr[DecimalReturnType]
+  }
+
+  object ResultSetOptions {
+    @inline
+    def apply(
+        decimalReturnType: js.UndefOr[DecimalReturnType] = js.undefined
+    ): ResultSetOptions = {
+      val __obj = js.Dynamic.literal()
+      decimalReturnType.foreach(__v => __obj.updateDynamic("decimalReturnType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultSetOptions]
+    }
+  }
+
+  /**
+    * The request parameters represent the input of a request to perform a rollback of a transaction.
     */
   @js.native
   trait RollbackTransactionRequest extends js.Object {
@@ -533,8 +593,7 @@ package rdsdataservice {
   }
 
   /**
-    * <p>The response elements represent the output of a request to perform a rollback of a
-    *             transaction.</p>
+    * The response elements represent the output of a request to perform a rollback of a transaction.
     */
   @js.native
   trait RollbackTransactionResponse extends js.Object {
@@ -576,6 +635,7 @@ package rdsdataservice {
 
   /**
     * The result of a SQL statement.
+    *  {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
     */
   @js.native
   trait SqlStatementResult extends js.Object {
@@ -636,6 +696,7 @@ package rdsdataservice {
 
   /**
     * Contains the value of a column.
+    *  {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
     */
   @js.native
   trait Value extends js.Object {

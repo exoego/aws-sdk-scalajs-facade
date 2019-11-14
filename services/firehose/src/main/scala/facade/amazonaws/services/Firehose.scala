@@ -32,6 +32,7 @@ package object firehose {
   type DestinationId                           = String
   type ElasticsearchBufferingIntervalInSeconds = Int
   type ElasticsearchBufferingSizeInMBs         = Int
+  type ElasticsearchClusterEndpoint            = String
   type ElasticsearchDomainARN                  = String
   type ElasticsearchIndexName                  = String
   type ElasticsearchIndexRotationPeriod        = String
@@ -148,7 +149,7 @@ package firehose {
   }
 
   /**
-    * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal.
+    * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
     */
   @js.native
   trait BufferingHints extends js.Object {
@@ -594,48 +595,51 @@ package firehose {
     */
   @js.native
   trait ElasticsearchDestinationConfiguration extends js.Object {
-    var DomainARN: ElasticsearchDomainARN
     var IndexName: ElasticsearchIndexName
     var RoleARN: RoleARN
     var S3Configuration: S3DestinationConfiguration
-    var TypeName: ElasticsearchTypeName
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint]
+    var DomainARN: js.UndefOr[ElasticsearchDomainARN]
     var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
     var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
+    var TypeName: js.UndefOr[ElasticsearchTypeName]
   }
 
   object ElasticsearchDestinationConfiguration {
     @inline
     def apply(
-        DomainARN: ElasticsearchDomainARN,
         IndexName: ElasticsearchIndexName,
         RoleARN: RoleARN,
         S3Configuration: S3DestinationConfiguration,
-        TypeName: ElasticsearchTypeName,
         BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint] = js.undefined,
+        DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
         IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
         ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
         RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
-        S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined
+        S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
+        TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined
     ): ElasticsearchDestinationConfiguration = {
       val __obj = js.Dynamic.literal(
-        "DomainARN"       -> DomainARN.asInstanceOf[js.Any],
         "IndexName"       -> IndexName.asInstanceOf[js.Any],
         "RoleARN"         -> RoleARN.asInstanceOf[js.Any],
-        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
-        "TypeName"        -> TypeName.asInstanceOf[js.Any]
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any]
       )
 
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
       IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))
       ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
       RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
       S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticsearchDestinationConfiguration]
     }
   }
@@ -647,6 +651,7 @@ package firehose {
   trait ElasticsearchDestinationDescription extends js.Object {
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint]
     var DomainARN: js.UndefOr[ElasticsearchDomainARN]
     var IndexName: js.UndefOr[ElasticsearchIndexName]
     var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
@@ -663,6 +668,7 @@ package firehose {
     def apply(
         BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint] = js.undefined,
         DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
         IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined,
         IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
@@ -676,6 +682,7 @@ package firehose {
       val __obj = js.Dynamic.literal()
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
       DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))
@@ -696,6 +703,7 @@ package firehose {
   trait ElasticsearchDestinationUpdate extends js.Object {
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint]
     var DomainARN: js.UndefOr[ElasticsearchDomainARN]
     var IndexName: js.UndefOr[ElasticsearchIndexName]
     var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
@@ -711,6 +719,7 @@ package firehose {
     def apply(
         BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[ElasticsearchClusterEndpoint] = js.undefined,
         DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
         IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined,
         IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
@@ -723,6 +732,7 @@ package firehose {
       val __obj = js.Dynamic.literal()
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
       DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))

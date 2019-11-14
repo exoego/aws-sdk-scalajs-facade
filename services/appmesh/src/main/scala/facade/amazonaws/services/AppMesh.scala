@@ -14,8 +14,13 @@ package object appmesh {
   type AwsCloudMapInstanceAttributes     = js.Array[AwsCloudMapInstanceAttribute]
   type AwsCloudMapName                   = String
   type Backends                          = js.Array[Backend]
+  type DurationUnit                      = String
+  type DurationValue                     = Double
   type EgressFilterType                  = String
   type FilePath                          = String
+  type GrpcRetryPolicyEvent              = String
+  type GrpcRetryPolicyEvents             = js.Array[GrpcRetryPolicyEvent]
+  type GrpcRouteMetadataList             = js.Array[GrpcRouteMetadata]
   type HeaderMatch                       = String
   type HeaderName                        = String
   type HealthCheckIntervalMillis         = Double
@@ -23,6 +28,8 @@ package object appmesh {
   type HealthCheckTimeoutMillis          = Double
   type Hostname                          = String
   type HttpMethod                        = String
+  type HttpRetryPolicyEvent              = String
+  type HttpRetryPolicyEvents             = js.Array[HttpRetryPolicyEvent]
   type HttpRouteHeaders                  = js.Array[HttpRouteHeader]
   type HttpScheme                        = String
   type ListMeshesLimit                   = Int
@@ -31,8 +38,10 @@ package object appmesh {
   type ListVirtualRoutersLimit           = Int
   type ListVirtualServicesLimit          = Int
   type Listeners                         = js.Array[Listener]
+  type MaxRetries                        = Double
   type MeshList                          = js.Array[MeshRef]
   type MeshStatusCode                    = String
+  type MethodName                        = String
   type PercentInt                        = Int
   type PortNumber                        = Int
   type PortProtocol                      = String
@@ -46,6 +55,8 @@ package object appmesh {
   type TagList                           = js.Array[TagRef]
   type TagValue                          = String
   type TagsLimit                         = Int
+  type TcpRetryPolicyEvent               = String
+  type TcpRetryPolicyEvents              = js.Array[TcpRetryPolicyEvent]
   type Timestamp                         = js.Date
   type VirtualNodeList                   = js.Array[VirtualNodeRef]
   type VirtualNodeStatusCode             = String
@@ -154,7 +165,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the access logging information for a virtual node.
+    * An object that represents the access logging information for a virtual node.
     */
   @js.native
   trait AccessLog extends js.Object {
@@ -173,7 +184,8 @@ package appmesh {
   }
 
   /**
-    * An object representing the AWS Cloud Map attribute information for your virtual node.
+    * <p>An object that represents the AWS Cloud Map attribute information for your virtual
+    *          node.</p>
     */
   @js.native
   trait AwsCloudMapInstanceAttribute extends js.Object {
@@ -197,7 +209,7 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing the AWS Cloud Map service discovery information for your virtual
+    * <p>An object that represents the AWS Cloud Map service discovery information for your virtual
     *          node.</p>
     */
   @js.native
@@ -225,7 +237,7 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing the backends that a virtual node is expected to send outbound
+    * <p>An object that represents the backends that a virtual node is expected to send outbound
     *          traffic to. </p>
     */
   @js.native
@@ -965,7 +977,7 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing the DNS service discovery information for your virtual
+    * <p>An object that represents the DNS service discovery information for your virtual
     *          node.</p>
     */
   @js.native
@@ -987,7 +999,36 @@ package appmesh {
   }
 
   /**
-    * An object representing the egress filter rules for a service mesh.
+    * An object that represents a duration of time.
+    */
+  @js.native
+  trait Duration extends js.Object {
+    var unit: js.UndefOr[DurationUnit]
+    var value: js.UndefOr[DurationValue]
+  }
+
+  object Duration {
+    @inline
+    def apply(
+        unit: js.UndefOr[DurationUnit] = js.undefined,
+        value: js.UndefOr[DurationValue] = js.undefined
+    ): Duration = {
+      val __obj = js.Dynamic.literal()
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Duration]
+    }
+  }
+
+  object DurationUnitEnum {
+    val ms = "ms"
+    val s  = "s"
+
+    val values = js.Object.freeze(js.Array(ms, s))
+  }
+
+  /**
+    * An object that represents the egress filter rules for a service mesh.
     */
   @js.native
   trait EgressFilter extends js.Object {
@@ -1015,7 +1056,7 @@ package appmesh {
   }
 
   /**
-    * An object representing an access log file.
+    * An object that represents an access log file.
     */
   @js.native
   trait FileAccessLog extends js.Object {
@@ -1036,7 +1077,182 @@ package appmesh {
   }
 
   /**
-    * An object representing the method and value to match the header value sent with a request. Specify one match method.
+    * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+    */
+  @js.native
+  trait GrpcRetryPolicy extends js.Object {
+    var maxRetries: MaxRetries
+    var perRetryTimeout: Duration
+    var grpcRetryEvents: js.UndefOr[GrpcRetryPolicyEvents]
+    var httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents]
+    var tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents]
+  }
+
+  object GrpcRetryPolicy {
+    @inline
+    def apply(
+        maxRetries: MaxRetries,
+        perRetryTimeout: Duration,
+        grpcRetryEvents: js.UndefOr[GrpcRetryPolicyEvents] = js.undefined,
+        httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents] = js.undefined,
+        tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
+    ): GrpcRetryPolicy = {
+      val __obj = js.Dynamic.literal(
+        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
+        "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
+      )
+
+      grpcRetryEvents.foreach(__v => __obj.updateDynamic("grpcRetryEvents")(__v.asInstanceOf[js.Any]))
+      httpRetryEvents.foreach(__v => __obj.updateDynamic("httpRetryEvents")(__v.asInstanceOf[js.Any]))
+      tcpRetryEvents.foreach(__v => __obj.updateDynamic("tcpRetryEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcRetryPolicy]
+    }
+  }
+
+  object GrpcRetryPolicyEventEnum {
+    val cancelled            = "cancelled"
+    val `deadline-exceeded`  = "deadline-exceeded"
+    val internal             = "internal"
+    val `resource-exhausted` = "resource-exhausted"
+    val unavailable          = "unavailable"
+
+    val values = js.Object.freeze(js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable))
+  }
+
+  /**
+    * An object that represents a GRPC route type.
+    */
+  @js.native
+  trait GrpcRoute extends js.Object {
+    var action: GrpcRouteAction
+    var `match`: GrpcRouteMatch
+    var retryPolicy: js.UndefOr[GrpcRetryPolicy]
+  }
+
+  object GrpcRoute {
+    @inline
+    def apply(
+        action: GrpcRouteAction,
+        `match`: GrpcRouteMatch,
+        retryPolicy: js.UndefOr[GrpcRetryPolicy] = js.undefined
+    ): GrpcRoute = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "match"  -> `match`.asInstanceOf[js.Any]
+      )
+
+      retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcRoute]
+    }
+  }
+
+  /**
+    * An object that represents the action to take if a match is determined.
+    */
+  @js.native
+  trait GrpcRouteAction extends js.Object {
+    var weightedTargets: WeightedTargets
+  }
+
+  object GrpcRouteAction {
+    @inline
+    def apply(
+        weightedTargets: WeightedTargets
+    ): GrpcRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GrpcRouteAction]
+    }
+  }
+
+  /**
+    * An object that represents the criteria for determining a request match.
+    */
+  @js.native
+  trait GrpcRouteMatch extends js.Object {
+    var metadata: js.UndefOr[GrpcRouteMetadataList]
+    var methodName: js.UndefOr[MethodName]
+    var serviceName: js.UndefOr[ServiceName]
+  }
+
+  object GrpcRouteMatch {
+    @inline
+    def apply(
+        metadata: js.UndefOr[GrpcRouteMetadataList] = js.undefined,
+        methodName: js.UndefOr[MethodName] = js.undefined,
+        serviceName: js.UndefOr[ServiceName] = js.undefined
+    ): GrpcRouteMatch = {
+      val __obj = js.Dynamic.literal()
+      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
+      methodName.foreach(__v => __obj.updateDynamic("methodName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcRouteMatch]
+    }
+  }
+
+  /**
+    * An object that represents the match metadata for the route.
+    */
+  @js.native
+  trait GrpcRouteMetadata extends js.Object {
+    var name: HeaderName
+    var invert: js.UndefOr[Boolean]
+    var `match`: js.UndefOr[GrpcRouteMetadataMatchMethod]
+  }
+
+  object GrpcRouteMetadata {
+    @inline
+    def apply(
+        name: HeaderName,
+        invert: js.UndefOr[Boolean] = js.undefined,
+        `match`: js.UndefOr[GrpcRouteMetadataMatchMethod] = js.undefined
+    ): GrpcRouteMetadata = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      invert.foreach(__v => __obj.updateDynamic("invert")(__v.asInstanceOf[js.Any]))
+      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcRouteMetadata]
+    }
+  }
+
+  /**
+    * An object that represents the match method. Specify one of the match values.
+    */
+  @js.native
+  trait GrpcRouteMetadataMatchMethod extends js.Object {
+    var exact: js.UndefOr[HeaderMatch]
+    var prefix: js.UndefOr[HeaderMatch]
+    var range: js.UndefOr[MatchRange]
+    var regex: js.UndefOr[HeaderMatch]
+    var suffix: js.UndefOr[HeaderMatch]
+  }
+
+  object GrpcRouteMetadataMatchMethod {
+    @inline
+    def apply(
+        exact: js.UndefOr[HeaderMatch] = js.undefined,
+        prefix: js.UndefOr[HeaderMatch] = js.undefined,
+        range: js.UndefOr[MatchRange] = js.undefined,
+        regex: js.UndefOr[HeaderMatch] = js.undefined,
+        suffix: js.UndefOr[HeaderMatch] = js.undefined
+    ): GrpcRouteMetadataMatchMethod = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
+      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
+      suffix.foreach(__v => __obj.updateDynamic("suffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcRouteMetadataMatchMethod]
+    }
+  }
+
+  /**
+    * <p>An object that represents the method and value to match with the header value sent in a
+    *          request. Specify one match method.</p>
     */
   @js.native
   trait HeaderMatchMethod extends js.Object {
@@ -1067,7 +1283,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the health check policy for a virtual node's listener.
+    * An object that represents the health check policy for a virtual node's listener.
     */
   @js.native
   trait HealthCheckPolicy extends js.Object {
@@ -1120,32 +1336,64 @@ package appmesh {
   }
 
   /**
-    * An object representing the HTTP routing specification for a route.
+    * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+    */
+  @js.native
+  trait HttpRetryPolicy extends js.Object {
+    var maxRetries: MaxRetries
+    var perRetryTimeout: Duration
+    var httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents]
+    var tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents]
+  }
+
+  object HttpRetryPolicy {
+    @inline
+    def apply(
+        maxRetries: MaxRetries,
+        perRetryTimeout: Duration,
+        httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents] = js.undefined,
+        tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
+    ): HttpRetryPolicy = {
+      val __obj = js.Dynamic.literal(
+        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
+        "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
+      )
+
+      httpRetryEvents.foreach(__v => __obj.updateDynamic("httpRetryEvents")(__v.asInstanceOf[js.Any]))
+      tcpRetryEvents.foreach(__v => __obj.updateDynamic("tcpRetryEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpRetryPolicy]
+    }
+  }
+
+  /**
+    * An object that represents an HTTP or HTTP2 route type.
     */
   @js.native
   trait HttpRoute extends js.Object {
     var action: HttpRouteAction
     var `match`: HttpRouteMatch
+    var retryPolicy: js.UndefOr[HttpRetryPolicy]
   }
 
   object HttpRoute {
     @inline
     def apply(
         action: HttpRouteAction,
-        `match`: HttpRouteMatch
+        `match`: HttpRouteMatch,
+        retryPolicy: js.UndefOr[HttpRetryPolicy] = js.undefined
     ): HttpRoute = {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any],
         "match"  -> `match`.asInstanceOf[js.Any]
       )
 
+      retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpRoute]
     }
   }
 
   /**
-    * <p>An object representing the traffic distribution requirements for matched HTTP
-    *          requests.</p>
+    * An object that represents the action to take if a match is determined.
     */
   @js.native
   trait HttpRouteAction extends js.Object {
@@ -1166,7 +1414,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the HTTP header in the request.
+    * An object that represents the HTTP header in the request.
     */
   @js.native
   trait HttpRouteHeader extends js.Object {
@@ -1193,7 +1441,7 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing the requirements for a route to match HTTP requests for a virtual
+    * <p>An object that represents the requirements for a route to match HTTP requests for a virtual
     *          router.</p>
     */
   @js.native
@@ -1535,7 +1783,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a listener for a virtual node.
+    * An object that represents a listener for a virtual node.
     */
   @js.native
   trait Listener extends js.Object {
@@ -1559,7 +1807,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the logging information for a virtual node.
+    * An object that represents the logging information for a virtual node.
     */
   @js.native
   trait Logging extends js.Object {
@@ -1578,7 +1826,7 @@ package appmesh {
   }
 
   /**
-    * The range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
+    * An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
     */
   @js.native
   trait MatchRange extends js.Object {
@@ -1602,7 +1850,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a service mesh returned by a describe operation.
+    * An object that represents a service mesh returned by a describe operation.
     */
   @js.native
   trait MeshData extends js.Object {
@@ -1632,7 +1880,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a service mesh returned by a list operation.
+    * An object that represents a service mesh returned by a list operation.
     */
   @js.native
   trait MeshRef extends js.Object {
@@ -1656,7 +1904,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the specification of a service mesh.
+    * An object that represents the specification of a service mesh.
     */
   @js.native
   trait MeshSpec extends js.Object {
@@ -1675,7 +1923,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the status of a service mesh.
+    * An object that represents the status of a service mesh.
     */
   @js.native
   trait MeshStatus extends js.Object {
@@ -1702,7 +1950,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual node or virtual router listener port mapping.
+    * An object that represents a port mapping.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -1726,14 +1974,16 @@ package appmesh {
   }
 
   object PortProtocolEnum {
-    val http = "http"
-    val tcp  = "tcp"
+    val grpc  = "grpc"
+    val http  = "http"
+    val http2 = "http2"
+    val tcp   = "tcp"
 
-    val values = js.Object.freeze(js.Array(http, tcp))
+    val values = js.Object.freeze(js.Array(grpc, http, http2, tcp))
   }
 
   /**
-    * An object representing metadata for a resource.
+    * An object that represents metadata for a resource.
     */
   @js.native
   trait ResourceMetadata extends js.Object {
@@ -1766,7 +2016,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a route returned by a describe operation.
+    * An object that represents a route returned by a describe operation.
     */
   @js.native
   trait RouteData extends js.Object {
@@ -1802,7 +2052,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a route returned by a list operation.
+    * An object that represents a route returned by a list operation.
     */
   @js.native
   trait RouteRef extends js.Object {
@@ -1832,10 +2082,12 @@ package appmesh {
   }
 
   /**
-    * An object representing the specification of a route.
+    * An object that represents a route specification. Specify one route type.
     */
   @js.native
   trait RouteSpec extends js.Object {
+    var grpcRoute: js.UndefOr[GrpcRoute]
+    var http2Route: js.UndefOr[HttpRoute]
     var httpRoute: js.UndefOr[HttpRoute]
     var priority: js.UndefOr[RoutePriority]
     var tcpRoute: js.UndefOr[TcpRoute]
@@ -1844,11 +2096,15 @@ package appmesh {
   object RouteSpec {
     @inline
     def apply(
+        grpcRoute: js.UndefOr[GrpcRoute] = js.undefined,
+        http2Route: js.UndefOr[HttpRoute] = js.undefined,
         httpRoute: js.UndefOr[HttpRoute] = js.undefined,
         priority: js.UndefOr[RoutePriority] = js.undefined,
         tcpRoute: js.UndefOr[TcpRoute] = js.undefined
     ): RouteSpec = {
       val __obj = js.Dynamic.literal()
+      grpcRoute.foreach(__v => __obj.updateDynamic("grpcRoute")(__v.asInstanceOf[js.Any]))
+      http2Route.foreach(__v => __obj.updateDynamic("http2Route")(__v.asInstanceOf[js.Any]))
       httpRoute.foreach(__v => __obj.updateDynamic("httpRoute")(__v.asInstanceOf[js.Any]))
       priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
       tcpRoute.foreach(__v => __obj.updateDynamic("tcpRoute")(__v.asInstanceOf[js.Any]))
@@ -1857,7 +2113,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the current status of a route.
+    * An object that represents the current status of a route.
     */
   @js.native
   trait RouteStatus extends js.Object {
@@ -1886,7 +2142,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the service discovery information for a virtual node.
+    * An object that represents the service discovery information for a virtual node.
     */
   @js.native
   trait ServiceDiscovery extends js.Object {
@@ -1974,8 +2230,14 @@ package appmesh {
     }
   }
 
+  object TcpRetryPolicyEventEnum {
+    val `connection-error` = "connection-error"
+
+    val values = js.Object.freeze(js.Array(`connection-error`))
+  }
+
   /**
-    * An object representing the TCP routing specification for a route.
+    * An object that represents a TCP route type.
     */
   @js.native
   trait TcpRoute extends js.Object {
@@ -1996,8 +2258,7 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing the traffic distribution requirements for matched TCP
-    *          requests.</p>
+    * An object that represents the action to take if a match is determined.
     */
   @js.native
   trait TcpRouteAction extends js.Object {
@@ -2313,7 +2574,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual node returned by a describe operation.
+    * An object that represents a virtual node returned by a describe operation.
     */
   @js.native
   trait VirtualNodeData extends js.Object {
@@ -2346,7 +2607,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual node returned by a list operation.
+    * An object that represents a virtual node returned by a list operation.
     */
   @js.native
   trait VirtualNodeRef extends js.Object {
@@ -2373,7 +2634,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual node service provider.
+    * An object that represents a virtual node service provider.
     */
   @js.native
   trait VirtualNodeServiceProvider extends js.Object {
@@ -2394,7 +2655,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the specification of a virtual node.
+    * An object that represents the specification of a virtual node.
     */
   @js.native
   trait VirtualNodeSpec extends js.Object {
@@ -2422,7 +2683,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the current status of the virtual node.
+    * An object that represents the current status of the virtual node.
     */
   @js.native
   trait VirtualNodeStatus extends js.Object {
@@ -2451,7 +2712,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual router returned by a describe operation.
+    * An object that represents a virtual router returned by a describe operation.
     */
   @js.native
   trait VirtualRouterData extends js.Object {
@@ -2484,7 +2745,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual router listener.
+    * An object that represents a virtual router listener.
     */
   @js.native
   trait VirtualRouterListener extends js.Object {
@@ -2505,7 +2766,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual router returned by a list operation.
+    * An object that represents a virtual router returned by a list operation.
     */
   @js.native
   trait VirtualRouterRef extends js.Object {
@@ -2532,7 +2793,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual node service provider.
+    * An object that represents a virtual node service provider.
     */
   @js.native
   trait VirtualRouterServiceProvider extends js.Object {
@@ -2553,7 +2814,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the specification of a virtual router.
+    * An object that represents the specification of a virtual router.
     */
   @js.native
   trait VirtualRouterSpec extends js.Object {
@@ -2572,7 +2833,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the status of a virtual router.
+    * An object that represents the status of a virtual router.
     */
   @js.native
   trait VirtualRouterStatus extends js.Object {
@@ -2601,7 +2862,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual service backend for a virtual node.
+    * An object that represents a virtual service backend for a virtual node.
     */
   @js.native
   trait VirtualServiceBackend extends js.Object {
@@ -2622,7 +2883,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual service returned by a describe operation.
+    * An object that represents a virtual service returned by a describe operation.
     */
   @js.native
   trait VirtualServiceData extends js.Object {
@@ -2655,7 +2916,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the provider for a virtual service.
+    * An object that represents the provider for a virtual service.
     */
   @js.native
   trait VirtualServiceProvider extends js.Object {
@@ -2677,7 +2938,7 @@ package appmesh {
   }
 
   /**
-    * An object representing a virtual service returned by a list operation.
+    * An object that represents a virtual service returned by a list operation.
     */
   @js.native
   trait VirtualServiceRef extends js.Object {
@@ -2704,7 +2965,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the specification of a virtual service.
+    * An object that represents the specification of a virtual service.
     */
   @js.native
   trait VirtualServiceSpec extends js.Object {
@@ -2723,7 +2984,7 @@ package appmesh {
   }
 
   /**
-    * An object representing the status of a virtual service.
+    * An object that represents the status of a virtual service.
     */
   @js.native
   trait VirtualServiceStatus extends js.Object {
@@ -2752,10 +3013,10 @@ package appmesh {
   }
 
   /**
-    * <p>An object representing a target and its relative weight. Traffic is distributed across
+    * <p>An object that represents a target and its relative weight. Traffic is distributed across
     *          targets according to their relative weight. For example, a weighted target with a relative
     *          weight of 50 receives five times as much traffic as one with a relative weight of
-    *          10.</p>
+    *          10. The total weight for all targets combined must be less than or equal to 100.</p>
     */
   @js.native
   trait WeightedTarget extends js.Object {

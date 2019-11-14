@@ -22,6 +22,10 @@ package object connect {
   type ClientToken                     = String
   type Comparison                      = String
   type ContactFlowId                   = String
+  type ContactFlowName                 = String
+  type ContactFlowSummaryList          = js.Array[ContactFlowSummary]
+  type ContactFlowType                 = String
+  type ContactFlowTypes                = js.Array[ContactFlowType]
   type ContactId                       = String
   type CurrentMetricDataCollections    = js.Array[CurrentMetricData]
   type CurrentMetricName               = String
@@ -40,14 +44,27 @@ package object connect {
   type HistoricalMetricName            = String
   type HistoricalMetricResults         = js.Array[HistoricalMetricResult]
   type HistoricalMetrics               = js.Array[HistoricalMetric]
+  type HoursOfOperationId              = String
+  type HoursOfOperationName            = String
+  type HoursOfOperationSummaryList     = js.Array[HoursOfOperationSummary]
   type InstanceId                      = String
   type MaxResult100                    = Int
   type MaxResult1000                   = Int
   type NextToken                       = String
   type Password                        = String
   type PhoneNumber                     = String
+  type PhoneNumberCountryCode          = String
+  type PhoneNumberCountryCodes         = js.Array[PhoneNumberCountryCode]
+  type PhoneNumberId                   = String
+  type PhoneNumberSummaryList          = js.Array[PhoneNumberSummary]
+  type PhoneNumberType                 = String
+  type PhoneNumberTypes                = js.Array[PhoneNumberType]
   type PhoneType                       = String
   type QueueId                         = String
+  type QueueName                       = String
+  type QueueSummaryList                = js.Array[QueueSummary]
+  type QueueType                       = String
+  type QueueTypes                      = js.Array[QueueType]
   type Queues                          = js.Array[QueueId]
   type RoutingProfileId                = String
   type RoutingProfileName              = String
@@ -86,6 +103,15 @@ package object connect {
       service.getFederationToken(params).promise.toFuture
     @inline def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] =
       service.getMetricData(params).promise.toFuture
+    @inline def listContactFlowsFuture(params: ListContactFlowsRequest): Future[ListContactFlowsResponse] =
+      service.listContactFlows(params).promise.toFuture
+    @inline def listHoursOfOperationsFuture(
+        params: ListHoursOfOperationsRequest
+    ): Future[ListHoursOfOperationsResponse] = service.listHoursOfOperations(params).promise.toFuture
+    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
+      service.listPhoneNumbers(params).promise.toFuture
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] =
+      service.listQueues(params).promise.toFuture
     @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] =
       service.listRoutingProfiles(params).promise.toFuture
     @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
@@ -130,13 +156,17 @@ package connect {
     ): Request[DescribeUserHierarchyGroupResponse] = js.native
     def describeUserHierarchyStructure(
         params: DescribeUserHierarchyStructureRequest
-    ): Request[DescribeUserHierarchyStructureResponse]                                                   = js.native
-    def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
-    def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse] = js.native
-    def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse]       = js.native
-    def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse]                      = js.native
-    def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse]    = js.native
-    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
+    ): Request[DescribeUserHierarchyStructureResponse]                                                      = js.native
+    def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse]    = js.native
+    def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse]    = js.native
+    def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse]          = js.native
+    def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse]                         = js.native
+    def listContactFlows(params: ListContactFlowsRequest): Request[ListContactFlowsResponse]                = js.native
+    def listHoursOfOperations(params: ListHoursOfOperationsRequest): Request[ListHoursOfOperationsResponse] = js.native
+    def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse]                = js.native
+    def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse]                                  = js.native
+    def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse]       = js.native
+    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse]    = js.native
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] =
       js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
@@ -163,6 +193,60 @@ package connect {
     val LT = "LT"
 
     val values = js.Object.freeze(js.Array(LT))
+  }
+
+  /**
+    * Contains summary information about a contact flow.
+    */
+  @js.native
+  trait ContactFlowSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var ContactFlowType: js.UndefOr[ContactFlowType]
+    var Id: js.UndefOr[ContactFlowId]
+    var Name: js.UndefOr[ContactFlowName]
+  }
+
+  object ContactFlowSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        ContactFlowType: js.UndefOr[ContactFlowType] = js.undefined,
+        Id: js.UndefOr[ContactFlowId] = js.undefined,
+        Name: js.UndefOr[ContactFlowName] = js.undefined
+    ): ContactFlowSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ContactFlowType.foreach(__v => __obj.updateDynamic("ContactFlowType")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactFlowSummary]
+    }
+  }
+
+  object ContactFlowTypeEnum {
+    val CONTACT_FLOW     = "CONTACT_FLOW"
+    val CUSTOMER_QUEUE   = "CUSTOMER_QUEUE"
+    val CUSTOMER_HOLD    = "CUSTOMER_HOLD"
+    val CUSTOMER_WHISPER = "CUSTOMER_WHISPER"
+    val AGENT_HOLD       = "AGENT_HOLD"
+    val AGENT_WHISPER    = "AGENT_WHISPER"
+    val OUTBOUND_WHISPER = "OUTBOUND_WHISPER"
+    val AGENT_TRANSFER   = "AGENT_TRANSFER"
+    val QUEUE_TRANSFER   = "QUEUE_TRANSFER"
+
+    val values = js.Object.freeze(
+      js.Array(
+        CONTACT_FLOW,
+        CUSTOMER_QUEUE,
+        CUSTOMER_HOLD,
+        CUSTOMER_WHISPER,
+        AGENT_HOLD,
+        AGENT_WHISPER,
+        OUTBOUND_WHISPER,
+        AGENT_TRANSFER,
+        QUEUE_TRANSFER
+      )
+    )
   }
 
   @js.native
@@ -227,7 +311,7 @@ package connect {
   }
 
   /**
-    * The credentials to use for federation.
+    * Contains credentials to use for federation.
     */
   @js.native
   trait Credentials extends js.Object {
@@ -255,7 +339,7 @@ package connect {
   }
 
   /**
-    * A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.
+    * Contains information about a real-time metric.
     */
   @js.native
   trait CurrentMetric extends js.Object {
@@ -277,7 +361,7 @@ package connect {
   }
 
   /**
-    * A <code>CurrentMetricData</code> object.
+    * Contains the data for a real-time metric.
     */
   @js.native
   trait CurrentMetricData extends js.Object {
@@ -299,7 +383,7 @@ package connect {
   }
 
   /**
-    * A list of current metric names.
+    * The current metric names.
     */
   object CurrentMetricNameEnum {
     val AGENTS_ONLINE             = "AGENTS_ONLINE"
@@ -330,7 +414,7 @@ package connect {
   }
 
   /**
-    * A <code>CurrentMetricResult</code> object.
+    * Contains information about a set of real-time metrics.
     */
   @js.native
   trait CurrentMetricResult extends js.Object {
@@ -481,7 +565,7 @@ package connect {
   }
 
   /**
-    * A <code>Dimensions</code> object that includes the Channel and Queue for the metric.
+    * Contains information about the dimensions for a set of metrics.
     */
   @js.native
   trait Dimensions extends js.Object {
@@ -503,7 +587,7 @@ package connect {
   }
 
   /**
-    * The filter, either channel or queues, to apply to the metric results retrieved.
+    * Contains the filter to apply when retrieving metrics.
     */
   @js.native
   trait Filters extends js.Object {
@@ -716,7 +800,7 @@ package connect {
   }
 
   /**
-    * A <code>HierarchyGroup</code> object that contains information about a hierarchy group in your Amazon Connect instance.
+    * Contains information about a hierarchy group.
     */
   @js.native
   trait HierarchyGroup extends js.Object {
@@ -747,7 +831,7 @@ package connect {
   }
 
   /**
-    * A <code>HierarchyGroupSummary</code> object that contains information about the hierarchy group, including ARN, Id, and Name.
+    * Contains summary information about a hierarchy group.
     */
   @js.native
   trait HierarchyGroupSummary extends js.Object {
@@ -772,7 +856,7 @@ package connect {
   }
 
   /**
-    * A <code>HierarchyLevel</code> object that contains information about the levels in a hierarchy group, including ARN, Id, and Name.
+    * Contains information about a hierarchy level.
     */
   @js.native
   trait HierarchyLevel extends js.Object {
@@ -797,7 +881,7 @@ package connect {
   }
 
   /**
-    * A <code>HierarchyPath</code> object that contains information about the levels of the hierarchy group.
+    * Contains information about the levels of a hierarchy group.
     */
   @js.native
   trait HierarchyPath extends js.Object {
@@ -828,7 +912,7 @@ package connect {
   }
 
   /**
-    * A <code>HierarchyStructure</code> object that contains information about the hierarchy group structure.
+    * Contains information about a hierarchy structure.
     */
   @js.native
   trait HierarchyStructure extends js.Object {
@@ -859,7 +943,7 @@ package connect {
   }
 
   /**
-    * A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and Threshold for the metric.
+    * Contains information about a historical metric.
     */
   @js.native
   trait HistoricalMetric extends js.Object {
@@ -887,7 +971,7 @@ package connect {
   }
 
   /**
-    * A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a <code>Value</code>.
+    * Contains the data for a historical metric.
     */
   @js.native
   trait HistoricalMetricData extends js.Object {
@@ -909,7 +993,7 @@ package connect {
   }
 
   /**
-    * A list of historical metric names.
+    * The historical metric names.
     */
   object HistoricalMetricNameEnum {
     val CONTACTS_QUEUED                     = "CONTACTS_QUEUED"
@@ -970,7 +1054,7 @@ package connect {
   }
 
   /**
-    * The metrics data returned from a <code>GetMetricData</code> operation.
+    * Contains information about the historical metrics retrieved.
     */
   @js.native
   trait HistoricalMetricResult extends js.Object {
@@ -988,6 +1072,217 @@ package connect {
       Collections.foreach(__v => __obj.updateDynamic("Collections")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoricalMetricResult]
+    }
+  }
+
+  /**
+    * Contains summary information about hours of operation for a contact center.
+    */
+  @js.native
+  trait HoursOfOperationSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[HoursOfOperationId]
+    var Name: js.UndefOr[HoursOfOperationName]
+  }
+
+  object HoursOfOperationSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[HoursOfOperationId] = js.undefined,
+        Name: js.UndefOr[HoursOfOperationName] = js.undefined
+    ): HoursOfOperationSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoursOfOperationSummary]
+    }
+  }
+
+  @js.native
+  trait ListContactFlowsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var ContactFlowTypes: js.UndefOr[ContactFlowTypes]
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListContactFlowsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        ContactFlowTypes: js.UndefOr[ContactFlowTypes] = js.undefined,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListContactFlowsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      ContactFlowTypes.foreach(__v => __obj.updateDynamic("ContactFlowTypes")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactFlowsRequest]
+    }
+  }
+
+  @js.native
+  trait ListContactFlowsResponse extends js.Object {
+    var ContactFlowSummaryList: js.UndefOr[ContactFlowSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListContactFlowsResponse {
+    @inline
+    def apply(
+        ContactFlowSummaryList: js.UndefOr[ContactFlowSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListContactFlowsResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactFlowSummaryList.foreach(__v => __obj.updateDynamic("ContactFlowSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactFlowsResponse]
+    }
+  }
+
+  @js.native
+  trait ListHoursOfOperationsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListHoursOfOperationsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListHoursOfOperationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHoursOfOperationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListHoursOfOperationsResponse extends js.Object {
+    var HoursOfOperationSummaryList: js.UndefOr[HoursOfOperationSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListHoursOfOperationsResponse {
+    @inline
+    def apply(
+        HoursOfOperationSummaryList: js.UndefOr[HoursOfOperationSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListHoursOfOperationsResponse = {
+      val __obj = js.Dynamic.literal()
+      HoursOfOperationSummaryList.foreach(
+        __v => __obj.updateDynamic("HoursOfOperationSummaryList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHoursOfOperationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListPhoneNumbersRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+    var PhoneNumberCountryCodes: js.UndefOr[PhoneNumberCountryCodes]
+    var PhoneNumberTypes: js.UndefOr[PhoneNumberTypes]
+  }
+
+  object ListPhoneNumbersRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PhoneNumberCountryCodes: js.UndefOr[PhoneNumberCountryCodes] = js.undefined,
+        PhoneNumberTypes: js.UndefOr[PhoneNumberTypes] = js.undefined
+    ): ListPhoneNumbersRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PhoneNumberCountryCodes.foreach(__v => __obj.updateDynamic("PhoneNumberCountryCodes")(__v.asInstanceOf[js.Any]))
+      PhoneNumberTypes.foreach(__v => __obj.updateDynamic("PhoneNumberTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPhoneNumbersRequest]
+    }
+  }
+
+  @js.native
+  trait ListPhoneNumbersResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PhoneNumberSummaryList: js.UndefOr[PhoneNumberSummaryList]
+  }
+
+  object ListPhoneNumbersResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PhoneNumberSummaryList: js.UndefOr[PhoneNumberSummaryList] = js.undefined
+    ): ListPhoneNumbersResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PhoneNumberSummaryList.foreach(__v => __obj.updateDynamic("PhoneNumberSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPhoneNumbersResponse]
+    }
+  }
+
+  @js.native
+  trait ListQueuesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+    var QueueTypes: js.UndefOr[QueueTypes]
+  }
+
+  object ListQueuesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QueueTypes: js.UndefOr[QueueTypes] = js.undefined
+    ): ListQueuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueueTypes.foreach(__v => __obj.updateDynamic("QueueTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueuesRequest]
+    }
+  }
+
+  @js.native
+  trait ListQueuesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var QueueSummaryList: js.UndefOr[QueueSummaryList]
+  }
+
+  object ListQueuesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QueueSummaryList: js.UndefOr[QueueSummaryList] = js.undefined
+    ): ListQueuesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueueSummaryList.foreach(__v => __obj.updateDynamic("QueueSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueuesResponse]
     }
   }
 
@@ -1169,6 +1464,526 @@ package connect {
     }
   }
 
+  object PhoneNumberCountryCodeEnum {
+    val AF = "AF"
+    val AL = "AL"
+    val DZ = "DZ"
+    val AS = "AS"
+    val AD = "AD"
+    val AO = "AO"
+    val AI = "AI"
+    val AQ = "AQ"
+    val AG = "AG"
+    val AR = "AR"
+    val AM = "AM"
+    val AW = "AW"
+    val AU = "AU"
+    val AT = "AT"
+    val AZ = "AZ"
+    val BS = "BS"
+    val BH = "BH"
+    val BD = "BD"
+    val BB = "BB"
+    val BY = "BY"
+    val BE = "BE"
+    val BZ = "BZ"
+    val BJ = "BJ"
+    val BM = "BM"
+    val BT = "BT"
+    val BO = "BO"
+    val BA = "BA"
+    val BW = "BW"
+    val BR = "BR"
+    val IO = "IO"
+    val VG = "VG"
+    val BN = "BN"
+    val BG = "BG"
+    val BF = "BF"
+    val BI = "BI"
+    val KH = "KH"
+    val CM = "CM"
+    val CA = "CA"
+    val CV = "CV"
+    val KY = "KY"
+    val CF = "CF"
+    val TD = "TD"
+    val CL = "CL"
+    val CN = "CN"
+    val CX = "CX"
+    val CC = "CC"
+    val CO = "CO"
+    val KM = "KM"
+    val CK = "CK"
+    val CR = "CR"
+    val HR = "HR"
+    val CU = "CU"
+    val CW = "CW"
+    val CY = "CY"
+    val CZ = "CZ"
+    val CD = "CD"
+    val DK = "DK"
+    val DJ = "DJ"
+    val DM = "DM"
+    val DO = "DO"
+    val TL = "TL"
+    val EC = "EC"
+    val EG = "EG"
+    val SV = "SV"
+    val GQ = "GQ"
+    val ER = "ER"
+    val EE = "EE"
+    val ET = "ET"
+    val FK = "FK"
+    val FO = "FO"
+    val FJ = "FJ"
+    val FI = "FI"
+    val FR = "FR"
+    val PF = "PF"
+    val GA = "GA"
+    val GM = "GM"
+    val GE = "GE"
+    val DE = "DE"
+    val GH = "GH"
+    val GI = "GI"
+    val GR = "GR"
+    val GL = "GL"
+    val GD = "GD"
+    val GU = "GU"
+    val GT = "GT"
+    val GG = "GG"
+    val GN = "GN"
+    val GW = "GW"
+    val GY = "GY"
+    val HT = "HT"
+    val HN = "HN"
+    val HK = "HK"
+    val HU = "HU"
+    val IS = "IS"
+    val IN = "IN"
+    val ID = "ID"
+    val IR = "IR"
+    val IQ = "IQ"
+    val IE = "IE"
+    val IM = "IM"
+    val IL = "IL"
+    val IT = "IT"
+    val CI = "CI"
+    val JM = "JM"
+    val JP = "JP"
+    val JE = "JE"
+    val JO = "JO"
+    val KZ = "KZ"
+    val KE = "KE"
+    val KI = "KI"
+    val KW = "KW"
+    val KG = "KG"
+    val LA = "LA"
+    val LV = "LV"
+    val LB = "LB"
+    val LS = "LS"
+    val LR = "LR"
+    val LY = "LY"
+    val LI = "LI"
+    val LT = "LT"
+    val LU = "LU"
+    val MO = "MO"
+    val MK = "MK"
+    val MG = "MG"
+    val MW = "MW"
+    val MY = "MY"
+    val MV = "MV"
+    val ML = "ML"
+    val MT = "MT"
+    val MH = "MH"
+    val MR = "MR"
+    val MU = "MU"
+    val YT = "YT"
+    val MX = "MX"
+    val FM = "FM"
+    val MD = "MD"
+    val MC = "MC"
+    val MN = "MN"
+    val ME = "ME"
+    val MS = "MS"
+    val MA = "MA"
+    val MZ = "MZ"
+    val MM = "MM"
+    val NA = "NA"
+    val NR = "NR"
+    val NP = "NP"
+    val NL = "NL"
+    val AN = "AN"
+    val NC = "NC"
+    val NZ = "NZ"
+    val NI = "NI"
+    val NE = "NE"
+    val NG = "NG"
+    val NU = "NU"
+    val KP = "KP"
+    val MP = "MP"
+    val NO = "NO"
+    val OM = "OM"
+    val PK = "PK"
+    val PW = "PW"
+    val PA = "PA"
+    val PG = "PG"
+    val PY = "PY"
+    val PE = "PE"
+    val PH = "PH"
+    val PN = "PN"
+    val PL = "PL"
+    val PT = "PT"
+    val PR = "PR"
+    val QA = "QA"
+    val CG = "CG"
+    val RE = "RE"
+    val RO = "RO"
+    val RU = "RU"
+    val RW = "RW"
+    val BL = "BL"
+    val SH = "SH"
+    val KN = "KN"
+    val LC = "LC"
+    val MF = "MF"
+    val PM = "PM"
+    val VC = "VC"
+    val WS = "WS"
+    val SM = "SM"
+    val ST = "ST"
+    val SA = "SA"
+    val SN = "SN"
+    val RS = "RS"
+    val SC = "SC"
+    val SL = "SL"
+    val SG = "SG"
+    val SX = "SX"
+    val SK = "SK"
+    val SI = "SI"
+    val SB = "SB"
+    val SO = "SO"
+    val ZA = "ZA"
+    val KR = "KR"
+    val ES = "ES"
+    val LK = "LK"
+    val SD = "SD"
+    val SR = "SR"
+    val SJ = "SJ"
+    val SZ = "SZ"
+    val SE = "SE"
+    val CH = "CH"
+    val SY = "SY"
+    val TW = "TW"
+    val TJ = "TJ"
+    val TZ = "TZ"
+    val TH = "TH"
+    val TG = "TG"
+    val TK = "TK"
+    val TO = "TO"
+    val TT = "TT"
+    val TN = "TN"
+    val TR = "TR"
+    val TM = "TM"
+    val TC = "TC"
+    val TV = "TV"
+    val VI = "VI"
+    val UG = "UG"
+    val UA = "UA"
+    val AE = "AE"
+    val GB = "GB"
+    val US = "US"
+    val UY = "UY"
+    val UZ = "UZ"
+    val VU = "VU"
+    val VA = "VA"
+    val VE = "VE"
+    val VN = "VN"
+    val WF = "WF"
+    val EH = "EH"
+    val YE = "YE"
+    val ZM = "ZM"
+    val ZW = "ZW"
+
+    val values = js.Object.freeze(
+      js.Array(
+        AF,
+        AL,
+        DZ,
+        AS,
+        AD,
+        AO,
+        AI,
+        AQ,
+        AG,
+        AR,
+        AM,
+        AW,
+        AU,
+        AT,
+        AZ,
+        BS,
+        BH,
+        BD,
+        BB,
+        BY,
+        BE,
+        BZ,
+        BJ,
+        BM,
+        BT,
+        BO,
+        BA,
+        BW,
+        BR,
+        IO,
+        VG,
+        BN,
+        BG,
+        BF,
+        BI,
+        KH,
+        CM,
+        CA,
+        CV,
+        KY,
+        CF,
+        TD,
+        CL,
+        CN,
+        CX,
+        CC,
+        CO,
+        KM,
+        CK,
+        CR,
+        HR,
+        CU,
+        CW,
+        CY,
+        CZ,
+        CD,
+        DK,
+        DJ,
+        DM,
+        DO,
+        TL,
+        EC,
+        EG,
+        SV,
+        GQ,
+        ER,
+        EE,
+        ET,
+        FK,
+        FO,
+        FJ,
+        FI,
+        FR,
+        PF,
+        GA,
+        GM,
+        GE,
+        DE,
+        GH,
+        GI,
+        GR,
+        GL,
+        GD,
+        GU,
+        GT,
+        GG,
+        GN,
+        GW,
+        GY,
+        HT,
+        HN,
+        HK,
+        HU,
+        IS,
+        IN,
+        ID,
+        IR,
+        IQ,
+        IE,
+        IM,
+        IL,
+        IT,
+        CI,
+        JM,
+        JP,
+        JE,
+        JO,
+        KZ,
+        KE,
+        KI,
+        KW,
+        KG,
+        LA,
+        LV,
+        LB,
+        LS,
+        LR,
+        LY,
+        LI,
+        LT,
+        LU,
+        MO,
+        MK,
+        MG,
+        MW,
+        MY,
+        MV,
+        ML,
+        MT,
+        MH,
+        MR,
+        MU,
+        YT,
+        MX,
+        FM,
+        MD,
+        MC,
+        MN,
+        ME,
+        MS,
+        MA,
+        MZ,
+        MM,
+        NA,
+        NR,
+        NP,
+        NL,
+        AN,
+        NC,
+        NZ,
+        NI,
+        NE,
+        NG,
+        NU,
+        KP,
+        MP,
+        NO,
+        OM,
+        PK,
+        PW,
+        PA,
+        PG,
+        PY,
+        PE,
+        PH,
+        PN,
+        PL,
+        PT,
+        PR,
+        QA,
+        CG,
+        RE,
+        RO,
+        RU,
+        RW,
+        BL,
+        SH,
+        KN,
+        LC,
+        MF,
+        PM,
+        VC,
+        WS,
+        SM,
+        ST,
+        SA,
+        SN,
+        RS,
+        SC,
+        SL,
+        SG,
+        SX,
+        SK,
+        SI,
+        SB,
+        SO,
+        ZA,
+        KR,
+        ES,
+        LK,
+        SD,
+        SR,
+        SJ,
+        SZ,
+        SE,
+        CH,
+        SY,
+        TW,
+        TJ,
+        TZ,
+        TH,
+        TG,
+        TK,
+        TO,
+        TT,
+        TN,
+        TR,
+        TM,
+        TC,
+        TV,
+        VI,
+        UG,
+        UA,
+        AE,
+        GB,
+        US,
+        UY,
+        UZ,
+        VU,
+        VA,
+        VE,
+        VN,
+        WF,
+        EH,
+        YE,
+        ZM,
+        ZW
+      )
+    )
+  }
+
+  /**
+    * Contains summary information about a phone number for a contact center.
+    */
+  @js.native
+  trait PhoneNumberSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[PhoneNumberId]
+    var PhoneNumber: js.UndefOr[PhoneNumber]
+    var PhoneNumberCountryCode: js.UndefOr[PhoneNumberCountryCode]
+    var PhoneNumberType: js.UndefOr[PhoneNumberType]
+  }
+
+  object PhoneNumberSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[PhoneNumberId] = js.undefined,
+        PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined,
+        PhoneNumberCountryCode: js.UndefOr[PhoneNumberCountryCode] = js.undefined,
+        PhoneNumberType: js.UndefOr[PhoneNumberType] = js.undefined
+    ): PhoneNumberSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      PhoneNumberCountryCode.foreach(__v => __obj.updateDynamic("PhoneNumberCountryCode")(__v.asInstanceOf[js.Any]))
+      PhoneNumberType.foreach(__v => __obj.updateDynamic("PhoneNumberType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PhoneNumberSummary]
+    }
+  }
+
+  object PhoneNumberTypeEnum {
+    val TOLL_FREE = "TOLL_FREE"
+    val DID       = "DID"
+
+    val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
+  }
+
   object PhoneTypeEnum {
     val SOFT_PHONE = "SOFT_PHONE"
     val DESK_PHONE = "DESK_PHONE"
@@ -1177,7 +1992,7 @@ package connect {
   }
 
   /**
-    * A QueueReference object that contains the the QueueId and ARN for the queue resource for which metrics are returned.
+    * Contains information about a queue resource for which metrics are returned.
     */
   @js.native
   trait QueueReference extends js.Object {
@@ -1199,7 +2014,42 @@ package connect {
   }
 
   /**
-    * A <code>RoutingProfileSummary</code> object that contains information about a routing profile, including ARN, Id, and Name.
+    * Contains summary information about a queue.
+    */
+  @js.native
+  trait QueueSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[QueueId]
+    var Name: js.UndefOr[QueueName]
+    var QueueType: js.UndefOr[QueueType]
+  }
+
+  object QueueSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[QueueId] = js.undefined,
+        Name: js.UndefOr[QueueName] = js.undefined,
+        QueueType: js.UndefOr[QueueType] = js.undefined
+    ): QueueSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      QueueType.foreach(__v => __obj.updateDynamic("QueueType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueueSummary]
+    }
+  }
+
+  object QueueTypeEnum {
+    val STANDARD = "STANDARD"
+    val AGENT    = "AGENT"
+
+    val values = js.Object.freeze(js.Array(STANDARD, AGENT))
+  }
+
+  /**
+    * Contains summary information about a routing profile.
     */
   @js.native
   trait RoutingProfileSummary extends js.Object {
@@ -1224,7 +2074,7 @@ package connect {
   }
 
   /**
-    * A <code>SecurityProfileSummary</code> object that contains information about a security profile, including ARN, Id, Name.
+    * Contains information about a security profile.
     */
   @js.native
   trait SecurityProfileSummary extends js.Object {
@@ -1343,7 +2193,7 @@ package connect {
   }
 
   /**
-    * A <code>Threshold</code> object that includes a comparison and <code>ThresholdValue</code> to compare to. Used with service level metrics.
+    * Contains information about the threshold for service level metrics.
     */
   @js.native
   trait Threshold extends js.Object {
@@ -1530,7 +2380,7 @@ package connect {
   }
 
   /**
-    * A <code>User</code> object that contains information about a user account in your Amazon Connect instance, including configuration settings.
+    * Contains information about a user account for a Amazon Connect instance.
     */
   @js.native
   trait User extends js.Object {
@@ -1573,7 +2423,7 @@ package connect {
   }
 
   /**
-    * A <code>UserIdentityInfo</code> object that contains information about the user's identity, including email address, first name, and last name.
+    * Contains information about the identity of a user.
     */
   @js.native
   trait UserIdentityInfo extends js.Object {
@@ -1598,7 +2448,7 @@ package connect {
   }
 
   /**
-    * A <code>UserPhoneConfig</code> object that contains information about the user phone configuration settings.
+    * Contains information about the phone configuration settings for a user.
     */
   @js.native
   trait UserPhoneConfig extends js.Object {
@@ -1630,7 +2480,7 @@ package connect {
   }
 
   /**
-    * A <code>UserSummary</code> object that contains Information about a user, including ARN, Id, and user name.
+    * Contains summary information about a user.
     */
   @js.native
   trait UserSummary extends js.Object {

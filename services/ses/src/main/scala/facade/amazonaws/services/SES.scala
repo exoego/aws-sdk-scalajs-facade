@@ -2461,7 +2461,7 @@ package ses {
 
   /**
     * Represents a request to list the existing custom verification email templates for your account.
-    *  For more information about custom verification email templates, see [[ses/latest/DeveloperGuide/custom-verification-emails.html|Using Custom Verification Email Templates]] in the <i>Amazon SES Developer Guide</i>.
+    *  For more information about custom verification email templates, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html|Using Custom Verification Email Templates]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
   trait ListCustomVerificationEmailTemplatesRequest extends js.Object {

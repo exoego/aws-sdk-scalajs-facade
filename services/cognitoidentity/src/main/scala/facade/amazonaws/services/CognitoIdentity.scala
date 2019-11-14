@@ -14,6 +14,7 @@ package object cognitoidentity {
   type AmbiguousRoleResolutionType       = String
   type ClaimName                         = String
   type ClaimValue                        = String
+  type ClassicFlow                       = Boolean
   type CognitoIdentityProviderClientId   = String
   type CognitoIdentityProviderList       = js.Array[CognitoIdentityProvider]
   type CognitoIdentityProviderName       = String
@@ -180,6 +181,7 @@ package cognitoidentity {
   trait CreateIdentityPoolInput extends js.Object {
     var AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated
     var IdentityPoolName: IdentityPoolName
+    var AllowClassicFlow: js.UndefOr[ClassicFlow]
     var CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList]
     var DeveloperProviderName: js.UndefOr[DeveloperProviderName]
     var IdentityPoolTags: js.UndefOr[IdentityPoolTagsType]
@@ -193,6 +195,7 @@ package cognitoidentity {
     def apply(
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolName: IdentityPoolName,
+        AllowClassicFlow: js.UndefOr[ClassicFlow] = js.undefined,
         CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
         DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
         IdentityPoolTags: js.UndefOr[IdentityPoolTagsType] = js.undefined,
@@ -205,6 +208,7 @@ package cognitoidentity {
         "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
+      AllowClassicFlow.foreach(__v => __obj.updateDynamic("AllowClassicFlow")(__v.asInstanceOf[js.Any]))
       CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
       DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
       IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
@@ -630,6 +634,7 @@ package cognitoidentity {
     var AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated
     var IdentityPoolId: IdentityPoolId
     var IdentityPoolName: IdentityPoolName
+    var AllowClassicFlow: js.UndefOr[ClassicFlow]
     var CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList]
     var DeveloperProviderName: js.UndefOr[DeveloperProviderName]
     var IdentityPoolTags: js.UndefOr[IdentityPoolTagsType]
@@ -644,6 +649,7 @@ package cognitoidentity {
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolId: IdentityPoolId,
         IdentityPoolName: IdentityPoolName,
+        AllowClassicFlow: js.UndefOr[ClassicFlow] = js.undefined,
         CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
         DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
         IdentityPoolTags: js.UndefOr[IdentityPoolTagsType] = js.undefined,
@@ -657,6 +663,7 @@ package cognitoidentity {
         "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
+      AllowClassicFlow.foreach(__v => __obj.updateDynamic("AllowClassicFlow")(__v.asInstanceOf[js.Any]))
       CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
       DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
       IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
@@ -1059,20 +1066,20 @@ package cognitoidentity {
   @js.native
   trait TagResourceInput extends js.Object {
     var ResourceArn: ARNString
-    var Tags: js.UndefOr[IdentityPoolTagsType]
+    var Tags: IdentityPoolTagsType
   }
 
   object TagResourceInput {
     @inline
     def apply(
         ResourceArn: ARNString,
-        Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
+        Tags: IdentityPoolTagsType
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -1172,20 +1179,20 @@ package cognitoidentity {
   @js.native
   trait UntagResourceInput extends js.Object {
     var ResourceArn: ARNString
-    var TagKeys: js.UndefOr[IdentityPoolTagsListType]
+    var TagKeys: IdentityPoolTagsListType
   }
 
   object UntagResourceInput {
     @inline
     def apply(
         ResourceArn: ARNString,
-        TagKeys: js.UndefOr[IdentityPoolTagsListType] = js.undefined
+        TagKeys: IdentityPoolTagsListType
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceInput]
     }
   }

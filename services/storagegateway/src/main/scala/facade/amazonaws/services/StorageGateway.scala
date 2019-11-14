@@ -17,6 +17,7 @@ package object storagegateway {
   type ChapCredentials            = js.Array[ChapInfo]
   type ChapSecret                 = String
   type ClientToken                = String
+  type CloudWatchLogGroupARN      = String
   type CreatedDate                = js.Date
   type DayOfMonth                 = Int
   type DayOfWeek                  = Int
@@ -458,7 +459,7 @@ package storagegateway {
   }
 
   /**
-    * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
+    * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
     *
     * '''Note:'''For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.
     */
@@ -1909,6 +1910,7 @@ package storagegateway {
     */
   @js.native
   trait DescribeGatewayInformationOutput extends js.Object {
+    var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
     var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
     var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -1927,6 +1929,7 @@ package storagegateway {
   object DescribeGatewayInformationOutput {
     @inline
     def apply(
+        CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN] = js.undefined,
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
@@ -1942,6 +1945,7 @@ package storagegateway {
         VPCEndpoint: js.UndefOr[String] = js.undefined
     ): DescribeGatewayInformationOutput = {
       val __obj = js.Dynamic.literal()
+      CloudWatchLogGroupARN.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupARN")(__v.asInstanceOf[js.Any]))
       Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
       Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
@@ -4092,6 +4096,7 @@ package storagegateway {
   @js.native
   trait UpdateGatewayInformationInput extends js.Object {
     var GatewayARN: GatewayARN
+    var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
     var GatewayName: js.UndefOr[GatewayName]
     var GatewayTimezone: js.UndefOr[GatewayTimezone]
   }
@@ -4100,6 +4105,7 @@ package storagegateway {
     @inline
     def apply(
         GatewayARN: GatewayARN,
+        CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN] = js.undefined,
         GatewayName: js.UndefOr[GatewayName] = js.undefined,
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined
     ): UpdateGatewayInformationInput = {
@@ -4107,6 +4113,7 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
+      CloudWatchLogGroupARN.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupARN")(__v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
       GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGatewayInformationInput]

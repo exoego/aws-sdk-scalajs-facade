@@ -86,6 +86,8 @@ package object dms {
     ): Future[CreateReplicationTaskResponse] = service.createReplicationTask(params).promise.toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateMessage): Future[DeleteCertificateResponse] =
       service.deleteCertificate(params).promise.toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionMessage): Future[DeleteConnectionResponse] =
+      service.deleteConnection(params).promise.toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointMessage): Future[DeleteEndpointResponse] =
       service.deleteEndpoint(params).promise.toFuture
     @inline def deleteEventSubscriptionFuture(
@@ -215,6 +217,7 @@ package dms {
     ): Request[CreateReplicationSubnetGroupResponse]                                                        = js.native
     def createReplicationTask(params: CreateReplicationTaskMessage): Request[CreateReplicationTaskResponse] = js.native
     def deleteCertificate(params: DeleteCertificateMessage): Request[DeleteCertificateResponse]             = js.native
+    def deleteConnection(params: DeleteConnectionMessage): Request[DeleteConnectionResponse]                = js.native
     def deleteEndpoint(params: DeleteEndpointMessage): Request[DeleteEndpointResponse]                      = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResponse] =
       js.native
@@ -930,6 +933,49 @@ package dms {
       val __obj = js.Dynamic.literal()
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCertificateResponse]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait DeleteConnectionMessage extends js.Object {
+    var EndpointArn: String
+    var ReplicationInstanceArn: String
+  }
+
+  object DeleteConnectionMessage {
+    @inline
+    def apply(
+        EndpointArn: String,
+        ReplicationInstanceArn: String
+    ): DeleteConnectionMessage = {
+      val __obj = js.Dynamic.literal(
+        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteConnectionMessage]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait DeleteConnectionResponse extends js.Object {
+    var Connection: js.UndefOr[Connection]
+  }
+
+  object DeleteConnectionResponse {
+    @inline
+    def apply(
+        Connection: js.UndefOr[Connection] = js.undefined
+    ): DeleteConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteConnectionResponse]
     }
   }
 
@@ -3526,7 +3572,12 @@ package dms {
   @js.native
   trait ReplicationTaskStats extends js.Object {
     var ElapsedTimeMillis: js.UndefOr[Double]
+    var FreshStartDate: js.UndefOr[TStamp]
+    var FullLoadFinishDate: js.UndefOr[TStamp]
     var FullLoadProgressPercent: js.UndefOr[Int]
+    var FullLoadStartDate: js.UndefOr[TStamp]
+    var StartDate: js.UndefOr[TStamp]
+    var StopDate: js.UndefOr[TStamp]
     var TablesErrored: js.UndefOr[Int]
     var TablesLoaded: js.UndefOr[Int]
     var TablesLoading: js.UndefOr[Int]
@@ -3537,7 +3588,12 @@ package dms {
     @inline
     def apply(
         ElapsedTimeMillis: js.UndefOr[Double] = js.undefined,
+        FreshStartDate: js.UndefOr[TStamp] = js.undefined,
+        FullLoadFinishDate: js.UndefOr[TStamp] = js.undefined,
         FullLoadProgressPercent: js.UndefOr[Int] = js.undefined,
+        FullLoadStartDate: js.UndefOr[TStamp] = js.undefined,
+        StartDate: js.UndefOr[TStamp] = js.undefined,
+        StopDate: js.UndefOr[TStamp] = js.undefined,
         TablesErrored: js.UndefOr[Int] = js.undefined,
         TablesLoaded: js.UndefOr[Int] = js.undefined,
         TablesLoading: js.UndefOr[Int] = js.undefined,
@@ -3545,7 +3601,12 @@ package dms {
     ): ReplicationTaskStats = {
       val __obj = js.Dynamic.literal()
       ElapsedTimeMillis.foreach(__v => __obj.updateDynamic("ElapsedTimeMillis")(__v.asInstanceOf[js.Any]))
+      FreshStartDate.foreach(__v => __obj.updateDynamic("FreshStartDate")(__v.asInstanceOf[js.Any]))
+      FullLoadFinishDate.foreach(__v => __obj.updateDynamic("FullLoadFinishDate")(__v.asInstanceOf[js.Any]))
       FullLoadProgressPercent.foreach(__v => __obj.updateDynamic("FullLoadProgressPercent")(__v.asInstanceOf[js.Any]))
+      FullLoadStartDate.foreach(__v => __obj.updateDynamic("FullLoadStartDate")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      StopDate.foreach(__v => __obj.updateDynamic("StopDate")(__v.asInstanceOf[js.Any]))
       TablesErrored.foreach(__v => __obj.updateDynamic("TablesErrored")(__v.asInstanceOf[js.Any]))
       TablesLoaded.foreach(__v => __obj.updateDynamic("TablesLoaded")(__v.asInstanceOf[js.Any]))
       TablesLoading.foreach(__v => __obj.updateDynamic("TablesLoading")(__v.asInstanceOf[js.Any]))
@@ -3597,6 +3658,7 @@ package dms {
     var EncryptionMode: js.UndefOr[EncryptionModeValue]
     var ExternalTableDefinition: js.UndefOr[String]
     var IncludeOpForFullLoad: js.UndefOr[BooleanOptional]
+    var ParquetTimestampInMillisecond: js.UndefOr[BooleanOptional]
     var ParquetVersion: js.UndefOr[ParquetVersionValue]
     var RowGroupLength: js.UndefOr[IntegerOptional]
     var ServerSideEncryptionKmsKeyId: js.UndefOr[String]
@@ -3621,6 +3683,7 @@ package dms {
         EncryptionMode: js.UndefOr[EncryptionModeValue] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
         IncludeOpForFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
+        ParquetTimestampInMillisecond: js.UndefOr[BooleanOptional] = js.undefined,
         ParquetVersion: js.UndefOr[ParquetVersionValue] = js.undefined,
         RowGroupLength: js.UndefOr[IntegerOptional] = js.undefined,
         ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
@@ -3642,6 +3705,9 @@ package dms {
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
       IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
+      ParquetTimestampInMillisecond.foreach(
+        __v => __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any])
+      )
       ParquetVersion.foreach(__v => __obj.updateDynamic("ParquetVersion")(__v.asInstanceOf[js.Any]))
       RowGroupLength.foreach(__v => __obj.updateDynamic("RowGroupLength")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionKmsKeyId.foreach(

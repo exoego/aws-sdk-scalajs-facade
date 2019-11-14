@@ -16,6 +16,7 @@ package object dlm {
   type Interval                   = Int
   type IntervalUnitValues         = String
   type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
+  type PolicyArn                  = String
   type PolicyDescription          = String
   type PolicyId                   = String
   type PolicyIdList               = js.Array[PolicyId]
@@ -25,7 +26,12 @@ package object dlm {
   type ScheduleList               = js.Array[Schedule]
   type ScheduleName               = String
   type SettablePolicyStateValues  = String
+  type StatusMessage              = String
   type TagFilter                  = String
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagMap                     = js.Dictionary[TagValue]
+  type TagValue                   = String
   type TagsToAddFilterList        = js.Array[TagFilter]
   type TagsToAddList              = js.Array[Tag]
   type TargetTagList              = js.Array[Tag]
@@ -46,6 +52,12 @@ package object dlm {
       service.getLifecyclePolicies(params).promise.toFuture
     @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
       service.getLifecyclePolicy(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     @inline def updateLifecyclePolicyFuture(
         params: UpdateLifecyclePolicyRequest
     ): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise.toFuture
@@ -62,6 +74,9 @@ package dlm {
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
     def getLifecyclePolicies(params: GetLifecyclePoliciesRequest): Request[GetLifecyclePoliciesResponse]    = js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse]          = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateLifecyclePolicy(params: UpdateLifecyclePolicyRequest): Request[UpdateLifecyclePolicyResponse] = js.native
   }
 
@@ -71,6 +86,7 @@ package dlm {
     var ExecutionRoleArn: ExecutionRoleArn
     var PolicyDetails: PolicyDetails
     var State: SettablePolicyStateValues
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateLifecyclePolicyRequest {
@@ -79,7 +95,8 @@ package dlm {
         Description: PolicyDescription,
         ExecutionRoleArn: ExecutionRoleArn,
         PolicyDetails: PolicyDetails,
-        State: SettablePolicyStateValues
+        State: SettablePolicyStateValues,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateLifecyclePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Description"      -> Description.asInstanceOf[js.Any],
@@ -88,6 +105,7 @@ package dlm {
         "State"            -> State.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLifecyclePolicyRequest]
     }
   }
@@ -267,9 +285,12 @@ package dlm {
     var DateModified: js.UndefOr[Timestamp]
     var Description: js.UndefOr[PolicyDescription]
     var ExecutionRoleArn: js.UndefOr[ExecutionRoleArn]
+    var PolicyArn: js.UndefOr[PolicyArn]
     var PolicyDetails: js.UndefOr[PolicyDetails]
     var PolicyId: js.UndefOr[PolicyId]
     var State: js.UndefOr[GettablePolicyStateValues]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object LifecyclePolicy {
@@ -279,18 +300,24 @@ package dlm {
         DateModified: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[PolicyDescription] = js.undefined,
         ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined,
+        PolicyArn: js.UndefOr[PolicyArn] = js.undefined,
         PolicyDetails: js.UndefOr[PolicyDetails] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        State: js.UndefOr[GettablePolicyStateValues] = js.undefined
+        State: js.UndefOr[GettablePolicyStateValues] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): LifecyclePolicy = {
       val __obj = js.Dynamic.literal()
       DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
       DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
       PolicyDetails.foreach(__v => __obj.updateDynamic("PolicyDetails")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicy]
     }
   }
@@ -303,6 +330,7 @@ package dlm {
     var Description: js.UndefOr[PolicyDescription]
     var PolicyId: js.UndefOr[PolicyId]
     var State: js.UndefOr[GettablePolicyStateValues]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object LifecyclePolicySummary {
@@ -310,13 +338,49 @@ package dlm {
     def apply(
         Description: js.UndefOr[PolicyDescription] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        State: js.UndefOr[GettablePolicyStateValues] = js.undefined
+        State: js.UndefOr[GettablePolicyStateValues] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): LifecyclePolicySummary = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicySummary]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: PolicyArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: PolicyArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -466,6 +530,74 @@ package dlm {
       )
 
       __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: PolicyArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: PolicyArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: PolicyArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: PolicyArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

@@ -21,7 +21,10 @@ package object mediaconvert {
   type Ac3LfeFilter                                = String
   type Ac3MetadataControl                          = String
   type AccelerationMode                            = String
+  type AccelerationStatus                          = String
   type AfdSignaling                                = String
+  type AncillaryConvert608To708                    = String
+  type AncillaryTerminateCaptions                  = String
   type AntiAlias                                   = String
   type AudioCodec                                  = String
   type AudioDefaultSelection                       = String
@@ -48,6 +51,7 @@ package object mediaconvert {
   type CmafKeyProviderType                         = String
   type CmafManifestCompression                     = String
   type CmafManifestDurationFormat                  = String
+  type CmafMpdProfile                              = String
   type CmafSegmentControl                          = String
   type CmafStreamInfResolution                     = String
   type CmafWriteDASHManifest                       = String
@@ -59,6 +63,7 @@ package object mediaconvert {
   type Commitment                                  = String
   type ContainerType                               = String
   type DashIsoHbbtvCompliance                      = String
+  type DashIsoMpdProfile                           = String
   type DashIsoPlaybackDeviceCompatibility          = String
   type DashIsoSegmentControl                       = String
   type DashIsoWriteSegmentTimelineInRepresentation = String
@@ -97,6 +102,7 @@ package object mediaconvert {
   type Eac3SurroundExMode                          = String
   type Eac3SurroundMode                            = String
   type EmbeddedConvert608To708                     = String
+  type EmbeddedTerminateCaptions                   = String
   type F4vMoovPlacement                            = String
   type FileSourceConvert608To708                   = String
   type FontScript                                  = String
@@ -166,6 +172,7 @@ package object mediaconvert {
   type HlsSegmentControl                           = String
   type HlsStreamInfResolution                      = String
   type HlsTimedMetadataId3Frame                    = String
+  type ImscStylePassthrough                        = String
   type InputDeblockFilter                          = String
   type InputDenoiseFilter                          = String
   type InputFilterEnable                           = String
@@ -297,7 +304,6 @@ package object mediaconvert {
   type __integerMin1Max100                         = Int
   type __integerMin1Max10000000                    = Int
   type __integerMin1Max1001                        = Int
-  type __integerMin1Max16                          = Int
   type __integerMin1Max17895697                    = Int
   type __integerMin1Max2                           = Int
   type __integerMin1Max20                          = Int
@@ -307,14 +313,13 @@ package object mediaconvert {
   type __integerMin1Max32                          = Int
   type __integerMin1Max4                           = Int
   type __integerMin1Max6                           = Int
-  type __integerMin1Max8                           = Int
+  type __integerMin1Max64                          = Int
   type __integerMin24Max60000                      = Int
   type __integerMin25Max10000                      = Int
   type __integerMin25Max2000                       = Int
   type __integerMin2Max2147483647                  = Int
   type __integerMin32000Max384000                  = Int
   type __integerMin32000Max48000                   = Int
-  type __integerMin32Max2160                       = Int
   type __integerMin32Max4096                       = Int
   type __integerMin32Max8182                       = Int
   type __integerMin384000Max768000                 = Int
@@ -363,46 +368,46 @@ package object mediaconvert {
     js.Array[__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
   type __listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
-  type __listOf__stringPatternS3ASSETMAPXml                              = js.Array[__stringPatternS3ASSETMAPXml]
-  type __mapOfAudioSelector                                              = js.Dictionary[AudioSelector]
-  type __mapOfAudioSelectorGroup                                         = js.Dictionary[AudioSelectorGroup]
-  type __mapOfCaptionSelector                                            = js.Dictionary[CaptionSelector]
-  type __mapOf__string                                                   = js.Dictionary[__string]
-  type __string                                                          = String
-  type __stringMin0                                                      = String
-  type __stringMin1                                                      = String
-  type __stringMin11Max11Pattern01D20305D205D                            = String
-  type __stringMin14Max1285PatternS3Mov09Png                             = String
-  type __stringMin14PatternS3BmpBMPPngPNG                                = String
-  type __stringMin14PatternS3BmpBMPPngPNGTgaTGA                          = String
-  type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI    = String
-  type __stringMin16Max24PatternAZaZ0922AZaZ0916                         = String
-  type __stringMin1Max256                                                = String
-  type __stringMin24Max512PatternAZaZ0902                                = String
-  type __stringMin32Max32Pattern09aFAF32                                 = String
-  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12     = String
-  type __stringMin3Max3Pattern1809aFAF09aEAE                             = String
-  type __stringMin3Max3PatternAZaZ3                                      = String
-  type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912 = String
-  type __stringPattern                                                   = String
-  type __stringPattern010920405090509092                                 = String
-  type __stringPattern01D20305D205D                                      = String
-  type __stringPattern0940191020191209301                                = String
-  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12               = String
-  type __stringPatternAZaZ0902                                           = String
-  type __stringPatternAZaZ0932                                           = String
-  type __stringPatternArnAwsUsGovAcm                                     = String
+  type __listOf__stringPatternS3ASSETMAPXml                                          = js.Array[__stringPatternS3ASSETMAPXml]
+  type __mapOfAudioSelector                                                          = js.Dictionary[AudioSelector]
+  type __mapOfAudioSelectorGroup                                                     = js.Dictionary[AudioSelectorGroup]
+  type __mapOfCaptionSelector                                                        = js.Dictionary[CaptionSelector]
+  type __mapOf__string                                                               = js.Dictionary[__string]
+  type __string                                                                      = String
+  type __stringMin0                                                                  = String
+  type __stringMin1                                                                  = String
+  type __stringMin11Max11Pattern01D20305D205D                                        = String
+  type __stringMin14Max1285PatternHttpHttpsS3Mov09Png                                = String
+  type __stringMin14PatternHttpHttpsS3BmpBMPPngPNG                                   = String
+  type __stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA                             = String
+  type __stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI = String
+  type __stringMin16Max24PatternAZaZ0922AZaZ0916                                     = String
+  type __stringMin1Max256                                                            = String
+  type __stringMin24Max512PatternAZaZ0902                                            = String
+  type __stringMin32Max32Pattern09aFAF32                                             = String
+  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12                 = String
+  type __stringMin3Max3Pattern1809aFAF09aEAE                                         = String
+  type __stringMin3Max3PatternAZaZ3                                                  = String
+  type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912             = String
+  type __stringPattern                                                               = String
+  type __stringPattern010920405090509092                                             = String
+  type __stringPattern01D20305D205D                                                  = String
+  type __stringPattern0940191020191209301                                            = String
+  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12                           = String
+  type __stringPatternAZaZ0902                                                       = String
+  type __stringPatternAZaZ0932                                                       = String
+  type __stringPatternArnAwsUsGovAcm                                                 = String
   type __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
   type __stringPatternDD = String
+  type __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
+    String
   type __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
     String
-  type __stringPatternHttps                   = String
-  type __stringPatternIdentityAZaZ26AZaZ09163 = String
-  type __stringPatternS3                      = String
-  type __stringPatternS3ASSETMAPXml           = String
-  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
-    String
+  type __stringPatternHttps                                    = String
+  type __stringPatternIdentityAZaZ26AZaZ09163                  = String
+  type __stringPatternS3                                       = String
+  type __stringPatternS3ASSETMAPXml                            = String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS         = String
   type __stringPatternW                                        = String
@@ -731,13 +736,14 @@ package mediaconvert {
   }
 
   /**
-    * Enable Acceleration (AccelerationMode) on any job that you want processed with accelerated transcoding.
+    * Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
     */
   object AccelerationModeEnum {
-    val DISABLED = "DISABLED"
-    val ENABLED  = "ENABLED"
+    val DISABLED  = "DISABLED"
+    val ENABLED   = "ENABLED"
+    val PREFERRED = "PREFERRED"
 
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
   }
 
   /**
@@ -762,6 +768,18 @@ package mediaconvert {
   }
 
   /**
+    * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+    */
+  object AccelerationStatusEnum {
+    val NOT_APPLICABLE  = "NOT_APPLICABLE"
+    val IN_PROGRESS     = "IN_PROGRESS"
+    val ACCELERATED     = "ACCELERATED"
+    val NOT_ACCELERATED = "NOT_ACCELERATED"
+
+    val values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
+  }
+
+  /**
     * This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     */
   object AfdSignalingEnum {
@@ -778,7 +796,7 @@ package mediaconvert {
   @js.native
   trait AiffSettings extends js.Object {
     var BitDepth: js.UndefOr[__integerMin16Max24]
-    var Channels: js.UndefOr[__integerMin1Max2]
+    var Channels: js.UndefOr[__integerMin1Max64]
     var SampleRate: js.UndefOr[__integerMin8000Max192000]
   }
 
@@ -786,7 +804,7 @@ package mediaconvert {
     @inline
     def apply(
         BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
-        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max64] = js.undefined,
         SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
     ): AiffSettings = {
       val __obj = js.Dynamic.literal()
@@ -798,24 +816,50 @@ package mediaconvert {
   }
 
   /**
+    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    */
+  object AncillaryConvert608To708Enum {
+    val UPCONVERT = "UPCONVERT"
+    val DISABLED  = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+  }
+
+  /**
     * Settings for ancillary captions source.
     */
   @js.native
   trait AncillarySourceSettings extends js.Object {
+    var Convert608To708: js.UndefOr[AncillaryConvert608To708]
     var SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4]
+    var TerminateCaptions: js.UndefOr[AncillaryTerminateCaptions]
   }
 
   object AncillarySourceSettings {
     @inline
     def apply(
-        SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
+        Convert608To708: js.UndefOr[AncillaryConvert608To708] = js.undefined,
+        SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
+        TerminateCaptions: js.UndefOr[AncillaryTerminateCaptions] = js.undefined
     ): AncillarySourceSettings = {
       val __obj = js.Dynamic.literal()
+      Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
       SourceAncillaryChannelNumber.foreach(
         __v => __obj.updateDynamic("SourceAncillaryChannelNumber")(__v.asInstanceOf[js.Any])
       )
+      TerminateCaptions.foreach(__v => __obj.updateDynamic("TerminateCaptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AncillarySourceSettings]
     }
+  }
+
+  /**
+    * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    */
+  object AncillaryTerminateCaptionsEnum {
+    val END_OF_INPUT = "END_OF_INPUT"
+    val DISABLED     = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
 
   /**
@@ -1067,7 +1111,7 @@ package mediaconvert {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
     var ExternalAudioFileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+      __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
     ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
@@ -1084,7 +1128,7 @@ package mediaconvert {
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
         ExternalAudioFileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+          __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
         ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
@@ -1154,13 +1198,13 @@ package mediaconvert {
     */
   @js.native
   trait AvailBlanking extends js.Object {
-    var AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG]
+    var AvailBlankingImage: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNG]
   }
 
   object AvailBlanking {
     @inline
     def apply(
-        AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG] = js.undefined
+        AvailBlankingImage: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNG] = js.undefined
     ): AvailBlanking = {
       val __obj = js.Dynamic.literal()
       AvailBlankingImage.foreach(__v => __obj.updateDynamic("AvailBlankingImage")(__v.asInstanceOf[js.Any]))
@@ -1175,8 +1219,9 @@ package mediaconvert {
     val QUEUE        = "QUEUE"
     val PRESET       = "PRESET"
     val JOB_TEMPLATE = "JOB_TEMPLATE"
+    val JOB          = "JOB"
 
-    val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE))
+    val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
   }
 
   /**
@@ -1417,6 +1462,7 @@ package mediaconvert {
     var DestinationType: js.UndefOr[CaptionDestinationType]
     var DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings]
     var EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings]
+    var ImscDestinationSettings: js.UndefOr[ImscDestinationSettings]
     var SccDestinationSettings: js.UndefOr[SccDestinationSettings]
     var TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings]
     var TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings]
@@ -1429,6 +1475,7 @@ package mediaconvert {
         DestinationType: js.UndefOr[CaptionDestinationType] = js.undefined,
         DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings] = js.undefined,
         EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings] = js.undefined,
+        ImscDestinationSettings: js.UndefOr[ImscDestinationSettings] = js.undefined,
         SccDestinationSettings: js.UndefOr[SccDestinationSettings] = js.undefined,
         TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
         TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined
@@ -1444,6 +1491,7 @@ package mediaconvert {
       EmbeddedDestinationSettings.foreach(
         __v => __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
       )
+      ImscDestinationSettings.foreach(__v => __obj.updateDynamic("ImscDestinationSettings")(__v.asInstanceOf[js.Any]))
       SccDestinationSettings.foreach(__v => __obj.updateDynamic("SccDestinationSettings")(__v.asInstanceOf[js.Any]))
       TeletextDestinationSettings.foreach(
         __v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
@@ -1454,13 +1502,14 @@ package mediaconvert {
   }
 
   /**
-    * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+    * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
     */
   object CaptionDestinationTypeEnum {
     val BURN_IN              = "BURN_IN"
     val DVB_SUB              = "DVB_SUB"
     val EMBEDDED             = "EMBEDDED"
     val EMBEDDED_PLUS_SCTE20 = "EMBEDDED_PLUS_SCTE20"
+    val IMSC                 = "IMSC"
     val SCTE20_PLUS_EMBEDDED = "SCTE20_PLUS_EMBEDDED"
     val SCC                  = "SCC"
     val SRT                  = "SRT"
@@ -1475,6 +1524,7 @@ package mediaconvert {
         DVB_SUB,
         EMBEDDED,
         EMBEDDED_PLUS_SCTE20,
+        IMSC,
         SCTE20_PLUS_EMBEDDED,
         SCC,
         SRT,
@@ -1512,7 +1562,7 @@ package mediaconvert {
   }
 
   /**
-    * Source settings (SourceSettings) contains the group of settings for captions in the input.
+    * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     */
   @js.native
   trait CaptionSourceSettings extends js.Object {
@@ -1648,12 +1698,13 @@ package mediaconvert {
   }
 
   /**
-    * For DRM with CMAF, the encryption type is always sample AES.
+    * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
     */
   object CmafEncryptionTypeEnum {
     val SAMPLE_AES = "SAMPLE_AES"
+    val AES_CTR    = "AES_CTR"
 
-    val values = js.Object.freeze(js.Array(SAMPLE_AES))
+    val values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
   }
 
   /**
@@ -1672,6 +1723,7 @@ package mediaconvert {
     var ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat]
     var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
     var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
+    var MpdProfile: js.UndefOr[CmafMpdProfile]
     var SegmentControl: js.UndefOr[CmafSegmentControl]
     var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
     var StreamInfResolution: js.UndefOr[CmafStreamInfResolution]
@@ -1693,6 +1745,7 @@ package mediaconvert {
         ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat] = js.undefined,
         MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
+        MpdProfile: js.UndefOr[CmafMpdProfile] = js.undefined,
         SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
@@ -1711,6 +1764,7 @@ package mediaconvert {
       ManifestDurationFormat.foreach(__v => __obj.updateDynamic("ManifestDurationFormat")(__v.asInstanceOf[js.Any]))
       MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
       MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
+      MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
@@ -1758,6 +1812,16 @@ package mediaconvert {
     val INTEGER        = "INTEGER"
 
     val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+  }
+
+  /**
+    * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    */
+  object CmafMpdProfileEnum {
+    val MAIN_PROFILE      = "MAIN_PROFILE"
+    val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE"
+
+    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
   }
 
   /**
@@ -1953,6 +2017,7 @@ package mediaconvert {
     var Queue: js.UndefOr[__string]
     var SimulateReservedQueue: js.UndefOr[SimulateReservedQueue]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
+    var Tags: js.UndefOr[__mapOf__string]
     var UserMetadata: js.UndefOr[__mapOf__string]
   }
 
@@ -1969,6 +2034,7 @@ package mediaconvert {
         Queue: js.UndefOr[__string] = js.undefined,
         SimulateReservedQueue: js.UndefOr[SimulateReservedQueue] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
+        Tags: js.UndefOr[__mapOf__string] = js.undefined,
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -1984,6 +2050,7 @@ package mediaconvert {
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       SimulateReservedQueue.foreach(__v => __obj.updateDynamic("SimulateReservedQueue")(__v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
@@ -2194,6 +2261,7 @@ package mediaconvert {
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
     var HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance]
     var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
+    var MpdProfile: js.UndefOr[DashIsoMpdProfile]
     var SegmentControl: js.UndefOr[DashIsoSegmentControl]
     var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
     var WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation]
@@ -2209,6 +2277,7 @@ package mediaconvert {
         FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
         MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        MpdProfile: js.UndefOr[DashIsoMpdProfile] = js.undefined,
         SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined
@@ -2221,6 +2290,7 @@ package mediaconvert {
       FragmentLength.foreach(__v => __obj.updateDynamic("FragmentLength")(__v.asInstanceOf[js.Any]))
       HbbtvCompliance.foreach(__v => __obj.updateDynamic("HbbtvCompliance")(__v.asInstanceOf[js.Any]))
       MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
+      MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
       WriteSegmentTimelineInRepresentation.foreach(
@@ -2238,6 +2308,16 @@ package mediaconvert {
     val NONE      = "NONE"
 
     val values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
+  }
+
+  /**
+    * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    */
+  object DashIsoMpdProfileEnum {
+    val MAIN_PROFILE      = "MAIN_PROFILE"
+    val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE"
+
+    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
   }
 
   /**
@@ -3173,7 +3253,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   object EmbeddedConvert608To708Enum {
     val UPCONVERT = "UPCONVERT"
@@ -3216,6 +3296,7 @@ package mediaconvert {
     var Convert608To708: js.UndefOr[EmbeddedConvert608To708]
     var Source608ChannelNumber: js.UndefOr[__integerMin1Max4]
     var Source608TrackNumber: js.UndefOr[__integerMin1Max1]
+    var TerminateCaptions: js.UndefOr[EmbeddedTerminateCaptions]
   }
 
   object EmbeddedSourceSettings {
@@ -3223,14 +3304,26 @@ package mediaconvert {
     def apply(
         Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
-        Source608TrackNumber: js.UndefOr[__integerMin1Max1] = js.undefined
+        Source608TrackNumber: js.UndefOr[__integerMin1Max1] = js.undefined,
+        TerminateCaptions: js.UndefOr[EmbeddedTerminateCaptions] = js.undefined
     ): EmbeddedSourceSettings = {
       val __obj = js.Dynamic.literal()
       Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
       Source608ChannelNumber.foreach(__v => __obj.updateDynamic("Source608ChannelNumber")(__v.asInstanceOf[js.Any]))
       Source608TrackNumber.foreach(__v => __obj.updateDynamic("Source608TrackNumber")(__v.asInstanceOf[js.Any]))
+      TerminateCaptions.foreach(__v => __obj.updateDynamic("TerminateCaptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmbeddedSourceSettings]
     }
+  }
+
+  /**
+    * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    */
+  object EmbeddedTerminateCaptionsEnum {
+    val END_OF_INPUT = "END_OF_INPUT"
+    val DISABLED     = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
 
   /**
@@ -3371,7 +3464,7 @@ package mediaconvert {
   }
 
   /**
-    * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   object FileSourceConvert608To708Enum {
     val UPCONVERT = "UPCONVERT"
@@ -3381,12 +3474,12 @@ package mediaconvert {
   }
 
   /**
-    * Settings for File-based Captions in Source
+    * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     */
   @js.native
   trait FileSourceSettings extends js.Object {
     var Convert608To708: js.UndefOr[FileSourceConvert608To708]
-    var SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI]
+    var SourceFile: js.UndefOr[__stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI]
     var TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647]
   }
 
@@ -3394,7 +3487,8 @@ package mediaconvert {
     @inline
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
-        SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI] = js.undefined,
+        SourceFile: js.UndefOr[__stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI] =
+          js.undefined,
         TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
     ): FileSourceSettings = {
       val __obj = js.Dynamic.literal()
@@ -4489,7 +4583,7 @@ package mediaconvert {
   }
 
   /**
-    * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+    * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
     */
   object H265WriteMp4PackagingTypeEnum {
     val HVC1 = "HVC1"
@@ -4985,6 +5079,35 @@ package mediaconvert {
   }
 
   /**
+    * Settings specific to IMSC caption outputs.
+    */
+  @js.native
+  trait ImscDestinationSettings extends js.Object {
+    var StylePassthrough: js.UndefOr[ImscStylePassthrough]
+  }
+
+  object ImscDestinationSettings {
+    @inline
+    def apply(
+        StylePassthrough: js.UndefOr[ImscStylePassthrough] = js.undefined
+    ): ImscDestinationSettings = {
+      val __obj = js.Dynamic.literal()
+      StylePassthrough.foreach(__v => __obj.updateDynamic("StylePassthrough")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImscDestinationSettings]
+    }
+  }
+
+  /**
+    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+    */
+  object ImscStylePassthroughEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  /**
     * Specifies media input
     */
   @js.native
@@ -5008,6 +5131,7 @@ package mediaconvert {
     var PsiControl: js.UndefOr[InputPsiControl]
     var SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
+    var TimecodeStart: js.UndefOr[__stringMin11Max11Pattern01D20305D205D]
     var VideoSelector: js.UndefOr[VideoSelector]
   }
 
@@ -5033,6 +5157,7 @@ package mediaconvert {
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
         SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml] = js.undefined,
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+        TimecodeStart: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): Input = {
       val __obj = js.Dynamic.literal()
@@ -5053,6 +5178,7 @@ package mediaconvert {
       PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
       SupplementalImps.foreach(__v => __obj.updateDynamic("SupplementalImps")(__v.asInstanceOf[js.Any]))
       TimecodeSource.foreach(__v => __obj.updateDynamic("TimecodeSource")(__v.asInstanceOf[js.Any]))
+      TimecodeStart.foreach(__v => __obj.updateDynamic("TimecodeStart")(__v.asInstanceOf[js.Any]))
       VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
     }
@@ -5181,6 +5307,7 @@ package mediaconvert {
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
+    var TimecodeStart: js.UndefOr[__stringMin11Max11Pattern01D20305D205D]
     var VideoSelector: js.UndefOr[VideoSelector]
   }
 
@@ -5201,6 +5328,7 @@ package mediaconvert {
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+        TimecodeStart: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): InputTemplate = {
       val __obj = js.Dynamic.literal()
@@ -5218,13 +5346,14 @@ package mediaconvert {
       ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
       PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
       TimecodeSource.foreach(__v => __obj.updateDynamic("TimecodeSource")(__v.asInstanceOf[js.Any]))
+      TimecodeStart.foreach(__v => __obj.updateDynamic("TimecodeStart")(__v.asInstanceOf[js.Any]))
       VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputTemplate]
     }
   }
 
   /**
-    * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded timecodes.
+    * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     */
   object InputTimecodeSourceEnum {
     val EMBEDDED       = "EMBEDDED"
@@ -5243,7 +5372,7 @@ package mediaconvert {
     var FadeIn: js.UndefOr[__integerMin0Max2147483647]
     var FadeOut: js.UndefOr[__integerMin0Max2147483647]
     var Height: js.UndefOr[__integerMin0Max2147483647]
-    var ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA]
+    var ImageInserterInput: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA]
     var ImageX: js.UndefOr[__integerMin0Max2147483647]
     var ImageY: js.UndefOr[__integerMin0Max2147483647]
     var Layer: js.UndefOr[__integerMin0Max99]
@@ -5259,7 +5388,7 @@ package mediaconvert {
         FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-        ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined,
+        ImageInserterInput: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA] = js.undefined,
         ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
@@ -5291,6 +5420,7 @@ package mediaconvert {
     var Role: __string
     var Settings: JobSettings
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
+    var AccelerationStatus: js.UndefOr[AccelerationStatus]
     var Arn: js.UndefOr[__string]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var CreatedAt: js.UndefOr[__timestampUnix]
@@ -5300,6 +5430,7 @@ package mediaconvert {
     var Id: js.UndefOr[__string]
     var JobPercentComplete: js.UndefOr[__integer]
     var JobTemplate: js.UndefOr[__string]
+    var Messages: js.UndefOr[JobMessages]
     var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
@@ -5317,6 +5448,7 @@ package mediaconvert {
         Role: __string,
         Settings: JobSettings,
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        AccelerationStatus: js.UndefOr[AccelerationStatus] = js.undefined,
         Arn: js.UndefOr[__string] = js.undefined,
         BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
         CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
@@ -5326,6 +5458,7 @@ package mediaconvert {
         Id: js.UndefOr[__string] = js.undefined,
         JobPercentComplete: js.UndefOr[__integer] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
+        Messages: js.UndefOr[JobMessages] = js.undefined,
         OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
@@ -5342,6 +5475,7 @@ package mediaconvert {
       )
 
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      AccelerationStatus.foreach(__v => __obj.updateDynamic("AccelerationStatus")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       BillingTagsSource.foreach(__v => __obj.updateDynamic("BillingTagsSource")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
@@ -5351,6 +5485,7 @@ package mediaconvert {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       JobPercentComplete.foreach(__v => __obj.updateDynamic("JobPercentComplete")(__v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
+      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
       OutputGroupDetails.foreach(__v => __obj.updateDynamic("OutputGroupDetails")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
@@ -5361,6 +5496,28 @@ package mediaconvert {
       Timing.foreach(__v => __obj.updateDynamic("Timing")(__v.asInstanceOf[js.Any]))
       UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
+    }
+  }
+
+  /**
+    * Provides messages from the service about jobs that you have already successfully submitted.
+    */
+  @js.native
+  trait JobMessages extends js.Object {
+    var Info: js.UndefOr[__listOf__string]
+    var Warning: js.UndefOr[__listOf__string]
+  }
+
+  object JobMessages {
+    @inline
+    def apply(
+        Info: js.UndefOr[__listOf__string] = js.undefined,
+        Warning: js.UndefOr[__listOf__string] = js.undefined
+    ): JobMessages = {
+      val __obj = js.Dynamic.literal()
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobMessages]
     }
   }
 
@@ -6518,7 +6675,7 @@ package mediaconvert {
   @js.native
   trait MotionImageInserter extends js.Object {
     var Framerate: js.UndefOr[MotionImageInsertionFramerate]
-    var Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png]
+    var Input: js.UndefOr[__stringMin14Max1285PatternHttpHttpsS3Mov09Png]
     var InsertionMode: js.UndefOr[MotionImageInsertionMode]
     var Offset: js.UndefOr[MotionImageInsertionOffset]
     var Playback: js.UndefOr[MotionImagePlayback]
@@ -6529,7 +6686,7 @@ package mediaconvert {
     @inline
     def apply(
         Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
-        Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
+        Input: js.UndefOr[__stringMin14Max1285PatternHttpHttpsS3Mov09Png] = js.undefined,
         InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
         Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
         Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
@@ -7848,16 +8005,16 @@ package mediaconvert {
   @js.native
   trait RemixSettings extends js.Object {
     var ChannelMapping: js.UndefOr[ChannelMapping]
-    var ChannelsIn: js.UndefOr[__integerMin1Max16]
-    var ChannelsOut: js.UndefOr[__integerMin1Max8]
+    var ChannelsIn: js.UndefOr[__integerMin1Max64]
+    var ChannelsOut: js.UndefOr[__integerMin1Max64]
   }
 
   object RemixSettings {
     @inline
     def apply(
         ChannelMapping: js.UndefOr[ChannelMapping] = js.undefined,
-        ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
-        ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined
+        ChannelsIn: js.UndefOr[__integerMin1Max64] = js.undefined,
+        ChannelsOut: js.UndefOr[__integerMin1Max64] = js.undefined
     ): RemixSettings = {
       val __obj = js.Dynamic.literal()
       ChannelMapping.foreach(__v => __obj.updateDynamic("ChannelMapping")(__v.asInstanceOf[js.Any]))
@@ -8090,7 +8247,7 @@ package mediaconvert {
   }
 
   /**
-    * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is HLS, MS Smooth, or DASH. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    * If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     */
   @js.native
   trait SpekeKeyProvider extends js.Object {
@@ -8118,7 +8275,7 @@ package mediaconvert {
   }
 
   /**
-    * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+    * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
     */
   @js.native
   trait SpekeKeyProviderCmaf extends js.Object {
@@ -8463,7 +8620,7 @@ package mediaconvert {
   }
 
   /**
-    * Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
+    * Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
     */
   @js.native
   trait TrackSourceSettings extends js.Object {
@@ -8751,7 +8908,7 @@ package mediaconvert {
     var Crop: js.UndefOr[Rectangle]
     var DropFrameTimecode: js.UndefOr[DropFrameTimecode]
     var FixedAfd: js.UndefOr[__integerMin0Max15]
-    var Height: js.UndefOr[__integerMin32Max2160]
+    var Height: js.UndefOr[__integerMin32Max4096]
     var Position: js.UndefOr[Rectangle]
     var RespondToAfd: js.UndefOr[RespondToAfd]
     var ScalingBehavior: js.UndefOr[ScalingBehavior]
@@ -8771,7 +8928,7 @@ package mediaconvert {
         Crop: js.UndefOr[Rectangle] = js.undefined,
         DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
         FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
-        Height: js.UndefOr[__integerMin32Max2160] = js.undefined,
+        Height: js.UndefOr[__integerMin32Max4096] = js.undefined,
         Position: js.UndefOr[Rectangle] = js.undefined,
         RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
         ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
@@ -8913,7 +9070,7 @@ package mediaconvert {
   @js.native
   trait WavSettings extends js.Object {
     var BitDepth: js.UndefOr[__integerMin16Max24]
-    var Channels: js.UndefOr[__integerMin1Max8]
+    var Channels: js.UndefOr[__integerMin1Max64]
     var Format: js.UndefOr[WavFormat]
     var SampleRate: js.UndefOr[__integerMin8000Max192000]
   }
@@ -8922,7 +9079,7 @@ package mediaconvert {
     @inline
     def apply(
         BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
-        Channels: js.UndefOr[__integerMin1Max8] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max64] = js.undefined,
         Format: js.UndefOr[WavFormat] = js.undefined,
         SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
     ): WavSettings = {
