@@ -1225,6 +1225,7 @@ package cloudwatch {
     var Expression: js.UndefOr[MetricExpression]
     var Label: js.UndefOr[MetricLabel]
     var MetricStat: js.UndefOr[MetricStat]
+    var Period: js.UndefOr[Period]
     var ReturnData: js.UndefOr[ReturnData]
   }
 
@@ -1235,6 +1236,7 @@ package cloudwatch {
         Expression: js.UndefOr[MetricExpression] = js.undefined,
         Label: js.UndefOr[MetricLabel] = js.undefined,
         MetricStat: js.UndefOr[MetricStat] = js.undefined,
+        Period: js.UndefOr[Period] = js.undefined,
         ReturnData: js.UndefOr[ReturnData] = js.undefined
     ): MetricDataQuery = {
       val __obj = js.Dynamic.literal(
@@ -1244,6 +1246,7 @@ package cloudwatch {
       Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
       Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
       MetricStat.foreach(__v => __obj.updateDynamic("MetricStat")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
       ReturnData.foreach(__v => __obj.updateDynamic("ReturnData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDataQuery]
     }

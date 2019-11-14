@@ -449,7 +449,7 @@ package dynamodb {
   }
 
   /**
-    * Represents the autoscaling policy to be modified.
+    * Represents the auto scaling policy to be modified.
     */
   @js.native
   trait AutoScalingPolicyUpdate extends js.Object {
@@ -473,7 +473,7 @@ package dynamodb {
   }
 
   /**
-    * Represents the autoscaling settings for a global table or global secondary index.
+    * Represents the auto scaling settings for a global table or global secondary index.
     */
   @js.native
   trait AutoScalingSettingsDescription extends js.Object {
@@ -504,7 +504,7 @@ package dynamodb {
   }
 
   /**
-    * Represents the autoscaling settings to be modified for a global table or global secondary index.
+    * Represents the auto scaling settings to be modified for a global table or global secondary index.
     */
   @js.native
   trait AutoScalingSettingsUpdate extends js.Object {
@@ -939,7 +939,7 @@ package dynamodb {
   }
 
   /**
-    * Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item..
+    * Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item.
     */
   @js.native
   trait ConditionCheck extends js.Object {
@@ -1824,7 +1824,7 @@ package dynamodb {
   }
 
   /**
-    * Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code> or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:
+    * Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:
     * * Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.
     *  * Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.
     * <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.
@@ -3101,7 +3101,7 @@ package dynamodb {
   }
 
   /**
-    * Represents the settings for a global table in a region that will be modified.
+    * Represents the settings for a global table in a Region that will be modified.
     */
   @js.native
   trait ReplicaSettingsUpdate extends js.Object {
@@ -3205,19 +3205,37 @@ package dynamodb {
   trait RestoreTableFromBackupInput extends js.Object {
     var BackupArn: BackupArn
     var TargetTableName: TableName
+    var BillingModeOverride: js.UndefOr[BillingMode]
+    var GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList]
+    var LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput]
   }
 
   object RestoreTableFromBackupInput {
     @inline
     def apply(
         BackupArn: BackupArn,
-        TargetTableName: TableName
+        TargetTableName: TableName,
+        BillingModeOverride: js.UndefOr[BillingMode] = js.undefined,
+        GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
+        LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): RestoreTableFromBackupInput = {
       val __obj = js.Dynamic.literal(
         "BackupArn"       -> BackupArn.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
 
+      BillingModeOverride.foreach(__v => __obj.updateDynamic("BillingModeOverride")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexOverride.foreach(
+        __v => __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
+      )
+      LocalSecondaryIndexOverride.foreach(
+        __v => __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedThroughputOverride.foreach(
+        __v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[RestoreTableFromBackupInput]
     }
   }
@@ -3242,6 +3260,10 @@ package dynamodb {
   trait RestoreTableToPointInTimeInput extends js.Object {
     var SourceTableName: TableName
     var TargetTableName: TableName
+    var BillingModeOverride: js.UndefOr[BillingMode]
+    var GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList]
+    var LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput]
     var RestoreDateTime: js.UndefOr[Date]
     var UseLatestRestorableTime: js.UndefOr[BooleanObject]
   }
@@ -3251,6 +3273,10 @@ package dynamodb {
     def apply(
         SourceTableName: TableName,
         TargetTableName: TableName,
+        BillingModeOverride: js.UndefOr[BillingMode] = js.undefined,
+        GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
+        LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput] = js.undefined,
         RestoreDateTime: js.UndefOr[Date] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[BooleanObject] = js.undefined
     ): RestoreTableToPointInTimeInput = {
@@ -3259,6 +3285,16 @@ package dynamodb {
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
 
+      BillingModeOverride.foreach(__v => __obj.updateDynamic("BillingModeOverride")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexOverride.foreach(
+        __v => __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
+      )
+      LocalSecondaryIndexOverride.foreach(
+        __v => __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedThroughputOverride.foreach(
+        __v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
       RestoreDateTime.foreach(__v => __obj.updateDynamic("RestoreDateTime")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableToPointInTimeInput]
@@ -4337,7 +4373,7 @@ package dynamodb {
   }
 
   /**
-    * Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you will need to provide two separate <code>WriteRequest</code> objects.
+    * Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you need to provide two separate <code>WriteRequest</code> objects.
     */
   @js.native
   trait WriteRequest extends js.Object {

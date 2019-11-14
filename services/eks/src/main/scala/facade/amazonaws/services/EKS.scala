@@ -19,6 +19,10 @@ package object eks {
   type LogType                       = String
   type LogTypes                      = js.Array[LogType]
   type StringList                    = js.Array[String]
+  type TagKey                        = String
+  type TagKeyList                    = js.Array[TagKey]
+  type TagMap                        = js.Dictionary[TagValue]
+  type TagValue                      = String
   type Timestamp                     = js.Date
   type UpdateParamType               = String
   type UpdateParams                  = js.Array[UpdateParam]
@@ -36,8 +40,14 @@ package object eks {
       service.describeUpdate(params).promise.toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
       service.listClusters(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
       service.listUpdates(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
       service.updateClusterConfig(params).promise.toFuture
     @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
@@ -56,7 +66,10 @@ package eks {
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse]                = js.native
     def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse]                   = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse]                         = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
     def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse]                            = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
     def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse]    = js.native
     def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
   }
@@ -97,6 +110,7 @@ package eks {
     var resourcesVpcConfig: js.UndefOr[VpcConfigResponse]
     var roleArn: js.UndefOr[String]
     var status: js.UndefOr[ClusterStatus]
+    var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
   }
 
@@ -115,6 +129,7 @@ package eks {
         resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
         roleArn: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ClusterStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): Cluster = {
       val __obj = js.Dynamic.literal()
@@ -130,6 +145,7 @@ package eks {
       resourcesVpcConfig.foreach(__v => __obj.updateDynamic("resourcesVpcConfig")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
     }
@@ -151,6 +167,7 @@ package eks {
     var roleArn: String
     var clientRequestToken: js.UndefOr[String]
     var logging: js.UndefOr[Logging]
+    var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
   }
 
@@ -162,6 +179,7 @@ package eks {
         roleArn: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
@@ -172,6 +190,7 @@ package eks {
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
@@ -405,6 +424,40 @@ package eks {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListUpdatesRequest extends js.Object {
     var name: String
     var maxResults: js.UndefOr[ListUpdatesRequestMaxResults]
@@ -514,6 +567,74 @@ package eks {
       val __obj = js.Dynamic.literal()
       issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OIDC]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

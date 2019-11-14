@@ -88,6 +88,7 @@ package object configservice {
   type NextToken                                = String
   type OrderingTimestamp                        = js.Date
   type OrganizationConfigRuleDetailedStatus     = js.Array[MemberAccountStatus]
+  type OrganizationConfigRuleName               = String
   type OrganizationConfigRuleNames              = js.Array[StringWithCharLimit64]
   type OrganizationConfigRuleStatuses           = js.Array[OrganizationConfigRuleStatus]
   type OrganizationConfigRuleTriggerType        = String
@@ -1636,13 +1637,13 @@ package configservice {
 
   @js.native
   trait DeleteOrganizationConfigRuleRequest extends js.Object {
-    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
   }
 
   object DeleteOrganizationConfigRuleRequest {
     @inline
     def apply(
-        OrganizationConfigRuleName: StringWithCharLimit64
+        OrganizationConfigRuleName: OrganizationConfigRuleName
     ): DeleteOrganizationConfigRuleRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
@@ -3346,7 +3347,7 @@ package configservice {
 
   @js.native
   trait GetOrganizationConfigRuleDetailedStatusRequest extends js.Object {
-    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
     var Filters: js.UndefOr[StatusDetailFilters]
     var Limit: js.UndefOr[CosmosPageLimit]
     var NextToken: js.UndefOr[String]
@@ -3355,7 +3356,7 @@ package configservice {
   object GetOrganizationConfigRuleDetailedStatusRequest {
     @inline
     def apply(
-        OrganizationConfigRuleName: StringWithCharLimit64,
+        OrganizationConfigRuleName: OrganizationConfigRuleName,
         Filters: js.UndefOr[StatusDetailFilters] = js.undefined,
         Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -3748,7 +3749,7 @@ package configservice {
   @js.native
   trait OrganizationConfigRule extends js.Object {
     var OrganizationConfigRuleArn: StringWithCharLimit256
-    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
     var LastUpdateTime: js.UndefOr[Date]
     var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
@@ -3759,7 +3760,7 @@ package configservice {
     @inline
     def apply(
         OrganizationConfigRuleArn: StringWithCharLimit256,
-        OrganizationConfigRuleName: StringWithCharLimit64,
+        OrganizationConfigRuleName: OrganizationConfigRuleName,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
         LastUpdateTime: js.UndefOr[Date] = js.undefined,
         OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
@@ -3787,7 +3788,7 @@ package configservice {
     */
   @js.native
   trait OrganizationConfigRuleStatus extends js.Object {
-    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
     var OrganizationRuleStatus: OrganizationRuleStatus
     var ErrorCode: js.UndefOr[String]
     var ErrorMessage: js.UndefOr[String]
@@ -3797,7 +3798,7 @@ package configservice {
   object OrganizationConfigRuleStatus {
     @inline
     def apply(
-        OrganizationConfigRuleName: StringWithCharLimit64,
+        OrganizationConfigRuleName: OrganizationConfigRuleName,
         OrganizationRuleStatus: OrganizationRuleStatus,
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -4169,7 +4170,7 @@ package configservice {
 
   @js.native
   trait PutOrganizationConfigRuleRequest extends js.Object {
-    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
     var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
     var OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata]
@@ -4178,7 +4179,7 @@ package configservice {
   object PutOrganizationConfigRuleRequest {
     @inline
     def apply(
-        OrganizationConfigRuleName: StringWithCharLimit64,
+        OrganizationConfigRuleName: OrganizationConfigRuleName,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
         OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
         OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata] = js.undefined

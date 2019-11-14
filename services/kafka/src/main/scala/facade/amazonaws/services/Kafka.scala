@@ -73,6 +73,8 @@ package object kafka {
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
+    @inline def updateBrokerCountFuture(params: UpdateBrokerCountRequest): Future[UpdateBrokerCountResponse] =
+      service.updateBrokerCount(params).promise.toFuture
     @inline def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] =
       service.updateBrokerStorage(params).promise.toFuture
     @inline def updateClusterConfigurationFuture(
@@ -108,6 +110,7 @@ package kafka {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object]                               = js.native
+    def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse]       = js.native
     def updateBrokerStorage(params: UpdateBrokerStorageRequest): Request[UpdateBrokerStorageResponse] = js.native
     def updateClusterConfiguration(
         params: UpdateClusterConfigurationRequest
@@ -115,7 +118,8 @@ package kafka {
   }
 
   /**
-    *             The distribution of broker nodes across Availability Zones. By default, broker nodes are distributed among three Availability Zones. Currently, the only supported value is DEFAULT. You can either specify this value explicitly or leave it out.
+    *             The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.
+    *          Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
     *
     */
   object BrokerAZDistributionEnum {
@@ -1366,6 +1370,49 @@ package kafka {
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBrokerCountRequest extends js.Object {
+    var ClusterArn: __string
+    var CurrentVersion: __string
+    var TargetNumberOfBrokerNodes: __integerMin1Max15
+  }
+
+  object UpdateBrokerCountRequest {
+    @inline
+    def apply(
+        ClusterArn: __string,
+        CurrentVersion: __string,
+        TargetNumberOfBrokerNodes: __integerMin1Max15
+    ): UpdateBrokerCountRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
+        "TargetNumberOfBrokerNodes" -> TargetNumberOfBrokerNodes.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateBrokerCountRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBrokerCountResponse extends js.Object {
+    var ClusterArn: js.UndefOr[__string]
+    var ClusterOperationArn: js.UndefOr[__string]
+  }
+
+  object UpdateBrokerCountResponse {
+    @inline
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterOperationArn: js.UndefOr[__string] = js.undefined
+    ): UpdateBrokerCountResponse = {
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBrokerCountResponse]
     }
   }
 

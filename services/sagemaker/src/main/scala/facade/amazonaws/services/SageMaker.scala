@@ -6053,8 +6053,13 @@ package sagemaker {
     val `ml.eia1.medium` = "ml.eia1.medium"
     val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
+    val `ml.eia2.medium` = "ml.eia2.medium"
+    val `ml.eia2.large`  = "ml.eia2.large"
+    val `ml.eia2.xlarge` = "ml.eia2.xlarge"
 
-    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`))
+    val values = js.Object.freeze(
+      js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
+    )
   }
 
   object NotebookInstanceLifecycleConfigSortKeyEnum {
@@ -6458,43 +6463,78 @@ package sagemaker {
     val `ml.eia1.medium` = "ml.eia1.medium"
     val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
+    val `ml.eia2.medium` = "ml.eia2.medium"
+    val `ml.eia2.large`  = "ml.eia2.large"
+    val `ml.eia2.xlarge` = "ml.eia2.xlarge"
 
-    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`))
+    val values = js.Object.freeze(
+      js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
+    )
   }
 
   object ProductionVariantInstanceTypeEnum {
-    val `ml.t2.medium`   = "ml.t2.medium"
-    val `ml.t2.large`    = "ml.t2.large"
-    val `ml.t2.xlarge`   = "ml.t2.xlarge"
-    val `ml.t2.2xlarge`  = "ml.t2.2xlarge"
-    val `ml.m4.xlarge`   = "ml.m4.xlarge"
-    val `ml.m4.2xlarge`  = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge`  = "ml.m4.4xlarge"
-    val `ml.m4.10xlarge` = "ml.m4.10xlarge"
-    val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.m5.large`    = "ml.m5.large"
-    val `ml.m5.xlarge`   = "ml.m5.xlarge"
-    val `ml.m5.2xlarge`  = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge`  = "ml.m5.4xlarge"
-    val `ml.m5.12xlarge` = "ml.m5.12xlarge"
-    val `ml.m5.24xlarge` = "ml.m5.24xlarge"
-    val `ml.c4.large`    = "ml.c4.large"
-    val `ml.c4.xlarge`   = "ml.c4.xlarge"
-    val `ml.c4.2xlarge`  = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge`  = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge`  = "ml.c4.8xlarge"
-    val `ml.p2.xlarge`   = "ml.p2.xlarge"
-    val `ml.p2.8xlarge`  = "ml.p2.8xlarge"
-    val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge`  = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge`  = "ml.p3.8xlarge"
-    val `ml.p3.16xlarge` = "ml.p3.16xlarge"
-    val `ml.c5.large`    = "ml.c5.large"
-    val `ml.c5.xlarge`   = "ml.c5.xlarge"
-    val `ml.c5.2xlarge`  = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge`  = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
-    val `ml.c5.18xlarge` = "ml.c5.18xlarge"
+    val `ml.t2.medium`     = "ml.t2.medium"
+    val `ml.t2.large`      = "ml.t2.large"
+    val `ml.t2.xlarge`     = "ml.t2.xlarge"
+    val `ml.t2.2xlarge`    = "ml.t2.2xlarge"
+    val `ml.m4.xlarge`     = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`    = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`    = "ml.m4.4xlarge"
+    val `ml.m4.10xlarge`   = "ml.m4.10xlarge"
+    val `ml.m4.16xlarge`   = "ml.m4.16xlarge"
+    val `ml.m5.large`      = "ml.m5.large"
+    val `ml.m5.xlarge`     = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`    = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`    = "ml.m5.4xlarge"
+    val `ml.m5.12xlarge`   = "ml.m5.12xlarge"
+    val `ml.m5.24xlarge`   = "ml.m5.24xlarge"
+    val `ml.m5d.large`     = "ml.m5d.large"
+    val `ml.m5d.xlarge`    = "ml.m5d.xlarge"
+    val `ml.m5d.2xlarge`   = "ml.m5d.2xlarge"
+    val `ml.m5d.4xlarge`   = "ml.m5d.4xlarge"
+    val `ml.m5d.12xlarge`  = "ml.m5d.12xlarge"
+    val `ml.m5d.24xlarge`  = "ml.m5d.24xlarge"
+    val `ml.c4.large`      = "ml.c4.large"
+    val `ml.c4.xlarge`     = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`    = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`    = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`    = "ml.c4.8xlarge"
+    val `ml.p2.xlarge`     = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`    = "ml.p2.8xlarge"
+    val `ml.p2.16xlarge`   = "ml.p2.16xlarge"
+    val `ml.p3.2xlarge`    = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`    = "ml.p3.8xlarge"
+    val `ml.p3.16xlarge`   = "ml.p3.16xlarge"
+    val `ml.c5.large`      = "ml.c5.large"
+    val `ml.c5.xlarge`     = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`    = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`    = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`    = "ml.c5.9xlarge"
+    val `ml.c5.18xlarge`   = "ml.c5.18xlarge"
+    val `ml.c5d.large`     = "ml.c5d.large"
+    val `ml.c5d.xlarge`    = "ml.c5d.xlarge"
+    val `ml.c5d.2xlarge`   = "ml.c5d.2xlarge"
+    val `ml.c5d.4xlarge`   = "ml.c5d.4xlarge"
+    val `ml.c5d.9xlarge`   = "ml.c5d.9xlarge"
+    val `ml.c5d.18xlarge`  = "ml.c5d.18xlarge"
+    val `ml.g4dn.xlarge`   = "ml.g4dn.xlarge"
+    val `ml.g4dn.2xlarge`  = "ml.g4dn.2xlarge"
+    val `ml.g4dn.4xlarge`  = "ml.g4dn.4xlarge"
+    val `ml.g4dn.8xlarge`  = "ml.g4dn.8xlarge"
+    val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge"
+    val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge"
+    val `ml.r5.large`      = "ml.r5.large"
+    val `ml.r5.xlarge`     = "ml.r5.xlarge"
+    val `ml.r5.2xlarge`    = "ml.r5.2xlarge"
+    val `ml.r5.4xlarge`    = "ml.r5.4xlarge"
+    val `ml.r5.12xlarge`   = "ml.r5.12xlarge"
+    val `ml.r5.24xlarge`   = "ml.r5.24xlarge"
+    val `ml.r5d.large`     = "ml.r5d.large"
+    val `ml.r5d.xlarge`    = "ml.r5d.xlarge"
+    val `ml.r5d.2xlarge`   = "ml.r5d.2xlarge"
+    val `ml.r5d.4xlarge`   = "ml.r5d.4xlarge"
+    val `ml.r5d.12xlarge`  = "ml.r5d.12xlarge"
+    val `ml.r5d.24xlarge`  = "ml.r5d.24xlarge"
 
     val values = js.Object.freeze(
       js.Array(
@@ -6513,6 +6553,12 @@ package sagemaker {
         `ml.m5.4xlarge`,
         `ml.m5.12xlarge`,
         `ml.m5.24xlarge`,
+        `ml.m5d.large`,
+        `ml.m5d.xlarge`,
+        `ml.m5d.2xlarge`,
+        `ml.m5d.4xlarge`,
+        `ml.m5d.12xlarge`,
+        `ml.m5d.24xlarge`,
         `ml.c4.large`,
         `ml.c4.xlarge`,
         `ml.c4.2xlarge`,
@@ -6529,7 +6575,31 @@ package sagemaker {
         `ml.c5.2xlarge`,
         `ml.c5.4xlarge`,
         `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`
+        `ml.c5.18xlarge`,
+        `ml.c5d.large`,
+        `ml.c5d.xlarge`,
+        `ml.c5d.2xlarge`,
+        `ml.c5d.4xlarge`,
+        `ml.c5d.9xlarge`,
+        `ml.c5d.18xlarge`,
+        `ml.g4dn.xlarge`,
+        `ml.g4dn.2xlarge`,
+        `ml.g4dn.4xlarge`,
+        `ml.g4dn.8xlarge`,
+        `ml.g4dn.12xlarge`,
+        `ml.g4dn.16xlarge`,
+        `ml.r5.large`,
+        `ml.r5.xlarge`,
+        `ml.r5.2xlarge`,
+        `ml.r5.4xlarge`,
+        `ml.r5.12xlarge`,
+        `ml.r5.24xlarge`,
+        `ml.r5d.large`,
+        `ml.r5d.xlarge`,
+        `ml.r5d.2xlarge`,
+        `ml.r5d.4xlarge`,
+        `ml.r5d.12xlarge`,
+        `ml.r5d.24xlarge`
       )
     )
   }
@@ -7445,12 +7515,12 @@ package sagemaker {
     val `ml.p3.2xlarge`    = "ml.p3.2xlarge"
     val `ml.p3.8xlarge`    = "ml.p3.8xlarge"
     val `ml.p3.16xlarge`   = "ml.p3.16xlarge"
+    val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge"
     val `ml.c5.xlarge`     = "ml.c5.xlarge"
     val `ml.c5.2xlarge`    = "ml.c5.2xlarge"
     val `ml.c5.4xlarge`    = "ml.c5.4xlarge"
     val `ml.c5.9xlarge`    = "ml.c5.9xlarge"
     val `ml.c5.18xlarge`   = "ml.c5.18xlarge"
-    val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge"
 
     val values = js.Object.freeze(
       js.Array(
@@ -7475,12 +7545,12 @@ package sagemaker {
         `ml.p3.2xlarge`,
         `ml.p3.8xlarge`,
         `ml.p3.16xlarge`,
+        `ml.p3dn.24xlarge`,
         `ml.c5.xlarge`,
         `ml.c5.2xlarge`,
         `ml.c5.4xlarge`,
         `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.p3dn.24xlarge`
+        `ml.c5.18xlarge`
       )
     )
   }

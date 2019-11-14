@@ -85,6 +85,8 @@ package object pinpointemail {
   type TagKeyList      = js.Array[TagKey]
   type TagList         = js.Array[Tag]
   type TagValue        = String
+  type TemplateArn     = String
+  type TemplateData    = String
   type Timestamp       = js.Date
   type TlsPolicy       = String
   type Volume          = Double
@@ -1171,17 +1173,20 @@ package pinpointemail {
   trait EmailContent extends js.Object {
     var Raw: js.UndefOr[RawMessage]
     var Simple: js.UndefOr[Message]
+    var Template: js.UndefOr[Template]
   }
 
   object EmailContent {
     @inline
     def apply(
         Raw: js.UndefOr[RawMessage] = js.undefined,
-        Simple: js.UndefOr[Message] = js.undefined
+        Simple: js.UndefOr[Message] = js.undefined,
+        Template: js.UndefOr[Template] = js.undefined
     ): EmailContent = {
       val __obj = js.Dynamic.literal()
       Raw.foreach(__v => __obj.updateDynamic("Raw")(__v.asInstanceOf[js.Any]))
       Simple.foreach(__v => __obj.updateDynamic("Simple")(__v.asInstanceOf[js.Any]))
+      Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailContent]
     }
   }
@@ -3057,8 +3062,27 @@ package pinpointemail {
     }
   }
 
+  @js.native
+  trait Template extends js.Object {
+    var TemplateArn: js.UndefOr[TemplateArn]
+    var TemplateData: js.UndefOr[TemplateData]
+  }
+
+  object Template {
+    @inline
+    def apply(
+        TemplateArn: js.UndefOr[TemplateArn] = js.undefined,
+        TemplateData: js.UndefOr[TemplateData] = js.undefined
+    ): Template = {
+      val __obj = js.Dynamic.literal()
+      TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
+      TemplateData.foreach(__v => __obj.updateDynamic("TemplateData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Template]
+    }
+  }
+
   /**
-    * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon Pinpoint rejects emails that weren't received over TLS. If the parameter is set to <code>Optional</code>, then Amazon Pinpoint accepts emails that weren't received over TLS. The default value is <code>Optional</code>.
+    * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
     */
   object TlsPolicyEnum {
     val REQUIRE  = "REQUIRE"

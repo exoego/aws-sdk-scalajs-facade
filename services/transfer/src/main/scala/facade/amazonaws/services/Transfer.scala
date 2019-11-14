@@ -8,38 +8,42 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object transfer {
-  type Arn                  = String
-  type DateImported         = js.Date
-  type EndpointType         = String
-  type HomeDirectory        = String
-  type HostKey              = String
-  type HostKeyFingerprint   = String
-  type IdentityProviderType = String
-  type ListedServers        = js.Array[ListedServer]
-  type ListedUsers          = js.Array[ListedUser]
-  type MaxResults           = Int
-  type Message              = String
-  type NextToken            = String
-  type NullableRole         = String
-  type Policy               = String
-  type Response             = String
-  type Role                 = String
-  type ServerId             = String
-  type SshPublicKeyBody     = String
-  type SshPublicKeyCount    = Int
-  type SshPublicKeyId       = String
-  type SshPublicKeys        = js.Array[SshPublicKey]
-  type State                = String
-  type StatusCode           = Int
-  type TagKey               = String
-  type TagKeys              = js.Array[TagKey]
-  type TagValue             = String
-  type Tags                 = js.Array[Tag]
-  type Url                  = String
-  type UserCount            = Int
-  type UserName             = String
-  type UserPassword         = String
-  type VpcEndpointId        = String
+  type Arn                   = String
+  type DateImported          = js.Date
+  type EndpointType          = String
+  type HomeDirectory         = String
+  type HomeDirectoryMappings = js.Array[HomeDirectoryMapEntry]
+  type HomeDirectoryType     = String
+  type HostKey               = String
+  type HostKeyFingerprint    = String
+  type IdentityProviderType  = String
+  type ListedServers         = js.Array[ListedServer]
+  type ListedUsers           = js.Array[ListedUser]
+  type MapEntry              = String
+  type MapTarget             = String
+  type MaxResults            = Int
+  type Message               = String
+  type NextToken             = String
+  type NullableRole          = String
+  type Policy                = String
+  type Response              = String
+  type Role                  = String
+  type ServerId              = String
+  type SshPublicKeyBody      = String
+  type SshPublicKeyCount     = Int
+  type SshPublicKeyId        = String
+  type SshPublicKeys         = js.Array[SshPublicKey]
+  type State                 = String
+  type StatusCode            = Int
+  type TagKey                = String
+  type TagKeys               = js.Array[TagKey]
+  type TagValue              = String
+  type Tags                  = js.Array[Tag]
+  type Url                   = String
+  type UserCount             = Int
+  type UserName              = String
+  type UserPassword          = String
+  type VpcEndpointId         = String
 
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
     @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
@@ -165,6 +169,8 @@ package transfer {
     var ServerId: ServerId
     var UserName: UserName
     var HomeDirectory: js.UndefOr[HomeDirectory]
+    var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
+    var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
     var SshPublicKeyBody: js.UndefOr[SshPublicKeyBody]
     var Tags: js.UndefOr[Tags]
@@ -177,6 +183,8 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+        HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
+        HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
         SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -188,6 +196,8 @@ package transfer {
       )
 
       HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       SshPublicKeyBody.foreach(__v => __obj.updateDynamic("SshPublicKeyBody")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -415,6 +425,8 @@ package transfer {
   trait DescribedUser extends js.Object {
     var Arn: Arn
     var HomeDirectory: js.UndefOr[HomeDirectory]
+    var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
+    var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
     var Role: js.UndefOr[Role]
     var SshPublicKeys: js.UndefOr[SshPublicKeys]
@@ -427,6 +439,8 @@ package transfer {
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+        HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
+        HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         SshPublicKeys: js.UndefOr[SshPublicKeys] = js.undefined,
@@ -438,6 +452,8 @@ package transfer {
       )
 
       HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SshPublicKeys.foreach(__v => __obj.updateDynamic("SshPublicKeys")(__v.asInstanceOf[js.Any]))
@@ -471,6 +487,37 @@ package transfer {
     val VPC_ENDPOINT = "VPC_ENDPOINT"
 
     val values = js.Object.freeze(js.Array(PUBLIC, VPC_ENDPOINT))
+  }
+
+  /**
+    * Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.
+    */
+  @js.native
+  trait HomeDirectoryMapEntry extends js.Object {
+    var Entry: MapEntry
+    var Target: MapTarget
+  }
+
+  object HomeDirectoryMapEntry {
+    @inline
+    def apply(
+        Entry: MapEntry,
+        Target: MapTarget
+    ): HomeDirectoryMapEntry = {
+      val __obj = js.Dynamic.literal(
+        "Entry"  -> Entry.asInstanceOf[js.Any],
+        "Target" -> Target.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HomeDirectoryMapEntry]
+    }
+  }
+
+  object HomeDirectoryTypeEnum {
+    val PATH    = "PATH"
+    val LOGICAL = "LOGICAL"
+
+    val values = js.Object.freeze(js.Array(PATH, LOGICAL))
   }
 
   /**
@@ -736,6 +783,7 @@ package transfer {
   trait ListedUser extends js.Object {
     var Arn: Arn
     var HomeDirectory: js.UndefOr[HomeDirectory]
+    var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Role: js.UndefOr[Role]
     var SshPublicKeyCount: js.UndefOr[SshPublicKeyCount]
     var UserName: js.UndefOr[UserName]
@@ -746,6 +794,7 @@ package transfer {
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+        HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         SshPublicKeyCount: js.UndefOr[SshPublicKeyCount] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
@@ -755,6 +804,7 @@ package transfer {
       )
 
       HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SshPublicKeyCount.foreach(__v => __obj.updateDynamic("SshPublicKeyCount")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -1013,6 +1063,8 @@ package transfer {
     var ServerId: ServerId
     var UserName: UserName
     var HomeDirectory: js.UndefOr[HomeDirectory]
+    var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
+    var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
     var Role: js.UndefOr[Role]
   }
@@ -1023,6 +1075,8 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+        HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
+        HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateUserRequest = {
@@ -1032,6 +1086,8 @@ package transfer {
       )
 
       HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
+      HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]

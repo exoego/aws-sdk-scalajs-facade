@@ -27,7 +27,6 @@ package object support {
   type CommunicationList                    = js.Array[Communication]
   type Data                                 = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DisplayId                            = String
-  type ErrorMessage                         = String
   type ExpiryTime                           = String
   type FileName                             = String
   type IncludeCommunications                = Boolean
@@ -273,54 +272,6 @@ package support {
   }
 
   /**
-    * An attachment with the specified ID could not be found.
-    */
-  @js.native
-  trait AttachmentIdNotFoundException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The limit for the number of attachment sets created in a short period of time has been exceeded.
-    */
-  @js.native
-  trait AttachmentLimitExceededException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The expiration time of the attachment set has passed. The set expires 1 hour after it is created.
-    */
-  @js.native
-  trait AttachmentSetExpiredException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * An attachment set with the specified ID could not be found.
-    */
-  @js.native
-  trait AttachmentSetIdNotFoundException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * A limit for the size of an attachment set has been exceeded. The limits are 3 attachments and 5 MB per attachment.
-    */
-  @js.native
-  trait AttachmentSetSizeLimitExceededException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The case creation limit for the account has been exceeded.
-    */
-  @js.native
-  trait CaseCreationLimitExceededException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
     * * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
     *  * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
@@ -329,8 +280,8 @@ package support {
     *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
     *  * ```nextToken.``` A resumption point for pagination.
     *  * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
-    *  * ```severityCode. ```The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.
-    *  * ```status.``` The status of the case in the AWS Support Center.
+    *  * ```severityCode.``` The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.
+    *  * ```status.``` The status of the case in the AWS Support Center. The possible values are: <code>resolved</code>, <code>pending-customer-action</code>, <code>opened</code>, <code>unassigned</code>, and <code>work-in-progress</code>.
     *  * ```subject.``` The subject line of the case.
     *  * ```submittedBy.``` The email address of the account that submitted the case.
     *  * ```timeCreated.``` The time the case was created, in ISO-8601 format.
@@ -385,14 +336,6 @@ package support {
   }
 
   /**
-    * The requested <code>caseId</code> could not be located.
-    */
-  @js.native
-  trait CaseIdNotFoundException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.
     */
   @js.native
@@ -415,7 +358,7 @@ package support {
   }
 
   /**
-    * A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the account email address, and the date and time of the communication.
+    * A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.
     */
   @js.native
   trait Communication extends js.Object {
@@ -445,9 +388,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateCaseRequest extends js.Object {
     var communicationBody: CommunicationBody
@@ -509,14 +449,6 @@ package support {
     }
   }
 
-  /**
-    * The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.
-    */
-  @js.native
-  trait DescribeAttachmentLimitExceededException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   trait DescribeAttachmentRequest extends js.Object {
     var attachmentId: AttachmentId
@@ -554,9 +486,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeCasesRequest extends js.Object {
     var afterTime: js.UndefOr[AfterTime]
@@ -619,9 +548,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeCommunicationsRequest extends js.Object {
     var caseId: CaseId
@@ -674,9 +600,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeServicesRequest extends js.Object {
     var language: js.UndefOr[Language]
@@ -715,9 +638,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeSeverityLevelsRequest extends js.Object {
     var language: js.UndefOr[Language]
@@ -838,9 +758,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeTrustedAdvisorCheckSummariesRequest extends js.Object {
     var checkIds: StringList
@@ -923,14 +840,6 @@ package support {
   }
 
   /**
-    * An internal server error occurred.
-    */
-  @js.native
-  trait InternalServerErrorException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * The five most recent communications associated with the case.
     */
   @js.native
@@ -994,9 +903,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ResolveCaseRequest extends js.Object {
     var caseId: js.UndefOr[CaseId]
@@ -1061,7 +967,7 @@ package support {
   }
 
   /**
-    * A code and name pair that represent a severity level that can be applied to a support case.
+    * A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity|Choosing a Severity]].
     */
   @js.native
   trait SeverityLevel extends js.Object {

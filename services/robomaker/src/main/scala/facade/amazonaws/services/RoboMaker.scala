@@ -41,10 +41,13 @@ package object robomaker {
   type MaxResults                         = Int
   type Name                               = String
   type NonEmptyString                     = String
+  type NonSystemPort                      = Int
   type PaginationToken                    = String
   type Path                               = String
   type PercentDone                        = Float
   type Percentage                         = Int
+  type Port                               = Int
+  type PortMappingList                    = js.Array[PortMapping]
   type RenderingEngineType                = String
   type RenderingEngineVersionType         = String
   type RevisionId                         = String
@@ -1105,6 +1108,7 @@ package robomaker {
   @js.native
   trait DeploymentConfig extends js.Object {
     var concurrentDeploymentPercentage: js.UndefOr[Percentage]
+    var downloadConditionFile: js.UndefOr[S3Object]
     var failureThresholdPercentage: js.UndefOr[Percentage]
     var robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout]
   }
@@ -1113,6 +1117,7 @@ package robomaker {
     @inline
     def apply(
         concurrentDeploymentPercentage: js.UndefOr[Percentage] = js.undefined,
+        downloadConditionFile: js.UndefOr[S3Object] = js.undefined,
         failureThresholdPercentage: js.UndefOr[Percentage] = js.undefined,
         robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout] = js.undefined
     ): DeploymentConfig = {
@@ -1120,6 +1125,7 @@ package robomaker {
       concurrentDeploymentPercentage.foreach(
         __v => __obj.updateDynamic("concurrentDeploymentPercentage")(__v.asInstanceOf[js.Any])
       )
+      downloadConditionFile.foreach(__v => __obj.updateDynamic("downloadConditionFile")(__v.asInstanceOf[js.Any]))
       failureThresholdPercentage.foreach(
         __v => __obj.updateDynamic("failureThresholdPercentage")(__v.asInstanceOf[js.Any])
       )
@@ -1189,6 +1195,7 @@ package robomaker {
     val PreLaunchFileFailure                = "PreLaunchFileFailure"
     val PostLaunchFileFailure               = "PostLaunchFileFailure"
     val BadPermissionError                  = "BadPermissionError"
+    val DownloadConditionFailed             = "DownloadConditionFailed"
     val InternalServerError                 = "InternalServerError"
 
     val values = js.Object.freeze(
@@ -1209,6 +1216,7 @@ package robomaker {
         PreLaunchFileFailure,
         PostLaunchFileFailure,
         BadPermissionError,
+        DownloadConditionFailed,
         InternalServerError
       )
     )
@@ -1631,6 +1639,7 @@ package robomaker {
     var loggingConfig: js.UndefOr[LoggingConfig]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var name: js.UndefOr[Name]
+    var networkInterface: js.UndefOr[NetworkInterface]
     var outputLocation: js.UndefOr[OutputLocation]
     var robotApplications: js.UndefOr[RobotApplicationConfigs]
     var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
@@ -1655,6 +1664,7 @@ package robomaker {
         loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
+        networkInterface: js.UndefOr[NetworkInterface] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
         robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
         simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
@@ -1676,6 +1686,7 @@ package robomaker {
       loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
       maxJobDurationInSeconds.foreach(__v => __obj.updateDynamic("maxJobDurationInSeconds")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      networkInterface.foreach(__v => __obj.updateDynamic("networkInterface")(__v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
       robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
       simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
@@ -1758,6 +1769,7 @@ package robomaker {
     var launchFile: Command
     var packageName: Command
     var environmentVariables: js.UndefOr[EnvironmentVariableMap]
+    var portForwardingConfig: js.UndefOr[PortForwardingConfig]
   }
 
   object LaunchConfig {
@@ -1765,7 +1777,8 @@ package robomaker {
     def apply(
         launchFile: Command,
         packageName: Command,
-        environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined
+        environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined,
+        portForwardingConfig: js.UndefOr[PortForwardingConfig] = js.undefined
     ): LaunchConfig = {
       val __obj = js.Dynamic.literal(
         "launchFile"  -> launchFile.asInstanceOf[js.Any],
@@ -1773,6 +1786,7 @@ package robomaker {
       )
 
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      portForwardingConfig.foreach(__v => __obj.updateDynamic("portForwardingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchConfig]
     }
   }
@@ -2091,6 +2105,31 @@ package robomaker {
   }
 
   /**
+    * Describes a network interface.
+    */
+  @js.native
+  trait NetworkInterface extends js.Object {
+    var networkInterfaceId: js.UndefOr[GenericString]
+    var privateIpAddress: js.UndefOr[GenericString]
+    var publicIpAddress: js.UndefOr[GenericString]
+  }
+
+  object NetworkInterface {
+    @inline
+    def apply(
+        networkInterfaceId: js.UndefOr[GenericString] = js.undefined,
+        privateIpAddress: js.UndefOr[GenericString] = js.undefined,
+        publicIpAddress: js.UndefOr[GenericString] = js.undefined
+    ): NetworkInterface = {
+      val __obj = js.Dynamic.literal()
+      networkInterfaceId.foreach(__v => __obj.updateDynamic("networkInterfaceId")(__v.asInstanceOf[js.Any]))
+      privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
+      publicIpAddress.foreach(__v => __obj.updateDynamic("publicIpAddress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInterface]
+    }
+  }
+
+  /**
     * The output location.
     */
   @js.native
@@ -2109,6 +2148,52 @@ package robomaker {
       s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
       s3Prefix.foreach(__v => __obj.updateDynamic("s3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputLocation]
+    }
+  }
+
+  /**
+    * Configuration information for port forwarding.
+    */
+  @js.native
+  trait PortForwardingConfig extends js.Object {
+    var portMappings: js.UndefOr[PortMappingList]
+  }
+
+  object PortForwardingConfig {
+    @inline
+    def apply(
+        portMappings: js.UndefOr[PortMappingList] = js.undefined
+    ): PortForwardingConfig = {
+      val __obj = js.Dynamic.literal()
+      portMappings.foreach(__v => __obj.updateDynamic("portMappings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortForwardingConfig]
+    }
+  }
+
+  /**
+    * An object representing a port mapping.
+    */
+  @js.native
+  trait PortMapping extends js.Object {
+    var applicationPort: NonSystemPort
+    var jobPort: Port
+    var enableOnPublicIp: js.UndefOr[Boolean]
+  }
+
+  object PortMapping {
+    @inline
+    def apply(
+        applicationPort: NonSystemPort,
+        jobPort: Port,
+        enableOnPublicIp: js.UndefOr[Boolean] = js.undefined
+    ): PortMapping = {
+      val __obj = js.Dynamic.literal(
+        "applicationPort" -> applicationPort.asInstanceOf[js.Any],
+        "jobPort"         -> jobPort.asInstanceOf[js.Any]
+      )
+
+      enableOnPublicIp.foreach(__v => __obj.updateDynamic("enableOnPublicIp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortMapping]
     }
   }
 
@@ -2380,15 +2465,24 @@ package robomaker {
   }
 
   object RobotDeploymentStepEnum {
-    val Validating            = "Validating"
-    val DownloadingExtracting = "DownloadingExtracting"
-    val ExecutingPreLaunch    = "ExecutingPreLaunch"
-    val Launching             = "Launching"
-    val ExecutingPostLaunch   = "ExecutingPostLaunch"
-    val Finished              = "Finished"
+    val Validating                 = "Validating"
+    val DownloadingExtracting      = "DownloadingExtracting"
+    val ExecutingDownloadCondition = "ExecutingDownloadCondition"
+    val ExecutingPreLaunch         = "ExecutingPreLaunch"
+    val Launching                  = "Launching"
+    val ExecutingPostLaunch        = "ExecutingPostLaunch"
+    val Finished                   = "Finished"
 
     val values = js.Object.freeze(
-      js.Array(Validating, DownloadingExtracting, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
+      js.Array(
+        Validating,
+        DownloadingExtracting,
+        ExecutingDownloadCondition,
+        ExecutingPreLaunch,
+        Launching,
+        ExecutingPostLaunch,
+        Finished
+      )
     )
   }
 
@@ -2415,16 +2509,18 @@ package robomaker {
   }
 
   object RobotSoftwareSuiteTypeEnum {
-    val ROS = "ROS"
+    val ROS  = "ROS"
+    val ROS2 = "ROS2"
 
-    val values = js.Object.freeze(js.Array(ROS))
+    val values = js.Object.freeze(js.Array(ROS, ROS2))
   }
 
   object RobotSoftwareSuiteVersionTypeEnum {
     val Kinetic = "Kinetic"
     val Melodic = "Melodic"
+    val Dashing = "Dashing"
 
-    val values = js.Object.freeze(js.Array(Kinetic, Melodic))
+    val values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
   }
 
   object RobotStatusEnum {
@@ -2459,6 +2555,33 @@ package robomaker {
       etag.foreach(__v => __obj.updateDynamic("etag")(__v.asInstanceOf[js.Any]))
       s3Key.foreach(__v => __obj.updateDynamic("s3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3KeyOutput]
+    }
+  }
+
+  /**
+    * Information about an S3 object.
+    */
+  @js.native
+  trait S3Object extends js.Object {
+    var bucket: S3Bucket
+    var key: S3Key
+    var etag: js.UndefOr[S3Etag]
+  }
+
+  object S3Object {
+    @inline
+    def apply(
+        bucket: S3Bucket,
+        key: S3Key,
+        etag: js.UndefOr[S3Etag] = js.undefined
+    ): S3Object = {
+      val __obj = js.Dynamic.literal(
+        "bucket" -> bucket.asInstanceOf[js.Any],
+        "key"    -> key.asInstanceOf[js.Any]
+      )
+
+      etag.foreach(__v => __obj.updateDynamic("etag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Object]
     }
   }
 
@@ -2540,6 +2663,7 @@ package robomaker {
     var loggingConfig: js.UndefOr[LoggingConfig]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var name: js.UndefOr[Name]
+    var networkInterface: js.UndefOr[NetworkInterface]
     var outputLocation: js.UndefOr[OutputLocation]
     var robotApplications: js.UndefOr[RobotApplicationConfigs]
     var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
@@ -2564,6 +2688,7 @@ package robomaker {
         loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
+        networkInterface: js.UndefOr[NetworkInterface] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
         robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
         simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
@@ -2585,6 +2710,7 @@ package robomaker {
       loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
       maxJobDurationInSeconds.foreach(__v => __obj.updateDynamic("maxJobDurationInSeconds")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      networkInterface.foreach(__v => __obj.updateDynamic("networkInterface")(__v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
       robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
       simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))

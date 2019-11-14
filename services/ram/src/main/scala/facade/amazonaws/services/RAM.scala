@@ -62,6 +62,9 @@ package object ram {
     ): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise.toFuture
     @inline def getResourceSharesFuture(params: GetResourceSharesRequest): Future[GetResourceSharesResponse] =
       service.getResourceShares(params).promise.toFuture
+    @inline def listPendingInvitationResourcesFuture(
+        params: ListPendingInvitationResourcesRequest
+    ): Future[ListPendingInvitationResourcesResponse] = service.listPendingInvitationResources(params).promise.toFuture
     @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] =
       service.listPrincipals(params).promise.toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
@@ -105,8 +108,11 @@ package ram {
         params: GetResourceShareInvitationsRequest
     ): Request[GetResourceShareInvitationsResponse]                                             = js.native
     def getResourceShares(params: GetResourceSharesRequest): Request[GetResourceSharesResponse] = js.native
-    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse]          = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]             = js.native
+    def listPendingInvitationResources(
+        params: ListPendingInvitationResourcesRequest
+    ): Request[ListPendingInvitationResourcesResponse]                                 = js.native
+    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse] = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]    = js.native
     def rejectResourceShareInvitation(
         params: RejectResourceShareInvitationRequest
     ): Request[RejectResourceShareInvitationResponse]                                                 = js.native
@@ -577,6 +583,49 @@ package ram {
   }
 
   @js.native
+  trait ListPendingInvitationResourcesRequest extends js.Object {
+    var resourceShareInvitationArn: String
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListPendingInvitationResourcesRequest {
+    @inline
+    def apply(
+        resourceShareInvitationArn: String,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListPendingInvitationResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPendingInvitationResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListPendingInvitationResourcesResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var resources: js.UndefOr[ResourceList]
+  }
+
+  object ListPendingInvitationResourcesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        resources: js.UndefOr[ResourceList] = js.undefined
+    ): ListPendingInvitationResourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPendingInvitationResourcesResponse]
+    }
+  }
+
+  @js.native
   trait ListPrincipalsRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -855,6 +904,7 @@ package ram {
     var external: js.UndefOr[Boolean]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var resourceShareArn: js.UndefOr[String]
+    var resourceShareName: js.UndefOr[String]
     var status: js.UndefOr[ResourceShareAssociationStatus]
     var statusMessage: js.UndefOr[String]
   }
@@ -868,6 +918,7 @@ package ram {
         external: js.UndefOr[Boolean] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         resourceShareArn: js.UndefOr[String] = js.undefined,
+        resourceShareName: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined
     ): ResourceShareAssociation = {
@@ -878,6 +929,7 @@ package ram {
       external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
+      resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceShareAssociation]
@@ -969,8 +1021,10 @@ package ram {
     val ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE"
     val LIMIT_EXCEEDED              = "LIMIT_EXCEEDED"
     val UNAVAILABLE                 = "UNAVAILABLE"
+    val PENDING                     = "PENDING"
 
-    val values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE))
+    val values =
+      js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
   }
 
   /**

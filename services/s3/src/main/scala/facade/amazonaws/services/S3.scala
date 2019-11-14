@@ -78,6 +78,7 @@ package object s3 {
   type EmailAddress                    = String
   type EnableRequestProgress           = Boolean
   type EncodingType                    = String
+  type End                             = Double
   type Errors                          = js.Array[Error]
   type Event                           = String
   type EventList                       = js.Array[Event]
@@ -223,6 +224,7 @@ package object s3 {
   type Setting                           = Boolean
   type Size                              = Int
   type SseKmsEncryptedObjectsStatus      = String
+  type Start                             = Double
   type StartAfter                        = String
   type StorageClass                      = String
   type StorageClassAnalysisSchemaVersion = String
@@ -4068,16 +4070,17 @@ package s3 {
   }
 
   object InventoryOptionalFieldEnum {
-    val Size                      = "Size"
-    val LastModifiedDate          = "LastModifiedDate"
-    val StorageClass              = "StorageClass"
-    val ETag                      = "ETag"
-    val IsMultipartUploaded       = "IsMultipartUploaded"
-    val ReplicationStatus         = "ReplicationStatus"
-    val EncryptionStatus          = "EncryptionStatus"
-    val ObjectLockRetainUntilDate = "ObjectLockRetainUntilDate"
-    val ObjectLockMode            = "ObjectLockMode"
-    val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus"
+    val Size                         = "Size"
+    val LastModifiedDate             = "LastModifiedDate"
+    val StorageClass                 = "StorageClass"
+    val ETag                         = "ETag"
+    val IsMultipartUploaded          = "IsMultipartUploaded"
+    val ReplicationStatus            = "ReplicationStatus"
+    val EncryptionStatus             = "EncryptionStatus"
+    val ObjectLockRetainUntilDate    = "ObjectLockRetainUntilDate"
+    val ObjectLockMode               = "ObjectLockMode"
+    val ObjectLockLegalHoldStatus    = "ObjectLockLegalHoldStatus"
+    val IntelligentTieringAccessTier = "IntelligentTieringAccessTier"
 
     val values = js.Object.freeze(
       js.Array(
@@ -4090,7 +4093,8 @@ package s3 {
         EncryptionStatus,
         ObjectLockRetainUntilDate,
         ObjectLockMode,
-        ObjectLockLegalHoldStatus
+        ObjectLockLegalHoldStatus,
+        IntelligentTieringAccessTier
       )
     )
   }
@@ -7200,6 +7204,25 @@ package s3 {
     }
   }
 
+  @js.native
+  trait ScanRange extends js.Object {
+    var End: js.UndefOr[End]
+    var Start: js.UndefOr[Start]
+  }
+
+  object ScanRange {
+    @inline
+    def apply(
+        End: js.UndefOr[End] = js.undefined,
+        Start: js.UndefOr[Start] = js.undefined
+    ): ScanRange = {
+      val __obj = js.Dynamic.literal()
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanRange]
+    }
+  }
+
   /**
     * <p/>
     */
@@ -7262,6 +7285,7 @@ package s3 {
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var ScanRange: js.UndefOr[ScanRange]
   }
 
   object SelectObjectContentRequest {
@@ -7276,7 +7300,8 @@ package s3 {
         RequestProgress: js.UndefOr[RequestProgress] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
+        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        ScanRange: js.UndefOr[ScanRange] = js.undefined
     ): SelectObjectContentRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket"              -> Bucket.asInstanceOf[js.Any],
@@ -7291,6 +7316,7 @@ package s3 {
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
+      ScanRange.foreach(__v => __obj.updateDynamic("ScanRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelectObjectContentRequest]
     }
   }

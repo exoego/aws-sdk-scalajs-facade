@@ -89,6 +89,19 @@ package object medialive {
   type H264Syntax                                    = String
   type H264TemporalAq                                = String
   type H264TimecodeInsertionBehavior                 = String
+  type H265AdaptiveQuantization                      = String
+  type H265AlternativeTransferFunction               = String
+  type H265ColorMetadata                             = String
+  type H265FlickerAq                                 = String
+  type H265GopSizeUnits                              = String
+  type H265Level                                     = String
+  type H265LookAheadRateControl                      = String
+  type H265Profile                                   = String
+  type H265RateControlMode                           = String
+  type H265ScanType                                  = String
+  type H265SceneChangeDetect                         = String
+  type H265Tier                                      = String
+  type H265TimecodeInsertionBehavior                 = String
   type HlsAdMarkers                                  = String
   type HlsAkamaiHttpTransferMode                     = String
   type HlsCaptionLanguageSetting                     = String
@@ -154,6 +167,7 @@ package object medialive {
   type M3u8TimedMetadataBehavior                     = String
   type MaxResults                                    = Int
   type Mp2CodingMode                                 = String
+  type MsSmoothH265PackagingType                     = String
   type NetworkInputServerValidation                  = String
   type OfferingDurationUnits                         = String
   type OfferingType                                  = String
@@ -210,6 +224,7 @@ package object medialive {
   type __integerMin0Max15                            = Int
   type __integerMin0Max255                           = Int
   type __integerMin0Max30                            = Int
+  type __integerMin0Max32768                         = Int
   type __integerMin0Max3600                          = Int
   type __integerMin0Max500                           = Int
   type __integerMin0Max600                           = Int
@@ -219,11 +234,14 @@ package object medialive {
   type __integerMin0Max8191                          = Int
   type __integerMin1                                 = Int
   type __integerMin1000                              = Int
+  type __integerMin100000Max40000000                 = Int
+  type __integerMin100000Max80000000                 = Int
   type __integerMin1000Max30000                      = Int
   type __integerMin1Max10                            = Int
   type __integerMin1Max1000000                       = Int
   type __integerMin1Max16                            = Int
   type __integerMin1Max20                            = Int
+  type __integerMin1Max3003                          = Int
   type __integerMin1Max31                            = Int
   type __integerMin1Max32                            = Int
   type __integerMin1Max3600                          = Int
@@ -1841,6 +1859,22 @@ package medialive {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
+    }
+  }
+
+  /**
+    * Passthrough applies no color space conversion to the output
+    */
+  @js.native
+  trait ColorSpacePassthroughSettings extends js.Object {}
+
+  object ColorSpacePassthroughSettings {
+    @inline
+    def apply(
+        ): ColorSpacePassthroughSettings = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ColorSpacePassthroughSettings]
     }
   }
 
@@ -3661,6 +3695,33 @@ package medialive {
   }
 
   /**
+    * H264 Color Space Settings
+    */
+  @js.native
+  trait H264ColorSpaceSettings extends js.Object {
+    var ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings]
+    var Rec601Settings: js.UndefOr[Rec601Settings]
+    var Rec709Settings: js.UndefOr[Rec709Settings]
+  }
+
+  object H264ColorSpaceSettings {
+    @inline
+    def apply(
+        ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings] = js.undefined,
+        Rec601Settings: js.UndefOr[Rec601Settings] = js.undefined,
+        Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
+    ): H264ColorSpaceSettings = {
+      val __obj = js.Dynamic.literal()
+      ColorSpacePassthroughSettings.foreach(
+        __v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
+      )
+      Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
+      Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H264ColorSpaceSettings]
+    }
+  }
+
+  /**
     * H264 Entropy Encoding
     */
   object H264EntropyEncodingEnum {
@@ -3794,11 +3855,12 @@ package medialive {
     * H264 Rate Control Mode
     */
   object H264RateControlModeEnum {
-    val CBR  = "CBR"
-    val QVBR = "QVBR"
-    val VBR  = "VBR"
+    val CBR       = "CBR"
+    val MULTIPLEX = "MULTIPLEX"
+    val QVBR      = "QVBR"
+    val VBR       = "VBR"
 
-    val values = js.Object.freeze(js.Array(CBR, QVBR, VBR))
+    val values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR, VBR))
   }
 
   /**
@@ -3832,6 +3894,7 @@ package medialive {
     var BufFillPct: js.UndefOr[__integerMin0Max100]
     var BufSize: js.UndefOr[__integerMin0]
     var ColorMetadata: js.UndefOr[H264ColorMetadata]
+    var ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings]
     var EntropyEncoding: js.UndefOr[H264EntropyEncoding]
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H264FlickerAq]
@@ -3874,6 +3937,7 @@ package medialive {
         BufFillPct: js.UndefOr[__integerMin0Max100] = js.undefined,
         BufSize: js.UndefOr[__integerMin0] = js.undefined,
         ColorMetadata: js.UndefOr[H264ColorMetadata] = js.undefined,
+        ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings] = js.undefined,
         EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
         FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
         FlickerAq: js.UndefOr[H264FlickerAq] = js.undefined,
@@ -3913,6 +3977,7 @@ package medialive {
       BufFillPct.foreach(__v => __obj.updateDynamic("BufFillPct")(__v.asInstanceOf[js.Any]))
       BufSize.foreach(__v => __obj.updateDynamic("BufSize")(__v.asInstanceOf[js.Any]))
       ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
+      ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
       EntropyEncoding.foreach(__v => __obj.updateDynamic("EntropyEncoding")(__v.asInstanceOf[js.Any]))
       FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
       FlickerAq.foreach(__v => __obj.updateDynamic("FlickerAq")(__v.asInstanceOf[js.Any]))
@@ -3996,6 +4061,325 @@ package medialive {
     val PIC_TIMING_SEI = "PIC_TIMING_SEI"
 
     val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+  }
+
+  /**
+    * H265 Adaptive Quantization
+    */
+  object H265AdaptiveQuantizationEnum {
+    val HIGH   = "HIGH"
+    val HIGHER = "HIGHER"
+    val LOW    = "LOW"
+    val MAX    = "MAX"
+    val MEDIUM = "MEDIUM"
+    val OFF    = "OFF"
+
+    val values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
+  }
+
+  /**
+    * H265 Alternative Transfer Function
+    */
+  object H265AlternativeTransferFunctionEnum {
+    val INSERT = "INSERT"
+    val OMIT   = "OMIT"
+
+    val values = js.Object.freeze(js.Array(INSERT, OMIT))
+  }
+
+  /**
+    * H265 Color Metadata
+    */
+  object H265ColorMetadataEnum {
+    val IGNORE = "IGNORE"
+    val INSERT = "INSERT"
+
+    val values = js.Object.freeze(js.Array(IGNORE, INSERT))
+  }
+
+  /**
+    * H265 Color Space Settings
+    */
+  @js.native
+  trait H265ColorSpaceSettings extends js.Object {
+    var ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings]
+    var Hdr10Settings: js.UndefOr[Hdr10Settings]
+    var Rec601Settings: js.UndefOr[Rec601Settings]
+    var Rec709Settings: js.UndefOr[Rec709Settings]
+  }
+
+  object H265ColorSpaceSettings {
+    @inline
+    def apply(
+        ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings] = js.undefined,
+        Hdr10Settings: js.UndefOr[Hdr10Settings] = js.undefined,
+        Rec601Settings: js.UndefOr[Rec601Settings] = js.undefined,
+        Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
+    ): H265ColorSpaceSettings = {
+      val __obj = js.Dynamic.literal()
+      ColorSpacePassthroughSettings.foreach(
+        __v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
+      )
+      Hdr10Settings.foreach(__v => __obj.updateDynamic("Hdr10Settings")(__v.asInstanceOf[js.Any]))
+      Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
+      Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H265ColorSpaceSettings]
+    }
+  }
+
+  /**
+    * H265 Flicker Aq
+    */
+  object H265FlickerAqEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
+    * H265 Gop Size Units
+    */
+  object H265GopSizeUnitsEnum {
+    val FRAMES  = "FRAMES"
+    val SECONDS = "SECONDS"
+
+    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+  }
+
+  /**
+    * H265 Level
+    */
+  object H265LevelEnum {
+    val H265_LEVEL_1    = "H265_LEVEL_1"
+    val H265_LEVEL_2    = "H265_LEVEL_2"
+    val H265_LEVEL_2_1  = "H265_LEVEL_2_1"
+    val H265_LEVEL_3    = "H265_LEVEL_3"
+    val H265_LEVEL_3_1  = "H265_LEVEL_3_1"
+    val H265_LEVEL_4    = "H265_LEVEL_4"
+    val H265_LEVEL_4_1  = "H265_LEVEL_4_1"
+    val H265_LEVEL_5    = "H265_LEVEL_5"
+    val H265_LEVEL_5_1  = "H265_LEVEL_5_1"
+    val H265_LEVEL_5_2  = "H265_LEVEL_5_2"
+    val H265_LEVEL_6    = "H265_LEVEL_6"
+    val H265_LEVEL_6_1  = "H265_LEVEL_6_1"
+    val H265_LEVEL_6_2  = "H265_LEVEL_6_2"
+    val H265_LEVEL_AUTO = "H265_LEVEL_AUTO"
+
+    val values = js.Object.freeze(
+      js.Array(
+        H265_LEVEL_1,
+        H265_LEVEL_2,
+        H265_LEVEL_2_1,
+        H265_LEVEL_3,
+        H265_LEVEL_3_1,
+        H265_LEVEL_4,
+        H265_LEVEL_4_1,
+        H265_LEVEL_5,
+        H265_LEVEL_5_1,
+        H265_LEVEL_5_2,
+        H265_LEVEL_6,
+        H265_LEVEL_6_1,
+        H265_LEVEL_6_2,
+        H265_LEVEL_AUTO
+      )
+    )
+  }
+
+  /**
+    * H265 Look Ahead Rate Control
+    */
+  object H265LookAheadRateControlEnum {
+    val HIGH   = "HIGH"
+    val LOW    = "LOW"
+    val MEDIUM = "MEDIUM"
+
+    val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
+  }
+
+  /**
+    * H265 Profile
+    */
+  object H265ProfileEnum {
+    val MAIN       = "MAIN"
+    val MAIN_10BIT = "MAIN_10BIT"
+
+    val values = js.Object.freeze(js.Array(MAIN, MAIN_10BIT))
+  }
+
+  /**
+    * H265 Rate Control Mode
+    */
+  object H265RateControlModeEnum {
+    val CBR  = "CBR"
+    val QVBR = "QVBR"
+
+    val values = js.Object.freeze(js.Array(CBR, QVBR))
+  }
+
+  /**
+    * H265 Scan Type
+    */
+  object H265ScanTypeEnum {
+    val PROGRESSIVE = "PROGRESSIVE"
+
+    val values = js.Object.freeze(js.Array(PROGRESSIVE))
+  }
+
+  /**
+    * H265 Scene Change Detect
+    */
+  object H265SceneChangeDetectEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
+    * H265 Settings
+    */
+  @js.native
+  trait H265Settings extends js.Object {
+    var FramerateDenominator: __integerMin1Max3003
+    var FramerateNumerator: __integerMin1
+    var AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization]
+    var AfdSignaling: js.UndefOr[AfdSignaling]
+    var AlternativeTransferFunction: js.UndefOr[H265AlternativeTransferFunction]
+    var Bitrate: js.UndefOr[__integerMin100000Max40000000]
+    var BufSize: js.UndefOr[__integerMin100000Max80000000]
+    var ColorMetadata: js.UndefOr[H265ColorMetadata]
+    var ColorSpaceSettings: js.UndefOr[H265ColorSpaceSettings]
+    var FixedAfd: js.UndefOr[FixedAfd]
+    var FlickerAq: js.UndefOr[H265FlickerAq]
+    var GopClosedCadence: js.UndefOr[__integerMin0]
+    var GopSize: js.UndefOr[__doubleMin1]
+    var GopSizeUnits: js.UndefOr[H265GopSizeUnits]
+    var Level: js.UndefOr[H265Level]
+    var LookAheadRateControl: js.UndefOr[H265LookAheadRateControl]
+    var MaxBitrate: js.UndefOr[__integerMin100000Max40000000]
+    var MinIInterval: js.UndefOr[__integerMin0Max30]
+    var ParDenominator: js.UndefOr[__integerMin1]
+    var ParNumerator: js.UndefOr[__integerMin1]
+    var Profile: js.UndefOr[H265Profile]
+    var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
+    var RateControlMode: js.UndefOr[H265RateControlMode]
+    var ScanType: js.UndefOr[H265ScanType]
+    var SceneChangeDetect: js.UndefOr[H265SceneChangeDetect]
+    var Slices: js.UndefOr[__integerMin1Max16]
+    var Tier: js.UndefOr[H265Tier]
+    var TimecodeInsertion: js.UndefOr[H265TimecodeInsertionBehavior]
+  }
+
+  object H265Settings {
+    @inline
+    def apply(
+        FramerateDenominator: __integerMin1Max3003,
+        FramerateNumerator: __integerMin1,
+        AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization] = js.undefined,
+        AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
+        AlternativeTransferFunction: js.UndefOr[H265AlternativeTransferFunction] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin100000Max40000000] = js.undefined,
+        BufSize: js.UndefOr[__integerMin100000Max80000000] = js.undefined,
+        ColorMetadata: js.UndefOr[H265ColorMetadata] = js.undefined,
+        ColorSpaceSettings: js.UndefOr[H265ColorSpaceSettings] = js.undefined,
+        FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
+        FlickerAq: js.UndefOr[H265FlickerAq] = js.undefined,
+        GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin1] = js.undefined,
+        GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
+        Level: js.UndefOr[H265Level] = js.undefined,
+        LookAheadRateControl: js.UndefOr[H265LookAheadRateControl] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin100000Max40000000] = js.undefined,
+        MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1] = js.undefined,
+        Profile: js.UndefOr[H265Profile] = js.undefined,
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
+        ScanType: js.UndefOr[H265ScanType] = js.undefined,
+        SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max16] = js.undefined,
+        Tier: js.UndefOr[H265Tier] = js.undefined,
+        TimecodeInsertion: js.UndefOr[H265TimecodeInsertionBehavior] = js.undefined
+    ): H265Settings = {
+      val __obj = js.Dynamic.literal(
+        "FramerateDenominator" -> FramerateDenominator.asInstanceOf[js.Any],
+        "FramerateNumerator"   -> FramerateNumerator.asInstanceOf[js.Any]
+      )
+
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
+      AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
+      AlternativeTransferFunction.foreach(
+        __v => __obj.updateDynamic("AlternativeTransferFunction")(__v.asInstanceOf[js.Any])
+      )
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      BufSize.foreach(__v => __obj.updateDynamic("BufSize")(__v.asInstanceOf[js.Any]))
+      ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
+      ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
+      FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
+      FlickerAq.foreach(__v => __obj.updateDynamic("FlickerAq")(__v.asInstanceOf[js.Any]))
+      GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
+      Level.foreach(__v => __obj.updateDynamic("Level")(__v.asInstanceOf[js.Any]))
+      LookAheadRateControl.foreach(__v => __obj.updateDynamic("LookAheadRateControl")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
+      SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      TimecodeInsertion.foreach(__v => __obj.updateDynamic("TimecodeInsertion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H265Settings]
+    }
+  }
+
+  /**
+    * H265 Tier
+    */
+  object H265TierEnum {
+    val HIGH = "HIGH"
+    val MAIN = "MAIN"
+
+    val values = js.Object.freeze(js.Array(HIGH, MAIN))
+  }
+
+  /**
+    * H265 Timecode Insertion Behavior
+    */
+  object H265TimecodeInsertionBehaviorEnum {
+    val DISABLED       = "DISABLED"
+    val PIC_TIMING_SEI = "PIC_TIMING_SEI"
+
+    val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+  }
+
+  /**
+    * Hdr10 Settings
+    */
+  @js.native
+  trait Hdr10Settings extends js.Object {
+    var MaxCll: js.UndefOr[__integerMin0Max32768]
+    var MaxFall: js.UndefOr[__integerMin0Max32768]
+  }
+
+  object Hdr10Settings {
+    @inline
+    def apply(
+        MaxCll: js.UndefOr[__integerMin0Max32768] = js.undefined,
+        MaxFall: js.UndefOr[__integerMin0Max32768] = js.undefined
+    ): Hdr10Settings = {
+      val __obj = js.Dynamic.literal()
+      MaxCll.foreach(__v => __obj.updateDynamic("MaxCll")(__v.asInstanceOf[js.Any]))
+      MaxFall.foreach(__v => __obj.updateDynamic("MaxFall")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Hdr10Settings]
+    }
   }
 
   /**
@@ -6312,19 +6696,32 @@ package medialive {
   }
 
   /**
+    * Ms Smooth H265 Packaging Type
+    */
+  object MsSmoothH265PackagingTypeEnum {
+    val HEV1 = "HEV1"
+    val HVC1 = "HVC1"
+
+    val values = js.Object.freeze(js.Array(HEV1, HVC1))
+  }
+
+  /**
     * Ms Smooth Output Settings
     */
   @js.native
   trait MsSmoothOutputSettings extends js.Object {
+    var H265PackagingType: js.UndefOr[MsSmoothH265PackagingType]
     var NameModifier: js.UndefOr[__string]
   }
 
   object MsSmoothOutputSettings {
     @inline
     def apply(
+        H265PackagingType: js.UndefOr[MsSmoothH265PackagingType] = js.undefined,
         NameModifier: js.UndefOr[__string] = js.undefined
     ): MsSmoothOutputSettings = {
       val __obj = js.Dynamic.literal()
+      H265PackagingType.foreach(__v => __obj.updateDynamic("H265PackagingType")(__v.asInstanceOf[js.Any]))
       NameModifier.foreach(__v => __obj.updateDynamic("NameModifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MsSmoothOutputSettings]
     }
@@ -6790,6 +7187,38 @@ package medialive {
       val __obj = js.Dynamic.literal()
       Reservation.foreach(__v => __obj.updateDynamic("Reservation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseOfferingResponse]
+    }
+  }
+
+  /**
+    * Rec601 Settings
+    */
+  @js.native
+  trait Rec601Settings extends js.Object {}
+
+  object Rec601Settings {
+    @inline
+    def apply(
+        ): Rec601Settings = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[Rec601Settings]
+    }
+  }
+
+  /**
+    * Rec709 Settings
+    */
+  @js.native
+  trait Rec709Settings extends js.Object {}
+
+  object Rec709Settings {
+    @inline
+    def apply(
+        ): Rec709Settings = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[Rec709Settings]
     }
   }
 
@@ -8517,17 +8946,20 @@ package medialive {
   trait VideoCodecSettings extends js.Object {
     var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
     var H264Settings: js.UndefOr[H264Settings]
+    var H265Settings: js.UndefOr[H265Settings]
   }
 
   object VideoCodecSettings {
     @inline
     def apply(
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
-        H264Settings: js.UndefOr[H264Settings] = js.undefined
+        H264Settings: js.UndefOr[H264Settings] = js.undefined,
+        H265Settings: js.UndefOr[H265Settings] = js.undefined
     ): VideoCodecSettings = {
       val __obj = js.Dynamic.literal()
       FrameCaptureSettings.foreach(__v => __obj.updateDynamic("FrameCaptureSettings")(__v.asInstanceOf[js.Any]))
       H264Settings.foreach(__v => __obj.updateDynamic("H264Settings")(__v.asInstanceOf[js.Any]))
+      H265Settings.foreach(__v => __obj.updateDynamic("H265Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoCodecSettings]
     }
   }

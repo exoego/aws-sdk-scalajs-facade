@@ -58,6 +58,7 @@ package object es {
   type StorageTypeList                            = js.Array[StorageType]
   type StorageTypeName                            = String
   type StringList                                 = js.Array[String]
+  type TLSSecurityPolicy                          = String
   type TagKey                                     = String
   type TagList                                    = js.Array[Tag]
   type TagValue                                   = String
@@ -424,6 +425,7 @@ package es {
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
     var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
     var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
@@ -441,6 +443,7 @@ package es {
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
         ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
         ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
@@ -457,6 +460,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchClusterConfig.foreach(
         __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
@@ -816,6 +820,52 @@ package es {
     }
   }
 
+  /**
+    * Options to configure endpoint for the Elasticsearch domain.
+    */
+  @js.native
+  trait DomainEndpointOptions extends js.Object {
+    var EnforceHTTPS: js.UndefOr[Boolean]
+    var TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy]
+  }
+
+  object DomainEndpointOptions {
+    @inline
+    def apply(
+        EnforceHTTPS: js.UndefOr[Boolean] = js.undefined,
+        TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy] = js.undefined
+    ): DomainEndpointOptions = {
+      val __obj = js.Dynamic.literal()
+      EnforceHTTPS.foreach(__v => __obj.updateDynamic("EnforceHTTPS")(__v.asInstanceOf[js.Any]))
+      TLSSecurityPolicy.foreach(__v => __obj.updateDynamic("TLSSecurityPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainEndpointOptions]
+    }
+  }
+
+  /**
+    * The configured endpoint options for the domain and their current status.
+    */
+  @js.native
+  trait DomainEndpointOptionsStatus extends js.Object {
+    var Options: DomainEndpointOptions
+    var Status: OptionStatus
+  }
+
+  object DomainEndpointOptionsStatus {
+    @inline
+    def apply(
+        Options: DomainEndpointOptions,
+        Status: OptionStatus
+    ): DomainEndpointOptionsStatus = {
+      val __obj = js.Dynamic.literal(
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status"  -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DomainEndpointOptionsStatus]
+    }
+  }
+
   @js.native
   trait DomainInfo extends js.Object {
     var DomainName: js.UndefOr[DomainName]
@@ -1073,6 +1123,7 @@ package es {
     var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
     var EBSOptions: js.UndefOr[EBSOptionsStatus]
     var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus]
     var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionStatus]
@@ -1089,6 +1140,7 @@ package es {
         AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptionsStatus] = js.undefined,
         ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus] = js.undefined,
         ElasticsearchVersion: js.UndefOr[ElasticsearchVersionStatus] = js.undefined,
@@ -1102,6 +1154,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchClusterConfig.foreach(
         __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
@@ -1132,6 +1185,7 @@ package es {
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
     var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
     var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
@@ -1158,6 +1212,7 @@ package es {
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         Created: js.UndefOr[Boolean] = js.undefined,
         Deleted: js.UndefOr[Boolean] = js.undefined,
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
         ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
         EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
@@ -1183,6 +1238,7 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
@@ -2163,6 +2219,13 @@ package es {
     }
   }
 
+  object TLSSecurityPolicyEnum {
+    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07"
+    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07"
+
+    val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+  }
+
   /**
     * Specifies a key value pair for a resource tag.
     */
@@ -2196,6 +2259,7 @@ package es {
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
     var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
     var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
@@ -2210,6 +2274,7 @@ package es {
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
         ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
         LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
@@ -2223,6 +2288,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchClusterConfig.foreach(
         __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])

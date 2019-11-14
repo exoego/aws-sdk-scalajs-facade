@@ -64,7 +64,9 @@ package object personalize {
   type Solutions                              = js.Array[SolutionSummary]
   type Status                                 = String
   type TrackingId                             = String
+  type TrainingHours                          = Double
   type TrainingInputMode                      = String
+  type TrainingMode                           = String
   type TransactionsPerSecond                  = Int
   type Tunable                                = Boolean
 
@@ -719,7 +721,7 @@ package personalize {
     var name: Name
     var eventType: js.UndefOr[EventType]
     var performAutoML: js.UndefOr[PerformAutoML]
-    var performHPO: js.UndefOr[PerformHPO]
+    var performHPO: js.UndefOr[Boolean]
     var recipeArn: js.UndefOr[Arn]
     var solutionConfig: js.UndefOr[SolutionConfig]
   }
@@ -731,7 +733,7 @@ package personalize {
         name: Name,
         eventType: js.UndefOr[EventType] = js.undefined,
         performAutoML: js.UndefOr[PerformAutoML] = js.undefined,
-        performHPO: js.UndefOr[PerformHPO] = js.undefined,
+        performHPO: js.UndefOr[Boolean] = js.undefined,
         recipeArn: js.UndefOr[Arn] = js.undefined,
         solutionConfig: js.UndefOr[SolutionConfig] = js.undefined
     ): CreateSolutionRequest = {
@@ -768,17 +770,20 @@ package personalize {
   @js.native
   trait CreateSolutionVersionRequest extends js.Object {
     var solutionArn: Arn
+    var trainingMode: js.UndefOr[TrainingMode]
   }
 
   object CreateSolutionVersionRequest {
     @inline
     def apply(
-        solutionArn: Arn
+        solutionArn: Arn,
+        trainingMode: js.UndefOr[TrainingMode] = js.undefined
     ): CreateSolutionVersionRequest = {
       val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
 
+      trainingMode.foreach(__v => __obj.updateDynamic("trainingMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionVersionRequest]
     }
   }
@@ -2550,6 +2555,8 @@ package personalize {
     var solutionConfig: js.UndefOr[SolutionConfig]
     var solutionVersionArn: js.UndefOr[Arn]
     var status: js.UndefOr[Status]
+    var trainingHours: js.UndefOr[TrainingHours]
+    var trainingMode: js.UndefOr[TrainingMode]
   }
 
   object SolutionVersion {
@@ -2566,7 +2573,9 @@ package personalize {
         solutionArn: js.UndefOr[Arn] = js.undefined,
         solutionConfig: js.UndefOr[SolutionConfig] = js.undefined,
         solutionVersionArn: js.UndefOr[Arn] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined
+        status: js.UndefOr[Status] = js.undefined,
+        trainingHours: js.UndefOr[TrainingHours] = js.undefined,
+        trainingMode: js.UndefOr[TrainingMode] = js.undefined
     ): SolutionVersion = {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
@@ -2581,6 +2590,8 @@ package personalize {
       solutionConfig.foreach(__v => __obj.updateDynamic("solutionConfig")(__v.asInstanceOf[js.Any]))
       solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      trainingHours.foreach(__v => __obj.updateDynamic("trainingHours")(__v.asInstanceOf[js.Any]))
+      trainingMode.foreach(__v => __obj.updateDynamic("trainingMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionVersion]
     }
   }
@@ -2614,6 +2625,13 @@ package personalize {
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionVersionSummary]
     }
+  }
+
+  object TrainingModeEnum {
+    val FULL   = "FULL"
+    val UPDATE = "UPDATE"
+
+    val values = js.Object.freeze(js.Array(FULL, UPDATE))
   }
 
   @js.native

@@ -8,86 +8,96 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object costexplorer {
-  type AccountScope                             = String
-  type AmortizedRecurringFee                    = String
-  type AmortizedUpfrontFee                      = String
-  type AttributeType                            = String
-  type AttributeValue                           = String
-  type Attributes                               = js.Dictionary[AttributeValue]
-  type Context                                  = String
-  type CoverageHoursPercentage                  = String
-  type CoverageNormalizedUnitsPercentage        = String
-  type CoveragesByTime                          = js.Array[CoverageByTime]
-  type Dimension                                = String
-  type DimensionValuesWithAttributesList        = js.Array[DimensionValuesWithAttributes]
-  type Entity                                   = String
-  type Estimated                                = Boolean
-  type Expressions                              = js.Array[Expression]
-  type ForecastResultsByTime                    = js.Array[ForecastResult]
-  type GenericBoolean                           = Boolean
-  type GenericString                            = String
-  type Granularity                              = String
-  type GroupDefinitionKey                       = String
-  type GroupDefinitionType                      = String
-  type GroupDefinitions                         = js.Array[GroupDefinition]
-  type Groups                                   = js.Array[Group]
-  type Key                                      = String
-  type Keys                                     = js.Array[Key]
-  type LookbackPeriodInDays                     = String
-  type Metric                                   = String
-  type MetricAmount                             = String
-  type MetricName                               = String
-  type MetricNames                              = js.Array[MetricName]
-  type MetricUnit                               = String
-  type Metrics                                  = js.Dictionary[MetricValue]
-  type NetRISavings                             = String
-  type NextPageToken                            = String
-  type NonNegativeInteger                       = Int
-  type OfferingClass                            = String
-  type OnDemandCost                             = String
-  type OnDemandCostOfRIHoursUsed                = String
-  type OnDemandHours                            = String
-  type OnDemandNormalizedUnits                  = String
-  type PageSize                                 = Int
-  type PaymentOption                            = String
-  type PredictionIntervalLevel                  = Int
-  type PurchasedHours                           = String
-  type PurchasedUnits                           = String
-  type ReservationCoverageGroups                = js.Array[ReservationCoverageGroup]
-  type ReservationGroupKey                      = String
-  type ReservationGroupValue                    = String
-  type ReservationPurchaseRecommendationDetails = js.Array[ReservationPurchaseRecommendationDetail]
-  type ReservationPurchaseRecommendations       = js.Array[ReservationPurchaseRecommendation]
-  type ReservationUtilizationGroups             = js.Array[ReservationUtilizationGroup]
-  type ReservedHours                            = String
-  type ReservedNormalizedUnits                  = String
-  type ResultsByTime                            = js.Array[ResultByTime]
-  type RightsizingRecommendationList            = js.Array[RightsizingRecommendation]
-  type RightsizingType                          = String
-  type SearchString                             = String
-  type TagKey                                   = String
-  type TagList                                  = js.Array[Entity]
-  type TagValuesList                            = js.Array[TagValues]
-  type TargetInstancesList                      = js.Array[TargetInstance]
-  type TermInYears                              = String
-  type TotalActualHours                         = String
-  type TotalActualUnits                         = String
-  type TotalAmortizedFee                        = String
-  type TotalPotentialRISavings                  = String
-  type TotalRunningHours                        = String
-  type TotalRunningNormalizedUnits              = String
-  type UnusedHours                              = String
-  type UnusedUnits                              = String
-  type UtilizationPercentage                    = String
-  type UtilizationPercentageInUnits             = String
-  type UtilizationsByTime                       = js.Array[UtilizationByTime]
-  type Value                                    = String
-  type Values                                   = js.Array[Value]
-  type YearMonthDay                             = String
+  type AccountScope                                 = String
+  type AmortizedRecurringFee                        = String
+  type AmortizedUpfrontFee                          = String
+  type AttributeType                                = String
+  type AttributeValue                               = String
+  type Attributes                                   = js.Dictionary[AttributeValue]
+  type Context                                      = String
+  type CoverageHoursPercentage                      = String
+  type CoverageNormalizedUnitsPercentage            = String
+  type CoveragesByTime                              = js.Array[CoverageByTime]
+  type Dimension                                    = String
+  type DimensionValuesWithAttributesList            = js.Array[DimensionValuesWithAttributes]
+  type Entity                                       = String
+  type Estimated                                    = Boolean
+  type Expressions                                  = js.Array[Expression]
+  type ForecastResultsByTime                        = js.Array[ForecastResult]
+  type GenericBoolean                               = Boolean
+  type GenericString                                = String
+  type Granularity                                  = String
+  type GroupDefinitionKey                           = String
+  type GroupDefinitionType                          = String
+  type GroupDefinitions                             = js.Array[GroupDefinition]
+  type Groups                                       = js.Array[Group]
+  type Key                                          = String
+  type Keys                                         = js.Array[Key]
+  type LookbackPeriodInDays                         = String
+  type MaxResults                                   = Int
+  type Metric                                       = String
+  type MetricAmount                                 = String
+  type MetricName                                   = String
+  type MetricNames                                  = js.Array[MetricName]
+  type MetricUnit                                   = String
+  type Metrics                                      = js.Dictionary[MetricValue]
+  type NetRISavings                                 = String
+  type NextPageToken                                = String
+  type NonNegativeInteger                           = Int
+  type OfferingClass                                = String
+  type OnDemandCost                                 = String
+  type OnDemandCostOfRIHoursUsed                    = String
+  type OnDemandHours                                = String
+  type OnDemandNormalizedUnits                      = String
+  type PageSize                                     = Int
+  type PaymentOption                                = String
+  type PredictionIntervalLevel                      = Int
+  type PurchasedHours                               = String
+  type PurchasedUnits                               = String
+  type ReservationCoverageGroups                    = js.Array[ReservationCoverageGroup]
+  type ReservationGroupKey                          = String
+  type ReservationGroupValue                        = String
+  type ReservationPurchaseRecommendationDetails     = js.Array[ReservationPurchaseRecommendationDetail]
+  type ReservationPurchaseRecommendations           = js.Array[ReservationPurchaseRecommendation]
+  type ReservationUtilizationGroups                 = js.Array[ReservationUtilizationGroup]
+  type ReservedHours                                = String
+  type ReservedNormalizedUnits                      = String
+  type ResultsByTime                                = js.Array[ResultByTime]
+  type RightsizingRecommendationList                = js.Array[RightsizingRecommendation]
+  type RightsizingType                              = String
+  type SavingsPlanArn                               = String
+  type SavingsPlansCoverages                        = js.Array[SavingsPlansCoverage]
+  type SavingsPlansPurchaseRecommendationDetailList = js.Array[SavingsPlansPurchaseRecommendationDetail]
+  type SavingsPlansUtilizationDetails               = js.Array[SavingsPlansUtilizationDetail]
+  type SavingsPlansUtilizationsByTime               = js.Array[SavingsPlansUtilizationByTime]
+  type SearchString                                 = String
+  type SupportedSavingsPlansType                    = String
+  type TagKey                                       = String
+  type TagList                                      = js.Array[Entity]
+  type TagValuesList                                = js.Array[TagValues]
+  type TargetInstancesList                          = js.Array[TargetInstance]
+  type TermInYears                                  = String
+  type TotalActualHours                             = String
+  type TotalActualUnits                             = String
+  type TotalAmortizedFee                            = String
+  type TotalPotentialRISavings                      = String
+  type TotalRunningHours                            = String
+  type TotalRunningNormalizedUnits                  = String
+  type UnusedHours                                  = String
+  type UnusedUnits                                  = String
+  type UtilizationPercentage                        = String
+  type UtilizationPercentageInUnits                 = String
+  type UtilizationsByTime                           = js.Array[UtilizationByTime]
+  type Value                                        = String
+  type Values                                       = js.Array[Value]
+  type YearMonthDay                                 = String
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
     @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
       service.getCostAndUsage(params).promise.toFuture
+    @inline def getCostAndUsageWithResourcesFuture(
+        params: GetCostAndUsageWithResourcesRequest
+    ): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise.toFuture
     @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
       service.getCostForecast(params).promise.toFuture
     @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
@@ -105,6 +115,20 @@ package object costexplorer {
     @inline def getRightsizingRecommendationFuture(
         params: GetRightsizingRecommendationRequest
     ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise.toFuture
+    @inline def getSavingsPlansCoverageFuture(
+        params: GetSavingsPlansCoverageRequest
+    ): Future[GetSavingsPlansCoverageResponse] = service.getSavingsPlansCoverage(params).promise.toFuture
+    @inline def getSavingsPlansPurchaseRecommendationFuture(
+        params: GetSavingsPlansPurchaseRecommendationRequest
+    ): Future[GetSavingsPlansPurchaseRecommendationResponse] =
+      service.getSavingsPlansPurchaseRecommendation(params).promise.toFuture
+    @inline def getSavingsPlansUtilizationDetailsFuture(
+        params: GetSavingsPlansUtilizationDetailsRequest
+    ): Future[GetSavingsPlansUtilizationDetailsResponse] =
+      service.getSavingsPlansUtilizationDetails(params).promise.toFuture
+    @inline def getSavingsPlansUtilizationFuture(
+        params: GetSavingsPlansUtilizationRequest
+    ): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise.toFuture
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
       service.getTags(params).promise.toFuture
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
@@ -118,7 +142,10 @@ package costexplorer {
   class CostExplorer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse]          = js.native
+    def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
+    def getCostAndUsageWithResources(
+        params: GetCostAndUsageWithResourcesRequest
+    ): Request[GetCostAndUsageWithResourcesResponse]                                               = js.native
     def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse]          = js.native
     def getDimensionValues(params: GetDimensionValuesRequest): Request[GetDimensionValuesResponse] = js.native
     def getReservationCoverage(params: GetReservationCoverageRequest): Request[GetReservationCoverageResponse] =
@@ -131,7 +158,18 @@ package costexplorer {
     ): Request[GetReservationUtilizationResponse] = js.native
     def getRightsizingRecommendation(
         params: GetRightsizingRecommendationRequest
-    ): Request[GetRightsizingRecommendationResponse]                                         = js.native
+    ): Request[GetRightsizingRecommendationResponse] = js.native
+    def getSavingsPlansCoverage(params: GetSavingsPlansCoverageRequest): Request[GetSavingsPlansCoverageResponse] =
+      js.native
+    def getSavingsPlansPurchaseRecommendation(
+        params: GetSavingsPlansPurchaseRecommendationRequest
+    ): Request[GetSavingsPlansPurchaseRecommendationResponse] = js.native
+    def getSavingsPlansUtilization(
+        params: GetSavingsPlansUtilizationRequest
+    ): Request[GetSavingsPlansUtilizationResponse] = js.native
+    def getSavingsPlansUtilizationDetails(
+        params: GetSavingsPlansUtilizationDetailsRequest
+    ): Request[GetSavingsPlansUtilizationDetailsResponse]                                    = js.native
     def getTags(params: GetTagsRequest): Request[GetTagsResponse]                            = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
   }
@@ -146,8 +184,9 @@ package costexplorer {
   object ContextEnum {
     val COST_AND_USAGE = "COST_AND_USAGE"
     val RESERVATIONS   = "RESERVATIONS"
+    val SAVINGS_PLANS  = "SAVINGS_PLANS"
 
-    val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS))
+    val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
   }
 
   /**
@@ -292,6 +331,7 @@ package costexplorer {
     var ResourceDetails: js.UndefOr[ResourceDetails]
     var ResourceId: js.UndefOr[GenericString]
     var ResourceUtilization: js.UndefOr[ResourceUtilization]
+    var SavingsPlansCoveredHoursInLookbackPeriod: js.UndefOr[GenericString]
     var Tags: js.UndefOr[TagValuesList]
     var TotalRunningHoursInLookbackPeriod: js.UndefOr[GenericString]
   }
@@ -306,6 +346,7 @@ package costexplorer {
         ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined,
         ResourceId: js.UndefOr[GenericString] = js.undefined,
         ResourceUtilization: js.UndefOr[ResourceUtilization] = js.undefined,
+        SavingsPlansCoveredHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagValuesList] = js.undefined,
         TotalRunningHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined
     ): CurrentInstance = {
@@ -321,6 +362,9 @@ package costexplorer {
       ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceUtilization.foreach(__v => __obj.updateDynamic("ResourceUtilization")(__v.asInstanceOf[js.Any]))
+      SavingsPlansCoveredHoursInLookbackPeriod.foreach(
+        __v => __obj.updateDynamic("SavingsPlansCoveredHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
+      )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TotalRunningHoursInLookbackPeriod.foreach(
         __v => __obj.updateDynamic("TotalRunningHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
@@ -376,7 +420,11 @@ package costexplorer {
     val INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY"
     val BILLING_ENTITY       = "BILLING_ENTITY"
     val RESERVATION_ID       = "RESERVATION_ID"
+    val RESOURCE_ID          = "RESOURCE_ID"
     val RIGHTSIZING_TYPE     = "RIGHTSIZING_TYPE"
+    val SAVINGS_PLANS_TYPE   = "SAVINGS_PLANS_TYPE"
+    val SAVINGS_PLAN_ARN     = "SAVINGS_PLAN_ARN"
+    val PAYMENT_OPTION       = "PAYMENT_OPTION"
 
     val values = js.Object.freeze(
       js.Array(
@@ -402,7 +450,11 @@ package costexplorer {
         INSTANCE_TYPE_FAMILY,
         BILLING_ENTITY,
         RESERVATION_ID,
-        RIGHTSIZING_TYPE
+        RESOURCE_ID,
+        RIGHTSIZING_TYPE,
+        SAVINGS_PLANS_TYPE,
+        SAVINGS_PLAN_ARN,
+        PAYMENT_OPTION
       )
     )
   }
@@ -659,7 +711,7 @@ package costexplorer {
     *
     * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.
     * <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code>
-    *  </li>'''Note:'''For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimentions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+    *  </li>'''Note:'''For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
     */
   @js.native
   trait Expression extends js.Object {
@@ -773,6 +825,61 @@ package costexplorer {
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       ResultsByTime.foreach(__v => __obj.updateDynamic("ResultsByTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCostAndUsageResponse]
+    }
+  }
+
+  @js.native
+  trait GetCostAndUsageWithResourcesRequest extends js.Object {
+    var TimePeriod: DateInterval
+    var Filter: js.UndefOr[Expression]
+    var Granularity: js.UndefOr[Granularity]
+    var GroupBy: js.UndefOr[GroupDefinitions]
+    var Metrics: js.UndefOr[MetricNames]
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetCostAndUsageWithResourcesRequest {
+    @inline
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined,
+        GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+        Metrics: js.UndefOr[MetricNames] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetCostAndUsageWithResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCostAndUsageWithResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait GetCostAndUsageWithResourcesResponse extends js.Object {
+    var GroupDefinitions: js.UndefOr[GroupDefinitions]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var ResultsByTime: js.UndefOr[ResultsByTime]
+  }
+
+  object GetCostAndUsageWithResourcesResponse {
+    @inline
+    def apply(
+        GroupDefinitions: js.UndefOr[GroupDefinitions] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        ResultsByTime: js.UndefOr[ResultsByTime] = js.undefined
+    ): GetCostAndUsageWithResourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      GroupDefinitions.foreach(__v => __obj.updateDynamic("GroupDefinitions")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ResultsByTime.foreach(__v => __obj.updateDynamic("ResultsByTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCostAndUsageWithResourcesResponse]
     }
   }
 
@@ -1111,6 +1218,221 @@ package costexplorer {
       )
       Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRightsizingRecommendationResponse]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansCoverageRequest extends js.Object {
+    var TimePeriod: DateInterval
+    var Filter: js.UndefOr[Expression]
+    var Granularity: js.UndefOr[Granularity]
+    var GroupBy: js.UndefOr[GroupDefinitions]
+    var MaxResults: js.UndefOr[MaxResults]
+    var Metrics: js.UndefOr[MetricNames]
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetSavingsPlansCoverageRequest {
+    @inline
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined,
+        GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        Metrics: js.UndefOr[MetricNames] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetSavingsPlansCoverageRequest = {
+      val __obj = js.Dynamic.literal(
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansCoverageRequest]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansCoverageResponse extends js.Object {
+    var SavingsPlansCoverages: SavingsPlansCoverages
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetSavingsPlansCoverageResponse {
+    @inline
+    def apply(
+        SavingsPlansCoverages: SavingsPlansCoverages,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetSavingsPlansCoverageResponse = {
+      val __obj = js.Dynamic.literal(
+        "SavingsPlansCoverages" -> SavingsPlansCoverages.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansCoverageResponse]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansPurchaseRecommendationRequest extends js.Object {
+    var LookbackPeriodInDays: LookbackPeriodInDays
+    var PaymentOption: PaymentOption
+    var SavingsPlansType: SupportedSavingsPlansType
+    var TermInYears: TermInYears
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var PageSize: js.UndefOr[NonNegativeInteger]
+  }
+
+  object GetSavingsPlansPurchaseRecommendationRequest {
+    @inline
+    def apply(
+        LookbackPeriodInDays: LookbackPeriodInDays,
+        PaymentOption: PaymentOption,
+        SavingsPlansType: SupportedSavingsPlansType,
+        TermInYears: TermInYears,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        PageSize: js.UndefOr[NonNegativeInteger] = js.undefined
+    ): GetSavingsPlansPurchaseRecommendationRequest = {
+      val __obj = js.Dynamic.literal(
+        "LookbackPeriodInDays" -> LookbackPeriodInDays.asInstanceOf[js.Any],
+        "PaymentOption"        -> PaymentOption.asInstanceOf[js.Any],
+        "SavingsPlansType"     -> SavingsPlansType.asInstanceOf[js.Any],
+        "TermInYears"          -> TermInYears.asInstanceOf[js.Any]
+      )
+
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansPurchaseRecommendationRequest]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansPurchaseRecommendationResponse extends js.Object {
+    var Metadata: js.UndefOr[SavingsPlansPurchaseRecommendationMetadata]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var SavingsPlansPurchaseRecommendation: js.UndefOr[SavingsPlansPurchaseRecommendation]
+  }
+
+  object GetSavingsPlansPurchaseRecommendationResponse {
+    @inline
+    def apply(
+        Metadata: js.UndefOr[SavingsPlansPurchaseRecommendationMetadata] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        SavingsPlansPurchaseRecommendation: js.UndefOr[SavingsPlansPurchaseRecommendation] = js.undefined
+    ): GetSavingsPlansPurchaseRecommendationResponse = {
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      SavingsPlansPurchaseRecommendation.foreach(
+        __v => __obj.updateDynamic("SavingsPlansPurchaseRecommendation")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetSavingsPlansPurchaseRecommendationResponse]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansUtilizationDetailsRequest extends js.Object {
+    var TimePeriod: DateInterval
+    var Filter: js.UndefOr[Expression]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetSavingsPlansUtilizationDetailsRequest {
+    @inline
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetSavingsPlansUtilizationDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansUtilizationDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansUtilizationDetailsResponse extends js.Object {
+    var SavingsPlansUtilizationDetails: SavingsPlansUtilizationDetails
+    var TimePeriod: DateInterval
+    var NextToken: js.UndefOr[NextPageToken]
+    var Total: js.UndefOr[SavingsPlansUtilizationAggregates]
+  }
+
+  object GetSavingsPlansUtilizationDetailsResponse {
+    @inline
+    def apply(
+        SavingsPlansUtilizationDetails: SavingsPlansUtilizationDetails,
+        TimePeriod: DateInterval,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined,
+        Total: js.UndefOr[SavingsPlansUtilizationAggregates] = js.undefined
+    ): GetSavingsPlansUtilizationDetailsResponse = {
+      val __obj = js.Dynamic.literal(
+        "SavingsPlansUtilizationDetails" -> SavingsPlansUtilizationDetails.asInstanceOf[js.Any],
+        "TimePeriod"                     -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansUtilizationDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansUtilizationRequest extends js.Object {
+    var TimePeriod: DateInterval
+    var Filter: js.UndefOr[Expression]
+    var Granularity: js.UndefOr[Granularity]
+  }
+
+  object GetSavingsPlansUtilizationRequest {
+    @inline
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined
+    ): GetSavingsPlansUtilizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSavingsPlansUtilizationRequest]
+    }
+  }
+
+  @js.native
+  trait GetSavingsPlansUtilizationResponse extends js.Object {
+    var Total: SavingsPlansUtilizationAggregates
+    var SavingsPlansUtilizationsByTime: js.UndefOr[SavingsPlansUtilizationsByTime]
+  }
+
+  object GetSavingsPlansUtilizationResponse {
+    @inline
+    def apply(
+        Total: SavingsPlansUtilizationAggregates,
+        SavingsPlansUtilizationsByTime: js.UndefOr[SavingsPlansUtilizationsByTime] = js.undefined
+    ): GetSavingsPlansUtilizationResponse = {
+      val __obj = js.Dynamic.literal(
+        "Total" -> Total.asInstanceOf[js.Any]
+      )
+
+      SavingsPlansUtilizationsByTime.foreach(
+        __v => __obj.updateDynamic("SavingsPlansUtilizationsByTime")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetSavingsPlansUtilizationResponse]
     }
   }
 
@@ -1939,6 +2261,443 @@ package costexplorer {
   }
 
   /**
+    * The amortized amount of Savings Plans purchased in a specific account during a specific time interval.
+    */
+  @js.native
+  trait SavingsPlansAmortizedCommitment extends js.Object {
+    var AmortizedRecurringCommitment: js.UndefOr[GenericString]
+    var AmortizedUpfrontCommitment: js.UndefOr[GenericString]
+    var TotalAmortizedCommitment: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansAmortizedCommitment {
+    @inline
+    def apply(
+        AmortizedRecurringCommitment: js.UndefOr[GenericString] = js.undefined,
+        AmortizedUpfrontCommitment: js.UndefOr[GenericString] = js.undefined,
+        TotalAmortizedCommitment: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansAmortizedCommitment = {
+      val __obj = js.Dynamic.literal()
+      AmortizedRecurringCommitment.foreach(
+        __v => __obj.updateDynamic("AmortizedRecurringCommitment")(__v.asInstanceOf[js.Any])
+      )
+      AmortizedUpfrontCommitment.foreach(
+        __v => __obj.updateDynamic("AmortizedUpfrontCommitment")(__v.asInstanceOf[js.Any])
+      )
+      TotalAmortizedCommitment.foreach(__v => __obj.updateDynamic("TotalAmortizedCommitment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansAmortizedCommitment]
+    }
+  }
+
+  /**
+    * The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.
+    */
+  @js.native
+  trait SavingsPlansCoverage extends js.Object {
+    var Attributes: js.UndefOr[Attributes]
+    var Coverage: js.UndefOr[SavingsPlansCoverageData]
+    var TimePeriod: js.UndefOr[DateInterval]
+  }
+
+  object SavingsPlansCoverage {
+    @inline
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Coverage: js.UndefOr[SavingsPlansCoverageData] = js.undefined,
+        TimePeriod: js.UndefOr[DateInterval] = js.undefined
+    ): SavingsPlansCoverage = {
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Coverage.foreach(__v => __obj.updateDynamic("Coverage")(__v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansCoverage]
+    }
+  }
+
+  /**
+    * Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.
+    */
+  @js.native
+  trait SavingsPlansCoverageData extends js.Object {
+    var CoveragePercentage: js.UndefOr[GenericString]
+    var OnDemandCost: js.UndefOr[GenericString]
+    var SpendCoveredBySavingsPlans: js.UndefOr[GenericString]
+    var TotalCost: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansCoverageData {
+    @inline
+    def apply(
+        CoveragePercentage: js.UndefOr[GenericString] = js.undefined,
+        OnDemandCost: js.UndefOr[GenericString] = js.undefined,
+        SpendCoveredBySavingsPlans: js.UndefOr[GenericString] = js.undefined,
+        TotalCost: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansCoverageData = {
+      val __obj = js.Dynamic.literal()
+      CoveragePercentage.foreach(__v => __obj.updateDynamic("CoveragePercentage")(__v.asInstanceOf[js.Any]))
+      OnDemandCost.foreach(__v => __obj.updateDynamic("OnDemandCost")(__v.asInstanceOf[js.Any]))
+      SpendCoveredBySavingsPlans.foreach(
+        __v => __obj.updateDynamic("SpendCoveredBySavingsPlans")(__v.asInstanceOf[js.Any])
+      )
+      TotalCost.foreach(__v => __obj.updateDynamic("TotalCost")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansCoverageData]
+    }
+  }
+
+  /**
+    * Attribute details on a specific Savings Plan.
+    */
+  @js.native
+  trait SavingsPlansDetails extends js.Object {
+    var InstanceFamily: js.UndefOr[GenericString]
+    var OfferingId: js.UndefOr[GenericString]
+    var Region: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansDetails {
+    @inline
+    def apply(
+        InstanceFamily: js.UndefOr[GenericString] = js.undefined,
+        OfferingId: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansDetails = {
+      val __obj = js.Dynamic.literal()
+      InstanceFamily.foreach(__v => __obj.updateDynamic("InstanceFamily")(__v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.updateDynamic("OfferingId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansDetails]
+    }
+  }
+
+  /**
+    * Contains your request parameters, Savings Plan Recommendations Summary, and Details.
+    */
+  @js.native
+  trait SavingsPlansPurchaseRecommendation extends js.Object {
+    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
+    var PaymentOption: js.UndefOr[PaymentOption]
+    var SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList]
+    var SavingsPlansPurchaseRecommendationSummary: js.UndefOr[SavingsPlansPurchaseRecommendationSummary]
+    var SavingsPlansType: js.UndefOr[SupportedSavingsPlansType]
+    var TermInYears: js.UndefOr[TermInYears]
+  }
+
+  object SavingsPlansPurchaseRecommendation {
+    @inline
+    def apply(
+        LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+        PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+        SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList] =
+          js.undefined,
+        SavingsPlansPurchaseRecommendationSummary: js.UndefOr[SavingsPlansPurchaseRecommendationSummary] = js.undefined,
+        SavingsPlansType: js.UndefOr[SupportedSavingsPlansType] = js.undefined,
+        TermInYears: js.UndefOr[TermInYears] = js.undefined
+    ): SavingsPlansPurchaseRecommendation = {
+      val __obj = js.Dynamic.literal()
+      LookbackPeriodInDays.foreach(__v => __obj.updateDynamic("LookbackPeriodInDays")(__v.asInstanceOf[js.Any]))
+      PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
+      SavingsPlansPurchaseRecommendationDetails.foreach(
+        __v => __obj.updateDynamic("SavingsPlansPurchaseRecommendationDetails")(__v.asInstanceOf[js.Any])
+      )
+      SavingsPlansPurchaseRecommendationSummary.foreach(
+        __v => __obj.updateDynamic("SavingsPlansPurchaseRecommendationSummary")(__v.asInstanceOf[js.Any])
+      )
+      SavingsPlansType.foreach(__v => __obj.updateDynamic("SavingsPlansType")(__v.asInstanceOf[js.Any]))
+      TermInYears.foreach(__v => __obj.updateDynamic("TermInYears")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansPurchaseRecommendation]
+    }
+  }
+
+  /**
+    * Details for your recommended Savings Plans.
+    */
+  @js.native
+  trait SavingsPlansPurchaseRecommendationDetail extends js.Object {
+    var AccountId: js.UndefOr[GenericString]
+    var CurrencyCode: js.UndefOr[GenericString]
+    var CurrentAverageHourlyOnDemandSpend: js.UndefOr[GenericString]
+    var CurrentMaximumHourlyOnDemandSpend: js.UndefOr[GenericString]
+    var CurrentMinimumHourlyOnDemandSpend: js.UndefOr[GenericString]
+    var EstimatedAverageUtilization: js.UndefOr[GenericString]
+    var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
+    var EstimatedOnDemandCost: js.UndefOr[GenericString]
+    var EstimatedROI: js.UndefOr[GenericString]
+    var EstimatedSPCost: js.UndefOr[GenericString]
+    var EstimatedSavingsAmount: js.UndefOr[GenericString]
+    var EstimatedSavingsPercentage: js.UndefOr[GenericString]
+    var HourlyCommitmentToPurchase: js.UndefOr[GenericString]
+    var SavingsPlansDetails: js.UndefOr[SavingsPlansDetails]
+    var UpfrontCost: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansPurchaseRecommendationDetail {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[GenericString] = js.undefined,
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        CurrentAverageHourlyOnDemandSpend: js.UndefOr[GenericString] = js.undefined,
+        CurrentMaximumHourlyOnDemandSpend: js.UndefOr[GenericString] = js.undefined,
+        CurrentMinimumHourlyOnDemandSpend: js.UndefOr[GenericString] = js.undefined,
+        EstimatedAverageUtilization: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedOnDemandCost: js.UndefOr[GenericString] = js.undefined,
+        EstimatedROI: js.UndefOr[GenericString] = js.undefined,
+        EstimatedSPCost: js.UndefOr[GenericString] = js.undefined,
+        EstimatedSavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedSavingsPercentage: js.UndefOr[GenericString] = js.undefined,
+        HourlyCommitmentToPurchase: js.UndefOr[GenericString] = js.undefined,
+        SavingsPlansDetails: js.UndefOr[SavingsPlansDetails] = js.undefined,
+        UpfrontCost: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansPurchaseRecommendationDetail = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
+      CurrentAverageHourlyOnDemandSpend.foreach(
+        __v => __obj.updateDynamic("CurrentAverageHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
+      )
+      CurrentMaximumHourlyOnDemandSpend.foreach(
+        __v => __obj.updateDynamic("CurrentMaximumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
+      )
+      CurrentMinimumHourlyOnDemandSpend.foreach(
+        __v => __obj.updateDynamic("CurrentMinimumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedAverageUtilization.foreach(
+        __v => __obj.updateDynamic("EstimatedAverageUtilization")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedMonthlySavingsAmount.foreach(
+        __v => __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedOnDemandCost.foreach(__v => __obj.updateDynamic("EstimatedOnDemandCost")(__v.asInstanceOf[js.Any]))
+      EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
+      EstimatedSPCost.foreach(__v => __obj.updateDynamic("EstimatedSPCost")(__v.asInstanceOf[js.Any]))
+      EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
+      EstimatedSavingsPercentage.foreach(
+        __v => __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any])
+      )
+      HourlyCommitmentToPurchase.foreach(
+        __v => __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
+      )
+      SavingsPlansDetails.foreach(__v => __obj.updateDynamic("SavingsPlansDetails")(__v.asInstanceOf[js.Any]))
+      UpfrontCost.foreach(__v => __obj.updateDynamic("UpfrontCost")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansPurchaseRecommendationDetail]
+    }
+  }
+
+  /**
+    * Metadata about your Savings Plans Purchase Recommendations.
+    */
+  @js.native
+  trait SavingsPlansPurchaseRecommendationMetadata extends js.Object {
+    var GenerationTimestamp: js.UndefOr[GenericString]
+    var RecommendationId: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansPurchaseRecommendationMetadata {
+    @inline
+    def apply(
+        GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
+        RecommendationId: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansPurchaseRecommendationMetadata = {
+      val __obj = js.Dynamic.literal()
+      GenerationTimestamp.foreach(__v => __obj.updateDynamic("GenerationTimestamp")(__v.asInstanceOf[js.Any]))
+      RecommendationId.foreach(__v => __obj.updateDynamic("RecommendationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansPurchaseRecommendationMetadata]
+    }
+  }
+
+  /**
+    * Summary metrics for your Savings Plans Purchase Recommendations.
+    */
+  @js.native
+  trait SavingsPlansPurchaseRecommendationSummary extends js.Object {
+    var CurrencyCode: js.UndefOr[GenericString]
+    var CurrentOnDemandSpend: js.UndefOr[GenericString]
+    var DailyCommitmentToPurchase: js.UndefOr[GenericString]
+    var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
+    var EstimatedROI: js.UndefOr[GenericString]
+    var EstimatedSavingsAmount: js.UndefOr[GenericString]
+    var EstimatedSavingsPercentage: js.UndefOr[GenericString]
+    var EstimatedTotalCost: js.UndefOr[GenericString]
+    var HourlyCommitmentToPurchase: js.UndefOr[GenericString]
+    var TotalRecommendationCount: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansPurchaseRecommendationSummary {
+    @inline
+    def apply(
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        CurrentOnDemandSpend: js.UndefOr[GenericString] = js.undefined,
+        DailyCommitmentToPurchase: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedROI: js.UndefOr[GenericString] = js.undefined,
+        EstimatedSavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedSavingsPercentage: js.UndefOr[GenericString] = js.undefined,
+        EstimatedTotalCost: js.UndefOr[GenericString] = js.undefined,
+        HourlyCommitmentToPurchase: js.UndefOr[GenericString] = js.undefined,
+        TotalRecommendationCount: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansPurchaseRecommendationSummary = {
+      val __obj = js.Dynamic.literal()
+      CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
+      CurrentOnDemandSpend.foreach(__v => __obj.updateDynamic("CurrentOnDemandSpend")(__v.asInstanceOf[js.Any]))
+      DailyCommitmentToPurchase.foreach(
+        __v => __obj.updateDynamic("DailyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedMonthlySavingsAmount.foreach(
+        __v => __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
+      EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
+      EstimatedSavingsPercentage.foreach(
+        __v => __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedTotalCost.foreach(__v => __obj.updateDynamic("EstimatedTotalCost")(__v.asInstanceOf[js.Any]))
+      HourlyCommitmentToPurchase.foreach(
+        __v => __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
+      )
+      TotalRecommendationCount.foreach(__v => __obj.updateDynamic("TotalRecommendationCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansPurchaseRecommendationSummary]
+    }
+  }
+
+  /**
+    * The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account.
+    */
+  @js.native
+  trait SavingsPlansSavings extends js.Object {
+    var NetSavings: js.UndefOr[GenericString]
+    var OnDemandCostEquivalent: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansSavings {
+    @inline
+    def apply(
+        NetSavings: js.UndefOr[GenericString] = js.undefined,
+        OnDemandCostEquivalent: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansSavings = {
+      val __obj = js.Dynamic.literal()
+      NetSavings.foreach(__v => __obj.updateDynamic("NetSavings")(__v.asInstanceOf[js.Any]))
+      OnDemandCostEquivalent.foreach(__v => __obj.updateDynamic("OnDemandCostEquivalent")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansSavings]
+    }
+  }
+
+  /**
+    * The measurement of how well you are using your existing Savings Plans.
+    */
+  @js.native
+  trait SavingsPlansUtilization extends js.Object {
+    var TotalCommitment: js.UndefOr[GenericString]
+    var UnusedCommitment: js.UndefOr[GenericString]
+    var UsedCommitment: js.UndefOr[GenericString]
+    var UtilizationPercentage: js.UndefOr[GenericString]
+  }
+
+  object SavingsPlansUtilization {
+    @inline
+    def apply(
+        TotalCommitment: js.UndefOr[GenericString] = js.undefined,
+        UnusedCommitment: js.UndefOr[GenericString] = js.undefined,
+        UsedCommitment: js.UndefOr[GenericString] = js.undefined,
+        UtilizationPercentage: js.UndefOr[GenericString] = js.undefined
+    ): SavingsPlansUtilization = {
+      val __obj = js.Dynamic.literal()
+      TotalCommitment.foreach(__v => __obj.updateDynamic("TotalCommitment")(__v.asInstanceOf[js.Any]))
+      UnusedCommitment.foreach(__v => __obj.updateDynamic("UnusedCommitment")(__v.asInstanceOf[js.Any]))
+      UsedCommitment.foreach(__v => __obj.updateDynamic("UsedCommitment")(__v.asInstanceOf[js.Any]))
+      UtilizationPercentage.foreach(__v => __obj.updateDynamic("UtilizationPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansUtilization]
+    }
+  }
+
+  /**
+    * The aggregated utilization metrics for your Savings Plans usage.
+    */
+  @js.native
+  trait SavingsPlansUtilizationAggregates extends js.Object {
+    var Utilization: SavingsPlansUtilization
+    var AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment]
+    var Savings: js.UndefOr[SavingsPlansSavings]
+  }
+
+  object SavingsPlansUtilizationAggregates {
+    @inline
+    def apply(
+        Utilization: SavingsPlansUtilization,
+        AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment] = js.undefined,
+        Savings: js.UndefOr[SavingsPlansSavings] = js.undefined
+    ): SavingsPlansUtilizationAggregates = {
+      val __obj = js.Dynamic.literal(
+        "Utilization" -> Utilization.asInstanceOf[js.Any]
+      )
+
+      AmortizedCommitment.foreach(__v => __obj.updateDynamic("AmortizedCommitment")(__v.asInstanceOf[js.Any]))
+      Savings.foreach(__v => __obj.updateDynamic("Savings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansUtilizationAggregates]
+    }
+  }
+
+  /**
+    * The amount of Savings Plans utilization, in hours.
+    */
+  @js.native
+  trait SavingsPlansUtilizationByTime extends js.Object {
+    var TimePeriod: DateInterval
+    var Utilization: SavingsPlansUtilization
+    var AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment]
+    var Savings: js.UndefOr[SavingsPlansSavings]
+  }
+
+  object SavingsPlansUtilizationByTime {
+    @inline
+    def apply(
+        TimePeriod: DateInterval,
+        Utilization: SavingsPlansUtilization,
+        AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment] = js.undefined,
+        Savings: js.UndefOr[SavingsPlansSavings] = js.undefined
+    ): SavingsPlansUtilizationByTime = {
+      val __obj = js.Dynamic.literal(
+        "TimePeriod"  -> TimePeriod.asInstanceOf[js.Any],
+        "Utilization" -> Utilization.asInstanceOf[js.Any]
+      )
+
+      AmortizedCommitment.foreach(__v => __obj.updateDynamic("AmortizedCommitment")(__v.asInstanceOf[js.Any]))
+      Savings.foreach(__v => __obj.updateDynamic("Savings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansUtilizationByTime]
+    }
+  }
+
+  /**
+    * A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+    */
+  @js.native
+  trait SavingsPlansUtilizationDetail extends js.Object {
+    var AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment]
+    var Attributes: js.UndefOr[Attributes]
+    var Savings: js.UndefOr[SavingsPlansSavings]
+    var SavingsPlanArn: js.UndefOr[SavingsPlanArn]
+    var Utilization: js.UndefOr[SavingsPlansUtilization]
+  }
+
+  object SavingsPlansUtilizationDetail {
+    @inline
+    def apply(
+        AmortizedCommitment: js.UndefOr[SavingsPlansAmortizedCommitment] = js.undefined,
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Savings: js.UndefOr[SavingsPlansSavings] = js.undefined,
+        SavingsPlanArn: js.UndefOr[SavingsPlanArn] = js.undefined,
+        Utilization: js.UndefOr[SavingsPlansUtilization] = js.undefined
+    ): SavingsPlansUtilizationDetail = {
+      val __obj = js.Dynamic.literal()
+      AmortizedCommitment.foreach(__v => __obj.updateDynamic("AmortizedCommitment")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Savings.foreach(__v => __obj.updateDynamic("Savings")(__v.asInstanceOf[js.Any]))
+      SavingsPlanArn.foreach(__v => __obj.updateDynamic("SavingsPlanArn")(__v.asInstanceOf[js.Any]))
+      Utilization.foreach(__v => __obj.updateDynamic("Utilization")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsPlansUtilizationDetail]
+    }
+  }
+
+  /**
     * Hardware specifications for the service that you want recommendations for.
     */
   @js.native
@@ -1955,6 +2714,13 @@ package costexplorer {
       EC2Specification.foreach(__v => __obj.updateDynamic("EC2Specification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSpecification]
     }
+  }
+
+  object SupportedSavingsPlansTypeEnum {
+    val COMPUTE_SP      = "COMPUTE_SP"
+    val EC2_INSTANCE_SP = "EC2_INSTANCE_SP"
+
+    val values = js.Object.freeze(js.Array(COMPUTE_SP, EC2_INSTANCE_SP))
   }
 
   /**

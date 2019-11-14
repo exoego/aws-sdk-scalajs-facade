@@ -12,26 +12,27 @@ package object lexruntime {
   type AttributesString = String
   type BlobStream =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BotAlias                    = String
-  type BotName                     = String
-  type ButtonTextStringWithLength  = String
-  type ButtonValueStringWithLength = String
-  type ConfirmationStatus          = String
-  type ContentType                 = String
-  type DialogActionType            = String
-  type DialogState                 = String
-  type FulfillmentState            = String
-  type HttpContentType             = String
-  type IntentName                  = String
-  type IntentSummaryList           = js.Array[IntentSummary]
-  type MessageFormatType           = String
-  type StringMap                   = js.Dictionary[String]
-  type StringUrlWithLength         = String
-  type StringWithLength            = String
-  type Text                        = String
-  type UserId                      = String
-  type genericAttachmentList       = js.Array[GenericAttachment]
-  type listOfButtons               = js.Array[Button]
+  type BotAlias                     = String
+  type BotName                      = String
+  type ButtonTextStringWithLength   = String
+  type ButtonValueStringWithLength  = String
+  type ConfirmationStatus           = String
+  type ContentType                  = String
+  type DialogActionType             = String
+  type DialogState                  = String
+  type FulfillmentState             = String
+  type HttpContentType              = String
+  type IntentName                   = String
+  type IntentSummaryCheckpointLabel = String
+  type IntentSummaryList            = js.Array[IntentSummary]
+  type MessageFormatType            = String
+  type StringMap                    = js.Dictionary[String]
+  type StringUrlWithLength          = String
+  type StringWithLength             = String
+  type Text                         = String
+  type UserId                       = String
+  type genericAttachmentList        = js.Array[GenericAttachment]
+  type listOfButtons                = js.Array[Button]
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
     @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
@@ -252,6 +253,7 @@ package lexruntime {
     var botAlias: BotAlias
     var botName: BotName
     var userId: UserId
+    var checkpointLabelFilter: js.UndefOr[IntentSummaryCheckpointLabel]
   }
 
   object GetSessionRequest {
@@ -259,7 +261,8 @@ package lexruntime {
     def apply(
         botAlias: BotAlias,
         botName: BotName,
-        userId: UserId
+        userId: UserId,
+        checkpointLabelFilter: js.UndefOr[IntentSummaryCheckpointLabel] = js.undefined
     ): GetSessionRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
@@ -267,6 +270,7 @@ package lexruntime {
         "userId"   -> userId.asInstanceOf[js.Any]
       )
 
+      checkpointLabelFilter.foreach(__v => __obj.updateDynamic("checkpointLabelFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSessionRequest]
     }
   }
@@ -302,6 +306,7 @@ package lexruntime {
   @js.native
   trait IntentSummary extends js.Object {
     var dialogActionType: DialogActionType
+    var checkpointLabel: js.UndefOr[IntentSummaryCheckpointLabel]
     var confirmationStatus: js.UndefOr[ConfirmationStatus]
     var fulfillmentState: js.UndefOr[FulfillmentState]
     var intentName: js.UndefOr[IntentName]
@@ -313,6 +318,7 @@ package lexruntime {
     @inline
     def apply(
         dialogActionType: DialogActionType,
+        checkpointLabel: js.UndefOr[IntentSummaryCheckpointLabel] = js.undefined,
         confirmationStatus: js.UndefOr[ConfirmationStatus] = js.undefined,
         fulfillmentState: js.UndefOr[FulfillmentState] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
@@ -323,6 +329,7 @@ package lexruntime {
         "dialogActionType" -> dialogActionType.asInstanceOf[js.Any]
       )
 
+      checkpointLabel.foreach(__v => __obj.updateDynamic("checkpointLabel")(__v.asInstanceOf[js.Any]))
       confirmationStatus.foreach(__v => __obj.updateDynamic("confirmationStatus")(__v.asInstanceOf[js.Any]))
       fulfillmentState.foreach(__v => __obj.updateDynamic("fulfillmentState")(__v.asInstanceOf[js.Any]))
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
@@ -500,6 +507,7 @@ package lexruntime {
     var userId: UserId
     var accept: js.UndefOr[Accept]
     var dialogAction: js.UndefOr[DialogAction]
+    var recentIntentSummaryView: js.UndefOr[IntentSummaryList]
     var sessionAttributes: js.UndefOr[StringMap]
   }
 
@@ -511,6 +519,7 @@ package lexruntime {
         userId: UserId,
         accept: js.UndefOr[Accept] = js.undefined,
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
+        recentIntentSummaryView: js.UndefOr[IntentSummaryList] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): PutSessionRequest = {
       val __obj = js.Dynamic.literal(
@@ -521,6 +530,7 @@ package lexruntime {
 
       accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
       dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
+      recentIntentSummaryView.foreach(__v => __obj.updateDynamic("recentIntentSummaryView")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSessionRequest]
     }

@@ -190,12 +190,16 @@ package budgetsservice {
     *  <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
     */
   object BudgetTypeEnum {
-    val USAGE          = "USAGE"
-    val COST           = "COST"
-    val RI_UTILIZATION = "RI_UTILIZATION"
-    val RI_COVERAGE    = "RI_COVERAGE"
+    val USAGE                     = "USAGE"
+    val COST                      = "COST"
+    val RI_UTILIZATION            = "RI_UTILIZATION"
+    val RI_COVERAGE               = "RI_COVERAGE"
+    val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION"
+    val SAVINGS_PLANS_COVERAGE    = "SAVINGS_PLANS_COVERAGE"
 
-    val values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE))
+    val values = js.Object.freeze(
+      js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
+    )
   }
 
   /**

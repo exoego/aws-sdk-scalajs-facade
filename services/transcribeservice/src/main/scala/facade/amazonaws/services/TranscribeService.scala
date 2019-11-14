@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object transcribeservice {
   type DateTime                  = js.Date
   type FailureReason             = String
+  type KMSKeyId                  = String
   type LanguageCode              = String
   type MaxResults                = Int
   type MaxSpeakers               = Int
@@ -260,6 +261,14 @@ package transcribeservice {
     val `ar-SA` = "ar-SA"
     val `ru-RU` = "ru-RU"
     val `zh-CN` = "zh-CN"
+    val `nl-NL` = "nl-NL"
+    val `id-ID` = "id-ID"
+    val `ta-IN` = "ta-IN"
+    val `fa-IR` = "fa-IR"
+    val `en-IE` = "en-IE"
+    val `en-AB` = "en-AB"
+    val `en-WL` = "en-WL"
+    val `pt-PT` = "pt-PT"
 
     val values = js.Object.freeze(
       js.Array(
@@ -278,7 +287,15 @@ package transcribeservice {
         `hi-IN`,
         `ar-SA`,
         `ru-RU`,
-        `zh-CN`
+        `zh-CN`,
+        `nl-NL`,
+        `id-ID`,
+        `ta-IN`,
+        `fa-IR`,
+        `en-IE`,
+        `en-AB`,
+        `en-WL`,
+        `pt-PT`
       )
     )
   }
@@ -450,6 +467,7 @@ package transcribeservice {
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var OutputBucketName: js.UndefOr[OutputBucketName]
+    var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
     var Settings: js.UndefOr[Settings]
   }
 
@@ -462,6 +480,7 @@ package transcribeservice {
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
+        OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined
     ): StartTranscriptionJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -473,6 +492,7 @@ package transcribeservice {
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       OutputBucketName.foreach(__v => __obj.updateDynamic("OutputBucketName")(__v.asInstanceOf[js.Any]))
+      OutputEncryptionKMSKeyId.foreach(__v => __obj.updateDynamic("OutputEncryptionKMSKeyId")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTranscriptionJobRequest]
     }
@@ -571,7 +591,7 @@ package transcribeservice {
   }
 
   /**
-    * Provides a summary of information about a transcription job. .
+    * Provides a summary of information about a transcription job.
     */
   @js.native
   trait TranscriptionJobSummary extends js.Object {

@@ -778,6 +778,7 @@ package polly {
     val Astrid    = "Astrid"
     val Bianca    = "Bianca"
     val Brian     = "Brian"
+    val Camila    = "Camila"
     val Carla     = "Carla"
     val Carmen    = "Carmen"
     val Celine    = "Celine"
@@ -807,6 +808,7 @@ package polly {
     val Liv       = "Liv"
     val Lotte     = "Lotte"
     val Lucia     = "Lucia"
+    val Lupe      = "Lupe"
     val Mads      = "Mads"
     val Maja      = "Maja"
     val Marlene   = "Marlene"
@@ -839,6 +841,7 @@ package polly {
         Astrid,
         Bianca,
         Brian,
+        Camila,
         Carla,
         Carmen,
         Celine,
@@ -868,6 +871,7 @@ package polly {
         Liv,
         Lotte,
         Lucia,
+        Lupe,
         Mads,
         Maja,
         Marlene,

@@ -436,7 +436,7 @@ package iotanalytics {
   }
 
   /**
-    * Where channel data is stored.
+    * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
     */
   @js.native
   trait ChannelStorage extends js.Object {
@@ -781,7 +781,7 @@ package iotanalytics {
   }
 
   /**
-    * Use this to store channel data in an S3 bucket that you manage.
+    * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
     */
   @js.native
   trait CustomerManagedChannelS3Storage extends js.Object {
@@ -833,7 +833,7 @@ package iotanalytics {
   }
 
   /**
-    * Use this to store data store data in an S3 bucket that you manage.
+    * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
     */
   @js.native
   trait CustomerManagedDatastoreS3Storage extends js.Object {
@@ -1069,6 +1069,7 @@ package iotanalytics {
     */
   @js.native
   trait DatasetContentSummary extends js.Object {
+    var completionTime: js.UndefOr[Timestamp]
     var creationTime: js.UndefOr[Timestamp]
     var scheduleTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[DatasetContentStatus]
@@ -1078,12 +1079,14 @@ package iotanalytics {
   object DatasetContentSummary {
     @inline
     def apply(
+        completionTime: js.UndefOr[Timestamp] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         scheduleTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
         version: js.UndefOr[DatasetContentVersion] = js.undefined
     ): DatasetContentSummary = {
       val __obj = js.Dynamic.literal()
+      completionTime.foreach(__v => __obj.updateDynamic("completionTime")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       scheduleTime.foreach(__v => __obj.updateDynamic("scheduleTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1288,7 +1291,7 @@ package iotanalytics {
   }
 
   /**
-    * Where data store data is stored.
+    * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
     */
   @js.native
   trait DatastoreStorage extends js.Object {
@@ -2647,7 +2650,7 @@ package iotanalytics {
   }
 
   /**
-    * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+    * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
     */
   @js.native
   trait ServiceManagedChannelS3Storage extends js.Object {}
@@ -2679,7 +2682,7 @@ package iotanalytics {
   }
 
   /**
-    * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+    * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
     */
   @js.native
   trait ServiceManagedDatastoreS3Storage extends js.Object {}

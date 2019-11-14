@@ -20,8 +20,6 @@ package object cloudsearch {
   type DomainStatusList         = js.Array[DomainStatus]
   type DynamicFieldName         = String
   type DynamicFieldNameList     = js.Array[DynamicFieldName]
-  type ErrorCode                = String
-  type ErrorMessage             = String
   type ExpressionStatusList     = js.Array[ExpressionStatus]
   type ExpressionValue          = String
   type FieldName                = String
@@ -44,6 +42,7 @@ package object cloudsearch {
   type StandardNameList         = js.Array[StandardName]
   type SuggesterFuzzyMatching   = String
   type SuggesterStatusList      = js.Array[SuggesterStatus]
+  type TLSSecurityPolicy        = String
   type UIntValue                = Int
   type UpdateTimestamp          = js.Date
   type Word                     = String
@@ -77,6 +76,9 @@ package object cloudsearch {
     @inline def describeAvailabilityOptionsFuture(
         params: DescribeAvailabilityOptionsRequest
     ): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise.toFuture
+    @inline def describeDomainEndpointOptionsFuture(
+        params: DescribeDomainEndpointOptionsRequest
+    ): Future[DescribeDomainEndpointOptionsResponse] = service.describeDomainEndpointOptions(params).promise.toFuture
     @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] =
       service.describeDomains(params).promise.toFuture
     @inline def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] =
@@ -97,6 +99,9 @@ package object cloudsearch {
     @inline def updateAvailabilityOptionsFuture(
         params: UpdateAvailabilityOptionsRequest
     ): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise.toFuture
+    @inline def updateDomainEndpointOptionsFuture(
+        params: UpdateDomainEndpointOptionsRequest
+    ): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise.toFuture
     @inline def updateScalingParametersFuture(
         params: UpdateScalingParametersRequest
     ): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise.toFuture
@@ -127,7 +132,10 @@ package cloudsearch {
       js.native
     def describeAvailabilityOptions(
         params: DescribeAvailabilityOptionsRequest
-    ): Request[DescribeAvailabilityOptionsResponse]                                                   = js.native
+    ): Request[DescribeAvailabilityOptionsResponse] = js.native
+    def describeDomainEndpointOptions(
+        params: DescribeDomainEndpointOptionsRequest
+    ): Request[DescribeDomainEndpointOptionsResponse]                                                 = js.native
     def describeDomains(params: DescribeDomainsRequest): Request[DescribeDomainsResponse]             = js.native
     def describeExpressions(params: DescribeExpressionsRequest): Request[DescribeExpressionsResponse] = js.native
     def describeIndexFields(params: DescribeIndexFieldsRequest): Request[DescribeIndexFieldsResponse] = js.native
@@ -143,6 +151,9 @@ package cloudsearch {
     def updateAvailabilityOptions(
         params: UpdateAvailabilityOptionsRequest
     ): Request[UpdateAvailabilityOptionsResponse] = js.native
+    def updateDomainEndpointOptions(
+        params: UpdateDomainEndpointOptionsRequest
+    ): Request[UpdateDomainEndpointOptionsResponse] = js.native
     def updateScalingParameters(params: UpdateScalingParametersRequest): Request[UpdateScalingParametersResponse] =
       js.native
     def updateServiceAccessPolicies(
@@ -370,15 +381,6 @@ package cloudsearch {
 
       __obj.asInstanceOf[AvailabilityOptionsStatus]
     }
-  }
-
-  /**
-    * An error occurred while processing the request.
-    */
-  @js.native
-  trait BaseExceptionException extends js.Object {
-    val Code: ErrorCode
-    val Message: ErrorMessage
   }
 
   /**
@@ -1018,6 +1020,49 @@ package cloudsearch {
   }
 
   /**
+    * Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.
+    */
+  @js.native
+  trait DescribeDomainEndpointOptionsRequest extends js.Object {
+    var DomainName: DomainName
+    var Deployed: js.UndefOr[Boolean]
+  }
+
+  object DescribeDomainEndpointOptionsRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        Deployed: js.UndefOr[Boolean] = js.undefined
+    ): DescribeDomainEndpointOptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainEndpointOptionsRequest]
+    }
+  }
+
+  /**
+    * The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options.
+    */
+  @js.native
+  trait DescribeDomainEndpointOptionsResponse extends js.Object {
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
+  }
+
+  object DescribeDomainEndpointOptionsResponse {
+    @inline
+    def apply(
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined
+    ): DescribeDomainEndpointOptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainEndpointOptionsResponse]
+    }
+  }
+
+  /**
     * Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.
     */
   @js.native
@@ -1289,12 +1334,6 @@ package cloudsearch {
   }
 
   /**
-    * The request was rejected because it attempted an operation which is not enabled.
-    */
-  @js.native
-  trait DisabledOperationExceptionException extends js.Object {}
-
-  /**
     * Options for a search suggester.
     */
   @js.native
@@ -1318,6 +1357,52 @@ package cloudsearch {
       FuzzyMatching.foreach(__v => __obj.updateDynamic("FuzzyMatching")(__v.asInstanceOf[js.Any]))
       SortExpression.foreach(__v => __obj.updateDynamic("SortExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentSuggesterOptions]
+    }
+  }
+
+  /**
+    * The domain's endpoint options.
+    */
+  @js.native
+  trait DomainEndpointOptions extends js.Object {
+    var EnforceHTTPS: js.UndefOr[Boolean]
+    var TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy]
+  }
+
+  object DomainEndpointOptions {
+    @inline
+    def apply(
+        EnforceHTTPS: js.UndefOr[Boolean] = js.undefined,
+        TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy] = js.undefined
+    ): DomainEndpointOptions = {
+      val __obj = js.Dynamic.literal()
+      EnforceHTTPS.foreach(__v => __obj.updateDynamic("EnforceHTTPS")(__v.asInstanceOf[js.Any]))
+      TLSSecurityPolicy.foreach(__v => __obj.updateDynamic("TLSSecurityPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainEndpointOptions]
+    }
+  }
+
+  /**
+    * The configuration and status of the domain's endpoint options.
+    */
+  @js.native
+  trait DomainEndpointOptionsStatus extends js.Object {
+    var Options: DomainEndpointOptions
+    var Status: OptionStatus
+  }
+
+  object DomainEndpointOptionsStatus {
+    @inline
+    def apply(
+        Options: DomainEndpointOptions,
+        Status: OptionStatus
+    ): DomainEndpointOptionsStatus = {
+      val __obj = js.Dynamic.literal(
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status"  -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DomainEndpointOptionsStatus]
     }
   }
 
@@ -1711,18 +1796,6 @@ package cloudsearch {
   }
 
   /**
-    * An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
-    */
-  @js.native
-  trait InternalExceptionException extends js.Object {}
-
-  /**
-    * The request was rejected because it specified an invalid type definition.
-    */
-  @js.native
-  trait InvalidTypeExceptionException extends js.Object {}
-
-  /**
     * Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.
     */
   @js.native
@@ -1755,12 +1828,6 @@ package cloudsearch {
       __obj.asInstanceOf[LatLonOptions]
     }
   }
-
-  /**
-    * The request was rejected because a resource limit has already been met.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {}
 
   @js.native
   trait Limits extends js.Object {
@@ -1944,12 +2011,6 @@ package cloudsearch {
   }
 
   /**
-    * The request was rejected because it attempted to reference a resource that does not exist.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {}
-
-  /**
     * The desired instance type and desired number of replicas of each index partition.
     */
   @js.native
@@ -2074,6 +2135,16 @@ package cloudsearch {
   }
 
   /**
+    * The minimum required TLS version.
+    */
+  object TLSSecurityPolicyEnum {
+    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07"
+    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07"
+
+    val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+  }
+
+  /**
     * Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.
     */
   @js.native
@@ -2178,6 +2249,49 @@ package cloudsearch {
       val __obj = js.Dynamic.literal()
       AvailabilityOptions.foreach(__v => __obj.updateDynamic("AvailabilityOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAvailabilityOptionsResponse]
+    }
+  }
+
+  /**
+    * Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.
+    */
+  @js.native
+  trait UpdateDomainEndpointOptionsRequest extends js.Object {
+    var DomainEndpointOptions: DomainEndpointOptions
+    var DomainName: DomainName
+  }
+
+  object UpdateDomainEndpointOptionsRequest {
+    @inline
+    def apply(
+        DomainEndpointOptions: DomainEndpointOptions,
+        DomainName: DomainName
+    ): UpdateDomainEndpointOptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainEndpointOptions" -> DomainEndpointOptions.asInstanceOf[js.Any],
+        "DomainName"            -> DomainName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateDomainEndpointOptionsRequest]
+    }
+  }
+
+  /**
+    * The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options.
+    */
+  @js.native
+  trait UpdateDomainEndpointOptionsResponse extends js.Object {
+    var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
+  }
+
+  object UpdateDomainEndpointOptionsResponse {
+    @inline
+    def apply(
+        DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined
+    ): UpdateDomainEndpointOptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDomainEndpointOptionsResponse]
     }
   }
 

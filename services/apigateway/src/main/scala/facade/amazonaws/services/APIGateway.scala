@@ -2349,15 +2349,18 @@ package apigateway {
   @js.native
   trait EndpointConfiguration extends js.Object {
     var types: js.UndefOr[ListOfEndpointType]
+    var vpcEndpointIds: js.UndefOr[ListOfString]
   }
 
   object EndpointConfiguration {
     @inline
     def apply(
-        types: js.UndefOr[ListOfEndpointType] = js.undefined
+        types: js.UndefOr[ListOfEndpointType] = js.undefined,
+        vpcEndpointIds: js.UndefOr[ListOfString] = js.undefined
     ): EndpointConfiguration = {
       val __obj = js.Dynamic.literal()
       types.foreach(__v => __obj.updateDynamic("types")(__v.asInstanceOf[js.Any]))
+      vpcEndpointIds.foreach(__v => __obj.updateDynamic("vpcEndpointIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointConfiguration]
     }
   }

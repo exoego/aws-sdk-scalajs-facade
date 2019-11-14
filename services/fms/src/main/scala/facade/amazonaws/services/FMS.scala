@@ -195,8 +195,9 @@ package fms {
     val AWSCONFIG          = "AWSCONFIG"
     val AWSWAF             = "AWSWAF"
     val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED"
+    val AWSVPC             = "AWSVPC"
 
-    val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED))
+    val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC))
   }
 
   @js.native
@@ -213,7 +214,7 @@ package fms {
   }
 
   /**
-    * Describes the compliance status for the account. An account is considered non-compliant if it includes resources that are not protected by the specified policy.
+    * Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -606,7 +607,7 @@ package fms {
   }
 
   /**
-    * Describes the non-compliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are non-compliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
+    * Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
     */
   @js.native
   trait PolicyComplianceDetail extends js.Object {
@@ -643,7 +644,7 @@ package fms {
   }
 
   /**
-    * Indicates whether the account is compliant with the specified policy. An account is considered non-compliant if it includes resources that are not protected by the policy.
+    * Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
     */
   @js.native
   trait PolicyComplianceStatus extends js.Object {
@@ -779,7 +780,7 @@ package fms {
   }
 
   /**
-    * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an "OR." That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude. [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
+    * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -827,24 +828,39 @@ package fms {
   }
 
   object SecurityServiceTypeEnum {
-    val WAF             = "WAF"
-    val SHIELD_ADVANCED = "SHIELD_ADVANCED"
+    val WAF                           = "WAF"
+    val SHIELD_ADVANCED               = "SHIELD_ADVANCED"
+    val SECURITY_GROUPS_COMMON        = "SECURITY_GROUPS_COMMON"
+    val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT"
+    val SECURITY_GROUPS_USAGE_AUDIT   = "SECURITY_GROUPS_USAGE_AUDIT"
 
-    val values = js.Object.freeze(js.Array(WAF, SHIELD_ADVANCED))
+    val values = js.Object.freeze(
+      js.Array(WAF, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
+    )
   }
 
   object ViolationReasonEnum {
-    val WEB_ACL_MISSING_RULE_GROUP         = "WEB_ACL_MISSING_RULE_GROUP"
-    val RESOURCE_MISSING_WEB_ACL           = "RESOURCE_MISSING_WEB_ACL"
-    val RESOURCE_INCORRECT_WEB_ACL         = "RESOURCE_INCORRECT_WEB_ACL"
-    val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION"
+    val WEB_ACL_MISSING_RULE_GROUP                    = "WEB_ACL_MISSING_RULE_GROUP"
+    val RESOURCE_MISSING_WEB_ACL                      = "RESOURCE_MISSING_WEB_ACL"
+    val RESOURCE_INCORRECT_WEB_ACL                    = "RESOURCE_INCORRECT_WEB_ACL"
+    val RESOURCE_MISSING_SHIELD_PROTECTION            = "RESOURCE_MISSING_SHIELD_PROTECTION"
+    val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION"
+    val RESOURCE_MISSING_SECURITY_GROUP               = "RESOURCE_MISSING_SECURITY_GROUP"
+    val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP        = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP"
+    val SECURITY_GROUP_UNUSED                         = "SECURITY_GROUP_UNUSED"
+    val SECURITY_GROUP_REDUNDANT                      = "SECURITY_GROUP_REDUNDANT"
 
     val values = js.Object.freeze(
       js.Array(
         WEB_ACL_MISSING_RULE_GROUP,
         RESOURCE_MISSING_WEB_ACL,
         RESOURCE_INCORRECT_WEB_ACL,
-        RESOURCE_MISSING_SHIELD_PROTECTION
+        RESOURCE_MISSING_SHIELD_PROTECTION,
+        RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
+        RESOURCE_MISSING_SECURITY_GROUP,
+        RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
+        SECURITY_GROUP_UNUSED,
+        SECURITY_GROUP_REDUNDANT
       )
     )
   }

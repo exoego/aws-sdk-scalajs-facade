@@ -13,11 +13,16 @@ package object amplify {
   type AppArn                           = String
   type AppId                            = String
   type Apps                             = js.Array[App]
+  type ArtifactFileName                 = String
+  type ArtifactId                       = String
+  type ArtifactUrl                      = String
+  type Artifacts                        = js.Array[Artifact]
   type ArtifactsUrl                     = String
   type AssociatedResource               = String
   type AssociatedResources              = js.Array[AssociatedResource]
   type AutoBranchCreationPattern        = String
   type AutoBranchCreationPatterns       = js.Array[AutoBranchCreationPattern]
+  type BackendEnvironmentArn            = String
   type BasicAuthCredentials             = String
   type BranchArn                        = String
   type BranchName                       = String
@@ -48,6 +53,7 @@ package object amplify {
   type EnableBasicAuth                  = Boolean
   type EnableBranchAutoBuild            = Boolean
   type EnableNotification               = Boolean
+  type EnablePullRequestPreview         = Boolean
   type EndTime                          = js.Date
   type EnvKey                           = String
   type EnvValue                         = String
@@ -70,6 +76,7 @@ package object amplify {
   type NextToken                        = String
   type OauthToken                       = String
   type Platform                         = String
+  type PullRequestEnvironmentName       = String
   type Repository                       = String
   type ResourceArn                      = String
   type Screenshots                      = js.Dictionary[ThumbnailUrl]
@@ -90,6 +97,8 @@ package object amplify {
   type TagMap                           = js.Dictionary[TagValue]
   type TagValue                         = String
   type Target                           = String
+  type TestArtifactsUrl                 = String
+  type TestConfigUrl                    = String
   type ThumbnailName                    = String
   type ThumbnailUrl                     = String
   type TotalNumberOfJobs                = String
@@ -124,7 +133,11 @@ package object amplify {
       service.deleteJob(params).promise.toFuture
     @inline def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
       service.deleteWebhook(params).promise.toFuture
+    @inline def generateAccessLogsFuture(params: GenerateAccessLogsRequest): Future[GenerateAccessLogsResult] =
+      service.generateAccessLogs(params).promise.toFuture
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResult] = service.getApp(params).promise.toFuture
+    @inline def getArtifactUrlFuture(params: GetArtifactUrlRequest): Future[GetArtifactUrlResult] =
+      service.getArtifactUrl(params).promise.toFuture
     @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] =
       service.getBranch(params).promise.toFuture
     @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
@@ -134,6 +147,8 @@ package object amplify {
       service.getWebhook(params).promise.toFuture
     @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] =
       service.listApps(params).promise.toFuture
+    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
+      service.listArtifacts(params).promise.toFuture
     @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
       service.listBranches(params).promise.toFuture
     @inline def listDomainAssociationsFuture(
@@ -184,12 +199,15 @@ package amplify {
       js.native
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResult]                                        = js.native
     def deleteWebhook(params: DeleteWebhookRequest): Request[DeleteWebhookResult]                            = js.native
+    def generateAccessLogs(params: GenerateAccessLogsRequest): Request[GenerateAccessLogsResult]             = js.native
     def getApp(params: GetAppRequest): Request[GetAppResult]                                                 = js.native
+    def getArtifactUrl(params: GetArtifactUrlRequest): Request[GetArtifactUrlResult]                         = js.native
     def getBranch(params: GetBranchRequest): Request[GetBranchResult]                                        = js.native
     def getDomainAssociation(params: GetDomainAssociationRequest): Request[GetDomainAssociationResult]       = js.native
     def getJob(params: GetJobRequest): Request[GetJobResult]                                                 = js.native
     def getWebhook(params: GetWebhookRequest): Request[GetWebhookResult]                                     = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResult]                                           = js.native
+    def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult]                            = js.native
     def listBranches(params: ListBranchesRequest): Request[ListBranchesResult]                               = js.native
     def listDomainAssociations(params: ListDomainAssociationsRequest): Request[ListDomainAssociationsResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                           = js.native
@@ -291,6 +309,30 @@ package amplify {
   }
 
   /**
+    * Structure for artifact.
+    */
+  @js.native
+  trait Artifact extends js.Object {
+    var artifactFileName: ArtifactFileName
+    var artifactId: ArtifactId
+  }
+
+  object Artifact {
+    @inline
+    def apply(
+        artifactFileName: ArtifactFileName,
+        artifactId: ArtifactId
+    ): Artifact = {
+      val __obj = js.Dynamic.literal(
+        "artifactFileName" -> artifactFileName.asInstanceOf[js.Any],
+        "artifactId"       -> artifactId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Artifact]
+    }
+  }
+
+  /**
     * Structure with auto branch creation config.
     */
   @js.native
@@ -299,8 +341,10 @@ package amplify {
     var buildSpec: js.UndefOr[BuildSpec]
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
+    var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
+    var pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName]
     var stage: js.UndefOr[Stage]
   }
 
@@ -311,8 +355,10 @@ package amplify {
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+        enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
+        pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName] = js.undefined,
         stage: js.UndefOr[Stage] = js.undefined
     ): AutoBranchCreationConfig = {
       val __obj = js.Dynamic.literal()
@@ -320,8 +366,12 @@ package amplify {
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      pullRequestEnvironmentName.foreach(
+        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoBranchCreationConfig]
     }
@@ -342,6 +392,7 @@ package amplify {
     var enableAutoBuild: EnableAutoBuild
     var enableBasicAuth: EnableBasicAuth
     var enableNotification: EnableNotification
+    var enablePullRequestPreview: EnablePullRequestPreview
     var environmentVariables: EnvironmentVariables
     var framework: Framework
     var stage: Stage
@@ -349,8 +400,12 @@ package amplify {
     var ttl: TTL
     var updateTime: UpdateTime
     var associatedResources: js.UndefOr[AssociatedResources]
+    var backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
+    var destinationBranch: js.UndefOr[BranchName]
+    var pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName]
+    var sourceBranch: js.UndefOr[BranchName]
     var tags: js.UndefOr[TagMap]
     var thumbnailUrl: js.UndefOr[ThumbnailUrl]
   }
@@ -368,6 +423,7 @@ package amplify {
         enableAutoBuild: EnableAutoBuild,
         enableBasicAuth: EnableBasicAuth,
         enableNotification: EnableNotification,
+        enablePullRequestPreview: EnablePullRequestPreview,
         environmentVariables: EnvironmentVariables,
         framework: Framework,
         stage: Stage,
@@ -375,33 +431,44 @@ package amplify {
         ttl: TTL,
         updateTime: UpdateTime,
         associatedResources: js.UndefOr[AssociatedResources] = js.undefined,
+        backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+        destinationBranch: js.UndefOr[BranchName] = js.undefined,
+        pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName] = js.undefined,
+        sourceBranch: js.UndefOr[BranchName] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined
     ): Branch = {
       val __obj = js.Dynamic.literal(
-        "activeJobId"          -> activeJobId.asInstanceOf[js.Any],
-        "branchArn"            -> branchArn.asInstanceOf[js.Any],
-        "branchName"           -> branchName.asInstanceOf[js.Any],
-        "createTime"           -> createTime.asInstanceOf[js.Any],
-        "customDomains"        -> customDomains.asInstanceOf[js.Any],
-        "description"          -> description.asInstanceOf[js.Any],
-        "displayName"          -> displayName.asInstanceOf[js.Any],
-        "enableAutoBuild"      -> enableAutoBuild.asInstanceOf[js.Any],
-        "enableBasicAuth"      -> enableBasicAuth.asInstanceOf[js.Any],
-        "enableNotification"   -> enableNotification.asInstanceOf[js.Any],
-        "environmentVariables" -> environmentVariables.asInstanceOf[js.Any],
-        "framework"            -> framework.asInstanceOf[js.Any],
-        "stage"                -> stage.asInstanceOf[js.Any],
-        "totalNumberOfJobs"    -> totalNumberOfJobs.asInstanceOf[js.Any],
-        "ttl"                  -> ttl.asInstanceOf[js.Any],
-        "updateTime"           -> updateTime.asInstanceOf[js.Any]
+        "activeJobId"              -> activeJobId.asInstanceOf[js.Any],
+        "branchArn"                -> branchArn.asInstanceOf[js.Any],
+        "branchName"               -> branchName.asInstanceOf[js.Any],
+        "createTime"               -> createTime.asInstanceOf[js.Any],
+        "customDomains"            -> customDomains.asInstanceOf[js.Any],
+        "description"              -> description.asInstanceOf[js.Any],
+        "displayName"              -> displayName.asInstanceOf[js.Any],
+        "enableAutoBuild"          -> enableAutoBuild.asInstanceOf[js.Any],
+        "enableBasicAuth"          -> enableBasicAuth.asInstanceOf[js.Any],
+        "enableNotification"       -> enableNotification.asInstanceOf[js.Any],
+        "enablePullRequestPreview" -> enablePullRequestPreview.asInstanceOf[js.Any],
+        "environmentVariables"     -> environmentVariables.asInstanceOf[js.Any],
+        "framework"                -> framework.asInstanceOf[js.Any],
+        "stage"                    -> stage.asInstanceOf[js.Any],
+        "totalNumberOfJobs"        -> totalNumberOfJobs.asInstanceOf[js.Any],
+        "ttl"                      -> ttl.asInstanceOf[js.Any],
+        "updateTime"               -> updateTime.asInstanceOf[js.Any]
       )
 
       associatedResources.foreach(__v => __obj.updateDynamic("associatedResources")(__v.asInstanceOf[js.Any]))
+      backendEnvironmentArn.foreach(__v => __obj.updateDynamic("backendEnvironmentArn")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      destinationBranch.foreach(__v => __obj.updateDynamic("destinationBranch")(__v.asInstanceOf[js.Any]))
+      pullRequestEnvironmentName.foreach(
+        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      )
+      sourceBranch.foreach(__v => __obj.updateDynamic("sourceBranch")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       thumbnailUrl.foreach(__v => __obj.updateDynamic("thumbnailUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Branch]
@@ -504,6 +571,7 @@ package amplify {
   trait CreateBranchRequest extends js.Object {
     var appId: AppId
     var branchName: BranchName
+    var backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
     var description: js.UndefOr[Description]
@@ -511,8 +579,10 @@ package amplify {
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
+    var pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName]
     var stage: js.UndefOr[Stage]
     var tags: js.UndefOr[TagMap]
     var ttl: js.UndefOr[TTL]
@@ -523,6 +593,7 @@ package amplify {
     def apply(
         appId: AppId,
         branchName: BranchName,
+        backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -530,8 +601,10 @@ package amplify {
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
         enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+        enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
+        pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName] = js.undefined,
         stage: js.UndefOr[Stage] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         ttl: js.UndefOr[TTL] = js.undefined
@@ -541,6 +614,7 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
+      backendEnvironmentArn.foreach(__v => __obj.updateDynamic("backendEnvironmentArn")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -548,8 +622,12 @@ package amplify {
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
       enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      pullRequestEnvironmentName.foreach(
+        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
@@ -1046,6 +1124,55 @@ package amplify {
   }
 
   /**
+    * Request structure for the generate access logs request.
+    */
+  @js.native
+  trait GenerateAccessLogsRequest extends js.Object {
+    var appId: AppId
+    var domainName: DomainName
+    var endTime: js.UndefOr[EndTime]
+    var startTime: js.UndefOr[StartTime]
+  }
+
+  object GenerateAccessLogsRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        domainName: DomainName,
+        endTime: js.UndefOr[EndTime] = js.undefined,
+        startTime: js.UndefOr[StartTime] = js.undefined
+    ): GenerateAccessLogsRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId"      -> appId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateAccessLogsRequest]
+    }
+  }
+
+  /**
+    * Result structure for the generate access logs request.
+    */
+  @js.native
+  trait GenerateAccessLogsResult extends js.Object {
+    var logUrl: js.UndefOr[LogUrl]
+  }
+
+  object GenerateAccessLogsResult {
+    @inline
+    def apply(
+        logUrl: js.UndefOr[LogUrl] = js.undefined
+    ): GenerateAccessLogsResult = {
+      val __obj = js.Dynamic.literal()
+      logUrl.foreach(__v => __obj.updateDynamic("logUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateAccessLogsResult]
+    }
+  }
+
+  /**
     * Request structure for get App request.
     */
   @js.native
@@ -1085,7 +1212,52 @@ package amplify {
   }
 
   /**
-    * Result structure for get branch request.
+    * Request structure for the get artifact request.
+    */
+  @js.native
+  trait GetArtifactUrlRequest extends js.Object {
+    var artifactId: ArtifactId
+  }
+
+  object GetArtifactUrlRequest {
+    @inline
+    def apply(
+        artifactId: ArtifactId
+    ): GetArtifactUrlRequest = {
+      val __obj = js.Dynamic.literal(
+        "artifactId" -> artifactId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetArtifactUrlRequest]
+    }
+  }
+
+  /**
+    * Result structure for the get artifact request.
+    */
+  @js.native
+  trait GetArtifactUrlResult extends js.Object {
+    var artifactId: ArtifactId
+    var artifactUrl: ArtifactUrl
+  }
+
+  object GetArtifactUrlResult {
+    @inline
+    def apply(
+        artifactId: ArtifactId,
+        artifactUrl: ArtifactUrl
+    ): GetArtifactUrlResult = {
+      val __obj = js.Dynamic.literal(
+        "artifactId"  -> artifactId.asInstanceOf[js.Any],
+        "artifactUrl" -> artifactUrl.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetArtifactUrlResult]
+    }
+  }
+
+  /**
+    * Request structure for get branch request.
     */
   @js.native
   trait GetBranchRequest extends js.Object {
@@ -1395,6 +1567,63 @@ package amplify {
   }
 
   /**
+    * Request structure for the list artifacts request.
+    */
+  @js.native
+  trait ListArtifactsRequest extends js.Object {
+    var appId: AppId
+    var branchName: BranchName
+    var jobId: JobId
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListArtifactsRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        branchName: BranchName,
+        jobId: JobId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListArtifactsRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId"      -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "jobId"      -> jobId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListArtifactsRequest]
+    }
+  }
+
+  /**
+    * Result structure for the list artifacts request.
+    */
+  @js.native
+  trait ListArtifactsResult extends js.Object {
+    var artifacts: Artifacts
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListArtifactsResult {
+    @inline
+    def apply(
+        artifacts: Artifacts,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListArtifactsResult = {
+      val __obj = js.Dynamic.literal(
+        "artifacts" -> artifacts.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListArtifactsResult]
+    }
+  }
+
+  /**
     * Request structure for list branches request.
     */
   @js.native
@@ -1680,8 +1909,9 @@ package amplify {
     val BETA         = "BETA"
     val DEVELOPMENT  = "DEVELOPMENT"
     val EXPERIMENTAL = "EXPERIMENTAL"
+    val PULL_REQUEST = "PULL_REQUEST"
 
-    val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL))
+    val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST))
   }
 
   /**
@@ -1812,6 +2042,8 @@ package amplify {
     var logUrl: js.UndefOr[LogUrl]
     var screenshots: js.UndefOr[Screenshots]
     var statusReason: js.UndefOr[StatusReason]
+    var testArtifactsUrl: js.UndefOr[TestArtifactsUrl]
+    var testConfigUrl: js.UndefOr[TestConfigUrl]
   }
 
   object Step {
@@ -1825,7 +2057,9 @@ package amplify {
         context: js.UndefOr[Context] = js.undefined,
         logUrl: js.UndefOr[LogUrl] = js.undefined,
         screenshots: js.UndefOr[Screenshots] = js.undefined,
-        statusReason: js.UndefOr[StatusReason] = js.undefined
+        statusReason: js.UndefOr[StatusReason] = js.undefined,
+        testArtifactsUrl: js.UndefOr[TestArtifactsUrl] = js.undefined,
+        testConfigUrl: js.UndefOr[TestConfigUrl] = js.undefined
     ): Step = {
       val __obj = js.Dynamic.literal(
         "endTime"   -> endTime.asInstanceOf[js.Any],
@@ -1839,6 +2073,8 @@ package amplify {
       logUrl.foreach(__v => __obj.updateDynamic("logUrl")(__v.asInstanceOf[js.Any]))
       screenshots.foreach(__v => __obj.updateDynamic("screenshots")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      testArtifactsUrl.foreach(__v => __obj.updateDynamic("testArtifactsUrl")(__v.asInstanceOf[js.Any]))
+      testConfigUrl.foreach(__v => __obj.updateDynamic("testConfigUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Step]
     }
   }
@@ -2028,6 +2264,7 @@ package amplify {
   @js.native
   trait UpdateAppRequest extends js.Object {
     var appId: AppId
+    var accessToken: js.UndefOr[AccessToken]
     var autoBranchCreationConfig: js.UndefOr[AutoBranchCreationConfig]
     var autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
@@ -2040,13 +2277,16 @@ package amplify {
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
     var name: js.UndefOr[Name]
+    var oauthToken: js.UndefOr[OauthToken]
     var platform: js.UndefOr[Platform]
+    var repository: js.UndefOr[Repository]
   }
 
   object UpdateAppRequest {
     @inline
     def apply(
         appId: AppId,
+        accessToken: js.UndefOr[AccessToken] = js.undefined,
         autoBranchCreationConfig: js.UndefOr[AutoBranchCreationConfig] = js.undefined,
         autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
@@ -2059,12 +2299,15 @@ package amplify {
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined
+        oauthToken: js.UndefOr[OauthToken] = js.undefined,
+        platform: js.UndefOr[Platform] = js.undefined,
+        repository: js.UndefOr[Repository] = js.undefined
     ): UpdateAppRequest = {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
+      accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
       autoBranchCreationPatterns.foreach(
         __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
@@ -2079,7 +2322,9 @@ package amplify {
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       iamServiceRoleArn.foreach(__v => __obj.updateDynamic("iamServiceRoleArn")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      oauthToken.foreach(__v => __obj.updateDynamic("oauthToken")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAppRequest]
     }
   }
@@ -2112,6 +2357,7 @@ package amplify {
   trait UpdateBranchRequest extends js.Object {
     var appId: AppId
     var branchName: BranchName
+    var backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
     var description: js.UndefOr[Description]
@@ -2119,8 +2365,10 @@ package amplify {
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
+    var pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName]
     var stage: js.UndefOr[Stage]
     var ttl: js.UndefOr[TTL]
   }
@@ -2130,6 +2378,7 @@ package amplify {
     def apply(
         appId: AppId,
         branchName: BranchName,
+        backendEnvironmentArn: js.UndefOr[BackendEnvironmentArn] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -2137,8 +2386,10 @@ package amplify {
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
         enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+        enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
+        pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName] = js.undefined,
         stage: js.UndefOr[Stage] = js.undefined,
         ttl: js.UndefOr[TTL] = js.undefined
     ): UpdateBranchRequest = {
@@ -2147,6 +2398,7 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
+      backendEnvironmentArn.foreach(__v => __obj.updateDynamic("backendEnvironmentArn")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2154,8 +2406,12 @@ package amplify {
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
       enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      pullRequestEnvironmentName.foreach(
+        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBranchRequest]

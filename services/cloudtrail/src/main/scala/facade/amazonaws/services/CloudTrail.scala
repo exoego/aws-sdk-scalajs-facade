@@ -27,6 +27,7 @@ package object cloudtrail {
   type TagsList             = js.Array[Tag]
   type TrailList            = js.Array[Trail]
   type TrailNameList        = js.Array[String]
+  type Trails               = js.Array[TrailInfo]
 
   implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
     @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] =
@@ -39,12 +40,16 @@ package object cloudtrail {
       service.describeTrails(params).promise.toFuture
     @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
       service.getEventSelectors(params).promise.toFuture
+    @inline def getTrailFuture(params: GetTrailRequest): Future[GetTrailResponse] =
+      service.getTrail(params).promise.toFuture
     @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
       service.getTrailStatus(params).promise.toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
       service.listPublicKeys(params).promise.toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
       service.listTags(params).promise.toFuture
+    @inline def listTrailsFuture(params: ListTrailsRequest): Future[ListTrailsResponse] =
+      service.listTrails(params).promise.toFuture
     @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
       service.lookupEvents(params).promise.toFuture
     @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
@@ -71,9 +76,11 @@ package cloudtrail {
     def deleteTrail(params: DeleteTrailRequest): Request[DeleteTrailResponse]                   = js.native
     def describeTrails(params: DescribeTrailsRequest): Request[DescribeTrailsResponse]          = js.native
     def getEventSelectors(params: GetEventSelectorsRequest): Request[GetEventSelectorsResponse] = js.native
+    def getTrail(params: GetTrailRequest): Request[GetTrailResponse]                            = js.native
     def getTrailStatus(params: GetTrailStatusRequest): Request[GetTrailStatusResponse]          = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResponse]          = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse]                            = js.native
+    def listTrails(params: ListTrailsRequest): Request[ListTrailsResponse]                      = js.native
     def lookupEvents(params: LookupEventsRequest): Request[LookupEventsResponse]                = js.native
     def putEventSelectors(params: PutEventSelectorsRequest): Request[PutEventSelectorsResponse] = js.native
     def removeTags(params: RemoveTagsRequest): Request[RemoveTagsResponse]                      = js.native
@@ -138,6 +145,7 @@ package cloudtrail {
     var KmsKeyId: js.UndefOr[String]
     var S3KeyPrefix: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
+    var TagsList: js.UndefOr[TagsList]
   }
 
   object CreateTrailRequest {
@@ -153,7 +161,8 @@ package cloudtrail {
         IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         S3KeyPrefix: js.UndefOr[String] = js.undefined,
-        SnsTopicName: js.UndefOr[String] = js.undefined
+        SnsTopicName: js.UndefOr[String] = js.undefined,
+        TagsList: js.UndefOr[TagsList] = js.undefined
     ): CreateTrailRequest = {
       val __obj = js.Dynamic.literal(
         "Name"         -> Name.asInstanceOf[js.Any],
@@ -173,6 +182,7 @@ package cloudtrail {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       SnsTopicName.foreach(__v => __obj.updateDynamic("SnsTopicName")(__v.asInstanceOf[js.Any]))
+      TagsList.foreach(__v => __obj.updateDynamic("TagsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrailRequest]
     }
   }
@@ -240,7 +250,7 @@ package cloudtrail {
     * The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide insight into the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     *
     * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
-    * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
+    * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
     *  <ol> * A user uploads an image file to <code>bucket-1</code>.
     *  * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
     *  * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
@@ -454,6 +464,40 @@ package cloudtrail {
     }
   }
 
+  @js.native
+  trait GetTrailRequest extends js.Object {
+    var Name: String
+  }
+
+  object GetTrailRequest {
+    @inline
+    def apply(
+        Name: String
+    ): GetTrailRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetTrailRequest]
+    }
+  }
+
+  @js.native
+  trait GetTrailResponse extends js.Object {
+    var Trail: js.UndefOr[Trail]
+  }
+
+  object GetTrailResponse {
+    @inline
+    def apply(
+        Trail: js.UndefOr[Trail] = js.undefined
+    ): GetTrailResponse = {
+      val __obj = js.Dynamic.literal()
+      Trail.foreach(__v => __obj.updateDynamic("Trail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTrailResponse]
+    }
+  }
+
   /**
     * The name of a trail about which you want the current status.
     */
@@ -646,6 +690,41 @@ package cloudtrail {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ResourceTagList.foreach(__v => __obj.updateDynamic("ResourceTagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTrailsRequest extends js.Object {
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListTrailsRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListTrailsRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTrailsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTrailsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Trails: js.UndefOr[Trails]
+  }
+
+  object ListTrailsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Trails: js.UndefOr[Trails] = js.undefined
+    ): ListTrailsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Trails.foreach(__v => __obj.updateDynamic("Trails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTrailsResponse]
     }
   }
 
@@ -1061,6 +1140,31 @@ package cloudtrail {
       SnsTopicName.foreach(__v => __obj.updateDynamic("SnsTopicName")(__v.asInstanceOf[js.Any]))
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trail]
+    }
+  }
+
+  /**
+    * Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).
+    */
+  @js.native
+  trait TrailInfo extends js.Object {
+    var HomeRegion: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+    var TrailARN: js.UndefOr[String]
+  }
+
+  object TrailInfo {
+    @inline
+    def apply(
+        HomeRegion: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        TrailARN: js.UndefOr[String] = js.undefined
+    ): TrailInfo = {
+      val __obj = js.Dynamic.literal()
+      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrailInfo]
     }
   }
 

@@ -112,6 +112,7 @@ package globalaccelerator {
   trait Accelerator extends js.Object {
     var AcceleratorArn: js.UndefOr[GenericString]
     var CreatedTime: js.UndefOr[Timestamp]
+    var DnsName: js.UndefOr[GenericString]
     var Enabled: js.UndefOr[GenericBoolean]
     var IpAddressType: js.UndefOr[IpAddressType]
     var IpSets: js.UndefOr[IpSets]
@@ -125,6 +126,7 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        DnsName: js.UndefOr[GenericString] = js.undefined,
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         IpSets: js.UndefOr[IpSets] = js.undefined,
@@ -135,6 +137,7 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal()
       AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       IpSets.foreach(__v => __obj.updateDynamic("IpSets")(__v.asInstanceOf[js.Any]))

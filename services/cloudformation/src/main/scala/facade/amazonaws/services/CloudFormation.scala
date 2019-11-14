@@ -89,6 +89,11 @@ package object cloudformation {
   type RequiresRecreation               = String
   type ResourceAttribute                = String
   type ResourceChangeDetails            = js.Array[ResourceChangeDetail]
+  type ResourceIdentifierProperties     = js.Dictionary[ResourceIdentifierPropertyValue]
+  type ResourceIdentifierPropertyKey    = String
+  type ResourceIdentifierPropertyValue  = String
+  type ResourceIdentifierSummaries      = js.Array[ResourceIdentifierSummary]
+  type ResourceIdentifiers              = js.Array[ResourceIdentifierPropertyKey]
   type ResourceProperties               = String
   type ResourceSignalStatus             = String
   type ResourceSignalUniqueId           = String
@@ -97,6 +102,7 @@ package object cloudformation {
   type ResourceToSkip                   = String
   type ResourceType                     = String
   type ResourceTypes                    = js.Array[ResourceType]
+  type ResourcesToImport                = js.Array[ResourceToImport]
   type ResourcesToSkip                  = js.Array[ResourceToSkip]
   type RetainResources                  = js.Array[LogicalResourceId]
   type RetainStacks                     = Boolean
@@ -359,7 +365,12 @@ package cloudformation {
   }
 
   /**
-    * The AccountLimit data type. For more information about account limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|AWS CloudFormation Limits]] in the <i>AWS CloudFormation User Guide</i>.
+    * The AccountLimit data type.
+    *  CloudFormation has the following limits per account:
+    * * Number of concurrent resources
+    *  * Number of stacks
+    *  * Number of stack outputs
+    * For more information about these account limits, and other CloudFormation limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|AWS CloudFormation Limits]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
   trait AccountLimit extends js.Object {
@@ -438,8 +449,9 @@ package cloudformation {
     val Add    = "Add"
     val Modify = "Modify"
     val Remove = "Remove"
+    val Import = "Import"
 
-    val values = js.Object.freeze(js.Array(Add, Modify, Remove))
+    val values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
   }
 
   object ChangeSetStatusEnum {
@@ -499,8 +511,9 @@ package cloudformation {
   object ChangeSetTypeEnum {
     val CREATE = "CREATE"
     val UPDATE = "UPDATE"
+    val IMPORT = "IMPORT"
 
-    val values = js.Object.freeze(js.Array(CREATE, UPDATE))
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
   }
 
   object ChangeSourceEnum {
@@ -581,6 +594,7 @@ package cloudformation {
     var NotificationARNs: js.UndefOr[NotificationARNs]
     var Parameters: js.UndefOr[Parameters]
     var ResourceTypes: js.UndefOr[ResourceTypes]
+    var ResourcesToImport: js.UndefOr[ResourcesToImport]
     var RoleARN: js.UndefOr[RoleARN]
     var RollbackConfiguration: js.UndefOr[RollbackConfiguration]
     var Tags: js.UndefOr[Tags]
@@ -601,6 +615,7 @@ package cloudformation {
         NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
+        ResourcesToImport: js.UndefOr[ResourcesToImport] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -620,6 +635,7 @@ package cloudformation {
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
+      ResourcesToImport.foreach(__v => __obj.updateDynamic("ResourcesToImport")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       RollbackConfiguration.foreach(__v => __obj.updateDynamic("RollbackConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1870,6 +1886,7 @@ package cloudformation {
     var Description: js.UndefOr[Description]
     var Metadata: js.UndefOr[Metadata]
     var Parameters: js.UndefOr[ParameterDeclarations]
+    var ResourceIdentifierSummaries: js.UndefOr[ResourceIdentifierSummaries]
     var ResourceTypes: js.UndefOr[ResourceTypes]
     var Version: js.UndefOr[Version]
   }
@@ -1883,6 +1900,7 @@ package cloudformation {
         Description: js.UndefOr[Description] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
         Parameters: js.UndefOr[ParameterDeclarations] = js.undefined,
+        ResourceIdentifierSummaries: js.UndefOr[ResourceIdentifierSummaries] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): GetTemplateSummaryOutput = {
@@ -1893,6 +1911,9 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ResourceIdentifierSummaries.foreach(
+        __v => __obj.updateDynamic("ResourceIdentifierSummaries")(__v.asInstanceOf[js.Any])
+      )
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateSummaryOutput]
@@ -2552,6 +2573,31 @@ package cloudformation {
     }
   }
 
+  /**
+    * Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.
+    */
+  @js.native
+  trait ResourceIdentifierSummary extends js.Object {
+    var LogicalResourceIds: js.UndefOr[LogicalResourceIds]
+    var ResourceIdentifiers: js.UndefOr[ResourceIdentifiers]
+    var ResourceType: js.UndefOr[ResourceType]
+  }
+
+  object ResourceIdentifierSummary {
+    @inline
+    def apply(
+        LogicalResourceIds: js.UndefOr[LogicalResourceIds] = js.undefined,
+        ResourceIdentifiers: js.UndefOr[ResourceIdentifiers] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): ResourceIdentifierSummary = {
+      val __obj = js.Dynamic.literal()
+      LogicalResourceIds.foreach(__v => __obj.updateDynamic("LogicalResourceIds")(__v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.updateDynamic("ResourceIdentifiers")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceIdentifierSummary]
+    }
+  }
+
   object ResourceSignalStatusEnum {
     val SUCCESS = "SUCCESS"
     val FAILURE = "FAILURE"
@@ -2560,16 +2606,22 @@ package cloudformation {
   }
 
   object ResourceStatusEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val CREATE_FAILED      = "CREATE_FAILED"
-    val CREATE_COMPLETE    = "CREATE_COMPLETE"
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
-    val DELETE_FAILED      = "DELETE_FAILED"
-    val DELETE_COMPLETE    = "DELETE_COMPLETE"
-    val DELETE_SKIPPED     = "DELETE_SKIPPED"
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
-    val UPDATE_FAILED      = "UPDATE_FAILED"
-    val UPDATE_COMPLETE    = "UPDATE_COMPLETE"
+    val CREATE_IN_PROGRESS          = "CREATE_IN_PROGRESS"
+    val CREATE_FAILED               = "CREATE_FAILED"
+    val CREATE_COMPLETE             = "CREATE_COMPLETE"
+    val DELETE_IN_PROGRESS          = "DELETE_IN_PROGRESS"
+    val DELETE_FAILED               = "DELETE_FAILED"
+    val DELETE_COMPLETE             = "DELETE_COMPLETE"
+    val DELETE_SKIPPED              = "DELETE_SKIPPED"
+    val UPDATE_IN_PROGRESS          = "UPDATE_IN_PROGRESS"
+    val UPDATE_FAILED               = "UPDATE_FAILED"
+    val UPDATE_COMPLETE             = "UPDATE_COMPLETE"
+    val IMPORT_FAILED               = "IMPORT_FAILED"
+    val IMPORT_COMPLETE             = "IMPORT_COMPLETE"
+    val IMPORT_IN_PROGRESS          = "IMPORT_IN_PROGRESS"
+    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS"
+    val IMPORT_ROLLBACK_FAILED      = "IMPORT_ROLLBACK_FAILED"
+    val IMPORT_ROLLBACK_COMPLETE    = "IMPORT_ROLLBACK_COMPLETE"
 
     val values = js.Object.freeze(
       js.Array(
@@ -2582,7 +2634,13 @@ package cloudformation {
         DELETE_SKIPPED,
         UPDATE_IN_PROGRESS,
         UPDATE_FAILED,
-        UPDATE_COMPLETE
+        UPDATE_COMPLETE,
+        IMPORT_FAILED,
+        IMPORT_COMPLETE,
+        IMPORT_IN_PROGRESS,
+        IMPORT_ROLLBACK_IN_PROGRESS,
+        IMPORT_ROLLBACK_FAILED,
+        IMPORT_ROLLBACK_COMPLETE
       )
     )
   }
@@ -2609,6 +2667,33 @@ package cloudformation {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RequiresRecreation.foreach(__v => __obj.updateDynamic("RequiresRecreation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTargetDefinition]
+    }
+  }
+
+  /**
+    * Describes the target resource of an import operation.
+    */
+  @js.native
+  trait ResourceToImport extends js.Object {
+    var LogicalResourceId: LogicalResourceId
+    var ResourceIdentifier: ResourceIdentifierProperties
+    var ResourceType: ResourceType
+  }
+
+  object ResourceToImport {
+    @inline
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        ResourceIdentifier: ResourceIdentifierProperties,
+        ResourceType: ResourceType
+    ): ResourceToImport = {
+      val __obj = js.Dynamic.literal(
+        "LogicalResourceId"  -> LogicalResourceId.asInstanceOf[js.Any],
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any],
+        "ResourceType"       -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResourceToImport]
     }
   }
 
@@ -3516,6 +3601,11 @@ package cloudformation {
     val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
     val UPDATE_ROLLBACK_COMPLETE                     = "UPDATE_ROLLBACK_COMPLETE"
     val REVIEW_IN_PROGRESS                           = "REVIEW_IN_PROGRESS"
+    val IMPORT_IN_PROGRESS                           = "IMPORT_IN_PROGRESS"
+    val IMPORT_COMPLETE                              = "IMPORT_COMPLETE"
+    val IMPORT_ROLLBACK_IN_PROGRESS                  = "IMPORT_ROLLBACK_IN_PROGRESS"
+    val IMPORT_ROLLBACK_FAILED                       = "IMPORT_ROLLBACK_FAILED"
+    val IMPORT_ROLLBACK_COMPLETE                     = "IMPORT_ROLLBACK_COMPLETE"
 
     val values = js.Object.freeze(
       js.Array(
@@ -3535,7 +3625,12 @@ package cloudformation {
         UPDATE_ROLLBACK_FAILED,
         UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
         UPDATE_ROLLBACK_COMPLETE,
-        REVIEW_IN_PROGRESS
+        REVIEW_IN_PROGRESS,
+        IMPORT_IN_PROGRESS,
+        IMPORT_COMPLETE,
+        IMPORT_ROLLBACK_IN_PROGRESS,
+        IMPORT_ROLLBACK_FAILED,
+        IMPORT_ROLLBACK_COMPLETE
       )
     )
   }

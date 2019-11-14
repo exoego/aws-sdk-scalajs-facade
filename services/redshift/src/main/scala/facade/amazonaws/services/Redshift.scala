@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object redshift {
   type AccountsWithRestoreAccessList      = js.Array[AccountWithRestoreAccess]
+  type ActionType                         = String
   type AssociatedClusterList              = js.Array[ClusterAssociatedToSchedule]
   type AttributeList                      = js.Array[AccountAttribute]
   type AttributeNameList                  = js.Array[String]
@@ -48,6 +49,10 @@ package object redshift {
   type ImportTablesNotStarted             = js.Array[String]
   type IntegerOptional                    = Int
   type LongOptional                       = Double
+  type NodeConfigurationOptionList        = js.Array[NodeConfigurationOption]
+  type NodeConfigurationOptionsFilterList = js.Array[NodeConfigurationOptionsFilter]
+  type NodeConfigurationOptionsFilterName = String
+  type OperatorType                       = String
   type OrderableClusterOptionsList        = js.Array[OrderableClusterOption]
   type ParameterApplyType                 = String
   type ParameterGroupList                 = js.Array[ClusterParameterGroup]
@@ -84,6 +89,7 @@ package object redshift {
   type TagValueList                       = js.Array[String]
   type TaggedResourceList                 = js.Array[TaggedResource]
   type TrackList                          = js.Array[MaintenanceTrack]
+  type ValueStringList                    = js.Array[String]
   type VpcSecurityGroupIdList             = js.Array[String]
   type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
 
@@ -204,6 +210,9 @@ package object redshift {
     ): Future[HsmConfigurationMessage] = service.describeHsmConfigurations(params).promise.toFuture
     @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
       service.describeLoggingStatus(params).promise.toFuture
+    @inline def describeNodeConfigurationOptionsFuture(
+        params: DescribeNodeConfigurationOptionsMessage
+    ): Future[NodeConfigurationOptionsMessage] = service.describeNodeConfigurationOptions(params).promise.toFuture
     @inline def describeOrderableClusterOptionsFuture(
         params: DescribeOrderableClusterOptionsMessage
     ): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise.toFuture
@@ -379,6 +388,9 @@ package redshift {
     def describeHsmConfigurations(params: DescribeHsmConfigurationsMessage): Request[HsmConfigurationMessage] =
       js.native
     def describeLoggingStatus(params: DescribeLoggingStatusMessage): Request[LoggingStatus] = js.native
+    def describeNodeConfigurationOptions(
+        params: DescribeNodeConfigurationOptionsMessage
+    ): Request[NodeConfigurationOptionsMessage] = js.native
     def describeOrderableClusterOptions(
         params: DescribeOrderableClusterOptionsMessage
     ): Request[OrderableClusterOptionsMessage] = js.native
@@ -539,6 +551,12 @@ package redshift {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountWithRestoreAccess]
     }
+  }
+
+  object ActionTypeEnum {
+    val `restore-cluster` = "restore-cluster"
+
+    val values = js.Object.freeze(js.Array(`restore-cluster`))
   }
 
   /**
@@ -810,6 +828,7 @@ package redshift {
     var ManualSnapshotRetentionPeriod: js.UndefOr[Int]
     var MasterUsername: js.UndefOr[String]
     var ModifyStatus: js.UndefOr[String]
+    var NextMaintenanceWindowStartTime: js.UndefOr[TStamp]
     var NodeType: js.UndefOr[String]
     var NumberOfNodes: js.UndefOr[Int]
     var PendingActions: js.UndefOr[PendingActionsList]
@@ -860,6 +879,7 @@ package redshift {
         ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
         ModifyStatus: js.UndefOr[String] = js.undefined,
+        NextMaintenanceWindowStartTime: js.UndefOr[TStamp] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
         NumberOfNodes: js.UndefOr[Int] = js.undefined,
         PendingActions: js.UndefOr[PendingActionsList] = js.undefined,
@@ -923,6 +943,9 @@ package redshift {
       )
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       ModifyStatus.foreach(__v => __obj.updateDynamic("ModifyStatus")(__v.asInstanceOf[js.Any]))
+      NextMaintenanceWindowStartTime.foreach(
+        __v => __obj.updateDynamic("NextMaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
+      )
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       PendingActions.foreach(__v => __obj.updateDynamic("PendingActions")(__v.asInstanceOf[js.Any]))
@@ -3000,6 +3023,39 @@ package redshift {
     }
   }
 
+  @js.native
+  trait DescribeNodeConfigurationOptionsMessage extends js.Object {
+    var ActionType: ActionType
+    var Filters: js.UndefOr[NodeConfigurationOptionsFilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var OwnerAccount: js.UndefOr[String]
+    var SnapshotIdentifier: js.UndefOr[String]
+  }
+
+  object DescribeNodeConfigurationOptionsMessage {
+    @inline
+    def apply(
+        ActionType: ActionType,
+        Filters: js.UndefOr[NodeConfigurationOptionsFilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        OwnerAccount: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): DescribeNodeConfigurationOptionsMessage = {
+      val __obj = js.Dynamic.literal(
+        "ActionType" -> ActionType.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNodeConfigurationOptionsMessage]
+    }
+  }
+
   /**
     * <p/>
     */
@@ -4450,6 +4506,99 @@ package redshift {
   }
 
   /**
+    * A list of node configurations.
+    */
+  @js.native
+  trait NodeConfigurationOption extends js.Object {
+    var EstimatedDiskUtilizationPercent: js.UndefOr[DoubleOptional]
+    var NodeType: js.UndefOr[String]
+    var NumberOfNodes: js.UndefOr[Int]
+  }
+
+  object NodeConfigurationOption {
+    @inline
+    def apply(
+        EstimatedDiskUtilizationPercent: js.UndefOr[DoubleOptional] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[Int] = js.undefined
+    ): NodeConfigurationOption = {
+      val __obj = js.Dynamic.literal()
+      EstimatedDiskUtilizationPercent.foreach(
+        __v => __obj.updateDynamic("EstimatedDiskUtilizationPercent")(__v.asInstanceOf[js.Any])
+      )
+      NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeConfigurationOption]
+    }
+  }
+
+  /**
+    * A set of elements to filter the returned node configurations.
+    */
+  @js.native
+  trait NodeConfigurationOptionsFilter extends js.Object {
+    var Name: js.UndefOr[NodeConfigurationOptionsFilterName]
+    var Operator: js.UndefOr[OperatorType]
+    var Values: js.UndefOr[ValueStringList]
+  }
+
+  object NodeConfigurationOptionsFilter {
+    @inline
+    def apply(
+        Name: js.UndefOr[NodeConfigurationOptionsFilterName] = js.undefined,
+        Operator: js.UndefOr[OperatorType] = js.undefined,
+        Values: js.UndefOr[ValueStringList] = js.undefined
+    ): NodeConfigurationOptionsFilter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Operator.foreach(__v => __obj.updateDynamic("Operator")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeConfigurationOptionsFilter]
+    }
+  }
+
+  object NodeConfigurationOptionsFilterNameEnum {
+    val NodeType                        = "NodeType"
+    val NumberOfNodes                   = "NumberOfNodes"
+    val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent"
+
+    val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent))
+  }
+
+  @js.native
+  trait NodeConfigurationOptionsMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var NodeConfigurationOptionList: js.UndefOr[NodeConfigurationOptionList]
+  }
+
+  object NodeConfigurationOptionsMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        NodeConfigurationOptionList: js.UndefOr[NodeConfigurationOptionList] = js.undefined
+    ): NodeConfigurationOptionsMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      NodeConfigurationOptionList.foreach(
+        __v => __obj.updateDynamic("NodeConfigurationOptionList")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[NodeConfigurationOptionsMessage]
+    }
+  }
+
+  object OperatorTypeEnum {
+    val eq      = "eq"
+    val lt      = "lt"
+    val gt      = "gt"
+    val le      = "le"
+    val ge      = "ge"
+    val in      = "in"
+    val between = "between"
+
+    val values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
+  }
+
+  /**
     * Describes an orderable cluster option.
     */
   @js.native
@@ -5038,6 +5187,7 @@ package redshift {
     var MaintenanceTrackName: js.UndefOr[String]
     var ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var NodeType: js.UndefOr[String]
+    var NumberOfNodes: js.UndefOr[IntegerOptional]
     var OwnerAccount: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredMaintenanceWindow: js.UndefOr[String]
@@ -5068,6 +5218,7 @@ package redshift {
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
         OwnerAccount: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
@@ -5107,6 +5258,7 @@ package redshift {
         __v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
       )
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(

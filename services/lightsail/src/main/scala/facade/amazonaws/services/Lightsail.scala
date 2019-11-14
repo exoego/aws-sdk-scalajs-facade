@@ -9,7 +9,14 @@ import facade.amazonaws._
 
 package object lightsail {
   type AccessDirection                                      = String
+  type AddOnList                                            = js.Array[AddOn]
+  type AddOnRequestList                                     = js.Array[AddOnRequest]
+  type AddOnType                                            = String
+  type AttachedDiskList                                     = js.Array[AttachedDisk]
   type AttachedDiskMap                                      = js.Dictionary[DiskMapList]
+  type AutoSnapshotDate                                     = String
+  type AutoSnapshotDetailsList                              = js.Array[AutoSnapshotDetails]
+  type AutoSnapshotStatus                                   = String
   type AvailabilityZoneList                                 = js.Array[AvailabilityZone]
   type Base64                                               = String
   type BlueprintList                                        = js.Array[Blueprint]
@@ -96,6 +103,7 @@ package object lightsail {
   type RelationalDatabaseParameterList                      = js.Array[RelationalDatabaseParameter]
   type RelationalDatabasePasswordVersion                    = String
   type RelationalDatabaseSnapshotList                       = js.Array[RelationalDatabaseSnapshot]
+  type ResourceArn                                          = String
   type ResourceName                                         = String
   type ResourceNameList                                     = js.Array[ResourceName]
   type ResourceType                                         = String
@@ -107,6 +115,7 @@ package object lightsail {
   type TagKeyList                                           = js.Array[TagKey]
   type TagList                                              = js.Array[Tag]
   type TagValue                                             = String
+  type TimeOfDay                                            = String
   type double                                               = Double
   type timestamp                                            = js.Date
 
@@ -170,6 +179,8 @@ package object lightsail {
         params: CreateRelationalDatabaseSnapshotRequest
     ): Future[CreateRelationalDatabaseSnapshotResult] =
       service.createRelationalDatabaseSnapshot(params).promise.toFuture
+    @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
+      service.deleteAutoSnapshot(params).promise.toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
       service.deleteDisk(params).promise.toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
@@ -207,13 +218,19 @@ package object lightsail {
     ): Future[DetachInstancesFromLoadBalancerResult] = service.detachInstancesFromLoadBalancer(params).promise.toFuture
     @inline def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] =
       service.detachStaticIp(params).promise.toFuture
+    @inline def disableAddOnFuture(params: DisableAddOnRequest): Future[DisableAddOnResult] =
+      service.disableAddOn(params).promise.toFuture
     @inline def downloadDefaultKeyPairFuture(
         params: DownloadDefaultKeyPairRequest
     ): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise.toFuture
+    @inline def enableAddOnFuture(params: EnableAddOnRequest): Future[EnableAddOnResult] =
+      service.enableAddOn(params).promise.toFuture
     @inline def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] =
       service.exportSnapshot(params).promise.toFuture
     @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
       service.getActiveNames(params).promise.toFuture
+    @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] =
+      service.getAutoSnapshots(params).promise.toFuture
     @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
       service.getBlueprints(params).promise.toFuture
     @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
@@ -407,6 +424,7 @@ package lightsail {
     def createRelationalDatabaseSnapshot(
         params: CreateRelationalDatabaseSnapshotRequest
     ): Request[CreateRelationalDatabaseSnapshotResult]                                                       = js.native
+    def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult]             = js.native
     def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult]                                     = js.native
     def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult]             = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult]                               = js.native
@@ -429,9 +447,12 @@ package lightsail {
         params: DetachInstancesFromLoadBalancerRequest
     ): Request[DetachInstancesFromLoadBalancerResult]                                                        = js.native
     def detachStaticIp(params: DetachStaticIpRequest): Request[DetachStaticIpResult]                         = js.native
+    def disableAddOn(params: DisableAddOnRequest): Request[DisableAddOnResult]                               = js.native
     def downloadDefaultKeyPair(params: DownloadDefaultKeyPairRequest): Request[DownloadDefaultKeyPairResult] = js.native
+    def enableAddOn(params: EnableAddOnRequest): Request[EnableAddOnResult]                                  = js.native
     def exportSnapshot(params: ExportSnapshotRequest): Request[ExportSnapshotResult]                         = js.native
     def getActiveNames(params: GetActiveNamesRequest): Request[GetActiveNamesResult]                         = js.native
+    def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult]                   = js.native
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult]                            = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult]                                     = js.native
     def getCloudFormationStackRecords(
@@ -536,6 +557,66 @@ package lightsail {
     val outbound = "outbound"
 
     val values = js.Object.freeze(js.Array(inbound, outbound))
+  }
+
+  /**
+    * Describes an add-on that is enabled for an Amazon Lightsail resource.
+    */
+  @js.native
+  trait AddOn extends js.Object {
+    var name: js.UndefOr[String]
+    var nextSnapshotTimeOfDay: js.UndefOr[TimeOfDay]
+    var snapshotTimeOfDay: js.UndefOr[TimeOfDay]
+    var status: js.UndefOr[String]
+  }
+
+  object AddOn {
+    @inline
+    def apply(
+        name: js.UndefOr[String] = js.undefined,
+        nextSnapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined,
+        snapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined,
+        status: js.UndefOr[String] = js.undefined
+    ): AddOn = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextSnapshotTimeOfDay.foreach(__v => __obj.updateDynamic("nextSnapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
+      snapshotTimeOfDay.foreach(__v => __obj.updateDynamic("snapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddOn]
+    }
+  }
+
+  /**
+    * Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.
+    *
+    * '''Note:'''An additional cost may be associated with enabling add-ons. For more information, see the [[https://aws.amazon.com/lightsail/pricing/|Lightsail pricing page]].
+    */
+  @js.native
+  trait AddOnRequest extends js.Object {
+    var addOnType: AddOnType
+    var autoSnapshotAddOnRequest: js.UndefOr[AutoSnapshotAddOnRequest]
+  }
+
+  object AddOnRequest {
+    @inline
+    def apply(
+        addOnType: AddOnType,
+        autoSnapshotAddOnRequest: js.UndefOr[AutoSnapshotAddOnRequest] = js.undefined
+    ): AddOnRequest = {
+      val __obj = js.Dynamic.literal(
+        "addOnType" -> addOnType.asInstanceOf[js.Any]
+      )
+
+      autoSnapshotAddOnRequest.foreach(__v => __obj.updateDynamic("autoSnapshotAddOnRequest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddOnRequest]
+    }
+  }
+
+  object AddOnTypeEnum {
+    val AutoSnapshot = "AutoSnapshot"
+
+    val values = js.Object.freeze(js.Array(AutoSnapshot))
   }
 
   @js.native
@@ -721,6 +802,89 @@ package lightsail {
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachStaticIpResult]
     }
+  }
+
+  /**
+    * Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.
+    */
+  @js.native
+  trait AttachedDisk extends js.Object {
+    var path: js.UndefOr[String]
+    var sizeInGb: js.UndefOr[Int]
+  }
+
+  object AttachedDisk {
+    @inline
+    def apply(
+        path: js.UndefOr[String] = js.undefined,
+        sizeInGb: js.UndefOr[Int] = js.undefined
+    ): AttachedDisk = {
+      val __obj = js.Dynamic.literal()
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttachedDisk]
+    }
+  }
+
+  /**
+    * Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.
+    *  When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:
+    * * If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.
+    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.
+    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    *  * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    */
+  @js.native
+  trait AutoSnapshotAddOnRequest extends js.Object {
+    var snapshotTimeOfDay: js.UndefOr[TimeOfDay]
+  }
+
+  object AutoSnapshotAddOnRequest {
+    @inline
+    def apply(
+        snapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined
+    ): AutoSnapshotAddOnRequest = {
+      val __obj = js.Dynamic.literal()
+      snapshotTimeOfDay.foreach(__v => __obj.updateDynamic("snapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoSnapshotAddOnRequest]
+    }
+  }
+
+  /**
+    * Describes an automatic snapshot.
+    */
+  @js.native
+  trait AutoSnapshotDetails extends js.Object {
+    var createdAt: js.UndefOr[IsoDate]
+    var date: js.UndefOr[String]
+    var fromAttachedDisks: js.UndefOr[AttachedDiskList]
+    var status: js.UndefOr[AutoSnapshotStatus]
+  }
+
+  object AutoSnapshotDetails {
+    @inline
+    def apply(
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        date: js.UndefOr[String] = js.undefined,
+        fromAttachedDisks: js.UndefOr[AttachedDiskList] = js.undefined,
+        status: js.UndefOr[AutoSnapshotStatus] = js.undefined
+    ): AutoSnapshotDetails = {
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      date.foreach(__v => __obj.updateDynamic("date")(__v.asInstanceOf[js.Any]))
+      fromAttachedDisks.foreach(__v => __obj.updateDynamic("fromAttachedDisks")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoSnapshotDetails]
+    }
+  }
+
+  object AutoSnapshotStatusEnum {
+    val Success    = "Success"
+    val Failed     = "Failed"
+    val InProgress = "InProgress"
+    val NotFound   = "NotFound"
+
+    val values = js.Object.freeze(js.Array(Success, Failed, InProgress, NotFound))
   }
 
   /**
@@ -965,23 +1129,34 @@ package lightsail {
   @js.native
   trait CopySnapshotRequest extends js.Object {
     var sourceRegion: RegionName
-    var sourceSnapshotName: ResourceName
     var targetSnapshotName: ResourceName
+    var restoreDate: js.UndefOr[String]
+    var sourceResourceName: js.UndefOr[String]
+    var sourceSnapshotName: js.UndefOr[ResourceName]
+    var useLatestRestorableAutoSnapshot: js.UndefOr[Boolean]
   }
 
   object CopySnapshotRequest {
     @inline
     def apply(
         sourceRegion: RegionName,
-        sourceSnapshotName: ResourceName,
-        targetSnapshotName: ResourceName
+        targetSnapshotName: ResourceName,
+        restoreDate: js.UndefOr[String] = js.undefined,
+        sourceResourceName: js.UndefOr[String] = js.undefined,
+        sourceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined
     ): CopySnapshotRequest = {
       val __obj = js.Dynamic.literal(
         "sourceRegion"       -> sourceRegion.asInstanceOf[js.Any],
-        "sourceSnapshotName" -> sourceSnapshotName.asInstanceOf[js.Any],
         "targetSnapshotName" -> targetSnapshotName.asInstanceOf[js.Any]
       )
 
+      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
+      sourceResourceName.foreach(__v => __obj.updateDynamic("sourceResourceName")(__v.asInstanceOf[js.Any]))
+      sourceSnapshotName.foreach(__v => __obj.updateDynamic("sourceSnapshotName")(__v.asInstanceOf[js.Any]))
+      useLatestRestorableAutoSnapshot.foreach(
+        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CopySnapshotRequest]
     }
   }
@@ -1040,9 +1215,13 @@ package lightsail {
   trait CreateDiskFromSnapshotRequest extends js.Object {
     var availabilityZone: NonEmptyString
     var diskName: ResourceName
-    var diskSnapshotName: ResourceName
     var sizeInGb: Int
+    var addOns: js.UndefOr[AddOnRequestList]
+    var diskSnapshotName: js.UndefOr[ResourceName]
+    var restoreDate: js.UndefOr[String]
+    var sourceDiskName: js.UndefOr[String]
     var tags: js.UndefOr[TagList]
+    var useLatestRestorableAutoSnapshot: js.UndefOr[Boolean]
   }
 
   object CreateDiskFromSnapshotRequest {
@@ -1050,18 +1229,28 @@ package lightsail {
     def apply(
         availabilityZone: NonEmptyString,
         diskName: ResourceName,
-        diskSnapshotName: ResourceName,
         sizeInGb: Int,
-        tags: js.UndefOr[TagList] = js.undefined
+        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
+        diskSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+        restoreDate: js.UndefOr[String] = js.undefined,
+        sourceDiskName: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined
     ): CreateDiskFromSnapshotRequest = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
         "diskName"         -> diskName.asInstanceOf[js.Any],
-        "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any],
         "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
       )
 
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
+      diskSnapshotName.foreach(__v => __obj.updateDynamic("diskSnapshotName")(__v.asInstanceOf[js.Any]))
+      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
+      sourceDiskName.foreach(__v => __obj.updateDynamic("sourceDiskName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      useLatestRestorableAutoSnapshot.foreach(
+        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateDiskFromSnapshotRequest]
     }
   }
@@ -1087,6 +1276,7 @@ package lightsail {
     var availabilityZone: NonEmptyString
     var diskName: ResourceName
     var sizeInGb: Int
+    var addOns: js.UndefOr[AddOnRequestList]
     var tags: js.UndefOr[TagList]
   }
 
@@ -1096,6 +1286,7 @@ package lightsail {
         availabilityZone: NonEmptyString,
         diskName: ResourceName,
         sizeInGb: Int,
+        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDiskRequest = {
       val __obj = js.Dynamic.literal(
@@ -1104,6 +1295,7 @@ package lightsail {
         "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
       )
 
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskRequest]
     }
@@ -1287,10 +1479,14 @@ package lightsail {
     var availabilityZone: String
     var bundleId: NonEmptyString
     var instanceNames: StringList
-    var instanceSnapshotName: ResourceName
+    var addOns: js.UndefOr[AddOnRequestList]
     var attachedDiskMapping: js.UndefOr[AttachedDiskMap]
+    var instanceSnapshotName: js.UndefOr[ResourceName]
     var keyPairName: js.UndefOr[ResourceName]
+    var restoreDate: js.UndefOr[String]
+    var sourceInstanceName: js.UndefOr[String]
     var tags: js.UndefOr[TagList]
+    var useLatestRestorableAutoSnapshot: js.UndefOr[Boolean]
     var userData: js.UndefOr[String]
   }
 
@@ -1300,22 +1496,32 @@ package lightsail {
         availabilityZone: String,
         bundleId: NonEmptyString,
         instanceNames: StringList,
-        instanceSnapshotName: ResourceName,
+        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
         attachedDiskMapping: js.UndefOr[AttachedDiskMap] = js.undefined,
+        instanceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined,
+        restoreDate: js.UndefOr[String] = js.undefined,
+        sourceInstanceName: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
+        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
         userData: js.UndefOr[String] = js.undefined
     ): CreateInstancesFromSnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "availabilityZone"     -> availabilityZone.asInstanceOf[js.Any],
-        "bundleId"             -> bundleId.asInstanceOf[js.Any],
-        "instanceNames"        -> instanceNames.asInstanceOf[js.Any],
-        "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
+        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
+        "bundleId"         -> bundleId.asInstanceOf[js.Any],
+        "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
       )
 
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       attachedDiskMapping.foreach(__v => __obj.updateDynamic("attachedDiskMapping")(__v.asInstanceOf[js.Any]))
+      instanceSnapshotName.foreach(__v => __obj.updateDynamic("instanceSnapshotName")(__v.asInstanceOf[js.Any]))
       keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
+      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
+      sourceInstanceName.foreach(__v => __obj.updateDynamic("sourceInstanceName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      useLatestRestorableAutoSnapshot.foreach(
+        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      )
       userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesFromSnapshotRequest]
     }
@@ -1343,6 +1549,7 @@ package lightsail {
     var blueprintId: NonEmptyString
     var bundleId: NonEmptyString
     var instanceNames: StringList
+    var addOns: js.UndefOr[AddOnRequestList]
     var customImageName: js.UndefOr[ResourceName]
     var keyPairName: js.UndefOr[ResourceName]
     var tags: js.UndefOr[TagList]
@@ -1356,6 +1563,7 @@ package lightsail {
         blueprintId: NonEmptyString,
         bundleId: NonEmptyString,
         instanceNames: StringList,
+        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
         customImageName: js.UndefOr[ResourceName] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
@@ -1368,6 +1576,7 @@ package lightsail {
         "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
       )
 
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       customImageName.foreach(__v => __obj.updateDynamic("customImageName")(__v.asInstanceOf[js.Any]))
       keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1711,19 +1920,59 @@ package lightsail {
   }
 
   @js.native
+  trait DeleteAutoSnapshotRequest extends js.Object {
+    var date: AutoSnapshotDate
+    var resourceName: ResourceName
+  }
+
+  object DeleteAutoSnapshotRequest {
+    @inline
+    def apply(
+        date: AutoSnapshotDate,
+        resourceName: ResourceName
+    ): DeleteAutoSnapshotRequest = {
+      val __obj = js.Dynamic.literal(
+        "date"         -> date.asInstanceOf[js.Any],
+        "resourceName" -> resourceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAutoSnapshotRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAutoSnapshotResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteAutoSnapshotResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteAutoSnapshotResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAutoSnapshotResult]
+    }
+  }
+
+  @js.native
   trait DeleteDiskRequest extends js.Object {
     var diskName: ResourceName
+    var forceDeleteAddOns: js.UndefOr[Boolean]
   }
 
   object DeleteDiskRequest {
     @inline
     def apply(
-        diskName: ResourceName
+        diskName: ResourceName,
+        forceDeleteAddOns: js.UndefOr[Boolean] = js.undefined
     ): DeleteDiskRequest = {
       val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
 
+      forceDeleteAddOns.foreach(__v => __obj.updateDynamic("forceDeleteAddOns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDiskRequest]
     }
   }
@@ -1852,17 +2101,20 @@ package lightsail {
   @js.native
   trait DeleteInstanceRequest extends js.Object {
     var instanceName: ResourceName
+    var forceDeleteAddOns: js.UndefOr[Boolean]
   }
 
   object DeleteInstanceRequest {
     @inline
     def apply(
-        instanceName: ResourceName
+        instanceName: ResourceName,
+        forceDeleteAddOns: js.UndefOr[Boolean] = js.undefined
     ): DeleteInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
+      forceDeleteAddOns.foreach(__v => __obj.updateDynamic("forceDeleteAddOns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInstanceRequest]
     }
   }
@@ -2262,11 +2514,49 @@ package lightsail {
     }
   }
 
+  @js.native
+  trait DisableAddOnRequest extends js.Object {
+    var addOnType: AddOnType
+    var resourceName: ResourceName
+  }
+
+  object DisableAddOnRequest {
+    @inline
+    def apply(
+        addOnType: AddOnType,
+        resourceName: ResourceName
+    ): DisableAddOnRequest = {
+      val __obj = js.Dynamic.literal(
+        "addOnType"    -> addOnType.asInstanceOf[js.Any],
+        "resourceName" -> resourceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisableAddOnRequest]
+    }
+  }
+
+  @js.native
+  trait DisableAddOnResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DisableAddOnResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DisableAddOnResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableAddOnResult]
+    }
+  }
+
   /**
-    * Describes a system disk or an block storage disk.
+    * Describes a system disk or a block storage disk.
     */
   @js.native
   trait Disk extends js.Object {
+    var addOns: js.UndefOr[AddOnList]
     var arn: js.UndefOr[NonEmptyString]
     var attachedTo: js.UndefOr[ResourceName]
     var attachmentState: js.UndefOr[String]
@@ -2288,6 +2578,7 @@ package lightsail {
   object Disk {
     @inline
     def apply(
+        addOns: js.UndefOr[AddOnList] = js.undefined,
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         attachedTo: js.UndefOr[ResourceName] = js.undefined,
         attachmentState: js.UndefOr[String] = js.undefined,
@@ -2306,6 +2597,7 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined
     ): Disk = {
       val __obj = js.Dynamic.literal()
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       attachedTo.foreach(__v => __obj.updateDynamic("attachedTo")(__v.asInstanceOf[js.Any]))
       attachmentState.foreach(__v => __obj.updateDynamic("attachmentState")(__v.asInstanceOf[js.Any]))
@@ -2387,6 +2679,7 @@ package lightsail {
     var fromDiskName: js.UndefOr[ResourceName]
     var fromInstanceArn: js.UndefOr[NonEmptyString]
     var fromInstanceName: js.UndefOr[ResourceName]
+    var isFromAutoSnapshot: js.UndefOr[Boolean]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
     var progress: js.UndefOr[String]
@@ -2406,6 +2699,7 @@ package lightsail {
         fromDiskName: js.UndefOr[ResourceName] = js.undefined,
         fromInstanceArn: js.UndefOr[NonEmptyString] = js.undefined,
         fromInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        isFromAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         progress: js.UndefOr[String] = js.undefined,
@@ -2422,6 +2716,7 @@ package lightsail {
       fromDiskName.foreach(__v => __obj.updateDynamic("fromDiskName")(__v.asInstanceOf[js.Any]))
       fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
       fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
+      isFromAutoSnapshot.foreach(__v => __obj.updateDynamic("isFromAutoSnapshot")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
@@ -2578,6 +2873,43 @@ package lightsail {
     }
   }
 
+  @js.native
+  trait EnableAddOnRequest extends js.Object {
+    var addOnRequest: AddOnRequest
+    var resourceName: ResourceName
+  }
+
+  object EnableAddOnRequest {
+    @inline
+    def apply(
+        addOnRequest: AddOnRequest,
+        resourceName: ResourceName
+    ): EnableAddOnRequest = {
+      val __obj = js.Dynamic.literal(
+        "addOnRequest" -> addOnRequest.asInstanceOf[js.Any],
+        "resourceName" -> resourceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EnableAddOnRequest]
+    }
+  }
+
+  @js.native
+  trait EnableAddOnResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object EnableAddOnResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): EnableAddOnResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableAddOnResult]
+    }
+  }
+
   /**
     * Describes an export snapshot record.
     */
@@ -2731,6 +3063,46 @@ package lightsail {
       activeNames.foreach(__v => __obj.updateDynamic("activeNames")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetActiveNamesResult]
+    }
+  }
+
+  @js.native
+  trait GetAutoSnapshotsRequest extends js.Object {
+    var resourceName: ResourceName
+  }
+
+  object GetAutoSnapshotsRequest {
+    @inline
+    def apply(
+        resourceName: ResourceName
+    ): GetAutoSnapshotsRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceName" -> resourceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAutoSnapshotsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAutoSnapshotsResult extends js.Object {
+    var autoSnapshots: js.UndefOr[AutoSnapshotDetailsList]
+    var resourceName: js.UndefOr[ResourceName]
+    var resourceType: js.UndefOr[ResourceType]
+  }
+
+  object GetAutoSnapshotsResult {
+    @inline
+    def apply(
+        autoSnapshots: js.UndefOr[AutoSnapshotDetailsList] = js.undefined,
+        resourceName: js.UndefOr[ResourceName] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): GetAutoSnapshotsResult = {
+      val __obj = js.Dynamic.literal()
+      autoSnapshots.foreach(__v => __obj.updateDynamic("autoSnapshots")(__v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAutoSnapshotsResult]
     }
   }
 
@@ -4390,6 +4762,7 @@ package lightsail {
     */
   @js.native
   trait Instance extends js.Object {
+    var addOns: js.UndefOr[AddOnList]
     var arn: js.UndefOr[NonEmptyString]
     var blueprintId: js.UndefOr[NonEmptyString]
     var blueprintName: js.UndefOr[NonEmptyString]
@@ -4414,6 +4787,7 @@ package lightsail {
   object Instance {
     @inline
     def apply(
+        addOns: js.UndefOr[AddOnList] = js.undefined,
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
         blueprintName: js.UndefOr[NonEmptyString] = js.undefined,
@@ -4435,6 +4809,7 @@ package lightsail {
         username: js.UndefOr[NonEmptyString] = js.undefined
     ): Instance = {
       val __obj = js.Dynamic.literal()
+      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
       blueprintName.foreach(__v => __obj.updateDynamic("blueprintName")(__v.asInstanceOf[js.Any]))
@@ -4750,7 +5125,7 @@ package lightsail {
   }
 
   /**
-    * Describes the snapshot of the virtual private server, or <i>instance</i>.
+    * Describes an instance snapshot.
     */
   @js.native
   trait InstanceSnapshot extends js.Object {
@@ -4761,6 +5136,7 @@ package lightsail {
     var fromBundleId: js.UndefOr[String]
     var fromInstanceArn: js.UndefOr[NonEmptyString]
     var fromInstanceName: js.UndefOr[ResourceName]
+    var isFromAutoSnapshot: js.UndefOr[Boolean]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
     var progress: js.UndefOr[String]
@@ -4781,6 +5157,7 @@ package lightsail {
         fromBundleId: js.UndefOr[String] = js.undefined,
         fromInstanceArn: js.UndefOr[NonEmptyString] = js.undefined,
         fromInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        isFromAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         progress: js.UndefOr[String] = js.undefined,
@@ -4798,6 +5175,7 @@ package lightsail {
       fromBundleId.foreach(__v => __obj.updateDynamic("fromBundleId")(__v.asInstanceOf[js.Any]))
       fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
       fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
+      isFromAutoSnapshot.foreach(__v => __obj.updateDynamic("isFromAutoSnapshot")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
@@ -5626,6 +6004,8 @@ package lightsail {
     val StartRelationalDatabase              = "StartRelationalDatabase"
     val RebootRelationalDatabase             = "RebootRelationalDatabase"
     val StopRelationalDatabase               = "StopRelationalDatabase"
+    val EnableAddOn                          = "EnableAddOn"
+    val DisableAddOn                         = "DisableAddOn"
 
     val values = js.Object.freeze(
       js.Array(
@@ -5673,7 +6053,9 @@ package lightsail {
         UpdateRelationalDatabaseParameters,
         StartRelationalDatabase,
         RebootRelationalDatabase,
-        StopRelationalDatabase
+        StopRelationalDatabase,
+        EnableAddOn,
+        DisableAddOn
       )
     )
   }
@@ -6714,19 +7096,22 @@ package lightsail {
   trait TagResourceRequest extends js.Object {
     var resourceName: ResourceName
     var tags: TagList
+    var resourceArn: js.UndefOr[ResourceArn]
   }
 
   object TagResourceRequest {
     @inline
     def apply(
         resourceName: ResourceName,
-        tags: TagList
+        tags: TagList,
+        resourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
         "tags"         -> tags.asInstanceOf[js.Any]
       )
 
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -6780,19 +7165,22 @@ package lightsail {
   trait UntagResourceRequest extends js.Object {
     var resourceName: ResourceName
     var tagKeys: TagKeyList
+    var resourceArn: js.UndefOr[ResourceArn]
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
         resourceName: ResourceName,
-        tagKeys: TagKeyList
+        tagKeys: TagKeyList,
+        resourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
         "tagKeys"      -> tagKeys.asInstanceOf[js.Any]
       )
 
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

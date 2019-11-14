@@ -59,6 +59,7 @@ package object iot {
   type AuthorizerStatus                           = String
   type Authorizers                                = js.Array[AuthorizerSummary]
   type AutoRegistrationStatus                     = String
+  type Average                                    = Double
   type AwsAccountId                               = String
   type AwsArn                                     = String
   type AwsIotJobArn                               = String
@@ -148,6 +149,9 @@ package object iot {
   type FailedChecksCount                          = Int
   type FailedFindingsCount                        = Double
   type FailedThings                               = Int
+  type FieldName                                  = String
+  type FieldType                                  = String
+  type Fields                                     = js.Array[Field]
   type FileId                                     = Int
   type FileName                                   = String
   type FindingId                                  = String
@@ -202,10 +206,12 @@ package object iot {
   type Marker                                     = String
   type MaxJobExecutionsPerMin                     = Int
   type MaxResults                                 = Int
+  type Maximum                                    = Double
   type MaximumPerMinute                           = Int
   type Message                                    = String
   type MessageFormat                              = String
   type MessageId                                  = String
+  type Minimum                                    = Double
   type MinimumNumberOfExecutedThings              = Int
   type MissingContextValue                        = String
   type MissingContextValues                       = js.Array[MissingContextValue]
@@ -236,7 +242,11 @@ package object iot {
   type Parameters                                 = js.Dictionary[Value]
   type PartitionKey                               = String
   type PayloadField                               = String
+  type Percent                                    = Double
+  type PercentList                                = js.Array[Percent]
+  type PercentValue                               = Double
   type Percentage                                 = Int
+  type Percentiles                                = js.Array[PercentPair]
   type Platform                                   = String
   type Policies                                   = js.Array[Policy]
   type PolicyArn                                  = String
@@ -333,6 +343,7 @@ package object iot {
   type StateReason                         = String
   type StateValue                          = String
   type Status                              = String
+  type StdDeviation                        = Double
   type StreamArn                           = String
   type StreamDescription                   = String
   type StreamFiles                         = js.Array[StreamFile]
@@ -343,6 +354,8 @@ package object iot {
   type StringMap                           = js.Dictionary[String]
   type SucceededFindingsCount              = Double
   type SucceededThings                     = Int
+  type Sum                                 = Double
+  type SumOfSquares                        = Double
   type TableName                           = String
   type TagKey                              = String
   type TagKeyList                          = js.Array[TagKey]
@@ -396,6 +409,7 @@ package object iot {
   type Valid                               = Boolean
   type ValidationErrors                    = js.Array[ValidationError]
   type Value                               = String
+  type Variance                            = Double
   type Version                             = Double
   type VersionNumber                       = Double
   type ViolationEventType                  = String
@@ -597,6 +611,8 @@ package object iot {
       service.disableTopicRule(params).promise.toFuture
     @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] =
       service.enableTopicRule(params).promise.toFuture
+    @inline def getCardinalityFuture(params: GetCardinalityRequest): Future[GetCardinalityResponse] =
+      service.getCardinality(params).promise.toFuture
     @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] =
       service.getEffectivePolicies(params).promise.toFuture
     @inline def getIndexingConfigurationFuture(
@@ -608,6 +624,8 @@ package object iot {
       service.getLoggingOptions(params).promise.toFuture
     @inline def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] =
       service.getOTAUpdate(params).promise.toFuture
+    @inline def getPercentilesFuture(params: GetPercentilesRequest): Future[GetPercentilesResponse] =
+      service.getPercentiles(params).promise.toFuture
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
     @inline def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
@@ -934,12 +952,14 @@ package iot {
     def detachThingPrincipal(params: DetachThingPrincipalRequest): Request[DetachThingPrincipalResponse]    = js.native
     def disableTopicRule(params: DisableTopicRuleRequest): Request[js.Object]                               = js.native
     def enableTopicRule(params: EnableTopicRuleRequest): Request[js.Object]                                 = js.native
+    def getCardinality(params: GetCardinalityRequest): Request[GetCardinalityResponse]                      = js.native
     def getEffectivePolicies(params: GetEffectivePoliciesRequest): Request[GetEffectivePoliciesResponse]    = js.native
     def getIndexingConfiguration(params: GetIndexingConfigurationRequest): Request[GetIndexingConfigurationResponse] =
       js.native
     def getJobDocument(params: GetJobDocumentRequest): Request[GetJobDocumentResponse]                   = js.native
     def getLoggingOptions(params: GetLoggingOptionsRequest): Request[GetLoggingOptionsResponse]          = js.native
     def getOTAUpdate(params: GetOTAUpdateRequest): Request[GetOTAUpdateResponse]                         = js.native
+    def getPercentiles(params: GetPercentilesRequest): Request[GetPercentilesResponse]                   = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
     def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse]             = js.native
     def getRegistrationCode(params: GetRegistrationCodeRequest): Request[GetRegistrationCodeResponse]    = js.native
@@ -5989,6 +6009,36 @@ package iot {
   }
 
   /**
+    * Describes the name and data type at a field.
+    */
+  @js.native
+  trait Field extends js.Object {
+    var name: js.UndefOr[FieldName]
+    var `type`: js.UndefOr[FieldType]
+  }
+
+  object Field {
+    @inline
+    def apply(
+        name: js.UndefOr[FieldName] = js.undefined,
+        `type`: js.UndefOr[FieldType] = js.undefined
+    ): Field = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Field]
+    }
+  }
+
+  object FieldTypeEnum {
+    val Number  = "Number"
+    val String  = "String"
+    val Boolean = "Boolean"
+
+    val values = js.Object.freeze(js.Array(Number, String, Boolean))
+  }
+
+  /**
     * The location of the OTA update.
     */
   @js.native
@@ -6034,6 +6084,49 @@ package iot {
 
       separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirehoseAction]
+    }
+  }
+
+  @js.native
+  trait GetCardinalityRequest extends js.Object {
+    var queryString: QueryString
+    var aggregationField: js.UndefOr[AggregationField]
+    var indexName: js.UndefOr[IndexName]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object GetCardinalityRequest {
+    @inline
+    def apply(
+        queryString: QueryString,
+        aggregationField: js.UndefOr[AggregationField] = js.undefined,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined
+    ): GetCardinalityRequest = {
+      val __obj = js.Dynamic.literal(
+        "queryString" -> queryString.asInstanceOf[js.Any]
+      )
+
+      aggregationField.foreach(__v => __obj.updateDynamic("aggregationField")(__v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCardinalityRequest]
+    }
+  }
+
+  @js.native
+  trait GetCardinalityResponse extends js.Object {
+    var cardinality: js.UndefOr[Count]
+  }
+
+  object GetCardinalityResponse {
+    @inline
+    def apply(
+        cardinality: js.UndefOr[Count] = js.undefined
+    ): GetCardinalityResponse = {
+      val __obj = js.Dynamic.literal()
+      cardinality.foreach(__v => __obj.updateDynamic("cardinality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCardinalityResponse]
     }
   }
 
@@ -6214,6 +6307,52 @@ package iot {
       val __obj = js.Dynamic.literal()
       otaUpdateInfo.foreach(__v => __obj.updateDynamic("otaUpdateInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOTAUpdateResponse]
+    }
+  }
+
+  @js.native
+  trait GetPercentilesRequest extends js.Object {
+    var queryString: QueryString
+    var aggregationField: js.UndefOr[AggregationField]
+    var indexName: js.UndefOr[IndexName]
+    var percents: js.UndefOr[PercentList]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object GetPercentilesRequest {
+    @inline
+    def apply(
+        queryString: QueryString,
+        aggregationField: js.UndefOr[AggregationField] = js.undefined,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        percents: js.UndefOr[PercentList] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined
+    ): GetPercentilesRequest = {
+      val __obj = js.Dynamic.literal(
+        "queryString" -> queryString.asInstanceOf[js.Any]
+      )
+
+      aggregationField.foreach(__v => __obj.updateDynamic("aggregationField")(__v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      percents.foreach(__v => __obj.updateDynamic("percents")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPercentilesRequest]
+    }
+  }
+
+  @js.native
+  trait GetPercentilesResponse extends js.Object {
+    var percentiles: js.UndefOr[Percentiles]
+  }
+
+  object GetPercentilesResponse {
+    @inline
+    def apply(
+        percentiles: js.UndefOr[Percentiles] = js.undefined
+    ): GetPercentilesResponse = {
+      val __obj = js.Dynamic.literal()
+      percentiles.foreach(__v => __obj.updateDynamic("percentiles")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPercentilesResponse]
     }
   }
 
@@ -9403,6 +9542,28 @@ package iot {
   }
 
   /**
+    * Describes the percentile and percentile value.
+    */
+  @js.native
+  trait PercentPair extends js.Object {
+    var percent: js.UndefOr[Percent]
+    var value: js.UndefOr[PercentValue]
+  }
+
+  object PercentPair {
+    @inline
+    def apply(
+        percent: js.UndefOr[Percent] = js.undefined,
+        value: js.UndefOr[PercentValue] = js.undefined
+    ): PercentPair = {
+      val __obj = js.Dynamic.literal()
+      percent.foreach(__v => __obj.updateDynamic("percent")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PercentPair]
+    }
+  }
+
+  /**
     * Describes an AWS IoT policy.
     */
   @js.native
@@ -10648,16 +10809,37 @@ package iot {
     */
   @js.native
   trait Statistics extends js.Object {
+    var average: js.UndefOr[Average]
     var count: js.UndefOr[Count]
+    var maximum: js.UndefOr[Maximum]
+    var minimum: js.UndefOr[Minimum]
+    var stdDeviation: js.UndefOr[StdDeviation]
+    var sum: js.UndefOr[Sum]
+    var sumOfSquares: js.UndefOr[SumOfSquares]
+    var variance: js.UndefOr[Variance]
   }
 
   object Statistics {
     @inline
     def apply(
-        count: js.UndefOr[Count] = js.undefined
+        average: js.UndefOr[Average] = js.undefined,
+        count: js.UndefOr[Count] = js.undefined,
+        maximum: js.UndefOr[Maximum] = js.undefined,
+        minimum: js.UndefOr[Minimum] = js.undefined,
+        stdDeviation: js.UndefOr[StdDeviation] = js.undefined,
+        sum: js.UndefOr[Sum] = js.undefined,
+        sumOfSquares: js.UndefOr[SumOfSquares] = js.undefined,
+        variance: js.UndefOr[Variance] = js.undefined
     ): Statistics = {
       val __obj = js.Dynamic.literal()
+      average.foreach(__v => __obj.updateDynamic("average")(__v.asInstanceOf[js.Any]))
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      maximum.foreach(__v => __obj.updateDynamic("maximum")(__v.asInstanceOf[js.Any]))
+      minimum.foreach(__v => __obj.updateDynamic("minimum")(__v.asInstanceOf[js.Any]))
+      stdDeviation.foreach(__v => __obj.updateDynamic("stdDeviation")(__v.asInstanceOf[js.Any]))
+      sum.foreach(__v => __obj.updateDynamic("sum")(__v.asInstanceOf[js.Any]))
+      sumOfSquares.foreach(__v => __obj.updateDynamic("sumOfSquares")(__v.asInstanceOf[js.Any]))
+      variance.foreach(__v => __obj.updateDynamic("variance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statistics]
     }
   }
@@ -11210,17 +11392,23 @@ package iot {
   @js.native
   trait ThingGroupIndexingConfiguration extends js.Object {
     var thingGroupIndexingMode: ThingGroupIndexingMode
+    var customFields: js.UndefOr[Fields]
+    var managedFields: js.UndefOr[Fields]
   }
 
   object ThingGroupIndexingConfiguration {
     @inline
     def apply(
-        thingGroupIndexingMode: ThingGroupIndexingMode
+        thingGroupIndexingMode: ThingGroupIndexingMode,
+        customFields: js.UndefOr[Fields] = js.undefined,
+        managedFields: js.UndefOr[Fields] = js.undefined
     ): ThingGroupIndexingConfiguration = {
       val __obj = js.Dynamic.literal(
         "thingGroupIndexingMode" -> thingGroupIndexingMode.asInstanceOf[js.Any]
       )
 
+      customFields.foreach(__v => __obj.updateDynamic("customFields")(__v.asInstanceOf[js.Any]))
+      managedFields.foreach(__v => __obj.updateDynamic("managedFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingGroupIndexingConfiguration]
     }
   }
@@ -11285,6 +11473,8 @@ package iot {
   @js.native
   trait ThingIndexingConfiguration extends js.Object {
     var thingIndexingMode: ThingIndexingMode
+    var customFields: js.UndefOr[Fields]
+    var managedFields: js.UndefOr[Fields]
     var thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode]
   }
 
@@ -11292,12 +11482,16 @@ package iot {
     @inline
     def apply(
         thingIndexingMode: ThingIndexingMode,
+        customFields: js.UndefOr[Fields] = js.undefined,
+        managedFields: js.UndefOr[Fields] = js.undefined,
         thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined
     ): ThingIndexingConfiguration = {
       val __obj = js.Dynamic.literal(
         "thingIndexingMode" -> thingIndexingMode.asInstanceOf[js.Any]
       )
 
+      customFields.foreach(__v => __obj.updateDynamic("customFields")(__v.asInstanceOf[js.Any]))
+      managedFields.foreach(__v => __obj.updateDynamic("managedFields")(__v.asInstanceOf[js.Any]))
       thingConnectivityIndexingMode.foreach(
         __v => __obj.updateDynamic("thingConnectivityIndexingMode")(__v.asInstanceOf[js.Any])
       )

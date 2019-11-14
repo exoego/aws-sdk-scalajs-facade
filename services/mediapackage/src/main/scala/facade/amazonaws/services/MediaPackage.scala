@@ -14,9 +14,11 @@ package object mediapackage {
   type EncryptionMethod                            = String
   type ManifestLayout                              = String
   type MaxResults                                  = Int
+  type Origination                                 = String
   type PlaylistType                                = String
   type Profile                                     = String
   type SegmentTemplateFormat                       = String
+  type Status                                      = String
   type StreamOrder                                 = String
   type Tags                                        = js.Dictionary[__string]
   type __AdTriggersElement                         = String
@@ -24,6 +26,7 @@ package object mediapackage {
   type __boolean                                   = Boolean
   type __integer                                   = Int
   type __listOfChannel                             = js.Array[Channel]
+  type __listOfHarvestJob                          = js.Array[HarvestJob]
   type __listOfHlsManifest                         = js.Array[HlsManifest]
   type __listOfHlsManifestCreateOrUpdateParameters = js.Array[HlsManifestCreateOrUpdateParameters]
   type __listOfIngestEndpoint                      = js.Array[IngestEndpoint]
@@ -36,6 +39,8 @@ package object mediapackage {
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
+    @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] =
+      service.createHarvestJob(params).promise.toFuture
     @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
       service.createOriginEndpoint(params).promise.toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
@@ -44,11 +49,15 @@ package object mediapackage {
       service.deleteOriginEndpoint(params).promise.toFuture
     @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
+    @inline def describeHarvestJobFuture(params: DescribeHarvestJobRequest): Future[DescribeHarvestJobResponse] =
+      service.describeHarvestJob(params).promise.toFuture
     @inline def describeOriginEndpointFuture(
         params: DescribeOriginEndpointRequest
     ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise.toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
+    @inline def listHarvestJobsFuture(params: ListHarvestJobsRequest): Future[ListHarvestJobsResponse] =
+      service.listHarvestJobs(params).promise.toFuture
     @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
       service.listOriginEndpoints(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
@@ -75,13 +84,16 @@ package mediapackage {
     def this(config: AWSConfig) = this()
 
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse]                      = js.native
+    def createHarvestJob(params: CreateHarvestJobRequest): Request[CreateHarvestJobResponse]             = js.native
     def createOriginEndpoint(params: CreateOriginEndpointRequest): Request[CreateOriginEndpointResponse] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse]                      = js.native
     def deleteOriginEndpoint(params: DeleteOriginEndpointRequest): Request[DeleteOriginEndpointResponse] = js.native
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]                = js.native
+    def describeHarvestJob(params: DescribeHarvestJobRequest): Request[DescribeHarvestJobResponse]       = js.native
     def describeOriginEndpoint(params: DescribeOriginEndpointRequest): Request[DescribeOriginEndpointResponse] =
       js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
+    def listHarvestJobs(params: ListHarvestJobsRequest): Request[ListHarvestJobsResponse]             = js.native
     def listOriginEndpoints(params: ListOriginEndpointsRequest): Request[ListOriginEndpointsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def rotateIngestEndpointCredentials(
@@ -298,6 +310,79 @@ package mediapackage {
   }
 
   /**
+    * Configuration parameters used to create a new HarvestJob.
+    */
+  @js.native
+  trait CreateHarvestJobRequest extends js.Object {
+    var EndTime: __string
+    var Id: __string
+    var OriginEndpointId: __string
+    var S3Destination: S3Destination
+    var StartTime: __string
+  }
+
+  object CreateHarvestJobRequest {
+    @inline
+    def apply(
+        EndTime: __string,
+        Id: __string,
+        OriginEndpointId: __string,
+        S3Destination: S3Destination,
+        StartTime: __string
+    ): CreateHarvestJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndTime"          -> EndTime.asInstanceOf[js.Any],
+        "Id"               -> Id.asInstanceOf[js.Any],
+        "OriginEndpointId" -> OriginEndpointId.asInstanceOf[js.Any],
+        "S3Destination"    -> S3Destination.asInstanceOf[js.Any],
+        "StartTime"        -> StartTime.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateHarvestJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateHarvestJobResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ChannelId: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
+    var EndTime: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var OriginEndpointId: js.UndefOr[__string]
+    var S3Destination: js.UndefOr[S3Destination]
+    var StartTime: js.UndefOr[__string]
+    var Status: js.UndefOr[Status]
+  }
+
+  object CreateHarvestJobResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
+        EndTime: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        OriginEndpointId: js.UndefOr[__string] = js.undefined,
+        S3Destination: js.UndefOr[S3Destination] = js.undefined,
+        StartTime: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): CreateHarvestJobResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OriginEndpointId.foreach(__v => __obj.updateDynamic("OriginEndpointId")(__v.asInstanceOf[js.Any]))
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHarvestJobResponse]
+    }
+  }
+
+  /**
     * Configuration parameters used to create a new OriginEndpoint.
     */
   @js.native
@@ -310,6 +395,7 @@ package mediapackage {
     var HlsPackage: js.UndefOr[HlsPackage]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var Tags: js.UndefOr[Tags]
     var TimeDelaySeconds: js.UndefOr[__integer]
@@ -327,6 +413,7 @@ package mediapackage {
         HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
@@ -343,6 +430,7 @@ package mediapackage {
       HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))
@@ -362,6 +450,7 @@ package mediapackage {
     var Id: js.UndefOr[__string]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var Tags: js.UndefOr[Tags]
     var TimeDelaySeconds: js.UndefOr[__integer]
@@ -381,6 +470,7 @@ package mediapackage {
         Id: js.UndefOr[__string] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
@@ -397,6 +487,7 @@ package mediapackage {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))
@@ -600,6 +691,64 @@ package mediapackage {
   }
 
   @js.native
+  trait DescribeHarvestJobRequest extends js.Object {
+    var Id: __string
+  }
+
+  object DescribeHarvestJobRequest {
+    @inline
+    def apply(
+        Id: __string
+    ): DescribeHarvestJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeHarvestJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeHarvestJobResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ChannelId: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
+    var EndTime: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var OriginEndpointId: js.UndefOr[__string]
+    var S3Destination: js.UndefOr[S3Destination]
+    var StartTime: js.UndefOr[__string]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribeHarvestJobResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
+        EndTime: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        OriginEndpointId: js.UndefOr[__string] = js.undefined,
+        S3Destination: js.UndefOr[S3Destination] = js.undefined,
+        StartTime: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribeHarvestJobResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OriginEndpointId.foreach(__v => __obj.updateDynamic("OriginEndpointId")(__v.asInstanceOf[js.Any]))
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHarvestJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeOriginEndpointRequest extends js.Object {
     var Id: __string
   }
@@ -628,6 +777,7 @@ package mediapackage {
     var Id: js.UndefOr[__string]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var Tags: js.UndefOr[Tags]
     var TimeDelaySeconds: js.UndefOr[__integer]
@@ -647,6 +797,7 @@ package mediapackage {
         Id: js.UndefOr[__string] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
@@ -663,6 +814,7 @@ package mediapackage {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))
@@ -677,6 +829,49 @@ package mediapackage {
     val SAMPLE_AES = "SAMPLE_AES"
 
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
+  }
+
+  /**
+    * A HarvestJob resource configuration
+    */
+  @js.native
+  trait HarvestJob extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ChannelId: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
+    var EndTime: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var OriginEndpointId: js.UndefOr[__string]
+    var S3Destination: js.UndefOr[S3Destination]
+    var StartTime: js.UndefOr[__string]
+    var Status: js.UndefOr[Status]
+  }
+
+  object HarvestJob {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
+        EndTime: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        OriginEndpointId: js.UndefOr[__string] = js.undefined,
+        S3Destination: js.UndefOr[S3Destination] = js.undefined,
+        StartTime: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): HarvestJob = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OriginEndpointId.foreach(__v => __obj.updateDynamic("OriginEndpointId")(__v.asInstanceOf[js.Any]))
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HarvestJob]
+    }
   }
 
   /**
@@ -948,6 +1143,50 @@ package mediapackage {
   }
 
   @js.native
+  trait ListHarvestJobsRequest extends js.Object {
+    var IncludeChannelId: js.UndefOr[__string]
+    var IncludeStatus: js.UndefOr[__string]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListHarvestJobsRequest {
+    @inline
+    def apply(
+        IncludeChannelId: js.UndefOr[__string] = js.undefined,
+        IncludeStatus: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListHarvestJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      IncludeChannelId.foreach(__v => __obj.updateDynamic("IncludeChannelId")(__v.asInstanceOf[js.Any]))
+      IncludeStatus.foreach(__v => __obj.updateDynamic("IncludeStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHarvestJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListHarvestJobsResponse extends js.Object {
+    var HarvestJobs: js.UndefOr[__listOfHarvestJob]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListHarvestJobsResponse {
+    @inline
+    def apply(
+        HarvestJobs: js.UndefOr[__listOfHarvestJob] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListHarvestJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      HarvestJobs.foreach(__v => __obj.updateDynamic("HarvestJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHarvestJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListOriginEndpointsRequest extends js.Object {
     var ChannelId: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
@@ -1092,6 +1331,7 @@ package mediapackage {
     var Id: js.UndefOr[__string]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var Tags: js.UndefOr[Tags]
     var TimeDelaySeconds: js.UndefOr[__integer]
@@ -1111,6 +1351,7 @@ package mediapackage {
         Id: js.UndefOr[__string] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
@@ -1127,6 +1368,7 @@ package mediapackage {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))
@@ -1134,6 +1376,13 @@ package mediapackage {
       Whitelist.foreach(__v => __obj.updateDynamic("Whitelist")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OriginEndpoint]
     }
+  }
+
+  object OriginationEnum {
+    val ALLOW = "ALLOW"
+    val DENY  = "DENY"
+
+    val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   object PlaylistTypeEnum {
@@ -1248,6 +1497,33 @@ package mediapackage {
     }
   }
 
+  /**
+    * Configuration parameters for where in an S3 bucket to place the harvested content
+    */
+  @js.native
+  trait S3Destination extends js.Object {
+    var BucketName: __string
+    var ManifestKey: __string
+    var RoleArn: __string
+  }
+
+  object S3Destination {
+    @inline
+    def apply(
+        BucketName: __string,
+        ManifestKey: __string,
+        RoleArn: __string
+    ): S3Destination = {
+      val __obj = js.Dynamic.literal(
+        "BucketName"  -> BucketName.asInstanceOf[js.Any],
+        "ManifestKey" -> ManifestKey.asInstanceOf[js.Any],
+        "RoleArn"     -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[S3Destination]
+    }
+  }
+
   object SegmentTemplateFormatEnum {
     val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE"
     val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
@@ -1287,6 +1563,14 @@ package mediapackage {
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProvider]
     }
+  }
+
+  object StatusEnum {
+    val IN_PROGRESS = "IN_PROGRESS"
+    val SUCCEEDED   = "SUCCEEDED"
+    val FAILED      = "FAILED"
+
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   object StreamOrderEnum {
@@ -1428,6 +1712,7 @@ package mediapackage {
     var HlsPackage: js.UndefOr[HlsPackage]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var TimeDelaySeconds: js.UndefOr[__integer]
     var Whitelist: js.UndefOr[__listOf__string]
@@ -1443,6 +1728,7 @@ package mediapackage {
         HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
         Whitelist: js.UndefOr[__listOf__string] = js.undefined
@@ -1457,6 +1743,7 @@ package mediapackage {
       HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))
       Whitelist.foreach(__v => __obj.updateDynamic("Whitelist")(__v.asInstanceOf[js.Any]))
@@ -1475,6 +1762,7 @@ package mediapackage {
     var Id: js.UndefOr[__string]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
+    var Origination: js.UndefOr[Origination]
     var StartoverWindowSeconds: js.UndefOr[__integer]
     var Tags: js.UndefOr[Tags]
     var TimeDelaySeconds: js.UndefOr[__integer]
@@ -1494,6 +1782,7 @@ package mediapackage {
         Id: js.UndefOr[__string] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
+        Origination: js.UndefOr[Origination] = js.undefined,
         StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
@@ -1510,6 +1799,7 @@ package mediapackage {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       StartoverWindowSeconds.foreach(__v => __obj.updateDynamic("StartoverWindowSeconds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeDelaySeconds.foreach(__v => __obj.updateDynamic("TimeDelaySeconds")(__v.asInstanceOf[js.Any]))

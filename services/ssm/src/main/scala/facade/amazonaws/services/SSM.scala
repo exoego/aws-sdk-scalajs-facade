@@ -7310,15 +7310,18 @@ package ssm {
   @js.native
   trait LabelParameterVersionResult extends js.Object {
     var InvalidLabels: js.UndefOr[ParameterLabelList]
+    var ParameterVersion: js.UndefOr[PSParameterVersion]
   }
 
   object LabelParameterVersionResult {
     @inline
     def apply(
-        InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined
+        InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined,
+        ParameterVersion: js.UndefOr[PSParameterVersion] = js.undefined
     ): LabelParameterVersionResult = {
       val __obj = js.Dynamic.literal()
       InvalidLabels.foreach(__v => __obj.updateDynamic("InvalidLabels")(__v.asInstanceOf[js.Any]))
+      ParameterVersion.foreach(__v => __obj.updateDynamic("ParameterVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelParameterVersionResult]
     }
   }
@@ -9706,15 +9709,18 @@ package ssm {
 
   @js.native
   trait PutParameterResult extends js.Object {
+    var Tier: js.UndefOr[ParameterTier]
     var Version: js.UndefOr[PSParameterVersion]
   }
 
   object PutParameterResult {
     @inline
     def apply(
+        Tier: js.UndefOr[ParameterTier] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): PutParameterResult = {
       val __obj = js.Dynamic.literal()
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutParameterResult]
     }

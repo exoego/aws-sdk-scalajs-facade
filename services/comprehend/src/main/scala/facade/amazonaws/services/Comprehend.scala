@@ -2237,14 +2237,20 @@ package comprehend {
   }
 
   object LanguageCodeEnum {
-    val en = "en"
-    val es = "es"
-    val fr = "fr"
-    val de = "de"
-    val it = "it"
-    val pt = "pt"
+    val en      = "en"
+    val es      = "es"
+    val fr      = "fr"
+    val de      = "de"
+    val it      = "it"
+    val pt      = "pt"
+    val ar      = "ar"
+    val hi      = "hi"
+    val ja      = "ja"
+    val ko      = "ko"
+    val zh      = "zh"
+    val `zh-TW` = "zh-TW"
 
-    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
+    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`))
   }
 
   @js.native

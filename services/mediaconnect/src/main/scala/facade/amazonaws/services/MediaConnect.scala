@@ -371,6 +371,7 @@ package mediaconnect {
     var EntitlementArn: __string
     var Name: __string
     var Subscribers: __listOf__string
+    var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Description: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
   }
@@ -381,6 +382,7 @@ package mediaconnect {
         EntitlementArn: __string,
         Name: __string,
         Subscribers: __listOf__string,
+        DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined
     ): Entitlement = {
@@ -390,6 +392,9 @@ package mediaconnect {
         "Subscribers"    -> Subscribers.asInstanceOf[js.Any]
       )
 
+      DataTransferSubscriberFeePercent.foreach(
+        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Entitlement]
@@ -447,6 +452,7 @@ package mediaconnect {
   @js.native
   trait GrantEntitlementRequest extends js.Object {
     var Subscribers: __listOf__string
+    var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Description: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
     var Name: js.UndefOr[__string]
@@ -456,6 +462,7 @@ package mediaconnect {
     @inline
     def apply(
         Subscribers: __listOf__string,
+        DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
@@ -464,6 +471,9 @@ package mediaconnect {
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
+      DataTransferSubscriberFeePercent.foreach(
+        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -638,19 +648,24 @@ package mediaconnect {
   trait ListedEntitlement extends js.Object {
     var EntitlementArn: __string
     var EntitlementName: __string
+    var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
   }
 
   object ListedEntitlement {
     @inline
     def apply(
         EntitlementArn: __string,
-        EntitlementName: __string
+        EntitlementName: __string,
+        DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined
     ): ListedEntitlement = {
       val __obj = js.Dynamic.literal(
         "EntitlementArn"  -> EntitlementArn.asInstanceOf[js.Any],
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
       )
 
+      DataTransferSubscriberFeePercent.foreach(
+        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListedEntitlement]
     }
   }
@@ -719,6 +734,7 @@ package mediaconnect {
   trait Output extends js.Object {
     var Name: __string
     var OutputArn: __string
+    var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Description: js.UndefOr[__string]
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
@@ -733,6 +749,7 @@ package mediaconnect {
     def apply(
         Name: __string,
         OutputArn: __string,
+        DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
@@ -746,6 +763,9 @@ package mediaconnect {
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
+      DataTransferSubscriberFeePercent.foreach(
+        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -762,8 +782,9 @@ package mediaconnect {
     val `rtp-fec`   = "rtp-fec"
     val rtp         = "rtp"
     val `zixi-pull` = "zixi-pull"
+    val rist        = "rist"
 
-    val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`))
+    val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
 
   @js.native
@@ -899,6 +920,7 @@ package mediaconnect {
   trait Source extends js.Object {
     var Name: __string
     var SourceArn: __string
+    var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Decryption: js.UndefOr[Encryption]
     var Description: js.UndefOr[__string]
     var EntitlementArn: js.UndefOr[__string]
@@ -913,6 +935,7 @@ package mediaconnect {
     def apply(
         Name: __string,
         SourceArn: __string,
+        DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Decryption: js.UndefOr[Encryption] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         EntitlementArn: js.UndefOr[__string] = js.undefined,
@@ -926,6 +949,9 @@ package mediaconnect {
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
+      DataTransferSubscriberFeePercent.foreach(
+        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      )
       Decryption.foreach(__v => __obj.updateDynamic("Decryption")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))

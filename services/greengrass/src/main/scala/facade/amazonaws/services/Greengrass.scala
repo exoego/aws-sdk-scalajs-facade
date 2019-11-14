@@ -1719,17 +1719,20 @@ package greengrass {
   trait CreateSoftwareUpdateJobResponse extends js.Object {
     var IotJobArn: js.UndefOr[__string]
     var IotJobId: js.UndefOr[__string]
+    var PlatformSoftwareVersion: js.UndefOr[__string]
   }
 
   object CreateSoftwareUpdateJobResponse {
     @inline
     def apply(
         IotJobArn: js.UndefOr[__string] = js.undefined,
-        IotJobId: js.UndefOr[__string] = js.undefined
+        IotJobId: js.UndefOr[__string] = js.undefined,
+        PlatformSoftwareVersion: js.UndefOr[__string] = js.undefined
     ): CreateSoftwareUpdateJobResponse = {
       val __obj = js.Dynamic.literal()
       IotJobArn.foreach(__v => __obj.updateDynamic("IotJobArn")(__v.asInstanceOf[js.Any]))
       IotJobId.foreach(__v => __obj.updateDynamic("IotJobId")(__v.asInstanceOf[js.Any]))
+      PlatformSoftwareVersion.foreach(__v => __obj.updateDynamic("PlatformSoftwareVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSoftwareUpdateJobResponse]
     }
   }
@@ -5575,12 +5578,13 @@ package greengrass {
     * The architecture of the cores which are the targets of an update.
     */
   object UpdateTargetsArchitectureEnum {
+    val armv6l  = "armv6l"
     val armv7l  = "armv7l"
     val x86_64  = "x86_64"
     val aarch64 = "aarch64"
     val openwrt = "openwrt"
 
-    val values = js.Object.freeze(js.Array(armv7l, x86_64, aarch64, openwrt))
+    val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64, openwrt))
   }
 
   /**

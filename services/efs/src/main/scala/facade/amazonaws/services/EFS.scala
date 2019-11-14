@@ -735,12 +735,13 @@ package efs {
   }
 
   object TransitionToIARulesEnum {
+    val AFTER_7_DAYS  = "AFTER_7_DAYS"
     val AFTER_14_DAYS = "AFTER_14_DAYS"
     val AFTER_30_DAYS = "AFTER_30_DAYS"
     val AFTER_60_DAYS = "AFTER_60_DAYS"
     val AFTER_90_DAYS = "AFTER_90_DAYS"
 
-    val values = js.Object.freeze(js.Array(AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
+    val values = js.Object.freeze(js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
   }
 
   @js.native
