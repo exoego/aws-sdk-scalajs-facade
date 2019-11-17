@@ -14,10 +14,10 @@ You may find the below peer facades useful when developing app with AWS.
 
 ```sbt
 // For newer LTS (Node.js v10)
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.26.1-v2.524.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.27.0-v2.571.0"
 
 // For older LTS (Node.js v8)
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade-nodejs-v8" % "0.26.1-v2.524.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade-nodejs-v8" % "0.26.2-v2.524.0"
 ```
 
 Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-vN-NNN-N`,
