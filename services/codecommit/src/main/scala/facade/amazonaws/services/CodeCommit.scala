@@ -391,8 +391,8 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       filePaths.foreach(__v => __obj.updateDynamic("filePaths")(__v.asInstanceOf[js.Any]))
       maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
@@ -1093,8 +1093,8 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
@@ -1360,8 +1360,8 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       maxMergeHunks.foreach(__v => __obj.updateDynamic("maxMergeHunks")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
@@ -1777,8 +1777,8 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForComparedCommitOutput = {
       val __obj = js.Dynamic.literal()
-      commentsForComparedCommitData.foreach(
-        __v => __obj.updateDynamic("commentsForComparedCommitData")(__v.asInstanceOf[js.Any])
+      commentsForComparedCommitData.foreach(__v =>
+        __obj.updateDynamic("commentsForComparedCommitData")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForComparedCommitOutput]
@@ -1831,8 +1831,8 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForPullRequestOutput = {
       val __obj = js.Dynamic.literal()
-      commentsForPullRequestData.foreach(
-        __v => __obj.updateDynamic("commentsForPullRequestData")(__v.asInstanceOf[js.Any])
+      commentsForPullRequestData.foreach(__v =>
+        __obj.updateDynamic("commentsForPullRequestData")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForPullRequestOutput]
@@ -2081,8 +2081,8 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetMergeCommitInput]
     }
@@ -2145,8 +2145,8 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
@@ -2212,8 +2212,8 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetMergeOptionsInput]
     }
@@ -2685,8 +2685,8 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
@@ -2754,8 +2754,8 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
@@ -2971,8 +2971,8 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
@@ -3034,8 +3034,8 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(
-        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      conflictResolutionStrategy.foreach(__v =>
+        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
       )
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
@@ -3384,19 +3384,19 @@ package codecommit {
       val __obj = js.Dynamic.literal()
       actorArn.foreach(__v => __obj.updateDynamic("actorArn")(__v.asInstanceOf[js.Any]))
       eventDate.foreach(__v => __obj.updateDynamic("eventDate")(__v.asInstanceOf[js.Any]))
-      pullRequestCreatedEventMetadata.foreach(
-        __v => __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any])
+      pullRequestCreatedEventMetadata.foreach(__v =>
+        __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any])
       )
       pullRequestEventType.foreach(__v => __obj.updateDynamic("pullRequestEventType")(__v.asInstanceOf[js.Any]))
       pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
-      pullRequestMergedStateChangedEventMetadata.foreach(
-        __v => __obj.updateDynamic("pullRequestMergedStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
+      pullRequestMergedStateChangedEventMetadata.foreach(__v =>
+        __obj.updateDynamic("pullRequestMergedStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
       )
-      pullRequestSourceReferenceUpdatedEventMetadata.foreach(
-        __v => __obj.updateDynamic("pullRequestSourceReferenceUpdatedEventMetadata")(__v.asInstanceOf[js.Any])
+      pullRequestSourceReferenceUpdatedEventMetadata.foreach(__v =>
+        __obj.updateDynamic("pullRequestSourceReferenceUpdatedEventMetadata")(__v.asInstanceOf[js.Any])
       )
-      pullRequestStatusChangedEventMetadata.foreach(
-        __v => __obj.updateDynamic("pullRequestStatusChangedEventMetadata")(__v.asInstanceOf[js.Any])
+      pullRequestStatusChangedEventMetadata.foreach(__v =>
+        __obj.updateDynamic("pullRequestStatusChangedEventMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PullRequestEvent]
     }

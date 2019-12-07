@@ -615,8 +615,8 @@ package configservice {
       AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       ConfigRuleInvokedTime.foreach(__v => __obj.updateDynamic("ConfigRuleInvokedTime")(__v.asInstanceOf[js.Any]))
-      EvaluationResultIdentifier.foreach(
-        __v => __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
+      EvaluationResultIdentifier.foreach(__v =>
+        __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
       )
       ResultRecordedTime.foreach(__v => __obj.updateDynamic("ResultRecordedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AggregateEvaluationResult]
@@ -728,8 +728,8 @@ package configservice {
         CreationTime: js.UndefOr[Date] = js.undefined
     ): AggregationAuthorization = {
       val __obj = js.Dynamic.literal()
-      AggregationAuthorizationArn.foreach(
-        __v => __obj.updateDynamic("AggregationAuthorizationArn")(__v.asInstanceOf[js.Any])
+      AggregationAuthorizationArn.foreach(__v =>
+        __obj.updateDynamic("AggregationAuthorizationArn")(__v.asInstanceOf[js.Any])
       )
       AuthorizedAccountId.foreach(__v => __obj.updateDynamic("AuthorizedAccountId")(__v.asInstanceOf[js.Any]))
       AuthorizedAwsRegion.foreach(__v => __obj.updateDynamic("AuthorizedAwsRegion")(__v.asInstanceOf[js.Any]))
@@ -783,8 +783,8 @@ package configservice {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       awsRegion.foreach(__v => __obj.updateDynamic("awsRegion")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      configurationItemCaptureTime.foreach(
-        __v => __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
+      configurationItemCaptureTime.foreach(__v =>
+        __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
       )
       configurationItemStatus.foreach(__v => __obj.updateDynamic("configurationItemStatus")(__v.asInstanceOf[js.Any]))
       configurationStateId.foreach(__v => __obj.updateDynamic("configurationStateId")(__v.asInstanceOf[js.Any]))
@@ -792,8 +792,8 @@ package configservice {
       resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
       resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supplementaryConfiguration.foreach(
-        __v => __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
+      supplementaryConfiguration.foreach(__v =>
+        __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
       )
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaseConfigurationItem]
@@ -835,8 +835,8 @@ package configservice {
     ): BatchGetAggregateResourceConfigResponse = {
       val __obj = js.Dynamic.literal()
       BaseConfigurationItems.foreach(__v => __obj.updateDynamic("BaseConfigurationItems")(__v.asInstanceOf[js.Any]))
-      UnprocessedResourceIdentifiers.foreach(
-        __v => __obj.updateDynamic("UnprocessedResourceIdentifiers")(__v.asInstanceOf[js.Any])
+      UnprocessedResourceIdentifiers.foreach(__v =>
+        __obj.updateDynamic("UnprocessedResourceIdentifiers")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchGetAggregateResourceConfigResponse]
     }
@@ -902,8 +902,8 @@ package configservice {
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined
     ): Compliance = {
       val __obj = js.Dynamic.literal()
-      ComplianceContributorCount.foreach(
-        __v => __obj.updateDynamic("ComplianceContributorCount")(__v.asInstanceOf[js.Any])
+      ComplianceContributorCount.foreach(__v =>
+        __obj.updateDynamic("ComplianceContributorCount")(__v.asInstanceOf[js.Any])
       )
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Compliance]
@@ -997,12 +997,12 @@ package configservice {
         NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined
     ): ComplianceSummary = {
       val __obj = js.Dynamic.literal()
-      ComplianceSummaryTimestamp.foreach(
-        __v => __obj.updateDynamic("ComplianceSummaryTimestamp")(__v.asInstanceOf[js.Any])
+      ComplianceSummaryTimestamp.foreach(__v =>
+        __obj.updateDynamic("ComplianceSummaryTimestamp")(__v.asInstanceOf[js.Any])
       )
       CompliantResourceCount.foreach(__v => __obj.updateDynamic("CompliantResourceCount")(__v.asInstanceOf[js.Any]))
-      NonCompliantResourceCount.foreach(
-        __v => __obj.updateDynamic("NonCompliantResourceCount")(__v.asInstanceOf[js.Any])
+      NonCompliantResourceCount.foreach(__v =>
+        __obj.updateDynamic("NonCompliantResourceCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ComplianceSummary]
     }
@@ -1118,8 +1118,8 @@ package configservice {
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(
-        __v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
+      MaximumExecutionFrequency.foreach(__v =>
+        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
       )
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigRule]
@@ -1227,11 +1227,11 @@ package configservice {
       LastErrorMessage.foreach(__v => __obj.updateDynamic("LastErrorMessage")(__v.asInstanceOf[js.Any]))
       LastFailedEvaluationTime.foreach(__v => __obj.updateDynamic("LastFailedEvaluationTime")(__v.asInstanceOf[js.Any]))
       LastFailedInvocationTime.foreach(__v => __obj.updateDynamic("LastFailedInvocationTime")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulEvaluationTime.foreach(
-        __v => __obj.updateDynamic("LastSuccessfulEvaluationTime")(__v.asInstanceOf[js.Any])
+      LastSuccessfulEvaluationTime.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfulEvaluationTime")(__v.asInstanceOf[js.Any])
       )
-      LastSuccessfulInvocationTime.foreach(
-        __v => __obj.updateDynamic("LastSuccessfulInvocationTime")(__v.asInstanceOf[js.Any])
+      LastSuccessfulInvocationTime.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfulInvocationTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfigRuleEvaluationStatus]
     }
@@ -1327,19 +1327,19 @@ package configservice {
         OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
     ): ConfigurationAggregator = {
       val __obj = js.Dynamic.literal()
-      AccountAggregationSources.foreach(
-        __v => __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
+      AccountAggregationSources.foreach(__v =>
+        __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
       )
-      ConfigurationAggregatorArn.foreach(
-        __v => __obj.updateDynamic("ConfigurationAggregatorArn")(__v.asInstanceOf[js.Any])
+      ConfigurationAggregatorArn.foreach(__v =>
+        __obj.updateDynamic("ConfigurationAggregatorArn")(__v.asInstanceOf[js.Any])
       )
-      ConfigurationAggregatorName.foreach(
-        __v => __obj.updateDynamic("ConfigurationAggregatorName")(__v.asInstanceOf[js.Any])
+      ConfigurationAggregatorName.foreach(__v =>
+        __obj.updateDynamic("ConfigurationAggregatorName")(__v.asInstanceOf[js.Any])
       )
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      OrganizationAggregationSource.foreach(
-        __v => __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
+      OrganizationAggregationSource.foreach(__v =>
+        __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfigurationAggregator]
     }
@@ -1398,8 +1398,8 @@ package configservice {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       awsRegion.foreach(__v => __obj.updateDynamic("awsRegion")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      configurationItemCaptureTime.foreach(
-        __v => __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
+      configurationItemCaptureTime.foreach(__v =>
+        __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
       )
       configurationItemMD5Hash.foreach(__v => __obj.updateDynamic("configurationItemMD5Hash")(__v.asInstanceOf[js.Any]))
       configurationItemStatus.foreach(__v => __obj.updateDynamic("configurationItemStatus")(__v.asInstanceOf[js.Any]))
@@ -1410,8 +1410,8 @@ package configservice {
       resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
       resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supplementaryConfiguration.foreach(
-        __v => __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
+      supplementaryConfiguration.foreach(__v =>
+        __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
       )
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -1825,8 +1825,8 @@ package configservice {
         snsTopicARN: js.UndefOr[String] = js.undefined
     ): DeliveryChannel = {
       val __obj = js.Dynamic.literal()
-      configSnapshotDeliveryProperties.foreach(
-        __v => __obj.updateDynamic("configSnapshotDeliveryProperties")(__v.asInstanceOf[js.Any])
+      configSnapshotDeliveryProperties.foreach(__v =>
+        __obj.updateDynamic("configSnapshotDeliveryProperties")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
@@ -1857,11 +1857,11 @@ package configservice {
         name: js.UndefOr[String] = js.undefined
     ): DeliveryChannelStatus = {
       val __obj = js.Dynamic.literal()
-      configHistoryDeliveryInfo.foreach(
-        __v => __obj.updateDynamic("configHistoryDeliveryInfo")(__v.asInstanceOf[js.Any])
+      configHistoryDeliveryInfo.foreach(__v =>
+        __obj.updateDynamic("configHistoryDeliveryInfo")(__v.asInstanceOf[js.Any])
       )
-      configSnapshotDeliveryInfo.foreach(
-        __v => __obj.updateDynamic("configSnapshotDeliveryInfo")(__v.asInstanceOf[js.Any])
+      configSnapshotDeliveryInfo.foreach(__v =>
+        __obj.updateDynamic("configSnapshotDeliveryInfo")(__v.asInstanceOf[js.Any])
       )
       configStreamDeliveryInfo.foreach(__v => __obj.updateDynamic("configStreamDeliveryInfo")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1917,8 +1917,8 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAggregateComplianceByConfigRulesResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateComplianceByConfigRules.foreach(
-        __v => __obj.updateDynamic("AggregateComplianceByConfigRules")(__v.asInstanceOf[js.Any])
+      AggregateComplianceByConfigRules.foreach(__v =>
+        __obj.updateDynamic("AggregateComplianceByConfigRules")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAggregateComplianceByConfigRulesResponse]
@@ -1957,8 +1957,8 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeAggregationAuthorizationsResponse = {
       val __obj = js.Dynamic.literal()
-      AggregationAuthorizations.foreach(
-        __v => __obj.updateDynamic("AggregationAuthorizations")(__v.asInstanceOf[js.Any])
+      AggregationAuthorizations.foreach(__v =>
+        __obj.updateDynamic("AggregationAuthorizations")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAggregationAuthorizationsResponse]
@@ -2106,8 +2106,8 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRuleEvaluationStatusResponse = {
       val __obj = js.Dynamic.literal()
-      ConfigRulesEvaluationStatus.foreach(
-        __v => __obj.updateDynamic("ConfigRulesEvaluationStatus")(__v.asInstanceOf[js.Any])
+      ConfigRulesEvaluationStatus.foreach(__v =>
+        __obj.updateDynamic("ConfigRulesEvaluationStatus")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigRuleEvaluationStatusResponse]
@@ -2198,8 +2198,8 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorSourcesStatusResponse = {
       val __obj = js.Dynamic.literal()
-      AggregatedSourceStatusList.foreach(
-        __v => __obj.updateDynamic("AggregatedSourceStatusList")(__v.asInstanceOf[js.Any])
+      AggregatedSourceStatusList.foreach(__v =>
+        __obj.updateDynamic("AggregatedSourceStatusList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationAggregatorSourcesStatusResponse]
@@ -2221,8 +2221,8 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorsRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationAggregatorNames.foreach(
-        __v => __obj.updateDynamic("ConfigurationAggregatorNames")(__v.asInstanceOf[js.Any])
+      ConfigurationAggregatorNames.foreach(__v =>
+        __obj.updateDynamic("ConfigurationAggregatorNames")(__v.asInstanceOf[js.Any])
       )
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -2263,8 +2263,8 @@ package configservice {
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecorderStatusRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecorderNames.foreach(
-        __v => __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
+      ConfigurationRecorderNames.foreach(__v =>
+        __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeConfigurationRecorderStatusRequest]
     }
@@ -2284,8 +2284,8 @@ package configservice {
         ConfigurationRecordersStatus: js.UndefOr[ConfigurationRecorderStatusList] = js.undefined
     ): DescribeConfigurationRecorderStatusResponse = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecordersStatus.foreach(
-        __v => __obj.updateDynamic("ConfigurationRecordersStatus")(__v.asInstanceOf[js.Any])
+      ConfigurationRecordersStatus.foreach(__v =>
+        __obj.updateDynamic("ConfigurationRecordersStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeConfigurationRecorderStatusResponse]
     }
@@ -2305,8 +2305,8 @@ package configservice {
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecordersRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecorderNames.foreach(
-        __v => __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
+      ConfigurationRecorderNames.foreach(__v =>
+        __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeConfigurationRecordersRequest]
     }
@@ -2424,8 +2424,8 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleNames.foreach(
-        __v => __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
+      OrganizationConfigRuleNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesRequest]
     }
@@ -2445,8 +2445,8 @@ package configservice {
     ): DescribeOrganizationConfigRuleStatusesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleStatuses.foreach(
-        __v => __obj.updateDynamic("OrganizationConfigRuleStatuses")(__v.asInstanceOf[js.Any])
+      OrganizationConfigRuleStatuses.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfigRuleStatuses")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesResponse]
     }
@@ -2469,8 +2469,8 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleNames.foreach(
-        __v => __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
+      OrganizationConfigRuleNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeOrganizationConfigRulesRequest]
     }
@@ -2528,8 +2528,8 @@ package configservice {
     ): DescribePendingAggregationRequestsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PendingAggregationRequests.foreach(
-        __v => __obj.updateDynamic("PendingAggregationRequests")(__v.asInstanceOf[js.Any])
+      PendingAggregationRequests.foreach(__v =>
+        __obj.updateDynamic("PendingAggregationRequests")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePendingAggregationRequestsResponse]
     }
@@ -2564,8 +2564,8 @@ package configservice {
         RemediationConfigurations: js.UndefOr[RemediationConfigurations] = js.undefined
     ): DescribeRemediationConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
-      RemediationConfigurations.foreach(
-        __v => __obj.updateDynamic("RemediationConfigurations")(__v.asInstanceOf[js.Any])
+      RemediationConfigurations.foreach(__v =>
+        __obj.updateDynamic("RemediationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeRemediationConfigurationsResponse]
     }
@@ -2658,8 +2658,8 @@ package configservice {
     ): DescribeRemediationExecutionStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RemediationExecutionStatuses.foreach(
-        __v => __obj.updateDynamic("RemediationExecutionStatuses")(__v.asInstanceOf[js.Any])
+      RemediationExecutionStatuses.foreach(__v =>
+        __obj.updateDynamic("RemediationExecutionStatuses")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeRemediationExecutionStatusResponse]
     }
@@ -2679,8 +2679,8 @@ package configservice {
     ): DescribeRetentionConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RetentionConfigurationNames.foreach(
-        __v => __obj.updateDynamic("RetentionConfigurationNames")(__v.asInstanceOf[js.Any])
+      RetentionConfigurationNames.foreach(__v =>
+        __obj.updateDynamic("RetentionConfigurationNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeRetentionConfigurationsRequest]
     }
@@ -2765,8 +2765,8 @@ package configservice {
       Annotation.foreach(__v => __obj.updateDynamic("Annotation")(__v.asInstanceOf[js.Any]))
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       ConfigRuleInvokedTime.foreach(__v => __obj.updateDynamic("ConfigRuleInvokedTime")(__v.asInstanceOf[js.Any]))
-      EvaluationResultIdentifier.foreach(
-        __v => __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
+      EvaluationResultIdentifier.foreach(__v =>
+        __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
       )
       ResultRecordedTime.foreach(__v => __obj.updateDynamic("ResultRecordedTime")(__v.asInstanceOf[js.Any]))
       ResultToken.foreach(__v => __obj.updateDynamic("ResultToken")(__v.asInstanceOf[js.Any]))
@@ -2790,8 +2790,8 @@ package configservice {
         OrderingTimestamp: js.UndefOr[Date] = js.undefined
     ): EvaluationResultIdentifier = {
       val __obj = js.Dynamic.literal()
-      EvaluationResultQualifier.foreach(
-        __v => __obj.updateDynamic("EvaluationResultQualifier")(__v.asInstanceOf[js.Any])
+      EvaluationResultQualifier.foreach(__v =>
+        __obj.updateDynamic("EvaluationResultQualifier")(__v.asInstanceOf[js.Any])
       )
       OrderingTimestamp.foreach(__v => __obj.updateDynamic("OrderingTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResultIdentifier]
@@ -2982,8 +2982,8 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateComplianceDetailsByConfigRuleResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateEvaluationResults.foreach(
-        __v => __obj.updateDynamic("AggregateEvaluationResults")(__v.asInstanceOf[js.Any])
+      AggregateEvaluationResults.foreach(__v =>
+        __obj.updateDynamic("AggregateEvaluationResults")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAggregateComplianceDetailsByConfigRuleResponse]
@@ -3035,8 +3035,8 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateConfigRuleComplianceSummaryResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateComplianceCounts.foreach(
-        __v => __obj.updateDynamic("AggregateComplianceCounts")(__v.asInstanceOf[js.Any])
+      AggregateComplianceCounts.foreach(__v =>
+        __obj.updateDynamic("AggregateComplianceCounts")(__v.asInstanceOf[js.Any])
       )
       GroupByKey.foreach(__v => __obj.updateDynamic("GroupByKey")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -3294,8 +3294,8 @@ package configservice {
         ComplianceSummariesByResourceType: js.UndefOr[ComplianceSummariesByResourceType] = js.undefined
     ): GetComplianceSummaryByResourceTypeResponse = {
       val __obj = js.Dynamic.literal()
-      ComplianceSummariesByResourceType.foreach(
-        __v => __obj.updateDynamic("ComplianceSummariesByResourceType")(__v.asInstanceOf[js.Any])
+      ComplianceSummariesByResourceType.foreach(__v =>
+        __obj.updateDynamic("ComplianceSummariesByResourceType")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetComplianceSummaryByResourceTypeResponse]
     }
@@ -3386,8 +3386,8 @@ package configservice {
     ): GetOrganizationConfigRuleDetailedStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleDetailedStatus.foreach(
-        __v => __obj.updateDynamic("OrganizationConfigRuleDetailedStatus")(__v.asInstanceOf[js.Any])
+      OrganizationConfigRuleDetailedStatus.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfigRuleDetailedStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetOrganizationConfigRuleDetailedStatusResponse]
     }
@@ -3773,11 +3773,11 @@ package configservice {
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
-      OrganizationCustomRuleMetadata.foreach(
-        __v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
+      OrganizationCustomRuleMetadata.foreach(__v =>
+        __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
       )
-      OrganizationManagedRuleMetadata.foreach(
-        __v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
+      OrganizationManagedRuleMetadata.foreach(__v =>
+        __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[OrganizationConfigRule]
     }
@@ -3862,8 +3862,8 @@ package configservice {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(
-        __v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
+      MaximumExecutionFrequency.foreach(__v =>
+        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
       )
       ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
       ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
@@ -3906,8 +3906,8 @@ package configservice {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(
-        __v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
+      MaximumExecutionFrequency.foreach(__v =>
+        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
       )
       ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
       ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
@@ -4053,11 +4053,11 @@ package configservice {
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
       )
 
-      AccountAggregationSources.foreach(
-        __v => __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
+      AccountAggregationSources.foreach(__v =>
+        __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
       )
-      OrganizationAggregationSource.foreach(
-        __v => __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
+      OrganizationAggregationSource.foreach(__v =>
+        __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationAggregatorRequest]
@@ -4189,11 +4189,11 @@ package configservice {
       )
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
-      OrganizationCustomRuleMetadata.foreach(
-        __v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
+      OrganizationCustomRuleMetadata.foreach(__v =>
+        __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
       )
-      OrganizationManagedRuleMetadata.foreach(
-        __v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
+      OrganizationManagedRuleMetadata.foreach(__v =>
+        __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutOrganizationConfigRuleRequest]
     }
@@ -4210,8 +4210,8 @@ package configservice {
         OrganizationConfigRuleArn: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): PutOrganizationConfigRuleResponse = {
       val __obj = js.Dynamic.literal()
-      OrganizationConfigRuleArn.foreach(
-        __v => __obj.updateDynamic("OrganizationConfigRuleArn")(__v.asInstanceOf[js.Any])
+      OrganizationConfigRuleArn.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfigRuleArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutOrganizationConfigRuleResponse]
     }
@@ -4381,8 +4381,8 @@ package configservice {
     ): RecordingGroup = {
       val __obj = js.Dynamic.literal()
       allSupported.foreach(__v => __obj.updateDynamic("allSupported")(__v.asInstanceOf[js.Any]))
-      includeGlobalResourceTypes.foreach(
-        __v => __obj.updateDynamic("includeGlobalResourceTypes")(__v.asInstanceOf[js.Any])
+      includeGlobalResourceTypes.foreach(__v =>
+        __obj.updateDynamic("includeGlobalResourceTypes")(__v.asInstanceOf[js.Any])
       )
       resourceTypes.foreach(__v => __obj.updateDynamic("resourceTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordingGroup]
@@ -5128,8 +5128,8 @@ package configservice {
     ): SourceDetail = {
       val __obj = js.Dynamic.literal()
       EventSource.foreach(__v => __obj.updateDynamic("EventSource")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(
-        __v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
+      MaximumExecutionFrequency.foreach(__v =>
+        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
       )
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceDetail]
@@ -5152,8 +5152,8 @@ package configservice {
         ErrorPercentage: js.UndefOr[Percentage] = js.undefined
     ): SsmControls = {
       val __obj = js.Dynamic.literal()
-      ConcurrentExecutionRatePercentage.foreach(
-        __v => __obj.updateDynamic("ConcurrentExecutionRatePercentage")(__v.asInstanceOf[js.Any])
+      ConcurrentExecutionRatePercentage.foreach(__v =>
+        __obj.updateDynamic("ConcurrentExecutionRatePercentage")(__v.asInstanceOf[js.Any])
       )
       ErrorPercentage.foreach(__v => __obj.updateDynamic("ErrorPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SsmControls]

@@ -356,8 +356,8 @@ package directconnect {
         "proposalId"                    -> proposalId.asInstanceOf[js.Any]
       )
 
-      overrideAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("overrideAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      overrideAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("overrideAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalRequest]
     }
@@ -374,8 +374,8 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): AcceptDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociation.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
     }
@@ -1026,11 +1026,11 @@ package directconnect {
         "gatewayId"                        -> gatewayId.asInstanceOf[js.Any]
       )
 
-      addAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
-      removeAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalRequest]
     }
@@ -1047,8 +1047,8 @@ package directconnect {
         directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
     ): CreateDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociationProposal.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalResult]
     }
@@ -1074,8 +1074,8 @@ package directconnect {
         "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
       )
 
-      addAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       gatewayId.foreach(__v => __obj.updateDynamic("gatewayId")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
@@ -1094,8 +1094,8 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): CreateDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociation.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationResult]
     }
@@ -1377,8 +1377,8 @@ package directconnect {
         directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
     ): DeleteDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociationProposal.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationProposalResult]
     }
@@ -1417,8 +1417,8 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): DeleteDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociation.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationResult]
     }
@@ -1659,8 +1659,8 @@ package directconnect {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAssociationProposalsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposals.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociationProposals")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociationProposals.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociationProposals")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsResult]
@@ -1711,8 +1711,8 @@ package directconnect {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAssociationsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociations.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociations")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociations.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociations")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationsResult]
@@ -1757,8 +1757,8 @@ package directconnect {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAttachmentsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAttachments.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAttachments")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAttachments.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAttachments")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAttachmentsResult]
@@ -2000,8 +2000,8 @@ package directconnect {
       amazonSideAsn.foreach(__v => __obj.updateDynamic("amazonSideAsn")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
       directConnectGatewayName.foreach(__v => __obj.updateDynamic("directConnectGatewayName")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayState.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayState")(__v.asInstanceOf[js.Any])
+      directConnectGatewayState.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayState")(__v.asInstanceOf[js.Any])
       )
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
@@ -2041,20 +2041,20 @@ package directconnect {
         virtualGatewayRegion: js.UndefOr[VirtualGatewayRegion] = js.undefined
     ): DirectConnectGatewayAssociation = {
       val __obj = js.Dynamic.literal()
-      allowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("allowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      allowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("allowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
       associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
       associationState.foreach(__v => __obj.updateDynamic("associationState")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
+      directConnectGatewayOwnerAccount.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
       )
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayOwnerAccount.foreach(
-        __v => __obj.updateDynamic("virtualGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
+      virtualGatewayOwnerAccount.foreach(__v =>
+        __obj.updateDynamic("virtualGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
       )
       virtualGatewayRegion.foreach(__v => __obj.updateDynamic("virtualGatewayRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGatewayAssociation]
@@ -2089,16 +2089,16 @@ package directconnect {
       val __obj = js.Dynamic.literal()
       associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
+      directConnectGatewayOwnerAccount.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
       )
-      existingAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("existingAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      existingAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("existingAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       proposalId.foreach(__v => __obj.updateDynamic("proposalId")(__v.asInstanceOf[js.Any]))
       proposalState.foreach(__v => __obj.updateDynamic("proposalState")(__v.asInstanceOf[js.Any]))
-      requestedAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("requestedAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      requestedAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("requestedAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DirectConnectGatewayAssociationProposal]
     }
@@ -2153,8 +2153,8 @@ package directconnect {
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
       virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceOwnerAccount.foreach(
-        __v => __obj.updateDynamic("virtualInterfaceOwnerAccount")(__v.asInstanceOf[js.Any])
+      virtualInterfaceOwnerAccount.foreach(__v =>
+        __obj.updateDynamic("virtualInterfaceOwnerAccount")(__v.asInstanceOf[js.Any])
       )
       virtualInterfaceRegion.foreach(__v => __obj.updateDynamic("virtualInterfaceRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGatewayAttachment]
@@ -2932,12 +2932,12 @@ package directconnect {
         removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
     ): UpdateDirectConnectGatewayAssociationRequest = {
       val __obj = js.Dynamic.literal()
-      addAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      removeAllowedPrefixesToDirectConnectGateway.foreach(
-        __v => __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
+      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
+        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationRequest]
     }
@@ -2954,8 +2954,8 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): UpdateDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(
-        __v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
+      directConnectGatewayAssociation.foreach(__v =>
+        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationResult]
     }

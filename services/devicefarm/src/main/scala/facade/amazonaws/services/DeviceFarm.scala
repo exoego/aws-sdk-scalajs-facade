@@ -369,8 +369,8 @@ package devicefarm {
       skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
       trialMinutes.foreach(__v => __obj.updateDynamic("trialMinutes")(__v.asInstanceOf[js.Any]))
       unmeteredDevices.foreach(__v => __obj.updateDynamic("unmeteredDevices")(__v.asInstanceOf[js.Any]))
-      unmeteredRemoteAccessDevices.foreach(
-        __v => __obj.updateDynamic("unmeteredRemoteAccessDevices")(__v.asInstanceOf[js.Any])
+      unmeteredRemoteAccessDevices.foreach(__v =>
+        __obj.updateDynamic("unmeteredRemoteAccessDevices")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AccountSettings]
     }
@@ -624,8 +624,8 @@ package devicefarm {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(
-        __v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
+      excludeAppPackagesFromCleanup.foreach(__v =>
+        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
       )
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
       rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
@@ -925,8 +925,8 @@ package devicefarm {
         "vpceServiceName"       -> vpceServiceName.asInstanceOf[js.Any]
       )
 
-      vpceConfigurationDescription.foreach(
-        __v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
+      vpceConfigurationDescription.foreach(__v =>
+        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateVPCEConfigurationRequest]
     }
@@ -2424,8 +2424,8 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(
-        __v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
+      excludeAppPackagesFromCleanup.foreach(__v =>
+        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
@@ -4235,8 +4235,8 @@ package devicefarm {
       appArn.foreach(__v => __obj.updateDynamic("appArn")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       devicePoolArn.foreach(__v => __obj.updateDynamic("devicePoolArn")(__v.asInstanceOf[js.Any]))
-      deviceSelectionConfiguration.foreach(
-        __v => __obj.updateDynamic("deviceSelectionConfiguration")(__v.asInstanceOf[js.Any])
+      deviceSelectionConfiguration.foreach(__v =>
+        __obj.updateDynamic("deviceSelectionConfiguration")(__v.asInstanceOf[js.Any])
       )
       executionConfiguration.foreach(__v => __obj.updateDynamic("executionConfiguration")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -4814,8 +4814,8 @@ package devicefarm {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(
-        __v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
+      excludeAppPackagesFromCleanup.foreach(__v =>
+        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
@@ -5019,8 +5019,8 @@ package devicefarm {
       )
 
       serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(
-        __v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
+      vpceConfigurationDescription.foreach(__v =>
+        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
       vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
@@ -5202,8 +5202,8 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(
-        __v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
+      vpceConfigurationDescription.foreach(__v =>
+        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
       vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))

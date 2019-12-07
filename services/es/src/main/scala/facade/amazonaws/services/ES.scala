@@ -462,14 +462,14 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(
-        __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
+      ElasticsearchClusterConfig.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
       )
       ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(
-        __v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
+      NodeToNodeEncryptionOptions.foreach(__v =>
+        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
       )
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
@@ -738,8 +738,8 @@ package es {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsRequest]
     }
@@ -762,8 +762,8 @@ package es {
     ): DescribeReservedElasticsearchInstanceOfferingsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferings.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferings")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceOfferings.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceOfferings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsResponse]
     }
@@ -789,8 +789,8 @@ package es {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedElasticsearchInstancesRequest]
     }
@@ -813,8 +813,8 @@ package es {
     ): DescribeReservedElasticsearchInstancesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstances.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstances")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstances.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstances")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedElasticsearchInstancesResponse]
     }
@@ -1156,14 +1156,14 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(
-        __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
+      ElasticsearchClusterConfig.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
       )
       ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(
-        __v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
+      NodeToNodeEncryptionOptions.foreach(__v =>
+        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
       )
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
@@ -1245,8 +1245,8 @@ package es {
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(
-        __v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
+      NodeToNodeEncryptionOptions.foreach(__v =>
+        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
       )
       Processing.foreach(__v => __obj.updateDynamic("Processing")(__v.asInstanceOf[js.Any]))
       ServiceSoftwareOptions.foreach(__v => __obj.updateDynamic("ServiceSoftwareOptions")(__v.asInstanceOf[js.Any]))
@@ -1360,8 +1360,8 @@ package es {
         CompatibleElasticsearchVersions: js.UndefOr[CompatibleElasticsearchVersionsList] = js.undefined
     ): GetCompatibleElasticsearchVersionsResponse = {
       val __obj = js.Dynamic.literal()
-      CompatibleElasticsearchVersions.foreach(
-        __v => __obj.updateDynamic("CompatibleElasticsearchVersions")(__v.asInstanceOf[js.Any])
+      CompatibleElasticsearchVersions.foreach(__v =>
+        __obj.updateDynamic("CompatibleElasticsearchVersions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetCompatibleElasticsearchVersionsResponse]
     }
@@ -1593,8 +1593,8 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchInstanceTypesResponse = {
       val __obj = js.Dynamic.literal()
-      ElasticsearchInstanceTypes.foreach(
-        __v => __obj.updateDynamic("ElasticsearchInstanceTypes")(__v.asInstanceOf[js.Any])
+      ElasticsearchInstanceTypes.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchInstanceTypes")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListElasticsearchInstanceTypesResponse]
@@ -1705,8 +1705,8 @@ package es {
         Enabled: js.UndefOr[Boolean] = js.undefined
     ): LogPublishingOption = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogPublishingOption]
@@ -1882,8 +1882,8 @@ package es {
     ): PurchaseReservedElasticsearchInstanceOfferingResponse = {
       val __obj = js.Dynamic.literal()
       ReservationName.foreach(__v => __obj.updateDynamic("ReservationName")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingResponse]
     }
@@ -1975,21 +1975,21 @@ package es {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
-      ElasticsearchInstanceCount.foreach(
-        __v => __obj.updateDynamic("ElasticsearchInstanceCount")(__v.asInstanceOf[js.Any])
+      ElasticsearchInstanceCount.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchInstanceCount")(__v.asInstanceOf[js.Any])
       )
-      ElasticsearchInstanceType.foreach(
-        __v => __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
+      ElasticsearchInstanceType.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
       )
       FixedPrice.foreach(__v => __obj.updateDynamic("FixedPrice")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
       ReservationName.foreach(__v => __obj.updateDynamic("ReservationName")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
       )
-      ReservedElasticsearchInstanceOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
       )
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -2028,14 +2028,14 @@ package es {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
-      ElasticsearchInstanceType.foreach(
-        __v => __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
+      ElasticsearchInstanceType.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
       )
       FixedPrice.foreach(__v => __obj.updateDynamic("FixedPrice")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
       )
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedElasticsearchInstanceOffering]
@@ -2101,8 +2101,8 @@ package es {
         AutomatedSnapshotStartHour: js.UndefOr[IntegerClass] = js.undefined
     ): SnapshotOptions = {
       val __obj = js.Dynamic.literal()
-      AutomatedSnapshotStartHour.foreach(
-        __v => __obj.updateDynamic("AutomatedSnapshotStartHour")(__v.asInstanceOf[js.Any])
+      AutomatedSnapshotStartHour.foreach(__v =>
+        __obj.updateDynamic("AutomatedSnapshotStartHour")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SnapshotOptions]
     }
@@ -2290,8 +2290,8 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(
-        __v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
+      ElasticsearchClusterConfig.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
       )
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))

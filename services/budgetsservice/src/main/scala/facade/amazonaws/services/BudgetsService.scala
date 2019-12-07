@@ -175,8 +175,8 @@ package budgetsservice {
       val __obj = js.Dynamic.literal()
       BudgetName.foreach(__v => __obj.updateDynamic("BudgetName")(__v.asInstanceOf[js.Any]))
       BudgetType.foreach(__v => __obj.updateDynamic("BudgetType")(__v.asInstanceOf[js.Any]))
-      BudgetedAndActualAmountsList.foreach(
-        __v => __obj.updateDynamic("BudgetedAndActualAmountsList")(__v.asInstanceOf[js.Any])
+      BudgetedAndActualAmountsList.foreach(__v =>
+        __obj.updateDynamic("BudgetedAndActualAmountsList")(__v.asInstanceOf[js.Any])
       )
       CostFilters.foreach(__v => __obj.updateDynamic("CostFilters")(__v.asInstanceOf[js.Any]))
       CostTypes.foreach(__v => __obj.updateDynamic("CostTypes")(__v.asInstanceOf[js.Any]))
@@ -336,8 +336,8 @@ package budgetsservice {
         "Budget"    -> Budget.asInstanceOf[js.Any]
       )
 
-      NotificationsWithSubscribers.foreach(
-        __v => __obj.updateDynamic("NotificationsWithSubscribers")(__v.asInstanceOf[js.Any])
+      NotificationsWithSubscribers.foreach(__v =>
+        __obj.updateDynamic("NotificationsWithSubscribers")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateBudgetRequest]
     }

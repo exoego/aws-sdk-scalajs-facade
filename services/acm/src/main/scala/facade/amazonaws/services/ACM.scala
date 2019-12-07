@@ -236,8 +236,8 @@ package acm {
         CertificateTransparencyLoggingPreference: js.UndefOr[CertificateTransparencyLoggingPreference] = js.undefined
     ): CertificateOptions = {
       val __obj = js.Dynamic.literal()
-      CertificateTransparencyLoggingPreference.foreach(
-        __v => __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any])
+      CertificateTransparencyLoggingPreference.foreach(__v =>
+        __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CertificateOptions]
     }

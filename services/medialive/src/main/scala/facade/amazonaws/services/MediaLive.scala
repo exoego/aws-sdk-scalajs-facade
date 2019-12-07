@@ -851,8 +851,8 @@ package medialive {
         "Name"              -> Name.asInstanceOf[js.Any]
       )
 
-      AudioNormalizationSettings.foreach(
-        __v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
+      AudioNormalizationSettings.foreach(__v =>
+        __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
       )
       AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
       AudioTypeControl.foreach(__v => __obj.updateDynamic("AudioTypeControl")(__v.asInstanceOf[js.Any]))
@@ -1561,36 +1561,36 @@ package medialive {
     ): CaptionDestinationSettings = {
       val __obj = js.Dynamic.literal()
       AribDestinationSettings.foreach(__v => __obj.updateDynamic("AribDestinationSettings")(__v.asInstanceOf[js.Any]))
-      BurnInDestinationSettings.foreach(
-        __v => __obj.updateDynamic("BurnInDestinationSettings")(__v.asInstanceOf[js.Any])
+      BurnInDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("BurnInDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      DvbSubDestinationSettings.foreach(
-        __v => __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
+      DvbSubDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      EmbeddedDestinationSettings.foreach(
-        __v => __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
+      EmbeddedDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      EmbeddedPlusScte20DestinationSettings.foreach(
-        __v => __obj.updateDynamic("EmbeddedPlusScte20DestinationSettings")(__v.asInstanceOf[js.Any])
+      EmbeddedPlusScte20DestinationSettings.foreach(__v =>
+        __obj.updateDynamic("EmbeddedPlusScte20DestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      RtmpCaptionInfoDestinationSettings.foreach(
-        __v => __obj.updateDynamic("RtmpCaptionInfoDestinationSettings")(__v.asInstanceOf[js.Any])
+      RtmpCaptionInfoDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("RtmpCaptionInfoDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      Scte20PlusEmbeddedDestinationSettings.foreach(
-        __v => __obj.updateDynamic("Scte20PlusEmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
+      Scte20PlusEmbeddedDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("Scte20PlusEmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      Scte27DestinationSettings.foreach(
-        __v => __obj.updateDynamic("Scte27DestinationSettings")(__v.asInstanceOf[js.Any])
+      Scte27DestinationSettings.foreach(__v =>
+        __obj.updateDynamic("Scte27DestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      SmpteTtDestinationSettings.foreach(
-        __v => __obj.updateDynamic("SmpteTtDestinationSettings")(__v.asInstanceOf[js.Any])
+      SmpteTtDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("SmpteTtDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      TeletextDestinationSettings.foreach(
-        __v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
+      TeletextDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       TtmlDestinationSettings.foreach(__v => __obj.updateDynamic("TtmlDestinationSettings")(__v.asInstanceOf[js.Any]))
-      WebvttDestinationSettings.foreach(
-        __v => __obj.updateDynamic("WebvttDestinationSettings")(__v.asInstanceOf[js.Any])
+      WebvttDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("WebvttDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CaptionDestinationSettings]
     }
@@ -3623,8 +3623,8 @@ package medialive {
       InputLossBehavior.foreach(__v => __obj.updateDynamic("InputLossBehavior")(__v.asInstanceOf[js.Any]))
       OutputLockingMode.foreach(__v => __obj.updateDynamic("OutputLockingMode")(__v.asInstanceOf[js.Any]))
       OutputTimingSource.foreach(__v => __obj.updateDynamic("OutputTimingSource")(__v.asInstanceOf[js.Any]))
-      SupportLowFramerateInputs.foreach(
-        __v => __obj.updateDynamic("SupportLowFramerateInputs")(__v.asInstanceOf[js.Any])
+      SupportLowFramerateInputs.foreach(__v =>
+        __obj.updateDynamic("SupportLowFramerateInputs")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GlobalConfiguration]
     }
@@ -3712,8 +3712,8 @@ package medialive {
         Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
     ): H264ColorSpaceSettings = {
       val __obj = js.Dynamic.literal()
-      ColorSpacePassthroughSettings.foreach(
-        __v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
+      ColorSpacePassthroughSettings.foreach(__v =>
+        __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
       )
       Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
       Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
@@ -4117,8 +4117,8 @@ package medialive {
         Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
     ): H265ColorSpaceSettings = {
       val __obj = js.Dynamic.literal()
-      ColorSpacePassthroughSettings.foreach(
-        __v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
+      ColorSpacePassthroughSettings.foreach(__v =>
+        __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
       )
       Hdr10Settings.foreach(__v => __obj.updateDynamic("Hdr10Settings")(__v.asInstanceOf[js.Any]))
       Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
@@ -4310,8 +4310,8 @@ package medialive {
 
       AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
       AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
-      AlternativeTransferFunction.foreach(
-        __v => __obj.updateDynamic("AlternativeTransferFunction")(__v.asInstanceOf[js.Any])
+      AlternativeTransferFunction.foreach(__v =>
+        __obj.updateDynamic("AlternativeTransferFunction")(__v.asInstanceOf[js.Any])
       )
       Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
       BufSize.foreach(__v => __obj.updateDynamic("BufSize")(__v.asInstanceOf[js.Any]))
@@ -4670,8 +4670,8 @@ package medialive {
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Frame.foreach(__v => __obj.updateDynamic("TimedMetadataId3Frame")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Period.foreach(__v => __obj.updateDynamic("TimedMetadataId3Period")(__v.asInstanceOf[js.Any]))
-      TimestampDeltaMilliseconds.foreach(
-        __v => __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
+      TimestampDeltaMilliseconds.foreach(__v =>
+        __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
       )
       TsFileMode.foreach(__v => __obj.updateDynamic("TsFileMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsGroupSettings]
@@ -6966,12 +6966,12 @@ package medialive {
     ): OutputGroupSettings = {
       val __obj = js.Dynamic.literal()
       ArchiveGroupSettings.foreach(__v => __obj.updateDynamic("ArchiveGroupSettings")(__v.asInstanceOf[js.Any]))
-      FrameCaptureGroupSettings.foreach(
-        __v => __obj.updateDynamic("FrameCaptureGroupSettings")(__v.asInstanceOf[js.Any])
+      FrameCaptureGroupSettings.foreach(__v =>
+        __obj.updateDynamic("FrameCaptureGroupSettings")(__v.asInstanceOf[js.Any])
       )
       HlsGroupSettings.foreach(__v => __obj.updateDynamic("HlsGroupSettings")(__v.asInstanceOf[js.Any]))
-      MediaPackageGroupSettings.foreach(
-        __v => __obj.updateDynamic("MediaPackageGroupSettings")(__v.asInstanceOf[js.Any])
+      MediaPackageGroupSettings.foreach(__v =>
+        __obj.updateDynamic("MediaPackageGroupSettings")(__v.asInstanceOf[js.Any])
       )
       MsSmoothGroupSettings.foreach(__v => __obj.updateDynamic("MsSmoothGroupSettings")(__v.asInstanceOf[js.Any]))
       RtmpGroupSettings.foreach(__v => __obj.updateDynamic("RtmpGroupSettings")(__v.asInstanceOf[js.Any]))
@@ -7026,12 +7026,12 @@ package medialive {
     ): OutputSettings = {
       val __obj = js.Dynamic.literal()
       ArchiveOutputSettings.foreach(__v => __obj.updateDynamic("ArchiveOutputSettings")(__v.asInstanceOf[js.Any]))
-      FrameCaptureOutputSettings.foreach(
-        __v => __obj.updateDynamic("FrameCaptureOutputSettings")(__v.asInstanceOf[js.Any])
+      FrameCaptureOutputSettings.foreach(__v =>
+        __obj.updateDynamic("FrameCaptureOutputSettings")(__v.asInstanceOf[js.Any])
       )
       HlsOutputSettings.foreach(__v => __obj.updateDynamic("HlsOutputSettings")(__v.asInstanceOf[js.Any]))
-      MediaPackageOutputSettings.foreach(
-        __v => __obj.updateDynamic("MediaPackageOutputSettings")(__v.asInstanceOf[js.Any])
+      MediaPackageOutputSettings.foreach(__v =>
+        __obj.updateDynamic("MediaPackageOutputSettings")(__v.asInstanceOf[js.Any])
       )
       MsSmoothOutputSettings.foreach(__v => __obj.updateDynamic("MsSmoothOutputSettings")(__v.asInstanceOf[js.Any]))
       RtmpOutputSettings.foreach(__v => __obj.updateDynamic("RtmpOutputSettings")(__v.asInstanceOf[js.Any]))
@@ -7093,11 +7093,11 @@ package medialive {
         PipelineId: js.UndefOr[__string] = js.undefined
     ): PipelineDetail = {
       val __obj = js.Dynamic.literal()
-      ActiveInputAttachmentName.foreach(
-        __v => __obj.updateDynamic("ActiveInputAttachmentName")(__v.asInstanceOf[js.Any])
+      ActiveInputAttachmentName.foreach(__v =>
+        __obj.updateDynamic("ActiveInputAttachmentName")(__v.asInstanceOf[js.Any])
       )
-      ActiveInputSwitchActionName.foreach(
-        __v => __obj.updateDynamic("ActiveInputSwitchActionName")(__v.asInstanceOf[js.Any])
+      ActiveInputSwitchActionName.foreach(__v =>
+        __obj.updateDynamic("ActiveInputSwitchActionName")(__v.asInstanceOf[js.Any])
       )
       PipelineId.foreach(__v => __obj.updateDynamic("PipelineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineDetail]
@@ -7616,18 +7616,18 @@ package medialive {
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
-      Scte35ReturnToNetworkSettings.foreach(
-        __v => __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any])
+      Scte35ReturnToNetworkSettings.foreach(__v =>
+        __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any])
       )
-      Scte35SpliceInsertSettings.foreach(
-        __v => __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any])
+      Scte35SpliceInsertSettings.foreach(__v =>
+        __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any])
       )
       Scte35TimeSignalSettings.foreach(__v => __obj.updateDynamic("Scte35TimeSignalSettings")(__v.asInstanceOf[js.Any]))
-      StaticImageActivateSettings.foreach(
-        __v => __obj.updateDynamic("StaticImageActivateSettings")(__v.asInstanceOf[js.Any])
+      StaticImageActivateSettings.foreach(__v =>
+        __obj.updateDynamic("StaticImageActivateSettings")(__v.asInstanceOf[js.Any])
       )
-      StaticImageDeactivateSettings.foreach(
-        __v => __obj.updateDynamic("StaticImageDeactivateSettings")(__v.asInstanceOf[js.Any])
+      StaticImageDeactivateSettings.foreach(__v =>
+        __obj.updateDynamic("StaticImageDeactivateSettings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScheduleActionSettings]
     }
@@ -7651,14 +7651,14 @@ package medialive {
         ImmediateModeScheduleActionStartSettings: js.UndefOr[ImmediateModeScheduleActionStartSettings] = js.undefined
     ): ScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
-      FixedModeScheduleActionStartSettings.foreach(
-        __v => __obj.updateDynamic("FixedModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
+      FixedModeScheduleActionStartSettings.foreach(__v =>
+        __obj.updateDynamic("FixedModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
       )
-      FollowModeScheduleActionStartSettings.foreach(
-        __v => __obj.updateDynamic("FollowModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
+      FollowModeScheduleActionStartSettings.foreach(__v =>
+        __obj.updateDynamic("FollowModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
       )
-      ImmediateModeScheduleActionStartSettings.foreach(
-        __v => __obj.updateDynamic("ImmediateModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
+      ImmediateModeScheduleActionStartSettings.foreach(__v =>
+        __obj.updateDynamic("ImmediateModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScheduleActionStartSettings]
     }
@@ -8493,8 +8493,8 @@ package medialive {
         Timecode: js.UndefOr[__string] = js.undefined
     ): StopTimecode = {
       val __obj = js.Dynamic.literal()
-      LastFrameClippingBehavior.foreach(
-        __v => __obj.updateDynamic("LastFrameClippingBehavior")(__v.asInstanceOf[js.Any])
+      LastFrameClippingBehavior.foreach(__v =>
+        __obj.updateDynamic("LastFrameClippingBehavior")(__v.asInstanceOf[js.Any])
       )
       Timecode.foreach(__v => __obj.updateDynamic("Timecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopTimecode]

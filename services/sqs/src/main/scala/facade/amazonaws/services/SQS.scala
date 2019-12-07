@@ -1081,8 +1081,8 @@ package sqs {
       )
 
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
-      MD5OfMessageSystemAttributes.foreach(
-        __v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
+      MD5OfMessageSystemAttributes.foreach(__v =>
+        __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
       )
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchResultEntry]
@@ -1152,8 +1152,8 @@ package sqs {
       val __obj = js.Dynamic.literal()
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
       MD5OfMessageBody.foreach(__v => __obj.updateDynamic("MD5OfMessageBody")(__v.asInstanceOf[js.Any]))
-      MD5OfMessageSystemAttributes.foreach(
-        __v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
+      MD5OfMessageSystemAttributes.foreach(__v =>
+        __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
       )
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))

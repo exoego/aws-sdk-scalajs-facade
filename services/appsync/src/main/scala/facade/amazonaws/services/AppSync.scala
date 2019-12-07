@@ -496,8 +496,8 @@ package appsync {
         "name"               -> name.asInstanceOf[js.Any]
       )
 
-      additionalAuthenticationProviders.foreach(
-        __v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
+      additionalAuthenticationProviders.foreach(__v =>
+        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
       )
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
@@ -1283,8 +1283,8 @@ package appsync {
         userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
     ): GraphqlApi = {
       val __obj = js.Dynamic.literal()
-      additionalAuthenticationProviders.foreach(
-        __v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
+      additionalAuthenticationProviders.foreach(__v =>
+        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
       )
       apiId.foreach(__v => __obj.updateDynamic("apiId")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -1812,8 +1812,8 @@ package appsync {
     ): RelationalDatabaseDataSourceConfig = {
       val __obj = js.Dynamic.literal()
       rdsHttpEndpointConfig.foreach(__v => __obj.updateDynamic("rdsHttpEndpointConfig")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseSourceType.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseSourceType")(__v.asInstanceOf[js.Any])
+      relationalDatabaseSourceType.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseSourceType")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RelationalDatabaseDataSourceConfig]
     }
@@ -2212,8 +2212,8 @@ package appsync {
         "name"  -> name.asInstanceOf[js.Any]
       )
 
-      additionalAuthenticationProviders.foreach(
-        __v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
+      additionalAuthenticationProviders.foreach(__v =>
+        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
       )
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))

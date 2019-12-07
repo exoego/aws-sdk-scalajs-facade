@@ -676,14 +676,14 @@ package apigateway {
       val __obj = js.Dynamic.literal()
       authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
       authorizerCredentials.foreach(__v => __obj.updateDynamic("authorizerCredentials")(__v.asInstanceOf[js.Any]))
-      authorizerResultTtlInSeconds.foreach(
-        __v => __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
+      authorizerResultTtlInSeconds.foreach(__v =>
+        __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
       authorizerUri.foreach(__v => __obj.updateDynamic("authorizerUri")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       identitySource.foreach(__v => __obj.updateDynamic("identitySource")(__v.asInstanceOf[js.Any]))
-      identityValidationExpression.foreach(
-        __v => __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
+      identityValidationExpression.foreach(__v =>
+        __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       providerARNs.foreach(__v => __obj.updateDynamic("providerARNs")(__v.asInstanceOf[js.Any]))
@@ -989,13 +989,13 @@ package apigateway {
 
       authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
       authorizerCredentials.foreach(__v => __obj.updateDynamic("authorizerCredentials")(__v.asInstanceOf[js.Any]))
-      authorizerResultTtlInSeconds.foreach(
-        __v => __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
+      authorizerResultTtlInSeconds.foreach(__v =>
+        __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
       authorizerUri.foreach(__v => __obj.updateDynamic("authorizerUri")(__v.asInstanceOf[js.Any]))
       identitySource.foreach(__v => __obj.updateDynamic("identitySource")(__v.asInstanceOf[js.Any]))
-      identityValidationExpression.foreach(
-        __v => __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
+      identityValidationExpression.foreach(__v =>
+        __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
       )
       providerARNs.foreach(__v => __obj.updateDynamic("providerARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
@@ -1243,8 +1243,8 @@ package apigateway {
 
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       validateRequestBody.foreach(__v => __obj.updateDynamic("validateRequestBody")(__v.asInstanceOf[js.Any]))
-      validateRequestParameters.foreach(
-        __v => __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
+      validateRequestParameters.foreach(__v =>
+        __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateRequestValidatorRequest]
     }
@@ -4107,13 +4107,13 @@ package apigateway {
       dataTraceEnabled.foreach(__v => __obj.updateDynamic("dataTraceEnabled")(__v.asInstanceOf[js.Any]))
       loggingLevel.foreach(__v => __obj.updateDynamic("loggingLevel")(__v.asInstanceOf[js.Any]))
       metricsEnabled.foreach(__v => __obj.updateDynamic("metricsEnabled")(__v.asInstanceOf[js.Any]))
-      requireAuthorizationForCacheControl.foreach(
-        __v => __obj.updateDynamic("requireAuthorizationForCacheControl")(__v.asInstanceOf[js.Any])
+      requireAuthorizationForCacheControl.foreach(__v =>
+        __obj.updateDynamic("requireAuthorizationForCacheControl")(__v.asInstanceOf[js.Any])
       )
       throttlingBurstLimit.foreach(__v => __obj.updateDynamic("throttlingBurstLimit")(__v.asInstanceOf[js.Any]))
       throttlingRateLimit.foreach(__v => __obj.updateDynamic("throttlingRateLimit")(__v.asInstanceOf[js.Any]))
-      unauthorizedCacheControlHeaderStrategy.foreach(
-        __v => __obj.updateDynamic("unauthorizedCacheControlHeaderStrategy")(__v.asInstanceOf[js.Any])
+      unauthorizedCacheControlHeaderStrategy.foreach(__v =>
+        __obj.updateDynamic("unauthorizedCacheControlHeaderStrategy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[MethodSetting]
     }
@@ -4566,8 +4566,8 @@ package apigateway {
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       validateRequestBody.foreach(__v => __obj.updateDynamic("validateRequestBody")(__v.asInstanceOf[js.Any]))
-      validateRequestParameters.foreach(
-        __v => __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
+      validateRequestParameters.foreach(__v =>
+        __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RequestValidator]
     }

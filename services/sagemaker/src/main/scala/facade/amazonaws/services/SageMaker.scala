@@ -947,8 +947,8 @@ package sagemaker {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsRequired.foreach(__v => __obj.updateDynamic("IsRequired")(__v.asInstanceOf[js.Any]))
-      SupportedCompressionTypes.foreach(
-        __v => __obj.updateDynamic("SupportedCompressionTypes")(__v.asInstanceOf[js.Any])
+      SupportedCompressionTypes.foreach(__v =>
+        __obj.updateDynamic("SupportedCompressionTypes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ChannelSpecification]
     }
@@ -1516,8 +1516,8 @@ package sagemaker {
       )
 
       LabelCategoryConfigS3Uri.foreach(__v => __obj.updateDynamic("LabelCategoryConfigS3Uri")(__v.asInstanceOf[js.Any]))
-      LabelingJobAlgorithmsConfig.foreach(
-        __v => __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
+      LabelingJobAlgorithmsConfig.foreach(__v =>
+        __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
       )
       StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1624,8 +1624,8 @@ package sagemaker {
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
-      SourceAlgorithmSpecification.foreach(
-        __v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
+      SourceAlgorithmSpecification.foreach(__v =>
+        __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
       )
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelPackageInput]
@@ -1693,8 +1693,8 @@ package sagemaker {
       )
 
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(
-        __v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
+      AdditionalCodeRepositories.foreach(__v =>
+        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
       )
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
       DirectInternetAccess.foreach(__v => __obj.updateDynamic("DirectInternetAccess")(__v.asInstanceOf[js.Any]))
@@ -1744,8 +1744,8 @@ package sagemaker {
         NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined
     ): CreateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
-      NotebookInstanceLifecycleConfigArn.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigArn.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateNotebookInstanceLifecycleConfigOutput]
     }
@@ -1783,8 +1783,8 @@ package sagemaker {
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
 
-      SessionExpirationDurationInSeconds.foreach(
-        __v => __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any])
+      SessionExpirationDurationInSeconds.foreach(__v =>
+        __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreatePresignedNotebookInstanceUrlInput]
     }
@@ -1852,11 +1852,11 @@ package sagemaker {
       )
 
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(
-        __v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
+      EnableInterContainerTrafficEncryption.foreach(__v =>
+        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
       )
-      EnableManagedSpotTraining.foreach(
-        __v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
+      EnableManagedSpotTraining.foreach(__v =>
+        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
       )
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       HyperParameters.foreach(__v => __obj.updateDynamic("HyperParameters")(__v.asInstanceOf[js.Any]))
@@ -1975,8 +1975,8 @@ package sagemaker {
         "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any]
       )
 
-      NotificationConfiguration.foreach(
-        __v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
+      NotificationConfiguration.foreach(__v =>
+        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkteamRequest]
@@ -2643,8 +2643,8 @@ package sagemaker {
 
       BestTrainingJob.foreach(__v => __obj.updateDynamic("BestTrainingJob")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      HyperParameterTuningEndTime.foreach(
-        __v => __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
+      HyperParameterTuningEndTime.foreach(__v =>
+        __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
       )
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       OverallBestTrainingJob.foreach(__v => __obj.updateDynamic("OverallBestTrainingJob")(__v.asInstanceOf[js.Any]))
@@ -2733,8 +2733,8 @@ package sagemaker {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LabelAttributeName.foreach(__v => __obj.updateDynamic("LabelAttributeName")(__v.asInstanceOf[js.Any]))
       LabelCategoryConfigS3Uri.foreach(__v => __obj.updateDynamic("LabelCategoryConfigS3Uri")(__v.asInstanceOf[js.Any]))
-      LabelingJobAlgorithmsConfig.foreach(
-        __v => __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
+      LabelingJobAlgorithmsConfig.foreach(__v =>
+        __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
       )
       LabelingJobOutput.foreach(__v => __obj.updateDynamic("LabelingJobOutput")(__v.asInstanceOf[js.Any]))
       StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
@@ -2857,8 +2857,8 @@ package sagemaker {
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
-      SourceAlgorithmSpecification.foreach(
-        __v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
+      SourceAlgorithmSpecification.foreach(__v =>
+        __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
       )
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeModelPackageOutput]
@@ -2924,11 +2924,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigArn.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigArn.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
       )
-      NotebookInstanceLifecycleConfigName.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigName.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
       )
       OnCreate.foreach(__v => __obj.updateDynamic("OnCreate")(__v.asInstanceOf[js.Any]))
       OnStart.foreach(__v => __obj.updateDynamic("OnStart")(__v.asInstanceOf[js.Any]))
@@ -2986,8 +2986,8 @@ package sagemaker {
     ): DescribeNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(
-        __v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
+      AdditionalCodeRepositories.foreach(__v =>
+        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
       )
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
@@ -2998,8 +2998,8 @@ package sagemaker {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       NotebookInstanceArn.foreach(__v => __obj.updateDynamic("NotebookInstanceArn")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigName.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigName.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
       )
       NotebookInstanceName.foreach(__v => __obj.updateDynamic("NotebookInstanceName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceStatus.foreach(__v => __obj.updateDynamic("NotebookInstanceStatus")(__v.asInstanceOf[js.Any]))
@@ -3145,11 +3145,11 @@ package sagemaker {
 
       BillableTimeInSeconds.foreach(__v => __obj.updateDynamic("BillableTimeInSeconds")(__v.asInstanceOf[js.Any]))
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(
-        __v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
+      EnableInterContainerTrafficEncryption.foreach(__v =>
+        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
       )
-      EnableManagedSpotTraining.foreach(
-        __v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
+      EnableManagedSpotTraining.foreach(__v =>
+        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
       )
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -3160,8 +3160,8 @@ package sagemaker {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      SecondaryStatusTransitions.foreach(
-        __v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
+      SecondaryStatusTransitions.foreach(__v =>
+        __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
       )
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.updateDynamic("TrainingStartTime")(__v.asInstanceOf[js.Any]))
@@ -3690,8 +3690,8 @@ package sagemaker {
 
       MaxConcurrentTaskCount.foreach(__v => __obj.updateDynamic("MaxConcurrentTaskCount")(__v.asInstanceOf[js.Any]))
       PublicWorkforceTaskPrice.foreach(__v => __obj.updateDynamic("PublicWorkforceTaskPrice")(__v.asInstanceOf[js.Any]))
-      TaskAvailabilityLifetimeInSeconds.foreach(
-        __v => __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any])
+      TaskAvailabilityLifetimeInSeconds.foreach(__v =>
+        __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any])
       )
       TaskKeywords.foreach(__v => __obj.updateDynamic("TaskKeywords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanTaskConfig]
@@ -3820,11 +3820,11 @@ package sagemaker {
       )
 
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(
-        __v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
+      EnableInterContainerTrafficEncryption.foreach(__v =>
+        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
       )
-      EnableManagedSpotTraining.foreach(
-        __v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
+      EnableManagedSpotTraining.foreach(__v =>
+        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
       )
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
@@ -3877,8 +3877,8 @@ package sagemaker {
       )
 
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      FinalHyperParameterTuningJobObjectiveMetric.foreach(
-        __v => __obj.updateDynamic("FinalHyperParameterTuningJobObjectiveMetric")(__v.asInstanceOf[js.Any])
+      FinalHyperParameterTuningJobObjectiveMetric.foreach(__v =>
+        __obj.updateDynamic("FinalHyperParameterTuningJobObjectiveMetric")(__v.asInstanceOf[js.Any])
       )
       ObjectiveStatus.foreach(__v => __obj.updateDynamic("ObjectiveStatus")(__v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
@@ -3914,12 +3914,12 @@ package sagemaker {
         "Strategy"       -> Strategy.asInstanceOf[js.Any]
       )
 
-      HyperParameterTuningJobObjective.foreach(
-        __v => __obj.updateDynamic("HyperParameterTuningJobObjective")(__v.asInstanceOf[js.Any])
+      HyperParameterTuningJobObjective.foreach(__v =>
+        __obj.updateDynamic("HyperParameterTuningJobObjective")(__v.asInstanceOf[js.Any])
       )
       ParameterRanges.foreach(__v => __obj.updateDynamic("ParameterRanges")(__v.asInstanceOf[js.Any]))
-      TrainingJobEarlyStoppingType.foreach(
-        __v => __obj.updateDynamic("TrainingJobEarlyStoppingType")(__v.asInstanceOf[js.Any])
+      TrainingJobEarlyStoppingType.foreach(__v =>
+        __obj.updateDynamic("TrainingJobEarlyStoppingType")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[HyperParameterTuningJobConfig]
     }
@@ -4025,8 +4025,8 @@ package sagemaker {
         "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any]
       )
 
-      HyperParameterTuningEndTime.foreach(
-        __v => __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
+      HyperParameterTuningEndTime.foreach(__v =>
+        __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
       )
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       ResourceLimits.foreach(__v => __obj.updateDynamic("ResourceLimits")(__v.asInstanceOf[js.Any]))
@@ -4350,11 +4350,11 @@ package sagemaker {
         "LabelingJobAlgorithmSpecificationArn" -> LabelingJobAlgorithmSpecificationArn.asInstanceOf[js.Any]
       )
 
-      InitialActiveLearningModelArn.foreach(
-        __v => __obj.updateDynamic("InitialActiveLearningModelArn")(__v.asInstanceOf[js.Any])
+      InitialActiveLearningModelArn.foreach(__v =>
+        __obj.updateDynamic("InitialActiveLearningModelArn")(__v.asInstanceOf[js.Any])
       )
-      LabelingJobResourceConfig.foreach(
-        __v => __obj.updateDynamic("LabelingJobResourceConfig")(__v.asInstanceOf[js.Any])
+      LabelingJobResourceConfig.foreach(__v =>
+        __obj.updateDynamic("LabelingJobResourceConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LabelingJobAlgorithmsConfig]
     }
@@ -4431,8 +4431,8 @@ package sagemaker {
 
       LabelCounters.foreach(__v => __obj.updateDynamic("LabelCounters")(__v.asInstanceOf[js.Any]))
       LabelingJobName.foreach(__v => __obj.updateDynamic("LabelingJobName")(__v.asInstanceOf[js.Any]))
-      NumberOfHumanWorkersPerDataObject.foreach(
-        __v => __obj.updateDynamic("NumberOfHumanWorkersPerDataObject")(__v.asInstanceOf[js.Any])
+      NumberOfHumanWorkersPerDataObject.foreach(__v =>
+        __obj.updateDynamic("NumberOfHumanWorkersPerDataObject")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LabelingJobForWorkteamSummary]
     }
@@ -4481,8 +4481,8 @@ package sagemaker {
         "OutputDatasetS3Uri" -> OutputDatasetS3Uri.asInstanceOf[js.Any]
       )
 
-      FinalActiveLearningModelArn.foreach(
-        __v => __obj.updateDynamic("FinalActiveLearningModelArn")(__v.asInstanceOf[js.Any])
+      FinalActiveLearningModelArn.foreach(__v =>
+        __obj.updateDynamic("FinalActiveLearningModelArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LabelingJobOutput]
     }
@@ -4578,11 +4578,11 @@ package sagemaker {
         MaxPercentageOfInputDatasetLabeled: js.UndefOr[MaxPercentageOfInputDatasetLabeled] = js.undefined
     ): LabelingJobStoppingConditions = {
       val __obj = js.Dynamic.literal()
-      MaxHumanLabeledObjectCount.foreach(
-        __v => __obj.updateDynamic("MaxHumanLabeledObjectCount")(__v.asInstanceOf[js.Any])
+      MaxHumanLabeledObjectCount.foreach(__v =>
+        __obj.updateDynamic("MaxHumanLabeledObjectCount")(__v.asInstanceOf[js.Any])
       )
-      MaxPercentageOfInputDatasetLabeled.foreach(
-        __v => __obj.updateDynamic("MaxPercentageOfInputDatasetLabeled")(__v.asInstanceOf[js.Any])
+      MaxPercentageOfInputDatasetLabeled.foreach(__v =>
+        __obj.updateDynamic("MaxPercentageOfInputDatasetLabeled")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LabelingJobStoppingConditions]
     }
@@ -4634,8 +4634,8 @@ package sagemaker {
         "WorkteamArn"           -> WorkteamArn.asInstanceOf[js.Any]
       )
 
-      AnnotationConsolidationLambdaArn.foreach(
-        __v => __obj.updateDynamic("AnnotationConsolidationLambdaArn")(__v.asInstanceOf[js.Any])
+      AnnotationConsolidationLambdaArn.foreach(__v =>
+        __obj.updateDynamic("AnnotationConsolidationLambdaArn")(__v.asInstanceOf[js.Any])
       )
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       InputConfig.foreach(__v => __obj.updateDynamic("InputConfig")(__v.asInstanceOf[js.Any]))
@@ -5307,8 +5307,8 @@ package sagemaker {
     ): ListNotebookInstanceLifecycleConfigsOutput = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigs.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigs")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigs.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigs")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListNotebookInstanceLifecycleConfigsOutput]
     }
@@ -5349,21 +5349,21 @@ package sagemaker {
         StatusEquals: js.UndefOr[NotebookInstanceStatus] = js.undefined
     ): ListNotebookInstancesInput = {
       val __obj = js.Dynamic.literal()
-      AdditionalCodeRepositoryEquals.foreach(
-        __v => __obj.updateDynamic("AdditionalCodeRepositoryEquals")(__v.asInstanceOf[js.Any])
+      AdditionalCodeRepositoryEquals.foreach(__v =>
+        __obj.updateDynamic("AdditionalCodeRepositoryEquals")(__v.asInstanceOf[js.Any])
       )
       CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
       CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
-      DefaultCodeRepositoryContains.foreach(
-        __v => __obj.updateDynamic("DefaultCodeRepositoryContains")(__v.asInstanceOf[js.Any])
+      DefaultCodeRepositoryContains.foreach(__v =>
+        __obj.updateDynamic("DefaultCodeRepositoryContains")(__v.asInstanceOf[js.Any])
       )
       LastModifiedTimeAfter.foreach(__v => __obj.updateDynamic("LastModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
       LastModifiedTimeBefore.foreach(__v => __obj.updateDynamic("LastModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigNameContains.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigNameContains")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigNameContains.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigNameContains")(__v.asInstanceOf[js.Any])
       )
       SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
@@ -6194,15 +6194,15 @@ package sagemaker {
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
 
-      AdditionalCodeRepositories.foreach(
-        __v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
+      AdditionalCodeRepositories.foreach(__v =>
+        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
       )
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigName.foreach(
-        __v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
+      NotebookInstanceLifecycleConfigName.foreach(__v =>
+        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
       )
       NotebookInstanceStatus.foreach(__v => __obj.updateDynamic("NotebookInstanceStatus")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
@@ -6349,14 +6349,14 @@ package sagemaker {
         IntegerParameterRangeSpecification: js.UndefOr[IntegerParameterRangeSpecification] = js.undefined
     ): ParameterRange = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRangeSpecification.foreach(
-        __v => __obj.updateDynamic("CategoricalParameterRangeSpecification")(__v.asInstanceOf[js.Any])
+      CategoricalParameterRangeSpecification.foreach(__v =>
+        __obj.updateDynamic("CategoricalParameterRangeSpecification")(__v.asInstanceOf[js.Any])
       )
-      ContinuousParameterRangeSpecification.foreach(
-        __v => __obj.updateDynamic("ContinuousParameterRangeSpecification")(__v.asInstanceOf[js.Any])
+      ContinuousParameterRangeSpecification.foreach(__v =>
+        __obj.updateDynamic("ContinuousParameterRangeSpecification")(__v.asInstanceOf[js.Any])
       )
-      IntegerParameterRangeSpecification.foreach(
-        __v => __obj.updateDynamic("IntegerParameterRangeSpecification")(__v.asInstanceOf[js.Any])
+      IntegerParameterRangeSpecification.foreach(__v =>
+        __obj.updateDynamic("IntegerParameterRangeSpecification")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ParameterRange]
     }
@@ -6382,11 +6382,11 @@ package sagemaker {
         IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined
     ): ParameterRanges = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRanges.foreach(
-        __v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
+      CategoricalParameterRanges.foreach(__v =>
+        __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      ContinuousParameterRanges.foreach(
-        __v => __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
+      ContinuousParameterRanges.foreach(__v =>
+        __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
       )
       IntegerParameterRanges.foreach(__v => __obj.updateDynamic("IntegerParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRanges]
@@ -6416,8 +6416,8 @@ package sagemaker {
         HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
     ): ParentHyperParameterTuningJob = {
       val __obj = js.Dynamic.literal()
-      HyperParameterTuningJobName.foreach(
-        __v => __obj.updateDynamic("HyperParameterTuningJobName")(__v.asInstanceOf[js.Any])
+      HyperParameterTuningJobName.foreach(__v =>
+        __obj.updateDynamic("HyperParameterTuningJobName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ParentHyperParameterTuningJob]
     }
@@ -7619,8 +7619,8 @@ package sagemaker {
       val __obj = js.Dynamic.literal()
       AlgorithmSpecification.foreach(__v => __obj.updateDynamic("AlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(
-        __v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
+      EnableInterContainerTrafficEncryption.foreach(__v =>
+        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
       )
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -7634,8 +7634,8 @@ package sagemaker {
       ResourceConfig.foreach(__v => __obj.updateDynamic("ResourceConfig")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       SecondaryStatus.foreach(__v => __obj.updateDynamic("SecondaryStatus")(__v.asInstanceOf[js.Any]))
-      SecondaryStatusTransitions.foreach(
-        __v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
+      SecondaryStatusTransitions.foreach(__v =>
+        __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
       )
       StoppingCondition.foreach(__v => __obj.updateDynamic("StoppingCondition")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -7814,11 +7814,11 @@ package sagemaker {
 
       MetricDefinitions.foreach(__v => __obj.updateDynamic("MetricDefinitions")(__v.asInstanceOf[js.Any]))
       SupportedHyperParameters.foreach(__v => __obj.updateDynamic("SupportedHyperParameters")(__v.asInstanceOf[js.Any]))
-      SupportedTuningJobObjectiveMetrics.foreach(
-        __v => __obj.updateDynamic("SupportedTuningJobObjectiveMetrics")(__v.asInstanceOf[js.Any])
+      SupportedTuningJobObjectiveMetrics.foreach(__v =>
+        __obj.updateDynamic("SupportedTuningJobObjectiveMetrics")(__v.asInstanceOf[js.Any])
       )
-      SupportsDistributedTraining.foreach(
-        __v => __obj.updateDynamic("SupportsDistributedTraining")(__v.asInstanceOf[js.Any])
+      SupportsDistributedTraining.foreach(__v =>
+        __obj.updateDynamic("SupportsDistributedTraining")(__v.asInstanceOf[js.Any])
       )
       TrainingImageDigest.foreach(__v => __obj.updateDynamic("TrainingImageDigest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingSpecification]
@@ -8328,21 +8328,21 @@ package sagemaker {
       )
 
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(
-        __v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
+      AdditionalCodeRepositories.foreach(__v =>
+        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
       )
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
-      DisassociateAcceleratorTypes.foreach(
-        __v => __obj.updateDynamic("DisassociateAcceleratorTypes")(__v.asInstanceOf[js.Any])
+      DisassociateAcceleratorTypes.foreach(__v =>
+        __obj.updateDynamic("DisassociateAcceleratorTypes")(__v.asInstanceOf[js.Any])
       )
-      DisassociateAdditionalCodeRepositories.foreach(
-        __v => __obj.updateDynamic("DisassociateAdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
+      DisassociateAdditionalCodeRepositories.foreach(__v =>
+        __obj.updateDynamic("DisassociateAdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
       )
-      DisassociateDefaultCodeRepository.foreach(
-        __v => __obj.updateDynamic("DisassociateDefaultCodeRepository")(__v.asInstanceOf[js.Any])
+      DisassociateDefaultCodeRepository.foreach(__v =>
+        __obj.updateDynamic("DisassociateDefaultCodeRepository")(__v.asInstanceOf[js.Any])
       )
-      DisassociateLifecycleConfig.foreach(
-        __v => __obj.updateDynamic("DisassociateLifecycleConfig")(__v.asInstanceOf[js.Any])
+      DisassociateLifecycleConfig.foreach(__v =>
+        __obj.updateDynamic("DisassociateLifecycleConfig")(__v.asInstanceOf[js.Any])
       )
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LifecycleConfigName.foreach(__v => __obj.updateDynamic("LifecycleConfigName")(__v.asInstanceOf[js.Any]))
@@ -8425,8 +8425,8 @@ package sagemaker {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MemberDefinitions.foreach(__v => __obj.updateDynamic("MemberDefinitions")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(
-        __v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
+      NotificationConfiguration.foreach(__v =>
+        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateWorkteamRequest]
     }
@@ -8512,8 +8512,8 @@ package sagemaker {
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(
-        __v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
+      NotificationConfiguration.foreach(__v =>
+        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
       )
       ProductListingIds.foreach(__v => __obj.updateDynamic("ProductListingIds")(__v.asInstanceOf[js.Any]))
       SubDomain.foreach(__v => __obj.updateDynamic("SubDomain")(__v.asInstanceOf[js.Any]))

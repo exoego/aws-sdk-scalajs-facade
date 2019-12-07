@@ -547,16 +547,16 @@ package mturk {
       )
 
       AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
-      AutoApprovalDelayInSeconds.foreach(
-        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      AutoApprovalDelayInSeconds.foreach(__v =>
+        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
       )
       HITLayoutId.foreach(__v => __obj.updateDynamic("HITLayoutId")(__v.asInstanceOf[js.Any]))
       HITLayoutParameters.foreach(__v => __obj.updateDynamic("HITLayoutParameters")(__v.asInstanceOf[js.Any]))
       HITReviewPolicy.foreach(__v => __obj.updateDynamic("HITReviewPolicy")(__v.asInstanceOf[js.Any]))
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
       MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(
-        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      QualificationRequirements.foreach(__v =>
+        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
       )
       Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
       RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
@@ -610,12 +610,12 @@ package mturk {
         "Title"                       -> Title.asInstanceOf[js.Any]
       )
 
-      AutoApprovalDelayInSeconds.foreach(
-        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      AutoApprovalDelayInSeconds.foreach(__v =>
+        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
       )
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(
-        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      QualificationRequirements.foreach(__v =>
+        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateHITTypeRequest]
     }
@@ -1223,11 +1223,11 @@ package mturk {
         Title: js.UndefOr[String] = js.undefined
     ): HIT = {
       val __obj = js.Dynamic.literal()
-      AssignmentDurationInSeconds.foreach(
-        __v => __obj.updateDynamic("AssignmentDurationInSeconds")(__v.asInstanceOf[js.Any])
+      AssignmentDurationInSeconds.foreach(__v =>
+        __obj.updateDynamic("AssignmentDurationInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AutoApprovalDelayInSeconds.foreach(
-        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      AutoApprovalDelayInSeconds.foreach(__v =>
+        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
       )
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1240,17 +1240,17 @@ package mturk {
       HITTypeId.foreach(__v => __obj.updateDynamic("HITTypeId")(__v.asInstanceOf[js.Any]))
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
       MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
-      NumberOfAssignmentsAvailable.foreach(
-        __v => __obj.updateDynamic("NumberOfAssignmentsAvailable")(__v.asInstanceOf[js.Any])
+      NumberOfAssignmentsAvailable.foreach(__v =>
+        __obj.updateDynamic("NumberOfAssignmentsAvailable")(__v.asInstanceOf[js.Any])
       )
-      NumberOfAssignmentsCompleted.foreach(
-        __v => __obj.updateDynamic("NumberOfAssignmentsCompleted")(__v.asInstanceOf[js.Any])
+      NumberOfAssignmentsCompleted.foreach(__v =>
+        __obj.updateDynamic("NumberOfAssignmentsCompleted")(__v.asInstanceOf[js.Any])
       )
-      NumberOfAssignmentsPending.foreach(
-        __v => __obj.updateDynamic("NumberOfAssignmentsPending")(__v.asInstanceOf[js.Any])
+      NumberOfAssignmentsPending.foreach(__v =>
+        __obj.updateDynamic("NumberOfAssignmentsPending")(__v.asInstanceOf[js.Any])
       )
-      QualificationRequirements.foreach(
-        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      QualificationRequirements.foreach(__v =>
+        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
       )
       Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
       RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
@@ -1879,8 +1879,8 @@ package mturk {
     ): NotifyWorkersFailureStatus = {
       val __obj = js.Dynamic.literal()
       NotifyWorkersFailureCode.foreach(__v => __obj.updateDynamic("NotifyWorkersFailureCode")(__v.asInstanceOf[js.Any]))
-      NotifyWorkersFailureMessage.foreach(
-        __v => __obj.updateDynamic("NotifyWorkersFailureMessage")(__v.asInstanceOf[js.Any])
+      NotifyWorkersFailureMessage.foreach(__v =>
+        __obj.updateDynamic("NotifyWorkersFailureMessage")(__v.asInstanceOf[js.Any])
       )
       WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyWorkersFailureStatus]
@@ -1922,8 +1922,8 @@ package mturk {
         NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
     ): NotifyWorkersResponse = {
       val __obj = js.Dynamic.literal()
-      NotifyWorkersFailureStatuses.foreach(
-        __v => __obj.updateDynamic("NotifyWorkersFailureStatuses")(__v.asInstanceOf[js.Any])
+      NotifyWorkersFailureStatuses.foreach(__v =>
+        __obj.updateDynamic("NotifyWorkersFailureStatuses")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[NotifyWorkersResponse]
     }

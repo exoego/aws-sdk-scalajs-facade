@@ -268,8 +268,8 @@ package iotthingsgraph {
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      compatibleNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateFlowTemplateRequest]
     }
@@ -359,8 +359,8 @@ package iotthingsgraph {
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      compatibleNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateSystemTemplateRequest]
     }
@@ -953,8 +953,8 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal()
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      validatedNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FlowTemplateDescription]
     }
@@ -1791,11 +1791,11 @@ package iotthingsgraph {
       metricsConfiguration.foreach(__v => __obj.updateDynamic("metricsConfiguration")(__v.asInstanceOf[js.Any]))
       s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedDependencyRevisions.foreach(
-        __v => __obj.updateDynamic("validatedDependencyRevisions")(__v.asInstanceOf[js.Any])
+      validatedDependencyRevisions.foreach(__v =>
+        __obj.updateDynamic("validatedDependencyRevisions")(__v.asInstanceOf[js.Any])
       )
-      validatedNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      validatedNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SystemInstanceDescription]
     }
@@ -1894,8 +1894,8 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal()
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      validatedNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SystemTemplateDescription]
     }
@@ -2124,8 +2124,8 @@ package iotthingsgraph {
         "id"         -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      compatibleNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFlowTemplateRequest]
     }
@@ -2166,8 +2166,8 @@ package iotthingsgraph {
         "id"         -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(
-        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      compatibleNamespaceVersion.foreach(__v =>
+        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateSystemTemplateRequest]
     }
@@ -2204,8 +2204,8 @@ package iotthingsgraph {
         syncWithPublicNamespace: js.UndefOr[SyncWithPublicNamespace] = js.undefined
     ): UploadEntityDefinitionsRequest = {
       val __obj = js.Dynamic.literal()
-      deprecateExistingEntities.foreach(
-        __v => __obj.updateDynamic("deprecateExistingEntities")(__v.asInstanceOf[js.Any])
+      deprecateExistingEntities.foreach(__v =>
+        __obj.updateDynamic("deprecateExistingEntities")(__v.asInstanceOf[js.Any])
       )
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       syncWithPublicNamespace.foreach(__v => __obj.updateDynamic("syncWithPublicNamespace")(__v.asInstanceOf[js.Any]))

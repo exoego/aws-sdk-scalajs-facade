@@ -2301,8 +2301,8 @@ package ec2 {
         TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined
     ): AcceptTransitGatewayVpcAttachmentResult = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayVpcAttachment.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AcceptTransitGatewayVpcAttachmentResult]
     }
@@ -2825,8 +2825,8 @@ package ec2 {
 
       AllowReassignment.foreach(__v => __obj.updateDynamic("AllowReassignment")(__v.asInstanceOf[js.Any]))
       PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssignPrivateIpAddressesRequest]
     }
@@ -2845,8 +2845,8 @@ package ec2 {
         NetworkInterfaceId: js.UndefOr[String] = js.undefined
     ): AssignPrivateIpAddressesResult = {
       val __obj = js.Dynamic.literal()
-      AssignedPrivateIpAddresses.foreach(
-        __v => __obj.updateDynamic("AssignedPrivateIpAddresses")(__v.asInstanceOf[js.Any])
+      AssignedPrivateIpAddresses.foreach(__v =>
+        __obj.updateDynamic("AssignedPrivateIpAddresses")(__v.asInstanceOf[js.Any])
       )
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssignPrivateIpAddressesResult]
@@ -3024,8 +3024,8 @@ package ec2 {
         IamInstanceProfileAssociation: js.UndefOr[IamInstanceProfileAssociation] = js.undefined
     ): AssociateIamInstanceProfileResult = {
       val __obj = js.Dynamic.literal()
-      IamInstanceProfileAssociation.foreach(
-        __v => __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
+      IamInstanceProfileAssociation.foreach(__v =>
+        __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssociateIamInstanceProfileResult]
     }
@@ -3169,8 +3169,8 @@ package ec2 {
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
-      AmazonProvidedIpv6CidrBlock.foreach(
-        __v => __obj.updateDynamic("AmazonProvidedIpv6CidrBlock")(__v.asInstanceOf[js.Any])
+      AmazonProvidedIpv6CidrBlock.foreach(__v =>
+        __obj.updateDynamic("AmazonProvidedIpv6CidrBlock")(__v.asInstanceOf[js.Any])
       )
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateVpcCidrBlockRequest]
@@ -3621,8 +3621,8 @@ package ec2 {
       IpPermissions.foreach(__v => __obj.updateDynamic("IpPermissions")(__v.asInstanceOf[js.Any]))
       IpProtocol.foreach(__v => __obj.updateDynamic("IpProtocol")(__v.asInstanceOf[js.Any]))
       SourceSecurityGroupName.foreach(__v => __obj.updateDynamic("SourceSecurityGroupName")(__v.asInstanceOf[js.Any]))
-      SourceSecurityGroupOwnerId.foreach(
-        __v => __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
+      SourceSecurityGroupOwnerId.foreach(__v =>
+        __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
       )
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeSecurityGroupEgressRequest]
@@ -3666,8 +3666,8 @@ package ec2 {
       IpPermissions.foreach(__v => __obj.updateDynamic("IpPermissions")(__v.asInstanceOf[js.Any]))
       IpProtocol.foreach(__v => __obj.updateDynamic("IpProtocol")(__v.asInstanceOf[js.Any]))
       SourceSecurityGroupName.foreach(__v => __obj.updateDynamic("SourceSecurityGroupName")(__v.asInstanceOf[js.Any]))
-      SourceSecurityGroupOwnerId.foreach(
-        __v => __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
+      SourceSecurityGroupOwnerId.foreach(__v =>
+        __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
       )
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeSecurityGroupIngressRequest]
@@ -3763,8 +3763,8 @@ package ec2 {
         AvailableVCpus: js.UndefOr[Int] = js.undefined
     ): AvailableCapacity = {
       val __obj = js.Dynamic.literal()
-      AvailableInstanceCapacity.foreach(
-        __v => __obj.updateDynamic("AvailableInstanceCapacity")(__v.asInstanceOf[js.Any])
+      AvailableInstanceCapacity.foreach(__v =>
+        __obj.updateDynamic("AvailableInstanceCapacity")(__v.asInstanceOf[js.Any])
       )
       AvailableVCpus.foreach(__v => __obj.updateDynamic("AvailableVCpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailableCapacity]
@@ -4212,8 +4212,8 @@ package ec2 {
         ReservedInstancesListings: js.UndefOr[ReservedInstancesListingList] = js.undefined
     ): CancelReservedInstancesListingResult = {
       val __obj = js.Dynamic.literal()
-      ReservedInstancesListings.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
+      ReservedInstancesListings.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CancelReservedInstancesListingResult]
     }
@@ -4307,8 +4307,8 @@ package ec2 {
     ): CancelSpotFleetRequestsResponse = {
       val __obj = js.Dynamic.literal()
       SuccessfulFleetRequests.foreach(__v => __obj.updateDynamic("SuccessfulFleetRequests")(__v.asInstanceOf[js.Any]))
-      UnsuccessfulFleetRequests.foreach(
-        __v => __obj.updateDynamic("UnsuccessfulFleetRequests")(__v.asInstanceOf[js.Any])
+      UnsuccessfulFleetRequests.foreach(__v =>
+        __obj.updateDynamic("UnsuccessfulFleetRequests")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CancelSpotFleetRequestsResponse]
     }
@@ -4332,11 +4332,11 @@ package ec2 {
         SpotFleetRequestId: js.UndefOr[String] = js.undefined
     ): CancelSpotFleetRequestsSuccessItem = {
       val __obj = js.Dynamic.literal()
-      CurrentSpotFleetRequestState.foreach(
-        __v => __obj.updateDynamic("CurrentSpotFleetRequestState")(__v.asInstanceOf[js.Any])
+      CurrentSpotFleetRequestState.foreach(__v =>
+        __obj.updateDynamic("CurrentSpotFleetRequestState")(__v.asInstanceOf[js.Any])
       )
-      PreviousSpotFleetRequestState.foreach(
-        __v => __obj.updateDynamic("PreviousSpotFleetRequestState")(__v.asInstanceOf[js.Any])
+      PreviousSpotFleetRequestState.foreach(__v =>
+        __obj.updateDynamic("PreviousSpotFleetRequestState")(__v.asInstanceOf[js.Any])
       )
       SpotFleetRequestId.foreach(__v => __obj.updateDynamic("SpotFleetRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelSpotFleetRequestsSuccessItem]
@@ -4391,8 +4391,8 @@ package ec2 {
         CancelledSpotInstanceRequests: js.UndefOr[CancelledSpotInstanceRequestList] = js.undefined
     ): CancelSpotInstanceRequestsResult = {
       val __obj = js.Dynamic.literal()
-      CancelledSpotInstanceRequests.foreach(
-        __v => __obj.updateDynamic("CancelledSpotInstanceRequests")(__v.asInstanceOf[js.Any])
+      CancelledSpotInstanceRequests.foreach(__v =>
+        __obj.updateDynamic("CancelledSpotInstanceRequests")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CancelSpotInstanceRequestsResult]
     }
@@ -4544,11 +4544,11 @@ package ec2 {
         CapacityReservationTarget: js.UndefOr[CapacityReservationTarget] = js.undefined
     ): CapacityReservationSpecification = {
       val __obj = js.Dynamic.literal()
-      CapacityReservationPreference.foreach(
-        __v => __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
+      CapacityReservationPreference.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
       )
-      CapacityReservationTarget.foreach(
-        __v => __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
+      CapacityReservationTarget.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CapacityReservationSpecification]
     }
@@ -4570,11 +4570,11 @@ package ec2 {
         CapacityReservationTarget: js.UndefOr[CapacityReservationTargetResponse] = js.undefined
     ): CapacityReservationSpecificationResponse = {
       val __obj = js.Dynamic.literal()
-      CapacityReservationPreference.foreach(
-        __v => __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
+      CapacityReservationPreference.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
       )
-      CapacityReservationTarget.foreach(
-        __v => __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
+      CapacityReservationTarget.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CapacityReservationSpecificationResponse]
     }
@@ -4649,8 +4649,8 @@ package ec2 {
         ClientRootCertificateChain: js.UndefOr[String] = js.undefined
     ): CertificateAuthentication = {
       val __obj = js.Dynamic.literal()
-      ClientRootCertificateChain.foreach(
-        __v => __obj.updateDynamic("ClientRootCertificateChain")(__v.asInstanceOf[js.Any])
+      ClientRootCertificateChain.foreach(__v =>
+        __obj.updateDynamic("ClientRootCertificateChain")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CertificateAuthentication]
     }
@@ -4670,8 +4670,8 @@ package ec2 {
         ClientRootCertificateChainArn: js.UndefOr[String] = js.undefined
     ): CertificateAuthenticationRequest = {
       val __obj = js.Dynamic.literal()
-      ClientRootCertificateChainArn.foreach(
-        __v => __obj.updateDynamic("ClientRootCertificateChainArn")(__v.asInstanceOf[js.Any])
+      ClientRootCertificateChainArn.foreach(__v =>
+        __obj.updateDynamic("ClientRootCertificateChainArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CertificateAuthenticationRequest]
     }
@@ -4995,8 +4995,8 @@ package ec2 {
       ClientVpnEndpointId.foreach(__v => __obj.updateDynamic("ClientVpnEndpointId")(__v.asInstanceOf[js.Any]))
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
       ConnectionEndTime.foreach(__v => __obj.updateDynamic("ConnectionEndTime")(__v.asInstanceOf[js.Any]))
-      ConnectionEstablishedTime.foreach(
-        __v => __obj.updateDynamic("ConnectionEstablishedTime")(__v.asInstanceOf[js.Any])
+      ConnectionEstablishedTime.foreach(__v =>
+        __obj.updateDynamic("ConnectionEstablishedTime")(__v.asInstanceOf[js.Any])
       )
       ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
       EgressBytes.foreach(__v => __obj.updateDynamic("EgressBytes")(__v.asInstanceOf[js.Any]))
@@ -5324,15 +5324,15 @@ package ec2 {
     ): ConnectionNotification = {
       val __obj = js.Dynamic.literal()
       ConnectionEvents.foreach(__v => __obj.updateDynamic("ConnectionEvents")(__v.asInstanceOf[js.Any]))
-      ConnectionNotificationArn.foreach(
-        __v => __obj.updateDynamic("ConnectionNotificationArn")(__v.asInstanceOf[js.Any])
+      ConnectionNotificationArn.foreach(__v =>
+        __obj.updateDynamic("ConnectionNotificationArn")(__v.asInstanceOf[js.Any])
       )
       ConnectionNotificationId.foreach(__v => __obj.updateDynamic("ConnectionNotificationId")(__v.asInstanceOf[js.Any]))
-      ConnectionNotificationState.foreach(
-        __v => __obj.updateDynamic("ConnectionNotificationState")(__v.asInstanceOf[js.Any])
+      ConnectionNotificationState.foreach(__v =>
+        __obj.updateDynamic("ConnectionNotificationState")(__v.asInstanceOf[js.Any])
       )
-      ConnectionNotificationType.foreach(
-        __v => __obj.updateDynamic("ConnectionNotificationType")(__v.asInstanceOf[js.Any])
+      ConnectionNotificationType.foreach(__v =>
+        __obj.updateDynamic("ConnectionNotificationType")(__v.asInstanceOf[js.Any])
       )
       ServiceId.foreach(__v => __obj.updateDynamic("ServiceId")(__v.asInstanceOf[js.Any]))
       VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
@@ -6014,8 +6014,8 @@ package ec2 {
     ): CreateEgressOnlyInternetGatewayResult = {
       val __obj = js.Dynamic.literal()
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGateway.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGateway")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGateway.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGateway")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateEgressOnlyInternetGatewayResult]
     }
@@ -6043,8 +6043,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      LaunchTemplateAndOverrides.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
+      LaunchTemplateAndOverrides.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
       )
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetError]
@@ -6075,8 +6075,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LaunchTemplateAndOverrides.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
+      LaunchTemplateAndOverrides.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
       )
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
@@ -6125,17 +6125,17 @@ package ec2 {
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      ExcessCapacityTerminationPolicy.foreach(
-        __v => __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
+      ExcessCapacityTerminationPolicy.foreach(__v =>
+        __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
       )
       OnDemandOptions.foreach(__v => __obj.updateDynamic("OnDemandOptions")(__v.asInstanceOf[js.Any]))
-      ReplaceUnhealthyInstances.foreach(
-        __v => __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
+      ReplaceUnhealthyInstances.foreach(__v =>
+        __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
       )
       SpotOptions.foreach(__v => __obj.updateDynamic("SpotOptions")(__v.asInstanceOf[js.Any]))
       TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
-      TerminateInstancesWithExpiration.foreach(
-        __v => __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
+      TerminateInstancesWithExpiration.foreach(__v =>
+        __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
       )
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
@@ -6754,8 +6754,8 @@ package ec2 {
       Ipv6Addresses.foreach(__v => __obj.updateDynamic("Ipv6Addresses")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateNetworkInterfaceRequest]
     }
@@ -6849,8 +6849,8 @@ package ec2 {
         ReservedInstancesListings: js.UndefOr[ReservedInstancesListingList] = js.undefined
     ): CreateReservedInstancesListingResult = {
       val __obj = js.Dynamic.literal()
-      ReservedInstancesListings.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
+      ReservedInstancesListings.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateReservedInstancesListingResult]
     }
@@ -6893,8 +6893,8 @@ package ec2 {
       DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
       DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGatewayId.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGatewayId.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
       )
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -7491,8 +7491,8 @@ package ec2 {
 
       Blackhole.foreach(__v => __obj.updateDynamic("Blackhole")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateTransitGatewayRouteRequest]
     }
@@ -7620,8 +7620,8 @@ package ec2 {
         TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined
     ): CreateTransitGatewayVpcAttachmentResult = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayVpcAttachment.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateTransitGatewayVpcAttachmentResult]
     }
@@ -7948,8 +7948,8 @@ package ec2 {
         "CidrBlock" -> CidrBlock.asInstanceOf[js.Any]
       )
 
-      AmazonProvidedIpv6CidrBlock.foreach(
-        __v => __obj.updateDynamic("AmazonProvidedIpv6CidrBlock")(__v.asInstanceOf[js.Any])
+      AmazonProvidedIpv6CidrBlock.foreach(__v =>
+        __obj.updateDynamic("AmazonProvidedIpv6CidrBlock")(__v.asInstanceOf[js.Any])
       )
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       InstanceTenancy.foreach(__v => __obj.updateDynamic("InstanceTenancy")(__v.asInstanceOf[js.Any]))
@@ -8491,8 +8491,8 @@ package ec2 {
     ): DeleteFleetsResult = {
       val __obj = js.Dynamic.literal()
       SuccessfulFleetDeletions.foreach(__v => __obj.updateDynamic("SuccessfulFleetDeletions")(__v.asInstanceOf[js.Any]))
-      UnsuccessfulFleetDeletions.foreach(
-        __v => __obj.updateDynamic("UnsuccessfulFleetDeletions")(__v.asInstanceOf[js.Any])
+      UnsuccessfulFleetDeletions.foreach(__v =>
+        __obj.updateDynamic("UnsuccessfulFleetDeletions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteFleetsResult]
     }
@@ -8747,11 +8747,11 @@ package ec2 {
           js.undefined
     ): DeleteLaunchTemplateVersionsResult = {
       val __obj = js.Dynamic.literal()
-      SuccessfullyDeletedLaunchTemplateVersions.foreach(
-        __v => __obj.updateDynamic("SuccessfullyDeletedLaunchTemplateVersions")(__v.asInstanceOf[js.Any])
+      SuccessfullyDeletedLaunchTemplateVersions.foreach(__v =>
+        __obj.updateDynamic("SuccessfullyDeletedLaunchTemplateVersions")(__v.asInstanceOf[js.Any])
       )
-      UnsuccessfullyDeletedLaunchTemplateVersions.foreach(
-        __v => __obj.updateDynamic("UnsuccessfullyDeletedLaunchTemplateVersions")(__v.asInstanceOf[js.Any])
+      UnsuccessfullyDeletedLaunchTemplateVersions.foreach(__v =>
+        __obj.updateDynamic("UnsuccessfullyDeletedLaunchTemplateVersions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteLaunchTemplateVersionsResult]
     }
@@ -8996,11 +8996,11 @@ package ec2 {
         SuccessfulQueuedPurchaseDeletions: js.UndefOr[SuccessfulQueuedPurchaseDeletionSet] = js.undefined
     ): DeleteQueuedReservedInstancesResult = {
       val __obj = js.Dynamic.literal()
-      FailedQueuedPurchaseDeletions.foreach(
-        __v => __obj.updateDynamic("FailedQueuedPurchaseDeletions")(__v.asInstanceOf[js.Any])
+      FailedQueuedPurchaseDeletions.foreach(__v =>
+        __obj.updateDynamic("FailedQueuedPurchaseDeletions")(__v.asInstanceOf[js.Any])
       )
-      SuccessfulQueuedPurchaseDeletions.foreach(
-        __v => __obj.updateDynamic("SuccessfulQueuedPurchaseDeletions")(__v.asInstanceOf[js.Any])
+      SuccessfulQueuedPurchaseDeletions.foreach(__v =>
+        __obj.updateDynamic("SuccessfulQueuedPurchaseDeletions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteQueuedReservedInstancesResult]
     }
@@ -9233,8 +9233,8 @@ package ec2 {
         TrafficMirrorFilterRuleId: js.UndefOr[String] = js.undefined
     ): DeleteTrafficMirrorFilterRuleResult = {
       val __obj = js.Dynamic.literal()
-      TrafficMirrorFilterRuleId.foreach(
-        __v => __obj.updateDynamic("TrafficMirrorFilterRuleId")(__v.asInstanceOf[js.Any])
+      TrafficMirrorFilterRuleId.foreach(__v =>
+        __obj.updateDynamic("TrafficMirrorFilterRuleId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteTrafficMirrorFilterRuleResult]
     }
@@ -9460,8 +9460,8 @@ package ec2 {
         TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined
     ): DeleteTransitGatewayVpcAttachmentResult = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayVpcAttachment.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteTransitGatewayVpcAttachmentResult]
     }
@@ -10516,8 +10516,8 @@ package ec2 {
     ): DescribeEgressOnlyInternetGatewaysRequest = {
       val __obj = js.Dynamic.literal()
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGatewayIds.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGatewayIds")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGatewayIds.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGatewayIds")(__v.asInstanceOf[js.Any])
       )
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -10538,8 +10538,8 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEgressOnlyInternetGatewaysResult = {
       val __obj = js.Dynamic.literal()
-      EgressOnlyInternetGateways.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGateways")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGateways.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGateways")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEgressOnlyInternetGatewaysResult]
@@ -10697,8 +10697,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      LaunchTemplateAndOverrides.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
+      LaunchTemplateAndOverrides.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
       )
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetError]
@@ -10842,8 +10842,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LaunchTemplateAndOverrides.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
+      LaunchTemplateAndOverrides.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateAndOverrides")(__v.asInstanceOf[js.Any])
       )
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
@@ -11211,8 +11211,8 @@ package ec2 {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeIamInstanceProfileAssociationsResult = {
       val __obj = js.Dynamic.literal()
-      IamInstanceProfileAssociations.foreach(
-        __v => __obj.updateDynamic("IamInstanceProfileAssociations")(__v.asInstanceOf[js.Any])
+      IamInstanceProfileAssociations.foreach(__v =>
+        __obj.updateDynamic("IamInstanceProfileAssociations")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIamInstanceProfileAssociationsResult]
@@ -11518,8 +11518,8 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeInstanceCreditSpecificationsResult = {
       val __obj = js.Dynamic.literal()
-      InstanceCreditSpecifications.foreach(
-        __v => __obj.updateDynamic("InstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
+      InstanceCreditSpecifications.foreach(__v =>
+        __obj.updateDynamic("InstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceCreditSpecificationsResult]
@@ -12035,8 +12035,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NetworkInterfacePermissionIds.foreach(
-        __v => __obj.updateDynamic("NetworkInterfacePermissionIds")(__v.asInstanceOf[js.Any])
+      NetworkInterfacePermissionIds.foreach(__v =>
+        __obj.updateDynamic("NetworkInterfacePermissionIds")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNetworkInterfacePermissionsRequest]
@@ -12059,8 +12059,8 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeNetworkInterfacePermissionsResult = {
       val __obj = js.Dynamic.literal()
-      NetworkInterfacePermissions.foreach(
-        __v => __obj.updateDynamic("NetworkInterfacePermissions")(__v.asInstanceOf[js.Any])
+      NetworkInterfacePermissions.foreach(__v =>
+        __obj.updateDynamic("NetworkInterfacePermissions")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNetworkInterfacePermissionsResult]
@@ -12351,8 +12351,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       ReservedInstancesId.foreach(__v => __obj.updateDynamic("ReservedInstancesId")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesListingId.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesListingId")(__v.asInstanceOf[js.Any])
+      ReservedInstancesListingId.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesListingId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesListingsRequest]
     }
@@ -12372,8 +12372,8 @@ package ec2 {
         ReservedInstancesListings: js.UndefOr[ReservedInstancesListingList] = js.undefined
     ): DescribeReservedInstancesListingsResult = {
       val __obj = js.Dynamic.literal()
-      ReservedInstancesListings.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
+      ReservedInstancesListings.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesListingsResult]
     }
@@ -12399,8 +12399,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesModificationIds.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesModificationIds")(__v.asInstanceOf[js.Any])
+      ReservedInstancesModificationIds.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesModificationIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesModificationsRequest]
     }
@@ -12423,8 +12423,8 @@ package ec2 {
     ): DescribeReservedInstancesModificationsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesModifications.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesModifications")(__v.asInstanceOf[js.Any])
+      ReservedInstancesModifications.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesModifications")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesModificationsResult]
     }
@@ -12486,8 +12486,8 @@ package ec2 {
       OfferingClass.foreach(__v => __obj.updateDynamic("OfferingClass")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesOfferingIds.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesOfferingIds")(__v.asInstanceOf[js.Any])
+      ReservedInstancesOfferingIds.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesOfferingIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesOfferingsRequest]
     }
@@ -12510,8 +12510,8 @@ package ec2 {
     ): DescribeReservedInstancesOfferingsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesOfferings.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesOfferings")(__v.asInstanceOf[js.Any])
+      ReservedInstancesOfferings.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesOfferings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedInstancesOfferingsResult]
     }
@@ -12676,8 +12676,8 @@ package ec2 {
     ): DescribeScheduledInstanceAvailabilityResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledInstanceAvailabilitySet.foreach(
-        __v => __obj.updateDynamic("ScheduledInstanceAvailabilitySet")(__v.asInstanceOf[js.Any])
+      ScheduledInstanceAvailabilitySet.foreach(__v =>
+        __obj.updateDynamic("ScheduledInstanceAvailabilitySet")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeScheduledInstanceAvailabilityResult]
     }
@@ -12771,8 +12771,8 @@ package ec2 {
         SecurityGroupReferenceSet: js.UndefOr[SecurityGroupReferences] = js.undefined
     ): DescribeSecurityGroupReferencesResult = {
       val __obj = js.Dynamic.literal()
-      SecurityGroupReferenceSet.foreach(
-        __v => __obj.updateDynamic("SecurityGroupReferenceSet")(__v.asInstanceOf[js.Any])
+      SecurityGroupReferenceSet.foreach(__v =>
+        __obj.updateDynamic("SecurityGroupReferenceSet")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeSecurityGroupReferencesResult]
     }
@@ -13562,8 +13562,8 @@ package ec2 {
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentIds.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentIds")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentIds.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayAttachmentsRequest]
     }
@@ -13583,8 +13583,8 @@ package ec2 {
     ): DescribeTransitGatewayAttachmentsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachments.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachments")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachments.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachments")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayAttachmentsResult]
     }
@@ -13613,8 +13613,8 @@ package ec2 {
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTableIds.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableIds")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableIds.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayRouteTablesRequest]
     }
@@ -13634,8 +13634,8 @@ package ec2 {
     ): DescribeTransitGatewayRouteTablesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTables.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTables")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTables.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTables")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayRouteTablesResult]
     }
@@ -13664,8 +13664,8 @@ package ec2 {
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentIds.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentIds")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentIds.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayVpcAttachmentsRequest]
     }
@@ -13685,8 +13685,8 @@ package ec2 {
     ): DescribeTransitGatewayVpcAttachmentsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayVpcAttachments.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachments")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachments.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachments")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTransitGatewayVpcAttachmentsResult]
     }
@@ -14098,8 +14098,8 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeVpcEndpointConnectionNotificationsResult = {
       val __obj = js.Dynamic.literal()
-      ConnectionNotificationSet.foreach(
-        __v => __obj.updateDynamic("ConnectionNotificationSet")(__v.asInstanceOf[js.Any])
+      ConnectionNotificationSet.foreach(__v =>
+        __obj.updateDynamic("ConnectionNotificationSet")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVpcEndpointConnectionNotificationsResult]
@@ -15042,8 +15042,8 @@ package ec2 {
         IamInstanceProfileAssociation: js.UndefOr[IamInstanceProfileAssociation] = js.undefined
     ): DisassociateIamInstanceProfileResult = {
       val __obj = js.Dynamic.literal()
-      IamInstanceProfileAssociation.foreach(
-        __v => __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
+      IamInstanceProfileAssociation.foreach(__v =>
+        __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DisassociateIamInstanceProfileResult]
     }
@@ -15459,8 +15459,8 @@ package ec2 {
     ): EgressOnlyInternetGateway = {
       val __obj = js.Dynamic.literal()
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGatewayId.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGatewayId.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EgressOnlyInternetGateway]
     }
@@ -15487,11 +15487,11 @@ package ec2 {
     ): ElasticGpuAssociation = {
       val __obj = js.Dynamic.literal()
       ElasticGpuAssociationId.foreach(__v => __obj.updateDynamic("ElasticGpuAssociationId")(__v.asInstanceOf[js.Any]))
-      ElasticGpuAssociationState.foreach(
-        __v => __obj.updateDynamic("ElasticGpuAssociationState")(__v.asInstanceOf[js.Any])
+      ElasticGpuAssociationState.foreach(__v =>
+        __obj.updateDynamic("ElasticGpuAssociationState")(__v.asInstanceOf[js.Any])
       )
-      ElasticGpuAssociationTime.foreach(
-        __v => __obj.updateDynamic("ElasticGpuAssociationTime")(__v.asInstanceOf[js.Any])
+      ElasticGpuAssociationTime.foreach(__v =>
+        __obj.updateDynamic("ElasticGpuAssociationTime")(__v.asInstanceOf[js.Any])
       )
       ElasticGpuId.foreach(__v => __obj.updateDynamic("ElasticGpuId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticGpuAssociation]
@@ -15645,17 +15645,17 @@ package ec2 {
         ElasticInferenceAcceleratorAssociationTime: js.UndefOr[DateTime] = js.undefined
     ): ElasticInferenceAcceleratorAssociation = {
       val __obj = js.Dynamic.literal()
-      ElasticInferenceAcceleratorArn.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAcceleratorArn")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAcceleratorArn.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAcceleratorArn")(__v.asInstanceOf[js.Any])
       )
-      ElasticInferenceAcceleratorAssociationId.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAcceleratorAssociationId")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAcceleratorAssociationId.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAcceleratorAssociationId")(__v.asInstanceOf[js.Any])
       )
-      ElasticInferenceAcceleratorAssociationState.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAcceleratorAssociationState")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAcceleratorAssociationState.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAcceleratorAssociationState")(__v.asInstanceOf[js.Any])
       )
-      ElasticInferenceAcceleratorAssociationTime.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAcceleratorAssociationTime")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAcceleratorAssociationTime.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAcceleratorAssociationTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ElasticInferenceAcceleratorAssociation]
     }
@@ -15944,8 +15944,8 @@ package ec2 {
         Status: js.UndefOr[ClientCertificateRevocationListStatus] = js.undefined
     ): ExportClientVpnClientCertificateRevocationListResult = {
       val __obj = js.Dynamic.literal()
-      CertificateRevocationList.foreach(
-        __v => __obj.updateDynamic("CertificateRevocationList")(__v.asInstanceOf[js.Any])
+      CertificateRevocationList.foreach(__v =>
+        __obj.updateDynamic("CertificateRevocationList")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportClientVpnClientCertificateRevocationListResult]
@@ -16417,28 +16417,28 @@ package ec2 {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
-      ExcessCapacityTerminationPolicy.foreach(
-        __v => __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
+      ExcessCapacityTerminationPolicy.foreach(__v =>
+        __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
       )
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       FleetState.foreach(__v => __obj.updateDynamic("FleetState")(__v.asInstanceOf[js.Any]))
       FulfilledCapacity.foreach(__v => __obj.updateDynamic("FulfilledCapacity")(__v.asInstanceOf[js.Any]))
-      FulfilledOnDemandCapacity.foreach(
-        __v => __obj.updateDynamic("FulfilledOnDemandCapacity")(__v.asInstanceOf[js.Any])
+      FulfilledOnDemandCapacity.foreach(__v =>
+        __obj.updateDynamic("FulfilledOnDemandCapacity")(__v.asInstanceOf[js.Any])
       )
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       LaunchTemplateConfigs.foreach(__v => __obj.updateDynamic("LaunchTemplateConfigs")(__v.asInstanceOf[js.Any]))
       OnDemandOptions.foreach(__v => __obj.updateDynamic("OnDemandOptions")(__v.asInstanceOf[js.Any]))
-      ReplaceUnhealthyInstances.foreach(
-        __v => __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
+      ReplaceUnhealthyInstances.foreach(__v =>
+        __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
       )
       SpotOptions.foreach(__v => __obj.updateDynamic("SpotOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TargetCapacitySpecification.foreach(
-        __v => __obj.updateDynamic("TargetCapacitySpecification")(__v.asInstanceOf[js.Any])
+      TargetCapacitySpecification.foreach(__v =>
+        __obj.updateDynamic("TargetCapacitySpecification")(__v.asInstanceOf[js.Any])
       )
-      TerminateInstancesWithExpiration.foreach(
-        __v => __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
+      TerminateInstancesWithExpiration.foreach(__v =>
+        __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
       )
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
@@ -16478,8 +16478,8 @@ package ec2 {
         Overrides: js.UndefOr[FleetLaunchTemplateOverridesList] = js.undefined
     ): FleetLaunchTemplateConfig = {
       val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
+      LaunchTemplateSpecification.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
       )
       Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetLaunchTemplateConfig]
@@ -16502,8 +16502,8 @@ package ec2 {
         Overrides: js.UndefOr[FleetLaunchTemplateOverridesListRequest] = js.undefined
     ): FleetLaunchTemplateConfigRequest = {
       val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
+      LaunchTemplateSpecification.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
       )
       Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetLaunchTemplateConfigRequest]
@@ -17259,19 +17259,19 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       IsValidExchange.foreach(__v => __obj.updateDynamic("IsValidExchange")(__v.asInstanceOf[js.Any]))
-      OutputReservedInstancesWillExpireAt.foreach(
-        __v => __obj.updateDynamic("OutputReservedInstancesWillExpireAt")(__v.asInstanceOf[js.Any])
+      OutputReservedInstancesWillExpireAt.foreach(__v =>
+        __obj.updateDynamic("OutputReservedInstancesWillExpireAt")(__v.asInstanceOf[js.Any])
       )
       PaymentDue.foreach(__v => __obj.updateDynamic("PaymentDue")(__v.asInstanceOf[js.Any]))
-      ReservedInstanceValueRollup.foreach(
-        __v => __obj.updateDynamic("ReservedInstanceValueRollup")(__v.asInstanceOf[js.Any])
+      ReservedInstanceValueRollup.foreach(__v =>
+        __obj.updateDynamic("ReservedInstanceValueRollup")(__v.asInstanceOf[js.Any])
       )
       ReservedInstanceValueSet.foreach(__v => __obj.updateDynamic("ReservedInstanceValueSet")(__v.asInstanceOf[js.Any]))
-      TargetConfigurationValueRollup.foreach(
-        __v => __obj.updateDynamic("TargetConfigurationValueRollup")(__v.asInstanceOf[js.Any])
+      TargetConfigurationValueRollup.foreach(__v =>
+        __obj.updateDynamic("TargetConfigurationValueRollup")(__v.asInstanceOf[js.Any])
       )
-      TargetConfigurationValueSet.foreach(
-        __v => __obj.updateDynamic("TargetConfigurationValueSet")(__v.asInstanceOf[js.Any])
+      TargetConfigurationValueSet.foreach(__v =>
+        __obj.updateDynamic("TargetConfigurationValueSet")(__v.asInstanceOf[js.Any])
       )
       ValidationFailureReason.foreach(__v => __obj.updateDynamic("ValidationFailureReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReservedInstancesExchangeQuoteResult]
@@ -17322,8 +17322,8 @@ package ec2 {
     ): GetTransitGatewayAttachmentPropagationsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentPropagations.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentPropagations")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentPropagations.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentPropagations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetTransitGatewayAttachmentPropagationsResult]
     }
@@ -17422,8 +17422,8 @@ package ec2 {
     ): GetTransitGatewayRouteTablePropagationsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTablePropagations.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTablePropagations")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTablePropagations.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTablePropagations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetTransitGatewayRouteTablePropagationsResult]
     }
@@ -18359,8 +18359,8 @@ package ec2 {
       Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
       GroupIds.foreach(__v => __obj.updateDynamic("GroupIds")(__v.asInstanceOf[js.Any]))
       GroupNames.foreach(__v => __obj.updateDynamic("GroupNames")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       Monitoring.foreach(__v => __obj.updateDynamic("Monitoring")(__v.asInstanceOf[js.Any]))
@@ -18793,15 +18793,15 @@ package ec2 {
       Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
       CapacityReservationId.foreach(__v => __obj.updateDynamic("CapacityReservationId")(__v.asInstanceOf[js.Any]))
-      CapacityReservationSpecification.foreach(
-        __v => __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
+      CapacityReservationSpecification.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
       )
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       CpuOptions.foreach(__v => __obj.updateDynamic("CpuOptions")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       ElasticGpuAssociations.foreach(__v => __obj.updateDynamic("ElasticGpuAssociations")(__v.asInstanceOf[js.Any]))
-      ElasticInferenceAcceleratorAssociations.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAcceleratorAssociations")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAcceleratorAssociations.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAcceleratorAssociations")(__v.asInstanceOf[js.Any])
       )
       EnaSupport.foreach(__v => __obj.updateDynamic("EnaSupport")(__v.asInstanceOf[js.Any]))
       HibernationOptions.foreach(__v => __obj.updateDynamic("HibernationOptions")(__v.asInstanceOf[js.Any]))
@@ -18890,8 +18890,8 @@ package ec2 {
       EnaSupport.foreach(__v => __obj.updateDynamic("EnaSupport")(__v.asInstanceOf[js.Any]))
       Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       KernelId.foreach(__v => __obj.updateDynamic("KernelId")(__v.asInstanceOf[js.Any]))
@@ -19391,8 +19391,8 @@ package ec2 {
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceNetworkInterfaceSpecification]
@@ -20549,8 +20549,8 @@ package ec2 {
         Overrides: js.UndefOr[FleetLaunchTemplateOverrides] = js.undefined
     ): LaunchTemplateAndOverridesResponse = {
       val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
+      LaunchTemplateSpecification.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
       )
       Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateAndOverridesResponse]
@@ -20629,11 +20629,11 @@ package ec2 {
         CapacityReservationTarget: js.UndefOr[CapacityReservationTarget] = js.undefined
     ): LaunchTemplateCapacityReservationSpecificationRequest = {
       val __obj = js.Dynamic.literal()
-      CapacityReservationPreference.foreach(
-        __v => __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
+      CapacityReservationPreference.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
       )
-      CapacityReservationTarget.foreach(
-        __v => __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
+      CapacityReservationTarget.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LaunchTemplateCapacityReservationSpecificationRequest]
     }
@@ -20655,11 +20655,11 @@ package ec2 {
         CapacityReservationTarget: js.UndefOr[CapacityReservationTargetResponse] = js.undefined
     ): LaunchTemplateCapacityReservationSpecificationResponse = {
       val __obj = js.Dynamic.literal()
-      CapacityReservationPreference.foreach(
-        __v => __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
+      CapacityReservationPreference.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any])
       )
-      CapacityReservationTarget.foreach(
-        __v => __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
+      CapacityReservationTarget.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationTarget")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LaunchTemplateCapacityReservationSpecificationResponse]
     }
@@ -20681,8 +20681,8 @@ package ec2 {
         Overrides: js.UndefOr[LaunchTemplateOverridesList] = js.undefined
     ): LaunchTemplateConfig = {
       val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(
-        __v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
+      LaunchTemplateSpecification.foreach(__v =>
+        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
       )
       Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateConfig]
@@ -21042,8 +21042,8 @@ package ec2 {
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateInstanceNetworkInterfaceSpecification]
@@ -21099,8 +21099,8 @@ package ec2 {
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateInstanceNetworkInterfaceSpecificationRequest]
@@ -21295,8 +21295,8 @@ package ec2 {
     ): LaunchTemplateSpotMarketOptions = {
       val __obj = js.Dynamic.literal()
       BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       MaxPrice.foreach(__v => __obj.updateDynamic("MaxPrice")(__v.asInstanceOf[js.Any]))
       SpotInstanceType.foreach(__v => __obj.updateDynamic("SpotInstanceType")(__v.asInstanceOf[js.Any]))
@@ -21328,8 +21328,8 @@ package ec2 {
     ): LaunchTemplateSpotMarketOptionsRequest = {
       val __obj = js.Dynamic.literal()
       BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       MaxPrice.foreach(__v => __obj.updateDynamic("MaxPrice")(__v.asInstanceOf[js.Any]))
       SpotInstanceType.foreach(__v => __obj.updateDynamic("SpotInstanceType")(__v.asInstanceOf[js.Any]))
@@ -21532,8 +21532,8 @@ package ec2 {
         TargetGroupsConfig: js.UndefOr[TargetGroupsConfig] = js.undefined
     ): LoadBalancersConfig = {
       val __obj = js.Dynamic.literal()
-      ClassicLoadBalancersConfig.foreach(
-        __v => __obj.updateDynamic("ClassicLoadBalancersConfig")(__v.asInstanceOf[js.Any])
+      ClassicLoadBalancersConfig.foreach(__v =>
+        __obj.updateDynamic("ClassicLoadBalancersConfig")(__v.asInstanceOf[js.Any])
       )
       TargetGroupsConfig.foreach(__v => __obj.updateDynamic("TargetGroupsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancersConfig]
@@ -21776,8 +21776,8 @@ package ec2 {
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      ExcessCapacityTerminationPolicy.foreach(
-        __v => __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
+      ExcessCapacityTerminationPolicy.foreach(__v =>
+        __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyFleetRequest]
     }
@@ -22047,8 +22047,8 @@ package ec2 {
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       EnaSupport.foreach(__v => __obj.updateDynamic("EnaSupport")(__v.asInstanceOf[js.Any]))
       Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       Kernel.foreach(__v => __obj.updateDynamic("Kernel")(__v.asInstanceOf[js.Any]))
@@ -22138,11 +22138,11 @@ package ec2 {
         UnsuccessfulInstanceCreditSpecifications: js.UndefOr[UnsuccessfulInstanceCreditSpecificationSet] = js.undefined
     ): ModifyInstanceCreditSpecificationResult = {
       val __obj = js.Dynamic.literal()
-      SuccessfulInstanceCreditSpecifications.foreach(
-        __v => __obj.updateDynamic("SuccessfulInstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
+      SuccessfulInstanceCreditSpecifications.foreach(__v =>
+        __obj.updateDynamic("SuccessfulInstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
       )
-      UnsuccessfulInstanceCreditSpecifications.foreach(
-        __v => __obj.updateDynamic("UnsuccessfulInstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
+      UnsuccessfulInstanceCreditSpecifications.foreach(__v =>
+        __obj.updateDynamic("UnsuccessfulInstanceCreditSpecifications")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyInstanceCreditSpecificationResult]
     }
@@ -22361,8 +22361,8 @@ package ec2 {
         ReservedInstancesModificationId: js.UndefOr[String] = js.undefined
     ): ModifyReservedInstancesResult = {
       val __obj = js.Dynamic.literal()
-      ReservedInstancesModificationId.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesModificationId")(__v.asInstanceOf[js.Any])
+      ReservedInstancesModificationId.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesModificationId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyReservedInstancesResult]
     }
@@ -22430,8 +22430,8 @@ package ec2 {
         "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any]
       )
 
-      ExcessCapacityTerminationPolicy.foreach(
-        __v => __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
+      ExcessCapacityTerminationPolicy.foreach(__v =>
+        __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
       )
       OnDemandTargetCapacity.foreach(__v => __obj.updateDynamic("OnDemandTargetCapacity")(__v.asInstanceOf[js.Any]))
       TargetCapacity.foreach(__v => __obj.updateDynamic("TargetCapacity")(__v.asInstanceOf[js.Any]))
@@ -22476,8 +22476,8 @@ package ec2 {
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
-      AssignIpv6AddressOnCreation.foreach(
-        __v => __obj.updateDynamic("AssignIpv6AddressOnCreation")(__v.asInstanceOf[js.Any])
+      AssignIpv6AddressOnCreation.foreach(__v =>
+        __obj.updateDynamic("AssignIpv6AddressOnCreation")(__v.asInstanceOf[js.Any])
       )
       MapPublicIpOnLaunch.foreach(__v => __obj.updateDynamic("MapPublicIpOnLaunch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifySubnetAttributeRequest]
@@ -22715,8 +22715,8 @@ package ec2 {
         TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined
     ): ModifyTransitGatewayVpcAttachmentResult = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayVpcAttachment.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyTransitGatewayVpcAttachmentResult]
     }
@@ -22840,8 +22840,8 @@ package ec2 {
       )
 
       ConnectionEvents.foreach(__v => __obj.updateDynamic("ConnectionEvents")(__v.asInstanceOf[js.Any]))
-      ConnectionNotificationArn.foreach(
-        __v => __obj.updateDynamic("ConnectionNotificationArn")(__v.asInstanceOf[js.Any])
+      ConnectionNotificationArn.foreach(__v =>
+        __obj.updateDynamic("ConnectionNotificationArn")(__v.asInstanceOf[js.Any])
       )
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyVpcEndpointConnectionNotificationRequest]
@@ -22954,12 +22954,12 @@ package ec2 {
       )
 
       AcceptanceRequired.foreach(__v => __obj.updateDynamic("AcceptanceRequired")(__v.asInstanceOf[js.Any]))
-      AddNetworkLoadBalancerArns.foreach(
-        __v => __obj.updateDynamic("AddNetworkLoadBalancerArns")(__v.asInstanceOf[js.Any])
+      AddNetworkLoadBalancerArns.foreach(__v =>
+        __obj.updateDynamic("AddNetworkLoadBalancerArns")(__v.asInstanceOf[js.Any])
       )
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      RemoveNetworkLoadBalancerArns.foreach(
-        __v => __obj.updateDynamic("RemoveNetworkLoadBalancerArns")(__v.asInstanceOf[js.Any])
+      RemoveNetworkLoadBalancerArns.foreach(__v =>
+        __obj.updateDynamic("RemoveNetworkLoadBalancerArns")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyVpcEndpointServiceConfigurationRequest]
     }
@@ -23044,12 +23044,12 @@ package ec2 {
         "VpcPeeringConnectionId" -> VpcPeeringConnectionId.asInstanceOf[js.Any]
       )
 
-      AccepterPeeringConnectionOptions.foreach(
-        __v => __obj.updateDynamic("AccepterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
+      AccepterPeeringConnectionOptions.foreach(__v =>
+        __obj.updateDynamic("AccepterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
       )
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      RequesterPeeringConnectionOptions.foreach(
-        __v => __obj.updateDynamic("RequesterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
+      RequesterPeeringConnectionOptions.foreach(__v =>
+        __obj.updateDynamic("RequesterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyVpcPeeringConnectionOptionsRequest]
     }
@@ -23068,11 +23068,11 @@ package ec2 {
         RequesterPeeringConnectionOptions: js.UndefOr[PeeringConnectionOptions] = js.undefined
     ): ModifyVpcPeeringConnectionOptionsResult = {
       val __obj = js.Dynamic.literal()
-      AccepterPeeringConnectionOptions.foreach(
-        __v => __obj.updateDynamic("AccepterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
+      AccepterPeeringConnectionOptions.foreach(__v =>
+        __obj.updateDynamic("AccepterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
       )
-      RequesterPeeringConnectionOptions.foreach(
-        __v => __obj.updateDynamic("RequesterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
+      RequesterPeeringConnectionOptions.foreach(__v =>
+        __obj.updateDynamic("RequesterPeeringConnectionOptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyVpcPeeringConnectionOptionsResult]
     }
@@ -23292,19 +23292,19 @@ package ec2 {
       DPDTimeoutSeconds.foreach(__v => __obj.updateDynamic("DPDTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       IKEVersions.foreach(__v => __obj.updateDynamic("IKEVersions")(__v.asInstanceOf[js.Any]))
       Phase1DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase1DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase1EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase1IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase1LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase1LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       Phase2DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase2DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase2EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase2IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase2LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase2LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       PreSharedKey.foreach(__v => __obj.updateDynamic("PreSharedKey")(__v.asInstanceOf[js.Any]))
@@ -23866,8 +23866,8 @@ package ec2 {
       AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
       AwsService.foreach(__v => __obj.updateDynamic("AwsService")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
-      NetworkInterfacePermissionId.foreach(
-        __v => __obj.updateDynamic("NetworkInterfacePermissionId")(__v.asInstanceOf[js.Any])
+      NetworkInterfacePermissionId.foreach(__v =>
+        __obj.updateDynamic("NetworkInterfacePermissionId")(__v.asInstanceOf[js.Any])
       )
       Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
       PermissionState.foreach(__v => __obj.updateDynamic("PermissionState")(__v.asInstanceOf[js.Any]))
@@ -24128,14 +24128,14 @@ package ec2 {
         AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined
     ): PeeringConnectionOptions = {
       val __obj = js.Dynamic.literal()
-      AllowDnsResolutionFromRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowDnsResolutionFromRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PeeringConnectionOptions]
     }
@@ -24159,14 +24159,14 @@ package ec2 {
         AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined
     ): PeeringConnectionOptionsRequest = {
       val __obj = js.Dynamic.literal()
-      AllowDnsResolutionFromRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowDnsResolutionFromRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PeeringConnectionOptionsRequest]
     }
@@ -24860,8 +24860,8 @@ package ec2 {
       PoolAddressRanges.foreach(__v => __obj.updateDynamic("PoolAddressRanges")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
       TotalAddressCount.foreach(__v => __obj.updateDynamic("TotalAddressCount")(__v.asInstanceOf[js.Any]))
-      TotalAvailableAddressCount.foreach(
-        __v => __obj.updateDynamic("TotalAvailableAddressCount")(__v.asInstanceOf[js.Any])
+      TotalAvailableAddressCount.foreach(__v =>
+        __obj.updateDynamic("TotalAvailableAddressCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PublicIpv4Pool]
     }
@@ -25306,8 +25306,8 @@ package ec2 {
         TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined
     ): RejectTransitGatewayVpcAttachmentResult = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayVpcAttachment.foreach(
-        __v => __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
+      TransitGatewayVpcAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayVpcAttachment")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RejectTransitGatewayVpcAttachmentResult]
     }
@@ -25481,8 +25481,8 @@ package ec2 {
         IamInstanceProfileAssociation: js.UndefOr[IamInstanceProfileAssociation] = js.undefined
     ): ReplaceIamInstanceProfileAssociationResult = {
       val __obj = js.Dynamic.literal()
-      IamInstanceProfileAssociation.foreach(
-        __v => __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
+      IamInstanceProfileAssociation.foreach(__v =>
+        __obj.updateDynamic("IamInstanceProfileAssociation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReplaceIamInstanceProfileAssociationResult]
     }
@@ -25610,8 +25610,8 @@ package ec2 {
       DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
       DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGatewayId.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGatewayId.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
       )
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -25688,8 +25688,8 @@ package ec2 {
 
       Blackhole.foreach(__v => __obj.updateDynamic("Blackhole")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReplaceTransitGatewayRouteRequest]
     }
@@ -25844,22 +25844,22 @@ package ec2 {
     ): RequestLaunchTemplateData = {
       val __obj = js.Dynamic.literal()
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      CapacityReservationSpecification.foreach(
-        __v => __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
+      CapacityReservationSpecification.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
       )
       CpuOptions.foreach(__v => __obj.updateDynamic("CpuOptions")(__v.asInstanceOf[js.Any]))
       CreditSpecification.foreach(__v => __obj.updateDynamic("CreditSpecification")(__v.asInstanceOf[js.Any]))
       DisableApiTermination.foreach(__v => __obj.updateDynamic("DisableApiTermination")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       ElasticGpuSpecifications.foreach(__v => __obj.updateDynamic("ElasticGpuSpecifications")(__v.asInstanceOf[js.Any]))
-      ElasticInferenceAccelerators.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAccelerators.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
       )
       HibernationOptions.foreach(__v => __obj.updateDynamic("HibernationOptions")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceMarketOptions.foreach(__v => __obj.updateDynamic("InstanceMarketOptions")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -25962,8 +25962,8 @@ package ec2 {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       LaunchGroup.foreach(__v => __obj.updateDynamic("LaunchGroup")(__v.asInstanceOf[js.Any]))
       LaunchSpecification.foreach(__v => __obj.updateDynamic("LaunchSpecification")(__v.asInstanceOf[js.Any]))
@@ -26336,8 +26336,8 @@ package ec2 {
       InstanceCounts.foreach(__v => __obj.updateDynamic("InstanceCounts")(__v.asInstanceOf[js.Any]))
       PriceSchedules.foreach(__v => __obj.updateDynamic("PriceSchedules")(__v.asInstanceOf[js.Any]))
       ReservedInstancesId.foreach(__v => __obj.updateDynamic("ReservedInstancesId")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesListingId.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesListingId")(__v.asInstanceOf[js.Any])
+      ReservedInstancesListingId.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesListingId")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
@@ -26382,8 +26382,8 @@ package ec2 {
       EffectiveDate.foreach(__v => __obj.updateDynamic("EffectiveDate")(__v.asInstanceOf[js.Any]))
       ModificationResults.foreach(__v => __obj.updateDynamic("ModificationResults")(__v.asInstanceOf[js.Any]))
       ReservedInstancesIds.foreach(__v => __obj.updateDynamic("ReservedInstancesIds")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesModificationId.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesModificationId")(__v.asInstanceOf[js.Any])
+      ReservedInstancesModificationId.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesModificationId")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
@@ -26468,8 +26468,8 @@ package ec2 {
       PricingDetails.foreach(__v => __obj.updateDynamic("PricingDetails")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedInstancesOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedInstancesOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedInstancesOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedInstancesOfferingId")(__v.asInstanceOf[js.Any])
       )
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
@@ -26824,22 +26824,22 @@ package ec2 {
     ): ResponseLaunchTemplateData = {
       val __obj = js.Dynamic.literal()
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      CapacityReservationSpecification.foreach(
-        __v => __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
+      CapacityReservationSpecification.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
       )
       CpuOptions.foreach(__v => __obj.updateDynamic("CpuOptions")(__v.asInstanceOf[js.Any]))
       CreditSpecification.foreach(__v => __obj.updateDynamic("CreditSpecification")(__v.asInstanceOf[js.Any]))
       DisableApiTermination.foreach(__v => __obj.updateDynamic("DisableApiTermination")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       ElasticGpuSpecifications.foreach(__v => __obj.updateDynamic("ElasticGpuSpecifications")(__v.asInstanceOf[js.Any]))
-      ElasticInferenceAccelerators.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAccelerators.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
       )
       HibernationOptions.foreach(__v => __obj.updateDynamic("HibernationOptions")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceMarketOptions.foreach(__v => __obj.updateDynamic("InstanceMarketOptions")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -26980,8 +26980,8 @@ package ec2 {
       IpPermissions.foreach(__v => __obj.updateDynamic("IpPermissions")(__v.asInstanceOf[js.Any]))
       IpProtocol.foreach(__v => __obj.updateDynamic("IpProtocol")(__v.asInstanceOf[js.Any]))
       SourceSecurityGroupName.foreach(__v => __obj.updateDynamic("SourceSecurityGroupName")(__v.asInstanceOf[js.Any]))
-      SourceSecurityGroupOwnerId.foreach(
-        __v => __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
+      SourceSecurityGroupOwnerId.foreach(__v =>
+        __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
       )
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokeSecurityGroupEgressRequest]
@@ -27025,8 +27025,8 @@ package ec2 {
       IpPermissions.foreach(__v => __obj.updateDynamic("IpPermissions")(__v.asInstanceOf[js.Any]))
       IpProtocol.foreach(__v => __obj.updateDynamic("IpProtocol")(__v.asInstanceOf[js.Any]))
       SourceSecurityGroupName.foreach(__v => __obj.updateDynamic("SourceSecurityGroupName")(__v.asInstanceOf[js.Any]))
-      SourceSecurityGroupOwnerId.foreach(
-        __v => __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
+      SourceSecurityGroupOwnerId.foreach(__v =>
+        __obj.updateDynamic("SourceSecurityGroupOwnerId")(__v.asInstanceOf[js.Any])
       )
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokeSecurityGroupIngressRequest]
@@ -27074,8 +27074,8 @@ package ec2 {
       DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
       DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
       DestinationPrefixListId.foreach(__v => __obj.updateDynamic("DestinationPrefixListId")(__v.asInstanceOf[js.Any]))
-      EgressOnlyInternetGatewayId.foreach(
-        __v => __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
+      EgressOnlyInternetGatewayId.foreach(__v =>
+        __obj.updateDynamic("EgressOnlyInternetGatewayId")(__v.asInstanceOf[js.Any])
       )
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -27283,8 +27283,8 @@ package ec2 {
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      CapacityReservationSpecification.foreach(
-        __v => __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
+      CapacityReservationSpecification.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationSpecification")(__v.asInstanceOf[js.Any])
       )
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       CpuOptions.foreach(__v => __obj.updateDynamic("CpuOptions")(__v.asInstanceOf[js.Any]))
@@ -27293,14 +27293,14 @@ package ec2 {
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       ElasticGpuSpecification.foreach(__v => __obj.updateDynamic("ElasticGpuSpecification")(__v.asInstanceOf[js.Any]))
-      ElasticInferenceAccelerators.foreach(
-        __v => __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
+      ElasticInferenceAccelerators.foreach(__v =>
+        __obj.updateDynamic("ElasticInferenceAccelerators")(__v.asInstanceOf[js.Any])
       )
       HibernationOptions.foreach(__v => __obj.updateDynamic("HibernationOptions")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      InstanceInitiatedShutdownBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInitiatedShutdownBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInitiatedShutdownBehavior")(__v.asInstanceOf[js.Any])
       )
       InstanceMarketOptions.foreach(__v => __obj.updateDynamic("InstanceMarketOptions")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -27463,8 +27463,8 @@ package ec2 {
       SlotDurationInHours.foreach(__v => __obj.updateDynamic("SlotDurationInHours")(__v.asInstanceOf[js.Any]))
       TermEndDate.foreach(__v => __obj.updateDynamic("TermEndDate")(__v.asInstanceOf[js.Any]))
       TermStartDate.foreach(__v => __obj.updateDynamic("TermStartDate")(__v.asInstanceOf[js.Any]))
-      TotalScheduledInstanceHours.foreach(
-        __v => __obj.updateDynamic("TotalScheduledInstanceHours")(__v.asInstanceOf[js.Any])
+      TotalScheduledInstanceHours.foreach(__v =>
+        __obj.updateDynamic("TotalScheduledInstanceHours")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScheduledInstance]
     }
@@ -27520,8 +27520,8 @@ package ec2 {
       PurchaseToken.foreach(__v => __obj.updateDynamic("PurchaseToken")(__v.asInstanceOf[js.Any]))
       Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
       SlotDurationInHours.foreach(__v => __obj.updateDynamic("SlotDurationInHours")(__v.asInstanceOf[js.Any]))
-      TotalScheduledInstanceHours.foreach(
-        __v => __obj.updateDynamic("TotalScheduledInstanceHours")(__v.asInstanceOf[js.Any])
+      TotalScheduledInstanceHours.foreach(__v =>
+        __obj.updateDynamic("TotalScheduledInstanceHours")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScheduledInstanceAvailability]
     }
@@ -27818,8 +27818,8 @@ package ec2 {
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIpAddressConfigs.foreach(__v => __obj.updateDynamic("PrivateIpAddressConfigs")(__v.asInstanceOf[js.Any]))
-      SecondaryPrivateIpAddressCount.foreach(
-        __v => __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
+      SecondaryPrivateIpAddressCount.foreach(__v =>
+        __obj.updateDynamic("SecondaryPrivateIpAddressCount")(__v.asInstanceOf[js.Any])
       )
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledInstancesNetworkInterface]
@@ -27910,8 +27910,8 @@ package ec2 {
         Routes: js.UndefOr[TransitGatewayRouteList] = js.undefined
     ): SearchTransitGatewayRoutesResult = {
       val __obj = js.Dynamic.literal()
-      AdditionalRoutesAvailable.foreach(
-        __v => __obj.updateDynamic("AdditionalRoutesAvailable")(__v.asInstanceOf[js.Any])
+      AdditionalRoutesAvailable.foreach(__v =>
+        __obj.updateDynamic("AdditionalRoutesAvailable")(__v.asInstanceOf[js.Any])
       )
       Routes.foreach(__v => __obj.updateDynamic("Routes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchTransitGatewayRoutesResult]
@@ -28119,8 +28119,8 @@ package ec2 {
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       ServiceType.foreach(__v => __obj.updateDynamic("ServiceType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VpcEndpointPolicySupported.foreach(
-        __v => __obj.updateDynamic("VpcEndpointPolicySupported")(__v.asInstanceOf[js.Any])
+      VpcEndpointPolicySupported.foreach(__v =>
+        __obj.updateDynamic("VpcEndpointPolicySupported")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServiceDetail]
     }
@@ -28678,32 +28678,32 @@ package ec2 {
 
       AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      ExcessCapacityTerminationPolicy.foreach(
-        __v => __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
+      ExcessCapacityTerminationPolicy.foreach(__v =>
+        __obj.updateDynamic("ExcessCapacityTerminationPolicy")(__v.asInstanceOf[js.Any])
       )
       FulfilledCapacity.foreach(__v => __obj.updateDynamic("FulfilledCapacity")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       InstancePoolsToUseCount.foreach(__v => __obj.updateDynamic("InstancePoolsToUseCount")(__v.asInstanceOf[js.Any]))
       LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
       LaunchTemplateConfigs.foreach(__v => __obj.updateDynamic("LaunchTemplateConfigs")(__v.asInstanceOf[js.Any]))
       LoadBalancersConfig.foreach(__v => __obj.updateDynamic("LoadBalancersConfig")(__v.asInstanceOf[js.Any]))
-      OnDemandAllocationStrategy.foreach(
-        __v => __obj.updateDynamic("OnDemandAllocationStrategy")(__v.asInstanceOf[js.Any])
+      OnDemandAllocationStrategy.foreach(__v =>
+        __obj.updateDynamic("OnDemandAllocationStrategy")(__v.asInstanceOf[js.Any])
       )
-      OnDemandFulfilledCapacity.foreach(
-        __v => __obj.updateDynamic("OnDemandFulfilledCapacity")(__v.asInstanceOf[js.Any])
+      OnDemandFulfilledCapacity.foreach(__v =>
+        __obj.updateDynamic("OnDemandFulfilledCapacity")(__v.asInstanceOf[js.Any])
       )
       OnDemandMaxTotalPrice.foreach(__v => __obj.updateDynamic("OnDemandMaxTotalPrice")(__v.asInstanceOf[js.Any]))
       OnDemandTargetCapacity.foreach(__v => __obj.updateDynamic("OnDemandTargetCapacity")(__v.asInstanceOf[js.Any]))
-      ReplaceUnhealthyInstances.foreach(
-        __v => __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
+      ReplaceUnhealthyInstances.foreach(__v =>
+        __obj.updateDynamic("ReplaceUnhealthyInstances")(__v.asInstanceOf[js.Any])
       )
       SpotMaxTotalPrice.foreach(__v => __obj.updateDynamic("SpotMaxTotalPrice")(__v.asInstanceOf[js.Any]))
       SpotPrice.foreach(__v => __obj.updateDynamic("SpotPrice")(__v.asInstanceOf[js.Any]))
-      TerminateInstancesWithExpiration.foreach(
-        __v => __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
+      TerminateInstancesWithExpiration.foreach(__v =>
+        __obj.updateDynamic("TerminateInstancesWithExpiration")(__v.asInstanceOf[js.Any])
       )
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
@@ -28798,8 +28798,8 @@ package ec2 {
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
       Fault.foreach(__v => __obj.updateDynamic("Fault")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       LaunchGroup.foreach(__v => __obj.updateDynamic("LaunchGroup")(__v.asInstanceOf[js.Any]))
       LaunchSpecification.foreach(__v => __obj.updateDynamic("LaunchSpecification")(__v.asInstanceOf[js.Any]))
@@ -28904,8 +28904,8 @@ package ec2 {
     ): SpotMarketOptions = {
       val __obj = js.Dynamic.literal()
       BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       MaxPrice.foreach(__v => __obj.updateDynamic("MaxPrice")(__v.asInstanceOf[js.Any]))
       SpotInstanceType.foreach(__v => __obj.updateDynamic("SpotInstanceType")(__v.asInstanceOf[js.Any]))
@@ -28941,8 +28941,8 @@ package ec2 {
     ): SpotOptions = {
       val __obj = js.Dynamic.literal()
       AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       InstancePoolsToUseCount.foreach(__v => __obj.updateDynamic("InstancePoolsToUseCount")(__v.asInstanceOf[js.Any]))
       MaxTotalPrice.foreach(__v => __obj.updateDynamic("MaxTotalPrice")(__v.asInstanceOf[js.Any]))
@@ -28980,8 +28980,8 @@ package ec2 {
     ): SpotOptionsRequest = {
       val __obj = js.Dynamic.literal()
       AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
-      InstanceInterruptionBehavior.foreach(
-        __v => __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
+      InstanceInterruptionBehavior.foreach(__v =>
+        __obj.updateDynamic("InstanceInterruptionBehavior")(__v.asInstanceOf[js.Any])
       )
       InstancePoolsToUseCount.foreach(__v => __obj.updateDynamic("InstancePoolsToUseCount")(__v.asInstanceOf[js.Any]))
       MaxTotalPrice.foreach(__v => __obj.updateDynamic("MaxTotalPrice")(__v.asInstanceOf[js.Any]))
@@ -29339,16 +29339,16 @@ package ec2 {
         VpcId: js.UndefOr[String] = js.undefined
     ): Subnet = {
       val __obj = js.Dynamic.literal()
-      AssignIpv6AddressOnCreation.foreach(
-        __v => __obj.updateDynamic("AssignIpv6AddressOnCreation")(__v.asInstanceOf[js.Any])
+      AssignIpv6AddressOnCreation.foreach(__v =>
+        __obj.updateDynamic("AssignIpv6AddressOnCreation")(__v.asInstanceOf[js.Any])
       )
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       AvailableIpAddressCount.foreach(__v => __obj.updateDynamic("AvailableIpAddressCount")(__v.asInstanceOf[js.Any]))
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
       DefaultForAz.foreach(__v => __obj.updateDynamic("DefaultForAz")(__v.asInstanceOf[js.Any]))
-      Ipv6CidrBlockAssociationSet.foreach(
-        __v => __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
+      Ipv6CidrBlockAssociationSet.foreach(__v =>
+        __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
       )
       MapPublicIpOnLaunch.foreach(__v => __obj.updateDynamic("MapPublicIpOnLaunch")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
@@ -29567,8 +29567,8 @@ package ec2 {
         TotalTargetCapacity: js.UndefOr[Int] = js.undefined
     ): TargetCapacitySpecification = {
       val __obj = js.Dynamic.literal()
-      DefaultTargetCapacityType.foreach(
-        __v => __obj.updateDynamic("DefaultTargetCapacityType")(__v.asInstanceOf[js.Any])
+      DefaultTargetCapacityType.foreach(__v =>
+        __obj.updateDynamic("DefaultTargetCapacityType")(__v.asInstanceOf[js.Any])
       )
       OnDemandTargetCapacity.foreach(__v => __obj.updateDynamic("OnDemandTargetCapacity")(__v.asInstanceOf[js.Any]))
       SpotTargetCapacity.foreach(__v => __obj.updateDynamic("SpotTargetCapacity")(__v.asInstanceOf[js.Any]))
@@ -29601,8 +29601,8 @@ package ec2 {
         "TotalTargetCapacity" -> TotalTargetCapacity.asInstanceOf[js.Any]
       )
 
-      DefaultTargetCapacityType.foreach(
-        __v => __obj.updateDynamic("DefaultTargetCapacityType")(__v.asInstanceOf[js.Any])
+      DefaultTargetCapacityType.foreach(__v =>
+        __obj.updateDynamic("DefaultTargetCapacityType")(__v.asInstanceOf[js.Any])
       )
       OnDemandTargetCapacity.foreach(__v => __obj.updateDynamic("OnDemandTargetCapacity")(__v.asInstanceOf[js.Any]))
       SpotTargetCapacity.foreach(__v => __obj.updateDynamic("SpotTargetCapacity")(__v.asInstanceOf[js.Any]))
@@ -29961,8 +29961,8 @@ package ec2 {
       SourcePortRange.foreach(__v => __obj.updateDynamic("SourcePortRange")(__v.asInstanceOf[js.Any]))
       TrafficDirection.foreach(__v => __obj.updateDynamic("TrafficDirection")(__v.asInstanceOf[js.Any]))
       TrafficMirrorFilterId.foreach(__v => __obj.updateDynamic("TrafficMirrorFilterId")(__v.asInstanceOf[js.Any]))
-      TrafficMirrorFilterRuleId.foreach(
-        __v => __obj.updateDynamic("TrafficMirrorFilterRuleId")(__v.asInstanceOf[js.Any])
+      TrafficMirrorFilterRuleId.foreach(__v =>
+        __obj.updateDynamic("TrafficMirrorFilterRuleId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TrafficMirrorFilterRule]
     }
@@ -30205,11 +30205,11 @@ package ec2 {
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
-      TransitGatewayRouteTableId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayAssociation]
     }
@@ -30263,8 +30263,8 @@ package ec2 {
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
       TransitGatewayOwnerId.foreach(__v => __obj.updateDynamic("TransitGatewayOwnerId")(__v.asInstanceOf[js.Any]))
@@ -30289,8 +30289,8 @@ package ec2 {
     ): TransitGatewayAttachmentAssociation = {
       val __obj = js.Dynamic.literal()
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTableId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayAttachmentAssociation]
     }
@@ -30313,8 +30313,8 @@ package ec2 {
     ): TransitGatewayAttachmentPropagation = {
       val __obj = js.Dynamic.literal()
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTableId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayAttachmentPropagation]
     }
@@ -30387,21 +30387,21 @@ package ec2 {
     ): TransitGatewayOptions = {
       val __obj = js.Dynamic.literal()
       AmazonSideAsn.foreach(__v => __obj.updateDynamic("AmazonSideAsn")(__v.asInstanceOf[js.Any]))
-      AssociationDefaultRouteTableId.foreach(
-        __v => __obj.updateDynamic("AssociationDefaultRouteTableId")(__v.asInstanceOf[js.Any])
+      AssociationDefaultRouteTableId.foreach(__v =>
+        __obj.updateDynamic("AssociationDefaultRouteTableId")(__v.asInstanceOf[js.Any])
       )
-      AutoAcceptSharedAttachments.foreach(
-        __v => __obj.updateDynamic("AutoAcceptSharedAttachments")(__v.asInstanceOf[js.Any])
+      AutoAcceptSharedAttachments.foreach(__v =>
+        __obj.updateDynamic("AutoAcceptSharedAttachments")(__v.asInstanceOf[js.Any])
       )
-      DefaultRouteTableAssociation.foreach(
-        __v => __obj.updateDynamic("DefaultRouteTableAssociation")(__v.asInstanceOf[js.Any])
+      DefaultRouteTableAssociation.foreach(__v =>
+        __obj.updateDynamic("DefaultRouteTableAssociation")(__v.asInstanceOf[js.Any])
       )
-      DefaultRouteTablePropagation.foreach(
-        __v => __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
+      DefaultRouteTablePropagation.foreach(__v =>
+        __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
       )
       DnsSupport.foreach(__v => __obj.updateDynamic("DnsSupport")(__v.asInstanceOf[js.Any]))
-      PropagationDefaultRouteTableId.foreach(
-        __v => __obj.updateDynamic("PropagationDefaultRouteTableId")(__v.asInstanceOf[js.Any])
+      PropagationDefaultRouteTableId.foreach(__v =>
+        __obj.updateDynamic("PropagationDefaultRouteTableId")(__v.asInstanceOf[js.Any])
       )
       VpnEcmpSupport.foreach(__v => __obj.updateDynamic("VpnEcmpSupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitGatewayOptions]
@@ -30433,11 +30433,11 @@ package ec2 {
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
-      TransitGatewayRouteTableId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayPropagation]
     }
@@ -30477,14 +30477,14 @@ package ec2 {
     ): TransitGatewayRequestOptions = {
       val __obj = js.Dynamic.literal()
       AmazonSideAsn.foreach(__v => __obj.updateDynamic("AmazonSideAsn")(__v.asInstanceOf[js.Any]))
-      AutoAcceptSharedAttachments.foreach(
-        __v => __obj.updateDynamic("AutoAcceptSharedAttachments")(__v.asInstanceOf[js.Any])
+      AutoAcceptSharedAttachments.foreach(__v =>
+        __obj.updateDynamic("AutoAcceptSharedAttachments")(__v.asInstanceOf[js.Any])
       )
-      DefaultRouteTableAssociation.foreach(
-        __v => __obj.updateDynamic("DefaultRouteTableAssociation")(__v.asInstanceOf[js.Any])
+      DefaultRouteTableAssociation.foreach(__v =>
+        __obj.updateDynamic("DefaultRouteTableAssociation")(__v.asInstanceOf[js.Any])
       )
-      DefaultRouteTablePropagation.foreach(
-        __v => __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
+      DefaultRouteTablePropagation.foreach(__v =>
+        __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
       )
       DnsSupport.foreach(__v => __obj.updateDynamic("DnsSupport")(__v.asInstanceOf[js.Any]))
       VpnEcmpSupport.foreach(__v => __obj.updateDynamic("VpnEcmpSupport")(__v.asInstanceOf[js.Any]))
@@ -30514,8 +30514,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachments.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachments")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachments.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachments")(__v.asInstanceOf[js.Any])
       )
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitGatewayRoute]
@@ -30542,8 +30542,8 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayRouteAttachment]
     }
@@ -30586,17 +30586,17 @@ package ec2 {
     ): TransitGatewayRouteTable = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      DefaultAssociationRouteTable.foreach(
-        __v => __obj.updateDynamic("DefaultAssociationRouteTable")(__v.asInstanceOf[js.Any])
+      DefaultAssociationRouteTable.foreach(__v =>
+        __obj.updateDynamic("DefaultAssociationRouteTable")(__v.asInstanceOf[js.Any])
       )
-      DefaultPropagationRouteTable.foreach(
-        __v => __obj.updateDynamic("DefaultPropagationRouteTable")(__v.asInstanceOf[js.Any])
+      DefaultPropagationRouteTable.foreach(__v =>
+        __obj.updateDynamic("DefaultPropagationRouteTable")(__v.asInstanceOf[js.Any])
       )
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRouteTableId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
+      TransitGatewayRouteTableId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayRouteTableId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayRouteTable]
     }
@@ -30625,8 +30625,8 @@ package ec2 {
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayRouteTableAssociation]
     }
@@ -30655,8 +30655,8 @@ package ec2 {
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransitGatewayRouteTablePropagation]
     }
@@ -30723,8 +30723,8 @@ package ec2 {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TransitGatewayAttachmentId.foreach(
-        __v => __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
       )
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -30810,19 +30810,19 @@ package ec2 {
       IkeVersions.foreach(__v => __obj.updateDynamic("IkeVersions")(__v.asInstanceOf[js.Any]))
       OutsideIpAddress.foreach(__v => __obj.updateDynamic("OutsideIpAddress")(__v.asInstanceOf[js.Any]))
       Phase1DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase1DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase1EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase1IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase1LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase1LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       Phase2DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase2DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase2EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase2IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase2LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase2LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       PreSharedKey.foreach(__v => __obj.updateDynamic("PreSharedKey")(__v.asInstanceOf[js.Any]))
@@ -31658,8 +31658,8 @@ package ec2 {
       CidrBlockAssociationSet.foreach(__v => __obj.updateDynamic("CidrBlockAssociationSet")(__v.asInstanceOf[js.Any]))
       DhcpOptionsId.foreach(__v => __obj.updateDynamic("DhcpOptionsId")(__v.asInstanceOf[js.Any]))
       InstanceTenancy.foreach(__v => __obj.updateDynamic("InstanceTenancy")(__v.asInstanceOf[js.Any]))
-      Ipv6CidrBlockAssociationSet.foreach(
-        __v => __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
+      Ipv6CidrBlockAssociationSet.foreach(__v =>
+        __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
       )
       IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
@@ -31967,14 +31967,14 @@ package ec2 {
         AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined
     ): VpcPeeringConnectionOptionsDescription = {
       val __obj = js.Dynamic.literal()
-      AllowDnsResolutionFromRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowDnsResolutionFromRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowDnsResolutionFromRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalClassicLinkToRemoteVpc.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalClassicLinkToRemoteVpc")(__v.asInstanceOf[js.Any])
       )
-      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(
-        __v => __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
+      AllowEgressFromLocalVpcToRemoteClassicLink.foreach(__v =>
+        __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[VpcPeeringConnectionOptionsDescription]
     }
@@ -32115,8 +32115,8 @@ package ec2 {
     ): VpnConnection = {
       val __obj = js.Dynamic.literal()
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
-      CustomerGatewayConfiguration.foreach(
-        __v => __obj.updateDynamic("CustomerGatewayConfiguration")(__v.asInstanceOf[js.Any])
+      CustomerGatewayConfiguration.foreach(__v =>
+        __obj.updateDynamic("CustomerGatewayConfiguration")(__v.asInstanceOf[js.Any])
       )
       CustomerGatewayId.foreach(__v => __obj.updateDynamic("CustomerGatewayId")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
@@ -32311,19 +32311,19 @@ package ec2 {
       DPDTimeoutSeconds.foreach(__v => __obj.updateDynamic("DPDTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       IKEVersions.foreach(__v => __obj.updateDynamic("IKEVersions")(__v.asInstanceOf[js.Any]))
       Phase1DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase1DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase1EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase1IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase1IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase1IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase1LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase1LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       Phase2DHGroupNumbers.foreach(__v => __obj.updateDynamic("Phase2DHGroupNumbers")(__v.asInstanceOf[js.Any]))
-      Phase2EncryptionAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2EncryptionAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2EncryptionAlgorithms")(__v.asInstanceOf[js.Any])
       )
-      Phase2IntegrityAlgorithms.foreach(
-        __v => __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
+      Phase2IntegrityAlgorithms.foreach(__v =>
+        __obj.updateDynamic("Phase2IntegrityAlgorithms")(__v.asInstanceOf[js.Any])
       )
       Phase2LifetimeSeconds.foreach(__v => __obj.updateDynamic("Phase2LifetimeSeconds")(__v.asInstanceOf[js.Any]))
       PreSharedKey.foreach(__v => __obj.updateDynamic("PreSharedKey")(__v.asInstanceOf[js.Any]))

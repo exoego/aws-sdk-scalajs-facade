@@ -179,8 +179,8 @@ package cloudhsmv2 {
       ClusterCertificate.foreach(__v => __obj.updateDynamic("ClusterCertificate")(__v.asInstanceOf[js.Any]))
       ClusterCsr.foreach(__v => __obj.updateDynamic("ClusterCsr")(__v.asInstanceOf[js.Any]))
       HsmCertificate.foreach(__v => __obj.updateDynamic("HsmCertificate")(__v.asInstanceOf[js.Any]))
-      ManufacturerHardwareCertificate.foreach(
-        __v => __obj.updateDynamic("ManufacturerHardwareCertificate")(__v.asInstanceOf[js.Any])
+      ManufacturerHardwareCertificate.foreach(__v =>
+        __obj.updateDynamic("ManufacturerHardwareCertificate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Certificates]
     }

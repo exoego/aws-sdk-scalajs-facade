@@ -452,8 +452,8 @@ package mq {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
-      MaintenanceWindowStartTime.foreach(
-        __v => __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
+      MaintenanceWindowStartTime.foreach(__v =>
+        __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
       )
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -898,8 +898,8 @@ package mq {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
-      MaintenanceWindowStartTime.foreach(
-        __v => __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
+      MaintenanceWindowStartTime.foreach(__v =>
+        __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
       )
       PendingEngineVersion.foreach(__v => __obj.updateDynamic("PendingEngineVersion")(__v.asInstanceOf[js.Any]))
       PendingHostInstanceType.foreach(__v => __obj.updateDynamic("PendingHostInstanceType")(__v.asInstanceOf[js.Any]))

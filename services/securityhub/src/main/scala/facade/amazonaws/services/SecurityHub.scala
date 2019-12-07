@@ -718,57 +718,57 @@ package securityhub {
       RecommendationText.foreach(__v => __obj.updateDynamic("RecommendationText")(__v.asInstanceOf[js.Any]))
       RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
       RelatedFindingsId.foreach(__v => __obj.updateDynamic("RelatedFindingsId")(__v.asInstanceOf[js.Any]))
-      RelatedFindingsProductArn.foreach(
-        __v => __obj.updateDynamic("RelatedFindingsProductArn")(__v.asInstanceOf[js.Any])
+      RelatedFindingsProductArn.foreach(__v =>
+        __obj.updateDynamic("RelatedFindingsProductArn")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceIamInstanceProfileArn.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIamInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceIamInstanceProfileArn.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceIamInstanceProfileArn")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceImageId.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceImageId")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceImageId.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceImageId")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceIpV4Addresses.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV4Addresses")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceIpV4Addresses.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceIpV4Addresses")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceIpV6Addresses.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV6Addresses")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceIpV6Addresses.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceIpV6Addresses")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceKeyName.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceKeyName")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceKeyName.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceKeyName")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceLaunchedAt.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceLaunchedAt")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceLaunchedAt.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceLaunchedAt")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceSubnetId.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceSubnetId")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceSubnetId.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceSubnetId")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceType.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceType")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceType.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceType")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceVpcId.foreach(
-        __v => __obj.updateDynamic("ResourceAwsEc2InstanceVpcId")(__v.asInstanceOf[js.Any])
+      ResourceAwsEc2InstanceVpcId.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsEc2InstanceVpcId")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsIamAccessKeyCreatedAt.foreach(
-        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyCreatedAt")(__v.asInstanceOf[js.Any])
+      ResourceAwsIamAccessKeyCreatedAt.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsIamAccessKeyCreatedAt")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsIamAccessKeyStatus.foreach(
-        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyStatus")(__v.asInstanceOf[js.Any])
+      ResourceAwsIamAccessKeyStatus.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsIamAccessKeyStatus")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsIamAccessKeyUserName.foreach(
-        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyUserName")(__v.asInstanceOf[js.Any])
+      ResourceAwsIamAccessKeyUserName.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsIamAccessKeyUserName")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsS3BucketOwnerId.foreach(
-        __v => __obj.updateDynamic("ResourceAwsS3BucketOwnerId")(__v.asInstanceOf[js.Any])
+      ResourceAwsS3BucketOwnerId.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsS3BucketOwnerId")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsS3BucketOwnerName.foreach(
-        __v => __obj.updateDynamic("ResourceAwsS3BucketOwnerName")(__v.asInstanceOf[js.Any])
+      ResourceAwsS3BucketOwnerName.foreach(__v =>
+        __obj.updateDynamic("ResourceAwsS3BucketOwnerName")(__v.asInstanceOf[js.Any])
       )
       ResourceContainerImageId.foreach(__v => __obj.updateDynamic("ResourceContainerImageId")(__v.asInstanceOf[js.Any]))
-      ResourceContainerImageName.foreach(
-        __v => __obj.updateDynamic("ResourceContainerImageName")(__v.asInstanceOf[js.Any])
+      ResourceContainerImageName.foreach(__v =>
+        __obj.updateDynamic("ResourceContainerImageName")(__v.asInstanceOf[js.Any])
       )
-      ResourceContainerLaunchedAt.foreach(
-        __v => __obj.updateDynamic("ResourceContainerLaunchedAt")(__v.asInstanceOf[js.Any])
+      ResourceContainerLaunchedAt.foreach(__v =>
+        __obj.updateDynamic("ResourceContainerLaunchedAt")(__v.asInstanceOf[js.Any])
       )
       ResourceContainerName.foreach(__v => __obj.updateDynamic("ResourceContainerName")(__v.asInstanceOf[js.Any]))
       ResourceDetailsOther.foreach(__v => __obj.updateDynamic("ResourceDetailsOther")(__v.asInstanceOf[js.Any]))
@@ -781,21 +781,21 @@ package securityhub {
       SeverityNormalized.foreach(__v => __obj.updateDynamic("SeverityNormalized")(__v.asInstanceOf[js.Any]))
       SeverityProduct.foreach(__v => __obj.updateDynamic("SeverityProduct")(__v.asInstanceOf[js.Any]))
       SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
-      ThreatIntelIndicatorCategory.foreach(
-        __v => __obj.updateDynamic("ThreatIntelIndicatorCategory")(__v.asInstanceOf[js.Any])
+      ThreatIntelIndicatorCategory.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelIndicatorCategory")(__v.asInstanceOf[js.Any])
       )
-      ThreatIntelIndicatorLastObservedAt.foreach(
-        __v => __obj.updateDynamic("ThreatIntelIndicatorLastObservedAt")(__v.asInstanceOf[js.Any])
+      ThreatIntelIndicatorLastObservedAt.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelIndicatorLastObservedAt")(__v.asInstanceOf[js.Any])
       )
-      ThreatIntelIndicatorSource.foreach(
-        __v => __obj.updateDynamic("ThreatIntelIndicatorSource")(__v.asInstanceOf[js.Any])
+      ThreatIntelIndicatorSource.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelIndicatorSource")(__v.asInstanceOf[js.Any])
       )
-      ThreatIntelIndicatorSourceUrl.foreach(
-        __v => __obj.updateDynamic("ThreatIntelIndicatorSourceUrl")(__v.asInstanceOf[js.Any])
+      ThreatIntelIndicatorSourceUrl.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelIndicatorSourceUrl")(__v.asInstanceOf[js.Any])
       )
       ThreatIntelIndicatorType.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorType")(__v.asInstanceOf[js.Any]))
-      ThreatIntelIndicatorValue.foreach(
-        __v => __obj.updateDynamic("ThreatIntelIndicatorValue")(__v.asInstanceOf[js.Any])
+      ThreatIntelIndicatorValue.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelIndicatorValue")(__v.asInstanceOf[js.Any])
       )
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -1624,8 +1624,8 @@ package securityhub {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StandardsSubscriptionArns.foreach(
-        __v => __obj.updateDynamic("StandardsSubscriptionArns")(__v.asInstanceOf[js.Any])
+      StandardsSubscriptionArns.foreach(__v =>
+        __obj.updateDynamic("StandardsSubscriptionArns")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetEnabledStandardsRequest]
     }
@@ -2579,8 +2579,8 @@ package securityhub {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MarketplaceUrl.foreach(__v => __obj.updateDynamic("MarketplaceUrl")(__v.asInstanceOf[js.Any]))
       ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
-      ProductSubscriptionResourcePolicy.foreach(
-        __v => __obj.updateDynamic("ProductSubscriptionResourcePolicy")(__v.asInstanceOf[js.Any])
+      ProductSubscriptionResourcePolicy.foreach(__v =>
+        __obj.updateDynamic("ProductSubscriptionResourcePolicy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Product]
     }

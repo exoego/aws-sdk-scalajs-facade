@@ -297,8 +297,8 @@ package elbv2 {
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      AuthenticateCognitoConfig.foreach(
-        __v => __obj.updateDynamic("AuthenticateCognitoConfig")(__v.asInstanceOf[js.Any])
+      AuthenticateCognitoConfig.foreach(__v =>
+        __obj.updateDynamic("AuthenticateCognitoConfig")(__v.asInstanceOf[js.Any])
       )
       AuthenticateOidcConfig.foreach(__v => __obj.updateDynamic("AuthenticateOidcConfig")(__v.asInstanceOf[js.Any]))
       FixedResponseConfig.foreach(__v => __obj.updateDynamic("FixedResponseConfig")(__v.asInstanceOf[js.Any]))
@@ -433,8 +433,8 @@ package elbv2 {
         "UserPoolDomain"   -> UserPoolDomain.asInstanceOf[js.Any]
       )
 
-      AuthenticationRequestExtraParams.foreach(
-        __v => __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
+      AuthenticationRequestExtraParams.foreach(__v =>
+        __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
       )
       OnUnauthenticatedRequest.foreach(__v => __obj.updateDynamic("OnUnauthenticatedRequest")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
@@ -496,8 +496,8 @@ package elbv2 {
         "UserInfoEndpoint"      -> UserInfoEndpoint.asInstanceOf[js.Any]
       )
 
-      AuthenticationRequestExtraParams.foreach(
-        __v => __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
+      AuthenticationRequestExtraParams.foreach(__v =>
+        __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
       )
       ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
       OnUnauthenticatedRequest.foreach(__v => __obj.updateDynamic("OnUnauthenticatedRequest")(__v.asInstanceOf[js.Any]))
@@ -766,14 +766,14 @@ package elbv2 {
       )
 
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckTimeoutSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
@@ -1913,14 +1913,14 @@ package elbv2 {
       )
 
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckTimeoutSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
@@ -2596,14 +2596,14 @@ package elbv2 {
     ): TargetGroup = {
       val __obj = js.Dynamic.literal()
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckTimeoutSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       LoadBalancerArns.foreach(__v => __obj.updateDynamic("LoadBalancerArns")(__v.asInstanceOf[js.Any]))

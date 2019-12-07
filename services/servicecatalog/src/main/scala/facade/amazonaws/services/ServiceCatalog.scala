@@ -912,8 +912,8 @@ package servicecatalog {
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-      FailedServiceActionAssociations.foreach(
-        __v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
+      FailedServiceActionAssociations.foreach(__v =>
+        __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactOutput]
     }
@@ -951,8 +951,8 @@ package servicecatalog {
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-      FailedServiceActionAssociations.foreach(
-        __v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
+      FailedServiceActionAssociations.foreach(__v =>
+        __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
     }
@@ -1089,8 +1089,8 @@ package servicecatalog {
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       CopyOptions.foreach(__v => __obj.updateDynamic("CopyOptions")(__v.asInstanceOf[js.Any]))
-      SourceProvisioningArtifactIdentifiers.foreach(
-        __v => __obj.updateDynamic("SourceProvisioningArtifactIdentifiers")(__v.asInstanceOf[js.Any])
+      SourceProvisioningArtifactIdentifiers.foreach(__v =>
+        __obj.updateDynamic("SourceProvisioningArtifactIdentifiers")(__v.asInstanceOf[js.Any])
       )
       TargetProductId.foreach(__v => __obj.updateDynamic("TargetProductId")(__v.asInstanceOf[js.Any]))
       TargetProductName.foreach(__v => __obj.updateDynamic("TargetProductName")(__v.asInstanceOf[js.Any]))
@@ -1342,8 +1342,8 @@ package servicecatalog {
     ): CreateProductOutput = {
       val __obj = js.Dynamic.literal()
       ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactDetail.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProductOutput]
@@ -1469,8 +1469,8 @@ package servicecatalog {
     ): CreateProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactDetail.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningArtifactOutput]
@@ -2067,8 +2067,8 @@ package servicecatalog {
       val __obj = js.Dynamic.literal()
       Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
       ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactSummaries.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactSummaries")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactSummaries.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactSummaries")(__v.asInstanceOf[js.Any])
       )
       TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2242,8 +2242,8 @@ package servicecatalog {
     ): DescribeProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisionedProductPlanDetails.foreach(
-        __v => __obj.updateDynamic("ProvisionedProductPlanDetails")(__v.asInstanceOf[js.Any])
+      ProvisionedProductPlanDetails.foreach(__v =>
+        __obj.updateDynamic("ProvisionedProductPlanDetails")(__v.asInstanceOf[js.Any])
       )
       ResourceChanges.foreach(__v => __obj.updateDynamic("ResourceChanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductPlanOutput]
@@ -2293,8 +2293,8 @@ package servicecatalog {
     ): DescribeProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactDetail.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactOutput]
@@ -2348,11 +2348,11 @@ package servicecatalog {
     ): DescribeProvisioningParametersOutput = {
       val __obj = js.Dynamic.literal()
       ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactParameters.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactParameters.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any])
       )
-      ProvisioningArtifactPreferences.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactPreferences.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any])
       )
       TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
       UsageInstructions.foreach(__v => __obj.updateDynamic("UsageInstructions")(__v.asInstanceOf[js.Any]))
@@ -3452,8 +3452,8 @@ package servicecatalog {
     ): ListProvisioningArtifactsForServiceActionOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactViews.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactViews")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactViews.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactViews")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListProvisioningArtifactsForServiceActionOutput]
     }
@@ -3494,8 +3494,8 @@ package servicecatalog {
     ): ListProvisioningArtifactsOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetails.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactDetails")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactDetails.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactDetails")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListProvisioningArtifactsOutput]
     }
@@ -4531,8 +4531,8 @@ package servicecatalog {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisableTemplateValidation.foreach(
-        __v => __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any])
+      DisableTemplateValidation.foreach(__v =>
+        __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -4572,8 +4572,8 @@ package servicecatalog {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactMetadata.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactMetadata.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ProvisioningArtifactSummary]
     }
@@ -4656,17 +4656,17 @@ package servicecatalog {
     ): ProvisioningPreferences = {
       val __obj = js.Dynamic.literal()
       StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
-      StackSetFailureToleranceCount.foreach(
-        __v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
+      StackSetFailureToleranceCount.foreach(__v =>
+        __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
       )
-      StackSetFailureTolerancePercentage.foreach(
-        __v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
+      StackSetFailureTolerancePercentage.foreach(__v =>
+        __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyCount.foreach(
-        __v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
+      StackSetMaxConcurrencyCount.foreach(__v =>
+        __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyPercentage.foreach(
-        __v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
+      StackSetMaxConcurrencyPercentage.foreach(__v =>
+        __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
       )
       StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningPreferences]
@@ -5811,8 +5811,8 @@ package servicecatalog {
     ): UpdateProvisionedProductPropertiesOutput = {
       val __obj = js.Dynamic.literal()
       ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
-      ProvisionedProductProperties.foreach(
-        __v => __obj.updateDynamic("ProvisionedProductProperties")(__v.asInstanceOf[js.Any])
+      ProvisionedProductProperties.foreach(__v =>
+        __obj.updateDynamic("ProvisionedProductProperties")(__v.asInstanceOf[js.Any])
       )
       RecordId.foreach(__v => __obj.updateDynamic("RecordId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5872,8 +5872,8 @@ package servicecatalog {
     ): UpdateProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(
-        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      ProvisioningArtifactDetail.foreach(__v =>
+        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningArtifactOutput]
@@ -5932,17 +5932,17 @@ package servicecatalog {
     ): UpdateProvisioningPreferences = {
       val __obj = js.Dynamic.literal()
       StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
-      StackSetFailureToleranceCount.foreach(
-        __v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
+      StackSetFailureToleranceCount.foreach(__v =>
+        __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
       )
-      StackSetFailureTolerancePercentage.foreach(
-        __v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
+      StackSetFailureTolerancePercentage.foreach(__v =>
+        __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyCount.foreach(
-        __v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
+      StackSetMaxConcurrencyCount.foreach(__v =>
+        __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyPercentage.foreach(
-        __v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
+      StackSetMaxConcurrencyPercentage.foreach(__v =>
+        __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
       )
       StackSetOperationType.foreach(__v => __obj.updateDynamic("StackSetOperationType")(__v.asInstanceOf[js.Any]))
       StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))

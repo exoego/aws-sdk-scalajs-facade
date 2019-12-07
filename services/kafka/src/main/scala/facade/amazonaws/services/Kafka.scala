@@ -216,8 +216,8 @@ package kafka {
       BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       ClientSubnet.foreach(__v => __obj.updateDynamic("ClientSubnet")(__v.asInstanceOf[js.Any]))
       ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(
-        __v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
+      CurrentBrokerSoftwareInfo.foreach(__v =>
+        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
       )
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerNodeInfo]
@@ -329,8 +329,8 @@ package kafka {
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(
-        __v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
+      CurrentBrokerSoftwareInfo.foreach(__v =>
+        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
       )
       CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
       EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
@@ -1345,8 +1345,8 @@ package kafka {
         CertificateAuthorityArnList: js.UndefOr[__listOf__string] = js.undefined
     ): Tls = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityArnList.foreach(
-        __v => __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any])
+      CertificateAuthorityArnList.foreach(__v =>
+        __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Tls]
     }

@@ -460,11 +460,11 @@ package rekognition {
       val __obj = js.Dynamic.literal()
       FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
       SourceImageFace.foreach(__v => __obj.updateDynamic("SourceImageFace")(__v.asInstanceOf[js.Any]))
-      SourceImageOrientationCorrection.foreach(
-        __v => __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any])
+      SourceImageOrientationCorrection.foreach(__v =>
+        __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any])
       )
-      TargetImageOrientationCorrection.foreach(
-        __v => __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any])
+      TargetImageOrientationCorrection.foreach(__v =>
+        __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any])
       )
       UnmatchedFaces.foreach(__v => __obj.updateDynamic("UnmatchedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesResponse]

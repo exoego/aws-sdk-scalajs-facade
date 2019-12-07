@@ -283,8 +283,8 @@ package sts {
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
       Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
-      SubjectFromWebIdentityToken.foreach(
-        __v => __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any])
+      SubjectFromWebIdentityToken.foreach(__v =>
+        __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }

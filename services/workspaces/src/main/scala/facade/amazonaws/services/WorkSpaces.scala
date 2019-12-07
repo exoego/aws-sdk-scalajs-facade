@@ -270,8 +270,8 @@ package workspaces {
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): AccountModification = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
+      DedicatedTenancyManagementCidrRange.foreach(__v =>
+        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
@@ -637,8 +637,8 @@ package workspaces {
       DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
       EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
       EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
-      UserEnabledAsLocalAdministrator.foreach(
-        __v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
+      UserEnabledAsLocalAdministrator.foreach(__v =>
+        __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DefaultWorkspaceCreationProperties]
     }
@@ -801,8 +801,8 @@ package workspaces {
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined
     ): DescribeAccountResult = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
+      DedicatedTenancyManagementCidrRange.foreach(__v =>
+        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountResult]
@@ -1108,8 +1108,8 @@ package workspaces {
     ): DescribeWorkspacesConnectionStatusResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WorkspacesConnectionStatus.foreach(
-        __v => __obj.updateDynamic("WorkspacesConnectionStatus")(__v.asInstanceOf[js.Any])
+      WorkspacesConnectionStatus.foreach(__v =>
+        __obj.updateDynamic("WorkspacesConnectionStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeWorkspacesConnectionStatusResult]
     }
@@ -1410,8 +1410,8 @@ package workspaces {
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined
     ): ModifyAccountRequest = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
+      DedicatedTenancyManagementCidrRange.foreach(__v =>
+        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyAccountRequest]
@@ -2080,14 +2080,14 @@ package workspaces {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       ModificationStates.foreach(__v => __obj.updateDynamic("ModificationStates")(__v.asInstanceOf[js.Any]))
-      RootVolumeEncryptionEnabled.foreach(
-        __v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      RootVolumeEncryptionEnabled.foreach(__v =>
+        __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
       )
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(
-        __v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      UserVolumeEncryptionEnabled.foreach(__v =>
+        __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
       )
       VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
       WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
@@ -2154,11 +2154,11 @@ package workspaces {
     ): WorkspaceConnectionStatus = {
       val __obj = js.Dynamic.literal()
       ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
-      ConnectionStateCheckTimestamp.foreach(
-        __v => __obj.updateDynamic("ConnectionStateCheckTimestamp")(__v.asInstanceOf[js.Any])
+      ConnectionStateCheckTimestamp.foreach(__v =>
+        __obj.updateDynamic("ConnectionStateCheckTimestamp")(__v.asInstanceOf[js.Any])
       )
-      LastKnownUserConnectionTimestamp.foreach(
-        __v => __obj.updateDynamic("LastKnownUserConnectionTimestamp")(__v.asInstanceOf[js.Any])
+      LastKnownUserConnectionTimestamp.foreach(__v =>
+        __obj.updateDynamic("LastKnownUserConnectionTimestamp")(__v.asInstanceOf[js.Any])
       )
       WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceConnectionStatus]
@@ -2213,8 +2213,8 @@ package workspaces {
       RegistrationCode.foreach(__v => __obj.updateDynamic("RegistrationCode")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      WorkspaceCreationProperties.foreach(
-        __v => __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any])
+      WorkspaceCreationProperties.foreach(__v =>
+        __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any])
       )
       WorkspaceSecurityGroupId.foreach(__v => __obj.updateDynamic("WorkspaceSecurityGroupId")(__v.asInstanceOf[js.Any]))
       ipGroupIds.foreach(__v => __obj.updateDynamic("ipGroupIds")(__v.asInstanceOf[js.Any]))
@@ -2327,8 +2327,8 @@ package workspaces {
       ComputeTypeName.foreach(__v => __obj.updateDynamic("ComputeTypeName")(__v.asInstanceOf[js.Any]))
       RootVolumeSizeGib.foreach(__v => __obj.updateDynamic("RootVolumeSizeGib")(__v.asInstanceOf[js.Any]))
       RunningMode.foreach(__v => __obj.updateDynamic("RunningMode")(__v.asInstanceOf[js.Any]))
-      RunningModeAutoStopTimeoutInMinutes.foreach(
-        __v => __obj.updateDynamic("RunningModeAutoStopTimeoutInMinutes")(__v.asInstanceOf[js.Any])
+      RunningModeAutoStopTimeoutInMinutes.foreach(__v =>
+        __obj.updateDynamic("RunningModeAutoStopTimeoutInMinutes")(__v.asInstanceOf[js.Any])
       )
       UserVolumeSizeGib.foreach(__v => __obj.updateDynamic("UserVolumeSizeGib")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceProperties]
@@ -2368,12 +2368,12 @@ package workspaces {
         "UserName"    -> UserName.asInstanceOf[js.Any]
       )
 
-      RootVolumeEncryptionEnabled.foreach(
-        __v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      RootVolumeEncryptionEnabled.foreach(__v =>
+        __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(
-        __v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      UserVolumeEncryptionEnabled.foreach(__v =>
+        __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
       )
       VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
       WorkspaceProperties.foreach(__v => __obj.updateDynamic("WorkspaceProperties")(__v.asInstanceOf[js.Any]))

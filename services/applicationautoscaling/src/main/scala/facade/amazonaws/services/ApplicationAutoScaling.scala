@@ -622,11 +622,11 @@ package applicationautoscaling {
       )
 
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(
-        __v => __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
+      StepScalingPolicyConfiguration.foreach(__v =>
+        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
       )
-      TargetTrackingScalingPolicyConfiguration.foreach(
-        __v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
+      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
+        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutScalingPolicyRequest]
     }
@@ -952,11 +952,11 @@ package applicationautoscaling {
       )
 
       Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(
-        __v => __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
+      StepScalingPolicyConfiguration.foreach(__v =>
+        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
       )
-      TargetTrackingScalingPolicyConfiguration.foreach(
-        __v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
+      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
+        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScalingPolicy]
     }
@@ -1108,14 +1108,14 @@ package applicationautoscaling {
         ScheduledScalingSuspended: js.UndefOr[ScalingSuspended] = js.undefined
     ): SuspendedState = {
       val __obj = js.Dynamic.literal()
-      DynamicScalingInSuspended.foreach(
-        __v => __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any])
+      DynamicScalingInSuspended.foreach(__v =>
+        __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any])
       )
-      DynamicScalingOutSuspended.foreach(
-        __v => __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any])
+      DynamicScalingOutSuspended.foreach(__v =>
+        __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any])
       )
-      ScheduledScalingSuspended.foreach(
-        __v => __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any])
+      ScheduledScalingSuspended.foreach(__v =>
+        __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SuspendedState]
     }
@@ -1148,12 +1148,12 @@ package applicationautoscaling {
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      CustomizedMetricSpecification.foreach(
-        __v => __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
+      CustomizedMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
       )
       DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
-      PredefinedMetricSpecification.foreach(
-        __v => __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
+      PredefinedMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
       )
       ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
       ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))

@@ -342,8 +342,8 @@ package transcribeservice {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TranscriptionJobSummaries.foreach(
-        __v => __obj.updateDynamic("TranscriptionJobSummaries")(__v.asInstanceOf[js.Any])
+      TranscriptionJobSummaries.foreach(__v =>
+        __obj.updateDynamic("TranscriptionJobSummaries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTranscriptionJobsResponse]
     }

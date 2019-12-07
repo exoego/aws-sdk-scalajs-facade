@@ -258,8 +258,8 @@ package lambda {
       CodeSizeZipped.foreach(__v => __obj.updateDynamic("CodeSizeZipped")(__v.asInstanceOf[js.Any]))
       ConcurrentExecutions.foreach(__v => __obj.updateDynamic("ConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
-      UnreservedConcurrentExecutions.foreach(
-        __v => __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      UnreservedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AccountLimit]
     }
@@ -464,8 +464,8 @@ package lambda {
         ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
     ): Concurrency = {
       val __obj = js.Dynamic.literal()
-      ReservedConcurrentExecutions.foreach(
-        __v => __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      ReservedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Concurrency]
     }
@@ -530,12 +530,12 @@ package lambda {
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(
-        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      MaximumBatchingWindowInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
-      StartingPositionTimestamp.foreach(
-        __v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
+      StartingPositionTimestamp.foreach(__v =>
+        __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateEventSourceMappingRequest]
     }
@@ -820,8 +820,8 @@ package lambda {
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(
-        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      MaximumBatchingWindowInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
@@ -2171,8 +2171,8 @@ package lambda {
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(
-        __v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
+      MaximumBatchingWindowInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }

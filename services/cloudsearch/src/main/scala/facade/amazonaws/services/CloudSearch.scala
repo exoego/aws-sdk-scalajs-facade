@@ -217,8 +217,8 @@ package cloudsearch {
     ): AnalysisOptions = {
       val __obj = js.Dynamic.literal()
       AlgorithmicStemming.foreach(__v => __obj.updateDynamic("AlgorithmicStemming")(__v.asInstanceOf[js.Any]))
-      JapaneseTokenizationDictionary.foreach(
-        __v => __obj.updateDynamic("JapaneseTokenizationDictionary")(__v.asInstanceOf[js.Any])
+      JapaneseTokenizationDictionary.foreach(__v =>
+        __obj.updateDynamic("JapaneseTokenizationDictionary")(__v.asInstanceOf[js.Any])
       )
       StemmingDictionary.foreach(__v => __obj.updateDynamic("StemmingDictionary")(__v.asInstanceOf[js.Any]))
       Stopwords.foreach(__v => __obj.updateDynamic("Stopwords")(__v.asInstanceOf[js.Any]))

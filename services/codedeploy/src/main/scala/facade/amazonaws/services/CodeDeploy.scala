@@ -823,11 +823,11 @@ package codedeploy {
     ): BlueGreenDeploymentConfiguration = {
       val __obj = js.Dynamic.literal()
       deploymentReadyOption.foreach(__v => __obj.updateDynamic("deploymentReadyOption")(__v.asInstanceOf[js.Any]))
-      greenFleetProvisioningOption.foreach(
-        __v => __obj.updateDynamic("greenFleetProvisioningOption")(__v.asInstanceOf[js.Any])
+      greenFleetProvisioningOption.foreach(__v =>
+        __obj.updateDynamic("greenFleetProvisioningOption")(__v.asInstanceOf[js.Any])
       )
-      terminateBlueInstancesOnDeploymentSuccess.foreach(
-        __v => __obj.updateDynamic("terminateBlueInstancesOnDeploymentSuccess")(__v.asInstanceOf[js.Any])
+      terminateBlueInstancesOnDeploymentSuccess.foreach(__v =>
+        __obj.updateDynamic("terminateBlueInstancesOnDeploymentSuccess")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlueGreenDeploymentConfiguration]
     }
@@ -850,8 +850,8 @@ package codedeploy {
     ): BlueInstanceTerminationOption = {
       val __obj = js.Dynamic.literal()
       action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
-      terminationWaitTimeInMinutes.foreach(
-        __v => __obj.updateDynamic("terminationWaitTimeInMinutes")(__v.asInstanceOf[js.Any])
+      terminationWaitTimeInMinutes.foreach(__v =>
+        __obj.updateDynamic("terminationWaitTimeInMinutes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlueInstanceTerminationOption]
     }
@@ -1041,12 +1041,12 @@ package codedeploy {
       )
 
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(
-        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(__v =>
+        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
+      blueGreenDeploymentConfiguration.foreach(__v =>
+        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
@@ -1054,8 +1054,8 @@ package codedeploy {
       ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
       ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(
-        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
+      onPremisesInstanceTagFilters.foreach(__v =>
+        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1118,20 +1118,20 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      autoRollbackConfiguration.foreach(
-        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(__v =>
+        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
-      ignoreApplicationStopFailures.foreach(
-        __v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
+      ignoreApplicationStopFailures.foreach(__v =>
+        __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
       )
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(
-        __v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
+      updateOutdatedInstancesOnly.foreach(__v =>
+        __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDeploymentInput]
     }
@@ -1377,12 +1377,12 @@ package codedeploy {
       val __obj = js.Dynamic.literal()
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
       applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(
-        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(__v =>
+        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
+      blueGreenDeploymentConfiguration.foreach(__v =>
+        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
       computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
@@ -1395,8 +1395,8 @@ package codedeploy {
       lastAttemptedDeployment.foreach(__v => __obj.updateDynamic("lastAttemptedDeployment")(__v.asInstanceOf[js.Any]))
       lastSuccessfulDeployment.foreach(__v => __obj.updateDynamic("lastSuccessfulDeployment")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(
-        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
+      onPremisesInstanceTagFilters.foreach(__v =>
+        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
@@ -1472,15 +1472,15 @@ package codedeploy {
         updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
     ): DeploymentInfo = {
       val __obj = js.Dynamic.literal()
-      additionalDeploymentStatusInfo.foreach(
-        __v => __obj.updateDynamic("additionalDeploymentStatusInfo")(__v.asInstanceOf[js.Any])
+      additionalDeploymentStatusInfo.foreach(__v =>
+        __obj.updateDynamic("additionalDeploymentStatusInfo")(__v.asInstanceOf[js.Any])
       )
       applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(
-        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(__v =>
+        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
-      blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
+      blueGreenDeploymentConfiguration.foreach(__v =>
+        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
       completeTime.foreach(__v => __obj.updateDynamic("completeTime")(__v.asInstanceOf[js.Any]))
       computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
@@ -1495,11 +1495,11 @@ package codedeploy {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       errorInformation.foreach(__v => __obj.updateDynamic("errorInformation")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
-      ignoreApplicationStopFailures.foreach(
-        __v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
+      ignoreApplicationStopFailures.foreach(__v =>
+        __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
       )
-      instanceTerminationWaitTimeStarted.foreach(
-        __v => __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any])
+      instanceTerminationWaitTimeStarted.foreach(__v =>
+        __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any])
       )
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       previousRevision.foreach(__v => __obj.updateDynamic("previousRevision")(__v.asInstanceOf[js.Any]))
@@ -1508,8 +1508,8 @@ package codedeploy {
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(
-        __v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
+      updateOutdatedInstancesOnly.foreach(__v =>
+        __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeploymentInfo]
     }
@@ -3251,8 +3251,8 @@ package codedeploy {
     ): PutLifecycleEventHookExecutionStatusInput = {
       val __obj = js.Dynamic.literal()
       deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
-      lifecycleEventHookExecutionId.foreach(
-        __v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
+      lifecycleEventHookExecutionId.foreach(__v =>
+        __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
       )
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusInput]
@@ -3270,8 +3270,8 @@ package codedeploy {
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined
     ): PutLifecycleEventHookExecutionStatusOutput = {
       val __obj = js.Dynamic.literal()
-      lifecycleEventHookExecutionId.foreach(
-        __v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
+      lifecycleEventHookExecutionId.foreach(__v =>
+        __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusOutput]
     }
@@ -3467,8 +3467,8 @@ package codedeploy {
       val __obj = js.Dynamic.literal()
       rollbackDeploymentId.foreach(__v => __obj.updateDynamic("rollbackDeploymentId")(__v.asInstanceOf[js.Any]))
       rollbackMessage.foreach(__v => __obj.updateDynamic("rollbackMessage")(__v.asInstanceOf[js.Any]))
-      rollbackTriggeringDeploymentId.foreach(
-        __v => __obj.updateDynamic("rollbackTriggeringDeploymentId")(__v.asInstanceOf[js.Any])
+      rollbackTriggeringDeploymentId.foreach(__v =>
+        __obj.updateDynamic("rollbackTriggeringDeploymentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RollbackInfo]
     }
@@ -4043,12 +4043,12 @@ package codedeploy {
       )
 
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(
-        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(__v =>
+        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
+      blueGreenDeploymentConfiguration.foreach(__v =>
+        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
@@ -4057,8 +4057,8 @@ package codedeploy {
       ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       newDeploymentGroupName.foreach(__v => __obj.updateDynamic("newDeploymentGroupName")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(
-        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
+      onPremisesInstanceTagFilters.foreach(__v =>
+        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))

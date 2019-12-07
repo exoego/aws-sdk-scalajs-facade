@@ -589,8 +589,8 @@ package appstream {
         "SourceImageName"      -> SourceImageName.asInstanceOf[js.Any]
       )
 
-      DestinationImageDescription.foreach(
-        __v => __obj.updateDynamic("DestinationImageDescription")(__v.asInstanceOf[js.Any])
+      DestinationImageDescription.foreach(__v =>
+        __obj.updateDynamic("DestinationImageDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CopyImageRequest]
     }
@@ -699,18 +699,18 @@ package appstream {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      DisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(
-        __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
+      EnableDefaultInternetAccess.foreach(__v =>
+        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      IdleDisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
@@ -781,8 +781,8 @@ package appstream {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(
-        __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
+      EnableDefaultInternetAccess.foreach(__v =>
+        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
@@ -1459,8 +1459,8 @@ package appstream {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SharedImagePermissionsList.foreach(
-        __v => __obj.updateDynamic("SharedImagePermissionsList")(__v.asInstanceOf[js.Any])
+      SharedImagePermissionsList.foreach(__v =>
+        __obj.updateDynamic("SharedImagePermissionsList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeImagePermissionsResult]
     }
@@ -1755,11 +1755,11 @@ package appstream {
       )
 
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedNames.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
       )
-      ServiceAccountCredentials.foreach(
-        __v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
+      ServiceAccountCredentials.foreach(__v =>
+        __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DirectoryConfig]
     }
@@ -1850,8 +1850,8 @@ package appstream {
     ): DomainJoinInfo = {
       val __obj = js.Dynamic.literal()
       DirectoryName.foreach(__v => __obj.updateDynamic("DirectoryName")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedName.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedName.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DomainJoinInfo]
     }
@@ -1981,19 +1981,19 @@ package appstream {
 
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      DisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(
-        __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
+      EnableDefaultInternetAccess.foreach(__v =>
+        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       FleetErrors.foreach(__v => __obj.updateDynamic("FleetErrors")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      IdleDisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
@@ -2178,8 +2178,8 @@ package appstream {
       ImageBuilderSupported.foreach(__v => __obj.updateDynamic("ImageBuilderSupported")(__v.asInstanceOf[js.Any]))
       ImagePermissions.foreach(__v => __obj.updateDynamic("ImagePermissions")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
-      PublicBaseImageReleasedDate.foreach(
-        __v => __obj.updateDynamic("PublicBaseImageReleasedDate")(__v.asInstanceOf[js.Any])
+      PublicBaseImageReleasedDate.foreach(__v =>
+        __obj.updateDynamic("PublicBaseImageReleasedDate")(__v.asInstanceOf[js.Any])
       )
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
@@ -2246,15 +2246,15 @@ package appstream {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(
-        __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
+      EnableDefaultInternetAccess.foreach(__v =>
+        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageBuilderErrors.foreach(__v => __obj.updateDynamic("ImageBuilderErrors")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      NetworkAccessConfiguration.foreach(
-        __v => __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
+      NetworkAccessConfiguration.foreach(__v =>
+        __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
       )
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -2642,8 +2642,8 @@ package appstream {
       AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
       ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
       MaxExpirationTime.foreach(__v => __obj.updateDynamic("MaxExpirationTime")(__v.asInstanceOf[js.Any]))
-      NetworkAccessConfiguration.foreach(
-        __v => __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
+      NetworkAccessConfiguration.foreach(__v =>
+        __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
       )
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Session]
@@ -3065,11 +3065,11 @@ package appstream {
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
       )
 
-      OrganizationalUnitDistinguishedNames.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
       )
-      ServiceAccountCredentials.foreach(
-        __v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
+      ServiceAccountCredentials.foreach(__v =>
+        __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateDirectoryConfigRequest]
     }
@@ -3136,17 +3136,17 @@ package appstream {
       ComputeCapacity.foreach(__v => __obj.updateDynamic("ComputeCapacity")(__v.asInstanceOf[js.Any]))
       DeleteVpcConfig.foreach(__v => __obj.updateDynamic("DeleteVpcConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      DisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(
-        __v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
+      EnableDefaultInternetAccess.foreach(__v =>
+        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
       )
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      IdleDisconnectTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))

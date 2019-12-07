@@ -593,8 +593,8 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
@@ -646,8 +646,8 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
@@ -717,8 +717,8 @@ package pinpoint {
       CollapseId.foreach(__v => __obj.updateDynamic("CollapseId")(__v.asInstanceOf[js.Any]))
       Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
       MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
-      PreferredAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("PreferredAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      PreferredAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("PreferredAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
@@ -797,8 +797,8 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
@@ -850,8 +850,8 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
@@ -895,8 +895,8 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
@@ -948,8 +948,8 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
@@ -993,8 +993,8 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
@@ -1046,8 +1046,8 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(
-        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      DefaultAuthenticationMethod.foreach(__v =>
+        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
@@ -3318,8 +3318,8 @@ package pinpoint {
       APNSMessage.foreach(__v => __obj.updateDynamic("APNSMessage")(__v.asInstanceOf[js.Any]))
       BaiduMessage.foreach(__v => __obj.updateDynamic("BaiduMessage")(__v.asInstanceOf[js.Any]))
       DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
-      DefaultPushNotificationMessage.foreach(
-        __v => __obj.updateDynamic("DefaultPushNotificationMessage")(__v.asInstanceOf[js.Any])
+      DefaultPushNotificationMessage.foreach(__v =>
+        __obj.updateDynamic("DefaultPushNotificationMessage")(__v.asInstanceOf[js.Any])
       )
       EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
       GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
@@ -3461,8 +3461,8 @@ package pinpoint {
     ): EmailMessage = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingAddress.foreach(
-        __v => __obj.updateDynamic("FeedbackForwardingAddress")(__v.asInstanceOf[js.Any])
+      FeedbackForwardingAddress.foreach(__v =>
+        __obj.updateDynamic("FeedbackForwardingAddress")(__v.asInstanceOf[js.Any])
       )
       FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
       RawEmail.foreach(__v => __obj.updateDynamic("RawEmail")(__v.asInstanceOf[js.Any]))
@@ -7192,8 +7192,8 @@ package pinpoint {
       Carrier.foreach(__v => __obj.updateDynamic("Carrier")(__v.asInstanceOf[js.Any]))
       City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
       CleansedPhoneNumberE164.foreach(__v => __obj.updateDynamic("CleansedPhoneNumberE164")(__v.asInstanceOf[js.Any]))
-      CleansedPhoneNumberNational.foreach(
-        __v => __obj.updateDynamic("CleansedPhoneNumberNational")(__v.asInstanceOf[js.Any])
+      CleansedPhoneNumberNational.foreach(__v =>
+        __obj.updateDynamic("CleansedPhoneNumberNational")(__v.asInstanceOf[js.Any])
       )
       Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
       CountryCodeIso2.foreach(__v => __obj.updateDynamic("CountryCodeIso2")(__v.asInstanceOf[js.Any]))
@@ -7746,13 +7746,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
-      PromotionalMessagesPerSecond.foreach(
-        __v => __obj.updateDynamic("PromotionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
+      PromotionalMessagesPerSecond.foreach(__v =>
+        __obj.updateDynamic("PromotionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
       )
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
       ShortCode.foreach(__v => __obj.updateDynamic("ShortCode")(__v.asInstanceOf[js.Any]))
-      TransactionalMessagesPerSecond.foreach(
-        __v => __obj.updateDynamic("TransactionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
+      TransactionalMessagesPerSecond.foreach(__v =>
+        __obj.updateDynamic("TransactionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
       )
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSChannelResponse]

@@ -668,8 +668,8 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(
-        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      DefaultInstanceProfileArn.foreach(__v =>
+        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
       )
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
@@ -679,8 +679,8 @@ package opsworks {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(
-        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      UseOpsworksSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloneStackRequest]
@@ -1305,8 +1305,8 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsConfiguration.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
       )
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
@@ -1314,8 +1314,8 @@ package opsworks {
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(
-        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      LifecycleEventConfiguration.foreach(__v =>
+        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
       )
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
       UseEbsOptimizedInstances.foreach(__v => __obj.updateDynamic("UseEbsOptimizedInstances")(__v.asInstanceOf[js.Any]))
@@ -1409,8 +1409,8 @@ package opsworks {
       DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
       HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(
-        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      UseOpsworksSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackRequest]
@@ -2196,8 +2196,8 @@ package opsworks {
         LoadBasedAutoScalingConfigurations: js.UndefOr[LoadBasedAutoScalingConfigurations] = js.undefined
     ): DescribeLoadBasedAutoScalingResult = {
       val __obj = js.Dynamic.literal()
-      LoadBasedAutoScalingConfigurations.foreach(
-        __v => __obj.updateDynamic("LoadBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
+      LoadBasedAutoScalingConfigurations.foreach(__v =>
+        __obj.updateDynamic("LoadBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeLoadBasedAutoScalingResult]
     }
@@ -2545,8 +2545,8 @@ package opsworks {
         TimeBasedAutoScalingConfigurations: js.UndefOr[TimeBasedAutoScalingConfigurations] = js.undefined
     ): DescribeTimeBasedAutoScalingResult = {
       val __obj = js.Dynamic.literal()
-      TimeBasedAutoScalingConfigurations.foreach(
-        __v => __obj.updateDynamic("TimeBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
+      TimeBasedAutoScalingConfigurations.foreach(__v =>
+        __obj.updateDynamic("TimeBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTimeBasedAutoScalingResult]
     }
@@ -3209,8 +3209,8 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsConfiguration.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
       )
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
@@ -3218,14 +3218,14 @@ package opsworks {
       CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       DefaultRecipes.foreach(__v => __obj.updateDynamic("DefaultRecipes")(__v.asInstanceOf[js.Any]))
-      DefaultSecurityGroupNames.foreach(
-        __v => __obj.updateDynamic("DefaultSecurityGroupNames")(__v.asInstanceOf[js.Any])
+      DefaultSecurityGroupNames.foreach(__v =>
+        __obj.updateDynamic("DefaultSecurityGroupNames")(__v.asInstanceOf[js.Any])
       )
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
       LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(
-        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      LifecycleEventConfiguration.foreach(__v =>
+        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
@@ -4049,8 +4049,8 @@ package opsworks {
         ExecutionTimeout: js.UndefOr[Int] = js.undefined
     ): ShutdownEventConfiguration = {
       val __obj = js.Dynamic.literal()
-      DelayUntilElbConnectionsDrained.foreach(
-        __v => __obj.updateDynamic("DelayUntilElbConnectionsDrained")(__v.asInstanceOf[js.Any])
+      DelayUntilElbConnectionsDrained.foreach(__v =>
+        __obj.updateDynamic("DelayUntilElbConnectionsDrained")(__v.asInstanceOf[js.Any])
       )
       ExecutionTimeout.foreach(__v => __obj.updateDynamic("ExecutionTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShutdownEventConfiguration]
@@ -4192,8 +4192,8 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(
-        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      DefaultInstanceProfileArn.foreach(__v =>
+        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
       )
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
@@ -4205,8 +4205,8 @@ package opsworks {
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(
-        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      UseOpsworksSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stack]
@@ -4647,8 +4647,8 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsConfiguration.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
       )
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
@@ -4656,8 +4656,8 @@ package opsworks {
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(
-        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      LifecycleEventConfiguration.foreach(__v =>
+        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
@@ -4763,8 +4763,8 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(
-        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      DefaultInstanceProfileArn.foreach(__v =>
+        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
       )
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
@@ -4774,8 +4774,8 @@ package opsworks {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(
-        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      UseOpsworksSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateStackRequest]
     }

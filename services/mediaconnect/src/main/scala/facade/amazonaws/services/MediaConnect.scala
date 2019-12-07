@@ -350,8 +350,8 @@ package mediaconnect {
         "RoleArn"   -> RoleArn.asInstanceOf[js.Any]
       )
 
-      ConstantInitializationVector.foreach(
-        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
+      ConstantInitializationVector.foreach(__v =>
+        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
@@ -392,8 +392,8 @@ package mediaconnect {
         "Subscribers"    -> Subscribers.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(
-        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      DataTransferSubscriberFeePercent.foreach(__v =>
+        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -471,8 +471,8 @@ package mediaconnect {
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(
-        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      DataTransferSubscriberFeePercent.foreach(__v =>
+        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -663,8 +663,8 @@ package mediaconnect {
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(
-        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      DataTransferSubscriberFeePercent.foreach(__v =>
+        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListedEntitlement]
     }
@@ -763,8 +763,8 @@ package mediaconnect {
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(
-        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      DataTransferSubscriberFeePercent.foreach(__v =>
+        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
@@ -949,8 +949,8 @@ package mediaconnect {
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(
-        __v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
+      DataTransferSubscriberFeePercent.foreach(__v =>
+        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
       )
       Decryption.foreach(__v => __obj.updateDynamic("Decryption")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1171,8 +1171,8 @@ package mediaconnect {
     ): UpdateEncryption = {
       val __obj = js.Dynamic.literal()
       Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
-      ConstantInitializationVector.foreach(
-        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
+      ConstantInitializationVector.foreach(__v =>
+        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))

@@ -262,23 +262,23 @@ package firehose {
       )
 
       DeliveryStreamType.foreach(__v => __obj.updateDynamic("DeliveryStreamType")(__v.asInstanceOf[js.Any]))
-      ElasticsearchDestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("ElasticsearchDestinationConfiguration")(__v.asInstanceOf[js.Any])
+      ElasticsearchDestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchDestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      ExtendedS3DestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("ExtendedS3DestinationConfiguration")(__v.asInstanceOf[js.Any])
+      ExtendedS3DestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("ExtendedS3DestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      KinesisStreamSourceConfiguration.foreach(
-        __v => __obj.updateDynamic("KinesisStreamSourceConfiguration")(__v.asInstanceOf[js.Any])
+      KinesisStreamSourceConfiguration.foreach(__v =>
+        __obj.updateDynamic("KinesisStreamSourceConfiguration")(__v.asInstanceOf[js.Any])
       )
-      RedshiftDestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("RedshiftDestinationConfiguration")(__v.asInstanceOf[js.Any])
+      RedshiftDestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("RedshiftDestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      S3DestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("S3DestinationConfiguration")(__v.asInstanceOf[js.Any])
+      S3DestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("S3DestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      SplunkDestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("SplunkDestinationConfiguration")(__v.asInstanceOf[js.Any])
+      SplunkDestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("SplunkDestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeliveryStreamInput]
@@ -323,8 +323,8 @@ package firehose {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InputFormatConfiguration.foreach(__v => __obj.updateDynamic("InputFormatConfiguration")(__v.asInstanceOf[js.Any]))
-      OutputFormatConfiguration.foreach(
-        __v => __obj.updateDynamic("OutputFormatConfiguration")(__v.asInstanceOf[js.Any])
+      OutputFormatConfiguration.foreach(__v =>
+        __obj.updateDynamic("OutputFormatConfiguration")(__v.asInstanceOf[js.Any])
       )
       SchemaConfiguration.foreach(__v => __obj.updateDynamic("SchemaConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataFormatConversionConfiguration]
@@ -406,8 +406,8 @@ package firehose {
       )
 
       CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
-      DeliveryStreamEncryptionConfiguration.foreach(
-        __v => __obj.updateDynamic("DeliveryStreamEncryptionConfiguration")(__v.asInstanceOf[js.Any])
+      DeliveryStreamEncryptionConfiguration.foreach(__v =>
+        __obj.updateDynamic("DeliveryStreamEncryptionConfiguration")(__v.asInstanceOf[js.Any])
       )
       LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
@@ -476,8 +476,8 @@ package firehose {
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
       )
 
-      ExclusiveStartDestinationId.foreach(
-        __v => __obj.updateDynamic("ExclusiveStartDestinationId")(__v.asInstanceOf[js.Any])
+      ExclusiveStartDestinationId.foreach(__v =>
+        __obj.updateDynamic("ExclusiveStartDestinationId")(__v.asInstanceOf[js.Any])
       )
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeliveryStreamInput]
@@ -551,18 +551,18 @@ package firehose {
         "DestinationId" -> DestinationId.asInstanceOf[js.Any]
       )
 
-      ElasticsearchDestinationDescription.foreach(
-        __v => __obj.updateDynamic("ElasticsearchDestinationDescription")(__v.asInstanceOf[js.Any])
+      ElasticsearchDestinationDescription.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchDestinationDescription")(__v.asInstanceOf[js.Any])
       )
-      ExtendedS3DestinationDescription.foreach(
-        __v => __obj.updateDynamic("ExtendedS3DestinationDescription")(__v.asInstanceOf[js.Any])
+      ExtendedS3DestinationDescription.foreach(__v =>
+        __obj.updateDynamic("ExtendedS3DestinationDescription")(__v.asInstanceOf[js.Any])
       )
-      RedshiftDestinationDescription.foreach(
-        __v => __obj.updateDynamic("RedshiftDestinationDescription")(__v.asInstanceOf[js.Any])
+      RedshiftDestinationDescription.foreach(__v =>
+        __obj.updateDynamic("RedshiftDestinationDescription")(__v.asInstanceOf[js.Any])
       )
       S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
-      SplunkDestinationDescription.foreach(
-        __v => __obj.updateDynamic("SplunkDestinationDescription")(__v.asInstanceOf[js.Any])
+      SplunkDestinationDescription.foreach(__v =>
+        __obj.updateDynamic("SplunkDestinationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DestinationDescription]
     }
@@ -846,8 +846,8 @@ package firehose {
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
-      DataFormatConversionConfiguration.foreach(
-        __v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
+      DataFormatConversionConfiguration.foreach(__v =>
+        __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
       )
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
@@ -903,8 +903,8 @@ package firehose {
       )
 
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
-      DataFormatConversionConfiguration.foreach(
-        __v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
+      DataFormatConversionConfiguration.foreach(__v =>
+        __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
       )
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -955,8 +955,8 @@ package firehose {
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
-      DataFormatConversionConfiguration.foreach(
-        __v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
+      DataFormatConversionConfiguration.foreach(__v =>
+        __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any])
       )
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
@@ -1100,8 +1100,8 @@ package firehose {
     ): ListDeliveryStreamsInput = {
       val __obj = js.Dynamic.literal()
       DeliveryStreamType.foreach(__v => __obj.updateDynamic("DeliveryStreamType")(__v.asInstanceOf[js.Any]))
-      ExclusiveStartDeliveryStreamName.foreach(
-        __v => __obj.updateDynamic("ExclusiveStartDeliveryStreamName")(__v.asInstanceOf[js.Any])
+      ExclusiveStartDeliveryStreamName.foreach(__v =>
+        __obj.updateDynamic("ExclusiveStartDeliveryStreamName")(__v.asInstanceOf[js.Any])
       )
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeliveryStreamsInput]
@@ -1200,8 +1200,8 @@ package firehose {
       val __obj = js.Dynamic.literal()
       CaseInsensitive.foreach(__v => __obj.updateDynamic("CaseInsensitive")(__v.asInstanceOf[js.Any]))
       ColumnToJsonKeyMappings.foreach(__v => __obj.updateDynamic("ColumnToJsonKeyMappings")(__v.asInstanceOf[js.Any]))
-      ConvertDotsInJsonKeysToUnderscores.foreach(
-        __v => __obj.updateDynamic("ConvertDotsInJsonKeysToUnderscores")(__v.asInstanceOf[js.Any])
+      ConvertDotsInJsonKeysToUnderscores.foreach(__v =>
+        __obj.updateDynamic("ConvertDotsInJsonKeysToUnderscores")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[OpenXJsonSerDe]
     }
@@ -1256,8 +1256,8 @@ package firehose {
       val __obj = js.Dynamic.literal()
       BlockSizeBytes.foreach(__v => __obj.updateDynamic("BlockSizeBytes")(__v.asInstanceOf[js.Any]))
       BloomFilterColumns.foreach(__v => __obj.updateDynamic("BloomFilterColumns")(__v.asInstanceOf[js.Any]))
-      BloomFilterFalsePositiveProbability.foreach(
-        __v => __obj.updateDynamic("BloomFilterFalsePositiveProbability")(__v.asInstanceOf[js.Any])
+      BloomFilterFalsePositiveProbability.foreach(__v =>
+        __obj.updateDynamic("BloomFilterFalsePositiveProbability")(__v.asInstanceOf[js.Any])
       )
       Compression.foreach(__v => __obj.updateDynamic("Compression")(__v.asInstanceOf[js.Any]))
       DictionaryKeyThreshold.foreach(__v => __obj.updateDynamic("DictionaryKeyThreshold")(__v.asInstanceOf[js.Any]))
@@ -1323,8 +1323,8 @@ package firehose {
       val __obj = js.Dynamic.literal()
       BlockSizeBytes.foreach(__v => __obj.updateDynamic("BlockSizeBytes")(__v.asInstanceOf[js.Any]))
       Compression.foreach(__v => __obj.updateDynamic("Compression")(__v.asInstanceOf[js.Any]))
-      EnableDictionaryCompression.foreach(
-        __v => __obj.updateDynamic("EnableDictionaryCompression")(__v.asInstanceOf[js.Any])
+      EnableDictionaryCompression.foreach(__v =>
+        __obj.updateDynamic("EnableDictionaryCompression")(__v.asInstanceOf[js.Any])
       )
       MaxPaddingBytes.foreach(__v => __obj.updateDynamic("MaxPaddingBytes")(__v.asInstanceOf[js.Any]))
       PageSizeBytes.foreach(__v => __obj.updateDynamic("PageSizeBytes")(__v.asInstanceOf[js.Any]))
@@ -1935,8 +1935,8 @@ package firehose {
         KinesisStreamSourceDescription: js.UndefOr[KinesisStreamSourceDescription] = js.undefined
     ): SourceDescription = {
       val __obj = js.Dynamic.literal()
-      KinesisStreamSourceDescription.foreach(
-        __v => __obj.updateDynamic("KinesisStreamSourceDescription")(__v.asInstanceOf[js.Any])
+      KinesisStreamSourceDescription.foreach(__v =>
+        __obj.updateDynamic("KinesisStreamSourceDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SourceDescription]
     }
@@ -1979,8 +1979,8 @@ package firehose {
       )
 
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
-      HECAcknowledgmentTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      HECAcknowledgmentTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
       RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
@@ -2020,8 +2020,8 @@ package firehose {
     ): SplunkDestinationDescription = {
       val __obj = js.Dynamic.literal()
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
-      HECAcknowledgmentTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      HECAcknowledgmentTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       HECEndpoint.foreach(__v => __obj.updateDynamic("HECEndpoint")(__v.asInstanceOf[js.Any]))
       HECEndpointType.foreach(__v => __obj.updateDynamic("HECEndpointType")(__v.asInstanceOf[js.Any]))
@@ -2065,8 +2065,8 @@ package firehose {
     ): SplunkDestinationUpdate = {
       val __obj = js.Dynamic.literal()
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
-      HECAcknowledgmentTimeoutInSeconds.foreach(
-        __v => __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      HECAcknowledgmentTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("HECAcknowledgmentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       HECEndpoint.foreach(__v => __obj.updateDynamic("HECEndpoint")(__v.asInstanceOf[js.Any]))
       HECEndpointType.foreach(__v => __obj.updateDynamic("HECEndpointType")(__v.asInstanceOf[js.Any]))
@@ -2289,14 +2289,14 @@ package firehose {
         "DestinationId"                  -> DestinationId.asInstanceOf[js.Any]
       )
 
-      ElasticsearchDestinationUpdate.foreach(
-        __v => __obj.updateDynamic("ElasticsearchDestinationUpdate")(__v.asInstanceOf[js.Any])
+      ElasticsearchDestinationUpdate.foreach(__v =>
+        __obj.updateDynamic("ElasticsearchDestinationUpdate")(__v.asInstanceOf[js.Any])
       )
-      ExtendedS3DestinationUpdate.foreach(
-        __v => __obj.updateDynamic("ExtendedS3DestinationUpdate")(__v.asInstanceOf[js.Any])
+      ExtendedS3DestinationUpdate.foreach(__v =>
+        __obj.updateDynamic("ExtendedS3DestinationUpdate")(__v.asInstanceOf[js.Any])
       )
-      RedshiftDestinationUpdate.foreach(
-        __v => __obj.updateDynamic("RedshiftDestinationUpdate")(__v.asInstanceOf[js.Any])
+      RedshiftDestinationUpdate.foreach(__v =>
+        __obj.updateDynamic("RedshiftDestinationUpdate")(__v.asInstanceOf[js.Any])
       )
       S3DestinationUpdate.foreach(__v => __obj.updateDynamic("S3DestinationUpdate")(__v.asInstanceOf[js.Any]))
       SplunkDestinationUpdate.foreach(__v => __obj.updateDynamic("SplunkDestinationUpdate")(__v.asInstanceOf[js.Any]))

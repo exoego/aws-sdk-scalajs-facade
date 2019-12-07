@@ -288,12 +288,12 @@ package pinpointsmsvoice {
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestination = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsDestination.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsDestination.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(
-        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      KinesisFirehoseDestination.foreach(__v =>
+        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
       )
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -324,12 +324,12 @@ package pinpointsmsvoice {
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestinationDefinition = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsDestination.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsDestination.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
       )
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(
-        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      KinesisFirehoseDestination.foreach(__v =>
+        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
       )
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))

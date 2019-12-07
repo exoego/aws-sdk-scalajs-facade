@@ -477,8 +477,8 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(
-        __v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
+      SnowballCapacityPreference.foreach(__v =>
+        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
       )
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
@@ -975,8 +975,8 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingDetails.foreach(__v => __obj.updateDynamic("ShippingDetails")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(
-        __v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
+      SnowballCapacityPreference.foreach(__v =>
+        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
       )
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobMetadata]
@@ -1463,8 +1463,8 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(
-        __v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
+      SnowballCapacityPreference.foreach(__v =>
+        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateJobRequest]
     }

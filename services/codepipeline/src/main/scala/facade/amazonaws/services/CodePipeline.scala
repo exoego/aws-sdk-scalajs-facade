@@ -821,8 +821,8 @@ package codepipeline {
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any]
       )
 
-      actionConfigurationProperties.foreach(
-        __v => __obj.updateDynamic("actionConfigurationProperties")(__v.asInstanceOf[js.Any])
+      actionConfigurationProperties.foreach(__v =>
+        __obj.updateDynamic("actionConfigurationProperties")(__v.asInstanceOf[js.Any])
       )
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionType]
@@ -882,8 +882,8 @@ package codepipeline {
       entityUrlTemplate.foreach(__v => __obj.updateDynamic("entityUrlTemplate")(__v.asInstanceOf[js.Any]))
       executionUrlTemplate.foreach(__v => __obj.updateDynamic("executionUrlTemplate")(__v.asInstanceOf[js.Any]))
       revisionUrlTemplate.foreach(__v => __obj.updateDynamic("revisionUrlTemplate")(__v.asInstanceOf[js.Any]))
-      thirdPartyConfigurationUrl.foreach(
-        __v => __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any])
+      thirdPartyConfigurationUrl.foreach(__v =>
+        __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ActionTypeSettings]
     }
@@ -2057,8 +2057,8 @@ package codepipeline {
     ): ListPipelineExecutionsOutput = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      pipelineExecutionSummaries.foreach(
-        __v => __obj.updateDynamic("pipelineExecutionSummaries")(__v.asInstanceOf[js.Any])
+      pipelineExecutionSummaries.foreach(__v =>
+        __obj.updateDynamic("pipelineExecutionSummaries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListPipelineExecutionsOutput]
     }

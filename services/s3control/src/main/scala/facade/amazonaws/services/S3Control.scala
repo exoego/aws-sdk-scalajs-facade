@@ -223,8 +223,8 @@ package s3control {
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
       val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(
-        __v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
+      PublicAccessBlockConfiguration.foreach(__v =>
+        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
@@ -855,12 +855,12 @@ package s3control {
       ModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("ModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
       NewObjectMetadata.foreach(__v => __obj.updateDynamic("NewObjectMetadata")(__v.asInstanceOf[js.Any]))
       NewObjectTagging.foreach(__v => __obj.updateDynamic("NewObjectTagging")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       RedirectLocation.foreach(__v => __obj.updateDynamic("RedirectLocation")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
@@ -868,8 +868,8 @@ package s3control {
       StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       TargetKeyPrefix.foreach(__v => __obj.updateDynamic("TargetKeyPrefix")(__v.asInstanceOf[js.Any]))
       TargetResource.foreach(__v => __obj.updateDynamic("TargetResource")(__v.asInstanceOf[js.Any]))
-      UnModifiedSinceConstraint.foreach(
-        __v => __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any])
+      UnModifiedSinceConstraint.foreach(__v =>
+        __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[S3CopyObjectOperation]
     }

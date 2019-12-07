@@ -637,25 +637,25 @@ package autoscalingplans {
         "TargetTrackingConfigurations" -> TargetTrackingConfigurations.asInstanceOf[js.Any]
       )
 
-      CustomizedLoadMetricSpecification.foreach(
-        __v => __obj.updateDynamic("CustomizedLoadMetricSpecification")(__v.asInstanceOf[js.Any])
+      CustomizedLoadMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("CustomizedLoadMetricSpecification")(__v.asInstanceOf[js.Any])
       )
       DisableDynamicScaling.foreach(__v => __obj.updateDynamic("DisableDynamicScaling")(__v.asInstanceOf[js.Any]))
-      PredefinedLoadMetricSpecification.foreach(
-        __v => __obj.updateDynamic("PredefinedLoadMetricSpecification")(__v.asInstanceOf[js.Any])
+      PredefinedLoadMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("PredefinedLoadMetricSpecification")(__v.asInstanceOf[js.Any])
       )
-      PredictiveScalingMaxCapacityBehavior.foreach(
-        __v => __obj.updateDynamic("PredictiveScalingMaxCapacityBehavior")(__v.asInstanceOf[js.Any])
+      PredictiveScalingMaxCapacityBehavior.foreach(__v =>
+        __obj.updateDynamic("PredictiveScalingMaxCapacityBehavior")(__v.asInstanceOf[js.Any])
       )
-      PredictiveScalingMaxCapacityBuffer.foreach(
-        __v => __obj.updateDynamic("PredictiveScalingMaxCapacityBuffer")(__v.asInstanceOf[js.Any])
+      PredictiveScalingMaxCapacityBuffer.foreach(__v =>
+        __obj.updateDynamic("PredictiveScalingMaxCapacityBuffer")(__v.asInstanceOf[js.Any])
       )
       PredictiveScalingMode.foreach(__v => __obj.updateDynamic("PredictiveScalingMode")(__v.asInstanceOf[js.Any]))
-      ScalingPolicyUpdateBehavior.foreach(
-        __v => __obj.updateDynamic("ScalingPolicyUpdateBehavior")(__v.asInstanceOf[js.Any])
+      ScalingPolicyUpdateBehavior.foreach(__v =>
+        __obj.updateDynamic("ScalingPolicyUpdateBehavior")(__v.asInstanceOf[js.Any])
       )
-      ScheduledActionBufferTime.foreach(
-        __v => __obj.updateDynamic("ScheduledActionBufferTime")(__v.asInstanceOf[js.Any])
+      ScheduledActionBufferTime.foreach(__v =>
+        __obj.updateDynamic("ScheduledActionBufferTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScalingInstruction]
     }
@@ -825,8 +825,8 @@ package autoscalingplans {
         "PolicyType" -> PolicyType.asInstanceOf[js.Any]
       )
 
-      TargetTrackingConfiguration.foreach(
-        __v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
+      TargetTrackingConfiguration.foreach(__v =>
+        __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScalingPolicy]
     }
@@ -908,13 +908,13 @@ package autoscalingplans {
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      CustomizedScalingMetricSpecification.foreach(
-        __v => __obj.updateDynamic("CustomizedScalingMetricSpecification")(__v.asInstanceOf[js.Any])
+      CustomizedScalingMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("CustomizedScalingMetricSpecification")(__v.asInstanceOf[js.Any])
       )
       DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
       EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
-      PredefinedScalingMetricSpecification.foreach(
-        __v => __obj.updateDynamic("PredefinedScalingMetricSpecification")(__v.asInstanceOf[js.Any])
+      PredefinedScalingMetricSpecification.foreach(__v =>
+        __obj.updateDynamic("PredefinedScalingMetricSpecification")(__v.asInstanceOf[js.Any])
       )
       ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
       ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))

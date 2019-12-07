@@ -253,8 +253,8 @@ package iotevents {
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): CreateDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(
-        __v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
+      detectorModelConfiguration.foreach(__v =>
+        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDetectorModelResponse]
     }
@@ -505,8 +505,8 @@ package iotevents {
         detectorModelDefinition: js.UndefOr[DetectorModelDefinition] = js.undefined
     ): DetectorModel = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(
-        __v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
+      detectorModelConfiguration.foreach(__v =>
+        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
       )
       detectorModelDefinition.foreach(__v => __obj.updateDynamic("detectorModelDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectorModel]
@@ -940,8 +940,8 @@ package iotevents {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDetectorModelVersionsResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelVersionSummaries.foreach(
-        __v => __obj.updateDynamic("detectorModelVersionSummaries")(__v.asInstanceOf[js.Any])
+      detectorModelVersionSummaries.foreach(__v =>
+        __obj.updateDynamic("detectorModelVersionSummaries")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorModelVersionsResponse]
@@ -1481,8 +1481,8 @@ package iotevents {
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): UpdateDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(
-        __v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
+      detectorModelConfiguration.foreach(__v =>
+        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateDetectorModelResponse]
     }

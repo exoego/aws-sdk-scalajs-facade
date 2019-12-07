@@ -539,8 +539,8 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenEnabled.foreach(__v => __obj.updateDynamic("AuthTokenEnabled")(__v.asInstanceOf[js.Any]))
-      AuthTokenLastModifiedDate.foreach(
-        __v => __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
+      AuthTokenLastModifiedDate.foreach(__v =>
+        __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
       )
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       CacheClusterCreateTime.foreach(__v => __obj.updateDynamic("CacheClusterCreateTime")(__v.asInstanceOf[js.Any]))
@@ -551,22 +551,22 @@ package elasticache {
       CacheParameterGroup.foreach(__v => __obj.updateDynamic("CacheParameterGroup")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroups.foreach(__v => __obj.updateDynamic("CacheSecurityGroups")(__v.asInstanceOf[js.Any]))
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
-      ClientDownloadLandingPage.foreach(
-        __v => __obj.updateDynamic("ClientDownloadLandingPage")(__v.asInstanceOf[js.Any])
+      ClientDownloadLandingPage.foreach(__v =>
+        __obj.updateDynamic("ClientDownloadLandingPage")(__v.asInstanceOf[js.Any])
       )
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(
-        __v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
+      NotificationConfiguration.foreach(__v =>
+        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
       )
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -622,11 +622,11 @@ package elasticache {
     ): CacheEngineVersion = {
       val __obj = js.Dynamic.literal()
       CacheEngineDescription.foreach(__v => __obj.updateDynamic("CacheEngineDescription")(__v.asInstanceOf[js.Any]))
-      CacheEngineVersionDescription.foreach(
-        __v => __obj.updateDynamic("CacheEngineVersionDescription")(__v.asInstanceOf[js.Any])
+      CacheEngineVersionDescription.foreach(__v =>
+        __obj.updateDynamic("CacheEngineVersionDescription")(__v.asInstanceOf[js.Any])
       )
-      CacheParameterGroupFamily.foreach(
-        __v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
+      CacheParameterGroupFamily.foreach(__v =>
+        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
       )
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -749,8 +749,8 @@ package elasticache {
     ): CacheNodeTypeSpecificParameter = {
       val __obj = js.Dynamic.literal()
       AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
-      CacheNodeTypeSpecificValues.foreach(
-        __v => __obj.updateDynamic("CacheNodeTypeSpecificValues")(__v.asInstanceOf[js.Any])
+      CacheNodeTypeSpecificValues.foreach(__v =>
+        __obj.updateDynamic("CacheNodeTypeSpecificValues")(__v.asInstanceOf[js.Any])
       )
       ChangeType.foreach(__v => __obj.updateDynamic("ChangeType")(__v.asInstanceOf[js.Any]))
       DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
@@ -820,8 +820,8 @@ package elasticache {
       NodeUpdateInitiatedDate.foreach(__v => __obj.updateDynamic("NodeUpdateInitiatedDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStartDate.foreach(__v => __obj.updateDynamic("NodeUpdateStartDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStatus.foreach(__v => __obj.updateDynamic("NodeUpdateStatus")(__v.asInstanceOf[js.Any]))
-      NodeUpdateStatusModifiedDate.foreach(
-        __v => __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
+      NodeUpdateStatusModifiedDate.foreach(__v =>
+        __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CacheNodeUpdateStatus]
     }
@@ -845,8 +845,8 @@ package elasticache {
         Description: js.UndefOr[String] = js.undefined
     ): CacheParameterGroup = {
       val __obj = js.Dynamic.literal()
-      CacheParameterGroupFamily.foreach(
-        __v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
+      CacheParameterGroupFamily.foreach(__v =>
+        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
       )
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -872,8 +872,8 @@ package elasticache {
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): CacheParameterGroupDetails = {
       val __obj = js.Dynamic.literal()
-      CacheNodeTypeSpecificParameters.foreach(
-        __v => __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
+      CacheNodeTypeSpecificParameters.foreach(__v =>
+        __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
       )
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
@@ -1046,8 +1046,8 @@ package elasticache {
         VpcId: js.UndefOr[String] = js.undefined
     ): CacheSubnetGroup = {
       val __obj = js.Dynamic.literal()
-      CacheSubnetGroupDescription.foreach(
-        __v => __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
+      CacheSubnetGroupDescription.foreach(__v =>
+        __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
       )
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
@@ -1144,8 +1144,8 @@ package elasticache {
         "NodeGroupId"     -> NodeGroupId.asInstanceOf[js.Any]
       )
 
-      PreferredAvailabilityZones.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfigureShard]
     }
@@ -1270,14 +1270,14 @@ package elasticache {
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
-      PreferredAvailabilityZones.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -1523,8 +1523,8 @@ package elasticache {
       NumNodeGroups.foreach(__v => __obj.updateDynamic("NumNodeGroups")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredCacheClusterAZs.foreach(__v => __obj.updateDynamic("PreferredCacheClusterAZs")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
       ReplicasPerNodeGroup.foreach(__v => __obj.updateDynamic("ReplicasPerNodeGroup")(__v.asInstanceOf[js.Any]))
@@ -1877,8 +1877,8 @@ package elasticache {
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      ShowCacheClustersNotInReplicationGroups.foreach(
-        __v => __obj.updateDynamic("ShowCacheClustersNotInReplicationGroups")(__v.asInstanceOf[js.Any])
+      ShowCacheClustersNotInReplicationGroups.foreach(__v =>
+        __obj.updateDynamic("ShowCacheClustersNotInReplicationGroups")(__v.asInstanceOf[js.Any])
       )
       ShowCacheNodeInfo.foreach(__v => __obj.updateDynamic("ShowCacheNodeInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCacheClustersMessage]
@@ -1909,8 +1909,8 @@ package elasticache {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheEngineVersionsMessage = {
       val __obj = js.Dynamic.literal()
-      CacheParameterGroupFamily.foreach(
-        __v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
+      CacheParameterGroupFamily.foreach(__v =>
+        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
       )
       DefaultOnly.foreach(__v => __obj.updateDynamic("DefaultOnly")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
@@ -2166,8 +2166,8 @@ package elasticache {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       ReservedCacheNodeId.foreach(__v => __obj.updateDynamic("ReservedCacheNodeId")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedCacheNodesOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedCacheNodesMessage]
     }
@@ -2205,8 +2205,8 @@ package elasticache {
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedCacheNodesOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReservedCacheNodesOfferingsMessage]
     }
@@ -2333,8 +2333,8 @@ package elasticache {
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
       ServiceUpdateStatus.foreach(__v => __obj.updateDynamic("ServiceUpdateStatus")(__v.asInstanceOf[js.Any]))
       ServiceUpdateTimeRange.foreach(__v => __obj.updateDynamic("ServiceUpdateTimeRange")(__v.asInstanceOf[js.Any]))
-      ShowNodeLevelUpdateStatus.foreach(
-        __v => __obj.updateDynamic("ShowNodeLevelUpdateStatus")(__v.asInstanceOf[js.Any])
+      ShowNodeLevelUpdateStatus.foreach(__v =>
+        __obj.updateDynamic("ShowNodeLevelUpdateStatus")(__v.asInstanceOf[js.Any])
       )
       UpdateActionStatus.foreach(__v => __obj.updateDynamic("UpdateActionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUpdateActionsMessage]
@@ -2408,11 +2408,11 @@ package elasticache {
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
       val __obj = js.Dynamic.literal()
-      CacheNodeTypeSpecificParameters.foreach(
-        __v => __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
+      CacheNodeTypeSpecificParameters.foreach(__v =>
+        __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
       )
-      CacheParameterGroupFamily.foreach(
-        __v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
+      CacheParameterGroupFamily.foreach(__v =>
+        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
       )
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
@@ -2623,8 +2623,8 @@ package elasticache {
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
@@ -2694,8 +2694,8 @@ package elasticache {
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any]
       )
 
-      CacheSubnetGroupDescription.foreach(
-        __v => __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
+      CacheSubnetGroupDescription.foreach(__v =>
+        __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
       )
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyCacheSubnetGroupMessage]
@@ -2785,12 +2785,12 @@ package elasticache {
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
-      ReplicationGroupDescription.foreach(
-        __v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
+      ReplicationGroupDescription.foreach(__v =>
+        __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
       )
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
@@ -2958,8 +2958,8 @@ package elasticache {
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
       CacheNodeId.foreach(__v => __obj.updateDynamic("CacheNodeId")(__v.asInstanceOf[js.Any]))
       CurrentRole.foreach(__v => __obj.updateDynamic("CurrentRole")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
       ReadEndpoint.foreach(__v => __obj.updateDynamic("ReadEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupMember]
@@ -3004,8 +3004,8 @@ package elasticache {
       NodeUpdateInitiatedDate.foreach(__v => __obj.updateDynamic("NodeUpdateInitiatedDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStartDate.foreach(__v => __obj.updateDynamic("NodeUpdateStartDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStatus.foreach(__v => __obj.updateDynamic("NodeUpdateStatus")(__v.asInstanceOf[js.Any]))
-      NodeUpdateStatusModifiedDate.foreach(
-        __v => __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
+      NodeUpdateStatusModifiedDate.foreach(__v =>
+        __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[NodeGroupMemberUpdateStatus]
     }
@@ -3028,8 +3028,8 @@ package elasticache {
     ): NodeGroupUpdateStatus = {
       val __obj = js.Dynamic.literal()
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
-      NodeGroupMemberUpdateStatus.foreach(
-        __v => __obj.updateDynamic("NodeGroupMemberUpdateStatus")(__v.asInstanceOf[js.Any])
+      NodeGroupMemberUpdateStatus.foreach(__v =>
+        __obj.updateDynamic("NodeGroupMemberUpdateStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[NodeGroupUpdateStatus]
     }
@@ -3423,8 +3423,8 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenEnabled.foreach(__v => __obj.updateDynamic("AuthTokenEnabled")(__v.asInstanceOf[js.Any]))
-      AuthTokenLastModifiedDate.foreach(
-        __v => __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
+      AuthTokenLastModifiedDate.foreach(__v =>
+        __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
       )
       AutomaticFailover.foreach(__v => __obj.updateDynamic("AutomaticFailover")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
@@ -3542,8 +3542,8 @@ package elasticache {
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
       ReservationARN.foreach(__v => __obj.updateDynamic("ReservationARN")(__v.asInstanceOf[js.Any]))
       ReservedCacheNodeId.foreach(__v => __obj.updateDynamic("ReservedCacheNodeId")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedCacheNodesOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
       )
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -3608,8 +3608,8 @@ package elasticache {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(
-        __v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
+      ReservedCacheNodesOfferingId.foreach(__v =>
+        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
       )
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedCacheNodesOffering]
@@ -3633,8 +3633,8 @@ package elasticache {
     ): ReservedCacheNodesOfferingMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferings.foreach(
-        __v => __obj.updateDynamic("ReservedCacheNodesOfferings")(__v.asInstanceOf[js.Any])
+      ReservedCacheNodesOfferings.foreach(__v =>
+        __obj.updateDynamic("ReservedCacheNodesOfferings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReservedCacheNodesOfferingMessage]
     }
@@ -3684,8 +3684,8 @@ package elasticache {
     ): ReshardingConfiguration = {
       val __obj = js.Dynamic.literal()
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZones.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReshardingConfiguration]
     }
@@ -3811,8 +3811,8 @@ package elasticache {
         ServiceUpdateType: js.UndefOr[ServiceUpdateType] = js.undefined
     ): ServiceUpdate = {
       val __obj = js.Dynamic.literal()
-      AutoUpdateAfterRecommendedApplyByDate.foreach(
-        __v => __obj.updateDynamic("AutoUpdateAfterRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
+      AutoUpdateAfterRecommendedApplyByDate.foreach(__v =>
+        __obj.updateDynamic("AutoUpdateAfterRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
       )
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -3820,8 +3820,8 @@ package elasticache {
       ServiceUpdateDescription.foreach(__v => __obj.updateDynamic("ServiceUpdateDescription")(__v.asInstanceOf[js.Any]))
       ServiceUpdateEndDate.foreach(__v => __obj.updateDynamic("ServiceUpdateEndDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
-      ServiceUpdateRecommendedApplyByDate.foreach(
-        __v => __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
+      ServiceUpdateRecommendedApplyByDate.foreach(__v =>
+        __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
       )
       ServiceUpdateReleaseDate.foreach(__v => __obj.updateDynamic("ServiceUpdateReleaseDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateSeverity.foreach(__v => __obj.updateDynamic("ServiceUpdateSeverity")(__v.asInstanceOf[js.Any]))
@@ -3976,14 +3976,14 @@ package elasticache {
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       NumNodeGroups.foreach(__v => __obj.updateDynamic("NumNodeGroups")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
+      PreferredAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
-      ReplicationGroupDescription.foreach(
-        __v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
+      ReplicationGroupDescription.foreach(__v =>
+        __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
       )
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SnapshotName.foreach(__v => __obj.updateDynamic("SnapshotName")(__v.asInstanceOf[js.Any]))
@@ -4259,20 +4259,20 @@ package elasticache {
       NodesUpdated.foreach(__v => __obj.updateDynamic("NodesUpdated")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
-      ServiceUpdateRecommendedApplyByDate.foreach(
-        __v => __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
+      ServiceUpdateRecommendedApplyByDate.foreach(__v =>
+        __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
       )
       ServiceUpdateReleaseDate.foreach(__v => __obj.updateDynamic("ServiceUpdateReleaseDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateSeverity.foreach(__v => __obj.updateDynamic("ServiceUpdateSeverity")(__v.asInstanceOf[js.Any]))
       ServiceUpdateStatus.foreach(__v => __obj.updateDynamic("ServiceUpdateStatus")(__v.asInstanceOf[js.Any]))
       ServiceUpdateType.foreach(__v => __obj.updateDynamic("ServiceUpdateType")(__v.asInstanceOf[js.Any]))
       SlaMet.foreach(__v => __obj.updateDynamic("SlaMet")(__v.asInstanceOf[js.Any]))
-      UpdateActionAvailableDate.foreach(
-        __v => __obj.updateDynamic("UpdateActionAvailableDate")(__v.asInstanceOf[js.Any])
+      UpdateActionAvailableDate.foreach(__v =>
+        __obj.updateDynamic("UpdateActionAvailableDate")(__v.asInstanceOf[js.Any])
       )
       UpdateActionStatus.foreach(__v => __obj.updateDynamic("UpdateActionStatus")(__v.asInstanceOf[js.Any]))
-      UpdateActionStatusModifiedDate.foreach(
-        __v => __obj.updateDynamic("UpdateActionStatusModifiedDate")(__v.asInstanceOf[js.Any])
+      UpdateActionStatusModifiedDate.foreach(__v =>
+        __obj.updateDynamic("UpdateActionStatusModifiedDate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateAction]
     }

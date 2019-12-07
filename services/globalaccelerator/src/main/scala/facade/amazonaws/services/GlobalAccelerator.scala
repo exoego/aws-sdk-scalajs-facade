@@ -265,8 +265,8 @@ package globalaccelerator {
       )
 
       EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
@@ -547,8 +547,8 @@ package globalaccelerator {
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointConfiguration = {
       val __obj = js.Dynamic.literal()
-      ClientIPPreservationEnabled.foreach(
-        __v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
+      ClientIPPreservationEnabled.foreach(__v =>
+        __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
       )
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
@@ -578,8 +578,8 @@ package globalaccelerator {
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointDescription = {
       val __obj = js.Dynamic.literal()
-      ClientIPPreservationEnabled.foreach(
-        __v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
+      ClientIPPreservationEnabled.foreach(__v =>
+        __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
       )
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       HealthReason.foreach(__v => __obj.updateDynamic("HealthReason")(__v.asInstanceOf[js.Any]))
@@ -622,8 +622,8 @@ package globalaccelerator {
       EndpointDescriptions.foreach(__v => __obj.updateDynamic("EndpointDescriptions")(__v.asInstanceOf[js.Any]))
       EndpointGroupArn.foreach(__v => __obj.updateDynamic("EndpointGroupArn")(__v.asInstanceOf[js.Any]))
       EndpointGroupRegion.foreach(__v => __obj.updateDynamic("EndpointGroupRegion")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
@@ -974,8 +974,8 @@ package globalaccelerator {
       )
 
       EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      HealthCheckIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))

@@ -264,11 +264,11 @@ package workmail {
     ): BookingOptions = {
       val __obj = js.Dynamic.literal()
       AutoAcceptRequests.foreach(__v => __obj.updateDynamic("AutoAcceptRequests")(__v.asInstanceOf[js.Any]))
-      AutoDeclineConflictingRequests.foreach(
-        __v => __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any])
+      AutoDeclineConflictingRequests.foreach(__v =>
+        __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any])
       )
-      AutoDeclineRecurringRequests.foreach(
-        __v => __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any])
+      AutoDeclineRecurringRequests.foreach(__v =>
+        __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BookingOptions]
     }

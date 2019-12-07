@@ -909,8 +909,8 @@ package comprehend {
         DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined
     ): DescribeDocumentClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassificationJobProperties.foreach(
-        __v => __obj.updateDynamic("DocumentClassificationJobProperties")(__v.asInstanceOf[js.Any])
+      DocumentClassificationJobProperties.foreach(__v =>
+        __obj.updateDynamic("DocumentClassificationJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeDocumentClassificationJobResponse]
     }
@@ -945,8 +945,8 @@ package comprehend {
         DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined
     ): DescribeDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassifierProperties.foreach(
-        __v => __obj.updateDynamic("DocumentClassifierProperties")(__v.asInstanceOf[js.Any])
+      DocumentClassifierProperties.foreach(__v =>
+        __obj.updateDynamic("DocumentClassifierProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeDocumentClassifierResponse]
     }
@@ -981,8 +981,8 @@ package comprehend {
         DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined
     ): DescribeDominantLanguageDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobProperties.foreach(
-        __v => __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any])
+      DominantLanguageDetectionJobProperties.foreach(__v =>
+        __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
     }
@@ -1017,8 +1017,8 @@ package comprehend {
         EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined
     ): DescribeEntitiesDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobProperties.foreach(
-        __v => __obj.updateDynamic("EntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any])
+      EntitiesDetectionJobProperties.foreach(__v =>
+        __obj.updateDynamic("EntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeEntitiesDetectionJobResponse]
     }
@@ -1053,8 +1053,8 @@ package comprehend {
         EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined
     ): DescribeEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
-      EntityRecognizerProperties.foreach(
-        __v => __obj.updateDynamic("EntityRecognizerProperties")(__v.asInstanceOf[js.Any])
+      EntityRecognizerProperties.foreach(__v =>
+        __obj.updateDynamic("EntityRecognizerProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeEntityRecognizerResponse]
     }
@@ -1089,8 +1089,8 @@ package comprehend {
         KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined
     ): DescribeKeyPhrasesDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobProperties.foreach(
-        __v => __obj.updateDynamic("KeyPhrasesDetectionJobProperties")(__v.asInstanceOf[js.Any])
+      KeyPhrasesDetectionJobProperties.foreach(__v =>
+        __obj.updateDynamic("KeyPhrasesDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeKeyPhrasesDetectionJobResponse]
     }
@@ -1125,8 +1125,8 @@ package comprehend {
         SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined
     ): DescribeSentimentDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      SentimentDetectionJobProperties.foreach(
-        __v => __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any])
+      SentimentDetectionJobProperties.foreach(__v =>
+        __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeSentimentDetectionJobResponse]
     }
@@ -1161,8 +1161,8 @@ package comprehend {
         TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined
     ): DescribeTopicsDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      TopicsDetectionJobProperties.foreach(
-        __v => __obj.updateDynamic("TopicsDetectionJobProperties")(__v.asInstanceOf[js.Any])
+      TopicsDetectionJobProperties.foreach(__v =>
+        __obj.updateDynamic("TopicsDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTopicsDetectionJobResponse]
     }
@@ -2288,8 +2288,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDocumentClassificationJobsResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassificationJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("DocumentClassificationJobPropertiesList")(__v.asInstanceOf[js.Any])
+      DocumentClassificationJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("DocumentClassificationJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentClassificationJobsResponse]
@@ -2331,8 +2331,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDocumentClassifiersResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassifierPropertiesList.foreach(
-        __v => __obj.updateDynamic("DocumentClassifierPropertiesList")(__v.asInstanceOf[js.Any])
+      DocumentClassifierPropertiesList.foreach(__v =>
+        __obj.updateDynamic("DocumentClassifierPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentClassifiersResponse]
@@ -2375,8 +2375,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDominantLanguageDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("DominantLanguageDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
+      DominantLanguageDetectionJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("DominantLanguageDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDominantLanguageDetectionJobsResponse]
@@ -2418,8 +2418,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntitiesDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("EntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
+      EntitiesDetectionJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("EntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesDetectionJobsResponse]
@@ -2461,8 +2461,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntityRecognizersResponse = {
       val __obj = js.Dynamic.literal()
-      EntityRecognizerPropertiesList.foreach(
-        __v => __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any])
+      EntityRecognizerPropertiesList.foreach(__v =>
+        __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntityRecognizersResponse]
@@ -2504,8 +2504,8 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListKeyPhrasesDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("KeyPhrasesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
+      KeyPhrasesDetectionJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("KeyPhrasesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListKeyPhrasesDetectionJobsResponse]
@@ -2548,8 +2548,8 @@ package comprehend {
     ): ListSentimentDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SentimentDetectionJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("SentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
+      SentimentDetectionJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("SentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListSentimentDetectionJobsResponse]
     }
@@ -2628,8 +2628,8 @@ package comprehend {
     ): ListTopicsDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TopicsDetectionJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("TopicsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
+      TopicsDetectionJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("TopicsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTopicsDetectionJobsResponse]
     }

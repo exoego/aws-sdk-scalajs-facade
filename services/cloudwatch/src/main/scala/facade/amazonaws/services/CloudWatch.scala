@@ -1180,16 +1180,16 @@ package cloudwatch {
       ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
       AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
       AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
-      AlarmConfigurationUpdatedTimestamp.foreach(
-        __v => __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any])
+      AlarmConfigurationUpdatedTimestamp.foreach(__v =>
+        __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any])
       )
       AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
       AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
       ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
       DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      EvaluateLowSampleCountPercentile.foreach(
-        __v => __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
+      EvaluateLowSampleCountPercentile.foreach(__v =>
+        __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
       )
       EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
       ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
@@ -1436,8 +1436,8 @@ package cloudwatch {
         DashboardValidationMessages: js.UndefOr[DashboardValidationMessages] = js.undefined
     ): PutDashboardOutput = {
       val __obj = js.Dynamic.literal()
-      DashboardValidationMessages.foreach(
-        __v => __obj.updateDynamic("DashboardValidationMessages")(__v.asInstanceOf[js.Any])
+      DashboardValidationMessages.foreach(__v =>
+        __obj.updateDynamic("DashboardValidationMessages")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutDashboardOutput]
     }
@@ -1506,8 +1506,8 @@ package cloudwatch {
       AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
       DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      EvaluateLowSampleCountPercentile.foreach(
-        __v => __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
+      EvaluateLowSampleCountPercentile.foreach(__v =>
+        __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
       )
       ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
       InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))

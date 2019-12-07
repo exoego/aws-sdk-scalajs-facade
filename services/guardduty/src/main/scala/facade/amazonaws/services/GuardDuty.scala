@@ -519,8 +519,8 @@ package guardduty {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(
-        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      FindingPublishingFrequency.foreach(__v =>
+        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorRequest]
@@ -1154,8 +1154,8 @@ package guardduty {
         ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
     ): Evidence = {
       val __obj = js.Dynamic.literal()
-      ThreatIntelligenceDetails.foreach(
-        __v => __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any])
+      ThreatIntelligenceDetails.foreach(__v =>
+        __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Evidence]
     }
@@ -1356,8 +1356,8 @@ package guardduty {
       )
 
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(
-        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      FindingPublishingFrequency.foreach(__v =>
+        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -2976,8 +2976,8 @@ package guardduty {
       )
 
       Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(
-        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      FindingPublishingFrequency.foreach(__v =>
+        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateDetectorRequest]
     }

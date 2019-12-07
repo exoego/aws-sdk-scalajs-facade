@@ -1038,8 +1038,8 @@ package s3 {
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): CSVInput = {
       val __obj = js.Dynamic.literal()
-      AllowQuotedRecordDelimiter.foreach(
-        __v => __obj.updateDynamic("AllowQuotedRecordDelimiter")(__v.asInstanceOf[js.Any])
+      AllowQuotedRecordDelimiter.foreach(__v =>
+        __obj.updateDynamic("AllowQuotedRecordDelimiter")(__v.asInstanceOf[js.Any])
       )
       Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
       FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
@@ -1267,8 +1267,8 @@ package s3 {
         KeyPrefixEquals: js.UndefOr[KeyPrefixEquals] = js.undefined
     ): Condition = {
       val __obj = js.Dynamic.literal()
-      HttpErrorCodeReturnedEquals.foreach(
-        __v => __obj.updateDynamic("HttpErrorCodeReturnedEquals")(__v.asInstanceOf[js.Any])
+      HttpErrorCodeReturnedEquals.foreach(__v =>
+        __obj.updateDynamic("HttpErrorCodeReturnedEquals")(__v.asInstanceOf[js.Any])
       )
       KeyPrefixEquals.foreach(__v => __obj.updateDynamic("KeyPrefixEquals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
@@ -1429,19 +1429,19 @@ package s3 {
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(
-        __v => __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
+      CopySourceIfModifiedSince.foreach(__v =>
+        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
       )
       CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(
-        __v => __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
+      CopySourceIfUnmodifiedSince.foreach(__v =>
+        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
       )
-      CopySourceSSECustomerAlgorithm.foreach(
-        __v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
+      CopySourceSSECustomerAlgorithm.foreach(__v =>
+        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
       )
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(
-        __v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
+      CopySourceSSECustomerKeyMD5.foreach(__v =>
+        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
       )
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
@@ -1450,12 +1450,12 @@ package s3 {
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -1582,16 +1582,16 @@ package s3 {
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      CreateBucketConfiguration.foreach(
-        __v => __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any])
+      CreateBucketConfiguration.foreach(__v =>
+        __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any])
       )
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      ObjectLockEnabledForBucket.foreach(
-        __v => __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any])
+      ObjectLockEnabledForBucket.foreach(__v =>
+        __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateBucketRequest]
     }
@@ -1722,12 +1722,12 @@ package s3 {
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -2103,8 +2103,8 @@ package s3 {
         "Key"    -> Key.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(
-        __v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
+      BypassGovernanceRetention.foreach(__v =>
+        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
       )
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -2198,8 +2198,8 @@ package s3 {
         "Delete" -> Delete.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(
-        __v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
+      BypassGovernanceRetention.foreach(__v =>
+        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
       )
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -2642,8 +2642,8 @@ package s3 {
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined
     ): GetBucketEncryptionOutput = {
       val __obj = js.Dynamic.literal()
-      ServerSideEncryptionConfiguration.foreach(
-        __v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
+      ServerSideEncryptionConfiguration.foreach(__v =>
+        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetBucketEncryptionOutput]
     }
@@ -3360,12 +3360,12 @@ package s3 {
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
       ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
@@ -3442,8 +3442,8 @@ package s3 {
       Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       ResponseCacheControl.foreach(__v => __obj.updateDynamic("ResponseCacheControl")(__v.asInstanceOf[js.Any]))
-      ResponseContentDisposition.foreach(
-        __v => __obj.updateDynamic("ResponseContentDisposition")(__v.asInstanceOf[js.Any])
+      ResponseContentDisposition.foreach(__v =>
+        __obj.updateDynamic("ResponseContentDisposition")(__v.asInstanceOf[js.Any])
       )
       ResponseContentEncoding.foreach(__v => __obj.updateDynamic("ResponseContentEncoding")(__v.asInstanceOf[js.Any]))
       ResponseContentLanguage.foreach(__v => __obj.updateDynamic("ResponseContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -3599,8 +3599,8 @@ package s3 {
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
       val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(
-        __v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
+      PublicAccessBlockConfiguration.foreach(__v =>
+        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
@@ -3797,12 +3797,12 @@ package s3 {
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
       ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
@@ -4269,8 +4269,8 @@ package s3 {
       val __obj = js.Dynamic.literal()
       Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
       Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      ExpiredObjectDeleteMarker.foreach(
-        __v => __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any])
+      ExpiredObjectDeleteMarker.foreach(__v =>
+        __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LifecycleExpiration]
     }
@@ -4309,17 +4309,17 @@ package s3 {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      AbortIncompleteMultipartUpload.foreach(
-        __v => __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
+      AbortIncompleteMultipartUpload.foreach(__v =>
+        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
       )
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(
-        __v => __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
+      NoncurrentVersionExpiration.foreach(__v =>
+        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
       )
-      NoncurrentVersionTransitions.foreach(
-        __v => __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any])
+      NoncurrentVersionTransitions.foreach(__v =>
+        __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any])
       )
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Transitions.foreach(__v => __obj.updateDynamic("Transitions")(__v.asInstanceOf[js.Any]))
@@ -4391,8 +4391,8 @@ package s3 {
         NextContinuationToken: js.UndefOr[NextToken] = js.undefined
     ): ListBucketAnalyticsConfigurationsOutput = {
       val __obj = js.Dynamic.literal()
-      AnalyticsConfigurationList.foreach(
-        __v => __obj.updateDynamic("AnalyticsConfigurationList")(__v.asInstanceOf[js.Any])
+      AnalyticsConfigurationList.foreach(__v =>
+        __obj.updateDynamic("AnalyticsConfigurationList")(__v.asInstanceOf[js.Any])
       )
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
@@ -4440,8 +4440,8 @@ package s3 {
     ): ListBucketInventoryConfigurationsOutput = {
       val __obj = js.Dynamic.literal()
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      InventoryConfigurationList.foreach(
-        __v => __obj.updateDynamic("InventoryConfigurationList")(__v.asInstanceOf[js.Any])
+      InventoryConfigurationList.foreach(__v =>
+        __obj.updateDynamic("InventoryConfigurationList")(__v.asInstanceOf[js.Any])
       )
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
@@ -5200,8 +5200,8 @@ package s3 {
         TopicConfigurations: js.UndefOr[TopicConfigurationList] = js.undefined
     ): NotificationConfiguration = {
       val __obj = js.Dynamic.literal()
-      LambdaFunctionConfigurations.foreach(
-        __v => __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any])
+      LambdaFunctionConfigurations.foreach(__v =>
+        __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any])
       )
       QueueConfigurations.foreach(__v => __obj.updateDynamic("QueueConfigurations")(__v.asInstanceOf[js.Any]))
       TopicConfigurations.foreach(__v => __obj.updateDynamic("TopicConfigurations")(__v.asInstanceOf[js.Any]))
@@ -5224,8 +5224,8 @@ package s3 {
         TopicConfiguration: js.UndefOr[TopicConfigurationDeprecated] = js.undefined
     ): NotificationConfigurationDeprecated = {
       val __obj = js.Dynamic.literal()
-      CloudFunctionConfiguration.foreach(
-        __v => __obj.updateDynamic("CloudFunctionConfiguration")(__v.asInstanceOf[js.Any])
+      CloudFunctionConfiguration.foreach(__v =>
+        __obj.updateDynamic("CloudFunctionConfiguration")(__v.asInstanceOf[js.Any])
       )
       QueueConfiguration.foreach(__v => __obj.updateDynamic("QueueConfiguration")(__v.asInstanceOf[js.Any]))
       TopicConfiguration.foreach(__v => __obj.updateDynamic("TopicConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6047,8 +6047,8 @@ package s3 {
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
-      ConfirmRemoveSelfBucketAccess.foreach(
-        __v => __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any])
+      ConfirmRemoveSelfBucketAccess.foreach(__v =>
+        __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any])
       )
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketPolicyRequest]
@@ -6471,12 +6471,12 @@ package s3 {
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(
-        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      ObjectLockLegalHoldStatus.foreach(__v =>
+        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
       )
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(
-        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      ObjectLockRetainUntilDate.foreach(__v =>
+        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
       )
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -6535,8 +6535,8 @@ package s3 {
         "Key"    -> Key.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(
-        __v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
+      BypassGovernanceRetention.foreach(__v =>
+        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
       )
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -7090,16 +7090,16 @@ package s3 {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      AbortIncompleteMultipartUpload.foreach(
-        __v => __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
+      AbortIncompleteMultipartUpload.foreach(__v =>
+        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
       )
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(
-        __v => __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
+      NoncurrentVersionExpiration.foreach(__v =>
+        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
       )
-      NoncurrentVersionTransition.foreach(
-        __v => __obj.updateDynamic("NoncurrentVersionTransition")(__v.asInstanceOf[js.Any])
+      NoncurrentVersionTransition.foreach(__v =>
+        __obj.updateDynamic("NoncurrentVersionTransition")(__v.asInstanceOf[js.Any])
       )
       Transition.foreach(__v => __obj.updateDynamic("Transition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
@@ -7417,8 +7417,8 @@ package s3 {
         ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
     ): ServerSideEncryptionRule = {
       val __obj = js.Dynamic.literal()
-      ApplyServerSideEncryptionByDefault.foreach(
-        __v => __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any])
+      ApplyServerSideEncryptionByDefault.foreach(__v =>
+        __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServerSideEncryptionRule]
     }
@@ -7846,20 +7846,20 @@ package s3 {
       )
 
       CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(
-        __v => __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
+      CopySourceIfModifiedSince.foreach(__v =>
+        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
       )
       CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(
-        __v => __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
+      CopySourceIfUnmodifiedSince.foreach(__v =>
+        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
       )
       CopySourceRange.foreach(__v => __obj.updateDynamic("CopySourceRange")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerAlgorithm.foreach(
-        __v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
+      CopySourceSSECustomerAlgorithm.foreach(__v =>
+        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
       )
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(
-        __v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
+      CopySourceSSECustomerKeyMD5.foreach(__v =>
+        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
       )
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))

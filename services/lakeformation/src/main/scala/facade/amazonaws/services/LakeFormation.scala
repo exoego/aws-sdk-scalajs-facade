@@ -177,8 +177,8 @@ package lakeformation {
       )
 
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(
-        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      PermissionsWithGrantOption.foreach(__v =>
+        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
       )
       Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
@@ -288,8 +288,8 @@ package lakeformation {
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
       val __obj = js.Dynamic.literal()
-      DataLakePrincipalIdentifier.foreach(
-        __v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
+      DataLakePrincipalIdentifier.foreach(__v =>
+        __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DataLakePrincipal]
     }
@@ -322,11 +322,11 @@ package lakeformation {
         DataLakeAdmins: js.UndefOr[DataLakePrincipalList] = js.undefined
     ): DataLakeSettings = {
       val __obj = js.Dynamic.literal()
-      CreateDatabaseDefaultPermissions.foreach(
-        __v => __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any])
+      CreateDatabaseDefaultPermissions.foreach(__v =>
+        __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
-      CreateTableDefaultPermissions.foreach(
-        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
+      CreateTableDefaultPermissions.foreach(__v =>
+        __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
       DataLakeAdmins.foreach(__v => __obj.updateDynamic("DataLakeAdmins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakeSettings]
@@ -598,8 +598,8 @@ package lakeformation {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(
-        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      PermissionsWithGrantOption.foreach(__v =>
+        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GrantPermissionsRequest]
     }
@@ -663,8 +663,8 @@ package lakeformation {
     ): ListPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PrincipalResourcePermissions.foreach(
-        __v => __obj.updateDynamic("PrincipalResourcePermissions")(__v.asInstanceOf[js.Any])
+      PrincipalResourcePermissions.foreach(__v =>
+        __obj.updateDynamic("PrincipalResourcePermissions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListPermissionsResponse]
     }
@@ -770,8 +770,8 @@ package lakeformation {
     ): PrincipalResourcePermissions = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(
-        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      PermissionsWithGrantOption.foreach(__v =>
+        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
       )
       Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
@@ -931,8 +931,8 @@ package lakeformation {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(
-        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      PermissionsWithGrantOption.foreach(__v =>
+        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RevokePermissionsRequest]
     }

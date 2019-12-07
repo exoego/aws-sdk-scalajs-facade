@@ -714,8 +714,8 @@ package mediapackagevod {
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
-      ConstantInitializationVector.foreach(
-        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
+      ConstantInitializationVector.foreach(__v =>
+        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
       EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsEncryption]
@@ -749,8 +749,8 @@ package mediapackagevod {
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(
-        __v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
+      ProgramDateTimeIntervalSeconds.foreach(__v =>
+        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
       RepeatExtXKey.foreach(__v => __obj.updateDynamic("RepeatExtXKey")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))

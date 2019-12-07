@@ -1154,8 +1154,8 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceResourceName.foreach(__v => __obj.updateDynamic("sourceResourceName")(__v.asInstanceOf[js.Any]))
       sourceSnapshotName.foreach(__v => __obj.updateDynamic("sourceSnapshotName")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(
-        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      useLatestRestorableAutoSnapshot.foreach(__v =>
+        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CopySnapshotRequest]
     }
@@ -1248,8 +1248,8 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceDiskName.foreach(__v => __obj.updateDynamic("sourceDiskName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(
-        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      useLatestRestorableAutoSnapshot.foreach(__v =>
+        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDiskFromSnapshotRequest]
     }
@@ -1519,8 +1519,8 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceInstanceName.foreach(__v => __obj.updateDynamic("sourceInstanceName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(
-        __v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
+      useLatestRestorableAutoSnapshot.foreach(__v =>
+        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
       )
       userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesFromSnapshotRequest]
@@ -1674,8 +1674,8 @@ package lightsail {
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(
-        __v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
+      certificateAlternativeNames.foreach(__v =>
+        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
       )
       certificateDomainName.foreach(__v => __obj.updateDynamic("certificateDomainName")(__v.asInstanceOf[js.Any]))
       certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
@@ -1725,8 +1725,8 @@ package lightsail {
         "loadBalancerName"      -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(
-        __v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
+      certificateAlternativeNames.foreach(__v =>
+        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
       )
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerTlsCertificateRequest]
@@ -1781,15 +1781,15 @@ package lightsail {
 
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBundleId.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
+      relationalDatabaseBundleId.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
       )
-      relationalDatabaseSnapshotName.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
+      relationalDatabaseSnapshotName.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
       restoreTime.foreach(__v => __obj.updateDynamic("restoreTime")(__v.asInstanceOf[js.Any]))
-      sourceRelationalDatabaseName.foreach(
-        __v => __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any])
+      sourceRelationalDatabaseName.foreach(__v =>
+        __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any])
       )
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       useLatestRestorableTime.foreach(__v => __obj.updateDynamic("useLatestRestorableTime")(__v.asInstanceOf[js.Any]))
@@ -1854,8 +1854,8 @@ package lightsail {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      preferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -2329,8 +2329,8 @@ package lightsail {
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      finalRelationalDatabaseSnapshotName.foreach(
-        __v => __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
+      finalRelationalDatabaseSnapshotName.foreach(__v =>
+        __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
       skipFinalSnapshot.foreach(__v => __obj.updateDynamic("skipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRelationalDatabaseRequest]
@@ -3211,8 +3211,8 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetCloudFormationStackRecordsResult = {
       val __obj = js.Dynamic.literal()
-      cloudFormationStackRecords.foreach(
-        __v => __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any])
+      cloudFormationStackRecords.foreach(__v =>
+        __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any])
       )
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
@@ -4112,8 +4112,8 @@ package lightsail {
     ): GetRegionsRequest = {
       val __obj = js.Dynamic.literal()
       includeAvailabilityZones.foreach(__v => __obj.updateDynamic("includeAvailabilityZones")(__v.asInstanceOf[js.Any]))
-      includeRelationalDatabaseAvailabilityZones.foreach(
-        __v => __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
+      includeRelationalDatabaseAvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetRegionsRequest]
     }
@@ -4535,8 +4535,8 @@ package lightsail {
         relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot] = js.undefined
     ): GetRelationalDatabaseSnapshotResult = {
       val __obj = js.Dynamic.literal()
-      relationalDatabaseSnapshot.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any])
+      relationalDatabaseSnapshot.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotResult]
     }
@@ -4572,8 +4572,8 @@ package lightsail {
     ): GetRelationalDatabaseSnapshotsResult = {
       val __obj = js.Dynamic.literal()
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseSnapshots.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any])
+      relationalDatabaseSnapshots.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotsResult]
     }
@@ -6351,8 +6351,8 @@ package lightsail {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseAvailabilityZones.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
+      relationalDatabaseAvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Region]
     }
@@ -6469,24 +6469,24 @@ package lightsail {
       masterUsername.foreach(__v => __obj.updateDynamic("masterUsername")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       parameterApplyStatus.foreach(__v => __obj.updateDynamic("parameterApplyStatus")(__v.asInstanceOf[js.Any]))
-      pendingMaintenanceActions.foreach(
-        __v => __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any])
+      pendingMaintenanceActions.foreach(__v =>
+        __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any])
       )
       pendingModifiedValues.foreach(__v => __obj.updateDynamic("pendingModifiedValues")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      preferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBlueprintId.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
+      relationalDatabaseBlueprintId.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
       )
-      relationalDatabaseBundleId.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
+      relationalDatabaseBundleId.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
       )
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      secondaryAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
+      secondaryAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
@@ -6767,17 +6767,17 @@ package lightsail {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
       engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      fromRelationalDatabaseArn.foreach(
-        __v => __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any])
+      fromRelationalDatabaseArn.foreach(__v =>
+        __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any])
       )
-      fromRelationalDatabaseBlueprintId.foreach(
-        __v => __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
+      fromRelationalDatabaseBlueprintId.foreach(__v =>
+        __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
       )
-      fromRelationalDatabaseBundleId.foreach(
-        __v => __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
+      fromRelationalDatabaseBundleId.foreach(__v =>
+        __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
       )
-      fromRelationalDatabaseName.foreach(
-        __v => __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any])
+      fromRelationalDatabaseName.foreach(__v =>
+        __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any])
       )
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -7046,8 +7046,8 @@ package lightsail {
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      relationalDatabaseSnapshotName.foreach(
-        __v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
+      relationalDatabaseSnapshotName.foreach(__v =>
+        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[StopRelationalDatabaseRequest]
     }
@@ -7350,8 +7350,8 @@ package lightsail {
       enableBackupRetention.foreach(__v => __obj.updateDynamic("enableBackupRetention")(__v.asInstanceOf[js.Any]))
       masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      preferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
       rotateMasterUserPassword.foreach(__v => __obj.updateDynamic("rotateMasterUserPassword")(__v.asInstanceOf[js.Any]))

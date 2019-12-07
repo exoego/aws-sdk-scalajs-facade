@@ -674,8 +674,8 @@ package inspector {
         assessmentTargetNamePattern: js.UndefOr[NamePattern] = js.undefined
     ): AssessmentTargetFilter = {
       val __obj = js.Dynamic.literal()
-      assessmentTargetNamePattern.foreach(
-        __v => __obj.updateDynamic("assessmentTargetNamePattern")(__v.asInstanceOf[js.Any])
+      assessmentTargetNamePattern.foreach(__v =>
+        __obj.updateDynamic("assessmentTargetNamePattern")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssessmentTargetFilter]
     }
@@ -887,8 +887,8 @@ package inspector {
         "rulesPackageArns"       -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
-      userAttributesForFindings.foreach(
-        __v => __obj.updateDynamic("userAttributesForFindings")(__v.asInstanceOf[js.Any])
+      userAttributesForFindings.foreach(__v =>
+        __obj.updateDynamic("userAttributesForFindings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateAssessmentTemplateRequest]
     }

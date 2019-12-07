@@ -716,8 +716,8 @@ package migrationhub {
     ): ListProgressUpdateStreamsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProgressUpdateStreamSummaryList.foreach(
-        __v => __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any])
+      ProgressUpdateStreamSummaryList.foreach(__v =>
+        __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListProgressUpdateStreamsResult]
     }

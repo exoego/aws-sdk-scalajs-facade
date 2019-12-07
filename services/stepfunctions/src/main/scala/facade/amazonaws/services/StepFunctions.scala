@@ -961,91 +961,91 @@ package stepfunctions {
         "type"      -> `type`.asInstanceOf[js.Any]
       )
 
-      activityFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("activityFailedEventDetails")(__v.asInstanceOf[js.Any])
+      activityFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("activityFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      activityScheduleFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("activityScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
+      activityScheduleFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("activityScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      activityScheduledEventDetails.foreach(
-        __v => __obj.updateDynamic("activityScheduledEventDetails")(__v.asInstanceOf[js.Any])
+      activityScheduledEventDetails.foreach(__v =>
+        __obj.updateDynamic("activityScheduledEventDetails")(__v.asInstanceOf[js.Any])
       )
-      activityStartedEventDetails.foreach(
-        __v => __obj.updateDynamic("activityStartedEventDetails")(__v.asInstanceOf[js.Any])
+      activityStartedEventDetails.foreach(__v =>
+        __obj.updateDynamic("activityStartedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      activitySucceededEventDetails.foreach(
-        __v => __obj.updateDynamic("activitySucceededEventDetails")(__v.asInstanceOf[js.Any])
+      activitySucceededEventDetails.foreach(__v =>
+        __obj.updateDynamic("activitySucceededEventDetails")(__v.asInstanceOf[js.Any])
       )
-      activityTimedOutEventDetails.foreach(
-        __v => __obj.updateDynamic("activityTimedOutEventDetails")(__v.asInstanceOf[js.Any])
+      activityTimedOutEventDetails.foreach(__v =>
+        __obj.updateDynamic("activityTimedOutEventDetails")(__v.asInstanceOf[js.Any])
       )
-      executionAbortedEventDetails.foreach(
-        __v => __obj.updateDynamic("executionAbortedEventDetails")(__v.asInstanceOf[js.Any])
+      executionAbortedEventDetails.foreach(__v =>
+        __obj.updateDynamic("executionAbortedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      executionFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("executionFailedEventDetails")(__v.asInstanceOf[js.Any])
+      executionFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("executionFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      executionStartedEventDetails.foreach(
-        __v => __obj.updateDynamic("executionStartedEventDetails")(__v.asInstanceOf[js.Any])
+      executionStartedEventDetails.foreach(__v =>
+        __obj.updateDynamic("executionStartedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      executionSucceededEventDetails.foreach(
-        __v => __obj.updateDynamic("executionSucceededEventDetails")(__v.asInstanceOf[js.Any])
+      executionSucceededEventDetails.foreach(__v =>
+        __obj.updateDynamic("executionSucceededEventDetails")(__v.asInstanceOf[js.Any])
       )
-      executionTimedOutEventDetails.foreach(
-        __v => __obj.updateDynamic("executionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
+      executionTimedOutEventDetails.foreach(__v =>
+        __obj.updateDynamic("executionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionFailedEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionScheduleFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionScheduleFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionScheduledEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionScheduledEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionScheduledEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionScheduledEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionStartFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionStartFailedEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionStartFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionStartFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionSucceededEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionSucceededEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionSucceededEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionSucceededEventDetails")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionTimedOutEventDetails.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
+      lambdaFunctionTimedOutEventDetails.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
       )
-      mapIterationAbortedEventDetails.foreach(
-        __v => __obj.updateDynamic("mapIterationAbortedEventDetails")(__v.asInstanceOf[js.Any])
+      mapIterationAbortedEventDetails.foreach(__v =>
+        __obj.updateDynamic("mapIterationAbortedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      mapIterationFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("mapIterationFailedEventDetails")(__v.asInstanceOf[js.Any])
+      mapIterationFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("mapIterationFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      mapIterationStartedEventDetails.foreach(
-        __v => __obj.updateDynamic("mapIterationStartedEventDetails")(__v.asInstanceOf[js.Any])
+      mapIterationStartedEventDetails.foreach(__v =>
+        __obj.updateDynamic("mapIterationStartedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      mapIterationSucceededEventDetails.foreach(
-        __v => __obj.updateDynamic("mapIterationSucceededEventDetails")(__v.asInstanceOf[js.Any])
+      mapIterationSucceededEventDetails.foreach(__v =>
+        __obj.updateDynamic("mapIterationSucceededEventDetails")(__v.asInstanceOf[js.Any])
       )
-      mapStateStartedEventDetails.foreach(
-        __v => __obj.updateDynamic("mapStateStartedEventDetails")(__v.asInstanceOf[js.Any])
+      mapStateStartedEventDetails.foreach(__v =>
+        __obj.updateDynamic("mapStateStartedEventDetails")(__v.asInstanceOf[js.Any])
       )
       previousEventId.foreach(__v => __obj.updateDynamic("previousEventId")(__v.asInstanceOf[js.Any]))
       stateEnteredEventDetails.foreach(__v => __obj.updateDynamic("stateEnteredEventDetails")(__v.asInstanceOf[js.Any]))
       stateExitedEventDetails.foreach(__v => __obj.updateDynamic("stateExitedEventDetails")(__v.asInstanceOf[js.Any]))
       taskFailedEventDetails.foreach(__v => __obj.updateDynamic("taskFailedEventDetails")(__v.asInstanceOf[js.Any]))
-      taskScheduledEventDetails.foreach(
-        __v => __obj.updateDynamic("taskScheduledEventDetails")(__v.asInstanceOf[js.Any])
+      taskScheduledEventDetails.foreach(__v =>
+        __obj.updateDynamic("taskScheduledEventDetails")(__v.asInstanceOf[js.Any])
       )
-      taskStartFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("taskStartFailedEventDetails")(__v.asInstanceOf[js.Any])
+      taskStartFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("taskStartFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
       taskStartedEventDetails.foreach(__v => __obj.updateDynamic("taskStartedEventDetails")(__v.asInstanceOf[js.Any]))
-      taskSubmitFailedEventDetails.foreach(
-        __v => __obj.updateDynamic("taskSubmitFailedEventDetails")(__v.asInstanceOf[js.Any])
+      taskSubmitFailedEventDetails.foreach(__v =>
+        __obj.updateDynamic("taskSubmitFailedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      taskSubmittedEventDetails.foreach(
-        __v => __obj.updateDynamic("taskSubmittedEventDetails")(__v.asInstanceOf[js.Any])
+      taskSubmittedEventDetails.foreach(__v =>
+        __obj.updateDynamic("taskSubmittedEventDetails")(__v.asInstanceOf[js.Any])
       )
-      taskSucceededEventDetails.foreach(
-        __v => __obj.updateDynamic("taskSucceededEventDetails")(__v.asInstanceOf[js.Any])
+      taskSucceededEventDetails.foreach(__v =>
+        __obj.updateDynamic("taskSucceededEventDetails")(__v.asInstanceOf[js.Any])
       )
       taskTimedOutEventDetails.foreach(__v => __obj.updateDynamic("taskTimedOutEventDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoryEvent]

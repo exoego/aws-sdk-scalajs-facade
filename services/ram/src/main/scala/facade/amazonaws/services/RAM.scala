@@ -202,8 +202,8 @@ package ram {
     ): AssociateResourceShareResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(
-        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      resourceShareAssociations.foreach(__v =>
+        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssociateResourceShareResponse]
     }
@@ -342,8 +342,8 @@ package ram {
     ): DisassociateResourceShareResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(
-        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      resourceShareAssociations.foreach(__v =>
+        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DisassociateResourceShareResponse]
     }
@@ -474,8 +474,8 @@ package ram {
     ): GetResourceShareAssociationsResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(
-        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      resourceShareAssociations.foreach(__v =>
+        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetResourceShareAssociationsResponse]
     }
@@ -501,8 +501,8 @@ package ram {
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitationArns.foreach(
-        __v => __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any])
+      resourceShareInvitationArns.foreach(__v =>
+        __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetResourceShareInvitationsRequest]
     }
@@ -984,11 +984,11 @@ package ram {
       invitationTimestamp.foreach(__v => __obj.updateDynamic("invitationTimestamp")(__v.asInstanceOf[js.Any]))
       receiverAccountId.foreach(__v => __obj.updateDynamic("receiverAccountId")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(
-        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      resourceShareAssociations.foreach(__v =>
+        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
       )
-      resourceShareInvitationArn.foreach(
-        __v => __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any])
+      resourceShareInvitationArn.foreach(__v =>
+        __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any])
       )
       resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
       senderAccountId.foreach(__v => __obj.updateDynamic("senderAccountId")(__v.asInstanceOf[js.Any]))

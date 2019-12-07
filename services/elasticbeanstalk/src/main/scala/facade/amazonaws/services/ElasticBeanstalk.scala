@@ -1785,8 +1785,8 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryResult = {
       val __obj = js.Dynamic.literal()
-      ManagedActionHistoryItems.foreach(
-        __v => __obj.updateDynamic("ManagedActionHistoryItems")(__v.asInstanceOf[js.Any])
+      ManagedActionHistoryItems.foreach(__v =>
+        __obj.updateDynamic("ManagedActionHistoryItems")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
@@ -2088,8 +2088,8 @@ package elasticbeanstalk {
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EnvironmentDescription = {
       val __obj = js.Dynamic.literal()
-      AbortableOperationInProgress.foreach(
-        __v => __obj.updateDynamic("AbortableOperationInProgress")(__v.asInstanceOf[js.Any])
+      AbortableOperationInProgress.foreach(__v =>
+        __obj.updateDynamic("AbortableOperationInProgress")(__v.asInstanceOf[js.Any])
       )
       ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
       CNAME.foreach(__v => __obj.updateDynamic("CNAME")(__v.asInstanceOf[js.Any]))
@@ -3233,8 +3233,8 @@ package elasticbeanstalk {
       val __obj = js.Dynamic.literal()
       ApplicationQuota.foreach(__v => __obj.updateDynamic("ApplicationQuota")(__v.asInstanceOf[js.Any]))
       ApplicationVersionQuota.foreach(__v => __obj.updateDynamic("ApplicationVersionQuota")(__v.asInstanceOf[js.Any]))
-      ConfigurationTemplateQuota.foreach(
-        __v => __obj.updateDynamic("ConfigurationTemplateQuota")(__v.asInstanceOf[js.Any])
+      ConfigurationTemplateQuota.foreach(__v =>
+        __obj.updateDynamic("ConfigurationTemplateQuota")(__v.asInstanceOf[js.Any])
       )
       CustomPlatformQuota.foreach(__v => __obj.updateDynamic("CustomPlatformQuota")(__v.asInstanceOf[js.Any]))
       EnvironmentQuota.foreach(__v => __obj.updateDynamic("EnvironmentQuota")(__v.asInstanceOf[js.Any]))
@@ -3531,8 +3531,8 @@ package elasticbeanstalk {
     ): SwapEnvironmentCNAMEsMessage = {
       val __obj = js.Dynamic.literal()
       DestinationEnvironmentId.foreach(__v => __obj.updateDynamic("DestinationEnvironmentId")(__v.asInstanceOf[js.Any]))
-      DestinationEnvironmentName.foreach(
-        __v => __obj.updateDynamic("DestinationEnvironmentName")(__v.asInstanceOf[js.Any])
+      DestinationEnvironmentName.foreach(__v =>
+        __obj.updateDynamic("DestinationEnvironmentName")(__v.asInstanceOf[js.Any])
       )
       SourceEnvironmentId.foreach(__v => __obj.updateDynamic("SourceEnvironmentId")(__v.asInstanceOf[js.Any]))
       SourceEnvironmentName.foreach(__v => __obj.updateDynamic("SourceEnvironmentName")(__v.asInstanceOf[js.Any]))

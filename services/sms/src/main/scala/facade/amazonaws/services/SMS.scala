@@ -818,8 +818,8 @@ package sms {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
-      serverGroupLaunchConfigurations.foreach(
-        __v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
+      serverGroupLaunchConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAppLaunchConfigurationResponse]
     }
@@ -852,8 +852,8 @@ package sms {
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
     ): GetAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      serverGroupReplicationConfigurations.foreach(
-        __v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
+      serverGroupReplicationConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAppReplicationConfigurationResponse]
     }
@@ -1221,8 +1221,8 @@ package sms {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
-      serverGroupLaunchConfigurations.foreach(
-        __v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
+      serverGroupLaunchConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutAppLaunchConfigurationRequest]
     }
@@ -1255,8 +1255,8 @@ package sms {
     ): PutAppReplicationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
-      serverGroupReplicationConfigurations.foreach(
-        __v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
+      serverGroupReplicationConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutAppReplicationConfigurationRequest]
     }
@@ -1329,8 +1329,8 @@ package sms {
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       latestAmiId.foreach(__v => __obj.updateDynamic("latestAmiId")(__v.asInstanceOf[js.Any]))
       licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(
-        __v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
+      nextReplicationRunStartTime.foreach(__v =>
+        __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
       )
       numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
       replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
@@ -1559,8 +1559,8 @@ package sms {
       val __obj = js.Dynamic.literal()
       launchOrder.foreach(__v => __obj.updateDynamic("launchOrder")(__v.asInstanceOf[js.Any]))
       serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
-      serverLaunchConfigurations.foreach(
-        __v => __obj.updateDynamic("serverLaunchConfigurations")(__v.asInstanceOf[js.Any])
+      serverLaunchConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverLaunchConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServerGroupLaunchConfiguration]
     }
@@ -1583,8 +1583,8 @@ package sms {
     ): ServerGroupReplicationConfiguration = {
       val __obj = js.Dynamic.literal()
       serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
-      serverReplicationConfigurations.foreach(
-        __v => __obj.updateDynamic("serverReplicationConfigurations")(__v.asInstanceOf[js.Any])
+      serverReplicationConfigurations.foreach(__v =>
+        __obj.updateDynamic("serverReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServerGroupReplicationConfiguration]
     }
@@ -1650,8 +1650,8 @@ package sms {
     ): ServerReplicationConfiguration = {
       val __obj = js.Dynamic.literal()
       server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
-      serverReplicationParameters.foreach(
-        __v => __obj.updateDynamic("serverReplicationParameters")(__v.asInstanceOf[js.Any])
+      serverReplicationParameters.foreach(__v =>
+        __obj.updateDynamic("serverReplicationParameters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServerReplicationConfiguration]
     }
@@ -1934,8 +1934,8 @@ package sms {
       frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(
-        __v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
+      nextReplicationRunStartTime.foreach(__v =>
+        __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
       )
       numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))

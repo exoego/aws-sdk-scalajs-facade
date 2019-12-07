@@ -236,8 +236,8 @@ package personalize {
       algorithmArn.foreach(__v => __obj.updateDynamic("algorithmArn")(__v.asInstanceOf[js.Any]))
       algorithmImage.foreach(__v => __obj.updateDynamic("algorithmImage")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
-      defaultHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("defaultHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      defaultHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("defaultHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       defaultHyperParameters.foreach(__v => __obj.updateDynamic("defaultHyperParameters")(__v.asInstanceOf[js.Any]))
       defaultResourceConfig.foreach(__v => __obj.updateDynamic("defaultResourceConfig")(__v.asInstanceOf[js.Any]))
@@ -1181,14 +1181,14 @@ package personalize {
         integerHyperParameterRanges: js.UndefOr[DefaultIntegerHyperParameterRanges] = js.undefined
     ): DefaultHyperParameterRanges = {
       val __obj = js.Dynamic.literal()
-      categoricalHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      categoricalHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      continuousHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      continuousHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      integerHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      integerHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DefaultHyperParameterRanges]
     }
@@ -1864,8 +1864,8 @@ package personalize {
         hpoResourceConfig: js.UndefOr[HPOResourceConfig] = js.undefined
     ): HPOConfig = {
       val __obj = js.Dynamic.literal()
-      algorithmHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("algorithmHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      algorithmHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("algorithmHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       hpoObjective.foreach(__v => __obj.updateDynamic("hpoObjective")(__v.asInstanceOf[js.Any]))
       hpoResourceConfig.foreach(__v => __obj.updateDynamic("hpoResourceConfig")(__v.asInstanceOf[js.Any]))
@@ -1938,14 +1938,14 @@ package personalize {
         integerHyperParameterRanges: js.UndefOr[IntegerHyperParameterRanges] = js.undefined
     ): HyperParameterRanges = {
       val __obj = js.Dynamic.literal()
-      categoricalHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      categoricalHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      continuousHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      continuousHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      integerHyperParameterRanges.foreach(
-        __v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      integerHyperParameterRanges.foreach(__v =>
+        __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[HyperParameterRanges]
     }
@@ -2499,8 +2499,8 @@ package personalize {
       algorithmHyperParameters.foreach(__v => __obj.updateDynamic("algorithmHyperParameters")(__v.asInstanceOf[js.Any]))
       autoMLConfig.foreach(__v => __obj.updateDynamic("autoMLConfig")(__v.asInstanceOf[js.Any]))
       eventValueThreshold.foreach(__v => __obj.updateDynamic("eventValueThreshold")(__v.asInstanceOf[js.Any]))
-      featureTransformationParameters.foreach(
-        __v => __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any])
+      featureTransformationParameters.foreach(__v =>
+        __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any])
       )
       hpoConfig.foreach(__v => __obj.updateDynamic("hpoConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionConfig]

@@ -841,8 +841,8 @@ package cognitosync {
     ): ListRecordsResponse = {
       val __obj = js.Dynamic.literal()
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
-      DatasetDeletedAfterRequestedSyncCount.foreach(
-        __v => __obj.updateDynamic("DatasetDeletedAfterRequestedSyncCount")(__v.asInstanceOf[js.Any])
+      DatasetDeletedAfterRequestedSyncCount.foreach(__v =>
+        __obj.updateDynamic("DatasetDeletedAfterRequestedSyncCount")(__v.asInstanceOf[js.Any])
       )
       DatasetExists.foreach(__v => __obj.updateDynamic("DatasetExists")(__v.asInstanceOf[js.Any]))
       DatasetSyncCount.foreach(__v => __obj.updateDynamic("DatasetSyncCount")(__v.asInstanceOf[js.Any]))

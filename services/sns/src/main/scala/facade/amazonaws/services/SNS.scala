@@ -267,8 +267,8 @@ package sns {
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      AuthenticateOnUnsubscribe.foreach(
-        __v => __obj.updateDynamic("AuthenticateOnUnsubscribe")(__v.asInstanceOf[js.Any])
+      AuthenticateOnUnsubscribe.foreach(__v =>
+        __obj.updateDynamic("AuthenticateOnUnsubscribe")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfirmSubscriptionInput]
     }

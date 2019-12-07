@@ -1183,8 +1183,8 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListHoursOfOperationsResponse = {
       val __obj = js.Dynamic.literal()
-      HoursOfOperationSummaryList.foreach(
-        __v => __obj.updateDynamic("HoursOfOperationSummaryList")(__v.asInstanceOf[js.Any])
+      HoursOfOperationSummaryList.foreach(__v =>
+        __obj.updateDynamic("HoursOfOperationSummaryList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHoursOfOperationsResponse]
@@ -1324,8 +1324,8 @@ package connect {
     ): ListRoutingProfilesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RoutingProfileSummaryList.foreach(
-        __v => __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any])
+      RoutingProfileSummaryList.foreach(__v =>
+        __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListRoutingProfilesResponse]
     }
@@ -1369,8 +1369,8 @@ package connect {
     ): ListSecurityProfilesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SecurityProfileSummaryList.foreach(
-        __v => __obj.updateDynamic("SecurityProfileSummaryList")(__v.asInstanceOf[js.Any])
+      SecurityProfileSummaryList.foreach(__v =>
+        __obj.updateDynamic("SecurityProfileSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListSecurityProfilesResponse]
     }
@@ -1414,8 +1414,8 @@ package connect {
     ): ListUserHierarchyGroupsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      UserHierarchyGroupSummaryList.foreach(
-        __v => __obj.updateDynamic("UserHierarchyGroupSummaryList")(__v.asInstanceOf[js.Any])
+      UserHierarchyGroupSummaryList.foreach(__v =>
+        __obj.updateDynamic("UserHierarchyGroupSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListUserHierarchyGroupsResponse]
     }
@@ -2470,8 +2470,8 @@ package connect {
         "PhoneType" -> PhoneType.asInstanceOf[js.Any]
       )
 
-      AfterContactWorkTimeLimit.foreach(
-        __v => __obj.updateDynamic("AfterContactWorkTimeLimit")(__v.asInstanceOf[js.Any])
+      AfterContactWorkTimeLimit.foreach(__v =>
+        __obj.updateDynamic("AfterContactWorkTimeLimit")(__v.asInstanceOf[js.Any])
       )
       AutoAccept.foreach(__v => __obj.updateDynamic("AutoAccept")(__v.asInstanceOf[js.Any]))
       DeskPhoneNumber.foreach(__v => __obj.updateDynamic("DeskPhoneNumber")(__v.asInstanceOf[js.Any]))

@@ -1740,14 +1740,14 @@ package route53domains {
 
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectAdminContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectRegistrantContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectRegistrantContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectTechContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectTechContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RegisterDomainRequest]
     }
@@ -1976,14 +1976,14 @@ package route53domains {
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
       Nameservers.foreach(__v => __obj.updateDynamic("Nameservers")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectAdminContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectRegistrantContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectRegistrantContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectTechContact.foreach(
-        __v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
+      PrivacyProtectTechContact.foreach(__v =>
+        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TransferDomainRequest]
     }

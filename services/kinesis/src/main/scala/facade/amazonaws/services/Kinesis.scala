@@ -1111,8 +1111,8 @@ package kinesis {
       )
 
       ExplicitHashKey.foreach(__v => __obj.updateDynamic("ExplicitHashKey")(__v.asInstanceOf[js.Any]))
-      SequenceNumberForOrdering.foreach(
-        __v => __obj.updateDynamic("SequenceNumberForOrdering")(__v.asInstanceOf[js.Any])
+      SequenceNumberForOrdering.foreach(__v =>
+        __obj.updateDynamic("SequenceNumberForOrdering")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutRecordInput]
     }
@@ -1278,8 +1278,8 @@ package kinesis {
         "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any]
       )
 
-      ApproximateArrivalTimestamp.foreach(
-        __v => __obj.updateDynamic("ApproximateArrivalTimestamp")(__v.asInstanceOf[js.Any])
+      ApproximateArrivalTimestamp.foreach(__v =>
+        __obj.updateDynamic("ApproximateArrivalTimestamp")(__v.asInstanceOf[js.Any])
       )
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]

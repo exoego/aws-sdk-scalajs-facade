@@ -132,8 +132,8 @@ package efs {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceMode.foreach(__v => __obj.updateDynamic("PerformanceMode")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputInMibps.foreach(
-        __v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
+      ProvisionedThroughputInMibps.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
@@ -529,8 +529,8 @@ package efs {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputInMibps.foreach(
-        __v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
+      ProvisionedThroughputInMibps.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
       )
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSystemDescription]
@@ -762,8 +762,8 @@ package efs {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
 
-      ProvisionedThroughputInMibps.foreach(
-        __v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
+      ProvisionedThroughputInMibps.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
       )
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemRequest]

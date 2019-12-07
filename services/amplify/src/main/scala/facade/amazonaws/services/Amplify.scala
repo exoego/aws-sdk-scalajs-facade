@@ -294,8 +294,8 @@ package amplify {
       )
 
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(
-        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      autoBranchCreationPatterns.foreach(__v =>
+        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
       )
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
@@ -369,8 +369,8 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(
-        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      pullRequestEnvironmentName.foreach(__v =>
+        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
       )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoBranchCreationConfig]
@@ -465,8 +465,8 @@ package amplify {
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       destinationBranch.foreach(__v => __obj.updateDynamic("destinationBranch")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(
-        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      pullRequestEnvironmentName.foreach(__v =>
+        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
       )
       sourceBranch.foreach(__v => __obj.updateDynamic("sourceBranch")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -526,8 +526,8 @@ package amplify {
 
       accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(
-        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      autoBranchCreationPatterns.foreach(__v =>
+        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
       )
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
@@ -625,8 +625,8 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(
-        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      pullRequestEnvironmentName.foreach(__v =>
+        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
       )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1092,8 +1092,8 @@ package amplify {
         "subDomains"           -> subDomains.asInstanceOf[js.Any]
       )
 
-      certificateVerificationDNSRecord.foreach(
-        __v => __obj.updateDynamic("certificateVerificationDNSRecord")(__v.asInstanceOf[js.Any])
+      certificateVerificationDNSRecord.foreach(__v =>
+        __obj.updateDynamic("certificateVerificationDNSRecord")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DomainAssociation]
     }
@@ -2309,8 +2309,8 @@ package amplify {
 
       accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(
-        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      autoBranchCreationPatterns.foreach(__v =>
+        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
       )
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
@@ -2409,8 +2409,8 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(
-        __v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
+      pullRequestEnvironmentName.foreach(__v =>
+        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
       )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))

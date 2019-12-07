@@ -171,8 +171,8 @@ package iotjobsdataplane {
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecution = {
       val __obj = js.Dynamic.literal()
-      approximateSecondsBeforeTimedOut.foreach(
-        __v => __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any])
+      approximateSecondsBeforeTimedOut.foreach(__v =>
+        __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any])
       )
       executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
       jobDocument.foreach(__v => __obj.updateDynamic("jobDocument")(__v.asInstanceOf[js.Any]))

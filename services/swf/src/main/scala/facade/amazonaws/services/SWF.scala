@@ -300,8 +300,8 @@ package swf {
       )
 
       details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      latestCancelRequestedEventId.foreach(
-        __v => __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any])
+      latestCancelRequestedEventId.foreach(__v =>
+        __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ActivityTaskCanceledEventAttributes]
     }
@@ -547,19 +547,19 @@ package swf {
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): ActivityTypeConfiguration = {
       val __obj = js.Dynamic.literal()
-      defaultTaskHeartbeatTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskHeartbeatTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskScheduleToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultTaskScheduleToStartTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskScheduleToStartTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ActivityTypeConfiguration]
     }
@@ -1091,8 +1091,8 @@ package swf {
     ): ContinueAsNewWorkflowExecutionDecisionAttributes = {
       val __obj = js.Dynamic.literal()
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -1364,44 +1364,44 @@ package swf {
         "decisionType" -> decisionType.asInstanceOf[js.Any]
       )
 
-      cancelTimerDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
+      cancelTimerDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      cancelWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      cancelWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      completeWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      completeWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      continueAsNewWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      continueAsNewWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      failWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      failWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      recordMarkerDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any])
+      recordMarkerDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      requestCancelActivityTaskDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
+      requestCancelActivityTaskDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      scheduleActivityTaskDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
+      scheduleActivityTaskDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      scheduleLambdaFunctionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      scheduleLambdaFunctionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      signalExternalWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      signalExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      startChildWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
+      startChildWorkflowExecutionDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
-      startTimerDecisionAttributes.foreach(
-        __v => __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
+      startTimerDecisionAttributes.foreach(__v =>
+        __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Decision]
     }
@@ -2363,170 +2363,168 @@ package swf {
         "eventType"      -> eventType.asInstanceOf[js.Any]
       )
 
-      activityTaskCancelRequestedEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskCancelRequestedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskCanceledEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskCanceledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskCompletedEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskCompletedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskScheduledEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskScheduledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      activityTaskTimedOutEventAttributes.foreach(
-        __v => __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
+      activityTaskTimedOutEventAttributes.foreach(__v =>
+        __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      cancelTimerFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      cancelTimerFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      cancelWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      cancelWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionCanceledEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionCanceledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionCompletedEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionCompletedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionTerminatedEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionTerminatedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      childWorkflowExecutionTimedOutEventAttributes.foreach(
-        __v => __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
+      childWorkflowExecutionTimedOutEventAttributes.foreach(__v =>
+        __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      completeWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      completeWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      continueAsNewWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      continueAsNewWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      decisionTaskCompletedEventAttributes.foreach(
-        __v => __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
+      decisionTaskCompletedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      decisionTaskScheduledEventAttributes.foreach(
-        __v => __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
+      decisionTaskScheduledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      decisionTaskStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      decisionTaskStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      decisionTaskTimedOutEventAttributes.foreach(
-        __v => __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
+      decisionTaskTimedOutEventAttributes.foreach(__v =>
+        __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      externalWorkflowExecutionCancelRequestedEventAttributes.foreach(
-        __v => __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
+      externalWorkflowExecutionCancelRequestedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      externalWorkflowExecutionSignaledEventAttributes.foreach(
-        __v => __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
+      externalWorkflowExecutionSignaledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      failWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      failWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionCompletedEventAttributes.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
+      lambdaFunctionCompletedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      lambdaFunctionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionScheduledEventAttributes.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any])
+      lambdaFunctionScheduledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      lambdaFunctionStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      lambdaFunctionTimedOutEventAttributes.foreach(
-        __v => __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
+      lambdaFunctionTimedOutEventAttributes.foreach(__v =>
+        __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      markerRecordedEventAttributes.foreach(
-        __v => __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any])
+      markerRecordedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      recordMarkerFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      recordMarkerFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      requestCancelActivityTaskFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      requestCancelActivityTaskFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(
-        __v =>
-          __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v =>
-          __obj
-            .updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
+      requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
+        __obj
+          .updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      scheduleActivityTaskFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      scheduleActivityTaskFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      scheduleLambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      scheduleLambdaFunctionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      signalExternalWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      signalExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v => __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
+      signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      startChildWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      startChildWorkflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      startChildWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v => __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
+      startChildWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      startLambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      startLambdaFunctionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      startTimerFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      startTimerFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      timerCanceledEventAttributes.foreach(
-        __v => __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any])
+      timerCanceledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      timerFiredEventAttributes.foreach(
-        __v => __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any])
+      timerFiredEventAttributes.foreach(__v =>
+        __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      timerStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      timerStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionCancelRequestedEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionCancelRequestedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionCanceledEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionCanceledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionCompletedEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionCompletedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionContinuedAsNewEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionContinuedAsNewEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionFailedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionSignaledEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionSignaledEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionStartedEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionStartedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionTerminatedEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionTerminatedEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      workflowExecutionTimedOutEventAttributes.foreach(
-        __v => __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
+      workflowExecutionTimedOutEventAttributes.foreach(__v =>
+        __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[HistoryEvent]
     }
@@ -3116,19 +3114,19 @@ package swf {
         "version" -> version.asInstanceOf[js.Any]
       )
 
-      defaultTaskHeartbeatTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskHeartbeatTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskScheduleToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultTaskScheduleToStartTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskScheduleToStartTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterActivityTypeInput]
@@ -3197,14 +3195,14 @@ package swf {
       )
 
       defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultExecutionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterWorkflowTypeInput]
@@ -3955,8 +3953,8 @@ package swf {
 
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
       control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -4078,8 +4076,8 @@ package swf {
       )
 
       control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -4234,8 +4232,8 @@ package swf {
       )
 
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -4555,8 +4553,8 @@ package swf {
       val __obj = js.Dynamic.literal()
       cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
       externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(
-        __v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
+      externalWorkflowExecution.foreach(__v =>
+        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[WorkflowExecutionCancelRequestedEventAttributes]
     }
@@ -4687,8 +4685,8 @@ package swf {
         "workflowType"                 -> workflowType.asInstanceOf[js.Any]
       )
 
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -4750,8 +4748,8 @@ package swf {
         "openCounts"             -> openCounts.asInstanceOf[js.Any]
       )
 
-      latestActivityTaskTimestamp.foreach(
-        __v => __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any])
+      latestActivityTaskTimestamp.foreach(__v =>
+        __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any])
       )
       latestExecutionContext.foreach(__v => __obj.updateDynamic("latestExecutionContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionDetail]
@@ -4932,8 +4930,8 @@ package swf {
       )
 
       externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(
-        __v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
+      externalWorkflowExecution.foreach(__v =>
+        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionSignaledEventAttributes]
@@ -4982,8 +4980,8 @@ package swf {
       )
 
       continuedExecutionRunId.foreach(__v => __obj.updateDynamic("continuedExecutionRunId")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      executionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
@@ -5113,14 +5111,14 @@ package swf {
     ): WorkflowTypeConfiguration = {
       val __obj = js.Dynamic.literal()
       defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultExecutionStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
+      defaultTaskStartToCloseTimeout.foreach(__v =>
+        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[WorkflowTypeConfiguration]
     }

@@ -400,8 +400,8 @@ package dms {
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResponse = {
       val __obj = js.Dynamic.literal()
-      ResourcePendingMaintenanceActions.foreach(
-        __v => __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
+      ResourcePendingMaintenanceActions.foreach(__v =>
+        __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResponse]
     }
@@ -522,8 +522,8 @@ package dms {
       EndpointIdentifier.foreach(__v => __obj.updateDynamic("EndpointIdentifier")(__v.asInstanceOf[js.Any]))
       LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Connection]
@@ -597,8 +597,8 @@ package dms {
       DynamoDbSettings.foreach(__v => __obj.updateDynamic("DynamoDbSettings")(__v.asInstanceOf[js.Any]))
       ElasticsearchSettings.foreach(__v => __obj.updateDynamic("ElasticsearchSettings")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(
-        __v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
+      ExtraConnectionAttributes.foreach(__v =>
+        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -744,12 +744,12 @@ package dms {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      ReplicationSubnetGroupIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationSubnetGroupIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -1591,8 +1591,8 @@ package dms {
     ): DescribeOrderableReplicationInstancesResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrderableReplicationInstances.foreach(
-        __v => __obj.updateDynamic("OrderableReplicationInstances")(__v.asInstanceOf[js.Any])
+      OrderableReplicationInstances.foreach(__v =>
+        __obj.updateDynamic("OrderableReplicationInstances")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeOrderableReplicationInstancesResponse]
     }
@@ -1643,8 +1643,8 @@ package dms {
     ): DescribePendingMaintenanceActionsResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      PendingMaintenanceActions.foreach(
-        __v => __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
+      PendingMaintenanceActions.foreach(__v =>
+        __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePendingMaintenanceActionsResponse]
     }
@@ -1731,8 +1731,8 @@ package dms {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceTaskLogs.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceTaskLogs")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceTaskLogs.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceTaskLogs")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReplicationInstanceTaskLogsResponse]
     }
@@ -1877,8 +1877,8 @@ package dms {
       val __obj = js.Dynamic.literal()
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentResults.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskAssessmentResults")(__v.asInstanceOf[js.Any])
+      ReplicationTaskAssessmentResults.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskAssessmentResults")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeReplicationTaskAssessmentResultsResponse]
     }
@@ -2207,8 +2207,8 @@ package dms {
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(
-        __v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
+      ExtraConnectionAttributes.foreach(__v =>
+        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -2533,8 +2533,8 @@ package dms {
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(
-        __v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
+      ExtraConnectionAttributes.foreach(__v =>
+        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
@@ -2664,12 +2664,12 @@ package dms {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
       )
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyReplicationInstanceMessage]
@@ -2717,8 +2717,8 @@ package dms {
         "SubnetIds"                        -> SubnetIds.asInstanceOf[js.Any]
       )
 
-      ReplicationSubnetGroupDescription.foreach(
-        __v => __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
+      ReplicationSubnetGroupDescription.foreach(__v =>
+        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyReplicationSubnetGroupMessage]
     }
@@ -2778,8 +2778,8 @@ package dms {
       CdcStartTime.foreach(__v => __obj.updateDynamic("CdcStartTime")(__v.asInstanceOf[js.Any]))
       CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
       MigrationType.foreach(__v => __obj.updateDynamic("MigrationType")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationTaskIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
       )
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
@@ -3057,8 +3057,8 @@ package dms {
       DateFormat.foreach(__v => __obj.updateDynamic("DateFormat")(__v.asInstanceOf[js.Any]))
       EmptyAsNull.foreach(__v => __obj.updateDynamic("EmptyAsNull")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
-      FileTransferUploadStreams.foreach(
-        __v => __obj.updateDynamic("FileTransferUploadStreams")(__v.asInstanceOf[js.Any])
+      FileTransferUploadStreams.foreach(__v =>
+        __obj.updateDynamic("FileTransferUploadStreams")(__v.asInstanceOf[js.Any])
       )
       LoadTimeout.foreach(__v => __obj.updateDynamic("LoadTimeout")(__v.asInstanceOf[js.Any]))
       MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
@@ -3068,8 +3068,8 @@ package dms {
       ReplaceChars.foreach(__v => __obj.updateDynamic("ReplaceChars")(__v.asInstanceOf[js.Any]))
       ReplaceInvalidChars.foreach(__v => __obj.updateDynamic("ReplaceInvalidChars")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(
-        __v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
+      ServerSideEncryptionKmsKeyId.foreach(__v =>
+        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
       )
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       TimeFormat.foreach(__v => __obj.updateDynamic("TimeFormat")(__v.asInstanceOf[js.Any]))
@@ -3331,33 +3331,33 @@ package dms {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
       )
-      ReplicationInstancePrivateIpAddress.foreach(
-        __v => __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any])
+      ReplicationInstancePrivateIpAddress.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any])
       )
-      ReplicationInstancePrivateIpAddresses.foreach(
-        __v => __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any])
+      ReplicationInstancePrivateIpAddresses.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any])
       )
-      ReplicationInstancePublicIpAddress.foreach(
-        __v => __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any])
+      ReplicationInstancePublicIpAddress.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any])
       )
-      ReplicationInstancePublicIpAddresses.foreach(
-        __v => __obj.updateDynamic("ReplicationInstancePublicIpAddresses")(__v.asInstanceOf[js.Any])
+      ReplicationInstancePublicIpAddresses.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstancePublicIpAddresses")(__v.asInstanceOf[js.Any])
       )
-      ReplicationInstanceStatus.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceStatus")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceStatus.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceStatus")(__v.asInstanceOf[js.Any])
       )
       ReplicationSubnetGroup.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroup")(__v.asInstanceOf[js.Any]))
-      SecondaryAvailabilityZone.foreach(
-        __v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
+      SecondaryAvailabilityZone.foreach(__v =>
+        __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
       )
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationInstance]
@@ -3382,8 +3382,8 @@ package dms {
         ReplicationTaskName: js.UndefOr[String] = js.undefined
     ): ReplicationInstanceTaskLog = {
       val __obj = js.Dynamic.literal()
-      ReplicationInstanceTaskLogSize.foreach(
-        __v => __obj.updateDynamic("ReplicationInstanceTaskLogSize")(__v.asInstanceOf[js.Any])
+      ReplicationInstanceTaskLogSize.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceTaskLogSize")(__v.asInstanceOf[js.Any])
       )
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
       ReplicationTaskName.foreach(__v => __obj.updateDynamic("ReplicationTaskName")(__v.asInstanceOf[js.Any]))
@@ -3441,11 +3441,11 @@ package dms {
         VpcId: js.UndefOr[String] = js.undefined
     ): ReplicationSubnetGroup = {
       val __obj = js.Dynamic.literal()
-      ReplicationSubnetGroupDescription.foreach(
-        __v => __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
+      ReplicationSubnetGroupDescription.foreach(__v =>
+        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
       )
-      ReplicationSubnetGroupIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationSubnetGroupIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
       )
       SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
@@ -3507,11 +3507,11 @@ package dms {
       RecoveryCheckpoint.foreach(__v => __obj.updateDynamic("RecoveryCheckpoint")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskCreationDate.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskCreationDate")(__v.asInstanceOf[js.Any])
+      ReplicationTaskCreationDate.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskCreationDate")(__v.asInstanceOf[js.Any])
       )
-      ReplicationTaskIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationTaskIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
       )
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       ReplicationTaskStartDate.foreach(__v => __obj.updateDynamic("ReplicationTaskStartDate")(__v.asInstanceOf[js.Any]))
@@ -3555,11 +3555,11 @@ package dms {
       AssessmentResultsFile.foreach(__v => __obj.updateDynamic("AssessmentResultsFile")(__v.asInstanceOf[js.Any]))
       AssessmentStatus.foreach(__v => __obj.updateDynamic("AssessmentStatus")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
+      ReplicationTaskIdentifier.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
       )
-      ReplicationTaskLastAssessmentDate.foreach(
-        __v => __obj.updateDynamic("ReplicationTaskLastAssessmentDate")(__v.asInstanceOf[js.Any])
+      ReplicationTaskLastAssessmentDate.foreach(__v =>
+        __obj.updateDynamic("ReplicationTaskLastAssessmentDate")(__v.asInstanceOf[js.Any])
       )
       S3ObjectUrl.foreach(__v => __obj.updateDynamic("S3ObjectUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationTaskAssessmentResult]
@@ -3631,8 +3631,8 @@ package dms {
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
       val __obj = js.Dynamic.literal()
-      PendingMaintenanceActionDetails.foreach(
-        __v => __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
+      PendingMaintenanceActionDetails.foreach(__v =>
+        __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
       )
       ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePendingMaintenanceActions]
@@ -3705,13 +3705,13 @@ package dms {
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
       IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
-      ParquetTimestampInMillisecond.foreach(
-        __v => __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any])
+      ParquetTimestampInMillisecond.foreach(__v =>
+        __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any])
       )
       ParquetVersion.foreach(__v => __obj.updateDynamic("ParquetVersion")(__v.asInstanceOf[js.Any]))
       RowGroupLength.foreach(__v => __obj.updateDynamic("RowGroupLength")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(
-        __v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
+      ServerSideEncryptionKmsKeyId.foreach(__v =>
+        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
       )
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       TimestampColumnName.foreach(__v => __obj.updateDynamic("TimestampColumnName")(__v.asInstanceOf[js.Any]))
@@ -3964,8 +3964,8 @@ package dms {
       val __obj = js.Dynamic.literal()
       Ddls.foreach(__v => __obj.updateDynamic("Ddls")(__v.asInstanceOf[js.Any]))
       Deletes.foreach(__v => __obj.updateDynamic("Deletes")(__v.asInstanceOf[js.Any]))
-      FullLoadCondtnlChkFailedRows.foreach(
-        __v => __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any])
+      FullLoadCondtnlChkFailedRows.foreach(__v =>
+        __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any])
       )
       FullLoadErrorRows.foreach(__v => __obj.updateDynamic("FullLoadErrorRows")(__v.asInstanceOf[js.Any]))
       FullLoadRows.foreach(__v => __obj.updateDynamic("FullLoadRows")(__v.asInstanceOf[js.Any]))
@@ -3979,8 +3979,8 @@ package dms {
       ValidationPendingRecords.foreach(__v => __obj.updateDynamic("ValidationPendingRecords")(__v.asInstanceOf[js.Any]))
       ValidationState.foreach(__v => __obj.updateDynamic("ValidationState")(__v.asInstanceOf[js.Any]))
       ValidationStateDetails.foreach(__v => __obj.updateDynamic("ValidationStateDetails")(__v.asInstanceOf[js.Any]))
-      ValidationSuspendedRecords.foreach(
-        __v => __obj.updateDynamic("ValidationSuspendedRecords")(__v.asInstanceOf[js.Any])
+      ValidationSuspendedRecords.foreach(__v =>
+        __obj.updateDynamic("ValidationSuspendedRecords")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TableStatistics]
     }

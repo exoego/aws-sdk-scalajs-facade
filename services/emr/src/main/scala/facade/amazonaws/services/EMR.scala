@@ -563,8 +563,8 @@ package emr {
         "BlockPublicSecurityGroupRules" -> BlockPublicSecurityGroupRules.asInstanceOf[js.Any]
       )
 
-      PermittedPublicSecurityGroupRuleRanges.foreach(
-        __v => __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any])
+      PermittedPublicSecurityGroupRuleRanges.foreach(__v =>
+        __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlockPublicAccessConfiguration]
     }
@@ -1411,28 +1411,28 @@ package emr {
         ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined
     ): Ec2InstanceAttributes = {
       val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(
-        __v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
+      AdditionalMasterSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
       )
-      AdditionalSlaveSecurityGroups.foreach(
-        __v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
+      AdditionalSlaveSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       Ec2AvailabilityZone.foreach(__v => __obj.updateDynamic("Ec2AvailabilityZone")(__v.asInstanceOf[js.Any]))
       Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(
-        __v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
+      EmrManagedMasterSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
       )
-      EmrManagedSlaveSecurityGroup.foreach(
-        __v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
+      EmrManagedSlaveSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      RequestedEc2AvailabilityZones.foreach(
-        __v => __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any])
+      RequestedEc2AvailabilityZones.foreach(__v =>
+        __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       RequestedEc2SubnetIds.foreach(__v => __obj.updateDynamic("RequestedEc2SubnetIds")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(
-        __v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
+      ServiceAccessSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Ec2InstanceAttributes]
     }
@@ -1650,13 +1650,13 @@ package emr {
       val __obj = js.Dynamic.literal()
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
-      InstanceTypeSpecifications.foreach(
-        __v => __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any])
+      InstanceTypeSpecifications.foreach(__v =>
+        __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any])
       )
       LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisionedOnDemandCapacity.foreach(
-        __v => __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any])
+      ProvisionedOnDemandCapacity.foreach(__v =>
+        __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any])
       )
       ProvisionedSpotCapacity.foreach(__v => __obj.updateDynamic("ProvisionedSpotCapacity")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1919,11 +1919,11 @@ package emr {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceGroupType.foreach(__v => __obj.updateDynamic("InstanceGroupType")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LastSuccessfullyAppliedConfigurations.foreach(
-        __v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any])
+      LastSuccessfullyAppliedConfigurations.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any])
       )
-      LastSuccessfullyAppliedConfigurationsVersion.foreach(
-        __v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any])
+      LastSuccessfullyAppliedConfigurationsVersion.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any])
       )
       Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2066,8 +2066,8 @@ package emr {
       )
 
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EC2InstanceIdsToTerminate.foreach(
-        __v => __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any])
+      EC2InstanceIdsToTerminate.foreach(__v =>
+        __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any])
       )
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
@@ -2212,8 +2212,8 @@ package emr {
         InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined
     ): InstanceResizePolicy = {
       val __obj = js.Dynamic.literal()
-      InstanceTerminationTimeout.foreach(
-        __v => __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any])
+      InstanceTerminationTimeout.foreach(__v =>
+        __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any])
       )
       InstancesToProtect.foreach(__v => __obj.updateDynamic("InstancesToProtect")(__v.asInstanceOf[js.Any]))
       InstancesToTerminate.foreach(__v => __obj.updateDynamic("InstancesToTerminate")(__v.asInstanceOf[js.Any]))
@@ -2353,8 +2353,8 @@ package emr {
       )
 
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(
-        __v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
+      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
+        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
       )
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -2392,8 +2392,8 @@ package emr {
     ): InstanceTypeSpecification = {
       val __obj = js.Dynamic.literal()
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(
-        __v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
+      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
+        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
       )
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
@@ -2564,32 +2564,32 @@ package emr {
         TerminationProtected: js.UndefOr[Boolean] = js.undefined
     ): JobFlowInstancesConfig = {
       val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(
-        __v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
+      AdditionalMasterSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
       )
-      AdditionalSlaveSecurityGroups.foreach(
-        __v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
+      AdditionalSlaveSecurityGroups.foreach(__v =>
+        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
       Ec2SubnetIds.foreach(__v => __obj.updateDynamic("Ec2SubnetIds")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(
-        __v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
+      EmrManagedMasterSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
       )
-      EmrManagedSlaveSecurityGroup.foreach(
-        __v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
+      EmrManagedSlaveSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(
-        __v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
+      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
+        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
       )
       MasterInstanceType.foreach(__v => __obj.updateDynamic("MasterInstanceType")(__v.asInstanceOf[js.Any]))
       Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(
-        __v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
+      ServiceAccessSecurityGroup.foreach(__v =>
+        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       SlaveInstanceType.foreach(__v => __obj.updateDynamic("SlaveInstanceType")(__v.asInstanceOf[js.Any]))
       TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
@@ -2644,8 +2644,8 @@ package emr {
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
       HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(
-        __v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
+      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
+        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
       )
       MasterInstanceId.foreach(__v => __obj.updateDynamic("MasterInstanceId")(__v.asInstanceOf[js.Any]))
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
@@ -2684,8 +2684,8 @@ package emr {
 
       ADDomainJoinPassword.foreach(__v => __obj.updateDynamic("ADDomainJoinPassword")(__v.asInstanceOf[js.Any]))
       ADDomainJoinUser.foreach(__v => __obj.updateDynamic("ADDomainJoinUser")(__v.asInstanceOf[js.Any]))
-      CrossRealmTrustPrincipalPassword.foreach(
-        __v => __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any])
+      CrossRealmTrustPrincipalPassword.foreach(__v =>
+        __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[KerberosAttributes]
     }
