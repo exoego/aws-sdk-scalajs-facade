@@ -1036,8 +1036,8 @@ package glacier {
       Completed.foreach(__v => __obj.updateDynamic("Completed")(__v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(
-        __v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
+      InventoryRetrievalParameters.foreach(__v =>
+        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
       )
       InventorySizeInBytes.foreach(__v => __obj.updateDynamic("InventorySizeInBytes")(__v.asInstanceOf[js.Any]))
       JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
@@ -1374,8 +1374,8 @@ package glacier {
       ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(
-        __v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
+      InventoryRetrievalParameters.foreach(__v =>
+        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
       )
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))

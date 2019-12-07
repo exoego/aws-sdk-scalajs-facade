@@ -1611,8 +1611,8 @@ package ses {
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetAttributeNames.foreach(
-        __v => __obj.updateDynamic("ConfigurationSetAttributeNames")(__v.asInstanceOf[js.Any])
+      ConfigurationSetAttributeNames.foreach(__v =>
+        __obj.updateDynamic("ConfigurationSetAttributeNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeConfigurationSetRequest]
     }
@@ -1813,8 +1813,8 @@ package ses {
 
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(
-        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      KinesisFirehoseDestination.foreach(__v =>
+        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
       )
       SNSDestination.foreach(__v => __obj.updateDynamic("SNSDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestination]
@@ -2310,14 +2310,14 @@ package ses {
         "ForwardingEnabled" -> ForwardingEnabled.asInstanceOf[js.Any]
       )
 
-      HeadersInBounceNotificationsEnabled.foreach(
-        __v => __obj.updateDynamic("HeadersInBounceNotificationsEnabled")(__v.asInstanceOf[js.Any])
+      HeadersInBounceNotificationsEnabled.foreach(__v =>
+        __obj.updateDynamic("HeadersInBounceNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
-      HeadersInComplaintNotificationsEnabled.foreach(
-        __v => __obj.updateDynamic("HeadersInComplaintNotificationsEnabled")(__v.asInstanceOf[js.Any])
+      HeadersInComplaintNotificationsEnabled.foreach(__v =>
+        __obj.updateDynamic("HeadersInComplaintNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
-      HeadersInDeliveryNotificationsEnabled.foreach(
-        __v => __obj.updateDynamic("HeadersInDeliveryNotificationsEnabled")(__v.asInstanceOf[js.Any])
+      HeadersInDeliveryNotificationsEnabled.foreach(__v =>
+        __obj.updateDynamic("HeadersInDeliveryNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[IdentityNotificationAttributes]
     }
@@ -2498,8 +2498,8 @@ package ses {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCustomVerificationEmailTemplatesResponse = {
       val __obj = js.Dynamic.literal()
-      CustomVerificationEmailTemplates.foreach(
-        __v => __obj.updateDynamic("CustomVerificationEmailTemplates")(__v.asInstanceOf[js.Any])
+      CustomVerificationEmailTemplates.foreach(__v =>
+        __obj.updateDynamic("CustomVerificationEmailTemplates")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCustomVerificationEmailTemplatesResponse]

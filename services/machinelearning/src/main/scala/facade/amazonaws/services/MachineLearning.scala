@@ -286,8 +286,8 @@ package machinelearning {
         TotalRecordCount: js.UndefOr[LongType] = js.undefined
     ): BatchPrediction = {
       val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(
-        __v => __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
+      BatchPredictionDataSourceId.foreach(__v =>
+        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
       )
       BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
       ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
@@ -1497,8 +1497,8 @@ package machinelearning {
         TotalRecordCount: js.UndefOr[LongType] = js.undefined
     ): GetBatchPredictionOutput = {
       val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(
-        __v => __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
+      BatchPredictionDataSourceId.foreach(__v =>
+        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
       )
       BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
       ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
@@ -1786,8 +1786,8 @@ package machinelearning {
       Recipe.foreach(__v => __obj.updateDynamic("Recipe")(__v.asInstanceOf[js.Any]))
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(
-        __v => __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
+      ScoreThresholdLastUpdatedAt.foreach(__v =>
+        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
       )
       SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
       StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
@@ -1903,8 +1903,8 @@ package machinelearning {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(
-        __v => __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
+      ScoreThresholdLastUpdatedAt.foreach(__v =>
+        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
       )
       SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
       StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))

@@ -363,8 +363,8 @@ package directoryservice {
         "IpRoutes"    -> IpRoutes.asInstanceOf[js.Any]
       )
 
-      UpdateSecurityGroupForDirectoryControllers.foreach(
-        __v => __obj.updateDynamic("UpdateSecurityGroupForDirectoryControllers")(__v.asInstanceOf[js.Any])
+      UpdateSecurityGroupForDirectoryControllers.foreach(__v =>
+        __obj.updateDynamic("UpdateSecurityGroupForDirectoryControllers")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AddIpRoutesRequest]
     }
@@ -655,8 +655,8 @@ package directoryservice {
       )
 
       ComputerAttributes.foreach(__v => __obj.updateDynamic("ComputerAttributes")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedName.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedName.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateComputerRequest]
     }
@@ -950,8 +950,8 @@ package directoryservice {
         "TrustPassword"    -> TrustPassword.asInstanceOf[js.Any]
       )
 
-      ConditionalForwarderIpAddrs.foreach(
-        __v => __obj.updateDynamic("ConditionalForwarderIpAddrs")(__v.asInstanceOf[js.Any])
+      ConditionalForwarderIpAddrs.foreach(__v =>
+        __obj.updateDynamic("ConditionalForwarderIpAddrs")(__v.asInstanceOf[js.Any])
       )
       SelectiveAuth.foreach(__v => __obj.updateDynamic("SelectiveAuth")(__v.asInstanceOf[js.Any]))
       TrustType.foreach(__v => __obj.updateDynamic("TrustType")(__v.asInstanceOf[js.Any]))
@@ -1148,8 +1148,8 @@ package directoryservice {
         "TrustId" -> TrustId.asInstanceOf[js.Any]
       )
 
-      DeleteAssociatedConditionalForwarder.foreach(
-        __v => __obj.updateDynamic("DeleteAssociatedConditionalForwarder")(__v.asInstanceOf[js.Any])
+      DeleteAssociatedConditionalForwarder.foreach(__v =>
+        __obj.updateDynamic("DeleteAssociatedConditionalForwarder")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteTrustRequest]
     }
@@ -1665,16 +1665,16 @@ package directoryservice {
       Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       ConnectSettings.foreach(__v => __obj.updateDynamic("ConnectSettings")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DesiredNumberOfDomainControllers.foreach(
-        __v => __obj.updateDynamic("DesiredNumberOfDomainControllers")(__v.asInstanceOf[js.Any])
+      DesiredNumberOfDomainControllers.foreach(__v =>
+        __obj.updateDynamic("DesiredNumberOfDomainControllers")(__v.asInstanceOf[js.Any])
       )
       DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
       DnsIpAddrs.foreach(__v => __obj.updateDynamic("DnsIpAddrs")(__v.asInstanceOf[js.Any]))
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OwnerDirectoryDescription.foreach(
-        __v => __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any])
+      OwnerDirectoryDescription.foreach(__v =>
+        __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any])
       )
       RadiusSettings.foreach(__v => __obj.updateDynamic("RadiusSettings")(__v.asInstanceOf[js.Any]))
       RadiusStatus.foreach(__v => __obj.updateDynamic("RadiusStatus")(__v.asInstanceOf[js.Any]))
@@ -1730,32 +1730,32 @@ package directoryservice {
         ConnectedDirectoriesLimitReached: js.UndefOr[ConnectedDirectoriesLimitReached] = js.undefined
     ): DirectoryLimits = {
       val __obj = js.Dynamic.literal()
-      CloudOnlyDirectoriesCurrentCount.foreach(
-        __v => __obj.updateDynamic("CloudOnlyDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
+      CloudOnlyDirectoriesCurrentCount.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
       )
-      CloudOnlyDirectoriesLimit.foreach(
-        __v => __obj.updateDynamic("CloudOnlyDirectoriesLimit")(__v.asInstanceOf[js.Any])
+      CloudOnlyDirectoriesLimit.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyDirectoriesLimit")(__v.asInstanceOf[js.Any])
       )
-      CloudOnlyDirectoriesLimitReached.foreach(
-        __v => __obj.updateDynamic("CloudOnlyDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
+      CloudOnlyDirectoriesLimitReached.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
       )
-      CloudOnlyMicrosoftADCurrentCount.foreach(
-        __v => __obj.updateDynamic("CloudOnlyMicrosoftADCurrentCount")(__v.asInstanceOf[js.Any])
+      CloudOnlyMicrosoftADCurrentCount.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyMicrosoftADCurrentCount")(__v.asInstanceOf[js.Any])
       )
-      CloudOnlyMicrosoftADLimit.foreach(
-        __v => __obj.updateDynamic("CloudOnlyMicrosoftADLimit")(__v.asInstanceOf[js.Any])
+      CloudOnlyMicrosoftADLimit.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyMicrosoftADLimit")(__v.asInstanceOf[js.Any])
       )
-      CloudOnlyMicrosoftADLimitReached.foreach(
-        __v => __obj.updateDynamic("CloudOnlyMicrosoftADLimitReached")(__v.asInstanceOf[js.Any])
+      CloudOnlyMicrosoftADLimitReached.foreach(__v =>
+        __obj.updateDynamic("CloudOnlyMicrosoftADLimitReached")(__v.asInstanceOf[js.Any])
       )
-      ConnectedDirectoriesCurrentCount.foreach(
-        __v => __obj.updateDynamic("ConnectedDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
+      ConnectedDirectoriesCurrentCount.foreach(__v =>
+        __obj.updateDynamic("ConnectedDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
       )
-      ConnectedDirectoriesLimit.foreach(
-        __v => __obj.updateDynamic("ConnectedDirectoriesLimit")(__v.asInstanceOf[js.Any])
+      ConnectedDirectoriesLimit.foreach(__v =>
+        __obj.updateDynamic("ConnectedDirectoriesLimit")(__v.asInstanceOf[js.Any])
       )
-      ConnectedDirectoriesLimitReached.foreach(
-        __v => __obj.updateDynamic("ConnectedDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
+      ConnectedDirectoriesLimitReached.foreach(__v =>
+        __obj.updateDynamic("ConnectedDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DirectoryLimits]
     }
@@ -1977,8 +1977,8 @@ package directoryservice {
       DomainControllerId.foreach(__v => __obj.updateDynamic("DomainControllerId")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusLastUpdatedDateTime.foreach(
-        __v => __obj.updateDynamic("StatusLastUpdatedDateTime")(__v.asInstanceOf[js.Any])
+      StatusLastUpdatedDateTime.foreach(__v =>
+        __obj.updateDynamic("StatusLastUpdatedDateTime")(__v.asInstanceOf[js.Any])
       )
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
@@ -2445,8 +2445,8 @@ package directoryservice {
       val __obj = js.Dynamic.literal()
       DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
       LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
-      SubscriptionCreatedDateTime.foreach(
-        __v => __obj.updateDynamic("SubscriptionCreatedDateTime")(__v.asInstanceOf[js.Any])
+      SubscriptionCreatedDateTime.foreach(__v =>
+        __obj.updateDynamic("SubscriptionCreatedDateTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LogSubscription]
     }
@@ -2796,8 +2796,8 @@ package directoryservice {
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
       SchemaExtensionId.foreach(__v => __obj.updateDynamic("SchemaExtensionId")(__v.asInstanceOf[js.Any]))
       SchemaExtensionStatus.foreach(__v => __obj.updateDynamic("SchemaExtensionStatus")(__v.asInstanceOf[js.Any]))
-      SchemaExtensionStatusReason.foreach(
-        __v => __obj.updateDynamic("SchemaExtensionStatusReason")(__v.asInstanceOf[js.Any])
+      SchemaExtensionStatusReason.foreach(__v =>
+        __obj.updateDynamic("SchemaExtensionStatusReason")(__v.asInstanceOf[js.Any])
       )
       StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaExtensionInfo]
@@ -3022,12 +3022,12 @@ package directoryservice {
         ManualSnapshotsLimitReached: js.UndefOr[ManualSnapshotsLimitReached] = js.undefined
     ): SnapshotLimits = {
       val __obj = js.Dynamic.literal()
-      ManualSnapshotsCurrentCount.foreach(
-        __v => __obj.updateDynamic("ManualSnapshotsCurrentCount")(__v.asInstanceOf[js.Any])
+      ManualSnapshotsCurrentCount.foreach(__v =>
+        __obj.updateDynamic("ManualSnapshotsCurrentCount")(__v.asInstanceOf[js.Any])
       )
       ManualSnapshotsLimit.foreach(__v => __obj.updateDynamic("ManualSnapshotsLimit")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotsLimitReached.foreach(
-        __v => __obj.updateDynamic("ManualSnapshotsLimitReached")(__v.asInstanceOf[js.Any])
+      ManualSnapshotsLimitReached.foreach(__v =>
+        __obj.updateDynamic("ManualSnapshotsLimitReached")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SnapshotLimits]
     }

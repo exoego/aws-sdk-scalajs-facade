@@ -817,13 +817,13 @@ package gamelift {
       InstanceRoleArn.foreach(__v => __obj.updateDynamic("InstanceRoleArn")(__v.asInstanceOf[js.Any]))
       LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
+      NewGameSessionProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
       PeerVpcAwsAccountId.foreach(__v => __obj.updateDynamic("PeerVpcAwsAccountId")(__v.asInstanceOf[js.Any]))
       PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(
-        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      ResourceCreationLimitPolicy.foreach(__v =>
+        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
       )
       RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
       ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
@@ -2359,8 +2359,8 @@ package gamelift {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
       PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
-      PlayerSessionStatusFilter.foreach(
-        __v => __obj.updateDynamic("PlayerSessionStatusFilter")(__v.asInstanceOf[js.Any])
+      PlayerSessionStatusFilter.foreach(__v =>
+        __obj.updateDynamic("PlayerSessionStatusFilter")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePlayerSessionsInput]
     }
@@ -3009,12 +3009,12 @@ package gamelift {
       LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
+      NewGameSessionProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
       OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(
-        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      ResourceCreationLimitPolicy.foreach(__v =>
+        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
       )
       ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
       ServerLaunchParameters.foreach(__v => __obj.updateDynamic("ServerLaunchParameters")(__v.asInstanceOf[js.Any]))
@@ -3138,12 +3138,12 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       ActiveGameSessionCount.foreach(__v => __obj.updateDynamic("ActiveGameSessionCount")(__v.asInstanceOf[js.Any]))
       ActiveServerProcessCount.foreach(__v => __obj.updateDynamic("ActiveServerProcessCount")(__v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      CurrentPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      MaximumPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FleetUtilization]
     }
@@ -3234,8 +3234,8 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      CurrentPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
@@ -3244,12 +3244,12 @@ package gamelift {
       GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      MaximumPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(
-        __v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
+      PlayerSessionCreationPolicy.foreach(__v =>
+        __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
       )
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3375,8 +3375,8 @@ package gamelift {
       GameSessionRegion.foreach(__v => __obj.updateDynamic("GameSessionRegion")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      MaximumPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       PlacedPlayerSessions.foreach(__v => __obj.updateDynamic("PlacedPlayerSessions")(__v.asInstanceOf[js.Any]))
       PlacementId.foreach(__v => __obj.updateDynamic("PlacementId")(__v.asInstanceOf[js.Any]))
@@ -4044,8 +4044,8 @@ package gamelift {
       ConfigurationName.foreach(__v => __obj.updateDynamic("ConfigurationName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       EstimatedWaitTime.foreach(__v => __obj.updateDynamic("EstimatedWaitTime")(__v.asInstanceOf[js.Any]))
-      GameSessionConnectionInfo.foreach(
-        __v => __obj.updateDynamic("GameSessionConnectionInfo")(__v.asInstanceOf[js.Any])
+      GameSessionConnectionInfo.foreach(__v =>
+        __obj.updateDynamic("GameSessionConnectionInfo")(__v.asInstanceOf[js.Any])
       )
       Players.foreach(__v => __obj.updateDynamic("Players")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -4198,8 +4198,8 @@ package gamelift {
         PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): PlayerLatencyPolicy = {
       val __obj = js.Dynamic.literal()
-      MaximumIndividualPlayerLatencyMilliseconds.foreach(
-        __v => __obj.updateDynamic("MaximumIndividualPlayerLatencyMilliseconds")(__v.asInstanceOf[js.Any])
+      MaximumIndividualPlayerLatencyMilliseconds.foreach(__v =>
+        __obj.updateDynamic("MaximumIndividualPlayerLatencyMilliseconds")(__v.asInstanceOf[js.Any])
       )
       PolicyDurationSeconds.foreach(__v => __obj.updateDynamic("PolicyDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlayerLatencyPolicy]
@@ -4461,8 +4461,8 @@ package gamelift {
         PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): ResourceCreationLimitPolicy = {
       val __obj = js.Dynamic.literal()
-      NewGameSessionsPerCreator.foreach(
-        __v => __obj.updateDynamic("NewGameSessionsPerCreator")(__v.asInstanceOf[js.Any])
+      NewGameSessionsPerCreator.foreach(__v =>
+        __obj.updateDynamic("NewGameSessionsPerCreator")(__v.asInstanceOf[js.Any])
       )
       PolicyPeriodInMinutes.foreach(__v => __obj.updateDynamic("PolicyPeriodInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceCreationLimitPolicy]
@@ -4547,11 +4547,11 @@ package gamelift {
         ServerProcesses: js.UndefOr[ServerProcessList] = js.undefined
     ): RuntimeConfiguration = {
       val __obj = js.Dynamic.literal()
-      GameSessionActivationTimeoutSeconds.foreach(
-        __v => __obj.updateDynamic("GameSessionActivationTimeoutSeconds")(__v.asInstanceOf[js.Any])
+      GameSessionActivationTimeoutSeconds.foreach(__v =>
+        __obj.updateDynamic("GameSessionActivationTimeoutSeconds")(__v.asInstanceOf[js.Any])
       )
-      MaxConcurrentGameSessionActivations.foreach(
-        __v => __obj.updateDynamic("MaxConcurrentGameSessionActivations")(__v.asInstanceOf[js.Any])
+      MaxConcurrentGameSessionActivations.foreach(__v =>
+        __obj.updateDynamic("MaxConcurrentGameSessionActivations")(__v.asInstanceOf[js.Any])
       )
       ServerProcesses.foreach(__v => __obj.updateDynamic("ServerProcesses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuntimeConfiguration]
@@ -5245,11 +5245,11 @@ package gamelift {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
+      NewGameSessionProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
-      ResourceCreationLimitPolicy.foreach(
-        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      ResourceCreationLimitPolicy.foreach(__v =>
+        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFleetAttributesInput]
     }
@@ -5344,11 +5344,11 @@ package gamelift {
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      InboundPermissionAuthorizations.foreach(
-        __v => __obj.updateDynamic("InboundPermissionAuthorizations")(__v.asInstanceOf[js.Any])
+      InboundPermissionAuthorizations.foreach(__v =>
+        __obj.updateDynamic("InboundPermissionAuthorizations")(__v.asInstanceOf[js.Any])
       )
-      InboundPermissionRevocations.foreach(
-        __v => __obj.updateDynamic("InboundPermissionRevocations")(__v.asInstanceOf[js.Any])
+      InboundPermissionRevocations.foreach(__v =>
+        __obj.updateDynamic("InboundPermissionRevocations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFleetPortSettingsInput]
     }
@@ -5398,12 +5398,12 @@ package gamelift {
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any]
       )
 
-      MaximumPlayerSessionCount.foreach(
-        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      MaximumPlayerSessionCount.foreach(__v =>
+        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(
-        __v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
+      PlayerSessionCreationPolicy.foreach(__v =>
+        __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
       )
       ProtectionPolicy.foreach(__v => __obj.updateDynamic("ProtectionPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionInput]

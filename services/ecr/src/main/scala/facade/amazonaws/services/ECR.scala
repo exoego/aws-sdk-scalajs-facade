@@ -458,8 +458,8 @@ package ecr {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      imageScanningConfiguration.foreach(
-        __v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
+      imageScanningConfiguration.foreach(__v =>
+        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
       )
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1217,8 +1217,8 @@ package ecr {
       findingSeverityCounts.foreach(__v => __obj.updateDynamic("findingSeverityCounts")(__v.asInstanceOf[js.Any]))
       findings.foreach(__v => __obj.updateDynamic("findings")(__v.asInstanceOf[js.Any]))
       imageScanCompletedAt.foreach(__v => __obj.updateDynamic("imageScanCompletedAt")(__v.asInstanceOf[js.Any]))
-      vulnerabilitySourceUpdatedAt.foreach(
-        __v => __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
+      vulnerabilitySourceUpdatedAt.foreach(__v =>
+        __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ImageScanFindings]
     }
@@ -1244,8 +1244,8 @@ package ecr {
       val __obj = js.Dynamic.literal()
       findingSeverityCounts.foreach(__v => __obj.updateDynamic("findingSeverityCounts")(__v.asInstanceOf[js.Any]))
       imageScanCompletedAt.foreach(__v => __obj.updateDynamic("imageScanCompletedAt")(__v.asInstanceOf[js.Any]))
-      vulnerabilitySourceUpdatedAt.foreach(
-        __v => __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
+      vulnerabilitySourceUpdatedAt.foreach(__v =>
+        __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ImageScanFindingsSummary]
     }
@@ -1687,8 +1687,8 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PutImageScanningConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      imageScanningConfiguration.foreach(
-        __v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
+      imageScanningConfiguration.foreach(__v =>
+        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
       )
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
@@ -1815,8 +1815,8 @@ package ecr {
     ): Repository = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      imageScanningConfiguration.foreach(
-        __v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
+      imageScanningConfiguration.foreach(__v =>
+        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
       )
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))

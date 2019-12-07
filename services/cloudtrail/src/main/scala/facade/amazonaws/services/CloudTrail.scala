@@ -169,13 +169,13 @@ package cloudtrail {
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       EnableLogFileValidation.foreach(__v => __obj.updateDynamic("EnableLogFileValidation")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(
-        __v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
+      IncludeGlobalServiceEvents.foreach(__v =>
+        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
       )
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
@@ -225,12 +225,12 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): CreateTrailResponse = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(
-        __v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
+      IncludeGlobalServiceEvents.foreach(__v =>
+        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
       )
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
@@ -566,29 +566,29 @@ package cloudtrail {
     ): GetTrailStatusResponse = {
       val __obj = js.Dynamic.literal()
       IsLogging.foreach(__v => __obj.updateDynamic("IsLogging")(__v.asInstanceOf[js.Any]))
-      LatestCloudWatchLogsDeliveryError.foreach(
-        __v => __obj.updateDynamic("LatestCloudWatchLogsDeliveryError")(__v.asInstanceOf[js.Any])
+      LatestCloudWatchLogsDeliveryError.foreach(__v =>
+        __obj.updateDynamic("LatestCloudWatchLogsDeliveryError")(__v.asInstanceOf[js.Any])
       )
-      LatestCloudWatchLogsDeliveryTime.foreach(
-        __v => __obj.updateDynamic("LatestCloudWatchLogsDeliveryTime")(__v.asInstanceOf[js.Any])
+      LatestCloudWatchLogsDeliveryTime.foreach(__v =>
+        __obj.updateDynamic("LatestCloudWatchLogsDeliveryTime")(__v.asInstanceOf[js.Any])
       )
-      LatestDeliveryAttemptSucceeded.foreach(
-        __v => __obj.updateDynamic("LatestDeliveryAttemptSucceeded")(__v.asInstanceOf[js.Any])
+      LatestDeliveryAttemptSucceeded.foreach(__v =>
+        __obj.updateDynamic("LatestDeliveryAttemptSucceeded")(__v.asInstanceOf[js.Any])
       )
-      LatestDeliveryAttemptTime.foreach(
-        __v => __obj.updateDynamic("LatestDeliveryAttemptTime")(__v.asInstanceOf[js.Any])
+      LatestDeliveryAttemptTime.foreach(__v =>
+        __obj.updateDynamic("LatestDeliveryAttemptTime")(__v.asInstanceOf[js.Any])
       )
       LatestDeliveryError.foreach(__v => __obj.updateDynamic("LatestDeliveryError")(__v.asInstanceOf[js.Any]))
       LatestDeliveryTime.foreach(__v => __obj.updateDynamic("LatestDeliveryTime")(__v.asInstanceOf[js.Any]))
-      LatestDigestDeliveryError.foreach(
-        __v => __obj.updateDynamic("LatestDigestDeliveryError")(__v.asInstanceOf[js.Any])
+      LatestDigestDeliveryError.foreach(__v =>
+        __obj.updateDynamic("LatestDigestDeliveryError")(__v.asInstanceOf[js.Any])
       )
       LatestDigestDeliveryTime.foreach(__v => __obj.updateDynamic("LatestDigestDeliveryTime")(__v.asInstanceOf[js.Any]))
-      LatestNotificationAttemptSucceeded.foreach(
-        __v => __obj.updateDynamic("LatestNotificationAttemptSucceeded")(__v.asInstanceOf[js.Any])
+      LatestNotificationAttemptSucceeded.foreach(__v =>
+        __obj.updateDynamic("LatestNotificationAttemptSucceeded")(__v.asInstanceOf[js.Any])
       )
-      LatestNotificationAttemptTime.foreach(
-        __v => __obj.updateDynamic("LatestNotificationAttemptTime")(__v.asInstanceOf[js.Any])
+      LatestNotificationAttemptTime.foreach(__v =>
+        __obj.updateDynamic("LatestNotificationAttemptTime")(__v.asInstanceOf[js.Any])
       )
       LatestNotificationError.foreach(__v => __obj.updateDynamic("LatestNotificationError")(__v.asInstanceOf[js.Any]))
       LatestNotificationTime.foreach(__v => __obj.updateDynamic("LatestNotificationTime")(__v.asInstanceOf[js.Any]))
@@ -1120,14 +1120,14 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): Trail = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       HasCustomEventSelectors.foreach(__v => __obj.updateDynamic("HasCustomEventSelectors")(__v.asInstanceOf[js.Any]))
       HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(
-        __v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
+      IncludeGlobalServiceEvents.foreach(__v =>
+        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
       )
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
@@ -1205,13 +1205,13 @@ package cloudtrail {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       EnableLogFileValidation.foreach(__v => __obj.updateDynamic("EnableLogFileValidation")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(
-        __v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
+      IncludeGlobalServiceEvents.foreach(__v =>
+        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
       )
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
@@ -1261,12 +1261,12 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): UpdateTrailResponse = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(
-        __v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
+      CloudWatchLogsLogGroupArn.foreach(__v =>
+        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(
-        __v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
+      IncludeGlobalServiceEvents.foreach(__v =>
+        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
       )
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))

@@ -196,8 +196,8 @@ package acmpca {
       val __obj = js.Dynamic.literal()
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
       Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      DistinguishedNameQualifier.foreach(
-        __v => __obj.updateDynamic("DistinguishedNameQualifier")(__v.asInstanceOf[js.Any])
+      DistinguishedNameQualifier.foreach(__v =>
+        __obj.updateDynamic("DistinguishedNameQualifier")(__v.asInstanceOf[js.Any])
       )
       GenerationQualifier.foreach(__v => __obj.updateDynamic("GenerationQualifier")(__v.asInstanceOf[js.Any]))
       GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
@@ -274,8 +274,8 @@ package acmpca {
     ): CertificateAuthority = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CertificateAuthorityConfiguration.foreach(
-        __v => __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any])
+      CertificateAuthorityConfiguration.foreach(__v =>
+        __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any])
       )
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -518,8 +518,8 @@ package acmpca {
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      PermanentDeletionTimeInDays.foreach(
-        __v => __obj.updateDynamic("PermanentDeletionTimeInDays")(__v.asInstanceOf[js.Any])
+      PermanentDeletionTimeInDays.foreach(__v =>
+        __obj.updateDynamic("PermanentDeletionTimeInDays")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteCertificateAuthorityRequest]
     }

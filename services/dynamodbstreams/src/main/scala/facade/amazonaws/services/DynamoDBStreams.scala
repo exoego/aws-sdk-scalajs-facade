@@ -584,8 +584,8 @@ package dynamodbstreams {
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
     ): StreamRecord = {
       val __obj = js.Dynamic.literal()
-      ApproximateCreationDateTime.foreach(
-        __v => __obj.updateDynamic("ApproximateCreationDateTime")(__v.asInstanceOf[js.Any])
+      ApproximateCreationDateTime.foreach(__v =>
+        __obj.updateDynamic("ApproximateCreationDateTime")(__v.asInstanceOf[js.Any])
       )
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
       NewImage.foreach(__v => __obj.updateDynamic("NewImage")(__v.asInstanceOf[js.Any]))

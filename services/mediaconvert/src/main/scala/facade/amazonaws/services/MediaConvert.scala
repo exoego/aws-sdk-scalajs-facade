@@ -587,8 +587,8 @@ package mediaconvert {
         VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined
     ): AacSettings = {
       val __obj = js.Dynamic.literal()
-      AudioDescriptionBroadcasterMix.foreach(
-        __v => __obj.updateDynamic("AudioDescriptionBroadcasterMix")(__v.asInstanceOf[js.Any])
+      AudioDescriptionBroadcasterMix.foreach(__v =>
+        __obj.updateDynamic("AudioDescriptionBroadcasterMix")(__v.asInstanceOf[js.Any])
       )
       Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
       CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
@@ -725,8 +725,8 @@ package mediaconvert {
       BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
       CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
       Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionProfile.foreach(
-        __v => __obj.updateDynamic("DynamicRangeCompressionProfile")(__v.asInstanceOf[js.Any])
+      DynamicRangeCompressionProfile.foreach(__v =>
+        __obj.updateDynamic("DynamicRangeCompressionProfile")(__v.asInstanceOf[js.Any])
       )
       LfeFilter.foreach(__v => __obj.updateDynamic("LfeFilter")(__v.asInstanceOf[js.Any]))
       MetadataControl.foreach(__v => __obj.updateDynamic("MetadataControl")(__v.asInstanceOf[js.Any]))
@@ -844,8 +844,8 @@ package mediaconvert {
     ): AncillarySourceSettings = {
       val __obj = js.Dynamic.literal()
       Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
-      SourceAncillaryChannelNumber.foreach(
-        __v => __obj.updateDynamic("SourceAncillaryChannelNumber")(__v.asInstanceOf[js.Any])
+      SourceAncillaryChannelNumber.foreach(__v =>
+        __obj.updateDynamic("SourceAncillaryChannelNumber")(__v.asInstanceOf[js.Any])
       )
       TerminateCaptions.foreach(__v => __obj.updateDynamic("TerminateCaptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AncillarySourceSettings]
@@ -1001,8 +1001,8 @@ package mediaconvert {
         StreamName: js.UndefOr[__stringPatternWS] = js.undefined
     ): AudioDescription = {
       val __obj = js.Dynamic.literal()
-      AudioNormalizationSettings.foreach(
-        __v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
+      AudioNormalizationSettings.foreach(__v =>
+        __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
       )
       AudioSourceName.foreach(__v => __obj.updateDynamic("AudioSourceName")(__v.asInstanceOf[js.Any]))
       AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
@@ -1481,20 +1481,20 @@ package mediaconvert {
         TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined
     ): CaptionDestinationSettings = {
       val __obj = js.Dynamic.literal()
-      BurninDestinationSettings.foreach(
-        __v => __obj.updateDynamic("BurninDestinationSettings")(__v.asInstanceOf[js.Any])
+      BurninDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("BurninDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
-      DvbSubDestinationSettings.foreach(
-        __v => __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
+      DvbSubDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
       )
-      EmbeddedDestinationSettings.foreach(
-        __v => __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
+      EmbeddedDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       ImscDestinationSettings.foreach(__v => __obj.updateDynamic("ImscDestinationSettings")(__v.asInstanceOf[js.Any]))
       SccDestinationSettings.foreach(__v => __obj.updateDynamic("SccDestinationSettings")(__v.asInstanceOf[js.Any]))
-      TeletextDestinationSettings.foreach(
-        __v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
+      TeletextDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       TtmlDestinationSettings.foreach(__v => __obj.updateDynamic("TtmlDestinationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDestinationSettings]
@@ -1683,12 +1683,12 @@ package mediaconvert {
         Type: js.UndefOr[CmafKeyProviderType] = js.undefined
     ): CmafEncryptionSettings = {
       val __obj = js.Dynamic.literal()
-      ConstantInitializationVector.foreach(
-        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
+      ConstantInitializationVector.foreach(__v =>
+        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
       EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
-      InitializationVectorInManifest.foreach(
-        __v => __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
+      InitializationVectorInManifest.foreach(__v =>
+        __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
       )
       SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
       StaticKeyProvider.foreach(__v => __obj.updateDynamic("StaticKeyProvider")(__v.asInstanceOf[js.Any]))
@@ -2241,8 +2241,8 @@ package mediaconvert {
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
     ): DashIsoEncryptionSettings = {
       val __obj = js.Dynamic.literal()
-      PlaybackDeviceCompatibility.foreach(
-        __v => __obj.updateDynamic("PlaybackDeviceCompatibility")(__v.asInstanceOf[js.Any])
+      PlaybackDeviceCompatibility.foreach(__v =>
+        __obj.updateDynamic("PlaybackDeviceCompatibility")(__v.asInstanceOf[js.Any])
       )
       SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashIsoEncryptionSettings]
@@ -2293,8 +2293,8 @@ package mediaconvert {
       MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
-      WriteSegmentTimelineInRepresentation.foreach(
-        __v => __obj.updateDynamic("WriteSegmentTimelineInRepresentation")(__v.asInstanceOf[js.Any])
+      WriteSegmentTimelineInRepresentation.foreach(__v =>
+        __obj.updateDynamic("WriteSegmentTimelineInRepresentation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DashIsoGroupSettings]
     }
@@ -2971,11 +2971,11 @@ package mediaconvert {
       BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
       CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
       DialogueIntelligence.foreach(__v => __obj.updateDynamic("DialogueIntelligence")(__v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionLine.foreach(
-        __v => __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
+      DynamicRangeCompressionLine.foreach(__v =>
+        __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
       )
-      DynamicRangeCompressionRf.foreach(
-        __v => __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
+      DynamicRangeCompressionRf.foreach(__v =>
+        __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
       )
       LoRoCenterMixLevel.foreach(__v => __obj.updateDynamic("LoRoCenterMixLevel")(__v.asInstanceOf[js.Any]))
       LoRoSurroundMixLevel.foreach(__v => __obj.updateDynamic("LoRoSurroundMixLevel")(__v.asInstanceOf[js.Any]))
@@ -3195,11 +3195,11 @@ package mediaconvert {
       CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
       DcFilter.foreach(__v => __obj.updateDynamic("DcFilter")(__v.asInstanceOf[js.Any]))
       Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionLine.foreach(
-        __v => __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
+      DynamicRangeCompressionLine.foreach(__v =>
+        __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
       )
-      DynamicRangeCompressionRf.foreach(
-        __v => __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
+      DynamicRangeCompressionRf.foreach(__v =>
+        __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
       )
       LfeControl.foreach(__v => __obj.updateDynamic("LfeControl")(__v.asInstanceOf[js.Any]))
       LfeFilter.foreach(__v => __obj.updateDynamic("LfeFilter")(__v.asInstanceOf[js.Any]))
@@ -3278,11 +3278,11 @@ package mediaconvert {
         Destination708ServiceNumber: js.UndefOr[__integerMin1Max6] = js.undefined
     ): EmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
-      Destination608ChannelNumber.foreach(
-        __v => __obj.updateDynamic("Destination608ChannelNumber")(__v.asInstanceOf[js.Any])
+      Destination608ChannelNumber.foreach(__v =>
+        __obj.updateDynamic("Destination608ChannelNumber")(__v.asInstanceOf[js.Any])
       )
-      Destination708ServiceNumber.foreach(
-        __v => __obj.updateDynamic("Destination708ServiceNumber")(__v.asInstanceOf[js.Any])
+      Destination708ServiceNumber.foreach(__v =>
+        __obj.updateDynamic("Destination708ServiceNumber")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
@@ -3382,12 +3382,12 @@ package mediaconvert {
         SignalProcessingNotification: js.UndefOr[EsamSignalProcessingNotification] = js.undefined
     ): EsamSettings = {
       val __obj = js.Dynamic.literal()
-      ManifestConfirmConditionNotification.foreach(
-        __v => __obj.updateDynamic("ManifestConfirmConditionNotification")(__v.asInstanceOf[js.Any])
+      ManifestConfirmConditionNotification.foreach(__v =>
+        __obj.updateDynamic("ManifestConfirmConditionNotification")(__v.asInstanceOf[js.Any])
       )
       ResponseSignalPreroll.foreach(__v => __obj.updateDynamic("ResponseSignalPreroll")(__v.asInstanceOf[js.Any]))
-      SignalProcessingNotification.foreach(
-        __v => __obj.updateDynamic("SignalProcessingNotification")(__v.asInstanceOf[js.Any])
+      SignalProcessingNotification.foreach(__v =>
+        __obj.updateDynamic("SignalProcessingNotification")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EsamSettings]
     }
@@ -4014,12 +4014,12 @@ package mediaconvert {
       DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
       EntropyEncoding.foreach(__v => __obj.updateDynamic("EntropyEncoding")(__v.asInstanceOf[js.Any]))
       FieldEncoding.foreach(__v => __obj.updateDynamic("FieldEncoding")(__v.asInstanceOf[js.Any]))
-      FlickerAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      FlickerAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
-      FramerateConversionAlgorithm.foreach(
-        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
@@ -4027,15 +4027,15 @@ package mediaconvert {
       GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
       GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
       GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
-      HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
+      HrdBufferInitialFillPercentage.foreach(__v =>
+        __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
       HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
       InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
-      NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
+      NumberBFramesBetweenReferenceFrames.foreach(__v =>
+        __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
       NumberReferenceFrames.foreach(__v => __obj.updateDynamic("NumberReferenceFrames")(__v.asInstanceOf[js.Any]))
       ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
@@ -4049,13 +4049,13 @@ package mediaconvert {
       Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Softness.foreach(__v => __obj.updateDynamic("Softness")(__v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      SpatialAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       Syntax.foreach(__v => __obj.updateDynamic("Syntax")(__v.asInstanceOf[js.Any]))
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
-      TemporalAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      TemporalAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       UnregisteredSeiTimecode.foreach(__v => __obj.updateDynamic("UnregisteredSeiTimecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H264Settings]
@@ -4453,19 +4453,19 @@ package mediaconvert {
     ): H265Settings = {
       val __obj = js.Dynamic.literal()
       AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
-      AlternateTransferFunctionSei.foreach(
-        __v => __obj.updateDynamic("AlternateTransferFunctionSei")(__v.asInstanceOf[js.Any])
+      AlternateTransferFunctionSei.foreach(__v =>
+        __obj.updateDynamic("AlternateTransferFunctionSei")(__v.asInstanceOf[js.Any])
       )
       Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
       CodecLevel.foreach(__v => __obj.updateDynamic("CodecLevel")(__v.asInstanceOf[js.Any]))
       CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
       DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
-      FlickerAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      FlickerAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
-      FramerateConversionAlgorithm.foreach(
-        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
@@ -4473,15 +4473,15 @@ package mediaconvert {
       GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
       GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
       GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
-      HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
+      HrdBufferInitialFillPercentage.foreach(__v =>
+        __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
       HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
       InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
-      NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
+      NumberBFramesBetweenReferenceFrames.foreach(__v =>
+        __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
       NumberReferenceFrames.foreach(__v => __obj.updateDynamic("NumberReferenceFrames")(__v.asInstanceOf[js.Any]))
       ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
@@ -4490,18 +4490,18 @@ package mediaconvert {
       QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
       QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
-      SampleAdaptiveOffsetFilterMode.foreach(
-        __v => __obj.updateDynamic("SampleAdaptiveOffsetFilterMode")(__v.asInstanceOf[js.Any])
+      SampleAdaptiveOffsetFilterMode.foreach(__v =>
+        __obj.updateDynamic("SampleAdaptiveOffsetFilterMode")(__v.asInstanceOf[js.Any])
       )
       SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
       Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      SpatialAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
-      TemporalAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      TemporalAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       TemporalIds.foreach(__v => __obj.updateDynamic("TemporalIds")(__v.asInstanceOf[js.Any]))
       Tiles.foreach(__v => __obj.updateDynamic("Tiles")(__v.asInstanceOf[js.Any]))
@@ -4633,8 +4633,8 @@ package mediaconvert {
       GreenPrimaryX.foreach(__v => __obj.updateDynamic("GreenPrimaryX")(__v.asInstanceOf[js.Any]))
       GreenPrimaryY.foreach(__v => __obj.updateDynamic("GreenPrimaryY")(__v.asInstanceOf[js.Any]))
       MaxContentLightLevel.foreach(__v => __obj.updateDynamic("MaxContentLightLevel")(__v.asInstanceOf[js.Any]))
-      MaxFrameAverageLightLevel.foreach(
-        __v => __obj.updateDynamic("MaxFrameAverageLightLevel")(__v.asInstanceOf[js.Any])
+      MaxFrameAverageLightLevel.foreach(__v =>
+        __obj.updateDynamic("MaxFrameAverageLightLevel")(__v.asInstanceOf[js.Any])
       )
       MaxLuminance.foreach(__v => __obj.updateDynamic("MaxLuminance")(__v.asInstanceOf[js.Any]))
       MinLuminance.foreach(__v => __obj.updateDynamic("MinLuminance")(__v.asInstanceOf[js.Any]))
@@ -4777,12 +4777,12 @@ package mediaconvert {
         Type: js.UndefOr[HlsKeyProviderType] = js.undefined
     ): HlsEncryptionSettings = {
       val __obj = js.Dynamic.literal()
-      ConstantInitializationVector.foreach(
-        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
+      ConstantInitializationVector.foreach(__v =>
+        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
       EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
-      InitializationVectorInManifest.foreach(
-        __v => __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
+      InitializationVectorInManifest.foreach(__v =>
+        __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
       )
       OfflineEncrypted.foreach(__v => __obj.updateDynamic("OfflineEncrypted")(__v.asInstanceOf[js.Any]))
       SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
@@ -4885,8 +4885,8 @@ package mediaconvert {
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Frame.foreach(__v => __obj.updateDynamic("TimedMetadataId3Frame")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Period.foreach(__v => __obj.updateDynamic("TimedMetadataId3Period")(__v.asInstanceOf[js.Any]))
-      TimestampDeltaMilliseconds.foreach(
-        __v => __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
+      TimestampDeltaMilliseconds.foreach(__v =>
+        __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[HlsGroupSettings]
     }
@@ -7156,24 +7156,24 @@ package mediaconvert {
       CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
       DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
-      FramerateConversionAlgorithm.foreach(
-        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
       GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
       GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
       GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
-      HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
+      HrdBufferInitialFillPercentage.foreach(__v =>
+        __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
       HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
       InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
       IntraDcPrecision.foreach(__v => __obj.updateDynamic("IntraDcPrecision")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
-      NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
+      NumberBFramesBetweenReferenceFrames.foreach(__v =>
+        __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
       ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
       ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
@@ -7183,13 +7183,13 @@ package mediaconvert {
       SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Softness.foreach(__v => __obj.updateDynamic("Softness")(__v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      SpatialAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       Syntax.foreach(__v => __obj.updateDynamic("Syntax")(__v.asInstanceOf[js.Any]))
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
-      TemporalAdaptiveQuantization.foreach(
-        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      TemporalAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Mpeg2Settings]
     }
@@ -7422,8 +7422,8 @@ package mediaconvert {
         Strength: js.UndefOr[__integerMin0Max16] = js.undefined
     ): NoiseReducerSpatialFilterSettings = {
       val __obj = js.Dynamic.literal()
-      PostFilterSharpenStrength.foreach(
-        __v => __obj.updateDynamic("PostFilterSharpenStrength")(__v.asInstanceOf[js.Any])
+      PostFilterSharpenStrength.foreach(__v =>
+        __obj.updateDynamic("PostFilterSharpenStrength")(__v.asInstanceOf[js.Any])
       )
       Speed.foreach(__v => __obj.updateDynamic("Speed")(__v.asInstanceOf[js.Any]))
       Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
@@ -7865,8 +7865,8 @@ package mediaconvert {
       val __obj = js.Dynamic.literal()
       CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
-      FramerateConversionAlgorithm.foreach(
-        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))

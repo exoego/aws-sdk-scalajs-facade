@@ -2396,8 +2396,8 @@ package route53 {
         "Id"                 -> Id.asInstanceOf[js.Any]
       )
 
-      CloudWatchAlarmConfiguration.foreach(
-        __v => __obj.updateDynamic("CloudWatchAlarmConfiguration")(__v.asInstanceOf[js.Any])
+      CloudWatchAlarmConfiguration.foreach(__v =>
+        __obj.updateDynamic("CloudWatchAlarmConfiguration")(__v.asInstanceOf[js.Any])
       )
       LinkedService.foreach(__v => __obj.updateDynamic("LinkedService")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheck]
@@ -2461,8 +2461,8 @@ package route53 {
       FullyQualifiedDomainName.foreach(__v => __obj.updateDynamic("FullyQualifiedDomainName")(__v.asInstanceOf[js.Any]))
       HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
       IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
-      InsufficientDataHealthStatus.foreach(
-        __v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
+      InsufficientDataHealthStatus.foreach(__v =>
+        __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
       )
       Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
       MeasureLatency.foreach(__v => __obj.updateDynamic("MeasureLatency")(__v.asInstanceOf[js.Any]))
@@ -3227,11 +3227,11 @@ package route53 {
       )
 
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneRequest]
     }
@@ -3264,11 +3264,11 @@ package route53 {
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneResponse]
     }
@@ -3304,11 +3304,11 @@ package route53 {
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyRequest]
     }
@@ -3344,11 +3344,11 @@ package route53 {
       )
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyResponse]
     }
@@ -3376,11 +3376,11 @@ package route53 {
       val __obj = js.Dynamic.literal()
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesRequest]
     }
@@ -3416,11 +3416,11 @@ package route53 {
       )
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceNameMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
-      TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyInstanceTypeMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesResponse]
     }
@@ -3448,8 +3448,8 @@ package route53 {
       )
 
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyVersionMarker.foreach(
-        __v => __obj.updateDynamic("TrafficPolicyVersionMarker")(__v.asInstanceOf[js.Any])
+      TrafficPolicyVersionMarker.foreach(__v =>
+        __obj.updateDynamic("TrafficPolicyVersionMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyVersionsRequest]
     }
@@ -4089,8 +4089,8 @@ package route53 {
       HealthCheckVersion.foreach(__v => __obj.updateDynamic("HealthCheckVersion")(__v.asInstanceOf[js.Any]))
       HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
       IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
-      InsufficientDataHealthStatus.foreach(
-        __v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
+      InsufficientDataHealthStatus.foreach(__v =>
+        __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
       )
       Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))

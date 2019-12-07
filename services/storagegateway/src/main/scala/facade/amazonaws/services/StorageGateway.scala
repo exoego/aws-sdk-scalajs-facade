@@ -870,11 +870,11 @@ package storagegateway {
     ): ChapInfo = {
       val __obj = js.Dynamic.literal()
       InitiatorName.foreach(__v => __obj.updateDynamic("InitiatorName")(__v.asInstanceOf[js.Any]))
-      SecretToAuthenticateInitiator.foreach(
-        __v => __obj.updateDynamic("SecretToAuthenticateInitiator")(__v.asInstanceOf[js.Any])
+      SecretToAuthenticateInitiator.foreach(__v =>
+        __obj.updateDynamic("SecretToAuthenticateInitiator")(__v.asInstanceOf[js.Any])
       )
-      SecretToAuthenticateTarget.foreach(
-        __v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
+      SecretToAuthenticateTarget.foreach(__v =>
+        __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
       )
       TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChapInfo]
@@ -1744,11 +1744,11 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DescribeBandwidthRateLimitOutput = {
       val __obj = js.Dynamic.literal()
-      AverageDownloadRateLimitInBitsPerSec.foreach(
-        __v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
+      AverageDownloadRateLimitInBitsPerSec.foreach(__v =>
+        __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
-      AverageUploadRateLimitInBitsPerSec.foreach(
-        __v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
+      AverageUploadRateLimitInBitsPerSec.foreach(__v =>
+        __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBandwidthRateLimitOutput]
@@ -1956,8 +1956,8 @@ package storagegateway {
       GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
       LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
-      NextUpdateAvailabilityDate.foreach(
-        __v => __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any])
+      NextUpdateAvailabilityDate.foreach(__v =>
+        __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VPCEndpoint.foreach(__v => __obj.updateDynamic("VPCEndpoint")(__v.asInstanceOf[js.Any]))
@@ -2395,8 +2395,8 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
-      UploadBufferAllocatedInBytes.foreach(
-        __v => __obj.updateDynamic("UploadBufferAllocatedInBytes")(__v.asInstanceOf[js.Any])
+      UploadBufferAllocatedInBytes.foreach(__v =>
+        __obj.updateDynamic("UploadBufferAllocatedInBytes")(__v.asInstanceOf[js.Any])
       )
       UploadBufferUsedInBytes.foreach(__v => __obj.updateDynamic("UploadBufferUsedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUploadBufferOutput]
@@ -2495,11 +2495,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
-      WorkingStorageAllocatedInBytes.foreach(
-        __v => __obj.updateDynamic("WorkingStorageAllocatedInBytes")(__v.asInstanceOf[js.Any])
+      WorkingStorageAllocatedInBytes.foreach(__v =>
+        __obj.updateDynamic("WorkingStorageAllocatedInBytes")(__v.asInstanceOf[js.Any])
       )
-      WorkingStorageUsedInBytes.foreach(
-        __v => __obj.updateDynamic("WorkingStorageUsedInBytes")(__v.asInstanceOf[js.Any])
+      WorkingStorageUsedInBytes.foreach(__v =>
+        __obj.updateDynamic("WorkingStorageUsedInBytes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeWorkingStorageOutput]
     }
@@ -4006,11 +4006,11 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      AverageDownloadRateLimitInBitsPerSec.foreach(
-        __v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
+      AverageDownloadRateLimitInBitsPerSec.foreach(__v =>
+        __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
-      AverageUploadRateLimitInBitsPerSec.foreach(
-        __v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
+      AverageUploadRateLimitInBitsPerSec.foreach(__v =>
+        __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateBandwidthRateLimitInput]
     }
@@ -4064,8 +4064,8 @@ package storagegateway {
         "TargetARN"                     -> TargetARN.asInstanceOf[js.Any]
       )
 
-      SecretToAuthenticateTarget.foreach(
-        __v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
+      SecretToAuthenticateTarget.foreach(__v =>
+        __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateChapCredentialsInput]
     }
@@ -4523,8 +4523,8 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DeviceiSCSIAttributes.foreach(__v => __obj.updateDynamic("DeviceiSCSIAttributes")(__v.asInstanceOf[js.Any]))
       VTLDeviceARN.foreach(__v => __obj.updateDynamic("VTLDeviceARN")(__v.asInstanceOf[js.Any]))
-      VTLDeviceProductIdentifier.foreach(
-        __v => __obj.updateDynamic("VTLDeviceProductIdentifier")(__v.asInstanceOf[js.Any])
+      VTLDeviceProductIdentifier.foreach(__v =>
+        __obj.updateDynamic("VTLDeviceProductIdentifier")(__v.asInstanceOf[js.Any])
       )
       VTLDeviceType.foreach(__v => __obj.updateDynamic("VTLDeviceType")(__v.asInstanceOf[js.Any]))
       VTLDeviceVendor.foreach(__v => __obj.updateDynamic("VTLDeviceVendor")(__v.asInstanceOf[js.Any]))

@@ -1618,8 +1618,8 @@ package glue {
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       MatchCriteria.foreach(__v => __obj.updateDynamic("MatchCriteria")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PhysicalConnectionRequirements.foreach(
-        __v => __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
+      PhysicalConnectionRequirements.foreach(__v =>
+        __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Connection]
     }
@@ -1656,8 +1656,8 @@ package glue {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MatchCriteria.foreach(__v => __obj.updateDynamic("MatchCriteria")(__v.asInstanceOf[js.Any]))
-      PhysicalConnectionRequirements.foreach(
-        __v => __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
+      PhysicalConnectionRequirements.foreach(__v =>
+        __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConnectionInput]
     }
@@ -1847,8 +1847,8 @@ package glue {
       Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       CrawlElapsedTime.foreach(__v => __obj.updateDynamic("CrawlElapsedTime")(__v.asInstanceOf[js.Any]))
-      CrawlerSecurityConfiguration.foreach(
-        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
+      CrawlerSecurityConfiguration.foreach(__v =>
+        __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
@@ -2074,8 +2074,8 @@ package glue {
 
       Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
-      CrawlerSecurityConfiguration.foreach(
-        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
+      CrawlerSecurityConfiguration.foreach(__v =>
+        __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2298,8 +2298,8 @@ package glue {
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       YarnEndpointAddress.foreach(__v => __obj.updateDynamic("YarnEndpointAddress")(__v.asInstanceOf[js.Any]))
-      ZeppelinRemoteSparkInterpreterPort.foreach(
-        __v => __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
+      ZeppelinRemoteSparkInterpreterPort.foreach(__v =>
+        __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDevEndpointResponse]
     }
@@ -2900,8 +2900,8 @@ package glue {
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined
     ): DataCatalogEncryptionSettings = {
       val __obj = js.Dynamic.literal()
-      ConnectionPasswordEncryption.foreach(
-        __v => __obj.updateDynamic("ConnectionPasswordEncryption")(__v.asInstanceOf[js.Any])
+      ConnectionPasswordEncryption.foreach(__v =>
+        __obj.updateDynamic("ConnectionPasswordEncryption")(__v.asInstanceOf[js.Any])
       )
       EncryptionAtRest.foreach(__v => __obj.updateDynamic("EncryptionAtRest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataCatalogEncryptionSettings]
@@ -2922,8 +2922,8 @@ package glue {
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
       val __obj = js.Dynamic.literal()
-      DataLakePrincipalIdentifier.foreach(
-        __v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
+      DataLakePrincipalIdentifier.foreach(__v =>
+        __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DataLakePrincipal]
     }
@@ -2956,8 +2956,8 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreateTableDefaultPermissions.foreach(
-        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
+      CreateTableDefaultPermissions.foreach(__v =>
+        __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2992,8 +2992,8 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreateTableDefaultPermissions.foreach(
-        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
+      CreateTableDefaultPermissions.foreach(__v =>
+        __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
@@ -3607,8 +3607,8 @@ package glue {
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       YarnEndpointAddress.foreach(__v => __obj.updateDynamic("YarnEndpointAddress")(__v.asInstanceOf[js.Any]))
-      ZeppelinRemoteSparkInterpreterPort.foreach(
-        __v => __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
+      ZeppelinRemoteSparkInterpreterPort.foreach(__v =>
+        __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DevEndpoint]
     }
@@ -4255,8 +4255,8 @@ package glue {
         DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings] = js.undefined
     ): GetDataCatalogEncryptionSettingsResponse = {
       val __obj = js.Dynamic.literal()
-      DataCatalogEncryptionSettings.foreach(
-        __v => __obj.updateDynamic("DataCatalogEncryptionSettings")(__v.asInstanceOf[js.Any])
+      DataCatalogEncryptionSettings.foreach(__v =>
+        __obj.updateDynamic("DataCatalogEncryptionSettings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetDataCatalogEncryptionSettingsResponse]
     }
@@ -5991,8 +5991,8 @@ package glue {
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
     ): JobBookmarksEncryption = {
       val __obj = js.Dynamic.literal()
-      JobBookmarksEncryptionMode.foreach(
-        __v => __obj.updateDynamic("JobBookmarksEncryptionMode")(__v.asInstanceOf[js.Any])
+      JobBookmarksEncryptionMode.foreach(__v =>
+        __obj.updateDynamic("JobBookmarksEncryptionMode")(__v.asInstanceOf[js.Any])
       )
       KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobBookmarksEncryption]
@@ -7439,8 +7439,8 @@ package glue {
     ): SkewedInfo = {
       val __obj = js.Dynamic.literal()
       SkewedColumnNames.foreach(__v => __obj.updateDynamic("SkewedColumnNames")(__v.asInstanceOf[js.Any]))
-      SkewedColumnValueLocationMaps.foreach(
-        __v => __obj.updateDynamic("SkewedColumnValueLocationMaps")(__v.asInstanceOf[js.Any])
+      SkewedColumnValueLocationMaps.foreach(__v =>
+        __obj.updateDynamic("SkewedColumnValueLocationMaps")(__v.asInstanceOf[js.Any])
       )
       SkewedColumnValues.foreach(__v => __obj.updateDynamic("SkewedColumnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SkewedInfo]
@@ -8023,8 +8023,8 @@ package glue {
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      IsRegisteredWithLakeFormation.foreach(
-        __v => __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any])
+      IsRegisteredWithLakeFormation.foreach(__v =>
+        __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any])
       )
       LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
       LastAnalyzedTime.foreach(__v => __obj.updateDynamic("LastAnalyzedTime")(__v.asInstanceOf[js.Any]))
@@ -8294,17 +8294,17 @@ package glue {
         TaskType: js.UndefOr[TaskType] = js.undefined
     ): TaskRunProperties = {
       val __obj = js.Dynamic.literal()
-      ExportLabelsTaskRunProperties.foreach(
-        __v => __obj.updateDynamic("ExportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
+      ExportLabelsTaskRunProperties.foreach(__v =>
+        __obj.updateDynamic("ExportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
-      FindMatchesTaskRunProperties.foreach(
-        __v => __obj.updateDynamic("FindMatchesTaskRunProperties")(__v.asInstanceOf[js.Any])
+      FindMatchesTaskRunProperties.foreach(__v =>
+        __obj.updateDynamic("FindMatchesTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
-      ImportLabelsTaskRunProperties.foreach(
-        __v => __obj.updateDynamic("ImportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
+      ImportLabelsTaskRunProperties.foreach(__v =>
+        __obj.updateDynamic("ImportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
-      LabelingSetGenerationTaskRunProperties.foreach(
-        __v => __obj.updateDynamic("LabelingSetGenerationTaskRunProperties")(__v.asInstanceOf[js.Any])
+      LabelingSetGenerationTaskRunProperties.foreach(__v =>
+        __obj.updateDynamic("LabelingSetGenerationTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
       TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskRunProperties]
@@ -8746,8 +8746,8 @@ package glue {
 
       Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
-      CrawlerSecurityConfiguration.foreach(
-        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
+      CrawlerSecurityConfiguration.foreach(__v =>
+        __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))

@@ -996,8 +996,8 @@ package datasync {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CurrentTaskExecutionArn.foreach(__v => __obj.updateDynamic("CurrentTaskExecutionArn")(__v.asInstanceOf[js.Any]))
       DestinationLocationArn.foreach(__v => __obj.updateDynamic("DestinationLocationArn")(__v.asInstanceOf[js.Any]))
-      DestinationNetworkInterfaceArns.foreach(
-        __v => __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
+      DestinationNetworkInterfaceArns.foreach(__v =>
+        __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
       )
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
@@ -1005,8 +1005,8 @@ package datasync {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       SourceLocationArn.foreach(__v => __obj.updateDynamic("SourceLocationArn")(__v.asInstanceOf[js.Any]))
-      SourceNetworkInterfaceArns.foreach(
-        __v => __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
+      SourceNetworkInterfaceArns.foreach(__v =>
+        __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
       )
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))

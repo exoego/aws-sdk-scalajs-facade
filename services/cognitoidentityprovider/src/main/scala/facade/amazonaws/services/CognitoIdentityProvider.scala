@@ -748,8 +748,8 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       AllowAdminCreateUserOnly.foreach(__v => __obj.updateDynamic("AllowAdminCreateUserOnly")(__v.asInstanceOf[js.Any]))
       InviteMessageTemplate.foreach(__v => __obj.updateDynamic("InviteMessageTemplate")(__v.asInstanceOf[js.Any]))
-      UnusedAccountValidityDays.foreach(
-        __v => __obj.updateDynamic("UnusedAccountValidityDays")(__v.asInstanceOf[js.Any])
+      UnusedAccountValidityDays.foreach(__v =>
+        __obj.updateDynamic("UnusedAccountValidityDays")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AdminCreateUserConfigType]
     }
@@ -2257,8 +2257,8 @@ package cognitoidentityprovider {
       )
 
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
-      DeviceSecretVerifierConfig.foreach(
-        __v => __obj.updateDynamic("DeviceSecretVerifierConfig")(__v.asInstanceOf[js.Any])
+      DeviceSecretVerifierConfig.foreach(__v =>
+        __obj.updateDynamic("DeviceSecretVerifierConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfirmDeviceRequest]
     }
@@ -2278,8 +2278,8 @@ package cognitoidentityprovider {
         UserConfirmationNecessary: js.UndefOr[BooleanType] = js.undefined
     ): ConfirmDeviceResponse = {
       val __obj = js.Dynamic.literal()
-      UserConfirmationNecessary.foreach(
-        __v => __obj.updateDynamic("UserConfirmationNecessary")(__v.asInstanceOf[js.Any])
+      UserConfirmationNecessary.foreach(__v =>
+        __obj.updateDynamic("UserConfirmationNecessary")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConfirmDeviceResponse]
     }
@@ -2669,8 +2669,8 @@ package cognitoidentityprovider {
       )
 
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(
-        __v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
+      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
+        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
       )
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -2681,8 +2681,8 @@ package cognitoidentityprovider {
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(
-        __v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
+      SupportedIdentityProviders.foreach(__v =>
+        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
       )
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserPoolClientRequest]
@@ -2818,8 +2818,8 @@ package cognitoidentityprovider {
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(
-        __v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
+      VerificationMessageTemplate.foreach(__v =>
+        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateUserPoolRequest]
     }
@@ -3375,11 +3375,11 @@ package cognitoidentityprovider {
         DeviceOnlyRememberedOnUserPrompt: js.UndefOr[BooleanType] = js.undefined
     ): DeviceConfigurationType = {
       val __obj = js.Dynamic.literal()
-      ChallengeRequiredOnNewDevice.foreach(
-        __v => __obj.updateDynamic("ChallengeRequiredOnNewDevice")(__v.asInstanceOf[js.Any])
+      ChallengeRequiredOnNewDevice.foreach(__v =>
+        __obj.updateDynamic("ChallengeRequiredOnNewDevice")(__v.asInstanceOf[js.Any])
       )
-      DeviceOnlyRememberedOnUserPrompt.foreach(
-        __v => __obj.updateDynamic("DeviceOnlyRememberedOnUserPrompt")(__v.asInstanceOf[js.Any])
+      DeviceOnlyRememberedOnUserPrompt.foreach(__v =>
+        __obj.updateDynamic("DeviceOnlyRememberedOnUserPrompt")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeviceConfigurationType]
     }
@@ -3439,8 +3439,8 @@ package cognitoidentityprovider {
       DeviceAttributes.foreach(__v => __obj.updateDynamic("DeviceAttributes")(__v.asInstanceOf[js.Any]))
       DeviceCreateDate.foreach(__v => __obj.updateDynamic("DeviceCreateDate")(__v.asInstanceOf[js.Any]))
       DeviceKey.foreach(__v => __obj.updateDynamic("DeviceKey")(__v.asInstanceOf[js.Any]))
-      DeviceLastAuthenticatedDate.foreach(
-        __v => __obj.updateDynamic("DeviceLastAuthenticatedDate")(__v.asInstanceOf[js.Any])
+      DeviceLastAuthenticatedDate.foreach(__v =>
+        __obj.updateDynamic("DeviceLastAuthenticatedDate")(__v.asInstanceOf[js.Any])
       )
       DeviceLastModifiedDate.foreach(__v => __obj.updateDynamic("DeviceLastModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceType]
@@ -4050,8 +4050,8 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(
-        __v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
+      SoftwareTokenMfaConfiguration.foreach(__v =>
+        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetUserPoolMfaConfigResponse]
     }
@@ -4362,8 +4362,8 @@ package cognitoidentityprovider {
       PreSignUp.foreach(__v => __obj.updateDynamic("PreSignUp")(__v.asInstanceOf[js.Any]))
       PreTokenGeneration.foreach(__v => __obj.updateDynamic("PreTokenGeneration")(__v.asInstanceOf[js.Any]))
       UserMigration.foreach(__v => __obj.updateDynamic("UserMigration")(__v.asInstanceOf[js.Any]))
-      VerifyAuthChallengeResponse.foreach(
-        __v => __obj.updateDynamic("VerifyAuthChallengeResponse")(__v.asInstanceOf[js.Any])
+      VerifyAuthChallengeResponse.foreach(__v =>
+        __obj.updateDynamic("VerifyAuthChallengeResponse")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LambdaConfigType]
     }
@@ -5030,8 +5030,8 @@ package cognitoidentityprovider {
       RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
       RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
       RequireUppercase.foreach(__v => __obj.updateDynamic("RequireUppercase")(__v.asInstanceOf[js.Any]))
-      TemporaryPasswordValidityDays.foreach(
-        __v => __obj.updateDynamic("TemporaryPasswordValidityDays")(__v.asInstanceOf[js.Any])
+      TemporaryPasswordValidityDays.foreach(__v =>
+        __obj.updateDynamic("TemporaryPasswordValidityDays")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PasswordPolicyType]
     }
@@ -5288,16 +5288,16 @@ package cognitoidentityprovider {
         UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined
     ): RiskConfigurationType = {
       val __obj = js.Dynamic.literal()
-      AccountTakeoverRiskConfiguration.foreach(
-        __v => __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
+      AccountTakeoverRiskConfiguration.foreach(__v =>
+        __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
       )
       ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
-      CompromisedCredentialsRiskConfiguration.foreach(
-        __v => __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
+      CompromisedCredentialsRiskConfiguration.foreach(__v =>
+        __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
       )
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
-      RiskExceptionConfiguration.foreach(
-        __v => __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
+      RiskExceptionConfiguration.foreach(__v =>
+        __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
       )
       UserPoolId.foreach(__v => __obj.updateDynamic("UserPoolId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RiskConfigurationType]
@@ -5394,12 +5394,12 @@ package cognitoidentityprovider {
       DeveloperOnlyAttribute.foreach(__v => __obj.updateDynamic("DeveloperOnlyAttribute")(__v.asInstanceOf[js.Any]))
       Mutable.foreach(__v => __obj.updateDynamic("Mutable")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NumberAttributeConstraints.foreach(
-        __v => __obj.updateDynamic("NumberAttributeConstraints")(__v.asInstanceOf[js.Any])
+      NumberAttributeConstraints.foreach(__v =>
+        __obj.updateDynamic("NumberAttributeConstraints")(__v.asInstanceOf[js.Any])
       )
       Required.foreach(__v => __obj.updateDynamic("Required")(__v.asInstanceOf[js.Any]))
-      StringAttributeConstraints.foreach(
-        __v => __obj.updateDynamic("StringAttributeConstraints")(__v.asInstanceOf[js.Any])
+      StringAttributeConstraints.foreach(__v =>
+        __obj.updateDynamic("StringAttributeConstraints")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SchemaAttributeType]
     }
@@ -5427,15 +5427,15 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
-      AccountTakeoverRiskConfiguration.foreach(
-        __v => __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
+      AccountTakeoverRiskConfiguration.foreach(__v =>
+        __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
       )
       ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
-      CompromisedCredentialsRiskConfiguration.foreach(
-        __v => __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
+      CompromisedCredentialsRiskConfiguration.foreach(__v =>
+        __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
       )
-      RiskExceptionConfiguration.foreach(
-        __v => __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
+      RiskExceptionConfiguration.foreach(__v =>
+        __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SetRiskConfigurationRequest]
     }
@@ -5563,8 +5563,8 @@ package cognitoidentityprovider {
 
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(
-        __v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
+      SoftwareTokenMfaConfiguration.foreach(__v =>
+        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SetUserPoolMfaConfigRequest]
     }
@@ -5587,8 +5587,8 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(
-        __v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
+      SoftwareTokenMfaConfiguration.foreach(__v =>
+        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SetUserPoolMfaConfigResponse]
     }
@@ -6331,8 +6331,8 @@ package cognitoidentityprovider {
       )
 
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(
-        __v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
+      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
+        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
       )
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6343,8 +6343,8 @@ package cognitoidentityprovider {
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(
-        __v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
+      SupportedIdentityProviders.foreach(__v =>
+        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
       )
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserPoolClientRequest]
@@ -6477,8 +6477,8 @@ package cognitoidentityprovider {
       SmsVerificationMessage.foreach(__v => __obj.updateDynamic("SmsVerificationMessage")(__v.asInstanceOf[js.Any]))
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(
-        __v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
+      VerificationMessageTemplate.foreach(__v =>
+        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateUserPoolRequest]
     }
@@ -6682,8 +6682,8 @@ package cognitoidentityprovider {
     ): UserPoolClientType = {
       val __obj = js.Dynamic.literal()
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(
-        __v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
+      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
+        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
       )
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6698,8 +6698,8 @@ package cognitoidentityprovider {
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(
-        __v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
+      SupportedIdentityProviders.foreach(__v =>
+        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
       )
       UserPoolId.foreach(__v => __obj.updateDynamic("UserPoolId")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
@@ -6847,8 +6847,8 @@ package cognitoidentityprovider {
       DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EmailConfiguration.foreach(__v => __obj.updateDynamic("EmailConfiguration")(__v.asInstanceOf[js.Any]))
-      EmailConfigurationFailure.foreach(
-        __v => __obj.updateDynamic("EmailConfigurationFailure")(__v.asInstanceOf[js.Any])
+      EmailConfigurationFailure.foreach(__v =>
+        __obj.updateDynamic("EmailConfigurationFailure")(__v.asInstanceOf[js.Any])
       )
       EmailVerificationMessage.foreach(__v => __obj.updateDynamic("EmailVerificationMessage")(__v.asInstanceOf[js.Any]))
       EmailVerificationSubject.foreach(__v => __obj.updateDynamic("EmailVerificationSubject")(__v.asInstanceOf[js.Any]))
@@ -6868,8 +6868,8 @@ package cognitoidentityprovider {
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(
-        __v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
+      VerificationMessageTemplate.foreach(__v =>
+        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UserPoolType]
     }

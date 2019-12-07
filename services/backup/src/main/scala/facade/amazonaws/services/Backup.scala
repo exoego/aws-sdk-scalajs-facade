@@ -1261,8 +1261,8 @@ package backup {
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpectedCompletionTimeMinutes.foreach(
-        __v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
+      ExpectedCompletionTimeMinutes.foreach(__v =>
+        __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
       )
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
@@ -1642,8 +1642,8 @@ package backup {
     ): Lifecycle = {
       val __obj = js.Dynamic.literal()
       DeleteAfterDays.foreach(__v => __obj.updateDynamic("DeleteAfterDays")(__v.asInstanceOf[js.Any]))
-      MoveToColdStorageAfterDays.foreach(
-        __v => __obj.updateDynamic("MoveToColdStorageAfterDays")(__v.asInstanceOf[js.Any])
+      MoveToColdStorageAfterDays.foreach(__v =>
+        __obj.updateDynamic("MoveToColdStorageAfterDays")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Lifecycle]
     }
@@ -2381,8 +2381,8 @@ package backup {
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpectedCompletionTimeMinutes.foreach(
-        __v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
+      ExpectedCompletionTimeMinutes.foreach(__v =>
+        __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
       )
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))

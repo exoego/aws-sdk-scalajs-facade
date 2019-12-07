@@ -303,8 +303,8 @@ package licensemanager {
         Tags: js.UndefOr[TagList] = js.undefined
     ): GetLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      ConsumedLicenseSummaryList.foreach(
-        __v => __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
+      ConsumedLicenseSummaryList.foreach(__v =>
+        __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
       )
       ConsumedLicenses.foreach(__v => __obj.updateDynamic("ConsumedLicenses")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -314,8 +314,8 @@ package licensemanager {
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseCountingType.foreach(__v => __obj.updateDynamic("LicenseCountingType")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
-      ManagedResourceSummaryList.foreach(
-        __v => __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
+      ManagedResourceSummaryList.foreach(__v =>
+        __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
@@ -355,11 +355,11 @@ package licensemanager {
         SnsTopicArn: js.UndefOr[String] = js.undefined
     ): GetServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()
-      EnableCrossAccountsDiscovery.foreach(
-        __v => __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
+      EnableCrossAccountsDiscovery.foreach(__v =>
+        __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
       )
-      OrganizationConfiguration.foreach(
-        __v => __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
+      OrganizationConfiguration.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
       )
       S3BucketArn.foreach(__v => __obj.updateDynamic("S3BucketArn")(__v.asInstanceOf[js.Any]))
       SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
@@ -441,8 +441,8 @@ package licensemanager {
         Status: js.UndefOr[String] = js.undefined
     ): LicenseConfiguration = {
       val __obj = js.Dynamic.literal()
-      ConsumedLicenseSummaryList.foreach(
-        __v => __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
+      ConsumedLicenseSummaryList.foreach(__v =>
+        __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
       )
       ConsumedLicenses.foreach(__v => __obj.updateDynamic("ConsumedLicenses")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -452,8 +452,8 @@ package licensemanager {
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseCountingType.foreach(__v => __obj.updateDynamic("LicenseCountingType")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
-      ManagedResourceSummaryList.foreach(
-        __v => __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
+      ManagedResourceSummaryList.foreach(__v =>
+        __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
@@ -598,8 +598,8 @@ package licensemanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociationsForLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      LicenseConfigurationAssociations.foreach(
-        __v => __obj.updateDynamic("LicenseConfigurationAssociations")(__v.asInstanceOf[js.Any])
+      LicenseConfigurationAssociations.foreach(__v =>
+        __obj.updateDynamic("LicenseConfigurationAssociations")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationsForLicenseConfigurationResponse]
@@ -808,8 +808,8 @@ package licensemanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListUsageForLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      LicenseConfigurationUsageList.foreach(
-        __v => __obj.updateDynamic("LicenseConfigurationUsageList")(__v.asInstanceOf[js.Any])
+      LicenseConfigurationUsageList.foreach(__v =>
+        __obj.updateDynamic("LicenseConfigurationUsageList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsageForLicenseConfigurationResponse]
@@ -1018,8 +1018,8 @@ package licensemanager {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LicenseConfigurationStatus.foreach(
-        __v => __obj.updateDynamic("LicenseConfigurationStatus")(__v.asInstanceOf[js.Any])
+      LicenseConfigurationStatus.foreach(__v =>
+        __obj.updateDynamic("LicenseConfigurationStatus")(__v.asInstanceOf[js.Any])
       )
       LicenseCount.foreach(__v => __obj.updateDynamic("LicenseCount")(__v.asInstanceOf[js.Any]))
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
@@ -1061,8 +1061,8 @@ package licensemanager {
       )
 
       AddLicenseSpecifications.foreach(__v => __obj.updateDynamic("AddLicenseSpecifications")(__v.asInstanceOf[js.Any]))
-      RemoveLicenseSpecifications.foreach(
-        __v => __obj.updateDynamic("RemoveLicenseSpecifications")(__v.asInstanceOf[js.Any])
+      RemoveLicenseSpecifications.foreach(__v =>
+        __obj.updateDynamic("RemoveLicenseSpecifications")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateLicenseSpecificationsForResourceRequest]
     }
@@ -1098,11 +1098,11 @@ package licensemanager {
         SnsTopicArn: js.UndefOr[String] = js.undefined
     ): UpdateServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
-      EnableCrossAccountsDiscovery.foreach(
-        __v => __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
+      EnableCrossAccountsDiscovery.foreach(__v =>
+        __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
       )
-      OrganizationConfiguration.foreach(
-        __v => __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
+      OrganizationConfiguration.foreach(__v =>
+        __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
       )
       S3BucketArn.foreach(__v => __obj.updateDynamic("S3BucketArn")(__v.asInstanceOf[js.Any]))
       SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))

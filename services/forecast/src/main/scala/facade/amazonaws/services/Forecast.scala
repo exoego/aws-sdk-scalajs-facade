@@ -1295,8 +1295,8 @@ package forecast {
         "FeaturizationMethodName" -> FeaturizationMethodName.asInstanceOf[js.Any]
       )
 
-      FeaturizationMethodParameters.foreach(
-        __v => __obj.updateDynamic("FeaturizationMethodParameters")(__v.asInstanceOf[js.Any])
+      FeaturizationMethodParameters.foreach(__v =>
+        __obj.updateDynamic("FeaturizationMethodParameters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FeaturizationMethod]
     }
@@ -1448,8 +1448,8 @@ package forecast {
         PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults] = js.undefined
     ): GetAccuracyMetricsResponse = {
       val __obj = js.Dynamic.literal()
-      PredictorEvaluationResults.foreach(
-        __v => __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any])
+      PredictorEvaluationResults.foreach(__v =>
+        __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAccuracyMetricsResponse]
     }
@@ -1810,11 +1810,11 @@ package forecast {
         IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined
     ): ParameterRanges = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRanges.foreach(
-        __v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
+      CategoricalParameterRanges.foreach(__v =>
+        __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      ContinuousParameterRanges.foreach(
-        __v => __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
+      ContinuousParameterRanges.foreach(__v =>
+        __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
       )
       IntegerParameterRanges.foreach(__v => __obj.updateDynamic("IntegerParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRanges]

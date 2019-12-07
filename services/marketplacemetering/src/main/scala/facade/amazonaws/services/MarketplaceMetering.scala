@@ -173,8 +173,8 @@ package marketplacemetering {
         Signature: js.UndefOr[NonEmptyString] = js.undefined
     ): RegisterUsageResult = {
       val __obj = js.Dynamic.literal()
-      PublicKeyRotationTimestamp.foreach(
-        __v => __obj.updateDynamic("PublicKeyRotationTimestamp")(__v.asInstanceOf[js.Any])
+      PublicKeyRotationTimestamp.foreach(__v =>
+        __obj.updateDynamic("PublicKeyRotationTimestamp")(__v.asInstanceOf[js.Any])
       )
       Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterUsageResult]

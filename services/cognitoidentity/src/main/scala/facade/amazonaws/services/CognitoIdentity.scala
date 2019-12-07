@@ -212,8 +212,8 @@ package cognitoidentity {
       CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
       DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
       IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
-      OpenIdConnectProviderARNs.foreach(
-        __v => __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
+      OpenIdConnectProviderARNs.foreach(__v =>
+        __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
       )
       SamlProviderARNs.foreach(__v => __obj.updateDynamic("SamlProviderARNs")(__v.asInstanceOf[js.Any]))
       SupportedLoginProviders.foreach(__v => __obj.updateDynamic("SupportedLoginProviders")(__v.asInstanceOf[js.Any]))
@@ -667,8 +667,8 @@ package cognitoidentity {
       CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
       DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
       IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
-      OpenIdConnectProviderARNs.foreach(
-        __v => __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
+      OpenIdConnectProviderARNs.foreach(__v =>
+        __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
       )
       SamlProviderARNs.foreach(__v => __obj.updateDynamic("SamlProviderARNs")(__v.asInstanceOf[js.Any]))
       SupportedLoginProviders.foreach(__v => __obj.updateDynamic("SupportedLoginProviders")(__v.asInstanceOf[js.Any]))
@@ -884,8 +884,8 @@ package cognitoidentity {
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): LookupDeveloperIdentityResponse = {
       val __obj = js.Dynamic.literal()
-      DeveloperUserIdentifierList.foreach(
-        __v => __obj.updateDynamic("DeveloperUserIdentifierList")(__v.asInstanceOf[js.Any])
+      DeveloperUserIdentifierList.foreach(__v =>
+        __obj.updateDynamic("DeveloperUserIdentifierList")(__v.asInstanceOf[js.Any])
       )
       IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))

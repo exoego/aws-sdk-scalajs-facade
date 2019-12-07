@@ -303,8 +303,8 @@ package iotanalytics {
         batchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
       val __obj = js.Dynamic.literal()
-      batchPutMessageErrorEntries.foreach(
-        __v => __obj.updateDynamic("batchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
+      batchPutMessageErrorEntries.foreach(__v =>
+        __obj.updateDynamic("batchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchPutMessageResponse]
     }
@@ -1000,11 +1000,11 @@ package iotanalytics {
         s3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined
     ): DatasetContentDeliveryDestination = {
       val __obj = js.Dynamic.literal()
-      iotEventsDestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("iotEventsDestinationConfiguration")(__v.asInstanceOf[js.Any])
+      iotEventsDestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("iotEventsDestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      s3DestinationConfiguration.foreach(
-        __v => __obj.updateDynamic("s3DestinationConfiguration")(__v.asInstanceOf[js.Any])
+      s3DestinationConfiguration.foreach(__v =>
+        __obj.updateDynamic("s3DestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DatasetContentDeliveryDestination]
     }
@@ -3017,8 +3017,8 @@ package iotanalytics {
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      datasetContentVersionValue.foreach(
-        __v => __obj.updateDynamic("datasetContentVersionValue")(__v.asInstanceOf[js.Any])
+      datasetContentVersionValue.foreach(__v =>
+        __obj.updateDynamic("datasetContentVersionValue")(__v.asInstanceOf[js.Any])
       )
       doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
       outputFileUriValue.foreach(__v => __obj.updateDynamic("outputFileUriValue")(__v.asInstanceOf[js.Any]))

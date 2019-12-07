@@ -1127,8 +1127,8 @@ package pinpointemail {
     ): DomainDeliverabilityTrackingOption = {
       val __obj = js.Dynamic.literal()
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      InboxPlacementTrackingOption.foreach(
-        __v => __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any])
+      InboxPlacementTrackingOption.foreach(__v =>
+        __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any])
       )
       SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDeliverabilityTrackingOption]
@@ -1223,8 +1223,8 @@ package pinpointemail {
 
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(
-        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      KinesisFirehoseDestination.foreach(__v =>
+        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
       )
       PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
@@ -1258,8 +1258,8 @@ package pinpointemail {
       val __obj = js.Dynamic.literal()
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(
-        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      KinesisFirehoseDestination.foreach(__v =>
+        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
       )
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
@@ -1322,8 +1322,8 @@ package pinpointemail {
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountResponse = {
       val __obj = js.Dynamic.literal()
-      DedicatedIpAutoWarmupEnabled.foreach(
-        __v => __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any])
+      DedicatedIpAutoWarmupEnabled.foreach(__v =>
+        __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any])
       )
       EnforcementStatus.foreach(__v => __obj.updateDynamic("EnforcementStatus")(__v.asInstanceOf[js.Any]))
       ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
@@ -1601,8 +1601,8 @@ package pinpointemail {
 
       AccountStatus.foreach(__v => __obj.updateDynamic("AccountStatus")(__v.asInstanceOf[js.Any]))
       ActiveSubscribedDomains.foreach(__v => __obj.updateDynamic("ActiveSubscribedDomains")(__v.asInstanceOf[js.Any]))
-      PendingExpirationSubscribedDomains.foreach(
-        __v => __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any])
+      PendingExpirationSubscribedDomains.foreach(__v =>
+        __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any])
       )
       SubscriptionExpiryDate.foreach(__v => __obj.updateDynamic("SubscriptionExpiryDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
@@ -2906,8 +2906,8 @@ package pinpointemail {
 
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
       EmailTags.foreach(__v => __obj.updateDynamic("EmailTags")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingEmailAddress.foreach(
-        __v => __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any])
+      FeedbackForwardingEmailAddress.foreach(__v =>
+        __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any])
       )
       FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
       ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))

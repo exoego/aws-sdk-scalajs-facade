@@ -1318,8 +1318,8 @@ package greengrass {
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorityArn.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateGroupCertificateAuthorityResponse]
     }
@@ -1415,24 +1415,24 @@ package greengrass {
       )
 
       AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
-      ConnectorDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      ConnectorDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      DeviceDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      FunctionDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      FunctionDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      LoggerDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      LoggerDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      ResourceDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      ResourceDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      SubscriptionDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      SubscriptionDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateGroupVersionRequest]
     }
@@ -3171,11 +3171,11 @@ package greengrass {
         PemEncodedCertificate: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorityArn.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
-      GroupCertificateAuthorityId.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorityId.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
       )
       PemEncodedCertificate.foreach(__v => __obj.updateDynamic("PemEncodedCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateAuthorityResponse]
@@ -3215,11 +3215,11 @@ package greengrass {
         GroupId: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityExpiryInMilliseconds.foreach(
-        __v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
+      CertificateAuthorityExpiryInMilliseconds.foreach(__v =>
+        __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
-      CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
+      CertificateExpiryInMilliseconds.foreach(__v =>
+        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateConfigurationResponse]
@@ -3699,11 +3699,11 @@ package greengrass {
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined
     ): GroupCertificateAuthorityProperties = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorityArn.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
-      GroupCertificateAuthorityId.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorityId.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GroupCertificateAuthorityProperties]
     }
@@ -3794,24 +3794,24 @@ package greengrass {
         SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined
     ): GroupVersion = {
       val __obj = js.Dynamic.literal()
-      ConnectorDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      ConnectorDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      DeviceDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      FunctionDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      FunctionDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      LoggerDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      LoggerDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      ResourceDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      ResourceDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      SubscriptionDefinitionVersionArn.foreach(
-        __v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      SubscriptionDefinitionVersionArn.foreach(__v =>
+        __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GroupVersion]
     }
@@ -4294,8 +4294,8 @@ package greengrass {
         GroupCertificateAuthorities: js.UndefOr[__listOfGroupCertificateAuthorityProperties] = js.undefined
     ): ListGroupCertificateAuthoritiesResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorities.foreach(
-        __v => __obj.updateDynamic("GroupCertificateAuthorities")(__v.asInstanceOf[js.Any])
+      GroupCertificateAuthorities.foreach(__v =>
+        __obj.updateDynamic("GroupCertificateAuthorities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListGroupCertificateAuthoritiesResponse]
     }
@@ -4913,14 +4913,14 @@ package greengrass {
       val __obj = js.Dynamic.literal()
       LocalDeviceResourceData.foreach(__v => __obj.updateDynamic("LocalDeviceResourceData")(__v.asInstanceOf[js.Any]))
       LocalVolumeResourceData.foreach(__v => __obj.updateDynamic("LocalVolumeResourceData")(__v.asInstanceOf[js.Any]))
-      S3MachineLearningModelResourceData.foreach(
-        __v => __obj.updateDynamic("S3MachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
+      S3MachineLearningModelResourceData.foreach(__v =>
+        __obj.updateDynamic("S3MachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
       )
-      SageMakerMachineLearningModelResourceData.foreach(
-        __v => __obj.updateDynamic("SageMakerMachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
+      SageMakerMachineLearningModelResourceData.foreach(__v =>
+        __obj.updateDynamic("SageMakerMachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
       )
-      SecretsManagerSecretResourceData.foreach(
-        __v => __obj.updateDynamic("SecretsManagerSecretResourceData")(__v.asInstanceOf[js.Any])
+      SecretsManagerSecretResourceData.foreach(__v =>
+        __obj.updateDynamic("SecretsManagerSecretResourceData")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ResourceDataContainer]
     }
@@ -5006,8 +5006,8 @@ package greengrass {
     ): SecretsManagerSecretResourceData = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      AdditionalStagingLabelsToDownload.foreach(
-        __v => __obj.updateDynamic("AdditionalStagingLabelsToDownload")(__v.asInstanceOf[js.Any])
+      AdditionalStagingLabelsToDownload.foreach(__v =>
+        __obj.updateDynamic("AdditionalStagingLabelsToDownload")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SecretsManagerSecretResourceData]
     }
@@ -5405,8 +5405,8 @@ package greengrass {
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
+      CertificateExpiryInMilliseconds.foreach(__v =>
+        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationRequest]
     }
@@ -5427,11 +5427,11 @@ package greengrass {
         GroupId: js.UndefOr[__string] = js.undefined
     ): UpdateGroupCertificateConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityExpiryInMilliseconds.foreach(
-        __v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
+      CertificateAuthorityExpiryInMilliseconds.foreach(__v =>
+        __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
-      CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
+      CertificateExpiryInMilliseconds.foreach(__v =>
+        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationResponse]

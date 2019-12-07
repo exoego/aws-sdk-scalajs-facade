@@ -244,8 +244,8 @@ package translate {
     ): ListTerminologiesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TerminologyPropertiesList.foreach(
-        __v => __obj.updateDynamic("TerminologyPropertiesList")(__v.asInstanceOf[js.Any])
+      TerminologyPropertiesList.foreach(__v =>
+        __obj.updateDynamic("TerminologyPropertiesList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTerminologiesResponse]
     }

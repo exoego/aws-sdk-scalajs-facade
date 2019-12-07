@@ -189,8 +189,8 @@ package athena {
     ): BatchGetQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
       QueryExecutions.foreach(__v => __obj.updateDynamic("QueryExecutions")(__v.asInstanceOf[js.Any]))
-      UnprocessedQueryExecutionIds.foreach(
-        __v => __obj.updateDynamic("UnprocessedQueryExecutionIds")(__v.asInstanceOf[js.Any])
+      UnprocessedQueryExecutionIds.foreach(__v =>
+        __obj.updateDynamic("UnprocessedQueryExecutionIds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchGetQueryExecutionOutput]
     }
@@ -893,8 +893,8 @@ package athena {
       val __obj = js.Dynamic.literal()
       DataManifestLocation.foreach(__v => __obj.updateDynamic("DataManifestLocation")(__v.asInstanceOf[js.Any]))
       DataScannedInBytes.foreach(__v => __obj.updateDynamic("DataScannedInBytes")(__v.asInstanceOf[js.Any]))
-      EngineExecutionTimeInMillis.foreach(
-        __v => __obj.updateDynamic("EngineExecutionTimeInMillis")(__v.asInstanceOf[js.Any])
+      EngineExecutionTimeInMillis.foreach(__v =>
+        __obj.updateDynamic("EngineExecutionTimeInMillis")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[QueryExecutionStatistics]
     }
@@ -972,8 +972,8 @@ package athena {
       val __obj = js.Dynamic.literal()
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
-      RemoveEncryptionConfiguration.foreach(
-        __v => __obj.updateDynamic("RemoveEncryptionConfiguration")(__v.asInstanceOf[js.Any])
+      RemoveEncryptionConfiguration.foreach(__v =>
+        __obj.updateDynamic("RemoveEncryptionConfiguration")(__v.asInstanceOf[js.Any])
       )
       RemoveOutputLocation.foreach(__v => __obj.updateDynamic("RemoveOutputLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultConfigurationUpdates]
@@ -1360,14 +1360,14 @@ package athena {
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
     ): WorkGroupConfiguration = {
       val __obj = js.Dynamic.literal()
-      BytesScannedCutoffPerQuery.foreach(
-        __v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
+      BytesScannedCutoffPerQuery.foreach(__v =>
+        __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
       )
-      EnforceWorkGroupConfiguration.foreach(
-        __v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
+      EnforceWorkGroupConfiguration.foreach(__v =>
+        __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
       )
-      PublishCloudWatchMetricsEnabled.foreach(
-        __v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
+      PublishCloudWatchMetricsEnabled.foreach(__v =>
+        __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
       )
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
       ResultConfiguration.foreach(__v => __obj.updateDynamic("ResultConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1399,21 +1399,21 @@ package athena {
         ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates] = js.undefined
     ): WorkGroupConfigurationUpdates = {
       val __obj = js.Dynamic.literal()
-      BytesScannedCutoffPerQuery.foreach(
-        __v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
+      BytesScannedCutoffPerQuery.foreach(__v =>
+        __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
       )
-      EnforceWorkGroupConfiguration.foreach(
-        __v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
+      EnforceWorkGroupConfiguration.foreach(__v =>
+        __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
       )
-      PublishCloudWatchMetricsEnabled.foreach(
-        __v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
+      PublishCloudWatchMetricsEnabled.foreach(__v =>
+        __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
       )
-      RemoveBytesScannedCutoffPerQuery.foreach(
-        __v => __obj.updateDynamic("RemoveBytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
+      RemoveBytesScannedCutoffPerQuery.foreach(__v =>
+        __obj.updateDynamic("RemoveBytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
       )
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
-      ResultConfigurationUpdates.foreach(
-        __v => __obj.updateDynamic("ResultConfigurationUpdates")(__v.asInstanceOf[js.Any])
+      ResultConfigurationUpdates.foreach(__v =>
+        __obj.updateDynamic("ResultConfigurationUpdates")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }

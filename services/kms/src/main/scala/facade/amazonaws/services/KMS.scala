@@ -476,8 +476,8 @@ package kms {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateKeyRequest = {
       val __obj = js.Dynamic.literal()
-      BypassPolicyLockoutSafetyCheck.foreach(
-        __v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
+      BypassPolicyLockoutSafetyCheck.foreach(__v =>
+        __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
       )
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1686,8 +1686,8 @@ package kms {
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
-      BypassPolicyLockoutSafetyCheck.foreach(
-        __v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
+      BypassPolicyLockoutSafetyCheck.foreach(__v =>
+        __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutKeyPolicyRequest]
     }
@@ -1716,8 +1716,8 @@ package kms {
         "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any]
       )
 
-      DestinationEncryptionContext.foreach(
-        __v => __obj.updateDynamic("DestinationEncryptionContext")(__v.asInstanceOf[js.Any])
+      DestinationEncryptionContext.foreach(__v =>
+        __obj.updateDynamic("DestinationEncryptionContext")(__v.asInstanceOf[js.Any])
       )
       GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
       SourceEncryptionContext.foreach(__v => __obj.updateDynamic("SourceEncryptionContext")(__v.asInstanceOf[js.Any]))

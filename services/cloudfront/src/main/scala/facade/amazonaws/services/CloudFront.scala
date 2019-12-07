@@ -457,8 +457,8 @@ package cloudfront {
       Compress.foreach(__v => __obj.updateDynamic("Compress")(__v.asInstanceOf[js.Any]))
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
-      LambdaFunctionAssociations.foreach(
-        __v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
+      LambdaFunctionAssociations.foreach(__v =>
+        __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
       )
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
@@ -547,8 +547,8 @@ package cloudfront {
         "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
       )
 
-      CloudFrontOriginAccessIdentityConfig.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentityConfig.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CloudFrontOriginAccessIdentity]
     }
@@ -803,8 +803,8 @@ package cloudfront {
         Location: js.UndefOr[String] = js.undefined
     ): CreateCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentity.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
       )
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
@@ -978,8 +978,8 @@ package cloudfront {
     ): CreateFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionProfile.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
       )
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFieldLevelEncryptionProfileResult]
@@ -1331,8 +1331,8 @@ package cloudfront {
       Compress.foreach(__v => __obj.updateDynamic("Compress")(__v.asInstanceOf[js.Any]))
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
-      LambdaFunctionAssociations.foreach(
-        __v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
+      LambdaFunctionAssociations.foreach(__v =>
+        __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
       )
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
@@ -2169,8 +2169,8 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityConfigResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentityConfig.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentityConfig.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
       )
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityConfigResult]
@@ -2214,8 +2214,8 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentity.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
       )
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityResult]
@@ -2340,8 +2340,8 @@ package cloudfront {
     ): GetFieldLevelEncryptionConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionConfig.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionConfig")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionConfig.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetFieldLevelEncryptionConfigResult]
     }
@@ -2379,8 +2379,8 @@ package cloudfront {
     ): GetFieldLevelEncryptionProfileConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfileConfig.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionProfileConfig")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionProfileConfig.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionProfileConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileConfigResult]
     }
@@ -2418,8 +2418,8 @@ package cloudfront {
     ): GetFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionProfile.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileResult]
     }
@@ -2617,8 +2617,8 @@ package cloudfront {
     ): GetStreamingDistributionConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      StreamingDistributionConfig.foreach(
-        __v => __obj.updateDynamic("StreamingDistributionConfig")(__v.asInstanceOf[js.Any])
+      StreamingDistributionConfig.foreach(__v =>
+        __obj.updateDynamic("StreamingDistributionConfig")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetStreamingDistributionConfigResult]
     }
@@ -2946,8 +2946,8 @@ package cloudfront {
         CloudFrontOriginAccessIdentityList: js.UndefOr[CloudFrontOriginAccessIdentityList] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentityList.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentityList")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentityList.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentityList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListCloudFrontOriginAccessIdentitiesResult]
     }
@@ -3105,8 +3105,8 @@ package cloudfront {
         FieldLevelEncryptionProfileList: js.UndefOr[FieldLevelEncryptionProfileList] = js.undefined
     ): ListFieldLevelEncryptionProfilesResult = {
       val __obj = js.Dynamic.literal()
-      FieldLevelEncryptionProfileList.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionProfileList")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionProfileList.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionProfileList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListFieldLevelEncryptionProfilesResult]
     }
@@ -3229,8 +3229,8 @@ package cloudfront {
         StreamingDistributionList: js.UndefOr[StreamingDistributionList] = js.undefined
     ): ListStreamingDistributionsResult = {
       val __obj = js.Dynamic.literal()
-      StreamingDistributionList.foreach(
-        __v => __obj.updateDynamic("StreamingDistributionList")(__v.asInstanceOf[js.Any])
+      StreamingDistributionList.foreach(__v =>
+        __obj.updateDynamic("StreamingDistributionList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListStreamingDistributionsResult]
     }
@@ -4343,8 +4343,8 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(
-        __v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
+      CloudFrontOriginAccessIdentity.foreach(__v =>
+        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
       )
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCloudFrontOriginAccessIdentityResult]
@@ -4481,8 +4481,8 @@ package cloudfront {
     ): UpdateFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(
-        __v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
+      FieldLevelEncryptionProfile.foreach(__v =>
+        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFieldLevelEncryptionProfileResult]
     }
@@ -4617,8 +4617,8 @@ package cloudfront {
       ACMCertificateArn.foreach(__v => __obj.updateDynamic("ACMCertificateArn")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       CertificateSource.foreach(__v => __obj.updateDynamic("CertificateSource")(__v.asInstanceOf[js.Any]))
-      CloudFrontDefaultCertificate.foreach(
-        __v => __obj.updateDynamic("CloudFrontDefaultCertificate")(__v.asInstanceOf[js.Any])
+      CloudFrontDefaultCertificate.foreach(__v =>
+        __obj.updateDynamic("CloudFrontDefaultCertificate")(__v.asInstanceOf[js.Any])
       )
       IAMCertificateId.foreach(__v => __obj.updateDynamic("IAMCertificateId")(__v.asInstanceOf[js.Any]))
       MinimumProtocolVersion.foreach(__v => __obj.updateDynamic("MinimumProtocolVersion")(__v.asInstanceOf[js.Any]))

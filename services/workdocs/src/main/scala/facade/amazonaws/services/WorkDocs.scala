@@ -1104,8 +1104,8 @@ package workdocs {
       ActivityTypes.foreach(__v => __obj.updateDynamic("ActivityTypes")(__v.asInstanceOf[js.Any]))
       AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      IncludeIndirectActivities.foreach(
-        __v => __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any])
+      IncludeIndirectActivities.foreach(__v =>
+        __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any])
       )
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))

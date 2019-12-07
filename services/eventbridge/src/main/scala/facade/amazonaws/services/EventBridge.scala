@@ -993,8 +993,8 @@ package eventbridge {
     ): ListPartnerEventSourceAccountsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PartnerEventSourceAccounts.foreach(
-        __v => __obj.updateDynamic("PartnerEventSourceAccounts")(__v.asInstanceOf[js.Any])
+      PartnerEventSourceAccounts.foreach(__v =>
+        __obj.updateDynamic("PartnerEventSourceAccounts")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListPartnerEventSourceAccountsResponse]
     }

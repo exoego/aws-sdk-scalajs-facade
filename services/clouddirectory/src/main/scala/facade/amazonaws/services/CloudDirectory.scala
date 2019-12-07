@@ -1604,8 +1604,8 @@ package clouddirectory {
     ): BatchListObjectParentPathsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(
-        __v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
+      PathToObjectIdentifiersList.foreach(__v =>
+        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchListObjectParentPathsResponse]
     }
@@ -4131,8 +4131,8 @@ package clouddirectory {
     ): ListObjectParentPathsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(
-        __v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
+      PathToObjectIdentifiersList.foreach(__v =>
+        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListObjectParentPathsResponse]
     }
@@ -4164,8 +4164,8 @@ package clouddirectory {
       )
 
       ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      IncludeAllLinksToEachParent.foreach(
-        __v => __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any])
+      IncludeAllLinksToEachParent.foreach(__v =>
+        __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any])
       )
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -4583,11 +4583,11 @@ package clouddirectory {
         ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): ObjectAttributeAction = {
       val __obj = js.Dynamic.literal()
-      ObjectAttributeActionType.foreach(
-        __v => __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any])
+      ObjectAttributeActionType.foreach(__v =>
+        __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any])
       )
-      ObjectAttributeUpdateValue.foreach(
-        __v => __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any])
+      ObjectAttributeUpdateValue.foreach(__v =>
+        __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ObjectAttributeAction]
     }

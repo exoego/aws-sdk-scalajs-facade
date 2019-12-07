@@ -1040,8 +1040,8 @@ package elastictranscoder {
     ): JobOutput = {
       val __obj = js.Dynamic.literal()
       AlbumArt.foreach(__v => __obj.updateDynamic("AlbumArt")(__v.asInstanceOf[js.Any]))
-      AppliedColorSpaceConversion.foreach(
-        __v => __obj.updateDynamic("AppliedColorSpaceConversion")(__v.asInstanceOf[js.Any])
+      AppliedColorSpaceConversion.foreach(__v =>
+        __obj.updateDynamic("AppliedColorSpaceConversion")(__v.asInstanceOf[js.Any])
       )
       Captions.foreach(__v => __obj.updateDynamic("Captions")(__v.asInstanceOf[js.Any]))
       Composition.foreach(__v => __obj.updateDynamic("Composition")(__v.asInstanceOf[js.Any]))

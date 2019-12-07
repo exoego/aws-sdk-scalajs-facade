@@ -1105,8 +1105,8 @@ package applicationdiscovery {
         "statusMessage"     -> statusMessage.asInstanceOf[js.Any]
       )
 
-      configurationsDownloadUrl.foreach(
-        __v => __obj.updateDynamic("configurationsDownloadUrl")(__v.asInstanceOf[js.Any])
+      configurationsDownloadUrl.foreach(__v =>
+        __obj.updateDynamic("configurationsDownloadUrl")(__v.asInstanceOf[js.Any])
       )
       isTruncated.foreach(__v => __obj.updateDynamic("isTruncated")(__v.asInstanceOf[js.Any]))
       requestedEndTime.foreach(__v => __obj.updateDynamic("requestedEndTime")(__v.asInstanceOf[js.Any]))
@@ -1189,8 +1189,8 @@ package applicationdiscovery {
       applications.foreach(__v => __obj.updateDynamic("applications")(__v.asInstanceOf[js.Any]))
       connectorSummary.foreach(__v => __obj.updateDynamic("connectorSummary")(__v.asInstanceOf[js.Any]))
       servers.foreach(__v => __obj.updateDynamic("servers")(__v.asInstanceOf[js.Any]))
-      serversMappedToApplications.foreach(
-        __v => __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any])
+      serversMappedToApplications.foreach(__v =>
+        __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any])
       )
       serversMappedtoTags.foreach(__v => __obj.updateDynamic("serversMappedtoTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiscoverySummaryResponse]
@@ -1268,8 +1268,8 @@ package applicationdiscovery {
       applicationImportFailure.foreach(__v => __obj.updateDynamic("applicationImportFailure")(__v.asInstanceOf[js.Any]))
       applicationImportSuccess.foreach(__v => __obj.updateDynamic("applicationImportSuccess")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
-      errorsAndFailedEntriesZip.foreach(
-        __v => __obj.updateDynamic("errorsAndFailedEntriesZip")(__v.asInstanceOf[js.Any])
+      errorsAndFailedEntriesZip.foreach(__v =>
+        __obj.updateDynamic("errorsAndFailedEntriesZip")(__v.asInstanceOf[js.Any])
       )
       importCompletionTime.foreach(__v => __obj.updateDynamic("importCompletionTime")(__v.asInstanceOf[js.Any]))
       importDeletedTime.foreach(__v => __obj.updateDynamic("importDeletedTime")(__v.asInstanceOf[js.Any]))
@@ -1546,8 +1546,8 @@ package applicationdiscovery {
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StartDataCollectionByAgentIdsResponse = {
       val __obj = js.Dynamic.literal()
-      agentsConfigurationStatus.foreach(
-        __v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
+      agentsConfigurationStatus.foreach(__v =>
+        __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[StartDataCollectionByAgentIdsResponse]
     }
@@ -1700,8 +1700,8 @@ package applicationdiscovery {
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StopDataCollectionByAgentIdsResponse = {
       val __obj = js.Dynamic.literal()
-      agentsConfigurationStatus.foreach(
-        __v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
+      agentsConfigurationStatus.foreach(__v =>
+        __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[StopDataCollectionByAgentIdsResponse]
     }

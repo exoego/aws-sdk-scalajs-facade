@@ -142,8 +142,8 @@ package polly {
     ): DescribeVoicesInput = {
       val __obj = js.Dynamic.literal()
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      IncludeAdditionalLanguageCodes.foreach(
-        __v => __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any])
+      IncludeAdditionalLanguageCodes.foreach(__v =>
+        __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any])
       )
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))

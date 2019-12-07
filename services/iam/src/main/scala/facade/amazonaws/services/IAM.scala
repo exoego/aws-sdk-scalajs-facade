@@ -713,8 +713,8 @@ package iam {
       EntityPath.foreach(__v => __obj.updateDynamic("EntityPath")(__v.asInstanceOf[js.Any]))
       LastAuthenticatedTime.foreach(__v => __obj.updateDynamic("LastAuthenticatedTime")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
-      TotalAuthenticatedEntities.foreach(
-        __v => __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      TotalAuthenticatedEntities.foreach(__v =>
+        __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AccessDetail]
     }
@@ -1551,8 +1551,8 @@ package iam {
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): CreateServiceSpecificCredentialResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceSpecificCredential.foreach(
-        __v => __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
+      ServiceSpecificCredential.foreach(__v =>
+        __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateServiceSpecificCredentialResponse]
     }
@@ -2358,8 +2358,8 @@ package iam {
       EvalResourceName.foreach(__v => __obj.updateDynamic("EvalResourceName")(__v.asInstanceOf[js.Any]))
       MatchedStatements.foreach(__v => __obj.updateDynamic("MatchedStatements")(__v.asInstanceOf[js.Any]))
       MissingContextValues.foreach(__v => __obj.updateDynamic("MissingContextValues")(__v.asInstanceOf[js.Any]))
-      OrganizationsDecisionDetail.foreach(
-        __v => __obj.updateDynamic("OrganizationsDecisionDetail")(__v.asInstanceOf[js.Any])
+      OrganizationsDecisionDetail.foreach(__v =>
+        __obj.updateDynamic("OrganizationsDecisionDetail")(__v.asInstanceOf[js.Any])
       )
       ResourceSpecificResults.foreach(__v => __obj.updateDynamic("ResourceSpecificResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
@@ -2967,11 +2967,11 @@ package iam {
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       JobCompletionDate.foreach(__v => __obj.updateDynamic("JobCompletionDate")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      NumberOfServicesAccessible.foreach(
-        __v => __obj.updateDynamic("NumberOfServicesAccessible")(__v.asInstanceOf[js.Any])
+      NumberOfServicesAccessible.foreach(__v =>
+        __obj.updateDynamic("NumberOfServicesAccessible")(__v.asInstanceOf[js.Any])
       )
-      NumberOfServicesNotAccessed.foreach(
-        __v => __obj.updateDynamic("NumberOfServicesNotAccessed")(__v.asInstanceOf[js.Any])
+      NumberOfServicesNotAccessed.foreach(__v =>
+        __obj.updateDynamic("NumberOfServicesNotAccessed")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetOrganizationsAccessReportResponse]
     }
@@ -4271,8 +4271,8 @@ package iam {
         OpenIDConnectProviderList: js.UndefOr[OpenIDConnectProviderListType] = js.undefined
     ): ListOpenIDConnectProvidersResponse = {
       val __obj = js.Dynamic.literal()
-      OpenIDConnectProviderList.foreach(
-        __v => __obj.updateDynamic("OpenIDConnectProviderList")(__v.asInstanceOf[js.Any])
+      OpenIDConnectProviderList.foreach(__v =>
+        __obj.updateDynamic("OpenIDConnectProviderList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListOpenIDConnectProvidersResponse]
     }
@@ -4760,8 +4760,8 @@ package iam {
         ServiceSpecificCredentials: js.UndefOr[ServiceSpecificCredentialsListType] = js.undefined
     ): ListServiceSpecificCredentialsResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceSpecificCredentials.foreach(
-        __v => __obj.updateDynamic("ServiceSpecificCredentials")(__v.asInstanceOf[js.Any])
+      ServiceSpecificCredentials.foreach(__v =>
+        __obj.updateDynamic("ServiceSpecificCredentials")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListServiceSpecificCredentialsResponse]
     }
@@ -5114,8 +5114,8 @@ package iam {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsAttachable.foreach(__v => __obj.updateDynamic("IsAttachable")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      PermissionsBoundaryUsageCount.foreach(
-        __v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
+      PermissionsBoundaryUsageCount.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
       )
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
@@ -5196,21 +5196,21 @@ package iam {
         RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined
     ): PasswordPolicy = {
       val __obj = js.Dynamic.literal()
-      AllowUsersToChangePassword.foreach(
-        __v => __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
+      AllowUsersToChangePassword.foreach(__v =>
+        __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
       )
       ExpirePasswords.foreach(__v => __obj.updateDynamic("ExpirePasswords")(__v.asInstanceOf[js.Any]))
       HardExpiry.foreach(__v => __obj.updateDynamic("HardExpiry")(__v.asInstanceOf[js.Any]))
       MaxPasswordAge.foreach(__v => __obj.updateDynamic("MaxPasswordAge")(__v.asInstanceOf[js.Any]))
       MinimumPasswordLength.foreach(__v => __obj.updateDynamic("MinimumPasswordLength")(__v.asInstanceOf[js.Any]))
       PasswordReusePrevention.foreach(__v => __obj.updateDynamic("PasswordReusePrevention")(__v.asInstanceOf[js.Any]))
-      RequireLowercaseCharacters.foreach(
-        __v => __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
+      RequireLowercaseCharacters.foreach(__v =>
+        __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
       )
       RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
       RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
-      RequireUppercaseCharacters.foreach(
-        __v => __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
+      RequireUppercaseCharacters.foreach(__v =>
+        __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PasswordPolicy]
     }
@@ -5265,8 +5265,8 @@ package iam {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsAttachable.foreach(__v => __obj.updateDynamic("IsAttachable")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      PermissionsBoundaryUsageCount.foreach(
-        __v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
+      PermissionsBoundaryUsageCount.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
       )
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
@@ -5711,8 +5711,8 @@ package iam {
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): ResetServiceSpecificCredentialResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceSpecificCredential.foreach(
-        __v => __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
+      ServiceSpecificCredential.foreach(__v =>
+        __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ResetServiceSpecificCredentialResponse]
     }
@@ -6087,8 +6087,8 @@ package iam {
 
       LastAuthenticated.foreach(__v => __obj.updateDynamic("LastAuthenticated")(__v.asInstanceOf[js.Any]))
       LastAuthenticatedEntity.foreach(__v => __obj.updateDynamic("LastAuthenticatedEntity")(__v.asInstanceOf[js.Any]))
-      TotalAuthenticatedEntities.foreach(
-        __v => __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      TotalAuthenticatedEntities.foreach(__v =>
+        __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServiceLastAccessed]
     }
@@ -6548,20 +6548,20 @@ package iam {
         RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined
     ): UpdateAccountPasswordPolicyRequest = {
       val __obj = js.Dynamic.literal()
-      AllowUsersToChangePassword.foreach(
-        __v => __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
+      AllowUsersToChangePassword.foreach(__v =>
+        __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
       )
       HardExpiry.foreach(__v => __obj.updateDynamic("HardExpiry")(__v.asInstanceOf[js.Any]))
       MaxPasswordAge.foreach(__v => __obj.updateDynamic("MaxPasswordAge")(__v.asInstanceOf[js.Any]))
       MinimumPasswordLength.foreach(__v => __obj.updateDynamic("MinimumPasswordLength")(__v.asInstanceOf[js.Any]))
       PasswordReusePrevention.foreach(__v => __obj.updateDynamic("PasswordReusePrevention")(__v.asInstanceOf[js.Any]))
-      RequireLowercaseCharacters.foreach(
-        __v => __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
+      RequireLowercaseCharacters.foreach(__v =>
+        __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
       )
       RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
       RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
-      RequireUppercaseCharacters.foreach(
-        __v => __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
+      RequireUppercaseCharacters.foreach(__v =>
+        __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateAccountPasswordPolicyRequest]
     }
@@ -6975,8 +6975,8 @@ package iam {
         ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined
     ): UploadServerCertificateResponse = {
       val __obj = js.Dynamic.literal()
-      ServerCertificateMetadata.foreach(
-        __v => __obj.updateDynamic("ServerCertificateMetadata")(__v.asInstanceOf[js.Any])
+      ServerCertificateMetadata.foreach(__v =>
+        __obj.updateDynamic("ServerCertificateMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UploadServerCertificateResponse]
     }

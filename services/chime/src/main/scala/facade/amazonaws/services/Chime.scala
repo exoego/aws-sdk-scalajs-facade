@@ -1402,8 +1402,8 @@ package chime {
       val __obj = js.Dynamic.literal()
       BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
       LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(
-        __v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
+      OutboundEventsHTTPSEndpoint.foreach(__v =>
+        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EventsConfiguration]
     }
@@ -1652,8 +1652,8 @@ package chime {
     ): GetPhoneNumberSettingsResponse = {
       val __obj = js.Dynamic.literal()
       CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      CallingNameUpdatedTimestamp.foreach(
-        __v => __obj.updateDynamic("CallingNameUpdatedTimestamp")(__v.asInstanceOf[js.Any])
+      CallingNameUpdatedTimestamp.foreach(__v =>
+        __obj.updateDynamic("CallingNameUpdatedTimestamp")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetPhoneNumberSettingsResponse]
     }
@@ -2775,8 +2775,8 @@ package chime {
       )
 
       LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(
-        __v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
+      OutboundEventsHTTPSEndpoint.foreach(__v =>
+        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutEventsConfigurationRequest]
     }

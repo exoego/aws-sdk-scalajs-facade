@@ -113,8 +113,8 @@ package ioteventsdata {
         BatchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
       val __obj = js.Dynamic.literal()
-      BatchPutMessageErrorEntries.foreach(
-        __v => __obj.updateDynamic("BatchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
+      BatchPutMessageErrorEntries.foreach(__v =>
+        __obj.updateDynamic("BatchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchPutMessageResponse]
     }
@@ -174,8 +174,8 @@ package ioteventsdata {
         batchUpdateDetectorErrorEntries: js.UndefOr[BatchUpdateDetectorErrorEntries] = js.undefined
     ): BatchUpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
-      batchUpdateDetectorErrorEntries.foreach(
-        __v => __obj.updateDynamic("batchUpdateDetectorErrorEntries")(__v.asInstanceOf[js.Any])
+      batchUpdateDetectorErrorEntries.foreach(__v =>
+        __obj.updateDynamic("batchUpdateDetectorErrorEntries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchUpdateDetectorResponse]
     }

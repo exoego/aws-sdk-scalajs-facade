@@ -1253,19 +1253,19 @@ package ssm {
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(
-        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
+      AutomationTargetParameterName.foreach(__v =>
+        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulExecutionDate.foreach(
-        __v => __obj.updateDynamic("LastSuccessfulExecutionDate")(__v.asInstanceOf[js.Any])
+      LastSuccessfulExecutionDate.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfulExecutionDate")(__v.asInstanceOf[js.Any])
       )
-      LastUpdateAssociationDate.foreach(
-        __v => __obj.updateDynamic("LastUpdateAssociationDate")(__v.asInstanceOf[js.Any])
+      LastUpdateAssociationDate.foreach(__v =>
+        __obj.updateDynamic("LastUpdateAssociationDate")(__v.asInstanceOf[js.Any])
       )
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
@@ -1502,8 +1502,8 @@ package ssm {
         Status: js.UndefOr[StatusName] = js.undefined
     ): AssociationOverview = {
       val __obj = js.Dynamic.literal()
-      AssociationStatusAggregatedCount.foreach(
-        __v => __obj.updateDynamic("AssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
+      AssociationStatusAggregatedCount.foreach(__v =>
+        __obj.updateDynamic("AssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
       )
       DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1751,8 +1751,8 @@ package ssm {
     ): AutomationExecution = {
       val __obj = js.Dynamic.literal()
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(
-        __v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
+      AutomationExecutionStatus.foreach(__v =>
+        __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
       )
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
       CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
@@ -1767,8 +1767,8 @@ package ssm {
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(
-        __v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
+      ParentAutomationExecutionId.foreach(__v =>
+        __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
       )
       ProgressCounters.foreach(__v => __obj.updateDynamic("ProgressCounters")(__v.asInstanceOf[js.Any]))
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
@@ -1888,8 +1888,8 @@ package ssm {
     ): AutomationExecutionMetadata = {
       val __obj = js.Dynamic.literal()
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(
-        __v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
+      AutomationExecutionStatus.foreach(__v =>
+        __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
       )
       AutomationType.foreach(__v => __obj.updateDynamic("AutomationType")(__v.asInstanceOf[js.Any]))
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
@@ -1905,8 +1905,8 @@ package ssm {
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(
-        __v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
+      ParentAutomationExecutionId.foreach(__v =>
+        __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
       )
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
@@ -2626,8 +2626,8 @@ package ssm {
       )
 
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(
-        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
+      AutomationTargetParameterName.foreach(__v =>
+        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -2698,8 +2698,8 @@ package ssm {
       )
 
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(
-        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
+      AutomationTargetParameterName.foreach(__v =>
+        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -2944,11 +2944,11 @@ package ssm {
 
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesComplianceLevel.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
-      ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesEnableNonSecurity.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -3599,8 +3599,8 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionTargetsResult = {
       val __obj = js.Dynamic.literal()
-      AssociationExecutionTargets.foreach(
-        __v => __obj.updateDynamic("AssociationExecutionTargets")(__v.asInstanceOf[js.Any])
+      AssociationExecutionTargets.foreach(__v =>
+        __obj.updateDynamic("AssociationExecutionTargets")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionTargetsResult]
@@ -3729,8 +3729,8 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAutomationExecutionsResult = {
       val __obj = js.Dynamic.literal()
-      AutomationExecutionMetadataList.foreach(
-        __v => __obj.updateDynamic("AutomationExecutionMetadataList")(__v.asInstanceOf[js.Any])
+      AutomationExecutionMetadataList.foreach(__v =>
+        __obj.updateDynamic("AutomationExecutionMetadataList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationExecutionsResult]
@@ -4027,8 +4027,8 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceAssociationsStatusResult = {
       val __obj = js.Dynamic.literal()
-      InstanceAssociationStatusInfos.foreach(
-        __v => __obj.updateDynamic("InstanceAssociationStatusInfos")(__v.asInstanceOf[js.Any])
+      InstanceAssociationStatusInfos.foreach(__v =>
+        __obj.updateDynamic("InstanceAssociationStatusInfos")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceAssociationsStatusResult]
@@ -4053,8 +4053,8 @@ package ssm {
     ): DescribeInstanceInformationRequest = {
       val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      InstanceInformationFilterList.foreach(
-        __v => __obj.updateDynamic("InstanceInformationFilterList")(__v.asInstanceOf[js.Any])
+      InstanceInformationFilterList.foreach(__v =>
+        __obj.updateDynamic("InstanceInformationFilterList")(__v.asInstanceOf[js.Any])
       )
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -4302,8 +4302,8 @@ package ssm {
     ): DescribeMaintenanceWindowExecutionTaskInvocationsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WindowExecutionTaskInvocationIdentities.foreach(
-        __v => __obj.updateDynamic("WindowExecutionTaskInvocationIdentities")(__v.asInstanceOf[js.Any])
+      WindowExecutionTaskInvocationIdentities.foreach(__v =>
+        __obj.updateDynamic("WindowExecutionTaskInvocationIdentities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTaskInvocationsResult]
     }
@@ -4350,8 +4350,8 @@ package ssm {
     ): DescribeMaintenanceWindowExecutionTasksResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WindowExecutionTaskIdentities.foreach(
-        __v => __obj.updateDynamic("WindowExecutionTaskIdentities")(__v.asInstanceOf[js.Any])
+      WindowExecutionTaskIdentities.foreach(__v =>
+        __obj.updateDynamic("WindowExecutionTaskIdentities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTasksResult]
     }
@@ -4448,8 +4448,8 @@ package ssm {
     ): DescribeMaintenanceWindowScheduleResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledWindowExecutions.foreach(
-        __v => __obj.updateDynamic("ScheduledWindowExecutions")(__v.asInstanceOf[js.Any])
+      ScheduledWindowExecutions.foreach(__v =>
+        __obj.updateDynamic("ScheduledWindowExecutions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeMaintenanceWindowScheduleResult]
     }
@@ -4804,26 +4804,26 @@ package ssm {
     ): DescribePatchGroupStateResult = {
       val __obj = js.Dynamic.literal()
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      InstancesWithFailedPatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any])
+      InstancesWithFailedPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithInstalledOtherPatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any])
+      InstancesWithInstalledOtherPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithInstalledPatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any])
+      InstancesWithInstalledPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithInstalledRejectedPatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any])
+      InstancesWithInstalledRejectedPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithMissingPatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any])
+      InstancesWithMissingPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithNotApplicablePatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any])
+      InstancesWithNotApplicablePatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithUnreportedNotApplicablePatches.foreach(
-        __v => __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any])
+      InstancesWithUnreportedNotApplicablePatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePatchGroupStateResult]
     }
@@ -6486,11 +6486,11 @@ package ssm {
       val __obj = js.Dynamic.literal()
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesComplianceLevel.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
-      ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesEnableNonSecurity.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
       BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
@@ -6564,8 +6564,8 @@ package ssm {
     ): InstanceAggregatedAssociationOverview = {
       val __obj = js.Dynamic.literal()
       DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
-      InstanceAssociationStatusAggregatedCount.foreach(
-        __v => __obj.updateDynamic("InstanceAssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
+      InstanceAssociationStatusAggregatedCount.foreach(__v =>
+        __obj.updateDynamic("InstanceAssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[InstanceAggregatedAssociationOverview]
     }
@@ -6748,12 +6748,12 @@ package ssm {
       IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       IsLatestVersion.foreach(__v => __obj.updateDynamic("IsLatestVersion")(__v.asInstanceOf[js.Any]))
-      LastAssociationExecutionDate.foreach(
-        __v => __obj.updateDynamic("LastAssociationExecutionDate")(__v.asInstanceOf[js.Any])
+      LastAssociationExecutionDate.foreach(__v =>
+        __obj.updateDynamic("LastAssociationExecutionDate")(__v.asInstanceOf[js.Any])
       )
       LastPingDateTime.foreach(__v => __obj.updateDynamic("LastPingDateTime")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulAssociationExecutionDate.foreach(
-        __v => __obj.updateDynamic("LastSuccessfulAssociationExecutionDate")(__v.asInstanceOf[js.Any])
+      LastSuccessfulAssociationExecutionDate.foreach(__v =>
+        __obj.updateDynamic("LastSuccessfulAssociationExecutionDate")(__v.asInstanceOf[js.Any])
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PingStatus.foreach(__v => __obj.updateDynamic("PingStatus")(__v.asInstanceOf[js.Any]))
@@ -6900,8 +6900,8 @@ package ssm {
       NotApplicableCount.foreach(__v => __obj.updateDynamic("NotApplicableCount")(__v.asInstanceOf[js.Any]))
       OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
-      UnreportedNotApplicableCount.foreach(
-        __v => __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any])
+      UnreportedNotApplicableCount.foreach(__v =>
+        __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[InstancePatchState]
     }
@@ -7787,8 +7787,8 @@ package ssm {
     ): ListResourceComplianceSummariesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceComplianceSummaryItems.foreach(
-        __v => __obj.updateDynamic("ResourceComplianceSummaryItems")(__v.asInstanceOf[js.Any])
+      ResourceComplianceSummaryItems.foreach(__v =>
+        __obj.updateDynamic("ResourceComplianceSummaryItems")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListResourceComplianceSummariesResult]
     }
@@ -11012,8 +11012,8 @@ package ssm {
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
-      TargetLocationMaxConcurrency.foreach(
-        __v => __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any])
+      TargetLocationMaxConcurrency.foreach(__v =>
+        __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any])
       )
       TargetLocationMaxErrors.foreach(__v => __obj.updateDynamic("TargetLocationMaxErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetLocation]
@@ -11094,8 +11094,8 @@ package ssm {
 
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(
-        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
+      AutomationTargetParameterName.foreach(__v =>
+        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -11655,11 +11655,11 @@ package ssm {
 
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesComplianceLevel.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
-      ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesEnableNonSecurity.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
@@ -11711,11 +11711,11 @@ package ssm {
       val __obj = js.Dynamic.literal()
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesComplianceLevel.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
-      ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
+      ApprovedPatchesEnableNonSecurity.foreach(__v =>
+        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
       BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))

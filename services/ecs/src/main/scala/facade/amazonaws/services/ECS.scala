@@ -461,8 +461,8 @@ package ecs {
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
-      registeredContainerInstancesCount.foreach(
-        __v => __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any])
+      registeredContainerInstancesCount.foreach(__v =>
+        __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any])
       )
       runningTasksCount.foreach(__v => __obj.updateDynamic("runningTasksCount")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
@@ -1002,8 +1002,8 @@ package ecs {
       deploymentController.foreach(__v => __obj.updateDynamic("deploymentController")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(
-        __v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
+      healthCheckGracePeriodSeconds.foreach(__v =>
+        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
       )
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
@@ -3015,8 +3015,8 @@ package ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
       instanceIdentityDocument.foreach(__v => __obj.updateDynamic("instanceIdentityDocument")(__v.asInstanceOf[js.Any]))
-      instanceIdentityDocumentSignature.foreach(
-        __v => __obj.updateDynamic("instanceIdentityDocumentSignature")(__v.asInstanceOf[js.Any])
+      instanceIdentityDocumentSignature.foreach(__v =>
+        __obj.updateDynamic("instanceIdentityDocumentSignature")(__v.asInstanceOf[js.Any])
       )
       platformDevices.foreach(__v => __obj.updateDynamic("platformDevices")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -3429,8 +3429,8 @@ package ecs {
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
       events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(
-        __v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
+      healthCheckGracePeriodSeconds.foreach(__v =>
+        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
       )
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
@@ -4170,8 +4170,8 @@ package ecs {
       val __obj = js.Dynamic.literal()
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
-      inferenceAcceleratorOverrides.foreach(
-        __v => __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
+      inferenceAcceleratorOverrides.foreach(__v =>
+        __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
       )
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskOverride]
@@ -4589,8 +4589,8 @@ package ecs {
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       forceNewDeployment.foreach(__v => __obj.updateDynamic("forceNewDeployment")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(
-        __v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
+      healthCheckGracePeriodSeconds.foreach(__v =>
+        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
       )
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
@@ -4701,8 +4701,8 @@ package ecs {
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
       val __obj = js.Dynamic.literal()
-      dockerVolumeConfiguration.foreach(
-        __v => __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any])
+      dockerVolumeConfiguration.foreach(__v =>
+        __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any])
       )
       host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))

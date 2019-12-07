@@ -1066,8 +1066,8 @@ package alexaforbusiness {
         DefaultConferenceProviderArn: js.UndefOr[Arn] = js.undefined
     ): ConferencePreference = {
       val __obj = js.Dynamic.literal()
-      DefaultConferenceProviderArn.foreach(
-        __v => __obj.updateDynamic("DefaultConferenceProviderArn")(__v.asInstanceOf[js.Any])
+      DefaultConferenceProviderArn.foreach(__v =>
+        __obj.updateDynamic("DefaultConferenceProviderArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConferencePreference]
     }
@@ -2346,8 +2346,8 @@ package alexaforbusiness {
     ): DeviceNetworkProfileInfo = {
       val __obj = js.Dynamic.literal()
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      CertificateExpirationTime.foreach(
-        __v => __obj.updateDynamic("CertificateExpirationTime")(__v.asInstanceOf[js.Any])
+      CertificateExpirationTime.foreach(__v =>
+        __obj.updateDynamic("CertificateExpirationTime")(__v.asInstanceOf[js.Any])
       )
       NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceNetworkProfileInfo]
@@ -4894,8 +4894,8 @@ package alexaforbusiness {
       EndUserLicenseAgreement.foreach(__v => __obj.updateDynamic("EndUserLicenseAgreement")(__v.asInstanceOf[js.Any]))
       GenericKeywords.foreach(__v => __obj.updateDynamic("GenericKeywords")(__v.asInstanceOf[js.Any]))
       InvocationPhrase.foreach(__v => __obj.updateDynamic("InvocationPhrase")(__v.asInstanceOf[js.Any]))
-      NewInThisVersionBulletPoints.foreach(
-        __v => __obj.updateDynamic("NewInThisVersionBulletPoints")(__v.asInstanceOf[js.Any])
+      NewInThisVersionBulletPoints.foreach(__v =>
+        __obj.updateDynamic("NewInThisVersionBulletPoints")(__v.asInstanceOf[js.Any])
       )
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       ReleaseDate.foreach(__v => __obj.updateDynamic("ReleaseDate")(__v.asInstanceOf[js.Any]))

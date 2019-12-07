@@ -216,8 +216,8 @@ package mediatailor {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
+      SessionInitializationEndpointPrefix.foreach(__v =>
+        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -368,8 +368,8 @@ package mediatailor {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
+      SessionInitializationEndpointPrefix.foreach(__v =>
+        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -456,8 +456,8 @@ package mediatailor {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
+      SessionInitializationEndpointPrefix.foreach(__v =>
+        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))

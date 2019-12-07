@@ -348,8 +348,8 @@ package fsx {
       ExportPath.foreach(__v => __obj.updateDynamic("ExportPath")(__v.asInstanceOf[js.Any]))
       ImportPath.foreach(__v => __obj.updateDynamic("ImportPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateFileSystemLustreConfiguration]
     }
@@ -449,18 +449,18 @@ package fsx {
       )
 
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(
-        __v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
       )
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(
-        __v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
       )
-      SelfManagedActiveDirectoryConfiguration.foreach(
-        __v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
+      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
+        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
       )
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateFileSystemWindowsConfiguration]
     }
@@ -944,11 +944,11 @@ package fsx {
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): LustreFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
-      DataRepositoryConfiguration.foreach(
-        __v => __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any])
+      DataRepositoryConfiguration.foreach(__v =>
+        __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any])
       )
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
@@ -978,11 +978,11 @@ package fsx {
       val __obj = js.Dynamic.literal()
       DnsIps.foreach(__v => __obj.updateDynamic("DnsIps")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      FileSystemAdministratorsGroup.foreach(
-        __v => __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
+      FileSystemAdministratorsGroup.foreach(__v =>
+        __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
       )
-      OrganizationalUnitDistinguishedName.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedName.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
       )
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelfManagedActiveDirectoryAttributes]
@@ -1019,11 +1019,11 @@ package fsx {
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
 
-      FileSystemAdministratorsGroup.foreach(
-        __v => __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
+      FileSystemAdministratorsGroup.foreach(__v =>
+        __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
       )
-      OrganizationalUnitDistinguishedName.foreach(
-        __v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
+      OrganizationalUnitDistinguishedName.foreach(__v =>
+        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SelfManagedActiveDirectoryConfiguration]
     }
@@ -1170,8 +1170,8 @@ package fsx {
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFileSystemLustreConfiguration]
     }
@@ -1247,17 +1247,17 @@ package fsx {
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemWindowsConfiguration = {
       val __obj = js.Dynamic.literal()
-      AutomaticBackupRetentionDays.foreach(
-        __v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
       )
-      DailyAutomaticBackupStartTime.foreach(
-        __v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
       )
-      SelfManagedActiveDirectoryConfiguration.foreach(
-        __v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
+      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
+        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
       )
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFileSystemWindowsConfiguration]
     }
@@ -1292,22 +1292,22 @@ package fsx {
     ): WindowsFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(
-        __v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
       )
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(
-        __v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
       )
-      MaintenanceOperationsInProgress.foreach(
-        __v => __obj.updateDynamic("MaintenanceOperationsInProgress")(__v.asInstanceOf[js.Any])
+      MaintenanceOperationsInProgress.foreach(__v =>
+        __obj.updateDynamic("MaintenanceOperationsInProgress")(__v.asInstanceOf[js.Any])
       )
-      SelfManagedActiveDirectoryConfiguration.foreach(
-        __v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
+      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
+        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
       )
       ThroughputCapacity.foreach(__v => __obj.updateDynamic("ThroughputCapacity")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(
-        __v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
+      WeeklyMaintenanceStartTime.foreach(__v =>
+        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[WindowsFileSystemConfiguration]
     }

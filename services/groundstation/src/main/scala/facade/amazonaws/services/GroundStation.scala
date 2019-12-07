@@ -349,8 +349,8 @@ package groundstation {
     ): ConfigTypeData = {
       val __obj = js.Dynamic.literal()
       antennaDownlinkConfig.foreach(__v => __obj.updateDynamic("antennaDownlinkConfig")(__v.asInstanceOf[js.Any]))
-      antennaDownlinkDemodDecodeConfig.foreach(
-        __v => __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any])
+      antennaDownlinkDemodDecodeConfig.foreach(__v =>
+        __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any])
       )
       antennaUplinkConfig.foreach(__v => __obj.updateDynamic("antennaUplinkConfig")(__v.asInstanceOf[js.Any]))
       dataflowEndpointConfig.foreach(__v => __obj.updateDynamic("dataflowEndpointConfig")(__v.asInstanceOf[js.Any]))
@@ -544,11 +544,11 @@ package groundstation {
         "trackingConfigArn"                   -> trackingConfigArn.asInstanceOf[js.Any]
       )
 
-      contactPostPassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPostPassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      contactPrePassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPrePassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMissionProfileRequest]
@@ -1128,14 +1128,14 @@ package groundstation {
         upcomingMinutesScheduled: js.UndefOr[Int] = js.undefined
     ): GetMinuteUsageResponse = {
       val __obj = js.Dynamic.literal()
-      estimatedMinutesRemaining.foreach(
-        __v => __obj.updateDynamic("estimatedMinutesRemaining")(__v.asInstanceOf[js.Any])
+      estimatedMinutesRemaining.foreach(__v =>
+        __obj.updateDynamic("estimatedMinutesRemaining")(__v.asInstanceOf[js.Any])
       )
-      isReservedMinutesCustomer.foreach(
-        __v => __obj.updateDynamic("isReservedMinutesCustomer")(__v.asInstanceOf[js.Any])
+      isReservedMinutesCustomer.foreach(__v =>
+        __obj.updateDynamic("isReservedMinutesCustomer")(__v.asInstanceOf[js.Any])
       )
-      totalReservedMinuteAllocation.foreach(
-        __v => __obj.updateDynamic("totalReservedMinuteAllocation")(__v.asInstanceOf[js.Any])
+      totalReservedMinuteAllocation.foreach(__v =>
+        __obj.updateDynamic("totalReservedMinuteAllocation")(__v.asInstanceOf[js.Any])
       )
       totalScheduledMinutes.foreach(__v => __obj.updateDynamic("totalScheduledMinutes")(__v.asInstanceOf[js.Any]))
       upcomingMinutesScheduled.foreach(__v => __obj.updateDynamic("upcomingMinutesScheduled")(__v.asInstanceOf[js.Any]))
@@ -1196,15 +1196,15 @@ package groundstation {
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): GetMissionProfileResponse = {
       val __obj = js.Dynamic.literal()
-      contactPostPassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPostPassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      contactPrePassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPrePassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
-      minimumViableContactDurationSeconds.foreach(
-        __v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
+      minimumViableContactDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
       missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
@@ -1442,8 +1442,8 @@ package groundstation {
         nextToken: js.UndefOr[String] = js.undefined
     ): ListDataflowEndpointGroupsResponse = {
       val __obj = js.Dynamic.literal()
-      dataflowEndpointGroupList.foreach(
-        __v => __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any])
+      dataflowEndpointGroupList.foreach(__v =>
+        __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any])
       )
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataflowEndpointGroupsResponse]
@@ -1977,15 +1977,15 @@ package groundstation {
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
 
-      contactPostPassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPostPassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      contactPrePassDurationSeconds.foreach(
-        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
+      contactPrePassDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
-      minimumViableContactDurationSeconds.foreach(
-        __v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
+      minimumViableContactDurationSeconds.foreach(__v =>
+        __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       trackingConfigArn.foreach(__v => __obj.updateDynamic("trackingConfigArn")(__v.asInstanceOf[js.Any]))

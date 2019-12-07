@@ -920,8 +920,8 @@ package xray {
     ): GetSamplingStatisticSummariesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SamplingStatisticSummaries.foreach(
-        __v => __obj.updateDynamic("SamplingStatisticSummaries")(__v.asInstanceOf[js.Any])
+      SamplingStatisticSummaries.foreach(__v =>
+        __obj.updateDynamic("SamplingStatisticSummaries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetSamplingStatisticSummariesResult]
     }
@@ -1078,8 +1078,8 @@ package xray {
       val __obj = js.Dynamic.literal()
       ContainsOldGroupVersions.foreach(__v => __obj.updateDynamic("ContainsOldGroupVersions")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TimeSeriesServiceStatistics.foreach(
-        __v => __obj.updateDynamic("TimeSeriesServiceStatistics")(__v.asInstanceOf[js.Any])
+      TimeSeriesServiceStatistics.foreach(__v =>
+        __obj.updateDynamic("TimeSeriesServiceStatistics")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetTimeSeriesServiceStatisticsResult]
     }

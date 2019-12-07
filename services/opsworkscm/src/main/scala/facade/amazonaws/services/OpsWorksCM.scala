@@ -171,8 +171,8 @@ package opsworkscm {
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): AssociateNodeResponse = {
       val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(
-        __v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
+      NodeAssociationStatusToken.foreach(__v =>
+        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AssociateNodeResponse]
     }
@@ -250,8 +250,8 @@ package opsworkscm {
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       S3DataSize.foreach(__v => __obj.updateDynamic("S3DataSize")(__v.asInstanceOf[js.Any]))
       S3DataUrl.foreach(__v => __obj.updateDynamic("S3DataUrl")(__v.asInstanceOf[js.Any]))
@@ -389,8 +389,8 @@ package opsworkscm {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
@@ -708,8 +708,8 @@ package opsworkscm {
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): DisassociateNodeResponse = {
       val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(
-        __v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
+      NodeAssociationStatusToken.foreach(__v =>
+        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DisassociateNodeResponse]
     }
@@ -917,8 +917,8 @@ package opsworkscm {
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       MaintenanceStatus.foreach(__v => __obj.updateDynamic("MaintenanceStatus")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       ServerArn.foreach(__v => __obj.updateDynamic("ServerArn")(__v.asInstanceOf[js.Any]))
@@ -1095,8 +1095,8 @@ package opsworkscm {
       BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(
-        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      PreferredMaintenanceWindow.foreach(__v =>
+        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateServerRequest]
     }

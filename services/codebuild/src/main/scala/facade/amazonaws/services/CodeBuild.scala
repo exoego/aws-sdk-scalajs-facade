@@ -363,8 +363,8 @@ package codebuild {
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
-      exportedEnvironmentVariables.foreach(
-        __v => __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any])
+      exportedEnvironmentVariables.foreach(__v =>
+        __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any])
       )
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
@@ -1841,36 +1841,36 @@ package codebuild {
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
       computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
       environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
-      environmentVariablesOverride.foreach(
-        __v => __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any])
+      environmentVariablesOverride.foreach(__v =>
+        __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any])
       )
       gitCloneDepthOverride.foreach(__v => __obj.updateDynamic("gitCloneDepthOverride")(__v.asInstanceOf[js.Any]))
-      gitSubmodulesConfigOverride.foreach(
-        __v => __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any])
+      gitSubmodulesConfigOverride.foreach(__v =>
+        __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any])
       )
       idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
       imageOverride.foreach(__v => __obj.updateDynamic("imageOverride")(__v.asInstanceOf[js.Any]))
-      imagePullCredentialsTypeOverride.foreach(
-        __v => __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any])
+      imagePullCredentialsTypeOverride.foreach(__v =>
+        __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any])
       )
       insecureSslOverride.foreach(__v => __obj.updateDynamic("insecureSslOverride")(__v.asInstanceOf[js.Any]))
       logsConfigOverride.foreach(__v => __obj.updateDynamic("logsConfigOverride")(__v.asInstanceOf[js.Any]))
       privilegedModeOverride.foreach(__v => __obj.updateDynamic("privilegedModeOverride")(__v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutesOverride.foreach(
-        __v => __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any])
+      queuedTimeoutInMinutesOverride.foreach(__v =>
+        __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any])
       )
-      registryCredentialOverride.foreach(
-        __v => __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any])
+      registryCredentialOverride.foreach(__v =>
+        __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any])
       )
-      reportBuildStatusOverride.foreach(
-        __v => __obj.updateDynamic("reportBuildStatusOverride")(__v.asInstanceOf[js.Any])
+      reportBuildStatusOverride.foreach(__v =>
+        __obj.updateDynamic("reportBuildStatusOverride")(__v.asInstanceOf[js.Any])
       )
-      secondaryArtifactsOverride.foreach(
-        __v => __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any])
+      secondaryArtifactsOverride.foreach(__v =>
+        __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any])
       )
       secondarySourcesOverride.foreach(__v => __obj.updateDynamic("secondarySourcesOverride")(__v.asInstanceOf[js.Any]))
-      secondarySourcesVersionOverride.foreach(
-        __v => __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any])
+      secondarySourcesVersionOverride.foreach(__v =>
+        __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any])
       )
       serviceRoleOverride.foreach(__v => __obj.updateDynamic("serviceRoleOverride")(__v.asInstanceOf[js.Any]))
       sourceAuthOverride.foreach(__v => __obj.updateDynamic("sourceAuthOverride")(__v.asInstanceOf[js.Any]))

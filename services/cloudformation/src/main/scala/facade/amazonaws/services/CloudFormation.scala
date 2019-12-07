@@ -720,8 +720,8 @@ package cloudformation {
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
-      EnableTerminationProtection.foreach(
-        __v => __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
+      EnableTerminationProtection.foreach(__v =>
+        __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
       )
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       OnFailure.foreach(__v => __obj.updateDynamic("OnFailure")(__v.asInstanceOf[js.Any]))
@@ -1198,8 +1198,8 @@ package cloudformation {
       )
 
       DetectionStatusReason.foreach(__v => __obj.updateDynamic("DetectionStatusReason")(__v.asInstanceOf[js.Any]))
-      DriftedStackResourceCount.foreach(
-        __v => __obj.updateDynamic("DriftedStackResourceCount")(__v.asInstanceOf[js.Any])
+      DriftedStackResourceCount.foreach(__v =>
+        __obj.updateDynamic("DriftedStackResourceCount")(__v.asInstanceOf[js.Any])
       )
       StackDriftStatus.foreach(__v => __obj.updateDynamic("StackDriftStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackDriftDetectionStatusOutput]
@@ -1312,8 +1312,8 @@ package cloudformation {
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StackResourceDriftStatusFilters.foreach(
-        __v => __obj.updateDynamic("StackResourceDriftStatusFilters")(__v.asInstanceOf[js.Any])
+      StackResourceDriftStatusFilters.foreach(__v =>
+        __obj.updateDynamic("StackResourceDriftStatusFilters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeStackResourceDriftsInput]
     }
@@ -1911,8 +1911,8 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      ResourceIdentifierSummaries.foreach(
-        __v => __obj.updateDynamic("ResourceIdentifierSummaries")(__v.asInstanceOf[js.Any])
+      ResourceIdentifierSummaries.foreach(__v =>
+        __obj.updateDynamic("ResourceIdentifierSummaries")(__v.asInstanceOf[js.Any])
       )
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
@@ -2868,8 +2868,8 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
       DriftInformation.foreach(__v => __obj.updateDynamic("DriftInformation")(__v.asInstanceOf[js.Any]))
-      EnableTerminationProtection.foreach(
-        __v => __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
+      EnableTerminationProtection.foreach(__v =>
+        __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
       )
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
@@ -3225,8 +3225,8 @@ package cloudformation {
       ActualProperties.foreach(__v => __obj.updateDynamic("ActualProperties")(__v.asInstanceOf[js.Any]))
       ExpectedProperties.foreach(__v => __obj.updateDynamic("ExpectedProperties")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
-      PhysicalResourceIdContext.foreach(
-        __v => __obj.updateDynamic("PhysicalResourceIdContext")(__v.asInstanceOf[js.Any])
+      PhysicalResourceIdContext.foreach(__v =>
+        __obj.updateDynamic("PhysicalResourceIdContext")(__v.asInstanceOf[js.Any])
       )
       PropertyDifferences.foreach(__v => __obj.updateDynamic("PropertyDifferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackResourceDrift]
@@ -3456,8 +3456,8 @@ package cloudformation {
     ): StackSetOperationPreferences = {
       val __obj = js.Dynamic.literal()
       FailureToleranceCount.foreach(__v => __obj.updateDynamic("FailureToleranceCount")(__v.asInstanceOf[js.Any]))
-      FailureTolerancePercentage.foreach(
-        __v => __obj.updateDynamic("FailureTolerancePercentage")(__v.asInstanceOf[js.Any])
+      FailureTolerancePercentage.foreach(__v =>
+        __obj.updateDynamic("FailureTolerancePercentage")(__v.asInstanceOf[js.Any])
       )
       MaxConcurrentCount.foreach(__v => __obj.updateDynamic("MaxConcurrentCount")(__v.asInstanceOf[js.Any]))
       MaxConcurrentPercentage.foreach(__v => __obj.updateDynamic("MaxConcurrentPercentage")(__v.asInstanceOf[js.Any]))
@@ -3834,11 +3834,11 @@ package cloudformation {
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       RollbackConfiguration.foreach(__v => __obj.updateDynamic("RollbackConfiguration")(__v.asInstanceOf[js.Any]))
       StackPolicyBody.foreach(__v => __obj.updateDynamic("StackPolicyBody")(__v.asInstanceOf[js.Any]))
-      StackPolicyDuringUpdateBody.foreach(
-        __v => __obj.updateDynamic("StackPolicyDuringUpdateBody")(__v.asInstanceOf[js.Any])
+      StackPolicyDuringUpdateBody.foreach(__v =>
+        __obj.updateDynamic("StackPolicyDuringUpdateBody")(__v.asInstanceOf[js.Any])
       )
-      StackPolicyDuringUpdateURL.foreach(
-        __v => __obj.updateDynamic("StackPolicyDuringUpdateURL")(__v.asInstanceOf[js.Any])
+      StackPolicyDuringUpdateURL.foreach(__v =>
+        __obj.updateDynamic("StackPolicyDuringUpdateURL")(__v.asInstanceOf[js.Any])
       )
       StackPolicyURL.foreach(__v => __obj.updateDynamic("StackPolicyURL")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))

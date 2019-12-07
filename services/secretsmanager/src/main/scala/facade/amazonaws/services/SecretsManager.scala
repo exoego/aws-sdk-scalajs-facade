@@ -274,8 +274,8 @@ package secretsmanager {
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
 
-      ForceDeleteWithoutRecovery.foreach(
-        __v => __obj.updateDynamic("ForceDeleteWithoutRecovery")(__v.asInstanceOf[js.Any])
+      ForceDeleteWithoutRecovery.foreach(__v =>
+        __obj.updateDynamic("ForceDeleteWithoutRecovery")(__v.asInstanceOf[js.Any])
       )
       RecoveryWindowInDays.foreach(__v => __obj.updateDynamic("RecoveryWindowInDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSecretRequest]

@@ -336,8 +336,8 @@ package servicequotas {
         ServiceQuotaTemplateAssociationStatus: js.UndefOr[ServiceQuotaTemplateAssociationStatus] = js.undefined
     ): GetAssociationForServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaTemplateAssociationStatus.foreach(
-        __v => __obj.updateDynamic("ServiceQuotaTemplateAssociationStatus")(__v.asInstanceOf[js.Any])
+      ServiceQuotaTemplateAssociationStatus.foreach(__v =>
+        __obj.updateDynamic("ServiceQuotaTemplateAssociationStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateResponse]
     }
@@ -412,8 +412,8 @@ package servicequotas {
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): GetServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaIncreaseRequestInTemplate.foreach(
-        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
+      ServiceQuotaIncreaseRequestInTemplate.foreach(__v =>
+        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetServiceQuotaIncreaseRequestFromTemplateResponse]
     }
@@ -631,8 +631,8 @@ package servicequotas {
     ): ListServiceQuotaIncreaseRequestsInTemplateResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceQuotaIncreaseRequestInTemplateList.foreach(
-        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplateList")(__v.asInstanceOf[js.Any])
+      ServiceQuotaIncreaseRequestInTemplateList.foreach(__v =>
+        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplateList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListServiceQuotaIncreaseRequestsInTemplateResponse]
     }
@@ -742,8 +742,8 @@ package servicequotas {
       MetricDimensions.foreach(__v => __obj.updateDynamic("MetricDimensions")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       MetricNamespace.foreach(__v => __obj.updateDynamic("MetricNamespace")(__v.asInstanceOf[js.Any]))
-      MetricStatisticRecommendation.foreach(
-        __v => __obj.updateDynamic("MetricStatisticRecommendation")(__v.asInstanceOf[js.Any])
+      MetricStatisticRecommendation.foreach(__v =>
+        __obj.updateDynamic("MetricStatisticRecommendation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[MetricInfo]
     }
@@ -799,8 +799,8 @@ package servicequotas {
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): PutServiceQuotaIncreaseRequestIntoTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaIncreaseRequestInTemplate.foreach(
-        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
+      ServiceQuotaIncreaseRequestInTemplate.foreach(__v =>
+        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutServiceQuotaIncreaseRequestIntoTemplateResponse]
     }

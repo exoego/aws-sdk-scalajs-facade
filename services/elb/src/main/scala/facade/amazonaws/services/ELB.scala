@@ -1590,12 +1590,12 @@ package elb {
     ): LoadBalancerDescription = {
       val __obj = js.Dynamic.literal()
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      BackendServerDescriptions.foreach(
-        __v => __obj.updateDynamic("BackendServerDescriptions")(__v.asInstanceOf[js.Any])
+      BackendServerDescriptions.foreach(__v =>
+        __obj.updateDynamic("BackendServerDescriptions")(__v.asInstanceOf[js.Any])
       )
       CanonicalHostedZoneName.foreach(__v => __obj.updateDynamic("CanonicalHostedZoneName")(__v.asInstanceOf[js.Any]))
-      CanonicalHostedZoneNameID.foreach(
-        __v => __obj.updateDynamic("CanonicalHostedZoneNameID")(__v.asInstanceOf[js.Any])
+      CanonicalHostedZoneNameID.foreach(__v =>
+        __obj.updateDynamic("CanonicalHostedZoneNameID")(__v.asInstanceOf[js.Any])
       )
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
@@ -1677,11 +1677,11 @@ package elb {
         OtherPolicies: js.UndefOr[PolicyNames] = js.undefined
     ): Policies = {
       val __obj = js.Dynamic.literal()
-      AppCookieStickinessPolicies.foreach(
-        __v => __obj.updateDynamic("AppCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
+      AppCookieStickinessPolicies.foreach(__v =>
+        __obj.updateDynamic("AppCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
       )
-      LBCookieStickinessPolicies.foreach(
-        __v => __obj.updateDynamic("LBCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
+      LBCookieStickinessPolicies.foreach(__v =>
+        __obj.updateDynamic("LBCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
       )
       OtherPolicies.foreach(__v => __obj.updateDynamic("OtherPolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policies]
@@ -1781,8 +1781,8 @@ package elb {
         PolicyTypeName: js.UndefOr[PolicyTypeName] = js.undefined
     ): PolicyDescription = {
       val __obj = js.Dynamic.literal()
-      PolicyAttributeDescriptions.foreach(
-        __v => __obj.updateDynamic("PolicyAttributeDescriptions")(__v.asInstanceOf[js.Any])
+      PolicyAttributeDescriptions.foreach(__v =>
+        __obj.updateDynamic("PolicyAttributeDescriptions")(__v.asInstanceOf[js.Any])
       )
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       PolicyTypeName.foreach(__v => __obj.updateDynamic("PolicyTypeName")(__v.asInstanceOf[js.Any]))
@@ -1809,8 +1809,8 @@ package elb {
     ): PolicyTypeDescription = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      PolicyAttributeTypeDescriptions.foreach(
-        __v => __obj.updateDynamic("PolicyAttributeTypeDescriptions")(__v.asInstanceOf[js.Any])
+      PolicyAttributeTypeDescriptions.foreach(__v =>
+        __obj.updateDynamic("PolicyAttributeTypeDescriptions")(__v.asInstanceOf[js.Any])
       )
       PolicyTypeName.foreach(__v => __obj.updateDynamic("PolicyTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyTypeDescription]

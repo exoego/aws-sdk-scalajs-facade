@@ -255,8 +255,8 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribeEntitiesDetectionV2JobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(
-        __v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
+      ComprehendMedicalAsyncJobProperties.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeEntitiesDetectionV2JobResponse]
     }
@@ -291,8 +291,8 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribePHIDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(
-        __v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
+      ComprehendMedicalAsyncJobProperties.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePHIDetectionJobResponse]
     }
@@ -627,8 +627,8 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntitiesDetectionV2JobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesDetectionV2JobsResponse]
@@ -670,8 +670,8 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListPHIDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(
-        __v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPHIDetectionJobsResponse]

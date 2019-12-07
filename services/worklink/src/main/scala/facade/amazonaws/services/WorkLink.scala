@@ -351,8 +351,8 @@ package worklink {
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(
-        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      OptimizeForEndUserLocation.foreach(__v =>
+        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateFleetRequest]
     }
@@ -670,8 +670,8 @@ package worklink {
       FleetName.foreach(__v => __obj.updateDynamic("FleetName")(__v.asInstanceOf[js.Any]))
       FleetStatus.foreach(__v => __obj.updateDynamic("FleetStatus")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(
-        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      OptimizeForEndUserLocation.foreach(__v =>
+        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeFleetMetadataResponse]
     }
@@ -710,12 +710,12 @@ package worklink {
         ServiceProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined
     ): DescribeIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      IdentityProviderSamlMetadata.foreach(
-        __v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
+      IdentityProviderSamlMetadata.foreach(__v =>
+        __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
       )
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
-      ServiceProviderSamlMetadata.foreach(
-        __v => __obj.updateDynamic("ServiceProviderSamlMetadata")(__v.asInstanceOf[js.Any])
+      ServiceProviderSamlMetadata.foreach(__v =>
+        __obj.updateDynamic("ServiceProviderSamlMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeIdentityProviderConfigurationResponse]
     }
@@ -1165,8 +1165,8 @@ package worklink {
     ): ListWebsiteAuthorizationProvidersResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WebsiteAuthorizationProviders.foreach(
-        __v => __obj.updateDynamic("WebsiteAuthorizationProviders")(__v.asInstanceOf[js.Any])
+      WebsiteAuthorizationProviders.foreach(__v =>
+        __obj.updateDynamic("WebsiteAuthorizationProviders")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListWebsiteAuthorizationProvidersResponse]
     }
@@ -1210,8 +1210,8 @@ package worklink {
     ): ListWebsiteCertificateAuthoritiesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WebsiteCertificateAuthorities.foreach(
-        __v => __obj.updateDynamic("WebsiteCertificateAuthorities")(__v.asInstanceOf[js.Any])
+      WebsiteCertificateAuthorities.foreach(__v =>
+        __obj.updateDynamic("WebsiteCertificateAuthorities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListWebsiteCertificateAuthoritiesResponse]
     }
@@ -1483,8 +1483,8 @@ package worklink {
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(
-        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      OptimizeForEndUserLocation.foreach(__v =>
+        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFleetMetadataRequest]
     }
@@ -1522,8 +1522,8 @@ package worklink {
         "IdentityProviderType" -> IdentityProviderType.asInstanceOf[js.Any]
       )
 
-      IdentityProviderSamlMetadata.foreach(
-        __v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
+      IdentityProviderSamlMetadata.foreach(__v =>
+        __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationRequest]
     }

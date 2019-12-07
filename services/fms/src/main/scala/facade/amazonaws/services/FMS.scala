@@ -472,8 +472,8 @@ package fms {
     ): ListComplianceStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyComplianceStatusList.foreach(
-        __v => __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any])
+      PolicyComplianceStatusList.foreach(__v =>
+        __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListComplianceStatusResponse]
     }
