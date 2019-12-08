@@ -8,7 +8,7 @@ import autoImport._
 
 object Dependencies {
   object shared {
-    val scalatest = Def.setting("org.scalatest"          %%% "scalatest"               % "3.0.8" % Test)
+    val scalatest = Def.setting("org.scalatest"          %%% "scalatest"               % "3.1.0" % Test)
     val compat    = Def.setting("org.scala-lang.modules" %%% "scala-collection-compat" % "2.1.2")
   }
   object scalajs {
