@@ -2,8 +2,9 @@ import scala.util._
 
 lazy val scala213Version = "2.13.4"
 lazy val scala212Version = "2.12.12"
-crossScalaVersions in ThisBuild := Seq(scala213Version, scala212Version)
-scalaVersion in ThisBuild := scala213Version
+lazy val scala300Version = "3.0.0-M3"
+crossScalaVersions in ThisBuild := Seq(scala213Version, scala212Version, scala300Version)
+scalaVersion in ThisBuild := scala300Version
 organization in ThisBuild := "net.exoego"
 concurrentRestrictions in ThisBuild += Tags.limit(
   ScalaJSTags.Link,
@@ -108,7 +109,7 @@ lazy val awsDirectoryService = defineAwsProject("DirectoryService")
 lazy val awsDLM = defineAwsProject("DLM")
 lazy val awsDMS = defineAwsProject("DMS")
 lazy val awsDocDb = defineAwsProject("DocDB")
-lazy val awsDynamoDB = defineAwsProject("DynamoDB").settings(libraryDependencies += Dependencies.shared.compat.value)
+lazy val awsDynamoDB = defineAwsProject("DynamoDB").settings(libraryDependencies += Dependencies.shared.compat.value.withDottyCompat(scalaVersion.value))
 lazy val awsDynamoDBStreams = defineAwsProject("DynamoDBStreams")
 lazy val awsEBS = defineAwsProject("EBS")
 lazy val awsEC2 = defineAwsProject("EC2")

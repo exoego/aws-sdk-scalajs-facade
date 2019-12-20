@@ -6,7 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scala: [2.13.4, 2.12.12]
+        scala: [2.13.4, 2.12.12, 3.0.0-M3]
     steps:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v10

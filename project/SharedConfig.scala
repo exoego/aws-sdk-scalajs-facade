@@ -2,8 +2,10 @@ import sbt._
 import Keys._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import com.jsuereth.sbtpgp.SbtPgp.autoImport._
+import sbt.internal.inc.ScalaInstance.isDotty
 import sbtrelease.ReleasePlugin.autoImport._
 import sbtrelease.ReleaseStateTransformations._
+import dotty.tools.sbtplugin.DottyPlugin.autoImport._
 import xerial.sbt.Sonatype.SonatypeKeys._
 
 object SharedConfig {
@@ -11,6 +13,7 @@ object SharedConfig {
 
   val settings = Seq(
     scalacOptions ++= Seq("-deprecation"),
+    scalacOptions ++= { if (isDotty(scalaVersion.value)) Seq("-source:3.0-migration") else Nil },
     scalaJSLinkerConfig ~= {
       val isCI = Option(System.getenv("CI")).exists(_.contains("true"))
       _.withBatchMode(isCI)
@@ -25,8 +28,8 @@ object SharedConfig {
       )
     ),
     libraryDependencies ++= Seq(
-      Dependencies.shared.scalatest.value,
-      Dependencies.shared.scalatestHelper.value
+      Dependencies.shared.scalatest.value.withDottyCompat(scalaVersion.value),
+      Dependencies.shared.scalatestHelper.value.withDottyCompat(scalaVersion.value)
     ),
     homepage := scmInfo.value.map(_.browseUrl),
     developers := List(
