@@ -2,7 +2,7 @@
 
 A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).
 
-**188 AWS** from popular ones to obscure ones, as of 2019-08-27 and keep updating.
+[All **222 AWS**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/top-level-namespace.html) are available as of 2020-01-02, and keep updating.
 
 You may find the below peer facades useful when developing app with AWS.
 
@@ -13,10 +13,13 @@ You may find the below peer facades useful when developing app with AWS.
 ## Getting Started
 
 ```sbt
-// For newer LTS (Node.js v10)
+// For Node.js v12 LTS
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.28.0-v2.596.0"
+
+// For Node.js v10 LTS
 libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.27.0-v2.571.0"
 
-// For older LTS (Node.js v8)
+// For Node.js v8 LTS (reached end-of-life)
 libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade-nodejs-v8" % "0.26.2-v2.524.0"
 ```
 
