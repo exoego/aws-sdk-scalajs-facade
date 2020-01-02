@@ -8,91 +8,120 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object rekognition {
-  type Attribute                   = String
-  type Attributes                  = js.Array[Attribute]
-  type CelebrityList               = js.Array[Celebrity]
-  type CelebrityRecognitionSortBy  = String
-  type CelebrityRecognitions       = js.Array[CelebrityRecognition]
-  type ClientRequestToken          = String
-  type CollectionId                = String
-  type CollectionIdList            = js.Array[CollectionId]
-  type CompareFacesMatchList       = js.Array[CompareFacesMatch]
-  type CompareFacesUnmatchList     = js.Array[ComparedFace]
-  type ComparedFaceList            = js.Array[ComparedFace]
-  type ContentModerationDetections = js.Array[ContentModerationDetection]
-  type ContentModerationSortBy     = String
-  type DateTime                    = js.Date
-  type Degree                      = Float
-  type EmotionName                 = String
-  type Emotions                    = js.Array[Emotion]
-  type ExternalImageId             = String
-  type FaceAttributes              = String
-  type FaceDetailList              = js.Array[FaceDetail]
-  type FaceDetections              = js.Array[FaceDetection]
-  type FaceId                      = String
-  type FaceIdList                  = js.Array[FaceId]
-  type FaceList                    = js.Array[Face]
-  type FaceMatchList               = js.Array[FaceMatch]
-  type FaceModelVersionList        = js.Array[String]
-  type FaceRecordList              = js.Array[FaceRecord]
-  type FaceSearchSortBy            = String
-  type GenderType                  = String
+  type Assets                                         = js.Array[Asset]
+  type Attribute                                      = String
+  type Attributes                                     = js.Array[Attribute]
+  type CelebrityList                                  = js.Array[Celebrity]
+  type CelebrityRecognitionSortBy                     = String
+  type CelebrityRecognitions                          = js.Array[CelebrityRecognition]
+  type ClientRequestToken                             = String
+  type CollectionId                                   = String
+  type CollectionIdList                               = js.Array[CollectionId]
+  type CompareFacesMatchList                          = js.Array[CompareFacesMatch]
+  type CompareFacesUnmatchList                        = js.Array[ComparedFace]
+  type ComparedFaceList                               = js.Array[ComparedFace]
+  type ContentClassifier                              = String
+  type ContentClassifiers                             = js.Array[ContentClassifier]
+  type ContentModerationDetections                    = js.Array[ContentModerationDetection]
+  type ContentModerationSortBy                        = String
+  type CustomLabels                                   = js.Array[CustomLabel]
+  type DateTime                                       = js.Date
+  type Degree                                         = Float
+  type EmotionName                                    = String
+  type Emotions                                       = js.Array[Emotion]
+  type ExtendedPaginationToken                        = String
+  type ExternalImageId                                = String
+  type FaceAttributes                                 = String
+  type FaceDetailList                                 = js.Array[FaceDetail]
+  type FaceDetections                                 = js.Array[FaceDetection]
+  type FaceId                                         = String
+  type FaceIdList                                     = js.Array[FaceId]
+  type FaceList                                       = js.Array[Face]
+  type FaceMatchList                                  = js.Array[FaceMatch]
+  type FaceModelVersionList                           = js.Array[String]
+  type FaceRecordList                                 = js.Array[FaceRecord]
+  type FaceSearchSortBy                               = String
+  type FlowDefinitionArn                              = String
+  type GenderType                                     = String
+  type HumanLoopActivationConditionsEvaluationResults = String
+  type HumanLoopActivationReason                      = String
+  type HumanLoopActivationReasons                     = js.Array[HumanLoopActivationReason]
+  type HumanLoopArn                                   = String
+  type HumanLoopName                                  = String
   type ImageBlob =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ImageId               = String
-  type Instances             = js.Array[Instance]
-  type JobId                 = String
-  type JobTag                = String
-  type KinesisDataArn        = String
-  type KinesisVideoArn       = String
-  type LabelDetectionSortBy  = String
-  type LabelDetections       = js.Array[LabelDetection]
-  type Labels                = js.Array[Label]
-  type LandmarkType          = String
-  type Landmarks             = js.Array[Landmark]
-  type MaxFaces              = Int
-  type MaxFacesToIndex       = Int
-  type MaxResults            = Int
-  type ModerationLabels      = js.Array[ModerationLabel]
-  type OrientationCorrection = String
-  type PageSize              = Int
-  type PaginationToken       = String
-  type Parents               = js.Array[Parent]
-  type Percent               = Float
-  type PersonDetections      = js.Array[PersonDetection]
-  type PersonIndex           = Double
-  type PersonMatches         = js.Array[PersonMatch]
-  type PersonTrackingSortBy  = String
-  type Polygon               = js.Array[Point]
-  type QualityFilter         = String
-  type Reason                = String
-  type Reasons               = js.Array[Reason]
-  type RekognitionUniqueId   = String
-  type RoleArn               = String
-  type S3Bucket              = String
-  type S3ObjectName          = String
-  type S3ObjectVersion       = String
-  type SNSTopicArn           = String
-  type StatusMessage         = String
-  type StreamProcessorArn    = String
-  type StreamProcessorList   = js.Array[StreamProcessor]
-  type StreamProcessorName   = String
-  type StreamProcessorStatus = String
-  type TextDetectionList     = js.Array[TextDetection]
-  type TextTypes             = String
-  type Timestamp             = Double
-  type UInteger              = Int
-  type ULong                 = Double
-  type UnindexedFaces        = js.Array[UnindexedFace]
-  type Url                   = String
-  type Urls                  = js.Array[Url]
-  type VideoJobStatus        = String
+  type ImageId                    = String
+  type InferenceUnits             = Int
+  type Instances                  = js.Array[Instance]
+  type JobId                      = String
+  type JobTag                     = String
+  type KinesisDataArn             = String
+  type KinesisVideoArn            = String
+  type LabelDetectionSortBy       = String
+  type LabelDetections            = js.Array[LabelDetection]
+  type Labels                     = js.Array[Label]
+  type LandmarkType               = String
+  type Landmarks                  = js.Array[Landmark]
+  type MaxFaces                   = Int
+  type MaxFacesToIndex            = Int
+  type MaxResults                 = Int
+  type ModerationLabels           = js.Array[ModerationLabel]
+  type OrientationCorrection      = String
+  type PageSize                   = Int
+  type PaginationToken            = String
+  type Parents                    = js.Array[Parent]
+  type Percent                    = Float
+  type PersonDetections           = js.Array[PersonDetection]
+  type PersonIndex                = Double
+  type PersonMatches              = js.Array[PersonMatch]
+  type PersonTrackingSortBy       = String
+  type Polygon                    = js.Array[Point]
+  type ProjectArn                 = String
+  type ProjectDescriptions        = js.Array[ProjectDescription]
+  type ProjectName                = String
+  type ProjectStatus              = String
+  type ProjectVersionArn          = String
+  type ProjectVersionDescriptions = js.Array[ProjectVersionDescription]
+  type ProjectVersionStatus       = String
+  type ProjectVersionsPageSize    = Int
+  type ProjectsPageSize           = Int
+  type QualityFilter              = String
+  type Reason                     = String
+  type Reasons                    = js.Array[Reason]
+  type RekognitionUniqueId        = String
+  type RoleArn                    = String
+  type S3Bucket                   = String
+  type S3KeyPrefix                = String
+  type S3ObjectName               = String
+  type S3ObjectVersion            = String
+  type SNSTopicArn                = String
+  type StatusMessage              = String
+  type StreamProcessorArn         = String
+  type StreamProcessorList        = js.Array[StreamProcessor]
+  type StreamProcessorName        = String
+  type StreamProcessorStatus      = String
+  type TextDetectionList          = js.Array[TextDetection]
+  type TextTypes                  = String
+  type Timestamp                  = Double
+  type UInteger                   = Int
+  type ULong                      = Double
+  type UnindexedFaces             = js.Array[UnindexedFace]
+  type Url                        = String
+  type Urls                       = js.Array[Url]
+  type VersionName                = String
+  type VersionNames               = js.Array[VersionName]
+  type VideoJobStatus             = String
 
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
+
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
       service.compareFaces(params).promise.toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] =
       service.createCollection(params).promise.toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
+      service.createProject(params).promise.toFuture
+    @inline def createProjectVersionFuture(params: CreateProjectVersionRequest): Future[CreateProjectVersionResponse] =
+      service.createProjectVersion(params).promise.toFuture
     @inline def createStreamProcessorFuture(
         params: CreateStreamProcessorRequest
     ): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise.toFuture
@@ -105,9 +134,16 @@ package object rekognition {
     ): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise.toFuture
     @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] =
       service.describeCollection(params).promise.toFuture
+    @inline def describeProjectVersionsFuture(
+        params: DescribeProjectVersionsRequest
+    ): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise.toFuture
+    @inline def describeProjectsFuture(params: DescribeProjectsRequest): Future[DescribeProjectsResponse] =
+      service.describeProjects(params).promise.toFuture
     @inline def describeStreamProcessorFuture(
         params: DescribeStreamProcessorRequest
     ): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise.toFuture
+    @inline def detectCustomLabelsFuture(params: DetectCustomLabelsRequest): Future[DetectCustomLabelsResponse] =
+      service.detectCustomLabels(params).promise.toFuture
     @inline def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] =
       service.detectFaces(params).promise.toFuture
     @inline def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] =
@@ -160,8 +196,12 @@ package object rekognition {
       service.startLabelDetection(params).promise.toFuture
     @inline def startPersonTrackingFuture(params: StartPersonTrackingRequest): Future[StartPersonTrackingResponse] =
       service.startPersonTracking(params).promise.toFuture
+    @inline def startProjectVersionFuture(params: StartProjectVersionRequest): Future[StartProjectVersionResponse] =
+      service.startProjectVersion(params).promise.toFuture
     @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
       service.startStreamProcessor(params).promise.toFuture
+    @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] =
+      service.stopProjectVersion(params).promise.toFuture
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] =
       service.stopStreamProcessor(params).promise.toFuture
   }
@@ -175,15 +215,21 @@ package rekognition {
 
     def compareFaces(params: CompareFacesRequest): Request[CompareFacesResponse]                            = js.native
     def createCollection(params: CreateCollectionRequest): Request[CreateCollectionResponse]                = js.native
+    def createProject(params: CreateProjectRequest): Request[CreateProjectResponse]                         = js.native
+    def createProjectVersion(params: CreateProjectVersionRequest): Request[CreateProjectVersionResponse]    = js.native
     def createStreamProcessor(params: CreateStreamProcessorRequest): Request[CreateStreamProcessorResponse] = js.native
     def deleteCollection(params: DeleteCollectionRequest): Request[DeleteCollectionResponse]                = js.native
     def deleteFaces(params: DeleteFacesRequest): Request[DeleteFacesResponse]                               = js.native
     def deleteStreamProcessor(params: DeleteStreamProcessorRequest): Request[DeleteStreamProcessorResponse] = js.native
     def describeCollection(params: DescribeCollectionRequest): Request[DescribeCollectionResponse]          = js.native
+    def describeProjectVersions(params: DescribeProjectVersionsRequest): Request[DescribeProjectVersionsResponse] =
+      js.native
+    def describeProjects(params: DescribeProjectsRequest): Request[DescribeProjectsResponse] = js.native
     def describeStreamProcessor(params: DescribeStreamProcessorRequest): Request[DescribeStreamProcessorResponse] =
       js.native
-    def detectFaces(params: DetectFacesRequest): Request[DetectFacesResponse]    = js.native
-    def detectLabels(params: DetectLabelsRequest): Request[DetectLabelsResponse] = js.native
+    def detectCustomLabels(params: DetectCustomLabelsRequest): Request[DetectCustomLabelsResponse] = js.native
+    def detectFaces(params: DetectFacesRequest): Request[DetectFacesResponse]                      = js.native
+    def detectLabels(params: DetectLabelsRequest): Request[DetectLabelsResponse]                   = js.native
     def detectModerationLabels(params: DetectModerationLabelsRequest): Request[DetectModerationLabelsResponse] =
       js.native
     def detectText(params: DetectTextRequest): Request[DetectTextResponse]                   = js.native
@@ -211,7 +257,9 @@ package rekognition {
     def startFaceSearch(params: StartFaceSearchRequest): Request[StartFaceSearchResponse]                = js.native
     def startLabelDetection(params: StartLabelDetectionRequest): Request[StartLabelDetectionResponse]    = js.native
     def startPersonTracking(params: StartPersonTrackingRequest): Request[StartPersonTrackingResponse]    = js.native
+    def startProjectVersion(params: StartProjectVersionRequest): Request[StartProjectVersionResponse]    = js.native
     def startStreamProcessor(params: StartStreamProcessorRequest): Request[StartStreamProcessorResponse] = js.native
+    def stopProjectVersion(params: StopProjectVersionRequest): Request[StopProjectVersionResponse]       = js.native
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse]    = js.native
   }
 
@@ -235,6 +283,25 @@ package rekognition {
       High.foreach(__v => __obj.updateDynamic("High")(__v.asInstanceOf[js.Any]))
       Low.foreach(__v => __obj.updateDynamic("Low")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgeRange]
+    }
+  }
+
+  /**
+    * Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.
+    */
+  @js.native
+  trait Asset extends js.Object {
+    var GroundTruthManifest: js.UndefOr[GroundTruthManifest]
+  }
+
+  object Asset {
+    @inline
+    def apply(
+        GroundTruthManifest: js.UndefOr[GroundTruthManifest] = js.undefined
+    ): Asset = {
+      val __obj = js.Dynamic.literal()
+      GroundTruthManifest.foreach(__v => __obj.updateDynamic("GroundTruthManifest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Asset]
     }
   }
 
@@ -419,6 +486,7 @@ package rekognition {
   trait CompareFacesRequest extends js.Object {
     var SourceImage: Image
     var TargetImage: Image
+    var QualityFilter: js.UndefOr[QualityFilter]
     var SimilarityThreshold: js.UndefOr[Percent]
   }
 
@@ -427,6 +495,7 @@ package rekognition {
     def apply(
         SourceImage: Image,
         TargetImage: Image,
+        QualityFilter: js.UndefOr[QualityFilter] = js.undefined,
         SimilarityThreshold: js.UndefOr[Percent] = js.undefined
     ): CompareFacesRequest = {
       val __obj = js.Dynamic.literal(
@@ -434,6 +503,7 @@ package rekognition {
         "TargetImage" -> TargetImage.asInstanceOf[js.Any]
       )
 
+      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
       SimilarityThreshold.foreach(__v => __obj.updateDynamic("SimilarityThreshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesRequest]
     }
@@ -524,6 +594,13 @@ package rekognition {
     }
   }
 
+  object ContentClassifierEnum {
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
+    val FreeOfAdultContent                      = "FreeOfAdultContent"
+
+    val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+  }
+
   /**
     * Information about an unsafe content label detection in a stored video.
     */
@@ -594,6 +671,86 @@ package rekognition {
   }
 
   @js.native
+  trait CreateProjectRequest extends js.Object {
+    var ProjectName: ProjectName
+  }
+
+  object CreateProjectRequest {
+    @inline
+    def apply(
+        ProjectName: ProjectName
+    ): CreateProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateProjectRequest]
+    }
+  }
+
+  @js.native
+  trait CreateProjectResponse extends js.Object {
+    var ProjectArn: js.UndefOr[ProjectArn]
+  }
+
+  object CreateProjectResponse {
+    @inline
+    def apply(
+        ProjectArn: js.UndefOr[ProjectArn] = js.undefined
+    ): CreateProjectResponse = {
+      val __obj = js.Dynamic.literal()
+      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProjectResponse]
+    }
+  }
+
+  @js.native
+  trait CreateProjectVersionRequest extends js.Object {
+    var OutputConfig: OutputConfig
+    var ProjectArn: ProjectArn
+    var TestingData: TestingData
+    var TrainingData: TrainingData
+    var VersionName: VersionName
+  }
+
+  object CreateProjectVersionRequest {
+    @inline
+    def apply(
+        OutputConfig: OutputConfig,
+        ProjectArn: ProjectArn,
+        TestingData: TestingData,
+        TrainingData: TrainingData,
+        VersionName: VersionName
+    ): CreateProjectVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "ProjectArn"   -> ProjectArn.asInstanceOf[js.Any],
+        "TestingData"  -> TestingData.asInstanceOf[js.Any],
+        "TrainingData" -> TrainingData.asInstanceOf[js.Any],
+        "VersionName"  -> VersionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateProjectVersionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateProjectVersionResponse extends js.Object {
+    var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
+  }
+
+  object CreateProjectVersionResponse {
+    @inline
+    def apply(
+        ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined
+    ): CreateProjectVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProjectVersionResponse]
+    }
+  }
+
+  @js.native
   trait CreateStreamProcessorRequest extends js.Object {
     var Input: StreamProcessorInput
     var Name: StreamProcessorName
@@ -636,6 +793,31 @@ package rekognition {
       val __obj = js.Dynamic.literal()
       StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamProcessorResponse]
+    }
+  }
+
+  /**
+    * A custom label detected in an image by a call to <a>DetectCustomLabels</a>.
+    */
+  @js.native
+  trait CustomLabel extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Geometry: js.UndefOr[Geometry]
+    var Name: js.UndefOr[String]
+  }
+
+  object CustomLabel {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Geometry: js.UndefOr[Geometry] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): CustomLabel = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomLabel]
     }
   }
 
@@ -785,6 +967,92 @@ package rekognition {
   }
 
   @js.native
+  trait DescribeProjectVersionsRequest extends js.Object {
+    var ProjectArn: ProjectArn
+    var MaxResults: js.UndefOr[ProjectVersionsPageSize]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var VersionNames: js.UndefOr[VersionNames]
+  }
+
+  object DescribeProjectVersionsRequest {
+    @inline
+    def apply(
+        ProjectArn: ProjectArn,
+        MaxResults: js.UndefOr[ProjectVersionsPageSize] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        VersionNames: js.UndefOr[VersionNames] = js.undefined
+    ): DescribeProjectVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      VersionNames.foreach(__v => __obj.updateDynamic("VersionNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeProjectVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeProjectVersionsResponse extends js.Object {
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var ProjectVersionDescriptions: js.UndefOr[ProjectVersionDescriptions]
+  }
+
+  object DescribeProjectVersionsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        ProjectVersionDescriptions: js.UndefOr[ProjectVersionDescriptions] = js.undefined
+    ): DescribeProjectVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProjectVersionDescriptions.foreach(__v =>
+        __obj.updateDynamic("ProjectVersionDescriptions")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeProjectVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeProjectsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ProjectsPageSize]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+  }
+
+  object DescribeProjectsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ProjectsPageSize] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+    ): DescribeProjectsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeProjectsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeProjectsResponse extends js.Object {
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var ProjectDescriptions: js.UndefOr[ProjectDescriptions]
+  }
+
+  object DescribeProjectsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        ProjectDescriptions: js.UndefOr[ProjectDescriptions] = js.undefined
+    ): DescribeProjectsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProjectDescriptions.foreach(__v => __obj.updateDynamic("ProjectDescriptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeProjectsResponse]
+    }
+  }
+
+  @js.native
   trait DescribeStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
@@ -842,6 +1110,49 @@ package rekognition {
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamProcessorResponse]
+    }
+  }
+
+  @js.native
+  trait DetectCustomLabelsRequest extends js.Object {
+    var Image: Image
+    var ProjectVersionArn: ProjectVersionArn
+    var MaxResults: js.UndefOr[UInteger]
+    var MinConfidence: js.UndefOr[Percent]
+  }
+
+  object DetectCustomLabelsRequest {
+    @inline
+    def apply(
+        Image: Image,
+        ProjectVersionArn: ProjectVersionArn,
+        MaxResults: js.UndefOr[UInteger] = js.undefined,
+        MinConfidence: js.UndefOr[Percent] = js.undefined
+    ): DetectCustomLabelsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Image"             -> Image.asInstanceOf[js.Any],
+        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectCustomLabelsRequest]
+    }
+  }
+
+  @js.native
+  trait DetectCustomLabelsResponse extends js.Object {
+    var CustomLabels: js.UndefOr[CustomLabels]
+  }
+
+  object DetectCustomLabelsResponse {
+    @inline
+    def apply(
+        CustomLabels: js.UndefOr[CustomLabels] = js.undefined
+    ): DetectCustomLabelsResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomLabels.foreach(__v => __obj.updateDynamic("CustomLabels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectCustomLabelsResponse]
     }
   }
 
@@ -934,6 +1245,7 @@ package rekognition {
   @js.native
   trait DetectModerationLabelsRequest extends js.Object {
     var Image: Image
+    var HumanLoopConfig: js.UndefOr[HumanLoopConfig]
     var MinConfidence: js.UndefOr[Percent]
   }
 
@@ -941,12 +1253,14 @@ package rekognition {
     @inline
     def apply(
         Image: Image,
+        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined,
         MinConfidence: js.UndefOr[Percent] = js.undefined
     ): DetectModerationLabelsRequest = {
       val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
+      HumanLoopConfig.foreach(__v => __obj.updateDynamic("HumanLoopConfig")(__v.asInstanceOf[js.Any]))
       MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectModerationLabelsRequest]
     }
@@ -954,6 +1268,7 @@ package rekognition {
 
   @js.native
   trait DetectModerationLabelsResponse extends js.Object {
+    var HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput]
     var ModerationLabels: js.UndefOr[ModerationLabels]
     var ModerationModelVersion: js.UndefOr[String]
   }
@@ -961,10 +1276,14 @@ package rekognition {
   object DetectModerationLabelsResponse {
     @inline
     def apply(
+        HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput] = js.undefined,
         ModerationLabels: js.UndefOr[ModerationLabels] = js.undefined,
         ModerationModelVersion: js.UndefOr[String] = js.undefined
     ): DetectModerationLabelsResponse = {
       val __obj = js.Dynamic.literal()
+      HumanLoopActivationOutput.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
+      )
       ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
       ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectModerationLabelsResponse]
@@ -1039,6 +1358,28 @@ package rekognition {
     val FEAR      = "FEAR"
 
     val values = js.Object.freeze(js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR))
+  }
+
+  /**
+    * The evaluation results for the training of a model.
+    */
+  @js.native
+  trait EvaluationResult extends js.Object {
+    var F1Score: js.UndefOr[Float]
+    var Summary: js.UndefOr[Summary]
+  }
+
+  object EvaluationResult {
+    @inline
+    def apply(
+        F1Score: js.UndefOr[Float] = js.undefined,
+        Summary: js.UndefOr[Summary] = js.undefined
+    ): EvaluationResult = {
+      val __obj = js.Dynamic.literal()
+      F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationResult]
+    }
   }
 
   /**
@@ -1286,7 +1627,10 @@ package rekognition {
   }
 
   /**
-    * Gender of the face and the confidence level in the determination.
+    * The predicted gender of a detected face.
+    *  Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.
+    *  Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform.
+    *  We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
     */
   @js.native
   trait Gender extends js.Object {
@@ -1315,7 +1659,7 @@ package rekognition {
   }
 
   /**
-    * Information about where the text detected by <a>DetectText</a> is located on an image.
+    * Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
     */
   @js.native
   trait Geometry extends js.Object {
@@ -1703,6 +2047,101 @@ package rekognition {
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonTrackingResponse]
+    }
+  }
+
+  /**
+    * The S3 bucket that contains the Ground Truth manifest file.
+    */
+  @js.native
+  trait GroundTruthManifest extends js.Object {
+    var S3Object: js.UndefOr[S3Object]
+  }
+
+  object GroundTruthManifest {
+    @inline
+    def apply(
+        S3Object: js.UndefOr[S3Object] = js.undefined
+    ): GroundTruthManifest = {
+      val __obj = js.Dynamic.literal()
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroundTruthManifest]
+    }
+  }
+
+  /**
+    * Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
+    */
+  @js.native
+  trait HumanLoopActivationOutput extends js.Object {
+    var HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults]
+    var HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons]
+    var HumanLoopArn: js.UndefOr[HumanLoopArn]
+  }
+
+  object HumanLoopActivationOutput {
+    @inline
+    def apply(
+        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
+          js.undefined,
+        HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
+        HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
+    ): HumanLoopActivationOutput = {
+      val __obj = js.Dynamic.literal()
+      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
+      )
+      HumanLoopActivationReasons.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
+      )
+      HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopActivationOutput]
+    }
+  }
+
+  /**
+    * Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
+    */
+  @js.native
+  trait HumanLoopConfig extends js.Object {
+    var FlowDefinitionArn: FlowDefinitionArn
+    var HumanLoopName: HumanLoopName
+    var DataAttributes: js.UndefOr[HumanLoopDataAttributes]
+  }
+
+  object HumanLoopConfig {
+    @inline
+    def apply(
+        FlowDefinitionArn: FlowDefinitionArn,
+        HumanLoopName: HumanLoopName,
+        DataAttributes: js.UndefOr[HumanLoopDataAttributes] = js.undefined
+    ): HumanLoopConfig = {
+      val __obj = js.Dynamic.literal(
+        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
+        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
+      )
+
+      DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopConfig]
+    }
+  }
+
+  /**
+    * Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.
+    */
+  @js.native
+  trait HumanLoopDataAttributes extends js.Object {
+    var ContentClassifiers: js.UndefOr[ContentClassifiers]
+  }
+
+  object HumanLoopDataAttributes {
+    @inline
+    def apply(
+        ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined
+    ): HumanLoopDataAttributes = {
+      val __obj = js.Dynamic.literal()
+      ContentClassifiers.foreach(__v => __obj.updateDynamic("ContentClassifiers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
 
@@ -2253,6 +2692,28 @@ package rekognition {
   }
 
   /**
+    * The S3 bucket and folder location where training output is placed.
+    */
+  @js.native
+  trait OutputConfig extends js.Object {
+    var S3Bucket: js.UndefOr[S3Bucket]
+    var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object OutputConfig {
+    @inline
+    def apply(
+        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): OutputConfig = {
+      val __obj = js.Dynamic.literal()
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputConfig]
+    }
+  }
+
+  /**
     * A parent label for a label. A label can have 0, 1, or more parents.
     */
   @js.native
@@ -2353,7 +2814,7 @@ package rekognition {
 
   /**
     * The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.
-    *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Rekognition Developer Guide.
+    *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait Point extends js.Object {
@@ -2399,11 +2860,124 @@ package rekognition {
     }
   }
 
-  object QualityFilterEnum {
-    val NONE = "NONE"
-    val AUTO = "AUTO"
+  /**
+    * A description of a Amazon Rekognition Custom Labels project.
+    */
+  @js.native
+  trait ProjectDescription extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var ProjectArn: js.UndefOr[ProjectArn]
+    var Status: js.UndefOr[ProjectStatus]
+  }
 
-    val values = js.Object.freeze(js.Array(NONE, AUTO))
+  object ProjectDescription {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        ProjectArn: js.UndefOr[ProjectArn] = js.undefined,
+        Status: js.UndefOr[ProjectStatus] = js.undefined
+    ): ProjectDescription = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectDescription]
+    }
+  }
+
+  object ProjectStatusEnum {
+    val CREATING = "CREATING"
+    val CREATED  = "CREATED"
+    val DELETING = "DELETING"
+
+    val values = js.Object.freeze(js.Array(CREATING, CREATED, DELETING))
+  }
+
+  /**
+    * The description of a version of a model.
+    */
+  @js.native
+  trait ProjectVersionDescription extends js.Object {
+    var BillableTrainingTimeInSeconds: js.UndefOr[ULong]
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var EvaluationResult: js.UndefOr[EvaluationResult]
+    var MinInferenceUnits: js.UndefOr[InferenceUnits]
+    var OutputConfig: js.UndefOr[OutputConfig]
+    var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
+    var Status: js.UndefOr[ProjectVersionStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var TestingDataResult: js.UndefOr[TestingDataResult]
+    var TrainingDataResult: js.UndefOr[TrainingDataResult]
+    var TrainingEndTimestamp: js.UndefOr[DateTime]
+  }
+
+  object ProjectVersionDescription {
+    @inline
+    def apply(
+        BillableTrainingTimeInSeconds: js.UndefOr[ULong] = js.undefined,
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        EvaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
+        MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
+        ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined,
+        Status: js.UndefOr[ProjectVersionStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        TestingDataResult: js.UndefOr[TestingDataResult] = js.undefined,
+        TrainingDataResult: js.UndefOr[TrainingDataResult] = js.undefined,
+        TrainingEndTimestamp: js.UndefOr[DateTime] = js.undefined
+    ): ProjectVersionDescription = {
+      val __obj = js.Dynamic.literal()
+      BillableTrainingTimeInSeconds.foreach(__v =>
+        __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
+      MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
+      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
+      ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      TestingDataResult.foreach(__v => __obj.updateDynamic("TestingDataResult")(__v.asInstanceOf[js.Any]))
+      TrainingDataResult.foreach(__v => __obj.updateDynamic("TrainingDataResult")(__v.asInstanceOf[js.Any]))
+      TrainingEndTimestamp.foreach(__v => __obj.updateDynamic("TrainingEndTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectVersionDescription]
+    }
+  }
+
+  object ProjectVersionStatusEnum {
+    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS"
+    val TRAINING_COMPLETED   = "TRAINING_COMPLETED"
+    val TRAINING_FAILED      = "TRAINING_FAILED"
+    val STARTING             = "STARTING"
+    val RUNNING              = "RUNNING"
+    val FAILED               = "FAILED"
+    val STOPPING             = "STOPPING"
+    val STOPPED              = "STOPPED"
+    val DELETING             = "DELETING"
+
+    val values = js.Object.freeze(
+      js.Array(
+        TRAINING_IN_PROGRESS,
+        TRAINING_COMPLETED,
+        TRAINING_FAILED,
+        STARTING,
+        RUNNING,
+        FAILED,
+        STOPPING,
+        STOPPED,
+        DELETING
+      )
+    )
+  }
+
+  object QualityFilterEnum {
+    val NONE   = "NONE"
+    val AUTO   = "AUTO"
+    val LOW    = "LOW"
+    val MEDIUM = "MEDIUM"
+    val HIGH   = "HIGH"
+
+    val values = js.Object.freeze(js.Array(NONE, AUTO, LOW, MEDIUM, HIGH))
   }
 
   object ReasonEnum {
@@ -2413,9 +2987,18 @@ package rekognition {
     val LOW_SHARPNESS      = "LOW_SHARPNESS"
     val LOW_CONFIDENCE     = "LOW_CONFIDENCE"
     val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX"
+    val LOW_FACE_QUALITY   = "LOW_FACE_QUALITY"
 
     val values = js.Object.freeze(
-      js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX)
+      js.Array(
+        EXCEEDS_MAX_FACES,
+        EXTREME_POSE,
+        LOW_BRIGHTNESS,
+        LOW_SHARPNESS,
+        LOW_CONFIDENCE,
+        SMALL_BOUNDING_BOX,
+        LOW_FACE_QUALITY
+      )
     )
   }
 
@@ -2492,6 +3075,7 @@ package rekognition {
     var Image: Image
     var FaceMatchThreshold: js.UndefOr[Percent]
     var MaxFaces: js.UndefOr[MaxFaces]
+    var QualityFilter: js.UndefOr[QualityFilter]
   }
 
   object SearchFacesByImageRequest {
@@ -2500,7 +3084,8 @@ package rekognition {
         CollectionId: CollectionId,
         Image: Image,
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
-        MaxFaces: js.UndefOr[MaxFaces] = js.undefined
+        MaxFaces: js.UndefOr[MaxFaces] = js.undefined,
+        QualityFilter: js.UndefOr[QualityFilter] = js.undefined
     ): SearchFacesByImageRequest = {
       val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
@@ -2509,6 +3094,7 @@ package rekognition {
 
       FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
       MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
+      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFacesByImageRequest]
     }
   }
@@ -2883,6 +3469,43 @@ package rekognition {
   }
 
   @js.native
+  trait StartProjectVersionRequest extends js.Object {
+    var MinInferenceUnits: InferenceUnits
+    var ProjectVersionArn: ProjectVersionArn
+  }
+
+  object StartProjectVersionRequest {
+    @inline
+    def apply(
+        MinInferenceUnits: InferenceUnits,
+        ProjectVersionArn: ProjectVersionArn
+    ): StartProjectVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "MinInferenceUnits" -> MinInferenceUnits.asInstanceOf[js.Any],
+        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StartProjectVersionRequest]
+    }
+  }
+
+  @js.native
+  trait StartProjectVersionResponse extends js.Object {
+    var Status: js.UndefOr[ProjectVersionStatus]
+  }
+
+  object StartProjectVersionResponse {
+    @inline
+    def apply(
+        Status: js.UndefOr[ProjectVersionStatus] = js.undefined
+    ): StartProjectVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartProjectVersionResponse]
+    }
+  }
+
+  @js.native
   trait StartStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
@@ -2910,6 +3533,40 @@ package rekognition {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartStreamProcessorResponse]
+    }
+  }
+
+  @js.native
+  trait StopProjectVersionRequest extends js.Object {
+    var ProjectVersionArn: ProjectVersionArn
+  }
+
+  object StopProjectVersionRequest {
+    @inline
+    def apply(
+        ProjectVersionArn: ProjectVersionArn
+    ): StopProjectVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopProjectVersionRequest]
+    }
+  }
+
+  @js.native
+  trait StopProjectVersionResponse extends js.Object {
+    var Status: js.UndefOr[ProjectVersionStatus]
+  }
+
+  object StopProjectVersionResponse {
+    @inline
+    def apply(
+        Status: js.UndefOr[ProjectVersionStatus] = js.undefined
+    ): StopProjectVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopProjectVersionResponse]
     }
   }
 
@@ -3034,6 +3691,26 @@ package rekognition {
   }
 
   /**
+    * The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label.
+    *  You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
+    */
+  @js.native
+  trait Summary extends js.Object {
+    var S3Object: js.UndefOr[S3Object]
+  }
+
+  object Summary {
+    @inline
+    def apply(
+        S3Object: js.UndefOr[S3Object] = js.undefined
+    ): Summary = {
+      val __obj = js.Dynamic.literal()
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Summary]
+    }
+  }
+
+  /**
     * Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.
     */
   @js.native
@@ -3052,6 +3729,50 @@ package rekognition {
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Sunglasses]
+    }
+  }
+
+  /**
+    * The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
+    */
+  @js.native
+  trait TestingData extends js.Object {
+    var Assets: js.UndefOr[Assets]
+    var AutoCreate: js.UndefOr[Boolean]
+  }
+
+  object TestingData {
+    @inline
+    def apply(
+        Assets: js.UndefOr[Assets] = js.undefined,
+        AutoCreate: js.UndefOr[Boolean] = js.undefined
+    ): TestingData = {
+      val __obj = js.Dynamic.literal()
+      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
+      AutoCreate.foreach(__v => __obj.updateDynamic("AutoCreate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestingData]
+    }
+  }
+
+  /**
+    * A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
+    */
+  @js.native
+  trait TestingDataResult extends js.Object {
+    var Input: js.UndefOr[TestingData]
+    var Output: js.UndefOr[TestingData]
+  }
+
+  object TestingDataResult {
+    @inline
+    def apply(
+        Input: js.UndefOr[TestingData] = js.undefined,
+        Output: js.UndefOr[TestingData] = js.undefined
+    ): TestingDataResult = {
+      val __obj = js.Dynamic.literal()
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestingDataResult]
     }
   }
 
@@ -3097,6 +3818,47 @@ package rekognition {
     val WORD = "WORD"
 
     val values = js.Object.freeze(js.Array(LINE, WORD))
+  }
+
+  /**
+    * The dataset used for training.
+    */
+  @js.native
+  trait TrainingData extends js.Object {
+    var Assets: js.UndefOr[Assets]
+  }
+
+  object TrainingData {
+    @inline
+    def apply(
+        Assets: js.UndefOr[Assets] = js.undefined
+    ): TrainingData = {
+      val __obj = js.Dynamic.literal()
+      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingData]
+    }
+  }
+
+  /**
+    * A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
+    */
+  @js.native
+  trait TrainingDataResult extends js.Object {
+    var Input: js.UndefOr[TrainingData]
+    var Output: js.UndefOr[TrainingData]
+  }
+
+  object TrainingDataResult {
+    @inline
+    def apply(
+        Input: js.UndefOr[TrainingData] = js.undefined,
+        Output: js.UndefOr[TrainingData] = js.undefined
+    ): TrainingDataResult = {
+      val __obj = js.Dynamic.literal()
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingDataResult]
+    }
   }
 
   /**

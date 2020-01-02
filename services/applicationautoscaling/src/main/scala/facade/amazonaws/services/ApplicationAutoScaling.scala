@@ -46,6 +46,7 @@ package object applicationautoscaling {
   type XmlString                 = String
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
+
     @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
       service.deleteScalingPolicy(params).promise.toFuture
     @inline def deleteScheduledActionFuture(
@@ -543,6 +544,9 @@ package applicationautoscaling {
     val SageMakerVariantInvocationsPerInstance   = "SageMakerVariantInvocationsPerInstance"
     val ECSServiceAverageCPUUtilization          = "ECSServiceAverageCPUUtilization"
     val ECSServiceAverageMemoryUtilization       = "ECSServiceAverageMemoryUtilization"
+    val AppStreamAverageCapacityUtilization      = "AppStreamAverageCapacityUtilization"
+    val ComprehendInferenceUtilization           = "ComprehendInferenceUtilization"
+    val LambdaProvisionedConcurrencyUtilization  = "LambdaProvisionedConcurrencyUtilization"
 
     val values = js.Object.freeze(
       js.Array(
@@ -556,7 +560,10 @@ package applicationautoscaling {
         EC2SpotFleetRequestAverageNetworkOut,
         SageMakerVariantInvocationsPerInstance,
         ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization
+        ECSServiceAverageMemoryUtilization,
+        AppStreamAverageCapacityUtilization,
+        ComprehendInferenceUtilization,
+        LambdaProvisionedConcurrencyUtilization
       )
     )
   }
@@ -766,6 +773,9 @@ package applicationautoscaling {
     val `rds:cluster:ReadReplicaCount`                 = "rds:cluster:ReadReplicaCount"
     val `sagemaker:variant:DesiredInstanceCount`       = "sagemaker:variant:DesiredInstanceCount"
     val `custom-resource:ResourceType:Property`        = "custom-resource:ResourceType:Property"
+    val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` =
+      "comprehend:document-classifier-endpoint:DesiredInferenceUnits"
+    val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency"
 
     val values = js.Object.freeze(
       js.Array(
@@ -779,7 +789,9 @@ package applicationautoscaling {
         `dynamodb:index:WriteCapacityUnits`,
         `rds:cluster:ReadReplicaCount`,
         `sagemaker:variant:DesiredInstanceCount`,
-        `custom-resource:ResourceType:Property`
+        `custom-resource:ResourceType:Property`,
+        `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+        `lambda:function:ProvisionedConcurrency`
       )
     )
   }
@@ -1019,9 +1031,12 @@ package applicationautoscaling {
     val rds               = "rds"
     val sagemaker         = "sagemaker"
     val `custom-resource` = "custom-resource"
+    val comprehend        = "comprehend"
+    val lambda            = "lambda"
 
-    val values =
-      js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`))
+    val values = js.Object.freeze(
+      js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda)
+    )
   }
 
   /**

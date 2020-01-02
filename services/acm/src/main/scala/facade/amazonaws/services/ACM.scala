@@ -55,6 +55,7 @@ package object acm {
   type ValidationMethod    = String
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
+
     @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
       service.addTagsToCertificate(params).promise.toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
@@ -521,6 +522,7 @@ package acm {
     val PCA_INVALID_ARN                  = "PCA_INVALID_ARN"
     val PCA_INVALID_STATE                = "PCA_INVALID_STATE"
     val PCA_REQUEST_FAILED               = "PCA_REQUEST_FAILED"
+    val PCA_NAME_CONSTRAINTS_VALIDATION  = "PCA_NAME_CONSTRAINTS_VALIDATION"
     val PCA_RESOURCE_NOT_FOUND           = "PCA_RESOURCE_NOT_FOUND"
     val PCA_INVALID_ARGS                 = "PCA_INVALID_ARGS"
     val PCA_INVALID_DURATION             = "PCA_INVALID_DURATION"
@@ -539,6 +541,7 @@ package acm {
         PCA_INVALID_ARN,
         PCA_INVALID_STATE,
         PCA_REQUEST_FAILED,
+        PCA_NAME_CONSTRAINTS_VALIDATION,
         PCA_RESOURCE_NOT_FOUND,
         PCA_INVALID_ARGS,
         PCA_INVALID_DURATION,
@@ -616,6 +619,7 @@ package acm {
     var PrivateKey: PrivateKeyBlob
     var CertificateArn: js.UndefOr[Arn]
     var CertificateChain: js.UndefOr[CertificateChainBlob]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ImportCertificateRequest {
@@ -624,7 +628,8 @@ package acm {
         Certificate: CertificateBodyBlob,
         PrivateKey: PrivateKeyBlob,
         CertificateArn: js.UndefOr[Arn] = js.undefined,
-        CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined
+        CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ImportCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
@@ -633,6 +638,7 @@ package acm {
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
       CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportCertificateRequest]
     }
   }
@@ -890,6 +896,7 @@ package acm {
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
     var Options: js.UndefOr[CertificateOptions]
     var SubjectAlternativeNames: js.UndefOr[DomainList]
+    var Tags: js.UndefOr[TagList]
     var ValidationMethod: js.UndefOr[ValidationMethod]
   }
 
@@ -902,6 +909,7 @@ package acm {
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
         Options: js.UndefOr[CertificateOptions] = js.undefined,
         SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         ValidationMethod: js.UndefOr[ValidationMethod] = js.undefined
     ): RequestCertificateRequest = {
       val __obj = js.Dynamic.literal(
@@ -913,6 +921,7 @@ package acm {
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       SubjectAlternativeNames.foreach(__v => __obj.updateDynamic("SubjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ValidationMethod.foreach(__v => __obj.updateDynamic("ValidationMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestCertificateRequest]
     }

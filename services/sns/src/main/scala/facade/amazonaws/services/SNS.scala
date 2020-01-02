@@ -47,6 +47,7 @@ package object sns {
   type topicName                  = String
 
   implicit final class SNSOps(private val service: SNS) extends AnyVal {
+
     @inline def addPermissionFuture(params: AddPermissionInput): Future[js.Object] =
       service.addPermission(params).promise.toFuture
     @inline def checkIfPhoneNumberIsOptedOutFuture(

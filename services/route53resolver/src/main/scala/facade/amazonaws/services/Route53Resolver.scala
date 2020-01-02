@@ -47,6 +47,7 @@ package object route53resolver {
   type TargetList                    = js.Array[TargetAddress]
 
   implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
+
     @inline def associateResolverEndpointIpAddressFuture(
         params: AssociateResolverEndpointIpAddressRequest
     ): Future[AssociateResolverEndpointIpAddressResponse] =

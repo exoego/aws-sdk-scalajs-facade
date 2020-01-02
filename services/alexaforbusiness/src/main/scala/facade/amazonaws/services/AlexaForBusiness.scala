@@ -8,174 +8,178 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object alexaforbusiness {
-  type Address                      = String
-  type AddressBookDataList          = js.Array[AddressBookData]
-  type AddressBookDescription       = String
-  type AddressBookName              = String
-  type AmazonId                     = String
-  type ApplianceDescription         = String
-  type ApplianceFriendlyName        = String
-  type ApplianceManufacturerName    = String
-  type Arn                          = String
-  type AudioList                    = js.Array[Audio]
-  type AudioLocation                = String
-  type AuthorizationResult          = js.Dictionary[Value]
-  type BulletPoint                  = String
-  type BulletPoints                 = js.Array[BulletPoint]
-  type BusinessReportDeliveryTime   = js.Date
-  type BusinessReportDownloadUrl    = String
-  type BusinessReportFailureCode    = String
-  type BusinessReportFormat         = String
-  type BusinessReportInterval       = String
-  type BusinessReportS3Path         = String
-  type BusinessReportScheduleList   = js.Array[BusinessReportSchedule]
-  type BusinessReportScheduleName   = String
-  type BusinessReportStatus         = String
-  type CategoryId                   = Double
-  type CategoryList                 = js.Array[Category]
-  type CategoryName                 = String
-  type CertificateTime              = js.Date
-  type ClientId                     = String
-  type ClientRequestToken           = String
-  type CommsProtocol                = String
-  type ConferenceProviderName       = String
-  type ConferenceProviderType       = String
-  type ConferenceProvidersList      = js.Array[ConferenceProvider]
-  type ConnectionStatus             = String
-  type ContactDataList              = js.Array[ContactData]
-  type ContactName                  = String
-  type CountryCode                  = String
-  type CurrentWiFiPassword          = String
-  type CustomerS3BucketName         = String
-  type Date                         = String
-  type DeveloperName                = String
-  type DeviceDataList               = js.Array[DeviceData]
-  type DeviceEventList              = js.Array[DeviceEvent]
-  type DeviceEventTime              = js.Date
-  type DeviceEventType              = String
-  type DeviceEventValue             = String
-  type DeviceLocale                 = String
-  type DeviceName                   = String
-  type DeviceSerialNumber           = String
-  type DeviceSerialNumberForAVS     = String
-  type DeviceStatus                 = String
-  type DeviceStatusDetailCode       = String
-  type DeviceStatusDetails          = js.Array[DeviceStatusDetail]
-  type DeviceType                   = String
-  type DeviceUsageType              = String
-  type DistanceUnit                 = String
-  type Email                        = String
-  type EnablementType               = String
-  type EnablementTypeFilter         = String
-  type EndUserLicenseAgreement      = String
-  type Endpoint                     = String
-  type EnrollmentId                 = String
-  type EnrollmentStatus             = String
-  type Feature                      = String
-  type Features                     = js.Array[Feature]
-  type FilterKey                    = String
-  type FilterList                   = js.Array[Filter]
-  type FilterValue                  = String
-  type FilterValueList              = js.Array[FilterValue]
-  type GatewayDescription           = String
-  type GatewayGroupDescription      = String
-  type GatewayGroupName             = String
-  type GatewayGroupSummaries        = js.Array[GatewayGroupSummary]
-  type GatewayName                  = String
-  type GatewaySummaries             = js.Array[GatewaySummary]
-  type GatewayVersion               = String
-  type GenericKeyword               = String
-  type GenericKeywords              = js.Array[GenericKeyword]
-  type IconUrl                      = String
-  type InvocationPhrase             = String
-  type Key                          = String
-  type Locale                       = String
-  type MacAddress                   = String
-  type MaxResults                   = Int
-  type MaxVolumeLimit               = Int
-  type NetworkEapMethod             = String
-  type NetworkProfileDataList       = js.Array[NetworkProfileData]
-  type NetworkProfileDescription    = String
-  type NetworkProfileName           = String
-  type NetworkSecurityType          = String
-  type NetworkSsid                  = String
-  type NewInThisVersionBulletPoints = js.Array[BulletPoint]
-  type NextToken                    = String
-  type NextWiFiPassword             = String
-  type OneClickIdDelay              = String
-  type OneClickPinDelay             = String
-  type OrganizationName             = String
-  type OutboundPhoneNumber          = String
-  type PhoneNumberList              = js.Array[PhoneNumber]
-  type PhoneNumberType              = String
-  type PrivacyPolicy                = String
-  type ProductDescription           = String
-  type ProductId                    = String
-  type ProfileDataList              = js.Array[ProfileData]
-  type ProfileName                  = String
-  type ProviderCalendarId           = String
-  type RawPhoneNumber               = String
-  type ReleaseDate                  = String
-  type RequirePin                   = String
-  type ReviewKey                    = String
-  type ReviewValue                  = String
-  type Reviews                      = js.Dictionary[ReviewValue]
-  type RoomDataList                 = js.Array[RoomData]
-  type RoomDescription              = String
-  type RoomName                     = String
-  type RoomSkillParameterKey        = String
-  type RoomSkillParameterValue      = String
-  type RoomSkillParameters          = js.Array[RoomSkillParameter]
-  type S3KeyPrefix                  = String
-  type SampleUtterances             = js.Array[Utterance]
-  type ShortDescription             = String
-  type ShortSkillIdList             = js.Array[SkillId]
-  type SipAddressList               = js.Array[SipAddress]
-  type SipType                      = String
-  type SipUri                       = String
-  type SkillGroupDataList           = js.Array[SkillGroupData]
-  type SkillGroupDescription        = String
-  type SkillGroupName               = String
-  type SkillId                      = String
-  type SkillListMaxResults          = Int
-  type SkillName                    = String
-  type SkillStoreType               = String
-  type SkillSummaryList             = js.Array[SkillSummary]
-  type SkillType                    = String
-  type SkillTypeFilter              = String
-  type SkillTypes                   = js.Array[SkillStoreType]
-  type SkillsStoreSkillList         = js.Array[SkillsStoreSkill]
-  type SmartHomeApplianceList       = js.Array[SmartHomeAppliance]
-  type SoftwareVersion              = String
-  type SortKey                      = String
-  type SortList                     = js.Array[Sort]
-  type SortValue                    = String
-  type SsmlList                     = js.Array[Ssml]
-  type SsmlValue                    = String
-  type TagKey                       = String
-  type TagKeyList                   = js.Array[TagKey]
-  type TagList                      = js.Array[Tag]
-  type TagValue                     = String
-  type TemperatureUnit              = String
-  type TextList                     = js.Array[Text]
-  type TextValue                    = String
-  type TimeToLiveInSeconds          = Int
-  type Timezone                     = String
-  type TotalCount                   = Int
-  type TrustAnchor                  = String
-  type TrustAnchorList              = js.Array[TrustAnchor]
-  type Url                          = String
-  type UserCode                     = String
-  type UserDataList                 = js.Array[UserData]
-  type UserId                       = String
-  type Utterance                    = String
-  type Value                        = String
-  type WakeWord                     = String
-  type user_FirstName               = String
-  type user_LastName                = String
-  type user_UserId                  = String
+  type Address                         = String
+  type AddressBookDataList             = js.Array[AddressBookData]
+  type AddressBookDescription          = String
+  type AddressBookName                 = String
+  type AmazonId                        = String
+  type ApplianceDescription            = String
+  type ApplianceFriendlyName           = String
+  type ApplianceManufacturerName       = String
+  type Arn                             = String
+  type AudioList                       = js.Array[Audio]
+  type AudioLocation                   = String
+  type AuthorizationResult             = js.Dictionary[Value]
+  type BulletPoint                     = String
+  type BulletPoints                    = js.Array[BulletPoint]
+  type BusinessReportDeliveryTime      = js.Date
+  type BusinessReportDownloadUrl       = String
+  type BusinessReportFailureCode       = String
+  type BusinessReportFormat            = String
+  type BusinessReportInterval          = String
+  type BusinessReportS3Path            = String
+  type BusinessReportScheduleList      = js.Array[BusinessReportSchedule]
+  type BusinessReportScheduleName      = String
+  type BusinessReportStatus            = String
+  type CategoryId                      = Double
+  type CategoryList                    = js.Array[Category]
+  type CategoryName                    = String
+  type CertificateTime                 = js.Date
+  type ClientId                        = String
+  type ClientRequestToken              = String
+  type CommsProtocol                   = String
+  type ConferenceProviderName          = String
+  type ConferenceProviderType          = String
+  type ConferenceProvidersList         = js.Array[ConferenceProvider]
+  type ConnectionStatus                = String
+  type ContactDataList                 = js.Array[ContactData]
+  type ContactName                     = String
+  type CountryCode                     = String
+  type CurrentWiFiPassword             = String
+  type CustomerS3BucketName            = String
+  type Date                            = String
+  type DeveloperName                   = String
+  type DeviceDataList                  = js.Array[DeviceData]
+  type DeviceEventList                 = js.Array[DeviceEvent]
+  type DeviceEventTime                 = js.Date
+  type DeviceEventType                 = String
+  type DeviceEventValue                = String
+  type DeviceLocale                    = String
+  type DeviceName                      = String
+  type DeviceSerialNumber              = String
+  type DeviceSerialNumberForAVS        = String
+  type DeviceStatus                    = String
+  type DeviceStatusDetailCode          = String
+  type DeviceStatusDetails             = js.Array[DeviceStatusDetail]
+  type DeviceType                      = String
+  type DeviceUsageType                 = String
+  type DistanceUnit                    = String
+  type Email                           = String
+  type EnablementType                  = String
+  type EnablementTypeFilter            = String
+  type EndOfMeetingReminderMinutesList = js.Array[Minutes]
+  type EndOfMeetingReminderType        = String
+  type EndUserLicenseAgreement         = String
+  type Endpoint                        = String
+  type EnrollmentId                    = String
+  type EnrollmentStatus                = String
+  type Feature                         = String
+  type Features                        = js.Array[Feature]
+  type FilterKey                       = String
+  type FilterList                      = js.Array[Filter]
+  type FilterValue                     = String
+  type FilterValueList                 = js.Array[FilterValue]
+  type GatewayDescription              = String
+  type GatewayGroupDescription         = String
+  type GatewayGroupName                = String
+  type GatewayGroupSummaries           = js.Array[GatewayGroupSummary]
+  type GatewayName                     = String
+  type GatewaySummaries                = js.Array[GatewaySummary]
+  type GatewayVersion                  = String
+  type GenericKeyword                  = String
+  type GenericKeywords                 = js.Array[GenericKeyword]
+  type IconUrl                         = String
+  type InvocationPhrase                = String
+  type Key                             = String
+  type Locale                          = String
+  type MacAddress                      = String
+  type MaxResults                      = Int
+  type MaxVolumeLimit                  = Int
+  type Minutes                         = Int
+  type NetworkEapMethod                = String
+  type NetworkProfileDataList          = js.Array[NetworkProfileData]
+  type NetworkProfileDescription       = String
+  type NetworkProfileName              = String
+  type NetworkSecurityType             = String
+  type NetworkSsid                     = String
+  type NewInThisVersionBulletPoints    = js.Array[BulletPoint]
+  type NextToken                       = String
+  type NextWiFiPassword                = String
+  type OneClickIdDelay                 = String
+  type OneClickPinDelay                = String
+  type OrganizationName                = String
+  type OutboundPhoneNumber             = String
+  type PhoneNumberList                 = js.Array[PhoneNumber]
+  type PhoneNumberType                 = String
+  type PrivacyPolicy                   = String
+  type ProductDescription              = String
+  type ProductId                       = String
+  type ProfileDataList                 = js.Array[ProfileData]
+  type ProfileName                     = String
+  type ProviderCalendarId              = String
+  type RawPhoneNumber                  = String
+  type ReleaseDate                     = String
+  type RequirePin                      = String
+  type ReviewKey                       = String
+  type ReviewValue                     = String
+  type Reviews                         = js.Dictionary[ReviewValue]
+  type RoomDataList                    = js.Array[RoomData]
+  type RoomDescription                 = String
+  type RoomName                        = String
+  type RoomSkillParameterKey           = String
+  type RoomSkillParameterValue         = String
+  type RoomSkillParameters             = js.Array[RoomSkillParameter]
+  type S3KeyPrefix                     = String
+  type SampleUtterances                = js.Array[Utterance]
+  type ShortDescription                = String
+  type ShortSkillIdList                = js.Array[SkillId]
+  type SipAddressList                  = js.Array[SipAddress]
+  type SipType                         = String
+  type SipUri                          = String
+  type SkillGroupDataList              = js.Array[SkillGroupData]
+  type SkillGroupDescription           = String
+  type SkillGroupName                  = String
+  type SkillId                         = String
+  type SkillListMaxResults             = Int
+  type SkillName                       = String
+  type SkillStoreType                  = String
+  type SkillSummaryList                = js.Array[SkillSummary]
+  type SkillType                       = String
+  type SkillTypeFilter                 = String
+  type SkillTypes                      = js.Array[SkillStoreType]
+  type SkillsStoreSkillList            = js.Array[SkillsStoreSkill]
+  type SmartHomeApplianceList          = js.Array[SmartHomeAppliance]
+  type SoftwareVersion                 = String
+  type SortKey                         = String
+  type SortList                        = js.Array[Sort]
+  type SortValue                       = String
+  type SsmlList                        = js.Array[Ssml]
+  type SsmlValue                       = String
+  type TagKey                          = String
+  type TagKeyList                      = js.Array[TagKey]
+  type TagList                         = js.Array[Tag]
+  type TagValue                        = String
+  type TemperatureUnit                 = String
+  type TextList                        = js.Array[Text]
+  type TextValue                       = String
+  type TimeToLiveInSeconds             = Int
+  type Timezone                        = String
+  type TotalCount                      = Int
+  type TrustAnchor                     = String
+  type TrustAnchorList                 = js.Array[TrustAnchor]
+  type Url                             = String
+  type UserCode                        = String
+  type UserDataList                    = js.Array[UserData]
+  type UserId                          = String
+  type Utterance                       = String
+  type Value                           = String
+  type WakeWord                        = String
+  type user_FirstName                  = String
+  type user_LastName                   = String
+  type user_UserId                     = String
 
   implicit final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
+
     @inline def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
       service.approveSkill(params).promise.toFuture
     @inline def associateContactWithAddressBookFuture(
@@ -927,10 +931,11 @@ package alexaforbusiness {
   }
 
   object BusinessReportIntervalEnum {
-    val ONE_DAY  = "ONE_DAY"
-    val ONE_WEEK = "ONE_WEEK"
+    val ONE_DAY     = "ONE_DAY"
+    val ONE_WEEK    = "ONE_WEEK"
+    val THIRTY_DAYS = "THIRTY_DAYS"
 
-    val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK))
+    val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
   }
 
   /**
@@ -1423,6 +1428,33 @@ package alexaforbusiness {
     }
   }
 
+  /**
+    * Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
+    */
+  @js.native
+  trait CreateEndOfMeetingReminder extends js.Object {
+    var Enabled: Boolean
+    var ReminderAtMinutes: EndOfMeetingReminderMinutesList
+    var ReminderType: EndOfMeetingReminderType
+  }
+
+  object CreateEndOfMeetingReminder {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        ReminderAtMinutes: EndOfMeetingReminderMinutesList,
+        ReminderType: EndOfMeetingReminderType
+    ): CreateEndOfMeetingReminder = {
+      val __obj = js.Dynamic.literal(
+        "Enabled"           -> Enabled.asInstanceOf[js.Any],
+        "ReminderAtMinutes" -> ReminderAtMinutes.asInstanceOf[js.Any],
+        "ReminderType"      -> ReminderType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateEndOfMeetingReminder]
+    }
+  }
+
   @js.native
   trait CreateGatewayGroupRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
@@ -1460,6 +1492,60 @@ package alexaforbusiness {
       val __obj = js.Dynamic.literal()
       GatewayGroupArn.foreach(__v => __obj.updateDynamic("GatewayGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGatewayGroupResponse]
+    }
+  }
+
+  /**
+    * Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.
+    */
+  @js.native
+  trait CreateInstantBooking extends js.Object {
+    var DurationInMinutes: Minutes
+    var Enabled: Boolean
+  }
+
+  object CreateInstantBooking {
+    @inline
+    def apply(
+        DurationInMinutes: Minutes,
+        Enabled: Boolean
+    ): CreateInstantBooking = {
+      val __obj = js.Dynamic.literal(
+        "DurationInMinutes" -> DurationInMinutes.asInstanceOf[js.Any],
+        "Enabled"           -> Enabled.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateInstantBooking]
+    }
+  }
+
+  /**
+    * Creates meeting room settings of a room profile.
+    */
+  @js.native
+  trait CreateMeetingRoomConfiguration extends js.Object {
+    var EndOfMeetingReminder: js.UndefOr[CreateEndOfMeetingReminder]
+    var InstantBooking: js.UndefOr[CreateInstantBooking]
+    var RequireCheckIn: js.UndefOr[CreateRequireCheckIn]
+    var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
+  }
+
+  object CreateMeetingRoomConfiguration {
+    @inline
+    def apply(
+        EndOfMeetingReminder: js.UndefOr[CreateEndOfMeetingReminder] = js.undefined,
+        InstantBooking: js.UndefOr[CreateInstantBooking] = js.undefined,
+        RequireCheckIn: js.UndefOr[CreateRequireCheckIn] = js.undefined,
+        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
+    ): CreateMeetingRoomConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
+      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
+      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
+      RoomUtilizationMetricsEnabled.foreach(__v =>
+        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateMeetingRoomConfiguration]
     }
   }
 
@@ -1535,6 +1621,7 @@ package alexaforbusiness {
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
+    var MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration]
     var PSTNEnabled: js.UndefOr[Boolean]
     var SetupModeDisabled: js.UndefOr[Boolean]
   }
@@ -1551,6 +1638,7 @@ package alexaforbusiness {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+        MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         SetupModeDisabled: js.UndefOr[Boolean] = js.undefined
     ): CreateProfileRequest = {
@@ -1566,6 +1654,7 @@ package alexaforbusiness {
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
+      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
       SetupModeDisabled.foreach(__v => __obj.updateDynamic("SetupModeDisabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProfileRequest]
@@ -1585,6 +1674,30 @@ package alexaforbusiness {
       val __obj = js.Dynamic.literal()
       ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProfileResponse]
+    }
+  }
+
+  /**
+    * Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
+    */
+  @js.native
+  trait CreateRequireCheckIn extends js.Object {
+    var Enabled: Boolean
+    var ReleaseAfterMinutes: Minutes
+  }
+
+  object CreateRequireCheckIn {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        ReleaseAfterMinutes: Minutes
+    ): CreateRequireCheckIn = {
+      val __obj = js.Dynamic.literal(
+        "Enabled"             -> Enabled.asInstanceOf[js.Any],
+        "ReleaseAfterMinutes" -> ReleaseAfterMinutes.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateRequireCheckIn]
     }
   }
 
@@ -2633,6 +2746,40 @@ package alexaforbusiness {
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
+  /**
+    * Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
+    */
+  @js.native
+  trait EndOfMeetingReminder extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList]
+    var ReminderType: js.UndefOr[EndOfMeetingReminderType]
+  }
+
+  object EndOfMeetingReminder {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList] = js.undefined,
+        ReminderType: js.UndefOr[EndOfMeetingReminderType] = js.undefined
+    ): EndOfMeetingReminder = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      ReminderAtMinutes.foreach(__v => __obj.updateDynamic("ReminderAtMinutes")(__v.asInstanceOf[js.Any]))
+      ReminderType.foreach(__v => __obj.updateDynamic("ReminderType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndOfMeetingReminder]
+    }
+  }
+
+  object EndOfMeetingReminderTypeEnum {
+    val ANNOUNCEMENT_TIME_CHECK         = "ANNOUNCEMENT_TIME_CHECK"
+    val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT"
+    val CHIME                           = "CHIME"
+    val KNOCK                           = "KNOCK"
+
+    val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
+  }
+
   object EnrollmentStatusEnum {
     val INITIALIZED    = "INITIALIZED"
     val PENDING        = "PENDING"
@@ -3284,6 +3431,28 @@ package alexaforbusiness {
     }
   }
 
+  /**
+    * Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.
+    */
+  @js.native
+  trait InstantBooking extends js.Object {
+    var DurationInMinutes: js.UndefOr[Minutes]
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object InstantBooking {
+    @inline
+    def apply(
+        DurationInMinutes: js.UndefOr[Minutes] = js.undefined,
+        Enabled: js.UndefOr[Boolean] = js.undefined
+    ): InstantBooking = {
+      val __obj = js.Dynamic.literal()
+      DurationInMinutes.foreach(__v => __obj.updateDynamic("DurationInMinutes")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstantBooking]
+    }
+  }
+
   @js.native
   trait ListBusinessReportSchedulesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
@@ -3706,6 +3875,36 @@ package alexaforbusiness {
   }
 
   /**
+    * Meeting room settings of a room profile.
+    */
+  @js.native
+  trait MeetingRoomConfiguration extends js.Object {
+    var EndOfMeetingReminder: js.UndefOr[EndOfMeetingReminder]
+    var InstantBooking: js.UndefOr[InstantBooking]
+    var RequireCheckIn: js.UndefOr[RequireCheckIn]
+    var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
+  }
+
+  object MeetingRoomConfiguration {
+    @inline
+    def apply(
+        EndOfMeetingReminder: js.UndefOr[EndOfMeetingReminder] = js.undefined,
+        InstantBooking: js.UndefOr[InstantBooking] = js.undefined,
+        RequireCheckIn: js.UndefOr[RequireCheckIn] = js.undefined,
+        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
+    ): MeetingRoomConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
+      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
+      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
+      RoomUtilizationMetricsEnabled.foreach(__v =>
+        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[MeetingRoomConfiguration]
+    }
+  }
+
+  /**
     * The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
     * * If YES, Alexa will always ask for a meeting pin.
     *  * If NO, Alexa will never ask for a meeting pin.
@@ -3901,6 +4100,7 @@ package alexaforbusiness {
     var IsDefault: js.UndefOr[Boolean]
     var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
+    var MeetingRoomConfiguration: js.UndefOr[MeetingRoomConfiguration]
     var PSTNEnabled: js.UndefOr[Boolean]
     var ProfileArn: js.UndefOr[Arn]
     var ProfileName: js.UndefOr[ProfileName]
@@ -3919,6 +4119,7 @@ package alexaforbusiness {
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+        MeetingRoomConfiguration: js.UndefOr[MeetingRoomConfiguration] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
         ProfileName: js.UndefOr[ProfileName] = js.undefined,
@@ -3934,6 +4135,7 @@ package alexaforbusiness {
       IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
+      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
       ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
       ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
@@ -4204,6 +4406,28 @@ package alexaforbusiness {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectSkillResponse]
+    }
+  }
+
+  /**
+    * Settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
+    */
+  @js.native
+  trait RequireCheckIn extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var ReleaseAfterMinutes: js.UndefOr[Minutes]
+  }
+
+  object RequireCheckIn {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        ReleaseAfterMinutes: js.UndefOr[Minutes] = js.undefined
+    ): RequireCheckIn = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      ReleaseAfterMinutes.foreach(__v => __obj.updateDynamic("ReleaseAfterMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequireCheckIn]
     }
   }
 
@@ -5516,6 +5740,31 @@ package alexaforbusiness {
     }
   }
 
+  /**
+    * Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
+    */
+  @js.native
+  trait UpdateEndOfMeetingReminder extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList]
+    var ReminderType: js.UndefOr[EndOfMeetingReminderType]
+  }
+
+  object UpdateEndOfMeetingReminder {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList] = js.undefined,
+        ReminderType: js.UndefOr[EndOfMeetingReminderType] = js.undefined
+    ): UpdateEndOfMeetingReminder = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      ReminderAtMinutes.foreach(__v => __obj.updateDynamic("ReminderAtMinutes")(__v.asInstanceOf[js.Any]))
+      ReminderType.foreach(__v => __obj.updateDynamic("ReminderType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEndOfMeetingReminder]
+    }
+  }
+
   @js.native
   trait UpdateGatewayGroupRequest extends js.Object {
     var GatewayGroupArn: Arn
@@ -5593,6 +5842,58 @@ package alexaforbusiness {
     }
   }
 
+  /**
+    * Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.
+    */
+  @js.native
+  trait UpdateInstantBooking extends js.Object {
+    var DurationInMinutes: js.UndefOr[Minutes]
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object UpdateInstantBooking {
+    @inline
+    def apply(
+        DurationInMinutes: js.UndefOr[Minutes] = js.undefined,
+        Enabled: js.UndefOr[Boolean] = js.undefined
+    ): UpdateInstantBooking = {
+      val __obj = js.Dynamic.literal()
+      DurationInMinutes.foreach(__v => __obj.updateDynamic("DurationInMinutes")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInstantBooking]
+    }
+  }
+
+  /**
+    * Updates meeting room settings of a room profile.
+    */
+  @js.native
+  trait UpdateMeetingRoomConfiguration extends js.Object {
+    var EndOfMeetingReminder: js.UndefOr[UpdateEndOfMeetingReminder]
+    var InstantBooking: js.UndefOr[UpdateInstantBooking]
+    var RequireCheckIn: js.UndefOr[UpdateRequireCheckIn]
+    var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
+  }
+
+  object UpdateMeetingRoomConfiguration {
+    @inline
+    def apply(
+        EndOfMeetingReminder: js.UndefOr[UpdateEndOfMeetingReminder] = js.undefined,
+        InstantBooking: js.UndefOr[UpdateInstantBooking] = js.undefined,
+        RequireCheckIn: js.UndefOr[UpdateRequireCheckIn] = js.undefined,
+        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
+    ): UpdateMeetingRoomConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
+      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
+      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
+      RoomUtilizationMetricsEnabled.foreach(__v =>
+        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateMeetingRoomConfiguration]
+    }
+  }
+
   @js.native
   trait UpdateNetworkProfileRequest extends js.Object {
     var NetworkProfileArn: Arn
@@ -5649,6 +5950,7 @@ package alexaforbusiness {
     var IsDefault: js.UndefOr[Boolean]
     var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
+    var MeetingRoomConfiguration: js.UndefOr[UpdateMeetingRoomConfiguration]
     var PSTNEnabled: js.UndefOr[Boolean]
     var ProfileArn: js.UndefOr[Arn]
     var ProfileName: js.UndefOr[ProfileName]
@@ -5666,6 +5968,7 @@ package alexaforbusiness {
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+        MeetingRoomConfiguration: js.UndefOr[UpdateMeetingRoomConfiguration] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
         ProfileName: js.UndefOr[ProfileName] = js.undefined,
@@ -5680,6 +5983,7 @@ package alexaforbusiness {
       IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
+      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
       ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
       ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
@@ -5701,6 +6005,28 @@ package alexaforbusiness {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateProfileResponse]
+    }
+  }
+
+  /**
+    * Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
+    */
+  @js.native
+  trait UpdateRequireCheckIn extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var ReleaseAfterMinutes: js.UndefOr[Minutes]
+  }
+
+  object UpdateRequireCheckIn {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        ReleaseAfterMinutes: js.UndefOr[Minutes] = js.undefined
+    ): UpdateRequireCheckIn = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      ReleaseAfterMinutes.foreach(__v => __obj.updateDynamic("ReleaseAfterMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRequireCheckIn]
     }
   }
 

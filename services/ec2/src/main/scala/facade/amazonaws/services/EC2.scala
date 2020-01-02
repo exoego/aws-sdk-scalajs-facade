@@ -21,6 +21,9 @@ package object ec2 {
   type AllocationState                                  = String
   type AllocationStrategy                               = String
   type AllowedPrincipalSet                              = js.Array[AllowedPrincipal]
+  type AllowsMultipleInstanceTypes                      = String
+  type ArchitectureType                                 = String
+  type ArchitectureTypeList                             = js.Array[ArchitectureType]
   type ArchitectureValues                               = String
   type AssignedPrivateIpAddressList                     = js.Array[AssignedPrivateIpAddress]
   type AssociatedNetworkType                            = String
@@ -32,10 +35,14 @@ package object ec2 {
   type AuthorizationRuleSet                             = js.Array[AuthorizationRule]
   type AutoAcceptSharedAttachmentsValue                 = String
   type AutoPlacement                                    = String
+  type AutoRecoveryFlag                                 = Boolean
   type AvailabilityZoneList                             = js.Array[AvailabilityZone]
   type AvailabilityZoneMessageList                      = js.Array[AvailabilityZoneMessage]
+  type AvailabilityZoneOptInStatus                      = String
   type AvailabilityZoneState                            = String
+  type AvailabilityZoneStringList                       = js.Array[String]
   type AvailableInstanceCapacityList                    = js.Array[InstanceCapacity]
+  type BareMetalFlag                                    = Boolean
   type BatchState                                       = String
   type BillingProductList                               = js.Array[String]
   type Blob                                             = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -44,6 +51,7 @@ package object ec2 {
   type BundleIdStringList                               = js.Array[String]
   type BundleTaskList                                   = js.Array[BundleTask]
   type BundleTaskState                                  = String
+  type BurstablePerformanceFlag                         = Boolean
   type ByoipCidrSet                                     = js.Array[ByoipCidr]
   type ByoipCidrState                                   = String
   type CancelBatchErrorCode                             = String
@@ -74,6 +82,10 @@ package object ec2 {
   type ClientVpnRouteSet                                = js.Array[ClientVpnRoute]
   type ClientVpnRouteStatusCode                         = String
   type ClientVpnSecurityGroupIdSet                      = js.Array[String]
+  type CoipAddressUsageSet                              = js.Array[CoipAddressUsage]
+  type CoipPoolIdSet                                    = js.Array[String]
+  type CoipPoolMaxResults                               = Int
+  type CoipPoolSet                                      = js.Array[CoipPool]
   type ConnectionNotificationId                         = String
   type ConnectionNotificationSet                        = js.Array[ConnectionNotification]
   type ConnectionNotificationState                      = String
@@ -83,15 +95,22 @@ package object ec2 {
   type ConversionTaskId                                 = String
   type ConversionTaskState                              = String
   type CopyTagsFromSource                               = String
+  type CoreCount                                        = Int
+  type CoreCountList                                    = js.Array[CoreCount]
   type CreateFleetErrorsSet                             = js.Array[CreateFleetError]
   type CreateFleetInstancesSet                          = js.Array[CreateFleetInstance]
   type CreateVolumePermissionList                       = js.Array[CreateVolumePermission]
   type CurrencyCodeValues                               = String
+  type CurrentGenerationFlag                            = Boolean
   type CustomerGatewayId                                = String
   type CustomerGatewayIdStringList                      = js.Array[String]
   type CustomerGatewayList                              = js.Array[CustomerGateway]
+  type DITMaxResults                                    = Int
+  type DITOMaxResults                                   = Int
   type DatafeedSubscriptionState                        = String
   type DateTime                                         = js.Date
+  type DedicatedHostFlag                                = Boolean
+  type DedicatedHostId                                  = String
   type DefaultRouteTableAssociationValue                = String
   type DefaultRouteTablePropagationValue                = String
   type DefaultTargetCapacityType                        = String
@@ -115,6 +134,8 @@ package object ec2 {
   type DescribeEgressOnlyInternetGatewaysMaxResults     = Int
   type DescribeElasticGpusMaxResults                    = Int
   type DescribeExportImageTasksMaxResults               = Int
+  type DescribeFastSnapshotRestoreSuccessSet            = js.Array[DescribeFastSnapshotRestoreSuccessItem]
+  type DescribeFastSnapshotRestoresMaxResults           = Int
   type DescribeFleetsErrorSet                           = js.Array[DescribeFleetError]
   type DescribeFleetsInstancesSet                       = js.Array[DescribeFleetsInstances]
   type DescribeFpgaImagesMaxResults                     = Int
@@ -147,11 +168,20 @@ package object ec2 {
   type DhcpOptionsId                                    = String
   type DhcpOptionsIdStringList                          = js.Array[String]
   type DhcpOptionsList                                  = js.Array[DhcpOptions]
+  type DisableFastSnapshotRestoreErrorSet               = js.Array[DisableFastSnapshotRestoreErrorItem]
+  type DisableFastSnapshotRestoreStateErrorSet          = js.Array[DisableFastSnapshotRestoreStateErrorItem]
+  type DisableFastSnapshotRestoreSuccessSet             = js.Array[DisableFastSnapshotRestoreSuccessItem]
+  type DiskCount                                        = Int
   type DiskImageFormat                                  = String
   type DiskImageList                                    = js.Array[DiskImage]
+  type DiskInfoList                                     = js.Array[DiskInfo]
+  type DiskSize                                         = Double
+  type DiskType                                         = String
   type DnsEntrySet                                      = js.Array[DnsEntry]
   type DnsSupportValue                                  = String
   type DomainType                                       = String
+  type EbsEncryptionSupport                             = String
+  type EbsOptimizedSupport                              = String
   type EgressOnlyInternetGatewayId                      = String
   type EgressOnlyInternetGatewayIdList                  = js.Array[EgressOnlyInternetGatewayId]
   type EgressOnlyInternetGatewayList                    = js.Array[EgressOnlyInternetGateway]
@@ -164,7 +194,12 @@ package object ec2 {
   type ElasticGpuState                                  = String
   type ElasticGpuStatus                                 = String
   type ElasticInferenceAcceleratorAssociationList       = js.Array[ElasticInferenceAcceleratorAssociation]
+  type ElasticInferenceAcceleratorCount                 = Int
   type ElasticInferenceAccelerators                     = js.Array[ElasticInferenceAccelerator]
+  type EnaSupport                                       = String
+  type EnableFastSnapshotRestoreErrorSet                = js.Array[EnableFastSnapshotRestoreErrorItem]
+  type EnableFastSnapshotRestoreStateErrorSet           = js.Array[EnableFastSnapshotRestoreStateErrorItem]
+  type EnableFastSnapshotRestoreSuccessSet              = js.Array[EnableFastSnapshotRestoreSuccessItem]
   type EndDateType                                      = String
   type EndpointSet                                      = js.Array[ClientVpnEndpoint]
   type EventCode                                        = String
@@ -179,8 +214,10 @@ package object ec2 {
   type ExportTaskList                                   = js.Array[ExportTask]
   type ExportTaskState                                  = String
   type FailedQueuedPurchaseDeletionSet                  = js.Array[FailedQueuedPurchaseDeletion]
+  type FastSnapshotRestoreStateCode                     = String
   type FilterList                                       = js.Array[Filter]
   type FleetActivityStatus                              = String
+  type FleetCapacityReservationUsageStrategy            = String
   type FleetEventType                                   = String
   type FleetExcessCapacityTerminationPolicy             = String
   type FleetIdSet                                       = js.Array[FleetIdentifier]
@@ -195,21 +232,32 @@ package object ec2 {
   type FleetType                                        = String
   type FlowLogSet                                       = js.Array[FlowLog]
   type FlowLogsResourceType                             = String
+  type FpgaDeviceCount                                  = Int
+  type FpgaDeviceInfoList                               = js.Array[FpgaDeviceInfo]
+  type FpgaDeviceManufacturerName                       = String
+  type FpgaDeviceMemorySize                             = Int
+  type FpgaDeviceName                                   = String
   type FpgaImageAttributeName                           = String
   type FpgaImageId                                      = String
   type FpgaImageIdList                                  = js.Array[String]
   type FpgaImageList                                    = js.Array[FpgaImage]
   type FpgaImageStateCode                               = String
+  type FreeTierEligibleFlag                             = Boolean
   type GatewayType                                      = String
   type GetCapacityReservationUsageRequestMaxResults     = Int
+  type GpuDeviceCount                                   = Int
+  type GpuDeviceInfoList                                = js.Array[GpuDeviceInfo]
+  type GpuDeviceManufacturerName                        = String
+  type GpuDeviceMemorySize                              = Int
+  type GpuDeviceName                                    = String
   type GroupIdStringList                                = js.Array[String]
   type GroupIdentifierList                              = js.Array[GroupIdentifier]
   type GroupIdentifierSet                               = js.Array[SecurityGroupIdentifier]
   type GroupIds                                         = js.Array[String]
   type GroupNameStringList                              = js.Array[String]
+  type HibernationFlag                                  = Boolean
   type HistoryRecordSet                                 = js.Array[HistoryRecordEntry]
   type HistoryRecords                                   = js.Array[HistoryRecord]
-  type HostId                                           = String
   type HostInstanceList                                 = js.Array[HostInstance]
   type HostList                                         = js.Array[Host]
   type HostOfferingSet                                  = js.Array[HostOffering]
@@ -217,6 +265,7 @@ package object ec2 {
   type HostReservationIdSet                             = js.Array[String]
   type HostReservationSet                               = js.Array[HostReservation]
   type HostTenancy                                      = String
+  type HttpTokensState                                  = String
   type HypervisorType                                   = String
   type IKEVersionsList                                  = js.Array[IKEVersionsListValue]
   type IKEVersionsRequestList                           = js.Array[IKEVersionsRequestListValue]
@@ -230,11 +279,17 @@ package object ec2 {
   type ImageList                                        = js.Array[Image]
   type ImageState                                       = String
   type ImageTypeValues                                  = String
+  type ImportImageLicenseSpecificationListRequest       = js.Array[ImportImageLicenseConfigurationRequest]
+  type ImportImageLicenseSpecificationListResponse      = js.Array[ImportImageLicenseConfigurationResponse]
   type ImportImageTaskList                              = js.Array[ImportImageTask]
   type ImportInstanceVolumeDetailSet                    = js.Array[ImportInstanceVolumeDetailItem]
   type ImportSnapshotTaskList                           = js.Array[ImportSnapshotTask]
   type ImportTaskId                                     = String
   type ImportTaskIdList                                 = js.Array[String]
+  type InferenceDeviceCount                             = Int
+  type InferenceDeviceInfoList                          = js.Array[InferenceDeviceInfo]
+  type InferenceDeviceManufacturerName                  = String
+  type InferenceDeviceName                              = String
   type InstanceAttributeName                            = String
   type InstanceBlockDeviceMappingList                   = js.Array[InstanceBlockDeviceMapping]
   type InstanceBlockDeviceMappingSpecificationList      = js.Array[InstanceBlockDeviceMappingSpecification]
@@ -254,6 +309,8 @@ package object ec2 {
   type InstanceLifecycleType                            = String
   type InstanceList                                     = js.Array[Instance]
   type InstanceMatchCriteria                            = String
+  type InstanceMetadataEndpointState                    = String
+  type InstanceMetadataOptionsState                     = String
   type InstanceMonitoringList                           = js.Array[InstanceMonitoring]
   type InstanceNetworkInterfaceList                     = js.Array[InstanceNetworkInterface]
   type InstanceNetworkInterfaceSpecificationList        = js.Array[InstanceNetworkInterfaceSpecification]
@@ -263,8 +320,12 @@ package object ec2 {
   type InstanceStatusDetailsList                        = js.Array[InstanceStatusDetails]
   type InstanceStatusEventList                          = js.Array[InstanceStatusEvent]
   type InstanceStatusList                               = js.Array[InstanceStatus]
+  type InstanceStorageFlag                              = Boolean
   type InstanceType                                     = String
+  type InstanceTypeHypervisor                           = String
+  type InstanceTypeInfoList                             = js.Array[InstanceTypeInfo]
   type InstanceTypeList                                 = js.Array[InstanceType]
+  type InstanceTypeOfferingsList                        = js.Array[InstanceTypeOffering]
   type InstanceUsageSet                                 = js.Array[InstanceUsage]
   type InterfacePermissionType                          = String
   type InternetGatewayAttachmentList                    = js.Array[InternetGatewayAttachment]
@@ -276,10 +337,11 @@ package object ec2 {
   type Ipv6Address                                      = String
   type Ipv6AddressList                                  = js.Array[String]
   type Ipv6CidrBlockSet                                 = js.Array[Ipv6CidrBlock]
+  type Ipv6Flag                                         = Boolean
   type Ipv6RangeList                                    = js.Array[Ipv6Range]
   type Ipv6SupportValue                                 = String
-  type KernelId                                         = String
   type KeyNameStringList                                = js.Array[String]
+  type KeyPairIdStringList                              = js.Array[String]
   type KeyPairList                                      = js.Array[KeyPairInfo]
   type KeyPairName                                      = String
   type KmsKeyId                                         = String
@@ -288,6 +350,7 @@ package object ec2 {
   type LaunchTemplateBlockDeviceMappingList             = js.Array[LaunchTemplateBlockDeviceMapping]
   type LaunchTemplateBlockDeviceMappingRequestList      = js.Array[LaunchTemplateBlockDeviceMappingRequest]
   type LaunchTemplateConfigList                         = js.Array[LaunchTemplateConfig]
+  type LaunchTemplateElasticInferenceAcceleratorCount   = Int
   type LaunchTemplateElasticInferenceAcceleratorList    = js.Array[LaunchTemplateElasticInferenceAccelerator]
   type LaunchTemplateElasticInferenceAcceleratorResponseList =
     js.Array[LaunchTemplateElasticInferenceAcceleratorResponse]
@@ -297,27 +360,53 @@ package object ec2 {
     js.Array[LaunchTemplateInstanceNetworkInterfaceSpecification]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList =
     js.Array[LaunchTemplateInstanceNetworkInterfaceSpecificationRequest]
-  type LaunchTemplateLicenseList                        = js.Array[LaunchTemplateLicenseConfiguration]
-  type LaunchTemplateLicenseSpecificationListRequest    = js.Array[LaunchTemplateLicenseConfigurationRequest]
-  type LaunchTemplateName                               = String
-  type LaunchTemplateNameStringList                     = js.Array[LaunchTemplateName]
-  type LaunchTemplateOverridesList                      = js.Array[LaunchTemplateOverrides]
-  type LaunchTemplateSet                                = js.Array[LaunchTemplate]
-  type LaunchTemplateTagSpecificationList               = js.Array[LaunchTemplateTagSpecification]
-  type LaunchTemplateTagSpecificationRequestList        = js.Array[LaunchTemplateTagSpecificationRequest]
-  type LaunchTemplateVersionSet                         = js.Array[LaunchTemplateVersion]
-  type LicenseList                                      = js.Array[LicenseConfiguration]
-  type LicenseSpecificationListRequest                  = js.Array[LicenseConfigurationRequest]
-  type ListingState                                     = String
-  type ListingStatus                                    = String
-  type LoadPermissionList                               = js.Array[LoadPermission]
-  type LoadPermissionListRequest                        = js.Array[LoadPermissionRequest]
+  type LaunchTemplateLicenseList                                   = js.Array[LaunchTemplateLicenseConfiguration]
+  type LaunchTemplateLicenseSpecificationListRequest               = js.Array[LaunchTemplateLicenseConfigurationRequest]
+  type LaunchTemplateName                                          = String
+  type LaunchTemplateNameStringList                                = js.Array[LaunchTemplateName]
+  type LaunchTemplateOverridesList                                 = js.Array[LaunchTemplateOverrides]
+  type LaunchTemplateSet                                           = js.Array[LaunchTemplate]
+  type LaunchTemplateTagSpecificationList                          = js.Array[LaunchTemplateTagSpecification]
+  type LaunchTemplateTagSpecificationRequestList                   = js.Array[LaunchTemplateTagSpecificationRequest]
+  type LaunchTemplateVersionSet                                    = js.Array[LaunchTemplateVersion]
+  type LicenseList                                                 = js.Array[LicenseConfiguration]
+  type LicenseSpecificationListRequest                             = js.Array[LicenseConfigurationRequest]
+  type ListingState                                                = String
+  type ListingStatus                                               = String
+  type LoadPermissionList                                          = js.Array[LoadPermission]
+  type LoadPermissionListRequest                                   = js.Array[LoadPermissionRequest]
+  type LocalGatewayIdSet                                           = js.Array[String]
+  type LocalGatewayMaxResults                                      = Int
+  type LocalGatewayRouteList                                       = js.Array[LocalGatewayRoute]
+  type LocalGatewayRouteState                                      = String
+  type LocalGatewayRouteTableIdSet                                 = js.Array[String]
+  type LocalGatewayRouteTableSet                                   = js.Array[LocalGatewayRouteTable]
+  type LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdSet = js.Array[String]
+  type LocalGatewayRouteTableVirtualInterfaceGroupAssociationSet =
+    js.Array[LocalGatewayRouteTableVirtualInterfaceGroupAssociation]
+  type LocalGatewayRouteTableVpcAssociationIdSet        = js.Array[String]
+  type LocalGatewayRouteTableVpcAssociationSet          = js.Array[LocalGatewayRouteTableVpcAssociation]
+  type LocalGatewayRouteType                            = String
+  type LocalGatewaySet                                  = js.Array[LocalGateway]
+  type LocalGatewayVirtualInterfaceGroupIdSet           = js.Array[String]
+  type LocalGatewayVirtualInterfaceGroupSet             = js.Array[LocalGatewayVirtualInterfaceGroup]
+  type LocalGatewayVirtualInterfaceIdSet                = js.Array[String]
+  type LocalGatewayVirtualInterfaceSet                  = js.Array[LocalGatewayVirtualInterface]
+  type Location                                         = String
+  type LocationType                                     = String
   type LogDestinationType                               = String
   type MarketType                                       = String
+  type MaxIpv4AddrPerInterface                          = Int
+  type MaxIpv6AddrPerInterface                          = Int
+  type MaxNetworkInterfaces                             = Int
+  type MaxResults                                       = Int
+  type MembershipType                                   = String
+  type MemorySize                                       = Double
   type MillisecondDateTime                              = js.Date
   type MonitoringState                                  = String
   type MoveStatus                                       = String
   type MovingAddressStatusSet                           = js.Array[MovingAddressStatus]
+  type MulticastSupportValue                            = String
   type NatGatewayAddressList                            = js.Array[NatGatewayAddress]
   type NatGatewayId                                     = String
   type NatGatewayList                                   = js.Array[NatGateway]
@@ -339,6 +428,7 @@ package object ec2 {
   type NetworkInterfacePrivateIpAddressList             = js.Array[NetworkInterfacePrivateIpAddress]
   type NetworkInterfaceStatus                           = String
   type NetworkInterfaceType                             = String
+  type NetworkPerformance                               = String
   type NewDhcpConfigurationList                         = js.Array[NewDhcpConfiguration]
   type NextToken                                        = String
   type OccurrenceDayRequestSet                          = js.Array[Int]
@@ -363,9 +453,12 @@ package object ec2 {
   type Phase2EncryptionAlgorithmsRequestList            = js.Array[Phase2EncryptionAlgorithmsRequestListValue]
   type Phase2IntegrityAlgorithmsList                    = js.Array[Phase2IntegrityAlgorithmsListValue]
   type Phase2IntegrityAlgorithmsRequestList             = js.Array[Phase2IntegrityAlgorithmsRequestListValue]
+  type PlacementGroupIdStringList                       = js.Array[String]
   type PlacementGroupList                               = js.Array[PlacementGroup]
   type PlacementGroupName                               = String
   type PlacementGroupState                              = String
+  type PlacementGroupStrategy                           = String
+  type PlacementGroupStrategyList                       = js.Array[PlacementGroupStrategy]
   type PlacementGroupStringList                         = js.Array[String]
   type PlacementStrategy                                = String
   type PlatformValues                                   = String
@@ -381,6 +474,7 @@ package object ec2 {
   type PrivateIpAddressConfigSet                        = js.Array[ScheduledInstancesPrivateIpAddressConfig]
   type PrivateIpAddressSpecificationList                = js.Array[PrivateIpAddressSpecification]
   type PrivateIpAddressStringList                       = js.Array[String]
+  type ProcessorSustainedClockSpeed                     = Double
   type ProductCodeList                                  = js.Array[ProductCode]
   type ProductCodeStringList                            = js.Array[String]
   type ProductCodeValues                                = String
@@ -393,7 +487,6 @@ package object ec2 {
   type PurchaseSet                                      = js.Array[Purchase]
   type PurchasedScheduledInstanceSet                    = js.Array[ScheduledInstance]
   type RIProductDescription                             = String
-  type RamdiskId                                        = String
   type ReasonCodesList                                  = js.Array[ReportInstanceReasonCodes]
   type RecurringChargeFrequency                         = String
   type RecurringChargesList                             = js.Array[RecurringCharge]
@@ -402,7 +495,8 @@ package object ec2 {
   type ReportInstanceReasonCodes                        = String
   type ReportStatusType                                 = String
   type RequestHostIdList                                = js.Array[String]
-  type RequestHostIdSet                                 = js.Array[HostId]
+  type RequestHostIdSet                                 = js.Array[DedicatedHostId]
+  type RequestInstanceTypeList                          = js.Array[InstanceType]
   type ReservationList                                  = js.Array[Reservation]
   type ReservationState                                 = String
   type ReservedInstanceIdSet                            = js.Array[String]
@@ -427,11 +521,14 @@ package object ec2 {
   type ResponseHostIdList                               = js.Array[String]
   type ResponseHostIdSet                                = js.Array[String]
   type RestorableByStringList                           = js.Array[String]
+  type RootDeviceType                                   = String
+  type RootDeviceTypeList                               = js.Array[RootDeviceType]
   type RouteList                                        = js.Array[Route]
   type RouteOrigin                                      = String
   type RouteState                                       = String
   type RouteTableAssociationId                          = String
   type RouteTableAssociationList                        = js.Array[RouteTableAssociation]
+  type RouteTableAssociationStateCode                   = String
   type RouteTableGatewayId                              = String
   type RouteTableId                                     = String
   type RouteTableList                                   = js.Array[RouteTable]
@@ -479,7 +576,7 @@ package object ec2 {
   type Status                                           = String
   type StatusName                                       = String
   type StatusType                                       = String
-  type SubnetCidrAssociationId                          = String
+  type SubnetAssociationList                            = js.Array[SubnetAssociation]
   type SubnetCidrBlockStateCode                         = String
   type SubnetId                                         = String
   type SubnetIdStringList                               = js.Array[String]
@@ -499,6 +596,8 @@ package object ec2 {
   type TelemetryStatus                                  = String
   type Tenancy                                          = String
   type TerminateConnectionStatusSet                     = js.Array[TerminateConnectionStatus]
+  type ThreadsPerCore                                   = Int
+  type ThreadsPerCoreList                               = js.Array[ThreadsPerCore]
   type TrafficDirection                                 = String
   type TrafficMirrorFilterId                            = String
   type TrafficMirrorFilterRuleField                     = String
@@ -519,7 +618,6 @@ package object ec2 {
   type TrafficMirroringMaxResults                       = Int
   type TrafficType                                      = String
   type TransitGatewayAssociationState                   = String
-  type TransitGatewayAttachmentId                       = String
   type TransitGatewayAttachmentIdStringList             = js.Array[String]
   type TransitGatewayAttachmentList                     = js.Array[TransitGatewayAttachment]
   type TransitGatewayAttachmentPropagationList          = js.Array[TransitGatewayAttachmentPropagation]
@@ -529,12 +627,18 @@ package object ec2 {
   type TransitGatewayIdStringList                       = js.Array[String]
   type TransitGatewayList                               = js.Array[TransitGateway]
   type TransitGatewayMaxResults                         = Int
+  type TransitGatewayMulitcastDomainAssociationState    = String
+  type TransitGatewayMulticastDomainAssociationList     = js.Array[TransitGatewayMulticastDomainAssociation]
+  type TransitGatewayMulticastDomainIdStringList        = js.Array[String]
+  type TransitGatewayMulticastDomainList                = js.Array[TransitGatewayMulticastDomain]
+  type TransitGatewayMulticastDomainState               = String
+  type TransitGatewayMulticastGroupList                 = js.Array[TransitGatewayMulticastGroup]
+  type TransitGatewayPeeringAttachmentList              = js.Array[TransitGatewayPeeringAttachment]
   type TransitGatewayPropagationState                   = String
   type TransitGatewayRouteAttachmentList                = js.Array[TransitGatewayRouteAttachment]
   type TransitGatewayRouteList                          = js.Array[TransitGatewayRoute]
   type TransitGatewayRouteState                         = String
   type TransitGatewayRouteTableAssociationList          = js.Array[TransitGatewayRouteTableAssociation]
-  type TransitGatewayRouteTableId                       = String
   type TransitGatewayRouteTableIdStringList             = js.Array[String]
   type TransitGatewayRouteTableList                     = js.Array[TransitGatewayRouteTable]
   type TransitGatewayRouteTablePropagationList          = js.Array[TransitGatewayRouteTablePropagation]
@@ -544,14 +648,18 @@ package object ec2 {
   type TransitGatewayVpcAttachmentList                  = js.Array[TransitGatewayVpcAttachment]
   type TransportProtocol                                = String
   type TunnelOptionsList                                = js.Array[TunnelOption]
+  type UnlimitedSupportedInstanceFamily                 = String
   type UnsuccessfulInstanceCreditSpecificationErrorCode = String
   type UnsuccessfulInstanceCreditSpecificationSet       = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
   type UnsuccessfulItemList                             = js.Array[UnsuccessfulItem]
   type UnsuccessfulItemSet                              = js.Array[UnsuccessfulItem]
+  type UsageClassType                                   = String
+  type UsageClassTypeList                               = js.Array[UsageClassType]
   type UserGroupStringList                              = js.Array[String]
   type UserIdGroupPairList                              = js.Array[UserIdGroupPair]
   type UserIdGroupPairSet                               = js.Array[UserIdGroupPair]
   type UserIdStringList                                 = js.Array[String]
+  type VCpuCount                                        = Int
   type ValueStringList                                  = js.Array[String]
   type VersionDescription                               = String
   type VersionStringList                                = js.Array[String]
@@ -608,12 +716,19 @@ package object ec2 {
   type ZoneIdStringList                                 = js.Array[String]
   type ZoneNameStringList                               = js.Array[String]
   type scope                                            = String
+  type totalFpgaMemory                                  = Int
+  type totalGpuMemory                                   = Int
 
   implicit final class EC2Ops(private val service: EC2) extends AnyVal {
+
     @inline def acceptReservedInstancesExchangeQuoteFuture(
         params: AcceptReservedInstancesExchangeQuoteRequest
     ): Future[AcceptReservedInstancesExchangeQuoteResult] =
       service.acceptReservedInstancesExchangeQuote(params).promise.toFuture
+    @inline def acceptTransitGatewayPeeringAttachmentFuture(
+        params: AcceptTransitGatewayPeeringAttachmentRequest
+    ): Future[AcceptTransitGatewayPeeringAttachmentResult] =
+      service.acceptTransitGatewayPeeringAttachment(params).promise.toFuture
     @inline def acceptTransitGatewayVpcAttachmentFuture(
         params: AcceptTransitGatewayVpcAttachmentRequest
     ): Future[AcceptTransitGatewayVpcAttachmentResult] =
@@ -654,6 +769,10 @@ package object ec2 {
     @inline def associateSubnetCidrBlockFuture(
         params: AssociateSubnetCidrBlockRequest
     ): Future[AssociateSubnetCidrBlockResult] = service.associateSubnetCidrBlock(params).promise.toFuture
+    @inline def associateTransitGatewayMulticastDomainFuture(
+        params: AssociateTransitGatewayMulticastDomainRequest
+    ): Future[AssociateTransitGatewayMulticastDomainResult] =
+      service.associateTransitGatewayMulticastDomain(params).promise.toFuture
     @inline def associateTransitGatewayRouteTableFuture(
         params: AssociateTransitGatewayRouteTableRequest
     ): Future[AssociateTransitGatewayRouteTableResult] =
@@ -748,6 +867,13 @@ package object ec2 {
     @inline def createLaunchTemplateVersionFuture(
         params: CreateLaunchTemplateVersionRequest
     ): Future[CreateLaunchTemplateVersionResult] = service.createLaunchTemplateVersion(params).promise.toFuture
+    @inline def createLocalGatewayRouteFuture(
+        params: CreateLocalGatewayRouteRequest
+    ): Future[CreateLocalGatewayRouteResult] = service.createLocalGatewayRoute(params).promise.toFuture
+    @inline def createLocalGatewayRouteTableVpcAssociationFuture(
+        params: CreateLocalGatewayRouteTableVpcAssociationRequest
+    ): Future[CreateLocalGatewayRouteTableVpcAssociationResult] =
+      service.createLocalGatewayRouteTableVpcAssociation(params).promise.toFuture
     @inline def createNatGatewayFuture(params: CreateNatGatewayRequest): Future[CreateNatGatewayResult] =
       service.createNatGateway(params).promise.toFuture
     @inline def createNetworkAclEntryFuture(params: CreateNetworkAclEntryRequest): Future[js.Object] =
@@ -797,6 +923,14 @@ package object ec2 {
     ): Future[CreateTrafficMirrorTargetResult] = service.createTrafficMirrorTarget(params).promise.toFuture
     @inline def createTransitGatewayFuture(params: CreateTransitGatewayRequest): Future[CreateTransitGatewayResult] =
       service.createTransitGateway(params).promise.toFuture
+    @inline def createTransitGatewayMulticastDomainFuture(
+        params: CreateTransitGatewayMulticastDomainRequest
+    ): Future[CreateTransitGatewayMulticastDomainResult] =
+      service.createTransitGatewayMulticastDomain(params).promise.toFuture
+    @inline def createTransitGatewayPeeringAttachmentFuture(
+        params: CreateTransitGatewayPeeringAttachmentRequest
+    ): Future[CreateTransitGatewayPeeringAttachmentResult] =
+      service.createTransitGatewayPeeringAttachment(params).promise.toFuture
     @inline def createTransitGatewayRouteFuture(
         params: CreateTransitGatewayRouteRequest
     ): Future[CreateTransitGatewayRouteResult] = service.createTransitGatewayRoute(params).promise.toFuture
@@ -857,6 +991,13 @@ package object ec2 {
     @inline def deleteLaunchTemplateVersionsFuture(
         params: DeleteLaunchTemplateVersionsRequest
     ): Future[DeleteLaunchTemplateVersionsResult] = service.deleteLaunchTemplateVersions(params).promise.toFuture
+    @inline def deleteLocalGatewayRouteFuture(
+        params: DeleteLocalGatewayRouteRequest
+    ): Future[DeleteLocalGatewayRouteResult] = service.deleteLocalGatewayRoute(params).promise.toFuture
+    @inline def deleteLocalGatewayRouteTableVpcAssociationFuture(
+        params: DeleteLocalGatewayRouteTableVpcAssociationRequest
+    ): Future[DeleteLocalGatewayRouteTableVpcAssociationResult] =
+      service.deleteLocalGatewayRouteTableVpcAssociation(params).promise.toFuture
     @inline def deleteNatGatewayFuture(params: DeleteNatGatewayRequest): Future[DeleteNatGatewayResult] =
       service.deleteNatGateway(params).promise.toFuture
     @inline def deleteNetworkAclEntryFuture(params: DeleteNetworkAclEntryRequest): Future[js.Object] =
@@ -902,6 +1043,14 @@ package object ec2 {
     ): Future[DeleteTrafficMirrorTargetResult] = service.deleteTrafficMirrorTarget(params).promise.toFuture
     @inline def deleteTransitGatewayFuture(params: DeleteTransitGatewayRequest): Future[DeleteTransitGatewayResult] =
       service.deleteTransitGateway(params).promise.toFuture
+    @inline def deleteTransitGatewayMulticastDomainFuture(
+        params: DeleteTransitGatewayMulticastDomainRequest
+    ): Future[DeleteTransitGatewayMulticastDomainResult] =
+      service.deleteTransitGatewayMulticastDomain(params).promise.toFuture
+    @inline def deleteTransitGatewayPeeringAttachmentFuture(
+        params: DeleteTransitGatewayPeeringAttachmentRequest
+    ): Future[DeleteTransitGatewayPeeringAttachmentResult] =
+      service.deleteTransitGatewayPeeringAttachment(params).promise.toFuture
     @inline def deleteTransitGatewayRouteFuture(
         params: DeleteTransitGatewayRouteRequest
     ): Future[DeleteTransitGatewayRouteResult] = service.deleteTransitGatewayRoute(params).promise.toFuture
@@ -939,6 +1088,14 @@ package object ec2 {
       service.deprovisionByoipCidr(params).promise.toFuture
     @inline def deregisterImageFuture(params: DeregisterImageRequest): Future[js.Object] =
       service.deregisterImage(params).promise.toFuture
+    @inline def deregisterTransitGatewayMulticastGroupMembersFuture(
+        params: DeregisterTransitGatewayMulticastGroupMembersRequest
+    ): Future[DeregisterTransitGatewayMulticastGroupMembersResult] =
+      service.deregisterTransitGatewayMulticastGroupMembers(params).promise.toFuture
+    @inline def deregisterTransitGatewayMulticastGroupSourcesFuture(
+        params: DeregisterTransitGatewayMulticastGroupSourcesRequest
+    ): Future[DeregisterTransitGatewayMulticastGroupSourcesResult] =
+      service.deregisterTransitGatewayMulticastGroupSources(params).promise.toFuture
     @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesRequest
     ): Future[DescribeAccountAttributesResult] = service.describeAccountAttributes(params).promise.toFuture
@@ -976,6 +1133,8 @@ package object ec2 {
     @inline def describeClientVpnTargetNetworksFuture(
         params: DescribeClientVpnTargetNetworksRequest
     ): Future[DescribeClientVpnTargetNetworksResult] = service.describeClientVpnTargetNetworks(params).promise.toFuture
+    @inline def describeCoipPoolsFuture(params: DescribeCoipPoolsRequest): Future[DescribeCoipPoolsResult] =
+      service.describeCoipPools(params).promise.toFuture
     @inline def describeConversionTasksFuture(
         params: DescribeConversionTasksRequest
     ): Future[DescribeConversionTasksResult] = service.describeConversionTasks(params).promise.toFuture
@@ -995,6 +1154,9 @@ package object ec2 {
     ): Future[DescribeExportImageTasksResult] = service.describeExportImageTasks(params).promise.toFuture
     @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResult] =
       service.describeExportTasks(params).promise.toFuture
+    @inline def describeFastSnapshotRestoresFuture(
+        params: DescribeFastSnapshotRestoresRequest
+    ): Future[DescribeFastSnapshotRestoresResult] = service.describeFastSnapshotRestores(params).promise.toFuture
     @inline def describeFleetHistoryFuture(params: DescribeFleetHistoryRequest): Future[DescribeFleetHistoryResult] =
       service.describeFleetHistory(params).promise.toFuture
     @inline def describeFleetInstancesFuture(
@@ -1046,6 +1208,11 @@ package object ec2 {
     @inline def describeInstanceStatusFuture(
         params: DescribeInstanceStatusRequest
     ): Future[DescribeInstanceStatusResult] = service.describeInstanceStatus(params).promise.toFuture
+    @inline def describeInstanceTypeOfferingsFuture(
+        params: DescribeInstanceTypeOfferingsRequest
+    ): Future[DescribeInstanceTypeOfferingsResult] = service.describeInstanceTypeOfferings(params).promise.toFuture
+    @inline def describeInstanceTypesFuture(params: DescribeInstanceTypesRequest): Future[DescribeInstanceTypesResult] =
+      service.describeInstanceTypes(params).promise.toFuture
     @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
       service.describeInstances(params).promise.toFuture
     @inline def describeInternetGatewaysFuture(
@@ -1059,6 +1226,27 @@ package object ec2 {
     @inline def describeLaunchTemplatesFuture(
         params: DescribeLaunchTemplatesRequest
     ): Future[DescribeLaunchTemplatesResult] = service.describeLaunchTemplates(params).promise.toFuture
+    @inline def describeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFuture(
+        params: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest
+    ): Future[DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult] =
+      service.describeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(params).promise.toFuture
+    @inline def describeLocalGatewayRouteTableVpcAssociationsFuture(
+        params: DescribeLocalGatewayRouteTableVpcAssociationsRequest
+    ): Future[DescribeLocalGatewayRouteTableVpcAssociationsResult] =
+      service.describeLocalGatewayRouteTableVpcAssociations(params).promise.toFuture
+    @inline def describeLocalGatewayRouteTablesFuture(
+        params: DescribeLocalGatewayRouteTablesRequest
+    ): Future[DescribeLocalGatewayRouteTablesResult] = service.describeLocalGatewayRouteTables(params).promise.toFuture
+    @inline def describeLocalGatewayVirtualInterfaceGroupsFuture(
+        params: DescribeLocalGatewayVirtualInterfaceGroupsRequest
+    ): Future[DescribeLocalGatewayVirtualInterfaceGroupsResult] =
+      service.describeLocalGatewayVirtualInterfaceGroups(params).promise.toFuture
+    @inline def describeLocalGatewayVirtualInterfacesFuture(
+        params: DescribeLocalGatewayVirtualInterfacesRequest
+    ): Future[DescribeLocalGatewayVirtualInterfacesResult] =
+      service.describeLocalGatewayVirtualInterfaces(params).promise.toFuture
+    @inline def describeLocalGatewaysFuture(params: DescribeLocalGatewaysRequest): Future[DescribeLocalGatewaysResult] =
+      service.describeLocalGateways(params).promise.toFuture
     @inline def describeMovingAddressesFuture(
         params: DescribeMovingAddressesRequest
     ): Future[DescribeMovingAddressesResult] = service.describeMovingAddresses(params).promise.toFuture
@@ -1165,6 +1353,14 @@ package object ec2 {
         params: DescribeTransitGatewayAttachmentsRequest
     ): Future[DescribeTransitGatewayAttachmentsResult] =
       service.describeTransitGatewayAttachments(params).promise.toFuture
+    @inline def describeTransitGatewayMulticastDomainsFuture(
+        params: DescribeTransitGatewayMulticastDomainsRequest
+    ): Future[DescribeTransitGatewayMulticastDomainsResult] =
+      service.describeTransitGatewayMulticastDomains(params).promise.toFuture
+    @inline def describeTransitGatewayPeeringAttachmentsFuture(
+        params: DescribeTransitGatewayPeeringAttachmentsRequest
+    ): Future[DescribeTransitGatewayPeeringAttachmentsResult] =
+      service.describeTransitGatewayPeeringAttachments(params).promise.toFuture
     @inline def describeTransitGatewayRouteTablesFuture(
         params: DescribeTransitGatewayRouteTablesRequest
     ): Future[DescribeTransitGatewayRouteTablesResult] =
@@ -1238,6 +1434,9 @@ package object ec2 {
     @inline def disableEbsEncryptionByDefaultFuture(
         params: DisableEbsEncryptionByDefaultRequest
     ): Future[DisableEbsEncryptionByDefaultResult] = service.disableEbsEncryptionByDefault(params).promise.toFuture
+    @inline def disableFastSnapshotRestoresFuture(
+        params: DisableFastSnapshotRestoresRequest
+    ): Future[DisableFastSnapshotRestoresResult] = service.disableFastSnapshotRestores(params).promise.toFuture
     @inline def disableTransitGatewayRouteTablePropagationFuture(
         params: DisableTransitGatewayRouteTablePropagationRequest
     ): Future[DisableTransitGatewayRouteTablePropagationResult] =
@@ -1263,6 +1462,10 @@ package object ec2 {
     @inline def disassociateSubnetCidrBlockFuture(
         params: DisassociateSubnetCidrBlockRequest
     ): Future[DisassociateSubnetCidrBlockResult] = service.disassociateSubnetCidrBlock(params).promise.toFuture
+    @inline def disassociateTransitGatewayMulticastDomainFuture(
+        params: DisassociateTransitGatewayMulticastDomainRequest
+    ): Future[DisassociateTransitGatewayMulticastDomainResult] =
+      service.disassociateTransitGatewayMulticastDomain(params).promise.toFuture
     @inline def disassociateTransitGatewayRouteTableFuture(
         params: DisassociateTransitGatewayRouteTableRequest
     ): Future[DisassociateTransitGatewayRouteTableResult] =
@@ -1273,6 +1476,9 @@ package object ec2 {
     @inline def enableEbsEncryptionByDefaultFuture(
         params: EnableEbsEncryptionByDefaultRequest
     ): Future[EnableEbsEncryptionByDefaultResult] = service.enableEbsEncryptionByDefault(params).promise.toFuture
+    @inline def enableFastSnapshotRestoresFuture(
+        params: EnableFastSnapshotRestoresRequest
+    ): Future[EnableFastSnapshotRestoresResult] = service.enableFastSnapshotRestores(params).promise.toFuture
     @inline def enableTransitGatewayRouteTablePropagationFuture(
         params: EnableTransitGatewayRouteTablePropagationRequest
     ): Future[EnableTransitGatewayRouteTablePropagationResult] =
@@ -1302,10 +1508,15 @@ package object ec2 {
     @inline def getCapacityReservationUsageFuture(
         params: GetCapacityReservationUsageRequest
     ): Future[GetCapacityReservationUsageResult] = service.getCapacityReservationUsage(params).promise.toFuture
+    @inline def getCoipPoolUsageFuture(params: GetCoipPoolUsageRequest): Future[GetCoipPoolUsageResult] =
+      service.getCoipPoolUsage(params).promise.toFuture
     @inline def getConsoleOutputFuture(params: GetConsoleOutputRequest): Future[GetConsoleOutputResult] =
       service.getConsoleOutput(params).promise.toFuture
     @inline def getConsoleScreenshotFuture(params: GetConsoleScreenshotRequest): Future[GetConsoleScreenshotResult] =
       service.getConsoleScreenshot(params).promise.toFuture
+    @inline def getDefaultCreditSpecificationFuture(
+        params: GetDefaultCreditSpecificationRequest
+    ): Future[GetDefaultCreditSpecificationResult] = service.getDefaultCreditSpecification(params).promise.toFuture
     @inline def getEbsDefaultKmsKeyIdFuture(params: GetEbsDefaultKmsKeyIdRequest): Future[GetEbsDefaultKmsKeyIdResult] =
       service.getEbsDefaultKmsKeyId(params).promise.toFuture
     @inline def getEbsEncryptionByDefaultFuture(
@@ -1327,6 +1538,10 @@ package object ec2 {
         params: GetTransitGatewayAttachmentPropagationsRequest
     ): Future[GetTransitGatewayAttachmentPropagationsResult] =
       service.getTransitGatewayAttachmentPropagations(params).promise.toFuture
+    @inline def getTransitGatewayMulticastDomainAssociationsFuture(
+        params: GetTransitGatewayMulticastDomainAssociationsRequest
+    ): Future[GetTransitGatewayMulticastDomainAssociationsResult] =
+      service.getTransitGatewayMulticastDomainAssociations(params).promise.toFuture
     @inline def getTransitGatewayRouteTableAssociationsFuture(
         params: GetTransitGatewayRouteTableAssociationsRequest
     ): Future[GetTransitGatewayRouteTableAssociationsResult] =
@@ -1355,6 +1570,10 @@ package object ec2 {
     @inline def modifyClientVpnEndpointFuture(
         params: ModifyClientVpnEndpointRequest
     ): Future[ModifyClientVpnEndpointResult] = service.modifyClientVpnEndpoint(params).promise.toFuture
+    @inline def modifyDefaultCreditSpecificationFuture(
+        params: ModifyDefaultCreditSpecificationRequest
+    ): Future[ModifyDefaultCreditSpecificationResult] =
+      service.modifyDefaultCreditSpecification(params).promise.toFuture
     @inline def modifyEbsDefaultKmsKeyIdFuture(
         params: ModifyEbsDefaultKmsKeyIdRequest
     ): Future[ModifyEbsDefaultKmsKeyIdResult] = service.modifyEbsDefaultKmsKeyId(params).promise.toFuture
@@ -1384,6 +1603,9 @@ package object ec2 {
     @inline def modifyInstanceEventStartTimeFuture(
         params: ModifyInstanceEventStartTimeRequest
     ): Future[ModifyInstanceEventStartTimeResult] = service.modifyInstanceEventStartTime(params).promise.toFuture
+    @inline def modifyInstanceMetadataOptionsFuture(
+        params: ModifyInstanceMetadataOptionsRequest
+    ): Future[ModifyInstanceMetadataOptionsResult] = service.modifyInstanceMetadataOptions(params).promise.toFuture
     @inline def modifyInstancePlacementFuture(
         params: ModifyInstancePlacementRequest
     ): Future[ModifyInstancePlacementResult] = service.modifyInstancePlacement(params).promise.toFuture
@@ -1470,6 +1692,18 @@ package object ec2 {
       service.rebootInstances(params).promise.toFuture
     @inline def registerImageFuture(params: RegisterImageRequest): Future[RegisterImageResult] =
       service.registerImage(params).promise.toFuture
+    @inline def registerTransitGatewayMulticastGroupMembersFuture(
+        params: RegisterTransitGatewayMulticastGroupMembersRequest
+    ): Future[RegisterTransitGatewayMulticastGroupMembersResult] =
+      service.registerTransitGatewayMulticastGroupMembers(params).promise.toFuture
+    @inline def registerTransitGatewayMulticastGroupSourcesFuture(
+        params: RegisterTransitGatewayMulticastGroupSourcesRequest
+    ): Future[RegisterTransitGatewayMulticastGroupSourcesResult] =
+      service.registerTransitGatewayMulticastGroupSources(params).promise.toFuture
+    @inline def rejectTransitGatewayPeeringAttachmentFuture(
+        params: RejectTransitGatewayPeeringAttachmentRequest
+    ): Future[RejectTransitGatewayPeeringAttachmentResult] =
+      service.rejectTransitGatewayPeeringAttachment(params).promise.toFuture
     @inline def rejectTransitGatewayVpcAttachmentFuture(
         params: RejectTransitGatewayVpcAttachmentRequest
     ): Future[RejectTransitGatewayVpcAttachmentResult] =
@@ -1535,6 +1769,13 @@ package object ec2 {
       service.runInstances(params).promise.toFuture
     @inline def runScheduledInstancesFuture(params: RunScheduledInstancesRequest): Future[RunScheduledInstancesResult] =
       service.runScheduledInstances(params).promise.toFuture
+    @inline def searchLocalGatewayRoutesFuture(
+        params: SearchLocalGatewayRoutesRequest
+    ): Future[SearchLocalGatewayRoutesResult] = service.searchLocalGatewayRoutes(params).promise.toFuture
+    @inline def searchTransitGatewayMulticastGroupsFuture(
+        params: SearchTransitGatewayMulticastGroupsRequest
+    ): Future[SearchTransitGatewayMulticastGroupsResult] =
+      service.searchTransitGatewayMulticastGroups(params).promise.toFuture
     @inline def searchTransitGatewayRoutesFuture(
         params: SearchTransitGatewayRoutesRequest
     ): Future[SearchTransitGatewayRoutesResult] = service.searchTransitGatewayRoutes(params).promise.toFuture
@@ -1577,6 +1818,9 @@ package ec2 {
     def acceptReservedInstancesExchangeQuote(
         params: AcceptReservedInstancesExchangeQuoteRequest
     ): Request[AcceptReservedInstancesExchangeQuoteResult] = js.native
+    def acceptTransitGatewayPeeringAttachment(
+        params: AcceptTransitGatewayPeeringAttachmentRequest
+    ): Request[AcceptTransitGatewayPeeringAttachmentResult] = js.native
     def acceptTransitGatewayVpcAttachment(
         params: AcceptTransitGatewayVpcAttachmentRequest
     ): Request[AcceptTransitGatewayVpcAttachmentResult] = js.native
@@ -1606,6 +1850,9 @@ package ec2 {
     def associateRouteTable(params: AssociateRouteTableRequest): Request[AssociateRouteTableResult] = js.native
     def associateSubnetCidrBlock(params: AssociateSubnetCidrBlockRequest): Request[AssociateSubnetCidrBlockResult] =
       js.native
+    def associateTransitGatewayMulticastDomain(
+        params: AssociateTransitGatewayMulticastDomainRequest
+    ): Request[AssociateTransitGatewayMulticastDomainResult] = js.native
     def associateTransitGatewayRouteTable(
         params: AssociateTransitGatewayRouteTableRequest
     ): Request[AssociateTransitGatewayRouteTableResult]                                                      = js.native
@@ -1661,7 +1908,12 @@ package ec2 {
     def createLaunchTemplate(params: CreateLaunchTemplateRequest): Request[CreateLaunchTemplateResult]    = js.native
     def createLaunchTemplateVersion(
         params: CreateLaunchTemplateVersionRequest
-    ): Request[CreateLaunchTemplateVersionResult]                                                            = js.native
+    ): Request[CreateLaunchTemplateVersionResult] = js.native
+    def createLocalGatewayRoute(params: CreateLocalGatewayRouteRequest): Request[CreateLocalGatewayRouteResult] =
+      js.native
+    def createLocalGatewayRouteTableVpcAssociation(
+        params: CreateLocalGatewayRouteTableVpcAssociationRequest
+    ): Request[CreateLocalGatewayRouteTableVpcAssociationResult]                                             = js.native
     def createNatGateway(params: CreateNatGatewayRequest): Request[CreateNatGatewayResult]                   = js.native
     def createNetworkAcl(params: CreateNetworkAclRequest): Request[CreateNetworkAclResult]                   = js.native
     def createNetworkAclEntry(params: CreateNetworkAclEntryRequest): Request[js.Object]                      = js.native
@@ -1694,6 +1946,12 @@ package ec2 {
     def createTrafficMirrorTarget(params: CreateTrafficMirrorTargetRequest): Request[CreateTrafficMirrorTargetResult] =
       js.native
     def createTransitGateway(params: CreateTransitGatewayRequest): Request[CreateTransitGatewayResult] = js.native
+    def createTransitGatewayMulticastDomain(
+        params: CreateTransitGatewayMulticastDomainRequest
+    ): Request[CreateTransitGatewayMulticastDomainResult] = js.native
+    def createTransitGatewayPeeringAttachment(
+        params: CreateTransitGatewayPeeringAttachmentRequest
+    ): Request[CreateTransitGatewayPeeringAttachmentResult] = js.native
     def createTransitGatewayRoute(params: CreateTransitGatewayRouteRequest): Request[CreateTransitGatewayRouteResult] =
       js.native
     def createTransitGatewayRouteTable(
@@ -1733,7 +1991,12 @@ package ec2 {
     def deleteLaunchTemplate(params: DeleteLaunchTemplateRequest): Request[DeleteLaunchTemplateResult] = js.native
     def deleteLaunchTemplateVersions(
         params: DeleteLaunchTemplateVersionsRequest
-    ): Request[DeleteLaunchTemplateVersionsResult]                                         = js.native
+    ): Request[DeleteLaunchTemplateVersionsResult] = js.native
+    def deleteLocalGatewayRoute(params: DeleteLocalGatewayRouteRequest): Request[DeleteLocalGatewayRouteResult] =
+      js.native
+    def deleteLocalGatewayRouteTableVpcAssociation(
+        params: DeleteLocalGatewayRouteTableVpcAssociationRequest
+    ): Request[DeleteLocalGatewayRouteTableVpcAssociationResult]                           = js.native
     def deleteNatGateway(params: DeleteNatGatewayRequest): Request[DeleteNatGatewayResult] = js.native
     def deleteNetworkAcl(params: DeleteNetworkAclRequest): Request[js.Object]              = js.native
     def deleteNetworkAclEntry(params: DeleteNetworkAclEntryRequest): Request[js.Object]    = js.native
@@ -1763,6 +2026,12 @@ package ec2 {
     def deleteTrafficMirrorTarget(params: DeleteTrafficMirrorTargetRequest): Request[DeleteTrafficMirrorTargetResult] =
       js.native
     def deleteTransitGateway(params: DeleteTransitGatewayRequest): Request[DeleteTransitGatewayResult] = js.native
+    def deleteTransitGatewayMulticastDomain(
+        params: DeleteTransitGatewayMulticastDomainRequest
+    ): Request[DeleteTransitGatewayMulticastDomainResult] = js.native
+    def deleteTransitGatewayPeeringAttachment(
+        params: DeleteTransitGatewayPeeringAttachmentRequest
+    ): Request[DeleteTransitGatewayPeeringAttachmentResult] = js.native
     def deleteTransitGatewayRoute(params: DeleteTransitGatewayRouteRequest): Request[DeleteTransitGatewayRouteResult] =
       js.native
     def deleteTransitGatewayRouteTable(
@@ -1788,6 +2057,12 @@ package ec2 {
     def deleteVpnGateway(params: DeleteVpnGatewayRequest): Request[js.Object]                          = js.native
     def deprovisionByoipCidr(params: DeprovisionByoipCidrRequest): Request[DeprovisionByoipCidrResult] = js.native
     def deregisterImage(params: DeregisterImageRequest): Request[js.Object]                            = js.native
+    def deregisterTransitGatewayMulticastGroupMembers(
+        params: DeregisterTransitGatewayMulticastGroupMembersRequest
+    ): Request[DeregisterTransitGatewayMulticastGroupMembersResult] = js.native
+    def deregisterTransitGatewayMulticastGroupSources(
+        params: DeregisterTransitGatewayMulticastGroupSourcesRequest
+    ): Request[DeregisterTransitGatewayMulticastGroupSourcesResult] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesRequest): Request[DescribeAccountAttributesResult] =
       js.native
     def describeAddresses(params: DescribeAddressesRequest): Request[DescribeAddressesResult] = js.native
@@ -1816,7 +2091,8 @@ package ec2 {
       js.native
     def describeClientVpnTargetNetworks(
         params: DescribeClientVpnTargetNetworksRequest
-    ): Request[DescribeClientVpnTargetNetworksResult] = js.native
+    ): Request[DescribeClientVpnTargetNetworksResult]                                         = js.native
+    def describeCoipPools(params: DescribeCoipPoolsRequest): Request[DescribeCoipPoolsResult] = js.native
     def describeConversionTasks(params: DescribeConversionTasksRequest): Request[DescribeConversionTasksResult] =
       js.native
     def describeCustomerGateways(params: DescribeCustomerGatewaysRequest): Request[DescribeCustomerGatewaysResult] =
@@ -1828,7 +2104,10 @@ package ec2 {
     def describeElasticGpus(params: DescribeElasticGpusRequest): Request[DescribeElasticGpusResult] = js.native
     def describeExportImageTasks(params: DescribeExportImageTasksRequest): Request[DescribeExportImageTasksResult] =
       js.native
-    def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResult]          = js.native
+    def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResult] = js.native
+    def describeFastSnapshotRestores(
+        params: DescribeFastSnapshotRestoresRequest
+    ): Request[DescribeFastSnapshotRestoresResult]                                                           = js.native
     def describeFleetHistory(params: DescribeFleetHistoryRequest): Request[DescribeFleetHistoryResult]       = js.native
     def describeFleetInstances(params: DescribeFleetInstancesRequest): Request[DescribeFleetInstancesResult] = js.native
     def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult]                         = js.native
@@ -1861,7 +2140,11 @@ package ec2 {
         params: DescribeInstanceCreditSpecificationsRequest
     ): Request[DescribeInstanceCreditSpecificationsResult]                                                   = js.native
     def describeInstanceStatus(params: DescribeInstanceStatusRequest): Request[DescribeInstanceStatusResult] = js.native
-    def describeInstances(params: DescribeInstancesRequest): Request[DescribeInstancesResult]                = js.native
+    def describeInstanceTypeOfferings(
+        params: DescribeInstanceTypeOfferingsRequest
+    ): Request[DescribeInstanceTypeOfferingsResult]                                                       = js.native
+    def describeInstanceTypes(params: DescribeInstanceTypesRequest): Request[DescribeInstanceTypesResult] = js.native
+    def describeInstances(params: DescribeInstancesRequest): Request[DescribeInstancesResult]             = js.native
     def describeInternetGateways(params: DescribeInternetGatewaysRequest): Request[DescribeInternetGatewaysResult] =
       js.native
     def describeKeyPairs(params: DescribeKeyPairsRequest): Request[DescribeKeyPairsResult] = js.native
@@ -1870,6 +2153,22 @@ package ec2 {
     ): Request[DescribeLaunchTemplateVersionsResult] = js.native
     def describeLaunchTemplates(params: DescribeLaunchTemplatesRequest): Request[DescribeLaunchTemplatesResult] =
       js.native
+    def describeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(
+        params: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest
+    ): Request[DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult] = js.native
+    def describeLocalGatewayRouteTableVpcAssociations(
+        params: DescribeLocalGatewayRouteTableVpcAssociationsRequest
+    ): Request[DescribeLocalGatewayRouteTableVpcAssociationsResult] = js.native
+    def describeLocalGatewayRouteTables(
+        params: DescribeLocalGatewayRouteTablesRequest
+    ): Request[DescribeLocalGatewayRouteTablesResult] = js.native
+    def describeLocalGatewayVirtualInterfaceGroups(
+        params: DescribeLocalGatewayVirtualInterfaceGroupsRequest
+    ): Request[DescribeLocalGatewayVirtualInterfaceGroupsResult] = js.native
+    def describeLocalGatewayVirtualInterfaces(
+        params: DescribeLocalGatewayVirtualInterfacesRequest
+    ): Request[DescribeLocalGatewayVirtualInterfacesResult]                                               = js.native
+    def describeLocalGateways(params: DescribeLocalGatewaysRequest): Request[DescribeLocalGatewaysResult] = js.native
     def describeMovingAddresses(params: DescribeMovingAddressesRequest): Request[DescribeMovingAddressesResult] =
       js.native
     def describeNatGateways(params: DescribeNatGatewaysRequest): Request[DescribeNatGatewaysResult] = js.native
@@ -1949,6 +2248,12 @@ package ec2 {
     def describeTransitGatewayAttachments(
         params: DescribeTransitGatewayAttachmentsRequest
     ): Request[DescribeTransitGatewayAttachmentsResult] = js.native
+    def describeTransitGatewayMulticastDomains(
+        params: DescribeTransitGatewayMulticastDomainsRequest
+    ): Request[DescribeTransitGatewayMulticastDomainsResult] = js.native
+    def describeTransitGatewayPeeringAttachments(
+        params: DescribeTransitGatewayPeeringAttachmentsRequest
+    ): Request[DescribeTransitGatewayPeeringAttachmentsResult] = js.native
     def describeTransitGatewayRouteTables(
         params: DescribeTransitGatewayRouteTablesRequest
     ): Request[DescribeTransitGatewayRouteTablesResult] = js.native
@@ -1999,6 +2304,9 @@ package ec2 {
     def disableEbsEncryptionByDefault(
         params: DisableEbsEncryptionByDefaultRequest
     ): Request[DisableEbsEncryptionByDefaultResult] = js.native
+    def disableFastSnapshotRestores(
+        params: DisableFastSnapshotRestoresRequest
+    ): Request[DisableFastSnapshotRestoresResult] = js.native
     def disableTransitGatewayRouteTablePropagation(
         params: DisableTransitGatewayRouteTablePropagationRequest
     ): Request[DisableTransitGatewayRouteTablePropagationResult]                                          = js.native
@@ -2018,6 +2326,9 @@ package ec2 {
     def disassociateSubnetCidrBlock(
         params: DisassociateSubnetCidrBlockRequest
     ): Request[DisassociateSubnetCidrBlockResult] = js.native
+    def disassociateTransitGatewayMulticastDomain(
+        params: DisassociateTransitGatewayMulticastDomainRequest
+    ): Request[DisassociateTransitGatewayMulticastDomainResult] = js.native
     def disassociateTransitGatewayRouteTable(
         params: DisassociateTransitGatewayRouteTableRequest
     ): Request[DisassociateTransitGatewayRouteTableResult] = js.native
@@ -2026,6 +2337,9 @@ package ec2 {
     def enableEbsEncryptionByDefault(
         params: EnableEbsEncryptionByDefaultRequest
     ): Request[EnableEbsEncryptionByDefaultResult] = js.native
+    def enableFastSnapshotRestores(
+        params: EnableFastSnapshotRestoresRequest
+    ): Request[EnableFastSnapshotRestoresResult] = js.native
     def enableTransitGatewayRouteTablePropagation(
         params: EnableTransitGatewayRouteTablePropagationRequest
     ): Request[EnableTransitGatewayRouteTablePropagationResult]                                        = js.native
@@ -2047,9 +2361,13 @@ package ec2 {
     ): Request[ExportTransitGatewayRoutesResult] = js.native
     def getCapacityReservationUsage(
         params: GetCapacityReservationUsageRequest
-    ): Request[GetCapacityReservationUsageResult]                                                         = js.native
-    def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult]                = js.native
-    def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult]    = js.native
+    ): Request[GetCapacityReservationUsageResult]                                                      = js.native
+    def getCoipPoolUsage(params: GetCoipPoolUsageRequest): Request[GetCoipPoolUsageResult]             = js.native
+    def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult]             = js.native
+    def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult] = js.native
+    def getDefaultCreditSpecification(
+        params: GetDefaultCreditSpecificationRequest
+    ): Request[GetDefaultCreditSpecificationResult]                                                       = js.native
     def getEbsDefaultKmsKeyId(params: GetEbsDefaultKmsKeyIdRequest): Request[GetEbsDefaultKmsKeyIdResult] = js.native
     def getEbsEncryptionByDefault(params: GetEbsEncryptionByDefaultRequest): Request[GetEbsEncryptionByDefaultResult] =
       js.native
@@ -2064,6 +2382,9 @@ package ec2 {
     def getTransitGatewayAttachmentPropagations(
         params: GetTransitGatewayAttachmentPropagationsRequest
     ): Request[GetTransitGatewayAttachmentPropagationsResult] = js.native
+    def getTransitGatewayMulticastDomainAssociations(
+        params: GetTransitGatewayMulticastDomainAssociationsRequest
+    ): Request[GetTransitGatewayMulticastDomainAssociationsResult] = js.native
     def getTransitGatewayRouteTableAssociations(
         params: GetTransitGatewayRouteTableAssociationsRequest
     ): Request[GetTransitGatewayRouteTableAssociationsResult] = js.native
@@ -2082,6 +2403,9 @@ package ec2 {
       js.native
     def modifyClientVpnEndpoint(params: ModifyClientVpnEndpointRequest): Request[ModifyClientVpnEndpointResult] =
       js.native
+    def modifyDefaultCreditSpecification(
+        params: ModifyDefaultCreditSpecificationRequest
+    ): Request[ModifyDefaultCreditSpecificationResult] = js.native
     def modifyEbsDefaultKmsKeyId(params: ModifyEbsDefaultKmsKeyIdRequest): Request[ModifyEbsDefaultKmsKeyIdResult] =
       js.native
     def modifyFleet(params: ModifyFleetRequest): Request[ModifyFleetResult] = js.native
@@ -2101,6 +2425,9 @@ package ec2 {
     def modifyInstanceEventStartTime(
         params: ModifyInstanceEventStartTimeRequest
     ): Request[ModifyInstanceEventStartTimeResult] = js.native
+    def modifyInstanceMetadataOptions(
+        params: ModifyInstanceMetadataOptionsRequest
+    ): Request[ModifyInstanceMetadataOptionsResult] = js.native
     def modifyInstancePlacement(params: ModifyInstancePlacementRequest): Request[ModifyInstancePlacementResult] =
       js.native
     def modifyLaunchTemplate(params: ModifyLaunchTemplateRequest): Request[ModifyLaunchTemplateResult]      = js.native
@@ -2158,6 +2485,15 @@ package ec2 {
     ): Request[PurchaseScheduledInstancesResult]                                  = js.native
     def rebootInstances(params: RebootInstancesRequest): Request[js.Object]       = js.native
     def registerImage(params: RegisterImageRequest): Request[RegisterImageResult] = js.native
+    def registerTransitGatewayMulticastGroupMembers(
+        params: RegisterTransitGatewayMulticastGroupMembersRequest
+    ): Request[RegisterTransitGatewayMulticastGroupMembersResult] = js.native
+    def registerTransitGatewayMulticastGroupSources(
+        params: RegisterTransitGatewayMulticastGroupSourcesRequest
+    ): Request[RegisterTransitGatewayMulticastGroupSourcesResult] = js.native
+    def rejectTransitGatewayPeeringAttachment(
+        params: RejectTransitGatewayPeeringAttachmentRequest
+    ): Request[RejectTransitGatewayPeeringAttachmentResult] = js.native
     def rejectTransitGatewayVpcAttachment(
         params: RejectTransitGatewayVpcAttachmentRequest
     ): Request[RejectTransitGatewayVpcAttachmentResult] = js.native
@@ -2201,6 +2537,11 @@ package ec2 {
     def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object]            = js.native
     def runInstances(params: RunInstancesRequest): Request[Reservation]                                      = js.native
     def runScheduledInstances(params: RunScheduledInstancesRequest): Request[RunScheduledInstancesResult]    = js.native
+    def searchLocalGatewayRoutes(params: SearchLocalGatewayRoutesRequest): Request[SearchLocalGatewayRoutesResult] =
+      js.native
+    def searchTransitGatewayMulticastGroups(
+        params: SearchTransitGatewayMulticastGroupsRequest
+    ): Request[SearchTransitGatewayMulticastGroupsResult] = js.native
     def searchTransitGatewayRoutes(
         params: SearchTransitGatewayRoutesRequest
     ): Request[SearchTransitGatewayRoutesResult]                                            = js.native
@@ -2270,15 +2611,54 @@ package ec2 {
   }
 
   @js.native
+  trait AcceptTransitGatewayPeeringAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object AcceptTransitGatewayPeeringAttachmentRequest {
+    @inline
+    def apply(
+        TransitGatewayAttachmentId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): AcceptTransitGatewayPeeringAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceptTransitGatewayPeeringAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait AcceptTransitGatewayPeeringAttachmentResult extends js.Object {
+    var TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment]
+  }
+
+  object AcceptTransitGatewayPeeringAttachmentResult {
+    @inline
+    def apply(
+        TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment] = js.undefined
+    ): AcceptTransitGatewayPeeringAttachmentResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeeringAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayPeeringAttachment")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AcceptTransitGatewayPeeringAttachmentResult]
+    }
+  }
+
+  @js.native
   trait AcceptTransitGatewayVpcAttachmentRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
+    var TransitGatewayAttachmentId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object AcceptTransitGatewayVpcAttachmentRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
+        TransitGatewayAttachmentId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AcceptTransitGatewayVpcAttachmentRequest = {
       val __obj = js.Dynamic.literal(
@@ -2475,8 +2855,11 @@ package ec2 {
   trait Address extends js.Object {
     var AllocationId: js.UndefOr[String]
     var AssociationId: js.UndefOr[String]
+    var CustomerOwnedIp: js.UndefOr[String]
+    var CustomerOwnedIpv4Pool: js.UndefOr[String]
     var Domain: js.UndefOr[DomainType]
     var InstanceId: js.UndefOr[String]
+    var NetworkBorderGroup: js.UndefOr[String]
     var NetworkInterfaceId: js.UndefOr[String]
     var NetworkInterfaceOwnerId: js.UndefOr[String]
     var PrivateIpAddress: js.UndefOr[String]
@@ -2490,8 +2873,11 @@ package ec2 {
     def apply(
         AllocationId: js.UndefOr[String] = js.undefined,
         AssociationId: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIp: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[String] = js.undefined,
         Domain: js.UndefOr[DomainType] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined,
         NetworkInterfaceId: js.UndefOr[String] = js.undefined,
         NetworkInterfaceOwnerId: js.UndefOr[String] = js.undefined,
         PrivateIpAddress: js.UndefOr[String] = js.undefined,
@@ -2502,8 +2888,11 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIp.foreach(__v => __obj.updateDynamic("CustomerOwnedIp")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceOwnerId.foreach(__v => __obj.updateDynamic("NetworkInterfaceOwnerId")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
@@ -2561,8 +2950,10 @@ package ec2 {
   @js.native
   trait AllocateAddressRequest extends js.Object {
     var Address: js.UndefOr[String]
+    var CustomerOwnedIpv4Pool: js.UndefOr[String]
     var Domain: js.UndefOr[DomainType]
     var DryRun: js.UndefOr[Boolean]
+    var NetworkBorderGroup: js.UndefOr[String]
     var PublicIpv4Pool: js.UndefOr[String]
   }
 
@@ -2570,14 +2961,18 @@ package ec2 {
     @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[String] = js.undefined,
         Domain: js.UndefOr[DomainType] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined,
         PublicIpv4Pool: js.UndefOr[String] = js.undefined
     ): AllocateAddressRequest = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       PublicIpv4Pool.foreach(__v => __obj.updateDynamic("PublicIpv4Pool")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateAddressRequest]
     }
@@ -2586,7 +2981,10 @@ package ec2 {
   @js.native
   trait AllocateAddressResult extends js.Object {
     var AllocationId: js.UndefOr[String]
+    var CustomerOwnedIp: js.UndefOr[String]
+    var CustomerOwnedIpv4Pool: js.UndefOr[String]
     var Domain: js.UndefOr[DomainType]
+    var NetworkBorderGroup: js.UndefOr[String]
     var PublicIp: js.UndefOr[String]
     var PublicIpv4Pool: js.UndefOr[String]
   }
@@ -2595,13 +2993,19 @@ package ec2 {
     @inline
     def apply(
         AllocationId: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIp: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[String] = js.undefined,
         Domain: js.UndefOr[DomainType] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined,
         PublicIp: js.UndefOr[String] = js.undefined,
         PublicIpv4Pool: js.UndefOr[String] = js.undefined
     ): AllocateAddressResult = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIp.foreach(__v => __obj.updateDynamic("CustomerOwnedIp")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
       PublicIpv4Pool.foreach(__v => __obj.updateDynamic("PublicIpv4Pool")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateAddressResult]
@@ -2611,11 +3015,12 @@ package ec2 {
   @js.native
   trait AllocateHostsRequest extends js.Object {
     var AvailabilityZone: String
-    var InstanceType: String
     var Quantity: Int
     var AutoPlacement: js.UndefOr[AutoPlacement]
     var ClientToken: js.UndefOr[String]
     var HostRecovery: js.UndefOr[HostRecovery]
+    var InstanceFamily: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
     var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
@@ -2623,22 +3028,24 @@ package ec2 {
     @inline
     def apply(
         AvailabilityZone: String,
-        InstanceType: String,
         Quantity: Int,
         AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined,
         ClientToken: js.UndefOr[String] = js.undefined,
         HostRecovery: js.UndefOr[HostRecovery] = js.undefined,
+        InstanceFamily: js.UndefOr[String] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined,
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): AllocateHostsRequest = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "InstanceType"     -> InstanceType.asInstanceOf[js.Any],
         "Quantity"         -> Quantity.asInstanceOf[js.Any]
       )
 
       AutoPlacement.foreach(__v => __obj.updateDynamic("AutoPlacement")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       HostRecovery.foreach(__v => __obj.updateDynamic("HostRecovery")(__v.asInstanceOf[js.Any]))
+      InstanceFamily.foreach(__v => __obj.updateDynamic("InstanceFamily")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateHostsRequest]
     }
@@ -2706,6 +3113,13 @@ package ec2 {
     }
   }
 
+  object AllowsMultipleInstanceTypesEnum {
+    val on  = "on"
+    val off = "off"
+
+    val values = js.Object.freeze(js.Array(on, off))
+  }
+
   @js.native
   trait ApplySecurityGroupsToClientVpnTargetNetworkRequest extends js.Object {
     var ClientVpnEndpointId: ClientVpnEndpointId
@@ -2747,6 +3161,14 @@ package ec2 {
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplySecurityGroupsToClientVpnTargetNetworkResult]
     }
+  }
+
+  object ArchitectureTypeEnum {
+    val i386   = "i386"
+    val x86_64 = "x86_64"
+    val arm64  = "arm64"
+
+    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
 
   object ArchitectureValuesEnum {
@@ -3033,24 +3455,27 @@ package ec2 {
 
   @js.native
   trait AssociateRouteTableRequest extends js.Object {
-    var RouteTableId: RouteTableId
-    var SubnetId: SubnetId
+    var RouteTableId: String
     var DryRun: js.UndefOr[Boolean]
+    var GatewayId: js.UndefOr[String]
+    var SubnetId: js.UndefOr[String]
   }
 
   object AssociateRouteTableRequest {
     @inline
     def apply(
-        RouteTableId: RouteTableId,
-        SubnetId: SubnetId,
-        DryRun: js.UndefOr[Boolean] = js.undefined
+        RouteTableId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        GatewayId: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined
     ): AssociateRouteTableRequest = {
       val __obj = js.Dynamic.literal(
-        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any],
-        "SubnetId"     -> SubnetId.asInstanceOf[js.Any]
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRouteTableRequest]
     }
   }
@@ -3058,15 +3483,18 @@ package ec2 {
   @js.native
   trait AssociateRouteTableResult extends js.Object {
     var AssociationId: js.UndefOr[String]
+    var AssociationState: js.UndefOr[RouteTableAssociationState]
   }
 
   object AssociateRouteTableResult {
     @inline
     def apply(
-        AssociationId: js.UndefOr[String] = js.undefined
+        AssociationId: js.UndefOr[String] = js.undefined,
+        AssociationState: js.UndefOr[RouteTableAssociationState] = js.undefined
     ): AssociateRouteTableResult = {
       val __obj = js.Dynamic.literal()
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationState.foreach(__v => __obj.updateDynamic("AssociationState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRouteTableResult]
     }
   }
@@ -3074,14 +3502,14 @@ package ec2 {
   @js.native
   trait AssociateSubnetCidrBlockRequest extends js.Object {
     var Ipv6CidrBlock: String
-    var SubnetId: SubnetId
+    var SubnetId: String
   }
 
   object AssociateSubnetCidrBlockRequest {
     @inline
     def apply(
         Ipv6CidrBlock: String,
-        SubnetId: SubnetId
+        SubnetId: String
     ): AssociateSubnetCidrBlockRequest = {
       val __obj = js.Dynamic.literal(
         "Ipv6CidrBlock" -> Ipv6CidrBlock.asInstanceOf[js.Any],
@@ -3112,17 +3540,62 @@ package ec2 {
   }
 
   @js.native
+  trait AssociateTransitGatewayMulticastDomainRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var SubnetIds: js.UndefOr[ValueStringList]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object AssociateTransitGatewayMulticastDomainRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        SubnetIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): AssociateTransitGatewayMulticastDomainRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AssociateTransitGatewayMulticastDomainRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateTransitGatewayMulticastDomainResult extends js.Object {
+    var Associations: js.UndefOr[TransitGatewayMulticastDomainAssociations]
+  }
+
+  object AssociateTransitGatewayMulticastDomainResult {
+    @inline
+    def apply(
+        Associations: js.UndefOr[TransitGatewayMulticastDomainAssociations] = js.undefined
+    ): AssociateTransitGatewayMulticastDomainResult = {
+      val __obj = js.Dynamic.literal()
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateTransitGatewayMulticastDomainResult]
+    }
+  }
+
+  @js.native
   trait AssociateTransitGatewayRouteTableRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayAttachmentId: String
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object AssociateTransitGatewayRouteTableRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayAttachmentId: String,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AssociateTransitGatewayRouteTableRequest = {
       val __obj = js.Dynamic.literal(
@@ -3156,6 +3629,7 @@ package ec2 {
     var VpcId: VpcId
     var AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean]
     var CidrBlock: js.UndefOr[String]
+    var Ipv6CidrBlockNetworkBorderGroup: js.UndefOr[String]
   }
 
   object AssociateVpcCidrBlockRequest {
@@ -3163,7 +3637,8 @@ package ec2 {
     def apply(
         VpcId: VpcId,
         AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean] = js.undefined,
-        CidrBlock: js.UndefOr[String] = js.undefined
+        CidrBlock: js.UndefOr[String] = js.undefined,
+        Ipv6CidrBlockNetworkBorderGroup: js.UndefOr[String] = js.undefined
     ): AssociateVpcCidrBlockRequest = {
       val __obj = js.Dynamic.literal(
         "VpcId" -> VpcId.asInstanceOf[js.Any]
@@ -3173,6 +3648,9 @@ package ec2 {
         __obj.updateDynamic("AmazonProvidedIpv6CidrBlock")(__v.asInstanceOf[js.Any])
       )
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
+      Ipv6CidrBlockNetworkBorderGroup.foreach(__v =>
+        __obj.updateDynamic("Ipv6CidrBlockNetworkBorderGroup")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AssociateVpcCidrBlockRequest]
     }
   }
@@ -3376,9 +3854,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for AttachVolume.
-    */
   @js.native
   trait AttachVolumeRequest extends js.Object {
     var Device: String
@@ -3689,11 +4164,14 @@ package ec2 {
   }
 
   /**
-    * Describes an Availability Zone.
+    * Describes an Availability Zone or Local Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
+    var GroupName: js.UndefOr[String]
     var Messages: js.UndefOr[AvailabilityZoneMessageList]
+    var NetworkBorderGroup: js.UndefOr[String]
+    var OptInStatus: js.UndefOr[AvailabilityZoneOptInStatus]
     var RegionName: js.UndefOr[String]
     var State: js.UndefOr[AvailabilityZoneState]
     var ZoneId: js.UndefOr[String]
@@ -3703,14 +4181,20 @@ package ec2 {
   object AvailabilityZone {
     @inline
     def apply(
+        GroupName: js.UndefOr[String] = js.undefined,
         Messages: js.UndefOr[AvailabilityZoneMessageList] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined,
+        OptInStatus: js.UndefOr[AvailabilityZoneOptInStatus] = js.undefined,
         RegionName: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[AvailabilityZoneState] = js.undefined,
         ZoneId: js.UndefOr[String] = js.undefined,
         ZoneName: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
       val __obj = js.Dynamic.literal()
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
+      OptInStatus.foreach(__v => __obj.updateDynamic("OptInStatus")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       ZoneId.foreach(__v => __obj.updateDynamic("ZoneId")(__v.asInstanceOf[js.Any]))
@@ -3720,7 +4204,7 @@ package ec2 {
   }
 
   /**
-    * Describes a message about an Availability Zone.
+    * Describes a message about an Availability Zone or Local Zone.
     */
   @js.native
   trait AvailabilityZoneMessage extends js.Object {
@@ -3738,6 +4222,14 @@ package ec2 {
     }
   }
 
+  object AvailabilityZoneOptInStatusEnum {
+    val `opt-in-not-required` = "opt-in-not-required"
+    val `opted-in`            = "opted-in"
+    val `not-opted-in`        = "not-opted-in"
+
+    val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
+  }
+
   object AvailabilityZoneStateEnum {
     val available   = "available"
     val information = "information"
@@ -3748,7 +4240,7 @@ package ec2 {
   }
 
   /**
-    * The capacity information for instances launched onto the Dedicated Host.
+    * The capacity information for instances that can be launched onto the Dedicated Host.
     */
   @js.native
   trait AvailableCapacity extends js.Object {
@@ -4520,6 +5012,50 @@ package ec2 {
     )
   }
 
+  /**
+    * Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+    *
+    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
+    * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet Example Configurations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    */
+  @js.native
+  trait CapacityReservationOptions extends js.Object {
+    var UsageStrategy: js.UndefOr[FleetCapacityReservationUsageStrategy]
+  }
+
+  object CapacityReservationOptions {
+    @inline
+    def apply(
+        UsageStrategy: js.UndefOr[FleetCapacityReservationUsageStrategy] = js.undefined
+    ): CapacityReservationOptions = {
+      val __obj = js.Dynamic.literal()
+      UsageStrategy.foreach(__v => __obj.updateDynamic("UsageStrategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityReservationOptions]
+    }
+  }
+
+  /**
+    * Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+    *
+    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
+    * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet Example Configurations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    */
+  @js.native
+  trait CapacityReservationOptionsRequest extends js.Object {
+    var UsageStrategy: js.UndefOr[FleetCapacityReservationUsageStrategy]
+  }
+
+  object CapacityReservationOptionsRequest {
+    @inline
+    def apply(
+        UsageStrategy: js.UndefOr[FleetCapacityReservationUsageStrategy] = js.undefined
+    ): CapacityReservationOptionsRequest = {
+      val __obj = js.Dynamic.literal()
+      UsageStrategy.foreach(__v => __obj.updateDynamic("UsageStrategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityReservationOptionsRequest]
+    }
+  }
+
   object CapacityReservationPreferenceEnum {
     val open = "open"
     val none = "none"
@@ -5204,6 +5740,62 @@ package ec2 {
     val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
   }
 
+  /**
+    * Describes address usage for a customer-owned address pool.
+    */
+  @js.native
+  trait CoipAddressUsage extends js.Object {
+    var AllocationId: js.UndefOr[String]
+    var AwsAccountId: js.UndefOr[String]
+    var AwsService: js.UndefOr[String]
+    var CoIp: js.UndefOr[String]
+  }
+
+  object CoipAddressUsage {
+    @inline
+    def apply(
+        AllocationId: js.UndefOr[String] = js.undefined,
+        AwsAccountId: js.UndefOr[String] = js.undefined,
+        AwsService: js.UndefOr[String] = js.undefined,
+        CoIp: js.UndefOr[String] = js.undefined
+    ): CoipAddressUsage = {
+      val __obj = js.Dynamic.literal()
+      AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      AwsService.foreach(__v => __obj.updateDynamic("AwsService")(__v.asInstanceOf[js.Any]))
+      CoIp.foreach(__v => __obj.updateDynamic("CoIp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CoipAddressUsage]
+    }
+  }
+
+  /**
+    * Describes a customer-owned address pool.
+    */
+  @js.native
+  trait CoipPool extends js.Object {
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+    var PoolCidrs: js.UndefOr[ValueStringList]
+    var PoolId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CoipPool {
+    @inline
+    def apply(
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+        PoolCidrs: js.UndefOr[ValueStringList] = js.undefined,
+        PoolId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CoipPool = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      PoolCidrs.foreach(__v => __obj.updateDynamic("PoolCidrs")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CoipPool]
+    }
+  }
+
   @js.native
   trait ConfirmProductInstanceRequest extends js.Object {
     var InstanceId: InstanceId
@@ -5466,7 +6058,7 @@ package ec2 {
     var Description: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
     var Encrypted: js.UndefOr[Boolean]
-    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var KmsKeyId: js.UndefOr[String]
   }
 
   object CopyImageRequest {
@@ -5479,7 +6071,7 @@ package ec2 {
         Description: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        KmsKeyId: js.UndefOr[String] = js.undefined
     ): CopyImageRequest = {
       val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
@@ -5515,9 +6107,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CopySnapshot.
-    */
   @js.native
   trait CopySnapshotRequest extends js.Object {
     var SourceRegion: String
@@ -5526,8 +6115,9 @@ package ec2 {
     var DestinationRegion: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
     var Encrypted: js.UndefOr[Boolean]
-    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var KmsKeyId: js.UndefOr[String]
     var PresignedUrl: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
   object CopySnapshotRequest {
@@ -5539,8 +6129,9 @@ package ec2 {
         DestinationRegion: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        PresignedUrl: js.UndefOr[String] = js.undefined
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        PresignedUrl: js.UndefOr[String] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CopySnapshotRequest = {
       val __obj = js.Dynamic.literal(
         "SourceRegion"     -> SourceRegion.asInstanceOf[js.Any],
@@ -5553,25 +6144,26 @@ package ec2 {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PresignedUrl.foreach(__v => __obj.updateDynamic("PresignedUrl")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotRequest]
     }
   }
 
-  /**
-    * Contains the output of CopySnapshot.
-    */
   @js.native
   trait CopySnapshotResult extends js.Object {
     var SnapshotId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CopySnapshotResult {
     @inline
     def apply(
-        SnapshotId: js.UndefOr[String] = js.undefined
+        SnapshotId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CopySnapshotResult = {
       val __obj = js.Dynamic.literal()
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotResult]
     }
   }
@@ -5826,6 +6418,7 @@ package ec2 {
     var BgpAsn: Int
     var Type: GatewayType
     var CertificateArn: js.UndefOr[String]
+    var DeviceName: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
     var PublicIp: js.UndefOr[String]
   }
@@ -5836,6 +6429,7 @@ package ec2 {
         BgpAsn: Int,
         Type: GatewayType,
         CertificateArn: js.UndefOr[String] = js.undefined,
+        DeviceName: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         PublicIp: js.UndefOr[String] = js.undefined
     ): CreateCustomerGatewayRequest = {
@@ -5845,6 +6439,7 @@ package ec2 {
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomerGatewayRequest]
@@ -6290,7 +6885,7 @@ package ec2 {
 
   @js.native
   trait CreateImageRequest extends js.Object {
-    var InstanceId: InstanceId
+    var InstanceId: String
     var Name: String
     var BlockDeviceMappings: js.UndefOr[BlockDeviceMappingRequestList]
     var Description: js.UndefOr[String]
@@ -6301,7 +6896,7 @@ package ec2 {
   object CreateImageRequest {
     @inline
     def apply(
-        InstanceId: InstanceId,
+        InstanceId: String,
         Name: String,
         BlockDeviceMappings: js.UndefOr[BlockDeviceMappingRequestList] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -6531,6 +7126,91 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       LaunchTemplateVersion.foreach(__v => __obj.updateDynamic("LaunchTemplateVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLaunchTemplateVersionResult]
+    }
+  }
+
+  @js.native
+  trait CreateLocalGatewayRouteRequest extends js.Object {
+    var DestinationCidrBlock: String
+    var LocalGatewayRouteTableId: String
+    var LocalGatewayVirtualInterfaceGroupId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object CreateLocalGatewayRouteRequest {
+    @inline
+    def apply(
+        DestinationCidrBlock: String,
+        LocalGatewayRouteTableId: String,
+        LocalGatewayVirtualInterfaceGroupId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): CreateLocalGatewayRouteRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationCidrBlock"                -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "LocalGatewayRouteTableId"            -> LocalGatewayRouteTableId.asInstanceOf[js.Any],
+        "LocalGatewayVirtualInterfaceGroupId" -> LocalGatewayVirtualInterfaceGroupId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocalGatewayRouteRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocalGatewayRouteResult extends js.Object {
+    var Route: js.UndefOr[LocalGatewayRoute]
+  }
+
+  object CreateLocalGatewayRouteResult {
+    @inline
+    def apply(
+        Route: js.UndefOr[LocalGatewayRoute] = js.undefined
+    ): CreateLocalGatewayRouteResult = {
+      val __obj = js.Dynamic.literal()
+      Route.foreach(__v => __obj.updateDynamic("Route")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocalGatewayRouteResult]
+    }
+  }
+
+  @js.native
+  trait CreateLocalGatewayRouteTableVpcAssociationRequest extends js.Object {
+    var LocalGatewayRouteTableId: String
+    var VpcId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object CreateLocalGatewayRouteTableVpcAssociationRequest {
+    @inline
+    def apply(
+        LocalGatewayRouteTableId: String,
+        VpcId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): CreateLocalGatewayRouteTableVpcAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any],
+        "VpcId"                    -> VpcId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocalGatewayRouteTableVpcAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocalGatewayRouteTableVpcAssociationResult extends js.Object {
+    var LocalGatewayRouteTableVpcAssociation: js.UndefOr[LocalGatewayRouteTableVpcAssociation]
+  }
+
+  object CreateLocalGatewayRouteTableVpcAssociationResult {
+    @inline
+    def apply(
+        LocalGatewayRouteTableVpcAssociation: js.UndefOr[LocalGatewayRouteTableVpcAssociation] = js.undefined
+    ): CreateLocalGatewayRouteTableVpcAssociationResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTableVpcAssociation.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVpcAssociation")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateLocalGatewayRouteTableVpcAssociationResult]
     }
   }
 
@@ -6865,6 +7545,7 @@ package ec2 {
     var EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId]
     var GatewayId: js.UndefOr[RouteTableGatewayId]
     var InstanceId: js.UndefOr[InstanceId]
+    var LocalGatewayId: js.UndefOr[String]
     var NatGatewayId: js.UndefOr[NatGatewayId]
     var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
     var TransitGatewayId: js.UndefOr[TransitGatewayId]
@@ -6881,6 +7562,7 @@ package ec2 {
         EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId] = js.undefined,
         GatewayId: js.UndefOr[RouteTableGatewayId] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
         NatGatewayId: js.UndefOr[NatGatewayId] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
         TransitGatewayId: js.UndefOr[TransitGatewayId] = js.undefined,
@@ -6898,6 +7580,7 @@ package ec2 {
       )
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
       NatGatewayId.foreach(__v => __obj.updateDynamic("NatGatewayId")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
@@ -7002,9 +7685,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateSnapshot.
-    */
   @js.native
   trait CreateSnapshotRequest extends js.Object {
     var VolumeId: VolumeId
@@ -7127,22 +7807,24 @@ package ec2 {
   @js.native
   trait CreateSubnetRequest extends js.Object {
     var CidrBlock: String
-    var VpcId: VpcId
+    var VpcId: String
     var AvailabilityZone: js.UndefOr[String]
     var AvailabilityZoneId: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
     var Ipv6CidrBlock: js.UndefOr[String]
+    var OutpostArn: js.UndefOr[String]
   }
 
   object CreateSubnetRequest {
     @inline
     def apply(
         CidrBlock: String,
-        VpcId: VpcId,
+        VpcId: String,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         AvailabilityZoneId: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
-        Ipv6CidrBlock: js.UndefOr[String] = js.undefined
+        Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined
     ): CreateSubnetRequest = {
       val __obj = js.Dynamic.literal(
         "CidrBlock" -> CidrBlock.asInstanceOf[js.Any],
@@ -7153,6 +7835,7 @@ package ec2 {
       AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Ipv6CidrBlock.foreach(__v => __obj.updateDynamic("Ipv6CidrBlock")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubnetRequest]
     }
   }
@@ -7426,6 +8109,99 @@ package ec2 {
   }
 
   @js.native
+  trait CreateTransitGatewayMulticastDomainRequest extends js.Object {
+    var TransitGatewayId: String
+    var DryRun: js.UndefOr[Boolean]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+  }
+
+  object CreateTransitGatewayMulticastDomainRequest {
+    @inline
+    def apply(
+        TransitGatewayId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
+    ): CreateTransitGatewayMulticastDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "TransitGatewayId" -> TransitGatewayId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayMulticastDomainRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayMulticastDomainResult extends js.Object {
+    var TransitGatewayMulticastDomain: js.UndefOr[TransitGatewayMulticastDomain]
+  }
+
+  object CreateTransitGatewayMulticastDomainResult {
+    @inline
+    def apply(
+        TransitGatewayMulticastDomain: js.UndefOr[TransitGatewayMulticastDomain] = js.undefined
+    ): CreateTransitGatewayMulticastDomainResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayMulticastDomain.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomain")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateTransitGatewayMulticastDomainResult]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayPeeringAttachmentRequest extends js.Object {
+    var PeerAccountId: String
+    var PeerRegion: String
+    var PeerTransitGatewayId: String
+    var TransitGatewayId: String
+    var DryRun: js.UndefOr[Boolean]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+  }
+
+  object CreateTransitGatewayPeeringAttachmentRequest {
+    @inline
+    def apply(
+        PeerAccountId: String,
+        PeerRegion: String,
+        PeerTransitGatewayId: String,
+        TransitGatewayId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
+    ): CreateTransitGatewayPeeringAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "PeerAccountId"        -> PeerAccountId.asInstanceOf[js.Any],
+        "PeerRegion"           -> PeerRegion.asInstanceOf[js.Any],
+        "PeerTransitGatewayId" -> PeerTransitGatewayId.asInstanceOf[js.Any],
+        "TransitGatewayId"     -> TransitGatewayId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayPeeringAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayPeeringAttachmentResult extends js.Object {
+    var TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment]
+  }
+
+  object CreateTransitGatewayPeeringAttachmentResult {
+    @inline
+    def apply(
+        TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment] = js.undefined
+    ): CreateTransitGatewayPeeringAttachmentResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeeringAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayPeeringAttachment")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateTransitGatewayPeeringAttachmentResult]
+    }
+  }
+
+  @js.native
   trait CreateTransitGatewayRequest extends js.Object {
     var Description: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
@@ -7469,20 +8245,20 @@ package ec2 {
   @js.native
   trait CreateTransitGatewayRouteRequest extends js.Object {
     var DestinationCidrBlock: String
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var Blackhole: js.UndefOr[Boolean]
     var DryRun: js.UndefOr[Boolean]
-    var TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
   }
 
   object CreateTransitGatewayRouteRequest {
     @inline
     def apply(
         DestinationCidrBlock: String,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         Blackhole: js.UndefOr[Boolean] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
-        TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId] = js.undefined
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined
     ): CreateTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationCidrBlock"       -> DestinationCidrBlock.asInstanceOf[js.Any],
@@ -7516,7 +8292,7 @@ package ec2 {
 
   @js.native
   trait CreateTransitGatewayRouteTableRequest extends js.Object {
-    var TransitGatewayId: TransitGatewayId
+    var TransitGatewayId: String
     var DryRun: js.UndefOr[Boolean]
     var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
@@ -7524,7 +8300,7 @@ package ec2 {
   object CreateTransitGatewayRouteTableRequest {
     @inline
     def apply(
-        TransitGatewayId: TransitGatewayId,
+        TransitGatewayId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateTransitGatewayRouteTableRequest = {
@@ -7557,8 +8333,8 @@ package ec2 {
   @js.native
   trait CreateTransitGatewayVpcAttachmentRequest extends js.Object {
     var SubnetIds: ValueStringList
-    var TransitGatewayId: TransitGatewayId
-    var VpcId: VpcId
+    var TransitGatewayId: String
+    var VpcId: String
     var DryRun: js.UndefOr[Boolean]
     var Options: js.UndefOr[CreateTransitGatewayVpcAttachmentRequestOptions]
     var TagSpecifications: js.UndefOr[TagSpecificationList]
@@ -7568,8 +8344,8 @@ package ec2 {
     @inline
     def apply(
         SubnetIds: ValueStringList,
-        TransitGatewayId: TransitGatewayId,
-        VpcId: VpcId,
+        TransitGatewayId: String,
+        VpcId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Options: js.UndefOr[CreateTransitGatewayVpcAttachmentRequestOptions] = js.undefined,
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
@@ -7671,9 +8447,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateVolume.
-    */
   @js.native
   trait CreateVolumeRequest extends js.Object {
     var AvailabilityZone: String
@@ -7681,6 +8454,7 @@ package ec2 {
     var Encrypted: js.UndefOr[Boolean]
     var Iops: js.UndefOr[Int]
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var OutpostArn: js.UndefOr[String]
     var Size: js.UndefOr[Int]
     var SnapshotId: js.UndefOr[SnapshotId]
     var TagSpecifications: js.UndefOr[TagSpecificationList]
@@ -7695,6 +8469,7 @@ package ec2 {
         Encrypted: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[Int] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         Size: js.UndefOr[Int] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
@@ -7708,6 +8483,7 @@ package ec2 {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
@@ -7934,6 +8710,7 @@ package ec2 {
     var AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean]
     var DryRun: js.UndefOr[Boolean]
     var InstanceTenancy: js.UndefOr[Tenancy]
+    var Ipv6CidrBlockNetworkBorderGroup: js.UndefOr[String]
   }
 
   object CreateVpcRequest {
@@ -7942,7 +8719,8 @@ package ec2 {
         CidrBlock: String,
         AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
-        InstanceTenancy: js.UndefOr[Tenancy] = js.undefined
+        InstanceTenancy: js.UndefOr[Tenancy] = js.undefined,
+        Ipv6CidrBlockNetworkBorderGroup: js.UndefOr[String] = js.undefined
     ): CreateVpcRequest = {
       val __obj = js.Dynamic.literal(
         "CidrBlock" -> CidrBlock.asInstanceOf[js.Any]
@@ -7953,6 +8731,9 @@ package ec2 {
       )
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       InstanceTenancy.foreach(__v => __obj.updateDynamic("InstanceTenancy")(__v.asInstanceOf[js.Any]))
+      Ipv6CidrBlockNetworkBorderGroup.foreach(__v =>
+        __obj.updateDynamic("Ipv6CidrBlockNetworkBorderGroup")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateVpcRequest]
     }
   }
@@ -8155,6 +8936,7 @@ package ec2 {
     var BgpAsn: js.UndefOr[String]
     var CertificateArn: js.UndefOr[String]
     var CustomerGatewayId: js.UndefOr[String]
+    var DeviceName: js.UndefOr[String]
     var IpAddress: js.UndefOr[String]
     var State: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
@@ -8167,6 +8949,7 @@ package ec2 {
         BgpAsn: js.UndefOr[String] = js.undefined,
         CertificateArn: js.UndefOr[String] = js.undefined,
         CustomerGatewayId: js.UndefOr[String] = js.undefined,
+        DeviceName: js.UndefOr[String] = js.undefined,
         IpAddress: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -8176,6 +8959,7 @@ package ec2 {
       BgpAsn.foreach(__v => __obj.updateDynamic("BgpAsn")(__v.asInstanceOf[js.Any]))
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
       CustomerGatewayId.foreach(__v => __obj.updateDynamic("CustomerGatewayId")(__v.asInstanceOf[js.Any]))
+      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -8595,14 +9379,14 @@ package ec2 {
 
   @js.native
   trait DeleteKeyPairRequest extends js.Object {
-    var KeyName: String
+    var KeyName: KeyPairName
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteKeyPairRequest {
     @inline
     def apply(
-        KeyName: String,
+        KeyName: KeyPairName,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteKeyPairRequest = {
       val __obj = js.Dynamic.literal(
@@ -8754,6 +9538,85 @@ package ec2 {
         __obj.updateDynamic("UnsuccessfullyDeletedLaunchTemplateVersions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteLaunchTemplateVersionsResult]
+    }
+  }
+
+  @js.native
+  trait DeleteLocalGatewayRouteRequest extends js.Object {
+    var DestinationCidrBlock: String
+    var LocalGatewayRouteTableId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteLocalGatewayRouteRequest {
+    @inline
+    def apply(
+        DestinationCidrBlock: String,
+        LocalGatewayRouteTableId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DeleteLocalGatewayRouteRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationCidrBlock"     -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteLocalGatewayRouteRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteLocalGatewayRouteResult extends js.Object {
+    var Route: js.UndefOr[LocalGatewayRoute]
+  }
+
+  object DeleteLocalGatewayRouteResult {
+    @inline
+    def apply(
+        Route: js.UndefOr[LocalGatewayRoute] = js.undefined
+    ): DeleteLocalGatewayRouteResult = {
+      val __obj = js.Dynamic.literal()
+      Route.foreach(__v => __obj.updateDynamic("Route")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteLocalGatewayRouteResult]
+    }
+  }
+
+  @js.native
+  trait DeleteLocalGatewayRouteTableVpcAssociationRequest extends js.Object {
+    var LocalGatewayRouteTableVpcAssociationId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteLocalGatewayRouteTableVpcAssociationRequest {
+    @inline
+    def apply(
+        LocalGatewayRouteTableVpcAssociationId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DeleteLocalGatewayRouteTableVpcAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocalGatewayRouteTableVpcAssociationId" -> LocalGatewayRouteTableVpcAssociationId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteLocalGatewayRouteTableVpcAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteLocalGatewayRouteTableVpcAssociationResult extends js.Object {
+    var LocalGatewayRouteTableVpcAssociation: js.UndefOr[LocalGatewayRouteTableVpcAssociation]
+  }
+
+  object DeleteLocalGatewayRouteTableVpcAssociationResult {
+    @inline
+    def apply(
+        LocalGatewayRouteTableVpcAssociation: js.UndefOr[LocalGatewayRouteTableVpcAssociation] = js.undefined
+    ): DeleteLocalGatewayRouteTableVpcAssociationResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTableVpcAssociation.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVpcAssociation")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeleteLocalGatewayRouteTableVpcAssociationResult]
     }
   }
 
@@ -9076,9 +9939,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteSnapshot.
-    */
   @js.native
   trait DeleteSnapshotRequest extends js.Object {
     var SnapshotId: SnapshotId
@@ -9121,14 +9981,14 @@ package ec2 {
 
   @js.native
   trait DeleteSubnetRequest extends js.Object {
-    var SubnetId: SubnetId
+    var SubnetId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteSubnetRequest {
     @inline
     def apply(
-        SubnetId: SubnetId,
+        SubnetId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteSubnetRequest = {
       val __obj = js.Dynamic.literal(
@@ -9315,15 +10175,93 @@ package ec2 {
   }
 
   @js.native
+  trait DeleteTransitGatewayMulticastDomainRequest extends js.Object {
+    var TransitGatewayMulticastDomainId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayMulticastDomainRequest {
+    @inline
+    def apply(
+        TransitGatewayMulticastDomainId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DeleteTransitGatewayMulticastDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "TransitGatewayMulticastDomainId" -> TransitGatewayMulticastDomainId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTransitGatewayMulticastDomainRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayMulticastDomainResult extends js.Object {
+    var TransitGatewayMulticastDomain: js.UndefOr[TransitGatewayMulticastDomain]
+  }
+
+  object DeleteTransitGatewayMulticastDomainResult {
+    @inline
+    def apply(
+        TransitGatewayMulticastDomain: js.UndefOr[TransitGatewayMulticastDomain] = js.undefined
+    ): DeleteTransitGatewayMulticastDomainResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayMulticastDomain.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomain")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeleteTransitGatewayMulticastDomainResult]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayPeeringAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayPeeringAttachmentRequest {
+    @inline
+    def apply(
+        TransitGatewayAttachmentId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DeleteTransitGatewayPeeringAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTransitGatewayPeeringAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayPeeringAttachmentResult extends js.Object {
+    var TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment]
+  }
+
+  object DeleteTransitGatewayPeeringAttachmentResult {
+    @inline
+    def apply(
+        TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment] = js.undefined
+    ): DeleteTransitGatewayPeeringAttachmentResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeeringAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayPeeringAttachment")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeleteTransitGatewayPeeringAttachmentResult]
+    }
+  }
+
+  @js.native
   trait DeleteTransitGatewayRequest extends js.Object {
-    var TransitGatewayId: TransitGatewayId
+    var TransitGatewayId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteTransitGatewayRequest {
     @inline
     def apply(
-        TransitGatewayId: TransitGatewayId,
+        TransitGatewayId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteTransitGatewayRequest = {
       val __obj = js.Dynamic.literal(
@@ -9354,7 +10292,7 @@ package ec2 {
   @js.native
   trait DeleteTransitGatewayRouteRequest extends js.Object {
     var DestinationCidrBlock: String
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
@@ -9362,7 +10300,7 @@ package ec2 {
     @inline
     def apply(
         DestinationCidrBlock: String,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
@@ -9393,14 +10331,14 @@ package ec2 {
 
   @js.native
   trait DeleteTransitGatewayRouteTableRequest extends js.Object {
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteTransitGatewayRouteTableRequest {
     @inline
     def apply(
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteTransitGatewayRouteTableRequest = {
       val __obj = js.Dynamic.literal(
@@ -9430,14 +10368,14 @@ package ec2 {
 
   @js.native
   trait DeleteTransitGatewayVpcAttachmentRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
+    var TransitGatewayAttachmentId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteTransitGatewayVpcAttachmentRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
+        TransitGatewayAttachmentId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteTransitGatewayVpcAttachmentRequest = {
       val __obj = js.Dynamic.literal(
@@ -9467,9 +10405,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteVolume.
-    */
   @js.native
   trait DeleteVolumeRequest extends js.Object {
     var VolumeId: VolumeId
@@ -9780,14 +10715,14 @@ package ec2 {
     */
   @js.native
   trait DeregisterImageRequest extends js.Object {
-    var ImageId: ImageId
+    var ImageId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeregisterImageRequest {
     @inline
     def apply(
-        ImageId: ImageId,
+        ImageId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeregisterImageRequest = {
       val __obj = js.Dynamic.literal(
@@ -9796,6 +10731,96 @@ package ec2 {
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterImageRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterTransitGatewayMulticastGroupMembersRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var GroupIpAddress: js.UndefOr[String]
+    var NetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object DeregisterTransitGatewayMulticastGroupMembersRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): DeregisterTransitGatewayMulticastGroupMembersRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeregisterTransitGatewayMulticastGroupMembersRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterTransitGatewayMulticastGroupMembersResult extends js.Object {
+    var DeregisteredMulticastGroupMembers: js.UndefOr[TransitGatewayMulticastDeregisteredGroupMembers]
+  }
+
+  object DeregisterTransitGatewayMulticastGroupMembersResult {
+    @inline
+    def apply(
+        DeregisteredMulticastGroupMembers: js.UndefOr[TransitGatewayMulticastDeregisteredGroupMembers] = js.undefined
+    ): DeregisterTransitGatewayMulticastGroupMembersResult = {
+      val __obj = js.Dynamic.literal()
+      DeregisteredMulticastGroupMembers.foreach(__v =>
+        __obj.updateDynamic("DeregisteredMulticastGroupMembers")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeregisterTransitGatewayMulticastGroupMembersResult]
+    }
+  }
+
+  @js.native
+  trait DeregisterTransitGatewayMulticastGroupSourcesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var GroupIpAddress: js.UndefOr[String]
+    var NetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object DeregisterTransitGatewayMulticastGroupSourcesRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): DeregisterTransitGatewayMulticastGroupSourcesRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeregisterTransitGatewayMulticastGroupSourcesRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterTransitGatewayMulticastGroupSourcesResult extends js.Object {
+    var DeregisteredMulticastGroupSources: js.UndefOr[TransitGatewayMulticastDeregisteredGroupSources]
+  }
+
+  object DeregisterTransitGatewayMulticastGroupSourcesResult {
+    @inline
+    def apply(
+        DeregisteredMulticastGroupSources: js.UndefOr[TransitGatewayMulticastDeregisteredGroupSources] = js.undefined
+    ): DeregisterTransitGatewayMulticastGroupSourcesResult = {
+      val __obj = js.Dynamic.literal()
+      DeregisteredMulticastGroupSources.foreach(__v =>
+        __obj.updateDynamic("DeregisteredMulticastGroupSources")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeregisterTransitGatewayMulticastGroupSourcesResult]
     }
   }
 
@@ -9912,6 +10937,7 @@ package ec2 {
 
   @js.native
   trait DescribeAvailabilityZonesRequest extends js.Object {
+    var AllAvailabilityZones: js.UndefOr[Boolean]
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
     var ZoneIds: js.UndefOr[ZoneIdStringList]
@@ -9921,12 +10947,14 @@ package ec2 {
   object DescribeAvailabilityZonesRequest {
     @inline
     def apply(
+        AllAvailabilityZones: js.UndefOr[Boolean] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
         ZoneIds: js.UndefOr[ZoneIdStringList] = js.undefined,
         ZoneNames: js.UndefOr[ZoneNameStringList] = js.undefined
     ): DescribeAvailabilityZonesRequest = {
       val __obj = js.Dynamic.literal()
+      AllAvailabilityZones.foreach(__v => __obj.updateDynamic("AllAvailabilityZones")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       ZoneIds.foreach(__v => __obj.updateDynamic("ZoneIds")(__v.asInstanceOf[js.Any]))
@@ -10373,6 +11401,53 @@ package ec2 {
   }
 
   @js.native
+  trait DescribeCoipPoolsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[CoipPoolMaxResults]
+    var NextToken: js.UndefOr[String]
+    var PoolIds: js.UndefOr[CoipPoolIdSet]
+  }
+
+  object DescribeCoipPoolsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[CoipPoolMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        PoolIds: js.UndefOr[CoipPoolIdSet] = js.undefined
+    ): DescribeCoipPoolsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PoolIds.foreach(__v => __obj.updateDynamic("PoolIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCoipPoolsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCoipPoolsResult extends js.Object {
+    var CoipPools: js.UndefOr[CoipPoolSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeCoipPoolsResult {
+    @inline
+    def apply(
+        CoipPools: js.UndefOr[CoipPoolSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeCoipPoolsResult = {
+      val __obj = js.Dynamic.literal()
+      CoipPools.foreach(__v => __obj.updateDynamic("CoipPools")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCoipPoolsResult]
+    }
+  }
+
+  @js.native
   trait DescribeConversionTasksRequest extends js.Object {
     var ConversionTaskIds: js.UndefOr[ConversionIdStringList]
     var DryRun: js.UndefOr[Boolean]
@@ -10646,15 +11721,18 @@ package ec2 {
   @js.native
   trait DescribeExportTasksRequest extends js.Object {
     var ExportTaskIds: js.UndefOr[ExportTaskIdStringList]
+    var Filters: js.UndefOr[FilterList]
   }
 
   object DescribeExportTasksRequest {
     @inline
     def apply(
-        ExportTaskIds: js.UndefOr[ExportTaskIdStringList] = js.undefined
+        ExportTaskIds: js.UndefOr[ExportTaskIdStringList] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined
     ): DescribeExportTasksRequest = {
       val __obj = js.Dynamic.literal()
       ExportTaskIds.foreach(__v => __obj.updateDynamic("ExportTaskIds")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksRequest]
     }
   }
@@ -10672,6 +11750,99 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       ExportTasks.foreach(__v => __obj.updateDynamic("ExportTasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksResult]
+    }
+  }
+
+  /**
+    * Describes fast snapshot restores for a snapshot.
+    */
+  @js.native
+  trait DescribeFastSnapshotRestoreSuccessItem extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var DisabledTime: js.UndefOr[MillisecondDateTime]
+    var DisablingTime: js.UndefOr[MillisecondDateTime]
+    var EnabledTime: js.UndefOr[MillisecondDateTime]
+    var EnablingTime: js.UndefOr[MillisecondDateTime]
+    var OptimizingTime: js.UndefOr[MillisecondDateTime]
+    var OwnerAlias: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+    var SnapshotId: js.UndefOr[String]
+    var State: js.UndefOr[FastSnapshotRestoreStateCode]
+    var StateTransitionReason: js.UndefOr[String]
+  }
+
+  object DescribeFastSnapshotRestoreSuccessItem {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        DisabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        DisablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OptimizingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OwnerAlias: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[FastSnapshotRestoreStateCode] = js.undefined,
+        StateTransitionReason: js.UndefOr[String] = js.undefined
+    ): DescribeFastSnapshotRestoreSuccessItem = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DisabledTime.foreach(__v => __obj.updateDynamic("DisabledTime")(__v.asInstanceOf[js.Any]))
+      DisablingTime.foreach(__v => __obj.updateDynamic("DisablingTime")(__v.asInstanceOf[js.Any]))
+      EnabledTime.foreach(__v => __obj.updateDynamic("EnabledTime")(__v.asInstanceOf[js.Any]))
+      EnablingTime.foreach(__v => __obj.updateDynamic("EnablingTime")(__v.asInstanceOf[js.Any]))
+      OptimizingTime.foreach(__v => __obj.updateDynamic("OptimizingTime")(__v.asInstanceOf[js.Any]))
+      OwnerAlias.foreach(__v => __obj.updateDynamic("OwnerAlias")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFastSnapshotRestoreSuccessItem]
+    }
+  }
+
+  @js.native
+  trait DescribeFastSnapshotRestoresRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[DescribeFastSnapshotRestoresMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFastSnapshotRestoresRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[DescribeFastSnapshotRestoresMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFastSnapshotRestoresRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFastSnapshotRestoresRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFastSnapshotRestoresResult extends js.Object {
+    var FastSnapshotRestores: js.UndefOr[DescribeFastSnapshotRestoreSuccessSet]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFastSnapshotRestoresResult {
+    @inline
+    def apply(
+        FastSnapshotRestores: js.UndefOr[DescribeFastSnapshotRestoreSuccessSet] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFastSnapshotRestoresResult = {
+      val __obj = js.Dynamic.literal()
+      FastSnapshotRestores.foreach(__v => __obj.updateDynamic("FastSnapshotRestores")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFastSnapshotRestoresResult]
     }
   }
 
@@ -11577,6 +12748,100 @@ package ec2 {
   }
 
   @js.native
+  trait DescribeInstanceTypeOfferingsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocationType: js.UndefOr[LocationType]
+    var MaxResults: js.UndefOr[DITOMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstanceTypeOfferingsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocationType: js.UndefOr[LocationType] = js.undefined,
+        MaxResults: js.UndefOr[DITOMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceTypeOfferingsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocationType.foreach(__v => __obj.updateDynamic("LocationType")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceTypeOfferingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceTypeOfferingsResult extends js.Object {
+    var InstanceTypeOfferings: js.UndefOr[InstanceTypeOfferingsList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstanceTypeOfferingsResult {
+    @inline
+    def apply(
+        InstanceTypeOfferings: js.UndefOr[InstanceTypeOfferingsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceTypeOfferingsResult = {
+      val __obj = js.Dynamic.literal()
+      InstanceTypeOfferings.foreach(__v => __obj.updateDynamic("InstanceTypeOfferings")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceTypeOfferingsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceTypesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var InstanceTypes: js.UndefOr[RequestInstanceTypeList]
+    var MaxResults: js.UndefOr[DITMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstanceTypesRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        InstanceTypes: js.UndefOr[RequestInstanceTypeList] = js.undefined,
+        MaxResults: js.UndefOr[DITMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      InstanceTypes.foreach(__v => __obj.updateDynamic("InstanceTypes")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceTypesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceTypesResult extends js.Object {
+    var InstanceTypes: js.UndefOr[InstanceTypeInfoList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstanceTypesResult {
+    @inline
+    def apply(
+        InstanceTypes: js.UndefOr[InstanceTypeInfoList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceTypesResult = {
+      val __obj = js.Dynamic.literal()
+      InstanceTypes.foreach(__v => __obj.updateDynamic("InstanceTypes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceTypesResult]
+    }
+  }
+
+  @js.native
   trait DescribeInstancesRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
@@ -11675,6 +12940,7 @@ package ec2 {
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
     var KeyNames: js.UndefOr[KeyNameStringList]
+    var KeyPairIds: js.UndefOr[KeyPairIdStringList]
   }
 
   object DescribeKeyPairsRequest {
@@ -11682,12 +12948,14 @@ package ec2 {
     def apply(
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
-        KeyNames: js.UndefOr[KeyNameStringList] = js.undefined
+        KeyNames: js.UndefOr[KeyNameStringList] = js.undefined,
+        KeyPairIds: js.UndefOr[KeyPairIdStringList] = js.undefined
     ): DescribeKeyPairsRequest = {
       val __obj = js.Dynamic.literal()
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       KeyNames.foreach(__v => __obj.updateDynamic("KeyNames")(__v.asInstanceOf[js.Any]))
+      KeyPairIds.foreach(__v => __obj.updateDynamic("KeyPairIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeKeyPairsRequest]
     }
   }
@@ -11814,6 +13082,314 @@ package ec2 {
       LaunchTemplates.foreach(__v => __obj.updateDynamic("LaunchTemplates")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLaunchTemplatesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds: js.UndefOr[
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdSet
+    ]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds: js.UndefOr[
+          LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdSet
+        ] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult extends js.Object {
+    var LocalGatewayRouteTableVirtualInterfaceGroupAssociations: js.UndefOr[
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociationSet
+    ]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult {
+    @inline
+    def apply(
+        LocalGatewayRouteTableVirtualInterfaceGroupAssociations: js.UndefOr[
+          LocalGatewayRouteTableVirtualInterfaceGroupAssociationSet
+        ] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociations.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVirtualInterfaceGroupAssociations")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTableVpcAssociationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayRouteTableVpcAssociationIds: js.UndefOr[LocalGatewayRouteTableVpcAssociationIdSet]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTableVpcAssociationsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayRouteTableVpcAssociationIds: js.UndefOr[LocalGatewayRouteTableVpcAssociationIdSet] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTableVpcAssociationsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableVpcAssociationIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVpcAssociationIds")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTableVpcAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTableVpcAssociationsResult extends js.Object {
+    var LocalGatewayRouteTableVpcAssociations: js.UndefOr[LocalGatewayRouteTableVpcAssociationSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTableVpcAssociationsResult {
+    @inline
+    def apply(
+        LocalGatewayRouteTableVpcAssociations: js.UndefOr[LocalGatewayRouteTableVpcAssociationSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTableVpcAssociationsResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTableVpcAssociations.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVpcAssociations")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTableVpcAssociationsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTablesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayRouteTableIds: js.UndefOr[LocalGatewayRouteTableIdSet]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTablesRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayRouteTableIds: js.UndefOr[LocalGatewayRouteTableIdSet] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTablesRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableIds")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTablesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayRouteTablesResult extends js.Object {
+    var LocalGatewayRouteTables: js.UndefOr[LocalGatewayRouteTableSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayRouteTablesResult {
+    @inline
+    def apply(
+        LocalGatewayRouteTables: js.UndefOr[LocalGatewayRouteTableSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayRouteTablesResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayRouteTables.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTables")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayRouteTablesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayVirtualInterfaceGroupsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayVirtualInterfaceGroupIds: js.UndefOr[LocalGatewayVirtualInterfaceGroupIdSet]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayVirtualInterfaceGroupsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayVirtualInterfaceGroupIds: js.UndefOr[LocalGatewayVirtualInterfaceGroupIdSet] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayVirtualInterfaceGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayVirtualInterfaceGroupIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceGroupIds")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayVirtualInterfaceGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayVirtualInterfaceGroupsResult extends js.Object {
+    var LocalGatewayVirtualInterfaceGroups: js.UndefOr[LocalGatewayVirtualInterfaceGroupSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayVirtualInterfaceGroupsResult {
+    @inline
+    def apply(
+        LocalGatewayVirtualInterfaceGroups: js.UndefOr[LocalGatewayVirtualInterfaceGroupSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayVirtualInterfaceGroupsResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayVirtualInterfaceGroups.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceGroups")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayVirtualInterfaceGroupsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayVirtualInterfacesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayVirtualInterfaceIds: js.UndefOr[LocalGatewayVirtualInterfaceIdSet]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayVirtualInterfacesRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayVirtualInterfaceIds: js.UndefOr[LocalGatewayVirtualInterfaceIdSet] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayVirtualInterfacesRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayVirtualInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayVirtualInterfacesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewayVirtualInterfacesResult extends js.Object {
+    var LocalGatewayVirtualInterfaces: js.UndefOr[LocalGatewayVirtualInterfaceSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewayVirtualInterfacesResult {
+    @inline
+    def apply(
+        LocalGatewayVirtualInterfaces: js.UndefOr[LocalGatewayVirtualInterfaceSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewayVirtualInterfacesResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayVirtualInterfaces.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaces")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewayVirtualInterfacesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewaysRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var LocalGatewayIds: js.UndefOr[LocalGatewayIdSet]
+    var MaxResults: js.UndefOr[LocalGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewaysRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LocalGatewayIds: js.UndefOr[LocalGatewayIdSet] = js.undefined,
+        MaxResults: js.UndefOr[LocalGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewaysRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LocalGatewayIds.foreach(__v => __obj.updateDynamic("LocalGatewayIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewaysRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocalGatewaysResult extends js.Object {
+    var LocalGateways: js.UndefOr[LocalGatewaySet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeLocalGatewaysResult {
+    @inline
+    def apply(
+        LocalGateways: js.UndefOr[LocalGatewaySet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeLocalGatewaysResult = {
+      val __obj = js.Dynamic.literal()
+      LocalGateways.foreach(__v => __obj.updateDynamic("LocalGateways")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocalGatewaysResult]
     }
   }
 
@@ -12124,6 +13700,7 @@ package ec2 {
   trait DescribePlacementGroupsRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
+    var GroupIds: js.UndefOr[PlacementGroupIdStringList]
     var GroupNames: js.UndefOr[PlacementGroupStringList]
   }
 
@@ -12132,11 +13709,13 @@ package ec2 {
     def apply(
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
+        GroupIds: js.UndefOr[PlacementGroupIdStringList] = js.undefined,
         GroupNames: js.UndefOr[PlacementGroupStringList] = js.undefined
     ): DescribePlacementGroupsRequest = {
       val __obj = js.Dynamic.literal()
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      GroupIds.foreach(__v => __obj.updateDynamic("GroupIds")(__v.asInstanceOf[js.Any]))
       GroupNames.foreach(__v => __obj.updateDynamic("GroupNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlacementGroupsRequest]
     }
@@ -12828,9 +14407,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSnapshotAttribute.
-    */
   @js.native
   trait DescribeSnapshotAttributeRequest extends js.Object {
     var Attribute: SnapshotAttributeName
@@ -12855,9 +14431,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSnapshotAttribute.
-    */
   @js.native
   trait DescribeSnapshotAttributeResult extends js.Object {
     var CreateVolumePermissions: js.UndefOr[CreateVolumePermissionList]
@@ -13591,6 +15164,108 @@ package ec2 {
   }
 
   @js.native
+  trait DescribeTransitGatewayMulticastDomainsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayMulticastDomainIds: js.UndefOr[TransitGatewayMulticastDomainIdStringList]
+  }
+
+  object DescribeTransitGatewayMulticastDomainsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainIds: js.UndefOr[TransitGatewayMulticastDomainIdStringList] = js.undefined
+    ): DescribeTransitGatewayMulticastDomainsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainIds.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainIds")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeTransitGatewayMulticastDomainsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayMulticastDomainsResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayMulticastDomains: js.UndefOr[TransitGatewayMulticastDomainList]
+  }
+
+  object DescribeTransitGatewayMulticastDomainsResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomains: js.UndefOr[TransitGatewayMulticastDomainList] = js.undefined
+    ): DescribeTransitGatewayMulticastDomainsResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomains.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomains")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeTransitGatewayMulticastDomainsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayPeeringAttachmentsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList]
+  }
+
+  object DescribeTransitGatewayPeeringAttachmentsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList] = js.undefined
+    ): DescribeTransitGatewayPeeringAttachmentsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentIds.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentIds")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeTransitGatewayPeeringAttachmentsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayPeeringAttachmentsResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayPeeringAttachments: js.UndefOr[TransitGatewayPeeringAttachmentList]
+  }
+
+  object DescribeTransitGatewayPeeringAttachmentsResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayPeeringAttachments: js.UndefOr[TransitGatewayPeeringAttachmentList] = js.undefined
+    ): DescribeTransitGatewayPeeringAttachmentsResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayPeeringAttachments.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayPeeringAttachments")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeTransitGatewayPeeringAttachmentsResult]
+    }
+  }
+
+  @js.native
   trait DescribeTransitGatewayRouteTablesRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
@@ -13739,9 +15414,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeVolumeAttribute.
-    */
   @js.native
   trait DescribeVolumeAttributeRequest extends js.Object {
     var Attribute: VolumeAttributeName
@@ -13766,9 +15438,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeVolumeAttribute.
-    */
   @js.native
   trait DescribeVolumeAttributeResult extends js.Object {
     var AutoEnableIO: js.UndefOr[AttributeBooleanValue]
@@ -14628,9 +16297,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DetachVolume.
-    */
   @js.native
   trait DetachVolumeRequest extends js.Object {
     var VolumeId: VolumeId
@@ -14815,18 +16481,178 @@ package ec2 {
     }
   }
 
+  /**
+    * Contains information about the errors that occurred when disabling fast snapshot restores.
+    */
+  @js.native
+  trait DisableFastSnapshotRestoreErrorItem extends js.Object {
+    var FastSnapshotRestoreStateErrors: js.UndefOr[DisableFastSnapshotRestoreStateErrorSet]
+    var SnapshotId: js.UndefOr[String]
+  }
+
+  object DisableFastSnapshotRestoreErrorItem {
+    @inline
+    def apply(
+        FastSnapshotRestoreStateErrors: js.UndefOr[DisableFastSnapshotRestoreStateErrorSet] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined
+    ): DisableFastSnapshotRestoreErrorItem = {
+      val __obj = js.Dynamic.literal()
+      FastSnapshotRestoreStateErrors.foreach(__v =>
+        __obj.updateDynamic("FastSnapshotRestoreStateErrors")(__v.asInstanceOf[js.Any])
+      )
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoreErrorItem]
+    }
+  }
+
+  /**
+    * Describes an error that occurred when disabling fast snapshot restores.
+    */
+  @js.native
+  trait DisableFastSnapshotRestoreStateError extends js.Object {
+    var Code: js.UndefOr[String]
+    var Message: js.UndefOr[String]
+  }
+
+  object DisableFastSnapshotRestoreStateError {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): DisableFastSnapshotRestoreStateError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoreStateError]
+    }
+  }
+
+  /**
+    * Contains information about an error that occurred when disabling fast snapshot restores.
+    */
+  @js.native
+  trait DisableFastSnapshotRestoreStateErrorItem extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var Error: js.UndefOr[DisableFastSnapshotRestoreStateError]
+  }
+
+  object DisableFastSnapshotRestoreStateErrorItem {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        Error: js.UndefOr[DisableFastSnapshotRestoreStateError] = js.undefined
+    ): DisableFastSnapshotRestoreStateErrorItem = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoreStateErrorItem]
+    }
+  }
+
+  /**
+    * Describes fast snapshot restores that were successfully disabled.
+    */
+  @js.native
+  trait DisableFastSnapshotRestoreSuccessItem extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var DisabledTime: js.UndefOr[MillisecondDateTime]
+    var DisablingTime: js.UndefOr[MillisecondDateTime]
+    var EnabledTime: js.UndefOr[MillisecondDateTime]
+    var EnablingTime: js.UndefOr[MillisecondDateTime]
+    var OptimizingTime: js.UndefOr[MillisecondDateTime]
+    var OwnerAlias: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+    var SnapshotId: js.UndefOr[String]
+    var State: js.UndefOr[FastSnapshotRestoreStateCode]
+    var StateTransitionReason: js.UndefOr[String]
+  }
+
+  object DisableFastSnapshotRestoreSuccessItem {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        DisabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        DisablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OptimizingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OwnerAlias: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[FastSnapshotRestoreStateCode] = js.undefined,
+        StateTransitionReason: js.UndefOr[String] = js.undefined
+    ): DisableFastSnapshotRestoreSuccessItem = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DisabledTime.foreach(__v => __obj.updateDynamic("DisabledTime")(__v.asInstanceOf[js.Any]))
+      DisablingTime.foreach(__v => __obj.updateDynamic("DisablingTime")(__v.asInstanceOf[js.Any]))
+      EnabledTime.foreach(__v => __obj.updateDynamic("EnabledTime")(__v.asInstanceOf[js.Any]))
+      EnablingTime.foreach(__v => __obj.updateDynamic("EnablingTime")(__v.asInstanceOf[js.Any]))
+      OptimizingTime.foreach(__v => __obj.updateDynamic("OptimizingTime")(__v.asInstanceOf[js.Any]))
+      OwnerAlias.foreach(__v => __obj.updateDynamic("OwnerAlias")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoreSuccessItem]
+    }
+  }
+
+  @js.native
+  trait DisableFastSnapshotRestoresRequest extends js.Object {
+    var AvailabilityZones: AvailabilityZoneStringList
+    var SourceSnapshotIds: SnapshotIdStringList
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DisableFastSnapshotRestoresRequest {
+    @inline
+    def apply(
+        AvailabilityZones: AvailabilityZoneStringList,
+        SourceSnapshotIds: SnapshotIdStringList,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DisableFastSnapshotRestoresRequest = {
+      val __obj = js.Dynamic.literal(
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
+        "SourceSnapshotIds" -> SourceSnapshotIds.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoresRequest]
+    }
+  }
+
+  @js.native
+  trait DisableFastSnapshotRestoresResult extends js.Object {
+    var Successful: js.UndefOr[DisableFastSnapshotRestoreSuccessSet]
+    var Unsuccessful: js.UndefOr[DisableFastSnapshotRestoreErrorSet]
+  }
+
+  object DisableFastSnapshotRestoresResult {
+    @inline
+    def apply(
+        Successful: js.UndefOr[DisableFastSnapshotRestoreSuccessSet] = js.undefined,
+        Unsuccessful: js.UndefOr[DisableFastSnapshotRestoreErrorSet] = js.undefined
+    ): DisableFastSnapshotRestoresResult = {
+      val __obj = js.Dynamic.literal()
+      Successful.foreach(__v => __obj.updateDynamic("Successful")(__v.asInstanceOf[js.Any]))
+      Unsuccessful.foreach(__v => __obj.updateDynamic("Unsuccessful")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableFastSnapshotRestoresResult]
+    }
+  }
+
   @js.native
   trait DisableTransitGatewayRouteTablePropagationRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayAttachmentId: String
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DisableTransitGatewayRouteTablePropagationRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayAttachmentId: String,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DisableTransitGatewayRouteTablePropagationRequest = {
       val __obj = js.Dynamic.literal(
@@ -15072,13 +16898,13 @@ package ec2 {
 
   @js.native
   trait DisassociateSubnetCidrBlockRequest extends js.Object {
-    var AssociationId: SubnetCidrAssociationId
+    var AssociationId: String
   }
 
   object DisassociateSubnetCidrBlockRequest {
     @inline
     def apply(
-        AssociationId: SubnetCidrAssociationId
+        AssociationId: String
     ): DisassociateSubnetCidrBlockRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
@@ -15108,17 +16934,62 @@ package ec2 {
   }
 
   @js.native
+  trait DisassociateTransitGatewayMulticastDomainRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var SubnetIds: js.UndefOr[ValueStringList]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object DisassociateTransitGatewayMulticastDomainRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        SubnetIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): DisassociateTransitGatewayMulticastDomainRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DisassociateTransitGatewayMulticastDomainRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateTransitGatewayMulticastDomainResult extends js.Object {
+    var Associations: js.UndefOr[TransitGatewayMulticastDomainAssociations]
+  }
+
+  object DisassociateTransitGatewayMulticastDomainResult {
+    @inline
+    def apply(
+        Associations: js.UndefOr[TransitGatewayMulticastDomainAssociations] = js.undefined
+    ): DisassociateTransitGatewayMulticastDomainResult = {
+      val __obj = js.Dynamic.literal()
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateTransitGatewayMulticastDomainResult]
+    }
+  }
+
+  @js.native
   trait DisassociateTransitGatewayRouteTableRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayAttachmentId: String
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DisassociateTransitGatewayRouteTableRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayAttachmentId: String,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DisassociateTransitGatewayRouteTableRequest = {
       val __obj = js.Dynamic.literal(
@@ -15298,6 +17169,38 @@ package ec2 {
   }
 
   /**
+    * Describes the disk.
+    */
+  @js.native
+  trait DiskInfo extends js.Object {
+    var Count: js.UndefOr[DiskCount]
+    var SizeInGB: js.UndefOr[DiskSize]
+    var Type: js.UndefOr[DiskType]
+  }
+
+  object DiskInfo {
+    @inline
+    def apply(
+        Count: js.UndefOr[DiskCount] = js.undefined,
+        SizeInGB: js.UndefOr[DiskSize] = js.undefined,
+        Type: js.UndefOr[DiskType] = js.undefined
+    ): DiskInfo = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      SizeInGB.foreach(__v => __obj.updateDynamic("SizeInGB")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DiskInfo]
+    }
+  }
+
+  object DiskTypeEnum {
+    val hdd = "hdd"
+    val ssd = "ssd"
+
+    val values = js.Object.freeze(js.Array(hdd, ssd))
+  }
+
+  /**
     * Describes a DNS entry.
     */
   @js.native
@@ -15392,6 +17295,35 @@ package ec2 {
     }
   }
 
+  object EbsEncryptionSupportEnum {
+    val unsupported = "unsupported"
+    val supported   = "supported"
+
+    val values = js.Object.freeze(js.Array(unsupported, supported))
+  }
+
+  /**
+    * Describes the Amazon EBS features supported by the instance type.
+    */
+  @js.native
+  trait EbsInfo extends js.Object {
+    var EbsOptimizedSupport: js.UndefOr[EbsOptimizedSupport]
+    var EncryptionSupport: js.UndefOr[EbsEncryptionSupport]
+  }
+
+  object EbsInfo {
+    @inline
+    def apply(
+        EbsOptimizedSupport: js.UndefOr[EbsOptimizedSupport] = js.undefined,
+        EncryptionSupport: js.UndefOr[EbsEncryptionSupport] = js.undefined
+    ): EbsInfo = {
+      val __obj = js.Dynamic.literal()
+      EbsOptimizedSupport.foreach(__v => __obj.updateDynamic("EbsOptimizedSupport")(__v.asInstanceOf[js.Any]))
+      EncryptionSupport.foreach(__v => __obj.updateDynamic("EncryptionSupport")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbsInfo]
+    }
+  }
+
   /**
     * Describes a parameter used to set up an EBS volume in a block device mapping.
     */
@@ -15440,6 +17372,14 @@ package ec2 {
       VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
     }
+  }
+
+  object EbsOptimizedSupportEnum {
+    val unsupported = "unsupported"
+    val supported   = "supported"
+    val default     = "default"
+
+    val values = js.Object.freeze(js.Array(unsupported, supported, default))
   }
 
   /**
@@ -15581,6 +17521,7 @@ package ec2 {
     var ElasticGpuState: js.UndefOr[ElasticGpuState]
     var ElasticGpuType: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ElasticGpus {
@@ -15591,7 +17532,8 @@ package ec2 {
         ElasticGpuId: js.UndefOr[String] = js.undefined,
         ElasticGpuState: js.UndefOr[ElasticGpuState] = js.undefined,
         ElasticGpuType: js.UndefOr[String] = js.undefined,
-        InstanceId: js.UndefOr[String] = js.undefined
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ElasticGpus = {
       val __obj = js.Dynamic.literal()
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -15600,6 +17542,7 @@ package ec2 {
       ElasticGpuState.foreach(__v => __obj.updateDynamic("ElasticGpuState")(__v.asInstanceOf[js.Any]))
       ElasticGpuType.foreach(__v => __obj.updateDynamic("ElasticGpuType")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticGpus]
     }
   }
@@ -15610,17 +17553,20 @@ package ec2 {
   @js.native
   trait ElasticInferenceAccelerator extends js.Object {
     var Type: String
+    var Count: js.UndefOr[ElasticInferenceAcceleratorCount]
   }
 
   object ElasticInferenceAccelerator {
     @inline
     def apply(
-        Type: String
+        Type: String,
+        Count: js.UndefOr[ElasticInferenceAcceleratorCount] = js.undefined
     ): ElasticInferenceAccelerator = {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticInferenceAccelerator]
     }
   }
@@ -15661,6 +17607,14 @@ package ec2 {
     }
   }
 
+  object EnaSupportEnum {
+    val unsupported = "unsupported"
+    val supported   = "supported"
+    val required    = "required"
+
+    val values = js.Object.freeze(js.Array(unsupported, supported, required))
+  }
+
   @js.native
   trait EnableEbsEncryptionByDefaultRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -15693,18 +17647,178 @@ package ec2 {
     }
   }
 
+  /**
+    * Contains information about the errors that occurred when enabling fast snapshot restores.
+    */
+  @js.native
+  trait EnableFastSnapshotRestoreErrorItem extends js.Object {
+    var FastSnapshotRestoreStateErrors: js.UndefOr[EnableFastSnapshotRestoreStateErrorSet]
+    var SnapshotId: js.UndefOr[String]
+  }
+
+  object EnableFastSnapshotRestoreErrorItem {
+    @inline
+    def apply(
+        FastSnapshotRestoreStateErrors: js.UndefOr[EnableFastSnapshotRestoreStateErrorSet] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined
+    ): EnableFastSnapshotRestoreErrorItem = {
+      val __obj = js.Dynamic.literal()
+      FastSnapshotRestoreStateErrors.foreach(__v =>
+        __obj.updateDynamic("FastSnapshotRestoreStateErrors")(__v.asInstanceOf[js.Any])
+      )
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoreErrorItem]
+    }
+  }
+
+  /**
+    * Describes an error that occurred when enabling fast snapshot restores.
+    */
+  @js.native
+  trait EnableFastSnapshotRestoreStateError extends js.Object {
+    var Code: js.UndefOr[String]
+    var Message: js.UndefOr[String]
+  }
+
+  object EnableFastSnapshotRestoreStateError {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): EnableFastSnapshotRestoreStateError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoreStateError]
+    }
+  }
+
+  /**
+    * Contains information about an error that occurred when enabling fast snapshot restores.
+    */
+  @js.native
+  trait EnableFastSnapshotRestoreStateErrorItem extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var Error: js.UndefOr[EnableFastSnapshotRestoreStateError]
+  }
+
+  object EnableFastSnapshotRestoreStateErrorItem {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        Error: js.UndefOr[EnableFastSnapshotRestoreStateError] = js.undefined
+    ): EnableFastSnapshotRestoreStateErrorItem = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoreStateErrorItem]
+    }
+  }
+
+  /**
+    * Describes fast snapshot restores that were successfully enabled.
+    */
+  @js.native
+  trait EnableFastSnapshotRestoreSuccessItem extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var DisabledTime: js.UndefOr[MillisecondDateTime]
+    var DisablingTime: js.UndefOr[MillisecondDateTime]
+    var EnabledTime: js.UndefOr[MillisecondDateTime]
+    var EnablingTime: js.UndefOr[MillisecondDateTime]
+    var OptimizingTime: js.UndefOr[MillisecondDateTime]
+    var OwnerAlias: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+    var SnapshotId: js.UndefOr[String]
+    var State: js.UndefOr[FastSnapshotRestoreStateCode]
+    var StateTransitionReason: js.UndefOr[String]
+  }
+
+  object EnableFastSnapshotRestoreSuccessItem {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        DisabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        DisablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnabledTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        EnablingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OptimizingTime: js.UndefOr[MillisecondDateTime] = js.undefined,
+        OwnerAlias: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[FastSnapshotRestoreStateCode] = js.undefined,
+        StateTransitionReason: js.UndefOr[String] = js.undefined
+    ): EnableFastSnapshotRestoreSuccessItem = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DisabledTime.foreach(__v => __obj.updateDynamic("DisabledTime")(__v.asInstanceOf[js.Any]))
+      DisablingTime.foreach(__v => __obj.updateDynamic("DisablingTime")(__v.asInstanceOf[js.Any]))
+      EnabledTime.foreach(__v => __obj.updateDynamic("EnabledTime")(__v.asInstanceOf[js.Any]))
+      EnablingTime.foreach(__v => __obj.updateDynamic("EnablingTime")(__v.asInstanceOf[js.Any]))
+      OptimizingTime.foreach(__v => __obj.updateDynamic("OptimizingTime")(__v.asInstanceOf[js.Any]))
+      OwnerAlias.foreach(__v => __obj.updateDynamic("OwnerAlias")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoreSuccessItem]
+    }
+  }
+
+  @js.native
+  trait EnableFastSnapshotRestoresRequest extends js.Object {
+    var AvailabilityZones: AvailabilityZoneStringList
+    var SourceSnapshotIds: SnapshotIdStringList
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object EnableFastSnapshotRestoresRequest {
+    @inline
+    def apply(
+        AvailabilityZones: AvailabilityZoneStringList,
+        SourceSnapshotIds: SnapshotIdStringList,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): EnableFastSnapshotRestoresRequest = {
+      val __obj = js.Dynamic.literal(
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
+        "SourceSnapshotIds" -> SourceSnapshotIds.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoresRequest]
+    }
+  }
+
+  @js.native
+  trait EnableFastSnapshotRestoresResult extends js.Object {
+    var Successful: js.UndefOr[EnableFastSnapshotRestoreSuccessSet]
+    var Unsuccessful: js.UndefOr[EnableFastSnapshotRestoreErrorSet]
+  }
+
+  object EnableFastSnapshotRestoresResult {
+    @inline
+    def apply(
+        Successful: js.UndefOr[EnableFastSnapshotRestoreSuccessSet] = js.undefined,
+        Unsuccessful: js.UndefOr[EnableFastSnapshotRestoreErrorSet] = js.undefined
+    ): EnableFastSnapshotRestoresResult = {
+      val __obj = js.Dynamic.literal()
+      Successful.foreach(__v => __obj.updateDynamic("Successful")(__v.asInstanceOf[js.Any]))
+      Unsuccessful.foreach(__v => __obj.updateDynamic("Unsuccessful")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableFastSnapshotRestoresResult]
+    }
+  }
+
   @js.native
   trait EnableTransitGatewayRouteTablePropagationRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayAttachmentId: String
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object EnableTransitGatewayRouteTablePropagationRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayAttachmentId: String,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): EnableTransitGatewayRouteTablePropagationRequest = {
       val __obj = js.Dynamic.literal(
@@ -15757,9 +17871,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for EnableVolumeIO.
-    */
   @js.native
   trait EnableVolumeIORequest extends js.Object {
     var VolumeId: VolumeId
@@ -16121,6 +18232,7 @@ package ec2 {
     var InstanceExportDetails: js.UndefOr[InstanceExportDetails]
     var State: js.UndefOr[ExportTaskState]
     var StatusMessage: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ExportTask {
@@ -16131,7 +18243,8 @@ package ec2 {
         ExportToS3Task: js.UndefOr[ExportToS3Task] = js.undefined,
         InstanceExportDetails: js.UndefOr[InstanceExportDetails] = js.undefined,
         State: js.UndefOr[ExportTaskState] = js.undefined,
-        StatusMessage: js.UndefOr[String] = js.undefined
+        StatusMessage: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ExportTask = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -16140,6 +18253,7 @@ package ec2 {
       InstanceExportDetails.foreach(__v => __obj.updateDynamic("InstanceExportDetails")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportTask]
     }
   }
@@ -16258,7 +18372,7 @@ package ec2 {
   @js.native
   trait ExportTransitGatewayRoutesRequest extends js.Object {
     var S3Bucket: String
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
   }
@@ -16267,7 +18381,7 @@ package ec2 {
     @inline
     def apply(
         S3Bucket: String,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined
     ): ExportTransitGatewayRoutesRequest = {
@@ -16320,6 +18434,16 @@ package ec2 {
     }
   }
 
+  object FastSnapshotRestoreStateCodeEnum {
+    val enabling   = "enabling"
+    val optimizing = "optimizing"
+    val enabled    = "enabled"
+    val disabling  = "disabling"
+    val disabled   = "disabled"
+
+    val values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
+  }
+
   /**
     * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a describe operation are documented with the describe operation. For example:
     * * <a>DescribeAvailabilityZones</a>
@@ -16359,6 +18483,12 @@ package ec2 {
     val fulfilled           = "fulfilled"
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
+  }
+
+  object FleetCapacityReservationUsageStrategyEnum {
+    val `use-capacity-reservations-first` = "use-capacity-reservations-first"
+
+    val values = js.Object.freeze(js.Array(`use-capacity-reservations-first`))
   }
 
   /**
@@ -16723,6 +18853,53 @@ package ec2 {
   }
 
   /**
+    * Describes the FPGA accelerator for the instance type.
+    */
+  @js.native
+  trait FpgaDeviceInfo extends js.Object {
+    var Count: js.UndefOr[FpgaDeviceCount]
+    var Manufacturer: js.UndefOr[FpgaDeviceManufacturerName]
+    var MemoryInfo: js.UndefOr[FpgaDeviceMemoryInfo]
+    var Name: js.UndefOr[FpgaDeviceName]
+  }
+
+  object FpgaDeviceInfo {
+    @inline
+    def apply(
+        Count: js.UndefOr[FpgaDeviceCount] = js.undefined,
+        Manufacturer: js.UndefOr[FpgaDeviceManufacturerName] = js.undefined,
+        MemoryInfo: js.UndefOr[FpgaDeviceMemoryInfo] = js.undefined,
+        Name: js.UndefOr[FpgaDeviceName] = js.undefined
+    ): FpgaDeviceInfo = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Manufacturer.foreach(__v => __obj.updateDynamic("Manufacturer")(__v.asInstanceOf[js.Any]))
+      MemoryInfo.foreach(__v => __obj.updateDynamic("MemoryInfo")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FpgaDeviceInfo]
+    }
+  }
+
+  /**
+    * Describes the memory for the FPGA accelerator for the instance type.
+    */
+  @js.native
+  trait FpgaDeviceMemoryInfo extends js.Object {
+    var SizeInMiB: js.UndefOr[FpgaDeviceMemorySize]
+  }
+
+  object FpgaDeviceMemoryInfo {
+    @inline
+    def apply(
+        SizeInMiB: js.UndefOr[FpgaDeviceMemorySize] = js.undefined
+    ): FpgaDeviceMemoryInfo = {
+      val __obj = js.Dynamic.literal()
+      SizeInMiB.foreach(__v => __obj.updateDynamic("SizeInMiB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FpgaDeviceMemoryInfo]
+    }
+  }
+
+  /**
     * Describes an Amazon FPGA image (AFI).
     */
   @js.native
@@ -16854,6 +19031,28 @@ package ec2 {
     val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
   }
 
+  /**
+    * Describes the FPGAs for the instance type.
+    */
+  @js.native
+  trait FpgaInfo extends js.Object {
+    var Fpgas: js.UndefOr[FpgaDeviceInfoList]
+    var TotalFpgaMemoryInMiB: js.UndefOr[totalFpgaMemory]
+  }
+
+  object FpgaInfo {
+    @inline
+    def apply(
+        Fpgas: js.UndefOr[FpgaDeviceInfoList] = js.undefined,
+        TotalFpgaMemoryInMiB: js.UndefOr[totalFpgaMemory] = js.undefined
+    ): FpgaInfo = {
+      val __obj = js.Dynamic.literal()
+      Fpgas.foreach(__v => __obj.updateDynamic("Fpgas")(__v.asInstanceOf[js.Any]))
+      TotalFpgaMemoryInMiB.foreach(__v => __obj.updateDynamic("TotalFpgaMemoryInMiB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FpgaInfo]
+    }
+  }
+
   object GatewayTypeEnum {
     val `ipsec.1` = "ipsec.1"
 
@@ -16918,6 +19117,58 @@ package ec2 {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       TotalInstanceCount.foreach(__v => __obj.updateDynamic("TotalInstanceCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCapacityReservationUsageResult]
+    }
+  }
+
+  @js.native
+  trait GetCoipPoolUsageRequest extends js.Object {
+    var PoolId: String
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[CoipPoolMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetCoipPoolUsageRequest {
+    @inline
+    def apply(
+        PoolId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[CoipPoolMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetCoipPoolUsageRequest = {
+      val __obj = js.Dynamic.literal(
+        "PoolId" -> PoolId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCoipPoolUsageRequest]
+    }
+  }
+
+  @js.native
+  trait GetCoipPoolUsageResult extends js.Object {
+    var CoipAddressUsages: js.UndefOr[CoipAddressUsageSet]
+    var CoipPoolId: js.UndefOr[String]
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+  }
+
+  object GetCoipPoolUsageResult {
+    @inline
+    def apply(
+        CoipAddressUsages: js.UndefOr[CoipAddressUsageSet] = js.undefined,
+        CoipPoolId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined
+    ): GetCoipPoolUsageResult = {
+      val __obj = js.Dynamic.literal()
+      CoipAddressUsages.foreach(__v => __obj.updateDynamic("CoipAddressUsages")(__v.asInstanceOf[js.Any]))
+      CoipPoolId.foreach(__v => __obj.updateDynamic("CoipPoolId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCoipPoolUsageResult]
     }
   }
 
@@ -17007,6 +19258,45 @@ package ec2 {
       ImageData.foreach(__v => __obj.updateDynamic("ImageData")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConsoleScreenshotResult]
+    }
+  }
+
+  @js.native
+  trait GetDefaultCreditSpecificationRequest extends js.Object {
+    var InstanceFamily: UnlimitedSupportedInstanceFamily
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object GetDefaultCreditSpecificationRequest {
+    @inline
+    def apply(
+        InstanceFamily: UnlimitedSupportedInstanceFamily,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): GetDefaultCreditSpecificationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceFamily" -> InstanceFamily.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDefaultCreditSpecificationRequest]
+    }
+  }
+
+  @js.native
+  trait GetDefaultCreditSpecificationResult extends js.Object {
+    var InstanceFamilyCreditSpecification: js.UndefOr[InstanceFamilyCreditSpecification]
+  }
+
+  object GetDefaultCreditSpecificationResult {
+    @inline
+    def apply(
+        InstanceFamilyCreditSpecification: js.UndefOr[InstanceFamilyCreditSpecification] = js.undefined
+    ): GetDefaultCreditSpecificationResult = {
+      val __obj = js.Dynamic.literal()
+      InstanceFamilyCreditSpecification.foreach(__v =>
+        __obj.updateDynamic("InstanceFamilyCreditSpecification")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetDefaultCreditSpecificationResult]
     }
   }
 
@@ -17280,7 +19570,7 @@ package ec2 {
 
   @js.native
   trait GetTransitGatewayAttachmentPropagationsRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
+    var TransitGatewayAttachmentId: String
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[TransitGatewayMaxResults]
@@ -17290,7 +19580,7 @@ package ec2 {
   object GetTransitGatewayAttachmentPropagationsRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
+        TransitGatewayAttachmentId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
@@ -17330,8 +19620,59 @@ package ec2 {
   }
 
   @js.native
+  trait GetTransitGatewayMulticastDomainAssociationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayMulticastDomainAssociationsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): GetTransitGatewayMulticastDomainAssociationsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetTransitGatewayMulticastDomainAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayMulticastDomainAssociationsResult extends js.Object {
+    var MulticastDomainAssociations: js.UndefOr[TransitGatewayMulticastDomainAssociationList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayMulticastDomainAssociationsResult {
+    @inline
+    def apply(
+        MulticastDomainAssociations: js.UndefOr[TransitGatewayMulticastDomainAssociationList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetTransitGatewayMulticastDomainAssociationsResult = {
+      val __obj = js.Dynamic.literal()
+      MulticastDomainAssociations.foreach(__v =>
+        __obj.updateDynamic("MulticastDomainAssociations")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTransitGatewayMulticastDomainAssociationsResult]
+    }
+  }
+
+  @js.native
   trait GetTransitGatewayRouteTableAssociationsRequest extends js.Object {
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[TransitGatewayMaxResults]
@@ -17341,7 +19682,7 @@ package ec2 {
   object GetTransitGatewayRouteTableAssociationsRequest {
     @inline
     def apply(
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
@@ -17380,7 +19721,7 @@ package ec2 {
 
   @js.native
   trait GetTransitGatewayRouteTablePropagationsRequest extends js.Object {
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[TransitGatewayMaxResults]
@@ -17390,7 +19731,7 @@ package ec2 {
   object GetTransitGatewayRouteTablePropagationsRequest {
     @inline
     def apply(
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
         MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
@@ -17426,6 +19767,75 @@ package ec2 {
         __obj.updateDynamic("TransitGatewayRouteTablePropagations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetTransitGatewayRouteTablePropagationsResult]
+    }
+  }
+
+  /**
+    * Describes the GPU accelerators for the instance type.
+    */
+  @js.native
+  trait GpuDeviceInfo extends js.Object {
+    var Count: js.UndefOr[GpuDeviceCount]
+    var Manufacturer: js.UndefOr[GpuDeviceManufacturerName]
+    var MemoryInfo: js.UndefOr[GpuDeviceMemoryInfo]
+    var Name: js.UndefOr[GpuDeviceName]
+  }
+
+  object GpuDeviceInfo {
+    @inline
+    def apply(
+        Count: js.UndefOr[GpuDeviceCount] = js.undefined,
+        Manufacturer: js.UndefOr[GpuDeviceManufacturerName] = js.undefined,
+        MemoryInfo: js.UndefOr[GpuDeviceMemoryInfo] = js.undefined,
+        Name: js.UndefOr[GpuDeviceName] = js.undefined
+    ): GpuDeviceInfo = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Manufacturer.foreach(__v => __obj.updateDynamic("Manufacturer")(__v.asInstanceOf[js.Any]))
+      MemoryInfo.foreach(__v => __obj.updateDynamic("MemoryInfo")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GpuDeviceInfo]
+    }
+  }
+
+  /**
+    * Describes the memory available to the GPU accelerator.
+    */
+  @js.native
+  trait GpuDeviceMemoryInfo extends js.Object {
+    var SizeInMiB: js.UndefOr[GpuDeviceMemorySize]
+  }
+
+  object GpuDeviceMemoryInfo {
+    @inline
+    def apply(
+        SizeInMiB: js.UndefOr[GpuDeviceMemorySize] = js.undefined
+    ): GpuDeviceMemoryInfo = {
+      val __obj = js.Dynamic.literal()
+      SizeInMiB.foreach(__v => __obj.updateDynamic("SizeInMiB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GpuDeviceMemoryInfo]
+    }
+  }
+
+  /**
+    * Describes the GPU accelerators for the instance type.
+    */
+  @js.native
+  trait GpuInfo extends js.Object {
+    var Gpus: js.UndefOr[GpuDeviceInfoList]
+    var TotalGpuMemoryInMiB: js.UndefOr[totalGpuMemory]
+  }
+
+  object GpuInfo {
+    @inline
+    def apply(
+        Gpus: js.UndefOr[GpuDeviceInfoList] = js.undefined,
+        TotalGpuMemoryInMiB: js.UndefOr[totalGpuMemory] = js.undefined
+    ): GpuInfo = {
+      val __obj = js.Dynamic.literal()
+      Gpus.foreach(__v => __obj.updateDynamic("Gpus")(__v.asInstanceOf[js.Any]))
+      TotalGpuMemoryInMiB.foreach(__v => __obj.updateDynamic("TotalGpuMemoryInMiB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GpuInfo]
     }
   }
 
@@ -17545,8 +19955,10 @@ package ec2 {
   @js.native
   trait Host extends js.Object {
     var AllocationTime: js.UndefOr[DateTime]
+    var AllowsMultipleInstanceTypes: js.UndefOr[AllowsMultipleInstanceTypes]
     var AutoPlacement: js.UndefOr[AutoPlacement]
     var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneId: js.UndefOr[String]
     var AvailableCapacity: js.UndefOr[AvailableCapacity]
     var ClientToken: js.UndefOr[String]
     var HostId: js.UndefOr[String]
@@ -17554,6 +19966,8 @@ package ec2 {
     var HostRecovery: js.UndefOr[HostRecovery]
     var HostReservationId: js.UndefOr[String]
     var Instances: js.UndefOr[HostInstanceList]
+    var MemberOfServiceLinkedResourceGroup: js.UndefOr[Boolean]
+    var OwnerId: js.UndefOr[String]
     var ReleaseTime: js.UndefOr[DateTime]
     var State: js.UndefOr[AllocationState]
     var Tags: js.UndefOr[TagList]
@@ -17563,8 +19977,10 @@ package ec2 {
     @inline
     def apply(
         AllocationTime: js.UndefOr[DateTime] = js.undefined,
+        AllowsMultipleInstanceTypes: js.UndefOr[AllowsMultipleInstanceTypes] = js.undefined,
         AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AvailabilityZoneId: js.UndefOr[String] = js.undefined,
         AvailableCapacity: js.UndefOr[AvailableCapacity] = js.undefined,
         ClientToken: js.UndefOr[String] = js.undefined,
         HostId: js.UndefOr[String] = js.undefined,
@@ -17572,14 +19988,20 @@ package ec2 {
         HostRecovery: js.UndefOr[HostRecovery] = js.undefined,
         HostReservationId: js.UndefOr[String] = js.undefined,
         Instances: js.UndefOr[HostInstanceList] = js.undefined,
+        MemberOfServiceLinkedResourceGroup: js.UndefOr[Boolean] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
         ReleaseTime: js.UndefOr[DateTime] = js.undefined,
         State: js.UndefOr[AllocationState] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): Host = {
       val __obj = js.Dynamic.literal()
       AllocationTime.foreach(__v => __obj.updateDynamic("AllocationTime")(__v.asInstanceOf[js.Any]))
+      AllowsMultipleInstanceTypes.foreach(__v =>
+        __obj.updateDynamic("AllowsMultipleInstanceTypes")(__v.asInstanceOf[js.Any])
+      )
       AutoPlacement.foreach(__v => __obj.updateDynamic("AutoPlacement")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       AvailableCapacity.foreach(__v => __obj.updateDynamic("AvailableCapacity")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
@@ -17587,6 +20009,10 @@ package ec2 {
       HostRecovery.foreach(__v => __obj.updateDynamic("HostRecovery")(__v.asInstanceOf[js.Any]))
       HostReservationId.foreach(__v => __obj.updateDynamic("HostReservationId")(__v.asInstanceOf[js.Any]))
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      MemberOfServiceLinkedResourceGroup.foreach(__v =>
+        __obj.updateDynamic("MemberOfServiceLinkedResourceGroup")(__v.asInstanceOf[js.Any])
+      )
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       ReleaseTime.foreach(__v => __obj.updateDynamic("ReleaseTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -17601,17 +20027,20 @@ package ec2 {
   trait HostInstance extends js.Object {
     var InstanceId: js.UndefOr[String]
     var InstanceType: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
   }
 
   object HostInstance {
     @inline
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined,
-        InstanceType: js.UndefOr[String] = js.undefined
+        InstanceType: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined
     ): HostInstance = {
       val __obj = js.Dynamic.literal()
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HostInstance]
     }
   }
@@ -17654,11 +20083,12 @@ package ec2 {
   }
 
   /**
-    * Describes properties of a Dedicated Host.
+    * Describes the properties of a Dedicated Host.
     */
   @js.native
   trait HostProperties extends js.Object {
     var Cores: js.UndefOr[Int]
+    var InstanceFamily: js.UndefOr[String]
     var InstanceType: js.UndefOr[String]
     var Sockets: js.UndefOr[Int]
     var TotalVCpus: js.UndefOr[Int]
@@ -17668,12 +20098,14 @@ package ec2 {
     @inline
     def apply(
         Cores: js.UndefOr[Int] = js.undefined,
+        InstanceFamily: js.UndefOr[String] = js.undefined,
         InstanceType: js.UndefOr[String] = js.undefined,
         Sockets: js.UndefOr[Int] = js.undefined,
         TotalVCpus: js.UndefOr[Int] = js.undefined
     ): HostProperties = {
       val __obj = js.Dynamic.literal()
       Cores.foreach(__v => __obj.updateDynamic("Cores")(__v.asInstanceOf[js.Any]))
+      InstanceFamily.foreach(__v => __obj.updateDynamic("InstanceFamily")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       Sockets.foreach(__v => __obj.updateDynamic("Sockets")(__v.asInstanceOf[js.Any]))
       TotalVCpus.foreach(__v => __obj.updateDynamic("TotalVCpus")(__v.asInstanceOf[js.Any]))
@@ -17751,6 +20183,13 @@ package ec2 {
     val host      = "host"
 
     val values = js.Object.freeze(js.Array(dedicated, host))
+  }
+
+  object HttpTokensStateEnum {
+    val optional = "optional"
+    val required = "required"
+
+    val values = js.Object.freeze(js.Array(optional, required))
   }
 
   object HypervisorTypeEnum {
@@ -18165,6 +20604,44 @@ package ec2 {
     }
   }
 
+  /**
+    * The request information of license configurations.
+    */
+  @js.native
+  trait ImportImageLicenseConfigurationRequest extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object ImportImageLicenseConfigurationRequest {
+    @inline
+    def apply(
+        LicenseConfigurationArn: js.UndefOr[String] = js.undefined
+    ): ImportImageLicenseConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      LicenseConfigurationArn.foreach(__v => __obj.updateDynamic("LicenseConfigurationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportImageLicenseConfigurationRequest]
+    }
+  }
+
+  /**
+    * The response information for license configurations.
+    */
+  @js.native
+  trait ImportImageLicenseConfigurationResponse extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object ImportImageLicenseConfigurationResponse {
+    @inline
+    def apply(
+        LicenseConfigurationArn: js.UndefOr[String] = js.undefined
+    ): ImportImageLicenseConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      LicenseConfigurationArn.foreach(__v => __obj.updateDynamic("LicenseConfigurationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportImageLicenseConfigurationResponse]
+    }
+  }
+
   @js.native
   trait ImportImageRequest extends js.Object {
     var Architecture: js.UndefOr[String]
@@ -18175,7 +20652,8 @@ package ec2 {
     var DryRun: js.UndefOr[Boolean]
     var Encrypted: js.UndefOr[Boolean]
     var Hypervisor: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var KmsKeyId: js.UndefOr[String]
+    var LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListRequest]
     var LicenseType: js.UndefOr[String]
     var Platform: js.UndefOr[String]
     var RoleName: js.UndefOr[String]
@@ -18192,7 +20670,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
         Hypervisor: js.UndefOr[String] = js.undefined,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListRequest] = js.undefined,
         LicenseType: js.UndefOr[String] = js.undefined,
         Platform: js.UndefOr[String] = js.undefined,
         RoleName: js.UndefOr[String] = js.undefined
@@ -18207,6 +20686,7 @@ package ec2 {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Hypervisor.foreach(__v => __obj.updateDynamic("Hypervisor")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LicenseSpecifications.foreach(__v => __obj.updateDynamic("LicenseSpecifications")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
@@ -18223,6 +20703,7 @@ package ec2 {
     var ImageId: js.UndefOr[String]
     var ImportTaskId: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
+    var LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListResponse]
     var LicenseType: js.UndefOr[String]
     var Platform: js.UndefOr[String]
     var Progress: js.UndefOr[String]
@@ -18241,6 +20722,7 @@ package ec2 {
         ImageId: js.UndefOr[String] = js.undefined,
         ImportTaskId: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListResponse] = js.undefined,
         LicenseType: js.UndefOr[String] = js.undefined,
         Platform: js.UndefOr[String] = js.undefined,
         Progress: js.UndefOr[String] = js.undefined,
@@ -18256,6 +20738,7 @@ package ec2 {
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       ImportTaskId.foreach(__v => __obj.updateDynamic("ImportTaskId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LicenseSpecifications.foreach(__v => __obj.updateDynamic("LicenseSpecifications")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
@@ -18278,12 +20761,14 @@ package ec2 {
     var ImageId: js.UndefOr[String]
     var ImportTaskId: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
+    var LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListResponse]
     var LicenseType: js.UndefOr[String]
     var Platform: js.UndefOr[String]
     var Progress: js.UndefOr[String]
     var SnapshotDetails: js.UndefOr[SnapshotDetailList]
     var Status: js.UndefOr[String]
     var StatusMessage: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ImportImageTask {
@@ -18296,12 +20781,14 @@ package ec2 {
         ImageId: js.UndefOr[String] = js.undefined,
         ImportTaskId: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseSpecifications: js.UndefOr[ImportImageLicenseSpecificationListResponse] = js.undefined,
         LicenseType: js.UndefOr[String] = js.undefined,
         Platform: js.UndefOr[String] = js.undefined,
         Progress: js.UndefOr[String] = js.undefined,
         SnapshotDetails: js.UndefOr[SnapshotDetailList] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
-        StatusMessage: js.UndefOr[String] = js.undefined
+        StatusMessage: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ImportImageTask = {
       val __obj = js.Dynamic.literal()
       Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
@@ -18311,12 +20798,14 @@ package ec2 {
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       ImportTaskId.foreach(__v => __obj.updateDynamic("ImportTaskId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LicenseSpecifications.foreach(__v => __obj.updateDynamic("LicenseSpecifications")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
       SnapshotDetails.foreach(__v => __obj.updateDynamic("SnapshotDetails")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportImageTask]
     }
   }
@@ -18485,7 +20974,7 @@ package ec2 {
 
   @js.native
   trait ImportKeyPairRequest extends js.Object {
-    var KeyName: String
+    var KeyName: KeyPairName
     var PublicKeyMaterial: Blob
     var DryRun: js.UndefOr[Boolean]
   }
@@ -18493,7 +20982,7 @@ package ec2 {
   object ImportKeyPairRequest {
     @inline
     def apply(
-        KeyName: String,
+        KeyName: KeyPairName,
         PublicKeyMaterial: Blob,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ImportKeyPairRequest = {
@@ -18593,6 +21082,7 @@ package ec2 {
     var Description: js.UndefOr[String]
     var ImportTaskId: js.UndefOr[String]
     var SnapshotTaskDetail: js.UndefOr[SnapshotTaskDetail]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ImportSnapshotTask {
@@ -18600,12 +21090,14 @@ package ec2 {
     def apply(
         Description: js.UndefOr[String] = js.undefined,
         ImportTaskId: js.UndefOr[String] = js.undefined,
-        SnapshotTaskDetail: js.UndefOr[SnapshotTaskDetail] = js.undefined
+        SnapshotTaskDetail: js.UndefOr[SnapshotTaskDetail] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ImportSnapshotTask = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ImportTaskId.foreach(__v => __obj.updateDynamic("ImportTaskId")(__v.asInstanceOf[js.Any]))
       SnapshotTaskDetail.foreach(__v => __obj.updateDynamic("SnapshotTaskDetail")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportSnapshotTask]
     }
   }
@@ -18688,6 +21180,50 @@ package ec2 {
   }
 
   /**
+    * Describes the Inference accelerators for the instance type.
+    */
+  @js.native
+  trait InferenceAcceleratorInfo extends js.Object {
+    var Accelerators: js.UndefOr[InferenceDeviceInfoList]
+  }
+
+  object InferenceAcceleratorInfo {
+    @inline
+    def apply(
+        Accelerators: js.UndefOr[InferenceDeviceInfoList] = js.undefined
+    ): InferenceAcceleratorInfo = {
+      val __obj = js.Dynamic.literal()
+      Accelerators.foreach(__v => __obj.updateDynamic("Accelerators")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferenceAcceleratorInfo]
+    }
+  }
+
+  /**
+    * Describes the Inference accelerators for the instance type.
+    */
+  @js.native
+  trait InferenceDeviceInfo extends js.Object {
+    var Count: js.UndefOr[InferenceDeviceCount]
+    var Manufacturer: js.UndefOr[InferenceDeviceManufacturerName]
+    var Name: js.UndefOr[InferenceDeviceName]
+  }
+
+  object InferenceDeviceInfo {
+    @inline
+    def apply(
+        Count: js.UndefOr[InferenceDeviceCount] = js.undefined,
+        Manufacturer: js.UndefOr[InferenceDeviceManufacturerName] = js.undefined,
+        Name: js.UndefOr[InferenceDeviceName] = js.undefined
+    ): InferenceDeviceInfo = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Manufacturer.foreach(__v => __obj.updateDynamic("Manufacturer")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferenceDeviceInfo]
+    }
+  }
+
+  /**
     * Describes an instance.
     */
   @js.native
@@ -18714,8 +21250,10 @@ package ec2 {
     var KeyName: js.UndefOr[String]
     var LaunchTime: js.UndefOr[DateTime]
     var Licenses: js.UndefOr[LicenseList]
+    var MetadataOptions: js.UndefOr[InstanceMetadataOptionsResponse]
     var Monitoring: js.UndefOr[Monitoring]
     var NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceList]
+    var OutpostArn: js.UndefOr[String]
     var Placement: js.UndefOr[Placement]
     var Platform: js.UndefOr[PlatformValues]
     var PrivateDnsName: js.UndefOr[String]
@@ -18764,8 +21302,10 @@ package ec2 {
         KeyName: js.UndefOr[String] = js.undefined,
         LaunchTime: js.UndefOr[DateTime] = js.undefined,
         Licenses: js.UndefOr[LicenseList] = js.undefined,
+        MetadataOptions: js.UndefOr[InstanceMetadataOptionsResponse] = js.undefined,
         Monitoring: js.UndefOr[Monitoring] = js.undefined,
         NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceList] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         Placement: js.UndefOr[Placement] = js.undefined,
         Platform: js.UndefOr[PlatformValues] = js.undefined,
         PrivateDnsName: js.UndefOr[String] = js.undefined,
@@ -18815,8 +21355,10 @@ package ec2 {
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Licenses.foreach(__v => __obj.updateDynamic("Licenses")(__v.asInstanceOf[js.Any]))
+      MetadataOptions.foreach(__v => __obj.updateDynamic("MetadataOptions")(__v.asInstanceOf[js.Any]))
       Monitoring.foreach(__v => __obj.updateDynamic("Monitoring")(__v.asInstanceOf[js.Any]))
       NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
@@ -18992,7 +21534,7 @@ package ec2 {
   }
 
   /**
-    * Information about the instance type that the Dedicated Host supports.
+    * Information about the number of instances that can be launched onto the Dedicated Host.
     */
   @js.native
   trait InstanceCapacity extends js.Object {
@@ -19039,7 +21581,7 @@ package ec2 {
   }
 
   /**
-    * Describes the credit option for CPU usage of a T2 or T3 instance.
+    * Describes the credit option for CPU usage of a burstable performance instance.
     */
   @js.native
   trait InstanceCreditSpecification extends js.Object {
@@ -19061,7 +21603,7 @@ package ec2 {
   }
 
   /**
-    * Describes the credit option for CPU usage of a T2 or T3 instance.
+    * Describes the credit option for CPU usage of a burstable performance instance.
     */
   @js.native
   trait InstanceCreditSpecificationRequest extends js.Object {
@@ -19101,6 +21643,28 @@ package ec2 {
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       TargetEnvironment.foreach(__v => __obj.updateDynamic("TargetEnvironment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceExportDetails]
+    }
+  }
+
+  /**
+    * Describes the default credit option for CPU usage of a burstable performance instance family.
+    */
+  @js.native
+  trait InstanceFamilyCreditSpecification extends js.Object {
+    var CpuCredits: js.UndefOr[String]
+    var InstanceFamily: js.UndefOr[UnlimitedSupportedInstanceFamily]
+  }
+
+  object InstanceFamilyCreditSpecification {
+    @inline
+    def apply(
+        CpuCredits: js.UndefOr[String] = js.undefined,
+        InstanceFamily: js.UndefOr[UnlimitedSupportedInstanceFamily] = js.undefined
+    ): InstanceFamilyCreditSpecification = {
+      val __obj = js.Dynamic.literal()
+      CpuCredits.foreach(__v => __obj.updateDynamic("CpuCredits")(__v.asInstanceOf[js.Any]))
+      InstanceFamily.foreach(__v => __obj.updateDynamic("InstanceFamily")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceFamilyCreditSpecification]
     }
   }
 
@@ -19198,6 +21762,73 @@ package ec2 {
     val targeted = "targeted"
 
     val values = js.Object.freeze(js.Array(open, targeted))
+  }
+
+  object InstanceMetadataEndpointStateEnum {
+    val disabled = "disabled"
+    val enabled  = "enabled"
+
+    val values = js.Object.freeze(js.Array(disabled, enabled))
+  }
+
+  /**
+    * The metadata options for the instance.
+    */
+  @js.native
+  trait InstanceMetadataOptionsRequest extends js.Object {
+    var HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState]
+    var HttpPutResponseHopLimit: js.UndefOr[Int]
+    var HttpTokens: js.UndefOr[HttpTokensState]
+  }
+
+  object InstanceMetadataOptionsRequest {
+    @inline
+    def apply(
+        HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState] = js.undefined,
+        HttpPutResponseHopLimit: js.UndefOr[Int] = js.undefined,
+        HttpTokens: js.UndefOr[HttpTokensState] = js.undefined
+    ): InstanceMetadataOptionsRequest = {
+      val __obj = js.Dynamic.literal()
+      HttpEndpoint.foreach(__v => __obj.updateDynamic("HttpEndpoint")(__v.asInstanceOf[js.Any]))
+      HttpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("HttpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      HttpTokens.foreach(__v => __obj.updateDynamic("HttpTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceMetadataOptionsRequest]
+    }
+  }
+
+  /**
+    * The metadata options for the instance.
+    */
+  @js.native
+  trait InstanceMetadataOptionsResponse extends js.Object {
+    var HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState]
+    var HttpPutResponseHopLimit: js.UndefOr[Int]
+    var HttpTokens: js.UndefOr[HttpTokensState]
+    var State: js.UndefOr[InstanceMetadataOptionsState]
+  }
+
+  object InstanceMetadataOptionsResponse {
+    @inline
+    def apply(
+        HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState] = js.undefined,
+        HttpPutResponseHopLimit: js.UndefOr[Int] = js.undefined,
+        HttpTokens: js.UndefOr[HttpTokensState] = js.undefined,
+        State: js.UndefOr[InstanceMetadataOptionsState] = js.undefined
+    ): InstanceMetadataOptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      HttpEndpoint.foreach(__v => __obj.updateDynamic("HttpEndpoint")(__v.asInstanceOf[js.Any]))
+      HttpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("HttpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      HttpTokens.foreach(__v => __obj.updateDynamic("HttpTokens")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceMetadataOptionsResponse]
+    }
+  }
+
+  object InstanceMetadataOptionsStateEnum {
+    val pending = "pending"
+    val applied = "applied"
+
+    val values = js.Object.freeze(js.Array(pending, applied))
   }
 
   /**
@@ -19517,6 +22148,7 @@ package ec2 {
     var InstanceId: js.UndefOr[String]
     var InstanceState: js.UndefOr[InstanceState]
     var InstanceStatus: js.UndefOr[InstanceStatusSummary]
+    var OutpostArn: js.UndefOr[String]
     var SystemStatus: js.UndefOr[InstanceStatusSummary]
   }
 
@@ -19528,6 +22160,7 @@ package ec2 {
         InstanceId: js.UndefOr[String] = js.undefined,
         InstanceState: js.UndefOr[InstanceState] = js.undefined,
         InstanceStatus: js.UndefOr[InstanceStatusSummary] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         SystemStatus: js.UndefOr[InstanceStatusSummary] = js.undefined
     ): InstanceStatus = {
       val __obj = js.Dynamic.literal()
@@ -19536,6 +22169,7 @@ package ec2 {
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       InstanceState.foreach(__v => __obj.updateDynamic("InstanceState")(__v.asInstanceOf[js.Any]))
       InstanceStatus.foreach(__v => __obj.updateDynamic("InstanceStatus")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       SystemStatus.foreach(__v => __obj.updateDynamic("SystemStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceStatus]
     }
@@ -19619,6 +22253,28 @@ package ec2 {
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceStatusSummary]
+    }
+  }
+
+  /**
+    * Describes the disks that are available for the instance type.
+    */
+  @js.native
+  trait InstanceStorageInfo extends js.Object {
+    var Disks: js.UndefOr[DiskInfoList]
+    var TotalSizeInGB: js.UndefOr[DiskSize]
+  }
+
+  object InstanceStorageInfo {
+    @inline
+    def apply(
+        Disks: js.UndefOr[DiskInfoList] = js.undefined,
+        TotalSizeInGB: js.UndefOr[DiskSize] = js.undefined
+    ): InstanceStorageInfo = {
+      val __obj = js.Dynamic.literal()
+      Disks.foreach(__v => __obj.updateDynamic("Disks")(__v.asInstanceOf[js.Any]))
+      TotalSizeInGB.foreach(__v => __obj.updateDynamic("TotalSizeInGB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceStorageInfo]
     }
   }
 
@@ -19763,7 +22419,10 @@ package ec2 {
     val `c5d.2xlarge`   = "c5d.2xlarge"
     val `c5d.4xlarge`   = "c5d.4xlarge"
     val `c5d.9xlarge`   = "c5d.9xlarge"
+    val `c5d.12xlarge`  = "c5d.12xlarge"
     val `c5d.18xlarge`  = "c5d.18xlarge"
+    val `c5d.24xlarge`  = "c5d.24xlarge"
+    val `c5d.metal`     = "c5d.metal"
     val `c5n.large`     = "c5n.large"
     val `c5n.xlarge`    = "c5n.xlarge"
     val `c5n.2xlarge`   = "c5n.2xlarge"
@@ -19887,6 +22546,10 @@ package ec2 {
     val `r5n.12xlarge`  = "r5n.12xlarge"
     val `r5n.16xlarge`  = "r5n.16xlarge"
     val `r5n.24xlarge`  = "r5n.24xlarge"
+    val `inf1.xlarge`   = "inf1.xlarge"
+    val `inf1.2xlarge`  = "inf1.2xlarge"
+    val `inf1.6xlarge`  = "inf1.6xlarge"
+    val `inf1.24xlarge` = "inf1.24xlarge"
 
     val values = js.Object.freeze(
       js.Array(
@@ -20030,7 +22693,10 @@ package ec2 {
         `c5d.2xlarge`,
         `c5d.4xlarge`,
         `c5d.9xlarge`,
+        `c5d.12xlarge`,
         `c5d.18xlarge`,
+        `c5d.24xlarge`,
+        `c5d.metal`,
         `c5n.large`,
         `c5n.xlarge`,
         `c5n.2xlarge`,
@@ -20153,9 +22819,129 @@ package ec2 {
         `r5n.8xlarge`,
         `r5n.12xlarge`,
         `r5n.16xlarge`,
-        `r5n.24xlarge`
+        `r5n.24xlarge`,
+        `inf1.xlarge`,
+        `inf1.2xlarge`,
+        `inf1.6xlarge`,
+        `inf1.24xlarge`
       )
     )
+  }
+
+  object InstanceTypeHypervisorEnum {
+    val nitro = "nitro"
+    val xen   = "xen"
+
+    val values = js.Object.freeze(js.Array(nitro, xen))
+  }
+
+  /**
+    * Describes the instance type.
+    */
+  @js.native
+  trait InstanceTypeInfo extends js.Object {
+    var AutoRecoverySupported: js.UndefOr[AutoRecoveryFlag]
+    var BareMetal: js.UndefOr[BareMetalFlag]
+    var BurstablePerformanceSupported: js.UndefOr[BurstablePerformanceFlag]
+    var CurrentGeneration: js.UndefOr[CurrentGenerationFlag]
+    var DedicatedHostsSupported: js.UndefOr[DedicatedHostFlag]
+    var EbsInfo: js.UndefOr[EbsInfo]
+    var FpgaInfo: js.UndefOr[FpgaInfo]
+    var FreeTierEligible: js.UndefOr[FreeTierEligibleFlag]
+    var GpuInfo: js.UndefOr[GpuInfo]
+    var HibernationSupported: js.UndefOr[HibernationFlag]
+    var Hypervisor: js.UndefOr[InstanceTypeHypervisor]
+    var InferenceAcceleratorInfo: js.UndefOr[InferenceAcceleratorInfo]
+    var InstanceStorageInfo: js.UndefOr[InstanceStorageInfo]
+    var InstanceStorageSupported: js.UndefOr[InstanceStorageFlag]
+    var InstanceType: js.UndefOr[InstanceType]
+    var MemoryInfo: js.UndefOr[MemoryInfo]
+    var NetworkInfo: js.UndefOr[NetworkInfo]
+    var PlacementGroupInfo: js.UndefOr[PlacementGroupInfo]
+    var ProcessorInfo: js.UndefOr[ProcessorInfo]
+    var SupportedRootDeviceTypes: js.UndefOr[RootDeviceTypeList]
+    var SupportedUsageClasses: js.UndefOr[UsageClassTypeList]
+    var VCpuInfo: js.UndefOr[VCpuInfo]
+  }
+
+  object InstanceTypeInfo {
+    @inline
+    def apply(
+        AutoRecoverySupported: js.UndefOr[AutoRecoveryFlag] = js.undefined,
+        BareMetal: js.UndefOr[BareMetalFlag] = js.undefined,
+        BurstablePerformanceSupported: js.UndefOr[BurstablePerformanceFlag] = js.undefined,
+        CurrentGeneration: js.UndefOr[CurrentGenerationFlag] = js.undefined,
+        DedicatedHostsSupported: js.UndefOr[DedicatedHostFlag] = js.undefined,
+        EbsInfo: js.UndefOr[EbsInfo] = js.undefined,
+        FpgaInfo: js.UndefOr[FpgaInfo] = js.undefined,
+        FreeTierEligible: js.UndefOr[FreeTierEligibleFlag] = js.undefined,
+        GpuInfo: js.UndefOr[GpuInfo] = js.undefined,
+        HibernationSupported: js.UndefOr[HibernationFlag] = js.undefined,
+        Hypervisor: js.UndefOr[InstanceTypeHypervisor] = js.undefined,
+        InferenceAcceleratorInfo: js.UndefOr[InferenceAcceleratorInfo] = js.undefined,
+        InstanceStorageInfo: js.UndefOr[InstanceStorageInfo] = js.undefined,
+        InstanceStorageSupported: js.UndefOr[InstanceStorageFlag] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        MemoryInfo: js.UndefOr[MemoryInfo] = js.undefined,
+        NetworkInfo: js.UndefOr[NetworkInfo] = js.undefined,
+        PlacementGroupInfo: js.UndefOr[PlacementGroupInfo] = js.undefined,
+        ProcessorInfo: js.UndefOr[ProcessorInfo] = js.undefined,
+        SupportedRootDeviceTypes: js.UndefOr[RootDeviceTypeList] = js.undefined,
+        SupportedUsageClasses: js.UndefOr[UsageClassTypeList] = js.undefined,
+        VCpuInfo: js.UndefOr[VCpuInfo] = js.undefined
+    ): InstanceTypeInfo = {
+      val __obj = js.Dynamic.literal()
+      AutoRecoverySupported.foreach(__v => __obj.updateDynamic("AutoRecoverySupported")(__v.asInstanceOf[js.Any]))
+      BareMetal.foreach(__v => __obj.updateDynamic("BareMetal")(__v.asInstanceOf[js.Any]))
+      BurstablePerformanceSupported.foreach(__v =>
+        __obj.updateDynamic("BurstablePerformanceSupported")(__v.asInstanceOf[js.Any])
+      )
+      CurrentGeneration.foreach(__v => __obj.updateDynamic("CurrentGeneration")(__v.asInstanceOf[js.Any]))
+      DedicatedHostsSupported.foreach(__v => __obj.updateDynamic("DedicatedHostsSupported")(__v.asInstanceOf[js.Any]))
+      EbsInfo.foreach(__v => __obj.updateDynamic("EbsInfo")(__v.asInstanceOf[js.Any]))
+      FpgaInfo.foreach(__v => __obj.updateDynamic("FpgaInfo")(__v.asInstanceOf[js.Any]))
+      FreeTierEligible.foreach(__v => __obj.updateDynamic("FreeTierEligible")(__v.asInstanceOf[js.Any]))
+      GpuInfo.foreach(__v => __obj.updateDynamic("GpuInfo")(__v.asInstanceOf[js.Any]))
+      HibernationSupported.foreach(__v => __obj.updateDynamic("HibernationSupported")(__v.asInstanceOf[js.Any]))
+      Hypervisor.foreach(__v => __obj.updateDynamic("Hypervisor")(__v.asInstanceOf[js.Any]))
+      InferenceAcceleratorInfo.foreach(__v => __obj.updateDynamic("InferenceAcceleratorInfo")(__v.asInstanceOf[js.Any]))
+      InstanceStorageInfo.foreach(__v => __obj.updateDynamic("InstanceStorageInfo")(__v.asInstanceOf[js.Any]))
+      InstanceStorageSupported.foreach(__v => __obj.updateDynamic("InstanceStorageSupported")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      MemoryInfo.foreach(__v => __obj.updateDynamic("MemoryInfo")(__v.asInstanceOf[js.Any]))
+      NetworkInfo.foreach(__v => __obj.updateDynamic("NetworkInfo")(__v.asInstanceOf[js.Any]))
+      PlacementGroupInfo.foreach(__v => __obj.updateDynamic("PlacementGroupInfo")(__v.asInstanceOf[js.Any]))
+      ProcessorInfo.foreach(__v => __obj.updateDynamic("ProcessorInfo")(__v.asInstanceOf[js.Any]))
+      SupportedRootDeviceTypes.foreach(__v => __obj.updateDynamic("SupportedRootDeviceTypes")(__v.asInstanceOf[js.Any]))
+      SupportedUsageClasses.foreach(__v => __obj.updateDynamic("SupportedUsageClasses")(__v.asInstanceOf[js.Any]))
+      VCpuInfo.foreach(__v => __obj.updateDynamic("VCpuInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceTypeInfo]
+    }
+  }
+
+  /**
+    * The instance types offered.
+    */
+  @js.native
+  trait InstanceTypeOffering extends js.Object {
+    var InstanceType: js.UndefOr[InstanceType]
+    var Location: js.UndefOr[Location]
+    var LocationType: js.UndefOr[LocationType]
+  }
+
+  object InstanceTypeOffering {
+    @inline
+    def apply(
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined,
+        LocationType: js.UndefOr[LocationType] = js.undefined
+    ): InstanceTypeOffering = {
+      val __obj = js.Dynamic.literal()
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      LocationType.foreach(__v => __obj.updateDynamic("LocationType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceTypeOffering]
+    }
   }
 
   /**
@@ -20352,6 +23138,7 @@ package ec2 {
     var KeyFingerprint: js.UndefOr[String]
     var KeyMaterial: js.UndefOr[SensitiveUserData]
     var KeyName: js.UndefOr[String]
+    var KeyPairId: js.UndefOr[String]
   }
 
   object KeyPair {
@@ -20359,12 +23146,14 @@ package ec2 {
     def apply(
         KeyFingerprint: js.UndefOr[String] = js.undefined,
         KeyMaterial: js.UndefOr[SensitiveUserData] = js.undefined,
-        KeyName: js.UndefOr[String] = js.undefined
+        KeyName: js.UndefOr[String] = js.undefined,
+        KeyPairId: js.UndefOr[String] = js.undefined
     ): KeyPair = {
       val __obj = js.Dynamic.literal()
       KeyFingerprint.foreach(__v => __obj.updateDynamic("KeyFingerprint")(__v.asInstanceOf[js.Any]))
       KeyMaterial.foreach(__v => __obj.updateDynamic("KeyMaterial")(__v.asInstanceOf[js.Any]))
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
+      KeyPairId.foreach(__v => __obj.updateDynamic("KeyPairId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPair]
     }
   }
@@ -20376,17 +23165,23 @@ package ec2 {
   trait KeyPairInfo extends js.Object {
     var KeyFingerprint: js.UndefOr[String]
     var KeyName: js.UndefOr[String]
+    var KeyPairId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object KeyPairInfo {
     @inline
     def apply(
         KeyFingerprint: js.UndefOr[String] = js.undefined,
-        KeyName: js.UndefOr[String] = js.undefined
+        KeyName: js.UndefOr[String] = js.undefined,
+        KeyPairId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): KeyPairInfo = {
       val __obj = js.Dynamic.literal()
       KeyFingerprint.foreach(__v => __obj.updateDynamic("KeyFingerprint")(__v.asInstanceOf[js.Any]))
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
+      KeyPairId.foreach(__v => __obj.updateDynamic("KeyPairId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPairInfo]
     }
   }
@@ -20813,17 +23608,20 @@ package ec2 {
   @js.native
   trait LaunchTemplateElasticInferenceAccelerator extends js.Object {
     var Type: String
+    var Count: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorCount]
   }
 
   object LaunchTemplateElasticInferenceAccelerator {
     @inline
     def apply(
-        Type: String
+        Type: String,
+        Count: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorCount] = js.undefined
     ): LaunchTemplateElasticInferenceAccelerator = {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateElasticInferenceAccelerator]
     }
   }
@@ -20833,15 +23631,18 @@ package ec2 {
     */
   @js.native
   trait LaunchTemplateElasticInferenceAcceleratorResponse extends js.Object {
+    var Count: js.UndefOr[Int]
     var Type: js.UndefOr[String]
   }
 
   object LaunchTemplateElasticInferenceAcceleratorResponse {
     @inline
     def apply(
+        Count: js.UndefOr[Int] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): LaunchTemplateElasticInferenceAcceleratorResponse = {
       val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateElasticInferenceAcceleratorResponse]
     }
@@ -21188,6 +23989,7 @@ package ec2 {
     var AvailabilityZone: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
     var HostId: js.UndefOr[String]
+    var HostResourceGroupArn: js.UndefOr[String]
     var SpreadDomain: js.UndefOr[String]
     var Tenancy: js.UndefOr[Tenancy]
   }
@@ -21199,6 +24001,7 @@ package ec2 {
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined,
         HostId: js.UndefOr[String] = js.undefined,
+        HostResourceGroupArn: js.UndefOr[String] = js.undefined,
         SpreadDomain: js.UndefOr[String] = js.undefined,
         Tenancy: js.UndefOr[Tenancy] = js.undefined
     ): LaunchTemplatePlacement = {
@@ -21207,6 +24010,7 @@ package ec2 {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
+      HostResourceGroupArn.foreach(__v => __obj.updateDynamic("HostResourceGroupArn")(__v.asInstanceOf[js.Any]))
       SpreadDomain.foreach(__v => __obj.updateDynamic("SpreadDomain")(__v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplatePlacement]
@@ -21222,6 +24026,7 @@ package ec2 {
     var AvailabilityZone: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
     var HostId: js.UndefOr[String]
+    var HostResourceGroupArn: js.UndefOr[String]
     var SpreadDomain: js.UndefOr[String]
     var Tenancy: js.UndefOr[Tenancy]
   }
@@ -21233,6 +24038,7 @@ package ec2 {
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined,
         HostId: js.UndefOr[String] = js.undefined,
+        HostResourceGroupArn: js.UndefOr[String] = js.undefined,
         SpreadDomain: js.UndefOr[String] = js.undefined,
         Tenancy: js.UndefOr[Tenancy] = js.undefined
     ): LaunchTemplatePlacementRequest = {
@@ -21241,6 +24047,7 @@ package ec2 {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
+      HostResourceGroupArn.foreach(__v => __obj.updateDynamic("HostResourceGroupArn")(__v.asInstanceOf[js.Any]))
       SpreadDomain.foreach(__v => __obj.updateDynamic("SpreadDomain")(__v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplatePlacementRequest]
@@ -21606,6 +24413,256 @@ package ec2 {
     }
   }
 
+  /**
+    * Describes a local gateway.
+    */
+  @js.native
+  trait LocalGateway extends js.Object {
+    var LocalGatewayId: js.UndefOr[String]
+    var OutpostArn: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+    var State: js.UndefOr[String]
+  }
+
+  object LocalGateway {
+    @inline
+    def apply(
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[String] = js.undefined
+    ): LocalGateway = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGateway]
+    }
+  }
+
+  /**
+    * Describes a route for a local gateway route table.
+    */
+  @js.native
+  trait LocalGatewayRoute extends js.Object {
+    var DestinationCidrBlock: js.UndefOr[String]
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+    var LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String]
+    var State: js.UndefOr[LocalGatewayRouteState]
+    var Type: js.UndefOr[LocalGatewayRouteType]
+  }
+
+  object LocalGatewayRoute {
+    @inline
+    def apply(
+        DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+        LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[LocalGatewayRouteState] = js.undefined,
+        Type: js.UndefOr[LocalGatewayRouteType] = js.undefined
+    ): LocalGatewayRoute = {
+      val __obj = js.Dynamic.literal()
+      DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayVirtualInterfaceGroupId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceGroupId")(__v.asInstanceOf[js.Any])
+      )
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGatewayRoute]
+    }
+  }
+
+  object LocalGatewayRouteStateEnum {
+    val pending   = "pending"
+    val active    = "active"
+    val blackhole = "blackhole"
+    val deleting  = "deleting"
+    val deleted   = "deleted"
+
+    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
+  }
+
+  /**
+    * Describes a local gateway route table.
+    */
+  @js.native
+  trait LocalGatewayRouteTable extends js.Object {
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+    var OutpostArn: js.UndefOr[String]
+    var State: js.UndefOr[String]
+  }
+
+  object LocalGatewayRouteTable {
+    @inline
+    def apply(
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[String] = js.undefined
+    ): LocalGatewayRouteTable = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGatewayRouteTable]
+    }
+  }
+
+  /**
+    * Describes an association between a local gateway route table and a virtual interface group.
+    */
+  @js.native
+  trait LocalGatewayRouteTableVirtualInterfaceGroupAssociation extends js.Object {
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+    var LocalGatewayRouteTableVirtualInterfaceGroupAssociationId: js.UndefOr[String]
+    var LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String]
+    var State: js.UndefOr[String]
+  }
+
+  object LocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+    @inline
+    def apply(
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableVirtualInterfaceGroupAssociationId: js.UndefOr[String] = js.undefined,
+        LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[String] = js.undefined
+    ): LocalGatewayRouteTableVirtualInterfaceGroupAssociation = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociationId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVirtualInterfaceGroupAssociationId")(__v.asInstanceOf[js.Any])
+      )
+      LocalGatewayVirtualInterfaceGroupId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceGroupId")(__v.asInstanceOf[js.Any])
+      )
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGatewayRouteTableVirtualInterfaceGroupAssociation]
+    }
+  }
+
+  /**
+    * Describes an association between a local gateway route table and a VPC.
+    */
+  @js.native
+  trait LocalGatewayRouteTableVpcAssociation extends js.Object {
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalGatewayRouteTableId: js.UndefOr[String]
+    var LocalGatewayRouteTableVpcAssociationId: js.UndefOr[String]
+    var State: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object LocalGatewayRouteTableVpcAssociation {
+    @inline
+    def apply(
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+        LocalGatewayRouteTableVpcAssociationId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): LocalGatewayRouteTableVpcAssociation = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayRouteTableVpcAssociationId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayRouteTableVpcAssociationId")(__v.asInstanceOf[js.Any])
+      )
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGatewayRouteTableVpcAssociation]
+    }
+  }
+
+  object LocalGatewayRouteTypeEnum {
+    val static     = "static"
+    val propagated = "propagated"
+
+    val values = js.Object.freeze(js.Array(static, propagated))
+  }
+
+  /**
+    * Describes a local gateway virtual interface.
+    */
+  @js.native
+  trait LocalGatewayVirtualInterface extends js.Object {
+    var LocalAddress: js.UndefOr[String]
+    var LocalBgpAsn: js.UndefOr[Int]
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalGatewayVirtualInterfaceId: js.UndefOr[String]
+    var PeerAddress: js.UndefOr[String]
+    var PeerBgpAsn: js.UndefOr[Int]
+    var Vlan: js.UndefOr[Int]
+  }
+
+  object LocalGatewayVirtualInterface {
+    @inline
+    def apply(
+        LocalAddress: js.UndefOr[String] = js.undefined,
+        LocalBgpAsn: js.UndefOr[Int] = js.undefined,
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalGatewayVirtualInterfaceId: js.UndefOr[String] = js.undefined,
+        PeerAddress: js.UndefOr[String] = js.undefined,
+        PeerBgpAsn: js.UndefOr[Int] = js.undefined,
+        Vlan: js.UndefOr[Int] = js.undefined
+    ): LocalGatewayVirtualInterface = {
+      val __obj = js.Dynamic.literal()
+      LocalAddress.foreach(__v => __obj.updateDynamic("LocalAddress")(__v.asInstanceOf[js.Any]))
+      LocalBgpAsn.foreach(__v => __obj.updateDynamic("LocalBgpAsn")(__v.asInstanceOf[js.Any]))
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayVirtualInterfaceId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceId")(__v.asInstanceOf[js.Any])
+      )
+      PeerAddress.foreach(__v => __obj.updateDynamic("PeerAddress")(__v.asInstanceOf[js.Any]))
+      PeerBgpAsn.foreach(__v => __obj.updateDynamic("PeerBgpAsn")(__v.asInstanceOf[js.Any]))
+      Vlan.foreach(__v => __obj.updateDynamic("Vlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalGatewayVirtualInterface]
+    }
+  }
+
+  /**
+    * Describes a local gateway virtual interface group.
+    */
+  @js.native
+  trait LocalGatewayVirtualInterfaceGroup extends js.Object {
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String]
+    var LocalGatewayVirtualInterfaceIds: js.UndefOr[LocalGatewayVirtualInterfaceIdSet]
+  }
+
+  object LocalGatewayVirtualInterfaceGroup {
+    @inline
+    def apply(
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalGatewayVirtualInterfaceGroupId: js.UndefOr[String] = js.undefined,
+        LocalGatewayVirtualInterfaceIds: js.UndefOr[LocalGatewayVirtualInterfaceIdSet] = js.undefined
+    ): LocalGatewayVirtualInterfaceGroup = {
+      val __obj = js.Dynamic.literal()
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayVirtualInterfaceGroupId.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceGroupId")(__v.asInstanceOf[js.Any])
+      )
+      LocalGatewayVirtualInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("LocalGatewayVirtualInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[LocalGatewayVirtualInterfaceGroup]
+    }
+  }
+
+  object LocationTypeEnum {
+    val region                 = "region"
+    val `availability-zone`    = "availability-zone"
+    val `availability-zone-id` = "availability-zone-id"
+
+    val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
+  }
+
   object LogDestinationTypeEnum {
     val `cloud-watch-logs` = "cloud-watch-logs"
     val s3                 = "s3"
@@ -21617,6 +24674,32 @@ package ec2 {
     val spot = "spot"
 
     val values = js.Object.freeze(js.Array(spot))
+  }
+
+  object MembershipTypeEnum {
+    val static = "static"
+    val igmp   = "igmp"
+
+    val values = js.Object.freeze(js.Array(static, igmp))
+  }
+
+  /**
+    * Describes the memory for the instance type.
+    */
+  @js.native
+  trait MemoryInfo extends js.Object {
+    var SizeInMiB: js.UndefOr[MemorySize]
+  }
+
+  object MemoryInfo {
+    @inline
+    def apply(
+        SizeInMiB: js.UndefOr[MemorySize] = js.undefined
+    ): MemoryInfo = {
+      val __obj = js.Dynamic.literal()
+      SizeInMiB.foreach(__v => __obj.updateDynamic("SizeInMiB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemoryInfo]
+    }
   }
 
   @js.native
@@ -21714,6 +24797,48 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       Return.foreach(__v => __obj.updateDynamic("Return")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClientVpnEndpointResult]
+    }
+  }
+
+  @js.native
+  trait ModifyDefaultCreditSpecificationRequest extends js.Object {
+    var CpuCredits: String
+    var InstanceFamily: UnlimitedSupportedInstanceFamily
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ModifyDefaultCreditSpecificationRequest {
+    @inline
+    def apply(
+        CpuCredits: String,
+        InstanceFamily: UnlimitedSupportedInstanceFamily,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): ModifyDefaultCreditSpecificationRequest = {
+      val __obj = js.Dynamic.literal(
+        "CpuCredits"     -> CpuCredits.asInstanceOf[js.Any],
+        "InstanceFamily" -> InstanceFamily.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDefaultCreditSpecificationRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyDefaultCreditSpecificationResult extends js.Object {
+    var InstanceFamilyCreditSpecification: js.UndefOr[InstanceFamilyCreditSpecification]
+  }
+
+  object ModifyDefaultCreditSpecificationResult {
+    @inline
+    def apply(
+        InstanceFamilyCreditSpecification: js.UndefOr[InstanceFamilyCreditSpecification] = js.undefined
+    ): ModifyDefaultCreditSpecificationResult = {
+      val __obj = js.Dynamic.literal()
+      InstanceFamilyCreditSpecification.foreach(__v =>
+        __obj.updateDynamic("InstanceFamilyCreditSpecification")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ModifyDefaultCreditSpecificationResult]
     }
   }
 
@@ -21865,6 +24990,8 @@ package ec2 {
     var HostIds: RequestHostIdList
     var AutoPlacement: js.UndefOr[AutoPlacement]
     var HostRecovery: js.UndefOr[HostRecovery]
+    var InstanceFamily: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
   }
 
   object ModifyHostsRequest {
@@ -21872,7 +24999,9 @@ package ec2 {
     def apply(
         HostIds: RequestHostIdList,
         AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined,
-        HostRecovery: js.UndefOr[HostRecovery] = js.undefined
+        HostRecovery: js.UndefOr[HostRecovery] = js.undefined,
+        InstanceFamily: js.UndefOr[String] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined
     ): ModifyHostsRequest = {
       val __obj = js.Dynamic.literal(
         "HostIds" -> HostIds.asInstanceOf[js.Any]
@@ -21880,6 +25009,8 @@ package ec2 {
 
       AutoPlacement.foreach(__v => __obj.updateDynamic("AutoPlacement")(__v.asInstanceOf[js.Any]))
       HostRecovery.foreach(__v => __obj.updateDynamic("HostRecovery")(__v.asInstanceOf[js.Any]))
+      InstanceFamily.foreach(__v => __obj.updateDynamic("InstanceFamily")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyHostsRequest]
     }
   }
@@ -21953,7 +25084,7 @@ package ec2 {
     */
   @js.native
   trait ModifyImageAttributeRequest extends js.Object {
-    var ImageId: ImageId
+    var ImageId: String
     var Attribute: js.UndefOr[String]
     var Description: js.UndefOr[AttributeValue]
     var DryRun: js.UndefOr[Boolean]
@@ -21968,7 +25099,7 @@ package ec2 {
   object ModifyImageAttributeRequest {
     @inline
     def apply(
-        ImageId: ImageId,
+        ImageId: String,
         Attribute: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[AttributeValue] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
@@ -22192,11 +25323,61 @@ package ec2 {
   }
 
   @js.native
+  trait ModifyInstanceMetadataOptionsRequest extends js.Object {
+    var InstanceId: String
+    var DryRun: js.UndefOr[Boolean]
+    var HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState]
+    var HttpPutResponseHopLimit: js.UndefOr[Int]
+    var HttpTokens: js.UndefOr[HttpTokensState]
+  }
+
+  object ModifyInstanceMetadataOptionsRequest {
+    @inline
+    def apply(
+        InstanceId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState] = js.undefined,
+        HttpPutResponseHopLimit: js.UndefOr[Int] = js.undefined,
+        HttpTokens: js.UndefOr[HttpTokensState] = js.undefined
+    ): ModifyInstanceMetadataOptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      HttpEndpoint.foreach(__v => __obj.updateDynamic("HttpEndpoint")(__v.asInstanceOf[js.Any]))
+      HttpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("HttpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      HttpTokens.foreach(__v => __obj.updateDynamic("HttpTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyInstanceMetadataOptionsRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyInstanceMetadataOptionsResult extends js.Object {
+    var InstanceId: js.UndefOr[String]
+    var InstanceMetadataOptions: js.UndefOr[InstanceMetadataOptionsResponse]
+  }
+
+  object ModifyInstanceMetadataOptionsResult {
+    @inline
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        InstanceMetadataOptions: js.UndefOr[InstanceMetadataOptionsResponse] = js.undefined
+    ): ModifyInstanceMetadataOptionsResult = {
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceMetadataOptions.foreach(__v => __obj.updateDynamic("InstanceMetadataOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyInstanceMetadataOptionsResult]
+    }
+  }
+
+  @js.native
   trait ModifyInstancePlacementRequest extends js.Object {
     var InstanceId: InstanceId
     var Affinity: js.UndefOr[Affinity]
     var GroupName: js.UndefOr[PlacementGroupName]
-    var HostId: js.UndefOr[HostId]
+    var HostId: js.UndefOr[DedicatedHostId]
+    var HostResourceGroupArn: js.UndefOr[String]
     var PartitionNumber: js.UndefOr[Int]
     var Tenancy: js.UndefOr[HostTenancy]
   }
@@ -22207,7 +25388,8 @@ package ec2 {
         InstanceId: InstanceId,
         Affinity: js.UndefOr[Affinity] = js.undefined,
         GroupName: js.UndefOr[PlacementGroupName] = js.undefined,
-        HostId: js.UndefOr[HostId] = js.undefined,
+        HostId: js.UndefOr[DedicatedHostId] = js.undefined,
+        HostResourceGroupArn: js.UndefOr[String] = js.undefined,
         PartitionNumber: js.UndefOr[Int] = js.undefined,
         Tenancy: js.UndefOr[HostTenancy] = js.undefined
     ): ModifyInstancePlacementRequest = {
@@ -22218,6 +25400,7 @@ package ec2 {
       Affinity.foreach(__v => __obj.updateDynamic("Affinity")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
+      HostResourceGroupArn.foreach(__v => __obj.updateDynamic("HostResourceGroupArn")(__v.asInstanceOf[js.Any]))
       PartitionNumber.foreach(__v => __obj.updateDynamic("PartitionNumber")(__v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyInstancePlacementRequest]
@@ -22368,9 +25551,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifySnapshotAttribute.
-    */
   @js.native
   trait ModifySnapshotAttributeRequest extends js.Object {
     var SnapshotId: SnapshotId
@@ -22460,7 +25640,7 @@ package ec2 {
 
   @js.native
   trait ModifySubnetAttributeRequest extends js.Object {
-    var SubnetId: SubnetId
+    var SubnetId: String
     var AssignIpv6AddressOnCreation: js.UndefOr[AttributeBooleanValue]
     var MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue]
   }
@@ -22468,7 +25648,7 @@ package ec2 {
   object ModifySubnetAttributeRequest {
     @inline
     def apply(
-        SubnetId: SubnetId,
+        SubnetId: String,
         AssignIpv6AddressOnCreation: js.UndefOr[AttributeBooleanValue] = js.undefined,
         MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue] = js.undefined
     ): ModifySubnetAttributeRequest = {
@@ -22654,7 +25834,7 @@ package ec2 {
 
   @js.native
   trait ModifyTransitGatewayVpcAttachmentRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
+    var TransitGatewayAttachmentId: String
     var AddSubnetIds: js.UndefOr[ValueStringList]
     var DryRun: js.UndefOr[Boolean]
     var Options: js.UndefOr[ModifyTransitGatewayVpcAttachmentRequestOptions]
@@ -22664,7 +25844,7 @@ package ec2 {
   object ModifyTransitGatewayVpcAttachmentRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
+        TransitGatewayAttachmentId: String,
         AddSubnetIds: js.UndefOr[ValueStringList] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Options: js.UndefOr[ModifyTransitGatewayVpcAttachmentRequestOptions] = js.undefined,
@@ -22722,9 +25902,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifyVolumeAttribute.
-    */
   @js.native
   trait ModifyVolumeAttributeRequest extends js.Object {
     var VolumeId: VolumeId
@@ -23450,6 +26627,13 @@ package ec2 {
     }
   }
 
+  object MulticastSupportValueEnum {
+    val enable  = "enable"
+    val disable = "disable"
+
+    val values = js.Object.freeze(js.Array(enable, disable))
+  }
+
   /**
     * Describes a NAT gateway.
     */
@@ -23640,6 +26824,44 @@ package ec2 {
   }
 
   /**
+    * Describes the networking features of the instance type.
+    */
+  @js.native
+  trait NetworkInfo extends js.Object {
+    var EnaSupport: js.UndefOr[EnaSupport]
+    var Ipv4AddressesPerInterface: js.UndefOr[MaxIpv4AddrPerInterface]
+    var Ipv6AddressesPerInterface: js.UndefOr[MaxIpv6AddrPerInterface]
+    var Ipv6Supported: js.UndefOr[Ipv6Flag]
+    var MaximumNetworkInterfaces: js.UndefOr[MaxNetworkInterfaces]
+    var NetworkPerformance: js.UndefOr[NetworkPerformance]
+  }
+
+  object NetworkInfo {
+    @inline
+    def apply(
+        EnaSupport: js.UndefOr[EnaSupport] = js.undefined,
+        Ipv4AddressesPerInterface: js.UndefOr[MaxIpv4AddrPerInterface] = js.undefined,
+        Ipv6AddressesPerInterface: js.UndefOr[MaxIpv6AddrPerInterface] = js.undefined,
+        Ipv6Supported: js.UndefOr[Ipv6Flag] = js.undefined,
+        MaximumNetworkInterfaces: js.UndefOr[MaxNetworkInterfaces] = js.undefined,
+        NetworkPerformance: js.UndefOr[NetworkPerformance] = js.undefined
+    ): NetworkInfo = {
+      val __obj = js.Dynamic.literal()
+      EnaSupport.foreach(__v => __obj.updateDynamic("EnaSupport")(__v.asInstanceOf[js.Any]))
+      Ipv4AddressesPerInterface.foreach(__v =>
+        __obj.updateDynamic("Ipv4AddressesPerInterface")(__v.asInstanceOf[js.Any])
+      )
+      Ipv6AddressesPerInterface.foreach(__v =>
+        __obj.updateDynamic("Ipv6AddressesPerInterface")(__v.asInstanceOf[js.Any])
+      )
+      Ipv6Supported.foreach(__v => __obj.updateDynamic("Ipv6Supported")(__v.asInstanceOf[js.Any]))
+      MaximumNetworkInterfaces.foreach(__v => __obj.updateDynamic("MaximumNetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      NetworkPerformance.foreach(__v => __obj.updateDynamic("NetworkPerformance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInfo]
+    }
+  }
+
+  /**
     * Describes a network interface.
     */
   @js.native
@@ -23653,6 +26875,7 @@ package ec2 {
     var Ipv6Addresses: js.UndefOr[NetworkInterfaceIpv6AddressesList]
     var MacAddress: js.UndefOr[String]
     var NetworkInterfaceId: js.UndefOr[String]
+    var OutpostArn: js.UndefOr[String]
     var OwnerId: js.UndefOr[String]
     var PrivateDnsName: js.UndefOr[String]
     var PrivateIpAddress: js.UndefOr[String]
@@ -23678,6 +26901,7 @@ package ec2 {
         Ipv6Addresses: js.UndefOr[NetworkInterfaceIpv6AddressesList] = js.undefined,
         MacAddress: js.UndefOr[String] = js.undefined,
         NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         OwnerId: js.UndefOr[String] = js.undefined,
         PrivateDnsName: js.UndefOr[String] = js.undefined,
         PrivateIpAddress: js.UndefOr[String] = js.undefined,
@@ -23700,6 +26924,7 @@ package ec2 {
       Ipv6Addresses.foreach(__v => __obj.updateDynamic("Ipv6Addresses")(__v.asInstanceOf[js.Any]))
       MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
@@ -24011,6 +27236,7 @@ package ec2 {
   @js.native
   trait OnDemandOptions extends js.Object {
     var AllocationStrategy: js.UndefOr[FleetOnDemandAllocationStrategy]
+    var CapacityReservationOptions: js.UndefOr[CapacityReservationOptions]
     var MaxTotalPrice: js.UndefOr[String]
     var MinTargetCapacity: js.UndefOr[Int]
     var SingleAvailabilityZone: js.UndefOr[Boolean]
@@ -24021,6 +27247,7 @@ package ec2 {
     @inline
     def apply(
         AllocationStrategy: js.UndefOr[FleetOnDemandAllocationStrategy] = js.undefined,
+        CapacityReservationOptions: js.UndefOr[CapacityReservationOptions] = js.undefined,
         MaxTotalPrice: js.UndefOr[String] = js.undefined,
         MinTargetCapacity: js.UndefOr[Int] = js.undefined,
         SingleAvailabilityZone: js.UndefOr[Boolean] = js.undefined,
@@ -24028,6 +27255,9 @@ package ec2 {
     ): OnDemandOptions = {
       val __obj = js.Dynamic.literal()
       AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
+      CapacityReservationOptions.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationOptions")(__v.asInstanceOf[js.Any])
+      )
       MaxTotalPrice.foreach(__v => __obj.updateDynamic("MaxTotalPrice")(__v.asInstanceOf[js.Any]))
       MinTargetCapacity.foreach(__v => __obj.updateDynamic("MinTargetCapacity")(__v.asInstanceOf[js.Any]))
       SingleAvailabilityZone.foreach(__v => __obj.updateDynamic("SingleAvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -24042,6 +27272,7 @@ package ec2 {
   @js.native
   trait OnDemandOptionsRequest extends js.Object {
     var AllocationStrategy: js.UndefOr[FleetOnDemandAllocationStrategy]
+    var CapacityReservationOptions: js.UndefOr[CapacityReservationOptionsRequest]
     var MaxTotalPrice: js.UndefOr[String]
     var MinTargetCapacity: js.UndefOr[Int]
     var SingleAvailabilityZone: js.UndefOr[Boolean]
@@ -24052,6 +27283,7 @@ package ec2 {
     @inline
     def apply(
         AllocationStrategy: js.UndefOr[FleetOnDemandAllocationStrategy] = js.undefined,
+        CapacityReservationOptions: js.UndefOr[CapacityReservationOptionsRequest] = js.undefined,
         MaxTotalPrice: js.UndefOr[String] = js.undefined,
         MinTargetCapacity: js.UndefOr[Int] = js.undefined,
         SingleAvailabilityZone: js.UndefOr[Boolean] = js.undefined,
@@ -24059,6 +27291,9 @@ package ec2 {
     ): OnDemandOptionsRequest = {
       val __obj = js.Dynamic.literal()
       AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
+      CapacityReservationOptions.foreach(__v =>
+        __obj.updateDynamic("CapacityReservationOptions")(__v.asInstanceOf[js.Any])
+      )
       MaxTotalPrice.foreach(__v => __obj.updateDynamic("MaxTotalPrice")(__v.asInstanceOf[js.Any]))
       MinTargetCapacity.foreach(__v => __obj.updateDynamic("MinTargetCapacity")(__v.asInstanceOf[js.Any]))
       SingleAvailabilityZone.foreach(__v => __obj.updateDynamic("SingleAvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -24107,6 +27342,28 @@ package ec2 {
       SubsystemVendorId.foreach(__v => __obj.updateDynamic("SubsystemVendorId")(__v.asInstanceOf[js.Any]))
       VendorId.foreach(__v => __obj.updateDynamic("VendorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PciId]
+    }
+  }
+
+  /**
+    * The status of the transit gateway peering attachment.
+    */
+  @js.native
+  trait PeeringAttachmentStatus extends js.Object {
+    var Code: js.UndefOr[String]
+    var Message: js.UndefOr[String]
+  }
+
+  object PeeringAttachmentStatus {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): PeeringAttachmentStatus = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PeeringAttachmentStatus]
     }
   }
 
@@ -24169,6 +27426,31 @@ package ec2 {
         __obj.updateDynamic("AllowEgressFromLocalVpcToRemoteClassicLink")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PeeringConnectionOptionsRequest]
+    }
+  }
+
+  /**
+    * Information about the transit gateway in the peering attachment.
+    */
+  @js.native
+  trait PeeringTgwInfo extends js.Object {
+    var OwnerId: js.UndefOr[String]
+    var Region: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
+  }
+
+  object PeeringTgwInfo {
+    @inline
+    def apply(
+        OwnerId: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        TransitGatewayId: js.UndefOr[String] = js.undefined
+    ): PeeringTgwInfo = {
+      val __obj = js.Dynamic.literal()
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PeeringTgwInfo]
     }
   }
 
@@ -24415,6 +27697,7 @@ package ec2 {
     var AvailabilityZone: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
     var HostId: js.UndefOr[String]
+    var HostResourceGroupArn: js.UndefOr[String]
     var PartitionNumber: js.UndefOr[Int]
     var SpreadDomain: js.UndefOr[String]
     var Tenancy: js.UndefOr[Tenancy]
@@ -24427,6 +27710,7 @@ package ec2 {
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined,
         HostId: js.UndefOr[String] = js.undefined,
+        HostResourceGroupArn: js.UndefOr[String] = js.undefined,
         PartitionNumber: js.UndefOr[Int] = js.undefined,
         SpreadDomain: js.UndefOr[String] = js.undefined,
         Tenancy: js.UndefOr[Tenancy] = js.undefined
@@ -24436,6 +27720,7 @@ package ec2 {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
+      HostResourceGroupArn.foreach(__v => __obj.updateDynamic("HostResourceGroupArn")(__v.asInstanceOf[js.Any]))
       PartitionNumber.foreach(__v => __obj.updateDynamic("PartitionNumber")(__v.asInstanceOf[js.Any]))
       SpreadDomain.foreach(__v => __obj.updateDynamic("SpreadDomain")(__v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
@@ -24448,26 +27733,51 @@ package ec2 {
     */
   @js.native
   trait PlacementGroup extends js.Object {
+    var GroupId: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
     var PartitionCount: js.UndefOr[Int]
     var State: js.UndefOr[PlacementGroupState]
     var Strategy: js.UndefOr[PlacementStrategy]
+    var Tags: js.UndefOr[TagList]
   }
 
   object PlacementGroup {
     @inline
     def apply(
+        GroupId: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined,
         PartitionCount: js.UndefOr[Int] = js.undefined,
         State: js.UndefOr[PlacementGroupState] = js.undefined,
-        Strategy: js.UndefOr[PlacementStrategy] = js.undefined
+        Strategy: js.UndefOr[PlacementStrategy] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): PlacementGroup = {
       val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       PartitionCount.foreach(__v => __obj.updateDynamic("PartitionCount")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Strategy.foreach(__v => __obj.updateDynamic("Strategy")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlacementGroup]
+    }
+  }
+
+  /**
+    * Describes the placement group support of the instance type.
+    */
+  @js.native
+  trait PlacementGroupInfo extends js.Object {
+    var SupportedStrategies: js.UndefOr[PlacementGroupStrategyList]
+  }
+
+  object PlacementGroupInfo {
+    @inline
+    def apply(
+        SupportedStrategies: js.UndefOr[PlacementGroupStrategyList] = js.undefined
+    ): PlacementGroupInfo = {
+      val __obj = js.Dynamic.literal()
+      SupportedStrategies.foreach(__v => __obj.updateDynamic("SupportedStrategies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementGroupInfo]
     }
   }
 
@@ -24478,6 +27788,14 @@ package ec2 {
     val deleted   = "deleted"
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+  }
+
+  object PlacementGroupStrategyEnum {
+    val cluster   = "cluster"
+    val partition = "partition"
+    val spread    = "spread"
+
+    val values = js.Object.freeze(js.Array(cluster, partition, spread))
   }
 
   /**
@@ -24709,6 +28027,28 @@ package ec2 {
       Primary.foreach(__v => __obj.updateDynamic("Primary")(__v.asInstanceOf[js.Any]))
       PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrivateIpAddressSpecification]
+    }
+  }
+
+  /**
+    * Describes the processor used by the instance type.
+    */
+  @js.native
+  trait ProcessorInfo extends js.Object {
+    var SupportedArchitectures: js.UndefOr[ArchitectureTypeList]
+    var SustainedClockSpeedInGhz: js.UndefOr[ProcessorSustainedClockSpeed]
+  }
+
+  object ProcessorInfo {
+    @inline
+    def apply(
+        SupportedArchitectures: js.UndefOr[ArchitectureTypeList] = js.undefined,
+        SustainedClockSpeedInGhz: js.UndefOr[ProcessorSustainedClockSpeed] = js.undefined
+    ): ProcessorInfo = {
+      val __obj = js.Dynamic.literal()
+      SupportedArchitectures.foreach(__v => __obj.updateDynamic("SupportedArchitectures")(__v.asInstanceOf[js.Any]))
+      SustainedClockSpeedInGhz.foreach(__v => __obj.updateDynamic("SustainedClockSpeedInGhz")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProcessorInfo]
     }
   }
 
@@ -25211,8 +28551,8 @@ package ec2 {
     var DryRun: js.UndefOr[Boolean]
     var EnaSupport: js.UndefOr[Boolean]
     var ImageLocation: js.UndefOr[String]
-    var KernelId: js.UndefOr[KernelId]
-    var RamdiskId: js.UndefOr[RamdiskId]
+    var KernelId: js.UndefOr[String]
+    var RamdiskId: js.UndefOr[String]
     var RootDeviceName: js.UndefOr[String]
     var SriovNetSupport: js.UndefOr[String]
     var VirtualizationType: js.UndefOr[String]
@@ -25229,8 +28569,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined,
         EnaSupport: js.UndefOr[Boolean] = js.undefined,
         ImageLocation: js.UndefOr[String] = js.undefined,
-        KernelId: js.UndefOr[KernelId] = js.undefined,
-        RamdiskId: js.UndefOr[RamdiskId] = js.undefined,
+        KernelId: js.UndefOr[String] = js.undefined,
+        RamdiskId: js.UndefOr[String] = js.undefined,
         RootDeviceName: js.UndefOr[String] = js.undefined,
         SriovNetSupport: js.UndefOr[String] = js.undefined,
         VirtualizationType: js.UndefOr[String] = js.undefined
@@ -25275,15 +28615,144 @@ package ec2 {
   }
 
   @js.native
+  trait RegisterTransitGatewayMulticastGroupMembersRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var GroupIpAddress: js.UndefOr[String]
+    var NetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object RegisterTransitGatewayMulticastGroupMembersRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): RegisterTransitGatewayMulticastGroupMembersRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RegisterTransitGatewayMulticastGroupMembersRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterTransitGatewayMulticastGroupMembersResult extends js.Object {
+    var RegisteredMulticastGroupMembers: js.UndefOr[TransitGatewayMulticastRegisteredGroupMembers]
+  }
+
+  object RegisterTransitGatewayMulticastGroupMembersResult {
+    @inline
+    def apply(
+        RegisteredMulticastGroupMembers: js.UndefOr[TransitGatewayMulticastRegisteredGroupMembers] = js.undefined
+    ): RegisterTransitGatewayMulticastGroupMembersResult = {
+      val __obj = js.Dynamic.literal()
+      RegisteredMulticastGroupMembers.foreach(__v =>
+        __obj.updateDynamic("RegisteredMulticastGroupMembers")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RegisterTransitGatewayMulticastGroupMembersResult]
+    }
+  }
+
+  @js.native
+  trait RegisterTransitGatewayMulticastGroupSourcesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var GroupIpAddress: js.UndefOr[String]
+    var NetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object RegisterTransitGatewayMulticastGroupSourcesRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): RegisterTransitGatewayMulticastGroupSourcesRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RegisterTransitGatewayMulticastGroupSourcesRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterTransitGatewayMulticastGroupSourcesResult extends js.Object {
+    var RegisteredMulticastGroupSources: js.UndefOr[TransitGatewayMulticastRegisteredGroupSources]
+  }
+
+  object RegisterTransitGatewayMulticastGroupSourcesResult {
+    @inline
+    def apply(
+        RegisteredMulticastGroupSources: js.UndefOr[TransitGatewayMulticastRegisteredGroupSources] = js.undefined
+    ): RegisterTransitGatewayMulticastGroupSourcesResult = {
+      val __obj = js.Dynamic.literal()
+      RegisteredMulticastGroupSources.foreach(__v =>
+        __obj.updateDynamic("RegisteredMulticastGroupSources")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RegisterTransitGatewayMulticastGroupSourcesResult]
+    }
+  }
+
+  @js.native
+  trait RejectTransitGatewayPeeringAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object RejectTransitGatewayPeeringAttachmentRequest {
+    @inline
+    def apply(
+        TransitGatewayAttachmentId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): RejectTransitGatewayPeeringAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RejectTransitGatewayPeeringAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait RejectTransitGatewayPeeringAttachmentResult extends js.Object {
+    var TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment]
+  }
+
+  object RejectTransitGatewayPeeringAttachmentResult {
+    @inline
+    def apply(
+        TransitGatewayPeeringAttachment: js.UndefOr[TransitGatewayPeeringAttachment] = js.undefined
+    ): RejectTransitGatewayPeeringAttachmentResult = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeeringAttachment.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayPeeringAttachment")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RejectTransitGatewayPeeringAttachmentResult]
+    }
+  }
+
+  @js.native
   trait RejectTransitGatewayVpcAttachmentRequest extends js.Object {
-    var TransitGatewayAttachmentId: TransitGatewayAttachmentId
+    var TransitGatewayAttachmentId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
   object RejectTransitGatewayVpcAttachmentRequest {
     @inline
     def apply(
-        TransitGatewayAttachmentId: TransitGatewayAttachmentId,
+        TransitGatewayAttachmentId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): RejectTransitGatewayVpcAttachmentRequest = {
       val __obj = js.Dynamic.literal(
@@ -25392,21 +28861,24 @@ package ec2 {
 
   @js.native
   trait ReleaseAddressRequest extends js.Object {
-    var AllocationId: js.UndefOr[AllocationId]
+    var AllocationId: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
+    var NetworkBorderGroup: js.UndefOr[String]
     var PublicIp: js.UndefOr[String]
   }
 
   object ReleaseAddressRequest {
     @inline
     def apply(
-        AllocationId: js.UndefOr[AllocationId] = js.undefined,
+        AllocationId: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined,
         PublicIp: js.UndefOr[String] = js.undefined
     ): ReleaseAddressRequest = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReleaseAddressRequest]
     }
@@ -25582,6 +29054,8 @@ package ec2 {
     var EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId]
     var GatewayId: js.UndefOr[RouteTableGatewayId]
     var InstanceId: js.UndefOr[InstanceId]
+    var LocalGatewayId: js.UndefOr[String]
+    var LocalTarget: js.UndefOr[Boolean]
     var NatGatewayId: js.UndefOr[NatGatewayId]
     var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
     var TransitGatewayId: js.UndefOr[TransitGatewayId]
@@ -25598,6 +29072,8 @@ package ec2 {
         EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId] = js.undefined,
         GatewayId: js.UndefOr[RouteTableGatewayId] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
+        LocalTarget: js.UndefOr[Boolean] = js.undefined,
         NatGatewayId: js.UndefOr[NatGatewayId] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
         TransitGatewayId: js.UndefOr[TransitGatewayId] = js.undefined,
@@ -25615,6 +29091,8 @@ package ec2 {
       )
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
+      LocalTarget.foreach(__v => __obj.updateDynamic("LocalTarget")(__v.asInstanceOf[js.Any]))
       NatGatewayId.foreach(__v => __obj.updateDynamic("NatGatewayId")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
@@ -25649,15 +29127,18 @@ package ec2 {
 
   @js.native
   trait ReplaceRouteTableAssociationResult extends js.Object {
+    var AssociationState: js.UndefOr[RouteTableAssociationState]
     var NewAssociationId: js.UndefOr[String]
   }
 
   object ReplaceRouteTableAssociationResult {
     @inline
     def apply(
+        AssociationState: js.UndefOr[RouteTableAssociationState] = js.undefined,
         NewAssociationId: js.UndefOr[String] = js.undefined
     ): ReplaceRouteTableAssociationResult = {
       val __obj = js.Dynamic.literal()
+      AssociationState.foreach(__v => __obj.updateDynamic("AssociationState")(__v.asInstanceOf[js.Any]))
       NewAssociationId.foreach(__v => __obj.updateDynamic("NewAssociationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplaceRouteTableAssociationResult]
     }
@@ -25666,20 +29147,20 @@ package ec2 {
   @js.native
   trait ReplaceTransitGatewayRouteRequest extends js.Object {
     var DestinationCidrBlock: String
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var Blackhole: js.UndefOr[Boolean]
     var DryRun: js.UndefOr[Boolean]
-    var TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
   }
 
   object ReplaceTransitGatewayRouteRequest {
     @inline
     def apply(
         DestinationCidrBlock: String,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         Blackhole: js.UndefOr[Boolean] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
-        TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId] = js.undefined
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined
     ): ReplaceTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationCidrBlock"       -> DestinationCidrBlock.asInstanceOf[js.Any],
@@ -26567,7 +30048,7 @@ package ec2 {
   @js.native
   trait ResetImageAttributeRequest extends js.Object {
     var Attribute: ResetImageAttributeName
-    var ImageId: ImageId
+    var ImageId: String
     var DryRun: js.UndefOr[Boolean]
   }
 
@@ -26575,7 +30056,7 @@ package ec2 {
     @inline
     def apply(
         Attribute: ResetImageAttributeName,
-        ImageId: ImageId,
+        ImageId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ResetImageAttributeRequest = {
       val __obj = js.Dynamic.literal(
@@ -26639,9 +30120,6 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ResetSnapshotAttribute.
-    */
   @js.native
   trait ResetSnapshotAttributeRequest extends js.Object {
     var Attribute: SnapshotAttributeName
@@ -26667,38 +30145,42 @@ package ec2 {
   }
 
   object ResourceTypeEnum {
-    val `client-vpn-endpoint`         = "client-vpn-endpoint"
-    val `customer-gateway`            = "customer-gateway"
-    val `dedicated-host`              = "dedicated-host"
-    val `dhcp-options`                = "dhcp-options"
-    val `elastic-ip`                  = "elastic-ip"
-    val fleet                         = "fleet"
-    val `fpga-image`                  = "fpga-image"
-    val `host-reservation`            = "host-reservation"
-    val image                         = "image"
-    val instance                      = "instance"
-    val `internet-gateway`            = "internet-gateway"
-    val `launch-template`             = "launch-template"
-    val natgateway                    = "natgateway"
-    val `network-acl`                 = "network-acl"
-    val `network-interface`           = "network-interface"
-    val `reserved-instances`          = "reserved-instances"
-    val `route-table`                 = "route-table"
-    val `security-group`              = "security-group"
-    val snapshot                      = "snapshot"
-    val `spot-instances-request`      = "spot-instances-request"
-    val subnet                        = "subnet"
-    val `traffic-mirror-filter`       = "traffic-mirror-filter"
-    val `traffic-mirror-session`      = "traffic-mirror-session"
-    val `traffic-mirror-target`       = "traffic-mirror-target"
-    val `transit-gateway`             = "transit-gateway"
-    val `transit-gateway-attachment`  = "transit-gateway-attachment"
-    val `transit-gateway-route-table` = "transit-gateway-route-table"
-    val volume                        = "volume"
-    val vpc                           = "vpc"
-    val `vpc-peering-connection`      = "vpc-peering-connection"
-    val `vpn-connection`              = "vpn-connection"
-    val `vpn-gateway`                 = "vpn-gateway"
+    val `client-vpn-endpoint`              = "client-vpn-endpoint"
+    val `customer-gateway`                 = "customer-gateway"
+    val `dedicated-host`                   = "dedicated-host"
+    val `dhcp-options`                     = "dhcp-options"
+    val `elastic-ip`                       = "elastic-ip"
+    val fleet                              = "fleet"
+    val `fpga-image`                       = "fpga-image"
+    val `host-reservation`                 = "host-reservation"
+    val image                              = "image"
+    val instance                           = "instance"
+    val `internet-gateway`                 = "internet-gateway"
+    val `key-pair`                         = "key-pair"
+    val `launch-template`                  = "launch-template"
+    val natgateway                         = "natgateway"
+    val `network-acl`                      = "network-acl"
+    val `network-interface`                = "network-interface"
+    val `placement-group`                  = "placement-group"
+    val `reserved-instances`               = "reserved-instances"
+    val `route-table`                      = "route-table"
+    val `security-group`                   = "security-group"
+    val snapshot                           = "snapshot"
+    val `spot-fleet-request`               = "spot-fleet-request"
+    val `spot-instances-request`           = "spot-instances-request"
+    val subnet                             = "subnet"
+    val `traffic-mirror-filter`            = "traffic-mirror-filter"
+    val `traffic-mirror-session`           = "traffic-mirror-session"
+    val `traffic-mirror-target`            = "traffic-mirror-target"
+    val `transit-gateway`                  = "transit-gateway"
+    val `transit-gateway-attachment`       = "transit-gateway-attachment"
+    val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain"
+    val `transit-gateway-route-table`      = "transit-gateway-route-table"
+    val volume                             = "volume"
+    val vpc                                = "vpc"
+    val `vpc-peering-connection`           = "vpc-peering-connection"
+    val `vpn-connection`                   = "vpn-connection"
+    val `vpn-gateway`                      = "vpn-gateway"
 
     val values = js.Object.freeze(
       js.Array(
@@ -26713,14 +30195,17 @@ package ec2 {
         image,
         instance,
         `internet-gateway`,
+        `key-pair`,
         `launch-template`,
         natgateway,
         `network-acl`,
         `network-interface`,
+        `placement-group`,
         `reserved-instances`,
         `route-table`,
         `security-group`,
         snapshot,
+        `spot-fleet-request`,
         `spot-instances-request`,
         subnet,
         `traffic-mirror-filter`,
@@ -26728,6 +30213,7 @@ package ec2 {
         `traffic-mirror-target`,
         `transit-gateway`,
         `transit-gateway-attachment`,
+        `transit-gateway-multicast-domain`,
         `transit-gateway-route-table`,
         volume,
         vpc,
@@ -27033,6 +30519,13 @@ package ec2 {
     }
   }
 
+  object RootDeviceTypeEnum {
+    val ebs              = "ebs"
+    val `instance-store` = "instance-store"
+
+    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
+  }
+
   /**
     * Describes a route in a route table.
     */
@@ -27045,6 +30538,7 @@ package ec2 {
     var GatewayId: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
     var InstanceOwnerId: js.UndefOr[String]
+    var LocalGatewayId: js.UndefOr[String]
     var NatGatewayId: js.UndefOr[String]
     var NetworkInterfaceId: js.UndefOr[String]
     var Origin: js.UndefOr[RouteOrigin]
@@ -27063,6 +30557,7 @@ package ec2 {
         GatewayId: js.UndefOr[String] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined,
         InstanceOwnerId: js.UndefOr[String] = js.undefined,
+        LocalGatewayId: js.UndefOr[String] = js.undefined,
         NatGatewayId: js.UndefOr[String] = js.undefined,
         NetworkInterfaceId: js.UndefOr[String] = js.undefined,
         Origin: js.UndefOr[RouteOrigin] = js.undefined,
@@ -27080,6 +30575,7 @@ package ec2 {
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       InstanceOwnerId.foreach(__v => __obj.updateDynamic("InstanceOwnerId")(__v.asInstanceOf[js.Any]))
+      LocalGatewayId.foreach(__v => __obj.updateDynamic("LocalGatewayId")(__v.asInstanceOf[js.Any]))
       NatGatewayId.foreach(__v => __obj.updateDynamic("NatGatewayId")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
@@ -27143,10 +30639,12 @@ package ec2 {
   }
 
   /**
-    * Describes an association between a route table and a subnet.
+    * Describes an association between a route table and a subnet or gateway.
     */
   @js.native
   trait RouteTableAssociation extends js.Object {
+    var AssociationState: js.UndefOr[RouteTableAssociationState]
+    var GatewayId: js.UndefOr[String]
     var Main: js.UndefOr[Boolean]
     var RouteTableAssociationId: js.UndefOr[String]
     var RouteTableId: js.UndefOr[String]
@@ -27156,18 +30654,54 @@ package ec2 {
   object RouteTableAssociation {
     @inline
     def apply(
+        AssociationState: js.UndefOr[RouteTableAssociationState] = js.undefined,
+        GatewayId: js.UndefOr[String] = js.undefined,
         Main: js.UndefOr[Boolean] = js.undefined,
         RouteTableAssociationId: js.UndefOr[String] = js.undefined,
         RouteTableId: js.UndefOr[String] = js.undefined,
         SubnetId: js.UndefOr[String] = js.undefined
     ): RouteTableAssociation = {
       val __obj = js.Dynamic.literal()
+      AssociationState.foreach(__v => __obj.updateDynamic("AssociationState")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       Main.foreach(__v => __obj.updateDynamic("Main")(__v.asInstanceOf[js.Any]))
       RouteTableAssociationId.foreach(__v => __obj.updateDynamic("RouteTableAssociationId")(__v.asInstanceOf[js.Any]))
       RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RouteTableAssociation]
     }
+  }
+
+  /**
+    * Describes the state of an association between a route table and a subnet or gateway.
+    */
+  @js.native
+  trait RouteTableAssociationState extends js.Object {
+    var State: js.UndefOr[RouteTableAssociationStateCode]
+    var StatusMessage: js.UndefOr[String]
+  }
+
+  object RouteTableAssociationState {
+    @inline
+    def apply(
+        State: js.UndefOr[RouteTableAssociationStateCode] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
+    ): RouteTableAssociationState = {
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RouteTableAssociationState]
+    }
+  }
+
+  object RouteTableAssociationStateCodeEnum {
+    val associating    = "associating"
+    val associated     = "associated"
+    val disassociating = "disassociating"
+    val disassociated  = "disassociated"
+    val failed         = "failed"
+
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
   }
 
   object RuleActionEnum {
@@ -27225,6 +30759,7 @@ package ec2 {
     var KeyName: js.UndefOr[String]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var LicenseSpecifications: js.UndefOr[LicenseSpecificationListRequest]
+    var MetadataOptions: js.UndefOr[InstanceMetadataOptionsRequest]
     var Monitoring: js.UndefOr[RunInstancesMonitoringEnabled]
     var NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceSpecificationList]
     var Placement: js.UndefOr[Placement]
@@ -27265,6 +30800,7 @@ package ec2 {
         KeyName: js.UndefOr[String] = js.undefined,
         LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         LicenseSpecifications: js.UndefOr[LicenseSpecificationListRequest] = js.undefined,
+        MetadataOptions: js.UndefOr[InstanceMetadataOptionsRequest] = js.undefined,
         Monitoring: js.UndefOr[RunInstancesMonitoringEnabled] = js.undefined,
         NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceSpecificationList] = js.undefined,
         Placement: js.UndefOr[Placement] = js.undefined,
@@ -27310,6 +30846,7 @@ package ec2 {
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
       LicenseSpecifications.foreach(__v => __obj.updateDynamic("LicenseSpecifications")(__v.asInstanceOf[js.Any]))
+      MetadataOptions.foreach(__v => __obj.updateDynamic("MetadataOptions")(__v.asInstanceOf[js.Any]))
       Monitoring.foreach(__v => __obj.updateDynamic("Monitoring")(__v.asInstanceOf[js.Any]))
       NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
       Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
@@ -27871,9 +31408,107 @@ package ec2 {
   }
 
   @js.native
+  trait SearchLocalGatewayRoutesRequest extends js.Object {
+    var Filters: FilterList
+    var LocalGatewayRouteTableId: String
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchLocalGatewayRoutesRequest {
+    @inline
+    def apply(
+        Filters: FilterList,
+        LocalGatewayRouteTableId: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchLocalGatewayRoutesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Filters"                  -> Filters.asInstanceOf[js.Any],
+        "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchLocalGatewayRoutesRequest]
+    }
+  }
+
+  @js.native
+  trait SearchLocalGatewayRoutesResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Routes: js.UndefOr[LocalGatewayRouteList]
+  }
+
+  object SearchLocalGatewayRoutesResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Routes: js.UndefOr[LocalGatewayRouteList] = js.undefined
+    ): SearchLocalGatewayRoutesResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Routes.foreach(__v => __obj.updateDynamic("Routes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchLocalGatewayRoutesResult]
+    }
+  }
+
+  @js.native
+  trait SearchTransitGatewayMulticastGroupsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object SearchTransitGatewayMulticastGroupsRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): SearchTransitGatewayMulticastGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[SearchTransitGatewayMulticastGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchTransitGatewayMulticastGroupsResult extends js.Object {
+    var MulticastGroups: js.UndefOr[TransitGatewayMulticastGroupList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchTransitGatewayMulticastGroupsResult {
+    @inline
+    def apply(
+        MulticastGroups: js.UndefOr[TransitGatewayMulticastGroupList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchTransitGatewayMulticastGroupsResult = {
+      val __obj = js.Dynamic.literal()
+      MulticastGroups.foreach(__v => __obj.updateDynamic("MulticastGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchTransitGatewayMulticastGroupsResult]
+    }
+  }
+
+  @js.native
   trait SearchTransitGatewayRoutesRequest extends js.Object {
     var Filters: FilterList
-    var TransitGatewayRouteTableId: TransitGatewayRouteTableId
+    var TransitGatewayRouteTableId: String
     var DryRun: js.UndefOr[Boolean]
     var MaxResults: js.UndefOr[TransitGatewayMaxResults]
   }
@@ -27882,7 +31517,7 @@ package ec2 {
     @inline
     def apply(
         Filters: FilterList,
-        TransitGatewayRouteTableId: TransitGatewayRouteTableId,
+        TransitGatewayRouteTableId: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined
     ): SearchTransitGatewayRoutesRequest = {
@@ -29312,6 +32947,7 @@ package ec2 {
     var DefaultForAz: js.UndefOr[Boolean]
     var Ipv6CidrBlockAssociationSet: js.UndefOr[SubnetIpv6CidrBlockAssociationSet]
     var MapPublicIpOnLaunch: js.UndefOr[Boolean]
+    var OutpostArn: js.UndefOr[String]
     var OwnerId: js.UndefOr[String]
     var State: js.UndefOr[SubnetState]
     var SubnetArn: js.UndefOr[String]
@@ -29331,6 +32967,7 @@ package ec2 {
         DefaultForAz: js.UndefOr[Boolean] = js.undefined,
         Ipv6CidrBlockAssociationSet: js.UndefOr[SubnetIpv6CidrBlockAssociationSet] = js.undefined,
         MapPublicIpOnLaunch: js.UndefOr[Boolean] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         OwnerId: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[SubnetState] = js.undefined,
         SubnetArn: js.UndefOr[String] = js.undefined,
@@ -29351,6 +32988,7 @@ package ec2 {
         __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
       )
       MapPublicIpOnLaunch.foreach(__v => __obj.updateDynamic("MapPublicIpOnLaunch")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetArn.foreach(__v => __obj.updateDynamic("SubnetArn")(__v.asInstanceOf[js.Any]))
@@ -29358,6 +32996,28 @@ package ec2 {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
+    }
+  }
+
+  /**
+    * Describes the subnet association with the transit gateway multicast domain.
+    */
+  @js.native
+  trait SubnetAssociation extends js.Object {
+    var State: js.UndefOr[TransitGatewayMulitcastDomainAssociationState]
+    var SubnetId: js.UndefOr[String]
+  }
+
+  object SubnetAssociation {
+    @inline
+    def apply(
+        State: js.UndefOr[TransitGatewayMulitcastDomainAssociationState] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined
+    ): SubnetAssociation = {
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubnetAssociation]
     }
   }
 
@@ -29427,7 +33087,7 @@ package ec2 {
   }
 
   /**
-    * Describes the T2 or T3 instance whose credit option for CPU usage was successfully modified.
+    * Describes the burstable performance instance whose credit option for CPU usage was successfully modified.
     */
   @js.native
   trait SuccessfulInstanceCreditSpecificationItem extends js.Object {
@@ -29548,7 +33208,7 @@ package ec2 {
 
   /**
     * The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in and
+    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in and
     */
   @js.native
   trait TargetCapacitySpecification extends js.Object {
@@ -29579,7 +33239,7 @@ package ec2 {
 
   /**
     * The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set the target capacity to a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in and .
+    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in and .
     */
   @js.native
   trait TargetCapacitySpecificationRequest extends js.Object {
@@ -30324,11 +33984,13 @@ package ec2 {
     val vpc                      = "vpc"
     val vpn                      = "vpn"
     val `direct-connect-gateway` = "direct-connect-gateway"
+    val `tgw-peering`            = "tgw-peering"
 
-    val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`))
+    val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
   }
 
   object TransitGatewayAttachmentStateEnum {
+    val initiating        = "initiating"
     val pendingAcceptance = "pendingAcceptance"
     val rollingBack       = "rollingBack"
     val pending           = "pending"
@@ -30343,6 +34005,7 @@ package ec2 {
 
     val values = js.Object.freeze(
       js.Array(
+        initiating,
         pendingAcceptance,
         rollingBack,
         pending,
@@ -30358,6 +34021,286 @@ package ec2 {
     )
   }
 
+  object TransitGatewayMulitcastDomainAssociationStateEnum {
+    val associating    = "associating"
+    val associated     = "associated"
+    val disassociating = "disassociating"
+    val disassociated  = "disassociated"
+
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+  }
+
+  /**
+    * Describes the deregistered transit gateway multicast group members.
+    */
+  @js.native
+  trait TransitGatewayMulticastDeregisteredGroupMembers extends js.Object {
+    var DeregisteredNetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var GroupIpAddress: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastDeregisteredGroupMembers {
+    @inline
+    def apply(
+        DeregisteredNetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastDeregisteredGroupMembers = {
+      val __obj = js.Dynamic.literal()
+      DeregisteredNetworkInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("DeregisteredNetworkInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastDeregisteredGroupMembers]
+    }
+  }
+
+  /**
+    * Describes the deregistered transit gateway multicast group sources.
+    */
+  @js.native
+  trait TransitGatewayMulticastDeregisteredGroupSources extends js.Object {
+    var DeregisteredNetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var GroupIpAddress: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastDeregisteredGroupSources {
+    @inline
+    def apply(
+        DeregisteredNetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastDeregisteredGroupSources = {
+      val __obj = js.Dynamic.literal()
+      DeregisteredNetworkInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("DeregisteredNetworkInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastDeregisteredGroupSources]
+    }
+  }
+
+  /**
+    * Describes the transit gateway multicast domain.
+    */
+  @js.native
+  trait TransitGatewayMulticastDomain extends js.Object {
+    var CreationTime: js.UndefOr[DateTime]
+    var State: js.UndefOr[TransitGatewayMulticastDomainState]
+    var Tags: js.UndefOr[TagList]
+    var TransitGatewayId: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastDomain {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[DateTime] = js.undefined,
+        State: js.UndefOr[TransitGatewayMulticastDomainState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TransitGatewayId: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastDomain = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastDomain]
+    }
+  }
+
+  /**
+    * Describes the resources associated with the transit gateway multicast domain.
+    */
+  @js.native
+  trait TransitGatewayMulticastDomainAssociation extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var Subnet: js.UndefOr[SubnetAssociation]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastDomainAssociation {
+    @inline
+    def apply(
+        ResourceId: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+        Subnet: js.UndefOr[SubnetAssociation] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastDomainAssociation = {
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Subnet.foreach(__v => __obj.updateDynamic("Subnet")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastDomainAssociation]
+    }
+  }
+
+  /**
+    * Describes the multicast domain associations.
+    */
+  @js.native
+  trait TransitGatewayMulticastDomainAssociations extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var Subnets: js.UndefOr[SubnetAssociationList]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastDomainAssociations {
+    @inline
+    def apply(
+        ResourceId: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+        Subnets: js.UndefOr[SubnetAssociationList] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastDomainAssociations = {
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastDomainAssociations]
+    }
+  }
+
+  object TransitGatewayMulticastDomainStateEnum {
+    val pending   = "pending"
+    val available = "available"
+    val deleting  = "deleting"
+    val deleted   = "deleted"
+
+    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+  }
+
+  /**
+    * Describes the transit gateway multicast group resources.
+    */
+  @js.native
+  trait TransitGatewayMulticastGroup extends js.Object {
+    var GroupIpAddress: js.UndefOr[String]
+    var GroupMember: js.UndefOr[Boolean]
+    var GroupSource: js.UndefOr[Boolean]
+    var MemberType: js.UndefOr[MembershipType]
+    var NetworkInterfaceId: js.UndefOr[String]
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var SourceType: js.UndefOr[MembershipType]
+    var SubnetId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastGroup {
+    @inline
+    def apply(
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        GroupMember: js.UndefOr[Boolean] = js.undefined,
+        GroupSource: js.UndefOr[Boolean] = js.undefined,
+        MemberType: js.UndefOr[MembershipType] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+        ResourceId: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+        SourceType: js.UndefOr[MembershipType] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastGroup = {
+      val __obj = js.Dynamic.literal()
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      GroupMember.foreach(__v => __obj.updateDynamic("GroupMember")(__v.asInstanceOf[js.Any]))
+      GroupSource.foreach(__v => __obj.updateDynamic("GroupSource")(__v.asInstanceOf[js.Any]))
+      MemberType.foreach(__v => __obj.updateDynamic("MemberType")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastGroup]
+    }
+  }
+
+  /**
+    * Describes the registered transit gateway multicast group members.
+    */
+  @js.native
+  trait TransitGatewayMulticastRegisteredGroupMembers extends js.Object {
+    var GroupIpAddress: js.UndefOr[String]
+    var RegisteredNetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastRegisteredGroupMembers {
+    @inline
+    def apply(
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        RegisteredNetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastRegisteredGroupMembers = {
+      val __obj = js.Dynamic.literal()
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      RegisteredNetworkInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("RegisteredNetworkInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastRegisteredGroupMembers]
+    }
+  }
+
+  /**
+    * Describes the members registered with the transit gateway multicast group.
+    */
+  @js.native
+  trait TransitGatewayMulticastRegisteredGroupSources extends js.Object {
+    var GroupIpAddress: js.UndefOr[String]
+    var RegisteredNetworkInterfaceIds: js.UndefOr[ValueStringList]
+    var TransitGatewayMulticastDomainId: js.UndefOr[String]
+  }
+
+  object TransitGatewayMulticastRegisteredGroupSources {
+    @inline
+    def apply(
+        GroupIpAddress: js.UndefOr[String] = js.undefined,
+        RegisteredNetworkInterfaceIds: js.UndefOr[ValueStringList] = js.undefined,
+        TransitGatewayMulticastDomainId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayMulticastRegisteredGroupSources = {
+      val __obj = js.Dynamic.literal()
+      GroupIpAddress.foreach(__v => __obj.updateDynamic("GroupIpAddress")(__v.asInstanceOf[js.Any]))
+      RegisteredNetworkInterfaceIds.foreach(__v =>
+        __obj.updateDynamic("RegisteredNetworkInterfaceIds")(__v.asInstanceOf[js.Any])
+      )
+      TransitGatewayMulticastDomainId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayMulticastDomainId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayMulticastRegisteredGroupSources]
+    }
+  }
+
   /**
     * Describes the options for a transit gateway.
     */
@@ -30369,6 +34312,7 @@ package ec2 {
     var DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue]
     var DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue]
     var DnsSupport: js.UndefOr[DnsSupportValue]
+    var MulticastSupport: js.UndefOr[MulticastSupportValue]
     var PropagationDefaultRouteTableId: js.UndefOr[String]
     var VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue]
   }
@@ -30382,6 +34326,7 @@ package ec2 {
         DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue] = js.undefined,
         DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue] = js.undefined,
         DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+        MulticastSupport: js.UndefOr[MulticastSupportValue] = js.undefined,
         PropagationDefaultRouteTableId: js.UndefOr[String] = js.undefined,
         VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue] = js.undefined
     ): TransitGatewayOptions = {
@@ -30400,11 +34345,51 @@ package ec2 {
         __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
       )
       DnsSupport.foreach(__v => __obj.updateDynamic("DnsSupport")(__v.asInstanceOf[js.Any]))
+      MulticastSupport.foreach(__v => __obj.updateDynamic("MulticastSupport")(__v.asInstanceOf[js.Any]))
       PropagationDefaultRouteTableId.foreach(__v =>
         __obj.updateDynamic("PropagationDefaultRouteTableId")(__v.asInstanceOf[js.Any])
       )
       VpnEcmpSupport.foreach(__v => __obj.updateDynamic("VpnEcmpSupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitGatewayOptions]
+    }
+  }
+
+  /**
+    * Describes the transit gateway peering attachment.
+    */
+  @js.native
+  trait TransitGatewayPeeringAttachment extends js.Object {
+    var AccepterTgwInfo: js.UndefOr[PeeringTgwInfo]
+    var CreationTime: js.UndefOr[DateTime]
+    var RequesterTgwInfo: js.UndefOr[PeeringTgwInfo]
+    var State: js.UndefOr[TransitGatewayAttachmentState]
+    var Status: js.UndefOr[PeeringAttachmentStatus]
+    var Tags: js.UndefOr[TagList]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+  }
+
+  object TransitGatewayPeeringAttachment {
+    @inline
+    def apply(
+        AccepterTgwInfo: js.UndefOr[PeeringTgwInfo] = js.undefined,
+        CreationTime: js.UndefOr[DateTime] = js.undefined,
+        RequesterTgwInfo: js.UndefOr[PeeringTgwInfo] = js.undefined,
+        State: js.UndefOr[TransitGatewayAttachmentState] = js.undefined,
+        Status: js.UndefOr[PeeringAttachmentStatus] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined
+    ): TransitGatewayPeeringAttachment = {
+      val __obj = js.Dynamic.literal()
+      AccepterTgwInfo.foreach(__v => __obj.updateDynamic("AccepterTgwInfo")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      RequesterTgwInfo.foreach(__v => __obj.updateDynamic("RequesterTgwInfo")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TransitGatewayAttachmentId.foreach(__v =>
+        __obj.updateDynamic("TransitGatewayAttachmentId")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[TransitGatewayPeeringAttachment]
     }
   }
 
@@ -30462,6 +34447,7 @@ package ec2 {
     var DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue]
     var DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue]
     var DnsSupport: js.UndefOr[DnsSupportValue]
+    var MulticastSupport: js.UndefOr[MulticastSupportValue]
     var VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue]
   }
 
@@ -30473,6 +34459,7 @@ package ec2 {
         DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue] = js.undefined,
         DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue] = js.undefined,
         DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+        MulticastSupport: js.UndefOr[MulticastSupportValue] = js.undefined,
         VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue] = js.undefined
     ): TransitGatewayRequestOptions = {
       val __obj = js.Dynamic.literal()
@@ -30487,6 +34474,7 @@ package ec2 {
         __obj.updateDynamic("DefaultRouteTablePropagation")(__v.asInstanceOf[js.Any])
       )
       DnsSupport.foreach(__v => __obj.updateDynamic("DnsSupport")(__v.asInstanceOf[js.Any]))
+      MulticastSupport.foreach(__v => __obj.updateDynamic("MulticastSupport")(__v.asInstanceOf[js.Any]))
       VpnEcmpSupport.foreach(__v => __obj.updateDynamic("VpnEcmpSupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitGatewayRequestOptions]
     }
@@ -30898,6 +34886,14 @@ package ec2 {
     }
   }
 
+  object UnlimitedSupportedInstanceFamilyEnum {
+    val t2  = "t2"
+    val t3  = "t3"
+    val t3a = "t3a"
+
+    val values = js.Object.freeze(js.Array(t2, t3, t3a))
+  }
+
   @js.native
   trait UnmonitorInstancesRequest extends js.Object {
     var InstanceIds: InstanceIdStringList
@@ -30952,7 +34948,7 @@ package ec2 {
   }
 
   /**
-    * Describes the T2 or T3 instance whose credit option for CPU usage was not modified.
+    * Describes the burstable performance instance whose credit option for CPU usage was not modified.
     */
   @js.native
   trait UnsuccessfulInstanceCreditSpecificationItem extends js.Object {
@@ -30974,7 +34970,7 @@ package ec2 {
   }
 
   /**
-    * Information about the error for the T2 or T3 instance whose credit option for CPU usage was not modified.
+    * Information about the error for the burstable performance instance whose credit option for CPU usage was not modified.
     */
   @js.native
   trait UnsuccessfulInstanceCreditSpecificationItemError extends js.Object {
@@ -31125,6 +35121,13 @@ package ec2 {
     }
   }
 
+  object UsageClassTypeEnum {
+    val spot        = "spot"
+    val `on-demand` = "on-demand"
+
+    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+  }
+
   /**
     * Describes the S3 bucket for the disk image.
     */
@@ -31226,6 +35229,37 @@ package ec2 {
   }
 
   /**
+    * Describes the vCPU configurations for the instance type.
+    */
+  @js.native
+  trait VCpuInfo extends js.Object {
+    var DefaultCores: js.UndefOr[CoreCount]
+    var DefaultThreadsPerCore: js.UndefOr[ThreadsPerCore]
+    var DefaultVCpus: js.UndefOr[VCpuCount]
+    var ValidCores: js.UndefOr[CoreCountList]
+    var ValidThreadsPerCore: js.UndefOr[ThreadsPerCoreList]
+  }
+
+  object VCpuInfo {
+    @inline
+    def apply(
+        DefaultCores: js.UndefOr[CoreCount] = js.undefined,
+        DefaultThreadsPerCore: js.UndefOr[ThreadsPerCore] = js.undefined,
+        DefaultVCpus: js.UndefOr[VCpuCount] = js.undefined,
+        ValidCores: js.UndefOr[CoreCountList] = js.undefined,
+        ValidThreadsPerCore: js.UndefOr[ThreadsPerCoreList] = js.undefined
+    ): VCpuInfo = {
+      val __obj = js.Dynamic.literal()
+      DefaultCores.foreach(__v => __obj.updateDynamic("DefaultCores")(__v.asInstanceOf[js.Any]))
+      DefaultThreadsPerCore.foreach(__v => __obj.updateDynamic("DefaultThreadsPerCore")(__v.asInstanceOf[js.Any]))
+      DefaultVCpus.foreach(__v => __obj.updateDynamic("DefaultVCpus")(__v.asInstanceOf[js.Any]))
+      ValidCores.foreach(__v => __obj.updateDynamic("ValidCores")(__v.asInstanceOf[js.Any]))
+      ValidThreadsPerCore.foreach(__v => __obj.updateDynamic("ValidThreadsPerCore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VCpuInfo]
+    }
+  }
+
+  /**
     * Describes telemetry for a VPN tunnel.
     */
   @js.native
@@ -31275,8 +35309,10 @@ package ec2 {
     var AvailabilityZone: js.UndefOr[String]
     var CreateTime: js.UndefOr[DateTime]
     var Encrypted: js.UndefOr[Boolean]
+    var FastRestored: js.UndefOr[Boolean]
     var Iops: js.UndefOr[Int]
     var KmsKeyId: js.UndefOr[String]
+    var OutpostArn: js.UndefOr[String]
     var Size: js.UndefOr[Int]
     var SnapshotId: js.UndefOr[String]
     var State: js.UndefOr[VolumeState]
@@ -31292,8 +35328,10 @@ package ec2 {
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         CreateTime: js.UndefOr[DateTime] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
+        FastRestored: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[Int] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         Size: js.UndefOr[Int] = js.undefined,
         SnapshotId: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[VolumeState] = js.undefined,
@@ -31306,8 +35344,10 @@ package ec2 {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
+      FastRestored.foreach(__v => __obj.updateDynamic("FastRestored")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -31521,8 +35561,8 @@ package ec2 {
     var Description: js.UndefOr[String]
     var EventId: js.UndefOr[String]
     var EventType: js.UndefOr[String]
-    var NotAfter: js.UndefOr[DateTime]
-    var NotBefore: js.UndefOr[DateTime]
+    var NotAfter: js.UndefOr[MillisecondDateTime]
+    var NotBefore: js.UndefOr[MillisecondDateTime]
   }
 
   object VolumeStatusEvent {
@@ -31531,8 +35571,8 @@ package ec2 {
         Description: js.UndefOr[String] = js.undefined,
         EventId: js.UndefOr[String] = js.undefined,
         EventType: js.UndefOr[String] = js.undefined,
-        NotAfter: js.UndefOr[DateTime] = js.undefined,
-        NotBefore: js.UndefOr[DateTime] = js.undefined
+        NotAfter: js.UndefOr[MillisecondDateTime] = js.undefined,
+        NotBefore: js.UndefOr[MillisecondDateTime] = js.undefined
     ): VolumeStatusEvent = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -31582,6 +35622,7 @@ package ec2 {
     var Actions: js.UndefOr[VolumeStatusActionsList]
     var AvailabilityZone: js.UndefOr[String]
     var Events: js.UndefOr[VolumeStatusEventsList]
+    var OutpostArn: js.UndefOr[String]
     var VolumeId: js.UndefOr[String]
     var VolumeStatus: js.UndefOr[VolumeStatusInfo]
   }
@@ -31592,6 +35633,7 @@ package ec2 {
         Actions: js.UndefOr[VolumeStatusActionsList] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         Events: js.UndefOr[VolumeStatusEventsList] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         VolumeId: js.UndefOr[String] = js.undefined,
         VolumeStatus: js.UndefOr[VolumeStatusInfo] = js.undefined
     ): VolumeStatusItem = {
@@ -31599,6 +35641,7 @@ package ec2 {
       Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
       VolumeStatus.foreach(__v => __obj.updateDynamic("VolumeStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeStatusItem]
@@ -31898,6 +35941,7 @@ package ec2 {
     var AssociationId: js.UndefOr[String]
     var Ipv6CidrBlock: js.UndefOr[String]
     var Ipv6CidrBlockState: js.UndefOr[VpcCidrBlockState]
+    var NetworkBorderGroup: js.UndefOr[String]
   }
 
   object VpcIpv6CidrBlockAssociation {
@@ -31905,12 +35949,14 @@ package ec2 {
     def apply(
         AssociationId: js.UndefOr[String] = js.undefined,
         Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
-        Ipv6CidrBlockState: js.UndefOr[VpcCidrBlockState] = js.undefined
+        Ipv6CidrBlockState: js.UndefOr[VpcCidrBlockState] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[String] = js.undefined
     ): VpcIpv6CidrBlockAssociation = {
       val __obj = js.Dynamic.literal()
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       Ipv6CidrBlock.foreach(__v => __obj.updateDynamic("Ipv6CidrBlock")(__v.asInstanceOf[js.Any]))
       Ipv6CidrBlockState.foreach(__v => __obj.updateDynamic("Ipv6CidrBlockState")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcIpv6CidrBlockAssociation]
     }
   }
@@ -32137,6 +36183,7 @@ package ec2 {
     */
   @js.native
   trait VpnConnectionOptions extends js.Object {
+    var EnableAcceleration: js.UndefOr[Boolean]
     var StaticRoutesOnly: js.UndefOr[Boolean]
     var TunnelOptions: js.UndefOr[TunnelOptionsList]
   }
@@ -32144,10 +36191,12 @@ package ec2 {
   object VpnConnectionOptions {
     @inline
     def apply(
+        EnableAcceleration: js.UndefOr[Boolean] = js.undefined,
         StaticRoutesOnly: js.UndefOr[Boolean] = js.undefined,
         TunnelOptions: js.UndefOr[TunnelOptionsList] = js.undefined
     ): VpnConnectionOptions = {
       val __obj = js.Dynamic.literal()
+      EnableAcceleration.foreach(__v => __obj.updateDynamic("EnableAcceleration")(__v.asInstanceOf[js.Any]))
       StaticRoutesOnly.foreach(__v => __obj.updateDynamic("StaticRoutesOnly")(__v.asInstanceOf[js.Any]))
       TunnelOptions.foreach(__v => __obj.updateDynamic("TunnelOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnConnectionOptions]
@@ -32159,6 +36208,7 @@ package ec2 {
     */
   @js.native
   trait VpnConnectionOptionsSpecification extends js.Object {
+    var EnableAcceleration: js.UndefOr[Boolean]
     var StaticRoutesOnly: js.UndefOr[Boolean]
     var TunnelOptions: js.UndefOr[VpnTunnelOptionsSpecificationsList]
   }
@@ -32166,10 +36216,12 @@ package ec2 {
   object VpnConnectionOptionsSpecification {
     @inline
     def apply(
+        EnableAcceleration: js.UndefOr[Boolean] = js.undefined,
         StaticRoutesOnly: js.UndefOr[Boolean] = js.undefined,
         TunnelOptions: js.UndefOr[VpnTunnelOptionsSpecificationsList] = js.undefined
     ): VpnConnectionOptionsSpecification = {
       val __obj = js.Dynamic.literal()
+      EnableAcceleration.foreach(__v => __obj.updateDynamic("EnableAcceleration")(__v.asInstanceOf[js.Any]))
       StaticRoutesOnly.foreach(__v => __obj.updateDynamic("StaticRoutesOnly")(__v.asInstanceOf[js.Any]))
       TunnelOptions.foreach(__v => __obj.updateDynamic("TunnelOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnConnectionOptionsSpecification]

@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object mediatailor {
   type OriginManifestType             = String
+  type __integer                      = Int
   type __integerMin1Max100            = Int
   type __listOfPlaybackConfigurations = js.Array[PlaybackConfiguration]
   type __listOf__string               = js.Array[__string]
@@ -16,6 +17,7 @@ package object mediatailor {
   type __string                       = String
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
+
     @inline def deletePlaybackConfigurationFuture(
         params: DeletePlaybackConfigurationRequest
     ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise.toFuture
@@ -182,6 +184,7 @@ package mediatailor {
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
+    var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
     var PlaybackConfigurationArn: js.UndefOr[__string]
     var PlaybackEndpointPrefix: js.UndefOr[__string]
@@ -199,6 +202,7 @@ package mediatailor {
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
+        LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
         PlaybackEndpointPrefix: js.UndefOr[__string] = js.undefined,
@@ -213,6 +217,7 @@ package mediatailor {
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
@@ -318,6 +323,28 @@ package mediatailor {
     }
   }
 
+  /**
+    * The configuration for pre-roll ad insertion.
+    */
+  @js.native
+  trait LivePreRollConfiguration extends js.Object {
+    var AdDecisionServerUrl: js.UndefOr[__string]
+    var MaxDurationSeconds: js.UndefOr[__integer]
+  }
+
+  object LivePreRollConfiguration {
+    @inline
+    def apply(
+        AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
+        MaxDurationSeconds: js.UndefOr[__integer] = js.undefined
+    ): LivePreRollConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      MaxDurationSeconds.foreach(__v => __obj.updateDynamic("MaxDurationSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LivePreRollConfiguration]
+    }
+  }
+
   object OriginManifestTypeEnum {
     val SINGLE_PERIOD = "SINGLE_PERIOD"
     val MULTI_PERIOD  = "MULTI_PERIOD"
@@ -384,6 +411,7 @@ package mediatailor {
     var AdDecisionServerUrl: js.UndefOr[__string]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfigurationForPut]
+    var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
     var SlateAdUrl: js.UndefOr[__string]
     var Tags: js.UndefOr[__mapOf__string]
@@ -397,6 +425,7 @@ package mediatailor {
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfigurationForPut] = js.undefined,
+        LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         SlateAdUrl: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
@@ -407,6 +436,7 @@ package mediatailor {
       AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
+      LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -422,6 +452,7 @@ package mediatailor {
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
+    var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
     var PlaybackConfigurationArn: js.UndefOr[__string]
     var PlaybackEndpointPrefix: js.UndefOr[__string]
@@ -439,6 +470,7 @@ package mediatailor {
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
+        LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
         PlaybackEndpointPrefix: js.UndefOr[__string] = js.undefined,
@@ -453,6 +485,7 @@ package mediatailor {
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))

@@ -38,6 +38,7 @@ package object pinpoint {
   type ListOfSegmentResponse           = js.Array[SegmentResponse]
   type ListOfSimpleCondition           = js.Array[SimpleCondition]
   type ListOfTemplateResponse          = js.Array[TemplateResponse]
+  type ListOfTemplateVersionResponse   = js.Array[TemplateVersionResponse]
   type ListOfTreatmentResource         = js.Array[TreatmentResource]
   type ListOfWriteTreatmentResource    = js.Array[WriteTreatmentResource]
   type ListOf__string                  = js.Array[__string]
@@ -75,6 +76,7 @@ package object pinpoint {
   type __timestampIso8601              = js.Date
 
   implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
+
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
       service.createApp(params).promise.toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
@@ -93,6 +95,8 @@ package object pinpoint {
       service.createSegment(params).promise.toFuture
     @inline def createSmsTemplateFuture(params: CreateSmsTemplateRequest): Future[CreateSmsTemplateResponse] =
       service.createSmsTemplate(params).promise.toFuture
+    @inline def createVoiceTemplateFuture(params: CreateVoiceTemplateRequest): Future[CreateVoiceTemplateResponse] =
+      service.createVoiceTemplate(params).promise.toFuture
     @inline def deleteAdmChannelFuture(params: DeleteAdmChannelRequest): Future[DeleteAdmChannelResponse] =
       service.deleteAdmChannel(params).promise.toFuture
     @inline def deleteApnsChannelFuture(params: DeleteApnsChannelRequest): Future[DeleteApnsChannelResponse] =
@@ -136,6 +140,8 @@ package object pinpoint {
       service.deleteUserEndpoints(params).promise.toFuture
     @inline def deleteVoiceChannelFuture(params: DeleteVoiceChannelRequest): Future[DeleteVoiceChannelResponse] =
       service.deleteVoiceChannel(params).promise.toFuture
+    @inline def deleteVoiceTemplateFuture(params: DeleteVoiceTemplateRequest): Future[DeleteVoiceTemplateResponse] =
+      service.deleteVoiceTemplate(params).promise.toFuture
     @inline def getAdmChannelFuture(params: GetAdmChannelRequest): Future[GetAdmChannelResponse] =
       service.getAdmChannel(params).promise.toFuture
     @inline def getApnsChannelFuture(params: GetApnsChannelRequest): Future[GetApnsChannelResponse] =
@@ -227,10 +233,14 @@ package object pinpoint {
       service.getUserEndpoints(params).promise.toFuture
     @inline def getVoiceChannelFuture(params: GetVoiceChannelRequest): Future[GetVoiceChannelResponse] =
       service.getVoiceChannel(params).promise.toFuture
+    @inline def getVoiceTemplateFuture(params: GetVoiceTemplateRequest): Future[GetVoiceTemplateResponse] =
+      service.getVoiceTemplate(params).promise.toFuture
     @inline def listJourneysFuture(params: ListJourneysRequest): Future[ListJourneysResponse] =
       service.listJourneys(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
+    @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] =
+      service.listTemplateVersions(params).promise.toFuture
     @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
       service.listTemplates(params).promise.toFuture
     @inline def phoneNumberValidateFuture(params: PhoneNumberValidateRequest): Future[PhoneNumberValidateResponse] =
@@ -291,8 +301,13 @@ package object pinpoint {
       service.updateSmsChannel(params).promise.toFuture
     @inline def updateSmsTemplateFuture(params: UpdateSmsTemplateRequest): Future[UpdateSmsTemplateResponse] =
       service.updateSmsTemplate(params).promise.toFuture
+    @inline def updateTemplateActiveVersionFuture(
+        params: UpdateTemplateActiveVersionRequest
+    ): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise.toFuture
     @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] =
       service.updateVoiceChannel(params).promise.toFuture
+    @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] =
+      service.updateVoiceTemplate(params).promise.toFuture
   }
 }
 
@@ -311,6 +326,7 @@ package pinpoint {
     def createPushTemplate(params: CreatePushTemplateRequest): Request[CreatePushTemplateResponse]    = js.native
     def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse]                   = js.native
     def createSmsTemplate(params: CreateSmsTemplateRequest): Request[CreateSmsTemplateResponse]       = js.native
+    def createVoiceTemplate(params: CreateVoiceTemplateRequest): Request[CreateVoiceTemplateResponse] = js.native
     def deleteAdmChannel(params: DeleteAdmChannelRequest): Request[DeleteAdmChannelResponse]          = js.native
     def deleteApnsChannel(params: DeleteApnsChannelRequest): Request[DeleteApnsChannelResponse]       = js.native
     def deleteApnsSandboxChannel(params: DeleteApnsSandboxChannelRequest): Request[DeleteApnsSandboxChannelResponse] =
@@ -334,6 +350,7 @@ package pinpoint {
     def deleteSmsTemplate(params: DeleteSmsTemplateRequest): Request[DeleteSmsTemplateResponse]             = js.native
     def deleteUserEndpoints(params: DeleteUserEndpointsRequest): Request[DeleteUserEndpointsResponse]       = js.native
     def deleteVoiceChannel(params: DeleteVoiceChannelRequest): Request[DeleteVoiceChannelResponse]          = js.native
+    def deleteVoiceTemplate(params: DeleteVoiceTemplateRequest): Request[DeleteVoiceTemplateResponse]       = js.native
     def getAdmChannel(params: GetAdmChannelRequest): Request[GetAdmChannelResponse]                         = js.native
     def getApnsChannel(params: GetApnsChannelRequest): Request[GetApnsChannelResponse]                      = js.native
     def getApnsSandboxChannel(params: GetApnsSandboxChannelRequest): Request[GetApnsSandboxChannelResponse] = js.native
@@ -386,8 +403,10 @@ package pinpoint {
     def getSmsTemplate(params: GetSmsTemplateRequest): Request[GetSmsTemplateResponse]                   = js.native
     def getUserEndpoints(params: GetUserEndpointsRequest): Request[GetUserEndpointsResponse]             = js.native
     def getVoiceChannel(params: GetVoiceChannelRequest): Request[GetVoiceChannelResponse]                = js.native
+    def getVoiceTemplate(params: GetVoiceTemplateRequest): Request[GetVoiceTemplateResponse]             = js.native
     def listJourneys(params: ListJourneysRequest): Request[ListJourneysResponse]                         = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    def listTemplateVersions(params: ListTemplateVersionsRequest): Request[ListTemplateVersionsResponse] = js.native
     def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse]                      = js.native
     def phoneNumberValidate(params: PhoneNumberValidateRequest): Request[PhoneNumberValidateResponse]    = js.native
     def putEventStream(params: PutEventStreamRequest): Request[PutEventStreamResponse]                   = js.native
@@ -421,7 +440,11 @@ package pinpoint {
     def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse]                      = js.native
     def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse]             = js.native
     def updateSmsTemplate(params: UpdateSmsTemplateRequest): Request[UpdateSmsTemplateResponse]          = js.native
-    def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse]       = js.native
+    def updateTemplateActiveVersion(
+        params: UpdateTemplateActiveVersionRequest
+    ): Request[UpdateTemplateActiveVersionResponse]                                                   = js.native
+    def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse]    = js.native
+    def updateVoiceTemplate(params: UpdateVoiceTemplateRequest): Request[UpdateVoiceTemplateResponse] = js.native
   }
 
   /**
@@ -741,6 +764,7 @@ package pinpoint {
     var Action: js.UndefOr[Action]
     var Body: js.UndefOr[__string]
     var MediaUrl: js.UndefOr[__string]
+    var RawContent: js.UndefOr[__string]
     var Sound: js.UndefOr[__string]
     var Title: js.UndefOr[__string]
     var Url: js.UndefOr[__string]
@@ -752,6 +776,7 @@ package pinpoint {
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
         MediaUrl: js.UndefOr[__string] = js.undefined,
+        RawContent: js.UndefOr[__string] = js.undefined,
         Sound: js.UndefOr[__string] = js.undefined,
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
@@ -760,6 +785,7 @@ package pinpoint {
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
       Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
@@ -1230,6 +1256,7 @@ package pinpoint {
     var Body: js.UndefOr[__string]
     var ImageIconUrl: js.UndefOr[__string]
     var ImageUrl: js.UndefOr[__string]
+    var RawContent: js.UndefOr[__string]
     var SmallImageIconUrl: js.UndefOr[__string]
     var Sound: js.UndefOr[__string]
     var Title: js.UndefOr[__string]
@@ -1243,6 +1270,7 @@ package pinpoint {
         Body: js.UndefOr[__string] = js.undefined,
         ImageIconUrl: js.UndefOr[__string] = js.undefined,
         ImageUrl: js.UndefOr[__string] = js.undefined,
+        RawContent: js.UndefOr[__string] = js.undefined,
         SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
         Sound: js.UndefOr[__string] = js.undefined,
         Title: js.UndefOr[__string] = js.undefined,
@@ -1253,6 +1281,7 @@ package pinpoint {
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       ImageIconUrl.foreach(__v => __obj.updateDynamic("ImageIconUrl")(__v.asInstanceOf[js.Any]))
       ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
       SmallImageIconUrl.foreach(__v => __obj.updateDynamic("SmallImageIconUrl")(__v.asInstanceOf[js.Any]))
       Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
@@ -2438,8 +2467,47 @@ package pinpoint {
     }
   }
 
+  @js.native
+  trait CreateVoiceTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var VoiceTemplateRequest: VoiceTemplateRequest
+  }
+
+  object CreateVoiceTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        VoiceTemplateRequest: VoiceTemplateRequest
+    ): CreateVoiceTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName"         -> TemplateName.asInstanceOf[js.Any],
+        "VoiceTemplateRequest" -> VoiceTemplateRequest.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateVoiceTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVoiceTemplateResponse extends js.Object {
+    var CreateTemplateMessageBody: CreateTemplateMessageBody
+  }
+
+  object CreateVoiceTemplateResponse {
+    @inline
+    def apply(
+        CreateTemplateMessageBody: CreateTemplateMessageBody
+    ): CreateVoiceTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreateTemplateMessageBody" -> CreateTemplateMessageBody.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateVoiceTemplateResponse]
+    }
+  }
+
   /**
-    * Specifies the default message to use for all channels.
+    * Specifies the default message for all channels.
     */
   @js.native
   trait DefaultMessage extends js.Object {
@@ -2858,17 +2926,20 @@ package pinpoint {
   @js.native
   trait DeleteEmailTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object DeleteEmailTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): DeleteEmailTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteEmailTemplateRequest]
     }
   }
@@ -3044,17 +3115,20 @@ package pinpoint {
   @js.native
   trait DeletePushTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object DeletePushTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): DeletePushTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePushTemplateRequest]
     }
   }
@@ -3155,17 +3229,20 @@ package pinpoint {
   @js.native
   trait DeleteSmsTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object DeleteSmsTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): DeleteSmsTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSmsTemplateRequest]
     }
   }
@@ -3260,6 +3337,45 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[DeleteVoiceChannelResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteVoiceTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var Version: js.UndefOr[__string]
+  }
+
+  object DeleteVoiceTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
+    ): DeleteVoiceTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteVoiceTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVoiceTemplateResponse extends js.Object {
+    var MessageBody: MessageBody
+  }
+
+  object DeleteVoiceTemplateResponse {
+    @inline
+    def apply(
+        MessageBody: MessageBody
+    ): DeleteVoiceTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageBody" -> MessageBody.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVoiceTemplateResponse]
     }
   }
 
@@ -3481,6 +3597,7 @@ package pinpoint {
     var MessageConfig: js.UndefOr[JourneyEmailMessage]
     var NextActivity: js.UndefOr[__string]
     var TemplateName: js.UndefOr[__string]
+    var TemplateVersion: js.UndefOr[__string]
   }
 
   object EmailMessageActivity {
@@ -3488,12 +3605,14 @@ package pinpoint {
     def apply(
         MessageConfig: js.UndefOr[JourneyEmailMessage] = js.undefined,
         NextActivity: js.UndefOr[__string] = js.undefined,
-        TemplateName: js.UndefOr[__string] = js.undefined
+        TemplateName: js.UndefOr[__string] = js.undefined,
+        TemplateVersion: js.UndefOr[__string] = js.undefined
     ): EmailMessageActivity = {
       val __obj = js.Dynamic.literal()
       MessageConfig.foreach(__v => __obj.updateDynamic("MessageConfig")(__v.asInstanceOf[js.Any]))
       NextActivity.foreach(__v => __obj.updateDynamic("NextActivity")(__v.asInstanceOf[js.Any]))
       TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateVersion.foreach(__v => __obj.updateDynamic("TemplateVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailMessageActivity]
     }
   }
@@ -3503,8 +3622,10 @@ package pinpoint {
     */
   @js.native
   trait EmailTemplateRequest extends js.Object {
+    var DefaultSubstitutions: js.UndefOr[__string]
     var HtmlPart: js.UndefOr[__string]
     var Subject: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
     var TextPart: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
@@ -3512,14 +3633,18 @@ package pinpoint {
   object EmailTemplateRequest {
     @inline
     def apply(
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         HtmlPart: js.UndefOr[__string] = js.undefined,
         Subject: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
         TextPart: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): EmailTemplateRequest = {
       val __obj = js.Dynamic.literal()
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailTemplateRequest]
@@ -3536,9 +3661,12 @@ package pinpoint {
     var TemplateName: __string
     var TemplateType: TemplateType
     var Arn: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
     var HtmlPart: js.UndefOr[__string]
     var Subject: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
     var TextPart: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -3550,9 +3678,12 @@ package pinpoint {
         TemplateName: __string,
         TemplateType: TemplateType,
         Arn: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         HtmlPart: js.UndefOr[__string] = js.undefined,
         Subject: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
         TextPart: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): EmailTemplateResponse = {
       val __obj = js.Dynamic.literal(
@@ -3563,9 +3694,12 @@ package pinpoint {
       )
 
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailTemplateResponse]
     }
@@ -5253,17 +5387,20 @@ package pinpoint {
   @js.native
   trait GetEmailTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object GetEmailTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): GetEmailTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEmailTemplateRequest]
     }
   }
@@ -5748,17 +5885,20 @@ package pinpoint {
   @js.native
   trait GetPushTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object GetPushTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): GetPushTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPushTemplateRequest]
     }
   }
@@ -6078,17 +6218,20 @@ package pinpoint {
   @js.native
   trait GetSmsTemplateRequest extends js.Object {
     var TemplateName: __string
+    var Version: js.UndefOr[__string]
   }
 
   object GetSmsTemplateRequest {
     @inline
     def apply(
-        TemplateName: __string
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
     ): GetSmsTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSmsTemplateRequest]
     }
   }
@@ -6183,6 +6326,45 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[GetVoiceChannelResponse]
+    }
+  }
+
+  @js.native
+  trait GetVoiceTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var Version: js.UndefOr[__string]
+  }
+
+  object GetVoiceTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
+    ): GetVoiceTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVoiceTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait GetVoiceTemplateResponse extends js.Object {
+    var VoiceTemplateResponse: VoiceTemplateResponse
+  }
+
+  object GetVoiceTemplateResponse {
+    @inline
+    def apply(
+        VoiceTemplateResponse: VoiceTemplateResponse
+    ): GetVoiceTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "VoiceTemplateResponse" -> VoiceTemplateResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetVoiceTemplateResponse]
     }
   }
 
@@ -6526,7 +6708,7 @@ package pinpoint {
   }
 
   /**
-    * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey.
+    * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.
     */
   @js.native
   trait JourneyExecutionMetricsResponse extends js.Object {
@@ -6790,6 +6972,51 @@ package pinpoint {
   }
 
   @js.native
+  trait ListTemplateVersionsRequest extends js.Object {
+    var TemplateName: __string
+    var TemplateType: __string
+    var NextToken: js.UndefOr[__string]
+    var PageSize: js.UndefOr[__string]
+  }
+
+  object ListTemplateVersionsRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        TemplateType: __string,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        PageSize: js.UndefOr[__string] = js.undefined
+    ): ListTemplateVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any],
+        "TemplateType" -> TemplateType.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTemplateVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTemplateVersionsResponse extends js.Object {
+    var TemplateVersionsResponse: TemplateVersionsResponse
+  }
+
+  object ListTemplateVersionsResponse {
+    @inline
+    def apply(
+        TemplateVersionsResponse: TemplateVersionsResponse
+    ): ListTemplateVersionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "TemplateVersionsResponse" -> TemplateVersionsResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTemplateVersionsResponse]
+    }
+  }
+
+  @js.native
   trait ListTemplatesRequest extends js.Object {
     var NextToken: js.UndefOr[__string]
     var PageSize: js.UndefOr[__string]
@@ -6944,7 +7171,7 @@ package pinpoint {
   }
 
   /**
-    * Specifies the objects that define configuration and other settings for a message.
+    * Specifies the configuration and other settings for a message.
     */
   @js.native
   trait MessageRequest extends js.Object {
@@ -7103,7 +7330,7 @@ package pinpoint {
   }
 
   /**
-    * Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths in a journey, based on conditions that you specify.
+    * Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
     */
   @js.native
   trait MultiConditionalSplitActivity extends js.Object {
@@ -7310,7 +7537,9 @@ package pinpoint {
     var APNS: js.UndefOr[APNSPushNotificationTemplate]
     var Baidu: js.UndefOr[AndroidPushNotificationTemplate]
     var Default: js.UndefOr[DefaultPushNotificationTemplate]
+    var DefaultSubstitutions: js.UndefOr[__string]
     var GCM: js.UndefOr[AndroidPushNotificationTemplate]
+    var TemplateDescription: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -7321,7 +7550,9 @@ package pinpoint {
         APNS: js.UndefOr[APNSPushNotificationTemplate] = js.undefined,
         Baidu: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
         Default: js.UndefOr[DefaultPushNotificationTemplate] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         GCM: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): PushNotificationTemplateRequest = {
       val __obj = js.Dynamic.literal()
@@ -7329,7 +7560,9 @@ package pinpoint {
       APNS.foreach(__v => __obj.updateDynamic("APNS")(__v.asInstanceOf[js.Any]))
       Baidu.foreach(__v => __obj.updateDynamic("Baidu")(__v.asInstanceOf[js.Any]))
       Default.foreach(__v => __obj.updateDynamic("Default")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       GCM.foreach(__v => __obj.updateDynamic("GCM")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PushNotificationTemplateRequest]
     }
@@ -7349,7 +7582,10 @@ package pinpoint {
     var Arn: js.UndefOr[__string]
     var Baidu: js.UndefOr[AndroidPushNotificationTemplate]
     var Default: js.UndefOr[DefaultPushNotificationTemplate]
+    var DefaultSubstitutions: js.UndefOr[__string]
     var GCM: js.UndefOr[AndroidPushNotificationTemplate]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -7365,7 +7601,10 @@ package pinpoint {
         Arn: js.UndefOr[__string] = js.undefined,
         Baidu: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
         Default: js.UndefOr[DefaultPushNotificationTemplate] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         GCM: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): PushNotificationTemplateResponse = {
       val __obj = js.Dynamic.literal(
@@ -7380,7 +7619,10 @@ package pinpoint {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Baidu.foreach(__v => __obj.updateDynamic("Baidu")(__v.asInstanceOf[js.Any]))
       Default.foreach(__v => __obj.updateDynamic("Default")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       GCM.foreach(__v => __obj.updateDynamic("GCM")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PushNotificationTemplateResponse]
     }
@@ -7799,6 +8041,8 @@ package pinpoint {
   @js.native
   trait SMSTemplateRequest extends js.Object {
     var Body: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -7806,10 +8050,14 @@ package pinpoint {
     @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SMSTemplateRequest = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSTemplateRequest]
     }
@@ -7826,6 +8074,9 @@ package pinpoint {
     var TemplateType: TemplateType
     var Arn: js.UndefOr[__string]
     var Body: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -7838,6 +8089,9 @@ package pinpoint {
         TemplateType: TemplateType,
         Arn: js.UndefOr[__string] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SMSTemplateResponse = {
       val __obj = js.Dynamic.literal(
@@ -7849,6 +8103,9 @@ package pinpoint {
 
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSTemplateResponse]
     }
@@ -8565,32 +8822,55 @@ package pinpoint {
   }
 
   /**
-    * Specifies the name of the message template to use for the message.
+    * Specifies the name and version of the message template to use for the message.
     */
   @js.native
   trait Template extends js.Object {
     var Name: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object Template {
     @inline
     def apply(
-        Name: js.UndefOr[__string] = js.undefined
+        Name: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
     ): Template = {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Template]
     }
   }
 
   /**
-    * Specifies the message template for each type of channel.
+    * Specifies which version of a message template to use as the active version of the template.
+    */
+  @js.native
+  trait TemplateActiveVersionRequest extends js.Object {
+    var Version: js.UndefOr[__string]
+  }
+
+  object TemplateActiveVersionRequest {
+    @inline
+    def apply(
+        Version: js.UndefOr[__string] = js.undefined
+    ): TemplateActiveVersionRequest = {
+      val __obj = js.Dynamic.literal()
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateActiveVersionRequest]
+    }
+  }
+
+  /**
+    * Specifies the message template to use for the message, for each type of channel.
     */
   @js.native
   trait TemplateConfiguration extends js.Object {
     var EmailTemplate: js.UndefOr[Template]
     var PushTemplate: js.UndefOr[Template]
     var SMSTemplate: js.UndefOr[Template]
+    var VoiceTemplate: js.UndefOr[Template]
   }
 
   object TemplateConfiguration {
@@ -8598,12 +8878,14 @@ package pinpoint {
     def apply(
         EmailTemplate: js.UndefOr[Template] = js.undefined,
         PushTemplate: js.UndefOr[Template] = js.undefined,
-        SMSTemplate: js.UndefOr[Template] = js.undefined
+        SMSTemplate: js.UndefOr[Template] = js.undefined,
+        VoiceTemplate: js.UndefOr[Template] = js.undefined
     ): TemplateConfiguration = {
       val __obj = js.Dynamic.literal()
       EmailTemplate.foreach(__v => __obj.updateDynamic("EmailTemplate")(__v.asInstanceOf[js.Any]))
       PushTemplate.foreach(__v => __obj.updateDynamic("PushTemplate")(__v.asInstanceOf[js.Any]))
       SMSTemplate.foreach(__v => __obj.updateDynamic("SMSTemplate")(__v.asInstanceOf[js.Any]))
+      VoiceTemplate.foreach(__v => __obj.updateDynamic("VoiceTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateConfiguration]
     }
   }
@@ -8618,6 +8900,9 @@ package pinpoint {
     var TemplateName: __string
     var TemplateType: TemplateType
     var Arn: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -8629,6 +8914,9 @@ package pinpoint {
         TemplateName: __string,
         TemplateType: TemplateType,
         Arn: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): TemplateResponse = {
       val __obj = js.Dynamic.literal(
@@ -8639,6 +8927,9 @@ package pinpoint {
       )
 
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateResponse]
     }
@@ -8651,6 +8942,75 @@ package pinpoint {
     val PUSH  = "PUSH"
 
     val values = js.Object.freeze(js.Array(EMAIL, SMS, VOICE, PUSH))
+  }
+
+  /**
+    * Provides information about a specific version of a message template.
+    */
+  @js.native
+  trait TemplateVersionResponse extends js.Object {
+    var CreationDate: __string
+    var LastModifiedDate: __string
+    var TemplateName: __string
+    var TemplateType: __string
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
+  }
+
+  object TemplateVersionResponse {
+    @inline
+    def apply(
+        CreationDate: __string,
+        LastModifiedDate: __string,
+        TemplateName: __string,
+        TemplateType: __string,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
+    ): TemplateVersionResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreationDate"     -> CreationDate.asInstanceOf[js.Any],
+        "LastModifiedDate" -> LastModifiedDate.asInstanceOf[js.Any],
+        "TemplateName"     -> TemplateName.asInstanceOf[js.Any],
+        "TemplateType"     -> TemplateType.asInstanceOf[js.Any]
+      )
+
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateVersionResponse]
+    }
+  }
+
+  /**
+    * Provides information about all the versions of a specific message template.
+    */
+  @js.native
+  trait TemplateVersionsResponse extends js.Object {
+    var Item: ListOfTemplateVersionResponse
+    var Message: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+    var RequestID: js.UndefOr[__string]
+  }
+
+  object TemplateVersionsResponse {
+    @inline
+    def apply(
+        Item: ListOfTemplateVersionResponse,
+        Message: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        RequestID: js.UndefOr[__string] = js.undefined
+    ): TemplateVersionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestID.foreach(__v => __obj.updateDynamic("RequestID")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateVersionsResponse]
+    }
   }
 
   /**
@@ -9125,19 +9485,25 @@ package pinpoint {
   trait UpdateEmailTemplateRequest extends js.Object {
     var EmailTemplateRequest: EmailTemplateRequest
     var TemplateName: __string
+    var CreateNewVersion: js.UndefOr[__boolean]
+    var Version: js.UndefOr[__string]
   }
 
   object UpdateEmailTemplateRequest {
     @inline
     def apply(
         EmailTemplateRequest: EmailTemplateRequest,
-        TemplateName: __string
+        TemplateName: __string,
+        CreateNewVersion: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
     ): UpdateEmailTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "EmailTemplateRequest" -> EmailTemplateRequest.asInstanceOf[js.Any],
         "TemplateName"         -> TemplateName.asInstanceOf[js.Any]
       )
 
+      CreateNewVersion.foreach(__v => __obj.updateDynamic("CreateNewVersion")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEmailTemplateRequest]
     }
   }
@@ -9368,19 +9734,25 @@ package pinpoint {
   trait UpdatePushTemplateRequest extends js.Object {
     var PushNotificationTemplateRequest: PushNotificationTemplateRequest
     var TemplateName: __string
+    var CreateNewVersion: js.UndefOr[__boolean]
+    var Version: js.UndefOr[__string]
   }
 
   object UpdatePushTemplateRequest {
     @inline
     def apply(
         PushNotificationTemplateRequest: PushNotificationTemplateRequest,
-        TemplateName: __string
+        TemplateName: __string,
+        CreateNewVersion: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
     ): UpdatePushTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "PushNotificationTemplateRequest" -> PushNotificationTemplateRequest.asInstanceOf[js.Any],
         "TemplateName"                    -> TemplateName.asInstanceOf[js.Any]
       )
 
+      CreateNewVersion.foreach(__v => __obj.updateDynamic("CreateNewVersion")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePushTemplateRequest]
     }
   }
@@ -9488,19 +9860,25 @@ package pinpoint {
   trait UpdateSmsTemplateRequest extends js.Object {
     var SMSTemplateRequest: SMSTemplateRequest
     var TemplateName: __string
+    var CreateNewVersion: js.UndefOr[__boolean]
+    var Version: js.UndefOr[__string]
   }
 
   object UpdateSmsTemplateRequest {
     @inline
     def apply(
         SMSTemplateRequest: SMSTemplateRequest,
-        TemplateName: __string
+        TemplateName: __string,
+        CreateNewVersion: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
     ): UpdateSmsTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "SMSTemplateRequest" -> SMSTemplateRequest.asInstanceOf[js.Any],
         "TemplateName"       -> TemplateName.asInstanceOf[js.Any]
       )
 
+      CreateNewVersion.foreach(__v => __obj.updateDynamic("CreateNewVersion")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSmsTemplateRequest]
     }
   }
@@ -9520,6 +9898,48 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[UpdateSmsTemplateResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateTemplateActiveVersionRequest extends js.Object {
+    var TemplateActiveVersionRequest: TemplateActiveVersionRequest
+    var TemplateName: __string
+    var TemplateType: __string
+  }
+
+  object UpdateTemplateActiveVersionRequest {
+    @inline
+    def apply(
+        TemplateActiveVersionRequest: TemplateActiveVersionRequest,
+        TemplateName: __string,
+        TemplateType: __string
+    ): UpdateTemplateActiveVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateActiveVersionRequest" -> TemplateActiveVersionRequest.asInstanceOf[js.Any],
+        "TemplateName"                 -> TemplateName.asInstanceOf[js.Any],
+        "TemplateType"                 -> TemplateType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateTemplateActiveVersionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateTemplateActiveVersionResponse extends js.Object {
+    var MessageBody: MessageBody
+  }
+
+  object UpdateTemplateActiveVersionResponse {
+    @inline
+    def apply(
+        MessageBody: MessageBody
+    ): UpdateTemplateActiveVersionResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageBody" -> MessageBody.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateTemplateActiveVersionResponse]
     }
   }
 
@@ -9559,6 +9979,51 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[UpdateVoiceChannelResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateVoiceTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var VoiceTemplateRequest: VoiceTemplateRequest
+    var CreateNewVersion: js.UndefOr[__boolean]
+    var Version: js.UndefOr[__string]
+  }
+
+  object UpdateVoiceTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        VoiceTemplateRequest: VoiceTemplateRequest,
+        CreateNewVersion: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
+    ): UpdateVoiceTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName"         -> TemplateName.asInstanceOf[js.Any],
+        "VoiceTemplateRequest" -> VoiceTemplateRequest.asInstanceOf[js.Any]
+      )
+
+      CreateNewVersion.foreach(__v => __obj.updateDynamic("CreateNewVersion")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVoiceTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateVoiceTemplateResponse extends js.Object {
+    var MessageBody: MessageBody
+  }
+
+  object UpdateVoiceTemplateResponse {
+    @inline
+    def apply(
+        MessageBody: MessageBody
+    ): UpdateVoiceTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageBody" -> MessageBody.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateVoiceTemplateResponse]
     }
   }
 
@@ -9657,6 +10122,94 @@ package pinpoint {
       Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
       VoiceId.foreach(__v => __obj.updateDynamic("VoiceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceMessage]
+    }
+  }
+
+  /**
+    * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+    */
+  @js.native
+  trait VoiceTemplateRequest extends js.Object {
+    var Body: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var LanguageCode: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
+    var VoiceId: js.UndefOr[__string]
+    var tags: js.UndefOr[MapOf__string]
+  }
+
+  object VoiceTemplateRequest {
+    @inline
+    def apply(
+        Body: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        LanguageCode: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        VoiceId: js.UndefOr[__string] = js.undefined,
+        tags: js.UndefOr[MapOf__string] = js.undefined
+    ): VoiceTemplateRequest = {
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.updateDynamic("VoiceId")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceTemplateRequest]
+    }
+  }
+
+  /**
+    * Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.
+    */
+  @js.native
+  trait VoiceTemplateResponse extends js.Object {
+    var CreationDate: __string
+    var LastModifiedDate: __string
+    var TemplateName: __string
+    var TemplateType: TemplateType
+    var Arn: js.UndefOr[__string]
+    var Body: js.UndefOr[__string]
+    var DefaultSubstitutions: js.UndefOr[__string]
+    var LanguageCode: js.UndefOr[__string]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
+    var VoiceId: js.UndefOr[__string]
+    var tags: js.UndefOr[MapOf__string]
+  }
+
+  object VoiceTemplateResponse {
+    @inline
+    def apply(
+        CreationDate: __string,
+        LastModifiedDate: __string,
+        TemplateName: __string,
+        TemplateType: TemplateType,
+        Arn: js.UndefOr[__string] = js.undefined,
+        Body: js.UndefOr[__string] = js.undefined,
+        DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        LanguageCode: js.UndefOr[__string] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
+        VoiceId: js.UndefOr[__string] = js.undefined,
+        tags: js.UndefOr[MapOf__string] = js.undefined
+    ): VoiceTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreationDate"     -> CreationDate.asInstanceOf[js.Any],
+        "LastModifiedDate" -> LastModifiedDate.asInstanceOf[js.Any],
+        "TemplateName"     -> TemplateName.asInstanceOf[js.Any],
+        "TemplateType"     -> TemplateType.asInstanceOf[js.Any]
+      )
+
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.updateDynamic("VoiceId")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceTemplateResponse]
     }
   }
 

@@ -8,57 +8,75 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object health {
-  type DescribeEventDetailsFailedSet     = js.Array[EventDetailsErrorItem]
-  type DescribeEventDetailsSuccessfulSet = js.Array[EventDetails]
-  type EntityAggregateList               = js.Array[EntityAggregate]
-  type EntityList                        = js.Array[AffectedEntity]
-  type EventAggregateList                = js.Array[EventAggregate]
-  type EventArnsList                     = js.Array[eventArn]
-  type EventList                         = js.Array[Event]
-  type EventTypeCategoryList             = js.Array[eventTypeCategory]
-  type EventTypeCodeList                 = js.Array[eventTypeCode]
-  type EventTypeList                     = js.Array[EventType]
-  type accountId                         = String
-  type aggregateValue                    = String
-  type availabilityZone                  = String
-  type availabilityZones                 = js.Array[availabilityZone]
-  type count                             = Int
-  type dateTimeRangeList                 = js.Array[DateTimeRange]
-  type entityArn                         = String
-  type entityArnList                     = js.Array[entityArn]
-  type entityStatusCode                  = String
-  type entityStatusCodeList              = js.Array[entityStatusCode]
-  type entityUrl                         = String
-  type entityValue                       = String
-  type entityValueList                   = js.Array[entityValue]
-  type eventAggregateField               = String
-  type eventArn                          = String
-  type eventArnList                      = js.Array[eventArn]
-  type eventDescription                  = String
-  type eventMetadata                     = js.Dictionary[metadataValue]
-  type eventStatusCode                   = String
-  type eventStatusCodeList               = js.Array[eventStatusCode]
-  type eventType                         = String
-  type eventTypeCategory                 = String
-  type eventTypeCategoryList             = js.Array[eventTypeCategory]
-  type eventTypeCode                     = String
-  type eventTypeList                     = js.Array[eventType]
-  type locale                            = String
-  type maxResults                        = Int
-  type metadataKey                       = String
-  type metadataValue                     = String
-  type nextToken                         = String
-  type region                            = String
-  type regionList                        = js.Array[region]
-  type service                           = String
-  type serviceList                       = js.Array[service]
-  type tagFilter                         = js.Array[tagSet]
-  type tagKey                            = String
-  type tagSet                            = js.Dictionary[tagValue]
-  type tagValue                          = String
-  type timestamp                         = js.Date
+  type DescribeAffectedEntitiesForOrganizationFailedSet = js.Array[OrganizationAffectedEntitiesErrorItem]
+  type DescribeEventDetailsFailedSet                    = js.Array[EventDetailsErrorItem]
+  type DescribeEventDetailsForOrganizationFailedSet     = js.Array[OrganizationEventDetailsErrorItem]
+  type DescribeEventDetailsForOrganizationSuccessfulSet = js.Array[OrganizationEventDetails]
+  type DescribeEventDetailsSuccessfulSet                = js.Array[EventDetails]
+  type EntityAggregateList                              = js.Array[EntityAggregate]
+  type EntityList                                       = js.Array[AffectedEntity]
+  type EventAggregateList                               = js.Array[EventAggregate]
+  type EventArnsList                                    = js.Array[eventArn]
+  type EventList                                        = js.Array[Event]
+  type EventTypeCategoryList                            = js.Array[eventTypeCategory]
+  type EventTypeCodeList                                = js.Array[eventTypeCode]
+  type EventTypeList                                    = js.Array[EventType]
+  type OrganizationEntityFiltersList                    = js.Array[EventAccountFilter]
+  type OrganizationEventDetailFiltersList               = js.Array[EventAccountFilter]
+  type OrganizationEventList                            = js.Array[OrganizationEvent]
+  type accountId                                        = String
+  type affectedAccountsList                             = js.Array[accountId]
+  type aggregateValue                                   = String
+  type availabilityZone                                 = String
+  type availabilityZones                                = js.Array[availabilityZone]
+  type awsAccountIdsList                                = js.Array[accountId]
+  type count                                            = Int
+  type dateTimeRangeList                                = js.Array[DateTimeRange]
+  type entityArn                                        = String
+  type entityArnList                                    = js.Array[entityArn]
+  type entityStatusCode                                 = String
+  type entityStatusCodeList                             = js.Array[entityStatusCode]
+  type entityUrl                                        = String
+  type entityValue                                      = String
+  type entityValueList                                  = js.Array[entityValue]
+  type eventAggregateField                              = String
+  type eventArn                                         = String
+  type eventArnList                                     = js.Array[eventArn]
+  type eventDescription                                 = String
+  type eventMetadata                                    = js.Dictionary[metadataValue]
+  type eventStatusCode                                  = String
+  type eventStatusCodeList                              = js.Array[eventStatusCode]
+  type eventType                                        = String
+  type eventTypeCategory                                = String
+  type eventTypeCategoryList                            = js.Array[eventTypeCategory]
+  type eventTypeCode                                    = String
+  type eventTypeList                                    = js.Array[eventType]
+  type healthServiceAccessStatusForOrganization         = String
+  type locale                                           = String
+  type maxResults                                       = Int
+  type metadataKey                                      = String
+  type metadataValue                                    = String
+  type nextToken                                        = String
+  type region                                           = String
+  type regionList                                       = js.Array[region]
+  type service                                          = String
+  type serviceList                                      = js.Array[service]
+  type tagFilter                                        = js.Array[tagSet]
+  type tagKey                                           = String
+  type tagSet                                           = js.Dictionary[tagValue]
+  type tagValue                                         = String
+  type timestamp                                        = js.Date
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
+
+    @inline def describeAffectedAccountsForOrganizationFuture(
+        params: DescribeAffectedAccountsForOrganizationRequest
+    ): Future[DescribeAffectedAccountsForOrganizationResponse] =
+      service.describeAffectedAccountsForOrganization(params).promise.toFuture
+    @inline def describeAffectedEntitiesForOrganizationFuture(
+        params: DescribeAffectedEntitiesForOrganizationRequest
+    ): Future[DescribeAffectedEntitiesForOrganizationResponse] =
+      service.describeAffectedEntitiesForOrganization(params).promise.toFuture
     @inline def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest
     ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture
@@ -68,12 +86,26 @@ package object health {
     @inline def describeEventAggregatesFuture(
         params: DescribeEventAggregatesRequest
     ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise.toFuture
+    @inline def describeEventDetailsForOrganizationFuture(
+        params: DescribeEventDetailsForOrganizationRequest
+    ): Future[DescribeEventDetailsForOrganizationResponse] =
+      service.describeEventDetailsForOrganization(params).promise.toFuture
     @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
       service.describeEventDetails(params).promise.toFuture
     @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
       service.describeEventTypes(params).promise.toFuture
+    @inline def describeEventsForOrganizationFuture(
+        params: DescribeEventsForOrganizationRequest
+    ): Future[DescribeEventsForOrganizationResponse] = service.describeEventsForOrganization(params).promise.toFuture
     @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
+    @inline def describeHealthServiceStatusForOrganizationFuture()
+        : Future[DescribeHealthServiceStatusForOrganizationResponse] =
+      service.describeHealthServiceStatusForOrganization().promise.toFuture
+    @inline def disableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
+      service.disableHealthServiceAccessForOrganization().promise.toFuture
+    @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
+      service.enableHealthServiceAccessForOrganization().promise.toFuture
   }
 }
 
@@ -83,15 +115,31 @@ package health {
   class Health() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def describeAffectedAccountsForOrganization(
+        params: DescribeAffectedAccountsForOrganizationRequest
+    ): Request[DescribeAffectedAccountsForOrganizationResponse] = js.native
     def describeAffectedEntities(params: DescribeAffectedEntitiesRequest): Request[DescribeAffectedEntitiesResponse] =
       js.native
+    def describeAffectedEntitiesForOrganization(
+        params: DescribeAffectedEntitiesForOrganizationRequest
+    ): Request[DescribeAffectedEntitiesForOrganizationResponse] = js.native
     def describeEntityAggregates(params: DescribeEntityAggregatesRequest): Request[DescribeEntityAggregatesResponse] =
       js.native
     def describeEventAggregates(params: DescribeEventAggregatesRequest): Request[DescribeEventAggregatesResponse] =
       js.native
     def describeEventDetails(params: DescribeEventDetailsRequest): Request[DescribeEventDetailsResponse] = js.native
-    def describeEventTypes(params: DescribeEventTypesRequest): Request[DescribeEventTypesResponse]       = js.native
-    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse]                   = js.native
+    def describeEventDetailsForOrganization(
+        params: DescribeEventDetailsForOrganizationRequest
+    ): Request[DescribeEventDetailsForOrganizationResponse]                                        = js.native
+    def describeEventTypes(params: DescribeEventTypesRequest): Request[DescribeEventTypesResponse] = js.native
+    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse]             = js.native
+    def describeEventsForOrganization(
+        params: DescribeEventsForOrganizationRequest
+    ): Request[DescribeEventsForOrganizationResponse] = js.native
+    def describeHealthServiceStatusForOrganization(): Request[DescribeHealthServiceStatusForOrganizationResponse] =
+      js.native
+    def disableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
+    def enableHealthServiceAccessForOrganization(): Request[js.Object]  = js.native
   }
 
   /**
@@ -153,6 +201,98 @@ package health {
       from.foreach(__v => __obj.updateDynamic("from")(__v.asInstanceOf[js.Any]))
       to.foreach(__v => __obj.updateDynamic("to")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateTimeRange]
+    }
+  }
+
+  @js.native
+  trait DescribeAffectedAccountsForOrganizationRequest extends js.Object {
+    var eventArn: eventArn
+    var maxResults: js.UndefOr[maxResults]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeAffectedAccountsForOrganizationRequest {
+    @inline
+    def apply(
+        eventArn: eventArn,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedAccountsForOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "eventArn" -> eventArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAffectedAccountsForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAffectedAccountsForOrganizationResponse extends js.Object {
+    var affectedAccounts: js.UndefOr[affectedAccountsList]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeAffectedAccountsForOrganizationResponse {
+    @inline
+    def apply(
+        affectedAccounts: js.UndefOr[affectedAccountsList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedAccountsForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      affectedAccounts.foreach(__v => __obj.updateDynamic("affectedAccounts")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAffectedAccountsForOrganizationResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAffectedEntitiesForOrganizationRequest extends js.Object {
+    var organizationEntityFilters: OrganizationEntityFiltersList
+    var locale: js.UndefOr[locale]
+    var maxResults: js.UndefOr[maxResults]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeAffectedEntitiesForOrganizationRequest {
+    @inline
+    def apply(
+        organizationEntityFilters: OrganizationEntityFiltersList,
+        locale: js.UndefOr[locale] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedEntitiesForOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "organizationEntityFilters" -> organizationEntityFilters.asInstanceOf[js.Any]
+      )
+
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAffectedEntitiesForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAffectedEntitiesForOrganizationResponse extends js.Object {
+    var entities: js.UndefOr[EntityList]
+    var failedSet: js.UndefOr[DescribeAffectedEntitiesForOrganizationFailedSet]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeAffectedEntitiesForOrganizationResponse {
+    @inline
+    def apply(
+        entities: js.UndefOr[EntityList] = js.undefined,
+        failedSet: js.UndefOr[DescribeAffectedEntitiesForOrganizationFailedSet] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedEntitiesForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      entities.foreach(__v => __obj.updateDynamic("entities")(__v.asInstanceOf[js.Any]))
+      failedSet.foreach(__v => __obj.updateDynamic("failedSet")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAffectedEntitiesForOrganizationResponse]
     }
   }
 
@@ -281,6 +421,46 @@ package health {
   }
 
   @js.native
+  trait DescribeEventDetailsForOrganizationRequest extends js.Object {
+    var organizationEventDetailFilters: OrganizationEventDetailFiltersList
+    var locale: js.UndefOr[locale]
+  }
+
+  object DescribeEventDetailsForOrganizationRequest {
+    @inline
+    def apply(
+        organizationEventDetailFilters: OrganizationEventDetailFiltersList,
+        locale: js.UndefOr[locale] = js.undefined
+    ): DescribeEventDetailsForOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "organizationEventDetailFilters" -> organizationEventDetailFilters.asInstanceOf[js.Any]
+      )
+
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventDetailsForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEventDetailsForOrganizationResponse extends js.Object {
+    var failedSet: js.UndefOr[DescribeEventDetailsForOrganizationFailedSet]
+    var successfulSet: js.UndefOr[DescribeEventDetailsForOrganizationSuccessfulSet]
+  }
+
+  object DescribeEventDetailsForOrganizationResponse {
+    @inline
+    def apply(
+        failedSet: js.UndefOr[DescribeEventDetailsForOrganizationFailedSet] = js.undefined,
+        successfulSet: js.UndefOr[DescribeEventDetailsForOrganizationSuccessfulSet] = js.undefined
+    ): DescribeEventDetailsForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      failedSet.foreach(__v => __obj.updateDynamic("failedSet")(__v.asInstanceOf[js.Any]))
+      successfulSet.foreach(__v => __obj.updateDynamic("successfulSet")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventDetailsForOrganizationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeEventDetailsRequest extends js.Object {
     var eventArns: eventArnList
     var locale: js.UndefOr[locale]
@@ -365,6 +545,50 @@ package health {
   }
 
   @js.native
+  trait DescribeEventsForOrganizationRequest extends js.Object {
+    var filter: js.UndefOr[OrganizationEventFilter]
+    var locale: js.UndefOr[locale]
+    var maxResults: js.UndefOr[maxResults]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeEventsForOrganizationRequest {
+    @inline
+    def apply(
+        filter: js.UndefOr[OrganizationEventFilter] = js.undefined,
+        locale: js.UndefOr[locale] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventsForOrganizationRequest = {
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEventsForOrganizationResponse extends js.Object {
+    var events: js.UndefOr[OrganizationEventList]
+    var nextToken: js.UndefOr[nextToken]
+  }
+
+  object DescribeEventsForOrganizationResponse {
+    @inline
+    def apply(
+        events: js.UndefOr[OrganizationEventList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventsForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsForOrganizationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeEventsRequest extends js.Object {
     var filter: js.UndefOr[EventFilter]
     var locale: js.UndefOr[locale]
@@ -405,6 +629,24 @@ package health {
       events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeHealthServiceStatusForOrganizationResponse extends js.Object {
+    var healthServiceAccessStatusForOrganization: js.UndefOr[healthServiceAccessStatusForOrganization]
+  }
+
+  object DescribeHealthServiceStatusForOrganizationResponse {
+    @inline
+    def apply(
+        healthServiceAccessStatusForOrganization: js.UndefOr[healthServiceAccessStatusForOrganization] = js.undefined
+    ): DescribeHealthServiceStatusForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      healthServiceAccessStatusForOrganization.foreach(__v =>
+        __obj.updateDynamic("healthServiceAccessStatusForOrganization")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeHealthServiceStatusForOrganizationResponse]
     }
   }
 
@@ -467,7 +709,7 @@ package health {
   }
 
   /**
-    * Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.
+    * Summary information about an AWS Health event.
     */
   @js.native
   trait Event extends js.Object {
@@ -509,6 +751,30 @@ package health {
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
+    }
+  }
+
+  /**
+    * The values used to filter results from the <a>DescribeEventDetailsForOrganization</a> and <a>DescribeAffectedEntitiesForOrganization</a> operations.
+    */
+  @js.native
+  trait EventAccountFilter extends js.Object {
+    var awsAccountId: accountId
+    var eventArn: eventArn
+  }
+
+  object EventAccountFilter {
+    @inline
+    def apply(
+        awsAccountId: accountId,
+        eventArn: eventArn
+    ): EventAccountFilter = {
+      val __obj = js.Dynamic.literal(
+        "awsAccountId" -> awsAccountId.asInstanceOf[js.Any],
+        "eventArn"     -> eventArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EventAccountFilter]
     }
   }
 
@@ -705,6 +971,182 @@ package health {
       eventTypeCodes.foreach(__v => __obj.updateDynamic("eventTypeCodes")(__v.asInstanceOf[js.Any]))
       services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventTypeFilter]
+    }
+  }
+
+  /**
+    * Error information returned when a <a>DescribeAffectedEntitiesForOrganization</a> operation cannot find or process a specific entity.
+    */
+  @js.native
+  trait OrganizationAffectedEntitiesErrorItem extends js.Object {
+    var awsAccountId: js.UndefOr[accountId]
+    var errorMessage: js.UndefOr[String]
+    var errorName: js.UndefOr[String]
+    var eventArn: js.UndefOr[eventArn]
+  }
+
+  object OrganizationAffectedEntitiesErrorItem {
+    @inline
+    def apply(
+        awsAccountId: js.UndefOr[accountId] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
+        errorName: js.UndefOr[String] = js.undefined,
+        eventArn: js.UndefOr[eventArn] = js.undefined
+    ): OrganizationAffectedEntitiesErrorItem = {
+      val __obj = js.Dynamic.literal()
+      awsAccountId.foreach(__v => __obj.updateDynamic("awsAccountId")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      errorName.foreach(__v => __obj.updateDynamic("errorName")(__v.asInstanceOf[js.Any]))
+      eventArn.foreach(__v => __obj.updateDynamic("eventArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationAffectedEntitiesErrorItem]
+    }
+  }
+
+  /**
+    * Summary information about an event, returned by the <a>DescribeEventsForOrganization</a> operation.
+    */
+  @js.native
+  trait OrganizationEvent extends js.Object {
+    var arn: js.UndefOr[eventArn]
+    var endTime: js.UndefOr[timestamp]
+    var eventTypeCategory: js.UndefOr[eventTypeCategory]
+    var eventTypeCode: js.UndefOr[eventTypeCode]
+    var lastUpdatedTime: js.UndefOr[timestamp]
+    var region: js.UndefOr[region]
+    var service: js.UndefOr[service]
+    var startTime: js.UndefOr[timestamp]
+    var statusCode: js.UndefOr[eventStatusCode]
+  }
+
+  object OrganizationEvent {
+    @inline
+    def apply(
+        arn: js.UndefOr[eventArn] = js.undefined,
+        endTime: js.UndefOr[timestamp] = js.undefined,
+        eventTypeCategory: js.UndefOr[eventTypeCategory] = js.undefined,
+        eventTypeCode: js.UndefOr[eventTypeCode] = js.undefined,
+        lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
+        region: js.UndefOr[region] = js.undefined,
+        service: js.UndefOr[service] = js.undefined,
+        startTime: js.UndefOr[timestamp] = js.undefined,
+        statusCode: js.UndefOr[eventStatusCode] = js.undefined
+    ): OrganizationEvent = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      eventTypeCategory.foreach(__v => __obj.updateDynamic("eventTypeCategory")(__v.asInstanceOf[js.Any]))
+      eventTypeCode.foreach(__v => __obj.updateDynamic("eventTypeCode")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEvent]
+    }
+  }
+
+  /**
+    * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetailsForOrganization</a> operation.
+    */
+  @js.native
+  trait OrganizationEventDetails extends js.Object {
+    var awsAccountId: js.UndefOr[accountId]
+    var event: js.UndefOr[Event]
+    var eventDescription: js.UndefOr[EventDescription]
+    var eventMetadata: js.UndefOr[eventMetadata]
+  }
+
+  object OrganizationEventDetails {
+    @inline
+    def apply(
+        awsAccountId: js.UndefOr[accountId] = js.undefined,
+        event: js.UndefOr[Event] = js.undefined,
+        eventDescription: js.UndefOr[EventDescription] = js.undefined,
+        eventMetadata: js.UndefOr[eventMetadata] = js.undefined
+    ): OrganizationEventDetails = {
+      val __obj = js.Dynamic.literal()
+      awsAccountId.foreach(__v => __obj.updateDynamic("awsAccountId")(__v.asInstanceOf[js.Any]))
+      event.foreach(__v => __obj.updateDynamic("event")(__v.asInstanceOf[js.Any]))
+      eventDescription.foreach(__v => __obj.updateDynamic("eventDescription")(__v.asInstanceOf[js.Any]))
+      eventMetadata.foreach(__v => __obj.updateDynamic("eventMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEventDetails]
+    }
+  }
+
+  /**
+    * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
+    */
+  @js.native
+  trait OrganizationEventDetailsErrorItem extends js.Object {
+    var awsAccountId: js.UndefOr[accountId]
+    var errorMessage: js.UndefOr[String]
+    var errorName: js.UndefOr[String]
+    var eventArn: js.UndefOr[eventArn]
+  }
+
+  object OrganizationEventDetailsErrorItem {
+    @inline
+    def apply(
+        awsAccountId: js.UndefOr[accountId] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
+        errorName: js.UndefOr[String] = js.undefined,
+        eventArn: js.UndefOr[eventArn] = js.undefined
+    ): OrganizationEventDetailsErrorItem = {
+      val __obj = js.Dynamic.literal()
+      awsAccountId.foreach(__v => __obj.updateDynamic("awsAccountId")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      errorName.foreach(__v => __obj.updateDynamic("errorName")(__v.asInstanceOf[js.Any]))
+      eventArn.foreach(__v => __obj.updateDynamic("eventArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEventDetailsErrorItem]
+    }
+  }
+
+  /**
+    * The values to filter results from the <a>DescribeEventsForOrganization</a> operation.
+    */
+  @js.native
+  trait OrganizationEventFilter extends js.Object {
+    var awsAccountIds: js.UndefOr[awsAccountIdsList]
+    var endTime: js.UndefOr[DateTimeRange]
+    var entityArns: js.UndefOr[entityArnList]
+    var entityValues: js.UndefOr[entityValueList]
+    var eventStatusCodes: js.UndefOr[eventStatusCodeList]
+    var eventTypeCategories: js.UndefOr[eventTypeCategoryList]
+    var eventTypeCodes: js.UndefOr[eventTypeList]
+    var lastUpdatedTime: js.UndefOr[DateTimeRange]
+    var regions: js.UndefOr[regionList]
+    var services: js.UndefOr[serviceList]
+    var startTime: js.UndefOr[DateTimeRange]
+  }
+
+  object OrganizationEventFilter {
+    @inline
+    def apply(
+        awsAccountIds: js.UndefOr[awsAccountIdsList] = js.undefined,
+        endTime: js.UndefOr[DateTimeRange] = js.undefined,
+        entityArns: js.UndefOr[entityArnList] = js.undefined,
+        entityValues: js.UndefOr[entityValueList] = js.undefined,
+        eventStatusCodes: js.UndefOr[eventStatusCodeList] = js.undefined,
+        eventTypeCategories: js.UndefOr[eventTypeCategoryList] = js.undefined,
+        eventTypeCodes: js.UndefOr[eventTypeList] = js.undefined,
+        lastUpdatedTime: js.UndefOr[DateTimeRange] = js.undefined,
+        regions: js.UndefOr[regionList] = js.undefined,
+        services: js.UndefOr[serviceList] = js.undefined,
+        startTime: js.UndefOr[DateTimeRange] = js.undefined
+    ): OrganizationEventFilter = {
+      val __obj = js.Dynamic.literal()
+      awsAccountIds.foreach(__v => __obj.updateDynamic("awsAccountIds")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      entityArns.foreach(__v => __obj.updateDynamic("entityArns")(__v.asInstanceOf[js.Any]))
+      entityValues.foreach(__v => __obj.updateDynamic("entityValues")(__v.asInstanceOf[js.Any]))
+      eventStatusCodes.foreach(__v => __obj.updateDynamic("eventStatusCodes")(__v.asInstanceOf[js.Any]))
+      eventTypeCategories.foreach(__v => __obj.updateDynamic("eventTypeCategories")(__v.asInstanceOf[js.Any]))
+      eventTypeCodes.foreach(__v => __obj.updateDynamic("eventTypeCodes")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
+      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEventFilter]
     }
   }
 

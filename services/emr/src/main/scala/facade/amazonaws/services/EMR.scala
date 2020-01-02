@@ -68,6 +68,7 @@ package object emr {
   type MetricDimensionList                    = js.Array[MetricDimension]
   type NewSupportedProductsList               = js.Array[SupportedProductConfig]
   type NonNegativeDouble                      = Double
+  type OptionalArnType                        = String
   type Port                                   = Int
   type PortRanges                             = js.Array[PortRange]
   type RepoUpgradeOnBoot                      = String
@@ -78,6 +79,7 @@ package object emr {
   type SecurityGroupsList                     = js.Array[XmlStringMaxLen256]
   type SpotProvisioningTimeoutAction          = String
   type Statistic                              = String
+  type StepCancellationOption                 = String
   type StepConfigList                         = js.Array[StepConfig]
   type StepDetailList                         = js.Array[StepDetail]
   type StepExecutionState                     = String
@@ -99,6 +101,7 @@ package object emr {
   type XmlStringMaxLen256List                 = js.Array[XmlStringMaxLen256]
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
+
     @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
       service.addInstanceFleet(params).promise.toFuture
     @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
@@ -140,6 +143,8 @@ package object emr {
     ): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise.toFuture
     @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] =
       service.listSteps(params).promise.toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterInput): Future[ModifyClusterOutput] =
+      service.modifyCluster(params).promise.toFuture
     @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
       service.modifyInstanceFleet(params).promise.toFuture
     @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
@@ -199,6 +204,7 @@ package emr {
     def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] =
       js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput]                                  = js.native
+    def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput]                      = js.native
     def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object]                    = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object]                  = js.native
     def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
@@ -249,6 +255,7 @@ package emr {
 
   @js.native
   trait AddInstanceFleetOutput extends js.Object {
+    var ClusterArn: js.UndefOr[ArnType]
     var ClusterId: js.UndefOr[XmlStringMaxLen256]
     var InstanceFleetId: js.UndefOr[InstanceFleetId]
   }
@@ -256,10 +263,12 @@ package emr {
   object AddInstanceFleetOutput {
     @inline
     def apply(
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined
     ): AddInstanceFleetOutput = {
       val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddInstanceFleetOutput]
@@ -295,6 +304,7 @@ package emr {
     */
   @js.native
   trait AddInstanceGroupsOutput extends js.Object {
+    var ClusterArn: js.UndefOr[ArnType]
     var InstanceGroupIds: js.UndefOr[InstanceGroupIdsList]
     var JobFlowId: js.UndefOr[XmlStringMaxLen256]
   }
@@ -302,10 +312,12 @@ package emr {
   object AddInstanceGroupsOutput {
     @inline
     def apply(
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): AddInstanceGroupsOutput = {
       val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       InstanceGroupIds.foreach(__v => __obj.updateDynamic("InstanceGroupIds")(__v.asInstanceOf[js.Any]))
       JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddInstanceGroupsOutput]
@@ -667,19 +679,24 @@ package emr {
     */
   @js.native
   trait CancelStepsInput extends js.Object {
-    var ClusterId: js.UndefOr[XmlStringMaxLen256]
-    var StepIds: js.UndefOr[StepIdsList]
+    var ClusterId: XmlStringMaxLen256
+    var StepIds: StepIdsList
+    var StepCancellationOption: js.UndefOr[StepCancellationOption]
   }
 
   object CancelStepsInput {
     @inline
     def apply(
-        ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        StepIds: js.UndefOr[StepIdsList] = js.undefined
+        ClusterId: XmlStringMaxLen256,
+        StepIds: StepIdsList,
+        StepCancellationOption: js.UndefOr[StepCancellationOption] = js.undefined
     ): CancelStepsInput = {
-      val __obj = js.Dynamic.literal()
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "StepIds"   -> StepIds.asInstanceOf[js.Any]
+      )
+
+      StepCancellationOption.foreach(__v => __obj.updateDynamic("StepCancellationOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelStepsInput]
     }
   }
@@ -763,6 +780,7 @@ package emr {
     var Applications: js.UndefOr[ApplicationList]
     var AutoScalingRole: js.UndefOr[XmlString]
     var AutoTerminate: js.UndefOr[Boolean]
+    var ClusterArn: js.UndefOr[ArnType]
     var Configurations: js.UndefOr[ConfigurationList]
     var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EbsRootVolumeSize: js.UndefOr[Int]
@@ -774,6 +792,7 @@ package emr {
     var MasterPublicDnsName: js.UndefOr[String]
     var Name: js.UndefOr[String]
     var NormalizedInstanceHours: js.UndefOr[Int]
+    var OutpostArn: js.UndefOr[OptionalArnType]
     var ReleaseLabel: js.UndefOr[String]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
     var RequestedAmiVersion: js.UndefOr[String]
@@ -782,6 +801,7 @@ package emr {
     var SecurityConfiguration: js.UndefOr[XmlString]
     var ServiceRole: js.UndefOr[String]
     var Status: js.UndefOr[ClusterStatus]
+    var StepConcurrencyLevel: js.UndefOr[Int]
     var Tags: js.UndefOr[TagList]
     var TerminationProtected: js.UndefOr[Boolean]
     var VisibleToAllUsers: js.UndefOr[Boolean]
@@ -793,6 +813,7 @@ package emr {
         Applications: js.UndefOr[ApplicationList] = js.undefined,
         AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
         AutoTerminate: js.UndefOr[Boolean] = js.undefined,
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
         CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
@@ -804,6 +825,7 @@ package emr {
         MasterPublicDnsName: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
         ReleaseLabel: js.UndefOr[String] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
         RequestedAmiVersion: js.UndefOr[String] = js.undefined,
@@ -812,6 +834,7 @@ package emr {
         SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
         ServiceRole: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[ClusterStatus] = js.undefined,
+        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TerminationProtected: js.UndefOr[Boolean] = js.undefined,
         VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
@@ -820,6 +843,7 @@ package emr {
       Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
       AutoTerminate.foreach(__v => __obj.updateDynamic("AutoTerminate")(__v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
@@ -831,6 +855,7 @@ package emr {
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
       RequestedAmiVersion.foreach(__v => __obj.updateDynamic("RequestedAmiVersion")(__v.asInstanceOf[js.Any]))
@@ -839,6 +864,7 @@ package emr {
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
       ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
       VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
@@ -936,24 +962,30 @@ package emr {
     */
   @js.native
   trait ClusterSummary extends js.Object {
+    var ClusterArn: js.UndefOr[ArnType]
     var Id: js.UndefOr[ClusterId]
     var Name: js.UndefOr[String]
     var NormalizedInstanceHours: js.UndefOr[Int]
+    var OutpostArn: js.UndefOr[OptionalArnType]
     var Status: js.UndefOr[ClusterStatus]
   }
 
   object ClusterSummary {
     @inline
     def apply(
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         Id: js.UndefOr[ClusterId] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
         Status: js.UndefOr[ClusterStatus] = js.undefined
     ): ClusterSummary = {
       val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterSummary]
     }
@@ -3073,6 +3105,43 @@ package emr {
   }
 
   @js.native
+  trait ModifyClusterInput extends js.Object {
+    var ClusterId: String
+    var StepConcurrencyLevel: js.UndefOr[Int]
+  }
+
+  object ModifyClusterInput {
+    @inline
+    def apply(
+        ClusterId: String,
+        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined
+    ): ModifyClusterInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterInput]
+    }
+  }
+
+  @js.native
+  trait ModifyClusterOutput extends js.Object {
+    var StepConcurrencyLevel: js.UndefOr[Int]
+  }
+
+  object ModifyClusterOutput {
+    @inline
+    def apply(
+        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined
+    ): ModifyClusterOutput = {
+      val __obj = js.Dynamic.literal()
+      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterOutput]
+    }
+  }
+
+  @js.native
   trait ModifyInstanceFleetInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceFleet: InstanceFleetModifyConfig
@@ -3188,6 +3257,7 @@ package emr {
   @js.native
   trait PutAutoScalingPolicyOutput extends js.Object {
     var AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription]
+    var ClusterArn: js.UndefOr[ArnType]
     var ClusterId: js.UndefOr[ClusterId]
     var InstanceGroupId: js.UndefOr[InstanceGroupId]
   }
@@ -3196,11 +3266,13 @@ package emr {
     @inline
     def apply(
         AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined
     ): PutAutoScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
       AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAutoScalingPolicyOutput]
@@ -3343,6 +3415,7 @@ package emr {
     var ScaleDownBehavior: js.UndefOr[ScaleDownBehavior]
     var SecurityConfiguration: js.UndefOr[XmlString]
     var ServiceRole: js.UndefOr[XmlString]
+    var StepConcurrencyLevel: js.UndefOr[Int]
     var Steps: js.UndefOr[StepConfigList]
     var SupportedProducts: js.UndefOr[SupportedProductsList]
     var Tags: js.UndefOr[TagList]
@@ -3371,6 +3444,7 @@ package emr {
         ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
         SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
         ServiceRole: js.UndefOr[XmlString] = js.undefined,
+        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined,
         Steps: js.UndefOr[StepConfigList] = js.undefined,
         SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -3398,6 +3472,7 @@ package emr {
       ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
       ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
       Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
       SupportedProducts.foreach(__v => __obj.updateDynamic("SupportedProducts")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3411,15 +3486,18 @@ package emr {
     */
   @js.native
   trait RunJobFlowOutput extends js.Object {
+    var ClusterArn: js.UndefOr[ArnType]
     var JobFlowId: js.UndefOr[XmlStringMaxLen256]
   }
 
   object RunJobFlowOutput {
     @inline
     def apply(
+        ClusterArn: js.UndefOr[ArnType] = js.undefined,
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): RunJobFlowOutput = {
       val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunJobFlowOutput]
     }
@@ -3602,8 +3680,7 @@ package emr {
   }
 
   /**
-    * <i>This member will be deprecated.</i>
-    *  The input to the SetVisibleToAllUsers action.
+    * The input to the SetVisibleToAllUsers action.
     */
   @js.native
   trait SetVisibleToAllUsersInput extends js.Object {
@@ -3750,6 +3827,13 @@ package emr {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Step]
     }
+  }
+
+  object StepCancellationOptionEnum {
+    val SEND_INTERRUPT    = "SEND_INTERRUPT"
+    val TERMINATE_PROCESS = "TERMINATE_PROCESS"
+
+    val values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
   }
 
   /**

@@ -46,6 +46,7 @@ package object docdb {
   type VpcSecurityGroupMembershipList  = js.Array[VpcSecurityGroupMembership]
 
   implicit final class DocDBOps(private val service: DocDB) extends AnyVal {
+
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] =
       service.addTagsToResource(params).promise.toFuture
     @inline def applyPendingMaintenanceActionFuture(

@@ -9,6 +9,16 @@ package object amazonaws {
       }
     }
 
+    type MigrationHub = services.migrationhub.MigrationHub
+    def MigrationHub(): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub()
+    def MigrationHub(config: AWSConfig): services.migrationhub.MigrationHub =
+      new services.migrationhub.MigrationHub(config)
+
+    type AccessAnalyzer = services.accessanalyzer.AccessAnalyzer
+    def AccessAnalyzer(): services.accessanalyzer.AccessAnalyzer = new services.accessanalyzer.AccessAnalyzer()
+    def AccessAnalyzer(config: AWSConfig): services.accessanalyzer.AccessAnalyzer =
+      new services.accessanalyzer.AccessAnalyzer(config)
+
     type ACM = services.acm.ACM
     def ACM(): services.acm.ACM                  = new services.acm.ACM()
     def ACM(config: AWSConfig): services.acm.ACM = new services.acm.ACM(config)
@@ -42,11 +52,21 @@ package object amazonaws {
     def ApiGatewayV2(config: AWSConfig): services.apigatewayv2.ApiGatewayV2 =
       new services.apigatewayv2.ApiGatewayV2(config)
 
+    type AppConfig = services.appconfig.AppConfig
+    def AppConfig(): services.appconfig.AppConfig                  = new services.appconfig.AppConfig()
+    def AppConfig(config: AWSConfig): services.appconfig.AppConfig = new services.appconfig.AppConfig(config)
+
     type ApplicationAutoScaling = services.applicationautoscaling.ApplicationAutoScaling
     def ApplicationAutoScaling(): services.applicationautoscaling.ApplicationAutoScaling =
       new services.applicationautoscaling.ApplicationAutoScaling()
     def ApplicationAutoScaling(config: AWSConfig): services.applicationautoscaling.ApplicationAutoScaling =
       new services.applicationautoscaling.ApplicationAutoScaling(config)
+
+    type ApplicationInsights = services.applicationinsights.ApplicationInsights
+    def ApplicationInsights(): services.applicationinsights.ApplicationInsights =
+      new services.applicationinsights.ApplicationInsights()
+    def ApplicationInsights(config: AWSConfig): services.applicationinsights.ApplicationInsights =
+      new services.applicationinsights.ApplicationInsights(config)
 
     type AppMesh = services.appmesh.AppMesh
     def AppMesh(): services.appmesh.AppMesh                  = new services.appmesh.AppMesh()
@@ -73,11 +93,6 @@ package object amazonaws {
       new services.autoscalingplans.AutoScalingPlans()
     def AutoScalingPlans(config: AWSConfig): services.autoscalingplans.AutoScalingPlans =
       new services.autoscalingplans.AutoScalingPlans(config)
-
-    type MigrationHub = services.migrationhub.MigrationHub
-    def MigrationHub(): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub()
-    def MigrationHub(config: AWSConfig): services.migrationhub.MigrationHub =
-      new services.migrationhub.MigrationHub(config)
 
     type Backup = services.backup.Backup
     def Backup(): services.backup.Backup                  = new services.backup.Backup()
@@ -153,6 +168,18 @@ package object amazonaws {
     def CodeDeploy(): services.codedeploy.CodeDeploy                  = new services.codedeploy.CodeDeploy()
     def CodeDeploy(config: AWSConfig): services.codedeploy.CodeDeploy = new services.codedeploy.CodeDeploy(config)
 
+    type CodeGuruReviewer = services.codegurureviewer.CodeGuruReviewer
+    def CodeGuruReviewer(): services.codegurureviewer.CodeGuruReviewer =
+      new services.codegurureviewer.CodeGuruReviewer()
+    def CodeGuruReviewer(config: AWSConfig): services.codegurureviewer.CodeGuruReviewer =
+      new services.codegurureviewer.CodeGuruReviewer(config)
+
+    type CodeGuruProfiler = services.codeguruprofiler.CodeGuruProfiler
+    def CodeGuruProfiler(): services.codeguruprofiler.CodeGuruProfiler =
+      new services.codeguruprofiler.CodeGuruProfiler()
+    def CodeGuruProfiler(config: AWSConfig): services.codeguruprofiler.CodeGuruProfiler =
+      new services.codeguruprofiler.CodeGuruProfiler(config)
+
     type CodePipeline = services.codepipeline.CodePipeline
     def CodePipeline(): services.codepipeline.CodePipeline = new services.codepipeline.CodePipeline()
     def CodePipeline(config: AWSConfig): services.codepipeline.CodePipeline =
@@ -161,6 +188,18 @@ package object amazonaws {
     type CodeStar = services.codestar.CodeStar
     def CodeStar(): services.codestar.CodeStar                  = new services.codestar.CodeStar()
     def CodeStar(config: AWSConfig): services.codestar.CodeStar = new services.codestar.CodeStar(config)
+
+    type CodeStarconnections = services.codestarconnections.CodeStarconnections
+    def CodeStarconnections(): services.codestarconnections.CodeStarconnections =
+      new services.codestarconnections.CodeStarconnections()
+    def CodeStarconnections(config: AWSConfig): services.codestarconnections.CodeStarconnections =
+      new services.codestarconnections.CodeStarconnections(config)
+
+    type CodeStarNotifications = services.codestarnotifications.CodeStarNotifications
+    def CodeStarNotifications(): services.codestarnotifications.CodeStarNotifications =
+      new services.codestarnotifications.CodeStarNotifications()
+    def CodeStarNotifications(config: AWSConfig): services.codestarnotifications.CodeStarNotifications =
+      new services.codestarnotifications.CodeStarNotifications(config)
 
     type CognitoIdentity = services.cognitoidentity.CognitoIdentity
     def CognitoIdentity(): services.cognitoidentity.CognitoIdentity = new services.cognitoidentity.CognitoIdentity()
@@ -187,6 +226,12 @@ package object amazonaws {
     def ComprehendMedical(config: AWSConfig): services.comprehendmedical.ComprehendMedical =
       new services.comprehendmedical.ComprehendMedical(config)
 
+    type ComputeOptimizer = services.computeoptimizer.ComputeOptimizer
+    def ComputeOptimizer(): services.computeoptimizer.ComputeOptimizer =
+      new services.computeoptimizer.ComputeOptimizer()
+    def ComputeOptimizer(config: AWSConfig): services.computeoptimizer.ComputeOptimizer =
+      new services.computeoptimizer.ComputeOptimizer(config)
+
     type ConfigService = services.configservice.ConfigService
     def ConfigService(): services.configservice.ConfigService = new services.configservice.ConfigService()
     def ConfigService(config: AWSConfig): services.configservice.ConfigService =
@@ -196,9 +241,20 @@ package object amazonaws {
     def Connect(): services.connect.Connect                  = new services.connect.Connect()
     def Connect(config: AWSConfig): services.connect.Connect = new services.connect.Connect(config)
 
+    type ConnectParticipant = services.connectparticipant.ConnectParticipant
+    def ConnectParticipant(): services.connectparticipant.ConnectParticipant =
+      new services.connectparticipant.ConnectParticipant()
+    def ConnectParticipant(config: AWSConfig): services.connectparticipant.ConnectParticipant =
+      new services.connectparticipant.ConnectParticipant(config)
+
     type CUR = services.cur.CUR
     def CUR(): services.cur.CUR                  = new services.cur.CUR()
     def CUR(config: AWSConfig): services.cur.CUR = new services.cur.CUR(config)
+
+    type DataExchange = services.dataexchange.DataExchange
+    def DataExchange(): services.dataexchange.DataExchange = new services.dataexchange.DataExchange()
+    def DataExchange(config: AWSConfig): services.dataexchange.DataExchange =
+      new services.dataexchange.DataExchange(config)
 
     type DataPipeline = services.datapipeline.DataPipeline
     def DataPipeline(): services.datapipeline.DataPipeline = new services.datapipeline.DataPipeline()
@@ -212,6 +268,10 @@ package object amazonaws {
     type DAX = services.dax.DAX
     def DAX(): services.dax.DAX                  = new services.dax.DAX()
     def DAX(config: AWSConfig): services.dax.DAX = new services.dax.DAX(config)
+
+    type Detective = services.detective.Detective
+    def Detective(): services.detective.Detective                  = new services.detective.Detective()
+    def Detective(config: AWSConfig): services.detective.Detective = new services.detective.Detective(config)
 
     type DeviceFarm = services.devicefarm.DeviceFarm
     def DeviceFarm(): services.devicefarm.DeviceFarm                  = new services.devicefarm.DeviceFarm()
@@ -250,6 +310,10 @@ package object amazonaws {
     def DynamoDB(): services.dynamodb.DynamoDB                  = new services.dynamodb.DynamoDB()
     def DynamoDB(config: AWSConfig): services.dynamodb.DynamoDB = new services.dynamodb.DynamoDB(config)
 
+    type EBS = services.ebs.EBS
+    def EBS(): services.ebs.EBS                  = new services.ebs.EBS()
+    def EBS(config: AWSConfig): services.ebs.EBS = new services.ebs.EBS(config)
+
     type EC2 = services.ec2.EC2
     def EC2(): services.ec2.EC2                  = new services.ec2.EC2()
     def EC2(config: AWSConfig): services.ec2.EC2 = new services.ec2.EC2(config)
@@ -271,6 +335,12 @@ package object amazonaws {
     type EKS = services.eks.EKS
     def EKS(): services.eks.EKS                  = new services.eks.EKS()
     def EKS(config: AWSConfig): services.eks.EKS = new services.eks.EKS(config)
+
+    type ElasticInference = services.elasticinference.ElasticInference
+    def ElasticInference(): services.elasticinference.ElasticInference =
+      new services.elasticinference.ElasticInference()
+    def ElasticInference(config: AWSConfig): services.elasticinference.ElasticInference =
+      new services.elasticinference.ElasticInference(config)
 
     type ElastiCache = services.elasticache.ElastiCache
     def ElastiCache(): services.elasticache.ElastiCache                  = new services.elasticache.ElastiCache()
@@ -347,6 +417,11 @@ package object amazonaws {
     def ForecastQuery(config: AWSConfig): services.forecastquery.ForecastQuery =
       new services.forecastquery.ForecastQuery(config)
 
+    type FraudDetector = services.frauddetector.FraudDetector
+    def FraudDetector(): services.frauddetector.FraudDetector = new services.frauddetector.FraudDetector()
+    def FraudDetector(config: AWSConfig): services.frauddetector.FraudDetector =
+      new services.frauddetector.FraudDetector(config)
+
     type FSx = services.fsx.FSx
     def FSx(): services.fsx.FSx                  = new services.fsx.FSx()
     def FSx(config: AWSConfig): services.fsx.FSx = new services.fsx.FSx(config)
@@ -389,6 +464,11 @@ package object amazonaws {
     type IAM = services.iam.IAM
     def IAM(): services.iam.IAM                  = new services.iam.IAM()
     def IAM(config: AWSConfig): services.iam.IAM = new services.iam.IAM(config)
+
+    type Imagebuilder = services.imagebuilder.Imagebuilder
+    def Imagebuilder(): services.imagebuilder.Imagebuilder = new services.imagebuilder.Imagebuilder()
+    def Imagebuilder(config: AWSConfig): services.imagebuilder.Imagebuilder =
+      new services.imagebuilder.Imagebuilder(config)
 
     type ImportExport = services.importexport.ImportExport
     def ImportExport(): services.importexport.ImportExport = new services.importexport.ImportExport()
@@ -439,6 +519,12 @@ package object amazonaws {
     def IoTEventsData(config: AWSConfig): services.ioteventsdata.IoTEventsData =
       new services.ioteventsdata.IoTEventsData(config)
 
+    type IoTSecureTunneling = services.iotsecuretunneling.IoTSecureTunneling
+    def IoTSecureTunneling(): services.iotsecuretunneling.IoTSecureTunneling =
+      new services.iotsecuretunneling.IoTSecureTunneling()
+    def IoTSecureTunneling(config: AWSConfig): services.iotsecuretunneling.IoTSecureTunneling =
+      new services.iotsecuretunneling.IoTSecureTunneling(config)
+
     type IoTThingsGraph = services.iotthingsgraph.IoTThingsGraph
     def IoTThingsGraph(): services.iotthingsgraph.IoTThingsGraph = new services.iotthingsgraph.IoTThingsGraph()
     def IoTThingsGraph(config: AWSConfig): services.iotthingsgraph.IoTThingsGraph =
@@ -447,6 +533,10 @@ package object amazonaws {
     type Kafka = services.kafka.Kafka
     def Kafka(): services.kafka.Kafka                  = new services.kafka.Kafka()
     def Kafka(config: AWSConfig): services.kafka.Kafka = new services.kafka.Kafka(config)
+
+    type Kendra = services.kendra.Kendra
+    def Kendra(): services.kendra.Kendra                  = new services.kendra.Kendra()
+    def Kendra(config: AWSConfig): services.kendra.Kendra = new services.kendra.Kendra(config)
 
     type Kinesis = services.kinesis.Kinesis
     def Kinesis(): services.kinesis.Kinesis                  = new services.kinesis.Kinesis()
@@ -463,6 +553,12 @@ package object amazonaws {
       new services.kinesisvideomedia.KinesisVideoMedia()
     def KinesisVideoMedia(config: AWSConfig): services.kinesisvideomedia.KinesisVideoMedia =
       new services.kinesisvideomedia.KinesisVideoMedia(config)
+
+    type KinesisVideoSignaling = services.kinesisvideosignaling.KinesisVideoSignaling
+    def KinesisVideoSignaling(): services.kinesisvideosignaling.KinesisVideoSignaling =
+      new services.kinesisvideosignaling.KinesisVideoSignaling()
+    def KinesisVideoSignaling(config: AWSConfig): services.kinesisvideosignaling.KinesisVideoSignaling =
+      new services.kinesisvideosignaling.KinesisVideoSignaling(config)
 
     type KinesisAnalytics = services.kinesisanalytics.KinesisAnalytics
     def KinesisAnalytics(): services.kinesisanalytics.KinesisAnalytics =
@@ -529,6 +625,12 @@ package object amazonaws {
     def ManagedBlockchain(config: AWSConfig): services.managedblockchain.ManagedBlockchain =
       new services.managedblockchain.ManagedBlockchain(config)
 
+    type MarketplaceCatalog = services.marketplacecatalog.MarketplaceCatalog
+    def MarketplaceCatalog(): services.marketplacecatalog.MarketplaceCatalog =
+      new services.marketplacecatalog.MarketplaceCatalog()
+    def MarketplaceCatalog(config: AWSConfig): services.marketplacecatalog.MarketplaceCatalog =
+      new services.marketplacecatalog.MarketplaceCatalog(config)
+
     type MarketplaceCommerceAnalytics = services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics
     def MarketplaceCommerceAnalytics(): services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics =
       new services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics()
@@ -580,6 +682,12 @@ package object amazonaws {
     def MarketplaceMetering(config: AWSConfig): services.marketplacemetering.MarketplaceMetering =
       new services.marketplacemetering.MarketplaceMetering(config)
 
+    type MigrationHubConfig = services.migrationhubconfig.MigrationHubConfig
+    def MigrationHubConfig(): services.migrationhubconfig.MigrationHubConfig =
+      new services.migrationhubconfig.MigrationHubConfig()
+    def MigrationHubConfig(config: AWSConfig): services.migrationhubconfig.MigrationHubConfig =
+      new services.migrationhubconfig.MigrationHubConfig(config)
+
     type Mobile = services.mobile.Mobile
     def Mobile(): services.mobile.Mobile                  = new services.mobile.Mobile()
     def Mobile(config: AWSConfig): services.mobile.Mobile = new services.mobile.Mobile(config)
@@ -605,6 +713,11 @@ package object amazonaws {
     def Neptune(): services.neptune.Neptune                  = new services.neptune.Neptune()
     def Neptune(config: AWSConfig): services.neptune.Neptune = new services.neptune.Neptune(config)
 
+    type NetworkManager = services.networkmanager.NetworkManager
+    def NetworkManager(): services.networkmanager.NetworkManager = new services.networkmanager.NetworkManager()
+    def NetworkManager(config: AWSConfig): services.networkmanager.NetworkManager =
+      new services.networkmanager.NetworkManager(config)
+
     type OpsWorks = services.opsworks.OpsWorks
     def OpsWorks(): services.opsworks.OpsWorks                  = new services.opsworks.OpsWorks()
     def OpsWorks(config: AWSConfig): services.opsworks.OpsWorks = new services.opsworks.OpsWorks(config)
@@ -617,6 +730,10 @@ package object amazonaws {
     def Organizations(): services.organizations.Organizations = new services.organizations.Organizations()
     def Organizations(config: AWSConfig): services.organizations.Organizations =
       new services.organizations.Organizations(config)
+
+    type Outposts = services.outposts.Outposts
+    def Outposts(): services.outposts.Outposts                  = new services.outposts.Outposts()
+    def Outposts(config: AWSConfig): services.outposts.Outposts = new services.outposts.Outposts(config)
 
     type Personalize = services.personalize.Personalize
     def Personalize(): services.personalize.Personalize                  = new services.personalize.Personalize()
@@ -654,6 +771,14 @@ package object amazonaws {
     type Pricing = services.pricing.Pricing
     def Pricing(): services.pricing.Pricing                  = new services.pricing.Pricing()
     def Pricing(config: AWSConfig): services.pricing.Pricing = new services.pricing.Pricing(config)
+
+    type QLDB = services.qldb.QLDB
+    def QLDB(): services.qldb.QLDB                  = new services.qldb.QLDB()
+    def QLDB(config: AWSConfig): services.qldb.QLDB = new services.qldb.QLDB(config)
+
+    type QLDBSession = services.qldbsession.QLDBSession
+    def QLDBSession(): services.qldbsession.QLDBSession                  = new services.qldbsession.QLDBSession()
+    def QLDBSession(config: AWSConfig): services.qldbsession.QLDBSession = new services.qldbsession.QLDBSession(config)
 
     type QuickSight = services.quicksight.QuickSight
     def QuickSight(): services.quicksight.QuickSight                  = new services.quicksight.QuickSight()
@@ -731,6 +856,21 @@ package object amazonaws {
     def SageMaker(): services.sagemaker.SageMaker                  = new services.sagemaker.SageMaker()
     def SageMaker(config: AWSConfig): services.sagemaker.SageMaker = new services.sagemaker.SageMaker(config)
 
+    type AugmentedAIRuntime = services.augmentedairuntime.AugmentedAIRuntime
+    def AugmentedAIRuntime(): services.augmentedairuntime.AugmentedAIRuntime =
+      new services.augmentedairuntime.AugmentedAIRuntime()
+    def AugmentedAIRuntime(config: AWSConfig): services.augmentedairuntime.AugmentedAIRuntime =
+      new services.augmentedairuntime.AugmentedAIRuntime(config)
+
+    type SavingsPlans = services.savingsplans.SavingsPlans
+    def SavingsPlans(): services.savingsplans.SavingsPlans = new services.savingsplans.SavingsPlans()
+    def SavingsPlans(config: AWSConfig): services.savingsplans.SavingsPlans =
+      new services.savingsplans.SavingsPlans(config)
+
+    type Schemas = services.schemas.Schemas
+    def Schemas(): services.schemas.Schemas                  = new services.schemas.Schemas()
+    def Schemas(config: AWSConfig): services.schemas.Schemas = new services.schemas.Schemas(config)
+
     type SimpleDB = services.simpledb.SimpleDB
     def SimpleDB(): services.simpledb.SimpleDB                  = new services.simpledb.SimpleDB()
     def SimpleDB(config: AWSConfig): services.simpledb.SimpleDB = new services.simpledb.SimpleDB(config)
@@ -768,6 +908,10 @@ package object amazonaws {
     def ServiceDiscovery(config: AWSConfig): services.servicediscovery.ServiceDiscovery =
       new services.servicediscovery.ServiceDiscovery(config)
 
+    type SESv2 = services.sesv2.SESv2
+    def SESv2(): services.sesv2.SESv2                  = new services.sesv2.SESv2()
+    def SESv2(config: AWSConfig): services.sesv2.SESv2 = new services.sesv2.SESv2(config)
+
     type Shield = services.shield.Shield
     def Shield(): services.shield.Shield                  = new services.shield.Shield()
     def Shield(config: AWSConfig): services.shield.Shield = new services.shield.Shield(config)
@@ -801,6 +945,14 @@ package object amazonaws {
     type SSM = services.ssm.SSM
     def SSM(): services.ssm.SSM                  = new services.ssm.SSM()
     def SSM(config: AWSConfig): services.ssm.SSM = new services.ssm.SSM(config)
+
+    type SSO = services.sso.SSO
+    def SSO(): services.sso.SSO                  = new services.sso.SSO()
+    def SSO(config: AWSConfig): services.sso.SSO = new services.sso.SSO(config)
+
+    type SSOOIDC = services.ssooidc.SSOOIDC
+    def SSOOIDC(): services.ssooidc.SSOOIDC                  = new services.ssooidc.SSOOIDC()
+    def SSOOIDC(config: AWSConfig): services.ssooidc.SSOOIDC = new services.ssooidc.SSOOIDC(config)
 
     type StepFunctions = services.stepfunctions.StepFunctions
     def StepFunctions(): services.stepfunctions.StepFunctions = new services.stepfunctions.StepFunctions()
@@ -855,6 +1007,10 @@ package object amazonaws {
     def WAFRegional(): services.wafregional.WAFRegional                  = new services.wafregional.WAFRegional()
     def WAFRegional(config: AWSConfig): services.wafregional.WAFRegional = new services.wafregional.WAFRegional(config)
 
+    type WAFv2 = services.wafv2.WAFv2
+    def WAFv2(): services.wafv2.WAFv2                  = new services.wafv2.WAFv2()
+    def WAFv2(config: AWSConfig): services.wafv2.WAFv2 = new services.wafv2.WAFv2(config)
+
     type WorkDocs = services.workdocs.WorkDocs
     def WorkDocs(): services.workdocs.WorkDocs                  = new services.workdocs.WorkDocs()
     def WorkDocs(config: AWSConfig): services.workdocs.WorkDocs = new services.workdocs.WorkDocs(config)
@@ -867,6 +1023,12 @@ package object amazonaws {
     def WorkMail(): services.workmail.WorkMail                  = new services.workmail.WorkMail()
     def WorkMail(config: AWSConfig): services.workmail.WorkMail = new services.workmail.WorkMail(config)
 
+    type WorkMailMessageFlow = services.workmailmessageflow.WorkMailMessageFlow
+    def WorkMailMessageFlow(): services.workmailmessageflow.WorkMailMessageFlow =
+      new services.workmailmessageflow.WorkMailMessageFlow()
+    def WorkMailMessageFlow(config: AWSConfig): services.workmailmessageflow.WorkMailMessageFlow =
+      new services.workmailmessageflow.WorkMailMessageFlow(config)
+
     type WorkSpaces = services.workspaces.WorkSpaces
     def WorkSpaces(): services.workspaces.WorkSpaces                  = new services.workspaces.WorkSpaces()
     def WorkSpaces(config: AWSConfig): services.workspaces.WorkSpaces = new services.workspaces.WorkSpaces(config)
@@ -874,5 +1036,6 @@ package object amazonaws {
     type XRay = services.xray.XRay
     def XRay(): services.xray.XRay                  = new services.xray.XRay()
     def XRay(config: AWSConfig): services.xray.XRay = new services.xray.XRay(config)
+
   }
 }

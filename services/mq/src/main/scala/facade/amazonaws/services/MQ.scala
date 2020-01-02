@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object mq {
   type BrokerState                   = String
+  type BrokerStorageType             = String
   type ChangeType                    = String
   type DayOfWeek                     = String
   type DeploymentMode                = String
@@ -26,6 +27,7 @@ package object mq {
   type __listOfConfiguration         = js.Array[Configuration]
   type __listOfConfigurationId       = js.Array[ConfigurationId]
   type __listOfConfigurationRevision = js.Array[ConfigurationRevision]
+  type __listOfDeploymentMode        = js.Array[DeploymentMode]
   type __listOfEngineVersion         = js.Array[EngineVersion]
   type __listOfSanitizationWarning   = js.Array[SanitizationWarning]
   type __listOfUser                  = js.Array[User]
@@ -36,6 +38,7 @@ package object mq {
   type __timestampIso8601            = js.Date
 
   implicit final class MQOps(private val service: MQ) extends AnyVal {
+
     @inline def createBrokerFuture(params: CreateBrokerRequest): Future[CreateBrokerResponse] =
       service.createBroker(params).promise.toFuture
     @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
@@ -200,6 +203,8 @@ package mq {
     var AvailabilityZones: js.UndefOr[__listOfAvailabilityZone]
     var EngineType: js.UndefOr[EngineType]
     var HostInstanceType: js.UndefOr[__string]
+    var StorageType: js.UndefOr[BrokerStorageType]
+    var SupportedDeploymentModes: js.UndefOr[__listOfDeploymentMode]
     var SupportedEngineVersions: js.UndefOr[__listOf__string]
   }
 
@@ -209,12 +214,16 @@ package mq {
         AvailabilityZones: js.UndefOr[__listOfAvailabilityZone] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
+        StorageType: js.UndefOr[BrokerStorageType] = js.undefined,
+        SupportedDeploymentModes: js.UndefOr[__listOfDeploymentMode] = js.undefined,
         SupportedEngineVersions: js.UndefOr[__listOf__string] = js.undefined
     ): BrokerInstanceOption = {
       val __obj = js.Dynamic.literal()
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
+      SupportedDeploymentModes.foreach(__v => __obj.updateDynamic("SupportedDeploymentModes")(__v.asInstanceOf[js.Any]))
       SupportedEngineVersions.foreach(__v => __obj.updateDynamic("SupportedEngineVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerInstanceOption]
     }
@@ -233,6 +242,16 @@ package mq {
     val values = js.Object.freeze(
       js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
     )
+  }
+
+  /**
+    * The storage type of the broker.
+    */
+  object BrokerStorageTypeEnum {
+    val EBS = "EBS"
+    val EFS = "EFS"
+
+    val values = js.Object.freeze(js.Array(EBS, EFS))
   }
 
   /**
@@ -416,6 +435,7 @@ package mq {
     var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
     var PubliclyAccessible: js.UndefOr[__boolean]
     var SecurityGroups: js.UndefOr[__listOf__string]
+    var StorageType: js.UndefOr[BrokerStorageType]
     var SubnetIds: js.UndefOr[__listOf__string]
     var Tags: js.UndefOr[__mapOf__string]
     var Users: js.UndefOr[__listOfUser]
@@ -437,6 +457,7 @@ package mq {
         MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
         PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        StorageType: js.UndefOr[BrokerStorageType] = js.undefined,
         SubnetIds: js.UndefOr[__listOf__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUser] = js.undefined
@@ -457,6 +478,7 @@ package mq {
       )
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
@@ -770,6 +792,7 @@ package mq {
     var HostInstanceType: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
+    var StorageType: js.UndefOr[__string]
   }
 
   object DescribeBrokerInstanceOptionsRequest {
@@ -778,13 +801,15 @@ package mq {
         EngineType: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[__string] = js.undefined,
+        StorageType: js.UndefOr[__string] = js.undefined
     ): DescribeBrokerInstanceOptionsRequest = {
       val __obj = js.Dynamic.literal()
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerInstanceOptionsRequest]
     }
   }
@@ -851,6 +876,7 @@ package mq {
     var PendingSecurityGroups: js.UndefOr[__listOf__string]
     var PubliclyAccessible: js.UndefOr[__boolean]
     var SecurityGroups: js.UndefOr[__listOf__string]
+    var StorageType: js.UndefOr[BrokerStorageType]
     var SubnetIds: js.UndefOr[__listOf__string]
     var Tags: js.UndefOr[__mapOf__string]
     var Users: js.UndefOr[__listOfUserSummary]
@@ -879,6 +905,7 @@ package mq {
         PendingSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        StorageType: js.UndefOr[BrokerStorageType] = js.undefined,
         SubnetIds: js.UndefOr[__listOf__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
@@ -906,6 +933,7 @@ package mq {
       PendingSecurityGroups.foreach(__v => __obj.updateDynamic("PendingSecurityGroups")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))

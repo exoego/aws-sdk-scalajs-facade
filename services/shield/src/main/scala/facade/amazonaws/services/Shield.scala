@@ -41,6 +41,7 @@ package object shield {
   type Unit                        = String
 
   implicit final class ShieldOps(private val service: Shield) extends AnyVal {
+
     @inline def associateDRTLogBucketFuture(
         params: AssociateDRTLogBucketRequest
     ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise.toFuture

@@ -23,6 +23,7 @@ package object amplify {
   type AutoBranchCreationPattern        = String
   type AutoBranchCreationPatterns       = js.Array[AutoBranchCreationPattern]
   type BackendEnvironmentArn            = String
+  type BackendEnvironments              = js.Array[BackendEnvironment]
   type BasicAuthCredentials             = String
   type BranchArn                        = String
   type BranchName                       = String
@@ -40,6 +41,7 @@ package object amplify {
   type CustomRules                      = js.Array[CustomRule]
   type DNSRecord                        = String
   type DefaultDomain                    = String
+  type DeploymentArtifacts              = String
   type Description                      = String
   type DisplayName                      = String
   type DomainAssociationArn             = String
@@ -57,6 +59,7 @@ package object amplify {
   type EndTime                          = js.Date
   type EnvKey                           = String
   type EnvValue                         = String
+  type EnvironmentName                  = String
   type EnvironmentVariables             = js.Dictionary[EnvValue]
   type FileMap                          = js.Dictionary[MD5Hash]
   type FileName                         = String
@@ -83,6 +86,7 @@ package object amplify {
   type ServiceRoleArn                   = String
   type Source                           = String
   type SourceUrl                        = String
+  type StackName                        = String
   type Stage                            = String
   type StartTime                        = js.Date
   type Status                           = String
@@ -111,8 +115,12 @@ package object amplify {
   type Webhooks                         = js.Array[Webhook]
 
   implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
+
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
       service.createApp(params).promise.toFuture
+    @inline def createBackendEnvironmentFuture(
+        params: CreateBackendEnvironmentRequest
+    ): Future[CreateBackendEnvironmentResult] = service.createBackendEnvironment(params).promise.toFuture
     @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
       service.createBranch(params).promise.toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
@@ -124,6 +132,9 @@ package object amplify {
       service.createWebhook(params).promise.toFuture
     @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] =
       service.deleteApp(params).promise.toFuture
+    @inline def deleteBackendEnvironmentFuture(
+        params: DeleteBackendEnvironmentRequest
+    ): Future[DeleteBackendEnvironmentResult] = service.deleteBackendEnvironment(params).promise.toFuture
     @inline def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
       service.deleteBranch(params).promise.toFuture
     @inline def deleteDomainAssociationFuture(
@@ -138,6 +149,8 @@ package object amplify {
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResult] = service.getApp(params).promise.toFuture
     @inline def getArtifactUrlFuture(params: GetArtifactUrlRequest): Future[GetArtifactUrlResult] =
       service.getArtifactUrl(params).promise.toFuture
+    @inline def getBackendEnvironmentFuture(params: GetBackendEnvironmentRequest): Future[GetBackendEnvironmentResult] =
+      service.getBackendEnvironment(params).promise.toFuture
     @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] =
       service.getBranch(params).promise.toFuture
     @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
@@ -149,6 +162,9 @@ package object amplify {
       service.listApps(params).promise.toFuture
     @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
       service.listArtifacts(params).promise.toFuture
+    @inline def listBackendEnvironmentsFuture(
+        params: ListBackendEnvironmentsRequest
+    ): Future[ListBackendEnvironmentsResult] = service.listBackendEnvironments(params).promise.toFuture
     @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
       service.listBranches(params).promise.toFuture
     @inline def listDomainAssociationsFuture(
@@ -187,27 +203,34 @@ package amplify {
   class Amplify() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApp(params: CreateAppRequest): Request[CreateAppResult]                      = js.native
+    def createApp(params: CreateAppRequest): Request[CreateAppResult] = js.native
+    def createBackendEnvironment(params: CreateBackendEnvironmentRequest): Request[CreateBackendEnvironmentResult] =
+      js.native
     def createBranch(params: CreateBranchRequest): Request[CreateBranchResult]             = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResult] = js.native
     def createDomainAssociation(params: CreateDomainAssociationRequest): Request[CreateDomainAssociationResult] =
       js.native
     def createWebhook(params: CreateWebhookRequest): Request[CreateWebhookResult] = js.native
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResult]             = js.native
-    def deleteBranch(params: DeleteBranchRequest): Request[DeleteBranchResult]    = js.native
+    def deleteBackendEnvironment(params: DeleteBackendEnvironmentRequest): Request[DeleteBackendEnvironmentResult] =
+      js.native
+    def deleteBranch(params: DeleteBranchRequest): Request[DeleteBranchResult] = js.native
     def deleteDomainAssociation(params: DeleteDomainAssociationRequest): Request[DeleteDomainAssociationResult] =
       js.native
-    def deleteJob(params: DeleteJobRequest): Request[DeleteJobResult]                                        = js.native
-    def deleteWebhook(params: DeleteWebhookRequest): Request[DeleteWebhookResult]                            = js.native
-    def generateAccessLogs(params: GenerateAccessLogsRequest): Request[GenerateAccessLogsResult]             = js.native
-    def getApp(params: GetAppRequest): Request[GetAppResult]                                                 = js.native
-    def getArtifactUrl(params: GetArtifactUrlRequest): Request[GetArtifactUrlResult]                         = js.native
-    def getBranch(params: GetBranchRequest): Request[GetBranchResult]                                        = js.native
-    def getDomainAssociation(params: GetDomainAssociationRequest): Request[GetDomainAssociationResult]       = js.native
-    def getJob(params: GetJobRequest): Request[GetJobResult]                                                 = js.native
-    def getWebhook(params: GetWebhookRequest): Request[GetWebhookResult]                                     = js.native
-    def listApps(params: ListAppsRequest): Request[ListAppsResult]                                           = js.native
-    def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult]                            = js.native
+    def deleteJob(params: DeleteJobRequest): Request[DeleteJobResult]                                     = js.native
+    def deleteWebhook(params: DeleteWebhookRequest): Request[DeleteWebhookResult]                         = js.native
+    def generateAccessLogs(params: GenerateAccessLogsRequest): Request[GenerateAccessLogsResult]          = js.native
+    def getApp(params: GetAppRequest): Request[GetAppResult]                                              = js.native
+    def getArtifactUrl(params: GetArtifactUrlRequest): Request[GetArtifactUrlResult]                      = js.native
+    def getBackendEnvironment(params: GetBackendEnvironmentRequest): Request[GetBackendEnvironmentResult] = js.native
+    def getBranch(params: GetBranchRequest): Request[GetBranchResult]                                     = js.native
+    def getDomainAssociation(params: GetDomainAssociationRequest): Request[GetDomainAssociationResult]    = js.native
+    def getJob(params: GetJobRequest): Request[GetJobResult]                                              = js.native
+    def getWebhook(params: GetWebhookRequest): Request[GetWebhookResult]                                  = js.native
+    def listApps(params: ListAppsRequest): Request[ListAppsResult]                                        = js.native
+    def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult]                         = js.native
+    def listBackendEnvironments(params: ListBackendEnvironmentsRequest): Request[ListBackendEnvironmentsResult] =
+      js.native
     def listBranches(params: ListBranchesRequest): Request[ListBranchesResult]                               = js.native
     def listDomainAssociations(params: ListDomainAssociationsRequest): Request[ListDomainAssociationsResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                           = js.native
@@ -374,6 +397,42 @@ package amplify {
       )
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoBranchCreationConfig]
+    }
+  }
+
+  /**
+    * Backend environment for an Amplify App.
+    */
+  @js.native
+  trait BackendEnvironment extends js.Object {
+    var backendEnvironmentArn: BackendEnvironmentArn
+    var createTime: CreateTime
+    var environmentName: EnvironmentName
+    var updateTime: UpdateTime
+    var deploymentArtifacts: js.UndefOr[DeploymentArtifacts]
+    var stackName: js.UndefOr[StackName]
+  }
+
+  object BackendEnvironment {
+    @inline
+    def apply(
+        backendEnvironmentArn: BackendEnvironmentArn,
+        createTime: CreateTime,
+        environmentName: EnvironmentName,
+        updateTime: UpdateTime,
+        deploymentArtifacts: js.UndefOr[DeploymentArtifacts] = js.undefined,
+        stackName: js.UndefOr[StackName] = js.undefined
+    ): BackendEnvironment = {
+      val __obj = js.Dynamic.literal(
+        "backendEnvironmentArn" -> backendEnvironmentArn.asInstanceOf[js.Any],
+        "createTime"            -> createTime.asInstanceOf[js.Any],
+        "environmentName"       -> environmentName.asInstanceOf[js.Any],
+        "updateTime"            -> updateTime.asInstanceOf[js.Any]
+      )
+
+      deploymentArtifacts.foreach(__v => __obj.updateDynamic("deploymentArtifacts")(__v.asInstanceOf[js.Any]))
+      stackName.foreach(__v => __obj.updateDynamic("stackName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackendEnvironment]
     }
   }
 
@@ -561,6 +620,57 @@ package amplify {
       )
 
       __obj.asInstanceOf[CreateAppResult]
+    }
+  }
+
+  /**
+    * Request structure for a backend environment create request.
+    */
+  @js.native
+  trait CreateBackendEnvironmentRequest extends js.Object {
+    var appId: AppId
+    var environmentName: EnvironmentName
+    var deploymentArtifacts: js.UndefOr[DeploymentArtifacts]
+    var stackName: js.UndefOr[StackName]
+  }
+
+  object CreateBackendEnvironmentRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        environmentName: EnvironmentName,
+        deploymentArtifacts: js.UndefOr[DeploymentArtifacts] = js.undefined,
+        stackName: js.UndefOr[StackName] = js.undefined
+    ): CreateBackendEnvironmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId"           -> appId.asInstanceOf[js.Any],
+        "environmentName" -> environmentName.asInstanceOf[js.Any]
+      )
+
+      deploymentArtifacts.foreach(__v => __obj.updateDynamic("deploymentArtifacts")(__v.asInstanceOf[js.Any]))
+      stackName.foreach(__v => __obj.updateDynamic("stackName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBackendEnvironmentRequest]
+    }
+  }
+
+  /**
+    * Result structure for create backend environment.
+    */
+  @js.native
+  trait CreateBackendEnvironmentResult extends js.Object {
+    var backendEnvironment: BackendEnvironment
+  }
+
+  object CreateBackendEnvironmentResult {
+    @inline
+    def apply(
+        backendEnvironment: BackendEnvironment
+    ): CreateBackendEnvironmentResult = {
+      val __obj = js.Dynamic.literal(
+        "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateBackendEnvironmentResult]
     }
   }
 
@@ -878,6 +988,51 @@ package amplify {
       )
 
       __obj.asInstanceOf[DeleteAppResult]
+    }
+  }
+
+  /**
+    * Request structure for delete backend environment request.
+    */
+  @js.native
+  trait DeleteBackendEnvironmentRequest extends js.Object {
+    var appId: AppId
+    var environmentName: EnvironmentName
+  }
+
+  object DeleteBackendEnvironmentRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        environmentName: EnvironmentName
+    ): DeleteBackendEnvironmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId"           -> appId.asInstanceOf[js.Any],
+        "environmentName" -> environmentName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteBackendEnvironmentRequest]
+    }
+  }
+
+  /**
+    * Result structure of a delete backend environment result.
+    */
+  @js.native
+  trait DeleteBackendEnvironmentResult extends js.Object {
+    var backendEnvironment: BackendEnvironment
+  }
+
+  object DeleteBackendEnvironmentResult {
+    @inline
+    def apply(
+        backendEnvironment: BackendEnvironment
+    ): DeleteBackendEnvironmentResult = {
+      val __obj = js.Dynamic.literal(
+        "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteBackendEnvironmentResult]
     }
   }
 
@@ -1257,6 +1412,51 @@ package amplify {
   }
 
   /**
+    * Request structure for get backend environment request.
+    */
+  @js.native
+  trait GetBackendEnvironmentRequest extends js.Object {
+    var appId: AppId
+    var environmentName: EnvironmentName
+  }
+
+  object GetBackendEnvironmentRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        environmentName: EnvironmentName
+    ): GetBackendEnvironmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId"           -> appId.asInstanceOf[js.Any],
+        "environmentName" -> environmentName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetBackendEnvironmentRequest]
+    }
+  }
+
+  /**
+    * Result structure for get backend environment result.
+    */
+  @js.native
+  trait GetBackendEnvironmentResult extends js.Object {
+    var backendEnvironment: BackendEnvironment
+  }
+
+  object GetBackendEnvironmentResult {
+    @inline
+    def apply(
+        backendEnvironment: BackendEnvironment
+    ): GetBackendEnvironmentResult = {
+      val __obj = js.Dynamic.literal(
+        "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetBackendEnvironmentResult]
+    }
+  }
+
+  /**
     * Request structure for get branch request.
     */
   @js.native
@@ -1620,6 +1820,60 @@ package amplify {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListArtifactsResult]
+    }
+  }
+
+  /**
+    * Request structure for list backend environments request.
+    */
+  @js.native
+  trait ListBackendEnvironmentsRequest extends js.Object {
+    var appId: AppId
+    var environmentName: js.UndefOr[EnvironmentName]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBackendEnvironmentsRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        environmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBackendEnvironmentsRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      environmentName.foreach(__v => __obj.updateDynamic("environmentName")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBackendEnvironmentsRequest]
+    }
+  }
+
+  /**
+    * Result structure for list backend environments result.
+    */
+  @js.native
+  trait ListBackendEnvironmentsResult extends js.Object {
+    var backendEnvironments: BackendEnvironments
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBackendEnvironmentsResult {
+    @inline
+    def apply(
+        backendEnvironments: BackendEnvironments,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBackendEnvironmentsResult = {
+      val __obj = js.Dynamic.literal(
+        "backendEnvironments" -> backendEnvironments.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBackendEnvironmentsResult]
     }
   }
 

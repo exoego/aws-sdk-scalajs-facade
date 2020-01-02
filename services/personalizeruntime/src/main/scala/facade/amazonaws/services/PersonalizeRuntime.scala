@@ -8,14 +8,18 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object personalizeruntime {
-  type Arn        = String
-  type InputList  = js.Array[ItemID]
-  type ItemID     = String
-  type ItemList   = js.Array[PredictedItem]
-  type NumResults = Int
-  type UserID     = String
+  type Arn            = String
+  type AttributeName  = String
+  type AttributeValue = String
+  type Context        = js.Dictionary[AttributeValue]
+  type InputList      = js.Array[ItemID]
+  type ItemID         = String
+  type ItemList       = js.Array[PredictedItem]
+  type NumResults     = Int
+  type UserID         = String
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
+
     @inline def getPersonalizedRankingFuture(
         params: GetPersonalizedRankingRequest
     ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise.toFuture
@@ -40,6 +44,7 @@ package personalizeruntime {
     var campaignArn: Arn
     var inputList: InputList
     var userId: UserID
+    var context: js.UndefOr[Context]
   }
 
   object GetPersonalizedRankingRequest {
@@ -47,7 +52,8 @@ package personalizeruntime {
     def apply(
         campaignArn: Arn,
         inputList: InputList,
-        userId: UserID
+        userId: UserID,
+        context: js.UndefOr[Context] = js.undefined
     ): GetPersonalizedRankingRequest = {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any],
@@ -55,6 +61,7 @@ package personalizeruntime {
         "userId"      -> userId.asInstanceOf[js.Any]
       )
 
+      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonalizedRankingRequest]
     }
   }
@@ -78,6 +85,7 @@ package personalizeruntime {
   @js.native
   trait GetRecommendationsRequest extends js.Object {
     var campaignArn: Arn
+    var context: js.UndefOr[Context]
     var itemId: js.UndefOr[ItemID]
     var numResults: js.UndefOr[NumResults]
     var userId: js.UndefOr[UserID]
@@ -87,6 +95,7 @@ package personalizeruntime {
     @inline
     def apply(
         campaignArn: Arn,
+        context: js.UndefOr[Context] = js.undefined,
         itemId: js.UndefOr[ItemID] = js.undefined,
         numResults: js.UndefOr[NumResults] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
@@ -95,6 +104,7 @@ package personalizeruntime {
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
+      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))

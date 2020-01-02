@@ -41,6 +41,7 @@ package object mobile {
   type SnapshotId       = String
 
   implicit final class MobileOps(private val service: Mobile) extends AnyVal {
+
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
       service.createProject(params).promise.toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =

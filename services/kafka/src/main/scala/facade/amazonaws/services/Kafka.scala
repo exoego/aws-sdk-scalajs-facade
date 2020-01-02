@@ -36,6 +36,7 @@ package object kafka {
   type __timestampIso8601            = js.Date
 
   implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
+
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
@@ -80,6 +81,8 @@ package object kafka {
     @inline def updateClusterConfigurationFuture(
         params: UpdateClusterConfigurationRequest
     ): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise.toFuture
+    @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] =
+      service.updateMonitoring(params).promise.toFuture
   }
 }
 
@@ -114,7 +117,8 @@ package kafka {
     def updateBrokerStorage(params: UpdateBrokerStorageRequest): Request[UpdateBrokerStorageResponse] = js.native
     def updateClusterConfiguration(
         params: UpdateClusterConfigurationRequest
-    ): Request[UpdateClusterConfigurationResponse] = js.native
+    ): Request[UpdateClusterConfigurationResponse]                                           = js.native
+    def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
   }
 
   /**
@@ -299,6 +303,7 @@ package kafka {
     var EncryptionInfo: js.UndefOr[EncryptionInfo]
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
     var NumberOfBrokerNodes: js.UndefOr[__integer]
+    var OpenMonitoring: js.UndefOr[OpenMonitoring]
     var State: js.UndefOr[ClusterState]
     var Tags: js.UndefOr[__mapOf__string]
     var ZookeeperConnectString: js.UndefOr[__string]
@@ -318,6 +323,7 @@ package kafka {
         EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
         NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
+        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         ZookeeperConnectString: js.UndefOr[__string] = js.undefined
@@ -336,6 +342,7 @@ package kafka {
       EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
+      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
@@ -504,6 +511,7 @@ package kafka {
     var ConfigurationInfo: js.UndefOr[ConfigurationInfo]
     var EncryptionInfo: js.UndefOr[EncryptionInfo]
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
+    var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
     var Tags: js.UndefOr[__mapOf__string]
   }
 
@@ -518,6 +526,7 @@ package kafka {
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
         EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
+        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
@@ -531,6 +540,7 @@ package kafka {
       ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
       EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
@@ -976,6 +986,50 @@ package kafka {
     }
   }
 
+  /**
+    *             Indicates whether you want to enable or disable the JMX Exporter.
+    *
+    */
+  @js.native
+  trait JmxExporter extends js.Object {
+    var EnabledInBroker: __boolean
+  }
+
+  object JmxExporter {
+    @inline
+    def apply(
+        EnabledInBroker: __boolean
+    ): JmxExporter = {
+      val __obj = js.Dynamic.literal(
+        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[JmxExporter]
+    }
+  }
+
+  /**
+    *             Indicates whether you want to enable or disable the JMX Exporter.
+    *
+    */
+  @js.native
+  trait JmxExporterInfo extends js.Object {
+    var EnabledInBroker: __boolean
+  }
+
+  object JmxExporterInfo {
+    @inline
+    def apply(
+        EnabledInBroker: __boolean
+    ): JmxExporterInfo = {
+      val __obj = js.Dynamic.literal(
+        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[JmxExporterInfo]
+    }
+  }
+
   @js.native
   trait ListClusterOperationsRequest extends js.Object {
     var ClusterArn: __string
@@ -1226,7 +1280,9 @@ package kafka {
   trait MutableClusterInfo extends js.Object {
     var BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo]
     var ConfigurationInfo: js.UndefOr[ConfigurationInfo]
+    var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
     var NumberOfBrokerNodes: js.UndefOr[__integer]
+    var OpenMonitoring: js.UndefOr[OpenMonitoring]
   }
 
   object MutableClusterInfo {
@@ -1234,13 +1290,61 @@ package kafka {
     def apply(
         BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo] = js.undefined,
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
-        NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined
+        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
+        NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
+        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined
     ): MutableClusterInfo = {
       val __obj = js.Dynamic.literal()
       BrokerEBSVolumeInfo.foreach(__v => __obj.updateDynamic("BrokerEBSVolumeInfo")(__v.asInstanceOf[js.Any]))
       ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
+      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
+      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MutableClusterInfo]
+    }
+  }
+
+  /**
+    *             Indicates whether you want to enable or disable the Node Exporter.
+    *
+    */
+  @js.native
+  trait NodeExporter extends js.Object {
+    var EnabledInBroker: __boolean
+  }
+
+  object NodeExporter {
+    @inline
+    def apply(
+        EnabledInBroker: __boolean
+    ): NodeExporter = {
+      val __obj = js.Dynamic.literal(
+        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[NodeExporter]
+    }
+  }
+
+  /**
+    *             Indicates whether you want to enable or disable the Node Exporter.
+    *
+    */
+  @js.native
+  trait NodeExporterInfo extends js.Object {
+    var EnabledInBroker: __boolean
+  }
+
+  object NodeExporterInfo {
+    @inline
+    def apply(
+        EnabledInBroker: __boolean
+    ): NodeExporterInfo = {
+      val __obj = js.Dynamic.literal(
+        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[NodeExporterInfo]
     }
   }
 
@@ -1287,6 +1391,96 @@ package kafka {
     val BROKER = "BROKER"
 
     val values = js.Object.freeze(js.Array(BROKER))
+  }
+
+  /**
+    *             JMX and Node monitoring for the MSK cluster.
+    *
+    */
+  @js.native
+  trait OpenMonitoring extends js.Object {
+    var Prometheus: Prometheus
+  }
+
+  object OpenMonitoring {
+    @inline
+    def apply(
+        Prometheus: Prometheus
+    ): OpenMonitoring = {
+      val __obj = js.Dynamic.literal(
+        "Prometheus" -> Prometheus.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OpenMonitoring]
+    }
+  }
+
+  /**
+    *             JMX and Node monitoring for the MSK cluster.
+    *
+    */
+  @js.native
+  trait OpenMonitoringInfo extends js.Object {
+    var Prometheus: PrometheusInfo
+  }
+
+  object OpenMonitoringInfo {
+    @inline
+    def apply(
+        Prometheus: PrometheusInfo
+    ): OpenMonitoringInfo = {
+      val __obj = js.Dynamic.literal(
+        "Prometheus" -> Prometheus.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OpenMonitoringInfo]
+    }
+  }
+
+  /**
+    *             Prometheus settings.
+    *
+    */
+  @js.native
+  trait Prometheus extends js.Object {
+    var JmxExporter: js.UndefOr[JmxExporter]
+    var NodeExporter: js.UndefOr[NodeExporter]
+  }
+
+  object Prometheus {
+    @inline
+    def apply(
+        JmxExporter: js.UndefOr[JmxExporter] = js.undefined,
+        NodeExporter: js.UndefOr[NodeExporter] = js.undefined
+    ): Prometheus = {
+      val __obj = js.Dynamic.literal()
+      JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
+      NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Prometheus]
+    }
+  }
+
+  /**
+    *             Prometheus settings.
+    *
+    */
+  @js.native
+  trait PrometheusInfo extends js.Object {
+    var JmxExporter: js.UndefOr[JmxExporterInfo]
+    var NodeExporter: js.UndefOr[NodeExporterInfo]
+  }
+
+  object PrometheusInfo {
+    @inline
+    def apply(
+        JmxExporter: js.UndefOr[JmxExporterInfo] = js.undefined,
+        NodeExporter: js.UndefOr[NodeExporterInfo] = js.undefined
+    ): PrometheusInfo = {
+      val __obj = js.Dynamic.literal()
+      JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
+      NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrometheusInfo]
+    }
   }
 
   /**
@@ -1499,6 +1693,55 @@ package kafka {
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterConfigurationResponse]
+    }
+  }
+
+  /**
+    * Request body for UpdateMonitoring.
+    */
+  @js.native
+  trait UpdateMonitoringRequest extends js.Object {
+    var ClusterArn: __string
+    var CurrentVersion: __string
+    var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
+    var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
+  }
+
+  object UpdateMonitoringRequest {
+    @inline
+    def apply(
+        ClusterArn: __string,
+        CurrentVersion: __string,
+        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
+        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined
+    ): UpdateMonitoringRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClusterArn"     -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
+      )
+
+      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMonitoringRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMonitoringResponse extends js.Object {
+    var ClusterArn: js.UndefOr[__string]
+    var ClusterOperationArn: js.UndefOr[__string]
+  }
+
+  object UpdateMonitoringResponse {
+    @inline
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterOperationArn: js.UndefOr[__string] = js.undefined
+    ): UpdateMonitoringResponse = {
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMonitoringResponse]
     }
   }
 

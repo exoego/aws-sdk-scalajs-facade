@@ -44,6 +44,7 @@ package object groundstation {
   type satelliteArn              = String
 
   implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
+
     @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] =
       service.cancelContact(params).promise.toFuture
     @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] =

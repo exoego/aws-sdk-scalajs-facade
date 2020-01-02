@@ -26,6 +26,7 @@ package object medialive {
   type AudioLanguageSelectionPolicy                  = String
   type AudioNormalizationAlgorithm                   = String
   type AudioNormalizationAlgorithmControl            = String
+  type AudioOnlyHlsSegmentType                       = String
   type AudioOnlyHlsTrackType                         = String
   type AudioType                                     = String
   type AuthenticationScheme                          = String
@@ -66,6 +67,7 @@ package object medialive {
   type FecOutputIncludeFec                           = String
   type FixedAfd                                      = String
   type FollowPoint                                   = String
+  type FrameCaptureIntervalUnit                      = String
   type GlobalConfigurationInputEndAction             = String
   type GlobalConfigurationLowFramerateInputs         = String
   type GlobalConfigurationOutputLockingMode          = String
@@ -109,6 +111,8 @@ package object medialive {
   type HlsCodecSpecification                         = String
   type HlsDirectoryStructure                         = String
   type HlsEncryptionType                             = String
+  type HlsH265PackagingType                          = String
+  type HlsId3SegmentTaggingState                     = String
   type HlsIvInManifest                               = String
   type HlsIvSource                                   = String
   type HlsManifestCompression                        = String
@@ -156,19 +160,23 @@ package object medialive {
   type M2tsEbpPlacement                              = String
   type M2tsEsRateInPes                               = String
   type M2tsKlv                                       = String
+  type M2tsNielsenId3Behavior                        = String
   type M2tsPcrControl                                = String
   type M2tsRateMode                                  = String
   type M2tsScte35Control                             = String
   type M2tsSegmentationMarkers                       = String
   type M2tsSegmentationStyle                         = String
   type M2tsTimedMetadataBehavior                     = String
+  type M3u8NielsenId3Behavior                        = String
   type M3u8PcrControl                                = String
   type M3u8Scte35Behavior                            = String
   type M3u8TimedMetadataBehavior                     = String
   type MaxResults                                    = Int
   type Mp2CodingMode                                 = String
   type MsSmoothH265PackagingType                     = String
+  type MultiplexState                                = String
   type NetworkInputServerValidation                  = String
+  type NielsenPcmToId3TaggingState                   = String
   type OfferingDurationUnits                         = String
   type OfferingType                                  = String
   type PipelineId                                    = String
@@ -220,6 +228,7 @@ package object medialive {
   type __integerMin0Max1000                          = Int
   type __integerMin0Max10000                         = Int
   type __integerMin0Max1000000                       = Int
+  type __integerMin0Max100000000                     = Int
   type __integerMin0Max128                           = Int
   type __integerMin0Max15                            = Int
   type __integerMin0Max255                           = Int
@@ -234,8 +243,11 @@ package object medialive {
   type __integerMin0Max8191                          = Int
   type __integerMin1                                 = Int
   type __integerMin1000                              = Int
+  type __integerMin1000000Max100000000               = Int
+  type __integerMin100000Max100000000                = Int
   type __integerMin100000Max40000000                 = Int
   type __integerMin100000Max80000000                 = Int
+  type __integerMin1000Max3000                       = Int
   type __integerMin1000Max30000                      = Int
   type __integerMin1Max10                            = Int
   type __integerMin1Max1000000                       = Int
@@ -244,7 +256,7 @@ package object medialive {
   type __integerMin1Max3003                          = Int
   type __integerMin1Max31                            = Int
   type __integerMin1Max32                            = Int
-  type __integerMin1Max3600                          = Int
+  type __integerMin1Max3600000                       = Int
   type __integerMin1Max4                             = Int
   type __integerMin1Max5                             = Int
   type __integerMin1Max6                             = Int
@@ -280,6 +292,9 @@ package object medialive {
   type __listOfMediaConnectFlow                      = js.Array[MediaConnectFlow]
   type __listOfMediaConnectFlowRequest               = js.Array[MediaConnectFlowRequest]
   type __listOfMediaPackageOutputDestinationSettings = js.Array[MediaPackageOutputDestinationSettings]
+  type __listOfMultiplexOutputDestination            = js.Array[MultiplexOutputDestination]
+  type __listOfMultiplexProgramSummary               = js.Array[MultiplexProgramSummary]
+  type __listOfMultiplexSummary                      = js.Array[MultiplexSummary]
   type __listOfOffering                              = js.Array[Offering]
   type __listOfOutput                                = js.Array[Output]
   type __listOfOutputDestination                     = js.Array[OutputDestination]
@@ -291,11 +306,13 @@ package object medialive {
   type __listOfScheduleAction                        = js.Array[ScheduleAction]
   type __listOfScte35Descriptor                      = js.Array[Scte35Descriptor]
   type __listOfVideoDescription                      = js.Array[VideoDescription]
+  type __listOf__integer                             = js.Array[__integer]
   type __listOf__string                              = js.Array[__string]
   type __longMin0Max1099511627775                    = Double
   type __longMin0Max4294967295                       = Double
   type __longMin0Max8589934591                       = Double
   type __string                                      = String
+  type __stringMax256                                = String
   type __stringMax32                                 = String
   type __stringMin1                                  = String
   type __stringMin1Max255                            = String
@@ -306,6 +323,7 @@ package object medialive {
   type __stringMin6Max6                              = String
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
+
     @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
       service.batchUpdateSchedule(params).promise.toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
@@ -315,6 +333,11 @@ package object medialive {
     @inline def createInputSecurityGroupFuture(
         params: CreateInputSecurityGroupRequest
     ): Future[CreateInputSecurityGroupResponse] = service.createInputSecurityGroup(params).promise.toFuture
+    @inline def createMultiplexFuture(params: CreateMultiplexRequest): Future[CreateMultiplexResponse] =
+      service.createMultiplex(params).promise.toFuture
+    @inline def createMultiplexProgramFuture(
+        params: CreateMultiplexProgramRequest
+    ): Future[CreateMultiplexProgramResponse] = service.createMultiplexProgram(params).promise.toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
       service.createTags(params).promise.toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
@@ -324,6 +347,11 @@ package object medialive {
     @inline def deleteInputSecurityGroupFuture(
         params: DeleteInputSecurityGroupRequest
     ): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise.toFuture
+    @inline def deleteMultiplexFuture(params: DeleteMultiplexRequest): Future[DeleteMultiplexResponse] =
+      service.deleteMultiplex(params).promise.toFuture
+    @inline def deleteMultiplexProgramFuture(
+        params: DeleteMultiplexProgramRequest
+    ): Future[DeleteMultiplexProgramResponse] = service.deleteMultiplexProgram(params).promise.toFuture
     @inline def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
       service.deleteReservation(params).promise.toFuture
     @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] =
@@ -337,6 +365,11 @@ package object medialive {
     @inline def describeInputSecurityGroupFuture(
         params: DescribeInputSecurityGroupRequest
     ): Future[DescribeInputSecurityGroupResponse] = service.describeInputSecurityGroup(params).promise.toFuture
+    @inline def describeMultiplexFuture(params: DescribeMultiplexRequest): Future[DescribeMultiplexResponse] =
+      service.describeMultiplex(params).promise.toFuture
+    @inline def describeMultiplexProgramFuture(
+        params: DescribeMultiplexProgramRequest
+    ): Future[DescribeMultiplexProgramResponse] = service.describeMultiplexProgram(params).promise.toFuture
     @inline def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] =
       service.describeOffering(params).promise.toFuture
     @inline def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] =
@@ -350,6 +383,11 @@ package object medialive {
     ): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise.toFuture
     @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
       service.listInputs(params).promise.toFuture
+    @inline def listMultiplexProgramsFuture(
+        params: ListMultiplexProgramsRequest
+    ): Future[ListMultiplexProgramsResponse] = service.listMultiplexPrograms(params).promise.toFuture
+    @inline def listMultiplexesFuture(params: ListMultiplexesRequest): Future[ListMultiplexesResponse] =
+      service.listMultiplexes(params).promise.toFuture
     @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] =
       service.listOfferings(params).promise.toFuture
     @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] =
@@ -360,8 +398,12 @@ package object medialive {
       service.purchaseOffering(params).promise.toFuture
     @inline def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] =
       service.startChannel(params).promise.toFuture
+    @inline def startMultiplexFuture(params: StartMultiplexRequest): Future[StartMultiplexResponse] =
+      service.startMultiplex(params).promise.toFuture
     @inline def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
       service.stopChannel(params).promise.toFuture
+    @inline def stopMultiplexFuture(params: StopMultiplexRequest): Future[StopMultiplexResponse] =
+      service.stopMultiplex(params).promise.toFuture
     @inline def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] =
       service.updateChannelClass(params).promise.toFuture
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
@@ -371,6 +413,11 @@ package object medialive {
     @inline def updateInputSecurityGroupFuture(
         params: UpdateInputSecurityGroupRequest
     ): Future[UpdateInputSecurityGroupResponse] = service.updateInputSecurityGroup(params).promise.toFuture
+    @inline def updateMultiplexFuture(params: UpdateMultiplexRequest): Future[UpdateMultiplexResponse] =
+      service.updateMultiplex(params).promise.toFuture
+    @inline def updateMultiplexProgramFuture(
+        params: UpdateMultiplexProgramRequest
+    ): Future[UpdateMultiplexProgramResponse] = service.updateMultiplexProgram(params).promise.toFuture
     @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] =
       service.updateReservation(params).promise.toFuture
   }
@@ -387,10 +434,16 @@ package medialive {
     def createInput(params: CreateInputRequest): Request[CreateInputResponse]                         = js.native
     def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] =
       js.native
+    def createMultiplex(params: CreateMultiplexRequest): Request[CreateMultiplexResponse] = js.native
+    def createMultiplexProgram(params: CreateMultiplexProgramRequest): Request[CreateMultiplexProgramResponse] =
+      js.native
     def createTags(params: CreateTagsRequest): Request[js.Object]                   = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
     def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse]       = js.native
     def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] =
+      js.native
+    def deleteMultiplex(params: DeleteMultiplexRequest): Request[DeleteMultiplexResponse] = js.native
+    def deleteMultiplexProgram(params: DeleteMultiplexProgramRequest): Request[DeleteMultiplexProgramResponse] =
       js.native
     def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
     def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse]          = js.native
@@ -399,24 +452,34 @@ package medialive {
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]             = js.native
     def describeInputSecurityGroup(
         params: DescribeInputSecurityGroupRequest
-    ): Request[DescribeInputSecurityGroupResponse]                                                    = js.native
+    ): Request[DescribeInputSecurityGroupResponse]                                              = js.native
+    def describeMultiplex(params: DescribeMultiplexRequest): Request[DescribeMultiplexResponse] = js.native
+    def describeMultiplexProgram(params: DescribeMultiplexProgramRequest): Request[DescribeMultiplexProgramResponse] =
+      js.native
     def describeOffering(params: DescribeOfferingRequest): Request[DescribeOfferingResponse]          = js.native
     def describeReservation(params: DescribeReservationRequest): Request[DescribeReservationResponse] = js.native
     def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse]          = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
     def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] =
       js.native
-    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                            = js.native
-    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse]                   = js.native
-    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse]          = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse]          = js.native
-    def startChannel(params: StartChannelRequest): Request[StartChannelResponse]                      = js.native
-    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                         = js.native
-    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                   = js.native
-    def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse]    = js.native
-    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                         = js.native
+    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                                  = js.native
+    def listMultiplexPrograms(params: ListMultiplexProgramsRequest): Request[ListMultiplexProgramsResponse] = js.native
+    def listMultiplexes(params: ListMultiplexesRequest): Request[ListMultiplexesResponse]                   = js.native
+    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse]                         = js.native
+    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse]                = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse]                = js.native
+    def startChannel(params: StartChannelRequest): Request[StartChannelResponse]                            = js.native
+    def startMultiplex(params: StartMultiplexRequest): Request[StartMultiplexResponse]                      = js.native
+    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                               = js.native
+    def stopMultiplex(params: StopMultiplexRequest): Request[StopMultiplexResponse]                         = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                         = js.native
+    def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse]          = js.native
+    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                               = js.native
     def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
+      js.native
+    def updateMultiplex(params: UpdateMultiplexRequest): Request[UpdateMultiplexResponse] = js.native
+    def updateMultiplexProgram(params: UpdateMultiplexProgramRequest): Request[UpdateMultiplexProgramResponse] =
       js.native
     def updateReservation(params: UpdateReservationRequest): Request[UpdateReservationResponse] = js.native
   }
@@ -964,6 +1027,16 @@ package medialive {
   }
 
   /**
+    * Audio Only Hls Segment Type
+    */
+  object AudioOnlyHlsSegmentTypeEnum {
+    val AAC  = "AAC"
+    val FMP4 = "FMP4"
+
+    val values = js.Object.freeze(js.Array(AAC, FMP4))
+  }
+
+  /**
     * Audio Only Hls Settings
     */
   @js.native
@@ -971,6 +1044,7 @@ package medialive {
     var AudioGroupId: js.UndefOr[__string]
     var AudioOnlyImage: js.UndefOr[InputLocation]
     var AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType]
+    var SegmentType: js.UndefOr[AudioOnlyHlsSegmentType]
   }
 
   object AudioOnlyHlsSettings {
@@ -978,12 +1052,14 @@ package medialive {
     def apply(
         AudioGroupId: js.UndefOr[__string] = js.undefined,
         AudioOnlyImage: js.UndefOr[InputLocation] = js.undefined,
-        AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType] = js.undefined
+        AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType] = js.undefined,
+        SegmentType: js.UndefOr[AudioOnlyHlsSegmentType] = js.undefined
     ): AudioOnlyHlsSettings = {
       val __obj = js.Dynamic.literal()
       AudioGroupId.foreach(__v => __obj.updateDynamic("AudioGroupId")(__v.asInstanceOf[js.Any]))
       AudioOnlyImage.foreach(__v => __obj.updateDynamic("AudioOnlyImage")(__v.asInstanceOf[js.Any]))
       AudioTrackType.foreach(__v => __obj.updateDynamic("AudioTrackType")(__v.asInstanceOf[js.Any]))
+      SegmentType.foreach(__v => __obj.updateDynamic("SegmentType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioOnlyHlsSettings]
     }
   }
@@ -1492,7 +1568,7 @@ package medialive {
   }
 
   /**
-    * Output groups for this Live Event. Output groups contain information about where streams should be distributed.
+    * Caption Description
     */
   @js.native
   trait CaptionDescription extends js.Object {
@@ -2053,6 +2129,107 @@ package medialive {
   }
 
   /**
+    * A request to create a program in a multiplex.
+    */
+  @js.native
+  trait CreateMultiplexProgramRequest extends js.Object {
+    var MultiplexId: __string
+    var MultiplexProgramSettings: MultiplexProgramSettings
+    var ProgramName: __string
+    var RequestId: __string
+  }
+
+  object CreateMultiplexProgramRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        MultiplexProgramSettings: MultiplexProgramSettings,
+        ProgramName: __string,
+        RequestId: __string
+    ): CreateMultiplexProgramRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId"              -> MultiplexId.asInstanceOf[js.Any],
+        "MultiplexProgramSettings" -> MultiplexProgramSettings.asInstanceOf[js.Any],
+        "ProgramName"              -> ProgramName.asInstanceOf[js.Any],
+        "RequestId"                -> RequestId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateMultiplexProgramRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for CreateMultiplexProgramResponse
+    */
+  @js.native
+  trait CreateMultiplexProgramResponse extends js.Object {
+    var MultiplexProgram: js.UndefOr[MultiplexProgram]
+  }
+
+  object CreateMultiplexProgramResponse {
+    @inline
+    def apply(
+        MultiplexProgram: js.UndefOr[MultiplexProgram] = js.undefined
+    ): CreateMultiplexProgramResponse = {
+      val __obj = js.Dynamic.literal()
+      MultiplexProgram.foreach(__v => __obj.updateDynamic("MultiplexProgram")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultiplexProgramResponse]
+    }
+  }
+
+  /**
+    * A request to create a multiplex.
+    */
+  @js.native
+  trait CreateMultiplexRequest extends js.Object {
+    var AvailabilityZones: __listOf__string
+    var MultiplexSettings: MultiplexSettings
+    var Name: __string
+    var RequestId: __string
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateMultiplexRequest {
+    @inline
+    def apply(
+        AvailabilityZones: __listOf__string,
+        MultiplexSettings: MultiplexSettings,
+        Name: __string,
+        RequestId: __string,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
+        "MultiplexSettings" -> MultiplexSettings.asInstanceOf[js.Any],
+        "Name"              -> Name.asInstanceOf[js.Any],
+        "RequestId"         -> RequestId.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for CreateMultiplexResponse
+    */
+  @js.native
+  trait CreateMultiplexResponse extends js.Object {
+    var Multiplex: js.UndefOr[Multiplex]
+  }
+
+  object CreateMultiplexResponse {
+    @inline
+    def apply(
+        Multiplex: js.UndefOr[Multiplex] = js.undefined
+    ): CreateMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Multiplex.foreach(__v => __obj.updateDynamic("Multiplex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultiplexResponse]
+    }
+  }
+
+  /**
     * Placeholder documentation for CreateTagsRequest
     */
   @js.native
@@ -2229,6 +2406,125 @@ package medialive {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteInputSecurityGroupResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteMultiplexProgramRequest
+    */
+  @js.native
+  trait DeleteMultiplexProgramRequest extends js.Object {
+    var MultiplexId: __string
+    var ProgramName: __string
+  }
+
+  object DeleteMultiplexProgramRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        ProgramName: __string
+    ): DeleteMultiplexProgramRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
+        "ProgramName" -> ProgramName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteMultiplexProgramRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteMultiplexProgramResponse
+    */
+  @js.native
+  trait DeleteMultiplexProgramResponse extends js.Object {
+    var ChannelId: js.UndefOr[__string]
+    var MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings]
+    var PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap]
+    var ProgramName: js.UndefOr[__string]
+  }
+
+  object DeleteMultiplexProgramResponse {
+    @inline
+    def apply(
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings] = js.undefined,
+        PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap] = js.undefined,
+        ProgramName: js.UndefOr[__string] = js.undefined
+    ): DeleteMultiplexProgramResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      MultiplexProgramSettings.foreach(__v => __obj.updateDynamic("MultiplexProgramSettings")(__v.asInstanceOf[js.Any]))
+      PacketIdentifiersMap.foreach(__v => __obj.updateDynamic("PacketIdentifiersMap")(__v.asInstanceOf[js.Any]))
+      ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteMultiplexProgramResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteMultiplexRequest
+    */
+  @js.native
+  trait DeleteMultiplexRequest extends js.Object {
+    var MultiplexId: __string
+  }
+
+  object DeleteMultiplexRequest {
+    @inline
+    def apply(
+        MultiplexId: __string
+    ): DeleteMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteMultiplexResponse
+    */
+  @js.native
+  trait DeleteMultiplexResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Destinations: js.UndefOr[__listOfMultiplexOutputDestination]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object DeleteMultiplexResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfMultiplexOutputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DeleteMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteMultiplexResponse]
     }
   }
 
@@ -2597,6 +2893,125 @@ package medialive {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WhitelistRules.foreach(__v => __obj.updateDynamic("WhitelistRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInputSecurityGroupResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeMultiplexProgramRequest
+    */
+  @js.native
+  trait DescribeMultiplexProgramRequest extends js.Object {
+    var MultiplexId: __string
+    var ProgramName: __string
+  }
+
+  object DescribeMultiplexProgramRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        ProgramName: __string
+    ): DescribeMultiplexProgramRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
+        "ProgramName" -> ProgramName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeMultiplexProgramRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeMultiplexProgramResponse
+    */
+  @js.native
+  trait DescribeMultiplexProgramResponse extends js.Object {
+    var ChannelId: js.UndefOr[__string]
+    var MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings]
+    var PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap]
+    var ProgramName: js.UndefOr[__string]
+  }
+
+  object DescribeMultiplexProgramResponse {
+    @inline
+    def apply(
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings] = js.undefined,
+        PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap] = js.undefined,
+        ProgramName: js.UndefOr[__string] = js.undefined
+    ): DescribeMultiplexProgramResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      MultiplexProgramSettings.foreach(__v => __obj.updateDynamic("MultiplexProgramSettings")(__v.asInstanceOf[js.Any]))
+      PacketIdentifiersMap.foreach(__v => __obj.updateDynamic("PacketIdentifiersMap")(__v.asInstanceOf[js.Any]))
+      ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMultiplexProgramResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeMultiplexRequest
+    */
+  @js.native
+  trait DescribeMultiplexRequest extends js.Object {
+    var MultiplexId: __string
+  }
+
+  object DescribeMultiplexRequest {
+    @inline
+    def apply(
+        MultiplexId: __string
+    ): DescribeMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeMultiplexResponse
+    */
+  @js.native
+  trait DescribeMultiplexResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Destinations: js.UndefOr[__listOfMultiplexOutputDestination]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object DescribeMultiplexResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfMultiplexOutputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DescribeMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMultiplexResponse]
     }
   }
 
@@ -3379,6 +3794,7 @@ package medialive {
     var BlackoutSlate: js.UndefOr[BlackoutSlate]
     var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
     var GlobalConfiguration: js.UndefOr[GlobalConfiguration]
+    var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
   }
 
   object EncoderSettings {
@@ -3392,7 +3808,8 @@ package medialive {
         AvailConfiguration: js.UndefOr[AvailConfiguration] = js.undefined,
         BlackoutSlate: js.UndefOr[BlackoutSlate] = js.undefined,
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
-        GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined
+        GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined,
+        NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined
     ): EncoderSettings = {
       val __obj = js.Dynamic.literal(
         "AudioDescriptions" -> AudioDescriptions.asInstanceOf[js.Any],
@@ -3406,6 +3823,7 @@ package medialive {
       BlackoutSlate.foreach(__v => __obj.updateDynamic("BlackoutSlate")(__v.asInstanceOf[js.Any]))
       CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
       GlobalConfiguration.foreach(__v => __obj.updateDynamic("GlobalConfiguration")(__v.asInstanceOf[js.Any]))
+      NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncoderSettings]
     }
   }
@@ -3500,6 +3918,25 @@ package medialive {
   }
 
   /**
+    * Fmp4 Hls Settings
+    */
+  @js.native
+  trait Fmp4HlsSettings extends js.Object {
+    var AudioRenditionSets: js.UndefOr[__string]
+  }
+
+  object Fmp4HlsSettings {
+    @inline
+    def apply(
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined
+    ): Fmp4HlsSettings = {
+      val __obj = js.Dynamic.literal()
+      AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Fmp4HlsSettings]
+    }
+  }
+
+  /**
     * Settings to specify if an action follows another.
     */
   @js.native
@@ -3555,6 +3992,16 @@ package medialive {
   }
 
   /**
+    * Frame Capture Interval Unit
+    */
+  object FrameCaptureIntervalUnitEnum {
+    val MILLISECONDS = "MILLISECONDS"
+    val SECONDS      = "SECONDS"
+
+    val values = js.Object.freeze(js.Array(MILLISECONDS, SECONDS))
+  }
+
+  /**
     * Frame Capture Output Settings
     */
   @js.native
@@ -3578,18 +4025,21 @@ package medialive {
     */
   @js.native
   trait FrameCaptureSettings extends js.Object {
-    var CaptureInterval: __integerMin1Max3600
+    var CaptureInterval: __integerMin1Max3600000
+    var CaptureIntervalUnits: js.UndefOr[FrameCaptureIntervalUnit]
   }
 
   object FrameCaptureSettings {
     @inline
     def apply(
-        CaptureInterval: __integerMin1Max3600
+        CaptureInterval: __integerMin1Max3600000,
+        CaptureIntervalUnits: js.UndefOr[FrameCaptureIntervalUnit] = js.undefined
     ): FrameCaptureSettings = {
       val __obj = js.Dynamic.literal(
         "CaptureInterval" -> CaptureInterval.asInstanceOf[js.Any]
       )
 
+      CaptureIntervalUnits.foreach(__v => __obj.updateDynamic("CaptureIntervalUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FrameCaptureSettings]
     }
   }
@@ -3904,7 +4354,7 @@ package medialive {
     var GopBReference: js.UndefOr[H264GopBReference]
     var GopClosedCadence: js.UndefOr[__integerMin0]
     var GopNumBFrames: js.UndefOr[__integerMin0Max7]
-    var GopSize: js.UndefOr[__doubleMin1]
+    var GopSize: js.UndefOr[__double]
     var GopSizeUnits: js.UndefOr[H264GopSizeUnits]
     var Level: js.UndefOr[H264Level]
     var LookAheadRateControl: js.UndefOr[H264LookAheadRateControl]
@@ -3947,7 +4397,7 @@ package medialive {
         GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
         GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
         GopNumBFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
-        GopSize: js.UndefOr[__doubleMin1] = js.undefined,
+        GopSize: js.UndefOr[__double] = js.undefined,
         GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
         Level: js.UndefOr[H264Level] = js.undefined,
         LookAheadRateControl: js.UndefOr[H264LookAheadRateControl] = js.undefined,
@@ -4211,10 +4661,11 @@ package medialive {
     * H265 Rate Control Mode
     */
   object H265RateControlModeEnum {
-    val CBR  = "CBR"
-    val QVBR = "QVBR"
+    val CBR       = "CBR"
+    val MULTIPLEX = "MULTIPLEX"
+    val QVBR      = "QVBR"
 
-    val values = js.Object.freeze(js.Array(CBR, QVBR))
+    val values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR))
   }
 
   /**
@@ -4253,7 +4704,7 @@ package medialive {
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H265FlickerAq]
     var GopClosedCadence: js.UndefOr[__integerMin0]
-    var GopSize: js.UndefOr[__doubleMin1]
+    var GopSize: js.UndefOr[__double]
     var GopSizeUnits: js.UndefOr[H265GopSizeUnits]
     var Level: js.UndefOr[H265Level]
     var LookAheadRateControl: js.UndefOr[H265LookAheadRateControl]
@@ -4286,7 +4737,7 @@ package medialive {
         FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
         FlickerAq: js.UndefOr[H265FlickerAq] = js.undefined,
         GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
-        GopSize: js.UndefOr[__doubleMin1] = js.undefined,
+        GopSize: js.UndefOr[__double] = js.undefined,
         GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
         Level: js.UndefOr[H265Level] = js.undefined,
         LookAheadRateControl: js.UndefOr[H265LookAheadRateControl] = js.undefined,
@@ -4555,7 +5006,9 @@ package medialive {
     var Destination: OutputLocationRef
     var AdMarkers: js.UndefOr[__listOfHlsAdMarkers]
     var BaseUrlContent: js.UndefOr[__string]
+    var BaseUrlContent1: js.UndefOr[__string]
     var BaseUrlManifest: js.UndefOr[__string]
+    var BaseUrlManifest1: js.UndefOr[__string]
     var CaptionLanguageMappings: js.UndefOr[__listOfCaptionLanguageMapping]
     var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
     var ClientCache: js.UndefOr[HlsClientCache]
@@ -4564,6 +5017,7 @@ package medialive {
     var DirectoryStructure: js.UndefOr[HlsDirectoryStructure]
     var EncryptionType: js.UndefOr[HlsEncryptionType]
     var HlsCdnSettings: js.UndefOr[HlsCdnSettings]
+    var HlsId3SegmentTagging: js.UndefOr[HlsId3SegmentTaggingState]
     var IFrameOnlyPlaylists: js.UndefOr[IFrameOnlyPlaylistType]
     var IndexNSegments: js.UndefOr[__integerMin3]
     var InputLossAction: js.UndefOr[InputLossActionForHlsOut]
@@ -4597,7 +5051,9 @@ package medialive {
         Destination: OutputLocationRef,
         AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
         BaseUrlContent: js.UndefOr[__string] = js.undefined,
+        BaseUrlContent1: js.UndefOr[__string] = js.undefined,
         BaseUrlManifest: js.UndefOr[__string] = js.undefined,
+        BaseUrlManifest1: js.UndefOr[__string] = js.undefined,
         CaptionLanguageMappings: js.UndefOr[__listOfCaptionLanguageMapping] = js.undefined,
         CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
         ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
@@ -4606,6 +5062,7 @@ package medialive {
         DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
         EncryptionType: js.UndefOr[HlsEncryptionType] = js.undefined,
         HlsCdnSettings: js.UndefOr[HlsCdnSettings] = js.undefined,
+        HlsId3SegmentTagging: js.UndefOr[HlsId3SegmentTaggingState] = js.undefined,
         IFrameOnlyPlaylists: js.UndefOr[IFrameOnlyPlaylistType] = js.undefined,
         IndexNSegments: js.UndefOr[__integerMin3] = js.undefined,
         InputLossAction: js.UndefOr[InputLossActionForHlsOut] = js.undefined,
@@ -4638,7 +5095,9 @@ package medialive {
 
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       BaseUrlContent.foreach(__v => __obj.updateDynamic("BaseUrlContent")(__v.asInstanceOf[js.Any]))
+      BaseUrlContent1.foreach(__v => __obj.updateDynamic("BaseUrlContent1")(__v.asInstanceOf[js.Any]))
       BaseUrlManifest.foreach(__v => __obj.updateDynamic("BaseUrlManifest")(__v.asInstanceOf[js.Any]))
+      BaseUrlManifest1.foreach(__v => __obj.updateDynamic("BaseUrlManifest1")(__v.asInstanceOf[js.Any]))
       CaptionLanguageMappings.foreach(__v => __obj.updateDynamic("CaptionLanguageMappings")(__v.asInstanceOf[js.Any]))
       CaptionLanguageSetting.foreach(__v => __obj.updateDynamic("CaptionLanguageSetting")(__v.asInstanceOf[js.Any]))
       ClientCache.foreach(__v => __obj.updateDynamic("ClientCache")(__v.asInstanceOf[js.Any]))
@@ -4647,6 +5106,7 @@ package medialive {
       DirectoryStructure.foreach(__v => __obj.updateDynamic("DirectoryStructure")(__v.asInstanceOf[js.Any]))
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
       HlsCdnSettings.foreach(__v => __obj.updateDynamic("HlsCdnSettings")(__v.asInstanceOf[js.Any]))
+      HlsId3SegmentTagging.foreach(__v => __obj.updateDynamic("HlsId3SegmentTagging")(__v.asInstanceOf[js.Any]))
       IFrameOnlyPlaylists.foreach(__v => __obj.updateDynamic("IFrameOnlyPlaylists")(__v.asInstanceOf[js.Any]))
       IndexNSegments.foreach(__v => __obj.updateDynamic("IndexNSegments")(__v.asInstanceOf[js.Any]))
       InputLossAction.foreach(__v => __obj.updateDynamic("InputLossAction")(__v.asInstanceOf[js.Any]))
@@ -4676,6 +5136,47 @@ package medialive {
       TsFileMode.foreach(__v => __obj.updateDynamic("TsFileMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsGroupSettings]
     }
+  }
+
+  /**
+    * Hls H265 Packaging Type
+    */
+  object HlsH265PackagingTypeEnum {
+    val HEV1 = "HEV1"
+    val HVC1 = "HVC1"
+
+    val values = js.Object.freeze(js.Array(HEV1, HVC1))
+  }
+
+  /**
+    * Settings for the action to insert a user-defined ID3 tag in each HLS segment
+    */
+  @js.native
+  trait HlsId3SegmentTaggingScheduleActionSettings extends js.Object {
+    var Tag: __string
+  }
+
+  object HlsId3SegmentTaggingScheduleActionSettings {
+    @inline
+    def apply(
+        Tag: __string
+    ): HlsId3SegmentTaggingScheduleActionSettings = {
+      val __obj = js.Dynamic.literal(
+        "Tag" -> Tag.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HlsId3SegmentTaggingScheduleActionSettings]
+    }
+  }
+
+  /**
+    * State of HLS ID3 Segment Tagging
+    */
+  object HlsId3SegmentTaggingStateEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4812,6 +5313,7 @@ package medialive {
   @js.native
   trait HlsOutputSettings extends js.Object {
     var HlsSettings: HlsSettings
+    var H265PackagingType: js.UndefOr[HlsH265PackagingType]
     var NameModifier: js.UndefOr[__stringMin1]
     var SegmentModifier: js.UndefOr[__string]
   }
@@ -4820,6 +5322,7 @@ package medialive {
     @inline
     def apply(
         HlsSettings: HlsSettings,
+        H265PackagingType: js.UndefOr[HlsH265PackagingType] = js.undefined,
         NameModifier: js.UndefOr[__stringMin1] = js.undefined,
         SegmentModifier: js.UndefOr[__string] = js.undefined
     ): HlsOutputSettings = {
@@ -4827,6 +5330,7 @@ package medialive {
         "HlsSettings" -> HlsSettings.asInstanceOf[js.Any]
       )
 
+      H265PackagingType.foreach(__v => __obj.updateDynamic("H265PackagingType")(__v.asInstanceOf[js.Any]))
       NameModifier.foreach(__v => __obj.updateDynamic("NameModifier")(__v.asInstanceOf[js.Any]))
       SegmentModifier.foreach(__v => __obj.updateDynamic("SegmentModifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsOutputSettings]
@@ -4869,6 +5373,7 @@ package medialive {
   @js.native
   trait HlsSettings extends js.Object {
     var AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings]
+    var Fmp4HlsSettings: js.UndefOr[Fmp4HlsSettings]
     var StandardHlsSettings: js.UndefOr[StandardHlsSettings]
   }
 
@@ -4876,10 +5381,12 @@ package medialive {
     @inline
     def apply(
         AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings] = js.undefined,
+        Fmp4HlsSettings: js.UndefOr[Fmp4HlsSettings] = js.undefined,
         StandardHlsSettings: js.UndefOr[StandardHlsSettings] = js.undefined
     ): HlsSettings = {
       val __obj = js.Dynamic.literal()
       AudioOnlyHlsSettings.foreach(__v => __obj.updateDynamic("AudioOnlyHlsSettings")(__v.asInstanceOf[js.Any]))
+      Fmp4HlsSettings.foreach(__v => __obj.updateDynamic("Fmp4HlsSettings")(__v.asInstanceOf[js.Any]))
       StandardHlsSettings.foreach(__v => __obj.updateDynamic("StandardHlsSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsSettings]
     }
@@ -5868,6 +6375,99 @@ package medialive {
   }
 
   /**
+    * Placeholder documentation for ListMultiplexProgramsRequest
+    */
+  @js.native
+  trait ListMultiplexProgramsRequest extends js.Object {
+    var MultiplexId: __string
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListMultiplexProgramsRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListMultiplexProgramsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiplexProgramsRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListMultiplexProgramsResponse
+    */
+  @js.native
+  trait ListMultiplexProgramsResponse extends js.Object {
+    var MultiplexPrograms: js.UndefOr[__listOfMultiplexProgramSummary]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListMultiplexProgramsResponse {
+    @inline
+    def apply(
+        MultiplexPrograms: js.UndefOr[__listOfMultiplexProgramSummary] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListMultiplexProgramsResponse = {
+      val __obj = js.Dynamic.literal()
+      MultiplexPrograms.foreach(__v => __obj.updateDynamic("MultiplexPrograms")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiplexProgramsResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListMultiplexesRequest
+    */
+  @js.native
+  trait ListMultiplexesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListMultiplexesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListMultiplexesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiplexesRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListMultiplexesResponse
+    */
+  @js.native
+  trait ListMultiplexesResponse extends js.Object {
+    var Multiplexes: js.UndefOr[__listOfMultiplexSummary]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListMultiplexesResponse {
+    @inline
+    def apply(
+        Multiplexes: js.UndefOr[__listOfMultiplexSummary] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListMultiplexesResponse = {
+      val __obj = js.Dynamic.literal()
+      Multiplexes.foreach(__v => __obj.updateDynamic("Multiplexes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiplexesResponse]
+    }
+  }
+
+  /**
     * Placeholder documentation for ListOfferingsRequest
     */
   @js.native
@@ -5875,6 +6475,7 @@ package medialive {
     var ChannelClass: js.UndefOr[__string]
     var ChannelConfiguration: js.UndefOr[__string]
     var Codec: js.UndefOr[__string]
+    var Duration: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
     var MaximumBitrate: js.UndefOr[__string]
     var MaximumFramerate: js.UndefOr[__string]
@@ -5891,6 +6492,7 @@ package medialive {
         ChannelClass: js.UndefOr[__string] = js.undefined,
         ChannelConfiguration: js.UndefOr[__string] = js.undefined,
         Codec: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         MaximumBitrate: js.UndefOr[__string] = js.undefined,
         MaximumFramerate: js.UndefOr[__string] = js.undefined,
@@ -5904,6 +6506,7 @@ package medialive {
       ChannelClass.foreach(__v => __obj.updateDynamic("ChannelClass")(__v.asInstanceOf[js.Any]))
       ChannelConfiguration.foreach(__v => __obj.updateDynamic("ChannelConfiguration")(__v.asInstanceOf[js.Any]))
       Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       MaximumBitrate.foreach(__v => __obj.updateDynamic("MaximumBitrate")(__v.asInstanceOf[js.Any]))
       MaximumFramerate.foreach(__v => __obj.updateDynamic("MaximumFramerate")(__v.asInstanceOf[js.Any]))
@@ -6180,6 +6783,16 @@ package medialive {
   }
 
   /**
+    * M2ts Nielsen Id3 Behavior
+    */
+  object M2tsNielsenId3BehaviorEnum {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH"
+    val PASSTHROUGH    = "PASSTHROUGH"
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+  }
+
+  /**
     * M2ts Pcr Control
     */
   object M2tsPcrControlEnum {
@@ -6265,6 +6878,7 @@ package medialive {
     var FragmentTime: js.UndefOr[__doubleMin0]
     var Klv: js.UndefOr[M2tsKlv]
     var KlvDataPids: js.UndefOr[__string]
+    var NielsenId3Behavior: js.UndefOr[M2tsNielsenId3Behavior]
     var NullPacketBitrate: js.UndefOr[__doubleMin0]
     var PatInterval: js.UndefOr[__integerMin0Max1000]
     var PcrControl: js.UndefOr[M2tsPcrControl]
@@ -6316,6 +6930,7 @@ package medialive {
         FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
         Klv: js.UndefOr[M2tsKlv] = js.undefined,
         KlvDataPids: js.UndefOr[__string] = js.undefined,
+        NielsenId3Behavior: js.UndefOr[M2tsNielsenId3Behavior] = js.undefined,
         NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
         PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
         PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
@@ -6364,6 +6979,7 @@ package medialive {
       FragmentTime.foreach(__v => __obj.updateDynamic("FragmentTime")(__v.asInstanceOf[js.Any]))
       Klv.foreach(__v => __obj.updateDynamic("Klv")(__v.asInstanceOf[js.Any]))
       KlvDataPids.foreach(__v => __obj.updateDynamic("KlvDataPids")(__v.asInstanceOf[js.Any]))
+      NielsenId3Behavior.foreach(__v => __obj.updateDynamic("NielsenId3Behavior")(__v.asInstanceOf[js.Any]))
       NullPacketBitrate.foreach(__v => __obj.updateDynamic("NullPacketBitrate")(__v.asInstanceOf[js.Any]))
       PatInterval.foreach(__v => __obj.updateDynamic("PatInterval")(__v.asInstanceOf[js.Any]))
       PcrControl.foreach(__v => __obj.updateDynamic("PcrControl")(__v.asInstanceOf[js.Any]))
@@ -6398,6 +7014,16 @@ package medialive {
   }
 
   /**
+    * M3u8 Nielsen Id3 Behavior
+    */
+  object M3u8NielsenId3BehaviorEnum {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH"
+    val PASSTHROUGH    = "PASSTHROUGH"
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+  }
+
+  /**
     * M3u8 Pcr Control
     */
   object M3u8PcrControlEnum {
@@ -6425,6 +7051,7 @@ package medialive {
     var AudioFramesPerPes: js.UndefOr[__integerMin0]
     var AudioPids: js.UndefOr[__string]
     var EcmPid: js.UndefOr[__string]
+    var NielsenId3Behavior: js.UndefOr[M3u8NielsenId3Behavior]
     var PatInterval: js.UndefOr[__integerMin0Max1000]
     var PcrControl: js.UndefOr[M3u8PcrControl]
     var PcrPeriod: js.UndefOr[__integerMin0Max500]
@@ -6446,6 +7073,7 @@ package medialive {
         AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
         AudioPids: js.UndefOr[__string] = js.undefined,
         EcmPid: js.UndefOr[__string] = js.undefined,
+        NielsenId3Behavior: js.UndefOr[M3u8NielsenId3Behavior] = js.undefined,
         PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
         PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
         PcrPeriod: js.UndefOr[__integerMin0Max500] = js.undefined,
@@ -6464,6 +7092,7 @@ package medialive {
       AudioFramesPerPes.foreach(__v => __obj.updateDynamic("AudioFramesPerPes")(__v.asInstanceOf[js.Any]))
       AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
       EcmPid.foreach(__v => __obj.updateDynamic("EcmPid")(__v.asInstanceOf[js.Any]))
+      NielsenId3Behavior.foreach(__v => __obj.updateDynamic("NielsenId3Behavior")(__v.asInstanceOf[js.Any]))
       PatInterval.foreach(__v => __obj.updateDynamic("PatInterval")(__v.asInstanceOf[js.Any]))
       PcrControl.foreach(__v => __obj.updateDynamic("PcrControl")(__v.asInstanceOf[js.Any]))
       PcrPeriod.foreach(__v => __obj.updateDynamic("PcrPeriod")(__v.asInstanceOf[js.Any]))
@@ -6728,6 +7357,464 @@ package medialive {
   }
 
   /**
+    * The multiplex object.
+    */
+  @js.native
+  trait Multiplex extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Destinations: js.UndefOr[__listOfMultiplexOutputDestination]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object Multiplex {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfMultiplexOutputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): Multiplex = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Multiplex]
+    }
+  }
+
+  /**
+    * Multiplex Group Settings
+    */
+  @js.native
+  trait MultiplexGroupSettings extends js.Object {}
+
+  object MultiplexGroupSettings {
+    @inline
+    def apply(
+        ): MultiplexGroupSettings = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[MultiplexGroupSettings]
+    }
+  }
+
+  /**
+    * Multiplex MediaConnect output destination settings.
+    */
+  @js.native
+  trait MultiplexMediaConnectOutputDestinationSettings extends js.Object {
+    var EntitlementArn: js.UndefOr[__stringMin1]
+  }
+
+  object MultiplexMediaConnectOutputDestinationSettings {
+    @inline
+    def apply(
+        EntitlementArn: js.UndefOr[__stringMin1] = js.undefined
+    ): MultiplexMediaConnectOutputDestinationSettings = {
+      val __obj = js.Dynamic.literal()
+      EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexMediaConnectOutputDestinationSettings]
+    }
+  }
+
+  /**
+    * Multiplex output destination settings
+    */
+  @js.native
+  trait MultiplexOutputDestination extends js.Object {
+    var MediaConnectSettings: js.UndefOr[MultiplexMediaConnectOutputDestinationSettings]
+  }
+
+  object MultiplexOutputDestination {
+    @inline
+    def apply(
+        MediaConnectSettings: js.UndefOr[MultiplexMediaConnectOutputDestinationSettings] = js.undefined
+    ): MultiplexOutputDestination = {
+      val __obj = js.Dynamic.literal()
+      MediaConnectSettings.foreach(__v => __obj.updateDynamic("MediaConnectSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexOutputDestination]
+    }
+  }
+
+  /**
+    * Multiplex Output Settings
+    */
+  @js.native
+  trait MultiplexOutputSettings extends js.Object {
+    var Destination: OutputLocationRef
+  }
+
+  object MultiplexOutputSettings {
+    @inline
+    def apply(
+        Destination: OutputLocationRef
+    ): MultiplexOutputSettings = {
+      val __obj = js.Dynamic.literal(
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[MultiplexOutputSettings]
+    }
+  }
+
+  /**
+    * The multiplex program object.
+    */
+  @js.native
+  trait MultiplexProgram extends js.Object {
+    var ChannelId: js.UndefOr[__string]
+    var MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings]
+    var PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap]
+    var ProgramName: js.UndefOr[__string]
+  }
+
+  object MultiplexProgram {
+    @inline
+    def apply(
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings] = js.undefined,
+        PacketIdentifiersMap: js.UndefOr[MultiplexProgramPacketIdentifiersMap] = js.undefined,
+        ProgramName: js.UndefOr[__string] = js.undefined
+    ): MultiplexProgram = {
+      val __obj = js.Dynamic.literal()
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      MultiplexProgramSettings.foreach(__v => __obj.updateDynamic("MultiplexProgramSettings")(__v.asInstanceOf[js.Any]))
+      PacketIdentifiersMap.foreach(__v => __obj.updateDynamic("PacketIdentifiersMap")(__v.asInstanceOf[js.Any]))
+      ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexProgram]
+    }
+  }
+
+  /**
+    * Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
+    */
+  @js.native
+  trait MultiplexProgramChannelDestinationSettings extends js.Object {
+    var MultiplexId: js.UndefOr[__stringMin1]
+    var ProgramName: js.UndefOr[__stringMin1]
+  }
+
+  object MultiplexProgramChannelDestinationSettings {
+    @inline
+    def apply(
+        MultiplexId: js.UndefOr[__stringMin1] = js.undefined,
+        ProgramName: js.UndefOr[__stringMin1] = js.undefined
+    ): MultiplexProgramChannelDestinationSettings = {
+      val __obj = js.Dynamic.literal()
+      MultiplexId.foreach(__v => __obj.updateDynamic("MultiplexId")(__v.asInstanceOf[js.Any]))
+      ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexProgramChannelDestinationSettings]
+    }
+  }
+
+  /**
+    * Packet identifiers map for a given Multiplex program.
+    */
+  @js.native
+  trait MultiplexProgramPacketIdentifiersMap extends js.Object {
+    var AudioPids: js.UndefOr[__listOf__integer]
+    var DvbSubPids: js.UndefOr[__listOf__integer]
+    var DvbTeletextPid: js.UndefOr[__integer]
+    var EtvPlatformPid: js.UndefOr[__integer]
+    var EtvSignalPid: js.UndefOr[__integer]
+    var KlvDataPids: js.UndefOr[__listOf__integer]
+    var PcrPid: js.UndefOr[__integer]
+    var PmtPid: js.UndefOr[__integer]
+    var PrivateMetadataPid: js.UndefOr[__integer]
+    var Scte27Pids: js.UndefOr[__listOf__integer]
+    var Scte35Pid: js.UndefOr[__integer]
+    var TimedMetadataPid: js.UndefOr[__integer]
+    var VideoPid: js.UndefOr[__integer]
+  }
+
+  object MultiplexProgramPacketIdentifiersMap {
+    @inline
+    def apply(
+        AudioPids: js.UndefOr[__listOf__integer] = js.undefined,
+        DvbSubPids: js.UndefOr[__listOf__integer] = js.undefined,
+        DvbTeletextPid: js.UndefOr[__integer] = js.undefined,
+        EtvPlatformPid: js.UndefOr[__integer] = js.undefined,
+        EtvSignalPid: js.UndefOr[__integer] = js.undefined,
+        KlvDataPids: js.UndefOr[__listOf__integer] = js.undefined,
+        PcrPid: js.UndefOr[__integer] = js.undefined,
+        PmtPid: js.UndefOr[__integer] = js.undefined,
+        PrivateMetadataPid: js.UndefOr[__integer] = js.undefined,
+        Scte27Pids: js.UndefOr[__listOf__integer] = js.undefined,
+        Scte35Pid: js.UndefOr[__integer] = js.undefined,
+        TimedMetadataPid: js.UndefOr[__integer] = js.undefined,
+        VideoPid: js.UndefOr[__integer] = js.undefined
+    ): MultiplexProgramPacketIdentifiersMap = {
+      val __obj = js.Dynamic.literal()
+      AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
+      DvbSubPids.foreach(__v => __obj.updateDynamic("DvbSubPids")(__v.asInstanceOf[js.Any]))
+      DvbTeletextPid.foreach(__v => __obj.updateDynamic("DvbTeletextPid")(__v.asInstanceOf[js.Any]))
+      EtvPlatformPid.foreach(__v => __obj.updateDynamic("EtvPlatformPid")(__v.asInstanceOf[js.Any]))
+      EtvSignalPid.foreach(__v => __obj.updateDynamic("EtvSignalPid")(__v.asInstanceOf[js.Any]))
+      KlvDataPids.foreach(__v => __obj.updateDynamic("KlvDataPids")(__v.asInstanceOf[js.Any]))
+      PcrPid.foreach(__v => __obj.updateDynamic("PcrPid")(__v.asInstanceOf[js.Any]))
+      PmtPid.foreach(__v => __obj.updateDynamic("PmtPid")(__v.asInstanceOf[js.Any]))
+      PrivateMetadataPid.foreach(__v => __obj.updateDynamic("PrivateMetadataPid")(__v.asInstanceOf[js.Any]))
+      Scte27Pids.foreach(__v => __obj.updateDynamic("Scte27Pids")(__v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.updateDynamic("Scte35Pid")(__v.asInstanceOf[js.Any]))
+      TimedMetadataPid.foreach(__v => __obj.updateDynamic("TimedMetadataPid")(__v.asInstanceOf[js.Any]))
+      VideoPid.foreach(__v => __obj.updateDynamic("VideoPid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexProgramPacketIdentifiersMap]
+    }
+  }
+
+  /**
+    * Transport stream service descriptor configuration for the Multiplex program.
+    */
+  @js.native
+  trait MultiplexProgramServiceDescriptor extends js.Object {
+    var ProviderName: __stringMax256
+    var ServiceName: __stringMax256
+  }
+
+  object MultiplexProgramServiceDescriptor {
+    @inline
+    def apply(
+        ProviderName: __stringMax256,
+        ServiceName: __stringMax256
+    ): MultiplexProgramServiceDescriptor = {
+      val __obj = js.Dynamic.literal(
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "ServiceName"  -> ServiceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[MultiplexProgramServiceDescriptor]
+    }
+  }
+
+  /**
+    * Multiplex Program settings configuration.
+    */
+  @js.native
+  trait MultiplexProgramSettings extends js.Object {
+    var ProgramNumber: __integerMin0Max65535
+    var ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor]
+    var VideoSettings: js.UndefOr[MultiplexVideoSettings]
+  }
+
+  object MultiplexProgramSettings {
+    @inline
+    def apply(
+        ProgramNumber: __integerMin0Max65535,
+        ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor] = js.undefined,
+        VideoSettings: js.UndefOr[MultiplexVideoSettings] = js.undefined
+    ): MultiplexProgramSettings = {
+      val __obj = js.Dynamic.literal(
+        "ProgramNumber" -> ProgramNumber.asInstanceOf[js.Any]
+      )
+
+      ServiceDescriptor.foreach(__v => __obj.updateDynamic("ServiceDescriptor")(__v.asInstanceOf[js.Any]))
+      VideoSettings.foreach(__v => __obj.updateDynamic("VideoSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexProgramSettings]
+    }
+  }
+
+  /**
+    * Placeholder documentation for MultiplexProgramSummary
+    */
+  @js.native
+  trait MultiplexProgramSummary extends js.Object {
+    var ChannelId: js.UndefOr[__string]
+    var ProgramName: js.UndefOr[__string]
+  }
+
+  object MultiplexProgramSummary {
+    @inline
+    def apply(
+        ChannelId: js.UndefOr[__string] = js.undefined,
+        ProgramName: js.UndefOr[__string] = js.undefined
+    ): MultiplexProgramSummary = {
+      val __obj = js.Dynamic.literal()
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexProgramSummary]
+    }
+  }
+
+  /**
+    * Contains configuration for a Multiplex event
+    */
+  @js.native
+  trait MultiplexSettings extends js.Object {
+    var TransportStreamBitrate: __integerMin1000000Max100000000
+    var TransportStreamId: __integerMin0Max65535
+    var MaximumVideoBufferDelayMilliseconds: js.UndefOr[__integerMin1000Max3000]
+    var TransportStreamReservedBitrate: js.UndefOr[__integerMin0Max100000000]
+  }
+
+  object MultiplexSettings {
+    @inline
+    def apply(
+        TransportStreamBitrate: __integerMin1000000Max100000000,
+        TransportStreamId: __integerMin0Max65535,
+        MaximumVideoBufferDelayMilliseconds: js.UndefOr[__integerMin1000Max3000] = js.undefined,
+        TransportStreamReservedBitrate: js.UndefOr[__integerMin0Max100000000] = js.undefined
+    ): MultiplexSettings = {
+      val __obj = js.Dynamic.literal(
+        "TransportStreamBitrate" -> TransportStreamBitrate.asInstanceOf[js.Any],
+        "TransportStreamId"      -> TransportStreamId.asInstanceOf[js.Any]
+      )
+
+      MaximumVideoBufferDelayMilliseconds.foreach(__v =>
+        __obj.updateDynamic("MaximumVideoBufferDelayMilliseconds")(__v.asInstanceOf[js.Any])
+      )
+      TransportStreamReservedBitrate.foreach(__v =>
+        __obj.updateDynamic("TransportStreamReservedBitrate")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[MultiplexSettings]
+    }
+  }
+
+  /**
+    * Contains summary configuration for a Multiplex event.
+    */
+  @js.native
+  trait MultiplexSettingsSummary extends js.Object {
+    var TransportStreamBitrate: js.UndefOr[__integerMin1000000Max100000000]
+  }
+
+  object MultiplexSettingsSummary {
+    @inline
+    def apply(
+        TransportStreamBitrate: js.UndefOr[__integerMin1000000Max100000000] = js.undefined
+    ): MultiplexSettingsSummary = {
+      val __obj = js.Dynamic.literal()
+      TransportStreamBitrate.foreach(__v => __obj.updateDynamic("TransportStreamBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexSettingsSummary]
+    }
+  }
+
+  /**
+    * The current state of the multiplex.
+    */
+  object MultiplexStateEnum {
+    val CREATING      = "CREATING"
+    val CREATE_FAILED = "CREATE_FAILED"
+    val IDLE          = "IDLE"
+    val STARTING      = "STARTING"
+    val RUNNING       = "RUNNING"
+    val RECOVERING    = "RECOVERING"
+    val STOPPING      = "STOPPING"
+    val DELETING      = "DELETING"
+    val DELETED       = "DELETED"
+
+    val values = js.Object.freeze(
+      js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
+    )
+  }
+
+  /**
+    * Statmux rate control settings
+    */
+  @js.native
+  trait MultiplexStatmuxVideoSettings extends js.Object {
+    var MaximumBitrate: js.UndefOr[__integerMin100000Max100000000]
+    var MinimumBitrate: js.UndefOr[__integerMin100000Max100000000]
+  }
+
+  object MultiplexStatmuxVideoSettings {
+    @inline
+    def apply(
+        MaximumBitrate: js.UndefOr[__integerMin100000Max100000000] = js.undefined,
+        MinimumBitrate: js.UndefOr[__integerMin100000Max100000000] = js.undefined
+    ): MultiplexStatmuxVideoSettings = {
+      val __obj = js.Dynamic.literal()
+      MaximumBitrate.foreach(__v => __obj.updateDynamic("MaximumBitrate")(__v.asInstanceOf[js.Any]))
+      MinimumBitrate.foreach(__v => __obj.updateDynamic("MinimumBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexStatmuxVideoSettings]
+    }
+  }
+
+  /**
+    * Placeholder documentation for MultiplexSummary
+    */
+  @js.native
+  trait MultiplexSummary extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettingsSummary]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object MultiplexSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettingsSummary] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): MultiplexSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexSummary]
+    }
+  }
+
+  /**
+    * The video configuration for each program in a multiplex.
+    */
+  @js.native
+  trait MultiplexVideoSettings extends js.Object {
+    var ConstantBitrate: js.UndefOr[__integerMin100000Max100000000]
+    var StatmuxSettings: js.UndefOr[MultiplexStatmuxVideoSettings]
+  }
+
+  object MultiplexVideoSettings {
+    @inline
+    def apply(
+        ConstantBitrate: js.UndefOr[__integerMin100000Max100000000] = js.undefined,
+        StatmuxSettings: js.UndefOr[MultiplexStatmuxVideoSettings] = js.undefined
+    ): MultiplexVideoSettings = {
+      val __obj = js.Dynamic.literal()
+      ConstantBitrate.foreach(__v => __obj.updateDynamic("ConstantBitrate")(__v.asInstanceOf[js.Any]))
+      StatmuxSettings.foreach(__v => __obj.updateDynamic("StatmuxSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiplexVideoSettings]
+    }
+  }
+
+  /**
     * Network Input Server Validation
     */
   object NetworkInputServerValidationEnum {
@@ -6757,6 +7844,38 @@ package medialive {
       ServerValidation.foreach(__v => __obj.updateDynamic("ServerValidation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInputSettings]
     }
+  }
+
+  /**
+    * Nielsen Configuration
+    */
+  @js.native
+  trait NielsenConfiguration extends js.Object {
+    var DistributorId: js.UndefOr[__string]
+    var NielsenPcmToId3Tagging: js.UndefOr[NielsenPcmToId3TaggingState]
+  }
+
+  object NielsenConfiguration {
+    @inline
+    def apply(
+        DistributorId: js.UndefOr[__string] = js.undefined,
+        NielsenPcmToId3Tagging: js.UndefOr[NielsenPcmToId3TaggingState] = js.undefined
+    ): NielsenConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DistributorId.foreach(__v => __obj.updateDynamic("DistributorId")(__v.asInstanceOf[js.Any]))
+      NielsenPcmToId3Tagging.foreach(__v => __obj.updateDynamic("NielsenPcmToId3Tagging")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NielsenConfiguration]
+    }
+  }
+
+  /**
+    * State of Nielsen PCM to ID3 tagging
+    */
+  object NielsenPcmToId3TaggingStateEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -6866,6 +7985,7 @@ package medialive {
   trait OutputDestination extends js.Object {
     var Id: js.UndefOr[__string]
     var MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings]
+    var MultiplexSettings: js.UndefOr[MultiplexProgramChannelDestinationSettings]
     var Settings: js.UndefOr[__listOfOutputDestinationSettings]
   }
 
@@ -6874,11 +7994,13 @@ package medialive {
     def apply(
         Id: js.UndefOr[__string] = js.undefined,
         MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexProgramChannelDestinationSettings] = js.undefined,
         Settings: js.UndefOr[__listOfOutputDestinationSettings] = js.undefined
     ): OutputDestination = {
       val __obj = js.Dynamic.literal()
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       MediaPackageSettings.foreach(__v => __obj.updateDynamic("MediaPackageSettings")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDestination]
     }
@@ -6949,6 +8071,7 @@ package medialive {
     var HlsGroupSettings: js.UndefOr[HlsGroupSettings]
     var MediaPackageGroupSettings: js.UndefOr[MediaPackageGroupSettings]
     var MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings]
+    var MultiplexGroupSettings: js.UndefOr[MultiplexGroupSettings]
     var RtmpGroupSettings: js.UndefOr[RtmpGroupSettings]
     var UdpGroupSettings: js.UndefOr[UdpGroupSettings]
   }
@@ -6961,6 +8084,7 @@ package medialive {
         HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
         MediaPackageGroupSettings: js.UndefOr[MediaPackageGroupSettings] = js.undefined,
         MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
+        MultiplexGroupSettings: js.UndefOr[MultiplexGroupSettings] = js.undefined,
         RtmpGroupSettings: js.UndefOr[RtmpGroupSettings] = js.undefined,
         UdpGroupSettings: js.UndefOr[UdpGroupSettings] = js.undefined
     ): OutputGroupSettings = {
@@ -6974,6 +8098,7 @@ package medialive {
         __obj.updateDynamic("MediaPackageGroupSettings")(__v.asInstanceOf[js.Any])
       )
       MsSmoothGroupSettings.foreach(__v => __obj.updateDynamic("MsSmoothGroupSettings")(__v.asInstanceOf[js.Any]))
+      MultiplexGroupSettings.foreach(__v => __obj.updateDynamic("MultiplexGroupSettings")(__v.asInstanceOf[js.Any]))
       RtmpGroupSettings.foreach(__v => __obj.updateDynamic("RtmpGroupSettings")(__v.asInstanceOf[js.Any]))
       UdpGroupSettings.foreach(__v => __obj.updateDynamic("UdpGroupSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputGroupSettings]
@@ -7009,6 +8134,7 @@ package medialive {
     var HlsOutputSettings: js.UndefOr[HlsOutputSettings]
     var MediaPackageOutputSettings: js.UndefOr[MediaPackageOutputSettings]
     var MsSmoothOutputSettings: js.UndefOr[MsSmoothOutputSettings]
+    var MultiplexOutputSettings: js.UndefOr[MultiplexOutputSettings]
     var RtmpOutputSettings: js.UndefOr[RtmpOutputSettings]
     var UdpOutputSettings: js.UndefOr[UdpOutputSettings]
   }
@@ -7021,6 +8147,7 @@ package medialive {
         HlsOutputSettings: js.UndefOr[HlsOutputSettings] = js.undefined,
         MediaPackageOutputSettings: js.UndefOr[MediaPackageOutputSettings] = js.undefined,
         MsSmoothOutputSettings: js.UndefOr[MsSmoothOutputSettings] = js.undefined,
+        MultiplexOutputSettings: js.UndefOr[MultiplexOutputSettings] = js.undefined,
         RtmpOutputSettings: js.UndefOr[RtmpOutputSettings] = js.undefined,
         UdpOutputSettings: js.UndefOr[UdpOutputSettings] = js.undefined
     ): OutputSettings = {
@@ -7034,6 +8161,7 @@ package medialive {
         __obj.updateDynamic("MediaPackageOutputSettings")(__v.asInstanceOf[js.Any])
       )
       MsSmoothOutputSettings.foreach(__v => __obj.updateDynamic("MsSmoothOutputSettings")(__v.asInstanceOf[js.Any]))
+      MultiplexOutputSettings.foreach(__v => __obj.updateDynamic("MultiplexOutputSettings")(__v.asInstanceOf[js.Any]))
       RtmpOutputSettings.foreach(__v => __obj.updateDynamic("RtmpOutputSettings")(__v.asInstanceOf[js.Any]))
       UdpOutputSettings.foreach(__v => __obj.updateDynamic("UdpOutputSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputSettings]
@@ -7353,14 +8481,15 @@ package medialive {
   }
 
   /**
-    * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
+    * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
     */
   object ReservationResolutionEnum {
     val SD  = "SD"
     val HD  = "HD"
+    val FHD = "FHD"
     val UHD = "UHD"
 
-    val values = js.Object.freeze(js.Array(SD, HD, UHD))
+    val values = js.Object.freeze(js.Array(SD, HD, FHD, UHD))
   }
 
   /**
@@ -7404,14 +8533,15 @@ package medialive {
   }
 
   /**
-    * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+    * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
     */
   object ReservationResourceTypeEnum {
-    val INPUT   = "INPUT"
-    val OUTPUT  = "OUTPUT"
-    val CHANNEL = "CHANNEL"
+    val INPUT     = "INPUT"
+    val OUTPUT    = "OUTPUT"
+    val MULTIPLEX = "MULTIPLEX"
+    val CHANNEL   = "CHANNEL"
 
-    val values = js.Object.freeze(js.Array(INPUT, OUTPUT, CHANNEL))
+    val values = js.Object.freeze(js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL))
   }
 
   /**
@@ -7590,6 +8720,7 @@ package medialive {
     */
   @js.native
   trait ScheduleActionSettings extends js.Object {
+    var HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings]
     var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
     var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
@@ -7603,6 +8734,7 @@ package medialive {
   object ScheduleActionSettings {
     @inline
     def apply(
+        HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings] = js.undefined,
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
         PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
@@ -7613,6 +8745,9 @@ package medialive {
         StaticImageDeactivateSettings: js.UndefOr[StaticImageDeactivateScheduleActionSettings] = js.undefined
     ): ScheduleActionSettings = {
       val __obj = js.Dynamic.literal()
+      HlsId3SegmentTaggingSettings.foreach(__v =>
+        __obj.updateDynamic("HlsId3SegmentTaggingSettings")(__v.asInstanceOf[js.Any])
+      )
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
@@ -8283,6 +9418,73 @@ package medialive {
   }
 
   /**
+    * Placeholder documentation for StartMultiplexRequest
+    */
+  @js.native
+  trait StartMultiplexRequest extends js.Object {
+    var MultiplexId: __string
+  }
+
+  object StartMultiplexRequest {
+    @inline
+    def apply(
+        MultiplexId: __string
+    ): StartMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StartMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for StartMultiplexResponse
+    */
+  @js.native
+  trait StartMultiplexResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Destinations: js.UndefOr[__listOfMultiplexOutputDestination]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object StartMultiplexResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfMultiplexOutputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): StartMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartMultiplexResponse]
+    }
+  }
+
+  /**
     * Settings to identify the start of the clip.
     */
   @js.native
@@ -8474,6 +9676,73 @@ package medialive {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopChannelResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for StopMultiplexRequest
+    */
+  @js.native
+  trait StopMultiplexRequest extends js.Object {
+    var MultiplexId: __string
+  }
+
+  object StopMultiplexRequest {
+    @inline
+    def apply(
+        MultiplexId: __string
+    ): StopMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for StopMultiplexResponse
+    */
+  @js.native
+  trait StopMultiplexResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var Destinations: js.UndefOr[__listOfMultiplexOutputDestination]
+    var Id: js.UndefOr[__string]
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+    var PipelinesRunningCount: js.UndefOr[__integer]
+    var ProgramCount: js.UndefOr[__integer]
+    var State: js.UndefOr[MultiplexState]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object StopMultiplexResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfMultiplexOutputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        ProgramCount: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[MultiplexState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): StopMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
+      ProgramCount.foreach(__v => __obj.updateDynamic("ProgramCount")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopMultiplexResponse]
     }
   }
 
@@ -8893,6 +10162,98 @@ package medialive {
       val __obj = js.Dynamic.literal()
       SecurityGroup.foreach(__v => __obj.updateDynamic("SecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateInputSecurityGroupResponse]
+    }
+  }
+
+  /**
+    * A request to update a program in a multiplex.
+    */
+  @js.native
+  trait UpdateMultiplexProgramRequest extends js.Object {
+    var MultiplexId: __string
+    var ProgramName: __string
+    var MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings]
+  }
+
+  object UpdateMultiplexProgramRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        ProgramName: __string,
+        MultiplexProgramSettings: js.UndefOr[MultiplexProgramSettings] = js.undefined
+    ): UpdateMultiplexProgramRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
+        "ProgramName" -> ProgramName.asInstanceOf[js.Any]
+      )
+
+      MultiplexProgramSettings.foreach(__v => __obj.updateDynamic("MultiplexProgramSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMultiplexProgramRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateMultiplexProgramResponse
+    */
+  @js.native
+  trait UpdateMultiplexProgramResponse extends js.Object {
+    var MultiplexProgram: js.UndefOr[MultiplexProgram]
+  }
+
+  object UpdateMultiplexProgramResponse {
+    @inline
+    def apply(
+        MultiplexProgram: js.UndefOr[MultiplexProgram] = js.undefined
+    ): UpdateMultiplexProgramResponse = {
+      val __obj = js.Dynamic.literal()
+      MultiplexProgram.foreach(__v => __obj.updateDynamic("MultiplexProgram")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMultiplexProgramResponse]
+    }
+  }
+
+  /**
+    * A request to update a multiplex.
+    */
+  @js.native
+  trait UpdateMultiplexRequest extends js.Object {
+    var MultiplexId: __string
+    var MultiplexSettings: js.UndefOr[MultiplexSettings]
+    var Name: js.UndefOr[__string]
+  }
+
+  object UpdateMultiplexRequest {
+    @inline
+    def apply(
+        MultiplexId: __string,
+        MultiplexSettings: js.UndefOr[MultiplexSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined
+    ): UpdateMultiplexRequest = {
+      val __obj = js.Dynamic.literal(
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
+      )
+
+      MultiplexSettings.foreach(__v => __obj.updateDynamic("MultiplexSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMultiplexRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateMultiplexResponse
+    */
+  @js.native
+  trait UpdateMultiplexResponse extends js.Object {
+    var Multiplex: js.UndefOr[Multiplex]
+  }
+
+  object UpdateMultiplexResponse {
+    @inline
+    def apply(
+        Multiplex: js.UndefOr[Multiplex] = js.undefined
+    ): UpdateMultiplexResponse = {
+      val __obj = js.Dynamic.literal()
+      Multiplex.foreach(__v => __obj.updateDynamic("Multiplex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMultiplexResponse]
     }
   }
 

@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object ram {
   type DateTime                       = js.Date
   type MaxResults                     = Int
+  type PermissionArnList              = js.Array[String]
   type Policy                         = String
   type PolicyList                     = js.Array[Policy]
   type PrincipalArnOrIdList           = js.Array[String]
@@ -21,10 +22,12 @@ package object ram {
   type ResourceShareAssociationList   = js.Array[ResourceShareAssociation]
   type ResourceShareAssociationStatus = String
   type ResourceShareAssociationType   = String
+  type ResourceShareFeatureSet        = String
   type ResourceShareInvitationArnList = js.Array[String]
   type ResourceShareInvitationList    = js.Array[ResourceShareInvitation]
   type ResourceShareInvitationStatus  = String
   type ResourceShareList              = js.Array[ResourceShare]
+  type ResourceSharePermissionList    = js.Array[ResourceSharePermissionSummary]
   type ResourceShareStatus            = String
   type ResourceStatus                 = String
   type TagFilters                     = js.Array[TagFilter]
@@ -35,12 +38,17 @@ package object ram {
   type TagValueList                   = js.Array[TagValue]
 
   implicit final class RAMOps(private val service: RAM) extends AnyVal {
+
     @inline def acceptResourceShareInvitationFuture(
         params: AcceptResourceShareInvitationRequest
     ): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise.toFuture
     @inline def associateResourceShareFuture(
         params: AssociateResourceShareRequest
     ): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise.toFuture
+    @inline def associateResourceSharePermissionFuture(
+        params: AssociateResourceSharePermissionRequest
+    ): Future[AssociateResourceSharePermissionResponse] =
+      service.associateResourceSharePermission(params).promise.toFuture
     @inline def createResourceShareFuture(params: CreateResourceShareRequest): Future[CreateResourceShareResponse] =
       service.createResourceShare(params).promise.toFuture
     @inline def deleteResourceShareFuture(params: DeleteResourceShareRequest): Future[DeleteResourceShareResponse] =
@@ -48,10 +56,16 @@ package object ram {
     @inline def disassociateResourceShareFuture(
         params: DisassociateResourceShareRequest
     ): Future[DisassociateResourceShareResponse] = service.disassociateResourceShare(params).promise.toFuture
+    @inline def disassociateResourceSharePermissionFuture(
+        params: DisassociateResourceSharePermissionRequest
+    ): Future[DisassociateResourceSharePermissionResponse] =
+      service.disassociateResourceSharePermission(params).promise.toFuture
     @inline def enableSharingWithAwsOrganizationFuture(
         params: EnableSharingWithAwsOrganizationRequest
     ): Future[EnableSharingWithAwsOrganizationResponse] =
       service.enableSharingWithAwsOrganization(params).promise.toFuture
+    @inline def getPermissionFuture(params: GetPermissionRequest): Future[GetPermissionResponse] =
+      service.getPermission(params).promise.toFuture
     @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] =
       service.getResourcePolicies(params).promise.toFuture
     @inline def getResourceShareAssociationsFuture(
@@ -65,10 +79,19 @@ package object ram {
     @inline def listPendingInvitationResourcesFuture(
         params: ListPendingInvitationResourcesRequest
     ): Future[ListPendingInvitationResourcesResponse] = service.listPendingInvitationResources(params).promise.toFuture
+    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
+      service.listPermissions(params).promise.toFuture
     @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] =
       service.listPrincipals(params).promise.toFuture
+    @inline def listResourceSharePermissionsFuture(
+        params: ListResourceSharePermissionsRequest
+    ): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise.toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
       service.listResources(params).promise.toFuture
+    @inline def promoteResourceShareCreatedFromPolicyFuture(
+        params: PromoteResourceShareCreatedFromPolicyRequest
+    ): Future[PromoteResourceShareCreatedFromPolicyResponse] =
+      service.promoteResourceShareCreatedFromPolicy(params).promise.toFuture
     @inline def rejectResourceShareInvitationFuture(
         params: RejectResourceShareInvitationRequest
     ): Future[RejectResourceShareInvitationResponse] = service.rejectResourceShareInvitation(params).promise.toFuture
@@ -92,14 +115,21 @@ package ram {
     ): Request[AcceptResourceShareInvitationResponse] = js.native
     def associateResourceShare(params: AssociateResourceShareRequest): Request[AssociateResourceShareResponse] =
       js.native
+    def associateResourceSharePermission(
+        params: AssociateResourceSharePermissionRequest
+    ): Request[AssociateResourceSharePermissionResponse]                                              = js.native
     def createResourceShare(params: CreateResourceShareRequest): Request[CreateResourceShareResponse] = js.native
     def deleteResourceShare(params: DeleteResourceShareRequest): Request[DeleteResourceShareResponse] = js.native
     def disassociateResourceShare(
         params: DisassociateResourceShareRequest
     ): Request[DisassociateResourceShareResponse] = js.native
+    def disassociateResourceSharePermission(
+        params: DisassociateResourceSharePermissionRequest
+    ): Request[DisassociateResourceSharePermissionResponse] = js.native
     def enableSharingWithAwsOrganization(
         params: EnableSharingWithAwsOrganizationRequest
     ): Request[EnableSharingWithAwsOrganizationResponse]                                              = js.native
+    def getPermission(params: GetPermissionRequest): Request[GetPermissionResponse]                   = js.native
     def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
     def getResourceShareAssociations(
         params: GetResourceShareAssociationsRequest
@@ -110,9 +140,16 @@ package ram {
     def getResourceShares(params: GetResourceSharesRequest): Request[GetResourceSharesResponse] = js.native
     def listPendingInvitationResources(
         params: ListPendingInvitationResourcesRequest
-    ): Request[ListPendingInvitationResourcesResponse]                                 = js.native
-    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse] = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]    = js.native
+    ): Request[ListPendingInvitationResourcesResponse]                                    = js.native
+    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
+    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse]    = js.native
+    def listResourceSharePermissions(
+        params: ListResourceSharePermissionsRequest
+    ): Request[ListResourceSharePermissionsResponse]                                = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
+    def promoteResourceShareCreatedFromPolicy(
+        params: PromoteResourceShareCreatedFromPolicyRequest
+    ): Request[PromoteResourceShareCreatedFromPolicyResponse] = js.native
     def rejectResourceShareInvitation(
         params: RejectResourceShareInvitationRequest
     ): Request[RejectResourceShareInvitationResponse]                                                 = js.native
@@ -158,6 +195,52 @@ package ram {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       resourceShareInvitation.foreach(__v => __obj.updateDynamic("resourceShareInvitation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptResourceShareInvitationResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateResourceSharePermissionRequest extends js.Object {
+    var permissionArn: String
+    var resourceShareArn: String
+    var clientToken: js.UndefOr[String]
+    var replace: js.UndefOr[Boolean]
+  }
+
+  object AssociateResourceSharePermissionRequest {
+    @inline
+    def apply(
+        permissionArn: String,
+        resourceShareArn: String,
+        clientToken: js.UndefOr[String] = js.undefined,
+        replace: js.UndefOr[Boolean] = js.undefined
+    ): AssociateResourceSharePermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      replace.foreach(__v => __obj.updateDynamic("replace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateResourceSharePermissionRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateResourceSharePermissionResponse extends js.Object {
+    var clientToken: js.UndefOr[String]
+    var returnValue: js.UndefOr[Boolean]
+  }
+
+  object AssociateResourceSharePermissionResponse {
+    @inline
+    def apply(
+        clientToken: js.UndefOr[String] = js.undefined,
+        returnValue: js.UndefOr[Boolean] = js.undefined
+    ): AssociateResourceSharePermissionResponse = {
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateResourceSharePermissionResponse]
     }
   }
 
@@ -214,6 +297,7 @@ package ram {
     var name: String
     var allowExternalPrincipals: js.UndefOr[Boolean]
     var clientToken: js.UndefOr[String]
+    var permissionArns: js.UndefOr[PermissionArnList]
     var principals: js.UndefOr[PrincipalArnOrIdList]
     var resourceArns: js.UndefOr[ResourceArnList]
     var tags: js.UndefOr[TagList]
@@ -225,6 +309,7 @@ package ram {
         name: String,
         allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
         clientToken: js.UndefOr[String] = js.undefined,
+        permissionArns: js.UndefOr[PermissionArnList] = js.undefined,
         principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -235,6 +320,7 @@ package ram {
 
       allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      permissionArns.foreach(__v => __obj.updateDynamic("permissionArns")(__v.asInstanceOf[js.Any]))
       principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -298,6 +384,49 @@ package ram {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourceShareResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateResourceSharePermissionRequest extends js.Object {
+    var permissionArn: String
+    var resourceShareArn: String
+    var clientToken: js.UndefOr[String]
+  }
+
+  object DisassociateResourceSharePermissionRequest {
+    @inline
+    def apply(
+        permissionArn: String,
+        resourceShareArn: String,
+        clientToken: js.UndefOr[String] = js.undefined
+    ): DisassociateResourceSharePermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateResourceSharePermissionRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateResourceSharePermissionResponse extends js.Object {
+    var clientToken: js.UndefOr[String]
+    var returnValue: js.UndefOr[Boolean]
+  }
+
+  object DisassociateResourceSharePermissionResponse {
+    @inline
+    def apply(
+        clientToken: js.UndefOr[String] = js.undefined,
+        returnValue: js.UndefOr[Boolean] = js.undefined
+    ): DisassociateResourceSharePermissionResponse = {
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateResourceSharePermissionResponse]
     }
   }
 
@@ -375,6 +504,43 @@ package ram {
       val __obj = js.Dynamic.literal()
       returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableSharingWithAwsOrganizationResponse]
+    }
+  }
+
+  @js.native
+  trait GetPermissionRequest extends js.Object {
+    var permissionArn: String
+    var permissionVersion: js.UndefOr[Int]
+  }
+
+  object GetPermissionRequest {
+    @inline
+    def apply(
+        permissionArn: String,
+        permissionVersion: js.UndefOr[Int] = js.undefined
+    ): GetPermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionArn" -> permissionArn.asInstanceOf[js.Any]
+      )
+
+      permissionVersion.foreach(__v => __obj.updateDynamic("permissionVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionRequest]
+    }
+  }
+
+  @js.native
+  trait GetPermissionResponse extends js.Object {
+    var permission: js.UndefOr[ResourceSharePermissionDetail]
+  }
+
+  object GetPermissionResponse {
+    @inline
+    def apply(
+        permission: js.UndefOr[ResourceSharePermissionDetail] = js.undefined
+    ): GetPermissionResponse = {
+      val __obj = js.Dynamic.literal()
+      permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionResponse]
     }
   }
 
@@ -626,6 +792,47 @@ package ram {
   }
 
   @js.native
+  trait ListPermissionsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+    var resourceType: js.UndefOr[String]
+  }
+
+  object ListPermissionsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        resourceType: js.UndefOr[String] = js.undefined
+    ): ListPermissionsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPermissionsResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var permissions: js.UndefOr[ResourceSharePermissionList]
+  }
+
+  object ListPermissionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[ResourceSharePermissionList] = js.undefined
+    ): ListPermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionsResponse]
+    }
+  }
+
+  @js.native
   trait ListPrincipalsRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -677,6 +884,49 @@ package ram {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalsResponse]
+    }
+  }
+
+  @js.native
+  trait ListResourceSharePermissionsRequest extends js.Object {
+    var resourceShareArn: String
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListResourceSharePermissionsRequest {
+    @inline
+    def apply(
+        resourceShareArn: String,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListResourceSharePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSharePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceSharePermissionsResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var permissions: js.UndefOr[ResourceSharePermissionList]
+  }
+
+  object ListResourceSharePermissionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[ResourceSharePermissionList] = js.undefined
+    ): ListResourceSharePermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSharePermissionsResponse]
     }
   }
 
@@ -767,6 +1017,40 @@ package ram {
   }
 
   @js.native
+  trait PromoteResourceShareCreatedFromPolicyRequest extends js.Object {
+    var resourceShareArn: String
+  }
+
+  object PromoteResourceShareCreatedFromPolicyRequest {
+    @inline
+    def apply(
+        resourceShareArn: String
+    ): PromoteResourceShareCreatedFromPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PromoteResourceShareCreatedFromPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PromoteResourceShareCreatedFromPolicyResponse extends js.Object {
+    var returnValue: js.UndefOr[Boolean]
+  }
+
+  object PromoteResourceShareCreatedFromPolicyResponse {
+    @inline
+    def apply(
+        returnValue: js.UndefOr[Boolean] = js.undefined
+    ): PromoteResourceShareCreatedFromPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromoteResourceShareCreatedFromPolicyResponse]
+    }
+  }
+
+  @js.native
   trait RejectResourceShareInvitationRequest extends js.Object {
     var resourceShareInvitationArn: String
     var clientToken: js.UndefOr[String]
@@ -814,6 +1098,7 @@ package ram {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
     var lastUpdatedTime: js.UndefOr[DateTime]
+    var resourceGroupArn: js.UndefOr[String]
     var resourceShareArn: js.UndefOr[String]
     var status: js.UndefOr[ResourceStatus]
     var statusMessage: js.UndefOr[String]
@@ -826,6 +1111,7 @@ package ram {
         arn: js.UndefOr[String] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+        resourceGroupArn: js.UndefOr[String] = js.undefined,
         resourceShareArn: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ResourceStatus] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined,
@@ -835,6 +1121,7 @@ package ram {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
@@ -857,6 +1144,7 @@ package ram {
   trait ResourceShare extends js.Object {
     var allowExternalPrincipals: js.UndefOr[Boolean]
     var creationTime: js.UndefOr[DateTime]
+    var featureSet: js.UndefOr[ResourceShareFeatureSet]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var name: js.UndefOr[String]
     var owningAccountId: js.UndefOr[String]
@@ -871,6 +1159,7 @@ package ram {
     def apply(
         allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
+        featureSet: js.UndefOr[ResourceShareFeatureSet] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         owningAccountId: js.UndefOr[String] = js.undefined,
@@ -882,6 +1171,7 @@ package ram {
       val __obj = js.Dynamic.literal()
       allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      featureSet.foreach(__v => __obj.updateDynamic("featureSet")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owningAccountId.foreach(__v => __obj.updateDynamic("owningAccountId")(__v.asInstanceOf[js.Any]))
@@ -953,6 +1243,14 @@ package ram {
     val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
 
+  object ResourceShareFeatureSetEnum {
+    val CREATED_FROM_POLICY   = "CREATED_FROM_POLICY"
+    val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD"
+    val STANDARD              = "STANDARD"
+
+    val values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
+  }
+
   /**
     * Describes an invitation to join a resource share.
     */
@@ -1004,6 +1302,86 @@ package ram {
     val EXPIRED  = "EXPIRED"
 
     val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
+  }
+
+  /**
+    * Information about an AWS RAM permission.
+    */
+  @js.native
+  trait ResourceSharePermissionDetail extends js.Object {
+    var arn: js.UndefOr[String]
+    var creationTime: js.UndefOr[DateTime]
+    var defaultVersion: js.UndefOr[Boolean]
+    var lastUpdatedTime: js.UndefOr[DateTime]
+    var name: js.UndefOr[String]
+    var permission: js.UndefOr[String]
+    var resourceType: js.UndefOr[String]
+    var version: js.UndefOr[String]
+  }
+
+  object ResourceSharePermissionDetail {
+    @inline
+    def apply(
+        arn: js.UndefOr[String] = js.undefined,
+        creationTime: js.UndefOr[DateTime] = js.undefined,
+        defaultVersion: js.UndefOr[Boolean] = js.undefined,
+        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        permission: js.UndefOr[String] = js.undefined,
+        resourceType: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): ResourceSharePermissionDetail = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceSharePermissionDetail]
+    }
+  }
+
+  /**
+    * Information about a permission that is associated with a resource share.
+    */
+  @js.native
+  trait ResourceSharePermissionSummary extends js.Object {
+    var arn: js.UndefOr[String]
+    var creationTime: js.UndefOr[DateTime]
+    var defaultVersion: js.UndefOr[Boolean]
+    var lastUpdatedTime: js.UndefOr[DateTime]
+    var name: js.UndefOr[String]
+    var resourceType: js.UndefOr[String]
+    var status: js.UndefOr[String]
+    var version: js.UndefOr[String]
+  }
+
+  object ResourceSharePermissionSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[String] = js.undefined,
+        creationTime: js.UndefOr[DateTime] = js.undefined,
+        defaultVersion: js.UndefOr[Boolean] = js.undefined,
+        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        resourceType: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): ResourceSharePermissionSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceSharePermissionSummary]
+    }
   }
 
   object ResourceShareStatusEnum {

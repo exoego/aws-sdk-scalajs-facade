@@ -36,6 +36,7 @@ package object iot1clickprojects {
   type Time                         = js.Date
 
   implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
+
     @inline def associateDeviceWithPlacementFuture(
         params: AssociateDeviceWithPlacementRequest
     ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise.toFuture

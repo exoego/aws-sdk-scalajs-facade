@@ -42,6 +42,7 @@ package object servicequotas {
   type Statistic                                        = String
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
+
     @inline def associateServiceQuotaTemplateFuture(
         params: AssociateServiceQuotaTemplateRequest
     ): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise.toFuture

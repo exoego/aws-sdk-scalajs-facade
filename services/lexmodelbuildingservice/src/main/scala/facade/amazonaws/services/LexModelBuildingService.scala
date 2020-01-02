@@ -30,21 +30,27 @@ package object lexmodelbuildingservice {
   type Count                       = Int
   type CustomOrBuiltinSlotTypeName = String
   type Description                 = String
+  type Destination                 = String
   type EnumerationValues           = js.Array[EnumerationValue]
   type ExportStatus                = String
   type ExportType                  = String
   type FulfillmentActivityType     = String
   type GroupNumber                 = Int
+  type IamRoleArn                  = String
   type ImportStatus                = String
   type IntentList                  = js.Array[Intent]
   type IntentMetadataList          = js.Array[IntentMetadata]
   type IntentName                  = String
   type IntentUtteranceList         = js.Array[Utterance]
+  type KmsKeyArn                   = String
   type LambdaARN                   = String
   type ListOfUtterance             = js.Array[UtteranceData]
   type ListsOfUtterances           = js.Array[UtteranceList]
   type Locale                      = String
   type LocaleList                  = js.Array[Locale]
+  type LogSettingsRequestList      = js.Array[LogSettingsRequest]
+  type LogSettingsResponseList     = js.Array[LogSettingsResponse]
+  type LogType                     = String
   type MaxResults                  = Int
   type MergeStrategy               = String
   type MessageList                 = js.Array[Message]
@@ -52,9 +58,12 @@ package object lexmodelbuildingservice {
   type Name                        = String
   type NextToken                   = String
   type NumericalVersion            = String
+  type ObfuscationSetting          = String
   type Priority                    = Int
   type ProcessBehavior             = String
   type PromptMaxAttempts           = Int
+  type ResourceArn                 = String
+  type ResourcePrefix              = String
   type ResourceType                = String
   type ResponseCard                = String
   type SessionTTL                  = Int
@@ -77,6 +86,7 @@ package object lexmodelbuildingservice {
   type Version                     = String
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
+
     @inline def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
       service.createBotVersion(params).promise.toFuture
     @inline def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] =
@@ -208,6 +218,7 @@ package lexmodelbuildingservice {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
     var checksum: js.UndefOr[String]
+    var conversationLogs: js.UndefOr[ConversationLogsResponse]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var lastUpdatedDate: js.UndefOr[Timestamp]
@@ -220,6 +231,7 @@ package lexmodelbuildingservice {
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
+        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -229,6 +241,7 @@ package lexmodelbuildingservice {
       botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
@@ -426,6 +439,52 @@ package lexmodelbuildingservice {
     val values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
   }
 
+  /**
+    * Provides the settings needed for conversation logs.
+    */
+  @js.native
+  trait ConversationLogsRequest extends js.Object {
+    var iamRoleArn: IamRoleArn
+    var logSettings: LogSettingsRequestList
+  }
+
+  object ConversationLogsRequest {
+    @inline
+    def apply(
+        iamRoleArn: IamRoleArn,
+        logSettings: LogSettingsRequestList
+    ): ConversationLogsRequest = {
+      val __obj = js.Dynamic.literal(
+        "iamRoleArn"  -> iamRoleArn.asInstanceOf[js.Any],
+        "logSettings" -> logSettings.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ConversationLogsRequest]
+    }
+  }
+
+  /**
+    * Contains information about conversation log settings.
+    */
+  @js.native
+  trait ConversationLogsResponse extends js.Object {
+    var iamRoleArn: js.UndefOr[IamRoleArn]
+    var logSettings: js.UndefOr[LogSettingsResponseList]
+  }
+
+  object ConversationLogsResponse {
+    @inline
+    def apply(
+        iamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        logSettings: js.UndefOr[LogSettingsResponseList] = js.undefined
+    ): ConversationLogsResponse = {
+      val __obj = js.Dynamic.literal()
+      iamRoleArn.foreach(__v => __obj.updateDynamic("iamRoleArn")(__v.asInstanceOf[js.Any]))
+      logSettings.foreach(__v => __obj.updateDynamic("logSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConversationLogsResponse]
+    }
+  }
+
   @js.native
   trait CreateBotVersionRequest extends js.Object {
     var name: BotName
@@ -455,6 +514,7 @@ package lexmodelbuildingservice {
     var clarificationPrompt: js.UndefOr[Prompt]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
+    var detectSentiment: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
@@ -475,6 +535,7 @@ package lexmodelbuildingservice {
         clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
+        detectSentiment: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
@@ -492,6 +553,7 @@ package lexmodelbuildingservice {
       clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
@@ -825,6 +887,13 @@ package lexmodelbuildingservice {
     }
   }
 
+  object DestinationEnum {
+    val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS"
+    val S3              = "S3"
+
+    val values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
+  }
+
   /**
     * Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
     *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
@@ -952,6 +1021,7 @@ package lexmodelbuildingservice {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
     var checksum: js.UndefOr[String]
+    var conversationLogs: js.UndefOr[ConversationLogsResponse]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var lastUpdatedDate: js.UndefOr[Timestamp]
@@ -964,6 +1034,7 @@ package lexmodelbuildingservice {
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
+        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -973,6 +1044,7 @@ package lexmodelbuildingservice {
       botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
@@ -1169,6 +1241,7 @@ package lexmodelbuildingservice {
     var clarificationPrompt: js.UndefOr[Prompt]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
+    var detectSentiment: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
@@ -1189,6 +1262,7 @@ package lexmodelbuildingservice {
         clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
+        detectSentiment: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
@@ -1206,6 +1280,7 @@ package lexmodelbuildingservice {
       clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
@@ -1963,6 +2038,74 @@ package lexmodelbuildingservice {
     val values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
   }
 
+  /**
+    * Settings used to configure conversation logs.
+    */
+  @js.native
+  trait LogSettingsRequest extends js.Object {
+    var destination: Destination
+    var logType: LogType
+    var resourceArn: ResourceArn
+    var kmsKeyArn: js.UndefOr[KmsKeyArn]
+  }
+
+  object LogSettingsRequest {
+    @inline
+    def apply(
+        destination: Destination,
+        logType: LogType,
+        resourceArn: ResourceArn,
+        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
+    ): LogSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "destination" -> destination.asInstanceOf[js.Any],
+        "logType"     -> logType.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogSettingsRequest]
+    }
+  }
+
+  /**
+    * The settings for conversation logs.
+    */
+  @js.native
+  trait LogSettingsResponse extends js.Object {
+    var destination: js.UndefOr[Destination]
+    var kmsKeyArn: js.UndefOr[KmsKeyArn]
+    var logType: js.UndefOr[LogType]
+    var resourceArn: js.UndefOr[ResourceArn]
+    var resourcePrefix: js.UndefOr[ResourcePrefix]
+  }
+
+  object LogSettingsResponse {
+    @inline
+    def apply(
+        destination: js.UndefOr[Destination] = js.undefined,
+        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
+        logType: js.UndefOr[LogType] = js.undefined,
+        resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+        resourcePrefix: js.UndefOr[ResourcePrefix] = js.undefined
+    ): LogSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      logType.foreach(__v => __obj.updateDynamic("logType")(__v.asInstanceOf[js.Any]))
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
+      resourcePrefix.foreach(__v => __obj.updateDynamic("resourcePrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogSettingsResponse]
+    }
+  }
+
+  object LogTypeEnum {
+    val AUDIO = "AUDIO"
+    val TEXT  = "TEXT"
+
+    val values = js.Object.freeze(js.Array(AUDIO, TEXT))
+  }
+
   object MergeStrategyEnum {
     val OVERWRITE_LATEST = "OVERWRITE_LATEST"
     val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT"
@@ -1995,6 +2138,13 @@ package lexmodelbuildingservice {
       groupNumber.foreach(__v => __obj.updateDynamic("groupNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Message]
     }
+  }
+
+  object ObfuscationSettingEnum {
+    val NONE                = "NONE"
+    val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION"
+
+    val values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
   }
 
   object ProcessBehaviorEnum {
@@ -2037,6 +2187,7 @@ package lexmodelbuildingservice {
     var botVersion: Version
     var name: AliasName
     var checksum: js.UndefOr[String]
+    var conversationLogs: js.UndefOr[ConversationLogsRequest]
     var description: js.UndefOr[Description]
   }
 
@@ -2047,6 +2198,7 @@ package lexmodelbuildingservice {
         botVersion: Version,
         name: AliasName,
         checksum: js.UndefOr[String] = js.undefined,
+        conversationLogs: js.UndefOr[ConversationLogsRequest] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): PutBotAliasRequest = {
       val __obj = js.Dynamic.literal(
@@ -2056,6 +2208,7 @@ package lexmodelbuildingservice {
       )
 
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBotAliasRequest]
     }
@@ -2066,6 +2219,7 @@ package lexmodelbuildingservice {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
     var checksum: js.UndefOr[String]
+    var conversationLogs: js.UndefOr[ConversationLogsResponse]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var lastUpdatedDate: js.UndefOr[Timestamp]
@@ -2078,6 +2232,7 @@ package lexmodelbuildingservice {
         botName: js.UndefOr[BotName] = js.undefined,
         botVersion: js.UndefOr[Version] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined,
+        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -2087,6 +2242,7 @@ package lexmodelbuildingservice {
       botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
@@ -2105,6 +2261,7 @@ package lexmodelbuildingservice {
     var clarificationPrompt: js.UndefOr[Prompt]
     var createVersion: js.UndefOr[Boolean]
     var description: js.UndefOr[Description]
+    var detectSentiment: js.UndefOr[Boolean]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
     var processBehavior: js.UndefOr[ProcessBehavior]
@@ -2122,6 +2279,7 @@ package lexmodelbuildingservice {
         clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
         createVersion: js.UndefOr[Boolean] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
+        detectSentiment: js.UndefOr[Boolean] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
         processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
@@ -2138,6 +2296,7 @@ package lexmodelbuildingservice {
       clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
       createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
       processBehavior.foreach(__v => __obj.updateDynamic("processBehavior")(__v.asInstanceOf[js.Any]))
@@ -2155,6 +2314,7 @@ package lexmodelbuildingservice {
     var createVersion: js.UndefOr[Boolean]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
+    var detectSentiment: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
@@ -2176,6 +2336,7 @@ package lexmodelbuildingservice {
         createVersion: js.UndefOr[Boolean] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
+        detectSentiment: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
@@ -2194,6 +2355,7 @@ package lexmodelbuildingservice {
       createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
@@ -2411,6 +2573,7 @@ package lexmodelbuildingservice {
     var name: SlotName
     var slotConstraint: SlotConstraint
     var description: js.UndefOr[Description]
+    var obfuscationSetting: js.UndefOr[ObfuscationSetting]
     var priority: js.UndefOr[Priority]
     var responseCard: js.UndefOr[ResponseCard]
     var sampleUtterances: js.UndefOr[SlotUtteranceList]
@@ -2425,6 +2588,7 @@ package lexmodelbuildingservice {
         name: SlotName,
         slotConstraint: SlotConstraint,
         description: js.UndefOr[Description] = js.undefined,
+        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined,
         priority: js.UndefOr[Priority] = js.undefined,
         responseCard: js.UndefOr[ResponseCard] = js.undefined,
         sampleUtterances: js.UndefOr[SlotUtteranceList] = js.undefined,
@@ -2438,6 +2602,7 @@ package lexmodelbuildingservice {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      obfuscationSetting.foreach(__v => __obj.updateDynamic("obfuscationSetting")(__v.asInstanceOf[js.Any]))
       priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
       responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))

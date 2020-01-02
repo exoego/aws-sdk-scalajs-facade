@@ -47,6 +47,7 @@ package object datasync {
   type PreserveDevices                 = String
   type S3BucketArn                     = String
   type S3StorageClass                  = String
+  type ScheduleExpressionCron          = String
   type ServerHostname                  = String
   type SmbDomain                       = String
   type SmbPassword                     = String
@@ -72,6 +73,7 @@ package object datasync {
   type VpcEndpointId                   = String
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
+
     @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
       service.cancelTaskExecution(params).promise.toFuture
     @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
@@ -485,6 +487,7 @@ package datasync {
     var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
+    var Schedule: js.UndefOr[TaskSchedule]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -497,6 +500,7 @@ package datasync {
         Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
+        Schedule: js.UndefOr[TaskSchedule] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTaskRequest = {
       val __obj = js.Dynamic.literal(
@@ -508,6 +512,7 @@ package datasync {
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTaskRequest]
     }
@@ -967,6 +972,7 @@ package datasync {
     var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
+    var Schedule: js.UndefOr[TaskSchedule]
     var SourceLocationArn: js.UndefOr[LocationArn]
     var SourceNetworkInterfaceArns: js.UndefOr[SourceNetworkInterfaceArns]
     var Status: js.UndefOr[TaskStatus]
@@ -986,6 +992,7 @@ package datasync {
         Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
+        Schedule: js.UndefOr[TaskSchedule] = js.undefined,
         SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
         SourceNetworkInterfaceArns: js.UndefOr[SourceNetworkInterfaceArns] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined,
@@ -1004,6 +1011,7 @@ package datasync {
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SourceLocationArn.foreach(__v => __obj.updateDynamic("SourceLocationArn")(__v.asInstanceOf[js.Any]))
       SourceNetworkInterfaceArns.foreach(__v =>
         __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
@@ -1041,8 +1049,9 @@ package datasync {
   object EndpointTypeEnum {
     val PUBLIC       = "PUBLIC"
     val PRIVATE_LINK = "PRIVATE_LINK"
+    val FIPS         = "FIPS"
 
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK))
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK, FIPS))
   }
 
   /**
@@ -1427,11 +1436,10 @@ package datasync {
   }
 
   object PosixPermissionsEnum {
-    val NONE        = "NONE"
-    val BEST_EFFORT = "BEST_EFFORT"
-    val PRESERVE    = "PRESERVE"
+    val NONE     = "NONE"
+    val PRESERVE = "PRESERVE"
 
-    val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT, PRESERVE))
+    val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
   object PreserveDeletedFilesEnum {
@@ -1666,6 +1674,7 @@ package datasync {
     var ErrorDetail: js.UndefOr[String]
     var PrepareDuration: js.UndefOr[Duration]
     var PrepareStatus: js.UndefOr[PhaseStatus]
+    var TotalDuration: js.UndefOr[Duration]
     var TransferDuration: js.UndefOr[Duration]
     var TransferStatus: js.UndefOr[PhaseStatus]
     var VerifyDuration: js.UndefOr[Duration]
@@ -1679,6 +1688,7 @@ package datasync {
         ErrorDetail: js.UndefOr[String] = js.undefined,
         PrepareDuration: js.UndefOr[Duration] = js.undefined,
         PrepareStatus: js.UndefOr[PhaseStatus] = js.undefined,
+        TotalDuration: js.UndefOr[Duration] = js.undefined,
         TransferDuration: js.UndefOr[Duration] = js.undefined,
         TransferStatus: js.UndefOr[PhaseStatus] = js.undefined,
         VerifyDuration: js.UndefOr[Duration] = js.undefined,
@@ -1689,6 +1699,7 @@ package datasync {
       ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
       PrepareDuration.foreach(__v => __obj.updateDynamic("PrepareDuration")(__v.asInstanceOf[js.Any]))
       PrepareStatus.foreach(__v => __obj.updateDynamic("PrepareStatus")(__v.asInstanceOf[js.Any]))
+      TotalDuration.foreach(__v => __obj.updateDynamic("TotalDuration")(__v.asInstanceOf[js.Any]))
       TransferDuration.foreach(__v => __obj.updateDynamic("TransferDuration")(__v.asInstanceOf[js.Any]))
       TransferStatus.foreach(__v => __obj.updateDynamic("TransferStatus")(__v.asInstanceOf[js.Any]))
       VerifyDuration.foreach(__v => __obj.updateDynamic("VerifyDuration")(__v.asInstanceOf[js.Any]))
@@ -1739,6 +1750,27 @@ package datasync {
     val DISABLED = "DISABLED"
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  /**
+    * Specifies the schedule you want your task to use for repeated executions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html|Schedule Expressions for Rules]].
+    */
+  @js.native
+  trait TaskSchedule extends js.Object {
+    var ScheduleExpression: ScheduleExpressionCron
+  }
+
+  object TaskSchedule {
+    @inline
+    def apply(
+        ScheduleExpression: ScheduleExpressionCron
+    ): TaskSchedule = {
+      val __obj = js.Dynamic.literal(
+        "ScheduleExpression" -> ScheduleExpression.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TaskSchedule]
+    }
   }
 
   object TaskStatusEnum {
@@ -1838,6 +1870,7 @@ package datasync {
     var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
+    var Schedule: js.UndefOr[TaskSchedule]
   }
 
   object UpdateTaskRequest {
@@ -1847,7 +1880,8 @@ package datasync {
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
         Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
-        Options: js.UndefOr[Options] = js.undefined
+        Options: js.UndefOr[Options] = js.undefined,
+        Schedule: js.UndefOr[TaskSchedule] = js.undefined
     ): UpdateTaskRequest = {
       val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
@@ -1857,6 +1891,7 @@ package datasync {
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTaskRequest]
     }
   }

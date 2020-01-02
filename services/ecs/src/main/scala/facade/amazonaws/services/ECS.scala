@@ -16,6 +16,13 @@ package object ecs {
   type Attributes                            = js.Array[Attribute]
   type BoxedBoolean                          = Boolean
   type BoxedInteger                          = Int
+  type CapacityProviderField                 = String
+  type CapacityProviderFieldList             = js.Array[CapacityProviderField]
+  type CapacityProviderStatus                = String
+  type CapacityProviderStrategy              = js.Array[CapacityProviderStrategyItem]
+  type CapacityProviderStrategyItemBase      = Int
+  type CapacityProviderStrategyItemWeight    = Int
+  type CapacityProviders                     = js.Array[CapacityProvider]
   type ClusterField                          = String
   type ClusterFieldList                      = js.Array[ClusterField]
   type ClusterSettingName                    = String
@@ -55,6 +62,10 @@ package object ecs {
   type LoadBalancers                         = js.Array[LoadBalancer]
   type LogConfigurationOptionsMap            = js.Dictionary[String]
   type LogDriver                             = String
+  type ManagedScalingStatus                  = String
+  type ManagedScalingStepSize                = Int
+  type ManagedScalingTargetCapacity          = Int
+  type ManagedTerminationProtection          = String
   type MountPointList                        = js.Array[MountPoint]
   type NetworkBindings                       = js.Array[NetworkBinding]
   type NetworkInterfaces                     = js.Array[NetworkInterface]
@@ -116,6 +127,10 @@ package object ecs {
   type VolumeList                            = js.Array[Volume]
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
+
+    @inline def createCapacityProviderFuture(
+        params: CreateCapacityProviderRequest
+    ): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise.toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
     @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
@@ -138,6 +153,9 @@ package object ecs {
     @inline def deregisterTaskDefinitionFuture(
         params: DeregisterTaskDefinitionRequest
     ): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise.toFuture
+    @inline def describeCapacityProvidersFuture(
+        params: DescribeCapacityProvidersRequest
+    ): Future[DescribeCapacityProvidersResponse] = service.describeCapacityProviders(params).promise.toFuture
     @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
       service.describeClusters(params).promise.toFuture
     @inline def describeContainerInstancesFuture(
@@ -181,6 +199,9 @@ package object ecs {
       service.putAccountSetting(params).promise.toFuture
     @inline def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] =
       service.putAttributes(params).promise.toFuture
+    @inline def putClusterCapacityProvidersFuture(
+        params: PutClusterCapacityProvidersRequest
+    ): Future[PutClusterCapacityProvidersResponse] = service.putClusterCapacityProviders(params).promise.toFuture
     @inline def registerContainerInstanceFuture(
         params: RegisterContainerInstanceRequest
     ): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise.toFuture
@@ -230,6 +251,8 @@ package ecs {
   class ECS() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createCapacityProvider(params: CreateCapacityProviderRequest): Request[CreateCapacityProviderResponse] =
+      js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                      = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse]                      = js.native
     def createTaskSet(params: CreateTaskSetRequest): Request[CreateTaskSetResponse]                      = js.native
@@ -243,6 +266,9 @@ package ecs {
     ): Request[DeregisterContainerInstanceResponse] = js.native
     def deregisterTaskDefinition(params: DeregisterTaskDefinitionRequest): Request[DeregisterTaskDefinitionResponse] =
       js.native
+    def describeCapacityProviders(
+        params: DescribeCapacityProvidersRequest
+    ): Request[DescribeCapacityProvidersResponse]                                            = js.native
     def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
     def describeContainerInstances(
         params: DescribeContainerInstancesRequest
@@ -269,6 +295,9 @@ package ecs {
     def putAccountSettingDefault(params: PutAccountSettingDefaultRequest): Request[PutAccountSettingDefaultResponse] =
       js.native
     def putAttributes(params: PutAttributesRequest): Request[PutAttributesResponse] = js.native
+    def putClusterCapacityProviders(
+        params: PutClusterCapacityProvidersRequest
+    ): Request[PutClusterCapacityProvidersResponse] = js.native
     def registerContainerInstance(
         params: RegisterContainerInstanceRequest
     ): Request[RegisterContainerInstanceResponse] = js.native
@@ -399,6 +428,35 @@ package ecs {
   }
 
   /**
+    * The details of the Auto Scaling group for the capacity provider.
+    */
+  @js.native
+  trait AutoScalingGroupProvider extends js.Object {
+    var autoScalingGroupArn: String
+    var managedScaling: js.UndefOr[ManagedScaling]
+    var managedTerminationProtection: js.UndefOr[ManagedTerminationProtection]
+  }
+
+  object AutoScalingGroupProvider {
+    @inline
+    def apply(
+        autoScalingGroupArn: String,
+        managedScaling: js.UndefOr[ManagedScaling] = js.undefined,
+        managedTerminationProtection: js.UndefOr[ManagedTerminationProtection] = js.undefined
+    ): AutoScalingGroupProvider = {
+      val __obj = js.Dynamic.literal(
+        "autoScalingGroupArn" -> autoScalingGroupArn.asInstanceOf[js.Any]
+      )
+
+      managedScaling.foreach(__v => __obj.updateDynamic("managedScaling")(__v.asInstanceOf[js.Any]))
+      managedTerminationProtection.foreach(__v =>
+        __obj.updateDynamic("managedTerminationProtection")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AutoScalingGroupProvider]
+    }
+  }
+
+  /**
     * An object representing the networking details for a task or service.
     */
   @js.native
@@ -426,13 +484,87 @@ package ecs {
   }
 
   /**
+    * The details of a capacity provider.
+    */
+  @js.native
+  trait CapacityProvider extends js.Object {
+    var autoScalingGroupProvider: js.UndefOr[AutoScalingGroupProvider]
+    var capacityProviderArn: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var status: js.UndefOr[CapacityProviderStatus]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object CapacityProvider {
+    @inline
+    def apply(
+        autoScalingGroupProvider: js.UndefOr[AutoScalingGroupProvider] = js.undefined,
+        capacityProviderArn: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[CapacityProviderStatus] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): CapacityProvider = {
+      val __obj = js.Dynamic.literal()
+      autoScalingGroupProvider.foreach(__v => __obj.updateDynamic("autoScalingGroupProvider")(__v.asInstanceOf[js.Any]))
+      capacityProviderArn.foreach(__v => __obj.updateDynamic("capacityProviderArn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityProvider]
+    }
+  }
+
+  object CapacityProviderFieldEnum {
+    val TAGS = "TAGS"
+
+    val values = js.Object.freeze(js.Array(TAGS))
+  }
+
+  object CapacityProviderStatusEnum {
+    val ACTIVE = "ACTIVE"
+
+    val values = js.Object.freeze(js.Array(ACTIVE))
+  }
+
+  /**
+    * The details of a capacity provider strategy.
+    */
+  @js.native
+  trait CapacityProviderStrategyItem extends js.Object {
+    var capacityProvider: String
+    var base: js.UndefOr[CapacityProviderStrategyItemBase]
+    var weight: js.UndefOr[CapacityProviderStrategyItemWeight]
+  }
+
+  object CapacityProviderStrategyItem {
+    @inline
+    def apply(
+        capacityProvider: String,
+        base: js.UndefOr[CapacityProviderStrategyItemBase] = js.undefined,
+        weight: js.UndefOr[CapacityProviderStrategyItemWeight] = js.undefined
+    ): CapacityProviderStrategyItem = {
+      val __obj = js.Dynamic.literal(
+        "capacityProvider" -> capacityProvider.asInstanceOf[js.Any]
+      )
+
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityProviderStrategyItem]
+    }
+  }
+
+  /**
     * A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
     */
   @js.native
   trait Cluster extends js.Object {
     var activeServicesCount: js.UndefOr[Int]
+    var attachments: js.UndefOr[Attachments]
+    var attachmentsStatus: js.UndefOr[String]
+    var capacityProviders: js.UndefOr[StringList]
     var clusterArn: js.UndefOr[String]
     var clusterName: js.UndefOr[String]
+    var defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var pendingTasksCount: js.UndefOr[Int]
     var registeredContainerInstancesCount: js.UndefOr[Int]
     var runningTasksCount: js.UndefOr[Int]
@@ -446,8 +578,12 @@ package ecs {
     @inline
     def apply(
         activeServicesCount: js.UndefOr[Int] = js.undefined,
+        attachments: js.UndefOr[Attachments] = js.undefined,
+        attachmentsStatus: js.UndefOr[String] = js.undefined,
+        capacityProviders: js.UndefOr[StringList] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
         clusterName: js.UndefOr[String] = js.undefined,
+        defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
         registeredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
         runningTasksCount: js.UndefOr[Int] = js.undefined,
@@ -458,8 +594,14 @@ package ecs {
     ): Cluster = {
       val __obj = js.Dynamic.literal()
       activeServicesCount.foreach(__v => __obj.updateDynamic("activeServicesCount")(__v.asInstanceOf[js.Any]))
+      attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
+      attachmentsStatus.foreach(__v => __obj.updateDynamic("attachmentsStatus")(__v.asInstanceOf[js.Any]))
+      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      defaultCapacityProviderStrategy.foreach(__v =>
+        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
+      )
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
       registeredContainerInstancesCount.foreach(__v =>
         __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any])
@@ -474,10 +616,12 @@ package ecs {
   }
 
   object ClusterFieldEnum {
-    val STATISTICS = "STATISTICS"
-    val TAGS       = "TAGS"
+    val ATTACHMENTS = "ATTACHMENTS"
+    val SETTINGS    = "SETTINGS"
+    val STATISTICS  = "STATISTICS"
+    val TAGS        = "TAGS"
 
-    val values = js.Object.freeze(js.Array(STATISTICS, TAGS))
+    val values = js.Object.freeze(js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS))
   }
 
   /**
@@ -761,6 +905,7 @@ package ecs {
     var agentUpdateStatus: js.UndefOr[AgentUpdateStatus]
     var attachments: js.UndefOr[Attachments]
     var attributes: js.UndefOr[Attributes]
+    var capacityProviderName: js.UndefOr[String]
     var containerInstanceArn: js.UndefOr[String]
     var ec2InstanceId: js.UndefOr[String]
     var pendingTasksCount: js.UndefOr[Int]
@@ -782,6 +927,7 @@ package ecs {
         agentUpdateStatus: js.UndefOr[AgentUpdateStatus] = js.undefined,
         attachments: js.UndefOr[Attachments] = js.undefined,
         attributes: js.UndefOr[Attributes] = js.undefined,
+        capacityProviderName: js.UndefOr[String] = js.undefined,
         containerInstanceArn: js.UndefOr[String] = js.undefined,
         ec2InstanceId: js.UndefOr[String] = js.undefined,
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
@@ -800,6 +946,7 @@ package ecs {
       agentUpdateStatus.foreach(__v => __obj.updateDynamic("agentUpdateStatus")(__v.asInstanceOf[js.Any]))
       attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      capacityProviderName.foreach(__v => __obj.updateDynamic("capacityProviderName")(__v.asInstanceOf[js.Any]))
       containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
       ec2InstanceId.foreach(__v => __obj.updateDynamic("ec2InstanceId")(__v.asInstanceOf[js.Any]))
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
@@ -907,8 +1054,50 @@ package ecs {
   }
 
   @js.native
+  trait CreateCapacityProviderRequest extends js.Object {
+    var autoScalingGroupProvider: AutoScalingGroupProvider
+    var name: String
+    var tags: js.UndefOr[Tags]
+  }
+
+  object CreateCapacityProviderRequest {
+    @inline
+    def apply(
+        autoScalingGroupProvider: AutoScalingGroupProvider,
+        name: String,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): CreateCapacityProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "autoScalingGroupProvider" -> autoScalingGroupProvider.asInstanceOf[js.Any],
+        "name"                     -> name.asInstanceOf[js.Any]
+      )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCapacityProviderRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCapacityProviderResponse extends js.Object {
+    var capacityProvider: js.UndefOr[CapacityProvider]
+  }
+
+  object CreateCapacityProviderResponse {
+    @inline
+    def apply(
+        capacityProvider: js.UndefOr[CapacityProvider] = js.undefined
+    ): CreateCapacityProviderResponse = {
+      val __obj = js.Dynamic.literal()
+      capacityProvider.foreach(__v => __obj.updateDynamic("capacityProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCapacityProviderResponse]
+    }
+  }
+
+  @js.native
   trait CreateClusterRequest extends js.Object {
+    var capacityProviders: js.UndefOr[StringList]
     var clusterName: js.UndefOr[String]
+    var defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var settings: js.UndefOr[ClusterSettings]
     var tags: js.UndefOr[Tags]
   }
@@ -916,12 +1105,18 @@ package ecs {
   object CreateClusterRequest {
     @inline
     def apply(
+        capacityProviders: js.UndefOr[StringList] = js.undefined,
         clusterName: js.UndefOr[String] = js.undefined,
+        defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal()
+      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      defaultCapacityProviderStrategy.foreach(__v =>
+        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
+      )
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
@@ -947,6 +1142,7 @@ package ecs {
   @js.native
   trait CreateServiceRequest extends js.Object {
     var serviceName: String
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clientToken: js.UndefOr[String]
     var cluster: js.UndefOr[String]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
@@ -972,6 +1168,7 @@ package ecs {
     @inline
     def apply(
         serviceName: String,
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         clientToken: js.UndefOr[String] = js.undefined,
         cluster: js.UndefOr[String] = js.undefined,
         deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
@@ -996,6 +1193,7 @@ package ecs {
         "serviceName" -> serviceName.asInstanceOf[js.Any]
       )
 
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1042,6 +1240,7 @@ package ecs {
     var cluster: String
     var service: String
     var taskDefinition: String
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clientToken: js.UndefOr[String]
     var externalId: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
@@ -1058,6 +1257,7 @@ package ecs {
         cluster: String,
         service: String,
         taskDefinition: String,
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         clientToken: js.UndefOr[String] = js.undefined,
         externalId: js.UndefOr[String] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
@@ -1073,6 +1273,7 @@ package ecs {
         "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
       )
 
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
@@ -1297,6 +1498,7 @@ package ecs {
     */
   @js.native
   trait Deployment extends js.Object {
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var createdAt: js.UndefOr[Timestamp]
     var desiredCount: js.UndefOr[Int]
     var id: js.UndefOr[String]
@@ -1313,6 +1515,7 @@ package ecs {
   object Deployment {
     @inline
     def apply(
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         desiredCount: js.UndefOr[Int] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
@@ -1326,6 +1529,7 @@ package ecs {
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): Deployment = {
       val __obj = js.Dynamic.literal()
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
@@ -1463,6 +1667,53 @@ package ecs {
       val __obj = js.Dynamic.literal()
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterTaskDefinitionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeCapacityProvidersRequest extends js.Object {
+    var capacityProviders: js.UndefOr[StringList]
+    var include: js.UndefOr[CapacityProviderFieldList]
+    var maxResults: js.UndefOr[BoxedInteger]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeCapacityProvidersRequest {
+    @inline
+    def apply(
+        capacityProviders: js.UndefOr[StringList] = js.undefined,
+        include: js.UndefOr[CapacityProviderFieldList] = js.undefined,
+        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeCapacityProvidersRequest = {
+      val __obj = js.Dynamic.literal()
+      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
+      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCapacityProvidersRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCapacityProvidersResponse extends js.Object {
+    var capacityProviders: js.UndefOr[CapacityProviders]
+    var failures: js.UndefOr[Failures]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeCapacityProvidersResponse {
+    @inline
+    def apply(
+        capacityProviders: js.UndefOr[CapacityProviders] = js.undefined,
+        failures: js.UndefOr[Failures] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeCapacityProvidersResponse = {
+      val __obj = js.Dynamic.literal()
+      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCapacityProvidersResponse]
     }
   }
 
@@ -1834,6 +2085,7 @@ package ecs {
   @js.native
   trait Failure extends js.Object {
     var arn: js.UndefOr[String]
+    var detail: js.UndefOr[String]
     var reason: js.UndefOr[String]
   }
 
@@ -1841,10 +2093,12 @@ package ecs {
     @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
+        detail: js.UndefOr[String] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
     ): Failure = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      detail.foreach(__v => __obj.updateDynamic("detail")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Failure]
     }
@@ -2558,7 +2812,13 @@ package ecs {
   }
 
   /**
-    * Log configuration options to send to a custom log driver for the container.
+    * The log configuration specification for the container.
+    *  This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation.
+    *  The following should be noted when specifying a log configuration for your containers:
+    * * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.
+    *  * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.
+    *  * For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS Container Agent Configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
     */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -2595,6 +2855,50 @@ package ecs {
     val awsfirelens = "awsfirelens"
 
     val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
+  }
+
+  /**
+    * The managed scaling settings for the Auto Scaling group capacity provider.
+    *  When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+    */
+  @js.native
+  trait ManagedScaling extends js.Object {
+    var maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
+    var minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
+    var status: js.UndefOr[ManagedScalingStatus]
+    var targetCapacity: js.UndefOr[ManagedScalingTargetCapacity]
+  }
+
+  object ManagedScaling {
+    @inline
+    def apply(
+        maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
+        minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
+        status: js.UndefOr[ManagedScalingStatus] = js.undefined,
+        targetCapacity: js.UndefOr[ManagedScalingTargetCapacity] = js.undefined
+    ): ManagedScaling = {
+      val __obj = js.Dynamic.literal()
+      maximumScalingStepSize.foreach(__v => __obj.updateDynamic("maximumScalingStepSize")(__v.asInstanceOf[js.Any]))
+      minimumScalingStepSize.foreach(__v => __obj.updateDynamic("minimumScalingStepSize")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetCapacity.foreach(__v => __obj.updateDynamic("targetCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedScaling]
+    }
+  }
+
+  object ManagedScalingStatusEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  object ManagedTerminationProtectionEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2985,6 +3289,46 @@ package ecs {
   }
 
   @js.native
+  trait PutClusterCapacityProvidersRequest extends js.Object {
+    var capacityProviders: StringList
+    var cluster: String
+    var defaultCapacityProviderStrategy: CapacityProviderStrategy
+  }
+
+  object PutClusterCapacityProvidersRequest {
+    @inline
+    def apply(
+        capacityProviders: StringList,
+        cluster: String,
+        defaultCapacityProviderStrategy: CapacityProviderStrategy
+    ): PutClusterCapacityProvidersRequest = {
+      val __obj = js.Dynamic.literal(
+        "capacityProviders"               -> capacityProviders.asInstanceOf[js.Any],
+        "cluster"                         -> cluster.asInstanceOf[js.Any],
+        "defaultCapacityProviderStrategy" -> defaultCapacityProviderStrategy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutClusterCapacityProvidersRequest]
+    }
+  }
+
+  @js.native
+  trait PutClusterCapacityProvidersResponse extends js.Object {
+    var cluster: js.UndefOr[Cluster]
+  }
+
+  object PutClusterCapacityProvidersResponse {
+    @inline
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): PutClusterCapacityProvidersResponse = {
+      val __obj = js.Dynamic.literal()
+      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutClusterCapacityProvidersResponse]
+    }
+  }
+
+  @js.native
   trait RegisterContainerInstanceRequest extends js.Object {
     var attributes: js.UndefOr[Attributes]
     var cluster: js.UndefOr[String]
@@ -3210,6 +3554,7 @@ package ecs {
   @js.native
   trait RunTaskRequest extends js.Object {
     var taskDefinition: String
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var cluster: js.UndefOr[String]
     var count: js.UndefOr[BoxedInteger]
     var enableECSManagedTags: js.UndefOr[Boolean]
@@ -3221,6 +3566,7 @@ package ecs {
     var placementStrategy: js.UndefOr[PlacementStrategies]
     var platformVersion: js.UndefOr[String]
     var propagateTags: js.UndefOr[PropagateTags]
+    var referenceId: js.UndefOr[String]
     var startedBy: js.UndefOr[String]
     var tags: js.UndefOr[Tags]
   }
@@ -3229,6 +3575,7 @@ package ecs {
     @inline
     def apply(
         taskDefinition: String,
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         cluster: js.UndefOr[String] = js.undefined,
         count: js.UndefOr[BoxedInteger] = js.undefined,
         enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
@@ -3240,6 +3587,7 @@ package ecs {
         placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         propagateTags: js.UndefOr[PropagateTags] = js.undefined,
+        referenceId: js.UndefOr[String] = js.undefined,
         startedBy: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): RunTaskRequest = {
@@ -3247,6 +3595,7 @@ package ecs {
         "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
       )
 
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
@@ -3258,6 +3607,7 @@ package ecs {
       placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
+      referenceId.foreach(__v => __obj.updateDynamic("referenceId")(__v.asInstanceOf[js.Any]))
       startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunTaskRequest]
@@ -3357,6 +3707,7 @@ package ecs {
     */
   @js.native
   trait Service extends js.Object {
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clusterArn: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var createdBy: js.UndefOr[String]
@@ -3390,6 +3741,7 @@ package ecs {
   object Service {
     @inline
     def apply(
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         createdBy: js.UndefOr[String] = js.undefined,
@@ -3420,6 +3772,7 @@ package ecs {
         taskSets: js.UndefOr[TaskSets] = js.undefined
     ): Service = {
       val __obj = js.Dynamic.literal()
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       createdBy.foreach(__v => __obj.updateDynamic("createdBy")(__v.asInstanceOf[js.Any]))
@@ -3580,6 +3933,7 @@ package ecs {
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var overrides: js.UndefOr[TaskOverride]
     var propagateTags: js.UndefOr[PropagateTags]
+    var referenceId: js.UndefOr[String]
     var startedBy: js.UndefOr[String]
     var tags: js.UndefOr[Tags]
   }
@@ -3595,6 +3949,7 @@ package ecs {
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         overrides: js.UndefOr[TaskOverride] = js.undefined,
         propagateTags: js.UndefOr[PropagateTags] = js.undefined,
+        referenceId: js.UndefOr[String] = js.undefined,
         startedBy: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): StartTaskRequest = {
@@ -3609,6 +3964,7 @@ package ecs {
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
+      referenceId.foreach(__v => __obj.updateDynamic("referenceId")(__v.asInstanceOf[js.Any]))
       startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTaskRequest]
@@ -3921,6 +4277,9 @@ package ecs {
   @js.native
   trait Task extends js.Object {
     var attachments: js.UndefOr[Attachments]
+    var attributes: js.UndefOr[Attributes]
+    var availabilityZone: js.UndefOr[String]
+    var capacityProviderName: js.UndefOr[String]
     var clusterArn: js.UndefOr[String]
     var connectivity: js.UndefOr[Connectivity]
     var connectivityAt: js.UndefOr[Timestamp]
@@ -3956,6 +4315,9 @@ package ecs {
     @inline
     def apply(
         attachments: js.UndefOr[Attachments] = js.undefined,
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        availabilityZone: js.UndefOr[String] = js.undefined,
+        capacityProviderName: js.UndefOr[String] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
         connectivity: js.UndefOr[Connectivity] = js.undefined,
         connectivityAt: js.UndefOr[Timestamp] = js.undefined,
@@ -3988,6 +4350,9 @@ package ecs {
     ): Task = {
       val __obj = js.Dynamic.literal()
       attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
+      capacityProviderName.foreach(__v => __obj.updateDynamic("capacityProviderName")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       connectivity.foreach(__v => __obj.updateDynamic("connectivity")(__v.asInstanceOf[js.Any]))
       connectivityAt.foreach(__v => __obj.updateDynamic("connectivityAt")(__v.asInstanceOf[js.Any]))
@@ -4031,6 +4396,7 @@ package ecs {
     var cpu: js.UndefOr[String]
     var executionRoleArn: js.UndefOr[String]
     var family: js.UndefOr[String]
+    var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
     var ipcMode: js.UndefOr[IpcMode]
     var memory: js.UndefOr[String]
     var networkMode: js.UndefOr[NetworkMode]
@@ -4054,6 +4420,7 @@ package ecs {
         cpu: js.UndefOr[String] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         family: js.UndefOr[String] = js.undefined,
+        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
         ipcMode: js.UndefOr[IpcMode] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
         networkMode: js.UndefOr[NetworkMode] = js.undefined,
@@ -4074,6 +4441,7 @@ package ecs {
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       family.foreach(__v => __obj.updateDynamic("family")(__v.asInstanceOf[js.Any]))
+      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
       ipcMode.foreach(__v => __obj.updateDynamic("ipcMode")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       networkMode.foreach(__v => __obj.updateDynamic("networkMode")(__v.asInstanceOf[js.Any]))
@@ -4154,8 +4522,10 @@ package ecs {
   @js.native
   trait TaskOverride extends js.Object {
     var containerOverrides: js.UndefOr[ContainerOverrides]
+    var cpu: js.UndefOr[String]
     var executionRoleArn: js.UndefOr[String]
     var inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides]
+    var memory: js.UndefOr[String]
     var taskRoleArn: js.UndefOr[String]
   }
 
@@ -4163,16 +4533,20 @@ package ecs {
     @inline
     def apply(
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
+        cpu: js.UndefOr[String] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides] = js.undefined,
+        memory: js.UndefOr[String] = js.undefined,
         taskRoleArn: js.UndefOr[String] = js.undefined
     ): TaskOverride = {
       val __obj = js.Dynamic.literal()
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       inferenceAcceleratorOverrides.foreach(__v =>
         __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
       )
+      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskOverride]
     }
@@ -4183,6 +4557,7 @@ package ecs {
     */
   @js.native
   trait TaskSet extends js.Object {
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clusterArn: js.UndefOr[String]
     var computedDesiredCount: js.UndefOr[Int]
     var createdAt: js.UndefOr[Timestamp]
@@ -4209,6 +4584,7 @@ package ecs {
   object TaskSet {
     @inline
     def apply(
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
         computedDesiredCount: js.UndefOr[Int] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -4232,6 +4608,7 @@ package ecs {
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): TaskSet = {
       val __obj = js.Dynamic.literal()
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       computedDesiredCount.foreach(__v => __obj.updateDynamic("computedDesiredCount")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
@@ -4558,6 +4935,7 @@ package ecs {
   @js.native
   trait UpdateServiceRequest extends js.Object {
     var service: String
+    var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var cluster: js.UndefOr[String]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
     var desiredCount: js.UndefOr[BoxedInteger]
@@ -4572,6 +4950,7 @@ package ecs {
     @inline
     def apply(
         service: String,
+        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         cluster: js.UndefOr[String] = js.undefined,
         deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
         desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
@@ -4585,6 +4964,7 @@ package ecs {
         "service" -> service.asInstanceOf[js.Any]
       )
 
+      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))

@@ -43,6 +43,7 @@ package object cloudhsmv2 {
   type VpcId                 = String
 
   implicit final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
+
     @inline def copyBackupToRegionFuture(params: CopyBackupToRegionRequest): Future[CopyBackupToRegionResponse] =
       service.copyBackupToRegion(params).promise.toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =

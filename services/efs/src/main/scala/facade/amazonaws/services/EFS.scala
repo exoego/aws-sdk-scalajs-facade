@@ -39,6 +39,7 @@ package object efs {
   type TransitionToIARules          = String
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
+
     @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
       service.createFileSystem(params).promise.toFuture
     @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =

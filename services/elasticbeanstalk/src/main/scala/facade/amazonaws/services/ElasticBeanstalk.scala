@@ -166,6 +166,7 @@ package object elasticbeanstalk {
   type VirtualizationType                   = String
 
   implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
+
     @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
       service.abortEnvironmentUpdate(params).promise.toFuture
     @inline def applyEnvironmentManagedActionFuture(

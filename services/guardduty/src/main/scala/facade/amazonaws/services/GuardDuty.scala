@@ -14,6 +14,8 @@ package object guardduty {
   type ClientToken                = String
   type CountBySeverity            = js.Dictionary[Int]
   type Criterion                  = js.Dictionary[Condition]
+  type DestinationType            = String
+  type Destinations               = js.Array[Destination]
   type DetectorId                 = String
   type DetectorIds                = js.Array[DetectorId]
   type DetectorStatus             = String
@@ -51,6 +53,7 @@ package object guardduty {
   type PortProbeDetails           = js.Array[PortProbeDetail]
   type PrivateIpAddresses         = js.Array[PrivateIpAddressDetails]
   type ProductCodes               = js.Array[ProductCode]
+  type PublishingStatus           = String
   type SecurityGroups             = js.Array[SecurityGroup]
   type TagKey                     = String
   type TagKeyList                 = js.Array[TagKey]
@@ -65,6 +68,7 @@ package object guardduty {
   type UnprocessedAccounts        = js.Array[UnprocessedAccount]
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
+
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture
     @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] =
@@ -77,6 +81,9 @@ package object guardduty {
       service.createIPSet(params).promise.toFuture
     @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
       service.createMembers(params).promise.toFuture
+    @inline def createPublishingDestinationFuture(
+        params: CreatePublishingDestinationRequest
+    ): Future[CreatePublishingDestinationResponse] = service.createPublishingDestination(params).promise.toFuture
     @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] =
       service.createSampleFindings(params).promise.toFuture
     @inline def createThreatIntelSetFuture(params: CreateThreatIntelSetRequest): Future[CreateThreatIntelSetResponse] =
@@ -93,8 +100,14 @@ package object guardduty {
       service.deleteInvitations(params).promise.toFuture
     @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
       service.deleteMembers(params).promise.toFuture
+    @inline def deletePublishingDestinationFuture(
+        params: DeletePublishingDestinationRequest
+    ): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise.toFuture
     @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] =
       service.deleteThreatIntelSet(params).promise.toFuture
+    @inline def describePublishingDestinationFuture(
+        params: DescribePublishingDestinationRequest
+    ): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise.toFuture
     @inline def disassociateFromMasterAccountFuture(
         params: DisassociateFromMasterAccountRequest
     ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
@@ -133,6 +146,9 @@ package object guardduty {
       service.listInvitations(params).promise.toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise.toFuture
+    @inline def listPublishingDestinationsFuture(
+        params: ListPublishingDestinationsRequest
+    ): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
     @inline def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] =
@@ -158,6 +174,9 @@ package object guardduty {
     ): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise.toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
       service.updateIPSet(params).promise.toFuture
+    @inline def updatePublishingDestinationFuture(
+        params: UpdatePublishingDestinationRequest
+    ): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise.toFuture
     @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] =
       service.updateThreatIntelSet(params).promise.toFuture
   }
@@ -169,12 +188,15 @@ package guardduty {
   class GuardDuty() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse]             = js.native
-    def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse]                = js.native
-    def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse]                   = js.native
-    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse]                         = js.native
-    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse]                            = js.native
-    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]                      = js.native
+    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
+    def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse]    = js.native
+    def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse]       = js.native
+    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse]             = js.native
+    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse]                = js.native
+    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]          = js.native
+    def createPublishingDestination(
+        params: CreatePublishingDestinationRequest
+    ): Request[CreatePublishingDestinationResponse]                                                      = js.native
     def createSampleFindings(params: CreateSampleFindingsRequest): Request[CreateSampleFindingsResponse] = js.native
     def createThreatIntelSet(params: CreateThreatIntelSetRequest): Request[CreateThreatIntelSetResponse] = js.native
     def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse]       = js.native
@@ -183,7 +205,13 @@ package guardduty {
     def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse]                            = js.native
     def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse]          = js.native
     def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse]                      = js.native
+    def deletePublishingDestination(
+        params: DeletePublishingDestinationRequest
+    ): Request[DeletePublishingDestinationResponse]                                                      = js.native
     def deleteThreatIntelSet(params: DeleteThreatIntelSetRequest): Request[DeleteThreatIntelSetResponse] = js.native
+    def describePublishingDestination(
+        params: DescribePublishingDestinationRequest
+    ): Request[DescribePublishingDestinationResponse] = js.native
     def disassociateFromMasterAccount(
         params: DisassociateFromMasterAccountRequest
     ): Request[DisassociateFromMasterAccountResponse]                                                       = js.native
@@ -204,8 +232,11 @@ package guardduty {
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse]                                  = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]                   = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                               = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listThreatIntelSets(params: ListThreatIntelSetsRequest): Request[ListThreatIntelSetsResponse]       = js.native
+    def listPublishingDestinations(
+        params: ListPublishingDestinationsRequest
+    ): Request[ListPublishingDestinationsResponse]                                                    = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listThreatIntelSets(params: ListThreatIntelSetsRequest): Request[ListThreatIntelSetsResponse] = js.native
     def startMonitoringMembers(params: StartMonitoringMembersRequest): Request[StartMonitoringMembersResponse] =
       js.native
     def stopMonitoringMembers(params: StopMonitoringMembersRequest): Request[StopMonitoringMembersResponse] = js.native
@@ -216,7 +247,10 @@ package guardduty {
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse]                            = js.native
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] =
       js.native
-    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse]                            = js.native
+    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updatePublishingDestination(
+        params: UpdatePublishingDestinationRequest
+    ): Request[UpdatePublishingDestinationResponse]                                                      = js.native
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
   }
 
@@ -477,7 +511,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the country.
+    * Contains information about the country in which the remote IP address is located.
     */
   @js.native
   trait Country extends js.Object {
@@ -690,6 +724,51 @@ package guardduty {
       )
 
       __obj.asInstanceOf[CreateMembersResponse]
+    }
+  }
+
+  @js.native
+  trait CreatePublishingDestinationRequest extends js.Object {
+    var DestinationProperties: DestinationProperties
+    var DestinationType: DestinationType
+    var DetectorId: DetectorId
+    var ClientToken: js.UndefOr[ClientToken]
+  }
+
+  object CreatePublishingDestinationRequest {
+    @inline
+    def apply(
+        DestinationProperties: DestinationProperties,
+        DestinationType: DestinationType,
+        DetectorId: DetectorId,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined
+    ): CreatePublishingDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationProperties" -> DestinationProperties.asInstanceOf[js.Any],
+        "DestinationType"       -> DestinationType.asInstanceOf[js.Any],
+        "DetectorId"            -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePublishingDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePublishingDestinationResponse extends js.Object {
+    var DestinationId: String
+  }
+
+  object CreatePublishingDestinationResponse {
+    @inline
+    def apply(
+        DestinationId: String
+    ): CreatePublishingDestinationResponse = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreatePublishingDestinationResponse]
     }
   }
 
@@ -992,6 +1071,40 @@ package guardduty {
   }
 
   @js.native
+  trait DeletePublishingDestinationRequest extends js.Object {
+    var DestinationId: String
+    var DetectorId: DetectorId
+  }
+
+  object DeletePublishingDestinationRequest {
+    @inline
+    def apply(
+        DestinationId: String,
+        DetectorId: DetectorId
+    ): DeletePublishingDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
+        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePublishingDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePublishingDestinationResponse extends js.Object {}
+
+  object DeletePublishingDestinationResponse {
+    @inline
+    def apply(
+        ): DeletePublishingDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeletePublishingDestinationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteThreatIntelSetRequest extends js.Object {
     var DetectorId: DetectorId
     var ThreatIntelSetId: String
@@ -1023,6 +1136,112 @@ package guardduty {
 
       __obj.asInstanceOf[DeleteThreatIntelSetResponse]
     }
+  }
+
+  @js.native
+  trait DescribePublishingDestinationRequest extends js.Object {
+    var DestinationId: String
+    var DetectorId: DetectorId
+  }
+
+  object DescribePublishingDestinationRequest {
+    @inline
+    def apply(
+        DestinationId: String,
+        DetectorId: DetectorId
+    ): DescribePublishingDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
+        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribePublishingDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePublishingDestinationResponse extends js.Object {
+    var DestinationId: String
+    var DestinationProperties: DestinationProperties
+    var DestinationType: DestinationType
+    var PublishingFailureStartTimestamp: Double
+    var Status: PublishingStatus
+  }
+
+  object DescribePublishingDestinationResponse {
+    @inline
+    def apply(
+        DestinationId: String,
+        DestinationProperties: DestinationProperties,
+        DestinationType: DestinationType,
+        PublishingFailureStartTimestamp: Double,
+        Status: PublishingStatus
+    ): DescribePublishingDestinationResponse = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId"                   -> DestinationId.asInstanceOf[js.Any],
+        "DestinationProperties"           -> DestinationProperties.asInstanceOf[js.Any],
+        "DestinationType"                 -> DestinationType.asInstanceOf[js.Any],
+        "PublishingFailureStartTimestamp" -> PublishingFailureStartTimestamp.asInstanceOf[js.Any],
+        "Status"                          -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribePublishingDestinationResponse]
+    }
+  }
+
+  /**
+    * Contains information about a publishing destination, including the ID, type, and status.
+    */
+  @js.native
+  trait Destination extends js.Object {
+    var DestinationId: String
+    var DestinationType: DestinationType
+    var Status: PublishingStatus
+  }
+
+  object Destination {
+    @inline
+    def apply(
+        DestinationId: String,
+        DestinationType: DestinationType,
+        Status: PublishingStatus
+    ): Destination = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId"   -> DestinationId.asInstanceOf[js.Any],
+        "DestinationType" -> DestinationType.asInstanceOf[js.Any],
+        "Status"          -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Destination]
+    }
+  }
+
+  /**
+    * Contains the ARN of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+    */
+  @js.native
+  trait DestinationProperties extends js.Object {
+    var DestinationArn: js.UndefOr[String]
+    var KmsKeyArn: js.UndefOr[String]
+  }
+
+  object DestinationProperties {
+    @inline
+    def apply(
+        DestinationArn: js.UndefOr[String] = js.undefined,
+        KmsKeyArn: js.UndefOr[String] = js.undefined
+    ): DestinationProperties = {
+      val __obj = js.Dynamic.literal()
+      DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationProperties]
+    }
+  }
+
+  object DestinationTypeEnum {
+    val S3 = "S3"
+
+    val values = js.Object.freeze(js.Array(S3))
   }
 
   object DetectorStatusEnum {
@@ -1103,7 +1322,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the DNS request.
+    * Contains information about the DNS_REQUEST action described in this finding.
     */
   @js.native
   trait DnsRequestAction extends js.Object {
@@ -1176,7 +1395,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the finding.
+    * Contains information about the finding, which is generated when abnormal or suspicious activity is detected.
     */
   @js.native
   trait Finding extends js.Object {
@@ -1239,7 +1458,7 @@ package guardduty {
   }
 
   /**
-    * Contains finding criteria information.
+    * Contains information about the criteria used for querying findings.
     */
   @js.native
   trait FindingCriteria extends js.Object {
@@ -1291,7 +1510,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the
+    * Contains information about the location of the remote IP address.
     */
   @js.native
   trait GeoLocation extends js.Object {
@@ -1713,7 +1932,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the instance profile.
+    * Contains information about the EC2 instance profile.
     */
   @js.native
   trait IamInstanceProfile extends js.Object {
@@ -1787,7 +2006,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the invitation.
+    * Contains information about the invitation to become a member account.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -2148,6 +2367,51 @@ package guardduty {
   }
 
   @js.native
+  trait ListPublishingDestinationsRequest extends js.Object {
+    var DetectorId: DetectorId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListPublishingDestinationsRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListPublishingDestinationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublishingDestinationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPublishingDestinationsResponse extends js.Object {
+    var Destinations: Destinations
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListPublishingDestinationsResponse {
+    @inline
+    def apply(
+        Destinations: Destinations,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListPublishingDestinationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Destinations" -> Destinations.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublishingDestinationsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: GuardDutyArn
   }
@@ -2316,7 +2580,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the network connection.
+    * Contains information about the NETWORK_CONNECTION action described in the finding.
     */
   @js.native
   trait NetworkConnectionAction extends js.Object {
@@ -2350,7 +2614,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the network interface.
+    * Contains information about the network interface of the Ec2 instance.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2403,7 +2667,7 @@ package guardduty {
   }
 
   /**
-    * Continas information about the organization.
+    * Continas information about the ISP organization of the remote IP address.
     */
   @js.native
   trait Organization extends js.Object {
@@ -2431,7 +2695,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the port probe.
+    * Contains information about the PORT_PROBE action described in the finding.
     */
   @js.native
   trait PortProbeAction extends js.Object {
@@ -2475,7 +2739,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the private IP address.
+    * Contains other private IP address information of the EC2 instance.
     */
   @js.native
   trait PrivateIpAddressDetails extends js.Object {
@@ -2497,7 +2761,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the product code.
+    * Contains information about the product code for the Ec2 instance.
     */
   @js.native
   trait ProductCode extends js.Object {
@@ -2518,8 +2782,18 @@ package guardduty {
     }
   }
 
+  object PublishingStatusEnum {
+    val PENDING_VERIFICATION                       = "PENDING_VERIFICATION"
+    val PUBLISHING                                 = "PUBLISHING"
+    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY"
+    val STOPPED                                    = "STOPPED"
+
+    val values =
+      js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
+  }
+
   /**
-    * Continas information about the remote IP address.
+    * Continas information about the remote IP address of the connection.
     */
   @js.native
   trait RemoteIpDetails extends js.Object {
@@ -2572,7 +2846,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the resource.
+    * Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
     */
   @js.native
   trait Resource extends js.Object {
@@ -2597,7 +2871,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the security group.
+    * Contains information about the security groups associated with the EC2 instance.
     */
   @js.native
   trait SecurityGroup extends js.Object {
@@ -2619,7 +2893,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the service.
+    * Contains additional information about the generated finding.
     */
   @js.native
   trait Service extends js.Object {
@@ -2665,7 +2939,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the criteria for sorting.
+    * Contains information about the criteria used for sorting findings.
     */
   @js.native
   trait SortCriteria extends js.Object {
@@ -2765,7 +3039,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the tag associated with the resource.
+    * Contains information about a tag associated with the Ec2 instance.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3127,6 +3401,43 @@ package guardduty {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIPSetResponse]
+    }
+  }
+
+  @js.native
+  trait UpdatePublishingDestinationRequest extends js.Object {
+    var DestinationId: String
+    var DetectorId: DetectorId
+    var DestinationProperties: js.UndefOr[DestinationProperties]
+  }
+
+  object UpdatePublishingDestinationRequest {
+    @inline
+    def apply(
+        DestinationId: String,
+        DetectorId: DetectorId,
+        DestinationProperties: js.UndefOr[DestinationProperties] = js.undefined
+    ): UpdatePublishingDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
+        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      DestinationProperties.foreach(__v => __obj.updateDynamic("DestinationProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublishingDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePublishingDestinationResponse extends js.Object {}
+
+  object UpdatePublishingDestinationResponse {
+    @inline
+    def apply(
+        ): UpdatePublishingDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdatePublishingDestinationResponse]
     }
   }
 

@@ -87,6 +87,7 @@ package object robomaker {
   type VersionQualifier                   = String
 
   implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
+
     @inline def batchDescribeSimulationJobFuture(
         params: BatchDescribeSimulationJobRequest
     ): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise.toFuture

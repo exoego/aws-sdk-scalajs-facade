@@ -8,84 +8,105 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object lambda {
-  type Action                   = String
-  type AdditionalVersion        = String
-  type AdditionalVersionWeights = js.Dictionary[Weight]
-  type Alias                    = String
-  type AliasList                = js.Array[AliasConfiguration]
-  type Arn                      = String
-  type BatchSize                = Int
-  type Blob                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Action                     = String
+  type AdditionalVersion          = String
+  type AdditionalVersionWeights   = js.Dictionary[Weight]
+  type Alias                      = String
+  type AliasList                  = js.Array[AliasConfiguration]
+  type Arn                        = String
+  type BatchSize                  = Int
+  type BisectBatchOnFunctionError = Boolean
+  type Blob                       = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BlobStream =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CompatibleRuntimes              = js.Array[Runtime]
-  type Date                            = js.Date
-  type Description                     = String
-  type Enabled                         = Boolean
-  type EnvironmentVariableName         = String
-  type EnvironmentVariableValue        = String
-  type EnvironmentVariables            = js.Dictionary[EnvironmentVariableValue]
-  type EventSourceMappingsList         = js.Array[EventSourceMappingConfiguration]
-  type EventSourcePosition             = String
-  type EventSourceToken                = String
-  type FunctionArn                     = String
-  type FunctionList                    = js.Array[FunctionConfiguration]
-  type FunctionName                    = String
-  type FunctionVersion                 = String
-  type Handler                         = String
-  type HttpStatus                      = Int
-  type InvocationType                  = String
-  type KMSKeyArn                       = String
-  type LayerArn                        = String
-  type LayerList                       = js.Array[LayerVersionArn]
-  type LayerName                       = String
-  type LayerPermissionAllowedAction    = String
-  type LayerPermissionAllowedPrincipal = String
-  type LayerVersionArn                 = String
-  type LayerVersionNumber              = Double
-  type LayerVersionsList               = js.Array[LayerVersionsListItem]
-  type LayersList                      = js.Array[LayersListItem]
-  type LayersReferenceList             = js.Array[Layer]
-  type LicenseInfo                     = String
-  type LogType                         = String
-  type MasterRegion                    = String
-  type MaxLayerListItems               = Int
-  type MaxListItems                    = Int
-  type MaximumBatchingWindowInSeconds  = Int
-  type MemorySize                      = Int
-  type NameSpacedFunctionArn           = String
-  type NamespacedFunctionName          = String
-  type NamespacedStatementId           = String
-  type OrganizationId                  = String
-  type Principal                       = String
-  type Qualifier                       = String
-  type ReservedConcurrentExecutions    = Int
-  type ResourceArn                     = String
-  type RoleArn                         = String
-  type Runtime                         = String
-  type S3Bucket                        = String
-  type S3Key                           = String
-  type S3ObjectVersion                 = String
-  type SecurityGroupId                 = String
-  type SecurityGroupIds                = js.Array[SecurityGroupId]
-  type SensitiveString                 = String
-  type SourceOwner                     = String
-  type StatementId                     = String
-  type SubnetId                        = String
-  type SubnetIds                       = js.Array[SubnetId]
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagValue                        = String
-  type Tags                            = js.Dictionary[TagValue]
-  type Timeout                         = Int
-  type Timestamp                       = String
-  type TracingMode                     = String
-  type UnreservedConcurrentExecutions  = Int
-  type Version                         = String
-  type VpcId                           = String
-  type Weight                          = Double
+  type CompatibleRuntimes                       = js.Array[Runtime]
+  type Date                                     = js.Date
+  type Description                              = String
+  type DestinationArn                           = String
+  type Enabled                                  = Boolean
+  type EnvironmentVariableName                  = String
+  type EnvironmentVariableValue                 = String
+  type EnvironmentVariables                     = js.Dictionary[EnvironmentVariableValue]
+  type EventSourceMappingsList                  = js.Array[EventSourceMappingConfiguration]
+  type EventSourcePosition                      = String
+  type EventSourceToken                         = String
+  type FunctionArn                              = String
+  type FunctionEventInvokeConfigList            = js.Array[FunctionEventInvokeConfig]
+  type FunctionList                             = js.Array[FunctionConfiguration]
+  type FunctionName                             = String
+  type FunctionVersion                          = String
+  type Handler                                  = String
+  type HttpStatus                               = Int
+  type InvocationType                           = String
+  type KMSKeyArn                                = String
+  type LastUpdateStatus                         = String
+  type LastUpdateStatusReason                   = String
+  type LastUpdateStatusReasonCode               = String
+  type LayerArn                                 = String
+  type LayerList                                = js.Array[LayerVersionArn]
+  type LayerName                                = String
+  type LayerPermissionAllowedAction             = String
+  type LayerPermissionAllowedPrincipal          = String
+  type LayerVersionArn                          = String
+  type LayerVersionNumber                       = Double
+  type LayerVersionsList                        = js.Array[LayerVersionsListItem]
+  type LayersList                               = js.Array[LayersListItem]
+  type LayersReferenceList                      = js.Array[Layer]
+  type LicenseInfo                              = String
+  type LogType                                  = String
+  type MasterRegion                             = String
+  type MaxFunctionEventInvokeConfigListItems    = Int
+  type MaxLayerListItems                        = Int
+  type MaxListItems                             = Int
+  type MaxProvisionedConcurrencyConfigListItems = Int
+  type MaximumBatchingWindowInSeconds           = Int
+  type MaximumEventAgeInSeconds                 = Int
+  type MaximumRecordAgeInSeconds                = Int
+  type MaximumRetryAttempts                     = Int
+  type MaximumRetryAttemptsEventSourceMapping   = Int
+  type MemorySize                               = Int
+  type NameSpacedFunctionArn                    = String
+  type NamespacedFunctionName                   = String
+  type NamespacedStatementId                    = String
+  type NonNegativeInteger                       = Int
+  type OrganizationId                           = String
+  type ParallelizationFactor                    = Int
+  type PositiveInteger                          = Int
+  type Principal                                = String
+  type ProvisionedConcurrencyConfigList         = js.Array[ProvisionedConcurrencyConfigListItem]
+  type ProvisionedConcurrencyStatusEnum         = String
+  type Qualifier                                = String
+  type ReservedConcurrentExecutions             = Int
+  type ResourceArn                              = String
+  type RoleArn                                  = String
+  type Runtime                                  = String
+  type S3Bucket                                 = String
+  type S3Key                                    = String
+  type S3ObjectVersion                          = String
+  type SecurityGroupId                          = String
+  type SecurityGroupIds                         = js.Array[SecurityGroupId]
+  type SensitiveString                          = String
+  type SourceOwner                              = String
+  type State                                    = String
+  type StateReason                              = String
+  type StateReasonCode                          = String
+  type StatementId                              = String
+  type SubnetId                                 = String
+  type SubnetIds                                = js.Array[SubnetId]
+  type TagKey                                   = String
+  type TagKeyList                               = js.Array[TagKey]
+  type TagValue                                 = String
+  type Tags                                     = js.Dictionary[TagValue]
+  type Timeout                                  = Int
+  type Timestamp                                = String
+  type TracingMode                              = String
+  type UnreservedConcurrentExecutions           = Int
+  type Version                                  = String
+  type VpcId                                    = String
+  type Weight                                   = Double
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
+
     @inline def addLayerVersionPermissionFuture(
         params: AddLayerVersionPermissionRequest
     ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise.toFuture
@@ -105,10 +126,16 @@ package object lambda {
     ): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise.toFuture
     @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] =
       service.deleteFunctionConcurrency(params).promise.toFuture
+    @inline def deleteFunctionEventInvokeConfigFuture(
+        params: DeleteFunctionEventInvokeConfigRequest
+    ): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise.toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] =
       service.deleteFunction(params).promise.toFuture
     @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] =
       service.deleteLayerVersion(params).promise.toFuture
+    @inline def deleteProvisionedConcurrencyConfigFuture(
+        params: DeleteProvisionedConcurrencyConfigRequest
+    ): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise.toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
       service.getAccountSettings(params).promise.toFuture
     @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] =
@@ -116,8 +143,14 @@ package object lambda {
     @inline def getEventSourceMappingFuture(
         params: GetEventSourceMappingRequest
     ): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise.toFuture
+    @inline def getFunctionConcurrencyFuture(
+        params: GetFunctionConcurrencyRequest
+    ): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise.toFuture
     @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] =
       service.getFunctionConfiguration(params).promise.toFuture
+    @inline def getFunctionEventInvokeConfigFuture(
+        params: GetFunctionEventInvokeConfigRequest
+    ): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise.toFuture
     @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
       service.getFunction(params).promise.toFuture
     @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
@@ -129,6 +162,10 @@ package object lambda {
     ): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise.toFuture
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
+    @inline def getProvisionedConcurrencyConfigFuture(
+        params: GetProvisionedConcurrencyConfigRequest
+    ): Future[GetProvisionedConcurrencyConfigResponse] =
+      service.getProvisionedConcurrencyConfig(params).promise.toFuture
     @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] =
       service.invoke(params).promise.toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
@@ -136,12 +173,19 @@ package object lambda {
     @inline def listEventSourceMappingsFuture(
         params: ListEventSourceMappingsRequest
     ): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise.toFuture
+    @inline def listFunctionEventInvokeConfigsFuture(
+        params: ListFunctionEventInvokeConfigsRequest
+    ): Future[ListFunctionEventInvokeConfigsResponse] = service.listFunctionEventInvokeConfigs(params).promise.toFuture
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
       service.listFunctions(params).promise.toFuture
     @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] =
       service.listLayerVersions(params).promise.toFuture
     @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] =
       service.listLayers(params).promise.toFuture
+    @inline def listProvisionedConcurrencyConfigsFuture(
+        params: ListProvisionedConcurrencyConfigsRequest
+    ): Future[ListProvisionedConcurrencyConfigsResponse] =
+      service.listProvisionedConcurrencyConfigs(params).promise.toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
       service.listTags(params).promise.toFuture
     @inline def listVersionsByFunctionFuture(
@@ -153,6 +197,13 @@ package object lambda {
       service.publishVersion(params).promise.toFuture
     @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] =
       service.putFunctionConcurrency(params).promise.toFuture
+    @inline def putFunctionEventInvokeConfigFuture(
+        params: PutFunctionEventInvokeConfigRequest
+    ): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise.toFuture
+    @inline def putProvisionedConcurrencyConfigFuture(
+        params: PutProvisionedConcurrencyConfigRequest
+    ): Future[PutProvisionedConcurrencyConfigResponse] =
+      service.putProvisionedConcurrencyConfig(params).promise.toFuture
     @inline def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] =
       service.removeLayerVersionPermission(params).promise.toFuture
     @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
@@ -171,6 +222,9 @@ package object lambda {
     @inline def updateFunctionConfigurationFuture(
         params: UpdateFunctionConfigurationRequest
     ): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise.toFuture
+    @inline def updateFunctionEventInvokeConfigFuture(
+        params: UpdateFunctionEventInvokeConfigRequest
+    ): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise.toFuture
   }
 }
 
@@ -191,32 +245,53 @@ package lambda {
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object]                   = js.native
     def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
-    def deleteFunction(params: DeleteFunctionRequest): Request[js.Object]                          = js.native
-    def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object]    = js.native
-    def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object]                  = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[js.Object]                                   = js.native
+    def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object]             = js.native
+    def deleteFunctionEventInvokeConfig(params: DeleteFunctionEventInvokeConfigRequest): Request[js.Object] = js.native
+    def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object]                           = js.native
+    def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] =
+      js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
     def getAlias(params: GetAliasRequest): Request[AliasConfiguration]                             = js.native
     def getEventSourceMapping(params: GetEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
-    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse]                               = js.native
-    def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration]   = js.native
+    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
+    def getFunctionConcurrency(params: GetFunctionConcurrencyRequest): Request[GetFunctionConcurrencyResponse] =
+      js.native
+    def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
+    def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
+      js.native
     def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse]                   = js.native
     def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse]         = js.native
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                     = js.native
-    def invoke(params: InvocationRequest): Request[InvocationResponse]                                      = js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                               = js.native
+    def getProvisionedConcurrencyConfig(
+        params: GetProvisionedConcurrencyConfigRequest
+    ): Request[GetProvisionedConcurrencyConfigResponse]                       = js.native
+    def invoke(params: InvocationRequest): Request[InvocationResponse]        = js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] =
       js.native
+    def listFunctionEventInvokeConfigs(
+        params: ListFunctionEventInvokeConfigsRequest
+    ): Request[ListFunctionEventInvokeConfigsResponse]                                          = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse]             = js.native
     def listLayerVersions(params: ListLayerVersionsRequest): Request[ListLayerVersionsResponse] = js.native
     def listLayers(params: ListLayersRequest): Request[ListLayersResponse]                      = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                            = js.native
+    def listProvisionedConcurrencyConfigs(
+        params: ListProvisionedConcurrencyConfigsRequest
+    ): Request[ListProvisionedConcurrencyConfigsResponse]            = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def listVersionsByFunction(params: ListVersionsByFunctionRequest): Request[ListVersionsByFunctionResponse] =
       js.native
     def publishLayerVersion(params: PublishLayerVersionRequest): Request[PublishLayerVersionResponse] = js.native
     def publishVersion(params: PublishVersionRequest): Request[FunctionConfiguration]                 = js.native
     def putFunctionConcurrency(params: PutFunctionConcurrencyRequest): Request[Concurrency]           = js.native
+    def putFunctionEventInvokeConfig(params: PutFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
+      js.native
+    def putProvisionedConcurrencyConfig(
+        params: PutProvisionedConcurrencyConfigRequest
+    ): Request[PutProvisionedConcurrencyConfigResponse]                                               = js.native
     def removeLayerVersionPermission(params: RemoveLayerVersionPermissionRequest): Request[js.Object] = js.native
     def removePermission(params: RemovePermissionRequest): Request[js.Object]                         = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
@@ -227,13 +302,16 @@ package lambda {
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] =
       js.native
+    def updateFunctionEventInvokeConfig(
+        params: UpdateFunctionEventInvokeConfigRequest
+    ): Request[FunctionEventInvokeConfig] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(
         params: InvokeAsyncRequest
     ): Request[InvokeAsyncResponse] = js.native
   }
 
   /**
-    * Limits that are related to concurrency and code storage. All file and storage sizes are in bytes.
+    * Limits that are related to concurrency and storage. All file and storage sizes are in bytes.
     */
   @js.native
   trait AccountLimit extends js.Object {
@@ -506,8 +584,13 @@ package lambda {
     var EventSourceArn: Arn
     var FunctionName: FunctionName
     var BatchSize: js.UndefOr[BatchSize]
+    var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
+    var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
+    var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
+    var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
   }
@@ -518,8 +601,13 @@ package lambda {
         EventSourceArn: Arn,
         FunctionName: FunctionName,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
+        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
+        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
+        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined
     ): CreateEventSourceMappingRequest = {
@@ -529,10 +617,19 @@ package lambda {
       )
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      BisectBatchOnFunctionError.foreach(__v =>
+        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
+      )
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v =>
         __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
+      MaximumRecordAgeInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v =>
         __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
@@ -605,7 +702,7 @@ package lambda {
   }
 
   /**
-    * The [[https://docs.aws.amazon.com/lambda/latest/dg/dlq.html|dead letter queue]] for failed asynchronous invocations.
+    * The [[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq|dead-letter queue]] for failed asynchronous invocations.
     */
   @js.native
   trait DeadLetterConfig extends js.Object {
@@ -681,6 +778,27 @@ package lambda {
   }
 
   @js.native
+  trait DeleteFunctionEventInvokeConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: js.UndefOr[Qualifier]
+  }
+
+  object DeleteFunctionEventInvokeConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: js.UndefOr[Qualifier] = js.undefined
+    ): DeleteFunctionEventInvokeConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFunctionEventInvokeConfigRequest]
+    }
+  }
+
+  @js.native
   trait DeleteFunctionRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: js.UndefOr[Qualifier]
@@ -719,6 +837,49 @@ package lambda {
       )
 
       __obj.asInstanceOf[DeleteLayerVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProvisionedConcurrencyConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: Qualifier
+  }
+
+  object DeleteProvisionedConcurrencyConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: Qualifier
+    ): DeleteProvisionedConcurrencyConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteProvisionedConcurrencyConfigRequest]
+    }
+  }
+
+  /**
+    * A configuration object that specifies the destination of an event after Lambda processes it.
+    */
+  @js.native
+  trait DestinationConfig extends js.Object {
+    var OnFailure: js.UndefOr[OnFailure]
+    var OnSuccess: js.UndefOr[OnSuccess]
+  }
+
+  object DestinationConfig {
+    @inline
+    def apply(
+        OnFailure: js.UndefOr[OnFailure] = js.undefined,
+        OnSuccess: js.UndefOr[OnSuccess] = js.undefined
+    ): DestinationConfig = {
+      val __obj = js.Dynamic.literal()
+      OnFailure.foreach(__v => __obj.updateDynamic("OnFailure")(__v.asInstanceOf[js.Any]))
+      OnSuccess.foreach(__v => __obj.updateDynamic("OnSuccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationConfig]
     }
   }
 
@@ -764,7 +925,7 @@ package lambda {
   }
 
   /**
-    * The results of a configuration update that applied environment variables.
+    * The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.
     */
   @js.native
   trait EnvironmentResponse extends js.Object {
@@ -791,11 +952,16 @@ package lambda {
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
     var BatchSize: js.UndefOr[BatchSize]
+    var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
+    var DestinationConfig: js.UndefOr[DestinationConfig]
     var EventSourceArn: js.UndefOr[Arn]
     var FunctionArn: js.UndefOr[FunctionArn]
     var LastModified: js.UndefOr[Date]
     var LastProcessingResult: js.UndefOr[String]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
+    var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
+    var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var State: js.UndefOr[String]
     var StateTransitionReason: js.UndefOr[String]
     var UUID: js.UndefOr[String]
@@ -805,17 +971,26 @@ package lambda {
     @inline
     def apply(
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
+        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
         FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
         LastModified: js.UndefOr[Date] = js.undefined,
         LastProcessingResult: js.UndefOr[String] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
+        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
+        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         StateTransitionReason: js.UndefOr[String] = js.undefined,
         UUID: js.UndefOr[String] = js.undefined
     ): EventSourceMappingConfiguration = {
       val __obj = js.Dynamic.literal()
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      BisectBatchOnFunctionError.foreach(__v =>
+        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
+      )
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
@@ -823,6 +998,11 @@ package lambda {
       MaximumBatchingWindowInSeconds.foreach(__v =>
         __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
+      MaximumRecordAgeInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
       UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
@@ -903,12 +1083,18 @@ package lambda {
     var Handler: js.UndefOr[Handler]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var LastModified: js.UndefOr[Timestamp]
+    var LastUpdateStatus: js.UndefOr[LastUpdateStatus]
+    var LastUpdateStatusReason: js.UndefOr[LastUpdateStatusReason]
+    var LastUpdateStatusReasonCode: js.UndefOr[LastUpdateStatusReasonCode]
     var Layers: js.UndefOr[LayersReferenceList]
     var MasterArn: js.UndefOr[FunctionArn]
     var MemorySize: js.UndefOr[MemorySize]
     var RevisionId: js.UndefOr[String]
     var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
+    var State: js.UndefOr[State]
+    var StateReason: js.UndefOr[StateReason]
+    var StateReasonCode: js.UndefOr[StateReasonCode]
     var Timeout: js.UndefOr[Timeout]
     var TracingConfig: js.UndefOr[TracingConfigResponse]
     var Version: js.UndefOr[Version]
@@ -928,12 +1114,18 @@ package lambda {
         Handler: js.UndefOr[Handler] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         LastModified: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdateStatus: js.UndefOr[LastUpdateStatus] = js.undefined,
+        LastUpdateStatusReason: js.UndefOr[LastUpdateStatusReason] = js.undefined,
+        LastUpdateStatusReasonCode: js.UndefOr[LastUpdateStatusReasonCode] = js.undefined,
         Layers: js.UndefOr[LayersReferenceList] = js.undefined,
         MasterArn: js.UndefOr[FunctionArn] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined,
         Role: js.UndefOr[RoleArn] = js.undefined,
         Runtime: js.UndefOr[Runtime] = js.undefined,
+        State: js.UndefOr[State] = js.undefined,
+        StateReason: js.UndefOr[StateReason] = js.undefined,
+        StateReasonCode: js.UndefOr[StateReasonCode] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         TracingConfig: js.UndefOr[TracingConfigResponse] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined,
@@ -950,17 +1142,53 @@ package lambda {
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
+      LastUpdateStatusReason.foreach(__v => __obj.updateDynamic("LastUpdateStatusReason")(__v.asInstanceOf[js.Any]))
+      LastUpdateStatusReasonCode.foreach(__v =>
+        __obj.updateDynamic("LastUpdateStatusReasonCode")(__v.asInstanceOf[js.Any])
+      )
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MasterArn.foreach(__v => __obj.updateDynamic("MasterArn")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      StateReasonCode.foreach(__v => __obj.updateDynamic("StateReasonCode")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
+    }
+  }
+
+  @js.native
+  trait FunctionEventInvokeConfig extends js.Object {
+    var DestinationConfig: js.UndefOr[DestinationConfig]
+    var FunctionArn: js.UndefOr[FunctionArn]
+    var LastModified: js.UndefOr[Date]
+    var MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts]
+  }
+
+  object FunctionEventInvokeConfig {
+    @inline
+    def apply(
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
+        FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
+        LastModified: js.UndefOr[Date] = js.undefined,
+        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined
+    ): FunctionEventInvokeConfig = {
+      val __obj = js.Dynamic.literal()
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionEventInvokeConfig]
     }
   }
 
@@ -1042,6 +1270,42 @@ package lambda {
   }
 
   @js.native
+  trait GetFunctionConcurrencyRequest extends js.Object {
+    var FunctionName: FunctionName
+  }
+
+  object GetFunctionConcurrencyRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName
+    ): GetFunctionConcurrencyRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetFunctionConcurrencyRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionConcurrencyResponse extends js.Object {
+    var ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions]
+  }
+
+  object GetFunctionConcurrencyResponse {
+    @inline
+    def apply(
+        ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
+    ): GetFunctionConcurrencyResponse = {
+      val __obj = js.Dynamic.literal()
+      ReservedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetFunctionConcurrencyResponse]
+    }
+  }
+
+  @js.native
   trait GetFunctionConfigurationRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
@@ -1059,6 +1323,27 @@ package lambda {
 
       Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionEventInvokeConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: js.UndefOr[Qualifier]
+  }
+
+  object GetFunctionEventInvokeConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: js.UndefOr[Qualifier] = js.undefined
+    ): GetFunctionEventInvokeConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFunctionEventInvokeConfigRequest]
     }
   }
 
@@ -1265,6 +1550,64 @@ package lambda {
   }
 
   @js.native
+  trait GetProvisionedConcurrencyConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: Qualifier
+  }
+
+  object GetProvisionedConcurrencyConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: Qualifier
+    ): GetProvisionedConcurrencyConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetProvisionedConcurrencyConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetProvisionedConcurrencyConfigResponse extends js.Object {
+    var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var LastModified: js.UndefOr[Timestamp]
+    var RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger]
+    var Status: js.UndefOr[ProvisionedConcurrencyStatusEnum]
+    var StatusReason: js.UndefOr[String]
+  }
+
+  object GetProvisionedConcurrencyConfigResponse {
+    @inline
+    def apply(
+        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        LastModified: js.UndefOr[Timestamp] = js.undefined,
+        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
+        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
+        StatusReason: js.UndefOr[String] = js.undefined
+    ): GetProvisionedConcurrencyConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      AvailableProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      RequestedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProvisionedConcurrencyConfigResponse]
+    }
+  }
+
+  @js.native
   trait InvocationRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var ClientContext: js.UndefOr[String]
@@ -1373,6 +1716,24 @@ package lambda {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeAsyncResponse]
     }
+  }
+
+  object LastUpdateStatusEnum {
+    val Successful = "Successful"
+    val Failed     = "Failed"
+    val InProgress = "InProgress"
+
+    val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
+  }
+
+  object LastUpdateStatusReasonCodeEnum {
+    val EniLimitExceeded            = "EniLimitExceeded"
+    val InsufficientRolePermissions = "InsufficientRolePermissions"
+    val InvalidConfiguration        = "InvalidConfiguration"
+    val InternalError               = "InternalError"
+
+    val values =
+      js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError))
   }
 
   /**
@@ -1600,6 +1961,51 @@ package lambda {
   }
 
   @js.native
+  trait ListFunctionEventInvokeConfigsRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[MaxFunctionEventInvokeConfigListItems]
+  }
+
+  object ListFunctionEventInvokeConfigsRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[MaxFunctionEventInvokeConfigListItems] = js.undefined
+    ): ListFunctionEventInvokeConfigsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionEventInvokeConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFunctionEventInvokeConfigsResponse extends js.Object {
+    var FunctionEventInvokeConfigs: js.UndefOr[FunctionEventInvokeConfigList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ListFunctionEventInvokeConfigsResponse {
+    @inline
+    def apply(
+        FunctionEventInvokeConfigs: js.UndefOr[FunctionEventInvokeConfigList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ListFunctionEventInvokeConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      FunctionEventInvokeConfigs.foreach(__v =>
+        __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any])
+      )
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionEventInvokeConfigsResponse]
+    }
+  }
+
+  @js.native
   trait ListFunctionsRequest extends js.Object {
     var FunctionVersion: js.UndefOr[FunctionVersion]
     var Marker: js.UndefOr[String]
@@ -1734,6 +2140,51 @@ package lambda {
   }
 
   @js.native
+  trait ListProvisionedConcurrencyConfigsRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[MaxProvisionedConcurrencyConfigListItems]
+  }
+
+  object ListProvisionedConcurrencyConfigsRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[MaxProvisionedConcurrencyConfigListItems] = js.undefined
+    ): ListProvisionedConcurrencyConfigsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProvisionedConcurrencyConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListProvisionedConcurrencyConfigsResponse extends js.Object {
+    var NextMarker: js.UndefOr[String]
+    var ProvisionedConcurrencyConfigs: js.UndefOr[ProvisionedConcurrencyConfigList]
+  }
+
+  object ListProvisionedConcurrencyConfigsResponse {
+    @inline
+    def apply(
+        NextMarker: js.UndefOr[String] = js.undefined,
+        ProvisionedConcurrencyConfigs: js.UndefOr[ProvisionedConcurrencyConfigList] = js.undefined
+    ): ListProvisionedConcurrencyConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      ProvisionedConcurrencyConfigs.foreach(__v =>
+        __obj.updateDynamic("ProvisionedConcurrencyConfigs")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListProvisionedConcurrencyConfigsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsRequest extends js.Object {
     var Resource: FunctionArn
   }
@@ -1815,6 +2266,95 @@ package lambda {
     val Tail = "Tail"
 
     val values = js.Object.freeze(js.Array(None, Tail))
+  }
+
+  /**
+    * A destination for events that failed processing.
+    */
+  @js.native
+  trait OnFailure extends js.Object {
+    var Destination: js.UndefOr[DestinationArn]
+  }
+
+  object OnFailure {
+    @inline
+    def apply(
+        Destination: js.UndefOr[DestinationArn] = js.undefined
+    ): OnFailure = {
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OnFailure]
+    }
+  }
+
+  /**
+    * A destination for events that were processed successfully.
+    */
+  @js.native
+  trait OnSuccess extends js.Object {
+    var Destination: js.UndefOr[DestinationArn]
+  }
+
+  object OnSuccess {
+    @inline
+    def apply(
+        Destination: js.UndefOr[DestinationArn] = js.undefined
+    ): OnSuccess = {
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OnSuccess]
+    }
+  }
+
+  /**
+    * Details about the provisioned concurrency configuration for a function alias or version.
+    */
+  @js.native
+  trait ProvisionedConcurrencyConfigListItem extends js.Object {
+    var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var FunctionArn: js.UndefOr[FunctionArn]
+    var LastModified: js.UndefOr[Timestamp]
+    var RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger]
+    var Status: js.UndefOr[ProvisionedConcurrencyStatusEnum]
+    var StatusReason: js.UndefOr[String]
+  }
+
+  object ProvisionedConcurrencyConfigListItem {
+    @inline
+    def apply(
+        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
+        LastModified: js.UndefOr[Timestamp] = js.undefined,
+        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
+        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
+        StatusReason: js.UndefOr[String] = js.undefined
+    ): ProvisionedConcurrencyConfigListItem = {
+      val __obj = js.Dynamic.literal()
+      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      AvailableProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      RequestedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisionedConcurrencyConfigListItem]
+    }
+  }
+
+  object ProvisionedConcurrencyStatusEnumEnum {
+    val IN_PROGRESS = "IN_PROGRESS"
+    val READY       = "READY"
+    val FAILED      = "FAILED"
+
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
 
   @js.native
@@ -1933,6 +2473,97 @@ package lambda {
   }
 
   @js.native
+  trait PutFunctionEventInvokeConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var DestinationConfig: js.UndefOr[DestinationConfig]
+    var MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts]
+    var Qualifier: js.UndefOr[Qualifier]
+  }
+
+  object PutFunctionEventInvokeConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
+        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined,
+        Qualifier: js.UndefOr[Qualifier] = js.undefined
+    ): PutFunctionEventInvokeConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
+      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutFunctionEventInvokeConfigRequest]
+    }
+  }
+
+  @js.native
+  trait PutProvisionedConcurrencyConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var ProvisionedConcurrentExecutions: PositiveInteger
+    var Qualifier: Qualifier
+  }
+
+  object PutProvisionedConcurrencyConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        ProvisionedConcurrentExecutions: PositiveInteger,
+        Qualifier: Qualifier
+    ): PutProvisionedConcurrencyConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName"                    -> FunctionName.asInstanceOf[js.Any],
+        "ProvisionedConcurrentExecutions" -> ProvisionedConcurrentExecutions.asInstanceOf[js.Any],
+        "Qualifier"                       -> Qualifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutProvisionedConcurrencyConfigRequest]
+    }
+  }
+
+  @js.native
+  trait PutProvisionedConcurrencyConfigResponse extends js.Object {
+    var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
+    var LastModified: js.UndefOr[Timestamp]
+    var RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger]
+    var Status: js.UndefOr[ProvisionedConcurrencyStatusEnum]
+    var StatusReason: js.UndefOr[String]
+  }
+
+  object PutProvisionedConcurrencyConfigResponse {
+    @inline
+    def apply(
+        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
+        LastModified: js.UndefOr[Timestamp] = js.undefined,
+        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
+        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
+        StatusReason: js.UndefOr[String] = js.undefined
+    ): PutProvisionedConcurrencyConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      AvailableProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      RequestedProvisionedConcurrentExecutions.foreach(__v =>
+        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutProvisionedConcurrencyConfigResponse]
+    }
+  }
+
+  @js.native
   trait RemoveLayerVersionPermissionRequest extends js.Object {
     var LayerName: LayerName
     var StatementId: StatementId
@@ -1992,10 +2623,13 @@ package lambda {
     val `nodejs6.10`     = "nodejs6.10"
     val `nodejs8.10`     = "nodejs8.10"
     val `nodejs10.x`     = "nodejs10.x"
+    val `nodejs12.x`     = "nodejs12.x"
     val java8            = "java8"
+    val java11           = "java11"
     val `python2.7`      = "python2.7"
     val `python3.6`      = "python3.6"
     val `python3.7`      = "python3.7"
+    val `python3.8`      = "python3.8"
     val `dotnetcore1.0`  = "dotnetcore1.0"
     val `dotnetcore2.0`  = "dotnetcore2.0"
     val `dotnetcore2.1`  = "dotnetcore2.1"
@@ -2011,10 +2645,13 @@ package lambda {
         `nodejs6.10`,
         `nodejs8.10`,
         `nodejs10.x`,
+        `nodejs12.x`,
         java8,
+        java11,
         `python2.7`,
         `python3.6`,
         `python3.7`,
+        `python3.8`,
         `dotnetcore1.0`,
         `dotnetcore2.0`,
         `dotnetcore2.1`,
@@ -2022,6 +2659,39 @@ package lambda {
         `go1.x`,
         `ruby2.5`,
         provided
+      )
+    )
+  }
+
+  object StateEnum {
+    val Pending  = "Pending"
+    val Active   = "Active"
+    val Inactive = "Inactive"
+    val Failed   = "Failed"
+
+    val values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
+  }
+
+  object StateReasonCodeEnum {
+    val Idle                        = "Idle"
+    val Creating                    = "Creating"
+    val Restoring                   = "Restoring"
+    val EniLimitExceeded            = "EniLimitExceeded"
+    val InsufficientRolePermissions = "InsufficientRolePermissions"
+    val InvalidConfiguration        = "InvalidConfiguration"
+    val InternalError               = "InternalError"
+    val SubnetOutOfIPAddresses      = "SubnetOutOfIPAddresses"
+
+    val values = js.Object.freeze(
+      js.Array(
+        Idle,
+        Creating,
+        Restoring,
+        EniLimitExceeded,
+        InsufficientRolePermissions,
+        InvalidConfiguration,
+        InternalError,
+        SubnetOutOfIPAddresses
       )
     )
   }
@@ -2150,9 +2820,14 @@ package lambda {
   trait UpdateEventSourceMappingRequest extends js.Object {
     var UUID: String
     var BatchSize: js.UndefOr[BatchSize]
+    var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
+    var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
     var FunctionName: js.UndefOr[FunctionName]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
+    var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
+    var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
   }
 
   object UpdateEventSourceMappingRequest {
@@ -2160,20 +2835,34 @@ package lambda {
     def apply(
         UUID: String,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
+        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
         FunctionName: js.UndefOr[FunctionName] = js.undefined,
-        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined
+        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
+        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
+        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined
     ): UpdateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      BisectBatchOnFunctionError.foreach(__v =>
+        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
+      )
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v =>
         __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
       )
+      MaximumRecordAgeInSeconds.foreach(__v =>
+        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }
   }
@@ -2274,8 +2963,38 @@ package lambda {
     }
   }
 
+  @js.native
+  trait UpdateFunctionEventInvokeConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var DestinationConfig: js.UndefOr[DestinationConfig]
+    var MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds]
+    var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts]
+    var Qualifier: js.UndefOr[Qualifier]
+  }
+
+  object UpdateFunctionEventInvokeConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
+        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
+        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined,
+        Qualifier: js.UndefOr[Qualifier] = js.undefined
+    ): UpdateFunctionEventInvokeConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
+      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFunctionEventInvokeConfigRequest]
+    }
+  }
+
   /**
-    * The VPC security groups and subnets that are attached to a Lambda function.
+    * The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
     */
   @js.native
   trait VpcConfig extends js.Object {

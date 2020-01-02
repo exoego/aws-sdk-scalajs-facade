@@ -63,6 +63,7 @@ package object kinesisanalytics {
   type Timestamp                           = js.Date
 
   implicit final class KinesisAnalyticsOps(private val service: KinesisAnalytics) extends AnyVal {
+
     @inline def addApplicationCloudWatchLoggingOptionFuture(
         params: AddApplicationCloudWatchLoggingOptionRequest
     ): Future[AddApplicationCloudWatchLoggingOptionResponse] =

@@ -159,6 +159,7 @@ package object iam {
   type virtualMFADeviceName                            = String
 
   implicit final class IAMOps(private val service: IAM) extends AnyVal {
+
     @inline def addClientIDToOpenIDConnectProviderFuture(
         params: AddClientIDToOpenIDConnectProviderRequest
     ): Future[js.Object] = service.addClientIDToOpenIDConnectProvider(params).promise.toFuture
@@ -966,7 +967,7 @@ package iam {
   /**
     * Contains information about an attached policy.
     *  An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait AttachedPolicy extends js.Object {
@@ -5072,7 +5073,7 @@ package iam {
   /**
     * Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.
     *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
-    *  For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
@@ -5225,7 +5226,7 @@ package iam {
   /**
     * Contains information about a managed policy.
     *  This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Policy extends js.Object {
@@ -5343,7 +5344,7 @@ package iam {
   /**
     * Contains information about a group that a managed policy is attached to.
     *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyGroup extends js.Object {
@@ -5367,7 +5368,7 @@ package iam {
   /**
     * Contains information about a role that a managed policy is attached to.
     *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyRole extends js.Object {
@@ -5414,7 +5415,7 @@ package iam {
   /**
     * Contains information about a user that a managed policy is attached to.
     *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyUser extends js.Object {
@@ -5438,7 +5439,7 @@ package iam {
   /**
     * Contains information about a version of a managed policy.
     *  This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
+    *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -5793,6 +5794,7 @@ package iam {
     var Description: js.UndefOr[roleDescriptionType]
     var MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType]
     var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
+    var RoleLastUsed: js.UndefOr[RoleLastUsed]
     var Tags: js.UndefOr[tagListType]
   }
 
@@ -5808,6 +5810,7 @@ package iam {
         Description: js.UndefOr[roleDescriptionType] = js.undefined,
         MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined,
         PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
+        RoleLastUsed: js.UndefOr[RoleLastUsed] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): Role = {
       val __obj = js.Dynamic.literal(
@@ -5822,6 +5825,7 @@ package iam {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MaxSessionDuration.foreach(__v => __obj.updateDynamic("MaxSessionDuration")(__v.asInstanceOf[js.Any]))
       PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      RoleLastUsed.foreach(__v => __obj.updateDynamic("RoleLastUsed")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Role]
     }
@@ -5841,6 +5845,7 @@ package iam {
     var Path: js.UndefOr[pathType]
     var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
     var RoleId: js.UndefOr[idType]
+    var RoleLastUsed: js.UndefOr[RoleLastUsed]
     var RoleName: js.UndefOr[roleNameType]
     var RolePolicyList: js.UndefOr[policyDetailListType]
     var Tags: js.UndefOr[tagListType]
@@ -5857,6 +5862,7 @@ package iam {
         Path: js.UndefOr[pathType] = js.undefined,
         PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
         RoleId: js.UndefOr[idType] = js.undefined,
+        RoleLastUsed: js.UndefOr[RoleLastUsed] = js.undefined,
         RoleName: js.UndefOr[roleNameType] = js.undefined,
         RolePolicyList: js.UndefOr[policyDetailListType] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
@@ -5870,10 +5876,34 @@ package iam {
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
       RoleId.foreach(__v => __obj.updateDynamic("RoleId")(__v.asInstanceOf[js.Any]))
+      RoleLastUsed.foreach(__v => __obj.updateDynamic("RoleLastUsed")(__v.asInstanceOf[js.Any]))
       RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
       RolePolicyList.foreach(__v => __obj.updateDynamic("RolePolicyList")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleDetail]
+    }
+  }
+
+  /**
+    * Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period|Regions Where Data Is Tracked]] in the <i>IAM User Guide</i>.
+    *  This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.
+    */
+  @js.native
+  trait RoleLastUsed extends js.Object {
+    var LastUsedDate: js.UndefOr[dateType]
+    var Region: js.UndefOr[stringType]
+  }
+
+  object RoleLastUsed {
+    @inline
+    def apply(
+        LastUsedDate: js.UndefOr[dateType] = js.undefined,
+        Region: js.UndefOr[stringType] = js.undefined
+    ): RoleLastUsed = {
+      val __obj = js.Dynamic.literal()
+      LastUsedDate.foreach(__v => __obj.updateDynamic("LastUsedDate")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RoleLastUsed]
     }
   }
 

@@ -85,6 +85,7 @@ package object elb {
   type VPCId                           = String
 
   implicit final class ELBOps(private val service: ELB) extends AnyVal {
+
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
     @inline def applySecurityGroupsToLoadBalancerFuture(
         params: ApplySecurityGroupsToLoadBalancerInput

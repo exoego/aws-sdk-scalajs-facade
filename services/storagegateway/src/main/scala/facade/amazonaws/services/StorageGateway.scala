@@ -8,130 +8,135 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object storagegateway {
-  type ActivationKey              = String
-  type Authentication             = String
-  type BandwidthDownloadRateLimit = Double
-  type BandwidthType              = String
-  type BandwidthUploadRateLimit   = Double
-  type CachediSCSIVolumes         = js.Array[CachediSCSIVolume]
-  type ChapCredentials            = js.Array[ChapInfo]
-  type ChapSecret                 = String
-  type ClientToken                = String
-  type CloudWatchLogGroupARN      = String
-  type CreatedDate                = js.Date
-  type DayOfMonth                 = Int
-  type DayOfWeek                  = Int
-  type Description                = String
-  type DeviceType                 = String
-  type DiskAllocationType         = String
-  type DiskAttribute              = String
-  type DiskAttributeList          = js.Array[DiskAttribute]
-  type DiskId                     = String
-  type DiskIds                    = js.Array[DiskId]
-  type Disks                      = js.Array[Disk]
-  type DomainName                 = String
-  type DomainUserName             = String
-  type DomainUserPassword         = String
-  type DoubleObject               = Double
-  type Ec2InstanceId              = String
-  type Ec2InstanceRegion          = String
-  type FileShareARN               = String
-  type FileShareARNList           = js.Array[FileShareARN]
-  type FileShareClientList        = js.Array[IPV4AddressCIDR]
-  type FileShareId                = String
-  type FileShareInfoList          = js.Array[FileShareInfo]
-  type FileShareStatus            = String
-  type FileShareType              = String
-  type FileShareUser              = String
-  type FileShareUserList          = js.Array[FileShareUser]
-  type Folder                     = String
-  type FolderList                 = js.Array[Folder]
-  type GatewayARN                 = String
-  type GatewayId                  = String
-  type GatewayName                = String
-  type GatewayNetworkInterfaces   = js.Array[NetworkInterface]
-  type GatewayOperationalState    = String
-  type GatewayState               = String
-  type GatewayTimezone            = String
-  type GatewayType                = String
-  type Gateways                   = js.Array[GatewayInfo]
-  type Host                       = String
-  type Hosts                      = js.Array[Host]
-  type HourOfDay                  = Int
-  type IPV4AddressCIDR            = String
-  type Initiator                  = String
-  type Initiators                 = js.Array[Initiator]
-  type IqnName                    = String
-  type KMSKey                     = String
-  type LastSoftwareUpdate         = String
-  type LocalConsolePassword       = String
-  type LocationARN                = String
-  type Marker                     = String
-  type MediumChangerType          = String
-  type MinuteOfHour               = Int
-  type NFSFileShareInfoList       = js.Array[NFSFileShareInfo]
-  type NetworkInterfaceId         = String
-  type NextUpdateAvailabilityDate = String
-  type NotificationId             = String
-  type NumTapesToCreate           = Int
-  type ObjectACL                  = String
-  type OrganizationalUnit         = String
-  type Path                       = String
-  type PermissionId               = Double
-  type PermissionMode             = String
-  type PoolId                     = String
-  type PositiveIntObject          = Int
-  type RecurrenceInHours          = Int
-  type RegionId                   = String
-  type ResourceARN                = String
-  type Role                       = String
-  type SMBFileShareInfoList       = js.Array[SMBFileShareInfo]
-  type SMBGuestPassword           = String
-  type SMBSecurityStrategy        = String
-  type SnapshotDescription        = String
-  type SnapshotId                 = String
-  type Squash                     = String
-  type StorageClass               = String
-  type StorediSCSIVolumes         = js.Array[StorediSCSIVolume]
-  type TagKey                     = String
-  type TagKeys                    = js.Array[TagKey]
-  type TagValue                   = String
-  type Tags                       = js.Array[Tag]
-  type TapeARN                    = String
-  type TapeARNs                   = js.Array[TapeARN]
-  type TapeArchiveStatus          = String
-  type TapeArchives               = js.Array[TapeArchive]
-  type TapeBarcode                = String
-  type TapeBarcodePrefix          = String
-  type TapeDriveType              = String
-  type TapeInfos                  = js.Array[TapeInfo]
-  type TapeRecoveryPointInfos     = js.Array[TapeRecoveryPointInfo]
-  type TapeRecoveryPointStatus    = String
-  type TapeSize                   = Double
-  type TapeStatus                 = String
-  type TapeUsage                  = Double
-  type Tapes                      = js.Array[Tape]
-  type TargetARN                  = String
-  type TargetName                 = String
-  type Time                       = js.Date
-  type VTLDeviceARN               = String
-  type VTLDeviceARNs              = js.Array[VTLDeviceARN]
-  type VTLDeviceProductIdentifier = String
-  type VTLDeviceType              = String
-  type VTLDeviceVendor            = String
-  type VTLDevices                 = js.Array[VTLDevice]
-  type VolumeARN                  = String
-  type VolumeARNs                 = js.Array[VolumeARN]
-  type VolumeAttachmentStatus     = String
-  type VolumeId                   = String
-  type VolumeInfos                = js.Array[VolumeInfo]
-  type VolumeRecoveryPointInfos   = js.Array[VolumeRecoveryPointInfo]
-  type VolumeStatus               = String
-  type VolumeType                 = String
-  type VolumeUsedInBytes          = Double
-  type double                     = Double
+  type ActivationKey                 = String
+  type ActiveDirectoryStatus         = String
+  type Authentication                = String
+  type AvailabilityMonitorTestStatus = String
+  type BandwidthDownloadRateLimit    = Double
+  type BandwidthType                 = String
+  type BandwidthUploadRateLimit      = Double
+  type CachediSCSIVolumes            = js.Array[CachediSCSIVolume]
+  type ChapCredentials               = js.Array[ChapInfo]
+  type ChapSecret                    = String
+  type ClientToken                   = String
+  type CloudWatchLogGroupARN         = String
+  type CreatedDate                   = js.Date
+  type DayOfMonth                    = Int
+  type DayOfWeek                     = Int
+  type Description                   = String
+  type DeviceType                    = String
+  type DiskAllocationType            = String
+  type DiskAttribute                 = String
+  type DiskAttributeList             = js.Array[DiskAttribute]
+  type DiskId                        = String
+  type DiskIds                       = js.Array[DiskId]
+  type Disks                         = js.Array[Disk]
+  type DomainName                    = String
+  type DomainUserName                = String
+  type DomainUserPassword            = String
+  type DoubleObject                  = Double
+  type Ec2InstanceId                 = String
+  type Ec2InstanceRegion             = String
+  type FileShareARN                  = String
+  type FileShareARNList              = js.Array[FileShareARN]
+  type FileShareClientList           = js.Array[IPV4AddressCIDR]
+  type FileShareId                   = String
+  type FileShareInfoList             = js.Array[FileShareInfo]
+  type FileShareStatus               = String
+  type FileShareType                 = String
+  type FileShareUser                 = String
+  type FileShareUserList             = js.Array[FileShareUser]
+  type Folder                        = String
+  type FolderList                    = js.Array[Folder]
+  type GatewayARN                    = String
+  type GatewayId                     = String
+  type GatewayName                   = String
+  type GatewayNetworkInterfaces      = js.Array[NetworkInterface]
+  type GatewayOperationalState       = String
+  type GatewayState                  = String
+  type GatewayTimezone               = String
+  type GatewayType                   = String
+  type Gateways                      = js.Array[GatewayInfo]
+  type Host                          = String
+  type HostEnvironment               = String
+  type Hosts                         = js.Array[Host]
+  type HourOfDay                     = Int
+  type IPV4AddressCIDR               = String
+  type Initiator                     = String
+  type Initiators                    = js.Array[Initiator]
+  type IqnName                       = String
+  type KMSKey                        = String
+  type LastSoftwareUpdate            = String
+  type LocalConsolePassword          = String
+  type LocationARN                   = String
+  type Marker                        = String
+  type MediumChangerType             = String
+  type MinuteOfHour                  = Int
+  type NFSFileShareInfoList          = js.Array[NFSFileShareInfo]
+  type NetworkInterfaceId            = String
+  type NextUpdateAvailabilityDate    = String
+  type NotificationId                = String
+  type NumTapesToCreate              = Int
+  type ObjectACL                     = String
+  type OrganizationalUnit            = String
+  type Path                          = String
+  type PermissionId                  = Double
+  type PermissionMode                = String
+  type PoolId                        = String
+  type PositiveIntObject             = Int
+  type RecurrenceInHours             = Int
+  type RegionId                      = String
+  type ResourceARN                   = String
+  type Role                          = String
+  type SMBFileShareInfoList          = js.Array[SMBFileShareInfo]
+  type SMBGuestPassword              = String
+  type SMBSecurityStrategy           = String
+  type SnapshotDescription           = String
+  type SnapshotId                    = String
+  type Squash                        = String
+  type StorageClass                  = String
+  type StorediSCSIVolumes            = js.Array[StorediSCSIVolume]
+  type TagKey                        = String
+  type TagKeys                       = js.Array[TagKey]
+  type TagValue                      = String
+  type Tags                          = js.Array[Tag]
+  type TapeARN                       = String
+  type TapeARNs                      = js.Array[TapeARN]
+  type TapeArchiveStatus             = String
+  type TapeArchives                  = js.Array[TapeArchive]
+  type TapeBarcode                   = String
+  type TapeBarcodePrefix             = String
+  type TapeDriveType                 = String
+  type TapeInfos                     = js.Array[TapeInfo]
+  type TapeRecoveryPointInfos        = js.Array[TapeRecoveryPointInfo]
+  type TapeRecoveryPointStatus       = String
+  type TapeSize                      = Double
+  type TapeStatus                    = String
+  type TapeUsage                     = Double
+  type Tapes                         = js.Array[Tape]
+  type TargetARN                     = String
+  type TargetName                    = String
+  type Time                          = js.Date
+  type TimeoutInSeconds              = Int
+  type VTLDeviceARN                  = String
+  type VTLDeviceARNs                 = js.Array[VTLDeviceARN]
+  type VTLDeviceProductIdentifier    = String
+  type VTLDeviceType                 = String
+  type VTLDeviceVendor               = String
+  type VTLDevices                    = js.Array[VTLDevice]
+  type VolumeARN                     = String
+  type VolumeARNs                    = js.Array[VolumeARN]
+  type VolumeAttachmentStatus        = String
+  type VolumeId                      = String
+  type VolumeInfos                   = js.Array[VolumeInfo]
+  type VolumeRecoveryPointInfos      = js.Array[VolumeRecoveryPointInfo]
+  type VolumeStatus                  = String
+  type VolumeType                    = String
+  type VolumeUsedInBytes             = Double
+  type double                        = Double
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
+
     @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
       service.activateGateway(params).promise.toFuture
     @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] =
@@ -188,6 +193,9 @@ package object storagegateway {
       service.deleteTape(params).promise.toFuture
     @inline def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] =
       service.deleteVolume(params).promise.toFuture
+    @inline def describeAvailabilityMonitorTestFuture(
+        params: DescribeAvailabilityMonitorTestInput
+    ): Future[DescribeAvailabilityMonitorTestOutput] = service.describeAvailabilityMonitorTest(params).promise.toFuture
     @inline def describeBandwidthRateLimitFuture(
         params: DescribeBandwidthRateLimitInput
     ): Future[DescribeBandwidthRateLimitOutput] = service.describeBandwidthRateLimit(params).promise.toFuture
@@ -275,6 +283,9 @@ package object storagegateway {
       service.setSMBGuestPassword(params).promise.toFuture
     @inline def shutdownGatewayFuture(params: ShutdownGatewayInput): Future[ShutdownGatewayOutput] =
       service.shutdownGateway(params).promise.toFuture
+    @inline def startAvailabilityMonitorTestFuture(
+        params: StartAvailabilityMonitorTestInput
+    ): Future[StartAvailabilityMonitorTestOutput] = service.startAvailabilityMonitorTest(params).promise.toFuture
     @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] =
       service.startGateway(params).promise.toFuture
     @inline def updateBandwidthRateLimitFuture(
@@ -342,6 +353,9 @@ package storagegateway {
     def deleteTape(params: DeleteTapeInput): Request[DeleteTapeOutput]                                     = js.native
     def deleteTapeArchive(params: DeleteTapeArchiveInput): Request[DeleteTapeArchiveOutput]                = js.native
     def deleteVolume(params: DeleteVolumeInput): Request[DeleteVolumeOutput]                               = js.native
+    def describeAvailabilityMonitorTest(
+        params: DescribeAvailabilityMonitorTestInput
+    ): Request[DescribeAvailabilityMonitorTestOutput] = js.native
     def describeBandwidthRateLimit(params: DescribeBandwidthRateLimitInput): Request[DescribeBandwidthRateLimitOutput] =
       js.native
     def describeCache(params: DescribeCacheInput): Request[DescribeCacheOutput] = js.native
@@ -391,7 +405,10 @@ package storagegateway {
       js.native
     def setSMBGuestPassword(params: SetSMBGuestPasswordInput): Request[SetSMBGuestPasswordOutput] = js.native
     def shutdownGateway(params: ShutdownGatewayInput): Request[ShutdownGatewayOutput]             = js.native
-    def startGateway(params: StartGatewayInput): Request[StartGatewayOutput]                      = js.native
+    def startAvailabilityMonitorTest(
+        params: StartAvailabilityMonitorTestInput
+    ): Request[StartAvailabilityMonitorTestOutput]                           = js.native
+    def startGateway(params: StartGatewayInput): Request[StartGatewayOutput] = js.native
     def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] =
       js.native
     def updateChapCredentials(params: UpdateChapCredentialsInput): Request[UpdateChapCredentialsOutput] = js.native
@@ -477,6 +494,19 @@ package storagegateway {
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivateGatewayOutput]
     }
+  }
+
+  object ActiveDirectoryStatusEnum {
+    val ACCESS_DENIED = "ACCESS_DENIED"
+    val DETACHED      = "DETACHED"
+    val JOINED        = "JOINED"
+    val JOINING       = "JOINING"
+    val NETWORK_ERROR = "NETWORK_ERROR"
+    val TIMEOUT       = "TIMEOUT"
+    val UNKNOWN_ERROR = "UNKNOWN_ERROR"
+
+    val values =
+      js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
   }
 
   @js.native
@@ -718,6 +748,14 @@ package storagegateway {
       VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachVolumeOutput]
     }
+  }
+
+  object AvailabilityMonitorTestStatusEnum {
+    val COMPLETE = "COMPLETE"
+    val FAILED   = "FAILED"
+    val PENDING  = "PENDING"
+
+    val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
   }
 
   /**
@@ -1705,6 +1743,46 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait DescribeAvailabilityMonitorTestInput extends js.Object {
+    var GatewayARN: GatewayARN
+  }
+
+  object DescribeAvailabilityMonitorTestInput {
+    @inline
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeAvailabilityMonitorTestInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeAvailabilityMonitorTestInput]
+    }
+  }
+
+  @js.native
+  trait DescribeAvailabilityMonitorTestOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+    var StartTime: js.UndefOr[Time]
+    var Status: js.UndefOr[AvailabilityMonitorTestStatus]
+  }
+
+  object DescribeAvailabilityMonitorTestOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        StartTime: js.UndefOr[Time] = js.undefined,
+        Status: js.UndefOr[AvailabilityMonitorTestStatus] = js.undefined
+    ): DescribeAvailabilityMonitorTestOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAvailabilityMonitorTestOutput]
+    }
+  }
+
   /**
     * A JSON object containing the of the gateway.
     */
@@ -1920,6 +1998,7 @@ package storagegateway {
     var GatewayState: js.UndefOr[GatewayState]
     var GatewayTimezone: js.UndefOr[GatewayTimezone]
     var GatewayType: js.UndefOr[GatewayType]
+    var HostEnvironment: js.UndefOr[HostEnvironment]
     var LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate]
     var NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate]
     var Tags: js.UndefOr[Tags]
@@ -1939,6 +2018,7 @@ package storagegateway {
         GatewayState: js.UndefOr[GatewayState] = js.undefined,
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined,
         GatewayType: js.UndefOr[GatewayType] = js.undefined,
+        HostEnvironment: js.UndefOr[HostEnvironment] = js.undefined,
         LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate] = js.undefined,
         NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -1955,6 +2035,7 @@ package storagegateway {
       GatewayState.foreach(__v => __obj.updateDynamic("GatewayState")(__v.asInstanceOf[js.Any]))
       GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
+      HostEnvironment.foreach(__v => __obj.updateDynamic("HostEnvironment")(__v.asInstanceOf[js.Any]))
       LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
       NextUpdateAvailabilityDate.foreach(__v =>
         __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any])
@@ -2113,6 +2194,7 @@ package storagegateway {
 
   @js.native
   trait DescribeSMBSettingsOutput extends js.Object {
+    var ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus]
     var DomainName: js.UndefOr[DomainName]
     var GatewayARN: js.UndefOr[GatewayARN]
     var SMBGuestPasswordSet: js.UndefOr[Boolean]
@@ -2122,12 +2204,14 @@ package storagegateway {
   object DescribeSMBSettingsOutput {
     @inline
     def apply(
+        ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined,
         SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy] = js.undefined
     ): DescribeSMBSettingsOutput = {
       val __obj = js.Dynamic.literal()
+      ActiveDirectoryStatus.foreach(__v => __obj.updateDynamic("ActiveDirectoryStatus")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       SMBGuestPasswordSet.foreach(__v => __obj.updateDynamic("SMBGuestPasswordSet")(__v.asInstanceOf[js.Any]))
@@ -2728,6 +2812,15 @@ package storagegateway {
     }
   }
 
+  object HostEnvironmentEnum {
+    val VMWARE    = "VMWARE"
+    val `HYPER-V` = "HYPER-V"
+    val EC2       = "EC2"
+    val OTHER     = "OTHER"
+
+    val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, OTHER))
+  }
+
   @js.native
   trait JoinDomainInput extends js.Object {
     var DomainName: DomainName
@@ -2736,6 +2829,7 @@ package storagegateway {
     var UserName: DomainUserName
     var DomainControllers: js.UndefOr[Hosts]
     var OrganizationalUnit: js.UndefOr[OrganizationalUnit]
+    var TimeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
   object JoinDomainInput {
@@ -2746,7 +2840,8 @@ package storagegateway {
         Password: DomainUserPassword,
         UserName: DomainUserName,
         DomainControllers: js.UndefOr[Hosts] = js.undefined,
-        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
+        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined,
+        TimeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): JoinDomainInput = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
@@ -2757,21 +2852,25 @@ package storagegateway {
 
       DomainControllers.foreach(__v => __obj.updateDynamic("DomainControllers")(__v.asInstanceOf[js.Any]))
       OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
+      TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinDomainInput]
     }
   }
 
   @js.native
   trait JoinDomainOutput extends js.Object {
+    var ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus]
     var GatewayARN: js.UndefOr[GatewayARN]
   }
 
   object JoinDomainOutput {
     @inline
     def apply(
+        ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): JoinDomainOutput = {
       val __obj = js.Dynamic.literal()
+      ActiveDirectoryStatus.foreach(__v => __obj.updateDynamic("ActiveDirectoryStatus")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinDomainOutput]
     }
@@ -3701,6 +3800,40 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShutdownGatewayOutput]
+    }
+  }
+
+  @js.native
+  trait StartAvailabilityMonitorTestInput extends js.Object {
+    var GatewayARN: GatewayARN
+  }
+
+  object StartAvailabilityMonitorTestInput {
+    @inline
+    def apply(
+        GatewayARN: GatewayARN
+    ): StartAvailabilityMonitorTestInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StartAvailabilityMonitorTestInput]
+    }
+  }
+
+  @js.native
+  trait StartAvailabilityMonitorTestOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object StartAvailabilityMonitorTestOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): StartAvailabilityMonitorTestOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartAvailabilityMonitorTestOutput]
     }
   }
 

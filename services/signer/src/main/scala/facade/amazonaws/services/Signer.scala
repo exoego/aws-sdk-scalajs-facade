@@ -47,6 +47,7 @@ package object signer {
   type key                   = String
 
   implicit final class SignerOps(private val service: Signer) extends AnyVal {
+
     @inline def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] =
       service.cancelSigningProfile(params).promise.toFuture
     @inline def describeSigningJobFuture(params: DescribeSigningJobRequest): Future[DescribeSigningJobResponse] =

@@ -37,6 +37,7 @@ package object mediapackage {
   type __string                                    = String
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
+
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
     @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] =

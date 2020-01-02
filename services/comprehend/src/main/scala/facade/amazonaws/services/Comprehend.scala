@@ -13,10 +13,16 @@ package object comprehend {
   type ClientRequestTokenString                   = String
   type ComprehendArn                              = String
   type ComprehendArnName                          = String
+  type ComprehendEndpointArn                      = String
+  type ComprehendEndpointName                     = String
+  type ComprehendModelArn                         = String
   type DocumentClassificationJobPropertiesList    = js.Array[DocumentClassificationJobProperties]
   type DocumentClassifierArn                      = String
+  type DocumentClassifierEndpointArn              = String
   type DocumentClassifierPropertiesList           = js.Array[DocumentClassifierProperties]
   type DominantLanguageDetectionJobPropertiesList = js.Array[DominantLanguageDetectionJobProperties]
+  type EndpointPropertiesList                     = js.Array[EndpointProperties]
+  type EndpointStatus                             = String
   type EntitiesDetectionJobPropertiesList         = js.Array[EntitiesDetectionJobProperties]
   type EntityRecognizerArn                        = String
   type EntityRecognizerMetadataEntityTypesList    = js.Array[EntityRecognizerMetadataEntityTypesListItem]
@@ -25,6 +31,7 @@ package object comprehend {
   type EntityTypeName                             = String
   type EntityTypesList                            = js.Array[EntityTypesListItem]
   type IamRoleArn                                 = String
+  type InferenceUnitsInteger                      = Int
   type InputFormat                                = String
   type JobId                                      = String
   type JobName                                    = String
@@ -32,6 +39,7 @@ package object comprehend {
   type KeyPhrasesDetectionJobPropertiesList       = js.Array[KeyPhrasesDetectionJobProperties]
   type KmsKeyId                                   = String
   type LanguageCode                               = String
+  type ListOfClasses                              = js.Array[DocumentClass]
   type ListOfDetectDominantLanguageResult         = js.Array[BatchDetectDominantLanguageItemResult]
   type ListOfDetectEntitiesResult                 = js.Array[BatchDetectEntitiesItemResult]
   type ListOfDetectKeyPhrasesResult               = js.Array[BatchDetectKeyPhrasesItemResult]
@@ -62,6 +70,7 @@ package object comprehend {
   type TopicsDetectionJobPropertiesList           = js.Array[TopicsDetectionJobProperties]
 
   implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
+
     @inline def batchDetectDominantLanguageFuture(
         params: BatchDetectDominantLanguageRequest
     ): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise.toFuture
@@ -74,15 +83,21 @@ package object comprehend {
       service.batchDetectSentiment(params).promise.toFuture
     @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] =
       service.batchDetectSyntax(params).promise.toFuture
+    @inline def classifyDocumentFuture(params: ClassifyDocumentRequest): Future[ClassifyDocumentResponse] =
+      service.classifyDocument(params).promise.toFuture
     @inline def createDocumentClassifierFuture(
         params: CreateDocumentClassifierRequest
     ): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise.toFuture
+    @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResponse] =
+      service.createEndpoint(params).promise.toFuture
     @inline def createEntityRecognizerFuture(
         params: CreateEntityRecognizerRequest
     ): Future[CreateEntityRecognizerResponse] = service.createEntityRecognizer(params).promise.toFuture
     @inline def deleteDocumentClassifierFuture(
         params: DeleteDocumentClassifierRequest
     ): Future[DeleteDocumentClassifierResponse] = service.deleteDocumentClassifier(params).promise.toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] =
+      service.deleteEndpoint(params).promise.toFuture
     @inline def deleteEntityRecognizerFuture(
         params: DeleteEntityRecognizerRequest
     ): Future[DeleteEntityRecognizerResponse] = service.deleteEntityRecognizer(params).promise.toFuture
@@ -97,6 +112,8 @@ package object comprehend {
         params: DescribeDominantLanguageDetectionJobRequest
     ): Future[DescribeDominantLanguageDetectionJobResponse] =
       service.describeDominantLanguageDetectionJob(params).promise.toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
+      service.describeEndpoint(params).promise.toFuture
     @inline def describeEntitiesDetectionJobFuture(
         params: DescribeEntitiesDetectionJobRequest
     ): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise.toFuture
@@ -133,6 +150,8 @@ package object comprehend {
         params: ListDominantLanguageDetectionJobsRequest
     ): Future[ListDominantLanguageDetectionJobsResponse] =
       service.listDominantLanguageDetectionJobs(params).promise.toFuture
+    @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResponse] =
+      service.listEndpoints(params).promise.toFuture
     @inline def listEntitiesDetectionJobsFuture(
         params: ListEntitiesDetectionJobsRequest
     ): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise.toFuture
@@ -192,6 +211,8 @@ package object comprehend {
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
+    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] =
+      service.updateEndpoint(params).promise.toFuture
   }
 }
 
@@ -208,12 +229,15 @@ package comprehend {
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native
     def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse]    = js.native
     def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse]             = js.native
+    def classifyDocument(params: ClassifyDocumentRequest): Request[ClassifyDocumentResponse]                = js.native
     def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] =
       js.native
+    def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResponse] = js.native
     def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] =
       js.native
     def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] =
       js.native
+    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
     def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] =
       js.native
     def describeDocumentClassificationJob(
@@ -224,7 +248,8 @@ package comprehend {
     ): Request[DescribeDocumentClassifierResponse] = js.native
     def describeDominantLanguageDetectionJob(
         params: DescribeDominantLanguageDetectionJobRequest
-    ): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
+    ): Request[DescribeDominantLanguageDetectionJobResponse]                                 = js.native
+    def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
     def describeEntitiesDetectionJob(
         params: DescribeEntitiesDetectionJobRequest
     ): Request[DescribeEntitiesDetectionJobResponse] = js.native
@@ -252,7 +277,8 @@ package comprehend {
       js.native
     def listDominantLanguageDetectionJobs(
         params: ListDominantLanguageDetectionJobsRequest
-    ): Request[ListDominantLanguageDetectionJobsResponse] = js.native
+    ): Request[ListDominantLanguageDetectionJobsResponse]                           = js.native
+    def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResponse] = js.native
     def listEntitiesDetectionJobs(
         params: ListEntitiesDetectionJobsRequest
     ): Request[ListEntitiesDetectionJobsResponse]                                                           = js.native
@@ -299,9 +325,10 @@ package comprehend {
     ): Request[StopTrainingDocumentClassifierResponse] = js.native
     def stopTrainingEntityRecognizer(
         params: StopTrainingEntityRecognizerRequest
-    ): Request[StopTrainingEntityRecognizerResponse]                                = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]       = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    ): Request[StopTrainingEntityRecognizerResponse]                                   = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]          = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]    = js.native
+    def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
   }
 
   /**
@@ -706,6 +733,43 @@ package comprehend {
   }
 
   @js.native
+  trait ClassifyDocumentRequest extends js.Object {
+    var EndpointArn: DocumentClassifierEndpointArn
+    var Text: String
+  }
+
+  object ClassifyDocumentRequest {
+    @inline
+    def apply(
+        EndpointArn: DocumentClassifierEndpointArn,
+        Text: String
+    ): ClassifyDocumentRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "Text"        -> Text.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ClassifyDocumentRequest]
+    }
+  }
+
+  @js.native
+  trait ClassifyDocumentResponse extends js.Object {
+    var Classes: js.UndefOr[ListOfClasses]
+  }
+
+  object ClassifyDocumentResponse {
+    @inline
+    def apply(
+        Classes: js.UndefOr[ListOfClasses] = js.undefined
+    ): ClassifyDocumentResponse = {
+      val __obj = js.Dynamic.literal()
+      Classes.foreach(__v => __obj.updateDynamic("Classes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClassifyDocumentResponse]
+    }
+  }
+
+  @js.native
   trait CreateDocumentClassifierRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var DocumentClassifierName: ComprehendArnName
@@ -760,6 +824,52 @@ package comprehend {
       val __obj = js.Dynamic.literal()
       DocumentClassifierArn.foreach(__v => __obj.updateDynamic("DocumentClassifierArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDocumentClassifierResponse]
+    }
+  }
+
+  @js.native
+  trait CreateEndpointRequest extends js.Object {
+    var DesiredInferenceUnits: InferenceUnitsInteger
+    var EndpointName: ComprehendEndpointName
+    var ModelArn: ComprehendModelArn
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateEndpointRequest {
+    @inline
+    def apply(
+        DesiredInferenceUnits: InferenceUnitsInteger,
+        EndpointName: ComprehendEndpointName,
+        ModelArn: ComprehendModelArn,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DesiredInferenceUnits" -> DesiredInferenceUnits.asInstanceOf[js.Any],
+        "EndpointName"          -> EndpointName.asInstanceOf[js.Any],
+        "ModelArn"              -> ModelArn.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEndpointResponse extends js.Object {
+    var EndpointArn: js.UndefOr[ComprehendEndpointArn]
+  }
+
+  object CreateEndpointResponse {
+    @inline
+    def apply(
+        EndpointArn: js.UndefOr[ComprehendEndpointArn] = js.undefined
+    ): CreateEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointResponse]
     }
   }
 
@@ -846,6 +956,37 @@ package comprehend {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDocumentClassifierResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteEndpointRequest extends js.Object {
+    var EndpointArn: ComprehendEndpointArn
+  }
+
+  object DeleteEndpointRequest {
+    @inline
+    def apply(
+        EndpointArn: ComprehendEndpointArn
+    ): DeleteEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEndpointResponse extends js.Object {}
+
+  object DeleteEndpointResponse {
+    @inline
+    def apply(
+        ): DeleteEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteEndpointResponse]
     }
   }
 
@@ -985,6 +1126,40 @@ package comprehend {
         __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointRequest extends js.Object {
+    var EndpointArn: ComprehendEndpointArn
+  }
+
+  object DescribeEndpointRequest {
+    @inline
+    def apply(
+        EndpointArn: ComprehendEndpointArn
+    ): DescribeEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointResponse extends js.Object {
+    var EndpointProperties: js.UndefOr[EndpointProperties]
+  }
+
+  object DescribeEndpointResponse {
+    @inline
+    def apply(
+        EndpointProperties: js.UndefOr[EndpointProperties] = js.undefined
+    ): DescribeEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      EndpointProperties.foreach(__v => __obj.updateDynamic("EndpointProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointResponse]
     }
   }
 
@@ -1354,6 +1529,28 @@ package comprehend {
   }
 
   /**
+    * Specifies the class that categorizes the document being analyzed
+    */
+  @js.native
+  trait DocumentClass extends js.Object {
+    var Name: js.UndefOr[String]
+    var Score: js.UndefOr[Float]
+  }
+
+  object DocumentClass {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): DocumentClass = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentClass]
+    }
+  }
+
+  /**
     * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
     */
   @js.native
@@ -1657,6 +1854,84 @@ package comprehend {
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DominantLanguageDetectionJobProperties]
     }
+  }
+
+  /**
+    * The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
+    */
+  @js.native
+  trait EndpointFilter extends js.Object {
+    var CreationTimeAfter: js.UndefOr[Timestamp]
+    var CreationTimeBefore: js.UndefOr[Timestamp]
+    var ModelArn: js.UndefOr[ComprehendModelArn]
+    var Status: js.UndefOr[EndpointStatus]
+  }
+
+  object EndpointFilter {
+    @inline
+    def apply(
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        ModelArn: js.UndefOr[ComprehendModelArn] = js.undefined,
+        Status: js.UndefOr[EndpointStatus] = js.undefined
+    ): EndpointFilter = {
+      val __obj = js.Dynamic.literal()
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointFilter]
+    }
+  }
+
+  /**
+    * Specifies information about the specified endpoint.
+    */
+  @js.native
+  trait EndpointProperties extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger]
+    var DesiredInferenceUnits: js.UndefOr[InferenceUnitsInteger]
+    var EndpointArn: js.UndefOr[ComprehendEndpointArn]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[AnyLengthString]
+    var ModelArn: js.UndefOr[ComprehendModelArn]
+    var Status: js.UndefOr[EndpointStatus]
+  }
+
+  object EndpointProperties {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
+        DesiredInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
+        EndpointArn: js.UndefOr[ComprehendEndpointArn] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[AnyLengthString] = js.undefined,
+        ModelArn: js.UndefOr[ComprehendModelArn] = js.undefined,
+        Status: js.UndefOr[EndpointStatus] = js.undefined
+    ): EndpointProperties = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CurrentInferenceUnits.foreach(__v => __obj.updateDynamic("CurrentInferenceUnits")(__v.asInstanceOf[js.Any]))
+      DesiredInferenceUnits.foreach(__v => __obj.updateDynamic("DesiredInferenceUnits")(__v.asInstanceOf[js.Any]))
+      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointProperties]
+    }
+  }
+
+  object EndpointStatusEnum {
+    val CREATING   = "CREATING"
+    val DELETING   = "DELETING"
+    val FAILED     = "FAILED"
+    val IN_SERVICE = "IN_SERVICE"
+    val UPDATING   = "UPDATING"
+
+    val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING))
   }
 
   /**
@@ -2380,6 +2655,47 @@ package comprehend {
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDominantLanguageDetectionJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListEndpointsRequest extends js.Object {
+    var Filter: js.UndefOr[EndpointFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEndpointsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[EndpointFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEndpointsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEndpointsResponse extends js.Object {
+    var EndpointPropertiesList: js.UndefOr[EndpointPropertiesList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEndpointsResponse {
+    @inline
+    def apply(
+        EndpointPropertiesList: js.UndefOr[EndpointPropertiesList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEndpointsResponse = {
+      val __obj = js.Dynamic.literal()
+      EndpointPropertiesList.foreach(__v => __obj.updateDynamic("EndpointPropertiesList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointsResponse]
     }
   }
 
@@ -3605,6 +3921,40 @@ package comprehend {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateEndpointRequest extends js.Object {
+    var DesiredInferenceUnits: InferenceUnitsInteger
+    var EndpointArn: ComprehendEndpointArn
+  }
+
+  object UpdateEndpointRequest {
+    @inline
+    def apply(
+        DesiredInferenceUnits: InferenceUnitsInteger,
+        EndpointArn: ComprehendEndpointArn
+    ): UpdateEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DesiredInferenceUnits" -> DesiredInferenceUnits.asInstanceOf[js.Any],
+        "EndpointArn"           -> EndpointArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEndpointResponse extends js.Object {}
+
+  object UpdateEndpointResponse {
+    @inline
+    def apply(
+        ): UpdateEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateEndpointResponse]
     }
   }
 

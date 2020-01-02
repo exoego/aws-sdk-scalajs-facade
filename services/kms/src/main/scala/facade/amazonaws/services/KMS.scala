@@ -16,43 +16,52 @@ package object kms {
   type BooleanType      = Boolean
   type CiphertextType =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CloudHsmClusterIdType   = String
-  type ConnectionErrorCodeType = String
-  type ConnectionStateType     = String
-  type CustomKeyStoreIdType    = String
-  type CustomKeyStoreNameType  = String
-  type CustomKeyStoresList     = js.Array[CustomKeyStoresListEntry]
-  type DataKeySpec             = String
-  type DateType                = js.Date
-  type DescriptionType         = String
-  type EncryptionContextKey    = String
-  type EncryptionContextType   = js.Dictionary[EncryptionContextValue]
-  type EncryptionContextValue  = String
-  type ExpirationModelType     = String
-  type GrantIdType             = String
-  type GrantList               = js.Array[GrantListEntry]
-  type GrantNameType           = String
-  type GrantOperation          = String
-  type GrantOperationList      = js.Array[GrantOperation]
-  type GrantTokenList          = js.Array[GrantTokenType]
-  type GrantTokenType          = String
-  type KeyIdType               = String
-  type KeyList                 = js.Array[KeyListEntry]
-  type KeyManagerType          = String
-  type KeyState                = String
-  type KeyStorePasswordType    = String
-  type KeyUsageType            = String
-  type LimitType               = Int
-  type MarkerType              = String
-  type NumberOfBytesType       = Int
-  type OriginType              = String
-  type PendingWindowInDaysType = Int
+  type CloudHsmClusterIdType       = String
+  type ConnectionErrorCodeType     = String
+  type ConnectionStateType         = String
+  type CustomKeyStoreIdType        = String
+  type CustomKeyStoreNameType      = String
+  type CustomKeyStoresList         = js.Array[CustomKeyStoresListEntry]
+  type CustomerMasterKeySpec       = String
+  type DataKeyPairSpec             = String
+  type DataKeySpec                 = String
+  type DateType                    = js.Date
+  type DescriptionType             = String
+  type EncryptionAlgorithmSpec     = String
+  type EncryptionAlgorithmSpecList = js.Array[EncryptionAlgorithmSpec]
+  type EncryptionContextKey        = String
+  type EncryptionContextType       = js.Dictionary[EncryptionContextValue]
+  type EncryptionContextValue      = String
+  type ExpirationModelType         = String
+  type GrantIdType                 = String
+  type GrantList                   = js.Array[GrantListEntry]
+  type GrantNameType               = String
+  type GrantOperation              = String
+  type GrantOperationList          = js.Array[GrantOperation]
+  type GrantTokenList              = js.Array[GrantTokenType]
+  type GrantTokenType              = String
+  type KeyIdType                   = String
+  type KeyList                     = js.Array[KeyListEntry]
+  type KeyManagerType              = String
+  type KeyState                    = String
+  type KeyStorePasswordType        = String
+  type KeyUsageType                = String
+  type LimitType                   = Int
+  type MarkerType                  = String
+  type MessageType                 = String
+  type NumberOfBytesType           = Int
+  type OriginType                  = String
+  type PendingWindowInDaysType     = Int
   type PlaintextType =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PolicyNameList             = js.Array[PolicyNameType]
-  type PolicyNameType             = String
-  type PolicyType                 = String
-  type PrincipalIdType            = String
+  type PolicyNameList  = js.Array[PolicyNameType]
+  type PolicyNameType  = String
+  type PolicyType      = String
+  type PrincipalIdType = String
+  type PublicKeyType =
+    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SigningAlgorithmSpec       = String
+  type SigningAlgorithmSpecList   = js.Array[SigningAlgorithmSpec]
   type TagKeyList                 = js.Array[TagKeyType]
   type TagKeyType                 = String
   type TagList                    = js.Array[Tag]
@@ -61,6 +70,7 @@ package object kms {
   type WrappingKeySpec            = String
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
+
     @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
       service.cancelKeyDeletion(params).promise.toFuture
     @inline def connectCustomKeyStoreFuture(
@@ -102,6 +112,12 @@ package object kms {
       service.encrypt(params).promise.toFuture
     @inline def generateDataKeyFuture(params: GenerateDataKeyRequest): Future[GenerateDataKeyResponse] =
       service.generateDataKey(params).promise.toFuture
+    @inline def generateDataKeyPairFuture(params: GenerateDataKeyPairRequest): Future[GenerateDataKeyPairResponse] =
+      service.generateDataKeyPair(params).promise.toFuture
+    @inline def generateDataKeyPairWithoutPlaintextFuture(
+        params: GenerateDataKeyPairWithoutPlaintextRequest
+    ): Future[GenerateDataKeyPairWithoutPlaintextResponse] =
+      service.generateDataKeyPairWithoutPlaintext(params).promise.toFuture
     @inline def generateDataKeyWithoutPlaintextFuture(
         params: GenerateDataKeyWithoutPlaintextRequest
     ): Future[GenerateDataKeyWithoutPlaintextResponse] =
@@ -115,6 +131,8 @@ package object kms {
     @inline def getParametersForImportFuture(
         params: GetParametersForImportRequest
     ): Future[GetParametersForImportResponse] = service.getParametersForImport(params).promise.toFuture
+    @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResponse] =
+      service.getPublicKey(params).promise.toFuture
     @inline def importKeyMaterialFuture(params: ImportKeyMaterialRequest): Future[ImportKeyMaterialResponse] =
       service.importKeyMaterial(params).promise.toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
@@ -139,6 +157,7 @@ package object kms {
       service.revokeGrant(params).promise.toFuture
     @inline def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] =
       service.scheduleKeyDeletion(params).promise.toFuture
+    @inline def signFuture(params: SignRequest): Future[SignResponse] = service.sign(params).promise.toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
@@ -149,6 +168,7 @@ package object kms {
       service.updateCustomKeyStore(params).promise.toFuture
     @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] =
       service.updateKeyDescription(params).promise.toFuture
+    @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise.toFuture
   }
 }
 
@@ -175,10 +195,14 @@ package kms {
     def disableKeyRotation(params: DisableKeyRotationRequest): Request[js.Object] = js.native
     def disconnectCustomKeyStore(params: DisconnectCustomKeyStoreRequest): Request[DisconnectCustomKeyStoreResponse] =
       js.native
-    def enableKey(params: EnableKeyRequest): Request[js.Object]                           = js.native
-    def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object]           = js.native
-    def encrypt(params: EncryptRequest): Request[EncryptResponse]                         = js.native
-    def generateDataKey(params: GenerateDataKeyRequest): Request[GenerateDataKeyResponse] = js.native
+    def enableKey(params: EnableKeyRequest): Request[js.Object]                                       = js.native
+    def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object]                       = js.native
+    def encrypt(params: EncryptRequest): Request[EncryptResponse]                                     = js.native
+    def generateDataKey(params: GenerateDataKeyRequest): Request[GenerateDataKeyResponse]             = js.native
+    def generateDataKeyPair(params: GenerateDataKeyPairRequest): Request[GenerateDataKeyPairResponse] = js.native
+    def generateDataKeyPairWithoutPlaintext(
+        params: GenerateDataKeyPairWithoutPlaintextRequest
+    ): Request[GenerateDataKeyPairWithoutPlaintextResponse] = js.native
     def generateDataKeyWithoutPlaintext(
         params: GenerateDataKeyWithoutPlaintextRequest
     ): Request[GenerateDataKeyWithoutPlaintextResponse]                                                  = js.native
@@ -187,6 +211,7 @@ package kms {
     def getKeyRotationStatus(params: GetKeyRotationStatusRequest): Request[GetKeyRotationStatusResponse] = js.native
     def getParametersForImport(params: GetParametersForImportRequest): Request[GetParametersForImportResponse] =
       js.native
+    def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResponse]                         = js.native
     def importKeyMaterial(params: ImportKeyMaterialRequest): Request[ImportKeyMaterialResponse]          = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                            = js.native
     def listGrants(params: ListGrantsRequest): Request[ListGrantsResponse]                               = js.native
@@ -199,11 +224,13 @@ package kms {
     def retireGrant(params: RetireGrantRequest): Request[js.Object]                                      = js.native
     def revokeGrant(params: RevokeGrantRequest): Request[js.Object]                                      = js.native
     def scheduleKeyDeletion(params: ScheduleKeyDeletionRequest): Request[ScheduleKeyDeletionResponse]    = js.native
+    def sign(params: SignRequest): Request[SignResponse]                                                 = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
     def updateAlias(params: UpdateAliasRequest): Request[js.Object]                                      = js.native
     def updateCustomKeyStore(params: UpdateCustomKeyStoreRequest): Request[UpdateCustomKeyStoreResponse] = js.native
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object]                    = js.native
+    def verify(params: VerifyRequest): Request[VerifyResponse]                                           = js.native
   }
 
   object AlgorithmSpecEnum {
@@ -457,6 +484,7 @@ package kms {
   trait CreateKeyRequest extends js.Object {
     var BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType]
     var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+    var CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec]
     var Description: js.UndefOr[DescriptionType]
     var KeyUsage: js.UndefOr[KeyUsageType]
     var Origin: js.UndefOr[OriginType]
@@ -469,6 +497,7 @@ package kms {
     def apply(
         BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType] = js.undefined,
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
+        CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
@@ -480,6 +509,7 @@ package kms {
         __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
       )
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
+      CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
@@ -542,6 +572,44 @@ package kms {
     }
   }
 
+  object CustomerMasterKeySpecEnum {
+    val RSA_2048          = "RSA_2048"
+    val RSA_3072          = "RSA_3072"
+    val RSA_4096          = "RSA_4096"
+    val ECC_NIST_P256     = "ECC_NIST_P256"
+    val ECC_NIST_P384     = "ECC_NIST_P384"
+    val ECC_NIST_P521     = "ECC_NIST_P521"
+    val ECC_SECG_P256K1   = "ECC_SECG_P256K1"
+    val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT"
+
+    val values = js.Object.freeze(
+      js.Array(
+        RSA_2048,
+        RSA_3072,
+        RSA_4096,
+        ECC_NIST_P256,
+        ECC_NIST_P384,
+        ECC_NIST_P521,
+        ECC_SECG_P256K1,
+        SYMMETRIC_DEFAULT
+      )
+    )
+  }
+
+  object DataKeyPairSpecEnum {
+    val RSA_2048        = "RSA_2048"
+    val RSA_3072        = "RSA_3072"
+    val RSA_4096        = "RSA_4096"
+    val ECC_NIST_P256   = "ECC_NIST_P256"
+    val ECC_NIST_P384   = "ECC_NIST_P384"
+    val ECC_NIST_P521   = "ECC_NIST_P521"
+    val ECC_SECG_P256K1 = "ECC_SECG_P256K1"
+
+    val values = js.Object.freeze(
+      js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
+    )
+  }
+
   object DataKeySpecEnum {
     val AES_256 = "AES_256"
     val AES_128 = "AES_128"
@@ -552,29 +620,36 @@ package kms {
   @js.native
   trait DecryptRequest extends js.Object {
     var CiphertextBlob: CiphertextType
+    var EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var EncryptionContext: js.UndefOr[EncryptionContextType]
     var GrantTokens: js.UndefOr[GrantTokenList]
+    var KeyId: js.UndefOr[KeyIdType]
   }
 
   object DecryptRequest {
     @inline
     def apply(
         CiphertextBlob: CiphertextType,
+        EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
-        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined,
+        KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): DecryptRequest = {
       val __obj = js.Dynamic.literal(
         "CiphertextBlob" -> CiphertextBlob.asInstanceOf[js.Any]
       )
 
+      EncryptionAlgorithm.foreach(__v => __obj.updateDynamic("EncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       EncryptionContext.foreach(__v => __obj.updateDynamic("EncryptionContext")(__v.asInstanceOf[js.Any]))
       GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecryptRequest]
     }
   }
 
   @js.native
   trait DecryptResponse extends js.Object {
+    var EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var KeyId: js.UndefOr[KeyIdType]
     var Plaintext: js.UndefOr[PlaintextType]
   }
@@ -582,10 +657,12 @@ package kms {
   object DecryptResponse {
     @inline
     def apply(
+        EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
     ): DecryptResponse = {
       val __obj = js.Dynamic.literal()
+      EncryptionAlgorithm.foreach(__v => __obj.updateDynamic("EncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       Plaintext.foreach(__v => __obj.updateDynamic("Plaintext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecryptResponse]
@@ -850,6 +927,7 @@ package kms {
   trait EncryptRequest extends js.Object {
     var KeyId: KeyIdType
     var Plaintext: PlaintextType
+    var EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var EncryptionContext: js.UndefOr[EncryptionContextType]
     var GrantTokens: js.UndefOr[GrantTokenList]
   }
@@ -859,6 +937,7 @@ package kms {
     def apply(
         KeyId: KeyIdType,
         Plaintext: PlaintextType,
+        EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): EncryptRequest = {
@@ -867,6 +946,7 @@ package kms {
         "Plaintext" -> Plaintext.asInstanceOf[js.Any]
       )
 
+      EncryptionAlgorithm.foreach(__v => __obj.updateDynamic("EncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       EncryptionContext.foreach(__v => __obj.updateDynamic("EncryptionContext")(__v.asInstanceOf[js.Any]))
       GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptRequest]
@@ -876,6 +956,7 @@ package kms {
   @js.native
   trait EncryptResponse extends js.Object {
     var CiphertextBlob: js.UndefOr[CiphertextType]
+    var EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var KeyId: js.UndefOr[KeyIdType]
   }
 
@@ -883,13 +964,23 @@ package kms {
     @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
+        EncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): EncryptResponse = {
       val __obj = js.Dynamic.literal()
       CiphertextBlob.foreach(__v => __obj.updateDynamic("CiphertextBlob")(__v.asInstanceOf[js.Any]))
+      EncryptionAlgorithm.foreach(__v => __obj.updateDynamic("EncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptResponse]
     }
+  }
+
+  object EncryptionAlgorithmSpecEnum {
+    val SYMMETRIC_DEFAULT  = "SYMMETRIC_DEFAULT"
+    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1"
+    val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256"
+
+    val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
 
   object ExpirationModelTypeEnum {
@@ -897,6 +988,113 @@ package kms {
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE"
 
     val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
+  }
+
+  @js.native
+  trait GenerateDataKeyPairRequest extends js.Object {
+    var KeyId: KeyIdType
+    var KeyPairSpec: DataKeyPairSpec
+    var EncryptionContext: js.UndefOr[EncryptionContextType]
+    var GrantTokens: js.UndefOr[GrantTokenList]
+  }
+
+  object GenerateDataKeyPairRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        KeyPairSpec: DataKeyPairSpec,
+        EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+    ): GenerateDataKeyPairRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId"       -> KeyId.asInstanceOf[js.Any],
+        "KeyPairSpec" -> KeyPairSpec.asInstanceOf[js.Any]
+      )
+
+      EncryptionContext.foreach(__v => __obj.updateDynamic("EncryptionContext")(__v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyPairRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateDataKeyPairResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var KeyPairSpec: js.UndefOr[DataKeyPairSpec]
+    var PrivateKeyCiphertextBlob: js.UndefOr[CiphertextType]
+    var PrivateKeyPlaintext: js.UndefOr[PlaintextType]
+    var PublicKey: js.UndefOr[PublicKeyType]
+  }
+
+  object GenerateDataKeyPairResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        KeyPairSpec: js.UndefOr[DataKeyPairSpec] = js.undefined,
+        PrivateKeyCiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
+        PrivateKeyPlaintext: js.UndefOr[PlaintextType] = js.undefined,
+        PublicKey: js.UndefOr[PublicKeyType] = js.undefined
+    ): GenerateDataKeyPairResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      KeyPairSpec.foreach(__v => __obj.updateDynamic("KeyPairSpec")(__v.asInstanceOf[js.Any]))
+      PrivateKeyCiphertextBlob.foreach(__v => __obj.updateDynamic("PrivateKeyCiphertextBlob")(__v.asInstanceOf[js.Any]))
+      PrivateKeyPlaintext.foreach(__v => __obj.updateDynamic("PrivateKeyPlaintext")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyPairResponse]
+    }
+  }
+
+  @js.native
+  trait GenerateDataKeyPairWithoutPlaintextRequest extends js.Object {
+    var KeyId: KeyIdType
+    var KeyPairSpec: DataKeyPairSpec
+    var EncryptionContext: js.UndefOr[EncryptionContextType]
+    var GrantTokens: js.UndefOr[GrantTokenList]
+  }
+
+  object GenerateDataKeyPairWithoutPlaintextRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        KeyPairSpec: DataKeyPairSpec,
+        EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+    ): GenerateDataKeyPairWithoutPlaintextRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId"       -> KeyId.asInstanceOf[js.Any],
+        "KeyPairSpec" -> KeyPairSpec.asInstanceOf[js.Any]
+      )
+
+      EncryptionContext.foreach(__v => __obj.updateDynamic("EncryptionContext")(__v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyPairWithoutPlaintextRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateDataKeyPairWithoutPlaintextResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var KeyPairSpec: js.UndefOr[DataKeyPairSpec]
+    var PrivateKeyCiphertextBlob: js.UndefOr[CiphertextType]
+    var PublicKey: js.UndefOr[PublicKeyType]
+  }
+
+  object GenerateDataKeyPairWithoutPlaintextResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        KeyPairSpec: js.UndefOr[DataKeyPairSpec] = js.undefined,
+        PrivateKeyCiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
+        PublicKey: js.UndefOr[PublicKeyType] = js.undefined
+    ): GenerateDataKeyPairWithoutPlaintextResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      KeyPairSpec.foreach(__v => __obj.updateDynamic("KeyPairSpec")(__v.asInstanceOf[js.Any]))
+      PrivateKeyCiphertextBlob.foreach(__v => __obj.updateDynamic("PrivateKeyCiphertextBlob")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyPairWithoutPlaintextResponse]
+    }
   }
 
   @js.native
@@ -1155,6 +1353,58 @@ package kms {
     }
   }
 
+  @js.native
+  trait GetPublicKeyRequest extends js.Object {
+    var KeyId: KeyIdType
+    var GrantTokens: js.UndefOr[GrantTokenList]
+  }
+
+  object GetPublicKeyRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+    ): GetPublicKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
+
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPublicKeyRequest]
+    }
+  }
+
+  @js.native
+  trait GetPublicKeyResponse extends js.Object {
+    var CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec]
+    var EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList]
+    var KeyId: js.UndefOr[KeyIdType]
+    var KeyUsage: js.UndefOr[KeyUsageType]
+    var PublicKey: js.UndefOr[PublicKeyType]
+    var SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList]
+  }
+
+  object GetPublicKeyResponse {
+    @inline
+    def apply(
+        CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec] = js.undefined,
+        EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList] = js.undefined,
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
+        PublicKey: js.UndefOr[PublicKeyType] = js.undefined,
+        SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList] = js.undefined
+    ): GetPublicKeyResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
+      EncryptionAlgorithms.foreach(__v => __obj.updateDynamic("EncryptionAlgorithms")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithms.foreach(__v => __obj.updateDynamic("SigningAlgorithms")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPublicKeyResponse]
+    }
+  }
+
   /**
     * Use this structure to allow cryptographic operations in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
     *  AWS KMS applies the grant constraints only when the grant allows a cryptographic operation that accepts an encryption context as input, such as the following.
@@ -1232,15 +1482,20 @@ package kms {
   }
 
   object GrantOperationEnum {
-    val Decrypt                         = "Decrypt"
-    val Encrypt                         = "Encrypt"
-    val GenerateDataKey                 = "GenerateDataKey"
-    val GenerateDataKeyWithoutPlaintext = "GenerateDataKeyWithoutPlaintext"
-    val ReEncryptFrom                   = "ReEncryptFrom"
-    val ReEncryptTo                     = "ReEncryptTo"
-    val CreateGrant                     = "CreateGrant"
-    val RetireGrant                     = "RetireGrant"
-    val DescribeKey                     = "DescribeKey"
+    val Decrypt                             = "Decrypt"
+    val Encrypt                             = "Encrypt"
+    val GenerateDataKey                     = "GenerateDataKey"
+    val GenerateDataKeyWithoutPlaintext     = "GenerateDataKeyWithoutPlaintext"
+    val ReEncryptFrom                       = "ReEncryptFrom"
+    val ReEncryptTo                         = "ReEncryptTo"
+    val Sign                                = "Sign"
+    val Verify                              = "Verify"
+    val GetPublicKey                        = "GetPublicKey"
+    val CreateGrant                         = "CreateGrant"
+    val RetireGrant                         = "RetireGrant"
+    val DescribeKey                         = "DescribeKey"
+    val GenerateDataKeyPair                 = "GenerateDataKeyPair"
+    val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext"
 
     val values = js.Object.freeze(
       js.Array(
@@ -1250,9 +1505,14 @@ package kms {
         GenerateDataKeyWithoutPlaintext,
         ReEncryptFrom,
         ReEncryptTo,
+        Sign,
+        Verify,
+        GetPublicKey,
         CreateGrant,
         RetireGrant,
-        DescribeKey
+        DescribeKey,
+        GenerateDataKeyPair,
+        GenerateDataKeyPairWithoutPlaintext
       )
     )
   }
@@ -1341,14 +1601,17 @@ package kms {
     var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
     var CreationDate: js.UndefOr[DateType]
     var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+    var CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec]
     var DeletionDate: js.UndefOr[DateType]
     var Description: js.UndefOr[DescriptionType]
     var Enabled: js.UndefOr[BooleanType]
+    var EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList]
     var ExpirationModel: js.UndefOr[ExpirationModelType]
     var KeyManager: js.UndefOr[KeyManagerType]
     var KeyState: js.UndefOr[KeyState]
     var KeyUsage: js.UndefOr[KeyUsageType]
     var Origin: js.UndefOr[OriginType]
+    var SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList]
     var ValidTo: js.UndefOr[DateType]
   }
 
@@ -1361,14 +1624,17 @@ package kms {
         CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
+        CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec] = js.undefined,
         DeletionDate: js.UndefOr[DateType] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
         Enabled: js.UndefOr[BooleanType] = js.undefined,
+        EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList] = js.undefined,
         ExpirationModel: js.UndefOr[ExpirationModelType] = js.undefined,
         KeyManager: js.UndefOr[KeyManagerType] = js.undefined,
         KeyState: js.UndefOr[KeyState] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
+        SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList] = js.undefined,
         ValidTo: js.UndefOr[DateType] = js.undefined
     ): KeyMetadata = {
       val __obj = js.Dynamic.literal(
@@ -1380,14 +1646,17 @@ package kms {
       CloudHsmClusterId.foreach(__v => __obj.updateDynamic("CloudHsmClusterId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
+      CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
       DeletionDate.foreach(__v => __obj.updateDynamic("DeletionDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EncryptionAlgorithms.foreach(__v => __obj.updateDynamic("EncryptionAlgorithms")(__v.asInstanceOf[js.Any]))
       ExpirationModel.foreach(__v => __obj.updateDynamic("ExpirationModel")(__v.asInstanceOf[js.Any]))
       KeyManager.foreach(__v => __obj.updateDynamic("KeyManager")(__v.asInstanceOf[js.Any]))
       KeyState.foreach(__v => __obj.updateDynamic("KeyState")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithms.foreach(__v => __obj.updateDynamic("SigningAlgorithms")(__v.asInstanceOf[js.Any]))
       ValidTo.foreach(__v => __obj.updateDynamic("ValidTo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyMetadata]
     }
@@ -1404,9 +1673,10 @@ package kms {
   }
 
   object KeyUsageTypeEnum {
+    val SIGN_VERIFY     = "SIGN_VERIFY"
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT"
 
-    val values = js.Object.freeze(js.Array(ENCRYPT_DECRYPT))
+    val values = js.Object.freeze(js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT))
   }
 
   @js.native
@@ -1656,6 +1926,13 @@ package kms {
     }
   }
 
+  object MessageTypeEnum {
+    val RAW    = "RAW"
+    val DIGEST = "DIGEST"
+
+    val values = js.Object.freeze(js.Array(RAW, DIGEST))
+  }
+
   object OriginTypeEnum {
     val AWS_KMS      = "AWS_KMS"
     val EXTERNAL     = "EXTERNAL"
@@ -1697,9 +1974,12 @@ package kms {
   trait ReEncryptRequest extends js.Object {
     var CiphertextBlob: CiphertextType
     var DestinationKeyId: KeyIdType
+    var DestinationEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var DestinationEncryptionContext: js.UndefOr[EncryptionContextType]
     var GrantTokens: js.UndefOr[GrantTokenList]
+    var SourceEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var SourceEncryptionContext: js.UndefOr[EncryptionContextType]
+    var SourceKeyId: js.UndefOr[KeyIdType]
   }
 
   object ReEncryptRequest {
@@ -1707,20 +1987,30 @@ package kms {
     def apply(
         CiphertextBlob: CiphertextType,
         DestinationKeyId: KeyIdType,
+        DestinationEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         DestinationEncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined,
-        SourceEncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined
+        SourceEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
+        SourceEncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
+        SourceKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): ReEncryptRequest = {
       val __obj = js.Dynamic.literal(
         "CiphertextBlob"   -> CiphertextBlob.asInstanceOf[js.Any],
         "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any]
       )
 
+      DestinationEncryptionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
       DestinationEncryptionContext.foreach(__v =>
         __obj.updateDynamic("DestinationEncryptionContext")(__v.asInstanceOf[js.Any])
       )
       GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      SourceEncryptionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
       SourceEncryptionContext.foreach(__v => __obj.updateDynamic("SourceEncryptionContext")(__v.asInstanceOf[js.Any]))
+      SourceKeyId.foreach(__v => __obj.updateDynamic("SourceKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReEncryptRequest]
     }
   }
@@ -1728,7 +2018,9 @@ package kms {
   @js.native
   trait ReEncryptResponse extends js.Object {
     var CiphertextBlob: js.UndefOr[CiphertextType]
+    var DestinationEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var KeyId: js.UndefOr[KeyIdType]
+    var SourceEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec]
     var SourceKeyId: js.UndefOr[KeyIdType]
   }
 
@@ -1736,12 +2028,20 @@ package kms {
     @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
+        DestinationEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        SourceEncryptionAlgorithm: js.UndefOr[EncryptionAlgorithmSpec] = js.undefined,
         SourceKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): ReEncryptResponse = {
       val __obj = js.Dynamic.literal()
       CiphertextBlob.foreach(__v => __obj.updateDynamic("CiphertextBlob")(__v.asInstanceOf[js.Any]))
+      DestinationEncryptionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      SourceEncryptionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
       SourceKeyId.foreach(__v => __obj.updateDynamic("SourceKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReEncryptResponse]
     }
@@ -1828,6 +2128,84 @@ package kms {
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleKeyDeletionResponse]
     }
+  }
+
+  @js.native
+  trait SignRequest extends js.Object {
+    var KeyId: KeyIdType
+    var Message: PlaintextType
+    var SigningAlgorithm: SigningAlgorithmSpec
+    var GrantTokens: js.UndefOr[GrantTokenList]
+    var MessageType: js.UndefOr[MessageType]
+  }
+
+  object SignRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        Message: PlaintextType,
+        SigningAlgorithm: SigningAlgorithmSpec,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined,
+        MessageType: js.UndefOr[MessageType] = js.undefined
+    ): SignRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId"            -> KeyId.asInstanceOf[js.Any],
+        "Message"          -> Message.asInstanceOf[js.Any],
+        "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any]
+      )
+
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SignRequest]
+    }
+  }
+
+  @js.native
+  trait SignResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var Signature: js.UndefOr[CiphertextType]
+    var SigningAlgorithm: js.UndefOr[SigningAlgorithmSpec]
+  }
+
+  object SignResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        Signature: js.UndefOr[CiphertextType] = js.undefined,
+        SigningAlgorithm: js.UndefOr[SigningAlgorithmSpec] = js.undefined
+    ): SignResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithm.foreach(__v => __obj.updateDynamic("SigningAlgorithm")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SignResponse]
+    }
+  }
+
+  object SigningAlgorithmSpecEnum {
+    val RSASSA_PSS_SHA_256        = "RSASSA_PSS_SHA_256"
+    val RSASSA_PSS_SHA_384        = "RSASSA_PSS_SHA_384"
+    val RSASSA_PSS_SHA_512        = "RSASSA_PSS_SHA_512"
+    val RSASSA_PKCS1_V1_5_SHA_256 = "RSASSA_PKCS1_V1_5_SHA_256"
+    val RSASSA_PKCS1_V1_5_SHA_384 = "RSASSA_PKCS1_V1_5_SHA_384"
+    val RSASSA_PKCS1_V1_5_SHA_512 = "RSASSA_PKCS1_V1_5_SHA_512"
+    val ECDSA_SHA_256             = "ECDSA_SHA_256"
+    val ECDSA_SHA_384             = "ECDSA_SHA_384"
+    val ECDSA_SHA_512             = "ECDSA_SHA_512"
+
+    val values = js.Object.freeze(
+      js.Array(
+        RSASSA_PSS_SHA_256,
+        RSASSA_PSS_SHA_384,
+        RSASSA_PSS_SHA_512,
+        RSASSA_PKCS1_V1_5_SHA_256,
+        RSASSA_PKCS1_V1_5_SHA_384,
+        RSASSA_PKCS1_V1_5_SHA_512,
+        ECDSA_SHA_256,
+        ECDSA_SHA_384,
+        ECDSA_SHA_512
+      )
+    )
   }
 
   /**
@@ -1976,6 +2354,61 @@ package kms {
       )
 
       __obj.asInstanceOf[UpdateKeyDescriptionRequest]
+    }
+  }
+
+  @js.native
+  trait VerifyRequest extends js.Object {
+    var KeyId: KeyIdType
+    var Message: PlaintextType
+    var Signature: CiphertextType
+    var SigningAlgorithm: SigningAlgorithmSpec
+    var GrantTokens: js.UndefOr[GrantTokenList]
+    var MessageType: js.UndefOr[MessageType]
+  }
+
+  object VerifyRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        Message: PlaintextType,
+        Signature: CiphertextType,
+        SigningAlgorithm: SigningAlgorithmSpec,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined,
+        MessageType: js.UndefOr[MessageType] = js.undefined
+    ): VerifyRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId"            -> KeyId.asInstanceOf[js.Any],
+        "Message"          -> Message.asInstanceOf[js.Any],
+        "Signature"        -> Signature.asInstanceOf[js.Any],
+        "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any]
+      )
+
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VerifyRequest]
+    }
+  }
+
+  @js.native
+  trait VerifyResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var SignatureValid: js.UndefOr[BooleanType]
+    var SigningAlgorithm: js.UndefOr[SigningAlgorithmSpec]
+  }
+
+  object VerifyResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        SignatureValid: js.UndefOr[BooleanType] = js.undefined,
+        SigningAlgorithm: js.UndefOr[SigningAlgorithmSpec] = js.undefined
+    ): VerifyResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      SignatureValid.foreach(__v => __obj.updateDynamic("SignatureValid")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithm.foreach(__v => __obj.updateDynamic("SigningAlgorithm")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VerifyResponse]
     }
   }
 

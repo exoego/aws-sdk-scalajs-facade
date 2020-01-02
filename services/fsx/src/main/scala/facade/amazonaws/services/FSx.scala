@@ -21,11 +21,22 @@ package object fsx {
   type CreationTime                        = js.Date
   type DNSName                             = String
   type DailyTime                           = String
+  type DataRepositoryTaskFilterName        = String
+  type DataRepositoryTaskFilterValue       = String
+  type DataRepositoryTaskFilterValues      = js.Array[DataRepositoryTaskFilterValue]
+  type DataRepositoryTaskFilters           = js.Array[DataRepositoryTaskFilter]
+  type DataRepositoryTaskLifecycle         = String
+  type DataRepositoryTaskPath              = String
+  type DataRepositoryTaskPaths             = js.Array[DataRepositoryTaskPath]
+  type DataRepositoryTaskType              = String
+  type DataRepositoryTasks                 = js.Array[DataRepositoryTask]
   type DirectoryId                         = String
   type DirectoryPassword                   = String
   type DirectoryUserName                   = String
   type DnsIps                              = js.Array[IpAddress]
+  type EndTime                             = js.Date
   type ErrorMessage                        = String
+  type FailedCount                         = Double
   type FileSystemAdministratorsGroupName   = String
   type FileSystemId                        = String
   type FileSystemIds                       = js.Array[FileSystemId]
@@ -41,6 +52,7 @@ package object fsx {
   type Flag                                = Boolean
   type IpAddress                           = String
   type KmsKeyId                            = String
+  type LastUpdatedTime                     = js.Date
   type MaxResults                          = Int
   type Megabytes                           = Int
   type MegabytesPerSecond                  = Int
@@ -49,22 +61,37 @@ package object fsx {
   type NextToken                           = String
   type OrganizationalUnitDistinguishedName = String
   type ProgressPercent                     = Int
+  type ReportFormat                        = String
+  type ReportScope                         = String
   type ResourceARN                         = String
   type SecurityGroupId                     = String
   type SecurityGroupIds                    = js.Array[SecurityGroupId]
+  type StartTime                           = js.Date
   type StorageCapacity                     = Int
   type SubnetId                            = String
   type SubnetIds                           = js.Array[SubnetId]
+  type SucceededCount                      = Double
   type TagKey                              = String
   type TagKeys                             = js.Array[TagKey]
   type TagValue                            = String
   type Tags                                = js.Array[Tag]
+  type TaskId                              = String
+  type TaskIds                             = js.Array[TaskId]
+  type TotalCount                          = Double
   type VpcId                               = String
   type WeeklyTime                          = String
+  type WindowsDeploymentType               = String
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
+
+    @inline def cancelDataRepositoryTaskFuture(
+        params: CancelDataRepositoryTaskRequest
+    ): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise.toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
       service.createBackup(params).promise.toFuture
+    @inline def createDataRepositoryTaskFuture(
+        params: CreateDataRepositoryTaskRequest
+    ): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise.toFuture
     @inline def createFileSystemFromBackupFuture(
         params: CreateFileSystemFromBackupRequest
     ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise.toFuture
@@ -76,6 +103,9 @@ package object fsx {
       service.deleteFileSystem(params).promise.toFuture
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
       service.describeBackups(params).promise.toFuture
+    @inline def describeDataRepositoryTasksFuture(
+        params: DescribeDataRepositoryTasksRequest
+    ): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise.toFuture
     @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
       service.describeFileSystems(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
@@ -95,14 +125,21 @@ package fsx {
   class FSx() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse]             = js.native
+    def cancelDataRepositoryTask(params: CancelDataRepositoryTaskRequest): Request[CancelDataRepositoryTaskResponse] =
+      js.native
+    def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
+    def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] =
+      js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
     def createFileSystemFromBackup(
         params: CreateFileSystemFromBackupRequest
-    ): Request[CreateFileSystemFromBackupResponse]                                                    = js.native
-    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse]                      = js.native
-    def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse]          = js.native
-    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse]             = js.native
+    ): Request[CreateFileSystemFromBackupResponse]                                           = js.native
+    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse]             = js.native
+    def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse] = js.native
+    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse]    = js.native
+    def describeDataRepositoryTasks(
+        params: DescribeDataRepositoryTasksRequest
+    ): Request[DescribeDataRepositoryTasksResponse]                                                   = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
@@ -225,6 +262,76 @@ package fsx {
   }
 
   /**
+    * Cancels a data repository task.
+    */
+  @js.native
+  trait CancelDataRepositoryTaskRequest extends js.Object {
+    var TaskId: TaskId
+  }
+
+  object CancelDataRepositoryTaskRequest {
+    @inline
+    def apply(
+        TaskId: TaskId
+    ): CancelDataRepositoryTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "TaskId" -> TaskId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelDataRepositoryTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDataRepositoryTaskResponse extends js.Object {
+    var Lifecycle: js.UndefOr[DataRepositoryTaskLifecycle]
+    var TaskId: js.UndefOr[TaskId]
+  }
+
+  object CancelDataRepositoryTaskResponse {
+    @inline
+    def apply(
+        Lifecycle: js.UndefOr[DataRepositoryTaskLifecycle] = js.undefined,
+        TaskId: js.UndefOr[TaskId] = js.undefined
+    ): CancelDataRepositoryTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      TaskId.foreach(__v => __obj.updateDynamic("TaskId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelDataRepositoryTaskResponse]
+    }
+  }
+
+  /**
+    * Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.
+    */
+  @js.native
+  trait CompletionReport extends js.Object {
+    var Enabled: Flag
+    var Format: js.UndefOr[ReportFormat]
+    var Path: js.UndefOr[ArchivePath]
+    var Scope: js.UndefOr[ReportScope]
+  }
+
+  object CompletionReport {
+    @inline
+    def apply(
+        Enabled: Flag,
+        Format: js.UndefOr[ReportFormat] = js.undefined,
+        Path: js.UndefOr[ArchivePath] = js.undefined,
+        Scope: js.UndefOr[ReportScope] = js.undefined
+    ): CompletionReport = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompletionReport]
+    }
+  }
+
+  /**
     * The request object for the <code>CreateBackup</code> operation.
     */
   @js.native
@@ -267,6 +374,55 @@ package fsx {
       val __obj = js.Dynamic.literal()
       Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateDataRepositoryTaskRequest extends js.Object {
+    var FileSystemId: FileSystemId
+    var Report: CompletionReport
+    var Type: DataRepositoryTaskType
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Paths: js.UndefOr[DataRepositoryTaskPaths]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateDataRepositoryTaskRequest {
+    @inline
+    def apply(
+        FileSystemId: FileSystemId,
+        Report: CompletionReport,
+        Type: DataRepositoryTaskType,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Paths: js.UndefOr[DataRepositoryTaskPaths] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateDataRepositoryTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
+        "Report"       -> Report.asInstanceOf[js.Any],
+        "Type"         -> Type.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Paths.foreach(__v => __obj.updateDynamic("Paths")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDataRepositoryTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDataRepositoryTaskResponse extends js.Object {
+    var DataRepositoryTask: js.UndefOr[DataRepositoryTask]
+  }
+
+  object CreateDataRepositoryTaskResponse {
+    @inline
+    def apply(
+        DataRepositoryTask: js.UndefOr[DataRepositoryTask] = js.undefined
+    ): CreateDataRepositoryTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      DataRepositoryTask.foreach(__v => __obj.updateDynamic("DataRepositoryTask")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDataRepositoryTaskResponse]
     }
   }
 
@@ -429,6 +585,8 @@ package fsx {
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var DeploymentType: js.UndefOr[WindowsDeploymentType]
+    var PreferredSubnetId: js.UndefOr[SubnetId]
     var SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfiguration]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
@@ -441,6 +599,8 @@ package fsx {
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+        DeploymentType: js.UndefOr[WindowsDeploymentType] = js.undefined,
+        PreferredSubnetId: js.UndefOr[SubnetId] = js.undefined,
         SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfiguration] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): CreateFileSystemWindowsConfiguration = {
@@ -456,6 +616,8 @@ package fsx {
       DailyAutomaticBackupStartTime.foreach(__v =>
         __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
       )
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      PreferredSubnetId.foreach(__v => __obj.updateDynamic("PreferredSubnetId")(__v.asInstanceOf[js.Any]))
       SelfManagedActiveDirectoryConfiguration.foreach(__v =>
         __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
       )
@@ -489,6 +651,156 @@ package fsx {
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataRepositoryConfiguration]
     }
+  }
+
+  /**
+    * A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository.
+    */
+  @js.native
+  trait DataRepositoryTask extends js.Object {
+    var CreationTime: CreationTime
+    var FileSystemId: FileSystemId
+    var Lifecycle: DataRepositoryTaskLifecycle
+    var TaskId: TaskId
+    var Type: DataRepositoryTaskType
+    var EndTime: js.UndefOr[EndTime]
+    var FailureDetails: js.UndefOr[DataRepositoryTaskFailureDetails]
+    var Paths: js.UndefOr[DataRepositoryTaskPaths]
+    var Report: js.UndefOr[CompletionReport]
+    var ResourceARN: js.UndefOr[ResourceARN]
+    var StartTime: js.UndefOr[StartTime]
+    var Status: js.UndefOr[DataRepositoryTaskStatus]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object DataRepositoryTask {
+    @inline
+    def apply(
+        CreationTime: CreationTime,
+        FileSystemId: FileSystemId,
+        Lifecycle: DataRepositoryTaskLifecycle,
+        TaskId: TaskId,
+        Type: DataRepositoryTaskType,
+        EndTime: js.UndefOr[EndTime] = js.undefined,
+        FailureDetails: js.UndefOr[DataRepositoryTaskFailureDetails] = js.undefined,
+        Paths: js.UndefOr[DataRepositoryTaskPaths] = js.undefined,
+        Report: js.UndefOr[CompletionReport] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        StartTime: js.UndefOr[StartTime] = js.undefined,
+        Status: js.UndefOr[DataRepositoryTaskStatus] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DataRepositoryTask = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
+        "Lifecycle"    -> Lifecycle.asInstanceOf[js.Any],
+        "TaskId"       -> TaskId.asInstanceOf[js.Any],
+        "Type"         -> Type.asInstanceOf[js.Any]
+      )
+
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      Paths.foreach(__v => __obj.updateDynamic("Paths")(__v.asInstanceOf[js.Any]))
+      Report.foreach(__v => __obj.updateDynamic("Report")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataRepositoryTask]
+    }
+  }
+
+  /**
+    * Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.
+    */
+  @js.native
+  trait DataRepositoryTaskFailureDetails extends js.Object {
+    var Message: js.UndefOr[ErrorMessage]
+  }
+
+  object DataRepositoryTaskFailureDetails {
+    @inline
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): DataRepositoryTaskFailureDetails = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataRepositoryTaskFailureDetails]
+    }
+  }
+
+  /**
+    * (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.
+    */
+  @js.native
+  trait DataRepositoryTaskFilter extends js.Object {
+    var Name: js.UndefOr[DataRepositoryTaskFilterName]
+    var Values: js.UndefOr[DataRepositoryTaskFilterValues]
+  }
+
+  object DataRepositoryTaskFilter {
+    @inline
+    def apply(
+        Name: js.UndefOr[DataRepositoryTaskFilterName] = js.undefined,
+        Values: js.UndefOr[DataRepositoryTaskFilterValues] = js.undefined
+    ): DataRepositoryTaskFilter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataRepositoryTaskFilter]
+    }
+  }
+
+  object DataRepositoryTaskFilterNameEnum {
+    val `file-system-id` = "file-system-id"
+    val `task-lifecycle` = "task-lifecycle"
+
+    val values = js.Object.freeze(js.Array(`file-system-id`, `task-lifecycle`))
+  }
+
+  object DataRepositoryTaskLifecycleEnum {
+    val PENDING   = "PENDING"
+    val EXECUTING = "EXECUTING"
+    val FAILED    = "FAILED"
+    val SUCCEEDED = "SUCCEEDED"
+    val CANCELED  = "CANCELED"
+    val CANCELING = "CANCELING"
+
+    val values = js.Object.freeze(js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING))
+  }
+
+  /**
+    * Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.
+    */
+  @js.native
+  trait DataRepositoryTaskStatus extends js.Object {
+    var FailedCount: js.UndefOr[FailedCount]
+    var LastUpdatedTime: js.UndefOr[LastUpdatedTime]
+    var SucceededCount: js.UndefOr[SucceededCount]
+    var TotalCount: js.UndefOr[TotalCount]
+  }
+
+  object DataRepositoryTaskStatus {
+    @inline
+    def apply(
+        FailedCount: js.UndefOr[FailedCount] = js.undefined,
+        LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        SucceededCount: js.UndefOr[SucceededCount] = js.undefined,
+        TotalCount: js.UndefOr[TotalCount] = js.undefined
+    ): DataRepositoryTaskStatus = {
+      val __obj = js.Dynamic.literal()
+      FailedCount.foreach(__v => __obj.updateDynamic("FailedCount")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      SucceededCount.foreach(__v => __obj.updateDynamic("SucceededCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataRepositoryTaskStatus]
+    }
+  }
+
+  object DataRepositoryTaskTypeEnum {
+    val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY"
+
+    val values = js.Object.freeze(js.Array(EXPORT_TO_REPOSITORY))
   }
 
   /**
@@ -680,6 +992,50 @@ package fsx {
       Backups.foreach(__v => __obj.updateDynamic("Backups")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDataRepositoryTasksRequest extends js.Object {
+    var Filters: js.UndefOr[DataRepositoryTaskFilters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var TaskIds: js.UndefOr[TaskIds]
+  }
+
+  object DescribeDataRepositoryTasksRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[DataRepositoryTaskFilters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TaskIds: js.UndefOr[TaskIds] = js.undefined
+    ): DescribeDataRepositoryTasksRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TaskIds.foreach(__v => __obj.updateDynamic("TaskIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataRepositoryTasksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDataRepositoryTasksResponse extends js.Object {
+    var DataRepositoryTasks: js.UndefOr[DataRepositoryTasks]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeDataRepositoryTasksResponse {
+    @inline
+    def apply(
+        DataRepositoryTasks: js.UndefOr[DataRepositoryTasks] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDataRepositoryTasksResponse = {
+      val __obj = js.Dynamic.literal()
+      DataRepositoryTasks.foreach(__v => __obj.updateDynamic("DataRepositoryTasks")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataRepositoryTasksResponse]
     }
   }
 
@@ -952,6 +1308,18 @@ package fsx {
       )
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
+  }
+
+  object ReportFormatEnum {
+    val REPORT_CSV_20191124 = "REPORT_CSV_20191124"
+
+    val values = js.Object.freeze(js.Array(REPORT_CSV_20191124))
+  }
+
+  object ReportScopeEnum {
+    val FAILED_FILES_ONLY = "FAILED_FILES_ONLY"
+
+    val values = js.Object.freeze(js.Array(FAILED_FILES_ONLY))
   }
 
   /**
@@ -1263,6 +1631,13 @@ package fsx {
     }
   }
 
+  object WindowsDeploymentTypeEnum {
+    val MULTI_AZ_1  = "MULTI_AZ_1"
+    val SINGLE_AZ_1 = "SINGLE_AZ_1"
+
+    val values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1))
+  }
+
   /**
     * The configuration for this Microsoft Windows file system.
     */
@@ -1272,7 +1647,11 @@ package fsx {
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var DeploymentType: js.UndefOr[WindowsDeploymentType]
     var MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations]
+    var PreferredFileServerIp: js.UndefOr[IpAddress]
+    var PreferredSubnetId: js.UndefOr[SubnetId]
+    var RemoteAdministrationEndpoint: js.UndefOr[DNSName]
     var SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryAttributes]
     var ThroughputCapacity: js.UndefOr[MegabytesPerSecond]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
@@ -1285,7 +1664,11 @@ package fsx {
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+        DeploymentType: js.UndefOr[WindowsDeploymentType] = js.undefined,
         MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations] = js.undefined,
+        PreferredFileServerIp: js.UndefOr[IpAddress] = js.undefined,
+        PreferredSubnetId: js.UndefOr[SubnetId] = js.undefined,
+        RemoteAdministrationEndpoint: js.UndefOr[DNSName] = js.undefined,
         SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryAttributes] = js.undefined,
         ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
@@ -1299,8 +1682,14 @@ package fsx {
       DailyAutomaticBackupStartTime.foreach(__v =>
         __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
       )
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
       MaintenanceOperationsInProgress.foreach(__v =>
         __obj.updateDynamic("MaintenanceOperationsInProgress")(__v.asInstanceOf[js.Any])
+      )
+      PreferredFileServerIp.foreach(__v => __obj.updateDynamic("PreferredFileServerIp")(__v.asInstanceOf[js.Any]))
+      PreferredSubnetId.foreach(__v => __obj.updateDynamic("PreferredSubnetId")(__v.asInstanceOf[js.Any]))
+      RemoteAdministrationEndpoint.foreach(__v =>
+        __obj.updateDynamic("RemoteAdministrationEndpoint")(__v.asInstanceOf[js.Any])
       )
       SelfManagedActiveDirectoryConfiguration.foreach(__v =>
         __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])

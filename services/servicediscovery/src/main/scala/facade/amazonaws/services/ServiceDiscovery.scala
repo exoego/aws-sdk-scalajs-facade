@@ -56,6 +56,7 @@ package object servicediscovery {
   type Timestamp               = js.Date
 
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
+
     @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
       service.createHttpNamespace(params).promise.toFuture
     @inline def createPrivateDnsNamespaceFuture(

@@ -49,6 +49,7 @@ package object redshift {
   type ImportTablesNotStarted             = js.Array[String]
   type IntegerOptional                    = Int
   type LongOptional                       = Double
+  type Mode                               = String
   type NodeConfigurationOptionList        = js.Array[NodeConfigurationOption]
   type NodeConfigurationOptionsFilterList = js.Array[NodeConfigurationOptionsFilter]
   type NodeConfigurationOptionsFilterName = String
@@ -66,6 +67,12 @@ package object redshift {
   type RevisionTargetsList                = js.Array[RevisionTarget]
   type ScheduleDefinitionList             = js.Array[String]
   type ScheduleState                      = String
+  type ScheduledActionFilterList          = js.Array[ScheduledActionFilter]
+  type ScheduledActionFilterName          = String
+  type ScheduledActionList                = js.Array[ScheduledAction]
+  type ScheduledActionState               = String
+  type ScheduledActionTimeList            = js.Array[TStamp]
+  type ScheduledActionTypeValues          = String
   type ScheduledSnapshotTimeList          = js.Array[TStamp]
   type SensitiveString                    = String
   type SnapshotAttributeToSortBy          = String
@@ -94,6 +101,7 @@ package object redshift {
   type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
+
     @inline def acceptReservedNodeExchangeFuture(
         params: AcceptReservedNodeExchangeInputMessage
     ): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise.toFuture
@@ -136,6 +144,8 @@ package object redshift {
     @inline def createHsmConfigurationFuture(
         params: CreateHsmConfigurationMessage
     ): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise.toFuture
+    @inline def createScheduledActionFuture(params: CreateScheduledActionMessage): Future[ScheduledAction] =
+      service.createScheduledAction(params).promise.toFuture
     @inline def createSnapshotCopyGrantFuture(
         params: CreateSnapshotCopyGrantMessage
     ): Future[CreateSnapshotCopyGrantResult] = service.createSnapshotCopyGrant(params).promise.toFuture
@@ -159,6 +169,8 @@ package object redshift {
       service.deleteHsmClientCertificate(params).promise.toFuture
     @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
       service.deleteHsmConfiguration(params).promise.toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionMessage): Future[js.Object] =
+      service.deleteScheduledAction(params).promise.toFuture
     @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
       service.deleteSnapshotCopyGrant(params).promise.toFuture
     @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
@@ -223,6 +235,9 @@ package object redshift {
       service.describeReservedNodes(params).promise.toFuture
     @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
       service.describeResize(params).promise.toFuture
+    @inline def describeScheduledActionsFuture(
+        params: DescribeScheduledActionsMessage
+    ): Future[ScheduledActionsMessage] = service.describeScheduledActions(params).promise.toFuture
     @inline def describeSnapshotCopyGrantsFuture(
         params: DescribeSnapshotCopyGrantsMessage
     ): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise.toFuture
@@ -272,6 +287,8 @@ package object redshift {
     @inline def modifyEventSubscriptionFuture(
         params: ModifyEventSubscriptionMessage
     ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise.toFuture
+    @inline def modifyScheduledActionFuture(params: ModifyScheduledActionMessage): Future[ScheduledAction] =
+      service.modifyScheduledAction(params).promise.toFuture
     @inline def modifySnapshotCopyRetentionPeriodFuture(
         params: ModifySnapshotCopyRetentionPeriodMessage
     ): Future[ModifySnapshotCopyRetentionPeriodResult] =
@@ -343,6 +360,7 @@ package redshift {
         params: CreateHsmClientCertificateMessage
     ): Request[CreateHsmClientCertificateResult]                                                             = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage): Request[CreateHsmConfigurationResult] = js.native
+    def createScheduledAction(params: CreateScheduledActionMessage): Request[ScheduledAction]                = js.native
     def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage): Request[CreateSnapshotCopyGrantResult] =
       js.native
     def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule]           = js.native
@@ -355,6 +373,7 @@ package redshift {
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[js.Object]                = js.native
     def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object]          = js.native
     def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object]                  = js.native
+    def deleteScheduledAction(params: DeleteScheduledActionMessage): Request[js.Object]                    = js.native
     def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object]                = js.native
     def deleteSnapshotSchedule(params: DeleteSnapshotScheduleMessage): Request[js.Object]                  = js.native
     def deleteTags(params: DeleteTagsMessage): Request[js.Object]                                          = js.native
@@ -396,9 +415,10 @@ package redshift {
     ): Request[OrderableClusterOptionsMessage] = js.native
     def describeReservedNodeOfferings(
         params: DescribeReservedNodeOfferingsMessage
-    ): Request[ReservedNodeOfferingsMessage]                                                       = js.native
-    def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
-    def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage]              = js.native
+    ): Request[ReservedNodeOfferingsMessage]                                                                = js.native
+    def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage]          = js.native
+    def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage]                       = js.native
+    def describeScheduledActions(params: DescribeScheduledActionsMessage): Request[ScheduledActionsMessage] = js.native
     def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage): Request[SnapshotCopyGrantMessage] =
       js.native
     def describeSnapshotSchedules(
@@ -431,6 +451,7 @@ package redshift {
       js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
       js.native
+    def modifyScheduledAction(params: ModifyScheduledActionMessage): Request[ScheduledAction] = js.native
     def modifySnapshotCopyRetentionPeriod(
         params: ModifySnapshotCopyRetentionPeriodMessage
     ): Request[ModifySnapshotCopyRetentionPeriodResult]                                          = js.native
@@ -554,9 +575,10 @@ package redshift {
   }
 
   object ActionTypeEnum {
-    val `restore-cluster` = "restore-cluster"
+    val `restore-cluster`       = "restore-cluster"
+    val `recommend-node-config` = "recommend-node-config"
 
-    val values = js.Object.freeze(js.Array(`restore-cluster`))
+    val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`))
   }
 
   /**
@@ -2014,6 +2036,47 @@ package redshift {
     }
   }
 
+  @js.native
+  trait CreateScheduledActionMessage extends js.Object {
+    var IamRole: String
+    var Schedule: String
+    var ScheduledActionName: String
+    var TargetAction: ScheduledActionType
+    var Enable: js.UndefOr[BooleanOptional]
+    var EndTime: js.UndefOr[TStamp]
+    var ScheduledActionDescription: js.UndefOr[String]
+    var StartTime: js.UndefOr[TStamp]
+  }
+
+  object CreateScheduledActionMessage {
+    @inline
+    def apply(
+        IamRole: String,
+        Schedule: String,
+        ScheduledActionName: String,
+        TargetAction: ScheduledActionType,
+        Enable: js.UndefOr[BooleanOptional] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        ScheduledActionDescription: js.UndefOr[String] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined
+    ): CreateScheduledActionMessage = {
+      val __obj = js.Dynamic.literal(
+        "IamRole"             -> IamRole.asInstanceOf[js.Any],
+        "Schedule"            -> Schedule.asInstanceOf[js.Any],
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
+        "TargetAction"        -> TargetAction.asInstanceOf[js.Any]
+      )
+
+      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ScheduledActionDescription.foreach(__v =>
+        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
+      )
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateScheduledActionMessage]
+    }
+  }
+
   /**
     * The result of the <code>CreateSnapshotCopyGrant</code> action.
     */
@@ -2444,6 +2507,24 @@ package redshift {
       )
 
       __obj.asInstanceOf[DeleteHsmConfigurationMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteScheduledActionMessage extends js.Object {
+    var ScheduledActionName: String
+  }
+
+  object DeleteScheduledActionMessage {
+    @inline
+    def apply(
+        ScheduledActionName: String
+    ): DeleteScheduledActionMessage = {
+      val __obj = js.Dynamic.literal(
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteScheduledActionMessage]
     }
   }
 
@@ -3026,6 +3107,7 @@ package redshift {
   @js.native
   trait DescribeNodeConfigurationOptionsMessage extends js.Object {
     var ActionType: ActionType
+    var ClusterIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[NodeConfigurationOptionsFilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
@@ -3037,6 +3119,7 @@ package redshift {
     @inline
     def apply(
         ActionType: ActionType,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[NodeConfigurationOptionsFilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3047,6 +3130,7 @@ package redshift {
         "ActionType" -> ActionType.asInstanceOf[js.Any]
       )
 
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
@@ -3152,6 +3236,43 @@ package redshift {
       )
 
       __obj.asInstanceOf[DescribeResizeMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeScheduledActionsMessage extends js.Object {
+    var Active: js.UndefOr[BooleanOptional]
+    var EndTime: js.UndefOr[TStamp]
+    var Filters: js.UndefOr[ScheduledActionFilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ScheduledActionName: js.UndefOr[String]
+    var StartTime: js.UndefOr[TStamp]
+    var TargetActionType: js.UndefOr[ScheduledActionTypeValues]
+  }
+
+  object DescribeScheduledActionsMessage {
+    @inline
+    def apply(
+        Active: js.UndefOr[BooleanOptional] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        Filters: js.UndefOr[ScheduledActionFilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ScheduledActionName: js.UndefOr[String] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        TargetActionType: js.UndefOr[ScheduledActionTypeValues] = js.undefined
+    ): DescribeScheduledActionsMessage = {
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      ScheduledActionName.foreach(__v => __obj.updateDynamic("ScheduledActionName")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TargetActionType.foreach(__v => __obj.updateDynamic("TargetActionType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScheduledActionsMessage]
     }
   }
 
@@ -4008,6 +4129,13 @@ package redshift {
     }
   }
 
+  object ModeEnum {
+    val standard           = "standard"
+    val `high-performance` = "high-performance"
+
+    val values = js.Object.freeze(js.Array(standard, `high-performance`))
+  }
+
   @js.native
   trait ModifyClusterDbRevisionMessage extends js.Object {
     var ClusterIdentifier: String
@@ -4441,6 +4569,47 @@ package redshift {
     }
   }
 
+  @js.native
+  trait ModifyScheduledActionMessage extends js.Object {
+    var ScheduledActionName: String
+    var Enable: js.UndefOr[BooleanOptional]
+    var EndTime: js.UndefOr[TStamp]
+    var IamRole: js.UndefOr[String]
+    var Schedule: js.UndefOr[String]
+    var ScheduledActionDescription: js.UndefOr[String]
+    var StartTime: js.UndefOr[TStamp]
+    var TargetAction: js.UndefOr[ScheduledActionType]
+  }
+
+  object ModifyScheduledActionMessage {
+    @inline
+    def apply(
+        ScheduledActionName: String,
+        Enable: js.UndefOr[BooleanOptional] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        IamRole: js.UndefOr[String] = js.undefined,
+        Schedule: js.UndefOr[String] = js.undefined,
+        ScheduledActionDescription: js.UndefOr[String] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        TargetAction: js.UndefOr[ScheduledActionType] = js.undefined
+    ): ModifyScheduledActionMessage = {
+      val __obj = js.Dynamic.literal(
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
+      )
+
+      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduledActionDescription.foreach(__v =>
+        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
+      )
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TargetAction.foreach(__v => __obj.updateDynamic("TargetAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyScheduledActionMessage]
+    }
+  }
+
   /**
     * <p/>
     */
@@ -4511,6 +4680,7 @@ package redshift {
   @js.native
   trait NodeConfigurationOption extends js.Object {
     var EstimatedDiskUtilizationPercent: js.UndefOr[DoubleOptional]
+    var Mode: js.UndefOr[Mode]
     var NodeType: js.UndefOr[String]
     var NumberOfNodes: js.UndefOr[Int]
   }
@@ -4519,6 +4689,7 @@ package redshift {
     @inline
     def apply(
         EstimatedDiskUtilizationPercent: js.UndefOr[DoubleOptional] = js.undefined,
+        Mode: js.UndefOr[Mode] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
         NumberOfNodes: js.UndefOr[Int] = js.undefined
     ): NodeConfigurationOption = {
@@ -4526,6 +4697,7 @@ package redshift {
       EstimatedDiskUtilizationPercent.foreach(__v =>
         __obj.updateDynamic("EstimatedDiskUtilizationPercent")(__v.asInstanceOf[js.Any])
       )
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeConfigurationOption]
@@ -4561,8 +4733,9 @@ package redshift {
     val NodeType                        = "NodeType"
     val NumberOfNodes                   = "NumberOfNodes"
     val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent"
+    val Mode                            = "Mode"
 
-    val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent))
+    val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
   }
 
   @js.native
@@ -5552,6 +5725,133 @@ package redshift {
   }
 
   /**
+    * Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>.
+    */
+  @js.native
+  trait ScheduledAction extends js.Object {
+    var EndTime: js.UndefOr[TStamp]
+    var IamRole: js.UndefOr[String]
+    var NextInvocations: js.UndefOr[ScheduledActionTimeList]
+    var Schedule: js.UndefOr[String]
+    var ScheduledActionDescription: js.UndefOr[String]
+    var ScheduledActionName: js.UndefOr[String]
+    var StartTime: js.UndefOr[TStamp]
+    var State: js.UndefOr[ScheduledActionState]
+    var TargetAction: js.UndefOr[ScheduledActionType]
+  }
+
+  object ScheduledAction {
+    @inline
+    def apply(
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        IamRole: js.UndefOr[String] = js.undefined,
+        NextInvocations: js.UndefOr[ScheduledActionTimeList] = js.undefined,
+        Schedule: js.UndefOr[String] = js.undefined,
+        ScheduledActionDescription: js.UndefOr[String] = js.undefined,
+        ScheduledActionName: js.UndefOr[String] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        State: js.UndefOr[ScheduledActionState] = js.undefined,
+        TargetAction: js.UndefOr[ScheduledActionType] = js.undefined
+    ): ScheduledAction = {
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
+      NextInvocations.foreach(__v => __obj.updateDynamic("NextInvocations")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduledActionDescription.foreach(__v =>
+        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
+      )
+      ScheduledActionName.foreach(__v => __obj.updateDynamic("ScheduledActionName")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TargetAction.foreach(__v => __obj.updateDynamic("TargetAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledAction]
+    }
+  }
+
+  /**
+    * A set of elements to filter the returned scheduled actions.
+    */
+  @js.native
+  trait ScheduledActionFilter extends js.Object {
+    var Name: ScheduledActionFilterName
+    var Values: ValueStringList
+  }
+
+  object ScheduledActionFilter {
+    @inline
+    def apply(
+        Name: ScheduledActionFilterName,
+        Values: ValueStringList
+    ): ScheduledActionFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name"   -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ScheduledActionFilter]
+    }
+  }
+
+  object ScheduledActionFilterNameEnum {
+    val `cluster-identifier` = "cluster-identifier"
+    val `iam-role`           = "iam-role"
+
+    val values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
+  }
+
+  object ScheduledActionStateEnum {
+    val ACTIVE   = "ACTIVE"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
+  }
+
+  /**
+    * The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.
+    */
+  @js.native
+  trait ScheduledActionType extends js.Object {
+    var ResizeCluster: js.UndefOr[ResizeClusterMessage]
+  }
+
+  object ScheduledActionType {
+    @inline
+    def apply(
+        ResizeCluster: js.UndefOr[ResizeClusterMessage] = js.undefined
+    ): ScheduledActionType = {
+      val __obj = js.Dynamic.literal()
+      ResizeCluster.foreach(__v => __obj.updateDynamic("ResizeCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledActionType]
+    }
+  }
+
+  object ScheduledActionTypeValuesEnum {
+    val ResizeCluster = "ResizeCluster"
+
+    val values = js.Object.freeze(js.Array(ResizeCluster))
+  }
+
+  @js.native
+  trait ScheduledActionsMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var ScheduledActions: js.UndefOr[ScheduledActionList]
+  }
+
+  object ScheduledActionsMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ScheduledActions: js.UndefOr[ScheduledActionList] = js.undefined
+    ): ScheduledActionsMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      ScheduledActions.foreach(__v => __obj.updateDynamic("ScheduledActions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledActionsMessage]
+    }
+  }
+
+  /**
     * Describes a snapshot.
     */
   @js.native
@@ -5865,9 +6165,11 @@ package redshift {
     val `cluster-parameter-group` = "cluster-parameter-group"
     val `cluster-security-group`  = "cluster-security-group"
     val `cluster-snapshot`        = "cluster-snapshot"
+    val `scheduled-action`        = "scheduled-action"
 
-    val values =
-      js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`))
+    val values = js.Object.freeze(
+      js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
+    )
   }
 
   /**

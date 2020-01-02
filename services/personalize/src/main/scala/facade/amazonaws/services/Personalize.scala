@@ -12,6 +12,7 @@ package object personalize {
   type Arn                                    = String
   type ArnList                                = js.Array[Arn]
   type AvroSchema                             = String
+  type BatchInferenceJobs                     = js.Array[BatchInferenceJobSummary]
   type Campaigns                              = js.Array[CampaignSummary]
   type CategoricalHyperParameterRanges        = js.Array[CategoricalHyperParameterRange]
   type CategoricalValue                       = String
@@ -49,6 +50,7 @@ package object personalize {
   type Metrics                                = js.Dictionary[MetricValue]
   type Name                                   = String
   type NextToken                              = String
+  type NumBatchResults                        = Int
   type ParameterName                          = String
   type ParameterValue                         = String
   type PerformAutoML                          = Boolean
@@ -71,6 +73,10 @@ package object personalize {
   type Tunable                                = Boolean
 
   implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
+
+    @inline def createBatchInferenceJobFuture(
+        params: CreateBatchInferenceJobRequest
+    ): Future[CreateBatchInferenceJobResponse] = service.createBatchInferenceJob(params).promise.toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
       service.createCampaign(params).promise.toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
@@ -103,6 +109,9 @@ package object personalize {
       service.deleteSolution(params).promise.toFuture
     @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
       service.describeAlgorithm(params).promise.toFuture
+    @inline def describeBatchInferenceJobFuture(
+        params: DescribeBatchInferenceJobRequest
+    ): Future[DescribeBatchInferenceJobResponse] = service.describeBatchInferenceJob(params).promise.toFuture
     @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
       service.describeCampaign(params).promise.toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
@@ -128,6 +137,9 @@ package object personalize {
     ): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise.toFuture
     @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
       service.getSolutionMetrics(params).promise.toFuture
+    @inline def listBatchInferenceJobsFuture(
+        params: ListBatchInferenceJobsRequest
+    ): Future[ListBatchInferenceJobsResponse] = service.listBatchInferenceJobs(params).promise.toFuture
     @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
       service.listCampaigns(params).promise.toFuture
     @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
@@ -158,6 +170,8 @@ package personalize {
   class Personalize() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createBatchInferenceJob(params: CreateBatchInferenceJobRequest): Request[CreateBatchInferenceJobResponse] =
+      js.native
     def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse]             = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse]                = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
@@ -174,9 +188,12 @@ package personalize {
     def deleteSchema(params: DeleteSchemaRequest): Request[js.Object]                                       = js.native
     def deleteSolution(params: DeleteSolutionRequest): Request[js.Object]                                   = js.native
     def describeAlgorithm(params: DescribeAlgorithmRequest): Request[DescribeAlgorithmResponse]             = js.native
-    def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse]                = js.native
-    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse]                   = js.native
-    def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse]    = js.native
+    def describeBatchInferenceJob(
+        params: DescribeBatchInferenceJobRequest
+    ): Request[DescribeBatchInferenceJobResponse]                                                        = js.native
+    def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse]             = js.native
+    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse]                = js.native
+    def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] =
       js.native
     def describeEventTracker(params: DescribeEventTrackerRequest): Request[DescribeEventTrackerResponse] = js.native
@@ -188,7 +205,9 @@ package personalize {
     def describeSolution(params: DescribeSolutionRequest): Request[DescribeSolutionResponse] = js.native
     def describeSolutionVersion(params: DescribeSolutionVersionRequest): Request[DescribeSolutionVersionResponse] =
       js.native
-    def getSolutionMetrics(params: GetSolutionMetricsRequest): Request[GetSolutionMetricsResponse]          = js.native
+    def getSolutionMetrics(params: GetSolutionMetricsRequest): Request[GetSolutionMetricsResponse] = js.native
+    def listBatchInferenceJobs(params: ListBatchInferenceJobsRequest): Request[ListBatchInferenceJobsResponse] =
+      js.native
     def listCampaigns(params: ListCampaignsRequest): Request[ListCampaignsResponse]                         = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse]             = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
@@ -311,6 +330,131 @@ package personalize {
       val __obj = js.Dynamic.literal()
       bestRecipeArn.foreach(__v => __obj.updateDynamic("bestRecipeArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLResult]
+    }
+  }
+
+  /**
+    * Contains information on a batch inference job.
+    */
+  @js.native
+  trait BatchInferenceJob extends js.Object {
+    var batchInferenceJobArn: js.UndefOr[Arn]
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var jobInput: js.UndefOr[BatchInferenceJobInput]
+    var jobName: js.UndefOr[Name]
+    var jobOutput: js.UndefOr[BatchInferenceJobOutput]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var numResults: js.UndefOr[NumBatchResults]
+    var roleArn: js.UndefOr[RoleArn]
+    var solutionVersionArn: js.UndefOr[Arn]
+    var status: js.UndefOr[Status]
+  }
+
+  object BatchInferenceJob {
+    @inline
+    def apply(
+        batchInferenceJobArn: js.UndefOr[Arn] = js.undefined,
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        jobInput: js.UndefOr[BatchInferenceJobInput] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        jobOutput: js.UndefOr[BatchInferenceJobOutput] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        numResults: js.UndefOr[NumBatchResults] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        solutionVersionArn: js.UndefOr[Arn] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): BatchInferenceJob = {
+      val __obj = js.Dynamic.literal()
+      batchInferenceJobArn.foreach(__v => __obj.updateDynamic("batchInferenceJobArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobInput.foreach(__v => __obj.updateDynamic("jobInput")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      jobOutput.foreach(__v => __obj.updateDynamic("jobOutput")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchInferenceJob]
+    }
+  }
+
+  /**
+    * The input configuration of a batch inference job.
+    */
+  @js.native
+  trait BatchInferenceJobInput extends js.Object {
+    var s3DataSource: S3DataConfig
+  }
+
+  object BatchInferenceJobInput {
+    @inline
+    def apply(
+        s3DataSource: S3DataConfig
+    ): BatchInferenceJobInput = {
+      val __obj = js.Dynamic.literal(
+        "s3DataSource" -> s3DataSource.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchInferenceJobInput]
+    }
+  }
+
+  /**
+    * The output configuration parameters of a batch inference job.
+    */
+  @js.native
+  trait BatchInferenceJobOutput extends js.Object {
+    var s3DataDestination: S3DataConfig
+  }
+
+  object BatchInferenceJobOutput {
+    @inline
+    def apply(
+        s3DataDestination: S3DataConfig
+    ): BatchInferenceJobOutput = {
+      val __obj = js.Dynamic.literal(
+        "s3DataDestination" -> s3DataDestination.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchInferenceJobOutput]
+    }
+  }
+
+  /**
+    * A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.
+    */
+  @js.native
+  trait BatchInferenceJobSummary extends js.Object {
+    var batchInferenceJobArn: js.UndefOr[Arn]
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var jobName: js.UndefOr[Name]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var status: js.UndefOr[Status]
+  }
+
+  object BatchInferenceJobSummary {
+    @inline
+    def apply(
+        batchInferenceJobArn: js.UndefOr[Arn] = js.undefined,
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): BatchInferenceJobSummary = {
+      val __obj = js.Dynamic.literal()
+      batchInferenceJobArn.foreach(__v => __obj.updateDynamic("batchInferenceJobArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchInferenceJobSummary]
     }
   }
 
@@ -469,6 +613,55 @@ package personalize {
       minValue.foreach(__v => __obj.updateDynamic("minValue")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousHyperParameterRange]
+    }
+  }
+
+  @js.native
+  trait CreateBatchInferenceJobRequest extends js.Object {
+    var jobInput: BatchInferenceJobInput
+    var jobName: Name
+    var jobOutput: BatchInferenceJobOutput
+    var roleArn: RoleArn
+    var solutionVersionArn: Arn
+    var numResults: js.UndefOr[NumBatchResults]
+  }
+
+  object CreateBatchInferenceJobRequest {
+    @inline
+    def apply(
+        jobInput: BatchInferenceJobInput,
+        jobName: Name,
+        jobOutput: BatchInferenceJobOutput,
+        roleArn: RoleArn,
+        solutionVersionArn: Arn,
+        numResults: js.UndefOr[NumBatchResults] = js.undefined
+    ): CreateBatchInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobInput"           -> jobInput.asInstanceOf[js.Any],
+        "jobName"            -> jobName.asInstanceOf[js.Any],
+        "jobOutput"          -> jobOutput.asInstanceOf[js.Any],
+        "roleArn"            -> roleArn.asInstanceOf[js.Any],
+        "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
+      )
+
+      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBatchInferenceJobResponse extends js.Object {
+    var batchInferenceJobArn: js.UndefOr[Arn]
+  }
+
+  object CreateBatchInferenceJobResponse {
+    @inline
+    def apply(
+        batchInferenceJobArn: js.UndefOr[Arn] = js.undefined
+    ): CreateBatchInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      batchInferenceJobArn.foreach(__v => __obj.updateDynamic("batchInferenceJobArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchInferenceJobResponse]
     }
   }
 
@@ -1365,6 +1558,40 @@ package personalize {
   }
 
   @js.native
+  trait DescribeBatchInferenceJobRequest extends js.Object {
+    var batchInferenceJobArn: Arn
+  }
+
+  object DescribeBatchInferenceJobRequest {
+    @inline
+    def apply(
+        batchInferenceJobArn: Arn
+    ): DescribeBatchInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "batchInferenceJobArn" -> batchInferenceJobArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeBatchInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBatchInferenceJobResponse extends js.Object {
+    var batchInferenceJob: js.UndefOr[BatchInferenceJob]
+  }
+
+  object DescribeBatchInferenceJobResponse {
+    @inline
+    def apply(
+        batchInferenceJob: js.UndefOr[BatchInferenceJob] = js.undefined
+    ): DescribeBatchInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      batchInferenceJob.foreach(__v => __obj.updateDynamic("batchInferenceJob")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBatchInferenceJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeCampaignRequest extends js.Object {
     var campaignArn: Arn
   }
@@ -1977,6 +2204,47 @@ package personalize {
   }
 
   @js.native
+  trait ListBatchInferenceJobsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var solutionVersionArn: js.UndefOr[Arn]
+  }
+
+  object ListBatchInferenceJobsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        solutionVersionArn: js.UndefOr[Arn] = js.undefined
+    ): ListBatchInferenceJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBatchInferenceJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBatchInferenceJobsResponse extends js.Object {
+    var batchInferenceJobs: js.UndefOr[BatchInferenceJobs]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBatchInferenceJobsResponse {
+    @inline
+    def apply(
+        batchInferenceJobs: js.UndefOr[BatchInferenceJobs] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBatchInferenceJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      batchInferenceJobs.foreach(__v => __obj.updateDynamic("batchInferenceJobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBatchInferenceJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListCampaignsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
@@ -2416,6 +2684,30 @@ package personalize {
       recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecipeSummary]
+    }
+  }
+
+  /**
+    * The configuration details of an Amazon S3 input or output bucket.
+    */
+  @js.native
+  trait S3DataConfig extends js.Object {
+    var path: S3Location
+    var kmsKeyArn: js.UndefOr[KmsKeyArn]
+  }
+
+  object S3DataConfig {
+    @inline
+    def apply(
+        path: S3Location,
+        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
+    ): S3DataConfig = {
+      val __obj = js.Dynamic.literal(
+        "path" -> path.asInstanceOf[js.Any]
+      )
+
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DataConfig]
     }
   }
 

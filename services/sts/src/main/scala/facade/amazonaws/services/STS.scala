@@ -32,6 +32,10 @@ package object sts {
   type roleSessionNameType       = String
   type serialNumberType          = String
   type sessionPolicyDocumentType = String
+  type tagKeyListType            = js.Array[tagKeyType]
+  type tagKeyType                = String
+  type tagListType               = js.Array[Tag]
+  type tagValueType              = String
   type tokenCodeType             = String
   type tokenType                 = String
   type urlType                   = String
@@ -40,6 +44,7 @@ package object sts {
   type webIdentitySubjectType    = String
 
   implicit final class STSOps(private val service: STS) extends AnyVal {
+
     @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
       service.assumeRole(params).promise.toFuture
     @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
@@ -90,7 +95,9 @@ package sts {
     var Policy: js.UndefOr[sessionPolicyDocumentType]
     var PolicyArns: js.UndefOr[policyDescriptorListType]
     var SerialNumber: js.UndefOr[serialNumberType]
+    var Tags: js.UndefOr[tagListType]
     var TokenCode: js.UndefOr[tokenCodeType]
+    var TransitiveTagKeys: js.UndefOr[tagKeyListType]
   }
 
   object AssumeRoleRequest {
@@ -103,7 +110,9 @@ package sts {
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-        TokenCode: js.UndefOr[tokenCodeType] = js.undefined
+        Tags: js.UndefOr[tagListType] = js.undefined,
+        TokenCode: js.UndefOr[tokenCodeType] = js.undefined,
+        TransitiveTagKeys: js.UndefOr[tagKeyListType] = js.undefined
     ): AssumeRoleRequest = {
       val __obj = js.Dynamic.literal(
         "RoleArn"         -> RoleArn.asInstanceOf[js.Any],
@@ -115,7 +124,9 @@ package sts {
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
       SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TokenCode.foreach(__v => __obj.updateDynamic("TokenCode")(__v.asInstanceOf[js.Any]))
+      TransitiveTagKeys.foreach(__v => __obj.updateDynamic("TransitiveTagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleRequest]
     }
   }
@@ -483,6 +494,7 @@ package sts {
     var DurationSeconds: js.UndefOr[durationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
     var PolicyArns: js.UndefOr[policyDescriptorListType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object GetFederationTokenRequest {
@@ -491,7 +503,8 @@ package sts {
         Name: userNameType,
         DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
+        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): GetFederationTokenRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -500,6 +513,7 @@ package sts {
       DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFederationTokenRequest]
     }
   }
@@ -586,6 +600,30 @@ package sts {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyDescriptorType]
+    }
+  }
+
+  /**
+    * You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html|Tagging AWS STS Sessions]] in the <i>IAM User Guide</i>.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: tagKeyType
+    var Value: tagValueType
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: tagKeyType,
+        Value: tagValueType
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
     }
   }
 }

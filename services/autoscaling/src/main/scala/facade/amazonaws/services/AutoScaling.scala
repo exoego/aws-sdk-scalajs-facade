@@ -57,6 +57,7 @@ package object autoscaling {
   type LoadBalancerNames                        = js.Array[XmlStringMaxLen255]
   type LoadBalancerStates                       = js.Array[LoadBalancerState]
   type LoadBalancerTargetGroupStates            = js.Array[LoadBalancerTargetGroupState]
+  type MaxInstanceLifetime                      = Int
   type MaxNumberOfAutoScalingGroups             = Int
   type MaxNumberOfLaunchConfigurations          = Int
   type MaxRecords                               = Int
@@ -126,6 +127,7 @@ package object autoscaling {
   type XmlStringUserData                   = String
 
   implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
+
     @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
       service.attachInstances(params).promise.toFuture
     @inline def attachLoadBalancerTargetGroupsFuture(
@@ -567,6 +569,7 @@ package autoscaling {
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime]
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
     var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
     var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
@@ -597,6 +600,7 @@ package autoscaling {
         LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
+        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
         MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
         NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
         PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -626,6 +630,7 @@ package autoscaling {
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
       LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
+      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
       NewInstancesProtectedFromScaleIn.foreach(__v =>
         __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
@@ -696,8 +701,10 @@ package autoscaling {
     var InstanceId: XmlStringMaxLen19
     var LifecycleState: XmlStringMaxLen32
     var ProtectedFromScaleIn: InstanceProtected
+    var InstanceType: js.UndefOr[XmlStringMaxLen255]
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
   object AutoScalingInstanceDetails {
@@ -709,8 +716,10 @@ package autoscaling {
         InstanceId: XmlStringMaxLen19,
         LifecycleState: XmlStringMaxLen32,
         ProtectedFromScaleIn: InstanceProtected,
+        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined
+        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): AutoScalingInstanceDetails = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
@@ -721,8 +730,10 @@ package autoscaling {
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
 
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingInstanceDetails]
     }
   }
@@ -910,6 +921,7 @@ package autoscaling {
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var LifecycleHookSpecificationList: js.UndefOr[LifecycleHookSpecifications]
     var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime]
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
     var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
     var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
@@ -936,6 +948,7 @@ package autoscaling {
         LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         LifecycleHookSpecificationList: js.UndefOr[LifecycleHookSpecifications] = js.undefined,
         LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
+        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
         MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
         NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
         PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -963,6 +976,7 @@ package autoscaling {
         __obj.updateDynamic("LifecycleHookSpecificationList")(__v.asInstanceOf[js.Any])
       )
       LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
+      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
       NewInstancesProtectedFromScaleIn.foreach(__v =>
         __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
@@ -2026,8 +2040,10 @@ package autoscaling {
     var InstanceId: XmlStringMaxLen19
     var LifecycleState: LifecycleState
     var ProtectedFromScaleIn: InstanceProtected
+    var InstanceType: js.UndefOr[XmlStringMaxLen255]
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
   object Instance {
@@ -2038,8 +2054,10 @@ package autoscaling {
         InstanceId: XmlStringMaxLen19,
         LifecycleState: LifecycleState,
         ProtectedFromScaleIn: InstanceProtected,
+        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined
+        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): Instance = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone"     -> AvailabilityZone.asInstanceOf[js.Any],
@@ -2049,8 +2067,10 @@ package autoscaling {
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
 
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -2077,6 +2097,7 @@ package autoscaling {
   /**
     * Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.
     *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.
+    *  When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
   trait InstancesDistribution extends js.Object {
@@ -2254,6 +2275,7 @@ package autoscaling {
   /**
     * Describes a launch template and overrides.
     *  The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.
+    *  When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
   trait LaunchTemplate extends js.Object {
@@ -2282,15 +2304,18 @@ package autoscaling {
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
     var InstanceType: js.UndefOr[XmlStringMaxLen255]
+    var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
   object LaunchTemplateOverrides {
     @inline
     def apply(
-        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined
+        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): LaunchTemplateOverrides = {
       val __obj = js.Dynamic.literal()
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateOverrides]
     }
   }
@@ -3450,6 +3475,7 @@ package autoscaling {
     var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
     var LaunchConfigurationName: js.UndefOr[ResourceName]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime]
     var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
     var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
@@ -3471,6 +3497,7 @@ package autoscaling {
         HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
         LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
         LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
         MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
         MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
         MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
@@ -3491,6 +3518,7 @@ package autoscaling {
       HealthCheckType.foreach(__v => __obj.updateDynamic("HealthCheckType")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
+      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
       MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
       MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))

@@ -17,6 +17,7 @@ package object mobileanalytics {
   type String50Chars       = String
 
   implicit final class MobileAnalyticsOps(private val service: MobileAnalytics) extends AnyVal {
+
     @inline def putEventsFuture(params: PutEventsInput): Future[js.Object] = service.putEvents(params).promise.toFuture
   }
 }

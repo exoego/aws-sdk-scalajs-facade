@@ -8,15 +8,23 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object textract {
-  type BlockList          = js.Array[Block]
-  type BlockType          = String
-  type ClientRequestToken = String
-  type EntityType         = String
-  type EntityTypes        = js.Array[EntityType]
-  type ErrorCode          = String
-  type FeatureType        = String
-  type FeatureTypes       = js.Array[FeatureType]
-  type IdList             = js.Array[NonEmptyString]
+  type BlockList                                      = js.Array[Block]
+  type BlockType                                      = String
+  type ClientRequestToken                             = String
+  type ContentClassifier                              = String
+  type ContentClassifiers                             = js.Array[ContentClassifier]
+  type EntityType                                     = String
+  type EntityTypes                                    = js.Array[EntityType]
+  type ErrorCode                                      = String
+  type FeatureType                                    = String
+  type FeatureTypes                                   = js.Array[FeatureType]
+  type FlowDefinitionArn                              = String
+  type HumanLoopActivationConditionsEvaluationResults = String
+  type HumanLoopActivationReason                      = String
+  type HumanLoopActivationReasons                     = js.Array[HumanLoopActivationReason]
+  type HumanLoopArn                                   = String
+  type HumanLoopName                                  = String
+  type IdList                                         = js.Array[NonEmptyString]
   type ImageBlob =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type JobId            = String
@@ -41,6 +49,7 @@ package object textract {
   type Warnings         = js.Array[Warning]
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
+
     @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
       service.analyzeDocument(params).promise.toFuture
     @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] =
@@ -80,44 +89,57 @@ package textract {
   trait AnalyzeDocumentRequest extends js.Object {
     var Document: Document
     var FeatureTypes: FeatureTypes
+    var HumanLoopConfig: js.UndefOr[HumanLoopConfig]
   }
 
   object AnalyzeDocumentRequest {
     @inline
     def apply(
         Document: Document,
-        FeatureTypes: FeatureTypes
+        FeatureTypes: FeatureTypes,
+        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined
     ): AnalyzeDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "Document"     -> Document.asInstanceOf[js.Any],
         "FeatureTypes" -> FeatureTypes.asInstanceOf[js.Any]
       )
 
+      HumanLoopConfig.foreach(__v => __obj.updateDynamic("HumanLoopConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzeDocumentRequest]
     }
   }
 
   @js.native
   trait AnalyzeDocumentResponse extends js.Object {
+    var AnalyzeDocumentModelVersion: js.UndefOr[String]
     var Blocks: js.UndefOr[BlockList]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput]
   }
 
   object AnalyzeDocumentResponse {
     @inline
     def apply(
+        AnalyzeDocumentModelVersion: js.UndefOr[String] = js.undefined,
         Blocks: js.UndefOr[BlockList] = js.undefined,
-        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput] = js.undefined
     ): AnalyzeDocumentResponse = {
       val __obj = js.Dynamic.literal()
+      AnalyzeDocumentModelVersion.foreach(__v =>
+        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
+      )
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      HumanLoopActivationOutput.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AnalyzeDocumentResponse]
     }
   }
 
   /**
-    * A <code>Block</code> represents items that are recognized in a document within a group of pixels close to each other. The information returned in a <code>Block</code> depends on the type of operation. In document-text detection (for example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables and selection elements that are detected in the document.
+    * A <code>Block</code> represents items that are recognized in a document within a group of pixels close to each other. The information returned in a <code>Block</code> object depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables, and selection elements that are detected in the document.
     *  An array of <code>Block</code> objects is returned by both synchronous and asynchronous operations. In synchronous operations, such as <a>DetectDocumentText</a>, the array of <code>Block</code> objects is the entire set of results. In asynchronous operations, such as <a>GetDocumentAnalysis</a>, the array is returned over one or more responses.
     *  For more information, see [[https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html|How Amazon Textract Works]].
     */
@@ -186,7 +208,7 @@ package textract {
   }
 
   /**
-    * The bounding box around the recognized text, key, value, table or table cell on a document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
+    * The bounding box around the detected page, text, key-value pair, table, table cell, or selection element on a document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
     *  The <code>top</code> and <code>left</code> values returned are ratios of the overall document page size. For example, if the input image is 700 x 200 pixels, and the top-left coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
     *  The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall document page dimension. For example, if the document page size is 700 x 200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     */
@@ -215,6 +237,13 @@ package textract {
     }
   }
 
+  object ContentClassifierEnum {
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
+    val FreeOfAdultContent                      = "FreeOfAdultContent"
+
+    val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+  }
+
   @js.native
   trait DetectDocumentTextRequest extends js.Object {
     var Document: Document
@@ -236,6 +265,7 @@ package textract {
   @js.native
   trait DetectDocumentTextResponse extends js.Object {
     var Blocks: js.UndefOr[BlockList]
+    var DetectDocumentTextModelVersion: js.UndefOr[String]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
   }
 
@@ -243,10 +273,14 @@ package textract {
     @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
+        DetectDocumentTextModelVersion: js.UndefOr[String] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
     ): DetectDocumentTextResponse = {
       val __obj = js.Dynamic.literal()
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DetectDocumentTextModelVersion.foreach(__v =>
+        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
+      )
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectDocumentTextResponse]
     }
@@ -281,7 +315,7 @@ package textract {
 
   /**
     * The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations such as <a>StartDocumentTextDetection</a>.
-    *  The input document can be an image file in JPG or PNG format. It can also be a file in PDF format.
+    *  The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.
     */
   @js.native
   trait DocumentLocation extends js.Object {
@@ -333,7 +367,7 @@ package textract {
   }
 
   /**
-    * Information about where a recognized text, key, value, table, or table cell is located on a document page.
+    * Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.
     */
   @js.native
   trait Geometry extends js.Object {
@@ -380,6 +414,7 @@ package textract {
 
   @js.native
   trait GetDocumentAnalysisResponse extends js.Object {
+    var AnalyzeDocumentModelVersion: js.UndefOr[String]
     var Blocks: js.UndefOr[BlockList]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
     var JobStatus: js.UndefOr[JobStatus]
@@ -391,6 +426,7 @@ package textract {
   object GetDocumentAnalysisResponse {
     @inline
     def apply(
+        AnalyzeDocumentModelVersion: js.UndefOr[String] = js.undefined,
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -399,6 +435,9 @@ package textract {
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): GetDocumentAnalysisResponse = {
       val __obj = js.Dynamic.literal()
+      AnalyzeDocumentModelVersion.foreach(__v =>
+        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
+      )
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
@@ -436,6 +475,7 @@ package textract {
   @js.native
   trait GetDocumentTextDetectionResponse extends js.Object {
     var Blocks: js.UndefOr[BlockList]
+    var DetectDocumentTextModelVersion: js.UndefOr[String]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
     var JobStatus: js.UndefOr[JobStatus]
     var NextToken: js.UndefOr[PaginationToken]
@@ -447,6 +487,7 @@ package textract {
     @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
+        DetectDocumentTextModelVersion: js.UndefOr[String] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -455,12 +496,91 @@ package textract {
     ): GetDocumentTextDetectionResponse = {
       val __obj = js.Dynamic.literal()
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DetectDocumentTextModelVersion.foreach(__v =>
+        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
+      )
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentTextDetectionResponse]
+    }
+  }
+
+  /**
+    * Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
+    */
+  @js.native
+  trait HumanLoopActivationOutput extends js.Object {
+    var HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults]
+    var HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons]
+    var HumanLoopArn: js.UndefOr[HumanLoopArn]
+  }
+
+  object HumanLoopActivationOutput {
+    @inline
+    def apply(
+        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
+          js.undefined,
+        HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
+        HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
+    ): HumanLoopActivationOutput = {
+      val __obj = js.Dynamic.literal()
+      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
+      )
+      HumanLoopActivationReasons.foreach(__v =>
+        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
+      )
+      HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopActivationOutput]
+    }
+  }
+
+  /**
+    * Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
+    */
+  @js.native
+  trait HumanLoopConfig extends js.Object {
+    var FlowDefinitionArn: FlowDefinitionArn
+    var HumanLoopName: HumanLoopName
+    var DataAttributes: js.UndefOr[HumanLoopDataAttributes]
+  }
+
+  object HumanLoopConfig {
+    @inline
+    def apply(
+        FlowDefinitionArn: FlowDefinitionArn,
+        HumanLoopName: HumanLoopName,
+        DataAttributes: js.UndefOr[HumanLoopDataAttributes] = js.undefined
+    ): HumanLoopConfig = {
+      val __obj = js.Dynamic.literal(
+        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
+        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
+      )
+
+      DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopConfig]
+    }
+  }
+
+  /**
+    * Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content.
+    */
+  @js.native
+  trait HumanLoopDataAttributes extends js.Object {
+    var ContentClassifiers: js.UndefOr[ContentClassifiers]
+  }
+
+  object HumanLoopDataAttributes {
+    @inline
+    def apply(
+        ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined
+    ): HumanLoopDataAttributes = {
+      val __obj = js.Dynamic.literal()
+      ContentClassifiers.foreach(__v => __obj.updateDynamic("ContentClassifiers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
 
@@ -498,7 +618,7 @@ package textract {
   }
 
   /**
-    * The X and Y coordinates of a point on a document page. The X and Y values returned are ratios of the overall document page size. For example, if the input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the document page.
+    * The X and Y coordinates of a point on a document page. The X and Y values that are returned are ratios of the overall document page size. For example, if the input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the document page.
     *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Textract Developer Guide.
     */
   @js.native
@@ -674,7 +794,7 @@ package textract {
   }
 
   /**
-    * A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document-text detection (<a>StartDocumentTextDetection</a>).
+    * A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document text detection (<a>StartDocumentTextDetection</a>).
     */
   @js.native
   trait Warning extends js.Object {

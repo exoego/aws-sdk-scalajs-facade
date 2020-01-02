@@ -74,6 +74,7 @@ package object iotthingsgraph {
   type Version                           = Double
 
   implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
+
     @inline def associateEntityToThingFuture(
         params: AssociateEntityToThingRequest
     ): Future[AssociateEntityToThingResponse] = service.associateEntityToThing(params).promise.toFuture

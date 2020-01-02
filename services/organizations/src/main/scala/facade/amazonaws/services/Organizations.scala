@@ -24,6 +24,7 @@ package object organizations {
   type CreateAccountState         = String
   type CreateAccountStates        = js.Array[CreateAccountState]
   type CreateAccountStatuses      = js.Array[CreateAccountStatus]
+  type EffectivePolicyType        = String
   type Email                      = String
   type EnabledServicePrincipals   = js.Array[EnabledServicePrincipal]
   type GenericArn                 = String
@@ -78,6 +79,7 @@ package object organizations {
   type Timestamp                  = js.Date
 
   implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
+
     @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] =
       service.acceptHandshake(params).promise.toFuture
     @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
@@ -108,6 +110,9 @@ package object organizations {
     @inline def describeCreateAccountStatusFuture(
         params: DescribeCreateAccountStatusRequest
     ): Future[DescribeCreateAccountStatusResponse] = service.describeCreateAccountStatus(params).promise.toFuture
+    @inline def describeEffectivePolicyFuture(
+        params: DescribeEffectivePolicyRequest
+    ): Future[DescribeEffectivePolicyResponse] = service.describeEffectivePolicy(params).promise.toFuture
     @inline def describeHandshakeFuture(params: DescribeHandshakeRequest): Future[DescribeHandshakeResponse] =
       service.describeHandshake(params).promise.toFuture
     @inline def describeOrganizationFuture(): Future[DescribeOrganizationResponse] =
@@ -208,7 +213,9 @@ package organizations {
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResponse]     = js.native
     def describeCreateAccountStatus(
         params: DescribeCreateAccountStatusRequest
-    ): Request[DescribeCreateAccountStatusResponse]                                             = js.native
+    ): Request[DescribeCreateAccountStatusResponse] = js.native
+    def describeEffectivePolicy(params: DescribeEffectivePolicyRequest): Request[DescribeEffectivePolicyResponse] =
+      js.native
     def describeHandshake(params: DescribeHandshakeRequest): Request[DescribeHandshakeResponse] = js.native
     def describeOrganization(): Request[DescribeOrganizationResponse]                           = js.native
     def describeOrganizationalUnit(
@@ -443,6 +450,7 @@ package organizations {
     val INVALID_EMAIL                   = "INVALID_EMAIL"
     val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION"
     val INTERNAL_FAILURE                = "INTERNAL_FAILURE"
+    val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
 
     val values = js.Object.freeze(
       js.Array(
@@ -451,7 +459,8 @@ package organizations {
         INVALID_ADDRESS,
         INVALID_EMAIL,
         CONCURRENT_ACCOUNT_MODIFICATION,
-        INTERNAL_FAILURE
+        INTERNAL_FAILURE,
+        GOVCLOUD_ACCOUNT_ALREADY_EXISTS
       )
     )
   }
@@ -841,6 +850,43 @@ package organizations {
   }
 
   @js.native
+  trait DescribeEffectivePolicyRequest extends js.Object {
+    var PolicyType: EffectivePolicyType
+    var TargetId: js.UndefOr[PolicyTargetId]
+  }
+
+  object DescribeEffectivePolicyRequest {
+    @inline
+    def apply(
+        PolicyType: EffectivePolicyType,
+        TargetId: js.UndefOr[PolicyTargetId] = js.undefined
+    ): DescribeEffectivePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyType" -> PolicyType.asInstanceOf[js.Any]
+      )
+
+      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEffectivePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEffectivePolicyResponse extends js.Object {
+    var EffectivePolicy: js.UndefOr[EffectivePolicy]
+  }
+
+  object DescribeEffectivePolicyResponse {
+    @inline
+    def apply(
+        EffectivePolicy: js.UndefOr[EffectivePolicy] = js.undefined
+    ): DescribeEffectivePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      EffectivePolicy.foreach(__v => __obj.updateDynamic("EffectivePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEffectivePolicyResponse]
+    }
+  }
+
+  @js.native
   trait DescribeHandshakeRequest extends js.Object {
     var HandshakeId: HandshakeId
   }
@@ -1034,6 +1080,40 @@ package organizations {
     }
   }
 
+  /**
+    * Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.
+    */
+  @js.native
+  trait EffectivePolicy extends js.Object {
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var PolicyContent: js.UndefOr[PolicyContent]
+    var PolicyType: js.UndefOr[EffectivePolicyType]
+    var TargetId: js.UndefOr[PolicyTargetId]
+  }
+
+  object EffectivePolicy {
+    @inline
+    def apply(
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        PolicyContent: js.UndefOr[PolicyContent] = js.undefined,
+        PolicyType: js.UndefOr[EffectivePolicyType] = js.undefined,
+        TargetId: js.UndefOr[PolicyTargetId] = js.undefined
+    ): EffectivePolicy = {
+      val __obj = js.Dynamic.literal()
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      PolicyContent.foreach(__v => __obj.updateDynamic("PolicyContent")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EffectivePolicy]
+    }
+  }
+
+  object EffectivePolicyTypeEnum {
+    val TAG_POLICY = "TAG_POLICY"
+
+    val values = js.Object.freeze(js.Array(TAG_POLICY))
+  }
+
   @js.native
   trait EnableAWSServiceAccessRequest extends js.Object {
     var ServicePrincipal: ServicePrincipal
@@ -1141,8 +1221,8 @@ package organizations {
   }
 
   /**
-    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
-    *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
+    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, assume that a master account (the originator) invites another account (the recipient) to join its organization. In that case, the two accounts exchange information as a series of handshake requests and responses.
+    *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state. After that, they are deleted.
     */
   @js.native
   trait Handshake extends js.Object {
@@ -1948,7 +2028,7 @@ package organizations {
   }
 
   /**
-    * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .
+    * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies.
     */
   @js.native
   trait Organization extends js.Object {
@@ -2131,8 +2211,9 @@ package organizations {
 
   object PolicyTypeEnum {
     val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY"
+    val TAG_POLICY             = "TAG_POLICY"
 
-    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY))
+    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY))
   }
 
   object PolicyTypeStatusEnum {

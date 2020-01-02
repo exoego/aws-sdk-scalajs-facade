@@ -220,6 +220,7 @@ package object glue {
   type Workflows                               = js.Array[Workflow]
 
   implicit final class GlueOps(private val service: Glue) extends AnyVal {
+
     @inline def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
       service.batchCreatePartition(params).promise.toFuture
     @inline def batchDeleteConnectionFuture(
@@ -2451,6 +2452,7 @@ package glue {
     var Parameters: TransformParameters
     var Role: RoleString
     var Description: js.UndefOr[DescriptionString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[NullableInteger]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
@@ -2466,6 +2468,7 @@ package glue {
         Parameters: TransformParameters,
         Role: RoleString,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[NullableInteger] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
@@ -2480,6 +2483,7 @@ package glue {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
@@ -4777,6 +4781,7 @@ package glue {
     var CreatedOn: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
     var EvaluationMetrics: js.UndefOr[EvaluationMetrics]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var InputRecordTables: js.UndefOr[GlueTables]
     var LabelCount: js.UndefOr[LabelCount]
     var LastModifiedOn: js.UndefOr[Timestamp]
@@ -4799,6 +4804,7 @@ package glue {
         CreatedOn: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
         EvaluationMetrics: js.UndefOr[EvaluationMetrics] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         InputRecordTables: js.UndefOr[GlueTables] = js.undefined,
         LabelCount: js.UndefOr[LabelCount] = js.undefined,
         LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
@@ -4818,6 +4824,7 @@ package glue {
       CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       InputRecordTables.foreach(__v => __obj.updateDynamic("InputRecordTables")(__v.asInstanceOf[js.Any]))
       LabelCount.foreach(__v => __obj.updateDynamic("LabelCount")(__v.asInstanceOf[js.Any]))
       LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
@@ -6560,6 +6567,7 @@ package glue {
     var CreatedOn: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
     var EvaluationMetrics: js.UndefOr[EvaluationMetrics]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var InputRecordTables: js.UndefOr[GlueTables]
     var LabelCount: js.UndefOr[LabelCount]
     var LastModifiedOn: js.UndefOr[Timestamp]
@@ -6582,6 +6590,7 @@ package glue {
         CreatedOn: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
         EvaluationMetrics: js.UndefOr[EvaluationMetrics] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         InputRecordTables: js.UndefOr[GlueTables] = js.undefined,
         LabelCount: js.UndefOr[LabelCount] = js.undefined,
         LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
@@ -6601,6 +6610,7 @@ package glue {
       CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       InputRecordTables.foreach(__v => __obj.updateDynamic("InputRecordTables")(__v.asInstanceOf[js.Any]))
       LabelCount.foreach(__v => __obj.updateDynamic("LabelCount")(__v.asInstanceOf[js.Any]))
       LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
@@ -8373,6 +8383,7 @@ package glue {
   trait TransformFilterCriteria extends js.Object {
     var CreatedAfter: js.UndefOr[Timestamp]
     var CreatedBefore: js.UndefOr[Timestamp]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var LastModifiedAfter: js.UndefOr[Timestamp]
     var LastModifiedBefore: js.UndefOr[Timestamp]
     var Name: js.UndefOr[NameString]
@@ -8386,6 +8397,7 @@ package glue {
     def apply(
         CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
         CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         LastModifiedAfter: js.UndefOr[Timestamp] = js.undefined,
         LastModifiedBefore: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
@@ -8396,6 +8408,7 @@ package glue {
       val __obj = js.Dynamic.literal()
       CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
       CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       LastModifiedAfter.foreach(__v => __obj.updateDynamic("LastModifiedAfter")(__v.asInstanceOf[js.Any]))
       LastModifiedBefore.foreach(__v => __obj.updateDynamic("LastModifiedBefore")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -9030,6 +9043,7 @@ package glue {
   trait UpdateMLTransformRequest extends js.Object {
     var TransformId: HashString
     var Description: js.UndefOr[DescriptionString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[NullableInteger]
     var Name: js.UndefOr[NameString]
@@ -9045,6 +9059,7 @@ package glue {
     def apply(
         TransformId: HashString,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[NullableInteger] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
@@ -9059,6 +9074,7 @@ package glue {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))

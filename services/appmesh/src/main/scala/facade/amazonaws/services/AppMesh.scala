@@ -68,6 +68,7 @@ package object appmesh {
   type WeightedTargets                   = js.Array[WeightedTarget]
 
   implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
+
     @inline def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
       service.createMesh(params).promise.toFuture
     @inline def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =

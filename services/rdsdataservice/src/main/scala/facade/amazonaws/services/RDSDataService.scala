@@ -36,9 +36,11 @@ package object rdsdataservice {
   type SqlStatementResults = js.Array[SqlStatementResult]
   type StringArray         = js.Array[String]
   type TransactionStatus   = String
+  type TypeHint            = String
   type UpdateResults       = js.Array[UpdateResult]
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
+
     @inline def batchExecuteStatementFuture(
         params: BatchExecuteStatementRequest
     ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise.toFuture
@@ -617,6 +619,7 @@ package rdsdataservice {
   @js.native
   trait SqlParameter extends js.Object {
     var name: js.UndefOr[ParameterName]
+    var typeHint: js.UndefOr[TypeHint]
     var value: js.UndefOr[Field]
   }
 
@@ -624,10 +627,12 @@ package rdsdataservice {
     @inline
     def apply(
         name: js.UndefOr[ParameterName] = js.undefined,
+        typeHint: js.UndefOr[TypeHint] = js.undefined,
         value: js.UndefOr[Field] = js.undefined
     ): SqlParameter = {
       val __obj = js.Dynamic.literal()
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      typeHint.foreach(__v => __obj.updateDynamic("typeHint")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlParameter]
     }
@@ -673,6 +678,15 @@ package rdsdataservice {
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StructValue]
     }
+  }
+
+  object TypeHintEnum {
+    val DATE      = "DATE"
+    val DECIMAL   = "DECIMAL"
+    val TIME      = "TIME"
+    val TIMESTAMP = "TIMESTAMP"
+
+    val values = js.Object.freeze(js.Array(DATE, DECIMAL, TIME, TIMESTAMP))
   }
 
   /**

@@ -24,8 +24,12 @@ package object licensemanager {
   type LicenseConfigurationUsageList    = js.Array[LicenseConfigurationUsage]
   type LicenseConfigurations            = js.Array[LicenseConfiguration]
   type LicenseCountingType              = String
+  type LicenseOperationFailureList      = js.Array[LicenseOperationFailure]
   type LicenseSpecifications            = js.Array[LicenseSpecification]
   type ManagedResourceSummaryList       = js.Array[ManagedResourceSummary]
+  type MetadataList                     = js.Array[Metadata]
+  type ProductInformationFilterList     = js.Array[ProductInformationFilter]
+  type ProductInformationList           = js.Array[ProductInformation]
   type ResourceInventoryList            = js.Array[ResourceInventory]
   type ResourceType                     = String
   type StringList                       = js.Array[String]
@@ -33,6 +37,7 @@ package object licensemanager {
   type TagList                          = js.Array[Tag]
 
   implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
+
     @inline def createLicenseConfigurationFuture(
         params: CreateLicenseConfigurationRequest
     ): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise.toFuture
@@ -48,6 +53,10 @@ package object licensemanager {
         params: ListAssociationsForLicenseConfigurationRequest
     ): Future[ListAssociationsForLicenseConfigurationResponse] =
       service.listAssociationsForLicenseConfiguration(params).promise.toFuture
+    @inline def listFailuresForLicenseConfigurationOperationsFuture(
+        params: ListFailuresForLicenseConfigurationOperationsRequest
+    ): Future[ListFailuresForLicenseConfigurationOperationsResponse] =
+      service.listFailuresForLicenseConfigurationOperations(params).promise.toFuture
     @inline def listLicenseConfigurationsFuture(
         params: ListLicenseConfigurationsRequest
     ): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise.toFuture
@@ -99,6 +108,9 @@ package licensemanager {
     def listAssociationsForLicenseConfiguration(
         params: ListAssociationsForLicenseConfigurationRequest
     ): Request[ListAssociationsForLicenseConfigurationResponse] = js.native
+    def listFailuresForLicenseConfigurationOperations(
+        params: ListFailuresForLicenseConfigurationOperationsRequest
+    ): Request[ListFailuresForLicenseConfigurationOperationsResponse] = js.native
     def listLicenseConfigurations(
         params: ListLicenseConfigurationsRequest
     ): Request[ListLicenseConfigurationsResponse] = js.native
@@ -119,6 +131,25 @@ package licensemanager {
         params: UpdateLicenseSpecificationsForResourceRequest
     ): Request[UpdateLicenseSpecificationsForResourceResponse]                                              = js.native
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
+  }
+
+  /**
+    * Describes automated discovery.
+    */
+  @js.native
+  trait AutomatedDiscoveryInformation extends js.Object {
+    var LastRunTime: js.UndefOr[DateTime]
+  }
+
+  object AutomatedDiscoveryInformation {
+    @inline
+    def apply(
+        LastRunTime: js.UndefOr[DateTime] = js.undefined
+    ): AutomatedDiscoveryInformation = {
+      val __obj = js.Dynamic.literal()
+      LastRunTime.foreach(__v => __obj.updateDynamic("LastRunTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomatedDiscoveryInformation]
+    }
   }
 
   /**
@@ -151,6 +182,7 @@ package licensemanager {
     var LicenseCount: js.UndefOr[BoxLong]
     var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
     var LicenseRules: js.UndefOr[StringList]
+    var ProductInformationList: js.UndefOr[ProductInformationList]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -163,6 +195,7 @@ package licensemanager {
         LicenseCount: js.UndefOr[BoxLong] = js.undefined,
         LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
         LicenseRules: js.UndefOr[StringList] = js.undefined,
+        ProductInformationList: js.UndefOr[ProductInformationList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLicenseConfigurationRequest = {
       val __obj = js.Dynamic.literal(
@@ -174,6 +207,7 @@ package licensemanager {
       LicenseCount.foreach(__v => __obj.updateDynamic("LicenseCount")(__v.asInstanceOf[js.Any]))
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
+      ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLicenseConfigurationRequest]
     }
@@ -227,7 +261,7 @@ package licensemanager {
   }
 
   /**
-    * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a <code>Describe</code> operation are documented with the <code>Describe</code> operation.
+    * A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
     */
   @js.native
   trait Filter extends js.Object {
@@ -268,6 +302,7 @@ package licensemanager {
 
   @js.native
   trait GetLicenseConfigurationResponse extends js.Object {
+    var AutomatedDiscoveryInformation: js.UndefOr[AutomatedDiscoveryInformation]
     var ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList]
     var ConsumedLicenses: js.UndefOr[BoxLong]
     var Description: js.UndefOr[String]
@@ -280,6 +315,7 @@ package licensemanager {
     var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Name: js.UndefOr[String]
     var OwnerAccountId: js.UndefOr[String]
+    var ProductInformationList: js.UndefOr[ProductInformationList]
     var Status: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
   }
@@ -287,6 +323,7 @@ package licensemanager {
   object GetLicenseConfigurationResponse {
     @inline
     def apply(
+        AutomatedDiscoveryInformation: js.UndefOr[AutomatedDiscoveryInformation] = js.undefined,
         ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -299,10 +336,14 @@ package licensemanager {
         ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         OwnerAccountId: js.UndefOr[String] = js.undefined,
+        ProductInformationList: js.UndefOr[ProductInformationList] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): GetLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
+      AutomatedDiscoveryInformation.foreach(__v =>
+        __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any])
+      )
       ConsumedLicenseSummaryList.foreach(__v =>
         __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
       )
@@ -319,6 +360,7 @@ package licensemanager {
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
+      ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLicenseConfigurationResponse]
@@ -341,6 +383,7 @@ package licensemanager {
   @js.native
   trait GetServiceSettingsResponse extends js.Object {
     var EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean]
+    var LicenseManagerResourceShareArn: js.UndefOr[String]
     var OrganizationConfiguration: js.UndefOr[OrganizationConfiguration]
     var S3BucketArn: js.UndefOr[String]
     var SnsTopicArn: js.UndefOr[String]
@@ -350,6 +393,7 @@ package licensemanager {
     @inline
     def apply(
         EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined,
+        LicenseManagerResourceShareArn: js.UndefOr[String] = js.undefined,
         OrganizationConfiguration: js.UndefOr[OrganizationConfiguration] = js.undefined,
         S3BucketArn: js.UndefOr[String] = js.undefined,
         SnsTopicArn: js.UndefOr[String] = js.undefined
@@ -357,6 +401,9 @@ package licensemanager {
       val __obj = js.Dynamic.literal()
       EnableCrossAccountsDiscovery.foreach(__v =>
         __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
+      )
+      LicenseManagerResourceShareArn.foreach(__v =>
+        __obj.updateDynamic("LicenseManagerResourceShareArn")(__v.asInstanceOf[js.Any])
       )
       OrganizationConfiguration.foreach(__v =>
         __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
@@ -368,7 +415,7 @@ package licensemanager {
   }
 
   /**
-    * An inventory filter object.
+    * An inventory filter.
     */
   @js.native
   trait InventoryFilter extends js.Object {
@@ -404,10 +451,11 @@ package licensemanager {
   }
 
   /**
-    * A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host affinity (how long a VM must be associated with a host), the number of licenses purchased and used.
+    * A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.
     */
   @js.native
   trait LicenseConfiguration extends js.Object {
+    var AutomatedDiscoveryInformation: js.UndefOr[AutomatedDiscoveryInformation]
     var ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList]
     var ConsumedLicenses: js.UndefOr[BoxLong]
     var Description: js.UndefOr[String]
@@ -420,12 +468,14 @@ package licensemanager {
     var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Name: js.UndefOr[String]
     var OwnerAccountId: js.UndefOr[String]
+    var ProductInformationList: js.UndefOr[ProductInformationList]
     var Status: js.UndefOr[String]
   }
 
   object LicenseConfiguration {
     @inline
     def apply(
+        AutomatedDiscoveryInformation: js.UndefOr[AutomatedDiscoveryInformation] = js.undefined,
         ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -438,9 +488,13 @@ package licensemanager {
         ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         OwnerAccountId: js.UndefOr[String] = js.undefined,
+        ProductInformationList: js.UndefOr[ProductInformationList] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): LicenseConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutomatedDiscoveryInformation.foreach(__v =>
+        __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any])
+      )
       ConsumedLicenseSummaryList.foreach(__v =>
         __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
       )
@@ -457,13 +511,14 @@ package licensemanager {
       )
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
+      ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LicenseConfiguration]
     }
   }
 
   /**
-    * Describes a server resource that is associated with a license configuration.
+    * Describes an association with a license configuration.
     */
   @js.native
   trait LicenseConfigurationAssociation extends js.Object {
@@ -498,7 +553,7 @@ package licensemanager {
   }
 
   /**
-    * Contains details of the usage of each resource from the license pool.
+    * Details about the usage of a resource associated with a license configuration.
     */
   @js.native
   trait LicenseConfigurationUsage extends js.Object {
@@ -541,7 +596,47 @@ package licensemanager {
   }
 
   /**
-    * Object used for associating a license configuration with a resource.
+    * Describes the failure of a license operation.
+    */
+  @js.native
+  trait LicenseOperationFailure extends js.Object {
+    var ErrorMessage: js.UndefOr[String]
+    var FailureTime: js.UndefOr[DateTime]
+    var MetadataList: js.UndefOr[MetadataList]
+    var OperationName: js.UndefOr[String]
+    var OperationRequestedBy: js.UndefOr[String]
+    var ResourceArn: js.UndefOr[String]
+    var ResourceOwnerId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[ResourceType]
+  }
+
+  object LicenseOperationFailure {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        FailureTime: js.UndefOr[DateTime] = js.undefined,
+        MetadataList: js.UndefOr[MetadataList] = js.undefined,
+        OperationName: js.UndefOr[String] = js.undefined,
+        OperationRequestedBy: js.UndefOr[String] = js.undefined,
+        ResourceArn: js.UndefOr[String] = js.undefined,
+        ResourceOwnerId: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): LicenseOperationFailure = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      FailureTime.foreach(__v => __obj.updateDynamic("FailureTime")(__v.asInstanceOf[js.Any]))
+      MetadataList.foreach(__v => __obj.updateDynamic("MetadataList")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      OperationRequestedBy.foreach(__v => __obj.updateDynamic("OperationRequestedBy")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceOwnerId.foreach(__v => __obj.updateDynamic("ResourceOwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LicenseOperationFailure]
+    }
+  }
+
+  /**
+    * Details for associating a license configuration with a resource.
     */
   @js.native
   trait LicenseSpecification extends js.Object {
@@ -603,6 +698,51 @@ package licensemanager {
       )
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationsForLicenseConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait ListFailuresForLicenseConfigurationOperationsRequest extends js.Object {
+    var LicenseConfigurationArn: String
+    var MaxResults: js.UndefOr[BoxInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFailuresForLicenseConfigurationOperationsRequest {
+    @inline
+    def apply(
+        LicenseConfigurationArn: String,
+        MaxResults: js.UndefOr[BoxInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFailuresForLicenseConfigurationOperationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFailuresForLicenseConfigurationOperationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFailuresForLicenseConfigurationOperationsResponse extends js.Object {
+    var LicenseOperationFailureList: js.UndefOr[LicenseOperationFailureList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFailuresForLicenseConfigurationOperationsResponse {
+    @inline
+    def apply(
+        LicenseOperationFailureList: js.UndefOr[LicenseOperationFailureList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFailuresForLicenseConfigurationOperationsResponse = {
+      val __obj = js.Dynamic.literal()
+      LicenseOperationFailureList.foreach(__v =>
+        __obj.updateDynamic("LicenseOperationFailureList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFailuresForLicenseConfigurationOperationsResponse]
     }
   }
 
@@ -817,7 +957,7 @@ package licensemanager {
   }
 
   /**
-    * Summary for a resource.
+    * Summary information about a managed resource.
     */
   @js.native
   trait ManagedResourceSummary extends js.Object {
@@ -839,7 +979,29 @@ package licensemanager {
   }
 
   /**
-    * Object containing configuration information for AWS Organizations.
+    * Reserved.
+    */
+  @js.native
+  trait Metadata extends js.Object {
+    var Name: js.UndefOr[String]
+    var Value: js.UndefOr[String]
+  }
+
+  object Metadata {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): Metadata = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Metadata]
+    }
+  }
+
+  /**
+    * Configuration information for AWS Organizations.
     */
   @js.native
   trait OrganizationConfiguration extends js.Object {
@@ -860,7 +1022,58 @@ package licensemanager {
   }
 
   /**
-    * A set of attributes that describe a resource.
+    * Describes product information for a license configuration.
+    */
+  @js.native
+  trait ProductInformation extends js.Object {
+    var ProductInformationFilterList: ProductInformationFilterList
+    var ResourceType: String
+  }
+
+  object ProductInformation {
+    @inline
+    def apply(
+        ProductInformationFilterList: ProductInformationFilterList,
+        ResourceType: String
+    ): ProductInformation = {
+      val __obj = js.Dynamic.literal(
+        "ProductInformationFilterList" -> ProductInformationFilterList.asInstanceOf[js.Any],
+        "ResourceType"                 -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ProductInformation]
+    }
+  }
+
+  /**
+    * Describes product information filters.
+    */
+  @js.native
+  trait ProductInformationFilter extends js.Object {
+    var ProductInformationFilterComparator: String
+    var ProductInformationFilterName: String
+    var ProductInformationFilterValue: StringList
+  }
+
+  object ProductInformationFilter {
+    @inline
+    def apply(
+        ProductInformationFilterComparator: String,
+        ProductInformationFilterName: String,
+        ProductInformationFilterValue: StringList
+    ): ProductInformationFilter = {
+      val __obj = js.Dynamic.literal(
+        "ProductInformationFilterComparator" -> ProductInformationFilterComparator.asInstanceOf[js.Any],
+        "ProductInformationFilterName"       -> ProductInformationFilterName.asInstanceOf[js.Any],
+        "ProductInformationFilterValue"      -> ProductInformationFilterValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ProductInformationFilter]
+    }
+  }
+
+  /**
+    * Details about a resource.
     */
   @js.native
   trait ResourceInventory extends js.Object {
@@ -894,15 +1107,17 @@ package licensemanager {
   }
 
   object ResourceTypeEnum {
-    val EC2_INSTANCE = "EC2_INSTANCE"
-    val EC2_HOST     = "EC2_HOST"
-    val EC2_AMI      = "EC2_AMI"
+    val EC2_INSTANCE                     = "EC2_INSTANCE"
+    val EC2_HOST                         = "EC2_HOST"
+    val EC2_AMI                          = "EC2_AMI"
+    val RDS                              = "RDS"
+    val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE"
 
-    val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI))
+    val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
   }
 
   /**
-    * Tag for a resource in a key-value format.
+    * Details about a tag for a license configuration.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1000,6 +1215,7 @@ package licensemanager {
     var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
     var LicenseRules: js.UndefOr[StringList]
     var Name: js.UndefOr[String]
+    var ProductInformationList: js.UndefOr[ProductInformationList]
   }
 
   object UpdateLicenseConfigurationRequest {
@@ -1011,7 +1227,8 @@ package licensemanager {
         LicenseCount: js.UndefOr[BoxLong] = js.undefined,
         LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
         LicenseRules: js.UndefOr[StringList] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined
+        Name: js.UndefOr[String] = js.undefined,
+        ProductInformationList: js.UndefOr[ProductInformationList] = js.undefined
     ): UpdateLicenseConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
@@ -1025,6 +1242,7 @@ package licensemanager {
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLicenseConfigurationRequest]
     }
   }

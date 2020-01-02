@@ -91,6 +91,7 @@ package object workdocs {
   type UsernameType                = String
 
   implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
+
     @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
       service.abortDocumentVersionUpload(params).promise.toFuture
     @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =

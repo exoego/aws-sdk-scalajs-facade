@@ -8,6 +8,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object dynamodb {
+  type ArchivalReason                   = String
   type AttributeAction                  = String
   type AttributeDefinitions             = js.Array[AttributeDefinition]
   type AttributeMap                     = js.Dictionary[AttributeValue]
@@ -34,81 +35,101 @@ package object dynamodb {
   type BillingMode                      = String
   type BinaryAttributeValue =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BinarySetAttributeValue                            = js.Array[BinaryAttributeValue]
-  type BooleanAttributeValue                              = Boolean
-  type BooleanObject                                      = Boolean
-  type ClientRequestToken                                 = String
-  type ComparisonOperator                                 = String
-  type ConditionExpression                                = String
-  type ConditionalOperator                                = String
-  type ConsistentRead                                     = Boolean
-  type ConsumedCapacityMultiple                           = js.Array[ConsumedCapacity]
-  type ConsumedCapacityUnits                              = Double
-  type ContinuousBackupsStatus                            = String
-  type Date                                               = js.Date
-  type Endpoints                                          = js.Array[Endpoint]
-  type ExpectedAttributeMap                               = js.Dictionary[ExpectedAttributeValue]
-  type ExpressionAttributeNameMap                         = js.Dictionary[AttributeName]
-  type ExpressionAttributeNameVariable                    = String
-  type ExpressionAttributeValueMap                        = js.Dictionary[AttributeValue]
-  type ExpressionAttributeValueVariable                   = String
-  type FilterConditionMap                                 = js.Dictionary[Condition]
-  type GlobalSecondaryIndexDescriptionList                = js.Array[GlobalSecondaryIndexDescription]
-  type GlobalSecondaryIndexList                           = js.Array[GlobalSecondaryIndex]
-  type GlobalSecondaryIndexUpdateList                     = js.Array[GlobalSecondaryIndexUpdate]
-  type GlobalSecondaryIndexes                             = js.Array[GlobalSecondaryIndexInfo]
-  type GlobalTableArnString                               = String
-  type GlobalTableGlobalSecondaryIndexSettingsUpdateList  = js.Array[GlobalTableGlobalSecondaryIndexSettingsUpdate]
-  type GlobalTableList                                    = js.Array[GlobalTable]
-  type GlobalTableStatus                                  = String
-  type IndexName                                          = String
-  type IndexStatus                                        = String
-  type IntegerObject                                      = Int
-  type ItemCollectionKeyAttributeMap                      = js.Dictionary[AttributeValue]
-  type ItemCollectionMetricsMultiple                      = js.Array[ItemCollectionMetrics]
-  type ItemCollectionMetricsPerTable                      = js.Dictionary[ItemCollectionMetricsMultiple]
-  type ItemCollectionSizeEstimateBound                    = Double
-  type ItemCollectionSizeEstimateRange                    = js.Array[ItemCollectionSizeEstimateBound]
-  type ItemCount                                          = Double
-  type ItemList                                           = js.Array[AttributeMap]
-  type ItemResponseList                                   = js.Array[ItemResponse]
-  type KMSMasterKeyArn                                    = String
-  type KMSMasterKeyId                                     = String
-  type Key                                                = js.Dictionary[AttributeValue]
-  type KeyConditions                                      = js.Dictionary[Condition]
-  type KeyExpression                                      = String
-  type KeyList                                            = js.Array[Key]
-  type KeySchema                                          = js.Array[KeySchemaElement]
-  type KeySchemaAttributeName                             = String
-  type KeyType                                            = String
-  type ListAttributeValue                                 = js.Array[AttributeValue]
-  type ListTablesInputLimit                               = Int
-  type LocalSecondaryIndexDescriptionList                 = js.Array[LocalSecondaryIndexDescription]
-  type LocalSecondaryIndexList                            = js.Array[LocalSecondaryIndex]
-  type LocalSecondaryIndexes                              = js.Array[LocalSecondaryIndexInfo]
-  type MapAttributeValue                                  = js.Dictionary[AttributeValue]
-  type NextTokenString                                    = String
-  type NonKeyAttributeName                                = String
-  type NonKeyAttributeNameList                            = js.Array[NonKeyAttributeName]
-  type NonNegativeLongObject                              = Double
-  type NullAttributeValue                                 = Boolean
-  type NumberAttributeValue                               = String
-  type NumberSetAttributeValue                            = js.Array[NumberAttributeValue]
-  type PointInTimeRecoveryStatus                          = String
-  type PositiveIntegerObject                              = Int
-  type PositiveLongObject                                 = Double
-  type ProjectionExpression                               = String
-  type ProjectionType                                     = String
-  type PutItemInputAttributeMap                           = js.Dictionary[AttributeValue]
-  type RegionName                                         = String
-  type ReplicaDescriptionList                             = js.Array[ReplicaDescription]
+  type BinarySetAttributeValue                           = js.Array[BinaryAttributeValue]
+  type BooleanAttributeValue                             = Boolean
+  type BooleanObject                                     = Boolean
+  type ClientRequestToken                                = String
+  type ComparisonOperator                                = String
+  type ConditionExpression                               = String
+  type ConditionalOperator                               = String
+  type ConsistentRead                                    = Boolean
+  type ConsumedCapacityMultiple                          = js.Array[ConsumedCapacity]
+  type ConsumedCapacityUnits                             = Double
+  type ContinuousBackupsStatus                           = String
+  type ContributorInsightsAction                         = String
+  type ContributorInsightsRule                           = String
+  type ContributorInsightsRuleList                       = js.Array[ContributorInsightsRule]
+  type ContributorInsightsStatus                         = String
+  type ContributorInsightsSummaries                      = js.Array[ContributorInsightsSummary]
+  type Date                                              = js.Date
+  type Endpoints                                         = js.Array[Endpoint]
+  type ExceptionDescription                              = String
+  type ExceptionName                                     = String
+  type ExpectedAttributeMap                              = js.Dictionary[ExpectedAttributeValue]
+  type ExpressionAttributeNameMap                        = js.Dictionary[AttributeName]
+  type ExpressionAttributeNameVariable                   = String
+  type ExpressionAttributeValueMap                       = js.Dictionary[AttributeValue]
+  type ExpressionAttributeValueVariable                  = String
+  type FilterConditionMap                                = js.Dictionary[Condition]
+  type GlobalSecondaryIndexAutoScalingUpdateList         = js.Array[GlobalSecondaryIndexAutoScalingUpdate]
+  type GlobalSecondaryIndexDescriptionList               = js.Array[GlobalSecondaryIndexDescription]
+  type GlobalSecondaryIndexList                          = js.Array[GlobalSecondaryIndex]
+  type GlobalSecondaryIndexUpdateList                    = js.Array[GlobalSecondaryIndexUpdate]
+  type GlobalSecondaryIndexes                            = js.Array[GlobalSecondaryIndexInfo]
+  type GlobalTableArnString                              = String
+  type GlobalTableGlobalSecondaryIndexSettingsUpdateList = js.Array[GlobalTableGlobalSecondaryIndexSettingsUpdate]
+  type GlobalTableList                                   = js.Array[GlobalTable]
+  type GlobalTableStatus                                 = String
+  type IndexName                                         = String
+  type IndexStatus                                       = String
+  type IntegerObject                                     = Int
+  type ItemCollectionKeyAttributeMap                     = js.Dictionary[AttributeValue]
+  type ItemCollectionMetricsMultiple                     = js.Array[ItemCollectionMetrics]
+  type ItemCollectionMetricsPerTable                     = js.Dictionary[ItemCollectionMetricsMultiple]
+  type ItemCollectionSizeEstimateBound                   = Double
+  type ItemCollectionSizeEstimateRange                   = js.Array[ItemCollectionSizeEstimateBound]
+  type ItemCount                                         = Double
+  type ItemList                                          = js.Array[AttributeMap]
+  type ItemResponseList                                  = js.Array[ItemResponse]
+  type KMSMasterKeyArn                                   = String
+  type KMSMasterKeyId                                    = String
+  type Key                                               = js.Dictionary[AttributeValue]
+  type KeyConditions                                     = js.Dictionary[Condition]
+  type KeyExpression                                     = String
+  type KeyList                                           = js.Array[Key]
+  type KeySchema                                         = js.Array[KeySchemaElement]
+  type KeySchemaAttributeName                            = String
+  type KeyType                                           = String
+  type LastUpdateDateTime                                = js.Date
+  type ListAttributeValue                                = js.Array[AttributeValue]
+  type ListContributorInsightsLimit                      = Int
+  type ListTablesInputLimit                              = Int
+  type LocalSecondaryIndexDescriptionList                = js.Array[LocalSecondaryIndexDescription]
+  type LocalSecondaryIndexList                           = js.Array[LocalSecondaryIndex]
+  type LocalSecondaryIndexes                             = js.Array[LocalSecondaryIndexInfo]
+  type MapAttributeValue                                 = js.Dictionary[AttributeValue]
+  type NextTokenString                                   = String
+  type NonKeyAttributeName                               = String
+  type NonKeyAttributeNameList                           = js.Array[NonKeyAttributeName]
+  type NonNegativeLongObject                             = Double
+  type NullAttributeValue                                = Boolean
+  type NumberAttributeValue                              = String
+  type NumberSetAttributeValue                           = js.Array[NumberAttributeValue]
+  type PointInTimeRecoveryStatus                         = String
+  type PositiveIntegerObject                             = Int
+  type PositiveLongObject                                = Double
+  type ProjectionExpression                              = String
+  type ProjectionType                                    = String
+  type PutItemInputAttributeMap                          = js.Dictionary[AttributeValue]
+  type RegionName                                        = String
+  type ReplicaAutoScalingDescriptionList                 = js.Array[ReplicaAutoScalingDescription]
+  type ReplicaAutoScalingUpdateList                      = js.Array[ReplicaAutoScalingUpdate]
+  type ReplicaDescriptionList                            = js.Array[ReplicaDescription]
+  type ReplicaGlobalSecondaryIndexAutoScalingDescriptionList =
+    js.Array[ReplicaGlobalSecondaryIndexAutoScalingDescription]
+  type ReplicaGlobalSecondaryIndexAutoScalingUpdateList   = js.Array[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
+  type ReplicaGlobalSecondaryIndexDescriptionList         = js.Array[ReplicaGlobalSecondaryIndexDescription]
+  type ReplicaGlobalSecondaryIndexList                    = js.Array[ReplicaGlobalSecondaryIndex]
   type ReplicaGlobalSecondaryIndexSettingsDescriptionList = js.Array[ReplicaGlobalSecondaryIndexSettingsDescription]
   type ReplicaGlobalSecondaryIndexSettingsUpdateList      = js.Array[ReplicaGlobalSecondaryIndexSettingsUpdate]
   type ReplicaList                                        = js.Array[Replica]
   type ReplicaSettingsDescriptionList                     = js.Array[ReplicaSettingsDescription]
   type ReplicaSettingsUpdateList                          = js.Array[ReplicaSettingsUpdate]
   type ReplicaStatus                                      = String
+  type ReplicaStatusDescription                           = String
+  type ReplicaStatusPercentProgress                       = String
   type ReplicaUpdateList                                  = js.Array[ReplicaUpdate]
+  type ReplicationGroupUpdateList                         = js.Array[ReplicationGroupUpdate]
   type ResourceArnString                                  = String
   type RestoreInProgress                                  = Boolean
   type ReturnConsumedCapacity                             = String
@@ -149,6 +170,7 @@ package object dynamodb {
   type WriteRequests                                      = js.Array[WriteRequest]
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
+
     @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
       service.batchGetItem(params).promise.toFuture
     @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =
@@ -170,6 +192,9 @@ package object dynamodb {
     @inline def describeContinuousBackupsFuture(
         params: DescribeContinuousBackupsInput
     ): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise.toFuture
+    @inline def describeContributorInsightsFuture(
+        params: DescribeContributorInsightsInput
+    ): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise.toFuture
     @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
       service.describeEndpoints(params).promise.toFuture
     @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] =
@@ -181,11 +206,17 @@ package object dynamodb {
       service.describeLimits(params).promise.toFuture
     @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] =
       service.describeTable(params).promise.toFuture
+    @inline def describeTableReplicaAutoScalingFuture(
+        params: DescribeTableReplicaAutoScalingInput
+    ): Future[DescribeTableReplicaAutoScalingOutput] = service.describeTableReplicaAutoScaling(params).promise.toFuture
     @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] =
       service.describeTimeToLive(params).promise.toFuture
     @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise.toFuture
     @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] =
       service.listBackups(params).promise.toFuture
+    @inline def listContributorInsightsFuture(
+        params: ListContributorInsightsInput
+    ): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise.toFuture
     @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] =
       service.listGlobalTables(params).promise.toFuture
     @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] =
@@ -212,6 +243,9 @@ package object dynamodb {
     @inline def updateContinuousBackupsFuture(
         params: UpdateContinuousBackupsInput
     ): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise.toFuture
+    @inline def updateContributorInsightsFuture(
+        params: UpdateContributorInsightsInput
+    ): Future[UpdateContributorInsightsOutput] = service.updateContributorInsights(params).promise.toFuture
     @inline def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] =
       service.updateGlobalTable(params).promise.toFuture
     @inline def updateGlobalTableSettingsFuture(
@@ -221,6 +255,9 @@ package object dynamodb {
       service.updateItem(params).promise.toFuture
     @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] =
       service.updateTable(params).promise.toFuture
+    @inline def updateTableReplicaAutoScalingFuture(
+        params: UpdateTableReplicaAutoScalingInput
+    ): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise.toFuture
     @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] =
       service.updateTimeToLive(params).promise.toFuture
   }
@@ -243,16 +280,24 @@ package dynamodb {
     def describeBackup(params: DescribeBackupInput): Request[DescribeBackupOutput]          = js.native
     def describeContinuousBackups(params: DescribeContinuousBackupsInput): Request[DescribeContinuousBackupsOutput] =
       js.native
+    def describeContributorInsights(
+        params: DescribeContributorInsightsInput
+    ): Request[DescribeContributorInsightsOutput]                                                 = js.native
     def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse]   = js.native
     def describeGlobalTable(params: DescribeGlobalTableInput): Request[DescribeGlobalTableOutput] = js.native
     def describeGlobalTableSettings(
         params: DescribeGlobalTableSettingsInput
-    ): Request[DescribeGlobalTableSettingsOutput]                                                          = js.native
-    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput]                         = js.native
-    def describeTable(params: DescribeTableInput): Request[DescribeTableOutput]                            = js.native
-    def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput]             = js.native
-    def getItem(params: GetItemInput): Request[GetItemOutput]                                              = js.native
-    def listBackups(params: ListBackupsInput): Request[ListBackupsOutput]                                  = js.native
+    ): Request[DescribeGlobalTableSettingsOutput]                                  = js.native
+    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
+    def describeTable(params: DescribeTableInput): Request[DescribeTableOutput]    = js.native
+    def describeTableReplicaAutoScaling(
+        params: DescribeTableReplicaAutoScalingInput
+    ): Request[DescribeTableReplicaAutoScalingOutput]                                          = js.native
+    def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput] = js.native
+    def getItem(params: GetItemInput): Request[GetItemOutput]                                  = js.native
+    def listBackups(params: ListBackupsInput): Request[ListBackupsOutput]                      = js.native
+    def listContributorInsights(params: ListContributorInsightsInput): Request[ListContributorInsightsOutput] =
+      js.native
     def listGlobalTables(params: ListGlobalTablesInput): Request[ListGlobalTablesOutput]                   = js.native
     def listTables(params: ListTablesInput): Request[ListTablesOutput]                                     = js.native
     def listTagsOfResource(params: ListTagsOfResourceInput): Request[ListTagsOfResourceOutput]             = js.native
@@ -268,12 +313,42 @@ package dynamodb {
     def untagResource(params: UntagResourceInput): Request[js.Object]                          = js.native
     def updateContinuousBackups(params: UpdateContinuousBackupsInput): Request[UpdateContinuousBackupsOutput] =
       js.native
+    def updateContributorInsights(params: UpdateContributorInsightsInput): Request[UpdateContributorInsightsOutput] =
+      js.native
     def updateGlobalTable(params: UpdateGlobalTableInput): Request[UpdateGlobalTableOutput] = js.native
     def updateGlobalTableSettings(params: UpdateGlobalTableSettingsInput): Request[UpdateGlobalTableSettingsOutput] =
       js.native
-    def updateItem(params: UpdateItemInput): Request[UpdateItemOutput]                   = js.native
-    def updateTable(params: UpdateTableInput): Request[UpdateTableOutput]                = js.native
+    def updateItem(params: UpdateItemInput): Request[UpdateItemOutput]    = js.native
+    def updateTable(params: UpdateTableInput): Request[UpdateTableOutput] = js.native
+    def updateTableReplicaAutoScaling(
+        params: UpdateTableReplicaAutoScalingInput
+    ): Request[UpdateTableReplicaAutoScalingOutput]                                      = js.native
     def updateTimeToLive(params: UpdateTimeToLiveInput): Request[UpdateTimeToLiveOutput] = js.native
+  }
+
+  /**
+    * Contains details of a table archival operation.
+    */
+  @js.native
+  trait ArchivalSummary extends js.Object {
+    var ArchivalBackupArn: js.UndefOr[BackupArn]
+    var ArchivalDateTime: js.UndefOr[Date]
+    var ArchivalReason: js.UndefOr[ArchivalReason]
+  }
+
+  object ArchivalSummary {
+    @inline
+    def apply(
+        ArchivalBackupArn: js.UndefOr[BackupArn] = js.undefined,
+        ArchivalDateTime: js.UndefOr[Date] = js.undefined,
+        ArchivalReason: js.UndefOr[ArchivalReason] = js.undefined
+    ): ArchivalSummary = {
+      val __obj = js.Dynamic.literal()
+      ArchivalBackupArn.foreach(__v => __obj.updateDynamic("ArchivalBackupArn")(__v.asInstanceOf[js.Any]))
+      ArchivalDateTime.foreach(__v => __obj.updateDynamic("ArchivalDateTime")(__v.asInstanceOf[js.Any]))
+      ArchivalReason.foreach(__v => __obj.updateDynamic("ArchivalReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArchivalSummary]
+    }
   }
 
   object AttributeActionEnum {
@@ -1055,6 +1130,50 @@ package dynamodb {
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
+  object ContributorInsightsActionEnum {
+    val ENABLE  = "ENABLE"
+    val DISABLE = "DISABLE"
+
+    val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
+  }
+
+  object ContributorInsightsStatusEnum {
+    val ENABLING  = "ENABLING"
+    val ENABLED   = "ENABLED"
+    val DISABLING = "DISABLING"
+    val DISABLED  = "DISABLED"
+    val FAILED    = "FAILED"
+
+    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED))
+  }
+
+  /**
+    * Represents a Contributor Insights summary entry..
+    */
+  @js.native
+  trait ContributorInsightsSummary extends js.Object {
+    var ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus]
+    var IndexName: js.UndefOr[IndexName]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object ContributorInsightsSummary {
+    @inline
+    def apply(
+        ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): ContributorInsightsSummary = {
+      val __obj = js.Dynamic.literal()
+      ContributorInsightsStatus.foreach(__v =>
+        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
+      )
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContributorInsightsSummary]
+    }
+  }
+
   @js.native
   trait CreateBackupInput extends js.Object {
     var BackupName: BackupName
@@ -1177,6 +1296,38 @@ package dynamodb {
       )
 
       __obj.asInstanceOf[CreateReplicaAction]
+    }
+  }
+
+  /**
+    * Represents a replica to be created.
+    */
+  @js.native
+  trait CreateReplicationGroupMemberAction extends js.Object {
+    var RegionName: RegionName
+    var GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexList]
+    var KMSMasterKeyId: js.UndefOr[KMSMasterKeyId]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
+  }
+
+  object CreateReplicationGroupMemberAction {
+    @inline
+    def apply(
+        RegionName: RegionName,
+        GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexList] = js.undefined,
+        KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined
+    ): CreateReplicationGroupMemberAction = {
+      val __obj = js.Dynamic.literal(
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      )
+
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateReplicationGroupMemberAction]
     }
   }
 
@@ -1441,6 +1592,27 @@ package dynamodb {
   }
 
   /**
+    * Represents a replica to be deleted.
+    */
+  @js.native
+  trait DeleteReplicationGroupMemberAction extends js.Object {
+    var RegionName: RegionName
+  }
+
+  object DeleteReplicationGroupMemberAction {
+    @inline
+    def apply(
+        RegionName: RegionName
+    ): DeleteReplicationGroupMemberAction = {
+      val __obj = js.Dynamic.literal(
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteReplicationGroupMemberAction]
+    }
+  }
+
+  /**
     * Represents a request to perform a <code>DeleteItem</code> operation on an item.
     */
   @js.native
@@ -1568,6 +1740,62 @@ package dynamodb {
         __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeContinuousBackupsOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeContributorInsightsInput extends js.Object {
+    var TableName: TableName
+    var IndexName: js.UndefOr[IndexName]
+  }
+
+  object DescribeContributorInsightsInput {
+    @inline
+    def apply(
+        TableName: TableName,
+        IndexName: js.UndefOr[IndexName] = js.undefined
+    ): DescribeContributorInsightsInput = {
+      val __obj = js.Dynamic.literal(
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContributorInsightsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeContributorInsightsOutput extends js.Object {
+    var ContributorInsightsRuleList: js.UndefOr[ContributorInsightsRuleList]
+    var ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus]
+    var FailureException: js.UndefOr[FailureException]
+    var IndexName: js.UndefOr[IndexName]
+    var LastUpdateDateTime: js.UndefOr[LastUpdateDateTime]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object DescribeContributorInsightsOutput {
+    @inline
+    def apply(
+        ContributorInsightsRuleList: js.UndefOr[ContributorInsightsRuleList] = js.undefined,
+        ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus] = js.undefined,
+        FailureException: js.UndefOr[FailureException] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        LastUpdateDateTime: js.UndefOr[LastUpdateDateTime] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): DescribeContributorInsightsOutput = {
+      val __obj = js.Dynamic.literal()
+      ContributorInsightsRuleList.foreach(__v =>
+        __obj.updateDynamic("ContributorInsightsRuleList")(__v.asInstanceOf[js.Any])
+      )
+      ContributorInsightsStatus.foreach(__v =>
+        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
+      )
+      FailureException.foreach(__v => __obj.updateDynamic("FailureException")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      LastUpdateDateTime.foreach(__v => __obj.updateDynamic("LastUpdateDateTime")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContributorInsightsOutput]
     }
   }
 
@@ -1766,6 +1994,42 @@ package dynamodb {
   }
 
   @js.native
+  trait DescribeTableReplicaAutoScalingInput extends js.Object {
+    var TableName: TableName
+  }
+
+  object DescribeTableReplicaAutoScalingInput {
+    @inline
+    def apply(
+        TableName: TableName
+    ): DescribeTableReplicaAutoScalingInput = {
+      val __obj = js.Dynamic.literal(
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeTableReplicaAutoScalingInput]
+    }
+  }
+
+  @js.native
+  trait DescribeTableReplicaAutoScalingOutput extends js.Object {
+    var TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription]
+  }
+
+  object DescribeTableReplicaAutoScalingOutput {
+    @inline
+    def apply(
+        TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription] = js.undefined
+    ): DescribeTableReplicaAutoScalingOutput = {
+      val __obj = js.Dynamic.literal()
+      TableAutoScalingDescription.foreach(__v =>
+        __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeTableReplicaAutoScalingOutput]
+    }
+  }
+
+  @js.native
   trait DescribeTimeToLiveInput extends js.Object {
     var TableName: TableName
   }
@@ -1851,6 +2115,28 @@ package dynamodb {
       Exists.foreach(__v => __obj.updateDynamic("Exists")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExpectedAttributeValue]
+    }
+  }
+
+  /**
+    * Represents a failure a contributor insights operation.
+    */
+  @js.native
+  trait FailureException extends js.Object {
+    var ExceptionDescription: js.UndefOr[ExceptionDescription]
+    var ExceptionName: js.UndefOr[ExceptionName]
+  }
+
+  object FailureException {
+    @inline
+    def apply(
+        ExceptionDescription: js.UndefOr[ExceptionDescription] = js.undefined,
+        ExceptionName: js.UndefOr[ExceptionName] = js.undefined
+    ): FailureException = {
+      val __obj = js.Dynamic.literal()
+      ExceptionDescription.foreach(__v => __obj.updateDynamic("ExceptionDescription")(__v.asInstanceOf[js.Any]))
+      ExceptionName.foreach(__v => __obj.updateDynamic("ExceptionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailureException]
     }
   }
 
@@ -1972,6 +2258,30 @@ package dynamodb {
 
       ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndex]
+    }
+  }
+
+  /**
+    * Represents the auto scaling settings of a global secondary index for a global table that will be modified.
+    */
+  @js.native
+  trait GlobalSecondaryIndexAutoScalingUpdate extends js.Object {
+    var IndexName: js.UndefOr[IndexName]
+    var ProvisionedWriteCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate]
+  }
+
+  object GlobalSecondaryIndexAutoScalingUpdate {
+    @inline
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        ProvisionedWriteCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined
+    ): GlobalSecondaryIndexAutoScalingUpdate = {
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v =>
+        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GlobalSecondaryIndexAutoScalingUpdate]
     }
   }
 
@@ -2335,6 +2645,49 @@ package dynamodb {
   }
 
   @js.native
+  trait ListContributorInsightsInput extends js.Object {
+    var MaxResults: js.UndefOr[ListContributorInsightsLimit]
+    var NextToken: js.UndefOr[NextTokenString]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object ListContributorInsightsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListContributorInsightsLimit] = js.undefined,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): ListContributorInsightsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContributorInsightsInput]
+    }
+  }
+
+  @js.native
+  trait ListContributorInsightsOutput extends js.Object {
+    var ContributorInsightsSummaries: js.UndefOr[ContributorInsightsSummaries]
+    var NextToken: js.UndefOr[NextTokenString]
+  }
+
+  object ListContributorInsightsOutput {
+    @inline
+    def apply(
+        ContributorInsightsSummaries: js.UndefOr[ContributorInsightsSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined
+    ): ListContributorInsightsOutput = {
+      val __obj = js.Dynamic.literal()
+      ContributorInsightsSummaries.foreach(__v =>
+        __obj.updateDynamic("ContributorInsightsSummaries")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContributorInsightsOutput]
+    }
+  }
+
+  @js.native
   trait ListGlobalTablesInput extends js.Object {
     var ExclusiveStartGlobalTableName: js.UndefOr[TableName]
     var Limit: js.UndefOr[PositiveIntegerObject]
@@ -2693,6 +3046,25 @@ package dynamodb {
   }
 
   /**
+    * Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings.
+    */
+  @js.native
+  trait ProvisionedThroughputOverride extends js.Object {
+    var ReadCapacityUnits: js.UndefOr[PositiveLongObject]
+  }
+
+  object ProvisionedThroughputOverride {
+    @inline
+    def apply(
+        ReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
+    ): ProvisionedThroughputOverride = {
+      val __obj = js.Dynamic.literal()
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisionedThroughputOverride]
+    }
+  }
+
+  /**
     * Represents a request to perform a <code>PutItem</code> operation.
     */
   @js.native
@@ -2952,21 +3324,215 @@ package dynamodb {
   }
 
   /**
+    * Represents the auto scaling settings of the replica.
+    */
+  @js.native
+  trait ReplicaAutoScalingDescription extends js.Object {
+    var GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexAutoScalingDescriptionList]
+    var RegionName: js.UndefOr[RegionName]
+    var ReplicaProvisionedReadCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription]
+    var ReplicaProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription]
+    var ReplicaStatus: js.UndefOr[ReplicaStatus]
+  }
+
+  object ReplicaAutoScalingDescription {
+    @inline
+    def apply(
+        GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexAutoScalingDescriptionList] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined,
+        ReplicaProvisionedReadCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
+        ReplicaProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
+        ReplicaStatus: js.UndefOr[ReplicaStatus] = js.undefined
+    ): ReplicaAutoScalingDescription = {
+      val __obj = js.Dynamic.literal()
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
+        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
+      )
+      ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
+        __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
+      )
+      ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicaAutoScalingDescription]
+    }
+  }
+
+  /**
+    * Represents the auto scaling settings of a replica that will be modified.
+    */
+  @js.native
+  trait ReplicaAutoScalingUpdate extends js.Object {
+    var RegionName: RegionName
+    var ReplicaGlobalSecondaryIndexUpdates: js.UndefOr[ReplicaGlobalSecondaryIndexAutoScalingUpdateList]
+    var ReplicaProvisionedReadCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate]
+  }
+
+  object ReplicaAutoScalingUpdate {
+    @inline
+    def apply(
+        RegionName: RegionName,
+        ReplicaGlobalSecondaryIndexUpdates: js.UndefOr[ReplicaGlobalSecondaryIndexAutoScalingUpdateList] = js.undefined,
+        ReplicaProvisionedReadCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined
+    ): ReplicaAutoScalingUpdate = {
+      val __obj = js.Dynamic.literal(
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      )
+
+      ReplicaGlobalSecondaryIndexUpdates.foreach(__v =>
+        __obj.updateDynamic("ReplicaGlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
+      )
+      ReplicaProvisionedReadCapacityAutoScalingUpdate.foreach(__v =>
+        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReplicaAutoScalingUpdate]
+    }
+  }
+
+  /**
     * Contains the details of the replica.
     */
   @js.native
   trait ReplicaDescription extends js.Object {
+    var GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexDescriptionList]
+    var KMSMasterKeyId: js.UndefOr[KMSMasterKeyId]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
     var RegionName: js.UndefOr[RegionName]
+    var ReplicaStatus: js.UndefOr[ReplicaStatus]
+    var ReplicaStatusDescription: js.UndefOr[ReplicaStatusDescription]
+    var ReplicaStatusPercentProgress: js.UndefOr[ReplicaStatusPercentProgress]
   }
 
   object ReplicaDescription {
     @inline
     def apply(
-        RegionName: js.UndefOr[RegionName] = js.undefined
+        GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexDescriptionList] = js.undefined,
+        KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined,
+        ReplicaStatus: js.UndefOr[ReplicaStatus] = js.undefined,
+        ReplicaStatusDescription: js.UndefOr[ReplicaStatusDescription] = js.undefined,
+        ReplicaStatusPercentProgress: js.UndefOr[ReplicaStatusPercentProgress] = js.undefined
     ): ReplicaDescription = {
       val __obj = js.Dynamic.literal()
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
+      ReplicaStatusDescription.foreach(__v => __obj.updateDynamic("ReplicaStatusDescription")(__v.asInstanceOf[js.Any]))
+      ReplicaStatusPercentProgress.foreach(__v =>
+        __obj.updateDynamic("ReplicaStatusPercentProgress")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ReplicaDescription]
+    }
+  }
+
+  /**
+    * Represents the properties of a replica global secondary index.
+    */
+  @js.native
+  trait ReplicaGlobalSecondaryIndex extends js.Object {
+    var IndexName: IndexName
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
+  }
+
+  object ReplicaGlobalSecondaryIndex {
+    @inline
+    def apply(
+        IndexName: IndexName,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined
+    ): ReplicaGlobalSecondaryIndex = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any]
+      )
+
+      ProvisionedThroughputOverride.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReplicaGlobalSecondaryIndex]
+    }
+  }
+
+  /**
+    * Represents the auto scaling configuration for a replica global secondary index.
+    */
+  @js.native
+  trait ReplicaGlobalSecondaryIndexAutoScalingDescription extends js.Object {
+    var IndexName: js.UndefOr[IndexName]
+    var IndexStatus: js.UndefOr[IndexStatus]
+    var ProvisionedReadCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription]
+    var ProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription]
+  }
+
+  object ReplicaGlobalSecondaryIndexAutoScalingDescription {
+    @inline
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        IndexStatus: js.UndefOr[IndexStatus] = js.undefined,
+        ProvisionedReadCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
+        ProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined
+    ): ReplicaGlobalSecondaryIndexAutoScalingDescription = {
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
+      ProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
+        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
+        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReplicaGlobalSecondaryIndexAutoScalingDescription]
+    }
+  }
+
+  /**
+    * Represents the auto scaling settings of a global secondary index for a replica that will be modified.
+    */
+  @js.native
+  trait ReplicaGlobalSecondaryIndexAutoScalingUpdate extends js.Object {
+    var IndexName: js.UndefOr[IndexName]
+    var ProvisionedReadCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate]
+  }
+
+  object ReplicaGlobalSecondaryIndexAutoScalingUpdate {
+    @inline
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        ProvisionedReadCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined
+    ): ReplicaGlobalSecondaryIndexAutoScalingUpdate = {
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      ProvisionedReadCapacityAutoScalingUpdate.foreach(__v =>
+        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
+    }
+  }
+
+  /**
+    * Represents the properties of a replica global secondary index.
+    */
+  @js.native
+  trait ReplicaGlobalSecondaryIndexDescription extends js.Object {
+    var IndexName: js.UndefOr[IndexName]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
+  }
+
+  object ReplicaGlobalSecondaryIndexDescription {
+    @inline
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined
+    ): ReplicaGlobalSecondaryIndexDescription = {
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReplicaGlobalSecondaryIndexDescription]
     }
   }
 
@@ -3138,12 +3704,13 @@ package dynamodb {
   }
 
   object ReplicaStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val ACTIVE   = "ACTIVE"
+    val CREATING        = "CREATING"
+    val CREATION_FAILED = "CREATION_FAILED"
+    val UPDATING        = "UPDATING"
+    val DELETING        = "DELETING"
+    val ACTIVE          = "ACTIVE"
 
-    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
+    val values = js.Object.freeze(js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE))
   }
 
   /**
@@ -3168,6 +3735,34 @@ package dynamodb {
       Create.foreach(__v => __obj.updateDynamic("Create")(__v.asInstanceOf[js.Any]))
       Delete.foreach(__v => __obj.updateDynamic("Delete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaUpdate]
+    }
+  }
+
+  /**
+    * Represents one of the following:
+    * * A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region.
+    *  * New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.
+    *  * An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.
+    */
+  @js.native
+  trait ReplicationGroupUpdate extends js.Object {
+    var Create: js.UndefOr[CreateReplicationGroupMemberAction]
+    var Delete: js.UndefOr[DeleteReplicationGroupMemberAction]
+    var Update: js.UndefOr[UpdateReplicationGroupMemberAction]
+  }
+
+  object ReplicationGroupUpdate {
+    @inline
+    def apply(
+        Create: js.UndefOr[CreateReplicationGroupMemberAction] = js.undefined,
+        Delete: js.UndefOr[DeleteReplicationGroupMemberAction] = js.undefined,
+        Update: js.UndefOr[UpdateReplicationGroupMemberAction] = js.undefined
+    ): ReplicationGroupUpdate = {
+      val __obj = js.Dynamic.literal()
+      Create.foreach(__v => __obj.updateDynamic("Create")(__v.asInstanceOf[js.Any]))
+      Delete.foreach(__v => __obj.updateDynamic("Delete")(__v.asInstanceOf[js.Any]))
+      Update.foreach(__v => __obj.updateDynamic("Update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationGroupUpdate]
     }
   }
 
@@ -3361,6 +3956,7 @@ package dynamodb {
     */
   @js.native
   trait SSEDescription extends js.Object {
+    var InaccessibleEncryptionDateTime: js.UndefOr[Date]
     var KMSMasterKeyArn: js.UndefOr[KMSMasterKeyArn]
     var SSEType: js.UndefOr[SSEType]
     var Status: js.UndefOr[SSEStatus]
@@ -3369,11 +3965,15 @@ package dynamodb {
   object SSEDescription {
     @inline
     def apply(
+        InaccessibleEncryptionDateTime: js.UndefOr[Date] = js.undefined,
         KMSMasterKeyArn: js.UndefOr[KMSMasterKeyArn] = js.undefined,
         SSEType: js.UndefOr[SSEType] = js.undefined,
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
       val __obj = js.Dynamic.literal()
+      InaccessibleEncryptionDateTime.foreach(__v =>
+        __obj.updateDynamic("InaccessibleEncryptionDateTime")(__v.asInstanceOf[js.Any])
+      )
       KMSMasterKeyArn.foreach(__v => __obj.updateDynamic("KMSMasterKeyArn")(__v.asInstanceOf[js.Any]))
       SSEType.foreach(__v => __obj.updateDynamic("SSEType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3620,18 +4220,20 @@ package dynamodb {
     */
   @js.native
   trait StreamSpecification extends js.Object {
-    var StreamEnabled: js.UndefOr[StreamEnabled]
+    var StreamEnabled: StreamEnabled
     var StreamViewType: js.UndefOr[StreamViewType]
   }
 
   object StreamSpecification {
     @inline
     def apply(
-        StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
+        StreamEnabled: StreamEnabled,
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
     ): StreamSpecification = {
-      val __obj = js.Dynamic.literal()
-      StreamEnabled.foreach(__v => __obj.updateDynamic("StreamEnabled")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "StreamEnabled" -> StreamEnabled.asInstanceOf[js.Any]
+      )
+
       StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSpecification]
     }
@@ -3647,20 +4249,48 @@ package dynamodb {
   }
 
   /**
+    * Represents the auto scaling configuration for a global table.
+    */
+  @js.native
+  trait TableAutoScalingDescription extends js.Object {
+    var Replicas: js.UndefOr[ReplicaAutoScalingDescriptionList]
+    var TableName: js.UndefOr[TableName]
+    var TableStatus: js.UndefOr[TableStatus]
+  }
+
+  object TableAutoScalingDescription {
+    @inline
+    def apply(
+        Replicas: js.UndefOr[ReplicaAutoScalingDescriptionList] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        TableStatus: js.UndefOr[TableStatus] = js.undefined
+    ): TableAutoScalingDescription = {
+      val __obj = js.Dynamic.literal()
+      Replicas.foreach(__v => __obj.updateDynamic("Replicas")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      TableStatus.foreach(__v => __obj.updateDynamic("TableStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableAutoScalingDescription]
+    }
+  }
+
+  /**
     * Represents the properties of a table.
     */
   @js.native
   trait TableDescription extends js.Object {
+    var ArchivalSummary: js.UndefOr[ArchivalSummary]
     var AttributeDefinitions: js.UndefOr[AttributeDefinitions]
     var BillingModeSummary: js.UndefOr[BillingModeSummary]
     var CreationDateTime: js.UndefOr[Date]
     var GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexDescriptionList]
+    var GlobalTableVersion: js.UndefOr[String]
     var ItemCount: js.UndefOr[Double]
     var KeySchema: js.UndefOr[KeySchema]
     var LatestStreamArn: js.UndefOr[StreamArn]
     var LatestStreamLabel: js.UndefOr[String]
     var LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexDescriptionList]
     var ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription]
+    var Replicas: js.UndefOr[ReplicaDescriptionList]
     var RestoreSummary: js.UndefOr[RestoreSummary]
     var SSEDescription: js.UndefOr[SSEDescription]
     var StreamSpecification: js.UndefOr[StreamSpecification]
@@ -3674,16 +4304,19 @@ package dynamodb {
   object TableDescription {
     @inline
     def apply(
+        ArchivalSummary: js.UndefOr[ArchivalSummary] = js.undefined,
         AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
         BillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexDescriptionList] = js.undefined,
+        GlobalTableVersion: js.UndefOr[String] = js.undefined,
         ItemCount: js.UndefOr[Double] = js.undefined,
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
         LatestStreamArn: js.UndefOr[StreamArn] = js.undefined,
         LatestStreamLabel: js.UndefOr[String] = js.undefined,
         LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexDescriptionList] = js.undefined,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined,
+        Replicas: js.UndefOr[ReplicaDescriptionList] = js.undefined,
         RestoreSummary: js.UndefOr[RestoreSummary] = js.undefined,
         SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
         StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
@@ -3694,16 +4327,19 @@ package dynamodb {
         TableStatus: js.UndefOr[TableStatus] = js.undefined
     ): TableDescription = {
       val __obj = js.Dynamic.literal()
+      ArchivalSummary.foreach(__v => __obj.updateDynamic("ArchivalSummary")(__v.asInstanceOf[js.Any]))
       AttributeDefinitions.foreach(__v => __obj.updateDynamic("AttributeDefinitions")(__v.asInstanceOf[js.Any]))
       BillingModeSummary.foreach(__v => __obj.updateDynamic("BillingModeSummary")(__v.asInstanceOf[js.Any]))
       CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
       GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      GlobalTableVersion.foreach(__v => __obj.updateDynamic("GlobalTableVersion")(__v.asInstanceOf[js.Any]))
       ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
       KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
       LatestStreamArn.foreach(__v => __obj.updateDynamic("LatestStreamArn")(__v.asInstanceOf[js.Any]))
       LatestStreamLabel.foreach(__v => __obj.updateDynamic("LatestStreamLabel")(__v.asInstanceOf[js.Any]))
       LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
       ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      Replicas.foreach(__v => __obj.updateDynamic("Replicas")(__v.asInstanceOf[js.Any]))
       RestoreSummary.foreach(__v => __obj.updateDynamic("RestoreSummary")(__v.asInstanceOf[js.Any]))
       SSEDescription.foreach(__v => __obj.updateDynamic("SSEDescription")(__v.asInstanceOf[js.Any]))
       StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
@@ -3717,12 +4353,17 @@ package dynamodb {
   }
 
   object TableStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val ACTIVE   = "ACTIVE"
+    val CREATING                            = "CREATING"
+    val UPDATING                            = "UPDATING"
+    val DELETING                            = "DELETING"
+    val ACTIVE                              = "ACTIVE"
+    val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
+    val ARCHIVING                           = "ARCHIVING"
+    val ARCHIVED                            = "ARCHIVED"
 
-    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
+    val values = js.Object.freeze(
+      js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
+    )
   }
 
   /**
@@ -4067,6 +4708,54 @@ package dynamodb {
     }
   }
 
+  @js.native
+  trait UpdateContributorInsightsInput extends js.Object {
+    var ContributorInsightsAction: ContributorInsightsAction
+    var TableName: TableName
+    var IndexName: js.UndefOr[IndexName]
+  }
+
+  object UpdateContributorInsightsInput {
+    @inline
+    def apply(
+        ContributorInsightsAction: ContributorInsightsAction,
+        TableName: TableName,
+        IndexName: js.UndefOr[IndexName] = js.undefined
+    ): UpdateContributorInsightsInput = {
+      val __obj = js.Dynamic.literal(
+        "ContributorInsightsAction" -> ContributorInsightsAction.asInstanceOf[js.Any],
+        "TableName"                 -> TableName.asInstanceOf[js.Any]
+      )
+
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContributorInsightsInput]
+    }
+  }
+
+  @js.native
+  trait UpdateContributorInsightsOutput extends js.Object {
+    var ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus]
+    var IndexName: js.UndefOr[IndexName]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object UpdateContributorInsightsOutput {
+    @inline
+    def apply(
+        ContributorInsightsStatus: js.UndefOr[ContributorInsightsStatus] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): UpdateContributorInsightsOutput = {
+      val __obj = js.Dynamic.literal()
+      ContributorInsightsStatus.foreach(__v =>
+        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
+      )
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContributorInsightsOutput]
+    }
+  }
+
   /**
     * Represents the new provisioned throughput settings to be applied to a global secondary index.
     */
@@ -4272,6 +4961,38 @@ package dynamodb {
   }
 
   /**
+    * Represents a replica to be modified.
+    */
+  @js.native
+  trait UpdateReplicationGroupMemberAction extends js.Object {
+    var RegionName: RegionName
+    var GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexList]
+    var KMSMasterKeyId: js.UndefOr[KMSMasterKeyId]
+    var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
+  }
+
+  object UpdateReplicationGroupMemberAction {
+    @inline
+    def apply(
+        RegionName: RegionName,
+        GlobalSecondaryIndexes: js.UndefOr[ReplicaGlobalSecondaryIndexList] = js.undefined,
+        KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined
+    ): UpdateReplicationGroupMemberAction = {
+      val __obj = js.Dynamic.literal(
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      )
+
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v =>
+        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateReplicationGroupMemberAction]
+    }
+  }
+
+  /**
     * Represents the input of an <code>UpdateTable</code> operation.
     */
   @js.native
@@ -4281,6 +5002,7 @@ package dynamodb {
     var BillingMode: js.UndefOr[BillingMode]
     var GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList]
     var ProvisionedThroughput: js.UndefOr[ProvisionedThroughput]
+    var ReplicaUpdates: js.UndefOr[ReplicationGroupUpdateList]
     var SSESpecification: js.UndefOr[SSESpecification]
     var StreamSpecification: js.UndefOr[StreamSpecification]
   }
@@ -4293,6 +5015,7 @@ package dynamodb {
         BillingMode: js.UndefOr[BillingMode] = js.undefined,
         GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList] = js.undefined,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        ReplicaUpdates: js.UndefOr[ReplicationGroupUpdateList] = js.undefined,
         SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
         StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined
     ): UpdateTableInput = {
@@ -4306,6 +5029,7 @@ package dynamodb {
         __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
       )
       ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      ReplicaUpdates.foreach(__v => __obj.updateDynamic("ReplicaUpdates")(__v.asInstanceOf[js.Any]))
       SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
       StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableInput]
@@ -4328,6 +5052,55 @@ package dynamodb {
       val __obj = js.Dynamic.literal()
       TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateTableReplicaAutoScalingInput extends js.Object {
+    var TableName: TableName
+    var GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexAutoScalingUpdateList]
+    var ProvisionedWriteCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate]
+    var ReplicaUpdates: js.UndefOr[ReplicaAutoScalingUpdateList]
+  }
+
+  object UpdateTableReplicaAutoScalingInput {
+    @inline
+    def apply(
+        TableName: TableName,
+        GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexAutoScalingUpdateList] = js.undefined,
+        ProvisionedWriteCapacityAutoScalingUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
+        ReplicaUpdates: js.UndefOr[ReplicaAutoScalingUpdateList] = js.undefined
+    ): UpdateTableReplicaAutoScalingInput = {
+      val __obj = js.Dynamic.literal(
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      GlobalSecondaryIndexUpdates.foreach(__v =>
+        __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v =>
+        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
+      )
+      ReplicaUpdates.foreach(__v => __obj.updateDynamic("ReplicaUpdates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTableReplicaAutoScalingInput]
+    }
+  }
+
+  @js.native
+  trait UpdateTableReplicaAutoScalingOutput extends js.Object {
+    var TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription]
+  }
+
+  object UpdateTableReplicaAutoScalingOutput {
+    @inline
+    def apply(
+        TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription] = js.undefined
+    ): UpdateTableReplicaAutoScalingOutput = {
+      val __obj = js.Dynamic.literal()
+      TableAutoScalingDescription.foreach(__v =>
+        __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateTableReplicaAutoScalingOutput]
     }
   }
 

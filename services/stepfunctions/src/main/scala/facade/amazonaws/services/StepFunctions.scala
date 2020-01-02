@@ -18,7 +18,10 @@ package object stepfunctions {
   type HistoryEventList        = js.Array[HistoryEvent]
   type HistoryEventType        = String
   type Identity                = String
+  type IncludeExecutionData    = Boolean
   type ListExecutionsPageToken = String
+  type LogDestinationList      = js.Array[LogDestination]
+  type LogLevel                = String
   type Name                    = String
   type PageSize                = Int
   type PageToken               = String
@@ -29,6 +32,7 @@ package object stepfunctions {
   type SensitiveError          = String
   type StateMachineList        = js.Array[StateMachineListItem]
   type StateMachineStatus      = String
+  type StateMachineType        = String
   type TagKey                  = String
   type TagKeyList              = js.Array[TagKey]
   type TagList                 = js.Array[Tag]
@@ -39,6 +43,7 @@ package object stepfunctions {
   type UnsignedInteger         = Int
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
+
     @inline def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
       service.createActivity(params).promise.toFuture
     @inline def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =
@@ -281,6 +286,25 @@ package stepfunctions {
     }
   }
 
+  /**
+    * <p/>
+    */
+  @js.native
+  trait CloudWatchLogsLogGroup extends js.Object {
+    var logGroupArn: js.UndefOr[Arn]
+  }
+
+  object CloudWatchLogsLogGroup {
+    @inline
+    def apply(
+        logGroupArn: js.UndefOr[Arn] = js.undefined
+    ): CloudWatchLogsLogGroup = {
+      val __obj = js.Dynamic.literal()
+      logGroupArn.foreach(__v => __obj.updateDynamic("logGroupArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchLogsLogGroup]
+    }
+  }
+
   @js.native
   trait CreateActivityInput extends js.Object {
     var name: Name
@@ -328,7 +352,9 @@ package stepfunctions {
     var definition: Definition
     var name: Name
     var roleArn: Arn
+    var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var tags: js.UndefOr[TagList]
+    var `type`: js.UndefOr[StateMachineType]
   }
 
   object CreateStateMachineInput {
@@ -337,7 +363,9 @@ package stepfunctions {
         definition: Definition,
         name: Name,
         roleArn: Arn,
-        tags: js.UndefOr[TagList] = js.undefined
+        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        `type`: js.UndefOr[StateMachineType] = js.undefined
     ): CreateStateMachineInput = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
@@ -345,7 +373,9 @@ package stepfunctions {
         "roleArn"    -> roleArn.asInstanceOf[js.Any]
       )
 
+      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStateMachineInput]
     }
   }
@@ -605,6 +635,8 @@ package stepfunctions {
     var name: Name
     var roleArn: Arn
     var stateMachineArn: Arn
+    var `type`: StateMachineType
+    var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var status: js.UndefOr[StateMachineStatus]
   }
 
@@ -616,6 +648,8 @@ package stepfunctions {
         name: Name,
         roleArn: Arn,
         stateMachineArn: Arn,
+        `type`: StateMachineType,
+        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
         status: js.UndefOr[StateMachineStatus] = js.undefined
     ): DescribeStateMachineOutput = {
       val __obj = js.Dynamic.literal(
@@ -623,9 +657,11 @@ package stepfunctions {
         "definition"      -> definition.asInstanceOf[js.Any],
         "name"            -> name.asInstanceOf[js.Any],
         "roleArn"         -> roleArn.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
+        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
+        "type"            -> `type`.asInstanceOf[js.Any]
       )
 
+      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStateMachineOutput]
     }
@@ -1467,6 +1503,59 @@ package stepfunctions {
   }
 
   /**
+    * <p/>
+    */
+  @js.native
+  trait LogDestination extends js.Object {
+    var cloudWatchLogsLogGroup: js.UndefOr[CloudWatchLogsLogGroup]
+  }
+
+  object LogDestination {
+    @inline
+    def apply(
+        cloudWatchLogsLogGroup: js.UndefOr[CloudWatchLogsLogGroup] = js.undefined
+    ): LogDestination = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogsLogGroup.foreach(__v => __obj.updateDynamic("cloudWatchLogsLogGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogDestination]
+    }
+  }
+
+  object LogLevelEnum {
+    val ALL   = "ALL"
+    val ERROR = "ERROR"
+    val FATAL = "FATAL"
+    val OFF   = "OFF"
+
+    val values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait LoggingConfiguration extends js.Object {
+    var destinations: js.UndefOr[LogDestinationList]
+    var includeExecutionData: js.UndefOr[IncludeExecutionData]
+    var level: js.UndefOr[LogLevel]
+  }
+
+  object LoggingConfiguration {
+    @inline
+    def apply(
+        destinations: js.UndefOr[LogDestinationList] = js.undefined,
+        includeExecutionData: js.UndefOr[IncludeExecutionData] = js.undefined,
+        level: js.UndefOr[LogLevel] = js.undefined
+    ): LoggingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      destinations.foreach(__v => __obj.updateDynamic("destinations")(__v.asInstanceOf[js.Any]))
+      includeExecutionData.foreach(__v => __obj.updateDynamic("includeExecutionData")(__v.asInstanceOf[js.Any]))
+      level.foreach(__v => __obj.updateDynamic("level")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingConfiguration]
+    }
+  }
+
+  /**
     * Contains details about an iteration of a Map state.
     */
   @js.native
@@ -1710,6 +1799,7 @@ package stepfunctions {
     var creationDate: Timestamp
     var name: Name
     var stateMachineArn: Arn
+    var `type`: StateMachineType
   }
 
   object StateMachineListItem {
@@ -1717,12 +1807,14 @@ package stepfunctions {
     def apply(
         creationDate: Timestamp,
         name: Name,
-        stateMachineArn: Arn
+        stateMachineArn: Arn,
+        `type`: StateMachineType
     ): StateMachineListItem = {
       val __obj = js.Dynamic.literal(
         "creationDate"    -> creationDate.asInstanceOf[js.Any],
         "name"            -> name.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
+        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
+        "type"            -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StateMachineListItem]
@@ -1734,6 +1826,13 @@ package stepfunctions {
     val DELETING = "DELETING"
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
+  }
+
+  object StateMachineTypeEnum {
+    val STANDARD = "STANDARD"
+    val EXPRESS  = "EXPRESS"
+
+    val values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
   }
 
   @js.native
@@ -2105,6 +2204,7 @@ package stepfunctions {
   trait UpdateStateMachineInput extends js.Object {
     var stateMachineArn: Arn
     var definition: js.UndefOr[Definition]
+    var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var roleArn: js.UndefOr[Arn]
   }
 
@@ -2113,6 +2213,7 @@ package stepfunctions {
     def apply(
         stateMachineArn: Arn,
         definition: js.UndefOr[Definition] = js.undefined,
+        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
         roleArn: js.UndefOr[Arn] = js.undefined
     ): UpdateStateMachineInput = {
       val __obj = js.Dynamic.literal(
@@ -2120,6 +2221,7 @@ package stepfunctions {
       )
 
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
+      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStateMachineInput]
     }

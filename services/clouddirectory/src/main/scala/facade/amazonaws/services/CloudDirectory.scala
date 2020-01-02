@@ -85,6 +85,7 @@ package object clouddirectory {
   type Version                           = String
 
   implicit final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
+
     @inline def addFacetToObjectFuture(params: AddFacetToObjectRequest): Future[AddFacetToObjectResponse] =
       service.addFacetToObject(params).promise.toFuture
     @inline def applySchemaFuture(params: ApplySchemaRequest): Future[ApplySchemaResponse] =

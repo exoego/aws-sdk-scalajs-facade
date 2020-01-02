@@ -13,8 +13,10 @@ package object sagemakerruntime {
   type CustomAttributesHeader = String
   type EndpointName           = String
   type Header                 = String
+  type TargetModelHeader      = String
 
   implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
+
     @inline def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] =
       service.invokeEndpoint(params).promise.toFuture
   }
@@ -36,6 +38,7 @@ package sagemakerruntime {
     var Accept: js.UndefOr[Header]
     var ContentType: js.UndefOr[Header]
     var CustomAttributes: js.UndefOr[CustomAttributesHeader]
+    var TargetModel: js.UndefOr[TargetModelHeader]
   }
 
   object InvokeEndpointInput {
@@ -45,7 +48,8 @@ package sagemakerruntime {
         EndpointName: EndpointName,
         Accept: js.UndefOr[Header] = js.undefined,
         ContentType: js.UndefOr[Header] = js.undefined,
-        CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined
+        CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
+        TargetModel: js.UndefOr[TargetModelHeader] = js.undefined
     ): InvokeEndpointInput = {
       val __obj = js.Dynamic.literal(
         "Body"         -> Body.asInstanceOf[js.Any],
@@ -55,6 +59,7 @@ package sagemakerruntime {
       Accept.foreach(__v => __obj.updateDynamic("Accept")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
+      TargetModel.foreach(__v => __obj.updateDynamic("TargetModel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeEndpointInput]
     }
   }
