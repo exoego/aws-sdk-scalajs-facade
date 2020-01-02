@@ -17,6 +17,14 @@ package object comprehendmedical {
   type EntityList                              = js.Array[Entity]
   type EntitySubType                           = String
   type EntityType                              = String
+  type ICD10CMAttributeList                    = js.Array[ICD10CMAttribute]
+  type ICD10CMAttributeType                    = String
+  type ICD10CMConceptList                      = js.Array[ICD10CMConcept]
+  type ICD10CMEntityCategory                   = String
+  type ICD10CMEntityList                       = js.Array[ICD10CMEntity]
+  type ICD10CMEntityType                       = String
+  type ICD10CMTraitList                        = js.Array[ICD10CMTrait]
+  type ICD10CMTraitName                        = String
   type IamRoleArn                              = String
   type JobId                                   = String
   type JobName                                 = String
@@ -26,6 +34,15 @@ package object comprehendmedical {
   type ManifestFilePath                        = String
   type MaxResultsInteger                       = Int
   type ModelVersion                            = String
+  type OntologyLinkingBoundedLengthString      = String
+  type RxNormAttributeList                     = js.Array[RxNormAttribute]
+  type RxNormAttributeType                     = String
+  type RxNormConceptList                       = js.Array[RxNormConcept]
+  type RxNormEntityCategory                    = String
+  type RxNormEntityList                        = js.Array[RxNormEntity]
+  type RxNormEntityType                        = String
+  type RxNormTraitList                         = js.Array[RxNormTrait]
+  type RxNormTraitName                         = String
   type S3Bucket                                = String
   type S3Key                                   = String
   type Timestamp                               = js.Date
@@ -33,6 +50,7 @@ package object comprehendmedical {
   type UnmappedAttributeList                   = js.Array[UnmappedAttribute]
 
   implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
+
     @inline def describeEntitiesDetectionV2JobFuture(
         params: DescribeEntitiesDetectionV2JobRequest
     ): Future[DescribeEntitiesDetectionV2JobResponse] = service.describeEntitiesDetectionV2Job(params).promise.toFuture
@@ -43,6 +61,10 @@ package object comprehendmedical {
       service.detectEntitiesV2(params).promise.toFuture
     @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
       service.detectPHI(params).promise.toFuture
+    @inline def inferICD10CMFuture(params: InferICD10CMRequest): Future[InferICD10CMResponse] =
+      service.inferICD10CM(params).promise.toFuture
+    @inline def inferRxNormFuture(params: InferRxNormRequest): Future[InferRxNormResponse] =
+      service.inferRxNorm(params).promise.toFuture
     @inline def listEntitiesDetectionV2JobsFuture(
         params: ListEntitiesDetectionV2JobsRequest
     ): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise.toFuture
@@ -74,6 +96,8 @@ package comprehendmedical {
       js.native
     def detectEntitiesV2(params: DetectEntitiesV2Request): Request[DetectEntitiesV2Response] = js.native
     def detectPHI(params: DetectPHIRequest): Request[DetectPHIResponse]                      = js.native
+    def inferICD10CM(params: InferICD10CMRequest): Request[InferICD10CMResponse]             = js.native
+    def inferRxNorm(params: InferRxNormRequest): Request[InferRxNormResponse]                = js.native
     def listEntitiesDetectionV2Jobs(
         params: ListEntitiesDetectionV2JobsRequest
     ): Request[ListEntitiesDetectionV2JobsResponse]                                                      = js.native
@@ -550,6 +574,254 @@ package comprehendmedical {
   }
 
   /**
+    * The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.
+    */
+  @js.native
+  trait ICD10CMAttribute extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var EndOffset: js.UndefOr[Int]
+    var Id: js.UndefOr[Int]
+    var RelationshipScore: js.UndefOr[Float]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[String]
+    var Traits: js.UndefOr[ICD10CMTraitList]
+    var Type: js.UndefOr[ICD10CMAttributeType]
+  }
+
+  object ICD10CMAttribute {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        Id: js.UndefOr[Int] = js.undefined,
+        RelationshipScore: js.UndefOr[Float] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined,
+        Traits: js.UndefOr[ICD10CMTraitList] = js.undefined,
+        Type: js.UndefOr[ICD10CMAttributeType] = js.undefined
+    ): ICD10CMAttribute = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RelationshipScore.foreach(__v => __obj.updateDynamic("RelationshipScore")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ICD10CMAttribute]
+    }
+  }
+
+  object ICD10CMAttributeTypeEnum {
+    val ACUITY            = "ACUITY"
+    val DIRECTION         = "DIRECTION"
+    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE"
+    val QUALITY           = "QUALITY"
+    val QUANTITY          = "QUANTITY"
+
+    val values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
+  }
+
+  /**
+    * The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.
+    */
+  @js.native
+  trait ICD10CMConcept extends js.Object {
+    var Code: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var Score: js.UndefOr[Float]
+  }
+
+  object ICD10CMConcept {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): ICD10CMConcept = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ICD10CMConcept]
+    }
+  }
+
+  /**
+    * The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
+    */
+  @js.native
+  trait ICD10CMEntity extends js.Object {
+    var Attributes: js.UndefOr[ICD10CMAttributeList]
+    var BeginOffset: js.UndefOr[Int]
+    var Category: js.UndefOr[ICD10CMEntityCategory]
+    var EndOffset: js.UndefOr[Int]
+    var ICD10CMConcepts: js.UndefOr[ICD10CMConceptList]
+    var Id: js.UndefOr[Int]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[OntologyLinkingBoundedLengthString]
+    var Traits: js.UndefOr[ICD10CMTraitList]
+    var Type: js.UndefOr[ICD10CMEntityType]
+  }
+
+  object ICD10CMEntity {
+    @inline
+    def apply(
+        Attributes: js.UndefOr[ICD10CMAttributeList] = js.undefined,
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        Category: js.UndefOr[ICD10CMEntityCategory] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        ICD10CMConcepts: js.UndefOr[ICD10CMConceptList] = js.undefined,
+        Id: js.UndefOr[Int] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Text: js.UndefOr[OntologyLinkingBoundedLengthString] = js.undefined,
+        Traits: js.UndefOr[ICD10CMTraitList] = js.undefined,
+        Type: js.UndefOr[ICD10CMEntityType] = js.undefined
+    ): ICD10CMEntity = {
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      ICD10CMConcepts.foreach(__v => __obj.updateDynamic("ICD10CMConcepts")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ICD10CMEntity]
+    }
+  }
+
+  object ICD10CMEntityCategoryEnum {
+    val MEDICAL_CONDITION = "MEDICAL_CONDITION"
+
+    val values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
+  }
+
+  object ICD10CMEntityTypeEnum {
+    val DX_NAME = "DX_NAME"
+
+    val values = js.Object.freeze(js.Array(DX_NAME))
+  }
+
+  /**
+    * Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
+    */
+  @js.native
+  trait ICD10CMTrait extends js.Object {
+    var Name: js.UndefOr[ICD10CMTraitName]
+    var Score: js.UndefOr[Float]
+  }
+
+  object ICD10CMTrait {
+    @inline
+    def apply(
+        Name: js.UndefOr[ICD10CMTraitName] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): ICD10CMTrait = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ICD10CMTrait]
+    }
+  }
+
+  object ICD10CMTraitNameEnum {
+    val NEGATION  = "NEGATION"
+    val DIAGNOSIS = "DIAGNOSIS"
+    val SIGN      = "SIGN"
+    val SYMPTOM   = "SYMPTOM"
+
+    val values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
+  }
+
+  @js.native
+  trait InferICD10CMRequest extends js.Object {
+    var Text: OntologyLinkingBoundedLengthString
+  }
+
+  object InferICD10CMRequest {
+    @inline
+    def apply(
+        Text: OntologyLinkingBoundedLengthString
+    ): InferICD10CMRequest = {
+      val __obj = js.Dynamic.literal(
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InferICD10CMRequest]
+    }
+  }
+
+  @js.native
+  trait InferICD10CMResponse extends js.Object {
+    var Entities: ICD10CMEntityList
+    var ModelVersion: js.UndefOr[String]
+    var PaginationToken: js.UndefOr[String]
+  }
+
+  object InferICD10CMResponse {
+    @inline
+    def apply(
+        Entities: ICD10CMEntityList,
+        ModelVersion: js.UndefOr[String] = js.undefined,
+        PaginationToken: js.UndefOr[String] = js.undefined
+    ): InferICD10CMResponse = {
+      val __obj = js.Dynamic.literal(
+        "Entities" -> Entities.asInstanceOf[js.Any]
+      )
+
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferICD10CMResponse]
+    }
+  }
+
+  @js.native
+  trait InferRxNormRequest extends js.Object {
+    var Text: OntologyLinkingBoundedLengthString
+  }
+
+  object InferRxNormRequest {
+    @inline
+    def apply(
+        Text: OntologyLinkingBoundedLengthString
+    ): InferRxNormRequest = {
+      val __obj = js.Dynamic.literal(
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InferRxNormRequest]
+    }
+  }
+
+  @js.native
+  trait InferRxNormResponse extends js.Object {
+    var Entities: RxNormEntityList
+    var ModelVersion: js.UndefOr[String]
+    var PaginationToken: js.UndefOr[String]
+  }
+
+  object InferRxNormResponse {
+    @inline
+    def apply(
+        Entities: RxNormEntityList,
+        ModelVersion: js.UndefOr[String] = js.undefined,
+        PaginationToken: js.UndefOr[String] = js.undefined
+    ): InferRxNormResponse = {
+      val __obj = js.Dynamic.literal(
+        "Entities" -> Entities.asInstanceOf[js.Any]
+      )
+
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferRxNormResponse]
+    }
+  }
+
+  /**
     * The input properties for an entities detection job
     */
   @js.native
@@ -700,6 +972,170 @@ package comprehendmedical {
       S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDataConfig]
     }
+  }
+
+  /**
+    * The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.
+    */
+  @js.native
+  trait RxNormAttribute extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var EndOffset: js.UndefOr[Int]
+    var Id: js.UndefOr[Int]
+    var RelationshipScore: js.UndefOr[Float]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[String]
+    var Traits: js.UndefOr[RxNormTraitList]
+    var Type: js.UndefOr[RxNormAttributeType]
+  }
+
+  object RxNormAttribute {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        Id: js.UndefOr[Int] = js.undefined,
+        RelationshipScore: js.UndefOr[Float] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined,
+        Traits: js.UndefOr[RxNormTraitList] = js.undefined,
+        Type: js.UndefOr[RxNormAttributeType] = js.undefined
+    ): RxNormAttribute = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RelationshipScore.foreach(__v => __obj.updateDynamic("RelationshipScore")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RxNormAttribute]
+    }
+  }
+
+  object RxNormAttributeTypeEnum {
+    val DOSAGE        = "DOSAGE"
+    val DURATION      = "DURATION"
+    val FORM          = "FORM"
+    val FREQUENCY     = "FREQUENCY"
+    val RATE          = "RATE"
+    val ROUTE_OR_MODE = "ROUTE_OR_MODE"
+    val STRENGTH      = "STRENGTH"
+
+    val values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
+  }
+
+  /**
+    * The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.
+    */
+  @js.native
+  trait RxNormConcept extends js.Object {
+    var Code: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var Score: js.UndefOr[Float]
+  }
+
+  object RxNormConcept {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): RxNormConcept = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RxNormConcept]
+    }
+  }
+
+  /**
+    * The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
+    */
+  @js.native
+  trait RxNormEntity extends js.Object {
+    var Attributes: js.UndefOr[RxNormAttributeList]
+    var BeginOffset: js.UndefOr[Int]
+    var Category: js.UndefOr[RxNormEntityCategory]
+    var EndOffset: js.UndefOr[Int]
+    var Id: js.UndefOr[Int]
+    var RxNormConcepts: js.UndefOr[RxNormConceptList]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[OntologyLinkingBoundedLengthString]
+    var Traits: js.UndefOr[RxNormTraitList]
+    var Type: js.UndefOr[RxNormEntityType]
+  }
+
+  object RxNormEntity {
+    @inline
+    def apply(
+        Attributes: js.UndefOr[RxNormAttributeList] = js.undefined,
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        Category: js.UndefOr[RxNormEntityCategory] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        Id: js.UndefOr[Int] = js.undefined,
+        RxNormConcepts: js.UndefOr[RxNormConceptList] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Text: js.UndefOr[OntologyLinkingBoundedLengthString] = js.undefined,
+        Traits: js.UndefOr[RxNormTraitList] = js.undefined,
+        Type: js.UndefOr[RxNormEntityType] = js.undefined
+    ): RxNormEntity = {
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RxNormConcepts.foreach(__v => __obj.updateDynamic("RxNormConcepts")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RxNormEntity]
+    }
+  }
+
+  object RxNormEntityCategoryEnum {
+    val MEDICATION = "MEDICATION"
+
+    val values = js.Object.freeze(js.Array(MEDICATION))
+  }
+
+  object RxNormEntityTypeEnum {
+    val BRAND_NAME   = "BRAND_NAME"
+    val GENERIC_NAME = "GENERIC_NAME"
+
+    val values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
+  }
+
+  /**
+    * The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication.
+    */
+  @js.native
+  trait RxNormTrait extends js.Object {
+    var Name: js.UndefOr[RxNormTraitName]
+    var Score: js.UndefOr[Float]
+  }
+
+  object RxNormTrait {
+    @inline
+    def apply(
+        Name: js.UndefOr[RxNormTraitName] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): RxNormTrait = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RxNormTrait]
+    }
+  }
+
+  object RxNormTraitNameEnum {
+    val NEGATION = "NEGATION"
+
+    val values = js.Object.freeze(js.Array(NEGATION))
   }
 
   @js.native

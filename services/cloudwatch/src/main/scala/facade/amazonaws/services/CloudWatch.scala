@@ -20,6 +20,7 @@ package object cloudwatch {
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
   type AnomalyDetectorMetricTimezone     = String
   type AnomalyDetectors                  = js.Array[AnomalyDetector]
+  type BatchFailures                     = js.Array[PartialFailure]
   type ComparisonOperator                = String
   type Counts                            = js.Array[DatapointValue]
   type DashboardArn                      = String
@@ -41,12 +42,37 @@ package object cloudwatch {
   type Dimensions                        = js.Array[Dimension]
   type EvaluateLowSampleCountPercentile  = String
   type EvaluationPeriods                 = Int
+  type ExceptionType                     = String
   type ExtendedStatistic                 = String
   type ExtendedStatistics                = js.Array[ExtendedStatistic]
+  type FailureCode                       = String
+  type FailureDescription                = String
+  type FailureResource                   = String
   type GetMetricDataMaxDatapoints        = Int
   type HistoryData                       = String
   type HistoryItemType                   = String
   type HistorySummary                    = String
+  type InsightRuleAggregationStatistic   = String
+  type InsightRuleContributorDatapoints  = js.Array[InsightRuleContributorDatapoint]
+  type InsightRuleContributorKey         = String
+  type InsightRuleContributorKeyLabel    = String
+  type InsightRuleContributorKeyLabels   = js.Array[InsightRuleContributorKeyLabel]
+  type InsightRuleContributorKeys        = js.Array[InsightRuleContributorKey]
+  type InsightRuleContributors           = js.Array[InsightRuleContributor]
+  type InsightRuleDefinition             = String
+  type InsightRuleMaxResults             = Int
+  type InsightRuleMetricDatapoints       = js.Array[InsightRuleMetricDatapoint]
+  type InsightRuleMetricList             = js.Array[InsightRuleMetricName]
+  type InsightRuleMetricName             = String
+  type InsightRuleName                   = String
+  type InsightRuleNames                  = js.Array[InsightRuleName]
+  type InsightRuleOrderBy                = String
+  type InsightRuleSchema                 = String
+  type InsightRuleState                  = String
+  type InsightRuleUnboundDouble          = Double
+  type InsightRuleUnboundInteger         = Int
+  type InsightRuleUnboundLong            = Double
+  type InsightRules                      = js.Array[InsightRule]
   type LastModified                      = js.Date
   type MaxRecords                        = Int
   type MaxReturnedResultsCount           = Int
@@ -95,12 +121,15 @@ package object cloudwatch {
   type Values            = js.Array[DatapointValue]
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
+
     @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] =
       service.deleteAlarms(params).promise.toFuture
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
       service.deleteAnomalyDetector(params).promise.toFuture
     @inline def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
       service.deleteDashboards(params).promise.toFuture
+    @inline def deleteInsightRulesFuture(params: DeleteInsightRulesInput): Future[DeleteInsightRulesOutput] =
+      service.deleteInsightRules(params).promise.toFuture
     @inline def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
       service.describeAlarmHistory(params).promise.toFuture
     @inline def describeAlarmsForMetricFuture(
@@ -111,12 +140,20 @@ package object cloudwatch {
     @inline def describeAnomalyDetectorsFuture(
         params: DescribeAnomalyDetectorsInput
     ): Future[DescribeAnomalyDetectorsOutput] = service.describeAnomalyDetectors(params).promise.toFuture
+    @inline def describeInsightRulesFuture(params: DescribeInsightRulesInput): Future[DescribeInsightRulesOutput] =
+      service.describeInsightRules(params).promise.toFuture
     @inline def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
       service.disableAlarmActions(params).promise.toFuture
+    @inline def disableInsightRulesFuture(params: DisableInsightRulesInput): Future[DisableInsightRulesOutput] =
+      service.disableInsightRules(params).promise.toFuture
     @inline def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
       service.enableAlarmActions(params).promise.toFuture
+    @inline def enableInsightRulesFuture(params: EnableInsightRulesInput): Future[EnableInsightRulesOutput] =
+      service.enableInsightRules(params).promise.toFuture
     @inline def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
       service.getDashboard(params).promise.toFuture
+    @inline def getInsightRuleReportFuture(params: GetInsightRuleReportInput): Future[GetInsightRuleReportOutput] =
+      service.getInsightRuleReport(params).promise.toFuture
     @inline def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
       service.getMetricData(params).promise.toFuture
     @inline def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
@@ -133,6 +170,8 @@ package object cloudwatch {
       service.putAnomalyDetector(params).promise.toFuture
     @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
       service.putDashboard(params).promise.toFuture
+    @inline def putInsightRuleFuture(params: PutInsightRuleInput): Future[PutInsightRuleOutput] =
+      service.putInsightRule(params).promise.toFuture
     @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
       service.putMetricAlarm(params).promise.toFuture
     @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
@@ -155,15 +194,20 @@ package cloudwatch {
     def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object]                                     = js.native
     def deleteAnomalyDetector(params: DeleteAnomalyDetectorInput): Request[DeleteAnomalyDetectorOutput] = js.native
     def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput]                = js.native
+    def deleteInsightRules(params: DeleteInsightRulesInput): Request[DeleteInsightRulesOutput]          = js.native
     def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput]    = js.native
     def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput]                      = js.native
     def describeAlarmsForMetric(params: DescribeAlarmsForMetricInput): Request[DescribeAlarmsForMetricOutput] =
       js.native
     def describeAnomalyDetectors(params: DescribeAnomalyDetectorsInput): Request[DescribeAnomalyDetectorsOutput] =
       js.native
+    def describeInsightRules(params: DescribeInsightRulesInput): Request[DescribeInsightRulesOutput] = js.native
     def disableAlarmActions(params: DisableAlarmActionsInput): Request[js.Object]                    = js.native
+    def disableInsightRules(params: DisableInsightRulesInput): Request[DisableInsightRulesOutput]    = js.native
     def enableAlarmActions(params: EnableAlarmActionsInput): Request[js.Object]                      = js.native
+    def enableInsightRules(params: EnableInsightRulesInput): Request[EnableInsightRulesOutput]       = js.native
     def getDashboard(params: GetDashboardInput): Request[GetDashboardOutput]                         = js.native
+    def getInsightRuleReport(params: GetInsightRuleReportInput): Request[GetInsightRuleReportOutput] = js.native
     def getMetricData(params: GetMetricDataInput): Request[GetMetricDataOutput]                      = js.native
     def getMetricStatistics(params: GetMetricStatisticsInput): Request[GetMetricStatisticsOutput]    = js.native
     def getMetricWidgetImage(params: GetMetricWidgetImageInput): Request[GetMetricWidgetImageOutput] = js.native
@@ -172,6 +216,7 @@ package cloudwatch {
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
     def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput]       = js.native
     def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput]                         = js.native
+    def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput]                   = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object]                              = js.native
     def putMetricData(params: PutMetricDataInput): Request[js.Object]                                = js.native
     def setAlarmState(params: SetAlarmStateInput): Request[js.Object]                                = js.native
@@ -211,7 +256,7 @@ package cloudwatch {
   }
 
   /**
-    * An anomaly detection model associated with a particular CloudWatch metric athresnd statistic. You can use the model to display a band of expected normal values when the metric is graphed.
+    * An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed.
     */
   @js.native
   trait AnomalyDetector extends js.Object {
@@ -465,6 +510,40 @@ package cloudwatch {
   }
 
   @js.native
+  trait DeleteInsightRulesInput extends js.Object {
+    var RuleNames: InsightRuleNames
+  }
+
+  object DeleteInsightRulesInput {
+    @inline
+    def apply(
+        RuleNames: InsightRuleNames
+    ): DeleteInsightRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait DeleteInsightRulesOutput extends js.Object {
+    var Failures: js.UndefOr[BatchFailures]
+  }
+
+  object DeleteInsightRulesOutput {
+    @inline
+    def apply(
+        Failures: js.UndefOr[BatchFailures] = js.undefined
+    ): DeleteInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteInsightRulesOutput]
+    }
+  }
+
+  @js.native
   trait DescribeAlarmHistoryInput extends js.Object {
     var AlarmName: js.UndefOr[AlarmName]
     var EndDate: js.UndefOr[Timestamp]
@@ -663,6 +742,44 @@ package cloudwatch {
     }
   }
 
+  @js.native
+  trait DescribeInsightRulesInput extends js.Object {
+    var MaxResults: js.UndefOr[InsightRuleMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInsightRulesInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[InsightRuleMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInsightRulesInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait DescribeInsightRulesOutput extends js.Object {
+    var InsightRules: js.UndefOr[InsightRules]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInsightRulesOutput {
+    @inline
+    def apply(
+        InsightRules: js.UndefOr[InsightRules] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      InsightRules.foreach(__v => __obj.updateDynamic("InsightRules")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInsightRulesOutput]
+    }
+  }
+
   /**
     * Expands the identity of a metric.
     */
@@ -730,6 +847,40 @@ package cloudwatch {
   }
 
   @js.native
+  trait DisableInsightRulesInput extends js.Object {
+    var RuleNames: InsightRuleNames
+  }
+
+  object DisableInsightRulesInput {
+    @inline
+    def apply(
+        RuleNames: InsightRuleNames
+    ): DisableInsightRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisableInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait DisableInsightRulesOutput extends js.Object {
+    var Failures: js.UndefOr[BatchFailures]
+  }
+
+  object DisableInsightRulesOutput {
+    @inline
+    def apply(
+        Failures: js.UndefOr[BatchFailures] = js.undefined
+    ): DisableInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableInsightRulesOutput]
+    }
+  }
+
+  @js.native
   trait EnableAlarmActionsInput extends js.Object {
     var AlarmNames: AlarmNames
   }
@@ -744,6 +895,40 @@ package cloudwatch {
       )
 
       __obj.asInstanceOf[EnableAlarmActionsInput]
+    }
+  }
+
+  @js.native
+  trait EnableInsightRulesInput extends js.Object {
+    var RuleNames: InsightRuleNames
+  }
+
+  object EnableInsightRulesInput {
+    @inline
+    def apply(
+        RuleNames: InsightRuleNames
+    ): EnableInsightRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EnableInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait EnableInsightRulesOutput extends js.Object {
+    var Failures: js.UndefOr[BatchFailures]
+  }
+
+  object EnableInsightRulesOutput {
+    @inline
+    def apply(
+        Failures: js.UndefOr[BatchFailures] = js.undefined
+    ): EnableInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableInsightRulesOutput]
     }
   }
 
@@ -784,6 +969,73 @@ package cloudwatch {
       DashboardBody.foreach(__v => __obj.updateDynamic("DashboardBody")(__v.asInstanceOf[js.Any]))
       DashboardName.foreach(__v => __obj.updateDynamic("DashboardName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDashboardOutput]
+    }
+  }
+
+  @js.native
+  trait GetInsightRuleReportInput extends js.Object {
+    var EndTime: Timestamp
+    var Period: Period
+    var RuleName: InsightRuleName
+    var StartTime: Timestamp
+    var MaxContributorCount: js.UndefOr[InsightRuleUnboundInteger]
+    var Metrics: js.UndefOr[InsightRuleMetricList]
+    var OrderBy: js.UndefOr[InsightRuleOrderBy]
+  }
+
+  object GetInsightRuleReportInput {
+    @inline
+    def apply(
+        EndTime: Timestamp,
+        Period: Period,
+        RuleName: InsightRuleName,
+        StartTime: Timestamp,
+        MaxContributorCount: js.UndefOr[InsightRuleUnboundInteger] = js.undefined,
+        Metrics: js.UndefOr[InsightRuleMetricList] = js.undefined,
+        OrderBy: js.UndefOr[InsightRuleOrderBy] = js.undefined
+    ): GetInsightRuleReportInput = {
+      val __obj = js.Dynamic.literal(
+        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "Period"    -> Period.asInstanceOf[js.Any],
+        "RuleName"  -> RuleName.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
+      MaxContributorCount.foreach(__v => __obj.updateDynamic("MaxContributorCount")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      OrderBy.foreach(__v => __obj.updateDynamic("OrderBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightRuleReportInput]
+    }
+  }
+
+  @js.native
+  trait GetInsightRuleReportOutput extends js.Object {
+    var AggregateValue: js.UndefOr[InsightRuleUnboundDouble]
+    var AggregationStatistic: js.UndefOr[InsightRuleAggregationStatistic]
+    var ApproximateUniqueCount: js.UndefOr[InsightRuleUnboundLong]
+    var Contributors: js.UndefOr[InsightRuleContributors]
+    var KeyLabels: js.UndefOr[InsightRuleContributorKeyLabels]
+    var MetricDatapoints: js.UndefOr[InsightRuleMetricDatapoints]
+  }
+
+  object GetInsightRuleReportOutput {
+    @inline
+    def apply(
+        AggregateValue: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        AggregationStatistic: js.UndefOr[InsightRuleAggregationStatistic] = js.undefined,
+        ApproximateUniqueCount: js.UndefOr[InsightRuleUnboundLong] = js.undefined,
+        Contributors: js.UndefOr[InsightRuleContributors] = js.undefined,
+        KeyLabels: js.UndefOr[InsightRuleContributorKeyLabels] = js.undefined,
+        MetricDatapoints: js.UndefOr[InsightRuleMetricDatapoints] = js.undefined
+    ): GetInsightRuleReportOutput = {
+      val __obj = js.Dynamic.literal()
+      AggregateValue.foreach(__v => __obj.updateDynamic("AggregateValue")(__v.asInstanceOf[js.Any]))
+      AggregationStatistic.foreach(__v => __obj.updateDynamic("AggregationStatistic")(__v.asInstanceOf[js.Any]))
+      ApproximateUniqueCount.foreach(__v => __obj.updateDynamic("ApproximateUniqueCount")(__v.asInstanceOf[js.Any]))
+      Contributors.foreach(__v => __obj.updateDynamic("Contributors")(__v.asInstanceOf[js.Any]))
+      KeyLabels.foreach(__v => __obj.updateDynamic("KeyLabels")(__v.asInstanceOf[js.Any]))
+      MetricDatapoints.foreach(__v => __obj.updateDynamic("MetricDatapoints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightRuleReportOutput]
     }
   }
 
@@ -946,6 +1198,133 @@ package cloudwatch {
     val Action              = "Action"
 
     val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
+  }
+
+  /**
+    * This structure contains the definition for a Contributor Insights rule.
+    */
+  @js.native
+  trait InsightRule extends js.Object {
+    var Definition: InsightRuleDefinition
+    var Name: InsightRuleName
+    var Schema: InsightRuleSchema
+    var State: InsightRuleState
+  }
+
+  object InsightRule {
+    @inline
+    def apply(
+        Definition: InsightRuleDefinition,
+        Name: InsightRuleName,
+        Schema: InsightRuleSchema,
+        State: InsightRuleState
+    ): InsightRule = {
+      val __obj = js.Dynamic.literal(
+        "Definition" -> Definition.asInstanceOf[js.Any],
+        "Name"       -> Name.asInstanceOf[js.Any],
+        "Schema"     -> Schema.asInstanceOf[js.Any],
+        "State"      -> State.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InsightRule]
+    }
+  }
+
+  /**
+    * One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.
+    *  If the rule contains a single key, then each unique contributor is each unique value for this key.
+    *  For more information, see <a>GetInsightRuleReport</a>.
+    */
+  @js.native
+  trait InsightRuleContributor extends js.Object {
+    var ApproximateAggregateValue: InsightRuleUnboundDouble
+    var Datapoints: InsightRuleContributorDatapoints
+    var Keys: InsightRuleContributorKeys
+  }
+
+  object InsightRuleContributor {
+    @inline
+    def apply(
+        ApproximateAggregateValue: InsightRuleUnboundDouble,
+        Datapoints: InsightRuleContributorDatapoints,
+        Keys: InsightRuleContributorKeys
+    ): InsightRuleContributor = {
+      val __obj = js.Dynamic.literal(
+        "ApproximateAggregateValue" -> ApproximateAggregateValue.asInstanceOf[js.Any],
+        "Datapoints"                -> Datapoints.asInstanceOf[js.Any],
+        "Keys"                      -> Keys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InsightRuleContributor]
+    }
+  }
+
+  /**
+    * One data point related to one contributor.
+    *  For more information, see <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.
+    */
+  @js.native
+  trait InsightRuleContributorDatapoint extends js.Object {
+    var ApproximateValue: InsightRuleUnboundDouble
+    var Timestamp: Timestamp
+  }
+
+  object InsightRuleContributorDatapoint {
+    @inline
+    def apply(
+        ApproximateValue: InsightRuleUnboundDouble,
+        Timestamp: Timestamp
+    ): InsightRuleContributorDatapoint = {
+      val __obj = js.Dynamic.literal(
+        "ApproximateValue" -> ApproximateValue.asInstanceOf[js.Any],
+        "Timestamp"        -> Timestamp.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[InsightRuleContributorDatapoint]
+    }
+  }
+
+  /**
+    * One data point from the metric time series returned in a Contributor Insights rule report.
+    *  For more information, see <a>GetInsightRuleReport</a>.
+    */
+  @js.native
+  trait InsightRuleMetricDatapoint extends js.Object {
+    var Timestamp: Timestamp
+    var Average: js.UndefOr[InsightRuleUnboundDouble]
+    var MaxContributorValue: js.UndefOr[InsightRuleUnboundDouble]
+    var Maximum: js.UndefOr[InsightRuleUnboundDouble]
+    var Minimum: js.UndefOr[InsightRuleUnboundDouble]
+    var SampleCount: js.UndefOr[InsightRuleUnboundDouble]
+    var Sum: js.UndefOr[InsightRuleUnboundDouble]
+    var UniqueContributors: js.UndefOr[InsightRuleUnboundDouble]
+  }
+
+  object InsightRuleMetricDatapoint {
+    @inline
+    def apply(
+        Timestamp: Timestamp,
+        Average: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        MaxContributorValue: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        Maximum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        Minimum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        SampleCount: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        Sum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
+        UniqueContributors: js.UndefOr[InsightRuleUnboundDouble] = js.undefined
+    ): InsightRuleMetricDatapoint = {
+      val __obj = js.Dynamic.literal(
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
+      )
+
+      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
+      MaxContributorValue.foreach(__v => __obj.updateDynamic("MaxContributorValue")(__v.asInstanceOf[js.Any]))
+      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
+      Minimum.foreach(__v => __obj.updateDynamic("Minimum")(__v.asInstanceOf[js.Any]))
+      SampleCount.foreach(__v => __obj.updateDynamic("SampleCount")(__v.asInstanceOf[js.Any]))
+      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
+      UniqueContributors.foreach(__v => __obj.updateDynamic("UniqueContributors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightRuleMetricDatapoint]
+    }
   }
 
   @js.native
@@ -1361,6 +1740,34 @@ package cloudwatch {
     }
   }
 
+  /**
+    * This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
+    */
+  @js.native
+  trait PartialFailure extends js.Object {
+    var ExceptionType: js.UndefOr[ExceptionType]
+    var FailureCode: js.UndefOr[FailureCode]
+    var FailureDescription: js.UndefOr[FailureDescription]
+    var FailureResource: js.UndefOr[FailureResource]
+  }
+
+  object PartialFailure {
+    @inline
+    def apply(
+        ExceptionType: js.UndefOr[ExceptionType] = js.undefined,
+        FailureCode: js.UndefOr[FailureCode] = js.undefined,
+        FailureDescription: js.UndefOr[FailureDescription] = js.undefined,
+        FailureResource: js.UndefOr[FailureResource] = js.undefined
+    ): PartialFailure = {
+      val __obj = js.Dynamic.literal()
+      ExceptionType.foreach(__v => __obj.updateDynamic("ExceptionType")(__v.asInstanceOf[js.Any]))
+      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
+      FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
+      FailureResource.foreach(__v => __obj.updateDynamic("FailureResource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartialFailure]
+    }
+  }
+
   @js.native
   trait PutAnomalyDetectorInput extends js.Object {
     var MetricName: MetricName
@@ -1440,6 +1847,43 @@ package cloudwatch {
         __obj.updateDynamic("DashboardValidationMessages")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutDashboardOutput]
+    }
+  }
+
+  @js.native
+  trait PutInsightRuleInput extends js.Object {
+    var RuleDefinition: InsightRuleDefinition
+    var RuleName: InsightRuleName
+    var RuleState: js.UndefOr[InsightRuleState]
+  }
+
+  object PutInsightRuleInput {
+    @inline
+    def apply(
+        RuleDefinition: InsightRuleDefinition,
+        RuleName: InsightRuleName,
+        RuleState: js.UndefOr[InsightRuleState] = js.undefined
+    ): PutInsightRuleInput = {
+      val __obj = js.Dynamic.literal(
+        "RuleDefinition" -> RuleDefinition.asInstanceOf[js.Any],
+        "RuleName"       -> RuleName.asInstanceOf[js.Any]
+      )
+
+      RuleState.foreach(__v => __obj.updateDynamic("RuleState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutInsightRuleInput]
+    }
+  }
+
+  @js.native
+  trait PutInsightRuleOutput extends js.Object {}
+
+  object PutInsightRuleOutput {
+    @inline
+    def apply(
+        ): PutInsightRuleOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutInsightRuleOutput]
     }
   }
 

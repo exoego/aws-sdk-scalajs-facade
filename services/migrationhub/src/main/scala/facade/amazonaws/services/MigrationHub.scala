@@ -17,7 +17,6 @@ package object migrationhub {
   type DiscoveredResourceDescription   = String
   type DiscoveredResourceList          = js.Array[DiscoveredResource]
   type DryRun                          = Boolean
-  type ErrorMessage                    = String
   type LatestResourceAttributeList     = js.Array[ResourceAttribute]
   type MaxResults                      = Int
   type MaxResultsCreatedArtifacts      = Int
@@ -38,6 +37,7 @@ package object migrationhub {
   type UpdateDateTime                  = js.Date
 
   implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
+
     @inline def associateCreatedArtifactFuture(
         params: AssociateCreatedArtifactRequest
     ): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise.toFuture
@@ -121,14 +121,6 @@ package migrationhub {
     def notifyMigrationTaskState(params: NotifyMigrationTaskStateRequest): Request[NotifyMigrationTaskStateResult] =
       js.native
     def putResourceAttributes(params: PutResourceAttributesRequest): Request[PutResourceAttributesResult] = js.native
-  }
-
-  /**
-    * You do not have sufficient access to perform this action.
-    */
-  @js.native
-  trait AccessDeniedExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   object ApplicationStatusEnum {
@@ -489,14 +481,6 @@ package migrationhub {
     }
   }
 
-  /**
-    * Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".
-    */
-  @js.native
-  trait DryRunOperationException extends js.Object {
-    val Message: ErrorMessage
-  }
-
   @js.native
   trait ImportMigrationTaskRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
@@ -532,22 +516,6 @@ package migrationhub {
 
       __obj.asInstanceOf[ImportMigrationTaskResult]
     }
-  }
-
-  /**
-    * Exception raised when there is an internal, configuration, or dependency error encountered.
-    */
-  @js.native
-  trait InternalServerErrorException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.
-    */
-  @js.native
-  trait InvalidInputExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -793,6 +761,7 @@ package migrationhub {
     var ApplicationId: ApplicationId
     var Status: ApplicationStatus
     var DryRun: js.UndefOr[DryRun]
+    var UpdateDateTime: js.UndefOr[UpdateDateTime]
   }
 
   object NotifyApplicationStateRequest {
@@ -800,7 +769,8 @@ package migrationhub {
     def apply(
         ApplicationId: ApplicationId,
         Status: ApplicationStatus,
-        DryRun: js.UndefOr[DryRun] = js.undefined
+        DryRun: js.UndefOr[DryRun] = js.undefined,
+        UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
     ): NotifyApplicationStateRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
@@ -808,6 +778,7 @@ package migrationhub {
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyApplicationStateRequest]
     }
   }
@@ -869,14 +840,6 @@ package migrationhub {
 
       __obj.asInstanceOf[NotifyMigrationTaskStateResult]
     }
-  }
-
-  /**
-    * Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.
-    */
-  @js.native
-  trait PolicyErrorExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   /**
@@ -998,22 +961,6 @@ package migrationhub {
     )
   }
 
-  /**
-    * Exception raised when the request references a resource (ADS configuration, update stream, migration task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Exception raised when there is an internal, configuration, or dependency error encountered.
-    */
-  @js.native
-  trait ServiceUnavailableExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
   object StatusEnum {
     val NOT_STARTED = "NOT_STARTED"
     val IN_PROGRESS = "IN_PROGRESS"
@@ -1048,13 +995,5 @@ package migrationhub {
       StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Task]
     }
-  }
-
-  /**
-    * Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".
-    */
-  @js.native
-  trait UnauthorizedOperationException extends js.Object {
-    val Message: ErrorMessage
   }
 }

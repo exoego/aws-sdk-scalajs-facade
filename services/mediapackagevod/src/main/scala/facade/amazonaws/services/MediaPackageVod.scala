@@ -26,6 +26,7 @@ package object mediapackagevod {
   type __string                       = String
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
+
     @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
       service.createAsset(params).promise.toFuture
     @inline def createPackagingConfigurationFuture(
@@ -101,6 +102,7 @@ package mediapackagevod {
   @js.native
   trait AssetShallow extends js.Object {
     var Arn: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
     var PackagingGroupId: js.UndefOr[__string]
     var ResourceId: js.UndefOr[__string]
@@ -112,6 +114,7 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined,
         ResourceId: js.UndefOr[__string] = js.undefined,
@@ -120,6 +123,7 @@ package mediapackagevod {
     ): AssetShallow = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
@@ -213,6 +217,7 @@ package mediapackagevod {
   @js.native
   trait CreateAssetResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
     var EgressEndpoints: js.UndefOr[__listOfEgressEndpoint]
     var Id: js.UndefOr[__string]
     var PackagingGroupId: js.UndefOr[__string]
@@ -225,6 +230,7 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
         EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined,
@@ -234,6 +240,7 @@ package mediapackagevod {
     ): CreateAssetResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
@@ -338,6 +345,7 @@ package mediapackagevod {
   @js.native
   trait CreatePackagingGroupResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
   }
 
@@ -345,10 +353,12 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        DomainName: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): CreatePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingGroupResponse]
     }
@@ -544,6 +554,7 @@ package mediapackagevod {
   @js.native
   trait DescribeAssetResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var CreatedAt: js.UndefOr[__string]
     var EgressEndpoints: js.UndefOr[__listOfEgressEndpoint]
     var Id: js.UndefOr[__string]
     var PackagingGroupId: js.UndefOr[__string]
@@ -556,6 +567,7 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__string] = js.undefined,
         EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined,
@@ -565,6 +577,7 @@ package mediapackagevod {
     ): DescribeAssetResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
@@ -648,6 +661,7 @@ package mediapackagevod {
   @js.native
   trait DescribePackagingGroupResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
   }
 
@@ -655,10 +669,12 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        DomainName: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): DescribePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePackagingGroupResponse]
     }
@@ -1021,6 +1037,7 @@ package mediapackagevod {
   @js.native
   trait PackagingGroup extends js.Object {
     var Arn: js.UndefOr[__string]
+    var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
   }
 
@@ -1028,10 +1045,12 @@ package mediapackagevod {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        DomainName: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): PackagingGroup = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackagingGroup]
     }

@@ -8,10 +8,12 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object transcribeservice {
+  type DataAccessRoleArn         = String
   type DateTime                  = js.Date
   type FailureReason             = String
   type KMSKeyId                  = String
   type LanguageCode              = String
+  type MaxAlternatives           = Int
   type MaxResults                = Int
   type MaxSpeakers               = Int
   type MediaFormat               = String
@@ -26,18 +28,31 @@ package object transcribeservice {
   type TranscriptionJobSummaries = js.Array[TranscriptionJobSummary]
   type Uri                       = String
   type Vocabularies              = js.Array[VocabularyInfo]
+  type VocabularyFilterMethod    = String
+  type VocabularyFilterName      = String
+  type VocabularyFilters         = js.Array[VocabularyFilterInfo]
   type VocabularyName            = String
   type VocabularyState           = String
+  type Word                      = String
+  type Words                     = js.Array[Word]
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
+
+    @inline def createVocabularyFilterFuture(
+        params: CreateVocabularyFilterRequest
+    ): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise.toFuture
     @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
       service.createVocabulary(params).promise.toFuture
     @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
       service.deleteTranscriptionJob(params).promise.toFuture
+    @inline def deleteVocabularyFilterFuture(params: DeleteVocabularyFilterRequest): Future[js.Object] =
+      service.deleteVocabularyFilter(params).promise.toFuture
     @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
       service.deleteVocabulary(params).promise.toFuture
     @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
       service.getTranscriptionJob(params).promise.toFuture
+    @inline def getVocabularyFilterFuture(params: GetVocabularyFilterRequest): Future[GetVocabularyFilterResponse] =
+      service.getVocabularyFilter(params).promise.toFuture
     @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
       service.getVocabulary(params).promise.toFuture
     @inline def listTranscriptionJobsFuture(
@@ -45,9 +60,15 @@ package object transcribeservice {
     ): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise.toFuture
     @inline def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
       service.listVocabularies(params).promise.toFuture
+    @inline def listVocabularyFiltersFuture(
+        params: ListVocabularyFiltersRequest
+    ): Future[ListVocabularyFiltersResponse] = service.listVocabularyFilters(params).promise.toFuture
     @inline def startTranscriptionJobFuture(
         params: StartTranscriptionJobRequest
     ): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise.toFuture
+    @inline def updateVocabularyFilterFuture(
+        params: UpdateVocabularyFilterRequest
+    ): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise.toFuture
     @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
       service.updateVocabulary(params).promise.toFuture
   }
@@ -59,15 +80,71 @@ package transcribeservice {
   class TranscribeService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createVocabulary(params: CreateVocabularyRequest): Request[CreateVocabularyResponse]                = js.native
+    def createVocabulary(params: CreateVocabularyRequest): Request[CreateVocabularyResponse] = js.native
+    def createVocabularyFilter(params: CreateVocabularyFilterRequest): Request[CreateVocabularyFilterResponse] =
+      js.native
     def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object]                   = js.native
     def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object]                               = js.native
+    def deleteVocabularyFilter(params: DeleteVocabularyFilterRequest): Request[js.Object]                   = js.native
     def getTranscriptionJob(params: GetTranscriptionJobRequest): Request[GetTranscriptionJobResponse]       = js.native
     def getVocabulary(params: GetVocabularyRequest): Request[GetVocabularyResponse]                         = js.native
+    def getVocabularyFilter(params: GetVocabularyFilterRequest): Request[GetVocabularyFilterResponse]       = js.native
     def listTranscriptionJobs(params: ListTranscriptionJobsRequest): Request[ListTranscriptionJobsResponse] = js.native
     def listVocabularies(params: ListVocabulariesRequest): Request[ListVocabulariesResponse]                = js.native
+    def listVocabularyFilters(params: ListVocabularyFiltersRequest): Request[ListVocabularyFiltersResponse] = js.native
     def startTranscriptionJob(params: StartTranscriptionJobRequest): Request[StartTranscriptionJobResponse] = js.native
     def updateVocabulary(params: UpdateVocabularyRequest): Request[UpdateVocabularyResponse]                = js.native
+    def updateVocabularyFilter(params: UpdateVocabularyFilterRequest): Request[UpdateVocabularyFilterResponse] =
+      js.native
+  }
+
+  @js.native
+  trait CreateVocabularyFilterRequest extends js.Object {
+    var LanguageCode: LanguageCode
+    var VocabularyFilterName: VocabularyFilterName
+    var VocabularyFilterFileUri: js.UndefOr[Uri]
+    var Words: js.UndefOr[Words]
+  }
+
+  object CreateVocabularyFilterRequest {
+    @inline
+    def apply(
+        LanguageCode: LanguageCode,
+        VocabularyFilterName: VocabularyFilterName,
+        VocabularyFilterFileUri: js.UndefOr[Uri] = js.undefined,
+        Words: js.UndefOr[Words] = js.undefined
+    ): CreateVocabularyFilterRequest = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
+        "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
+      )
+
+      VocabularyFilterFileUri.foreach(__v => __obj.updateDynamic("VocabularyFilterFileUri")(__v.asInstanceOf[js.Any]))
+      Words.foreach(__v => __obj.updateDynamic("Words")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVocabularyFilterRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVocabularyFilterResponse extends js.Object {
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyFilterName: js.UndefOr[VocabularyFilterName]
+  }
+
+  object CreateVocabularyFilterResponse {
+    @inline
+    def apply(
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyFilterName: js.UndefOr[VocabularyFilterName] = js.undefined
+    ): CreateVocabularyFilterResponse = {
+      val __obj = js.Dynamic.literal()
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterName.foreach(__v => __obj.updateDynamic("VocabularyFilterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVocabularyFilterResponse]
+    }
   }
 
   @js.native
@@ -144,6 +221,24 @@ package transcribeservice {
   }
 
   @js.native
+  trait DeleteVocabularyFilterRequest extends js.Object {
+    var VocabularyFilterName: VocabularyFilterName
+  }
+
+  object DeleteVocabularyFilterRequest {
+    @inline
+    def apply(
+        VocabularyFilterName: VocabularyFilterName
+    ): DeleteVocabularyFilterRequest = {
+      val __obj = js.Dynamic.literal(
+        "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVocabularyFilterRequest]
+    }
+  }
+
+  @js.native
   trait DeleteVocabularyRequest extends js.Object {
     var VocabularyName: VocabularyName
   }
@@ -196,6 +291,49 @@ package transcribeservice {
   }
 
   @js.native
+  trait GetVocabularyFilterRequest extends js.Object {
+    var VocabularyFilterName: VocabularyFilterName
+  }
+
+  object GetVocabularyFilterRequest {
+    @inline
+    def apply(
+        VocabularyFilterName: VocabularyFilterName
+    ): GetVocabularyFilterRequest = {
+      val __obj = js.Dynamic.literal(
+        "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetVocabularyFilterRequest]
+    }
+  }
+
+  @js.native
+  trait GetVocabularyFilterResponse extends js.Object {
+    var DownloadUri: js.UndefOr[Uri]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyFilterName: js.UndefOr[VocabularyFilterName]
+  }
+
+  object GetVocabularyFilterResponse {
+    @inline
+    def apply(
+        DownloadUri: js.UndefOr[Uri] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyFilterName: js.UndefOr[VocabularyFilterName] = js.undefined
+    ): GetVocabularyFilterResponse = {
+      val __obj = js.Dynamic.literal()
+      DownloadUri.foreach(__v => __obj.updateDynamic("DownloadUri")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterName.foreach(__v => __obj.updateDynamic("VocabularyFilterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVocabularyFilterResponse]
+    }
+  }
+
+  @js.native
   trait GetVocabularyRequest extends js.Object {
     var VocabularyName: VocabularyName
   }
@@ -244,6 +382,28 @@ package transcribeservice {
     }
   }
 
+  /**
+    * Provides information about when a transcription job should be executed.
+    */
+  @js.native
+  trait JobExecutionSettings extends js.Object {
+    var AllowDeferredExecution: js.UndefOr[Boolean]
+    var DataAccessRoleArn: js.UndefOr[DataAccessRoleArn]
+  }
+
+  object JobExecutionSettings {
+    @inline
+    def apply(
+        AllowDeferredExecution: js.UndefOr[Boolean] = js.undefined,
+        DataAccessRoleArn: js.UndefOr[DataAccessRoleArn] = js.undefined
+    ): JobExecutionSettings = {
+      val __obj = js.Dynamic.literal()
+      AllowDeferredExecution.foreach(__v => __obj.updateDynamic("AllowDeferredExecution")(__v.asInstanceOf[js.Any]))
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobExecutionSettings]
+    }
+  }
+
   object LanguageCodeEnum {
     val `en-US` = "en-US"
     val `es-US` = "es-US"
@@ -269,6 +429,13 @@ package transcribeservice {
     val `en-AB` = "en-AB"
     val `en-WL` = "en-WL"
     val `pt-PT` = "pt-PT"
+    val `te-IN` = "te-IN"
+    val `tr-TR` = "tr-TR"
+    val `de-CH` = "de-CH"
+    val `he-IL` = "he-IL"
+    val `ms-MY` = "ms-MY"
+    val `ja-JP` = "ja-JP"
+    val `ar-AE` = "ar-AE"
 
     val values = js.Object.freeze(
       js.Array(
@@ -295,7 +462,14 @@ package transcribeservice {
         `en-IE`,
         `en-AB`,
         `en-WL`,
-        `pt-PT`
+        `pt-PT`,
+        `te-IN`,
+        `tr-TR`,
+        `de-CH`,
+        `he-IL`,
+        `ms-MY`,
+        `ja-JP`,
+        `ar-AE`
       )
     )
   }
@@ -396,6 +570,47 @@ package transcribeservice {
     }
   }
 
+  @js.native
+  trait ListVocabularyFiltersRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NameContains: js.UndefOr[VocabularyFilterName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVocabularyFiltersRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[VocabularyFilterName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVocabularyFiltersRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVocabularyFiltersRequest]
+    }
+  }
+
+  @js.native
+  trait ListVocabularyFiltersResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var VocabularyFilters: js.UndefOr[VocabularyFilters]
+  }
+
+  object ListVocabularyFiltersResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        VocabularyFilters: js.UndefOr[VocabularyFilters] = js.undefined
+    ): ListVocabularyFiltersResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      VocabularyFilters.foreach(__v => __obj.updateDynamic("VocabularyFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVocabularyFiltersResponse]
+    }
+  }
+
   /**
     * Describes the input media file in a transcription request.
     */
@@ -437,8 +652,12 @@ package transcribeservice {
   @js.native
   trait Settings extends js.Object {
     var ChannelIdentification: js.UndefOr[Boolean]
+    var MaxAlternatives: js.UndefOr[MaxAlternatives]
     var MaxSpeakerLabels: js.UndefOr[MaxSpeakers]
+    var ShowAlternatives: js.UndefOr[Boolean]
     var ShowSpeakerLabels: js.UndefOr[Boolean]
+    var VocabularyFilterMethod: js.UndefOr[VocabularyFilterMethod]
+    var VocabularyFilterName: js.UndefOr[VocabularyFilterName]
     var VocabularyName: js.UndefOr[VocabularyName]
   }
 
@@ -446,14 +665,22 @@ package transcribeservice {
     @inline
     def apply(
         ChannelIdentification: js.UndefOr[Boolean] = js.undefined,
+        MaxAlternatives: js.UndefOr[MaxAlternatives] = js.undefined,
         MaxSpeakerLabels: js.UndefOr[MaxSpeakers] = js.undefined,
+        ShowAlternatives: js.UndefOr[Boolean] = js.undefined,
         ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
+        VocabularyFilterMethod: js.UndefOr[VocabularyFilterMethod] = js.undefined,
+        VocabularyFilterName: js.UndefOr[VocabularyFilterName] = js.undefined,
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined
     ): Settings = {
       val __obj = js.Dynamic.literal()
       ChannelIdentification.foreach(__v => __obj.updateDynamic("ChannelIdentification")(__v.asInstanceOf[js.Any]))
+      MaxAlternatives.foreach(__v => __obj.updateDynamic("MaxAlternatives")(__v.asInstanceOf[js.Any]))
       MaxSpeakerLabels.foreach(__v => __obj.updateDynamic("MaxSpeakerLabels")(__v.asInstanceOf[js.Any]))
+      ShowAlternatives.foreach(__v => __obj.updateDynamic("ShowAlternatives")(__v.asInstanceOf[js.Any]))
       ShowSpeakerLabels.foreach(__v => __obj.updateDynamic("ShowSpeakerLabels")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterMethod.foreach(__v => __obj.updateDynamic("VocabularyFilterMethod")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterName.foreach(__v => __obj.updateDynamic("VocabularyFilterName")(__v.asInstanceOf[js.Any]))
       VocabularyName.foreach(__v => __obj.updateDynamic("VocabularyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Settings]
     }
@@ -464,6 +691,7 @@ package transcribeservice {
     var LanguageCode: LanguageCode
     var Media: Media
     var TranscriptionJobName: TranscriptionJobName
+    var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var OutputBucketName: js.UndefOr[OutputBucketName]
@@ -477,6 +705,7 @@ package transcribeservice {
         LanguageCode: LanguageCode,
         Media: Media,
         TranscriptionJobName: TranscriptionJobName,
+        JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
@@ -489,6 +718,7 @@ package transcribeservice {
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
 
+      JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       OutputBucketName.foreach(__v => __obj.updateDynamic("OutputBucketName")(__v.asInstanceOf[js.Any]))
@@ -541,11 +771,13 @@ package transcribeservice {
     var CompletionTime: js.UndefOr[DateTime]
     var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
+    var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Media: js.UndefOr[Media]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var Settings: js.UndefOr[Settings]
+    var StartTime: js.UndefOr[DateTime]
     var Transcript: js.UndefOr[Transcript]
     var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
     var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
@@ -557,11 +789,13 @@ package transcribeservice {
         CompletionTime: js.UndefOr[DateTime] = js.undefined,
         CreationTime: js.UndefOr[DateTime] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Media: js.UndefOr[Media] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined,
+        StartTime: js.UndefOr[DateTime] = js.undefined,
         Transcript: js.UndefOr[Transcript] = js.undefined,
         TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
         TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
@@ -570,11 +804,13 @@ package transcribeservice {
       CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       Media.foreach(__v => __obj.updateDynamic("Media")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Transcript.foreach(__v => __obj.updateDynamic("Transcript")(__v.asInstanceOf[js.Any]))
       TranscriptionJobName.foreach(__v => __obj.updateDynamic("TranscriptionJobName")(__v.asInstanceOf[js.Any]))
       TranscriptionJobStatus.foreach(__v => __obj.updateDynamic("TranscriptionJobStatus")(__v.asInstanceOf[js.Any]))
@@ -583,11 +819,12 @@ package transcribeservice {
   }
 
   object TranscriptionJobStatusEnum {
+    val QUEUED      = "QUEUED"
     val IN_PROGRESS = "IN_PROGRESS"
     val FAILED      = "FAILED"
     val COMPLETED   = "COMPLETED"
 
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, FAILED, COMPLETED))
+    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
   }
 
   /**
@@ -600,6 +837,7 @@ package transcribeservice {
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
     var OutputLocationType: js.UndefOr[OutputLocationType]
+    var StartTime: js.UndefOr[DateTime]
     var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
     var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
   }
@@ -612,6 +850,7 @@ package transcribeservice {
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
+        StartTime: js.UndefOr[DateTime] = js.undefined,
         TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
         TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
     ): TranscriptionJobSummary = {
@@ -621,9 +860,56 @@ package transcribeservice {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       OutputLocationType.foreach(__v => __obj.updateDynamic("OutputLocationType")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TranscriptionJobName.foreach(__v => __obj.updateDynamic("TranscriptionJobName")(__v.asInstanceOf[js.Any]))
       TranscriptionJobStatus.foreach(__v => __obj.updateDynamic("TranscriptionJobStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TranscriptionJobSummary]
+    }
+  }
+
+  @js.native
+  trait UpdateVocabularyFilterRequest extends js.Object {
+    var VocabularyFilterName: VocabularyFilterName
+    var VocabularyFilterFileUri: js.UndefOr[Uri]
+    var Words: js.UndefOr[Words]
+  }
+
+  object UpdateVocabularyFilterRequest {
+    @inline
+    def apply(
+        VocabularyFilterName: VocabularyFilterName,
+        VocabularyFilterFileUri: js.UndefOr[Uri] = js.undefined,
+        Words: js.UndefOr[Words] = js.undefined
+    ): UpdateVocabularyFilterRequest = {
+      val __obj = js.Dynamic.literal(
+        "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
+      )
+
+      VocabularyFilterFileUri.foreach(__v => __obj.updateDynamic("VocabularyFilterFileUri")(__v.asInstanceOf[js.Any]))
+      Words.foreach(__v => __obj.updateDynamic("Words")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVocabularyFilterRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateVocabularyFilterResponse extends js.Object {
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyFilterName: js.UndefOr[VocabularyFilterName]
+  }
+
+  object UpdateVocabularyFilterResponse {
+    @inline
+    def apply(
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyFilterName: js.UndefOr[VocabularyFilterName] = js.undefined
+    ): UpdateVocabularyFilterResponse = {
+      val __obj = js.Dynamic.literal()
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterName.foreach(__v => __obj.updateDynamic("VocabularyFilterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVocabularyFilterResponse]
     }
   }
 
@@ -677,6 +963,38 @@ package transcribeservice {
       VocabularyState.foreach(__v => __obj.updateDynamic("VocabularyState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVocabularyResponse]
     }
+  }
+
+  /**
+    * Provides information about a vocabulary filter.
+    */
+  @js.native
+  trait VocabularyFilterInfo extends js.Object {
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyFilterName: js.UndefOr[VocabularyFilterName]
+  }
+
+  object VocabularyFilterInfo {
+    @inline
+    def apply(
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyFilterName: js.UndefOr[VocabularyFilterName] = js.undefined
+    ): VocabularyFilterInfo = {
+      val __obj = js.Dynamic.literal()
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      VocabularyFilterName.foreach(__v => __obj.updateDynamic("VocabularyFilterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VocabularyFilterInfo]
+    }
+  }
+
+  object VocabularyFilterMethodEnum {
+    val remove = "remove"
+    val mask   = "mask"
+
+    val values = js.Object.freeze(js.Array(remove, mask))
   }
 
   /**

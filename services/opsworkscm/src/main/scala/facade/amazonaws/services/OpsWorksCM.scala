@@ -8,6 +8,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object opsworkscm {
+  type AWSOpsWorksCMResourceArn       = String
   type AccountAttributes              = js.Array[AccountAttribute]
   type AttributeName                  = String
   type AttributeValue                 = String
@@ -36,10 +37,15 @@ package object opsworkscm {
   type Servers                        = js.Array[Server]
   type ServiceRoleArn                 = String
   type Strings                        = js.Array[String]
+  type TagKey                         = String
+  type TagKeyList                     = js.Array[TagKey]
+  type TagList                        = js.Array[Tag]
+  type TagValue                       = String
   type TimeWindowDefinition           = String
   type Timestamp                      = js.Date
 
   implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
+
     @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
       service.associateNode(params).promise.toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
@@ -67,10 +73,16 @@ package object opsworkscm {
     @inline def exportServerEngineAttributeFuture(
         params: ExportServerEngineAttributeRequest
     ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
       service.restoreServer(params).promise.toFuture
     @inline def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
       service.startMaintenance(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     @inline def updateServerEngineAttributesFuture(
         params: UpdateServerEngineAttributesRequest
     ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise.toFuture
@@ -102,10 +114,13 @@ package opsworkscm {
     def disassociateNode(params: DisassociateNodeRequest): Request[DisassociateNodeResponse] = js.native
     def exportServerEngineAttribute(
         params: ExportServerEngineAttributeRequest
-    ): Request[ExportServerEngineAttributeResponse]                                          = js.native
-    def restoreServer(params: RestoreServerRequest): Request[RestoreServerResponse]          = js.native
-    def startMaintenance(params: StartMaintenanceRequest): Request[StartMaintenanceResponse] = js.native
-    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]             = js.native
+    ): Request[ExportServerEngineAttributeResponse]                                                   = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def restoreServer(params: RestoreServerRequest): Request[RestoreServerResponse]                   = js.native
+    def startMaintenance(params: StartMaintenanceRequest): Request[StartMaintenanceResponse]          = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]                      = js.native
     def updateServerEngineAttributes(
         params: UpdateServerEngineAttributesRequest
     ): Request[UpdateServerEngineAttributesResponse] = js.native
@@ -288,19 +303,22 @@ package opsworkscm {
   trait CreateBackupRequest extends js.Object {
     var ServerName: ServerName
     var Description: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateBackupRequest {
     @inline
     def apply(
         ServerName: ServerName,
-        Description: js.UndefOr[String] = js.undefined
+        Description: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateBackupRequest = {
       val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupRequest]
     }
   }
@@ -343,6 +361,7 @@ package opsworkscm {
     var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
     var SecurityGroupIds: js.UndefOr[Strings]
     var SubnetIds: js.UndefOr[Strings]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateServerRequest {
@@ -367,7 +386,8 @@ package opsworkscm {
         PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
         SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-        SubnetIds: js.UndefOr[Strings] = js.undefined
+        SubnetIds: js.UndefOr[Strings] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
@@ -394,6 +414,7 @@ package opsworkscm {
       )
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerRequest]
     }
   }
@@ -780,6 +801,49 @@ package opsworkscm {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: AWSOpsWorksCMResourceArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: AWSOpsWorksCMResourceArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   object MaintenanceStatusEnum {
     val SUCCESS = "SUCCESS"
     val FAILED  = "FAILED"
@@ -1027,6 +1091,98 @@ package opsworkscm {
       val __obj = js.Dynamic.literal()
       Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMaintenanceResponse]
+    }
+  }
+
+  /**
+    * A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: AWSOpsWorksCMResourceArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: AWSOpsWorksCMResourceArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: AWSOpsWorksCMResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: AWSOpsWorksCMResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

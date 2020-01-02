@@ -18,6 +18,7 @@ package object pinpointsmsvoice {
   type __string                     = String
 
   implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
+
     @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =

@@ -55,6 +55,7 @@ package object support {
   type TrustedAdvisorResourceDetailList     = js.Array[TrustedAdvisorResourceDetail]
 
   implicit final class SupportOps(private val service: Support) extends AnyVal {
+
     @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
       service.addAttachmentsToSet(params).promise.toFuture
     @inline def addCommunicationToCaseFuture(

@@ -76,6 +76,7 @@ package object applicationdiscovery {
   type orderString                           = String
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
+
     @inline def associateConfigurationItemsToApplicationFuture(
         params: AssociateConfigurationItemsToApplicationRequest
     ): Future[AssociateConfigurationItemsToApplicationResponse] =

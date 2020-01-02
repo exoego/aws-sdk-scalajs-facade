@@ -38,6 +38,7 @@ package object cognitosync {
   type SyncSessionToken      = String
 
   implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
+
     @inline def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] =
       service.bulkPublish(params).promise.toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] =

@@ -40,6 +40,7 @@ package object cloudsearchdomain {
   type SuggestionsSize         = Double
 
   implicit final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
+
     @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise.toFuture
     @inline def suggestFuture(params: SuggestRequest): Future[SuggestResponse] =
       service.suggest(params).promise.toFuture

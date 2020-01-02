@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object workspaces {
   type ARN                                   = String
+  type AccessPropertyValue                   = String
   type AccountModificationList               = js.Array[AccountModification]
   type Alias                                 = String
   type BooleanObject                         = Boolean
@@ -78,6 +79,7 @@ package object workspaces {
   type TagList                               = js.Array[Tag]
   type TagValue                              = String
   type TargetWorkspaceState                  = String
+  type Tenancy                               = String
   type TerminateWorkspaceRequests            = js.Array[TerminateRequest]
   type Timestamp                             = js.Date
   type UserName                              = String
@@ -104,6 +106,7 @@ package object workspaces {
   type WorkspacesIpGroupsList                = js.Array[WorkspacesIpGroup]
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
+
     @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] =
       service.associateIpGroups(params).promise.toFuture
     @inline def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] =
@@ -122,6 +125,9 @@ package object workspaces {
       service.deleteTags(params).promise.toFuture
     @inline def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] =
       service.deleteWorkspaceImage(params).promise.toFuture
+    @inline def deregisterWorkspaceDirectoryFuture(
+        params: DeregisterWorkspaceDirectoryRequest
+    ): Future[DeregisterWorkspaceDirectoryResult] = service.deregisterWorkspaceDirectory(params).promise.toFuture
     @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] =
       service.describeAccount(params).promise.toFuture
     @inline def describeAccountModificationsFuture(
@@ -165,6 +171,16 @@ package object workspaces {
     @inline def modifyClientPropertiesFuture(
         params: ModifyClientPropertiesRequest
     ): Future[ModifyClientPropertiesResult] = service.modifyClientProperties(params).promise.toFuture
+    @inline def modifySelfservicePermissionsFuture(
+        params: ModifySelfservicePermissionsRequest
+    ): Future[ModifySelfservicePermissionsResult] = service.modifySelfservicePermissions(params).promise.toFuture
+    @inline def modifyWorkspaceAccessPropertiesFuture(
+        params: ModifyWorkspaceAccessPropertiesRequest
+    ): Future[ModifyWorkspaceAccessPropertiesResult] = service.modifyWorkspaceAccessProperties(params).promise.toFuture
+    @inline def modifyWorkspaceCreationPropertiesFuture(
+        params: ModifyWorkspaceCreationPropertiesRequest
+    ): Future[ModifyWorkspaceCreationPropertiesResult] =
+      service.modifyWorkspaceCreationProperties(params).promise.toFuture
     @inline def modifyWorkspacePropertiesFuture(
         params: ModifyWorkspacePropertiesRequest
     ): Future[ModifyWorkspacePropertiesResult] = service.modifyWorkspaceProperties(params).promise.toFuture
@@ -174,6 +190,9 @@ package object workspaces {
       service.rebootWorkspaces(params).promise.toFuture
     @inline def rebuildWorkspacesFuture(params: RebuildWorkspacesRequest): Future[RebuildWorkspacesResult] =
       service.rebuildWorkspaces(params).promise.toFuture
+    @inline def registerWorkspaceDirectoryFuture(
+        params: RegisterWorkspaceDirectoryRequest
+    ): Future[RegisterWorkspaceDirectoryResult] = service.registerWorkspaceDirectory(params).promise.toFuture
     @inline def restoreWorkspaceFuture(params: RestoreWorkspaceRequest): Future[RestoreWorkspaceResult] =
       service.restoreWorkspace(params).promise.toFuture
     @inline def revokeIpRulesFuture(params: RevokeIpRulesRequest): Future[RevokeIpRulesResult] =
@@ -204,7 +223,10 @@ package workspaces {
     def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult]                      = js.native
     def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult]                               = js.native
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
-    def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult]                = js.native
+    def deregisterWorkspaceDirectory(
+        params: DeregisterWorkspaceDirectoryRequest
+    ): Request[DeregisterWorkspaceDirectoryResult]                                      = js.native
+    def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
     def describeAccountModifications(
         params: DescribeAccountModificationsRequest
     ): Request[DescribeAccountModificationsResult] = js.native
@@ -233,11 +255,23 @@ package workspaces {
     ): Request[ListAvailableManagementCidrRangesResult]                                                      = js.native
     def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult]                            = js.native
     def modifyClientProperties(params: ModifyClientPropertiesRequest): Request[ModifyClientPropertiesResult] = js.native
+    def modifySelfservicePermissions(
+        params: ModifySelfservicePermissionsRequest
+    ): Request[ModifySelfservicePermissionsResult] = js.native
+    def modifyWorkspaceAccessProperties(
+        params: ModifyWorkspaceAccessPropertiesRequest
+    ): Request[ModifyWorkspaceAccessPropertiesResult] = js.native
+    def modifyWorkspaceCreationProperties(
+        params: ModifyWorkspaceCreationPropertiesRequest
+    ): Request[ModifyWorkspaceCreationPropertiesResult] = js.native
     def modifyWorkspaceProperties(params: ModifyWorkspacePropertiesRequest): Request[ModifyWorkspacePropertiesResult] =
       js.native
     def modifyWorkspaceState(params: ModifyWorkspaceStateRequest): Request[ModifyWorkspaceStateResult] = js.native
     def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult]             = js.native
     def rebuildWorkspaces(params: RebuildWorkspacesRequest): Request[RebuildWorkspacesResult]          = js.native
+    def registerWorkspaceDirectory(
+        params: RegisterWorkspaceDirectoryRequest
+    ): Request[RegisterWorkspaceDirectoryResult]                                                       = js.native
     def restoreWorkspace(params: RestoreWorkspaceRequest): Request[RestoreWorkspaceResult]             = js.native
     def revokeIpRules(params: RevokeIpRulesRequest): Request[RevokeIpRulesResult]                      = js.native
     def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult]                = js.native
@@ -246,8 +280,15 @@ package workspaces {
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
   }
 
+  object AccessPropertyValueEnum {
+    val ALLOW = "ALLOW"
+    val DENY  = "DENY"
+
+    val values = js.Object.freeze(js.Array(ALLOW, DENY))
+  }
+
   /**
-    * Describes a modification to the configuration of bring your own license (BYOL) for the specified account.
+    * Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.
     */
   @js.native
   trait AccountModification extends js.Object {
@@ -612,13 +653,14 @@ package workspaces {
   }
 
   /**
-    * Describes the default values used to create a WorkSpace.
+    * Describes the default values that are used to create WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
     */
   @js.native
   trait DefaultWorkspaceCreationProperties extends js.Object {
     var CustomSecurityGroupId: js.UndefOr[SecurityGroupId]
     var DefaultOu: js.UndefOr[DefaultOu]
     var EnableInternetAccess: js.UndefOr[BooleanObject]
+    var EnableMaintenanceMode: js.UndefOr[BooleanObject]
     var EnableWorkDocs: js.UndefOr[BooleanObject]
     var UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject]
   }
@@ -629,6 +671,7 @@ package workspaces {
         CustomSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
         DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
         EnableInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        EnableMaintenanceMode: js.UndefOr[BooleanObject] = js.undefined,
         EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
         UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined
     ): DefaultWorkspaceCreationProperties = {
@@ -636,6 +679,7 @@ package workspaces {
       CustomSecurityGroupId.foreach(__v => __obj.updateDynamic("CustomSecurityGroupId")(__v.asInstanceOf[js.Any]))
       DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
       EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
+      EnableMaintenanceMode.foreach(__v => __obj.updateDynamic("EnableMaintenanceMode")(__v.asInstanceOf[js.Any]))
       EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
       UserEnabledAsLocalAdministrator.foreach(__v =>
         __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
@@ -737,6 +781,37 @@ package workspaces {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkspaceImageResult]
+    }
+  }
+
+  @js.native
+  trait DeregisterWorkspaceDirectoryRequest extends js.Object {
+    var DirectoryId: DirectoryId
+  }
+
+  object DeregisterWorkspaceDirectoryRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId
+    ): DeregisterWorkspaceDirectoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeregisterWorkspaceDirectoryRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterWorkspaceDirectoryResult extends js.Object {}
+
+  object DeregisterWorkspaceDirectoryResult {
+    @inline
+    def apply(
+        ): DeregisterWorkspaceDirectoryResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeregisterWorkspaceDirectoryResult]
     }
   }
 
@@ -962,6 +1037,7 @@ package workspaces {
   @js.native
   trait DescribeWorkspaceDirectoriesRequest extends js.Object {
     var DirectoryIds: js.UndefOr[DirectoryIdList]
+    var Limit: js.UndefOr[Limit]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
@@ -969,10 +1045,12 @@ package workspaces {
     @inline
     def apply(
         DirectoryIds: js.UndefOr[DirectoryIdList] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceDirectoriesRequest = {
       val __obj = js.Dynamic.literal()
       DirectoryIds.foreach(__v => __obj.updateDynamic("DirectoryIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceDirectoriesRequest]
     }
@@ -1466,6 +1544,108 @@ package workspaces {
   }
 
   @js.native
+  trait ModifySelfservicePermissionsRequest extends js.Object {
+    var ResourceId: DirectoryId
+    var SelfservicePermissions: SelfservicePermissions
+  }
+
+  object ModifySelfservicePermissionsRequest {
+    @inline
+    def apply(
+        ResourceId: DirectoryId,
+        SelfservicePermissions: SelfservicePermissions
+    ): ModifySelfservicePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId"             -> ResourceId.asInstanceOf[js.Any],
+        "SelfservicePermissions" -> SelfservicePermissions.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ModifySelfservicePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait ModifySelfservicePermissionsResult extends js.Object {}
+
+  object ModifySelfservicePermissionsResult {
+    @inline
+    def apply(
+        ): ModifySelfservicePermissionsResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ModifySelfservicePermissionsResult]
+    }
+  }
+
+  @js.native
+  trait ModifyWorkspaceAccessPropertiesRequest extends js.Object {
+    var ResourceId: DirectoryId
+    var WorkspaceAccessProperties: WorkspaceAccessProperties
+  }
+
+  object ModifyWorkspaceAccessPropertiesRequest {
+    @inline
+    def apply(
+        ResourceId: DirectoryId,
+        WorkspaceAccessProperties: WorkspaceAccessProperties
+    ): ModifyWorkspaceAccessPropertiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId"                -> ResourceId.asInstanceOf[js.Any],
+        "WorkspaceAccessProperties" -> WorkspaceAccessProperties.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyWorkspaceAccessPropertiesResult extends js.Object {}
+
+  object ModifyWorkspaceAccessPropertiesResult {
+    @inline
+    def apply(
+        ): ModifyWorkspaceAccessPropertiesResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesResult]
+    }
+  }
+
+  @js.native
+  trait ModifyWorkspaceCreationPropertiesRequest extends js.Object {
+    var ResourceId: DirectoryId
+    var WorkspaceCreationProperties: WorkspaceCreationProperties
+  }
+
+  object ModifyWorkspaceCreationPropertiesRequest {
+    @inline
+    def apply(
+        ResourceId: DirectoryId,
+        WorkspaceCreationProperties: WorkspaceCreationProperties
+    ): ModifyWorkspaceCreationPropertiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId"                  -> ResourceId.asInstanceOf[js.Any],
+        "WorkspaceCreationProperties" -> WorkspaceCreationProperties.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyWorkspaceCreationPropertiesResult extends js.Object {}
+
+  object ModifyWorkspaceCreationPropertiesResult {
+    @inline
+    def apply(
+        ): ModifyWorkspaceCreationPropertiesResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesResult]
+    }
+  }
+
+  @js.native
   trait ModifyWorkspacePropertiesRequest extends js.Object {
     var WorkspaceId: WorkspaceId
     var WorkspaceProperties: WorkspaceProperties
@@ -1677,6 +1857,52 @@ package workspaces {
   }
 
   @js.native
+  trait RegisterWorkspaceDirectoryRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var EnableWorkDocs: BooleanObject
+    var EnableSelfService: js.UndefOr[BooleanObject]
+    var SubnetIds: js.UndefOr[SubnetIds]
+    var Tags: js.UndefOr[TagList]
+    var Tenancy: js.UndefOr[Tenancy]
+  }
+
+  object RegisterWorkspaceDirectoryRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        EnableWorkDocs: BooleanObject,
+        EnableSelfService: js.UndefOr[BooleanObject] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Tenancy: js.UndefOr[Tenancy] = js.undefined
+    ): RegisterWorkspaceDirectoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
+        "EnableWorkDocs" -> EnableWorkDocs.asInstanceOf[js.Any]
+      )
+
+      EnableSelfService.foreach(__v => __obj.updateDynamic("EnableSelfService")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterWorkspaceDirectoryRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterWorkspaceDirectoryResult extends js.Object {}
+
+  object RegisterWorkspaceDirectoryResult {
+    @inline
+    def apply(
+        ): RegisterWorkspaceDirectoryResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RegisterWorkspaceDirectoryResult]
+    }
+  }
+
+  @js.native
   trait RestoreWorkspaceRequest extends js.Object {
     var WorkspaceId: WorkspaceId
   }
@@ -1765,6 +1991,37 @@ package workspaces {
     val ALWAYS_ON = "ALWAYS_ON"
 
     val values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
+  }
+
+  /**
+    * Describes the self-service permissions for a directory. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html|Enable Self-Service WorkSpace Management Capabilities for Your Users]].
+    */
+  @js.native
+  trait SelfservicePermissions extends js.Object {
+    var ChangeComputeType: js.UndefOr[ReconnectEnum]
+    var IncreaseVolumeSize: js.UndefOr[ReconnectEnum]
+    var RebuildWorkspace: js.UndefOr[ReconnectEnum]
+    var RestartWorkspace: js.UndefOr[ReconnectEnum]
+    var SwitchRunningMode: js.UndefOr[ReconnectEnum]
+  }
+
+  object SelfservicePermissions {
+    @inline
+    def apply(
+        ChangeComputeType: js.UndefOr[ReconnectEnum] = js.undefined,
+        IncreaseVolumeSize: js.UndefOr[ReconnectEnum] = js.undefined,
+        RebuildWorkspace: js.UndefOr[ReconnectEnum] = js.undefined,
+        RestartWorkspace: js.UndefOr[ReconnectEnum] = js.undefined,
+        SwitchRunningMode: js.UndefOr[ReconnectEnum] = js.undefined
+    ): SelfservicePermissions = {
+      val __obj = js.Dynamic.literal()
+      ChangeComputeType.foreach(__v => __obj.updateDynamic("ChangeComputeType")(__v.asInstanceOf[js.Any]))
+      IncreaseVolumeSize.foreach(__v => __obj.updateDynamic("IncreaseVolumeSize")(__v.asInstanceOf[js.Any]))
+      RebuildWorkspace.foreach(__v => __obj.updateDynamic("RebuildWorkspace")(__v.asInstanceOf[js.Any]))
+      RestartWorkspace.foreach(__v => __obj.updateDynamic("RestartWorkspace")(__v.asInstanceOf[js.Any]))
+      SwitchRunningMode.foreach(__v => __obj.updateDynamic("SwitchRunningMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelfservicePermissions]
+    }
   }
 
   /**
@@ -1921,6 +2178,13 @@ package workspaces {
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE"
 
     val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
+  }
+
+  object TenancyEnum {
+    val DEDICATED = "DEDICATED"
+    val SHARED    = "SHARED"
+
+    val values = js.Object.freeze(js.Array(DEDICATED, SHARED))
   }
 
   /**
@@ -2097,6 +2361,43 @@ package workspaces {
   }
 
   /**
+    * The device types and operating systems that can be used to access a WorkSpace. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html|Amazon WorkSpaces Client Network Requirements]].
+    */
+  @js.native
+  trait WorkspaceAccessProperties extends js.Object {
+    var DeviceTypeAndroid: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeChromeOs: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeIos: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeOsx: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeWeb: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeWindows: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeZeroClient: js.UndefOr[AccessPropertyValue]
+  }
+
+  object WorkspaceAccessProperties {
+    @inline
+    def apply(
+        DeviceTypeAndroid: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeChromeOs: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeIos: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeOsx: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeWeb: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeWindows: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeZeroClient: js.UndefOr[AccessPropertyValue] = js.undefined
+    ): WorkspaceAccessProperties = {
+      val __obj = js.Dynamic.literal()
+      DeviceTypeAndroid.foreach(__v => __obj.updateDynamic("DeviceTypeAndroid")(__v.asInstanceOf[js.Any]))
+      DeviceTypeChromeOs.foreach(__v => __obj.updateDynamic("DeviceTypeChromeOs")(__v.asInstanceOf[js.Any]))
+      DeviceTypeIos.foreach(__v => __obj.updateDynamic("DeviceTypeIos")(__v.asInstanceOf[js.Any]))
+      DeviceTypeOsx.foreach(__v => __obj.updateDynamic("DeviceTypeOsx")(__v.asInstanceOf[js.Any]))
+      DeviceTypeWeb.foreach(__v => __obj.updateDynamic("DeviceTypeWeb")(__v.asInstanceOf[js.Any]))
+      DeviceTypeWindows.foreach(__v => __obj.updateDynamic("DeviceTypeWindows")(__v.asInstanceOf[js.Any]))
+      DeviceTypeZeroClient.foreach(__v => __obj.updateDynamic("DeviceTypeZeroClient")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceAccessProperties]
+    }
+  }
+
+  /**
     * Describes a WorkSpace bundle.
     */
   @js.native
@@ -2104,6 +2405,8 @@ package workspaces {
     var BundleId: js.UndefOr[BundleId]
     var ComputeType: js.UndefOr[ComputeType]
     var Description: js.UndefOr[Description]
+    var ImageId: js.UndefOr[WorkspaceImageId]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[NonEmptyString]
     var Owner: js.UndefOr[BundleOwner]
     var RootStorage: js.UndefOr[RootStorage]
@@ -2116,6 +2419,8 @@ package workspaces {
         BundleId: js.UndefOr[BundleId] = js.undefined,
         ComputeType: js.UndefOr[ComputeType] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        ImageId: js.UndefOr[WorkspaceImageId] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined,
         Owner: js.UndefOr[BundleOwner] = js.undefined,
         RootStorage: js.UndefOr[RootStorage] = js.undefined,
@@ -2125,6 +2430,8 @@ package workspaces {
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       RootStorage.foreach(__v => __obj.updateDynamic("RootStorage")(__v.asInstanceOf[js.Any]))
@@ -2166,7 +2473,40 @@ package workspaces {
   }
 
   /**
-    * Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
+    * Describes the default properties that are used for creating WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
+    */
+  @js.native
+  trait WorkspaceCreationProperties extends js.Object {
+    var CustomSecurityGroupId: js.UndefOr[SecurityGroupId]
+    var DefaultOu: js.UndefOr[DefaultOu]
+    var EnableInternetAccess: js.UndefOr[BooleanObject]
+    var EnableMaintenanceMode: js.UndefOr[BooleanObject]
+    var UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject]
+  }
+
+  object WorkspaceCreationProperties {
+    @inline
+    def apply(
+        CustomSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
+        DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
+        EnableInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        EnableMaintenanceMode: js.UndefOr[BooleanObject] = js.undefined,
+        UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined
+    ): WorkspaceCreationProperties = {
+      val __obj = js.Dynamic.literal()
+      CustomSecurityGroupId.foreach(__v => __obj.updateDynamic("CustomSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
+      EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
+      EnableMaintenanceMode.foreach(__v => __obj.updateDynamic("EnableMaintenanceMode")(__v.asInstanceOf[js.Any]))
+      UserEnabledAsLocalAdministrator.foreach(__v =>
+        __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[WorkspaceCreationProperties]
+    }
+  }
+
+  /**
+    * Describes a directory that is used with Amazon WorkSpaces.
     */
   @js.native
   trait WorkspaceDirectory extends js.Object {
@@ -2178,8 +2518,11 @@ package workspaces {
     var DnsIpAddresses: js.UndefOr[DnsIpAddresses]
     var IamRoleId: js.UndefOr[ARN]
     var RegistrationCode: js.UndefOr[RegistrationCode]
+    var SelfservicePermissions: js.UndefOr[SelfservicePermissions]
     var State: js.UndefOr[WorkspaceDirectoryState]
     var SubnetIds: js.UndefOr[SubnetIds]
+    var Tenancy: js.UndefOr[Tenancy]
+    var WorkspaceAccessProperties: js.UndefOr[WorkspaceAccessProperties]
     var WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties]
     var WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId]
     var ipGroupIds: js.UndefOr[IpGroupIdList]
@@ -2196,8 +2539,11 @@ package workspaces {
         DnsIpAddresses: js.UndefOr[DnsIpAddresses] = js.undefined,
         IamRoleId: js.UndefOr[ARN] = js.undefined,
         RegistrationCode: js.UndefOr[RegistrationCode] = js.undefined,
+        SelfservicePermissions: js.UndefOr[SelfservicePermissions] = js.undefined,
         State: js.UndefOr[WorkspaceDirectoryState] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        Tenancy: js.UndefOr[Tenancy] = js.undefined,
+        WorkspaceAccessProperties: js.UndefOr[WorkspaceAccessProperties] = js.undefined,
         WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties] = js.undefined,
         WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
         ipGroupIds: js.UndefOr[IpGroupIdList] = js.undefined
@@ -2211,8 +2557,13 @@ package workspaces {
       DnsIpAddresses.foreach(__v => __obj.updateDynamic("DnsIpAddresses")(__v.asInstanceOf[js.Any]))
       IamRoleId.foreach(__v => __obj.updateDynamic("IamRoleId")(__v.asInstanceOf[js.Any]))
       RegistrationCode.foreach(__v => __obj.updateDynamic("RegistrationCode")(__v.asInstanceOf[js.Any]))
+      SelfservicePermissions.foreach(__v => __obj.updateDynamic("SelfservicePermissions")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
+      WorkspaceAccessProperties.foreach(__v =>
+        __obj.updateDynamic("WorkspaceAccessProperties")(__v.asInstanceOf[js.Any])
+      )
       WorkspaceCreationProperties.foreach(__v =>
         __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any])
       )

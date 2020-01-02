@@ -54,6 +54,7 @@ package object secretsmanager {
   type TagValueType                  = String
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
+
     @inline def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
       service.cancelRotateSecret(params).promise.toFuture
     @inline def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] =

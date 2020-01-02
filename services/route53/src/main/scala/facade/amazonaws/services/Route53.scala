@@ -128,6 +128,7 @@ package object route53 {
   type VPCs                              = js.Array[VPC]
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
+
     @inline def associateVPCWithHostedZoneFuture(
         params: AssociateVPCWithHostedZoneRequest
     ): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise.toFuture

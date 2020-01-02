@@ -133,6 +133,7 @@ package object codepipeline {
   type WebhookUrl                             = String
 
   implicit final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
+
     @inline def acknowledgeJobFuture(params: AcknowledgeJobInput): Future[AcknowledgeJobOutput] =
       service.acknowledgeJob(params).promise.toFuture
     @inline def acknowledgeThirdPartyJobFuture(

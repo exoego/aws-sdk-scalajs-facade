@@ -19,6 +19,8 @@ package object connect {
   type AutoAccept                      = Boolean
   type Channel                         = String
   type Channels                        = js.Array[Channel]
+  type ChatContent                     = String
+  type ChatContentType                 = String
   type ClientToken                     = String
   type Comparison                      = String
   type ContactFlowId                   = String
@@ -32,6 +34,7 @@ package object connect {
   type CurrentMetricResults            = js.Array[CurrentMetricResult]
   type CurrentMetrics                  = js.Array[CurrentMetric]
   type DirectoryUserId                 = String
+  type DisplayName                     = String
   type Email                           = String
   type Grouping                        = String
   type Groupings                       = js.Array[Grouping]
@@ -51,6 +54,8 @@ package object connect {
   type MaxResult100                    = Int
   type MaxResult1000                   = Int
   type NextToken                       = String
+  type ParticipantId                   = String
+  type ParticipantToken                = String
   type Password                        = String
   type PhoneNumber                     = String
   type PhoneNumberCountryCode          = String
@@ -75,6 +80,10 @@ package object connect {
   type SecurityProfileSummaryList      = js.Array[SecurityProfileSummary]
   type SecurityToken                   = String
   type Statistic                       = String
+  type TagKey                          = String
+  type TagKeyList                      = js.Array[TagKey]
+  type TagMap                          = js.Dictionary[TagValue]
+  type TagValue                        = String
   type ThresholdValue                  = Double
   type Unit                            = String
   type UserId                          = String
@@ -83,6 +92,7 @@ package object connect {
   type timestamp                       = js.Date
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
+
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
@@ -116,16 +126,24 @@ package object connect {
       service.listRoutingProfiles(params).promise.toFuture
     @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
       service.listSecurityProfiles(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def listUserHierarchyGroupsFuture(
         params: ListUserHierarchyGroupsRequest
     ): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise.toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
+    @inline def startChatContactFuture(params: StartChatContactRequest): Future[StartChatContactResponse] =
+      service.startChatContact(params).promise.toFuture
     @inline def startOutboundVoiceContactFuture(
         params: StartOutboundVoiceContactRequest
     ): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise.toFuture
     @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] =
       service.stopContact(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
     @inline def updateContactAttributesFuture(
         params: UpdateContactAttributesRequest
     ): Future[UpdateContactAttributesResponse] = service.updateContactAttributes(params).promise.toFuture
@@ -167,13 +185,17 @@ package connect {
     def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse]                                  = js.native
     def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse]       = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse]    = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] =
       js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                      = js.native
+    def startChatContact(params: StartChatContactRequest): Request[StartChatContactResponse] = js.native
     def startOutboundVoiceContact(
         params: StartOutboundVoiceContactRequest
     ): Request[StartOutboundVoiceContactResponse]                             = js.native
     def stopContact(params: StopContactRequest): Request[StopContactResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]           = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]       = js.native
     def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] =
       js.native
     def updateUserHierarchy(params: UpdateUserHierarchyRequest): Request[js.Object]               = js.native
@@ -185,8 +207,33 @@ package connect {
 
   object ChannelEnum {
     val VOICE = "VOICE"
+    val CHAT  = "CHAT"
 
-    val values = js.Object.freeze(js.Array(VOICE))
+    val values = js.Object.freeze(js.Array(VOICE, CHAT))
+  }
+
+  /**
+    * A chat message.
+    */
+  @js.native
+  trait ChatMessage extends js.Object {
+    var Content: ChatContent
+    var ContentType: ChatContentType
+  }
+
+  object ChatMessage {
+    @inline
+    def apply(
+        Content: ChatContent,
+        ContentType: ChatContentType
+    ): ChatMessage = {
+      val __obj = js.Dynamic.literal(
+        "Content"     -> Content.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ChatMessage]
+    }
   }
 
   object ComparisonEnum {
@@ -260,6 +307,7 @@ package connect {
     var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
     var IdentityInfo: js.UndefOr[UserIdentityInfo]
     var Password: js.UndefOr[Password]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateUserRequest {
@@ -273,7 +321,8 @@ package connect {
         DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
         HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
         IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-        Password: js.UndefOr[Password] = js.undefined
+        Password: js.UndefOr[Password] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
@@ -287,6 +336,7 @@ package connect {
       HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
       IdentityInfo.foreach(__v => __obj.updateDynamic("IdentityInfo")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -396,6 +446,9 @@ package connect {
     val CONTACTS_IN_QUEUE         = "CONTACTS_IN_QUEUE"
     val OLDEST_CONTACT_AGE        = "OLDEST_CONTACT_AGE"
     val CONTACTS_SCHEDULED        = "CONTACTS_SCHEDULED"
+    val AGENTS_ON_CONTACT         = "AGENTS_ON_CONTACT"
+    val SLOTS_ACTIVE              = "SLOTS_ACTIVE"
+    val SLOTS_AVAILABLE           = "SLOTS_AVAILABLE"
 
     val values = js.Object.freeze(
       js.Array(
@@ -408,7 +461,10 @@ package connect {
         AGENTS_STAFFED,
         CONTACTS_IN_QUEUE,
         OLDEST_CONTACT_AGE,
-        CONTACTS_SCHEDULED
+        CONTACTS_SCHEDULED,
+        AGENTS_ON_CONTACT,
+        SLOTS_ACTIVE,
+        SLOTS_AVAILABLE
       )
     )
   }
@@ -1377,6 +1433,40 @@ package connect {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: ARN
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ARN
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListUserHierarchyGroupsRequest extends js.Object {
     var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
@@ -1461,6 +1551,27 @@ package connect {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       UserSummaryList.foreach(__v => __obj.updateDynamic("UserSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
+    }
+  }
+
+  /**
+    * The customer's details.
+    */
+  @js.native
+  trait ParticipantDetails extends js.Object {
+    var DisplayName: DisplayName
+  }
+
+  object ParticipantDetails {
+    @inline
+    def apply(
+        DisplayName: DisplayName
+    ): ParticipantDetails = {
+      val __obj = js.Dynamic.literal(
+        "DisplayName" -> DisplayName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ParticipantDetails]
     }
   }
 
@@ -2099,6 +2210,61 @@ package connect {
   }
 
   @js.native
+  trait StartChatContactRequest extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var InstanceId: InstanceId
+    var ParticipantDetails: ParticipantDetails
+    var Attributes: js.UndefOr[Attributes]
+    var ClientToken: js.UndefOr[ClientToken]
+    var InitialMessage: js.UndefOr[ChatMessage]
+  }
+
+  object StartChatContactRequest {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        InstanceId: InstanceId,
+        ParticipantDetails: ParticipantDetails,
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        InitialMessage: js.UndefOr[ChatMessage] = js.undefined
+    ): StartChatContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId"      -> ContactFlowId.asInstanceOf[js.Any],
+        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
+        "ParticipantDetails" -> ParticipantDetails.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      InitialMessage.foreach(__v => __obj.updateDynamic("InitialMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartChatContactRequest]
+    }
+  }
+
+  @js.native
+  trait StartChatContactResponse extends js.Object {
+    var ContactId: js.UndefOr[ContactId]
+    var ParticipantId: js.UndefOr[ParticipantId]
+    var ParticipantToken: js.UndefOr[ParticipantToken]
+  }
+
+  object StartChatContactResponse {
+    @inline
+    def apply(
+        ContactId: js.UndefOr[ContactId] = js.undefined,
+        ParticipantId: js.UndefOr[ParticipantId] = js.undefined,
+        ParticipantToken: js.UndefOr[ParticipantToken] = js.undefined
+    ): StartChatContactResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactId.foreach(__v => __obj.updateDynamic("ContactId")(__v.asInstanceOf[js.Any]))
+      ParticipantId.foreach(__v => __obj.updateDynamic("ParticipantId")(__v.asInstanceOf[js.Any]))
+      ParticipantToken.foreach(__v => __obj.updateDynamic("ParticipantToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartChatContactResponse]
+    }
+  }
+
+  @js.native
   trait StartOutboundVoiceContactRequest extends js.Object {
     var ContactFlowId: ContactFlowId
     var DestinationPhoneNumber: PhoneNumber
@@ -2192,6 +2358,27 @@ package connect {
     }
   }
 
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: ARN
+    var tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ARN,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
   /**
     * Contains information about the threshold for service level metrics.
     */
@@ -2220,6 +2407,27 @@ package connect {
     val PERCENT = "PERCENT"
 
     val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: ARN
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ARN,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
   }
 
   @js.native
@@ -2392,6 +2600,7 @@ package connect {
     var PhoneConfig: js.UndefOr[UserPhoneConfig]
     var RoutingProfileId: js.UndefOr[RoutingProfileId]
     var SecurityProfileIds: js.UndefOr[SecurityProfileIds]
+    var Tags: js.UndefOr[TagMap]
     var Username: js.UndefOr[AgentUsername]
   }
 
@@ -2406,6 +2615,7 @@ package connect {
         PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
         RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
         SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
         Username: js.UndefOr[AgentUsername] = js.undefined
     ): User = {
       val __obj = js.Dynamic.literal()
@@ -2417,6 +2627,7 @@ package connect {
       PhoneConfig.foreach(__v => __obj.updateDynamic("PhoneConfig")(__v.asInstanceOf[js.Any]))
       RoutingProfileId.foreach(__v => __obj.updateDynamic("RoutingProfileId")(__v.asInstanceOf[js.Any]))
       SecurityProfileIds.foreach(__v => __obj.updateDynamic("SecurityProfileIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }

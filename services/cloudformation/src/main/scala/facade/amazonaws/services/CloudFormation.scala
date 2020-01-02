@@ -37,9 +37,11 @@ package object cloudformation {
   type ClientToken                      = String
   type CreationTime                     = js.Date
   type DeletionTime                     = js.Date
+  type DeprecatedStatus                 = String
   type Description                      = String
   type DifferenceType                   = String
   type DisableRollback                  = Boolean
+  type DriftedStackInstancesCount       = Int
   type EnableTerminationProtection      = Boolean
   type EvaluationType                   = String
   type EventId                          = String
@@ -48,13 +50,18 @@ package object cloudformation {
   type ExportName                       = String
   type ExportValue                      = String
   type Exports                          = js.Array[Export]
+  type FailedStackInstancesCount        = Int
   type FailureToleranceCount            = Int
   type FailureTolerancePercentage       = Int
+  type HandlerErrorCode                 = String
   type Imports                          = js.Array[StackName]
+  type InProgressStackInstancesCount    = Int
+  type InSyncStackInstancesCount        = Int
   type Key                              = String
   type LastUpdatedTime                  = js.Date
   type LimitName                        = String
   type LimitValue                       = Int
+  type LogGroupName                     = String
   type LogicalResourceId                = String
   type LogicalResourceIds               = js.Array[LogicalResourceId]
   type MaxConcurrentCount               = Int
@@ -67,6 +74,8 @@ package object cloudformation {
   type NotificationARN                  = String
   type NotificationARNs                 = js.Array[NotificationARN]
   type OnFailure                        = String
+  type OperationStatus                  = String
+  type OptionalSecureUrl                = String
   type OutputKey                        = String
   type OutputValue                      = String
   type Outputs                          = js.Array[Output]
@@ -77,15 +86,22 @@ package object cloudformation {
   type Parameters                       = js.Array[Parameter]
   type PhysicalResourceId               = String
   type PhysicalResourceIdContext        = js.Array[PhysicalResourceIdContextKeyValuePair]
+  type PrivateTypeArn                   = String
   type Properties                       = String
   type PropertyDifferences              = js.Array[PropertyDifference]
   type PropertyName                     = String
   type PropertyPath                     = String
   type PropertyValue                    = String
+  type ProvisioningType                 = String
   type Reason                           = String
   type Region                           = String
   type RegionList                       = js.Array[Region]
+  type RegistrationStatus               = String
+  type RegistrationToken                = String
+  type RegistrationTokenList            = js.Array[RegistrationToken]
+  type RegistryType                     = String
   type Replacement                      = String
+  type RequestToken                     = String
   type RequiresRecreation               = String
   type ResourceAttribute                = String
   type ResourceChangeDetails            = js.Array[ResourceChangeDetail]
@@ -94,6 +110,7 @@ package object cloudformation {
   type ResourceIdentifierPropertyValue  = String
   type ResourceIdentifierSummaries      = js.Array[ResourceIdentifierSummary]
   type ResourceIdentifiers              = js.Array[ResourceIdentifierPropertyKey]
+  type ResourceModel                    = String
   type ResourceProperties               = String
   type ResourceSignalStatus             = String
   type ResourceSignalUniqueId           = String
@@ -108,7 +125,9 @@ package object cloudformation {
   type RetainStacks                     = Boolean
   type RetainStacksNullable             = Boolean
   type RoleARN                          = String
+  type RoleArn                          = String
   type RollbackTriggers                 = js.Array[RollbackTrigger]
+  type S3Url                            = String
   type Scope                            = js.Array[ResourceAttribute]
   type StackDriftDetectionId            = String
   type StackDriftDetectionStatus        = String
@@ -130,6 +149,8 @@ package object cloudformation {
   type StackResourceSummaries           = js.Array[StackResourceSummary]
   type StackResources                   = js.Array[StackResource]
   type StackSetARN                      = String
+  type StackSetDriftDetectionStatus     = String
+  type StackSetDriftStatus              = String
   type StackSetId                       = String
   type StackSetName                     = String
   type StackSetNameOrId                 = String
@@ -146,6 +167,7 @@ package object cloudformation {
   type StackSummaries                   = js.Array[StackSummary]
   type Stacks                           = js.Array[Stack]
   type StageList                        = js.Array[TemplateStage]
+  type StatusMessage                    = String
   type TagKey                           = String
   type TagValue                         = String
   type Tags                             = js.Array[Tag]
@@ -156,16 +178,25 @@ package object cloudformation {
   type TemplateURL                      = String
   type TimeoutMinutes                   = Int
   type Timestamp                        = js.Date
+  type TotalStackInstancesCount         = Int
   type TransformName                    = String
   type TransformsList                   = js.Array[TransformName]
   type Type                             = String
+  type TypeArn                          = String
+  type TypeName                         = String
+  type TypeSchema                       = String
+  type TypeSummaries                    = js.Array[TypeSummary]
+  type TypeVersionId                    = String
+  type TypeVersionSummaries             = js.Array[TypeVersionSummary]
   type Url                              = String
   type UsePreviousTemplate              = Boolean
   type UsePreviousValue                 = Boolean
   type Value                            = String
   type Version                          = String
+  type Visibility                       = String
 
   implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
+
     @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] =
       service.cancelUpdateStack(params).promise.toFuture
     @inline def continueUpdateRollbackFuture(
@@ -187,6 +218,8 @@ package object cloudformation {
       service.deleteStackInstances(params).promise.toFuture
     @inline def deleteStackSetFuture(params: DeleteStackSetInput): Future[DeleteStackSetOutput] =
       service.deleteStackSet(params).promise.toFuture
+    @inline def deregisterTypeFuture(params: DeregisterTypeInput): Future[DeregisterTypeOutput] =
+      service.deregisterType(params).promise.toFuture
     @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
       service.describeAccountLimits(params).promise.toFuture
     @inline def describeChangeSetFuture(params: DescribeChangeSetInput): Future[DescribeChangeSetOutput] =
@@ -214,11 +247,18 @@ package object cloudformation {
     ): Future[DescribeStackSetOperationOutput] = service.describeStackSetOperation(params).promise.toFuture
     @inline def describeStacksFuture(params: DescribeStacksInput): Future[DescribeStacksOutput] =
       service.describeStacks(params).promise.toFuture
+    @inline def describeTypeFuture(params: DescribeTypeInput): Future[DescribeTypeOutput] =
+      service.describeType(params).promise.toFuture
+    @inline def describeTypeRegistrationFuture(
+        params: DescribeTypeRegistrationInput
+    ): Future[DescribeTypeRegistrationOutput] = service.describeTypeRegistration(params).promise.toFuture
     @inline def detectStackDriftFuture(params: DetectStackDriftInput): Future[DetectStackDriftOutput] =
       service.detectStackDrift(params).promise.toFuture
     @inline def detectStackResourceDriftFuture(
         params: DetectStackResourceDriftInput
     ): Future[DetectStackResourceDriftOutput] = service.detectStackResourceDrift(params).promise.toFuture
+    @inline def detectStackSetDriftFuture(params: DetectStackSetDriftInput): Future[DetectStackSetDriftOutput] =
+      service.detectStackSetDrift(params).promise.toFuture
     @inline def estimateTemplateCostFuture(params: EstimateTemplateCostInput): Future[EstimateTemplateCostOutput] =
       service.estimateTemplateCost(params).promise.toFuture
     @inline def executeChangeSetFuture(params: ExecuteChangeSetInput): Future[ExecuteChangeSetOutput] =
@@ -249,8 +289,20 @@ package object cloudformation {
       service.listStackSets(params).promise.toFuture
     @inline def listStacksFuture(params: ListStacksInput): Future[ListStacksOutput] =
       service.listStacks(params).promise.toFuture
+    @inline def listTypeRegistrationsFuture(params: ListTypeRegistrationsInput): Future[ListTypeRegistrationsOutput] =
+      service.listTypeRegistrations(params).promise.toFuture
+    @inline def listTypeVersionsFuture(params: ListTypeVersionsInput): Future[ListTypeVersionsOutput] =
+      service.listTypeVersions(params).promise.toFuture
+    @inline def listTypesFuture(params: ListTypesInput): Future[ListTypesOutput] =
+      service.listTypes(params).promise.toFuture
+    @inline def recordHandlerProgressFuture(params: RecordHandlerProgressInput): Future[RecordHandlerProgressOutput] =
+      service.recordHandlerProgress(params).promise.toFuture
+    @inline def registerTypeFuture(params: RegisterTypeInput): Future[RegisterTypeOutput] =
+      service.registerType(params).promise.toFuture
     @inline def setStackPolicyFuture(params: SetStackPolicyInput): Future[js.Object] =
       service.setStackPolicy(params).promise.toFuture
+    @inline def setTypeDefaultVersionFuture(params: SetTypeDefaultVersionInput): Future[SetTypeDefaultVersionOutput] =
+      service.setTypeDefaultVersion(params).promise.toFuture
     @inline def signalResourceFuture(params: SignalResourceInput): Future[js.Object] =
       service.signalResource(params).promise.toFuture
     @inline def stopStackSetOperationFuture(params: StopStackSetOperationInput): Future[StopStackSetOperationOutput] =
@@ -285,6 +337,7 @@ package cloudformation {
     def deleteStack(params: DeleteStackInput): Request[js.Object]                                          = js.native
     def deleteStackInstances(params: DeleteStackInstancesInput): Request[DeleteStackInstancesOutput]       = js.native
     def deleteStackSet(params: DeleteStackSetInput): Request[DeleteStackSetOutput]                         = js.native
+    def deregisterType(params: DeregisterTypeInput): Request[DeregisterTypeOutput]                         = js.native
     def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput]    = js.native
     def describeChangeSet(params: DescribeChangeSetInput): Request[DescribeChangeSetOutput]                = js.native
     def describeStackDriftDetectionStatus(
@@ -300,10 +353,14 @@ package cloudformation {
     def describeStackSet(params: DescribeStackSetInput): Request[DescribeStackSetOutput]                   = js.native
     def describeStackSetOperation(params: DescribeStackSetOperationInput): Request[DescribeStackSetOperationOutput] =
       js.native
-    def describeStacks(params: DescribeStacksInput): Request[DescribeStacksOutput]       = js.native
+    def describeStacks(params: DescribeStacksInput): Request[DescribeStacksOutput] = js.native
+    def describeType(params: DescribeTypeInput): Request[DescribeTypeOutput]       = js.native
+    def describeTypeRegistration(params: DescribeTypeRegistrationInput): Request[DescribeTypeRegistrationOutput] =
+      js.native
     def detectStackDrift(params: DetectStackDriftInput): Request[DetectStackDriftOutput] = js.native
     def detectStackResourceDrift(params: DetectStackResourceDriftInput): Request[DetectStackResourceDriftOutput] =
       js.native
+    def detectStackSetDrift(params: DetectStackSetDriftInput): Request[DetectStackSetDriftOutput]    = js.native
     def estimateTemplateCost(params: EstimateTemplateCostInput): Request[EstimateTemplateCostOutput] = js.native
     def executeChangeSet(params: ExecuteChangeSetInput): Request[ExecuteChangeSetOutput]             = js.native
     def getStackPolicy(params: GetStackPolicyInput): Request[GetStackPolicyOutput]                   = js.native
@@ -320,7 +377,13 @@ package cloudformation {
     def listStackSetOperations(params: ListStackSetOperationsInput): Request[ListStackSetOperationsOutput] = js.native
     def listStackSets(params: ListStackSetsInput): Request[ListStackSetsOutput]                            = js.native
     def listStacks(params: ListStacksInput): Request[ListStacksOutput]                                     = js.native
+    def listTypeRegistrations(params: ListTypeRegistrationsInput): Request[ListTypeRegistrationsOutput]    = js.native
+    def listTypeVersions(params: ListTypeVersionsInput): Request[ListTypeVersionsOutput]                   = js.native
+    def listTypes(params: ListTypesInput): Request[ListTypesOutput]                                        = js.native
+    def recordHandlerProgress(params: RecordHandlerProgressInput): Request[RecordHandlerProgressOutput]    = js.native
+    def registerType(params: RegisterTypeInput): Request[RegisterTypeOutput]                               = js.native
     def setStackPolicy(params: SetStackPolicyInput): Request[js.Object]                                    = js.native
+    def setTypeDefaultVersion(params: SetTypeDefaultVersionInput): Request[SetTypeDefaultVersionOutput]    = js.native
     def signalResource(params: SignalResourceInput): Request[js.Object]                                    = js.native
     def stopStackSetOperation(params: StopStackSetOperationInput): Request[StopStackSetOperationOutput]    = js.native
     def updateStack(params: UpdateStackInput): Request[UpdateStackOutput]                                  = js.native
@@ -1018,6 +1081,51 @@ package cloudformation {
     }
   }
 
+  object DeprecatedStatusEnum {
+    val LIVE       = "LIVE"
+    val DEPRECATED = "DEPRECATED"
+
+    val values = js.Object.freeze(js.Array(LIVE, DEPRECATED))
+  }
+
+  @js.native
+  trait DeregisterTypeInput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+    var VersionId: js.UndefOr[TypeVersionId]
+  }
+
+  object DeregisterTypeInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        VersionId: js.UndefOr[TypeVersionId] = js.undefined
+    ): DeregisterTypeInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterTypeInput]
+    }
+  }
+
+  @js.native
+  trait DeregisterTypeOutput extends js.Object {}
+
+  object DeregisterTypeOutput {
+    @inline
+    def apply(
+        ): DeregisterTypeOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeregisterTypeOutput]
+    }
+  }
+
   /**
     * The input for the <a>DescribeAccountLimits</a> action.
     */
@@ -1543,6 +1651,132 @@ package cloudformation {
   }
 
   @js.native
+  trait DescribeTypeInput extends js.Object {
+    var Arn: js.UndefOr[TypeArn]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+    var VersionId: js.UndefOr[TypeVersionId]
+  }
+
+  object DescribeTypeInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[TypeArn] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        VersionId: js.UndefOr[TypeVersionId] = js.undefined
+    ): DescribeTypeInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTypeInput]
+    }
+  }
+
+  @js.native
+  trait DescribeTypeOutput extends js.Object {
+    var Arn: js.UndefOr[TypeArn]
+    var DefaultVersionId: js.UndefOr[TypeVersionId]
+    var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
+    var Description: js.UndefOr[Description]
+    var DocumentationUrl: js.UndefOr[OptionalSecureUrl]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var LastUpdated: js.UndefOr[Timestamp]
+    var LoggingConfig: js.UndefOr[LoggingConfig]
+    var ProvisioningType: js.UndefOr[ProvisioningType]
+    var Schema: js.UndefOr[TypeSchema]
+    var SourceUrl: js.UndefOr[OptionalSecureUrl]
+    var TimeCreated: js.UndefOr[Timestamp]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object DescribeTypeOutput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[TypeArn] = js.undefined,
+        DefaultVersionId: js.UndefOr[TypeVersionId] = js.undefined,
+        DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        DocumentationUrl: js.UndefOr[OptionalSecureUrl] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        LoggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
+        ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
+        Schema: js.UndefOr[TypeSchema] = js.undefined,
+        SourceUrl: js.UndefOr[OptionalSecureUrl] = js.undefined,
+        TimeCreated: js.UndefOr[Timestamp] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): DescribeTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
+      DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DocumentationUrl.foreach(__v => __obj.updateDynamic("DocumentationUrl")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      LoggingConfig.foreach(__v => __obj.updateDynamic("LoggingConfig")(__v.asInstanceOf[js.Any]))
+      ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
+      TimeCreated.foreach(__v => __obj.updateDynamic("TimeCreated")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTypeOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeTypeRegistrationInput extends js.Object {
+    var RegistrationToken: RegistrationToken
+  }
+
+  object DescribeTypeRegistrationInput {
+    @inline
+    def apply(
+        RegistrationToken: RegistrationToken
+    ): DescribeTypeRegistrationInput = {
+      val __obj = js.Dynamic.literal(
+        "RegistrationToken" -> RegistrationToken.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeTypeRegistrationInput]
+    }
+  }
+
+  @js.native
+  trait DescribeTypeRegistrationOutput extends js.Object {
+    var Description: js.UndefOr[Description]
+    var ProgressStatus: js.UndefOr[RegistrationStatus]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeVersionArn: js.UndefOr[TypeArn]
+  }
+
+  object DescribeTypeRegistrationOutput {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        ProgressStatus: js.UndefOr[RegistrationStatus] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeVersionArn: js.UndefOr[TypeArn] = js.undefined
+    ): DescribeTypeRegistrationOutput = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ProgressStatus.foreach(__v => __obj.updateDynamic("ProgressStatus")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeVersionArn.foreach(__v => __obj.updateDynamic("TypeVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTypeRegistrationOutput]
+    }
+  }
+
+  @js.native
   trait DetectStackDriftInput extends js.Object {
     var StackName: StackNameOrId
     var LogicalResourceIds: js.UndefOr[LogicalResourceIds]
@@ -1617,6 +1851,46 @@ package cloudformation {
       )
 
       __obj.asInstanceOf[DetectStackResourceDriftOutput]
+    }
+  }
+
+  @js.native
+  trait DetectStackSetDriftInput extends js.Object {
+    var StackSetName: StackSetNameOrId
+    var OperationId: js.UndefOr[ClientRequestToken]
+    var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
+  }
+
+  object DetectStackSetDriftInput {
+    @inline
+    def apply(
+        StackSetName: StackSetNameOrId,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined
+    ): DetectStackSetDriftInput = {
+      val __obj = js.Dynamic.literal(
+        "StackSetName" -> StackSetName.asInstanceOf[js.Any]
+      )
+
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectStackSetDriftInput]
+    }
+  }
+
+  @js.native
+  trait DetectStackSetDriftOutput extends js.Object {
+    var OperationId: js.UndefOr[ClientRequestToken]
+  }
+
+  object DetectStackSetDriftOutput {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): DetectStackSetDriftOutput = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectStackSetDriftOutput]
     }
   }
 
@@ -1918,6 +2192,42 @@ package cloudformation {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateSummaryOutput]
     }
+  }
+
+  object HandlerErrorCodeEnum {
+    val NotUpdatable            = "NotUpdatable"
+    val InvalidRequest          = "InvalidRequest"
+    val AccessDenied            = "AccessDenied"
+    val InvalidCredentials      = "InvalidCredentials"
+    val AlreadyExists           = "AlreadyExists"
+    val NotFound                = "NotFound"
+    val ResourceConflict        = "ResourceConflict"
+    val Throttling              = "Throttling"
+    val ServiceLimitExceeded    = "ServiceLimitExceeded"
+    val NotStabilized           = "NotStabilized"
+    val GeneralServiceException = "GeneralServiceException"
+    val ServiceInternalError    = "ServiceInternalError"
+    val NetworkFailure          = "NetworkFailure"
+    val InternalFailure         = "InternalFailure"
+
+    val values = js.Object.freeze(
+      js.Array(
+        NotUpdatable,
+        InvalidRequest,
+        AccessDenied,
+        InvalidCredentials,
+        AlreadyExists,
+        NotFound,
+        ResourceConflict,
+        Throttling,
+        ServiceLimitExceeded,
+        NotStabilized,
+        GeneralServiceException,
+        ServiceInternalError,
+        NetworkFailure,
+        InternalFailure
+      )
+    )
   }
 
   /**
@@ -2310,12 +2620,192 @@ package cloudformation {
     }
   }
 
+  @js.native
+  trait ListTypeRegistrationsInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var RegistrationStatusFilter: js.UndefOr[RegistrationStatus]
+    var Type: js.UndefOr[RegistryType]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object ListTypeRegistrationsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RegistrationStatusFilter: js.UndefOr[RegistrationStatus] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): ListTypeRegistrationsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegistrationStatusFilter.foreach(__v => __obj.updateDynamic("RegistrationStatusFilter")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypeRegistrationsInput]
+    }
+  }
+
+  @js.native
+  trait ListTypeRegistrationsOutput extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var RegistrationTokenList: js.UndefOr[RegistrationTokenList]
+  }
+
+  object ListTypeRegistrationsOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RegistrationTokenList: js.UndefOr[RegistrationTokenList] = js.undefined
+    ): ListTypeRegistrationsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegistrationTokenList.foreach(__v => __obj.updateDynamic("RegistrationTokenList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypeRegistrationsOutput]
+    }
+  }
+
+  @js.native
+  trait ListTypeVersionsInput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+    var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object ListTypeVersionsInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): ListTypeVersionsInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypeVersionsInput]
+    }
+  }
+
+  @js.native
+  trait ListTypeVersionsOutput extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var TypeVersionSummaries: js.UndefOr[TypeVersionSummaries]
+  }
+
+  object ListTypeVersionsOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TypeVersionSummaries: js.UndefOr[TypeVersionSummaries] = js.undefined
+    ): ListTypeVersionsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TypeVersionSummaries.foreach(__v => __obj.updateDynamic("TypeVersionSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypeVersionsOutput]
+    }
+  }
+
+  @js.native
+  trait ListTypesInput extends js.Object {
+    var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ProvisioningType: js.UndefOr[ProvisioningType]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ListTypesInput {
+    @inline
+    def apply(
+        DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ListTypesInput = {
+      val __obj = js.Dynamic.literal()
+      DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypesInput]
+    }
+  }
+
+  @js.native
+  trait ListTypesOutput extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var TypeSummaries: js.UndefOr[TypeSummaries]
+  }
+
+  object ListTypesOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TypeSummaries: js.UndefOr[TypeSummaries] = js.undefined
+    ): ListTypesOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TypeSummaries.foreach(__v => __obj.updateDynamic("TypeSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTypesOutput]
+    }
+  }
+
+  /**
+    * Contains logging configuration information for a type.
+    */
+  @js.native
+  trait LoggingConfig extends js.Object {
+    var LogGroupName: LogGroupName
+    var LogRoleArn: RoleArn
+  }
+
+  object LoggingConfig {
+    @inline
+    def apply(
+        LogGroupName: LogGroupName,
+        LogRoleArn: RoleArn
+    ): LoggingConfig = {
+      val __obj = js.Dynamic.literal(
+        "LogGroupName" -> LogGroupName.asInstanceOf[js.Any],
+        "LogRoleArn"   -> LogRoleArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[LoggingConfig]
+    }
+  }
+
   object OnFailureEnum {
     val DO_NOTHING = "DO_NOTHING"
     val ROLLBACK   = "ROLLBACK"
     val DELETE     = "DELETE"
 
     val values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
+  }
+
+  object OperationStatusEnum {
+    val PENDING     = "PENDING"
+    val IN_PROGRESS = "IN_PROGRESS"
+    val SUCCESS     = "SUCCESS"
+    val FAILED      = "FAILED"
+
+    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED))
   }
 
   /**
@@ -2479,6 +2969,126 @@ package cloudformation {
 
       __obj.asInstanceOf[PropertyDifference]
     }
+  }
+
+  object ProvisioningTypeEnum {
+    val NON_PROVISIONABLE = "NON_PROVISIONABLE"
+    val IMMUTABLE         = "IMMUTABLE"
+    val FULLY_MUTABLE     = "FULLY_MUTABLE"
+
+    val values = js.Object.freeze(js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE))
+  }
+
+  @js.native
+  trait RecordHandlerProgressInput extends js.Object {
+    var BearerToken: ClientToken
+    var OperationStatus: OperationStatus
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var CurrentOperationStatus: js.UndefOr[OperationStatus]
+    var ErrorCode: js.UndefOr[HandlerErrorCode]
+    var ResourceModel: js.UndefOr[ResourceModel]
+    var StatusMessage: js.UndefOr[StatusMessage]
+  }
+
+  object RecordHandlerProgressInput {
+    @inline
+    def apply(
+        BearerToken: ClientToken,
+        OperationStatus: OperationStatus,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        CurrentOperationStatus: js.UndefOr[OperationStatus] = js.undefined,
+        ErrorCode: js.UndefOr[HandlerErrorCode] = js.undefined,
+        ResourceModel: js.UndefOr[ResourceModel] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): RecordHandlerProgressInput = {
+      val __obj = js.Dynamic.literal(
+        "BearerToken"     -> BearerToken.asInstanceOf[js.Any],
+        "OperationStatus" -> OperationStatus.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      CurrentOperationStatus.foreach(__v => __obj.updateDynamic("CurrentOperationStatus")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ResourceModel.foreach(__v => __obj.updateDynamic("ResourceModel")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordHandlerProgressInput]
+    }
+  }
+
+  @js.native
+  trait RecordHandlerProgressOutput extends js.Object {}
+
+  object RecordHandlerProgressOutput {
+    @inline
+    def apply(
+        ): RecordHandlerProgressOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RecordHandlerProgressOutput]
+    }
+  }
+
+  @js.native
+  trait RegisterTypeInput extends js.Object {
+    var SchemaHandlerPackage: S3Url
+    var TypeName: TypeName
+    var ClientRequestToken: js.UndefOr[RequestToken]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var LoggingConfig: js.UndefOr[LoggingConfig]
+    var Type: js.UndefOr[RegistryType]
+  }
+
+  object RegisterTypeInput {
+    @inline
+    def apply(
+        SchemaHandlerPackage: S3Url,
+        TypeName: TypeName,
+        ClientRequestToken: js.UndefOr[RequestToken] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        LoggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined
+    ): RegisterTypeInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaHandlerPackage" -> SchemaHandlerPackage.asInstanceOf[js.Any],
+        "TypeName"             -> TypeName.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      LoggingConfig.foreach(__v => __obj.updateDynamic("LoggingConfig")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterTypeInput]
+    }
+  }
+
+  @js.native
+  trait RegisterTypeOutput extends js.Object {
+    var RegistrationToken: js.UndefOr[RegistrationToken]
+  }
+
+  object RegisterTypeOutput {
+    @inline
+    def apply(
+        RegistrationToken: js.UndefOr[RegistrationToken] = js.undefined
+    ): RegisterTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      RegistrationToken.foreach(__v => __obj.updateDynamic("RegistrationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterTypeOutput]
+    }
+  }
+
+  object RegistrationStatusEnum {
+    val COMPLETE    = "COMPLETE"
+    val IN_PROGRESS = "IN_PROGRESS"
+    val FAILED      = "FAILED"
+
+    val values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
+  }
+
+  object RegistryTypeEnum {
+    val RESOURCE = "RESOURCE"
+
+    val values = js.Object.freeze(js.Array(RESOURCE))
   }
 
   object ReplacementEnum {
@@ -2771,6 +3381,44 @@ package cloudformation {
     }
   }
 
+  @js.native
+  trait SetTypeDefaultVersionInput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+    var VersionId: js.UndefOr[TypeVersionId]
+  }
+
+  object SetTypeDefaultVersionInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        VersionId: js.UndefOr[TypeVersionId] = js.undefined
+    ): SetTypeDefaultVersionInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetTypeDefaultVersionInput]
+    }
+  }
+
+  @js.native
+  trait SetTypeDefaultVersionOutput extends js.Object {}
+
+  object SetTypeDefaultVersionOutput {
+    @inline
+    def apply(
+        ): SetTypeDefaultVersionOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[SetTypeDefaultVersionOutput]
+    }
+  }
+
   /**
     * The input for the <a>SignalResource</a> action.
     */
@@ -3009,6 +3657,8 @@ package cloudformation {
   @js.native
   trait StackInstance extends js.Object {
     var Account: js.UndefOr[Account]
+    var DriftStatus: js.UndefOr[StackDriftStatus]
+    var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
     var ParameterOverrides: js.UndefOr[Parameters]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
@@ -3021,6 +3671,8 @@ package cloudformation {
     @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
+        DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
+        LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
@@ -3030,6 +3682,8 @@ package cloudformation {
     ): StackInstance = {
       val __obj = js.Dynamic.literal()
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
+      LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
       ParameterOverrides.foreach(__v => __obj.updateDynamic("ParameterOverrides")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
@@ -3054,6 +3708,8 @@ package cloudformation {
   @js.native
   trait StackInstanceSummary extends js.Object {
     var Account: js.UndefOr[Account]
+    var DriftStatus: js.UndefOr[StackDriftStatus]
+    var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
     var StackSetId: js.UndefOr[StackSetId]
@@ -3065,6 +3721,8 @@ package cloudformation {
     @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
+        DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
+        LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
@@ -3073,6 +3731,8 @@ package cloudformation {
     ): StackInstanceSummary = {
       val __obj = js.Dynamic.literal()
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
+      LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
@@ -3340,6 +4000,7 @@ package cloudformation {
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
     var Parameters: js.UndefOr[Parameters]
     var StackSetARN: js.UndefOr[StackSetARN]
+    var StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails]
     var StackSetId: js.UndefOr[StackSetId]
     var StackSetName: js.UndefOr[StackSetName]
     var Status: js.UndefOr[StackSetStatus]
@@ -3356,6 +4017,7 @@ package cloudformation {
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         StackSetARN: js.UndefOr[StackSetARN] = js.undefined,
+        StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         StackSetName: js.UndefOr[StackSetName] = js.undefined,
         Status: js.UndefOr[StackSetStatus] = js.undefined,
@@ -3369,6 +4031,9 @@ package cloudformation {
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       StackSetARN.foreach(__v => __obj.updateDynamic("StackSetARN")(__v.asInstanceOf[js.Any]))
+      StackSetDriftDetectionDetails.foreach(__v =>
+        __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any])
+      )
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3376,6 +4041,75 @@ package cloudformation {
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSet]
     }
+  }
+
+  /**
+    * Detailed information about the drift status of the stack set.
+    *  For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included.
+    *  For stack set operations, includes information about drift operations currently being performed on the stack set.
+    *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>AWS CloudFormation User Guide</i>.
+    */
+  @js.native
+  trait StackSetDriftDetectionDetails extends js.Object {
+    var DriftDetectionStatus: js.UndefOr[StackSetDriftDetectionStatus]
+    var DriftStatus: js.UndefOr[StackSetDriftStatus]
+    var DriftedStackInstancesCount: js.UndefOr[DriftedStackInstancesCount]
+    var FailedStackInstancesCount: js.UndefOr[FailedStackInstancesCount]
+    var InProgressStackInstancesCount: js.UndefOr[InProgressStackInstancesCount]
+    var InSyncStackInstancesCount: js.UndefOr[InSyncStackInstancesCount]
+    var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
+    var TotalStackInstancesCount: js.UndefOr[TotalStackInstancesCount]
+  }
+
+  object StackSetDriftDetectionDetails {
+    @inline
+    def apply(
+        DriftDetectionStatus: js.UndefOr[StackSetDriftDetectionStatus] = js.undefined,
+        DriftStatus: js.UndefOr[StackSetDriftStatus] = js.undefined,
+        DriftedStackInstancesCount: js.UndefOr[DriftedStackInstancesCount] = js.undefined,
+        FailedStackInstancesCount: js.UndefOr[FailedStackInstancesCount] = js.undefined,
+        InProgressStackInstancesCount: js.UndefOr[InProgressStackInstancesCount] = js.undefined,
+        InSyncStackInstancesCount: js.UndefOr[InSyncStackInstancesCount] = js.undefined,
+        LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        TotalStackInstancesCount: js.UndefOr[TotalStackInstancesCount] = js.undefined
+    ): StackSetDriftDetectionDetails = {
+      val __obj = js.Dynamic.literal()
+      DriftDetectionStatus.foreach(__v => __obj.updateDynamic("DriftDetectionStatus")(__v.asInstanceOf[js.Any]))
+      DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
+      DriftedStackInstancesCount.foreach(__v =>
+        __obj.updateDynamic("DriftedStackInstancesCount")(__v.asInstanceOf[js.Any])
+      )
+      FailedStackInstancesCount.foreach(__v =>
+        __obj.updateDynamic("FailedStackInstancesCount")(__v.asInstanceOf[js.Any])
+      )
+      InProgressStackInstancesCount.foreach(__v =>
+        __obj.updateDynamic("InProgressStackInstancesCount")(__v.asInstanceOf[js.Any])
+      )
+      InSyncStackInstancesCount.foreach(__v =>
+        __obj.updateDynamic("InSyncStackInstancesCount")(__v.asInstanceOf[js.Any])
+      )
+      LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      TotalStackInstancesCount.foreach(__v => __obj.updateDynamic("TotalStackInstancesCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StackSetDriftDetectionDetails]
+    }
+  }
+
+  object StackSetDriftDetectionStatusEnum {
+    val COMPLETED       = "COMPLETED"
+    val FAILED          = "FAILED"
+    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS"
+    val IN_PROGRESS     = "IN_PROGRESS"
+    val STOPPED         = "STOPPED"
+
+    val values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
+  }
+
+  object StackSetDriftStatusEnum {
+    val DRIFTED     = "DRIFTED"
+    val IN_SYNC     = "IN_SYNC"
+    val NOT_CHECKED = "NOT_CHECKED"
+
+    val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, NOT_CHECKED))
   }
 
   /**
@@ -3391,6 +4125,7 @@ package cloudformation {
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
     var RetainStacks: js.UndefOr[RetainStacksNullable]
+    var StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails]
     var StackSetId: js.UndefOr[StackSetId]
     var Status: js.UndefOr[StackSetOperationStatus]
   }
@@ -3406,6 +4141,7 @@ package cloudformation {
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
         RetainStacks: js.UndefOr[RetainStacksNullable] = js.undefined,
+        StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         Status: js.UndefOr[StackSetOperationStatus] = js.undefined
     ): StackSetOperation = {
@@ -3418,6 +4154,9 @@ package cloudformation {
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       RetainStacks.foreach(__v => __obj.updateDynamic("RetainStacks")(__v.asInstanceOf[js.Any]))
+      StackSetDriftDetectionDetails.foreach(__v =>
+        __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any])
+      )
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetOperation]
@@ -3425,11 +4164,12 @@ package cloudformation {
   }
 
   object StackSetOperationActionEnum {
-    val CREATE = "CREATE"
-    val UPDATE = "UPDATE"
-    val DELETE = "DELETE"
+    val CREATE       = "CREATE"
+    val UPDATE       = "UPDATE"
+    val DELETE       = "DELETE"
+    val DETECT_DRIFT = "DETECT_DRIFT"
 
-    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT))
   }
 
   /**
@@ -3561,6 +4301,8 @@ package cloudformation {
   @js.native
   trait StackSetSummary extends js.Object {
     var Description: js.UndefOr[Description]
+    var DriftStatus: js.UndefOr[StackDriftStatus]
+    var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
     var StackSetId: js.UndefOr[StackSetId]
     var StackSetName: js.UndefOr[StackSetName]
     var Status: js.UndefOr[StackSetStatus]
@@ -3570,12 +4312,16 @@ package cloudformation {
     @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
+        DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
+        LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         StackSetName: js.UndefOr[StackSetName] = js.undefined,
         Status: js.UndefOr[StackSetStatus] = js.undefined
     ): StackSetSummary = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
+      LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3777,6 +4523,74 @@ package cloudformation {
     val Processed = "Processed"
 
     val values = js.Object.freeze(js.Array(Original, Processed))
+  }
+
+  /**
+    * Contains summary information about the specified CloudFormation type.
+    */
+  @js.native
+  trait TypeSummary extends js.Object {
+    var DefaultVersionId: js.UndefOr[TypeVersionId]
+    var Description: js.UndefOr[Description]
+    var LastUpdated: js.UndefOr[Timestamp]
+    var Type: js.UndefOr[RegistryType]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object TypeSummary {
+    @inline
+    def apply(
+        DefaultVersionId: js.UndefOr[TypeVersionId] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): TypeSummary = {
+      val __obj = js.Dynamic.literal()
+      DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TypeSummary]
+    }
+  }
+
+  /**
+    * Contains summary information about a specific version of a CloudFormation type.
+    */
+  @js.native
+  trait TypeVersionSummary extends js.Object {
+    var Arn: js.UndefOr[TypeArn]
+    var Description: js.UndefOr[Description]
+    var TimeCreated: js.UndefOr[Timestamp]
+    var Type: js.UndefOr[RegistryType]
+    var TypeName: js.UndefOr[TypeName]
+    var VersionId: js.UndefOr[TypeVersionId]
+  }
+
+  object TypeVersionSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[TypeArn] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        TimeCreated: js.UndefOr[Timestamp] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        VersionId: js.UndefOr[TypeVersionId] = js.undefined
+    ): TypeVersionSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      TimeCreated.foreach(__v => __obj.updateDynamic("TimeCreated")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TypeVersionSummary]
+    }
   }
 
   /**
@@ -4078,5 +4892,12 @@ package cloudformation {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidateTemplateOutput]
     }
+  }
+
+  object VisibilityEnum {
+    val PUBLIC  = "PUBLIC"
+    val PRIVATE = "PRIVATE"
+
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 }

@@ -16,6 +16,7 @@ package object codebuild {
   type BuildIds                       = js.Array[NonEmptyString]
   type BuildPhaseType                 = String
   type BuildPhases                    = js.Array[BuildPhase]
+  type BuildReportArns                = js.Array[String]
   type Builds                         = js.Array[Build]
   type BuildsNotDeleted               = js.Array[BuildNotDeleted]
   type CacheMode                      = String
@@ -38,8 +39,10 @@ package object codebuild {
   type LanguageType                   = String
   type LogsConfigStatusType           = String
   type NonEmptyString                 = String
+  type PageSize                       = Int
   type PhaseContexts                  = js.Array[PhaseContext]
   type PlatformType                   = String
+  type ProjectArns                    = js.Array[NonEmptyString]
   type ProjectArtifactsList           = js.Array[ProjectArtifacts]
   type ProjectCacheModes              = js.Array[CacheMode]
   type ProjectDescription             = String
@@ -49,9 +52,21 @@ package object codebuild {
   type ProjectSortByType              = String
   type ProjectSources                 = js.Array[ProjectSource]
   type Projects                       = js.Array[Project]
+  type ReportArns                     = js.Array[NonEmptyString]
+  type ReportExportConfigType         = String
+  type ReportGroupArns                = js.Array[NonEmptyString]
+  type ReportGroupName                = String
+  type ReportGroupSortByType          = String
+  type ReportGroups                   = js.Array[ReportGroup]
+  type ReportPackagingType            = String
+  type ReportStatusCounts             = js.Dictionary[WrapperInt]
+  type ReportStatusType               = String
+  type ReportType                     = String
+  type Reports                        = js.Array[Report]
   type SecurityGroupIds               = js.Array[NonEmptyString]
   type SensitiveNonEmptyString        = String
   type ServerType                     = String
+  type SharedResourceSortByType       = String
   type SortOrderType                  = String
   type SourceAuthType                 = String
   type SourceCredentialsInfos         = js.Array[SourceCredentialsInfo]
@@ -59,6 +74,7 @@ package object codebuild {
   type StatusType                     = String
   type Subnets                        = js.Array[NonEmptyString]
   type TagList                        = js.Array[Tag]
+  type TestCases                      = js.Array[TestCase]
   type TimeOut                        = Int
   type Timestamp                      = js.Date
   type ValueInput                     = String
@@ -68,23 +84,40 @@ package object codebuild {
   type WrapperLong                    = Double
 
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
+
     @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
       service.batchDeleteBuilds(params).promise.toFuture
     @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
       service.batchGetBuilds(params).promise.toFuture
     @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
       service.batchGetProjects(params).promise.toFuture
+    @inline def batchGetReportGroupsFuture(params: BatchGetReportGroupsInput): Future[BatchGetReportGroupsOutput] =
+      service.batchGetReportGroups(params).promise.toFuture
+    @inline def batchGetReportsFuture(params: BatchGetReportsInput): Future[BatchGetReportsOutput] =
+      service.batchGetReports(params).promise.toFuture
     @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
       service.createProject(params).promise.toFuture
+    @inline def createReportGroupFuture(params: CreateReportGroupInput): Future[CreateReportGroupOutput] =
+      service.createReportGroup(params).promise.toFuture
     @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
       service.createWebhook(params).promise.toFuture
     @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
       service.deleteProject(params).promise.toFuture
+    @inline def deleteReportFuture(params: DeleteReportInput): Future[DeleteReportOutput] =
+      service.deleteReport(params).promise.toFuture
+    @inline def deleteReportGroupFuture(params: DeleteReportGroupInput): Future[DeleteReportGroupOutput] =
+      service.deleteReportGroup(params).promise.toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyInput): Future[DeleteResourcePolicyOutput] =
+      service.deleteResourcePolicy(params).promise.toFuture
     @inline def deleteSourceCredentialsFuture(
         params: DeleteSourceCredentialsInput
     ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise.toFuture
     @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
       service.deleteWebhook(params).promise.toFuture
+    @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] =
+      service.describeTestCases(params).promise.toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] =
+      service.getResourcePolicy(params).promise.toFuture
     @inline def importSourceCredentialsFuture(
         params: ImportSourceCredentialsInput
     ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise.toFuture
@@ -100,14 +133,30 @@ package object codebuild {
     ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise.toFuture
     @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
       service.listProjects(params).promise.toFuture
+    @inline def listReportGroupsFuture(params: ListReportGroupsInput): Future[ListReportGroupsOutput] =
+      service.listReportGroups(params).promise.toFuture
+    @inline def listReportsForReportGroupFuture(
+        params: ListReportsForReportGroupInput
+    ): Future[ListReportsForReportGroupOutput] = service.listReportsForReportGroup(params).promise.toFuture
+    @inline def listReportsFuture(params: ListReportsInput): Future[ListReportsOutput] =
+      service.listReports(params).promise.toFuture
+    @inline def listSharedProjectsFuture(params: ListSharedProjectsInput): Future[ListSharedProjectsOutput] =
+      service.listSharedProjects(params).promise.toFuture
+    @inline def listSharedReportGroupsFuture(
+        params: ListSharedReportGroupsInput
+    ): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise.toFuture
     @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
       service.listSourceCredentials(params).promise.toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyInput): Future[PutResourcePolicyOutput] =
+      service.putResourcePolicy(params).promise.toFuture
     @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
       service.startBuild(params).promise.toFuture
     @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] =
       service.stopBuild(params).promise.toFuture
     @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
       service.updateProject(params).promise.toFuture
+    @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] =
+      service.updateReportGroup(params).promise.toFuture
     @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
       service.updateWebhook(params).promise.toFuture
   }
@@ -119,15 +168,23 @@ package codebuild {
   class CodeBuild() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchDeleteBuilds(params: BatchDeleteBuildsInput): Request[BatchDeleteBuildsOutput] = js.native
-    def batchGetBuilds(params: BatchGetBuildsInput): Request[BatchGetBuildsOutput]          = js.native
-    def batchGetProjects(params: BatchGetProjectsInput): Request[BatchGetProjectsOutput]    = js.native
-    def createProject(params: CreateProjectInput): Request[CreateProjectOutput]             = js.native
-    def createWebhook(params: CreateWebhookInput): Request[CreateWebhookOutput]             = js.native
-    def deleteProject(params: DeleteProjectInput): Request[DeleteProjectOutput]             = js.native
+    def batchDeleteBuilds(params: BatchDeleteBuildsInput): Request[BatchDeleteBuildsOutput]          = js.native
+    def batchGetBuilds(params: BatchGetBuildsInput): Request[BatchGetBuildsOutput]                   = js.native
+    def batchGetProjects(params: BatchGetProjectsInput): Request[BatchGetProjectsOutput]             = js.native
+    def batchGetReportGroups(params: BatchGetReportGroupsInput): Request[BatchGetReportGroupsOutput] = js.native
+    def batchGetReports(params: BatchGetReportsInput): Request[BatchGetReportsOutput]                = js.native
+    def createProject(params: CreateProjectInput): Request[CreateProjectOutput]                      = js.native
+    def createReportGroup(params: CreateReportGroupInput): Request[CreateReportGroupOutput]          = js.native
+    def createWebhook(params: CreateWebhookInput): Request[CreateWebhookOutput]                      = js.native
+    def deleteProject(params: DeleteProjectInput): Request[DeleteProjectOutput]                      = js.native
+    def deleteReport(params: DeleteReportInput): Request[DeleteReportOutput]                         = js.native
+    def deleteReportGroup(params: DeleteReportGroupInput): Request[DeleteReportGroupOutput]          = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyInput): Request[DeleteResourcePolicyOutput] = js.native
     def deleteSourceCredentials(params: DeleteSourceCredentialsInput): Request[DeleteSourceCredentialsOutput] =
       js.native
-    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
+    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput]             = js.native
+    def describeTestCases(params: DescribeTestCasesInput): Request[DescribeTestCasesOutput] = js.native
+    def getResourcePolicy(params: GetResourcePolicyInput): Request[GetResourcePolicyOutput] = js.native
     def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] =
       js.native
     def invalidateProjectCache(params: InvalidateProjectCacheInput): Request[InvalidateProjectCacheOutput] = js.native
@@ -135,13 +192,21 @@ package codebuild {
     def listBuildsForProject(params: ListBuildsForProjectInput): Request[ListBuildsForProjectOutput]       = js.native
     def listCuratedEnvironmentImages(
         params: ListCuratedEnvironmentImagesInput
-    ): Request[ListCuratedEnvironmentImagesOutput]                                                      = js.native
-    def listProjects(params: ListProjectsInput): Request[ListProjectsOutput]                            = js.native
-    def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput] = js.native
-    def startBuild(params: StartBuildInput): Request[StartBuildOutput]                                  = js.native
-    def stopBuild(params: StopBuildInput): Request[StopBuildOutput]                                     = js.native
-    def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput]                         = js.native
-    def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput]                         = js.native
+    ): Request[ListCuratedEnvironmentImagesOutput]                                       = js.native
+    def listProjects(params: ListProjectsInput): Request[ListProjectsOutput]             = js.native
+    def listReportGroups(params: ListReportGroupsInput): Request[ListReportGroupsOutput] = js.native
+    def listReports(params: ListReportsInput): Request[ListReportsOutput]                = js.native
+    def listReportsForReportGroup(params: ListReportsForReportGroupInput): Request[ListReportsForReportGroupOutput] =
+      js.native
+    def listSharedProjects(params: ListSharedProjectsInput): Request[ListSharedProjectsOutput]             = js.native
+    def listSharedReportGroups(params: ListSharedReportGroupsInput): Request[ListSharedReportGroupsOutput] = js.native
+    def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput]    = js.native
+    def putResourcePolicy(params: PutResourcePolicyInput): Request[PutResourcePolicyOutput]                = js.native
+    def startBuild(params: StartBuildInput): Request[StartBuildOutput]                                     = js.native
+    def stopBuild(params: StopBuildInput): Request[StopBuildOutput]                                        = js.native
+    def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput]                            = js.native
+    def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput]                = js.native
+    def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput]                            = js.native
   }
 
   object ArtifactNamespaceEnum {
@@ -285,6 +350,80 @@ package codebuild {
     }
   }
 
+  @js.native
+  trait BatchGetReportGroupsInput extends js.Object {
+    var reportGroupArns: ReportGroupArns
+  }
+
+  object BatchGetReportGroupsInput {
+    @inline
+    def apply(
+        reportGroupArns: ReportGroupArns
+    ): BatchGetReportGroupsInput = {
+      val __obj = js.Dynamic.literal(
+        "reportGroupArns" -> reportGroupArns.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchGetReportGroupsInput]
+    }
+  }
+
+  @js.native
+  trait BatchGetReportGroupsOutput extends js.Object {
+    var reportGroups: js.UndefOr[ReportGroups]
+    var reportGroupsNotFound: js.UndefOr[ReportGroupArns]
+  }
+
+  object BatchGetReportGroupsOutput {
+    @inline
+    def apply(
+        reportGroups: js.UndefOr[ReportGroups] = js.undefined,
+        reportGroupsNotFound: js.UndefOr[ReportGroupArns] = js.undefined
+    ): BatchGetReportGroupsOutput = {
+      val __obj = js.Dynamic.literal()
+      reportGroups.foreach(__v => __obj.updateDynamic("reportGroups")(__v.asInstanceOf[js.Any]))
+      reportGroupsNotFound.foreach(__v => __obj.updateDynamic("reportGroupsNotFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetReportGroupsOutput]
+    }
+  }
+
+  @js.native
+  trait BatchGetReportsInput extends js.Object {
+    var reportArns: ReportArns
+  }
+
+  object BatchGetReportsInput {
+    @inline
+    def apply(
+        reportArns: ReportArns
+    ): BatchGetReportsInput = {
+      val __obj = js.Dynamic.literal(
+        "reportArns" -> reportArns.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchGetReportsInput]
+    }
+  }
+
+  @js.native
+  trait BatchGetReportsOutput extends js.Object {
+    var reports: js.UndefOr[Reports]
+    var reportsNotFound: js.UndefOr[ReportArns]
+  }
+
+  object BatchGetReportsOutput {
+    @inline
+    def apply(
+        reports: js.UndefOr[Reports] = js.undefined,
+        reportsNotFound: js.UndefOr[ReportArns] = js.undefined
+    ): BatchGetReportsOutput = {
+      val __obj = js.Dynamic.literal()
+      reports.foreach(__v => __obj.updateDynamic("reports")(__v.asInstanceOf[js.Any]))
+      reportsNotFound.foreach(__v => __obj.updateDynamic("reportsNotFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetReportsOutput]
+    }
+  }
+
   /**
     * Information about a build.
     */
@@ -308,6 +447,7 @@ package codebuild {
     var phases: js.UndefOr[BuildPhases]
     var projectName: js.UndefOr[NonEmptyString]
     var queuedTimeoutInMinutes: js.UndefOr[WrapperInt]
+    var reportArns: js.UndefOr[BuildReportArns]
     var resolvedSourceVersion: js.UndefOr[NonEmptyString]
     var secondaryArtifacts: js.UndefOr[BuildArtifactsList]
     var secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions]
@@ -341,6 +481,7 @@ package codebuild {
         phases: js.UndefOr[BuildPhases] = js.undefined,
         projectName: js.UndefOr[NonEmptyString] = js.undefined,
         queuedTimeoutInMinutes: js.UndefOr[WrapperInt] = js.undefined,
+        reportArns: js.UndefOr[BuildReportArns] = js.undefined,
         resolvedSourceVersion: js.UndefOr[NonEmptyString] = js.undefined,
         secondaryArtifacts: js.UndefOr[BuildArtifactsList] = js.undefined,
         secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions] = js.undefined,
@@ -373,6 +514,7 @@ package codebuild {
       phases.foreach(__v => __obj.updateDynamic("phases")(__v.asInstanceOf[js.Any]))
       projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
       queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      reportArns.foreach(__v => __obj.updateDynamic("reportArns")(__v.asInstanceOf[js.Any]))
       resolvedSourceVersion.foreach(__v => __obj.updateDynamic("resolvedSourceVersion")(__v.asInstanceOf[js.Any]))
       secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
       secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
@@ -551,11 +693,14 @@ package codebuild {
   }
 
   object ComputeTypeEnum {
-    val BUILD_GENERAL1_SMALL  = "BUILD_GENERAL1_SMALL"
-    val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM"
-    val BUILD_GENERAL1_LARGE  = "BUILD_GENERAL1_LARGE"
+    val BUILD_GENERAL1_SMALL   = "BUILD_GENERAL1_SMALL"
+    val BUILD_GENERAL1_MEDIUM  = "BUILD_GENERAL1_MEDIUM"
+    val BUILD_GENERAL1_LARGE   = "BUILD_GENERAL1_LARGE"
+    val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE"
 
-    val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE))
+    val values = js.Object.freeze(
+      js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
+    )
   }
 
   @js.native
@@ -644,6 +789,46 @@ package codebuild {
   }
 
   @js.native
+  trait CreateReportGroupInput extends js.Object {
+    var exportConfig: ReportExportConfig
+    var name: ReportGroupName
+    var `type`: ReportType
+  }
+
+  object CreateReportGroupInput {
+    @inline
+    def apply(
+        exportConfig: ReportExportConfig,
+        name: ReportGroupName,
+        `type`: ReportType
+    ): CreateReportGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "exportConfig" -> exportConfig.asInstanceOf[js.Any],
+        "name"         -> name.asInstanceOf[js.Any],
+        "type"         -> `type`.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateReportGroupInput]
+    }
+  }
+
+  @js.native
+  trait CreateReportGroupOutput extends js.Object {
+    var reportGroup: js.UndefOr[ReportGroup]
+  }
+
+  object CreateReportGroupOutput {
+    @inline
+    def apply(
+        reportGroup: js.UndefOr[ReportGroup] = js.undefined
+    ): CreateReportGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      reportGroup.foreach(__v => __obj.updateDynamic("reportGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReportGroupOutput]
+    }
+  }
+
+  @js.native
   trait CreateWebhookInput extends js.Object {
     var projectName: ProjectName
     var branchFilter: js.UndefOr[String]
@@ -721,6 +906,99 @@ package codebuild {
   }
 
   @js.native
+  trait DeleteReportGroupInput extends js.Object {
+    var arn: NonEmptyString
+  }
+
+  object DeleteReportGroupInput {
+    @inline
+    def apply(
+        arn: NonEmptyString
+    ): DeleteReportGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteReportGroupInput]
+    }
+  }
+
+  @js.native
+  trait DeleteReportGroupOutput extends js.Object {}
+
+  object DeleteReportGroupOutput {
+    @inline
+    def apply(
+        ): DeleteReportGroupOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteReportGroupOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteReportInput extends js.Object {
+    var arn: NonEmptyString
+  }
+
+  object DeleteReportInput {
+    @inline
+    def apply(
+        arn: NonEmptyString
+    ): DeleteReportInput = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteReportInput]
+    }
+  }
+
+  @js.native
+  trait DeleteReportOutput extends js.Object {}
+
+  object DeleteReportOutput {
+    @inline
+    def apply(
+        ): DeleteReportOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteReportOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyInput extends js.Object {
+    var resourceArn: NonEmptyString
+  }
+
+  object DeleteResourcePolicyInput {
+    @inline
+    def apply(
+        resourceArn: NonEmptyString
+    ): DeleteResourcePolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteResourcePolicyInput]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyOutput extends js.Object {}
+
+  object DeleteResourcePolicyOutput {
+    @inline
+    def apply(
+        ): DeleteResourcePolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteResourcePolicyOutput]
+    }
+  }
+
+  @js.native
   trait DeleteSourceCredentialsInput extends js.Object {
     var arn: NonEmptyString
   }
@@ -782,6 +1060,52 @@ package codebuild {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeTestCasesInput extends js.Object {
+    var reportArn: String
+    var filter: js.UndefOr[TestCaseFilter]
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeTestCasesInput {
+    @inline
+    def apply(
+        reportArn: String,
+        filter: js.UndefOr[TestCaseFilter] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeTestCasesInput = {
+      val __obj = js.Dynamic.literal(
+        "reportArn" -> reportArn.asInstanceOf[js.Any]
+      )
+
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTestCasesInput]
+    }
+  }
+
+  @js.native
+  trait DescribeTestCasesOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var testCases: js.UndefOr[TestCases]
+  }
+
+  object DescribeTestCasesOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        testCases: js.UndefOr[TestCases] = js.undefined
+    ): DescribeTestCasesOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      testCases.foreach(__v => __obj.updateDynamic("testCases")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTestCasesOutput]
     }
   }
 
@@ -855,10 +1179,12 @@ package codebuild {
   }
 
   object EnvironmentTypeEnum {
-    val WINDOWS_CONTAINER = "WINDOWS_CONTAINER"
-    val LINUX_CONTAINER   = "LINUX_CONTAINER"
+    val WINDOWS_CONTAINER   = "WINDOWS_CONTAINER"
+    val LINUX_CONTAINER     = "LINUX_CONTAINER"
+    val LINUX_GPU_CONTAINER = "LINUX_GPU_CONTAINER"
+    val ARM_CONTAINER       = "ARM_CONTAINER"
 
-    val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER))
+    val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER))
   }
 
   /**
@@ -915,6 +1241,40 @@ package codebuild {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportedEnvironmentVariable]
+    }
+  }
+
+  @js.native
+  trait GetResourcePolicyInput extends js.Object {
+    var resourceArn: NonEmptyString
+  }
+
+  object GetResourcePolicyInput {
+    @inline
+    def apply(
+        resourceArn: NonEmptyString
+    ): GetResourcePolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetResourcePolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetResourcePolicyOutput extends js.Object {
+    var policy: js.UndefOr[NonEmptyString]
+  }
+
+  object GetResourcePolicyOutput {
+    @inline
+    def apply(
+        policy: js.UndefOr[NonEmptyString] = js.undefined
+    ): GetResourcePolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePolicyOutput]
     }
   }
 
@@ -1190,6 +1550,231 @@ package codebuild {
   }
 
   @js.native
+  trait ListReportGroupsInput extends js.Object {
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var sortBy: js.UndefOr[ReportGroupSortByType]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListReportGroupsInput {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortBy: js.UndefOr[ReportGroupSortByType] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListReportGroupsInput = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportGroupsInput]
+    }
+  }
+
+  @js.native
+  trait ListReportGroupsOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var reportGroups: js.UndefOr[ReportGroupArns]
+  }
+
+  object ListReportGroupsOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        reportGroups: js.UndefOr[ReportGroupArns] = js.undefined
+    ): ListReportGroupsOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reportGroups.foreach(__v => __obj.updateDynamic("reportGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportGroupsOutput]
+    }
+  }
+
+  @js.native
+  trait ListReportsForReportGroupInput extends js.Object {
+    var reportGroupArn: String
+    var filter: js.UndefOr[ReportFilter]
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListReportsForReportGroupInput {
+    @inline
+    def apply(
+        reportGroupArn: String,
+        filter: js.UndefOr[ReportFilter] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListReportsForReportGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "reportGroupArn" -> reportGroupArn.asInstanceOf[js.Any]
+      )
+
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportsForReportGroupInput]
+    }
+  }
+
+  @js.native
+  trait ListReportsForReportGroupOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var reports: js.UndefOr[ReportArns]
+  }
+
+  object ListReportsForReportGroupOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        reports: js.UndefOr[ReportArns] = js.undefined
+    ): ListReportsForReportGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reports.foreach(__v => __obj.updateDynamic("reports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportsForReportGroupOutput]
+    }
+  }
+
+  @js.native
+  trait ListReportsInput extends js.Object {
+    var filter: js.UndefOr[ReportFilter]
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListReportsInput {
+    @inline
+    def apply(
+        filter: js.UndefOr[ReportFilter] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListReportsInput = {
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportsInput]
+    }
+  }
+
+  @js.native
+  trait ListReportsOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var reports: js.UndefOr[ReportArns]
+  }
+
+  object ListReportsOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        reports: js.UndefOr[ReportArns] = js.undefined
+    ): ListReportsOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reports.foreach(__v => __obj.updateDynamic("reports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportsOutput]
+    }
+  }
+
+  @js.native
+  trait ListSharedProjectsInput extends js.Object {
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[NonEmptyString]
+    var sortBy: js.UndefOr[SharedResourceSortByType]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListSharedProjectsInput {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        sortBy: js.UndefOr[SharedResourceSortByType] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListSharedProjectsInput = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedProjectsInput]
+    }
+  }
+
+  @js.native
+  trait ListSharedProjectsOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var projects: js.UndefOr[ProjectArns]
+  }
+
+  object ListSharedProjectsOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        projects: js.UndefOr[ProjectArns] = js.undefined
+    ): ListSharedProjectsOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedProjectsOutput]
+    }
+  }
+
+  @js.native
+  trait ListSharedReportGroupsInput extends js.Object {
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var sortBy: js.UndefOr[SharedResourceSortByType]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListSharedReportGroupsInput {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortBy: js.UndefOr[SharedResourceSortByType] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListSharedReportGroupsInput = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedReportGroupsInput]
+    }
+  }
+
+  @js.native
+  trait ListSharedReportGroupsOutput extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var reportGroups: js.UndefOr[ReportGroupArns]
+  }
+
+  object ListSharedReportGroupsOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        reportGroups: js.UndefOr[ReportGroupArns] = js.undefined
+    ): ListSharedReportGroupsOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reportGroups.foreach(__v => __obj.updateDynamic("reportGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedReportGroupsOutput]
+    }
+  }
+
+  @js.native
   trait ListSourceCredentialsInput extends js.Object {}
 
   object ListSourceCredentialsInput {
@@ -1253,10 +1838,12 @@ package codebuild {
   @js.native
   trait LogsLocation extends js.Object {
     var cloudWatchLogs: js.UndefOr[CloudWatchLogsConfig]
+    var cloudWatchLogsArn: js.UndefOr[String]
     var deepLink: js.UndefOr[String]
     var groupName: js.UndefOr[String]
     var s3DeepLink: js.UndefOr[String]
     var s3Logs: js.UndefOr[S3LogsConfig]
+    var s3LogsArn: js.UndefOr[String]
     var streamName: js.UndefOr[String]
   }
 
@@ -1264,18 +1851,22 @@ package codebuild {
     @inline
     def apply(
         cloudWatchLogs: js.UndefOr[CloudWatchLogsConfig] = js.undefined,
+        cloudWatchLogsArn: js.UndefOr[String] = js.undefined,
         deepLink: js.UndefOr[String] = js.undefined,
         groupName: js.UndefOr[String] = js.undefined,
         s3DeepLink: js.UndefOr[String] = js.undefined,
         s3Logs: js.UndefOr[S3LogsConfig] = js.undefined,
+        s3LogsArn: js.UndefOr[String] = js.undefined,
         streamName: js.UndefOr[String] = js.undefined
     ): LogsLocation = {
       val __obj = js.Dynamic.literal()
       cloudWatchLogs.foreach(__v => __obj.updateDynamic("cloudWatchLogs")(__v.asInstanceOf[js.Any]))
+      cloudWatchLogsArn.foreach(__v => __obj.updateDynamic("cloudWatchLogsArn")(__v.asInstanceOf[js.Any]))
       deepLink.foreach(__v => __obj.updateDynamic("deepLink")(__v.asInstanceOf[js.Any]))
       groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
       s3DeepLink.foreach(__v => __obj.updateDynamic("s3DeepLink")(__v.asInstanceOf[js.Any]))
       s3Logs.foreach(__v => __obj.updateDynamic("s3Logs")(__v.asInstanceOf[js.Any]))
+      s3LogsArn.foreach(__v => __obj.updateDynamic("s3LogsArn")(__v.asInstanceOf[js.Any]))
       streamName.foreach(__v => __obj.updateDynamic("streamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogsLocation]
     }
@@ -1629,6 +2220,43 @@ package codebuild {
     }
   }
 
+  @js.native
+  trait PutResourcePolicyInput extends js.Object {
+    var policy: NonEmptyString
+    var resourceArn: NonEmptyString
+  }
+
+  object PutResourcePolicyInput {
+    @inline
+    def apply(
+        policy: NonEmptyString,
+        resourceArn: NonEmptyString
+    ): PutResourcePolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "policy"      -> policy.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutResourcePolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyOutput extends js.Object {
+    var resourceArn: js.UndefOr[NonEmptyString]
+  }
+
+  object PutResourcePolicyOutput {
+    @inline
+    def apply(
+        resourceArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): PutResourcePolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyOutput]
+    }
+  }
+
   /**
     * Information about credentials that provide access to a private Docker registry. When this is set:
     * * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.
@@ -1654,6 +2282,168 @@ package codebuild {
 
       __obj.asInstanceOf[RegistryCredential]
     }
+  }
+
+  /**
+    * Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.
+    */
+  @js.native
+  trait Report extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var created: js.UndefOr[Timestamp]
+    var executionId: js.UndefOr[String]
+    var expired: js.UndefOr[Timestamp]
+    var exportConfig: js.UndefOr[ReportExportConfig]
+    var name: js.UndefOr[String]
+    var reportGroupArn: js.UndefOr[NonEmptyString]
+    var status: js.UndefOr[ReportStatusType]
+    var testSummary: js.UndefOr[TestReportSummary]
+    var truncated: js.UndefOr[WrapperBoolean]
+    var `type`: js.UndefOr[ReportType]
+  }
+
+  object Report {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        created: js.UndefOr[Timestamp] = js.undefined,
+        executionId: js.UndefOr[String] = js.undefined,
+        expired: js.UndefOr[Timestamp] = js.undefined,
+        exportConfig: js.UndefOr[ReportExportConfig] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        reportGroupArn: js.UndefOr[NonEmptyString] = js.undefined,
+        status: js.UndefOr[ReportStatusType] = js.undefined,
+        testSummary: js.UndefOr[TestReportSummary] = js.undefined,
+        truncated: js.UndefOr[WrapperBoolean] = js.undefined,
+        `type`: js.UndefOr[ReportType] = js.undefined
+    ): Report = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      executionId.foreach(__v => __obj.updateDynamic("executionId")(__v.asInstanceOf[js.Any]))
+      expired.foreach(__v => __obj.updateDynamic("expired")(__v.asInstanceOf[js.Any]))
+      exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reportGroupArn.foreach(__v => __obj.updateDynamic("reportGroupArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      testSummary.foreach(__v => __obj.updateDynamic("testSummary")(__v.asInstanceOf[js.Any]))
+      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Report]
+    }
+  }
+
+  /**
+    * Information about the location where the run of a report is exported.
+    */
+  @js.native
+  trait ReportExportConfig extends js.Object {
+    var exportConfigType: js.UndefOr[ReportExportConfigType]
+    var s3Destination: js.UndefOr[S3ReportExportConfig]
+  }
+
+  object ReportExportConfig {
+    @inline
+    def apply(
+        exportConfigType: js.UndefOr[ReportExportConfigType] = js.undefined,
+        s3Destination: js.UndefOr[S3ReportExportConfig] = js.undefined
+    ): ReportExportConfig = {
+      val __obj = js.Dynamic.literal()
+      exportConfigType.foreach(__v => __obj.updateDynamic("exportConfigType")(__v.asInstanceOf[js.Any]))
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportExportConfig]
+    }
+  }
+
+  object ReportExportConfigTypeEnum {
+    val S3        = "S3"
+    val NO_EXPORT = "NO_EXPORT"
+
+    val values = js.Object.freeze(js.Array(S3, NO_EXPORT))
+  }
+
+  /**
+    * A filter used to return reports with the status specified by the input <code>status</code> parameter.
+    */
+  @js.native
+  trait ReportFilter extends js.Object {
+    var status: js.UndefOr[ReportStatusType]
+  }
+
+  object ReportFilter {
+    @inline
+    def apply(
+        status: js.UndefOr[ReportStatusType] = js.undefined
+    ): ReportFilter = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportFilter]
+    }
+  }
+
+  /**
+    * A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.
+    */
+  @js.native
+  trait ReportGroup extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var created: js.UndefOr[Timestamp]
+    var exportConfig: js.UndefOr[ReportExportConfig]
+    var lastModified: js.UndefOr[Timestamp]
+    var name: js.UndefOr[ReportGroupName]
+    var `type`: js.UndefOr[ReportType]
+  }
+
+  object ReportGroup {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        created: js.UndefOr[Timestamp] = js.undefined,
+        exportConfig: js.UndefOr[ReportExportConfig] = js.undefined,
+        lastModified: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[ReportGroupName] = js.undefined,
+        `type`: js.UndefOr[ReportType] = js.undefined
+    ): ReportGroup = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
+      lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportGroup]
+    }
+  }
+
+  object ReportGroupSortByTypeEnum {
+    val NAME               = "NAME"
+    val CREATED_TIME       = "CREATED_TIME"
+    val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME"
+
+    val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
+  }
+
+  object ReportPackagingTypeEnum {
+    val ZIP  = "ZIP"
+    val NONE = "NONE"
+
+    val values = js.Object.freeze(js.Array(ZIP, NONE))
+  }
+
+  object ReportStatusTypeEnum {
+    val GENERATING = "GENERATING"
+    val SUCCEEDED  = "SUCCEEDED"
+    val FAILED     = "FAILED"
+    val INCOMPLETE = "INCOMPLETE"
+    val DELETING   = "DELETING"
+
+    val values = js.Object.freeze(js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING))
+  }
+
+  object ReportTypeEnum {
+    val TEST = "TEST"
+
+    val values = js.Object.freeze(js.Array(TEST))
   }
 
   /**
@@ -1683,12 +2473,50 @@ package codebuild {
     }
   }
 
+  /**
+    * Information about the S3 bucket where the raw data of a report are exported.
+    */
+  @js.native
+  trait S3ReportExportConfig extends js.Object {
+    var bucket: js.UndefOr[NonEmptyString]
+    var encryptionDisabled: js.UndefOr[WrapperBoolean]
+    var encryptionKey: js.UndefOr[NonEmptyString]
+    var packaging: js.UndefOr[ReportPackagingType]
+    var path: js.UndefOr[String]
+  }
+
+  object S3ReportExportConfig {
+    @inline
+    def apply(
+        bucket: js.UndefOr[NonEmptyString] = js.undefined,
+        encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
+        encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
+        packaging: js.UndefOr[ReportPackagingType] = js.undefined,
+        path: js.UndefOr[String] = js.undefined
+    ): S3ReportExportConfig = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      packaging.foreach(__v => __obj.updateDynamic("packaging")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ReportExportConfig]
+    }
+  }
+
   object ServerTypeEnum {
     val GITHUB            = "GITHUB"
     val BITBUCKET         = "BITBUCKET"
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE"
 
     val values = js.Object.freeze(js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE))
+  }
+
+  object SharedResourceSortByTypeEnum {
+    val ARN           = "ARN"
+    val MODIFIED_TIME = "MODIFIED_TIME"
+
+    val values = js.Object.freeze(js.Array(ARN, MODIFIED_TIME))
   }
 
   object SortOrderTypeEnum {
@@ -1966,6 +2794,92 @@ package codebuild {
     }
   }
 
+  /**
+    * Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.
+    */
+  @js.native
+  trait TestCase extends js.Object {
+    var durationInNanoSeconds: js.UndefOr[WrapperLong]
+    var expired: js.UndefOr[Timestamp]
+    var message: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var prefix: js.UndefOr[String]
+    var reportArn: js.UndefOr[NonEmptyString]
+    var status: js.UndefOr[String]
+    var testRawDataPath: js.UndefOr[String]
+  }
+
+  object TestCase {
+    @inline
+    def apply(
+        durationInNanoSeconds: js.UndefOr[WrapperLong] = js.undefined,
+        expired: js.UndefOr[Timestamp] = js.undefined,
+        message: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        prefix: js.UndefOr[String] = js.undefined,
+        reportArn: js.UndefOr[NonEmptyString] = js.undefined,
+        status: js.UndefOr[String] = js.undefined,
+        testRawDataPath: js.UndefOr[String] = js.undefined
+    ): TestCase = {
+      val __obj = js.Dynamic.literal()
+      durationInNanoSeconds.foreach(__v => __obj.updateDynamic("durationInNanoSeconds")(__v.asInstanceOf[js.Any]))
+      expired.foreach(__v => __obj.updateDynamic("expired")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      reportArn.foreach(__v => __obj.updateDynamic("reportArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      testRawDataPath.foreach(__v => __obj.updateDynamic("testRawDataPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestCase]
+    }
+  }
+
+  /**
+    * A filter used to return specific types of test cases.
+    */
+  @js.native
+  trait TestCaseFilter extends js.Object {
+    var status: js.UndefOr[String]
+  }
+
+  object TestCaseFilter {
+    @inline
+    def apply(
+        status: js.UndefOr[String] = js.undefined
+    ): TestCaseFilter = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestCaseFilter]
+    }
+  }
+
+  /**
+    * Information about a test report.
+    */
+  @js.native
+  trait TestReportSummary extends js.Object {
+    var durationInNanoSeconds: WrapperLong
+    var statusCounts: ReportStatusCounts
+    var total: WrapperInt
+  }
+
+  object TestReportSummary {
+    @inline
+    def apply(
+        durationInNanoSeconds: WrapperLong,
+        statusCounts: ReportStatusCounts,
+        total: WrapperInt
+    ): TestReportSummary = {
+      val __obj = js.Dynamic.literal(
+        "durationInNanoSeconds" -> durationInNanoSeconds.asInstanceOf[js.Any],
+        "statusCounts"          -> statusCounts.asInstanceOf[js.Any],
+        "total"                 -> total.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TestReportSummary]
+    }
+  }
+
   @js.native
   trait UpdateProjectInput extends js.Object {
     var name: NonEmptyString
@@ -2048,6 +2962,43 @@ package codebuild {
       val __obj = js.Dynamic.literal()
       project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateReportGroupInput extends js.Object {
+    var arn: NonEmptyString
+    var exportConfig: js.UndefOr[ReportExportConfig]
+  }
+
+  object UpdateReportGroupInput {
+    @inline
+    def apply(
+        arn: NonEmptyString,
+        exportConfig: js.UndefOr[ReportExportConfig] = js.undefined
+    ): UpdateReportGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+
+      exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReportGroupInput]
+    }
+  }
+
+  @js.native
+  trait UpdateReportGroupOutput extends js.Object {
+    var reportGroup: js.UndefOr[ReportGroup]
+  }
+
+  object UpdateReportGroupOutput {
+    @inline
+    def apply(
+        reportGroup: js.UndefOr[ReportGroup] = js.undefined
+    ): UpdateReportGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      reportGroup.foreach(__v => __obj.updateDynamic("reportGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReportGroupOutput]
     }
   }
 

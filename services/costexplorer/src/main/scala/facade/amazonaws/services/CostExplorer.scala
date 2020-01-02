@@ -11,10 +11,16 @@ package object costexplorer {
   type AccountScope                                 = String
   type AmortizedRecurringFee                        = String
   type AmortizedUpfrontFee                          = String
+  type Arn                                          = String
   type AttributeType                                = String
   type AttributeValue                               = String
   type Attributes                                   = js.Dictionary[AttributeValue]
   type Context                                      = String
+  type CostCategoryName                             = String
+  type CostCategoryReferencesList                   = js.Array[CostCategoryReference]
+  type CostCategoryRuleVersion                      = String
+  type CostCategoryRulesList                        = js.Array[CostCategoryRule]
+  type CostCategoryValue                            = String
   type CoverageHoursPercentage                      = String
   type CoverageNormalizedUnitsPercentage            = String
   type CoveragesByTime                              = js.Array[CoverageByTime]
@@ -91,8 +97,19 @@ package object costexplorer {
   type Value                                        = String
   type Values                                       = js.Array[Value]
   type YearMonthDay                                 = String
+  type ZonedDateTime                                = String
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
+
+    @inline def createCostCategoryDefinitionFuture(
+        params: CreateCostCategoryDefinitionRequest
+    ): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise.toFuture
+    @inline def deleteCostCategoryDefinitionFuture(
+        params: DeleteCostCategoryDefinitionRequest
+    ): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise.toFuture
+    @inline def describeCostCategoryDefinitionFuture(
+        params: DescribeCostCategoryDefinitionRequest
+    ): Future[DescribeCostCategoryDefinitionResponse] = service.describeCostCategoryDefinition(params).promise.toFuture
     @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
       service.getCostAndUsage(params).promise.toFuture
     @inline def getCostAndUsageWithResourcesFuture(
@@ -133,6 +150,12 @@ package object costexplorer {
       service.getTags(params).promise.toFuture
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
       service.getUsageForecast(params).promise.toFuture
+    @inline def listCostCategoryDefinitionsFuture(
+        params: ListCostCategoryDefinitionsRequest
+    ): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise.toFuture
+    @inline def updateCostCategoryDefinitionFuture(
+        params: UpdateCostCategoryDefinitionRequest
+    ): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise.toFuture
   }
 }
 
@@ -142,6 +165,15 @@ package costexplorer {
   class CostExplorer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createCostCategoryDefinition(
+        params: CreateCostCategoryDefinitionRequest
+    ): Request[CreateCostCategoryDefinitionResponse] = js.native
+    def deleteCostCategoryDefinition(
+        params: DeleteCostCategoryDefinitionRequest
+    ): Request[DeleteCostCategoryDefinitionResponse] = js.native
+    def describeCostCategoryDefinition(
+        params: DescribeCostCategoryDefinitionRequest
+    ): Request[DescribeCostCategoryDefinitionResponse]                                    = js.native
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
     def getCostAndUsageWithResources(
         params: GetCostAndUsageWithResourcesRequest
@@ -172,6 +204,12 @@ package costexplorer {
     ): Request[GetSavingsPlansUtilizationDetailsResponse]                                    = js.native
     def getTags(params: GetTagsRequest): Request[GetTagsResponse]                            = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
+    def listCostCategoryDefinitions(
+        params: ListCostCategoryDefinitionsRequest
+    ): Request[ListCostCategoryDefinitionsResponse] = js.native
+    def updateCostCategoryDefinition(
+        params: UpdateCostCategoryDefinitionRequest
+    ): Request[UpdateCostCategoryDefinitionResponse] = js.native
   }
 
   object AccountScopeEnum {
@@ -187,6 +225,130 @@ package costexplorer {
     val SAVINGS_PLANS  = "SAVINGS_PLANS"
 
     val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
+  }
+
+  /**
+    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    *  </important> The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
+    */
+  @js.native
+  trait CostCategory extends js.Object {
+    var CostCategoryArn: Arn
+    var EffectiveStart: ZonedDateTime
+    var Name: CostCategoryName
+    var RuleVersion: CostCategoryRuleVersion
+    var Rules: CostCategoryRulesList
+    var EffectiveEnd: js.UndefOr[ZonedDateTime]
+  }
+
+  object CostCategory {
+    @inline
+    def apply(
+        CostCategoryArn: Arn,
+        EffectiveStart: ZonedDateTime,
+        Name: CostCategoryName,
+        RuleVersion: CostCategoryRuleVersion,
+        Rules: CostCategoryRulesList,
+        EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined
+    ): CostCategory = {
+      val __obj = js.Dynamic.literal(
+        "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
+        "EffectiveStart"  -> EffectiveStart.asInstanceOf[js.Any],
+        "Name"            -> Name.asInstanceOf[js.Any],
+        "RuleVersion"     -> RuleVersion.asInstanceOf[js.Any],
+        "Rules"           -> Rules.asInstanceOf[js.Any]
+      )
+
+      EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategory]
+    }
+  }
+
+  /**
+    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    *  </important> A reference to a Cost Category containing only enough information to identify the Cost Category.
+    *  You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.
+    */
+  @js.native
+  trait CostCategoryReference extends js.Object {
+    var CostCategoryArn: js.UndefOr[Arn]
+    var EffectiveEnd: js.UndefOr[ZonedDateTime]
+    var EffectiveStart: js.UndefOr[ZonedDateTime]
+    var Name: js.UndefOr[CostCategoryName]
+  }
+
+  object CostCategoryReference {
+    @inline
+    def apply(
+        CostCategoryArn: js.UndefOr[Arn] = js.undefined,
+        EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
+        EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
+        Name: js.UndefOr[CostCategoryName] = js.undefined
+    ): CostCategoryReference = {
+      val __obj = js.Dynamic.literal()
+      CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
+      EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
+      EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategoryReference]
+    }
+  }
+
+  /**
+    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    *  </important> Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
+    */
+  @js.native
+  trait CostCategoryRule extends js.Object {
+    var Rule: Expression
+    var Value: CostCategoryValue
+  }
+
+  object CostCategoryRule {
+    @inline
+    def apply(
+        Rule: Expression,
+        Value: CostCategoryValue
+    ): CostCategoryRule = {
+      val __obj = js.Dynamic.literal(
+        "Rule"  -> Rule.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CostCategoryRule]
+    }
+  }
+
+  /**
+    * The rule schema version in this particular Cost Category.
+    */
+  object CostCategoryRuleVersionEnum {
+    val `CostCategoryExpression.v1` = "CostCategoryExpression.v1"
+
+    val values = js.Object.freeze(js.Array(`CostCategoryExpression.v1`))
+  }
+
+  /**
+    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    *  </important> The values that are available for Cost Categories.
+    */
+  @js.native
+  trait CostCategoryValues extends js.Object {
+    var Key: js.UndefOr[CostCategoryName]
+    var Values: js.UndefOr[Values]
+  }
+
+  object CostCategoryValues {
+    @inline
+    def apply(
+        Key: js.UndefOr[CostCategoryName] = js.undefined,
+        Values: js.UndefOr[Values] = js.undefined
+    ): CostCategoryValues = {
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategoryValues]
+    }
   }
 
   /**
@@ -319,6 +481,49 @@ package costexplorer {
     }
   }
 
+  @js.native
+  trait CreateCostCategoryDefinitionRequest extends js.Object {
+    var Name: CostCategoryName
+    var RuleVersion: CostCategoryRuleVersion
+    var Rules: CostCategoryRulesList
+  }
+
+  object CreateCostCategoryDefinitionRequest {
+    @inline
+    def apply(
+        Name: CostCategoryName,
+        RuleVersion: CostCategoryRuleVersion,
+        Rules: CostCategoryRulesList
+    ): CreateCostCategoryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name"        -> Name.asInstanceOf[js.Any],
+        "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
+        "Rules"       -> Rules.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCostCategoryDefinitionResponse extends js.Object {
+    var CostCategoryArn: js.UndefOr[Arn]
+    var EffectiveStart: js.UndefOr[ZonedDateTime]
+  }
+
+  object CreateCostCategoryDefinitionResponse {
+    @inline
+    def apply(
+        CostCategoryArn: js.UndefOr[Arn] = js.undefined,
+        EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined
+    ): CreateCostCategoryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
+      EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCostCategoryDefinitionResponse]
+    }
+  }
+
   /**
     * Context about the current instance.
     */
@@ -394,6 +599,80 @@ package costexplorer {
       )
 
       __obj.asInstanceOf[DateInterval]
+    }
+  }
+
+  @js.native
+  trait DeleteCostCategoryDefinitionRequest extends js.Object {
+    var CostCategoryArn: Arn
+  }
+
+  object DeleteCostCategoryDefinitionRequest {
+    @inline
+    def apply(
+        CostCategoryArn: Arn
+    ): DeleteCostCategoryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteCostCategoryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCostCategoryDefinitionResponse extends js.Object {
+    var CostCategoryArn: js.UndefOr[Arn]
+    var EffectiveEnd: js.UndefOr[ZonedDateTime]
+  }
+
+  object DeleteCostCategoryDefinitionResponse {
+    @inline
+    def apply(
+        CostCategoryArn: js.UndefOr[Arn] = js.undefined,
+        EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined
+    ): DeleteCostCategoryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
+      EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCostCategoryDefinitionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeCostCategoryDefinitionRequest extends js.Object {
+    var CostCategoryArn: Arn
+    var EffectiveOn: js.UndefOr[ZonedDateTime]
+  }
+
+  object DescribeCostCategoryDefinitionRequest {
+    @inline
+    def apply(
+        CostCategoryArn: Arn,
+        EffectiveOn: js.UndefOr[ZonedDateTime] = js.undefined
+    ): DescribeCostCategoryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any]
+      )
+
+      EffectiveOn.foreach(__v => __obj.updateDynamic("EffectiveOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCostCategoryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCostCategoryDefinitionResponse extends js.Object {
+    var CostCategory: js.UndefOr[CostCategory]
+  }
+
+  object DescribeCostCategoryDefinitionResponse {
+    @inline
+    def apply(
+        CostCategory: js.UndefOr[CostCategory] = js.undefined
+    ): DescribeCostCategoryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      CostCategory.foreach(__v => __obj.updateDynamic("CostCategory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCostCategoryDefinitionResponse]
     }
   }
 
@@ -716,6 +995,7 @@ package costexplorer {
   @js.native
   trait Expression extends js.Object {
     var And: js.UndefOr[Expressions]
+    var CostCategories: js.UndefOr[CostCategoryValues]
     var Dimensions: js.UndefOr[DimensionValues]
     var Not: js.UndefOr[Expression]
     var Or: js.UndefOr[Expressions]
@@ -726,6 +1006,7 @@ package costexplorer {
     @inline
     def apply(
         And: js.UndefOr[Expressions] = js.undefined,
+        CostCategories: js.UndefOr[CostCategoryValues] = js.undefined,
         Dimensions: js.UndefOr[DimensionValues] = js.undefined,
         Not: js.UndefOr[Expression] = js.undefined,
         Or: js.UndefOr[Expressions] = js.undefined,
@@ -733,6 +1014,7 @@ package costexplorer {
     ): Expression = {
       val __obj = js.Dynamic.literal()
       And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
+      CostCategories.foreach(__v => __obj.updateDynamic("CostCategories")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       Not.foreach(__v => __obj.updateDynamic("Not")(__v.asInstanceOf[js.Any]))
       Or.foreach(__v => __obj.updateDynamic("Or")(__v.asInstanceOf[js.Any]))
@@ -1592,10 +1874,11 @@ package costexplorer {
   }
 
   object GroupDefinitionTypeEnum {
-    val DIMENSION = "DIMENSION"
-    val TAG       = "TAG"
+    val DIMENSION     = "DIMENSION"
+    val TAG           = "TAG"
+    val COST_CATEGORY = "COST_CATEGORY"
 
-    val values = js.Object.freeze(js.Array(DIMENSION, TAG))
+    val values = js.Object.freeze(js.Array(DIMENSION, TAG, COST_CATEGORY))
   }
 
   /**
@@ -1628,6 +1911,44 @@ package costexplorer {
       RDSInstanceDetails.foreach(__v => __obj.updateDynamic("RDSInstanceDetails")(__v.asInstanceOf[js.Any]))
       RedshiftInstanceDetails.foreach(__v => __obj.updateDynamic("RedshiftInstanceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceDetails]
+    }
+  }
+
+  @js.native
+  trait ListCostCategoryDefinitionsRequest extends js.Object {
+    var EffectiveOn: js.UndefOr[ZonedDateTime]
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object ListCostCategoryDefinitionsRequest {
+    @inline
+    def apply(
+        EffectiveOn: js.UndefOr[ZonedDateTime] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): ListCostCategoryDefinitionsRequest = {
+      val __obj = js.Dynamic.literal()
+      EffectiveOn.foreach(__v => __obj.updateDynamic("EffectiveOn")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCostCategoryDefinitionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCostCategoryDefinitionsResponse extends js.Object {
+    var CostCategoryReferences: js.UndefOr[CostCategoryReferencesList]
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object ListCostCategoryDefinitionsResponse {
+    @inline
+    def apply(
+        CostCategoryReferences: js.UndefOr[CostCategoryReferencesList] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): ListCostCategoryDefinitionsResponse = {
+      val __obj = js.Dynamic.literal()
+      CostCategoryReferences.foreach(__v => __obj.updateDynamic("CostCategoryReferences")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCostCategoryDefinitionsResponse]
     }
   }
 
@@ -2421,6 +2742,7 @@ package costexplorer {
     var EstimatedAverageUtilization: js.UndefOr[GenericString]
     var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
     var EstimatedOnDemandCost: js.UndefOr[GenericString]
+    var EstimatedOnDemandCostWithCurrentCommitment: js.UndefOr[GenericString]
     var EstimatedROI: js.UndefOr[GenericString]
     var EstimatedSPCost: js.UndefOr[GenericString]
     var EstimatedSavingsAmount: js.UndefOr[GenericString]
@@ -2441,6 +2763,7 @@ package costexplorer {
         EstimatedAverageUtilization: js.UndefOr[GenericString] = js.undefined,
         EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
         EstimatedOnDemandCost: js.UndefOr[GenericString] = js.undefined,
+        EstimatedOnDemandCostWithCurrentCommitment: js.UndefOr[GenericString] = js.undefined,
         EstimatedROI: js.UndefOr[GenericString] = js.undefined,
         EstimatedSPCost: js.UndefOr[GenericString] = js.undefined,
         EstimatedSavingsAmount: js.UndefOr[GenericString] = js.undefined,
@@ -2468,6 +2791,9 @@ package costexplorer {
         __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
       )
       EstimatedOnDemandCost.foreach(__v => __obj.updateDynamic("EstimatedOnDemandCost")(__v.asInstanceOf[js.Any]))
+      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v =>
+        __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any])
+      )
       EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
       EstimatedSPCost.foreach(__v => __obj.updateDynamic("EstimatedSPCost")(__v.asInstanceOf[js.Any]))
       EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
@@ -2514,6 +2840,7 @@ package costexplorer {
     var CurrentOnDemandSpend: js.UndefOr[GenericString]
     var DailyCommitmentToPurchase: js.UndefOr[GenericString]
     var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
+    var EstimatedOnDemandCostWithCurrentCommitment: js.UndefOr[GenericString]
     var EstimatedROI: js.UndefOr[GenericString]
     var EstimatedSavingsAmount: js.UndefOr[GenericString]
     var EstimatedSavingsPercentage: js.UndefOr[GenericString]
@@ -2529,6 +2856,7 @@ package costexplorer {
         CurrentOnDemandSpend: js.UndefOr[GenericString] = js.undefined,
         DailyCommitmentToPurchase: js.UndefOr[GenericString] = js.undefined,
         EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedOnDemandCostWithCurrentCommitment: js.UndefOr[GenericString] = js.undefined,
         EstimatedROI: js.UndefOr[GenericString] = js.undefined,
         EstimatedSavingsAmount: js.UndefOr[GenericString] = js.undefined,
         EstimatedSavingsPercentage: js.UndefOr[GenericString] = js.undefined,
@@ -2544,6 +2872,9 @@ package costexplorer {
       )
       EstimatedMonthlySavingsAmount.foreach(__v =>
         __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
+      )
+      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v =>
+        __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any])
       )
       EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
       EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
@@ -2807,6 +3138,49 @@ package costexplorer {
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       EstimatedMonthlySavings.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateRecommendationDetail]
+    }
+  }
+
+  @js.native
+  trait UpdateCostCategoryDefinitionRequest extends js.Object {
+    var CostCategoryArn: Arn
+    var RuleVersion: CostCategoryRuleVersion
+    var Rules: CostCategoryRulesList
+  }
+
+  object UpdateCostCategoryDefinitionRequest {
+    @inline
+    def apply(
+        CostCategoryArn: Arn,
+        RuleVersion: CostCategoryRuleVersion,
+        Rules: CostCategoryRulesList
+    ): UpdateCostCategoryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
+        "RuleVersion"     -> RuleVersion.asInstanceOf[js.Any],
+        "Rules"           -> Rules.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCostCategoryDefinitionResponse extends js.Object {
+    var CostCategoryArn: js.UndefOr[Arn]
+    var EffectiveStart: js.UndefOr[ZonedDateTime]
+  }
+
+  object UpdateCostCategoryDefinitionResponse {
+    @inline
+    def apply(
+        CostCategoryArn: js.UndefOr[Arn] = js.undefined,
+        EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined
+    ): UpdateCostCategoryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
+      EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCostCategoryDefinitionResponse]
     }
   }
 

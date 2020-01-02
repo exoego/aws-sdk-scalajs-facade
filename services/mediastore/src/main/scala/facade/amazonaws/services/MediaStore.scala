@@ -34,6 +34,7 @@ package object mediastore {
   type TimeStamp                     = js.Date
 
   implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
+
     @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
       service.createContainer(params).promise.toFuture
     @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =
@@ -725,22 +726,24 @@ package mediastore {
   }
 
   /**
-    * A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://aws.amazon.com/documentation/mediastore/tagging|Tagging Resources in MediaStore]].
+    * A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html|Tagging Resources in MediaStore]].
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object Tag {
     @inline
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
+        Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }

@@ -29,6 +29,7 @@ package object iotjobsdataplane {
   type VersionNumber                    = Double
 
   implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
+
     @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
       service.describeJobExecution(params).promise.toFuture
     @inline def getPendingJobExecutionsFuture(

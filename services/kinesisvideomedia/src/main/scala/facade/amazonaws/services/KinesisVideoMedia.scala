@@ -19,6 +19,7 @@ package object kinesisvideomedia {
   type Timestamp         = js.Date
 
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
+
     @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] =
       service.getMedia(params).promise.toFuture
   }

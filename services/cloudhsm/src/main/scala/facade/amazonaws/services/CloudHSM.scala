@@ -45,6 +45,7 @@ package object cloudhsm {
   type VpcId                  = String
 
   implicit final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
+
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResponse] =
       service.addTagsToResource(params).promise.toFuture
     @inline def createHapgFuture(params: CreateHapgRequest): Future[CreateHapgResponse] =

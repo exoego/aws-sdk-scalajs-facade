@@ -63,6 +63,7 @@ package object cloudfront {
   type timestamp                                 = js.Date
 
   implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
+
     @inline def createCloudFrontOriginAccessIdentityFuture(
         params: CreateCloudFrontOriginAccessIdentityRequest
     ): Future[CreateCloudFrontOriginAccessIdentityResult] =
@@ -2068,7 +2069,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that specifies how CloudFront handles query strings and cookies.
+    * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
     */
   @js.native
   trait ForwardedValues extends js.Object {
@@ -4583,7 +4584,7 @@ package cloudfront {
   /**
     * A complex type that specifies the following:
     * * Whether you want viewers to use HTTP or HTTPS to request your objects.
-    *  * If you want viewers to use HTTPS, whether you're using an alternate domain name such as <code>example.com</code> or the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>.
+    *  * If you want viewers to use HTTPS, whether you're using an alternate domain name, such as <code>example.com</code>, or the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>.
     *  * If you're using an alternate domain name, whether AWS Certificate Manager (ACM) provided the certificate, or you purchased a certificate from a third-party certificate authority and imported it into ACM or uploaded it to the IAM certificate store.
     * Specify only one of the following values:
     * * [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn|ACMCertificateArn]]

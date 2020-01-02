@@ -11,6 +11,7 @@ package object ssm {
   type Account                                              = String
   type AccountId                                            = String
   type AccountIdList                                        = js.Array[AccountId]
+  type AccountSharingInfoList                               = js.Array[AccountSharingInfo]
   type Accounts                                             = js.Array[Account]
   type ActivationCode                                       = String
   type ActivationDescription                                = String
@@ -48,6 +49,7 @@ package object ssm {
   type AttachmentContentList                                = js.Array[AttachmentContent]
   type AttachmentHash                                       = String
   type AttachmentHashType                                   = String
+  type AttachmentIdentifier                                 = String
   type AttachmentInformationList                            = js.Array[AttachmentInformation]
   type AttachmentName                                       = String
   type AttachmentUrl                                        = String
@@ -75,6 +77,9 @@ package object ssm {
   type BaselineId                                           = String
   type BaselineName                                         = String
   type BatchErrorMessage                                    = String
+  type CalendarNameOrARN                                    = String
+  type CalendarNameOrARNList                                = js.Array[CalendarNameOrARN]
+  type CalendarState                                        = String
   type ClientToken                                          = String
   type CloudWatchLogGroupName                               = String
   type CloudWatchOutputEnabled                              = Boolean
@@ -148,6 +153,7 @@ package object ssm {
   type DocumentParameterName                                = String
   type DocumentParameterType                                = String
   type DocumentPermissionType                               = String
+  type DocumentRequiresList                                 = js.Array[DocumentRequires]
   type DocumentSchemaVersion                                = String
   type DocumentSha1                                         = String
   type DocumentStatus                                       = String
@@ -169,6 +175,7 @@ package object ssm {
   type GetInventorySchemaMaxResults                         = Int
   type GetParametersByPathMaxResults                        = Int
   type IPAddress                                            = String
+  type ISO8601String                                        = String
   type IamRole                                              = String
   type IdempotencyToken                                     = String
   type InstallOverrideList                                  = String
@@ -306,6 +313,7 @@ package object ssm {
   type OpsDataAttributeName                    = String
   type OpsDataTypeName                         = String
   type OpsEntityId                             = String
+  type OpsEntityItemCaptureTime                = String
   type OpsEntityItemEntry                      = js.Dictionary[AttributeValue]
   type OpsEntityItemEntryList                  = js.Array[OpsEntityItemEntry]
   type OpsEntityItemKey                        = String
@@ -316,6 +324,7 @@ package object ssm {
   type OpsFilterOperatorType                   = String
   type OpsFilterValue                          = String
   type OpsFilterValueList                      = js.Array[OpsFilterValue]
+  type OpsItemCategory                         = String
   type OpsItemDataKey                          = String
   type OpsItemDataType                         = String
   type OpsItemDataValueString                  = String
@@ -331,10 +340,12 @@ package object ssm {
   type OpsItemOperationalData                  = js.Dictionary[OpsItemDataValue]
   type OpsItemOpsDataKeysList                  = js.Array[String]
   type OpsItemPriority                         = Int
+  type OpsItemSeverity                         = String
   type OpsItemSource                           = String
   type OpsItemStatus                           = String
   type OpsItemSummaries                        = js.Array[OpsItemSummary]
   type OpsItemTitle                            = String
+  type OpsResultAttributeList                  = js.Array[OpsResultAttribute]
   type OutputSourceId                          = String
   type OutputSourceType                        = String
   type OwnerInformation                        = String
@@ -390,6 +401,7 @@ package object ssm {
   type PatchIdList                             = js.Array[PatchId]
   type PatchInstalledCount                     = Int
   type PatchInstalledOtherCount                = Int
+  type PatchInstalledPendingRebootCount        = Int
   type PatchInstalledRejectedCount             = Int
   type PatchKbNumber                           = String
   type PatchLanguage                           = String
@@ -424,6 +436,7 @@ package object ssm {
   type PlatformTypeList                        = js.Array[PlatformType]
   type Product                                 = String
   type PutInventoryMessage                     = String
+  type RebootOption                            = String
   type Region                                  = String
   type Regions                                 = js.Array[Region]
   type RegistrationLimit                       = Int
@@ -435,12 +448,22 @@ package object ssm {
   type ResourceCountByStatus                   = String
   type ResourceDataSyncAWSKMSKeyARN            = String
   type ResourceDataSyncCreatedTime             = js.Date
+  type ResourceDataSyncIncludeFutureRegions    = Boolean
   type ResourceDataSyncItemList                = js.Array[ResourceDataSyncItem]
+  type ResourceDataSyncLastModifiedTime        = js.Date
   type ResourceDataSyncName                    = String
+  type ResourceDataSyncOrganizationSourceType  = String
+  type ResourceDataSyncOrganizationalUnitId    = String
+  type ResourceDataSyncOrganizationalUnitList  = js.Array[ResourceDataSyncOrganizationalUnit]
   type ResourceDataSyncS3BucketName            = String
   type ResourceDataSyncS3Format                = String
   type ResourceDataSyncS3Prefix                = String
   type ResourceDataSyncS3Region                = String
+  type ResourceDataSyncSourceRegion            = String
+  type ResourceDataSyncSourceRegionList        = js.Array[ResourceDataSyncSourceRegion]
+  type ResourceDataSyncSourceType              = String
+  type ResourceDataSyncState                   = String
+  type ResourceDataSyncType                    = String
   type ResourceId                              = String
   type ResourceType                            = String
   type ResourceTypeForTagging                  = String
@@ -471,6 +494,7 @@ package object ssm {
   type SessionState                            = String
   type SessionStatus                           = String
   type SessionTarget                           = String
+  type SharedDocumentVersion                   = String
   type SignalType                              = String
   type SnapshotDownloadUrl                     = String
   type SnapshotId                              = String
@@ -514,6 +538,7 @@ package object ssm {
   type Version                                 = String
 
   implicit final class SSMOps(private val service: SSM) extends AnyVal {
+
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
       service.addTagsToResource(params).promise.toFuture
     @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =
@@ -680,6 +705,8 @@ package object ssm {
     @inline def getAutomationExecutionFuture(
         params: GetAutomationExecutionRequest
     ): Future[GetAutomationExecutionResult] = service.getAutomationExecution(params).promise.toFuture
+    @inline def getCalendarStateFuture(params: GetCalendarStateRequest): Future[GetCalendarStateResponse] =
+      service.getCalendarState(params).promise.toFuture
     @inline def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] =
       service.getCommandInvocation(params).promise.toFuture
     @inline def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] =
@@ -835,6 +862,9 @@ package object ssm {
       service.updateOpsItem(params).promise.toFuture
     @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
       service.updatePatchBaseline(params).promise.toFuture
+    @inline def updateResourceDataSyncFuture(
+        params: UpdateResourceDataSyncRequest
+    ): Future[UpdateResourceDataSyncResult] = service.updateResourceDataSync(params).promise.toFuture
     @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
       service.updateServiceSetting(params).promise.toFuture
   }
@@ -958,6 +988,7 @@ package ssm {
       js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse]                 = js.native
     def getAutomationExecution(params: GetAutomationExecutionRequest): Request[GetAutomationExecutionResult] = js.native
+    def getCalendarState(params: GetCalendarStateRequest): Request[GetCalendarStateResponse]                 = js.native
     def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult]       = js.native
     def getConnectionStatus(params: GetConnectionStatusRequest): Request[GetConnectionStatusResponse]        = js.native
     def getDefaultPatchBaseline(params: GetDefaultPatchBaselineRequest): Request[GetDefaultPatchBaselineResult] =
@@ -1054,9 +1085,32 @@ package ssm {
     ): Request[UpdateMaintenanceWindowTaskResult] = js.native
     def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] =
       js.native
-    def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse]                    = js.native
-    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult]    = js.native
-    def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
+    def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse]                          = js.native
+    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult]          = js.native
+    def updateResourceDataSync(params: UpdateResourceDataSyncRequest): Request[UpdateResourceDataSyncResult] = js.native
+    def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult]       = js.native
+  }
+
+  /**
+    * Information includes the AWS account ID where the current document is shared and the version shared with that account.
+    */
+  @js.native
+  trait AccountSharingInfo extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var SharedDocumentVersion: js.UndefOr[SharedDocumentVersion]
+  }
+
+  object AccountSharingInfo {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        SharedDocumentVersion: js.UndefOr[SharedDocumentVersion] = js.undefined
+    ): AccountSharingInfo = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      SharedDocumentVersion.foreach(__v => __obj.updateDynamic("SharedDocumentVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountSharingInfo]
+    }
   }
 
   /**
@@ -1661,11 +1715,12 @@ package ssm {
   }
 
   /**
-    * A key and value pair that identifies the location of an attachment to a document.
+    * Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document.
     */
   @js.native
   trait AttachmentsSource extends js.Object {
     var Key: js.UndefOr[AttachmentsSourceKey]
+    var Name: js.UndefOr[AttachmentIdentifier]
     var Values: js.UndefOr[AttachmentsSourceValues]
   }
 
@@ -1673,19 +1728,23 @@ package ssm {
     @inline
     def apply(
         Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
+        Name: js.UndefOr[AttachmentIdentifier] = js.undefined,
         Values: js.UndefOr[AttachmentsSourceValues] = js.undefined
     ): AttachmentsSource = {
       val __obj = js.Dynamic.literal()
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachmentsSource]
     }
   }
 
   object AttachmentsSourceKeyEnum {
-    val SourceUrl = "SourceUrl"
+    val SourceUrl           = "SourceUrl"
+    val S3FileUrl           = "S3FileUrl"
+    val AttachmentReference = "AttachmentReference"
 
-    val values = js.Object.freeze(js.Array(SourceUrl))
+    val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
   }
 
   /**
@@ -1816,6 +1875,7 @@ package ssm {
     val StartTimeBefore    = "StartTimeBefore"
     val StartTimeAfter     = "StartTimeAfter"
     val AutomationType     = "AutomationType"
+    val TagKey             = "TagKey"
 
     val values = js.Object.freeze(
       js.Array(
@@ -1826,7 +1886,8 @@ package ssm {
         CurrentAction,
         StartTimeBefore,
         StartTimeAfter,
-        AutomationType
+        AutomationType,
+        TagKey
       )
     )
   }
@@ -1936,6 +1997,13 @@ package ssm {
     val Local        = "Local"
 
     val values = js.Object.freeze(js.Array(CrossAccount, Local))
+  }
+
+  object CalendarStateEnum {
+    val OPEN   = "OPEN"
+    val CLOSED = "CLOSED"
+
+    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
 
   /**
@@ -2737,6 +2805,7 @@ package ssm {
     var Attachments: js.UndefOr[AttachmentsSourceList]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
+    var Requires: js.UndefOr[DocumentRequiresList]
     var Tags: js.UndefOr[TagList]
     var TargetType: js.UndefOr[TargetType]
     var VersionName: js.UndefOr[DocumentVersionName]
@@ -2750,6 +2819,7 @@ package ssm {
         Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
+        Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
@@ -2762,6 +2832,7 @@ package ssm {
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
@@ -2854,10 +2925,12 @@ package ssm {
     var Description: OpsItemDescription
     var Source: OpsItemSource
     var Title: OpsItemTitle
+    var Category: js.UndefOr[OpsItemCategory]
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Severity: js.UndefOr[OpsItemSeverity]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -2867,10 +2940,12 @@ package ssm {
         Description: OpsItemDescription,
         Source: OpsItemSource,
         Title: OpsItemTitle,
+        Category: js.UndefOr[OpsItemCategory] = js.undefined,
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateOpsItemRequest = {
       val __obj = js.Dynamic.literal(
@@ -2879,10 +2954,12 @@ package ssm {
         "Title"       -> Title.asInstanceOf[js.Any]
       )
 
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsItemRequest]
     }
@@ -2980,21 +3057,27 @@ package ssm {
 
   @js.native
   trait CreateResourceDataSyncRequest extends js.Object {
-    var S3Destination: ResourceDataSyncS3Destination
     var SyncName: ResourceDataSyncName
+    var S3Destination: js.UndefOr[ResourceDataSyncS3Destination]
+    var SyncSource: js.UndefOr[ResourceDataSyncSource]
+    var SyncType: js.UndefOr[ResourceDataSyncType]
   }
 
   object CreateResourceDataSyncRequest {
     @inline
     def apply(
-        S3Destination: ResourceDataSyncS3Destination,
-        SyncName: ResourceDataSyncName
+        SyncName: ResourceDataSyncName,
+        S3Destination: js.UndefOr[ResourceDataSyncS3Destination] = js.undefined,
+        SyncSource: js.UndefOr[ResourceDataSyncSource] = js.undefined,
+        SyncType: js.UndefOr[ResourceDataSyncType] = js.undefined
     ): CreateResourceDataSyncRequest = {
       val __obj = js.Dynamic.literal(
-        "S3Destination" -> S3Destination.asInstanceOf[js.Any],
-        "SyncName"      -> SyncName.asInstanceOf[js.Any]
+        "SyncName" -> SyncName.asInstanceOf[js.Any]
       )
 
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
+      SyncSource.foreach(__v => __obj.updateDynamic("SyncSource")(__v.asInstanceOf[js.Any]))
+      SyncType.foreach(__v => __obj.updateDynamic("SyncType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceDataSyncRequest]
     }
   }
@@ -3082,6 +3165,7 @@ package ssm {
   trait DeleteDocumentRequest extends js.Object {
     var Name: DocumentName
     var DocumentVersion: js.UndefOr[DocumentVersion]
+    var Force: js.UndefOr[Boolean]
     var VersionName: js.UndefOr[DocumentVersionName]
   }
 
@@ -3090,6 +3174,7 @@ package ssm {
     def apply(
         Name: DocumentName,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Force: js.UndefOr[Boolean] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DeleteDocumentRequest = {
       val __obj = js.Dynamic.literal(
@@ -3097,6 +3182,7 @@ package ssm {
       )
 
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDocumentRequest]
     }
@@ -3303,17 +3389,20 @@ package ssm {
   @js.native
   trait DeleteResourceDataSyncRequest extends js.Object {
     var SyncName: ResourceDataSyncName
+    var SyncType: js.UndefOr[ResourceDataSyncType]
   }
 
   object DeleteResourceDataSyncRequest {
     @inline
     def apply(
-        SyncName: ResourceDataSyncName
+        SyncName: ResourceDataSyncName,
+        SyncType: js.UndefOr[ResourceDataSyncType] = js.undefined
     ): DeleteResourceDataSyncRequest = {
       val __obj = js.Dynamic.literal(
         "SyncName" -> SyncName.asInstanceOf[js.Any]
       )
 
+      SyncType.foreach(__v => __obj.updateDynamic("SyncType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourceDataSyncRequest]
     }
   }
@@ -3851,15 +3940,18 @@ package ssm {
   @js.native
   trait DescribeDocumentPermissionResponse extends js.Object {
     var AccountIds: js.UndefOr[AccountIdList]
+    var AccountSharingInfoList: js.UndefOr[AccountSharingInfoList]
   }
 
   object DescribeDocumentPermissionResponse {
     @inline
     def apply(
-        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined,
+        AccountSharingInfoList: js.UndefOr[AccountSharingInfoList] = js.undefined
     ): DescribeDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      AccountSharingInfoList.foreach(__v => __obj.updateDynamic("AccountSharingInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentPermissionResponse]
     }
   }
@@ -4784,6 +4876,7 @@ package ssm {
     var InstancesWithFailedPatches: js.UndefOr[Int]
     var InstancesWithInstalledOtherPatches: js.UndefOr[Int]
     var InstancesWithInstalledPatches: js.UndefOr[Int]
+    var InstancesWithInstalledPendingRebootPatches: js.UndefOr[InstancesCount]
     var InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount]
     var InstancesWithMissingPatches: js.UndefOr[Int]
     var InstancesWithNotApplicablePatches: js.UndefOr[Int]
@@ -4797,6 +4890,7 @@ package ssm {
         InstancesWithFailedPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithInstalledOtherPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithInstalledPatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithInstalledPendingRebootPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithMissingPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined,
@@ -4812,6 +4906,9 @@ package ssm {
       )
       InstancesWithInstalledPatches.foreach(__v =>
         __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any])
+      )
+      InstancesWithInstalledPendingRebootPatches.foreach(__v =>
+        __obj.updateDynamic("InstancesWithInstalledPendingRebootPatches")(__v.asInstanceOf[js.Any])
       )
       InstancesWithInstalledRejectedPatches.foreach(__v =>
         __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any])
@@ -5009,6 +5106,7 @@ package ssm {
     var Owner: js.UndefOr[DocumentOwner]
     var Parameters: js.UndefOr[DocumentParameterList]
     var PlatformTypes: js.UndefOr[PlatformTypeList]
+    var Requires: js.UndefOr[DocumentRequiresList]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var Sha1: js.UndefOr[DocumentSha1]
     var Status: js.UndefOr[DocumentStatus]
@@ -5035,6 +5133,7 @@ package ssm {
         Owner: js.UndefOr[DocumentOwner] = js.undefined,
         Parameters: js.UndefOr[DocumentParameterList] = js.undefined,
         PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
+        Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
         SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
         Sha1: js.UndefOr[DocumentSha1] = js.undefined,
         Status: js.UndefOr[DocumentStatus] = js.undefined,
@@ -5058,6 +5157,7 @@ package ssm {
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
+      Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       Sha1.foreach(__v => __obj.updateDynamic("Sha1")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5105,8 +5205,9 @@ package ssm {
   object DocumentFormatEnum {
     val YAML = "YAML"
     val JSON = "JSON"
+    val TEXT = "TEXT"
 
-    val values = js.Object.freeze(js.Array(YAML, JSON))
+    val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
   }
 
   object DocumentHashTypeEnum {
@@ -5127,6 +5228,7 @@ package ssm {
     var Name: js.UndefOr[DocumentARN]
     var Owner: js.UndefOr[DocumentOwner]
     var PlatformTypes: js.UndefOr[PlatformTypeList]
+    var Requires: js.UndefOr[DocumentRequiresList]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var Tags: js.UndefOr[TagList]
     var TargetType: js.UndefOr[TargetType]
@@ -5142,6 +5244,7 @@ package ssm {
         Name: js.UndefOr[DocumentARN] = js.undefined,
         Owner: js.UndefOr[DocumentOwner] = js.undefined,
         PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
+        Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
         SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TargetType: js.UndefOr[TargetType] = js.undefined,
@@ -5154,6 +5257,7 @@ package ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
+      Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
@@ -5235,6 +5339,30 @@ package ssm {
   }
 
   /**
+    * An SSM document required by the current document.
+    */
+  @js.native
+  trait DocumentRequires extends js.Object {
+    var Name: DocumentARN
+    var Version: js.UndefOr[DocumentVersion]
+  }
+
+  object DocumentRequires {
+    @inline
+    def apply(
+        Name: DocumentARN,
+        Version: js.UndefOr[DocumentVersion] = js.undefined
+    ): DocumentRequires = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentRequires]
+    }
+  }
+
+  /**
     * The status of a document.
     */
   object DocumentStatusEnum {
@@ -5248,13 +5376,29 @@ package ssm {
   }
 
   object DocumentTypeEnum {
-    val Command    = "Command"
-    val Policy     = "Policy"
-    val Automation = "Automation"
-    val Session    = "Session"
-    val Package    = "Package"
+    val Command                        = "Command"
+    val Policy                         = "Policy"
+    val Automation                     = "Automation"
+    val Session                        = "Session"
+    val Package                        = "Package"
+    val ApplicationConfiguration       = "ApplicationConfiguration"
+    val ApplicationConfigurationSchema = "ApplicationConfigurationSchema"
+    val DeploymentStrategy             = "DeploymentStrategy"
+    val ChangeCalendar                 = "ChangeCalendar"
 
-    val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package))
+    val values = js.Object.freeze(
+      js.Array(
+        Command,
+        Policy,
+        Automation,
+        Session,
+        Package,
+        ApplicationConfiguration,
+        ApplicationConfigurationSchema,
+        DeploymentStrategy,
+        ChangeCalendar
+      )
+    )
   }
 
   /**
@@ -5415,6 +5559,49 @@ package ssm {
       val __obj = js.Dynamic.literal()
       AutomationExecution.foreach(__v => __obj.updateDynamic("AutomationExecution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutomationExecutionResult]
+    }
+  }
+
+  @js.native
+  trait GetCalendarStateRequest extends js.Object {
+    var CalendarNames: CalendarNameOrARNList
+    var AtTime: js.UndefOr[ISO8601String]
+  }
+
+  object GetCalendarStateRequest {
+    @inline
+    def apply(
+        CalendarNames: CalendarNameOrARNList,
+        AtTime: js.UndefOr[ISO8601String] = js.undefined
+    ): GetCalendarStateRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalendarNames" -> CalendarNames.asInstanceOf[js.Any]
+      )
+
+      AtTime.foreach(__v => __obj.updateDynamic("AtTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCalendarStateRequest]
+    }
+  }
+
+  @js.native
+  trait GetCalendarStateResponse extends js.Object {
+    var AtTime: js.UndefOr[ISO8601String]
+    var NextTransitionTime: js.UndefOr[ISO8601String]
+    var State: js.UndefOr[CalendarState]
+  }
+
+  object GetCalendarStateResponse {
+    @inline
+    def apply(
+        AtTime: js.UndefOr[ISO8601String] = js.undefined,
+        NextTransitionTime: js.UndefOr[ISO8601String] = js.undefined,
+        State: js.UndefOr[CalendarState] = js.undefined
+    ): GetCalendarStateResponse = {
+      val __obj = js.Dynamic.literal()
+      AtTime.foreach(__v => __obj.updateDynamic("AtTime")(__v.asInstanceOf[js.Any]))
+      NextTransitionTime.foreach(__v => __obj.updateDynamic("NextTransitionTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCalendarStateResponse]
     }
   }
 
@@ -5659,6 +5846,7 @@ package ssm {
     var DocumentType: js.UndefOr[DocumentType]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var Name: js.UndefOr[DocumentARN]
+    var Requires: js.UndefOr[DocumentRequiresList]
     var Status: js.UndefOr[DocumentStatus]
     var StatusInformation: js.UndefOr[DocumentStatusInformation]
     var VersionName: js.UndefOr[DocumentVersionName]
@@ -5673,6 +5861,7 @@ package ssm {
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Name: js.UndefOr[DocumentARN] = js.undefined,
+        Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
         Status: js.UndefOr[DocumentStatus] = js.undefined,
         StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
@@ -5684,6 +5873,7 @@ package ssm {
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
@@ -6165,27 +6355,31 @@ package ssm {
 
   @js.native
   trait GetOpsSummaryRequest extends js.Object {
-    var Aggregators: OpsAggregatorList
+    var Aggregators: js.UndefOr[OpsAggregatorList]
     var Filters: js.UndefOr[OpsFilterList]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ResultAttributes: js.UndefOr[OpsResultAttributeList]
+    var SyncName: js.UndefOr[ResourceDataSyncName]
   }
 
   object GetOpsSummaryRequest {
     @inline
     def apply(
-        Aggregators: OpsAggregatorList,
+        Aggregators: js.UndefOr[OpsAggregatorList] = js.undefined,
         Filters: js.UndefOr[OpsFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResultAttributes: js.UndefOr[OpsResultAttributeList] = js.undefined,
+        SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined
     ): GetOpsSummaryRequest = {
-      val __obj = js.Dynamic.literal(
-        "Aggregators" -> Aggregators.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Aggregators.foreach(__v => __obj.updateDynamic("Aggregators")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResultAttributes.foreach(__v => __obj.updateDynamic("ResultAttributes")(__v.asInstanceOf[js.Any]))
+      SyncName.foreach(__v => __obj.updateDynamic("SyncName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsSummaryRequest]
     }
   }
@@ -6854,10 +7048,13 @@ package ssm {
     var InstallOverrideList: js.UndefOr[InstallOverrideList]
     var InstalledCount: js.UndefOr[PatchInstalledCount]
     var InstalledOtherCount: js.UndefOr[PatchInstalledOtherCount]
+    var InstalledPendingRebootCount: js.UndefOr[PatchInstalledPendingRebootCount]
     var InstalledRejectedCount: js.UndefOr[PatchInstalledRejectedCount]
+    var LastNoRebootInstallOperationTime: js.UndefOr[DateTime]
     var MissingCount: js.UndefOr[PatchMissingCount]
     var NotApplicableCount: js.UndefOr[PatchNotApplicableCount]
     var OwnerInformation: js.UndefOr[OwnerInformation]
+    var RebootOption: js.UndefOr[RebootOption]
     var SnapshotId: js.UndefOr[SnapshotId]
     var UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount]
   }
@@ -6875,10 +7072,13 @@ package ssm {
         InstallOverrideList: js.UndefOr[InstallOverrideList] = js.undefined,
         InstalledCount: js.UndefOr[PatchInstalledCount] = js.undefined,
         InstalledOtherCount: js.UndefOr[PatchInstalledOtherCount] = js.undefined,
+        InstalledPendingRebootCount: js.UndefOr[PatchInstalledPendingRebootCount] = js.undefined,
         InstalledRejectedCount: js.UndefOr[PatchInstalledRejectedCount] = js.undefined,
+        LastNoRebootInstallOperationTime: js.UndefOr[DateTime] = js.undefined,
         MissingCount: js.UndefOr[PatchMissingCount] = js.undefined,
         NotApplicableCount: js.UndefOr[PatchNotApplicableCount] = js.undefined,
         OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
+        RebootOption: js.UndefOr[RebootOption] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount] = js.undefined
     ): InstancePatchState = {
@@ -6895,10 +7095,17 @@ package ssm {
       InstallOverrideList.foreach(__v => __obj.updateDynamic("InstallOverrideList")(__v.asInstanceOf[js.Any]))
       InstalledCount.foreach(__v => __obj.updateDynamic("InstalledCount")(__v.asInstanceOf[js.Any]))
       InstalledOtherCount.foreach(__v => __obj.updateDynamic("InstalledOtherCount")(__v.asInstanceOf[js.Any]))
+      InstalledPendingRebootCount.foreach(__v =>
+        __obj.updateDynamic("InstalledPendingRebootCount")(__v.asInstanceOf[js.Any])
+      )
       InstalledRejectedCount.foreach(__v => __obj.updateDynamic("InstalledRejectedCount")(__v.asInstanceOf[js.Any]))
+      LastNoRebootInstallOperationTime.foreach(__v =>
+        __obj.updateDynamic("LastNoRebootInstallOperationTime")(__v.asInstanceOf[js.Any])
+      )
       MissingCount.foreach(__v => __obj.updateDynamic("MissingCount")(__v.asInstanceOf[js.Any]))
       NotApplicableCount.foreach(__v => __obj.updateDynamic("NotApplicableCount")(__v.asInstanceOf[js.Any]))
       OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      RebootOption.foreach(__v => __obj.updateDynamic("RebootOption")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       UnreportedNotApplicableCount.foreach(__v =>
         __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any])
@@ -7605,7 +7812,7 @@ package ssm {
 
   @js.native
   trait ListDocumentVersionsRequest extends js.Object {
-    var Name: DocumentName
+    var Name: DocumentARN
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -7613,7 +7820,7 @@ package ssm {
   object ListDocumentVersionsRequest {
     @inline
     def apply(
-        Name: DocumentName,
+        Name: DocumentARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDocumentVersionsRequest = {
@@ -7798,17 +8005,20 @@ package ssm {
   trait ListResourceDataSyncRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var SyncType: js.UndefOr[ResourceDataSyncType]
   }
 
   object ListResourceDataSyncRequest {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SyncType: js.UndefOr[ResourceDataSyncType] = js.undefined
     ): ListResourceDataSyncRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SyncType.foreach(__v => __obj.updateDynamic("SyncType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDataSyncRequest]
     }
   }
@@ -8201,9 +8411,11 @@ package ssm {
     */
   @js.native
   trait MaintenanceWindowRunCommandParameters extends js.Object {
+    var CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig]
     var Comment: js.UndefOr[Comment]
     var DocumentHash: js.UndefOr[DocumentHash]
     var DocumentHashType: js.UndefOr[DocumentHashType]
+    var DocumentVersion: js.UndefOr[DocumentVersion]
     var NotificationConfig: js.UndefOr[NotificationConfig]
     var OutputS3BucketName: js.UndefOr[S3BucketName]
     var OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix]
@@ -8215,9 +8427,11 @@ package ssm {
   object MaintenanceWindowRunCommandParameters {
     @inline
     def apply(
+        CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         Comment: js.UndefOr[Comment] = js.undefined,
         DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
         DocumentHashType: js.UndefOr[DocumentHashType] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
         OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
         OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
@@ -8226,9 +8440,11 @@ package ssm {
         TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
     ): MaintenanceWindowRunCommandParameters = {
       val __obj = js.Dynamic.literal()
+      CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       DocumentHash.foreach(__v => __obj.updateDynamic("DocumentHash")(__v.asInstanceOf[js.Any]))
       DocumentHashType.foreach(__v => __obj.updateDynamic("DocumentHashType")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
       OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
       OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
@@ -8420,6 +8636,7 @@ package ssm {
     var PermissionType: DocumentPermissionType
     var AccountIdsToAdd: js.UndefOr[AccountIdList]
     var AccountIdsToRemove: js.UndefOr[AccountIdList]
+    var SharedDocumentVersion: js.UndefOr[SharedDocumentVersion]
   }
 
   object ModifyDocumentPermissionRequest {
@@ -8428,7 +8645,8 @@ package ssm {
         Name: DocumentName,
         PermissionType: DocumentPermissionType,
         AccountIdsToAdd: js.UndefOr[AccountIdList] = js.undefined,
-        AccountIdsToRemove: js.UndefOr[AccountIdList] = js.undefined
+        AccountIdsToRemove: js.UndefOr[AccountIdList] = js.undefined,
+        SharedDocumentVersion: js.UndefOr[SharedDocumentVersion] = js.undefined
     ): ModifyDocumentPermissionRequest = {
       val __obj = js.Dynamic.literal(
         "Name"           -> Name.asInstanceOf[js.Any],
@@ -8437,6 +8655,7 @@ package ssm {
 
       AccountIdsToAdd.foreach(__v => __obj.updateDynamic("AccountIdsToAdd")(__v.asInstanceOf[js.Any]))
       AccountIdsToRemove.foreach(__v => __obj.updateDynamic("AccountIdsToRemove")(__v.asInstanceOf[js.Any]))
+      SharedDocumentVersion.foreach(__v => __obj.updateDynamic("SharedDocumentVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDocumentPermissionRequest]
     }
   }
@@ -8593,15 +8812,18 @@ package ssm {
     */
   @js.native
   trait OpsEntityItem extends js.Object {
+    var CaptureTime: js.UndefOr[OpsEntityItemCaptureTime]
     var Content: js.UndefOr[OpsEntityItemEntryList]
   }
 
   object OpsEntityItem {
     @inline
     def apply(
+        CaptureTime: js.UndefOr[OpsEntityItemCaptureTime] = js.undefined,
         Content: js.UndefOr[OpsEntityItemEntryList] = js.undefined
     ): OpsEntityItem = {
       val __obj = js.Dynamic.literal()
+      CaptureTime.foreach(__v => __obj.updateDynamic("CaptureTime")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsEntityItem]
     }
@@ -8650,6 +8872,7 @@ package ssm {
     */
   @js.native
   trait OpsItem extends js.Object {
+    var Category: js.UndefOr[OpsItemCategory]
     var CreatedBy: js.UndefOr[String]
     var CreatedTime: js.UndefOr[DateTime]
     var Description: js.UndefOr[OpsItemDescription]
@@ -8660,6 +8883,7 @@ package ssm {
     var OpsItemId: js.UndefOr[OpsItemId]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Severity: js.UndefOr[OpsItemSeverity]
     var Source: js.UndefOr[OpsItemSource]
     var Status: js.UndefOr[OpsItemStatus]
     var Title: js.UndefOr[OpsItemTitle]
@@ -8669,6 +8893,7 @@ package ssm {
   object OpsItem {
     @inline
     def apply(
+        Category: js.UndefOr[OpsItemCategory] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
         Description: js.UndefOr[OpsItemDescription] = js.undefined,
@@ -8679,12 +8904,14 @@ package ssm {
         OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
         Source: js.UndefOr[OpsItemSource] = js.undefined,
         Status: js.UndefOr[OpsItemStatus] = js.undefined,
         Title: js.UndefOr[OpsItemTitle] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): OpsItem = {
       val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -8695,6 +8922,7 @@ package ssm {
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
@@ -8773,6 +9001,8 @@ package ssm {
     val OperationalDataValue = "OperationalDataValue"
     val ResourceId           = "ResourceId"
     val AutomationId         = "AutomationId"
+    val Category             = "Category"
+    val Severity             = "Severity"
 
     val values = js.Object.freeze(
       js.Array(
@@ -8788,7 +9018,9 @@ package ssm {
         OperationalDataKey,
         OperationalDataValue,
         ResourceId,
-        AutomationId
+        AutomationId,
+        Category,
+        Severity
       )
     )
   }
@@ -8834,6 +9066,7 @@ package ssm {
     */
   @js.native
   trait OpsItemSummary extends js.Object {
+    var Category: js.UndefOr[OpsItemCategory]
     var CreatedBy: js.UndefOr[String]
     var CreatedTime: js.UndefOr[DateTime]
     var LastModifiedBy: js.UndefOr[String]
@@ -8841,6 +9074,7 @@ package ssm {
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OpsItemId: js.UndefOr[OpsItemId]
     var Priority: js.UndefOr[OpsItemPriority]
+    var Severity: js.UndefOr[OpsItemSeverity]
     var Source: js.UndefOr[OpsItemSource]
     var Status: js.UndefOr[OpsItemStatus]
     var Title: js.UndefOr[OpsItemTitle]
@@ -8849,6 +9083,7 @@ package ssm {
   object OpsItemSummary {
     @inline
     def apply(
+        Category: js.UndefOr[OpsItemCategory] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
         LastModifiedBy: js.UndefOr[String] = js.undefined,
@@ -8856,11 +9091,13 @@ package ssm {
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
+        Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
         Source: js.UndefOr[OpsItemSource] = js.undefined,
         Status: js.UndefOr[OpsItemStatus] = js.undefined,
         Title: js.UndefOr[OpsItemTitle] = js.undefined
     ): OpsItemSummary = {
       val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
@@ -8868,10 +9105,32 @@ package ssm {
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemSummary]
+    }
+  }
+
+  /**
+    * The OpsItem data type to return.
+    */
+  @js.native
+  trait OpsResultAttribute extends js.Object {
+    var TypeName: OpsDataTypeName
+  }
+
+  object OpsResultAttribute {
+    @inline
+    def apply(
+        TypeName: OpsDataTypeName
+    ): OpsResultAttribute = {
+      val __obj = js.Dynamic.literal(
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OpsResultAttribute]
     }
   }
 
@@ -9062,8 +9321,11 @@ package ssm {
 
   /**
     * One or more filters. Use a filter to return a more specific list of results.
-    *
-    * '''Note:'''The <code>Name</code> and <code>Tier</code> filter keys can't be used with the <a>GetParametersByPath</a> API action. Also, the <code>Label</code> filter key can't be used with the <a>DescribeParameters</a> API action.
+    *  <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
+    *  For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
+    *  For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+    *  For examples of CLI commands demonstrating valid parameter filter constructions, see [[http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager Parameters]] in the <i>AWS Systems Manager User Guide</i>.
+    *  </important>
     */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -9267,15 +9529,25 @@ package ssm {
   }
 
   object PatchComplianceDataStateEnum {
-    val INSTALLED          = "INSTALLED"
-    val INSTALLED_OTHER    = "INSTALLED_OTHER"
-    val INSTALLED_REJECTED = "INSTALLED_REJECTED"
-    val MISSING            = "MISSING"
-    val NOT_APPLICABLE     = "NOT_APPLICABLE"
-    val FAILED             = "FAILED"
+    val INSTALLED                = "INSTALLED"
+    val INSTALLED_OTHER          = "INSTALLED_OTHER"
+    val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT"
+    val INSTALLED_REJECTED       = "INSTALLED_REJECTED"
+    val MISSING                  = "MISSING"
+    val NOT_APPLICABLE           = "NOT_APPLICABLE"
+    val FAILED                   = "FAILED"
 
-    val values =
-      js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
+    val values = js.Object.freeze(
+      js.Array(
+        INSTALLED,
+        INSTALLED_OTHER,
+        INSTALLED_PENDING_REBOOT,
+        INSTALLED_REJECTED,
+        MISSING,
+        NOT_APPLICABLE,
+        FAILED
+      )
+    )
   }
 
   object PatchComplianceLevelEnum {
@@ -9726,6 +9998,13 @@ package ssm {
     }
   }
 
+  object RebootOptionEnum {
+    val RebootIfNeeded = "RebootIfNeeded"
+    val NoReboot       = "NoReboot"
+
+    val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
+  }
+
   @js.native
   trait RegisterDefaultPatchBaselineRequest extends js.Object {
     var BaselineId: BaselineId
@@ -10086,6 +10365,30 @@ package ssm {
   }
 
   /**
+    * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
+    */
+  @js.native
+  trait ResourceDataSyncAwsOrganizationsSource extends js.Object {
+    var OrganizationSourceType: ResourceDataSyncOrganizationSourceType
+    var OrganizationalUnits: js.UndefOr[ResourceDataSyncOrganizationalUnitList]
+  }
+
+  object ResourceDataSyncAwsOrganizationsSource {
+    @inline
+    def apply(
+        OrganizationSourceType: ResourceDataSyncOrganizationSourceType,
+        OrganizationalUnits: js.UndefOr[ResourceDataSyncOrganizationalUnitList] = js.undefined
+    ): ResourceDataSyncAwsOrganizationsSource = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationSourceType" -> OrganizationSourceType.asInstanceOf[js.Any]
+      )
+
+      OrganizationalUnits.foreach(__v => __obj.updateDynamic("OrganizationalUnits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDataSyncAwsOrganizationsSource]
+    }
+  }
+
+  /**
     * Information about a Resource Data Sync configuration, including its current status and last successful sync.
     */
   @js.native
@@ -10096,7 +10399,10 @@ package ssm {
     var LastSyncTime: js.UndefOr[LastResourceDataSyncTime]
     var S3Destination: js.UndefOr[ResourceDataSyncS3Destination]
     var SyncCreatedTime: js.UndefOr[ResourceDataSyncCreatedTime]
+    var SyncLastModifiedTime: js.UndefOr[ResourceDataSyncLastModifiedTime]
     var SyncName: js.UndefOr[ResourceDataSyncName]
+    var SyncSource: js.UndefOr[ResourceDataSyncSourceWithState]
+    var SyncType: js.UndefOr[ResourceDataSyncType]
   }
 
   object ResourceDataSyncItem {
@@ -10108,7 +10414,10 @@ package ssm {
         LastSyncTime: js.UndefOr[LastResourceDataSyncTime] = js.undefined,
         S3Destination: js.UndefOr[ResourceDataSyncS3Destination] = js.undefined,
         SyncCreatedTime: js.UndefOr[ResourceDataSyncCreatedTime] = js.undefined,
-        SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined
+        SyncLastModifiedTime: js.UndefOr[ResourceDataSyncLastModifiedTime] = js.undefined,
+        SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined,
+        SyncSource: js.UndefOr[ResourceDataSyncSourceWithState] = js.undefined,
+        SyncType: js.UndefOr[ResourceDataSyncType] = js.undefined
     ): ResourceDataSyncItem = {
       val __obj = js.Dynamic.literal()
       LastStatus.foreach(__v => __obj.updateDynamic("LastStatus")(__v.asInstanceOf[js.Any]))
@@ -10117,8 +10426,30 @@ package ssm {
       LastSyncTime.foreach(__v => __obj.updateDynamic("LastSyncTime")(__v.asInstanceOf[js.Any]))
       S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
       SyncCreatedTime.foreach(__v => __obj.updateDynamic("SyncCreatedTime")(__v.asInstanceOf[js.Any]))
+      SyncLastModifiedTime.foreach(__v => __obj.updateDynamic("SyncLastModifiedTime")(__v.asInstanceOf[js.Any]))
       SyncName.foreach(__v => __obj.updateDynamic("SyncName")(__v.asInstanceOf[js.Any]))
+      SyncSource.foreach(__v => __obj.updateDynamic("SyncSource")(__v.asInstanceOf[js.Any]))
+      SyncType.foreach(__v => __obj.updateDynamic("SyncType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncItem]
+    }
+  }
+
+  /**
+    * The AWS Organizations organizational unit data source for the sync.
+    */
+  @js.native
+  trait ResourceDataSyncOrganizationalUnit extends js.Object {
+    var OrganizationalUnitId: js.UndefOr[ResourceDataSyncOrganizationalUnitId]
+  }
+
+  object ResourceDataSyncOrganizationalUnit {
+    @inline
+    def apply(
+        OrganizationalUnitId: js.UndefOr[ResourceDataSyncOrganizationalUnitId] = js.undefined
+    ): ResourceDataSyncOrganizationalUnit = {
+      val __obj = js.Dynamic.literal()
+      OrganizationalUnitId.foreach(__v => __obj.updateDynamic("OrganizationalUnitId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDataSyncOrganizationalUnit]
     }
   }
 
@@ -10159,6 +10490,71 @@ package ssm {
     val JsonSerDe = "JsonSerDe"
 
     val values = js.Object.freeze(js.Array(JsonSerDe))
+  }
+
+  /**
+    * Information about the source of the data included in the resource data sync.
+    */
+  @js.native
+  trait ResourceDataSyncSource extends js.Object {
+    var SourceRegions: ResourceDataSyncSourceRegionList
+    var SourceType: ResourceDataSyncSourceType
+    var AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource]
+    var IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions]
+  }
+
+  object ResourceDataSyncSource {
+    @inline
+    def apply(
+        SourceRegions: ResourceDataSyncSourceRegionList,
+        SourceType: ResourceDataSyncSourceType,
+        AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource] = js.undefined,
+        IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions] = js.undefined
+    ): ResourceDataSyncSource = {
+      val __obj = js.Dynamic.literal(
+        "SourceRegions" -> SourceRegions.asInstanceOf[js.Any],
+        "SourceType"    -> SourceType.asInstanceOf[js.Any]
+      )
+
+      AwsOrganizationsSource.foreach(__v => __obj.updateDynamic("AwsOrganizationsSource")(__v.asInstanceOf[js.Any]))
+      IncludeFutureRegions.foreach(__v => __obj.updateDynamic("IncludeFutureRegions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDataSyncSource]
+    }
+  }
+
+  /**
+    * The data type name for including resource data sync state. There are four sync states:
+    *  <code>OrganizationNotExists</code> (Your organization doesn't exist)
+    *  <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)
+    *  <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)
+    *  <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
+    */
+  @js.native
+  trait ResourceDataSyncSourceWithState extends js.Object {
+    var AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource]
+    var IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions]
+    var SourceRegions: js.UndefOr[ResourceDataSyncSourceRegionList]
+    var SourceType: js.UndefOr[ResourceDataSyncSourceType]
+    var State: js.UndefOr[ResourceDataSyncState]
+  }
+
+  object ResourceDataSyncSourceWithState {
+    @inline
+    def apply(
+        AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource] = js.undefined,
+        IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions] = js.undefined,
+        SourceRegions: js.UndefOr[ResourceDataSyncSourceRegionList] = js.undefined,
+        SourceType: js.UndefOr[ResourceDataSyncSourceType] = js.undefined,
+        State: js.UndefOr[ResourceDataSyncState] = js.undefined
+    ): ResourceDataSyncSourceWithState = {
+      val __obj = js.Dynamic.literal()
+      AwsOrganizationsSource.foreach(__v => __obj.updateDynamic("AwsOrganizationsSource")(__v.asInstanceOf[js.Any]))
+      IncludeFutureRegions.foreach(__v => __obj.updateDynamic("IncludeFutureRegions")(__v.asInstanceOf[js.Any]))
+      SourceRegions.foreach(__v => __obj.updateDynamic("SourceRegions")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDataSyncSourceWithState]
+    }
   }
 
   object ResourceTypeEnum {
@@ -10667,6 +11063,7 @@ package ssm {
     var MaxErrors: js.UndefOr[MaxErrors]
     var Mode: js.UndefOr[ExecutionMode]
     var Parameters: js.UndefOr[AutomationParameterMap]
+    var Tags: js.UndefOr[TagList]
     var TargetLocations: js.UndefOr[TargetLocations]
     var TargetMaps: js.UndefOr[TargetMaps]
     var TargetParameterName: js.UndefOr[AutomationParameterKey]
@@ -10683,6 +11080,7 @@ package ssm {
         MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
         Mode: js.UndefOr[ExecutionMode] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
@@ -10698,6 +11096,7 @@ package ssm {
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
@@ -10965,7 +11364,11 @@ package ssm {
     *  * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
     *  * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
     *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+    *  This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
     *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+    *  This example demonstrates how to target only Amazon EC2 instances and VPCs in your maintenance window.
+    *  * (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
+    *  This example demonstrates how to target all managed instances in the AWS Region where the association was created.
     * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Using Targets and Rate Controls to Send Commands to a Fleet]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
@@ -11565,12 +11968,14 @@ package ssm {
   @js.native
   trait UpdateOpsItemRequest extends js.Object {
     var OpsItemId: OpsItemId
+    var Category: js.UndefOr[OpsItemCategory]
     var Description: js.UndefOr[OpsItemDescription]
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Severity: js.UndefOr[OpsItemSeverity]
     var Status: js.UndefOr[OpsItemStatus]
     var Title: js.UndefOr[OpsItemTitle]
   }
@@ -11579,12 +11984,14 @@ package ssm {
     @inline
     def apply(
         OpsItemId: OpsItemId,
+        Category: js.UndefOr[OpsItemCategory] = js.undefined,
         Description: js.UndefOr[OpsItemDescription] = js.undefined,
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
         Status: js.UndefOr[OpsItemStatus] = js.undefined,
         Title: js.UndefOr[OpsItemTitle] = js.undefined
     ): UpdateOpsItemRequest = {
@@ -11592,12 +11999,14 @@ package ssm {
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
 
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OperationalDataToDelete.foreach(__v => __obj.updateDynamic("OperationalDataToDelete")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOpsItemRequest]
@@ -11728,6 +12137,43 @@ package ssm {
       RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
       Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePatchBaselineResult]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceDataSyncRequest extends js.Object {
+    var SyncName: ResourceDataSyncName
+    var SyncSource: ResourceDataSyncSource
+    var SyncType: ResourceDataSyncType
+  }
+
+  object UpdateResourceDataSyncRequest {
+    @inline
+    def apply(
+        SyncName: ResourceDataSyncName,
+        SyncSource: ResourceDataSyncSource,
+        SyncType: ResourceDataSyncType
+    ): UpdateResourceDataSyncRequest = {
+      val __obj = js.Dynamic.literal(
+        "SyncName"   -> SyncName.asInstanceOf[js.Any],
+        "SyncSource" -> SyncSource.asInstanceOf[js.Any],
+        "SyncType"   -> SyncType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateResourceDataSyncRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceDataSyncResult extends js.Object {}
+
+  object UpdateResourceDataSyncResult {
+    @inline
+    def apply(
+        ): UpdateResourceDataSyncResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateResourceDataSyncResult]
     }
   }
 

@@ -74,6 +74,7 @@ package object apigateway {
   type VpcLinkStatus                          = String
 
   implicit final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
+
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[ApiKey] =
       service.createApiKey(params).promise.toFuture
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[Authorizer] =

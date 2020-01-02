@@ -23,6 +23,7 @@ package object marketplacecommerceanalytics {
 
   implicit final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics)
       extends AnyVal {
+
     @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
       service.generateDataSet(params).promise.toFuture
     @inline def startSupportDataExportFuture(

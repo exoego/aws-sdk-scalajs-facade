@@ -8,10 +8,28 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object codecommit {
-  type AccountId                          = String
-  type AdditionalData                     = String
-  type Arn                                = String
-  type BatchDescribeMergeConflictsErrors  = js.Array[BatchDescribeMergeConflictsError]
+  type AccountId                       = String
+  type AdditionalData                  = String
+  type ApprovalList                    = js.Array[Approval]
+  type ApprovalRuleContent             = String
+  type ApprovalRuleId                  = String
+  type ApprovalRuleName                = String
+  type ApprovalRuleTemplateContent     = String
+  type ApprovalRuleTemplateDescription = String
+  type ApprovalRuleTemplateId          = String
+  type ApprovalRuleTemplateName        = String
+  type ApprovalRuleTemplateNameList    = js.Array[ApprovalRuleTemplateName]
+  type ApprovalRulesList               = js.Array[ApprovalRule]
+  type ApprovalRulesNotSatisfiedList   = js.Array[ApprovalRuleName]
+  type ApprovalRulesSatisfiedList      = js.Array[ApprovalRuleName]
+  type ApprovalState                   = String
+  type Approved                        = Boolean
+  type Arn                             = String
+  type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList =
+    js.Array[BatchAssociateApprovalRuleTemplateWithRepositoriesError]
+  type BatchDescribeMergeConflictsErrors = js.Array[BatchDescribeMergeConflictsError]
+  type BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList =
+    js.Array[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
   type BatchGetCommitsErrorsList          = js.Array[BatchGetCommitsError]
   type BranchName                         = String
   type BranchNameList                     = js.Array[BranchName]
@@ -77,6 +95,8 @@ package object codecommit {
   type ObjectSize                               = Double
   type ObjectTypeEnum                           = String
   type OrderEnum                                = String
+  type Overridden                               = Boolean
+  type OverrideStatus                           = String
   type ParentList                               = js.Array[ObjectId]
   type Path                                     = String
   type Position                                 = Double
@@ -108,6 +128,8 @@ package object codecommit {
   type RepositoryTriggersConfigurationId        = String
   type RepositoryTriggersList                   = js.Array[RepositoryTrigger]
   type ResourceArn                              = String
+  type RevisionId                               = String
+  type RuleContentSha256                        = String
   type SetFileModeEntries                       = js.Array[SetFileModeEntry]
   type SortByEnum                               = String
   type SubModuleList                            = js.Array[SubModule]
@@ -121,17 +143,35 @@ package object codecommit {
   type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
+
+    @inline def associateApprovalRuleTemplateWithRepositoryFuture(
+        params: AssociateApprovalRuleTemplateWithRepositoryInput
+    ): Future[js.Object] = service.associateApprovalRuleTemplateWithRepository(params).promise.toFuture
+    @inline def batchAssociateApprovalRuleTemplateWithRepositoriesFuture(
+        params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput
+    ): Future[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] =
+      service.batchAssociateApprovalRuleTemplateWithRepositories(params).promise.toFuture
     @inline def batchDescribeMergeConflictsFuture(
         params: BatchDescribeMergeConflictsInput
     ): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise.toFuture
+    @inline def batchDisassociateApprovalRuleTemplateFromRepositoriesFuture(
+        params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput
+    ): Future[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] =
+      service.batchDisassociateApprovalRuleTemplateFromRepositories(params).promise.toFuture
     @inline def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] =
       service.batchGetCommits(params).promise.toFuture
     @inline def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
       service.batchGetRepositories(params).promise.toFuture
+    @inline def createApprovalRuleTemplateFuture(
+        params: CreateApprovalRuleTemplateInput
+    ): Future[CreateApprovalRuleTemplateOutput] = service.createApprovalRuleTemplate(params).promise.toFuture
     @inline def createBranchFuture(params: CreateBranchInput): Future[js.Object] =
       service.createBranch(params).promise.toFuture
     @inline def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] =
       service.createCommit(params).promise.toFuture
+    @inline def createPullRequestApprovalRuleFuture(
+        params: CreatePullRequestApprovalRuleInput
+    ): Future[CreatePullRequestApprovalRuleOutput] = service.createPullRequestApprovalRule(params).promise.toFuture
     @inline def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] =
       service.createPullRequest(params).promise.toFuture
     @inline def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
@@ -139,12 +179,18 @@ package object codecommit {
     @inline def createUnreferencedMergeCommitFuture(
         params: CreateUnreferencedMergeCommitInput
     ): Future[CreateUnreferencedMergeCommitOutput] = service.createUnreferencedMergeCommit(params).promise.toFuture
+    @inline def deleteApprovalRuleTemplateFuture(
+        params: DeleteApprovalRuleTemplateInput
+    ): Future[DeleteApprovalRuleTemplateOutput] = service.deleteApprovalRuleTemplate(params).promise.toFuture
     @inline def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
       service.deleteBranch(params).promise.toFuture
     @inline def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
       service.deleteCommentContent(params).promise.toFuture
     @inline def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] =
       service.deleteFile(params).promise.toFuture
+    @inline def deletePullRequestApprovalRuleFuture(
+        params: DeletePullRequestApprovalRuleInput
+    ): Future[DeletePullRequestApprovalRuleOutput] = service.deletePullRequestApprovalRule(params).promise.toFuture
     @inline def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
       service.deleteRepository(params).promise.toFuture
     @inline def describeMergeConflictsFuture(
@@ -152,7 +198,17 @@ package object codecommit {
     ): Future[DescribeMergeConflictsOutput] = service.describeMergeConflicts(params).promise.toFuture
     @inline def describePullRequestEventsFuture(
         params: DescribePullRequestEventsInput
-    ): Future[DescribePullRequestEventsOutput]                             = service.describePullRequestEvents(params).promise.toFuture
+    ): Future[DescribePullRequestEventsOutput] = service.describePullRequestEvents(params).promise.toFuture
+    @inline def disassociateApprovalRuleTemplateFromRepositoryFuture(
+        params: DisassociateApprovalRuleTemplateFromRepositoryInput
+    ): Future[js.Object] = service.disassociateApprovalRuleTemplateFromRepository(params).promise.toFuture
+    @inline def evaluatePullRequestApprovalRulesFuture(
+        params: EvaluatePullRequestApprovalRulesInput
+    ): Future[EvaluatePullRequestApprovalRulesOutput] =
+      service.evaluatePullRequestApprovalRules(params).promise.toFuture
+    @inline def getApprovalRuleTemplateFuture(
+        params: GetApprovalRuleTemplateInput
+    ): Future[GetApprovalRuleTemplateOutput]                               = service.getApprovalRuleTemplate(params).promise.toFuture
     @inline def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput] = service.getBlob(params).promise.toFuture
     @inline def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] =
       service.getBranch(params).promise.toFuture
@@ -177,16 +233,33 @@ package object codecommit {
       service.getMergeConflicts(params).promise.toFuture
     @inline def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] =
       service.getMergeOptions(params).promise.toFuture
+    @inline def getPullRequestApprovalStatesFuture(
+        params: GetPullRequestApprovalStatesInput
+    ): Future[GetPullRequestApprovalStatesOutput] = service.getPullRequestApprovalStates(params).promise.toFuture
     @inline def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
       service.getPullRequest(params).promise.toFuture
+    @inline def getPullRequestOverrideStateFuture(
+        params: GetPullRequestOverrideStateInput
+    ): Future[GetPullRequestOverrideStateOutput] = service.getPullRequestOverrideState(params).promise.toFuture
     @inline def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
       service.getRepository(params).promise.toFuture
     @inline def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] =
       service.getRepositoryTriggers(params).promise.toFuture
+    @inline def listApprovalRuleTemplatesFuture(
+        params: ListApprovalRuleTemplatesInput
+    ): Future[ListApprovalRuleTemplatesOutput] = service.listApprovalRuleTemplates(params).promise.toFuture
+    @inline def listAssociatedApprovalRuleTemplatesForRepositoryFuture(
+        params: ListAssociatedApprovalRuleTemplatesForRepositoryInput
+    ): Future[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] =
+      service.listAssociatedApprovalRuleTemplatesForRepository(params).promise.toFuture
     @inline def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] =
       service.listBranches(params).promise.toFuture
     @inline def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] =
       service.listPullRequests(params).promise.toFuture
+    @inline def listRepositoriesForApprovalRuleTemplateFuture(
+        params: ListRepositoriesForApprovalRuleTemplateInput
+    ): Future[ListRepositoriesForApprovalRuleTemplateOutput] =
+      service.listRepositoriesForApprovalRuleTemplate(params).promise.toFuture
     @inline def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
       service.listRepositories(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
@@ -208,6 +281,9 @@ package object codecommit {
     @inline def mergePullRequestByThreeWayFuture(
         params: MergePullRequestByThreeWayInput
     ): Future[MergePullRequestByThreeWayOutput] = service.mergePullRequestByThreeWay(params).promise.toFuture
+    @inline def overridePullRequestApprovalRulesFuture(
+        params: OverridePullRequestApprovalRulesInput
+    ): Future[js.Object] = service.overridePullRequestApprovalRules(params).promise.toFuture
     @inline def postCommentForComparedCommitFuture(
         params: PostCommentForComparedCommitInput
     ): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise.toFuture
@@ -226,10 +302,27 @@ package object codecommit {
     ): Future[TestRepositoryTriggersOutput] = service.testRepositoryTriggers(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
       service.untagResource(params).promise.toFuture
+    @inline def updateApprovalRuleTemplateContentFuture(
+        params: UpdateApprovalRuleTemplateContentInput
+    ): Future[UpdateApprovalRuleTemplateContentOutput] =
+      service.updateApprovalRuleTemplateContent(params).promise.toFuture
+    @inline def updateApprovalRuleTemplateDescriptionFuture(
+        params: UpdateApprovalRuleTemplateDescriptionInput
+    ): Future[UpdateApprovalRuleTemplateDescriptionOutput] =
+      service.updateApprovalRuleTemplateDescription(params).promise.toFuture
+    @inline def updateApprovalRuleTemplateNameFuture(
+        params: UpdateApprovalRuleTemplateNameInput
+    ): Future[UpdateApprovalRuleTemplateNameOutput] = service.updateApprovalRuleTemplateName(params).promise.toFuture
     @inline def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
       service.updateComment(params).promise.toFuture
     @inline def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
       service.updateDefaultBranch(params).promise.toFuture
+    @inline def updatePullRequestApprovalRuleContentFuture(
+        params: UpdatePullRequestApprovalRuleContentInput
+    ): Future[UpdatePullRequestApprovalRuleContentOutput] =
+      service.updatePullRequestApprovalRuleContent(params).promise.toFuture
+    @inline def updatePullRequestApprovalStateFuture(params: UpdatePullRequestApprovalStateInput): Future[js.Object] =
+      service.updatePullRequestApprovalState(params).promise.toFuture
     @inline def updatePullRequestDescriptionFuture(
         params: UpdatePullRequestDescriptionInput
     ): Future[UpdatePullRequestDescriptionOutput] = service.updatePullRequestDescription(params).promise.toFuture
@@ -252,24 +345,51 @@ package codecommit {
   class CodeCommit() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateApprovalRuleTemplateWithRepository(
+        params: AssociateApprovalRuleTemplateWithRepositoryInput
+    ): Request[js.Object] = js.native
+    def batchAssociateApprovalRuleTemplateWithRepositories(
+        params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput
+    ): Request[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] = js.native
     def batchDescribeMergeConflicts(
         params: BatchDescribeMergeConflictsInput
-    ): Request[BatchDescribeMergeConflictsOutput]                                                    = js.native
+    ): Request[BatchDescribeMergeConflictsOutput] = js.native
+    def batchDisassociateApprovalRuleTemplateFromRepositories(
+        params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput
+    ): Request[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput]                          = js.native
     def batchGetCommits(params: BatchGetCommitsInput): Request[BatchGetCommitsOutput]                = js.native
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
-    def createBranch(params: CreateBranchInput): Request[js.Object]                                  = js.native
-    def createCommit(params: CreateCommitInput): Request[CreateCommitOutput]                         = js.native
-    def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput]          = js.native
-    def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput]             = js.native
+    def createApprovalRuleTemplate(params: CreateApprovalRuleTemplateInput): Request[CreateApprovalRuleTemplateOutput] =
+      js.native
+    def createBranch(params: CreateBranchInput): Request[js.Object]                         = js.native
+    def createCommit(params: CreateCommitInput): Request[CreateCommitOutput]                = js.native
+    def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput] = js.native
+    def createPullRequestApprovalRule(
+        params: CreatePullRequestApprovalRuleInput
+    ): Request[CreatePullRequestApprovalRuleOutput]                                      = js.native
+    def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput] = js.native
     def createUnreferencedMergeCommit(
         params: CreateUnreferencedMergeCommitInput
-    ): Request[CreateUnreferencedMergeCommitOutput]                                                        = js.native
-    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                               = js.native
-    def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput]       = js.native
-    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput]                                     = js.native
+    ): Request[CreateUnreferencedMergeCommitOutput] = js.native
+    def deleteApprovalRuleTemplate(params: DeleteApprovalRuleTemplateInput): Request[DeleteApprovalRuleTemplateOutput] =
+      js.native
+    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                         = js.native
+    def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput] = js.native
+    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput]                               = js.native
+    def deletePullRequestApprovalRule(
+        params: DeletePullRequestApprovalRuleInput
+    ): Request[DeletePullRequestApprovalRuleOutput]                                                        = js.native
     def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput]                   = js.native
     def describeMergeConflicts(params: DescribeMergeConflictsInput): Request[DescribeMergeConflictsOutput] = js.native
     def describePullRequestEvents(params: DescribePullRequestEventsInput): Request[DescribePullRequestEventsOutput] =
+      js.native
+    def disassociateApprovalRuleTemplateFromRepository(
+        params: DisassociateApprovalRuleTemplateFromRepositoryInput
+    ): Request[js.Object] = js.native
+    def evaluatePullRequestApprovalRules(
+        params: EvaluatePullRequestApprovalRulesInput
+    ): Request[EvaluatePullRequestApprovalRulesOutput] = js.native
+    def getApprovalRuleTemplate(params: GetApprovalRuleTemplateInput): Request[GetApprovalRuleTemplateOutput] =
       js.native
     def getBlob(params: GetBlobInput): Request[GetBlobOutput]          = js.native
     def getBranch(params: GetBranchInput): Request[GetBranchOutput]    = js.native
@@ -279,20 +399,34 @@ package codecommit {
     ): Request[GetCommentsForComparedCommitOutput] = js.native
     def getCommentsForPullRequest(params: GetCommentsForPullRequestInput): Request[GetCommentsForPullRequestOutput] =
       js.native
-    def getCommit(params: GetCommitInput): Request[GetCommitOutput]                                     = js.native
-    def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput]                      = js.native
-    def getFile(params: GetFileInput): Request[GetFileOutput]                                           = js.native
-    def getFolder(params: GetFolderInput): Request[GetFolderOutput]                                     = js.native
-    def getMergeCommit(params: GetMergeCommitInput): Request[GetMergeCommitOutput]                      = js.native
-    def getMergeConflicts(params: GetMergeConflictsInput): Request[GetMergeConflictsOutput]             = js.native
-    def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput]                   = js.native
-    def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput]                      = js.native
+    def getCommit(params: GetCommitInput): Request[GetCommitOutput]                         = js.native
+    def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput]          = js.native
+    def getFile(params: GetFileInput): Request[GetFileOutput]                               = js.native
+    def getFolder(params: GetFolderInput): Request[GetFolderOutput]                         = js.native
+    def getMergeCommit(params: GetMergeCommitInput): Request[GetMergeCommitOutput]          = js.native
+    def getMergeConflicts(params: GetMergeConflictsInput): Request[GetMergeConflictsOutput] = js.native
+    def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput]       = js.native
+    def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput]          = js.native
+    def getPullRequestApprovalStates(
+        params: GetPullRequestApprovalStatesInput
+    ): Request[GetPullRequestApprovalStatesOutput] = js.native
+    def getPullRequestOverrideState(
+        params: GetPullRequestOverrideStateInput
+    ): Request[GetPullRequestOverrideStateOutput]                                                       = js.native
     def getRepository(params: GetRepositoryInput): Request[GetRepositoryOutput]                         = js.native
     def getRepositoryTriggers(params: GetRepositoryTriggersInput): Request[GetRepositoryTriggersOutput] = js.native
-    def listBranches(params: ListBranchesInput): Request[ListBranchesOutput]                            = js.native
-    def listPullRequests(params: ListPullRequestsInput): Request[ListPullRequestsOutput]                = js.native
-    def listRepositories(params: ListRepositoriesInput): Request[ListRepositoriesOutput]                = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]       = js.native
+    def listApprovalRuleTemplates(params: ListApprovalRuleTemplatesInput): Request[ListApprovalRuleTemplatesOutput] =
+      js.native
+    def listAssociatedApprovalRuleTemplatesForRepository(
+        params: ListAssociatedApprovalRuleTemplatesForRepositoryInput
+    ): Request[ListAssociatedApprovalRuleTemplatesForRepositoryOutput]                   = js.native
+    def listBranches(params: ListBranchesInput): Request[ListBranchesOutput]             = js.native
+    def listPullRequests(params: ListPullRequestsInput): Request[ListPullRequestsOutput] = js.native
+    def listRepositories(params: ListRepositoriesInput): Request[ListRepositoriesOutput] = js.native
+    def listRepositoriesForApprovalRuleTemplate(
+        params: ListRepositoriesForApprovalRuleTemplateInput
+    ): Request[ListRepositoriesForApprovalRuleTemplateOutput]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def mergeBranchesByFastForward(params: MergeBranchesByFastForwardInput): Request[MergeBranchesByFastForwardOutput] =
       js.native
     def mergeBranchesBySquash(params: MergeBranchesBySquashInput): Request[MergeBranchesBySquashOutput] = js.native
@@ -305,6 +439,7 @@ package codecommit {
       js.native
     def mergePullRequestByThreeWay(params: MergePullRequestByThreeWayInput): Request[MergePullRequestByThreeWayOutput] =
       js.native
+    def overridePullRequestApprovalRules(params: OverridePullRequestApprovalRulesInput): Request[js.Object] = js.native
     def postCommentForComparedCommit(
         params: PostCommentForComparedCommitInput
     ): Request[PostCommentForComparedCommitOutput] = js.native
@@ -316,8 +451,21 @@ package codecommit {
     def tagResource(params: TagResourceInput): Request[js.Object]                                          = js.native
     def testRepositoryTriggers(params: TestRepositoryTriggersInput): Request[TestRepositoryTriggersOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object]                                      = js.native
-    def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput]                            = js.native
-    def updateDefaultBranch(params: UpdateDefaultBranchInput): Request[js.Object]                          = js.native
+    def updateApprovalRuleTemplateContent(
+        params: UpdateApprovalRuleTemplateContentInput
+    ): Request[UpdateApprovalRuleTemplateContentOutput] = js.native
+    def updateApprovalRuleTemplateDescription(
+        params: UpdateApprovalRuleTemplateDescriptionInput
+    ): Request[UpdateApprovalRuleTemplateDescriptionOutput] = js.native
+    def updateApprovalRuleTemplateName(
+        params: UpdateApprovalRuleTemplateNameInput
+    ): Request[UpdateApprovalRuleTemplateNameOutput]                              = js.native
+    def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput]   = js.native
+    def updateDefaultBranch(params: UpdateDefaultBranchInput): Request[js.Object] = js.native
+    def updatePullRequestApprovalRuleContent(
+        params: UpdatePullRequestApprovalRuleContentInput
+    ): Request[UpdatePullRequestApprovalRuleContentOutput]                                              = js.native
+    def updatePullRequestApprovalState(params: UpdatePullRequestApprovalStateInput): Request[js.Object] = js.native
     def updatePullRequestDescription(
         params: UpdatePullRequestDescriptionInput
     ): Request[UpdatePullRequestDescriptionOutput] = js.native
@@ -329,7 +477,279 @@ package codecommit {
   }
 
   /**
-    * Information about errors in a BatchDescribeMergeConflicts operation.
+    * Returns information about a specific approval on a pull request.
+    */
+  @js.native
+  trait Approval extends js.Object {
+    var approvalState: js.UndefOr[ApprovalState]
+    var userArn: js.UndefOr[Arn]
+  }
+
+  object Approval {
+    @inline
+    def apply(
+        approvalState: js.UndefOr[ApprovalState] = js.undefined,
+        userArn: js.UndefOr[Arn] = js.undefined
+    ): Approval = {
+      val __obj = js.Dynamic.literal()
+      approvalState.foreach(__v => __obj.updateDynamic("approvalState")(__v.asInstanceOf[js.Any]))
+      userArn.foreach(__v => __obj.updateDynamic("userArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Approval]
+    }
+  }
+
+  /**
+    * Returns information about an approval rule.
+    */
+  @js.native
+  trait ApprovalRule extends js.Object {
+    var approvalRuleContent: js.UndefOr[ApprovalRuleContent]
+    var approvalRuleId: js.UndefOr[ApprovalRuleId]
+    var approvalRuleName: js.UndefOr[ApprovalRuleName]
+    var creationDate: js.UndefOr[CreationDate]
+    var lastModifiedDate: js.UndefOr[LastModifiedDate]
+    var lastModifiedUser: js.UndefOr[Arn]
+    var originApprovalRuleTemplate: js.UndefOr[OriginApprovalRuleTemplate]
+    var ruleContentSha256: js.UndefOr[RuleContentSha256]
+  }
+
+  object ApprovalRule {
+    @inline
+    def apply(
+        approvalRuleContent: js.UndefOr[ApprovalRuleContent] = js.undefined,
+        approvalRuleId: js.UndefOr[ApprovalRuleId] = js.undefined,
+        approvalRuleName: js.UndefOr[ApprovalRuleName] = js.undefined,
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        lastModifiedUser: js.UndefOr[Arn] = js.undefined,
+        originApprovalRuleTemplate: js.UndefOr[OriginApprovalRuleTemplate] = js.undefined,
+        ruleContentSha256: js.UndefOr[RuleContentSha256] = js.undefined
+    ): ApprovalRule = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleContent.foreach(__v => __obj.updateDynamic("approvalRuleContent")(__v.asInstanceOf[js.Any]))
+      approvalRuleId.foreach(__v => __obj.updateDynamic("approvalRuleId")(__v.asInstanceOf[js.Any]))
+      approvalRuleName.foreach(__v => __obj.updateDynamic("approvalRuleName")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedUser.foreach(__v => __obj.updateDynamic("lastModifiedUser")(__v.asInstanceOf[js.Any]))
+      originApprovalRuleTemplate.foreach(__v =>
+        __obj.updateDynamic("originApprovalRuleTemplate")(__v.asInstanceOf[js.Any])
+      )
+      ruleContentSha256.foreach(__v => __obj.updateDynamic("ruleContentSha256")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApprovalRule]
+    }
+  }
+
+  /**
+    * Returns information about an event for an approval rule.
+    */
+  @js.native
+  trait ApprovalRuleEventMetadata extends js.Object {
+    var approvalRuleContent: js.UndefOr[ApprovalRuleContent]
+    var approvalRuleId: js.UndefOr[ApprovalRuleId]
+    var approvalRuleName: js.UndefOr[ApprovalRuleName]
+  }
+
+  object ApprovalRuleEventMetadata {
+    @inline
+    def apply(
+        approvalRuleContent: js.UndefOr[ApprovalRuleContent] = js.undefined,
+        approvalRuleId: js.UndefOr[ApprovalRuleId] = js.undefined,
+        approvalRuleName: js.UndefOr[ApprovalRuleName] = js.undefined
+    ): ApprovalRuleEventMetadata = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleContent.foreach(__v => __obj.updateDynamic("approvalRuleContent")(__v.asInstanceOf[js.Any]))
+      approvalRuleId.foreach(__v => __obj.updateDynamic("approvalRuleId")(__v.asInstanceOf[js.Any]))
+      approvalRuleName.foreach(__v => __obj.updateDynamic("approvalRuleName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApprovalRuleEventMetadata]
+    }
+  }
+
+  /**
+    * Returns information about an override event for approval rules for a pull request.
+    */
+  @js.native
+  trait ApprovalRuleOverriddenEventMetadata extends js.Object {
+    var overrideStatus: js.UndefOr[OverrideStatus]
+    var revisionId: js.UndefOr[RevisionId]
+  }
+
+  object ApprovalRuleOverriddenEventMetadata {
+    @inline
+    def apply(
+        overrideStatus: js.UndefOr[OverrideStatus] = js.undefined,
+        revisionId: js.UndefOr[RevisionId] = js.undefined
+    ): ApprovalRuleOverriddenEventMetadata = {
+      val __obj = js.Dynamic.literal()
+      overrideStatus.foreach(__v => __obj.updateDynamic("overrideStatus")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApprovalRuleOverriddenEventMetadata]
+    }
+  }
+
+  /**
+    * Returns information about an approval rule template.
+    */
+  @js.native
+  trait ApprovalRuleTemplate extends js.Object {
+    var approvalRuleTemplateContent: js.UndefOr[ApprovalRuleTemplateContent]
+    var approvalRuleTemplateDescription: js.UndefOr[ApprovalRuleTemplateDescription]
+    var approvalRuleTemplateId: js.UndefOr[ApprovalRuleTemplateId]
+    var approvalRuleTemplateName: js.UndefOr[ApprovalRuleTemplateName]
+    var creationDate: js.UndefOr[CreationDate]
+    var lastModifiedDate: js.UndefOr[LastModifiedDate]
+    var lastModifiedUser: js.UndefOr[Arn]
+    var ruleContentSha256: js.UndefOr[RuleContentSha256]
+  }
+
+  object ApprovalRuleTemplate {
+    @inline
+    def apply(
+        approvalRuleTemplateContent: js.UndefOr[ApprovalRuleTemplateContent] = js.undefined,
+        approvalRuleTemplateDescription: js.UndefOr[ApprovalRuleTemplateDescription] = js.undefined,
+        approvalRuleTemplateId: js.UndefOr[ApprovalRuleTemplateId] = js.undefined,
+        approvalRuleTemplateName: js.UndefOr[ApprovalRuleTemplateName] = js.undefined,
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        lastModifiedUser: js.UndefOr[Arn] = js.undefined,
+        ruleContentSha256: js.UndefOr[RuleContentSha256] = js.undefined
+    ): ApprovalRuleTemplate = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleTemplateContent.foreach(__v =>
+        __obj.updateDynamic("approvalRuleTemplateContent")(__v.asInstanceOf[js.Any])
+      )
+      approvalRuleTemplateDescription.foreach(__v =>
+        __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any])
+      )
+      approvalRuleTemplateId.foreach(__v => __obj.updateDynamic("approvalRuleTemplateId")(__v.asInstanceOf[js.Any]))
+      approvalRuleTemplateName.foreach(__v => __obj.updateDynamic("approvalRuleTemplateName")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedUser.foreach(__v => __obj.updateDynamic("lastModifiedUser")(__v.asInstanceOf[js.Any]))
+      ruleContentSha256.foreach(__v => __obj.updateDynamic("ruleContentSha256")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApprovalRuleTemplate]
+    }
+  }
+
+  object ApprovalStateEnum {
+    val APPROVE = "APPROVE"
+    val REVOKE  = "REVOKE"
+
+    val values = js.Object.freeze(js.Array(APPROVE, REVOKE))
+  }
+
+  /**
+    * Returns information about a change in the approval state for a pull request.
+    */
+  @js.native
+  trait ApprovalStateChangedEventMetadata extends js.Object {
+    var approvalStatus: js.UndefOr[ApprovalState]
+    var revisionId: js.UndefOr[RevisionId]
+  }
+
+  object ApprovalStateChangedEventMetadata {
+    @inline
+    def apply(
+        approvalStatus: js.UndefOr[ApprovalState] = js.undefined,
+        revisionId: js.UndefOr[RevisionId] = js.undefined
+    ): ApprovalStateChangedEventMetadata = {
+      val __obj = js.Dynamic.literal()
+      approvalStatus.foreach(__v => __obj.updateDynamic("approvalStatus")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApprovalStateChangedEventMetadata]
+    }
+  }
+
+  @js.native
+  trait AssociateApprovalRuleTemplateWithRepositoryInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var repositoryName: RepositoryName
+  }
+
+  object AssociateApprovalRuleTemplateWithRepositoryInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        repositoryName: RepositoryName
+    ): AssociateApprovalRuleTemplateWithRepositoryInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
+        "repositoryName"           -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateApprovalRuleTemplateWithRepositoryInput]
+    }
+  }
+
+  /**
+    * Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.
+    */
+  @js.native
+  trait BatchAssociateApprovalRuleTemplateWithRepositoriesError extends js.Object {
+    var errorCode: js.UndefOr[ErrorCode]
+    var errorMessage: js.UndefOr[ErrorMessage]
+    var repositoryName: js.UndefOr[RepositoryName]
+  }
+
+  object BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+    @inline
+    def apply(
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): BatchAssociateApprovalRuleTemplateWithRepositoriesError = {
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesError]
+    }
+  }
+
+  @js.native
+  trait BatchAssociateApprovalRuleTemplateWithRepositoriesInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var repositoryNames: RepositoryNameList
+  }
+
+  object BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        repositoryNames: RepositoryNameList
+    ): BatchAssociateApprovalRuleTemplateWithRepositoriesInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
+        "repositoryNames"          -> repositoryNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesInput]
+    }
+  }
+
+  @js.native
+  trait BatchAssociateApprovalRuleTemplateWithRepositoriesOutput extends js.Object {
+    var associatedRepositoryNames: RepositoryNameList
+    var errors: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList
+  }
+
+  object BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    @inline
+    def apply(
+        associatedRepositoryNames: RepositoryNameList,
+        errors: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList
+    ): BatchAssociateApprovalRuleTemplateWithRepositoriesOutput = {
+      val __obj = js.Dynamic.literal(
+        "associatedRepositoryNames" -> associatedRepositoryNames.asInstanceOf[js.Any],
+        "errors"                    -> errors.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput]
+    }
+  }
+
+  /**
+    * Returns information about errors in a BatchDescribeMergeConflicts operation.
     */
   @js.native
   trait BatchDescribeMergeConflictsError extends js.Object {
@@ -432,6 +852,73 @@ package codecommit {
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDescribeMergeConflictsOutput]
+    }
+  }
+
+  /**
+    * Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.
+    */
+  @js.native
+  trait BatchDisassociateApprovalRuleTemplateFromRepositoriesError extends js.Object {
+    var errorCode: js.UndefOr[ErrorCode]
+    var errorMessage: js.UndefOr[ErrorMessage]
+    var repositoryName: js.UndefOr[RepositoryName]
+  }
+
+  object BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+    @inline
+    def apply(
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): BatchDisassociateApprovalRuleTemplateFromRepositoriesError = {
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateApprovalRuleTemplateFromRepositoriesInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var repositoryNames: RepositoryNameList
+  }
+
+  object BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        repositoryNames: RepositoryNameList
+    ): BatchDisassociateApprovalRuleTemplateFromRepositoriesInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
+        "repositoryNames"          -> repositoryNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesInput]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput extends js.Object {
+    var disassociatedRepositoryNames: RepositoryNameList
+    var errors: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList
+  }
+
+  object BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+    @inline
+    def apply(
+        disassociatedRepositoryNames: RepositoryNameList,
+        errors: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList
+    ): BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput = {
+      val __obj = js.Dynamic.literal(
+        "disassociatedRepositoryNames" -> disassociatedRepositoryNames.asInstanceOf[js.Any],
+        "errors"                       -> errors.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput]
     }
   }
 
@@ -828,7 +1315,7 @@ package codecommit {
   }
 
   /**
-    * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution strategy.
+    * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
     */
   @js.native
   trait ConflictResolution extends js.Object {
@@ -859,6 +1346,50 @@ package codecommit {
     val AUTOMERGE          = "AUTOMERGE"
 
     val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
+  }
+
+  @js.native
+  trait CreateApprovalRuleTemplateInput extends js.Object {
+    var approvalRuleTemplateContent: ApprovalRuleTemplateContent
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var approvalRuleTemplateDescription: js.UndefOr[ApprovalRuleTemplateDescription]
+  }
+
+  object CreateApprovalRuleTemplateInput {
+    @inline
+    def apply(
+        approvalRuleTemplateContent: ApprovalRuleTemplateContent,
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        approvalRuleTemplateDescription: js.UndefOr[ApprovalRuleTemplateDescription] = js.undefined
+    ): CreateApprovalRuleTemplateInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateContent" -> approvalRuleTemplateContent.asInstanceOf[js.Any],
+        "approvalRuleTemplateName"    -> approvalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      approvalRuleTemplateDescription.foreach(__v =>
+        __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateApprovalRuleTemplateInput]
+    }
+  }
+
+  @js.native
+  trait CreateApprovalRuleTemplateOutput extends js.Object {
+    var approvalRuleTemplate: ApprovalRuleTemplate
+  }
+
+  object CreateApprovalRuleTemplateOutput {
+    @inline
+    def apply(
+        approvalRuleTemplate: ApprovalRuleTemplate
+    ): CreateApprovalRuleTemplateOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateApprovalRuleTemplateOutput]
+    }
   }
 
   /**
@@ -958,6 +1489,48 @@ package codecommit {
       filesUpdated.foreach(__v => __obj.updateDynamic("filesUpdated")(__v.asInstanceOf[js.Any]))
       treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCommitOutput]
+    }
+  }
+
+  @js.native
+  trait CreatePullRequestApprovalRuleInput extends js.Object {
+    var approvalRuleContent: ApprovalRuleContent
+    var approvalRuleName: ApprovalRuleName
+    var pullRequestId: PullRequestId
+  }
+
+  object CreatePullRequestApprovalRuleInput {
+    @inline
+    def apply(
+        approvalRuleContent: ApprovalRuleContent,
+        approvalRuleName: ApprovalRuleName,
+        pullRequestId: PullRequestId
+    ): CreatePullRequestApprovalRuleInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleContent" -> approvalRuleContent.asInstanceOf[js.Any],
+        "approvalRuleName"    -> approvalRuleName.asInstanceOf[js.Any],
+        "pullRequestId"       -> pullRequestId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreatePullRequestApprovalRuleInput]
+    }
+  }
+
+  @js.native
+  trait CreatePullRequestApprovalRuleOutput extends js.Object {
+    var approvalRule: ApprovalRule
+  }
+
+  object CreatePullRequestApprovalRuleOutput {
+    @inline
+    def apply(
+        approvalRule: ApprovalRule
+    ): CreatePullRequestApprovalRuleOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRule" -> approvalRule.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreatePullRequestApprovalRuleOutput]
     }
   }
 
@@ -1121,6 +1694,42 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait DeleteApprovalRuleTemplateInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+  }
+
+  object DeleteApprovalRuleTemplateInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName
+    ): DeleteApprovalRuleTemplateInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteApprovalRuleTemplateInput]
+    }
+  }
+
+  @js.native
+  trait DeleteApprovalRuleTemplateOutput extends js.Object {
+    var approvalRuleTemplateId: ApprovalRuleTemplateId
+  }
+
+  object DeleteApprovalRuleTemplateOutput {
+    @inline
+    def apply(
+        approvalRuleTemplateId: ApprovalRuleTemplateId
+    ): DeleteApprovalRuleTemplateOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateId" -> approvalRuleTemplateId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteApprovalRuleTemplateOutput]
+    }
+  }
+
   /**
     * Represents the input of a delete branch operation.
     */
@@ -1199,7 +1808,7 @@ package codecommit {
   }
 
   /**
-    * A file that will be deleted as part of a commit.
+    * A file that is deleted as part of a commit.
     */
   @js.native
   trait DeleteFileEntry extends js.Object {
@@ -1282,6 +1891,45 @@ package codecommit {
       )
 
       __obj.asInstanceOf[DeleteFileOutput]
+    }
+  }
+
+  @js.native
+  trait DeletePullRequestApprovalRuleInput extends js.Object {
+    var approvalRuleName: ApprovalRuleName
+    var pullRequestId: PullRequestId
+  }
+
+  object DeletePullRequestApprovalRuleInput {
+    @inline
+    def apply(
+        approvalRuleName: ApprovalRuleName,
+        pullRequestId: PullRequestId
+    ): DeletePullRequestApprovalRuleInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
+        "pullRequestId"    -> pullRequestId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePullRequestApprovalRuleInput]
+    }
+  }
+
+  @js.native
+  trait DeletePullRequestApprovalRuleOutput extends js.Object {
+    var approvalRuleId: ApprovalRuleId
+  }
+
+  object DeletePullRequestApprovalRuleOutput {
+    @inline
+    def apply(
+        approvalRuleId: ApprovalRuleId
+    ): DeletePullRequestApprovalRuleOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleId" -> approvalRuleId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePullRequestApprovalRuleOutput]
     }
   }
 
@@ -1478,6 +2126,96 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait DisassociateApprovalRuleTemplateFromRepositoryInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var repositoryName: RepositoryName
+  }
+
+  object DisassociateApprovalRuleTemplateFromRepositoryInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        repositoryName: RepositoryName
+    ): DisassociateApprovalRuleTemplateFromRepositoryInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
+        "repositoryName"           -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisassociateApprovalRuleTemplateFromRepositoryInput]
+    }
+  }
+
+  @js.native
+  trait EvaluatePullRequestApprovalRulesInput extends js.Object {
+    var pullRequestId: PullRequestId
+    var revisionId: RevisionId
+  }
+
+  object EvaluatePullRequestApprovalRulesInput {
+    @inline
+    def apply(
+        pullRequestId: PullRequestId,
+        revisionId: RevisionId
+    ): EvaluatePullRequestApprovalRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EvaluatePullRequestApprovalRulesInput]
+    }
+  }
+
+  @js.native
+  trait EvaluatePullRequestApprovalRulesOutput extends js.Object {
+    var evaluation: Evaluation
+  }
+
+  object EvaluatePullRequestApprovalRulesOutput {
+    @inline
+    def apply(
+        evaluation: Evaluation
+    ): EvaluatePullRequestApprovalRulesOutput = {
+      val __obj = js.Dynamic.literal(
+        "evaluation" -> evaluation.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EvaluatePullRequestApprovalRulesOutput]
+    }
+  }
+
+  /**
+    * Returns information about the approval rules applied to a pull request and whether conditions have been met.
+    */
+  @js.native
+  trait Evaluation extends js.Object {
+    var approvalRulesNotSatisfied: js.UndefOr[ApprovalRulesNotSatisfiedList]
+    var approvalRulesSatisfied: js.UndefOr[ApprovalRulesSatisfiedList]
+    var approved: js.UndefOr[Approved]
+    var overridden: js.UndefOr[Overridden]
+  }
+
+  object Evaluation {
+    @inline
+    def apply(
+        approvalRulesNotSatisfied: js.UndefOr[ApprovalRulesNotSatisfiedList] = js.undefined,
+        approvalRulesSatisfied: js.UndefOr[ApprovalRulesSatisfiedList] = js.undefined,
+        approved: js.UndefOr[Approved] = js.undefined,
+        overridden: js.UndefOr[Overridden] = js.undefined
+    ): Evaluation = {
+      val __obj = js.Dynamic.literal()
+      approvalRulesNotSatisfied.foreach(__v =>
+        __obj.updateDynamic("approvalRulesNotSatisfied")(__v.asInstanceOf[js.Any])
+      )
+      approvalRulesSatisfied.foreach(__v => __obj.updateDynamic("approvalRulesSatisfied")(__v.asInstanceOf[js.Any]))
+      approved.foreach(__v => __obj.updateDynamic("approved")(__v.asInstanceOf[js.Any]))
+      overridden.foreach(__v => __obj.updateDynamic("overridden")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Evaluation]
+    }
+  }
+
   /**
     * Returns information about a file in a repository.
     */
@@ -1507,7 +2245,7 @@ package codecommit {
   }
 
   /**
-    * A file that will be added, updated, or deleted as part of a commit.
+    * A file to be added, updated, or deleted as part of a commit.
     */
   @js.native
   trait FileMetadata extends js.Object {
@@ -1611,6 +2349,42 @@ package codecommit {
       relativePath.foreach(__v => __obj.updateDynamic("relativePath")(__v.asInstanceOf[js.Any]))
       treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Folder]
+    }
+  }
+
+  @js.native
+  trait GetApprovalRuleTemplateInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+  }
+
+  object GetApprovalRuleTemplateInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName
+    ): GetApprovalRuleTemplateInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetApprovalRuleTemplateInput]
+    }
+  }
+
+  @js.native
+  trait GetApprovalRuleTemplateOutput extends js.Object {
+    var approvalRuleTemplate: ApprovalRuleTemplate
+  }
+
+  object GetApprovalRuleTemplateOutput {
+    @inline
+    def apply(
+        approvalRuleTemplate: ApprovalRuleTemplate
+    ): GetApprovalRuleTemplateOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetApprovalRuleTemplateOutput]
     }
   }
 
@@ -2247,6 +3021,43 @@ package codecommit {
   }
 
   @js.native
+  trait GetPullRequestApprovalStatesInput extends js.Object {
+    var pullRequestId: PullRequestId
+    var revisionId: RevisionId
+  }
+
+  object GetPullRequestApprovalStatesInput {
+    @inline
+    def apply(
+        pullRequestId: PullRequestId,
+        revisionId: RevisionId
+    ): GetPullRequestApprovalStatesInput = {
+      val __obj = js.Dynamic.literal(
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetPullRequestApprovalStatesInput]
+    }
+  }
+
+  @js.native
+  trait GetPullRequestApprovalStatesOutput extends js.Object {
+    var approvals: js.UndefOr[ApprovalList]
+  }
+
+  object GetPullRequestApprovalStatesOutput {
+    @inline
+    def apply(
+        approvals: js.UndefOr[ApprovalList] = js.undefined
+    ): GetPullRequestApprovalStatesOutput = {
+      val __obj = js.Dynamic.literal()
+      approvals.foreach(__v => __obj.updateDynamic("approvals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPullRequestApprovalStatesOutput]
+    }
+  }
+
+  @js.native
   trait GetPullRequestInput extends js.Object {
     var pullRequestId: PullRequestId
   }
@@ -2279,6 +3090,46 @@ package codecommit {
       )
 
       __obj.asInstanceOf[GetPullRequestOutput]
+    }
+  }
+
+  @js.native
+  trait GetPullRequestOverrideStateInput extends js.Object {
+    var pullRequestId: PullRequestId
+    var revisionId: RevisionId
+  }
+
+  object GetPullRequestOverrideStateInput {
+    @inline
+    def apply(
+        pullRequestId: PullRequestId,
+        revisionId: RevisionId
+    ): GetPullRequestOverrideStateInput = {
+      val __obj = js.Dynamic.literal(
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetPullRequestOverrideStateInput]
+    }
+  }
+
+  @js.native
+  trait GetPullRequestOverrideStateOutput extends js.Object {
+    var overridden: js.UndefOr[Overridden]
+    var overrider: js.UndefOr[Arn]
+  }
+
+  object GetPullRequestOverrideStateOutput {
+    @inline
+    def apply(
+        overridden: js.UndefOr[Overridden] = js.undefined,
+        overrider: js.UndefOr[Arn] = js.undefined
+    ): GetPullRequestOverrideStateOutput = {
+      val __obj = js.Dynamic.literal()
+      overridden.foreach(__v => __obj.updateDynamic("overridden")(__v.asInstanceOf[js.Any]))
+      overrider.foreach(__v => __obj.updateDynamic("overrider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPullRequestOverrideStateOutput]
     }
   }
 
@@ -2390,6 +3241,91 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait ListApprovalRuleTemplatesInput extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApprovalRuleTemplatesInput {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApprovalRuleTemplatesInput = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApprovalRuleTemplatesInput]
+    }
+  }
+
+  @js.native
+  trait ListApprovalRuleTemplatesOutput extends js.Object {
+    var approvalRuleTemplateNames: js.UndefOr[ApprovalRuleTemplateNameList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApprovalRuleTemplatesOutput {
+    @inline
+    def apply(
+        approvalRuleTemplateNames: js.UndefOr[ApprovalRuleTemplateNameList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApprovalRuleTemplatesOutput = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleTemplateNames.foreach(__v =>
+        __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any])
+      )
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApprovalRuleTemplatesOutput]
+    }
+  }
+
+  @js.native
+  trait ListAssociatedApprovalRuleTemplatesForRepositoryInput extends js.Object {
+    var repositoryName: RepositoryName
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssociatedApprovalRuleTemplatesForRepositoryInput {
+    @inline
+    def apply(
+        repositoryName: RepositoryName,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociatedApprovalRuleTemplatesForRepositoryInput = {
+      val __obj = js.Dynamic.literal(
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedApprovalRuleTemplatesForRepositoryInput]
+    }
+  }
+
+  @js.native
+  trait ListAssociatedApprovalRuleTemplatesForRepositoryOutput extends js.Object {
+    var approvalRuleTemplateNames: js.UndefOr[ApprovalRuleTemplateNameList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    @inline
+    def apply(
+        approvalRuleTemplateNames: js.UndefOr[ApprovalRuleTemplateNameList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociatedApprovalRuleTemplatesForRepositoryOutput = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleTemplateNames.foreach(__v =>
+        __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any])
+      )
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedApprovalRuleTemplatesForRepositoryOutput]
+    }
+  }
+
   /**
     * Represents the input of a list branches operation.
     */
@@ -2484,6 +3420,49 @@ package codecommit {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPullRequestsOutput]
+    }
+  }
+
+  @js.native
+  trait ListRepositoriesForApprovalRuleTemplateInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRepositoriesForApprovalRuleTemplateInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRepositoriesForApprovalRuleTemplateInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRepositoriesForApprovalRuleTemplateInput]
+    }
+  }
+
+  @js.native
+  trait ListRepositoriesForApprovalRuleTemplateOutput extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var repositoryNames: js.UndefOr[RepositoryNameList]
+  }
+
+  object ListRepositoriesForApprovalRuleTemplateOutput {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        repositoryNames: js.UndefOr[RepositoryNameList] = js.undefined
+    ): ListRepositoriesForApprovalRuleTemplateOutput = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      repositoryNames.foreach(__v => __obj.updateDynamic("repositoryNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRepositoriesForApprovalRuleTemplateOutput]
     }
   }
 
@@ -3101,6 +4080,59 @@ package codecommit {
     val values = js.Object.freeze(js.Array(ascending, descending))
   }
 
+  /**
+    * Returns information about the template that created the approval rule for a pull request.
+    */
+  @js.native
+  trait OriginApprovalRuleTemplate extends js.Object {
+    var approvalRuleTemplateId: js.UndefOr[ApprovalRuleTemplateId]
+    var approvalRuleTemplateName: js.UndefOr[ApprovalRuleTemplateName]
+  }
+
+  object OriginApprovalRuleTemplate {
+    @inline
+    def apply(
+        approvalRuleTemplateId: js.UndefOr[ApprovalRuleTemplateId] = js.undefined,
+        approvalRuleTemplateName: js.UndefOr[ApprovalRuleTemplateName] = js.undefined
+    ): OriginApprovalRuleTemplate = {
+      val __obj = js.Dynamic.literal()
+      approvalRuleTemplateId.foreach(__v => __obj.updateDynamic("approvalRuleTemplateId")(__v.asInstanceOf[js.Any]))
+      approvalRuleTemplateName.foreach(__v => __obj.updateDynamic("approvalRuleTemplateName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginApprovalRuleTemplate]
+    }
+  }
+
+  @js.native
+  trait OverridePullRequestApprovalRulesInput extends js.Object {
+    var overrideStatus: OverrideStatus
+    var pullRequestId: PullRequestId
+    var revisionId: RevisionId
+  }
+
+  object OverridePullRequestApprovalRulesInput {
+    @inline
+    def apply(
+        overrideStatus: OverrideStatus,
+        pullRequestId: PullRequestId,
+        revisionId: RevisionId
+    ): OverridePullRequestApprovalRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "overrideStatus" -> overrideStatus.asInstanceOf[js.Any],
+        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId"     -> revisionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OverridePullRequestApprovalRulesInput]
+    }
+  }
+
+  object OverrideStatusEnum {
+    val OVERRIDE = "OVERRIDE"
+    val REVOKE   = "REVOKE"
+
+    val values = js.Object.freeze(js.Array(OVERRIDE, REVOKE))
+  }
+
   @js.native
   trait PostCommentForComparedCommitInput extends js.Object {
     var afterCommitId: CommitId
@@ -3286,6 +4318,7 @@ package codecommit {
     */
   @js.native
   trait PullRequest extends js.Object {
+    var approvalRules: js.UndefOr[ApprovalRulesList]
     var authorArn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
     var creationDate: js.UndefOr[CreationDate]
@@ -3294,12 +4327,14 @@ package codecommit {
     var pullRequestId: js.UndefOr[PullRequestId]
     var pullRequestStatus: js.UndefOr[PullRequestStatusEnum]
     var pullRequestTargets: js.UndefOr[PullRequestTargetList]
+    var revisionId: js.UndefOr[RevisionId]
     var title: js.UndefOr[Title]
   }
 
   object PullRequest {
     @inline
     def apply(
+        approvalRules: js.UndefOr[ApprovalRulesList] = js.undefined,
         authorArn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         creationDate: js.UndefOr[CreationDate] = js.undefined,
@@ -3308,9 +4343,11 @@ package codecommit {
         pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
         pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined,
         pullRequestTargets: js.UndefOr[PullRequestTargetList] = js.undefined,
+        revisionId: js.UndefOr[RevisionId] = js.undefined,
         title: js.UndefOr[Title] = js.undefined
     ): PullRequest = {
       val __obj = js.Dynamic.literal()
+      approvalRules.foreach(__v => __obj.updateDynamic("approvalRules")(__v.asInstanceOf[js.Any]))
       authorArn.foreach(__v => __obj.updateDynamic("authorArn")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
@@ -3319,6 +4356,7 @@ package codecommit {
       pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
       pullRequestStatus.foreach(__v => __obj.updateDynamic("pullRequestStatus")(__v.asInstanceOf[js.Any]))
       pullRequestTargets.foreach(__v => __obj.updateDynamic("pullRequestTargets")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
       title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequest]
     }
@@ -3358,6 +4396,9 @@ package codecommit {
   @js.native
   trait PullRequestEvent extends js.Object {
     var actorArn: js.UndefOr[Arn]
+    var approvalRuleEventMetadata: js.UndefOr[ApprovalRuleEventMetadata]
+    var approvalRuleOverriddenEventMetadata: js.UndefOr[ApprovalRuleOverriddenEventMetadata]
+    var approvalStateChangedEventMetadata: js.UndefOr[ApprovalStateChangedEventMetadata]
     var eventDate: js.UndefOr[EventDate]
     var pullRequestCreatedEventMetadata: js.UndefOr[PullRequestCreatedEventMetadata]
     var pullRequestEventType: js.UndefOr[PullRequestEventType]
@@ -3371,6 +4412,9 @@ package codecommit {
     @inline
     def apply(
         actorArn: js.UndefOr[Arn] = js.undefined,
+        approvalRuleEventMetadata: js.UndefOr[ApprovalRuleEventMetadata] = js.undefined,
+        approvalRuleOverriddenEventMetadata: js.UndefOr[ApprovalRuleOverriddenEventMetadata] = js.undefined,
+        approvalStateChangedEventMetadata: js.UndefOr[ApprovalStateChangedEventMetadata] = js.undefined,
         eventDate: js.UndefOr[EventDate] = js.undefined,
         pullRequestCreatedEventMetadata: js.UndefOr[PullRequestCreatedEventMetadata] = js.undefined,
         pullRequestEventType: js.UndefOr[PullRequestEventType] = js.undefined,
@@ -3383,6 +4427,15 @@ package codecommit {
     ): PullRequestEvent = {
       val __obj = js.Dynamic.literal()
       actorArn.foreach(__v => __obj.updateDynamic("actorArn")(__v.asInstanceOf[js.Any]))
+      approvalRuleEventMetadata.foreach(__v =>
+        __obj.updateDynamic("approvalRuleEventMetadata")(__v.asInstanceOf[js.Any])
+      )
+      approvalRuleOverriddenEventMetadata.foreach(__v =>
+        __obj.updateDynamic("approvalRuleOverriddenEventMetadata")(__v.asInstanceOf[js.Any])
+      )
+      approvalStateChangedEventMetadata.foreach(__v =>
+        __obj.updateDynamic("approvalStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
+      )
       eventDate.foreach(__v => __obj.updateDynamic("eventDate")(__v.asInstanceOf[js.Any]))
       pullRequestCreatedEventMetadata.foreach(__v =>
         __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any])
@@ -3407,13 +4460,23 @@ package codecommit {
     val PULL_REQUEST_STATUS_CHANGED           = "PULL_REQUEST_STATUS_CHANGED"
     val PULL_REQUEST_SOURCE_REFERENCE_UPDATED = "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
     val PULL_REQUEST_MERGE_STATE_CHANGED      = "PULL_REQUEST_MERGE_STATE_CHANGED"
+    val PULL_REQUEST_APPROVAL_RULE_CREATED    = "PULL_REQUEST_APPROVAL_RULE_CREATED"
+    val PULL_REQUEST_APPROVAL_RULE_UPDATED    = "PULL_REQUEST_APPROVAL_RULE_UPDATED"
+    val PULL_REQUEST_APPROVAL_RULE_DELETED    = "PULL_REQUEST_APPROVAL_RULE_DELETED"
+    val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN"
+    val PULL_REQUEST_APPROVAL_STATE_CHANGED   = "PULL_REQUEST_APPROVAL_STATE_CHANGED"
 
     val values = js.Object.freeze(
       js.Array(
         PULL_REQUEST_CREATED,
         PULL_REQUEST_STATUS_CHANGED,
         PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
-        PULL_REQUEST_MERGE_STATE_CHANGED
+        PULL_REQUEST_MERGE_STATE_CHANGED,
+        PULL_REQUEST_APPROVAL_RULE_CREATED,
+        PULL_REQUEST_APPROVAL_RULE_UPDATED,
+        PULL_REQUEST_APPROVAL_RULE_DELETED,
+        PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
+        PULL_REQUEST_APPROVAL_STATE_CHANGED
       )
     )
   }
@@ -3535,7 +4598,7 @@ package codecommit {
   }
 
   /**
-    * Information about a file that will be added or updated as part of a commit.
+    * Information about a file added or updated as part of a commit.
     */
   @js.native
   trait PutFileEntry extends js.Object {
@@ -3631,7 +4694,7 @@ package codecommit {
   }
 
   /**
-    * Represents the input ofa put repository triggers operation.
+    * Represents the input of a put repository triggers operation.
     */
   @js.native
   trait PutRepositoryTriggersInput extends js.Object {
@@ -4075,6 +5138,128 @@ package codecommit {
   }
 
   @js.native
+  trait UpdateApprovalRuleTemplateContentInput extends js.Object {
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+    var newRuleContent: ApprovalRuleTemplateContent
+    var existingRuleContentSha256: js.UndefOr[RuleContentSha256]
+  }
+
+  object UpdateApprovalRuleTemplateContentInput {
+    @inline
+    def apply(
+        approvalRuleTemplateName: ApprovalRuleTemplateName,
+        newRuleContent: ApprovalRuleTemplateContent,
+        existingRuleContentSha256: js.UndefOr[RuleContentSha256] = js.undefined
+    ): UpdateApprovalRuleTemplateContentInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
+        "newRuleContent"           -> newRuleContent.asInstanceOf[js.Any]
+      )
+
+      existingRuleContentSha256.foreach(__v =>
+        __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateContentInput]
+    }
+  }
+
+  @js.native
+  trait UpdateApprovalRuleTemplateContentOutput extends js.Object {
+    var approvalRuleTemplate: ApprovalRuleTemplate
+  }
+
+  object UpdateApprovalRuleTemplateContentOutput {
+    @inline
+    def apply(
+        approvalRuleTemplate: ApprovalRuleTemplate
+    ): UpdateApprovalRuleTemplateContentOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateContentOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateApprovalRuleTemplateDescriptionInput extends js.Object {
+    var approvalRuleTemplateDescription: ApprovalRuleTemplateDescription
+    var approvalRuleTemplateName: ApprovalRuleTemplateName
+  }
+
+  object UpdateApprovalRuleTemplateDescriptionInput {
+    @inline
+    def apply(
+        approvalRuleTemplateDescription: ApprovalRuleTemplateDescription,
+        approvalRuleTemplateName: ApprovalRuleTemplateName
+    ): UpdateApprovalRuleTemplateDescriptionInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplateDescription" -> approvalRuleTemplateDescription.asInstanceOf[js.Any],
+        "approvalRuleTemplateName"        -> approvalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateDescriptionInput]
+    }
+  }
+
+  @js.native
+  trait UpdateApprovalRuleTemplateDescriptionOutput extends js.Object {
+    var approvalRuleTemplate: ApprovalRuleTemplate
+  }
+
+  object UpdateApprovalRuleTemplateDescriptionOutput {
+    @inline
+    def apply(
+        approvalRuleTemplate: ApprovalRuleTemplate
+    ): UpdateApprovalRuleTemplateDescriptionOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateDescriptionOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateApprovalRuleTemplateNameInput extends js.Object {
+    var newApprovalRuleTemplateName: ApprovalRuleTemplateName
+    var oldApprovalRuleTemplateName: ApprovalRuleTemplateName
+  }
+
+  object UpdateApprovalRuleTemplateNameInput {
+    @inline
+    def apply(
+        newApprovalRuleTemplateName: ApprovalRuleTemplateName,
+        oldApprovalRuleTemplateName: ApprovalRuleTemplateName
+    ): UpdateApprovalRuleTemplateNameInput = {
+      val __obj = js.Dynamic.literal(
+        "newApprovalRuleTemplateName" -> newApprovalRuleTemplateName.asInstanceOf[js.Any],
+        "oldApprovalRuleTemplateName" -> oldApprovalRuleTemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateNameInput]
+    }
+  }
+
+  @js.native
+  trait UpdateApprovalRuleTemplateNameOutput extends js.Object {
+    var approvalRuleTemplate: ApprovalRuleTemplate
+  }
+
+  object UpdateApprovalRuleTemplateNameOutput {
+    @inline
+    def apply(
+        approvalRuleTemplate: ApprovalRuleTemplate
+    ): UpdateApprovalRuleTemplateNameOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApprovalRuleTemplateNameOutput]
+    }
+  }
+
+  @js.native
   trait UpdateCommentInput extends js.Object {
     var commentId: CommentId
     var content: Content
@@ -4132,6 +5317,77 @@ package codecommit {
       )
 
       __obj.asInstanceOf[UpdateDefaultBranchInput]
+    }
+  }
+
+  @js.native
+  trait UpdatePullRequestApprovalRuleContentInput extends js.Object {
+    var approvalRuleName: ApprovalRuleName
+    var newRuleContent: ApprovalRuleContent
+    var pullRequestId: PullRequestId
+    var existingRuleContentSha256: js.UndefOr[RuleContentSha256]
+  }
+
+  object UpdatePullRequestApprovalRuleContentInput {
+    @inline
+    def apply(
+        approvalRuleName: ApprovalRuleName,
+        newRuleContent: ApprovalRuleContent,
+        pullRequestId: PullRequestId,
+        existingRuleContentSha256: js.UndefOr[RuleContentSha256] = js.undefined
+    ): UpdatePullRequestApprovalRuleContentInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
+        "newRuleContent"   -> newRuleContent.asInstanceOf[js.Any],
+        "pullRequestId"    -> pullRequestId.asInstanceOf[js.Any]
+      )
+
+      existingRuleContentSha256.foreach(__v =>
+        __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdatePullRequestApprovalRuleContentInput]
+    }
+  }
+
+  @js.native
+  trait UpdatePullRequestApprovalRuleContentOutput extends js.Object {
+    var approvalRule: ApprovalRule
+  }
+
+  object UpdatePullRequestApprovalRuleContentOutput {
+    @inline
+    def apply(
+        approvalRule: ApprovalRule
+    ): UpdatePullRequestApprovalRuleContentOutput = {
+      val __obj = js.Dynamic.literal(
+        "approvalRule" -> approvalRule.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdatePullRequestApprovalRuleContentOutput]
+    }
+  }
+
+  @js.native
+  trait UpdatePullRequestApprovalStateInput extends js.Object {
+    var approvalState: ApprovalState
+    var pullRequestId: PullRequestId
+    var revisionId: RevisionId
+  }
+
+  object UpdatePullRequestApprovalStateInput {
+    @inline
+    def apply(
+        approvalState: ApprovalState,
+        pullRequestId: PullRequestId,
+        revisionId: RevisionId
+    ): UpdatePullRequestApprovalStateInput = {
+      val __obj = js.Dynamic.literal(
+        "approvalState" -> approvalState.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdatePullRequestApprovalStateInput]
     }
   }
 

@@ -47,6 +47,7 @@ package object greengrass {
   type __string                                    = String
 
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
+
     @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
       service.associateRoleToGroup(params).promise.toFuture
     @inline def associateServiceRoleToAccountFuture(
@@ -4946,11 +4947,36 @@ package greengrass {
   }
 
   /**
+    * The owner setting for downloaded machine learning resources.
+    */
+  @js.native
+  trait ResourceDownloadOwnerSetting extends js.Object {
+    var GroupOwner: __string
+    var GroupPermission: Permission
+  }
+
+  object ResourceDownloadOwnerSetting {
+    @inline
+    def apply(
+        GroupOwner: __string,
+        GroupPermission: Permission
+    ): ResourceDownloadOwnerSetting = {
+      val __obj = js.Dynamic.literal(
+        "GroupOwner"      -> GroupOwner.asInstanceOf[js.Any],
+        "GroupPermission" -> GroupPermission.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResourceDownloadOwnerSetting]
+    }
+  }
+
+  /**
     * Attributes that define an Amazon S3 machine learning resource.
     */
   @js.native
   trait S3MachineLearningModelResourceData extends js.Object {
     var DestinationPath: js.UndefOr[__string]
+    var OwnerSetting: js.UndefOr[ResourceDownloadOwnerSetting]
     var S3Uri: js.UndefOr[__string]
   }
 
@@ -4958,10 +4984,12 @@ package greengrass {
     @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
+        OwnerSetting: js.UndefOr[ResourceDownloadOwnerSetting] = js.undefined,
         S3Uri: js.UndefOr[__string] = js.undefined
     ): S3MachineLearningModelResourceData = {
       val __obj = js.Dynamic.literal()
       DestinationPath.foreach(__v => __obj.updateDynamic("DestinationPath")(__v.asInstanceOf[js.Any]))
+      OwnerSetting.foreach(__v => __obj.updateDynamic("OwnerSetting")(__v.asInstanceOf[js.Any]))
       S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3MachineLearningModelResourceData]
     }
@@ -4973,6 +5001,7 @@ package greengrass {
   @js.native
   trait SageMakerMachineLearningModelResourceData extends js.Object {
     var DestinationPath: js.UndefOr[__string]
+    var OwnerSetting: js.UndefOr[ResourceDownloadOwnerSetting]
     var SageMakerJobArn: js.UndefOr[__string]
   }
 
@@ -4980,10 +5009,12 @@ package greengrass {
     @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
+        OwnerSetting: js.UndefOr[ResourceDownloadOwnerSetting] = js.undefined,
         SageMakerJobArn: js.UndefOr[__string] = js.undefined
     ): SageMakerMachineLearningModelResourceData = {
       val __obj = js.Dynamic.literal()
       DestinationPath.foreach(__v => __obj.updateDynamic("DestinationPath")(__v.asInstanceOf[js.Any]))
+      OwnerSetting.foreach(__v => __obj.updateDynamic("OwnerSetting")(__v.asInstanceOf[js.Any]))
       SageMakerJobArn.foreach(__v => __obj.updateDynamic("SageMakerJobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SageMakerMachineLearningModelResourceData]
     }
@@ -5582,9 +5613,8 @@ package greengrass {
     val armv7l  = "armv7l"
     val x86_64  = "x86_64"
     val aarch64 = "aarch64"
-    val openwrt = "openwrt"
 
-    val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64, openwrt))
+    val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
   }
 
   /**
@@ -5594,8 +5624,9 @@ package greengrass {
     val ubuntu       = "ubuntu"
     val raspbian     = "raspbian"
     val amazon_linux = "amazon_linux"
+    val openwrt      = "openwrt"
 
-    val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux))
+    val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
   }
 
   /**

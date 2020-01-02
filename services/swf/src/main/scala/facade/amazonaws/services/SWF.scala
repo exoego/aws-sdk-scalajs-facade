@@ -84,6 +84,7 @@ package object swf {
   type WorkflowTypeInfoList                              = js.Array[WorkflowTypeInfo]
 
   implicit final class SWFOps(private val service: SWF) extends AnyVal {
+
     @inline def countClosedWorkflowExecutionsFuture(
         params: CountClosedWorkflowExecutionsInput
     ): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise.toFuture
@@ -2463,8 +2464,7 @@ package swf {
         __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj
-          .updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
+        __obj.updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       scheduleActivityTaskFailedEventAttributes.foreach(__v =>
         __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])

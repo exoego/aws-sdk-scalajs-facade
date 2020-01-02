@@ -36,6 +36,7 @@ package object snowball {
   type Timestamp                  = js.Date
 
   implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
+
     @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
       service.cancelCluster(params).promise.toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] =

@@ -27,6 +27,7 @@ package object serverlessapplicationrepository {
 
   implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
       extends AnyVal {
+
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
     @inline def createApplicationVersionFuture(
@@ -267,11 +268,13 @@ package serverlessapplicationrepository {
     var CreationTime: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
+    var IsVerifiedAuthor: js.UndefOr[__boolean]
     var Labels: js.UndefOr[__listOf__string]
     var LicenseUrl: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
     var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var VerifiedAuthorUrl: js.UndefOr[__string]
     var Version: js.UndefOr[Version]
   }
 
@@ -283,11 +286,13 @@ package serverlessapplicationrepository {
         CreationTime: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HomePageUrl: js.UndefOr[__string] = js.undefined,
+        IsVerifiedAuthor: js.UndefOr[__boolean] = js.undefined,
         Labels: js.UndefOr[__listOf__string] = js.undefined,
         LicenseUrl: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         ReadmeUrl: js.UndefOr[__string] = js.undefined,
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+        VerifiedAuthorUrl: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): CreateApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -296,11 +301,13 @@ package serverlessapplicationrepository {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HomePageUrl.foreach(__v => __obj.updateDynamic("HomePageUrl")(__v.asInstanceOf[js.Any]))
+      IsVerifiedAuthor.foreach(__v => __obj.updateDynamic("IsVerifiedAuthor")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       LicenseUrl.foreach(__v => __obj.updateDynamic("LicenseUrl")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ReadmeUrl.foreach(__v => __obj.updateDynamic("ReadmeUrl")(__v.asInstanceOf[js.Any]))
       SpdxLicenseId.foreach(__v => __obj.updateDynamic("SpdxLicenseId")(__v.asInstanceOf[js.Any]))
+      VerifiedAuthorUrl.foreach(__v => __obj.updateDynamic("VerifiedAuthorUrl")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationResponse]
     }
@@ -593,11 +600,13 @@ package serverlessapplicationrepository {
     var CreationTime: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
+    var IsVerifiedAuthor: js.UndefOr[__boolean]
     var Labels: js.UndefOr[__listOf__string]
     var LicenseUrl: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
     var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var VerifiedAuthorUrl: js.UndefOr[__string]
     var Version: js.UndefOr[Version]
   }
 
@@ -609,11 +618,13 @@ package serverlessapplicationrepository {
         CreationTime: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HomePageUrl: js.UndefOr[__string] = js.undefined,
+        IsVerifiedAuthor: js.UndefOr[__boolean] = js.undefined,
         Labels: js.UndefOr[__listOf__string] = js.undefined,
         LicenseUrl: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         ReadmeUrl: js.UndefOr[__string] = js.undefined,
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+        VerifiedAuthorUrl: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): GetApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -622,11 +633,13 @@ package serverlessapplicationrepository {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HomePageUrl.foreach(__v => __obj.updateDynamic("HomePageUrl")(__v.asInstanceOf[js.Any]))
+      IsVerifiedAuthor.foreach(__v => __obj.updateDynamic("IsVerifiedAuthor")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       LicenseUrl.foreach(__v => __obj.updateDynamic("LicenseUrl")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ReadmeUrl.foreach(__v => __obj.updateDynamic("ReadmeUrl")(__v.asInstanceOf[js.Any]))
       SpdxLicenseId.foreach(__v => __obj.updateDynamic("SpdxLicenseId")(__v.asInstanceOf[js.Any]))
+      VerifiedAuthorUrl.foreach(__v => __obj.updateDynamic("VerifiedAuthorUrl")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApplicationResponse]
     }
@@ -1056,11 +1069,13 @@ package serverlessapplicationrepository {
     var CreationTime: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
+    var IsVerifiedAuthor: js.UndefOr[__boolean]
     var Labels: js.UndefOr[__listOf__string]
     var LicenseUrl: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
     var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var VerifiedAuthorUrl: js.UndefOr[__string]
     var Version: js.UndefOr[Version]
   }
 
@@ -1072,11 +1087,13 @@ package serverlessapplicationrepository {
         CreationTime: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HomePageUrl: js.UndefOr[__string] = js.undefined,
+        IsVerifiedAuthor: js.UndefOr[__boolean] = js.undefined,
         Labels: js.UndefOr[__listOf__string] = js.undefined,
         LicenseUrl: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         ReadmeUrl: js.UndefOr[__string] = js.undefined,
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+        VerifiedAuthorUrl: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1085,11 +1102,13 @@ package serverlessapplicationrepository {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HomePageUrl.foreach(__v => __obj.updateDynamic("HomePageUrl")(__v.asInstanceOf[js.Any]))
+      IsVerifiedAuthor.foreach(__v => __obj.updateDynamic("IsVerifiedAuthor")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       LicenseUrl.foreach(__v => __obj.updateDynamic("LicenseUrl")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ReadmeUrl.foreach(__v => __obj.updateDynamic("ReadmeUrl")(__v.asInstanceOf[js.Any]))
       SpdxLicenseId.foreach(__v => __obj.updateDynamic("SpdxLicenseId")(__v.asInstanceOf[js.Any]))
+      VerifiedAuthorUrl.foreach(__v => __obj.updateDynamic("VerifiedAuthorUrl")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationResponse]
     }

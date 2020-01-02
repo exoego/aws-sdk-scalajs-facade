@@ -44,6 +44,7 @@ package object batch {
   type Volumes                      = js.Array[Volume]
 
   implicit final class BatchOps(private val service: Batch) extends AnyVal {
+
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
     @inline def createComputeEnvironmentFuture(

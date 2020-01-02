@@ -42,6 +42,7 @@ package object dynamodbstreams {
   type TableName               = String
 
   implicit final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
+
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
       service.describeStream(params).promise.toFuture
     @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =

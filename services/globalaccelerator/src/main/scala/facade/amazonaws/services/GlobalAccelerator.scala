@@ -36,6 +36,7 @@ package object globalaccelerator {
   type TrafficDialPercentage      = Float
 
   implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
+
     @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] =
       service.createAccelerator(params).promise.toFuture
     @inline def createEndpointGroupFuture(params: CreateEndpointGroupRequest): Future[CreateEndpointGroupResponse] =

@@ -16,6 +16,14 @@ package object directoryservice {
   type Attributes                                 = js.Array[Attribute]
   type AvailabilityZone                           = String
   type AvailabilityZones                          = js.Array[AvailabilityZone]
+  type CertificateCN                              = String
+  type CertificateData                            = String
+  type CertificateExpiryDateTime                  = js.Date
+  type CertificateId                              = String
+  type CertificateRegisteredDateTime              = js.Date
+  type CertificateState                           = String
+  type CertificateStateReason                     = String
+  type CertificatesInfo                           = js.Array[CertificateInfo]
   type CidrIp                                     = String
   type CidrIps                                    = js.Array[CidrIp]
   type CloudOnlyDirectoriesLimitReached           = Boolean
@@ -54,6 +62,10 @@ package object directoryservice {
   type IpRouteStatusReason                        = String
   type IpRoutes                                   = js.Array[IpRoute]
   type IpRoutesInfo                               = js.Array[IpRouteInfo]
+  type LDAPSSettingsInfo                          = js.Array[LDAPSSettingInfo]
+  type LDAPSStatus                                = String
+  type LDAPSStatusReason                          = String
+  type LDAPSType                                  = String
   type LastUpdatedDateTime                        = js.Date
   type LaunchTime                                 = js.Date
   type LdifContent                                = String
@@ -64,6 +76,7 @@ package object directoryservice {
   type NextToken                                  = String
   type Notes                                      = String
   type OrganizationalUnitDN                       = String
+  type PageLimit                                  = Int
   type Password                                   = String
   type PortNumber                                 = Int
   type RadiusAuthenticationProtocol               = String
@@ -128,6 +141,7 @@ package object directoryservice {
   type VpcId                                      = String
 
   implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
+
     @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] =
       service.acceptSharedDirectory(params).promise.toFuture
     @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] =
@@ -166,8 +180,12 @@ package object directoryservice {
       service.deleteSnapshot(params).promise.toFuture
     @inline def deleteTrustFuture(params: DeleteTrustRequest): Future[DeleteTrustResult] =
       service.deleteTrust(params).promise.toFuture
+    @inline def deregisterCertificateFuture(params: DeregisterCertificateRequest): Future[DeregisterCertificateResult] =
+      service.deregisterCertificate(params).promise.toFuture
     @inline def deregisterEventTopicFuture(params: DeregisterEventTopicRequest): Future[DeregisterEventTopicResult] =
       service.deregisterEventTopic(params).promise.toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResult] =
+      service.describeCertificate(params).promise.toFuture
     @inline def describeConditionalForwardersFuture(
         params: DescribeConditionalForwardersRequest
     ): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise.toFuture
@@ -178,6 +196,8 @@ package object directoryservice {
     ): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise.toFuture
     @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] =
       service.describeEventTopics(params).promise.toFuture
+    @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] =
+      service.describeLDAPSSettings(params).promise.toFuture
     @inline def describeSharedDirectoriesFuture(
         params: DescribeSharedDirectoriesRequest
     ): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise.toFuture
@@ -185,10 +205,14 @@ package object directoryservice {
       service.describeSnapshots(params).promise.toFuture
     @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] =
       service.describeTrusts(params).promise.toFuture
+    @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] =
+      service.disableLDAPS(params).promise.toFuture
     @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] =
       service.disableRadius(params).promise.toFuture
     @inline def disableSsoFuture(params: DisableSsoRequest): Future[DisableSsoResult] =
       service.disableSso(params).promise.toFuture
+    @inline def enableLDAPSFuture(params: EnableLDAPSRequest): Future[EnableLDAPSResult] =
+      service.enableLDAPS(params).promise.toFuture
     @inline def enableRadiusFuture(params: EnableRadiusRequest): Future[EnableRadiusResult] =
       service.enableRadius(params).promise.toFuture
     @inline def enableSsoFuture(params: EnableSsoRequest): Future[EnableSsoResult] =
@@ -197,6 +221,8 @@ package object directoryservice {
       service.getDirectoryLimits(params).promise.toFuture
     @inline def getSnapshotLimitsFuture(params: GetSnapshotLimitsRequest): Future[GetSnapshotLimitsResult] =
       service.getSnapshotLimits(params).promise.toFuture
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResult] =
+      service.listCertificates(params).promise.toFuture
     @inline def listIpRoutesFuture(params: ListIpRoutesRequest): Future[ListIpRoutesResult] =
       service.listIpRoutes(params).promise.toFuture
     @inline def listLogSubscriptionsFuture(params: ListLogSubscriptionsRequest): Future[ListLogSubscriptionsResult] =
@@ -205,6 +231,8 @@ package object directoryservice {
       service.listSchemaExtensions(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
       service.listTagsForResource(params).promise.toFuture
+    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResult] =
+      service.registerCertificate(params).promise.toFuture
     @inline def registerEventTopicFuture(params: RegisterEventTopicRequest): Future[RegisterEventTopicResult] =
       service.registerEventTopic(params).promise.toFuture
     @inline def rejectSharedDirectoryFuture(params: RejectSharedDirectoryRequest): Future[RejectSharedDirectoryResult] =
@@ -267,28 +295,35 @@ package directoryservice {
     def deleteLogSubscription(params: DeleteLogSubscriptionRequest): Request[DeleteLogSubscriptionResult] = js.native
     def deleteSnapshot(params: DeleteSnapshotRequest): Request[DeleteSnapshotResult]                      = js.native
     def deleteTrust(params: DeleteTrustRequest): Request[DeleteTrustResult]                               = js.native
+    def deregisterCertificate(params: DeregisterCertificateRequest): Request[DeregisterCertificateResult] = js.native
     def deregisterEventTopic(params: DeregisterEventTopicRequest): Request[DeregisterEventTopicResult]    = js.native
+    def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResult]       = js.native
     def describeConditionalForwarders(
         params: DescribeConditionalForwardersRequest
     ): Request[DescribeConditionalForwardersResult]                                                 = js.native
     def describeDirectories(params: DescribeDirectoriesRequest): Request[DescribeDirectoriesResult] = js.native
     def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] =
       js.native
-    def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult] = js.native
+    def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult]       = js.native
+    def describeLDAPSSettings(params: DescribeLDAPSSettingsRequest): Request[DescribeLDAPSSettingsResult] = js.native
     def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] =
       js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult]                = js.native
     def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult]                         = js.native
+    def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult]                               = js.native
     def disableRadius(params: DisableRadiusRequest): Request[DisableRadiusResult]                            = js.native
     def disableSso(params: DisableSsoRequest): Request[DisableSsoResult]                                     = js.native
+    def enableLDAPS(params: EnableLDAPSRequest): Request[EnableLDAPSResult]                                  = js.native
     def enableRadius(params: EnableRadiusRequest): Request[EnableRadiusResult]                               = js.native
     def enableSso(params: EnableSsoRequest): Request[EnableSsoResult]                                        = js.native
     def getDirectoryLimits(params: GetDirectoryLimitsRequest): Request[GetDirectoryLimitsResult]             = js.native
     def getSnapshotLimits(params: GetSnapshotLimitsRequest): Request[GetSnapshotLimitsResult]                = js.native
+    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResult]                   = js.native
     def listIpRoutes(params: ListIpRoutesRequest): Request[ListIpRoutesResult]                               = js.native
     def listLogSubscriptions(params: ListLogSubscriptionsRequest): Request[ListLogSubscriptionsResult]       = js.native
     def listSchemaExtensions(params: ListSchemaExtensionsRequest): Request[ListSchemaExtensionsResult]       = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult]          = js.native
+    def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResult]          = js.native
     def registerEventTopic(params: RegisterEventTopicRequest): Request[RegisterEventTopicResult]             = js.native
     def rejectSharedDirectory(params: RejectSharedDirectoryRequest): Request[RejectSharedDirectoryResult]    = js.native
     def removeIpRoutes(params: RemoveIpRoutesRequest): Request[RemoveIpRoutesResult]                         = js.native
@@ -471,6 +506,77 @@ package directoryservice {
 
       __obj.asInstanceOf[CancelSchemaExtensionResult]
     }
+  }
+
+  /**
+    * Information about the certificate.
+    */
+  @js.native
+  trait Certificate extends js.Object {
+    var CertificateId: js.UndefOr[CertificateId]
+    var CommonName: js.UndefOr[CertificateCN]
+    var ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime]
+    var RegisteredDateTime: js.UndefOr[CertificateRegisteredDateTime]
+    var State: js.UndefOr[CertificateState]
+    var StateReason: js.UndefOr[CertificateStateReason]
+  }
+
+  object Certificate {
+    @inline
+    def apply(
+        CertificateId: js.UndefOr[CertificateId] = js.undefined,
+        CommonName: js.UndefOr[CertificateCN] = js.undefined,
+        ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime] = js.undefined,
+        RegisteredDateTime: js.UndefOr[CertificateRegisteredDateTime] = js.undefined,
+        State: js.UndefOr[CertificateState] = js.undefined,
+        StateReason: js.UndefOr[CertificateStateReason] = js.undefined
+    ): Certificate = {
+      val __obj = js.Dynamic.literal()
+      CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
+      CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
+      ExpiryDateTime.foreach(__v => __obj.updateDynamic("ExpiryDateTime")(__v.asInstanceOf[js.Any]))
+      RegisteredDateTime.foreach(__v => __obj.updateDynamic("RegisteredDateTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
+    }
+  }
+
+  /**
+    * Contains general information about a certificate.
+    */
+  @js.native
+  trait CertificateInfo extends js.Object {
+    var CertificateId: js.UndefOr[CertificateId]
+    var CommonName: js.UndefOr[CertificateCN]
+    var State: js.UndefOr[CertificateState]
+  }
+
+  object CertificateInfo {
+    @inline
+    def apply(
+        CertificateId: js.UndefOr[CertificateId] = js.undefined,
+        CommonName: js.UndefOr[CertificateCN] = js.undefined,
+        State: js.UndefOr[CertificateState] = js.undefined
+    ): CertificateInfo = {
+      val __obj = js.Dynamic.literal()
+      CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
+      CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CertificateInfo]
+    }
+  }
+
+  object CertificateStateEnum {
+    val Registering      = "Registering"
+    val Registered       = "Registered"
+    val RegisterFailed   = "RegisterFailed"
+    val Deregistering    = "Deregistering"
+    val Deregistered     = "Deregistered"
+    val DeregisterFailed = "DeregisterFailed"
+
+    val values =
+      js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
   }
 
   /**
@@ -1174,6 +1280,40 @@ package directoryservice {
     }
   }
 
+  @js.native
+  trait DeregisterCertificateRequest extends js.Object {
+    var CertificateId: CertificateId
+    var DirectoryId: DirectoryId
+  }
+
+  object DeregisterCertificateRequest {
+    @inline
+    def apply(
+        CertificateId: CertificateId,
+        DirectoryId: DirectoryId
+    ): DeregisterCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeregisterCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterCertificateResult extends js.Object {}
+
+  object DeregisterCertificateResult {
+    @inline
+    def apply(
+        ): DeregisterCertificateResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeregisterCertificateResult]
+    }
+  }
+
   /**
     * Removes the specified directory as a publisher to the specified SNS topic.
     */
@@ -1211,6 +1351,43 @@ package directoryservice {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterEventTopicResult]
+    }
+  }
+
+  @js.native
+  trait DescribeCertificateRequest extends js.Object {
+    var CertificateId: CertificateId
+    var DirectoryId: DirectoryId
+  }
+
+  object DescribeCertificateRequest {
+    @inline
+    def apply(
+        CertificateId: CertificateId,
+        DirectoryId: DirectoryId
+    ): DescribeCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCertificateResult extends js.Object {
+    var Certificate: js.UndefOr[Certificate]
+  }
+
+  object DescribeCertificateResult {
+    @inline
+    def apply(
+        Certificate: js.UndefOr[Certificate] = js.undefined
+    ): DescribeCertificateResult = {
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCertificateResult]
     }
   }
 
@@ -1388,6 +1565,52 @@ package directoryservice {
       val __obj = js.Dynamic.literal()
       EventTopics.foreach(__v => __obj.updateDynamic("EventTopics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventTopicsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeLDAPSSettingsRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Limit: js.UndefOr[PageLimit]
+    var NextToken: js.UndefOr[NextToken]
+    var Type: js.UndefOr[LDAPSType]
+  }
+
+  object DescribeLDAPSSettingsRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Limit: js.UndefOr[PageLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Type: js.UndefOr[LDAPSType] = js.undefined
+    ): DescribeLDAPSSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLDAPSSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLDAPSSettingsResult extends js.Object {
+    var LDAPSSettingsInfo: js.UndefOr[LDAPSSettingsInfo]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeLDAPSSettingsResult {
+    @inline
+    def apply(
+        LDAPSSettingsInfo: js.UndefOr[LDAPSSettingsInfo] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeLDAPSSettingsResult = {
+      val __obj = js.Dynamic.literal()
+      LDAPSSettingsInfo.foreach(__v => __obj.updateDynamic("LDAPSSettingsInfo")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLDAPSSettingsResult]
     }
   }
 
@@ -1701,7 +1924,7 @@ package directoryservice {
   }
 
   /**
-    * Contains directory limit information for a region.
+    * Contains directory limit information for a Region.
     */
   @js.native
   trait DirectoryLimits extends js.Object {
@@ -1859,6 +2082,40 @@ package directoryservice {
     }
   }
 
+  @js.native
+  trait DisableLDAPSRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Type: js.UndefOr[LDAPSType]
+  }
+
+  object DisableLDAPSRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Type: js.UndefOr[LDAPSType] = js.undefined
+    ): DisableLDAPSRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableLDAPSRequest]
+    }
+  }
+
+  @js.native
+  trait DisableLDAPSResult extends js.Object {}
+
+  object DisableLDAPSResult {
+    @inline
+    def apply(
+        ): DisableLDAPSResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisableLDAPSResult]
+    }
+  }
+
   /**
     * Contains the inputs for the <a>DisableRadius</a> operation.
     */
@@ -1997,6 +2254,40 @@ package directoryservice {
     val Failed    = "Failed"
 
     val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
+  }
+
+  @js.native
+  trait EnableLDAPSRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Type: js.UndefOr[LDAPSType]
+  }
+
+  object EnableLDAPSRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Type: js.UndefOr[LDAPSType] = js.undefined
+    ): EnableLDAPSRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableLDAPSRequest]
+    }
+  }
+
+  @js.native
+  trait EnableLDAPSResult extends js.Object {}
+
+  object EnableLDAPSResult {
+    @inline
+    def apply(
+        ): EnableLDAPSResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[EnableLDAPSResult]
+    }
   }
 
   /**
@@ -2253,6 +2544,89 @@ package directoryservice {
     val RemoveFailed = "RemoveFailed"
 
     val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
+  }
+
+  /**
+    * Contains general information about the LDAPS settings.
+    */
+  @js.native
+  trait LDAPSSettingInfo extends js.Object {
+    var LDAPSStatus: js.UndefOr[LDAPSStatus]
+    var LDAPSStatusReason: js.UndefOr[LDAPSStatusReason]
+    var LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime]
+  }
+
+  object LDAPSSettingInfo {
+    @inline
+    def apply(
+        LDAPSStatus: js.UndefOr[LDAPSStatus] = js.undefined,
+        LDAPSStatusReason: js.UndefOr[LDAPSStatusReason] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined
+    ): LDAPSSettingInfo = {
+      val __obj = js.Dynamic.literal()
+      LDAPSStatus.foreach(__v => __obj.updateDynamic("LDAPSStatus")(__v.asInstanceOf[js.Any]))
+      LDAPSStatusReason.foreach(__v => __obj.updateDynamic("LDAPSStatusReason")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDateTime.foreach(__v => __obj.updateDynamic("LastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LDAPSSettingInfo]
+    }
+  }
+
+  object LDAPSStatusEnum {
+    val Enabling     = "Enabling"
+    val Enabled      = "Enabled"
+    val EnableFailed = "EnableFailed"
+    val Disabled     = "Disabled"
+
+    val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
+  }
+
+  object LDAPSTypeEnum {
+    val Client = "Client"
+
+    val values = js.Object.freeze(js.Array(Client))
+  }
+
+  @js.native
+  trait ListCertificatesRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Limit: js.UndefOr[PageLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCertificatesRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Limit: js.UndefOr[PageLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificatesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCertificatesRequest]
+    }
+  }
+
+  @js.native
+  trait ListCertificatesResult extends js.Object {
+    var CertificatesInfo: js.UndefOr[CertificatesInfo]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCertificatesResult {
+    @inline
+    def apply(
+        CertificatesInfo: js.UndefOr[CertificatesInfo] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificatesResult = {
+      val __obj = js.Dynamic.literal()
+      CertificatesInfo.foreach(__v => __obj.updateDynamic("CertificatesInfo")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCertificatesResult]
+    }
   }
 
   @js.native
@@ -2541,6 +2915,43 @@ package directoryservice {
     val Failed    = "Failed"
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
+  }
+
+  @js.native
+  trait RegisterCertificateRequest extends js.Object {
+    var CertificateData: CertificateData
+    var DirectoryId: DirectoryId
+  }
+
+  object RegisterCertificateRequest {
+    @inline
+    def apply(
+        CertificateData: CertificateData,
+        DirectoryId: DirectoryId
+    ): RegisterCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "CertificateData" -> CertificateData.asInstanceOf[js.Any],
+        "DirectoryId"     -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RegisterCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterCertificateResult extends js.Object {
+    var CertificateId: js.UndefOr[CertificateId]
+  }
+
+  object RegisterCertificateResult {
+    @inline
+    def apply(
+        CertificateId: js.UndefOr[CertificateId] = js.undefined
+    ): RegisterCertificateResult = {
+      val __obj = js.Dynamic.literal()
+      CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterCertificateResult]
+    }
   }
 
   /**

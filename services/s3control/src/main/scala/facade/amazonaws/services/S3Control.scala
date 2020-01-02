@@ -8,9 +8,14 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object s3control {
+  type AccessPointList             = js.Array[AccessPoint]
+  type AccessPointName             = String
   type AccountId                   = String
+  type BucketName                  = String
   type ConfirmationRequired        = Boolean
+  type CreationDate                = js.Date
   type IAMRoleArn                  = String
+  type IsPublic                    = Boolean
   type JobArn                      = String
   type JobCreationTime             = js.Date
   type JobFailureCode              = String
@@ -34,11 +39,13 @@ package object s3control {
   type KmsKeyArnString             = String
   type MaxLength1024String         = String
   type MaxResults                  = Int
+  type NetworkOrigin               = String
   type NonEmptyMaxLength1024String = String
   type NonEmptyMaxLength2048String = String
   type NonEmptyMaxLength256String  = String
   type NonEmptyMaxLength64String   = String
   type OperationName               = String
+  type Policy                      = String
   type ReportPrefixString          = String
   type RequestedJobStatus          = String
   type S3BucketArnString           = String
@@ -62,18 +69,37 @@ package object s3control {
   type SuspendedCause              = String
   type SuspendedDate               = js.Date
   type TimeStamp                   = js.Date
+  type VpcId                       = String
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
+
+    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[js.Object] =
+      service.createAccessPoint(params).promise.toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
       service.createJob(params).promise.toFuture
+    @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] =
+      service.deleteAccessPoint(params).promise.toFuture
+    @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] =
+      service.deleteAccessPointPolicy(params).promise.toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
       service.deletePublicAccessBlock(params).promise.toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
       service.describeJob(params).promise.toFuture
+    @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] =
+      service.getAccessPoint(params).promise.toFuture
+    @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] =
+      service.getAccessPointPolicy(params).promise.toFuture
+    @inline def getAccessPointPolicyStatusFuture(
+        params: GetAccessPointPolicyStatusRequest
+    ): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise.toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
       service.getPublicAccessBlock(params).promise.toFuture
+    @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] =
+      service.listAccessPoints(params).promise.toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
       service.listJobs(params).promise.toFuture
+    @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] =
+      service.putAccessPointPolicy(params).promise.toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
       service.putPublicAccessBlock(params).promise.toFuture
     @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
@@ -89,14 +115,86 @@ package s3control {
   class S3Control() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createAccessPoint(params: CreateAccessPointRequest): Request[js.Object]                        = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult]                                  = js.native
+    def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object]                        = js.native
+    def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object]            = js.native
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object]            = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult]                            = js.native
+    def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult]                   = js.native
+    def getAccessPointPolicy(params: GetAccessPointPolicyRequest): Request[GetAccessPointPolicyResult] = js.native
+    def getAccessPointPolicyStatus(
+        params: GetAccessPointPolicyStatusRequest
+    ): Request[GetAccessPointPolicyStatusResult]                                                       = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
+    def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult]             = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                     = js.native
+    def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object]                  = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object]                  = js.native
     def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult]          = js.native
     def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult]                = js.native
+  }
+
+  /**
+    * An access point used to access a bucket.
+    */
+  @js.native
+  trait AccessPoint extends js.Object {
+    var Bucket: BucketName
+    var Name: AccessPointName
+    var NetworkOrigin: NetworkOrigin
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object AccessPoint {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        Name: AccessPointName,
+        NetworkOrigin: NetworkOrigin,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): AccessPoint = {
+      val __obj = js.Dynamic.literal(
+        "Bucket"        -> Bucket.asInstanceOf[js.Any],
+        "Name"          -> Name.asInstanceOf[js.Any],
+        "NetworkOrigin" -> NetworkOrigin.asInstanceOf[js.Any]
+      )
+
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessPoint]
+    }
+  }
+
+  @js.native
+  trait CreateAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+    var Name: AccessPointName
+    var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object CreateAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName,
+        Name: AccessPointName,
+        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): CreateAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket"    -> Bucket.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      PublicAccessBlockConfiguration.foreach(__v =>
+        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPointRequest]
+    }
   }
 
   @js.native
@@ -158,6 +256,48 @@ package s3control {
   }
 
   @js.native
+  trait DeleteAccessPointPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+  }
+
+  object DeleteAccessPointPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName
+    ): DeleteAccessPointPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+  }
+
+  object DeleteAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName
+    ): DeleteAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAccessPointRequest]
+    }
+  }
+
+  @js.native
   trait DeletePublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
   }
@@ -209,6 +349,134 @@ package s3control {
       val __obj = js.Dynamic.literal()
       Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+  }
+
+  object GetAccessPointPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName
+    ): GetAccessPointPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyResult extends js.Object {
+    var Policy: js.UndefOr[Policy]
+  }
+
+  object GetAccessPointPolicyResult {
+    @inline
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined
+    ): GetAccessPointPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointPolicyResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyStatusRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+  }
+
+  object GetAccessPointPolicyStatusRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName
+    ): GetAccessPointPolicyStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAccessPointPolicyStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyStatusResult extends js.Object {
+    var PolicyStatus: js.UndefOr[PolicyStatus]
+  }
+
+  object GetAccessPointPolicyStatusResult {
+    @inline
+    def apply(
+        PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
+    ): GetAccessPointPolicyStatusResult = {
+      val __obj = js.Dynamic.literal()
+      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointPolicyStatusResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+  }
+
+  object GetAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName
+    ): GetAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointResult extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var CreationDate: js.UndefOr[CreationDate]
+    var Name: js.UndefOr[AccessPointName]
+    var NetworkOrigin: js.UndefOr[NetworkOrigin]
+    var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object GetAccessPointResult {
+    @inline
+    def apply(
+        Bucket: js.UndefOr[BucketName] = js.undefined,
+        CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        Name: js.UndefOr[AccessPointName] = js.undefined,
+        NetworkOrigin: js.UndefOr[NetworkOrigin] = js.undefined,
+        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): GetAccessPointResult = {
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkOrigin.foreach(__v => __obj.updateDynamic("NetworkOrigin")(__v.asInstanceOf[js.Any]))
+      PublicAccessBlockConfiguration.foreach(__v =>
+        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointResult]
     }
   }
 
@@ -624,6 +892,52 @@ package s3control {
   }
 
   @js.native
+  trait ListAccessPointsRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: js.UndefOr[BucketName]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+  }
+
+  object ListAccessPointsRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: js.UndefOr[BucketName] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+    ): ListAccessPointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessPointsResult extends js.Object {
+    var AccessPointList: js.UndefOr[AccessPointList]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+  }
+
+  object ListAccessPointsResult {
+    @inline
+    def apply(
+        AccessPointList: js.UndefOr[AccessPointList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+    ): ListAccessPointsResult = {
+      val __obj = js.Dynamic.literal()
+      AccessPointList.foreach(__v => __obj.updateDynamic("AccessPointList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPointsResult]
+    }
+  }
+
+  @js.native
   trait ListJobsRequest extends js.Object {
     var AccountId: AccountId
     var JobStatuses: js.UndefOr[JobStatusList]
@@ -669,6 +983,13 @@ package s3control {
     }
   }
 
+  object NetworkOriginEnum {
+    val Internet = "Internet"
+    val VPC      = "VPC"
+
+    val values = js.Object.freeze(js.Array(Internet, VPC))
+  }
+
   object OperationNameEnum {
     val LambdaInvoke            = "LambdaInvoke"
     val S3PutObjectCopy         = "S3PutObjectCopy"
@@ -682,7 +1003,26 @@ package s3control {
   }
 
   /**
-    * <p/>
+    * Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    */
+  @js.native
+  trait PolicyStatus extends js.Object {
+    var IsPublic: js.UndefOr[IsPublic]
+  }
+
+  object PolicyStatus {
+    @inline
+    def apply(
+        IsPublic: js.UndefOr[IsPublic] = js.undefined
+    ): PolicyStatus = {
+      val __obj = js.Dynamic.literal()
+      IsPublic.foreach(__v => __obj.updateDynamic("IsPublic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyStatus]
+    }
+  }
+
+  /**
+    * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the Amazon Simple Storage Service Developer Guide.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -706,6 +1046,30 @@ package s3control {
       IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
       RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublicAccessBlockConfiguration]
+    }
+  }
+
+  @js.native
+  trait PutAccessPointPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: AccessPointName
+    var Policy: Policy
+  }
+
+  object PutAccessPointPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: AccessPointName,
+        Policy: Policy
+    ): PutAccessPointPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "Policy"    -> Policy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutAccessPointPolicyRequest]
     }
   }
 
@@ -1233,6 +1597,27 @@ package s3control {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobStatusResult]
+    }
+  }
+
+  /**
+    * The Virtual Private Cloud (VPC) configuration for an access point.
+    */
+  @js.native
+  trait VpcConfiguration extends js.Object {
+    var VpcId: VpcId
+  }
+
+  object VpcConfiguration {
+    @inline
+    def apply(
+        VpcId: VpcId
+    ): VpcConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfiguration]
     }
   }
 }

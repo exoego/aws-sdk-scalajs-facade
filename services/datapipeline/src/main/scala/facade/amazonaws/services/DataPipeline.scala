@@ -40,6 +40,7 @@ package object datapipeline {
   type validationMessages      = js.Array[validationMessage]
 
   implicit final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
+
     @inline def activatePipelineFuture(params: ActivatePipelineInput): Future[ActivatePipelineOutput] =
       service.activatePipeline(params).promise.toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture

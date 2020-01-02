@@ -26,6 +26,8 @@ package object lexruntime {
   type IntentSummaryCheckpointLabel = String
   type IntentSummaryList            = js.Array[IntentSummary]
   type MessageFormatType            = String
+  type SentimentLabel               = String
+  type SentimentScore               = String
   type StringMap                    = js.Dictionary[String]
   type StringUrlWithLength          = String
   type StringWithLength             = String
@@ -35,6 +37,7 @@ package object lexruntime {
   type listOfButtons                = js.Array[Button]
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
+
     @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
       service.deleteSession(params).promise.toFuture
     @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
@@ -396,7 +399,9 @@ package lexruntime {
     var intentName: js.UndefOr[IntentName]
     var message: js.UndefOr[Text]
     var messageFormat: js.UndefOr[MessageFormatType]
+    var sentimentResponse: js.UndefOr[String]
     var sessionAttributes: js.UndefOr[String]
+    var sessionId: js.UndefOr[String]
     var slotToElicit: js.UndefOr[String]
     var slots: js.UndefOr[String]
   }
@@ -411,7 +416,9 @@ package lexruntime {
         intentName: js.UndefOr[IntentName] = js.undefined,
         message: js.UndefOr[Text] = js.undefined,
         messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        sentimentResponse: js.UndefOr[String] = js.undefined,
         sessionAttributes: js.UndefOr[String] = js.undefined,
+        sessionId: js.UndefOr[String] = js.undefined,
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[String] = js.undefined
     ): PostContentResponse = {
@@ -423,7 +430,9 @@ package lexruntime {
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      sentimentResponse.foreach(__v => __obj.updateDynamic("sentimentResponse")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
       slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
       slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostContentResponse]
@@ -470,7 +479,9 @@ package lexruntime {
     var message: js.UndefOr[Text]
     var messageFormat: js.UndefOr[MessageFormatType]
     var responseCard: js.UndefOr[ResponseCard]
+    var sentimentResponse: js.UndefOr[SentimentResponse]
     var sessionAttributes: js.UndefOr[StringMap]
+    var sessionId: js.UndefOr[String]
     var slotToElicit: js.UndefOr[String]
     var slots: js.UndefOr[StringMap]
   }
@@ -483,7 +494,9 @@ package lexruntime {
         message: js.UndefOr[Text] = js.undefined,
         messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
         responseCard: js.UndefOr[ResponseCard] = js.undefined,
+        sentimentResponse: js.UndefOr[SentimentResponse] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined,
+        sessionId: js.UndefOr[String] = js.undefined,
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[StringMap] = js.undefined
     ): PostTextResponse = {
@@ -493,7 +506,9 @@ package lexruntime {
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
       responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
+      sentimentResponse.foreach(__v => __obj.updateDynamic("sentimentResponse")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
       slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
       slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostTextResponse]
@@ -601,6 +616,29 @@ package lexruntime {
       genericAttachments.foreach(__v => __obj.updateDynamic("genericAttachments")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseCard]
+    }
+  }
+
+  /**
+    * The sentiment expressed in an utterance.
+    *  When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.
+    */
+  @js.native
+  trait SentimentResponse extends js.Object {
+    var sentimentLabel: js.UndefOr[SentimentLabel]
+    var sentimentScore: js.UndefOr[SentimentScore]
+  }
+
+  object SentimentResponse {
+    @inline
+    def apply(
+        sentimentLabel: js.UndefOr[SentimentLabel] = js.undefined,
+        sentimentScore: js.UndefOr[SentimentScore] = js.undefined
+    ): SentimentResponse = {
+      val __obj = js.Dynamic.literal()
+      sentimentLabel.foreach(__v => __obj.updateDynamic("sentimentLabel")(__v.asInstanceOf[js.Any]))
+      sentimentScore.foreach(__v => __obj.updateDynamic("sentimentScore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SentimentResponse]
     }
   }
 }

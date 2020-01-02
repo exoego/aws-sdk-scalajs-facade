@@ -48,6 +48,7 @@ package object cloudsearch {
   type Word                     = String
 
   implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
+
     @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
       service.buildSuggesters(params).promise.toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =

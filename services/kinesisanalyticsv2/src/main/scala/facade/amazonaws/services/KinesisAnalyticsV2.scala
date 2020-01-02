@@ -75,20 +75,29 @@ package object kinesisanalyticsv2 {
   type ResourceARN                         = String
   type RoleARN                             = String
   type RuntimeEnvironment                  = String
+  type SecurityGroupId                     = String
+  type SecurityGroupIds                    = js.Array[SecurityGroupId]
   type SnapshotName                        = String
   type SnapshotStatus                      = String
   type SnapshotSummaries                   = js.Array[SnapshotDetails]
   type SqlRunConfigurations                = js.Array[SqlRunConfiguration]
+  type SubnetId                            = String
+  type SubnetIds                           = js.Array[SubnetId]
   type TagKey                              = String
   type TagKeys                             = js.Array[TagKey]
   type TagValue                            = String
   type Tags                                = js.Array[Tag]
   type TextContent                         = String
   type Timestamp                           = js.Date
+  type VpcConfigurationDescriptions        = js.Array[VpcConfigurationDescription]
+  type VpcConfigurationUpdates             = js.Array[VpcConfigurationUpdate]
+  type VpcConfigurations                   = js.Array[VpcConfiguration]
+  type VpcId                               = String
   type ZipFileContent =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class KinesisAnalyticsV2Ops(private val service: KinesisAnalyticsV2) extends AnyVal {
+
     @inline def addApplicationCloudWatchLoggingOptionFuture(
         params: AddApplicationCloudWatchLoggingOptionRequest
     ): Future[AddApplicationCloudWatchLoggingOptionResponse] =
@@ -105,6 +114,9 @@ package object kinesisanalyticsv2 {
         params: AddApplicationReferenceDataSourceRequest
     ): Future[AddApplicationReferenceDataSourceResponse] =
       service.addApplicationReferenceDataSource(params).promise.toFuture
+    @inline def addApplicationVpcConfigurationFuture(
+        params: AddApplicationVpcConfigurationRequest
+    ): Future[AddApplicationVpcConfigurationResponse] = service.addApplicationVpcConfiguration(params).promise.toFuture
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
     @inline def createApplicationSnapshotFuture(
@@ -130,6 +142,10 @@ package object kinesisanalyticsv2 {
     @inline def deleteApplicationSnapshotFuture(
         params: DeleteApplicationSnapshotRequest
     ): Future[DeleteApplicationSnapshotResponse] = service.deleteApplicationSnapshot(params).promise.toFuture
+    @inline def deleteApplicationVpcConfigurationFuture(
+        params: DeleteApplicationVpcConfigurationRequest
+    ): Future[DeleteApplicationVpcConfigurationResponse] =
+      service.deleteApplicationVpcConfiguration(params).promise.toFuture
     @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
       service.describeApplication(params).promise.toFuture
     @inline def describeApplicationSnapshotFuture(
@@ -173,7 +189,10 @@ package kinesisanalyticsv2 {
     def addApplicationOutput(params: AddApplicationOutputRequest): Request[AddApplicationOutputResponse] = js.native
     def addApplicationReferenceDataSource(
         params: AddApplicationReferenceDataSourceRequest
-    ): Request[AddApplicationReferenceDataSourceResponse]                                       = js.native
+    ): Request[AddApplicationReferenceDataSourceResponse] = js.native
+    def addApplicationVpcConfiguration(
+        params: AddApplicationVpcConfigurationRequest
+    ): Request[AddApplicationVpcConfigurationResponse]                                          = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def createApplicationSnapshot(
         params: CreateApplicationSnapshotRequest
@@ -192,7 +211,10 @@ package kinesisanalyticsv2 {
     ): Request[DeleteApplicationReferenceDataSourceResponse] = js.native
     def deleteApplicationSnapshot(
         params: DeleteApplicationSnapshotRequest
-    ): Request[DeleteApplicationSnapshotResponse]                                                     = js.native
+    ): Request[DeleteApplicationSnapshotResponse] = js.native
+    def deleteApplicationVpcConfiguration(
+        params: DeleteApplicationVpcConfigurationRequest
+    ): Request[DeleteApplicationVpcConfigurationResponse]                                             = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def describeApplicationSnapshot(
         params: DescribeApplicationSnapshotRequest
@@ -451,6 +473,54 @@ package kinesisanalyticsv2 {
     }
   }
 
+  @js.native
+  trait AddApplicationVpcConfigurationRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var VpcConfiguration: VpcConfiguration
+  }
+
+  object AddApplicationVpcConfigurationRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        CurrentApplicationVersionId: ApplicationVersionId,
+        VpcConfiguration: VpcConfiguration
+    ): AddApplicationVpcConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "VpcConfiguration"            -> VpcConfiguration.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AddApplicationVpcConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait AddApplicationVpcConfigurationResponse extends js.Object {
+    var ApplicationARN: js.UndefOr[ResourceARN]
+    var ApplicationVersionId: js.UndefOr[ApplicationVersionId]
+    var VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription]
+  }
+
+  object AddApplicationVpcConfigurationResponse {
+    @inline
+    def apply(
+        ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
+        ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
+        VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription] = js.undefined
+    ): AddApplicationVpcConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
+      VpcConfigurationDescription.foreach(__v =>
+        __obj.updateDynamic("VpcConfigurationDescription")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AddApplicationVpcConfigurationResponse]
+    }
+  }
+
   /**
     * Describes code configuration for a Java-based Kinesis Data Analytics application.
     */
@@ -531,6 +601,7 @@ package kinesisanalyticsv2 {
     var EnvironmentProperties: js.UndefOr[EnvironmentProperties]
     var FlinkApplicationConfiguration: js.UndefOr[FlinkApplicationConfiguration]
     var SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration]
+    var VpcConfigurations: js.UndefOr[VpcConfigurations]
   }
 
   object ApplicationConfiguration {
@@ -540,7 +611,8 @@ package kinesisanalyticsv2 {
         ApplicationSnapshotConfiguration: js.UndefOr[ApplicationSnapshotConfiguration] = js.undefined,
         EnvironmentProperties: js.UndefOr[EnvironmentProperties] = js.undefined,
         FlinkApplicationConfiguration: js.UndefOr[FlinkApplicationConfiguration] = js.undefined,
-        SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration] = js.undefined
+        SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration] = js.undefined,
+        VpcConfigurations: js.UndefOr[VpcConfigurations] = js.undefined
     ): ApplicationConfiguration = {
       val __obj = js.Dynamic.literal(
         "ApplicationCodeConfiguration" -> ApplicationCodeConfiguration.asInstanceOf[js.Any]
@@ -556,6 +628,7 @@ package kinesisanalyticsv2 {
       SqlApplicationConfiguration.foreach(__v =>
         __obj.updateDynamic("SqlApplicationConfiguration")(__v.asInstanceOf[js.Any])
       )
+      VpcConfigurations.foreach(__v => __obj.updateDynamic("VpcConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationConfiguration]
     }
   }
@@ -571,6 +644,7 @@ package kinesisanalyticsv2 {
     var FlinkApplicationConfigurationDescription: js.UndefOr[FlinkApplicationConfigurationDescription]
     var RunConfigurationDescription: js.UndefOr[RunConfigurationDescription]
     var SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription]
+    var VpcConfigurationDescriptions: js.UndefOr[VpcConfigurationDescriptions]
   }
 
   object ApplicationConfigurationDescription {
@@ -582,7 +656,8 @@ package kinesisanalyticsv2 {
         EnvironmentPropertyDescriptions: js.UndefOr[EnvironmentPropertyDescriptions] = js.undefined,
         FlinkApplicationConfigurationDescription: js.UndefOr[FlinkApplicationConfigurationDescription] = js.undefined,
         RunConfigurationDescription: js.UndefOr[RunConfigurationDescription] = js.undefined,
-        SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription] = js.undefined
+        SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription] = js.undefined,
+        VpcConfigurationDescriptions: js.UndefOr[VpcConfigurationDescriptions] = js.undefined
     ): ApplicationConfigurationDescription = {
       val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationDescription.foreach(__v =>
@@ -603,6 +678,9 @@ package kinesisanalyticsv2 {
       SqlApplicationConfigurationDescription.foreach(__v =>
         __obj.updateDynamic("SqlApplicationConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
+      VpcConfigurationDescriptions.foreach(__v =>
+        __obj.updateDynamic("VpcConfigurationDescriptions")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ApplicationConfigurationDescription]
     }
   }
@@ -617,6 +695,7 @@ package kinesisanalyticsv2 {
     var EnvironmentPropertyUpdates: js.UndefOr[EnvironmentPropertyUpdates]
     var FlinkApplicationConfigurationUpdate: js.UndefOr[FlinkApplicationConfigurationUpdate]
     var SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate]
+    var VpcConfigurationUpdates: js.UndefOr[VpcConfigurationUpdates]
   }
 
   object ApplicationConfigurationUpdate {
@@ -626,7 +705,8 @@ package kinesisanalyticsv2 {
         ApplicationSnapshotConfigurationUpdate: js.UndefOr[ApplicationSnapshotConfigurationUpdate] = js.undefined,
         EnvironmentPropertyUpdates: js.UndefOr[EnvironmentPropertyUpdates] = js.undefined,
         FlinkApplicationConfigurationUpdate: js.UndefOr[FlinkApplicationConfigurationUpdate] = js.undefined,
-        SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate] = js.undefined
+        SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate] = js.undefined,
+        VpcConfigurationUpdates: js.UndefOr[VpcConfigurationUpdates] = js.undefined
     ): ApplicationConfigurationUpdate = {
       val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationUpdate.foreach(__v =>
@@ -644,6 +724,7 @@ package kinesisanalyticsv2 {
       SqlApplicationConfigurationUpdate.foreach(__v =>
         __obj.updateDynamic("SqlApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
+      VpcConfigurationUpdates.foreach(__v => __obj.updateDynamic("VpcConfigurationUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationConfigurationUpdate]
     }
   }
@@ -1468,6 +1549,49 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
+  trait DeleteApplicationVpcConfigurationRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var VpcConfigurationId: Id
+  }
+
+  object DeleteApplicationVpcConfigurationRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        CurrentApplicationVersionId: ApplicationVersionId,
+        VpcConfigurationId: Id
+    ): DeleteApplicationVpcConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "VpcConfigurationId"          -> VpcConfigurationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteApplicationVpcConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteApplicationVpcConfigurationResponse extends js.Object {
+    var ApplicationARN: js.UndefOr[ResourceARN]
+    var ApplicationVersionId: js.UndefOr[ApplicationVersionId]
+  }
+
+  object DeleteApplicationVpcConfigurationResponse {
+    @inline
+    def apply(
+        ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
+        ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
+    ): DeleteApplicationVpcConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteApplicationVpcConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeApplicationRequest extends js.Object {
     var ApplicationName: ApplicationName
     var IncludeAdditionalDetails: js.UndefOr[BooleanObject]
@@ -1775,6 +1899,25 @@ package kinesisanalyticsv2 {
         __obj.updateDynamic("ParallelismConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FlinkApplicationConfigurationUpdate]
+    }
+  }
+
+  /**
+    * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+    */
+  @js.native
+  trait FlinkRunConfiguration extends js.Object {
+    var AllowNonRestoredState: js.UndefOr[BooleanObject]
+  }
+
+  object FlinkRunConfiguration {
+    @inline
+    def apply(
+        AllowNonRestoredState: js.UndefOr[BooleanObject] = js.undefined
+    ): FlinkRunConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AllowNonRestoredState.foreach(__v => __obj.updateDynamic("AllowNonRestoredState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FlinkRunConfiguration]
     }
   }
 
@@ -3097,6 +3240,7 @@ package kinesisanalyticsv2 {
   @js.native
   trait RunConfiguration extends js.Object {
     var ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration]
+    var FlinkRunConfiguration: js.UndefOr[FlinkRunConfiguration]
     var SqlRunConfigurations: js.UndefOr[SqlRunConfigurations]
   }
 
@@ -3104,12 +3248,14 @@ package kinesisanalyticsv2 {
     @inline
     def apply(
         ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined,
+        FlinkRunConfiguration: js.UndefOr[FlinkRunConfiguration] = js.undefined,
         SqlRunConfigurations: js.UndefOr[SqlRunConfigurations] = js.undefined
     ): RunConfiguration = {
       val __obj = js.Dynamic.literal()
       ApplicationRestoreConfiguration.foreach(__v =>
         __obj.updateDynamic("ApplicationRestoreConfiguration")(__v.asInstanceOf[js.Any])
       )
+      FlinkRunConfiguration.foreach(__v => __obj.updateDynamic("FlinkRunConfiguration")(__v.asInstanceOf[js.Any]))
       SqlRunConfigurations.foreach(__v => __obj.updateDynamic("SqlRunConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunConfiguration]
     }
@@ -3142,17 +3288,20 @@ package kinesisanalyticsv2 {
   @js.native
   trait RunConfigurationUpdate extends js.Object {
     var ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration]
+    var FlinkRunConfiguration: js.UndefOr[FlinkRunConfiguration]
   }
 
   object RunConfigurationUpdate {
     @inline
     def apply(
-        ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined
+        ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined,
+        FlinkRunConfiguration: js.UndefOr[FlinkRunConfiguration] = js.undefined
     ): RunConfigurationUpdate = {
       val __obj = js.Dynamic.literal()
       ApplicationRestoreConfiguration.foreach(__v =>
         __obj.updateDynamic("ApplicationRestoreConfiguration")(__v.asInstanceOf[js.Any])
       )
+      FlinkRunConfiguration.foreach(__v => __obj.updateDynamic("FlinkRunConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunConfigurationUpdate]
     }
   }
@@ -3160,8 +3309,9 @@ package kinesisanalyticsv2 {
   object RuntimeEnvironmentEnum {
     val `SQL-1_0`   = "SQL-1_0"
     val `FLINK-1_6` = "FLINK-1_6"
+    val `FLINK-1_8` = "FLINK-1_8"
 
-    val values = js.Object.freeze(js.Array(`SQL-1_0`, `FLINK-1_6`))
+    val values = js.Object.freeze(js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`))
   }
 
   /**
@@ -3576,7 +3726,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-    * A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management Guide</i>.
+    * A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html|Using Tagging]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -3721,6 +3871,87 @@ package kinesisanalyticsv2 {
       )
 
       __obj.asInstanceOf[UpdateApplicationResponse]
+    }
+  }
+
+  /**
+    * Describes the parameters of a VPC used by the application.
+    */
+  @js.native
+  trait VpcConfiguration extends js.Object {
+    var SecurityGroupIds: SecurityGroupIds
+    var SubnetIds: SubnetIds
+  }
+
+  object VpcConfiguration {
+    @inline
+    def apply(
+        SecurityGroupIds: SecurityGroupIds,
+        SubnetIds: SubnetIds
+    ): VpcConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfiguration]
+    }
+  }
+
+  /**
+    * Describes the parameters of a VPC used by the application.
+    */
+  @js.native
+  trait VpcConfigurationDescription extends js.Object {
+    var SecurityGroupIds: SecurityGroupIds
+    var SubnetIds: SubnetIds
+    var VpcConfigurationId: Id
+    var VpcId: VpcId
+  }
+
+  object VpcConfigurationDescription {
+    @inline
+    def apply(
+        SecurityGroupIds: SecurityGroupIds,
+        SubnetIds: SubnetIds,
+        VpcConfigurationId: Id,
+        VpcId: VpcId
+    ): VpcConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "SecurityGroupIds"   -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetIds"          -> SubnetIds.asInstanceOf[js.Any],
+        "VpcConfigurationId" -> VpcConfigurationId.asInstanceOf[js.Any],
+        "VpcId"              -> VpcId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfigurationDescription]
+    }
+  }
+
+  /**
+    * Describes updates to the VPC configuration used by the application.
+    */
+  @js.native
+  trait VpcConfigurationUpdate extends js.Object {
+    var VpcConfigurationId: Id
+    var SecurityGroupIdUpdates: js.UndefOr[SecurityGroupIds]
+    var SubnetIdUpdates: js.UndefOr[SubnetIds]
+  }
+
+  object VpcConfigurationUpdate {
+    @inline
+    def apply(
+        VpcConfigurationId: Id,
+        SecurityGroupIdUpdates: js.UndefOr[SecurityGroupIds] = js.undefined,
+        SubnetIdUpdates: js.UndefOr[SubnetIds] = js.undefined
+    ): VpcConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "VpcConfigurationId" -> VpcConfigurationId.asInstanceOf[js.Any]
+      )
+
+      SecurityGroupIdUpdates.foreach(__v => __obj.updateDynamic("SecurityGroupIdUpdates")(__v.asInstanceOf[js.Any]))
+      SubnetIdUpdates.foreach(__v => __obj.updateDynamic("SubnetIdUpdates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcConfigurationUpdate]
     }
   }
 }

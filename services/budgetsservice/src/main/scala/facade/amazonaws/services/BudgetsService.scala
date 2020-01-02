@@ -35,6 +35,7 @@ package object budgetsservice {
   type UnitValue                       = String
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
+
     @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
       service.createBudget(params).promise.toFuture
     @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =

@@ -59,6 +59,7 @@ package object cognitoidentity {
   type UnprocessedIdentityIdList         = js.Array[UnprocessedIdentityId]
 
   implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
+
     @inline def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] =
       service.createIdentityPool(params).promise.toFuture
     @inline def deleteIdentitiesFuture(params: DeleteIdentitiesInput): Future[DeleteIdentitiesResponse] =

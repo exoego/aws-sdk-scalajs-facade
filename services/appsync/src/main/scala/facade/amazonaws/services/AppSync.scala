@@ -9,11 +9,17 @@ import facade.amazonaws._
 
 package object appsync {
   type AdditionalAuthenticationProviders = js.Array[AdditionalAuthenticationProvider]
+  type ApiCacheStatus                    = String
+  type ApiCacheType                      = String
+  type ApiCachingBehavior                = String
   type ApiKeys                           = js.Array[ApiKey]
   type AuthenticationType                = String
   type AuthorizationType                 = String
   type Blob                              = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanValue                      = Boolean
+  type CachingKeys                       = js.Array[String]
+  type ConflictDetectionType             = String
+  type ConflictHandlerType               = String
   type DataSourceType                    = String
   type DataSources                       = js.Array[DataSource]
   type DefaultAction                     = String
@@ -40,6 +46,9 @@ package object appsync {
   type TypeList                          = js.Array[Type]
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
+
+    @inline def createApiCacheFuture(params: CreateApiCacheRequest): Future[CreateApiCacheResponse] =
+      service.createApiCache(params).promise.toFuture
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
       service.createApiKey(params).promise.toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
@@ -52,6 +61,8 @@ package object appsync {
       service.createResolver(params).promise.toFuture
     @inline def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
       service.createType(params).promise.toFuture
+    @inline def deleteApiCacheFuture(params: DeleteApiCacheRequest): Future[DeleteApiCacheResponse] =
+      service.deleteApiCache(params).promise.toFuture
     @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
       service.deleteApiKey(params).promise.toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
@@ -64,6 +75,10 @@ package object appsync {
       service.deleteResolver(params).promise.toFuture
     @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
       service.deleteType(params).promise.toFuture
+    @inline def flushApiCacheFuture(params: FlushApiCacheRequest): Future[FlushApiCacheResponse] =
+      service.flushApiCache(params).promise.toFuture
+    @inline def getApiCacheFuture(params: GetApiCacheRequest): Future[GetApiCacheResponse] =
+      service.getApiCache(params).promise.toFuture
     @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
       service.getDataSource(params).promise.toFuture
     @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
@@ -103,6 +118,8 @@ package object appsync {
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
+    @inline def updateApiCacheFuture(params: UpdateApiCacheRequest): Future[UpdateApiCacheResponse] =
+      service.updateApiCache(params).promise.toFuture
     @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
       service.updateApiKey(params).promise.toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
@@ -124,18 +141,22 @@ package appsync {
   class AppSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createApiCache(params: CreateApiCacheRequest): Request[CreateApiCacheResponse]       = js.native
     def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse]             = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
     def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse]       = js.native
     def createGraphqlApi(params: CreateGraphqlApiRequest): Request[CreateGraphqlApiResponse] = js.native
     def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse]       = js.native
     def createType(params: CreateTypeRequest): Request[CreateTypeResponse]                   = js.native
+    def deleteApiCache(params: DeleteApiCacheRequest): Request[DeleteApiCacheResponse]       = js.native
     def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse]             = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
     def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse]       = js.native
     def deleteGraphqlApi(params: DeleteGraphqlApiRequest): Request[DeleteGraphqlApiResponse] = js.native
     def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse]       = js.native
     def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse]                   = js.native
+    def flushApiCache(params: FlushApiCacheRequest): Request[FlushApiCacheResponse]          = js.native
+    def getApiCache(params: GetApiCacheRequest): Request[GetApiCacheResponse]                = js.native
     def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse]          = js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse]                = js.native
     def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse]          = js.native
@@ -157,6 +178,7 @@ package appsync {
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def updateApiCache(params: UpdateApiCacheRequest): Request[UpdateApiCacheResponse]                = js.native
     def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse]                      = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse]          = js.native
     def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse]                = js.native
@@ -188,6 +210,67 @@ package appsync {
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdditionalAuthenticationProvider]
     }
+  }
+
+  @js.native
+  trait ApiCache extends js.Object {
+    var apiCachingBehavior: js.UndefOr[ApiCachingBehavior]
+    var atRestEncryptionEnabled: js.UndefOr[Boolean]
+    var status: js.UndefOr[ApiCacheStatus]
+    var transitEncryptionEnabled: js.UndefOr[Boolean]
+    var ttl: js.UndefOr[Double]
+    var `type`: js.UndefOr[ApiCacheType]
+  }
+
+  object ApiCache {
+    @inline
+    def apply(
+        apiCachingBehavior: js.UndefOr[ApiCachingBehavior] = js.undefined,
+        atRestEncryptionEnabled: js.UndefOr[Boolean] = js.undefined,
+        status: js.UndefOr[ApiCacheStatus] = js.undefined,
+        transitEncryptionEnabled: js.UndefOr[Boolean] = js.undefined,
+        ttl: js.UndefOr[Double] = js.undefined,
+        `type`: js.UndefOr[ApiCacheType] = js.undefined
+    ): ApiCache = {
+      val __obj = js.Dynamic.literal()
+      apiCachingBehavior.foreach(__v => __obj.updateDynamic("apiCachingBehavior")(__v.asInstanceOf[js.Any]))
+      atRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("atRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      transitEncryptionEnabled.foreach(__v => __obj.updateDynamic("transitEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiCache]
+    }
+  }
+
+  object ApiCacheStatusEnum {
+    val AVAILABLE = "AVAILABLE"
+    val CREATING  = "CREATING"
+    val DELETING  = "DELETING"
+    val MODIFYING = "MODIFYING"
+    val FAILED    = "FAILED"
+
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED))
+  }
+
+  object ApiCacheTypeEnum {
+    val T2_SMALL   = "T2_SMALL"
+    val T2_MEDIUM  = "T2_MEDIUM"
+    val R4_LARGE   = "R4_LARGE"
+    val R4_XLARGE  = "R4_XLARGE"
+    val R4_2XLARGE = "R4_2XLARGE"
+    val R4_4XLARGE = "R4_4XLARGE"
+    val R4_8XLARGE = "R4_8XLARGE"
+
+    val values =
+      js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE))
+  }
+
+  object ApiCachingBehaviorEnum {
+    val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING"
+    val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING"
+
+    val values = js.Object.freeze(js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING))
   }
 
   /**
@@ -290,6 +373,28 @@ package appsync {
   }
 
   /**
+    * The caching configuration for a resolver that has caching enabled.
+    */
+  @js.native
+  trait CachingConfig extends js.Object {
+    var cachingKeys: js.UndefOr[CachingKeys]
+    var ttl: js.UndefOr[Double]
+  }
+
+  object CachingConfig {
+    @inline
+    def apply(
+        cachingKeys: js.UndefOr[CachingKeys] = js.undefined,
+        ttl: js.UndefOr[Double] = js.undefined
+    ): CachingConfig = {
+      val __obj = js.Dynamic.literal()
+      cachingKeys.foreach(__v => __obj.updateDynamic("cachingKeys")(__v.asInstanceOf[js.Any]))
+      ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CachingConfig]
+    }
+  }
+
+  /**
     * Describes an Amazon Cognito user pool configuration.
     */
   @js.native
@@ -313,6 +418,77 @@ package appsync {
 
       appIdClientRegex.foreach(__v => __obj.updateDynamic("appIdClientRegex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CognitoUserPoolConfig]
+    }
+  }
+
+  object ConflictDetectionTypeEnum {
+    val VERSION = "VERSION"
+    val NONE    = "NONE"
+
+    val values = js.Object.freeze(js.Array(VERSION, NONE))
+  }
+
+  object ConflictHandlerTypeEnum {
+    val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY"
+    val LAMBDA                 = "LAMBDA"
+    val AUTOMERGE              = "AUTOMERGE"
+    val NONE                   = "NONE"
+
+    val values = js.Object.freeze(js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE))
+  }
+
+  /**
+    * Represents the input of a <code>CreateApiCache</code> operation.
+    */
+  @js.native
+  trait CreateApiCacheRequest extends js.Object {
+    var apiCachingBehavior: ApiCachingBehavior
+    var apiId: String
+    var ttl: Double
+    var `type`: ApiCacheType
+    var atRestEncryptionEnabled: js.UndefOr[Boolean]
+    var transitEncryptionEnabled: js.UndefOr[Boolean]
+  }
+
+  object CreateApiCacheRequest {
+    @inline
+    def apply(
+        apiCachingBehavior: ApiCachingBehavior,
+        apiId: String,
+        ttl: Double,
+        `type`: ApiCacheType,
+        atRestEncryptionEnabled: js.UndefOr[Boolean] = js.undefined,
+        transitEncryptionEnabled: js.UndefOr[Boolean] = js.undefined
+    ): CreateApiCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiCachingBehavior" -> apiCachingBehavior.asInstanceOf[js.Any],
+        "apiId"              -> apiId.asInstanceOf[js.Any],
+        "ttl"                -> ttl.asInstanceOf[js.Any],
+        "type"               -> `type`.asInstanceOf[js.Any]
+      )
+
+      atRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("atRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      transitEncryptionEnabled.foreach(__v => __obj.updateDynamic("transitEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApiCacheRequest]
+    }
+  }
+
+  /**
+    * Represents the output of a <code>CreateApiCache</code> operation.
+    */
+  @js.native
+  trait CreateApiCacheResponse extends js.Object {
+    var apiCache: js.UndefOr[ApiCache]
+  }
+
+  object CreateApiCacheResponse {
+    @inline
+    def apply(
+        apiCache: js.UndefOr[ApiCache] = js.undefined
+    ): CreateApiCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      apiCache.foreach(__v => __obj.updateDynamic("apiCache")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApiCacheResponse]
     }
   }
 
@@ -529,10 +705,12 @@ package appsync {
     var fieldName: ResourceName
     var requestMappingTemplate: MappingTemplate
     var typeName: ResourceName
+    var cachingConfig: js.UndefOr[CachingConfig]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
     var pipelineConfig: js.UndefOr[PipelineConfig]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object CreateResolverRequest {
@@ -542,10 +720,12 @@ package appsync {
         fieldName: ResourceName,
         requestMappingTemplate: MappingTemplate,
         typeName: ResourceName,
+        cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
-        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
+        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateResolverRequest = {
       val __obj = js.Dynamic.literal(
         "apiId"                  -> apiId.asInstanceOf[js.Any],
@@ -554,10 +734,12 @@ package appsync {
         "typeName"               -> typeName.asInstanceOf[js.Any]
       )
 
+      cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverRequest]
     }
   }
@@ -681,6 +863,43 @@ package appsync {
     val DENY  = "DENY"
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
+  }
+
+  /**
+    * Represents the input of a <code>DeleteApiCache</code> operation.
+    */
+  @js.native
+  trait DeleteApiCacheRequest extends js.Object {
+    var apiId: String
+  }
+
+  object DeleteApiCacheRequest {
+    @inline
+    def apply(
+        apiId: String
+    ): DeleteApiCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiId" -> apiId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteApiCacheRequest]
+    }
+  }
+
+  /**
+    * Represents the output of a <code>DeleteApiCache</code> operation.
+    */
+  @js.native
+  trait DeleteApiCacheResponse extends js.Object {}
+
+  object DeleteApiCacheResponse {
+    @inline
+    def apply(
+        ): DeleteApiCacheResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteApiCacheResponse]
+    }
   }
 
   @js.native
@@ -888,13 +1107,40 @@ package appsync {
   }
 
   /**
+    * Describes a Delta Sync configuration.
+    */
+  @js.native
+  trait DeltaSyncConfig extends js.Object {
+    var baseTableTTL: js.UndefOr[Double]
+    var deltaSyncTableName: js.UndefOr[String]
+    var deltaSyncTableTTL: js.UndefOr[Double]
+  }
+
+  object DeltaSyncConfig {
+    @inline
+    def apply(
+        baseTableTTL: js.UndefOr[Double] = js.undefined,
+        deltaSyncTableName: js.UndefOr[String] = js.undefined,
+        deltaSyncTableTTL: js.UndefOr[Double] = js.undefined
+    ): DeltaSyncConfig = {
+      val __obj = js.Dynamic.literal()
+      baseTableTTL.foreach(__v => __obj.updateDynamic("baseTableTTL")(__v.asInstanceOf[js.Any]))
+      deltaSyncTableName.foreach(__v => __obj.updateDynamic("deltaSyncTableName")(__v.asInstanceOf[js.Any]))
+      deltaSyncTableTTL.foreach(__v => __obj.updateDynamic("deltaSyncTableTTL")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeltaSyncConfig]
+    }
+  }
+
+  /**
     * Describes an Amazon DynamoDB data source configuration.
     */
   @js.native
   trait DynamodbDataSourceConfig extends js.Object {
     var awsRegion: String
     var tableName: String
+    var deltaSyncConfig: js.UndefOr[DeltaSyncConfig]
     var useCallerCredentials: js.UndefOr[Boolean]
+    var versioned: js.UndefOr[Boolean]
   }
 
   object DynamodbDataSourceConfig {
@@ -902,14 +1148,18 @@ package appsync {
     def apply(
         awsRegion: String,
         tableName: String,
-        useCallerCredentials: js.UndefOr[Boolean] = js.undefined
+        deltaSyncConfig: js.UndefOr[DeltaSyncConfig] = js.undefined,
+        useCallerCredentials: js.UndefOr[Boolean] = js.undefined,
+        versioned: js.UndefOr[Boolean] = js.undefined
     ): DynamodbDataSourceConfig = {
       val __obj = js.Dynamic.literal(
         "awsRegion" -> awsRegion.asInstanceOf[js.Any],
         "tableName" -> tableName.asInstanceOf[js.Any]
       )
 
+      deltaSyncConfig.foreach(__v => __obj.updateDynamic("deltaSyncConfig")(__v.asInstanceOf[js.Any]))
       useCallerCredentials.foreach(__v => __obj.updateDynamic("useCallerCredentials")(__v.asInstanceOf[js.Any]))
+      versioned.foreach(__v => __obj.updateDynamic("versioned")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DynamodbDataSourceConfig]
     }
   }
@@ -944,6 +1194,43 @@ package appsync {
     val ALL   = "ALL"
 
     val values = js.Object.freeze(js.Array(NONE, ERROR, ALL))
+  }
+
+  /**
+    * Represents the input of a <code>FlushApiCache</code> operation.
+    */
+  @js.native
+  trait FlushApiCacheRequest extends js.Object {
+    var apiId: String
+  }
+
+  object FlushApiCacheRequest {
+    @inline
+    def apply(
+        apiId: String
+    ): FlushApiCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiId" -> apiId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FlushApiCacheRequest]
+    }
+  }
+
+  /**
+    * Represents the output of a <code>FlushApiCache</code> operation.
+    */
+  @js.native
+  trait FlushApiCacheResponse extends js.Object {}
+
+  object FlushApiCacheResponse {
+    @inline
+    def apply(
+        ): FlushApiCacheResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[FlushApiCacheResponse]
+    }
   }
 
   /**
@@ -983,6 +1270,46 @@ package appsync {
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
+    }
+  }
+
+  /**
+    * Represents the input of a <code>GetApiCache</code> operation.
+    */
+  @js.native
+  trait GetApiCacheRequest extends js.Object {
+    var apiId: String
+  }
+
+  object GetApiCacheRequest {
+    @inline
+    def apply(
+        apiId: String
+    ): GetApiCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiId" -> apiId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetApiCacheRequest]
+    }
+  }
+
+  /**
+    * Represents the output of a <code>GetApiCache</code> operation.
+    */
+  @js.native
+  trait GetApiCacheResponse extends js.Object {
+    var apiCache: js.UndefOr[ApiCache]
+  }
+
+  object GetApiCacheResponse {
+    @inline
+    def apply(
+        apiCache: js.UndefOr[ApiCache] = js.undefined
+    ): GetApiCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      apiCache.foreach(__v => __obj.updateDynamic("apiCache")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApiCacheResponse]
     }
   }
 
@@ -1318,6 +1645,22 @@ package appsync {
       authorizationConfig.foreach(__v => __obj.updateDynamic("authorizationConfig")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpDataSourceConfig]
+    }
+  }
+
+  @js.native
+  trait LambdaConflictHandlerConfig extends js.Object {
+    var lambdaConflictHandlerArn: js.UndefOr[String]
+  }
+
+  object LambdaConflictHandlerConfig {
+    @inline
+    def apply(
+        lambdaConflictHandlerArn: js.UndefOr[String] = js.undefined
+    ): LambdaConflictHandlerConfig = {
+      val __obj = js.Dynamic.literal()
+      lambdaConflictHandlerArn.foreach(__v => __obj.updateDynamic("lambdaConflictHandlerArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaConflictHandlerConfig]
     }
   }
 
@@ -1830,6 +2173,7 @@ package appsync {
     */
   @js.native
   trait Resolver extends js.Object {
+    var cachingConfig: js.UndefOr[CachingConfig]
     var dataSourceName: js.UndefOr[ResourceName]
     var fieldName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
@@ -1837,12 +2181,14 @@ package appsync {
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var resolverArn: js.UndefOr[String]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
     var typeName: js.UndefOr[ResourceName]
   }
 
   object Resolver {
     @inline
     def apply(
+        cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         fieldName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
@@ -1850,9 +2196,11 @@ package appsync {
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         resolverArn: js.UndefOr[String] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined,
         typeName: js.UndefOr[ResourceName] = js.undefined
     ): Resolver = {
       val __obj = js.Dynamic.literal()
+      cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       fieldName.foreach(__v => __obj.updateDynamic("fieldName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
@@ -1860,6 +2208,7 @@ package appsync {
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       resolverArn.foreach(__v => __obj.updateDynamic("resolverArn")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       typeName.foreach(__v => __obj.updateDynamic("typeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resolver]
     }
@@ -1917,6 +2266,34 @@ package appsync {
       val __obj = js.Dynamic.literal()
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSchemaCreationResponse]
+    }
+  }
+
+  /**
+    * Describes a Sync configuration for a resolver.
+    *  Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.
+    */
+  @js.native
+  trait SyncConfig extends js.Object {
+    var conflictDetection: js.UndefOr[ConflictDetectionType]
+    var conflictHandler: js.UndefOr[ConflictHandlerType]
+    var lambdaConflictHandlerConfig: js.UndefOr[LambdaConflictHandlerConfig]
+  }
+
+  object SyncConfig {
+    @inline
+    def apply(
+        conflictDetection: js.UndefOr[ConflictDetectionType] = js.undefined,
+        conflictHandler: js.UndefOr[ConflictHandlerType] = js.undefined,
+        lambdaConflictHandlerConfig: js.UndefOr[LambdaConflictHandlerConfig] = js.undefined
+    ): SyncConfig = {
+      val __obj = js.Dynamic.literal()
+      conflictDetection.foreach(__v => __obj.updateDynamic("conflictDetection")(__v.asInstanceOf[js.Any]))
+      conflictHandler.foreach(__v => __obj.updateDynamic("conflictHandler")(__v.asInstanceOf[js.Any]))
+      lambdaConflictHandlerConfig.foreach(__v =>
+        __obj.updateDynamic("lambdaConflictHandlerConfig")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[SyncConfig]
     }
   }
 
@@ -2023,6 +2400,55 @@ package appsync {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  /**
+    * Represents the input of a <code>UpdateApiCache</code> operation.
+    */
+  @js.native
+  trait UpdateApiCacheRequest extends js.Object {
+    var apiCachingBehavior: ApiCachingBehavior
+    var apiId: String
+    var ttl: Double
+    var `type`: ApiCacheType
+  }
+
+  object UpdateApiCacheRequest {
+    @inline
+    def apply(
+        apiCachingBehavior: ApiCachingBehavior,
+        apiId: String,
+        ttl: Double,
+        `type`: ApiCacheType
+    ): UpdateApiCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiCachingBehavior" -> apiCachingBehavior.asInstanceOf[js.Any],
+        "apiId"              -> apiId.asInstanceOf[js.Any],
+        "ttl"                -> ttl.asInstanceOf[js.Any],
+        "type"               -> `type`.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateApiCacheRequest]
+    }
+  }
+
+  /**
+    * Represents the output of a <code>UpdateApiCache</code> operation.
+    */
+  @js.native
+  trait UpdateApiCacheResponse extends js.Object {
+    var apiCache: js.UndefOr[ApiCache]
+  }
+
+  object UpdateApiCacheResponse {
+    @inline
+    def apply(
+        apiCache: js.UndefOr[ApiCache] = js.undefined
+    ): UpdateApiCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      apiCache.foreach(__v => __obj.updateDynamic("apiCache")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApiCacheResponse]
     }
   }
 
@@ -2245,10 +2671,12 @@ package appsync {
     var fieldName: ResourceName
     var requestMappingTemplate: MappingTemplate
     var typeName: ResourceName
+    var cachingConfig: js.UndefOr[CachingConfig]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
     var pipelineConfig: js.UndefOr[PipelineConfig]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object UpdateResolverRequest {
@@ -2258,10 +2686,12 @@ package appsync {
         fieldName: ResourceName,
         requestMappingTemplate: MappingTemplate,
         typeName: ResourceName,
+        cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
-        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
+        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateResolverRequest = {
       val __obj = js.Dynamic.literal(
         "apiId"                  -> apiId.asInstanceOf[js.Any],
@@ -2270,10 +2700,12 @@ package appsync {
         "typeName"               -> typeName.asInstanceOf[js.Any]
       )
 
+      cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverRequest]
     }
   }

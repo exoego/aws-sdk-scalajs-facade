@@ -8,40 +8,49 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object dlm {
-  type CopyTags                   = Boolean
-  type Count                      = Int
-  type ExcludeBootVolume          = Boolean
-  type ExecutionRoleArn           = String
-  type GettablePolicyStateValues  = String
-  type Interval                   = Int
-  type IntervalUnitValues         = String
-  type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
-  type PolicyArn                  = String
-  type PolicyDescription          = String
-  type PolicyId                   = String
-  type PolicyIdList               = js.Array[PolicyId]
-  type PolicyTypeValues           = String
-  type ResourceTypeValues         = String
-  type ResourceTypeValuesList     = js.Array[ResourceTypeValues]
-  type ScheduleList               = js.Array[Schedule]
-  type ScheduleName               = String
-  type SettablePolicyStateValues  = String
-  type StatusMessage              = String
-  type TagFilter                  = String
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagMap                     = js.Dictionary[TagValue]
-  type TagValue                   = String
-  type TagsToAddFilterList        = js.Array[TagFilter]
-  type TagsToAddList              = js.Array[Tag]
-  type TargetTagList              = js.Array[Tag]
-  type TargetTagsFilterList       = js.Array[TagFilter]
-  type Time                       = String
-  type TimesList                  = js.Array[Time]
-  type Timestamp                  = js.Date
-  type VariableTagsList           = js.Array[Tag]
+  type AvailabilityZone            = String
+  type AvailabilityZoneList        = js.Array[AvailabilityZone]
+  type CmkArn                      = String
+  type CopyTags                    = Boolean
+  type CopyTagsNullable            = Boolean
+  type Count                       = Int
+  type CrossRegionCopyRules        = js.Array[CrossRegionCopyRule]
+  type Encrypted                   = Boolean
+  type ExcludeBootVolume           = Boolean
+  type ExecutionRoleArn            = String
+  type GettablePolicyStateValues   = String
+  type Interval                    = Int
+  type IntervalUnitValues          = String
+  type LifecyclePolicySummaryList  = js.Array[LifecyclePolicySummary]
+  type PolicyArn                   = String
+  type PolicyDescription           = String
+  type PolicyId                    = String
+  type PolicyIdList                = js.Array[PolicyId]
+  type PolicyTypeValues            = String
+  type ResourceTypeValues          = String
+  type ResourceTypeValuesList      = js.Array[ResourceTypeValues]
+  type RetentionIntervalUnitValues = String
+  type ScheduleList                = js.Array[Schedule]
+  type ScheduleName                = String
+  type SettablePolicyStateValues   = String
+  type StatusMessage               = String
+  type TagFilter                   = String
+  type TagKey                      = String
+  type TagKeyList                  = js.Array[TagKey]
+  type TagMap                      = js.Dictionary[TagValue]
+  type TagValue                    = String
+  type TagsToAddFilterList         = js.Array[TagFilter]
+  type TagsToAddList               = js.Array[Tag]
+  type TargetRegion                = String
+  type TargetTagList               = js.Array[Tag]
+  type TargetTagsFilterList        = js.Array[TagFilter]
+  type Time                        = String
+  type TimesList                   = js.Array[Time]
+  type Timestamp                   = js.Date
+  type VariableTagsList            = js.Array[Tag]
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
+
     @inline def createLifecyclePolicyFuture(
         params: CreateLifecyclePolicyRequest
     ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise.toFuture
@@ -153,6 +162,61 @@ package dlm {
     }
   }
 
+  /**
+    * Specifies the retention rule for cross-Region snapshot copies.
+    */
+  @js.native
+  trait CrossRegionCopyRetainRule extends js.Object {
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object CrossRegionCopyRetainRule {
+    @inline
+    def apply(
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): CrossRegionCopyRetainRule = {
+      val __obj = js.Dynamic.literal()
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrossRegionCopyRetainRule]
+    }
+  }
+
+  /**
+    * Specifies a rule for cross-Region snapshot copies.
+    */
+  @js.native
+  trait CrossRegionCopyRule extends js.Object {
+    var Encrypted: Encrypted
+    var TargetRegion: TargetRegion
+    var CmkArn: js.UndefOr[CmkArn]
+    var CopyTags: js.UndefOr[CopyTagsNullable]
+    var RetainRule: js.UndefOr[CrossRegionCopyRetainRule]
+  }
+
+  object CrossRegionCopyRule {
+    @inline
+    def apply(
+        Encrypted: Encrypted,
+        TargetRegion: TargetRegion,
+        CmkArn: js.UndefOr[CmkArn] = js.undefined,
+        CopyTags: js.UndefOr[CopyTagsNullable] = js.undefined,
+        RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined
+    ): CrossRegionCopyRule = {
+      val __obj = js.Dynamic.literal(
+        "Encrypted"    -> Encrypted.asInstanceOf[js.Any],
+        "TargetRegion" -> TargetRegion.asInstanceOf[js.Any]
+      )
+
+      CmkArn.foreach(__v => __obj.updateDynamic("CmkArn")(__v.asInstanceOf[js.Any]))
+      CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
+      RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrossRegionCopyRule]
+    }
+  }
+
   @js.native
   trait DeleteLifecyclePolicyRequest extends js.Object {
     var PolicyId: PolicyId
@@ -181,6 +245,36 @@ package dlm {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
+    }
+  }
+
+  /**
+    * Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
+    */
+  @js.native
+  trait FastRestoreRule extends js.Object {
+    var AvailabilityZones: AvailabilityZoneList
+    var Count: js.UndefOr[Count]
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object FastRestoreRule {
+    @inline
+    def apply(
+        AvailabilityZones: AvailabilityZoneList,
+        Count: js.UndefOr[Count] = js.undefined,
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): FastRestoreRule = {
+      val __obj = js.Dynamic.literal(
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any]
+      )
+
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FastRestoreRule]
     }
   }
 
@@ -448,24 +542,37 @@ package dlm {
   }
 
   /**
-    * Specifies the number of snapshots to keep for each EBS volume.
+    * Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
     */
   @js.native
   trait RetainRule extends js.Object {
-    var Count: Count
+    var Count: js.UndefOr[Count]
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
   }
 
   object RetainRule {
     @inline
     def apply(
-        Count: Count
+        Count: js.UndefOr[Count] = js.undefined,
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
     ): RetainRule = {
-      val __obj = js.Dynamic.literal(
-        "Count" -> Count.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetainRule]
     }
+  }
+
+  object RetentionIntervalUnitValuesEnum {
+    val DAYS   = "DAYS"
+    val WEEKS  = "WEEKS"
+    val MONTHS = "MONTHS"
+    val YEARS  = "YEARS"
+
+    val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
   }
 
   /**
@@ -475,6 +582,8 @@ package dlm {
   trait Schedule extends js.Object {
     var CopyTags: js.UndefOr[CopyTags]
     var CreateRule: js.UndefOr[CreateRule]
+    var CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules]
+    var FastRestoreRule: js.UndefOr[FastRestoreRule]
     var Name: js.UndefOr[ScheduleName]
     var RetainRule: js.UndefOr[RetainRule]
     var TagsToAdd: js.UndefOr[TagsToAddList]
@@ -486,6 +595,8 @@ package dlm {
     def apply(
         CopyTags: js.UndefOr[CopyTags] = js.undefined,
         CreateRule: js.UndefOr[CreateRule] = js.undefined,
+        CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules] = js.undefined,
+        FastRestoreRule: js.UndefOr[FastRestoreRule] = js.undefined,
         Name: js.UndefOr[ScheduleName] = js.undefined,
         RetainRule: js.UndefOr[RetainRule] = js.undefined,
         TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined,
@@ -494,6 +605,8 @@ package dlm {
       val __obj = js.Dynamic.literal()
       CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
       CreateRule.foreach(__v => __obj.updateDynamic("CreateRule")(__v.asInstanceOf[js.Any]))
+      CrossRegionCopyRules.foreach(__v => __obj.updateDynamic("CrossRegionCopyRules")(__v.asInstanceOf[js.Any]))
+      FastRestoreRule.foreach(__v => __obj.updateDynamic("FastRestoreRule")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
       TagsToAdd.foreach(__v => __obj.updateDynamic("TagsToAdd")(__v.asInstanceOf[js.Any]))

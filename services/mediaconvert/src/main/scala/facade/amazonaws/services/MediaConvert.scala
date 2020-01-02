@@ -23,6 +23,7 @@ package object mediaconvert {
   type AccelerationMode                            = String
   type AccelerationStatus                          = String
   type AfdSignaling                                = String
+  type AlphaBehavior                               = String
   type AncillaryConvert608To708                    = String
   type AncillaryTerminateCaptions                  = String
   type AntiAlias                                   = String
@@ -72,6 +73,8 @@ package object mediaconvert {
   type DeinterlacerControl                         = String
   type DeinterlacerMode                            = String
   type DescribeEndpointsMode                       = String
+  type DolbyVisionLevel6Mode                       = String
+  type DolbyVisionProfile                          = String
   type DropFrameTimecode                           = String
   type DvbSubtitleAlignment                        = String
   type DvbSubtitleBackgroundColor                  = String
@@ -79,6 +82,7 @@ package object mediaconvert {
   type DvbSubtitleOutlineColor                     = String
   type DvbSubtitleShadowColor                      = String
   type DvbSubtitleTeletextSpacing                  = String
+  type DvbSubtitlingType                           = String
   type Eac3AtmosBitstreamMode                      = String
   type Eac3AtmosCodingMode                         = String
   type Eac3AtmosDialogueIntelligence               = String
@@ -208,6 +212,9 @@ package object mediaconvert {
   type Mp4CslgAtom                                 = String
   type Mp4FreeSpaceBox                             = String
   type Mp4MoovPlacement                            = String
+  type MpdCaptionContainerType                     = String
+  type MpdScte35Esam                               = String
+  type MpdScte35Source                             = String
   type Mpeg2AdaptiveQuantization                   = String
   type Mpeg2CodecLevel                             = String
   type Mpeg2CodecProfile                           = String
@@ -246,6 +253,7 @@ package object mediaconvert {
   type RenewalType                                 = String
   type ReservationPlanStatus                       = String
   type RespondToAfd                                = String
+  type S3ObjectCannedAcl                           = String
   type S3ServerSideEncryptionType                  = String
   type ScalingBehavior                             = String
   type SccDestinationFramerate                     = String
@@ -320,8 +328,8 @@ package object mediaconvert {
   type __integerMin2Max2147483647                  = Int
   type __integerMin32000Max384000                  = Int
   type __integerMin32000Max48000                   = Int
-  type __integerMin32Max4096                       = Int
   type __integerMin32Max8182                       = Int
+  type __integerMin32Max8192                       = Int
   type __integerMin384000Max768000                 = Int
   type __integerMin48000Max48000                   = Int
   type __integerMin6000Max1024000                  = Int
@@ -341,8 +349,11 @@ package object mediaconvert {
   type __listOfAudioDescription                    = js.Array[AudioDescription]
   type __listOfCaptionDescription                  = js.Array[CaptionDescription]
   type __listOfCaptionDescriptionPreset            = js.Array[CaptionDescriptionPreset]
+  type __listOfCmafAdditionalManifest              = js.Array[CmafAdditionalManifest]
+  type __listOfDashAdditionalManifest              = js.Array[DashAdditionalManifest]
   type __listOfEndpoint                            = js.Array[Endpoint]
   type __listOfHlsAdMarkers                        = js.Array[HlsAdMarkers]
+  type __listOfHlsAdditionalManifest               = js.Array[HlsAdditionalManifest]
   type __listOfHlsCaptionLanguageMapping           = js.Array[HlsCaptionLanguageMapping]
   type __listOfId3Insertion                        = js.Array[Id3Insertion]
   type __listOfInput                               = js.Array[Input]
@@ -351,6 +362,7 @@ package object mediaconvert {
   type __listOfInsertableImage                     = js.Array[InsertableImage]
   type __listOfJob                                 = js.Array[Job]
   type __listOfJobTemplate                         = js.Array[JobTemplate]
+  type __listOfMsSmoothAdditionalManifest          = js.Array[MsSmoothAdditionalManifest]
   type __listOfOutput                              = js.Array[Output]
   type __listOfOutputChannelMapping                = js.Array[OutputChannelMapping]
   type __listOfOutputDetail                        = js.Array[OutputDetail]
@@ -396,6 +408,7 @@ package object mediaconvert {
   type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12                           = String
   type __stringPatternAZaZ0902                                                       = String
   type __stringPatternAZaZ0932                                                       = String
+  type __stringPatternAZaZ23AZaZ                                                     = String
   type __stringPatternArnAwsUsGovAcm                                                 = String
   type __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
@@ -415,6 +428,7 @@ package object mediaconvert {
   type __timestampUnix                                         = js.Date
 
   implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
+
     @inline def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] =
       service.associateCertificate(params).promise.toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
@@ -816,6 +830,16 @@ package mediaconvert {
   }
 
   /**
+    * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of your outputs.
+    */
+  object AlphaBehaviorEnum {
+    val DISCARD       = "DISCARD"
+    val REMAP_TO_LUMA = "REMAP_TO_LUMA"
+
+    val values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
+  }
+
+  /**
     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   object AncillaryConvert608To708Enum {
@@ -979,7 +1003,7 @@ package mediaconvert {
     var AudioType: js.UndefOr[__integerMin0Max255]
     var AudioTypeControl: js.UndefOr[AudioTypeControl]
     var CodecSettings: js.UndefOr[AudioCodecSettings]
-    var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
+    var CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl]
     var RemixSettings: js.UndefOr[RemixSettings]
@@ -994,7 +1018,7 @@ package mediaconvert {
         AudioType: js.UndefOr[__integerMin0Max255] = js.undefined,
         AudioTypeControl: js.UndefOr[AudioTypeControl] = js.undefined,
         CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
-        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl] = js.undefined,
         RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
@@ -1018,7 +1042,7 @@ package mediaconvert {
   }
 
   /**
-    * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+    * Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify.
     */
   object AudioLanguageCodeControlEnum {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
@@ -1400,7 +1424,7 @@ package mediaconvert {
   @js.native
   trait CaptionDescription extends js.Object {
     var CaptionSelectorName: js.UndefOr[__stringMin1]
-    var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
+    var CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ]
     var DestinationSettings: js.UndefOr[CaptionDestinationSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageDescription: js.UndefOr[__string]
@@ -1410,7 +1434,7 @@ package mediaconvert {
     @inline
     def apply(
         CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined,
-        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ] = js.undefined,
         DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
@@ -1430,7 +1454,7 @@ package mediaconvert {
     */
   @js.native
   trait CaptionDescriptionPreset extends js.Object {
-    var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
+    var CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ]
     var DestinationSettings: js.UndefOr[CaptionDestinationSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageDescription: js.UndefOr[__string]
@@ -1439,7 +1463,7 @@ package mediaconvert {
   object CaptionDescriptionPreset {
     @inline
     def apply(
-        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringPatternAZaZ23AZaZ] = js.undefined,
         DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
@@ -1640,6 +1664,28 @@ package mediaconvert {
   }
 
   /**
+    * Specify the details for each pair of HLS and DASH additional manifests that you want the service to generate for this CMAF output group. Each pair of manifests can reference a different subset of outputs in the group.
+    */
+  @js.native
+  trait CmafAdditionalManifest extends js.Object {
+    var ManifestNameModifier: js.UndefOr[__stringMin1]
+    var SelectedOutputs: js.UndefOr[__listOf__stringMin1]
+  }
+
+  object CmafAdditionalManifest {
+    @inline
+    def apply(
+        ManifestNameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        SelectedOutputs: js.UndefOr[__listOf__stringMin1] = js.undefined
+    ): CmafAdditionalManifest = {
+      val __obj = js.Dynamic.literal()
+      ManifestNameModifier.foreach(__v => __obj.updateDynamic("ManifestNameModifier")(__v.asInstanceOf[js.Any]))
+      SelectedOutputs.foreach(__v => __obj.updateDynamic("SelectedOutputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CmafAdditionalManifest]
+    }
+  }
+
+  /**
     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
     */
   object CmafClientCacheEnum {
@@ -1712,6 +1758,7 @@ package mediaconvert {
     */
   @js.native
   trait CmafGroupSettings extends js.Object {
+    var AdditionalManifests: js.UndefOr[__listOfCmafAdditionalManifest]
     var BaseUrl: js.UndefOr[__string]
     var ClientCache: js.UndefOr[CmafClientCache]
     var CodecSpecification: js.UndefOr[CmafCodecSpecification]
@@ -1734,6 +1781,7 @@ package mediaconvert {
   object CmafGroupSettings {
     @inline
     def apply(
+        AdditionalManifests: js.UndefOr[__listOfCmafAdditionalManifest] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
         ClientCache: js.UndefOr[CmafClientCache] = js.undefined,
         CodecSpecification: js.UndefOr[CmafCodecSpecification] = js.undefined,
@@ -1753,6 +1801,7 @@ package mediaconvert {
         WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined
     ): CmafGroupSettings = {
       val __obj = js.Dynamic.literal()
+      AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
       BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
       ClientCache.foreach(__v => __obj.updateDynamic("ClientCache")(__v.asInstanceOf[js.Any]))
       CodecSpecification.foreach(__v => __obj.updateDynamic("CodecSpecification")(__v.asInstanceOf[js.Any]))
@@ -1964,6 +2013,7 @@ package mediaconvert {
     var M3u8Settings: js.UndefOr[M3u8Settings]
     var MovSettings: js.UndefOr[MovSettings]
     var Mp4Settings: js.UndefOr[Mp4Settings]
+    var MpdSettings: js.UndefOr[MpdSettings]
   }
 
   object ContainerSettings {
@@ -1974,7 +2024,8 @@ package mediaconvert {
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined,
         M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
         MovSettings: js.UndefOr[MovSettings] = js.undefined,
-        Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined
+        Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined,
+        MpdSettings: js.UndefOr[MpdSettings] = js.undefined
     ): ContainerSettings = {
       val __obj = js.Dynamic.literal()
       Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
@@ -1983,6 +2034,7 @@ package mediaconvert {
       M3u8Settings.foreach(__v => __obj.updateDynamic("M3u8Settings")(__v.asInstanceOf[js.Any]))
       MovSettings.foreach(__v => __obj.updateDynamic("MovSettings")(__v.asInstanceOf[js.Any]))
       Mp4Settings.foreach(__v => __obj.updateDynamic("Mp4Settings")(__v.asInstanceOf[js.Any]))
+      MpdSettings.foreach(__v => __obj.updateDynamic("MpdSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerSettings]
     }
   }
@@ -2226,6 +2278,28 @@ package mediaconvert {
   }
 
   /**
+    * Specify the details for each additional DASH manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+    */
+  @js.native
+  trait DashAdditionalManifest extends js.Object {
+    var ManifestNameModifier: js.UndefOr[__stringMin1]
+    var SelectedOutputs: js.UndefOr[__listOf__stringMin1]
+  }
+
+  object DashAdditionalManifest {
+    @inline
+    def apply(
+        ManifestNameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        SelectedOutputs: js.UndefOr[__listOf__stringMin1] = js.undefined
+    ): DashAdditionalManifest = {
+      val __obj = js.Dynamic.literal()
+      ManifestNameModifier.foreach(__v => __obj.updateDynamic("ManifestNameModifier")(__v.asInstanceOf[js.Any]))
+      SelectedOutputs.foreach(__v => __obj.updateDynamic("SelectedOutputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashAdditionalManifest]
+    }
+  }
+
+  /**
     * Specifies DRM settings for DASH outputs.
     */
   @js.native
@@ -2254,6 +2328,7 @@ package mediaconvert {
     */
   @js.native
   trait DashIsoGroupSettings extends js.Object {
+    var AdditionalManifests: js.UndefOr[__listOfDashAdditionalManifest]
     var BaseUrl: js.UndefOr[__string]
     var Destination: js.UndefOr[__stringPatternS3]
     var DestinationSettings: js.UndefOr[DestinationSettings]
@@ -2270,6 +2345,7 @@ package mediaconvert {
   object DashIsoGroupSettings {
     @inline
     def apply(
+        AdditionalManifests: js.UndefOr[__listOfDashAdditionalManifest] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
         DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
@@ -2283,6 +2359,7 @@ package mediaconvert {
         WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined
     ): DashIsoGroupSettings = {
       val __obj = js.Dynamic.literal()
+      AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
       BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
@@ -2617,6 +2694,73 @@ package mediaconvert {
   }
 
   /**
+    * Settings for Dolby Vision
+    */
+  @js.native
+  trait DolbyVision extends js.Object {
+    var L6Metadata: js.UndefOr[DolbyVisionLevel6Metadata]
+    var L6Mode: js.UndefOr[DolbyVisionLevel6Mode]
+    var Profile: js.UndefOr[DolbyVisionProfile]
+  }
+
+  object DolbyVision {
+    @inline
+    def apply(
+        L6Metadata: js.UndefOr[DolbyVisionLevel6Metadata] = js.undefined,
+        L6Mode: js.UndefOr[DolbyVisionLevel6Mode] = js.undefined,
+        Profile: js.UndefOr[DolbyVisionProfile] = js.undefined
+    ): DolbyVision = {
+      val __obj = js.Dynamic.literal()
+      L6Metadata.foreach(__v => __obj.updateDynamic("L6Metadata")(__v.asInstanceOf[js.Any]))
+      L6Mode.foreach(__v => __obj.updateDynamic("L6Mode")(__v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DolbyVision]
+    }
+  }
+
+  /**
+    * Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
+    */
+  @js.native
+  trait DolbyVisionLevel6Metadata extends js.Object {
+    var MaxCll: js.UndefOr[__integerMin0Max65535]
+    var MaxFall: js.UndefOr[__integerMin0Max65535]
+  }
+
+  object DolbyVisionLevel6Metadata {
+    @inline
+    def apply(
+        MaxCll: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        MaxFall: js.UndefOr[__integerMin0Max65535] = js.undefined
+    ): DolbyVisionLevel6Metadata = {
+      val __obj = js.Dynamic.literal()
+      MaxCll.foreach(__v => __obj.updateDynamic("MaxCll")(__v.asInstanceOf[js.Any]))
+      MaxFall.foreach(__v => __obj.updateDynamic("MaxFall")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DolbyVisionLevel6Metadata]
+    }
+  }
+
+  /**
+    * Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
+    */
+  object DolbyVisionLevel6ModeEnum {
+    val PASSTHROUGH = "PASSTHROUGH"
+    val RECALCULATE = "RECALCULATE"
+    val SPECIFY     = "SPECIFY"
+
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
+  }
+
+  /**
+    * In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+    */
+  object DolbyVisionProfileEnum {
+    val PROFILE_5 = "PROFILE_5"
+
+    val values = js.Object.freeze(js.Array(PROFILE_5))
+  }
+
+  /**
     * Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
     */
   object DropFrameTimecodeEnum {
@@ -2698,6 +2842,7 @@ package mediaconvert {
     var ShadowOpacity: js.UndefOr[__integerMin0Max255]
     var ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
     var ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var SubtitlingType: js.UndefOr[DvbSubtitlingType]
     var TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing]
     var XPosition: js.UndefOr[__integerMin0Max2147483647]
     var YPosition: js.UndefOr[__integerMin0Max2147483647]
@@ -2720,6 +2865,7 @@ package mediaconvert {
         ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
         ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
         ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        SubtitlingType: js.UndefOr[DvbSubtitlingType] = js.undefined,
         TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing] = js.undefined,
         XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined
@@ -2739,6 +2885,7 @@ package mediaconvert {
       ShadowOpacity.foreach(__v => __obj.updateDynamic("ShadowOpacity")(__v.asInstanceOf[js.Any]))
       ShadowXOffset.foreach(__v => __obj.updateDynamic("ShadowXOffset")(__v.asInstanceOf[js.Any]))
       ShadowYOffset.foreach(__v => __obj.updateDynamic("ShadowYOffset")(__v.asInstanceOf[js.Any]))
+      SubtitlingType.foreach(__v => __obj.updateDynamic("SubtitlingType")(__v.asInstanceOf[js.Any]))
       TeletextSpacing.foreach(__v => __obj.updateDynamic("TeletextSpacing")(__v.asInstanceOf[js.Any]))
       XPosition.foreach(__v => __obj.updateDynamic("XPosition")(__v.asInstanceOf[js.Any]))
       YPosition.foreach(__v => __obj.updateDynamic("YPosition")(__v.asInstanceOf[js.Any]))
@@ -2835,6 +2982,16 @@ package mediaconvert {
     val PROPORTIONAL = "PROPORTIONAL"
 
     val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+  }
+
+  /**
+    * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+    */
+  object DvbSubtitlingTypeEnum {
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED"
+    val STANDARD         = "STANDARD"
+
+    val values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
   }
 
   /**
@@ -4583,7 +4740,7 @@ package mediaconvert {
   }
 
   /**
-    * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+    * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
     */
   object H265WriteMp4PackagingTypeEnum {
     val HVC1 = "HVC1"
@@ -4651,6 +4808,28 @@ package mediaconvert {
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35"
 
     val values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
+  }
+
+  /**
+    * Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+    */
+  @js.native
+  trait HlsAdditionalManifest extends js.Object {
+    var ManifestNameModifier: js.UndefOr[__stringMin1]
+    var SelectedOutputs: js.UndefOr[__listOf__stringMin1]
+  }
+
+  object HlsAdditionalManifest {
+    @inline
+    def apply(
+        ManifestNameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        SelectedOutputs: js.UndefOr[__listOf__stringMin1] = js.undefined
+    ): HlsAdditionalManifest = {
+      val __obj = js.Dynamic.literal()
+      ManifestNameModifier.foreach(__v => __obj.updateDynamic("ManifestNameModifier")(__v.asInstanceOf[js.Any]))
+      SelectedOutputs.foreach(__v => __obj.updateDynamic("SelectedOutputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsAdditionalManifest]
+    }
   }
 
   /**
@@ -4808,6 +4987,7 @@ package mediaconvert {
   @js.native
   trait HlsGroupSettings extends js.Object {
     var AdMarkers: js.UndefOr[__listOfHlsAdMarkers]
+    var AdditionalManifests: js.UndefOr[__listOfHlsAdditionalManifest]
     var BaseUrl: js.UndefOr[__string]
     var CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping]
     var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
@@ -4837,6 +5017,7 @@ package mediaconvert {
     @inline
     def apply(
         AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
+        AdditionalManifests: js.UndefOr[__listOfHlsAdditionalManifest] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
         CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping] = js.undefined,
         CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
@@ -4863,6 +5044,7 @@ package mediaconvert {
     ): HlsGroupSettings = {
       val __obj = js.Dynamic.literal()
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
+      AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
       BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
       CaptionLanguageMappings.foreach(__v => __obj.updateDynamic("CaptionLanguageMappings")(__v.asInstanceOf[js.Any]))
       CaptionLanguageSetting.foreach(__v => __obj.updateDynamic("CaptionLanguageSetting")(__v.asInstanceOf[js.Any]))
@@ -6932,6 +7114,61 @@ package mediaconvert {
   }
 
   /**
+    * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+    */
+  object MpdCaptionContainerTypeEnum {
+    val RAW            = "RAW"
+    val FRAGMENTED_MP4 = "FRAGMENTED_MP4"
+
+    val values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
+  }
+
+  /**
+    * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    */
+  object MpdScte35EsamEnum {
+    val INSERT = "INSERT"
+    val NONE   = "NONE"
+
+    val values = js.Object.freeze(js.Array(INSERT, NONE))
+  }
+
+  /**
+    * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+    */
+  object MpdScte35SourceEnum {
+    val PASSTHROUGH = "PASSTHROUGH"
+    val NONE        = "NONE"
+
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+  }
+
+  /**
+    * Settings for MP4 segments in DASH
+    */
+  @js.native
+  trait MpdSettings extends js.Object {
+    var CaptionContainerType: js.UndefOr[MpdCaptionContainerType]
+    var Scte35Esam: js.UndefOr[MpdScte35Esam]
+    var Scte35Source: js.UndefOr[MpdScte35Source]
+  }
+
+  object MpdSettings {
+    @inline
+    def apply(
+        CaptionContainerType: js.UndefOr[MpdCaptionContainerType] = js.undefined,
+        Scte35Esam: js.UndefOr[MpdScte35Esam] = js.undefined,
+        Scte35Source: js.UndefOr[MpdScte35Source] = js.undefined
+    ): MpdSettings = {
+      val __obj = js.Dynamic.literal()
+      CaptionContainerType.foreach(__v => __obj.updateDynamic("CaptionContainerType")(__v.asInstanceOf[js.Any]))
+      Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
+      Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MpdSettings]
+    }
+  }
+
+  /**
     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     */
   object Mpeg2AdaptiveQuantizationEnum {
@@ -7247,6 +7484,28 @@ package mediaconvert {
   }
 
   /**
+    * Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+    */
+  @js.native
+  trait MsSmoothAdditionalManifest extends js.Object {
+    var ManifestNameModifier: js.UndefOr[__stringMin1]
+    var SelectedOutputs: js.UndefOr[__listOf__stringMin1]
+  }
+
+  object MsSmoothAdditionalManifest {
+    @inline
+    def apply(
+        ManifestNameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        SelectedOutputs: js.UndefOr[__listOf__stringMin1] = js.undefined
+    ): MsSmoothAdditionalManifest = {
+      val __obj = js.Dynamic.literal()
+      ManifestNameModifier.foreach(__v => __obj.updateDynamic("ManifestNameModifier")(__v.asInstanceOf[js.Any]))
+      SelectedOutputs.foreach(__v => __obj.updateDynamic("SelectedOutputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MsSmoothAdditionalManifest]
+    }
+  }
+
+  /**
     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
     */
   object MsSmoothAudioDeduplicationEnum {
@@ -7280,6 +7539,7 @@ package mediaconvert {
     */
   @js.native
   trait MsSmoothGroupSettings extends js.Object {
+    var AdditionalManifests: js.UndefOr[__listOfMsSmoothAdditionalManifest]
     var AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication]
     var Destination: js.UndefOr[__stringPatternS3]
     var DestinationSettings: js.UndefOr[DestinationSettings]
@@ -7291,6 +7551,7 @@ package mediaconvert {
   object MsSmoothGroupSettings {
     @inline
     def apply(
+        AdditionalManifests: js.UndefOr[__listOfMsSmoothAdditionalManifest] = js.undefined,
         AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
         DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
@@ -7299,6 +7560,7 @@ package mediaconvert {
         ManifestEncoding: js.UndefOr[MsSmoothManifestEncoding] = js.undefined
     ): MsSmoothGroupSettings = {
       val __obj = js.Dynamic.literal()
+      AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
       AudioDeduplication.foreach(__v => __obj.updateDynamic("AudioDeduplication")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
@@ -8139,19 +8401,41 @@ package mediaconvert {
   }
 
   /**
+    * Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
+    */
+  @js.native
+  trait S3DestinationAccessControl extends js.Object {
+    var CannedAcl: js.UndefOr[S3ObjectCannedAcl]
+  }
+
+  object S3DestinationAccessControl {
+    @inline
+    def apply(
+        CannedAcl: js.UndefOr[S3ObjectCannedAcl] = js.undefined
+    ): S3DestinationAccessControl = {
+      val __obj = js.Dynamic.literal()
+      CannedAcl.foreach(__v => __obj.updateDynamic("CannedAcl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationAccessControl]
+    }
+  }
+
+  /**
     * Settings associated with S3 destination
     */
   @js.native
   trait S3DestinationSettings extends js.Object {
+    var AccessControl: js.UndefOr[S3DestinationAccessControl]
     var Encryption: js.UndefOr[S3EncryptionSettings]
   }
 
   object S3DestinationSettings {
     @inline
     def apply(
+        AccessControl: js.UndefOr[S3DestinationAccessControl] = js.undefined,
         Encryption: js.UndefOr[S3EncryptionSettings] = js.undefined
     ): S3DestinationSettings = {
       val __obj = js.Dynamic.literal()
+      AccessControl.foreach(__v => __obj.updateDynamic("AccessControl")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3DestinationSettings]
     }
@@ -8184,6 +8468,19 @@ package mediaconvert {
   }
 
   /**
+    * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
+    */
+  object S3ObjectCannedAclEnum {
+    val PUBLIC_READ               = "PUBLIC_READ"
+    val AUTHENTICATED_READ        = "AUTHENTICATED_READ"
+    val BUCKET_OWNER_READ         = "BUCKET_OWNER_READ"
+    val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL"
+
+    val values =
+      js.Object.freeze(js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL))
+  }
+
+  /**
     * Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
     */
   object S3ServerSideEncryptionTypeEnum {
@@ -8209,11 +8506,12 @@ package mediaconvert {
   object SccDestinationFramerateEnum {
     val FRAMERATE_23_97               = "FRAMERATE_23_97"
     val FRAMERATE_24                  = "FRAMERATE_24"
+    val FRAMERATE_25                  = "FRAMERATE_25"
     val FRAMERATE_29_97_DROPFRAME     = "FRAMERATE_29_97_DROPFRAME"
     val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME"
 
     val values = js.Object.freeze(
-      js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
+      js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
     )
   }
 
@@ -8908,14 +9206,14 @@ package mediaconvert {
     var Crop: js.UndefOr[Rectangle]
     var DropFrameTimecode: js.UndefOr[DropFrameTimecode]
     var FixedAfd: js.UndefOr[__integerMin0Max15]
-    var Height: js.UndefOr[__integerMin32Max4096]
+    var Height: js.UndefOr[__integerMin32Max8192]
     var Position: js.UndefOr[Rectangle]
     var RespondToAfd: js.UndefOr[RespondToAfd]
     var ScalingBehavior: js.UndefOr[ScalingBehavior]
     var Sharpness: js.UndefOr[__integerMin0Max100]
     var TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion]
     var VideoPreprocessors: js.UndefOr[VideoPreprocessor]
-    var Width: js.UndefOr[__integerMin32Max4096]
+    var Width: js.UndefOr[__integerMin32Max8192]
   }
 
   object VideoDescription {
@@ -8928,14 +9226,14 @@ package mediaconvert {
         Crop: js.UndefOr[Rectangle] = js.undefined,
         DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
         FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
-        Height: js.UndefOr[__integerMin32Max4096] = js.undefined,
+        Height: js.UndefOr[__integerMin32Max8192] = js.undefined,
         Position: js.UndefOr[Rectangle] = js.undefined,
         RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
         ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
         Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
         TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion] = js.undefined,
         VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
-        Width: js.UndefOr[__integerMin32Max4096] = js.undefined
+        Width: js.UndefOr[__integerMin32Max8192] = js.undefined
     ): VideoDescription = {
       val __obj = js.Dynamic.literal()
       AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
@@ -8986,6 +9284,7 @@ package mediaconvert {
   trait VideoPreprocessor extends js.Object {
     var ColorCorrector: js.UndefOr[ColorCorrector]
     var Deinterlacer: js.UndefOr[Deinterlacer]
+    var DolbyVision: js.UndefOr[DolbyVision]
     var ImageInserter: js.UndefOr[ImageInserter]
     var NoiseReducer: js.UndefOr[NoiseReducer]
     var TimecodeBurnin: js.UndefOr[TimecodeBurnin]
@@ -8996,6 +9295,7 @@ package mediaconvert {
     def apply(
         ColorCorrector: js.UndefOr[ColorCorrector] = js.undefined,
         Deinterlacer: js.UndefOr[Deinterlacer] = js.undefined,
+        DolbyVision: js.UndefOr[DolbyVision] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
         TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined
@@ -9003,6 +9303,7 @@ package mediaconvert {
       val __obj = js.Dynamic.literal()
       ColorCorrector.foreach(__v => __obj.updateDynamic("ColorCorrector")(__v.asInstanceOf[js.Any]))
       Deinterlacer.foreach(__v => __obj.updateDynamic("Deinterlacer")(__v.asInstanceOf[js.Any]))
+      DolbyVision.foreach(__v => __obj.updateDynamic("DolbyVision")(__v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
       NoiseReducer.foreach(__v => __obj.updateDynamic("NoiseReducer")(__v.asInstanceOf[js.Any]))
       TimecodeBurnin.foreach(__v => __obj.updateDynamic("TimecodeBurnin")(__v.asInstanceOf[js.Any]))
@@ -9015,6 +9316,7 @@ package mediaconvert {
     */
   @js.native
   trait VideoSelector extends js.Object {
+    var AlphaBehavior: js.UndefOr[AlphaBehavior]
     var ColorSpace: js.UndefOr[ColorSpace]
     var ColorSpaceUsage: js.UndefOr[ColorSpaceUsage]
     var Hdr10Metadata: js.UndefOr[Hdr10Metadata]
@@ -9026,6 +9328,7 @@ package mediaconvert {
   object VideoSelector {
     @inline
     def apply(
+        AlphaBehavior: js.UndefOr[AlphaBehavior] = js.undefined,
         ColorSpace: js.UndefOr[ColorSpace] = js.undefined,
         ColorSpaceUsage: js.UndefOr[ColorSpaceUsage] = js.undefined,
         Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
@@ -9034,6 +9337,7 @@ package mediaconvert {
         Rotate: js.UndefOr[InputRotate] = js.undefined
     ): VideoSelector = {
       val __obj = js.Dynamic.literal()
+      AlphaBehavior.foreach(__v => __obj.updateDynamic("AlphaBehavior")(__v.asInstanceOf[js.Any]))
       ColorSpace.foreach(__v => __obj.updateDynamic("ColorSpace")(__v.asInstanceOf[js.Any]))
       ColorSpaceUsage.foreach(__v => __obj.updateDynamic("ColorSpaceUsage")(__v.asInstanceOf[js.Any]))
       Hdr10Metadata.foreach(__v => __obj.updateDynamic("Hdr10Metadata")(__v.asInstanceOf[js.Any]))

@@ -22,6 +22,7 @@ package object firehose {
   type DeliveryStartTimestamp                  = js.Date
   type DeliveryStreamARN                       = String
   type DeliveryStreamEncryptionStatus          = String
+  type DeliveryStreamFailureType               = String
   type DeliveryStreamName                      = String
   type DeliveryStreamNameList                  = js.Array[DeliveryStreamName]
   type DeliveryStreamStatus                    = String
@@ -47,6 +48,7 @@ package object firehose {
   type HECEndpointType                         = String
   type HECToken                                = String
   type IntervalInSeconds                       = Int
+  type KeyType                                 = String
   type KinesisStreamARN                        = String
   type ListDeliveryStreamsInputLimit           = Int
   type ListOfNonEmptyStrings                   = js.Array[NonEmptyString]
@@ -92,6 +94,7 @@ package object firehose {
   type Username                                = String
 
   implicit final class FirehoseOps(private val service: Firehose) extends AnyVal {
+
     @inline def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
       service.createDeliveryStream(params).promise.toFuture
     @inline def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] =
@@ -234,6 +237,7 @@ package firehose {
   @js.native
   trait CreateDeliveryStreamInput extends js.Object {
     var DeliveryStreamName: DeliveryStreamName
+    var DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput]
     var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
     var ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration]
     var ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration]
@@ -248,6 +252,8 @@ package firehose {
     @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
+        DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput] =
+          js.undefined,
         DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
         ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration] = js.undefined,
         ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration] = js.undefined,
@@ -261,6 +267,9 @@ package firehose {
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
       )
 
+      DeliveryStreamEncryptionConfigurationInput.foreach(__v =>
+        __obj.updateDynamic("DeliveryStreamEncryptionConfigurationInput")(__v.asInstanceOf[js.Any])
+      )
       DeliveryStreamType.foreach(__v => __obj.updateDynamic("DeliveryStreamType")(__v.asInstanceOf[js.Any]))
       ElasticsearchDestinationConfiguration.foreach(__v =>
         __obj.updateDynamic("ElasticsearchDestinationConfiguration")(__v.asInstanceOf[js.Any])
@@ -334,17 +343,20 @@ package firehose {
   @js.native
   trait DeleteDeliveryStreamInput extends js.Object {
     var DeliveryStreamName: DeliveryStreamName
+    var AllowForceDelete: js.UndefOr[BooleanObject]
   }
 
   object DeleteDeliveryStreamInput {
     @inline
     def apply(
-        DeliveryStreamName: DeliveryStreamName
+        DeliveryStreamName: DeliveryStreamName,
+        AllowForceDelete: js.UndefOr[BooleanObject] = js.undefined
     ): DeleteDeliveryStreamInput = {
       val __obj = js.Dynamic.literal(
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
       )
 
+      AllowForceDelete.foreach(__v => __obj.updateDynamic("AllowForceDelete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDeliveryStreamInput]
     }
   }
@@ -376,6 +388,7 @@ package firehose {
     var VersionId: DeliveryStreamVersionId
     var CreateTimestamp: js.UndefOr[Timestamp]
     var DeliveryStreamEncryptionConfiguration: js.UndefOr[DeliveryStreamEncryptionConfiguration]
+    var FailureDescription: js.UndefOr[FailureDescription]
     var LastUpdateTimestamp: js.UndefOr[Timestamp]
     var Source: js.UndefOr[SourceDescription]
   }
@@ -392,6 +405,7 @@ package firehose {
         VersionId: DeliveryStreamVersionId,
         CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         DeliveryStreamEncryptionConfiguration: js.UndefOr[DeliveryStreamEncryptionConfiguration] = js.undefined,
+        FailureDescription: js.UndefOr[FailureDescription] = js.undefined,
         LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Source: js.UndefOr[SourceDescription] = js.undefined
     ): DeliveryStreamDescription = {
@@ -409,6 +423,7 @@ package firehose {
       DeliveryStreamEncryptionConfiguration.foreach(__v =>
         __obj.updateDynamic("DeliveryStreamEncryptionConfiguration")(__v.asInstanceOf[js.Any])
       )
+      FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
       LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryStreamDescription]
@@ -416,39 +431,100 @@ package firehose {
   }
 
   /**
-    * Indicates the server-side encryption (SSE) status for the delivery stream.
+    * Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.
     */
   @js.native
   trait DeliveryStreamEncryptionConfiguration extends js.Object {
+    var FailureDescription: js.UndefOr[FailureDescription]
+    var KeyARN: js.UndefOr[AWSKMSKeyARN]
+    var KeyType: js.UndefOr[KeyType]
     var Status: js.UndefOr[DeliveryStreamEncryptionStatus]
   }
 
   object DeliveryStreamEncryptionConfiguration {
     @inline
     def apply(
+        FailureDescription: js.UndefOr[FailureDescription] = js.undefined,
+        KeyARN: js.UndefOr[AWSKMSKeyARN] = js.undefined,
+        KeyType: js.UndefOr[KeyType] = js.undefined,
         Status: js.UndefOr[DeliveryStreamEncryptionStatus] = js.undefined
     ): DeliveryStreamEncryptionConfiguration = {
       val __obj = js.Dynamic.literal()
+      FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
+      KeyARN.foreach(__v => __obj.updateDynamic("KeyARN")(__v.asInstanceOf[js.Any]))
+      KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryStreamEncryptionConfiguration]
     }
   }
 
-  object DeliveryStreamEncryptionStatusEnum {
-    val ENABLED   = "ENABLED"
-    val ENABLING  = "ENABLING"
-    val DISABLED  = "DISABLED"
-    val DISABLING = "DISABLING"
+  /**
+    * Used to specify the type and Amazon Resource Name (ARN) of the CMK needed for Server-Side Encryption (SSE).
+    */
+  @js.native
+  trait DeliveryStreamEncryptionConfigurationInput extends js.Object {
+    var KeyType: KeyType
+    var KeyARN: js.UndefOr[AWSKMSKeyARN]
+  }
 
-    val values = js.Object.freeze(js.Array(ENABLED, ENABLING, DISABLED, DISABLING))
+  object DeliveryStreamEncryptionConfigurationInput {
+    @inline
+    def apply(
+        KeyType: KeyType,
+        KeyARN: js.UndefOr[AWSKMSKeyARN] = js.undefined
+    ): DeliveryStreamEncryptionConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "KeyType" -> KeyType.asInstanceOf[js.Any]
+      )
+
+      KeyARN.foreach(__v => __obj.updateDynamic("KeyARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryStreamEncryptionConfigurationInput]
+    }
+  }
+
+  object DeliveryStreamEncryptionStatusEnum {
+    val ENABLED          = "ENABLED"
+    val ENABLING         = "ENABLING"
+    val ENABLING_FAILED  = "ENABLING_FAILED"
+    val DISABLED         = "DISABLED"
+    val DISABLING        = "DISABLING"
+    val DISABLING_FAILED = "DISABLING_FAILED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED))
+  }
+
+  object DeliveryStreamFailureTypeEnum {
+    val RETIRE_KMS_GRANT_FAILED = "RETIRE_KMS_GRANT_FAILED"
+    val CREATE_KMS_GRANT_FAILED = "CREATE_KMS_GRANT_FAILED"
+    val KMS_ACCESS_DENIED       = "KMS_ACCESS_DENIED"
+    val DISABLED_KMS_KEY        = "DISABLED_KMS_KEY"
+    val INVALID_KMS_KEY         = "INVALID_KMS_KEY"
+    val KMS_KEY_NOT_FOUND       = "KMS_KEY_NOT_FOUND"
+    val KMS_OPT_IN_REQUIRED     = "KMS_OPT_IN_REQUIRED"
+    val UNKNOWN_ERROR           = "UNKNOWN_ERROR"
+
+    val values = js.Object.freeze(
+      js.Array(
+        RETIRE_KMS_GRANT_FAILED,
+        CREATE_KMS_GRANT_FAILED,
+        KMS_ACCESS_DENIED,
+        DISABLED_KMS_KEY,
+        INVALID_KMS_KEY,
+        KMS_KEY_NOT_FOUND,
+        KMS_OPT_IN_REQUIRED,
+        UNKNOWN_ERROR
+      )
+    )
   }
 
   object DeliveryStreamStatusEnum {
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
-    val ACTIVE   = "ACTIVE"
+    val CREATING        = "CREATING"
+    val CREATING_FAILED = "CREATING_FAILED"
+    val DELETING        = "DELETING"
+    val DELETING_FAILED = "DELETING_FAILED"
+    val ACTIVE          = "ACTIVE"
 
-    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
+    val values = js.Object.freeze(js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE))
   }
 
   object DeliveryStreamTypeEnum {
@@ -969,6 +1045,30 @@ package firehose {
     }
   }
 
+  /**
+    * Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.
+    */
+  @js.native
+  trait FailureDescription extends js.Object {
+    var Details: NonEmptyString
+    var Type: DeliveryStreamFailureType
+  }
+
+  object FailureDescription {
+    @inline
+    def apply(
+        Details: NonEmptyString,
+        Type: DeliveryStreamFailureType
+    ): FailureDescription = {
+      val __obj = js.Dynamic.literal(
+        "Details" -> Details.asInstanceOf[js.Any],
+        "Type"    -> Type.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FailureDescription]
+    }
+  }
+
   object HECEndpointTypeEnum {
     val Raw   = "Raw"
     val Event = "Event"
@@ -1033,6 +1133,13 @@ package firehose {
 
       __obj.asInstanceOf[KMSEncryptionConfig]
     }
+  }
+
+  object KeyTypeEnum {
+    val AWS_OWNED_CMK        = "AWS_OWNED_CMK"
+    val CUSTOMER_MANAGED_CMK = "CUSTOMER_MANAGED_CMK"
+
+    val values = js.Object.freeze(js.Array(AWS_OWNED_CMK, CUSTOMER_MANAGED_CMK))
   }
 
   /**
@@ -2108,17 +2215,23 @@ package firehose {
   @js.native
   trait StartDeliveryStreamEncryptionInput extends js.Object {
     var DeliveryStreamName: DeliveryStreamName
+    var DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput]
   }
 
   object StartDeliveryStreamEncryptionInput {
     @inline
     def apply(
-        DeliveryStreamName: DeliveryStreamName
+        DeliveryStreamName: DeliveryStreamName,
+        DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput] =
+          js.undefined
     ): StartDeliveryStreamEncryptionInput = {
       val __obj = js.Dynamic.literal(
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
       )
 
+      DeliveryStreamEncryptionConfigurationInput.foreach(__v =>
+        __obj.updateDynamic("DeliveryStreamEncryptionConfigurationInput")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[StartDeliveryStreamEncryptionInput]
     }
   }

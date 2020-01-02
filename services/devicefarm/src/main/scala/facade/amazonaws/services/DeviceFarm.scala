@@ -24,6 +24,7 @@ package object devicefarm {
   type DateTime                           = js.Date
   type DeviceAttribute                    = String
   type DeviceAvailability                 = String
+  type DeviceFarmArn                      = String
   type DeviceFilterAttribute              = String
   type DeviceFilterValues                 = js.Array[String]
   type DeviceFilters                      = js.Array[DeviceFilter]
@@ -48,6 +49,7 @@ package object devicefarm {
   type IosPaths                           = js.Array[String]
   type JobTimeoutMinutes                  = Int
   type Jobs                               = js.Array[Job]
+  type MaxPageSize                        = Int
   type MaxSlotMap                         = js.Dictionary[Int]
   type Message                            = String
   type Metadata                           = String
@@ -71,6 +73,9 @@ package object devicefarm {
   type RecurringChargeFrequency           = String
   type RecurringCharges                   = js.Array[RecurringCharge]
   type RemoteAccessSessions               = js.Array[RemoteAccessSession]
+  type ResourceDescription                = String
+  type ResourceId                         = String
+  type ResourceName                       = String
   type RuleOperator                       = String
   type Rules                              = js.Array[Rule]
   type Runs                               = js.Array[Run]
@@ -84,6 +89,14 @@ package object devicefarm {
   type TagKeyList                         = js.Array[TagKey]
   type TagList                            = js.Array[Tag]
   type TagValue                           = String
+  type TestGridProjects                   = js.Array[TestGridProject]
+  type TestGridSessionActions             = js.Array[TestGridSessionAction]
+  type TestGridSessionArtifactCategory    = String
+  type TestGridSessionArtifactType        = String
+  type TestGridSessionArtifacts           = js.Array[TestGridSessionArtifact]
+  type TestGridSessionStatus              = String
+  type TestGridSessions                   = js.Array[TestGridSession]
+  type TestGridUrlExpiresInSecondsInput   = Int
   type TestParameters                     = js.Dictionary[String]
   type TestType                           = String
   type Tests                              = js.Array[Test]
@@ -102,6 +115,7 @@ package object devicefarm {
   type VideoCapture                       = Boolean
 
   implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
+
     @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
       service.createDevicePool(params).promise.toFuture
     @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] =
@@ -113,6 +127,10 @@ package object devicefarm {
     @inline def createRemoteAccessSessionFuture(
         params: CreateRemoteAccessSessionRequest
     ): Future[CreateRemoteAccessSessionResult] = service.createRemoteAccessSession(params).promise.toFuture
+    @inline def createTestGridProjectFuture(params: CreateTestGridProjectRequest): Future[CreateTestGridProjectResult] =
+      service.createTestGridProject(params).promise.toFuture
+    @inline def createTestGridUrlFuture(params: CreateTestGridUrlRequest): Future[CreateTestGridUrlResult] =
+      service.createTestGridUrl(params).promise.toFuture
     @inline def createUploadFuture(params: CreateUploadRequest): Future[CreateUploadResult] =
       service.createUpload(params).promise.toFuture
     @inline def createVPCEConfigurationFuture(
@@ -131,6 +149,8 @@ package object devicefarm {
     ): Future[DeleteRemoteAccessSessionResult] = service.deleteRemoteAccessSession(params).promise.toFuture
     @inline def deleteRunFuture(params: DeleteRunRequest): Future[DeleteRunResult] =
       service.deleteRun(params).promise.toFuture
+    @inline def deleteTestGridProjectFuture(params: DeleteTestGridProjectRequest): Future[DeleteTestGridProjectResult] =
+      service.deleteTestGridProject(params).promise.toFuture
     @inline def deleteUploadFuture(params: DeleteUploadRequest): Future[DeleteUploadResult] =
       service.deleteUpload(params).promise.toFuture
     @inline def deleteVPCEConfigurationFuture(
@@ -163,6 +183,10 @@ package object devicefarm {
     @inline def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult] =
       service.getSuite(params).promise.toFuture
     @inline def getTestFuture(params: GetTestRequest): Future[GetTestResult] = service.getTest(params).promise.toFuture
+    @inline def getTestGridProjectFuture(params: GetTestGridProjectRequest): Future[GetTestGridProjectResult] =
+      service.getTestGridProject(params).promise.toFuture
+    @inline def getTestGridSessionFuture(params: GetTestGridSessionRequest): Future[GetTestGridSessionResult] =
+      service.getTestGridSession(params).promise.toFuture
     @inline def getUploadFuture(params: GetUploadRequest): Future[GetUploadResult] =
       service.getUpload(params).promise.toFuture
     @inline def getVPCEConfigurationFuture(params: GetVPCEConfigurationRequest): Future[GetVPCEConfigurationResult] =
@@ -205,6 +229,16 @@ package object devicefarm {
       service.listSuites(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
+    @inline def listTestGridProjectsFuture(params: ListTestGridProjectsRequest): Future[ListTestGridProjectsResult] =
+      service.listTestGridProjects(params).promise.toFuture
+    @inline def listTestGridSessionActionsFuture(
+        params: ListTestGridSessionActionsRequest
+    ): Future[ListTestGridSessionActionsResult] = service.listTestGridSessionActions(params).promise.toFuture
+    @inline def listTestGridSessionArtifactsFuture(
+        params: ListTestGridSessionArtifactsRequest
+    ): Future[ListTestGridSessionArtifactsResult] = service.listTestGridSessionArtifacts(params).promise.toFuture
+    @inline def listTestGridSessionsFuture(params: ListTestGridSessionsRequest): Future[ListTestGridSessionsResult] =
+      service.listTestGridSessions(params).promise.toFuture
     @inline def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] =
       service.listTests(params).promise.toFuture
     @inline def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] =
@@ -239,6 +273,8 @@ package object devicefarm {
       service.updateNetworkProfile(params).promise.toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
       service.updateProject(params).promise.toFuture
+    @inline def updateTestGridProjectFuture(params: UpdateTestGridProjectRequest): Future[UpdateTestGridProjectResult] =
+      service.updateTestGridProject(params).promise.toFuture
     @inline def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] =
       service.updateUpload(params).promise.toFuture
     @inline def updateVPCEConfigurationFuture(
@@ -259,7 +295,9 @@ package devicefarm {
     def createProject(params: CreateProjectRequest): Request[CreateProjectResult]                         = js.native
     def createRemoteAccessSession(params: CreateRemoteAccessSessionRequest): Request[CreateRemoteAccessSessionResult] =
       js.native
-    def createUpload(params: CreateUploadRequest): Request[CreateUploadResult] = js.native
+    def createTestGridProject(params: CreateTestGridProjectRequest): Request[CreateTestGridProjectResult] = js.native
+    def createTestGridUrl(params: CreateTestGridUrlRequest): Request[CreateTestGridUrlResult]             = js.native
+    def createUpload(params: CreateUploadRequest): Request[CreateUploadResult]                            = js.native
     def createVPCEConfiguration(params: CreateVPCEConfigurationRequest): Request[CreateVPCEConfigurationResult] =
       js.native
     def deleteDevicePool(params: DeleteDevicePoolRequest): Request[DeleteDevicePoolResult]                = js.native
@@ -268,8 +306,9 @@ package devicefarm {
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult]                         = js.native
     def deleteRemoteAccessSession(params: DeleteRemoteAccessSessionRequest): Request[DeleteRemoteAccessSessionResult] =
       js.native
-    def deleteRun(params: DeleteRunRequest): Request[DeleteRunResult]          = js.native
-    def deleteUpload(params: DeleteUploadRequest): Request[DeleteUploadResult] = js.native
+    def deleteRun(params: DeleteRunRequest): Request[DeleteRunResult]                                     = js.native
+    def deleteTestGridProject(params: DeleteTestGridProjectRequest): Request[DeleteTestGridProjectResult] = js.native
+    def deleteUpload(params: DeleteUploadRequest): Request[DeleteUploadResult]                            = js.native
     def deleteVPCEConfiguration(params: DeleteVPCEConfigurationRequest): Request[DeleteVPCEConfigurationResult] =
       js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResult] = js.native
@@ -288,6 +327,8 @@ package devicefarm {
     def getRun(params: GetRunRequest): Request[GetRunResult]                                                 = js.native
     def getSuite(params: GetSuiteRequest): Request[GetSuiteResult]                                           = js.native
     def getTest(params: GetTestRequest): Request[GetTestResult]                                              = js.native
+    def getTestGridProject(params: GetTestGridProjectRequest): Request[GetTestGridProjectResult]             = js.native
+    def getTestGridSession(params: GetTestGridSessionRequest): Request[GetTestGridSessionResult]             = js.native
     def getUpload(params: GetUploadRequest): Request[GetUploadResult]                                        = js.native
     def getVPCEConfiguration(params: GetVPCEConfigurationRequest): Request[GetVPCEConfigurationResult]       = js.native
     def installToRemoteAccessSession(
@@ -307,10 +348,18 @@ package devicefarm {
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResult]    = js.native
     def listRemoteAccessSessions(params: ListRemoteAccessSessionsRequest): Request[ListRemoteAccessSessionsResult] =
       js.native
-    def listRuns(params: ListRunsRequest): Request[ListRunsResult]                                           = js.native
-    def listSamples(params: ListSamplesRequest): Request[ListSamplesResult]                                  = js.native
-    def listSuites(params: ListSuitesRequest): Request[ListSuitesResult]                                     = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]        = js.native
+    def listRuns(params: ListRunsRequest): Request[ListRunsResult]                                     = js.native
+    def listSamples(params: ListSamplesRequest): Request[ListSamplesResult]                            = js.native
+    def listSuites(params: ListSuitesRequest): Request[ListSuitesResult]                               = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]  = js.native
+    def listTestGridProjects(params: ListTestGridProjectsRequest): Request[ListTestGridProjectsResult] = js.native
+    def listTestGridSessionActions(
+        params: ListTestGridSessionActionsRequest
+    ): Request[ListTestGridSessionActionsResult] = js.native
+    def listTestGridSessionArtifacts(
+        params: ListTestGridSessionArtifactsRequest
+    ): Request[ListTestGridSessionArtifactsResult]                                                           = js.native
+    def listTestGridSessions(params: ListTestGridSessionsRequest): Request[ListTestGridSessionsResult]       = js.native
     def listTests(params: ListTestsRequest): Request[ListTestsResult]                                        = js.native
     def listUniqueProblems(params: ListUniqueProblemsRequest): Request[ListUniqueProblemsResult]             = js.native
     def listUploads(params: ListUploadsRequest): Request[ListUploadsResult]                                  = js.native
@@ -329,13 +378,14 @@ package devicefarm {
     def updateInstanceProfile(params: UpdateInstanceProfileRequest): Request[UpdateInstanceProfileResult] = js.native
     def updateNetworkProfile(params: UpdateNetworkProfileRequest): Request[UpdateNetworkProfileResult]    = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult]                         = js.native
+    def updateTestGridProject(params: UpdateTestGridProjectRequest): Request[UpdateTestGridProjectResult] = js.native
     def updateUpload(params: UpdateUploadRequest): Request[UpdateUploadResult]                            = js.native
     def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] =
       js.native
   }
 
   /**
-    * A container for account-level settings within AWS Device Farm.
+    * A container for account-level settings in AWS Device Farm.
     */
   @js.native
   trait AccountSettings extends js.Object {
@@ -487,8 +537,7 @@ package devicefarm {
   }
 
   /**
-    * Represents the amount of CPU that an app is using on a physical device.
-    *  Note that this does not represent system-wide CPU usage.
+    * Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.
     */
   @js.native
   trait CPU extends js.Object {
@@ -854,6 +903,83 @@ package devicefarm {
     }
   }
 
+  @js.native
+  trait CreateTestGridProjectRequest extends js.Object {
+    var name: ResourceName
+    var description: js.UndefOr[ResourceDescription]
+  }
+
+  object CreateTestGridProjectRequest {
+    @inline
+    def apply(
+        name: ResourceName,
+        description: js.UndefOr[ResourceDescription] = js.undefined
+    ): CreateTestGridProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTestGridProjectRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTestGridProjectResult extends js.Object {
+    var testGridProject: js.UndefOr[TestGridProject]
+  }
+
+  object CreateTestGridProjectResult {
+    @inline
+    def apply(
+        testGridProject: js.UndefOr[TestGridProject] = js.undefined
+    ): CreateTestGridProjectResult = {
+      val __obj = js.Dynamic.literal()
+      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTestGridProjectResult]
+    }
+  }
+
+  @js.native
+  trait CreateTestGridUrlRequest extends js.Object {
+    var expiresInSeconds: TestGridUrlExpiresInSecondsInput
+    var projectArn: DeviceFarmArn
+  }
+
+  object CreateTestGridUrlRequest {
+    @inline
+    def apply(
+        expiresInSeconds: TestGridUrlExpiresInSecondsInput,
+        projectArn: DeviceFarmArn
+    ): CreateTestGridUrlRequest = {
+      val __obj = js.Dynamic.literal(
+        "expiresInSeconds" -> expiresInSeconds.asInstanceOf[js.Any],
+        "projectArn"       -> projectArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateTestGridUrlRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTestGridUrlResult extends js.Object {
+    var expires: js.UndefOr[DateTime]
+    var url: js.UndefOr[String]
+  }
+
+  object CreateTestGridUrlResult {
+    @inline
+    def apply(
+        expires: js.UndefOr[DateTime] = js.undefined,
+        url: js.UndefOr[String] = js.undefined
+    ): CreateTestGridUrlResult = {
+      val __obj = js.Dynamic.literal()
+      expires.foreach(__v => __obj.updateDynamic("expires")(__v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTestGridUrlResult]
+    }
+  }
+
   /**
     * Represents a request to the create upload operation.
     */
@@ -955,7 +1081,7 @@ package devicefarm {
   }
 
   /**
-    * A JSON object specifying the paths where the artifacts generated by the customer's tests, on the device or in the test environment, will be pulled from.
+    * A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.
     *  Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.
     *  For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.
     */
@@ -1191,6 +1317,37 @@ package devicefarm {
     }
   }
 
+  @js.native
+  trait DeleteTestGridProjectRequest extends js.Object {
+    var projectArn: DeviceFarmArn
+  }
+
+  object DeleteTestGridProjectRequest {
+    @inline
+    def apply(
+        projectArn: DeviceFarmArn
+    ): DeleteTestGridProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteTestGridProjectRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTestGridProjectResult extends js.Object {}
+
+  object DeleteTestGridProjectResult {
+    @inline
+    def apply(
+        ): DeleteTestGridProjectResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteTestGridProjectResult]
+    }
+  }
+
   /**
     * Represents a request to the delete upload operation.
     */
@@ -1382,8 +1539,8 @@ package devicefarm {
   }
 
   /**
-    * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
-    *  It is also passed in as the <code>filters</code> parameter to ListDevices. For an example of the JSON request syntax, see <a>ListDevices</a>.
+    * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    *  It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.
     */
   @js.native
   trait DeviceFilter extends js.Object {
@@ -1579,7 +1736,7 @@ package devicefarm {
   }
 
   /**
-    * Represents the device filters used in a test run as well as the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
+    * Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
     */
   @js.native
   trait DeviceSelectionConfiguration extends js.Object {
@@ -1603,7 +1760,7 @@ package devicefarm {
   }
 
   /**
-    * Contains the run results requested by the device selection configuration as well as how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
+    * Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
     */
   @js.native
   trait DeviceSelectionResult extends js.Object {
@@ -2216,6 +2373,78 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       suite.foreach(__v => __obj.updateDynamic("suite")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSuiteResult]
+    }
+  }
+
+  @js.native
+  trait GetTestGridProjectRequest extends js.Object {
+    var projectArn: DeviceFarmArn
+  }
+
+  object GetTestGridProjectRequest {
+    @inline
+    def apply(
+        projectArn: DeviceFarmArn
+    ): GetTestGridProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetTestGridProjectRequest]
+    }
+  }
+
+  @js.native
+  trait GetTestGridProjectResult extends js.Object {
+    var testGridProject: js.UndefOr[TestGridProject]
+  }
+
+  object GetTestGridProjectResult {
+    @inline
+    def apply(
+        testGridProject: js.UndefOr[TestGridProject] = js.undefined
+    ): GetTestGridProjectResult = {
+      val __obj = js.Dynamic.literal()
+      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTestGridProjectResult]
+    }
+  }
+
+  @js.native
+  trait GetTestGridSessionRequest extends js.Object {
+    var projectArn: js.UndefOr[DeviceFarmArn]
+    var sessionArn: js.UndefOr[DeviceFarmArn]
+    var sessionId: js.UndefOr[ResourceId]
+  }
+
+  object GetTestGridSessionRequest {
+    @inline
+    def apply(
+        projectArn: js.UndefOr[DeviceFarmArn] = js.undefined,
+        sessionArn: js.UndefOr[DeviceFarmArn] = js.undefined,
+        sessionId: js.UndefOr[ResourceId] = js.undefined
+    ): GetTestGridSessionRequest = {
+      val __obj = js.Dynamic.literal()
+      projectArn.foreach(__v => __obj.updateDynamic("projectArn")(__v.asInstanceOf[js.Any]))
+      sessionArn.foreach(__v => __obj.updateDynamic("sessionArn")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTestGridSessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetTestGridSessionResult extends js.Object {
+    var testGridSession: js.UndefOr[TestGridSession]
+  }
+
+  object GetTestGridSessionResult {
+    @inline
+    def apply(
+        testGridSession: js.UndefOr[TestGridSession] = js.undefined
+    ): GetTestGridSessionResult = {
+      val __obj = js.Dynamic.literal()
+      testGridSession.foreach(__v => __obj.updateDynamic("testGridSession")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTestGridSessionResult]
     }
   }
 
@@ -3169,13 +3398,13 @@ package devicefarm {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceARN: AmazonResourceName
+    var ResourceARN: DeviceFarmArn
   }
 
   object ListTagsForResourceRequest {
     @inline
     def apply(
-        ResourceARN: AmazonResourceName
+        ResourceARN: DeviceFarmArn
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
@@ -3198,6 +3427,191 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
+  trait ListTestGridProjectsRequest extends js.Object {
+    var maxResult: js.UndefOr[MaxPageSize]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListTestGridProjectsRequest {
+    @inline
+    def apply(
+        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTestGridProjectsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridProjectsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTestGridProjectsResult extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var testGridProjects: js.UndefOr[TestGridProjects]
+  }
+
+  object ListTestGridProjectsResult {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        testGridProjects: js.UndefOr[TestGridProjects] = js.undefined
+    ): ListTestGridProjectsResult = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      testGridProjects.foreach(__v => __obj.updateDynamic("testGridProjects")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridProjectsResult]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionActionsRequest extends js.Object {
+    var sessionArn: DeviceFarmArn
+    var maxResult: js.UndefOr[MaxPageSize]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListTestGridSessionActionsRequest {
+    @inline
+    def apply(
+        sessionArn: DeviceFarmArn,
+        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTestGridSessionActionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "sessionArn" -> sessionArn.asInstanceOf[js.Any]
+      )
+
+      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionActionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionActionsResult extends js.Object {
+    var actions: js.UndefOr[TestGridSessionActions]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListTestGridSessionActionsResult {
+    @inline
+    def apply(
+        actions: js.UndefOr[TestGridSessionActions] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTestGridSessionActionsResult = {
+      val __obj = js.Dynamic.literal()
+      actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionActionsResult]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionArtifactsRequest extends js.Object {
+    var sessionArn: DeviceFarmArn
+    var maxResult: js.UndefOr[MaxPageSize]
+    var nextToken: js.UndefOr[PaginationToken]
+    var `type`: js.UndefOr[TestGridSessionArtifactCategory]
+  }
+
+  object ListTestGridSessionArtifactsRequest {
+    @inline
+    def apply(
+        sessionArn: DeviceFarmArn,
+        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        `type`: js.UndefOr[TestGridSessionArtifactCategory] = js.undefined
+    ): ListTestGridSessionArtifactsRequest = {
+      val __obj = js.Dynamic.literal(
+        "sessionArn" -> sessionArn.asInstanceOf[js.Any]
+      )
+
+      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionArtifactsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionArtifactsResult extends js.Object {
+    var artifacts: js.UndefOr[TestGridSessionArtifacts]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListTestGridSessionArtifactsResult {
+    @inline
+    def apply(
+        artifacts: js.UndefOr[TestGridSessionArtifacts] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTestGridSessionArtifactsResult = {
+      val __obj = js.Dynamic.literal()
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionArtifactsResult]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionsRequest extends js.Object {
+    var projectArn: DeviceFarmArn
+    var creationTimeAfter: js.UndefOr[DateTime]
+    var creationTimeBefore: js.UndefOr[DateTime]
+    var endTimeAfter: js.UndefOr[DateTime]
+    var endTimeBefore: js.UndefOr[DateTime]
+    var maxResult: js.UndefOr[MaxPageSize]
+    var nextToken: js.UndefOr[PaginationToken]
+    var status: js.UndefOr[TestGridSessionStatus]
+  }
+
+  object ListTestGridSessionsRequest {
+    @inline
+    def apply(
+        projectArn: DeviceFarmArn,
+        creationTimeAfter: js.UndefOr[DateTime] = js.undefined,
+        creationTimeBefore: js.UndefOr[DateTime] = js.undefined,
+        endTimeAfter: js.UndefOr[DateTime] = js.undefined,
+        endTimeBefore: js.UndefOr[DateTime] = js.undefined,
+        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        status: js.UndefOr[TestGridSessionStatus] = js.undefined
+    ): ListTestGridSessionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
+
+      creationTimeAfter.foreach(__v => __obj.updateDynamic("creationTimeAfter")(__v.asInstanceOf[js.Any]))
+      creationTimeBefore.foreach(__v => __obj.updateDynamic("creationTimeBefore")(__v.asInstanceOf[js.Any]))
+      endTimeAfter.foreach(__v => __obj.updateDynamic("endTimeAfter")(__v.asInstanceOf[js.Any]))
+      endTimeBefore.foreach(__v => __obj.updateDynamic("endTimeBefore")(__v.asInstanceOf[js.Any]))
+      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTestGridSessionsResult extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var testGridSessions: js.UndefOr[TestGridSessions]
+  }
+
+  object ListTestGridSessionsResult {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        testGridSessions: js.UndefOr[TestGridSessions] = js.undefined
+    ): ListTestGridSessionsResult = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      testGridSessions.foreach(__v => __obj.updateDynamic("testGridSessions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestGridSessionsResult]
     }
   }
 
@@ -3381,7 +3795,7 @@ package devicefarm {
   }
 
   /**
-    * Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example 47.6204, -122.3491).
+    * Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).
     *  Elevation is currently not supported.
     */
   @js.native
@@ -3406,7 +3820,7 @@ package devicefarm {
   }
 
   /**
-    * A number representing the monetary amount for an offering or transaction.
+    * A number that represents the monetary amount for an offering or transaction.
     */
   @js.native
   trait MonetaryAmount extends js.Object {
@@ -3725,7 +4139,7 @@ package devicefarm {
   }
 
   /**
-    * The result of the purchase offering (e.g., success or failure).
+    * The result of the purchase offering (for example, success or failure).
     */
   @js.native
   trait PurchaseOfferingResult extends js.Object {
@@ -3772,7 +4186,7 @@ package devicefarm {
   }
 
   /**
-    * Specifies whether charges for devices will be recurring.
+    * Specifies whether charges for devices are recurring.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -3879,7 +4293,7 @@ package devicefarm {
   }
 
   /**
-    * A request representing an offering renewal.
+    * A request that represents an offering renewal.
     */
   @js.native
   trait RenewOfferingRequest extends js.Object {
@@ -3982,7 +4396,7 @@ package devicefarm {
   }
 
   /**
-    * Represents a test run on a set of devices with a given app package, test parameters, etc.
+    * Represents a test run on a set of devices with a given app package, test parameters, and so on.
     */
   @js.native
   trait Run extends js.Object {
@@ -4264,7 +4678,7 @@ package devicefarm {
   }
 
   /**
-    * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     */
   @js.native
   trait ScheduleRunTest extends js.Object {
@@ -4460,7 +4874,7 @@ package devicefarm {
   }
 
   /**
-    * The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    * The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4485,14 +4899,14 @@ package devicefarm {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceARN: AmazonResourceName
+    var ResourceARN: DeviceFarmArn
     var Tags: TagList
   }
 
   object TagResourceRequest {
     @inline
     def apply(
-        ResourceARN: AmazonResourceName,
+        ResourceARN: DeviceFarmArn,
         Tags: TagList
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -4564,6 +4978,149 @@ package devicefarm {
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Test]
     }
+  }
+
+  /**
+    * A Selenium testing project. Projects are used to collect and collate sessions.
+    */
+  @js.native
+  trait TestGridProject extends js.Object {
+    var arn: js.UndefOr[DeviceFarmArn]
+    var created: js.UndefOr[DateTime]
+    var description: js.UndefOr[String]
+    var name: js.UndefOr[String]
+  }
+
+  object TestGridProject {
+    @inline
+    def apply(
+        arn: js.UndefOr[DeviceFarmArn] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined
+    ): TestGridProject = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestGridProject]
+    }
+  }
+
+  /**
+    * A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>.
+    */
+  @js.native
+  trait TestGridSession extends js.Object {
+    var arn: js.UndefOr[DeviceFarmArn]
+    var billingMinutes: js.UndefOr[Double]
+    var created: js.UndefOr[DateTime]
+    var ended: js.UndefOr[DateTime]
+    var seleniumProperties: js.UndefOr[String]
+    var status: js.UndefOr[TestGridSessionStatus]
+  }
+
+  object TestGridSession {
+    @inline
+    def apply(
+        arn: js.UndefOr[DeviceFarmArn] = js.undefined,
+        billingMinutes: js.UndefOr[Double] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        ended: js.UndefOr[DateTime] = js.undefined,
+        seleniumProperties: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[TestGridSessionStatus] = js.undefined
+    ): TestGridSession = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      billingMinutes.foreach(__v => __obj.updateDynamic("billingMinutes")(__v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      ended.foreach(__v => __obj.updateDynamic("ended")(__v.asInstanceOf[js.Any]))
+      seleniumProperties.foreach(__v => __obj.updateDynamic("seleniumProperties")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestGridSession]
+    }
+  }
+
+  /**
+    * An action taken by a <a>TestGridSession</a> browser instance.
+    */
+  @js.native
+  trait TestGridSessionAction extends js.Object {
+    var action: js.UndefOr[String]
+    var duration: js.UndefOr[Double]
+    var requestMethod: js.UndefOr[String]
+    var started: js.UndefOr[DateTime]
+    var statusCode: js.UndefOr[String]
+  }
+
+  object TestGridSessionAction {
+    @inline
+    def apply(
+        action: js.UndefOr[String] = js.undefined,
+        duration: js.UndefOr[Double] = js.undefined,
+        requestMethod: js.UndefOr[String] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        statusCode: js.UndefOr[String] = js.undefined
+    ): TestGridSessionAction = {
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      duration.foreach(__v => __obj.updateDynamic("duration")(__v.asInstanceOf[js.Any]))
+      requestMethod.foreach(__v => __obj.updateDynamic("requestMethod")(__v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestGridSessionAction]
+    }
+  }
+
+  /**
+    * Artifacts are video and other files that are produced in the process of running a browser in an automated context.
+    *
+    * '''Note:'''Video elements might be broken up into multiple artifacts as they grow in size during creation.
+    */
+  @js.native
+  trait TestGridSessionArtifact extends js.Object {
+    var filename: js.UndefOr[String]
+    var `type`: js.UndefOr[TestGridSessionArtifactType]
+    var url: js.UndefOr[String]
+  }
+
+  object TestGridSessionArtifact {
+    @inline
+    def apply(
+        filename: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[TestGridSessionArtifactType] = js.undefined,
+        url: js.UndefOr[String] = js.undefined
+    ): TestGridSessionArtifact = {
+      val __obj = js.Dynamic.literal()
+      filename.foreach(__v => __obj.updateDynamic("filename")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestGridSessionArtifact]
+    }
+  }
+
+  object TestGridSessionArtifactCategoryEnum {
+    val VIDEO = "VIDEO"
+    val LOG   = "LOG"
+
+    val values = js.Object.freeze(js.Array(VIDEO, LOG))
+  }
+
+  object TestGridSessionArtifactTypeEnum {
+    val UNKNOWN      = "UNKNOWN"
+    val VIDEO        = "VIDEO"
+    val SELENIUM_LOG = "SELENIUM_LOG"
+
+    val values = js.Object.freeze(js.Array(UNKNOWN, VIDEO, SELENIUM_LOG))
+  }
+
+  object TestGridSessionStatusEnum {
+    val ACTIVE  = "ACTIVE"
+    val CLOSED  = "CLOSED"
+    val ERRORED = "ERRORED"
+
+    val values = js.Object.freeze(js.Array(ACTIVE, CLOSED, ERRORED))
   }
 
   object TestTypeEnum {
@@ -4662,14 +5219,14 @@ package devicefarm {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceARN: AmazonResourceName
+    var ResourceARN: DeviceFarmArn
     var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
-        ResourceARN: AmazonResourceName,
+        ResourceARN: DeviceFarmArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -4950,6 +5507,46 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectResult]
+    }
+  }
+
+  @js.native
+  trait UpdateTestGridProjectRequest extends js.Object {
+    var projectArn: DeviceFarmArn
+    var description: js.UndefOr[ResourceDescription]
+    var name: js.UndefOr[ResourceName]
+  }
+
+  object UpdateTestGridProjectRequest {
+    @inline
+    def apply(
+        projectArn: DeviceFarmArn,
+        description: js.UndefOr[ResourceDescription] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined
+    ): UpdateTestGridProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTestGridProjectRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateTestGridProjectResult extends js.Object {
+    var testGridProject: js.UndefOr[TestGridProject]
+  }
+
+  object UpdateTestGridProjectResult {
+    @inline
+    def apply(
+        testGridProject: js.UndefOr[TestGridProject] = js.undefined
+    ): UpdateTestGridProjectResult = {
+      val __obj = js.Dynamic.literal()
+      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTestGridProjectResult]
     }
   }
 

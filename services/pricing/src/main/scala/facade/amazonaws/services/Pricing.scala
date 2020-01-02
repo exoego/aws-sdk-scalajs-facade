@@ -19,6 +19,7 @@ package object pricing {
   type errorMessage       = String
 
   implicit final class PricingOps(private val service: Pricing) extends AnyVal {
+
     @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
       service.describeServices(params).promise.toFuture
     @inline def getAttributeValuesFuture(params: GetAttributeValuesRequest): Future[GetAttributeValuesResponse] =

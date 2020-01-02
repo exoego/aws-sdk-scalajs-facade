@@ -38,6 +38,7 @@ package object sqs {
   type TagValue                                     = String
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
+
     @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
       service.addPermission(params).promise.toFuture
     @inline def changeMessageVisibilityBatchFuture(

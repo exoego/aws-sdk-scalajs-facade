@@ -98,6 +98,7 @@ package object iotanalytics {
   type VolumeSizeInGB           = Int
 
   implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
+
     @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
     @inline def cancelPipelineReprocessingFuture(

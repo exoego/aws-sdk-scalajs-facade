@@ -86,6 +86,7 @@ package object elbv2 {
   type PageSize                                              = Int
   type Path                                                  = String
   type Port                                                  = Int
+  type PrivateIPv4Address                                    = String
   type ProtocolEnum                                          = String
   type QueryStringKeyValuePairList                           = js.Array[QueryStringKeyValuePair]
   type RedirectActionHost                                    = String
@@ -125,8 +126,12 @@ package object elbv2 {
   type TargetGroupAttributeKey                               = String
   type TargetGroupAttributeValue                             = String
   type TargetGroupAttributes                                 = js.Array[TargetGroupAttribute]
+  type TargetGroupList                                       = js.Array[TargetGroupTuple]
   type TargetGroupName                                       = String
   type TargetGroupNames                                      = js.Array[TargetGroupName]
+  type TargetGroupStickinessDurationSeconds                  = Int
+  type TargetGroupStickinessEnabled                          = Boolean
+  type TargetGroupWeight                                     = Int
   type TargetGroups                                          = js.Array[TargetGroup]
   type TargetHealthDescriptions                              = js.Array[TargetHealthDescription]
   type TargetHealthReasonEnum                                = String
@@ -137,6 +142,7 @@ package object elbv2 {
   type ZoneName                                              = String
 
   implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
+
     @inline def addListenerCertificatesFuture(
         params: AddListenerCertificatesInput
     ): Future[AddListenerCertificatesOutput]                               = service.addListenerCertificates(params).promise.toFuture
@@ -277,6 +283,7 @@ package elbv2 {
     var AuthenticateCognitoConfig: js.UndefOr[AuthenticateCognitoActionConfig]
     var AuthenticateOidcConfig: js.UndefOr[AuthenticateOidcActionConfig]
     var FixedResponseConfig: js.UndefOr[FixedResponseActionConfig]
+    var ForwardConfig: js.UndefOr[ForwardActionConfig]
     var Order: js.UndefOr[ActionOrder]
     var RedirectConfig: js.UndefOr[RedirectActionConfig]
     var TargetGroupArn: js.UndefOr[TargetGroupArn]
@@ -289,6 +296,7 @@ package elbv2 {
         AuthenticateCognitoConfig: js.UndefOr[AuthenticateCognitoActionConfig] = js.undefined,
         AuthenticateOidcConfig: js.UndefOr[AuthenticateOidcActionConfig] = js.undefined,
         FixedResponseConfig: js.UndefOr[FixedResponseActionConfig] = js.undefined,
+        ForwardConfig: js.UndefOr[ForwardActionConfig] = js.undefined,
         Order: js.UndefOr[ActionOrder] = js.undefined,
         RedirectConfig: js.UndefOr[RedirectActionConfig] = js.undefined,
         TargetGroupArn: js.UndefOr[TargetGroupArn] = js.undefined
@@ -302,6 +310,7 @@ package elbv2 {
       )
       AuthenticateOidcConfig.foreach(__v => __obj.updateDynamic("AuthenticateOidcConfig")(__v.asInstanceOf[js.Any]))
       FixedResponseConfig.foreach(__v => __obj.updateDynamic("FixedResponseConfig")(__v.asInstanceOf[js.Any]))
+      ForwardConfig.foreach(__v => __obj.updateDynamic("ForwardConfig")(__v.asInstanceOf[js.Any]))
       Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
       RedirectConfig.foreach(__v => __obj.updateDynamic("RedirectConfig")(__v.asInstanceOf[js.Any]))
       TargetGroupArn.foreach(__v => __obj.updateDynamic("TargetGroupArn")(__v.asInstanceOf[js.Any]))
@@ -1428,6 +1437,30 @@ package elbv2 {
   }
 
   /**
+    * Information about a forward action.
+    */
+  @js.native
+  trait ForwardActionConfig extends js.Object {
+    var TargetGroupStickinessConfig: js.UndefOr[TargetGroupStickinessConfig]
+    var TargetGroups: js.UndefOr[TargetGroupList]
+  }
+
+  object ForwardActionConfig {
+    @inline
+    def apply(
+        TargetGroupStickinessConfig: js.UndefOr[TargetGroupStickinessConfig] = js.undefined,
+        TargetGroups: js.UndefOr[TargetGroupList] = js.undefined
+    ): ForwardActionConfig = {
+      val __obj = js.Dynamic.literal()
+      TargetGroupStickinessConfig.foreach(__v =>
+        __obj.updateDynamic("TargetGroupStickinessConfig")(__v.asInstanceOf[js.Any])
+      )
+      TargetGroups.foreach(__v => __obj.updateDynamic("TargetGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForwardActionConfig]
+    }
+  }
+
+  /**
     * Information about a host header condition.
     */
   @js.native
@@ -1614,17 +1647,20 @@ package elbv2 {
   trait LoadBalancerAddress extends js.Object {
     var AllocationId: js.UndefOr[AllocationId]
     var IpAddress: js.UndefOr[IpAddress]
+    var PrivateIPv4Address: js.UndefOr[PrivateIPv4Address]
   }
 
   object LoadBalancerAddress {
     @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
-        IpAddress: js.UndefOr[IpAddress] = js.undefined
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        PrivateIPv4Address: js.UndefOr[PrivateIPv4Address] = js.undefined
     ): LoadBalancerAddress = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      PrivateIPv4Address.foreach(__v => __obj.updateDynamic("PrivateIPv4Address")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerAddress]
     }
   }
@@ -2462,6 +2498,7 @@ package elbv2 {
   @js.native
   trait SubnetMapping extends js.Object {
     var AllocationId: js.UndefOr[AllocationId]
+    var PrivateIPv4Address: js.UndefOr[PrivateIPv4Address]
     var SubnetId: js.UndefOr[SubnetId]
   }
 
@@ -2469,10 +2506,12 @@ package elbv2 {
     @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
+        PrivateIPv4Address: js.UndefOr[PrivateIPv4Address] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
     ): SubnetMapping = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      PrivateIPv4Address.foreach(__v => __obj.updateDynamic("PrivateIPv4Address")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubnetMapping]
     }
@@ -2638,6 +2677,50 @@ package elbv2 {
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetGroupAttribute]
+    }
+  }
+
+  /**
+    * Information about the target group stickiness for a rule.
+    */
+  @js.native
+  trait TargetGroupStickinessConfig extends js.Object {
+    var DurationSeconds: js.UndefOr[TargetGroupStickinessDurationSeconds]
+    var Enabled: js.UndefOr[TargetGroupStickinessEnabled]
+  }
+
+  object TargetGroupStickinessConfig {
+    @inline
+    def apply(
+        DurationSeconds: js.UndefOr[TargetGroupStickinessDurationSeconds] = js.undefined,
+        Enabled: js.UndefOr[TargetGroupStickinessEnabled] = js.undefined
+    ): TargetGroupStickinessConfig = {
+      val __obj = js.Dynamic.literal()
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetGroupStickinessConfig]
+    }
+  }
+
+  /**
+    * Information about how traffic will be distributed between multiple target groups in a forward rule.
+    */
+  @js.native
+  trait TargetGroupTuple extends js.Object {
+    var TargetGroupArn: js.UndefOr[TargetGroupArn]
+    var Weight: js.UndefOr[TargetGroupWeight]
+  }
+
+  object TargetGroupTuple {
+    @inline
+    def apply(
+        TargetGroupArn: js.UndefOr[TargetGroupArn] = js.undefined,
+        Weight: js.UndefOr[TargetGroupWeight] = js.undefined
+    ): TargetGroupTuple = {
+      val __obj = js.Dynamic.literal()
+      TargetGroupArn.foreach(__v => __obj.updateDynamic("TargetGroupArn")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetGroupTuple]
     }
   }
 

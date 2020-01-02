@@ -8,156 +8,193 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object configservice {
-  type ARN                                      = String
-  type AccountAggregationSourceAccountList      = js.Array[AccountId]
-  type AccountAggregationSourceList             = js.Array[AccountAggregationSource]
-  type AccountId                                = String
-  type AggregateComplianceByConfigRuleList      = js.Array[AggregateComplianceByConfigRule]
-  type AggregateComplianceCountList             = js.Array[AggregateComplianceCount]
-  type AggregateEvaluationResultList            = js.Array[AggregateEvaluationResult]
-  type AggregatedSourceStatusList               = js.Array[AggregatedSourceStatus]
-  type AggregatedSourceStatusType               = String
-  type AggregatedSourceStatusTypeList           = js.Array[AggregatedSourceStatusType]
-  type AggregatedSourceType                     = String
-  type AggregationAuthorizationList             = js.Array[AggregationAuthorization]
-  type AggregatorRegionList                     = js.Array[String]
-  type AllSupported                             = Boolean
-  type AmazonResourceName                       = String
-  type AutoRemediationAttemptSeconds            = Double
-  type AutoRemediationAttempts                  = Int
-  type AvailabilityZone                         = String
-  type AwsRegion                                = String
-  type BaseConfigurationItems                   = js.Array[BaseConfigurationItem]
-  type BaseResourceId                           = String
-  type ChannelName                              = String
-  type ChronologicalOrder                       = String
-  type ComplianceByConfigRules                  = js.Array[ComplianceByConfigRule]
-  type ComplianceByResources                    = js.Array[ComplianceByResource]
-  type ComplianceResourceTypes                  = js.Array[StringWithCharLimit256]
-  type ComplianceSummariesByResourceType        = js.Array[ComplianceSummaryByResourceType]
-  type ComplianceType                           = String
-  type ComplianceTypes                          = js.Array[ComplianceType]
-  type ConfigRuleComplianceSummaryGroupKey      = String
-  type ConfigRuleEvaluationStatusList           = js.Array[ConfigRuleEvaluationStatus]
-  type ConfigRuleName                           = String
-  type ConfigRuleNames                          = js.Array[ConfigRuleName]
-  type ConfigRuleState                          = String
-  type ConfigRules                              = js.Array[ConfigRule]
-  type Configuration                            = String
-  type ConfigurationAggregatorArn               = String
-  type ConfigurationAggregatorList              = js.Array[ConfigurationAggregator]
-  type ConfigurationAggregatorName              = String
-  type ConfigurationAggregatorNameList          = js.Array[ConfigurationAggregatorName]
-  type ConfigurationItemCaptureTime             = js.Date
-  type ConfigurationItemList                    = js.Array[ConfigurationItem]
-  type ConfigurationItemMD5Hash                 = String
-  type ConfigurationItemStatus                  = String
-  type ConfigurationRecorderList                = js.Array[ConfigurationRecorder]
-  type ConfigurationRecorderNameList            = js.Array[RecorderName]
-  type ConfigurationRecorderStatusList          = js.Array[ConfigurationRecorderStatus]
-  type ConfigurationStateId                     = String
-  type CosmosPageLimit                          = Int
-  type Date                                     = js.Date
-  type DeliveryChannelList                      = js.Array[DeliveryChannel]
-  type DeliveryChannelNameList                  = js.Array[ChannelName]
-  type DeliveryChannelStatusList                = js.Array[DeliveryChannelStatus]
-  type DeliveryStatus                           = String
-  type DescribePendingAggregationRequestsLimit  = Int
-  type DiscoveredResourceIdentifierList         = js.Array[AggregateResourceIdentifier]
-  type EarlierTime                              = js.Date
-  type EmptiableStringWithCharLimit256          = String
-  type EvaluationResults                        = js.Array[EvaluationResult]
-  type Evaluations                              = js.Array[Evaluation]
-  type EventSource                              = String
-  type ExcludedAccounts                         = js.Array[AccountId]
-  type Expression                               = String
-  type FailedDeleteRemediationExceptionsBatches = js.Array[FailedDeleteRemediationExceptionsBatch]
-  type FailedRemediationBatches                 = js.Array[FailedRemediationBatch]
-  type FailedRemediationExceptionBatches        = js.Array[FailedRemediationExceptionBatch]
-  type FieldInfoList                            = js.Array[FieldInfo]
-  type FieldName                                = String
-  type GroupByAPILimit                          = Int
-  type GroupedResourceCountList                 = js.Array[GroupedResourceCount]
-  type IncludeGlobalResourceTypes               = Boolean
-  type LaterTime                                = js.Date
-  type Limit                                    = Int
-  type MaximumExecutionFrequency                = String
-  type MemberAccountRuleStatus                  = String
-  type MessageType                              = String
-  type Name                                     = String
-  type NextToken                                = String
-  type OrderingTimestamp                        = js.Date
-  type OrganizationConfigRuleDetailedStatus     = js.Array[MemberAccountStatus]
-  type OrganizationConfigRuleName               = String
-  type OrganizationConfigRuleNames              = js.Array[StringWithCharLimit64]
-  type OrganizationConfigRuleStatuses           = js.Array[OrganizationConfigRuleStatus]
-  type OrganizationConfigRuleTriggerType        = String
-  type OrganizationConfigRuleTriggerTypes       = js.Array[OrganizationConfigRuleTriggerType]
-  type OrganizationConfigRules                  = js.Array[OrganizationConfigRule]
-  type OrganizationRuleStatus                   = String
-  type Owner                                    = String
-  type PendingAggregationRequestList            = js.Array[PendingAggregationRequest]
-  type Percentage                               = Int
-  type RecorderName                             = String
-  type RecorderStatus                           = String
-  type ReevaluateConfigRuleNames                = js.Array[StringWithCharLimit64]
-  type RelatedEvent                             = String
-  type RelatedEventList                         = js.Array[RelatedEvent]
-  type RelationshipList                         = js.Array[Relationship]
-  type RelationshipName                         = String
-  type RemediationConfigurations                = js.Array[RemediationConfiguration]
-  type RemediationExceptionResourceKeys         = js.Array[RemediationExceptionResourceKey]
-  type RemediationExceptions                    = js.Array[RemediationException]
-  type RemediationExecutionState                = String
-  type RemediationExecutionStatuses             = js.Array[RemediationExecutionStatus]
-  type RemediationExecutionStepState            = String
-  type RemediationExecutionSteps                = js.Array[RemediationExecutionStep]
-  type RemediationParameters                    = js.Dictionary[RemediationParameterValue]
-  type RemediationTargetType                    = String
-  type ResourceCountGroupKey                    = String
-  type ResourceCounts                           = js.Array[ResourceCount]
-  type ResourceCreationTime                     = js.Date
-  type ResourceDeletionTime                     = js.Date
-  type ResourceId                               = String
-  type ResourceIdList                           = js.Array[ResourceId]
-  type ResourceIdentifierList                   = js.Array[ResourceIdentifier]
-  type ResourceIdentifiersList                  = js.Array[AggregateResourceIdentifier]
-  type ResourceKeys                             = js.Array[ResourceKey]
-  type ResourceName                             = String
-  type ResourceType                             = String
-  type ResourceTypeList                         = js.Array[ResourceType]
-  type ResourceTypes                            = js.Array[StringWithCharLimit256]
-  type ResourceTypesScope                       = js.Array[StringWithCharLimit256]
-  type ResourceValueType                        = String
-  type Results                                  = js.Array[String]
-  type RetentionConfigurationList               = js.Array[RetentionConfiguration]
-  type RetentionConfigurationName               = String
-  type RetentionConfigurationNameList           = js.Array[RetentionConfigurationName]
-  type RetentionPeriodInDays                    = Int
-  type RuleLimit                                = Int
-  type SourceDetails                            = js.Array[SourceDetail]
-  type StaticParameterValues                    = js.Array[StringWithCharLimit256]
-  type StringWithCharLimit1024                  = String
-  type StringWithCharLimit128                   = String
-  type StringWithCharLimit2048                  = String
-  type StringWithCharLimit256                   = String
-  type StringWithCharLimit256Min0               = String
-  type StringWithCharLimit64                    = String
-  type StringWithCharLimit768                   = String
-  type SupplementaryConfiguration               = js.Dictionary[SupplementaryConfigurationValue]
-  type SupplementaryConfigurationName           = String
-  type SupplementaryConfigurationValue          = String
-  type TagKey                                   = String
-  type TagKeyList                               = js.Array[TagKey]
-  type TagList                                  = js.Array[Tag]
-  type TagValue                                 = String
-  type Tags                                     = js.Dictionary[Value]
-  type TagsList                                 = js.Array[Tag]
-  type UnprocessedResourceIdentifierList        = js.Array[AggregateResourceIdentifier]
-  type Value                                    = String
-  type Version                                  = String
+  type ARN                                         = String
+  type AccountAggregationSourceAccountList         = js.Array[AccountId]
+  type AccountAggregationSourceList                = js.Array[AccountAggregationSource]
+  type AccountId                                   = String
+  type AggregateComplianceByConfigRuleList         = js.Array[AggregateComplianceByConfigRule]
+  type AggregateComplianceCountList                = js.Array[AggregateComplianceCount]
+  type AggregateEvaluationResultList               = js.Array[AggregateEvaluationResult]
+  type AggregatedSourceStatusList                  = js.Array[AggregatedSourceStatus]
+  type AggregatedSourceStatusType                  = String
+  type AggregatedSourceStatusTypeList              = js.Array[AggregatedSourceStatusType]
+  type AggregatedSourceType                        = String
+  type AggregationAuthorizationList                = js.Array[AggregationAuthorization]
+  type AggregatorRegionList                        = js.Array[String]
+  type AllSupported                                = Boolean
+  type AmazonResourceName                          = String
+  type Annotation                                  = String
+  type AutoRemediationAttemptSeconds               = Double
+  type AutoRemediationAttempts                     = Int
+  type AvailabilityZone                            = String
+  type AwsRegion                                   = String
+  type BaseConfigurationItems                      = js.Array[BaseConfigurationItem]
+  type BaseResourceId                              = String
+  type ChannelName                                 = String
+  type ChronologicalOrder                          = String
+  type ComplianceByConfigRules                     = js.Array[ComplianceByConfigRule]
+  type ComplianceByResources                       = js.Array[ComplianceByResource]
+  type ComplianceResourceTypes                     = js.Array[StringWithCharLimit256]
+  type ComplianceSummariesByResourceType           = js.Array[ComplianceSummaryByResourceType]
+  type ComplianceType                              = String
+  type ComplianceTypes                             = js.Array[ComplianceType]
+  type ConfigRuleComplianceSummaryGroupKey         = String
+  type ConfigRuleEvaluationStatusList              = js.Array[ConfigRuleEvaluationStatus]
+  type ConfigRuleName                              = String
+  type ConfigRuleNames                             = js.Array[ConfigRuleName]
+  type ConfigRuleState                             = String
+  type ConfigRules                                 = js.Array[ConfigRule]
+  type Configuration                               = String
+  type ConfigurationAggregatorArn                  = String
+  type ConfigurationAggregatorList                 = js.Array[ConfigurationAggregator]
+  type ConfigurationAggregatorName                 = String
+  type ConfigurationAggregatorNameList             = js.Array[ConfigurationAggregatorName]
+  type ConfigurationItemCaptureTime                = js.Date
+  type ConfigurationItemList                       = js.Array[ConfigurationItem]
+  type ConfigurationItemMD5Hash                    = String
+  type ConfigurationItemStatus                     = String
+  type ConfigurationRecorderList                   = js.Array[ConfigurationRecorder]
+  type ConfigurationRecorderNameList               = js.Array[RecorderName]
+  type ConfigurationRecorderStatusList             = js.Array[ConfigurationRecorderStatus]
+  type ConfigurationStateId                        = String
+  type ConformancePackArn                          = String
+  type ConformancePackComplianceResourceIds        = js.Array[StringWithCharLimit256]
+  type ConformancePackComplianceSummaryList        = js.Array[ConformancePackComplianceSummary]
+  type ConformancePackComplianceType               = String
+  type ConformancePackConfigRuleNames              = js.Array[StringWithCharLimit64]
+  type ConformancePackDetailList                   = js.Array[ConformancePackDetail]
+  type ConformancePackId                           = String
+  type ConformancePackInputParameters              = js.Array[ConformancePackInputParameter]
+  type ConformancePackName                         = String
+  type ConformancePackNamesList                    = js.Array[ConformancePackName]
+  type ConformancePackNamesToSummarizeList         = js.Array[ConformancePackName]
+  type ConformancePackRuleComplianceList           = js.Array[ConformancePackRuleCompliance]
+  type ConformancePackRuleEvaluationResultsList    = js.Array[ConformancePackEvaluationResult]
+  type ConformancePackState                        = String
+  type ConformancePackStatusDetailsList            = js.Array[ConformancePackStatusDetail]
+  type ConformancePackStatusReason                 = String
+  type CosmosPageLimit                             = Int
+  type Date                                        = js.Date
+  type DeliveryChannelList                         = js.Array[DeliveryChannel]
+  type DeliveryChannelNameList                     = js.Array[ChannelName]
+  type DeliveryChannelStatusList                   = js.Array[DeliveryChannelStatus]
+  type DeliveryS3Bucket                            = String
+  type DeliveryS3KeyPrefix                         = String
+  type DeliveryStatus                              = String
+  type DescribeConformancePackComplianceLimit      = Int
+  type DescribePendingAggregationRequestsLimit     = Int
+  type DiscoveredResourceIdentifierList            = js.Array[AggregateResourceIdentifier]
+  type EarlierTime                                 = js.Date
+  type EmptiableStringWithCharLimit256             = String
+  type EvaluationResults                           = js.Array[EvaluationResult]
+  type Evaluations                                 = js.Array[Evaluation]
+  type EventSource                                 = String
+  type ExcludedAccounts                            = js.Array[AccountId]
+  type Expression                                  = String
+  type FailedDeleteRemediationExceptionsBatches    = js.Array[FailedDeleteRemediationExceptionsBatch]
+  type FailedRemediationBatches                    = js.Array[FailedRemediationBatch]
+  type FailedRemediationExceptionBatches           = js.Array[FailedRemediationExceptionBatch]
+  type FieldInfoList                               = js.Array[FieldInfo]
+  type FieldName                                   = String
+  type GetConformancePackComplianceDetailsLimit    = Int
+  type GroupByAPILimit                             = Int
+  type GroupedResourceCountList                    = js.Array[GroupedResourceCount]
+  type IncludeGlobalResourceTypes                  = Boolean
+  type LaterTime                                   = js.Date
+  type Limit                                       = Int
+  type MaximumExecutionFrequency                   = String
+  type MemberAccountRuleStatus                     = String
+  type MessageType                                 = String
+  type Name                                        = String
+  type NextToken                                   = String
+  type OrderingTimestamp                           = js.Date
+  type OrganizationConfigRuleDetailedStatus        = js.Array[MemberAccountStatus]
+  type OrganizationConfigRuleName                  = String
+  type OrganizationConfigRuleNames                 = js.Array[StringWithCharLimit64]
+  type OrganizationConfigRuleStatuses              = js.Array[OrganizationConfigRuleStatus]
+  type OrganizationConfigRuleTriggerType           = String
+  type OrganizationConfigRuleTriggerTypes          = js.Array[OrganizationConfigRuleTriggerType]
+  type OrganizationConfigRules                     = js.Array[OrganizationConfigRule]
+  type OrganizationConformancePackDetailedStatuses = js.Array[OrganizationConformancePackDetailedStatus]
+  type OrganizationConformancePackName             = String
+  type OrganizationConformancePackNames            = js.Array[OrganizationConformancePackName]
+  type OrganizationConformancePackStatuses         = js.Array[OrganizationConformancePackStatus]
+  type OrganizationConformancePacks                = js.Array[OrganizationConformancePack]
+  type OrganizationResourceDetailedStatus          = String
+  type OrganizationResourceStatus                  = String
+  type OrganizationRuleStatus                      = String
+  type Owner                                       = String
+  type PageSizeLimit                               = Int
+  type ParameterName                               = String
+  type ParameterValue                              = String
+  type PendingAggregationRequestList               = js.Array[PendingAggregationRequest]
+  type Percentage                                  = Int
+  type RecorderName                                = String
+  type RecorderStatus                              = String
+  type ReevaluateConfigRuleNames                   = js.Array[StringWithCharLimit64]
+  type RelatedEvent                                = String
+  type RelatedEventList                            = js.Array[RelatedEvent]
+  type RelationshipList                            = js.Array[Relationship]
+  type RelationshipName                            = String
+  type RemediationConfigurations                   = js.Array[RemediationConfiguration]
+  type RemediationExceptionResourceKeys            = js.Array[RemediationExceptionResourceKey]
+  type RemediationExceptions                       = js.Array[RemediationException]
+  type RemediationExecutionState                   = String
+  type RemediationExecutionStatuses                = js.Array[RemediationExecutionStatus]
+  type RemediationExecutionStepState               = String
+  type RemediationExecutionSteps                   = js.Array[RemediationExecutionStep]
+  type RemediationParameters                       = js.Dictionary[RemediationParameterValue]
+  type RemediationTargetType                       = String
+  type ResourceCountGroupKey                       = String
+  type ResourceCounts                              = js.Array[ResourceCount]
+  type ResourceCreationTime                        = js.Date
+  type ResourceDeletionTime                        = js.Date
+  type ResourceId                                  = String
+  type ResourceIdList                              = js.Array[ResourceId]
+  type ResourceIdentifierList                      = js.Array[ResourceIdentifier]
+  type ResourceIdentifiersList                     = js.Array[AggregateResourceIdentifier]
+  type ResourceKeys                                = js.Array[ResourceKey]
+  type ResourceName                                = String
+  type ResourceType                                = String
+  type ResourceTypeList                            = js.Array[ResourceType]
+  type ResourceTypeString                          = String
+  type ResourceTypes                               = js.Array[StringWithCharLimit256]
+  type ResourceTypesScope                          = js.Array[StringWithCharLimit256]
+  type ResourceValueType                           = String
+  type Results                                     = js.Array[String]
+  type RetentionConfigurationList                  = js.Array[RetentionConfiguration]
+  type RetentionConfigurationName                  = String
+  type RetentionConfigurationNameList              = js.Array[RetentionConfigurationName]
+  type RetentionPeriodInDays                       = Int
+  type RuleLimit                                   = Int
+  type SchemaVersionId                             = String
+  type SourceDetails                               = js.Array[SourceDetail]
+  type StackArn                                    = String
+  type StaticParameterValues                       = js.Array[StringWithCharLimit256]
+  type StringWithCharLimit1024                     = String
+  type StringWithCharLimit128                      = String
+  type StringWithCharLimit2048                     = String
+  type StringWithCharLimit256                      = String
+  type StringWithCharLimit256Min0                  = String
+  type StringWithCharLimit64                       = String
+  type StringWithCharLimit768                      = String
+  type SupplementaryConfiguration                  = js.Dictionary[SupplementaryConfigurationValue]
+  type SupplementaryConfigurationName              = String
+  type SupplementaryConfigurationValue             = String
+  type TagKey                                      = String
+  type TagKeyList                                  = js.Array[TagKey]
+  type TagList                                     = js.Array[Tag]
+  type TagValue                                    = String
+  type Tags                                        = js.Dictionary[Value]
+  type TagsList                                    = js.Array[Tag]
+  type TemplateBody                                = String
+  type TemplateS3Uri                               = String
+  type UnprocessedResourceIdentifierList           = js.Array[AggregateResourceIdentifier]
+  type Value                                       = String
+  type Version                                     = String
 
   implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
+
     @inline def batchGetAggregateResourceConfigFuture(
         params: BatchGetAggregateResourceConfigRequest
     ): Future[BatchGetAggregateResourceConfigResponse] =
@@ -173,6 +210,8 @@ package object configservice {
       service.deleteConfigurationAggregator(params).promise.toFuture
     @inline def deleteConfigurationRecorderFuture(params: DeleteConfigurationRecorderRequest): Future[js.Object] =
       service.deleteConfigurationRecorder(params).promise.toFuture
+    @inline def deleteConformancePackFuture(params: DeleteConformancePackRequest): Future[js.Object] =
+      service.deleteConformancePack(params).promise.toFuture
     @inline def deleteDeliveryChannelFuture(params: DeleteDeliveryChannelRequest): Future[js.Object] =
       service.deleteDeliveryChannel(params).promise.toFuture
     @inline def deleteEvaluationResultsFuture(
@@ -180,6 +219,9 @@ package object configservice {
     ): Future[DeleteEvaluationResultsResponse] = service.deleteEvaluationResults(params).promise.toFuture
     @inline def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] =
       service.deleteOrganizationConfigRule(params).promise.toFuture
+    @inline def deleteOrganizationConformancePackFuture(
+        params: DeleteOrganizationConformancePackRequest
+    ): Future[js.Object] = service.deleteOrganizationConformancePack(params).promise.toFuture
     @inline def deletePendingAggregationRequestFuture(
         params: DeletePendingAggregationRequestRequest
     ): Future[js.Object] = service.deletePendingAggregationRequest(params).promise.toFuture
@@ -189,6 +231,8 @@ package object configservice {
     @inline def deleteRemediationExceptionsFuture(
         params: DeleteRemediationExceptionsRequest
     ): Future[DeleteRemediationExceptionsResponse] = service.deleteRemediationExceptions(params).promise.toFuture
+    @inline def deleteResourceConfigFuture(params: DeleteResourceConfigRequest): Future[js.Object] =
+      service.deleteResourceConfig(params).promise.toFuture
     @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] =
       service.deleteRetentionConfiguration(params).promise.toFuture
     @inline def deliverConfigSnapshotFuture(
@@ -229,6 +273,16 @@ package object configservice {
     @inline def describeConfigurationRecordersFuture(
         params: DescribeConfigurationRecordersRequest
     ): Future[DescribeConfigurationRecordersResponse] = service.describeConfigurationRecorders(params).promise.toFuture
+    @inline def describeConformancePackComplianceFuture(
+        params: DescribeConformancePackComplianceRequest
+    ): Future[DescribeConformancePackComplianceResponse] =
+      service.describeConformancePackCompliance(params).promise.toFuture
+    @inline def describeConformancePackStatusFuture(
+        params: DescribeConformancePackStatusRequest
+    ): Future[DescribeConformancePackStatusResponse] = service.describeConformancePackStatus(params).promise.toFuture
+    @inline def describeConformancePacksFuture(
+        params: DescribeConformancePacksRequest
+    ): Future[DescribeConformancePacksResponse] = service.describeConformancePacks(params).promise.toFuture
     @inline def describeDeliveryChannelStatusFuture(
         params: DescribeDeliveryChannelStatusRequest
     ): Future[DescribeDeliveryChannelStatusResponse] = service.describeDeliveryChannelStatus(params).promise.toFuture
@@ -243,6 +297,14 @@ package object configservice {
         params: DescribeOrganizationConfigRulesRequest
     ): Future[DescribeOrganizationConfigRulesResponse] =
       service.describeOrganizationConfigRules(params).promise.toFuture
+    @inline def describeOrganizationConformancePackStatusesFuture(
+        params: DescribeOrganizationConformancePackStatusesRequest
+    ): Future[DescribeOrganizationConformancePackStatusesResponse] =
+      service.describeOrganizationConformancePackStatuses(params).promise.toFuture
+    @inline def describeOrganizationConformancePacksFuture(
+        params: DescribeOrganizationConformancePacksRequest
+    ): Future[DescribeOrganizationConformancePacksResponse] =
+      service.describeOrganizationConformancePacks(params).promise.toFuture
     @inline def describePendingAggregationRequestsFuture(
         params: DescribePendingAggregationRequestsRequest
     ): Future[DescribePendingAggregationRequestsResponse] =
@@ -290,6 +352,14 @@ package object configservice {
         params: GetComplianceSummaryByResourceTypeRequest
     ): Future[GetComplianceSummaryByResourceTypeResponse] =
       service.getComplianceSummaryByResourceType(params).promise.toFuture
+    @inline def getConformancePackComplianceDetailsFuture(
+        params: GetConformancePackComplianceDetailsRequest
+    ): Future[GetConformancePackComplianceDetailsResponse] =
+      service.getConformancePackComplianceDetails(params).promise.toFuture
+    @inline def getConformancePackComplianceSummaryFuture(
+        params: GetConformancePackComplianceSummaryRequest
+    ): Future[GetConformancePackComplianceSummaryResponse] =
+      service.getConformancePackComplianceSummary(params).promise.toFuture
     @inline def getDiscoveredResourceCountsFuture(
         params: GetDiscoveredResourceCountsRequest
     ): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise.toFuture
@@ -297,6 +367,10 @@ package object configservice {
         params: GetOrganizationConfigRuleDetailedStatusRequest
     ): Future[GetOrganizationConfigRuleDetailedStatusResponse] =
       service.getOrganizationConfigRuleDetailedStatus(params).promise.toFuture
+    @inline def getOrganizationConformancePackDetailedStatusFuture(
+        params: GetOrganizationConformancePackDetailedStatusRequest
+    ): Future[GetOrganizationConformancePackDetailedStatusResponse] =
+      service.getOrganizationConformancePackDetailedStatus(params).promise.toFuture
     @inline def getResourceConfigHistoryFuture(
         params: GetResourceConfigHistoryRequest
     ): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise.toFuture
@@ -319,6 +393,8 @@ package object configservice {
     ): Future[PutConfigurationAggregatorResponse] = service.putConfigurationAggregator(params).promise.toFuture
     @inline def putConfigurationRecorderFuture(params: PutConfigurationRecorderRequest): Future[js.Object] =
       service.putConfigurationRecorder(params).promise.toFuture
+    @inline def putConformancePackFuture(params: PutConformancePackRequest): Future[PutConformancePackResponse] =
+      service.putConformancePack(params).promise.toFuture
     @inline def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] =
       service.putDeliveryChannel(params).promise.toFuture
     @inline def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] =
@@ -326,12 +402,17 @@ package object configservice {
     @inline def putOrganizationConfigRuleFuture(
         params: PutOrganizationConfigRuleRequest
     ): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise.toFuture
+    @inline def putOrganizationConformancePackFuture(
+        params: PutOrganizationConformancePackRequest
+    ): Future[PutOrganizationConformancePackResponse] = service.putOrganizationConformancePack(params).promise.toFuture
     @inline def putRemediationConfigurationsFuture(
         params: PutRemediationConfigurationsRequest
     ): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise.toFuture
     @inline def putRemediationExceptionsFuture(
         params: PutRemediationExceptionsRequest
     ): Future[PutRemediationExceptionsResponse] = service.putRemediationExceptions(params).promise.toFuture
+    @inline def putResourceConfigFuture(params: PutResourceConfigRequest): Future[js.Object] =
+      service.putResourceConfig(params).promise.toFuture
     @inline def putRetentionConfigurationFuture(
         params: PutRetentionConfigurationRequest
     ): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise.toFuture
@@ -369,10 +450,13 @@ package configservice {
     def deleteConfigRule(params: DeleteConfigRuleRequest): Request[js.Object]                             = js.native
     def deleteConfigurationAggregator(params: DeleteConfigurationAggregatorRequest): Request[js.Object]   = js.native
     def deleteConfigurationRecorder(params: DeleteConfigurationRecorderRequest): Request[js.Object]       = js.native
+    def deleteConformancePack(params: DeleteConformancePackRequest): Request[js.Object]                   = js.native
     def deleteDeliveryChannel(params: DeleteDeliveryChannelRequest): Request[js.Object]                   = js.native
     def deleteEvaluationResults(params: DeleteEvaluationResultsRequest): Request[DeleteEvaluationResultsResponse] =
       js.native
-    def deleteOrganizationConfigRule(params: DeleteOrganizationConfigRuleRequest): Request[js.Object]       = js.native
+    def deleteOrganizationConfigRule(params: DeleteOrganizationConfigRuleRequest): Request[js.Object] = js.native
+    def deleteOrganizationConformancePack(params: DeleteOrganizationConformancePackRequest): Request[js.Object] =
+      js.native
     def deletePendingAggregationRequest(params: DeletePendingAggregationRequestRequest): Request[js.Object] = js.native
     def deleteRemediationConfiguration(
         params: DeleteRemediationConfigurationRequest
@@ -380,6 +464,7 @@ package configservice {
     def deleteRemediationExceptions(
         params: DeleteRemediationExceptionsRequest
     ): Request[DeleteRemediationExceptionsResponse]                                                         = js.native
+    def deleteResourceConfig(params: DeleteResourceConfigRequest): Request[js.Object]                       = js.native
     def deleteRetentionConfiguration(params: DeleteRetentionConfigurationRequest): Request[js.Object]       = js.native
     def deliverConfigSnapshot(params: DeliverConfigSnapshotRequest): Request[DeliverConfigSnapshotResponse] = js.native
     def describeAggregateComplianceByConfigRules(
@@ -410,6 +495,14 @@ package configservice {
     def describeConfigurationRecorders(
         params: DescribeConfigurationRecordersRequest
     ): Request[DescribeConfigurationRecordersResponse] = js.native
+    def describeConformancePackCompliance(
+        params: DescribeConformancePackComplianceRequest
+    ): Request[DescribeConformancePackComplianceResponse] = js.native
+    def describeConformancePackStatus(
+        params: DescribeConformancePackStatusRequest
+    ): Request[DescribeConformancePackStatusResponse] = js.native
+    def describeConformancePacks(params: DescribeConformancePacksRequest): Request[DescribeConformancePacksResponse] =
+      js.native
     def describeDeliveryChannelStatus(
         params: DescribeDeliveryChannelStatusRequest
     ): Request[DescribeDeliveryChannelStatusResponse] = js.native
@@ -421,6 +514,12 @@ package configservice {
     def describeOrganizationConfigRules(
         params: DescribeOrganizationConfigRulesRequest
     ): Request[DescribeOrganizationConfigRulesResponse] = js.native
+    def describeOrganizationConformancePackStatuses(
+        params: DescribeOrganizationConformancePackStatusesRequest
+    ): Request[DescribeOrganizationConformancePackStatusesResponse] = js.native
+    def describeOrganizationConformancePacks(
+        params: DescribeOrganizationConformancePacksRequest
+    ): Request[DescribeOrganizationConformancePacksResponse] = js.native
     def describePendingAggregationRequests(
         params: DescribePendingAggregationRequestsRequest
     ): Request[DescribePendingAggregationRequestsResponse] = js.native
@@ -458,12 +557,21 @@ package configservice {
     def getComplianceSummaryByResourceType(
         params: GetComplianceSummaryByResourceTypeRequest
     ): Request[GetComplianceSummaryByResourceTypeResponse] = js.native
+    def getConformancePackComplianceDetails(
+        params: GetConformancePackComplianceDetailsRequest
+    ): Request[GetConformancePackComplianceDetailsResponse] = js.native
+    def getConformancePackComplianceSummary(
+        params: GetConformancePackComplianceSummaryRequest
+    ): Request[GetConformancePackComplianceSummaryResponse] = js.native
     def getDiscoveredResourceCounts(
         params: GetDiscoveredResourceCountsRequest
     ): Request[GetDiscoveredResourceCountsResponse] = js.native
     def getOrganizationConfigRuleDetailedStatus(
         params: GetOrganizationConfigRuleDetailedStatusRequest
     ): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
+    def getOrganizationConformancePackDetailedStatus(
+        params: GetOrganizationConformancePackDetailedStatusRequest
+    ): Request[GetOrganizationConformancePackDetailedStatusResponse] = js.native
     def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] =
       js.native
     def listAggregateDiscoveredResources(
@@ -478,18 +586,23 @@ package configservice {
     def putConfigRule(params: PutConfigRuleRequest): Request[js.Object] = js.native
     def putConfigurationAggregator(
         params: PutConfigurationAggregatorRequest
-    ): Request[PutConfigurationAggregatorResponse]                                            = js.native
-    def putConfigurationRecorder(params: PutConfigurationRecorderRequest): Request[js.Object] = js.native
-    def putDeliveryChannel(params: PutDeliveryChannelRequest): Request[js.Object]             = js.native
-    def putEvaluations(params: PutEvaluationsRequest): Request[PutEvaluationsResponse]        = js.native
+    ): Request[PutConfigurationAggregatorResponse]                                                 = js.native
+    def putConfigurationRecorder(params: PutConfigurationRecorderRequest): Request[js.Object]      = js.native
+    def putConformancePack(params: PutConformancePackRequest): Request[PutConformancePackResponse] = js.native
+    def putDeliveryChannel(params: PutDeliveryChannelRequest): Request[js.Object]                  = js.native
+    def putEvaluations(params: PutEvaluationsRequest): Request[PutEvaluationsResponse]             = js.native
     def putOrganizationConfigRule(
         params: PutOrganizationConfigRuleRequest
     ): Request[PutOrganizationConfigRuleResponse] = js.native
+    def putOrganizationConformancePack(
+        params: PutOrganizationConformancePackRequest
+    ): Request[PutOrganizationConformancePackResponse] = js.native
     def putRemediationConfigurations(
         params: PutRemediationConfigurationsRequest
     ): Request[PutRemediationConfigurationsResponse] = js.native
     def putRemediationExceptions(params: PutRemediationExceptionsRequest): Request[PutRemediationExceptionsResponse] =
       js.native
+    def putResourceConfig(params: PutResourceConfigRequest): Request[js.Object] = js.native
     def putRetentionConfiguration(
         params: PutRetentionConfigurationRequest
     ): Request[PutRetentionConfigurationResponse]                                                        = js.native
@@ -1496,6 +1609,265 @@ package configservice {
     }
   }
 
+  /**
+    * Filters the conformance pack by compliance types and AWS Config rule names.
+    */
+  @js.native
+  trait ConformancePackComplianceFilters extends js.Object {
+    var ComplianceType: js.UndefOr[ConformancePackComplianceType]
+    var ConfigRuleNames: js.UndefOr[ConformancePackConfigRuleNames]
+  }
+
+  object ConformancePackComplianceFilters {
+    @inline
+    def apply(
+        ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
+        ConfigRuleNames: js.UndefOr[ConformancePackConfigRuleNames] = js.undefined
+    ): ConformancePackComplianceFilters = {
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      ConfigRuleNames.foreach(__v => __obj.updateDynamic("ConfigRuleNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackComplianceFilters]
+    }
+  }
+
+  /**
+    * Summary includes the name and status of the conformance pack.
+    */
+  @js.native
+  trait ConformancePackComplianceSummary extends js.Object {
+    var ConformancePackComplianceStatus: ConformancePackComplianceType
+    var ConformancePackName: ConformancePackName
+  }
+
+  object ConformancePackComplianceSummary {
+    @inline
+    def apply(
+        ConformancePackComplianceStatus: ConformancePackComplianceType,
+        ConformancePackName: ConformancePackName
+    ): ConformancePackComplianceSummary = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackComplianceStatus" -> ConformancePackComplianceStatus.asInstanceOf[js.Any],
+        "ConformancePackName"             -> ConformancePackName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ConformancePackComplianceSummary]
+    }
+  }
+
+  object ConformancePackComplianceTypeEnum {
+    val COMPLIANT     = "COMPLIANT"
+    val NON_COMPLIANT = "NON_COMPLIANT"
+
+    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+  }
+
+  /**
+    * Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.
+    */
+  @js.native
+  trait ConformancePackDetail extends js.Object {
+    var ConformancePackArn: ConformancePackArn
+    var ConformancePackId: ConformancePackId
+    var ConformancePackName: ConformancePackName
+    var DeliveryS3Bucket: DeliveryS3Bucket
+    var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var CreatedBy: js.UndefOr[StringWithCharLimit256]
+    var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
+    var LastUpdateRequestedTime: js.UndefOr[Date]
+  }
+
+  object ConformancePackDetail {
+    @inline
+    def apply(
+        ConformancePackArn: ConformancePackArn,
+        ConformancePackId: ConformancePackId,
+        ConformancePackName: ConformancePackName,
+        DeliveryS3Bucket: DeliveryS3Bucket,
+        ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
+        LastUpdateRequestedTime: js.UndefOr[Date] = js.undefined
+    ): ConformancePackDetail = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackArn"  -> ConformancePackArn.asInstanceOf[js.Any],
+        "ConformancePackId"   -> ConformancePackId.asInstanceOf[js.Any],
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any],
+        "DeliveryS3Bucket"    -> DeliveryS3Bucket.asInstanceOf[js.Any]
+      )
+
+      ConformancePackInputParameters.foreach(__v =>
+        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
+      )
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      LastUpdateRequestedTime.foreach(__v => __obj.updateDynamic("LastUpdateRequestedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackDetail]
+    }
+  }
+
+  /**
+    * Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs.
+    */
+  @js.native
+  trait ConformancePackEvaluationFilters extends js.Object {
+    var ComplianceType: js.UndefOr[ConformancePackComplianceType]
+    var ConfigRuleNames: js.UndefOr[ConformancePackConfigRuleNames]
+    var ResourceIds: js.UndefOr[ConformancePackComplianceResourceIds]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object ConformancePackEvaluationFilters {
+    @inline
+    def apply(
+        ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
+        ConfigRuleNames: js.UndefOr[ConformancePackConfigRuleNames] = js.undefined,
+        ResourceIds: js.UndefOr[ConformancePackComplianceResourceIds] = js.undefined,
+        ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): ConformancePackEvaluationFilters = {
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      ConfigRuleNames.foreach(__v => __obj.updateDynamic("ConfigRuleNames")(__v.asInstanceOf[js.Any]))
+      ResourceIds.foreach(__v => __obj.updateDynamic("ResourceIds")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackEvaluationFilters]
+    }
+  }
+
+  /**
+    * The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.
+    */
+  @js.native
+  trait ConformancePackEvaluationResult extends js.Object {
+    var ComplianceType: ConformancePackComplianceType
+    var ConfigRuleInvokedTime: Date
+    var EvaluationResultIdentifier: EvaluationResultIdentifier
+    var ResultRecordedTime: Date
+    var Annotation: js.UndefOr[Annotation]
+  }
+
+  object ConformancePackEvaluationResult {
+    @inline
+    def apply(
+        ComplianceType: ConformancePackComplianceType,
+        ConfigRuleInvokedTime: Date,
+        EvaluationResultIdentifier: EvaluationResultIdentifier,
+        ResultRecordedTime: Date,
+        Annotation: js.UndefOr[Annotation] = js.undefined
+    ): ConformancePackEvaluationResult = {
+      val __obj = js.Dynamic.literal(
+        "ComplianceType"             -> ComplianceType.asInstanceOf[js.Any],
+        "ConfigRuleInvokedTime"      -> ConfigRuleInvokedTime.asInstanceOf[js.Any],
+        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.asInstanceOf[js.Any],
+        "ResultRecordedTime"         -> ResultRecordedTime.asInstanceOf[js.Any]
+      )
+
+      Annotation.foreach(__v => __obj.updateDynamic("Annotation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackEvaluationResult]
+    }
+  }
+
+  /**
+    * Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 128 characters, and values can have a maximum length of 256 characters.
+    */
+  @js.native
+  trait ConformancePackInputParameter extends js.Object {
+    var ParameterName: ParameterName
+    var ParameterValue: ParameterValue
+  }
+
+  object ConformancePackInputParameter {
+    @inline
+    def apply(
+        ParameterName: ParameterName,
+        ParameterValue: ParameterValue
+    ): ConformancePackInputParameter = {
+      val __obj = js.Dynamic.literal(
+        "ParameterName"  -> ParameterName.asInstanceOf[js.Any],
+        "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ConformancePackInputParameter]
+    }
+  }
+
+  /**
+    * Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types.
+    */
+  @js.native
+  trait ConformancePackRuleCompliance extends js.Object {
+    var ComplianceType: js.UndefOr[ConformancePackComplianceType]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
+  }
+
+  object ConformancePackRuleCompliance {
+    @inline
+    def apply(
+        ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined
+    ): ConformancePackRuleCompliance = {
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.updateDynamic("ConfigRuleName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackRuleCompliance]
+    }
+  }
+
+  object ConformancePackStateEnum {
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
+    val CREATE_COMPLETE    = "CREATE_COMPLETE"
+    val CREATE_FAILED      = "CREATE_FAILED"
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+    val DELETE_FAILED      = "DELETE_FAILED"
+
+    val values =
+      js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
+  }
+
+  /**
+    * Status details of a conformance pack.
+    */
+  @js.native
+  trait ConformancePackStatusDetail extends js.Object {
+    var ConformancePackArn: ConformancePackArn
+    var ConformancePackId: ConformancePackId
+    var ConformancePackName: ConformancePackName
+    var ConformancePackState: ConformancePackState
+    var LastUpdateRequestedTime: Date
+    var StackArn: StackArn
+    var ConformancePackStatusReason: js.UndefOr[ConformancePackStatusReason]
+    var LastUpdateCompletedTime: js.UndefOr[Date]
+  }
+
+  object ConformancePackStatusDetail {
+    @inline
+    def apply(
+        ConformancePackArn: ConformancePackArn,
+        ConformancePackId: ConformancePackId,
+        ConformancePackName: ConformancePackName,
+        ConformancePackState: ConformancePackState,
+        LastUpdateRequestedTime: Date,
+        StackArn: StackArn,
+        ConformancePackStatusReason: js.UndefOr[ConformancePackStatusReason] = js.undefined,
+        LastUpdateCompletedTime: js.UndefOr[Date] = js.undefined
+    ): ConformancePackStatusDetail = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackArn"      -> ConformancePackArn.asInstanceOf[js.Any],
+        "ConformancePackId"       -> ConformancePackId.asInstanceOf[js.Any],
+        "ConformancePackName"     -> ConformancePackName.asInstanceOf[js.Any],
+        "ConformancePackState"    -> ConformancePackState.asInstanceOf[js.Any],
+        "LastUpdateRequestedTime" -> LastUpdateRequestedTime.asInstanceOf[js.Any],
+        "StackArn"                -> StackArn.asInstanceOf[js.Any]
+      )
+
+      ConformancePackStatusReason.foreach(__v =>
+        __obj.updateDynamic("ConformancePackStatusReason")(__v.asInstanceOf[js.Any])
+      )
+      LastUpdateCompletedTime.foreach(__v => __obj.updateDynamic("LastUpdateCompletedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackStatusDetail]
+    }
+  }
+
   @js.native
   trait DeleteAggregationAuthorizationRequest extends js.Object {
     var AuthorizedAccountId: AccountId
@@ -1577,6 +1949,24 @@ package configservice {
     }
   }
 
+  @js.native
+  trait DeleteConformancePackRequest extends js.Object {
+    var ConformancePackName: ConformancePackName
+  }
+
+  object DeleteConformancePackRequest {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName
+    ): DeleteConformancePackRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteConformancePackRequest]
+    }
+  }
+
   /**
     * The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format.
     */
@@ -1650,6 +2040,24 @@ package configservice {
       )
 
       __obj.asInstanceOf[DeleteOrganizationConfigRuleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteOrganizationConformancePackRequest extends js.Object {
+    var OrganizationConformancePackName: OrganizationConformancePackName
+  }
+
+  object DeleteOrganizationConformancePackRequest {
+    @inline
+    def apply(
+        OrganizationConformancePackName: OrganizationConformancePackName
+    ): DeleteOrganizationConformancePackRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteOrganizationConformancePackRequest]
     }
   }
 
@@ -1742,6 +2150,27 @@ package configservice {
       val __obj = js.Dynamic.literal()
       FailedBatches.foreach(__v => __obj.updateDynamic("FailedBatches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRemediationExceptionsResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteResourceConfigRequest extends js.Object {
+    var ResourceId: ResourceId
+    var ResourceType: ResourceTypeString
+  }
+
+  object DeleteResourceConfigRequest {
+    @inline
+    def apply(
+        ResourceId: ResourceId,
+        ResourceType: ResourceTypeString
+    ): DeleteResourceConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteResourceConfigRequest]
     }
   }
 
@@ -2331,6 +2760,141 @@ package configservice {
     }
   }
 
+  @js.native
+  trait DescribeConformancePackComplianceRequest extends js.Object {
+    var ConformancePackName: ConformancePackName
+    var Filters: js.UndefOr[ConformancePackComplianceFilters]
+    var Limit: js.UndefOr[DescribeConformancePackComplianceLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePackComplianceRequest {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName,
+        Filters: js.UndefOr[ConformancePackComplianceFilters] = js.undefined,
+        Limit: js.UndefOr[DescribeConformancePackComplianceLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePackComplianceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePackComplianceRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConformancePackComplianceResponse extends js.Object {
+    var ConformancePackName: ConformancePackName
+    var ConformancePackRuleComplianceList: ConformancePackRuleComplianceList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePackComplianceResponse {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName,
+        ConformancePackRuleComplianceList: ConformancePackRuleComplianceList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePackComplianceResponse = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName"               -> ConformancePackName.asInstanceOf[js.Any],
+        "ConformancePackRuleComplianceList" -> ConformancePackRuleComplianceList.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePackComplianceResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeConformancePackStatusRequest extends js.Object {
+    var ConformancePackNames: js.UndefOr[ConformancePackNamesList]
+    var Limit: js.UndefOr[PageSizeLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePackStatusRequest {
+    @inline
+    def apply(
+        ConformancePackNames: js.UndefOr[ConformancePackNamesList] = js.undefined,
+        Limit: js.UndefOr[PageSizeLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePackStatusRequest = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackNames.foreach(__v => __obj.updateDynamic("ConformancePackNames")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePackStatusRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConformancePackStatusResponse extends js.Object {
+    var ConformancePackStatusDetails: js.UndefOr[ConformancePackStatusDetailsList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePackStatusResponse {
+    @inline
+    def apply(
+        ConformancePackStatusDetails: js.UndefOr[ConformancePackStatusDetailsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePackStatusResponse = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackStatusDetails.foreach(__v =>
+        __obj.updateDynamic("ConformancePackStatusDetails")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePackStatusResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeConformancePacksRequest extends js.Object {
+    var ConformancePackNames: js.UndefOr[ConformancePackNamesList]
+    var Limit: js.UndefOr[PageSizeLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePacksRequest {
+    @inline
+    def apply(
+        ConformancePackNames: js.UndefOr[ConformancePackNamesList] = js.undefined,
+        Limit: js.UndefOr[PageSizeLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePacksRequest = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackNames.foreach(__v => __obj.updateDynamic("ConformancePackNames")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePacksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConformancePacksResponse extends js.Object {
+    var ConformancePackDetails: js.UndefOr[ConformancePackDetailList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeConformancePacksResponse {
+    @inline
+    def apply(
+        ConformancePackDetails: js.UndefOr[ConformancePackDetailList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeConformancePacksResponse = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackDetails.foreach(__v => __obj.updateDynamic("ConformancePackDetails")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConformancePacksResponse]
+    }
+  }
+
   /**
     * The input for the <a>DeliveryChannelStatus</a> action.
     */
@@ -2492,6 +3056,96 @@ package configservice {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       OrganizationConfigRules.foreach(__v => __obj.updateDynamic("OrganizationConfigRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigRulesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConformancePackStatusesRequest extends js.Object {
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+    var OrganizationConformancePackNames: js.UndefOr[OrganizationConformancePackNames]
+  }
+
+  object DescribeOrganizationConformancePackStatusesRequest {
+    @inline
+    def apply(
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConformancePackNames: js.UndefOr[OrganizationConformancePackNames] = js.undefined
+    ): DescribeOrganizationConformancePackStatusesRequest = {
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationConformancePackNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeOrganizationConformancePackStatusesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConformancePackStatusesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConformancePackStatuses: js.UndefOr[OrganizationConformancePackStatuses]
+  }
+
+  object DescribeOrganizationConformancePackStatusesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConformancePackStatuses: js.UndefOr[OrganizationConformancePackStatuses] = js.undefined
+    ): DescribeOrganizationConformancePackStatusesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationConformancePackStatuses.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePackStatuses")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeOrganizationConformancePackStatusesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConformancePacksRequest extends js.Object {
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+    var OrganizationConformancePackNames: js.UndefOr[OrganizationConformancePackNames]
+  }
+
+  object DescribeOrganizationConformancePacksRequest {
+    @inline
+    def apply(
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConformancePackNames: js.UndefOr[OrganizationConformancePackNames] = js.undefined
+    ): DescribeOrganizationConformancePacksRequest = {
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationConformancePackNames.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeOrganizationConformancePacksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConformancePacksResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConformancePacks: js.UndefOr[OrganizationConformancePacks]
+  }
+
+  object DescribeOrganizationConformancePacksResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConformancePacks: js.UndefOr[OrganizationConformancePacks] = js.undefined
+    ): DescribeOrganizationConformancePacksResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationConformancePacks.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePacks")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeOrganizationConformancePacksResponse]
     }
   }
 
@@ -3302,6 +3956,104 @@ package configservice {
   }
 
   @js.native
+  trait GetConformancePackComplianceDetailsRequest extends js.Object {
+    var ConformancePackName: ConformancePackName
+    var Filters: js.UndefOr[ConformancePackEvaluationFilters]
+    var Limit: js.UndefOr[GetConformancePackComplianceDetailsLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetConformancePackComplianceDetailsRequest {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName,
+        Filters: js.UndefOr[ConformancePackEvaluationFilters] = js.undefined,
+        Limit: js.UndefOr[GetConformancePackComplianceDetailsLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConformancePackComplianceDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConformancePackComplianceDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetConformancePackComplianceDetailsResponse extends js.Object {
+    var ConformancePackName: ConformancePackName
+    var ConformancePackRuleEvaluationResults: js.UndefOr[ConformancePackRuleEvaluationResultsList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetConformancePackComplianceDetailsResponse {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName,
+        ConformancePackRuleEvaluationResults: js.UndefOr[ConformancePackRuleEvaluationResultsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConformancePackComplianceDetailsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
+      )
+
+      ConformancePackRuleEvaluationResults.foreach(__v =>
+        __obj.updateDynamic("ConformancePackRuleEvaluationResults")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConformancePackComplianceDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait GetConformancePackComplianceSummaryRequest extends js.Object {
+    var ConformancePackNames: ConformancePackNamesToSummarizeList
+    var Limit: js.UndefOr[PageSizeLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetConformancePackComplianceSummaryRequest {
+    @inline
+    def apply(
+        ConformancePackNames: ConformancePackNamesToSummarizeList,
+        Limit: js.UndefOr[PageSizeLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConformancePackComplianceSummaryRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackNames" -> ConformancePackNames.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConformancePackComplianceSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait GetConformancePackComplianceSummaryResponse extends js.Object {
+    var ConformancePackComplianceSummaryList: js.UndefOr[ConformancePackComplianceSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetConformancePackComplianceSummaryResponse {
+    @inline
+    def apply(
+        ConformancePackComplianceSummaryList: js.UndefOr[ConformancePackComplianceSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConformancePackComplianceSummaryResponse = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackComplianceSummaryList.foreach(__v =>
+        __obj.updateDynamic("ConformancePackComplianceSummaryList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConformancePackComplianceSummaryResponse]
+    }
+  }
+
+  @js.native
   trait GetDiscoveredResourceCountsRequest extends js.Object {
     var limit: js.UndefOr[Limit]
     var nextToken: js.UndefOr[NextToken]
@@ -3390,6 +4142,55 @@ package configservice {
         __obj.updateDynamic("OrganizationConfigRuleDetailedStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetOrganizationConfigRuleDetailedStatusResponse]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationConformancePackDetailedStatusRequest extends js.Object {
+    var OrganizationConformancePackName: OrganizationConformancePackName
+    var Filters: js.UndefOr[OrganizationResourceDetailedStatusFilters]
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetOrganizationConformancePackDetailedStatusRequest {
+    @inline
+    def apply(
+        OrganizationConformancePackName: OrganizationConformancePackName,
+        Filters: js.UndefOr[OrganizationResourceDetailedStatusFilters] = js.undefined,
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetOrganizationConformancePackDetailedStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOrganizationConformancePackDetailedStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationConformancePackDetailedStatusResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConformancePackDetailedStatuses: js.UndefOr[OrganizationConformancePackDetailedStatuses]
+  }
+
+  object GetOrganizationConformancePackDetailedStatusResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConformancePackDetailedStatuses: js.UndefOr[OrganizationConformancePackDetailedStatuses] =
+          js.undefined
+    ): GetOrganizationConformancePackDetailedStatusResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationConformancePackDetailedStatuses.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePackDetailedStatuses")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetOrganizationConformancePackDetailedStatusResponse]
     }
   }
 
@@ -3642,24 +4443,24 @@ package configservice {
     val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
     val CREATE_FAILED      = "CREATE_FAILED"
-    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
-    val UPDATE_FAILED      = "UPDATE_FAILED"
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
     val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
     val DELETE_FAILED      = "DELETE_FAILED"
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
 
     val values = js.Object.freeze(
       js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
-        UPDATE_SUCCESSFUL,
-        UPDATE_FAILED,
-        UPDATE_IN_PROGRESS,
         DELETE_SUCCESSFUL,
         DELETE_FAILED,
-        DELETE_IN_PROGRESS
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
       )
     )
   }
@@ -3827,6 +4628,116 @@ package configservice {
   }
 
   /**
+    * An organization conformance pack that has information about conformance packs that AWS Config creates in member accounts.
+    */
+  @js.native
+  trait OrganizationConformancePack extends js.Object {
+    var DeliveryS3Bucket: DeliveryS3Bucket
+    var LastUpdateTime: Date
+    var OrganizationConformancePackArn: StringWithCharLimit256
+    var OrganizationConformancePackName: OrganizationConformancePackName
+    var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
+    var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
+  }
+
+  object OrganizationConformancePack {
+    @inline
+    def apply(
+        DeliveryS3Bucket: DeliveryS3Bucket,
+        LastUpdateTime: Date,
+        OrganizationConformancePackArn: StringWithCharLimit256,
+        OrganizationConformancePackName: OrganizationConformancePackName,
+        ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
+        ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined
+    ): OrganizationConformancePack = {
+      val __obj = js.Dynamic.literal(
+        "DeliveryS3Bucket"                -> DeliveryS3Bucket.asInstanceOf[js.Any],
+        "LastUpdateTime"                  -> LastUpdateTime.asInstanceOf[js.Any],
+        "OrganizationConformancePackArn"  -> OrganizationConformancePackArn.asInstanceOf[js.Any],
+        "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
+      )
+
+      ConformancePackInputParameters.foreach(__v =>
+        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
+      )
+      DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationConformancePack]
+    }
+  }
+
+  /**
+    * Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed.
+    */
+  @js.native
+  trait OrganizationConformancePackDetailedStatus extends js.Object {
+    var AccountId: AccountId
+    var ConformancePackName: StringWithCharLimit256
+    var Status: OrganizationResourceDetailedStatus
+    var ErrorCode: js.UndefOr[String]
+    var ErrorMessage: js.UndefOr[String]
+    var LastUpdateTime: js.UndefOr[Date]
+  }
+
+  object OrganizationConformancePackDetailedStatus {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConformancePackName: StringWithCharLimit256,
+        Status: OrganizationResourceDetailedStatus,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        LastUpdateTime: js.UndefOr[Date] = js.undefined
+    ): OrganizationConformancePackDetailedStatus = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"           -> AccountId.asInstanceOf[js.Any],
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any],
+        "Status"              -> Status.asInstanceOf[js.Any]
+      )
+
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationConformancePackDetailedStatus]
+    }
+  }
+
+  /**
+    * Returns the status for an organization conformance pack in an organization.
+    */
+  @js.native
+  trait OrganizationConformancePackStatus extends js.Object {
+    var OrganizationConformancePackName: OrganizationConformancePackName
+    var Status: OrganizationResourceStatus
+    var ErrorCode: js.UndefOr[String]
+    var ErrorMessage: js.UndefOr[String]
+    var LastUpdateTime: js.UndefOr[Date]
+  }
+
+  object OrganizationConformancePackStatus {
+    @inline
+    def apply(
+        OrganizationConformancePackName: OrganizationConformancePackName,
+        Status: OrganizationResourceStatus,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        LastUpdateTime: js.UndefOr[Date] = js.undefined
+    ): OrganizationConformancePackStatus = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any],
+        "Status"                          -> Status.asInstanceOf[js.Any]
+      )
+
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationConformancePackStatus]
+    }
+  }
+
+  /**
     * An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
     */
   @js.native
@@ -3917,28 +4828,102 @@ package configservice {
     }
   }
 
-  object OrganizationRuleStatusEnum {
+  object OrganizationResourceDetailedStatusEnum {
     val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
     val CREATE_FAILED      = "CREATE_FAILED"
-    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
-    val UPDATE_FAILED      = "UPDATE_FAILED"
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
     val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
     val DELETE_FAILED      = "DELETE_FAILED"
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
 
     val values = js.Object.freeze(
       js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
-        UPDATE_SUCCESSFUL,
-        UPDATE_FAILED,
-        UPDATE_IN_PROGRESS,
         DELETE_SUCCESSFUL,
         DELETE_FAILED,
-        DELETE_IN_PROGRESS
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
+    )
+  }
+
+  /**
+    * Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.
+    */
+  @js.native
+  trait OrganizationResourceDetailedStatusFilters extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var Status: js.UndefOr[OrganizationResourceDetailedStatus]
+  }
+
+  object OrganizationResourceDetailedStatusFilters {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        Status: js.UndefOr[OrganizationResourceDetailedStatus] = js.undefined
+    ): OrganizationResourceDetailedStatusFilters = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationResourceDetailedStatusFilters]
+    }
+  }
+
+  object OrganizationResourceStatusEnum {
+    val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
+    val CREATE_FAILED      = "CREATE_FAILED"
+    val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
+    val DELETE_FAILED      = "DELETE_FAILED"
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
+
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
+    )
+  }
+
+  object OrganizationRuleStatusEnum {
+    val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
+    val CREATE_FAILED      = "CREATE_FAILED"
+    val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
+    val DELETE_FAILED      = "DELETE_FAILED"
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
+
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
       )
     )
   }
@@ -4101,6 +5086,57 @@ package configservice {
     }
   }
 
+  @js.native
+  trait PutConformancePackRequest extends js.Object {
+    var ConformancePackName: ConformancePackName
+    var DeliveryS3Bucket: DeliveryS3Bucket
+    var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
+    var TemplateBody: js.UndefOr[TemplateBody]
+    var TemplateS3Uri: js.UndefOr[TemplateS3Uri]
+  }
+
+  object PutConformancePackRequest {
+    @inline
+    def apply(
+        ConformancePackName: ConformancePackName,
+        DeliveryS3Bucket: DeliveryS3Bucket,
+        ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined
+    ): PutConformancePackRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any],
+        "DeliveryS3Bucket"    -> DeliveryS3Bucket.asInstanceOf[js.Any]
+      )
+
+      ConformancePackInputParameters.foreach(__v =>
+        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
+      )
+      DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
+      TemplateS3Uri.foreach(__v => __obj.updateDynamic("TemplateS3Uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConformancePackRequest]
+    }
+  }
+
+  @js.native
+  trait PutConformancePackResponse extends js.Object {
+    var ConformancePackArn: js.UndefOr[ConformancePackArn]
+  }
+
+  object PutConformancePackResponse {
+    @inline
+    def apply(
+        ConformancePackArn: js.UndefOr[ConformancePackArn] = js.undefined
+    ): PutConformancePackResponse = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackArn.foreach(__v => __obj.updateDynamic("ConformancePackArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConformancePackResponse]
+    }
+  }
+
   /**
     * The input for the <a>PutDeliveryChannel</a> action.
     */
@@ -4218,6 +5254,62 @@ package configservice {
   }
 
   @js.native
+  trait PutOrganizationConformancePackRequest extends js.Object {
+    var DeliveryS3Bucket: DeliveryS3Bucket
+    var OrganizationConformancePackName: OrganizationConformancePackName
+    var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
+    var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
+    var TemplateBody: js.UndefOr[TemplateBody]
+    var TemplateS3Uri: js.UndefOr[TemplateS3Uri]
+  }
+
+  object PutOrganizationConformancePackRequest {
+    @inline
+    def apply(
+        DeliveryS3Bucket: DeliveryS3Bucket,
+        OrganizationConformancePackName: OrganizationConformancePackName,
+        ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
+        ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined
+    ): PutOrganizationConformancePackRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeliveryS3Bucket"                -> DeliveryS3Bucket.asInstanceOf[js.Any],
+        "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
+      )
+
+      ConformancePackInputParameters.foreach(__v =>
+        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
+      )
+      DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
+      TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
+      TemplateS3Uri.foreach(__v => __obj.updateDynamic("TemplateS3Uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutOrganizationConformancePackRequest]
+    }
+  }
+
+  @js.native
+  trait PutOrganizationConformancePackResponse extends js.Object {
+    var OrganizationConformancePackArn: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object PutOrganizationConformancePackResponse {
+    @inline
+    def apply(
+        OrganizationConformancePackArn: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): PutOrganizationConformancePackResponse = {
+      val __obj = js.Dynamic.literal()
+      OrganizationConformancePackArn.foreach(__v =>
+        __obj.updateDynamic("OrganizationConformancePackArn")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutOrganizationConformancePackResponse]
+    }
+  }
+
+  @js.native
   trait PutRemediationConfigurationsRequest extends js.Object {
     var RemediationConfigurations: RemediationConfigurations
   }
@@ -4291,6 +5383,39 @@ package configservice {
       val __obj = js.Dynamic.literal()
       FailedBatches.foreach(__v => __obj.updateDynamic("FailedBatches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRemediationExceptionsResponse]
+    }
+  }
+
+  @js.native
+  trait PutResourceConfigRequest extends js.Object {
+    var Configuration: Configuration
+    var ResourceId: ResourceId
+    var ResourceType: ResourceTypeString
+    var SchemaVersionId: SchemaVersionId
+    var ResourceName: js.UndefOr[ResourceName]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object PutResourceConfigRequest {
+    @inline
+    def apply(
+        Configuration: Configuration,
+        ResourceId: ResourceId,
+        ResourceType: ResourceTypeString,
+        SchemaVersionId: SchemaVersionId,
+        ResourceName: js.UndefOr[ResourceName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): PutResourceConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Configuration"   -> Configuration.asInstanceOf[js.Any],
+        "ResourceId"      -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType"    -> ResourceType.asInstanceOf[js.Any],
+        "SchemaVersionId" -> SchemaVersionId.asInstanceOf[js.Any]
+      )
+
+      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourceConfigRequest]
     }
   }
 

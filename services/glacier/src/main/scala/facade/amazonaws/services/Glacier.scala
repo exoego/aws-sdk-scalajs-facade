@@ -38,6 +38,7 @@ package object glacier {
   type httpstatus              = Int
 
   implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
+
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
       service.abortMultipartUpload(params).promise.toFuture
     @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] =
