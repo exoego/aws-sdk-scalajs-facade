@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object glacier {
@@ -26,7 +25,7 @@ package object glacier {
   type Size                    = Double
   type StatusCode              = String
   type StorageClass            = String
-  type Stream                  = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Stream                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TagKey                  = String
   type TagKeyList              = js.Array[String]
   type TagMap                  = js.Dictionary[TagValue]

@@ -4,29 +4,25 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object acmpca {
-  type AccountId                  = String
-  type ActionList                 = js.Array[ActionType]
-  type ActionType                 = String
-  type Arn                        = String
-  type AuditReportId              = String
-  type AuditReportResponseFormat  = String
-  type AuditReportStatus          = String
-  type CertificateAuthorities     = js.Array[CertificateAuthority]
-  type CertificateAuthorityStatus = String
-  type CertificateAuthorityType   = String
-  type CertificateBody            = String
-  type CertificateBodyBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CertificateChain = String
-  type CertificateChainBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CountryCodeString = String
-  type CsrBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AccountId                        = String
+  type ActionList                       = js.Array[ActionType]
+  type ActionType                       = String
+  type Arn                              = String
+  type AuditReportId                    = String
+  type AuditReportResponseFormat        = String
+  type AuditReportStatus                = String
+  type CertificateAuthorities           = js.Array[CertificateAuthority]
+  type CertificateAuthorityStatus       = String
+  type CertificateAuthorityType         = String
+  type CertificateBody                  = String
+  type CertificateBodyBlob              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificateChain                 = String
+  type CertificateChainBlob             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CountryCodeString                = String
+  type CsrBlob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CsrBody                          = String
   type DistinguishedNameQualifierString = String
   type FailureReason                    = String

@@ -4,13 +4,12 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object lexmodelbuildingservice {
   type AliasName                   = String
   type AliasNameOrListAll          = String
-  type Blob                        = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Blob                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BotAliasMetadataList        = js.Array[BotAliasMetadata]
   type BotChannelAssociationList   = js.Array[BotChannelAssociation]
   type BotChannelName              = String

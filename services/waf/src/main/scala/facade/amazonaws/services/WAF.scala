@@ -4,16 +4,14 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object waf {
-  type Action                = String
-  type ActivatedRules        = js.Array[ActivatedRule]
-  type ByteMatchSetSummaries = js.Array[ByteMatchSetSummary]
-  type ByteMatchSetUpdates   = js.Array[ByteMatchSetUpdate]
-  type ByteMatchTargetString =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Action                        = String
+  type ActivatedRules                = js.Array[ActivatedRule]
+  type ByteMatchSetSummaries         = js.Array[ByteMatchSetSummary]
+  type ByteMatchSetUpdates           = js.Array[ByteMatchSetUpdate]
+  type ByteMatchTargetString         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ByteMatchTuples               = js.Array[ByteMatchTuple]
   type ChangeAction                  = String
   type ChangeToken                   = String

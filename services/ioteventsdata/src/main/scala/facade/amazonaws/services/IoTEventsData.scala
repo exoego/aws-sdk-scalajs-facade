@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object ioteventsdata {
@@ -21,19 +20,18 @@ package object ioteventsdata {
   type MessageId                       = String
   type Messages                        = js.Array[Message]
   type NextToken                       = String
-  type Payload =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Seconds                = Int
-  type StateName              = String
-  type TimerDefinitions       = js.Array[TimerDefinition]
-  type TimerName              = String
-  type Timers                 = js.Array[Timer]
-  type Timestamp              = js.Date
-  type UpdateDetectorRequests = js.Array[UpdateDetectorRequest]
-  type VariableDefinitions    = js.Array[VariableDefinition]
-  type VariableName           = String
-  type VariableValue          = String
-  type Variables              = js.Array[Variable]
+  type Payload                         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Seconds                         = Int
+  type StateName                       = String
+  type TimerDefinitions                = js.Array[TimerDefinition]
+  type TimerName                       = String
+  type Timers                          = js.Array[Timer]
+  type Timestamp                       = js.Date
+  type UpdateDetectorRequests          = js.Array[UpdateDetectorRequest]
+  type VariableDefinitions             = js.Array[VariableDefinition]
+  type VariableName                    = String
+  type VariableValue                   = String
+  type Variables                       = js.Array[Variable]
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 

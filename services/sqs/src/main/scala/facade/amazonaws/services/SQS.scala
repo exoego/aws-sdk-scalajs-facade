@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sqs {
@@ -12,7 +11,7 @@ package object sqs {
   type ActionNameList                               = js.Array[String]
   type AttributeNameList                            = js.Array[QueueAttributeName]
   type BatchResultErrorEntryList                    = js.Array[BatchResultErrorEntry]
-  type Binary                                       = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Binary                                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BinaryList                                   = js.Array[Binary]
   type ChangeMessageVisibilityBatchRequestEntryList = js.Array[ChangeMessageVisibilityBatchRequestEntry]
   type ChangeMessageVisibilityBatchResultEntryList  = js.Array[ChangeMessageVisibilityBatchResultEntry]

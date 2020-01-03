@@ -4,45 +4,42 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object iam {
-  type AccessDetails      = js.Array[AccessDetail]
-  type ActionNameListType = js.Array[ActionNameType]
-  type ActionNameType     = String
-  type ArnListType        = js.Array[arnType]
-  type BootstrapDatum =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ColumnNumber                      = Int
-  type ContextEntryListType              = js.Array[ContextEntry]
-  type ContextKeyNameType                = String
-  type ContextKeyNamesResultListType     = js.Array[ContextKeyNameType]
-  type ContextKeyTypeEnum                = String
-  type ContextKeyValueListType           = js.Array[ContextKeyValueType]
-  type ContextKeyValueType               = String
-  type DeletionTaskIdType                = String
-  type DeletionTaskStatusType            = String
-  type EntityType                        = String
-  type EvalDecisionDetailsType           = js.Dictionary[PolicyEvaluationDecisionType]
-  type EvalDecisionSourceType            = String
-  type EvaluationResultsListType         = js.Array[EvaluationResult]
-  type LineNumber                        = Int
-  type ManagedPolicyDetailListType       = js.Array[ManagedPolicyDetail]
-  type OpenIDConnectProviderListType     = js.Array[OpenIDConnectProviderListEntry]
-  type OpenIDConnectProviderUrlType      = String
-  type PermissionsBoundaryAttachmentType = String
-  type PolicyEvaluationDecisionType      = String
-  type PolicyGroupListType               = js.Array[PolicyGroup]
-  type PolicyIdentifierType              = String
-  type PolicyRoleListType                = js.Array[PolicyRole]
-  type PolicySourceType                  = String
-  type PolicyUsageType                   = String
-  type PolicyUserListType                = js.Array[PolicyUser]
-  type ReasonType                        = String
-  type RegionNameType                    = String
-  type ReportContentType =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AccessDetails                                   = js.Array[AccessDetail]
+  type ActionNameListType                              = js.Array[ActionNameType]
+  type ActionNameType                                  = String
+  type ArnListType                                     = js.Array[arnType]
+  type BootstrapDatum                                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ColumnNumber                                    = Int
+  type ContextEntryListType                            = js.Array[ContextEntry]
+  type ContextKeyNameType                              = String
+  type ContextKeyNamesResultListType                   = js.Array[ContextKeyNameType]
+  type ContextKeyTypeEnum                              = String
+  type ContextKeyValueListType                         = js.Array[ContextKeyValueType]
+  type ContextKeyValueType                             = String
+  type DeletionTaskIdType                              = String
+  type DeletionTaskStatusType                          = String
+  type EntityType                                      = String
+  type EvalDecisionDetailsType                         = js.Dictionary[PolicyEvaluationDecisionType]
+  type EvalDecisionSourceType                          = String
+  type EvaluationResultsListType                       = js.Array[EvaluationResult]
+  type LineNumber                                      = Int
+  type ManagedPolicyDetailListType                     = js.Array[ManagedPolicyDetail]
+  type OpenIDConnectProviderListType                   = js.Array[OpenIDConnectProviderListEntry]
+  type OpenIDConnectProviderUrlType                    = String
+  type PermissionsBoundaryAttachmentType               = String
+  type PolicyEvaluationDecisionType                    = String
+  type PolicyGroupListType                             = js.Array[PolicyGroup]
+  type PolicyIdentifierType                            = String
+  type PolicyRoleListType                              = js.Array[PolicyRole]
+  type PolicySourceType                                = String
+  type PolicyUsageType                                 = String
+  type PolicyUserListType                              = js.Array[PolicyUser]
+  type ReasonType                                      = String
+  type RegionNameType                                  = String
+  type ReportContentType                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ReportFormatType                                = String
   type ReportStateDescriptionType                      = String
   type ReportStateType                                 = String

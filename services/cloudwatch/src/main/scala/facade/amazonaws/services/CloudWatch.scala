@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloudwatch {
@@ -89,36 +88,35 @@ package object cloudwatch {
   type MetricLabel                       = String
   type MetricName                        = String
   type MetricWidget                      = String
-  type MetricWidgetImage =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Metrics           = js.Array[Metric]
-  type Namespace         = String
-  type NextToken         = String
-  type OutputFormat      = String
-  type Period            = Int
-  type ResourceList      = js.Array[ResourceName]
-  type ResourceName      = String
-  type ReturnData        = Boolean
-  type ScanBy            = String
-  type Size              = Double
-  type StandardUnit      = String
-  type Stat              = String
-  type StateReason       = String
-  type StateReasonData   = String
-  type StateValue        = String
-  type Statistic         = String
-  type Statistics        = js.Array[Statistic]
-  type StatusCode        = String
-  type StorageResolution = Int
-  type TagKey            = String
-  type TagKeyList        = js.Array[TagKey]
-  type TagList           = js.Array[Tag]
-  type TagValue          = String
-  type Threshold         = Double
-  type Timestamp         = js.Date
-  type Timestamps        = js.Array[Timestamp]
-  type TreatMissingData  = String
-  type Values            = js.Array[DatapointValue]
+  type MetricWidgetImage                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Metrics                           = js.Array[Metric]
+  type Namespace                         = String
+  type NextToken                         = String
+  type OutputFormat                      = String
+  type Period                            = Int
+  type ResourceList                      = js.Array[ResourceName]
+  type ResourceName                      = String
+  type ReturnData                        = Boolean
+  type ScanBy                            = String
+  type Size                              = Double
+  type StandardUnit                      = String
+  type Stat                              = String
+  type StateReason                       = String
+  type StateReasonData                   = String
+  type StateValue                        = String
+  type Statistic                         = String
+  type Statistics                        = js.Array[Statistic]
+  type StatusCode                        = String
+  type StorageResolution                 = Int
+  type TagKey                            = String
+  type TagKeyList                        = js.Array[TagKey]
+  type TagList                           = js.Array[Tag]
+  type TagValue                          = String
+  type Threshold                         = Double
+  type Timestamp                         = js.Date
+  type Timestamps                        = js.Array[Timestamp]
+  type TreatMissingData                  = String
+  type Values                            = js.Array[DatapointValue]
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 

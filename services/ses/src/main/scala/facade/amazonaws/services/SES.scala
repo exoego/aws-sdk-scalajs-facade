@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object ses {
@@ -80,42 +79,41 @@ package object ses {
   type PolicyMap                         = js.Dictionary[Policy]
   type PolicyName                        = String
   type PolicyNameList                    = js.Array[PolicyName]
-  type RawMessageData =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ReceiptActionsList     = js.Array[ReceiptAction]
-  type ReceiptFilterList      = js.Array[ReceiptFilter]
-  type ReceiptFilterName      = String
-  type ReceiptFilterPolicy    = String
-  type ReceiptRuleName        = String
-  type ReceiptRuleNamesList   = js.Array[ReceiptRuleName]
-  type ReceiptRuleSetName     = String
-  type ReceiptRuleSetsLists   = js.Array[ReceiptRuleSetMetadata]
-  type ReceiptRulesList       = js.Array[ReceiptRule]
-  type Recipient              = String
-  type RecipientsList         = js.Array[Recipient]
-  type RemoteMta              = String
-  type RenderedTemplate       = String
-  type ReportingMta           = String
-  type S3BucketName           = String
-  type S3KeyPrefix            = String
-  type SNSActionEncoding      = String
-  type SendDataPointList      = js.Array[SendDataPoint]
-  type SentLast24Hours        = Double
-  type StopScope              = String
-  type Subject                = String
-  type SubjectPart            = String
-  type SuccessRedirectionURL  = String
-  type TemplateContent        = String
-  type TemplateData           = String
-  type TemplateMetadataList   = js.Array[TemplateMetadata]
-  type TemplateName           = String
-  type TextPart               = String
-  type Timestamp              = js.Date
-  type TlsPolicy              = String
-  type VerificationAttributes = js.Dictionary[IdentityVerificationAttributes]
-  type VerificationStatus     = String
-  type VerificationToken      = String
-  type VerificationTokenList  = js.Array[VerificationToken]
+  type RawMessageData                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ReceiptActionsList                = js.Array[ReceiptAction]
+  type ReceiptFilterList                 = js.Array[ReceiptFilter]
+  type ReceiptFilterName                 = String
+  type ReceiptFilterPolicy               = String
+  type ReceiptRuleName                   = String
+  type ReceiptRuleNamesList              = js.Array[ReceiptRuleName]
+  type ReceiptRuleSetName                = String
+  type ReceiptRuleSetsLists              = js.Array[ReceiptRuleSetMetadata]
+  type ReceiptRulesList                  = js.Array[ReceiptRule]
+  type Recipient                         = String
+  type RecipientsList                    = js.Array[Recipient]
+  type RemoteMta                         = String
+  type RenderedTemplate                  = String
+  type ReportingMta                      = String
+  type S3BucketName                      = String
+  type S3KeyPrefix                       = String
+  type SNSActionEncoding                 = String
+  type SendDataPointList                 = js.Array[SendDataPoint]
+  type SentLast24Hours                   = Double
+  type StopScope                         = String
+  type Subject                           = String
+  type SubjectPart                       = String
+  type SuccessRedirectionURL             = String
+  type TemplateContent                   = String
+  type TemplateData                      = String
+  type TemplateMetadataList              = js.Array[TemplateMetadata]
+  type TemplateName                      = String
+  type TextPart                          = String
+  type Timestamp                         = js.Date
+  type TlsPolicy                         = String
+  type VerificationAttributes            = js.Dictionary[IdentityVerificationAttributes]
+  type VerificationStatus                = String
+  type VerificationToken                 = String
+  type VerificationTokenList             = js.Array[VerificationToken]
 
   implicit final class SESOps(private val service: SES) extends AnyVal {
 

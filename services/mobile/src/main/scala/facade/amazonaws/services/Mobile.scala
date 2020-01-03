@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object mobile {
@@ -17,28 +16,27 @@ package object mobile {
   type BundleTitle       = String
   type BundleVersion     = String
   type ConsoleUrl        = String
-  type Contents =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Date             = js.Date
-  type DownloadUrl      = String
-  type ErrorMessage     = String
-  type Feature          = String
-  type IconUrl          = String
-  type MaxResults       = Int
-  type NextToken        = String
-  type Platform         = String
-  type Platforms        = js.Array[Platform]
-  type ProjectId        = String
-  type ProjectName      = String
-  type ProjectRegion    = String
-  type ProjectState     = String
-  type ProjectSummaries = js.Array[ProjectSummary]
-  type ResourceArn      = String
-  type ResourceName     = String
-  type ResourceType     = String
-  type Resources        = js.Array[Resource]
-  type ShareUrl         = String
-  type SnapshotId       = String
+  type Contents          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Date              = js.Date
+  type DownloadUrl       = String
+  type ErrorMessage      = String
+  type Feature           = String
+  type IconUrl           = String
+  type MaxResults        = Int
+  type NextToken         = String
+  type Platform          = String
+  type Platforms         = js.Array[Platform]
+  type ProjectId         = String
+  type ProjectName       = String
+  type ProjectRegion     = String
+  type ProjectState      = String
+  type ProjectSummaries  = js.Array[ProjectSummary]
+  type ResourceArn       = String
+  type ResourceName      = String
+  type ResourceType      = String
+  type Resources         = js.Array[Resource]
+  type ShareUrl          = String
+  type SnapshotId        = String
 
   implicit final class MobileOps(private val service: Mobile) extends AnyVal {
 

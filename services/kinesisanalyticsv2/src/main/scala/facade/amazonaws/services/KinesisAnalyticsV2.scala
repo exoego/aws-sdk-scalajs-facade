@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kinesisanalyticsv2 {
@@ -93,8 +92,7 @@ package object kinesisanalyticsv2 {
   type VpcConfigurationUpdates             = js.Array[VpcConfigurationUpdate]
   type VpcConfigurations                   = js.Array[VpcConfiguration]
   type VpcId                               = String
-  type ZipFileContent =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ZipFileContent                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class KinesisAnalyticsV2Ops(private val service: KinesisAnalyticsV2) extends AnyVal {
 

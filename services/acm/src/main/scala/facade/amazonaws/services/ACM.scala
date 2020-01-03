@@ -4,17 +4,14 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object acm {
-  type Arn             = String
-  type CertificateBody = String
-  type CertificateBodyBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CertificateChain = String
-  type CertificateChainBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Arn                                      = String
+  type CertificateBody                          = String
+  type CertificateBodyBlob                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificateChain                         = String
+  type CertificateChainBlob                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CertificateStatus                        = String
   type CertificateStatuses                      = js.Array[CertificateStatus]
   type CertificateSummaryList                   = js.Array[CertificateSummary]
@@ -38,21 +35,19 @@ package object acm {
   type KeyUsageName                             = String
   type MaxItems                                 = Int
   type NextToken                                = String
-  type PassphraseBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PrivateKey = String
-  type PrivateKeyBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RecordType          = String
-  type RenewalEligibility  = String
-  type RenewalStatus       = String
-  type RevocationReason    = String
-  type TStamp              = js.Date
-  type TagKey              = String
-  type TagList             = js.Array[Tag]
-  type TagValue            = String
-  type ValidationEmailList = js.Array[String]
-  type ValidationMethod    = String
+  type PassphraseBlob                           = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PrivateKey                               = String
+  type PrivateKeyBlob                           = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RecordType                               = String
+  type RenewalEligibility                       = String
+  type RenewalStatus                            = String
+  type RevocationReason                         = String
+  type TStamp                                   = js.Date
+  type TagKey                                   = String
+  type TagList                                  = js.Array[Tag]
+  type TagValue                                 = String
+  type ValidationEmailList                      = js.Array[String]
+  type ValidationMethod                         = String
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 

@@ -4,14 +4,13 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object rdsdataservice {
   type Arn                 = String
   type ArrayOfArray        = js.Array[ArrayValue]
   type ArrayValueList      = js.Array[Value]
-  type Blob                = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Blob                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanArray        = js.Array[BoxedBoolean]
   type BoxedBoolean        = Boolean
   type BoxedDouble         = Double

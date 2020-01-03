@@ -4,21 +4,19 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object lambda {
-  type Action                     = String
-  type AdditionalVersion          = String
-  type AdditionalVersionWeights   = js.Dictionary[Weight]
-  type Alias                      = String
-  type AliasList                  = js.Array[AliasConfiguration]
-  type Arn                        = String
-  type BatchSize                  = Int
-  type BisectBatchOnFunctionError = Boolean
-  type Blob                       = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BlobStream =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Action                                   = String
+  type AdditionalVersion                        = String
+  type AdditionalVersionWeights                 = js.Dictionary[Weight]
+  type Alias                                    = String
+  type AliasList                                = js.Array[AliasConfiguration]
+  type Arn                                      = String
+  type BatchSize                                = Int
+  type BisectBatchOnFunctionError               = Boolean
+  type Blob                                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlobStream                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CompatibleRuntimes                       = js.Array[Runtime]
   type Date                                     = js.Date
   type Description                              = String

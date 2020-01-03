@@ -4,14 +4,12 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object dynamodbstreams {
-  type AttributeMap  = js.Dictionary[AttributeValue]
-  type AttributeName = String
-  type BinaryAttributeValue =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AttributeMap            = js.Dictionary[AttributeValue]
+  type AttributeName           = String
+  type BinaryAttributeValue    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
   type BooleanAttributeValue   = Boolean
   type Date                    = js.Date

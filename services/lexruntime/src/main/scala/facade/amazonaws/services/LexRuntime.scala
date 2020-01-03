@@ -4,14 +4,12 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object lexruntime {
-  type Accept           = String
-  type AttributesString = String
-  type BlobStream =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Accept                       = String
+  type AttributesString             = String
+  type BlobStream                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BotAlias                     = String
   type BotName                      = String
   type ButtonTextStringWithLength   = String

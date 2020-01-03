@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sesv2 {
@@ -76,28 +75,27 @@ package object sesv2 {
   type Percentage100Wrapper                 = Int
   type PoolName                             = String
   type PrivateKey                           = String
-  type RawMessageData =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RblName                        = String
-  type ReportId                       = String
-  type ReportName                     = String
-  type Selector                       = String
-  type SendingPoolName                = String
-  type SentLast24Hours                = Double
-  type Subject                        = String
-  type SuppressedDestinationSummaries = js.Array[SuppressedDestinationSummary]
-  type SuppressionListReason          = String
-  type SuppressionListReasons         = js.Array[SuppressionListReason]
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagValue                       = String
-  type TemplateArn                    = String
-  type TemplateData                   = String
-  type Timestamp                      = js.Date
-  type TlsPolicy                      = String
-  type Volume                         = Double
-  type WarmupStatus                   = String
+  type RawMessageData                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RblName                              = String
+  type ReportId                             = String
+  type ReportName                           = String
+  type Selector                             = String
+  type SendingPoolName                      = String
+  type SentLast24Hours                      = Double
+  type Subject                              = String
+  type SuppressedDestinationSummaries       = js.Array[SuppressedDestinationSummary]
+  type SuppressionListReason                = String
+  type SuppressionListReasons               = js.Array[SuppressionListReason]
+  type TagKey                               = String
+  type TagKeyList                           = js.Array[TagKey]
+  type TagList                              = js.Array[Tag]
+  type TagValue                             = String
+  type TemplateArn                          = String
+  type TemplateData                         = String
+  type Timestamp                            = js.Date
+  type TlsPolicy                            = String
+  type Volume                               = Double
+  type WarmupStatus                         = String
 
   implicit final class SESv2Ops(private val service: SESv2) extends AnyVal {
 

@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object textract {
@@ -25,28 +24,27 @@ package object textract {
   type HumanLoopArn                                   = String
   type HumanLoopName                                  = String
   type IdList                                         = js.Array[NonEmptyString]
-  type ImageBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type JobId            = String
-  type JobStatus        = String
-  type JobTag           = String
-  type MaxResults       = Int
-  type NonEmptyString   = String
-  type Pages            = js.Array[UInteger]
-  type PaginationToken  = String
-  type Percent          = Float
-  type Polygon          = js.Array[Point]
-  type RelationshipList = js.Array[Relationship]
-  type RelationshipType = String
-  type RoleArn          = String
-  type S3Bucket         = String
-  type S3ObjectName     = String
-  type S3ObjectVersion  = String
-  type SNSTopicArn      = String
-  type SelectionStatus  = String
-  type StatusMessage    = String
-  type UInteger         = Int
-  type Warnings         = js.Array[Warning]
+  type ImageBlob                                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type JobId                                          = String
+  type JobStatus                                      = String
+  type JobTag                                         = String
+  type MaxResults                                     = Int
+  type NonEmptyString                                 = String
+  type Pages                                          = js.Array[UInteger]
+  type PaginationToken                                = String
+  type Percent                                        = Float
+  type Polygon                                        = js.Array[Point]
+  type RelationshipList                               = js.Array[Relationship]
+  type RelationshipType                               = String
+  type RoleArn                                        = String
+  type S3Bucket                                       = String
+  type S3ObjectName                                   = String
+  type S3ObjectVersion                                = String
+  type SNSTopicArn                                    = String
+  type SelectionStatus                                = String
+  type StatusMessage                                  = String
+  type UInteger                                       = Int
+  type Warnings                                       = js.Array[Warning]
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
 

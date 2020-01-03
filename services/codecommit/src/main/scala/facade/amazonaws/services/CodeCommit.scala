@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object codecommit {
@@ -30,39 +29,38 @@ package object codecommit {
   type BatchDescribeMergeConflictsErrors = js.Array[BatchDescribeMergeConflictsError]
   type BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList =
     js.Array[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
-  type BatchGetCommitsErrorsList          = js.Array[BatchGetCommitsError]
-  type BranchName                         = String
-  type BranchNameList                     = js.Array[BranchName]
-  type CapitalBoolean                     = Boolean
-  type ChangeTypeEnum                     = String
-  type ClientRequestToken                 = String
-  type CloneUrlHttp                       = String
-  type CloneUrlSsh                        = String
-  type CommentId                          = String
-  type Comments                           = js.Array[Comment]
-  type CommentsForComparedCommitData      = js.Array[CommentsForComparedCommit]
-  type CommentsForPullRequestData         = js.Array[CommentsForPullRequest]
-  type CommitId                           = String
-  type CommitIdsInputList                 = js.Array[ObjectId]
-  type CommitName                         = String
-  type CommitObjectsList                  = js.Array[Commit]
-  type ConflictDetailLevelTypeEnum        = String
-  type ConflictMetadataList               = js.Array[ConflictMetadata]
-  type ConflictResolutionStrategyTypeEnum = String
-  type Conflicts                          = js.Array[Conflict]
-  type Content                            = String
-  type CreationDate                       = js.Date
-  type Date                               = String
-  type DeleteFileEntries                  = js.Array[DeleteFileEntry]
-  type Description                        = String
-  type DifferenceList                     = js.Array[Difference]
-  type Email                              = String
-  type ErrorCode                          = String
-  type ErrorMessage                       = String
-  type EventDate                          = js.Date
-  type ExceptionName                      = String
-  type FileContent =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BatchGetCommitsErrorsList                = js.Array[BatchGetCommitsError]
+  type BranchName                               = String
+  type BranchNameList                           = js.Array[BranchName]
+  type CapitalBoolean                           = Boolean
+  type ChangeTypeEnum                           = String
+  type ClientRequestToken                       = String
+  type CloneUrlHttp                             = String
+  type CloneUrlSsh                              = String
+  type CommentId                                = String
+  type Comments                                 = js.Array[Comment]
+  type CommentsForComparedCommitData            = js.Array[CommentsForComparedCommit]
+  type CommentsForPullRequestData               = js.Array[CommentsForPullRequest]
+  type CommitId                                 = String
+  type CommitIdsInputList                       = js.Array[ObjectId]
+  type CommitName                               = String
+  type CommitObjectsList                        = js.Array[Commit]
+  type ConflictDetailLevelTypeEnum              = String
+  type ConflictMetadataList                     = js.Array[ConflictMetadata]
+  type ConflictResolutionStrategyTypeEnum       = String
+  type Conflicts                                = js.Array[Conflict]
+  type Content                                  = String
+  type CreationDate                             = js.Date
+  type Date                                     = String
+  type DeleteFileEntries                        = js.Array[DeleteFileEntry]
+  type Description                              = String
+  type DifferenceList                           = js.Array[Difference]
+  type Email                                    = String
+  type ErrorCode                                = String
+  type ErrorMessage                             = String
+  type EventDate                                = js.Date
+  type ExceptionName                            = String
+  type FileContent                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type FileList                                 = js.Array[File]
   type FileModeTypeEnum                         = String
   type FilePaths                                = js.Array[Path]
@@ -140,7 +138,7 @@ package object codecommit {
   type TagsMap                                  = js.Dictionary[TagValue]
   type TargetList                               = js.Array[Target]
   type Title                                    = String
-  type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type blob                                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 

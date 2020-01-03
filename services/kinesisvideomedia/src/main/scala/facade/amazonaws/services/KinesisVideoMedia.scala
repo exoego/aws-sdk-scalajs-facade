@@ -4,19 +4,17 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kinesisvideomedia {
   type ContentType          = String
   type ContinuationToken    = String
   type FragmentNumberString = String
-  type Payload =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ResourceARN       = String
-  type StartSelectorType = String
-  type StreamName        = String
-  type Timestamp         = js.Date
+  type Payload              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ResourceARN          = String
+  type StartSelectorType    = String
+  type StreamName           = String
+  type Timestamp            = js.Date
 
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 

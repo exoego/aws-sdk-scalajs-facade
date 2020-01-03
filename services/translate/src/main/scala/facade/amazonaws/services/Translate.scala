@@ -4,27 +4,25 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object translate {
-  type AppliedTerminologyList = js.Array[AppliedTerminology]
-  type BoundedLengthString    = String
-  type Description            = String
-  type EncryptionKeyID        = String
-  type EncryptionKeyType      = String
-  type LanguageCodeString     = String
-  type LanguageCodeStringList = js.Array[LanguageCodeString]
-  type MaxResultsInteger      = Int
-  type MergeStrategy          = String
-  type NextToken              = String
-  type ResourceName           = String
-  type ResourceNameList       = js.Array[ResourceName]
-  type TermList               = js.Array[Term]
-  type TerminologyArn         = String
-  type TerminologyDataFormat  = String
-  type TerminologyFile =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AppliedTerminologyList    = js.Array[AppliedTerminology]
+  type BoundedLengthString       = String
+  type Description               = String
+  type EncryptionKeyID           = String
+  type EncryptionKeyType         = String
+  type LanguageCodeString        = String
+  type LanguageCodeStringList    = js.Array[LanguageCodeString]
+  type MaxResultsInteger         = Int
+  type MergeStrategy             = String
+  type NextToken                 = String
+  type ResourceName              = String
+  type ResourceNameList          = js.Array[ResourceName]
+  type TermList                  = js.Array[Term]
+  type TerminologyArn            = String
+  type TerminologyDataFormat     = String
+  type TerminologyFile           = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TerminologyPropertiesList = js.Array[TerminologyProperties]
   type Timestamp                 = js.Date
 

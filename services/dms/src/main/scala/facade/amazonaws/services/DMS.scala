@@ -4,18 +4,16 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object dms {
-  type AccountQuotaList      = js.Array[AccountQuota]
-  type AuthMechanismValue    = String
-  type AuthTypeValue         = String
-  type AvailabilityZonesList = js.Array[String]
-  type BooleanOptional       = Boolean
-  type CertificateList       = js.Array[Certificate]
-  type CertificateWallet =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AccountQuotaList                        = js.Array[AccountQuota]
+  type AuthMechanismValue                      = String
+  type AuthTypeValue                           = String
+  type AvailabilityZonesList                   = js.Array[String]
+  type BooleanOptional                         = Boolean
+  type CertificateList                         = js.Array[Certificate]
+  type CertificateWallet                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CompressionTypeValue                    = String
   type ConnectionList                          = js.Array[Connection]
   type DataFormatValue                         = String

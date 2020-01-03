@@ -4,11 +4,10 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object schemas {
-  type Body                                        = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Body                                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CodeGenerationStatus                        = String
   type DiscovererState                             = String
   type GetDiscoveredSchemaVersionItemInput         = String

@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object ecr {
@@ -47,39 +46,38 @@ package object ecr {
   type LayerFailureList                    = js.Array[LayerFailure]
   type LayerFailureReason                  = String
   type LayerList                           = js.Array[Layer]
-  type LayerPartBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type LayerSizeInBytes                   = Double
-  type LifecyclePolicyPreviewResultList   = js.Array[LifecyclePolicyPreviewResult]
-  type LifecyclePolicyPreviewStatus       = String
-  type LifecyclePolicyRulePriority        = Int
-  type LifecyclePolicyText                = String
-  type LifecyclePreviewMaxResults         = Int
-  type MaxResults                         = Int
-  type MediaType                          = String
-  type MediaTypeList                      = js.Array[MediaType]
-  type NextToken                          = String
-  type PartSize                           = Double
-  type ProxyEndpoint                      = String
-  type PushTimestamp                      = js.Date
-  type RegistryId                         = String
-  type RepositoryList                     = js.Array[Repository]
-  type RepositoryName                     = String
-  type RepositoryNameList                 = js.Array[RepositoryName]
-  type RepositoryPolicyText               = String
-  type ScanOnPushFlag                     = Boolean
-  type ScanStatus                         = String
-  type ScanStatusDescription              = String
-  type ScanTimestamp                      = js.Date
-  type SeverityCount                      = Int
-  type TagKey                             = String
-  type TagKeyList                         = js.Array[TagKey]
-  type TagList                            = js.Array[Tag]
-  type TagStatus                          = String
-  type TagValue                           = String
-  type UploadId                           = String
-  type Url                                = String
-  type VulnerabilitySourceUpdateTimestamp = js.Date
+  type LayerPartBlob                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type LayerSizeInBytes                    = Double
+  type LifecyclePolicyPreviewResultList    = js.Array[LifecyclePolicyPreviewResult]
+  type LifecyclePolicyPreviewStatus        = String
+  type LifecyclePolicyRulePriority         = Int
+  type LifecyclePolicyText                 = String
+  type LifecyclePreviewMaxResults          = Int
+  type MaxResults                          = Int
+  type MediaType                           = String
+  type MediaTypeList                       = js.Array[MediaType]
+  type NextToken                           = String
+  type PartSize                            = Double
+  type ProxyEndpoint                       = String
+  type PushTimestamp                       = js.Date
+  type RegistryId                          = String
+  type RepositoryList                      = js.Array[Repository]
+  type RepositoryName                      = String
+  type RepositoryNameList                  = js.Array[RepositoryName]
+  type RepositoryPolicyText                = String
+  type ScanOnPushFlag                      = Boolean
+  type ScanStatus                          = String
+  type ScanStatusDescription               = String
+  type ScanTimestamp                       = js.Date
+  type SeverityCount                       = Int
+  type TagKey                              = String
+  type TagKeyList                          = js.Array[TagKey]
+  type TagList                             = js.Array[Tag]
+  type TagStatus                           = String
+  type TagValue                            = String
+  type UploadId                            = String
+  type Url                                 = String
+  type VulnerabilitySourceUpdateTimestamp  = js.Date
 
   implicit final class ECROps(private val service: ECR) extends AnyVal {
 

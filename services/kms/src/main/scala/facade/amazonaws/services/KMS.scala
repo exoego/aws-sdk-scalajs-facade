@@ -4,18 +4,16 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kms {
-  type AWSAccountIdType = String
-  type AlgorithmSpec    = String
-  type AliasList        = js.Array[AliasListEntry]
-  type AliasNameType    = String
-  type ArnType          = String
-  type BooleanType      = Boolean
-  type CiphertextType =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AWSAccountIdType            = String
+  type AlgorithmSpec               = String
+  type AliasList                   = js.Array[AliasListEntry]
+  type AliasNameType               = String
+  type ArnType                     = String
+  type BooleanType                 = Boolean
+  type CiphertextType              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CloudHsmClusterIdType       = String
   type ConnectionErrorCodeType     = String
   type ConnectionStateType         = String
@@ -52,22 +50,20 @@ package object kms {
   type NumberOfBytesType           = Int
   type OriginType                  = String
   type PendingWindowInDaysType     = Int
-  type PlaintextType =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PolicyNameList  = js.Array[PolicyNameType]
-  type PolicyNameType  = String
-  type PolicyType      = String
-  type PrincipalIdType = String
-  type PublicKeyType =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SigningAlgorithmSpec       = String
-  type SigningAlgorithmSpecList   = js.Array[SigningAlgorithmSpec]
-  type TagKeyList                 = js.Array[TagKeyType]
-  type TagKeyType                 = String
-  type TagList                    = js.Array[Tag]
-  type TagValueType               = String
-  type TrustAnchorCertificateType = String
-  type WrappingKeySpec            = String
+  type PlaintextType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PolicyNameList              = js.Array[PolicyNameType]
+  type PolicyNameType              = String
+  type PolicyType                  = String
+  type PrincipalIdType             = String
+  type PublicKeyType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SigningAlgorithmSpec        = String
+  type SigningAlgorithmSpecList    = js.Array[SigningAlgorithmSpec]
+  type TagKeyList                  = js.Array[TagKeyType]
+  type TagKeyType                  = String
+  type TagList                     = js.Array[Tag]
+  type TagValueType                = String
+  type TrustAnchorCertificateType  = String
+  type WrappingKeySpec             = String
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
 

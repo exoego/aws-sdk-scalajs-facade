@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object pinpoint {
@@ -68,7 +67,7 @@ package object pinpoint {
   type State                           = String
   type TemplateType                    = String
   type Type                            = String
-  type __blob                          = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type __blob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type __boolean                       = Boolean
   type __double                        = Double
   type __integer                       = Int
