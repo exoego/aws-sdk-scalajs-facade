@@ -1,11 +1,11 @@
 package net.exoego
 
 import facade.amazonaws.services.cloudfront.signer
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 
 import scala.scalajs.js
 
-class CloudfrontSignerTest extends FunSuite {
+class CloudfrontSignerTest extends AnyFunSuite {
   test("SignerOptionsWithPolicy.apply(PolicyStatement)") {
     val tPolicy = new signer.PolicyStatements(
       js.Array(

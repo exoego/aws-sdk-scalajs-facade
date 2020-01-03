@@ -2,9 +2,9 @@ package net.exoego
 
 import facade.amazonaws.AWS
 import facade.amazonaws.services.s3
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 
-class ExtensionTest extends FunSuite {
+class ExtensionTest extends AnyFunSuite {
   ignore("offer extension method") {
     AWS
       .S3()
