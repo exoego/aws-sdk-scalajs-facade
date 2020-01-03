@@ -4,14 +4,11 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object codeguruprofiler {
-  type AgentProfile =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type AggregatedProfile =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AgentProfile               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AggregatedProfile          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type AggregationPeriod          = String
   type ClientToken                = String
   type FleetInstanceId            = String

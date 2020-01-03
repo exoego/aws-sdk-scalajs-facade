@@ -4,12 +4,10 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sagemakerruntime {
-  type BodyBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BodyBlob               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CustomAttributesHeader = String
   type EndpointName           = String
   type Header                 = String

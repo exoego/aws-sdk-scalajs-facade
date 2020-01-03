@@ -1,7 +1,5 @@
 package facade.amazonaws
 
-import io.scalajs.nodejs.stream
-
 import scala.scalajs.js
 
 @js.native
@@ -38,7 +36,7 @@ trait Request[T <: js.Object] extends js.Object {
     *
     * @return the readable stream object that can be piped or read from (by registering 'data' event listeners).
     */
-  def createReadStream(): stream.Readable = js.native
+  def createReadStream(): js.Dynamic = js.native
 
   /**
     *

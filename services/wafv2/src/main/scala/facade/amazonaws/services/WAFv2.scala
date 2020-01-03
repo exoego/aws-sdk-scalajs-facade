@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object wafv2 {
@@ -56,21 +55,20 @@ package object wafv2 {
   type SampleWeight                       = Double
   type SampledHTTPRequests                = js.Array[SampledHTTPRequest]
   type Scope                              = String
-  type SearchString =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Size                       = Double
-  type Statements                 = js.Array[Statement]
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
-  type TextTransformationPriority = Int
-  type TextTransformationType     = String
-  type TextTransformations        = js.Array[TextTransformation]
-  type Timestamp                  = js.Date
-  type URIString                  = String
-  type VendorName                 = String
-  type WebACLSummaries            = js.Array[WebACLSummary]
+  type SearchString                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Size                               = Double
+  type Statements                         = js.Array[Statement]
+  type TagKey                             = String
+  type TagKeyList                         = js.Array[TagKey]
+  type TagList                            = js.Array[Tag]
+  type TagValue                           = String
+  type TextTransformationPriority         = Int
+  type TextTransformationType             = String
+  type TextTransformations                = js.Array[TextTransformation]
+  type Timestamp                          = js.Date
+  type URIString                          = String
+  type VendorName                         = String
+  type WebACLSummaries                    = js.Array[WebACLSummary]
 
   implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 

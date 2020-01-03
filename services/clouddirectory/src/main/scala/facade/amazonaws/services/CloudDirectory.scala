@@ -4,25 +4,23 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object clouddirectory {
-  type Arn                             = String
-  type Arns                            = js.Array[Arn]
-  type AttributeKeyAndValueList        = js.Array[AttributeKeyAndValue]
-  type AttributeKeyList                = js.Array[AttributeKey]
-  type AttributeName                   = String
-  type AttributeNameAndValueList       = js.Array[AttributeNameAndValue]
-  type AttributeNameList               = js.Array[AttributeName]
-  type BatchReadExceptionType          = String
-  type BatchReadOperationList          = js.Array[BatchReadOperation]
-  type BatchReadOperationResponseList  = js.Array[BatchReadOperationResponse]
-  type BatchReferenceName              = String
-  type BatchWriteOperationList         = js.Array[BatchWriteOperation]
-  type BatchWriteOperationResponseList = js.Array[BatchWriteOperationResponse]
-  type BinaryAttributeValue =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Arn                               = String
+  type Arns                              = js.Array[Arn]
+  type AttributeKeyAndValueList          = js.Array[AttributeKeyAndValue]
+  type AttributeKeyList                  = js.Array[AttributeKey]
+  type AttributeName                     = String
+  type AttributeNameAndValueList         = js.Array[AttributeNameAndValue]
+  type AttributeNameList                 = js.Array[AttributeName]
+  type BatchReadExceptionType            = String
+  type BatchReadOperationList            = js.Array[BatchReadOperation]
+  type BatchReadOperationResponseList    = js.Array[BatchReadOperationResponse]
+  type BatchReferenceName                = String
+  type BatchWriteOperationList           = js.Array[BatchWriteOperation]
+  type BatchWriteOperationResponseList   = js.Array[BatchWriteOperationResponse]
+  type BinaryAttributeValue              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanAttributeValue             = Boolean
   type ConsistencyLevel                  = String
   type Date                              = js.Date

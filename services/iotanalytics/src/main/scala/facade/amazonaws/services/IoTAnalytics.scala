@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object iotanalytics {
@@ -59,43 +58,42 @@ package object iotanalytics {
   type MaxResults                  = Int
   type MaxVersions                 = Int
   type MessageId                   = String
-  type MessagePayload =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type MessagePayloads          = js.Array[MessagePayload]
-  type Messages                 = js.Array[Message]
-  type NextToken                = String
-  type OffsetSeconds            = Int
-  type OutputFileName           = String
-  type PipelineActivities       = js.Array[PipelineActivity]
-  type PipelineArn              = String
-  type PipelineName             = String
-  type PipelineSummaries        = js.Array[PipelineSummary]
-  type PresignedURI             = String
-  type QueryFilters             = js.Array[QueryFilter]
-  type Reason                   = String
-  type ReprocessingId           = String
-  type ReprocessingStatus       = String
-  type ReprocessingSummaries    = js.Array[ReprocessingSummary]
-  type ResourceArn              = String
-  type RetentionPeriodInDays    = Int
-  type RoleArn                  = String
-  type S3KeyPrefix              = String
-  type ScheduleExpression       = String
-  type SizeInBytes              = Double
-  type SqlQuery                 = String
-  type StartTime                = js.Date
-  type StringValue              = String
-  type TagKey                   = String
-  type TagKeyList               = js.Array[TagKey]
-  type TagList                  = js.Array[Tag]
-  type TagValue                 = String
-  type TimeExpression           = String
-  type Timestamp                = js.Date
-  type UnlimitedRetentionPeriod = Boolean
-  type UnlimitedVersioning      = Boolean
-  type VariableName             = String
-  type Variables                = js.Array[Variable]
-  type VolumeSizeInGB           = Int
+  type MessagePayload              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type MessagePayloads             = js.Array[MessagePayload]
+  type Messages                    = js.Array[Message]
+  type NextToken                   = String
+  type OffsetSeconds               = Int
+  type OutputFileName              = String
+  type PipelineActivities          = js.Array[PipelineActivity]
+  type PipelineArn                 = String
+  type PipelineName                = String
+  type PipelineSummaries           = js.Array[PipelineSummary]
+  type PresignedURI                = String
+  type QueryFilters                = js.Array[QueryFilter]
+  type Reason                      = String
+  type ReprocessingId              = String
+  type ReprocessingStatus          = String
+  type ReprocessingSummaries       = js.Array[ReprocessingSummary]
+  type ResourceArn                 = String
+  type RetentionPeriodInDays       = Int
+  type RoleArn                     = String
+  type S3KeyPrefix                 = String
+  type ScheduleExpression          = String
+  type SizeInBytes                 = Double
+  type SqlQuery                    = String
+  type StartTime                   = js.Date
+  type StringValue                 = String
+  type TagKey                      = String
+  type TagKeyList                  = js.Array[TagKey]
+  type TagList                     = js.Array[Tag]
+  type TagValue                    = String
+  type TimeExpression              = String
+  type Timestamp                   = js.Date
+  type UnlimitedRetentionPeriod    = Boolean
+  type UnlimitedVersioning         = Boolean
+  type VariableName                = String
+  type Variables                   = js.Array[Variable]
+  type VolumeSizeInGB              = Int
 
   implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 

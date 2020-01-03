@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object frauddetector {
@@ -54,7 +53,7 @@ package object frauddetector {
   type VariablesMaxResults              = Int
   type attributeKey                     = String
   type attributeValue                   = String
-  type blob                             = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type blob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type contentType                      = String
   type description                      = String
   type iamRoleArn                       = String

@@ -4,12 +4,10 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloudtrail {
-  type ByteBuffer =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ByteBuffer                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DataResourceValues            = js.Array[String]
   type DataResources                 = js.Array[DataResource]
   type Date                          = js.Date

@@ -4,13 +4,11 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object workmailmessageflow {
-  type messageContentBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type messageIdType = String
+  type messageContentBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type messageIdType      = String
 
   implicit final class WorkMailMessageFlowOps(private val service: WorkMailMessageFlow) extends AnyVal {
 

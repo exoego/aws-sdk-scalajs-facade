@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kinesis {
@@ -14,7 +13,7 @@ package object kinesis {
   type ConsumerList                  = js.Array[Consumer]
   type ConsumerName                  = String
   type ConsumerStatus                = String
-  type Data                          = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Data                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DescribeStreamInputLimit      = Int
   type EncryptionType                = String
   type EnhancedMonitoringList        = js.Array[EnhancedMetrics]

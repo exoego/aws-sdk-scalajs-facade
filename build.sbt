@@ -12,8 +12,7 @@ lazy val core = (project in file("core"))
   .settings(
     name := s"${SharedConfig.libraryName}-core",
     libraryDependencies ++= Seq(
-      Dependencies.scalajs.nodejs.value
-    )
+      )
   )
   .enablePlugins(ScalaJSPlugin)
 
@@ -26,8 +25,7 @@ def defineAwsProject(service: String): Project = {
     .settings(
       name := s"${SharedConfig.libraryName}-$lowerServiceName",
       libraryDependencies ++= Seq(
-        Dependencies.scalajs.nodejs.value
-      )
+        )
     )
     .enablePlugins(ScalaJSPlugin)
 }
@@ -267,7 +265,6 @@ lazy val all = (project in file("all"))
   .settings(
     name := s"${SharedConfig.libraryName}",
     libraryDependencies ++= Seq(
-      Dependencies.scalajs.nodejs.value,
       Dependencies.shared.scalatest.value
     ),
     npmDependencies in Test ++= Seq(

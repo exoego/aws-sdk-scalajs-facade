@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object directconnect {
@@ -56,36 +55,35 @@ package object directconnect {
   type LagList                                      = js.Array[Lag]
   type LagName                                      = String
   type LagState                                     = String
-  type LoaContent =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type LoaContentType        = String
-  type LoaIssueTime          = js.Date
-  type LocationCode          = String
-  type LocationList          = js.Array[Location]
-  type LocationName          = String
-  type LongAsn               = Double
-  type MTU                   = Int
-  type MaxResultSetSize      = Int
-  type OwnerAccount          = String
-  type PaginationToken       = String
-  type PartnerName           = String
-  type PortSpeed             = String
-  type ProviderList          = js.Array[ProviderName]
-  type ProviderName          = String
-  type Region                = String
-  type ResourceArn           = String
-  type ResourceArnList       = js.Array[ResourceArn]
-  type ResourceTagList       = js.Array[ResourceTag]
-  type RouteFilterPrefixList = js.Array[RouteFilterPrefix]
-  type RouterConfig          = String
-  type StateChangeError      = String
-  type TagKey                = String
-  type TagKeyList            = js.Array[TagKey]
-  type TagList               = js.Array[Tag]
-  type TagValue              = String
-  type VLAN                  = Int
-  type VirtualGatewayId      = String
-  type VirtualGatewayList    = js.Array[VirtualGateway]
+  type LoaContent                                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type LoaContentType                               = String
+  type LoaIssueTime                                 = js.Date
+  type LocationCode                                 = String
+  type LocationList                                 = js.Array[Location]
+  type LocationName                                 = String
+  type LongAsn                                      = Double
+  type MTU                                          = Int
+  type MaxResultSetSize                             = Int
+  type OwnerAccount                                 = String
+  type PaginationToken                              = String
+  type PartnerName                                  = String
+  type PortSpeed                                    = String
+  type ProviderList                                 = js.Array[ProviderName]
+  type ProviderName                                 = String
+  type Region                                       = String
+  type ResourceArn                                  = String
+  type ResourceArnList                              = js.Array[ResourceArn]
+  type ResourceTagList                              = js.Array[ResourceTag]
+  type RouteFilterPrefixList                        = js.Array[RouteFilterPrefix]
+  type RouterConfig                                 = String
+  type StateChangeError                             = String
+  type TagKey                                       = String
+  type TagKeyList                                   = js.Array[TagKey]
+  type TagList                                      = js.Array[Tag]
+  type TagValue                                     = String
+  type VLAN                                         = Int
+  type VirtualGatewayId                             = String
+  type VirtualGatewayList                           = js.Array[VirtualGateway]
   @deprecated("Deprecated in AWS SDK", "forever")
   type VirtualGatewayRegion   = String
   type VirtualGatewayState    = String

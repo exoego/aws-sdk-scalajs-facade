@@ -4,14 +4,11 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object qldbsession {
-  type CommitDigest =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type IonBinary =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CommitDigest        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type IonBinary           = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type IonText             = String
   type LedgerName          = String
   type PageToken           = String

@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object secretsmanager {
@@ -37,21 +36,20 @@ package object secretsmanager {
   type RotationEnabledType              = Boolean
   type RotationLambdaARNType            = String
   type SecretARNType                    = String
-  type SecretBinaryType =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SecretIdType                  = String
-  type SecretListType                = js.Array[SecretListEntry]
-  type SecretNameType                = String
-  type SecretStringType              = String
-  type SecretVersionIdType           = String
-  type SecretVersionStageType        = String
-  type SecretVersionStagesType       = js.Array[SecretVersionStageType]
-  type SecretVersionsListType        = js.Array[SecretVersionsListEntry]
-  type SecretVersionsToStagesMapType = js.Dictionary[SecretVersionStagesType]
-  type TagKeyListType                = js.Array[TagKeyType]
-  type TagKeyType                    = String
-  type TagListType                   = js.Array[Tag]
-  type TagValueType                  = String
+  type SecretBinaryType                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SecretIdType                     = String
+  type SecretListType                   = js.Array[SecretListEntry]
+  type SecretNameType                   = String
+  type SecretStringType                 = String
+  type SecretVersionIdType              = String
+  type SecretVersionStageType           = String
+  type SecretVersionStagesType          = js.Array[SecretVersionStageType]
+  type SecretVersionsListType           = js.Array[SecretVersionsListEntry]
+  type SecretVersionsToStagesMapType    = js.Dictionary[SecretVersionStagesType]
+  type TagKeyListType                   = js.Array[TagKeyType]
+  type TagKeyType                       = String
+  type TagListType                      = js.Array[Tag]
+  type TagValueType                     = String
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 

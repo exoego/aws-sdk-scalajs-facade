@@ -4,37 +4,35 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object dynamodb {
-  type ArchivalReason                   = String
-  type AttributeAction                  = String
-  type AttributeDefinitions             = js.Array[AttributeDefinition]
-  type AttributeMap                     = js.Dictionary[AttributeValue]
-  type AttributeName                    = String
-  type AttributeNameList                = js.Array[AttributeName]
-  type AttributeUpdates                 = js.Dictionary[AttributeValueUpdate]
-  type AttributeValueList               = js.Array[AttributeValue]
-  type AutoScalingPolicyDescriptionList = js.Array[AutoScalingPolicyDescription]
-  type AutoScalingPolicyName            = String
-  type AutoScalingRoleArn               = String
-  type Backfilling                      = Boolean
-  type BackupArn                        = String
-  type BackupCreationDateTime           = js.Date
-  type BackupName                       = String
-  type BackupSizeBytes                  = Double
-  type BackupStatus                     = String
-  type BackupSummaries                  = js.Array[BackupSummary]
-  type BackupType                       = String
-  type BackupTypeFilter                 = String
-  type BackupsInputLimit                = Int
-  type BatchGetRequestMap               = js.Dictionary[KeysAndAttributes]
-  type BatchGetResponseMap              = js.Dictionary[ItemList]
-  type BatchWriteItemRequestMap         = js.Dictionary[WriteRequests]
-  type BillingMode                      = String
-  type BinaryAttributeValue =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ArchivalReason                                    = String
+  type AttributeAction                                   = String
+  type AttributeDefinitions                              = js.Array[AttributeDefinition]
+  type AttributeMap                                      = js.Dictionary[AttributeValue]
+  type AttributeName                                     = String
+  type AttributeNameList                                 = js.Array[AttributeName]
+  type AttributeUpdates                                  = js.Dictionary[AttributeValueUpdate]
+  type AttributeValueList                                = js.Array[AttributeValue]
+  type AutoScalingPolicyDescriptionList                  = js.Array[AutoScalingPolicyDescription]
+  type AutoScalingPolicyName                             = String
+  type AutoScalingRoleArn                                = String
+  type Backfilling                                       = Boolean
+  type BackupArn                                         = String
+  type BackupCreationDateTime                            = js.Date
+  type BackupName                                        = String
+  type BackupSizeBytes                                   = Double
+  type BackupStatus                                      = String
+  type BackupSummaries                                   = js.Array[BackupSummary]
+  type BackupType                                        = String
+  type BackupTypeFilter                                  = String
+  type BackupsInputLimit                                 = Int
+  type BatchGetRequestMap                                = js.Dictionary[KeysAndAttributes]
+  type BatchGetResponseMap                               = js.Dictionary[ItemList]
+  type BatchWriteItemRequestMap                          = js.Dictionary[WriteRequests]
+  type BillingMode                                       = String
+  type BinaryAttributeValue                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BinarySetAttributeValue                           = js.Array[BinaryAttributeValue]
   type BooleanAttributeValue                             = Boolean
   type BooleanObject                                     = Boolean

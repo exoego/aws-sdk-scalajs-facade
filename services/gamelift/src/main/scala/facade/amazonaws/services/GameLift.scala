@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object gamelift {
@@ -126,8 +125,7 @@ package object gamelift {
   type VpcPeeringAuthorizationList         = js.Array[VpcPeeringAuthorization]
   type VpcPeeringConnectionList            = js.Array[VpcPeeringConnection]
   type WholeNumber                         = Int
-  type ZipBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ZipBlob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
 

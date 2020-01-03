@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object mediastoredata {
@@ -19,15 +18,14 @@ package object mediastoredata {
   type NonNegativeLong     = Double
   type PaginationToken     = String
   type PathNaming          = String
-  type PayloadBlob =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RangePattern       = String
-  type SHA256Hash         = String
-  type StorageClass       = String
-  type StringPrimitive    = String
-  type TimeStamp          = js.Date
-  type UploadAvailability = String
-  type statusCode         = Int
+  type PayloadBlob         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RangePattern        = String
+  type SHA256Hash          = String
+  type StorageClass        = String
+  type StringPrimitive     = String
+  type TimeStamp           = js.Date
+  type UploadAvailability  = String
+  type statusCode          = Int
 
   implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
 

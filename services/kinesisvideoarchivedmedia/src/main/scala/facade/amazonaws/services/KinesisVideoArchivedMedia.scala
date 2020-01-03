@@ -4,7 +4,6 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kinesisvideoarchivedmedia {
@@ -26,11 +25,10 @@ package object kinesisvideoarchivedmedia {
   type HLSPlaybackMode              = String
   type HLSStreamingSessionURL       = String
   type PageLimit                    = Double
-  type Payload =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ResourceARN = String
-  type StreamName  = String
-  type Timestamp   = js.Date
+  type Payload                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ResourceARN                  = String
+  type StreamName                   = String
+  type Timestamp                    = js.Date
 
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 

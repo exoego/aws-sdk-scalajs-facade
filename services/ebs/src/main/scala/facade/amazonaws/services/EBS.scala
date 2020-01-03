@@ -4,12 +4,10 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object ebs {
-  type BlockData =
-    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlockData         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BlockIndex        = Int
   type BlockSize         = Int
   type BlockToken        = String

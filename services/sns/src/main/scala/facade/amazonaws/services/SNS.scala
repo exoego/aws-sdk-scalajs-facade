@@ -4,13 +4,12 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sns {
   type ActionsList                = js.Array[action]
   type AmazonResourceName         = String
-  type Binary                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Binary                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DelegatesList              = js.Array[delegate]
   type ListOfEndpoints            = js.Array[Endpoint]
   type ListOfPlatformApplications = js.Array[PlatformApplication]

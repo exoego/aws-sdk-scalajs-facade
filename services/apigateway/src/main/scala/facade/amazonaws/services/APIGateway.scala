@@ -4,14 +4,13 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
-import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object apigateway {
   type ApiKeySourceType                       = String
   type ApiKeysFormat                          = String
   type AuthorizerType                         = String
-  type Blob                                   = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Blob                                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CacheClusterSize                       = String
   type CacheClusterStatus                     = String
   type ConnectionType                         = String
