@@ -1,9 +1,9 @@
 package net.exoego
 
 import facade.amazonaws.{AWSConfig, services}
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 
-class AllServicesTest extends FunSuite {
+class AllServicesTest extends AnyFunSuite {
   test("ACM") {
     val instance = new services.acm.ACM
   }
