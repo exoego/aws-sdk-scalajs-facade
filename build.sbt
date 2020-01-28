@@ -252,6 +252,7 @@ lazy val awsWorkSpaces                      = defineAwsProject("WorkSpaces")
 lazy val awsXRay                            = defineAwsProject("XRay")
 
 lazy val root = (project in file("."))
+  .settings(name := "aws-sdk-scalajs-facade")
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(SharedConfig.noPublishingSettings)
