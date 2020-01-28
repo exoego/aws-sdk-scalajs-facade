@@ -31,4 +31,8 @@ object AttributeValueMapper {
     AttributeValueMapper("N", x => js.Any.fromString(x.toString))
   implicit val AttributeValueTypeDouble: AttributeValueMapper[Double] =
     AttributeValueMapper("N", x => js.Any.fromString(x.toString))
+  implicit val AttributeValueTypeScalaBigInt: AttributeValueMapper[BigInt] =
+    AttributeValueMapper("N", n => js.Any.fromString(n.toString))
+  implicit val AttributeValueTypeScalaBigDecimal: AttributeValueMapper[BigDecimal] =
+    AttributeValueMapper("N", n => js.Any.fromString(n.toString))
 }

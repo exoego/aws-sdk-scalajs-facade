@@ -68,6 +68,16 @@ class AttributeValueMapperTest extends AnyFunSuite {
     assert(AttributeValueTypeDouble(Double.MaxValue) === AttributeValue.NFromDouble(Double.MaxValue))
   }
 
+  test("AttributeValueTypeScalaBigInt") {
+    assert(
+      AttributeValueTypeScalaBigInt(BigInt(Long.MaxValue) + BigInt(1)) === AttributeValue(N = "9223372036854775808")
+    )
+  }
+
+  test("AttributeValueTypeScalaBigDecimal") {
+    assert(AttributeValueTypeScalaBigDecimal(BigDecimal("1.67")) === AttributeValue(N = "1.67"))
+  }
+
   test("AttributeValueTypeMapT") {
     val mapper = AttributeValueTypeMapT[String]
     assert(
