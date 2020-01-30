@@ -25,7 +25,9 @@ def defineAwsProject(service: String): Project = {
     .settings(
       name := s"${SharedConfig.libraryName}-$lowerServiceName",
       libraryDependencies ++= Seq(
-        )
+        Dependencies.shared.scalatest.value,
+        Dependencies.shared.scalatestHelper.value
+      )
     )
     .enablePlugins(ScalaJSPlugin)
 }
@@ -266,7 +268,8 @@ lazy val all = (project in file("all"))
   .settings(
     name := s"${SharedConfig.libraryName}",
     libraryDependencies ++= Seq(
-      Dependencies.shared.scalatest.value
+      Dependencies.shared.scalatest.value,
+      Dependencies.shared.scalatestHelper.value
     ),
     npmDependencies in Test ++= Seq(
       "aws-sdk" -> "2.596.0"
