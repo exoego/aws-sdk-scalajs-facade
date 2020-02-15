@@ -1654,7 +1654,8 @@ package directconnect {
   object DescribeDirectConnectGatewayAssociationProposalsResult {
     @inline
     def apply(
-        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] = js.undefined,
+        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] =
+          js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAssociationProposalsResult = {
       val __obj = js.Dynamic.literal()
