@@ -10,11 +10,15 @@ object SharedConfig {
   val libraryName = "aws-sdk-scalajs-facade"
 
   val settings = Seq(
-    scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault", "-deprecation"),
-    scalaJSModuleKind := ModuleKind.CommonJSModule,
+    scalacOptions ++= Seq("-deprecation"),
+    scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault").filter { _ =>
+      Option(System.getenv("SCALAJS_VERSION")).getOrElse("1.0.0").startsWith("0.6.")
+    },
     scalaJSLinkerConfig ~= {
       val isCI = Option(System.getenv("CI")).exists(_.contains("true"))
-      _.withBatchMode(isCI).withSourceMap(false)
+      _.withBatchMode(isCI)
+        .withSourceMap(false)
+        .withModuleKind(ModuleKind.CommonJSModule)
     },
     licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     scmInfo := Some(
@@ -59,8 +63,7 @@ object SharedConfig {
       releaseStepCommand("sonatypeBundleRelease"),
       setNextVersion,
       commitNextVersion
-    ),
-    skip in packageJSDependencies := false
+    )
   )
 
   val noPublishingSettings = Seq(
