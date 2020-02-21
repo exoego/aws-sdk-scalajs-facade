@@ -9,11 +9,7 @@ jdk:
   - openjdk11
 
 script:
-  - if [[ $TRAVIS_SCALA_VERSION == 2.13.* ]]; then
-      sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck all/test;
-    else
-      sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test;
-    fi
+  - sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test;
 
 before_cache:
   - rm -fv $HOME/.ivy2/.sbt.ivy.lock
