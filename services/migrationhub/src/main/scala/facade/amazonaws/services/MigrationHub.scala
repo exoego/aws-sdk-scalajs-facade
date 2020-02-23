@@ -8,6 +8,8 @@ import facade.amazonaws._
 
 package object migrationhub {
   type ApplicationId                   = String
+  type ApplicationIds                  = js.Array[ApplicationId]
+  type ApplicationStateList            = js.Array[ApplicationState]
   type ApplicationStatus               = String
   type ConfigurationId                 = String
   type CreatedArtifactDescription      = String
@@ -62,6 +64,8 @@ package object migrationhub {
     ): Future[DisassociateDiscoveredResourceResult] = service.disassociateDiscoveredResource(params).promise.toFuture
     @inline def importMigrationTaskFuture(params: ImportMigrationTaskRequest): Future[ImportMigrationTaskResult] =
       service.importMigrationTask(params).promise.toFuture
+    @inline def listApplicationStatesFuture(params: ListApplicationStatesRequest): Future[ListApplicationStatesResult] =
+      service.listApplicationStates(params).promise.toFuture
     @inline def listCreatedArtifactsFuture(params: ListCreatedArtifactsRequest): Future[ListCreatedArtifactsResult] =
       service.listCreatedArtifacts(params).promise.toFuture
     @inline def listDiscoveredResourcesFuture(
@@ -108,9 +112,10 @@ package migrationhub {
     ): Request[DisassociateCreatedArtifactResult] = js.native
     def disassociateDiscoveredResource(
         params: DisassociateDiscoveredResourceRequest
-    ): Request[DisassociateDiscoveredResourceResult]                                                   = js.native
-    def importMigrationTask(params: ImportMigrationTaskRequest): Request[ImportMigrationTaskResult]    = js.native
-    def listCreatedArtifacts(params: ListCreatedArtifactsRequest): Request[ListCreatedArtifactsResult] = js.native
+    ): Request[DisassociateDiscoveredResourceResult]                                                      = js.native
+    def importMigrationTask(params: ImportMigrationTaskRequest): Request[ImportMigrationTaskResult]       = js.native
+    def listApplicationStates(params: ListApplicationStatesRequest): Request[ListApplicationStatesResult] = js.native
+    def listCreatedArtifacts(params: ListCreatedArtifactsRequest): Request[ListCreatedArtifactsResult]    = js.native
     def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResult] =
       js.native
     def listMigrationTasks(params: ListMigrationTasksRequest): Request[ListMigrationTasksResult] = js.native
@@ -120,6 +125,31 @@ package migrationhub {
     def notifyMigrationTaskState(params: NotifyMigrationTaskStateRequest): Request[NotifyMigrationTaskStateResult] =
       js.native
     def putResourceAttributes(params: PutResourceAttributesRequest): Request[PutResourceAttributesResult] = js.native
+  }
+
+  /**
+    * The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
+    */
+  @js.native
+  trait ApplicationState extends js.Object {
+    var ApplicationId: js.UndefOr[ApplicationId]
+    var ApplicationStatus: js.UndefOr[ApplicationStatus]
+    var LastUpdatedTime: js.UndefOr[UpdateDateTime]
+  }
+
+  object ApplicationState {
+    @inline
+    def apply(
+        ApplicationId: js.UndefOr[ApplicationId] = js.undefined,
+        ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
+        LastUpdatedTime: js.UndefOr[UpdateDateTime] = js.undefined
+    ): ApplicationState = {
+      val __obj = js.Dynamic.literal()
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      ApplicationStatus.foreach(__v => __obj.updateDynamic("ApplicationStatus")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationState]
+    }
   }
 
   object ApplicationStatusEnum {
@@ -514,6 +544,47 @@ package migrationhub {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportMigrationTaskResult]
+    }
+  }
+
+  @js.native
+  trait ListApplicationStatesRequest extends js.Object {
+    var ApplicationIds: js.UndefOr[ApplicationIds]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListApplicationStatesRequest {
+    @inline
+    def apply(
+        ApplicationIds: js.UndefOr[ApplicationIds] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListApplicationStatesRequest = {
+      val __obj = js.Dynamic.literal()
+      ApplicationIds.foreach(__v => __obj.updateDynamic("ApplicationIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationStatesRequest]
+    }
+  }
+
+  @js.native
+  trait ListApplicationStatesResult extends js.Object {
+    var ApplicationStateList: js.UndefOr[ApplicationStateList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListApplicationStatesResult {
+    @inline
+    def apply(
+        ApplicationStateList: js.UndefOr[ApplicationStateList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListApplicationStatesResult = {
+      val __obj = js.Dynamic.literal()
+      ApplicationStateList.foreach(__v => __obj.updateDynamic("ApplicationStateList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationStatesResult]
     }
   }
 

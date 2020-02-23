@@ -2815,9 +2815,10 @@ package storagegateway {
     val VMWARE    = "VMWARE"
     val `HYPER-V` = "HYPER-V"
     val EC2       = "EC2"
+    val KVM       = "KVM"
     val OTHER     = "OTHER"
 
-    val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, OTHER))
+    val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
   }
 
   @js.native

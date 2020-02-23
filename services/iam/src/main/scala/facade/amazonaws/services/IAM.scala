@@ -2332,6 +2332,7 @@ package iam {
     var MatchedStatements: js.UndefOr[StatementListType]
     var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
     var OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail]
+    var PermissionsBoundaryDecisionDetail: js.UndefOr[PermissionsBoundaryDecisionDetail]
     var ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType]
   }
 
@@ -2345,6 +2346,7 @@ package iam {
         MatchedStatements: js.UndefOr[StatementListType] = js.undefined,
         MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
         OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail] = js.undefined,
+        PermissionsBoundaryDecisionDetail: js.UndefOr[PermissionsBoundaryDecisionDetail] = js.undefined,
         ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType] = js.undefined
     ): EvaluationResult = {
       val __obj = js.Dynamic.literal(
@@ -2358,6 +2360,9 @@ package iam {
       MissingContextValues.foreach(__v => __obj.updateDynamic("MissingContextValues")(__v.asInstanceOf[js.Any]))
       OrganizationsDecisionDetail.foreach(__v =>
         __obj.updateDynamic("OrganizationsDecisionDetail")(__v.asInstanceOf[js.Any])
+      )
+      PermissionsBoundaryDecisionDetail.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryDecisionDetail")(__v.asInstanceOf[js.Any])
       )
       ResourceSpecificResults.foreach(__v => __obj.updateDynamic("ResourceSpecificResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
@@ -5221,6 +5226,27 @@ package iam {
   }
 
   /**
+    * Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.
+    */
+  @js.native
+  trait PermissionsBoundaryDecisionDetail extends js.Object {
+    var AllowedByPermissionsBoundary: js.UndefOr[booleanType]
+  }
+
+  object PermissionsBoundaryDecisionDetail {
+    @inline
+    def apply(
+        AllowedByPermissionsBoundary: js.UndefOr[booleanType] = js.undefined
+    ): PermissionsBoundaryDecisionDetail = {
+      val __obj = js.Dynamic.literal()
+      AllowedByPermissionsBoundary.foreach(__v =>
+        __obj.updateDynamic("AllowedByPermissionsBoundary")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PermissionsBoundaryDecisionDetail]
+    }
+  }
+
+  /**
     * Contains information about a managed policy.
     *  This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
     *  For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
@@ -5727,6 +5753,7 @@ package iam {
     var EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType]
     var MatchedStatements: js.UndefOr[StatementListType]
     var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
+    var PermissionsBoundaryDecisionDetail: js.UndefOr[PermissionsBoundaryDecisionDetail]
   }
 
   object ResourceSpecificResult {
@@ -5736,7 +5763,8 @@ package iam {
         EvalResourceName: ResourceNameType,
         EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType] = js.undefined,
         MatchedStatements: js.UndefOr[StatementListType] = js.undefined,
-        MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined
+        MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
+        PermissionsBoundaryDecisionDetail: js.UndefOr[PermissionsBoundaryDecisionDetail] = js.undefined
     ): ResourceSpecificResult = {
       val __obj = js.Dynamic.literal(
         "EvalResourceDecision" -> EvalResourceDecision.asInstanceOf[js.Any],
@@ -5746,6 +5774,9 @@ package iam {
       EvalDecisionDetails.foreach(__v => __obj.updateDynamic("EvalDecisionDetails")(__v.asInstanceOf[js.Any]))
       MatchedStatements.foreach(__v => __obj.updateDynamic("MatchedStatements")(__v.asInstanceOf[js.Any]))
       MissingContextValues.foreach(__v => __obj.updateDynamic("MissingContextValues")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryDecisionDetail.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryDecisionDetail")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ResourceSpecificResult]
     }
   }
@@ -6277,6 +6308,7 @@ package iam {
     var ContextEntries: js.UndefOr[ContextEntryListType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PermissionsBoundaryPolicyInputList: js.UndefOr[SimulationPolicyListType]
     var ResourceArns: js.UndefOr[ResourceNameListType]
     var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
     var ResourceOwner: js.UndefOr[ResourceNameType]
@@ -6292,6 +6324,7 @@ package iam {
         ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+        PermissionsBoundaryPolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
         ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
         ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
         ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
@@ -6306,6 +6339,9 @@ package iam {
       ContextEntries.foreach(__v => __obj.updateDynamic("ContextEntries")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryPolicyInputList.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryPolicyInputList")(__v.asInstanceOf[js.Any])
+      )
       ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
       ResourceHandlingOption.foreach(__v => __obj.updateDynamic("ResourceHandlingOption")(__v.asInstanceOf[js.Any]))
       ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
@@ -6347,6 +6383,7 @@ package iam {
     var ContextEntries: js.UndefOr[ContextEntryListType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PermissionsBoundaryPolicyInputList: js.UndefOr[SimulationPolicyListType]
     var PolicyInputList: js.UndefOr[SimulationPolicyListType]
     var ResourceArns: js.UndefOr[ResourceNameListType]
     var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
@@ -6363,6 +6400,7 @@ package iam {
         ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+        PermissionsBoundaryPolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
         PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
         ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
         ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
@@ -6378,6 +6416,9 @@ package iam {
       ContextEntries.foreach(__v => __obj.updateDynamic("ContextEntries")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryPolicyInputList.foreach(__v =>
+        __obj.updateDynamic("PermissionsBoundaryPolicyInputList")(__v.asInstanceOf[js.Any])
+      )
       PolicyInputList.foreach(__v => __obj.updateDynamic("PolicyInputList")(__v.asInstanceOf[js.Any]))
       ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
       ResourceHandlingOption.foreach(__v => __obj.updateDynamic("ResourceHandlingOption")(__v.asInstanceOf[js.Any]))

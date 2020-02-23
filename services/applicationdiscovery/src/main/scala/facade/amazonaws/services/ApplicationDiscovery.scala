@@ -1125,7 +1125,7 @@ package applicationdiscovery {
 
   /**
     * A filter that can use conditional operators.
-    *  For more information about filters, see [[http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html|Querying Discovered Configuration Items]].
+    *  For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>AWS Application Discovery Service User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {

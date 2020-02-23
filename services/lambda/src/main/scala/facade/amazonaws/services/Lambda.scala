@@ -1729,9 +1729,21 @@ package lambda {
     val InsufficientRolePermissions = "InsufficientRolePermissions"
     val InvalidConfiguration        = "InvalidConfiguration"
     val InternalError               = "InternalError"
+    val SubnetOutOfIPAddresses      = "SubnetOutOfIPAddresses"
+    val InvalidSubnet               = "InvalidSubnet"
+    val InvalidSecurityGroup        = "InvalidSecurityGroup"
 
-    val values =
-      js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError))
+    val values = js.Object.freeze(
+      js.Array(
+        EniLimitExceeded,
+        InsufficientRolePermissions,
+        InvalidConfiguration,
+        InternalError,
+        SubnetOutOfIPAddresses,
+        InvalidSubnet,
+        InvalidSecurityGroup
+      )
+    )
   }
 
   /**
@@ -2634,6 +2646,7 @@ package lambda {
     val `nodejs4.3-edge` = "nodejs4.3-edge"
     val `go1.x`          = "go1.x"
     val `ruby2.5`        = "ruby2.5"
+    val `ruby2.7`        = "ruby2.7"
     val provided         = "provided"
 
     val values = js.Object.freeze(
@@ -2656,6 +2669,7 @@ package lambda {
         `nodejs4.3-edge`,
         `go1.x`,
         `ruby2.5`,
+        `ruby2.7`,
         provided
       )
     )
@@ -2679,6 +2693,8 @@ package lambda {
     val InvalidConfiguration        = "InvalidConfiguration"
     val InternalError               = "InternalError"
     val SubnetOutOfIPAddresses      = "SubnetOutOfIPAddresses"
+    val InvalidSubnet               = "InvalidSubnet"
+    val InvalidSecurityGroup        = "InvalidSecurityGroup"
 
     val values = js.Object.freeze(
       js.Array(
@@ -2689,7 +2705,9 @@ package lambda {
         InsufficientRolePermissions,
         InvalidConfiguration,
         InternalError,
-        SubnetOutOfIPAddresses
+        SubnetOutOfIPAddresses,
+        InvalidSubnet,
+        InvalidSecurityGroup
       )
     )
   }
@@ -2716,7 +2734,7 @@ package lambda {
   }
 
   /**
-    * The function's AWS X-Ray tracing configuration.
+    * The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
     */
   @js.native
   trait TracingConfig extends js.Object {

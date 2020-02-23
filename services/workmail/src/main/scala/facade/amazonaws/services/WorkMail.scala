@@ -7,34 +7,50 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object workmail {
-  type Aliases               = js.Array[EmailAddress]
-  type EmailAddress          = String
-  type EntityState           = String
-  type GroupName             = String
-  type Groups                = js.Array[Group]
-  type MailboxQuota          = Int
-  type MailboxSize           = Double
-  type MaxResults            = Int
-  type MemberType            = String
-  type Members               = js.Array[Member]
-  type NextToken             = String
-  type OrganizationId        = String
-  type OrganizationName      = String
-  type OrganizationSummaries = js.Array[OrganizationSummary]
-  type Password              = String
-  type PermissionType        = String
-  type PermissionValues      = js.Array[PermissionType]
-  type Permissions           = js.Array[Permission]
-  type ResourceDelegates     = js.Array[Delegate]
-  type ResourceId            = String
-  type ResourceName          = String
-  type ResourceType          = String
-  type Resources             = js.Array[Resource]
-  type Timestamp             = js.Date
-  type UserName              = String
-  type UserRole              = String
-  type Users                 = js.Array[User]
-  type WorkMailIdentifier    = String
+  type AccessControlRuleAction      = String
+  type AccessControlRuleDescription = String
+  type AccessControlRuleEffect      = String
+  type AccessControlRuleName        = String
+  type AccessControlRuleNameList    = js.Array[AccessControlRuleName]
+  type AccessControlRulesList       = js.Array[AccessControlRule]
+  type ActionsList                  = js.Array[AccessControlRuleAction]
+  type Aliases                      = js.Array[EmailAddress]
+  type AmazonResourceName           = String
+  type EmailAddress                 = String
+  type EntityState                  = String
+  type GroupName                    = String
+  type Groups                       = js.Array[Group]
+  type IpAddress                    = String
+  type IpRange                      = String
+  type IpRangeList                  = js.Array[IpRange]
+  type MailboxQuota                 = Int
+  type MailboxSize                  = Double
+  type MaxResults                   = Int
+  type MemberType                   = String
+  type Members                      = js.Array[Member]
+  type NextToken                    = String
+  type OrganizationId               = String
+  type OrganizationName             = String
+  type OrganizationSummaries        = js.Array[OrganizationSummary]
+  type Password                     = String
+  type PermissionType               = String
+  type PermissionValues             = js.Array[PermissionType]
+  type Permissions                  = js.Array[Permission]
+  type ResourceDelegates            = js.Array[Delegate]
+  type ResourceId                   = String
+  type ResourceName                 = String
+  type ResourceType                 = String
+  type Resources                    = js.Array[Resource]
+  type TagKey                       = String
+  type TagKeyList                   = js.Array[TagKey]
+  type TagList                      = js.Array[Tag]
+  type TagValue                     = String
+  type Timestamp                    = js.Date
+  type UserIdList                   = js.Array[WorkMailIdentifier]
+  type UserName                     = String
+  type UserRole                     = String
+  type Users                        = js.Array[User]
+  type WorkMailIdentifier           = String
 
   implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
@@ -52,6 +68,9 @@ package object workmail {
       service.createResource(params).promise.toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
+    @inline def deleteAccessControlRuleFuture(
+        params: DeleteAccessControlRuleRequest
+    ): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise.toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] =
       service.deleteAlias(params).promise.toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
@@ -81,8 +100,14 @@ package object workmail {
     @inline def disassociateMemberFromGroupFuture(
         params: DisassociateMemberFromGroupRequest
     ): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise.toFuture
+    @inline def getAccessControlEffectFuture(
+        params: GetAccessControlEffectRequest
+    ): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise.toFuture
     @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
       service.getMailboxDetails(params).promise.toFuture
+    @inline def listAccessControlRulesFuture(
+        params: ListAccessControlRulesRequest
+    ): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise.toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture
     @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] =
@@ -99,8 +124,12 @@ package object workmail {
     ): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise.toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
       service.listResources(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
+    @inline def putAccessControlRuleFuture(params: PutAccessControlRuleRequest): Future[PutAccessControlRuleResponse] =
+      service.putAccessControlRule(params).promise.toFuture
     @inline def putMailboxPermissionsFuture(
         params: PutMailboxPermissionsRequest
     ): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise.toFuture
@@ -108,6 +137,10 @@ package object workmail {
       service.registerToWorkMail(params).promise.toFuture
     @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
       service.resetPassword(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] =
       service.updateMailboxQuota(params).promise.toFuture
     @inline def updatePrimaryEmailAddressFuture(
@@ -133,8 +166,10 @@ package workmail {
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]          = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse]             = js.native
-    def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse]          = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse]          = js.native
+    def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] =
+      js.native
+    def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] =
       js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
@@ -150,25 +185,89 @@ package workmail {
     ): Request[DisassociateDelegateFromResourceResponse] = js.native
     def disassociateMemberFromGroup(
         params: DisassociateMemberFromGroupRequest
-    ): Request[DisassociateMemberFromGroupResponse]                                             = js.native
+    ): Request[DisassociateMemberFromGroupResponse] = js.native
+    def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] =
+      js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                   = js.native
-    def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse]    = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                      = js.native
+    def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] =
+      js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                = js.native
+    def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                   = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] =
       js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse]             = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
     def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]                         = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
+    def putAccessControlRule(params: PutAccessControlRuleRequest): Request[PutAccessControlRuleResponse]    = js.native
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
     def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse]          = js.native
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse]          = js.native
     def updatePrimaryEmailAddress(
         params: UpdatePrimaryEmailAddressRequest
     ): Request[UpdatePrimaryEmailAddressResponse]                                      = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
+  }
+
+  /**
+    * A rule that controls access to an Amazon WorkMail organization.
+    */
+  @js.native
+  trait AccessControlRule extends js.Object {
+    var Actions: js.UndefOr[ActionsList]
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[AccessControlRuleDescription]
+    var Effect: js.UndefOr[AccessControlRuleEffect]
+    var IpRanges: js.UndefOr[IpRangeList]
+    var Name: js.UndefOr[AccessControlRuleName]
+    var NotActions: js.UndefOr[ActionsList]
+    var NotIpRanges: js.UndefOr[IpRangeList]
+    var NotUserIds: js.UndefOr[UserIdList]
+    var UserIds: js.UndefOr[UserIdList]
+  }
+
+  object AccessControlRule {
+    @inline
+    def apply(
+        Actions: js.UndefOr[ActionsList] = js.undefined,
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[AccessControlRuleDescription] = js.undefined,
+        Effect: js.UndefOr[AccessControlRuleEffect] = js.undefined,
+        IpRanges: js.UndefOr[IpRangeList] = js.undefined,
+        Name: js.UndefOr[AccessControlRuleName] = js.undefined,
+        NotActions: js.UndefOr[ActionsList] = js.undefined,
+        NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
+        NotUserIds: js.UndefOr[UserIdList] = js.undefined,
+        UserIds: js.UndefOr[UserIdList] = js.undefined
+    ): AccessControlRule = {
+      val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
+      NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
+      NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
+      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessControlRule]
+    }
+  }
+
+  object AccessControlRuleEffectEnum {
+    val ALLOW = "ALLOW"
+    val DENY  = "DENY"
+
+    val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   @js.native
@@ -456,6 +555,40 @@ package workmail {
   }
 
   @js.native
+  trait DeleteAccessControlRuleRequest extends js.Object {
+    var Name: AccessControlRuleName
+    var OrganizationId: js.UndefOr[OrganizationId]
+  }
+
+  object DeleteAccessControlRuleRequest {
+    @inline
+    def apply(
+        Name: AccessControlRuleName,
+        OrganizationId: js.UndefOr[OrganizationId] = js.undefined
+    ): DeleteAccessControlRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccessControlRuleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessControlRuleResponse extends js.Object {}
+
+  object DeleteAccessControlRuleResponse {
+    @inline
+    def apply(
+        ): DeleteAccessControlRuleResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteAccessControlRuleResponse]
+    }
+  }
+
+  @js.native
   trait DeleteAliasRequest extends js.Object {
     var Alias: EmailAddress
     var EntityId: WorkMailIdentifier
@@ -737,6 +870,7 @@ package workmail {
 
   @js.native
   trait DescribeOrganizationResponse extends js.Object {
+    var ARN: js.UndefOr[AmazonResourceName]
     var Alias: js.UndefOr[OrganizationName]
     var CompletedDate: js.UndefOr[Timestamp]
     var DefaultMailDomain: js.UndefOr[String]
@@ -750,6 +884,7 @@ package workmail {
   object DescribeOrganizationResponse {
     @inline
     def apply(
+        ARN: js.UndefOr[AmazonResourceName] = js.undefined,
         Alias: js.UndefOr[OrganizationName] = js.undefined,
         CompletedDate: js.UndefOr[Timestamp] = js.undefined,
         DefaultMailDomain: js.UndefOr[String] = js.undefined,
@@ -760,6 +895,7 @@ package workmail {
         State: js.UndefOr[String] = js.undefined
     ): DescribeOrganizationResponse = {
       val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       CompletedDate.foreach(__v => __obj.updateDynamic("CompletedDate")(__v.asInstanceOf[js.Any]))
       DefaultMailDomain.foreach(__v => __obj.updateDynamic("DefaultMailDomain")(__v.asInstanceOf[js.Any]))
@@ -971,6 +1107,52 @@ package workmail {
   }
 
   @js.native
+  trait GetAccessControlEffectRequest extends js.Object {
+    var Action: AccessControlRuleAction
+    var IpAddress: IpAddress
+    var OrganizationId: OrganizationId
+    var UserId: WorkMailIdentifier
+  }
+
+  object GetAccessControlEffectRequest {
+    @inline
+    def apply(
+        Action: AccessControlRuleAction,
+        IpAddress: IpAddress,
+        OrganizationId: OrganizationId,
+        UserId: WorkMailIdentifier
+    ): GetAccessControlEffectRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action"         -> Action.asInstanceOf[js.Any],
+        "IpAddress"      -> IpAddress.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAccessControlEffectRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessControlEffectResponse extends js.Object {
+    var Effect: js.UndefOr[AccessControlRuleEffect]
+    var MatchedRules: js.UndefOr[AccessControlRuleNameList]
+  }
+
+  object GetAccessControlEffectResponse {
+    @inline
+    def apply(
+        Effect: js.UndefOr[AccessControlRuleEffect] = js.undefined,
+        MatchedRules: js.UndefOr[AccessControlRuleNameList] = js.undefined
+    ): GetAccessControlEffectResponse = {
+      val __obj = js.Dynamic.literal()
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessControlEffectResponse]
+    }
+  }
+
+  @js.native
   trait GetMailboxDetailsRequest extends js.Object {
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
@@ -1041,6 +1223,40 @@ package workmail {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
+    }
+  }
+
+  @js.native
+  trait ListAccessControlRulesRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object ListAccessControlRulesRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): ListAccessControlRulesRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListAccessControlRulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessControlRulesResponse extends js.Object {
+    var Rules: js.UndefOr[AccessControlRulesList]
+  }
+
+  object ListAccessControlRulesResponse {
+    @inline
+    def apply(
+        Rules: js.UndefOr[AccessControlRulesList] = js.undefined
+    ): ListAccessControlRulesResponse = {
+      val __obj = js.Dynamic.literal()
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessControlRulesResponse]
     }
   }
 
@@ -1353,6 +1569,40 @@ package workmail {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListUsersRequest extends js.Object {
     var OrganizationId: OrganizationId
     var MaxResults: js.UndefOr[MaxResults]
@@ -1497,6 +1747,64 @@ package workmail {
     val SEND_ON_BEHALF = "SEND_ON_BEHALF"
 
     val values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
+  }
+
+  @js.native
+  trait PutAccessControlRuleRequest extends js.Object {
+    var Description: AccessControlRuleDescription
+    var Effect: AccessControlRuleEffect
+    var Name: AccessControlRuleName
+    var OrganizationId: OrganizationId
+    var Actions: js.UndefOr[ActionsList]
+    var IpRanges: js.UndefOr[IpRangeList]
+    var NotActions: js.UndefOr[ActionsList]
+    var NotIpRanges: js.UndefOr[IpRangeList]
+    var NotUserIds: js.UndefOr[UserIdList]
+    var UserIds: js.UndefOr[UserIdList]
+  }
+
+  object PutAccessControlRuleRequest {
+    @inline
+    def apply(
+        Description: AccessControlRuleDescription,
+        Effect: AccessControlRuleEffect,
+        Name: AccessControlRuleName,
+        OrganizationId: OrganizationId,
+        Actions: js.UndefOr[ActionsList] = js.undefined,
+        IpRanges: js.UndefOr[IpRangeList] = js.undefined,
+        NotActions: js.UndefOr[ActionsList] = js.undefined,
+        NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
+        NotUserIds: js.UndefOr[UserIdList] = js.undefined,
+        UserIds: js.UndefOr[UserIdList] = js.undefined
+    ): PutAccessControlRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Description"    -> Description.asInstanceOf[js.Any],
+        "Effect"         -> Effect.asInstanceOf[js.Any],
+        "Name"           -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
+      NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
+      NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
+      NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
+      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccessControlRuleRequest]
+    }
+  }
+
+  @js.native
+  trait PutAccessControlRuleResponse extends js.Object {}
+
+  object PutAccessControlRuleResponse {
+    @inline
+    def apply(
+        ): PutAccessControlRuleResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutAccessControlRuleResponse]
+    }
   }
 
   @js.native
@@ -1655,6 +1963,98 @@ package workmail {
     val EQUIPMENT = "EQUIPMENT"
 
     val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
+  }
+
+  /**
+    * Describes a tag applied to a resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native

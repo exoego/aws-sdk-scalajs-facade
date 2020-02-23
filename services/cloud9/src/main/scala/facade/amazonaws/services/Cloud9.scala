@@ -10,6 +10,7 @@ package object cloud9 {
   type AutomaticStopTimeMinutes   = Int
   type BoundedEnvironmentIdList   = js.Array[EnvironmentId]
   type ClientRequestToken         = String
+  type EnvironmentArn             = String
   type EnvironmentDescription     = String
   type EnvironmentId              = String
   type EnvironmentIdList          = js.Array[EnvironmentId]
@@ -25,6 +26,10 @@ package object cloud9 {
   type Permissions                = String
   type PermissionsList            = js.Array[Permissions]
   type SubnetId                   = String
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagList                    = js.Array[Tag]
+  type TagValue                   = String
   type Timestamp                  = js.Date
   type UserArn                    = String
 
@@ -50,6 +55,12 @@ package object cloud9 {
       service.describeEnvironments(params).promise.toFuture
     @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[ListEnvironmentsResult] =
       service.listEnvironments(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] =
       service.updateEnvironment(params).promise.toFuture
     @inline def updateEnvironmentMembershipFuture(
@@ -79,6 +90,9 @@ package cloud9 {
       js.native
     def describeEnvironments(params: DescribeEnvironmentsRequest): Request[DescribeEnvironmentsResult] = js.native
     def listEnvironments(params: ListEnvironmentsRequest): Request[ListEnvironmentsResult]             = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]  = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                          = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                    = js.native
     def updateEnvironment(params: UpdateEnvironmentRequest): Request[UpdateEnvironmentResult]          = js.native
     def updateEnvironmentMembership(
         params: UpdateEnvironmentMembershipRequest
@@ -94,6 +108,7 @@ package cloud9 {
     var description: js.UndefOr[EnvironmentDescription]
     var ownerArn: js.UndefOr[UserArn]
     var subnetId: js.UndefOr[SubnetId]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateEnvironmentEC2Request {
@@ -105,7 +120,8 @@ package cloud9 {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
         ownerArn: js.UndefOr[UserArn] = js.undefined,
-        subnetId: js.UndefOr[SubnetId] = js.undefined
+        subnetId: js.UndefOr[SubnetId] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateEnvironmentEC2Request = {
       val __obj = js.Dynamic.literal(
         "instanceType" -> instanceType.asInstanceOf[js.Any],
@@ -117,6 +133,7 @@ package cloud9 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentEC2Request]
     }
   }
@@ -520,6 +537,40 @@ package cloud9 {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: EnvironmentArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: EnvironmentArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   object MemberPermissionsEnum {
     val `read-write` = "read-write"
     val `read-only`  = "read-only"
@@ -533,6 +584,98 @@ package cloud9 {
     val `read-only`  = "read-only"
 
     val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
+  }
+
+  /**
+    * Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: EnvironmentArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: EnvironmentArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: EnvironmentArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: EnvironmentArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native

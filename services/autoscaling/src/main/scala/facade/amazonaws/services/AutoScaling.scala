@@ -96,6 +96,7 @@ package object autoscaling {
   type ResourceName                        = String
   type ScalingActivityStatusCode           = String
   type ScalingPolicies                     = js.Array[ScalingPolicy]
+  type ScalingPolicyEnabled                = Boolean
   type ScheduledActionNames                = js.Array[ResourceName]
   type ScheduledUpdateGroupActionRequests  = js.Array[ScheduledUpdateGroupActionRequest]
   type ScheduledUpdateGroupActions         = js.Array[ScheduledUpdateGroupAction]
@@ -2835,6 +2836,7 @@ package autoscaling {
     var PolicyName: XmlStringMaxLen255
     var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
     var Cooldown: js.UndefOr[Cooldown]
+    var Enabled: js.UndefOr[ScalingPolicyEnabled]
     var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
     var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
     var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
@@ -2852,6 +2854,7 @@ package autoscaling {
         PolicyName: XmlStringMaxLen255,
         AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Cooldown: js.UndefOr[Cooldown] = js.undefined,
+        Enabled: js.UndefOr[ScalingPolicyEnabled] = js.undefined,
         EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
         MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
         MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
@@ -2868,6 +2871,7 @@ package autoscaling {
 
       AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
       Cooldown.foreach(__v => __obj.updateDynamic("Cooldown")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
       MetricAggregationType.foreach(__v => __obj.updateDynamic("MetricAggregationType")(__v.asInstanceOf[js.Any]))
       MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
@@ -3005,6 +3009,7 @@ package autoscaling {
     var Alarms: js.UndefOr[Alarms]
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
     var Cooldown: js.UndefOr[Cooldown]
+    var Enabled: js.UndefOr[ScalingPolicyEnabled]
     var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
     var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
     var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
@@ -3024,6 +3029,7 @@ package autoscaling {
         Alarms: js.UndefOr[Alarms] = js.undefined,
         AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Cooldown: js.UndefOr[Cooldown] = js.undefined,
+        Enabled: js.UndefOr[ScalingPolicyEnabled] = js.undefined,
         EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
         MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
         MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
@@ -3040,6 +3046,7 @@ package autoscaling {
       Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
       AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
       Cooldown.foreach(__v => __obj.updateDynamic("Cooldown")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
       MetricAggregationType.foreach(__v => __obj.updateDynamic("MetricAggregationType")(__v.asInstanceOf[js.Any]))
       MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))

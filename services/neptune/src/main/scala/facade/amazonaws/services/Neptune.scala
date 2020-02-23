@@ -213,6 +213,10 @@ package object neptune {
     @inline def restoreDBClusterToPointInTimeFuture(
         params: RestoreDBClusterToPointInTimeMessage
     ): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise.toFuture
+    @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] =
+      service.startDBCluster(params).promise.toFuture
+    @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] =
+      service.stopDBCluster(params).promise.toFuture
   }
 }
 
@@ -324,7 +328,9 @@ package neptune {
     ): Request[RestoreDBClusterFromSnapshotResult] = js.native
     def restoreDBClusterToPointInTime(
         params: RestoreDBClusterToPointInTimeMessage
-    ): Request[RestoreDBClusterToPointInTimeResult] = js.native
+    ): Request[RestoreDBClusterToPointInTimeResult]                                  = js.native
+    def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
+    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]    = js.native
   }
 
   @js.native
@@ -664,6 +670,7 @@ package neptune {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -692,6 +699,7 @@ package neptune {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -721,6 +729,7 @@ package neptune {
       )
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -863,6 +872,7 @@ package neptune {
     var DBParameterGroupName: js.UndefOr[String]
     var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
     var DBSubnetGroupName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
@@ -910,6 +920,7 @@ package neptune {
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
@@ -956,6 +967,7 @@ package neptune {
       DBParameterGroupName.foreach(__v => __obj.updateDynamic("DBParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSecurityGroups.foreach(__v => __obj.updateDynamic("DBSecurityGroups")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
@@ -1173,6 +1185,7 @@ package neptune {
     var DBSubnetGroup: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DbClusterResourceId: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EarliestRestorableTime: js.UndefOr[TStamp]
     var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var Endpoint: js.UndefOr[String]
@@ -1214,6 +1227,7 @@ package neptune {
         DBSubnetGroup: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DbClusterResourceId: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
         EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         Endpoint: js.UndefOr[String] = js.undefined,
@@ -1254,6 +1268,7 @@ package neptune {
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DbClusterResourceId.foreach(__v => __obj.updateDynamic("DbClusterResourceId")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EarliestRestorableTime.foreach(__v => __obj.updateDynamic("EarliestRestorableTime")(__v.asInstanceOf[js.Any]))
       EnabledCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
@@ -1720,6 +1735,7 @@ package neptune {
     var DBSubnetGroup: js.UndefOr[DBSubnetGroup]
     var DbInstancePort: js.UndefOr[Int]
     var DbiResourceId: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var DomainMemberships: js.UndefOr[DomainMembershipList]
     var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var Endpoint: js.UndefOr[Endpoint]
@@ -1777,6 +1793,7 @@ package neptune {
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
         DbInstancePort: js.UndefOr[Int] = js.undefined,
         DbiResourceId: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
         EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         Endpoint: js.UndefOr[Endpoint] = js.undefined,
@@ -1831,6 +1848,7 @@ package neptune {
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       DbInstancePort.foreach(__v => __obj.updateDynamic("DbInstancePort")(__v.asInstanceOf[js.Any]))
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
       EnabledCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
@@ -3247,6 +3265,7 @@ package neptune {
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
     var DBClusterParameterGroupName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
@@ -3266,6 +3285,7 @@ package neptune {
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
@@ -3288,6 +3308,7 @@ package neptune {
       DBClusterParameterGroupName.foreach(__v =>
         __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
       )
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v =>
         __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
       )
@@ -3403,6 +3424,7 @@ package neptune {
     var DBPortNumber: js.UndefOr[IntegerOptional]
     var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
     var DBSubnetGroupName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -3444,6 +3466,7 @@ package neptune {
         DBPortNumber: js.UndefOr[IntegerOptional] = js.undefined,
         DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3486,6 +3509,7 @@ package neptune {
       DBPortNumber.foreach(__v => __obj.updateDynamic("DBPortNumber")(__v.asInstanceOf[js.Any]))
       DBSecurityGroups.foreach(__v => __obj.updateDynamic("DBSecurityGroups")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v =>
@@ -4210,6 +4234,7 @@ package neptune {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -4230,6 +4255,7 @@ package neptune {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -4251,6 +4277,7 @@ package neptune {
       )
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -4289,6 +4316,7 @@ package neptune {
     var SourceDBClusterIdentifier: String
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var KmsKeyId: js.UndefOr[String]
@@ -4308,6 +4336,7 @@ package neptune {
         SourceDBClusterIdentifier: String,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -4328,6 +4357,7 @@ package neptune {
         __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
       )
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -4380,6 +4410,74 @@ package neptune {
         `db-cluster-snapshot`
       )
     )
+  }
+
+  @js.native
+  trait StartDBClusterMessage extends js.Object {
+    var DBClusterIdentifier: String
+  }
+
+  object StartDBClusterMessage {
+    @inline
+    def apply(
+        DBClusterIdentifier: String
+    ): StartDBClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StartDBClusterMessage]
+    }
+  }
+
+  @js.native
+  trait StartDBClusterResult extends js.Object {
+    var DBCluster: js.UndefOr[DBCluster]
+  }
+
+  object StartDBClusterResult {
+    @inline
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): StartDBClusterResult = {
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDBClusterResult]
+    }
+  }
+
+  @js.native
+  trait StopDBClusterMessage extends js.Object {
+    var DBClusterIdentifier: String
+  }
+
+  object StopDBClusterMessage {
+    @inline
+    def apply(
+        DBClusterIdentifier: String
+    ): StopDBClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopDBClusterMessage]
+    }
+  }
+
+  @js.native
+  trait StopDBClusterResult extends js.Object {
+    var DBCluster: js.UndefOr[DBCluster]
+  }
+
+  object StopDBClusterResult {
+    @inline
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): StopDBClusterResult = {
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDBClusterResult]
+    }
   }
 
   /**

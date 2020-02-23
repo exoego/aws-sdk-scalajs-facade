@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object mediatailor {
   type OriginManifestType             = String
   type __integer                      = Int
+  type __integerMin1                  = Int
   type __integerMin1Max100            = Int
   type __listOfPlaybackConfigurations = js.Array[PlaybackConfiguration]
   type __listOf__string               = js.Array[__string]
@@ -185,6 +186,7 @@ package mediatailor {
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
+    var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
     var PlaybackEndpointPrefix: js.UndefOr[__string]
     var SessionInitializationEndpointPrefix: js.UndefOr[__string]
@@ -203,6 +205,7 @@ package mediatailor {
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
         PlaybackEndpointPrefix: js.UndefOr[__string] = js.undefined,
         SessionInitializationEndpointPrefix: js.UndefOr[__string] = js.undefined,
@@ -218,6 +221,9 @@ package mediatailor {
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PersonalizationThresholdSeconds.foreach(__v =>
+        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
+      )
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(__v =>
@@ -361,6 +367,7 @@ package mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var Name: js.UndefOr[__string]
+    var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
     var PlaybackEndpointPrefix: js.UndefOr[__string]
     var SessionInitializationEndpointPrefix: js.UndefOr[__string]
@@ -378,6 +385,7 @@ package mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
         PlaybackEndpointPrefix: js.UndefOr[__string] = js.undefined,
         SessionInitializationEndpointPrefix: js.UndefOr[__string] = js.undefined,
@@ -392,6 +400,9 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PersonalizationThresholdSeconds.foreach(__v =>
+        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
+      )
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(__v =>
@@ -412,6 +423,7 @@ package mediatailor {
     var DashConfiguration: js.UndefOr[DashConfigurationForPut]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
+    var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var SlateAdUrl: js.UndefOr[__string]
     var Tags: js.UndefOr[__mapOf__string]
     var TranscodeProfileName: js.UndefOr[__string]
@@ -426,6 +438,7 @@ package mediatailor {
         DashConfiguration: js.UndefOr[DashConfigurationForPut] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         SlateAdUrl: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
@@ -437,6 +450,9 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PersonalizationThresholdSeconds.foreach(__v =>
+        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
+      )
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
@@ -453,6 +469,7 @@ package mediatailor {
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
     var Name: js.UndefOr[__string]
+    var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
     var PlaybackEndpointPrefix: js.UndefOr[__string]
     var SessionInitializationEndpointPrefix: js.UndefOr[__string]
@@ -471,6 +488,7 @@ package mediatailor {
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
         PlaybackEndpointPrefix: js.UndefOr[__string] = js.undefined,
         SessionInitializationEndpointPrefix: js.UndefOr[__string] = js.undefined,
@@ -486,6 +504,9 @@ package mediatailor {
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PersonalizationThresholdSeconds.foreach(__v =>
+        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
+      )
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(__v =>

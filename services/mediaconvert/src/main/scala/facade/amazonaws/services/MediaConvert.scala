@@ -56,6 +56,9 @@ package object mediaconvert {
   type CmafStreamInfResolution                     = String
   type CmafWriteDASHManifest                       = String
   type CmafWriteHLSManifest                        = String
+  type CmafWriteSegmentTimelineInRepresentation    = String
+  type CmfcScte35Esam                              = String
+  type CmfcScte35Source                            = String
   type ColorMetadata                               = String
   type ColorSpace                                  = String
   type ColorSpaceConversion                        = String
@@ -208,6 +211,7 @@ package object mediaconvert {
   type MovMpeg2FourCCControl                       = String
   type MovPaddingControl                           = String
   type MovReference                                = String
+  type Mp3RateControlMode                          = String
   type Mp4CslgAtom                                 = String
   type Mp4FreeSpaceBox                             = String
   type Mp4MoovPlacement                            = String
@@ -268,6 +272,7 @@ package object mediaconvert {
   type VideoTimecodeInsertion                      = String
   type WavFormat                                   = String
   type __doubleMin0                                = Double
+  type __doubleMin0Max1                            = Double
   type __doubleMin0Max2147483647                   = Double
   type __doubleMinNegative59Max0                   = Double
   type __doubleMinNegative60Max3                   = Double
@@ -275,6 +280,7 @@ package object mediaconvert {
   type __doubleMinNegative6Max3                    = Double
   type __integer                                   = Int
   type __integerMin0Max0                           = Int
+  type __integerMin0Max1                           = Int
   type __integerMin0Max10                          = Int
   type __integerMin0Max100                         = Int
   type __integerMin0Max1000                        = Int
@@ -297,6 +303,7 @@ package object mediaconvert {
   type __integerMin0Max65535                       = Int
   type __integerMin0Max7                           = Int
   type __integerMin0Max8                           = Int
+  type __integerMin0Max9                           = Int
   type __integerMin0Max96                          = Int
   type __integerMin0Max99                          = Int
   type __integerMin1000Max1152000000               = Int
@@ -305,6 +312,7 @@ package object mediaconvert {
   type __integerMin1000Max30000                    = Int
   type __integerMin1000Max300000000                = Int
   type __integerMin10Max48                         = Int
+  type __integerMin16000Max320000                  = Int
   type __integerMin16Max24                         = Int
   type __integerMin1Max1                           = Int
   type __integerMin1Max10                          = Int
@@ -321,6 +329,7 @@ package object mediaconvert {
   type __integerMin1Max4                           = Int
   type __integerMin1Max6                           = Int
   type __integerMin1Max64                          = Int
+  type __integerMin22050Max48000                   = Int
   type __integerMin24Max60000                      = Int
   type __integerMin25Max10000                      = Int
   type __integerMin25Max2000                       = Int
@@ -379,47 +388,48 @@ package object mediaconvert {
     js.Array[__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
   type __listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
-  type __listOf__stringPatternS3ASSETMAPXml                                          = js.Array[__stringPatternS3ASSETMAPXml]
-  type __mapOfAudioSelector                                                          = js.Dictionary[AudioSelector]
-  type __mapOfAudioSelectorGroup                                                     = js.Dictionary[AudioSelectorGroup]
-  type __mapOfCaptionSelector                                                        = js.Dictionary[CaptionSelector]
-  type __mapOf__string                                                               = js.Dictionary[__string]
-  type __string                                                                      = String
-  type __stringMin0                                                                  = String
-  type __stringMin1                                                                  = String
-  type __stringMin11Max11Pattern01D20305D205D                                        = String
-  type __stringMin14Max1285PatternHttpHttpsS3Mov09Png                                = String
-  type __stringMin14PatternHttpHttpsS3BmpBMPPngPNG                                   = String
-  type __stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA                             = String
-  type __stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI = String
-  type __stringMin16Max24PatternAZaZ0922AZaZ0916                                     = String
-  type __stringMin1Max256                                                            = String
-  type __stringMin24Max512PatternAZaZ0902                                            = String
-  type __stringMin32Max32Pattern09aFAF32                                             = String
-  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12                 = String
-  type __stringMin3Max3Pattern1809aFAF09aEAE                                         = String
-  type __stringMin3Max3PatternAZaZ3                                                  = String
-  type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912             = String
-  type __stringPattern                                                               = String
-  type __stringPattern010920405090509092                                             = String
-  type __stringPattern01D20305D205D                                                  = String
-  type __stringPattern0940191020191209301                                            = String
-  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12                           = String
-  type __stringPatternAZaZ0902                                                       = String
-  type __stringPatternAZaZ0932                                                       = String
-  type __stringPatternAZaZ23AZaZ                                                     = String
-  type __stringPatternArnAwsUsGovAcm                                                 = String
+  type __listOf__stringPatternS3ASSETMAPXml                            = js.Array[__stringPatternS3ASSETMAPXml]
+  type __mapOfAudioSelector                                            = js.Dictionary[AudioSelector]
+  type __mapOfAudioSelectorGroup                                       = js.Dictionary[AudioSelectorGroup]
+  type __mapOfCaptionSelector                                          = js.Dictionary[CaptionSelector]
+  type __mapOf__string                                                 = js.Dictionary[__string]
+  type __string                                                        = String
+  type __stringMin0                                                    = String
+  type __stringMin1                                                    = String
+  type __stringMin11Max11Pattern01D20305D205D                          = String
+  type __stringMin14Max1285PatternS3Mov09PngHttpsMov09Png              = String
+  type __stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG             = String
+  type __stringMin14PatternS3BmpBMPPngPNGTgaTGAHttpsBmpBMPPngPNGTgaTGA = String
+  type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI =
+    String
+  type __stringMin16Max24PatternAZaZ0922AZaZ0916                         = String
+  type __stringMin1Max256                                                = String
+  type __stringMin24Max512PatternAZaZ0902                                = String
+  type __stringMin32Max32Pattern09aFAF32                                 = String
+  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12     = String
+  type __stringMin3Max3Pattern1809aFAF09aEAE                             = String
+  type __stringMin3Max3PatternAZaZ3                                      = String
+  type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912 = String
+  type __stringPattern                                                   = String
+  type __stringPattern010920405090509092                                 = String
+  type __stringPattern01D20305D205D                                      = String
+  type __stringPattern0940191020191209301                                = String
+  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12               = String
+  type __stringPatternAZaZ0902                                           = String
+  type __stringPatternAZaZ0932                                           = String
+  type __stringPatternAZaZ23AZaZ                                         = String
+  type __stringPatternArnAwsUsGovAcm                                     = String
   type __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
-  type __stringPatternDD = String
-  type __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
+  type __stringPatternDD                      = String
+  type __stringPatternHttps                   = String
+  type __stringPatternIdentityAZaZ26AZaZ09163 = String
+  type __stringPatternS3                      = String
+  type __stringPatternS3ASSETMAPXml           = String
+  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
     String
-  type __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
+  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
     String
-  type __stringPatternHttps                                    = String
-  type __stringPatternIdentityAZaZ26AZaZ09163                  = String
-  type __stringPatternS3                                       = String
-  type __stringPatternS3ASSETMAPXml                            = String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS         = String
   type __stringPatternW                                        = String
@@ -829,7 +839,7 @@ package mediaconvert {
   }
 
   /**
-    * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of your outputs.
+    * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
     */
   object AlphaBehaviorEnum {
     val DISCARD       = "DISCARD"
@@ -932,6 +942,7 @@ package mediaconvert {
   object AudioCodecEnum {
     val AAC         = "AAC"
     val MP2         = "MP2"
+    val MP3         = "MP3"
     val WAV         = "WAV"
     val AIFF        = "AIFF"
     val AC3         = "AC3"
@@ -939,11 +950,11 @@ package mediaconvert {
     val EAC3_ATMOS  = "EAC3_ATMOS"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = js.Object.freeze(js.Array(AAC, MP2, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH))
+    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH))
   }
 
   /**
-    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -954,6 +965,7 @@ package mediaconvert {
     var Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings]
     var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
+    var Mp3Settings: js.UndefOr[Mp3Settings]
     var WavSettings: js.UndefOr[WavSettings]
   }
 
@@ -967,6 +979,7 @@ package mediaconvert {
         Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings] = js.undefined,
         Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
+        Mp3Settings: js.UndefOr[Mp3Settings] = js.undefined,
         WavSettings: js.UndefOr[WavSettings] = js.undefined
     ): AudioCodecSettings = {
       val __obj = js.Dynamic.literal()
@@ -977,6 +990,7 @@ package mediaconvert {
       Eac3AtmosSettings.foreach(__v => __obj.updateDynamic("Eac3AtmosSettings")(__v.asInstanceOf[js.Any]))
       Eac3Settings.foreach(__v => __obj.updateDynamic("Eac3Settings")(__v.asInstanceOf[js.Any]))
       Mp2Settings.foreach(__v => __obj.updateDynamic("Mp2Settings")(__v.asInstanceOf[js.Any]))
+      Mp3Settings.foreach(__v => __obj.updateDynamic("Mp3Settings")(__v.asInstanceOf[js.Any]))
       WavSettings.foreach(__v => __obj.updateDynamic("WavSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioCodecSettings]
     }
@@ -1134,7 +1148,7 @@ package mediaconvert {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
     var ExternalAudioFileInput: js.UndefOr[
-      __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
     ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
@@ -1151,7 +1165,7 @@ package mediaconvert {
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
         ExternalAudioFileInput: js.UndefOr[
-          __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
         ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
@@ -1221,13 +1235,13 @@ package mediaconvert {
     */
   @js.native
   trait AvailBlanking extends js.Object {
-    var AvailBlankingImage: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNG]
+    var AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG]
   }
 
   object AvailBlanking {
     @inline
     def apply(
-        AvailBlankingImage: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNG] = js.undefined
+        AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG] = js.undefined
     ): AvailBlanking = {
       val __obj = js.Dynamic.literal()
       AvailBlankingImage.foreach(__v => __obj.updateDynamic("AvailBlankingImage")(__v.asInstanceOf[js.Any]))
@@ -1775,6 +1789,7 @@ package mediaconvert {
     var StreamInfResolution: js.UndefOr[CmafStreamInfResolution]
     var WriteDashManifest: js.UndefOr[CmafWriteDASHManifest]
     var WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest]
+    var WriteSegmentTimelineInRepresentation: js.UndefOr[CmafWriteSegmentTimelineInRepresentation]
   }
 
   object CmafGroupSettings {
@@ -1797,7 +1812,8 @@ package mediaconvert {
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
         WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
-        WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined
+        WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined,
+        WriteSegmentTimelineInRepresentation: js.UndefOr[CmafWriteSegmentTimelineInRepresentation] = js.undefined
     ): CmafGroupSettings = {
       val __obj = js.Dynamic.literal()
       AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
@@ -1818,6 +1834,9 @@ package mediaconvert {
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
       WriteDashManifest.foreach(__v => __obj.updateDynamic("WriteDashManifest")(__v.asInstanceOf[js.Any]))
       WriteHlsManifest.foreach(__v => __obj.updateDynamic("WriteHlsManifest")(__v.asInstanceOf[js.Any]))
+      WriteSegmentTimelineInRepresentation.foreach(__v =>
+        __obj.updateDynamic("WriteSegmentTimelineInRepresentation")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CmafGroupSettings]
     }
   }
@@ -1910,6 +1929,58 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
+    * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
+    */
+  object CmafWriteSegmentTimelineInRepresentationEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  /**
+    * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    */
+  object CmfcScte35EsamEnum {
+    val INSERT = "INSERT"
+    val NONE   = "NONE"
+
+    val values = js.Object.freeze(js.Array(INSERT, NONE))
+  }
+
+  /**
+    * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+    */
+  object CmfcScte35SourceEnum {
+    val PASSTHROUGH = "PASSTHROUGH"
+    val NONE        = "NONE"
+
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+  }
+
+  /**
+    * Settings for MP4 segments in CMAF
+    */
+  @js.native
+  trait CmfcSettings extends js.Object {
+    var Scte35Esam: js.UndefOr[CmfcScte35Esam]
+    var Scte35Source: js.UndefOr[CmfcScte35Source]
+  }
+
+  object CmfcSettings {
+    @inline
+    def apply(
+        Scte35Esam: js.UndefOr[CmfcScte35Esam] = js.undefined,
+        Scte35Source: js.UndefOr[CmfcScte35Source] = js.undefined
+    ): CmfcSettings = {
+      val __obj = js.Dynamic.literal()
+      Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
+      Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CmfcSettings]
+    }
   }
 
   /**
@@ -2006,6 +2077,7 @@ package mediaconvert {
     */
   @js.native
   trait ContainerSettings extends js.Object {
+    var CmfcSettings: js.UndefOr[CmfcSettings]
     var Container: js.UndefOr[ContainerType]
     var F4vSettings: js.UndefOr[F4vSettings]
     var M2tsSettings: js.UndefOr[M2tsSettings]
@@ -2018,6 +2090,7 @@ package mediaconvert {
   object ContainerSettings {
     @inline
     def apply(
+        CmfcSettings: js.UndefOr[CmfcSettings] = js.undefined,
         Container: js.UndefOr[ContainerType] = js.undefined,
         F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined,
@@ -2027,6 +2100,7 @@ package mediaconvert {
         MpdSettings: js.UndefOr[MpdSettings] = js.undefined
     ): ContainerSettings = {
       val __obj = js.Dynamic.literal()
+      CmfcSettings.foreach(__v => __obj.updateDynamic("CmfcSettings")(__v.asInstanceOf[js.Any]))
       Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
       F4vSettings.foreach(__v => __obj.updateDynamic("F4vSettings")(__v.asInstanceOf[js.Any]))
       M2tsSettings.foreach(__v => __obj.updateDynamic("M2tsSettings")(__v.asInstanceOf[js.Any]))
@@ -3635,7 +3709,9 @@ package mediaconvert {
   @js.native
   trait FileSourceSettings extends js.Object {
     var Convert608To708: js.UndefOr[FileSourceConvert608To708]
-    var SourceFile: js.UndefOr[__stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI]
+    var SourceFile: js.UndefOr[
+      __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
+    ]
     var TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647]
   }
 
@@ -3643,8 +3719,9 @@ package mediaconvert {
     @inline
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
-        SourceFile: js.UndefOr[__stringMin14PatternHttpHttpsS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI] =
-          js.undefined,
+        SourceFile: js.UndefOr[
+          __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
+        ] = js.undefined,
         TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
     ): FileSourceSettings = {
       val __obj = js.Dynamic.literal()
@@ -4026,17 +4103,20 @@ package mediaconvert {
   trait H264QvbrSettings extends js.Object {
     var MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000]
     var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
+    var QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1]
   }
 
   object H264QvbrSettings {
     @inline
     def apply(
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1] = js.undefined
     ): H264QvbrSettings = {
       val __obj = js.Dynamic.literal()
       MaxAverageBitrate.foreach(__v => __obj.updateDynamic("MaxAverageBitrate")(__v.asInstanceOf[js.Any]))
       QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevelFineTune.foreach(__v => __obj.updateDynamic("QvbrQualityLevelFineTune")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H264QvbrSettings]
     }
   }
@@ -4470,17 +4550,20 @@ package mediaconvert {
   trait H265QvbrSettings extends js.Object {
     var MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000]
     var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
+    var QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1]
   }
 
   object H265QvbrSettings {
     @inline
     def apply(
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1] = js.undefined
     ): H265QvbrSettings = {
       val __obj = js.Dynamic.literal()
       MaxAverageBitrate.foreach(__v => __obj.updateDynamic("MaxAverageBitrate")(__v.asInstanceOf[js.Any]))
       QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevelFineTune.foreach(__v => __obj.updateDynamic("QvbrQualityLevelFineTune")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H265QvbrSettings]
     }
   }
@@ -5301,7 +5384,7 @@ package mediaconvert {
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var FileInput: js.UndefOr[
-      __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
+      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
     ]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
@@ -5327,7 +5410,7 @@ package mediaconvert {
         DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
         FileInput: js.UndefOr[
-          __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
+          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
         ] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
@@ -5553,7 +5636,7 @@ package mediaconvert {
     var FadeIn: js.UndefOr[__integerMin0Max2147483647]
     var FadeOut: js.UndefOr[__integerMin0Max2147483647]
     var Height: js.UndefOr[__integerMin0Max2147483647]
-    var ImageInserterInput: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA]
+    var ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGAHttpsBmpBMPPngPNGTgaTGA]
     var ImageX: js.UndefOr[__integerMin0Max2147483647]
     var ImageY: js.UndefOr[__integerMin0Max2147483647]
     var Layer: js.UndefOr[__integerMin0Max99]
@@ -5569,7 +5652,7 @@ package mediaconvert {
         FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-        ImageInserterInput: js.UndefOr[__stringMin14PatternHttpHttpsS3BmpBMPPngPNGTgaTGA] = js.undefined,
+        ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGAHttpsBmpBMPPngPNGTgaTGA] = js.undefined,
         ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
@@ -6856,7 +6939,7 @@ package mediaconvert {
   @js.native
   trait MotionImageInserter extends js.Object {
     var Framerate: js.UndefOr[MotionImageInsertionFramerate]
-    var Input: js.UndefOr[__stringMin14Max1285PatternHttpHttpsS3Mov09Png]
+    var Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09PngHttpsMov09Png]
     var InsertionMode: js.UndefOr[MotionImageInsertionMode]
     var Offset: js.UndefOr[MotionImageInsertionOffset]
     var Playback: js.UndefOr[MotionImagePlayback]
@@ -6867,7 +6950,7 @@ package mediaconvert {
     @inline
     def apply(
         Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
-        Input: js.UndefOr[__stringMin14Max1285PatternHttpHttpsS3Mov09Png] = js.undefined,
+        Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09PngHttpsMov09Png] = js.undefined,
         InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
         Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
         Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
@@ -7055,6 +7138,47 @@ package mediaconvert {
   }
 
   /**
+    * Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
+    */
+  object Mp3RateControlModeEnum {
+    val CBR = "CBR"
+    val VBR = "VBR"
+
+    val values = js.Object.freeze(js.Array(CBR, VBR))
+  }
+
+  /**
+    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+    */
+  @js.native
+  trait Mp3Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin16000Max320000]
+    var Channels: js.UndefOr[__integerMin1Max2]
+    var RateControlMode: js.UndefOr[Mp3RateControlMode]
+    var SampleRate: js.UndefOr[__integerMin22050Max48000]
+    var VbrQuality: js.UndefOr[__integerMin0Max9]
+  }
+
+  object Mp3Settings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin16000Max320000] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        RateControlMode: js.UndefOr[Mp3RateControlMode] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin22050Max48000] = js.undefined,
+        VbrQuality: js.UndefOr[__integerMin0Max9] = js.undefined
+    ): Mp3Settings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      VbrQuality.foreach(__v => __obj.updateDynamic("VbrQuality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Mp3Settings]
+    }
+  }
+
+  /**
     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     */
   object Mp4CslgAtomEnum {
@@ -7090,6 +7214,7 @@ package mediaconvert {
   @js.native
   trait Mp4Settings extends js.Object {
     var CslgAtom: js.UndefOr[Mp4CslgAtom]
+    var CttsVersion: js.UndefOr[__integerMin0Max1]
     var FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox]
     var MoovPlacement: js.UndefOr[Mp4MoovPlacement]
     var Mp4MajorBrand: js.UndefOr[__string]
@@ -7099,12 +7224,14 @@ package mediaconvert {
     @inline
     def apply(
         CslgAtom: js.UndefOr[Mp4CslgAtom] = js.undefined,
+        CttsVersion: js.UndefOr[__integerMin0Max1] = js.undefined,
         FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox] = js.undefined,
         MoovPlacement: js.UndefOr[Mp4MoovPlacement] = js.undefined,
         Mp4MajorBrand: js.UndefOr[__string] = js.undefined
     ): Mp4Settings = {
       val __obj = js.Dynamic.literal()
       CslgAtom.foreach(__v => __obj.updateDynamic("CslgAtom")(__v.asInstanceOf[js.Any]))
+      CttsVersion.foreach(__v => __obj.updateDynamic("CttsVersion")(__v.asInstanceOf[js.Any]))
       FreeSpaceBox.foreach(__v => __obj.updateDynamic("FreeSpaceBox")(__v.asInstanceOf[js.Any]))
       MoovPlacement.foreach(__v => __obj.updateDynamic("MoovPlacement")(__v.asInstanceOf[js.Any]))
       Mp4MajorBrand.foreach(__v => __obj.updateDynamic("Mp4MajorBrand")(__v.asInstanceOf[js.Any]))
@@ -9160,7 +9287,7 @@ package mediaconvert {
   }
 
   /**
-    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
+    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {

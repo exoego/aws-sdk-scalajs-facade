@@ -1669,27 +1669,25 @@ package pinpoint {
     */
   @js.native
   trait CampaignEmailMessage extends js.Object {
-    var Title: __string
     var Body: js.UndefOr[__string]
     var FromAddress: js.UndefOr[__string]
     var HtmlBody: js.UndefOr[__string]
+    var Title: js.UndefOr[__string]
   }
 
   object CampaignEmailMessage {
     @inline
     def apply(
-        Title: __string,
         Body: js.UndefOr[__string] = js.undefined,
         FromAddress: js.UndefOr[__string] = js.undefined,
-        HtmlBody: js.UndefOr[__string] = js.undefined
+        HtmlBody: js.UndefOr[__string] = js.undefined,
+        Title: js.UndefOr[__string] = js.undefined
     ): CampaignEmailMessage = {
-      val __obj = js.Dynamic.literal(
-        "Title" -> Title.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
       HtmlBody.foreach(__v => __obj.updateDynamic("HtmlBody")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignEmailMessage]
     }
   }

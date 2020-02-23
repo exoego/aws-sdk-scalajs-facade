@@ -24,6 +24,7 @@ package object groundstation {
   type EndpointDetailsList       = js.Array[EndpointDetails]
   type EndpointStatus            = String
   type FrequencyUnits            = String
+  type GroundStationIdList       = js.Array[String]
   type GroundStationList         = js.Array[GroundStationData]
   type JsonString                = String
   type MissionProfileArn         = String
@@ -149,8 +150,7 @@ package groundstation {
   }
 
   /**
-    * <p>Information about how AWS Ground Station should configure an
-    *          antenna for downlink during a contact.</p>
+    * Information about how AWS Ground Station should configure an antenna for downlink during a contact.
     */
   @js.native
   trait AntennaDownlinkConfig extends js.Object {
@@ -324,8 +324,8 @@ package groundstation {
   }
 
   /**
-    * Object containing the parameters for a <code>Config</code>.
-    *          See the subtype definitions for what each type of <code>Config</code> contains.
+    * Object containing the parameters of a <code>Config</code>.
+    *  See the subtype definitions for what each type of <code>Config</code> contains.
     */
   @js.native
   trait ConfigTypeData extends js.Object {
@@ -374,6 +374,7 @@ package groundstation {
     var missionProfileArn: js.UndefOr[MissionProfileArn]
     var postPassEndTime: js.UndefOr[Timestamp]
     var prePassStartTime: js.UndefOr[Timestamp]
+    var region: js.UndefOr[String]
     var satelliteArn: js.UndefOr[satelliteArn]
     var startTime: js.UndefOr[Timestamp]
     var tags: js.UndefOr[TagsMap]
@@ -391,6 +392,7 @@ package groundstation {
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
         postPassEndTime: js.UndefOr[Timestamp] = js.undefined,
         prePassStartTime: js.UndefOr[Timestamp] = js.undefined,
+        region: js.UndefOr[String] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
@@ -405,6 +407,7 @@ package groundstation {
       missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
       postPassEndTime.foreach(__v => __obj.updateDynamic("postPassEndTime")(__v.asInstanceOf[js.Any]))
       prePassStartTime.foreach(__v => __obj.updateDynamic("prePassStartTime")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -435,6 +438,7 @@ package groundstation {
     val AVAILABLE          = "AVAILABLE"
     val AWS_CANCELLED      = "AWS_CANCELLED"
     val CANCELLED          = "CANCELLED"
+    val CANCELLING         = "CANCELLING"
     val COMPLETED          = "COMPLETED"
     val FAILED             = "FAILED"
     val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE"
@@ -449,6 +453,7 @@ package groundstation {
         AVAILABLE,
         AWS_CANCELLED,
         CANCELLED,
+        CANCELLING,
         COMPLETED,
         FAILED,
         FAILED_TO_SCHEDULE,
@@ -594,17 +599,20 @@ package groundstation {
   @js.native
   trait DataflowEndpointConfig extends js.Object {
     var dataflowEndpointName: String
+    var dataflowEndpointRegion: js.UndefOr[String]
   }
 
   object DataflowEndpointConfig {
     @inline
     def apply(
-        dataflowEndpointName: String
+        dataflowEndpointName: String,
+        dataflowEndpointRegion: js.UndefOr[String] = js.undefined
     ): DataflowEndpointConfig = {
       val __obj = js.Dynamic.literal(
         "dataflowEndpointName" -> dataflowEndpointName.asInstanceOf[js.Any]
       )
 
+      dataflowEndpointRegion.foreach(__v => __obj.updateDynamic("dataflowEndpointRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowEndpointConfig]
     }
   }
@@ -793,6 +801,7 @@ package groundstation {
     var missionProfileArn: js.UndefOr[MissionProfileArn]
     var postPassEndTime: js.UndefOr[Timestamp]
     var prePassStartTime: js.UndefOr[Timestamp]
+    var region: js.UndefOr[String]
     var satelliteArn: js.UndefOr[satelliteArn]
     var startTime: js.UndefOr[Timestamp]
     var tags: js.UndefOr[TagsMap]
@@ -810,6 +819,7 @@ package groundstation {
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
         postPassEndTime: js.UndefOr[Timestamp] = js.undefined,
         prePassStartTime: js.UndefOr[Timestamp] = js.undefined,
+        region: js.UndefOr[String] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
@@ -824,6 +834,7 @@ package groundstation {
       missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
       postPassEndTime.foreach(__v => __obj.updateDynamic("postPassEndTime")(__v.asInstanceOf[js.Any]))
       prePassStartTime.foreach(__v => __obj.updateDynamic("prePassStartTime")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1242,31 +1253,25 @@ package groundstation {
     */
   @js.native
   trait GetSatelliteResponse extends js.Object {
-    var dateCreated: js.UndefOr[Timestamp]
-    var lastUpdated: js.UndefOr[Timestamp]
+    var groundStations: js.UndefOr[GroundStationIdList]
     var noradSatelliteID: js.UndefOr[noradSatelliteID]
     var satelliteArn: js.UndefOr[satelliteArn]
     var satelliteId: js.UndefOr[Uuid]
-    var tags: js.UndefOr[TagsMap]
   }
 
   object GetSatelliteResponse {
     @inline
     def apply(
-        dateCreated: js.UndefOr[Timestamp] = js.undefined,
-        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        groundStations: js.UndefOr[GroundStationIdList] = js.undefined,
         noradSatelliteID: js.UndefOr[noradSatelliteID] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
-        satelliteId: js.UndefOr[Uuid] = js.undefined,
-        tags: js.UndefOr[TagsMap] = js.undefined
+        satelliteId: js.UndefOr[Uuid] = js.undefined
     ): GetSatelliteResponse = {
       val __obj = js.Dynamic.literal()
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      groundStations.foreach(__v => __obj.updateDynamic("groundStations")(__v.asInstanceOf[js.Any]))
       noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
       satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSatelliteResponse]
     }
   }
@@ -1457,17 +1462,20 @@ package groundstation {
   trait ListGroundStationsRequest extends js.Object {
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[String]
+    var satelliteId: js.UndefOr[String]
   }
 
   object ListGroundStationsRequest {
     @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[String] = js.undefined,
+        satelliteId: js.UndefOr[String] = js.undefined
     ): ListGroundStationsRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroundStationsRequest]
     }
   }
@@ -1718,6 +1726,7 @@ package groundstation {
     */
   @js.native
   trait SatelliteListItem extends js.Object {
+    var groundStations: js.UndefOr[GroundStationIdList]
     var noradSatelliteID: js.UndefOr[noradSatelliteID]
     var satelliteArn: js.UndefOr[satelliteArn]
     var satelliteId: js.UndefOr[Uuid]
@@ -1726,11 +1735,13 @@ package groundstation {
   object SatelliteListItem {
     @inline
     def apply(
+        groundStations: js.UndefOr[GroundStationIdList] = js.undefined,
         noradSatelliteID: js.UndefOr[noradSatelliteID] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         satelliteId: js.UndefOr[Uuid] = js.undefined
     ): SatelliteListItem = {
       val __obj = js.Dynamic.literal()
+      groundStations.foreach(__v => __obj.updateDynamic("groundStations")(__v.asInstanceOf[js.Any]))
       noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
       satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
@@ -1822,20 +1833,20 @@ package groundstation {
   @js.native
   trait TagResourceRequest extends js.Object {
     var resourceArn: String
-    var tags: js.UndefOr[TagsMap]
+    var tags: TagsMap
   }
 
   object TagResourceRequest {
     @inline
     def apply(
         resourceArn: String,
-        tags: js.UndefOr[TagsMap] = js.undefined
+        tags: TagsMap
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1857,8 +1868,7 @@ package groundstation {
   }
 
   /**
-    * <p>Object that determines whether tracking should be used during a contact
-    *          executed with this <code>Config</code> in the mission profile.</p>
+    * Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
     */
   @js.native
   trait TrackingConfig extends js.Object {
@@ -1995,9 +2005,7 @@ package groundstation {
 
   /**
     * Information about an uplink echo <code>Config</code>.
-    *          <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-    *          specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code>
-    *          is used in a contact.</p>
+    *  Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
     */
   @js.native
   trait UplinkEchoConfig extends js.Object {

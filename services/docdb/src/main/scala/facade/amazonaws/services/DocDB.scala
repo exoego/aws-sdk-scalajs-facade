@@ -384,8 +384,8 @@ package docdb {
   }
 
   /**
-    * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific DB instance or DB cluster.
-    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine that is being used.
+    * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.
+    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -797,7 +797,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB cluster.
+    * Detailed information about a cluster.
     */
   @js.native
   trait DBCluster extends js.Object {
@@ -904,7 +904,7 @@ package docdb {
   }
 
   /**
-    * Contains information about an instance that is part of a DB cluster.
+    * Contains information about an instance that is part of a cluster.
     */
   @js.native
   trait DBClusterMember extends js.Object {
@@ -956,7 +956,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB cluster parameter group.
+    * Detailed information about a cluster parameter group.
     */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -1010,7 +1010,7 @@ package docdb {
   }
 
   /**
-    * Contains the name of a DB cluster parameter group.
+    * Contains the name of a cluster parameter group.
     */
   @js.native
   trait DBClusterParameterGroupNameMessage extends js.Object {
@@ -1053,7 +1053,7 @@ package docdb {
   }
 
   /**
-    * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
+    * Describes an AWS Identity and Access Management (IAM) role that is associated with a cluster.
     */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -1075,7 +1075,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB cluster snapshot.
+    * Detailed information about a cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -1146,8 +1146,8 @@ package docdb {
   }
 
   /**
-    * Contains the name and values of a manual DB cluster snapshot attribute.
-    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot.
+    * Contains the name and values of a manual cluster snapshot attribute.
+    *  Manual cluster snapshot attributes are used to authorize other AWS accounts to restore a manual cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1169,7 +1169,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about the attributes that are associated with a DB cluster snapshot.
+    * Detailed information about the attributes that are associated with a cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -1217,7 +1217,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB engine version.
+    * Detailed information about an engine version.
     */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -1283,7 +1283,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB instance.
+    * Detailed information about an instance.
     */
   @js.native
   trait DBInstance extends js.Object {
@@ -1403,7 +1403,7 @@ package docdb {
   }
 
   /**
-    * Provides a list of status information for a DB instance.
+    * Provides a list of status information for an instance.
     */
   @js.native
   trait DBInstanceStatusInfo extends js.Object {
@@ -1431,7 +1431,7 @@ package docdb {
   }
 
   /**
-    * Detailed information about a DB subnet group.
+    * Detailed information about a subnet group.
     */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -2127,7 +2127,7 @@ package docdb {
   }
 
   /**
-    * Network information for accessing a DB cluster or DB instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.
+    * Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2617,7 +2617,7 @@ package docdb {
   }
 
   /**
-    * The options that are available for a DB instance.
+    * The options that are available for an instance.
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -2801,7 +2801,7 @@ package docdb {
   }
 
   /**
-    * One or more modified settings for a DB instance. These modified settings have been requested, but haven't been applied yet.
+    * One or more modified settings for an instance. These modified settings have been requested, but haven't been applied yet.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -3271,7 +3271,7 @@ package docdb {
   }
 
   /**
-    * The version of the database engine that a DB instance can be upgraded to.
+    * The version of the database engine that an instance can be upgraded to.
     */
   @js.native
   trait UpgradeTarget extends js.Object {

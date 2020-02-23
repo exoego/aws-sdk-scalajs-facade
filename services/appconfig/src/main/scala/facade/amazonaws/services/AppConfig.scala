@@ -897,9 +897,10 @@ package appconfig {
   }
 
   object GrowthTypeEnum {
-    val LINEAR = "LINEAR"
+    val LINEAR      = "LINEAR"
+    val EXPONENTIAL = "EXPONENTIAL"
 
-    val values = js.Object.freeze(js.Array(LINEAR))
+    val values = js.Object.freeze(js.Array(LINEAR, EXPONENTIAL))
   }
 
   @js.native

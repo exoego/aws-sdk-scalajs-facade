@@ -18,6 +18,9 @@ package object shield {
   type DurationInSeconds           = Double
   type EmailAddress                = String
   type EmergencyContactList        = js.Array[EmergencyContact]
+  type HealthCheckArn              = String
+  type HealthCheckId               = String
+  type HealthCheckIds              = js.Array[HealthCheckId]
   type Limits                      = js.Array[Limit]
   type LogBucket                   = String
   type LogBucketList               = js.Array[LogBucket]
@@ -46,6 +49,8 @@ package object shield {
     ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise.toFuture
     @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
       service.associateDRTRole(params).promise.toFuture
+    @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] =
+      service.associateHealthCheck(params).promise.toFuture
     @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
       service.createProtection(params).promise.toFuture
     @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
@@ -69,6 +74,9 @@ package object shield {
     ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise.toFuture
     @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
       service.disassociateDRTRole(params).promise.toFuture
+    @inline def disassociateHealthCheckFuture(
+        params: DisassociateHealthCheckRequest
+    ): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise.toFuture
     @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
       service.getSubscriptionState(params).promise.toFuture
     @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
@@ -91,6 +99,7 @@ package shield {
 
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
     def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse]                = js.native
+    def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse]    = js.native
     def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]                = js.native
     def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse]          = js.native
     def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]                = js.native
@@ -103,7 +112,9 @@ package shield {
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
     def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] =
       js.native
-    def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse]    = js.native
+    def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse] = js.native
+    def disassociateHealthCheck(params: DisassociateHealthCheckRequest): Request[DisassociateHealthCheckResponse] =
+      js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
     def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse]                            = js.native
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse]                = js.native
@@ -175,6 +186,40 @@ package shield {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDRTRoleResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateHealthCheckRequest extends js.Object {
+    var HealthCheckArn: HealthCheckArn
+    var ProtectionId: ProtectionId
+  }
+
+  object AssociateHealthCheckRequest {
+    @inline
+    def apply(
+        HealthCheckArn: HealthCheckArn,
+        ProtectionId: ProtectionId
+    ): AssociateHealthCheckRequest = {
+      val __obj = js.Dynamic.literal(
+        "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
+        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateHealthCheckRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateHealthCheckResponse extends js.Object {}
+
+  object AssociateHealthCheckResponse {
+    @inline
+    def apply(
+        ): AssociateHealthCheckResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[AssociateHealthCheckResponse]
     }
   }
 
@@ -699,6 +744,40 @@ package shield {
     }
   }
 
+  @js.native
+  trait DisassociateHealthCheckRequest extends js.Object {
+    var HealthCheckArn: HealthCheckArn
+    var ProtectionId: ProtectionId
+  }
+
+  object DisassociateHealthCheckRequest {
+    @inline
+    def apply(
+        HealthCheckArn: HealthCheckArn,
+        ProtectionId: ProtectionId
+    ): DisassociateHealthCheckRequest = {
+      val __obj = js.Dynamic.literal(
+        "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
+        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisassociateHealthCheckRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateHealthCheckResponse extends js.Object {}
+
+  object DisassociateHealthCheckResponse {
+    @inline
+    def apply(
+        ): DisassociateHealthCheckResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisassociateHealthCheckResponse]
+    }
+  }
+
   /**
     * Contact information that the DRT can use to contact you during a suspected attack.
     */
@@ -882,6 +961,7 @@ package shield {
     */
   @js.native
   trait Protection extends js.Object {
+    var HealthCheckIds: js.UndefOr[HealthCheckIds]
     var Id: js.UndefOr[ProtectionId]
     var Name: js.UndefOr[ProtectionName]
     var ResourceArn: js.UndefOr[ResourceArn]
@@ -890,11 +970,13 @@ package shield {
   object Protection {
     @inline
     def apply(
+        HealthCheckIds: js.UndefOr[HealthCheckIds] = js.undefined,
         Id: js.UndefOr[ProtectionId] = js.undefined,
         Name: js.UndefOr[ProtectionName] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): Protection = {
       val __obj = js.Dynamic.literal()
+      HealthCheckIds.foreach(__v => __obj.updateDynamic("HealthCheckIds")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))

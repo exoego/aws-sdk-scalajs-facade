@@ -29,6 +29,7 @@ package object codebuild {
   type EnvironmentVariableType        = String
   type EnvironmentVariables           = js.Array[EnvironmentVariable]
   type ExportedEnvironmentVariables   = js.Array[ExportedEnvironmentVariable]
+  type FileSystemType                 = String
   type FilterGroup                    = js.Array[WebhookFilter]
   type FilterGroups                   = js.Array[FilterGroup]
   type GitCloneDepth                  = Int
@@ -45,6 +46,7 @@ package object codebuild {
   type ProjectArtifactsList           = js.Array[ProjectArtifacts]
   type ProjectCacheModes              = js.Array[CacheMode]
   type ProjectDescription             = String
+  type ProjectFileSystemLocations     = js.Array[ProjectFileSystemLocation]
   type ProjectName                    = String
   type ProjectNames                   = js.Array[NonEmptyString]
   type ProjectSecondarySourceVersions = js.Array[ProjectSourceVersion]
@@ -439,6 +441,7 @@ package codebuild {
     var endTime: js.UndefOr[Timestamp]
     var environment: js.UndefOr[ProjectEnvironment]
     var exportedEnvironmentVariables: js.UndefOr[ExportedEnvironmentVariables]
+    var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
     var id: js.UndefOr[NonEmptyString]
     var initiator: js.UndefOr[String]
     var logs: js.UndefOr[LogsLocation]
@@ -473,6 +476,7 @@ package codebuild {
         endTime: js.UndefOr[Timestamp] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
         exportedEnvironmentVariables: js.UndefOr[ExportedEnvironmentVariables] = js.undefined,
+        fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
         id: js.UndefOr[NonEmptyString] = js.undefined,
         initiator: js.UndefOr[String] = js.undefined,
         logs: js.UndefOr[LogsLocation] = js.undefined,
@@ -506,6 +510,7 @@ package codebuild {
       exportedEnvironmentVariables.foreach(__v =>
         __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any])
       )
+      fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
       logs.foreach(__v => __obj.updateDynamic("logs")(__v.asInstanceOf[js.Any]))
@@ -713,6 +718,7 @@ package codebuild {
     var cache: js.UndefOr[ProjectCache]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
+    var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
     var logsConfig: js.UndefOr[LogsConfig]
     var queuedTimeoutInMinutes: js.UndefOr[TimeOut]
     var secondaryArtifacts: js.UndefOr[ProjectArtifactsList]
@@ -736,6 +742,7 @@ package codebuild {
         cache: js.UndefOr[ProjectCache] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
+        fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
         logsConfig: js.UndefOr[LogsConfig] = js.undefined,
         queuedTimeoutInMinutes: js.UndefOr[TimeOut] = js.undefined,
         secondaryArtifacts: js.UndefOr[ProjectArtifactsList] = js.undefined,
@@ -758,6 +765,7 @@ package codebuild {
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
       logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
       queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
@@ -1241,6 +1249,12 @@ package codebuild {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportedEnvironmentVariable]
     }
+  }
+
+  object FileSystemTypeEnum {
+    val EFS = "EFS"
+
+    val values = js.Object.freeze(js.Array(EFS))
   }
 
   @js.native
@@ -1937,6 +1951,7 @@ package codebuild {
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var environment: js.UndefOr[ProjectEnvironment]
+    var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
     var lastModified: js.UndefOr[Timestamp]
     var logsConfig: js.UndefOr[LogsConfig]
     var name: js.UndefOr[ProjectName]
@@ -1964,6 +1979,7 @@ package codebuild {
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
+        fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
         lastModified: js.UndefOr[Timestamp] = js.undefined,
         logsConfig: js.UndefOr[LogsConfig] = js.undefined,
         name: js.UndefOr[ProjectName] = js.undefined,
@@ -1988,6 +2004,7 @@ package codebuild {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
       lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
       logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -2139,6 +2156,37 @@ package codebuild {
       privilegedMode.foreach(__v => __obj.updateDynamic("privilegedMode")(__v.asInstanceOf[js.Any]))
       registryCredential.foreach(__v => __obj.updateDynamic("registryCredential")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectEnvironment]
+    }
+  }
+
+  /**
+    * Information about a file system created by Amazon Elastic File System (EFS). For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html|What Is Amazon Elastic File System?]]
+    */
+  @js.native
+  trait ProjectFileSystemLocation extends js.Object {
+    var identifier: js.UndefOr[String]
+    var location: js.UndefOr[String]
+    var mountOptions: js.UndefOr[String]
+    var mountPoint: js.UndefOr[String]
+    var `type`: js.UndefOr[FileSystemType]
+  }
+
+  object ProjectFileSystemLocation {
+    @inline
+    def apply(
+        identifier: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[String] = js.undefined,
+        mountOptions: js.UndefOr[String] = js.undefined,
+        mountPoint: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[FileSystemType] = js.undefined
+    ): ProjectFileSystemLocation = {
+      val __obj = js.Dynamic.literal()
+      identifier.foreach(__v => __obj.updateDynamic("identifier")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      mountOptions.foreach(__v => __obj.updateDynamic("mountOptions")(__v.asInstanceOf[js.Any]))
+      mountPoint.foreach(__v => __obj.updateDynamic("mountPoint")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectFileSystemLocation]
     }
   }
 
@@ -2602,6 +2650,7 @@ package codebuild {
     var cacheOverride: js.UndefOr[ProjectCache]
     var certificateOverride: js.UndefOr[String]
     var computeTypeOverride: js.UndefOr[ComputeType]
+    var encryptionKeyOverride: js.UndefOr[NonEmptyString]
     var environmentTypeOverride: js.UndefOr[EnvironmentType]
     var environmentVariablesOverride: js.UndefOr[EnvironmentVariables]
     var gitCloneDepthOverride: js.UndefOr[GitCloneDepth]
@@ -2635,6 +2684,7 @@ package codebuild {
         cacheOverride: js.UndefOr[ProjectCache] = js.undefined,
         certificateOverride: js.UndefOr[String] = js.undefined,
         computeTypeOverride: js.UndefOr[ComputeType] = js.undefined,
+        encryptionKeyOverride: js.UndefOr[NonEmptyString] = js.undefined,
         environmentTypeOverride: js.UndefOr[EnvironmentType] = js.undefined,
         environmentVariablesOverride: js.UndefOr[EnvironmentVariables] = js.undefined,
         gitCloneDepthOverride: js.UndefOr[GitCloneDepth] = js.undefined,
@@ -2667,6 +2717,7 @@ package codebuild {
       cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
       computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
+      encryptionKeyOverride.foreach(__v => __obj.updateDynamic("encryptionKeyOverride")(__v.asInstanceOf[js.Any]))
       environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
       environmentVariablesOverride.foreach(__v =>
         __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any])
@@ -2888,6 +2939,7 @@ package codebuild {
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var environment: js.UndefOr[ProjectEnvironment]
+    var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
     var logsConfig: js.UndefOr[LogsConfig]
     var queuedTimeoutInMinutes: js.UndefOr[TimeOut]
     var secondaryArtifacts: js.UndefOr[ProjectArtifactsList]
@@ -2911,6 +2963,7 @@ package codebuild {
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
+        fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
         logsConfig: js.UndefOr[LogsConfig] = js.undefined,
         queuedTimeoutInMinutes: js.UndefOr[TimeOut] = js.undefined,
         secondaryArtifacts: js.UndefOr[ProjectArtifactsList] = js.undefined,
@@ -2933,6 +2986,7 @@ package codebuild {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
       logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
       queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))

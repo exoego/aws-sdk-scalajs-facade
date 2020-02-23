@@ -3806,6 +3806,7 @@ package dynamodb {
     var GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList]
     var LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList]
     var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput]
+    var SSESpecificationOverride: js.UndefOr[SSESpecification]
   }
 
   object RestoreTableFromBackupInput {
@@ -3816,7 +3817,8 @@ package dynamodb {
         BillingModeOverride: js.UndefOr[BillingMode] = js.undefined,
         GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
         LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
-        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput] = js.undefined
+        ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        SSESpecificationOverride: js.UndefOr[SSESpecification] = js.undefined
     ): RestoreTableFromBackupInput = {
       val __obj = js.Dynamic.literal(
         "BackupArn"       -> BackupArn.asInstanceOf[js.Any],
@@ -3833,6 +3835,7 @@ package dynamodb {
       ProvisionedThroughputOverride.foreach(__v =>
         __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
       )
+      SSESpecificationOverride.foreach(__v => __obj.updateDynamic("SSESpecificationOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableFromBackupInput]
     }
   }
@@ -3855,30 +3858,33 @@ package dynamodb {
 
   @js.native
   trait RestoreTableToPointInTimeInput extends js.Object {
-    var SourceTableName: TableName
     var TargetTableName: TableName
     var BillingModeOverride: js.UndefOr[BillingMode]
     var GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList]
     var LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList]
     var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput]
     var RestoreDateTime: js.UndefOr[Date]
+    var SSESpecificationOverride: js.UndefOr[SSESpecification]
+    var SourceTableArn: js.UndefOr[TableArn]
+    var SourceTableName: js.UndefOr[TableName]
     var UseLatestRestorableTime: js.UndefOr[BooleanObject]
   }
 
   object RestoreTableToPointInTimeInput {
     @inline
     def apply(
-        SourceTableName: TableName,
         TargetTableName: TableName,
         BillingModeOverride: js.UndefOr[BillingMode] = js.undefined,
         GlobalSecondaryIndexOverride: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
         LocalSecondaryIndexOverride: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
         ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughput] = js.undefined,
         RestoreDateTime: js.UndefOr[Date] = js.undefined,
+        SSESpecificationOverride: js.UndefOr[SSESpecification] = js.undefined,
+        SourceTableArn: js.UndefOr[TableArn] = js.undefined,
+        SourceTableName: js.UndefOr[TableName] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[BooleanObject] = js.undefined
     ): RestoreTableToPointInTimeInput = {
       val __obj = js.Dynamic.literal(
-        "SourceTableName" -> SourceTableName.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
 
@@ -3893,6 +3899,9 @@ package dynamodb {
         __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
       )
       RestoreDateTime.foreach(__v => __obj.updateDynamic("RestoreDateTime")(__v.asInstanceOf[js.Any]))
+      SSESpecificationOverride.foreach(__v => __obj.updateDynamic("SSESpecificationOverride")(__v.asInstanceOf[js.Any]))
+      SourceTableArn.foreach(__v => __obj.updateDynamic("SourceTableArn")(__v.asInstanceOf[js.Any]))
+      SourceTableName.foreach(__v => __obj.updateDynamic("SourceTableName")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableToPointInTimeInput]
     }

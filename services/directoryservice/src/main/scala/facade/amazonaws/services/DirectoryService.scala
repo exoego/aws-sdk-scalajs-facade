@@ -548,6 +548,7 @@ package directoryservice {
   trait CertificateInfo extends js.Object {
     var CertificateId: js.UndefOr[CertificateId]
     var CommonName: js.UndefOr[CertificateCN]
+    var ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime]
     var State: js.UndefOr[CertificateState]
   }
 
@@ -556,11 +557,13 @@ package directoryservice {
     def apply(
         CertificateId: js.UndefOr[CertificateId] = js.undefined,
         CommonName: js.UndefOr[CertificateCN] = js.undefined,
+        ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime] = js.undefined,
         State: js.UndefOr[CertificateState] = js.undefined
     ): CertificateInfo = {
       val __obj = js.Dynamic.literal()
       CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
+      ExpiryDateTime.foreach(__v => __obj.updateDynamic("ExpiryDateTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateInfo]
     }
@@ -2084,20 +2087,20 @@ package directoryservice {
   @js.native
   trait DisableLDAPSRequest extends js.Object {
     var DirectoryId: DirectoryId
-    var Type: js.UndefOr[LDAPSType]
+    var Type: LDAPSType
   }
 
   object DisableLDAPSRequest {
     @inline
     def apply(
         DirectoryId: DirectoryId,
-        Type: js.UndefOr[LDAPSType] = js.undefined
+        Type: LDAPSType
     ): DisableLDAPSRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Type"        -> Type.asInstanceOf[js.Any]
       )
 
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisableLDAPSRequest]
     }
   }
@@ -2258,20 +2261,20 @@ package directoryservice {
   @js.native
   trait EnableLDAPSRequest extends js.Object {
     var DirectoryId: DirectoryId
-    var Type: js.UndefOr[LDAPSType]
+    var Type: LDAPSType
   }
 
   object EnableLDAPSRequest {
     @inline
     def apply(
         DirectoryId: DirectoryId,
-        Type: js.UndefOr[LDAPSType] = js.undefined
+        Type: LDAPSType
     ): EnableLDAPSRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Type"        -> Type.asInstanceOf[js.Any]
       )
 
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableLDAPSRequest]
     }
   }

@@ -1193,26 +1193,30 @@ package eks {
   }
 
   object NodegroupIssueCodeEnum {
-    val AutoScalingGroupNotFound         = "AutoScalingGroupNotFound"
-    val Ec2SecurityGroupNotFound         = "Ec2SecurityGroupNotFound"
-    val Ec2SecurityGroupDeletionFailure  = "Ec2SecurityGroupDeletionFailure"
-    val Ec2LaunchTemplateNotFound        = "Ec2LaunchTemplateNotFound"
-    val Ec2LaunchTemplateVersionMismatch = "Ec2LaunchTemplateVersionMismatch"
-    val IamInstanceProfileNotFound       = "IamInstanceProfileNotFound"
-    val IamNodeRoleNotFound              = "IamNodeRoleNotFound"
-    val AsgInstanceLaunchFailures        = "AsgInstanceLaunchFailures"
-    val InstanceLimitExceeded            = "InstanceLimitExceeded"
-    val InsufficientFreeAddresses        = "InsufficientFreeAddresses"
-    val AccessDenied                     = "AccessDenied"
-    val InternalFailure                  = "InternalFailure"
+    val AutoScalingGroupNotFound             = "AutoScalingGroupNotFound"
+    val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration"
+    val Ec2SecurityGroupNotFound             = "Ec2SecurityGroupNotFound"
+    val Ec2SecurityGroupDeletionFailure      = "Ec2SecurityGroupDeletionFailure"
+    val Ec2LaunchTemplateNotFound            = "Ec2LaunchTemplateNotFound"
+    val Ec2LaunchTemplateVersionMismatch     = "Ec2LaunchTemplateVersionMismatch"
+    val Ec2SubnetNotFound                    = "Ec2SubnetNotFound"
+    val IamInstanceProfileNotFound           = "IamInstanceProfileNotFound"
+    val IamNodeRoleNotFound                  = "IamNodeRoleNotFound"
+    val AsgInstanceLaunchFailures            = "AsgInstanceLaunchFailures"
+    val InstanceLimitExceeded                = "InstanceLimitExceeded"
+    val InsufficientFreeAddresses            = "InsufficientFreeAddresses"
+    val AccessDenied                         = "AccessDenied"
+    val InternalFailure                      = "InternalFailure"
 
     val values = js.Object.freeze(
       js.Array(
         AutoScalingGroupNotFound,
+        AutoScalingGroupInvalidConfiguration,
         Ec2SecurityGroupNotFound,
         Ec2SecurityGroupDeletionFailure,
         Ec2LaunchTemplateNotFound,
         Ec2LaunchTemplateVersionMismatch,
+        Ec2SubnetNotFound,
         IamInstanceProfileNotFound,
         IamNodeRoleNotFound,
         AsgInstanceLaunchFailures,

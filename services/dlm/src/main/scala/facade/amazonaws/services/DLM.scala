@@ -478,7 +478,7 @@ package dlm {
   }
 
   /**
-    * Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of <code>policyType</code> and <code>resourceType</code> values.
+    * Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
     */
   @js.native
   trait Parameters extends js.Object {
@@ -575,7 +575,7 @@ package dlm {
   }
 
   /**
-    * Specifies a schedule.
+    * Specifies a backup schedule.
     */
   @js.native
   trait Schedule extends js.Object {

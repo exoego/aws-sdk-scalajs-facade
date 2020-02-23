@@ -69,6 +69,7 @@ package object chime {
   type RoomMembershipRole               = String
   type SensitiveString                  = String
   type SensitiveStringList              = js.Array[SensitiveString]
+  type SigninDelegateGroupList          = js.Array[SigninDelegateGroup]
   type StringList                       = js.Array[String]
   type TollFreePrefix                   = String
   type UpdatePhoneNumberRequestItemList = js.Array[UpdatePhoneNumberRequestItem]
@@ -78,6 +79,7 @@ package object chime {
   type UserErrorList                    = js.Array[UserError]
   type UserIdList                       = js.Array[NonEmptyString]
   type UserList                         = js.Array[User]
+  type UserType                         = String
   type VoiceConnectorAwsRegion          = String
   type VoiceConnectorGroupList          = js.Array[VoiceConnectorGroup]
   type VoiceConnectorGroupName          = String
@@ -99,6 +101,10 @@ package object chime {
         params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest
     ): Future[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] =
       service.associatePhoneNumbersWithVoiceConnectorGroup(params).promise.toFuture
+    @inline def associateSigninDelegateGroupsWithAccountFuture(
+        params: AssociateSigninDelegateGroupsWithAccountRequest
+    ): Future[AssociateSigninDelegateGroupsWithAccountResponse] =
+      service.associateSigninDelegateGroupsWithAccount(params).promise.toFuture
     @inline def batchCreateAttendeeFuture(params: BatchCreateAttendeeRequest): Future[BatchCreateAttendeeResponse] =
       service.batchCreateAttendee(params).promise.toFuture
     @inline def batchCreateRoomMembershipFuture(
@@ -131,6 +137,8 @@ package object chime {
       service.createRoom(params).promise.toFuture
     @inline def createRoomMembershipFuture(params: CreateRoomMembershipRequest): Future[CreateRoomMembershipResponse] =
       service.createRoomMembership(params).promise.toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+      service.createUser(params).promise.toFuture
     @inline def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
       service.createVoiceConnector(params).promise.toFuture
     @inline def createVoiceConnectorGroupFuture(
@@ -178,6 +186,10 @@ package object chime {
         params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest
     ): Future[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] =
       service.disassociatePhoneNumbersFromVoiceConnectorGroup(params).promise.toFuture
+    @inline def disassociateSigninDelegateGroupsFromAccountFuture(
+        params: DisassociateSigninDelegateGroupsFromAccountRequest
+    ): Future[DisassociateSigninDelegateGroupsFromAccountResponse] =
+      service.disassociateSigninDelegateGroupsFromAccount(params).promise.toFuture
     @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
       service.getAccount(params).promise.toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
@@ -332,7 +344,10 @@ package chime {
     ): Request[AssociatePhoneNumbersWithVoiceConnectorResponse] = js.native
     def associatePhoneNumbersWithVoiceConnectorGroup(
         params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest
-    ): Request[AssociatePhoneNumbersWithVoiceConnectorGroupResponse]                                  = js.native
+    ): Request[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] = js.native
+    def associateSigninDelegateGroupsWithAccount(
+        params: AssociateSigninDelegateGroupsWithAccountRequest
+    ): Request[AssociateSigninDelegateGroupsWithAccountResponse]                                      = js.native
     def batchCreateAttendee(params: BatchCreateAttendeeRequest): Request[BatchCreateAttendeeResponse] = js.native
     def batchCreateRoomMembership(
         params: BatchCreateRoomMembershipRequest
@@ -352,6 +367,7 @@ package chime {
       js.native
     def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse]                               = js.native
     def createRoomMembership(params: CreateRoomMembershipRequest): Request[CreateRoomMembershipResponse] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
     def createVoiceConnector(params: CreateVoiceConnectorRequest): Request[CreateVoiceConnectorResponse] = js.native
     def createVoiceConnectorGroup(
         params: CreateVoiceConnectorGroupRequest
@@ -381,7 +397,10 @@ package chime {
     ): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse] = js.native
     def disassociatePhoneNumbersFromVoiceConnectorGroup(
         params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest
-    ): Request[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse]                            = js.native
+    ): Request[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = js.native
+    def disassociateSigninDelegateGroupsFromAccount(
+        params: DisassociateSigninDelegateGroupsFromAccountRequest
+    ): Request[DisassociateSigninDelegateGroupsFromAccountResponse]                                = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse]                         = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
     def getAttendee(params: GetAttendeeRequest): Request[GetAttendeeResponse]                      = js.native
@@ -482,6 +501,7 @@ package chime {
     var AccountType: js.UndefOr[AccountType]
     var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var DefaultLicense: js.UndefOr[License]
+    var SigninDelegateGroups: js.UndefOr[SigninDelegateGroupList]
     var SupportedLicenses: js.UndefOr[LicenseList]
   }
 
@@ -494,6 +514,7 @@ package chime {
         AccountType: js.UndefOr[AccountType] = js.undefined,
         CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         DefaultLicense: js.UndefOr[License] = js.undefined,
+        SigninDelegateGroups: js.UndefOr[SigninDelegateGroupList] = js.undefined,
         SupportedLicenses: js.UndefOr[LicenseList] = js.undefined
     ): Account = {
       val __obj = js.Dynamic.literal(
@@ -505,6 +526,7 @@ package chime {
       AccountType.foreach(__v => __obj.updateDynamic("AccountType")(__v.asInstanceOf[js.Any]))
       CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
       DefaultLicense.foreach(__v => __obj.updateDynamic("DefaultLicense")(__v.asInstanceOf[js.Any]))
+      SigninDelegateGroups.foreach(__v => __obj.updateDynamic("SigninDelegateGroups")(__v.asInstanceOf[js.Any]))
       SupportedLicenses.foreach(__v => __obj.updateDynamic("SupportedLicenses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Account]
     }
@@ -539,6 +561,30 @@ package chime {
     val EnterpriseOIDC      = "EnterpriseOIDC"
 
     val values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
+  }
+
+  /**
+    * The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.
+    */
+  @js.native
+  trait AlexaForBusinessMetadata extends js.Object {
+    var AlexaForBusinessRoomArn: js.UndefOr[SensitiveString]
+    var IsAlexaForBusinessEnabled: js.UndefOr[Boolean]
+  }
+
+  object AlexaForBusinessMetadata {
+    @inline
+    def apply(
+        AlexaForBusinessRoomArn: js.UndefOr[SensitiveString] = js.undefined,
+        IsAlexaForBusinessEnabled: js.UndefOr[Boolean] = js.undefined
+    ): AlexaForBusinessMetadata = {
+      val __obj = js.Dynamic.literal()
+      AlexaForBusinessRoomArn.foreach(__v => __obj.updateDynamic("AlexaForBusinessRoomArn")(__v.asInstanceOf[js.Any]))
+      IsAlexaForBusinessEnabled.foreach(__v =>
+        __obj.updateDynamic("IsAlexaForBusinessEnabled")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AlexaForBusinessMetadata]
+    }
   }
 
   @js.native
@@ -655,6 +701,40 @@ package chime {
       val __obj = js.Dynamic.literal()
       PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateSigninDelegateGroupsWithAccountRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var SigninDelegateGroups: SigninDelegateGroupList
+  }
+
+  object AssociateSigninDelegateGroupsWithAccountRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        SigninDelegateGroups: SigninDelegateGroupList
+    ): AssociateSigninDelegateGroupsWithAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"            -> AccountId.asInstanceOf[js.Any],
+        "SigninDelegateGroups" -> SigninDelegateGroups.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object {}
+
+  object AssociateSigninDelegateGroupsWithAccountResponse {
+    @inline
+    def apply(
+        ): AssociateSigninDelegateGroupsWithAccountResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountResponse]
     }
   }
 
@@ -1343,6 +1423,49 @@ package chime {
   }
 
   @js.native
+  trait CreateUserRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var Email: js.UndefOr[EmailAddress]
+    var UserType: js.UndefOr[UserType]
+    var Username: js.UndefOr[String]
+  }
+
+  object CreateUserRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        Email: js.UndefOr[EmailAddress] = js.undefined,
+        UserType: js.UndefOr[UserType] = js.undefined,
+        Username: js.UndefOr[String] = js.undefined
+    ): CreateUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUserResponse extends js.Object {
+    var User: js.UndefOr[User]
+  }
+
+  object CreateUserResponse {
+    @inline
+    def apply(
+        User: js.UndefOr[User] = js.undefined
+    ): CreateUserResponse = {
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserResponse]
+    }
+  }
+
+  @js.native
   trait CreateVoiceConnectorGroupRequest extends js.Object {
     var Name: VoiceConnectorGroupName
     var VoiceConnectorItems: js.UndefOr[VoiceConnectorItemList]
@@ -1811,6 +1934,40 @@ package chime {
       val __obj = js.Dynamic.literal()
       PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateSigninDelegateGroupsFromAccountRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var GroupNames: NonEmptyStringList
+  }
+
+  object DisassociateSigninDelegateGroupsFromAccountRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        GroupNames: NonEmptyStringList
+    ): DisassociateSigninDelegateGroupsFromAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"  -> AccountId.asInstanceOf[js.Any],
+        "GroupNames" -> GroupNames.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object {}
+
+  object DisassociateSigninDelegateGroupsFromAccountResponse {
+    @inline
+    def apply(
+        ): DisassociateSigninDelegateGroupsFromAccountResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
     }
   }
 
@@ -2595,19 +2752,22 @@ package chime {
   trait InviteUsersRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserEmailList: UserEmailList
+    var UserType: js.UndefOr[UserType]
   }
 
   object InviteUsersRequest {
     @inline
     def apply(
         AccountId: NonEmptyString,
-        UserEmailList: UserEmailList
+        UserEmailList: UserEmailList,
+        UserType: js.UndefOr[UserType] = js.undefined
     ): InviteUsersRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "UserEmailList" -> UserEmailList.asInstanceOf[js.Any]
       )
 
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteUsersRequest]
     }
   }
@@ -2991,6 +3151,7 @@ package chime {
     var MaxResults: js.UndefOr[ProfileServiceMaxResults]
     var NextToken: js.UndefOr[String]
     var UserEmail: js.UndefOr[EmailAddress]
+    var UserType: js.UndefOr[UserType]
   }
 
   object ListUsersRequest {
@@ -2999,7 +3160,8 @@ package chime {
         AccountId: NonEmptyString,
         MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
-        UserEmail: js.UndefOr[EmailAddress] = js.undefined
+        UserEmail: js.UndefOr[EmailAddress] = js.undefined,
+        UserType: js.UndefOr[UserType] = js.undefined
     ): ListUsersRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
@@ -3008,6 +3170,7 @@ package chime {
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       UserEmail.foreach(__v => __obj.updateDynamic("UserEmail")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -3199,6 +3362,7 @@ package chime {
     */
   @js.native
   trait MediaPlacement extends js.Object {
+    var AudioFallbackUrl: js.UndefOr[UriType]
     var AudioHostUrl: js.UndefOr[UriType]
     var ScreenDataUrl: js.UndefOr[UriType]
     var ScreenSharingUrl: js.UndefOr[UriType]
@@ -3210,6 +3374,7 @@ package chime {
   object MediaPlacement {
     @inline
     def apply(
+        AudioFallbackUrl: js.UndefOr[UriType] = js.undefined,
         AudioHostUrl: js.UndefOr[UriType] = js.undefined,
         ScreenDataUrl: js.UndefOr[UriType] = js.undefined,
         ScreenSharingUrl: js.UndefOr[UriType] = js.undefined,
@@ -3218,6 +3383,7 @@ package chime {
         TurnControlUrl: js.UndefOr[UriType] = js.undefined
     ): MediaPlacement = {
       val __obj = js.Dynamic.literal()
+      AudioFallbackUrl.foreach(__v => __obj.updateDynamic("AudioFallbackUrl")(__v.asInstanceOf[js.Any]))
       AudioHostUrl.foreach(__v => __obj.updateDynamic("AudioHostUrl")(__v.asInstanceOf[js.Any]))
       ScreenDataUrl.foreach(__v => __obj.updateDynamic("ScreenDataUrl")(__v.asInstanceOf[js.Any]))
       ScreenSharingUrl.foreach(__v => __obj.updateDynamic("ScreenSharingUrl")(__v.asInstanceOf[js.Any]))
@@ -4130,6 +4296,25 @@ package chime {
   }
 
   /**
+    * An Active Directory (AD) group whose members are granted permission to act as delegates.
+    */
+  @js.native
+  trait SigninDelegateGroup extends js.Object {
+    var GroupName: js.UndefOr[NonEmptyString]
+  }
+
+  object SigninDelegateGroup {
+    @inline
+    def apply(
+        GroupName: js.UndefOr[NonEmptyString] = js.undefined
+    ): SigninDelegateGroup = {
+      val __obj = js.Dynamic.literal()
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SigninDelegateGroup]
+    }
+  }
+
+  /**
     * The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
     */
   @js.native
@@ -4537,7 +4722,9 @@ package chime {
   trait UpdateUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
+    var AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata]
     var LicenseType: js.UndefOr[License]
+    var UserType: js.UndefOr[UserType]
   }
 
   object UpdateUserRequest {
@@ -4545,14 +4732,18 @@ package chime {
     def apply(
         AccountId: NonEmptyString,
         UserId: NonEmptyString,
-        LicenseType: js.UndefOr[License] = js.undefined
+        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
+        LicenseType: js.UndefOr[License] = js.undefined,
+        UserType: js.UndefOr[UserType] = js.undefined
     ): UpdateUserRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
 
+      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -4563,20 +4754,26 @@ package chime {
   @js.native
   trait UpdateUserRequestItem extends js.Object {
     var UserId: NonEmptyString
+    var AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata]
     var LicenseType: js.UndefOr[License]
+    var UserType: js.UndefOr[UserType]
   }
 
   object UpdateUserRequestItem {
     @inline
     def apply(
         UserId: NonEmptyString,
-        LicenseType: js.UndefOr[License] = js.undefined
+        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
+        LicenseType: js.UndefOr[License] = js.undefined,
+        UserType: js.UndefOr[UserType] = js.undefined
     ): UpdateUserRequestItem = {
       val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
+      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequestItem]
     }
   }
@@ -4708,6 +4905,7 @@ package chime {
   trait User extends js.Object {
     var UserId: String
     var AccountId: js.UndefOr[String]
+    var AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata]
     var DisplayName: js.UndefOr[SensitiveString]
     var InvitedOn: js.UndefOr[Iso8601Timestamp]
     var LicenseType: js.UndefOr[License]
@@ -4717,6 +4915,7 @@ package chime {
     var RegisteredOn: js.UndefOr[Iso8601Timestamp]
     var UserInvitationStatus: js.UndefOr[InviteStatus]
     var UserRegistrationStatus: js.UndefOr[RegistrationStatus]
+    var UserType: js.UndefOr[UserType]
   }
 
   object User {
@@ -4724,6 +4923,7 @@ package chime {
     def apply(
         UserId: String,
         AccountId: js.UndefOr[String] = js.undefined,
+        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
         DisplayName: js.UndefOr[SensitiveString] = js.undefined,
         InvitedOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
         LicenseType: js.UndefOr[License] = js.undefined,
@@ -4732,13 +4932,15 @@ package chime {
         PrimaryProvisionedNumber: js.UndefOr[SensitiveString] = js.undefined,
         RegisteredOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
         UserInvitationStatus: js.UndefOr[InviteStatus] = js.undefined,
-        UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined
+        UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
+        UserType: js.UndefOr[UserType] = js.undefined
     ): User = {
       val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       InvitedOn.foreach(__v => __obj.updateDynamic("InvitedOn")(__v.asInstanceOf[js.Any]))
       LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
@@ -4748,6 +4950,7 @@ package chime {
       RegisteredOn.foreach(__v => __obj.updateDynamic("RegisteredOn")(__v.asInstanceOf[js.Any]))
       UserInvitationStatus.foreach(__v => __obj.updateDynamic("UserInvitationStatus")(__v.asInstanceOf[js.Any]))
       UserRegistrationStatus.foreach(__v => __obj.updateDynamic("UserRegistrationStatus")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -4796,6 +4999,13 @@ package chime {
 
       __obj.asInstanceOf[UserSettings]
     }
+  }
+
+  object UserTypeEnum {
+    val PrivateUser  = "PrivateUser"
+    val SharedDevice = "SharedDevice"
+
+    val values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
   }
 
   /**

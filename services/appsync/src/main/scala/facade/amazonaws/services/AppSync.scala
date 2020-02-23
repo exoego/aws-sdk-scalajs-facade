@@ -211,6 +211,9 @@ package appsync {
     }
   }
 
+  /**
+    * The <code>ApiCache</code> object.
+    */
   @js.native
   trait ApiCache extends js.Object {
     var apiCachingBehavior: js.UndefOr[ApiCachingBehavior]
@@ -653,6 +656,7 @@ package appsync {
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
     var tags: js.UndefOr[TagMap]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
+    var xrayEnabled: js.UndefOr[Boolean]
   }
 
   object CreateGraphqlApiRequest {
@@ -664,7 +668,8 @@ package appsync {
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
-        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
+        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined,
+        xrayEnabled: js.UndefOr[Boolean] = js.undefined
     ): CreateGraphqlApiRequest = {
       val __obj = js.Dynamic.literal(
         "authenticationType" -> authenticationType.asInstanceOf[js.Any],
@@ -678,6 +683,7 @@ package appsync {
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
+      xrayEnabled.foreach(__v => __obj.updateDynamic("xrayEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGraphqlApiRequest]
     }
   }
@@ -1592,6 +1598,7 @@ package appsync {
     var tags: js.UndefOr[TagMap]
     var uris: js.UndefOr[MapOfStringToString]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
+    var xrayEnabled: js.UndefOr[Boolean]
   }
 
   object GraphqlApi {
@@ -1606,7 +1613,8 @@ package appsync {
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         uris: js.UndefOr[MapOfStringToString] = js.undefined,
-        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
+        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined,
+        xrayEnabled: js.UndefOr[Boolean] = js.undefined
     ): GraphqlApi = {
       val __obj = js.Dynamic.literal()
       additionalAuthenticationProviders.foreach(__v =>
@@ -1621,6 +1629,7 @@ package appsync {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       uris.foreach(__v => __obj.updateDynamic("uris")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
+      xrayEnabled.foreach(__v => __obj.updateDynamic("xrayEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GraphqlApi]
     }
   }
@@ -1647,6 +1656,9 @@ package appsync {
     }
   }
 
+  /**
+    * The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler.
+    */
   @js.native
   trait LambdaConflictHandlerConfig extends js.Object {
     var lambdaConflictHandlerArn: js.UndefOr[String]
@@ -2619,6 +2631,7 @@ package appsync {
     var logConfig: js.UndefOr[LogConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
+    var xrayEnabled: js.UndefOr[Boolean]
   }
 
   object UpdateGraphqlApiRequest {
@@ -2630,7 +2643,8 @@ package appsync {
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
-        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
+        userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined,
+        xrayEnabled: js.UndefOr[Boolean] = js.undefined
     ): UpdateGraphqlApiRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
@@ -2644,6 +2658,7 @@ package appsync {
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
+      xrayEnabled.foreach(__v => __obj.updateDynamic("xrayEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGraphqlApiRequest]
     }
   }

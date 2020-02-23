@@ -44,6 +44,7 @@ package object es {
   type MinimumInstanceCount                       = Int
   type NextToken                                  = String
   type OptionState                                = String
+  type Password                                   = String
   type PolicyDocument                             = String
   type RecurringChargeList                        = js.Array[RecurringCharge]
   type ReservationToken                           = String
@@ -70,6 +71,7 @@ package object es {
   type UpgradeStep                                = String
   type UpgradeStepsList                           = js.Array[UpgradeStepItem]
   type UserPoolId                                 = String
+  type Username                                   = String
   type VolumeType                                 = String
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
@@ -307,6 +309,81 @@ package es {
   }
 
   /**
+    * Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.
+    */
+  @js.native
+  trait AdvancedSecurityOptions extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
+  }
+
+  object AdvancedSecurityOptions {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined
+    ): AdvancedSecurityOptions = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      InternalUserDatabaseEnabled.foreach(__v =>
+        __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AdvancedSecurityOptions]
+    }
+  }
+
+  /**
+    * Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).
+    */
+  @js.native
+  trait AdvancedSecurityOptionsInput extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
+    var MasterUserOptions: js.UndefOr[MasterUserOptions]
+  }
+
+  object AdvancedSecurityOptionsInput {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
+        MasterUserOptions: js.UndefOr[MasterUserOptions] = js.undefined
+    ): AdvancedSecurityOptionsInput = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      InternalUserDatabaseEnabled.foreach(__v =>
+        __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any])
+      )
+      MasterUserOptions.foreach(__v => __obj.updateDynamic("MasterUserOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvancedSecurityOptionsInput]
+    }
+  }
+
+  /**
+    * Specifies the status of advanced security options for the specified Elasticsearch domain.
+    */
+  @js.native
+  trait AdvancedSecurityOptionsStatus extends js.Object {
+    var Options: AdvancedSecurityOptions
+    var Status: OptionStatus
+  }
+
+  object AdvancedSecurityOptionsStatus {
+    @inline
+    def apply(
+        Options: AdvancedSecurityOptions,
+        Status: OptionStatus
+    ): AdvancedSecurityOptionsStatus = {
+      val __obj = js.Dynamic.literal(
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status"  -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AdvancedSecurityOptionsStatus]
+    }
+  }
+
+  /**
     * Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
     */
   @js.native
@@ -425,6 +502,7 @@ package es {
     var DomainName: DomainName
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
+    var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
@@ -443,6 +521,7 @@ package es {
         DomainName: DomainName,
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
+        AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
@@ -460,6 +539,7 @@ package es {
 
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
+      AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
@@ -1143,6 +1223,7 @@ package es {
   trait ElasticsearchDomainConfig extends js.Object {
     var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
+    var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
     var EBSOptions: js.UndefOr[EBSOptionsStatus]
@@ -1160,6 +1241,7 @@ package es {
     def apply(
         AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
+        AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptionsStatus] = js.undefined,
@@ -1174,6 +1256,7 @@ package es {
       val __obj = js.Dynamic.literal()
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
+      AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
@@ -1203,6 +1286,7 @@ package es {
     var ElasticsearchClusterConfig: ElasticsearchClusterConfig
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
+    var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
@@ -1230,6 +1314,7 @@ package es {
         ElasticsearchClusterConfig: ElasticsearchClusterConfig,
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
+        AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         Created: js.UndefOr[Boolean] = js.undefined,
         Deleted: js.UndefOr[Boolean] = js.undefined,
@@ -1256,6 +1341,7 @@ package es {
 
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
+      AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
@@ -1771,6 +1857,31 @@ package es {
   }
 
   /**
+    * Credentials for the master user: username and password, ARN, or both.
+    */
+  @js.native
+  trait MasterUserOptions extends js.Object {
+    var MasterUserARN: js.UndefOr[ARN]
+    var MasterUserName: js.UndefOr[Username]
+    var MasterUserPassword: js.UndefOr[Password]
+  }
+
+  object MasterUserOptions {
+    @inline
+    def apply(
+        MasterUserARN: js.UndefOr[ARN] = js.undefined,
+        MasterUserName: js.UndefOr[Username] = js.undefined,
+        MasterUserPassword: js.UndefOr[Password] = js.undefined
+    ): MasterUserOptions = {
+      val __obj = js.Dynamic.literal()
+      MasterUserARN.foreach(__v => __obj.updateDynamic("MasterUserARN")(__v.asInstanceOf[js.Any]))
+      MasterUserName.foreach(__v => __obj.updateDynamic("MasterUserName")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MasterUserOptions]
+    }
+  }
+
+  /**
     * Specifies the node-to-node encryption options.
     */
   @js.native
@@ -2279,6 +2390,7 @@ package es {
     var DomainName: DomainName
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
+    var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
@@ -2294,6 +2406,7 @@ package es {
         DomainName: DomainName,
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
+        AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
@@ -2308,6 +2421,7 @@ package es {
 
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
+      AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))

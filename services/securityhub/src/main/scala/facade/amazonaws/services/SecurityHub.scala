@@ -14,13 +14,24 @@ package object securityhub {
   type ArnList                                 = js.Array[NonEmptyString]
   type AvailabilityZones                       = js.Array[AvailabilityZone]
   type AwsCloudFrontDistributionOriginItemList = js.Array[AwsCloudFrontDistributionOriginItem]
+  type AwsEc2NetworkInterfaceSecurityGroupList = js.Array[AwsEc2NetworkInterfaceSecurityGroup]
+  type AwsEc2SecurityGroupIpPermissionList     = js.Array[AwsEc2SecurityGroupIpPermission]
+  type AwsEc2SecurityGroupIpRangeList          = js.Array[AwsEc2SecurityGroupIpRange]
+  type AwsEc2SecurityGroupIpv6RangeList        = js.Array[AwsEc2SecurityGroupIpv6Range]
+  type AwsEc2SecurityGroupPrefixListIdList     = js.Array[AwsEc2SecurityGroupPrefixListId]
+  type AwsEc2SecurityGroupUserIdGroupPairList  = js.Array[AwsEc2SecurityGroupUserIdGroupPair]
   type AwsIamAccessKeyStatus                   = String
   type AwsIamRoleAssumeRolePolicyDocument      = String
   type AwsLambdaFunctionLayerList              = js.Array[AwsLambdaFunctionLayer]
+  type AwsLambdaLayerVersionNumber             = Double
+  type AwsRdsDbInstanceAssociatedRoles         = js.Array[AwsRdsDbInstanceAssociatedRole]
+  type AwsRdsDbInstanceVpcSecurityGroups       = js.Array[AwsRdsDbInstanceVpcSecurityGroup]
   type AwsSecurityFindingList                  = js.Array[AwsSecurityFinding]
   type AwsSnsTopicSubscriptionList             = js.Array[AwsSnsTopicSubscription]
+  type AwsWafWebAclRuleList                    = js.Array[AwsWafWebAclRule]
   type CategoryList                            = js.Array[NonEmptyString]
   type ComplianceStatus                        = String
+  type ControlStatus                           = String
   type DateFilterList                          = js.Array[DateFilter]
   type DateRangeUnit                           = String
   type FieldMap                                = js.Dictionary[NonEmptyString]
@@ -47,12 +58,16 @@ package object securityhub {
   type ProductsList                            = js.Array[Product]
   type RecordState                             = String
   type RelatedFindingList                      = js.Array[RelatedFinding]
+  type RelatedRequirementsList                 = js.Array[NonEmptyString]
   type ResourceArn                             = String
   type ResourceList                            = js.Array[Resource]
   type ResultList                              = js.Array[Result]
   type SecurityGroups                          = js.Array[NonEmptyString]
+  type SeverityRating                          = String
   type SortCriteria                            = js.Array[SortCriterion]
   type SortOrder                               = String
+  type Standards                               = js.Array[Standard]
+  type StandardsControls                       = js.Array[StandardsControl]
   type StandardsInputParameterMap              = js.Dictionary[NonEmptyString]
   type StandardsStatus                         = String
   type StandardsSubscriptionArns               = js.Array[NonEmptyString]
@@ -71,6 +86,7 @@ package object securityhub {
   type Timestamp                               = js.Date
   type TypeList                                = js.Array[NonEmptyString]
   type VerificationState                       = String
+  type WafExcludedRuleList                     = js.Array[WafExcludedRule]
   type WorkflowState                           = String
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
@@ -107,6 +123,11 @@ package object securityhub {
       service.describeHub(params).promise.toFuture
     @inline def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
       service.describeProducts(params).promise.toFuture
+    @inline def describeStandardsControlsFuture(
+        params: DescribeStandardsControlsRequest
+    ): Future[DescribeStandardsControlsResponse] = service.describeStandardsControls(params).promise.toFuture
+    @inline def describeStandardsFuture(params: DescribeStandardsRequest): Future[DescribeStandardsResponse] =
+      service.describeStandards(params).promise.toFuture
     @inline def disableImportFindingsForProductFuture(
         params: DisableImportFindingsForProductRequest
     ): Future[DisableImportFindingsForProductResponse] =
@@ -158,6 +179,9 @@ package object securityhub {
       service.updateFindings(params).promise.toFuture
     @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
       service.updateInsight(params).promise.toFuture
+    @inline def updateStandardsControlFuture(
+        params: UpdateStandardsControlRequest
+    ): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise.toFuture
   }
 }
 
@@ -182,6 +206,10 @@ package securityhub {
     def describeActionTargets(params: DescribeActionTargetsRequest): Request[DescribeActionTargetsResponse] = js.native
     def describeHub(params: DescribeHubRequest): Request[DescribeHubResponse]                               = js.native
     def describeProducts(params: DescribeProductsRequest): Request[DescribeProductsResponse]                = js.native
+    def describeStandards(params: DescribeStandardsRequest): Request[DescribeStandardsResponse]             = js.native
+    def describeStandardsControls(
+        params: DescribeStandardsControlsRequest
+    ): Request[DescribeStandardsControlsResponse] = js.native
     def disableImportFindingsForProduct(
         params: DisableImportFindingsForProductRequest
     ): Request[DisableImportFindingsForProductResponse]                                            = js.native
@@ -213,6 +241,8 @@ package securityhub {
     def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse]    = js.native
     def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse]                = js.native
     def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse]                   = js.native
+    def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] =
+      js.native
   }
 
   @js.native
@@ -430,6 +460,143 @@ package securityhub {
   }
 
   /**
+    * Information about an AWS CodeBuild project.
+    */
+  @js.native
+  trait AwsCodeBuildProjectDetails extends js.Object {
+    var EncryptionKey: js.UndefOr[NonEmptyString]
+    var Environment: js.UndefOr[AwsCodeBuildProjectEnvironment]
+    var Name: js.UndefOr[NonEmptyString]
+    var ServiceRole: js.UndefOr[NonEmptyString]
+    var Source: js.UndefOr[AwsCodeBuildProjectSource]
+    var VpcConfig: js.UndefOr[AwsCodeBuildProjectVpcConfig]
+  }
+
+  object AwsCodeBuildProjectDetails {
+    @inline
+    def apply(
+        EncryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
+        Environment: js.UndefOr[AwsCodeBuildProjectEnvironment] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        ServiceRole: js.UndefOr[NonEmptyString] = js.undefined,
+        Source: js.UndefOr[AwsCodeBuildProjectSource] = js.undefined,
+        VpcConfig: js.UndefOr[AwsCodeBuildProjectVpcConfig] = js.undefined
+    ): AwsCodeBuildProjectDetails = {
+      val __obj = js.Dynamic.literal()
+      EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCodeBuildProjectDetails]
+    }
+  }
+
+  /**
+    * Information about the build environment for this build project.
+    */
+  @js.native
+  trait AwsCodeBuildProjectEnvironment extends js.Object {
+    var Certificate: js.UndefOr[NonEmptyString]
+    var ImagePullCredentialsType: js.UndefOr[NonEmptyString]
+    var RegistryCredential: js.UndefOr[AwsCodeBuildProjectEnvironmentRegistryCredential]
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsCodeBuildProjectEnvironment {
+    @inline
+    def apply(
+        Certificate: js.UndefOr[NonEmptyString] = js.undefined,
+        ImagePullCredentialsType: js.UndefOr[NonEmptyString] = js.undefined,
+        RegistryCredential: js.UndefOr[AwsCodeBuildProjectEnvironmentRegistryCredential] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsCodeBuildProjectEnvironment = {
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      ImagePullCredentialsType.foreach(__v => __obj.updateDynamic("ImagePullCredentialsType")(__v.asInstanceOf[js.Any]))
+      RegistryCredential.foreach(__v => __obj.updateDynamic("RegistryCredential")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCodeBuildProjectEnvironment]
+    }
+  }
+
+  /**
+    * The credentials for access to a private registry.
+    */
+  @js.native
+  trait AwsCodeBuildProjectEnvironmentRegistryCredential extends js.Object {
+    var Credential: js.UndefOr[NonEmptyString]
+    var CredentialProvider: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsCodeBuildProjectEnvironmentRegistryCredential {
+    @inline
+    def apply(
+        Credential: js.UndefOr[NonEmptyString] = js.undefined,
+        CredentialProvider: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsCodeBuildProjectEnvironmentRegistryCredential = {
+      val __obj = js.Dynamic.literal()
+      Credential.foreach(__v => __obj.updateDynamic("Credential")(__v.asInstanceOf[js.Any]))
+      CredentialProvider.foreach(__v => __obj.updateDynamic("CredentialProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCodeBuildProjectEnvironmentRegistryCredential]
+    }
+  }
+
+  /**
+    * Information about the build input source code for this build project.
+    */
+  @js.native
+  trait AwsCodeBuildProjectSource extends js.Object {
+    var GitCloneDepth: js.UndefOr[Int]
+    var InsecureSsl: js.UndefOr[Boolean]
+    var Location: js.UndefOr[NonEmptyString]
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsCodeBuildProjectSource {
+    @inline
+    def apply(
+        GitCloneDepth: js.UndefOr[Int] = js.undefined,
+        InsecureSsl: js.UndefOr[Boolean] = js.undefined,
+        Location: js.UndefOr[NonEmptyString] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsCodeBuildProjectSource = {
+      val __obj = js.Dynamic.literal()
+      GitCloneDepth.foreach(__v => __obj.updateDynamic("GitCloneDepth")(__v.asInstanceOf[js.Any]))
+      InsecureSsl.foreach(__v => __obj.updateDynamic("InsecureSsl")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCodeBuildProjectSource]
+    }
+  }
+
+  /**
+    * Information about the VPC configuration that AWS CodeBuild accesses.
+    */
+  @js.native
+  trait AwsCodeBuildProjectVpcConfig extends js.Object {
+    var SecurityGroupIds: js.UndefOr[NonEmptyStringList]
+    var Subnets: js.UndefOr[NonEmptyStringList]
+    var VpcId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsCodeBuildProjectVpcConfig {
+    @inline
+    def apply(
+        SecurityGroupIds: js.UndefOr[NonEmptyStringList] = js.undefined,
+        Subnets: js.UndefOr[NonEmptyStringList] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsCodeBuildProjectVpcConfig = {
+      val __obj = js.Dynamic.literal()
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCodeBuildProjectVpcConfig]
+    }
+  }
+
+  /**
     * The details of an Amazon EC2 instance.
     */
   @js.native
@@ -469,6 +636,394 @@ package securityhub {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsEc2InstanceDetails]
+    }
+  }
+
+  /**
+    * Information about the network interface attachment.
+    */
+  @js.native
+  trait AwsEc2NetworkInterfaceAttachment extends js.Object {
+    var AttachTime: js.UndefOr[NonEmptyString]
+    var AttachmentId: js.UndefOr[NonEmptyString]
+    var DeleteOnTermination: js.UndefOr[Boolean]
+    var DeviceIndex: js.UndefOr[Int]
+    var InstanceId: js.UndefOr[NonEmptyString]
+    var InstanceOwnerId: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2NetworkInterfaceAttachment {
+    @inline
+    def apply(
+        AttachTime: js.UndefOr[NonEmptyString] = js.undefined,
+        AttachmentId: js.UndefOr[NonEmptyString] = js.undefined,
+        DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
+        DeviceIndex: js.UndefOr[Int] = js.undefined,
+        InstanceId: js.UndefOr[NonEmptyString] = js.undefined,
+        InstanceOwnerId: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2NetworkInterfaceAttachment = {
+      val __obj = js.Dynamic.literal()
+      AttachTime.foreach(__v => __obj.updateDynamic("AttachTime")(__v.asInstanceOf[js.Any]))
+      AttachmentId.foreach(__v => __obj.updateDynamic("AttachmentId")(__v.asInstanceOf[js.Any]))
+      DeleteOnTermination.foreach(__v => __obj.updateDynamic("DeleteOnTermination")(__v.asInstanceOf[js.Any]))
+      DeviceIndex.foreach(__v => __obj.updateDynamic("DeviceIndex")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceOwnerId.foreach(__v => __obj.updateDynamic("InstanceOwnerId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfaceAttachment]
+    }
+  }
+
+  /**
+    * Details about the network interface
+    */
+  @js.native
+  trait AwsEc2NetworkInterfaceDetails extends js.Object {
+    var Attachment: js.UndefOr[AwsEc2NetworkInterfaceAttachment]
+    var NetworkInterfaceId: js.UndefOr[NonEmptyString]
+    var SecurityGroups: js.UndefOr[AwsEc2NetworkInterfaceSecurityGroupList]
+    var SourceDestCheck: js.UndefOr[Boolean]
+  }
+
+  object AwsEc2NetworkInterfaceDetails {
+    @inline
+    def apply(
+        Attachment: js.UndefOr[AwsEc2NetworkInterfaceAttachment] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NonEmptyString] = js.undefined,
+        SecurityGroups: js.UndefOr[AwsEc2NetworkInterfaceSecurityGroupList] = js.undefined,
+        SourceDestCheck: js.UndefOr[Boolean] = js.undefined
+    ): AwsEc2NetworkInterfaceDetails = {
+      val __obj = js.Dynamic.literal()
+      Attachment.foreach(__v => __obj.updateDynamic("Attachment")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      SourceDestCheck.foreach(__v => __obj.updateDynamic("SourceDestCheck")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfaceDetails]
+    }
+  }
+
+  /**
+    * A security group associated with the network interface.
+    */
+  @js.native
+  trait AwsEc2NetworkInterfaceSecurityGroup extends js.Object {
+    var GroupId: js.UndefOr[NonEmptyString]
+    var GroupName: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2NetworkInterfaceSecurityGroup {
+    @inline
+    def apply(
+        GroupId: js.UndefOr[NonEmptyString] = js.undefined,
+        GroupName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2NetworkInterfaceSecurityGroup = {
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfaceSecurityGroup]
+    }
+  }
+
+  /**
+    * Details about an EC2 security group.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupDetails extends js.Object {
+    var GroupId: js.UndefOr[NonEmptyString]
+    var GroupName: js.UndefOr[NonEmptyString]
+    var IpPermissions: js.UndefOr[AwsEc2SecurityGroupIpPermissionList]
+    var IpPermissionsEgress: js.UndefOr[AwsEc2SecurityGroupIpPermissionList]
+    var OwnerId: js.UndefOr[NonEmptyString]
+    var VpcId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2SecurityGroupDetails {
+    @inline
+    def apply(
+        GroupId: js.UndefOr[NonEmptyString] = js.undefined,
+        GroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        IpPermissions: js.UndefOr[AwsEc2SecurityGroupIpPermissionList] = js.undefined,
+        IpPermissionsEgress: js.UndefOr[AwsEc2SecurityGroupIpPermissionList] = js.undefined,
+        OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2SecurityGroupDetails = {
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      IpPermissions.foreach(__v => __obj.updateDynamic("IpPermissions")(__v.asInstanceOf[js.Any]))
+      IpPermissionsEgress.foreach(__v => __obj.updateDynamic("IpPermissionsEgress")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupDetails]
+    }
+  }
+
+  /**
+    * An IP permission for an EC2 security group.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupIpPermission extends js.Object {
+    var FromPort: js.UndefOr[Int]
+    var IpProtocol: js.UndefOr[NonEmptyString]
+    var IpRanges: js.UndefOr[AwsEc2SecurityGroupIpRangeList]
+    var Ipv6Ranges: js.UndefOr[AwsEc2SecurityGroupIpv6RangeList]
+    var PrefixListIds: js.UndefOr[AwsEc2SecurityGroupPrefixListIdList]
+    var ToPort: js.UndefOr[Int]
+    var UserIdGroupPairs: js.UndefOr[AwsEc2SecurityGroupUserIdGroupPairList]
+  }
+
+  object AwsEc2SecurityGroupIpPermission {
+    @inline
+    def apply(
+        FromPort: js.UndefOr[Int] = js.undefined,
+        IpProtocol: js.UndefOr[NonEmptyString] = js.undefined,
+        IpRanges: js.UndefOr[AwsEc2SecurityGroupIpRangeList] = js.undefined,
+        Ipv6Ranges: js.UndefOr[AwsEc2SecurityGroupIpv6RangeList] = js.undefined,
+        PrefixListIds: js.UndefOr[AwsEc2SecurityGroupPrefixListIdList] = js.undefined,
+        ToPort: js.UndefOr[Int] = js.undefined,
+        UserIdGroupPairs: js.UndefOr[AwsEc2SecurityGroupUserIdGroupPairList] = js.undefined
+    ): AwsEc2SecurityGroupIpPermission = {
+      val __obj = js.Dynamic.literal()
+      FromPort.foreach(__v => __obj.updateDynamic("FromPort")(__v.asInstanceOf[js.Any]))
+      IpProtocol.foreach(__v => __obj.updateDynamic("IpProtocol")(__v.asInstanceOf[js.Any]))
+      IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
+      Ipv6Ranges.foreach(__v => __obj.updateDynamic("Ipv6Ranges")(__v.asInstanceOf[js.Any]))
+      PrefixListIds.foreach(__v => __obj.updateDynamic("PrefixListIds")(__v.asInstanceOf[js.Any]))
+      ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
+      UserIdGroupPairs.foreach(__v => __obj.updateDynamic("UserIdGroupPairs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupIpPermission]
+    }
+  }
+
+  /**
+    * A range of IPv4 addresses.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupIpRange extends js.Object {
+    var CidrIp: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2SecurityGroupIpRange {
+    @inline
+    def apply(
+        CidrIp: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2SecurityGroupIpRange = {
+      val __obj = js.Dynamic.literal()
+      CidrIp.foreach(__v => __obj.updateDynamic("CidrIp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupIpRange]
+    }
+  }
+
+  /**
+    * A range of IPv6 addresses.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupIpv6Range extends js.Object {
+    var CidrIpv6: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2SecurityGroupIpv6Range {
+    @inline
+    def apply(
+        CidrIpv6: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2SecurityGroupIpv6Range = {
+      val __obj = js.Dynamic.literal()
+      CidrIpv6.foreach(__v => __obj.updateDynamic("CidrIpv6")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupIpv6Range]
+    }
+  }
+
+  /**
+    * A prefix list ID.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupPrefixListId extends js.Object {
+    var PrefixListId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2SecurityGroupPrefixListId {
+    @inline
+    def apply(
+        PrefixListId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2SecurityGroupPrefixListId = {
+      val __obj = js.Dynamic.literal()
+      PrefixListId.foreach(__v => __obj.updateDynamic("PrefixListId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupPrefixListId]
+    }
+  }
+
+  /**
+    * A relationship between a security group and a user.
+    */
+  @js.native
+  trait AwsEc2SecurityGroupUserIdGroupPair extends js.Object {
+    var GroupId: js.UndefOr[NonEmptyString]
+    var GroupName: js.UndefOr[NonEmptyString]
+    var PeeringStatus: js.UndefOr[NonEmptyString]
+    var UserId: js.UndefOr[NonEmptyString]
+    var VpcId: js.UndefOr[NonEmptyString]
+    var VpcPeeringConnectionId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2SecurityGroupUserIdGroupPair {
+    @inline
+    def apply(
+        GroupId: js.UndefOr[NonEmptyString] = js.undefined,
+        GroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        PeeringStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        UserId: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcPeeringConnectionId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2SecurityGroupUserIdGroupPair = {
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      PeeringStatus.foreach(__v => __obj.updateDynamic("PeeringStatus")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      VpcPeeringConnectionId.foreach(__v => __obj.updateDynamic("VpcPeeringConnectionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2SecurityGroupUserIdGroupPair]
+    }
+  }
+
+  /**
+    * Information about an Elasticsearch domain.
+    */
+  @js.native
+  trait AwsElasticsearchDomainDetails extends js.Object {
+    var AccessPolicies: js.UndefOr[NonEmptyString]
+    var DomainEndpointOptions: js.UndefOr[AwsElasticsearchDomainDomainEndpointOptions]
+    var DomainId: js.UndefOr[NonEmptyString]
+    var DomainName: js.UndefOr[NonEmptyString]
+    var ElasticsearchVersion: js.UndefOr[NonEmptyString]
+    var EncryptionAtRestOptions: js.UndefOr[AwsElasticsearchDomainEncryptionAtRestOptions]
+    var Endpoint: js.UndefOr[NonEmptyString]
+    var Endpoints: js.UndefOr[FieldMap]
+    var NodeToNodeEncryptionOptions: js.UndefOr[AwsElasticsearchDomainNodeToNodeEncryptionOptions]
+    var VPCOptions: js.UndefOr[AwsElasticsearchDomainVPCOptions]
+  }
+
+  object AwsElasticsearchDomainDetails {
+    @inline
+    def apply(
+        AccessPolicies: js.UndefOr[NonEmptyString] = js.undefined,
+        DomainEndpointOptions: js.UndefOr[AwsElasticsearchDomainDomainEndpointOptions] = js.undefined,
+        DomainId: js.UndefOr[NonEmptyString] = js.undefined,
+        DomainName: js.UndefOr[NonEmptyString] = js.undefined,
+        ElasticsearchVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        EncryptionAtRestOptions: js.UndefOr[AwsElasticsearchDomainEncryptionAtRestOptions] = js.undefined,
+        Endpoint: js.UndefOr[NonEmptyString] = js.undefined,
+        Endpoints: js.UndefOr[FieldMap] = js.undefined,
+        NodeToNodeEncryptionOptions: js.UndefOr[AwsElasticsearchDomainNodeToNodeEncryptionOptions] = js.undefined,
+        VPCOptions: js.UndefOr[AwsElasticsearchDomainVPCOptions] = js.undefined
+    ): AwsElasticsearchDomainDetails = {
+      val __obj = js.Dynamic.literal()
+      AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
+      DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
+      DomainId.foreach(__v => __obj.updateDynamic("DomainId")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
+      EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      NodeToNodeEncryptionOptions.foreach(__v =>
+        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
+      )
+      VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsElasticsearchDomainDetails]
+    }
+  }
+
+  /**
+    * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
+    */
+  @js.native
+  trait AwsElasticsearchDomainDomainEndpointOptions extends js.Object {
+    var EnforceHTTPS: js.UndefOr[Boolean]
+    var TLSSecurityPolicy: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsElasticsearchDomainDomainEndpointOptions {
+    @inline
+    def apply(
+        EnforceHTTPS: js.UndefOr[Boolean] = js.undefined,
+        TLSSecurityPolicy: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsElasticsearchDomainDomainEndpointOptions = {
+      val __obj = js.Dynamic.literal()
+      EnforceHTTPS.foreach(__v => __obj.updateDynamic("EnforceHTTPS")(__v.asInstanceOf[js.Any]))
+      TLSSecurityPolicy.foreach(__v => __obj.updateDynamic("TLSSecurityPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsElasticsearchDomainDomainEndpointOptions]
+    }
+  }
+
+  /**
+    * Details about the configuration for encryption at rest.
+    */
+  @js.native
+  trait AwsElasticsearchDomainEncryptionAtRestOptions extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsElasticsearchDomainEncryptionAtRestOptions {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsElasticsearchDomainEncryptionAtRestOptions = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsElasticsearchDomainEncryptionAtRestOptions]
+    }
+  }
+
+  /**
+    * Details about the configuration for node-to-node encryption.
+    */
+  @js.native
+  trait AwsElasticsearchDomainNodeToNodeEncryptionOptions extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object AwsElasticsearchDomainNodeToNodeEncryptionOptions {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined
+    ): AwsElasticsearchDomainNodeToNodeEncryptionOptions = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsElasticsearchDomainNodeToNodeEncryptionOptions]
+    }
+  }
+
+  /**
+    * Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
+    */
+  @js.native
+  trait AwsElasticsearchDomainVPCOptions extends js.Object {
+    var AvailabilityZones: js.UndefOr[NonEmptyStringList]
+    var SecurityGroupIds: js.UndefOr[NonEmptyStringList]
+    var SubnetIds: js.UndefOr[NonEmptyStringList]
+    var VPCId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsElasticsearchDomainVPCOptions {
+    @inline
+    def apply(
+        AvailabilityZones: js.UndefOr[NonEmptyStringList] = js.undefined,
+        SecurityGroupIds: js.UndefOr[NonEmptyStringList] = js.undefined,
+        SubnetIds: js.UndefOr[NonEmptyStringList] = js.undefined,
+        VPCId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsElasticsearchDomainVPCOptions = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      VPCId.foreach(__v => __obj.updateDynamic("VPCId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsElasticsearchDomainVPCOptions]
     }
   }
 
@@ -851,6 +1406,178 @@ package securityhub {
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsLambdaFunctionVpcConfig]
+    }
+  }
+
+  /**
+    * Details about a Lambda layer version.
+    */
+  @js.native
+  trait AwsLambdaLayerVersionDetails extends js.Object {
+    var CompatibleRuntimes: js.UndefOr[NonEmptyStringList]
+    var CreatedDate: js.UndefOr[NonEmptyString]
+    var Version: js.UndefOr[AwsLambdaLayerVersionNumber]
+  }
+
+  object AwsLambdaLayerVersionDetails {
+    @inline
+    def apply(
+        CompatibleRuntimes: js.UndefOr[NonEmptyStringList] = js.undefined,
+        CreatedDate: js.UndefOr[NonEmptyString] = js.undefined,
+        Version: js.UndefOr[AwsLambdaLayerVersionNumber] = js.undefined
+    ): AwsLambdaLayerVersionDetails = {
+      val __obj = js.Dynamic.literal()
+      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsLambdaLayerVersionDetails]
+    }
+  }
+
+  /**
+    * An AWS Identity and Access Management (IAM) role associated with the DB instance.
+    */
+  @js.native
+  trait AwsRdsDbInstanceAssociatedRole extends js.Object {
+    var FeatureName: js.UndefOr[NonEmptyString]
+    var RoleArn: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbInstanceAssociatedRole {
+    @inline
+    def apply(
+        FeatureName: js.UndefOr[NonEmptyString] = js.undefined,
+        RoleArn: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbInstanceAssociatedRole = {
+      val __obj = js.Dynamic.literal()
+      FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbInstanceAssociatedRole]
+    }
+  }
+
+  /**
+    * Contains the details of an Amazon RDS DB instance.
+    */
+  @js.native
+  trait AwsRdsDbInstanceDetails extends js.Object {
+    var AssociatedRoles: js.UndefOr[AwsRdsDbInstanceAssociatedRoles]
+    var CACertificateIdentifier: js.UndefOr[NonEmptyString]
+    var DBClusterIdentifier: js.UndefOr[NonEmptyString]
+    var DBInstanceClass: js.UndefOr[NonEmptyString]
+    var DBInstanceIdentifier: js.UndefOr[NonEmptyString]
+    var DBName: js.UndefOr[NonEmptyString]
+    var DbInstancePort: js.UndefOr[Int]
+    var DbiResourceId: js.UndefOr[NonEmptyString]
+    var DeletionProtection: js.UndefOr[Boolean]
+    var Endpoint: js.UndefOr[AwsRdsDbInstanceEndpoint]
+    var Engine: js.UndefOr[NonEmptyString]
+    var EngineVersion: js.UndefOr[NonEmptyString]
+    var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var InstanceCreateTime: js.UndefOr[NonEmptyString]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+    var PubliclyAccessible: js.UndefOr[Boolean]
+    var StorageEncrypted: js.UndefOr[Boolean]
+    var TdeCredentialArn: js.UndefOr[NonEmptyString]
+    var VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups]
+  }
+
+  object AwsRdsDbInstanceDetails {
+    @inline
+    def apply(
+        AssociatedRoles: js.UndefOr[AwsRdsDbInstanceAssociatedRoles] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DBInstanceClass: js.UndefOr[NonEmptyString] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DBName: js.UndefOr[NonEmptyString] = js.undefined,
+        DbInstancePort: js.UndefOr[Int] = js.undefined,
+        DbiResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+        DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        Endpoint: js.UndefOr[AwsRdsDbInstanceEndpoint] = js.undefined,
+        Engine: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        InstanceCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        TdeCredentialArn: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups] = js.undefined
+    ): AwsRdsDbInstanceDetails = {
+      val __obj = js.Dynamic.literal()
+      AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
+      DbInstancePort.foreach(__v => __obj.updateDynamic("DbInstancePort")(__v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(__v =>
+        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
+      )
+      InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbInstanceDetails]
+    }
+  }
+
+  /**
+    * Specifies the connection endpoint.
+    */
+  @js.native
+  trait AwsRdsDbInstanceEndpoint extends js.Object {
+    var Address: js.UndefOr[NonEmptyString]
+    var HostedZoneId: js.UndefOr[NonEmptyString]
+    var Port: js.UndefOr[Int]
+  }
+
+  object AwsRdsDbInstanceEndpoint {
+    @inline
+    def apply(
+        Address: js.UndefOr[NonEmptyString] = js.undefined,
+        HostedZoneId: js.UndefOr[NonEmptyString] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined
+    ): AwsRdsDbInstanceEndpoint = {
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbInstanceEndpoint]
+    }
+  }
+
+  /**
+    * A VPC security groups that the DB instance belongs to.
+    */
+  @js.native
+  trait AwsRdsDbInstanceVpcSecurityGroup extends js.Object {
+    var Status: js.UndefOr[NonEmptyString]
+    var VpcSecurityGroupId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbInstanceVpcSecurityGroup {
+    @inline
+    def apply(
+        Status: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcSecurityGroupId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbInstanceVpcSecurityGroup = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupId.foreach(__v => __obj.updateDynamic("VpcSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbInstanceVpcSecurityGroup]
     }
   }
 
@@ -1375,6 +2102,68 @@ package securityhub {
     }
   }
 
+  /**
+    * Details about a WAF WebACL.
+    */
+  @js.native
+  trait AwsWafWebAclDetails extends js.Object {
+    var DefaultAction: js.UndefOr[NonEmptyString]
+    var Name: js.UndefOr[NonEmptyString]
+    var Rules: js.UndefOr[AwsWafWebAclRuleList]
+    var WebAclId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsWafWebAclDetails {
+    @inline
+    def apply(
+        DefaultAction: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        Rules: js.UndefOr[AwsWafWebAclRuleList] = js.undefined,
+        WebAclId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsWafWebAclDetails = {
+      val __obj = js.Dynamic.literal()
+      DefaultAction.foreach(__v => __obj.updateDynamic("DefaultAction")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      WebAclId.foreach(__v => __obj.updateDynamic("WebAclId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsWafWebAclDetails]
+    }
+  }
+
+  /**
+    * Details for a rule in a WAF WebACL.
+    */
+  @js.native
+  trait AwsWafWebAclRule extends js.Object {
+    var Action: js.UndefOr[WafAction]
+    var ExcludedRules: js.UndefOr[WafExcludedRuleList]
+    var OverrideAction: js.UndefOr[WafOverrideAction]
+    var Priority: js.UndefOr[Int]
+    var RuleId: js.UndefOr[NonEmptyString]
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsWafWebAclRule {
+    @inline
+    def apply(
+        Action: js.UndefOr[WafAction] = js.undefined,
+        ExcludedRules: js.UndefOr[WafExcludedRuleList] = js.undefined,
+        OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
+        Priority: js.UndefOr[Int] = js.undefined,
+        RuleId: js.UndefOr[NonEmptyString] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsWafWebAclRule = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
+      OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RuleId.foreach(__v => __obj.updateDynamic("RuleId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsWafWebAclRule]
+    }
+  }
+
   @js.native
   trait BatchDisableStandardsRequest extends js.Object {
     var StandardsSubscriptionArns: StandardsSubscriptionArns
@@ -1486,26 +2275,29 @@ package securityhub {
   }
 
   /**
-    * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+    * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
     *  Values include the following:
     * * Allowed values are the following:
     * <li> <code>PASSED</code> - Compliance check passed for all evaluated resources.
     *  * <code>WARNING</code> - Some information is missing or this check is not supported given your configuration.
     *  * <code>FAILED</code> - Compliance check failed for at least one evaluated resource.
-    *  * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage or API error.
+    *  * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was <code> NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
     * </li>
     */
   @js.native
   trait Compliance extends js.Object {
+    var RelatedRequirements: js.UndefOr[RelatedRequirementsList]
     var Status: js.UndefOr[ComplianceStatus]
   }
 
   object Compliance {
     @inline
     def apply(
+        RelatedRequirements: js.UndefOr[RelatedRequirementsList] = js.undefined,
         Status: js.UndefOr[ComplianceStatus] = js.undefined
     ): Compliance = {
       val __obj = js.Dynamic.literal()
+      RelatedRequirements.foreach(__v => __obj.updateDynamic("RelatedRequirements")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Compliance]
     }
@@ -1546,6 +2338,13 @@ package securityhub {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDetails]
     }
+  }
+
+  object ControlStatusEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -2008,6 +2807,87 @@ package securityhub {
   }
 
   @js.native
+  trait DescribeStandardsControlsRequest extends js.Object {
+    var StandardsSubscriptionArn: NonEmptyString
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeStandardsControlsRequest {
+    @inline
+    def apply(
+        StandardsSubscriptionArn: NonEmptyString,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeStandardsControlsRequest = {
+      val __obj = js.Dynamic.literal(
+        "StandardsSubscriptionArn" -> StandardsSubscriptionArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStandardsControlsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStandardsControlsResponse extends js.Object {
+    var Controls: js.UndefOr[StandardsControls]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeStandardsControlsResponse {
+    @inline
+    def apply(
+        Controls: js.UndefOr[StandardsControls] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeStandardsControlsResponse = {
+      val __obj = js.Dynamic.literal()
+      Controls.foreach(__v => __obj.updateDynamic("Controls")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStandardsControlsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeStandardsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeStandardsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeStandardsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStandardsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStandardsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Standards: js.UndefOr[Standards]
+  }
+
+  object DescribeStandardsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Standards: js.UndefOr[Standards] = js.undefined
+    ): DescribeStandardsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Standards.foreach(__v => __obj.updateDynamic("Standards")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStandardsResponse]
+    }
+  }
+
+  @js.native
   trait DisableImportFindingsForProductRequest extends js.Object {
     var ProductSubscriptionArn: NonEmptyString
   }
@@ -2446,7 +3326,7 @@ package securityhub {
   }
 
   /**
-    * Includes details of the list of the findings that can't be imported.
+    * Includes details of the list of the findings that cannot be imported.
     */
   @js.native
   trait ImportFindingsError extends js.Object {
@@ -3293,19 +4173,29 @@ package securityhub {
 
   /**
     * Additional details about a resource related to a finding.
+    *  To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
+    *  If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.
+    *  You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
     */
   @js.native
   trait ResourceDetails extends js.Object {
     var AwsCloudFrontDistribution: js.UndefOr[AwsCloudFrontDistributionDetails]
+    var AwsCodeBuildProject: js.UndefOr[AwsCodeBuildProjectDetails]
     var AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails]
+    var AwsEc2NetworkInterface: js.UndefOr[AwsEc2NetworkInterfaceDetails]
+    var AwsEc2SecurityGroup: js.UndefOr[AwsEc2SecurityGroupDetails]
+    var AwsElasticsearchDomain: js.UndefOr[AwsElasticsearchDomainDetails]
     var AwsElbv2LoadBalancer: js.UndefOr[AwsElbv2LoadBalancerDetails]
     var AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails]
     var AwsIamRole: js.UndefOr[AwsIamRoleDetails]
     var AwsKmsKey: js.UndefOr[AwsKmsKeyDetails]
     var AwsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails]
+    var AwsLambdaLayerVersion: js.UndefOr[AwsLambdaLayerVersionDetails]
+    var AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails]
     var AwsS3Bucket: js.UndefOr[AwsS3BucketDetails]
     var AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails]
     var AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails]
+    var AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails]
     var Container: js.UndefOr[ContainerDetails]
     var Other: js.UndefOr[FieldMap]
   }
@@ -3314,15 +4204,22 @@ package securityhub {
     @inline
     def apply(
         AwsCloudFrontDistribution: js.UndefOr[AwsCloudFrontDistributionDetails] = js.undefined,
+        AwsCodeBuildProject: js.UndefOr[AwsCodeBuildProjectDetails] = js.undefined,
         AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
+        AwsEc2NetworkInterface: js.UndefOr[AwsEc2NetworkInterfaceDetails] = js.undefined,
+        AwsEc2SecurityGroup: js.UndefOr[AwsEc2SecurityGroupDetails] = js.undefined,
+        AwsElasticsearchDomain: js.UndefOr[AwsElasticsearchDomainDetails] = js.undefined,
         AwsElbv2LoadBalancer: js.UndefOr[AwsElbv2LoadBalancerDetails] = js.undefined,
         AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails] = js.undefined,
         AwsIamRole: js.UndefOr[AwsIamRoleDetails] = js.undefined,
         AwsKmsKey: js.UndefOr[AwsKmsKeyDetails] = js.undefined,
         AwsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails] = js.undefined,
+        AwsLambdaLayerVersion: js.UndefOr[AwsLambdaLayerVersionDetails] = js.undefined,
+        AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails] = js.undefined,
         AwsS3Bucket: js.UndefOr[AwsS3BucketDetails] = js.undefined,
         AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails] = js.undefined,
         AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails] = js.undefined,
+        AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails] = js.undefined,
         Container: js.UndefOr[ContainerDetails] = js.undefined,
         Other: js.UndefOr[FieldMap] = js.undefined
     ): ResourceDetails = {
@@ -3330,15 +4227,22 @@ package securityhub {
       AwsCloudFrontDistribution.foreach(__v =>
         __obj.updateDynamic("AwsCloudFrontDistribution")(__v.asInstanceOf[js.Any])
       )
+      AwsCodeBuildProject.foreach(__v => __obj.updateDynamic("AwsCodeBuildProject")(__v.asInstanceOf[js.Any]))
       AwsEc2Instance.foreach(__v => __obj.updateDynamic("AwsEc2Instance")(__v.asInstanceOf[js.Any]))
+      AwsEc2NetworkInterface.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterface")(__v.asInstanceOf[js.Any]))
+      AwsEc2SecurityGroup.foreach(__v => __obj.updateDynamic("AwsEc2SecurityGroup")(__v.asInstanceOf[js.Any]))
+      AwsElasticsearchDomain.foreach(__v => __obj.updateDynamic("AwsElasticsearchDomain")(__v.asInstanceOf[js.Any]))
       AwsElbv2LoadBalancer.foreach(__v => __obj.updateDynamic("AwsElbv2LoadBalancer")(__v.asInstanceOf[js.Any]))
       AwsIamAccessKey.foreach(__v => __obj.updateDynamic("AwsIamAccessKey")(__v.asInstanceOf[js.Any]))
       AwsIamRole.foreach(__v => __obj.updateDynamic("AwsIamRole")(__v.asInstanceOf[js.Any]))
       AwsKmsKey.foreach(__v => __obj.updateDynamic("AwsKmsKey")(__v.asInstanceOf[js.Any]))
       AwsLambdaFunction.foreach(__v => __obj.updateDynamic("AwsLambdaFunction")(__v.asInstanceOf[js.Any]))
+      AwsLambdaLayerVersion.foreach(__v => __obj.updateDynamic("AwsLambdaLayerVersion")(__v.asInstanceOf[js.Any]))
+      AwsRdsDbInstance.foreach(__v => __obj.updateDynamic("AwsRdsDbInstance")(__v.asInstanceOf[js.Any]))
       AwsS3Bucket.foreach(__v => __obj.updateDynamic("AwsS3Bucket")(__v.asInstanceOf[js.Any]))
       AwsSnsTopic.foreach(__v => __obj.updateDynamic("AwsSnsTopic")(__v.asInstanceOf[js.Any]))
       AwsSqsQueue.foreach(__v => __obj.updateDynamic("AwsSqsQueue")(__v.asInstanceOf[js.Any]))
+      AwsWafWebAcl.foreach(__v => __obj.updateDynamic("AwsWafWebAcl")(__v.asInstanceOf[js.Any]))
       Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
       Other.foreach(__v => __obj.updateDynamic("Other")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDetails]
@@ -3346,7 +4250,7 @@ package securityhub {
   }
 
   /**
-    * Details about the account that wasn't processed.
+    * Details about the account that was not processed.
     */
   @js.native
   trait Result extends js.Object {
@@ -3391,6 +4295,15 @@ package securityhub {
     }
   }
 
+  object SeverityRatingEnum {
+    val LOW      = "LOW"
+    val MEDIUM   = "MEDIUM"
+    val HIGH     = "HIGH"
+    val CRITICAL = "CRITICAL"
+
+    val values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
+  }
+
   /**
     * A collection of finding attributes used to sort findings.
     */
@@ -3418,6 +4331,77 @@ package securityhub {
     val desc = "desc"
 
     val values = js.Object.freeze(js.Array(asc, desc))
+  }
+
+  /**
+    * Provides information about a specific standard.
+    */
+  @js.native
+  trait Standard extends js.Object {
+    var Description: js.UndefOr[NonEmptyString]
+    var Name: js.UndefOr[NonEmptyString]
+    var StandardsArn: js.UndefOr[NonEmptyString]
+  }
+
+  object Standard {
+    @inline
+    def apply(
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        StandardsArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): Standard = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StandardsArn.foreach(__v => __obj.updateDynamic("StandardsArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Standard]
+    }
+  }
+
+  /**
+    * Details for an individual compliance standard control.
+    */
+  @js.native
+  trait StandardsControl extends js.Object {
+    var ControlId: js.UndefOr[NonEmptyString]
+    var ControlStatus: js.UndefOr[ControlStatus]
+    var ControlStatusUpdatedAt: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[NonEmptyString]
+    var DisabledReason: js.UndefOr[NonEmptyString]
+    var RelatedRequirements: js.UndefOr[RelatedRequirementsList]
+    var RemediationUrl: js.UndefOr[NonEmptyString]
+    var SeverityRating: js.UndefOr[SeverityRating]
+    var StandardsControlArn: js.UndefOr[NonEmptyString]
+    var Title: js.UndefOr[NonEmptyString]
+  }
+
+  object StandardsControl {
+    @inline
+    def apply(
+        ControlId: js.UndefOr[NonEmptyString] = js.undefined,
+        ControlStatus: js.UndefOr[ControlStatus] = js.undefined,
+        ControlStatusUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        DisabledReason: js.UndefOr[NonEmptyString] = js.undefined,
+        RelatedRequirements: js.UndefOr[RelatedRequirementsList] = js.undefined,
+        RemediationUrl: js.UndefOr[NonEmptyString] = js.undefined,
+        SeverityRating: js.UndefOr[SeverityRating] = js.undefined,
+        StandardsControlArn: js.UndefOr[NonEmptyString] = js.undefined,
+        Title: js.UndefOr[NonEmptyString] = js.undefined
+    ): StandardsControl = {
+      val __obj = js.Dynamic.literal()
+      ControlId.foreach(__v => __obj.updateDynamic("ControlId")(__v.asInstanceOf[js.Any]))
+      ControlStatus.foreach(__v => __obj.updateDynamic("ControlStatus")(__v.asInstanceOf[js.Any]))
+      ControlStatusUpdatedAt.foreach(__v => __obj.updateDynamic("ControlStatusUpdatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisabledReason.foreach(__v => __obj.updateDynamic("DisabledReason")(__v.asInstanceOf[js.Any]))
+      RelatedRequirements.foreach(__v => __obj.updateDynamic("RelatedRequirements")(__v.asInstanceOf[js.Any]))
+      RemediationUrl.foreach(__v => __obj.updateDynamic("RemediationUrl")(__v.asInstanceOf[js.Any]))
+      SeverityRating.foreach(__v => __obj.updateDynamic("SeverityRating")(__v.asInstanceOf[js.Any]))
+      StandardsControlArn.foreach(__v => __obj.updateDynamic("StandardsControlArn")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StandardsControl]
+    }
   }
 
   object StandardsStatusEnum {
@@ -3548,7 +4532,7 @@ package securityhub {
   }
 
   /**
-    * Details about the threat intel related to a finding.
+    * Details about the threat intelligence related to a finding.
     */
   @js.native
   trait ThreatIntelIndicator extends js.Object {
@@ -3771,6 +4755,43 @@ package securityhub {
     }
   }
 
+  @js.native
+  trait UpdateStandardsControlRequest extends js.Object {
+    var StandardsControlArn: NonEmptyString
+    var ControlStatus: js.UndefOr[ControlStatus]
+    var DisabledReason: js.UndefOr[NonEmptyString]
+  }
+
+  object UpdateStandardsControlRequest {
+    @inline
+    def apply(
+        StandardsControlArn: NonEmptyString,
+        ControlStatus: js.UndefOr[ControlStatus] = js.undefined,
+        DisabledReason: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateStandardsControlRequest = {
+      val __obj = js.Dynamic.literal(
+        "StandardsControlArn" -> StandardsControlArn.asInstanceOf[js.Any]
+      )
+
+      ControlStatus.foreach(__v => __obj.updateDynamic("ControlStatus")(__v.asInstanceOf[js.Any]))
+      DisabledReason.foreach(__v => __obj.updateDynamic("DisabledReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStandardsControlRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateStandardsControlResponse extends js.Object {}
+
+  object UpdateStandardsControlResponse {
+    @inline
+    def apply(
+        ): UpdateStandardsControlResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateStandardsControlResponse]
+    }
+  }
+
   object VerificationStateEnum {
     val UNKNOWN         = "UNKNOWN"
     val TRUE_POSITIVE   = "TRUE_POSITIVE"
@@ -3778,6 +4799,63 @@ package securityhub {
     val BENIGN_POSITIVE = "BENIGN_POSITIVE"
 
     val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
+  }
+
+  /**
+    * Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+    */
+  @js.native
+  trait WafAction extends js.Object {
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object WafAction {
+    @inline
+    def apply(
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): WafAction = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WafAction]
+    }
+  }
+
+  /**
+    * Details about a rule to exclude from a rule group.
+    */
+  @js.native
+  trait WafExcludedRule extends js.Object {
+    var RuleId: js.UndefOr[NonEmptyString]
+  }
+
+  object WafExcludedRule {
+    @inline
+    def apply(
+        RuleId: js.UndefOr[NonEmptyString] = js.undefined
+    ): WafExcludedRule = {
+      val __obj = js.Dynamic.literal()
+      RuleId.foreach(__v => __obj.updateDynamic("RuleId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WafExcludedRule]
+    }
+  }
+
+  /**
+    * Details about an override action for a rule.
+    */
+  @js.native
+  trait WafOverrideAction extends js.Object {
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object WafOverrideAction {
+    @inline
+    def apply(
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): WafOverrideAction = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WafOverrideAction]
+    }
   }
 
   object WorkflowStateEnum {

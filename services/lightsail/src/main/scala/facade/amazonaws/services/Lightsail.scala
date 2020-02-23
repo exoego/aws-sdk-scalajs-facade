@@ -6401,6 +6401,7 @@ package lightsail {
   trait RelationalDatabase extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var backupRetentionEnabled: js.UndefOr[Boolean]
+    var caCertificateIdentifier: js.UndefOr[String]
     var createdAt: js.UndefOr[IsoDate]
     var engine: js.UndefOr[NonEmptyString]
     var engineVersion: js.UndefOr[NonEmptyString]
@@ -6431,6 +6432,7 @@ package lightsail {
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         backupRetentionEnabled: js.UndefOr[Boolean] = js.undefined,
+        caCertificateIdentifier: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         engine: js.UndefOr[NonEmptyString] = js.undefined,
         engineVersion: js.UndefOr[NonEmptyString] = js.undefined,
@@ -6458,6 +6460,7 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       backupRetentionEnabled.foreach(__v => __obj.updateDynamic("backupRetentionEnabled")(__v.asInstanceOf[js.Any]))
+      caCertificateIdentifier.foreach(__v => __obj.updateDynamic("caCertificateIdentifier")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
       engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
@@ -7319,6 +7322,7 @@ package lightsail {
   trait UpdateRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var applyImmediately: js.UndefOr[Boolean]
+    var caCertificateIdentifier: js.UndefOr[String]
     var disableBackupRetention: js.UndefOr[Boolean]
     var enableBackupRetention: js.UndefOr[Boolean]
     var masterUserPassword: js.UndefOr[SensitiveString]
@@ -7333,6 +7337,7 @@ package lightsail {
     def apply(
         relationalDatabaseName: ResourceName,
         applyImmediately: js.UndefOr[Boolean] = js.undefined,
+        caCertificateIdentifier: js.UndefOr[String] = js.undefined,
         disableBackupRetention: js.UndefOr[Boolean] = js.undefined,
         enableBackupRetention: js.UndefOr[Boolean] = js.undefined,
         masterUserPassword: js.UndefOr[SensitiveString] = js.undefined,
@@ -7346,6 +7351,7 @@ package lightsail {
       )
 
       applyImmediately.foreach(__v => __obj.updateDynamic("applyImmediately")(__v.asInstanceOf[js.Any]))
+      caCertificateIdentifier.foreach(__v => __obj.updateDynamic("caCertificateIdentifier")(__v.asInstanceOf[js.Any]))
       disableBackupRetention.foreach(__v => __obj.updateDynamic("disableBackupRetention")(__v.asInstanceOf[js.Any]))
       enableBackupRetention.foreach(__v => __obj.updateDynamic("enableBackupRetention")(__v.asInstanceOf[js.Any]))
       masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
