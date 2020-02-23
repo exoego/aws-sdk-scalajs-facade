@@ -13,20 +13,10 @@ You may find the below peer facades useful when developing app with AWS.
 ## Getting Started
 
 ```sbt
-// For Node.js v12 LTS
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.28.0-v2.596.0"
-
-// For Node.js v10 LTS
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.27.0-v2.571.0"
-
-// For Node.js v8 LTS (reached end-of-life)
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade-nodejs-v8" % "0.26.2-v2.524.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.29.0-v2.624.0"
 ```
 
-Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-vN-NNN-N`,
-which the facade is built for.
-
-Note) You may reduce Scala.js's `fastOptJS`/`fullOptJS` time by minimizing dependencies. The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. You may depend only minimum dependencies and gain build performance boost. See [the list of separate artifacts](ARTIFACTS.md).
+Note) The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. If you depend only minimum facades, you will gain build performance boost (short `fastOptJS`/`fullOptJS` time). See [the list of separate artifacts](ARTIFACTS.md).
 
 ### Using constructor
 
@@ -97,12 +87,12 @@ for {
 
 ## Support matrix
 
-|            |   ScalaJS 0.6.28+              |   ScalaJS 1.x  |
-| ---------- | :----------------------------: | :------------: |
-| Scala 2.13 | :heavy_check_mark: from 0.22.0 | :construction: |
-| Scala 2.12 | :heavy_check_mark:             | :construction: |
-| Scala 2.11 |         N/A                    |       N/A      |
-| Scala 2.10 |         N/A                    |       N/A      |
+|            |   ScalaJS 0.6.32   |   ScalaJS 1.0      |
+| ---------- | :----------------: | :----------------: |
+| Scala 2.13 | :heavy_check_mark: | :heavy_check_mark: |
+| Scala 2.12 | :heavy_check_mark: | :heavy_check_mark: |
+| Scala 2.11 |         N/A        |       N/A          |
+| Scala 2.10 |         N/A        |       N/A          |
 
 -   :heavy_check_mark: Supported
 -   :construction: Not supported but planned
