@@ -15,8 +15,6 @@ package object cloudhsm {
   type ClientLabel            = String
   type ClientList             = js.Array[ClientArn]
   type ClientToken            = String
-  type ClientVersion          = String
-  type CloudHsmObjectState    = String
   type EniId                  = String
   type ExternalId             = String
   type HapgArn                = String
@@ -24,7 +22,6 @@ package object cloudhsm {
   type HsmArn                 = String
   type HsmList                = js.Array[HsmArn]
   type HsmSerialNumber        = String
-  type HsmStatus              = String
   type IamRoleArn             = String
   type IpAddress              = String
   type Label                  = String
@@ -35,7 +32,6 @@ package object cloudhsm {
   type PartitionSerialList    = js.Array[PartitionSerial]
   type SshKey                 = String
   type SubnetId               = String
-  type SubscriptionType       = String
   type TagKey                 = String
   type TagKeyList             = js.Array[TagKey]
   type TagList                = js.Array[Tag]
@@ -156,10 +152,11 @@ package cloudhsm {
       __obj.asInstanceOf[AddTagsToResourceResponse]
     }
   }
-
-  object ClientVersionEnum {
-    val `5.1` = "5.1"
-    val `5.3` = "5.3"
+  @js.native
+  sealed trait ClientVersion extends js.Any
+  object ClientVersion extends js.Object {
+    val `5.1` = "5.1".asInstanceOf[ClientVersion]
+    val `5.3` = "5.3".asInstanceOf[ClientVersion]
 
     val values = js.Object.freeze(js.Array(`5.1`, `5.3`))
   }
@@ -169,11 +166,12 @@ package cloudhsm {
     */
   @js.native
   trait CloudHsmInternalExceptionException extends js.Object {}
-
-  object CloudHsmObjectStateEnum {
-    val READY    = "READY"
-    val UPDATING = "UPDATING"
-    val DEGRADED = "DEGRADED"
+  @js.native
+  sealed trait CloudHsmObjectState extends js.Any
+  object CloudHsmObjectState extends js.Object {
+    val READY    = "READY".asInstanceOf[CloudHsmObjectState]
+    val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
+    val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
     val values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
   }
@@ -708,15 +706,16 @@ package cloudhsm {
       __obj.asInstanceOf[GetConfigResponse]
     }
   }
-
-  object HsmStatusEnum {
-    val PENDING     = "PENDING"
-    val RUNNING     = "RUNNING"
-    val UPDATING    = "UPDATING"
-    val SUSPENDED   = "SUSPENDED"
-    val TERMINATING = "TERMINATING"
-    val TERMINATED  = "TERMINATED"
-    val DEGRADED    = "DEGRADED"
+  @js.native
+  sealed trait HsmStatus extends js.Any
+  object HsmStatus extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[HsmStatus]
+    val RUNNING     = "RUNNING".asInstanceOf[HsmStatus]
+    val UPDATING    = "UPDATING".asInstanceOf[HsmStatus]
+    val SUSPENDED   = "SUSPENDED".asInstanceOf[HsmStatus]
+    val TERMINATING = "TERMINATING".asInstanceOf[HsmStatus]
+    val TERMINATED  = "TERMINATED".asInstanceOf[HsmStatus]
+    val DEGRADED    = "DEGRADED".asInstanceOf[HsmStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
   }
@@ -1083,8 +1082,10 @@ package cloudhsm {
     * * ```PRODUCTION``` - The HSM is being used in a production environment.
     *  * ```TRIAL``` - The HSM is being used in a product trial.
     */
-  object SubscriptionTypeEnum {
-    val PRODUCTION = "PRODUCTION"
+  @js.native
+  sealed trait SubscriptionType extends js.Any
+  object SubscriptionType extends js.Object {
+    val PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
 
     val values = js.Object.freeze(js.Array(PRODUCTION))
   }

@@ -47,7 +47,6 @@ package object amplify {
   type DomainAssociations               = js.Array[DomainAssociation]
   type DomainName                       = String
   type DomainPrefix                     = String
-  type DomainStatus                     = String
   type EnableAutoBranchCreation         = Boolean
   type EnableAutoBuild                  = Boolean
   type EnableAutoSubDomain              = Boolean
@@ -67,9 +66,7 @@ package object amplify {
   type JobArn                           = String
   type JobId                            = String
   type JobReason                        = String
-  type JobStatus                        = String
   type JobSummaries                     = js.Array[JobSummary]
-  type JobType                          = String
   type LastDeployTime                   = js.Date
   type LogUrl                           = String
   type MD5Hash                          = String
@@ -77,7 +74,6 @@ package object amplify {
   type Name                             = String
   type NextToken                        = String
   type OauthToken                       = String
-  type Platform                         = String
   type PullRequestEnvironmentName       = String
   type Repository                       = String
   type ResourceArn                      = String
@@ -86,7 +82,6 @@ package object amplify {
   type Source                           = String
   type SourceUrl                        = String
   type StackName                        = String
-  type Stage                            = String
   type StartTime                        = js.Date
   type Status                           = String
   type StatusReason                     = String
@@ -1252,16 +1247,17 @@ package amplify {
       __obj.asInstanceOf[DomainAssociation]
     }
   }
-
-  object DomainStatusEnum {
-    val PENDING_VERIFICATION   = "PENDING_VERIFICATION"
-    val IN_PROGRESS            = "IN_PROGRESS"
-    val AVAILABLE              = "AVAILABLE"
-    val PENDING_DEPLOYMENT     = "PENDING_DEPLOYMENT"
-    val FAILED                 = "FAILED"
-    val CREATING               = "CREATING"
-    val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE"
-    val UPDATING               = "UPDATING"
+  @js.native
+  sealed trait DomainStatus extends js.Any
+  object DomainStatus extends js.Object {
+    val PENDING_VERIFICATION   = "PENDING_VERIFICATION".asInstanceOf[DomainStatus]
+    val IN_PROGRESS            = "IN_PROGRESS".asInstanceOf[DomainStatus]
+    val AVAILABLE              = "AVAILABLE".asInstanceOf[DomainStatus]
+    val PENDING_DEPLOYMENT     = "PENDING_DEPLOYMENT".asInstanceOf[DomainStatus]
+    val FAILED                 = "FAILED".asInstanceOf[DomainStatus]
+    val CREATING               = "CREATING".asInstanceOf[DomainStatus]
+    val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
+    val UPDATING               = "UPDATING".asInstanceOf[DomainStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1652,15 +1648,16 @@ package amplify {
       __obj.asInstanceOf[Job]
     }
   }
-
-  object JobStatusEnum {
-    val PENDING      = "PENDING"
-    val PROVISIONING = "PROVISIONING"
-    val RUNNING      = "RUNNING"
-    val FAILED       = "FAILED"
-    val SUCCEED      = "SUCCEED"
-    val CANCELLING   = "CANCELLING"
-    val CANCELLED    = "CANCELLED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val PENDING      = "PENDING".asInstanceOf[JobStatus]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[JobStatus]
+    val RUNNING      = "RUNNING".asInstanceOf[JobStatus]
+    val FAILED       = "FAILED".asInstanceOf[JobStatus]
+    val SUCCEED      = "SUCCEED".asInstanceOf[JobStatus]
+    val CANCELLING   = "CANCELLING".asInstanceOf[JobStatus]
+    val CANCELLED    = "CANCELLED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED))
   }
@@ -1709,12 +1706,13 @@ package amplify {
       __obj.asInstanceOf[JobSummary]
     }
   }
-
-  object JobTypeEnum {
-    val RELEASE  = "RELEASE"
-    val RETRY    = "RETRY"
-    val MANUAL   = "MANUAL"
-    val WEB_HOOK = "WEB_HOOK"
+  @js.native
+  sealed trait JobType extends js.Any
+  object JobType extends js.Object {
+    val RELEASE  = "RELEASE".asInstanceOf[JobType]
+    val RETRY    = "RETRY".asInstanceOf[JobType]
+    val MANUAL   = "MANUAL".asInstanceOf[JobType]
+    val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
 
     val values = js.Object.freeze(js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK))
   }
@@ -2122,9 +2120,10 @@ package amplify {
       __obj.asInstanceOf[ListWebhooksResult]
     }
   }
-
-  object PlatformEnum {
-    val WEB = "WEB"
+  @js.native
+  sealed trait Platform extends js.Any
+  object Platform extends js.Object {
+    val WEB = "WEB".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(WEB))
   }
@@ -2156,13 +2155,14 @@ package amplify {
       __obj.asInstanceOf[ProductionBranch]
     }
   }
-
-  object StageEnum {
-    val PRODUCTION   = "PRODUCTION"
-    val BETA         = "BETA"
-    val DEVELOPMENT  = "DEVELOPMENT"
-    val EXPERIMENTAL = "EXPERIMENTAL"
-    val PULL_REQUEST = "PULL_REQUEST"
+  @js.native
+  sealed trait Stage extends js.Any
+  object Stage extends js.Object {
+    val PRODUCTION   = "PRODUCTION".asInstanceOf[Stage]
+    val BETA         = "BETA".asInstanceOf[Stage]
+    val DEVELOPMENT  = "DEVELOPMENT".asInstanceOf[Stage]
+    val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
+    val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
 
     val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST))
   }

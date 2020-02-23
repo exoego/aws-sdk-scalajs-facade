@@ -8,32 +8,23 @@ import facade.amazonaws._
 
 package object workdocs {
   type ActivityNamesFilterType     = String
-  type ActivityType                = String
   type AuthenticationHeaderType    = String
-  type BooleanEnumType             = String
   type BooleanType                 = Boolean
   type CommentIdType               = String
   type CommentList                 = js.Array[Comment]
-  type CommentStatusType           = String
   type CommentTextType             = String
-  type CommentVisibilityType       = String
   type CustomMetadataKeyList       = js.Array[CustomMetadataKeyType]
   type CustomMetadataKeyType       = String
   type CustomMetadataMap           = js.Dictionary[CustomMetadataValueType]
   type CustomMetadataValueType     = String
   type DocumentContentType         = String
   type DocumentMetadataList        = js.Array[DocumentMetadata]
-  type DocumentSourceType          = String
   type DocumentSourceUrlMap        = js.Dictionary[UrlType]
-  type DocumentStatusType          = String
-  type DocumentThumbnailType       = String
   type DocumentThumbnailUrlMap     = js.Dictionary[UrlType]
   type DocumentVersionIdType       = String
   type DocumentVersionMetadataList = js.Array[DocumentVersionMetadata]
-  type DocumentVersionStatus       = String
   type EmailAddressType            = String
   type FieldNamesType              = String
-  type FolderContentType           = String
   type FolderMetadataList          = js.Array[FolderMetadata]
   type GroupMetadataList           = js.Array[GroupMetadata]
   type GroupNameType               = String
@@ -42,10 +33,8 @@ package object workdocs {
   type HeaderValueType             = String
   type IdType                      = String
   type LimitType                   = Int
-  type LocaleType                  = String
   type MarkerType                  = String
   type MessageType                 = String
-  type OrderType                   = String
   type OrganizationUserList        = js.Array[User]
   type PageMarkerType              = String
   type PasswordType                = String
@@ -53,40 +42,25 @@ package object workdocs {
   type PositiveIntegerType         = Int
   type PositiveSizeType            = Double
   type PrincipalList               = js.Array[Principal]
-  type PrincipalType               = String
-  type ResourceCollectionType      = String
   type ResourceIdType              = String
   type ResourceNameType            = String
   type ResourcePathComponentList   = js.Array[ResourcePathComponent]
-  type ResourceSortType            = String
-  type ResourceStateType           = String
-  type ResourceType                = String
-  type RolePermissionType          = String
-  type RoleType                    = String
   type SearchQueryType             = String
   type SharePrincipalList          = js.Array[SharePrincipal]
   type ShareResultsList            = js.Array[ShareResult]
-  type ShareStatusType             = String
   type SharedLabel                 = String
   type SharedLabels                = js.Array[SharedLabel]
   type SignedHeaderMap             = js.Dictionary[HeaderValueType]
   type SizeType                    = Double
-  type StorageType                 = String
   type SubscriptionEndPointType    = String
   type SubscriptionList            = js.Array[Subscription]
-  type SubscriptionProtocolType    = String
-  type SubscriptionType            = String
   type TimeZoneIdType              = String
   type TimestampType               = js.Date
   type UrlType                     = String
   type UserActivities              = js.Array[Activity]
   type UserAttributeValueType      = String
-  type UserFilterType              = String
   type UserIdsType                 = String
   type UserMetadataList            = js.Array[UserMetadata]
-  type UserSortType                = String
-  type UserStatusType              = String
-  type UserType                    = String
   type UsernameType                = String
 
   implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
@@ -347,41 +321,43 @@ package workdocs {
       __obj.asInstanceOf[Activity]
     }
   }
-
-  object ActivityTypeEnum {
-    val DOCUMENT_CHECKED_IN                        = "DOCUMENT_CHECKED_IN"
-    val DOCUMENT_CHECKED_OUT                       = "DOCUMENT_CHECKED_OUT"
-    val DOCUMENT_RENAMED                           = "DOCUMENT_RENAMED"
-    val DOCUMENT_VERSION_UPLOADED                  = "DOCUMENT_VERSION_UPLOADED"
-    val DOCUMENT_VERSION_DELETED                   = "DOCUMENT_VERSION_DELETED"
-    val DOCUMENT_VERSION_VIEWED                    = "DOCUMENT_VERSION_VIEWED"
-    val DOCUMENT_VERSION_DOWNLOADED                = "DOCUMENT_VERSION_DOWNLOADED"
-    val DOCUMENT_RECYCLED                          = "DOCUMENT_RECYCLED"
-    val DOCUMENT_RESTORED                          = "DOCUMENT_RESTORED"
-    val DOCUMENT_REVERTED                          = "DOCUMENT_REVERTED"
-    val DOCUMENT_SHARED                            = "DOCUMENT_SHARED"
-    val DOCUMENT_UNSHARED                          = "DOCUMENT_UNSHARED"
-    val DOCUMENT_SHARE_PERMISSION_CHANGED          = "DOCUMENT_SHARE_PERMISSION_CHANGED"
-    val DOCUMENT_SHAREABLE_LINK_CREATED            = "DOCUMENT_SHAREABLE_LINK_CREATED"
-    val DOCUMENT_SHAREABLE_LINK_REMOVED            = "DOCUMENT_SHAREABLE_LINK_REMOVED"
-    val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"
-    val DOCUMENT_MOVED                             = "DOCUMENT_MOVED"
-    val DOCUMENT_COMMENT_ADDED                     = "DOCUMENT_COMMENT_ADDED"
-    val DOCUMENT_COMMENT_DELETED                   = "DOCUMENT_COMMENT_DELETED"
-    val DOCUMENT_ANNOTATION_ADDED                  = "DOCUMENT_ANNOTATION_ADDED"
-    val DOCUMENT_ANNOTATION_DELETED                = "DOCUMENT_ANNOTATION_DELETED"
-    val FOLDER_CREATED                             = "FOLDER_CREATED"
-    val FOLDER_DELETED                             = "FOLDER_DELETED"
-    val FOLDER_RENAMED                             = "FOLDER_RENAMED"
-    val FOLDER_RECYCLED                            = "FOLDER_RECYCLED"
-    val FOLDER_RESTORED                            = "FOLDER_RESTORED"
-    val FOLDER_SHARED                              = "FOLDER_SHARED"
-    val FOLDER_UNSHARED                            = "FOLDER_UNSHARED"
-    val FOLDER_SHARE_PERMISSION_CHANGED            = "FOLDER_SHARE_PERMISSION_CHANGED"
-    val FOLDER_SHAREABLE_LINK_CREATED              = "FOLDER_SHAREABLE_LINK_CREATED"
-    val FOLDER_SHAREABLE_LINK_REMOVED              = "FOLDER_SHAREABLE_LINK_REMOVED"
-    val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED   = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
-    val FOLDER_MOVED                               = "FOLDER_MOVED"
+  @js.native
+  sealed trait ActivityType extends js.Any
+  object ActivityType extends js.Object {
+    val DOCUMENT_CHECKED_IN               = "DOCUMENT_CHECKED_IN".asInstanceOf[ActivityType]
+    val DOCUMENT_CHECKED_OUT              = "DOCUMENT_CHECKED_OUT".asInstanceOf[ActivityType]
+    val DOCUMENT_RENAMED                  = "DOCUMENT_RENAMED".asInstanceOf[ActivityType]
+    val DOCUMENT_VERSION_UPLOADED         = "DOCUMENT_VERSION_UPLOADED".asInstanceOf[ActivityType]
+    val DOCUMENT_VERSION_DELETED          = "DOCUMENT_VERSION_DELETED".asInstanceOf[ActivityType]
+    val DOCUMENT_VERSION_VIEWED           = "DOCUMENT_VERSION_VIEWED".asInstanceOf[ActivityType]
+    val DOCUMENT_VERSION_DOWNLOADED       = "DOCUMENT_VERSION_DOWNLOADED".asInstanceOf[ActivityType]
+    val DOCUMENT_RECYCLED                 = "DOCUMENT_RECYCLED".asInstanceOf[ActivityType]
+    val DOCUMENT_RESTORED                 = "DOCUMENT_RESTORED".asInstanceOf[ActivityType]
+    val DOCUMENT_REVERTED                 = "DOCUMENT_REVERTED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHARED                   = "DOCUMENT_SHARED".asInstanceOf[ActivityType]
+    val DOCUMENT_UNSHARED                 = "DOCUMENT_UNSHARED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHARE_PERMISSION_CHANGED = "DOCUMENT_SHARE_PERMISSION_CHANGED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHAREABLE_LINK_CREATED   = "DOCUMENT_SHAREABLE_LINK_CREATED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHAREABLE_LINK_REMOVED   = "DOCUMENT_SHAREABLE_LINK_REMOVED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED =
+      "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
+    val DOCUMENT_MOVED                           = "DOCUMENT_MOVED".asInstanceOf[ActivityType]
+    val DOCUMENT_COMMENT_ADDED                   = "DOCUMENT_COMMENT_ADDED".asInstanceOf[ActivityType]
+    val DOCUMENT_COMMENT_DELETED                 = "DOCUMENT_COMMENT_DELETED".asInstanceOf[ActivityType]
+    val DOCUMENT_ANNOTATION_ADDED                = "DOCUMENT_ANNOTATION_ADDED".asInstanceOf[ActivityType]
+    val DOCUMENT_ANNOTATION_DELETED              = "DOCUMENT_ANNOTATION_DELETED".asInstanceOf[ActivityType]
+    val FOLDER_CREATED                           = "FOLDER_CREATED".asInstanceOf[ActivityType]
+    val FOLDER_DELETED                           = "FOLDER_DELETED".asInstanceOf[ActivityType]
+    val FOLDER_RENAMED                           = "FOLDER_RENAMED".asInstanceOf[ActivityType]
+    val FOLDER_RECYCLED                          = "FOLDER_RECYCLED".asInstanceOf[ActivityType]
+    val FOLDER_RESTORED                          = "FOLDER_RESTORED".asInstanceOf[ActivityType]
+    val FOLDER_SHARED                            = "FOLDER_SHARED".asInstanceOf[ActivityType]
+    val FOLDER_UNSHARED                          = "FOLDER_UNSHARED".asInstanceOf[ActivityType]
+    val FOLDER_SHARE_PERMISSION_CHANGED          = "FOLDER_SHARE_PERMISSION_CHANGED".asInstanceOf[ActivityType]
+    val FOLDER_SHAREABLE_LINK_CREATED            = "FOLDER_SHAREABLE_LINK_CREATED".asInstanceOf[ActivityType]
+    val FOLDER_SHAREABLE_LINK_REMOVED            = "FOLDER_SHAREABLE_LINK_REMOVED".asInstanceOf[ActivityType]
+    val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
+    val FOLDER_MOVED                             = "FOLDER_MOVED".asInstanceOf[ActivityType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -464,10 +440,11 @@ package workdocs {
       __obj.asInstanceOf[AddResourcePermissionsResponse]
     }
   }
-
-  object BooleanEnumTypeEnum {
-    val TRUE  = "TRUE"
-    val FALSE = "FALSE"
+  @js.native
+  sealed trait BooleanEnumType extends js.Any
+  object BooleanEnumType extends js.Object {
+    val TRUE  = "TRUE".asInstanceOf[BooleanEnumType]
+    val FALSE = "FALSE".asInstanceOf[BooleanEnumType]
 
     val values = js.Object.freeze(js.Array(TRUE, FALSE))
   }
@@ -547,18 +524,20 @@ package workdocs {
       __obj.asInstanceOf[CommentMetadata]
     }
   }
-
-  object CommentStatusTypeEnum {
-    val DRAFT     = "DRAFT"
-    val PUBLISHED = "PUBLISHED"
-    val DELETED   = "DELETED"
+  @js.native
+  sealed trait CommentStatusType extends js.Any
+  object CommentStatusType extends js.Object {
+    val DRAFT     = "DRAFT".asInstanceOf[CommentStatusType]
+    val PUBLISHED = "PUBLISHED".asInstanceOf[CommentStatusType]
+    val DELETED   = "DELETED".asInstanceOf[CommentStatusType]
 
     val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, DELETED))
   }
-
-  object CommentVisibilityTypeEnum {
-    val PUBLIC  = "PUBLIC"
-    val PRIVATE = "PRIVATE"
+  @js.native
+  sealed trait CommentVisibilityType extends js.Any
+  object CommentVisibilityType extends js.Object {
+    val PUBLIC  = "PUBLIC".asInstanceOf[CommentVisibilityType]
+    val PRIVATE = "PRIVATE".asInstanceOf[CommentVisibilityType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
@@ -1586,25 +1565,28 @@ package workdocs {
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
-
-  object DocumentSourceTypeEnum {
-    val ORIGINAL      = "ORIGINAL"
-    val WITH_COMMENTS = "WITH_COMMENTS"
+  @js.native
+  sealed trait DocumentSourceType extends js.Any
+  object DocumentSourceType extends js.Object {
+    val ORIGINAL      = "ORIGINAL".asInstanceOf[DocumentSourceType]
+    val WITH_COMMENTS = "WITH_COMMENTS".asInstanceOf[DocumentSourceType]
 
     val values = js.Object.freeze(js.Array(ORIGINAL, WITH_COMMENTS))
   }
-
-  object DocumentStatusTypeEnum {
-    val INITIALIZED = "INITIALIZED"
-    val ACTIVE      = "ACTIVE"
+  @js.native
+  sealed trait DocumentStatusType extends js.Any
+  object DocumentStatusType extends js.Object {
+    val INITIALIZED = "INITIALIZED".asInstanceOf[DocumentStatusType]
+    val ACTIVE      = "ACTIVE".asInstanceOf[DocumentStatusType]
 
     val values = js.Object.freeze(js.Array(INITIALIZED, ACTIVE))
   }
-
-  object DocumentThumbnailTypeEnum {
-    val SMALL    = "SMALL"
-    val SMALL_HQ = "SMALL_HQ"
-    val LARGE    = "LARGE"
+  @js.native
+  sealed trait DocumentThumbnailType extends js.Any
+  object DocumentThumbnailType extends js.Object {
+    val SMALL    = "SMALL".asInstanceOf[DocumentThumbnailType]
+    val SMALL_HQ = "SMALL_HQ".asInstanceOf[DocumentThumbnailType]
+    val LARGE    = "LARGE".asInstanceOf[DocumentThumbnailType]
 
     val values = js.Object.freeze(js.Array(SMALL, SMALL_HQ, LARGE))
   }
@@ -1663,17 +1645,19 @@ package workdocs {
       __obj.asInstanceOf[DocumentVersionMetadata]
     }
   }
-
-  object DocumentVersionStatusEnum {
-    val ACTIVE = "ACTIVE"
+  @js.native
+  sealed trait DocumentVersionStatus extends js.Any
+  object DocumentVersionStatus extends js.Object {
+    val ACTIVE = "ACTIVE".asInstanceOf[DocumentVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE))
   }
-
-  object FolderContentTypeEnum {
-    val ALL      = "ALL"
-    val DOCUMENT = "DOCUMENT"
-    val FOLDER   = "FOLDER"
+  @js.native
+  sealed trait FolderContentType extends js.Any
+  object FolderContentType extends js.Object {
+    val ALL      = "ALL".asInstanceOf[FolderContentType]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[FolderContentType]
+    val FOLDER   = "FOLDER".asInstanceOf[FolderContentType]
 
     val values = js.Object.freeze(js.Array(ALL, DOCUMENT, FOLDER))
   }
@@ -2117,19 +2101,20 @@ package workdocs {
       __obj.asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
   }
-
-  object LocaleTypeEnum {
-    val en      = "en"
-    val fr      = "fr"
-    val ko      = "ko"
-    val de      = "de"
-    val es      = "es"
-    val ja      = "ja"
-    val ru      = "ru"
-    val zh_CN   = "zh_CN"
-    val zh_TW   = "zh_TW"
-    val pt_BR   = "pt_BR"
-    val default = "default"
+  @js.native
+  sealed trait LocaleType extends js.Any
+  object LocaleType extends js.Object {
+    val en      = "en".asInstanceOf[LocaleType]
+    val fr      = "fr".asInstanceOf[LocaleType]
+    val ko      = "ko".asInstanceOf[LocaleType]
+    val de      = "de".asInstanceOf[LocaleType]
+    val es      = "es".asInstanceOf[LocaleType]
+    val ja      = "ja".asInstanceOf[LocaleType]
+    val ru      = "ru".asInstanceOf[LocaleType]
+    val zh_CN   = "zh_CN".asInstanceOf[LocaleType]
+    val zh_TW   = "zh_TW".asInstanceOf[LocaleType]
+    val pt_BR   = "pt_BR".asInstanceOf[LocaleType]
+    val default = "default".asInstanceOf[LocaleType]
 
     val values = js.Object.freeze(js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default))
   }
@@ -2155,10 +2140,11 @@ package workdocs {
       __obj.asInstanceOf[NotificationOptions]
     }
   }
-
-  object OrderTypeEnum {
-    val ASCENDING  = "ASCENDING"
-    val DESCENDING = "DESCENDING"
+  @js.native
+  sealed trait OrderType extends js.Any
+  object OrderType extends js.Object {
+    val ASCENDING  = "ASCENDING".asInstanceOf[OrderType]
+    val DESCENDING = "DESCENDING".asInstanceOf[OrderType]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
@@ -2231,13 +2217,14 @@ package workdocs {
       __obj.asInstanceOf[Principal]
     }
   }
-
-  object PrincipalTypeEnum {
-    val USER         = "USER"
-    val GROUP        = "GROUP"
-    val INVITE       = "INVITE"
-    val ANONYMOUS    = "ANONYMOUS"
-    val ORGANIZATION = "ORGANIZATION"
+  @js.native
+  sealed trait PrincipalType extends js.Any
+  object PrincipalType extends js.Object {
+    val USER         = "USER".asInstanceOf[PrincipalType]
+    val GROUP        = "GROUP".asInstanceOf[PrincipalType]
+    val INVITE       = "INVITE".asInstanceOf[PrincipalType]
+    val ANONYMOUS    = "ANONYMOUS".asInstanceOf[PrincipalType]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION))
   }
@@ -2289,9 +2276,10 @@ package workdocs {
       __obj.asInstanceOf[RemoveResourcePermissionRequest]
     }
   }
-
-  object ResourceCollectionTypeEnum {
-    val SHARED_WITH_ME = "SHARED_WITH_ME"
+  @js.native
+  sealed trait ResourceCollectionType extends js.Any
+  object ResourceCollectionType extends js.Object {
+    val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ResourceCollectionType]
 
     val values = js.Object.freeze(js.Array(SHARED_WITH_ME))
   }
@@ -2373,42 +2361,47 @@ package workdocs {
       __obj.asInstanceOf[ResourcePathComponent]
     }
   }
-
-  object ResourceSortTypeEnum {
-    val DATE = "DATE"
-    val NAME = "NAME"
+  @js.native
+  sealed trait ResourceSortType extends js.Any
+  object ResourceSortType extends js.Object {
+    val DATE = "DATE".asInstanceOf[ResourceSortType]
+    val NAME = "NAME".asInstanceOf[ResourceSortType]
 
     val values = js.Object.freeze(js.Array(DATE, NAME))
   }
-
-  object ResourceStateTypeEnum {
-    val ACTIVE    = "ACTIVE"
-    val RESTORING = "RESTORING"
-    val RECYCLING = "RECYCLING"
-    val RECYCLED  = "RECYCLED"
+  @js.native
+  sealed trait ResourceStateType extends js.Any
+  object ResourceStateType extends js.Object {
+    val ACTIVE    = "ACTIVE".asInstanceOf[ResourceStateType]
+    val RESTORING = "RESTORING".asInstanceOf[ResourceStateType]
+    val RECYCLING = "RECYCLING".asInstanceOf[ResourceStateType]
+    val RECYCLED  = "RECYCLED".asInstanceOf[ResourceStateType]
 
     val values = js.Object.freeze(js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED))
   }
-
-  object ResourceTypeEnum {
-    val FOLDER   = "FOLDER"
-    val DOCUMENT = "DOCUMENT"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val FOLDER   = "FOLDER".asInstanceOf[ResourceType]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(FOLDER, DOCUMENT))
   }
-
-  object RolePermissionTypeEnum {
-    val DIRECT    = "DIRECT"
-    val INHERITED = "INHERITED"
+  @js.native
+  sealed trait RolePermissionType extends js.Any
+  object RolePermissionType extends js.Object {
+    val DIRECT    = "DIRECT".asInstanceOf[RolePermissionType]
+    val INHERITED = "INHERITED".asInstanceOf[RolePermissionType]
 
     val values = js.Object.freeze(js.Array(DIRECT, INHERITED))
   }
-
-  object RoleTypeEnum {
-    val VIEWER      = "VIEWER"
-    val CONTRIBUTOR = "CONTRIBUTOR"
-    val OWNER       = "OWNER"
-    val COOWNER     = "COOWNER"
+  @js.native
+  sealed trait RoleType extends js.Any
+  object RoleType extends js.Object {
+    val VIEWER      = "VIEWER".asInstanceOf[RoleType]
+    val CONTRIBUTOR = "CONTRIBUTOR".asInstanceOf[RoleType]
+    val OWNER       = "OWNER".asInstanceOf[RoleType]
+    val COOWNER     = "COOWNER".asInstanceOf[RoleType]
 
     val values = js.Object.freeze(js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER))
   }
@@ -2473,10 +2466,11 @@ package workdocs {
       __obj.asInstanceOf[ShareResult]
     }
   }
-
-  object ShareStatusTypeEnum {
-    val SUCCESS = "SUCCESS"
-    val FAILURE = "FAILURE"
+  @js.native
+  sealed trait ShareStatusType extends js.Any
+  object ShareStatusType extends js.Object {
+    val SUCCESS = "SUCCESS".asInstanceOf[ShareStatusType]
+    val FAILURE = "FAILURE".asInstanceOf[ShareStatusType]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
@@ -2502,10 +2496,11 @@ package workdocs {
       __obj.asInstanceOf[StorageRuleType]
     }
   }
-
-  object StorageTypeEnum {
-    val UNLIMITED = "UNLIMITED"
-    val QUOTA     = "QUOTA"
+  @js.native
+  sealed trait StorageType extends js.Any
+  object StorageType extends js.Object {
+    val UNLIMITED = "UNLIMITED".asInstanceOf[StorageType]
+    val QUOTA     = "QUOTA".asInstanceOf[StorageType]
 
     val values = js.Object.freeze(js.Array(UNLIMITED, QUOTA))
   }
@@ -2534,15 +2529,17 @@ package workdocs {
       __obj.asInstanceOf[Subscription]
     }
   }
-
-  object SubscriptionProtocolTypeEnum {
-    val HTTPS = "HTTPS"
+  @js.native
+  sealed trait SubscriptionProtocolType extends js.Any
+  object SubscriptionProtocolType extends js.Object {
+    val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
 
     val values = js.Object.freeze(js.Array(HTTPS))
   }
-
-  object SubscriptionTypeEnum {
-    val ALL = "ALL"
+  @js.native
+  sealed trait SubscriptionType extends js.Any
+  object SubscriptionType extends js.Object {
+    val ALL = "ALL".asInstanceOf[SubscriptionType]
 
     val values = js.Object.freeze(js.Array(ALL))
   }
@@ -2774,10 +2771,11 @@ package workdocs {
       __obj.asInstanceOf[User]
     }
   }
-
-  object UserFilterTypeEnum {
-    val ALL            = "ALL"
-    val ACTIVE_PENDING = "ACTIVE_PENDING"
+  @js.native
+  sealed trait UserFilterType extends js.Any
+  object UserFilterType extends js.Object {
+    val ALL            = "ALL".asInstanceOf[UserFilterType]
+    val ACTIVE_PENDING = "ACTIVE_PENDING".asInstanceOf[UserFilterType]
 
     val values = js.Object.freeze(js.Array(ALL, ACTIVE_PENDING))
   }
@@ -2812,21 +2810,23 @@ package workdocs {
       __obj.asInstanceOf[UserMetadata]
     }
   }
-
-  object UserSortTypeEnum {
-    val USER_NAME     = "USER_NAME"
-    val FULL_NAME     = "FULL_NAME"
-    val STORAGE_LIMIT = "STORAGE_LIMIT"
-    val USER_STATUS   = "USER_STATUS"
-    val STORAGE_USED  = "STORAGE_USED"
+  @js.native
+  sealed trait UserSortType extends js.Any
+  object UserSortType extends js.Object {
+    val USER_NAME     = "USER_NAME".asInstanceOf[UserSortType]
+    val FULL_NAME     = "FULL_NAME".asInstanceOf[UserSortType]
+    val STORAGE_LIMIT = "STORAGE_LIMIT".asInstanceOf[UserSortType]
+    val USER_STATUS   = "USER_STATUS".asInstanceOf[UserSortType]
+    val STORAGE_USED  = "STORAGE_USED".asInstanceOf[UserSortType]
 
     val values = js.Object.freeze(js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED))
   }
-
-  object UserStatusTypeEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
-    val PENDING  = "PENDING"
+  @js.native
+  sealed trait UserStatusType extends js.Any
+  object UserStatusType extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[UserStatusType]
+    val INACTIVE = "INACTIVE".asInstanceOf[UserStatusType]
+    val PENDING  = "PENDING".asInstanceOf[UserStatusType]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, PENDING))
   }
@@ -2852,13 +2852,14 @@ package workdocs {
       __obj.asInstanceOf[UserStorageMetadata]
     }
   }
-
-  object UserTypeEnum {
-    val USER           = "USER"
-    val ADMIN          = "ADMIN"
-    val POWERUSER      = "POWERUSER"
-    val MINIMALUSER    = "MINIMALUSER"
-    val WORKSPACESUSER = "WORKSPACESUSER"
+  @js.native
+  sealed trait UserType extends js.Any
+  object UserType extends js.Object {
+    val USER           = "USER".asInstanceOf[UserType]
+    val ADMIN          = "ADMIN".asInstanceOf[UserType]
+    val POWERUSER      = "POWERUSER".asInstanceOf[UserType]
+    val MINIMALUSER    = "MINIMALUSER".asInstanceOf[UserType]
+    val WORKSPACESUSER = "WORKSPACESUSER".asInstanceOf[UserType]
 
     val values = js.Object.freeze(js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER))
   }

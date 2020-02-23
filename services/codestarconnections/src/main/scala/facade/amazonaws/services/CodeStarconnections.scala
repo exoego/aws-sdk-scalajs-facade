@@ -7,14 +7,12 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codestarconnections {
-  type AccountId        = String
-  type ConnectionArn    = String
-  type ConnectionList   = js.Array[Connection]
-  type ConnectionName   = String
-  type ConnectionStatus = String
-  type MaxResults       = Int
-  type NextToken        = String
-  type ProviderType     = String
+  type AccountId      = String
+  type ConnectionArn  = String
+  type ConnectionList = js.Array[Connection]
+  type ConnectionName = String
+  type MaxResults     = Int
+  type NextToken      = String
 
   implicit final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
 
@@ -71,11 +69,12 @@ package codestarconnections {
       __obj.asInstanceOf[Connection]
     }
   }
-
-  object ConnectionStatusEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val ERROR     = "ERROR"
+  @js.native
+  sealed trait ConnectionStatus extends js.Any
+  object ConnectionStatus extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[ConnectionStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
+    val ERROR     = "ERROR".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, ERROR))
   }
@@ -224,9 +223,10 @@ package codestarconnections {
       __obj.asInstanceOf[ListConnectionsOutput]
     }
   }
-
-  object ProviderTypeEnum {
-    val Bitbucket = "Bitbucket"
+  @js.native
+  sealed trait ProviderType extends js.Any
+  object ProviderType extends js.Object {
+    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
 
     val values = js.Object.freeze(js.Array(Bitbucket))
   }

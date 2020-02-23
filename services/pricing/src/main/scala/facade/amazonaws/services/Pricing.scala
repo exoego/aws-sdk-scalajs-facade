@@ -10,7 +10,6 @@ package object pricing {
   type AttributeNameList  = js.Array[String]
   type AttributeValueList = js.Array[AttributeValue]
   type BoxedInteger       = Int
-  type FilterType         = String
   type Filters            = js.Array[Filter]
   type PriceList          = js.Array[PriceListItemJSON]
   type PriceListItemJSON  = String
@@ -139,9 +138,10 @@ package pricing {
       __obj.asInstanceOf[Filter]
     }
   }
-
-  object FilterTypeEnum {
-    val TERM_MATCH = "TERM_MATCH"
+  @js.native
+  sealed trait FilterType extends js.Any
+  object FilterType extends js.Object {
+    val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
 
     val values = js.Object.freeze(js.Array(TERM_MATCH))
   }

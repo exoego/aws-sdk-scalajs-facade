@@ -8,11 +8,8 @@ import facade.amazonaws._
 
 package object schemas {
   type Body                                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CodeGenerationStatus                        = String
-  type DiscovererState                             = String
   type GetDiscoveredSchemaVersionItemInput         = String
   type Tags                                        = js.Dictionary[__string]
-  type Type                                        = String
   type __boolean                                   = Boolean
   type __integer                                   = Int
   type __integerMin1Max29000                       = Int
@@ -135,11 +132,12 @@ package schemas {
     def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse]       = js.native
     def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]             = js.native
   }
-
-  object CodeGenerationStatusEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val CREATE_COMPLETE    = "CREATE_COMPLETE"
-    val CREATE_FAILED      = "CREATE_FAILED"
+  @js.native
+  sealed trait CodeGenerationStatus extends js.Any
+  object CodeGenerationStatus extends js.Object {
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
+    val CREATE_COMPLETE    = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
+    val CREATE_FAILED      = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
@@ -606,10 +604,11 @@ package schemas {
       __obj.asInstanceOf[DescribeSchemaResponse]
     }
   }
-
-  object DiscovererStateEnum {
-    val STARTED = "STARTED"
-    val STOPPED = "STOPPED"
+  @js.native
+  sealed trait DiscovererState extends js.Any
+  object DiscovererState extends js.Object {
+    val STARTED = "STARTED".asInstanceOf[DiscovererState]
+    val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
 
     val values = js.Object.freeze(js.Array(STARTED, STOPPED))
   }
@@ -1292,9 +1291,10 @@ package schemas {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
-
-  object TypeEnum {
-    val OpenApi3 = "OpenApi3"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val OpenApi3 = "OpenApi3".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(OpenApi3))
   }

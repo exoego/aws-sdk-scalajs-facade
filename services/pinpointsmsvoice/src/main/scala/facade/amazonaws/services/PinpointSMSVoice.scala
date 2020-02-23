@@ -9,7 +9,6 @@ import facade.amazonaws._
 package object pinpointsmsvoice {
   type ConfigurationSets            = js.Array[WordCharactersWithDelimiters]
   type EventDestinations            = js.Array[EventDestination]
-  type EventType                    = String
   type EventTypes                   = js.Array[EventType]
   type NextTokenString              = String
   type NonEmptyString               = String
@@ -340,14 +339,16 @@ package pinpointsmsvoice {
   /**
     * The types of events that are sent to the event destination.
     */
-  object EventTypeEnum {
-    val INITIATED_CALL = "INITIATED_CALL"
-    val RINGING        = "RINGING"
-    val ANSWERED       = "ANSWERED"
-    val COMPLETED_CALL = "COMPLETED_CALL"
-    val BUSY           = "BUSY"
-    val FAILED         = "FAILED"
-    val NO_ANSWER      = "NO_ANSWER"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val INITIATED_CALL = "INITIATED_CALL".asInstanceOf[EventType]
+    val RINGING        = "RINGING".asInstanceOf[EventType]
+    val ANSWERED       = "ANSWERED".asInstanceOf[EventType]
+    val COMPLETED_CALL = "COMPLETED_CALL".asInstanceOf[EventType]
+    val BUSY           = "BUSY".asInstanceOf[EventType]
+    val FAILED         = "FAILED".asInstanceOf[EventType]
+    val NO_ANSWER      = "NO_ANSWER".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER))
   }

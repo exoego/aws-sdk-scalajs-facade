@@ -11,22 +11,17 @@ package object sms {
   type AppDescription                       = String
   type AppId                                = String
   type AppIds                               = js.Array[AppId]
-  type AppLaunchStatus                      = String
   type AppLaunchStatusMessage               = String
   type AppName                              = String
-  type AppReplicationStatus                 = String
   type AppReplicationStatusMessage          = String
-  type AppStatus                            = String
   type AppStatusMessage                     = String
   type Apps                                 = js.Array[AppSummary]
   type AssociatePublicIpAddress             = Boolean
   type BucketName                           = String
   type ClientToken                          = String
-  type ConnectorCapability                  = String
   type ConnectorCapabilityList              = js.Array[ConnectorCapability]
   type ConnectorId                          = String
   type ConnectorList                        = js.Array[Connector]
-  type ConnectorStatus                      = String
   type ConnectorVersion                     = String
   type Description                          = String
   type EC2KeyName                           = String
@@ -39,29 +34,23 @@ package object sms {
   type KeyName                              = String
   type KmsKeyId                             = String
   type LaunchOrder                          = Int
-  type LicenseType                          = String
   type LogicalId                            = String
   type MacAddress                           = String
   type MaxResults                           = Int
   type NextToken                            = String
   type NumberOfRecentAmisToKeep             = Int
-  type OutputFormat                         = String
   type ReplicationJobId                     = String
   type ReplicationJobList                   = js.Array[ReplicationJob]
-  type ReplicationJobState                  = String
   type ReplicationJobStatusMessage          = String
   type ReplicationJobTerminated             = Boolean
   type ReplicationRunId                     = String
   type ReplicationRunList                   = js.Array[ReplicationRun]
   type ReplicationRunStage                  = String
   type ReplicationRunStageProgress          = String
-  type ReplicationRunState                  = String
   type ReplicationRunStatusMessage          = String
-  type ReplicationRunType                   = String
   type RoleName                             = String
   type RunOnce                              = Boolean
   type SecurityGroup                        = String
-  type ServerCatalogStatus                  = String
   type ServerGroupId                        = String
   type ServerGroupLaunchConfigurations      = js.Array[ServerGroupLaunchConfiguration]
   type ServerGroupName                      = String
@@ -71,7 +60,6 @@ package object sms {
   type ServerLaunchConfigurations           = js.Array[ServerLaunchConfiguration]
   type ServerList                           = js.Array[Server]
   type ServerReplicationConfigurations      = js.Array[ServerReplicationConfiguration]
-  type ServerType                           = String
   type StackId                              = String
   type StackName                            = String
   type Subnet                               = String
@@ -85,7 +73,6 @@ package object sms {
   type VmId                                 = String
   type VmManagerId                          = String
   type VmManagerName                        = String
-  type VmManagerType                        = String
   type VmName                               = String
   type VmPath                               = String
   type VmServerAddressList                  = js.Array[VmServerAddress]
@@ -208,22 +195,23 @@ package sms {
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResponse]                                  = js.native
     def updateReplicationJob(params: UpdateReplicationJobRequest): Request[UpdateReplicationJobResponse] = js.native
   }
-
-  object AppLaunchStatusEnum {
-    val READY_FOR_CONFIGURATION   = "READY_FOR_CONFIGURATION"
-    val CONFIGURATION_IN_PROGRESS = "CONFIGURATION_IN_PROGRESS"
-    val CONFIGURATION_INVALID     = "CONFIGURATION_INVALID"
-    val READY_FOR_LAUNCH          = "READY_FOR_LAUNCH"
-    val VALIDATION_IN_PROGRESS    = "VALIDATION_IN_PROGRESS"
-    val LAUNCH_PENDING            = "LAUNCH_PENDING"
-    val LAUNCH_IN_PROGRESS        = "LAUNCH_IN_PROGRESS"
-    val LAUNCHED                  = "LAUNCHED"
-    val DELTA_LAUNCH_IN_PROGRESS  = "DELTA_LAUNCH_IN_PROGRESS"
-    val DELTA_LAUNCH_FAILED       = "DELTA_LAUNCH_FAILED"
-    val LAUNCH_FAILED             = "LAUNCH_FAILED"
-    val TERMINATE_IN_PROGRESS     = "TERMINATE_IN_PROGRESS"
-    val TERMINATE_FAILED          = "TERMINATE_FAILED"
-    val TERMINATED                = "TERMINATED"
+  @js.native
+  sealed trait AppLaunchStatus extends js.Any
+  object AppLaunchStatus extends js.Object {
+    val READY_FOR_CONFIGURATION   = "READY_FOR_CONFIGURATION".asInstanceOf[AppLaunchStatus]
+    val CONFIGURATION_IN_PROGRESS = "CONFIGURATION_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
+    val CONFIGURATION_INVALID     = "CONFIGURATION_INVALID".asInstanceOf[AppLaunchStatus]
+    val READY_FOR_LAUNCH          = "READY_FOR_LAUNCH".asInstanceOf[AppLaunchStatus]
+    val VALIDATION_IN_PROGRESS    = "VALIDATION_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
+    val LAUNCH_PENDING            = "LAUNCH_PENDING".asInstanceOf[AppLaunchStatus]
+    val LAUNCH_IN_PROGRESS        = "LAUNCH_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
+    val LAUNCHED                  = "LAUNCHED".asInstanceOf[AppLaunchStatus]
+    val DELTA_LAUNCH_IN_PROGRESS  = "DELTA_LAUNCH_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
+    val DELTA_LAUNCH_FAILED       = "DELTA_LAUNCH_FAILED".asInstanceOf[AppLaunchStatus]
+    val LAUNCH_FAILED             = "LAUNCH_FAILED".asInstanceOf[AppLaunchStatus]
+    val TERMINATE_IN_PROGRESS     = "TERMINATE_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
+    val TERMINATE_FAILED          = "TERMINATE_FAILED".asInstanceOf[AppLaunchStatus]
+    val TERMINATED                = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -244,23 +232,24 @@ package sms {
       )
     )
   }
-
-  object AppReplicationStatusEnum {
-    val READY_FOR_CONFIGURATION       = "READY_FOR_CONFIGURATION"
-    val CONFIGURATION_IN_PROGRESS     = "CONFIGURATION_IN_PROGRESS"
-    val CONFIGURATION_INVALID         = "CONFIGURATION_INVALID"
-    val READY_FOR_REPLICATION         = "READY_FOR_REPLICATION"
-    val VALIDATION_IN_PROGRESS        = "VALIDATION_IN_PROGRESS"
-    val REPLICATION_PENDING           = "REPLICATION_PENDING"
-    val REPLICATION_IN_PROGRESS       = "REPLICATION_IN_PROGRESS"
-    val REPLICATED                    = "REPLICATED"
-    val DELTA_REPLICATION_IN_PROGRESS = "DELTA_REPLICATION_IN_PROGRESS"
-    val DELTA_REPLICATED              = "DELTA_REPLICATED"
-    val DELTA_REPLICATION_FAILED      = "DELTA_REPLICATION_FAILED"
-    val REPLICATION_FAILED            = "REPLICATION_FAILED"
-    val REPLICATION_STOPPING          = "REPLICATION_STOPPING"
-    val REPLICATION_STOP_FAILED       = "REPLICATION_STOP_FAILED"
-    val REPLICATION_STOPPED           = "REPLICATION_STOPPED"
+  @js.native
+  sealed trait AppReplicationStatus extends js.Any
+  object AppReplicationStatus extends js.Object {
+    val READY_FOR_CONFIGURATION       = "READY_FOR_CONFIGURATION".asInstanceOf[AppReplicationStatus]
+    val CONFIGURATION_IN_PROGRESS     = "CONFIGURATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
+    val CONFIGURATION_INVALID         = "CONFIGURATION_INVALID".asInstanceOf[AppReplicationStatus]
+    val READY_FOR_REPLICATION         = "READY_FOR_REPLICATION".asInstanceOf[AppReplicationStatus]
+    val VALIDATION_IN_PROGRESS        = "VALIDATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_PENDING           = "REPLICATION_PENDING".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_IN_PROGRESS       = "REPLICATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
+    val REPLICATED                    = "REPLICATED".asInstanceOf[AppReplicationStatus]
+    val DELTA_REPLICATION_IN_PROGRESS = "DELTA_REPLICATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
+    val DELTA_REPLICATED              = "DELTA_REPLICATED".asInstanceOf[AppReplicationStatus]
+    val DELTA_REPLICATION_FAILED      = "DELTA_REPLICATION_FAILED".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_FAILED            = "REPLICATION_FAILED".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_STOPPING          = "REPLICATION_STOPPING".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_STOP_FAILED       = "REPLICATION_STOP_FAILED".asInstanceOf[AppReplicationStatus]
+    val REPLICATION_STOPPED           = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -282,14 +271,15 @@ package sms {
       )
     )
   }
-
-  object AppStatusEnum {
-    val CREATING      = "CREATING"
-    val ACTIVE        = "ACTIVE"
-    val UPDATING      = "UPDATING"
-    val DELETING      = "DELETING"
-    val DELETED       = "DELETED"
-    val DELETE_FAILED = "DELETE_FAILED"
+  @js.native
+  sealed trait AppStatus extends js.Any
+  object AppStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[AppStatus]
+    val ACTIVE        = "ACTIVE".asInstanceOf[AppStatus]
+    val UPDATING      = "UPDATING".asInstanceOf[AppStatus]
+    val DELETING      = "DELETING".asInstanceOf[AppStatus]
+    val DELETED       = "DELETED".asInstanceOf[AppStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AppStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED))
   }
@@ -403,19 +393,21 @@ package sms {
       __obj.asInstanceOf[Connector]
     }
   }
-
-  object ConnectorCapabilityEnum {
-    val VSPHERE           = "VSPHERE"
-    val SCVMM             = "SCVMM"
-    val `HYPERV-MANAGER`  = "HYPERV-MANAGER"
-    val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING"
+  @js.native
+  sealed trait ConnectorCapability extends js.Any
+  object ConnectorCapability extends js.Object {
+    val VSPHERE           = "VSPHERE".asInstanceOf[ConnectorCapability]
+    val SCVMM             = "SCVMM".asInstanceOf[ConnectorCapability]
+    val `HYPERV-MANAGER`  = "HYPERV-MANAGER".asInstanceOf[ConnectorCapability]
+    val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING".asInstanceOf[ConnectorCapability]
 
     val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING))
   }
-
-  object ConnectorStatusEnum {
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
+  @js.native
+  sealed trait ConnectorStatus extends js.Any
+  object ConnectorStatus extends js.Object {
+    val HEALTHY   = "HEALTHY".asInstanceOf[ConnectorStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[ConnectorStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
@@ -1148,10 +1140,11 @@ package sms {
       __obj.asInstanceOf[LaunchDetails]
     }
   }
-
-  object LicenseTypeEnum {
-    val AWS  = "AWS"
-    val BYOL = "BYOL"
+  @js.native
+  sealed trait LicenseType extends js.Any
+  object LicenseType extends js.Object {
+    val AWS  = "AWS".asInstanceOf[LicenseType]
+    val BYOL = "BYOL".asInstanceOf[LicenseType]
 
     val values = js.Object.freeze(js.Array(AWS, BYOL))
   }
@@ -1196,10 +1189,11 @@ package sms {
       __obj.asInstanceOf[ListAppsResponse]
     }
   }
-
-  object OutputFormatEnum {
-    val JSON = "JSON"
-    val YAML = "YAML"
+  @js.native
+  sealed trait OutputFormat extends js.Any
+  object OutputFormat extends js.Object {
+    val JSON = "JSON".asInstanceOf[OutputFormat]
+    val YAML = "YAML".asInstanceOf[OutputFormat]
 
     val values = js.Object.freeze(js.Array(JSON, YAML))
   }
@@ -1346,16 +1340,17 @@ package sms {
       __obj.asInstanceOf[ReplicationJob]
     }
   }
-
-  object ReplicationJobStateEnum {
-    val PENDING           = "PENDING"
-    val ACTIVE            = "ACTIVE"
-    val FAILED            = "FAILED"
-    val DELETING          = "DELETING"
-    val DELETED           = "DELETED"
-    val COMPLETED         = "COMPLETED"
-    val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE"
-    val FAILING           = "FAILING"
+  @js.native
+  sealed trait ReplicationJobState extends js.Any
+  object ReplicationJobState extends js.Object {
+    val PENDING           = "PENDING".asInstanceOf[ReplicationJobState]
+    val ACTIVE            = "ACTIVE".asInstanceOf[ReplicationJobState]
+    val FAILED            = "FAILED".asInstanceOf[ReplicationJobState]
+    val DELETING          = "DELETING".asInstanceOf[ReplicationJobState]
+    val DELETED           = "DELETED".asInstanceOf[ReplicationJobState]
+    val COMPLETED         = "COMPLETED".asInstanceOf[ReplicationJobState]
+    val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE".asInstanceOf[ReplicationJobState]
+    val FAILING           = "FAILING".asInstanceOf[ReplicationJobState]
 
     val values =
       js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
@@ -1431,22 +1426,24 @@ package sms {
       __obj.asInstanceOf[ReplicationRunStageDetails]
     }
   }
-
-  object ReplicationRunStateEnum {
-    val PENDING   = "PENDING"
-    val MISSED    = "MISSED"
-    val ACTIVE    = "ACTIVE"
-    val FAILED    = "FAILED"
-    val COMPLETED = "COMPLETED"
-    val DELETING  = "DELETING"
-    val DELETED   = "DELETED"
+  @js.native
+  sealed trait ReplicationRunState extends js.Any
+  object ReplicationRunState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[ReplicationRunState]
+    val MISSED    = "MISSED".asInstanceOf[ReplicationRunState]
+    val ACTIVE    = "ACTIVE".asInstanceOf[ReplicationRunState]
+    val FAILED    = "FAILED".asInstanceOf[ReplicationRunState]
+    val COMPLETED = "COMPLETED".asInstanceOf[ReplicationRunState]
+    val DELETING  = "DELETING".asInstanceOf[ReplicationRunState]
+    val DELETED   = "DELETED".asInstanceOf[ReplicationRunState]
 
     val values = js.Object.freeze(js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED))
   }
-
-  object ReplicationRunTypeEnum {
-    val ON_DEMAND = "ON_DEMAND"
-    val AUTOMATIC = "AUTOMATIC"
+  @js.native
+  sealed trait ReplicationRunType extends js.Any
+  object ReplicationRunType extends js.Object {
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[ReplicationRunType]
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[ReplicationRunType]
 
     val values = js.Object.freeze(js.Array(ON_DEMAND, AUTOMATIC))
   }
@@ -1503,13 +1500,14 @@ package sms {
       __obj.asInstanceOf[Server]
     }
   }
-
-  object ServerCatalogStatusEnum {
-    val NOT_IMPORTED = "NOT_IMPORTED"
-    val IMPORTING    = "IMPORTING"
-    val AVAILABLE    = "AVAILABLE"
-    val DELETED      = "DELETED"
-    val EXPIRED      = "EXPIRED"
+  @js.native
+  sealed trait ServerCatalogStatus extends js.Any
+  object ServerCatalogStatus extends js.Object {
+    val NOT_IMPORTED = "NOT_IMPORTED".asInstanceOf[ServerCatalogStatus]
+    val IMPORTING    = "IMPORTING".asInstanceOf[ServerCatalogStatus]
+    val AVAILABLE    = "AVAILABLE".asInstanceOf[ServerCatalogStatus]
+    val DELETED      = "DELETED".asInstanceOf[ServerCatalogStatus]
+    val EXPIRED      = "EXPIRED".asInstanceOf[ServerCatalogStatus]
 
     val values = js.Object.freeze(js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED))
   }
@@ -1693,9 +1691,10 @@ package sms {
       __obj.asInstanceOf[ServerReplicationParameters]
     }
   }
-
-  object ServerTypeEnum {
-    val VIRTUAL_MACHINE = "VIRTUAL_MACHINE"
+  @js.native
+  sealed trait ServerType extends js.Any
+  object ServerType extends js.Object {
+    val VIRTUAL_MACHINE = "VIRTUAL_MACHINE".asInstanceOf[ServerType]
 
     val values = js.Object.freeze(js.Array(VIRTUAL_MACHINE))
   }
@@ -1974,11 +1973,12 @@ package sms {
       __obj.asInstanceOf[UserData]
     }
   }
-
-  object VmManagerTypeEnum {
-    val VSPHERE          = "VSPHERE"
-    val SCVMM            = "SCVMM"
-    val `HYPERV-MANAGER` = "HYPERV-MANAGER"
+  @js.native
+  sealed trait VmManagerType extends js.Any
+  object VmManagerType extends js.Object {
+    val VSPHERE          = "VSPHERE".asInstanceOf[VmManagerType]
+    val SCVMM            = "SCVMM".asInstanceOf[VmManagerType]
+    val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[VmManagerType]
 
     val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`))
   }

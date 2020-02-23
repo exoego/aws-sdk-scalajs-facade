@@ -17,26 +17,20 @@ package object iotanalytics {
   type BucketName                  = String
   type ChannelArn                  = String
   type ChannelName                 = String
-  type ChannelStatus               = String
   type ChannelSummaries            = js.Array[ChannelSummary]
-  type ComputeType                 = String
   type DatasetActionName           = String
   type DatasetActionSummaries      = js.Array[DatasetActionSummary]
-  type DatasetActionType           = String
   type DatasetActions              = js.Array[DatasetAction]
   type DatasetArn                  = String
   type DatasetContentDeliveryRules = js.Array[DatasetContentDeliveryRule]
-  type DatasetContentState         = String
   type DatasetContentSummaries     = js.Array[DatasetContentSummary]
   type DatasetContentVersion       = String
   type DatasetEntries              = js.Array[DatasetEntry]
   type DatasetName                 = String
-  type DatasetStatus               = String
   type DatasetSummaries            = js.Array[DatasetSummary]
   type DatasetTriggers             = js.Array[DatasetTrigger]
   type DatastoreArn                = String
   type DatastoreName               = String
-  type DatastoreStatus             = String
   type DatastoreSummaries          = js.Array[DatastoreSummary]
   type DoubleValue                 = Double
   type EndTime                     = js.Date
@@ -52,7 +46,6 @@ package object iotanalytics {
   type LambdaName                  = String
   type LogResult                   = String
   type LoggingEnabled              = Boolean
-  type LoggingLevel                = String
   type MathExpression              = String
   type MaxMessages                 = Int
   type MaxResults                  = Int
@@ -72,7 +65,6 @@ package object iotanalytics {
   type QueryFilters                = js.Array[QueryFilter]
   type Reason                      = String
   type ReprocessingId              = String
-  type ReprocessingStatus          = String
   type ReprocessingSummaries       = js.Array[ReprocessingSummary]
   type ResourceArn                 = String
   type RetentionPeriodInDays       = Int
@@ -425,11 +417,12 @@ package iotanalytics {
       __obj.asInstanceOf[ChannelStatistics]
     }
   }
-
-  object ChannelStatusEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait ChannelStatus extends js.Any
+  object ChannelStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[ChannelStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[ChannelStatus]
+    val DELETING = "DELETING".asInstanceOf[ChannelStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
@@ -508,10 +501,11 @@ package iotanalytics {
       __obj.asInstanceOf[ChannelSummary]
     }
   }
-
-  object ComputeTypeEnum {
-    val ACU_1 = "ACU_1"
-    val ACU_2 = "ACU_2"
+  @js.native
+  sealed trait ComputeType extends js.Any
+  object ComputeType extends js.Object {
+    val ACU_1 = "ACU_1".asInstanceOf[ComputeType]
+    val ACU_2 = "ACU_2".asInstanceOf[ComputeType]
 
     val values = js.Object.freeze(js.Array(ACU_1, ACU_2))
   }
@@ -975,10 +969,11 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetActionSummary]
     }
   }
-
-  object DatasetActionTypeEnum {
-    val QUERY     = "QUERY"
-    val CONTAINER = "CONTAINER"
+  @js.native
+  sealed trait DatasetActionType extends js.Any
+  object DatasetActionType extends js.Object {
+    val QUERY     = "QUERY".asInstanceOf[DatasetActionType]
+    val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
 
     val values = js.Object.freeze(js.Array(QUERY, CONTAINER))
   }
@@ -1032,11 +1027,12 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetContentDeliveryRule]
     }
   }
-
-  object DatasetContentStateEnum {
-    val CREATING  = "CREATING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait DatasetContentState extends js.Any
+  object DatasetContentState extends js.Object {
+    val CREATING  = "CREATING".asInstanceOf[DatasetContentState]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
+    val FAILED    = "FAILED".asInstanceOf[DatasetContentState]
 
     val values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
   }
@@ -1136,11 +1132,12 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetEntry]
     }
   }
-
-  object DatasetStatusEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait DatasetStatus extends js.Any
+  object DatasetStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[DatasetStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[DatasetStatus]
+    val DELETING = "DELETING".asInstanceOf[DatasetStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
@@ -1280,11 +1277,12 @@ package iotanalytics {
       __obj.asInstanceOf[DatastoreStatistics]
     }
   }
-
-  object DatastoreStatusEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait DatastoreStatus extends js.Any
+  object DatastoreStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[DatastoreStatus]
+    val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
@@ -2128,9 +2126,10 @@ package iotanalytics {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object LoggingLevelEnum {
-    val ERROR = "ERROR"
+  @js.native
+  sealed trait LoggingLevel extends js.Any
+  object LoggingLevel extends js.Object {
+    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR))
   }
@@ -2408,12 +2407,13 @@ package iotanalytics {
       __obj.asInstanceOf[RemoveAttributesActivity]
     }
   }
-
-  object ReprocessingStatusEnum {
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val CANCELLED = "CANCELLED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait ReprocessingStatus extends js.Any
+  object ReprocessingStatus extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[ReprocessingStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReprocessingStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
+    val FAILED    = "FAILED".asInstanceOf[ReprocessingStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }

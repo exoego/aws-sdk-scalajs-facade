@@ -8,13 +8,10 @@ import facade.amazonaws._
 
 package object shield {
   type AttackId                    = String
-  type AttackLayer                 = String
   type AttackProperties            = js.Array[AttackProperty]
-  type AttackPropertyIdentifier    = String
   type AttackSummaries             = js.Array[AttackSummary]
   type AttackTimestamp             = js.Date
   type AttackVectorDescriptionList = js.Array[AttackVectorDescription]
-  type AutoRenew                   = String
   type DurationInSeconds           = Double
   type EmailAddress                = String
   type EmergencyContactList        = js.Array[EmergencyContact]
@@ -33,14 +30,11 @@ package object shield {
   type ResourceArnFilterList       = js.Array[ResourceArn]
   type RoleArn                     = String
   type SubResourceSummaryList      = js.Array[SubResourceSummary]
-  type SubResourceType             = String
-  type SubscriptionState           = String
   type SummarizedAttackVectorList  = js.Array[SummarizedAttackVector]
   type SummarizedCounterList       = js.Array[SummarizedCounter]
   type Timestamp                   = js.Date
   type Token                       = String
   type TopContributors             = js.Array[Contributor]
-  type Unit                        = String
 
   implicit final class ShieldOps(private val service: Shield) extends AnyVal {
 
@@ -262,10 +256,11 @@ package shield {
       __obj.asInstanceOf[AttackDetail]
     }
   }
-
-  object AttackLayerEnum {
-    val NETWORK     = "NETWORK"
-    val APPLICATION = "APPLICATION"
+  @js.native
+  sealed trait AttackLayer extends js.Any
+  object AttackLayer extends js.Object {
+    val NETWORK     = "NETWORK".asInstanceOf[AttackLayer]
+    val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
     val values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
   }
@@ -300,16 +295,17 @@ package shield {
       __obj.asInstanceOf[AttackProperty]
     }
   }
-
-  object AttackPropertyIdentifierEnum {
-    val DESTINATION_URL              = "DESTINATION_URL"
-    val REFERRER                     = "REFERRER"
-    val SOURCE_ASN                   = "SOURCE_ASN"
-    val SOURCE_COUNTRY               = "SOURCE_COUNTRY"
-    val SOURCE_IP_ADDRESS            = "SOURCE_IP_ADDRESS"
-    val SOURCE_USER_AGENT            = "SOURCE_USER_AGENT"
-    val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR"
-    val WORDPRESS_PINGBACK_SOURCE    = "WORDPRESS_PINGBACK_SOURCE"
+  @js.native
+  sealed trait AttackPropertyIdentifier extends js.Any
+  object AttackPropertyIdentifier extends js.Object {
+    val DESTINATION_URL              = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
+    val REFERRER                     = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_ASN                   = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_COUNTRY               = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_IP_ADDRESS            = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_USER_AGENT            = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
+    val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
+    val WORDPRESS_PINGBACK_SOURCE    = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
     val values = js.Object.freeze(
       js.Array(
@@ -376,10 +372,11 @@ package shield {
       __obj.asInstanceOf[AttackVectorDescription]
     }
   }
-
-  object AutoRenewEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait AutoRenew extends js.Any
+  object AutoRenew extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[AutoRenew]
+    val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1011,10 +1008,11 @@ package shield {
       __obj.asInstanceOf[SubResourceSummary]
     }
   }
-
-  object SubResourceTypeEnum {
-    val IP  = "IP"
-    val URL = "URL"
+  @js.native
+  sealed trait SubResourceType extends js.Any
+  object SubResourceType extends js.Object {
+    val IP  = "IP".asInstanceOf[SubResourceType]
+    val URL = "URL".asInstanceOf[SubResourceType]
 
     val values = js.Object.freeze(js.Array(IP, URL))
   }
@@ -1049,10 +1047,11 @@ package shield {
       __obj.asInstanceOf[Subscription]
     }
   }
-
-  object SubscriptionStateEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait SubscriptionState extends js.Any
+  object SubscriptionState extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[SubscriptionState]
+    val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
@@ -1136,12 +1135,13 @@ package shield {
       __obj.asInstanceOf[TimeRange]
     }
   }
-
-  object UnitEnum {
-    val BITS     = "BITS"
-    val BYTES    = "BYTES"
-    val PACKETS  = "PACKETS"
-    val REQUESTS = "REQUESTS"
+  @js.native
+  sealed trait Unit extends js.Any
+  object Unit extends js.Object {
+    val BITS     = "BITS".asInstanceOf[Unit]
+    val BYTES    = "BYTES".asInstanceOf[Unit]
+    val PACKETS  = "PACKETS".asInstanceOf[Unit]
+    val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
     val values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
   }

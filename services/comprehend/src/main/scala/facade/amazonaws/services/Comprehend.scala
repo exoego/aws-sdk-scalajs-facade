@@ -18,28 +18,22 @@ package object comprehend {
   type DocumentClassificationJobPropertiesList    = js.Array[DocumentClassificationJobProperties]
   type DocumentClassifierArn                      = String
   type DocumentClassifierEndpointArn              = String
-  type DocumentClassifierMode                     = String
   type DocumentClassifierPropertiesList           = js.Array[DocumentClassifierProperties]
   type DominantLanguageDetectionJobPropertiesList = js.Array[DominantLanguageDetectionJobProperties]
   type EndpointPropertiesList                     = js.Array[EndpointProperties]
-  type EndpointStatus                             = String
   type EntitiesDetectionJobPropertiesList         = js.Array[EntitiesDetectionJobProperties]
   type EntityRecognizerArn                        = String
   type EntityRecognizerMetadataEntityTypesList    = js.Array[EntityRecognizerMetadataEntityTypesListItem]
   type EntityRecognizerPropertiesList             = js.Array[EntityRecognizerProperties]
-  type EntityType                                 = String
   type EntityTypeName                             = String
   type EntityTypesList                            = js.Array[EntityTypesListItem]
   type IamRoleArn                                 = String
   type InferenceUnitsInteger                      = Int
-  type InputFormat                                = String
   type JobId                                      = String
   type JobName                                    = String
-  type JobStatus                                  = String
   type KeyPhrasesDetectionJobPropertiesList       = js.Array[KeyPhrasesDetectionJobProperties]
   type KmsKeyId                                   = String
   type LabelDelimiter                             = String
-  type LanguageCode                               = String
   type ListOfClasses                              = js.Array[DocumentClass]
   type ListOfDetectDominantLanguageResult         = js.Array[BatchDetectDominantLanguageItemResult]
   type ListOfDetectEntitiesResult                 = js.Array[BatchDetectEntitiesItemResult]
@@ -52,18 +46,14 @@ package object comprehend {
   type ListOfLabels                               = js.Array[DocumentLabel]
   type ListOfSyntaxTokens                         = js.Array[SyntaxToken]
   type MaxResultsInteger                          = Int
-  type ModelStatus                                = String
   type NumberOfTopicsInteger                      = Int
-  type PartOfSpeechTagType                        = String
   type S3Uri                                      = String
   type SecurityGroupId                            = String
   type SecurityGroupIds                           = js.Array[SecurityGroupId]
   type SentimentDetectionJobPropertiesList        = js.Array[SentimentDetectionJobProperties]
-  type SentimentType                              = String
   type StringList                                 = js.Array[String]
   type SubnetId                                   = String
   type Subnets                                    = js.Array[SubnetId]
-  type SyntaxLanguageCode                         = String
   type TagKey                                     = String
   type TagKeyList                                 = js.Array[TagKey]
   type TagList                                    = js.Array[Tag]
@@ -1699,10 +1689,11 @@ package comprehend {
       __obj.asInstanceOf[DocumentClassifierInputDataConfig]
     }
   }
-
-  object DocumentClassifierModeEnum {
-    val MULTI_CLASS = "MULTI_CLASS"
-    val MULTI_LABEL = "MULTI_LABEL"
+  @js.native
+  sealed trait DocumentClassifierMode extends js.Any
+  object DocumentClassifierMode extends js.Object {
+    val MULTI_CLASS = "MULTI_CLASS".asInstanceOf[DocumentClassifierMode]
+    val MULTI_LABEL = "MULTI_LABEL".asInstanceOf[DocumentClassifierMode]
 
     val values = js.Object.freeze(js.Array(MULTI_CLASS, MULTI_LABEL))
   }
@@ -1978,13 +1969,14 @@ package comprehend {
       __obj.asInstanceOf[EndpointProperties]
     }
   }
-
-  object EndpointStatusEnum {
-    val CREATING   = "CREATING"
-    val DELETING   = "DELETING"
-    val FAILED     = "FAILED"
-    val IN_SERVICE = "IN_SERVICE"
-    val UPDATING   = "UPDATING"
+  @js.native
+  sealed trait EndpointStatus extends js.Any
+  object EndpointStatus extends js.Object {
+    val CREATING   = "CREATING".asInstanceOf[EndpointStatus]
+    val DELETING   = "DELETING".asInstanceOf[EndpointStatus]
+    val FAILED     = "FAILED".asInstanceOf[EndpointStatus]
+    val IN_SERVICE = "IN_SERVICE".asInstanceOf[EndpointStatus]
+    val UPDATING   = "UPDATING".asInstanceOf[EndpointStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING))
   }
@@ -2354,17 +2346,18 @@ package comprehend {
       __obj.asInstanceOf[EntityRecognizerProperties]
     }
   }
-
-  object EntityTypeEnum {
-    val PERSON          = "PERSON"
-    val LOCATION        = "LOCATION"
-    val ORGANIZATION    = "ORGANIZATION"
-    val COMMERCIAL_ITEM = "COMMERCIAL_ITEM"
-    val EVENT           = "EVENT"
-    val DATE            = "DATE"
-    val QUANTITY        = "QUANTITY"
-    val TITLE           = "TITLE"
-    val OTHER           = "OTHER"
+  @js.native
+  sealed trait EntityType extends js.Any
+  object EntityType extends js.Object {
+    val PERSON          = "PERSON".asInstanceOf[EntityType]
+    val LOCATION        = "LOCATION".asInstanceOf[EntityType]
+    val ORGANIZATION    = "ORGANIZATION".asInstanceOf[EntityType]
+    val COMMERCIAL_ITEM = "COMMERCIAL_ITEM".asInstanceOf[EntityType]
+    val EVENT           = "EVENT".asInstanceOf[EntityType]
+    val DATE            = "DATE".asInstanceOf[EntityType]
+    val QUANTITY        = "QUANTITY".asInstanceOf[EntityType]
+    val TITLE           = "TITLE".asInstanceOf[EntityType]
+    val OTHER           = "OTHER".asInstanceOf[EntityType]
 
     val values =
       js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
@@ -2439,21 +2432,23 @@ package comprehend {
       __obj.asInstanceOf[InputDataConfig]
     }
   }
-
-  object InputFormatEnum {
-    val ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE"
-    val ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE"
+  @js.native
+  sealed trait InputFormat extends js.Any
+  object InputFormat extends js.Object {
+    val ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE".asInstanceOf[InputFormat]
+    val ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE".asInstanceOf[InputFormat]
 
     val values = js.Object.freeze(js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE))
   }
-
-  object JobStatusEnum {
-    val SUBMITTED      = "SUBMITTED"
-    val IN_PROGRESS    = "IN_PROGRESS"
-    val COMPLETED      = "COMPLETED"
-    val FAILED         = "FAILED"
-    val STOP_REQUESTED = "STOP_REQUESTED"
-    val STOPPED        = "STOPPED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val SUBMITTED      = "SUBMITTED".asInstanceOf[JobStatus]
+    val IN_PROGRESS    = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val COMPLETED      = "COMPLETED".asInstanceOf[JobStatus]
+    val FAILED         = "FAILED".asInstanceOf[JobStatus]
+    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    val STOPPED        = "STOPPED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED))
   }
@@ -2565,20 +2560,21 @@ package comprehend {
       __obj.asInstanceOf[KeyPhrasesDetectionJobProperties]
     }
   }
-
-  object LanguageCodeEnum {
-    val en      = "en"
-    val es      = "es"
-    val fr      = "fr"
-    val de      = "de"
-    val it      = "it"
-    val pt      = "pt"
-    val ar      = "ar"
-    val hi      = "hi"
-    val ja      = "ja"
-    val ko      = "ko"
-    val zh      = "zh"
-    val `zh-TW` = "zh-TW"
+  @js.native
+  sealed trait LanguageCode extends js.Any
+  object LanguageCode extends js.Object {
+    val en      = "en".asInstanceOf[LanguageCode]
+    val es      = "es".asInstanceOf[LanguageCode]
+    val fr      = "fr".asInstanceOf[LanguageCode]
+    val de      = "de".asInstanceOf[LanguageCode]
+    val it      = "it".asInstanceOf[LanguageCode]
+    val pt      = "pt".asInstanceOf[LanguageCode]
+    val ar      = "ar".asInstanceOf[LanguageCode]
+    val hi      = "hi".asInstanceOf[LanguageCode]
+    val ja      = "ja".asInstanceOf[LanguageCode]
+    val ko      = "ko".asInstanceOf[LanguageCode]
+    val zh      = "zh".asInstanceOf[LanguageCode]
+    val `zh-TW` = "zh-TW".asInstanceOf[LanguageCode]
 
     val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`))
   }
@@ -3005,15 +3001,16 @@ package comprehend {
       __obj.asInstanceOf[ListTopicsDetectionJobsResponse]
     }
   }
-
-  object ModelStatusEnum {
-    val SUBMITTED      = "SUBMITTED"
-    val TRAINING       = "TRAINING"
-    val DELETING       = "DELETING"
-    val STOP_REQUESTED = "STOP_REQUESTED"
-    val STOPPED        = "STOPPED"
-    val IN_ERROR       = "IN_ERROR"
-    val TRAINED        = "TRAINED"
+  @js.native
+  sealed trait ModelStatus extends js.Any
+  object ModelStatus extends js.Object {
+    val SUBMITTED      = "SUBMITTED".asInstanceOf[ModelStatus]
+    val TRAINING       = "TRAINING".asInstanceOf[ModelStatus]
+    val DELETING       = "DELETING".asInstanceOf[ModelStatus]
+    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[ModelStatus]
+    val STOPPED        = "STOPPED".asInstanceOf[ModelStatus]
+    val IN_ERROR       = "IN_ERROR".asInstanceOf[ModelStatus]
+    val TRAINED        = "TRAINED".asInstanceOf[ModelStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED))
   }
@@ -3064,26 +3061,27 @@ package comprehend {
       __obj.asInstanceOf[PartOfSpeechTag]
     }
   }
-
-  object PartOfSpeechTagTypeEnum {
-    val ADJ   = "ADJ"
-    val ADP   = "ADP"
-    val ADV   = "ADV"
-    val AUX   = "AUX"
-    val CONJ  = "CONJ"
-    val CCONJ = "CCONJ"
-    val DET   = "DET"
-    val INTJ  = "INTJ"
-    val NOUN  = "NOUN"
-    val NUM   = "NUM"
-    val O     = "O"
-    val PART  = "PART"
-    val PRON  = "PRON"
-    val PROPN = "PROPN"
-    val PUNCT = "PUNCT"
-    val SCONJ = "SCONJ"
-    val SYM   = "SYM"
-    val VERB  = "VERB"
+  @js.native
+  sealed trait PartOfSpeechTagType extends js.Any
+  object PartOfSpeechTagType extends js.Object {
+    val ADJ   = "ADJ".asInstanceOf[PartOfSpeechTagType]
+    val ADP   = "ADP".asInstanceOf[PartOfSpeechTagType]
+    val ADV   = "ADV".asInstanceOf[PartOfSpeechTagType]
+    val AUX   = "AUX".asInstanceOf[PartOfSpeechTagType]
+    val CONJ  = "CONJ".asInstanceOf[PartOfSpeechTagType]
+    val CCONJ = "CCONJ".asInstanceOf[PartOfSpeechTagType]
+    val DET   = "DET".asInstanceOf[PartOfSpeechTagType]
+    val INTJ  = "INTJ".asInstanceOf[PartOfSpeechTagType]
+    val NOUN  = "NOUN".asInstanceOf[PartOfSpeechTagType]
+    val NUM   = "NUM".asInstanceOf[PartOfSpeechTagType]
+    val O     = "O".asInstanceOf[PartOfSpeechTagType]
+    val PART  = "PART".asInstanceOf[PartOfSpeechTagType]
+    val PRON  = "PRON".asInstanceOf[PartOfSpeechTagType]
+    val PROPN = "PROPN".asInstanceOf[PartOfSpeechTagType]
+    val PUNCT = "PUNCT".asInstanceOf[PartOfSpeechTagType]
+    val SCONJ = "SCONJ".asInstanceOf[PartOfSpeechTagType]
+    val SYM   = "SYM".asInstanceOf[PartOfSpeechTagType]
+    val VERB  = "VERB".asInstanceOf[PartOfSpeechTagType]
 
     val values = js.Object.freeze(
       js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
@@ -3197,12 +3195,13 @@ package comprehend {
       __obj.asInstanceOf[SentimentScore]
     }
   }
-
-  object SentimentTypeEnum {
-    val POSITIVE = "POSITIVE"
-    val NEGATIVE = "NEGATIVE"
-    val NEUTRAL  = "NEUTRAL"
-    val MIXED    = "MIXED"
+  @js.native
+  sealed trait SentimentType extends js.Any
+  object SentimentType extends js.Object {
+    val POSITIVE = "POSITIVE".asInstanceOf[SentimentType]
+    val NEGATIVE = "NEGATIVE".asInstanceOf[SentimentType]
+    val NEUTRAL  = "NEUTRAL".asInstanceOf[SentimentType]
+    val MIXED    = "MIXED".asInstanceOf[SentimentType]
 
     val values = js.Object.freeze(js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED))
   }
@@ -3764,14 +3763,15 @@ package comprehend {
       __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
     }
   }
-
-  object SyntaxLanguageCodeEnum {
-    val en = "en"
-    val es = "es"
-    val fr = "fr"
-    val de = "de"
-    val it = "it"
-    val pt = "pt"
+  @js.native
+  sealed trait SyntaxLanguageCode extends js.Any
+  object SyntaxLanguageCode extends js.Object {
+    val en = "en".asInstanceOf[SyntaxLanguageCode]
+    val es = "es".asInstanceOf[SyntaxLanguageCode]
+    val fr = "fr".asInstanceOf[SyntaxLanguageCode]
+    val de = "de".asInstanceOf[SyntaxLanguageCode]
+    val it = "it".asInstanceOf[SyntaxLanguageCode]
+    val pt = "pt".asInstanceOf[SyntaxLanguageCode]
 
     val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
   }

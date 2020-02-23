@@ -7,29 +7,20 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object groundstation {
-  type AngleUnits                = String
-  type BandwidthUnits            = String
   type ConfigArn                 = String
-  type ConfigCapabilityType      = String
   type ConfigList                = js.Array[ConfigListItem]
   type ContactList               = js.Array[ContactData]
-  type ContactStatus             = String
-  type Criticality               = String
   type DataflowEdge              = js.Array[ConfigArn]
   type DataflowEdgeList          = js.Array[DataflowEdge]
   type DataflowEndpointGroupArn  = String
   type DataflowEndpointGroupList = js.Array[DataflowEndpointListItem]
   type DurationInSeconds         = Int
-  type EirpUnits                 = String
   type EndpointDetailsList       = js.Array[EndpointDetails]
-  type EndpointStatus            = String
-  type FrequencyUnits            = String
   type GroundStationIdList       = js.Array[String]
   type GroundStationList         = js.Array[GroundStationData]
   type JsonString                = String
   type MissionProfileArn         = String
   type MissionProfileList        = js.Array[MissionProfileListItem]
-  type Polarization              = String
   type RoleArn                   = String
   type SafeName                  = String
   type SatelliteList             = js.Array[SatelliteListItem]
@@ -141,10 +132,11 @@ package groundstation {
     def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse]                          = js.native
     def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse]  = js.native
   }
-
-  object AngleUnitsEnum {
-    val DEGREE_ANGLE = "DEGREE_ANGLE"
-    val RADIAN       = "RADIAN"
+  @js.native
+  sealed trait AngleUnits extends js.Any
+  object AngleUnits extends js.Object {
+    val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
+    val RADIAN       = "RADIAN".asInstanceOf[AngleUnits]
 
     val values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
   }
@@ -220,11 +212,12 @@ package groundstation {
       __obj.asInstanceOf[AntennaUplinkConfig]
     }
   }
-
-  object BandwidthUnitsEnum {
-    val GHz = "GHz"
-    val MHz = "MHz"
-    val kHz = "kHz"
+  @js.native
+  sealed trait BandwidthUnits extends js.Any
+  object BandwidthUnits extends js.Object {
+    val GHz = "GHz".asInstanceOf[BandwidthUnits]
+    val MHz = "MHz".asInstanceOf[BandwidthUnits]
+    val kHz = "kHz".asInstanceOf[BandwidthUnits]
 
     val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
@@ -249,14 +242,15 @@ package groundstation {
       __obj.asInstanceOf[CancelContactRequest]
     }
   }
-
-  object ConfigCapabilityTypeEnum {
-    val `antenna-downlink`              = "antenna-downlink"
-    val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode"
-    val `antenna-uplink`                = "antenna-uplink"
-    val `dataflow-endpoint`             = "dataflow-endpoint"
-    val tracking                        = "tracking"
-    val `uplink-echo`                   = "uplink-echo"
+  @js.native
+  sealed trait ConfigCapabilityType extends js.Any
+  object ConfigCapabilityType extends js.Object {
+    val `antenna-downlink`              = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
+    val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
+    val `antenna-uplink`                = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
+    val `dataflow-endpoint`             = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
+    val tracking                        = "tracking".asInstanceOf[ConfigCapabilityType]
+    val `uplink-echo`                   = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -433,20 +427,21 @@ package groundstation {
       __obj.asInstanceOf[ContactIdResponse]
     }
   }
-
-  object ContactStatusEnum {
-    val AVAILABLE          = "AVAILABLE"
-    val AWS_CANCELLED      = "AWS_CANCELLED"
-    val CANCELLED          = "CANCELLED"
-    val CANCELLING         = "CANCELLING"
-    val COMPLETED          = "COMPLETED"
-    val FAILED             = "FAILED"
-    val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE"
-    val PASS               = "PASS"
-    val POSTPASS           = "POSTPASS"
-    val PREPASS            = "PREPASS"
-    val SCHEDULED          = "SCHEDULED"
-    val SCHEDULING         = "SCHEDULING"
+  @js.native
+  sealed trait ContactStatus extends js.Any
+  object ContactStatus extends js.Object {
+    val AVAILABLE          = "AVAILABLE".asInstanceOf[ContactStatus]
+    val AWS_CANCELLED      = "AWS_CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLED          = "CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLING         = "CANCELLING".asInstanceOf[ContactStatus]
+    val COMPLETED          = "COMPLETED".asInstanceOf[ContactStatus]
+    val FAILED             = "FAILED".asInstanceOf[ContactStatus]
+    val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
+    val PASS               = "PASS".asInstanceOf[ContactStatus]
+    val POSTPASS           = "POSTPASS".asInstanceOf[ContactStatus]
+    val PREPASS            = "PREPASS".asInstanceOf[ContactStatus]
+    val SCHEDULED          = "SCHEDULED".asInstanceOf[ContactStatus]
+    val SCHEDULING         = "SCHEDULING".asInstanceOf[ContactStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -559,11 +554,12 @@ package groundstation {
       __obj.asInstanceOf[CreateMissionProfileRequest]
     }
   }
-
-  object CriticalityEnum {
-    val PREFERRED = "PREFERRED"
-    val REMOVED   = "REMOVED"
-    val REQUIRED  = "REQUIRED"
+  @js.native
+  sealed trait Criticality extends js.Any
+  object Criticality extends js.Object {
+    val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
+    val REMOVED   = "REMOVED".asInstanceOf[Criticality]
+    val REQUIRED  = "REQUIRED".asInstanceOf[Criticality]
 
     val values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
   }
@@ -865,9 +861,10 @@ package groundstation {
       __obj.asInstanceOf[Eirp]
     }
   }
-
-  object EirpUnitsEnum {
-    val dBW = "dBW"
+  @js.native
+  sealed trait EirpUnits extends js.Any
+  object EirpUnits extends js.Object {
+    val dBW = "dBW".asInstanceOf[EirpUnits]
 
     val values = js.Object.freeze(js.Array(dBW))
   }
@@ -917,13 +914,14 @@ package groundstation {
       __obj.asInstanceOf[EndpointDetails]
     }
   }
-
-  object EndpointStatusEnum {
-    val created  = "created"
-    val creating = "creating"
-    val deleted  = "deleted"
-    val deleting = "deleting"
-    val failed   = "failed"
+  @js.native
+  sealed trait EndpointStatus extends js.Any
+  object EndpointStatus extends js.Object {
+    val created  = "created".asInstanceOf[EndpointStatus]
+    val creating = "creating".asInstanceOf[EndpointStatus]
+    val deleted  = "deleted".asInstanceOf[EndpointStatus]
+    val deleting = "deleting".asInstanceOf[EndpointStatus]
+    val failed   = "failed".asInstanceOf[EndpointStatus]
 
     val values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
   }
@@ -975,11 +973,12 @@ package groundstation {
       __obj.asInstanceOf[FrequencyBandwidth]
     }
   }
-
-  object FrequencyUnitsEnum {
-    val GHz = "GHz"
-    val MHz = "MHz"
-    val kHz = "kHz"
+  @js.native
+  sealed trait FrequencyUnits extends js.Any
+  object FrequencyUnits extends js.Object {
+    val GHz = "GHz".asInstanceOf[FrequencyUnits]
+    val MHz = "MHz".asInstanceOf[FrequencyUnits]
+    val kHz = "kHz".asInstanceOf[FrequencyUnits]
 
     val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
@@ -1676,11 +1675,12 @@ package groundstation {
       __obj.asInstanceOf[MissionProfileListItem]
     }
   }
-
-  object PolarizationEnum {
-    val LEFT_HAND  = "LEFT_HAND"
-    val NONE       = "NONE"
-    val RIGHT_HAND = "RIGHT_HAND"
+  @js.native
+  sealed trait Polarization extends js.Any
+  object Polarization extends js.Object {
+    val LEFT_HAND  = "LEFT_HAND".asInstanceOf[Polarization]
+    val NONE       = "NONE".asInstanceOf[Polarization]
+    val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
     val values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
   }

@@ -21,7 +21,6 @@ package object codecommit {
   type ApprovalRulesList               = js.Array[ApprovalRule]
   type ApprovalRulesNotSatisfiedList   = js.Array[ApprovalRuleName]
   type ApprovalRulesSatisfiedList      = js.Array[ApprovalRuleName]
-  type ApprovalState                   = String
   type Approved                        = Boolean
   type Arn                             = String
   type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList =
@@ -33,7 +32,6 @@ package object codecommit {
   type BranchName                               = String
   type BranchNameList                           = js.Array[BranchName]
   type CapitalBoolean                           = Boolean
-  type ChangeTypeEnum                           = String
   type ClientRequestToken                       = String
   type CloneUrlHttp                             = String
   type CloneUrlSsh                              = String
@@ -45,9 +43,7 @@ package object codecommit {
   type CommitIdsInputList                       = js.Array[ObjectId]
   type CommitName                               = String
   type CommitObjectsList                        = js.Array[Commit]
-  type ConflictDetailLevelTypeEnum              = String
   type ConflictMetadataList                     = js.Array[ConflictMetadata]
-  type ConflictResolutionStrategyTypeEnum       = String
   type Conflicts                                = js.Array[Conflict]
   type Content                                  = String
   type CreationDate                             = js.Date
@@ -62,7 +58,6 @@ package object codecommit {
   type ExceptionName                            = String
   type FileContent                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type FileList                                 = js.Array[File]
-  type FileModeTypeEnum                         = String
   type FilePaths                                = js.Array[Path]
   type FileSize                                 = Double
   type FilesMetadata                            = js.Array[FileMetadata]
@@ -82,7 +77,6 @@ package object codecommit {
   type LineNumber                               = Int
   type MaxResults                               = Int
   type MergeHunks                               = js.Array[MergeHunk]
-  type MergeOptionTypeEnum                      = String
   type MergeOptions                             = js.Array[MergeOptionTypeEnum]
   type Message                                  = String
   type Mode                                     = String
@@ -91,24 +85,17 @@ package object codecommit {
   type NumberOfConflicts                        = Int
   type ObjectId                                 = String
   type ObjectSize                               = Double
-  type ObjectTypeEnum                           = String
-  type OrderEnum                                = String
   type Overridden                               = Boolean
-  type OverrideStatus                           = String
   type ParentList                               = js.Array[ObjectId]
   type Path                                     = String
   type Position                                 = Double
   type PullRequestEventList                     = js.Array[PullRequestEvent]
-  type PullRequestEventType                     = String
   type PullRequestId                            = String
   type PullRequestIdList                        = js.Array[PullRequestId]
-  type PullRequestStatusEnum                    = String
   type PullRequestTargetList                    = js.Array[PullRequestTarget]
   type PutFileEntries                           = js.Array[PutFileEntry]
   type ReferenceName                            = String
-  type RelativeFileVersionEnum                  = String
   type ReplaceContentEntries                    = js.Array[ReplaceContentEntry]
-  type ReplacementTypeEnum                      = String
   type RepositoryDescription                    = String
   type RepositoryId                             = String
   type RepositoryMetadataList                   = js.Array[RepositoryMetadata]
@@ -117,7 +104,6 @@ package object codecommit {
   type RepositoryNameList                       = js.Array[RepositoryName]
   type RepositoryNotFoundList                   = js.Array[RepositoryName]
   type RepositoryTriggerCustomData              = String
-  type RepositoryTriggerEventEnum               = String
   type RepositoryTriggerEventList               = js.Array[RepositoryTriggerEventEnum]
   type RepositoryTriggerExecutionFailureList    = js.Array[RepositoryTriggerExecutionFailure]
   type RepositoryTriggerExecutionFailureMessage = String
@@ -129,7 +115,6 @@ package object codecommit {
   type RevisionId                               = String
   type RuleContentSha256                        = String
   type SetFileModeEntries                       = js.Array[SetFileModeEntry]
-  type SortByEnum                               = String
   type SubModuleList                            = js.Array[SubModule]
   type SymbolicLinkList                         = js.Array[SymbolicLink]
   type TagKey                                   = String
@@ -628,10 +613,11 @@ package codecommit {
       __obj.asInstanceOf[ApprovalRuleTemplate]
     }
   }
-
-  object ApprovalStateEnum {
-    val APPROVE = "APPROVE"
-    val REVOKE  = "REVOKE"
+  @js.native
+  sealed trait ApprovalState extends js.Any
+  object ApprovalState extends js.Object {
+    val APPROVE = "APPROVE".asInstanceOf[ApprovalState]
+    val REVOKE  = "REVOKE".asInstanceOf[ApprovalState]
 
     val values = js.Object.freeze(js.Array(APPROVE, REVOKE))
   }
@@ -1074,11 +1060,12 @@ package codecommit {
       __obj.asInstanceOf[BranchInfo]
     }
   }
-
-  object ChangeTypeEnumEnum {
-    val A = "A"
-    val M = "M"
-    val D = "D"
+  @js.native
+  sealed trait ChangeTypeEnum extends js.Any
+  object ChangeTypeEnum extends js.Object {
+    val A = "A".asInstanceOf[ChangeTypeEnum]
+    val M = "M".asInstanceOf[ChangeTypeEnum]
+    val D = "D".asInstanceOf[ChangeTypeEnum]
 
     val values = js.Object.freeze(js.Array(A, M, D))
   }
@@ -1258,10 +1245,11 @@ package codecommit {
       __obj.asInstanceOf[Conflict]
     }
   }
-
-  object ConflictDetailLevelTypeEnumEnum {
-    val FILE_LEVEL = "FILE_LEVEL"
-    val LINE_LEVEL = "LINE_LEVEL"
+  @js.native
+  sealed trait ConflictDetailLevelTypeEnum extends js.Any
+  object ConflictDetailLevelTypeEnum extends js.Object {
+    val FILE_LEVEL = "FILE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
+    val LINE_LEVEL = "LINE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
 
     val values = js.Object.freeze(js.Array(FILE_LEVEL, LINE_LEVEL))
   }
@@ -1336,12 +1324,13 @@ package codecommit {
       __obj.asInstanceOf[ConflictResolution]
     }
   }
-
-  object ConflictResolutionStrategyTypeEnumEnum {
-    val NONE               = "NONE"
-    val ACCEPT_SOURCE      = "ACCEPT_SOURCE"
-    val ACCEPT_DESTINATION = "ACCEPT_DESTINATION"
-    val AUTOMERGE          = "AUTOMERGE"
+  @js.native
+  sealed trait ConflictResolutionStrategyTypeEnum extends js.Any
+  object ConflictResolutionStrategyTypeEnum extends js.Object {
+    val NONE               = "NONE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val ACCEPT_SOURCE      = "ACCEPT_SOURCE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val ACCEPT_DESTINATION = "ACCEPT_DESTINATION".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val AUTOMERGE          = "AUTOMERGE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
 
     val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
   }
@@ -2266,11 +2255,12 @@ package codecommit {
       __obj.asInstanceOf[FileMetadata]
     }
   }
-
-  object FileModeTypeEnumEnum {
-    val EXECUTABLE = "EXECUTABLE"
-    val NORMAL     = "NORMAL"
-    val SYMLINK    = "SYMLINK"
+  @js.native
+  sealed trait FileModeTypeEnum extends js.Any
+  object FileModeTypeEnum extends js.Object {
+    val EXECUTABLE = "EXECUTABLE".asInstanceOf[FileModeTypeEnum]
+    val NORMAL     = "NORMAL".asInstanceOf[FileModeTypeEnum]
+    val SYMLINK    = "SYMLINK".asInstanceOf[FileModeTypeEnum]
 
     val values = js.Object.freeze(js.Array(EXECUTABLE, NORMAL, SYMLINK))
   }
@@ -3862,11 +3852,12 @@ package codecommit {
       __obj.asInstanceOf[MergeOperations]
     }
   }
-
-  object MergeOptionTypeEnumEnum {
-    val FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE"
-    val SQUASH_MERGE       = "SQUASH_MERGE"
-    val THREE_WAY_MERGE    = "THREE_WAY_MERGE"
+  @js.native
+  sealed trait MergeOptionTypeEnum extends js.Any
+  object MergeOptionTypeEnum extends js.Object {
+    val FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE".asInstanceOf[MergeOptionTypeEnum]
+    val SQUASH_MERGE       = "SQUASH_MERGE".asInstanceOf[MergeOptionTypeEnum]
+    val THREE_WAY_MERGE    = "THREE_WAY_MERGE".asInstanceOf[MergeOptionTypeEnum]
 
     val values = js.Object.freeze(js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE))
   }
@@ -4036,12 +4027,13 @@ package codecommit {
       __obj.asInstanceOf[MergePullRequestByThreeWayOutput]
     }
   }
-
-  object ObjectTypeEnumEnum {
-    val FILE          = "FILE"
-    val DIRECTORY     = "DIRECTORY"
-    val GIT_LINK      = "GIT_LINK"
-    val SYMBOLIC_LINK = "SYMBOLIC_LINK"
+  @js.native
+  sealed trait ObjectTypeEnum extends js.Any
+  object ObjectTypeEnum extends js.Object {
+    val FILE          = "FILE".asInstanceOf[ObjectTypeEnum]
+    val DIRECTORY     = "DIRECTORY".asInstanceOf[ObjectTypeEnum]
+    val GIT_LINK      = "GIT_LINK".asInstanceOf[ObjectTypeEnum]
+    val SYMBOLIC_LINK = "SYMBOLIC_LINK".asInstanceOf[ObjectTypeEnum]
 
     val values = js.Object.freeze(js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK))
   }
@@ -4070,10 +4062,11 @@ package codecommit {
       __obj.asInstanceOf[ObjectTypes]
     }
   }
-
-  object OrderEnumEnum {
-    val ascending  = "ascending"
-    val descending = "descending"
+  @js.native
+  sealed trait OrderEnum extends js.Any
+  object OrderEnum extends js.Object {
+    val ascending  = "ascending".asInstanceOf[OrderEnum]
+    val descending = "descending".asInstanceOf[OrderEnum]
 
     val values = js.Object.freeze(js.Array(ascending, descending))
   }
@@ -4123,10 +4116,11 @@ package codecommit {
       __obj.asInstanceOf[OverridePullRequestApprovalRulesInput]
     }
   }
-
-  object OverrideStatusEnum {
-    val OVERRIDE = "OVERRIDE"
-    val REVOKE   = "REVOKE"
+  @js.native
+  sealed trait OverrideStatus extends js.Any
+  object OverrideStatus extends js.Object {
+    val OVERRIDE = "OVERRIDE".asInstanceOf[OverrideStatus]
+    val REVOKE   = "REVOKE".asInstanceOf[OverrideStatus]
 
     val values = js.Object.freeze(js.Array(OVERRIDE, REVOKE))
   }
@@ -4452,17 +4446,20 @@ package codecommit {
       __obj.asInstanceOf[PullRequestEvent]
     }
   }
-
-  object PullRequestEventTypeEnum {
-    val PULL_REQUEST_CREATED                  = "PULL_REQUEST_CREATED"
-    val PULL_REQUEST_STATUS_CHANGED           = "PULL_REQUEST_STATUS_CHANGED"
-    val PULL_REQUEST_SOURCE_REFERENCE_UPDATED = "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
-    val PULL_REQUEST_MERGE_STATE_CHANGED      = "PULL_REQUEST_MERGE_STATE_CHANGED"
-    val PULL_REQUEST_APPROVAL_RULE_CREATED    = "PULL_REQUEST_APPROVAL_RULE_CREATED"
-    val PULL_REQUEST_APPROVAL_RULE_UPDATED    = "PULL_REQUEST_APPROVAL_RULE_UPDATED"
-    val PULL_REQUEST_APPROVAL_RULE_DELETED    = "PULL_REQUEST_APPROVAL_RULE_DELETED"
-    val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN"
-    val PULL_REQUEST_APPROVAL_STATE_CHANGED   = "PULL_REQUEST_APPROVAL_STATE_CHANGED"
+  @js.native
+  sealed trait PullRequestEventType extends js.Any
+  object PullRequestEventType extends js.Object {
+    val PULL_REQUEST_CREATED        = "PULL_REQUEST_CREATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_STATUS_CHANGED = "PULL_REQUEST_STATUS_CHANGED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_SOURCE_REFERENCE_UPDATED =
+      "PULL_REQUEST_SOURCE_REFERENCE_UPDATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_MERGE_STATE_CHANGED   = "PULL_REQUEST_MERGE_STATE_CHANGED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_RULE_CREATED = "PULL_REQUEST_APPROVAL_RULE_CREATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_RULE_UPDATED = "PULL_REQUEST_APPROVAL_RULE_UPDATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_RULE_DELETED = "PULL_REQUEST_APPROVAL_RULE_DELETED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN =
+      "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_STATE_CHANGED = "PULL_REQUEST_APPROVAL_STATE_CHANGED".asInstanceOf[PullRequestEventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4550,10 +4547,11 @@ package codecommit {
       __obj.asInstanceOf[PullRequestStatusChangedEventMetadata]
     }
   }
-
-  object PullRequestStatusEnumEnum {
-    val OPEN   = "OPEN"
-    val CLOSED = "CLOSED"
+  @js.native
+  sealed trait PullRequestStatusEnum extends js.Any
+  object PullRequestStatusEnum extends js.Object {
+    val OPEN   = "OPEN".asInstanceOf[PullRequestStatusEnum]
+    val CLOSED = "CLOSED".asInstanceOf[PullRequestStatusEnum]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
@@ -4733,10 +4731,11 @@ package codecommit {
       __obj.asInstanceOf[PutRepositoryTriggersOutput]
     }
   }
-
-  object RelativeFileVersionEnumEnum {
-    val BEFORE = "BEFORE"
-    val AFTER  = "AFTER"
+  @js.native
+  sealed trait RelativeFileVersionEnum extends js.Any
+  object RelativeFileVersionEnum extends js.Object {
+    val BEFORE = "BEFORE".asInstanceOf[RelativeFileVersionEnum]
+    val AFTER  = "AFTER".asInstanceOf[RelativeFileVersionEnum]
 
     val values = js.Object.freeze(js.Array(BEFORE, AFTER))
   }
@@ -4770,12 +4769,13 @@ package codecommit {
       __obj.asInstanceOf[ReplaceContentEntry]
     }
   }
-
-  object ReplacementTypeEnumEnum {
-    val KEEP_BASE        = "KEEP_BASE"
-    val KEEP_SOURCE      = "KEEP_SOURCE"
-    val KEEP_DESTINATION = "KEEP_DESTINATION"
-    val USE_NEW_CONTENT  = "USE_NEW_CONTENT"
+  @js.native
+  sealed trait ReplacementTypeEnum extends js.Any
+  object ReplacementTypeEnum extends js.Object {
+    val KEEP_BASE        = "KEEP_BASE".asInstanceOf[ReplacementTypeEnum]
+    val KEEP_SOURCE      = "KEEP_SOURCE".asInstanceOf[ReplacementTypeEnum]
+    val KEEP_DESTINATION = "KEEP_DESTINATION".asInstanceOf[ReplacementTypeEnum]
+    val USE_NEW_CONTENT  = "USE_NEW_CONTENT".asInstanceOf[ReplacementTypeEnum]
 
     val values = js.Object.freeze(js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT))
   }
@@ -4880,12 +4880,13 @@ package codecommit {
       __obj.asInstanceOf[RepositoryTrigger]
     }
   }
-
-  object RepositoryTriggerEventEnumEnum {
-    val all             = "all"
-    val updateReference = "updateReference"
-    val createReference = "createReference"
-    val deleteReference = "deleteReference"
+  @js.native
+  sealed trait RepositoryTriggerEventEnum extends js.Any
+  object RepositoryTriggerEventEnum extends js.Object {
+    val all             = "all".asInstanceOf[RepositoryTriggerEventEnum]
+    val updateReference = "updateReference".asInstanceOf[RepositoryTriggerEventEnum]
+    val createReference = "createReference".asInstanceOf[RepositoryTriggerEventEnum]
+    val deleteReference = "deleteReference".asInstanceOf[RepositoryTriggerEventEnum]
 
     val values = js.Object.freeze(js.Array(all, updateReference, createReference, deleteReference))
   }
@@ -4935,10 +4936,11 @@ package codecommit {
       __obj.asInstanceOf[SetFileModeEntry]
     }
   }
-
-  object SortByEnumEnum {
-    val repositoryName   = "repositoryName"
-    val lastModifiedDate = "lastModifiedDate"
+  @js.native
+  sealed trait SortByEnum extends js.Any
+  object SortByEnum extends js.Object {
+    val repositoryName   = "repositoryName".asInstanceOf[SortByEnum]
+    val lastModifiedDate = "lastModifiedDate".asInstanceOf[SortByEnum]
 
     val values = js.Object.freeze(js.Array(repositoryName, lastModifiedDate))
   }

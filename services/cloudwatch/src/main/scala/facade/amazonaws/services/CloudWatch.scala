@@ -18,10 +18,8 @@ package object cloudwatch {
   type AmazonResourceName                = String
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
   type AnomalyDetectorMetricTimezone     = String
-  type AnomalyDetectorStateValue         = String
   type AnomalyDetectors                  = js.Array[AnomalyDetector]
   type BatchFailures                     = js.Array[PartialFailure]
-  type ComparisonOperator                = String
   type Counts                            = js.Array[DatapointValue]
   type DashboardArn                      = String
   type DashboardBody                     = String
@@ -50,7 +48,6 @@ package object cloudwatch {
   type FailureResource                   = String
   type GetMetricDataMaxDatapoints        = Int
   type HistoryData                       = String
-  type HistoryItemType                   = String
   type HistorySummary                    = String
   type InsightRuleAggregationStatistic   = String
   type InsightRuleContributorDatapoints  = js.Array[InsightRuleContributorDatapoint]
@@ -98,16 +95,11 @@ package object cloudwatch {
   type ResourceList                      = js.Array[ResourceName]
   type ResourceName                      = String
   type ReturnData                        = Boolean
-  type ScanBy                            = String
   type Size                              = Double
-  type StandardUnit                      = String
   type Stat                              = String
   type StateReason                       = String
   type StateReasonData                   = String
-  type StateValue                        = String
-  type Statistic                         = String
   type Statistics                        = js.Array[Statistic]
-  type StatusCode                        = String
   type StorageResolution                 = Int
   type TagKey                            = String
   type TagKeyList                        = js.Array[TagKey]
@@ -309,23 +301,26 @@ package cloudwatch {
       __obj.asInstanceOf[AnomalyDetectorConfiguration]
     }
   }
-
-  object AnomalyDetectorStateValueEnum {
-    val PENDING_TRAINING          = "PENDING_TRAINING"
-    val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA"
-    val TRAINED                   = "TRAINED"
+  @js.native
+  sealed trait AnomalyDetectorStateValue extends js.Any
+  object AnomalyDetectorStateValue extends js.Object {
+    val PENDING_TRAINING          = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
+    val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
+    val TRAINED                   = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
     val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
-
-  object ComparisonOperatorEnum {
-    val GreaterThanOrEqualToThreshold            = "GreaterThanOrEqualToThreshold"
-    val GreaterThanThreshold                     = "GreaterThanThreshold"
-    val LessThanThreshold                        = "LessThanThreshold"
-    val LessThanOrEqualToThreshold               = "LessThanOrEqualToThreshold"
-    val LessThanLowerOrGreaterThanUpperThreshold = "LessThanLowerOrGreaterThanUpperThreshold"
-    val LessThanLowerThreshold                   = "LessThanLowerThreshold"
-    val GreaterThanUpperThreshold                = "GreaterThanUpperThreshold"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold          = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold             = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanLowerOrGreaterThanUpperThreshold =
+      "LessThanLowerOrGreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanLowerThreshold    = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1201,11 +1196,12 @@ package cloudwatch {
       __obj.asInstanceOf[GetMetricWidgetImageOutput]
     }
   }
-
-  object HistoryItemTypeEnum {
-    val ConfigurationUpdate = "ConfigurationUpdate"
-    val StateUpdate         = "StateUpdate"
-    val Action              = "Action"
+  @js.native
+  sealed trait HistoryItemType extends js.Any
+  object HistoryItemType extends js.Object {
+    val ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
+    val StateUpdate         = "StateUpdate".asInstanceOf[HistoryItemType]
+    val Action              = "Action".asInstanceOf[HistoryItemType]
 
     val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
   }
@@ -2024,10 +2020,11 @@ package cloudwatch {
       __obj.asInstanceOf[Range]
     }
   }
-
-  object ScanByEnum {
-    val TimestampDescending = "TimestampDescending"
-    val TimestampAscending  = "TimestampAscending"
+  @js.native
+  sealed trait ScanBy extends js.Any
+  object ScanBy extends js.Object {
+    val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
+    val TimestampAscending  = "TimestampAscending".asInstanceOf[ScanBy]
 
     val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
   }
@@ -2058,35 +2055,36 @@ package cloudwatch {
       __obj.asInstanceOf[SetAlarmStateInput]
     }
   }
-
-  object StandardUnitEnum {
-    val Seconds            = "Seconds"
-    val Microseconds       = "Microseconds"
-    val Milliseconds       = "Milliseconds"
-    val Bytes              = "Bytes"
-    val Kilobytes          = "Kilobytes"
-    val Megabytes          = "Megabytes"
-    val Gigabytes          = "Gigabytes"
-    val Terabytes          = "Terabytes"
-    val Bits               = "Bits"
-    val Kilobits           = "Kilobits"
-    val Megabits           = "Megabits"
-    val Gigabits           = "Gigabits"
-    val Terabits           = "Terabits"
-    val Percent            = "Percent"
-    val Count              = "Count"
-    val `Bytes/Second`     = "Bytes/Second"
-    val `Kilobytes/Second` = "Kilobytes/Second"
-    val `Megabytes/Second` = "Megabytes/Second"
-    val `Gigabytes/Second` = "Gigabytes/Second"
-    val `Terabytes/Second` = "Terabytes/Second"
-    val `Bits/Second`      = "Bits/Second"
-    val `Kilobits/Second`  = "Kilobits/Second"
-    val `Megabits/Second`  = "Megabits/Second"
-    val `Gigabits/Second`  = "Gigabits/Second"
-    val `Terabits/Second`  = "Terabits/Second"
-    val `Count/Second`     = "Count/Second"
-    val None               = "None"
+  @js.native
+  sealed trait StandardUnit extends js.Any
+  object StandardUnit extends js.Object {
+    val Seconds            = "Seconds".asInstanceOf[StandardUnit]
+    val Microseconds       = "Microseconds".asInstanceOf[StandardUnit]
+    val Milliseconds       = "Milliseconds".asInstanceOf[StandardUnit]
+    val Bytes              = "Bytes".asInstanceOf[StandardUnit]
+    val Kilobytes          = "Kilobytes".asInstanceOf[StandardUnit]
+    val Megabytes          = "Megabytes".asInstanceOf[StandardUnit]
+    val Gigabytes          = "Gigabytes".asInstanceOf[StandardUnit]
+    val Terabytes          = "Terabytes".asInstanceOf[StandardUnit]
+    val Bits               = "Bits".asInstanceOf[StandardUnit]
+    val Kilobits           = "Kilobits".asInstanceOf[StandardUnit]
+    val Megabits           = "Megabits".asInstanceOf[StandardUnit]
+    val Gigabits           = "Gigabits".asInstanceOf[StandardUnit]
+    val Terabits           = "Terabits".asInstanceOf[StandardUnit]
+    val Percent            = "Percent".asInstanceOf[StandardUnit]
+    val Count              = "Count".asInstanceOf[StandardUnit]
+    val `Bytes/Second`     = "Bytes/Second".asInstanceOf[StandardUnit]
+    val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[StandardUnit]
+    val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[StandardUnit]
+    val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[StandardUnit]
+    val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[StandardUnit]
+    val `Bits/Second`      = "Bits/Second".asInstanceOf[StandardUnit]
+    val `Kilobits/Second`  = "Kilobits/Second".asInstanceOf[StandardUnit]
+    val `Megabits/Second`  = "Megabits/Second".asInstanceOf[StandardUnit]
+    val `Gigabits/Second`  = "Gigabits/Second".asInstanceOf[StandardUnit]
+    val `Terabits/Second`  = "Terabits/Second".asInstanceOf[StandardUnit]
+    val `Count/Second`     = "Count/Second".asInstanceOf[StandardUnit]
+    val None               = "None".asInstanceOf[StandardUnit]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2120,21 +2118,23 @@ package cloudwatch {
       )
     )
   }
-
-  object StateValueEnum {
-    val OK                = "OK"
-    val ALARM             = "ALARM"
-    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA"
+  @js.native
+  sealed trait StateValue extends js.Any
+  object StateValue extends js.Object {
+    val OK                = "OK".asInstanceOf[StateValue]
+    val ALARM             = "ALARM".asInstanceOf[StateValue]
+    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
     val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
-
-  object StatisticEnum {
-    val SampleCount = "SampleCount"
-    val Average     = "Average"
-    val Sum         = "Sum"
-    val Minimum     = "Minimum"
-    val Maximum     = "Maximum"
+  @js.native
+  sealed trait Statistic extends js.Any
+  object Statistic extends js.Object {
+    val SampleCount = "SampleCount".asInstanceOf[Statistic]
+    val Average     = "Average".asInstanceOf[Statistic]
+    val Sum         = "Sum".asInstanceOf[Statistic]
+    val Minimum     = "Minimum".asInstanceOf[Statistic]
+    val Maximum     = "Maximum".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
   }
@@ -2168,11 +2168,12 @@ package cloudwatch {
       __obj.asInstanceOf[StatisticSet]
     }
   }
-
-  object StatusCodeEnum {
-    val Complete      = "Complete"
-    val InternalError = "InternalError"
-    val PartialData   = "PartialData"
+  @js.native
+  sealed trait StatusCode extends js.Any
+  object StatusCode extends js.Object {
+    val Complete      = "Complete".asInstanceOf[StatusCode]
+    val InternalError = "InternalError".asInstanceOf[StatusCode]
+    val PartialData   = "PartialData".asInstanceOf[StatusCode]
 
     val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
   }

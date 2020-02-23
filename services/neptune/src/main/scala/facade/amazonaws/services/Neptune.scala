@@ -7,7 +7,6 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object neptune {
-  type ApplyMethod                         = String
   type AttributeValueList                  = js.Array[String]
   type AvailabilityZoneList                = js.Array[AvailabilityZone]
   type AvailabilityZones                   = js.Array[String]
@@ -49,7 +48,6 @@ package object neptune {
   type ReadReplicaDBInstanceIdentifierList = js.Array[String]
   type ReadReplicaIdentifierList           = js.Array[String]
   type SourceIdsList                       = js.Array[String]
-  type SourceType                          = String
   type SubnetIdentifierList                = js.Array[String]
   type SubnetList                          = js.Array[Subnet]
   type SupportedCharacterSetsList          = js.Array[CharacterSet]
@@ -411,10 +409,11 @@ package neptune {
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
-
-  object ApplyMethodEnum {
-    val immediate        = "immediate"
-    val `pending-reboot` = "pending-reboot"
+  @js.native
+  sealed trait ApplyMethod extends js.Any
+  object ApplyMethod extends js.Object {
+    val immediate        = "immediate".asInstanceOf[ApplyMethod]
+    val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
@@ -4391,14 +4390,15 @@ package neptune {
       __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
   }
-
-  object SourceTypeEnum {
-    val `db-instance`         = "db-instance"
-    val `db-parameter-group`  = "db-parameter-group"
-    val `db-security-group`   = "db-security-group"
-    val `db-snapshot`         = "db-snapshot"
-    val `db-cluster`          = "db-cluster"
-    val `db-cluster-snapshot` = "db-cluster-snapshot"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val `db-instance`         = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group`  = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group`   = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot`         = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster`          = "db-cluster".asInstanceOf[SourceType]
+    val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(

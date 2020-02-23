@@ -7,14 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediapackagevod {
-  type AdMarkers                       = String
-  type EncryptionMethod                = String
-  type ManifestLayout                  = String
   type MaxResults                      = Int
-  type Profile                         = String
-  type SegmentTemplateFormat           = String
-  type StreamOrder                     = String
-  type __PeriodTriggersElement         = String
   type __boolean                       = Boolean
   type __integer                       = Int
   type __listOfAssetShallow            = js.Array[AssetShallow]
@@ -90,11 +83,12 @@ package mediapackagevod {
     ): Request[ListPackagingConfigurationsResponse]                                                   = js.native
     def listPackagingGroups(params: ListPackagingGroupsRequest): Request[ListPackagingGroupsResponse] = js.native
   }
-
-  object AdMarkersEnum {
-    val NONE            = "NONE"
-    val SCTE35_ENHANCED = "SCTE35_ENHANCED"
-    val PASSTHROUGH     = "PASSTHROUGH"
+  @js.native
+  sealed trait AdMarkers extends js.Any
+  object AdMarkers extends js.Object {
+    val NONE            = "NONE".asInstanceOf[AdMarkers]
+    val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
+    val PASSTHROUGH     = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
     val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
@@ -713,10 +707,11 @@ package mediapackagevod {
       __obj.asInstanceOf[EgressEndpoint]
     }
   }
-
-  object EncryptionMethodEnum {
-    val AES_128    = "AES_128"
-    val SAMPLE_AES = "SAMPLE_AES"
+  @js.native
+  sealed trait EncryptionMethod extends js.Any
+  object EncryptionMethod extends js.Object {
+    val AES_128    = "AES_128".asInstanceOf[EncryptionMethod]
+    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
@@ -935,10 +930,11 @@ package mediapackagevod {
       __obj.asInstanceOf[ListPackagingGroupsResponse]
     }
   }
-
-  object ManifestLayoutEnum {
-    val FULL    = "FULL"
-    val COMPACT = "COMPACT"
+  @js.native
+  sealed trait ManifestLayout extends js.Any
+  object ManifestLayout extends js.Object {
+    val FULL    = "FULL".asInstanceOf[ManifestLayout]
+    val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
     val values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
@@ -1074,18 +1070,20 @@ package mediapackagevod {
       __obj.asInstanceOf[PackagingGroup]
     }
   }
-
-  object ProfileEnum {
-    val NONE      = "NONE"
-    val HBBTV_1_5 = "HBBTV_1_5"
+  @js.native
+  sealed trait Profile extends js.Any
+  object Profile extends js.Object {
+    val NONE      = "NONE".asInstanceOf[Profile]
+    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
-
-  object SegmentTemplateFormatEnum {
-    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE"
-    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
-    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION"
+  @js.native
+  sealed trait SegmentTemplateFormat extends js.Any
+  object SegmentTemplateFormat extends js.Object {
+    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
     val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
@@ -1116,11 +1114,12 @@ package mediapackagevod {
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
-
-  object StreamOrderEnum {
-    val ORIGINAL                 = "ORIGINAL"
-    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING"
-    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING"
+  @js.native
+  sealed trait StreamOrder extends js.Any
+  object StreamOrder extends js.Object {
+    val ORIGINAL                 = "ORIGINAL".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
     val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
@@ -1149,9 +1148,10 @@ package mediapackagevod {
       __obj.asInstanceOf[StreamSelection]
     }
   }
-
-  object __PeriodTriggersElementEnum {
-    val ADS = "ADS"
+  @js.native
+  sealed trait __PeriodTriggersElement extends js.Any
+  object __PeriodTriggersElement extends js.Object {
+    val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
     val values = js.Object.freeze(js.Array(ADS))
   }

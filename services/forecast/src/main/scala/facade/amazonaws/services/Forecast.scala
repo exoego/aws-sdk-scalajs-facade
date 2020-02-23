@@ -9,22 +9,16 @@ import facade.amazonaws._
 package object forecast {
   type Arn                           = String
   type ArnList                       = js.Array[Arn]
-  type AttributeType                 = String
   type CategoricalParameterRanges    = js.Array[CategoricalParameterRange]
   type ContinuousParameterRanges     = js.Array[ContinuousParameterRange]
   type DatasetGroups                 = js.Array[DatasetGroupSummary]
   type DatasetImportJobs             = js.Array[DatasetImportJobSummary]
-  type DatasetType                   = String
   type Datasets                      = js.Array[DatasetSummary]
-  type Domain                        = String
   type ErrorMessage                  = String
-  type EvaluationType                = String
-  type FeaturizationMethodName       = String
   type FeaturizationMethodParameters = js.Dictionary[ParameterValue]
   type FeaturizationPipeline         = js.Array[FeaturizationMethod]
   type Featurizations                = js.Array[Featurization]
   type FieldStatistics               = js.Dictionary[Statistics]
-  type FilterConditionString         = String
   type Filters                       = js.Array[Filter]
   type ForecastDimensions            = js.Array[Name]
   type ForecastExportJobs            = js.Array[ForecastExportJobSummary]
@@ -44,7 +38,6 @@ package object forecast {
   type PredictorExecutions           = js.Array[PredictorExecution]
   type Predictors                    = js.Array[PredictorSummary]
   type S3Path                        = String
-  type ScalingType                   = String
   type SchemaAttributes              = js.Array[SchemaAttribute]
   type Status                        = String
   type SupplementaryFeatures         = js.Array[SupplementaryFeature]
@@ -159,12 +152,13 @@ package forecast {
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse]             = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
   }
-
-  object AttributeTypeEnum {
-    val string    = "string"
-    val integer   = "integer"
-    val float     = "float"
-    val timestamp = "timestamp"
+  @js.native
+  sealed trait AttributeType extends js.Any
+  object AttributeType extends js.Object {
+    val string    = "string".asInstanceOf[AttributeType]
+    val integer   = "integer".asInstanceOf[AttributeType]
+    val float     = "float".asInstanceOf[AttributeType]
+    val timestamp = "timestamp".asInstanceOf[AttributeType]
 
     val values = js.Object.freeze(js.Array(string, integer, float, timestamp))
   }
@@ -639,11 +633,12 @@ package forecast {
       __obj.asInstanceOf[DatasetSummary]
     }
   }
-
-  object DatasetTypeEnum {
-    val TARGET_TIME_SERIES  = "TARGET_TIME_SERIES"
-    val RELATED_TIME_SERIES = "RELATED_TIME_SERIES"
-    val ITEM_METADATA       = "ITEM_METADATA"
+  @js.native
+  sealed trait DatasetType extends js.Any
+  object DatasetType extends js.Object {
+    val TARGET_TIME_SERIES  = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
+    val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
+    val ITEM_METADATA       = "ITEM_METADATA".asInstanceOf[DatasetType]
 
     val values = js.Object.freeze(js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA))
   }
@@ -1135,15 +1130,16 @@ package forecast {
       __obj.asInstanceOf[DescribePredictorResponse]
     }
   }
-
-  object DomainEnum {
-    val RETAIL             = "RETAIL"
-    val CUSTOM             = "CUSTOM"
-    val INVENTORY_PLANNING = "INVENTORY_PLANNING"
-    val EC2_CAPACITY       = "EC2_CAPACITY"
-    val WORK_FORCE         = "WORK_FORCE"
-    val WEB_TRAFFIC        = "WEB_TRAFFIC"
-    val METRICS            = "METRICS"
+  @js.native
+  sealed trait Domain extends js.Any
+  object Domain extends js.Object {
+    val RETAIL             = "RETAIL".asInstanceOf[Domain]
+    val CUSTOM             = "CUSTOM".asInstanceOf[Domain]
+    val INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
+    val EC2_CAPACITY       = "EC2_CAPACITY".asInstanceOf[Domain]
+    val WORK_FORCE         = "WORK_FORCE".asInstanceOf[Domain]
+    val WEB_TRAFFIC        = "WEB_TRAFFIC".asInstanceOf[Domain]
+    val METRICS            = "METRICS".asInstanceOf[Domain]
 
     val values =
       js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
@@ -1216,10 +1212,11 @@ package forecast {
       __obj.asInstanceOf[EvaluationResult]
     }
   }
-
-  object EvaluationTypeEnum {
-    val SUMMARY  = "SUMMARY"
-    val COMPUTED = "COMPUTED"
+  @js.native
+  sealed trait EvaluationType extends js.Any
+  object EvaluationType extends js.Object {
+    val SUMMARY  = "SUMMARY".asInstanceOf[EvaluationType]
+    val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
 
     val values = js.Object.freeze(js.Array(SUMMARY, COMPUTED))
   }
@@ -1315,9 +1312,10 @@ package forecast {
       __obj.asInstanceOf[FeaturizationMethod]
     }
   }
-
-  object FeaturizationMethodNameEnum {
-    val filling = "filling"
+  @js.native
+  sealed trait FeaturizationMethodName extends js.Any
+  object FeaturizationMethodName extends js.Object {
+    val filling = "filling".asInstanceOf[FeaturizationMethodName]
 
     val values = js.Object.freeze(js.Array(filling))
   }
@@ -1348,10 +1346,11 @@ package forecast {
       __obj.asInstanceOf[Filter]
     }
   }
-
-  object FilterConditionStringEnum {
-    val IS     = "IS"
-    val IS_NOT = "IS_NOT"
+  @js.native
+  sealed trait FilterConditionString extends js.Any
+  object FilterConditionString extends js.Object {
+    val IS     = "IS".asInstanceOf[FilterConditionString]
+    val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
     val values = js.Object.freeze(js.Array(IS, IS_NOT))
   }
@@ -1939,12 +1938,13 @@ package forecast {
       __obj.asInstanceOf[S3Config]
     }
   }
-
-  object ScalingTypeEnum {
-    val Auto               = "Auto"
-    val Linear             = "Linear"
-    val Logarithmic        = "Logarithmic"
-    val ReverseLogarithmic = "ReverseLogarithmic"
+  @js.native
+  sealed trait ScalingType extends js.Any
+  object ScalingType extends js.Object {
+    val Auto               = "Auto".asInstanceOf[ScalingType]
+    val Linear             = "Linear".asInstanceOf[ScalingType]
+    val Logarithmic        = "Logarithmic".asInstanceOf[ScalingType]
+    val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
     val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }

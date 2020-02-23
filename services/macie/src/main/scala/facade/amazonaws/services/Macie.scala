@@ -18,8 +18,6 @@ package object macie {
   type NextToken                       = String
   type Prefix                          = String
   type ResourceType                    = String
-  type S3ContinuousClassificationType  = String
-  type S3OneTimeClassificationType     = String
   type S3Resources                     = js.Array[S3Resource]
   type S3ResourcesClassification       = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
@@ -376,16 +374,18 @@ package macie {
       __obj.asInstanceOf[MemberAccount]
     }
   }
-
-  object S3ContinuousClassificationTypeEnum {
-    val FULL = "FULL"
+  @js.native
+  sealed trait S3ContinuousClassificationType extends js.Any
+  object S3ContinuousClassificationType extends js.Object {
+    val FULL = "FULL".asInstanceOf[S3ContinuousClassificationType]
 
     val values = js.Object.freeze(js.Array(FULL))
   }
-
-  object S3OneTimeClassificationTypeEnum {
-    val FULL = "FULL"
-    val NONE = "NONE"
+  @js.native
+  sealed trait S3OneTimeClassificationType extends js.Any
+  object S3OneTimeClassificationType extends js.Object {
+    val FULL = "FULL".asInstanceOf[S3OneTimeClassificationType]
+    val NONE = "NONE".asInstanceOf[S3OneTimeClassificationType]
 
     val values = js.Object.freeze(js.Array(FULL, NONE))
   }

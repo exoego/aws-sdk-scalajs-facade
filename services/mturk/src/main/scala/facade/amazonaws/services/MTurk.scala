@@ -8,28 +8,20 @@ import facade.amazonaws._
 
 package object mturk {
   type AssignmentList                 = js.Array[Assignment]
-  type AssignmentStatus               = String
   type AssignmentStatusList           = js.Array[AssignmentStatus]
   type BonusPaymentList               = js.Array[BonusPayment]
-  type Comparator                     = String
   type CountryParameters              = String
   type CurrencyAmount                 = String
   type CustomerId                     = String
   type CustomerIdList                 = js.Array[CustomerId]
   type EntityId                       = String
-  type EventType                      = String
   type EventTypeList                  = js.Array[EventType]
   type ExceptionMessage               = String
-  type HITAccessActions               = String
   type HITLayoutParameterList         = js.Array[HITLayoutParameter]
   type HITList                        = js.Array[HIT]
-  type HITReviewStatus                = String
-  type HITStatus                      = String
   type IdempotencyToken               = String
   type IntegerList                    = js.Array[Int]
   type LocaleList                     = js.Array[Locale]
-  type NotificationTransport          = String
-  type NotifyWorkersFailureCode       = String
   type NotifyWorkersFailureStatusList = js.Array[NotifyWorkersFailureStatus]
   type PaginationToken                = String
   type ParameterMapEntryList          = js.Array[ParameterMapEntry]
@@ -37,16 +29,11 @@ package object mturk {
   type QualificationList              = js.Array[Qualification]
   type QualificationRequestList       = js.Array[QualificationRequest]
   type QualificationRequirementList   = js.Array[QualificationRequirement]
-  type QualificationStatus            = String
   type QualificationTypeList          = js.Array[QualificationType]
-  type QualificationTypeStatus        = String
   type ResultSize                     = Int
   type ReviewActionDetailList         = js.Array[ReviewActionDetail]
-  type ReviewActionStatus             = String
-  type ReviewPolicyLevel              = String
   type ReviewPolicyLevelList          = js.Array[ReviewPolicyLevel]
   type ReviewResultDetailList         = js.Array[ReviewResultDetail]
-  type ReviewableHITStatus            = String
   type StringList                     = js.Array[String]
   type Timestamp                      = js.Date
   type TurkErrorCode                  = String
@@ -353,11 +340,12 @@ package mturk {
       __obj.asInstanceOf[Assignment]
     }
   }
-
-  object AssignmentStatusEnum {
-    val Submitted = "Submitted"
-    val Approved  = "Approved"
-    val Rejected  = "Rejected"
+  @js.native
+  sealed trait AssignmentStatus extends js.Any
+  object AssignmentStatus extends js.Object {
+    val Submitted = "Submitted".asInstanceOf[AssignmentStatus]
+    val Approved  = "Approved".asInstanceOf[AssignmentStatus]
+    val Rejected  = "Rejected".asInstanceOf[AssignmentStatus]
 
     val values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
   }
@@ -432,18 +420,19 @@ package mturk {
       __obj.asInstanceOf[BonusPayment]
     }
   }
-
-  object ComparatorEnum {
-    val LessThan             = "LessThan"
-    val LessThanOrEqualTo    = "LessThanOrEqualTo"
-    val GreaterThan          = "GreaterThan"
-    val GreaterThanOrEqualTo = "GreaterThanOrEqualTo"
-    val EqualTo              = "EqualTo"
-    val NotEqualTo           = "NotEqualTo"
-    val Exists               = "Exists"
-    val DoesNotExist         = "DoesNotExist"
-    val In                   = "In"
-    val NotIn                = "NotIn"
+  @js.native
+  sealed trait Comparator extends js.Any
+  object Comparator extends js.Object {
+    val LessThan             = "LessThan".asInstanceOf[Comparator]
+    val LessThanOrEqualTo    = "LessThanOrEqualTo".asInstanceOf[Comparator]
+    val GreaterThan          = "GreaterThan".asInstanceOf[Comparator]
+    val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Comparator]
+    val EqualTo              = "EqualTo".asInstanceOf[Comparator]
+    val NotEqualTo           = "NotEqualTo".asInstanceOf[Comparator]
+    val Exists               = "Exists".asInstanceOf[Comparator]
+    val DoesNotExist         = "DoesNotExist".asInstanceOf[Comparator]
+    val In                   = "In".asInstanceOf[Comparator]
+    val NotIn                = "NotIn".asInstanceOf[Comparator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -925,20 +914,21 @@ package mturk {
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
   }
-
-  object EventTypeEnum {
-    val AssignmentAccepted  = "AssignmentAccepted"
-    val AssignmentAbandoned = "AssignmentAbandoned"
-    val AssignmentReturned  = "AssignmentReturned"
-    val AssignmentSubmitted = "AssignmentSubmitted"
-    val AssignmentRejected  = "AssignmentRejected"
-    val AssignmentApproved  = "AssignmentApproved"
-    val HITCreated          = "HITCreated"
-    val HITExpired          = "HITExpired"
-    val HITReviewable       = "HITReviewable"
-    val HITExtended         = "HITExtended"
-    val HITDisposed         = "HITDisposed"
-    val Ping                = "Ping"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val AssignmentAccepted  = "AssignmentAccepted".asInstanceOf[EventType]
+    val AssignmentAbandoned = "AssignmentAbandoned".asInstanceOf[EventType]
+    val AssignmentReturned  = "AssignmentReturned".asInstanceOf[EventType]
+    val AssignmentSubmitted = "AssignmentSubmitted".asInstanceOf[EventType]
+    val AssignmentRejected  = "AssignmentRejected".asInstanceOf[EventType]
+    val AssignmentApproved  = "AssignmentApproved".asInstanceOf[EventType]
+    val HITCreated          = "HITCreated".asInstanceOf[EventType]
+    val HITExpired          = "HITExpired".asInstanceOf[EventType]
+    val HITReviewable       = "HITReviewable".asInstanceOf[EventType]
+    val HITExtended         = "HITExtended".asInstanceOf[EventType]
+    val HITDisposed         = "HITDisposed".asInstanceOf[EventType]
+    val Ping                = "Ping".asInstanceOf[EventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1259,11 +1249,12 @@ package mturk {
       __obj.asInstanceOf[HIT]
     }
   }
-
-  object HITAccessActionsEnum {
-    val Accept                   = "Accept"
-    val PreviewAndAccept         = "PreviewAndAccept"
-    val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept"
+  @js.native
+  sealed trait HITAccessActions extends js.Any
+  object HITAccessActions extends js.Object {
+    val Accept                   = "Accept".asInstanceOf[HITAccessActions]
+    val PreviewAndAccept         = "PreviewAndAccept".asInstanceOf[HITAccessActions]
+    val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
     val values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
   }
@@ -1291,22 +1282,24 @@ package mturk {
       __obj.asInstanceOf[HITLayoutParameter]
     }
   }
-
-  object HITReviewStatusEnum {
-    val NotReviewed           = "NotReviewed"
-    val MarkedForReview       = "MarkedForReview"
-    val ReviewedAppropriate   = "ReviewedAppropriate"
-    val ReviewedInappropriate = "ReviewedInappropriate"
+  @js.native
+  sealed trait HITReviewStatus extends js.Any
+  object HITReviewStatus extends js.Object {
+    val NotReviewed           = "NotReviewed".asInstanceOf[HITReviewStatus]
+    val MarkedForReview       = "MarkedForReview".asInstanceOf[HITReviewStatus]
+    val ReviewedAppropriate   = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
+    val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
     val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
   }
-
-  object HITStatusEnum {
-    val Assignable   = "Assignable"
-    val Unassignable = "Unassignable"
-    val Reviewable   = "Reviewable"
-    val Reviewing    = "Reviewing"
-    val Disposed     = "Disposed"
+  @js.native
+  sealed trait HITStatus extends js.Any
+  object HITStatus extends js.Object {
+    val Assignable   = "Assignable".asInstanceOf[HITStatus]
+    val Unassignable = "Unassignable".asInstanceOf[HITStatus]
+    val Reviewable   = "Reviewable".asInstanceOf[HITStatus]
+    val Reviewing    = "Reviewing".asInstanceOf[HITStatus]
+    val Disposed     = "Disposed".asInstanceOf[HITStatus]
 
     val values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
   }
@@ -1844,18 +1837,20 @@ package mturk {
       __obj.asInstanceOf[NotificationSpecification]
     }
   }
-
-  object NotificationTransportEnum {
-    val Email = "Email"
-    val SQS   = "SQS"
-    val SNS   = "SNS"
+  @js.native
+  sealed trait NotificationTransport extends js.Any
+  object NotificationTransport extends js.Object {
+    val Email = "Email".asInstanceOf[NotificationTransport]
+    val SQS   = "SQS".asInstanceOf[NotificationTransport]
+    val SNS   = "SNS".asInstanceOf[NotificationTransport]
 
     val values = js.Object.freeze(js.Array(Email, SQS, SNS))
   }
-
-  object NotifyWorkersFailureCodeEnum {
-    val SoftFailure = "SoftFailure"
-    val HardFailure = "HardFailure"
+  @js.native
+  sealed trait NotifyWorkersFailureCode extends js.Any
+  object NotifyWorkersFailureCode extends js.Object {
+    val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
+    val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
 
     val values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
   }
@@ -2079,10 +2074,11 @@ package mturk {
       __obj.asInstanceOf[QualificationRequirement]
     }
   }
-
-  object QualificationStatusEnum {
-    val Granted = "Granted"
-    val Revoked = "Revoked"
+  @js.native
+  sealed trait QualificationStatus extends js.Any
+  object QualificationStatus extends js.Object {
+    val Granted = "Granted".asInstanceOf[QualificationStatus]
+    val Revoked = "Revoked".asInstanceOf[QualificationStatus]
 
     val values = js.Object.freeze(js.Array(Granted, Revoked))
   }
@@ -2141,10 +2137,11 @@ package mturk {
       __obj.asInstanceOf[QualificationType]
     }
   }
-
-  object QualificationTypeStatusEnum {
-    val Active   = "Active"
-    val Inactive = "Inactive"
+  @js.native
+  sealed trait QualificationTypeStatus extends js.Any
+  object QualificationTypeStatus extends js.Object {
+    val Active   = "Active".asInstanceOf[QualificationTypeStatus]
+    val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
@@ -2265,12 +2262,13 @@ package mturk {
       __obj.asInstanceOf[ReviewActionDetail]
     }
   }
-
-  object ReviewActionStatusEnum {
-    val Intended  = "Intended"
-    val Succeeded = "Succeeded"
-    val Failed    = "Failed"
-    val Cancelled = "Cancelled"
+  @js.native
+  sealed trait ReviewActionStatus extends js.Any
+  object ReviewActionStatus extends js.Object {
+    val Intended  = "Intended".asInstanceOf[ReviewActionStatus]
+    val Succeeded = "Succeeded".asInstanceOf[ReviewActionStatus]
+    val Failed    = "Failed".asInstanceOf[ReviewActionStatus]
+    val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
     val values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
   }
@@ -2298,10 +2296,11 @@ package mturk {
       __obj.asInstanceOf[ReviewPolicy]
     }
   }
-
-  object ReviewPolicyLevelEnum {
-    val Assignment = "Assignment"
-    val HIT        = "HIT"
+  @js.native
+  sealed trait ReviewPolicyLevel extends js.Any
+  object ReviewPolicyLevel extends js.Object {
+    val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
+    val HIT        = "HIT".asInstanceOf[ReviewPolicyLevel]
 
     val values = js.Object.freeze(js.Array(Assignment, HIT))
   }
@@ -2361,10 +2360,11 @@ package mturk {
       __obj.asInstanceOf[ReviewResultDetail]
     }
   }
-
-  object ReviewableHITStatusEnum {
-    val Reviewable = "Reviewable"
-    val Reviewing  = "Reviewing"
+  @js.native
+  sealed trait ReviewableHITStatus extends js.Any
+  object ReviewableHITStatus extends js.Object {
+    val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
+    val Reviewing  = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
     val values = js.Object.freeze(js.Array(Reviewable, Reviewing))
   }

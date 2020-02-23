@@ -7,14 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mq {
-  type BrokerState                   = String
-  type BrokerStorageType             = String
-  type ChangeType                    = String
-  type DayOfWeek                     = String
-  type DeploymentMode                = String
-  type EngineType                    = String
   type MaxResults                    = Int
-  type SanitizationWarningReason     = String
   type __boolean                     = Boolean
   type __integer                     = Int
   type __integerMin5Max100           = Int
@@ -231,12 +224,14 @@ package mq {
   /**
     * The status of the broker.
     */
-  object BrokerStateEnum {
-    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS"
-    val CREATION_FAILED      = "CREATION_FAILED"
-    val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS"
-    val RUNNING              = "RUNNING"
-    val REBOOT_IN_PROGRESS   = "REBOOT_IN_PROGRESS"
+  @js.native
+  sealed trait BrokerState extends js.Any
+  object BrokerState extends js.Object {
+    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
+    val CREATION_FAILED      = "CREATION_FAILED".asInstanceOf[BrokerState]
+    val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
+    val RUNNING              = "RUNNING".asInstanceOf[BrokerState]
+    val REBOOT_IN_PROGRESS   = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
 
     val values = js.Object.freeze(
       js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
@@ -246,9 +241,11 @@ package mq {
   /**
     * The storage type of the broker.
     */
-  object BrokerStorageTypeEnum {
-    val EBS = "EBS"
-    val EFS = "EFS"
+  @js.native
+  sealed trait BrokerStorageType extends js.Any
+  object BrokerStorageType extends js.Object {
+    val EBS = "EBS".asInstanceOf[BrokerStorageType]
+    val EFS = "EFS".asInstanceOf[BrokerStorageType]
 
     val values = js.Object.freeze(js.Array(EBS, EFS))
   }
@@ -293,10 +290,12 @@ package mq {
   /**
     * The type of change pending for the ActiveMQ user.
     */
-  object ChangeTypeEnum {
-    val CREATE = "CREATE"
-    val UPDATE = "UPDATE"
-    val DELETE = "DELETE"
+  @js.native
+  sealed trait ChangeType extends js.Any
+  object ChangeType extends js.Object {
+    val CREATE = "CREATE".asInstanceOf[ChangeType]
+    val UPDATE = "UPDATE".asInstanceOf[ChangeType]
+    val DELETE = "DELETE".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
@@ -629,15 +628,16 @@ package mq {
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
-
-  object DayOfWeekEnum {
-    val MONDAY    = "MONDAY"
-    val TUESDAY   = "TUESDAY"
-    val WEDNESDAY = "WEDNESDAY"
-    val THURSDAY  = "THURSDAY"
-    val FRIDAY    = "FRIDAY"
-    val SATURDAY  = "SATURDAY"
-    val SUNDAY    = "SUNDAY"
+  @js.native
+  sealed trait DayOfWeek extends js.Any
+  object DayOfWeek extends js.Object {
+    val MONDAY    = "MONDAY".asInstanceOf[DayOfWeek]
+    val TUESDAY   = "TUESDAY".asInstanceOf[DayOfWeek]
+    val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
+    val THURSDAY  = "THURSDAY".asInstanceOf[DayOfWeek]
+    val FRIDAY    = "FRIDAY".asInstanceOf[DayOfWeek]
+    val SATURDAY  = "SATURDAY".asInstanceOf[DayOfWeek]
+    val SUNDAY    = "SUNDAY".asInstanceOf[DayOfWeek]
 
     val values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
   }
@@ -734,9 +734,11 @@ package mq {
   /**
     * The deployment mode of the broker.
     */
-  object DeploymentModeEnum {
-    val SINGLE_INSTANCE         = "SINGLE_INSTANCE"
-    val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ"
+  @js.native
+  sealed trait DeploymentMode extends js.Any
+  object DeploymentMode extends js.Object {
+    val SINGLE_INSTANCE         = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
+    val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
 
     val values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
   }
@@ -1120,8 +1122,10 @@ package mq {
   /**
     * The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.
     */
-  object EngineTypeEnum {
-    val ACTIVEMQ = "ACTIVEMQ"
+  @js.native
+  sealed trait EngineType extends js.Any
+  object EngineType extends js.Object {
+    val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
 
     val values = js.Object.freeze(js.Array(ACTIVEMQ))
   }
@@ -1490,10 +1494,12 @@ package mq {
   /**
     * The reason for which the XML elements or attributes were sanitized.
     */
-  object SanitizationWarningReasonEnum {
-    val DISALLOWED_ELEMENT_REMOVED      = "DISALLOWED_ELEMENT_REMOVED"
-    val DISALLOWED_ATTRIBUTE_REMOVED    = "DISALLOWED_ATTRIBUTE_REMOVED"
-    val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED"
+  @js.native
+  sealed trait SanitizationWarningReason extends js.Any
+  object SanitizationWarningReason extends js.Object {
+    val DISALLOWED_ELEMENT_REMOVED      = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val DISALLOWED_ATTRIBUTE_REMOVED    = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
 
     val values = js.Object.freeze(
       js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)

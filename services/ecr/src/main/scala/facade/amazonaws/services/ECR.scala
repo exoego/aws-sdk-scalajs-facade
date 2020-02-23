@@ -20,15 +20,12 @@ package object ecr {
   type ExpirationTimestamp                 = js.Date
   type FindingDescription                  = String
   type FindingName                         = String
-  type FindingSeverity                     = String
   type FindingSeverityCounts               = js.Dictionary[SeverityCount]
   type ForceFlag                           = Boolean
   type GetAuthorizationTokenRegistryIdList = js.Array[RegistryId]
-  type ImageActionType                     = String
   type ImageCount                          = Int
   type ImageDetailList                     = js.Array[ImageDetail]
   type ImageDigest                         = String
-  type ImageFailureCode                    = String
   type ImageFailureList                    = js.Array[ImageFailure]
   type ImageFailureReason                  = String
   type ImageIdentifierList                 = js.Array[ImageIdentifier]
@@ -38,18 +35,14 @@ package object ecr {
   type ImageSizeInBytes                    = Double
   type ImageTag                            = String
   type ImageTagList                        = js.Array[ImageTag]
-  type ImageTagMutability                  = String
-  type LayerAvailability                   = String
   type LayerDigest                         = String
   type LayerDigestList                     = js.Array[LayerDigest]
-  type LayerFailureCode                    = String
   type LayerFailureList                    = js.Array[LayerFailure]
   type LayerFailureReason                  = String
   type LayerList                           = js.Array[Layer]
   type LayerPartBlob                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type LayerSizeInBytes                    = Double
   type LifecyclePolicyPreviewResultList    = js.Array[LifecyclePolicyPreviewResult]
-  type LifecyclePolicyPreviewStatus        = String
   type LifecyclePolicyRulePriority         = Int
   type LifecyclePolicyText                 = String
   type LifecyclePreviewMaxResults          = Int
@@ -66,14 +59,12 @@ package object ecr {
   type RepositoryNameList                  = js.Array[RepositoryName]
   type RepositoryPolicyText                = String
   type ScanOnPushFlag                      = Boolean
-  type ScanStatus                          = String
   type ScanStatusDescription               = String
   type ScanTimestamp                       = js.Date
   type SeverityCount                       = Int
   type TagKey                              = String
   type TagKeyList                          = js.Array[TagKey]
   type TagList                             = js.Array[Tag]
-  type TagStatus                           = String
   type TagValue                            = String
   type UploadId                            = String
   type Url                                 = String
@@ -786,14 +777,15 @@ package ecr {
       __obj.asInstanceOf[DescribeRepositoriesResponse]
     }
   }
-
-  object FindingSeverityEnum {
-    val INFORMATIONAL = "INFORMATIONAL"
-    val LOW           = "LOW"
-    val MEDIUM        = "MEDIUM"
-    val HIGH          = "HIGH"
-    val CRITICAL      = "CRITICAL"
-    val UNDEFINED     = "UNDEFINED"
+  @js.native
+  sealed trait FindingSeverity extends js.Any
+  object FindingSeverity extends js.Object {
+    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
+    val LOW           = "LOW".asInstanceOf[FindingSeverity]
+    val MEDIUM        = "MEDIUM".asInstanceOf[FindingSeverity]
+    val HIGH          = "HIGH".asInstanceOf[FindingSeverity]
+    val CRITICAL      = "CRITICAL".asInstanceOf[FindingSeverity]
+    val UNDEFINED     = "UNDEFINED".asInstanceOf[FindingSeverity]
 
     val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED))
   }
@@ -1056,9 +1048,10 @@ package ecr {
       __obj.asInstanceOf[Image]
     }
   }
-
-  object ImageActionTypeEnum {
-    val EXPIRE = "EXPIRE"
+  @js.native
+  sealed trait ImageActionType extends js.Any
+  object ImageActionType extends js.Object {
+    val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
 
     val values = js.Object.freeze(js.Array(EXPIRE))
   }
@@ -1127,13 +1120,14 @@ package ecr {
       __obj.asInstanceOf[ImageFailure]
     }
   }
-
-  object ImageFailureCodeEnum {
-    val InvalidImageDigest         = "InvalidImageDigest"
-    val InvalidImageTag            = "InvalidImageTag"
-    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest"
-    val ImageNotFound              = "ImageNotFound"
-    val MissingDigestAndTag        = "MissingDigestAndTag"
+  @js.native
+  sealed trait ImageFailureCode extends js.Any
+  object ImageFailureCode extends js.Object {
+    val InvalidImageDigest         = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
+    val InvalidImageTag            = "InvalidImageTag".asInstanceOf[ImageFailureCode]
+    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
+    val ImageNotFound              = "ImageNotFound".asInstanceOf[ImageFailureCode]
+    val MissingDigestAndTag        = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
 
     val values = js.Object.freeze(
       js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag)
@@ -1290,10 +1284,11 @@ package ecr {
       __obj.asInstanceOf[ImageScanningConfiguration]
     }
   }
-
-  object ImageTagMutabilityEnum {
-    val MUTABLE   = "MUTABLE"
-    val IMMUTABLE = "IMMUTABLE"
+  @js.native
+  sealed trait ImageTagMutability extends js.Any
+  object ImageTagMutability extends js.Object {
+    val MUTABLE   = "MUTABLE".asInstanceOf[ImageTagMutability]
+    val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
     val values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
   }
@@ -1365,10 +1360,11 @@ package ecr {
       __obj.asInstanceOf[Layer]
     }
   }
-
-  object LayerAvailabilityEnum {
-    val AVAILABLE   = "AVAILABLE"
-    val UNAVAILABLE = "UNAVAILABLE"
+  @js.native
+  sealed trait LayerAvailability extends js.Any
+  object LayerAvailability extends js.Object {
+    val AVAILABLE   = "AVAILABLE".asInstanceOf[LayerAvailability]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
   }
@@ -1397,10 +1393,11 @@ package ecr {
       __obj.asInstanceOf[LayerFailure]
     }
   }
-
-  object LayerFailureCodeEnum {
-    val InvalidLayerDigest = "InvalidLayerDigest"
-    val MissingLayerDigest = "MissingLayerDigest"
+  @js.native
+  sealed trait LayerFailureCode extends js.Any
+  object LayerFailureCode extends js.Object {
+    val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
+    val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
     val values = js.Object.freeze(js.Array(InvalidLayerDigest, MissingLayerDigest))
   }
@@ -1454,12 +1451,13 @@ package ecr {
       __obj.asInstanceOf[LifecyclePolicyPreviewResult]
     }
   }
-
-  object LifecyclePolicyPreviewStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETE    = "COMPLETE"
-    val EXPIRED     = "EXPIRED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait LifecyclePolicyPreviewStatus extends js.Any
+  object LifecyclePolicyPreviewStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val COMPLETE    = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val EXPIRED     = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val FAILED      = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
   }
@@ -1825,11 +1823,12 @@ package ecr {
       __obj.asInstanceOf[Repository]
     }
   }
-
-  object ScanStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETE    = "COMPLETE"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait ScanStatus extends js.Any
+  object ScanStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
+    val COMPLETE    = "COMPLETE".asInstanceOf[ScanStatus]
+    val FAILED      = "FAILED".asInstanceOf[ScanStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -2036,11 +2035,12 @@ package ecr {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TagStatusEnum {
-    val TAGGED   = "TAGGED"
-    val UNTAGGED = "UNTAGGED"
-    val ANY      = "ANY"
+  @js.native
+  sealed trait TagStatus extends js.Any
+  object TagStatus extends js.Object {
+    val TAGGED   = "TAGGED".asInstanceOf[TagStatus]
+    val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
+    val ANY      = "ANY".asInstanceOf[TagStatus]
 
     val values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
   }

@@ -7,12 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediaconnect {
-  type Algorithm                       = String
-  type KeyType                         = String
   type MaxResults                      = Int
-  type Protocol                        = String
-  type SourceType                      = String
-  type Status                          = String
   type __integer                       = Int
   type __listOfAddOutputRequest        = js.Array[AddOutputRequest]
   type __listOfEntitlement             = js.Array[Entitlement]
@@ -184,11 +179,12 @@ package mediaconnect {
       __obj.asInstanceOf[AddOutputRequest]
     }
   }
-
-  object AlgorithmEnum {
-    val aes128 = "aes128"
-    val aes192 = "aes192"
-    val aes256 = "aes256"
+  @js.native
+  sealed trait Algorithm extends js.Any
+  object Algorithm extends js.Object {
+    val aes128 = "aes128".asInstanceOf[Algorithm]
+    val aes192 = "aes192".asInstanceOf[Algorithm]
+    val aes256 = "aes256".asInstanceOf[Algorithm]
 
     val values = js.Object.freeze(js.Array(aes128, aes192, aes256))
   }
@@ -523,10 +519,11 @@ package mediaconnect {
       __obj.asInstanceOf[GrantFlowEntitlementsResponse]
     }
   }
-
-  object KeyTypeEnum {
-    val speke        = "speke"
-    val `static-key` = "static-key"
+  @js.native
+  sealed trait KeyType extends js.Any
+  object KeyType extends js.Object {
+    val speke        = "speke".asInstanceOf[KeyType]
+    val `static-key` = "static-key".asInstanceOf[KeyType]
 
     val values = js.Object.freeze(js.Array(speke, `static-key`))
   }
@@ -776,13 +773,14 @@ package mediaconnect {
       __obj.asInstanceOf[Output]
     }
   }
-
-  object ProtocolEnum {
-    val `zixi-push` = "zixi-push"
-    val `rtp-fec`   = "rtp-fec"
-    val rtp         = "rtp"
-    val `zixi-pull` = "zixi-pull"
-    val rist        = "rist"
+  @js.native
+  sealed trait Protocol extends js.Any
+  object Protocol extends js.Object {
+    val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
+    val `rtp-fec`   = "rtp-fec".asInstanceOf[Protocol]
+    val rtp         = "rtp".asInstanceOf[Protocol]
+    val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
+    val rist        = "rist".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
@@ -962,10 +960,11 @@ package mediaconnect {
       __obj.asInstanceOf[Source]
     }
   }
-
-  object SourceTypeEnum {
-    val OWNED    = "OWNED"
-    val ENTITLED = "ENTITLED"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val OWNED    = "OWNED".asInstanceOf[SourceType]
+    val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
@@ -1006,15 +1005,16 @@ package mediaconnect {
       __obj.asInstanceOf[StartFlowResponse]
     }
   }
-
-  object StatusEnum {
-    val STANDBY  = "STANDBY"
-    val ACTIVE   = "ACTIVE"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val STARTING = "STARTING"
-    val STOPPING = "STOPPING"
-    val ERROR    = "ERROR"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val STANDBY  = "STANDBY".asInstanceOf[Status]
+    val ACTIVE   = "ACTIVE".asInstanceOf[Status]
+    val UPDATING = "UPDATING".asInstanceOf[Status]
+    val DELETING = "DELETING".asInstanceOf[Status]
+    val STARTING = "STARTING".asInstanceOf[Status]
+    val STOPPING = "STOPPING".asInstanceOf[Status]
+    val ERROR    = "ERROR".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }

@@ -8,40 +8,25 @@ import facade.amazonaws._
 
 package object appsync {
   type AdditionalAuthenticationProviders = js.Array[AdditionalAuthenticationProvider]
-  type ApiCacheStatus                    = String
-  type ApiCacheType                      = String
-  type ApiCachingBehavior                = String
   type ApiKeys                           = js.Array[ApiKey]
-  type AuthenticationType                = String
-  type AuthorizationType                 = String
   type Blob                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanValue                      = Boolean
   type CachingKeys                       = js.Array[String]
-  type ConflictDetectionType             = String
-  type ConflictHandlerType               = String
-  type DataSourceType                    = String
   type DataSources                       = js.Array[DataSource]
-  type DefaultAction                     = String
-  type FieldLogLevel                     = String
   type Functions                         = js.Array[FunctionConfiguration]
   type FunctionsIds                      = js.Array[String]
   type GraphqlApis                       = js.Array[GraphqlApi]
   type MapOfStringToString               = js.Dictionary[String]
   type MappingTemplate                   = String
   type MaxResults                        = Int
-  type OutputType                        = String
   type PaginationToken                   = String
-  type RelationalDatabaseSourceType      = String
-  type ResolverKind                      = String
   type Resolvers                         = js.Array[Resolver]
   type ResourceArn                       = String
   type ResourceName                      = String
-  type SchemaStatus                      = String
   type TagKey                            = String
   type TagKeyList                        = js.Array[TagKey]
   type TagMap                            = js.Dictionary[TagValue]
   type TagValue                          = String
-  type TypeDefinitionFormat              = String
   type TypeList                          = js.Array[Type]
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
@@ -244,33 +229,36 @@ package appsync {
       __obj.asInstanceOf[ApiCache]
     }
   }
-
-  object ApiCacheStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val CREATING  = "CREATING"
-    val DELETING  = "DELETING"
-    val MODIFYING = "MODIFYING"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait ApiCacheStatus extends js.Any
+  object ApiCacheStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ApiCacheStatus]
+    val CREATING  = "CREATING".asInstanceOf[ApiCacheStatus]
+    val DELETING  = "DELETING".asInstanceOf[ApiCacheStatus]
+    val MODIFYING = "MODIFYING".asInstanceOf[ApiCacheStatus]
+    val FAILED    = "FAILED".asInstanceOf[ApiCacheStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED))
   }
-
-  object ApiCacheTypeEnum {
-    val T2_SMALL   = "T2_SMALL"
-    val T2_MEDIUM  = "T2_MEDIUM"
-    val R4_LARGE   = "R4_LARGE"
-    val R4_XLARGE  = "R4_XLARGE"
-    val R4_2XLARGE = "R4_2XLARGE"
-    val R4_4XLARGE = "R4_4XLARGE"
-    val R4_8XLARGE = "R4_8XLARGE"
+  @js.native
+  sealed trait ApiCacheType extends js.Any
+  object ApiCacheType extends js.Object {
+    val T2_SMALL   = "T2_SMALL".asInstanceOf[ApiCacheType]
+    val T2_MEDIUM  = "T2_MEDIUM".asInstanceOf[ApiCacheType]
+    val R4_LARGE   = "R4_LARGE".asInstanceOf[ApiCacheType]
+    val R4_XLARGE  = "R4_XLARGE".asInstanceOf[ApiCacheType]
+    val R4_2XLARGE = "R4_2XLARGE".asInstanceOf[ApiCacheType]
+    val R4_4XLARGE = "R4_4XLARGE".asInstanceOf[ApiCacheType]
+    val R4_8XLARGE = "R4_8XLARGE".asInstanceOf[ApiCacheType]
 
     val values =
       js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE))
   }
-
-  object ApiCachingBehaviorEnum {
-    val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING"
-    val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING"
+  @js.native
+  sealed trait ApiCachingBehavior extends js.Any
+  object ApiCachingBehavior extends js.Object {
+    val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING".asInstanceOf[ApiCachingBehavior]
+    val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING".asInstanceOf[ApiCachingBehavior]
 
     val values = js.Object.freeze(js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING))
   }
@@ -312,12 +300,13 @@ package appsync {
       __obj.asInstanceOf[ApiKey]
     }
   }
-
-  object AuthenticationTypeEnum {
-    val API_KEY                   = "API_KEY"
-    val AWS_IAM                   = "AWS_IAM"
-    val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS"
-    val OPENID_CONNECT            = "OPENID_CONNECT"
+  @js.native
+  sealed trait AuthenticationType extends js.Any
+  object AuthenticationType extends js.Object {
+    val API_KEY                   = "API_KEY".asInstanceOf[AuthenticationType]
+    val AWS_IAM                   = "AWS_IAM".asInstanceOf[AuthenticationType]
+    val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
+    val OPENID_CONNECT            = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
 
     val values = js.Object.freeze(js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT))
   }
@@ -345,9 +334,10 @@ package appsync {
       __obj.asInstanceOf[AuthorizationConfig]
     }
   }
-
-  object AuthorizationTypeEnum {
-    val AWS_IAM = "AWS_IAM"
+  @js.native
+  sealed trait AuthorizationType extends js.Any
+  object AuthorizationType extends js.Object {
+    val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
 
     val values = js.Object.freeze(js.Array(AWS_IAM))
   }
@@ -422,19 +412,21 @@ package appsync {
       __obj.asInstanceOf[CognitoUserPoolConfig]
     }
   }
-
-  object ConflictDetectionTypeEnum {
-    val VERSION = "VERSION"
-    val NONE    = "NONE"
+  @js.native
+  sealed trait ConflictDetectionType extends js.Any
+  object ConflictDetectionType extends js.Object {
+    val VERSION = "VERSION".asInstanceOf[ConflictDetectionType]
+    val NONE    = "NONE".asInstanceOf[ConflictDetectionType]
 
     val values = js.Object.freeze(js.Array(VERSION, NONE))
   }
-
-  object ConflictHandlerTypeEnum {
-    val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY"
-    val LAMBDA                 = "LAMBDA"
-    val AUTOMERGE              = "AUTOMERGE"
-    val NONE                   = "NONE"
+  @js.native
+  sealed trait ConflictHandlerType extends js.Any
+  object ConflictHandlerType extends js.Object {
+    val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY".asInstanceOf[ConflictHandlerType]
+    val LAMBDA                 = "LAMBDA".asInstanceOf[ConflictHandlerType]
+    val AUTOMERGE              = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
+    val NONE                   = "NONE".asInstanceOf[ConflictHandlerType]
 
     val values = js.Object.freeze(js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE))
   }
@@ -850,22 +842,24 @@ package appsync {
       __obj.asInstanceOf[DataSource]
     }
   }
-
-  object DataSourceTypeEnum {
-    val AWS_LAMBDA           = "AWS_LAMBDA"
-    val AMAZON_DYNAMODB      = "AMAZON_DYNAMODB"
-    val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH"
-    val NONE                 = "NONE"
-    val HTTP                 = "HTTP"
-    val RELATIONAL_DATABASE  = "RELATIONAL_DATABASE"
+  @js.native
+  sealed trait DataSourceType extends js.Any
+  object DataSourceType extends js.Object {
+    val AWS_LAMBDA           = "AWS_LAMBDA".asInstanceOf[DataSourceType]
+    val AMAZON_DYNAMODB      = "AMAZON_DYNAMODB".asInstanceOf[DataSourceType]
+    val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
+    val NONE                 = "NONE".asInstanceOf[DataSourceType]
+    val HTTP                 = "HTTP".asInstanceOf[DataSourceType]
+    val RELATIONAL_DATABASE  = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
 
     val values =
       js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
   }
-
-  object DefaultActionEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait DefaultAction extends js.Any
+  object DefaultAction extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[DefaultAction]
+    val DENY  = "DENY".asInstanceOf[DefaultAction]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1192,11 +1186,12 @@ package appsync {
       __obj.asInstanceOf[ElasticsearchDataSourceConfig]
     }
   }
-
-  object FieldLogLevelEnum {
-    val NONE  = "NONE"
-    val ERROR = "ERROR"
-    val ALL   = "ALL"
+  @js.native
+  sealed trait FieldLogLevel extends js.Any
+  object FieldLogLevel extends js.Object {
+    val NONE  = "NONE".asInstanceOf[FieldLogLevel]
+    val ERROR = "ERROR".asInstanceOf[FieldLogLevel]
+    val ALL   = "ALL".asInstanceOf[FieldLogLevel]
 
     val values = js.Object.freeze(js.Array(NONE, ERROR, ALL))
   }
@@ -2091,10 +2086,11 @@ package appsync {
       __obj.asInstanceOf[OpenIDConnectConfig]
     }
   }
-
-  object OutputTypeEnum {
-    val SDL  = "SDL"
-    val JSON = "JSON"
+  @js.native
+  sealed trait OutputType extends js.Any
+  object OutputType extends js.Object {
+    val SDL  = "SDL".asInstanceOf[OutputType]
+    val JSON = "JSON".asInstanceOf[OutputType]
 
     val values = js.Object.freeze(js.Array(SDL, JSON))
   }
@@ -2172,9 +2168,10 @@ package appsync {
       __obj.asInstanceOf[RelationalDatabaseDataSourceConfig]
     }
   }
-
-  object RelationalDatabaseSourceTypeEnum {
-    val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT"
+  @js.native
+  sealed trait RelationalDatabaseSourceType extends js.Any
+  object RelationalDatabaseSourceType extends js.Object {
+    val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT".asInstanceOf[RelationalDatabaseSourceType]
 
     val values = js.Object.freeze(js.Array(RDS_HTTP_ENDPOINT))
   }
@@ -2224,21 +2221,23 @@ package appsync {
       __obj.asInstanceOf[Resolver]
     }
   }
-
-  object ResolverKindEnum {
-    val UNIT     = "UNIT"
-    val PIPELINE = "PIPELINE"
+  @js.native
+  sealed trait ResolverKind extends js.Any
+  object ResolverKind extends js.Object {
+    val UNIT     = "UNIT".asInstanceOf[ResolverKind]
+    val PIPELINE = "PIPELINE".asInstanceOf[ResolverKind]
 
     val values = js.Object.freeze(js.Array(UNIT, PIPELINE))
   }
-
-  object SchemaStatusEnum {
-    val PROCESSING     = "PROCESSING"
-    val ACTIVE         = "ACTIVE"
-    val DELETING       = "DELETING"
-    val FAILED         = "FAILED"
-    val SUCCESS        = "SUCCESS"
-    val NOT_APPLICABLE = "NOT_APPLICABLE"
+  @js.native
+  sealed trait SchemaStatus extends js.Any
+  object SchemaStatus extends js.Object {
+    val PROCESSING     = "PROCESSING".asInstanceOf[SchemaStatus]
+    val ACTIVE         = "ACTIVE".asInstanceOf[SchemaStatus]
+    val DELETING       = "DELETING".asInstanceOf[SchemaStatus]
+    val FAILED         = "FAILED".asInstanceOf[SchemaStatus]
+    val SUCCESS        = "SUCCESS".asInstanceOf[SchemaStatus]
+    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[SchemaStatus]
 
     val values = js.Object.freeze(js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE))
   }
@@ -2372,10 +2371,11 @@ package appsync {
       __obj.asInstanceOf[Type]
     }
   }
-
-  object TypeDefinitionFormatEnum {
-    val SDL  = "SDL"
-    val JSON = "JSON"
+  @js.native
+  sealed trait TypeDefinitionFormat extends js.Any
+  object TypeDefinitionFormat extends js.Object {
+    val SDL  = "SDL".asInstanceOf[TypeDefinitionFormat]
+    val JSON = "JSON".asInstanceOf[TypeDefinitionFormat]
 
     val values = js.Object.freeze(js.Array(SDL, JSON))
   }

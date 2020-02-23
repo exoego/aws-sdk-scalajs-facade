@@ -12,7 +12,6 @@ package object marketplacecatalog {
   type ChangeSetDescription = js.Array[ChangeSummary]
   type ChangeSetName        = String
   type ChangeSetSummaryList = js.Array[ChangeSetSummaryListItem]
-  type ChangeStatus         = String
   type ChangeType           = String
   type ClientRequestToken   = String
   type DateTimeISO8601      = String
@@ -29,7 +28,6 @@ package object marketplacecatalog {
   type ResourceId           = String
   type ResourceIdList       = js.Array[ResourceId]
   type SortBy               = String
-  type SortOrder            = String
   type StringValue          = String
   type ValueList            = js.Array[StringValue]
 
@@ -167,13 +165,14 @@ package marketplacecatalog {
       __obj.asInstanceOf[ChangeSetSummaryListItem]
     }
   }
-
-  object ChangeStatusEnum {
-    val PREPARING = "PREPARING"
-    val APPLYING  = "APPLYING"
-    val SUCCEEDED = "SUCCEEDED"
-    val CANCELLED = "CANCELLED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait ChangeStatus extends js.Any
+  object ChangeStatus extends js.Object {
+    val PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
+    val APPLYING  = "APPLYING".asInstanceOf[ChangeStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
+    val FAILED    = "FAILED".asInstanceOf[ChangeStatus]
 
     val values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
   }
@@ -534,10 +533,11 @@ package marketplacecatalog {
       __obj.asInstanceOf[Sort]
     }
   }
-
-  object SortOrderEnum {
-    val ASCENDING  = "ASCENDING"
-    val DESCENDING = "DESCENDING"
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val ASCENDING  = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }

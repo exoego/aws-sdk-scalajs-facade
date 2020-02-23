@@ -10,7 +10,6 @@ package object cloudsearchdomain {
   type Adds                    = Double
   type Blob                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BucketList              = js.Array[Bucket]
-  type ContentType             = String
   type Cursor                  = String
   type Deletes                 = Double
   type DocumentServiceWarnings = js.Array[DocumentServiceWarning]
@@ -27,7 +26,6 @@ package object cloudsearchdomain {
   type Partial                 = Boolean
   type Query                   = String
   type QueryOptions            = String
-  type QueryParser             = String
   type Return                  = String
   type Size                    = Double
   type Sort                    = String
@@ -99,10 +97,11 @@ package cloudsearchdomain {
       __obj.asInstanceOf[BucketInfo]
     }
   }
-
-  object ContentTypeEnum {
-    val `application/json` = "application/json"
-    val `application/xml`  = "application/xml"
+  @js.native
+  sealed trait ContentType extends js.Any
+  object ContentType extends js.Object {
+    val `application/json` = "application/json".asInstanceOf[ContentType]
+    val `application/xml`  = "application/xml".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(`application/json`, `application/xml`))
   }
@@ -230,12 +229,13 @@ package cloudsearchdomain {
       __obj.asInstanceOf[Hits]
     }
   }
-
-  object QueryParserEnum {
-    val simple     = "simple"
-    val structured = "structured"
-    val lucene     = "lucene"
-    val dismax     = "dismax"
+  @js.native
+  sealed trait QueryParser extends js.Any
+  object QueryParser extends js.Object {
+    val simple     = "simple".asInstanceOf[QueryParser]
+    val structured = "structured".asInstanceOf[QueryParser]
+    val lucene     = "lucene".asInstanceOf[QueryParser]
+    val dismax     = "dismax".asInstanceOf[QueryParser]
 
     val values = js.Object.freeze(js.Array(simple, structured, lucene, dismax))
   }

@@ -7,9 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object serverlessapplicationrepository {
-  type Capability                           = String
   type MaxItems                             = Int
-  type Status                               = String
   type __boolean                            = Boolean
   type __integer                            = Int
   type __listOfApplicationDependencySummary = js.Array[ApplicationDependencySummary]
@@ -189,11 +187,13 @@ package serverlessapplicationrepository {
   /**
     * Values that must be specified in order to deploy some applications.
     */
-  object CapabilityEnum {
-    val CAPABILITY_IAM             = "CAPABILITY_IAM"
-    val CAPABILITY_NAMED_IAM       = "CAPABILITY_NAMED_IAM"
-    val CAPABILITY_AUTO_EXPAND     = "CAPABILITY_AUTO_EXPAND"
-    val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY"
+  @js.native
+  sealed trait Capability extends js.Any
+  object Capability extends js.Object {
+    val CAPABILITY_IAM             = "CAPABILITY_IAM".asInstanceOf[Capability]
+    val CAPABILITY_NAMED_IAM       = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
+    val CAPABILITY_AUTO_EXPAND     = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
+    val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
     val values = js.Object.freeze(
       js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
@@ -991,11 +991,12 @@ package serverlessapplicationrepository {
       __obj.asInstanceOf[RollbackTrigger]
     }
   }
-
-  object StatusEnum {
-    val PREPARING = "PREPARING"
-    val ACTIVE    = "ACTIVE"
-    val EXPIRED   = "EXPIRED"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val PREPARING = "PREPARING".asInstanceOf[Status]
+    val ACTIVE    = "ACTIVE".asInstanceOf[Status]
+    val EXPIRED   = "EXPIRED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
   }

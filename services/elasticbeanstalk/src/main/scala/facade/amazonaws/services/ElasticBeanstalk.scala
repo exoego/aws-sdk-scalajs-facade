@@ -9,9 +9,6 @@ import facade.amazonaws._
 package object elasticbeanstalk {
   type ARN                                  = String
   type AbortableOperationInProgress         = Boolean
-  type ActionHistoryStatus                  = String
-  type ActionStatus                         = String
-  type ActionType                           = String
   type ApplicationArn                       = String
   type ApplicationDescriptionList           = js.Array[ApplicationDescription]
   type ApplicationName                      = String
@@ -19,7 +16,6 @@ package object elasticbeanstalk {
   type ApplicationVersionArn                = String
   type ApplicationVersionDescriptionList    = js.Array[ApplicationVersionDescription]
   type ApplicationVersionProccess           = Boolean
-  type ApplicationVersionStatus             = String
   type AutoCreateApplication                = Boolean
   type AutoScalingGroupList                 = js.Array[AutoScalingGroup]
   type AvailableSolutionStackDetailsList    = js.Array[SolutionStackDescription]
@@ -29,8 +25,6 @@ package object elasticbeanstalk {
   type Cause                                = String
   type Causes                               = js.Array[Cause]
   type CnameAvailability                    = Boolean
-  type ComputeType                          = String
-  type ConfigurationDeploymentStatus        = String
   type ConfigurationOptionDefaultValue      = String
   type ConfigurationOptionDescriptionsList  = js.Array[ConfigurationOptionDescription]
   type ConfigurationOptionName              = String
@@ -39,7 +33,6 @@ package object elasticbeanstalk {
   type ConfigurationOptionSettingsList      = js.Array[ConfigurationOptionSetting]
   type ConfigurationOptionSeverity          = String
   type ConfigurationOptionValue             = String
-  type ConfigurationOptionValueType         = String
   type ConfigurationSettingsDescriptionList = js.Array[ConfigurationSettingsDescription]
   type ConfigurationTemplateName            = String
   type ConfigurationTemplateNamesList       = js.Array[ConfigurationTemplateName]
@@ -54,23 +47,16 @@ package object elasticbeanstalk {
   type EndpointURL                          = String
   type EnvironmentArn                       = String
   type EnvironmentDescriptionsList          = js.Array[EnvironmentDescription]
-  type EnvironmentHealth                    = String
-  type EnvironmentHealthAttribute           = String
   type EnvironmentHealthAttributes          = js.Array[EnvironmentHealthAttribute]
-  type EnvironmentHealthStatus              = String
   type EnvironmentId                        = String
   type EnvironmentIdList                    = js.Array[EnvironmentId]
   type EnvironmentInfoDescriptionList       = js.Array[EnvironmentInfoDescription]
-  type EnvironmentInfoType                  = String
   type EnvironmentLinks                     = js.Array[EnvironmentLink]
   type EnvironmentName                      = String
   type EnvironmentNamesList                 = js.Array[EnvironmentName]
-  type EnvironmentStatus                    = String
   type EventDate                            = js.Date
   type EventDescriptionList                 = js.Array[EventDescription]
   type EventMessage                         = String
-  type EventSeverity                        = String
-  type FailureType                          = String
   type FileTypeExtension                    = String
   type ForceTerminate                       = Boolean
   type GroupName                            = String
@@ -80,7 +66,6 @@ package object elasticbeanstalk {
   type InstanceHealthList                   = js.Array[SingleInstanceHealth]
   type InstanceId                           = String
   type InstanceList                         = js.Array[Instance]
-  type InstancesHealthAttribute             = String
   type InstancesHealthAttributes            = js.Array[InstancesHealthAttribute]
   type LaunchConfigurationList              = js.Array[LaunchConfiguration]
   type LaunchTemplateList                   = js.Array[LaunchTemplate]
@@ -118,7 +103,6 @@ package object elasticbeanstalk {
   type PlatformName                         = String
   type PlatformOwner                        = String
   type PlatformProgrammingLanguages         = js.Array[PlatformProgrammingLanguage]
-  type PlatformStatus                       = String
   type PlatformSummaryList                  = js.Array[PlatformSummary]
   type PlatformVersion                      = String
   type QueueList                            = js.Array[Queue]
@@ -136,8 +120,6 @@ package object elasticbeanstalk {
   type SolutionStackFileTypeList            = js.Array[FileTypeExtension]
   type SolutionStackName                    = String
   type SourceLocation                       = String
-  type SourceRepository                     = String
-  type SourceType                           = String
   type SupportedAddon                       = String
   type SupportedAddonList                   = js.Array[SupportedAddon]
   type SupportedTier                        = String
@@ -158,7 +140,6 @@ package object elasticbeanstalk {
   type UserDefinedOption                    = Boolean
   type ValidationMessageString              = String
   type ValidationMessagesList               = js.Array[ValidationMessage]
-  type ValidationSeverity                   = String
   type VersionLabel                         = String
   type VersionLabels                        = js.Array[VersionLabel]
   type VersionLabelsList                    = js.Array[VersionLabel]
@@ -384,28 +365,31 @@ package elasticbeanstalk {
       __obj.asInstanceOf[AbortEnvironmentUpdateMessage]
     }
   }
-
-  object ActionHistoryStatusEnum {
-    val Completed = "Completed"
-    val Failed    = "Failed"
-    val Unknown   = "Unknown"
+  @js.native
+  sealed trait ActionHistoryStatus extends js.Any
+  object ActionHistoryStatus extends js.Object {
+    val Completed = "Completed".asInstanceOf[ActionHistoryStatus]
+    val Failed    = "Failed".asInstanceOf[ActionHistoryStatus]
+    val Unknown   = "Unknown".asInstanceOf[ActionHistoryStatus]
 
     val values = js.Object.freeze(js.Array(Completed, Failed, Unknown))
   }
-
-  object ActionStatusEnum {
-    val Scheduled = "Scheduled"
-    val Pending   = "Pending"
-    val Running   = "Running"
-    val Unknown   = "Unknown"
+  @js.native
+  sealed trait ActionStatus extends js.Any
+  object ActionStatus extends js.Object {
+    val Scheduled = "Scheduled".asInstanceOf[ActionStatus]
+    val Pending   = "Pending".asInstanceOf[ActionStatus]
+    val Running   = "Running".asInstanceOf[ActionStatus]
+    val Unknown   = "Unknown".asInstanceOf[ActionStatus]
 
     val values = js.Object.freeze(js.Array(Scheduled, Pending, Running, Unknown))
   }
-
-  object ActionTypeEnum {
-    val InstanceRefresh = "InstanceRefresh"
-    val PlatformUpdate  = "PlatformUpdate"
-    val Unknown         = "Unknown"
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType extends js.Object {
+    val InstanceRefresh = "InstanceRefresh".asInstanceOf[ActionType]
+    val PlatformUpdate  = "PlatformUpdate".asInstanceOf[ActionType]
+    val Unknown         = "Unknown".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(InstanceRefresh, PlatformUpdate, Unknown))
   }
@@ -666,13 +650,14 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ApplicationVersionLifecycleConfig]
     }
   }
-
-  object ApplicationVersionStatusEnum {
-    val Processed   = "Processed"
-    val Unprocessed = "Unprocessed"
-    val Failed      = "Failed"
-    val Processing  = "Processing"
-    val Building    = "Building"
+  @js.native
+  sealed trait ApplicationVersionStatus extends js.Any
+  object ApplicationVersionStatus extends js.Object {
+    val Processed   = "Processed".asInstanceOf[ApplicationVersionStatus]
+    val Unprocessed = "Unprocessed".asInstanceOf[ApplicationVersionStatus]
+    val Failed      = "Failed".asInstanceOf[ApplicationVersionStatus]
+    val Processing  = "Processing".asInstanceOf[ApplicationVersionStatus]
+    val Building    = "Building".asInstanceOf[ApplicationVersionStatus]
 
     val values = js.Object.freeze(js.Array(Processed, Unprocessed, Failed, Processing, Building))
   }
@@ -910,19 +895,21 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ComposeEnvironmentsMessage]
     }
   }
-
-  object ComputeTypeEnum {
-    val BUILD_GENERAL1_SMALL  = "BUILD_GENERAL1_SMALL"
-    val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM"
-    val BUILD_GENERAL1_LARGE  = "BUILD_GENERAL1_LARGE"
+  @js.native
+  sealed trait ComputeType extends js.Any
+  object ComputeType extends js.Object {
+    val BUILD_GENERAL1_SMALL  = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
+    val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
+    val BUILD_GENERAL1_LARGE  = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
 
     val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE))
   }
-
-  object ConfigurationDeploymentStatusEnum {
-    val deployed = "deployed"
-    val pending  = "pending"
-    val failed   = "failed"
+  @js.native
+  sealed trait ConfigurationDeploymentStatus extends js.Any
+  object ConfigurationDeploymentStatus extends js.Object {
+    val deployed = "deployed".asInstanceOf[ConfigurationDeploymentStatus]
+    val pending  = "pending".asInstanceOf[ConfigurationDeploymentStatus]
+    val failed   = "failed".asInstanceOf[ConfigurationDeploymentStatus]
 
     val values = js.Object.freeze(js.Array(deployed, pending, failed))
   }
@@ -1003,10 +990,11 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ConfigurationOptionSetting]
     }
   }
-
-  object ConfigurationOptionValueTypeEnum {
-    val Scalar = "Scalar"
-    val List   = "List"
+  @js.native
+  sealed trait ConfigurationOptionValueType extends js.Any
+  object ConfigurationOptionValueType extends js.Object {
+    val Scalar = "Scalar".asInstanceOf[ConfigurationOptionValueType]
+    val List   = "List".asInstanceOf[ConfigurationOptionValueType]
 
     val values = js.Object.freeze(js.Array(Scalar, List))
   }
@@ -2135,41 +2123,44 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentDescriptionsMessage]
     }
   }
-
-  object EnvironmentHealthEnum {
-    val Green  = "Green"
-    val Yellow = "Yellow"
-    val Red    = "Red"
-    val Grey   = "Grey"
+  @js.native
+  sealed trait EnvironmentHealth extends js.Any
+  object EnvironmentHealth extends js.Object {
+    val Green  = "Green".asInstanceOf[EnvironmentHealth]
+    val Yellow = "Yellow".asInstanceOf[EnvironmentHealth]
+    val Red    = "Red".asInstanceOf[EnvironmentHealth]
+    val Grey   = "Grey".asInstanceOf[EnvironmentHealth]
 
     val values = js.Object.freeze(js.Array(Green, Yellow, Red, Grey))
   }
-
-  object EnvironmentHealthAttributeEnum {
-    val Status             = "Status"
-    val Color              = "Color"
-    val Causes             = "Causes"
-    val ApplicationMetrics = "ApplicationMetrics"
-    val InstancesHealth    = "InstancesHealth"
-    val All                = "All"
-    val HealthStatus       = "HealthStatus"
-    val RefreshedAt        = "RefreshedAt"
+  @js.native
+  sealed trait EnvironmentHealthAttribute extends js.Any
+  object EnvironmentHealthAttribute extends js.Object {
+    val Status             = "Status".asInstanceOf[EnvironmentHealthAttribute]
+    val Color              = "Color".asInstanceOf[EnvironmentHealthAttribute]
+    val Causes             = "Causes".asInstanceOf[EnvironmentHealthAttribute]
+    val ApplicationMetrics = "ApplicationMetrics".asInstanceOf[EnvironmentHealthAttribute]
+    val InstancesHealth    = "InstancesHealth".asInstanceOf[EnvironmentHealthAttribute]
+    val All                = "All".asInstanceOf[EnvironmentHealthAttribute]
+    val HealthStatus       = "HealthStatus".asInstanceOf[EnvironmentHealthAttribute]
+    val RefreshedAt        = "RefreshedAt".asInstanceOf[EnvironmentHealthAttribute]
 
     val values = js.Object.freeze(
       js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
     )
   }
-
-  object EnvironmentHealthStatusEnum {
-    val NoData    = "NoData"
-    val Unknown   = "Unknown"
-    val Pending   = "Pending"
-    val Ok        = "Ok"
-    val Info      = "Info"
-    val Warning   = "Warning"
-    val Degraded  = "Degraded"
-    val Severe    = "Severe"
-    val Suspended = "Suspended"
+  @js.native
+  sealed trait EnvironmentHealthStatus extends js.Any
+  object EnvironmentHealthStatus extends js.Object {
+    val NoData    = "NoData".asInstanceOf[EnvironmentHealthStatus]
+    val Unknown   = "Unknown".asInstanceOf[EnvironmentHealthStatus]
+    val Pending   = "Pending".asInstanceOf[EnvironmentHealthStatus]
+    val Ok        = "Ok".asInstanceOf[EnvironmentHealthStatus]
+    val Info      = "Info".asInstanceOf[EnvironmentHealthStatus]
+    val Warning   = "Warning".asInstanceOf[EnvironmentHealthStatus]
+    val Degraded  = "Degraded".asInstanceOf[EnvironmentHealthStatus]
+    val Severe    = "Severe".asInstanceOf[EnvironmentHealthStatus]
+    val Suspended = "Suspended".asInstanceOf[EnvironmentHealthStatus]
 
     val values = js.Object.freeze(js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended))
   }
@@ -2201,10 +2192,11 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentInfoDescription]
     }
   }
-
-  object EnvironmentInfoTypeEnum {
-    val tail   = "tail"
-    val bundle = "bundle"
+  @js.native
+  sealed trait EnvironmentInfoType extends js.Any
+  object EnvironmentInfoType extends js.Object {
+    val tail   = "tail".asInstanceOf[EnvironmentInfoType]
+    val bundle = "bundle".asInstanceOf[EnvironmentInfoType]
 
     val values = js.Object.freeze(js.Array(tail, bundle))
   }
@@ -2308,13 +2300,14 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentResourcesDescription]
     }
   }
-
-  object EnvironmentStatusEnum {
-    val Launching   = "Launching"
-    val Updating    = "Updating"
-    val Ready       = "Ready"
-    val Terminating = "Terminating"
-    val Terminated  = "Terminated"
+  @js.native
+  sealed trait EnvironmentStatus extends js.Any
+  object EnvironmentStatus extends js.Object {
+    val Launching   = "Launching".asInstanceOf[EnvironmentStatus]
+    val Updating    = "Updating".asInstanceOf[EnvironmentStatus]
+    val Ready       = "Ready".asInstanceOf[EnvironmentStatus]
+    val Terminating = "Terminating".asInstanceOf[EnvironmentStatus]
+    val Terminated  = "Terminated".asInstanceOf[EnvironmentStatus]
 
     val values = js.Object.freeze(js.Array(Launching, Updating, Ready, Terminating, Terminated))
   }
@@ -2408,26 +2401,28 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EventDescriptionsMessage]
     }
   }
-
-  object EventSeverityEnum {
-    val TRACE = "TRACE"
-    val DEBUG = "DEBUG"
-    val INFO  = "INFO"
-    val WARN  = "WARN"
-    val ERROR = "ERROR"
-    val FATAL = "FATAL"
+  @js.native
+  sealed trait EventSeverity extends js.Any
+  object EventSeverity extends js.Object {
+    val TRACE = "TRACE".asInstanceOf[EventSeverity]
+    val DEBUG = "DEBUG".asInstanceOf[EventSeverity]
+    val INFO  = "INFO".asInstanceOf[EventSeverity]
+    val WARN  = "WARN".asInstanceOf[EventSeverity]
+    val ERROR = "ERROR".asInstanceOf[EventSeverity]
+    val FATAL = "FATAL".asInstanceOf[EventSeverity]
 
     val values = js.Object.freeze(js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL))
   }
-
-  object FailureTypeEnum {
-    val UpdateCancelled         = "UpdateCancelled"
-    val CancellationFailed      = "CancellationFailed"
-    val RollbackFailed          = "RollbackFailed"
-    val RollbackSuccessful      = "RollbackSuccessful"
-    val InternalFailure         = "InternalFailure"
-    val InvalidEnvironmentState = "InvalidEnvironmentState"
-    val PermissionsError        = "PermissionsError"
+  @js.native
+  sealed trait FailureType extends js.Any
+  object FailureType extends js.Object {
+    val UpdateCancelled         = "UpdateCancelled".asInstanceOf[FailureType]
+    val CancellationFailed      = "CancellationFailed".asInstanceOf[FailureType]
+    val RollbackFailed          = "RollbackFailed".asInstanceOf[FailureType]
+    val RollbackSuccessful      = "RollbackSuccessful".asInstanceOf[FailureType]
+    val InternalFailure         = "InternalFailure".asInstanceOf[FailureType]
+    val InvalidEnvironmentState = "InvalidEnvironmentState".asInstanceOf[FailureType]
+    val PermissionsError        = "PermissionsError".asInstanceOf[FailureType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2500,19 +2495,20 @@ package elasticbeanstalk {
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
-
-  object InstancesHealthAttributeEnum {
-    val HealthStatus       = "HealthStatus"
-    val Color              = "Color"
-    val Causes             = "Causes"
-    val ApplicationMetrics = "ApplicationMetrics"
-    val RefreshedAt        = "RefreshedAt"
-    val LaunchedAt         = "LaunchedAt"
-    val System             = "System"
-    val Deployment         = "Deployment"
-    val AvailabilityZone   = "AvailabilityZone"
-    val InstanceType       = "InstanceType"
-    val All                = "All"
+  @js.native
+  sealed trait InstancesHealthAttribute extends js.Any
+  object InstancesHealthAttribute extends js.Object {
+    val HealthStatus       = "HealthStatus".asInstanceOf[InstancesHealthAttribute]
+    val Color              = "Color".asInstanceOf[InstancesHealthAttribute]
+    val Causes             = "Causes".asInstanceOf[InstancesHealthAttribute]
+    val ApplicationMetrics = "ApplicationMetrics".asInstanceOf[InstancesHealthAttribute]
+    val RefreshedAt        = "RefreshedAt".asInstanceOf[InstancesHealthAttribute]
+    val LaunchedAt         = "LaunchedAt".asInstanceOf[InstancesHealthAttribute]
+    val System             = "System".asInstanceOf[InstancesHealthAttribute]
+    val Deployment         = "Deployment".asInstanceOf[InstancesHealthAttribute]
+    val AvailabilityZone   = "AvailabilityZone".asInstanceOf[InstancesHealthAttribute]
+    val InstanceType       = "InstanceType".asInstanceOf[InstancesHealthAttribute]
+    val All                = "All".asInstanceOf[InstancesHealthAttribute]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3068,13 +3064,14 @@ package elasticbeanstalk {
       __obj.asInstanceOf[PlatformProgrammingLanguage]
     }
   }
-
-  object PlatformStatusEnum {
-    val Creating = "Creating"
-    val Failed   = "Failed"
-    val Ready    = "Ready"
-    val Deleting = "Deleting"
-    val Deleted  = "Deleted"
+  @js.native
+  sealed trait PlatformStatus extends js.Any
+  object PlatformStatus extends js.Object {
+    val Creating = "Creating".asInstanceOf[PlatformStatus]
+    val Failed   = "Failed".asInstanceOf[PlatformStatus]
+    val Ready    = "Ready".asInstanceOf[PlatformStatus]
+    val Deleting = "Deleting".asInstanceOf[PlatformStatus]
+    val Deleted  = "Deleted".asInstanceOf[PlatformStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Failed, Ready, Deleting, Deleted))
   }
@@ -3467,17 +3464,19 @@ package elasticbeanstalk {
       __obj.asInstanceOf[SourceConfiguration]
     }
   }
-
-  object SourceRepositoryEnum {
-    val CodeCommit = "CodeCommit"
-    val S3         = "S3"
+  @js.native
+  sealed trait SourceRepository extends js.Any
+  object SourceRepository extends js.Object {
+    val CodeCommit = "CodeCommit".asInstanceOf[SourceRepository]
+    val S3         = "S3".asInstanceOf[SourceRepository]
 
     val values = js.Object.freeze(js.Array(CodeCommit, S3))
   }
-
-  object SourceTypeEnum {
-    val Git = "Git"
-    val Zip = "Zip"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val Git = "Git".asInstanceOf[SourceType]
+    val Zip = "Zip".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(Git, Zip))
   }
@@ -3869,10 +3868,11 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ValidationMessage]
     }
   }
-
-  object ValidationSeverityEnum {
-    val error   = "error"
-    val warning = "warning"
+  @js.native
+  sealed trait ValidationSeverity extends js.Any
+  object ValidationSeverity extends js.Object {
+    val error   = "error".asInstanceOf[ValidationSeverity]
+    val warning = "warning".asInstanceOf[ValidationSeverity]
 
     val values = js.Object.freeze(js.Array(error, warning))
   }

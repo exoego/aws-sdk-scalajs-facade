@@ -8,12 +8,9 @@ import facade.amazonaws._
 
 package object cloudhsmv2 {
   type BackupId              = String
-  type BackupPolicy          = String
-  type BackupState           = String
   type Backups               = js.Array[Backup]
   type Cert                  = String
   type ClusterId             = String
-  type ClusterState          = String
   type Clusters              = js.Array[Cluster]
   type EniId                 = String
   type ExternalAz            = String
@@ -21,7 +18,6 @@ package object cloudhsmv2 {
   type Field                 = String
   type Filters               = js.Dictionary[Strings]
   type HsmId                 = String
-  type HsmState              = String
   type HsmType               = String
   type Hsms                  = js.Array[Hsm]
   type IpAddress             = String
@@ -141,18 +137,20 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Backup]
     }
   }
-
-  object BackupPolicyEnum {
-    val DEFAULT = "DEFAULT"
+  @js.native
+  sealed trait BackupPolicy extends js.Any
+  object BackupPolicy extends js.Object {
+    val DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
 
     val values = js.Object.freeze(js.Array(DEFAULT))
   }
-
-  object BackupStateEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val READY              = "READY"
-    val DELETED            = "DELETED"
-    val PENDING_DELETION   = "PENDING_DELETION"
+  @js.native
+  sealed trait BackupState extends js.Any
+  object BackupState extends js.Object {
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
+    val READY              = "READY".asInstanceOf[BackupState]
+    val DELETED            = "DELETED".asInstanceOf[BackupState]
+    val PENDING_DELETION   = "PENDING_DELETION".asInstanceOf[BackupState]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION))
   }
@@ -247,17 +245,18 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Cluster]
     }
   }
-
-  object ClusterStateEnum {
-    val CREATE_IN_PROGRESS     = "CREATE_IN_PROGRESS"
-    val UNINITIALIZED          = "UNINITIALIZED"
-    val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS"
-    val INITIALIZED            = "INITIALIZED"
-    val ACTIVE                 = "ACTIVE"
-    val UPDATE_IN_PROGRESS     = "UPDATE_IN_PROGRESS"
-    val DELETE_IN_PROGRESS     = "DELETE_IN_PROGRESS"
-    val DELETED                = "DELETED"
-    val DEGRADED               = "DEGRADED"
+  @js.native
+  sealed trait ClusterState extends js.Any
+  object ClusterState extends js.Object {
+    val CREATE_IN_PROGRESS     = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val UNINITIALIZED          = "UNINITIALIZED".asInstanceOf[ClusterState]
+    val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val INITIALIZED            = "INITIALIZED".asInstanceOf[ClusterState]
+    val ACTIVE                 = "ACTIVE".asInstanceOf[ClusterState]
+    val UPDATE_IN_PROGRESS     = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETE_IN_PROGRESS     = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETED                = "DELETED".asInstanceOf[ClusterState]
+    val DEGRADED               = "DEGRADED".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -662,13 +661,14 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Hsm]
     }
   }
-
-  object HsmStateEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val ACTIVE             = "ACTIVE"
-    val DEGRADED           = "DEGRADED"
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
-    val DELETED            = "DELETED"
+  @js.native
+  sealed trait HsmState extends js.Any
+  object HsmState extends js.Object {
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
+    val ACTIVE             = "ACTIVE".asInstanceOf[HsmState]
+    val DEGRADED           = "DEGRADED".asInstanceOf[HsmState]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
+    val DELETED            = "DELETED".asInstanceOf[HsmState]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED))
   }

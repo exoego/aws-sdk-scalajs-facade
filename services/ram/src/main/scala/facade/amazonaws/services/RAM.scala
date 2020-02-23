@@ -16,19 +16,12 @@ package object ram {
   type PrincipalList                  = js.Array[Principal]
   type ResourceArnList                = js.Array[String]
   type ResourceList                   = js.Array[Resource]
-  type ResourceOwner                  = String
   type ResourceShareArnList           = js.Array[String]
   type ResourceShareAssociationList   = js.Array[ResourceShareAssociation]
-  type ResourceShareAssociationStatus = String
-  type ResourceShareAssociationType   = String
-  type ResourceShareFeatureSet        = String
   type ResourceShareInvitationArnList = js.Array[String]
   type ResourceShareInvitationList    = js.Array[ResourceShareInvitation]
-  type ResourceShareInvitationStatus  = String
   type ResourceShareList              = js.Array[ResourceShare]
   type ResourceSharePermissionList    = js.Array[ResourceSharePermissionSummary]
-  type ResourceShareStatus            = String
-  type ResourceStatus                 = String
   type TagFilters                     = js.Array[TagFilter]
   type TagKey                         = String
   type TagKeyList                     = js.Array[TagKey]
@@ -1128,10 +1121,11 @@ package ram {
       __obj.asInstanceOf[Resource]
     }
   }
-
-  object ResourceOwnerEnum {
-    val SELF             = "SELF"
-    val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS"
+  @js.native
+  sealed trait ResourceOwner extends js.Any
+  object ResourceOwner extends js.Object {
+    val SELF             = "SELF".asInstanceOf[ResourceOwner]
+    val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
 
     val values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
   }
@@ -1224,28 +1218,31 @@ package ram {
       __obj.asInstanceOf[ResourceShareAssociation]
     }
   }
-
-  object ResourceShareAssociationStatusEnum {
-    val ASSOCIATING    = "ASSOCIATING"
-    val ASSOCIATED     = "ASSOCIATED"
-    val FAILED         = "FAILED"
-    val DISASSOCIATING = "DISASSOCIATING"
-    val DISASSOCIATED  = "DISASSOCIATED"
+  @js.native
+  sealed trait ResourceShareAssociationStatus extends js.Any
+  object ResourceShareAssociationStatus extends js.Object {
+    val ASSOCIATING    = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
+    val ASSOCIATED     = "ASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
+    val FAILED         = "FAILED".asInstanceOf[ResourceShareAssociationStatus]
+    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
+    val DISASSOCIATED  = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
   }
-
-  object ResourceShareAssociationTypeEnum {
-    val PRINCIPAL = "PRINCIPAL"
-    val RESOURCE  = "RESOURCE"
+  @js.native
+  sealed trait ResourceShareAssociationType extends js.Any
+  object ResourceShareAssociationType extends js.Object {
+    val PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
+    val RESOURCE  = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
 
     val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
-
-  object ResourceShareFeatureSetEnum {
-    val CREATED_FROM_POLICY   = "CREATED_FROM_POLICY"
-    val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD"
-    val STANDARD              = "STANDARD"
+  @js.native
+  sealed trait ResourceShareFeatureSet extends js.Any
+  object ResourceShareFeatureSet extends js.Object {
+    val CREATED_FROM_POLICY   = "CREATED_FROM_POLICY".asInstanceOf[ResourceShareFeatureSet]
+    val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
+    val STANDARD              = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
 
     val values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
   }
@@ -1293,12 +1290,13 @@ package ram {
       __obj.asInstanceOf[ResourceShareInvitation]
     }
   }
-
-  object ResourceShareInvitationStatusEnum {
-    val PENDING  = "PENDING"
-    val ACCEPTED = "ACCEPTED"
-    val REJECTED = "REJECTED"
-    val EXPIRED  = "EXPIRED"
+  @js.native
+  sealed trait ResourceShareInvitationStatus extends js.Any
+  object ResourceShareInvitationStatus extends js.Object {
+    val PENDING  = "PENDING".asInstanceOf[ResourceShareInvitationStatus]
+    val ACCEPTED = "ACCEPTED".asInstanceOf[ResourceShareInvitationStatus]
+    val REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
+    val EXPIRED  = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
   }
@@ -1382,23 +1380,25 @@ package ram {
       __obj.asInstanceOf[ResourceSharePermissionSummary]
     }
   }
-
-  object ResourceShareStatusEnum {
-    val PENDING  = "PENDING"
-    val ACTIVE   = "ACTIVE"
-    val FAILED   = "FAILED"
-    val DELETING = "DELETING"
-    val DELETED  = "DELETED"
+  @js.native
+  sealed trait ResourceShareStatus extends js.Any
+  object ResourceShareStatus extends js.Object {
+    val PENDING  = "PENDING".asInstanceOf[ResourceShareStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[ResourceShareStatus]
+    val FAILED   = "FAILED".asInstanceOf[ResourceShareStatus]
+    val DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
+    val DELETED  = "DELETED".asInstanceOf[ResourceShareStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
   }
-
-  object ResourceStatusEnum {
-    val AVAILABLE                   = "AVAILABLE"
-    val ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE"
-    val LIMIT_EXCEEDED              = "LIMIT_EXCEEDED"
-    val UNAVAILABLE                 = "UNAVAILABLE"
-    val PENDING                     = "PENDING"
+  @js.native
+  sealed trait ResourceStatus extends js.Any
+  object ResourceStatus extends js.Object {
+    val AVAILABLE                   = "AVAILABLE".asInstanceOf[ResourceStatus]
+    val ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE".asInstanceOf[ResourceStatus]
+    val LIMIT_EXCEEDED              = "LIMIT_EXCEEDED".asInstanceOf[ResourceStatus]
+    val UNAVAILABLE                 = "UNAVAILABLE".asInstanceOf[ResourceStatus]
+    val PENDING                     = "PENDING".asInstanceOf[ResourceStatus]
 
     val values =
       js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))

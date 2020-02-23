@@ -13,15 +13,12 @@ package object translate {
   type ContentType                      = String
   type Description                      = String
   type EncryptionKeyID                  = String
-  type EncryptionKeyType                = String
   type IamRoleArn                       = String
   type JobId                            = String
   type JobName                          = String
-  type JobStatus                        = String
   type LanguageCodeString               = String
   type LanguageCodeStringList           = js.Array[LanguageCodeString]
   type MaxResultsInteger                = Int
-  type MergeStrategy                    = String
   type NextToken                        = String
   type ResourceName                     = String
   type ResourceNameList                 = js.Array[ResourceName]
@@ -29,7 +26,6 @@ package object translate {
   type TargetLanguageCodeStringList     = js.Array[LanguageCodeString]
   type TermList                         = js.Array[Term]
   type TerminologyArn                   = String
-  type TerminologyDataFormat            = String
   type TerminologyFile                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TerminologyPropertiesList        = js.Array[TerminologyProperties]
   type TextTranslationJobPropertiesList = js.Array[TextTranslationJobProperties]
@@ -184,9 +180,10 @@ package translate {
       __obj.asInstanceOf[EncryptionKey]
     }
   }
-
-  object EncryptionKeyTypeEnum {
-    val KMS = "KMS"
+  @js.native
+  sealed trait EncryptionKeyType extends js.Any
+  object EncryptionKeyType extends js.Object {
+    val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
     val values = js.Object.freeze(js.Array(KMS))
   }
@@ -325,15 +322,16 @@ package translate {
       __obj.asInstanceOf[JobDetails]
     }
   }
-
-  object JobStatusEnum {
-    val SUBMITTED            = "SUBMITTED"
-    val IN_PROGRESS          = "IN_PROGRESS"
-    val COMPLETED            = "COMPLETED"
-    val COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR"
-    val FAILED               = "FAILED"
-    val STOP_REQUESTED       = "STOP_REQUESTED"
-    val STOPPED              = "STOPPED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val SUBMITTED            = "SUBMITTED".asInstanceOf[JobStatus]
+    val IN_PROGRESS          = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val COMPLETED            = "COMPLETED".asInstanceOf[JobStatus]
+    val COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR".asInstanceOf[JobStatus]
+    val FAILED               = "FAILED".asInstanceOf[JobStatus]
+    val STOP_REQUESTED       = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    val STOPPED              = "STOPPED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(
       js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
@@ -422,9 +420,10 @@ package translate {
       __obj.asInstanceOf[ListTextTranslationJobsResponse]
     }
   }
-
-  object MergeStrategyEnum {
-    val OVERWRITE = "OVERWRITE"
+  @js.native
+  sealed trait MergeStrategy extends js.Any
+  object MergeStrategy extends js.Object {
+    val OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
 
     val values = js.Object.freeze(js.Array(OVERWRITE))
   }
@@ -590,10 +589,11 @@ package translate {
       __obj.asInstanceOf[TerminologyData]
     }
   }
-
-  object TerminologyDataFormatEnum {
-    val CSV = "CSV"
-    val TMX = "TMX"
+  @js.native
+  sealed trait TerminologyDataFormat extends js.Any
+  object TerminologyDataFormat extends js.Object {
+    val CSV = "CSV".asInstanceOf[TerminologyDataFormat]
+    val TMX = "TMX".asInstanceOf[TerminologyDataFormat]
 
     val values = js.Object.freeze(js.Array(CSV, TMX))
   }

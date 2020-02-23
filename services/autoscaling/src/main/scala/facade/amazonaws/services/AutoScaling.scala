@@ -51,7 +51,6 @@ package object autoscaling {
   type LifecycleHookNames                       = js.Array[AsciiStringMaxLen255]
   type LifecycleHookSpecifications              = js.Array[LifecycleHookSpecification]
   type LifecycleHooks                           = js.Array[LifecycleHook]
-  type LifecycleState                           = String
   type LifecycleTransition                      = String
   type LoadBalancerNames                        = js.Array[XmlStringMaxLen255]
   type LoadBalancerStates                       = js.Array[LoadBalancerState]
@@ -68,8 +67,6 @@ package object autoscaling {
   type MetricName                               = String
   type MetricNamespace                          = String
   type MetricScale                              = Double
-  type MetricStatistic                          = String
-  type MetricType                               = String
   type MetricUnit                               = String
   type Metrics                                  = js.Array[XmlStringMaxLen255]
   type MinAdjustmentMagnitude                   = Int
@@ -94,7 +91,6 @@ package object autoscaling {
   type PropagateAtLaunch                   = Boolean
   type ProtectedFromScaleIn                = Boolean
   type ResourceName                        = String
-  type ScalingActivityStatusCode           = String
   type ScalingPolicies                     = js.Array[ScalingPolicy]
   type ScalingPolicyEnabled                = Boolean
   type ScheduledActionNames                = js.Array[ResourceName]
@@ -2436,21 +2432,22 @@ package autoscaling {
       __obj.asInstanceOf[LifecycleHookSpecification]
     }
   }
-
-  object LifecycleStateEnum {
-    val Pending               = "Pending"
-    val `Pending:Wait`        = "Pending:Wait"
-    val `Pending:Proceed`     = "Pending:Proceed"
-    val Quarantined           = "Quarantined"
-    val InService             = "InService"
-    val Terminating           = "Terminating"
-    val `Terminating:Wait`    = "Terminating:Wait"
-    val `Terminating:Proceed` = "Terminating:Proceed"
-    val Terminated            = "Terminated"
-    val Detaching             = "Detaching"
-    val Detached              = "Detached"
-    val EnteringStandby       = "EnteringStandby"
-    val Standby               = "Standby"
+  @js.native
+  sealed trait LifecycleState extends js.Any
+  object LifecycleState extends js.Object {
+    val Pending               = "Pending".asInstanceOf[LifecycleState]
+    val `Pending:Wait`        = "Pending:Wait".asInstanceOf[LifecycleState]
+    val `Pending:Proceed`     = "Pending:Proceed".asInstanceOf[LifecycleState]
+    val Quarantined           = "Quarantined".asInstanceOf[LifecycleState]
+    val InService             = "InService".asInstanceOf[LifecycleState]
+    val Terminating           = "Terminating".asInstanceOf[LifecycleState]
+    val `Terminating:Wait`    = "Terminating:Wait".asInstanceOf[LifecycleState]
+    val `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
+    val Terminated            = "Terminated".asInstanceOf[LifecycleState]
+    val Detaching             = "Detaching".asInstanceOf[LifecycleState]
+    val Detached              = "Detached".asInstanceOf[LifecycleState]
+    val EnteringStandby       = "EnteringStandby".asInstanceOf[LifecycleState]
+    val Standby               = "Standby".asInstanceOf[LifecycleState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2581,22 +2578,24 @@ package autoscaling {
       __obj.asInstanceOf[MetricGranularityType]
     }
   }
-
-  object MetricStatisticEnum {
-    val Average     = "Average"
-    val Minimum     = "Minimum"
-    val Maximum     = "Maximum"
-    val SampleCount = "SampleCount"
-    val Sum         = "Sum"
+  @js.native
+  sealed trait MetricStatistic extends js.Any
+  object MetricStatistic extends js.Object {
+    val Average     = "Average".asInstanceOf[MetricStatistic]
+    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
+    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    val Sum         = "Sum".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
-
-  object MetricTypeEnum {
-    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization"
-    val ASGAverageNetworkIn      = "ASGAverageNetworkIn"
-    val ASGAverageNetworkOut     = "ASGAverageNetworkOut"
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget"
+  @js.native
+  sealed trait MetricType extends js.Any
+  object MetricType extends js.Object {
+    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
+    val ASGAverageNetworkIn      = "ASGAverageNetworkIn".asInstanceOf[MetricType]
+    val ASGAverageNetworkOut     = "ASGAverageNetworkOut".asInstanceOf[MetricType]
+    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
     val values = js.Object.freeze(
       js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
@@ -2967,20 +2966,21 @@ package autoscaling {
       __obj.asInstanceOf[RecordLifecycleActionHeartbeatType]
     }
   }
-
-  object ScalingActivityStatusCodeEnum {
-    val PendingSpotBidPlacement         = "PendingSpotBidPlacement"
-    val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId"
-    val WaitingForSpotInstanceId        = "WaitingForSpotInstanceId"
-    val WaitingForInstanceId            = "WaitingForInstanceId"
-    val PreInService                    = "PreInService"
-    val InProgress                      = "InProgress"
-    val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining"
-    val MidLifecycleAction              = "MidLifecycleAction"
-    val WaitingForInstanceWarmup        = "WaitingForInstanceWarmup"
-    val Successful                      = "Successful"
-    val Failed                          = "Failed"
-    val Cancelled                       = "Cancelled"
+  @js.native
+  sealed trait ScalingActivityStatusCode extends js.Any
+  object ScalingActivityStatusCode extends js.Object {
+    val PendingSpotBidPlacement         = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForSpotInstanceId        = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForInstanceId            = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    val PreInService                    = "PreInService".asInstanceOf[ScalingActivityStatusCode]
+    val InProgress                      = "InProgress".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
+    val MidLifecycleAction              = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForInstanceWarmup        = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
+    val Successful                      = "Successful".asInstanceOf[ScalingActivityStatusCode]
+    val Failed                          = "Failed".asInstanceOf[ScalingActivityStatusCode]
+    val Cancelled                       = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
     val values = js.Object.freeze(
       js.Array(

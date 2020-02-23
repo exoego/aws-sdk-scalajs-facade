@@ -12,10 +12,8 @@ package object kinesis {
   type ConsumerCountObject           = Int
   type ConsumerList                  = js.Array[Consumer]
   type ConsumerName                  = String
-  type ConsumerStatus                = String
   type Data                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DescribeStreamInputLimit      = Int
-  type EncryptionType                = String
   type EnhancedMonitoringList        = js.Array[EnhancedMetrics]
   type ErrorCode                     = String
   type ErrorMessage                  = String
@@ -26,7 +24,6 @@ package object kinesis {
   type ListStreamConsumersInputLimit = Int
   type ListStreamsInputLimit         = Int
   type ListTagsForStreamInputLimit   = Int
-  type MetricsName                   = String
   type MetricsNameList               = js.Array[MetricsName]
   type MillisBehindLatest            = Double
   type NextToken                     = String
@@ -36,17 +33,14 @@ package object kinesis {
   type PutRecordsResultEntryList     = js.Array[PutRecordsResultEntry]
   type RecordList                    = js.Array[Record]
   type RetentionPeriodHours          = Int
-  type ScalingType                   = String
   type SequenceNumber                = String
   type ShardCountObject              = Int
   type ShardId                       = String
   type ShardIterator                 = String
-  type ShardIteratorType             = String
   type ShardList                     = js.Array[Shard]
   type StreamARN                     = String
   type StreamName                    = String
   type StreamNameList                = js.Array[StreamName]
-  type StreamStatus                  = String
   type TagKey                        = String
   type TagKeyList                    = js.Array[TagKey]
   type TagList                       = js.Array[Tag]
@@ -238,11 +232,12 @@ package kinesis {
       __obj.asInstanceOf[ConsumerDescription]
     }
   }
-
-  object ConsumerStatusEnum {
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
-    val ACTIVE   = "ACTIVE"
+  @js.native
+  sealed trait ConsumerStatus extends js.Any
+  object ConsumerStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[ConsumerStatus]
+    val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[ConsumerStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
@@ -546,10 +541,11 @@ package kinesis {
       __obj.asInstanceOf[EnableEnhancedMonitoringInput]
     }
   }
-
-  object EncryptionTypeEnum {
-    val NONE = "NONE"
-    val KMS  = "KMS"
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType extends js.Object {
+    val NONE = "NONE".asInstanceOf[EncryptionType]
+    val KMS  = "KMS".asInstanceOf[EncryptionType]
 
     val values = js.Object.freeze(js.Array(NONE, KMS))
   }
@@ -1050,16 +1046,17 @@ package kinesis {
       __obj.asInstanceOf[MergeShardsInput]
     }
   }
-
-  object MetricsNameEnum {
-    val IncomingBytes                      = "IncomingBytes"
-    val IncomingRecords                    = "IncomingRecords"
-    val OutgoingBytes                      = "OutgoingBytes"
-    val OutgoingRecords                    = "OutgoingRecords"
-    val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded"
-    val ReadProvisionedThroughputExceeded  = "ReadProvisionedThroughputExceeded"
-    val IteratorAgeMilliseconds            = "IteratorAgeMilliseconds"
-    val ALL                                = "ALL"
+  @js.native
+  sealed trait MetricsName extends js.Any
+  object MetricsName extends js.Object {
+    val IncomingBytes                      = "IncomingBytes".asInstanceOf[MetricsName]
+    val IncomingRecords                    = "IncomingRecords".asInstanceOf[MetricsName]
+    val OutgoingBytes                      = "OutgoingBytes".asInstanceOf[MetricsName]
+    val OutgoingRecords                    = "OutgoingRecords".asInstanceOf[MetricsName]
+    val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded".asInstanceOf[MetricsName]
+    val ReadProvisionedThroughputExceeded  = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
+    val IteratorAgeMilliseconds            = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
+    val ALL                                = "ALL".asInstanceOf[MetricsName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1364,9 +1361,10 @@ package kinesis {
   trait ResourceNotFoundExceptionException extends js.Object {
     val message: ErrorMessage
   }
-
-  object ScalingTypeEnum {
-    val UNIFORM_SCALING = "UNIFORM_SCALING"
+  @js.native
+  sealed trait ScalingType extends js.Any
+  object ScalingType extends js.Object {
+    val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
 
     val values = js.Object.freeze(js.Array(UNIFORM_SCALING))
   }
@@ -1427,13 +1425,14 @@ package kinesis {
       __obj.asInstanceOf[Shard]
     }
   }
-
-  object ShardIteratorTypeEnum {
-    val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER"
-    val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER"
-    val TRIM_HORIZON          = "TRIM_HORIZON"
-    val LATEST                = "LATEST"
-    val AT_TIMESTAMP          = "AT_TIMESTAMP"
+  @js.native
+  sealed trait ShardIteratorType extends js.Any
+  object ShardIteratorType extends js.Object {
+    val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    val TRIM_HORIZON          = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
+    val LATEST                = "LATEST".asInstanceOf[ShardIteratorType]
+    val AT_TIMESTAMP          = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
     val values =
       js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
@@ -1633,12 +1632,13 @@ package kinesis {
       __obj.asInstanceOf[StreamDescriptionSummary]
     }
   }
-
-  object StreamStatusEnum {
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
-    val ACTIVE   = "ACTIVE"
-    val UPDATING = "UPDATING"
+  @js.native
+  sealed trait StreamStatus extends js.Any
+  object StreamStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[StreamStatus]
+    val DELETING = "DELETING".asInstanceOf[StreamStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[StreamStatus]
+    val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
   }

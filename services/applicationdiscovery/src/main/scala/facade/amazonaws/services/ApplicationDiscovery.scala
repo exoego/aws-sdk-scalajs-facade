@@ -11,11 +11,9 @@ package object applicationdiscovery {
   type AgentId                               = String
   type AgentIds                              = js.Array[AgentId]
   type AgentNetworkInfoList                  = js.Array[AgentNetworkInfo]
-  type AgentStatus                           = String
   type AgentsInfo                            = js.Array[AgentInfo]
   type ApplicationId                         = String
   type ApplicationIdsList                    = js.Array[ApplicationId]
-  type BatchDeleteImportDataErrorCode        = String
   type BatchDeleteImportDataErrorDescription = String
   type BatchDeleteImportDataErrorList        = js.Array[BatchDeleteImportDataError]
   type BoxedInteger                          = Int
@@ -24,35 +22,28 @@ package object applicationdiscovery {
   type Configuration                         = js.Dictionary[String]
   type ConfigurationId                       = String
   type ConfigurationIdList                   = js.Array[ConfigurationId]
-  type ConfigurationItemType                 = String
   type ConfigurationTagSet                   = js.Array[ConfigurationTag]
   type Configurations                        = js.Array[Configuration]
   type ConfigurationsDownloadUrl             = String
   type ConfigurationsExportId                = String
   type ContinuousExportDescriptions          = js.Array[ContinuousExportDescription]
   type ContinuousExportIds                   = js.Array[ConfigurationsExportId]
-  type ContinuousExportStatus                = String
-  type DataSource                            = String
   type DatabaseName                          = String
   type DescribeConfigurationsAttribute       = js.Dictionary[String]
   type DescribeConfigurationsAttributes      = js.Array[DescribeConfigurationsAttribute]
   type DescribeContinuousExportsMaxResults   = Int
   type DescribeImportTasksFilterList         = js.Array[ImportTaskFilter]
   type DescribeImportTasksMaxResults         = Int
-  type ExportDataFormat                      = String
   type ExportDataFormats                     = js.Array[ExportDataFormat]
   type ExportFilters                         = js.Array[ExportFilter]
   type ExportIds                             = js.Array[ConfigurationsExportId]
   type ExportRequestTime                     = js.Date
-  type ExportStatus                          = String
   type ExportStatusMessage                   = String
   type ExportsInfo                           = js.Array[ExportInfo]
   type FilterName                            = String
   type FilterValue                           = String
   type FilterValues                          = js.Array[FilterValue]
   type Filters                               = js.Array[Filter]
-  type ImportStatus                          = String
-  type ImportTaskFilterName                  = String
   type ImportTaskFilterValue                 = String
   type ImportTaskFilterValueList             = js.Array[ImportTaskFilterValue]
   type ImportTaskIdentifier                  = String
@@ -72,7 +63,6 @@ package object applicationdiscovery {
   type TagValue                              = String
   type TimeStamp                             = js.Date
   type ToDeleteIdentifierList                = js.Array[ImportTaskIdentifier]
-  type orderString                           = String
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
@@ -274,14 +264,15 @@ package applicationdiscovery {
       __obj.asInstanceOf[AgentNetworkInfo]
     }
   }
-
-  object AgentStatusEnum {
-    val HEALTHY     = "HEALTHY"
-    val UNHEALTHY   = "UNHEALTHY"
-    val RUNNING     = "RUNNING"
-    val UNKNOWN     = "UNKNOWN"
-    val BLACKLISTED = "BLACKLISTED"
-    val SHUTDOWN    = "SHUTDOWN"
+  @js.native
+  sealed trait AgentStatus extends js.Any
+  object AgentStatus extends js.Object {
+    val HEALTHY     = "HEALTHY".asInstanceOf[AgentStatus]
+    val UNHEALTHY   = "UNHEALTHY".asInstanceOf[AgentStatus]
+    val RUNNING     = "RUNNING".asInstanceOf[AgentStatus]
+    val UNKNOWN     = "UNKNOWN".asInstanceOf[AgentStatus]
+    val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
+    val SHUTDOWN    = "SHUTDOWN".asInstanceOf[AgentStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
   }
@@ -344,11 +335,12 @@ package applicationdiscovery {
       __obj.asInstanceOf[BatchDeleteImportDataError]
     }
   }
-
-  object BatchDeleteImportDataErrorCodeEnum {
-    val NOT_FOUND             = "NOT_FOUND"
-    val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR"
-    val OVER_LIMIT            = "OVER_LIMIT"
+  @js.native
+  sealed trait BatchDeleteImportDataErrorCode extends js.Any
+  object BatchDeleteImportDataErrorCode extends js.Object {
+    val NOT_FOUND             = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val OVER_LIMIT            = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
 
     val values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
   }
@@ -386,12 +378,13 @@ package applicationdiscovery {
       __obj.asInstanceOf[BatchDeleteImportDataResponse]
     }
   }
-
-  object ConfigurationItemTypeEnum {
-    val SERVER      = "SERVER"
-    val PROCESS     = "PROCESS"
-    val CONNECTION  = "CONNECTION"
-    val APPLICATION = "APPLICATION"
+  @js.native
+  sealed trait ConfigurationItemType extends js.Any
+  object ConfigurationItemType extends js.Object {
+    val SERVER      = "SERVER".asInstanceOf[ConfigurationItemType]
+    val PROCESS     = "PROCESS".asInstanceOf[ConfigurationItemType]
+    val CONNECTION  = "CONNECTION".asInstanceOf[ConfigurationItemType]
+    val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
 
     val values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
   }
@@ -466,15 +459,16 @@ package applicationdiscovery {
       __obj.asInstanceOf[ContinuousExportDescription]
     }
   }
-
-  object ContinuousExportStatusEnum {
-    val START_IN_PROGRESS = "START_IN_PROGRESS"
-    val START_FAILED      = "START_FAILED"
-    val ACTIVE            = "ACTIVE"
-    val ERROR             = "ERROR"
-    val STOP_IN_PROGRESS  = "STOP_IN_PROGRESS"
-    val STOP_FAILED       = "STOP_FAILED"
-    val INACTIVE          = "INACTIVE"
+  @js.native
+  sealed trait ContinuousExportStatus extends js.Any
+  object ContinuousExportStatus extends js.Object {
+    val START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
+    val START_FAILED      = "START_FAILED".asInstanceOf[ContinuousExportStatus]
+    val ACTIVE            = "ACTIVE".asInstanceOf[ContinuousExportStatus]
+    val ERROR             = "ERROR".asInstanceOf[ContinuousExportStatus]
+    val STOP_IN_PROGRESS  = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
+    val STOP_FAILED       = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
+    val INACTIVE          = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
     val values = js.Object.freeze(
       js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
@@ -629,9 +623,10 @@ package applicationdiscovery {
       __obj.asInstanceOf[CustomerConnectorInfo]
     }
   }
-
-  object DataSourceEnum {
-    val AGENT = "AGENT"
+  @js.native
+  sealed trait DataSource extends js.Any
+  object DataSource extends js.Object {
+    val AGENT = "AGENT".asInstanceOf[DataSource]
 
     val values = js.Object.freeze(js.Array(AGENT))
   }
@@ -1036,10 +1031,11 @@ package applicationdiscovery {
       __obj.asInstanceOf[ExportConfigurationsResponse]
     }
   }
-
-  object ExportDataFormatEnum {
-    val CSV     = "CSV"
-    val GRAPHML = "GRAPHML"
+  @js.native
+  sealed trait ExportDataFormat extends js.Any
+  object ExportDataFormat extends js.Object {
+    val CSV     = "CSV".asInstanceOf[ExportDataFormat]
+    val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
 
     val values = js.Object.freeze(js.Array(CSV, GRAPHML))
   }
@@ -1114,11 +1110,12 @@ package applicationdiscovery {
       __obj.asInstanceOf[ExportInfo]
     }
   }
-
-  object ExportStatusEnum {
-    val FAILED      = "FAILED"
-    val SUCCEEDED   = "SUCCEEDED"
-    val IN_PROGRESS = "IN_PROGRESS"
+  @js.native
+  sealed trait ExportStatus extends js.Any
+  object ExportStatus extends js.Object {
+    val FAILED      = "FAILED".asInstanceOf[ExportStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[ExportStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
   }
@@ -1196,19 +1193,20 @@ package applicationdiscovery {
       __obj.asInstanceOf[GetDiscoverySummaryResponse]
     }
   }
-
-  object ImportStatusEnum {
-    val IMPORT_IN_PROGRESS                  = "IMPORT_IN_PROGRESS"
-    val IMPORT_COMPLETE                     = "IMPORT_COMPLETE"
-    val IMPORT_COMPLETE_WITH_ERRORS         = "IMPORT_COMPLETE_WITH_ERRORS"
-    val IMPORT_FAILED                       = "IMPORT_FAILED"
-    val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED"
-    val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED"
-    val DELETE_IN_PROGRESS                  = "DELETE_IN_PROGRESS"
-    val DELETE_COMPLETE                     = "DELETE_COMPLETE"
-    val DELETE_FAILED                       = "DELETE_FAILED"
-    val DELETE_FAILED_LIMIT_EXCEEDED        = "DELETE_FAILED_LIMIT_EXCEEDED"
-    val INTERNAL_ERROR                      = "INTERNAL_ERROR"
+  @js.native
+  sealed trait ImportStatus extends js.Any
+  object ImportStatus extends js.Object {
+    val IMPORT_IN_PROGRESS                  = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE                     = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE_WITH_ERRORS         = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED                       = "IMPORT_FAILED".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val DELETE_IN_PROGRESS                  = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val DELETE_COMPLETE                     = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
+    val DELETE_FAILED                       = "DELETE_FAILED".asInstanceOf[ImportStatus]
+    val DELETE_FAILED_LIMIT_EXCEEDED        = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val INTERNAL_ERROR                      = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1307,11 +1305,12 @@ package applicationdiscovery {
       __obj.asInstanceOf[ImportTaskFilter]
     }
   }
-
-  object ImportTaskFilterNameEnum {
-    val IMPORT_TASK_ID = "IMPORT_TASK_ID"
-    val STATUS         = "STATUS"
-    val NAME           = "NAME"
+  @js.native
+  sealed trait ImportTaskFilterName extends js.Any
+  object ImportTaskFilterName extends js.Object {
+    val IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
+    val STATUS         = "STATUS".asInstanceOf[ImportTaskFilterName]
+    val NAME           = "NAME".asInstanceOf[ImportTaskFilterName]
 
     val values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
   }
@@ -1791,10 +1790,11 @@ package applicationdiscovery {
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
   }
-
-  object orderStringEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait orderString extends js.Any
+  object orderString extends js.Object {
+    val ASC  = "ASC".asInstanceOf[orderString]
+    val DESC = "DESC".asInstanceOf[orderString]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }

@@ -7,27 +7,23 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object qldb {
-  type Arn                    = String
-  type DeletionProtection     = Boolean
-  type Digest                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ExportStatus           = String
-  type IonText                = String
-  type JournalS3ExportList    = js.Array[JournalS3ExportDescription]
-  type LedgerList             = js.Array[LedgerSummary]
-  type LedgerName             = String
-  type LedgerState            = String
-  type MaxResults             = Int
-  type NextToken              = String
-  type PermissionsMode        = String
-  type S3Bucket               = String
-  type S3ObjectEncryptionType = String
-  type S3Prefix               = String
-  type TagKey                 = String
-  type TagKeyList             = js.Array[TagKey]
-  type TagValue               = String
-  type Tags                   = js.Dictionary[TagValue]
-  type Timestamp              = js.Date
-  type UniqueId               = String
+  type Arn                 = String
+  type DeletionProtection  = Boolean
+  type Digest              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type IonText             = String
+  type JournalS3ExportList = js.Array[JournalS3ExportDescription]
+  type LedgerList          = js.Array[LedgerSummary]
+  type LedgerName          = String
+  type MaxResults          = Int
+  type NextToken           = String
+  type S3Bucket            = String
+  type S3Prefix            = String
+  type TagKey              = String
+  type TagKeyList          = js.Array[TagKey]
+  type TagValue            = String
+  type Tags                = js.Dictionary[TagValue]
+  type Timestamp           = js.Date
+  type UniqueId            = String
 
   implicit final class QLDBOps(private val service: QLDB) extends AnyVal {
 
@@ -297,11 +293,12 @@ package qldb {
       __obj.asInstanceOf[ExportJournalToS3Response]
     }
   }
-
-  object ExportStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
-    val CANCELLED   = "CANCELLED"
+  @js.native
+  sealed trait ExportStatus extends js.Any
+  object ExportStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[ExportStatus]
+    val CANCELLED   = "CANCELLED".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, CANCELLED))
   }
@@ -479,12 +476,13 @@ package qldb {
       __obj.asInstanceOf[JournalS3ExportDescription]
     }
   }
-
-  object LedgerStateEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
-    val DELETED  = "DELETED"
+  @js.native
+  sealed trait LedgerState extends js.Any
+  object LedgerState extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[LedgerState]
+    val ACTIVE   = "ACTIVE".asInstanceOf[LedgerState]
+    val DELETING = "DELETING".asInstanceOf[LedgerState]
+    val DELETED  = "DELETED".asInstanceOf[LedgerState]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED))
   }
@@ -666,9 +664,10 @@ package qldb {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object PermissionsModeEnum {
-    val ALLOW_ALL = "ALLOW_ALL"
+  @js.native
+  sealed trait PermissionsMode extends js.Any
+  object PermissionsMode extends js.Object {
+    val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[PermissionsMode]
 
     val values = js.Object.freeze(js.Array(ALLOW_ALL))
   }
@@ -723,11 +722,12 @@ package qldb {
       __obj.asInstanceOf[S3ExportConfiguration]
     }
   }
-
-  object S3ObjectEncryptionTypeEnum {
-    val SSE_KMS       = "SSE_KMS"
-    val SSE_S3        = "SSE_S3"
-    val NO_ENCRYPTION = "NO_ENCRYPTION"
+  @js.native
+  sealed trait S3ObjectEncryptionType extends js.Any
+  object S3ObjectEncryptionType extends js.Object {
+    val SSE_KMS       = "SSE_KMS".asInstanceOf[S3ObjectEncryptionType]
+    val SSE_S3        = "SSE_S3".asInstanceOf[S3ObjectEncryptionType]
+    val NO_ENCRYPTION = "NO_ENCRYPTION".asInstanceOf[S3ObjectEncryptionType]
 
     val values = js.Object.freeze(js.Array(SSE_KMS, SSE_S3, NO_ENCRYPTION))
   }

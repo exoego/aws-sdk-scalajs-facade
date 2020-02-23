@@ -12,12 +12,9 @@ package object route53domains {
   type City                  = String
   type ContactName           = String
   type ContactNumber         = String
-  type ContactType           = String
-  type CountryCode           = String
   type CurrentExpiryYear     = Int
   type DNSSec                = String
   type DomainAuthCode        = String
-  type DomainAvailability    = String
   type DomainName            = String
   type DomainStatus          = String
   type DomainStatusList      = js.Array[DomainStatus]
@@ -27,7 +24,6 @@ package object route53domains {
   type Email                 = String
   type ErrorMessage          = String
   type ExtraParamList        = js.Array[ExtraParam]
-  type ExtraParamName        = String
   type ExtraParamValue       = String
   type FIAuthKey             = String
   type GlueIp                = String
@@ -37,13 +33,10 @@ package object route53domains {
   type LangCode              = String
   type NameserverList        = js.Array[Nameserver]
   type OperationId           = String
-  type OperationStatus       = String
   type OperationSummaryList  = js.Array[OperationSummary]
-  type OperationType         = String
   type PageMarker            = String
   type PageMaxItems          = Int
   type Price                 = Double
-  type ReachabilityStatus    = String
   type RegistrarName         = String
   type RegistrarUrl          = String
   type RegistrarWhoIsServer  = String
@@ -55,7 +48,6 @@ package object route53domains {
   type TagList               = js.Array[Tag]
   type TagValue              = String
   type Timestamp             = js.Date
-  type Transferable          = String
   type ZipCode               = String
 
   implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
@@ -347,247 +339,249 @@ package route53domains {
       __obj.asInstanceOf[ContactDetail]
     }
   }
-
-  object ContactTypeEnum {
-    val PERSON      = "PERSON"
-    val COMPANY     = "COMPANY"
-    val ASSOCIATION = "ASSOCIATION"
-    val PUBLIC_BODY = "PUBLIC_BODY"
-    val RESELLER    = "RESELLER"
+  @js.native
+  sealed trait ContactType extends js.Any
+  object ContactType extends js.Object {
+    val PERSON      = "PERSON".asInstanceOf[ContactType]
+    val COMPANY     = "COMPANY".asInstanceOf[ContactType]
+    val ASSOCIATION = "ASSOCIATION".asInstanceOf[ContactType]
+    val PUBLIC_BODY = "PUBLIC_BODY".asInstanceOf[ContactType]
+    val RESELLER    = "RESELLER".asInstanceOf[ContactType]
 
     val values = js.Object.freeze(js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER))
   }
-
-  object CountryCodeEnum {
-    val AD = "AD"
-    val AE = "AE"
-    val AF = "AF"
-    val AG = "AG"
-    val AI = "AI"
-    val AL = "AL"
-    val AM = "AM"
-    val AN = "AN"
-    val AO = "AO"
-    val AQ = "AQ"
-    val AR = "AR"
-    val AS = "AS"
-    val AT = "AT"
-    val AU = "AU"
-    val AW = "AW"
-    val AZ = "AZ"
-    val BA = "BA"
-    val BB = "BB"
-    val BD = "BD"
-    val BE = "BE"
-    val BF = "BF"
-    val BG = "BG"
-    val BH = "BH"
-    val BI = "BI"
-    val BJ = "BJ"
-    val BL = "BL"
-    val BM = "BM"
-    val BN = "BN"
-    val BO = "BO"
-    val BR = "BR"
-    val BS = "BS"
-    val BT = "BT"
-    val BW = "BW"
-    val BY = "BY"
-    val BZ = "BZ"
-    val CA = "CA"
-    val CC = "CC"
-    val CD = "CD"
-    val CF = "CF"
-    val CG = "CG"
-    val CH = "CH"
-    val CI = "CI"
-    val CK = "CK"
-    val CL = "CL"
-    val CM = "CM"
-    val CN = "CN"
-    val CO = "CO"
-    val CR = "CR"
-    val CU = "CU"
-    val CV = "CV"
-    val CX = "CX"
-    val CY = "CY"
-    val CZ = "CZ"
-    val DE = "DE"
-    val DJ = "DJ"
-    val DK = "DK"
-    val DM = "DM"
-    val DO = "DO"
-    val DZ = "DZ"
-    val EC = "EC"
-    val EE = "EE"
-    val EG = "EG"
-    val ER = "ER"
-    val ES = "ES"
-    val ET = "ET"
-    val FI = "FI"
-    val FJ = "FJ"
-    val FK = "FK"
-    val FM = "FM"
-    val FO = "FO"
-    val FR = "FR"
-    val GA = "GA"
-    val GB = "GB"
-    val GD = "GD"
-    val GE = "GE"
-    val GH = "GH"
-    val GI = "GI"
-    val GL = "GL"
-    val GM = "GM"
-    val GN = "GN"
-    val GQ = "GQ"
-    val GR = "GR"
-    val GT = "GT"
-    val GU = "GU"
-    val GW = "GW"
-    val GY = "GY"
-    val HK = "HK"
-    val HN = "HN"
-    val HR = "HR"
-    val HT = "HT"
-    val HU = "HU"
-    val ID = "ID"
-    val IE = "IE"
-    val IL = "IL"
-    val IM = "IM"
-    val IN = "IN"
-    val IQ = "IQ"
-    val IR = "IR"
-    val IS = "IS"
-    val IT = "IT"
-    val JM = "JM"
-    val JO = "JO"
-    val JP = "JP"
-    val KE = "KE"
-    val KG = "KG"
-    val KH = "KH"
-    val KI = "KI"
-    val KM = "KM"
-    val KN = "KN"
-    val KP = "KP"
-    val KR = "KR"
-    val KW = "KW"
-    val KY = "KY"
-    val KZ = "KZ"
-    val LA = "LA"
-    val LB = "LB"
-    val LC = "LC"
-    val LI = "LI"
-    val LK = "LK"
-    val LR = "LR"
-    val LS = "LS"
-    val LT = "LT"
-    val LU = "LU"
-    val LV = "LV"
-    val LY = "LY"
-    val MA = "MA"
-    val MC = "MC"
-    val MD = "MD"
-    val ME = "ME"
-    val MF = "MF"
-    val MG = "MG"
-    val MH = "MH"
-    val MK = "MK"
-    val ML = "ML"
-    val MM = "MM"
-    val MN = "MN"
-    val MO = "MO"
-    val MP = "MP"
-    val MR = "MR"
-    val MS = "MS"
-    val MT = "MT"
-    val MU = "MU"
-    val MV = "MV"
-    val MW = "MW"
-    val MX = "MX"
-    val MY = "MY"
-    val MZ = "MZ"
-    val NA = "NA"
-    val NC = "NC"
-    val NE = "NE"
-    val NG = "NG"
-    val NI = "NI"
-    val NL = "NL"
-    val NO = "NO"
-    val NP = "NP"
-    val NR = "NR"
-    val NU = "NU"
-    val NZ = "NZ"
-    val OM = "OM"
-    val PA = "PA"
-    val PE = "PE"
-    val PF = "PF"
-    val PG = "PG"
-    val PH = "PH"
-    val PK = "PK"
-    val PL = "PL"
-    val PM = "PM"
-    val PN = "PN"
-    val PR = "PR"
-    val PT = "PT"
-    val PW = "PW"
-    val PY = "PY"
-    val QA = "QA"
-    val RO = "RO"
-    val RS = "RS"
-    val RU = "RU"
-    val RW = "RW"
-    val SA = "SA"
-    val SB = "SB"
-    val SC = "SC"
-    val SD = "SD"
-    val SE = "SE"
-    val SG = "SG"
-    val SH = "SH"
-    val SI = "SI"
-    val SK = "SK"
-    val SL = "SL"
-    val SM = "SM"
-    val SN = "SN"
-    val SO = "SO"
-    val SR = "SR"
-    val ST = "ST"
-    val SV = "SV"
-    val SY = "SY"
-    val SZ = "SZ"
-    val TC = "TC"
-    val TD = "TD"
-    val TG = "TG"
-    val TH = "TH"
-    val TJ = "TJ"
-    val TK = "TK"
-    val TL = "TL"
-    val TM = "TM"
-    val TN = "TN"
-    val TO = "TO"
-    val TR = "TR"
-    val TT = "TT"
-    val TV = "TV"
-    val TW = "TW"
-    val TZ = "TZ"
-    val UA = "UA"
-    val UG = "UG"
-    val US = "US"
-    val UY = "UY"
-    val UZ = "UZ"
-    val VA = "VA"
-    val VC = "VC"
-    val VE = "VE"
-    val VG = "VG"
-    val VI = "VI"
-    val VN = "VN"
-    val VU = "VU"
-    val WF = "WF"
-    val WS = "WS"
-    val YE = "YE"
-    val YT = "YT"
-    val ZA = "ZA"
-    val ZM = "ZM"
-    val ZW = "ZW"
+  @js.native
+  sealed trait CountryCode extends js.Any
+  object CountryCode extends js.Object {
+    val AD = "AD".asInstanceOf[CountryCode]
+    val AE = "AE".asInstanceOf[CountryCode]
+    val AF = "AF".asInstanceOf[CountryCode]
+    val AG = "AG".asInstanceOf[CountryCode]
+    val AI = "AI".asInstanceOf[CountryCode]
+    val AL = "AL".asInstanceOf[CountryCode]
+    val AM = "AM".asInstanceOf[CountryCode]
+    val AN = "AN".asInstanceOf[CountryCode]
+    val AO = "AO".asInstanceOf[CountryCode]
+    val AQ = "AQ".asInstanceOf[CountryCode]
+    val AR = "AR".asInstanceOf[CountryCode]
+    val AS = "AS".asInstanceOf[CountryCode]
+    val AT = "AT".asInstanceOf[CountryCode]
+    val AU = "AU".asInstanceOf[CountryCode]
+    val AW = "AW".asInstanceOf[CountryCode]
+    val AZ = "AZ".asInstanceOf[CountryCode]
+    val BA = "BA".asInstanceOf[CountryCode]
+    val BB = "BB".asInstanceOf[CountryCode]
+    val BD = "BD".asInstanceOf[CountryCode]
+    val BE = "BE".asInstanceOf[CountryCode]
+    val BF = "BF".asInstanceOf[CountryCode]
+    val BG = "BG".asInstanceOf[CountryCode]
+    val BH = "BH".asInstanceOf[CountryCode]
+    val BI = "BI".asInstanceOf[CountryCode]
+    val BJ = "BJ".asInstanceOf[CountryCode]
+    val BL = "BL".asInstanceOf[CountryCode]
+    val BM = "BM".asInstanceOf[CountryCode]
+    val BN = "BN".asInstanceOf[CountryCode]
+    val BO = "BO".asInstanceOf[CountryCode]
+    val BR = "BR".asInstanceOf[CountryCode]
+    val BS = "BS".asInstanceOf[CountryCode]
+    val BT = "BT".asInstanceOf[CountryCode]
+    val BW = "BW".asInstanceOf[CountryCode]
+    val BY = "BY".asInstanceOf[CountryCode]
+    val BZ = "BZ".asInstanceOf[CountryCode]
+    val CA = "CA".asInstanceOf[CountryCode]
+    val CC = "CC".asInstanceOf[CountryCode]
+    val CD = "CD".asInstanceOf[CountryCode]
+    val CF = "CF".asInstanceOf[CountryCode]
+    val CG = "CG".asInstanceOf[CountryCode]
+    val CH = "CH".asInstanceOf[CountryCode]
+    val CI = "CI".asInstanceOf[CountryCode]
+    val CK = "CK".asInstanceOf[CountryCode]
+    val CL = "CL".asInstanceOf[CountryCode]
+    val CM = "CM".asInstanceOf[CountryCode]
+    val CN = "CN".asInstanceOf[CountryCode]
+    val CO = "CO".asInstanceOf[CountryCode]
+    val CR = "CR".asInstanceOf[CountryCode]
+    val CU = "CU".asInstanceOf[CountryCode]
+    val CV = "CV".asInstanceOf[CountryCode]
+    val CX = "CX".asInstanceOf[CountryCode]
+    val CY = "CY".asInstanceOf[CountryCode]
+    val CZ = "CZ".asInstanceOf[CountryCode]
+    val DE = "DE".asInstanceOf[CountryCode]
+    val DJ = "DJ".asInstanceOf[CountryCode]
+    val DK = "DK".asInstanceOf[CountryCode]
+    val DM = "DM".asInstanceOf[CountryCode]
+    val DO = "DO".asInstanceOf[CountryCode]
+    val DZ = "DZ".asInstanceOf[CountryCode]
+    val EC = "EC".asInstanceOf[CountryCode]
+    val EE = "EE".asInstanceOf[CountryCode]
+    val EG = "EG".asInstanceOf[CountryCode]
+    val ER = "ER".asInstanceOf[CountryCode]
+    val ES = "ES".asInstanceOf[CountryCode]
+    val ET = "ET".asInstanceOf[CountryCode]
+    val FI = "FI".asInstanceOf[CountryCode]
+    val FJ = "FJ".asInstanceOf[CountryCode]
+    val FK = "FK".asInstanceOf[CountryCode]
+    val FM = "FM".asInstanceOf[CountryCode]
+    val FO = "FO".asInstanceOf[CountryCode]
+    val FR = "FR".asInstanceOf[CountryCode]
+    val GA = "GA".asInstanceOf[CountryCode]
+    val GB = "GB".asInstanceOf[CountryCode]
+    val GD = "GD".asInstanceOf[CountryCode]
+    val GE = "GE".asInstanceOf[CountryCode]
+    val GH = "GH".asInstanceOf[CountryCode]
+    val GI = "GI".asInstanceOf[CountryCode]
+    val GL = "GL".asInstanceOf[CountryCode]
+    val GM = "GM".asInstanceOf[CountryCode]
+    val GN = "GN".asInstanceOf[CountryCode]
+    val GQ = "GQ".asInstanceOf[CountryCode]
+    val GR = "GR".asInstanceOf[CountryCode]
+    val GT = "GT".asInstanceOf[CountryCode]
+    val GU = "GU".asInstanceOf[CountryCode]
+    val GW = "GW".asInstanceOf[CountryCode]
+    val GY = "GY".asInstanceOf[CountryCode]
+    val HK = "HK".asInstanceOf[CountryCode]
+    val HN = "HN".asInstanceOf[CountryCode]
+    val HR = "HR".asInstanceOf[CountryCode]
+    val HT = "HT".asInstanceOf[CountryCode]
+    val HU = "HU".asInstanceOf[CountryCode]
+    val ID = "ID".asInstanceOf[CountryCode]
+    val IE = "IE".asInstanceOf[CountryCode]
+    val IL = "IL".asInstanceOf[CountryCode]
+    val IM = "IM".asInstanceOf[CountryCode]
+    val IN = "IN".asInstanceOf[CountryCode]
+    val IQ = "IQ".asInstanceOf[CountryCode]
+    val IR = "IR".asInstanceOf[CountryCode]
+    val IS = "IS".asInstanceOf[CountryCode]
+    val IT = "IT".asInstanceOf[CountryCode]
+    val JM = "JM".asInstanceOf[CountryCode]
+    val JO = "JO".asInstanceOf[CountryCode]
+    val JP = "JP".asInstanceOf[CountryCode]
+    val KE = "KE".asInstanceOf[CountryCode]
+    val KG = "KG".asInstanceOf[CountryCode]
+    val KH = "KH".asInstanceOf[CountryCode]
+    val KI = "KI".asInstanceOf[CountryCode]
+    val KM = "KM".asInstanceOf[CountryCode]
+    val KN = "KN".asInstanceOf[CountryCode]
+    val KP = "KP".asInstanceOf[CountryCode]
+    val KR = "KR".asInstanceOf[CountryCode]
+    val KW = "KW".asInstanceOf[CountryCode]
+    val KY = "KY".asInstanceOf[CountryCode]
+    val KZ = "KZ".asInstanceOf[CountryCode]
+    val LA = "LA".asInstanceOf[CountryCode]
+    val LB = "LB".asInstanceOf[CountryCode]
+    val LC = "LC".asInstanceOf[CountryCode]
+    val LI = "LI".asInstanceOf[CountryCode]
+    val LK = "LK".asInstanceOf[CountryCode]
+    val LR = "LR".asInstanceOf[CountryCode]
+    val LS = "LS".asInstanceOf[CountryCode]
+    val LT = "LT".asInstanceOf[CountryCode]
+    val LU = "LU".asInstanceOf[CountryCode]
+    val LV = "LV".asInstanceOf[CountryCode]
+    val LY = "LY".asInstanceOf[CountryCode]
+    val MA = "MA".asInstanceOf[CountryCode]
+    val MC = "MC".asInstanceOf[CountryCode]
+    val MD = "MD".asInstanceOf[CountryCode]
+    val ME = "ME".asInstanceOf[CountryCode]
+    val MF = "MF".asInstanceOf[CountryCode]
+    val MG = "MG".asInstanceOf[CountryCode]
+    val MH = "MH".asInstanceOf[CountryCode]
+    val MK = "MK".asInstanceOf[CountryCode]
+    val ML = "ML".asInstanceOf[CountryCode]
+    val MM = "MM".asInstanceOf[CountryCode]
+    val MN = "MN".asInstanceOf[CountryCode]
+    val MO = "MO".asInstanceOf[CountryCode]
+    val MP = "MP".asInstanceOf[CountryCode]
+    val MR = "MR".asInstanceOf[CountryCode]
+    val MS = "MS".asInstanceOf[CountryCode]
+    val MT = "MT".asInstanceOf[CountryCode]
+    val MU = "MU".asInstanceOf[CountryCode]
+    val MV = "MV".asInstanceOf[CountryCode]
+    val MW = "MW".asInstanceOf[CountryCode]
+    val MX = "MX".asInstanceOf[CountryCode]
+    val MY = "MY".asInstanceOf[CountryCode]
+    val MZ = "MZ".asInstanceOf[CountryCode]
+    val NA = "NA".asInstanceOf[CountryCode]
+    val NC = "NC".asInstanceOf[CountryCode]
+    val NE = "NE".asInstanceOf[CountryCode]
+    val NG = "NG".asInstanceOf[CountryCode]
+    val NI = "NI".asInstanceOf[CountryCode]
+    val NL = "NL".asInstanceOf[CountryCode]
+    val NO = "NO".asInstanceOf[CountryCode]
+    val NP = "NP".asInstanceOf[CountryCode]
+    val NR = "NR".asInstanceOf[CountryCode]
+    val NU = "NU".asInstanceOf[CountryCode]
+    val NZ = "NZ".asInstanceOf[CountryCode]
+    val OM = "OM".asInstanceOf[CountryCode]
+    val PA = "PA".asInstanceOf[CountryCode]
+    val PE = "PE".asInstanceOf[CountryCode]
+    val PF = "PF".asInstanceOf[CountryCode]
+    val PG = "PG".asInstanceOf[CountryCode]
+    val PH = "PH".asInstanceOf[CountryCode]
+    val PK = "PK".asInstanceOf[CountryCode]
+    val PL = "PL".asInstanceOf[CountryCode]
+    val PM = "PM".asInstanceOf[CountryCode]
+    val PN = "PN".asInstanceOf[CountryCode]
+    val PR = "PR".asInstanceOf[CountryCode]
+    val PT = "PT".asInstanceOf[CountryCode]
+    val PW = "PW".asInstanceOf[CountryCode]
+    val PY = "PY".asInstanceOf[CountryCode]
+    val QA = "QA".asInstanceOf[CountryCode]
+    val RO = "RO".asInstanceOf[CountryCode]
+    val RS = "RS".asInstanceOf[CountryCode]
+    val RU = "RU".asInstanceOf[CountryCode]
+    val RW = "RW".asInstanceOf[CountryCode]
+    val SA = "SA".asInstanceOf[CountryCode]
+    val SB = "SB".asInstanceOf[CountryCode]
+    val SC = "SC".asInstanceOf[CountryCode]
+    val SD = "SD".asInstanceOf[CountryCode]
+    val SE = "SE".asInstanceOf[CountryCode]
+    val SG = "SG".asInstanceOf[CountryCode]
+    val SH = "SH".asInstanceOf[CountryCode]
+    val SI = "SI".asInstanceOf[CountryCode]
+    val SK = "SK".asInstanceOf[CountryCode]
+    val SL = "SL".asInstanceOf[CountryCode]
+    val SM = "SM".asInstanceOf[CountryCode]
+    val SN = "SN".asInstanceOf[CountryCode]
+    val SO = "SO".asInstanceOf[CountryCode]
+    val SR = "SR".asInstanceOf[CountryCode]
+    val ST = "ST".asInstanceOf[CountryCode]
+    val SV = "SV".asInstanceOf[CountryCode]
+    val SY = "SY".asInstanceOf[CountryCode]
+    val SZ = "SZ".asInstanceOf[CountryCode]
+    val TC = "TC".asInstanceOf[CountryCode]
+    val TD = "TD".asInstanceOf[CountryCode]
+    val TG = "TG".asInstanceOf[CountryCode]
+    val TH = "TH".asInstanceOf[CountryCode]
+    val TJ = "TJ".asInstanceOf[CountryCode]
+    val TK = "TK".asInstanceOf[CountryCode]
+    val TL = "TL".asInstanceOf[CountryCode]
+    val TM = "TM".asInstanceOf[CountryCode]
+    val TN = "TN".asInstanceOf[CountryCode]
+    val TO = "TO".asInstanceOf[CountryCode]
+    val TR = "TR".asInstanceOf[CountryCode]
+    val TT = "TT".asInstanceOf[CountryCode]
+    val TV = "TV".asInstanceOf[CountryCode]
+    val TW = "TW".asInstanceOf[CountryCode]
+    val TZ = "TZ".asInstanceOf[CountryCode]
+    val UA = "UA".asInstanceOf[CountryCode]
+    val UG = "UG".asInstanceOf[CountryCode]
+    val US = "US".asInstanceOf[CountryCode]
+    val UY = "UY".asInstanceOf[CountryCode]
+    val UZ = "UZ".asInstanceOf[CountryCode]
+    val VA = "VA".asInstanceOf[CountryCode]
+    val VC = "VC".asInstanceOf[CountryCode]
+    val VE = "VE".asInstanceOf[CountryCode]
+    val VG = "VG".asInstanceOf[CountryCode]
+    val VI = "VI".asInstanceOf[CountryCode]
+    val VN = "VN".asInstanceOf[CountryCode]
+    val VU = "VU".asInstanceOf[CountryCode]
+    val WF = "WF".asInstanceOf[CountryCode]
+    val WS = "WS".asInstanceOf[CountryCode]
+    val YE = "YE".asInstanceOf[CountryCode]
+    val YT = "YT".asInstanceOf[CountryCode]
+    val ZA = "ZA".asInstanceOf[CountryCode]
+    val ZM = "ZM".asInstanceOf[CountryCode]
+    val ZW = "ZW".asInstanceOf[CountryCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -933,16 +927,17 @@ package route53domains {
       __obj.asInstanceOf[DisableDomainTransferLockResponse]
     }
   }
-
-  object DomainAvailabilityEnum {
-    val AVAILABLE              = "AVAILABLE"
-    val AVAILABLE_RESERVED     = "AVAILABLE_RESERVED"
-    val AVAILABLE_PREORDER     = "AVAILABLE_PREORDER"
-    val UNAVAILABLE            = "UNAVAILABLE"
-    val UNAVAILABLE_PREMIUM    = "UNAVAILABLE_PREMIUM"
-    val UNAVAILABLE_RESTRICTED = "UNAVAILABLE_RESTRICTED"
-    val RESERVED               = "RESERVED"
-    val DONT_KNOW              = "DONT_KNOW"
+  @js.native
+  sealed trait DomainAvailability extends js.Any
+  object DomainAvailability extends js.Object {
+    val AVAILABLE              = "AVAILABLE".asInstanceOf[DomainAvailability]
+    val AVAILABLE_RESERVED     = "AVAILABLE_RESERVED".asInstanceOf[DomainAvailability]
+    val AVAILABLE_PREORDER     = "AVAILABLE_PREORDER".asInstanceOf[DomainAvailability]
+    val UNAVAILABLE            = "UNAVAILABLE".asInstanceOf[DomainAvailability]
+    val UNAVAILABLE_PREMIUM    = "UNAVAILABLE_PREMIUM".asInstanceOf[DomainAvailability]
+    val UNAVAILABLE_RESTRICTED = "UNAVAILABLE_RESTRICTED".asInstanceOf[DomainAvailability]
+    val RESERVED               = "RESERVED".asInstanceOf[DomainAvailability]
+    val DONT_KNOW              = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1141,34 +1136,35 @@ package route53domains {
       __obj.asInstanceOf[ExtraParam]
     }
   }
-
-  object ExtraParamNameEnum {
-    val DUNS_NUMBER               = "DUNS_NUMBER"
-    val BRAND_NUMBER              = "BRAND_NUMBER"
-    val BIRTH_DEPARTMENT          = "BIRTH_DEPARTMENT"
-    val BIRTH_DATE_IN_YYYY_MM_DD  = "BIRTH_DATE_IN_YYYY_MM_DD"
-    val BIRTH_COUNTRY             = "BIRTH_COUNTRY"
-    val BIRTH_CITY                = "BIRTH_CITY"
-    val DOCUMENT_NUMBER           = "DOCUMENT_NUMBER"
-    val AU_ID_NUMBER              = "AU_ID_NUMBER"
-    val AU_ID_TYPE                = "AU_ID_TYPE"
-    val CA_LEGAL_TYPE             = "CA_LEGAL_TYPE"
-    val CA_BUSINESS_ENTITY_TYPE   = "CA_BUSINESS_ENTITY_TYPE"
-    val ES_IDENTIFICATION         = "ES_IDENTIFICATION"
-    val ES_IDENTIFICATION_TYPE    = "ES_IDENTIFICATION_TYPE"
-    val ES_LEGAL_FORM             = "ES_LEGAL_FORM"
-    val FI_BUSINESS_NUMBER        = "FI_BUSINESS_NUMBER"
-    val FI_ID_NUMBER              = "FI_ID_NUMBER"
-    val FI_NATIONALITY            = "FI_NATIONALITY"
-    val FI_ORGANIZATION_TYPE      = "FI_ORGANIZATION_TYPE"
-    val IT_PIN                    = "IT_PIN"
-    val IT_REGISTRANT_ENTITY_TYPE = "IT_REGISTRANT_ENTITY_TYPE"
-    val RU_PASSPORT_DATA          = "RU_PASSPORT_DATA"
-    val SE_ID_NUMBER              = "SE_ID_NUMBER"
-    val SG_ID_NUMBER              = "SG_ID_NUMBER"
-    val VAT_NUMBER                = "VAT_NUMBER"
-    val UK_CONTACT_TYPE           = "UK_CONTACT_TYPE"
-    val UK_COMPANY_NUMBER         = "UK_COMPANY_NUMBER"
+  @js.native
+  sealed trait ExtraParamName extends js.Any
+  object ExtraParamName extends js.Object {
+    val DUNS_NUMBER               = "DUNS_NUMBER".asInstanceOf[ExtraParamName]
+    val BRAND_NUMBER              = "BRAND_NUMBER".asInstanceOf[ExtraParamName]
+    val BIRTH_DEPARTMENT          = "BIRTH_DEPARTMENT".asInstanceOf[ExtraParamName]
+    val BIRTH_DATE_IN_YYYY_MM_DD  = "BIRTH_DATE_IN_YYYY_MM_DD".asInstanceOf[ExtraParamName]
+    val BIRTH_COUNTRY             = "BIRTH_COUNTRY".asInstanceOf[ExtraParamName]
+    val BIRTH_CITY                = "BIRTH_CITY".asInstanceOf[ExtraParamName]
+    val DOCUMENT_NUMBER           = "DOCUMENT_NUMBER".asInstanceOf[ExtraParamName]
+    val AU_ID_NUMBER              = "AU_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val AU_ID_TYPE                = "AU_ID_TYPE".asInstanceOf[ExtraParamName]
+    val CA_LEGAL_TYPE             = "CA_LEGAL_TYPE".asInstanceOf[ExtraParamName]
+    val CA_BUSINESS_ENTITY_TYPE   = "CA_BUSINESS_ENTITY_TYPE".asInstanceOf[ExtraParamName]
+    val ES_IDENTIFICATION         = "ES_IDENTIFICATION".asInstanceOf[ExtraParamName]
+    val ES_IDENTIFICATION_TYPE    = "ES_IDENTIFICATION_TYPE".asInstanceOf[ExtraParamName]
+    val ES_LEGAL_FORM             = "ES_LEGAL_FORM".asInstanceOf[ExtraParamName]
+    val FI_BUSINESS_NUMBER        = "FI_BUSINESS_NUMBER".asInstanceOf[ExtraParamName]
+    val FI_ID_NUMBER              = "FI_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val FI_NATIONALITY            = "FI_NATIONALITY".asInstanceOf[ExtraParamName]
+    val FI_ORGANIZATION_TYPE      = "FI_ORGANIZATION_TYPE".asInstanceOf[ExtraParamName]
+    val IT_PIN                    = "IT_PIN".asInstanceOf[ExtraParamName]
+    val IT_REGISTRANT_ENTITY_TYPE = "IT_REGISTRANT_ENTITY_TYPE".asInstanceOf[ExtraParamName]
+    val RU_PASSPORT_DATA          = "RU_PASSPORT_DATA".asInstanceOf[ExtraParamName]
+    val SE_ID_NUMBER              = "SE_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val SG_ID_NUMBER              = "SG_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val VAT_NUMBER                = "VAT_NUMBER".asInstanceOf[ExtraParamName]
+    val UK_CONTACT_TYPE           = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
+    val UK_COMPANY_NUMBER         = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1610,13 +1606,14 @@ package route53domains {
   trait OperationLimitExceededException extends js.Object {
     val message: ErrorMessage
   }
-
-  object OperationStatusEnum {
-    val SUBMITTED   = "SUBMITTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val ERROR       = "ERROR"
-    val SUCCESSFUL  = "SUCCESSFUL"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait OperationStatus extends js.Any
+  object OperationStatus extends js.Object {
+    val SUBMITTED   = "SUBMITTED".asInstanceOf[OperationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
+    val ERROR       = "ERROR".asInstanceOf[OperationStatus]
+    val SUCCESSFUL  = "SUCCESSFUL".asInstanceOf[OperationStatus]
+    val FAILED      = "FAILED".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED))
   }
@@ -1650,24 +1647,25 @@ package route53domains {
       __obj.asInstanceOf[OperationSummary]
     }
   }
-
-  object OperationTypeEnum {
-    val REGISTER_DOMAIN           = "REGISTER_DOMAIN"
-    val DELETE_DOMAIN             = "DELETE_DOMAIN"
-    val TRANSFER_IN_DOMAIN        = "TRANSFER_IN_DOMAIN"
-    val UPDATE_DOMAIN_CONTACT     = "UPDATE_DOMAIN_CONTACT"
-    val UPDATE_NAMESERVER         = "UPDATE_NAMESERVER"
-    val CHANGE_PRIVACY_PROTECTION = "CHANGE_PRIVACY_PROTECTION"
-    val DOMAIN_LOCK               = "DOMAIN_LOCK"
-    val ENABLE_AUTORENEW          = "ENABLE_AUTORENEW"
-    val DISABLE_AUTORENEW         = "DISABLE_AUTORENEW"
-    val ADD_DNSSEC                = "ADD_DNSSEC"
-    val REMOVE_DNSSEC             = "REMOVE_DNSSEC"
-    val EXPIRE_DOMAIN             = "EXPIRE_DOMAIN"
-    val TRANSFER_OUT_DOMAIN       = "TRANSFER_OUT_DOMAIN"
-    val CHANGE_DOMAIN_OWNER       = "CHANGE_DOMAIN_OWNER"
-    val RENEW_DOMAIN              = "RENEW_DOMAIN"
-    val PUSH_DOMAIN               = "PUSH_DOMAIN"
+  @js.native
+  sealed trait OperationType extends js.Any
+  object OperationType extends js.Object {
+    val REGISTER_DOMAIN           = "REGISTER_DOMAIN".asInstanceOf[OperationType]
+    val DELETE_DOMAIN             = "DELETE_DOMAIN".asInstanceOf[OperationType]
+    val TRANSFER_IN_DOMAIN        = "TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
+    val UPDATE_DOMAIN_CONTACT     = "UPDATE_DOMAIN_CONTACT".asInstanceOf[OperationType]
+    val UPDATE_NAMESERVER         = "UPDATE_NAMESERVER".asInstanceOf[OperationType]
+    val CHANGE_PRIVACY_PROTECTION = "CHANGE_PRIVACY_PROTECTION".asInstanceOf[OperationType]
+    val DOMAIN_LOCK               = "DOMAIN_LOCK".asInstanceOf[OperationType]
+    val ENABLE_AUTORENEW          = "ENABLE_AUTORENEW".asInstanceOf[OperationType]
+    val DISABLE_AUTORENEW         = "DISABLE_AUTORENEW".asInstanceOf[OperationType]
+    val ADD_DNSSEC                = "ADD_DNSSEC".asInstanceOf[OperationType]
+    val REMOVE_DNSSEC             = "REMOVE_DNSSEC".asInstanceOf[OperationType]
+    val EXPIRE_DOMAIN             = "EXPIRE_DOMAIN".asInstanceOf[OperationType]
+    val TRANSFER_OUT_DOMAIN       = "TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
+    val CHANGE_DOMAIN_OWNER       = "CHANGE_DOMAIN_OWNER".asInstanceOf[OperationType]
+    val RENEW_DOMAIN              = "RENEW_DOMAIN".asInstanceOf[OperationType]
+    val PUSH_DOMAIN               = "PUSH_DOMAIN".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1690,11 +1688,12 @@ package route53domains {
       )
     )
   }
-
-  object ReachabilityStatusEnum {
-    val PENDING = "PENDING"
-    val DONE    = "DONE"
-    val EXPIRED = "EXPIRED"
+  @js.native
+  sealed trait ReachabilityStatus extends js.Any
+  object ReachabilityStatus extends js.Object {
+    val PENDING = "PENDING".asInstanceOf[ReachabilityStatus]
+    val DONE    = "DONE".asInstanceOf[ReachabilityStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, DONE, EXPIRED))
   }
@@ -2020,10 +2019,12 @@ package route53domains {
     *  </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
     *  </dd> </dl>
     */
-  object TransferableEnum {
-    val TRANSFERABLE   = "TRANSFERABLE"
-    val UNTRANSFERABLE = "UNTRANSFERABLE"
-    val DONT_KNOW      = "DONT_KNOW"
+  @js.native
+  sealed trait Transferable extends js.Any
+  object Transferable extends js.Object {
+    val TRANSFERABLE   = "TRANSFERABLE".asInstanceOf[Transferable]
+    val UNTRANSFERABLE = "UNTRANSFERABLE".asInstanceOf[Transferable]
+    val DONT_KNOW      = "DONT_KNOW".asInstanceOf[Transferable]
 
     val values = js.Object.freeze(js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW))
   }

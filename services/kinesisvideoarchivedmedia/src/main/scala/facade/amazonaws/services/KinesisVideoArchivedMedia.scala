@@ -7,28 +7,18 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisvideoarchivedmedia {
-  type ContainerFormat              = String
-  type ContentType                  = String
-  type DASHDisplayFragmentNumber    = String
-  type DASHDisplayFragmentTimestamp = String
-  type DASHFragmentSelectorType     = String
-  type DASHPlaybackMode             = String
-  type DASHStreamingSessionURL      = String
-  type Expires                      = Int
-  type FragmentList                 = js.Array[Fragment]
-  type FragmentNumberList           = js.Array[FragmentNumberString]
-  type FragmentNumberString         = String
-  type FragmentSelectorType         = String
-  type HLSDiscontinuityMode         = String
-  type HLSDisplayFragmentTimestamp  = String
-  type HLSFragmentSelectorType      = String
-  type HLSPlaybackMode              = String
-  type HLSStreamingSessionURL       = String
-  type PageLimit                    = Double
-  type Payload                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ResourceARN                  = String
-  type StreamName                   = String
-  type Timestamp                    = js.Date
+  type ContentType             = String
+  type DASHStreamingSessionURL = String
+  type Expires                 = Int
+  type FragmentList            = js.Array[Fragment]
+  type FragmentNumberList      = js.Array[FragmentNumberString]
+  type FragmentNumberString    = String
+  type HLSStreamingSessionURL  = String
+  type PageLimit               = Double
+  type Payload                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ResourceARN             = String
+  type StreamName              = String
+  type Timestamp               = js.Date
 
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
@@ -60,24 +50,27 @@ package kinesisvideoarchivedmedia {
       js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
   }
-
-  object ContainerFormatEnum {
-    val FRAGMENTED_MP4 = "FRAGMENTED_MP4"
-    val MPEG_TS        = "MPEG_TS"
+  @js.native
+  sealed trait ContainerFormat extends js.Any
+  object ContainerFormat extends js.Object {
+    val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
+    val MPEG_TS        = "MPEG_TS".asInstanceOf[ContainerFormat]
 
     val values = js.Object.freeze(js.Array(FRAGMENTED_MP4, MPEG_TS))
   }
-
-  object DASHDisplayFragmentNumberEnum {
-    val ALWAYS = "ALWAYS"
-    val NEVER  = "NEVER"
+  @js.native
+  sealed trait DASHDisplayFragmentNumber extends js.Any
+  object DASHDisplayFragmentNumber extends js.Object {
+    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
+    val NEVER  = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
-
-  object DASHDisplayFragmentTimestampEnum {
-    val ALWAYS = "ALWAYS"
-    val NEVER  = "NEVER"
+  @js.native
+  sealed trait DASHDisplayFragmentTimestamp extends js.Any
+  object DASHDisplayFragmentTimestamp extends js.Object {
+    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
+    val NEVER  = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -103,18 +96,20 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[DASHFragmentSelector]
     }
   }
-
-  object DASHFragmentSelectorTypeEnum {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
-    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
+  @js.native
+  sealed trait DASHFragmentSelectorType extends js.Any
+  object DASHFragmentSelectorType extends js.Object {
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
+    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
 
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
-
-  object DASHPlaybackModeEnum {
-    val LIVE        = "LIVE"
-    val LIVE_REPLAY = "LIVE_REPLAY"
-    val ON_DEMAND   = "ON_DEMAND"
+  @js.native
+  sealed trait DASHPlaybackMode extends js.Any
+  object DASHPlaybackMode extends js.Object {
+    val LIVE        = "LIVE".asInstanceOf[DASHPlaybackMode]
+    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
+    val ON_DEMAND   = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
 
     val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
@@ -206,10 +201,11 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[FragmentSelector]
     }
   }
-
-  object FragmentSelectorTypeEnum {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
-    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
+  @js.native
+  sealed trait FragmentSelectorType extends js.Any
+  object FragmentSelectorType extends js.Object {
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
+    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
 
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
@@ -366,18 +362,20 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[GetMediaForFragmentListOutput]
     }
   }
-
-  object HLSDiscontinuityModeEnum {
-    val ALWAYS           = "ALWAYS"
-    val NEVER            = "NEVER"
-    val ON_DISCONTINUITY = "ON_DISCONTINUITY"
+  @js.native
+  sealed trait HLSDiscontinuityMode extends js.Any
+  object HLSDiscontinuityMode extends js.Object {
+    val ALWAYS           = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
+    val NEVER            = "NEVER".asInstanceOf[HLSDiscontinuityMode]
+    val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER, ON_DISCONTINUITY))
   }
-
-  object HLSDisplayFragmentTimestampEnum {
-    val ALWAYS = "ALWAYS"
-    val NEVER  = "NEVER"
+  @js.native
+  sealed trait HLSDisplayFragmentTimestamp extends js.Any
+  object HLSDisplayFragmentTimestamp extends js.Object {
+    val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
+    val NEVER  = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -403,18 +401,20 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[HLSFragmentSelector]
     }
   }
-
-  object HLSFragmentSelectorTypeEnum {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
-    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
+  @js.native
+  sealed trait HLSFragmentSelectorType extends js.Any
+  object HLSFragmentSelectorType extends js.Object {
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
+    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
 
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
-
-  object HLSPlaybackModeEnum {
-    val LIVE        = "LIVE"
-    val LIVE_REPLAY = "LIVE_REPLAY"
-    val ON_DEMAND   = "ON_DEMAND"
+  @js.native
+  sealed trait HLSPlaybackMode extends js.Any
+  object HLSPlaybackMode extends js.Object {
+    val LIVE        = "LIVE".asInstanceOf[HLSPlaybackMode]
+    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
+    val ON_DEMAND   = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
 
     val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }

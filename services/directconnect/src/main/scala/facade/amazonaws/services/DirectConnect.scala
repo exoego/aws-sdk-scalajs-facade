@@ -8,82 +8,68 @@ import facade.amazonaws._
 
 package object directconnect {
   type ASN                 = Int
-  type AddressFamily       = String
   type AmazonAddress       = String
   type AssociatedGatewayId = String
   type AvailablePortSpeeds = js.Array[PortSpeed]
   @deprecated("Deprecated in AWS SDK", "forever")
-  type AwsDevice                                    = String
-  type AwsDeviceV2                                  = String
-  type BGPAuthKey                                   = String
-  type BGPPeerId                                    = String
-  type BGPPeerList                                  = js.Array[BGPPeer]
-  type BGPPeerState                                 = String
-  type BGPStatus                                    = String
-  type Bandwidth                                    = String
-  type BooleanFlag                                  = Boolean
-  type CIDR                                         = String
-  type ConnectionId                                 = String
-  type ConnectionList                               = js.Array[Connection]
-  type ConnectionName                               = String
-  type ConnectionState                              = String
-  type Count                                        = Int
-  type CustomerAddress                              = String
-  type DirectConnectGatewayAssociationId            = String
-  type DirectConnectGatewayAssociationList          = js.Array[DirectConnectGatewayAssociation]
-  type DirectConnectGatewayAssociationProposalId    = String
-  type DirectConnectGatewayAssociationProposalList  = js.Array[DirectConnectGatewayAssociationProposal]
-  type DirectConnectGatewayAssociationProposalState = String
-  type DirectConnectGatewayAssociationState         = String
-  type DirectConnectGatewayAttachmentList           = js.Array[DirectConnectGatewayAttachment]
-  type DirectConnectGatewayAttachmentState          = String
-  type DirectConnectGatewayAttachmentType           = String
-  type DirectConnectGatewayId                       = String
-  type DirectConnectGatewayList                     = js.Array[DirectConnectGateway]
-  type DirectConnectGatewayName                     = String
-  type DirectConnectGatewayState                    = String
-  type GatewayIdToAssociate                         = String
-  type GatewayIdentifier                            = String
-  type GatewayType                                  = String
-  type HasLogicalRedundancy                         = String
-  type InterconnectId                               = String
-  type InterconnectList                             = js.Array[Interconnect]
-  type InterconnectName                             = String
-  type InterconnectState                            = String
-  type JumboFrameCapable                            = Boolean
-  type LagId                                        = String
-  type LagList                                      = js.Array[Lag]
-  type LagName                                      = String
-  type LagState                                     = String
-  type LoaContent                                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type LoaContentType                               = String
-  type LoaIssueTime                                 = js.Date
-  type LocationCode                                 = String
-  type LocationList                                 = js.Array[Location]
-  type LocationName                                 = String
-  type LongAsn                                      = Double
-  type MTU                                          = Int
-  type MaxResultSetSize                             = Int
-  type OwnerAccount                                 = String
-  type PaginationToken                              = String
-  type PartnerName                                  = String
-  type PortSpeed                                    = String
-  type ProviderList                                 = js.Array[ProviderName]
-  type ProviderName                                 = String
-  type Region                                       = String
-  type ResourceArn                                  = String
-  type ResourceArnList                              = js.Array[ResourceArn]
-  type ResourceTagList                              = js.Array[ResourceTag]
-  type RouteFilterPrefixList                        = js.Array[RouteFilterPrefix]
-  type RouterConfig                                 = String
-  type StateChangeError                             = String
-  type TagKey                                       = String
-  type TagKeyList                                   = js.Array[TagKey]
-  type TagList                                      = js.Array[Tag]
-  type TagValue                                     = String
-  type VLAN                                         = Int
-  type VirtualGatewayId                             = String
-  type VirtualGatewayList                           = js.Array[VirtualGateway]
+  type AwsDevice                                   = String
+  type AwsDeviceV2                                 = String
+  type BGPAuthKey                                  = String
+  type BGPPeerId                                   = String
+  type BGPPeerList                                 = js.Array[BGPPeer]
+  type Bandwidth                                   = String
+  type BooleanFlag                                 = Boolean
+  type CIDR                                        = String
+  type ConnectionId                                = String
+  type ConnectionList                              = js.Array[Connection]
+  type ConnectionName                              = String
+  type Count                                       = Int
+  type CustomerAddress                             = String
+  type DirectConnectGatewayAssociationId           = String
+  type DirectConnectGatewayAssociationList         = js.Array[DirectConnectGatewayAssociation]
+  type DirectConnectGatewayAssociationProposalId   = String
+  type DirectConnectGatewayAssociationProposalList = js.Array[DirectConnectGatewayAssociationProposal]
+  type DirectConnectGatewayAttachmentList          = js.Array[DirectConnectGatewayAttachment]
+  type DirectConnectGatewayId                      = String
+  type DirectConnectGatewayList                    = js.Array[DirectConnectGateway]
+  type DirectConnectGatewayName                    = String
+  type GatewayIdToAssociate                        = String
+  type GatewayIdentifier                           = String
+  type InterconnectId                              = String
+  type InterconnectList                            = js.Array[Interconnect]
+  type InterconnectName                            = String
+  type JumboFrameCapable                           = Boolean
+  type LagId                                       = String
+  type LagList                                     = js.Array[Lag]
+  type LagName                                     = String
+  type LoaContent                                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type LoaIssueTime                                = js.Date
+  type LocationCode                                = String
+  type LocationList                                = js.Array[Location]
+  type LocationName                                = String
+  type LongAsn                                     = Double
+  type MTU                                         = Int
+  type MaxResultSetSize                            = Int
+  type OwnerAccount                                = String
+  type PaginationToken                             = String
+  type PartnerName                                 = String
+  type PortSpeed                                   = String
+  type ProviderList                                = js.Array[ProviderName]
+  type ProviderName                                = String
+  type Region                                      = String
+  type ResourceArn                                 = String
+  type ResourceArnList                             = js.Array[ResourceArn]
+  type ResourceTagList                             = js.Array[ResourceTag]
+  type RouteFilterPrefixList                       = js.Array[RouteFilterPrefix]
+  type RouterConfig                                = String
+  type StateChangeError                            = String
+  type TagKey                                      = String
+  type TagKeyList                                  = js.Array[TagKey]
+  type TagList                                     = js.Array[Tag]
+  type TagValue                                    = String
+  type VLAN                                        = Int
+  type VirtualGatewayId                            = String
+  type VirtualGatewayList                          = js.Array[VirtualGateway]
   @deprecated("Deprecated in AWS SDK", "forever")
   type VirtualGatewayRegion   = String
   type VirtualGatewayState    = String
@@ -91,7 +77,6 @@ package object directconnect {
   type VirtualInterfaceList   = js.Array[VirtualInterface]
   type VirtualInterfaceName   = String
   type VirtualInterfaceRegion = String
-  type VirtualInterfaceState  = String
   type VirtualInterfaceType   = String
 
   implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
@@ -379,10 +364,11 @@ package directconnect {
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
     }
   }
-
-  object AddressFamilyEnum {
-    val ipv4 = "ipv4"
-    val ipv6 = "ipv6"
+  @js.native
+  sealed trait AddressFamily extends js.Any
+  object AddressFamily extends js.Object {
+    val ipv4 = "ipv4".asInstanceOf[AddressFamily]
+    val ipv6 = "ipv6".asInstanceOf[AddressFamily]
 
     val values = js.Object.freeze(js.Array(ipv4, ipv6))
   }
@@ -671,21 +657,23 @@ package directconnect {
       __obj.asInstanceOf[BGPPeer]
     }
   }
-
-  object BGPPeerStateEnum {
-    val verifying = "verifying"
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait BGPPeerState extends js.Any
+  object BGPPeerState extends js.Object {
+    val verifying = "verifying".asInstanceOf[BGPPeerState]
+    val pending   = "pending".asInstanceOf[BGPPeerState]
+    val available = "available".asInstanceOf[BGPPeerState]
+    val deleting  = "deleting".asInstanceOf[BGPPeerState]
+    val deleted   = "deleted".asInstanceOf[BGPPeerState]
 
     val values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
   }
-
-  object BGPStatusEnum {
-    val up      = "up"
-    val down    = "down"
-    val unknown = "unknown"
+  @js.native
+  sealed trait BGPStatus extends js.Any
+  object BGPStatus extends js.Object {
+    val up      = "up".asInstanceOf[BGPStatus]
+    val down    = "down".asInstanceOf[BGPStatus]
+    val unknown = "unknown".asInstanceOf[BGPStatus]
 
     val values = js.Object.freeze(js.Array(up, down, unknown))
   }
@@ -901,17 +889,18 @@ package directconnect {
       __obj.asInstanceOf[Connection]
     }
   }
-
-  object ConnectionStateEnum {
-    val ordering  = "ordering"
-    val requested = "requested"
-    val pending   = "pending"
-    val available = "available"
-    val down      = "down"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
-    val rejected  = "rejected"
-    val unknown   = "unknown"
+  @js.native
+  sealed trait ConnectionState extends js.Any
+  object ConnectionState extends js.Object {
+    val ordering  = "ordering".asInstanceOf[ConnectionState]
+    val requested = "requested".asInstanceOf[ConnectionState]
+    val pending   = "pending".asInstanceOf[ConnectionState]
+    val available = "available".asInstanceOf[ConnectionState]
+    val down      = "down".asInstanceOf[ConnectionState]
+    val deleting  = "deleting".asInstanceOf[ConnectionState]
+    val deleted   = "deleted".asInstanceOf[ConnectionState]
+    val rejected  = "rejected".asInstanceOf[ConnectionState]
+    val unknown   = "unknown".asInstanceOf[ConnectionState]
 
     val values =
       js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
@@ -2103,21 +2092,23 @@ package directconnect {
       __obj.asInstanceOf[DirectConnectGatewayAssociationProposal]
     }
   }
-
-  object DirectConnectGatewayAssociationProposalStateEnum {
-    val requested = "requested"
-    val accepted  = "accepted"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait DirectConnectGatewayAssociationProposalState extends js.Any
+  object DirectConnectGatewayAssociationProposalState extends js.Object {
+    val requested = "requested".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+    val accepted  = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+    val deleted   = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
 
     val values = js.Object.freeze(js.Array(requested, accepted, deleted))
   }
-
-  object DirectConnectGatewayAssociationStateEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
-    val updating       = "updating"
+  @js.native
+  sealed trait DirectConnectGatewayAssociationState extends js.Any
+  object DirectConnectGatewayAssociationState extends js.Object {
+    val associating    = "associating".asInstanceOf[DirectConnectGatewayAssociationState]
+    val associated     = "associated".asInstanceOf[DirectConnectGatewayAssociationState]
+    val disassociating = "disassociating".asInstanceOf[DirectConnectGatewayAssociationState]
+    val disassociated  = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
+    val updating       = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, updating))
   }
@@ -2160,28 +2151,31 @@ package directconnect {
       __obj.asInstanceOf[DirectConnectGatewayAttachment]
     }
   }
-
-  object DirectConnectGatewayAttachmentStateEnum {
-    val attaching = "attaching"
-    val attached  = "attached"
-    val detaching = "detaching"
-    val detached  = "detached"
+  @js.native
+  sealed trait DirectConnectGatewayAttachmentState extends js.Any
+  object DirectConnectGatewayAttachmentState extends js.Object {
+    val attaching = "attaching".asInstanceOf[DirectConnectGatewayAttachmentState]
+    val attached  = "attached".asInstanceOf[DirectConnectGatewayAttachmentState]
+    val detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
+    val detached  = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
-
-  object DirectConnectGatewayAttachmentTypeEnum {
-    val TransitVirtualInterface = "TransitVirtualInterface"
-    val PrivateVirtualInterface = "PrivateVirtualInterface"
+  @js.native
+  sealed trait DirectConnectGatewayAttachmentType extends js.Any
+  object DirectConnectGatewayAttachmentType extends js.Object {
+    val TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
+    val PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
 
     val values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
   }
-
-  object DirectConnectGatewayStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait DirectConnectGatewayState extends js.Any
+  object DirectConnectGatewayState extends js.Object {
+    val pending   = "pending".asInstanceOf[DirectConnectGatewayState]
+    val available = "available".asInstanceOf[DirectConnectGatewayState]
+    val deleting  = "deleting".asInstanceOf[DirectConnectGatewayState]
+    val deleted   = "deleted".asInstanceOf[DirectConnectGatewayState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -2206,18 +2200,20 @@ package directconnect {
       __obj.asInstanceOf[DisassociateConnectionFromLagRequest]
     }
   }
-
-  object GatewayTypeEnum {
-    val virtualPrivateGateway = "virtualPrivateGateway"
-    val transitGateway        = "transitGateway"
+  @js.native
+  sealed trait GatewayType extends js.Any
+  object GatewayType extends js.Object {
+    val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
+    val transitGateway        = "transitGateway".asInstanceOf[GatewayType]
 
     val values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
   }
-
-  object HasLogicalRedundancyEnum {
-    val unknown = "unknown"
-    val yes     = "yes"
-    val no      = "no"
+  @js.native
+  sealed trait HasLogicalRedundancy extends js.Any
+  object HasLogicalRedundancy extends js.Object {
+    val unknown = "unknown".asInstanceOf[HasLogicalRedundancy]
+    val yes     = "yes".asInstanceOf[HasLogicalRedundancy]
+    val no      = "no".asInstanceOf[HasLogicalRedundancy]
 
     val values = js.Object.freeze(js.Array(unknown, yes, no))
   }
@@ -2279,15 +2275,16 @@ package directconnect {
       __obj.asInstanceOf[Interconnect]
     }
   }
-
-  object InterconnectStateEnum {
-    val requested = "requested"
-    val pending   = "pending"
-    val available = "available"
-    val down      = "down"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
-    val unknown   = "unknown"
+  @js.native
+  sealed trait InterconnectState extends js.Any
+  object InterconnectState extends js.Object {
+    val requested = "requested".asInstanceOf[InterconnectState]
+    val pending   = "pending".asInstanceOf[InterconnectState]
+    val available = "available".asInstanceOf[InterconnectState]
+    val down      = "down".asInstanceOf[InterconnectState]
+    val deleting  = "deleting".asInstanceOf[InterconnectState]
+    val deleted   = "deleted".asInstanceOf[InterconnectState]
+    val unknown   = "unknown".asInstanceOf[InterconnectState]
 
     val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
@@ -2374,15 +2371,16 @@ package directconnect {
       __obj.asInstanceOf[Lag]
     }
   }
-
-  object LagStateEnum {
-    val requested = "requested"
-    val pending   = "pending"
-    val available = "available"
-    val down      = "down"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
-    val unknown   = "unknown"
+  @js.native
+  sealed trait LagState extends js.Any
+  object LagState extends js.Object {
+    val requested = "requested".asInstanceOf[LagState]
+    val pending   = "pending".asInstanceOf[LagState]
+    val available = "available".asInstanceOf[LagState]
+    val down      = "down".asInstanceOf[LagState]
+    val deleting  = "deleting".asInstanceOf[LagState]
+    val deleted   = "deleted".asInstanceOf[LagState]
+    val unknown   = "unknown".asInstanceOf[LagState]
 
     val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
@@ -2424,9 +2422,10 @@ package directconnect {
       __obj.asInstanceOf[Loa]
     }
   }
-
-  object LoaContentTypeEnum {
-    val `application/pdf` = "application/pdf"
+  @js.native
+  sealed trait LoaContentType extends js.Any
+  object LoaContentType extends js.Object {
+    val `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
 
     val values = js.Object.freeze(js.Array(`application/pdf`))
   }
@@ -3131,17 +3130,18 @@ package directconnect {
       __obj.asInstanceOf[VirtualInterface]
     }
   }
-
-  object VirtualInterfaceStateEnum {
-    val confirming = "confirming"
-    val verifying  = "verifying"
-    val pending    = "pending"
-    val available  = "available"
-    val down       = "down"
-    val deleting   = "deleting"
-    val deleted    = "deleted"
-    val rejected   = "rejected"
-    val unknown    = "unknown"
+  @js.native
+  sealed trait VirtualInterfaceState extends js.Any
+  object VirtualInterfaceState extends js.Object {
+    val confirming = "confirming".asInstanceOf[VirtualInterfaceState]
+    val verifying  = "verifying".asInstanceOf[VirtualInterfaceState]
+    val pending    = "pending".asInstanceOf[VirtualInterfaceState]
+    val available  = "available".asInstanceOf[VirtualInterfaceState]
+    val down       = "down".asInstanceOf[VirtualInterfaceState]
+    val deleting   = "deleting".asInstanceOf[VirtualInterfaceState]
+    val deleted    = "deleted".asInstanceOf[VirtualInterfaceState]
+    val rejected   = "rejected".asInstanceOf[VirtualInterfaceState]
+    val unknown    = "unknown".asInstanceOf[VirtualInterfaceState]
 
     val values =
       js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))

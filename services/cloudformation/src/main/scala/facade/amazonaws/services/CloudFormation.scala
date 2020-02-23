@@ -8,7 +8,6 @@ import facade.amazonaws._
 
 package object cloudformation {
   type Account                              = String
-  type AccountGateStatus                    = String
   type AccountGateStatusReason              = String
   type AccountLimitList                     = js.Array[AccountLimit]
   type AccountList                          = js.Array[Account]
@@ -20,40 +19,29 @@ package object cloudformation {
   type BoxedMaxResults                      = Int
   type Capabilities                         = js.Array[Capability]
   type CapabilitiesReason                   = String
-  type Capability                           = String
   type CausingEntity                        = String
-  type ChangeAction                         = String
   type ChangeSetId                          = String
   type ChangeSetName                        = String
   type ChangeSetNameOrId                    = String
-  type ChangeSetStatus                      = String
   type ChangeSetStatusReason                = String
   type ChangeSetSummaries                   = js.Array[ChangeSetSummary]
-  type ChangeSetType                        = String
-  type ChangeSource                         = String
-  type ChangeType                           = String
   type Changes                              = js.Array[Change]
   type ClientRequestToken                   = String
   type ClientToken                          = String
   type CreationTime                         = js.Date
   type DeletionTime                         = js.Date
-  type DeprecatedStatus                     = String
   type Description                          = String
-  type DifferenceType                       = String
   type DisableRollback                      = Boolean
   type DriftedStackInstancesCount           = Int
   type EnableTerminationProtection          = Boolean
-  type EvaluationType                       = String
   type EventId                              = String
   type ExecutionRoleName                    = String
-  type ExecutionStatus                      = String
   type ExportName                           = String
   type ExportValue                          = String
   type Exports                              = js.Array[Export]
   type FailedStackInstancesCount            = Int
   type FailureToleranceCount                = Int
   type FailureTolerancePercentage           = Int
-  type HandlerErrorCode                     = String
   type Imports                              = js.Array[StackName]
   type InProgressStackInstancesCount        = Int
   type InSyncStackInstancesCount            = Int
@@ -73,8 +61,6 @@ package object cloudformation {
   type NoEcho                               = Boolean
   type NotificationARN                      = String
   type NotificationARNs                     = js.Array[NotificationARN]
-  type OnFailure                            = String
-  type OperationStatus                      = String
   type OptionalSecureUrl                    = String
   type OrganizationalUnitId                 = String
   type OrganizationalUnitIdList             = js.Array[OrganizationalUnitId]
@@ -86,7 +72,6 @@ package object cloudformation {
   type ParameterType                        = String
   type ParameterValue                       = String
   type Parameters                           = js.Array[Parameter]
-  type PermissionModels                     = String
   type PhysicalResourceId                   = String
   type PhysicalResourceIdContext            = js.Array[PhysicalResourceIdContextKeyValuePair]
   type PrivateTypeArn                       = String
@@ -95,18 +80,12 @@ package object cloudformation {
   type PropertyName                         = String
   type PropertyPath                         = String
   type PropertyValue                        = String
-  type ProvisioningType                     = String
   type Reason                               = String
   type Region                               = String
   type RegionList                           = js.Array[Region]
-  type RegistrationStatus                   = String
   type RegistrationToken                    = String
   type RegistrationTokenList                = js.Array[RegistrationToken]
-  type RegistryType                         = String
-  type Replacement                          = String
   type RequestToken                         = String
-  type RequiresRecreation                   = String
-  type ResourceAttribute                    = String
   type ResourceChangeDetails                = js.Array[ResourceChangeDetail]
   type ResourceIdentifierProperties         = js.Dictionary[ResourceIdentifierPropertyValue]
   type ResourceIdentifierPropertyKey        = String
@@ -115,9 +94,7 @@ package object cloudformation {
   type ResourceIdentifiers                  = js.Array[ResourceIdentifierPropertyKey]
   type ResourceModel                        = String
   type ResourceProperties                   = String
-  type ResourceSignalStatus                 = String
   type ResourceSignalUniqueId               = String
-  type ResourceStatus                       = String
   type ResourceStatusReason                 = String
   type ResourceToSkip                       = String
   type ResourceType                         = String
@@ -134,12 +111,9 @@ package object cloudformation {
   type S3Url                                = String
   type Scope                                = js.Array[ResourceAttribute]
   type StackDriftDetectionId                = String
-  type StackDriftDetectionStatus            = String
   type StackDriftDetectionStatusReason      = String
-  type StackDriftStatus                     = String
   type StackEvents                          = js.Array[StackEvent]
   type StackId                              = String
-  type StackInstanceStatus                  = String
   type StackInstanceSummaries               = js.Array[StackInstanceSummary]
   type StackName                            = String
   type StackNameOrId                        = String
@@ -147,25 +121,17 @@ package object cloudformation {
   type StackPolicyDuringUpdateBody          = String
   type StackPolicyDuringUpdateURL           = String
   type StackPolicyURL                       = String
-  type StackResourceDriftStatus             = String
   type StackResourceDriftStatusFilters      = js.Array[StackResourceDriftStatus]
   type StackResourceDrifts                  = js.Array[StackResourceDrift]
   type StackResourceSummaries               = js.Array[StackResourceSummary]
   type StackResources                       = js.Array[StackResource]
   type StackSetARN                          = String
-  type StackSetDriftDetectionStatus         = String
-  type StackSetDriftStatus                  = String
   type StackSetId                           = String
   type StackSetName                         = String
   type StackSetNameOrId                     = String
-  type StackSetOperationAction              = String
-  type StackSetOperationResultStatus        = String
   type StackSetOperationResultSummaries     = js.Array[StackSetOperationResultSummary]
-  type StackSetOperationStatus              = String
   type StackSetOperationSummaries           = js.Array[StackSetOperationSummary]
-  type StackSetStatus                       = String
   type StackSetSummaries                    = js.Array[StackSetSummary]
-  type StackStatus                          = String
   type StackStatusFilter                    = js.Array[StackStatus]
   type StackStatusReason                    = String
   type StackSummaries                       = js.Array[StackSummary]
@@ -178,7 +144,6 @@ package object cloudformation {
   type TemplateBody                         = String
   type TemplateDescription                  = String
   type TemplateParameters                   = js.Array[TemplateParameter]
-  type TemplateStage                        = String
   type TemplateURL                          = String
   type TimeoutMinutes                       = Int
   type Timestamp                            = js.Date
@@ -197,7 +162,6 @@ package object cloudformation {
   type UsePreviousValue                     = Boolean
   type Value                                = String
   type Version                              = String
-  type Visibility                           = String
 
   implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
 
@@ -422,11 +386,12 @@ package cloudformation {
       __obj.asInstanceOf[AccountGateResult]
     }
   }
-
-  object AccountGateStatusEnum {
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val SKIPPED   = "SKIPPED"
+  @js.native
+  sealed trait AccountGateStatus extends js.Any
+  object AccountGateStatus extends js.Object {
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
+    val FAILED    = "FAILED".asInstanceOf[AccountGateStatus]
+    val SKIPPED   = "SKIPPED".asInstanceOf[AccountGateStatus]
 
     val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, SKIPPED))
   }
@@ -505,11 +470,12 @@ package cloudformation {
       __obj.asInstanceOf[CancelUpdateStackInput]
     }
   }
-
-  object CapabilityEnum {
-    val CAPABILITY_IAM         = "CAPABILITY_IAM"
-    val CAPABILITY_NAMED_IAM   = "CAPABILITY_NAMED_IAM"
-    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND"
+  @js.native
+  sealed trait Capability extends js.Any
+  object Capability extends js.Object {
+    val CAPABILITY_IAM         = "CAPABILITY_IAM".asInstanceOf[Capability]
+    val CAPABILITY_NAMED_IAM   = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
+    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
 
     val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND))
   }
@@ -535,22 +501,24 @@ package cloudformation {
       __obj.asInstanceOf[Change]
     }
   }
-
-  object ChangeActionEnum {
-    val Add    = "Add"
-    val Modify = "Modify"
-    val Remove = "Remove"
-    val Import = "Import"
+  @js.native
+  sealed trait ChangeAction extends js.Any
+  object ChangeAction extends js.Object {
+    val Add    = "Add".asInstanceOf[ChangeAction]
+    val Modify = "Modify".asInstanceOf[ChangeAction]
+    val Remove = "Remove".asInstanceOf[ChangeAction]
+    val Import = "Import".asInstanceOf[ChangeAction]
 
     val values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
   }
-
-  object ChangeSetStatusEnum {
-    val CREATE_PENDING     = "CREATE_PENDING"
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val CREATE_COMPLETE    = "CREATE_COMPLETE"
-    val DELETE_COMPLETE    = "DELETE_COMPLETE"
-    val FAILED             = "FAILED"
+  @js.native
+  sealed trait ChangeSetStatus extends js.Any
+  object ChangeSetStatus extends js.Object {
+    val CREATE_PENDING     = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
+    val CREATE_COMPLETE    = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val DELETE_COMPLETE    = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val FAILED             = "FAILED".asInstanceOf[ChangeSetStatus]
 
     val values =
       js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
@@ -598,29 +566,32 @@ package cloudformation {
       __obj.asInstanceOf[ChangeSetSummary]
     }
   }
-
-  object ChangeSetTypeEnum {
-    val CREATE = "CREATE"
-    val UPDATE = "UPDATE"
-    val IMPORT = "IMPORT"
+  @js.native
+  sealed trait ChangeSetType extends js.Any
+  object ChangeSetType extends js.Object {
+    val CREATE = "CREATE".asInstanceOf[ChangeSetType]
+    val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
+    val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
 
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
   }
-
-  object ChangeSourceEnum {
-    val ResourceReference  = "ResourceReference"
-    val ParameterReference = "ParameterReference"
-    val ResourceAttribute  = "ResourceAttribute"
-    val DirectModification = "DirectModification"
-    val Automatic          = "Automatic"
+  @js.native
+  sealed trait ChangeSource extends js.Any
+  object ChangeSource extends js.Object {
+    val ResourceReference  = "ResourceReference".asInstanceOf[ChangeSource]
+    val ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
+    val ResourceAttribute  = "ResourceAttribute".asInstanceOf[ChangeSource]
+    val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
+    val Automatic          = "Automatic".asInstanceOf[ChangeSource]
 
     val values = js.Object.freeze(
       js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
     )
   }
-
-  object ChangeTypeEnum {
-    val Resource = "Resource"
+  @js.native
+  sealed trait ChangeType extends js.Any
+  object ChangeType extends js.Object {
+    val Resource = "Resource".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(Resource))
   }
@@ -1143,10 +1114,11 @@ package cloudformation {
       __obj.asInstanceOf[DeploymentTargets]
     }
   }
-
-  object DeprecatedStatusEnum {
-    val LIVE       = "LIVE"
-    val DEPRECATED = "DEPRECATED"
+  @js.native
+  sealed trait DeprecatedStatus extends js.Any
+  object DeprecatedStatus extends js.Object {
+    val LIVE       = "LIVE".asInstanceOf[DeprecatedStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
 
     val values = js.Object.freeze(js.Array(LIVE, DEPRECATED))
   }
@@ -1956,11 +1928,12 @@ package cloudformation {
       __obj.asInstanceOf[DetectStackSetDriftOutput]
     }
   }
-
-  object DifferenceTypeEnum {
-    val ADD       = "ADD"
-    val REMOVE    = "REMOVE"
-    val NOT_EQUAL = "NOT_EQUAL"
+  @js.native
+  sealed trait DifferenceType extends js.Any
+  object DifferenceType extends js.Object {
+    val ADD       = "ADD".asInstanceOf[DifferenceType]
+    val REMOVE    = "REMOVE".asInstanceOf[DifferenceType]
+    val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
 
     val values = js.Object.freeze(js.Array(ADD, REMOVE, NOT_EQUAL))
   }
@@ -2008,10 +1981,11 @@ package cloudformation {
       __obj.asInstanceOf[EstimateTemplateCostOutput]
     }
   }
-
-  object EvaluationTypeEnum {
-    val Static  = "Static"
-    val Dynamic = "Dynamic"
+  @js.native
+  sealed trait EvaluationType extends js.Any
+  object EvaluationType extends js.Object {
+    val Static  = "Static".asInstanceOf[EvaluationType]
+    val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
 
     val values = js.Object.freeze(js.Array(Static, Dynamic))
   }
@@ -2058,14 +2032,15 @@ package cloudformation {
       __obj.asInstanceOf[ExecuteChangeSetOutput]
     }
   }
-
-  object ExecutionStatusEnum {
-    val UNAVAILABLE         = "UNAVAILABLE"
-    val AVAILABLE           = "AVAILABLE"
-    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS"
-    val EXECUTE_COMPLETE    = "EXECUTE_COMPLETE"
-    val EXECUTE_FAILED      = "EXECUTE_FAILED"
-    val OBSOLETE            = "OBSOLETE"
+  @js.native
+  sealed trait ExecutionStatus extends js.Any
+  object ExecutionStatus extends js.Object {
+    val UNAVAILABLE         = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
+    val AVAILABLE           = "AVAILABLE".asInstanceOf[ExecutionStatus]
+    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
+    val EXECUTE_COMPLETE    = "EXECUTE_COMPLETE".asInstanceOf[ExecutionStatus]
+    val EXECUTE_FAILED      = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
+    val OBSOLETE            = "OBSOLETE".asInstanceOf[ExecutionStatus]
 
     val values = js.Object.freeze(
       js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
@@ -2256,22 +2231,23 @@ package cloudformation {
       __obj.asInstanceOf[GetTemplateSummaryOutput]
     }
   }
-
-  object HandlerErrorCodeEnum {
-    val NotUpdatable            = "NotUpdatable"
-    val InvalidRequest          = "InvalidRequest"
-    val AccessDenied            = "AccessDenied"
-    val InvalidCredentials      = "InvalidCredentials"
-    val AlreadyExists           = "AlreadyExists"
-    val NotFound                = "NotFound"
-    val ResourceConflict        = "ResourceConflict"
-    val Throttling              = "Throttling"
-    val ServiceLimitExceeded    = "ServiceLimitExceeded"
-    val NotStabilized           = "NotStabilized"
-    val GeneralServiceException = "GeneralServiceException"
-    val ServiceInternalError    = "ServiceInternalError"
-    val NetworkFailure          = "NetworkFailure"
-    val InternalFailure         = "InternalFailure"
+  @js.native
+  sealed trait HandlerErrorCode extends js.Any
+  object HandlerErrorCode extends js.Object {
+    val NotUpdatable            = "NotUpdatable".asInstanceOf[HandlerErrorCode]
+    val InvalidRequest          = "InvalidRequest".asInstanceOf[HandlerErrorCode]
+    val AccessDenied            = "AccessDenied".asInstanceOf[HandlerErrorCode]
+    val InvalidCredentials      = "InvalidCredentials".asInstanceOf[HandlerErrorCode]
+    val AlreadyExists           = "AlreadyExists".asInstanceOf[HandlerErrorCode]
+    val NotFound                = "NotFound".asInstanceOf[HandlerErrorCode]
+    val ResourceConflict        = "ResourceConflict".asInstanceOf[HandlerErrorCode]
+    val Throttling              = "Throttling".asInstanceOf[HandlerErrorCode]
+    val ServiceLimitExceeded    = "ServiceLimitExceeded".asInstanceOf[HandlerErrorCode]
+    val NotStabilized           = "NotStabilized".asInstanceOf[HandlerErrorCode]
+    val GeneralServiceException = "GeneralServiceException".asInstanceOf[HandlerErrorCode]
+    val ServiceInternalError    = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
+    val NetworkFailure          = "NetworkFailure".asInstanceOf[HandlerErrorCode]
+    val InternalFailure         = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2853,20 +2829,22 @@ package cloudformation {
       __obj.asInstanceOf[LoggingConfig]
     }
   }
-
-  object OnFailureEnum {
-    val DO_NOTHING = "DO_NOTHING"
-    val ROLLBACK   = "ROLLBACK"
-    val DELETE     = "DELETE"
+  @js.native
+  sealed trait OnFailure extends js.Any
+  object OnFailure extends js.Object {
+    val DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
+    val ROLLBACK   = "ROLLBACK".asInstanceOf[OnFailure]
+    val DELETE     = "DELETE".asInstanceOf[OnFailure]
 
     val values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
   }
-
-  object OperationStatusEnum {
-    val PENDING     = "PENDING"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCESS     = "SUCCESS"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait OperationStatus extends js.Any
+  object OperationStatus extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[OperationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
+    val SUCCESS     = "SUCCESS".asInstanceOf[OperationStatus]
+    val FAILED      = "FAILED".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED))
   }
@@ -2979,10 +2957,11 @@ package cloudformation {
       __obj.asInstanceOf[ParameterDeclaration]
     }
   }
-
-  object PermissionModelsEnum {
-    val SERVICE_MANAGED = "SERVICE_MANAGED"
-    val SELF_MANAGED    = "SELF_MANAGED"
+  @js.native
+  sealed trait PermissionModels extends js.Any
+  object PermissionModels extends js.Object {
+    val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
+    val SELF_MANAGED    = "SELF_MANAGED".asInstanceOf[PermissionModels]
 
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, SELF_MANAGED))
   }
@@ -3040,11 +3019,12 @@ package cloudformation {
       __obj.asInstanceOf[PropertyDifference]
     }
   }
-
-  object ProvisioningTypeEnum {
-    val NON_PROVISIONABLE = "NON_PROVISIONABLE"
-    val IMMUTABLE         = "IMMUTABLE"
-    val FULLY_MUTABLE     = "FULLY_MUTABLE"
+  @js.native
+  sealed trait ProvisioningType extends js.Any
+  object ProvisioningType extends js.Object {
+    val NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
+    val IMMUTABLE         = "IMMUTABLE".asInstanceOf[ProvisioningType]
+    val FULLY_MUTABLE     = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
 
     val values = js.Object.freeze(js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE))
   }
@@ -3146,44 +3126,49 @@ package cloudformation {
       __obj.asInstanceOf[RegisterTypeOutput]
     }
   }
-
-  object RegistrationStatusEnum {
-    val COMPLETE    = "COMPLETE"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait RegistrationStatus extends js.Any
+  object RegistrationStatus extends js.Object {
+    val COMPLETE    = "COMPLETE".asInstanceOf[RegistrationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
+    val FAILED      = "FAILED".asInstanceOf[RegistrationStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
   }
-
-  object RegistryTypeEnum {
-    val RESOURCE = "RESOURCE"
+  @js.native
+  sealed trait RegistryType extends js.Any
+  object RegistryType extends js.Object {
+    val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
 
     val values = js.Object.freeze(js.Array(RESOURCE))
   }
-
-  object ReplacementEnum {
-    val True        = "True"
-    val False       = "False"
-    val Conditional = "Conditional"
+  @js.native
+  sealed trait Replacement extends js.Any
+  object Replacement extends js.Object {
+    val True        = "True".asInstanceOf[Replacement]
+    val False       = "False".asInstanceOf[Replacement]
+    val Conditional = "Conditional".asInstanceOf[Replacement]
 
     val values = js.Object.freeze(js.Array(True, False, Conditional))
   }
-
-  object RequiresRecreationEnum {
-    val Never         = "Never"
-    val Conditionally = "Conditionally"
-    val Always        = "Always"
+  @js.native
+  sealed trait RequiresRecreation extends js.Any
+  object RequiresRecreation extends js.Object {
+    val Never         = "Never".asInstanceOf[RequiresRecreation]
+    val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
+    val Always        = "Always".asInstanceOf[RequiresRecreation]
 
     val values = js.Object.freeze(js.Array(Never, Conditionally, Always))
   }
-
-  object ResourceAttributeEnum {
-    val Properties     = "Properties"
-    val Metadata       = "Metadata"
-    val CreationPolicy = "CreationPolicy"
-    val UpdatePolicy   = "UpdatePolicy"
-    val DeletionPolicy = "DeletionPolicy"
-    val Tags           = "Tags"
+  @js.native
+  sealed trait ResourceAttribute extends js.Any
+  object ResourceAttribute extends js.Object {
+    val Properties     = "Properties".asInstanceOf[ResourceAttribute]
+    val Metadata       = "Metadata".asInstanceOf[ResourceAttribute]
+    val CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
+    val UpdatePolicy   = "UpdatePolicy".asInstanceOf[ResourceAttribute]
+    val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
+    val Tags           = "Tags".asInstanceOf[ResourceAttribute]
 
     val values = js.Object.freeze(js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags))
   }
@@ -3277,31 +3262,33 @@ package cloudformation {
       __obj.asInstanceOf[ResourceIdentifierSummary]
     }
   }
-
-  object ResourceSignalStatusEnum {
-    val SUCCESS = "SUCCESS"
-    val FAILURE = "FAILURE"
+  @js.native
+  sealed trait ResourceSignalStatus extends js.Any
+  object ResourceSignalStatus extends js.Object {
+    val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
+    val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
-
-  object ResourceStatusEnum {
-    val CREATE_IN_PROGRESS          = "CREATE_IN_PROGRESS"
-    val CREATE_FAILED               = "CREATE_FAILED"
-    val CREATE_COMPLETE             = "CREATE_COMPLETE"
-    val DELETE_IN_PROGRESS          = "DELETE_IN_PROGRESS"
-    val DELETE_FAILED               = "DELETE_FAILED"
-    val DELETE_COMPLETE             = "DELETE_COMPLETE"
-    val DELETE_SKIPPED              = "DELETE_SKIPPED"
-    val UPDATE_IN_PROGRESS          = "UPDATE_IN_PROGRESS"
-    val UPDATE_FAILED               = "UPDATE_FAILED"
-    val UPDATE_COMPLETE             = "UPDATE_COMPLETE"
-    val IMPORT_FAILED               = "IMPORT_FAILED"
-    val IMPORT_COMPLETE             = "IMPORT_COMPLETE"
-    val IMPORT_IN_PROGRESS          = "IMPORT_IN_PROGRESS"
-    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS"
-    val IMPORT_ROLLBACK_FAILED      = "IMPORT_ROLLBACK_FAILED"
-    val IMPORT_ROLLBACK_COMPLETE    = "IMPORT_ROLLBACK_COMPLETE"
+  @js.native
+  sealed trait ResourceStatus extends js.Any
+  object ResourceStatus extends js.Object {
+    val CREATE_IN_PROGRESS          = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val CREATE_FAILED               = "CREATE_FAILED".asInstanceOf[ResourceStatus]
+    val CREATE_COMPLETE             = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
+    val DELETE_IN_PROGRESS          = "DELETE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val DELETE_FAILED               = "DELETE_FAILED".asInstanceOf[ResourceStatus]
+    val DELETE_COMPLETE             = "DELETE_COMPLETE".asInstanceOf[ResourceStatus]
+    val DELETE_SKIPPED              = "DELETE_SKIPPED".asInstanceOf[ResourceStatus]
+    val UPDATE_IN_PROGRESS          = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val UPDATE_FAILED               = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
+    val UPDATE_COMPLETE             = "UPDATE_COMPLETE".asInstanceOf[ResourceStatus]
+    val IMPORT_FAILED               = "IMPORT_FAILED".asInstanceOf[ResourceStatus]
+    val IMPORT_COMPLETE             = "IMPORT_COMPLETE".asInstanceOf[ResourceStatus]
+    val IMPORT_IN_PROGRESS          = "IMPORT_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_FAILED      = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_COMPLETE    = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3604,11 +3591,12 @@ package cloudformation {
       __obj.asInstanceOf[Stack]
     }
   }
-
-  object StackDriftDetectionStatusEnum {
-    val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS"
-    val DETECTION_FAILED      = "DETECTION_FAILED"
-    val DETECTION_COMPLETE    = "DETECTION_COMPLETE"
+  @js.native
+  sealed trait StackDriftDetectionStatus extends js.Any
+  object StackDriftDetectionStatus extends js.Object {
+    val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
+    val DETECTION_FAILED      = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
+    val DETECTION_COMPLETE    = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
 
     val values = js.Object.freeze(js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE))
   }
@@ -3660,12 +3648,13 @@ package cloudformation {
       __obj.asInstanceOf[StackDriftInformationSummary]
     }
   }
-
-  object StackDriftStatusEnum {
-    val DRIFTED     = "DRIFTED"
-    val IN_SYNC     = "IN_SYNC"
-    val UNKNOWN     = "UNKNOWN"
-    val NOT_CHECKED = "NOT_CHECKED"
+  @js.native
+  sealed trait StackDriftStatus extends js.Any
+  object StackDriftStatus extends js.Object {
+    val DRIFTED     = "DRIFTED".asInstanceOf[StackDriftStatus]
+    val IN_SYNC     = "IN_SYNC".asInstanceOf[StackDriftStatus]
+    val UNKNOWN     = "UNKNOWN".asInstanceOf[StackDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
 
     val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED))
   }
@@ -3766,11 +3755,12 @@ package cloudformation {
       __obj.asInstanceOf[StackInstance]
     }
   }
-
-  object StackInstanceStatusEnum {
-    val CURRENT    = "CURRENT"
-    val OUTDATED   = "OUTDATED"
-    val INOPERABLE = "INOPERABLE"
+  @js.native
+  sealed trait StackInstanceStatus extends js.Any
+  object StackInstanceStatus extends js.Object {
+    val CURRENT    = "CURRENT".asInstanceOf[StackInstanceStatus]
+    val OUTDATED   = "OUTDATED".asInstanceOf[StackInstanceStatus]
+    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
     val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
@@ -4016,12 +4006,13 @@ package cloudformation {
       __obj.asInstanceOf[StackResourceDriftInformationSummary]
     }
   }
-
-  object StackResourceDriftStatusEnum {
-    val IN_SYNC     = "IN_SYNC"
-    val MODIFIED    = "MODIFIED"
-    val DELETED     = "DELETED"
-    val NOT_CHECKED = "NOT_CHECKED"
+  @js.native
+  sealed trait StackResourceDriftStatus extends js.Any
+  object StackResourceDriftStatus extends js.Object {
+    val IN_SYNC     = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
+    val MODIFIED    = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
+    val DELETED     = "DELETED".asInstanceOf[StackResourceDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
 
     val values = js.Object.freeze(js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED))
   }
@@ -4178,21 +4169,23 @@ package cloudformation {
       __obj.asInstanceOf[StackSetDriftDetectionDetails]
     }
   }
-
-  object StackSetDriftDetectionStatusEnum {
-    val COMPLETED       = "COMPLETED"
-    val FAILED          = "FAILED"
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS"
-    val IN_PROGRESS     = "IN_PROGRESS"
-    val STOPPED         = "STOPPED"
+  @js.native
+  sealed trait StackSetDriftDetectionStatus extends js.Any
+  object StackSetDriftDetectionStatus extends js.Object {
+    val COMPLETED       = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
+    val FAILED          = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
+    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
+    val IN_PROGRESS     = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
+    val STOPPED         = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
   }
-
-  object StackSetDriftStatusEnum {
-    val DRIFTED     = "DRIFTED"
-    val IN_SYNC     = "IN_SYNC"
-    val NOT_CHECKED = "NOT_CHECKED"
+  @js.native
+  sealed trait StackSetDriftStatus extends js.Any
+  object StackSetDriftStatus extends js.Object {
+    val DRIFTED     = "DRIFTED".asInstanceOf[StackSetDriftStatus]
+    val IN_SYNC     = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
 
     val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, NOT_CHECKED))
   }
@@ -4250,12 +4243,13 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperation]
     }
   }
-
-  object StackSetOperationActionEnum {
-    val CREATE       = "CREATE"
-    val UPDATE       = "UPDATE"
-    val DELETE       = "DELETE"
-    val DETECT_DRIFT = "DETECT_DRIFT"
+  @js.native
+  sealed trait StackSetOperationAction extends js.Any
+  object StackSetOperationAction extends js.Object {
+    val CREATE       = "CREATE".asInstanceOf[StackSetOperationAction]
+    val UPDATE       = "UPDATE".asInstanceOf[StackSetOperationAction]
+    val DELETE       = "DELETE".asInstanceOf[StackSetOperationAction]
+    val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
 
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT))
   }
@@ -4293,13 +4287,14 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationPreferences]
     }
   }
-
-  object StackSetOperationResultStatusEnum {
-    val PENDING   = "PENDING"
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val CANCELLED = "CANCELLED"
+  @js.native
+  sealed trait StackSetOperationResultStatus extends js.Any
+  object StackSetOperationResultStatus extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[StackSetOperationResultStatus]
+    val RUNNING   = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
+    val FAILED    = "FAILED".asInstanceOf[StackSetOperationResultStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
@@ -4337,14 +4332,15 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationResultSummary]
     }
   }
-
-  object StackSetOperationStatusEnum {
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val STOPPING  = "STOPPING"
-    val STOPPED   = "STOPPED"
-    val QUEUED    = "QUEUED"
+  @js.native
+  sealed trait StackSetOperationStatus extends js.Any
+  object StackSetOperationStatus extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[StackSetOperationStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
+    val FAILED    = "FAILED".asInstanceOf[StackSetOperationStatus]
+    val STOPPING  = "STOPPING".asInstanceOf[StackSetOperationStatus]
+    val STOPPED   = "STOPPED".asInstanceOf[StackSetOperationStatus]
+    val QUEUED    = "QUEUED".asInstanceOf[StackSetOperationStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED))
   }
@@ -4379,10 +4375,11 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationSummary]
     }
   }
-
-  object StackSetStatusEnum {
-    val ACTIVE  = "ACTIVE"
-    val DELETED = "DELETED"
+  @js.native
+  sealed trait StackSetStatus extends js.Any
+  object StackSetStatus extends js.Object {
+    val ACTIVE  = "ACTIVE".asInstanceOf[StackSetStatus]
+    val DELETED = "DELETED".asInstanceOf[StackSetStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED))
   }
@@ -4426,30 +4423,32 @@ package cloudformation {
       __obj.asInstanceOf[StackSetSummary]
     }
   }
-
-  object StackStatusEnum {
-    val CREATE_IN_PROGRESS                           = "CREATE_IN_PROGRESS"
-    val CREATE_FAILED                                = "CREATE_FAILED"
-    val CREATE_COMPLETE                              = "CREATE_COMPLETE"
-    val ROLLBACK_IN_PROGRESS                         = "ROLLBACK_IN_PROGRESS"
-    val ROLLBACK_FAILED                              = "ROLLBACK_FAILED"
-    val ROLLBACK_COMPLETE                            = "ROLLBACK_COMPLETE"
-    val DELETE_IN_PROGRESS                           = "DELETE_IN_PROGRESS"
-    val DELETE_FAILED                                = "DELETE_FAILED"
-    val DELETE_COMPLETE                              = "DELETE_COMPLETE"
-    val UPDATE_IN_PROGRESS                           = "UPDATE_IN_PROGRESS"
-    val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS          = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"
-    val UPDATE_COMPLETE                              = "UPDATE_COMPLETE"
-    val UPDATE_ROLLBACK_IN_PROGRESS                  = "UPDATE_ROLLBACK_IN_PROGRESS"
-    val UPDATE_ROLLBACK_FAILED                       = "UPDATE_ROLLBACK_FAILED"
-    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
-    val UPDATE_ROLLBACK_COMPLETE                     = "UPDATE_ROLLBACK_COMPLETE"
-    val REVIEW_IN_PROGRESS                           = "REVIEW_IN_PROGRESS"
-    val IMPORT_IN_PROGRESS                           = "IMPORT_IN_PROGRESS"
-    val IMPORT_COMPLETE                              = "IMPORT_COMPLETE"
-    val IMPORT_ROLLBACK_IN_PROGRESS                  = "IMPORT_ROLLBACK_IN_PROGRESS"
-    val IMPORT_ROLLBACK_FAILED                       = "IMPORT_ROLLBACK_FAILED"
-    val IMPORT_ROLLBACK_COMPLETE                     = "IMPORT_ROLLBACK_COMPLETE"
+  @js.native
+  sealed trait StackStatus extends js.Any
+  object StackStatus extends js.Object {
+    val CREATE_IN_PROGRESS                  = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val CREATE_FAILED                       = "CREATE_FAILED".asInstanceOf[StackStatus]
+    val CREATE_COMPLETE                     = "CREATE_COMPLETE".asInstanceOf[StackStatus]
+    val ROLLBACK_IN_PROGRESS                = "ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val ROLLBACK_FAILED                     = "ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val ROLLBACK_COMPLETE                   = "ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+    val DELETE_IN_PROGRESS                  = "DELETE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val DELETE_FAILED                       = "DELETE_FAILED".asInstanceOf[StackStatus]
+    val DELETE_COMPLETE                     = "DELETE_COMPLETE".asInstanceOf[StackStatus]
+    val UPDATE_IN_PROGRESS                  = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_COMPLETE                     = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_IN_PROGRESS         = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_FAILED              = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS =
+      "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_COMPLETE    = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+    val REVIEW_IN_PROGRESS          = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_IN_PROGRESS          = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_COMPLETE             = "IMPORT_COMPLETE".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_FAILED      = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_COMPLETE    = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4615,10 +4614,11 @@ package cloudformation {
       __obj.asInstanceOf[TemplateParameter]
     }
   }
-
-  object TemplateStageEnum {
-    val Original  = "Original"
-    val Processed = "Processed"
+  @js.native
+  sealed trait TemplateStage extends js.Any
+  object TemplateStage extends js.Object {
+    val Original  = "Original".asInstanceOf[TemplateStage]
+    val Processed = "Processed".asInstanceOf[TemplateStage]
 
     val values = js.Object.freeze(js.Array(Original, Processed))
   }
@@ -5003,10 +5003,11 @@ package cloudformation {
       __obj.asInstanceOf[ValidateTemplateOutput]
     }
   }
-
-  object VisibilityEnum {
-    val PUBLIC  = "PUBLIC"
-    val PRIVATE = "PRIVATE"
+  @js.native
+  sealed trait Visibility extends js.Any
+  object Visibility extends js.Object {
+    val PUBLIC  = "PUBLIC".asInstanceOf[Visibility]
+    val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }

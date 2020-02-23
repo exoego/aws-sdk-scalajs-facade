@@ -7,43 +7,36 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53resolver {
-  type AccountId                     = String
-  type Arn                           = String
-  type CreatorRequestId              = String
-  type DomainName                    = String
-  type FilterName                    = String
-  type FilterValue                   = String
-  type FilterValues                  = js.Array[FilterValue]
-  type Filters                       = js.Array[Filter]
-  type Ip                            = String
-  type IpAddressCount                = Int
-  type IpAddressStatus               = String
-  type IpAddressesRequest            = js.Array[IpAddressRequest]
-  type IpAddressesResponse           = js.Array[IpAddressResponse]
-  type MaxResults                    = Int
-  type Name                          = String
-  type NextToken                     = String
-  type Port                          = Int
-  type ResolverEndpointDirection     = String
-  type ResolverEndpointStatus        = String
-  type ResolverEndpoints             = js.Array[ResolverEndpoint]
-  type ResolverRuleAssociationStatus = String
-  type ResolverRuleAssociations      = js.Array[ResolverRuleAssociation]
-  type ResolverRulePolicy            = String
-  type ResolverRuleStatus            = String
-  type ResolverRules                 = js.Array[ResolverRule]
-  type ResourceId                    = String
-  type Rfc3339TimeString             = String
-  type RuleTypeOption                = String
-  type SecurityGroupIds              = js.Array[ResourceId]
-  type ShareStatus                   = String
-  type StatusMessage                 = String
-  type SubnetId                      = String
-  type TagKey                        = String
-  type TagKeyList                    = js.Array[TagKey]
-  type TagList                       = js.Array[Tag]
-  type TagValue                      = String
-  type TargetList                    = js.Array[TargetAddress]
+  type AccountId                = String
+  type Arn                      = String
+  type CreatorRequestId         = String
+  type DomainName               = String
+  type FilterName               = String
+  type FilterValue              = String
+  type FilterValues             = js.Array[FilterValue]
+  type Filters                  = js.Array[Filter]
+  type Ip                       = String
+  type IpAddressCount           = Int
+  type IpAddressesRequest       = js.Array[IpAddressRequest]
+  type IpAddressesResponse      = js.Array[IpAddressResponse]
+  type MaxResults               = Int
+  type Name                     = String
+  type NextToken                = String
+  type Port                     = Int
+  type ResolverEndpoints        = js.Array[ResolverEndpoint]
+  type ResolverRuleAssociations = js.Array[ResolverRuleAssociation]
+  type ResolverRulePolicy       = String
+  type ResolverRules            = js.Array[ResolverRule]
+  type ResourceId               = String
+  type Rfc3339TimeString        = String
+  type SecurityGroupIds         = js.Array[ResourceId]
+  type StatusMessage            = String
+  type SubnetId                 = String
+  type TagKey                   = String
+  type TagKeyList               = js.Array[TagKey]
+  type TagList                  = js.Array[Tag]
+  type TagValue                 = String
+  type TargetList               = js.Array[TargetAddress]
 
   implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
 
@@ -692,18 +685,19 @@ package route53resolver {
       __obj.asInstanceOf[IpAddressResponse]
     }
   }
-
-  object IpAddressStatusEnum {
-    val CREATING                  = "CREATING"
-    val FAILED_CREATION           = "FAILED_CREATION"
-    val ATTACHING                 = "ATTACHING"
-    val ATTACHED                  = "ATTACHED"
-    val REMAP_DETACHING           = "REMAP_DETACHING"
-    val REMAP_ATTACHING           = "REMAP_ATTACHING"
-    val DETACHING                 = "DETACHING"
-    val FAILED_RESOURCE_GONE      = "FAILED_RESOURCE_GONE"
-    val DELETING                  = "DELETING"
-    val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED"
+  @js.native
+  sealed trait IpAddressStatus extends js.Any
+  object IpAddressStatus extends js.Object {
+    val CREATING                  = "CREATING".asInstanceOf[IpAddressStatus]
+    val FAILED_CREATION           = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
+    val ATTACHING                 = "ATTACHING".asInstanceOf[IpAddressStatus]
+    val ATTACHED                  = "ATTACHED".asInstanceOf[IpAddressStatus]
+    val REMAP_DETACHING           = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
+    val REMAP_ATTACHING           = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
+    val DETACHING                 = "DETACHING".asInstanceOf[IpAddressStatus]
+    val FAILED_RESOURCE_GONE      = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
+    val DELETING                  = "DELETING".asInstanceOf[IpAddressStatus]
+    val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1058,21 +1052,23 @@ package route53resolver {
       __obj.asInstanceOf[ResolverEndpoint]
     }
   }
-
-  object ResolverEndpointDirectionEnum {
-    val INBOUND  = "INBOUND"
-    val OUTBOUND = "OUTBOUND"
+  @js.native
+  sealed trait ResolverEndpointDirection extends js.Any
+  object ResolverEndpointDirection extends js.Object {
+    val INBOUND  = "INBOUND".asInstanceOf[ResolverEndpointDirection]
+    val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
     val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
   }
-
-  object ResolverEndpointStatusEnum {
-    val CREATING        = "CREATING"
-    val OPERATIONAL     = "OPERATIONAL"
-    val UPDATING        = "UPDATING"
-    val AUTO_RECOVERING = "AUTO_RECOVERING"
-    val ACTION_NEEDED   = "ACTION_NEEDED"
-    val DELETING        = "DELETING"
+  @js.native
+  sealed trait ResolverEndpointStatus extends js.Any
+  object ResolverEndpointStatus extends js.Object {
+    val CREATING        = "CREATING".asInstanceOf[ResolverEndpointStatus]
+    val OPERATIONAL     = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
+    val UPDATING        = "UPDATING".asInstanceOf[ResolverEndpointStatus]
+    val AUTO_RECOVERING = "AUTO_RECOVERING".asInstanceOf[ResolverEndpointStatus]
+    val ACTION_NEEDED   = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
+    val DELETING        = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
   }
@@ -1162,13 +1158,14 @@ package route53resolver {
       __obj.asInstanceOf[ResolverRuleAssociation]
     }
   }
-
-  object ResolverRuleAssociationStatusEnum {
-    val CREATING   = "CREATING"
-    val COMPLETE   = "COMPLETE"
-    val DELETING   = "DELETING"
-    val FAILED     = "FAILED"
-    val OVERRIDDEN = "OVERRIDDEN"
+  @js.native
+  sealed trait ResolverRuleAssociationStatus extends js.Any
+  object ResolverRuleAssociationStatus extends js.Object {
+    val CREATING   = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
+    val COMPLETE   = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
+    val DELETING   = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
+    val FAILED     = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
+    val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
   }
@@ -1197,28 +1194,31 @@ package route53resolver {
       __obj.asInstanceOf[ResolverRuleConfig]
     }
   }
-
-  object ResolverRuleStatusEnum {
-    val COMPLETE = "COMPLETE"
-    val DELETING = "DELETING"
-    val UPDATING = "UPDATING"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait ResolverRuleStatus extends js.Any
+  object ResolverRuleStatus extends js.Object {
+    val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
+    val FAILED   = "FAILED".asInstanceOf[ResolverRuleStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
-
-  object RuleTypeOptionEnum {
-    val FORWARD   = "FORWARD"
-    val SYSTEM    = "SYSTEM"
-    val RECURSIVE = "RECURSIVE"
+  @js.native
+  sealed trait RuleTypeOption extends js.Any
+  object RuleTypeOption extends js.Object {
+    val FORWARD   = "FORWARD".asInstanceOf[RuleTypeOption]
+    val SYSTEM    = "SYSTEM".asInstanceOf[RuleTypeOption]
+    val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
     val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
   }
-
-  object ShareStatusEnum {
-    val NOT_SHARED     = "NOT_SHARED"
-    val SHARED_WITH_ME = "SHARED_WITH_ME"
-    val SHARED_BY_ME   = "SHARED_BY_ME"
+  @js.native
+  sealed trait ShareStatus extends js.Any
+  object ShareStatus extends js.Object {
+    val NOT_SHARED     = "NOT_SHARED".asInstanceOf[ShareStatus]
+    val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
+    val SHARED_BY_ME   = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
     val values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
   }

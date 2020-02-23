@@ -9,7 +9,6 @@ import facade.amazonaws._
 package object worklink {
   type AcmCertificateArn                        = String
   type AuditStreamArn                           = String
-  type AuthorizationProviderType                = String
   type Certificate                              = String
   type CertificateChain                         = String
   type CompanyCode                              = String
@@ -19,18 +18,14 @@ package object worklink {
   type DeviceOperatingSystemName                = String
   type DeviceOperatingSystemVersion             = String
   type DevicePatchLevel                         = String
-  type DeviceStatus                             = String
   type DeviceSummaryList                        = js.Array[DeviceSummary]
   type DisplayName                              = String
   type DomainName                               = String
-  type DomainStatus                             = String
   type DomainSummaryList                        = js.Array[DomainSummary]
   type FleetArn                                 = String
   type FleetName                                = String
-  type FleetStatus                              = String
   type FleetSummaryList                         = js.Array[FleetSummary]
   type Id                                       = String
-  type IdentityProviderType                     = String
   type MaxResults                               = Int
   type NextToken                                = String
   type SamlMetadata                             = String
@@ -325,9 +320,10 @@ package worklink {
       __obj.asInstanceOf[AssociateWebsiteCertificateAuthorityResponse]
     }
   }
-
-  object AuthorizationProviderTypeEnum {
-    val SAML = "SAML"
+  @js.native
+  sealed trait AuthorizationProviderType extends js.Any
+  object AuthorizationProviderType extends js.Object {
+    val SAML = "SAML".asInstanceOf[AuthorizationProviderType]
 
     val values = js.Object.freeze(js.Array(SAML))
   }
@@ -763,10 +759,11 @@ package worklink {
       __obj.asInstanceOf[DescribeWebsiteCertificateAuthorityResponse]
     }
   }
-
-  object DeviceStatusEnum {
-    val ACTIVE     = "ACTIVE"
-    val SIGNED_OUT = "SIGNED_OUT"
+  @js.native
+  sealed trait DeviceStatus extends js.Any
+  object DeviceStatus extends js.Object {
+    val ACTIVE     = "ACTIVE".asInstanceOf[DeviceStatus]
+    val SIGNED_OUT = "SIGNED_OUT".asInstanceOf[DeviceStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, SIGNED_OUT))
   }
@@ -894,16 +891,17 @@ package worklink {
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
     }
   }
-
-  object DomainStatusEnum {
-    val PENDING_VALIDATION     = "PENDING_VALIDATION"
-    val ASSOCIATING            = "ASSOCIATING"
-    val ACTIVE                 = "ACTIVE"
-    val INACTIVE               = "INACTIVE"
-    val DISASSOCIATING         = "DISASSOCIATING"
-    val DISASSOCIATED          = "DISASSOCIATED"
-    val FAILED_TO_ASSOCIATE    = "FAILED_TO_ASSOCIATE"
-    val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE"
+  @js.native
+  sealed trait DomainStatus extends js.Any
+  object DomainStatus extends js.Object {
+    val PENDING_VALIDATION     = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
+    val ASSOCIATING            = "ASSOCIATING".asInstanceOf[DomainStatus]
+    val ACTIVE                 = "ACTIVE".asInstanceOf[DomainStatus]
+    val INACTIVE               = "INACTIVE".asInstanceOf[DomainStatus]
+    val DISASSOCIATING         = "DISASSOCIATING".asInstanceOf[DomainStatus]
+    val DISASSOCIATED          = "DISASSOCIATED".asInstanceOf[DomainStatus]
+    val FAILED_TO_ASSOCIATE    = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
+    val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -948,14 +946,15 @@ package worklink {
       __obj.asInstanceOf[DomainSummary]
     }
   }
-
-  object FleetStatusEnum {
-    val CREATING         = "CREATING"
-    val ACTIVE           = "ACTIVE"
-    val DELETING         = "DELETING"
-    val DELETED          = "DELETED"
-    val FAILED_TO_CREATE = "FAILED_TO_CREATE"
-    val FAILED_TO_DELETE = "FAILED_TO_DELETE"
+  @js.native
+  sealed trait FleetStatus extends js.Any
+  object FleetStatus extends js.Object {
+    val CREATING         = "CREATING".asInstanceOf[FleetStatus]
+    val ACTIVE           = "ACTIVE".asInstanceOf[FleetStatus]
+    val DELETING         = "DELETING".asInstanceOf[FleetStatus]
+    val DELETED          = "DELETED".asInstanceOf[FleetStatus]
+    val FAILED_TO_CREATE = "FAILED_TO_CREATE".asInstanceOf[FleetStatus]
+    val FAILED_TO_DELETE = "FAILED_TO_DELETE".asInstanceOf[FleetStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE))
   }
@@ -996,9 +995,10 @@ package worklink {
       __obj.asInstanceOf[FleetSummary]
     }
   }
-
-  object IdentityProviderTypeEnum {
-    val SAML = "SAML"
+  @js.native
+  sealed trait IdentityProviderType extends js.Any
+  object IdentityProviderType extends js.Object {
+    val SAML = "SAML".asInstanceOf[IdentityProviderType]
 
     val values = js.Object.freeze(js.Array(SAML))
   }

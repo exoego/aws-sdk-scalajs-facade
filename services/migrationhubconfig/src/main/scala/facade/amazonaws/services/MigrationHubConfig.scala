@@ -14,7 +14,6 @@ package object migrationhubconfig {
   type HomeRegionControls                   = js.Array[HomeRegionControl]
   type RequestedTime                        = js.Date
   type TargetId                             = String
-  type TargetType                           = String
   type Token                                = String
 
   implicit final class MigrationHubConfigOps(private val service: MigrationHubConfig) extends AnyVal {
@@ -211,9 +210,10 @@ package migrationhubconfig {
       __obj.asInstanceOf[Target]
     }
   }
-
-  object TargetTypeEnum {
-    val ACCOUNT = "ACCOUNT"
+  @js.native
+  sealed trait TargetType extends js.Any
+  object TargetType extends js.Object {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }

@@ -10,7 +10,6 @@ package object cognitoidentity {
   type ARNString                         = String
   type AccessKeyString                   = String
   type AccountId                         = String
-  type AmbiguousRoleResolutionType       = String
   type ClaimName                         = String
   type ClaimValue                        = String
   type ClassicFlow                       = Boolean
@@ -22,7 +21,6 @@ package object cognitoidentity {
   type DeveloperProviderName             = String
   type DeveloperUserIdentifier           = String
   type DeveloperUserIdentifierList       = js.Array[DeveloperUserIdentifier]
-  type ErrorCode                         = String
   type HideDisabled                      = Boolean
   type IdentitiesList                    = js.Array[IdentityDescription]
   type IdentityId                        = String
@@ -39,14 +37,12 @@ package object cognitoidentity {
   type IdentityProviders                 = js.Dictionary[IdentityProviderId]
   type LoginsList                        = js.Array[IdentityProviderName]
   type LoginsMap                         = js.Dictionary[IdentityProviderToken]
-  type MappingRuleMatchType              = String
   type MappingRulesList                  = js.Array[MappingRule]
   type OIDCProviderList                  = js.Array[ARNString]
   type OIDCToken                         = String
   type PaginationKey                     = String
   type QueryLimit                        = Int
   type RoleMappingMap                    = js.Dictionary[RoleMapping]
-  type RoleMappingType                   = String
   type RoleType                          = String
   type RolesMap                          = js.Dictionary[ARNString]
   type SAMLProviderList                  = js.Array[ARNString]
@@ -141,10 +137,11 @@ package cognitoidentity {
     def untagResource(params: UntagResourceInput): Request[UntagResourceResponse]         = js.native
     def updateIdentityPool(params: IdentityPool): Request[IdentityPool]                   = js.native
   }
-
-  object AmbiguousRoleResolutionTypeEnum {
-    val AuthenticatedRole = "AuthenticatedRole"
-    val Deny              = "Deny"
+  @js.native
+  sealed trait AmbiguousRoleResolutionType extends js.Any
+  object AmbiguousRoleResolutionType extends js.Object {
+    val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
+    val Deny              = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
     val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
   }
@@ -351,10 +348,11 @@ package cognitoidentity {
       __obj.asInstanceOf[DescribeIdentityPoolInput]
     }
   }
-
-  object ErrorCodeEnum {
-    val AccessDenied        = "AccessDenied"
-    val InternalServerError = "InternalServerError"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val AccessDenied        = "AccessDenied".asInstanceOf[ErrorCode]
+    val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
   }
@@ -922,12 +920,13 @@ package cognitoidentity {
       __obj.asInstanceOf[MappingRule]
     }
   }
-
-  object MappingRuleMatchTypeEnum {
-    val Equals     = "Equals"
-    val Contains   = "Contains"
-    val StartsWith = "StartsWith"
-    val NotEqual   = "NotEqual"
+  @js.native
+  sealed trait MappingRuleMatchType extends js.Any
+  object MappingRuleMatchType extends js.Object {
+    val Equals     = "Equals".asInstanceOf[MappingRuleMatchType]
+    val Contains   = "Contains".asInstanceOf[MappingRuleMatchType]
+    val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
+    val NotEqual   = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
     val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
   }
@@ -1007,10 +1006,11 @@ package cognitoidentity {
       __obj.asInstanceOf[RoleMapping]
     }
   }
-
-  object RoleMappingTypeEnum {
-    val Token = "Token"
-    val Rules = "Rules"
+  @js.native
+  sealed trait RoleMappingType extends js.Any
+  object RoleMappingType extends js.Object {
+    val Token = "Token".asInstanceOf[RoleMappingType]
+    val Rules = "Rules".asInstanceOf[RoleMappingType]
 
     val values = js.Object.freeze(js.Array(Token, Rules))
   }

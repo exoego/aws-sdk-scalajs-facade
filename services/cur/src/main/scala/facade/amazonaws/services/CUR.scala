@@ -7,23 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cur {
-  type AWSRegion              = String
-  type AdditionalArtifact     = String
   type AdditionalArtifactList = js.Array[AdditionalArtifact]
-  type CompressionFormat      = String
   type DeleteResponseMessage  = String
   type GenericString          = String
   type MaxResults             = Int
   type RefreshClosedReports   = Boolean
   type ReportDefinitionList   = js.Array[ReportDefinition]
-  type ReportFormat           = String
   type ReportName             = String
-  type ReportVersioning       = String
   type S3Bucket               = String
   type S3Prefix               = String
-  type SchemaElement          = String
   type SchemaElementList      = js.Array[SchemaElement]
-  type TimeUnit               = String
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
@@ -60,18 +53,20 @@ package cur {
   /**
     * The region of the S3 bucket that AWS delivers the report into.
     */
-  object AWSRegionEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `eu-central-1`   = "eu-central-1"
-    val `eu-west-1`      = "eu-west-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `eu-north-1`     = "eu-north-1"
-    val `ap-northeast-3` = "ap-northeast-3"
-    val `ap-east-1`      = "ap-east-1"
+  @js.native
+  sealed trait AWSRegion extends js.Any
+  object AWSRegion extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[AWSRegion]
+    val `us-west-1`      = "us-west-1".asInstanceOf[AWSRegion]
+    val `us-west-2`      = "us-west-2".asInstanceOf[AWSRegion]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[AWSRegion]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[AWSRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
+    val `eu-north-1`     = "eu-north-1".asInstanceOf[AWSRegion]
+    val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
+    val `ap-east-1`      = "ap-east-1".asInstanceOf[AWSRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -93,10 +88,12 @@ package cur {
   /**
     * The types of manifest that you want AWS to create for this report.
     */
-  object AdditionalArtifactEnum {
-    val REDSHIFT   = "REDSHIFT"
-    val QUICKSIGHT = "QUICKSIGHT"
-    val ATHENA     = "ATHENA"
+  @js.native
+  sealed trait AdditionalArtifact extends js.Any
+  object AdditionalArtifact extends js.Object {
+    val REDSHIFT   = "REDSHIFT".asInstanceOf[AdditionalArtifact]
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
+    val ATHENA     = "ATHENA".asInstanceOf[AdditionalArtifact]
 
     val values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
   }
@@ -104,10 +101,12 @@ package cur {
   /**
     * The compression format that AWS uses for the report.
     */
-  object CompressionFormatEnum {
-    val ZIP     = "ZIP"
-    val GZIP    = "GZIP"
-    val Parquet = "Parquet"
+  @js.native
+  sealed trait CompressionFormat extends js.Any
+  object CompressionFormat extends js.Object {
+    val ZIP     = "ZIP".asInstanceOf[CompressionFormat]
+    val GZIP    = "GZIP".asInstanceOf[CompressionFormat]
+    val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
     val values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
   }
@@ -319,16 +318,19 @@ package cur {
   /**
     * The format that AWS saves the report in.
     */
-  object ReportFormatEnum {
-    val textORcsv = "textORcsv"
-    val Parquet   = "Parquet"
+  @js.native
+  sealed trait ReportFormat extends js.Any
+  object ReportFormat extends js.Object {
+    val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
+    val Parquet   = "Parquet".asInstanceOf[ReportFormat]
 
     val values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
-
-  object ReportVersioningEnum {
-    val CREATE_NEW_REPORT = "CREATE_NEW_REPORT"
-    val OVERWRITE_REPORT  = "OVERWRITE_REPORT"
+  @js.native
+  sealed trait ReportVersioning extends js.Any
+  object ReportVersioning extends js.Object {
+    val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
+    val OVERWRITE_REPORT  = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
     val values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
   }
@@ -336,8 +338,10 @@ package cur {
   /**
     * Whether or not AWS includes resource IDs in the report.
     */
-  object SchemaElementEnum {
-    val RESOURCES = "RESOURCES"
+  @js.native
+  sealed trait SchemaElement extends js.Any
+  object SchemaElement extends js.Object {
+    val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
     val values = js.Object.freeze(js.Array(RESOURCES))
   }
@@ -345,9 +349,11 @@ package cur {
   /**
     * The length of time covered by the report.
     */
-  object TimeUnitEnum {
-    val HOURLY = "HOURLY"
-    val DAILY  = "DAILY"
+  @js.native
+  sealed trait TimeUnit extends js.Any
+  object TimeUnit extends js.Object {
+    val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
+    val DAILY  = "DAILY".asInstanceOf[TimeUnit]
 
     val values = js.Object.freeze(js.Array(HOURLY, DAILY))
   }

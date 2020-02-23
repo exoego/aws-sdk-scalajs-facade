@@ -14,16 +14,10 @@ package object lexruntime {
   type BotName                      = String
   type ButtonTextStringWithLength   = String
   type ButtonValueStringWithLength  = String
-  type ConfirmationStatus           = String
-  type ContentType                  = String
-  type DialogActionType             = String
-  type DialogState                  = String
-  type FulfillmentState             = String
   type HttpContentType              = String
   type IntentName                   = String
   type IntentSummaryCheckpointLabel = String
   type IntentSummaryList            = js.Array[IntentSummary]
-  type MessageFormatType            = String
   type SentimentLabel               = String
   type SentimentScore               = String
   type StringMap                    = js.Dictionary[String]
@@ -85,17 +79,19 @@ package lexruntime {
       __obj.asInstanceOf[Button]
     }
   }
-
-  object ConfirmationStatusEnum {
-    val None      = "None"
-    val Confirmed = "Confirmed"
-    val Denied    = "Denied"
+  @js.native
+  sealed trait ConfirmationStatus extends js.Any
+  object ConfirmationStatus extends js.Object {
+    val None      = "None".asInstanceOf[ConfirmationStatus]
+    val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
+    val Denied    = "Denied".asInstanceOf[ConfirmationStatus]
 
     val values = js.Object.freeze(js.Array(None, Confirmed, Denied))
   }
-
-  object ContentTypeEnum {
-    val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic"
+  @js.native
+  sealed trait ContentType extends js.Any
+  object ContentType extends js.Object {
+    val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(`application/vnd.amazonaws.card.generic`))
   }
@@ -187,33 +183,36 @@ package lexruntime {
       __obj.asInstanceOf[DialogAction]
     }
   }
-
-  object DialogActionTypeEnum {
-    val ElicitIntent  = "ElicitIntent"
-    val ConfirmIntent = "ConfirmIntent"
-    val ElicitSlot    = "ElicitSlot"
-    val Close         = "Close"
-    val Delegate      = "Delegate"
+  @js.native
+  sealed trait DialogActionType extends js.Any
+  object DialogActionType extends js.Object {
+    val ElicitIntent  = "ElicitIntent".asInstanceOf[DialogActionType]
+    val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
+    val ElicitSlot    = "ElicitSlot".asInstanceOf[DialogActionType]
+    val Close         = "Close".asInstanceOf[DialogActionType]
+    val Delegate      = "Delegate".asInstanceOf[DialogActionType]
 
     val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
   }
-
-  object DialogStateEnum {
-    val ElicitIntent        = "ElicitIntent"
-    val ConfirmIntent       = "ConfirmIntent"
-    val ElicitSlot          = "ElicitSlot"
-    val Fulfilled           = "Fulfilled"
-    val ReadyForFulfillment = "ReadyForFulfillment"
-    val Failed              = "Failed"
+  @js.native
+  sealed trait DialogState extends js.Any
+  object DialogState extends js.Object {
+    val ElicitIntent        = "ElicitIntent".asInstanceOf[DialogState]
+    val ConfirmIntent       = "ConfirmIntent".asInstanceOf[DialogState]
+    val ElicitSlot          = "ElicitSlot".asInstanceOf[DialogState]
+    val Fulfilled           = "Fulfilled".asInstanceOf[DialogState]
+    val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
+    val Failed              = "Failed".asInstanceOf[DialogState]
 
     val values =
       js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
   }
-
-  object FulfillmentStateEnum {
-    val Fulfilled           = "Fulfilled"
-    val Failed              = "Failed"
-    val ReadyForFulfillment = "ReadyForFulfillment"
+  @js.native
+  sealed trait FulfillmentState extends js.Any
+  object FulfillmentState extends js.Object {
+    val Fulfilled           = "Fulfilled".asInstanceOf[FulfillmentState]
+    val Failed              = "Failed".asInstanceOf[FulfillmentState]
+    val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
 
     val values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
   }
@@ -339,12 +338,13 @@ package lexruntime {
       __obj.asInstanceOf[IntentSummary]
     }
   }
-
-  object MessageFormatTypeEnum {
-    val PlainText     = "PlainText"
-    val CustomPayload = "CustomPayload"
-    val SSML          = "SSML"
-    val Composite     = "Composite"
+  @js.native
+  sealed trait MessageFormatType extends js.Any
+  object MessageFormatType extends js.Object {
+    val PlainText     = "PlainText".asInstanceOf[MessageFormatType]
+    val CustomPayload = "CustomPayload".asInstanceOf[MessageFormatType]
+    val SSML          = "SSML".asInstanceOf[MessageFormatType]
+    val Composite     = "Composite".asInstanceOf[MessageFormatType]
 
     val values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
   }

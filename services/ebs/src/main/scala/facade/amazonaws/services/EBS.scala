@@ -7,20 +7,19 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ebs {
-  type BlockData         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BlockIndex        = Int
-  type BlockSize         = Int
-  type BlockToken        = String
-  type Blocks            = js.Array[Block]
-  type ChangedBlocks     = js.Array[ChangedBlock]
-  type Checksum          = String
-  type ChecksumAlgorithm = String
-  type DataLength        = Int
-  type MaxResults        = Int
-  type PageToken         = String
-  type SnapshotId        = String
-  type TimeStamp         = js.Date
-  type VolumeSize        = Double
+  type BlockData     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlockIndex    = Int
+  type BlockSize     = Int
+  type BlockToken    = String
+  type Blocks        = js.Array[Block]
+  type ChangedBlocks = js.Array[ChangedBlock]
+  type Checksum      = String
+  type DataLength    = Int
+  type MaxResults    = Int
+  type PageToken     = String
+  type SnapshotId    = String
+  type TimeStamp     = js.Date
+  type VolumeSize    = Double
 
   implicit final class EBSOps(private val service: EBS) extends AnyVal {
 
@@ -90,9 +89,10 @@ package ebs {
       __obj.asInstanceOf[ChangedBlock]
     }
   }
-
-  object ChecksumAlgorithmEnum {
-    val SHA256 = "SHA256"
+  @js.native
+  sealed trait ChecksumAlgorithm extends js.Any
+  object ChecksumAlgorithm extends js.Object {
+    val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
 
     val values = js.Object.freeze(js.Array(SHA256))
   }

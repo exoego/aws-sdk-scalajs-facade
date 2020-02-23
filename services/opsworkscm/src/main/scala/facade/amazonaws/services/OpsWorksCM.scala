@@ -13,8 +13,6 @@ package object opsworkscm {
   type AttributeValue                 = String
   type BackupId                       = String
   type BackupRetentionCountDefinition = Int
-  type BackupStatus                   = String
-  type BackupType                     = String
   type Backups                        = js.Array[Backup]
   type CustomCertificate              = String
   type CustomDomain                   = String
@@ -24,15 +22,12 @@ package object opsworkscm {
   type EngineAttributes               = js.Array[EngineAttribute]
   type InstanceProfileArn             = String
   type KeyPair                        = String
-  type MaintenanceStatus              = String
   type MaxResults                     = Int
   type NextToken                      = String
-  type NodeAssociationStatus          = String
   type NodeAssociationStatusToken     = String
   type NodeName                       = String
   type ServerEvents                   = js.Array[ServerEvent]
   type ServerName                     = String
-  type ServerStatus                   = String
   type Servers                        = js.Array[Server]
   type ServiceRoleArn                 = String
   type Strings                        = js.Array[String]
@@ -281,19 +276,21 @@ package opsworkscm {
       __obj.asInstanceOf[Backup]
     }
   }
-
-  object BackupStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val OK          = "OK"
-    val FAILED      = "FAILED"
-    val DELETING    = "DELETING"
+  @js.native
+  sealed trait BackupStatus extends js.Any
+  object BackupStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BackupStatus]
+    val OK          = "OK".asInstanceOf[BackupStatus]
+    val FAILED      = "FAILED".asInstanceOf[BackupStatus]
+    val DELETING    = "DELETING".asInstanceOf[BackupStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
-
-  object BackupTypeEnum {
-    val AUTOMATED = "AUTOMATED"
-    val MANUAL    = "MANUAL"
+  @js.native
+  sealed trait BackupType extends js.Any
+  object BackupType extends js.Object {
+    val AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
+    val MANUAL    = "MANUAL".asInstanceOf[BackupType]
 
     val values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
   }
@@ -842,10 +839,11 @@ package opsworkscm {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object MaintenanceStatusEnum {
-    val SUCCESS = "SUCCESS"
-    val FAILED  = "FAILED"
+  @js.native
+  sealed trait MaintenanceStatus extends js.Any
+  object MaintenanceStatus extends js.Object {
+    val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
+    val FAILED  = "FAILED".asInstanceOf[MaintenanceStatus]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED))
   }
@@ -856,10 +854,12 @@ package opsworkscm {
     *  * <code>FAILED</code>: The association or disassociation failed.
     *  * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
     */
-  object NodeAssociationStatusEnum {
-    val SUCCESS     = "SUCCESS"
-    val FAILED      = "FAILED"
-    val IN_PROGRESS = "IN_PROGRESS"
+  @js.native
+  sealed trait NodeAssociationStatus extends js.Any
+  object NodeAssociationStatus extends js.Object {
+    val SUCCESS     = "SUCCESS".asInstanceOf[NodeAssociationStatus]
+    val FAILED      = "FAILED".asInstanceOf[NodeAssociationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
   }
@@ -1021,21 +1021,22 @@ package opsworkscm {
       __obj.asInstanceOf[ServerEvent]
     }
   }
-
-  object ServerStatusEnum {
-    val BACKING_UP        = "BACKING_UP"
-    val CONNECTION_LOST   = "CONNECTION_LOST"
-    val CREATING          = "CREATING"
-    val DELETING          = "DELETING"
-    val MODIFYING         = "MODIFYING"
-    val FAILED            = "FAILED"
-    val HEALTHY           = "HEALTHY"
-    val RUNNING           = "RUNNING"
-    val RESTORING         = "RESTORING"
-    val SETUP             = "SETUP"
-    val UNDER_MAINTENANCE = "UNDER_MAINTENANCE"
-    val UNHEALTHY         = "UNHEALTHY"
-    val TERMINATED        = "TERMINATED"
+  @js.native
+  sealed trait ServerStatus extends js.Any
+  object ServerStatus extends js.Object {
+    val BACKING_UP        = "BACKING_UP".asInstanceOf[ServerStatus]
+    val CONNECTION_LOST   = "CONNECTION_LOST".asInstanceOf[ServerStatus]
+    val CREATING          = "CREATING".asInstanceOf[ServerStatus]
+    val DELETING          = "DELETING".asInstanceOf[ServerStatus]
+    val MODIFYING         = "MODIFYING".asInstanceOf[ServerStatus]
+    val FAILED            = "FAILED".asInstanceOf[ServerStatus]
+    val HEALTHY           = "HEALTHY".asInstanceOf[ServerStatus]
+    val RUNNING           = "RUNNING".asInstanceOf[ServerStatus]
+    val RESTORING         = "RESTORING".asInstanceOf[ServerStatus]
+    val SETUP             = "SETUP".asInstanceOf[ServerStatus]
+    val UNDER_MAINTENANCE = "UNDER_MAINTENANCE".asInstanceOf[ServerStatus]
+    val UNHEALTHY         = "UNHEALTHY".asInstanceOf[ServerStatus]
+    val TERMINATED        = "TERMINATED".asInstanceOf[ServerStatus]
 
     val values = js.Object.freeze(
       js.Array(

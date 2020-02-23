@@ -9,18 +9,14 @@ import facade.amazonaws._
 package object budgetsservice {
   type AccountId                       = String
   type BudgetName                      = String
-  type BudgetType                      = String
   type BudgetedAndActualAmountsList    = js.Array[BudgetedAndActualAmounts]
   type Budgets                         = js.Array[Budget]
-  type ComparisonOperator              = String
   type CostFilters                     = js.Dictionary[DimensionValues]
   type DimensionValues                 = js.Array[GenericString]
   type GenericString                   = String
   type GenericTimestamp                = js.Date
   type MaxResults                      = Int
-  type NotificationState               = String
   type NotificationThreshold           = Double
-  type NotificationType                = String
   type NotificationWithSubscribersList = js.Array[NotificationWithSubscribers]
   type Notifications                   = js.Array[Notification]
   type NullableBoolean                 = Boolean
@@ -28,9 +24,6 @@ package object budgetsservice {
   type PlannedBudgetLimits             = js.Dictionary[Spend]
   type SubscriberAddress               = String
   type Subscribers                     = js.Array[Subscriber]
-  type SubscriptionType                = String
-  type ThresholdType                   = String
-  type TimeUnit                        = String
   type UnitValue                       = String
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
@@ -189,13 +182,15 @@ package budgetsservice {
     * The type of a budget. It must be one of the following types:
     *  <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
     */
-  object BudgetTypeEnum {
-    val USAGE                     = "USAGE"
-    val COST                      = "COST"
-    val RI_UTILIZATION            = "RI_UTILIZATION"
-    val RI_COVERAGE               = "RI_COVERAGE"
-    val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION"
-    val SAVINGS_PLANS_COVERAGE    = "SAVINGS_PLANS_COVERAGE"
+  @js.native
+  sealed trait BudgetType extends js.Any
+  object BudgetType extends js.Object {
+    val USAGE                     = "USAGE".asInstanceOf[BudgetType]
+    val COST                      = "COST".asInstanceOf[BudgetType]
+    val RI_UTILIZATION            = "RI_UTILIZATION".asInstanceOf[BudgetType]
+    val RI_COVERAGE               = "RI_COVERAGE".asInstanceOf[BudgetType]
+    val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
+    val SAVINGS_PLANS_COVERAGE    = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
     val values = js.Object.freeze(
       js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
@@ -256,10 +251,12 @@ package budgetsservice {
     * The comparison operator of a notification. Currently the service supports the following operators:
     *  <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
     */
-  object ComparisonOperatorEnum {
-    val GREATER_THAN = "GREATER_THAN"
-    val LESS_THAN    = "LESS_THAN"
-    val EQUAL_TO     = "EQUAL_TO"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN    = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val EQUAL_TO     = "EQUAL_TO".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
   }
@@ -866,10 +863,11 @@ package budgetsservice {
       __obj.asInstanceOf[Notification]
     }
   }
-
-  object NotificationStateEnum {
-    val OK    = "OK"
-    val ALARM = "ALARM"
+  @js.native
+  sealed trait NotificationState extends js.Any
+  object NotificationState extends js.Object {
+    val OK    = "OK".asInstanceOf[NotificationState]
+    val ALARM = "ALARM".asInstanceOf[NotificationState]
 
     val values = js.Object.freeze(js.Array(OK, ALARM))
   }
@@ -877,9 +875,11 @@ package budgetsservice {
   /**
     * The type of a notification. It must be ACTUAL or FORECASTED.
     */
-  object NotificationTypeEnum {
-    val ACTUAL     = "ACTUAL"
-    val FORECASTED = "FORECASTED"
+  @js.native
+  sealed trait NotificationType extends js.Any
+  object NotificationType extends js.Object {
+    val ACTUAL     = "ACTUAL".asInstanceOf[NotificationType]
+    val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
   }
@@ -965,9 +965,11 @@ package budgetsservice {
   /**
     * The subscription type of the subscriber. It can be SMS or EMAIL.
     */
-  object SubscriptionTypeEnum {
-    val SNS   = "SNS"
-    val EMAIL = "EMAIL"
+  @js.native
+  sealed trait SubscriptionType extends js.Any
+  object SubscriptionType extends js.Object {
+    val SNS   = "SNS".asInstanceOf[SubscriptionType]
+    val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
 
     val values = js.Object.freeze(js.Array(SNS, EMAIL))
   }
@@ -975,9 +977,11 @@ package budgetsservice {
   /**
     * The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
     */
-  object ThresholdTypeEnum {
-    val PERCENTAGE     = "PERCENTAGE"
-    val ABSOLUTE_VALUE = "ABSOLUTE_VALUE"
+  @js.native
+  sealed trait ThresholdType extends js.Any
+  object ThresholdType extends js.Object {
+    val PERCENTAGE     = "PERCENTAGE".asInstanceOf[ThresholdType]
+    val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
 
     val values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
   }
@@ -1007,11 +1011,13 @@ package budgetsservice {
   /**
     * The time unit of the budget, such as MONTHLY or QUARTERLY.
     */
-  object TimeUnitEnum {
-    val DAILY     = "DAILY"
-    val MONTHLY   = "MONTHLY"
-    val QUARTERLY = "QUARTERLY"
-    val ANNUALLY  = "ANNUALLY"
+  @js.native
+  sealed trait TimeUnit extends js.Any
+  object TimeUnit extends js.Object {
+    val DAILY     = "DAILY".asInstanceOf[TimeUnit]
+    val MONTHLY   = "MONTHLY".asInstanceOf[TimeUnit]
+    val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
+    val ANNUALLY  = "ANNUALLY".asInstanceOf[TimeUnit]
 
     val values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
   }

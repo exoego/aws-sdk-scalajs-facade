@@ -9,12 +9,8 @@ import facade.amazonaws._
 package object dataexchange {
   type Arn                                            = String
   type AssetName                                      = String
-  type AssetType                                      = String
-  type Code                                           = String
   type Description                                    = String
   type Id                                             = String
-  type JobErrorLimitName                              = String
-  type JobErrorResourceTypes                          = String
   type ListOfAssetDestinationEntry                    = js.Array[AssetDestinationEntry]
   type ListOfAssetEntry                               = js.Array[AssetEntry]
   type ListOfAssetSourceEntry                         = js.Array[AssetSourceEntry]
@@ -27,10 +23,7 @@ package object dataexchange {
   type MaxResults                                     = Int
   type Name                                           = String
   type NextToken                                      = String
-  type Origin                                         = String
-  type State                                          = String
   type Timestamp                                      = js.Date
-  type Type                                           = String
   type __boolean                                      = Boolean
   type __double                                       = Double
   type __doubleMin0                                   = Double
@@ -234,8 +227,10 @@ package dataexchange {
   /**
     * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
     */
-  object AssetTypeEnum {
-    val S3_SNAPSHOT = "S3_SNAPSHOT"
+  @js.native
+  sealed trait AssetType extends js.Any
+  object AssetType extends js.Object {
+    val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
 
     val values = js.Object.freeze(js.Array(S3_SNAPSHOT))
   }
@@ -257,15 +252,16 @@ package dataexchange {
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
-
-  object CodeEnum {
-    val ACCESS_DENIED_EXCEPTION          = "ACCESS_DENIED_EXCEPTION"
-    val INTERNAL_SERVER_EXCEPTION        = "INTERNAL_SERVER_EXCEPTION"
-    val MALWARE_DETECTED                 = "MALWARE_DETECTED"
-    val RESOURCE_NOT_FOUND_EXCEPTION     = "RESOURCE_NOT_FOUND_EXCEPTION"
-    val SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION"
-    val VALIDATION_EXCEPTION             = "VALIDATION_EXCEPTION"
-    val MALWARE_SCAN_ENCRYPTED_FILE      = "MALWARE_SCAN_ENCRYPTED_FILE"
+  @js.native
+  sealed trait Code extends js.Any
+  object Code extends js.Object {
+    val ACCESS_DENIED_EXCEPTION          = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
+    val INTERNAL_SERVER_EXCEPTION        = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_DETECTED                 = "MALWARE_DETECTED".asInstanceOf[Code]
+    val RESOURCE_NOT_FOUND_EXCEPTION     = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
+    val SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION".asInstanceOf[Code]
+    val VALIDATION_EXCEPTION             = "VALIDATION_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_SCAN_ENCRYPTED_FILE      = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1201,9 +1197,11 @@ package dataexchange {
   /**
     * The name of the limit that was reached.
     */
-  object JobErrorLimitNameEnum {
-    val `Assets per revision` = "Assets per revision"
-    val `Asset size in GB`    = "Asset size in GB"
+  @js.native
+  sealed trait JobErrorLimitName extends js.Any
+  object JobErrorLimitName extends js.Object {
+    val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
+    val `Asset size in GB`    = "Asset size in GB".asInstanceOf[JobErrorLimitName]
 
     val values = js.Object.freeze(js.Array(`Assets per revision`, `Asset size in GB`))
   }
@@ -1211,9 +1209,11 @@ package dataexchange {
   /**
     * The types of resource which the job error can apply to.
     */
-  object JobErrorResourceTypesEnum {
-    val REVISION = "REVISION"
-    val ASSET    = "ASSET"
+  @js.native
+  sealed trait JobErrorResourceTypes extends js.Any
+  object JobErrorResourceTypes extends js.Object {
+    val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
+    val ASSET    = "ASSET".asInstanceOf[JobErrorResourceTypes]
 
     val values = js.Object.freeze(js.Array(REVISION, ASSET))
   }
@@ -1429,9 +1429,11 @@ package dataexchange {
   /**
     * A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
     */
-  object OriginEnum {
-    val OWNED    = "OWNED"
-    val ENTITLED = "ENTITLED"
+  @js.native
+  sealed trait Origin extends js.Any
+  object Origin extends js.Object {
+    val OWNED    = "OWNED".asInstanceOf[Origin]
+    val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
@@ -1603,14 +1605,15 @@ package dataexchange {
       __obj.asInstanceOf[StartJobResponse]
     }
   }
-
-  object StateEnum {
-    val WAITING     = "WAITING"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val ERROR       = "ERROR"
-    val COMPLETED   = "COMPLETED"
-    val CANCELLED   = "CANCELLED"
-    val TIMED_OUT   = "TIMED_OUT"
+  @js.native
+  sealed trait State extends js.Any
+  object State extends js.Object {
+    val WAITING     = "WAITING".asInstanceOf[State]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
+    val ERROR       = "ERROR".asInstanceOf[State]
+    val COMPLETED   = "COMPLETED".asInstanceOf[State]
+    val CANCELLED   = "CANCELLED".asInstanceOf[State]
+    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT))
   }
@@ -1638,12 +1641,13 @@ package dataexchange {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
-
-  object TypeEnum {
-    val IMPORT_ASSETS_FROM_S3        = "IMPORT_ASSETS_FROM_S3"
-    val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL"
-    val EXPORT_ASSETS_TO_S3          = "EXPORT_ASSETS_TO_S3"
-    val EXPORT_ASSET_TO_SIGNED_URL   = "EXPORT_ASSET_TO_SIGNED_URL"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val IMPORT_ASSETS_FROM_S3        = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
+    val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
+    val EXPORT_ASSETS_TO_S3          = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
+    val EXPORT_ASSET_TO_SIGNED_URL   = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
 
     val values = js.Object.freeze(
       js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL)

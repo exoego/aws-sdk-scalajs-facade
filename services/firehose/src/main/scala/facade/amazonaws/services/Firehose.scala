@@ -13,19 +13,14 @@ package object firehose {
   type BucketARN                               = String
   type ClusterJDBCURL                          = String
   type ColumnToJsonKeyMappings                 = js.Dictionary[NonEmptyString]
-  type CompressionFormat                       = String
   type CopyOptions                             = String
   type Data                                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DataTableColumns                        = String
   type DataTableName                           = String
   type DeliveryStartTimestamp                  = js.Date
   type DeliveryStreamARN                       = String
-  type DeliveryStreamEncryptionStatus          = String
-  type DeliveryStreamFailureType               = String
   type DeliveryStreamName                      = String
   type DeliveryStreamNameList                  = js.Array[DeliveryStreamName]
-  type DeliveryStreamStatus                    = String
-  type DeliveryStreamType                      = String
   type DeliveryStreamVersionId                 = String
   type DescribeDeliveryStreamInputLimit        = Int
   type DestinationDescriptionList              = js.Array[DestinationDescription]
@@ -35,19 +30,15 @@ package object firehose {
   type ElasticsearchClusterEndpoint            = String
   type ElasticsearchDomainARN                  = String
   type ElasticsearchIndexName                  = String
-  type ElasticsearchIndexRotationPeriod        = String
   type ElasticsearchRetryDurationInSeconds     = Int
-  type ElasticsearchS3BackupMode               = String
   type ElasticsearchTypeName                   = String
   type ErrorCode                               = String
   type ErrorMessage                            = String
   type ErrorOutputPrefix                       = String
   type HECAcknowledgmentTimeoutInSeconds       = Int
   type HECEndpoint                             = String
-  type HECEndpointType                         = String
   type HECToken                                = String
   type IntervalInSeconds                       = Int
-  type KeyType                                 = String
   type KinesisStreamARN                        = String
   type ListDeliveryStreamsInputLimit           = Int
   type ListOfNonEmptyStrings                   = js.Array[NonEmptyString]
@@ -56,35 +47,25 @@ package object firehose {
   type ListTagsForDeliveryStreamOutputTagList  = js.Array[Tag]
   type LogGroupName                            = String
   type LogStreamName                           = String
-  type NoEncryptionConfig                      = String
   type NonEmptyString                          = String
   type NonEmptyStringWithoutWhitespace         = String
   type NonNegativeIntegerObject                = Int
-  type OrcCompression                          = String
-  type OrcFormatVersion                        = String
   type OrcRowIndexStride                       = Int
   type OrcStripeSizeBytes                      = Int
-  type ParquetCompression                      = String
   type ParquetPageSizeBytes                    = Int
-  type ParquetWriterVersion                    = String
   type Password                                = String
   type Prefix                                  = String
   type ProcessorList                           = js.Array[Processor]
   type ProcessorParameterList                  = js.Array[ProcessorParameter]
-  type ProcessorParameterName                  = String
   type ProcessorParameterValue                 = String
-  type ProcessorType                           = String
   type Proportion                              = Double
   type PutRecordBatchRequestEntryList          = js.Array[Record]
   type PutRecordBatchResponseEntryList         = js.Array[PutRecordBatchResponseEntry]
   type PutResponseRecordId                     = String
   type RedshiftRetryDurationInSeconds          = Int
-  type RedshiftS3BackupMode                    = String
   type RoleARN                                 = String
-  type S3BackupMode                            = String
   type SizeInMBs                               = Int
   type SplunkRetryDurationInSeconds            = Int
-  type SplunkS3BackupMode                      = String
   type TagDeliveryStreamInputTagList           = js.Array[Tag]
   type TagKey                                  = String
   type TagKeyList                              = js.Array[TagKey]
@@ -196,12 +177,13 @@ package firehose {
       __obj.asInstanceOf[CloudWatchLoggingOptions]
     }
   }
-
-  object CompressionFormatEnum {
-    val UNCOMPRESSED = "UNCOMPRESSED"
-    val GZIP         = "GZIP"
-    val ZIP          = "ZIP"
-    val Snappy       = "Snappy"
+  @js.native
+  sealed trait CompressionFormat extends js.Any
+  object CompressionFormat extends js.Object {
+    val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[CompressionFormat]
+    val GZIP         = "GZIP".asInstanceOf[CompressionFormat]
+    val ZIP          = "ZIP".asInstanceOf[CompressionFormat]
+    val Snappy       = "Snappy".asInstanceOf[CompressionFormat]
 
     val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy))
   }
@@ -480,27 +462,29 @@ package firehose {
       __obj.asInstanceOf[DeliveryStreamEncryptionConfigurationInput]
     }
   }
-
-  object DeliveryStreamEncryptionStatusEnum {
-    val ENABLED          = "ENABLED"
-    val ENABLING         = "ENABLING"
-    val ENABLING_FAILED  = "ENABLING_FAILED"
-    val DISABLED         = "DISABLED"
-    val DISABLING        = "DISABLING"
-    val DISABLING_FAILED = "DISABLING_FAILED"
+  @js.native
+  sealed trait DeliveryStreamEncryptionStatus extends js.Any
+  object DeliveryStreamEncryptionStatus extends js.Object {
+    val ENABLED          = "ENABLED".asInstanceOf[DeliveryStreamEncryptionStatus]
+    val ENABLING         = "ENABLING".asInstanceOf[DeliveryStreamEncryptionStatus]
+    val ENABLING_FAILED  = "ENABLING_FAILED".asInstanceOf[DeliveryStreamEncryptionStatus]
+    val DISABLED         = "DISABLED".asInstanceOf[DeliveryStreamEncryptionStatus]
+    val DISABLING        = "DISABLING".asInstanceOf[DeliveryStreamEncryptionStatus]
+    val DISABLING_FAILED = "DISABLING_FAILED".asInstanceOf[DeliveryStreamEncryptionStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED))
   }
-
-  object DeliveryStreamFailureTypeEnum {
-    val RETIRE_KMS_GRANT_FAILED = "RETIRE_KMS_GRANT_FAILED"
-    val CREATE_KMS_GRANT_FAILED = "CREATE_KMS_GRANT_FAILED"
-    val KMS_ACCESS_DENIED       = "KMS_ACCESS_DENIED"
-    val DISABLED_KMS_KEY        = "DISABLED_KMS_KEY"
-    val INVALID_KMS_KEY         = "INVALID_KMS_KEY"
-    val KMS_KEY_NOT_FOUND       = "KMS_KEY_NOT_FOUND"
-    val KMS_OPT_IN_REQUIRED     = "KMS_OPT_IN_REQUIRED"
-    val UNKNOWN_ERROR           = "UNKNOWN_ERROR"
+  @js.native
+  sealed trait DeliveryStreamFailureType extends js.Any
+  object DeliveryStreamFailureType extends js.Object {
+    val RETIRE_KMS_GRANT_FAILED = "RETIRE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val CREATE_KMS_GRANT_FAILED = "CREATE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_ACCESS_DENIED       = "KMS_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
+    val DISABLED_KMS_KEY        = "DISABLED_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
+    val INVALID_KMS_KEY         = "INVALID_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_KEY_NOT_FOUND       = "KMS_KEY_NOT_FOUND".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_OPT_IN_REQUIRED     = "KMS_OPT_IN_REQUIRED".asInstanceOf[DeliveryStreamFailureType]
+    val UNKNOWN_ERROR           = "UNKNOWN_ERROR".asInstanceOf[DeliveryStreamFailureType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -515,20 +499,22 @@ package firehose {
       )
     )
   }
-
-  object DeliveryStreamStatusEnum {
-    val CREATING        = "CREATING"
-    val CREATING_FAILED = "CREATING_FAILED"
-    val DELETING        = "DELETING"
-    val DELETING_FAILED = "DELETING_FAILED"
-    val ACTIVE          = "ACTIVE"
+  @js.native
+  sealed trait DeliveryStreamStatus extends js.Any
+  object DeliveryStreamStatus extends js.Object {
+    val CREATING        = "CREATING".asInstanceOf[DeliveryStreamStatus]
+    val CREATING_FAILED = "CREATING_FAILED".asInstanceOf[DeliveryStreamStatus]
+    val DELETING        = "DELETING".asInstanceOf[DeliveryStreamStatus]
+    val DELETING_FAILED = "DELETING_FAILED".asInstanceOf[DeliveryStreamStatus]
+    val ACTIVE          = "ACTIVE".asInstanceOf[DeliveryStreamStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE))
   }
-
-  object DeliveryStreamTypeEnum {
-    val DirectPut             = "DirectPut"
-    val KinesisStreamAsSource = "KinesisStreamAsSource"
+  @js.native
+  sealed trait DeliveryStreamType extends js.Any
+  object DeliveryStreamType extends js.Object {
+    val DirectPut             = "DirectPut".asInstanceOf[DeliveryStreamType]
+    val KinesisStreamAsSource = "KinesisStreamAsSource".asInstanceOf[DeliveryStreamType]
 
     val values = js.Object.freeze(js.Array(DirectPut, KinesisStreamAsSource))
   }
@@ -819,13 +805,14 @@ package firehose {
       __obj.asInstanceOf[ElasticsearchDestinationUpdate]
     }
   }
-
-  object ElasticsearchIndexRotationPeriodEnum {
-    val NoRotation = "NoRotation"
-    val OneHour    = "OneHour"
-    val OneDay     = "OneDay"
-    val OneWeek    = "OneWeek"
-    val OneMonth   = "OneMonth"
+  @js.native
+  sealed trait ElasticsearchIndexRotationPeriod extends js.Any
+  object ElasticsearchIndexRotationPeriod extends js.Object {
+    val NoRotation = "NoRotation".asInstanceOf[ElasticsearchIndexRotationPeriod]
+    val OneHour    = "OneHour".asInstanceOf[ElasticsearchIndexRotationPeriod]
+    val OneDay     = "OneDay".asInstanceOf[ElasticsearchIndexRotationPeriod]
+    val OneWeek    = "OneWeek".asInstanceOf[ElasticsearchIndexRotationPeriod]
+    val OneMonth   = "OneMonth".asInstanceOf[ElasticsearchIndexRotationPeriod]
 
     val values = js.Object.freeze(js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth))
   }
@@ -848,10 +835,11 @@ package firehose {
       __obj.asInstanceOf[ElasticsearchRetryOptions]
     }
   }
-
-  object ElasticsearchS3BackupModeEnum {
-    val FailedDocumentsOnly = "FailedDocumentsOnly"
-    val AllDocuments        = "AllDocuments"
+  @js.native
+  sealed trait ElasticsearchS3BackupMode extends js.Any
+  object ElasticsearchS3BackupMode extends js.Object {
+    val FailedDocumentsOnly = "FailedDocumentsOnly".asInstanceOf[ElasticsearchS3BackupMode]
+    val AllDocuments        = "AllDocuments".asInstanceOf[ElasticsearchS3BackupMode]
 
     val values = js.Object.freeze(js.Array(FailedDocumentsOnly, AllDocuments))
   }
@@ -1067,10 +1055,11 @@ package firehose {
       __obj.asInstanceOf[FailureDescription]
     }
   }
-
-  object HECEndpointTypeEnum {
-    val Raw   = "Raw"
-    val Event = "Event"
+  @js.native
+  sealed trait HECEndpointType extends js.Any
+  object HECEndpointType extends js.Object {
+    val Raw   = "Raw".asInstanceOf[HECEndpointType]
+    val Event = "Event".asInstanceOf[HECEndpointType]
 
     val values = js.Object.freeze(js.Array(Raw, Event))
   }
@@ -1133,10 +1122,11 @@ package firehose {
       __obj.asInstanceOf[KMSEncryptionConfig]
     }
   }
-
-  object KeyTypeEnum {
-    val AWS_OWNED_CMK        = "AWS_OWNED_CMK"
-    val CUSTOMER_MANAGED_CMK = "CUSTOMER_MANAGED_CMK"
+  @js.native
+  sealed trait KeyType extends js.Any
+  object KeyType extends js.Object {
+    val AWS_OWNED_CMK        = "AWS_OWNED_CMK".asInstanceOf[KeyType]
+    val CUSTOMER_MANAGED_CMK = "CUSTOMER_MANAGED_CMK".asInstanceOf[KeyType]
 
     val values = js.Object.freeze(js.Array(AWS_OWNED_CMK, CUSTOMER_MANAGED_CMK))
   }
@@ -1279,9 +1269,10 @@ package firehose {
       __obj.asInstanceOf[ListTagsForDeliveryStreamOutput]
     }
   }
-
-  object NoEncryptionConfigEnum {
-    val NoEncryption = "NoEncryption"
+  @js.native
+  sealed trait NoEncryptionConfig extends js.Any
+  object NoEncryptionConfig extends js.Object {
+    val NoEncryption = "NoEncryption".asInstanceOf[NoEncryptionConfig]
 
     val values = js.Object.freeze(js.Array(NoEncryption))
   }
@@ -1312,18 +1303,20 @@ package firehose {
       __obj.asInstanceOf[OpenXJsonSerDe]
     }
   }
-
-  object OrcCompressionEnum {
-    val NONE   = "NONE"
-    val ZLIB   = "ZLIB"
-    val SNAPPY = "SNAPPY"
+  @js.native
+  sealed trait OrcCompression extends js.Any
+  object OrcCompression extends js.Object {
+    val NONE   = "NONE".asInstanceOf[OrcCompression]
+    val ZLIB   = "ZLIB".asInstanceOf[OrcCompression]
+    val SNAPPY = "SNAPPY".asInstanceOf[OrcCompression]
 
     val values = js.Object.freeze(js.Array(NONE, ZLIB, SNAPPY))
   }
-
-  object OrcFormatVersionEnum {
-    val V0_11 = "V0_11"
-    val V0_12 = "V0_12"
+  @js.native
+  sealed trait OrcFormatVersion extends js.Any
+  object OrcFormatVersion extends js.Object {
+    val V0_11 = "V0_11".asInstanceOf[OrcFormatVersion]
+    val V0_12 = "V0_12".asInstanceOf[OrcFormatVersion]
 
     val values = js.Object.freeze(js.Array(V0_11, V0_12))
   }
@@ -1394,11 +1387,12 @@ package firehose {
       __obj.asInstanceOf[OutputFormatConfiguration]
     }
   }
-
-  object ParquetCompressionEnum {
-    val UNCOMPRESSED = "UNCOMPRESSED"
-    val GZIP         = "GZIP"
-    val SNAPPY       = "SNAPPY"
+  @js.native
+  sealed trait ParquetCompression extends js.Any
+  object ParquetCompression extends js.Object {
+    val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[ParquetCompression]
+    val GZIP         = "GZIP".asInstanceOf[ParquetCompression]
+    val SNAPPY       = "SNAPPY".asInstanceOf[ParquetCompression]
 
     val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, SNAPPY))
   }
@@ -1438,10 +1432,11 @@ package firehose {
       __obj.asInstanceOf[ParquetSerDe]
     }
   }
-
-  object ParquetWriterVersionEnum {
-    val V1 = "V1"
-    val V2 = "V2"
+  @js.native
+  sealed trait ParquetWriterVersion extends js.Any
+  object ParquetWriterVersion extends js.Object {
+    val V1 = "V1".asInstanceOf[ParquetWriterVersion]
+    val V2 = "V2".asInstanceOf[ParquetWriterVersion]
 
     val values = js.Object.freeze(js.Array(V1, V2))
   }
@@ -1515,20 +1510,22 @@ package firehose {
       __obj.asInstanceOf[ProcessorParameter]
     }
   }
-
-  object ProcessorParameterNameEnum {
-    val LambdaArn               = "LambdaArn"
-    val NumberOfRetries         = "NumberOfRetries"
-    val RoleArn                 = "RoleArn"
-    val BufferSizeInMBs         = "BufferSizeInMBs"
-    val BufferIntervalInSeconds = "BufferIntervalInSeconds"
+  @js.native
+  sealed trait ProcessorParameterName extends js.Any
+  object ProcessorParameterName extends js.Object {
+    val LambdaArn               = "LambdaArn".asInstanceOf[ProcessorParameterName]
+    val NumberOfRetries         = "NumberOfRetries".asInstanceOf[ProcessorParameterName]
+    val RoleArn                 = "RoleArn".asInstanceOf[ProcessorParameterName]
+    val BufferSizeInMBs         = "BufferSizeInMBs".asInstanceOf[ProcessorParameterName]
+    val BufferIntervalInSeconds = "BufferIntervalInSeconds".asInstanceOf[ProcessorParameterName]
 
     val values =
       js.Object.freeze(js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds))
   }
-
-  object ProcessorTypeEnum {
-    val Lambda = "Lambda"
+  @js.native
+  sealed trait ProcessorType extends js.Any
+  object ProcessorType extends js.Object {
+    val Lambda = "Lambda".asInstanceOf[ProcessorType]
 
     val values = js.Object.freeze(js.Array(Lambda))
   }
@@ -1832,17 +1829,19 @@ package firehose {
       __obj.asInstanceOf[RedshiftRetryOptions]
     }
   }
-
-  object RedshiftS3BackupModeEnum {
-    val Disabled = "Disabled"
-    val Enabled  = "Enabled"
+  @js.native
+  sealed trait RedshiftS3BackupMode extends js.Any
+  object RedshiftS3BackupMode extends js.Object {
+    val Disabled = "Disabled".asInstanceOf[RedshiftS3BackupMode]
+    val Enabled  = "Enabled".asInstanceOf[RedshiftS3BackupMode]
 
     val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
-
-  object S3BackupModeEnum {
-    val Disabled = "Disabled"
-    val Enabled  = "Enabled"
+  @js.native
+  sealed trait S3BackupMode extends js.Any
+  object S3BackupMode extends js.Object {
+    val Disabled = "Disabled".asInstanceOf[S3BackupMode]
+    val Enabled  = "Enabled".asInstanceOf[S3BackupMode]
 
     val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
@@ -2203,10 +2202,11 @@ package firehose {
       __obj.asInstanceOf[SplunkRetryOptions]
     }
   }
-
-  object SplunkS3BackupModeEnum {
-    val FailedEventsOnly = "FailedEventsOnly"
-    val AllEvents        = "AllEvents"
+  @js.native
+  sealed trait SplunkS3BackupMode extends js.Any
+  object SplunkS3BackupMode extends js.Object {
+    val FailedEventsOnly = "FailedEventsOnly".asInstanceOf[SplunkS3BackupMode]
+    val AllEvents        = "AllEvents".asInstanceOf[SplunkS3BackupMode]
 
     val values = js.Object.freeze(js.Array(FailedEventsOnly, AllEvents))
   }

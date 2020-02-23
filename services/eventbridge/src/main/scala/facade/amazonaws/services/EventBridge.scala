@@ -10,7 +10,6 @@ package object eventbridge {
   type AccountId                        = String
   type Action                           = String
   type Arn                              = String
-  type AssignPublicIp                   = String
   type ErrorCode                        = String
   type ErrorMessage                     = String
   type EventBusList                     = js.Array[EventBus]
@@ -22,10 +21,8 @@ package object eventbridge {
   type EventSourceList                  = js.Array[EventSource]
   type EventSourceName                  = String
   type EventSourceNamePrefix            = String
-  type EventSourceState                 = String
   type EventTime                        = js.Date
   type InputTransformerPathKey          = String
-  type LaunchType                       = String
   type LimitMax100                      = Int
   type LimitMin1                        = Int
   type ManagedBy                        = String
@@ -48,7 +45,6 @@ package object eventbridge {
   type RuleName                         = String
   type RuleNameList                     = js.Array[RuleName]
   type RuleResponseList                 = js.Array[Rule]
-  type RuleState                        = String
   type RunCommandTargetKey              = String
   type RunCommandTargetValue            = String
   type RunCommandTargetValues           = js.Array[RunCommandTargetValue]
@@ -205,10 +201,11 @@ package eventbridge {
       __obj.asInstanceOf[ActivateEventSourceRequest]
     }
   }
-
-  object AssignPublicIpEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait AssignPublicIp extends js.Any
+  object AssignPublicIp extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[AssignPublicIp]
+    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -812,11 +809,12 @@ package eventbridge {
       __obj.asInstanceOf[EventSource]
     }
   }
-
-  object EventSourceStateEnum {
-    val PENDING = "PENDING"
-    val ACTIVE  = "ACTIVE"
-    val DELETED = "DELETED"
+  @js.native
+  sealed trait EventSourceState extends js.Any
+  object EventSourceState extends js.Object {
+    val PENDING = "PENDING".asInstanceOf[EventSourceState]
+    val ACTIVE  = "ACTIVE".asInstanceOf[EventSourceState]
+    val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
   }
@@ -865,10 +863,11 @@ package eventbridge {
       __obj.asInstanceOf[KinesisParameters]
     }
   }
-
-  object LaunchTypeEnum {
-    val EC2     = "EC2"
-    val FARGATE = "FARGATE"
+  @js.native
+  sealed trait LaunchType extends js.Any
+  object LaunchType extends js.Object {
+    val EC2     = "EC2".asInstanceOf[LaunchType]
+    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
@@ -1758,10 +1757,11 @@ package eventbridge {
       __obj.asInstanceOf[Rule]
     }
   }
-
-  object RuleStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait RuleState extends js.Any
+  object RuleState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[RuleState]
+    val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }

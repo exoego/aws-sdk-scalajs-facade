@@ -11,12 +11,10 @@ package object quicksight {
   type ActiveIAMPolicyAssignmentList  = js.Array[ActiveIAMPolicyAssignment]
   type AliasName                      = String
   type Arn                            = String
-  type AssignmentStatus               = String
   type AwsAccountId                   = String
   type CalculatedColumnList           = js.Array[CalculatedColumn]
   type Catalog                        = String
   type ClusterId                      = String
-  type ColumnDataType                 = String
   type ColumnGroupColumnSchemaList    = js.Array[ColumnGroupColumnSchema]
   type ColumnGroupList                = js.Array[ColumnGroup]
   type ColumnGroupName                = String
@@ -27,21 +25,15 @@ package object quicksight {
   type ColumnSchemaList               = js.Array[ColumnSchema]
   type ColumnTagList                  = js.Array[ColumnTag]
   type CustomSqlName                  = String
-  type DashboardBehavior              = String
   type DashboardErrorList             = js.Array[DashboardError]
-  type DashboardErrorType             = String
   type DashboardName                  = String
   type DashboardSummaryList           = js.Array[DashboardSummary]
-  type DashboardUIState               = String
   type DashboardVersionSummaryList    = js.Array[DashboardVersionSummary]
   type DataSetConfigurationList       = js.Array[DataSetConfiguration]
-  type DataSetImportMode              = String
   type DataSetName                    = String
   type DataSetReferenceList           = js.Array[DataSetReference]
   type DataSetSummaryList             = js.Array[DataSetSummary]
-  type DataSourceErrorInfoType        = String
   type DataSourceList                 = js.Array[DataSource]
-  type DataSourceType                 = String
   type Database                       = String
   type DateTimeParameterList          = js.Array[DateTimeParameter]
   type DecimalParameterList           = js.Array[DecimalParameter]
@@ -50,9 +42,6 @@ package object quicksight {
   type DoubleList                     = js.Array[Double]
   type EmbeddingUrl                   = String
   type Expression                     = String
-  type FileFormat                     = String
-  type GeoSpatialCountryCode          = String
-  type GeoSpatialDataRole             = String
   type GroupDescription               = String
   type GroupList                      = js.Array[Group]
   type GroupMemberList                = js.Array[GroupMember]
@@ -64,19 +53,12 @@ package object quicksight {
   type IdentityMap                    = js.Dictionary[IdentityNameList]
   type IdentityName                   = String
   type IdentityNameList               = js.Array[IdentityName]
-  type IdentityType                   = String
-  type IngestionErrorType             = String
   type IngestionId                    = String
   type IngestionMaxResults            = Int
-  type IngestionRequestSource         = String
-  type IngestionRequestType           = String
-  type IngestionStatus                = String
   type Ingestions                     = js.Array[Ingestion]
-  type InputColumnDataType            = String
   type InputColumnList                = js.Array[InputColumn]
   type InstanceId                     = String
   type IntegerParameterList           = js.Array[IntegerParameter]
-  type JoinType                       = String
   type LogicalTableAlias              = String
   type LogicalTableId                 = String
   type LogicalTableMap                = js.Dictionary[LogicalTable]
@@ -100,10 +82,8 @@ package object quicksight {
   type ResourceId                     = String
   type ResourceName                   = String
   type ResourcePermissionList         = js.Array[ResourcePermission]
-  type ResourceStatus                 = String
   type RestrictiveResourceId          = String
   type RoleSessionName                = String
-  type RowLevelPermissionPolicy       = String
   type S3Bucket                       = String
   type S3Key                          = String
   type SessionLifetimeInMinutes       = Double
@@ -118,11 +98,9 @@ package object quicksight {
   type TagValue                       = String
   type TemplateAliasList              = js.Array[TemplateAlias]
   type TemplateErrorList              = js.Array[TemplateError]
-  type TemplateErrorType              = String
   type TemplateName                   = String
   type TemplateSummaryList            = js.Array[TemplateSummary]
   type TemplateVersionSummaryList     = js.Array[TemplateVersionSummary]
-  type TextQualifier                  = String
   type Timestamp                      = js.Date
   type TimestampList                  = js.Array[Timestamp]
   type TransformOperationList         = js.Array[TransformOperation]
@@ -130,7 +108,6 @@ package object quicksight {
   type UpdateResourcePermissionList   = js.Array[ResourcePermission]
   type UserList                       = js.Array[User]
   type UserName                       = String
-  type UserRole                       = String
   type Username                       = String
   type VersionDescription             = String
   type VersionNumber                  = Double
@@ -458,11 +435,12 @@ package quicksight {
       __obj.asInstanceOf[AmazonElasticsearchParameters]
     }
   }
-
-  object AssignmentStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DRAFT    = "DRAFT"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait AssignmentStatus extends js.Any
+  object AssignmentStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[AssignmentStatus]
+    val DRAFT    = "DRAFT".asInstanceOf[AssignmentStatus]
+    val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DRAFT, DISABLED))
   }
@@ -663,12 +641,13 @@ package quicksight {
       __obj.asInstanceOf[CastColumnTypeOperation]
     }
   }
-
-  object ColumnDataTypeEnum {
-    val STRING   = "STRING"
-    val INTEGER  = "INTEGER"
-    val DECIMAL  = "DECIMAL"
-    val DATETIME = "DATETIME"
+  @js.native
+  sealed trait ColumnDataType extends js.Any
+  object ColumnDataType extends js.Object {
+    val STRING   = "STRING".asInstanceOf[ColumnDataType]
+    val INTEGER  = "INTEGER".asInstanceOf[ColumnDataType]
+    val DECIMAL  = "DECIMAL".asInstanceOf[ColumnDataType]
+    val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME))
   }
@@ -1453,10 +1432,11 @@ package quicksight {
       __obj.asInstanceOf[Dashboard]
     }
   }
-
-  object DashboardBehaviorEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait DashboardBehavior extends js.Any
+  object DashboardBehavior extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[DashboardBehavior]
+    val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1482,16 +1462,17 @@ package quicksight {
       __obj.asInstanceOf[DashboardError]
     }
   }
-
-  object DashboardErrorTypeEnum {
-    val DATA_SET_NOT_FOUND              = "DATA_SET_NOT_FOUND"
-    val INTERNAL_FAILURE                = "INTERNAL_FAILURE"
-    val PARAMETER_VALUE_INCOMPATIBLE    = "PARAMETER_VALUE_INCOMPATIBLE"
-    val PARAMETER_TYPE_INVALID          = "PARAMETER_TYPE_INVALID"
-    val PARAMETER_NOT_FOUND             = "PARAMETER_NOT_FOUND"
-    val COLUMN_TYPE_MISMATCH            = "COLUMN_TYPE_MISMATCH"
-    val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH"
-    val COLUMN_REPLACEMENT_MISSING      = "COLUMN_REPLACEMENT_MISSING"
+  @js.native
+  sealed trait DashboardErrorType extends js.Any
+  object DashboardErrorType extends js.Object {
+    val DATA_SET_NOT_FOUND              = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
+    val INTERNAL_FAILURE                = "INTERNAL_FAILURE".asInstanceOf[DashboardErrorType]
+    val PARAMETER_VALUE_INCOMPATIBLE    = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[DashboardErrorType]
+    val PARAMETER_TYPE_INVALID          = "PARAMETER_TYPE_INVALID".asInstanceOf[DashboardErrorType]
+    val PARAMETER_NOT_FOUND             = "PARAMETER_NOT_FOUND".asInstanceOf[DashboardErrorType]
+    val COLUMN_TYPE_MISMATCH            = "COLUMN_TYPE_MISMATCH".asInstanceOf[DashboardErrorType]
+    val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
+    val COLUMN_REPLACEMENT_MISSING      = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1611,10 +1592,11 @@ package quicksight {
       __obj.asInstanceOf[DashboardSummary]
     }
   }
-
-  object DashboardUIStateEnum {
-    val EXPANDED  = "EXPANDED"
-    val COLLAPSED = "COLLAPSED"
+  @js.native
+  sealed trait DashboardUIState extends js.Any
+  object DashboardUIState extends js.Object {
+    val EXPANDED  = "EXPANDED".asInstanceOf[DashboardUIState]
+    val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
 
     val values = js.Object.freeze(js.Array(EXPANDED, COLLAPSED))
   }
@@ -1770,10 +1752,11 @@ package quicksight {
       __obj.asInstanceOf[DataSetConfiguration]
     }
   }
-
-  object DataSetImportModeEnum {
-    val SPICE        = "SPICE"
-    val DIRECT_QUERY = "DIRECT_QUERY"
+  @js.native
+  sealed trait DataSetImportMode extends js.Any
+  object DataSetImportMode extends js.Object {
+    val SPICE        = "SPICE".asInstanceOf[DataSetImportMode]
+    val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
 
     val values = js.Object.freeze(js.Array(SPICE, DIRECT_QUERY))
   }
@@ -1949,14 +1932,15 @@ package quicksight {
       __obj.asInstanceOf[DataSourceErrorInfo]
     }
   }
-
-  object DataSourceErrorInfoTypeEnum {
-    val TIMEOUT                      = "TIMEOUT"
-    val ENGINE_VERSION_NOT_SUPPORTED = "ENGINE_VERSION_NOT_SUPPORTED"
-    val UNKNOWN_HOST                 = "UNKNOWN_HOST"
-    val GENERIC_SQL_FAILURE          = "GENERIC_SQL_FAILURE"
-    val CONFLICT                     = "CONFLICT"
-    val UNKNOWN                      = "UNKNOWN"
+  @js.native
+  sealed trait DataSourceErrorInfoType extends js.Any
+  object DataSourceErrorInfoType extends js.Object {
+    val TIMEOUT                      = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
+    val ENGINE_VERSION_NOT_SUPPORTED = "ENGINE_VERSION_NOT_SUPPORTED".asInstanceOf[DataSourceErrorInfoType]
+    val UNKNOWN_HOST                 = "UNKNOWN_HOST".asInstanceOf[DataSourceErrorInfoType]
+    val GENERIC_SQL_FAILURE          = "GENERIC_SQL_FAILURE".asInstanceOf[DataSourceErrorInfoType]
+    val CONFLICT                     = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
+    val UNKNOWN                      = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
     val values = js.Object.freeze(
       js.Array(TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
@@ -2041,29 +2025,30 @@ package quicksight {
       __obj.asInstanceOf[DataSourceParameters]
     }
   }
-
-  object DataSourceTypeEnum {
-    val ADOBE_ANALYTICS      = "ADOBE_ANALYTICS"
-    val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH"
-    val ATHENA               = "ATHENA"
-    val AURORA               = "AURORA"
-    val AURORA_POSTGRESQL    = "AURORA_POSTGRESQL"
-    val AWS_IOT_ANALYTICS    = "AWS_IOT_ANALYTICS"
-    val GITHUB               = "GITHUB"
-    val JIRA                 = "JIRA"
-    val MARIADB              = "MARIADB"
-    val MYSQL                = "MYSQL"
-    val POSTGRESQL           = "POSTGRESQL"
-    val PRESTO               = "PRESTO"
-    val REDSHIFT             = "REDSHIFT"
-    val S3                   = "S3"
-    val SALESFORCE           = "SALESFORCE"
-    val SERVICENOW           = "SERVICENOW"
-    val SNOWFLAKE            = "SNOWFLAKE"
-    val SPARK                = "SPARK"
-    val SQLSERVER            = "SQLSERVER"
-    val TERADATA             = "TERADATA"
-    val TWITTER              = "TWITTER"
+  @js.native
+  sealed trait DataSourceType extends js.Any
+  object DataSourceType extends js.Object {
+    val ADOBE_ANALYTICS      = "ADOBE_ANALYTICS".asInstanceOf[DataSourceType]
+    val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
+    val ATHENA               = "ATHENA".asInstanceOf[DataSourceType]
+    val AURORA               = "AURORA".asInstanceOf[DataSourceType]
+    val AURORA_POSTGRESQL    = "AURORA_POSTGRESQL".asInstanceOf[DataSourceType]
+    val AWS_IOT_ANALYTICS    = "AWS_IOT_ANALYTICS".asInstanceOf[DataSourceType]
+    val GITHUB               = "GITHUB".asInstanceOf[DataSourceType]
+    val JIRA                 = "JIRA".asInstanceOf[DataSourceType]
+    val MARIADB              = "MARIADB".asInstanceOf[DataSourceType]
+    val MYSQL                = "MYSQL".asInstanceOf[DataSourceType]
+    val POSTGRESQL           = "POSTGRESQL".asInstanceOf[DataSourceType]
+    val PRESTO               = "PRESTO".asInstanceOf[DataSourceType]
+    val REDSHIFT             = "REDSHIFT".asInstanceOf[DataSourceType]
+    val S3                   = "S3".asInstanceOf[DataSourceType]
+    val SALESFORCE           = "SALESFORCE".asInstanceOf[DataSourceType]
+    val SERVICENOW           = "SERVICENOW".asInstanceOf[DataSourceType]
+    val SNOWFLAKE            = "SNOWFLAKE".asInstanceOf[DataSourceType]
+    val SPARK                = "SPARK".asInstanceOf[DataSourceType]
+    val SQLSERVER            = "SQLSERVER".asInstanceOf[DataSourceType]
+    val TERADATA             = "TERADATA".asInstanceOf[DataSourceType]
+    val TWITTER              = "TWITTER".asInstanceOf[DataSourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3253,14 +3238,15 @@ package quicksight {
       __obj.asInstanceOf[ExportToCSVOption]
     }
   }
-
-  object FileFormatEnum {
-    val CSV  = "CSV"
-    val TSV  = "TSV"
-    val CLF  = "CLF"
-    val ELF  = "ELF"
-    val XLSX = "XLSX"
-    val JSON = "JSON"
+  @js.native
+  sealed trait FileFormat extends js.Any
+  object FileFormat extends js.Object {
+    val CSV  = "CSV".asInstanceOf[FileFormat]
+    val TSV  = "TSV".asInstanceOf[FileFormat]
+    val CLF  = "CLF".asInstanceOf[FileFormat]
+    val ELF  = "ELF".asInstanceOf[FileFormat]
+    val XLSX = "XLSX".asInstanceOf[FileFormat]
+    val JSON = "JSON".asInstanceOf[FileFormat]
 
     val values = js.Object.freeze(js.Array(CSV, TSV, CLF, ELF, XLSX, JSON))
   }
@@ -3312,21 +3298,23 @@ package quicksight {
       __obj.asInstanceOf[GeoSpatialColumnGroup]
     }
   }
-
-  object GeoSpatialCountryCodeEnum {
-    val US = "US"
+  @js.native
+  sealed trait GeoSpatialCountryCode extends js.Any
+  object GeoSpatialCountryCode extends js.Object {
+    val US = "US".asInstanceOf[GeoSpatialCountryCode]
 
     val values = js.Object.freeze(js.Array(US))
   }
-
-  object GeoSpatialDataRoleEnum {
-    val COUNTRY   = "COUNTRY"
-    val STATE     = "STATE"
-    val COUNTY    = "COUNTY"
-    val CITY      = "CITY"
-    val POSTCODE  = "POSTCODE"
-    val LONGITUDE = "LONGITUDE"
-    val LATITUDE  = "LATITUDE"
+  @js.native
+  sealed trait GeoSpatialDataRole extends js.Any
+  object GeoSpatialDataRole extends js.Object {
+    val COUNTRY   = "COUNTRY".asInstanceOf[GeoSpatialDataRole]
+    val STATE     = "STATE".asInstanceOf[GeoSpatialDataRole]
+    val COUNTY    = "COUNTY".asInstanceOf[GeoSpatialDataRole]
+    val CITY      = "CITY".asInstanceOf[GeoSpatialDataRole]
+    val POSTCODE  = "POSTCODE".asInstanceOf[GeoSpatialDataRole]
+    val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
+    val LATITUDE  = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
 
     val values = js.Object.freeze(js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE))
   }
@@ -3494,10 +3482,11 @@ package quicksight {
       __obj.asInstanceOf[IAMPolicyAssignmentSummary]
     }
   }
-
-  object IdentityTypeEnum {
-    val IAM        = "IAM"
-    val QUICKSIGHT = "QUICKSIGHT"
+  @js.native
+  sealed trait IdentityType extends js.Any
+  object IdentityType extends js.Object {
+    val IAM        = "IAM".asInstanceOf[IdentityType]
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(IAM, QUICKSIGHT))
   }
@@ -3552,48 +3541,49 @@ package quicksight {
       __obj.asInstanceOf[Ingestion]
     }
   }
-
-  object IngestionErrorTypeEnum {
-    val FAILURE_TO_ASSUME_ROLE             = "FAILURE_TO_ASSUME_ROLE"
-    val INGESTION_SUPERSEDED               = "INGESTION_SUPERSEDED"
-    val INGESTION_CANCELED                 = "INGESTION_CANCELED"
-    val DATA_SET_DELETED                   = "DATA_SET_DELETED"
-    val DATA_SET_NOT_SPICE                 = "DATA_SET_NOT_SPICE"
-    val S3_UPLOADED_FILE_DELETED           = "S3_UPLOADED_FILE_DELETED"
-    val S3_MANIFEST_ERROR                  = "S3_MANIFEST_ERROR"
-    val DATA_TOLERANCE_EXCEPTION           = "DATA_TOLERANCE_EXCEPTION"
-    val SPICE_TABLE_NOT_FOUND              = "SPICE_TABLE_NOT_FOUND"
-    val DATA_SET_SIZE_LIMIT_EXCEEDED       = "DATA_SET_SIZE_LIMIT_EXCEEDED"
-    val ROW_SIZE_LIMIT_EXCEEDED            = "ROW_SIZE_LIMIT_EXCEEDED"
-    val ACCOUNT_CAPACITY_LIMIT_EXCEEDED    = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED"
-    val CUSTOMER_ERROR                     = "CUSTOMER_ERROR"
-    val DATA_SOURCE_NOT_FOUND              = "DATA_SOURCE_NOT_FOUND"
-    val IAM_ROLE_NOT_AVAILABLE             = "IAM_ROLE_NOT_AVAILABLE"
-    val CONNECTION_FAILURE                 = "CONNECTION_FAILURE"
-    val SQL_TABLE_NOT_FOUND                = "SQL_TABLE_NOT_FOUND"
-    val PERMISSION_DENIED                  = "PERMISSION_DENIED"
-    val SSL_CERTIFICATE_VALIDATION_FAILURE = "SSL_CERTIFICATE_VALIDATION_FAILURE"
-    val OAUTH_TOKEN_FAILURE                = "OAUTH_TOKEN_FAILURE"
-    val SOURCE_API_LIMIT_EXCEEDED_FAILURE  = "SOURCE_API_LIMIT_EXCEEDED_FAILURE"
-    val PASSWORD_AUTHENTICATION_FAILURE    = "PASSWORD_AUTHENTICATION_FAILURE"
-    val SQL_SCHEMA_MISMATCH_ERROR          = "SQL_SCHEMA_MISMATCH_ERROR"
-    val INVALID_DATE_FORMAT                = "INVALID_DATE_FORMAT"
-    val INVALID_DATAPREP_SYNTAX            = "INVALID_DATAPREP_SYNTAX"
-    val SOURCE_RESOURCE_LIMIT_EXCEEDED     = "SOURCE_RESOURCE_LIMIT_EXCEEDED"
-    val SQL_INVALID_PARAMETER_VALUE        = "SQL_INVALID_PARAMETER_VALUE"
-    val QUERY_TIMEOUT                      = "QUERY_TIMEOUT"
-    val SQL_NUMERIC_OVERFLOW               = "SQL_NUMERIC_OVERFLOW"
-    val UNRESOLVABLE_HOST                  = "UNRESOLVABLE_HOST"
-    val UNROUTABLE_HOST                    = "UNROUTABLE_HOST"
-    val SQL_EXCEPTION                      = "SQL_EXCEPTION"
-    val S3_FILE_INACCESSIBLE               = "S3_FILE_INACCESSIBLE"
-    val IOT_FILE_NOT_FOUND                 = "IOT_FILE_NOT_FOUND"
-    val IOT_DATA_SET_FILE_EMPTY            = "IOT_DATA_SET_FILE_EMPTY"
-    val INVALID_DATA_SOURCE_CONFIG         = "INVALID_DATA_SOURCE_CONFIG"
-    val DATA_SOURCE_AUTH_FAILED            = "DATA_SOURCE_AUTH_FAILED"
-    val DATA_SOURCE_CONNECTION_FAILED      = "DATA_SOURCE_CONNECTION_FAILED"
-    val FAILURE_TO_PROCESS_JSON_FILE       = "FAILURE_TO_PROCESS_JSON_FILE"
-    val INTERNAL_SERVICE_ERROR             = "INTERNAL_SERVICE_ERROR"
+  @js.native
+  sealed trait IngestionErrorType extends js.Any
+  object IngestionErrorType extends js.Object {
+    val FAILURE_TO_ASSUME_ROLE             = "FAILURE_TO_ASSUME_ROLE".asInstanceOf[IngestionErrorType]
+    val INGESTION_SUPERSEDED               = "INGESTION_SUPERSEDED".asInstanceOf[IngestionErrorType]
+    val INGESTION_CANCELED                 = "INGESTION_CANCELED".asInstanceOf[IngestionErrorType]
+    val DATA_SET_DELETED                   = "DATA_SET_DELETED".asInstanceOf[IngestionErrorType]
+    val DATA_SET_NOT_SPICE                 = "DATA_SET_NOT_SPICE".asInstanceOf[IngestionErrorType]
+    val S3_UPLOADED_FILE_DELETED           = "S3_UPLOADED_FILE_DELETED".asInstanceOf[IngestionErrorType]
+    val S3_MANIFEST_ERROR                  = "S3_MANIFEST_ERROR".asInstanceOf[IngestionErrorType]
+    val DATA_TOLERANCE_EXCEPTION           = "DATA_TOLERANCE_EXCEPTION".asInstanceOf[IngestionErrorType]
+    val SPICE_TABLE_NOT_FOUND              = "SPICE_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val DATA_SET_SIZE_LIMIT_EXCEEDED       = "DATA_SET_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val ROW_SIZE_LIMIT_EXCEEDED            = "ROW_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val ACCOUNT_CAPACITY_LIMIT_EXCEEDED    = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val CUSTOMER_ERROR                     = "CUSTOMER_ERROR".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_NOT_FOUND              = "DATA_SOURCE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val IAM_ROLE_NOT_AVAILABLE             = "IAM_ROLE_NOT_AVAILABLE".asInstanceOf[IngestionErrorType]
+    val CONNECTION_FAILURE                 = "CONNECTION_FAILURE".asInstanceOf[IngestionErrorType]
+    val SQL_TABLE_NOT_FOUND                = "SQL_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val PERMISSION_DENIED                  = "PERMISSION_DENIED".asInstanceOf[IngestionErrorType]
+    val SSL_CERTIFICATE_VALIDATION_FAILURE = "SSL_CERTIFICATE_VALIDATION_FAILURE".asInstanceOf[IngestionErrorType]
+    val OAUTH_TOKEN_FAILURE                = "OAUTH_TOKEN_FAILURE".asInstanceOf[IngestionErrorType]
+    val SOURCE_API_LIMIT_EXCEEDED_FAILURE  = "SOURCE_API_LIMIT_EXCEEDED_FAILURE".asInstanceOf[IngestionErrorType]
+    val PASSWORD_AUTHENTICATION_FAILURE    = "PASSWORD_AUTHENTICATION_FAILURE".asInstanceOf[IngestionErrorType]
+    val SQL_SCHEMA_MISMATCH_ERROR          = "SQL_SCHEMA_MISMATCH_ERROR".asInstanceOf[IngestionErrorType]
+    val INVALID_DATE_FORMAT                = "INVALID_DATE_FORMAT".asInstanceOf[IngestionErrorType]
+    val INVALID_DATAPREP_SYNTAX            = "INVALID_DATAPREP_SYNTAX".asInstanceOf[IngestionErrorType]
+    val SOURCE_RESOURCE_LIMIT_EXCEEDED     = "SOURCE_RESOURCE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val SQL_INVALID_PARAMETER_VALUE        = "SQL_INVALID_PARAMETER_VALUE".asInstanceOf[IngestionErrorType]
+    val QUERY_TIMEOUT                      = "QUERY_TIMEOUT".asInstanceOf[IngestionErrorType]
+    val SQL_NUMERIC_OVERFLOW               = "SQL_NUMERIC_OVERFLOW".asInstanceOf[IngestionErrorType]
+    val UNRESOLVABLE_HOST                  = "UNRESOLVABLE_HOST".asInstanceOf[IngestionErrorType]
+    val UNROUTABLE_HOST                    = "UNROUTABLE_HOST".asInstanceOf[IngestionErrorType]
+    val SQL_EXCEPTION                      = "SQL_EXCEPTION".asInstanceOf[IngestionErrorType]
+    val S3_FILE_INACCESSIBLE               = "S3_FILE_INACCESSIBLE".asInstanceOf[IngestionErrorType]
+    val IOT_FILE_NOT_FOUND                 = "IOT_FILE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val IOT_DATA_SET_FILE_EMPTY            = "IOT_DATA_SET_FILE_EMPTY".asInstanceOf[IngestionErrorType]
+    val INVALID_DATA_SOURCE_CONFIG         = "INVALID_DATA_SOURCE_CONFIG".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_AUTH_FAILED            = "DATA_SOURCE_AUTH_FAILED".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_CONNECTION_FAILED      = "DATA_SOURCE_CONNECTION_FAILED".asInstanceOf[IngestionErrorType]
+    val FAILURE_TO_PROCESS_JSON_FILE       = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
+    val INTERNAL_SERVICE_ERROR             = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3640,30 +3630,33 @@ package quicksight {
       )
     )
   }
-
-  object IngestionRequestSourceEnum {
-    val MANUAL    = "MANUAL"
-    val SCHEDULED = "SCHEDULED"
+  @js.native
+  sealed trait IngestionRequestSource extends js.Any
+  object IngestionRequestSource extends js.Object {
+    val MANUAL    = "MANUAL".asInstanceOf[IngestionRequestSource]
+    val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
 
     val values = js.Object.freeze(js.Array(MANUAL, SCHEDULED))
   }
-
-  object IngestionRequestTypeEnum {
-    val INITIAL_INGESTION   = "INITIAL_INGESTION"
-    val EDIT                = "EDIT"
-    val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH"
-    val FULL_REFRESH        = "FULL_REFRESH"
+  @js.native
+  sealed trait IngestionRequestType extends js.Any
+  object IngestionRequestType extends js.Object {
+    val INITIAL_INGESTION   = "INITIAL_INGESTION".asInstanceOf[IngestionRequestType]
+    val EDIT                = "EDIT".asInstanceOf[IngestionRequestType]
+    val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
+    val FULL_REFRESH        = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
 
     val values = js.Object.freeze(js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH))
   }
-
-  object IngestionStatusEnum {
-    val INITIALIZED = "INITIALIZED"
-    val QUEUED      = "QUEUED"
-    val RUNNING     = "RUNNING"
-    val FAILED      = "FAILED"
-    val COMPLETED   = "COMPLETED"
-    val CANCELLED   = "CANCELLED"
+  @js.native
+  sealed trait IngestionStatus extends js.Any
+  object IngestionStatus extends js.Object {
+    val INITIALIZED = "INITIALIZED".asInstanceOf[IngestionStatus]
+    val QUEUED      = "QUEUED".asInstanceOf[IngestionStatus]
+    val RUNNING     = "RUNNING".asInstanceOf[IngestionStatus]
+    val FAILED      = "FAILED".asInstanceOf[IngestionStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[IngestionStatus]
+    val CANCELLED   = "CANCELLED".asInstanceOf[IngestionStatus]
 
     val values = js.Object.freeze(js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED))
   }
@@ -3691,15 +3684,16 @@ package quicksight {
       __obj.asInstanceOf[InputColumn]
     }
   }
-
-  object InputColumnDataTypeEnum {
-    val STRING   = "STRING"
-    val INTEGER  = "INTEGER"
-    val DECIMAL  = "DECIMAL"
-    val DATETIME = "DATETIME"
-    val BIT      = "BIT"
-    val BOOLEAN  = "BOOLEAN"
-    val JSON     = "JSON"
+  @js.native
+  sealed trait InputColumnDataType extends js.Any
+  object InputColumnDataType extends js.Object {
+    val STRING   = "STRING".asInstanceOf[InputColumnDataType]
+    val INTEGER  = "INTEGER".asInstanceOf[InputColumnDataType]
+    val DECIMAL  = "DECIMAL".asInstanceOf[InputColumnDataType]
+    val DATETIME = "DATETIME".asInstanceOf[InputColumnDataType]
+    val BIT      = "BIT".asInstanceOf[InputColumnDataType]
+    val BOOLEAN  = "BOOLEAN".asInstanceOf[InputColumnDataType]
+    val JSON     = "JSON".asInstanceOf[InputColumnDataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON))
   }
@@ -3778,12 +3772,13 @@ package quicksight {
       __obj.asInstanceOf[JoinInstruction]
     }
   }
-
-  object JoinTypeEnum {
-    val INNER = "INNER"
-    val OUTER = "OUTER"
-    val LEFT  = "LEFT"
-    val RIGHT = "RIGHT"
+  @js.native
+  sealed trait JoinType extends js.Any
+  object JoinType extends js.Object {
+    val INNER = "INNER".asInstanceOf[JoinType]
+    val OUTER = "OUTER".asInstanceOf[JoinType]
+    val LEFT  = "LEFT".asInstanceOf[JoinType]
+    val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
     val values = js.Object.freeze(js.Array(INNER, OUTER, LEFT, RIGHT))
   }
@@ -5056,14 +5051,15 @@ package quicksight {
       __obj.asInstanceOf[ResourcePermission]
     }
   }
-
-  object ResourceStatusEnum {
-    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS"
-    val CREATION_SUCCESSFUL  = "CREATION_SUCCESSFUL"
-    val CREATION_FAILED      = "CREATION_FAILED"
-    val UPDATE_IN_PROGRESS   = "UPDATE_IN_PROGRESS"
-    val UPDATE_SUCCESSFUL    = "UPDATE_SUCCESSFUL"
-    val UPDATE_FAILED        = "UPDATE_FAILED"
+  @js.native
+  sealed trait ResourceStatus extends js.Any
+  object ResourceStatus extends js.Object {
+    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val CREATION_SUCCESSFUL  = "CREATION_SUCCESSFUL".asInstanceOf[ResourceStatus]
+    val CREATION_FAILED      = "CREATION_FAILED".asInstanceOf[ResourceStatus]
+    val UPDATE_IN_PROGRESS   = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val UPDATE_SUCCESSFUL    = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
+    val UPDATE_FAILED        = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5122,10 +5118,11 @@ package quicksight {
       __obj.asInstanceOf[RowLevelPermissionDataSet]
     }
   }
-
-  object RowLevelPermissionPolicyEnum {
-    val GRANT_ACCESS = "GRANT_ACCESS"
-    val DENY_ACCESS  = "DENY_ACCESS"
+  @js.native
+  sealed trait RowLevelPermissionPolicy extends js.Any
+  object RowLevelPermissionPolicy extends js.Object {
+    val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
+    val DENY_ACCESS  = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
     val values = js.Object.freeze(js.Array(GRANT_ACCESS, DENY_ACCESS))
   }
@@ -5508,10 +5505,11 @@ package quicksight {
       __obj.asInstanceOf[TemplateError]
     }
   }
-
-  object TemplateErrorTypeEnum {
-    val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND"
-    val INTERNAL_FAILURE   = "INTERNAL_FAILURE"
+  @js.native
+  sealed trait TemplateErrorType extends js.Any
+  object TemplateErrorType extends js.Object {
+    val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
+    val INTERNAL_FAILURE   = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
 
     val values = js.Object.freeze(js.Array(DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
   }
@@ -5711,10 +5709,11 @@ package quicksight {
       __obj.asInstanceOf[TeradataParameters]
     }
   }
-
-  object TextQualifierEnum {
-    val DOUBLE_QUOTE = "DOUBLE_QUOTE"
-    val SINGLE_QUOTE = "SINGLE_QUOTE"
+  @js.native
+  sealed trait TextQualifier extends js.Any
+  object TextQualifier extends js.Object {
+    val DOUBLE_QUOTE = "DOUBLE_QUOTE".asInstanceOf[TextQualifier]
+    val SINGLE_QUOTE = "SINGLE_QUOTE".asInstanceOf[TextQualifier]
 
     val values = js.Object.freeze(js.Array(DOUBLE_QUOTE, SINGLE_QUOTE))
   }
@@ -6628,13 +6627,14 @@ package quicksight {
       __obj.asInstanceOf[User]
     }
   }
-
-  object UserRoleEnum {
-    val ADMIN             = "ADMIN"
-    val AUTHOR            = "AUTHOR"
-    val READER            = "READER"
-    val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR"
-    val RESTRICTED_READER = "RESTRICTED_READER"
+  @js.native
+  sealed trait UserRole extends js.Any
+  object UserRole extends js.Object {
+    val ADMIN             = "ADMIN".asInstanceOf[UserRole]
+    val AUTHOR            = "AUTHOR".asInstanceOf[UserRole]
+    val READER            = "READER".asInstanceOf[UserRole]
+    val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
+    val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
 
     val values = js.Object.freeze(js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER))
   }

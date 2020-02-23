@@ -7,18 +7,6 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pinpoint {
-  type Action                          = String
-  type AttributeType                   = String
-  type CampaignStatus                  = String
-  type ChannelType                     = String
-  type DeliveryStatus                  = String
-  type DimensionType                   = String
-  type Duration                        = String
-  type FilterType                      = String
-  type Format                          = String
-  type Frequency                       = String
-  type Include                         = String
-  type JobStatus                       = String
   type ListOfActivityResponse          = js.Array[ActivityResponse]
   type ListOfApplicationResponse       = js.Array[ApplicationResponse]
   type ListOfCampaignResponse          = js.Array[CampaignResponse]
@@ -58,15 +46,6 @@ package object pinpoint {
   type MapOf__double                   = js.Dictionary[__double]
   type MapOf__integer                  = js.Dictionary[__integer]
   type MapOf__string                   = js.Dictionary[__string]
-  type MessageType                     = String
-  type Mode                            = String
-  type Operator                        = String
-  type RecencyType                     = String
-  type SegmentType                     = String
-  type SourceType                      = String
-  type State                           = String
-  type TemplateType                    = String
-  type Type                            = String
   type __blob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type __boolean                       = Boolean
   type __double                        = Double
@@ -1085,11 +1064,12 @@ package pinpoint {
       __obj.asInstanceOf[APNSVoipSandboxChannelResponse]
     }
   }
-
-  object ActionEnum {
-    val OPEN_APP  = "OPEN_APP"
-    val DEEP_LINK = "DEEP_LINK"
-    val URL       = "URL"
+  @js.native
+  sealed trait Action extends js.Any
+  object Action extends js.Object {
+    val OPEN_APP  = "OPEN_APP".asInstanceOf[Action]
+    val DEEP_LINK = "DEEP_LINK".asInstanceOf[Action]
+    val URL       = "URL".asInstanceOf[Action]
 
     val values = js.Object.freeze(js.Array(OPEN_APP, DEEP_LINK, URL))
   }
@@ -1433,10 +1413,11 @@ package pinpoint {
       __obj.asInstanceOf[AttributeDimension]
     }
   }
-
-  object AttributeTypeEnum {
-    val INCLUSIVE = "INCLUSIVE"
-    val EXCLUSIVE = "EXCLUSIVE"
+  @js.native
+  sealed trait AttributeType extends js.Any
+  object AttributeType extends js.Object {
+    val INCLUSIVE = "INCLUSIVE".asInstanceOf[AttributeType]
+    val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[AttributeType]
 
     val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
@@ -1899,14 +1880,15 @@ package pinpoint {
       __obj.asInstanceOf[CampaignState]
     }
   }
-
-  object CampaignStatusEnum {
-    val SCHEDULED        = "SCHEDULED"
-    val EXECUTING        = "EXECUTING"
-    val PENDING_NEXT_RUN = "PENDING_NEXT_RUN"
-    val COMPLETED        = "COMPLETED"
-    val PAUSED           = "PAUSED"
-    val DELETED          = "DELETED"
+  @js.native
+  sealed trait CampaignStatus extends js.Any
+  object CampaignStatus extends js.Object {
+    val SCHEDULED        = "SCHEDULED".asInstanceOf[CampaignStatus]
+    val EXECUTING        = "EXECUTING".asInstanceOf[CampaignStatus]
+    val PENDING_NEXT_RUN = "PENDING_NEXT_RUN".asInstanceOf[CampaignStatus]
+    val COMPLETED        = "COMPLETED".asInstanceOf[CampaignStatus]
+    val PAUSED           = "PAUSED".asInstanceOf[CampaignStatus]
+    val DELETED          = "DELETED".asInstanceOf[CampaignStatus]
 
     val values = js.Object.freeze(js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED))
   }
@@ -1977,19 +1959,20 @@ package pinpoint {
       __obj.asInstanceOf[ChannelResponse]
     }
   }
-
-  object ChannelTypeEnum {
-    val GCM               = "GCM"
-    val APNS              = "APNS"
-    val APNS_SANDBOX      = "APNS_SANDBOX"
-    val APNS_VOIP         = "APNS_VOIP"
-    val APNS_VOIP_SANDBOX = "APNS_VOIP_SANDBOX"
-    val ADM               = "ADM"
-    val SMS               = "SMS"
-    val VOICE             = "VOICE"
-    val EMAIL             = "EMAIL"
-    val BAIDU             = "BAIDU"
-    val CUSTOM            = "CUSTOM"
+  @js.native
+  sealed trait ChannelType extends js.Any
+  object ChannelType extends js.Object {
+    val GCM               = "GCM".asInstanceOf[ChannelType]
+    val APNS              = "APNS".asInstanceOf[ChannelType]
+    val APNS_SANDBOX      = "APNS_SANDBOX".asInstanceOf[ChannelType]
+    val APNS_VOIP         = "APNS_VOIP".asInstanceOf[ChannelType]
+    val APNS_VOIP_SANDBOX = "APNS_VOIP_SANDBOX".asInstanceOf[ChannelType]
+    val ADM               = "ADM".asInstanceOf[ChannelType]
+    val SMS               = "SMS".asInstanceOf[ChannelType]
+    val VOICE             = "VOICE".asInstanceOf[ChannelType]
+    val EMAIL             = "EMAIL".asInstanceOf[ChannelType]
+    val BAIDU             = "BAIDU".asInstanceOf[ChannelType]
+    val CUSTOM            = "CUSTOM".asInstanceOf[ChannelType]
 
     val values = js.Object.freeze(
       js.Array(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
@@ -3375,24 +3358,26 @@ package pinpoint {
       __obj.asInstanceOf[DeleteVoiceTemplateResponse]
     }
   }
-
-  object DeliveryStatusEnum {
-    val SUCCESSFUL        = "SUCCESSFUL"
-    val THROTTLED         = "THROTTLED"
-    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
-    val PERMANENT_FAILURE = "PERMANENT_FAILURE"
-    val UNKNOWN_FAILURE   = "UNKNOWN_FAILURE"
-    val OPT_OUT           = "OPT_OUT"
-    val DUPLICATE         = "DUPLICATE"
+  @js.native
+  sealed trait DeliveryStatus extends js.Any
+  object DeliveryStatus extends js.Object {
+    val SUCCESSFUL        = "SUCCESSFUL".asInstanceOf[DeliveryStatus]
+    val THROTTLED         = "THROTTLED".asInstanceOf[DeliveryStatus]
+    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DeliveryStatus]
+    val PERMANENT_FAILURE = "PERMANENT_FAILURE".asInstanceOf[DeliveryStatus]
+    val UNKNOWN_FAILURE   = "UNKNOWN_FAILURE".asInstanceOf[DeliveryStatus]
+    val OPT_OUT           = "OPT_OUT".asInstanceOf[DeliveryStatus]
+    val DUPLICATE         = "DUPLICATE".asInstanceOf[DeliveryStatus]
 
     val values = js.Object.freeze(
       js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
     )
   }
-
-  object DimensionTypeEnum {
-    val INCLUSIVE = "INCLUSIVE"
-    val EXCLUSIVE = "EXCLUSIVE"
+  @js.native
+  sealed trait DimensionType extends js.Any
+  object DimensionType extends js.Object {
+    val INCLUSIVE = "INCLUSIVE".asInstanceOf[DimensionType]
+    val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[DimensionType]
 
     val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
@@ -3441,12 +3426,13 @@ package pinpoint {
       __obj.asInstanceOf[DirectMessageConfiguration]
     }
   }
-
-  object DurationEnum {
-    val HR_24  = "HR_24"
-    val DAY_7  = "DAY_7"
-    val DAY_14 = "DAY_14"
-    val DAY_30 = "DAY_30"
+  @js.native
+  sealed trait Duration extends js.Any
+  object Duration extends js.Object {
+    val HR_24  = "HR_24".asInstanceOf[Duration]
+    val DAY_7  = "DAY_7".asInstanceOf[Duration]
+    val DAY_14 = "DAY_14".asInstanceOf[Duration]
+    val DAY_30 = "DAY_30".asInstanceOf[Duration]
 
     val values = js.Object.freeze(js.Array(HR_24, DAY_7, DAY_14, DAY_30))
   }
@@ -4450,28 +4436,31 @@ package pinpoint {
       __obj.asInstanceOf[ExportJobsResponse]
     }
   }
-
-  object FilterTypeEnum {
-    val SYSTEM   = "SYSTEM"
-    val ENDPOINT = "ENDPOINT"
+  @js.native
+  sealed trait FilterType extends js.Any
+  object FilterType extends js.Object {
+    val SYSTEM   = "SYSTEM".asInstanceOf[FilterType]
+    val ENDPOINT = "ENDPOINT".asInstanceOf[FilterType]
 
     val values = js.Object.freeze(js.Array(SYSTEM, ENDPOINT))
   }
-
-  object FormatEnum {
-    val CSV  = "CSV"
-    val JSON = "JSON"
+  @js.native
+  sealed trait Format extends js.Any
+  object Format extends js.Object {
+    val CSV  = "CSV".asInstanceOf[Format]
+    val JSON = "JSON".asInstanceOf[Format]
 
     val values = js.Object.freeze(js.Array(CSV, JSON))
   }
-
-  object FrequencyEnum {
-    val ONCE    = "ONCE"
-    val HOURLY  = "HOURLY"
-    val DAILY   = "DAILY"
-    val WEEKLY  = "WEEKLY"
-    val MONTHLY = "MONTHLY"
-    val EVENT   = "EVENT"
+  @js.native
+  sealed trait Frequency extends js.Any
+  object Frequency extends js.Object {
+    val ONCE    = "ONCE".asInstanceOf[Frequency]
+    val HOURLY  = "HOURLY".asInstanceOf[Frequency]
+    val DAILY   = "DAILY".asInstanceOf[Frequency]
+    val WEEKLY  = "WEEKLY".asInstanceOf[Frequency]
+    val MONTHLY = "MONTHLY".asInstanceOf[Frequency]
+    val EVENT   = "EVENT".asInstanceOf[Frequency]
 
     val values = js.Object.freeze(js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT))
   }
@@ -6553,11 +6542,12 @@ package pinpoint {
       __obj.asInstanceOf[ImportJobsResponse]
     }
   }
-
-  object IncludeEnum {
-    val ALL  = "ALL"
-    val ANY  = "ANY"
-    val NONE = "NONE"
+  @js.native
+  sealed trait Include extends js.Any
+  object Include extends js.Object {
+    val ALL  = "ALL".asInstanceOf[Include]
+    val ANY  = "ANY".asInstanceOf[Include]
+    val NONE = "NONE".asInstanceOf[Include]
 
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
@@ -6583,17 +6573,18 @@ package pinpoint {
       __obj.asInstanceOf[ItemResponse]
     }
   }
-
-  object JobStatusEnum {
-    val CREATED                      = "CREATED"
-    val PREPARING_FOR_INITIALIZATION = "PREPARING_FOR_INITIALIZATION"
-    val INITIALIZING                 = "INITIALIZING"
-    val PROCESSING                   = "PROCESSING"
-    val PENDING_JOB                  = "PENDING_JOB"
-    val COMPLETING                   = "COMPLETING"
-    val COMPLETED                    = "COMPLETED"
-    val FAILING                      = "FAILING"
-    val FAILED                       = "FAILED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val CREATED                      = "CREATED".asInstanceOf[JobStatus]
+    val PREPARING_FOR_INITIALIZATION = "PREPARING_FOR_INITIALIZATION".asInstanceOf[JobStatus]
+    val INITIALIZING                 = "INITIALIZING".asInstanceOf[JobStatus]
+    val PROCESSING                   = "PROCESSING".asInstanceOf[JobStatus]
+    val PENDING_JOB                  = "PENDING_JOB".asInstanceOf[JobStatus]
+    val COMPLETING                   = "COMPLETING".asInstanceOf[JobStatus]
+    val COMPLETED                    = "COMPLETED".asInstanceOf[JobStatus]
+    val FAILING                      = "FAILING".asInstanceOf[JobStatus]
+    val FAILED                       = "FAILED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -7265,10 +7256,11 @@ package pinpoint {
       __obj.asInstanceOf[MessageResult]
     }
   }
-
-  object MessageTypeEnum {
-    val TRANSACTIONAL = "TRANSACTIONAL"
-    val PROMOTIONAL   = "PROMOTIONAL"
+  @js.native
+  sealed trait MessageType extends js.Any
+  object MessageType extends js.Object {
+    val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MessageType]
+    val PROMOTIONAL   = "PROMOTIONAL".asInstanceOf[MessageType]
 
     val values = js.Object.freeze(js.Array(TRANSACTIONAL, PROMOTIONAL))
   }
@@ -7296,10 +7288,11 @@ package pinpoint {
       __obj.asInstanceOf[MetricDimension]
     }
   }
-
-  object ModeEnum {
-    val DELIVERY = "DELIVERY"
-    val FILTER   = "FILTER"
+  @js.native
+  sealed trait Mode extends js.Any
+  object Mode extends js.Object {
+    val DELIVERY = "DELIVERY".asInstanceOf[Mode]
+    val FILTER   = "FILTER".asInstanceOf[Mode]
 
     val values = js.Object.freeze(js.Array(DELIVERY, FILTER))
   }
@@ -7432,10 +7425,11 @@ package pinpoint {
       __obj.asInstanceOf[NumberValidateResponse]
     }
   }
-
-  object OperatorEnum {
-    val ALL = "ALL"
-    val ANY = "ANY"
+  @js.native
+  sealed trait Operator extends js.Any
+  object Operator extends js.Object {
+    val ALL = "ALL".asInstanceOf[Operator]
+    val ANY = "ANY".asInstanceOf[Operator]
 
     val values = js.Object.freeze(js.Array(ALL, ANY))
   }
@@ -7808,10 +7802,11 @@ package pinpoint {
       __obj.asInstanceOf[RecencyDimension]
     }
   }
-
-  object RecencyTypeEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait RecencyType extends js.Any
+  object RecencyType extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[RecencyType]
+    val INACTIVE = "INACTIVE".asInstanceOf[RecencyType]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
@@ -8440,10 +8435,11 @@ package pinpoint {
       __obj.asInstanceOf[SegmentResponse]
     }
   }
-
-  object SegmentTypeEnum {
-    val DIMENSIONAL = "DIMENSIONAL"
-    val IMPORT      = "IMPORT"
+  @js.native
+  sealed trait SegmentType extends js.Any
+  object SegmentType extends js.Object {
+    val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[SegmentType]
+    val IMPORT      = "IMPORT".asInstanceOf[SegmentType]
 
     val values = js.Object.freeze(js.Array(DIMENSIONAL, IMPORT))
   }
@@ -8735,11 +8731,12 @@ package pinpoint {
       __obj.asInstanceOf[SimpleEmailPart]
     }
   }
-
-  object SourceTypeEnum {
-    val ALL  = "ALL"
-    val ANY  = "ANY"
-    val NONE = "NONE"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val ALL  = "ALL".asInstanceOf[SourceType]
+    val ANY  = "ANY".asInstanceOf[SourceType]
+    val NONE = "NONE".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
@@ -8765,13 +8762,14 @@ package pinpoint {
       __obj.asInstanceOf[StartCondition]
     }
   }
-
-  object StateEnum {
-    val DRAFT     = "DRAFT"
-    val ACTIVE    = "ACTIVE"
-    val COMPLETED = "COMPLETED"
-    val CANCELLED = "CANCELLED"
-    val CLOSED    = "CLOSED"
+  @js.native
+  sealed trait State extends js.Any
+  object State extends js.Object {
+    val DRAFT     = "DRAFT".asInstanceOf[State]
+    val ACTIVE    = "ACTIVE".asInstanceOf[State]
+    val COMPLETED = "COMPLETED".asInstanceOf[State]
+    val CANCELLED = "CANCELLED".asInstanceOf[State]
+    val CLOSED    = "CLOSED".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED))
   }
@@ -8931,12 +8929,13 @@ package pinpoint {
       __obj.asInstanceOf[TemplateResponse]
     }
   }
-
-  object TemplateTypeEnum {
-    val EMAIL = "EMAIL"
-    val SMS   = "SMS"
-    val VOICE = "VOICE"
-    val PUSH  = "PUSH"
+  @js.native
+  sealed trait TemplateType extends js.Any
+  object TemplateType extends js.Object {
+    val EMAIL = "EMAIL".asInstanceOf[TemplateType]
+    val SMS   = "SMS".asInstanceOf[TemplateType]
+    val VOICE = "VOICE".asInstanceOf[TemplateType]
+    val PUSH  = "PUSH".asInstanceOf[TemplateType]
 
     val values = js.Object.freeze(js.Array(EMAIL, SMS, VOICE, PUSH))
   }
@@ -9075,11 +9074,12 @@ package pinpoint {
       __obj.asInstanceOf[TreatmentResource]
     }
   }
-
-  object TypeEnum {
-    val ALL  = "ALL"
-    val ANY  = "ANY"
-    val NONE = "NONE"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val ALL  = "ALL".asInstanceOf[Type]
+    val ANY  = "ANY".asInstanceOf[Type]
+    val NONE = "NONE".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }

@@ -20,20 +20,15 @@ package object ssm {
   type AggregatorSchemaOnly                                 = Boolean
   type AllowedPattern                                       = String
   type ApproveAfterDays                                     = Int
-  type AssociationComplianceSeverity                        = String
   type AssociationDescriptionList                           = js.Array[AssociationDescription]
-  type AssociationExecutionFilterKey                        = String
   type AssociationExecutionFilterList                       = js.Array[AssociationExecutionFilter]
   type AssociationExecutionFilterValue                      = String
   type AssociationExecutionId                               = String
-  type AssociationExecutionTargetsFilterKey                 = String
   type AssociationExecutionTargetsFilterList                = js.Array[AssociationExecutionTargetsFilter]
   type AssociationExecutionTargetsFilterValue               = String
   type AssociationExecutionTargetsList                      = js.Array[AssociationExecutionTarget]
   type AssociationExecutionsList                            = js.Array[AssociationExecution]
-  type AssociationFilterKey                                 = String
   type AssociationFilterList                                = js.Array[AssociationFilter]
-  type AssociationFilterOperatorType                        = String
   type AssociationFilterValue                               = String
   type AssociationId                                        = String
   type AssociationIdList                                    = js.Array[AssociationId]
@@ -42,59 +37,48 @@ package object ssm {
   type AssociationResourceId                                = String
   type AssociationResourceType                              = String
   type AssociationStatusAggregatedCount                     = js.Dictionary[InstanceCount]
-  type AssociationStatusName                                = String
   type AssociationVersion                                   = String
   type AssociationVersionList                               = js.Array[AssociationVersionInfo]
   type AttachmentContentList                                = js.Array[AttachmentContent]
   type AttachmentHash                                       = String
-  type AttachmentHashType                                   = String
   type AttachmentIdentifier                                 = String
   type AttachmentInformationList                            = js.Array[AttachmentInformation]
   type AttachmentName                                       = String
   type AttachmentUrl                                        = String
-  type AttachmentsSourceKey                                 = String
   type AttachmentsSourceList                                = js.Array[AttachmentsSource]
   type AttachmentsSourceValue                               = String
   type AttachmentsSourceValues                              = js.Array[AttachmentsSourceValue]
   type AttributeName                                        = String
   type AttributeValue                                       = String
   type AutomationActionName                                 = String
-  type AutomationExecutionFilterKey                         = String
   type AutomationExecutionFilterList                        = js.Array[AutomationExecutionFilter]
   type AutomationExecutionFilterValue                       = String
   type AutomationExecutionFilterValueList                   = js.Array[AutomationExecutionFilterValue]
   type AutomationExecutionId                                = String
   type AutomationExecutionMetadataList                      = js.Array[AutomationExecutionMetadata]
-  type AutomationExecutionStatus                            = String
   type AutomationParameterKey                               = String
   type AutomationParameterMap                               = js.Dictionary[AutomationParameterValueList]
   type AutomationParameterValue                             = String
   type AutomationParameterValueList                         = js.Array[AutomationParameterValue]
   type AutomationTargetParameterName                        = String
-  type AutomationType                                       = String
   type BaselineDescription                                  = String
   type BaselineId                                           = String
   type BaselineName                                         = String
   type BatchErrorMessage                                    = String
   type CalendarNameOrARN                                    = String
   type CalendarNameOrARNList                                = js.Array[CalendarNameOrARN]
-  type CalendarState                                        = String
   type ClientToken                                          = String
   type CloudWatchLogGroupName                               = String
   type CloudWatchOutputEnabled                              = Boolean
-  type CommandFilterKey                                     = String
   type CommandFilterList                                    = js.Array[CommandFilter]
   type CommandFilterValue                                   = String
   type CommandId                                            = String
   type CommandInvocationList                                = js.Array[CommandInvocation]
-  type CommandInvocationStatus                              = String
   type CommandList                                          = js.Array[Command]
   type CommandMaxResults                                    = Int
   type CommandPluginList                                    = js.Array[CommandPlugin]
   type CommandPluginName                                    = String
   type CommandPluginOutput                                  = String
-  type CommandPluginStatus                                  = String
-  type CommandStatus                                        = String
   type Comment                                              = String
   type CompletedCount                                       = Int
   type ComplianceExecutionId                                = String
@@ -106,13 +90,10 @@ package object ssm {
   type ComplianceItemId                                     = String
   type ComplianceItemList                                   = js.Array[ComplianceItem]
   type ComplianceItemTitle                                  = String
-  type ComplianceQueryOperatorType                          = String
   type ComplianceResourceId                                 = String
   type ComplianceResourceIdList                             = js.Array[ComplianceResourceId]
   type ComplianceResourceType                               = String
   type ComplianceResourceTypeList                           = js.Array[ComplianceResourceType]
-  type ComplianceSeverity                                   = String
-  type ComplianceStatus                                     = String
   type ComplianceStringFilterKey                            = String
   type ComplianceStringFilterList                           = js.Array[ComplianceStringFilter]
   type ComplianceStringFilterValueList                      = js.Array[ComplianceFilterValue]
@@ -120,7 +101,6 @@ package object ssm {
   type ComplianceSummaryItemList                            = js.Array[ComplianceSummaryItem]
   type ComplianceTypeName                                   = String
   type ComputerName                                         = String
-  type ConnectionStatus                                     = String
   type ContentLength                                        = Double
   type CreateAssociationBatchRequestEntries                 = js.Array[CreateAssociationBatchRequestEntry]
   type CreatedDate                                          = js.Date
@@ -128,17 +108,13 @@ package object ssm {
   type DefaultBaseline                                      = Boolean
   type DefaultInstanceName                                  = String
   type DeliveryTimedOutCount                                = Int
-  type DescribeActivationsFilterKeys                        = String
   type DescribeActivationsFilterList                        = js.Array[DescribeActivationsFilter]
   type DescriptionInDocument                                = String
   type DocumentARN                                          = String
   type DocumentContent                                      = String
-  type DocumentFilterKey                                    = String
   type DocumentFilterList                                   = js.Array[DocumentFilter]
   type DocumentFilterValue                                  = String
-  type DocumentFormat                                       = String
   type DocumentHash                                         = String
-  type DocumentHashType                                     = String
   type DocumentIdentifierList                               = js.Array[DocumentIdentifier]
   type DocumentKeyValuesFilterKey                           = String
   type DocumentKeyValuesFilterList                          = js.Array[DocumentKeyValuesFilter]
@@ -150,14 +126,10 @@ package object ssm {
   type DocumentParameterDescrption                          = String
   type DocumentParameterList                                = js.Array[DocumentParameter]
   type DocumentParameterName                                = String
-  type DocumentParameterType                                = String
-  type DocumentPermissionType                               = String
   type DocumentRequiresList                                 = js.Array[DocumentRequires]
   type DocumentSchemaVersion                                = String
   type DocumentSha1                                         = String
-  type DocumentStatus                                       = String
   type DocumentStatusInformation                            = String
-  type DocumentType                                         = String
   type DocumentVersion                                      = String
   type DocumentVersionList                                  = js.Array[DocumentVersionInfo]
   type DocumentVersionName                                  = String
@@ -166,11 +138,9 @@ package object ssm {
   type EffectiveInstanceAssociationMaxResults               = Int
   type EffectivePatchList                                   = js.Array[EffectivePatch]
   type ErrorCount                                           = Int
-  type ExecutionMode                                        = String
   type ExecutionRoleName                                    = String
   type ExpirationDate                                       = js.Date
   type FailedCreateAssociationList                          = js.Array[FailedCreateAssociation]
-  type Fault                                                = String
   type GetInventorySchemaMaxResults                         = Int
   type GetParametersByPathMaxResults                        = Int
   type IPAddress                                            = String
@@ -185,7 +155,6 @@ package object ssm {
   type InstanceCount                                        = Int
   type InstanceId                                           = String
   type InstanceIdList                                       = js.Array[InstanceId]
-  type InstanceInformationFilterKey                         = String
   type InstanceInformationFilterList                        = js.Array[InstanceInformationFilter]
   type InstanceInformationFilterValue                       = String
   type InstanceInformationFilterValueSet                    = js.Array[InstanceInformationFilterValue]
@@ -197,18 +166,15 @@ package object ssm {
   type InstancePatchStateFilterValue                        = String
   type InstancePatchStateFilterValues                       = js.Array[InstancePatchStateFilterValue]
   type InstancePatchStateList                               = js.Array[InstancePatchState]
-  type InstancePatchStateOperatorType                       = String
   type InstancePatchStatesList                              = js.Array[InstancePatchState]
   type InstanceTagName                                      = String
   type InstancesCount                                       = Int
   type InventoryAggregatorExpression                        = String
   type InventoryAggregatorList                              = js.Array[InventoryAggregator]
-  type InventoryAttributeDataType                           = String
   type InventoryDeletionId                                  = String
   type InventoryDeletionLastStatusMessage                   = String
   type InventoryDeletionLastStatusUpdateTime                = js.Date
   type InventoryDeletionStartTime                           = js.Date
-  type InventoryDeletionStatus                              = String
   type InventoryDeletionSummaryItems                        = js.Array[InventoryDeletionSummaryItem]
   type InventoryDeletionsList                               = js.Array[InventoryDeletionStatusItem]
   type InventoryFilterKey                                   = String
@@ -229,18 +195,15 @@ package object ssm {
   type InventoryItemSchemaVersion                           = String
   type InventoryItemTypeName                                = String
   type InventoryItemTypeNameFilter                          = String
-  type InventoryQueryOperatorType                           = String
   type InventoryResultEntityId                              = String
   type InventoryResultEntityList                            = js.Array[InventoryResultEntity]
   type InventoryResultItemKey                               = String
   type InventoryResultItemMap                               = js.Dictionary[InventoryResultItem]
-  type InventorySchemaDeleteOption                          = String
   type InventoryTypeDisplayName                             = String
   type InvocationTraceOutput                                = String
   type IsSubTypeSchema                                      = Boolean
   type KeyList                                              = js.Array[TagKey]
   type LastResourceDataSyncMessage                          = String
-  type LastResourceDataSyncStatus                           = String
   type LastResourceDataSyncTime                             = js.Date
   type LastSuccessfulResourceDataSyncTime                   = js.Date
   type MaintenanceWindowAllowUnassociatedTargets            = Boolean
@@ -250,7 +213,6 @@ package object ssm {
   type MaintenanceWindowEnabled                             = Boolean
   type MaintenanceWindowExecutionId                         = String
   type MaintenanceWindowExecutionList                       = js.Array[MaintenanceWindowExecution]
-  type MaintenanceWindowExecutionStatus                     = String
   type MaintenanceWindowExecutionStatusDetails              = String
   type MaintenanceWindowExecutionTaskExecutionId            = String
   type MaintenanceWindowExecutionTaskId                     = String
@@ -270,7 +232,6 @@ package object ssm {
   type MaintenanceWindowLambdaQualifier                     = String
   type MaintenanceWindowMaxResults                          = Int
   type MaintenanceWindowName                                = String
-  type MaintenanceWindowResourceType                        = String
   type MaintenanceWindowSchedule                            = String
   type MaintenanceWindowSearchMaxResults                    = Int
   type MaintenanceWindowStepFunctionsInput                  = String
@@ -288,7 +249,6 @@ package object ssm {
   type MaintenanceWindowTaskParametersList                  = js.Array[MaintenanceWindowTaskParameters]
   type MaintenanceWindowTaskPriority                        = Int
   type MaintenanceWindowTaskTargetId                        = String
-  type MaintenanceWindowTaskType                            = String
   type MaintenanceWindowTimezone                            = String
   type MaintenanceWindowsForTargetList                      = js.Array[MaintenanceWindowIdentityForTarget]
   type ManagedInstanceId                                    = String
@@ -299,10 +259,7 @@ package object ssm {
   type NextToken                                            = String
   type NormalStringMap                                      = js.Dictionary[String]
   type NotificationArn                                      = String
-  type NotificationEvent                                    = String
   type NotificationEventList                                = js.Array[NotificationEvent]
-  type NotificationType                                     = String
-  type OperatingSystem                                      = String
   type OpsAggregatorList                                    = js.Array[OpsAggregator]
   type OpsAggregatorType                                    = String
   type OpsAggregatorValue                                   = String
@@ -319,16 +276,12 @@ package object ssm {
   type OpsEntityList                                        = js.Array[OpsEntity]
   type OpsFilterKey                                         = String
   type OpsFilterList                                        = js.Array[OpsFilter]
-  type OpsFilterOperatorType                                = String
   type OpsFilterValue                                       = String
   type OpsFilterValueList                                   = js.Array[OpsFilterValue]
   type OpsItemCategory                                      = String
   type OpsItemDataKey                                       = String
-  type OpsItemDataType                                      = String
   type OpsItemDataValueString                               = String
   type OpsItemDescription                                   = String
-  type OpsItemFilterKey                                     = String
-  type OpsItemFilterOperator                                = String
   type OpsItemFilterValue                                   = String
   type OpsItemFilterValues                                  = js.Array[OpsItemFilterValue]
   type OpsItemFilters                                       = js.Array[OpsItemFilter]
@@ -340,7 +293,6 @@ package object ssm {
   type OpsItemPriority                                      = Int
   type OpsItemSeverity                                      = String
   type OpsItemSource                                        = String
-  type OpsItemStatus                                        = String
   type OpsItemSummaries                                     = js.Array[OpsItemSummary]
   type OpsItemTitle                                         = String
   type OpsResultAttributeList                               = js.Array[OpsResultAttribute]
@@ -367,28 +319,20 @@ package object ssm {
   type ParameterStringFilterValue                           = String
   type ParameterStringFilterValueList                       = js.Array[ParameterStringFilterValue]
   type ParameterStringQueryOption                           = String
-  type ParameterTier                                        = String
-  type ParameterType                                        = String
   type ParameterValue                                       = String
   type ParameterValueList                                   = js.Array[ParameterValue]
   type Parameters                                           = js.Dictionary[ParameterValueList]
-  type ParametersFilterKey                                  = String
   type ParametersFilterList                                 = js.Array[ParametersFilter]
   type ParametersFilterValue                                = String
   type ParametersFilterValueList                            = js.Array[ParametersFilterValue]
-  type PatchAction                                          = String
   type PatchBaselineIdentityList                            = js.Array[PatchBaselineIdentity]
   type PatchBaselineMaxResults                              = Int
   type PatchClassification                                  = String
   type PatchComplianceDataList                              = js.Array[PatchComplianceData]
-  type PatchComplianceDataState                             = String
-  type PatchComplianceLevel                                 = String
   type PatchComplianceMaxResults                            = Int
   type PatchContentUrl                                      = String
-  type PatchDeploymentStatus                                = String
   type PatchDescription                                     = String
   type PatchFailedCount                                     = Int
-  type PatchFilterKey                                       = String
   type PatchFilterList                                      = js.Array[PatchFilter]
   type PatchFilterValue                                     = String
   type PatchFilterValueList                                 = js.Array[PatchFilterValue]
@@ -408,7 +352,6 @@ package object ssm {
   type PatchMsrcNumber                                      = String
   type PatchMsrcSeverity                                    = String
   type PatchNotApplicableCount                              = Int
-  type PatchOperationType                                   = String
   type PatchOrchestratorFilterKey                           = String
   type PatchOrchestratorFilterList                          = js.Array[PatchOrchestratorFilter]
   type PatchOrchestratorFilterValue                         = String
@@ -416,10 +359,8 @@ package object ssm {
   type PatchProduct                                         = String
   type PatchProductFamily                                   = String
   type PatchPropertiesList                                  = js.Array[PatchPropertyEntry]
-  type PatchProperty                                        = String
   type PatchPropertyEntry                                   = js.Dictionary[AttributeValue]
   type PatchRuleList                                        = js.Array[PatchRule]
-  type PatchSet                                             = String
   type PatchSeverity                                        = String
   type PatchSourceConfiguration                             = String
   type PatchSourceList                                      = js.Array[PatchSource]
@@ -430,12 +371,9 @@ package object ssm {
   type PatchTitle                                           = String
   type PatchUnreportedNotApplicableCount                    = Int
   type PatchVendor                                          = String
-  type PingStatus                                           = String
-  type PlatformType                                         = String
   type PlatformTypeList                                     = js.Array[PlatformType]
   type Product                                              = String
   type PutInventoryMessage                                  = String
-  type RebootOption                                         = String
   type Region                                               = String
   type Regions                                              = js.Array[Region]
   type RegistrationLimit                                    = Int
@@ -455,7 +393,6 @@ package object ssm {
   type ResourceDataSyncOrganizationalUnitId                 = String
   type ResourceDataSyncOrganizationalUnitList               = js.Array[ResourceDataSyncOrganizationalUnit]
   type ResourceDataSyncS3BucketName                         = String
-  type ResourceDataSyncS3Format                             = String
   type ResourceDataSyncS3Prefix                             = String
   type ResourceDataSyncS3Region                             = String
   type ResourceDataSyncSourceRegion                         = String
@@ -464,8 +401,6 @@ package object ssm {
   type ResourceDataSyncState                                = String
   type ResourceDataSyncType                                 = String
   type ResourceId                                           = String
-  type ResourceType                                         = String
-  type ResourceTypeForTagging                               = String
   type ResponseCode                                         = Int
   type ResultAttributeList                                  = js.Array[ResultAttribute]
   type S3BucketName                                         = String
@@ -477,7 +412,6 @@ package object ssm {
   type ServiceSettingId                                     = String
   type ServiceSettingValue                                  = String
   type SessionDetails                                       = String
-  type SessionFilterKey                                     = String
   type SessionFilterList                                    = js.Array[SessionFilter]
   type SessionFilterValue                                   = String
   type SessionId                                            = String
@@ -490,11 +424,8 @@ package object ssm {
   type SessionManagerS3OutputUrl                            = String
   type SessionMaxResults                                    = Int
   type SessionOwner                                         = String
-  type SessionState                                         = String
-  type SessionStatus                                        = String
   type SessionTarget                                        = String
   type SharedDocumentVersion                                = String
-  type SignalType                                           = String
   type SnapshotDownloadUrl                                  = String
   type SnapshotId                                           = String
   type StandardErrorContent                                 = String
@@ -503,12 +434,10 @@ package object ssm {
   type StatusDetails                                        = String
   type StatusMessage                                        = String
   type StatusName                                           = String
-  type StepExecutionFilterKey                               = String
   type StepExecutionFilterList                              = js.Array[StepExecutionFilter]
   type StepExecutionFilterValue                             = String
   type StepExecutionFilterValueList                         = js.Array[StepExecutionFilterValue]
   type StepExecutionList                                    = js.Array[StepExecution]
-  type StopType                                             = String
   type StreamUrl                                            = String
   type StringDateTime                                       = String
   type StringList                                           = js.Array[String]
@@ -1240,13 +1169,14 @@ package ssm {
       __obj.asInstanceOf[Association]
     }
   }
-
-  object AssociationComplianceSeverityEnum {
-    val CRITICAL    = "CRITICAL"
-    val HIGH        = "HIGH"
-    val MEDIUM      = "MEDIUM"
-    val LOW         = "LOW"
-    val UNSPECIFIED = "UNSPECIFIED"
+  @js.native
+  sealed trait AssociationComplianceSeverity extends js.Any
+  object AssociationComplianceSeverity extends js.Object {
+    val CRITICAL    = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
+    val HIGH        = "HIGH".asInstanceOf[AssociationComplianceSeverity]
+    val MEDIUM      = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
+    val LOW         = "LOW".asInstanceOf[AssociationComplianceSeverity]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
   }
@@ -1399,11 +1329,12 @@ package ssm {
       __obj.asInstanceOf[AssociationExecutionFilter]
     }
   }
-
-  object AssociationExecutionFilterKeyEnum {
-    val ExecutionId = "ExecutionId"
-    val Status      = "Status"
-    val CreatedTime = "CreatedTime"
+  @js.native
+  sealed trait AssociationExecutionFilterKey extends js.Any
+  object AssociationExecutionFilterKey extends js.Object {
+    val ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
+    val Status      = "Status".asInstanceOf[AssociationExecutionFilterKey]
+    val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
 
     val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
   }
@@ -1474,11 +1405,12 @@ package ssm {
       __obj.asInstanceOf[AssociationExecutionTargetsFilter]
     }
   }
-
-  object AssociationExecutionTargetsFilterKeyEnum {
-    val Status       = "Status"
-    val ResourceId   = "ResourceId"
-    val ResourceType = "ResourceType"
+  @js.native
+  sealed trait AssociationExecutionTargetsFilterKey extends js.Any
+  object AssociationExecutionTargetsFilterKey extends js.Object {
+    val Status       = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    val ResourceId   = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
 
     val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
   }
@@ -1506,15 +1438,16 @@ package ssm {
       __obj.asInstanceOf[AssociationFilter]
     }
   }
-
-  object AssociationFilterKeyEnum {
-    val InstanceId            = "InstanceId"
-    val Name                  = "Name"
-    val AssociationId         = "AssociationId"
-    val AssociationStatusName = "AssociationStatusName"
-    val LastExecutedBefore    = "LastExecutedBefore"
-    val LastExecutedAfter     = "LastExecutedAfter"
-    val AssociationName       = "AssociationName"
+  @js.native
+  sealed trait AssociationFilterKey extends js.Any
+  object AssociationFilterKey extends js.Object {
+    val InstanceId            = "InstanceId".asInstanceOf[AssociationFilterKey]
+    val Name                  = "Name".asInstanceOf[AssociationFilterKey]
+    val AssociationId         = "AssociationId".asInstanceOf[AssociationFilterKey]
+    val AssociationStatusName = "AssociationStatusName".asInstanceOf[AssociationFilterKey]
+    val LastExecutedBefore    = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
+    val LastExecutedAfter     = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
+    val AssociationName       = "AssociationName".asInstanceOf[AssociationFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1528,11 +1461,12 @@ package ssm {
       )
     )
   }
-
-  object AssociationFilterOperatorTypeEnum {
-    val EQUAL        = "EQUAL"
-    val LESS_THAN    = "LESS_THAN"
-    val GREATER_THAN = "GREATER_THAN"
+  @js.native
+  sealed trait AssociationFilterOperatorType extends js.Any
+  object AssociationFilterOperatorType extends js.Object {
+    val EQUAL        = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
+    val LESS_THAN    = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
 
     val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
   }
@@ -1593,11 +1527,12 @@ package ssm {
       __obj.asInstanceOf[AssociationStatus]
     }
   }
-
-  object AssociationStatusNameEnum {
-    val Pending = "Pending"
-    val Success = "Success"
-    val Failed  = "Failed"
+  @js.native
+  sealed trait AssociationStatusName extends js.Any
+  object AssociationStatusName extends js.Object {
+    val Pending = "Pending".asInstanceOf[AssociationStatusName]
+    val Success = "Success".asInstanceOf[AssociationStatusName]
+    val Failed  = "Failed".asInstanceOf[AssociationStatusName]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
@@ -1687,9 +1622,10 @@ package ssm {
       __obj.asInstanceOf[AttachmentContent]
     }
   }
-
-  object AttachmentHashTypeEnum {
-    val Sha256 = "Sha256"
+  @js.native
+  sealed trait AttachmentHashType extends js.Any
+  object AttachmentHashType extends js.Object {
+    val Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
 
     val values = js.Object.freeze(js.Array(Sha256))
   }
@@ -1737,11 +1673,12 @@ package ssm {
       __obj.asInstanceOf[AttachmentsSource]
     }
   }
-
-  object AttachmentsSourceKeyEnum {
-    val SourceUrl           = "SourceUrl"
-    val S3FileUrl           = "S3FileUrl"
-    val AttachmentReference = "AttachmentReference"
+  @js.native
+  sealed trait AttachmentsSourceKey extends js.Any
+  object AttachmentsSourceKey extends js.Object {
+    val SourceUrl           = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
+    val S3FileUrl           = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
+    val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
 
     val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
   }
@@ -1864,17 +1801,18 @@ package ssm {
       __obj.asInstanceOf[AutomationExecutionFilter]
     }
   }
-
-  object AutomationExecutionFilterKeyEnum {
-    val DocumentNamePrefix = "DocumentNamePrefix"
-    val ExecutionStatus    = "ExecutionStatus"
-    val ExecutionId        = "ExecutionId"
-    val ParentExecutionId  = "ParentExecutionId"
-    val CurrentAction      = "CurrentAction"
-    val StartTimeBefore    = "StartTimeBefore"
-    val StartTimeAfter     = "StartTimeAfter"
-    val AutomationType     = "AutomationType"
-    val TagKey             = "TagKey"
+  @js.native
+  sealed trait AutomationExecutionFilterKey extends js.Any
+  object AutomationExecutionFilterKey extends js.Object {
+    val DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
+    val ExecutionStatus    = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
+    val ExecutionId        = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    val ParentExecutionId  = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    val CurrentAction      = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
+    val StartTimeBefore    = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
+    val StartTimeAfter     = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
+    val AutomationType     = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
+    val TagKey             = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1976,31 +1914,34 @@ package ssm {
       __obj.asInstanceOf[AutomationExecutionMetadata]
     }
   }
-
-  object AutomationExecutionStatusEnum {
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Waiting    = "Waiting"
-    val Success    = "Success"
-    val TimedOut   = "TimedOut"
-    val Cancelling = "Cancelling"
-    val Cancelled  = "Cancelled"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait AutomationExecutionStatus extends js.Any
+  object AutomationExecutionStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[AutomationExecutionStatus]
+    val InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
+    val Waiting    = "Waiting".asInstanceOf[AutomationExecutionStatus]
+    val Success    = "Success".asInstanceOf[AutomationExecutionStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[AutomationExecutionStatus]
+    val Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[AutomationExecutionStatus]
+    val Failed     = "Failed".asInstanceOf[AutomationExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
-
-  object AutomationTypeEnum {
-    val CrossAccount = "CrossAccount"
-    val Local        = "Local"
+  @js.native
+  sealed trait AutomationType extends js.Any
+  object AutomationType extends js.Object {
+    val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
+    val Local        = "Local".asInstanceOf[AutomationType]
 
     val values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
-
-  object CalendarStateEnum {
-    val OPEN   = "OPEN"
-    val CLOSED = "CLOSED"
+  @js.native
+  sealed trait CalendarState extends js.Any
+  object CalendarState extends js.Object {
+    val OPEN   = "OPEN".asInstanceOf[CalendarState]
+    val CLOSED = "CLOSED".asInstanceOf[CalendarState]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
@@ -2209,13 +2150,14 @@ package ssm {
       __obj.asInstanceOf[CommandFilter]
     }
   }
-
-  object CommandFilterKeyEnum {
-    val InvokedAfter   = "InvokedAfter"
-    val InvokedBefore  = "InvokedBefore"
-    val Status         = "Status"
-    val ExecutionStage = "ExecutionStage"
-    val DocumentName   = "DocumentName"
+  @js.native
+  sealed trait CommandFilterKey extends js.Any
+  object CommandFilterKey extends js.Object {
+    val InvokedAfter   = "InvokedAfter".asInstanceOf[CommandFilterKey]
+    val InvokedBefore  = "InvokedBefore".asInstanceOf[CommandFilterKey]
+    val Status         = "Status".asInstanceOf[CommandFilterKey]
+    val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
+    val DocumentName   = "DocumentName".asInstanceOf[CommandFilterKey]
 
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
   }
@@ -2283,16 +2225,17 @@ package ssm {
       __obj.asInstanceOf[CommandInvocation]
     }
   }
-
-  object CommandInvocationStatusEnum {
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Delayed    = "Delayed"
-    val Success    = "Success"
-    val Cancelled  = "Cancelled"
-    val TimedOut   = "TimedOut"
-    val Failed     = "Failed"
-    val Cancelling = "Cancelling"
+  @js.native
+  sealed trait CommandInvocationStatus extends js.Any
+  object CommandInvocationStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[CommandInvocationStatus]
+    val InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
+    val Delayed    = "Delayed".asInstanceOf[CommandInvocationStatus]
+    val Success    = "Success".asInstanceOf[CommandInvocationStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[CommandInvocationStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[CommandInvocationStatus]
+    val Failed     = "Failed".asInstanceOf[CommandInvocationStatus]
+    val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
     val values =
       js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
@@ -2349,26 +2292,28 @@ package ssm {
       __obj.asInstanceOf[CommandPlugin]
     }
   }
-
-  object CommandPluginStatusEnum {
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Success    = "Success"
-    val TimedOut   = "TimedOut"
-    val Cancelled  = "Cancelled"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait CommandPluginStatus extends js.Any
+  object CommandPluginStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[CommandPluginStatus]
+    val InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
+    val Success    = "Success".asInstanceOf[CommandPluginStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[CommandPluginStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[CommandPluginStatus]
+    val Failed     = "Failed".asInstanceOf[CommandPluginStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
-
-  object CommandStatusEnum {
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Success    = "Success"
-    val Cancelled  = "Cancelled"
-    val Failed     = "Failed"
-    val TimedOut   = "TimedOut"
-    val Cancelling = "Cancelling"
+  @js.native
+  sealed trait CommandStatus extends js.Any
+  object CommandStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[CommandStatus]
+    val InProgress = "InProgress".asInstanceOf[CommandStatus]
+    val Success    = "Success".asInstanceOf[CommandStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[CommandStatus]
+    val Failed     = "Failed".asInstanceOf[CommandStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[CommandStatus]
+    val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
   }
@@ -2475,31 +2420,34 @@ package ssm {
       __obj.asInstanceOf[ComplianceItemEntry]
     }
   }
-
-  object ComplianceQueryOperatorTypeEnum {
-    val EQUAL        = "EQUAL"
-    val NOT_EQUAL    = "NOT_EQUAL"
-    val BEGIN_WITH   = "BEGIN_WITH"
-    val LESS_THAN    = "LESS_THAN"
-    val GREATER_THAN = "GREATER_THAN"
+  @js.native
+  sealed trait ComplianceQueryOperatorType extends js.Any
+  object ComplianceQueryOperatorType extends js.Object {
+    val EQUAL        = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    val NOT_EQUAL    = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    val BEGIN_WITH   = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
+    val LESS_THAN    = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
 
     val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
   }
-
-  object ComplianceSeverityEnum {
-    val CRITICAL      = "CRITICAL"
-    val HIGH          = "HIGH"
-    val MEDIUM        = "MEDIUM"
-    val LOW           = "LOW"
-    val INFORMATIONAL = "INFORMATIONAL"
-    val UNSPECIFIED   = "UNSPECIFIED"
+  @js.native
+  sealed trait ComplianceSeverity extends js.Any
+  object ComplianceSeverity extends js.Object {
+    val CRITICAL      = "CRITICAL".asInstanceOf[ComplianceSeverity]
+    val HIGH          = "HIGH".asInstanceOf[ComplianceSeverity]
+    val MEDIUM        = "MEDIUM".asInstanceOf[ComplianceSeverity]
+    val LOW           = "LOW".asInstanceOf[ComplianceSeverity]
+    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
+    val UNSPECIFIED   = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
-
-  object ComplianceStatusEnum {
-    val COMPLIANT     = "COMPLIANT"
-    val NON_COMPLIANT = "NON_COMPLIANT"
+  @js.native
+  sealed trait ComplianceStatus extends js.Any
+  object ComplianceStatus extends js.Object {
+    val COMPLIANT     = "COMPLIANT".asInstanceOf[ComplianceStatus]
+    val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
 
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
@@ -2575,10 +2523,11 @@ package ssm {
       __obj.asInstanceOf[CompliantSummary]
     }
   }
-
-  object ConnectionStatusEnum {
-    val Connected    = "Connected"
-    val NotConnected = "NotConnected"
+  @js.native
+  sealed trait ConnectionStatus extends js.Any
+  object ConnectionStatus extends js.Object {
+    val Connected    = "Connected".asInstanceOf[ConnectionStatus]
+    val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(Connected, NotConnected))
   }
@@ -3594,11 +3543,12 @@ package ssm {
       __obj.asInstanceOf[DescribeActivationsFilter]
     }
   }
-
-  object DescribeActivationsFilterKeysEnum {
-    val ActivationIds       = "ActivationIds"
-    val DefaultInstanceName = "DefaultInstanceName"
-    val IamRole             = "IamRole"
+  @js.native
+  sealed trait DescribeActivationsFilterKeys extends js.Any
+  object DescribeActivationsFilterKeys extends js.Object {
+    val ActivationIds       = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
+    val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
+    val IamRole             = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
 
     val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
   }
@@ -5191,27 +5141,30 @@ package ssm {
       __obj.asInstanceOf[DocumentFilter]
     }
   }
-
-  object DocumentFilterKeyEnum {
-    val Name          = "Name"
-    val Owner         = "Owner"
-    val PlatformTypes = "PlatformTypes"
-    val DocumentType  = "DocumentType"
+  @js.native
+  sealed trait DocumentFilterKey extends js.Any
+  object DocumentFilterKey extends js.Object {
+    val Name          = "Name".asInstanceOf[DocumentFilterKey]
+    val Owner         = "Owner".asInstanceOf[DocumentFilterKey]
+    val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
+    val DocumentType  = "DocumentType".asInstanceOf[DocumentFilterKey]
 
     val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
-
-  object DocumentFormatEnum {
-    val YAML = "YAML"
-    val JSON = "JSON"
-    val TEXT = "TEXT"
+  @js.native
+  sealed trait DocumentFormat extends js.Any
+  object DocumentFormat extends js.Object {
+    val YAML = "YAML".asInstanceOf[DocumentFormat]
+    val JSON = "JSON".asInstanceOf[DocumentFormat]
+    val TEXT = "TEXT".asInstanceOf[DocumentFormat]
 
     val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
   }
-
-  object DocumentHashTypeEnum {
-    val Sha256 = "Sha256"
-    val Sha1   = "Sha1"
+  @js.native
+  sealed trait DocumentHashType extends js.Any
+  object DocumentHashType extends js.Object {
+    val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
+    val Sha1   = "Sha1".asInstanceOf[DocumentHashType]
 
     val values = js.Object.freeze(js.Array(Sha256, Sha1))
   }
@@ -5323,16 +5276,18 @@ package ssm {
       __obj.asInstanceOf[DocumentParameter]
     }
   }
-
-  object DocumentParameterTypeEnum {
-    val String     = "String"
-    val StringList = "StringList"
+  @js.native
+  sealed trait DocumentParameterType extends js.Any
+  object DocumentParameterType extends js.Object {
+    val String     = "String".asInstanceOf[DocumentParameterType]
+    val StringList = "StringList".asInstanceOf[DocumentParameterType]
 
     val values = js.Object.freeze(js.Array(String, StringList))
   }
-
-  object DocumentPermissionTypeEnum {
-    val Share = "Share"
+  @js.native
+  sealed trait DocumentPermissionType extends js.Any
+  object DocumentPermissionType extends js.Object {
+    val Share = "Share".asInstanceOf[DocumentPermissionType]
 
     val values = js.Object.freeze(js.Array(Share))
   }
@@ -5364,26 +5319,29 @@ package ssm {
   /**
     * The status of a document.
     */
-  object DocumentStatusEnum {
-    val Creating = "Creating"
-    val Active   = "Active"
-    val Updating = "Updating"
-    val Deleting = "Deleting"
-    val Failed   = "Failed"
+  @js.native
+  sealed trait DocumentStatus extends js.Any
+  object DocumentStatus extends js.Object {
+    val Creating = "Creating".asInstanceOf[DocumentStatus]
+    val Active   = "Active".asInstanceOf[DocumentStatus]
+    val Updating = "Updating".asInstanceOf[DocumentStatus]
+    val Deleting = "Deleting".asInstanceOf[DocumentStatus]
+    val Failed   = "Failed".asInstanceOf[DocumentStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
-
-  object DocumentTypeEnum {
-    val Command                        = "Command"
-    val Policy                         = "Policy"
-    val Automation                     = "Automation"
-    val Session                        = "Session"
-    val Package                        = "Package"
-    val ApplicationConfiguration       = "ApplicationConfiguration"
-    val ApplicationConfigurationSchema = "ApplicationConfigurationSchema"
-    val DeploymentStrategy             = "DeploymentStrategy"
-    val ChangeCalendar                 = "ChangeCalendar"
+  @js.native
+  sealed trait DocumentType extends js.Any
+  object DocumentType extends js.Object {
+    val Command                        = "Command".asInstanceOf[DocumentType]
+    val Policy                         = "Policy".asInstanceOf[DocumentType]
+    val Automation                     = "Automation".asInstanceOf[DocumentType]
+    val Session                        = "Session".asInstanceOf[DocumentType]
+    val Package                        = "Package".asInstanceOf[DocumentType]
+    val ApplicationConfiguration       = "ApplicationConfiguration".asInstanceOf[DocumentType]
+    val ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
+    val DeploymentStrategy             = "DeploymentStrategy".asInstanceOf[DocumentType]
+    val ChangeCalendar                 = "ChangeCalendar".asInstanceOf[DocumentType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5461,10 +5419,11 @@ package ssm {
       __obj.asInstanceOf[EffectivePatch]
     }
   }
-
-  object ExecutionModeEnum {
-    val Auto        = "Auto"
-    val Interactive = "Interactive"
+  @js.native
+  sealed trait ExecutionMode extends js.Any
+  object ExecutionMode extends js.Object {
+    val Auto        = "Auto".asInstanceOf[ExecutionMode]
+    val Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
     val values = js.Object.freeze(js.Array(Auto, Interactive))
   }
@@ -5518,11 +5477,12 @@ package ssm {
       __obj.asInstanceOf[FailureDetails]
     }
   }
-
-  object FaultEnum {
-    val Client  = "Client"
-    val Server  = "Server"
-    val Unknown = "Unknown"
+  @js.native
+  sealed trait Fault extends js.Any
+  object Fault extends js.Object {
+    val Client  = "Client".asInstanceOf[Fault]
+    val Server  = "Server".asInstanceOf[Fault]
+    val Unknown = "Unknown".asInstanceOf[Fault]
 
     val values = js.Object.freeze(js.Array(Client, Server, Unknown))
   }
@@ -6983,16 +6943,17 @@ package ssm {
       __obj.asInstanceOf[InstanceInformationFilter]
     }
   }
-
-  object InstanceInformationFilterKeyEnum {
-    val InstanceIds       = "InstanceIds"
-    val AgentVersion      = "AgentVersion"
-    val PingStatus        = "PingStatus"
-    val PlatformTypes     = "PlatformTypes"
-    val ActivationIds     = "ActivationIds"
-    val IamRole           = "IamRole"
-    val ResourceType      = "ResourceType"
-    val AssociationStatus = "AssociationStatus"
+  @js.native
+  sealed trait InstanceInformationFilterKey extends js.Any
+  object InstanceInformationFilterKey extends js.Object {
+    val InstanceIds       = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
+    val AgentVersion      = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
+    val PingStatus        = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
+    val PlatformTypes     = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
+    val ActivationIds     = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
+    val IamRole           = "IamRole".asInstanceOf[InstanceInformationFilterKey]
+    val ResourceType      = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
+    val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -7139,12 +7100,13 @@ package ssm {
       __obj.asInstanceOf[InstancePatchStateFilter]
     }
   }
-
-  object InstancePatchStateOperatorTypeEnum {
-    val Equal       = "Equal"
-    val NotEqual    = "NotEqual"
-    val LessThan    = "LessThan"
-    val GreaterThan = "GreaterThan"
+  @js.native
+  sealed trait InstancePatchStateOperatorType extends js.Any
+  object InstancePatchStateOperatorType extends js.Object {
+    val Equal       = "Equal".asInstanceOf[InstancePatchStateOperatorType]
+    val NotEqual    = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
+    val LessThan    = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
+    val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
   }
@@ -7173,17 +7135,19 @@ package ssm {
       __obj.asInstanceOf[InventoryAggregator]
     }
   }
-
-  object InventoryAttributeDataTypeEnum {
-    val string = "string"
-    val number = "number"
+  @js.native
+  sealed trait InventoryAttributeDataType extends js.Any
+  object InventoryAttributeDataType extends js.Object {
+    val string = "string".asInstanceOf[InventoryAttributeDataType]
+    val number = "number".asInstanceOf[InventoryAttributeDataType]
 
     val values = js.Object.freeze(js.Array(string, number))
   }
-
-  object InventoryDeletionStatusEnum {
-    val InProgress = "InProgress"
-    val Complete   = "Complete"
+  @js.native
+  sealed trait InventoryDeletionStatus extends js.Any
+  object InventoryDeletionStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
+    val Complete   = "Complete".asInstanceOf[InventoryDeletionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Complete))
   }
@@ -7415,14 +7379,15 @@ package ssm {
       __obj.asInstanceOf[InventoryItemSchema]
     }
   }
-
-  object InventoryQueryOperatorTypeEnum {
-    val Equal       = "Equal"
-    val NotEqual    = "NotEqual"
-    val BeginWith   = "BeginWith"
-    val LessThan    = "LessThan"
-    val GreaterThan = "GreaterThan"
-    val Exists      = "Exists"
+  @js.native
+  sealed trait InventoryQueryOperatorType extends js.Any
+  object InventoryQueryOperatorType extends js.Object {
+    val Equal       = "Equal".asInstanceOf[InventoryQueryOperatorType]
+    val NotEqual    = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
+    val BeginWith   = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
+    val LessThan    = "LessThan".asInstanceOf[InventoryQueryOperatorType]
+    val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
+    val Exists      = "Exists".asInstanceOf[InventoryQueryOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
@@ -7481,10 +7446,11 @@ package ssm {
       __obj.asInstanceOf[InventoryResultItem]
     }
   }
-
-  object InventorySchemaDeleteOptionEnum {
-    val DisableSchema = "DisableSchema"
-    val DeleteSchema  = "DeleteSchema"
+  @js.native
+  sealed trait InventorySchemaDeleteOption extends js.Any
+  object InventorySchemaDeleteOption extends js.Object {
+    val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
+    val DeleteSchema  = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
 
     val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
   }
@@ -7531,11 +7497,12 @@ package ssm {
       __obj.asInstanceOf[LabelParameterVersionResult]
     }
   }
-
-  object LastResourceDataSyncStatusEnum {
-    val Successful = "Successful"
-    val Failed     = "Failed"
-    val InProgress = "InProgress"
+  @js.native
+  sealed trait LastResourceDataSyncStatus extends js.Any
+  object LastResourceDataSyncStatus extends js.Object {
+    val Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
+    val Failed     = "Failed".asInstanceOf[LastResourceDataSyncStatus]
+    val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
 
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
@@ -8162,16 +8129,17 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowExecution]
     }
   }
-
-  object MaintenanceWindowExecutionStatusEnum {
-    val PENDING             = "PENDING"
-    val IN_PROGRESS         = "IN_PROGRESS"
-    val SUCCESS             = "SUCCESS"
-    val FAILED              = "FAILED"
-    val TIMED_OUT           = "TIMED_OUT"
-    val CANCELLING          = "CANCELLING"
-    val CANCELLED           = "CANCELLED"
-    val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING"
+  @js.native
+  sealed trait MaintenanceWindowExecutionStatus extends js.Any
+  object MaintenanceWindowExecutionStatus extends js.Object {
+    val PENDING             = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val IN_PROGRESS         = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val SUCCESS             = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val FAILED              = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val TIMED_OUT           = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val CANCELLING          = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val CANCELLED           = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
     val values = js.Object.freeze(
       js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
@@ -8392,10 +8360,11 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowLambdaParameters]
     }
   }
-
-  object MaintenanceWindowResourceTypeEnum {
-    val INSTANCE       = "INSTANCE"
-    val RESOURCE_GROUP = "RESOURCE_GROUP"
+  @js.native
+  sealed trait MaintenanceWindowResourceType extends js.Any
+  object MaintenanceWindowResourceType extends js.Object {
+    val INSTANCE       = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
+    val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
 
     val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
   }
@@ -8619,12 +8588,13 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowTaskParameterValueExpression]
     }
   }
-
-  object MaintenanceWindowTaskTypeEnum {
-    val RUN_COMMAND    = "RUN_COMMAND"
-    val AUTOMATION     = "AUTOMATION"
-    val STEP_FUNCTIONS = "STEP_FUNCTIONS"
-    val LAMBDA         = "LAMBDA"
+  @js.native
+  sealed trait MaintenanceWindowTaskType extends js.Any
+  object MaintenanceWindowTaskType extends js.Object {
+    val RUN_COMMAND    = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
+    val AUTOMATION     = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
+    val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
+    val LAMBDA         = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
 
     val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
   }
@@ -8718,33 +8688,36 @@ package ssm {
       __obj.asInstanceOf[NotificationConfig]
     }
   }
-
-  object NotificationEventEnum {
-    val All        = "All"
-    val InProgress = "InProgress"
-    val Success    = "Success"
-    val TimedOut   = "TimedOut"
-    val Cancelled  = "Cancelled"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait NotificationEvent extends js.Any
+  object NotificationEvent extends js.Object {
+    val All        = "All".asInstanceOf[NotificationEvent]
+    val InProgress = "InProgress".asInstanceOf[NotificationEvent]
+    val Success    = "Success".asInstanceOf[NotificationEvent]
+    val TimedOut   = "TimedOut".asInstanceOf[NotificationEvent]
+    val Cancelled  = "Cancelled".asInstanceOf[NotificationEvent]
+    val Failed     = "Failed".asInstanceOf[NotificationEvent]
 
     val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
-
-  object NotificationTypeEnum {
-    val Command    = "Command"
-    val Invocation = "Invocation"
+  @js.native
+  sealed trait NotificationType extends js.Any
+  object NotificationType extends js.Object {
+    val Command    = "Command".asInstanceOf[NotificationType]
+    val Invocation = "Invocation".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(Command, Invocation))
   }
-
-  object OperatingSystemEnum {
-    val WINDOWS                 = "WINDOWS"
-    val AMAZON_LINUX            = "AMAZON_LINUX"
-    val AMAZON_LINUX_2          = "AMAZON_LINUX_2"
-    val UBUNTU                  = "UBUNTU"
-    val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX"
-    val SUSE                    = "SUSE"
-    val CENTOS                  = "CENTOS"
+  @js.native
+  sealed trait OperatingSystem extends js.Any
+  object OperatingSystem extends js.Object {
+    val WINDOWS                 = "WINDOWS".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX            = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX_2          = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+    val UBUNTU                  = "UBUNTU".asInstanceOf[OperatingSystem]
+    val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
+    val SUSE                    = "SUSE".asInstanceOf[OperatingSystem]
+    val CENTOS                  = "CENTOS".asInstanceOf[OperatingSystem]
 
     val values =
       js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS))
@@ -8854,14 +8827,15 @@ package ssm {
       __obj.asInstanceOf[OpsFilter]
     }
   }
-
-  object OpsFilterOperatorTypeEnum {
-    val Equal       = "Equal"
-    val NotEqual    = "NotEqual"
-    val BeginWith   = "BeginWith"
-    val LessThan    = "LessThan"
-    val GreaterThan = "GreaterThan"
-    val Exists      = "Exists"
+  @js.native
+  sealed trait OpsFilterOperatorType extends js.Any
+  object OpsFilterOperatorType extends js.Object {
+    val Equal       = "Equal".asInstanceOf[OpsFilterOperatorType]
+    val NotEqual    = "NotEqual".asInstanceOf[OpsFilterOperatorType]
+    val BeginWith   = "BeginWith".asInstanceOf[OpsFilterOperatorType]
+    val LessThan    = "LessThan".asInstanceOf[OpsFilterOperatorType]
+    val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
+    val Exists      = "Exists".asInstanceOf[OpsFilterOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
@@ -8929,10 +8903,11 @@ package ssm {
       __obj.asInstanceOf[OpsItem]
     }
   }
-
-  object OpsItemDataTypeEnum {
-    val SearchableString = "SearchableString"
-    val String           = "String"
+  @js.native
+  sealed trait OpsItemDataType extends js.Any
+  object OpsItemDataType extends js.Object {
+    val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
+    val String           = "String".asInstanceOf[OpsItemDataType]
 
     val values = js.Object.freeze(js.Array(SearchableString, String))
   }
@@ -8985,23 +8960,24 @@ package ssm {
       __obj.asInstanceOf[OpsItemFilter]
     }
   }
-
-  object OpsItemFilterKeyEnum {
-    val Status               = "Status"
-    val CreatedBy            = "CreatedBy"
-    val Source               = "Source"
-    val Priority             = "Priority"
-    val Title                = "Title"
-    val OpsItemId            = "OpsItemId"
-    val CreatedTime          = "CreatedTime"
-    val LastModifiedTime     = "LastModifiedTime"
-    val OperationalData      = "OperationalData"
-    val OperationalDataKey   = "OperationalDataKey"
-    val OperationalDataValue = "OperationalDataValue"
-    val ResourceId           = "ResourceId"
-    val AutomationId         = "AutomationId"
-    val Category             = "Category"
-    val Severity             = "Severity"
+  @js.native
+  sealed trait OpsItemFilterKey extends js.Any
+  object OpsItemFilterKey extends js.Object {
+    val Status               = "Status".asInstanceOf[OpsItemFilterKey]
+    val CreatedBy            = "CreatedBy".asInstanceOf[OpsItemFilterKey]
+    val Source               = "Source".asInstanceOf[OpsItemFilterKey]
+    val Priority             = "Priority".asInstanceOf[OpsItemFilterKey]
+    val Title                = "Title".asInstanceOf[OpsItemFilterKey]
+    val OpsItemId            = "OpsItemId".asInstanceOf[OpsItemFilterKey]
+    val CreatedTime          = "CreatedTime".asInstanceOf[OpsItemFilterKey]
+    val LastModifiedTime     = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
+    val OperationalData      = "OperationalData".asInstanceOf[OpsItemFilterKey]
+    val OperationalDataKey   = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
+    val OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
+    val ResourceId           = "ResourceId".asInstanceOf[OpsItemFilterKey]
+    val AutomationId         = "AutomationId".asInstanceOf[OpsItemFilterKey]
+    val Category             = "Category".asInstanceOf[OpsItemFilterKey]
+    val Severity             = "Severity".asInstanceOf[OpsItemFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -9023,12 +8999,13 @@ package ssm {
       )
     )
   }
-
-  object OpsItemFilterOperatorEnum {
-    val Equal       = "Equal"
-    val Contains    = "Contains"
-    val GreaterThan = "GreaterThan"
-    val LessThan    = "LessThan"
+  @js.native
+  sealed trait OpsItemFilterOperator extends js.Any
+  object OpsItemFilterOperator extends js.Object {
+    val Equal       = "Equal".asInstanceOf[OpsItemFilterOperator]
+    val Contains    = "Contains".asInstanceOf[OpsItemFilterOperator]
+    val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
+    val LessThan    = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
     val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
   }
@@ -9051,11 +9028,12 @@ package ssm {
       __obj.asInstanceOf[OpsItemNotification]
     }
   }
-
-  object OpsItemStatusEnum {
-    val Open       = "Open"
-    val InProgress = "InProgress"
-    val Resolved   = "Resolved"
+  @js.native
+  sealed trait OpsItemStatus extends js.Any
+  object OpsItemStatus extends js.Object {
+    val Open       = "Open".asInstanceOf[OpsItemStatus]
+    val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
+    val Resolved   = "Resolved".asInstanceOf[OpsItemStatus]
 
     val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
   }
@@ -9349,19 +9327,21 @@ package ssm {
       __obj.asInstanceOf[ParameterStringFilter]
     }
   }
-
-  object ParameterTierEnum {
-    val Standard              = "Standard"
-    val Advanced              = "Advanced"
-    val `Intelligent-Tiering` = "Intelligent-Tiering"
+  @js.native
+  sealed trait ParameterTier extends js.Any
+  object ParameterTier extends js.Object {
+    val Standard              = "Standard".asInstanceOf[ParameterTier]
+    val Advanced              = "Advanced".asInstanceOf[ParameterTier]
+    val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
 
     val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
   }
-
-  object ParameterTypeEnum {
-    val String       = "String"
-    val StringList   = "StringList"
-    val SecureString = "SecureString"
+  @js.native
+  sealed trait ParameterType extends js.Any
+  object ParameterType extends js.Object {
+    val String       = "String".asInstanceOf[ParameterType]
+    val StringList   = "StringList".asInstanceOf[ParameterType]
+    val SecureString = "SecureString".asInstanceOf[ParameterType]
 
     val values = js.Object.freeze(js.Array(String, StringList, SecureString))
   }
@@ -9389,11 +9369,12 @@ package ssm {
       __obj.asInstanceOf[ParametersFilter]
     }
   }
-
-  object ParametersFilterKeyEnum {
-    val Name  = "Name"
-    val Type  = "Type"
-    val KeyId = "KeyId"
+  @js.native
+  sealed trait ParametersFilterKey extends js.Any
+  object ParametersFilterKey extends js.Object {
+    val Name  = "Name".asInstanceOf[ParametersFilterKey]
+    val Type  = "Type".asInstanceOf[ParametersFilterKey]
+    val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
 
     val values = js.Object.freeze(js.Array(Name, Type, KeyId))
   }
@@ -9452,10 +9433,11 @@ package ssm {
       __obj.asInstanceOf[Patch]
     }
   }
-
-  object PatchActionEnum {
-    val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY"
-    val BLOCK               = "BLOCK"
+  @js.native
+  sealed trait PatchAction extends js.Any
+  object PatchAction extends js.Object {
+    val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
+    val BLOCK               = "BLOCK".asInstanceOf[PatchAction]
 
     val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
   }
@@ -9526,15 +9508,16 @@ package ssm {
       __obj.asInstanceOf[PatchComplianceData]
     }
   }
-
-  object PatchComplianceDataStateEnum {
-    val INSTALLED                = "INSTALLED"
-    val INSTALLED_OTHER          = "INSTALLED_OTHER"
-    val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT"
-    val INSTALLED_REJECTED       = "INSTALLED_REJECTED"
-    val MISSING                  = "MISSING"
-    val NOT_APPLICABLE           = "NOT_APPLICABLE"
-    val FAILED                   = "FAILED"
+  @js.native
+  sealed trait PatchComplianceDataState extends js.Any
+  object PatchComplianceDataState extends js.Object {
+    val INSTALLED                = "INSTALLED".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED_OTHER          = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED_REJECTED       = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
+    val MISSING                  = "MISSING".asInstanceOf[PatchComplianceDataState]
+    val NOT_APPLICABLE           = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
+    val FAILED                   = "FAILED".asInstanceOf[PatchComplianceDataState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -9548,23 +9531,25 @@ package ssm {
       )
     )
   }
-
-  object PatchComplianceLevelEnum {
-    val CRITICAL      = "CRITICAL"
-    val HIGH          = "HIGH"
-    val MEDIUM        = "MEDIUM"
-    val LOW           = "LOW"
-    val INFORMATIONAL = "INFORMATIONAL"
-    val UNSPECIFIED   = "UNSPECIFIED"
+  @js.native
+  sealed trait PatchComplianceLevel extends js.Any
+  object PatchComplianceLevel extends js.Object {
+    val CRITICAL      = "CRITICAL".asInstanceOf[PatchComplianceLevel]
+    val HIGH          = "HIGH".asInstanceOf[PatchComplianceLevel]
+    val MEDIUM        = "MEDIUM".asInstanceOf[PatchComplianceLevel]
+    val LOW           = "LOW".asInstanceOf[PatchComplianceLevel]
+    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
+    val UNSPECIFIED   = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
-
-  object PatchDeploymentStatusEnum {
-    val APPROVED          = "APPROVED"
-    val PENDING_APPROVAL  = "PENDING_APPROVAL"
-    val EXPLICIT_APPROVED = "EXPLICIT_APPROVED"
-    val EXPLICIT_REJECTED = "EXPLICIT_REJECTED"
+  @js.native
+  sealed trait PatchDeploymentStatus extends js.Any
+  object PatchDeploymentStatus extends js.Object {
+    val APPROVED          = "APPROVED".asInstanceOf[PatchDeploymentStatus]
+    val PENDING_APPROVAL  = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
+    val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
+    val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
 
     val values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
   }
@@ -9615,17 +9600,18 @@ package ssm {
       __obj.asInstanceOf[PatchFilterGroup]
     }
   }
-
-  object PatchFilterKeyEnum {
-    val PATCH_SET      = "PATCH_SET"
-    val PRODUCT        = "PRODUCT"
-    val PRODUCT_FAMILY = "PRODUCT_FAMILY"
-    val CLASSIFICATION = "CLASSIFICATION"
-    val MSRC_SEVERITY  = "MSRC_SEVERITY"
-    val PATCH_ID       = "PATCH_ID"
-    val SECTION        = "SECTION"
-    val PRIORITY       = "PRIORITY"
-    val SEVERITY       = "SEVERITY"
+  @js.native
+  sealed trait PatchFilterKey extends js.Any
+  object PatchFilterKey extends js.Object {
+    val PATCH_SET      = "PATCH_SET".asInstanceOf[PatchFilterKey]
+    val PRODUCT        = "PRODUCT".asInstanceOf[PatchFilterKey]
+    val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
+    val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
+    val MSRC_SEVERITY  = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
+    val PATCH_ID       = "PATCH_ID".asInstanceOf[PatchFilterKey]
+    val SECTION        = "SECTION".asInstanceOf[PatchFilterKey]
+    val PRIORITY       = "PRIORITY".asInstanceOf[PatchFilterKey]
+    val SEVERITY       = "SEVERITY".asInstanceOf[PatchFilterKey]
 
     val values = js.Object.freeze(
       js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
@@ -9653,10 +9639,11 @@ package ssm {
       __obj.asInstanceOf[PatchGroupPatchBaselineMapping]
     }
   }
-
-  object PatchOperationTypeEnum {
-    val Scan    = "Scan"
-    val Install = "Install"
+  @js.native
+  sealed trait PatchOperationType extends js.Any
+  object PatchOperationType extends js.Object {
+    val Scan    = "Scan".asInstanceOf[PatchOperationType]
+    val Install = "Install".asInstanceOf[PatchOperationType]
 
     val values = js.Object.freeze(js.Array(Scan, Install))
   }
@@ -9682,14 +9669,15 @@ package ssm {
       __obj.asInstanceOf[PatchOrchestratorFilter]
     }
   }
-
-  object PatchPropertyEnum {
-    val PRODUCT        = "PRODUCT"
-    val PRODUCT_FAMILY = "PRODUCT_FAMILY"
-    val CLASSIFICATION = "CLASSIFICATION"
-    val MSRC_SEVERITY  = "MSRC_SEVERITY"
-    val PRIORITY       = "PRIORITY"
-    val SEVERITY       = "SEVERITY"
+  @js.native
+  sealed trait PatchProperty extends js.Any
+  object PatchProperty extends js.Object {
+    val PRODUCT        = "PRODUCT".asInstanceOf[PatchProperty]
+    val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
+    val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
+    val MSRC_SEVERITY  = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
+    val PRIORITY       = "PRIORITY".asInstanceOf[PatchProperty]
+    val SEVERITY       = "SEVERITY".asInstanceOf[PatchProperty]
 
     val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
   }
@@ -9747,10 +9735,11 @@ package ssm {
       __obj.asInstanceOf[PatchRuleGroup]
     }
   }
-
-  object PatchSetEnum {
-    val OS          = "OS"
-    val APPLICATION = "APPLICATION"
+  @js.native
+  sealed trait PatchSet extends js.Any
+  object PatchSet extends js.Object {
+    val OS          = "OS".asInstanceOf[PatchSet]
+    val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
 
     val values = js.Object.freeze(js.Array(OS, APPLICATION))
   }
@@ -9806,18 +9795,20 @@ package ssm {
       __obj.asInstanceOf[PatchStatus]
     }
   }
-
-  object PingStatusEnum {
-    val Online         = "Online"
-    val ConnectionLost = "ConnectionLost"
-    val Inactive       = "Inactive"
+  @js.native
+  sealed trait PingStatus extends js.Any
+  object PingStatus extends js.Object {
+    val Online         = "Online".asInstanceOf[PingStatus]
+    val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
+    val Inactive       = "Inactive".asInstanceOf[PingStatus]
 
     val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
-
-  object PlatformTypeEnum {
-    val Windows = "Windows"
-    val Linux   = "Linux"
+  @js.native
+  sealed trait PlatformType extends js.Any
+  object PlatformType extends js.Object {
+    val Windows = "Windows".asInstanceOf[PlatformType]
+    val Linux   = "Linux".asInstanceOf[PlatformType]
 
     val values = js.Object.freeze(js.Array(Windows, Linux))
   }
@@ -9999,10 +9990,11 @@ package ssm {
       __obj.asInstanceOf[PutParameterResult]
     }
   }
-
-  object RebootOptionEnum {
-    val RebootIfNeeded = "RebootIfNeeded"
-    val NoReboot       = "NoReboot"
+  @js.native
+  sealed trait RebootOption extends js.Any
+  object RebootOption extends js.Object {
+    val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
+    val NoReboot       = "NoReboot".asInstanceOf[RebootOption]
 
     val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
   }
@@ -10487,9 +10479,10 @@ package ssm {
       __obj.asInstanceOf[ResourceDataSyncS3Destination]
     }
   }
-
-  object ResourceDataSyncS3FormatEnum {
-    val JsonSerDe = "JsonSerDe"
+  @js.native
+  sealed trait ResourceDataSyncS3Format extends js.Any
+  object ResourceDataSyncS3Format extends js.Object {
+    val JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
 
     val values = js.Object.freeze(js.Array(JsonSerDe))
   }
@@ -10558,22 +10551,24 @@ package ssm {
       __obj.asInstanceOf[ResourceDataSyncSourceWithState]
     }
   }
-
-  object ResourceTypeEnum {
-    val ManagedInstance = "ManagedInstance"
-    val Document        = "Document"
-    val EC2Instance     = "EC2Instance"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
+    val Document        = "Document".asInstanceOf[ResourceType]
+    val EC2Instance     = "EC2Instance".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
-
-  object ResourceTypeForTaggingEnum {
-    val Document          = "Document"
-    val ManagedInstance   = "ManagedInstance"
-    val MaintenanceWindow = "MaintenanceWindow"
-    val Parameter         = "Parameter"
-    val PatchBaseline     = "PatchBaseline"
-    val OpsItem           = "OpsItem"
+  @js.native
+  sealed trait ResourceTypeForTagging extends js.Any
+  object ResourceTypeForTagging extends js.Object {
+    val Document          = "Document".asInstanceOf[ResourceTypeForTagging]
+    val ManagedInstance   = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
+    val MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
+    val Parameter         = "Parameter".asInstanceOf[ResourceTypeForTagging]
+    val PatchBaseline     = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
+    val OpsItem           = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
     val values =
       js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
@@ -10930,13 +10925,14 @@ package ssm {
       __obj.asInstanceOf[SessionFilter]
     }
   }
-
-  object SessionFilterKeyEnum {
-    val InvokedAfter  = "InvokedAfter"
-    val InvokedBefore = "InvokedBefore"
-    val Target        = "Target"
-    val Owner         = "Owner"
-    val Status        = "Status"
+  @js.native
+  sealed trait SessionFilterKey extends js.Any
+  object SessionFilterKey extends js.Object {
+    val InvokedAfter  = "InvokedAfter".asInstanceOf[SessionFilterKey]
+    val InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
+    val Target        = "Target".asInstanceOf[SessionFilterKey]
+    val Owner         = "Owner".asInstanceOf[SessionFilterKey]
+    val Status        = "Status".asInstanceOf[SessionFilterKey]
 
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
   }
@@ -10962,21 +10958,23 @@ package ssm {
       __obj.asInstanceOf[SessionManagerOutputUrl]
     }
   }
-
-  object SessionStateEnum {
-    val Active  = "Active"
-    val History = "History"
+  @js.native
+  sealed trait SessionState extends js.Any
+  object SessionState extends js.Object {
+    val Active  = "Active".asInstanceOf[SessionState]
+    val History = "History".asInstanceOf[SessionState]
 
     val values = js.Object.freeze(js.Array(Active, History))
   }
-
-  object SessionStatusEnum {
-    val Connected    = "Connected"
-    val Connecting   = "Connecting"
-    val Disconnected = "Disconnected"
-    val Terminated   = "Terminated"
-    val Terminating  = "Terminating"
-    val Failed       = "Failed"
+  @js.native
+  sealed trait SessionStatus extends js.Any
+  object SessionStatus extends js.Object {
+    val Connected    = "Connected".asInstanceOf[SessionStatus]
+    val Connecting   = "Connecting".asInstanceOf[SessionStatus]
+    val Disconnected = "Disconnected".asInstanceOf[SessionStatus]
+    val Terminated   = "Terminated".asInstanceOf[SessionStatus]
+    val Terminating  = "Terminating".asInstanceOf[SessionStatus]
+    val Failed       = "Failed".asInstanceOf[SessionStatus]
 
     val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
   }
@@ -11014,13 +11012,14 @@ package ssm {
       __obj.asInstanceOf[SeveritySummary]
     }
   }
-
-  object SignalTypeEnum {
-    val Approve   = "Approve"
-    val Reject    = "Reject"
-    val StartStep = "StartStep"
-    val StopStep  = "StopStep"
-    val Resume    = "Resume"
+  @js.native
+  sealed trait SignalType extends js.Any
+  object SignalType extends js.Object {
+    val Approve   = "Approve".asInstanceOf[SignalType]
+    val Reject    = "Reject".asInstanceOf[SignalType]
+    val StartStep = "StartStep".asInstanceOf[SignalType]
+    val StopStep  = "StopStep".asInstanceOf[SignalType]
+    val Resume    = "Resume".asInstanceOf[SignalType]
 
     val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
   }
@@ -11274,14 +11273,15 @@ package ssm {
       __obj.asInstanceOf[StepExecutionFilter]
     }
   }
-
-  object StepExecutionFilterKeyEnum {
-    val StartTimeBefore     = "StartTimeBefore"
-    val StartTimeAfter      = "StartTimeAfter"
-    val StepExecutionStatus = "StepExecutionStatus"
-    val StepExecutionId     = "StepExecutionId"
-    val StepName            = "StepName"
-    val Action              = "Action"
+  @js.native
+  sealed trait StepExecutionFilterKey extends js.Any
+  object StepExecutionFilterKey extends js.Object {
+    val StartTimeBefore     = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
+    val StartTimeAfter      = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
+    val StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
+    val StepExecutionId     = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
+    val StepName            = "StepName".asInstanceOf[StepExecutionFilterKey]
+    val Action              = "Action".asInstanceOf[StepExecutionFilterKey]
 
     val values = js.Object.freeze(
       js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
@@ -11321,10 +11321,11 @@ package ssm {
       __obj.asInstanceOf[StopAutomationExecutionResult]
     }
   }
-
-  object StopTypeEnum {
-    val Complete = "Complete"
-    val Cancel   = "Cancel"
+  @js.native
+  sealed trait StopType extends js.Any
+  object StopType extends js.Object {
+    val Complete = "Complete".asInstanceOf[StopType]
+    val Cancel   = "Cancel".asInstanceOf[StopType]
 
     val values = js.Object.freeze(js.Array(Complete, Cancel))
   }

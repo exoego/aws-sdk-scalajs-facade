@@ -13,21 +13,16 @@ package object fsx {
   type AutomaticBackupRetentionDays        = Int
   type BackupId                            = String
   type BackupIds                           = js.Array[BackupId]
-  type BackupLifecycle                     = String
-  type BackupType                          = String
   type Backups                             = js.Array[Backup]
   type ClientRequestToken                  = String
   type CreationTime                        = js.Date
   type DNSName                             = String
   type DailyTime                           = String
-  type DataRepositoryTaskFilterName        = String
   type DataRepositoryTaskFilterValue       = String
   type DataRepositoryTaskFilterValues      = js.Array[DataRepositoryTaskFilterValue]
   type DataRepositoryTaskFilters           = js.Array[DataRepositoryTaskFilter]
-  type DataRepositoryTaskLifecycle         = String
   type DataRepositoryTaskPath              = String
   type DataRepositoryTaskPaths             = js.Array[DataRepositoryTaskPath]
-  type DataRepositoryTaskType              = String
   type DataRepositoryTasks                 = js.Array[DataRepositoryTask]
   type DirectoryId                         = String
   type DirectoryPassword                   = String
@@ -39,12 +34,8 @@ package object fsx {
   type FileSystemAdministratorsGroupName   = String
   type FileSystemId                        = String
   type FileSystemIds                       = js.Array[FileSystemId]
-  type FileSystemLifecycle                 = String
-  type FileSystemMaintenanceOperation      = String
   type FileSystemMaintenanceOperations     = js.Array[FileSystemMaintenanceOperation]
-  type FileSystemType                      = String
   type FileSystems                         = js.Array[FileSystem]
-  type FilterName                          = String
   type FilterValue                         = String
   type FilterValues                        = js.Array[FilterValue]
   type Filters                             = js.Array[Filter]
@@ -60,8 +51,6 @@ package object fsx {
   type NextToken                           = String
   type OrganizationalUnitDistinguishedName = String
   type ProgressPercent                     = Int
-  type ReportFormat                        = String
-  type ReportScope                         = String
   type ResourceARN                         = String
   type SecurityGroupId                     = String
   type SecurityGroupIds                    = js.Array[SecurityGroupId]
@@ -79,7 +68,6 @@ package object fsx {
   type TotalCount                          = Double
   type VpcId                               = String
   type WeeklyTime                          = String
-  type WindowsDeploymentType               = String
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
@@ -241,11 +229,13 @@ package fsx {
   /**
     * The lifecycle status of the backup.
     */
-  object BackupLifecycleEnum {
-    val AVAILABLE = "AVAILABLE"
-    val CREATING  = "CREATING"
-    val DELETED   = "DELETED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait BackupLifecycle extends js.Any
+  object BackupLifecycle extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[BackupLifecycle]
+    val CREATING  = "CREATING".asInstanceOf[BackupLifecycle]
+    val DELETED   = "DELETED".asInstanceOf[BackupLifecycle]
+    val FAILED    = "FAILED".asInstanceOf[BackupLifecycle]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETED, FAILED))
   }
@@ -253,9 +243,11 @@ package fsx {
   /**
     * The type of the backup.
     */
-  object BackupTypeEnum {
-    val AUTOMATIC      = "AUTOMATIC"
-    val USER_INITIATED = "USER_INITIATED"
+  @js.native
+  sealed trait BackupType extends js.Any
+  object BackupType extends js.Object {
+    val AUTOMATIC      = "AUTOMATIC".asInstanceOf[BackupType]
+    val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, USER_INITIATED))
   }
@@ -749,21 +741,23 @@ package fsx {
       __obj.asInstanceOf[DataRepositoryTaskFilter]
     }
   }
-
-  object DataRepositoryTaskFilterNameEnum {
-    val `file-system-id` = "file-system-id"
-    val `task-lifecycle` = "task-lifecycle"
+  @js.native
+  sealed trait DataRepositoryTaskFilterName extends js.Any
+  object DataRepositoryTaskFilterName extends js.Object {
+    val `file-system-id` = "file-system-id".asInstanceOf[DataRepositoryTaskFilterName]
+    val `task-lifecycle` = "task-lifecycle".asInstanceOf[DataRepositoryTaskFilterName]
 
     val values = js.Object.freeze(js.Array(`file-system-id`, `task-lifecycle`))
   }
-
-  object DataRepositoryTaskLifecycleEnum {
-    val PENDING   = "PENDING"
-    val EXECUTING = "EXECUTING"
-    val FAILED    = "FAILED"
-    val SUCCEEDED = "SUCCEEDED"
-    val CANCELED  = "CANCELED"
-    val CANCELING = "CANCELING"
+  @js.native
+  sealed trait DataRepositoryTaskLifecycle extends js.Any
+  object DataRepositoryTaskLifecycle extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[DataRepositoryTaskLifecycle]
+    val EXECUTING = "EXECUTING".asInstanceOf[DataRepositoryTaskLifecycle]
+    val FAILED    = "FAILED".asInstanceOf[DataRepositoryTaskLifecycle]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataRepositoryTaskLifecycle]
+    val CANCELED  = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
+    val CANCELING = "CANCELING".asInstanceOf[DataRepositoryTaskLifecycle]
 
     val values = js.Object.freeze(js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING))
   }
@@ -795,9 +789,10 @@ package fsx {
       __obj.asInstanceOf[DataRepositoryTaskStatus]
     }
   }
-
-  object DataRepositoryTaskTypeEnum {
-    val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY"
+  @js.native
+  sealed trait DataRepositoryTaskType extends js.Any
+  object DataRepositoryTaskType extends js.Object {
+    val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY".asInstanceOf[DataRepositoryTaskType]
 
     val values = js.Object.freeze(js.Array(EXPORT_TO_REPOSITORY))
   }
@@ -1171,13 +1166,15 @@ package fsx {
   /**
     * The lifecycle status of the file system.
     */
-  object FileSystemLifecycleEnum {
-    val AVAILABLE     = "AVAILABLE"
-    val CREATING      = "CREATING"
-    val FAILED        = "FAILED"
-    val DELETING      = "DELETING"
-    val MISCONFIGURED = "MISCONFIGURED"
-    val UPDATING      = "UPDATING"
+  @js.native
+  sealed trait FileSystemLifecycle extends js.Any
+  object FileSystemLifecycle extends js.Object {
+    val AVAILABLE     = "AVAILABLE".asInstanceOf[FileSystemLifecycle]
+    val CREATING      = "CREATING".asInstanceOf[FileSystemLifecycle]
+    val FAILED        = "FAILED".asInstanceOf[FileSystemLifecycle]
+    val DELETING      = "DELETING".asInstanceOf[FileSystemLifecycle]
+    val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[FileSystemLifecycle]
+    val UPDATING      = "UPDATING".asInstanceOf[FileSystemLifecycle]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING))
   }
@@ -1185,9 +1182,11 @@ package fsx {
   /**
     * An enumeration specifying the currently ongoing maintenance operation.
     */
-  object FileSystemMaintenanceOperationEnum {
-    val PATCHING   = "PATCHING"
-    val BACKING_UP = "BACKING_UP"
+  @js.native
+  sealed trait FileSystemMaintenanceOperation extends js.Any
+  object FileSystemMaintenanceOperation extends js.Object {
+    val PATCHING   = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
+    val BACKING_UP = "BACKING_UP".asInstanceOf[FileSystemMaintenanceOperation]
 
     val values = js.Object.freeze(js.Array(PATCHING, BACKING_UP))
   }
@@ -1195,9 +1194,11 @@ package fsx {
   /**
     * The type of file system.
     */
-  object FileSystemTypeEnum {
-    val WINDOWS = "WINDOWS"
-    val LUSTRE  = "LUSTRE"
+  @js.native
+  sealed trait FileSystemType extends js.Any
+  object FileSystemType extends js.Object {
+    val WINDOWS = "WINDOWS".asInstanceOf[FileSystemType]
+    val LUSTRE  = "LUSTRE".asInstanceOf[FileSystemType]
 
     val values = js.Object.freeze(js.Array(WINDOWS, LUSTRE))
   }
@@ -1227,9 +1228,11 @@ package fsx {
   /**
     * The name for a filter.
     */
-  object FilterNameEnum {
-    val `file-system-id` = "file-system-id"
-    val `backup-type`    = "backup-type"
+  @js.native
+  sealed trait FilterName extends js.Any
+  object FilterName extends js.Object {
+    val `file-system-id` = "file-system-id".asInstanceOf[FilterName]
+    val `backup-type`    = "backup-type".asInstanceOf[FilterName]
 
     val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`))
   }
@@ -1308,15 +1311,17 @@ package fsx {
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
   }
-
-  object ReportFormatEnum {
-    val REPORT_CSV_20191124 = "REPORT_CSV_20191124"
+  @js.native
+  sealed trait ReportFormat extends js.Any
+  object ReportFormat extends js.Object {
+    val REPORT_CSV_20191124 = "REPORT_CSV_20191124".asInstanceOf[ReportFormat]
 
     val values = js.Object.freeze(js.Array(REPORT_CSV_20191124))
   }
-
-  object ReportScopeEnum {
-    val FAILED_FILES_ONLY = "FAILED_FILES_ONLY"
+  @js.native
+  sealed trait ReportScope extends js.Any
+  object ReportScope extends js.Object {
+    val FAILED_FILES_ONLY = "FAILED_FILES_ONLY".asInstanceOf[ReportScope]
 
     val values = js.Object.freeze(js.Array(FAILED_FILES_ONLY))
   }
@@ -1629,10 +1634,11 @@ package fsx {
       __obj.asInstanceOf[UpdateFileSystemWindowsConfiguration]
     }
   }
-
-  object WindowsDeploymentTypeEnum {
-    val MULTI_AZ_1  = "MULTI_AZ_1"
-    val SINGLE_AZ_1 = "SINGLE_AZ_1"
+  @js.native
+  sealed trait WindowsDeploymentType extends js.Any
+  object WindowsDeploymentType extends js.Object {
+    val MULTI_AZ_1  = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
+    val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
 
     val values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1))
   }

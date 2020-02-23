@@ -8,12 +8,10 @@ import facade.amazonaws._
 
 package object dax {
   type AvailabilityZoneList        = js.Array[String]
-  type ChangeType                  = String
   type ClusterList                 = js.Array[Cluster]
   type ClusterNameList             = js.Array[String]
   type EventList                   = js.Array[Event]
   type IntegerOptional             = Int
-  type IsModifiable                = String
   type KeyList                     = js.Array[String]
   type NodeIdentifierList          = js.Array[String]
   type NodeList                    = js.Array[Node]
@@ -22,12 +20,9 @@ package object dax {
   type ParameterGroupNameList      = js.Array[String]
   type ParameterList               = js.Array[Parameter]
   type ParameterNameValueList      = js.Array[ParameterNameValue]
-  type ParameterType               = String
   type SSEEnabled                  = Boolean
-  type SSEStatus                   = String
   type SecurityGroupIdentifierList = js.Array[String]
   type SecurityGroupMembershipList = js.Array[SecurityGroupMembership]
-  type SourceType                  = String
   type SubnetGroupList             = js.Array[SubnetGroup]
   type SubnetGroupNameList         = js.Array[String]
   type SubnetIdentifierList        = js.Array[String]
@@ -121,10 +116,11 @@ package dax {
     def updateParameterGroup(params: UpdateParameterGroupRequest): Request[UpdateParameterGroupResponse] = js.native
     def updateSubnetGroup(params: UpdateSubnetGroupRequest): Request[UpdateSubnetGroupResponse]          = js.native
   }
-
-  object ChangeTypeEnum {
-    val IMMEDIATE       = "IMMEDIATE"
-    val REQUIRES_REBOOT = "REQUIRES_REBOOT"
+  @js.native
+  sealed trait ChangeType extends js.Any
+  object ChangeType extends js.Object {
+    val IMMEDIATE       = "IMMEDIATE".asInstanceOf[ChangeType]
+    val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
   }
@@ -843,11 +839,12 @@ package dax {
       __obj.asInstanceOf[IncreaseReplicationFactorResponse]
     }
   }
-
-  object IsModifiableEnum {
-    val TRUE        = "TRUE"
-    val FALSE       = "FALSE"
-    val CONDITIONAL = "CONDITIONAL"
+  @js.native
+  sealed trait IsModifiable extends js.Any
+  object IsModifiable extends js.Object {
+    val TRUE        = "TRUE".asInstanceOf[IsModifiable]
+    val FALSE       = "FALSE".asInstanceOf[IsModifiable]
+    val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
@@ -1084,10 +1081,11 @@ package dax {
       __obj.asInstanceOf[ParameterNameValue]
     }
   }
-
-  object ParameterTypeEnum {
-    val DEFAULT            = "DEFAULT"
-    val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC"
+  @js.native
+  sealed trait ParameterType extends js.Any
+  object ParameterType extends js.Object {
+    val DEFAULT            = "DEFAULT".asInstanceOf[ParameterType]
+    val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
   }
@@ -1168,12 +1166,13 @@ package dax {
       __obj.asInstanceOf[SSESpecification]
     }
   }
-
-  object SSEStatusEnum {
-    val ENABLING  = "ENABLING"
-    val ENABLED   = "ENABLED"
-    val DISABLING = "DISABLING"
-    val DISABLED  = "DISABLED"
+  @js.native
+  sealed trait SSEStatus extends js.Any
+  object SSEStatus extends js.Object {
+    val ENABLING  = "ENABLING".asInstanceOf[SSEStatus]
+    val ENABLED   = "ENABLED".asInstanceOf[SSEStatus]
+    val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
+    val DISABLED  = "DISABLED".asInstanceOf[SSEStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
@@ -1199,11 +1198,12 @@ package dax {
       __obj.asInstanceOf[SecurityGroupMembership]
     }
   }
-
-  object SourceTypeEnum {
-    val CLUSTER         = "CLUSTER"
-    val PARAMETER_GROUP = "PARAMETER_GROUP"
-    val SUBNET_GROUP    = "SUBNET_GROUP"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val CLUSTER         = "CLUSTER".asInstanceOf[SourceType]
+    val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
+    val SUBNET_GROUP    = "SUBNET_GROUP".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
   }

@@ -7,15 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elbv2 {
-  type ActionOrder    = Int
-  type ActionTypeEnum = String
-  type Actions        = js.Array[Action]
-  type AllocationId   = String
+  type ActionOrder  = Int
+  type Actions      = js.Array[Action]
+  type AllocationId = String
   type AuthenticateCognitoActionAuthenticationRequestExtraParams =
     js.Dictionary[AuthenticateCognitoActionAuthenticationRequestParamValue]
   type AuthenticateCognitoActionAuthenticationRequestParamName  = String
   type AuthenticateCognitoActionAuthenticationRequestParamValue = String
-  type AuthenticateCognitoActionConditionalBehaviorEnum         = String
   type AuthenticateCognitoActionScope                           = String
   type AuthenticateCognitoActionSessionCookieName               = String
   type AuthenticateCognitoActionSessionTimeout                  = Double
@@ -29,7 +27,6 @@ package object elbv2 {
   type AuthenticateOidcActionAuthorizationEndpoint           = String
   type AuthenticateOidcActionClientId                        = String
   type AuthenticateOidcActionClientSecret                    = String
-  type AuthenticateOidcActionConditionalBehaviorEnum         = String
   type AuthenticateOidcActionIssuer                          = String
   type AuthenticateOidcActionScope                           = String
   type AuthenticateOidcActionSessionCookieName               = String
@@ -60,7 +57,6 @@ package object elbv2 {
   type HttpCode                                              = String
   type HttpHeaderConditionName                               = String
   type IpAddress                                             = String
-  type IpAddressType                                         = String
   type IsDefault                                             = Boolean
   type Limits                                                = js.Array[Limit]
   type ListOfString                                          = js.Array[StringValue]
@@ -75,9 +71,6 @@ package object elbv2 {
   type LoadBalancerAttributes                                = js.Array[LoadBalancerAttribute]
   type LoadBalancerName                                      = String
   type LoadBalancerNames                                     = js.Array[LoadBalancerName]
-  type LoadBalancerSchemeEnum                                = String
-  type LoadBalancerStateEnum                                 = String
-  type LoadBalancerTypeEnum                                  = String
   type LoadBalancers                                         = js.Array[LoadBalancer]
   type Marker                                                = String
   type Max                                                   = String
@@ -86,14 +79,12 @@ package object elbv2 {
   type Path                                                  = String
   type Port                                                  = Int
   type PrivateIPv4Address                                    = String
-  type ProtocolEnum                                          = String
   type QueryStringKeyValuePairList                           = js.Array[QueryStringKeyValuePair]
   type RedirectActionHost                                    = String
   type RedirectActionPath                                    = String
   type RedirectActionPort                                    = String
   type RedirectActionProtocol                                = String
   type RedirectActionQuery                                   = String
-  type RedirectActionStatusCodeEnum                          = String
   type ResourceArn                                           = String
   type ResourceArns                                          = js.Array[ResourceArn]
   type RuleArn                                               = String
@@ -133,10 +124,7 @@ package object elbv2 {
   type TargetGroupWeight                                     = Int
   type TargetGroups                                          = js.Array[TargetGroup]
   type TargetHealthDescriptions                              = js.Array[TargetHealthDescription]
-  type TargetHealthReasonEnum                                = String
-  type TargetHealthStateEnum                                 = String
   type TargetId                                              = String
-  type TargetTypeEnum                                        = String
   type VpcId                                                 = String
   type ZoneName                                              = String
 
@@ -316,13 +304,14 @@ package elbv2 {
       __obj.asInstanceOf[Action]
     }
   }
-
-  object ActionTypeEnumEnum {
-    val forward                = "forward"
-    val `authenticate-oidc`    = "authenticate-oidc"
-    val `authenticate-cognito` = "authenticate-cognito"
-    val redirect               = "redirect"
-    val `fixed-response`       = "fixed-response"
+  @js.native
+  sealed trait ActionTypeEnum extends js.Any
+  object ActionTypeEnum extends js.Object {
+    val forward                = "forward".asInstanceOf[ActionTypeEnum]
+    val `authenticate-oidc`    = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
+    val `authenticate-cognito` = "authenticate-cognito".asInstanceOf[ActionTypeEnum]
+    val redirect               = "redirect".asInstanceOf[ActionTypeEnum]
+    val `fixed-response`       = "fixed-response".asInstanceOf[ActionTypeEnum]
 
     val values =
       js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
@@ -398,11 +387,12 @@ package elbv2 {
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
-
-  object AuthenticateCognitoActionConditionalBehaviorEnumEnum {
-    val deny         = "deny"
-    val allow        = "allow"
-    val authenticate = "authenticate"
+  @js.native
+  sealed trait AuthenticateCognitoActionConditionalBehaviorEnum extends js.Any
+  object AuthenticateCognitoActionConditionalBehaviorEnum extends js.Object {
+    val deny         = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    val allow        = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
 
     val values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
@@ -451,11 +441,12 @@ package elbv2 {
       __obj.asInstanceOf[AuthenticateCognitoActionConfig]
     }
   }
-
-  object AuthenticateOidcActionConditionalBehaviorEnumEnum {
-    val deny         = "deny"
-    val allow        = "allow"
-    val authenticate = "authenticate"
+  @js.native
+  sealed trait AuthenticateOidcActionConditionalBehaviorEnum extends js.Any
+  object AuthenticateOidcActionConditionalBehaviorEnum extends js.Object {
+    val deny         = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    val allow        = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
 
     val values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
@@ -1520,10 +1511,11 @@ package elbv2 {
       __obj.asInstanceOf[HttpRequestMethodConditionConfig]
     }
   }
-
-  object IpAddressTypeEnum {
-    val ipv4      = "ipv4"
-    val dualstack = "dualstack"
+  @js.native
+  sealed trait IpAddressType extends js.Any
+  object IpAddressType extends js.Object {
+    val ipv4      = "ipv4".asInstanceOf[IpAddressType]
+    val dualstack = "dualstack".asInstanceOf[IpAddressType]
 
     val values = js.Object.freeze(js.Array(ipv4, dualstack))
   }
@@ -1685,10 +1677,11 @@ package elbv2 {
       __obj.asInstanceOf[LoadBalancerAttribute]
     }
   }
-
-  object LoadBalancerSchemeEnumEnum {
-    val `internet-facing` = "internet-facing"
-    val internal          = "internal"
+  @js.native
+  sealed trait LoadBalancerSchemeEnum extends js.Any
+  object LoadBalancerSchemeEnum extends js.Object {
+    val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
+    val internal          = "internal".asInstanceOf[LoadBalancerSchemeEnum]
 
     val values = js.Object.freeze(js.Array(`internet-facing`, internal))
   }
@@ -1714,19 +1707,21 @@ package elbv2 {
       __obj.asInstanceOf[LoadBalancerState]
     }
   }
-
-  object LoadBalancerStateEnumEnum {
-    val active          = "active"
-    val provisioning    = "provisioning"
-    val active_impaired = "active_impaired"
-    val failed          = "failed"
+  @js.native
+  sealed trait LoadBalancerStateEnum extends js.Any
+  object LoadBalancerStateEnum extends js.Object {
+    val active          = "active".asInstanceOf[LoadBalancerStateEnum]
+    val provisioning    = "provisioning".asInstanceOf[LoadBalancerStateEnum]
+    val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
+    val failed          = "failed".asInstanceOf[LoadBalancerStateEnum]
 
     val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
   }
-
-  object LoadBalancerTypeEnumEnum {
-    val application = "application"
-    val network     = "network"
+  @js.native
+  sealed trait LoadBalancerTypeEnum extends js.Any
+  object LoadBalancerTypeEnum extends js.Object {
+    val application = "application".asInstanceOf[LoadBalancerTypeEnum]
+    val network     = "network".asInstanceOf[LoadBalancerTypeEnum]
 
     val values = js.Object.freeze(js.Array(application, network))
   }
@@ -1998,14 +1993,15 @@ package elbv2 {
       __obj.asInstanceOf[PathPatternConditionConfig]
     }
   }
-
-  object ProtocolEnumEnum {
-    val HTTP    = "HTTP"
-    val HTTPS   = "HTTPS"
-    val TCP     = "TCP"
-    val TLS     = "TLS"
-    val UDP     = "UDP"
-    val TCP_UDP = "TCP_UDP"
+  @js.native
+  sealed trait ProtocolEnum extends js.Any
+  object ProtocolEnum extends js.Object {
+    val HTTP    = "HTTP".asInstanceOf[ProtocolEnum]
+    val HTTPS   = "HTTPS".asInstanceOf[ProtocolEnum]
+    val TCP     = "TCP".asInstanceOf[ProtocolEnum]
+    val TLS     = "TLS".asInstanceOf[ProtocolEnum]
+    val UDP     = "UDP".asInstanceOf[ProtocolEnum]
+    val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
 
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
   }
@@ -2095,10 +2091,11 @@ package elbv2 {
       __obj.asInstanceOf[RedirectActionConfig]
     }
   }
-
-  object RedirectActionStatusCodeEnumEnum {
-    val HTTP_301 = "HTTP_301"
-    val HTTP_302 = "HTTP_302"
+  @js.native
+  sealed trait RedirectActionStatusCodeEnum extends js.Any
+  object RedirectActionStatusCodeEnum extends js.Object {
+    val HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
+    val HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
 
     val values = js.Object.freeze(js.Array(HTTP_301, HTTP_302))
   }
@@ -2772,20 +2769,21 @@ package elbv2 {
       __obj.asInstanceOf[TargetHealthDescription]
     }
   }
-
-  object TargetHealthReasonEnumEnum {
-    val `Elb.RegistrationInProgress`      = "Elb.RegistrationInProgress"
-    val `Elb.InitialHealthChecking`       = "Elb.InitialHealthChecking"
-    val `Target.ResponseCodeMismatch`     = "Target.ResponseCodeMismatch"
-    val `Target.Timeout`                  = "Target.Timeout"
-    val `Target.FailedHealthChecks`       = "Target.FailedHealthChecks"
-    val `Target.NotRegistered`            = "Target.NotRegistered"
-    val `Target.NotInUse`                 = "Target.NotInUse"
-    val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress"
-    val `Target.InvalidState`             = "Target.InvalidState"
-    val `Target.IpUnusable`               = "Target.IpUnusable"
-    val `Target.HealthCheckDisabled`      = "Target.HealthCheckDisabled"
-    val `Elb.InternalError`               = "Elb.InternalError"
+  @js.native
+  sealed trait TargetHealthReasonEnum extends js.Any
+  object TargetHealthReasonEnum extends js.Object {
+    val `Elb.RegistrationInProgress`      = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
+    val `Elb.InitialHealthChecking`       = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.ResponseCodeMismatch`     = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.Timeout`                  = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.FailedHealthChecks`       = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.NotRegistered`            = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.NotInUse`                 = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.InvalidState`             = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.IpUnusable`               = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.HealthCheckDisabled`      = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
+    val `Elb.InternalError`               = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2804,22 +2802,24 @@ package elbv2 {
       )
     )
   }
-
-  object TargetHealthStateEnumEnum {
-    val initial     = "initial"
-    val healthy     = "healthy"
-    val unhealthy   = "unhealthy"
-    val unused      = "unused"
-    val draining    = "draining"
-    val unavailable = "unavailable"
+  @js.native
+  sealed trait TargetHealthStateEnum extends js.Any
+  object TargetHealthStateEnum extends js.Object {
+    val initial     = "initial".asInstanceOf[TargetHealthStateEnum]
+    val healthy     = "healthy".asInstanceOf[TargetHealthStateEnum]
+    val unhealthy   = "unhealthy".asInstanceOf[TargetHealthStateEnum]
+    val unused      = "unused".asInstanceOf[TargetHealthStateEnum]
+    val draining    = "draining".asInstanceOf[TargetHealthStateEnum]
+    val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
 
     val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
-
-  object TargetTypeEnumEnum {
-    val instance = "instance"
-    val ip       = "ip"
-    val lambda   = "lambda"
+  @js.native
+  sealed trait TargetTypeEnum extends js.Any
+  object TargetTypeEnum extends js.Object {
+    val instance = "instance".asInstanceOf[TargetTypeEnum]
+    val ip       = "ip".asInstanceOf[TargetTypeEnum]
+    val lambda   = "lambda".asInstanceOf[TargetTypeEnum]
 
     val values = js.Object.freeze(js.Array(instance, ip, lambda))
   }

@@ -11,12 +11,9 @@ package object lakeformation {
   type BatchPermissionsRequestEntryList = js.Array[BatchPermissionsRequestEntry]
   type CatalogIdString                  = String
   type ColumnNames                      = js.Array[NameString]
-  type ComparisonOperator               = String
   type DataLakePrincipalList            = js.Array[DataLakePrincipal]
   type DataLakePrincipalString          = String
-  type DataLakeResourceType             = String
   type DescriptionString                = String
-  type FieldNameString                  = String
   type FilterConditionList              = js.Array[FilterCondition]
   type IAMRoleArn                       = String
   type Identifier                       = String
@@ -24,7 +21,6 @@ package object lakeformation {
   type NameString                       = String
   type NullableBoolean                  = Boolean
   type PageSize                         = Int
-  type Permission                       = String
   type PermissionList                   = js.Array[Permission]
   type PrincipalPermissionsList         = js.Array[PrincipalPermissions]
   type PrincipalResourcePermissionsList = js.Array[PrincipalResourcePermissions]
@@ -257,19 +253,20 @@ package lakeformation {
       __obj.asInstanceOf[ColumnWildcard]
     }
   }
-
-  object ComparisonOperatorEnum {
-    val EQ           = "EQ"
-    val NE           = "NE"
-    val LE           = "LE"
-    val LT           = "LT"
-    val GE           = "GE"
-    val GT           = "GT"
-    val CONTAINS     = "CONTAINS"
-    val NOT_CONTAINS = "NOT_CONTAINS"
-    val BEGINS_WITH  = "BEGINS_WITH"
-    val IN           = "IN"
-    val BETWEEN      = "BETWEEN"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val EQ           = "EQ".asInstanceOf[ComparisonOperator]
+    val NE           = "NE".asInstanceOf[ComparisonOperator]
+    val LE           = "LE".asInstanceOf[ComparisonOperator]
+    val LT           = "LT".asInstanceOf[ComparisonOperator]
+    val GE           = "GE".asInstanceOf[ComparisonOperator]
+    val GT           = "GT".asInstanceOf[ComparisonOperator]
+    val CONTAINS     = "CONTAINS".asInstanceOf[ComparisonOperator]
+    val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH  = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val IN           = "IN".asInstanceOf[ComparisonOperator]
+    val BETWEEN      = "BETWEEN".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
   }
@@ -294,12 +291,13 @@ package lakeformation {
       __obj.asInstanceOf[DataLakePrincipal]
     }
   }
-
-  object DataLakeResourceTypeEnum {
-    val CATALOG       = "CATALOG"
-    val DATABASE      = "DATABASE"
-    val TABLE         = "TABLE"
-    val DATA_LOCATION = "DATA_LOCATION"
+  @js.native
+  sealed trait DataLakeResourceType extends js.Any
+  object DataLakeResourceType extends js.Object {
+    val CATALOG       = "CATALOG".asInstanceOf[DataLakeResourceType]
+    val DATABASE      = "DATABASE".asInstanceOf[DataLakeResourceType]
+    val TABLE         = "TABLE".asInstanceOf[DataLakeResourceType]
+    val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
     val values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
   }
@@ -461,11 +459,12 @@ package lakeformation {
       __obj.asInstanceOf[ErrorDetail]
     }
   }
-
-  object FieldNameStringEnum {
-    val RESOURCE_ARN  = "RESOURCE_ARN"
-    val ROLE_ARN      = "ROLE_ARN"
-    val LAST_MODIFIED = "LAST_MODIFIED"
+  @js.native
+  sealed trait FieldNameString extends js.Any
+  object FieldNameString extends js.Object {
+    val RESOURCE_ARN  = "RESOURCE_ARN".asInstanceOf[FieldNameString]
+    val ROLE_ARN      = "ROLE_ARN".asInstanceOf[FieldNameString]
+    val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
     val values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
   }
@@ -710,17 +709,18 @@ package lakeformation {
       __obj.asInstanceOf[ListResourcesResponse]
     }
   }
-
-  object PermissionEnum {
-    val ALL                  = "ALL"
-    val SELECT               = "SELECT"
-    val ALTER                = "ALTER"
-    val DROP                 = "DROP"
-    val DELETE               = "DELETE"
-    val INSERT               = "INSERT"
-    val CREATE_DATABASE      = "CREATE_DATABASE"
-    val CREATE_TABLE         = "CREATE_TABLE"
-    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val ALL                  = "ALL".asInstanceOf[Permission]
+    val SELECT               = "SELECT".asInstanceOf[Permission]
+    val ALTER                = "ALTER".asInstanceOf[Permission]
+    val DROP                 = "DROP".asInstanceOf[Permission]
+    val DELETE               = "DELETE".asInstanceOf[Permission]
+    val INSERT               = "INSERT".asInstanceOf[Permission]
+    val CREATE_DATABASE      = "CREATE_DATABASE".asInstanceOf[Permission]
+    val CREATE_TABLE         = "CREATE_TABLE".asInstanceOf[Permission]
+    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
     val values = js.Object.freeze(
       js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)

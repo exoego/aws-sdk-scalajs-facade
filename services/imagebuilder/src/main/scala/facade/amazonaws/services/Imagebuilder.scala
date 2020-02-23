@@ -16,9 +16,7 @@ package object imagebuilder {
   type ComponentBuildVersionArn               = String
   type ComponentConfigurationList             = js.Array[ComponentConfiguration]
   type ComponentData                          = String
-  type ComponentFormat                        = String
   type ComponentSummaryList                   = js.Array[ComponentSummary]
-  type ComponentType                          = String
   type ComponentVersionArn                    = String
   type ComponentVersionArnOrBuildVersionArn   = String
   type ComponentVersionList                   = js.Array[ComponentVersion]
@@ -29,7 +27,6 @@ package object imagebuilder {
   type DistributionTimeoutMinutes             = Int
   type EbsIopsInteger                         = Int
   type EbsVolumeSizeInteger                   = Int
-  type EbsVolumeType                          = String
   type EmptyString                            = String
   type FilterList                             = js.Array[Filter]
   type FilterName                             = String
@@ -41,7 +38,6 @@ package object imagebuilder {
   type ImagePipelineList                      = js.Array[ImagePipeline]
   type ImageRecipeArn                         = String
   type ImageRecipeSummaryList                 = js.Array[ImageRecipeSummary]
-  type ImageStatus                            = String
   type ImageSummaryList                       = js.Array[ImageSummary]
   type ImageTestsTimeoutMinutes               = Int
   type ImageVersionArn                        = String
@@ -54,10 +50,6 @@ package object imagebuilder {
   type InstanceTypeList                       = js.Array[InstanceType]
   type NonEmptyString                         = String
   type NullableBoolean                        = Boolean
-  type Ownership                              = String
-  type PipelineExecutionStartCondition        = String
-  type PipelineStatus                         = String
-  type Platform                               = String
   type ResourceName                           = String
   type ResourcePolicyDocument                 = String
   type RestrictedInteger                      = Int
@@ -434,9 +426,10 @@ package imagebuilder {
       __obj.asInstanceOf[ComponentConfiguration]
     }
   }
-
-  object ComponentFormatEnum {
-    val SHELL = "SHELL"
+  @js.native
+  sealed trait ComponentFormat extends js.Any
+  object ComponentFormat extends js.Object {
+    val SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
     val values = js.Object.freeze(js.Array(SHELL))
   }
@@ -486,10 +479,11 @@ package imagebuilder {
       __obj.asInstanceOf[ComponentSummary]
     }
   }
-
-  object ComponentTypeEnum {
-    val BUILD = "BUILD"
-    val TEST  = "TEST"
+  @js.native
+  sealed trait ComponentType extends js.Any
+  object ComponentType extends js.Object {
+    val BUILD = "BUILD".asInstanceOf[ComponentType]
+    val TEST  = "TEST".asInstanceOf[ComponentType]
 
     val values = js.Object.freeze(js.Array(BUILD, TEST))
   }
@@ -1286,13 +1280,14 @@ package imagebuilder {
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
     }
   }
-
-  object EbsVolumeTypeEnum {
-    val standard = "standard"
-    val io1      = "io1"
-    val gp2      = "gp2"
-    val sc1      = "sc1"
-    val st1      = "st1"
+  @js.native
+  sealed trait EbsVolumeType extends js.Any
+  object EbsVolumeType extends js.Object {
+    val standard = "standard".asInstanceOf[EbsVolumeType]
+    val io1      = "io1".asInstanceOf[EbsVolumeType]
+    val gp2      = "gp2".asInstanceOf[EbsVolumeType]
+    val sc1      = "sc1".asInstanceOf[EbsVolumeType]
+    val st1      = "st1".asInstanceOf[EbsVolumeType]
 
     val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
@@ -1896,19 +1891,20 @@ package imagebuilder {
       __obj.asInstanceOf[ImageState]
     }
   }
-
-  object ImageStatusEnum {
-    val PENDING      = "PENDING"
-    val CREATING     = "CREATING"
-    val BUILDING     = "BUILDING"
-    val TESTING      = "TESTING"
-    val DISTRIBUTING = "DISTRIBUTING"
-    val INTEGRATING  = "INTEGRATING"
-    val AVAILABLE    = "AVAILABLE"
-    val CANCELLED    = "CANCELLED"
-    val FAILED       = "FAILED"
-    val DEPRECATED   = "DEPRECATED"
-    val DELETED      = "DELETED"
+  @js.native
+  sealed trait ImageStatus extends js.Any
+  object ImageStatus extends js.Object {
+    val PENDING      = "PENDING".asInstanceOf[ImageStatus]
+    val CREATING     = "CREATING".asInstanceOf[ImageStatus]
+    val BUILDING     = "BUILDING".asInstanceOf[ImageStatus]
+    val TESTING      = "TESTING".asInstanceOf[ImageStatus]
+    val DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
+    val INTEGRATING  = "INTEGRATING".asInstanceOf[ImageStatus]
+    val AVAILABLE    = "AVAILABLE".asInstanceOf[ImageStatus]
+    val CANCELLED    = "CANCELLED".asInstanceOf[ImageStatus]
+    val FAILED       = "FAILED".asInstanceOf[ImageStatus]
+    val DEPRECATED   = "DEPRECATED".asInstanceOf[ImageStatus]
+    val DELETED      = "DELETED".asInstanceOf[ImageStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2735,32 +2731,37 @@ package imagebuilder {
       __obj.asInstanceOf[OutputResources]
     }
   }
-
-  object OwnershipEnum {
-    val Self   = "Self"
-    val Shared = "Shared"
-    val Amazon = "Amazon"
+  @js.native
+  sealed trait Ownership extends js.Any
+  object Ownership extends js.Object {
+    val Self   = "Self".asInstanceOf[Ownership]
+    val Shared = "Shared".asInstanceOf[Ownership]
+    val Amazon = "Amazon".asInstanceOf[Ownership]
 
     val values = js.Object.freeze(js.Array(Self, Shared, Amazon))
   }
-
-  object PipelineExecutionStartConditionEnum {
-    val EXPRESSION_MATCH_ONLY                             = "EXPRESSION_MATCH_ONLY"
-    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
+  @js.native
+  sealed trait PipelineExecutionStartCondition extends js.Any
+  object PipelineExecutionStartCondition extends js.Object {
+    val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
+    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE =
+      "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
     val values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
   }
-
-  object PipelineStatusEnum {
-    val DISABLED = "DISABLED"
-    val ENABLED  = "ENABLED"
+  @js.native
+  sealed trait PipelineStatus extends js.Any
+  object PipelineStatus extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
+    val ENABLED  = "ENABLED".asInstanceOf[PipelineStatus]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
-
-  object PlatformEnum {
-    val Windows = "Windows"
-    val Linux   = "Linux"
+  @js.native
+  sealed trait Platform extends js.Any
+  object Platform extends js.Object {
+    val Windows = "Windows".asInstanceOf[Platform]
+    val Linux   = "Linux".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(Windows, Linux))
   }

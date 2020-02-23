@@ -7,19 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iot {
-  type AbortAction                                = String
   type AbortCriteriaList                          = js.Array[AbortCriteria]
   type AbortThresholdPercentage                   = Double
   type AcmCertificateArn                          = String
   type ActionList                                 = js.Array[Action]
-  type ActionType                                 = String
   type ActiveViolations                           = js.Array[ActiveViolation]
   type AdditionalMetricsToRetainList              = js.Array[BehaviorMetric]
   type AdditionalParameterMap                     = js.Dictionary[Value]
   type AggregationField                           = String
   type AlarmName                                  = String
   type AlertTargetArn                             = String
-  type AlertTargetType                            = String
   type AlertTargets                               = js.Dictionary[AlertTarget]
   type AllowAuthorizerOverride                    = Boolean
   type AllowAutoRegistration                      = Boolean
@@ -44,34 +41,23 @@ package object iot {
   type AttributesMap                              = js.Dictionary[Value]
   type AuditCheckConfigurations                   = js.Dictionary[AuditCheckConfiguration]
   type AuditCheckName                             = String
-  type AuditCheckRunStatus                        = String
   type AuditCheckToActionsMapping                 = js.Dictionary[MitigationActionNameList]
   type AuditCheckToReasonCodeFilter               = js.Dictionary[ReasonForNonComplianceCodes]
   type AuditDetails                               = js.Dictionary[AuditCheckDetails]
-  type AuditFindingSeverity                       = String
   type AuditFindings                              = js.Array[AuditFinding]
-  type AuditFrequency                             = String
   type AuditMitigationActionExecutionMetadataList = js.Array[AuditMitigationActionExecutionMetadata]
-  type AuditMitigationActionsExecutionStatus      = String
   type AuditMitigationActionsTaskId               = String
   type AuditMitigationActionsTaskMetadataList     = js.Array[AuditMitigationActionsTaskMetadata]
   type AuditMitigationActionsTaskStatistics       = js.Dictionary[TaskStatisticsForAuditCheck]
-  type AuditMitigationActionsTaskStatus           = String
   type AuditNotificationTargetConfigurations      = js.Dictionary[AuditNotificationTarget]
-  type AuditNotificationType                      = String
   type AuditTaskId                                = String
   type AuditTaskMetadataList                      = js.Array[AuditTaskMetadata]
-  type AuditTaskStatus                            = String
-  type AuditTaskType                              = String
-  type AuthDecision                               = String
   type AuthInfos                                  = js.Array[AuthInfo]
   type AuthResults                                = js.Array[AuthResult]
   type AuthorizerArn                              = String
   type AuthorizerFunctionArn                      = String
   type AuthorizerName                             = String
-  type AuthorizerStatus                           = String
   type Authorizers                                = js.Array[AuthorizerSummary]
-  type AutoRegistrationStatus                     = String
   type Average                                    = Double
   type AwsAccountId                               = String
   type AwsArn                                     = String
@@ -88,20 +74,16 @@ package object iot {
   type BillingGroupNameAndArnList                 = js.Array[GroupNameAndArn]
   type BooleanKey                                 = Boolean
   type BucketName                                 = String
-  type CACertificateStatus                        = String
-  type CACertificateUpdateAction                  = String
   type CACertificates                             = js.Array[CACertificate]
   type CanceledChecksCount                        = Int
   type CanceledFindingsCount                      = Double
   type CanceledThings                             = Int
-  type CannedAccessControlList                    = String
   type CertificateArn                             = String
   type CertificateId                              = String
   type CertificateName                            = String
   type CertificatePathOnDevice                    = String
   type CertificatePem                             = String
   type CertificateSigningRequest                  = String
-  type CertificateStatus                          = String
   type Certificates                               = js.Array[Certificate]
   type ChannelName                                = String
   type CheckCompliant                             = Boolean
@@ -112,7 +94,6 @@ package object iot {
   type Code                                       = String
   type CognitoIdentityPoolId                      = String
   type Comment                                    = String
-  type ComparisonOperator                         = String
   type CompliantChecksCount                       = Int
   type ConfirmationToken                          = String
   type ConnectivityTimestamp                      = Double
@@ -125,7 +106,6 @@ package object iot {
   type CustomerVersion                            = Int
   type DateType                                   = js.Date
   type DayOfMonth                                 = String
-  type DayOfWeek                                  = String
   type DeleteAdditionalMetricsToRetain            = Boolean
   type DeleteAlertTargets                         = Boolean
   type DeleteBehaviors                            = Boolean
@@ -137,18 +117,13 @@ package object iot {
   type DetailsKey                                 = String
   type DetailsMap                                 = js.Dictionary[DetailsValue]
   type DetailsValue                               = String
-  type DeviceCertificateUpdateAction              = String
   type DeviceDefenderThingName                    = String
   type DisableAllLogs                             = Boolean
   type DomainConfigurationArn                     = String
   type DomainConfigurationName                    = String
-  type DomainConfigurationStatus                  = String
   type DomainConfigurations                       = js.Array[DomainConfigurationSummary]
   type DomainName                                 = String
-  type DomainType                                 = String
   type DurationSeconds                            = Int
-  type DynamicGroupStatus                         = String
-  type DynamoKeyType                              = String
   type DynamoOperation                            = String
   type EffectivePolicies                          = js.Array[EffectivePolicy]
   type ElasticsearchEndpoint                      = String
@@ -162,7 +137,6 @@ package object iot {
   type ErrorMessage                               = String
   type EvaluationStatistic                        = String
   type EventConfigurations                        = js.Dictionary[Configuration]
-  type EventType                                  = String
   type ExecutionNamePrefix                        = String
   type ExecutionNumber                            = Double
   type ExpectedVersion                            = Double
@@ -172,7 +146,6 @@ package object iot {
   type FailedFindingsCount                        = Double
   type FailedThings                               = Int
   type FieldName                                  = String
-  type FieldType                                  = String
   type Fields                                     = js.Array[Field]
   type FileId                                     = Int
   type FileName                                   = String
@@ -203,7 +176,6 @@ package object iot {
   type IndexName                                  = String
   type IndexNamesList                             = js.Array[IndexName]
   type IndexSchema                                = String
-  type IndexStatus                                = String
   type InlineDocument                             = String
   type InputName                                  = String
   type IsAuthenticated                            = Boolean
@@ -213,12 +185,9 @@ package object iot {
   type JobDescription                             = String
   type JobDocument                                = String
   type JobDocumentSource                          = String
-  type JobExecutionFailureType                    = String
-  type JobExecutionStatus                         = String
   type JobExecutionSummaryForJobList              = js.Array[JobExecutionSummaryForJob]
   type JobExecutionSummaryForThingList            = js.Array[JobExecutionSummaryForThing]
   type JobId                                      = String
-  type JobStatus                                  = String
   type JobSummaryList                             = js.Array[JobSummary]
   type JobTargets                                 = js.Array[TargetArn]
   type JsonDocument                               = String
@@ -227,17 +196,14 @@ package object iot {
   type KeyValue                                   = String
   type LaserMaxResults                            = Int
   type LastModifiedDate                           = js.Date
-  type LogLevel                                   = String
   type LogTargetConfigurations                    = js.Array[LogTargetConfiguration]
   type LogTargetName                              = String
-  type LogTargetType                              = String
   type Marker                                     = String
   type MaxJobExecutionsPerMin                     = Int
   type MaxResults                                 = Int
   type Maximum                                    = Double
   type MaximumPerMinute                           = Int
   type Message                                    = String
-  type MessageFormat                              = String
   type MessageId                                  = String
   type Minimum                                    = Double
   type MinimumNumberOfExecutedThings              = Int
@@ -249,7 +215,6 @@ package object iot {
   type MitigationActionList                       = js.Array[MitigationAction]
   type MitigationActionName                       = String
   type MitigationActionNameList                   = js.Array[MitigationActionName]
-  type MitigationActionType                       = String
   type MqttClientId                               = String
   type MqttPassword                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type MqttUsername                               = String
@@ -263,7 +228,6 @@ package object iot {
   type OTAUpdateFileVersion                       = String
   type OTAUpdateFiles                             = js.Array[OTAUpdateFile]
   type OTAUpdateId                                = String
-  type OTAUpdateStatus                            = String
   type OTAUpdatesSummary                          = js.Array[OTAUpdateSummary]
   type OptionalVersion                            = Double
   type OutgoingCertificates                       = js.Array[OutgoingCertificate]
@@ -287,7 +251,6 @@ package object iot {
   type PolicyNames                                = js.Array[PolicyName]
   type PolicyTarget                               = String
   type PolicyTargets                              = js.Array[PolicyTarget]
-  type PolicyTemplateName                         = String
   type PolicyVersionId                            = String
   type PolicyVersions                             = js.Array[PolicyVersion]
   type Port                                       = Int
@@ -300,7 +263,6 @@ package object iot {
   type PrivateKey                                 = String
   type ProcessingTargetName                       = String
   type ProcessingTargetNameList                   = js.Array[ProcessingTargetName]
-  type Protocol                                   = String
   type Protocols                                  = js.Array[Protocol]
   type ProvisioningTemplateListing                = js.Array[ProvisioningTemplateSummary]
   type ProvisioningTemplateVersionListing         = js.Array[ProvisioningTemplateVersionSummary]
@@ -331,13 +293,11 @@ package object iot {
   type RemoveAutoRegistration                     = Boolean
   type RemoveThingType                            = Boolean
   type RemovedThings                              = Int
-  type ReportType                                 = String
   type ReservedDomainConfigurationName            = String
   type Resource                                   = String
   type ResourceArn                                = String
   type ResourceArns                               = js.Dictionary[ResourceArn]
   type ResourceLogicalId                          = String
-  type ResourceType                               = String
   type Resources                                  = js.Array[Resource]
   type RoleAlias                                  = String
   type RoleAliasArn                               = String
@@ -367,12 +327,10 @@ package object iot {
   type SecurityProfileTargetMappings              = js.Array[SecurityProfileTargetMapping]
   type SecurityProfileTargets                     = js.Array[SecurityProfileTarget]
   type ServerCertificateArns                      = js.Array[AcmCertificateArn]
-  type ServerCertificateStatus                    = String
   type ServerCertificateStatusDetail              = String
   type ServerCertificates                         = js.Array[ServerCertificateSummary]
   type ServerName                                 = String
   type ServiceName                                = String
-  type ServiceType                                = String
   type SetAsActive                                = Boolean
   type SetAsActiveFlag                            = Boolean
   type SetAsDefault                               = Boolean
@@ -387,7 +345,6 @@ package object iot {
   type StateMachineName                           = String
   type StateReason                                = String
   type StateValue                                 = String
-  type Status                                     = String
   type StdDeviation                               = Double
   type StreamArn                                  = String
   type StreamDescription                          = String
@@ -409,7 +366,6 @@ package object iot {
   type Target                                     = String
   type TargetArn                                  = String
   type TargetAuditCheckNames                      = js.Array[AuditCheckName]
-  type TargetSelection                            = String
   type Targets                                    = js.Array[Target]
   type TaskId                                     = String
   type TaskIdList                                 = js.Array[TaskId]
@@ -420,20 +376,17 @@ package object iot {
   type TemplateVersionId                          = Int
   type ThingArn                                   = String
   type ThingAttributeList                         = js.Array[ThingAttribute]
-  type ThingConnectivityIndexingMode              = String
   type ThingDocumentList                          = js.Array[ThingDocument]
   type ThingGroupArn                              = String
   type ThingGroupDescription                      = String
   type ThingGroupDocumentList                     = js.Array[ThingGroupDocument]
   type ThingGroupId                               = String
-  type ThingGroupIndexingMode                     = String
   type ThingGroupList                             = js.Array[ThingGroupName]
   type ThingGroupName                             = String
   type ThingGroupNameAndArnList                   = js.Array[GroupNameAndArn]
   type ThingGroupNameList                         = js.Array[ThingGroupName]
   type ThingGroupNames                            = js.Array[ThingGroupName]
   type ThingId                                    = String
-  type ThingIndexingMode                          = String
   type ThingName                                  = String
   type ThingNameList                              = js.Array[ThingName]
   type ThingTypeArn                               = String
@@ -449,7 +402,6 @@ package object iot {
   type Topic                                      = String
   type TopicPattern                               = String
   type TopicRuleDestinationMaxResults             = Int
-  type TopicRuleDestinationStatus                 = String
   type TopicRuleDestinationSummaries              = js.Array[TopicRuleDestinationSummary]
   type TopicRuleList                              = js.Array[TopicRuleListItem]
   type TopicRuleMaxResults                        = Int
@@ -466,7 +418,6 @@ package object iot {
   type Variance                                   = Double
   type Version                                    = Double
   type VersionNumber                              = Double
-  type ViolationEventType                         = String
   type ViolationEvents                            = js.Array[ViolationEvent]
   type ViolationId                                = String
   type WaitingForDataCollectionChecksCount        = Int
@@ -1284,9 +1235,10 @@ package iot {
         params: ListPrincipalPoliciesRequest
     ): Request[ListPrincipalPoliciesResponse] = js.native
   }
-
-  object AbortActionEnum {
-    val CANCEL = "CANCEL"
+  @js.native
+  sealed trait AbortAction extends js.Any
+  object AbortAction extends js.Object {
+    val CANCEL = "CANCEL".asInstanceOf[AbortAction]
 
     val values = js.Object.freeze(js.Array(CANCEL))
   }
@@ -1435,12 +1387,13 @@ package iot {
       __obj.asInstanceOf[Action]
     }
   }
-
-  object ActionTypeEnum {
-    val PUBLISH   = "PUBLISH"
-    val SUBSCRIBE = "SUBSCRIBE"
-    val RECEIVE   = "RECEIVE"
-    val CONNECT   = "CONNECT"
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType extends js.Object {
+    val PUBLISH   = "PUBLISH".asInstanceOf[ActionType]
+    val SUBSCRIBE = "SUBSCRIBE".asInstanceOf[ActionType]
+    val RECEIVE   = "RECEIVE".asInstanceOf[ActionType]
+    val CONNECT   = "CONNECT".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT))
   }
@@ -1612,8 +1565,10 @@ package iot {
   /**
     * The type of alert target: one of "SNS".
     */
-  object AlertTargetTypeEnum {
-    val SNS = "SNS"
+  @js.native
+  sealed trait AlertTargetType extends js.Any
+  object AlertTargetType extends js.Object {
+    val SNS = "SNS".asInstanceOf[AlertTargetType]
 
     val values = js.Object.freeze(js.Array(SNS))
   }
@@ -1957,14 +1912,15 @@ package iot {
       __obj.asInstanceOf[AuditCheckDetails]
     }
   }
-
-  object AuditCheckRunStatusEnum {
-    val IN_PROGRESS                 = "IN_PROGRESS"
-    val WAITING_FOR_DATA_COLLECTION = "WAITING_FOR_DATA_COLLECTION"
-    val CANCELED                    = "CANCELED"
-    val COMPLETED_COMPLIANT         = "COMPLETED_COMPLIANT"
-    val COMPLETED_NON_COMPLIANT     = "COMPLETED_NON_COMPLIANT"
-    val FAILED                      = "FAILED"
+  @js.native
+  sealed trait AuditCheckRunStatus extends js.Any
+  object AuditCheckRunStatus extends js.Object {
+    val IN_PROGRESS                 = "IN_PROGRESS".asInstanceOf[AuditCheckRunStatus]
+    val WAITING_FOR_DATA_COLLECTION = "WAITING_FOR_DATA_COLLECTION".asInstanceOf[AuditCheckRunStatus]
+    val CANCELED                    = "CANCELED".asInstanceOf[AuditCheckRunStatus]
+    val COMPLETED_COMPLIANT         = "COMPLETED_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
+    val COMPLETED_NON_COMPLIANT     = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
+    val FAILED                      = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
     val values = js.Object.freeze(
       js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
@@ -2018,21 +1974,23 @@ package iot {
       __obj.asInstanceOf[AuditFinding]
     }
   }
-
-  object AuditFindingSeverityEnum {
-    val CRITICAL = "CRITICAL"
-    val HIGH     = "HIGH"
-    val MEDIUM   = "MEDIUM"
-    val LOW      = "LOW"
+  @js.native
+  sealed trait AuditFindingSeverity extends js.Any
+  object AuditFindingSeverity extends js.Object {
+    val CRITICAL = "CRITICAL".asInstanceOf[AuditFindingSeverity]
+    val HIGH     = "HIGH".asInstanceOf[AuditFindingSeverity]
+    val MEDIUM   = "MEDIUM".asInstanceOf[AuditFindingSeverity]
+    val LOW      = "LOW".asInstanceOf[AuditFindingSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
   }
-
-  object AuditFrequencyEnum {
-    val DAILY    = "DAILY"
-    val WEEKLY   = "WEEKLY"
-    val BIWEEKLY = "BIWEEKLY"
-    val MONTHLY  = "MONTHLY"
+  @js.native
+  sealed trait AuditFrequency extends js.Any
+  object AuditFrequency extends js.Object {
+    val DAILY    = "DAILY".asInstanceOf[AuditFrequency]
+    val WEEKLY   = "WEEKLY".asInstanceOf[AuditFrequency]
+    val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
+    val MONTHLY  = "MONTHLY".asInstanceOf[AuditFrequency]
 
     val values = js.Object.freeze(js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY))
   }
@@ -2079,14 +2037,15 @@ package iot {
       __obj.asInstanceOf[AuditMitigationActionExecutionMetadata]
     }
   }
-
-  object AuditMitigationActionsExecutionStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
-    val FAILED      = "FAILED"
-    val CANCELED    = "CANCELED"
-    val SKIPPED     = "SKIPPED"
-    val PENDING     = "PENDING"
+  @js.native
+  sealed trait AuditMitigationActionsExecutionStatus extends js.Any
+  object AuditMitigationActionsExecutionStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val FAILED      = "FAILED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val CANCELED    = "CANCELED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val SKIPPED     = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val PENDING     = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING))
   }
@@ -2115,12 +2074,13 @@ package iot {
       __obj.asInstanceOf[AuditMitigationActionsTaskMetadata]
     }
   }
-
-  object AuditMitigationActionsTaskStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
-    val FAILED      = "FAILED"
-    val CANCELED    = "CANCELED"
+  @js.native
+  sealed trait AuditMitigationActionsTaskStatus extends js.Any
+  object AuditMitigationActionsTaskStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val FAILED      = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val CANCELED    = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
@@ -2176,9 +2136,10 @@ package iot {
       __obj.asInstanceOf[AuditNotificationTarget]
     }
   }
-
-  object AuditNotificationTypeEnum {
-    val SNS = "SNS"
+  @js.native
+  sealed trait AuditNotificationType extends js.Any
+  object AuditNotificationType extends js.Object {
+    val SNS = "SNS".asInstanceOf[AuditNotificationType]
 
     val values = js.Object.freeze(js.Array(SNS))
   }
@@ -2207,27 +2168,30 @@ package iot {
       __obj.asInstanceOf[AuditTaskMetadata]
     }
   }
-
-  object AuditTaskStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
-    val FAILED      = "FAILED"
-    val CANCELED    = "CANCELED"
+  @js.native
+  sealed trait AuditTaskStatus extends js.Any
+  object AuditTaskStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditTaskStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[AuditTaskStatus]
+    val FAILED      = "FAILED".asInstanceOf[AuditTaskStatus]
+    val CANCELED    = "CANCELED".asInstanceOf[AuditTaskStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
-
-  object AuditTaskTypeEnum {
-    val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK"
-    val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK"
+  @js.native
+  sealed trait AuditTaskType extends js.Any
+  object AuditTaskType extends js.Object {
+    val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK".asInstanceOf[AuditTaskType]
+    val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK".asInstanceOf[AuditTaskType]
 
     val values = js.Object.freeze(js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK))
   }
-
-  object AuthDecisionEnum {
-    val ALLOWED       = "ALLOWED"
-    val EXPLICIT_DENY = "EXPLICIT_DENY"
-    val IMPLICIT_DENY = "IMPLICIT_DENY"
+  @js.native
+  sealed trait AuthDecision extends js.Any
+  object AuthDecision extends js.Object {
+    val ALLOWED       = "ALLOWED".asInstanceOf[AuthDecision]
+    val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
+    val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
 
     val values = js.Object.freeze(js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY))
   }
@@ -2349,10 +2313,11 @@ package iot {
       __obj.asInstanceOf[AuthorizerDescription]
     }
   }
-
-  object AuthorizerStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait AuthorizerStatus extends js.Any
+  object AuthorizerStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[AuthorizerStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
@@ -2378,10 +2343,11 @@ package iot {
       __obj.asInstanceOf[AuthorizerSummary]
     }
   }
-
-  object AutoRegistrationStatusEnum {
-    val ENABLE  = "ENABLE"
-    val DISABLE = "DISABLE"
+  @js.native
+  sealed trait AutoRegistrationStatus extends js.Any
+  object AutoRegistrationStatus extends js.Object {
+    val ENABLE  = "ENABLE".asInstanceOf[AutoRegistrationStatus]
+    val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
@@ -2603,16 +2569,18 @@ package iot {
       __obj.asInstanceOf[CACertificateDescription]
     }
   }
-
-  object CACertificateStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait CACertificateStatus extends js.Any
+  object CACertificateStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[CACertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
-
-  object CACertificateUpdateActionEnum {
-    val DEACTIVATE = "DEACTIVATE"
+  @js.native
+  sealed trait CACertificateUpdateAction extends js.Any
+  object CACertificateUpdateAction extends js.Object {
+    val DEACTIVATE = "DEACTIVATE".asInstanceOf[CACertificateUpdateAction]
 
     val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
@@ -2778,16 +2746,17 @@ package iot {
       __obj.asInstanceOf[CancelJobResponse]
     }
   }
-
-  object CannedAccessControlListEnum {
-    val `private`                   = "private"
-    val `public-read`               = "public-read"
-    val `public-read-write`         = "public-read-write"
-    val `aws-exec-read`             = "aws-exec-read"
-    val `authenticated-read`        = "authenticated-read"
-    val `bucket-owner-read`         = "bucket-owner-read"
-    val `bucket-owner-full-control` = "bucket-owner-full-control"
-    val `log-delivery-write`        = "log-delivery-write"
+  @js.native
+  sealed trait CannedAccessControlList extends js.Any
+  object CannedAccessControlList extends js.Object {
+    val `private`                   = "private".asInstanceOf[CannedAccessControlList]
+    val `public-read`               = "public-read".asInstanceOf[CannedAccessControlList]
+    val `public-read-write`         = "public-read-write".asInstanceOf[CannedAccessControlList]
+    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[CannedAccessControlList]
+    val `authenticated-read`        = "authenticated-read".asInstanceOf[CannedAccessControlList]
+    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[CannedAccessControlList]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
+    val `log-delivery-write`        = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2885,14 +2854,15 @@ package iot {
       __obj.asInstanceOf[CertificateDescription]
     }
   }
-
-  object CertificateStatusEnum {
-    val ACTIVE             = "ACTIVE"
-    val INACTIVE           = "INACTIVE"
-    val REVOKED            = "REVOKED"
-    val PENDING_TRANSFER   = "PENDING_TRANSFER"
-    val REGISTER_INACTIVE  = "REGISTER_INACTIVE"
-    val PENDING_ACTIVATION = "PENDING_ACTIVATION"
+  @js.native
+  sealed trait CertificateStatus extends js.Any
+  object CertificateStatus extends js.Object {
+    val ACTIVE             = "ACTIVE".asInstanceOf[CertificateStatus]
+    val INACTIVE           = "INACTIVE".asInstanceOf[CertificateStatus]
+    val REVOKED            = "REVOKED".asInstanceOf[CertificateStatus]
+    val PENDING_TRANSFER   = "PENDING_TRANSFER".asInstanceOf[CertificateStatus]
+    val REGISTER_INACTIVE  = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
+    val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
     val values =
       js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
@@ -3077,16 +3047,17 @@ package iot {
       __obj.asInstanceOf[CodeSigningSignature]
     }
   }
-
-  object ComparisonOperatorEnum {
-    val `less-than`           = "less-than"
-    val `less-than-equals`    = "less-than-equals"
-    val `greater-than`        = "greater-than"
-    val `greater-than-equals` = "greater-than-equals"
-    val `in-cidr-set`         = "in-cidr-set"
-    val `not-in-cidr-set`     = "not-in-cidr-set"
-    val `in-port-set`         = "in-port-set"
-    val `not-in-port-set`     = "not-in-port-set"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val `less-than`           = "less-than".asInstanceOf[ComparisonOperator]
+    val `less-than-equals`    = "less-than-equals".asInstanceOf[ComparisonOperator]
+    val `greater-than`        = "greater-than".asInstanceOf[ComparisonOperator]
+    val `greater-than-equals` = "greater-than-equals".asInstanceOf[ComparisonOperator]
+    val `in-cidr-set`         = "in-cidr-set".asInstanceOf[ComparisonOperator]
+    val `not-in-cidr-set`     = "not-in-cidr-set".asInstanceOf[ComparisonOperator]
+    val `in-port-set`         = "in-port-set".asInstanceOf[ComparisonOperator]
+    val `not-in-port-set`     = "not-in-port-set".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4361,15 +4332,16 @@ package iot {
       __obj.asInstanceOf[CustomCodeSigning]
     }
   }
-
-  object DayOfWeekEnum {
-    val SUN = "SUN"
-    val MON = "MON"
-    val TUE = "TUE"
-    val WED = "WED"
-    val THU = "THU"
-    val FRI = "FRI"
-    val SAT = "SAT"
+  @js.native
+  sealed trait DayOfWeek extends js.Any
+  object DayOfWeek extends js.Object {
+    val SUN = "SUN".asInstanceOf[DayOfWeek]
+    val MON = "MON".asInstanceOf[DayOfWeek]
+    val TUE = "TUE".asInstanceOf[DayOfWeek]
+    val WED = "WED".asInstanceOf[DayOfWeek]
+    val THU = "THU".asInstanceOf[DayOfWeek]
+    val FRI = "FRI".asInstanceOf[DayOfWeek]
+    val SAT = "SAT".asInstanceOf[DayOfWeek]
 
     val values = js.Object.freeze(js.Array(SUN, MON, TUE, WED, THU, FRI, SAT))
   }
@@ -6557,9 +6529,10 @@ package iot {
       __obj.asInstanceOf[DetachThingPrincipalResponse]
     }
   }
-
-  object DeviceCertificateUpdateActionEnum {
-    val DEACTIVATE = "DEACTIVATE"
+  @js.native
+  sealed trait DeviceCertificateUpdateAction extends js.Any
+  object DeviceCertificateUpdateAction extends js.Object {
+    val DEACTIVATE = "DEACTIVATE".asInstanceOf[DeviceCertificateUpdateAction]
 
     val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
@@ -6584,10 +6557,11 @@ package iot {
       __obj.asInstanceOf[DisableTopicRuleRequest]
     }
   }
-
-  object DomainConfigurationStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait DomainConfigurationStatus extends js.Any
+  object DomainConfigurationStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[DomainConfigurationStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -6620,19 +6594,21 @@ package iot {
       __obj.asInstanceOf[DomainConfigurationSummary]
     }
   }
-
-  object DomainTypeEnum {
-    val ENDPOINT         = "ENDPOINT"
-    val AWS_MANAGED      = "AWS_MANAGED"
-    val CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+  @js.native
+  sealed trait DomainType extends js.Any
+  object DomainType extends js.Object {
+    val ENDPOINT         = "ENDPOINT".asInstanceOf[DomainType]
+    val AWS_MANAGED      = "AWS_MANAGED".asInstanceOf[DomainType]
+    val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
 
     val values = js.Object.freeze(js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED))
   }
-
-  object DynamicGroupStatusEnum {
-    val ACTIVE     = "ACTIVE"
-    val BUILDING   = "BUILDING"
-    val REBUILDING = "REBUILDING"
+  @js.native
+  sealed trait DynamicGroupStatus extends js.Any
+  object DynamicGroupStatus extends js.Object {
+    val ACTIVE     = "ACTIVE".asInstanceOf[DynamicGroupStatus]
+    val BUILDING   = "BUILDING".asInstanceOf[DynamicGroupStatus]
+    val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
@@ -6715,10 +6691,11 @@ package iot {
       __obj.asInstanceOf[DynamoDBv2Action]
     }
   }
-
-  object DynamoKeyTypeEnum {
-    val STRING = "STRING"
-    val NUMBER = "NUMBER"
+  @js.native
+  sealed trait DynamoKeyType extends js.Any
+  object DynamoKeyType extends js.Object {
+    val STRING = "STRING".asInstanceOf[DynamoKeyType]
+    val NUMBER = "NUMBER".asInstanceOf[DynamoKeyType]
 
     val values = js.Object.freeze(js.Array(STRING, NUMBER))
   }
@@ -6847,19 +6824,20 @@ package iot {
       __obj.asInstanceOf[ErrorInfo]
     }
   }
-
-  object EventTypeEnum {
-    val THING                  = "THING"
-    val THING_GROUP            = "THING_GROUP"
-    val THING_TYPE             = "THING_TYPE"
-    val THING_GROUP_MEMBERSHIP = "THING_GROUP_MEMBERSHIP"
-    val THING_GROUP_HIERARCHY  = "THING_GROUP_HIERARCHY"
-    val THING_TYPE_ASSOCIATION = "THING_TYPE_ASSOCIATION"
-    val JOB                    = "JOB"
-    val JOB_EXECUTION          = "JOB_EXECUTION"
-    val POLICY                 = "POLICY"
-    val CERTIFICATE            = "CERTIFICATE"
-    val CA_CERTIFICATE         = "CA_CERTIFICATE"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val THING                  = "THING".asInstanceOf[EventType]
+    val THING_GROUP            = "THING_GROUP".asInstanceOf[EventType]
+    val THING_TYPE             = "THING_TYPE".asInstanceOf[EventType]
+    val THING_GROUP_MEMBERSHIP = "THING_GROUP_MEMBERSHIP".asInstanceOf[EventType]
+    val THING_GROUP_HIERARCHY  = "THING_GROUP_HIERARCHY".asInstanceOf[EventType]
+    val THING_TYPE_ASSOCIATION = "THING_TYPE_ASSOCIATION".asInstanceOf[EventType]
+    val JOB                    = "JOB".asInstanceOf[EventType]
+    val JOB_EXECUTION          = "JOB_EXECUTION".asInstanceOf[EventType]
+    val POLICY                 = "POLICY".asInstanceOf[EventType]
+    val CERTIFICATE            = "CERTIFICATE".asInstanceOf[EventType]
+    val CA_CERTIFICATE         = "CA_CERTIFICATE".asInstanceOf[EventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6945,11 +6923,12 @@ package iot {
       __obj.asInstanceOf[Field]
     }
   }
-
-  object FieldTypeEnum {
-    val Number  = "Number"
-    val String  = "String"
-    val Boolean = "Boolean"
+  @js.native
+  sealed trait FieldType extends js.Any
+  object FieldType extends js.Object {
+    val Number  = "Number".asInstanceOf[FieldType]
+    val String  = "String".asInstanceOf[FieldType]
+    val Boolean = "Boolean".asInstanceOf[FieldType]
 
     val values = js.Object.freeze(js.Array(Number, String, Boolean))
   }
@@ -7778,11 +7757,12 @@ package iot {
       __obj.asInstanceOf[ImplicitDeny]
     }
   }
-
-  object IndexStatusEnum {
-    val ACTIVE     = "ACTIVE"
-    val BUILDING   = "BUILDING"
-    val REBUILDING = "REBUILDING"
+  @js.native
+  sealed trait IndexStatus extends js.Any
+  object IndexStatus extends js.Object {
+    val ACTIVE     = "ACTIVE".asInstanceOf[IndexStatus]
+    val BUILDING   = "BUILDING".asInstanceOf[IndexStatus]
+    val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
@@ -7982,25 +7962,27 @@ package iot {
       __obj.asInstanceOf[JobExecution]
     }
   }
-
-  object JobExecutionFailureTypeEnum {
-    val FAILED    = "FAILED"
-    val REJECTED  = "REJECTED"
-    val TIMED_OUT = "TIMED_OUT"
-    val ALL       = "ALL"
+  @js.native
+  sealed trait JobExecutionFailureType extends js.Any
+  object JobExecutionFailureType extends js.Object {
+    val FAILED    = "FAILED".asInstanceOf[JobExecutionFailureType]
+    val REJECTED  = "REJECTED".asInstanceOf[JobExecutionFailureType]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
+    val ALL       = "ALL".asInstanceOf[JobExecutionFailureType]
 
     val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
-
-  object JobExecutionStatusEnum {
-    val QUEUED      = "QUEUED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
-    val TIMED_OUT   = "TIMED_OUT"
-    val REJECTED    = "REJECTED"
-    val REMOVED     = "REMOVED"
-    val CANCELED    = "CANCELED"
+  @js.native
+  sealed trait JobExecutionStatus extends js.Any
+  object JobExecutionStatus extends js.Object {
+    val QUEUED      = "QUEUED".asInstanceOf[JobExecutionStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
+    val FAILED      = "FAILED".asInstanceOf[JobExecutionStatus]
+    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
+    val REJECTED    = "REJECTED".asInstanceOf[JobExecutionStatus]
+    val REMOVED     = "REMOVED".asInstanceOf[JobExecutionStatus]
+    val CANCELED    = "CANCELED".asInstanceOf[JobExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
@@ -8164,12 +8146,13 @@ package iot {
       __obj.asInstanceOf[JobProcessDetails]
     }
   }
-
-  object JobStatusEnum {
-    val IN_PROGRESS          = "IN_PROGRESS"
-    val CANCELED             = "CANCELED"
-    val COMPLETED            = "COMPLETED"
-    val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val IN_PROGRESS          = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val CANCELED             = "CANCELED".asInstanceOf[JobStatus]
+    val COMPLETED            = "COMPLETED".asInstanceOf[JobStatus]
+    val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS))
   }
@@ -10408,13 +10391,14 @@ package iot {
       __obj.asInstanceOf[ListViolationEventsResponse]
     }
   }
-
-  object LogLevelEnum {
-    val DEBUG    = "DEBUG"
-    val INFO     = "INFO"
-    val ERROR    = "ERROR"
-    val WARN     = "WARN"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait LogLevel extends js.Any
+  object LogLevel extends js.Object {
+    val DEBUG    = "DEBUG".asInstanceOf[LogLevel]
+    val INFO     = "INFO".asInstanceOf[LogLevel]
+    val ERROR    = "ERROR".asInstanceOf[LogLevel]
+    val WARN     = "WARN".asInstanceOf[LogLevel]
+    val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(DEBUG, INFO, ERROR, WARN, DISABLED))
   }
@@ -10464,10 +10448,11 @@ package iot {
       __obj.asInstanceOf[LogTargetConfiguration]
     }
   }
-
-  object LogTargetTypeEnum {
-    val DEFAULT     = "DEFAULT"
-    val THING_GROUP = "THING_GROUP"
+  @js.native
+  sealed trait LogTargetType extends js.Any
+  object LogTargetType extends js.Object {
+    val DEFAULT     = "DEFAULT".asInstanceOf[LogTargetType]
+    val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, THING_GROUP))
   }
@@ -10495,10 +10480,11 @@ package iot {
       __obj.asInstanceOf[LoggingOptionsPayload]
     }
   }
-
-  object MessageFormatEnum {
-    val RAW  = "RAW"
-    val JSON = "JSON"
+  @js.native
+  sealed trait MessageFormat extends js.Any
+  object MessageFormat extends js.Object {
+    val RAW  = "RAW".asInstanceOf[MessageFormat]
+    val JSON = "JSON".asInstanceOf[MessageFormat]
 
     val values = js.Object.freeze(js.Array(RAW, JSON))
   }
@@ -10624,14 +10610,15 @@ package iot {
       __obj.asInstanceOf[MitigationActionParams]
     }
   }
-
-  object MitigationActionTypeEnum {
-    val UPDATE_DEVICE_CERTIFICATE      = "UPDATE_DEVICE_CERTIFICATE"
-    val UPDATE_CA_CERTIFICATE          = "UPDATE_CA_CERTIFICATE"
-    val ADD_THINGS_TO_THING_GROUP      = "ADD_THINGS_TO_THING_GROUP"
-    val REPLACE_DEFAULT_POLICY_VERSION = "REPLACE_DEFAULT_POLICY_VERSION"
-    val ENABLE_IOT_LOGGING             = "ENABLE_IOT_LOGGING"
-    val PUBLISH_FINDING_TO_SNS         = "PUBLISH_FINDING_TO_SNS"
+  @js.native
+  sealed trait MitigationActionType extends js.Any
+  object MitigationActionType extends js.Object {
+    val UPDATE_DEVICE_CERTIFICATE      = "UPDATE_DEVICE_CERTIFICATE".asInstanceOf[MitigationActionType]
+    val UPDATE_CA_CERTIFICATE          = "UPDATE_CA_CERTIFICATE".asInstanceOf[MitigationActionType]
+    val ADD_THINGS_TO_THING_GROUP      = "ADD_THINGS_TO_THING_GROUP".asInstanceOf[MitigationActionType]
+    val REPLACE_DEFAULT_POLICY_VERSION = "REPLACE_DEFAULT_POLICY_VERSION".asInstanceOf[MitigationActionType]
+    val ENABLE_IOT_LOGGING             = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
+    val PUBLISH_FINDING_TO_SNS         = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -10791,12 +10778,13 @@ package iot {
       __obj.asInstanceOf[OTAUpdateInfo]
     }
   }
-
-  object OTAUpdateStatusEnum {
-    val CREATE_PENDING     = "CREATE_PENDING"
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val CREATE_COMPLETE    = "CREATE_COMPLETE"
-    val CREATE_FAILED      = "CREATE_FAILED"
+  @js.native
+  sealed trait OTAUpdateStatus extends js.Any
+  object OTAUpdateStatus extends js.Object {
+    val CREATE_PENDING     = "CREATE_PENDING".asInstanceOf[OTAUpdateStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OTAUpdateStatus]
+    val CREATE_COMPLETE    = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
+    val CREATE_FAILED      = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
 
     val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
@@ -10903,9 +10891,10 @@ package iot {
       __obj.asInstanceOf[Policy]
     }
   }
-
-  object PolicyTemplateNameEnum {
-    val BLANK_POLICY = "BLANK_POLICY"
+  @js.native
+  sealed trait PolicyTemplateName extends js.Any
+  object PolicyTemplateName extends js.Object {
+    val BLANK_POLICY = "BLANK_POLICY".asInstanceOf[PolicyTemplateName]
 
     val values = js.Object.freeze(js.Array(BLANK_POLICY))
   }
@@ -10978,10 +10967,11 @@ package iot {
       __obj.asInstanceOf[PresignedUrlConfig]
     }
   }
-
-  object ProtocolEnum {
-    val MQTT = "MQTT"
-    val HTTP = "HTTP"
+  @js.native
+  sealed trait Protocol extends js.Any
+  object Protocol extends js.Object {
+    val MQTT = "MQTT".asInstanceOf[Protocol]
+    val HTTP = "HTTP".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(MQTT, HTTP))
   }
@@ -11480,10 +11470,11 @@ package iot {
       __obj.asInstanceOf[ReplaceTopicRuleRequest]
     }
   }
-
-  object ReportTypeEnum {
-    val ERRORS  = "ERRORS"
-    val RESULTS = "RESULTS"
+  @js.native
+  sealed trait ReportType extends js.Any
+  object ReportType extends js.Object {
+    val ERRORS  = "ERRORS".asInstanceOf[ReportType]
+    val RESULTS = "RESULTS".asInstanceOf[ReportType]
 
     val values = js.Object.freeze(js.Array(ERRORS, RESULTS))
   }
@@ -11554,16 +11545,17 @@ package iot {
       __obj.asInstanceOf[ResourceIdentifier]
     }
   }
-
-  object ResourceTypeEnum {
-    val DEVICE_CERTIFICATE    = "DEVICE_CERTIFICATE"
-    val CA_CERTIFICATE        = "CA_CERTIFICATE"
-    val IOT_POLICY            = "IOT_POLICY"
-    val COGNITO_IDENTITY_POOL = "COGNITO_IDENTITY_POOL"
-    val CLIENT_ID             = "CLIENT_ID"
-    val ACCOUNT_SETTINGS      = "ACCOUNT_SETTINGS"
-    val ROLE_ALIAS            = "ROLE_ALIAS"
-    val IAM_ROLE              = "IAM_ROLE"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val DEVICE_CERTIFICATE    = "DEVICE_CERTIFICATE".asInstanceOf[ResourceType]
+    val CA_CERTIFICATE        = "CA_CERTIFICATE".asInstanceOf[ResourceType]
+    val IOT_POLICY            = "IOT_POLICY".asInstanceOf[ResourceType]
+    val COGNITO_IDENTITY_POOL = "COGNITO_IDENTITY_POOL".asInstanceOf[ResourceType]
+    val CLIENT_ID             = "CLIENT_ID".asInstanceOf[ResourceType]
+    val ACCOUNT_SETTINGS      = "ACCOUNT_SETTINGS".asInstanceOf[ResourceType]
+    val ROLE_ALIAS            = "ROLE_ALIAS".asInstanceOf[ResourceType]
+    val IAM_ROLE              = "IAM_ROLE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -11870,10 +11862,11 @@ package iot {
       __obj.asInstanceOf[SecurityProfileTargetMapping]
     }
   }
-
-  object ServerCertificateStatusEnum {
-    val INVALID = "INVALID"
-    val VALID   = "VALID"
+  @js.native
+  sealed trait ServerCertificateStatus extends js.Any
+  object ServerCertificateStatus extends js.Object {
+    val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
+    val VALID   = "VALID".asInstanceOf[ServerCertificateStatus]
 
     val values = js.Object.freeze(js.Array(INVALID, VALID))
   }
@@ -11904,11 +11897,12 @@ package iot {
       __obj.asInstanceOf[ServerCertificateSummary]
     }
   }
-
-  object ServiceTypeEnum {
-    val DATA                = "DATA"
-    val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER"
-    val JOBS                = "JOBS"
+  @js.native
+  sealed trait ServiceType extends js.Any
+  object ServiceType extends js.Object {
+    val DATA                = "DATA".asInstanceOf[ServiceType]
+    val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
+    val JOBS                = "JOBS".asInstanceOf[ServiceType]
 
     val values = js.Object.freeze(js.Array(DATA, CREDENTIAL_PROVIDER, JOBS))
   }
@@ -12347,13 +12341,14 @@ package iot {
       __obj.asInstanceOf[Statistics]
     }
   }
-
-  object StatusEnum {
-    val InProgress = "InProgress"
-    val Completed  = "Completed"
-    val Failed     = "Failed"
-    val Cancelled  = "Cancelled"
-    val Cancelling = "Cancelling"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[Status]
+    val Completed  = "Completed".asInstanceOf[Status]
+    val Failed     = "Failed".asInstanceOf[Status]
+    val Cancelled  = "Cancelled".asInstanceOf[Status]
+    val Cancelling = "Cancelling".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Cancelled, Cancelling))
   }
@@ -12583,10 +12578,11 @@ package iot {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TargetSelectionEnum {
-    val CONTINUOUS = "CONTINUOUS"
-    val SNAPSHOT   = "SNAPSHOT"
+  @js.native
+  sealed trait TargetSelection extends js.Any
+  object TargetSelection extends js.Object {
+    val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
+    val SNAPSHOT   = "SNAPSHOT".asInstanceOf[TargetSelection]
 
     val values = js.Object.freeze(js.Array(CONTINUOUS, SNAPSHOT))
   }
@@ -12823,10 +12819,11 @@ package iot {
       __obj.asInstanceOf[ThingConnectivity]
     }
   }
-
-  object ThingConnectivityIndexingModeEnum {
-    val OFF    = "OFF"
-    val STATUS = "STATUS"
+  @js.native
+  sealed trait ThingConnectivityIndexingMode extends js.Any
+  object ThingConnectivityIndexingMode extends js.Object {
+    val OFF    = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
+    val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, STATUS))
   }
@@ -12925,10 +12922,11 @@ package iot {
       __obj.asInstanceOf[ThingGroupIndexingConfiguration]
     }
   }
-
-  object ThingGroupIndexingModeEnum {
-    val OFF = "OFF"
-    val ON  = "ON"
+  @js.native
+  sealed trait ThingGroupIndexingMode extends js.Any
+  object ThingGroupIndexingMode extends js.Object {
+    val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
+    val ON  = "ON".asInstanceOf[ThingGroupIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
@@ -13011,11 +13009,12 @@ package iot {
       __obj.asInstanceOf[ThingIndexingConfiguration]
     }
   }
-
-  object ThingIndexingModeEnum {
-    val OFF                 = "OFF"
-    val REGISTRY            = "REGISTRY"
-    val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW"
+  @js.native
+  sealed trait ThingIndexingMode extends js.Any
+  object ThingIndexingMode extends js.Object {
+    val OFF                 = "OFF".asInstanceOf[ThingIndexingMode]
+    val REGISTRY            = "REGISTRY".asInstanceOf[ThingIndexingMode]
+    val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW))
   }
@@ -13221,12 +13220,13 @@ package iot {
       __obj.asInstanceOf[TopicRuleDestinationConfiguration]
     }
   }
-
-  object TopicRuleDestinationStatusEnum {
-    val ENABLED     = "ENABLED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val DISABLED    = "DISABLED"
-    val ERROR       = "ERROR"
+  @js.native
+  sealed trait TopicRuleDestinationStatus extends js.Any
+  object TopicRuleDestinationStatus extends js.Object {
+    val ENABLED     = "ENABLED".asInstanceOf[TopicRuleDestinationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TopicRuleDestinationStatus]
+    val DISABLED    = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
+    val ERROR       = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR))
   }
@@ -14437,11 +14437,12 @@ package iot {
       __obj.asInstanceOf[ViolationEvent]
     }
   }
-
-  object ViolationEventTypeEnum {
-    val `in-alarm`          = "in-alarm"
-    val `alarm-cleared`     = "alarm-cleared"
-    val `alarm-invalidated` = "alarm-invalidated"
+  @js.native
+  sealed trait ViolationEventType extends js.Any
+  object ViolationEventType extends js.Object {
+    val `in-alarm`          = "in-alarm".asInstanceOf[ViolationEventType]
+    val `alarm-cleared`     = "alarm-cleared".asInstanceOf[ViolationEventType]
+    val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
     val values = js.Object.freeze(js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`))
   }

@@ -9,8 +9,6 @@ import facade.amazonaws._
 package object cloudsearch {
   type APIVersion               = String
   type ARN                      = String
-  type AlgorithmicStemming      = String
-  type AnalysisSchemeLanguage   = String
   type AnalysisSchemeStatusList = js.Array[AnalysisSchemeStatus]
   type DomainId                 = String
   type DomainName               = String
@@ -26,22 +24,17 @@ package object cloudsearch {
   type FieldNameList            = js.Array[FieldName]
   type FieldValue               = String
   type IndexFieldStatusList     = js.Array[IndexFieldStatus]
-  type IndexFieldType           = String
   type InstanceCount            = Int
   type MaximumPartitionCount    = Int
   type MaximumReplicationCount  = Int
   type MultiAZ                  = Boolean
-  type OptionState              = String
   type PartitionCount           = Int
-  type PartitionInstanceType    = String
   type PolicyDocument           = String
   type SearchInstanceType       = String
   type ServiceUrl               = String
   type StandardName             = String
   type StandardNameList         = js.Array[StandardName]
-  type SuggesterFuzzyMatching   = String
   type SuggesterStatusList      = js.Array[SuggesterStatus]
-  type TLSSecurityPolicy        = String
   type UIntValue                = Int
   type UpdateTimestamp          = js.Date
   type Word                     = String
@@ -184,12 +177,13 @@ package cloudsearch {
       __obj.asInstanceOf[AccessPoliciesStatus]
     }
   }
-
-  object AlgorithmicStemmingEnum {
-    val none    = "none"
-    val minimal = "minimal"
-    val light   = "light"
-    val full    = "full"
+  @js.native
+  sealed trait AlgorithmicStemming extends js.Any
+  object AlgorithmicStemming extends js.Object {
+    val none    = "none".asInstanceOf[AlgorithmicStemming]
+    val minimal = "minimal".asInstanceOf[AlgorithmicStemming]
+    val light   = "light".asInstanceOf[AlgorithmicStemming]
+    val full    = "full".asInstanceOf[AlgorithmicStemming]
 
     val values = js.Object.freeze(js.Array(none, minimal, light, full))
   }
@@ -257,42 +251,44 @@ package cloudsearch {
   /**
     * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
     */
-  object AnalysisSchemeLanguageEnum {
-    val ar        = "ar"
-    val bg        = "bg"
-    val ca        = "ca"
-    val cs        = "cs"
-    val da        = "da"
-    val de        = "de"
-    val el        = "el"
-    val en        = "en"
-    val es        = "es"
-    val eu        = "eu"
-    val fa        = "fa"
-    val fi        = "fi"
-    val fr        = "fr"
-    val ga        = "ga"
-    val gl        = "gl"
-    val he        = "he"
-    val hi        = "hi"
-    val hu        = "hu"
-    val hy        = "hy"
-    val id        = "id"
-    val it        = "it"
-    val ja        = "ja"
-    val ko        = "ko"
-    val lv        = "lv"
-    val mul       = "mul"
-    val nl        = "nl"
-    val no        = "no"
-    val pt        = "pt"
-    val ro        = "ro"
-    val ru        = "ru"
-    val sv        = "sv"
-    val th        = "th"
-    val tr        = "tr"
-    val `zh-Hans` = "zh-Hans"
-    val `zh-Hant` = "zh-Hant"
+  @js.native
+  sealed trait AnalysisSchemeLanguage extends js.Any
+  object AnalysisSchemeLanguage extends js.Object {
+    val ar        = "ar".asInstanceOf[AnalysisSchemeLanguage]
+    val bg        = "bg".asInstanceOf[AnalysisSchemeLanguage]
+    val ca        = "ca".asInstanceOf[AnalysisSchemeLanguage]
+    val cs        = "cs".asInstanceOf[AnalysisSchemeLanguage]
+    val da        = "da".asInstanceOf[AnalysisSchemeLanguage]
+    val de        = "de".asInstanceOf[AnalysisSchemeLanguage]
+    val el        = "el".asInstanceOf[AnalysisSchemeLanguage]
+    val en        = "en".asInstanceOf[AnalysisSchemeLanguage]
+    val es        = "es".asInstanceOf[AnalysisSchemeLanguage]
+    val eu        = "eu".asInstanceOf[AnalysisSchemeLanguage]
+    val fa        = "fa".asInstanceOf[AnalysisSchemeLanguage]
+    val fi        = "fi".asInstanceOf[AnalysisSchemeLanguage]
+    val fr        = "fr".asInstanceOf[AnalysisSchemeLanguage]
+    val ga        = "ga".asInstanceOf[AnalysisSchemeLanguage]
+    val gl        = "gl".asInstanceOf[AnalysisSchemeLanguage]
+    val he        = "he".asInstanceOf[AnalysisSchemeLanguage]
+    val hi        = "hi".asInstanceOf[AnalysisSchemeLanguage]
+    val hu        = "hu".asInstanceOf[AnalysisSchemeLanguage]
+    val hy        = "hy".asInstanceOf[AnalysisSchemeLanguage]
+    val id        = "id".asInstanceOf[AnalysisSchemeLanguage]
+    val it        = "it".asInstanceOf[AnalysisSchemeLanguage]
+    val ja        = "ja".asInstanceOf[AnalysisSchemeLanguage]
+    val ko        = "ko".asInstanceOf[AnalysisSchemeLanguage]
+    val lv        = "lv".asInstanceOf[AnalysisSchemeLanguage]
+    val mul       = "mul".asInstanceOf[AnalysisSchemeLanguage]
+    val nl        = "nl".asInstanceOf[AnalysisSchemeLanguage]
+    val no        = "no".asInstanceOf[AnalysisSchemeLanguage]
+    val pt        = "pt".asInstanceOf[AnalysisSchemeLanguage]
+    val ro        = "ro".asInstanceOf[AnalysisSchemeLanguage]
+    val ru        = "ru".asInstanceOf[AnalysisSchemeLanguage]
+    val sv        = "sv".asInstanceOf[AnalysisSchemeLanguage]
+    val th        = "th".asInstanceOf[AnalysisSchemeLanguage]
+    val tr        = "tr".asInstanceOf[AnalysisSchemeLanguage]
+    val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
+    val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1700,18 +1696,20 @@ package cloudsearch {
   /**
     * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
     */
-  object IndexFieldTypeEnum {
-    val int             = "int"
-    val double          = "double"
-    val literal         = "literal"
-    val text            = "text"
-    val date            = "date"
-    val latlon          = "latlon"
-    val `int-array`     = "int-array"
-    val `double-array`  = "double-array"
-    val `literal-array` = "literal-array"
-    val `text-array`    = "text-array"
-    val `date-array`    = "date-array"
+  @js.native
+  sealed trait IndexFieldType extends js.Any
+  object IndexFieldType extends js.Object {
+    val int             = "int".asInstanceOf[IndexFieldType]
+    val double          = "double".asInstanceOf[IndexFieldType]
+    val literal         = "literal".asInstanceOf[IndexFieldType]
+    val text            = "text".asInstanceOf[IndexFieldType]
+    val date            = "date".asInstanceOf[IndexFieldType]
+    val latlon          = "latlon".asInstanceOf[IndexFieldType]
+    val `int-array`     = "int-array".asInstanceOf[IndexFieldType]
+    val `double-array`  = "double-array".asInstanceOf[IndexFieldType]
+    val `literal-array` = "literal-array".asInstanceOf[IndexFieldType]
+    val `text-array`    = "text-array".asInstanceOf[IndexFieldType]
+    val `date-array`    = "date-array".asInstanceOf[IndexFieldType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1941,11 +1939,13 @@ package cloudsearch {
     *  * Active: The option's latest value is fully deployed.
     *  * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
     */
-  object OptionStateEnum {
-    val RequiresIndexDocuments = "RequiresIndexDocuments"
-    val Processing             = "Processing"
-    val Active                 = "Active"
-    val FailedToValidate       = "FailedToValidate"
+  @js.native
+  sealed trait OptionState extends js.Any
+  object OptionState extends js.Object {
+    val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
+    val Processing             = "Processing".asInstanceOf[OptionState]
+    val Active                 = "Active".asInstanceOf[OptionState]
+    val FailedToValidate       = "FailedToValidate".asInstanceOf[OptionState]
 
     val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
   }
@@ -1986,15 +1986,17 @@ package cloudsearch {
   /**
     * The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
     */
-  object PartitionInstanceTypeEnum {
-    val `search.m1.small`   = "search.m1.small"
-    val `search.m1.large`   = "search.m1.large"
-    val `search.m2.xlarge`  = "search.m2.xlarge"
-    val `search.m2.2xlarge` = "search.m2.2xlarge"
-    val `search.m3.medium`  = "search.m3.medium"
-    val `search.m3.large`   = "search.m3.large"
-    val `search.m3.xlarge`  = "search.m3.xlarge"
-    val `search.m3.2xlarge` = "search.m3.2xlarge"
+  @js.native
+  sealed trait PartitionInstanceType extends js.Any
+  object PartitionInstanceType extends js.Object {
+    val `search.m1.small`   = "search.m1.small".asInstanceOf[PartitionInstanceType]
+    val `search.m1.large`   = "search.m1.large".asInstanceOf[PartitionInstanceType]
+    val `search.m2.xlarge`  = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.m2.2xlarge` = "search.m2.2xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.m3.medium`  = "search.m3.medium".asInstanceOf[PartitionInstanceType]
+    val `search.m3.large`   = "search.m3.large".asInstanceOf[PartitionInstanceType]
+    val `search.m3.xlarge`  = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2101,11 +2103,12 @@ package cloudsearch {
       __obj.asInstanceOf[Suggester]
     }
   }
-
-  object SuggesterFuzzyMatchingEnum {
-    val none = "none"
-    val low  = "low"
-    val high = "high"
+  @js.native
+  sealed trait SuggesterFuzzyMatching extends js.Any
+  object SuggesterFuzzyMatching extends js.Object {
+    val none = "none".asInstanceOf[SuggesterFuzzyMatching]
+    val low  = "low".asInstanceOf[SuggesterFuzzyMatching]
+    val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
     val values = js.Object.freeze(js.Array(none, low, high))
   }
@@ -2137,9 +2140,11 @@ package cloudsearch {
   /**
     * The minimum required TLS version.
     */
-  object TLSSecurityPolicyEnum {
-    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07"
-    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07"
+  @js.native
+  sealed trait TLSSecurityPolicy extends js.Any
+  object TLSSecurityPolicy extends js.Object {
+    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
+    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
     val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }

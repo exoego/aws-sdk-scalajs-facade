@@ -8,7 +8,6 @@ import facade.amazonaws._
 
 package object backup {
   type ARN                            = String
-  type BackupJobState                 = String
   type BackupJobsList                 = js.Array[BackupJob]
   type BackupPlanName                 = String
   type BackupPlanTemplatesList        = js.Array[BackupPlanTemplatesListMember]
@@ -19,15 +18,12 @@ package object backup {
   type BackupRulesInput               = js.Array[BackupRuleInput]
   type BackupSelectionName            = String
   type BackupSelectionsList           = js.Array[BackupSelectionsListMember]
-  type BackupVaultEvent               = String
   type BackupVaultEvents              = js.Array[BackupVaultEvent]
   type BackupVaultList                = js.Array[BackupVaultListMember]
   type BackupVaultName                = String
   type ConditionKey                   = String
-  type ConditionType                  = String
   type ConditionValue                 = String
   type CopyActions                    = js.Array[CopyAction]
-  type CopyJobState                   = String
   type CopyJobsList                   = js.Array[CopyJob]
   type CronExpression                 = String
   type IAMPolicy                      = String
@@ -40,14 +36,11 @@ package object backup {
   type ProtectedResourcesList         = js.Array[ProtectedResource]
   type RecoveryPointByBackupVaultList = js.Array[RecoveryPointByBackupVault]
   type RecoveryPointByResourceList    = js.Array[RecoveryPointByResource]
-  type RecoveryPointStatus            = String
   type ResourceArns                   = js.Array[ARN]
   type ResourceType                   = String
   type ResourceTypes                  = js.Array[ResourceType]
   type RestoreJobId                   = String
-  type RestoreJobStatus               = String
   type RestoreJobsList                = js.Array[RestoreJobsListMember]
-  type StorageClass                   = String
   type TagKey                         = String
   type TagKeyList                     = js.Array[String]
   type TagValue                       = String
@@ -299,16 +292,17 @@ package backup {
       __obj.asInstanceOf[BackupJob]
     }
   }
-
-  object BackupJobStateEnum {
-    val CREATED   = "CREATED"
-    val PENDING   = "PENDING"
-    val RUNNING   = "RUNNING"
-    val ABORTING  = "ABORTING"
-    val ABORTED   = "ABORTED"
-    val COMPLETED = "COMPLETED"
-    val FAILED    = "FAILED"
-    val EXPIRED   = "EXPIRED"
+  @js.native
+  sealed trait BackupJobState extends js.Any
+  object BackupJobState extends js.Object {
+    val CREATED   = "CREATED".asInstanceOf[BackupJobState]
+    val PENDING   = "PENDING".asInstanceOf[BackupJobState]
+    val RUNNING   = "RUNNING".asInstanceOf[BackupJobState]
+    val ABORTING  = "ABORTING".asInstanceOf[BackupJobState]
+    val ABORTED   = "ABORTED".asInstanceOf[BackupJobState]
+    val COMPLETED = "COMPLETED".asInstanceOf[BackupJobState]
+    val FAILED    = "FAILED".asInstanceOf[BackupJobState]
+    val EXPIRED   = "EXPIRED".asInstanceOf[BackupJobState]
 
     val values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
   }
@@ -573,23 +567,24 @@ package backup {
       __obj.asInstanceOf[BackupSelectionsListMember]
     }
   }
-
-  object BackupVaultEventEnum {
-    val BACKUP_JOB_STARTED      = "BACKUP_JOB_STARTED"
-    val BACKUP_JOB_COMPLETED    = "BACKUP_JOB_COMPLETED"
-    val BACKUP_JOB_SUCCESSFUL   = "BACKUP_JOB_SUCCESSFUL"
-    val BACKUP_JOB_FAILED       = "BACKUP_JOB_FAILED"
-    val BACKUP_JOB_EXPIRED      = "BACKUP_JOB_EXPIRED"
-    val RESTORE_JOB_STARTED     = "RESTORE_JOB_STARTED"
-    val RESTORE_JOB_COMPLETED   = "RESTORE_JOB_COMPLETED"
-    val RESTORE_JOB_SUCCESSFUL  = "RESTORE_JOB_SUCCESSFUL"
-    val RESTORE_JOB_FAILED      = "RESTORE_JOB_FAILED"
-    val COPY_JOB_STARTED        = "COPY_JOB_STARTED"
-    val COPY_JOB_SUCCESSFUL     = "COPY_JOB_SUCCESSFUL"
-    val COPY_JOB_FAILED         = "COPY_JOB_FAILED"
-    val RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED"
-    val BACKUP_PLAN_CREATED     = "BACKUP_PLAN_CREATED"
-    val BACKUP_PLAN_MODIFIED    = "BACKUP_PLAN_MODIFIED"
+  @js.native
+  sealed trait BackupVaultEvent extends js.Any
+  object BackupVaultEvent extends js.Object {
+    val BACKUP_JOB_STARTED      = "BACKUP_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_COMPLETED    = "BACKUP_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_SUCCESSFUL   = "BACKUP_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_FAILED       = "BACKUP_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_EXPIRED      = "BACKUP_JOB_EXPIRED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_STARTED     = "RESTORE_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_COMPLETED   = "RESTORE_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_SUCCESSFUL  = "RESTORE_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_FAILED      = "RESTORE_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_STARTED        = "COPY_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_SUCCESSFUL     = "COPY_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_FAILED         = "COPY_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_PLAN_CREATED     = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_PLAN_MODIFIED    = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
     val values = js.Object.freeze(
       js.Array(
@@ -696,9 +691,10 @@ package backup {
       __obj.asInstanceOf[Condition]
     }
   }
-
-  object ConditionTypeEnum {
-    val STRINGEQUALS = "STRINGEQUALS"
+  @js.native
+  sealed trait ConditionType extends js.Any
+  object ConditionType extends js.Object {
+    val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
 
     val values = js.Object.freeze(js.Array(STRINGEQUALS))
   }
@@ -788,12 +784,13 @@ package backup {
       __obj.asInstanceOf[CopyJob]
     }
   }
-
-  object CopyJobStateEnum {
-    val CREATED   = "CREATED"
-    val RUNNING   = "RUNNING"
-    val COMPLETED = "COMPLETED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait CopyJobState extends js.Any
+  object CopyJobState extends js.Object {
+    val CREATED   = "CREATED".asInstanceOf[CopyJobState]
+    val RUNNING   = "RUNNING".asInstanceOf[CopyJobState]
+    val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
+    val FAILED    = "FAILED".asInstanceOf[CopyJobState]
 
     val values = js.Object.freeze(js.Array(CREATED, RUNNING, COMPLETED, FAILED))
   }
@@ -2543,22 +2540,24 @@ package backup {
       __obj.asInstanceOf[RecoveryPointCreator]
     }
   }
-
-  object RecoveryPointStatusEnum {
-    val COMPLETED = "COMPLETED"
-    val PARTIAL   = "PARTIAL"
-    val DELETING  = "DELETING"
-    val EXPIRED   = "EXPIRED"
+  @js.native
+  sealed trait RecoveryPointStatus extends js.Any
+  object RecoveryPointStatus extends js.Object {
+    val COMPLETED = "COMPLETED".asInstanceOf[RecoveryPointStatus]
+    val PARTIAL   = "PARTIAL".asInstanceOf[RecoveryPointStatus]
+    val DELETING  = "DELETING".asInstanceOf[RecoveryPointStatus]
+    val EXPIRED   = "EXPIRED".asInstanceOf[RecoveryPointStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
   }
-
-  object RestoreJobStatusEnum {
-    val PENDING   = "PENDING"
-    val RUNNING   = "RUNNING"
-    val COMPLETED = "COMPLETED"
-    val ABORTED   = "ABORTED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait RestoreJobStatus extends js.Any
+  object RestoreJobStatus extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[RestoreJobStatus]
+    val RUNNING   = "RUNNING".asInstanceOf[RestoreJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[RestoreJobStatus]
+    val ABORTED   = "ABORTED".asInstanceOf[RestoreJobStatus]
+    val FAILED    = "FAILED".asInstanceOf[RestoreJobStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
   }
@@ -2790,11 +2789,12 @@ package backup {
       __obj.asInstanceOf[StopBackupJobInput]
     }
   }
-
-  object StorageClassEnum {
-    val WARM    = "WARM"
-    val COLD    = "COLD"
-    val DELETED = "DELETED"
+  @js.native
+  sealed trait StorageClass extends js.Any
+  object StorageClass extends js.Object {
+    val WARM    = "WARM".asInstanceOf[StorageClass]
+    val COLD    = "COLD".asInstanceOf[StorageClass]
+    val DELETED = "DELETED".asInstanceOf[StorageClass]
 
     val values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
   }

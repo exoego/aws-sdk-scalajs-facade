@@ -33,20 +33,16 @@ package object health {
   type dateTimeRangeList                                = js.Array[DateTimeRange]
   type entityArn                                        = String
   type entityArnList                                    = js.Array[entityArn]
-  type entityStatusCode                                 = String
   type entityStatusCodeList                             = js.Array[entityStatusCode]
   type entityUrl                                        = String
   type entityValue                                      = String
   type entityValueList                                  = js.Array[entityValue]
-  type eventAggregateField                              = String
   type eventArn                                         = String
   type eventArnList                                     = js.Array[eventArn]
   type eventDescription                                 = String
   type eventMetadata                                    = js.Dictionary[metadataValue]
-  type eventStatusCode                                  = String
   type eventStatusCodeList                              = js.Array[eventStatusCode]
   type eventType                                        = String
-  type eventTypeCategory                                = String
   type eventTypeCategoryList                            = js.Array[eventTypeCategory]
   type eventTypeCode                                    = String
   type eventTypeList                                    = js.Array[eventType]
@@ -1148,34 +1144,38 @@ package health {
       __obj.asInstanceOf[OrganizationEventFilter]
     }
   }
-
-  object entityStatusCodeEnum {
-    val IMPAIRED   = "IMPAIRED"
-    val UNIMPAIRED = "UNIMPAIRED"
-    val UNKNOWN    = "UNKNOWN"
+  @js.native
+  sealed trait entityStatusCode extends js.Any
+  object entityStatusCode extends js.Object {
+    val IMPAIRED   = "IMPAIRED".asInstanceOf[entityStatusCode]
+    val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
+    val UNKNOWN    = "UNKNOWN".asInstanceOf[entityStatusCode]
 
     val values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
   }
-
-  object eventAggregateFieldEnum {
-    val eventTypeCategory = "eventTypeCategory"
+  @js.native
+  sealed trait eventAggregateField extends js.Any
+  object eventAggregateField extends js.Object {
+    val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
 
     val values = js.Object.freeze(js.Array(eventTypeCategory))
   }
-
-  object eventStatusCodeEnum {
-    val open     = "open"
-    val closed   = "closed"
-    val upcoming = "upcoming"
+  @js.native
+  sealed trait eventStatusCode extends js.Any
+  object eventStatusCode extends js.Object {
+    val open     = "open".asInstanceOf[eventStatusCode]
+    val closed   = "closed".asInstanceOf[eventStatusCode]
+    val upcoming = "upcoming".asInstanceOf[eventStatusCode]
 
     val values = js.Object.freeze(js.Array(open, closed, upcoming))
   }
-
-  object eventTypeCategoryEnum {
-    val issue               = "issue"
-    val accountNotification = "accountNotification"
-    val scheduledChange     = "scheduledChange"
-    val investigation       = "investigation"
+  @js.native
+  sealed trait eventTypeCategory extends js.Any
+  object eventTypeCategory extends js.Object {
+    val issue               = "issue".asInstanceOf[eventTypeCategory]
+    val accountNotification = "accountNotification".asInstanceOf[eventTypeCategory]
+    val scheduledChange     = "scheduledChange".asInstanceOf[eventTypeCategory]
+    val investigation       = "investigation".asInstanceOf[eventTypeCategory]
 
     val values = js.Object.freeze(js.Array(issue, accountNotification, scheduledChange, investigation))
   }

@@ -18,7 +18,6 @@ package object rdsdataservice {
   type BoxedInteger        = Int
   type BoxedLong           = Double
   type DbName              = String
-  type DecimalReturnType   = String
   type DoubleArray         = js.Array[BoxedDouble]
   type FieldList           = js.Array[Field]
   type Id                  = String
@@ -35,7 +34,6 @@ package object rdsdataservice {
   type SqlStatementResults = js.Array[SqlStatementResult]
   type StringArray         = js.Array[String]
   type TransactionStatus   = String
-  type TypeHint            = String
   type UpdateResults       = js.Array[UpdateResult]
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
@@ -311,10 +309,11 @@ package rdsdataservice {
       __obj.asInstanceOf[CommitTransactionResponse]
     }
   }
-
-  object DecimalReturnTypeEnum {
-    val DOUBLE_OR_LONG = "DOUBLE_OR_LONG"
-    val STRING         = "STRING"
+  @js.native
+  sealed trait DecimalReturnType extends js.Any
+  object DecimalReturnType extends js.Object {
+    val DOUBLE_OR_LONG = "DOUBLE_OR_LONG".asInstanceOf[DecimalReturnType]
+    val STRING         = "STRING".asInstanceOf[DecimalReturnType]
 
     val values = js.Object.freeze(js.Array(DOUBLE_OR_LONG, STRING))
   }
@@ -678,12 +677,13 @@ package rdsdataservice {
       __obj.asInstanceOf[StructValue]
     }
   }
-
-  object TypeHintEnum {
-    val DATE      = "DATE"
-    val DECIMAL   = "DECIMAL"
-    val TIME      = "TIME"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait TypeHint extends js.Any
+  object TypeHint extends js.Object {
+    val DATE      = "DATE".asInstanceOf[TypeHint]
+    val DECIMAL   = "DECIMAL".asInstanceOf[TypeHint]
+    val TIME      = "TIME".asInstanceOf[TypeHint]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[TypeHint]
 
     val values = js.Object.freeze(js.Array(DATE, DECIMAL, TIME, TIMESTAMP))
   }

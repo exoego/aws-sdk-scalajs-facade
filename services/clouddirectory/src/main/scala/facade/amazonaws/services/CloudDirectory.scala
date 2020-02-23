@@ -14,7 +14,6 @@ package object clouddirectory {
   type AttributeName                     = String
   type AttributeNameAndValueList         = js.Array[AttributeNameAndValue]
   type AttributeNameList                 = js.Array[AttributeName]
-  type BatchReadExceptionType            = String
   type BatchReadOperationList            = js.Array[BatchReadOperation]
   type BatchReadOperationResponseList    = js.Array[BatchReadOperationResponse]
   type BatchReferenceName                = String
@@ -22,20 +21,16 @@ package object clouddirectory {
   type BatchWriteOperationResponseList   = js.Array[BatchWriteOperationResponse]
   type BinaryAttributeValue              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanAttributeValue             = Boolean
-  type ConsistencyLevel                  = String
   type Date                              = js.Date
   type DatetimeAttributeValue            = js.Date
   type DirectoryArn                      = String
   type DirectoryList                     = js.Array[Directory]
   type DirectoryName                     = String
-  type DirectoryState                    = String
   type ExceptionMessage                  = String
   type FacetAttributeList                = js.Array[FacetAttribute]
-  type FacetAttributeType                = String
   type FacetAttributeUpdateList          = js.Array[FacetAttributeUpdate]
   type FacetName                         = String
   type FacetNameList                     = js.Array[FacetName]
-  type FacetStyle                        = String
   type IndexAttachmentList               = js.Array[IndexAttachment]
   type LinkAttributeUpdateList           = js.Array[LinkAttributeUpdate]
   type LinkName                          = String
@@ -49,20 +44,16 @@ package object clouddirectory {
   type ObjectIdentifierAndLinkNameList   = js.Array[ObjectIdentifierAndLinkNameTuple]
   type ObjectIdentifierList              = js.Array[ObjectIdentifier]
   type ObjectIdentifierToLinkNameMap     = js.Dictionary[LinkName]
-  type ObjectType                        = String
   type PathString                        = String
   type PathToObjectIdentifiersList       = js.Array[PathToObjectIdentifiers]
   type PolicyAttachmentList              = js.Array[PolicyAttachment]
   type PolicyToPathList                  = js.Array[PolicyToPath]
   type PolicyType                        = String
-  type RangeMode                         = String
-  type RequiredAttributeBehavior         = String
   type RuleKey                           = String
   type RuleMap                           = js.Dictionary[Rule]
   type RuleParameterKey                  = String
   type RuleParameterMap                  = js.Dictionary[RuleParameterValue]
   type RuleParameterValue                = String
-  type RuleType                          = String
   type SchemaFacetList                   = js.Array[SchemaFacet]
   type SchemaJsonDocument                = String
   type SchemaName                        = String
@@ -79,7 +70,6 @@ package object clouddirectory {
   type TypedLinkName                     = String
   type TypedLinkNameList                 = js.Array[TypedLinkName]
   type TypedLinkSpecifierList            = js.Array[TypedLinkSpecifier]
-  type UpdateActionType                  = String
   type Version                           = String
 
   implicit final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
@@ -1876,21 +1866,22 @@ package clouddirectory {
       __obj.asInstanceOf[BatchReadException]
     }
   }
-
-  object BatchReadExceptionTypeEnum {
-    val ValidationException             = "ValidationException"
-    val InvalidArnException             = "InvalidArnException"
-    val ResourceNotFoundException       = "ResourceNotFoundException"
-    val InvalidNextTokenException       = "InvalidNextTokenException"
-    val AccessDeniedException           = "AccessDeniedException"
-    val NotNodeException                = "NotNodeException"
-    val FacetValidationException        = "FacetValidationException"
-    val CannotListParentOfRootException = "CannotListParentOfRootException"
-    val NotIndexException               = "NotIndexException"
-    val NotPolicyException              = "NotPolicyException"
-    val DirectoryNotEnabledException    = "DirectoryNotEnabledException"
-    val LimitExceededException          = "LimitExceededException"
-    val InternalServiceException        = "InternalServiceException"
+  @js.native
+  sealed trait BatchReadExceptionType extends js.Any
+  object BatchReadExceptionType extends js.Object {
+    val ValidationException             = "ValidationException".asInstanceOf[BatchReadExceptionType]
+    val InvalidArnException             = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
+    val ResourceNotFoundException       = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
+    val InvalidNextTokenException       = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
+    val AccessDeniedException           = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
+    val NotNodeException                = "NotNodeException".asInstanceOf[BatchReadExceptionType]
+    val FacetValidationException        = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
+    val CannotListParentOfRootException = "CannotListParentOfRootException".asInstanceOf[BatchReadExceptionType]
+    val NotIndexException               = "NotIndexException".asInstanceOf[BatchReadExceptionType]
+    val NotPolicyException              = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
+    val DirectoryNotEnabledException    = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
+    val LimitExceededException          = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
+    val InternalServiceException        = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2370,10 +2361,11 @@ package clouddirectory {
       __obj.asInstanceOf[BatchWriteResponse]
     }
   }
-
-  object ConsistencyLevelEnum {
-    val SERIALIZABLE = "SERIALIZABLE"
-    val EVENTUAL     = "EVENTUAL"
+  @js.native
+  sealed trait ConsistencyLevel extends js.Any
+  object ConsistencyLevel extends js.Object {
+    val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
+    val EVENTUAL     = "EVENTUAL".asInstanceOf[ConsistencyLevel]
 
     val values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
   }
@@ -2966,11 +2958,12 @@ package clouddirectory {
       __obj.asInstanceOf[Directory]
     }
   }
-
-  object DirectoryStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
-    val DELETED  = "DELETED"
+  @js.native
+  sealed trait DirectoryState extends js.Any
+  object DirectoryState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[DirectoryState]
+    val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
+    val DELETED  = "DELETED".asInstanceOf[DirectoryState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -3155,14 +3148,15 @@ package clouddirectory {
       __obj.asInstanceOf[FacetAttributeReference]
     }
   }
-
-  object FacetAttributeTypeEnum {
-    val STRING   = "STRING"
-    val BINARY   = "BINARY"
-    val BOOLEAN  = "BOOLEAN"
-    val NUMBER   = "NUMBER"
-    val DATETIME = "DATETIME"
-    val VARIANT  = "VARIANT"
+  @js.native
+  sealed trait FacetAttributeType extends js.Any
+  object FacetAttributeType extends js.Object {
+    val STRING   = "STRING".asInstanceOf[FacetAttributeType]
+    val BINARY   = "BINARY".asInstanceOf[FacetAttributeType]
+    val BOOLEAN  = "BOOLEAN".asInstanceOf[FacetAttributeType]
+    val NUMBER   = "NUMBER".asInstanceOf[FacetAttributeType]
+    val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
+    val VARIANT  = "VARIANT".asInstanceOf[FacetAttributeType]
 
     val values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
   }
@@ -3188,10 +3182,11 @@ package clouddirectory {
       __obj.asInstanceOf[FacetAttributeUpdate]
     }
   }
-
-  object FacetStyleEnum {
-    val STATIC  = "STATIC"
-    val DYNAMIC = "DYNAMIC"
+  @js.native
+  sealed trait FacetStyle extends js.Any
+  object FacetStyle extends js.Object {
+    val STATIC  = "STATIC".asInstanceOf[FacetStyle]
+    val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
 
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
@@ -4676,12 +4671,13 @@ package clouddirectory {
       __obj.asInstanceOf[ObjectReference]
     }
   }
-
-  object ObjectTypeEnum {
-    val NODE      = "NODE"
-    val LEAF_NODE = "LEAF_NODE"
-    val POLICY    = "POLICY"
-    val INDEX     = "INDEX"
+  @js.native
+  sealed trait ObjectType extends js.Any
+  object ObjectType extends js.Object {
+    val NODE      = "NODE".asInstanceOf[ObjectType]
+    val LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
+    val POLICY    = "POLICY".asInstanceOf[ObjectType]
+    val INDEX     = "INDEX".asInstanceOf[ObjectType]
 
     val values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
   }
@@ -4834,13 +4830,14 @@ package clouddirectory {
       __obj.asInstanceOf[PutSchemaFromJsonResponse]
     }
   }
-
-  object RangeModeEnum {
-    val FIRST                      = "FIRST"
-    val LAST                       = "LAST"
-    val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES"
-    val INCLUSIVE                  = "INCLUSIVE"
-    val EXCLUSIVE                  = "EXCLUSIVE"
+  @js.native
+  sealed trait RangeMode extends js.Any
+  object RangeMode extends js.Object {
+    val FIRST                      = "FIRST".asInstanceOf[RangeMode]
+    val LAST                       = "LAST".asInstanceOf[RangeMode]
+    val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
+    val INCLUSIVE                  = "INCLUSIVE".asInstanceOf[RangeMode]
+    val EXCLUSIVE                  = "EXCLUSIVE".asInstanceOf[RangeMode]
 
     val values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
   }
@@ -4881,10 +4878,11 @@ package clouddirectory {
       __obj.asInstanceOf[RemoveFacetFromObjectResponse]
     }
   }
-
-  object RequiredAttributeBehaviorEnum {
-    val REQUIRED_ALWAYS = "REQUIRED_ALWAYS"
-    val NOT_REQUIRED    = "NOT_REQUIRED"
+  @js.native
+  sealed trait RequiredAttributeBehavior extends js.Any
+  object RequiredAttributeBehavior extends js.Object {
+    val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
+    val NOT_REQUIRED    = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
 
     val values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
   }
@@ -4910,12 +4908,13 @@ package clouddirectory {
       __obj.asInstanceOf[Rule]
     }
   }
-
-  object RuleTypeEnum {
-    val BINARY_LENGTH     = "BINARY_LENGTH"
-    val NUMBER_COMPARISON = "NUMBER_COMPARISON"
-    val STRING_FROM_SET   = "STRING_FROM_SET"
-    val STRING_LENGTH     = "STRING_LENGTH"
+  @js.native
+  sealed trait RuleType extends js.Any
+  object RuleType extends js.Object {
+    val BINARY_LENGTH     = "BINARY_LENGTH".asInstanceOf[RuleType]
+    val NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
+    val STRING_FROM_SET   = "STRING_FROM_SET".asInstanceOf[RuleType]
+    val STRING_LENGTH     = "STRING_LENGTH".asInstanceOf[RuleType]
 
     val values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
   }
@@ -5257,10 +5256,11 @@ package clouddirectory {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
-
-  object UpdateActionTypeEnum {
-    val CREATE_OR_UPDATE = "CREATE_OR_UPDATE"
-    val DELETE           = "DELETE"
+  @js.native
+  sealed trait UpdateActionType extends js.Any
+  object UpdateActionType extends js.Object {
+    val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
+    val DELETE           = "DELETE".asInstanceOf[UpdateActionType]
 
     val values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
   }

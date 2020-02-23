@@ -19,20 +19,16 @@ package object iotevents {
   type DetectorModelName             = String
   type DetectorModelSummaries        = js.Array[DetectorModelSummary]
   type DetectorModelVersion          = String
-  type DetectorModelVersionStatus    = String
   type DetectorModelVersionSummaries = js.Array[DetectorModelVersionSummary]
-  type EvaluationMethod              = String
   type EventName                     = String
   type Events                        = js.Array[Event]
   type FirehoseSeparator             = String
   type InputArn                      = String
   type InputDescription              = String
   type InputName                     = String
-  type InputStatus                   = String
   type InputSummaries                = js.Array[InputSummary]
   type KeyValue                      = String
   type LoggingEnabled                = Boolean
-  type LoggingLevel                  = String
   type MQTTTopic                     = String
   type MaxResults                    = Int
   type NextToken                     = String
@@ -607,15 +603,16 @@ package iotevents {
       __obj.asInstanceOf[DetectorModelSummary]
     }
   }
-
-  object DetectorModelVersionStatusEnum {
-    val ACTIVE     = "ACTIVE"
-    val ACTIVATING = "ACTIVATING"
-    val INACTIVE   = "INACTIVE"
-    val DEPRECATED = "DEPRECATED"
-    val DRAFT      = "DRAFT"
-    val PAUSED     = "PAUSED"
-    val FAILED     = "FAILED"
+  @js.native
+  sealed trait DetectorModelVersionStatus extends js.Any
+  object DetectorModelVersionStatus extends js.Object {
+    val ACTIVE     = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
+    val INACTIVE   = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[DetectorModelVersionStatus]
+    val DRAFT      = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
+    val PAUSED     = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
+    val FAILED     = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
   }
@@ -659,10 +656,11 @@ package iotevents {
       __obj.asInstanceOf[DetectorModelVersionSummary]
     }
   }
-
-  object EvaluationMethodEnum {
-    val BATCH  = "BATCH"
-    val SERIAL = "SERIAL"
+  @js.native
+  sealed trait EvaluationMethod extends js.Any
+  object EvaluationMethod extends js.Object {
+    val BATCH  = "BATCH".asInstanceOf[EvaluationMethod]
+    val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
     val values = js.Object.freeze(js.Array(BATCH, SERIAL))
   }
@@ -796,12 +794,13 @@ package iotevents {
       __obj.asInstanceOf[InputDefinition]
     }
   }
-
-  object InputStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait InputStatus extends js.Any
+  object InputStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[InputStatus]
+    val UPDATING = "UPDATING".asInstanceOf[InputStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[InputStatus]
+    val DELETING = "DELETING".asInstanceOf[InputStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
   }
@@ -1057,11 +1056,12 @@ package iotevents {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object LoggingLevelEnum {
-    val ERROR = "ERROR"
-    val INFO  = "INFO"
-    val DEBUG = "DEBUG"
+  @js.native
+  sealed trait LoggingLevel extends js.Any
+  object LoggingLevel extends js.Object {
+    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
+    val INFO  = "INFO".asInstanceOf[LoggingLevel]
+    val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
   }

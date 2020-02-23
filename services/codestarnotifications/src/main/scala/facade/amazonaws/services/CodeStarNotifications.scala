@@ -9,20 +9,16 @@ import facade.amazonaws._
 package object codestarnotifications {
   type ClientRequestToken               = String
   type CreatedTimestamp                 = js.Date
-  type DetailType                       = String
   type EventTypeBatch                   = js.Array[EventTypeSummary]
   type EventTypeId                      = String
   type EventTypeIds                     = js.Array[EventTypeId]
   type EventTypeName                    = String
   type ForceUnsubscribeAll              = Boolean
   type LastModifiedTimestamp            = js.Date
-  type ListEventTypesFilterName         = String
   type ListEventTypesFilterValue        = String
   type ListEventTypesFilters            = js.Array[ListEventTypesFilter]
-  type ListNotificationRulesFilterName  = String
   type ListNotificationRulesFilterValue = String
   type ListNotificationRulesFilters     = js.Array[ListNotificationRulesFilter]
-  type ListTargetsFilterName            = String
   type ListTargetsFilterValue           = String
   type ListTargetsFilters               = js.Array[ListTargetsFilter]
   type MaxResults                       = Int
@@ -33,7 +29,6 @@ package object codestarnotifications {
   type NotificationRuleId               = String
   type NotificationRuleName             = String
   type NotificationRuleResource         = String
-  type NotificationRuleStatus           = String
   type ResourceType                     = String
   type ServiceName                      = String
   type TagKey                           = String
@@ -41,7 +36,6 @@ package object codestarnotifications {
   type TagValue                         = String
   type Tags                             = js.Dictionary[TagValue]
   type TargetAddress                    = String
-  type TargetStatus                     = String
   type TargetType                       = String
   type Targets                          = js.Array[Target]
   type TargetsBatch                     = js.Array[TargetSummary]
@@ -291,10 +285,11 @@ package codestarnotifications {
       __obj.asInstanceOf[DescribeNotificationRuleResult]
     }
   }
-
-  object DetailTypeEnum {
-    val BASIC = "BASIC"
-    val FULL  = "FULL"
+  @js.native
+  sealed trait DetailType extends js.Any
+  object DetailType extends js.Object {
+    val BASIC = "BASIC".asInstanceOf[DetailType]
+    val FULL  = "FULL".asInstanceOf[DetailType]
 
     val values = js.Object.freeze(js.Array(BASIC, FULL))
   }
@@ -350,10 +345,11 @@ package codestarnotifications {
       __obj.asInstanceOf[ListEventTypesFilter]
     }
   }
-
-  object ListEventTypesFilterNameEnum {
-    val RESOURCE_TYPE = "RESOURCE_TYPE"
-    val SERVICE_NAME  = "SERVICE_NAME"
+  @js.native
+  sealed trait ListEventTypesFilterName extends js.Any
+  object ListEventTypesFilterName extends js.Object {
+    val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
+    val SERVICE_NAME  = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
 
     val values = js.Object.freeze(js.Array(RESOURCE_TYPE, SERVICE_NAME))
   }
@@ -422,12 +418,13 @@ package codestarnotifications {
       __obj.asInstanceOf[ListNotificationRulesFilter]
     }
   }
-
-  object ListNotificationRulesFilterNameEnum {
-    val EVENT_TYPE_ID  = "EVENT_TYPE_ID"
-    val CREATED_BY     = "CREATED_BY"
-    val RESOURCE       = "RESOURCE"
-    val TARGET_ADDRESS = "TARGET_ADDRESS"
+  @js.native
+  sealed trait ListNotificationRulesFilterName extends js.Any
+  object ListNotificationRulesFilterName extends js.Object {
+    val EVENT_TYPE_ID  = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
+    val CREATED_BY     = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
+    val RESOURCE       = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
+    val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
 
     val values = js.Object.freeze(js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS))
   }
@@ -530,11 +527,12 @@ package codestarnotifications {
       __obj.asInstanceOf[ListTargetsFilter]
     }
   }
-
-  object ListTargetsFilterNameEnum {
-    val TARGET_TYPE    = "TARGET_TYPE"
-    val TARGET_ADDRESS = "TARGET_ADDRESS"
-    val TARGET_STATUS  = "TARGET_STATUS"
+  @js.native
+  sealed trait ListTargetsFilterName extends js.Any
+  object ListTargetsFilterName extends js.Object {
+    val TARGET_TYPE    = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
+    val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
+    val TARGET_STATUS  = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
 
     val values = js.Object.freeze(js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS))
   }
@@ -579,10 +577,11 @@ package codestarnotifications {
       __obj.asInstanceOf[ListTargetsResult]
     }
   }
-
-  object NotificationRuleStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait NotificationRuleStatus extends js.Any
+  object NotificationRuleStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[NotificationRuleStatus]
+    val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -707,13 +706,14 @@ package codestarnotifications {
       __obj.asInstanceOf[Target]
     }
   }
-
-  object TargetStatusEnum {
-    val PENDING     = "PENDING"
-    val ACTIVE      = "ACTIVE"
-    val UNREACHABLE = "UNREACHABLE"
-    val INACTIVE    = "INACTIVE"
-    val DEACTIVATED = "DEACTIVATED"
+  @js.native
+  sealed trait TargetStatus extends js.Any
+  object TargetStatus extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[TargetStatus]
+    val ACTIVE      = "ACTIVE".asInstanceOf[TargetStatus]
+    val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
+    val INACTIVE    = "INACTIVE".asInstanceOf[TargetStatus]
+    val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED))
   }

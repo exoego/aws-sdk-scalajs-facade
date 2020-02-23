@@ -20,7 +20,6 @@ package object importexport {
   type IsTruncated           = Boolean
   type JobId                 = String
   type JobIdList             = js.Array[GenericString]
-  type JobType               = String
   type JobsList              = js.Array[Job]
   type LocationCode          = String
   type LocationMessage       = String
@@ -498,9 +497,11 @@ package importexport {
   /**
     * Specifies whether the job to initiate is an import or export job.
     */
-  object JobTypeEnum {
-    val Import = "Import"
-    val Export = "Export"
+  @js.native
+  sealed trait JobType extends js.Any
+  object JobType extends js.Object {
+    val Import = "Import".asInstanceOf[JobType]
+    val Export = "Export".asInstanceOf[JobType]
 
     val values = js.Object.freeze(js.Array(Import, Export))
   }

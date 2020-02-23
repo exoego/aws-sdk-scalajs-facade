@@ -9,39 +9,26 @@ import facade.amazonaws._
 package object comprehendmedical {
   type AnyLengthString                         = String
   type AttributeList                           = js.Array[Attribute]
-  type AttributeName                           = String
   type BoundedLengthString                     = String
   type ClientRequestTokenString                = String
   type ComprehendMedicalAsyncJobPropertiesList = js.Array[ComprehendMedicalAsyncJobProperties]
   type EntityList                              = js.Array[Entity]
-  type EntitySubType                           = String
-  type EntityType                              = String
   type ICD10CMAttributeList                    = js.Array[ICD10CMAttribute]
-  type ICD10CMAttributeType                    = String
   type ICD10CMConceptList                      = js.Array[ICD10CMConcept]
-  type ICD10CMEntityCategory                   = String
   type ICD10CMEntityList                       = js.Array[ICD10CMEntity]
-  type ICD10CMEntityType                       = String
   type ICD10CMTraitList                        = js.Array[ICD10CMTrait]
-  type ICD10CMTraitName                        = String
   type IamRoleArn                              = String
   type JobId                                   = String
   type JobName                                 = String
-  type JobStatus                               = String
   type KMSKey                                  = String
-  type LanguageCode                            = String
   type ManifestFilePath                        = String
   type MaxResultsInteger                       = Int
   type ModelVersion                            = String
   type OntologyLinkingBoundedLengthString      = String
   type RxNormAttributeList                     = js.Array[RxNormAttribute]
-  type RxNormAttributeType                     = String
   type RxNormConceptList                       = js.Array[RxNormConcept]
-  type RxNormEntityCategory                    = String
   type RxNormEntityList                        = js.Array[RxNormEntity]
-  type RxNormEntityType                        = String
   type RxNormTraitList                         = js.Array[RxNormTrait]
-  type RxNormTraitName                         = String
   type S3Bucket                                = String
   type S3Key                                   = String
   type Timestamp                               = js.Date
@@ -153,12 +140,13 @@ package comprehendmedical {
       __obj.asInstanceOf[Attribute]
     }
   }
-
-  object AttributeNameEnum {
-    val SIGN      = "SIGN"
-    val SYMPTOM   = "SYMPTOM"
-    val DIAGNOSIS = "DIAGNOSIS"
-    val NEGATION  = "NEGATION"
+  @js.native
+  sealed trait AttributeName extends js.Any
+  object AttributeName extends js.Object {
+    val SIGN      = "SIGN".asInstanceOf[AttributeName]
+    val SYMPTOM   = "SYMPTOM".asInstanceOf[AttributeName]
+    val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
+    val NEGATION  = "NEGATION".asInstanceOf[AttributeName]
 
     val values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
   }
@@ -495,36 +483,37 @@ package comprehendmedical {
       __obj.asInstanceOf[Entity]
     }
   }
-
-  object EntitySubTypeEnum {
-    val NAME              = "NAME"
-    val DOSAGE            = "DOSAGE"
-    val ROUTE_OR_MODE     = "ROUTE_OR_MODE"
-    val FORM              = "FORM"
-    val FREQUENCY         = "FREQUENCY"
-    val DURATION          = "DURATION"
-    val GENERIC_NAME      = "GENERIC_NAME"
-    val BRAND_NAME        = "BRAND_NAME"
-    val STRENGTH          = "STRENGTH"
-    val RATE              = "RATE"
-    val ACUITY            = "ACUITY"
-    val TEST_NAME         = "TEST_NAME"
-    val TEST_VALUE        = "TEST_VALUE"
-    val TEST_UNITS        = "TEST_UNITS"
-    val PROCEDURE_NAME    = "PROCEDURE_NAME"
-    val TREATMENT_NAME    = "TREATMENT_NAME"
-    val DATE              = "DATE"
-    val AGE               = "AGE"
-    val CONTACT_POINT     = "CONTACT_POINT"
-    val EMAIL             = "EMAIL"
-    val IDENTIFIER        = "IDENTIFIER"
-    val URL               = "URL"
-    val ADDRESS           = "ADDRESS"
-    val PROFESSION        = "PROFESSION"
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE"
-    val DIRECTION         = "DIRECTION"
-    val QUALITY           = "QUALITY"
-    val QUANTITY          = "QUANTITY"
+  @js.native
+  sealed trait EntitySubType extends js.Any
+  object EntitySubType extends js.Object {
+    val NAME              = "NAME".asInstanceOf[EntitySubType]
+    val DOSAGE            = "DOSAGE".asInstanceOf[EntitySubType]
+    val ROUTE_OR_MODE     = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
+    val FORM              = "FORM".asInstanceOf[EntitySubType]
+    val FREQUENCY         = "FREQUENCY".asInstanceOf[EntitySubType]
+    val DURATION          = "DURATION".asInstanceOf[EntitySubType]
+    val GENERIC_NAME      = "GENERIC_NAME".asInstanceOf[EntitySubType]
+    val BRAND_NAME        = "BRAND_NAME".asInstanceOf[EntitySubType]
+    val STRENGTH          = "STRENGTH".asInstanceOf[EntitySubType]
+    val RATE              = "RATE".asInstanceOf[EntitySubType]
+    val ACUITY            = "ACUITY".asInstanceOf[EntitySubType]
+    val TEST_NAME         = "TEST_NAME".asInstanceOf[EntitySubType]
+    val TEST_VALUE        = "TEST_VALUE".asInstanceOf[EntitySubType]
+    val TEST_UNITS        = "TEST_UNITS".asInstanceOf[EntitySubType]
+    val PROCEDURE_NAME    = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
+    val TREATMENT_NAME    = "TREATMENT_NAME".asInstanceOf[EntitySubType]
+    val DATE              = "DATE".asInstanceOf[EntitySubType]
+    val AGE               = "AGE".asInstanceOf[EntitySubType]
+    val CONTACT_POINT     = "CONTACT_POINT".asInstanceOf[EntitySubType]
+    val EMAIL             = "EMAIL".asInstanceOf[EntitySubType]
+    val IDENTIFIER        = "IDENTIFIER".asInstanceOf[EntitySubType]
+    val URL               = "URL".asInstanceOf[EntitySubType]
+    val ADDRESS           = "ADDRESS".asInstanceOf[EntitySubType]
+    val PROFESSION        = "PROFESSION".asInstanceOf[EntitySubType]
+    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
+    val DIRECTION         = "DIRECTION".asInstanceOf[EntitySubType]
+    val QUALITY           = "QUALITY".asInstanceOf[EntitySubType]
+    val QUANTITY          = "QUANTITY".asInstanceOf[EntitySubType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -559,13 +548,14 @@ package comprehendmedical {
       )
     )
   }
-
-  object EntityTypeEnum {
-    val MEDICATION                   = "MEDICATION"
-    val MEDICAL_CONDITION            = "MEDICAL_CONDITION"
-    val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION"
-    val TEST_TREATMENT_PROCEDURE     = "TEST_TREATMENT_PROCEDURE"
-    val ANATOMY                      = "ANATOMY"
+  @js.native
+  sealed trait EntityType extends js.Any
+  object EntityType extends js.Object {
+    val MEDICATION                   = "MEDICATION".asInstanceOf[EntityType]
+    val MEDICAL_CONDITION            = "MEDICAL_CONDITION".asInstanceOf[EntityType]
+    val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
+    val TEST_TREATMENT_PROCEDURE     = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
+    val ANATOMY                      = "ANATOMY".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(
       js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY)
@@ -611,13 +601,14 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMAttribute]
     }
   }
-
-  object ICD10CMAttributeTypeEnum {
-    val ACUITY            = "ACUITY"
-    val DIRECTION         = "DIRECTION"
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE"
-    val QUALITY           = "QUALITY"
-    val QUANTITY          = "QUANTITY"
+  @js.native
+  sealed trait ICD10CMAttributeType extends js.Any
+  object ICD10CMAttributeType extends js.Object {
+    val ACUITY            = "ACUITY".asInstanceOf[ICD10CMAttributeType]
+    val DIRECTION         = "DIRECTION".asInstanceOf[ICD10CMAttributeType]
+    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
+    val QUALITY           = "QUALITY".asInstanceOf[ICD10CMAttributeType]
+    val QUANTITY          = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
 
     val values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
   }
@@ -692,15 +683,17 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMEntity]
     }
   }
-
-  object ICD10CMEntityCategoryEnum {
-    val MEDICAL_CONDITION = "MEDICAL_CONDITION"
+  @js.native
+  sealed trait ICD10CMEntityCategory extends js.Any
+  object ICD10CMEntityCategory extends js.Object {
+    val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
 
     val values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
   }
-
-  object ICD10CMEntityTypeEnum {
-    val DX_NAME = "DX_NAME"
+  @js.native
+  sealed trait ICD10CMEntityType extends js.Any
+  object ICD10CMEntityType extends js.Object {
+    val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
 
     val values = js.Object.freeze(js.Array(DX_NAME))
   }
@@ -726,12 +719,13 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMTrait]
     }
   }
-
-  object ICD10CMTraitNameEnum {
-    val NEGATION  = "NEGATION"
-    val DIAGNOSIS = "DIAGNOSIS"
-    val SIGN      = "SIGN"
-    val SYMPTOM   = "SYMPTOM"
+  @js.native
+  sealed trait ICD10CMTraitName extends js.Any
+  object ICD10CMTraitName extends js.Object {
+    val NEGATION  = "NEGATION".asInstanceOf[ICD10CMTraitName]
+    val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
+    val SIGN      = "SIGN".asInstanceOf[ICD10CMTraitName]
+    val SYMPTOM   = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
 
     val values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
   }
@@ -843,22 +837,24 @@ package comprehendmedical {
       __obj.asInstanceOf[InputDataConfig]
     }
   }
-
-  object JobStatusEnum {
-    val SUBMITTED       = "SUBMITTED"
-    val IN_PROGRESS     = "IN_PROGRESS"
-    val COMPLETED       = "COMPLETED"
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS"
-    val FAILED          = "FAILED"
-    val STOP_REQUESTED  = "STOP_REQUESTED"
-    val STOPPED         = "STOPPED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val SUBMITTED       = "SUBMITTED".asInstanceOf[JobStatus]
+    val IN_PROGRESS     = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val COMPLETED       = "COMPLETED".asInstanceOf[JobStatus]
+    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
+    val FAILED          = "FAILED".asInstanceOf[JobStatus]
+    val STOP_REQUESTED  = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    val STOPPED         = "STOPPED".asInstanceOf[JobStatus]
 
     val values =
       js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
   }
-
-  object LanguageCodeEnum {
-    val en = "en"
+  @js.native
+  sealed trait LanguageCode extends js.Any
+  object LanguageCode extends js.Object {
+    val en = "en".asInstanceOf[LanguageCode]
 
     val values = js.Object.freeze(js.Array(en))
   }
@@ -1012,15 +1008,16 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormAttribute]
     }
   }
-
-  object RxNormAttributeTypeEnum {
-    val DOSAGE        = "DOSAGE"
-    val DURATION      = "DURATION"
-    val FORM          = "FORM"
-    val FREQUENCY     = "FREQUENCY"
-    val RATE          = "RATE"
-    val ROUTE_OR_MODE = "ROUTE_OR_MODE"
-    val STRENGTH      = "STRENGTH"
+  @js.native
+  sealed trait RxNormAttributeType extends js.Any
+  object RxNormAttributeType extends js.Object {
+    val DOSAGE        = "DOSAGE".asInstanceOf[RxNormAttributeType]
+    val DURATION      = "DURATION".asInstanceOf[RxNormAttributeType]
+    val FORM          = "FORM".asInstanceOf[RxNormAttributeType]
+    val FREQUENCY     = "FREQUENCY".asInstanceOf[RxNormAttributeType]
+    val RATE          = "RATE".asInstanceOf[RxNormAttributeType]
+    val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
+    val STRENGTH      = "STRENGTH".asInstanceOf[RxNormAttributeType]
 
     val values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
   }
@@ -1095,16 +1092,18 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormEntity]
     }
   }
-
-  object RxNormEntityCategoryEnum {
-    val MEDICATION = "MEDICATION"
+  @js.native
+  sealed trait RxNormEntityCategory extends js.Any
+  object RxNormEntityCategory extends js.Object {
+    val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
 
     val values = js.Object.freeze(js.Array(MEDICATION))
   }
-
-  object RxNormEntityTypeEnum {
-    val BRAND_NAME   = "BRAND_NAME"
-    val GENERIC_NAME = "GENERIC_NAME"
+  @js.native
+  sealed trait RxNormEntityType extends js.Any
+  object RxNormEntityType extends js.Object {
+    val BRAND_NAME   = "BRAND_NAME".asInstanceOf[RxNormEntityType]
+    val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
 
     val values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
   }
@@ -1130,9 +1129,10 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormTrait]
     }
   }
-
-  object RxNormTraitNameEnum {
-    val NEGATION = "NEGATION"
+  @js.native
+  sealed trait RxNormTraitName extends js.Any
+  object RxNormTraitName extends js.Object {
+    val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
     val values = js.Object.freeze(js.Array(NEGATION))
   }

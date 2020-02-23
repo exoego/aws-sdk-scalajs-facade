@@ -10,7 +10,6 @@ package object servicequotas {
   type AwsRegion                                        = String
   type CustomerServiceEngagementId                      = String
   type DateTime                                         = js.Date
-  type ErrorCode                                        = String
   type ErrorMessage                                     = String
   type GlobalQuota                                      = Boolean
   type MaxResults                                       = Int
@@ -18,7 +17,6 @@ package object servicequotas {
   type MetricDimensionValue                             = String
   type MetricDimensionsMapDefinition                    = js.Dictionary[MetricDimensionValue]
   type NextToken                                        = String
-  type PeriodUnit                                       = String
   type PeriodValue                                      = Int
   type QuotaAdjustable                                  = Boolean
   type QuotaArn                                         = String
@@ -29,7 +27,6 @@ package object servicequotas {
   type QuotaUnit                                        = String
   type QuotaValue                                       = Double
   type RequestId                                        = String
-  type RequestStatus                                    = String
   type RequestedServiceQuotaChangeHistoryListDefinition = js.Array[RequestedServiceQuotaChange]
   type Requester                                        = String
   type ServiceCode                                      = String
@@ -37,7 +34,6 @@ package object servicequotas {
   type ServiceName                                      = String
   type ServiceQuotaIncreaseRequestInTemplateList        = js.Array[ServiceQuotaIncreaseRequestInTemplate]
   type ServiceQuotaListDefinition                       = js.Array[ServiceQuota]
-  type ServiceQuotaTemplateAssociationStatus            = String
   type Statistic                                        = String
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
@@ -236,12 +232,13 @@ package servicequotas {
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
     }
   }
-
-  object ErrorCodeEnum {
-    val DEPENDENCY_ACCESS_DENIED_ERROR    = "DEPENDENCY_ACCESS_DENIED_ERROR"
-    val DEPENDENCY_THROTTLING_ERROR       = "DEPENDENCY_THROTTLING_ERROR"
-    val DEPENDENCY_SERVICE_ERROR          = "DEPENDENCY_SERVICE_ERROR"
-    val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val DEPENDENCY_ACCESS_DENIED_ERROR    = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
+    val DEPENDENCY_THROTTLING_ERROR       = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
+    val DEPENDENCY_SERVICE_ERROR          = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
+    val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -748,15 +745,16 @@ package servicequotas {
       __obj.asInstanceOf[MetricInfo]
     }
   }
-
-  object PeriodUnitEnum {
-    val MICROSECOND = "MICROSECOND"
-    val MILLISECOND = "MILLISECOND"
-    val SECOND      = "SECOND"
-    val MINUTE      = "MINUTE"
-    val HOUR        = "HOUR"
-    val DAY         = "DAY"
-    val WEEK        = "WEEK"
+  @js.native
+  sealed trait PeriodUnit extends js.Any
+  object PeriodUnit extends js.Object {
+    val MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
+    val MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
+    val SECOND      = "SECOND".asInstanceOf[PeriodUnit]
+    val MINUTE      = "MINUTE".asInstanceOf[PeriodUnit]
+    val HOUR        = "HOUR".asInstanceOf[PeriodUnit]
+    val DAY         = "DAY".asInstanceOf[PeriodUnit]
+    val WEEK        = "WEEK".asInstanceOf[PeriodUnit]
 
     val values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
   }
@@ -867,13 +865,14 @@ package servicequotas {
       __obj.asInstanceOf[RequestServiceQuotaIncreaseResponse]
     }
   }
-
-  object RequestStatusEnum {
-    val PENDING     = "PENDING"
-    val CASE_OPENED = "CASE_OPENED"
-    val APPROVED    = "APPROVED"
-    val DENIED      = "DENIED"
-    val CASE_CLOSED = "CASE_CLOSED"
+  @js.native
+  sealed trait RequestStatus extends js.Any
+  object RequestStatus extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[RequestStatus]
+    val CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
+    val APPROVED    = "APPROVED".asInstanceOf[RequestStatus]
+    val DENIED      = "DENIED".asInstanceOf[RequestStatus]
+    val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
   }
@@ -1049,10 +1048,11 @@ package servicequotas {
       __obj.asInstanceOf[ServiceQuotaIncreaseRequestInTemplate]
     }
   }
-
-  object ServiceQuotaTemplateAssociationStatusEnum {
-    val ASSOCIATED    = "ASSOCIATED"
-    val DISASSOCIATED = "DISASSOCIATED"
+  @js.native
+  sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
+  object ServiceQuotaTemplateAssociationStatus extends js.Object {
+    val ASSOCIATED    = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
+    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
   }

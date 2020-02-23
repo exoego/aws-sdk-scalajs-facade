@@ -7,13 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kafka {
-  type BrokerAZDistribution          = String
-  type ClientBroker                  = String
-  type ClusterState                  = String
-  type EnhancedMonitoring            = String
-  type KafkaVersionStatus            = String
   type MaxResults                    = Int
-  type NodeType                      = String
   type __blob                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type __boolean                     = Boolean
   type __double                      = Double
@@ -130,8 +124,10 @@ package kafka {
     *          Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
     *
     */
-  object BrokerAZDistributionEnum {
-    val DEFAULT = "DEFAULT"
+  @js.native
+  sealed trait BrokerAZDistribution extends js.Any
+  object BrokerAZDistribution extends js.Object {
+    val DEFAULT = "DEFAULT".asInstanceOf[BrokerAZDistribution]
 
     val values = js.Object.freeze(js.Array(DEFAULT))
   }
@@ -282,10 +278,12 @@ package kafka {
     *             Client-broker encryption in transit setting.
     *
     */
-  object ClientBrokerEnum {
-    val TLS           = "TLS"
-    val TLS_PLAINTEXT = "TLS_PLAINTEXT"
-    val PLAINTEXT     = "PLAINTEXT"
+  @js.native
+  sealed trait ClientBroker extends js.Any
+  object ClientBroker extends js.Object {
+    val TLS           = "TLS".asInstanceOf[ClientBroker]
+    val TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
+    val PLAINTEXT     = "PLAINTEXT".asInstanceOf[ClientBroker]
 
     val values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
   }
@@ -408,12 +406,14 @@ package kafka {
     *             The state of a Kafka cluster.
     *
     */
-  object ClusterStateEnum {
-    val ACTIVE   = "ACTIVE"
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait ClusterState extends js.Any
+  object ClusterState extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[ClusterState]
+    val CREATING = "CREATING".asInstanceOf[ClusterState]
+    val UPDATING = "UPDATING".asInstanceOf[ClusterState]
+    val DELETING = "DELETING".asInstanceOf[ClusterState]
+    val FAILED   = "FAILED".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
   }
@@ -925,10 +925,12 @@ package kafka {
     *             Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
     *
     */
-  object EnhancedMonitoringEnum {
-    val DEFAULT              = "DEFAULT"
-    val PER_BROKER           = "PER_BROKER"
-    val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER"
+  @js.native
+  sealed trait EnhancedMonitoring extends js.Any
+  object EnhancedMonitoring extends js.Object {
+    val DEFAULT              = "DEFAULT".asInstanceOf[EnhancedMonitoring]
+    val PER_BROKER           = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
+    val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
 
     val values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
   }
@@ -1055,10 +1057,11 @@ package kafka {
       __obj.asInstanceOf[KafkaVersion]
     }
   }
-
-  object KafkaVersionStatusEnum {
-    val ACTIVE     = "ACTIVE"
-    val DEPRECATED = "DEPRECATED"
+  @js.native
+  sealed trait KafkaVersionStatus extends js.Any
+  object KafkaVersionStatus extends js.Object {
+    val ACTIVE     = "ACTIVE".asInstanceOf[KafkaVersionStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
   }
@@ -1458,8 +1461,10 @@ package kafka {
     *             The broker or Zookeeper node.
     *
     */
-  object NodeTypeEnum {
-    val BROKER = "BROKER"
+  @js.native
+  sealed trait NodeType extends js.Any
+  object NodeType extends js.Object {
+    val BROKER = "BROKER".asInstanceOf[NodeType]
 
     val values = js.Object.freeze(js.Array(BROKER))
   }

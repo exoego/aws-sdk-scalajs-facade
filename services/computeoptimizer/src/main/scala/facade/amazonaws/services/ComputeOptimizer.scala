@@ -17,11 +17,9 @@ package object computeoptimizer {
   type Code                                  = String
   type CurrentInstanceType                   = String
   type DesiredCapacity                       = Int
-  type FilterName                            = String
   type FilterValue                           = String
   type FilterValues                          = js.Array[FilterValue]
   type Filters                               = js.Array[Filter]
-  type Finding                               = String
   type GetRecommendationErrors               = js.Array[GetRecommendationError]
   type Identifier                            = String
   type IncludeMemberAccounts                 = Boolean
@@ -36,8 +34,6 @@ package object computeoptimizer {
   type MaxSize                               = Int
   type MemberAccountsEnrolled                = Boolean
   type Message                               = String
-  type MetricName                            = String
-  type MetricStatistic                       = String
   type MetricValue                           = Double
   type MetricValues                          = js.Array[MetricValue]
   type MinSize                               = Int
@@ -49,12 +45,10 @@ package object computeoptimizer {
   type Rank                                  = Int
   type RecommendationOptions                 = js.Array[InstanceRecommendationOption]
   type RecommendationSourceArn               = String
-  type RecommendationSourceType              = String
   type RecommendationSources                 = js.Array[RecommendationSource]
   type RecommendationSummaries               = js.Array[RecommendationSummary]
   type RecommendedInstanceType               = String
   type RecommendedOptionProjectedMetrics     = js.Array[RecommendedOptionProjectedMetric]
-  type Status                                = String
   type StatusReason                          = String
   type Summaries                             = js.Array[Summary]
   type SummaryValue                          = Double
@@ -231,19 +225,21 @@ package computeoptimizer {
       __obj.asInstanceOf[Filter]
     }
   }
-
-  object FilterNameEnum {
-    val Finding                  = "Finding"
-    val RecommendationSourceType = "RecommendationSourceType"
+  @js.native
+  sealed trait FilterName extends js.Any
+  object FilterName extends js.Object {
+    val Finding                  = "Finding".asInstanceOf[FilterName]
+    val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
     val values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
   }
-
-  object FindingEnum {
-    val Underprovisioned = "Underprovisioned"
-    val Overprovisioned  = "Overprovisioned"
-    val Optimized        = "Optimized"
-    val NotOptimized     = "NotOptimized"
+  @js.native
+  sealed trait Finding extends js.Any
+  object Finding extends js.Object {
+    val Underprovisioned = "Underprovisioned".asInstanceOf[Finding]
+    val Overprovisioned  = "Overprovisioned".asInstanceOf[Finding]
+    val Optimized        = "Optimized".asInstanceOf[Finding]
+    val NotOptimized     = "NotOptimized".asInstanceOf[Finding]
 
     val values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
   }
@@ -575,17 +571,19 @@ package computeoptimizer {
       __obj.asInstanceOf[InstanceRecommendationOption]
     }
   }
-
-  object MetricNameEnum {
-    val Cpu    = "Cpu"
-    val Memory = "Memory"
+  @js.native
+  sealed trait MetricName extends js.Any
+  object MetricName extends js.Object {
+    val Cpu    = "Cpu".asInstanceOf[MetricName]
+    val Memory = "Memory".asInstanceOf[MetricName]
 
     val values = js.Object.freeze(js.Array(Cpu, Memory))
   }
-
-  object MetricStatisticEnum {
-    val Maximum = "Maximum"
-    val Average = "Average"
+  @js.native
+  sealed trait MetricStatistic extends js.Any
+  object MetricStatistic extends js.Object {
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Maximum, Average))
   }
@@ -636,10 +634,11 @@ package computeoptimizer {
       __obj.asInstanceOf[RecommendationSource]
     }
   }
-
-  object RecommendationSourceTypeEnum {
-    val Ec2Instance      = "Ec2Instance"
-    val AutoScalingGroup = "AutoScalingGroup"
+  @js.native
+  sealed trait RecommendationSourceType extends js.Any
+  object RecommendationSourceType extends js.Object {
+    val Ec2Instance      = "Ec2Instance".asInstanceOf[RecommendationSourceType]
+    val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
 
     val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
   }
@@ -695,12 +694,13 @@ package computeoptimizer {
       __obj.asInstanceOf[RecommendedOptionProjectedMetric]
     }
   }
-
-  object StatusEnum {
-    val Active   = "Active"
-    val Inactive = "Inactive"
-    val Pending  = "Pending"
-    val Failed   = "Failed"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val Active   = "Active".asInstanceOf[Status]
+    val Inactive = "Inactive".asInstanceOf[Status]
+    val Pending  = "Pending".asInstanceOf[Status]
+    val Failed   = "Failed".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
   }

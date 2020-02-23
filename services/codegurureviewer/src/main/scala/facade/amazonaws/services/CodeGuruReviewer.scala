@@ -16,9 +16,7 @@ package object codegurureviewer {
   type NextToken                      = String
   type Owner                          = String
   type Owners                         = js.Array[Owner]
-  type ProviderType                   = String
   type ProviderTypes                  = js.Array[ProviderType]
-  type RepositoryAssociationState     = String
   type RepositoryAssociationStates    = js.Array[RepositoryAssociationState]
   type RepositoryAssociationSummaries = js.Array[RepositoryAssociationSummary]
   type StateReason                    = String
@@ -234,10 +232,11 @@ package codegurureviewer {
       __obj.asInstanceOf[ListRepositoryAssociationsResponse]
     }
   }
-
-  object ProviderTypeEnum {
-    val CodeCommit = "CodeCommit"
-    val GitHub     = "GitHub"
+  @js.native
+  sealed trait ProviderType extends js.Any
+  object ProviderType extends js.Object {
+    val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
+    val GitHub     = "GitHub".asInstanceOf[ProviderType]
 
     val values = js.Object.freeze(js.Array(CodeCommit, GitHub))
   }
@@ -303,12 +302,13 @@ package codegurureviewer {
       __obj.asInstanceOf[RepositoryAssociation]
     }
   }
-
-  object RepositoryAssociationStateEnum {
-    val Associated     = "Associated"
-    val Associating    = "Associating"
-    val Failed         = "Failed"
-    val Disassociating = "Disassociating"
+  @js.native
+  sealed trait RepositoryAssociationState extends js.Any
+  object RepositoryAssociationState extends js.Object {
+    val Associated     = "Associated".asInstanceOf[RepositoryAssociationState]
+    val Associating    = "Associating".asInstanceOf[RepositoryAssociationState]
+    val Failed         = "Failed".asInstanceOf[RepositoryAssociationState]
+    val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
     val values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
   }

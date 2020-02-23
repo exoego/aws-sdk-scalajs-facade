@@ -7,17 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object machinelearning {
-  type Algorithm                       = String
   type AwsUserArn                      = String
-  type BatchPredictionFilterVariable   = String
   type BatchPredictions                = js.Array[BatchPrediction]
   type ComparatorValue                 = String
   type ComputeStatistics               = Boolean
   type DataRearrangement               = String
   type DataSchema                      = String
-  type DataSourceFilterVariable        = String
   type DataSources                     = js.Array[DataSource]
-  type DetailsAttributes               = String
   type DetailsMap                      = js.Dictionary[DetailsValue]
   type DetailsValue                    = String
   type EDPPipelineId                   = String
@@ -28,18 +24,14 @@ package object machinelearning {
   type EDPSubnetId                     = String
   type EntityId                        = String
   type EntityName                      = String
-  type EntityStatus                    = String
   type EpochTime                       = js.Date
   type ErrorCode                       = Int
   type ErrorMessage                    = String
-  type EvaluationFilterVariable        = String
   type Evaluations                     = js.Array[Evaluation]
   type IntegerType                     = Int
   type Label                           = String
   type LongType                        = Double
-  type MLModelFilterVariable           = String
   type MLModelName                     = String
-  type MLModelType                     = String
   type MLModels                        = js.Array[MLModel]
   type Message                         = String
   type PageLimit                       = Int
@@ -52,7 +44,6 @@ package object machinelearning {
   type RDSDatabaseUsername             = String
   type RDSInstanceIdentifier           = String
   type RDSSelectSqlQuery               = String
-  type RealtimeEndpointStatus          = String
   type Recipe                          = String
   type Record                          = js.Dictionary[VariableValue]
   type RedshiftClusterIdentifier       = String
@@ -65,13 +56,11 @@ package object machinelearning {
   type ScoreThreshold                  = Float
   type ScoreValue                      = Float
   type ScoreValuePerLabelMap           = js.Dictionary[ScoreValue]
-  type SortOrder                       = String
   type StringType                      = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagList                         = js.Array[Tag]
   type TagValue                        = String
-  type TaggableResourceType            = String
   type TrainingParameters              = js.Dictionary[StringType]
   type VariableName                    = String
   type VariableValue                   = String
@@ -235,8 +224,10 @@ package machinelearning {
     * * <code>SGD</code> - Stochastic Gradient Descent.
     *  * <code>RandomForest</code> - Random forest of decision trees.
     */
-  object AlgorithmEnum {
-    val sgd = "sgd"
+  @js.native
+  sealed trait Algorithm extends js.Any
+  object Algorithm extends js.Object {
+    val sgd = "sgd".asInstanceOf[Algorithm]
 
     val values = js.Object.freeze(js.Array(sgd))
   }
@@ -318,15 +309,17 @@ package machinelearning {
     *  * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.
     *  * <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
     */
-  object BatchPredictionFilterVariableEnum {
-    val CreatedAt     = "CreatedAt"
-    val LastUpdatedAt = "LastUpdatedAt"
-    val Status        = "Status"
-    val Name          = "Name"
-    val IAMUser       = "IAMUser"
-    val MLModelId     = "MLModelId"
-    val DataSourceId  = "DataSourceId"
-    val DataURI       = "DataURI"
+  @js.native
+  sealed trait BatchPredictionFilterVariable extends js.Any
+  object BatchPredictionFilterVariable extends js.Object {
+    val CreatedAt     = "CreatedAt".asInstanceOf[BatchPredictionFilterVariable]
+    val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[BatchPredictionFilterVariable]
+    val Status        = "Status".asInstanceOf[BatchPredictionFilterVariable]
+    val Name          = "Name".asInstanceOf[BatchPredictionFilterVariable]
+    val IAMUser       = "IAMUser".asInstanceOf[BatchPredictionFilterVariable]
+    val MLModelId     = "MLModelId".asInstanceOf[BatchPredictionFilterVariable]
+    val DataSourceId  = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
+    val DataURI       = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
 
     val values =
       js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
@@ -755,13 +748,15 @@ package machinelearning {
     *  * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
     * '''Note:'''<title>Note</title> The variable names should match the variable names in the <code>DataSource</code>.
     */
-  object DataSourceFilterVariableEnum {
-    val CreatedAt      = "CreatedAt"
-    val LastUpdatedAt  = "LastUpdatedAt"
-    val Status         = "Status"
-    val Name           = "Name"
-    val DataLocationS3 = "DataLocationS3"
-    val IAMUser        = "IAMUser"
+  @js.native
+  sealed trait DataSourceFilterVariable extends js.Any
+  object DataSourceFilterVariable extends js.Object {
+    val CreatedAt      = "CreatedAt".asInstanceOf[DataSourceFilterVariable]
+    val LastUpdatedAt  = "LastUpdatedAt".asInstanceOf[DataSourceFilterVariable]
+    val Status         = "Status".asInstanceOf[DataSourceFilterVariable]
+    val Name           = "Name".asInstanceOf[DataSourceFilterVariable]
+    val DataLocationS3 = "DataLocationS3".asInstanceOf[DataSourceFilterVariable]
+    val IAMUser        = "IAMUser".asInstanceOf[DataSourceFilterVariable]
 
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser))
   }
@@ -1325,9 +1320,11 @@ package machinelearning {
   /**
     * Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
     */
-  object DetailsAttributesEnum {
-    val PredictiveModelType = "PredictiveModelType"
-    val Algorithm           = "Algorithm"
+  @js.native
+  sealed trait DetailsAttributes extends js.Any
+  object DetailsAttributes extends js.Object {
+    val PredictiveModelType = "PredictiveModelType".asInstanceOf[DetailsAttributes]
+    val Algorithm           = "Algorithm".asInstanceOf[DetailsAttributes]
 
     val values = js.Object.freeze(js.Array(PredictiveModelType, Algorithm))
   }
@@ -1340,12 +1337,14 @@ package machinelearning {
     *  * <code>COMPLETED</code>
     *  * <code>DELETED</code>
     */
-  object EntityStatusEnum {
-    val PENDING    = "PENDING"
-    val INPROGRESS = "INPROGRESS"
-    val FAILED     = "FAILED"
-    val COMPLETED  = "COMPLETED"
-    val DELETED    = "DELETED"
+  @js.native
+  sealed trait EntityStatus extends js.Any
+  object EntityStatus extends js.Object {
+    val PENDING    = "PENDING".asInstanceOf[EntityStatus]
+    val INPROGRESS = "INPROGRESS".asInstanceOf[EntityStatus]
+    val FAILED     = "FAILED".asInstanceOf[EntityStatus]
+    val COMPLETED  = "COMPLETED".asInstanceOf[EntityStatus]
+    val DELETED    = "DELETED".asInstanceOf[EntityStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED))
   }
@@ -1419,15 +1418,17 @@ package machinelearning {
     *  * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.
     *  * <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
     */
-  object EvaluationFilterVariableEnum {
-    val CreatedAt     = "CreatedAt"
-    val LastUpdatedAt = "LastUpdatedAt"
-    val Status        = "Status"
-    val Name          = "Name"
-    val IAMUser       = "IAMUser"
-    val MLModelId     = "MLModelId"
-    val DataSourceId  = "DataSourceId"
-    val DataURI       = "DataURI"
+  @js.native
+  sealed trait EvaluationFilterVariable extends js.Any
+  object EvaluationFilterVariable extends js.Object {
+    val CreatedAt     = "CreatedAt".asInstanceOf[EvaluationFilterVariable]
+    val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[EvaluationFilterVariable]
+    val Status        = "Status".asInstanceOf[EvaluationFilterVariable]
+    val Name          = "Name".asInstanceOf[EvaluationFilterVariable]
+    val IAMUser       = "IAMUser".asInstanceOf[EvaluationFilterVariable]
+    val MLModelId     = "MLModelId".asInstanceOf[EvaluationFilterVariable]
+    val DataSourceId  = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
+    val DataURI       = "DataURI".asInstanceOf[EvaluationFilterVariable]
 
     val values =
       js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
@@ -1914,18 +1915,19 @@ package machinelearning {
       __obj.asInstanceOf[MLModel]
     }
   }
-
-  object MLModelFilterVariableEnum {
-    val CreatedAt              = "CreatedAt"
-    val LastUpdatedAt          = "LastUpdatedAt"
-    val Status                 = "Status"
-    val Name                   = "Name"
-    val IAMUser                = "IAMUser"
-    val TrainingDataSourceId   = "TrainingDataSourceId"
-    val RealtimeEndpointStatus = "RealtimeEndpointStatus"
-    val MLModelType            = "MLModelType"
-    val Algorithm              = "Algorithm"
-    val TrainingDataURI        = "TrainingDataURI"
+  @js.native
+  sealed trait MLModelFilterVariable extends js.Any
+  object MLModelFilterVariable extends js.Object {
+    val CreatedAt              = "CreatedAt".asInstanceOf[MLModelFilterVariable]
+    val LastUpdatedAt          = "LastUpdatedAt".asInstanceOf[MLModelFilterVariable]
+    val Status                 = "Status".asInstanceOf[MLModelFilterVariable]
+    val Name                   = "Name".asInstanceOf[MLModelFilterVariable]
+    val IAMUser                = "IAMUser".asInstanceOf[MLModelFilterVariable]
+    val TrainingDataSourceId   = "TrainingDataSourceId".asInstanceOf[MLModelFilterVariable]
+    val RealtimeEndpointStatus = "RealtimeEndpointStatus".asInstanceOf[MLModelFilterVariable]
+    val MLModelType            = "MLModelType".asInstanceOf[MLModelFilterVariable]
+    val Algorithm              = "Algorithm".asInstanceOf[MLModelFilterVariable]
+    val TrainingDataURI        = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1942,11 +1944,12 @@ package machinelearning {
       )
     )
   }
-
-  object MLModelTypeEnum {
-    val REGRESSION = "REGRESSION"
-    val BINARY     = "BINARY"
-    val MULTICLASS = "MULTICLASS"
+  @js.native
+  sealed trait MLModelType extends js.Any
+  object MLModelType extends js.Object {
+    val REGRESSION = "REGRESSION".asInstanceOf[MLModelType]
+    val BINARY     = "BINARY".asInstanceOf[MLModelType]
+    val MULTICLASS = "MULTICLASS".asInstanceOf[MLModelType]
 
     val values = js.Object.freeze(js.Array(REGRESSION, BINARY, MULTICLASS))
   }
@@ -2214,12 +2217,13 @@ package machinelearning {
       __obj.asInstanceOf[RealtimeEndpointInfo]
     }
   }
-
-  object RealtimeEndpointStatusEnum {
-    val NONE     = "NONE"
-    val READY    = "READY"
-    val UPDATING = "UPDATING"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait RealtimeEndpointStatus extends js.Any
+  object RealtimeEndpointStatus extends js.Object {
+    val NONE     = "NONE".asInstanceOf[RealtimeEndpointStatus]
+    val READY    = "READY".asInstanceOf[RealtimeEndpointStatus]
+    val UPDATING = "UPDATING".asInstanceOf[RealtimeEndpointStatus]
+    val FAILED   = "FAILED".asInstanceOf[RealtimeEndpointStatus]
 
     val values = js.Object.freeze(js.Array(NONE, READY, UPDATING, FAILED))
   }
@@ -2380,9 +2384,11 @@ package machinelearning {
     * * <code>asc</code> - Present the information in ascending order (from A-Z).
     *  * <code>dsc</code> - Present the information in descending order (from Z-A).
     */
-  object SortOrderEnum {
-    val asc = "asc"
-    val dsc = "dsc"
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val asc = "asc".asInstanceOf[SortOrder]
+    val dsc = "dsc".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(asc, dsc))
   }
@@ -2413,12 +2419,13 @@ package machinelearning {
   trait TagLimitExceededExceptionException extends js.Object {
     val message: ErrorMessage
   }
-
-  object TaggableResourceTypeEnum {
-    val BatchPrediction = "BatchPrediction"
-    val DataSource      = "DataSource"
-    val Evaluation      = "Evaluation"
-    val MLModel         = "MLModel"
+  @js.native
+  sealed trait TaggableResourceType extends js.Any
+  object TaggableResourceType extends js.Object {
+    val BatchPrediction = "BatchPrediction".asInstanceOf[TaggableResourceType]
+    val DataSource      = "DataSource".asInstanceOf[TaggableResourceType]
+    val Evaluation      = "Evaluation".asInstanceOf[TaggableResourceType]
+    val MLModel         = "MLModel".asInstanceOf[TaggableResourceType]
 
     val values = js.Object.freeze(js.Array(BatchPrediction, DataSource, Evaluation, MLModel))
   }

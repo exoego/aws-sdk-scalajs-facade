@@ -11,39 +11,31 @@ package object ses {
   type AddressList                       = js.Array[Address]
   type AmazonResourceName                = String
   type ArrivalDate                       = js.Date
-  type BehaviorOnMXFailure               = String
   type BounceMessage                     = String
   type BounceSmtpReplyCode               = String
   type BounceStatusCode                  = String
-  type BounceType                        = String
   type BouncedRecipientInfoList          = js.Array[BouncedRecipientInfo]
   type BulkEmailDestinationList          = js.Array[BulkEmailDestination]
   type BulkEmailDestinationStatusList    = js.Array[BulkEmailDestinationStatus]
-  type BulkEmailStatus                   = String
   type Charset                           = String
   type Cidr                              = String
   type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
-  type ConfigurationSetAttribute         = String
   type ConfigurationSetAttributeList     = js.Array[ConfigurationSetAttribute]
   type ConfigurationSetName              = String
   type ConfigurationSets                 = js.Array[ConfigurationSet]
   type Counter                           = Double
-  type CustomMailFromStatus              = String
   type CustomRedirectDomain              = String
   type CustomVerificationEmailTemplates  = js.Array[CustomVerificationEmailTemplate]
   type DefaultDimensionValue             = String
   type DiagnosticCode                    = String
   type DimensionName                     = String
-  type DimensionValueSource              = String
   type DkimAttributes                    = js.Dictionary[IdentityDkimAttributes]
   type Domain                            = String
-  type DsnAction                         = String
   type DsnStatus                         = String
   type Enabled                           = Boolean
   type Error                             = String
   type EventDestinationName              = String
   type EventDestinations                 = js.Array[EventDestination]
-  type EventType                         = String
   type EventTypes                        = js.Array[EventType]
   type Explanation                       = String
   type ExtensionFieldList                = js.Array[ExtensionField]
@@ -56,8 +48,6 @@ package object ses {
   type HtmlPart                          = String
   type Identity                          = String
   type IdentityList                      = js.Array[Identity]
-  type IdentityType                      = String
-  type InvocationType                    = String
   type LastAttemptDate                   = js.Date
   type LastFreshStart                    = js.Date
   type MailFromDomainAttributes          = js.Dictionary[IdentityMailFromDomainAttributes]
@@ -74,7 +64,6 @@ package object ses {
   type NextToken                         = String
   type NotificationAttributes            = js.Dictionary[IdentityNotificationAttributes]
   type NotificationTopic                 = String
-  type NotificationType                  = String
   type Policy                            = String
   type PolicyMap                         = js.Dictionary[Policy]
   type PolicyName                        = String
@@ -83,7 +72,6 @@ package object ses {
   type ReceiptActionsList                = js.Array[ReceiptAction]
   type ReceiptFilterList                 = js.Array[ReceiptFilter]
   type ReceiptFilterName                 = String
-  type ReceiptFilterPolicy               = String
   type ReceiptRuleName                   = String
   type ReceiptRuleNamesList              = js.Array[ReceiptRuleName]
   type ReceiptRuleSetName                = String
@@ -96,10 +84,8 @@ package object ses {
   type ReportingMta                      = String
   type S3BucketName                      = String
   type S3KeyPrefix                       = String
-  type SNSActionEncoding                 = String
   type SendDataPointList                 = js.Array[SendDataPoint]
   type SentLast24Hours                   = Double
-  type StopScope                         = String
   type Subject                           = String
   type SubjectPart                       = String
   type SuccessRedirectionURL             = String
@@ -109,9 +95,7 @@ package object ses {
   type TemplateName                      = String
   type TextPart                          = String
   type Timestamp                         = js.Date
-  type TlsPolicy                         = String
   type VerificationAttributes            = js.Dictionary[IdentityVerificationAttributes]
-  type VerificationStatus                = String
   type VerificationToken                 = String
   type VerificationTokenList             = js.Array[VerificationToken]
 
@@ -467,10 +451,11 @@ package ses {
       __obj.asInstanceOf[AddHeaderAction]
     }
   }
-
-  object BehaviorOnMXFailureEnum {
-    val UseDefaultValue = "UseDefaultValue"
-    val RejectMessage   = "RejectMessage"
+  @js.native
+  sealed trait BehaviorOnMXFailure extends js.Any
+  object BehaviorOnMXFailure extends js.Object {
+    val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
+    val RejectMessage   = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
 
     val values = js.Object.freeze(js.Array(UseDefaultValue, RejectMessage))
   }
@@ -530,14 +515,15 @@ package ses {
       __obj.asInstanceOf[BounceAction]
     }
   }
-
-  object BounceTypeEnum {
-    val DoesNotExist     = "DoesNotExist"
-    val MessageTooLarge  = "MessageTooLarge"
-    val ExceededQuota    = "ExceededQuota"
-    val ContentRejected  = "ContentRejected"
-    val Undefined        = "Undefined"
-    val TemporaryFailure = "TemporaryFailure"
+  @js.native
+  sealed trait BounceType extends js.Any
+  object BounceType extends js.Object {
+    val DoesNotExist     = "DoesNotExist".asInstanceOf[BounceType]
+    val MessageTooLarge  = "MessageTooLarge".asInstanceOf[BounceType]
+    val ExceededQuota    = "ExceededQuota".asInstanceOf[BounceType]
+    val ContentRejected  = "ContentRejected".asInstanceOf[BounceType]
+    val Undefined        = "Undefined".asInstanceOf[BounceType]
+    val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
 
     val values = js.Object.freeze(
       js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
@@ -626,22 +612,23 @@ package ses {
       __obj.asInstanceOf[BulkEmailDestinationStatus]
     }
   }
-
-  object BulkEmailStatusEnum {
-    val Success                       = "Success"
-    val MessageRejected               = "MessageRejected"
-    val MailFromDomainNotVerified     = "MailFromDomainNotVerified"
-    val ConfigurationSetDoesNotExist  = "ConfigurationSetDoesNotExist"
-    val TemplateDoesNotExist          = "TemplateDoesNotExist"
-    val AccountSuspended              = "AccountSuspended"
-    val AccountThrottled              = "AccountThrottled"
-    val AccountDailyQuotaExceeded     = "AccountDailyQuotaExceeded"
-    val InvalidSendingPoolName        = "InvalidSendingPoolName"
-    val AccountSendingPaused          = "AccountSendingPaused"
-    val ConfigurationSetSendingPaused = "ConfigurationSetSendingPaused"
-    val InvalidParameterValue         = "InvalidParameterValue"
-    val TransientFailure              = "TransientFailure"
-    val Failed                        = "Failed"
+  @js.native
+  sealed trait BulkEmailStatus extends js.Any
+  object BulkEmailStatus extends js.Object {
+    val Success                       = "Success".asInstanceOf[BulkEmailStatus]
+    val MessageRejected               = "MessageRejected".asInstanceOf[BulkEmailStatus]
+    val MailFromDomainNotVerified     = "MailFromDomainNotVerified".asInstanceOf[BulkEmailStatus]
+    val ConfigurationSetDoesNotExist  = "ConfigurationSetDoesNotExist".asInstanceOf[BulkEmailStatus]
+    val TemplateDoesNotExist          = "TemplateDoesNotExist".asInstanceOf[BulkEmailStatus]
+    val AccountSuspended              = "AccountSuspended".asInstanceOf[BulkEmailStatus]
+    val AccountThrottled              = "AccountThrottled".asInstanceOf[BulkEmailStatus]
+    val AccountDailyQuotaExceeded     = "AccountDailyQuotaExceeded".asInstanceOf[BulkEmailStatus]
+    val InvalidSendingPoolName        = "InvalidSendingPoolName".asInstanceOf[BulkEmailStatus]
+    val AccountSendingPaused          = "AccountSendingPaused".asInstanceOf[BulkEmailStatus]
+    val ConfigurationSetSendingPaused = "ConfigurationSetSendingPaused".asInstanceOf[BulkEmailStatus]
+    val InvalidParameterValue         = "InvalidParameterValue".asInstanceOf[BulkEmailStatus]
+    val TransientFailure              = "TransientFailure".asInstanceOf[BulkEmailStatus]
+    val Failed                        = "Failed".asInstanceOf[BulkEmailStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -774,12 +761,13 @@ package ses {
       __obj.asInstanceOf[ConfigurationSet]
     }
   }
-
-  object ConfigurationSetAttributeEnum {
-    val eventDestinations = "eventDestinations"
-    val trackingOptions   = "trackingOptions"
-    val deliveryOptions   = "deliveryOptions"
-    val reputationOptions = "reputationOptions"
+  @js.native
+  sealed trait ConfigurationSetAttribute extends js.Any
+  object ConfigurationSetAttribute extends js.Object {
+    val eventDestinations = "eventDestinations".asInstanceOf[ConfigurationSetAttribute]
+    val trackingOptions   = "trackingOptions".asInstanceOf[ConfigurationSetAttribute]
+    val deliveryOptions   = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
+    val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
 
     val values = js.Object.freeze(js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions))
   }
@@ -1112,12 +1100,13 @@ package ses {
       __obj.asInstanceOf[CreateTemplateResponse]
     }
   }
-
-  object CustomMailFromStatusEnum {
-    val Pending          = "Pending"
-    val Success          = "Success"
-    val Failed           = "Failed"
-    val TemporaryFailure = "TemporaryFailure"
+  @js.native
+  sealed trait CustomMailFromStatus extends js.Any
+  object CustomMailFromStatus extends js.Object {
+    val Pending          = "Pending".asInstanceOf[CustomMailFromStatus]
+    val Success          = "Success".asInstanceOf[CustomMailFromStatus]
+    val Failed           = "Failed".asInstanceOf[CustomMailFromStatus]
+    val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure))
   }
@@ -1760,21 +1749,23 @@ package ses {
       __obj.asInstanceOf[Destination]
     }
   }
-
-  object DimensionValueSourceEnum {
-    val messageTag  = "messageTag"
-    val emailHeader = "emailHeader"
-    val linkTag     = "linkTag"
+  @js.native
+  sealed trait DimensionValueSource extends js.Any
+  object DimensionValueSource extends js.Object {
+    val messageTag  = "messageTag".asInstanceOf[DimensionValueSource]
+    val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
+    val linkTag     = "linkTag".asInstanceOf[DimensionValueSource]
 
     val values = js.Object.freeze(js.Array(messageTag, emailHeader, linkTag))
   }
-
-  object DsnActionEnum {
-    val failed    = "failed"
-    val delayed   = "delayed"
-    val delivered = "delivered"
-    val relayed   = "relayed"
-    val expanded  = "expanded"
+  @js.native
+  sealed trait DsnAction extends js.Any
+  object DsnAction extends js.Object {
+    val failed    = "failed".asInstanceOf[DsnAction]
+    val delayed   = "delayed".asInstanceOf[DsnAction]
+    val delivered = "delivered".asInstanceOf[DsnAction]
+    val relayed   = "relayed".asInstanceOf[DsnAction]
+    val expanded  = "expanded".asInstanceOf[DsnAction]
 
     val values = js.Object.freeze(js.Array(failed, delayed, delivered, relayed, expanded))
   }
@@ -1819,16 +1810,17 @@ package ses {
       __obj.asInstanceOf[EventDestination]
     }
   }
-
-  object EventTypeEnum {
-    val send             = "send"
-    val reject           = "reject"
-    val bounce           = "bounce"
-    val complaint        = "complaint"
-    val delivery         = "delivery"
-    val open             = "open"
-    val click            = "click"
-    val renderingFailure = "renderingFailure"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val send             = "send".asInstanceOf[EventType]
+    val reject           = "reject".asInstanceOf[EventType]
+    val bounce           = "bounce".asInstanceOf[EventType]
+    val complaint        = "complaint".asInstanceOf[EventType]
+    val delivery         = "delivery".asInstanceOf[EventType]
+    val open             = "open".asInstanceOf[EventType]
+    val click            = "click".asInstanceOf[EventType]
+    val renderingFailure = "renderingFailure".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure))
   }
@@ -2321,10 +2313,11 @@ package ses {
       __obj.asInstanceOf[IdentityNotificationAttributes]
     }
   }
-
-  object IdentityTypeEnum {
-    val EmailAddress = "EmailAddress"
-    val Domain       = "Domain"
+  @js.native
+  sealed trait IdentityType extends js.Any
+  object IdentityType extends js.Object {
+    val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
+    val Domain       = "Domain".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(EmailAddress, Domain))
   }
@@ -2352,10 +2345,11 @@ package ses {
       __obj.asInstanceOf[IdentityVerificationAttributes]
     }
   }
-
-  object InvocationTypeEnum {
-    val Event           = "Event"
-    val RequestResponse = "RequestResponse"
+  @js.native
+  sealed trait InvocationType extends js.Any
+  object InvocationType extends js.Object {
+    val Event           = "Event".asInstanceOf[InvocationType]
+    val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
 
     val values = js.Object.freeze(js.Array(Event, RequestResponse))
   }
@@ -2805,11 +2799,12 @@ package ses {
       __obj.asInstanceOf[MessageTag]
     }
   }
-
-  object NotificationTypeEnum {
-    val Bounce    = "Bounce"
-    val Complaint = "Complaint"
-    val Delivery  = "Delivery"
+  @js.native
+  sealed trait NotificationType extends js.Any
+  object NotificationType extends js.Object {
+    val Bounce    = "Bounce".asInstanceOf[NotificationType]
+    val Complaint = "Complaint".asInstanceOf[NotificationType]
+    val Delivery  = "Delivery".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(Bounce, Complaint, Delivery))
   }
@@ -2980,10 +2975,11 @@ package ses {
       __obj.asInstanceOf[ReceiptFilter]
     }
   }
-
-  object ReceiptFilterPolicyEnum {
-    val Block = "Block"
-    val Allow = "Allow"
+  @js.native
+  sealed trait ReceiptFilterPolicy extends js.Any
+  object ReceiptFilterPolicy extends js.Object {
+    val Block = "Block".asInstanceOf[ReceiptFilterPolicy]
+    val Allow = "Allow".asInstanceOf[ReceiptFilterPolicy]
 
     val values = js.Object.freeze(js.Array(Block, Allow))
   }
@@ -3240,10 +3236,11 @@ package ses {
       __obj.asInstanceOf[SNSAction]
     }
   }
-
-  object SNSActionEncodingEnum {
-    val `UTF-8` = "UTF-8"
-    val Base64  = "Base64"
+  @js.native
+  sealed trait SNSActionEncoding extends js.Any
+  object SNSActionEncoding extends js.Object {
+    val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
+    val Base64  = "Base64".asInstanceOf[SNSActionEncoding]
 
     val values = js.Object.freeze(js.Array(`UTF-8`, Base64))
   }
@@ -3980,9 +3977,10 @@ package ses {
       __obj.asInstanceOf[StopAction]
     }
   }
-
-  object StopScopeEnum {
-    val RuleSet = "RuleSet"
+  @js.native
+  sealed trait StopScope extends js.Any
+  object StopScope extends js.Object {
+    val RuleSet = "RuleSet".asInstanceOf[StopScope]
 
     val values = js.Object.freeze(js.Array(RuleSet))
   }
@@ -4075,10 +4073,11 @@ package ses {
       __obj.asInstanceOf[TestRenderTemplateResponse]
     }
   }
-
-  object TlsPolicyEnum {
-    val Require  = "Require"
-    val Optional = "Optional"
+  @js.native
+  sealed trait TlsPolicy extends js.Any
+  object TlsPolicy extends js.Object {
+    val Require  = "Require".asInstanceOf[TlsPolicy]
+    val Optional = "Optional".asInstanceOf[TlsPolicy]
 
     val values = js.Object.freeze(js.Array(Require, Optional))
   }
@@ -4356,13 +4355,14 @@ package ses {
       __obj.asInstanceOf[UpdateTemplateResponse]
     }
   }
-
-  object VerificationStatusEnum {
-    val Pending          = "Pending"
-    val Success          = "Success"
-    val Failed           = "Failed"
-    val TemporaryFailure = "TemporaryFailure"
-    val NotStarted       = "NotStarted"
+  @js.native
+  sealed trait VerificationStatus extends js.Any
+  object VerificationStatus extends js.Object {
+    val Pending          = "Pending".asInstanceOf[VerificationStatus]
+    val Success          = "Success".asInstanceOf[VerificationStatus]
+    val Failed           = "Failed".asInstanceOf[VerificationStatus]
+    val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
+    val NotStarted       = "NotStarted".asInstanceOf[VerificationStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted))
   }

@@ -16,13 +16,11 @@ package object dynamodbstreams {
   type ErrorMessage            = String
   type KeySchema               = js.Array[KeySchemaElement]
   type KeySchemaAttributeName  = String
-  type KeyType                 = String
   type ListAttributeValue      = js.Array[AttributeValue]
   type MapAttributeValue       = js.Dictionary[AttributeValue]
   type NullAttributeValue      = Boolean
   type NumberAttributeValue    = String
   type NumberSetAttributeValue = js.Array[NumberAttributeValue]
-  type OperationType           = String
   type PositiveIntegerObject   = Int
   type PositiveLongObject      = Double
   type RecordList              = js.Array[Record]
@@ -30,11 +28,8 @@ package object dynamodbstreams {
   type ShardDescriptionList    = js.Array[Shard]
   type ShardId                 = String
   type ShardIterator           = String
-  type ShardIteratorType       = String
   type StreamArn               = String
   type StreamList              = js.Array[Stream]
-  type StreamStatus            = String
-  type StreamViewType          = String
   type StringAttributeValue    = String
   type StringSetAttributeValue = js.Array[StringAttributeValue]
   type TableName               = String
@@ -317,10 +312,11 @@ package dynamodbstreams {
       __obj.asInstanceOf[KeySchemaElement]
     }
   }
-
-  object KeyTypeEnum {
-    val HASH  = "HASH"
-    val RANGE = "RANGE"
+  @js.native
+  sealed trait KeyType extends js.Any
+  object KeyType extends js.Object {
+    val HASH  = "HASH".asInstanceOf[KeyType]
+    val RANGE = "RANGE".asInstanceOf[KeyType]
 
     val values = js.Object.freeze(js.Array(HASH, RANGE))
   }
@@ -379,11 +375,12 @@ package dynamodbstreams {
       __obj.asInstanceOf[ListStreamsOutput]
     }
   }
-
-  object OperationTypeEnum {
-    val INSERT = "INSERT"
-    val MODIFY = "MODIFY"
-    val REMOVE = "REMOVE"
+  @js.native
+  sealed trait OperationType extends js.Any
+  object OperationType extends js.Object {
+    val INSERT = "INSERT".asInstanceOf[OperationType]
+    val MODIFY = "MODIFY".asInstanceOf[OperationType]
+    val REMOVE = "REMOVE".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(js.Array(INSERT, MODIFY, REMOVE))
   }
@@ -479,12 +476,13 @@ package dynamodbstreams {
       __obj.asInstanceOf[Shard]
     }
   }
-
-  object ShardIteratorTypeEnum {
-    val TRIM_HORIZON          = "TRIM_HORIZON"
-    val LATEST                = "LATEST"
-    val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER"
-    val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER"
+  @js.native
+  sealed trait ShardIteratorType extends js.Any
+  object ShardIteratorType extends js.Object {
+    val TRIM_HORIZON          = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
+    val LATEST                = "LATEST".asInstanceOf[ShardIteratorType]
+    val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
 
     val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER))
   }
@@ -595,21 +593,23 @@ package dynamodbstreams {
       __obj.asInstanceOf[StreamRecord]
     }
   }
-
-  object StreamStatusEnum {
-    val ENABLING  = "ENABLING"
-    val ENABLED   = "ENABLED"
-    val DISABLING = "DISABLING"
-    val DISABLED  = "DISABLED"
+  @js.native
+  sealed trait StreamStatus extends js.Any
+  object StreamStatus extends js.Object {
+    val ENABLING  = "ENABLING".asInstanceOf[StreamStatus]
+    val ENABLED   = "ENABLED".asInstanceOf[StreamStatus]
+    val DISABLING = "DISABLING".asInstanceOf[StreamStatus]
+    val DISABLED  = "DISABLED".asInstanceOf[StreamStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
-
-  object StreamViewTypeEnum {
-    val NEW_IMAGE          = "NEW_IMAGE"
-    val OLD_IMAGE          = "OLD_IMAGE"
-    val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES"
-    val KEYS_ONLY          = "KEYS_ONLY"
+  @js.native
+  sealed trait StreamViewType extends js.Any
+  object StreamViewType extends js.Object {
+    val NEW_IMAGE          = "NEW_IMAGE".asInstanceOf[StreamViewType]
+    val OLD_IMAGE          = "OLD_IMAGE".asInstanceOf[StreamViewType]
+    val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
+    val KEYS_ONLY          = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
     val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }

@@ -7,18 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53 {
-  type AccountLimitType                  = String
   type AlarmName                         = String
   type AliasHealthEnabled                = Boolean
   type AssociateVPCComment               = String
-  type ChangeAction                      = String
-  type ChangeStatus                      = String
   type Changes                           = js.Array[Change]
   type CheckerIpRanges                   = js.Array[IPAddressCidr]
   type ChildHealthCheckList              = js.Array[HealthCheckId]
   type CloudWatchLogsLogGroupArn         = String
-  type CloudWatchRegion                  = String
-  type ComparisonOperator                = String
   type DNSName                           = String
   type DNSRCode                          = String
   type DelegationSetNameServers          = js.Array[DNSName]
@@ -42,19 +37,15 @@ package object route53 {
   type HealthCheckId                     = String
   type HealthCheckNonce                  = String
   type HealthCheckObservations           = js.Array[HealthCheckObservation]
-  type HealthCheckRegion                 = String
   type HealthCheckRegionList             = js.Array[HealthCheckRegion]
-  type HealthCheckType                   = String
   type HealthCheckVersion                = Double
   type HealthChecks                      = js.Array[HealthCheck]
   type HealthThreshold                   = Int
   type HostedZoneCount                   = Double
-  type HostedZoneLimitType               = String
   type HostedZoneRRSetCount              = Double
   type HostedZones                       = js.Array[HostedZone]
   type IPAddress                         = String
   type IPAddressCidr                     = String
-  type InsufficientDataHealthStatus      = String
   type Inverted                          = Boolean
   type IsPrivateZone                     = Boolean
   type LimitValue                        = Double
@@ -74,28 +65,22 @@ package object route53 {
   type QueryLoggingConfigId              = String
   type QueryLoggingConfigs               = js.Array[QueryLoggingConfig]
   type RData                             = String
-  type RRType                            = String
   type RecordData                        = js.Array[RecordDataEntry]
   type RecordDataEntry                   = String
   type RequestInterval                   = Int
-  type ResettableElementName             = String
   type ResettableElementNameList         = js.Array[ResettableElementName]
   type ResourceDescription               = String
   type ResourceId                        = String
   type ResourcePath                      = String
-  type ResourceRecordSetFailover         = String
   type ResourceRecordSetIdentifier       = String
   type ResourceRecordSetMultiValueAnswer = Boolean
-  type ResourceRecordSetRegion           = String
   type ResourceRecordSetWeight           = Double
   type ResourceRecordSets                = js.Array[ResourceRecordSet]
   type ResourceRecords                   = js.Array[ResourceRecord]
   type ResourceTagSetList                = js.Array[ResourceTagSet]
   type ResourceURI                       = String
-  type ReusableDelegationSetLimitType    = String
   type SearchString                      = String
   type ServicePrincipal                  = String
-  type Statistic                         = String
   type Status                            = String
   type SubnetMask                        = String
   type TTL                               = Double
@@ -104,7 +89,6 @@ package object route53 {
   type TagList                           = js.Array[Tag]
   type TagResourceId                     = String
   type TagResourceIdList                 = js.Array[TagResourceId]
-  type TagResourceType                   = String
   type TagValue                          = String
   type Threshold                         = Double
   type TimeStamp                         = js.Date
@@ -123,7 +107,6 @@ package object route53 {
   type TransportProtocol                 = String
   type UsageCount                        = Double
   type VPCId                             = String
-  type VPCRegion                         = String
   type VPCs                              = js.Array[VPC]
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
@@ -415,13 +398,14 @@ package route53 {
       __obj.asInstanceOf[AccountLimit]
     }
   }
-
-  object AccountLimitTypeEnum {
-    val MAX_HEALTH_CHECKS_BY_OWNER            = "MAX_HEALTH_CHECKS_BY_OWNER"
-    val MAX_HOSTED_ZONES_BY_OWNER             = "MAX_HOSTED_ZONES_BY_OWNER"
-    val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
-    val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
-    val MAX_TRAFFIC_POLICIES_BY_OWNER         = "MAX_TRAFFIC_POLICIES_BY_OWNER"
+  @js.native
+  sealed trait AccountLimitType extends js.Any
+  object AccountLimitType extends js.Object {
+    val MAX_HEALTH_CHECKS_BY_OWNER            = "MAX_HEALTH_CHECKS_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_HOSTED_ZONES_BY_OWNER             = "MAX_HOSTED_ZONES_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_TRAFFIC_POLICIES_BY_OWNER         = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -559,11 +543,12 @@ package route53 {
       __obj.asInstanceOf[Change]
     }
   }
-
-  object ChangeActionEnum {
-    val CREATE = "CREATE"
-    val DELETE = "DELETE"
-    val UPSERT = "UPSERT"
+  @js.native
+  sealed trait ChangeAction extends js.Any
+  object ChangeAction extends js.Object {
+    val CREATE = "CREATE".asInstanceOf[ChangeAction]
+    val DELETE = "DELETE".asInstanceOf[ChangeAction]
+    val UPSERT = "UPSERT".asInstanceOf[ChangeAction]
 
     val values = js.Object.freeze(js.Array(CREATE, DELETE, UPSERT))
   }
@@ -666,10 +651,11 @@ package route53 {
       __obj.asInstanceOf[ChangeResourceRecordSetsResponse]
     }
   }
-
-  object ChangeStatusEnum {
-    val PENDING = "PENDING"
-    val INSYNC  = "INSYNC"
+  @js.native
+  sealed trait ChangeStatus extends js.Any
+  object ChangeStatus extends js.Object {
+    val PENDING = "PENDING".asInstanceOf[ChangeStatus]
+    val INSYNC  = "INSYNC".asInstanceOf[ChangeStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, INSYNC))
   }
@@ -761,29 +747,30 @@ package route53 {
       __obj.asInstanceOf[CloudWatchAlarmConfiguration]
     }
   }
-
-  object CloudWatchRegionEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-east-2`      = "us-east-2"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `ca-central-1`   = "ca-central-1"
-    val `eu-central-1`   = "eu-central-1"
-    val `eu-west-1`      = "eu-west-1"
-    val `eu-west-2`      = "eu-west-2"
-    val `eu-west-3`      = "eu-west-3"
-    val `ap-east-1`      = "ap-east-1"
-    val `me-south-1`     = "me-south-1"
-    val `ap-south-1`     = "ap-south-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `ap-northeast-2` = "ap-northeast-2"
-    val `ap-northeast-3` = "ap-northeast-3"
-    val `eu-north-1`     = "eu-north-1"
-    val `sa-east-1`      = "sa-east-1"
-    val `cn-northwest-1` = "cn-northwest-1"
-    val `cn-north-1`     = "cn-north-1"
+  @js.native
+  sealed trait CloudWatchRegion extends js.Any
+  object CloudWatchRegion extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[CloudWatchRegion]
+    val `us-east-2`      = "us-east-2".asInstanceOf[CloudWatchRegion]
+    val `us-west-1`      = "us-west-1".asInstanceOf[CloudWatchRegion]
+    val `us-west-2`      = "us-west-2".asInstanceOf[CloudWatchRegion]
+    val `ca-central-1`   = "ca-central-1".asInstanceOf[CloudWatchRegion]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[CloudWatchRegion]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[CloudWatchRegion]
+    val `eu-west-2`      = "eu-west-2".asInstanceOf[CloudWatchRegion]
+    val `eu-west-3`      = "eu-west-3".asInstanceOf[CloudWatchRegion]
+    val `ap-east-1`      = "ap-east-1".asInstanceOf[CloudWatchRegion]
+    val `me-south-1`     = "me-south-1".asInstanceOf[CloudWatchRegion]
+    val `ap-south-1`     = "ap-south-1".asInstanceOf[CloudWatchRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[CloudWatchRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[CloudWatchRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[CloudWatchRegion]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[CloudWatchRegion]
+    val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[CloudWatchRegion]
+    val `eu-north-1`     = "eu-north-1".asInstanceOf[CloudWatchRegion]
+    val `sa-east-1`      = "sa-east-1".asInstanceOf[CloudWatchRegion]
+    val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[CloudWatchRegion]
+    val `cn-north-1`     = "cn-north-1".asInstanceOf[CloudWatchRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -811,12 +798,13 @@ package route53 {
       )
     )
   }
-
-  object ComparisonOperatorEnum {
-    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold"
-    val GreaterThanThreshold          = "GreaterThanThreshold"
-    val LessThanThreshold             = "LessThanThreshold"
-    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold          = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold             = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
@@ -2499,16 +2487,17 @@ package route53 {
       __obj.asInstanceOf[HealthCheckObservation]
     }
   }
-
-  object HealthCheckRegionEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `eu-west-1`      = "eu-west-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `sa-east-1`      = "sa-east-1"
+  @js.native
+  sealed trait HealthCheckRegion extends js.Any
+  object HealthCheckRegion extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[HealthCheckRegion]
+    val `us-west-1`      = "us-west-1".asInstanceOf[HealthCheckRegion]
+    val `us-west-2`      = "us-west-2".asInstanceOf[HealthCheckRegion]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[HealthCheckRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[HealthCheckRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[HealthCheckRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
+    val `sa-east-1`      = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2523,15 +2512,16 @@ package route53 {
       )
     )
   }
-
-  object HealthCheckTypeEnum {
-    val HTTP              = "HTTP"
-    val HTTPS             = "HTTPS"
-    val HTTP_STR_MATCH    = "HTTP_STR_MATCH"
-    val HTTPS_STR_MATCH   = "HTTPS_STR_MATCH"
-    val TCP               = "TCP"
-    val CALCULATED        = "CALCULATED"
-    val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC"
+  @js.native
+  sealed trait HealthCheckType extends js.Any
+  object HealthCheckType extends js.Object {
+    val HTTP              = "HTTP".asInstanceOf[HealthCheckType]
+    val HTTPS             = "HTTPS".asInstanceOf[HealthCheckType]
+    val HTTP_STR_MATCH    = "HTTP_STR_MATCH".asInstanceOf[HealthCheckType]
+    val HTTPS_STR_MATCH   = "HTTPS_STR_MATCH".asInstanceOf[HealthCheckType]
+    val TCP               = "TCP".asInstanceOf[HealthCheckType]
+    val CALCULATED        = "CALCULATED".asInstanceOf[HealthCheckType]
+    val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
     val values =
       js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
@@ -2618,18 +2608,20 @@ package route53 {
       __obj.asInstanceOf[HostedZoneLimit]
     }
   }
-
-  object HostedZoneLimitTypeEnum {
-    val MAX_RRSETS_BY_ZONE          = "MAX_RRSETS_BY_ZONE"
-    val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE"
+  @js.native
+  sealed trait HostedZoneLimitType extends js.Any
+  object HostedZoneLimitType extends js.Object {
+    val MAX_RRSETS_BY_ZONE          = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
+    val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
 
     val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
   }
-
-  object InsufficientDataHealthStatusEnum {
-    val Healthy         = "Healthy"
-    val Unhealthy       = "Unhealthy"
-    val LastKnownStatus = "LastKnownStatus"
+  @js.native
+  sealed trait InsufficientDataHealthStatus extends js.Any
+  object InsufficientDataHealthStatus extends js.Object {
+    val Healthy         = "Healthy".asInstanceOf[InsufficientDataHealthStatus]
+    val Unhealthy       = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
+    val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
     val values = js.Object.freeze(js.Array(Healthy, Unhealthy, LastKnownStatus))
   }
@@ -3565,29 +3557,31 @@ package route53 {
       __obj.asInstanceOf[QueryLoggingConfig]
     }
   }
-
-  object RRTypeEnum {
-    val SOA   = "SOA"
-    val A     = "A"
-    val TXT   = "TXT"
-    val NS    = "NS"
-    val CNAME = "CNAME"
-    val MX    = "MX"
-    val NAPTR = "NAPTR"
-    val PTR   = "PTR"
-    val SRV   = "SRV"
-    val SPF   = "SPF"
-    val AAAA  = "AAAA"
-    val CAA   = "CAA"
+  @js.native
+  sealed trait RRType extends js.Any
+  object RRType extends js.Object {
+    val SOA   = "SOA".asInstanceOf[RRType]
+    val A     = "A".asInstanceOf[RRType]
+    val TXT   = "TXT".asInstanceOf[RRType]
+    val NS    = "NS".asInstanceOf[RRType]
+    val CNAME = "CNAME".asInstanceOf[RRType]
+    val MX    = "MX".asInstanceOf[RRType]
+    val NAPTR = "NAPTR".asInstanceOf[RRType]
+    val PTR   = "PTR".asInstanceOf[RRType]
+    val SRV   = "SRV".asInstanceOf[RRType]
+    val SPF   = "SPF".asInstanceOf[RRType]
+    val AAAA  = "AAAA".asInstanceOf[RRType]
+    val CAA   = "CAA".asInstanceOf[RRType]
 
     val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
   }
-
-  object ResettableElementNameEnum {
-    val FullyQualifiedDomainName = "FullyQualifiedDomainName"
-    val Regions                  = "Regions"
-    val ResourcePath             = "ResourcePath"
-    val ChildHealthChecks        = "ChildHealthChecks"
+  @js.native
+  sealed trait ResettableElementName extends js.Any
+  object ResettableElementName extends js.Object {
+    val FullyQualifiedDomainName = "FullyQualifiedDomainName".asInstanceOf[ResettableElementName]
+    val Regions                  = "Regions".asInstanceOf[ResettableElementName]
+    val ResourcePath             = "ResourcePath".asInstanceOf[ResettableElementName]
+    val ChildHealthChecks        = "ChildHealthChecks".asInstanceOf[ResettableElementName]
 
     val values = js.Object.freeze(js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks))
   }
@@ -3671,36 +3665,38 @@ package route53 {
       __obj.asInstanceOf[ResourceRecordSet]
     }
   }
-
-  object ResourceRecordSetFailoverEnum {
-    val PRIMARY   = "PRIMARY"
-    val SECONDARY = "SECONDARY"
+  @js.native
+  sealed trait ResourceRecordSetFailover extends js.Any
+  object ResourceRecordSetFailover extends js.Object {
+    val PRIMARY   = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
+    val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
 
     val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
   }
-
-  object ResourceRecordSetRegionEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-east-2`      = "us-east-2"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `ca-central-1`   = "ca-central-1"
-    val `eu-west-1`      = "eu-west-1"
-    val `eu-west-2`      = "eu-west-2"
-    val `eu-west-3`      = "eu-west-3"
-    val `eu-central-1`   = "eu-central-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `ap-northeast-2` = "ap-northeast-2"
-    val `ap-northeast-3` = "ap-northeast-3"
-    val `eu-north-1`     = "eu-north-1"
-    val `sa-east-1`      = "sa-east-1"
-    val `cn-north-1`     = "cn-north-1"
-    val `cn-northwest-1` = "cn-northwest-1"
-    val `ap-east-1`      = "ap-east-1"
-    val `me-south-1`     = "me-south-1"
-    val `ap-south-1`     = "ap-south-1"
+  @js.native
+  sealed trait ResourceRecordSetRegion extends js.Any
+  object ResourceRecordSetRegion extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `us-east-2`      = "us-east-2".asInstanceOf[ResourceRecordSetRegion]
+    val `us-west-1`      = "us-west-1".asInstanceOf[ResourceRecordSetRegion]
+    val `us-west-2`      = "us-west-2".asInstanceOf[ResourceRecordSetRegion]
+    val `ca-central-1`   = "ca-central-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-2`      = "eu-west-2".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-3`      = "eu-west-3".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-north-1`     = "eu-north-1".asInstanceOf[ResourceRecordSetRegion]
+    val `sa-east-1`      = "sa-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `cn-north-1`     = "cn-north-1".asInstanceOf[ResourceRecordSetRegion]
+    val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-east-1`      = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `me-south-1`     = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-south-1`     = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3777,19 +3773,22 @@ package route53 {
       __obj.asInstanceOf[ReusableDelegationSetLimit]
     }
   }
-
-  object ReusableDelegationSetLimitTypeEnum {
-    val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
+  @js.native
+  sealed trait ReusableDelegationSetLimitType extends js.Any
+  object ReusableDelegationSetLimitType extends js.Object {
+    val MAX_ZONES_BY_REUSABLE_DELEGATION_SET =
+      "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
 
     val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
   }
-
-  object StatisticEnum {
-    val Average     = "Average"
-    val Sum         = "Sum"
-    val SampleCount = "SampleCount"
-    val Maximum     = "Maximum"
-    val Minimum     = "Minimum"
+  @js.native
+  sealed trait Statistic extends js.Any
+  object Statistic extends js.Object {
+    val Average     = "Average".asInstanceOf[Statistic]
+    val Sum         = "Sum".asInstanceOf[Statistic]
+    val SampleCount = "SampleCount".asInstanceOf[Statistic]
+    val Maximum     = "Maximum".asInstanceOf[Statistic]
+    val Minimum     = "Minimum".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(Average, Sum, SampleCount, Maximum, Minimum))
   }
@@ -3837,10 +3836,11 @@ package route53 {
       __obj.asInstanceOf[Tag]
     }
   }
-
-  object TagResourceTypeEnum {
-    val healthcheck = "healthcheck"
-    val hostedzone  = "hostedzone"
+  @js.native
+  sealed trait TagResourceType extends js.Any
+  object TagResourceType extends js.Object {
+    val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
+    val hostedzone  = "hostedzone".asInstanceOf[TagResourceType]
 
     val values = js.Object.freeze(js.Array(healthcheck, hostedzone))
   }
@@ -4288,28 +4288,29 @@ package route53 {
       __obj.asInstanceOf[VPC]
     }
   }
-
-  object VPCRegionEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-east-2`      = "us-east-2"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `eu-west-1`      = "eu-west-1"
-    val `eu-west-2`      = "eu-west-2"
-    val `eu-west-3`      = "eu-west-3"
-    val `eu-central-1`   = "eu-central-1"
-    val `ap-east-1`      = "ap-east-1"
-    val `me-south-1`     = "me-south-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-south-1`     = "ap-south-1"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `ap-northeast-2` = "ap-northeast-2"
-    val `ap-northeast-3` = "ap-northeast-3"
-    val `eu-north-1`     = "eu-north-1"
-    val `sa-east-1`      = "sa-east-1"
-    val `ca-central-1`   = "ca-central-1"
-    val `cn-north-1`     = "cn-north-1"
+  @js.native
+  sealed trait VPCRegion extends js.Any
+  object VPCRegion extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[VPCRegion]
+    val `us-east-2`      = "us-east-2".asInstanceOf[VPCRegion]
+    val `us-west-1`      = "us-west-1".asInstanceOf[VPCRegion]
+    val `us-west-2`      = "us-west-2".asInstanceOf[VPCRegion]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[VPCRegion]
+    val `eu-west-2`      = "eu-west-2".asInstanceOf[VPCRegion]
+    val `eu-west-3`      = "eu-west-3".asInstanceOf[VPCRegion]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[VPCRegion]
+    val `ap-east-1`      = "ap-east-1".asInstanceOf[VPCRegion]
+    val `me-south-1`     = "me-south-1".asInstanceOf[VPCRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
+    val `ap-south-1`     = "ap-south-1".asInstanceOf[VPCRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[VPCRegion]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[VPCRegion]
+    val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[VPCRegion]
+    val `eu-north-1`     = "eu-north-1".asInstanceOf[VPCRegion]
+    val `sa-east-1`      = "sa-east-1".asInstanceOf[VPCRegion]
+    val `ca-central-1`   = "ca-central-1".asInstanceOf[VPCRegion]
+    val `cn-north-1`     = "cn-north-1".asInstanceOf[VPCRegion]
 
     val values = js.Object.freeze(
       js.Array(

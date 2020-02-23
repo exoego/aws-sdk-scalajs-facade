@@ -8,18 +8,11 @@ import facade.amazonaws._
 
 package object dms {
   type AccountQuotaList                        = js.Array[AccountQuota]
-  type AuthMechanismValue                      = String
-  type AuthTypeValue                           = String
   type AvailabilityZonesList                   = js.Array[String]
   type BooleanOptional                         = Boolean
   type CertificateList                         = js.Array[Certificate]
   type CertificateWallet                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CompressionTypeValue                    = String
   type ConnectionList                          = js.Array[Connection]
-  type DataFormatValue                         = String
-  type DmsSslModeValue                         = String
-  type EncodingTypeValue                       = String
-  type EncryptionModeValue                     = String
   type EndpointList                            = js.Array[Endpoint]
   type EventCategoriesList                     = js.Array[String]
   type EventCategoryGroupList                  = js.Array[EventCategoryGroup]
@@ -29,17 +22,9 @@ package object dms {
   type FilterValueList                         = js.Array[String]
   type IntegerOptional                         = Int
   type KeyList                                 = js.Array[String]
-  type MessageFormatValue                      = String
-  type MigrationTypeValue                      = String
-  type NestingLevelValue                       = String
   type OrderableReplicationInstanceList        = js.Array[OrderableReplicationInstance]
-  type ParquetVersionValue                     = String
   type PendingMaintenanceActionDetails         = js.Array[PendingMaintenanceAction]
   type PendingMaintenanceActions               = js.Array[ResourcePendingMaintenanceActions]
-  type RefreshSchemasStatusTypeValue           = String
-  type ReleaseStatusValues                     = String
-  type ReloadOptionValue                       = String
-  type ReplicationEndpointTypeValue            = String
   type ReplicationInstanceList                 = js.Array[ReplicationInstance]
   type ReplicationInstancePrivateIpAddressList = js.Array[String]
   type ReplicationInstancePublicIpAddressList  = js.Array[String]
@@ -50,8 +35,6 @@ package object dms {
   type SchemaList                              = js.Array[String]
   type SecretString                            = String
   type SourceIdsList                           = js.Array[String]
-  type SourceType                              = String
-  type StartReplicationTaskTypeValue           = String
   type SubnetIdentifierList                    = js.Array[String]
   type SubnetList                              = js.Array[Subnet]
   type SupportedEndpointTypeList               = js.Array[SupportedEndpointType]
@@ -405,18 +388,20 @@ package dms {
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResponse]
     }
   }
-
-  object AuthMechanismValueEnum {
-    val default     = "default"
-    val mongodb_cr  = "mongodb_cr"
-    val scram_sha_1 = "scram_sha_1"
+  @js.native
+  sealed trait AuthMechanismValue extends js.Any
+  object AuthMechanismValue extends js.Object {
+    val default     = "default".asInstanceOf[AuthMechanismValue]
+    val mongodb_cr  = "mongodb_cr".asInstanceOf[AuthMechanismValue]
+    val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
 
     val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
   }
-
-  object AuthTypeValueEnum {
-    val no       = "no"
-    val password = "password"
+  @js.native
+  sealed trait AuthTypeValue extends js.Any
+  object AuthTypeValue extends js.Object {
+    val no       = "no".asInstanceOf[AuthTypeValue]
+    val password = "password".asInstanceOf[AuthTypeValue]
 
     val values = js.Object.freeze(js.Array(no, password))
   }
@@ -485,10 +470,11 @@ package dms {
       __obj.asInstanceOf[Certificate]
     }
   }
-
-  object CompressionTypeValueEnum {
-    val none = "none"
-    val gzip = "gzip"
+  @js.native
+  sealed trait CompressionTypeValue extends js.Any
+  object CompressionTypeValue extends js.Object {
+    val none = "none".asInstanceOf[CompressionTypeValue]
+    val gzip = "gzip".asInstanceOf[CompressionTypeValue]
 
     val values = js.Object.freeze(js.Array(none, gzip))
   }
@@ -893,10 +879,11 @@ package dms {
       __obj.asInstanceOf[CreateReplicationTaskResponse]
     }
   }
-
-  object DataFormatValueEnum {
-    val csv     = "csv"
-    val parquet = "parquet"
+  @js.native
+  sealed trait DataFormatValue extends js.Any
+  object DataFormatValue extends js.Object {
+    val csv     = "csv".asInstanceOf[DataFormatValue]
+    val parquet = "parquet".asInstanceOf[DataFormatValue]
 
     val values = js.Object.freeze(js.Array(csv, parquet))
   }
@@ -2036,12 +2023,13 @@ package dms {
       __obj.asInstanceOf[DescribeTableStatisticsResponse]
     }
   }
-
-  object DmsSslModeValueEnum {
-    val none          = "none"
-    val require       = "require"
-    val `verify-ca`   = "verify-ca"
-    val `verify-full` = "verify-full"
+  @js.native
+  sealed trait DmsSslModeValue extends js.Any
+  object DmsSslModeValue extends js.Object {
+    val none          = "none".asInstanceOf[DmsSslModeValue]
+    val require       = "require".asInstanceOf[DmsSslModeValue]
+    val `verify-ca`   = "verify-ca".asInstanceOf[DmsSslModeValue]
+    val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
 
     val values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
   }
@@ -2118,18 +2106,20 @@ package dms {
       __obj.asInstanceOf[ElasticsearchSettings]
     }
   }
-
-  object EncodingTypeValueEnum {
-    val plain              = "plain"
-    val `plain-dictionary` = "plain-dictionary"
-    val `rle-dictionary`   = "rle-dictionary"
+  @js.native
+  sealed trait EncodingTypeValue extends js.Any
+  object EncodingTypeValue extends js.Object {
+    val plain              = "plain".asInstanceOf[EncodingTypeValue]
+    val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
+    val `rle-dictionary`   = "rle-dictionary".asInstanceOf[EncodingTypeValue]
 
     val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
   }
-
-  object EncryptionModeValueEnum {
-    val `sse-s3`  = "sse-s3"
-    val `sse-kms` = "sse-kms"
+  @js.native
+  sealed trait EncryptionModeValue extends js.Any
+  object EncryptionModeValue extends js.Object {
+    val `sse-s3`  = "sse-s3".asInstanceOf[EncryptionModeValue]
+    val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
 
     val values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
   }
@@ -2451,17 +2441,19 @@ package dms {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object MessageFormatValueEnum {
-    val json = "json"
+  @js.native
+  sealed trait MessageFormatValue extends js.Any
+  object MessageFormatValue extends js.Object {
+    val json = "json".asInstanceOf[MessageFormatValue]
 
     val values = js.Object.freeze(js.Array(json))
   }
-
-  object MigrationTypeValueEnum {
-    val `full-load`         = "full-load"
-    val cdc                 = "cdc"
-    val `full-load-and-cdc` = "full-load-and-cdc"
+  @js.native
+  sealed trait MigrationTypeValue extends js.Any
+  object MigrationTypeValue extends js.Object {
+    val `full-load`         = "full-load".asInstanceOf[MigrationTypeValue]
+    val cdc                 = "cdc".asInstanceOf[MigrationTypeValue]
+    val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
 
     val values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
   }
@@ -2856,10 +2848,11 @@ package dms {
       __obj.asInstanceOf[MongoDbSettings]
     }
   }
-
-  object NestingLevelValueEnum {
-    val none = "none"
-    val one  = "one"
+  @js.native
+  sealed trait NestingLevelValue extends js.Any
+  object NestingLevelValue extends js.Object {
+    val none = "none".asInstanceOf[NestingLevelValue]
+    val one  = "one".asInstanceOf[NestingLevelValue]
 
     val values = js.Object.freeze(js.Array(none, one))
   }
@@ -2906,10 +2899,11 @@ package dms {
       __obj.asInstanceOf[OrderableReplicationInstance]
     }
   }
-
-  object ParquetVersionValueEnum {
-    val `parquet-1-0` = "parquet-1-0"
-    val `parquet-2-0` = "parquet-2-0"
+  @js.native
+  sealed trait ParquetVersionValue extends js.Any
+  object ParquetVersionValue extends js.Object {
+    val `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
+    val `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
 
     val values = js.Object.freeze(js.Array(`parquet-1-0`, `parquet-2-0`))
   }
@@ -3153,24 +3147,27 @@ package dms {
       __obj.asInstanceOf[RefreshSchemasStatus]
     }
   }
-
-  object RefreshSchemasStatusTypeValueEnum {
-    val successful = "successful"
-    val failed     = "failed"
-    val refreshing = "refreshing"
+  @js.native
+  sealed trait RefreshSchemasStatusTypeValue extends js.Any
+  object RefreshSchemasStatusTypeValue extends js.Object {
+    val successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
+    val failed     = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
+    val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
 
     val values = js.Object.freeze(js.Array(successful, failed, refreshing))
   }
-
-  object ReleaseStatusValuesEnum {
-    val beta = "beta"
+  @js.native
+  sealed trait ReleaseStatusValues extends js.Any
+  object ReleaseStatusValues extends js.Object {
+    val beta = "beta".asInstanceOf[ReleaseStatusValues]
 
     val values = js.Object.freeze(js.Array(beta))
   }
-
-  object ReloadOptionValueEnum {
-    val `data-reload`   = "data-reload"
-    val `validate-only` = "validate-only"
+  @js.native
+  sealed trait ReloadOptionValue extends js.Any
+  object ReloadOptionValue extends js.Object {
+    val `data-reload`   = "data-reload".asInstanceOf[ReloadOptionValue]
+    val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
 
     val values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
   }
@@ -3254,10 +3251,11 @@ package dms {
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
   }
-
-  object ReplicationEndpointTypeValueEnum {
-    val source = "source"
-    val target = "target"
+  @js.native
+  sealed trait ReplicationEndpointTypeValue extends js.Any
+  object ReplicationEndpointTypeValue extends js.Object {
+    val source = "source".asInstanceOf[ReplicationEndpointTypeValue]
+    val target = "target".asInstanceOf[ReplicationEndpointTypeValue]
 
     val values = js.Object.freeze(js.Array(source, target))
   }
@@ -3717,9 +3715,10 @@ package dms {
       __obj.asInstanceOf[S3Settings]
     }
   }
-
-  object SourceTypeEnum {
-    val `replication-instance` = "replication-instance"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(`replication-instance`))
   }
@@ -3815,11 +3814,12 @@ package dms {
       __obj.asInstanceOf[StartReplicationTaskResponse]
     }
   }
-
-  object StartReplicationTaskTypeValueEnum {
-    val `start-replication` = "start-replication"
-    val `resume-processing` = "resume-processing"
-    val `reload-target`     = "reload-target"
+  @js.native
+  sealed trait StartReplicationTaskTypeValue extends js.Any
+  object StartReplicationTaskTypeValue extends js.Object {
+    val `start-replication` = "start-replication".asInstanceOf[StartReplicationTaskTypeValue]
+    val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
+    val `reload-target`     = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
 
     val values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
   }

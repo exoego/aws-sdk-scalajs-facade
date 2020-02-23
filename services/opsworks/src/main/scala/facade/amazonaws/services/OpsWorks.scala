@@ -9,22 +9,14 @@ import facade.amazonaws._
 package object opsworks {
   type AgentVersions                        = js.Array[AgentVersion]
   type AppAttributes                        = js.Dictionary[String]
-  type AppAttributesKeys                    = String
-  type AppType                              = String
   type Apps                                 = js.Array[App]
-  type Architecture                         = String
-  type AutoScalingType                      = String
   type BlockDeviceMappings                  = js.Array[BlockDeviceMapping]
-  type CloudWatchLogsEncoding               = String
-  type CloudWatchLogsInitialPosition        = String
   type CloudWatchLogsLogStreams             = js.Array[CloudWatchLogsLogStream]
-  type CloudWatchLogsTimeZone               = String
   type Commands                             = js.Array[Command]
   type DailyAutoScalingSchedule             = js.Dictionary[Switch]
   type DataSources                          = js.Array[DataSource]
   type DateTime                             = String
   type DeploymentCommandArgs                = js.Dictionary[Strings]
-  type DeploymentCommandName                = String
   type Deployments                          = js.Array[Deployment]
   type EcsClusters                          = js.Array[EcsCluster]
   type ElasticIps                           = js.Array[ElasticIp]
@@ -33,8 +25,6 @@ package object opsworks {
   type Hour                                 = String
   type Instances                            = js.Array[Instance]
   type LayerAttributes                      = js.Dictionary[String]
-  type LayerAttributesKeys                  = String
-  type LayerType                            = String
   type Layers                               = js.Array[Layer]
   type LoadBasedAutoScalingConfigurations   = js.Array[LoadBasedAutoScalingConfiguration]
   type MaxResults                           = Int
@@ -47,11 +37,8 @@ package object opsworks {
   type RaidArrays                           = js.Array[RaidArray]
   type RdsDbInstances                       = js.Array[RdsDbInstance]
   type ResourceArn                          = String
-  type RootDeviceType                       = String
   type ServiceErrors                        = js.Array[ServiceError]
-  type SourceType                           = String
   type StackAttributes                      = js.Dictionary[String]
-  type StackAttributesKeys                  = String
   type Stacks                               = js.Array[Stack]
   type Strings                              = js.Array[String]
   type Switch                               = String
@@ -62,9 +49,7 @@ package object opsworks {
   type TimeBasedAutoScalingConfigurations   = js.Array[TimeBasedAutoScalingConfiguration]
   type UserProfiles                         = js.Array[UserProfile]
   type ValidForInMinutes                    = Int
-  type VirtualizationType                   = String
   type VolumeConfigurations                 = js.Array[VolumeConfiguration]
-  type VolumeType                           = String
   type Volumes                              = js.Array[Volume]
 
   implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
@@ -395,31 +380,34 @@ package opsworks {
       __obj.asInstanceOf[App]
     }
   }
-
-  object AppAttributesKeysEnum {
-    val DocumentRoot        = "DocumentRoot"
-    val RailsEnv            = "RailsEnv"
-    val AutoBundleOnDeploy  = "AutoBundleOnDeploy"
-    val AwsFlowRubySettings = "AwsFlowRubySettings"
+  @js.native
+  sealed trait AppAttributesKeys extends js.Any
+  object AppAttributesKeys extends js.Object {
+    val DocumentRoot        = "DocumentRoot".asInstanceOf[AppAttributesKeys]
+    val RailsEnv            = "RailsEnv".asInstanceOf[AppAttributesKeys]
+    val AutoBundleOnDeploy  = "AutoBundleOnDeploy".asInstanceOf[AppAttributesKeys]
+    val AwsFlowRubySettings = "AwsFlowRubySettings".asInstanceOf[AppAttributesKeys]
 
     val values = js.Object.freeze(js.Array(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings))
   }
-
-  object AppTypeEnum {
-    val `aws-flow-ruby` = "aws-flow-ruby"
-    val java            = "java"
-    val rails           = "rails"
-    val php             = "php"
-    val nodejs          = "nodejs"
-    val static          = "static"
-    val other           = "other"
+  @js.native
+  sealed trait AppType extends js.Any
+  object AppType extends js.Object {
+    val `aws-flow-ruby` = "aws-flow-ruby".asInstanceOf[AppType]
+    val java            = "java".asInstanceOf[AppType]
+    val rails           = "rails".asInstanceOf[AppType]
+    val php             = "php".asInstanceOf[AppType]
+    val nodejs          = "nodejs".asInstanceOf[AppType]
+    val static          = "static".asInstanceOf[AppType]
+    val other           = "other".asInstanceOf[AppType]
 
     val values = js.Object.freeze(js.Array(`aws-flow-ruby`, java, rails, php, nodejs, static, other))
   }
-
-  object ArchitectureEnum {
-    val x86_64 = "x86_64"
-    val i386   = "i386"
+  @js.native
+  sealed trait Architecture extends js.Any
+  object Architecture extends js.Object {
+    val x86_64 = "x86_64".asInstanceOf[Architecture]
+    val i386   = "i386".asInstanceOf[Architecture]
 
     val values = js.Object.freeze(js.Array(x86_64, i386))
   }
@@ -544,10 +532,11 @@ package opsworks {
       __obj.asInstanceOf[AutoScalingThresholds]
     }
   }
-
-  object AutoScalingTypeEnum {
-    val load  = "load"
-    val timer = "timer"
+  @js.native
+  sealed trait AutoScalingType extends js.Any
+  object AutoScalingType extends js.Object {
+    val load  = "load".asInstanceOf[AutoScalingType]
+    val timer = "timer".asInstanceOf[AutoScalingType]
 
     val values = js.Object.freeze(js.Array(load, timer))
   }
@@ -731,99 +720,101 @@ package opsworks {
   /**
     * Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.
     */
-  object CloudWatchLogsEncodingEnum {
-    val ascii           = "ascii"
-    val big5            = "big5"
-    val big5hkscs       = "big5hkscs"
-    val cp037           = "cp037"
-    val cp424           = "cp424"
-    val cp437           = "cp437"
-    val cp500           = "cp500"
-    val cp720           = "cp720"
-    val cp737           = "cp737"
-    val cp775           = "cp775"
-    val cp850           = "cp850"
-    val cp852           = "cp852"
-    val cp855           = "cp855"
-    val cp856           = "cp856"
-    val cp857           = "cp857"
-    val cp858           = "cp858"
-    val cp860           = "cp860"
-    val cp861           = "cp861"
-    val cp862           = "cp862"
-    val cp863           = "cp863"
-    val cp864           = "cp864"
-    val cp865           = "cp865"
-    val cp866           = "cp866"
-    val cp869           = "cp869"
-    val cp874           = "cp874"
-    val cp875           = "cp875"
-    val cp932           = "cp932"
-    val cp949           = "cp949"
-    val cp950           = "cp950"
-    val cp1006          = "cp1006"
-    val cp1026          = "cp1026"
-    val cp1140          = "cp1140"
-    val cp1250          = "cp1250"
-    val cp1251          = "cp1251"
-    val cp1252          = "cp1252"
-    val cp1253          = "cp1253"
-    val cp1254          = "cp1254"
-    val cp1255          = "cp1255"
-    val cp1256          = "cp1256"
-    val cp1257          = "cp1257"
-    val cp1258          = "cp1258"
-    val euc_jp          = "euc_jp"
-    val euc_jis_2004    = "euc_jis_2004"
-    val euc_jisx0213    = "euc_jisx0213"
-    val euc_kr          = "euc_kr"
-    val gb2312          = "gb2312"
-    val gbk             = "gbk"
-    val gb18030         = "gb18030"
-    val hz              = "hz"
-    val iso2022_jp      = "iso2022_jp"
-    val iso2022_jp_1    = "iso2022_jp_1"
-    val iso2022_jp_2    = "iso2022_jp_2"
-    val iso2022_jp_2004 = "iso2022_jp_2004"
-    val iso2022_jp_3    = "iso2022_jp_3"
-    val iso2022_jp_ext  = "iso2022_jp_ext"
-    val iso2022_kr      = "iso2022_kr"
-    val latin_1         = "latin_1"
-    val iso8859_2       = "iso8859_2"
-    val iso8859_3       = "iso8859_3"
-    val iso8859_4       = "iso8859_4"
-    val iso8859_5       = "iso8859_5"
-    val iso8859_6       = "iso8859_6"
-    val iso8859_7       = "iso8859_7"
-    val iso8859_8       = "iso8859_8"
-    val iso8859_9       = "iso8859_9"
-    val iso8859_10      = "iso8859_10"
-    val iso8859_13      = "iso8859_13"
-    val iso8859_14      = "iso8859_14"
-    val iso8859_15      = "iso8859_15"
-    val iso8859_16      = "iso8859_16"
-    val johab           = "johab"
-    val koi8_r          = "koi8_r"
-    val koi8_u          = "koi8_u"
-    val mac_cyrillic    = "mac_cyrillic"
-    val mac_greek       = "mac_greek"
-    val mac_iceland     = "mac_iceland"
-    val mac_latin2      = "mac_latin2"
-    val mac_roman       = "mac_roman"
-    val mac_turkish     = "mac_turkish"
-    val ptcp154         = "ptcp154"
-    val shift_jis       = "shift_jis"
-    val shift_jis_2004  = "shift_jis_2004"
-    val shift_jisx0213  = "shift_jisx0213"
-    val utf_32          = "utf_32"
-    val utf_32_be       = "utf_32_be"
-    val utf_32_le       = "utf_32_le"
-    val utf_16          = "utf_16"
-    val utf_16_be       = "utf_16_be"
-    val utf_16_le       = "utf_16_le"
-    val utf_7           = "utf_7"
-    val utf_8           = "utf_8"
-    val utf_8_sig       = "utf_8_sig"
+  @js.native
+  sealed trait CloudWatchLogsEncoding extends js.Any
+  object CloudWatchLogsEncoding extends js.Object {
+    val ascii           = "ascii".asInstanceOf[CloudWatchLogsEncoding]
+    val big5            = "big5".asInstanceOf[CloudWatchLogsEncoding]
+    val big5hkscs       = "big5hkscs".asInstanceOf[CloudWatchLogsEncoding]
+    val cp037           = "cp037".asInstanceOf[CloudWatchLogsEncoding]
+    val cp424           = "cp424".asInstanceOf[CloudWatchLogsEncoding]
+    val cp437           = "cp437".asInstanceOf[CloudWatchLogsEncoding]
+    val cp500           = "cp500".asInstanceOf[CloudWatchLogsEncoding]
+    val cp720           = "cp720".asInstanceOf[CloudWatchLogsEncoding]
+    val cp737           = "cp737".asInstanceOf[CloudWatchLogsEncoding]
+    val cp775           = "cp775".asInstanceOf[CloudWatchLogsEncoding]
+    val cp850           = "cp850".asInstanceOf[CloudWatchLogsEncoding]
+    val cp852           = "cp852".asInstanceOf[CloudWatchLogsEncoding]
+    val cp855           = "cp855".asInstanceOf[CloudWatchLogsEncoding]
+    val cp856           = "cp856".asInstanceOf[CloudWatchLogsEncoding]
+    val cp857           = "cp857".asInstanceOf[CloudWatchLogsEncoding]
+    val cp858           = "cp858".asInstanceOf[CloudWatchLogsEncoding]
+    val cp860           = "cp860".asInstanceOf[CloudWatchLogsEncoding]
+    val cp861           = "cp861".asInstanceOf[CloudWatchLogsEncoding]
+    val cp862           = "cp862".asInstanceOf[CloudWatchLogsEncoding]
+    val cp863           = "cp863".asInstanceOf[CloudWatchLogsEncoding]
+    val cp864           = "cp864".asInstanceOf[CloudWatchLogsEncoding]
+    val cp865           = "cp865".asInstanceOf[CloudWatchLogsEncoding]
+    val cp866           = "cp866".asInstanceOf[CloudWatchLogsEncoding]
+    val cp869           = "cp869".asInstanceOf[CloudWatchLogsEncoding]
+    val cp874           = "cp874".asInstanceOf[CloudWatchLogsEncoding]
+    val cp875           = "cp875".asInstanceOf[CloudWatchLogsEncoding]
+    val cp932           = "cp932".asInstanceOf[CloudWatchLogsEncoding]
+    val cp949           = "cp949".asInstanceOf[CloudWatchLogsEncoding]
+    val cp950           = "cp950".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1006          = "cp1006".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1026          = "cp1026".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1140          = "cp1140".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1250          = "cp1250".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1251          = "cp1251".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1252          = "cp1252".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1253          = "cp1253".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1254          = "cp1254".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1255          = "cp1255".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1256          = "cp1256".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1257          = "cp1257".asInstanceOf[CloudWatchLogsEncoding]
+    val cp1258          = "cp1258".asInstanceOf[CloudWatchLogsEncoding]
+    val euc_jp          = "euc_jp".asInstanceOf[CloudWatchLogsEncoding]
+    val euc_jis_2004    = "euc_jis_2004".asInstanceOf[CloudWatchLogsEncoding]
+    val euc_jisx0213    = "euc_jisx0213".asInstanceOf[CloudWatchLogsEncoding]
+    val euc_kr          = "euc_kr".asInstanceOf[CloudWatchLogsEncoding]
+    val gb2312          = "gb2312".asInstanceOf[CloudWatchLogsEncoding]
+    val gbk             = "gbk".asInstanceOf[CloudWatchLogsEncoding]
+    val gb18030         = "gb18030".asInstanceOf[CloudWatchLogsEncoding]
+    val hz              = "hz".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp      = "iso2022_jp".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp_1    = "iso2022_jp_1".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp_2    = "iso2022_jp_2".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp_2004 = "iso2022_jp_2004".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp_3    = "iso2022_jp_3".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_jp_ext  = "iso2022_jp_ext".asInstanceOf[CloudWatchLogsEncoding]
+    val iso2022_kr      = "iso2022_kr".asInstanceOf[CloudWatchLogsEncoding]
+    val latin_1         = "latin_1".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_2       = "iso8859_2".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_3       = "iso8859_3".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_4       = "iso8859_4".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_5       = "iso8859_5".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_6       = "iso8859_6".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_7       = "iso8859_7".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_8       = "iso8859_8".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_9       = "iso8859_9".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_10      = "iso8859_10".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_13      = "iso8859_13".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_14      = "iso8859_14".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_15      = "iso8859_15".asInstanceOf[CloudWatchLogsEncoding]
+    val iso8859_16      = "iso8859_16".asInstanceOf[CloudWatchLogsEncoding]
+    val johab           = "johab".asInstanceOf[CloudWatchLogsEncoding]
+    val koi8_r          = "koi8_r".asInstanceOf[CloudWatchLogsEncoding]
+    val koi8_u          = "koi8_u".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_cyrillic    = "mac_cyrillic".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_greek       = "mac_greek".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_iceland     = "mac_iceland".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_latin2      = "mac_latin2".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_roman       = "mac_roman".asInstanceOf[CloudWatchLogsEncoding]
+    val mac_turkish     = "mac_turkish".asInstanceOf[CloudWatchLogsEncoding]
+    val ptcp154         = "ptcp154".asInstanceOf[CloudWatchLogsEncoding]
+    val shift_jis       = "shift_jis".asInstanceOf[CloudWatchLogsEncoding]
+    val shift_jis_2004  = "shift_jis_2004".asInstanceOf[CloudWatchLogsEncoding]
+    val shift_jisx0213  = "shift_jisx0213".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_32          = "utf_32".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_32_be       = "utf_32_be".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_32_le       = "utf_32_le".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_16          = "utf_16".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_16_be       = "utf_16_be".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_16_le       = "utf_16_le".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_7           = "utf_7".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_8           = "utf_8".asInstanceOf[CloudWatchLogsEncoding]
+    val utf_8_sig       = "utf_8_sig".asInstanceOf[CloudWatchLogsEncoding]
 
     val values = js.Object.freeze(
       js.Array(
@@ -926,9 +917,11 @@ package opsworks {
   /**
     * Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.
     */
-  object CloudWatchLogsInitialPositionEnum {
-    val start_of_file = "start_of_file"
-    val end_of_file   = "end_of_file"
+  @js.native
+  sealed trait CloudWatchLogsInitialPosition extends js.Any
+  object CloudWatchLogsInitialPosition extends js.Object {
+    val start_of_file = "start_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
+    val end_of_file   = "end_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
 
     val values = js.Object.freeze(js.Array(start_of_file, end_of_file))
   }
@@ -985,9 +978,11 @@ package opsworks {
   /**
     * The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.
     */
-  object CloudWatchLogsTimeZoneEnum {
-    val LOCAL = "LOCAL"
-    val UTC   = "UTC"
+  @js.native
+  sealed trait CloudWatchLogsTimeZone extends js.Any
+  object CloudWatchLogsTimeZone extends js.Object {
+    val LOCAL = "LOCAL".asInstanceOf[CloudWatchLogsTimeZone]
+    val UTC   = "UTC".asInstanceOf[CloudWatchLogsTimeZone]
 
     val values = js.Object.freeze(js.Array(LOCAL, UTC))
   }
@@ -1678,20 +1673,21 @@ package opsworks {
       __obj.asInstanceOf[DeploymentCommand]
     }
   }
-
-  object DeploymentCommandNameEnum {
-    val install_dependencies    = "install_dependencies"
-    val update_dependencies     = "update_dependencies"
-    val update_custom_cookbooks = "update_custom_cookbooks"
-    val execute_recipes         = "execute_recipes"
-    val configure               = "configure"
-    val setup                   = "setup"
-    val deploy                  = "deploy"
-    val rollback                = "rollback"
-    val start                   = "start"
-    val stop                    = "stop"
-    val restart                 = "restart"
-    val undeploy                = "undeploy"
+  @js.native
+  sealed trait DeploymentCommandName extends js.Any
+  object DeploymentCommandName extends js.Object {
+    val install_dependencies    = "install_dependencies".asInstanceOf[DeploymentCommandName]
+    val update_dependencies     = "update_dependencies".asInstanceOf[DeploymentCommandName]
+    val update_custom_cookbooks = "update_custom_cookbooks".asInstanceOf[DeploymentCommandName]
+    val execute_recipes         = "execute_recipes".asInstanceOf[DeploymentCommandName]
+    val configure               = "configure".asInstanceOf[DeploymentCommandName]
+    val setup                   = "setup".asInstanceOf[DeploymentCommandName]
+    val deploy                  = "deploy".asInstanceOf[DeploymentCommandName]
+    val rollback                = "rollback".asInstanceOf[DeploymentCommandName]
+    val start                   = "start".asInstanceOf[DeploymentCommandName]
+    val stop                    = "stop".asInstanceOf[DeploymentCommandName]
+    val restart                 = "restart".asInstanceOf[DeploymentCommandName]
+    val undeploy                = "undeploy".asInstanceOf[DeploymentCommandName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3237,33 +3233,34 @@ package opsworks {
       __obj.asInstanceOf[Layer]
     }
   }
-
-  object LayerAttributesKeysEnum {
-    val EcsClusterArn               = "EcsClusterArn"
-    val EnableHaproxyStats          = "EnableHaproxyStats"
-    val HaproxyStatsUrl             = "HaproxyStatsUrl"
-    val HaproxyStatsUser            = "HaproxyStatsUser"
-    val HaproxyStatsPassword        = "HaproxyStatsPassword"
-    val HaproxyHealthCheckUrl       = "HaproxyHealthCheckUrl"
-    val HaproxyHealthCheckMethod    = "HaproxyHealthCheckMethod"
-    val MysqlRootPassword           = "MysqlRootPassword"
-    val MysqlRootPasswordUbiquitous = "MysqlRootPasswordUbiquitous"
-    val GangliaUrl                  = "GangliaUrl"
-    val GangliaUser                 = "GangliaUser"
-    val GangliaPassword             = "GangliaPassword"
-    val MemcachedMemory             = "MemcachedMemory"
-    val NodejsVersion               = "NodejsVersion"
-    val RubyVersion                 = "RubyVersion"
-    val RubygemsVersion             = "RubygemsVersion"
-    val ManageBundler               = "ManageBundler"
-    val BundlerVersion              = "BundlerVersion"
-    val RailsStack                  = "RailsStack"
-    val PassengerVersion            = "PassengerVersion"
-    val Jvm                         = "Jvm"
-    val JvmVersion                  = "JvmVersion"
-    val JvmOptions                  = "JvmOptions"
-    val JavaAppServer               = "JavaAppServer"
-    val JavaAppServerVersion        = "JavaAppServerVersion"
+  @js.native
+  sealed trait LayerAttributesKeys extends js.Any
+  object LayerAttributesKeys extends js.Object {
+    val EcsClusterArn               = "EcsClusterArn".asInstanceOf[LayerAttributesKeys]
+    val EnableHaproxyStats          = "EnableHaproxyStats".asInstanceOf[LayerAttributesKeys]
+    val HaproxyStatsUrl             = "HaproxyStatsUrl".asInstanceOf[LayerAttributesKeys]
+    val HaproxyStatsUser            = "HaproxyStatsUser".asInstanceOf[LayerAttributesKeys]
+    val HaproxyStatsPassword        = "HaproxyStatsPassword".asInstanceOf[LayerAttributesKeys]
+    val HaproxyHealthCheckUrl       = "HaproxyHealthCheckUrl".asInstanceOf[LayerAttributesKeys]
+    val HaproxyHealthCheckMethod    = "HaproxyHealthCheckMethod".asInstanceOf[LayerAttributesKeys]
+    val MysqlRootPassword           = "MysqlRootPassword".asInstanceOf[LayerAttributesKeys]
+    val MysqlRootPasswordUbiquitous = "MysqlRootPasswordUbiquitous".asInstanceOf[LayerAttributesKeys]
+    val GangliaUrl                  = "GangliaUrl".asInstanceOf[LayerAttributesKeys]
+    val GangliaUser                 = "GangliaUser".asInstanceOf[LayerAttributesKeys]
+    val GangliaPassword             = "GangliaPassword".asInstanceOf[LayerAttributesKeys]
+    val MemcachedMemory             = "MemcachedMemory".asInstanceOf[LayerAttributesKeys]
+    val NodejsVersion               = "NodejsVersion".asInstanceOf[LayerAttributesKeys]
+    val RubyVersion                 = "RubyVersion".asInstanceOf[LayerAttributesKeys]
+    val RubygemsVersion             = "RubygemsVersion".asInstanceOf[LayerAttributesKeys]
+    val ManageBundler               = "ManageBundler".asInstanceOf[LayerAttributesKeys]
+    val BundlerVersion              = "BundlerVersion".asInstanceOf[LayerAttributesKeys]
+    val RailsStack                  = "RailsStack".asInstanceOf[LayerAttributesKeys]
+    val PassengerVersion            = "PassengerVersion".asInstanceOf[LayerAttributesKeys]
+    val Jvm                         = "Jvm".asInstanceOf[LayerAttributesKeys]
+    val JvmVersion                  = "JvmVersion".asInstanceOf[LayerAttributesKeys]
+    val JvmOptions                  = "JvmOptions".asInstanceOf[LayerAttributesKeys]
+    val JavaAppServer               = "JavaAppServer".asInstanceOf[LayerAttributesKeys]
+    val JavaAppServerVersion        = "JavaAppServerVersion".asInstanceOf[LayerAttributesKeys]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3295,20 +3292,21 @@ package opsworks {
       )
     )
   }
-
-  object LayerTypeEnum {
-    val `aws-flow-ruby`     = "aws-flow-ruby"
-    val `ecs-cluster`       = "ecs-cluster"
-    val `java-app`          = "java-app"
-    val lb                  = "lb"
-    val web                 = "web"
-    val `php-app`           = "php-app"
-    val `rails-app`         = "rails-app"
-    val `nodejs-app`        = "nodejs-app"
-    val memcached           = "memcached"
-    val `db-master`         = "db-master"
-    val `monitoring-master` = "monitoring-master"
-    val custom              = "custom"
+  @js.native
+  sealed trait LayerType extends js.Any
+  object LayerType extends js.Object {
+    val `aws-flow-ruby`     = "aws-flow-ruby".asInstanceOf[LayerType]
+    val `ecs-cluster`       = "ecs-cluster".asInstanceOf[LayerType]
+    val `java-app`          = "java-app".asInstanceOf[LayerType]
+    val lb                  = "lb".asInstanceOf[LayerType]
+    val web                 = "web".asInstanceOf[LayerType]
+    val `php-app`           = "php-app".asInstanceOf[LayerType]
+    val `rails-app`         = "rails-app".asInstanceOf[LayerType]
+    val `nodejs-app`        = "nodejs-app".asInstanceOf[LayerType]
+    val memcached           = "memcached".asInstanceOf[LayerType]
+    val `db-master`         = "db-master".asInstanceOf[LayerType]
+    val `monitoring-master` = "monitoring-master".asInstanceOf[LayerType]
+    val custom              = "custom".asInstanceOf[LayerType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3885,10 +3883,11 @@ package opsworks {
       __obj.asInstanceOf[ReportedOs]
     }
   }
-
-  object RootDeviceTypeEnum {
-    val ebs              = "ebs"
-    val `instance-store` = "instance-store"
+  @js.native
+  sealed trait RootDeviceType extends js.Any
+  object RootDeviceType extends js.Object {
+    val ebs              = "ebs".asInstanceOf[RootDeviceType]
+    val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
@@ -4090,12 +4089,13 @@ package opsworks {
       __obj.asInstanceOf[Source]
     }
   }
-
-  object SourceTypeEnum {
-    val git     = "git"
-    val svn     = "svn"
-    val archive = "archive"
-    val s3      = "s3"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val git     = "git".asInstanceOf[SourceType]
+    val svn     = "svn".asInstanceOf[SourceType]
+    val archive = "archive".asInstanceOf[SourceType]
+    val s3      = "s3".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(git, svn, archive, s3))
   }
@@ -4212,9 +4212,10 @@ package opsworks {
       __obj.asInstanceOf[Stack]
     }
   }
-
-  object StackAttributesKeysEnum {
-    val Color = "Color"
+  @js.native
+  sealed trait StackAttributesKeys extends js.Any
+  object StackAttributesKeys extends js.Object {
+    val Color = "Color".asInstanceOf[StackAttributesKeys]
 
     val values = js.Object.freeze(js.Array(Color))
   }
@@ -4862,10 +4863,11 @@ package opsworks {
       __obj.asInstanceOf[UserProfile]
     }
   }
-
-  object VirtualizationTypeEnum {
-    val paravirtual = "paravirtual"
-    val hvm         = "hvm"
+  @js.native
+  sealed trait VirtualizationType extends js.Any
+  object VirtualizationType extends js.Object {
+    val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
+    val hvm         = "hvm".asInstanceOf[VirtualizationType]
 
     val values = js.Object.freeze(js.Array(paravirtual, hvm))
   }
@@ -4966,11 +4968,12 @@ package opsworks {
       __obj.asInstanceOf[VolumeConfiguration]
     }
   }
-
-  object VolumeTypeEnum {
-    val gp2      = "gp2"
-    val io1      = "io1"
-    val standard = "standard"
+  @js.native
+  sealed trait VolumeType extends js.Any
+  object VolumeType extends js.Object {
+    val gp2      = "gp2".asInstanceOf[VolumeType]
+    val io1      = "io1".asInstanceOf[VolumeType]
+    val standard = "standard".asInstanceOf[VolumeType]
 
     val values = js.Object.freeze(js.Array(gp2, io1, standard))
   }

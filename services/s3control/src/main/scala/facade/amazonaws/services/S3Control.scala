@@ -23,14 +23,9 @@ package object s3control {
   type JobId                       = String
   type JobListDescriptorList       = js.Array[JobListDescriptor]
   type JobManifestFieldList        = js.Array[JobManifestFieldName]
-  type JobManifestFieldName        = String
-  type JobManifestFormat           = String
   type JobNumberOfTasksFailed      = Double
   type JobNumberOfTasksSucceeded   = Double
   type JobPriority                 = Int
-  type JobReportFormat             = String
-  type JobReportScope              = String
-  type JobStatus                   = String
   type JobStatusList               = js.Array[JobStatus]
   type JobStatusUpdateReason       = String
   type JobTerminationDate          = js.Date
@@ -38,30 +33,18 @@ package object s3control {
   type KmsKeyArnString             = String
   type MaxLength1024String         = String
   type MaxResults                  = Int
-  type NetworkOrigin               = String
   type NonEmptyMaxLength1024String = String
   type NonEmptyMaxLength2048String = String
   type NonEmptyMaxLength256String  = String
   type NonEmptyMaxLength64String   = String
-  type OperationName               = String
   type Policy                      = String
   type ReportPrefixString          = String
-  type RequestedJobStatus          = String
   type S3BucketArnString           = String
-  type S3CannedAccessControlList   = String
   type S3ContentLength             = Double
   type S3ExpirationInDays          = Int
-  type S3GlacierJobTier            = String
   type S3GrantList                 = js.Array[S3Grant]
-  type S3GranteeTypeIdentifier     = String
   type S3KeyArnString              = String
-  type S3MetadataDirective         = String
-  type S3ObjectLockLegalHoldStatus = String
-  type S3ObjectLockMode            = String
   type S3ObjectVersionId           = String
-  type S3Permission                = String
-  type S3SSEAlgorithm              = String
-  type S3StorageClass              = String
   type S3TagSet                    = js.Array[S3Tag]
   type S3UserMetadata              = js.Dictionary[MaxLength1024String]
   type Setting                     = Boolean
@@ -667,19 +650,21 @@ package s3control {
       __obj.asInstanceOf[JobManifest]
     }
   }
-
-  object JobManifestFieldNameEnum {
-    val Ignore    = "Ignore"
-    val Bucket    = "Bucket"
-    val Key       = "Key"
-    val VersionId = "VersionId"
+  @js.native
+  sealed trait JobManifestFieldName extends js.Any
+  object JobManifestFieldName extends js.Object {
+    val Ignore    = "Ignore".asInstanceOf[JobManifestFieldName]
+    val Bucket    = "Bucket".asInstanceOf[JobManifestFieldName]
+    val Key       = "Key".asInstanceOf[JobManifestFieldName]
+    val VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
 
     val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
   }
-
-  object JobManifestFormatEnum {
-    val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820"
-    val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130"
+  @js.native
+  sealed trait JobManifestFormat extends js.Any
+  object JobManifestFormat extends js.Object {
+    val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820".asInstanceOf[JobManifestFormat]
+    val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130".asInstanceOf[JobManifestFormat]
 
     val values = js.Object.freeze(js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130))
   }
@@ -823,34 +808,37 @@ package s3control {
       __obj.asInstanceOf[JobReport]
     }
   }
-
-  object JobReportFormatEnum {
-    val Report_CSV_20180820 = "Report_CSV_20180820"
+  @js.native
+  sealed trait JobReportFormat extends js.Any
+  object JobReportFormat extends js.Object {
+    val Report_CSV_20180820 = "Report_CSV_20180820".asInstanceOf[JobReportFormat]
 
     val values = js.Object.freeze(js.Array(Report_CSV_20180820))
   }
-
-  object JobReportScopeEnum {
-    val AllTasks        = "AllTasks"
-    val FailedTasksOnly = "FailedTasksOnly"
+  @js.native
+  sealed trait JobReportScope extends js.Any
+  object JobReportScope extends js.Object {
+    val AllTasks        = "AllTasks".asInstanceOf[JobReportScope]
+    val FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
 
     val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
   }
-
-  object JobStatusEnum {
-    val Active     = "Active"
-    val Cancelled  = "Cancelled"
-    val Cancelling = "Cancelling"
-    val Complete   = "Complete"
-    val Completing = "Completing"
-    val Failed     = "Failed"
-    val Failing    = "Failing"
-    val New        = "New"
-    val Paused     = "Paused"
-    val Pausing    = "Pausing"
-    val Preparing  = "Preparing"
-    val Ready      = "Ready"
-    val Suspended  = "Suspended"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val Active     = "Active".asInstanceOf[JobStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[JobStatus]
+    val Cancelling = "Cancelling".asInstanceOf[JobStatus]
+    val Complete   = "Complete".asInstanceOf[JobStatus]
+    val Completing = "Completing".asInstanceOf[JobStatus]
+    val Failed     = "Failed".asInstanceOf[JobStatus]
+    val Failing    = "Failing".asInstanceOf[JobStatus]
+    val New        = "New".asInstanceOf[JobStatus]
+    val Paused     = "Paused".asInstanceOf[JobStatus]
+    val Pausing    = "Pausing".asInstanceOf[JobStatus]
+    val Preparing  = "Preparing".asInstanceOf[JobStatus]
+    val Ready      = "Ready".asInstanceOf[JobStatus]
+    val Suspended  = "Suspended".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -981,20 +969,22 @@ package s3control {
       __obj.asInstanceOf[ListJobsResult]
     }
   }
-
-  object NetworkOriginEnum {
-    val Internet = "Internet"
-    val VPC      = "VPC"
+  @js.native
+  sealed trait NetworkOrigin extends js.Any
+  object NetworkOrigin extends js.Object {
+    val Internet = "Internet".asInstanceOf[NetworkOrigin]
+    val VPC      = "VPC".asInstanceOf[NetworkOrigin]
 
     val values = js.Object.freeze(js.Array(Internet, VPC))
   }
-
-  object OperationNameEnum {
-    val LambdaInvoke            = "LambdaInvoke"
-    val S3PutObjectCopy         = "S3PutObjectCopy"
-    val S3PutObjectAcl          = "S3PutObjectAcl"
-    val S3PutObjectTagging      = "S3PutObjectTagging"
-    val S3InitiateRestoreObject = "S3InitiateRestoreObject"
+  @js.native
+  sealed trait OperationName extends js.Any
+  object OperationName extends js.Object {
+    val LambdaInvoke            = "LambdaInvoke".asInstanceOf[OperationName]
+    val S3PutObjectCopy         = "S3PutObjectCopy".asInstanceOf[OperationName]
+    val S3PutObjectAcl          = "S3PutObjectAcl".asInstanceOf[OperationName]
+    val S3PutObjectTagging      = "S3PutObjectTagging".asInstanceOf[OperationName]
+    val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
 
     val values = js.Object.freeze(
       js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject)
@@ -1092,10 +1082,11 @@ package s3control {
       __obj.asInstanceOf[PutPublicAccessBlockRequest]
     }
   }
-
-  object RequestedJobStatusEnum {
-    val Cancelled = "Cancelled"
-    val Ready     = "Ready"
+  @js.native
+  sealed trait RequestedJobStatus extends js.Any
+  object RequestedJobStatus extends js.Object {
+    val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
+    val Ready     = "Ready".asInstanceOf[RequestedJobStatus]
 
     val values = js.Object.freeze(js.Array(Cancelled, Ready))
   }
@@ -1145,15 +1136,16 @@ package s3control {
       __obj.asInstanceOf[S3AccessControlPolicy]
     }
   }
-
-  object S3CannedAccessControlListEnum {
-    val `private`                   = "private"
-    val `public-read`               = "public-read"
-    val `public-read-write`         = "public-read-write"
-    val `aws-exec-read`             = "aws-exec-read"
-    val `authenticated-read`        = "authenticated-read"
-    val `bucket-owner-read`         = "bucket-owner-read"
-    val `bucket-owner-full-control` = "bucket-owner-full-control"
+  @js.native
+  sealed trait S3CannedAccessControlList extends js.Any
+  object S3CannedAccessControlList extends js.Object {
+    val `private`                   = "private".asInstanceOf[S3CannedAccessControlList]
+    val `public-read`               = "public-read".asInstanceOf[S3CannedAccessControlList]
+    val `public-read-write`         = "public-read-write".asInstanceOf[S3CannedAccessControlList]
+    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[S3CannedAccessControlList]
+    val `authenticated-read`        = "authenticated-read".asInstanceOf[S3CannedAccessControlList]
+    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1237,10 +1229,11 @@ package s3control {
       __obj.asInstanceOf[S3CopyObjectOperation]
     }
   }
-
-  object S3GlacierJobTierEnum {
-    val BULK     = "BULK"
-    val STANDARD = "STANDARD"
+  @js.native
+  sealed trait S3GlacierJobTier extends js.Any
+  object S3GlacierJobTier extends js.Object {
+    val BULK     = "BULK".asInstanceOf[S3GlacierJobTier]
+    val STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
 
     val values = js.Object.freeze(js.Array(BULK, STANDARD))
   }
@@ -1291,11 +1284,12 @@ package s3control {
       __obj.asInstanceOf[S3Grantee]
     }
   }
-
-  object S3GranteeTypeIdentifierEnum {
-    val id           = "id"
-    val emailAddress = "emailAddress"
-    val uri          = "uri"
+  @js.native
+  sealed trait S3GranteeTypeIdentifier extends js.Any
+  object S3GranteeTypeIdentifier extends js.Object {
+    val id           = "id".asInstanceOf[S3GranteeTypeIdentifier]
+    val emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
+    val uri          = "uri".asInstanceOf[S3GranteeTypeIdentifier]
 
     val values = js.Object.freeze(js.Array(id, emailAddress, uri))
   }
@@ -1321,24 +1315,27 @@ package s3control {
       __obj.asInstanceOf[S3InitiateRestoreObjectOperation]
     }
   }
-
-  object S3MetadataDirectiveEnum {
-    val COPY    = "COPY"
-    val REPLACE = "REPLACE"
+  @js.native
+  sealed trait S3MetadataDirective extends js.Any
+  object S3MetadataDirective extends js.Object {
+    val COPY    = "COPY".asInstanceOf[S3MetadataDirective]
+    val REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
-
-  object S3ObjectLockLegalHoldStatusEnum {
-    val OFF = "OFF"
-    val ON  = "ON"
+  @js.native
+  sealed trait S3ObjectLockLegalHoldStatus extends js.Any
+  object S3ObjectLockLegalHoldStatus extends js.Object {
+    val OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
+    val ON  = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
 
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
-
-  object S3ObjectLockModeEnum {
-    val COMPLIANCE = "COMPLIANCE"
-    val GOVERNANCE = "GOVERNANCE"
+  @js.native
+  sealed trait S3ObjectLockMode extends js.Any
+  object S3ObjectLockMode extends js.Object {
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
 
     val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
@@ -1413,20 +1410,22 @@ package s3control {
       __obj.asInstanceOf[S3ObjectOwner]
     }
   }
-
-  object S3PermissionEnum {
-    val FULL_CONTROL = "FULL_CONTROL"
-    val READ         = "READ"
-    val WRITE        = "WRITE"
-    val READ_ACP     = "READ_ACP"
-    val WRITE_ACP    = "WRITE_ACP"
+  @js.native
+  sealed trait S3Permission extends js.Any
+  object S3Permission extends js.Object {
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[S3Permission]
+    val READ         = "READ".asInstanceOf[S3Permission]
+    val WRITE        = "WRITE".asInstanceOf[S3Permission]
+    val READ_ACP     = "READ_ACP".asInstanceOf[S3Permission]
+    val WRITE_ACP    = "WRITE_ACP".asInstanceOf[S3Permission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
-
-  object S3SSEAlgorithmEnum {
-    val AES256 = "AES256"
-    val KMS    = "KMS"
+  @js.native
+  sealed trait S3SSEAlgorithm extends js.Any
+  object S3SSEAlgorithm extends js.Object {
+    val AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
+    val KMS    = "KMS".asInstanceOf[S3SSEAlgorithm]
 
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
@@ -1468,14 +1467,15 @@ package s3control {
       __obj.asInstanceOf[S3SetObjectTaggingOperation]
     }
   }
-
-  object S3StorageClassEnum {
-    val STANDARD            = "STANDARD"
-    val STANDARD_IA         = "STANDARD_IA"
-    val ONEZONE_IA          = "ONEZONE_IA"
-    val GLACIER             = "GLACIER"
-    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+  @js.native
+  sealed trait S3StorageClass extends js.Any
+  object S3StorageClass extends js.Object {
+    val STANDARD            = "STANDARD".asInstanceOf[S3StorageClass]
+    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[S3StorageClass]
+    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[S3StorageClass]
+    val GLACIER             = "GLACIER".asInstanceOf[S3StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
     val values =
       js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))

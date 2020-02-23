@@ -10,7 +10,6 @@ package object kinesisanalytics {
   type ApplicationCode                     = String
   type ApplicationDescription              = String
   type ApplicationName                     = String
-  type ApplicationStatus                   = String
   type ApplicationSummaries                = js.Array[ApplicationSummary]
   type ApplicationVersionId                = Double
   type BooleanObject                       = Boolean
@@ -26,7 +25,6 @@ package object kinesisanalytics {
   type InputConfigurations                 = js.Array[InputConfiguration]
   type InputDescriptions                   = js.Array[InputDescription]
   type InputParallelismCount               = Int
-  type InputStartingPosition               = String
   type InputUpdates                        = js.Array[InputUpdate]
   type Inputs                              = js.Array[Input]
   type KinesisAnalyticsARN                 = String
@@ -48,7 +46,6 @@ package object kinesisanalytics {
   type RecordColumnSqlType                 = String
   type RecordColumns                       = js.Array[RecordColumn]
   type RecordEncoding                      = String
-  type RecordFormatType                    = String
   type RecordRowDelimiter                  = String
   type RecordRowPath                       = String
   type ReferenceDataSourceDescriptions     = js.Array[ReferenceDataSourceDescription]
@@ -424,14 +421,15 @@ package kinesisanalytics {
       __obj.asInstanceOf[ApplicationDetail]
     }
   }
-
-  object ApplicationStatusEnum {
-    val DELETING = "DELETING"
-    val STARTING = "STARTING"
-    val STOPPING = "STOPPING"
-    val READY    = "READY"
-    val RUNNING  = "RUNNING"
-    val UPDATING = "UPDATING"
+  @js.native
+  sealed trait ApplicationStatus extends js.Any
+  object ApplicationStatus extends js.Object {
+    val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
+    val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
+    val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
+    val READY    = "READY".asInstanceOf[ApplicationStatus]
+    val RUNNING  = "RUNNING".asInstanceOf[ApplicationStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
     val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
   }
@@ -1288,11 +1286,12 @@ package kinesisanalytics {
       __obj.asInstanceOf[InputSchemaUpdate]
     }
   }
-
-  object InputStartingPositionEnum {
-    val NOW                = "NOW"
-    val TRIM_HORIZON       = "TRIM_HORIZON"
-    val LAST_STOPPED_POINT = "LAST_STOPPED_POINT"
+  @js.native
+  sealed trait InputStartingPosition extends js.Any
+  object InputStartingPosition extends js.Object {
+    val NOW                = "NOW".asInstanceOf[InputStartingPosition]
+    val TRIM_HORIZON       = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
+    val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
     val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
   }
@@ -1989,10 +1988,11 @@ package kinesisanalytics {
       __obj.asInstanceOf[RecordFormat]
     }
   }
-
-  object RecordFormatTypeEnum {
-    val JSON = "JSON"
-    val CSV  = "CSV"
+  @js.native
+  sealed trait RecordFormatType extends js.Any
+  object RecordFormatType extends js.Object {
+    val JSON = "JSON".asInstanceOf[RecordFormatType]
+    val CSV  = "CSV".asInstanceOf[RecordFormatType]
 
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }

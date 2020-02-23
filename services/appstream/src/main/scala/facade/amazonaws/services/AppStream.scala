@@ -8,15 +8,12 @@ import facade.amazonaws._
 
 package object appstream {
   type AccessEndpointList                       = js.Array[AccessEndpoint]
-  type AccessEndpointType                       = String
   type AccountName                              = String
   type AccountPassword                          = String
-  type Action                                   = String
   type Applications                             = js.Array[Application]
   type AppstreamAgentVersion                    = String
   type Arn                                      = String
   type ArnList                                  = js.Array[Arn]
-  type AuthenticationType                       = String
   type AwsAccountId                             = String
   type AwsAccountIdList                         = js.Array[AwsAccountId]
   type BooleanObject                            = Boolean
@@ -31,45 +28,29 @@ package object appstream {
   type EmbedHostDomain                          = String
   type EmbedHostDomains                         = js.Array[EmbedHostDomain]
   type FeedbackURL                              = String
-  type FleetAttribute                           = String
   type FleetAttributes                          = js.Array[FleetAttribute]
-  type FleetErrorCode                           = String
   type FleetErrors                              = js.Array[FleetError]
   type FleetList                                = js.Array[Fleet]
-  type FleetState                               = String
-  type FleetType                                = String
   type ImageBuilderList                         = js.Array[ImageBuilder]
-  type ImageBuilderState                        = String
-  type ImageBuilderStateChangeReasonCode        = String
   type ImageList                                = js.Array[Image]
-  type ImageState                               = String
-  type ImageStateChangeReasonCode               = String
   type LastReportGenerationExecutionErrors      = js.Array[LastReportGenerationExecutionError]
   type MaxResults                               = Int
-  type MessageAction                            = String
   type Metadata                                 = js.Dictionary[String]
   type Name                                     = String
   type OrganizationalUnitDistinguishedName      = String
   type OrganizationalUnitDistinguishedNamesList = js.Array[OrganizationalUnitDistinguishedName]
-  type Permission                               = String
-  type PlatformType                             = String
   type RedirectURL                              = String
   type RegionName                               = String
   type ResourceErrors                           = js.Array[ResourceError]
   type ResourceIdentifier                       = String
   type SecurityGroupIdList                      = js.Array[String]
-  type SessionConnectionState                   = String
   type SessionList                              = js.Array[Session]
-  type SessionState                             = String
   type SettingsGroup                            = String
   type SharedImagePermissionsList               = js.Array[SharedImagePermissions]
-  type StackAttribute                           = String
   type StackAttributes                          = js.Array[StackAttribute]
-  type StackErrorCode                           = String
   type StackErrors                              = js.Array[StackError]
   type StackList                                = js.Array[Stack]
   type StorageConnectorList                     = js.Array[StorageConnector]
-  type StorageConnectorType                     = String
   type StreamingUrlUserId                       = String
   type StringList                               = js.Array[String]
   type SubnetIdList                             = js.Array[String]
@@ -78,18 +59,14 @@ package object appstream {
   type TagValue                                 = String
   type Tags                                     = js.Dictionary[TagValue]
   type Timestamp                                = js.Date
-  type UsageReportExecutionErrorCode            = String
-  type UsageReportSchedule                      = String
   type UsageReportSubscriptionList              = js.Array[UsageReportSubscription]
   type UserAttributeValue                       = String
   type UserId                                   = String
   type UserList                                 = js.Array[User]
   type UserSettingList                          = js.Array[UserSetting]
-  type UserStackAssociationErrorCode            = String
   type UserStackAssociationErrorList            = js.Array[UserStackAssociationError]
   type UserStackAssociationList                 = js.Array[UserStackAssociation]
   type Username                                 = String
-  type VisibilityType                           = String
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
@@ -295,19 +272,21 @@ package appstream {
       __obj.asInstanceOf[AccessEndpoint]
     }
   }
-
-  object AccessEndpointTypeEnum {
-    val STREAMING = "STREAMING"
+  @js.native
+  sealed trait AccessEndpointType extends js.Any
+  object AccessEndpointType extends js.Object {
+    val STREAMING = "STREAMING".asInstanceOf[AccessEndpointType]
 
     val values = js.Object.freeze(js.Array(STREAMING))
   }
-
-  object ActionEnum {
-    val CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE"
-    val CLIPBOARD_COPY_TO_LOCAL_DEVICE   = "CLIPBOARD_COPY_TO_LOCAL_DEVICE"
-    val FILE_UPLOAD                      = "FILE_UPLOAD"
-    val FILE_DOWNLOAD                    = "FILE_DOWNLOAD"
-    val PRINTING_TO_LOCAL_DEVICE         = "PRINTING_TO_LOCAL_DEVICE"
+  @js.native
+  sealed trait Action extends js.Any
+  object Action extends js.Object {
+    val CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE".asInstanceOf[Action]
+    val CLIPBOARD_COPY_TO_LOCAL_DEVICE   = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    val FILE_UPLOAD                      = "FILE_UPLOAD".asInstanceOf[Action]
+    val FILE_DOWNLOAD                    = "FILE_DOWNLOAD".asInstanceOf[Action]
+    val PRINTING_TO_LOCAL_DEVICE         = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
     val values = js.Object.freeze(
       js.Array(
@@ -439,11 +418,12 @@ package appstream {
       __obj.asInstanceOf[AssociateFleetResult]
     }
   }
-
-  object AuthenticationTypeEnum {
-    val API      = "API"
-    val SAML     = "SAML"
-    val USERPOOL = "USERPOOL"
+  @js.native
+  sealed trait AuthenticationType extends js.Any
+  object AuthenticationType extends js.Object {
+    val API      = "API".asInstanceOf[AuthenticationType]
+    val SAML     = "SAML".asInstanceOf[AuthenticationType]
+    val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
 
     val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
   }
@@ -2006,11 +1986,13 @@ package appstream {
   /**
     * The fleet attribute.
     */
-  object FleetAttributeEnum {
-    val VPC_CONFIGURATION                    = "VPC_CONFIGURATION"
-    val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
-    val DOMAIN_JOIN_INFO                     = "DOMAIN_JOIN_INFO"
-    val IAM_ROLE_ARN                         = "IAM_ROLE_ARN"
+  @js.native
+  sealed trait FleetAttribute extends js.Any
+  object FleetAttribute extends js.Object {
+    val VPC_CONFIGURATION                    = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
+    val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
+    val DOMAIN_JOIN_INFO                     = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
+    val IAM_ROLE_ARN                         = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
     val values = js.Object.freeze(
       js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
@@ -2038,37 +2020,44 @@ package appstream {
       __obj.asInstanceOf[FleetError]
     }
   }
-
-  object FleetErrorCodeEnum {
-    val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION    = "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION"
-    val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION      = "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION"
-    val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION      = "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION"
-    val NETWORK_INTERFACE_LIMIT_EXCEEDED                = "NETWORK_INTERFACE_LIMIT_EXCEEDED"
-    val INTERNAL_SERVICE_ERROR                          = "INTERNAL_SERVICE_ERROR"
-    val IAM_SERVICE_ROLE_IS_MISSING                     = "IAM_SERVICE_ROLE_IS_MISSING"
-    val MACHINE_ROLE_IS_MISSING                         = "MACHINE_ROLE_IS_MISSING"
-    val STS_DISABLED_IN_REGION                          = "STS_DISABLED_IN_REGION"
-    val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES            = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"
-    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"
-    val SUBNET_NOT_FOUND                                = "SUBNET_NOT_FOUND"
-    val IMAGE_NOT_FOUND                                 = "IMAGE_NOT_FOUND"
-    val INVALID_SUBNET_CONFIGURATION                    = "INVALID_SUBNET_CONFIGURATION"
-    val SECURITY_GROUPS_NOT_FOUND                       = "SECURITY_GROUPS_NOT_FOUND"
-    val IGW_NOT_ATTACHED                                = "IGW_NOT_ATTACHED"
+  @js.native
+  sealed trait FleetErrorCode extends js.Any
+  object FleetErrorCode extends js.Object {
+    val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION =
+      "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION =
+      "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION =
+      "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
+    val NETWORK_INTERFACE_LIMIT_EXCEEDED     = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
+    val INTERNAL_SERVICE_ERROR               = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_IS_MISSING          = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    val MACHINE_ROLE_IS_MISSING              = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    val STS_DISABLED_IN_REGION               = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
+    val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION =
+      "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
+    val SUBNET_NOT_FOUND             = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val IMAGE_NOT_FOUND              = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val INVALID_SUBNET_CONFIGURATION = "INVALID_SUBNET_CONFIGURATION".asInstanceOf[FleetErrorCode]
+    val SECURITY_GROUPS_NOT_FOUND    = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val IGW_NOT_ATTACHED             = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION"
-    val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND                    = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND"
-    val DOMAIN_JOIN_ERROR_ACCESS_DENIED                     = "DOMAIN_JOIN_ERROR_ACCESS_DENIED"
-    val DOMAIN_JOIN_ERROR_LOGON_FAILURE                     = "DOMAIN_JOIN_ERROR_LOGON_FAILURE"
-    val DOMAIN_JOIN_ERROR_INVALID_PARAMETER                 = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER"
-    val DOMAIN_JOIN_ERROR_MORE_DATA                         = "DOMAIN_JOIN_ERROR_MORE_DATA"
-    val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN                    = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN"
-    val DOMAIN_JOIN_ERROR_NOT_SUPPORTED                     = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED"
-    val DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME             = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME"
-    val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED            = "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED"
-    val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED"
-    val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED                   = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED"
-    val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR                  = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR"
+      "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND        = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_ACCESS_DENIED         = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_LOGON_FAILURE         = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_INVALID_PARAMETER     = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_MORE_DATA             = "DOMAIN_JOIN_ERROR_MORE_DATA".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN        = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_NOT_SUPPORTED         = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED =
+      "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED =
+      "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED  = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2103,19 +2092,21 @@ package appstream {
       )
     )
   }
-
-  object FleetStateEnum {
-    val STARTING = "STARTING"
-    val RUNNING  = "RUNNING"
-    val STOPPING = "STOPPING"
-    val STOPPED  = "STOPPED"
+  @js.native
+  sealed trait FleetState extends js.Any
+  object FleetState extends js.Object {
+    val STARTING = "STARTING".asInstanceOf[FleetState]
+    val RUNNING  = "RUNNING".asInstanceOf[FleetState]
+    val STOPPING = "STOPPING".asInstanceOf[FleetState]
+    val STOPPED  = "STOPPED".asInstanceOf[FleetState]
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
-
-  object FleetTypeEnum {
-    val ALWAYS_ON = "ALWAYS_ON"
-    val ON_DEMAND = "ON_DEMAND"
+  @js.native
+  sealed trait FleetType extends js.Any
+  object FleetType extends js.Object {
+    val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
 
     val values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
   }
@@ -2263,17 +2254,18 @@ package appstream {
       __obj.asInstanceOf[ImageBuilder]
     }
   }
-
-  object ImageBuilderStateEnum {
-    val PENDING        = "PENDING"
-    val UPDATING_AGENT = "UPDATING_AGENT"
-    val RUNNING        = "RUNNING"
-    val STOPPING       = "STOPPING"
-    val STOPPED        = "STOPPED"
-    val REBOOTING      = "REBOOTING"
-    val SNAPSHOTTING   = "SNAPSHOTTING"
-    val DELETING       = "DELETING"
-    val FAILED         = "FAILED"
+  @js.native
+  sealed trait ImageBuilderState extends js.Any
+  object ImageBuilderState extends js.Object {
+    val PENDING        = "PENDING".asInstanceOf[ImageBuilderState]
+    val UPDATING_AGENT = "UPDATING_AGENT".asInstanceOf[ImageBuilderState]
+    val RUNNING        = "RUNNING".asInstanceOf[ImageBuilderState]
+    val STOPPING       = "STOPPING".asInstanceOf[ImageBuilderState]
+    val STOPPED        = "STOPPED".asInstanceOf[ImageBuilderState]
+    val REBOOTING      = "REBOOTING".asInstanceOf[ImageBuilderState]
+    val SNAPSHOTTING   = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
+    val DELETING       = "DELETING".asInstanceOf[ImageBuilderState]
+    val FAILED         = "FAILED".asInstanceOf[ImageBuilderState]
 
     val values = js.Object.freeze(
       js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
@@ -2301,10 +2293,11 @@ package appstream {
       __obj.asInstanceOf[ImageBuilderStateChangeReason]
     }
   }
-
-  object ImageBuilderStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR    = "INTERNAL_ERROR"
-    val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE"
+  @js.native
+  sealed trait ImageBuilderStateChangeReasonCode extends js.Any
+  object ImageBuilderStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR    = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
+    val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
   }
@@ -2330,13 +2323,14 @@ package appstream {
       __obj.asInstanceOf[ImagePermissions]
     }
   }
-
-  object ImageStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val FAILED    = "FAILED"
-    val COPYING   = "COPYING"
-    val DELETING  = "DELETING"
+  @js.native
+  sealed trait ImageState extends js.Any
+  object ImageState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[ImageState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ImageState]
+    val FAILED    = "FAILED".asInstanceOf[ImageState]
+    val COPYING   = "COPYING".asInstanceOf[ImageState]
+    val DELETING  = "DELETING".asInstanceOf[ImageState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
   }
@@ -2362,11 +2356,12 @@ package appstream {
       __obj.asInstanceOf[ImageStateChangeReason]
     }
   }
-
-  object ImageStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR              = "INTERNAL_ERROR"
-    val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE"
-    val IMAGE_COPY_FAILURE          = "IMAGE_COPY_FAILURE"
+  @js.native
+  sealed trait ImageStateChangeReasonCode extends js.Any
+  object ImageStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR              = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
+    val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
+    val IMAGE_COPY_FAILURE          = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
   }
@@ -2506,10 +2501,11 @@ package appstream {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object MessageActionEnum {
-    val SUPPRESS = "SUPPRESS"
-    val RESEND   = "RESEND"
+  @js.native
+  sealed trait MessageAction extends js.Any
+  object MessageAction extends js.Object {
+    val SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
+    val RESEND   = "RESEND".asInstanceOf[MessageAction]
 
     val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
   }
@@ -2535,18 +2531,20 @@ package appstream {
       __obj.asInstanceOf[NetworkAccessConfiguration]
     }
   }
-
-  object PermissionEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[Permission]
+    val DISABLED = "DISABLED".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
-
-  object PlatformTypeEnum {
-    val WINDOWS             = "WINDOWS"
-    val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
-    val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+  @js.native
+  sealed trait PlatformType extends js.Any
+  object PlatformType extends js.Object {
+    val WINDOWS             = "WINDOWS".asInstanceOf[PlatformType]
+    val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
+    val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
 
     val values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
   }
@@ -2649,10 +2647,11 @@ package appstream {
       __obj.asInstanceOf[Session]
     }
   }
-
-  object SessionConnectionStateEnum {
-    val CONNECTED     = "CONNECTED"
-    val NOT_CONNECTED = "NOT_CONNECTED"
+  @js.native
+  sealed trait SessionConnectionState extends js.Any
+  object SessionConnectionState extends js.Object {
+    val CONNECTED     = "CONNECTED".asInstanceOf[SessionConnectionState]
+    val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
 
     val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
   }
@@ -2660,10 +2659,12 @@ package appstream {
   /**
     * Possible values for the state of a streaming session.
     */
-  object SessionStateEnum {
-    val ACTIVE  = "ACTIVE"
-    val PENDING = "PENDING"
-    val EXPIRED = "EXPIRED"
+  @js.native
+  sealed trait SessionState extends js.Any
+  object SessionState extends js.Object {
+    val ACTIVE  = "ACTIVE".asInstanceOf[SessionState]
+    val PENDING = "PENDING".asInstanceOf[SessionState]
+    val EXPIRED = "EXPIRED".asInstanceOf[SessionState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
   }
@@ -2748,19 +2749,20 @@ package appstream {
       __obj.asInstanceOf[Stack]
     }
   }
-
-  object StackAttributeEnum {
-    val STORAGE_CONNECTORS             = "STORAGE_CONNECTORS"
-    val STORAGE_CONNECTOR_HOMEFOLDERS  = "STORAGE_CONNECTOR_HOMEFOLDERS"
-    val STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE"
-    val STORAGE_CONNECTOR_ONE_DRIVE    = "STORAGE_CONNECTOR_ONE_DRIVE"
-    val REDIRECT_URL                   = "REDIRECT_URL"
-    val FEEDBACK_URL                   = "FEEDBACK_URL"
-    val THEME_NAME                     = "THEME_NAME"
-    val USER_SETTINGS                  = "USER_SETTINGS"
-    val EMBED_HOST_DOMAINS             = "EMBED_HOST_DOMAINS"
-    val IAM_ROLE_ARN                   = "IAM_ROLE_ARN"
-    val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS"
+  @js.native
+  sealed trait StackAttribute extends js.Any
+  object StackAttribute extends js.Object {
+    val STORAGE_CONNECTORS             = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTOR_HOMEFOLDERS  = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTOR_ONE_DRIVE    = "STORAGE_CONNECTOR_ONE_DRIVE".asInstanceOf[StackAttribute]
+    val REDIRECT_URL                   = "REDIRECT_URL".asInstanceOf[StackAttribute]
+    val FEEDBACK_URL                   = "FEEDBACK_URL".asInstanceOf[StackAttribute]
+    val THEME_NAME                     = "THEME_NAME".asInstanceOf[StackAttribute]
+    val USER_SETTINGS                  = "USER_SETTINGS".asInstanceOf[StackAttribute]
+    val EMBED_HOST_DOMAINS             = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
+    val IAM_ROLE_ARN                   = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
+    val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2800,10 +2802,11 @@ package appstream {
       __obj.asInstanceOf[StackError]
     }
   }
-
-  object StackErrorCodeEnum {
-    val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR"
-    val INTERNAL_SERVICE_ERROR  = "INTERNAL_SERVICE_ERROR"
+  @js.native
+  sealed trait StackErrorCode extends js.Any
+  object StackErrorCode extends js.Object {
+    val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
+    val INTERNAL_SERVICE_ERROR  = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
 
     val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
   }
@@ -2971,10 +2974,12 @@ package appstream {
   /**
     * The type of storage connector.
     */
-  object StorageConnectorTypeEnum {
-    val HOMEFOLDERS  = "HOMEFOLDERS"
-    val GOOGLE_DRIVE = "GOOGLE_DRIVE"
-    val ONE_DRIVE    = "ONE_DRIVE"
+  @js.native
+  sealed trait StorageConnectorType extends js.Any
+  object StorageConnectorType extends js.Object {
+    val HOMEFOLDERS  = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
+    val GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
+    val ONE_DRIVE    = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
 
     val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
   }
@@ -3277,17 +3282,19 @@ package appstream {
       __obj.asInstanceOf[UpdateStackResult]
     }
   }
-
-  object UsageReportExecutionErrorCodeEnum {
-    val RESOURCE_NOT_FOUND     = "RESOURCE_NOT_FOUND"
-    val ACCESS_DENIED          = "ACCESS_DENIED"
-    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR"
+  @js.native
+  sealed trait UsageReportExecutionErrorCode extends js.Any
+  object UsageReportExecutionErrorCode extends js.Object {
+    val RESOURCE_NOT_FOUND     = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
+    val ACCESS_DENIED          = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
 
     val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
   }
-
-  object UsageReportScheduleEnum {
-    val DAILY = "DAILY"
+  @js.native
+  sealed trait UsageReportSchedule extends js.Any
+  object UsageReportSchedule extends js.Object {
+    val DAILY = "DAILY".asInstanceOf[UsageReportSchedule]
 
     val values = js.Object.freeze(js.Array(DAILY))
   }
@@ -3440,19 +3447,21 @@ package appstream {
       __obj.asInstanceOf[UserStackAssociationError]
     }
   }
-
-  object UserStackAssociationErrorCodeEnum {
-    val STACK_NOT_FOUND     = "STACK_NOT_FOUND"
-    val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND"
-    val INTERNAL_ERROR      = "INTERNAL_ERROR"
+  @js.native
+  sealed trait UserStackAssociationErrorCode extends js.Any
+  object UserStackAssociationErrorCode extends js.Object {
+    val STACK_NOT_FOUND     = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    val INTERNAL_ERROR      = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
     val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
-
-  object VisibilityTypeEnum {
-    val PUBLIC  = "PUBLIC"
-    val PRIVATE = "PRIVATE"
-    val SHARED  = "SHARED"
+  @js.native
+  sealed trait VisibilityType extends js.Any
+  object VisibilityType extends js.Object {
+    val PUBLIC  = "PUBLIC".asInstanceOf[VisibilityType]
+    val PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
+    val SHARED  = "SHARED".asInstanceOf[VisibilityType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
   }

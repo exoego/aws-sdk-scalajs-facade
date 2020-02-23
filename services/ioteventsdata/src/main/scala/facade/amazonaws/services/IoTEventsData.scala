@@ -12,7 +12,6 @@ package object ioteventsdata {
   type DetectorModelName               = String
   type DetectorModelVersion            = String
   type DetectorSummaries               = js.Array[DetectorSummary]
-  type ErrorCode                       = String
   type ErrorMessage                    = String
   type InputName                       = String
   type KeyValue                        = String
@@ -357,13 +356,14 @@ package ioteventsdata {
       __obj.asInstanceOf[DetectorSummary]
     }
   }
-
-  object ErrorCodeEnum {
-    val ResourceNotFoundException   = "ResourceNotFoundException"
-    val InvalidRequestException     = "InvalidRequestException"
-    val InternalFailureException    = "InternalFailureException"
-    val ServiceUnavailableException = "ServiceUnavailableException"
-    val ThrottlingException         = "ThrottlingException"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val ResourceNotFoundException   = "ResourceNotFoundException".asInstanceOf[ErrorCode]
+    val InvalidRequestException     = "InvalidRequestException".asInstanceOf[ErrorCode]
+    val InternalFailureException    = "InternalFailureException".asInstanceOf[ErrorCode]
+    val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
+    val ThrottlingException         = "ThrottlingException".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(

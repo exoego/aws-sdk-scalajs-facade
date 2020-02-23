@@ -7,250 +7,200 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object s3 {
-  type AbortDate                         = js.Date
-  type AbortRuleId                       = String
-  type AcceptRanges                      = String
-  type AccountId                         = String
-  type AllowQuotedRecordDelimiter        = Boolean
-  type AllowedHeader                     = String
-  type AllowedHeaders                    = js.Array[AllowedHeader]
-  type AllowedMethod                     = String
-  type AllowedMethods                    = js.Array[AllowedMethod]
-  type AllowedOrigin                     = String
-  type AllowedOrigins                    = js.Array[AllowedOrigin]
-  type AnalyticsConfigurationList        = js.Array[AnalyticsConfiguration]
-  type AnalyticsId                       = String
-  type AnalyticsS3ExportFileFormat       = String
-  type Body                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BucketAccelerateStatus            = String
-  type BucketCannedACL                   = String
-  type BucketLocationConstraint          = String
-  type BucketLogsPermission              = String
-  type BucketName                        = String
-  type BucketVersioningStatus            = String
-  type Buckets                           = js.Array[Bucket]
-  type BypassGovernanceRetention         = Boolean
-  type BytesProcessed                    = Double
-  type BytesReturned                     = Double
-  type BytesScanned                      = Double
-  type CORSRules                         = js.Array[CORSRule]
-  type CacheControl                      = String
-  type CloudFunction                     = String
-  type CloudFunctionInvocationRole       = String
-  type Code                              = String
-  type Comments                          = String
-  type CommonPrefixList                  = js.Array[CommonPrefix]
-  type CompletedPartList                 = js.Array[CompletedPart]
-  type CompressionType                   = String
-  type ConfirmRemoveSelfBucketAccess     = Boolean
-  type ContentDisposition                = String
-  type ContentEncoding                   = String
-  type ContentLanguage                   = String
-  type ContentLength                     = Double
-  type ContentMD5                        = String
-  type ContentRange                      = String
-  type ContentType                       = String
-  type CopySource                        = String
-  type CopySourceIfMatch                 = String
-  type CopySourceIfModifiedSince         = js.Date
-  type CopySourceIfNoneMatch             = String
-  type CopySourceIfUnmodifiedSince       = js.Date
-  type CopySourceRange                   = String
-  type CopySourceSSECustomerAlgorithm    = String
-  type CopySourceSSECustomerKey          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CopySourceSSECustomerKeyMD5       = String
-  type CopySourceVersionId               = String
-  type CreationDate                      = js.Date
-  type Date                              = js.Date
-  type Days                              = Int
-  type DaysAfterInitiation               = Int
-  type DeleteMarker                      = Boolean
-  type DeleteMarkerReplicationStatus     = String
-  type DeleteMarkerVersionId             = String
-  type DeleteMarkers                     = js.Array[DeleteMarkerEntry]
-  type DeletedObjects                    = js.Array[DeletedObject]
-  type Delimiter                         = String
-  type Description                       = String
-  type DisplayName                       = String
-  type ETag                              = String
-  type EmailAddress                      = String
-  type EnableRequestProgress             = Boolean
-  type EncodingType                      = String
-  type End                               = Double
-  type Errors                            = js.Array[Error]
-  type Event                             = String
-  type EventList                         = js.Array[Event]
-  type ExistingObjectReplicationStatus   = String
-  type Expiration                        = String
-  type ExpirationStatus                  = String
-  type ExpiredObjectDeleteMarker         = Boolean
-  type Expires                           = js.Date
-  type ExposeHeader                      = String
-  type ExposeHeaders                     = js.Array[ExposeHeader]
-  type Expression                        = String
-  type ExpressionType                    = String
-  type FetchOwner                        = Boolean
-  type FieldDelimiter                    = String
-  type FileHeaderInfo                    = String
-  type FilterRuleList                    = js.Array[FilterRule]
-  type FilterRuleName                    = String
-  type FilterRuleValue                   = String
-  type GrantFullControl                  = String
-  type GrantRead                         = String
-  type GrantReadACP                      = String
-  type GrantWrite                        = String
-  type GrantWriteACP                     = String
-  type Grants                            = js.Array[Grant]
-  type HostName                          = String
-  type HttpErrorCodeReturnedEquals       = String
-  type HttpRedirectCode                  = String
-  type ID                                = String
-  type IfMatch                           = String
-  type IfModifiedSince                   = js.Date
-  type IfNoneMatch                       = String
-  type IfUnmodifiedSince                 = js.Date
-  type Initiated                         = js.Date
-  type InventoryConfigurationList        = js.Array[InventoryConfiguration]
-  type InventoryFormat                   = String
-  type InventoryFrequency                = String
-  type InventoryId                       = String
-  type InventoryIncludedObjectVersions   = String
-  type InventoryOptionalField            = String
-  type InventoryOptionalFields           = js.Array[InventoryOptionalField]
-  type IsEnabled                         = Boolean
-  type IsLatest                          = Boolean
-  type IsPublic                          = Boolean
-  type IsTruncated                       = Boolean
-  type JSONType                          = String
-  type KMSContext                        = String
-  type KeyCount                          = Int
-  type KeyMarker                         = String
-  type KeyPrefixEquals                   = String
-  type LambdaFunctionArn                 = String
-  type LambdaFunctionConfigurationList   = js.Array[LambdaFunctionConfiguration]
-  type LastModified                      = js.Date
-  type LifecycleRules                    = js.Array[LifecycleRule]
-  type Location                          = String
-  type LocationPrefix                    = String
-  type MFA                               = String
-  type MFADelete                         = String
-  type MFADeleteStatus                   = String
-  type Marker                            = String
-  type MaxAgeSeconds                     = Int
-  type MaxKeys                           = Int
-  type MaxParts                          = Int
-  type MaxUploads                        = Int
-  type Message                           = String
-  type Metadata                          = js.Dictionary[MetadataValue]
-  type MetadataDirective                 = String
-  type MetadataKey                       = String
-  type MetadataValue                     = String
-  type MetricsConfigurationList          = js.Array[MetricsConfiguration]
-  type MetricsId                         = String
-  type MetricsStatus                     = String
-  type Minutes                           = Int
-  type MissingMeta                       = Int
-  type MultipartUploadId                 = String
-  type MultipartUploadList               = js.Array[MultipartUpload]
-  type NextKeyMarker                     = String
-  type NextMarker                        = String
-  type NextPartNumberMarker              = Int
-  type NextToken                         = String
-  type NextUploadIdMarker                = String
-  type NextVersionIdMarker               = String
-  type NoncurrentVersionTransitionList   = js.Array[NoncurrentVersionTransition]
-  type NotificationId                    = String
-  type ObjectCannedACL                   = String
-  type ObjectIdentifierList              = js.Array[ObjectIdentifier]
-  type ObjectKey                         = String
-  type ObjectList                        = js.Array[Object]
-  type ObjectLockEnabled                 = String
-  type ObjectLockEnabledForBucket        = Boolean
-  type ObjectLockLegalHoldStatus         = String
-  type ObjectLockMode                    = String
-  type ObjectLockRetainUntilDate         = js.Date
-  type ObjectLockRetentionMode           = String
-  type ObjectLockToken                   = String
-  type ObjectStorageClass                = String
-  type ObjectVersionId                   = String
-  type ObjectVersionList                 = js.Array[ObjectVersion]
-  type ObjectVersionStorageClass         = String
-  type OwnerOverride                     = String
-  type PartNumber                        = Int
-  type PartNumberMarker                  = Int
-  type Parts                             = js.Array[Part]
-  type PartsCount                        = Int
-  type Payer                             = String
-  type Permission                        = String
-  type Policy                            = String
-  type Prefix                            = String
-  type Priority                          = Int
-  type Protocol                          = String
-  type QueueArn                          = String
-  type QueueConfigurationList            = js.Array[QueueConfiguration]
-  type Quiet                             = Boolean
-  type QuoteCharacter                    = String
-  type QuoteEscapeCharacter              = String
-  type QuoteFields                       = String
-  type Range                             = String
-  type RecordDelimiter                   = String
-  type ReplaceKeyPrefixWith              = String
-  type ReplaceKeyWith                    = String
-  type ReplicaKmsKeyID                   = String
-  type ReplicationRuleStatus             = String
-  type ReplicationRules                  = js.Array[ReplicationRule]
-  type ReplicationStatus                 = String
-  type ReplicationTimeStatus             = String
-  type RequestCharged                    = String
-  type RequestPayer                      = String
-  type ResponseCacheControl              = String
-  type ResponseContentDisposition        = String
-  type ResponseContentEncoding           = String
-  type ResponseContentLanguage           = String
-  type ResponseContentType               = String
-  type ResponseExpires                   = js.Date
-  type Restore                           = String
-  type RestoreOutputPath                 = String
-  type RestoreRequestType                = String
-  type Role                              = String
-  type RoutingRules                      = js.Array[RoutingRule]
-  type Rules                             = js.Array[Rule]
-  type SSECustomerAlgorithm              = String
-  type SSECustomerKey                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SSECustomerKeyMD5                 = String
-  type SSEKMSEncryptionContext           = String
-  type SSEKMSKeyId                       = String
-  type ServerSideEncryption              = String
-  type ServerSideEncryptionRules         = js.Array[ServerSideEncryptionRule]
-  type Setting                           = Boolean
-  type Size                              = Int
-  type SseKmsEncryptedObjectsStatus      = String
-  type Start                             = Double
-  type StartAfter                        = String
-  type StorageClass                      = String
-  type StorageClassAnalysisSchemaVersion = String
-  type Suffix                            = String
-  type TagCount                          = Int
-  type TagSet                            = js.Array[Tag]
-  type TaggingDirective                  = String
-  type TaggingHeader                     = String
-  type TargetBucket                      = String
-  type TargetGrants                      = js.Array[TargetGrant]
-  type TargetPrefix                      = String
-  type Tier                              = String
-  type Token                             = String
-  type TopicArn                          = String
-  type TopicConfigurationList            = js.Array[TopicConfiguration]
-  type TransitionList                    = js.Array[Transition]
-  type TransitionStorageClass            = String
-  type Type                              = String
-  type URI                               = String
-  type UploadIdMarker                    = String
-  type UserMetadata                      = js.Array[MetadataEntry]
-  type Value                             = String
-  type VersionIdMarker                   = String
-  type WebsiteRedirectLocation           = String
-  type Years                             = Int
+  type AbortDate                       = js.Date
+  type AbortRuleId                     = String
+  type AcceptRanges                    = String
+  type AccountId                       = String
+  type AllowQuotedRecordDelimiter      = Boolean
+  type AllowedHeader                   = String
+  type AllowedHeaders                  = js.Array[AllowedHeader]
+  type AllowedMethod                   = String
+  type AllowedMethods                  = js.Array[AllowedMethod]
+  type AllowedOrigin                   = String
+  type AllowedOrigins                  = js.Array[AllowedOrigin]
+  type AnalyticsConfigurationList      = js.Array[AnalyticsConfiguration]
+  type AnalyticsId                     = String
+  type Body                            = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BucketName                      = String
+  type Buckets                         = js.Array[Bucket]
+  type BypassGovernanceRetention       = Boolean
+  type BytesProcessed                  = Double
+  type BytesReturned                   = Double
+  type BytesScanned                    = Double
+  type CORSRules                       = js.Array[CORSRule]
+  type CacheControl                    = String
+  type CloudFunction                   = String
+  type CloudFunctionInvocationRole     = String
+  type Code                            = String
+  type Comments                        = String
+  type CommonPrefixList                = js.Array[CommonPrefix]
+  type CompletedPartList               = js.Array[CompletedPart]
+  type ConfirmRemoveSelfBucketAccess   = Boolean
+  type ContentDisposition              = String
+  type ContentEncoding                 = String
+  type ContentLanguage                 = String
+  type ContentLength                   = Double
+  type ContentMD5                      = String
+  type ContentRange                    = String
+  type ContentType                     = String
+  type CopySource                      = String
+  type CopySourceIfMatch               = String
+  type CopySourceIfModifiedSince       = js.Date
+  type CopySourceIfNoneMatch           = String
+  type CopySourceIfUnmodifiedSince     = js.Date
+  type CopySourceRange                 = String
+  type CopySourceSSECustomerAlgorithm  = String
+  type CopySourceSSECustomerKey        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CopySourceSSECustomerKeyMD5     = String
+  type CopySourceVersionId             = String
+  type CreationDate                    = js.Date
+  type Date                            = js.Date
+  type Days                            = Int
+  type DaysAfterInitiation             = Int
+  type DeleteMarker                    = Boolean
+  type DeleteMarkerVersionId           = String
+  type DeleteMarkers                   = js.Array[DeleteMarkerEntry]
+  type DeletedObjects                  = js.Array[DeletedObject]
+  type Delimiter                       = String
+  type Description                     = String
+  type DisplayName                     = String
+  type ETag                            = String
+  type EmailAddress                    = String
+  type EnableRequestProgress           = Boolean
+  type End                             = Double
+  type Errors                          = js.Array[Error]
+  type EventList                       = js.Array[Event]
+  type Expiration                      = String
+  type ExpiredObjectDeleteMarker       = Boolean
+  type Expires                         = js.Date
+  type ExposeHeader                    = String
+  type ExposeHeaders                   = js.Array[ExposeHeader]
+  type Expression                      = String
+  type FetchOwner                      = Boolean
+  type FieldDelimiter                  = String
+  type FilterRuleList                  = js.Array[FilterRule]
+  type FilterRuleValue                 = String
+  type GrantFullControl                = String
+  type GrantRead                       = String
+  type GrantReadACP                    = String
+  type GrantWrite                      = String
+  type GrantWriteACP                   = String
+  type Grants                          = js.Array[Grant]
+  type HostName                        = String
+  type HttpErrorCodeReturnedEquals     = String
+  type HttpRedirectCode                = String
+  type ID                              = String
+  type IfMatch                         = String
+  type IfModifiedSince                 = js.Date
+  type IfNoneMatch                     = String
+  type IfUnmodifiedSince               = js.Date
+  type Initiated                       = js.Date
+  type InventoryConfigurationList      = js.Array[InventoryConfiguration]
+  type InventoryId                     = String
+  type InventoryOptionalFields         = js.Array[InventoryOptionalField]
+  type IsEnabled                       = Boolean
+  type IsLatest                        = Boolean
+  type IsPublic                        = Boolean
+  type IsTruncated                     = Boolean
+  type KMSContext                      = String
+  type KeyCount                        = Int
+  type KeyMarker                       = String
+  type KeyPrefixEquals                 = String
+  type LambdaFunctionArn               = String
+  type LambdaFunctionConfigurationList = js.Array[LambdaFunctionConfiguration]
+  type LastModified                    = js.Date
+  type LifecycleRules                  = js.Array[LifecycleRule]
+  type Location                        = String
+  type LocationPrefix                  = String
+  type MFA                             = String
+  type Marker                          = String
+  type MaxAgeSeconds                   = Int
+  type MaxKeys                         = Int
+  type MaxParts                        = Int
+  type MaxUploads                      = Int
+  type Message                         = String
+  type Metadata                        = js.Dictionary[MetadataValue]
+  type MetadataKey                     = String
+  type MetadataValue                   = String
+  type MetricsConfigurationList        = js.Array[MetricsConfiguration]
+  type MetricsId                       = String
+  type Minutes                         = Int
+  type MissingMeta                     = Int
+  type MultipartUploadId               = String
+  type MultipartUploadList             = js.Array[MultipartUpload]
+  type NextKeyMarker                   = String
+  type NextMarker                      = String
+  type NextPartNumberMarker            = Int
+  type NextToken                       = String
+  type NextUploadIdMarker              = String
+  type NextVersionIdMarker             = String
+  type NoncurrentVersionTransitionList = js.Array[NoncurrentVersionTransition]
+  type NotificationId                  = String
+  type ObjectIdentifierList            = js.Array[ObjectIdentifier]
+  type ObjectKey                       = String
+  type ObjectList                      = js.Array[Object]
+  type ObjectLockEnabledForBucket      = Boolean
+  type ObjectLockRetainUntilDate       = js.Date
+  type ObjectLockToken                 = String
+  type ObjectVersionId                 = String
+  type ObjectVersionList               = js.Array[ObjectVersion]
+  type PartNumber                      = Int
+  type PartNumberMarker                = Int
+  type Parts                           = js.Array[Part]
+  type PartsCount                      = Int
+  type Policy                          = String
+  type Prefix                          = String
+  type Priority                        = Int
+  type QueueArn                        = String
+  type QueueConfigurationList          = js.Array[QueueConfiguration]
+  type Quiet                           = Boolean
+  type QuoteCharacter                  = String
+  type QuoteEscapeCharacter            = String
+  type Range                           = String
+  type RecordDelimiter                 = String
+  type ReplaceKeyPrefixWith            = String
+  type ReplaceKeyWith                  = String
+  type ReplicaKmsKeyID                 = String
+  type ReplicationRules                = js.Array[ReplicationRule]
+  type ResponseCacheControl            = String
+  type ResponseContentDisposition      = String
+  type ResponseContentEncoding         = String
+  type ResponseContentLanguage         = String
+  type ResponseContentType             = String
+  type ResponseExpires                 = js.Date
+  type Restore                         = String
+  type RestoreOutputPath               = String
+  type Role                            = String
+  type RoutingRules                    = js.Array[RoutingRule]
+  type Rules                           = js.Array[Rule]
+  type SSECustomerAlgorithm            = String
+  type SSECustomerKey                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SSECustomerKeyMD5               = String
+  type SSEKMSEncryptionContext         = String
+  type SSEKMSKeyId                     = String
+  type ServerSideEncryptionRules       = js.Array[ServerSideEncryptionRule]
+  type Setting                         = Boolean
+  type Size                            = Int
+  type Start                           = Double
+  type StartAfter                      = String
+  type Suffix                          = String
+  type TagCount                        = Int
+  type TagSet                          = js.Array[Tag]
+  type TaggingHeader                   = String
+  type TargetBucket                    = String
+  type TargetGrants                    = js.Array[TargetGrant]
+  type TargetPrefix                    = String
+  type Token                           = String
+  type TopicArn                        = String
+  type TopicConfigurationList          = js.Array[TopicConfiguration]
+  type TransitionList                  = js.Array[Transition]
+  type URI                             = String
+  type UploadIdMarker                  = String
+  type UserMetadata                    = js.Array[MetadataEntry]
+  type Value                           = String
+  type VersionIdMarker                 = String
+  type WebsiteRedirectLocation         = String
+  type Years                           = Int
 
   implicit final class S3Ops(private val service: S3) extends AnyVal {
 
@@ -829,9 +779,10 @@ package s3 {
       __obj.asInstanceOf[AnalyticsS3BucketDestination]
     }
   }
-
-  object AnalyticsS3ExportFileFormatEnum {
-    val CSV = "CSV"
+  @js.native
+  sealed trait AnalyticsS3ExportFileFormat extends js.Any
+  object AnalyticsS3ExportFileFormat extends js.Object {
+    val CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
 
     val values = js.Object.freeze(js.Array(CSV))
   }
@@ -857,19 +808,21 @@ package s3 {
       __obj.asInstanceOf[Bucket]
     }
   }
-
-  object BucketAccelerateStatusEnum {
-    val Enabled   = "Enabled"
-    val Suspended = "Suspended"
+  @js.native
+  sealed trait BucketAccelerateStatus extends js.Any
+  object BucketAccelerateStatus extends js.Object {
+    val Enabled   = "Enabled".asInstanceOf[BucketAccelerateStatus]
+    val Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
-
-  object BucketCannedACLEnum {
-    val `private`            = "private"
-    val `public-read`        = "public-read"
-    val `public-read-write`  = "public-read-write"
-    val `authenticated-read` = "authenticated-read"
+  @js.native
+  sealed trait BucketCannedACL extends js.Any
+  object BucketCannedACL extends js.Object {
+    val `private`            = "private".asInstanceOf[BucketCannedACL]
+    val `public-read`        = "public-read".asInstanceOf[BucketCannedACL]
+    val `public-read-write`  = "public-read-write".asInstanceOf[BucketCannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
 
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`))
   }
@@ -894,19 +847,20 @@ package s3 {
       __obj.asInstanceOf[BucketLifecycleConfiguration]
     }
   }
-
-  object BucketLocationConstraintEnum {
-    val EU               = "EU"
-    val `eu-west-1`      = "eu-west-1"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `ap-south-1`     = "ap-south-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `sa-east-1`      = "sa-east-1"
-    val `cn-north-1`     = "cn-north-1"
-    val `eu-central-1`   = "eu-central-1"
+  @js.native
+  sealed trait BucketLocationConstraint extends js.Any
+  object BucketLocationConstraint extends js.Object {
+    val EU               = "EU".asInstanceOf[BucketLocationConstraint]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-1`      = "us-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-2`      = "us-west-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-south-1`     = "ap-south-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[BucketLocationConstraint]
+    val `sa-east-1`      = "sa-east-1".asInstanceOf[BucketLocationConstraint]
+    val `cn-north-1`     = "cn-north-1".asInstanceOf[BucketLocationConstraint]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
     val values = js.Object.freeze(
       js.Array(
@@ -943,18 +897,20 @@ package s3 {
       __obj.asInstanceOf[BucketLoggingStatus]
     }
   }
-
-  object BucketLogsPermissionEnum {
-    val FULL_CONTROL = "FULL_CONTROL"
-    val READ         = "READ"
-    val WRITE        = "WRITE"
+  @js.native
+  sealed trait BucketLogsPermission extends js.Any
+  object BucketLogsPermission extends js.Object {
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[BucketLogsPermission]
+    val READ         = "READ".asInstanceOf[BucketLogsPermission]
+    val WRITE        = "WRITE".asInstanceOf[BucketLogsPermission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
-
-  object BucketVersioningStatusEnum {
-    val Enabled   = "Enabled"
-    val Suspended = "Suspended"
+  @js.native
+  sealed trait BucketVersioningStatus extends js.Any
+  object BucketVersioningStatus extends js.Object {
+    val Enabled   = "Enabled".asInstanceOf[BucketVersioningStatus]
+    val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
@@ -1243,11 +1199,12 @@ package s3 {
       __obj.asInstanceOf[CompletedPart]
     }
   }
-
-  object CompressionTypeEnum {
-    val NONE  = "NONE"
-    val GZIP  = "GZIP"
-    val BZIP2 = "BZIP2"
+  @js.native
+  sealed trait CompressionType extends js.Any
+  object CompressionType extends js.Object {
+    val NONE  = "NONE".asInstanceOf[CompressionType]
+    val GZIP  = "GZIP".asInstanceOf[CompressionType]
+    val BZIP2 = "BZIP2".asInstanceOf[CompressionType]
 
     val values = js.Object.freeze(js.Array(NONE, GZIP, BZIP2))
   }
@@ -2051,10 +2008,11 @@ package s3 {
       __obj.asInstanceOf[DeleteMarkerReplication]
     }
   }
-
-  object DeleteMarkerReplicationStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait DeleteMarkerReplicationStatus extends js.Any
+  object DeleteMarkerReplicationStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
+    val Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -2298,8 +2256,10 @@ package s3 {
   /**
     * Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.
     */
-  object EncodingTypeEnum {
-    val url = "url"
+  @js.native
+  sealed trait EncodingType extends js.Any
+  object EncodingType extends js.Object {
+    val url = "url".asInstanceOf[EncodingType]
 
     val values = js.Object.freeze(js.Array(url))
   }
@@ -2418,24 +2378,27 @@ package s3 {
   /**
     * The bucket event for which to send notifications.
     */
-  object EventEnum {
-    val `s3:ReducedRedundancyLostObject`                   = "s3:ReducedRedundancyLostObject"
-    val `s3:ObjectCreated:*`                               = "s3:ObjectCreated:*"
-    val `s3:ObjectCreated:Put`                             = "s3:ObjectCreated:Put"
-    val `s3:ObjectCreated:Post`                            = "s3:ObjectCreated:Post"
-    val `s3:ObjectCreated:Copy`                            = "s3:ObjectCreated:Copy"
-    val `s3:ObjectCreated:CompleteMultipartUpload`         = "s3:ObjectCreated:CompleteMultipartUpload"
-    val `s3:ObjectRemoved:*`                               = "s3:ObjectRemoved:*"
-    val `s3:ObjectRemoved:Delete`                          = "s3:ObjectRemoved:Delete"
-    val `s3:ObjectRemoved:DeleteMarkerCreated`             = "s3:ObjectRemoved:DeleteMarkerCreated"
-    val `s3:ObjectRestore:*`                               = "s3:ObjectRestore:*"
-    val `s3:ObjectRestore:Post`                            = "s3:ObjectRestore:Post"
-    val `s3:ObjectRestore:Completed`                       = "s3:ObjectRestore:Completed"
-    val `s3:Replication:*`                                 = "s3:Replication:*"
-    val `s3:Replication:OperationFailedReplication`        = "s3:Replication:OperationFailedReplication"
-    val `s3:Replication:OperationNotTracked`               = "s3:Replication:OperationNotTracked"
-    val `s3:Replication:OperationMissedThreshold`          = "s3:Replication:OperationMissedThreshold"
-    val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold"
+  @js.native
+  sealed trait Event extends js.Any
+  object Event extends js.Object {
+    val `s3:ReducedRedundancyLostObject`            = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
+    val `s3:ObjectCreated:*`                        = "s3:ObjectCreated:*".asInstanceOf[Event]
+    val `s3:ObjectCreated:Put`                      = "s3:ObjectCreated:Put".asInstanceOf[Event]
+    val `s3:ObjectCreated:Post`                     = "s3:ObjectCreated:Post".asInstanceOf[Event]
+    val `s3:ObjectCreated:Copy`                     = "s3:ObjectCreated:Copy".asInstanceOf[Event]
+    val `s3:ObjectCreated:CompleteMultipartUpload`  = "s3:ObjectCreated:CompleteMultipartUpload".asInstanceOf[Event]
+    val `s3:ObjectRemoved:*`                        = "s3:ObjectRemoved:*".asInstanceOf[Event]
+    val `s3:ObjectRemoved:Delete`                   = "s3:ObjectRemoved:Delete".asInstanceOf[Event]
+    val `s3:ObjectRemoved:DeleteMarkerCreated`      = "s3:ObjectRemoved:DeleteMarkerCreated".asInstanceOf[Event]
+    val `s3:ObjectRestore:*`                        = "s3:ObjectRestore:*".asInstanceOf[Event]
+    val `s3:ObjectRestore:Post`                     = "s3:ObjectRestore:Post".asInstanceOf[Event]
+    val `s3:ObjectRestore:Completed`                = "s3:ObjectRestore:Completed".asInstanceOf[Event]
+    val `s3:Replication:*`                          = "s3:Replication:*".asInstanceOf[Event]
+    val `s3:Replication:OperationFailedReplication` = "s3:Replication:OperationFailedReplication".asInstanceOf[Event]
+    val `s3:Replication:OperationNotTracked`        = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
+    val `s3:Replication:OperationMissedThreshold`   = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
+    val `s3:Replication:OperationReplicatedAfterThreshold` =
+      "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2480,31 +2443,35 @@ package s3 {
       __obj.asInstanceOf[ExistingObjectReplication]
     }
   }
-
-  object ExistingObjectReplicationStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
-
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
-  }
-
-  object ExpirationStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait ExistingObjectReplicationStatus extends js.Any
+  object ExistingObjectReplicationStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
+    val Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+  @js.native
+  sealed trait ExpirationStatus extends js.Any
+  object ExpirationStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[ExpirationStatus]
+    val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
 
-  object ExpressionTypeEnum {
-    val SQL = "SQL"
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+  }
+  @js.native
+  sealed trait ExpressionType extends js.Any
+  object ExpressionType extends js.Object {
+    val SQL = "SQL".asInstanceOf[ExpressionType]
 
     val values = js.Object.freeze(js.Array(SQL))
   }
-
-  object FileHeaderInfoEnum {
-    val USE    = "USE"
-    val IGNORE = "IGNORE"
-    val NONE   = "NONE"
+  @js.native
+  sealed trait FileHeaderInfo extends js.Any
+  object FileHeaderInfo extends js.Object {
+    val USE    = "USE".asInstanceOf[FileHeaderInfo]
+    val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
+    val NONE   = "NONE".asInstanceOf[FileHeaderInfo]
 
     val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
@@ -2530,10 +2497,11 @@ package s3 {
       __obj.asInstanceOf[FilterRule]
     }
   }
-
-  object FilterRuleNameEnum {
-    val prefix = "prefix"
-    val suffix = "suffix"
+  @js.native
+  sealed trait FilterRuleName extends js.Any
+  object FilterRuleName extends js.Object {
+    val prefix = "prefix".asInstanceOf[FilterRuleName]
+    val suffix = "suffix".asInstanceOf[FilterRuleName]
 
     val values = js.Object.freeze(js.Array(prefix, suffix))
   }
@@ -4095,41 +4063,45 @@ package s3 {
       __obj.asInstanceOf[InventoryFilter]
     }
   }
-
-  object InventoryFormatEnum {
-    val CSV     = "CSV"
-    val ORC     = "ORC"
-    val Parquet = "Parquet"
+  @js.native
+  sealed trait InventoryFormat extends js.Any
+  object InventoryFormat extends js.Object {
+    val CSV     = "CSV".asInstanceOf[InventoryFormat]
+    val ORC     = "ORC".asInstanceOf[InventoryFormat]
+    val Parquet = "Parquet".asInstanceOf[InventoryFormat]
 
     val values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
   }
-
-  object InventoryFrequencyEnum {
-    val Daily  = "Daily"
-    val Weekly = "Weekly"
+  @js.native
+  sealed trait InventoryFrequency extends js.Any
+  object InventoryFrequency extends js.Object {
+    val Daily  = "Daily".asInstanceOf[InventoryFrequency]
+    val Weekly = "Weekly".asInstanceOf[InventoryFrequency]
 
     val values = js.Object.freeze(js.Array(Daily, Weekly))
   }
-
-  object InventoryIncludedObjectVersionsEnum {
-    val All     = "All"
-    val Current = "Current"
+  @js.native
+  sealed trait InventoryIncludedObjectVersions extends js.Any
+  object InventoryIncludedObjectVersions extends js.Object {
+    val All     = "All".asInstanceOf[InventoryIncludedObjectVersions]
+    val Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
 
     val values = js.Object.freeze(js.Array(All, Current))
   }
-
-  object InventoryOptionalFieldEnum {
-    val Size                         = "Size"
-    val LastModifiedDate             = "LastModifiedDate"
-    val StorageClass                 = "StorageClass"
-    val ETag                         = "ETag"
-    val IsMultipartUploaded          = "IsMultipartUploaded"
-    val ReplicationStatus            = "ReplicationStatus"
-    val EncryptionStatus             = "EncryptionStatus"
-    val ObjectLockRetainUntilDate    = "ObjectLockRetainUntilDate"
-    val ObjectLockMode               = "ObjectLockMode"
-    val ObjectLockLegalHoldStatus    = "ObjectLockLegalHoldStatus"
-    val IntelligentTieringAccessTier = "IntelligentTieringAccessTier"
+  @js.native
+  sealed trait InventoryOptionalField extends js.Any
+  object InventoryOptionalField extends js.Object {
+    val Size                         = "Size".asInstanceOf[InventoryOptionalField]
+    val LastModifiedDate             = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
+    val StorageClass                 = "StorageClass".asInstanceOf[InventoryOptionalField]
+    val ETag                         = "ETag".asInstanceOf[InventoryOptionalField]
+    val IsMultipartUploaded          = "IsMultipartUploaded".asInstanceOf[InventoryOptionalField]
+    val ReplicationStatus            = "ReplicationStatus".asInstanceOf[InventoryOptionalField]
+    val EncryptionStatus             = "EncryptionStatus".asInstanceOf[InventoryOptionalField]
+    val ObjectLockRetainUntilDate    = "ObjectLockRetainUntilDate".asInstanceOf[InventoryOptionalField]
+    val ObjectLockMode               = "ObjectLockMode".asInstanceOf[InventoryOptionalField]
+    val ObjectLockLegalHoldStatus    = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
+    val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4239,10 +4211,11 @@ package s3 {
       __obj.asInstanceOf[JSONOutput]
     }
   }
-
-  object JSONTypeEnum {
-    val DOCUMENT = "DOCUMENT"
-    val LINES    = "LINES"
+  @js.native
+  sealed trait JSONType extends js.Any
+  object JSONType extends js.Object {
+    val DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
+    val LINES    = "LINES".asInstanceOf[JSONType]
 
     val values = js.Object.freeze(js.Array(DOCUMENT, LINES))
   }
@@ -5041,24 +5014,27 @@ package s3 {
       __obj.asInstanceOf[LoggingEnabled]
     }
   }
-
-  object MFADeleteEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
-
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
-  }
-
-  object MFADeleteStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait MFADelete extends js.Any
+  object MFADelete extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[MFADelete]
+    val Disabled = "Disabled".asInstanceOf[MFADelete]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+  @js.native
+  sealed trait MFADeleteStatus extends js.Any
+  object MFADeleteStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[MFADeleteStatus]
+    val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
 
-  object MetadataDirectiveEnum {
-    val COPY    = "COPY"
-    val REPLACE = "REPLACE"
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+  }
+  @js.native
+  sealed trait MetadataDirective extends js.Any
+  object MetadataDirective extends js.Object {
+    val COPY    = "COPY".asInstanceOf[MetadataDirective]
+    val REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
@@ -5179,10 +5155,11 @@ package s3 {
       __obj.asInstanceOf[MetricsFilter]
     }
   }
-
-  object MetricsStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait MetricsStatus extends js.Any
+  object MetricsStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[MetricsStatus]
+    val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -5365,15 +5342,16 @@ package s3 {
       __obj.asInstanceOf[Object]
     }
   }
-
-  object ObjectCannedACLEnum {
-    val `private`                   = "private"
-    val `public-read`               = "public-read"
-    val `public-read-write`         = "public-read-write"
-    val `authenticated-read`        = "authenticated-read"
-    val `aws-exec-read`             = "aws-exec-read"
-    val `bucket-owner-read`         = "bucket-owner-read"
-    val `bucket-owner-full-control` = "bucket-owner-full-control"
+  @js.native
+  sealed trait ObjectCannedACL extends js.Any
+  object ObjectCannedACL extends js.Object {
+    val `private`                   = "private".asInstanceOf[ObjectCannedACL]
+    val `public-read`               = "public-read".asInstanceOf[ObjectCannedACL]
+    val `public-read-write`         = "public-read-write".asInstanceOf[ObjectCannedACL]
+    val `authenticated-read`        = "authenticated-read".asInstanceOf[ObjectCannedACL]
+    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[ObjectCannedACL]
+    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5433,9 +5411,10 @@ package s3 {
       __obj.asInstanceOf[ObjectLockConfiguration]
     }
   }
-
-  object ObjectLockEnabledEnum {
-    val Enabled = "Enabled"
+  @js.native
+  sealed trait ObjectLockEnabled extends js.Any
+  object ObjectLockEnabled extends js.Object {
+    val Enabled = "Enabled".asInstanceOf[ObjectLockEnabled]
 
     val values = js.Object.freeze(js.Array(Enabled))
   }
@@ -5458,17 +5437,19 @@ package s3 {
       __obj.asInstanceOf[ObjectLockLegalHold]
     }
   }
-
-  object ObjectLockLegalHoldStatusEnum {
-    val ON  = "ON"
-    val OFF = "OFF"
+  @js.native
+  sealed trait ObjectLockLegalHoldStatus extends js.Any
+  object ObjectLockLegalHoldStatus extends js.Object {
+    val ON  = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
+    val OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
 
     val values = js.Object.freeze(js.Array(ON, OFF))
   }
-
-  object ObjectLockModeEnum {
-    val GOVERNANCE = "GOVERNANCE"
-    val COMPLIANCE = "COMPLIANCE"
+  @js.native
+  sealed trait ObjectLockMode extends js.Any
+  object ObjectLockMode extends js.Object {
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockMode]
 
     val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
@@ -5494,10 +5475,11 @@ package s3 {
       __obj.asInstanceOf[ObjectLockRetention]
     }
   }
-
-  object ObjectLockRetentionModeEnum {
-    val GOVERNANCE = "GOVERNANCE"
-    val COMPLIANCE = "COMPLIANCE"
+  @js.native
+  sealed trait ObjectLockRetentionMode extends js.Any
+  object ObjectLockRetentionMode extends js.Object {
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockRetentionMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockRetentionMode]
 
     val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
@@ -5520,15 +5502,16 @@ package s3 {
       __obj.asInstanceOf[ObjectLockRule]
     }
   }
-
-  object ObjectStorageClassEnum {
-    val STANDARD            = "STANDARD"
-    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY"
-    val GLACIER             = "GLACIER"
-    val STANDARD_IA         = "STANDARD_IA"
-    val ONEZONE_IA          = "ONEZONE_IA"
-    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+  @js.native
+  sealed trait ObjectStorageClass extends js.Any
+  object ObjectStorageClass extends js.Object {
+    val STANDARD            = "STANDARD".asInstanceOf[ObjectStorageClass]
+    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
+    val GLACIER             = "GLACIER".asInstanceOf[ObjectStorageClass]
+    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[ObjectStorageClass]
+    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
 
     val values = js.Object.freeze(
       js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
@@ -5574,9 +5557,10 @@ package s3 {
       __obj.asInstanceOf[ObjectVersion]
     }
   }
-
-  object ObjectVersionStorageClassEnum {
-    val STANDARD = "STANDARD"
+  @js.native
+  sealed trait ObjectVersionStorageClass extends js.Any
+  object ObjectVersionStorageClass extends js.Object {
+    val STANDARD = "STANDARD".asInstanceOf[ObjectVersionStorageClass]
 
     val values = js.Object.freeze(js.Array(STANDARD))
   }
@@ -5643,9 +5627,10 @@ package s3 {
       __obj.asInstanceOf[Owner]
     }
   }
-
-  object OwnerOverrideEnum {
-    val Destination = "Destination"
+  @js.native
+  sealed trait OwnerOverride extends js.Any
+  object OwnerOverride extends js.Object {
+    val Destination = "Destination".asInstanceOf[OwnerOverride]
 
     val values = js.Object.freeze(js.Array(Destination))
   }
@@ -5693,20 +5678,22 @@ package s3 {
       __obj.asInstanceOf[Part]
     }
   }
-
-  object PayerEnum {
-    val Requester   = "Requester"
-    val BucketOwner = "BucketOwner"
+  @js.native
+  sealed trait Payer extends js.Any
+  object Payer extends js.Object {
+    val Requester   = "Requester".asInstanceOf[Payer]
+    val BucketOwner = "BucketOwner".asInstanceOf[Payer]
 
     val values = js.Object.freeze(js.Array(Requester, BucketOwner))
   }
-
-  object PermissionEnum {
-    val FULL_CONTROL = "FULL_CONTROL"
-    val WRITE        = "WRITE"
-    val WRITE_ACP    = "WRITE_ACP"
-    val READ         = "READ"
-    val READ_ACP     = "READ_ACP"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
+    val WRITE        = "WRITE".asInstanceOf[Permission]
+    val WRITE_ACP    = "WRITE_ACP".asInstanceOf[Permission]
+    val READ         = "READ".asInstanceOf[Permission]
+    val READ_ACP     = "READ_ACP".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
@@ -5773,10 +5760,11 @@ package s3 {
       __obj.asInstanceOf[ProgressEvent]
     }
   }
-
-  object ProtocolEnum {
-    val http  = "http"
-    val https = "https"
+  @js.native
+  sealed trait Protocol extends js.Any
+  object Protocol extends js.Object {
+    val http  = "http".asInstanceOf[Protocol]
+    val https = "https".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(http, https))
   }
@@ -6753,10 +6741,11 @@ package s3 {
       __obj.asInstanceOf[QueueConfigurationDeprecated]
     }
   }
-
-  object QuoteFieldsEnum {
-    val ALWAYS   = "ALWAYS"
-    val ASNEEDED = "ASNEEDED"
+  @js.native
+  sealed trait QuoteFields extends js.Any
+  object QuoteFields extends js.Object {
+    val ALWAYS   = "ALWAYS".asInstanceOf[QuoteFields]
+    val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
     val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
@@ -6955,19 +6944,21 @@ package s3 {
       __obj.asInstanceOf[ReplicationRuleFilter]
     }
   }
-
-  object ReplicationRuleStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait ReplicationRuleStatus extends js.Any
+  object ReplicationRuleStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[ReplicationRuleStatus]
+    val Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
-
-  object ReplicationStatusEnum {
-    val COMPLETE = "COMPLETE"
-    val PENDING  = "PENDING"
-    val FAILED   = "FAILED"
-    val REPLICA  = "REPLICA"
+  @js.native
+  sealed trait ReplicationStatus extends js.Any
+  object ReplicationStatus extends js.Object {
+    val COMPLETE = "COMPLETE".asInstanceOf[ReplicationStatus]
+    val PENDING  = "PENDING".asInstanceOf[ReplicationStatus]
+    val FAILED   = "FAILED".asInstanceOf[ReplicationStatus]
+    val REPLICA  = "REPLICA".asInstanceOf[ReplicationStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, PENDING, FAILED, REPLICA))
   }
@@ -6995,10 +6986,11 @@ package s3 {
       __obj.asInstanceOf[ReplicationTime]
     }
   }
-
-  object ReplicationTimeStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait ReplicationTimeStatus extends js.Any
+  object ReplicationTimeStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[ReplicationTimeStatus]
+    val Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -7025,8 +7017,10 @@ package s3 {
   /**
     * If present, indicates that the requester was successfully charged for the request.
     */
-  object RequestChargedEnum {
-    val requester = "requester"
+  @js.native
+  sealed trait RequestCharged extends js.Any
+  object RequestCharged extends js.Object {
+    val requester = "requester".asInstanceOf[RequestCharged]
 
     val values = js.Object.freeze(js.Array(requester))
   }
@@ -7034,8 +7028,10 @@ package s3 {
   /**
     * Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 Developer Guide</i>.
     */
-  object RequestPayerEnum {
-    val requester = "requester"
+  @js.native
+  sealed trait RequestPayer extends js.Any
+  object RequestPayer extends js.Object {
+    val requester = "requester".asInstanceOf[RequestPayer]
 
     val values = js.Object.freeze(js.Array(requester))
   }
@@ -7165,9 +7161,10 @@ package s3 {
       __obj.asInstanceOf[RestoreRequest]
     }
   }
-
-  object RestoreRequestTypeEnum {
-    val SELECT = "SELECT"
+  @js.native
+  sealed trait RestoreRequestType extends js.Any
+  object RestoreRequestType extends js.Object {
+    val SELECT = "SELECT".asInstanceOf[RestoreRequestType]
 
     val values = js.Object.freeze(js.Array(SELECT))
   }
@@ -7491,10 +7488,11 @@ package s3 {
       __obj.asInstanceOf[SelectParameters]
     }
   }
-
-  object ServerSideEncryptionEnum {
-    val AES256    = "AES256"
-    val `aws:kms` = "aws:kms"
+  @js.native
+  sealed trait ServerSideEncryption extends js.Any
+  object ServerSideEncryption extends js.Object {
+    val AES256    = "AES256".asInstanceOf[ServerSideEncryption]
+    val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
 
     val values = js.Object.freeze(js.Array(AES256, `aws:kms`))
   }
@@ -7604,10 +7602,11 @@ package s3 {
       __obj.asInstanceOf[SseKmsEncryptedObjects]
     }
   }
-
-  object SseKmsEncryptedObjectsStatusEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait SseKmsEncryptedObjectsStatus extends js.Any
+  object SseKmsEncryptedObjectsStatus extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
+    val Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -7655,15 +7654,16 @@ package s3 {
       __obj.asInstanceOf[StatsEvent]
     }
   }
-
-  object StorageClassEnum {
-    val STANDARD            = "STANDARD"
-    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY"
-    val STANDARD_IA         = "STANDARD_IA"
-    val ONEZONE_IA          = "ONEZONE_IA"
-    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
-    val GLACIER             = "GLACIER"
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+  @js.native
+  sealed trait StorageClass extends js.Any
+  object StorageClass extends js.Object {
+    val STANDARD            = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[StorageClass]
+    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
+    val GLACIER             = "GLACIER".asInstanceOf[StorageClass]
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
 
     val values = js.Object.freeze(
       js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
@@ -7712,9 +7712,10 @@ package s3 {
       __obj.asInstanceOf[StorageClassAnalysisDataExport]
     }
   }
-
-  object StorageClassAnalysisSchemaVersionEnum {
-    val V_1 = "V_1"
+  @js.native
+  sealed trait StorageClassAnalysisSchemaVersion extends js.Any
+  object StorageClassAnalysisSchemaVersion extends js.Object {
+    val V_1 = "V_1".asInstanceOf[StorageClassAnalysisSchemaVersion]
 
     val values = js.Object.freeze(js.Array(V_1))
   }
@@ -7763,10 +7764,11 @@ package s3 {
       __obj.asInstanceOf[Tagging]
     }
   }
-
-  object TaggingDirectiveEnum {
-    val COPY    = "COPY"
-    val REPLACE = "REPLACE"
+  @js.native
+  sealed trait TaggingDirective extends js.Any
+  object TaggingDirective extends js.Object {
+    val COPY    = "COPY".asInstanceOf[TaggingDirective]
+    val REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
@@ -7792,11 +7794,12 @@ package s3 {
       __obj.asInstanceOf[TargetGrant]
     }
   }
-
-  object TierEnum {
-    val Standard  = "Standard"
-    val Bulk      = "Bulk"
-    val Expedited = "Expedited"
+  @js.native
+  sealed trait Tier extends js.Any
+  object Tier extends js.Object {
+    val Standard  = "Standard".asInstanceOf[Tier]
+    val Bulk      = "Bulk".asInstanceOf[Tier]
+    val Expedited = "Expedited".asInstanceOf[Tier]
 
     val values = js.Object.freeze(js.Array(Standard, Bulk, Expedited))
   }
@@ -7883,21 +7886,23 @@ package s3 {
       __obj.asInstanceOf[Transition]
     }
   }
-
-  object TransitionStorageClassEnum {
-    val GLACIER             = "GLACIER"
-    val STANDARD_IA         = "STANDARD_IA"
-    val ONEZONE_IA          = "ONEZONE_IA"
-    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+  @js.native
+  sealed trait TransitionStorageClass extends js.Any
+  object TransitionStorageClass extends js.Object {
+    val GLACIER             = "GLACIER".asInstanceOf[TransitionStorageClass]
+    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
+    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
 
     val values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
-
-  object TypeEnum {
-    val CanonicalUser         = "CanonicalUser"
-    val AmazonCustomerByEmail = "AmazonCustomerByEmail"
-    val Group                 = "Group"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val CanonicalUser         = "CanonicalUser".asInstanceOf[Type]
+    val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
+    val Group                 = "Group".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(CanonicalUser, AmazonCustomerByEmail, Group))
   }

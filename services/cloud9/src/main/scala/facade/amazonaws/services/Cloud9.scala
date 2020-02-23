@@ -7,31 +7,26 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloud9 {
-  type AutomaticStopTimeMinutes   = Int
-  type BoundedEnvironmentIdList   = js.Array[EnvironmentId]
-  type ClientRequestToken         = String
-  type EnvironmentArn             = String
-  type EnvironmentDescription     = String
-  type EnvironmentId              = String
-  type EnvironmentIdList          = js.Array[EnvironmentId]
-  type EnvironmentLifecycleStatus = String
-  type EnvironmentList            = js.Array[Environment]
-  type EnvironmentMembersList     = js.Array[EnvironmentMember]
-  type EnvironmentName            = String
-  type EnvironmentStatus          = String
-  type EnvironmentType            = String
-  type InstanceType               = String
-  type MaxResults                 = Int
-  type MemberPermissions          = String
-  type Permissions                = String
-  type PermissionsList            = js.Array[Permissions]
-  type SubnetId                   = String
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
-  type Timestamp                  = js.Date
-  type UserArn                    = String
+  type AutomaticStopTimeMinutes = Int
+  type BoundedEnvironmentIdList = js.Array[EnvironmentId]
+  type ClientRequestToken       = String
+  type EnvironmentArn           = String
+  type EnvironmentDescription   = String
+  type EnvironmentId            = String
+  type EnvironmentIdList        = js.Array[EnvironmentId]
+  type EnvironmentList          = js.Array[Environment]
+  type EnvironmentMembersList   = js.Array[EnvironmentMember]
+  type EnvironmentName          = String
+  type InstanceType             = String
+  type MaxResults               = Int
+  type PermissionsList          = js.Array[Permissions]
+  type SubnetId                 = String
+  type TagKey                   = String
+  type TagKeyList               = js.Array[TagKey]
+  type TagList                  = js.Array[Tag]
+  type TagValue                 = String
+  type Timestamp                = js.Date
+  type UserArn                  = String
 
   implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
@@ -438,13 +433,14 @@ package cloud9 {
       __obj.asInstanceOf[EnvironmentLifecycle]
     }
   }
-
-  object EnvironmentLifecycleStatusEnum {
-    val CREATING      = "CREATING"
-    val CREATED       = "CREATED"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETING      = "DELETING"
-    val DELETE_FAILED = "DELETE_FAILED"
+  @js.native
+  sealed trait EnvironmentLifecycleStatus extends js.Any
+  object EnvironmentLifecycleStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATED       = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
+    val DELETING      = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
   }
@@ -479,22 +475,24 @@ package cloud9 {
       __obj.asInstanceOf[EnvironmentMember]
     }
   }
-
-  object EnvironmentStatusEnum {
-    val error      = "error"
-    val creating   = "creating"
-    val connecting = "connecting"
-    val ready      = "ready"
-    val stopping   = "stopping"
-    val stopped    = "stopped"
-    val deleting   = "deleting"
+  @js.native
+  sealed trait EnvironmentStatus extends js.Any
+  object EnvironmentStatus extends js.Object {
+    val error      = "error".asInstanceOf[EnvironmentStatus]
+    val creating   = "creating".asInstanceOf[EnvironmentStatus]
+    val connecting = "connecting".asInstanceOf[EnvironmentStatus]
+    val ready      = "ready".asInstanceOf[EnvironmentStatus]
+    val stopping   = "stopping".asInstanceOf[EnvironmentStatus]
+    val stopped    = "stopped".asInstanceOf[EnvironmentStatus]
+    val deleting   = "deleting".asInstanceOf[EnvironmentStatus]
 
     val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
-
-  object EnvironmentTypeEnum {
-    val ssh = "ssh"
-    val ec2 = "ec2"
+  @js.native
+  sealed trait EnvironmentType extends js.Any
+  object EnvironmentType extends js.Object {
+    val ssh = "ssh".asInstanceOf[EnvironmentType]
+    val ec2 = "ec2".asInstanceOf[EnvironmentType]
 
     val values = js.Object.freeze(js.Array(ssh, ec2))
   }
@@ -570,18 +568,20 @@ package cloud9 {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object MemberPermissionsEnum {
-    val `read-write` = "read-write"
-    val `read-only`  = "read-only"
+  @js.native
+  sealed trait MemberPermissions extends js.Any
+  object MemberPermissions extends js.Object {
+    val `read-write` = "read-write".asInstanceOf[MemberPermissions]
+    val `read-only`  = "read-only".asInstanceOf[MemberPermissions]
 
     val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
-
-  object PermissionsEnum {
-    val owner        = "owner"
-    val `read-write` = "read-write"
-    val `read-only`  = "read-only"
+  @js.native
+  sealed trait Permissions extends js.Any
+  object Permissions extends js.Object {
+    val owner        = "owner".asInstanceOf[Permissions]
+    val `read-write` = "read-write".asInstanceOf[Permissions]
+    val `read-only`  = "read-only".asInstanceOf[Permissions]
 
     val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
   }

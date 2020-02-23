@@ -8,11 +8,7 @@ import facade.amazonaws._
 
 package object rds {
   type AccountQuotaList                        = js.Array[AccountQuota]
-  type ActivityStreamMode                      = String
-  type ActivityStreamStatus                    = String
-  type ApplyMethod                             = String
   type AttributeValueList                      = js.Array[String]
-  type AuthScheme                              = String
   type AvailabilityZoneList                    = js.Array[AvailabilityZone]
   type AvailabilityZones                       = js.Array[String]
   type AvailableProcessorFeatureList           = js.Array[AvailableProcessorFeature]
@@ -36,7 +32,6 @@ package object rds {
   type DBParameterGroupList                    = js.Array[DBParameterGroup]
   type DBParameterGroupStatusList              = js.Array[DBParameterGroupStatus]
   type DBProxyList                             = js.Array[DBProxy]
-  type DBProxyStatus                           = String
   type DBSecurityGroupMembershipList           = js.Array[DBSecurityGroupMembership]
   type DBSecurityGroupNameList                 = js.Array[String]
   type DBSecurityGroups                        = js.Array[DBSecurityGroup]
@@ -48,7 +43,6 @@ package object rds {
   type DoubleOptional                          = Double
   type DoubleRangeList                         = js.Array[DoubleRange]
   type EC2SecurityGroupList                    = js.Array[EC2SecurityGroup]
-  type EngineFamily                            = String
   type EngineModeList                          = js.Array[String]
   type EventCategoriesList                     = js.Array[String]
   type EventCategoriesMapList                  = js.Array[EventCategoriesMap]
@@ -60,7 +54,6 @@ package object rds {
   type FilterValueList                         = js.Array[String]
   type GlobalClusterList                       = js.Array[GlobalCluster]
   type GlobalClusterMemberList                 = js.Array[GlobalClusterMember]
-  type IAMAuthMode                             = String
   type IPRangeList                             = js.Array[IPRange]
   type InstallationMediaList                   = js.Array[InstallationMedia]
   type IntegerOptional                         = Int
@@ -96,7 +89,6 @@ package object rds {
   type ReservedDBInstancesOfferingList         = js.Array[ReservedDBInstancesOffering]
   type SourceIdsList                           = js.Array[String]
   type SourceRegionList                        = js.Array[SourceRegion]
-  type SourceType                              = String
   type StringList                              = js.Array[String]
   type StringSensitive                         = String
   type SubnetIdentifierList                    = js.Array[String]
@@ -107,7 +99,6 @@ package object rds {
   type TagList                                 = js.Array[Tag]
   type TargetGroupList                         = js.Array[DBProxyTargetGroup]
   type TargetList                              = js.Array[DBProxyTarget]
-  type TargetType                              = String
   type UserAuthConfigInfoList                  = js.Array[UserAuthConfigInfo]
   type UserAuthConfigList                      = js.Array[UserAuthConfig]
   type ValidStorageOptionsList                 = js.Array[ValidStorageOptions]
@@ -739,19 +730,21 @@ package rds {
       __obj.asInstanceOf[AccountQuota]
     }
   }
-
-  object ActivityStreamModeEnum {
-    val sync  = "sync"
-    val async = "async"
+  @js.native
+  sealed trait ActivityStreamMode extends js.Any
+  object ActivityStreamMode extends js.Object {
+    val sync  = "sync".asInstanceOf[ActivityStreamMode]
+    val async = "async".asInstanceOf[ActivityStreamMode]
 
     val values = js.Object.freeze(js.Array(sync, async))
   }
-
-  object ActivityStreamStatusEnum {
-    val stopped  = "stopped"
-    val starting = "starting"
-    val started  = "started"
-    val stopping = "stopping"
+  @js.native
+  sealed trait ActivityStreamStatus extends js.Any
+  object ActivityStreamStatus extends js.Object {
+    val stopped  = "stopped".asInstanceOf[ActivityStreamStatus]
+    val starting = "starting".asInstanceOf[ActivityStreamStatus]
+    val started  = "started".asInstanceOf[ActivityStreamStatus]
+    val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
     val values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
   }
@@ -867,10 +860,11 @@ package rds {
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
-
-  object ApplyMethodEnum {
-    val immediate        = "immediate"
-    val `pending-reboot` = "pending-reboot"
+  @js.native
+  sealed trait ApplyMethod extends js.Any
+  object ApplyMethod extends js.Object {
+    val immediate        = "immediate".asInstanceOf[ApplyMethod]
+    val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
@@ -919,9 +913,10 @@ package rds {
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
   }
-
-  object AuthSchemeEnum {
-    val SECRETS = "SECRETS"
+  @js.native
+  sealed trait AuthScheme extends js.Any
+  object AuthScheme extends js.Object {
+    val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
 
     val values = js.Object.freeze(js.Array(SECRETS))
   }
@@ -3939,14 +3934,15 @@ package rds {
       __obj.asInstanceOf[DBProxy]
     }
   }
-
-  object DBProxyStatusEnum {
-    val available                      = "available"
-    val modifying                      = "modifying"
-    val `incompatible-network`         = "incompatible-network"
-    val `insufficient-resource-limits` = "insufficient-resource-limits"
-    val creating                       = "creating"
-    val deleting                       = "deleting"
+  @js.native
+  sealed trait DBProxyStatus extends js.Any
+  object DBProxyStatus extends js.Object {
+    val available                      = "available".asInstanceOf[DBProxyStatus]
+    val modifying                      = "modifying".asInstanceOf[DBProxyStatus]
+    val `incompatible-network`         = "incompatible-network".asInstanceOf[DBProxyStatus]
+    val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
+    val creating                       = "creating".asInstanceOf[DBProxyStatus]
+    val deleting                       = "deleting".asInstanceOf[DBProxyStatus]
 
     val values = js.Object.freeze(
       js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
@@ -6462,9 +6458,10 @@ package rds {
       __obj.asInstanceOf[EngineDefaults]
     }
   }
-
-  object EngineFamilyEnum {
-    val MYSQL = "MYSQL"
+  @js.native
+  sealed trait EngineFamily extends js.Any
+  object EngineFamily extends js.Object {
+    val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
 
     val values = js.Object.freeze(js.Array(MYSQL))
   }
@@ -6878,10 +6875,11 @@ package rds {
       __obj.asInstanceOf[GlobalClustersMessage]
     }
   }
-
-  object IAMAuthModeEnum {
-    val DISABLED = "DISABLED"
-    val REQUIRED = "REQUIRED"
+  @js.native
+  sealed trait IAMAuthMode extends js.Any
+  object IAMAuthMode extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
+    val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, REQUIRED))
   }
@@ -10223,14 +10221,15 @@ package rds {
       __obj.asInstanceOf[SourceRegionMessage]
     }
   }
-
-  object SourceTypeEnum {
-    val `db-instance`         = "db-instance"
-    val `db-parameter-group`  = "db-parameter-group"
-    val `db-security-group`   = "db-security-group"
-    val `db-snapshot`         = "db-snapshot"
-    val `db-cluster`          = "db-cluster"
-    val `db-cluster-snapshot` = "db-cluster-snapshot"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val `db-instance`         = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group`  = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group`   = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot`         = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster`          = "db-cluster".asInstanceOf[SourceType]
+    val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -10582,11 +10581,12 @@ package rds {
       __obj.asInstanceOf[TagListMessage]
     }
   }
-
-  object TargetTypeEnum {
-    val RDS_INSTANCE            = "RDS_INSTANCE"
-    val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT"
-    val TRACKED_CLUSTER         = "TRACKED_CLUSTER"
+  @js.native
+  sealed trait TargetType extends js.Any
+  object TargetType extends js.Object {
+    val RDS_INSTANCE            = "RDS_INSTANCE".asInstanceOf[TargetType]
+    val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
+    val TRACKED_CLUSTER         = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER))
   }

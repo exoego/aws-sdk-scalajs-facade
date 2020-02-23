@@ -12,7 +12,6 @@ package object mediastoredata {
   type ETag                = String
   type ItemList            = js.Array[Item]
   type ItemName            = String
-  type ItemType            = String
   type ListLimit           = Int
   type ListPathNaming      = String
   type NonNegativeLong     = Double
@@ -21,10 +20,8 @@ package object mediastoredata {
   type PayloadBlob         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type RangePattern        = String
   type SHA256Hash          = String
-  type StorageClass        = String
   type StringPrimitive     = String
   type TimeStamp           = js.Date
-  type UploadAvailability  = String
   type statusCode          = Int
 
   implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
@@ -225,10 +222,11 @@ package mediastoredata {
       __obj.asInstanceOf[Item]
     }
   }
-
-  object ItemTypeEnum {
-    val OBJECT = "OBJECT"
-    val FOLDER = "FOLDER"
+  @js.native
+  sealed trait ItemType extends js.Any
+  object ItemType extends js.Object {
+    val OBJECT = "OBJECT".asInstanceOf[ItemType]
+    val FOLDER = "FOLDER".asInstanceOf[ItemType]
 
     val values = js.Object.freeze(js.Array(OBJECT, FOLDER))
   }
@@ -328,16 +326,18 @@ package mediastoredata {
       __obj.asInstanceOf[PutObjectResponse]
     }
   }
-
-  object StorageClassEnum {
-    val TEMPORAL = "TEMPORAL"
+  @js.native
+  sealed trait StorageClass extends js.Any
+  object StorageClass extends js.Object {
+    val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
 
     val values = js.Object.freeze(js.Array(TEMPORAL))
   }
-
-  object UploadAvailabilityEnum {
-    val STANDARD  = "STANDARD"
-    val STREAMING = "STREAMING"
+  @js.native
+  sealed trait UploadAvailability extends js.Any
+  object UploadAvailability extends js.Object {
+    val STANDARD  = "STANDARD".asInstanceOf[UploadAvailability]
+    val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
     val values = js.Object.freeze(js.Array(STANDARD, STREAMING))
   }

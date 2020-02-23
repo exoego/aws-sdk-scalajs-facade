@@ -11,7 +11,6 @@ package object cloudfront {
   type AliasList                                 = js.Array[String]
   type AwsAccountNumberList                      = js.Array[String]
   type CacheBehaviorList                         = js.Array[CacheBehavior]
-  type CertificateSource                         = String
   type CloudFrontOriginAccessIdentitySummaryList = js.Array[CloudFrontOriginAccessIdentitySummary]
   type CommentType                               = String
   type ContentTypeProfileList                    = js.Array[ContentTypeProfile]
@@ -19,38 +18,26 @@ package object cloudfront {
   type CustomErrorResponseList                   = js.Array[CustomErrorResponse]
   type DistributionSummaryList                   = js.Array[DistributionSummary]
   type EncryptionEntityList                      = js.Array[EncryptionEntity]
-  type EventType                                 = String
   type FieldLevelEncryptionProfileSummaryList    = js.Array[FieldLevelEncryptionProfileSummary]
   type FieldLevelEncryptionSummaryList           = js.Array[FieldLevelEncryptionSummary]
   type FieldPatternList                          = js.Array[String]
-  type Format                                    = String
-  type GeoRestrictionType                        = String
   type HeaderList                                = js.Array[String]
-  type HttpVersion                               = String
-  type ICPRecordalStatus                         = String
   type InvalidationSummaryList                   = js.Array[InvalidationSummary]
-  type ItemSelection                             = String
   type KeyPairIdList                             = js.Array[String]
   type LambdaFunctionARN                         = String
   type LambdaFunctionAssociationList             = js.Array[LambdaFunctionAssociation]
   type LocationList                              = js.Array[String]
-  type Method                                    = String
   type MethodsList                               = js.Array[Method]
-  type MinimumProtocolVersion                    = String
   type OriginCustomHeadersList                   = js.Array[OriginCustomHeader]
   type OriginGroupList                           = js.Array[OriginGroup]
   type OriginGroupMemberList                     = js.Array[OriginGroupMember]
   type OriginList                                = js.Array[Origin]
-  type OriginProtocolPolicy                      = String
   type PathList                                  = js.Array[String]
-  type PriceClass                                = String
   type PublicKeySummaryList                      = js.Array[PublicKeySummary]
   type QueryArgProfileList                       = js.Array[QueryArgProfile]
   type QueryStringCacheKeysList                  = js.Array[String]
   type ResourceARN                               = String
-  type SSLSupportMethod                          = String
   type SignerList                                = js.Array[Signer]
-  type SslProtocol                               = String
   type SslProtocolsList                          = js.Array[SslProtocol]
   type StatusCodeList                            = js.Array[Int]
   type StreamingDistributionSummaryList          = js.Array[StreamingDistributionSummary]
@@ -58,7 +45,6 @@ package object cloudfront {
   type TagKeyList                                = js.Array[TagKey]
   type TagList                                   = js.Array[Tag]
   type TagValue                                  = String
-  type ViewerProtocolPolicy                      = String
   type timestamp                                 = js.Date
 
   implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
@@ -516,11 +502,12 @@ package cloudfront {
       __obj.asInstanceOf[CachedMethods]
     }
   }
-
-  object CertificateSourceEnum {
-    val cloudfront = "cloudfront"
-    val iam        = "iam"
-    val acm        = "acm"
+  @js.native
+  sealed trait CertificateSource extends js.Any
+  object CertificateSource extends js.Object {
+    val cloudfront = "cloudfront".asInstanceOf[CertificateSource]
+    val iam        = "iam".asInstanceOf[CertificateSource]
+    val acm        = "acm".asInstanceOf[CertificateSource]
 
     val values = js.Object.freeze(js.Array(cloudfront, iam, acm))
   }
@@ -1787,12 +1774,13 @@ package cloudfront {
       __obj.asInstanceOf[EncryptionEntity]
     }
   }
-
-  object EventTypeEnum {
-    val `viewer-request`  = "viewer-request"
-    val `viewer-response` = "viewer-response"
-    val `origin-request`  = "origin-request"
-    val `origin-response` = "origin-response"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val `viewer-request`  = "viewer-request".asInstanceOf[EventType]
+    val `viewer-response` = "viewer-response".asInstanceOf[EventType]
+    val `origin-request`  = "origin-request".asInstanceOf[EventType]
+    val `origin-response` = "origin-response".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`))
   }
@@ -2060,9 +2048,10 @@ package cloudfront {
       __obj.asInstanceOf[FieldPatterns]
     }
   }
-
-  object FormatEnum {
-    val URLEncoded = "URLEncoded"
+  @js.native
+  sealed trait Format extends js.Any
+  object Format extends js.Object {
+    val URLEncoded = "URLEncoded".asInstanceOf[Format]
 
     val values = js.Object.freeze(js.Array(URLEncoded))
   }
@@ -2123,11 +2112,12 @@ package cloudfront {
       __obj.asInstanceOf[GeoRestriction]
     }
   }
-
-  object GeoRestrictionTypeEnum {
-    val blacklist = "blacklist"
-    val whitelist = "whitelist"
-    val none      = "none"
+  @js.native
+  sealed trait GeoRestrictionType extends js.Any
+  object GeoRestrictionType extends js.Object {
+    val blacklist = "blacklist".asInstanceOf[GeoRestrictionType]
+    val whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
+    val none      = "none".asInstanceOf[GeoRestrictionType]
 
     val values = js.Object.freeze(js.Array(blacklist, whitelist, none))
   }
@@ -2691,18 +2681,20 @@ package cloudfront {
       __obj.asInstanceOf[Headers]
     }
   }
-
-  object HttpVersionEnum {
-    val `http1.1` = "http1.1"
-    val http2     = "http2"
+  @js.native
+  sealed trait HttpVersion extends js.Any
+  object HttpVersion extends js.Object {
+    val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
+    val http2     = "http2".asInstanceOf[HttpVersion]
 
     val values = js.Object.freeze(js.Array(`http1.1`, http2))
   }
-
-  object ICPRecordalStatusEnum {
-    val APPROVED  = "APPROVED"
-    val SUSPENDED = "SUSPENDED"
-    val PENDING   = "PENDING"
+  @js.native
+  sealed trait ICPRecordalStatus extends js.Any
+  object ICPRecordalStatus extends js.Object {
+    val APPROVED  = "APPROVED".asInstanceOf[ICPRecordalStatus]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
+    val PENDING   = "PENDING".asInstanceOf[ICPRecordalStatus]
 
     val values = js.Object.freeze(js.Array(APPROVED, SUSPENDED, PENDING))
   }
@@ -2823,11 +2815,12 @@ package cloudfront {
       __obj.asInstanceOf[InvalidationSummary]
     }
   }
-
-  object ItemSelectionEnum {
-    val none      = "none"
-    val whitelist = "whitelist"
-    val all       = "all"
+  @js.native
+  sealed trait ItemSelection extends js.Any
+  object ItemSelection extends js.Object {
+    val none      = "none".asInstanceOf[ItemSelection]
+    val whitelist = "whitelist".asInstanceOf[ItemSelection]
+    val all       = "all".asInstanceOf[ItemSelection]
 
     val values = js.Object.freeze(js.Array(none, whitelist, all))
   }
@@ -3307,25 +3300,27 @@ package cloudfront {
       __obj.asInstanceOf[LoggingConfig]
     }
   }
-
-  object MethodEnum {
-    val GET     = "GET"
-    val HEAD    = "HEAD"
-    val POST    = "POST"
-    val PUT     = "PUT"
-    val PATCH   = "PATCH"
-    val OPTIONS = "OPTIONS"
-    val DELETE  = "DELETE"
+  @js.native
+  sealed trait Method extends js.Any
+  object Method extends js.Object {
+    val GET     = "GET".asInstanceOf[Method]
+    val HEAD    = "HEAD".asInstanceOf[Method]
+    val POST    = "POST".asInstanceOf[Method]
+    val PUT     = "PUT".asInstanceOf[Method]
+    val PATCH   = "PATCH".asInstanceOf[Method]
+    val OPTIONS = "OPTIONS".asInstanceOf[Method]
+    val DELETE  = "DELETE".asInstanceOf[Method]
 
     val values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
   }
-
-  object MinimumProtocolVersionEnum {
-    val SSLv3          = "SSLv3"
-    val TLSv1          = "TLSv1"
-    val TLSv1_2016     = "TLSv1_2016"
-    val `TLSv1.1_2016` = "TLSv1.1_2016"
-    val `TLSv1.2_2018` = "TLSv1.2_2018"
+  @js.native
+  sealed trait MinimumProtocolVersion extends js.Any
+  object MinimumProtocolVersion extends js.Object {
+    val SSLv3          = "SSLv3".asInstanceOf[MinimumProtocolVersion]
+    val TLSv1          = "TLSv1".asInstanceOf[MinimumProtocolVersion]
+    val TLSv1_2016     = "TLSv1_2016".asInstanceOf[MinimumProtocolVersion]
+    val `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
+    val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
 
     val values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`))
   }
@@ -3507,11 +3502,12 @@ package cloudfront {
       __obj.asInstanceOf[OriginGroups]
     }
   }
-
-  object OriginProtocolPolicyEnum {
-    val `http-only`    = "http-only"
-    val `match-viewer` = "match-viewer"
-    val `https-only`   = "https-only"
+  @js.native
+  sealed trait OriginProtocolPolicy extends js.Any
+  object OriginProtocolPolicy extends js.Object {
+    val `http-only`    = "http-only".asInstanceOf[OriginProtocolPolicy]
+    val `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
+    val `https-only`   = "https-only".asInstanceOf[OriginProtocolPolicy]
 
     val values = js.Object.freeze(js.Array(`http-only`, `match-viewer`, `https-only`))
   }
@@ -3587,11 +3583,12 @@ package cloudfront {
       __obj.asInstanceOf[Paths]
     }
   }
-
-  object PriceClassEnum {
-    val PriceClass_100 = "PriceClass_100"
-    val PriceClass_200 = "PriceClass_200"
-    val PriceClass_All = "PriceClass_All"
+  @js.native
+  sealed trait PriceClass extends js.Any
+  object PriceClass extends js.Object {
+    val PriceClass_100 = "PriceClass_100".asInstanceOf[PriceClass]
+    val PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
+    val PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
 
     val values = js.Object.freeze(js.Array(PriceClass_100, PriceClass_200, PriceClass_All))
   }
@@ -3877,10 +3874,11 @@ package cloudfront {
       __obj.asInstanceOf[S3OriginConfig]
     }
   }
-
-  object SSLSupportMethodEnum {
-    val `sni-only` = "sni-only"
-    val vip        = "vip"
+  @js.native
+  sealed trait SSLSupportMethod extends js.Any
+  object SSLSupportMethod extends js.Object {
+    val `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
+    val vip        = "vip".asInstanceOf[SSLSupportMethod]
 
     val values = js.Object.freeze(js.Array(`sni-only`, vip))
   }
@@ -3906,12 +3904,13 @@ package cloudfront {
       __obj.asInstanceOf[Signer]
     }
   }
-
-  object SslProtocolEnum {
-    val SSLv3     = "SSLv3"
-    val TLSv1     = "TLSv1"
-    val `TLSv1.1` = "TLSv1.1"
-    val `TLSv1.2` = "TLSv1.2"
+  @js.native
+  sealed trait SslProtocol extends js.Any
+  object SslProtocol extends js.Object {
+    val SSLv3     = "SSLv3".asInstanceOf[SslProtocol]
+    val TLSv1     = "TLSv1".asInstanceOf[SslProtocol]
+    val `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
+    val `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
 
     val values = js.Object.freeze(js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`))
   }
@@ -4629,11 +4628,12 @@ package cloudfront {
       __obj.asInstanceOf[ViewerCertificate]
     }
   }
-
-  object ViewerProtocolPolicyEnum {
-    val `allow-all`         = "allow-all"
-    val `https-only`        = "https-only"
-    val `redirect-to-https` = "redirect-to-https"
+  @js.native
+  sealed trait ViewerProtocolPolicy extends js.Any
+  object ViewerProtocolPolicy extends js.Object {
+    val `allow-all`         = "allow-all".asInstanceOf[ViewerProtocolPolicy]
+    val `https-only`        = "https-only".asInstanceOf[ViewerProtocolPolicy]
+    val `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
 
     val values = js.Object.freeze(js.Array(`allow-all`, `https-only`, `redirect-to-https`))
   }

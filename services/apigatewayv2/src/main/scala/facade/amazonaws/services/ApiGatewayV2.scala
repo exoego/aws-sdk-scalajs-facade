@@ -9,32 +9,20 @@ import facade.amazonaws._
 package object apigatewayv2 {
   type Arn                                    = String
   type AuthorizationScopes                    = js.Array[StringWithLengthBetween1And64]
-  type AuthorizationType                      = String
-  type AuthorizerType                         = String
-  type ConnectionType                         = String
-  type ContentHandlingStrategy                = String
   type CorsHeaderList                         = js.Array[__string]
   type CorsMethodList                         = js.Array[StringWithLengthBetween1And64]
   type CorsOriginList                         = js.Array[__string]
-  type DeploymentStatus                       = String
   type DomainNameConfigurations               = js.Array[DomainNameConfiguration]
-  type DomainNameStatus                       = String
-  type EndpointType                           = String
   type Id                                     = String
   type IdentitySourceList                     = js.Array[__string]
   type IntegerWithLengthBetween0And3600       = Int
   type IntegerWithLengthBetween50And29000     = Int
   type IntegerWithLengthBetweenMinus1And86400 = Int
   type IntegrationParameters                  = js.Dictionary[StringWithLengthBetween1And512]
-  type IntegrationType                        = String
-  type LoggingLevel                           = String
   type NextToken                              = String
-  type PassthroughBehavior                    = String
-  type ProtocolType                           = String
   type RouteModels                            = js.Dictionary[StringWithLengthBetween1And128]
   type RouteParameters                        = js.Dictionary[ParameterConstraints]
   type RouteSettingsMap                       = js.Dictionary[RouteSettings]
-  type SecurityPolicy                         = String
   type SelectionExpression                    = String
   type SelectionKey                           = String
   type StageVariablesMap                      = js.Dictionary[StringWithLengthBetween0And2048]
@@ -396,11 +384,13 @@ package apigatewayv2 {
   /**
     * The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens.
     */
-  object AuthorizationTypeEnum {
-    val NONE    = "NONE"
-    val AWS_IAM = "AWS_IAM"
-    val CUSTOM  = "CUSTOM"
-    val JWT     = "JWT"
+  @js.native
+  sealed trait AuthorizationType extends js.Any
+  object AuthorizationType extends js.Object {
+    val NONE    = "NONE".asInstanceOf[AuthorizationType]
+    val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
+    val CUSTOM  = "CUSTOM".asInstanceOf[AuthorizationType]
+    val JWT     = "JWT".asInstanceOf[AuthorizationType]
 
     val values = js.Object.freeze(js.Array(NONE, AWS_IAM, CUSTOM, JWT))
   }
@@ -457,9 +447,11 @@ package apigatewayv2 {
   /**
     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
     */
-  object AuthorizerTypeEnum {
-    val REQUEST = "REQUEST"
-    val JWT     = "JWT"
+  @js.native
+  sealed trait AuthorizerType extends js.Any
+  object AuthorizerType extends js.Object {
+    val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
+    val JWT     = "JWT".asInstanceOf[AuthorizerType]
 
     val values = js.Object.freeze(js.Array(REQUEST, JWT))
   }
@@ -467,9 +459,11 @@ package apigatewayv2 {
   /**
     * Represents a connection type.
     */
-  object ConnectionTypeEnum {
-    val INTERNET = "INTERNET"
-    val VPC_LINK = "VPC_LINK"
+  @js.native
+  sealed trait ConnectionType extends js.Any
+  object ConnectionType extends js.Object {
+    val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
+    val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
     val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
@@ -477,9 +471,11 @@ package apigatewayv2 {
   /**
     * Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
     */
-  object ContentHandlingStrategyEnum {
-    val CONVERT_TO_BINARY = "CONVERT_TO_BINARY"
-    val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT"
+  @js.native
+  sealed trait ContentHandlingStrategy extends js.Any
+  object ContentHandlingStrategy extends js.Object {
+    val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
+    val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
     val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
@@ -1751,10 +1747,12 @@ package apigatewayv2 {
   /**
     * Represents a deployment status.
     */
-  object DeploymentStatusEnum {
-    val PENDING  = "PENDING"
-    val FAILED   = "FAILED"
-    val DEPLOYED = "DEPLOYED"
+  @js.native
+  sealed trait DeploymentStatus extends js.Any
+  object DeploymentStatus extends js.Object {
+    val PENDING  = "PENDING".asInstanceOf[DeploymentStatus]
+    val FAILED   = "FAILED".asInstanceOf[DeploymentStatus]
+    val DEPLOYED = "DEPLOYED".asInstanceOf[DeploymentStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, FAILED, DEPLOYED))
   }
@@ -1837,9 +1835,11 @@ package apigatewayv2 {
   /**
     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
     */
-  object DomainNameStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val UPDATING  = "UPDATING"
+  @js.native
+  sealed trait DomainNameStatus extends js.Any
+  object DomainNameStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
+    val UPDATING  = "UPDATING".asInstanceOf[DomainNameStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING))
   }
@@ -1847,9 +1847,11 @@ package apigatewayv2 {
   /**
     * Represents an endpoint type.
     */
-  object EndpointTypeEnum {
-    val REGIONAL = "REGIONAL"
-    val EDGE     = "EDGE"
+  @js.native
+  sealed trait EndpointType extends js.Any
+  object EndpointType extends js.Object {
+    val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
+    val EDGE     = "EDGE".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE))
   }
@@ -3275,12 +3277,14 @@ package apigatewayv2 {
   /**
     * Represents an API method integration type.
     */
-  object IntegrationTypeEnum {
-    val AWS        = "AWS"
-    val HTTP       = "HTTP"
-    val MOCK       = "MOCK"
-    val HTTP_PROXY = "HTTP_PROXY"
-    val AWS_PROXY  = "AWS_PROXY"
+  @js.native
+  sealed trait IntegrationType extends js.Any
+  object IntegrationType extends js.Object {
+    val AWS        = "AWS".asInstanceOf[IntegrationType]
+    val HTTP       = "HTTP".asInstanceOf[IntegrationType]
+    val MOCK       = "MOCK".asInstanceOf[IntegrationType]
+    val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
+    val AWS_PROXY  = "AWS_PROXY".asInstanceOf[IntegrationType]
 
     val values = js.Object.freeze(js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY))
   }
@@ -3310,10 +3314,12 @@ package apigatewayv2 {
   /**
     * The logging level.
     */
-  object LoggingLevelEnum {
-    val ERROR   = "ERROR"
-    val INFO    = "INFO"
-    val `false` = "false"
+  @js.native
+  sealed trait LoggingLevel extends js.Any
+  object LoggingLevel extends js.Object {
+    val ERROR   = "ERROR".asInstanceOf[LoggingLevel]
+    val INFO    = "INFO".asInstanceOf[LoggingLevel]
+    val `false` = "false".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, INFO, `false`))
   }
@@ -3373,10 +3379,12 @@ package apigatewayv2 {
   /**
     * Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
     */
-  object PassthroughBehaviorEnum {
-    val WHEN_NO_MATCH     = "WHEN_NO_MATCH"
-    val NEVER             = "NEVER"
-    val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES"
+  @js.native
+  sealed trait PassthroughBehavior extends js.Any
+  object PassthroughBehavior extends js.Object {
+    val WHEN_NO_MATCH     = "WHEN_NO_MATCH".asInstanceOf[PassthroughBehavior]
+    val NEVER             = "NEVER".asInstanceOf[PassthroughBehavior]
+    val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES".asInstanceOf[PassthroughBehavior]
 
     val values = js.Object.freeze(js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES))
   }
@@ -3384,9 +3392,11 @@ package apigatewayv2 {
   /**
     * Represents a protocol type.
     */
-  object ProtocolTypeEnum {
-    val WEBSOCKET = "WEBSOCKET"
-    val HTTP      = "HTTP"
+  @js.native
+  sealed trait ProtocolType extends js.Any
+  object ProtocolType extends js.Object {
+    val WEBSOCKET = "WEBSOCKET".asInstanceOf[ProtocolType]
+    val HTTP      = "HTTP".asInstanceOf[ProtocolType]
 
     val values = js.Object.freeze(js.Array(WEBSOCKET, HTTP))
   }
@@ -3604,9 +3614,11 @@ package apigatewayv2 {
   /**
     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
     */
-  object SecurityPolicyEnum {
-    val TLS_1_0 = "TLS_1_0"
-    val TLS_1_2 = "TLS_1_2"
+  @js.native
+  sealed trait SecurityPolicy extends js.Any
+  object SecurityPolicy extends js.Object {
+    val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
+    val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
     val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }

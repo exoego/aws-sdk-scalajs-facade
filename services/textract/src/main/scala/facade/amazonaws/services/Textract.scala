@@ -8,14 +8,10 @@ import facade.amazonaws._
 
 package object textract {
   type BlockList                                      = js.Array[Block]
-  type BlockType                                      = String
   type ClientRequestToken                             = String
-  type ContentClassifier                              = String
   type ContentClassifiers                             = js.Array[ContentClassifier]
-  type EntityType                                     = String
   type EntityTypes                                    = js.Array[EntityType]
   type ErrorCode                                      = String
-  type FeatureType                                    = String
   type FeatureTypes                                   = js.Array[FeatureType]
   type FlowDefinitionArn                              = String
   type HumanLoopActivationConditionsEvaluationResults = String
@@ -26,7 +22,6 @@ package object textract {
   type IdList                                         = js.Array[NonEmptyString]
   type ImageBlob                                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type JobId                                          = String
-  type JobStatus                                      = String
   type JobTag                                         = String
   type MaxResults                                     = Int
   type NonEmptyString                                 = String
@@ -35,13 +30,11 @@ package object textract {
   type Percent                                        = Float
   type Polygon                                        = js.Array[Point]
   type RelationshipList                               = js.Array[Relationship]
-  type RelationshipType                               = String
   type RoleArn                                        = String
   type S3Bucket                                       = String
   type S3ObjectName                                   = String
   type S3ObjectVersion                                = String
   type SNSTopicArn                                    = String
-  type SelectionStatus                                = String
   type StatusMessage                                  = String
   type UInteger                                       = Int
   type Warnings                                       = js.Array[Warning]
@@ -192,15 +185,16 @@ package textract {
       __obj.asInstanceOf[Block]
     }
   }
-
-  object BlockTypeEnum {
-    val KEY_VALUE_SET     = "KEY_VALUE_SET"
-    val PAGE              = "PAGE"
-    val LINE              = "LINE"
-    val WORD              = "WORD"
-    val TABLE             = "TABLE"
-    val CELL              = "CELL"
-    val SELECTION_ELEMENT = "SELECTION_ELEMENT"
+  @js.native
+  sealed trait BlockType extends js.Any
+  object BlockType extends js.Object {
+    val KEY_VALUE_SET     = "KEY_VALUE_SET".asInstanceOf[BlockType]
+    val PAGE              = "PAGE".asInstanceOf[BlockType]
+    val LINE              = "LINE".asInstanceOf[BlockType]
+    val WORD              = "WORD".asInstanceOf[BlockType]
+    val TABLE             = "TABLE".asInstanceOf[BlockType]
+    val CELL              = "CELL".asInstanceOf[BlockType]
+    val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
 
     val values = js.Object.freeze(js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT))
   }
@@ -234,10 +228,12 @@ package textract {
       __obj.asInstanceOf[BoundingBox]
     }
   }
-
-  object ContentClassifierEnum {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
-    val FreeOfAdultContent                      = "FreeOfAdultContent"
+  @js.native
+  sealed trait ContentClassifier extends js.Any
+  object ContentClassifier extends js.Object {
+    val FreeOfPersonallyIdentifiableInformation =
+      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
@@ -349,17 +345,19 @@ package textract {
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
-
-  object EntityTypeEnum {
-    val KEY   = "KEY"
-    val VALUE = "VALUE"
+  @js.native
+  sealed trait EntityType extends js.Any
+  object EntityType extends js.Object {
+    val KEY   = "KEY".asInstanceOf[EntityType]
+    val VALUE = "VALUE".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(js.Array(KEY, VALUE))
   }
-
-  object FeatureTypeEnum {
-    val TABLES = "TABLES"
-    val FORMS  = "FORMS"
+  @js.native
+  sealed trait FeatureType extends js.Any
+  object FeatureType extends js.Object {
+    val TABLES = "TABLES".asInstanceOf[FeatureType]
+    val FORMS  = "FORMS".asInstanceOf[FeatureType]
 
     val values = js.Object.freeze(js.Array(TABLES, FORMS))
   }
@@ -581,12 +579,13 @@ package textract {
       __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
-
-  object JobStatusEnum {
-    val IN_PROGRESS     = "IN_PROGRESS"
-    val SUCCEEDED       = "SUCCEEDED"
-    val FAILED          = "FAILED"
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val IN_PROGRESS     = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val SUCCEEDED       = "SUCCEEDED".asInstanceOf[JobStatus]
+    val FAILED          = "FAILED".asInstanceOf[JobStatus]
+    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS))
   }
@@ -660,10 +659,11 @@ package textract {
       __obj.asInstanceOf[Relationship]
     }
   }
-
-  object RelationshipTypeEnum {
-    val VALUE = "VALUE"
-    val CHILD = "CHILD"
+  @js.native
+  sealed trait RelationshipType extends js.Any
+  object RelationshipType extends js.Object {
+    val VALUE = "VALUE".asInstanceOf[RelationshipType]
+    val CHILD = "CHILD".asInstanceOf[RelationshipType]
 
     val values = js.Object.freeze(js.Array(VALUE, CHILD))
   }
@@ -694,10 +694,11 @@ package textract {
       __obj.asInstanceOf[S3Object]
     }
   }
-
-  object SelectionStatusEnum {
-    val SELECTED     = "SELECTED"
-    val NOT_SELECTED = "NOT_SELECTED"
+  @js.native
+  sealed trait SelectionStatus extends js.Any
+  object SelectionStatus extends js.Object {
+    val SELECTED     = "SELECTED".asInstanceOf[SelectionStatus]
+    val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
 
     val values = js.Object.freeze(js.Array(SELECTED, NOT_SELECTED))
   }

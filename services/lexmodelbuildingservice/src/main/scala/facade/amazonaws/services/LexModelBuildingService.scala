@@ -22,21 +22,13 @@ package object lexmodelbuildingservice {
   type BuiltinSlotTypeMetadataList = js.Array[BuiltinSlotTypeMetadata]
   type BuiltinSlotTypeSignature    = String
   type ChannelConfigurationMap     = js.Dictionary[String]
-  type ChannelStatus               = String
-  type ChannelType                 = String
   type ContentString               = String
-  type ContentType                 = String
   type Count                       = Int
   type CustomOrBuiltinSlotTypeName = String
   type Description                 = String
-  type Destination                 = String
   type EnumerationValues           = js.Array[EnumerationValue]
-  type ExportStatus                = String
-  type ExportType                  = String
-  type FulfillmentActivityType     = String
   type GroupNumber                 = Int
   type IamRoleArn                  = String
-  type ImportStatus                = String
   type IntentList                  = js.Array[Intent]
   type IntentMetadataList          = js.Array[IntentMetadata]
   type IntentName                  = String
@@ -45,38 +37,28 @@ package object lexmodelbuildingservice {
   type LambdaARN                   = String
   type ListOfUtterance             = js.Array[UtteranceData]
   type ListsOfUtterances           = js.Array[UtteranceList]
-  type Locale                      = String
   type LocaleList                  = js.Array[Locale]
   type LogSettingsRequestList      = js.Array[LogSettingsRequest]
   type LogSettingsResponseList     = js.Array[LogSettingsResponse]
-  type LogType                     = String
   type MaxResults                  = Int
-  type MergeStrategy               = String
   type MessageList                 = js.Array[Message]
   type MessageVersion              = String
   type Name                        = String
   type NextToken                   = String
   type NumericalVersion            = String
-  type ObfuscationSetting          = String
   type Priority                    = Int
-  type ProcessBehavior             = String
   type PromptMaxAttempts           = Int
   type RegexPattern                = String
   type ResourceArn                 = String
   type ResourcePrefix              = String
-  type ResourceType                = String
   type ResponseCard                = String
   type SessionTTL                  = Int
-  type SlotConstraint              = String
   type SlotList                    = js.Array[Slot]
   type SlotName                    = String
   type SlotTypeConfigurations      = js.Array[SlotTypeConfiguration]
   type SlotTypeMetadataList        = js.Array[SlotTypeMetadata]
   type SlotTypeName                = String
   type SlotUtteranceList           = js.Array[Utterance]
-  type SlotValueSelectionStrategy  = String
-  type Status                      = String
-  type StatusType                  = String
   type StringList                  = js.Array[String]
   type SynonymList                 = js.Array[Value]
   type Timestamp                   = js.Date
@@ -390,20 +372,22 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[BuiltinSlotTypeMetadata]
     }
   }
-
-  object ChannelStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val CREATED     = "CREATED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait ChannelStatus extends js.Any
+  object ChannelStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
+    val CREATED     = "CREATED".asInstanceOf[ChannelStatus]
+    val FAILED      = "FAILED".asInstanceOf[ChannelStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
-
-  object ChannelTypeEnum {
-    val Facebook     = "Facebook"
-    val Slack        = "Slack"
-    val `Twilio-Sms` = "Twilio-Sms"
-    val Kik          = "Kik"
+  @js.native
+  sealed trait ChannelType extends js.Any
+  object ChannelType extends js.Object {
+    val Facebook     = "Facebook".asInstanceOf[ChannelType]
+    val Slack        = "Slack".asInstanceOf[ChannelType]
+    val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
+    val Kik          = "Kik".asInstanceOf[ChannelType]
 
     val values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
   }
@@ -431,11 +415,12 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[CodeHook]
     }
   }
-
-  object ContentTypeEnum {
-    val PlainText     = "PlainText"
-    val SSML          = "SSML"
-    val CustomPayload = "CustomPayload"
+  @js.native
+  sealed trait ContentType extends js.Any
+  object ContentType extends js.Object {
+    val PlainText     = "PlainText".asInstanceOf[ContentType]
+    val SSML          = "SSML".asInstanceOf[ContentType]
+    val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
   }
@@ -893,10 +878,11 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[DeleteUtterancesRequest]
     }
   }
-
-  object DestinationEnum {
-    val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS"
-    val S3              = "S3"
+  @js.native
+  sealed trait Destination extends js.Any
+  object Destination extends js.Object {
+    val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
+    val S3              = "S3".asInstanceOf[Destination]
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
   }
@@ -928,18 +914,20 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[EnumerationValue]
     }
   }
-
-  object ExportStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val READY       = "READY"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait ExportStatus extends js.Any
+  object ExportStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+    val READY       = "READY".asInstanceOf[ExportStatus]
+    val FAILED      = "FAILED".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
-
-  object ExportTypeEnum {
-    val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT"
-    val LEX              = "LEX"
+  @js.native
+  sealed trait ExportType extends js.Any
+  object ExportType extends js.Object {
+    val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
+    val LEX              = "LEX".asInstanceOf[ExportType]
 
     val values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
   }
@@ -994,10 +982,11 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[FulfillmentActivity]
     }
   }
-
-  object FulfillmentActivityTypeEnum {
-    val ReturnIntent = "ReturnIntent"
-    val CodeHook     = "CodeHook"
+  @js.native
+  sealed trait FulfillmentActivityType extends js.Any
+  object FulfillmentActivityType extends js.Object {
+    val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
+    val CodeHook     = "CodeHook".asInstanceOf[FulfillmentActivityType]
 
     val values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
   }
@@ -1979,11 +1968,12 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[GetUtterancesViewResponse]
     }
   }
-
-  object ImportStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETE    = "COMPLETE"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait ImportStatus extends js.Any
+  object ImportStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
+    val COMPLETE    = "COMPLETE".asInstanceOf[ImportStatus]
+    val FAILED      = "FAILED".asInstanceOf[ImportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -2042,11 +2032,12 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[IntentMetadata]
     }
   }
-
-  object LocaleEnum {
-    val `en-US` = "en-US"
-    val `en-GB` = "en-GB"
-    val `de-DE` = "de-DE"
+  @js.native
+  sealed trait Locale extends js.Any
+  object Locale extends js.Object {
+    val `en-US` = "en-US".asInstanceOf[Locale]
+    val `en-GB` = "en-GB".asInstanceOf[Locale]
+    val `de-DE` = "de-DE".asInstanceOf[Locale]
 
     val values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
   }
@@ -2111,17 +2102,19 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[LogSettingsResponse]
     }
   }
-
-  object LogTypeEnum {
-    val AUDIO = "AUDIO"
-    val TEXT  = "TEXT"
+  @js.native
+  sealed trait LogType extends js.Any
+  object LogType extends js.Object {
+    val AUDIO = "AUDIO".asInstanceOf[LogType]
+    val TEXT  = "TEXT".asInstanceOf[LogType]
 
     val values = js.Object.freeze(js.Array(AUDIO, TEXT))
   }
-
-  object MergeStrategyEnum {
-    val OVERWRITE_LATEST = "OVERWRITE_LATEST"
-    val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT"
+  @js.native
+  sealed trait MergeStrategy extends js.Any
+  object MergeStrategy extends js.Object {
+    val OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
+    val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
 
     val values = js.Object.freeze(js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT))
   }
@@ -2152,17 +2145,19 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Message]
     }
   }
-
-  object ObfuscationSettingEnum {
-    val NONE                = "NONE"
-    val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION"
+  @js.native
+  sealed trait ObfuscationSetting extends js.Any
+  object ObfuscationSetting extends js.Object {
+    val NONE                = "NONE".asInstanceOf[ObfuscationSetting]
+    val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
     val values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
   }
-
-  object ProcessBehaviorEnum {
-    val SAVE  = "SAVE"
-    val BUILD = "BUILD"
+  @js.native
+  sealed trait ProcessBehavior extends js.Any
+  object ProcessBehavior extends js.Object {
+    val SAVE  = "SAVE".asInstanceOf[ProcessBehavior]
+    val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
 
     val values = js.Object.freeze(js.Array(SAVE, BUILD))
   }
@@ -2581,11 +2576,12 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[PutSlotTypeResponse]
     }
   }
-
-  object ResourceTypeEnum {
-    val BOT       = "BOT"
-    val INTENT    = "INTENT"
-    val SLOT_TYPE = "SLOT_TYPE"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val BOT       = "BOT".asInstanceOf[ResourceType]
+    val INTENT    = "INTENT".asInstanceOf[ResourceType]
+    val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
   }
@@ -2637,10 +2633,11 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Slot]
     }
   }
-
-  object SlotConstraintEnum {
-    val Required = "Required"
-    val Optional = "Optional"
+  @js.native
+  sealed trait SlotConstraint extends js.Any
+  object SlotConstraint extends js.Object {
+    val Required = "Required".asInstanceOf[SlotConstraint]
+    val Optional = "Optional".asInstanceOf[SlotConstraint]
 
     val values = js.Object.freeze(js.Array(Required, Optional))
   }
@@ -2715,10 +2712,11 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[SlotTypeRegexConfiguration]
     }
   }
-
-  object SlotValueSelectionStrategyEnum {
-    val ORIGINAL_VALUE = "ORIGINAL_VALUE"
-    val TOP_RESOLUTION = "TOP_RESOLUTION"
+  @js.native
+  sealed trait SlotValueSelectionStrategy extends js.Any
+  object SlotValueSelectionStrategy extends js.Object {
+    val ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
+    val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
 
     val values = js.Object.freeze(js.Array(ORIGINAL_VALUE, TOP_RESOLUTION))
   }
@@ -2801,20 +2799,22 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Statement]
     }
   }
-
-  object StatusEnum {
-    val BUILDING            = "BUILDING"
-    val READY               = "READY"
-    val READY_BASIC_TESTING = "READY_BASIC_TESTING"
-    val FAILED              = "FAILED"
-    val NOT_BUILT           = "NOT_BUILT"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val BUILDING            = "BUILDING".asInstanceOf[Status]
+    val READY               = "READY".asInstanceOf[Status]
+    val READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
+    val FAILED              = "FAILED".asInstanceOf[Status]
+    val NOT_BUILT           = "NOT_BUILT".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
-
-  object StatusTypeEnum {
-    val Detected = "Detected"
-    val Missed   = "Missed"
+  @js.native
+  sealed trait StatusType extends js.Any
+  object StatusType extends js.Object {
+    val Detected = "Detected".asInstanceOf[StatusType]
+    val Missed   = "Missed".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(Detected, Missed))
   }

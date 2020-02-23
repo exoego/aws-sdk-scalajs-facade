@@ -7,21 +7,9 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediapackage {
-  type AdMarkers                                   = String
   type AdTriggers                                  = js.Array[__AdTriggersElement]
-  type AdsOnDeliveryRestrictions                   = String
-  type EncryptionMethod                            = String
-  type ManifestLayout                              = String
   type MaxResults                                  = Int
-  type Origination                                 = String
-  type PlaylistType                                = String
-  type Profile                                     = String
-  type SegmentTemplateFormat                       = String
-  type Status                                      = String
-  type StreamOrder                                 = String
   type Tags                                        = js.Dictionary[__string]
-  type __AdTriggersElement                         = String
-  type __PeriodTriggersElement                     = String
   type __boolean                                   = Boolean
   type __integer                                   = Int
   type __listOfChannel                             = js.Array[Channel]
@@ -107,11 +95,12 @@ package mediapackage {
         params: RotateChannelCredentialsRequest
     ): Request[RotateChannelCredentialsResponse] = js.native
   }
-
-  object AdMarkersEnum {
-    val NONE            = "NONE"
-    val SCTE35_ENHANCED = "SCTE35_ENHANCED"
-    val PASSTHROUGH     = "PASSTHROUGH"
+  @js.native
+  sealed trait AdMarkers extends js.Any
+  object AdMarkers extends js.Object {
+    val NONE            = "NONE".asInstanceOf[AdMarkers]
+    val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
+    val PASSTHROUGH     = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
     val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
@@ -126,11 +115,13 @@ package mediapackage {
     * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
     * and are always treated as ads if specified in AdTriggers.
     */
-  object AdsOnDeliveryRestrictionsEnum {
-    val NONE         = "NONE"
-    val RESTRICTED   = "RESTRICTED"
-    val UNRESTRICTED = "UNRESTRICTED"
-    val BOTH         = "BOTH"
+  @js.native
+  sealed trait AdsOnDeliveryRestrictions extends js.Any
+  object AdsOnDeliveryRestrictions extends js.Object {
+    val NONE         = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
+    val RESTRICTED   = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    val BOTH         = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
 
     val values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
   }
@@ -856,10 +847,11 @@ package mediapackage {
       __obj.asInstanceOf[DescribeOriginEndpointResponse]
     }
   }
-
-  object EncryptionMethodEnum {
-    val AES_128    = "AES_128"
-    val SAMPLE_AES = "SAMPLE_AES"
+  @js.native
+  sealed trait EncryptionMethod extends js.Any
+  object EncryptionMethod extends js.Object {
+    val AES_128    = "AES_128".asInstanceOf[EncryptionMethod]
+    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
@@ -1293,10 +1285,11 @@ package mediapackage {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object ManifestLayoutEnum {
-    val FULL    = "FULL"
-    val COMPACT = "COMPACT"
+  @js.native
+  sealed trait ManifestLayout extends js.Any
+  object ManifestLayout extends js.Object {
+    val FULL    = "FULL".asInstanceOf[ManifestLayout]
+    val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
     val values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
@@ -1413,25 +1406,28 @@ package mediapackage {
       __obj.asInstanceOf[OriginEndpoint]
     }
   }
-
-  object OriginationEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait Origination extends js.Any
+  object Origination extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[Origination]
+    val DENY  = "DENY".asInstanceOf[Origination]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
-
-  object PlaylistTypeEnum {
-    val NONE  = "NONE"
-    val EVENT = "EVENT"
-    val VOD   = "VOD"
+  @js.native
+  sealed trait PlaylistType extends js.Any
+  object PlaylistType extends js.Object {
+    val NONE  = "NONE".asInstanceOf[PlaylistType]
+    val EVENT = "EVENT".asInstanceOf[PlaylistType]
+    val VOD   = "VOD".asInstanceOf[PlaylistType]
 
     val values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
-
-  object ProfileEnum {
-    val NONE      = "NONE"
-    val HBBTV_1_5 = "HBBTV_1_5"
+  @js.native
+  sealed trait Profile extends js.Any
+  object Profile extends js.Object {
+    val NONE      = "NONE".asInstanceOf[Profile]
+    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
@@ -1559,11 +1555,12 @@ package mediapackage {
       __obj.asInstanceOf[S3Destination]
     }
   }
-
-  object SegmentTemplateFormatEnum {
-    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE"
-    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
-    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION"
+  @js.native
+  sealed trait SegmentTemplateFormat extends js.Any
+  object SegmentTemplateFormat extends js.Object {
+    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
     val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
@@ -1600,19 +1597,21 @@ package mediapackage {
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
-
-  object StatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[Status]
+    val FAILED      = "FAILED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
-
-  object StreamOrderEnum {
-    val ORIGINAL                 = "ORIGINAL"
-    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING"
-    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING"
+  @js.native
+  sealed trait StreamOrder extends js.Any
+  object StreamOrder extends js.Object {
+    val ORIGINAL                 = "ORIGINAL".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
     val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
@@ -1850,16 +1849,19 @@ package mediapackage {
       __obj.asInstanceOf[UpdateOriginEndpointResponse]
     }
   }
-
-  object __AdTriggersElementEnum {
-    val SPLICE_INSERT                             = "SPLICE_INSERT"
-    val BREAK                                     = "BREAK"
-    val PROVIDER_ADVERTISEMENT                    = "PROVIDER_ADVERTISEMENT"
-    val DISTRIBUTOR_ADVERTISEMENT                 = "DISTRIBUTOR_ADVERTISEMENT"
-    val PROVIDER_PLACEMENT_OPPORTUNITY            = "PROVIDER_PLACEMENT_OPPORTUNITY"
-    val DISTRIBUTOR_PLACEMENT_OPPORTUNITY         = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"
-    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY    = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"
-    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"
+  @js.native
+  sealed trait __AdTriggersElement extends js.Any
+  object __AdTriggersElement extends js.Object {
+    val SPLICE_INSERT                     = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
+    val BREAK                             = "BREAK".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_ADVERTISEMENT            = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_ADVERTISEMENT         = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_PLACEMENT_OPPORTUNITY    = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY =
+      "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY =
+      "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1874,9 +1876,10 @@ package mediapackage {
       )
     )
   }
-
-  object __PeriodTriggersElementEnum {
-    val ADS = "ADS"
+  @js.native
+  sealed trait __PeriodTriggersElement extends js.Any
+  object __PeriodTriggersElement extends js.Object {
+    val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
     val values = js.Object.freeze(js.Array(ADS))
   }

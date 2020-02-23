@@ -8,13 +8,10 @@ import facade.amazonaws._
 
 package object fms {
   type AWSAccountId               = String
-  type AccountRoleStatus          = String
   type ComplianceViolators        = js.Array[ComplianceViolator]
   type CustomerPolicyScopeId      = String
   type CustomerPolicyScopeIdList  = js.Array[CustomerPolicyScopeId]
-  type CustomerPolicyScopeIdType  = String
   type CustomerPolicyScopeMap     = js.Dictionary[CustomerPolicyScopeIdList]
-  type DependentServiceName       = String
   type DetailedInfo               = String
   type EvaluationResults          = js.Array[EvaluationResult]
   type IssueInfoMap               = js.Dictionary[DetailedInfo]
@@ -23,7 +20,6 @@ package object fms {
   type PaginationMaxResults       = Int
   type PaginationToken            = String
   type PolicyComplianceStatusList = js.Array[PolicyComplianceStatus]
-  type PolicyComplianceStatusType = String
   type PolicyId                   = String
   type PolicySummaryList          = js.Array[PolicySummary]
   type PolicyUpdateToken          = String
@@ -37,13 +33,11 @@ package object fms {
   type ResourceTags               = js.Array[ResourceTag]
   type ResourceType               = String
   type ResourceTypeList           = js.Array[ResourceType]
-  type SecurityServiceType        = String
   type TagKey                     = String
   type TagKeyList                 = js.Array[TagKey]
   type TagList                    = js.Array[Tag]
   type TagValue                   = String
   type TimeStamp                  = js.Date
-  type ViolationReason            = String
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
@@ -110,13 +104,14 @@ package fms {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
   }
-
-  object AccountRoleStatusEnum {
-    val READY            = "READY"
-    val CREATING         = "CREATING"
-    val PENDING_DELETION = "PENDING_DELETION"
-    val DELETING         = "DELETING"
-    val DELETED          = "DELETED"
+  @js.native
+  sealed trait AccountRoleStatus extends js.Any
+  object AccountRoleStatus extends js.Object {
+    val READY            = "READY".asInstanceOf[AccountRoleStatus]
+    val CREATING         = "CREATING".asInstanceOf[AccountRoleStatus]
+    val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[AccountRoleStatus]
+    val DELETING         = "DELETING".asInstanceOf[AccountRoleStatus]
+    val DELETED          = "DELETED".asInstanceOf[AccountRoleStatus]
 
     val values = js.Object.freeze(js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED))
   }
@@ -163,9 +158,10 @@ package fms {
       __obj.asInstanceOf[ComplianceViolator]
     }
   }
-
-  object CustomerPolicyScopeIdTypeEnum {
-    val ACCOUNT = "ACCOUNT"
+  @js.native
+  sealed trait CustomerPolicyScopeIdType extends js.Any
+  object CustomerPolicyScopeIdType extends js.Object {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
@@ -203,12 +199,13 @@ package fms {
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
-
-  object DependentServiceNameEnum {
-    val AWSCONFIG          = "AWSCONFIG"
-    val AWSWAF             = "AWSWAF"
-    val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED"
-    val AWSVPC             = "AWSVPC"
+  @js.native
+  sealed trait DependentServiceName extends js.Any
+  object DependentServiceName extends js.Object {
+    val AWSCONFIG          = "AWSCONFIG".asInstanceOf[DependentServiceName]
+    val AWSWAF             = "AWSWAF".asInstanceOf[DependentServiceName]
+    val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED".asInstanceOf[DependentServiceName]
+    val AWSVPC             = "AWSVPC".asInstanceOf[DependentServiceName]
 
     val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC))
   }
@@ -726,10 +723,11 @@ package fms {
       __obj.asInstanceOf[PolicyComplianceStatus]
     }
   }
-
-  object PolicyComplianceStatusTypeEnum {
-    val COMPLIANT     = "COMPLIANT"
-    val NON_COMPLIANT = "NON_COMPLIANT"
+  @js.native
+  sealed trait PolicyComplianceStatusType extends js.Any
+  object PolicyComplianceStatusType extends js.Object {
+    val COMPLIANT     = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
+    val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
 
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
@@ -876,13 +874,14 @@ package fms {
       __obj.asInstanceOf[SecurityServicePolicyData]
     }
   }
-
-  object SecurityServiceTypeEnum {
-    val WAF                           = "WAF"
-    val SHIELD_ADVANCED               = "SHIELD_ADVANCED"
-    val SECURITY_GROUPS_COMMON        = "SECURITY_GROUPS_COMMON"
-    val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT"
-    val SECURITY_GROUPS_USAGE_AUDIT   = "SECURITY_GROUPS_USAGE_AUDIT"
+  @js.native
+  sealed trait SecurityServiceType extends js.Any
+  object SecurityServiceType extends js.Object {
+    val WAF                           = "WAF".asInstanceOf[SecurityServiceType]
+    val SHIELD_ADVANCED               = "SHIELD_ADVANCED".asInstanceOf[SecurityServiceType]
+    val SECURITY_GROUPS_COMMON        = "SECURITY_GROUPS_COMMON".asInstanceOf[SecurityServiceType]
+    val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
+    val SECURITY_GROUPS_USAGE_AUDIT   = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
 
     val values = js.Object.freeze(
       js.Array(WAF, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
@@ -980,17 +979,19 @@ package fms {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
-
-  object ViolationReasonEnum {
-    val WEB_ACL_MISSING_RULE_GROUP                    = "WEB_ACL_MISSING_RULE_GROUP"
-    val RESOURCE_MISSING_WEB_ACL                      = "RESOURCE_MISSING_WEB_ACL"
-    val RESOURCE_INCORRECT_WEB_ACL                    = "RESOURCE_INCORRECT_WEB_ACL"
-    val RESOURCE_MISSING_SHIELD_PROTECTION            = "RESOURCE_MISSING_SHIELD_PROTECTION"
-    val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION"
-    val RESOURCE_MISSING_SECURITY_GROUP               = "RESOURCE_MISSING_SECURITY_GROUP"
-    val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP        = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP"
-    val SECURITY_GROUP_UNUSED                         = "SECURITY_GROUP_UNUSED"
-    val SECURITY_GROUP_REDUNDANT                      = "SECURITY_GROUP_REDUNDANT"
+  @js.native
+  sealed trait ViolationReason extends js.Any
+  object ViolationReason extends js.Object {
+    val WEB_ACL_MISSING_RULE_GROUP         = "WEB_ACL_MISSING_RULE_GROUP".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_WEB_ACL           = "RESOURCE_MISSING_WEB_ACL".asInstanceOf[ViolationReason]
+    val RESOURCE_INCORRECT_WEB_ACL         = "RESOURCE_INCORRECT_WEB_ACL".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION =
+      "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_SECURITY_GROUP        = "RESOURCE_MISSING_SECURITY_GROUP".asInstanceOf[ViolationReason]
+    val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP".asInstanceOf[ViolationReason]
+    val SECURITY_GROUP_UNUSED                  = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
+    val SECURITY_GROUP_REDUNDANT               = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
 
     val values = js.Object.freeze(
       js.Array(

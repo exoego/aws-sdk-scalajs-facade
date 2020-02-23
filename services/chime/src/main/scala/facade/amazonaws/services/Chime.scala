@@ -9,14 +9,11 @@ import facade.amazonaws._
 package object chime {
   type AccountList                      = js.Array[Account]
   type AccountName                      = String
-  type AccountType                      = String
   type Arn                              = String
   type AttendeeList                     = js.Array[Attendee]
   type BatchCreateAttendeeErrorList     = js.Array[CreateAttendeeError]
   type BotList                          = js.Array[Bot]
-  type BotType                          = String
   type CallingName                      = String
-  type CallingNameStatus                = String
   type CallingRegion                    = String
   type CallingRegionList                = js.Array[CallingRegion]
   type ClientRequestToken               = String
@@ -27,46 +24,32 @@ package object chime {
   type E164PhoneNumber                  = String
   type E164PhoneNumberList              = js.Array[E164PhoneNumber]
   type EmailAddress                     = String
-  type EmailStatus                      = String
-  type ErrorCode                        = String
   type ExternalUserIdType               = String
   type GuidString                       = String
   type InviteList                       = js.Array[Invite]
-  type InviteStatus                     = String
   type Iso8601Timestamp                 = js.Date
   type JoinTokenString                  = String
-  type License                          = String
   type LicenseList                      = js.Array[License]
   type MeetingList                      = js.Array[Meeting]
   type MemberErrorList                  = js.Array[MemberError]
-  type MemberType                       = String
   type MembershipItemList               = js.Array[MembershipItem]
   type NonEmptyString                   = String
   type NonEmptyStringList               = js.Array[String]
   type NullableBoolean                  = Boolean
   type OrderedPhoneNumberList           = js.Array[OrderedPhoneNumber]
-  type OrderedPhoneNumberStatus         = String
   type OriginationRouteList             = js.Array[OriginationRoute]
   type OriginationRoutePriority         = Int
-  type OriginationRouteProtocol         = String
   type OriginationRouteWeight           = Int
   type PhoneNumberAssociationList       = js.Array[PhoneNumberAssociation]
-  type PhoneNumberAssociationName       = String
   type PhoneNumberErrorList             = js.Array[PhoneNumberError]
   type PhoneNumberList                  = js.Array[PhoneNumber]
   type PhoneNumberMaxResults            = Int
   type PhoneNumberOrderList             = js.Array[PhoneNumberOrder]
-  type PhoneNumberOrderStatus           = String
-  type PhoneNumberProductType           = String
-  type PhoneNumberStatus                = String
-  type PhoneNumberType                  = String
   type Port                             = Int
   type ProfileServiceMaxResults         = Int
-  type RegistrationStatus               = String
   type ResultMax                        = Int
   type RoomList                         = js.Array[Room]
   type RoomMembershipList               = js.Array[RoomMembership]
-  type RoomMembershipRole               = String
   type SensitiveString                  = String
   type SensitiveStringList              = js.Array[SensitiveString]
   type SigninDelegateGroupList          = js.Array[SigninDelegateGroup]
@@ -79,8 +62,6 @@ package object chime {
   type UserErrorList                    = js.Array[UserError]
   type UserIdList                       = js.Array[NonEmptyString]
   type UserList                         = js.Array[User]
-  type UserType                         = String
-  type VoiceConnectorAwsRegion          = String
   type VoiceConnectorGroupList          = js.Array[VoiceConnectorGroup]
   type VoiceConnectorGroupName          = String
   type VoiceConnectorItemList           = js.Array[VoiceConnectorItem]
@@ -553,12 +534,13 @@ package chime {
       __obj.asInstanceOf[AccountSettings]
     }
   }
-
-  object AccountTypeEnum {
-    val Team                = "Team"
-    val EnterpriseDirectory = "EnterpriseDirectory"
-    val EnterpriseLWA       = "EnterpriseLWA"
-    val EnterpriseOIDC      = "EnterpriseOIDC"
+  @js.native
+  sealed trait AccountType extends js.Any
+  object AccountType extends js.Object {
+    val Team                = "Team".asInstanceOf[AccountType]
+    val EnterpriseDirectory = "EnterpriseDirectory".asInstanceOf[AccountType]
+    val EnterpriseLWA       = "EnterpriseLWA".asInstanceOf[AccountType]
+    val EnterpriseOIDC      = "EnterpriseOIDC".asInstanceOf[AccountType]
 
     val values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
   }
@@ -1065,9 +1047,10 @@ package chime {
       __obj.asInstanceOf[Bot]
     }
   }
-
-  object BotTypeEnum {
-    val ChatBot = "ChatBot"
+  @js.native
+  sealed trait BotType extends js.Any
+  object BotType extends js.Object {
+    val ChatBot = "ChatBot".asInstanceOf[BotType]
 
     val values = js.Object.freeze(js.Array(ChatBot))
   }
@@ -1090,12 +1073,13 @@ package chime {
       __obj.asInstanceOf[BusinessCallingSettings]
     }
   }
-
-  object CallingNameStatusEnum {
-    val Unassigned       = "Unassigned"
-    val UpdateInProgress = "UpdateInProgress"
-    val UpdateSucceeded  = "UpdateSucceeded"
-    val UpdateFailed     = "UpdateFailed"
+  @js.native
+  sealed trait CallingNameStatus extends js.Any
+  object CallingNameStatus extends js.Object {
+    val Unassigned       = "Unassigned".asInstanceOf[CallingNameStatus]
+    val UpdateInProgress = "UpdateInProgress".asInstanceOf[CallingNameStatus]
+    val UpdateSucceeded  = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
+    val UpdateFailed     = "UpdateFailed".asInstanceOf[CallingNameStatus]
 
     val values = js.Object.freeze(js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed))
   }
@@ -1970,30 +1954,32 @@ package chime {
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
     }
   }
-
-  object EmailStatusEnum {
-    val NotSent = "NotSent"
-    val Sent    = "Sent"
-    val Failed  = "Failed"
+  @js.native
+  sealed trait EmailStatus extends js.Any
+  object EmailStatus extends js.Object {
+    val NotSent = "NotSent".asInstanceOf[EmailStatus]
+    val Sent    = "Sent".asInstanceOf[EmailStatus]
+    val Failed  = "Failed".asInstanceOf[EmailStatus]
 
     val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
   }
-
-  object ErrorCodeEnum {
-    val BadRequest                           = "BadRequest"
-    val Conflict                             = "Conflict"
-    val Forbidden                            = "Forbidden"
-    val NotFound                             = "NotFound"
-    val PreconditionFailed                   = "PreconditionFailed"
-    val ResourceLimitExceeded                = "ResourceLimitExceeded"
-    val ServiceFailure                       = "ServiceFailure"
-    val AccessDenied                         = "AccessDenied"
-    val ServiceUnavailable                   = "ServiceUnavailable"
-    val Throttled                            = "Throttled"
-    val Unauthorized                         = "Unauthorized"
-    val Unprocessable                        = "Unprocessable"
-    val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist"
-    val PhoneNumberAssociationsExist         = "PhoneNumberAssociationsExist"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val BadRequest                           = "BadRequest".asInstanceOf[ErrorCode]
+    val Conflict                             = "Conflict".asInstanceOf[ErrorCode]
+    val Forbidden                            = "Forbidden".asInstanceOf[ErrorCode]
+    val NotFound                             = "NotFound".asInstanceOf[ErrorCode]
+    val PreconditionFailed                   = "PreconditionFailed".asInstanceOf[ErrorCode]
+    val ResourceLimitExceeded                = "ResourceLimitExceeded".asInstanceOf[ErrorCode]
+    val ServiceFailure                       = "ServiceFailure".asInstanceOf[ErrorCode]
+    val AccessDenied                         = "AccessDenied".asInstanceOf[ErrorCode]
+    val ServiceUnavailable                   = "ServiceUnavailable".asInstanceOf[ErrorCode]
+    val Throttled                            = "Throttled".asInstanceOf[ErrorCode]
+    val Unauthorized                         = "Unauthorized".asInstanceOf[ErrorCode]
+    val Unprocessable                        = "Unprocessable".asInstanceOf[ErrorCode]
+    val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
+    val PhoneNumberAssociationsExist         = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2739,11 +2725,12 @@ package chime {
       __obj.asInstanceOf[Invite]
     }
   }
-
-  object InviteStatusEnum {
-    val Pending  = "Pending"
-    val Accepted = "Accepted"
-    val Failed   = "Failed"
+  @js.native
+  sealed trait InviteStatus extends js.Any
+  object InviteStatus extends js.Object {
+    val Pending  = "Pending".asInstanceOf[InviteStatus]
+    val Accepted = "Accepted".asInstanceOf[InviteStatus]
+    val Failed   = "Failed".asInstanceOf[InviteStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
   }
@@ -2787,12 +2774,13 @@ package chime {
       __obj.asInstanceOf[InviteUsersResponse]
     }
   }
-
-  object LicenseEnum {
-    val Basic    = "Basic"
-    val Plus     = "Plus"
-    val Pro      = "Pro"
-    val ProTrial = "ProTrial"
+  @js.native
+  sealed trait License extends js.Any
+  object License extends js.Object {
+    val Basic    = "Basic".asInstanceOf[License]
+    val Plus     = "Plus".asInstanceOf[License]
+    val Pro      = "Pro".asInstanceOf[License]
+    val ProTrial = "ProTrial".asInstanceOf[License]
 
     val values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
   }
@@ -3496,11 +3484,12 @@ package chime {
       __obj.asInstanceOf[MemberError]
     }
   }
-
-  object MemberTypeEnum {
-    val User    = "User"
-    val Bot     = "Bot"
-    val Webhook = "Webhook"
+  @js.native
+  sealed trait MemberType extends js.Any
+  object MemberType extends js.Object {
+    val User    = "User".asInstanceOf[MemberType]
+    val Bot     = "Bot".asInstanceOf[MemberType]
+    val Webhook = "Webhook".asInstanceOf[MemberType]
 
     val values = js.Object.freeze(js.Array(User, Bot, Webhook))
   }
@@ -3548,11 +3537,12 @@ package chime {
       __obj.asInstanceOf[OrderedPhoneNumber]
     }
   }
-
-  object OrderedPhoneNumberStatusEnum {
-    val Processing = "Processing"
-    val Acquired   = "Acquired"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait OrderedPhoneNumberStatus extends js.Any
+  object OrderedPhoneNumberStatus extends js.Object {
+    val Processing = "Processing".asInstanceOf[OrderedPhoneNumberStatus]
+    val Acquired   = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
+    val Failed     = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
 
     val values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
   }
@@ -3609,10 +3599,11 @@ package chime {
       __obj.asInstanceOf[OriginationRoute]
     }
   }
-
-  object OriginationRouteProtocolEnum {
-    val TCP = "TCP"
-    val UDP = "UDP"
+  @js.native
+  sealed trait OriginationRouteProtocol extends js.Any
+  object OriginationRouteProtocol extends js.Object {
+    val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
+    val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
     val values = js.Object.freeze(js.Array(TCP, UDP))
   }
@@ -3693,12 +3684,13 @@ package chime {
       __obj.asInstanceOf[PhoneNumberAssociation]
     }
   }
-
-  object PhoneNumberAssociationNameEnum {
-    val AccountId             = "AccountId"
-    val UserId                = "UserId"
-    val VoiceConnectorId      = "VoiceConnectorId"
-    val VoiceConnectorGroupId = "VoiceConnectorGroupId"
+  @js.native
+  sealed trait PhoneNumberAssociationName extends js.Any
+  object PhoneNumberAssociationName extends js.Object {
+    val AccountId             = "AccountId".asInstanceOf[PhoneNumberAssociationName]
+    val UserId                = "UserId".asInstanceOf[PhoneNumberAssociationName]
+    val VoiceConnectorId      = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
+    val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
 
     val values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId))
   }
@@ -3795,32 +3787,35 @@ package chime {
       __obj.asInstanceOf[PhoneNumberOrder]
     }
   }
-
-  object PhoneNumberOrderStatusEnum {
-    val Processing = "Processing"
-    val Successful = "Successful"
-    val Failed     = "Failed"
-    val Partial    = "Partial"
+  @js.native
+  sealed trait PhoneNumberOrderStatus extends js.Any
+  object PhoneNumberOrderStatus extends js.Object {
+    val Processing = "Processing".asInstanceOf[PhoneNumberOrderStatus]
+    val Successful = "Successful".asInstanceOf[PhoneNumberOrderStatus]
+    val Failed     = "Failed".asInstanceOf[PhoneNumberOrderStatus]
+    val Partial    = "Partial".asInstanceOf[PhoneNumberOrderStatus]
 
     val values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
   }
-
-  object PhoneNumberProductTypeEnum {
-    val BusinessCalling = "BusinessCalling"
-    val VoiceConnector  = "VoiceConnector"
+  @js.native
+  sealed trait PhoneNumberProductType extends js.Any
+  object PhoneNumberProductType extends js.Object {
+    val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
+    val VoiceConnector  = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
 
     val values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
   }
-
-  object PhoneNumberStatusEnum {
-    val AcquireInProgress = "AcquireInProgress"
-    val AcquireFailed     = "AcquireFailed"
-    val Unassigned        = "Unassigned"
-    val Assigned          = "Assigned"
-    val ReleaseInProgress = "ReleaseInProgress"
-    val DeleteInProgress  = "DeleteInProgress"
-    val ReleaseFailed     = "ReleaseFailed"
-    val DeleteFailed      = "DeleteFailed"
+  @js.native
+  sealed trait PhoneNumberStatus extends js.Any
+  object PhoneNumberStatus extends js.Object {
+    val AcquireInProgress = "AcquireInProgress".asInstanceOf[PhoneNumberStatus]
+    val AcquireFailed     = "AcquireFailed".asInstanceOf[PhoneNumberStatus]
+    val Unassigned        = "Unassigned".asInstanceOf[PhoneNumberStatus]
+    val Assigned          = "Assigned".asInstanceOf[PhoneNumberStatus]
+    val ReleaseInProgress = "ReleaseInProgress".asInstanceOf[PhoneNumberStatus]
+    val DeleteInProgress  = "DeleteInProgress".asInstanceOf[PhoneNumberStatus]
+    val ReleaseFailed     = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
+    val DeleteFailed      = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3835,10 +3830,11 @@ package chime {
       )
     )
   }
-
-  object PhoneNumberTypeEnum {
-    val Local    = "Local"
-    val TollFree = "TollFree"
+  @js.native
+  sealed trait PhoneNumberType extends js.Any
+  object PhoneNumberType extends js.Object {
+    val Local    = "Local".asInstanceOf[PhoneNumberType]
+    val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
 
     val values = js.Object.freeze(js.Array(Local, TollFree))
   }
@@ -4093,11 +4089,12 @@ package chime {
       __obj.asInstanceOf[RegenerateSecurityTokenResponse]
     }
   }
-
-  object RegistrationStatusEnum {
-    val Unregistered = "Unregistered"
-    val Registered   = "Registered"
-    val Suspended    = "Suspended"
+  @js.native
+  sealed trait RegistrationStatus extends js.Any
+  object RegistrationStatus extends js.Object {
+    val Unregistered = "Unregistered".asInstanceOf[RegistrationStatus]
+    val Registered   = "Registered".asInstanceOf[RegistrationStatus]
+    val Suspended    = "Suspended".asInstanceOf[RegistrationStatus]
 
     val values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
   }
@@ -4237,10 +4234,11 @@ package chime {
       __obj.asInstanceOf[RoomMembership]
     }
   }
-
-  object RoomMembershipRoleEnum {
-    val Administrator = "Administrator"
-    val Member        = "Member"
+  @js.native
+  sealed trait RoomMembershipRole extends js.Any
+  object RoomMembershipRole extends js.Object {
+    val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
+    val Member        = "Member".asInstanceOf[RoomMembershipRole]
 
     val values = js.Object.freeze(js.Array(Administrator, Member))
   }
@@ -5000,10 +4998,11 @@ package chime {
       __obj.asInstanceOf[UserSettings]
     }
   }
-
-  object UserTypeEnum {
-    val PrivateUser  = "PrivateUser"
-    val SharedDevice = "SharedDevice"
+  @js.native
+  sealed trait UserType extends js.Any
+  object UserType extends js.Object {
+    val PrivateUser  = "PrivateUser".asInstanceOf[UserType]
+    val SharedDevice = "SharedDevice".asInstanceOf[UserType]
 
     val values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
   }
@@ -5044,10 +5043,11 @@ package chime {
       __obj.asInstanceOf[VoiceConnector]
     }
   }
-
-  object VoiceConnectorAwsRegionEnum {
-    val `us-east-1` = "us-east-1"
-    val `us-west-2` = "us-west-2"
+  @js.native
+  sealed trait VoiceConnectorAwsRegion extends js.Any
+  object VoiceConnectorAwsRegion extends js.Object {
+    val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
 
     val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-2`))
   }

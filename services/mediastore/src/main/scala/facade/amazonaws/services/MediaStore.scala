@@ -16,14 +16,12 @@ package object mediastore {
   type ContainerListLimit            = Int
   type ContainerName                 = String
   type ContainerPolicy               = String
-  type ContainerStatus               = String
   type CorsPolicy                    = js.Array[CorsRule]
   type Endpoint                      = String
   type ExposeHeaders                 = js.Array[Header]
   type Header                        = String
   type LifecyclePolicy               = String
   type MaxAgeSeconds                 = Int
-  type MethodName                    = String
   type Origin                        = String
   type PaginationToken               = String
   type TagKey                        = String
@@ -132,11 +130,12 @@ package mediastore {
       __obj.asInstanceOf[Container]
     }
   }
-
-  object ContainerStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait ContainerStatus extends js.Any
+  object ContainerStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[ContainerStatus]
+    val CREATING = "CREATING".asInstanceOf[ContainerStatus]
+    val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
   }
@@ -550,12 +549,13 @@ package mediastore {
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
-
-  object MethodNameEnum {
-    val PUT    = "PUT"
-    val GET    = "GET"
-    val DELETE = "DELETE"
-    val HEAD   = "HEAD"
+  @js.native
+  sealed trait MethodName extends js.Any
+  object MethodName extends js.Object {
+    val PUT    = "PUT".asInstanceOf[MethodName]
+    val GET    = "GET".asInstanceOf[MethodName]
+    val DELETE = "DELETE".asInstanceOf[MethodName]
+    val HEAD   = "HEAD".asInstanceOf[MethodName]
 
     val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }

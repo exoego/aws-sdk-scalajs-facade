@@ -24,12 +24,10 @@ package object mobile {
   type IconUrl           = String
   type MaxResults        = Int
   type NextToken         = String
-  type Platform          = String
   type Platforms         = js.Array[Platform]
   type ProjectId         = String
   type ProjectName       = String
   type ProjectRegion     = String
-  type ProjectState      = String
   type ProjectSummaries  = js.Array[ProjectSummary]
   type ResourceArn       = String
   type ResourceName      = String
@@ -509,14 +507,16 @@ package mobile {
   /**
     * Developer desktop or target mobile app or website platform.
     */
-  object PlatformEnum {
-    val OSX        = "OSX"
-    val WINDOWS    = "WINDOWS"
-    val LINUX      = "LINUX"
-    val OBJC       = "OBJC"
-    val SWIFT      = "SWIFT"
-    val ANDROID    = "ANDROID"
-    val JAVASCRIPT = "JAVASCRIPT"
+  @js.native
+  sealed trait Platform extends js.Any
+  object Platform extends js.Object {
+    val OSX        = "OSX".asInstanceOf[Platform]
+    val WINDOWS    = "WINDOWS".asInstanceOf[Platform]
+    val LINUX      = "LINUX".asInstanceOf[Platform]
+    val OBJC       = "OBJC".asInstanceOf[Platform]
+    val SWIFT      = "SWIFT".asInstanceOf[Platform]
+    val ANDROID    = "ANDROID".asInstanceOf[Platform]
+    val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
   }
@@ -564,10 +564,12 @@ package mobile {
   /**
     * Synchronization state for a project.
     */
-  object ProjectStateEnum {
-    val NORMAL    = "NORMAL"
-    val SYNCING   = "SYNCING"
-    val IMPORTING = "IMPORTING"
+  @js.native
+  sealed trait ProjectState extends js.Any
+  object ProjectState extends js.Object {
+    val NORMAL    = "NORMAL".asInstanceOf[ProjectState]
+    val SYNCING   = "SYNCING".asInstanceOf[ProjectState]
+    val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
     val values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))
   }

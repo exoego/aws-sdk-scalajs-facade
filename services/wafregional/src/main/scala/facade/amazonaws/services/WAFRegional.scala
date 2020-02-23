@@ -13,14 +13,9 @@ package object wafregional {
   type ByteMatchSetUpdates           = js.Array[ByteMatchSetUpdate]
   type ByteMatchTargetString         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ByteMatchTuples               = js.Array[ByteMatchTuple]
-  type ChangeAction                  = String
   type ChangeToken                   = String
-  type ChangeTokenStatus             = String
-  type ComparisonOperator            = String
   type Country                       = String
   type ExcludedRules                 = js.Array[ExcludedRule]
-  type GeoMatchConstraintType        = String
-  type GeoMatchConstraintValue       = String
   type GeoMatchConstraints           = js.Array[GeoMatchConstraint]
   type GeoMatchSetSummaries          = js.Array[GeoMatchSetSummary]
   type GeoMatchSetUpdates            = js.Array[GeoMatchSetUpdate]
@@ -30,7 +25,6 @@ package object wafregional {
   type HTTPVersion                   = String
   type HeaderName                    = String
   type HeaderValue                   = String
-  type IPSetDescriptorType           = String
   type IPSetDescriptorValue          = String
   type IPSetDescriptors              = js.Array[IPSetDescriptor]
   type IPSetSummaries                = js.Array[IPSetSummary]
@@ -41,17 +35,13 @@ package object wafregional {
   type ManagedKey                    = String
   type ManagedKeys                   = js.Array[ManagedKey]
   type MatchFieldData                = String
-  type MatchFieldType                = String
   type MetricName                    = String
   type Negated                       = Boolean
   type NextMarker                    = String
   type PaginationLimit               = Int
   type PolicyString                  = String
   type PopulationSize                = Double
-  type PositionalConstraint          = String
-  type PredicateType                 = String
   type Predicates                    = js.Array[Predicate]
-  type RateKey                       = String
   type RateLimit                     = Double
   type RedactedFields                = js.Array[FieldToMatch]
   type RegexMatchSetSummaries        = js.Array[RegexMatchSetSummary]
@@ -65,7 +55,6 @@ package object wafregional {
   type ResourceArns                  = js.Array[ResourceArn]
   type ResourceId                    = String
   type ResourceName                  = String
-  type ResourceType                  = String
   type RuleGroupSummaries            = js.Array[RuleGroupSummary]
   type RuleGroupUpdates              = js.Array[RuleGroupUpdate]
   type RulePriority                  = Int
@@ -85,12 +74,8 @@ package object wafregional {
   type TagKeyList                    = js.Array[TagKey]
   type TagList                       = js.Array[Tag]
   type TagValue                      = String
-  type TextTransformation            = String
   type Timestamp                     = js.Date
   type URIString                     = String
-  type WafActionType                 = String
-  type WafOverrideActionType         = String
-  type WafRuleType                   = String
   type WebACLSummaries               = js.Array[WebACLSummary]
   type WebACLUpdates                 = js.Array[WebACLUpdate]
   type XssMatchSetSummaries          = js.Array[XssMatchSetSummary]
@@ -573,29 +558,32 @@ package wafregional {
       __obj.asInstanceOf[ByteMatchTuple]
     }
   }
-
-  object ChangeActionEnum {
-    val INSERT = "INSERT"
-    val DELETE = "DELETE"
+  @js.native
+  sealed trait ChangeAction extends js.Any
+  object ChangeAction extends js.Object {
+    val INSERT = "INSERT".asInstanceOf[ChangeAction]
+    val DELETE = "DELETE".asInstanceOf[ChangeAction]
 
     val values = js.Object.freeze(js.Array(INSERT, DELETE))
   }
-
-  object ChangeTokenStatusEnum {
-    val PROVISIONED = "PROVISIONED"
-    val PENDING     = "PENDING"
-    val INSYNC      = "INSYNC"
+  @js.native
+  sealed trait ChangeTokenStatus extends js.Any
+  object ChangeTokenStatus extends js.Object {
+    val PROVISIONED = "PROVISIONED".asInstanceOf[ChangeTokenStatus]
+    val PENDING     = "PENDING".asInstanceOf[ChangeTokenStatus]
+    val INSYNC      = "INSYNC".asInstanceOf[ChangeTokenStatus]
 
     val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
   }
-
-  object ComparisonOperatorEnum {
-    val EQ = "EQ"
-    val NE = "NE"
-    val LE = "LE"
-    val LT = "LT"
-    val GE = "GE"
-    val GT = "GT"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
   }
@@ -1742,263 +1730,265 @@ package wafregional {
       __obj.asInstanceOf[GeoMatchConstraint]
     }
   }
-
-  object GeoMatchConstraintTypeEnum {
-    val Country = "Country"
+  @js.native
+  sealed trait GeoMatchConstraintType extends js.Any
+  object GeoMatchConstraintType extends js.Object {
+    val Country = "Country".asInstanceOf[GeoMatchConstraintType]
 
     val values = js.Object.freeze(js.Array(Country))
   }
-
-  object GeoMatchConstraintValueEnum {
-    val AF = "AF"
-    val AX = "AX"
-    val AL = "AL"
-    val DZ = "DZ"
-    val AS = "AS"
-    val AD = "AD"
-    val AO = "AO"
-    val AI = "AI"
-    val AQ = "AQ"
-    val AG = "AG"
-    val AR = "AR"
-    val AM = "AM"
-    val AW = "AW"
-    val AU = "AU"
-    val AT = "AT"
-    val AZ = "AZ"
-    val BS = "BS"
-    val BH = "BH"
-    val BD = "BD"
-    val BB = "BB"
-    val BY = "BY"
-    val BE = "BE"
-    val BZ = "BZ"
-    val BJ = "BJ"
-    val BM = "BM"
-    val BT = "BT"
-    val BO = "BO"
-    val BQ = "BQ"
-    val BA = "BA"
-    val BW = "BW"
-    val BV = "BV"
-    val BR = "BR"
-    val IO = "IO"
-    val BN = "BN"
-    val BG = "BG"
-    val BF = "BF"
-    val BI = "BI"
-    val KH = "KH"
-    val CM = "CM"
-    val CA = "CA"
-    val CV = "CV"
-    val KY = "KY"
-    val CF = "CF"
-    val TD = "TD"
-    val CL = "CL"
-    val CN = "CN"
-    val CX = "CX"
-    val CC = "CC"
-    val CO = "CO"
-    val KM = "KM"
-    val CG = "CG"
-    val CD = "CD"
-    val CK = "CK"
-    val CR = "CR"
-    val CI = "CI"
-    val HR = "HR"
-    val CU = "CU"
-    val CW = "CW"
-    val CY = "CY"
-    val CZ = "CZ"
-    val DK = "DK"
-    val DJ = "DJ"
-    val DM = "DM"
-    val DO = "DO"
-    val EC = "EC"
-    val EG = "EG"
-    val SV = "SV"
-    val GQ = "GQ"
-    val ER = "ER"
-    val EE = "EE"
-    val ET = "ET"
-    val FK = "FK"
-    val FO = "FO"
-    val FJ = "FJ"
-    val FI = "FI"
-    val FR = "FR"
-    val GF = "GF"
-    val PF = "PF"
-    val TF = "TF"
-    val GA = "GA"
-    val GM = "GM"
-    val GE = "GE"
-    val DE = "DE"
-    val GH = "GH"
-    val GI = "GI"
-    val GR = "GR"
-    val GL = "GL"
-    val GD = "GD"
-    val GP = "GP"
-    val GU = "GU"
-    val GT = "GT"
-    val GG = "GG"
-    val GN = "GN"
-    val GW = "GW"
-    val GY = "GY"
-    val HT = "HT"
-    val HM = "HM"
-    val VA = "VA"
-    val HN = "HN"
-    val HK = "HK"
-    val HU = "HU"
-    val IS = "IS"
-    val IN = "IN"
-    val ID = "ID"
-    val IR = "IR"
-    val IQ = "IQ"
-    val IE = "IE"
-    val IM = "IM"
-    val IL = "IL"
-    val IT = "IT"
-    val JM = "JM"
-    val JP = "JP"
-    val JE = "JE"
-    val JO = "JO"
-    val KZ = "KZ"
-    val KE = "KE"
-    val KI = "KI"
-    val KP = "KP"
-    val KR = "KR"
-    val KW = "KW"
-    val KG = "KG"
-    val LA = "LA"
-    val LV = "LV"
-    val LB = "LB"
-    val LS = "LS"
-    val LR = "LR"
-    val LY = "LY"
-    val LI = "LI"
-    val LT = "LT"
-    val LU = "LU"
-    val MO = "MO"
-    val MK = "MK"
-    val MG = "MG"
-    val MW = "MW"
-    val MY = "MY"
-    val MV = "MV"
-    val ML = "ML"
-    val MT = "MT"
-    val MH = "MH"
-    val MQ = "MQ"
-    val MR = "MR"
-    val MU = "MU"
-    val YT = "YT"
-    val MX = "MX"
-    val FM = "FM"
-    val MD = "MD"
-    val MC = "MC"
-    val MN = "MN"
-    val ME = "ME"
-    val MS = "MS"
-    val MA = "MA"
-    val MZ = "MZ"
-    val MM = "MM"
-    val NA = "NA"
-    val NR = "NR"
-    val NP = "NP"
-    val NL = "NL"
-    val NC = "NC"
-    val NZ = "NZ"
-    val NI = "NI"
-    val NE = "NE"
-    val NG = "NG"
-    val NU = "NU"
-    val NF = "NF"
-    val MP = "MP"
-    val NO = "NO"
-    val OM = "OM"
-    val PK = "PK"
-    val PW = "PW"
-    val PS = "PS"
-    val PA = "PA"
-    val PG = "PG"
-    val PY = "PY"
-    val PE = "PE"
-    val PH = "PH"
-    val PN = "PN"
-    val PL = "PL"
-    val PT = "PT"
-    val PR = "PR"
-    val QA = "QA"
-    val RE = "RE"
-    val RO = "RO"
-    val RU = "RU"
-    val RW = "RW"
-    val BL = "BL"
-    val SH = "SH"
-    val KN = "KN"
-    val LC = "LC"
-    val MF = "MF"
-    val PM = "PM"
-    val VC = "VC"
-    val WS = "WS"
-    val SM = "SM"
-    val ST = "ST"
-    val SA = "SA"
-    val SN = "SN"
-    val RS = "RS"
-    val SC = "SC"
-    val SL = "SL"
-    val SG = "SG"
-    val SX = "SX"
-    val SK = "SK"
-    val SI = "SI"
-    val SB = "SB"
-    val SO = "SO"
-    val ZA = "ZA"
-    val GS = "GS"
-    val SS = "SS"
-    val ES = "ES"
-    val LK = "LK"
-    val SD = "SD"
-    val SR = "SR"
-    val SJ = "SJ"
-    val SZ = "SZ"
-    val SE = "SE"
-    val CH = "CH"
-    val SY = "SY"
-    val TW = "TW"
-    val TJ = "TJ"
-    val TZ = "TZ"
-    val TH = "TH"
-    val TL = "TL"
-    val TG = "TG"
-    val TK = "TK"
-    val TO = "TO"
-    val TT = "TT"
-    val TN = "TN"
-    val TR = "TR"
-    val TM = "TM"
-    val TC = "TC"
-    val TV = "TV"
-    val UG = "UG"
-    val UA = "UA"
-    val AE = "AE"
-    val GB = "GB"
-    val US = "US"
-    val UM = "UM"
-    val UY = "UY"
-    val UZ = "UZ"
-    val VU = "VU"
-    val VE = "VE"
-    val VN = "VN"
-    val VG = "VG"
-    val VI = "VI"
-    val WF = "WF"
-    val EH = "EH"
-    val YE = "YE"
-    val ZM = "ZM"
-    val ZW = "ZW"
+  @js.native
+  sealed trait GeoMatchConstraintValue extends js.Any
+  object GeoMatchConstraintValue extends js.Object {
+    val AF = "AF".asInstanceOf[GeoMatchConstraintValue]
+    val AX = "AX".asInstanceOf[GeoMatchConstraintValue]
+    val AL = "AL".asInstanceOf[GeoMatchConstraintValue]
+    val DZ = "DZ".asInstanceOf[GeoMatchConstraintValue]
+    val AS = "AS".asInstanceOf[GeoMatchConstraintValue]
+    val AD = "AD".asInstanceOf[GeoMatchConstraintValue]
+    val AO = "AO".asInstanceOf[GeoMatchConstraintValue]
+    val AI = "AI".asInstanceOf[GeoMatchConstraintValue]
+    val AQ = "AQ".asInstanceOf[GeoMatchConstraintValue]
+    val AG = "AG".asInstanceOf[GeoMatchConstraintValue]
+    val AR = "AR".asInstanceOf[GeoMatchConstraintValue]
+    val AM = "AM".asInstanceOf[GeoMatchConstraintValue]
+    val AW = "AW".asInstanceOf[GeoMatchConstraintValue]
+    val AU = "AU".asInstanceOf[GeoMatchConstraintValue]
+    val AT = "AT".asInstanceOf[GeoMatchConstraintValue]
+    val AZ = "AZ".asInstanceOf[GeoMatchConstraintValue]
+    val BS = "BS".asInstanceOf[GeoMatchConstraintValue]
+    val BH = "BH".asInstanceOf[GeoMatchConstraintValue]
+    val BD = "BD".asInstanceOf[GeoMatchConstraintValue]
+    val BB = "BB".asInstanceOf[GeoMatchConstraintValue]
+    val BY = "BY".asInstanceOf[GeoMatchConstraintValue]
+    val BE = "BE".asInstanceOf[GeoMatchConstraintValue]
+    val BZ = "BZ".asInstanceOf[GeoMatchConstraintValue]
+    val BJ = "BJ".asInstanceOf[GeoMatchConstraintValue]
+    val BM = "BM".asInstanceOf[GeoMatchConstraintValue]
+    val BT = "BT".asInstanceOf[GeoMatchConstraintValue]
+    val BO = "BO".asInstanceOf[GeoMatchConstraintValue]
+    val BQ = "BQ".asInstanceOf[GeoMatchConstraintValue]
+    val BA = "BA".asInstanceOf[GeoMatchConstraintValue]
+    val BW = "BW".asInstanceOf[GeoMatchConstraintValue]
+    val BV = "BV".asInstanceOf[GeoMatchConstraintValue]
+    val BR = "BR".asInstanceOf[GeoMatchConstraintValue]
+    val IO = "IO".asInstanceOf[GeoMatchConstraintValue]
+    val BN = "BN".asInstanceOf[GeoMatchConstraintValue]
+    val BG = "BG".asInstanceOf[GeoMatchConstraintValue]
+    val BF = "BF".asInstanceOf[GeoMatchConstraintValue]
+    val BI = "BI".asInstanceOf[GeoMatchConstraintValue]
+    val KH = "KH".asInstanceOf[GeoMatchConstraintValue]
+    val CM = "CM".asInstanceOf[GeoMatchConstraintValue]
+    val CA = "CA".asInstanceOf[GeoMatchConstraintValue]
+    val CV = "CV".asInstanceOf[GeoMatchConstraintValue]
+    val KY = "KY".asInstanceOf[GeoMatchConstraintValue]
+    val CF = "CF".asInstanceOf[GeoMatchConstraintValue]
+    val TD = "TD".asInstanceOf[GeoMatchConstraintValue]
+    val CL = "CL".asInstanceOf[GeoMatchConstraintValue]
+    val CN = "CN".asInstanceOf[GeoMatchConstraintValue]
+    val CX = "CX".asInstanceOf[GeoMatchConstraintValue]
+    val CC = "CC".asInstanceOf[GeoMatchConstraintValue]
+    val CO = "CO".asInstanceOf[GeoMatchConstraintValue]
+    val KM = "KM".asInstanceOf[GeoMatchConstraintValue]
+    val CG = "CG".asInstanceOf[GeoMatchConstraintValue]
+    val CD = "CD".asInstanceOf[GeoMatchConstraintValue]
+    val CK = "CK".asInstanceOf[GeoMatchConstraintValue]
+    val CR = "CR".asInstanceOf[GeoMatchConstraintValue]
+    val CI = "CI".asInstanceOf[GeoMatchConstraintValue]
+    val HR = "HR".asInstanceOf[GeoMatchConstraintValue]
+    val CU = "CU".asInstanceOf[GeoMatchConstraintValue]
+    val CW = "CW".asInstanceOf[GeoMatchConstraintValue]
+    val CY = "CY".asInstanceOf[GeoMatchConstraintValue]
+    val CZ = "CZ".asInstanceOf[GeoMatchConstraintValue]
+    val DK = "DK".asInstanceOf[GeoMatchConstraintValue]
+    val DJ = "DJ".asInstanceOf[GeoMatchConstraintValue]
+    val DM = "DM".asInstanceOf[GeoMatchConstraintValue]
+    val DO = "DO".asInstanceOf[GeoMatchConstraintValue]
+    val EC = "EC".asInstanceOf[GeoMatchConstraintValue]
+    val EG = "EG".asInstanceOf[GeoMatchConstraintValue]
+    val SV = "SV".asInstanceOf[GeoMatchConstraintValue]
+    val GQ = "GQ".asInstanceOf[GeoMatchConstraintValue]
+    val ER = "ER".asInstanceOf[GeoMatchConstraintValue]
+    val EE = "EE".asInstanceOf[GeoMatchConstraintValue]
+    val ET = "ET".asInstanceOf[GeoMatchConstraintValue]
+    val FK = "FK".asInstanceOf[GeoMatchConstraintValue]
+    val FO = "FO".asInstanceOf[GeoMatchConstraintValue]
+    val FJ = "FJ".asInstanceOf[GeoMatchConstraintValue]
+    val FI = "FI".asInstanceOf[GeoMatchConstraintValue]
+    val FR = "FR".asInstanceOf[GeoMatchConstraintValue]
+    val GF = "GF".asInstanceOf[GeoMatchConstraintValue]
+    val PF = "PF".asInstanceOf[GeoMatchConstraintValue]
+    val TF = "TF".asInstanceOf[GeoMatchConstraintValue]
+    val GA = "GA".asInstanceOf[GeoMatchConstraintValue]
+    val GM = "GM".asInstanceOf[GeoMatchConstraintValue]
+    val GE = "GE".asInstanceOf[GeoMatchConstraintValue]
+    val DE = "DE".asInstanceOf[GeoMatchConstraintValue]
+    val GH = "GH".asInstanceOf[GeoMatchConstraintValue]
+    val GI = "GI".asInstanceOf[GeoMatchConstraintValue]
+    val GR = "GR".asInstanceOf[GeoMatchConstraintValue]
+    val GL = "GL".asInstanceOf[GeoMatchConstraintValue]
+    val GD = "GD".asInstanceOf[GeoMatchConstraintValue]
+    val GP = "GP".asInstanceOf[GeoMatchConstraintValue]
+    val GU = "GU".asInstanceOf[GeoMatchConstraintValue]
+    val GT = "GT".asInstanceOf[GeoMatchConstraintValue]
+    val GG = "GG".asInstanceOf[GeoMatchConstraintValue]
+    val GN = "GN".asInstanceOf[GeoMatchConstraintValue]
+    val GW = "GW".asInstanceOf[GeoMatchConstraintValue]
+    val GY = "GY".asInstanceOf[GeoMatchConstraintValue]
+    val HT = "HT".asInstanceOf[GeoMatchConstraintValue]
+    val HM = "HM".asInstanceOf[GeoMatchConstraintValue]
+    val VA = "VA".asInstanceOf[GeoMatchConstraintValue]
+    val HN = "HN".asInstanceOf[GeoMatchConstraintValue]
+    val HK = "HK".asInstanceOf[GeoMatchConstraintValue]
+    val HU = "HU".asInstanceOf[GeoMatchConstraintValue]
+    val IS = "IS".asInstanceOf[GeoMatchConstraintValue]
+    val IN = "IN".asInstanceOf[GeoMatchConstraintValue]
+    val ID = "ID".asInstanceOf[GeoMatchConstraintValue]
+    val IR = "IR".asInstanceOf[GeoMatchConstraintValue]
+    val IQ = "IQ".asInstanceOf[GeoMatchConstraintValue]
+    val IE = "IE".asInstanceOf[GeoMatchConstraintValue]
+    val IM = "IM".asInstanceOf[GeoMatchConstraintValue]
+    val IL = "IL".asInstanceOf[GeoMatchConstraintValue]
+    val IT = "IT".asInstanceOf[GeoMatchConstraintValue]
+    val JM = "JM".asInstanceOf[GeoMatchConstraintValue]
+    val JP = "JP".asInstanceOf[GeoMatchConstraintValue]
+    val JE = "JE".asInstanceOf[GeoMatchConstraintValue]
+    val JO = "JO".asInstanceOf[GeoMatchConstraintValue]
+    val KZ = "KZ".asInstanceOf[GeoMatchConstraintValue]
+    val KE = "KE".asInstanceOf[GeoMatchConstraintValue]
+    val KI = "KI".asInstanceOf[GeoMatchConstraintValue]
+    val KP = "KP".asInstanceOf[GeoMatchConstraintValue]
+    val KR = "KR".asInstanceOf[GeoMatchConstraintValue]
+    val KW = "KW".asInstanceOf[GeoMatchConstraintValue]
+    val KG = "KG".asInstanceOf[GeoMatchConstraintValue]
+    val LA = "LA".asInstanceOf[GeoMatchConstraintValue]
+    val LV = "LV".asInstanceOf[GeoMatchConstraintValue]
+    val LB = "LB".asInstanceOf[GeoMatchConstraintValue]
+    val LS = "LS".asInstanceOf[GeoMatchConstraintValue]
+    val LR = "LR".asInstanceOf[GeoMatchConstraintValue]
+    val LY = "LY".asInstanceOf[GeoMatchConstraintValue]
+    val LI = "LI".asInstanceOf[GeoMatchConstraintValue]
+    val LT = "LT".asInstanceOf[GeoMatchConstraintValue]
+    val LU = "LU".asInstanceOf[GeoMatchConstraintValue]
+    val MO = "MO".asInstanceOf[GeoMatchConstraintValue]
+    val MK = "MK".asInstanceOf[GeoMatchConstraintValue]
+    val MG = "MG".asInstanceOf[GeoMatchConstraintValue]
+    val MW = "MW".asInstanceOf[GeoMatchConstraintValue]
+    val MY = "MY".asInstanceOf[GeoMatchConstraintValue]
+    val MV = "MV".asInstanceOf[GeoMatchConstraintValue]
+    val ML = "ML".asInstanceOf[GeoMatchConstraintValue]
+    val MT = "MT".asInstanceOf[GeoMatchConstraintValue]
+    val MH = "MH".asInstanceOf[GeoMatchConstraintValue]
+    val MQ = "MQ".asInstanceOf[GeoMatchConstraintValue]
+    val MR = "MR".asInstanceOf[GeoMatchConstraintValue]
+    val MU = "MU".asInstanceOf[GeoMatchConstraintValue]
+    val YT = "YT".asInstanceOf[GeoMatchConstraintValue]
+    val MX = "MX".asInstanceOf[GeoMatchConstraintValue]
+    val FM = "FM".asInstanceOf[GeoMatchConstraintValue]
+    val MD = "MD".asInstanceOf[GeoMatchConstraintValue]
+    val MC = "MC".asInstanceOf[GeoMatchConstraintValue]
+    val MN = "MN".asInstanceOf[GeoMatchConstraintValue]
+    val ME = "ME".asInstanceOf[GeoMatchConstraintValue]
+    val MS = "MS".asInstanceOf[GeoMatchConstraintValue]
+    val MA = "MA".asInstanceOf[GeoMatchConstraintValue]
+    val MZ = "MZ".asInstanceOf[GeoMatchConstraintValue]
+    val MM = "MM".asInstanceOf[GeoMatchConstraintValue]
+    val NA = "NA".asInstanceOf[GeoMatchConstraintValue]
+    val NR = "NR".asInstanceOf[GeoMatchConstraintValue]
+    val NP = "NP".asInstanceOf[GeoMatchConstraintValue]
+    val NL = "NL".asInstanceOf[GeoMatchConstraintValue]
+    val NC = "NC".asInstanceOf[GeoMatchConstraintValue]
+    val NZ = "NZ".asInstanceOf[GeoMatchConstraintValue]
+    val NI = "NI".asInstanceOf[GeoMatchConstraintValue]
+    val NE = "NE".asInstanceOf[GeoMatchConstraintValue]
+    val NG = "NG".asInstanceOf[GeoMatchConstraintValue]
+    val NU = "NU".asInstanceOf[GeoMatchConstraintValue]
+    val NF = "NF".asInstanceOf[GeoMatchConstraintValue]
+    val MP = "MP".asInstanceOf[GeoMatchConstraintValue]
+    val NO = "NO".asInstanceOf[GeoMatchConstraintValue]
+    val OM = "OM".asInstanceOf[GeoMatchConstraintValue]
+    val PK = "PK".asInstanceOf[GeoMatchConstraintValue]
+    val PW = "PW".asInstanceOf[GeoMatchConstraintValue]
+    val PS = "PS".asInstanceOf[GeoMatchConstraintValue]
+    val PA = "PA".asInstanceOf[GeoMatchConstraintValue]
+    val PG = "PG".asInstanceOf[GeoMatchConstraintValue]
+    val PY = "PY".asInstanceOf[GeoMatchConstraintValue]
+    val PE = "PE".asInstanceOf[GeoMatchConstraintValue]
+    val PH = "PH".asInstanceOf[GeoMatchConstraintValue]
+    val PN = "PN".asInstanceOf[GeoMatchConstraintValue]
+    val PL = "PL".asInstanceOf[GeoMatchConstraintValue]
+    val PT = "PT".asInstanceOf[GeoMatchConstraintValue]
+    val PR = "PR".asInstanceOf[GeoMatchConstraintValue]
+    val QA = "QA".asInstanceOf[GeoMatchConstraintValue]
+    val RE = "RE".asInstanceOf[GeoMatchConstraintValue]
+    val RO = "RO".asInstanceOf[GeoMatchConstraintValue]
+    val RU = "RU".asInstanceOf[GeoMatchConstraintValue]
+    val RW = "RW".asInstanceOf[GeoMatchConstraintValue]
+    val BL = "BL".asInstanceOf[GeoMatchConstraintValue]
+    val SH = "SH".asInstanceOf[GeoMatchConstraintValue]
+    val KN = "KN".asInstanceOf[GeoMatchConstraintValue]
+    val LC = "LC".asInstanceOf[GeoMatchConstraintValue]
+    val MF = "MF".asInstanceOf[GeoMatchConstraintValue]
+    val PM = "PM".asInstanceOf[GeoMatchConstraintValue]
+    val VC = "VC".asInstanceOf[GeoMatchConstraintValue]
+    val WS = "WS".asInstanceOf[GeoMatchConstraintValue]
+    val SM = "SM".asInstanceOf[GeoMatchConstraintValue]
+    val ST = "ST".asInstanceOf[GeoMatchConstraintValue]
+    val SA = "SA".asInstanceOf[GeoMatchConstraintValue]
+    val SN = "SN".asInstanceOf[GeoMatchConstraintValue]
+    val RS = "RS".asInstanceOf[GeoMatchConstraintValue]
+    val SC = "SC".asInstanceOf[GeoMatchConstraintValue]
+    val SL = "SL".asInstanceOf[GeoMatchConstraintValue]
+    val SG = "SG".asInstanceOf[GeoMatchConstraintValue]
+    val SX = "SX".asInstanceOf[GeoMatchConstraintValue]
+    val SK = "SK".asInstanceOf[GeoMatchConstraintValue]
+    val SI = "SI".asInstanceOf[GeoMatchConstraintValue]
+    val SB = "SB".asInstanceOf[GeoMatchConstraintValue]
+    val SO = "SO".asInstanceOf[GeoMatchConstraintValue]
+    val ZA = "ZA".asInstanceOf[GeoMatchConstraintValue]
+    val GS = "GS".asInstanceOf[GeoMatchConstraintValue]
+    val SS = "SS".asInstanceOf[GeoMatchConstraintValue]
+    val ES = "ES".asInstanceOf[GeoMatchConstraintValue]
+    val LK = "LK".asInstanceOf[GeoMatchConstraintValue]
+    val SD = "SD".asInstanceOf[GeoMatchConstraintValue]
+    val SR = "SR".asInstanceOf[GeoMatchConstraintValue]
+    val SJ = "SJ".asInstanceOf[GeoMatchConstraintValue]
+    val SZ = "SZ".asInstanceOf[GeoMatchConstraintValue]
+    val SE = "SE".asInstanceOf[GeoMatchConstraintValue]
+    val CH = "CH".asInstanceOf[GeoMatchConstraintValue]
+    val SY = "SY".asInstanceOf[GeoMatchConstraintValue]
+    val TW = "TW".asInstanceOf[GeoMatchConstraintValue]
+    val TJ = "TJ".asInstanceOf[GeoMatchConstraintValue]
+    val TZ = "TZ".asInstanceOf[GeoMatchConstraintValue]
+    val TH = "TH".asInstanceOf[GeoMatchConstraintValue]
+    val TL = "TL".asInstanceOf[GeoMatchConstraintValue]
+    val TG = "TG".asInstanceOf[GeoMatchConstraintValue]
+    val TK = "TK".asInstanceOf[GeoMatchConstraintValue]
+    val TO = "TO".asInstanceOf[GeoMatchConstraintValue]
+    val TT = "TT".asInstanceOf[GeoMatchConstraintValue]
+    val TN = "TN".asInstanceOf[GeoMatchConstraintValue]
+    val TR = "TR".asInstanceOf[GeoMatchConstraintValue]
+    val TM = "TM".asInstanceOf[GeoMatchConstraintValue]
+    val TC = "TC".asInstanceOf[GeoMatchConstraintValue]
+    val TV = "TV".asInstanceOf[GeoMatchConstraintValue]
+    val UG = "UG".asInstanceOf[GeoMatchConstraintValue]
+    val UA = "UA".asInstanceOf[GeoMatchConstraintValue]
+    val AE = "AE".asInstanceOf[GeoMatchConstraintValue]
+    val GB = "GB".asInstanceOf[GeoMatchConstraintValue]
+    val US = "US".asInstanceOf[GeoMatchConstraintValue]
+    val UM = "UM".asInstanceOf[GeoMatchConstraintValue]
+    val UY = "UY".asInstanceOf[GeoMatchConstraintValue]
+    val UZ = "UZ".asInstanceOf[GeoMatchConstraintValue]
+    val VU = "VU".asInstanceOf[GeoMatchConstraintValue]
+    val VE = "VE".asInstanceOf[GeoMatchConstraintValue]
+    val VN = "VN".asInstanceOf[GeoMatchConstraintValue]
+    val VG = "VG".asInstanceOf[GeoMatchConstraintValue]
+    val VI = "VI".asInstanceOf[GeoMatchConstraintValue]
+    val WF = "WF".asInstanceOf[GeoMatchConstraintValue]
+    val EH = "EH".asInstanceOf[GeoMatchConstraintValue]
+    val YE = "YE".asInstanceOf[GeoMatchConstraintValue]
+    val ZM = "ZM".asInstanceOf[GeoMatchConstraintValue]
+    val ZW = "ZW".asInstanceOf[GeoMatchConstraintValue]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3111,10 +3101,11 @@ package wafregional {
       __obj.asInstanceOf[IPSetDescriptor]
     }
   }
-
-  object IPSetDescriptorTypeEnum {
-    val IPV4 = "IPV4"
-    val IPV6 = "IPV6"
+  @js.native
+  sealed trait IPSetDescriptorType extends js.Any
+  object IPSetDescriptorType extends js.Object {
+    val IPV4 = "IPV4".asInstanceOf[IPSetDescriptorType]
+    val IPV6 = "IPV6".asInstanceOf[IPSetDescriptorType]
 
     val values = js.Object.freeze(js.Array(IPV4, IPV6))
   }
@@ -3858,25 +3849,27 @@ package wafregional {
       __obj.asInstanceOf[LoggingConfiguration]
     }
   }
-
-  object MatchFieldTypeEnum {
-    val URI              = "URI"
-    val QUERY_STRING     = "QUERY_STRING"
-    val HEADER           = "HEADER"
-    val METHOD           = "METHOD"
-    val BODY             = "BODY"
-    val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG"
-    val ALL_QUERY_ARGS   = "ALL_QUERY_ARGS"
+  @js.native
+  sealed trait MatchFieldType extends js.Any
+  object MatchFieldType extends js.Object {
+    val URI              = "URI".asInstanceOf[MatchFieldType]
+    val QUERY_STRING     = "QUERY_STRING".asInstanceOf[MatchFieldType]
+    val HEADER           = "HEADER".asInstanceOf[MatchFieldType]
+    val METHOD           = "METHOD".asInstanceOf[MatchFieldType]
+    val BODY             = "BODY".asInstanceOf[MatchFieldType]
+    val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG".asInstanceOf[MatchFieldType]
+    val ALL_QUERY_ARGS   = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
 
     val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
   }
-
-  object PositionalConstraintEnum {
-    val EXACTLY       = "EXACTLY"
-    val STARTS_WITH   = "STARTS_WITH"
-    val ENDS_WITH     = "ENDS_WITH"
-    val CONTAINS      = "CONTAINS"
-    val CONTAINS_WORD = "CONTAINS_WORD"
+  @js.native
+  sealed trait PositionalConstraint extends js.Any
+  object PositionalConstraint extends js.Object {
+    val EXACTLY       = "EXACTLY".asInstanceOf[PositionalConstraint]
+    val STARTS_WITH   = "STARTS_WITH".asInstanceOf[PositionalConstraint]
+    val ENDS_WITH     = "ENDS_WITH".asInstanceOf[PositionalConstraint]
+    val CONTAINS      = "CONTAINS".asInstanceOf[PositionalConstraint]
+    val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
@@ -3907,15 +3900,16 @@ package wafregional {
       __obj.asInstanceOf[Predicate]
     }
   }
-
-  object PredicateTypeEnum {
-    val IPMatch           = "IPMatch"
-    val ByteMatch         = "ByteMatch"
-    val SqlInjectionMatch = "SqlInjectionMatch"
-    val GeoMatch          = "GeoMatch"
-    val SizeConstraint    = "SizeConstraint"
-    val XssMatch          = "XssMatch"
-    val RegexMatch        = "RegexMatch"
+  @js.native
+  sealed trait PredicateType extends js.Any
+  object PredicateType extends js.Object {
+    val IPMatch           = "IPMatch".asInstanceOf[PredicateType]
+    val ByteMatch         = "ByteMatch".asInstanceOf[PredicateType]
+    val SqlInjectionMatch = "SqlInjectionMatch".asInstanceOf[PredicateType]
+    val GeoMatch          = "GeoMatch".asInstanceOf[PredicateType]
+    val SizeConstraint    = "SizeConstraint".asInstanceOf[PredicateType]
+    val XssMatch          = "XssMatch".asInstanceOf[PredicateType]
+    val RegexMatch        = "RegexMatch".asInstanceOf[PredicateType]
 
     val values =
       js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
@@ -4028,9 +4022,10 @@ package wafregional {
       __obj.asInstanceOf[RateBasedRule]
     }
   }
-
-  object RateKeyEnum {
-    val IP = "IP"
+  @js.native
+  sealed trait RateKey extends js.Any
+  object RateKey extends js.Object {
+    val IP = "IP".asInstanceOf[RateKey]
 
     val values = js.Object.freeze(js.Array(IP))
   }
@@ -4213,10 +4208,11 @@ package wafregional {
       __obj.asInstanceOf[RegexPatternSetUpdate]
     }
   }
-
-  object ResourceTypeEnum {
-    val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER"
-    val API_GATEWAY               = "API_GATEWAY"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
+    val API_GATEWAY               = "API_GATEWAY".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
@@ -4716,14 +4712,15 @@ package wafregional {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TextTransformationEnum {
-    val NONE                 = "NONE"
-    val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE"
-    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE"
-    val LOWERCASE            = "LOWERCASE"
-    val CMD_LINE             = "CMD_LINE"
-    val URL_DECODE           = "URL_DECODE"
+  @js.native
+  sealed trait TextTransformation extends js.Any
+  object TextTransformation extends js.Object {
+    val NONE                 = "NONE".asInstanceOf[TextTransformation]
+    val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformation]
+    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformation]
+    val LOWERCASE            = "LOWERCASE".asInstanceOf[TextTransformation]
+    val CMD_LINE             = "CMD_LINE".asInstanceOf[TextTransformation]
+    val URL_DECODE           = "URL_DECODE".asInstanceOf[TextTransformation]
 
     val values =
       js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
@@ -5306,11 +5303,12 @@ package wafregional {
       __obj.asInstanceOf[WafAction]
     }
   }
-
-  object WafActionTypeEnum {
-    val BLOCK = "BLOCK"
-    val ALLOW = "ALLOW"
-    val COUNT = "COUNT"
+  @js.native
+  sealed trait WafActionType extends js.Any
+  object WafActionType extends js.Object {
+    val BLOCK = "BLOCK".asInstanceOf[WafActionType]
+    val ALLOW = "ALLOW".asInstanceOf[WafActionType]
+    val COUNT = "COUNT".asInstanceOf[WafActionType]
 
     val values = js.Object.freeze(js.Array(BLOCK, ALLOW, COUNT))
   }
@@ -5335,18 +5333,20 @@ package wafregional {
       __obj.asInstanceOf[WafOverrideAction]
     }
   }
-
-  object WafOverrideActionTypeEnum {
-    val NONE  = "NONE"
-    val COUNT = "COUNT"
+  @js.native
+  sealed trait WafOverrideActionType extends js.Any
+  object WafOverrideActionType extends js.Object {
+    val NONE  = "NONE".asInstanceOf[WafOverrideActionType]
+    val COUNT = "COUNT".asInstanceOf[WafOverrideActionType]
 
     val values = js.Object.freeze(js.Array(NONE, COUNT))
   }
-
-  object WafRuleTypeEnum {
-    val REGULAR    = "REGULAR"
-    val RATE_BASED = "RATE_BASED"
-    val GROUP      = "GROUP"
+  @js.native
+  sealed trait WafRuleType extends js.Any
+  object WafRuleType extends js.Object {
+    val REGULAR    = "REGULAR".asInstanceOf[WafRuleType]
+    val RATE_BASED = "RATE_BASED".asInstanceOf[WafRuleType]
+    val GROUP      = "GROUP".asInstanceOf[WafRuleType]
 
     val values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
   }
