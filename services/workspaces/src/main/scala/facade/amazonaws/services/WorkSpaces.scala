@@ -165,6 +165,8 @@ package object workspaces {
         params: ListAvailableManagementCidrRangesRequest
     ): Future[ListAvailableManagementCidrRangesResult] =
       service.listAvailableManagementCidrRanges(params).promise.toFuture
+    @inline def migrateWorkspaceFuture(params: MigrateWorkspaceRequest): Future[MigrateWorkspaceResult] =
+      service.migrateWorkspace(params).promise.toFuture
     @inline def modifyAccountFuture(params: ModifyAccountRequest): Future[ModifyAccountResult] =
       service.modifyAccount(params).promise.toFuture
     @inline def modifyClientPropertiesFuture(
@@ -252,6 +254,7 @@ package workspaces {
     def listAvailableManagementCidrRanges(
         params: ListAvailableManagementCidrRangesRequest
     ): Request[ListAvailableManagementCidrRangesResult]                                                      = js.native
+    def migrateWorkspace(params: MigrateWorkspaceRequest): Request[MigrateWorkspaceResult]                   = js.native
     def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult]                            = js.native
     def modifyClientProperties(params: ModifyClientPropertiesRequest): Request[ModifyClientPropertiesResult] = js.native
     def modifySelfservicePermissions(
@@ -1434,6 +1437,46 @@ package workspaces {
       ManagementCidrRanges.foreach(__v => __obj.updateDynamic("ManagementCidrRanges")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAvailableManagementCidrRangesResult]
+    }
+  }
+
+  @js.native
+  trait MigrateWorkspaceRequest extends js.Object {
+    var BundleId: BundleId
+    var SourceWorkspaceId: WorkspaceId
+  }
+
+  object MigrateWorkspaceRequest {
+    @inline
+    def apply(
+        BundleId: BundleId,
+        SourceWorkspaceId: WorkspaceId
+    ): MigrateWorkspaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "BundleId"          -> BundleId.asInstanceOf[js.Any],
+        "SourceWorkspaceId" -> SourceWorkspaceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[MigrateWorkspaceRequest]
+    }
+  }
+
+  @js.native
+  trait MigrateWorkspaceResult extends js.Object {
+    var SourceWorkspaceId: js.UndefOr[WorkspaceId]
+    var TargetWorkspaceId: js.UndefOr[WorkspaceId]
+  }
+
+  object MigrateWorkspaceResult {
+    @inline
+    def apply(
+        SourceWorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
+        TargetWorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
+    ): MigrateWorkspaceResult = {
+      val __obj = js.Dynamic.literal()
+      SourceWorkspaceId.foreach(__v => __obj.updateDynamic("SourceWorkspaceId")(__v.asInstanceOf[js.Any]))
+      TargetWorkspaceId.foreach(__v => __obj.updateDynamic("TargetWorkspaceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MigrateWorkspaceResult]
     }
   }
 

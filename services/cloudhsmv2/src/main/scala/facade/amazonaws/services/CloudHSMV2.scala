@@ -29,6 +29,7 @@ package object cloudhsmv2 {
   type NextToken             = String
   type PreCoPassword         = String
   type Region                = String
+  type ResourceId            = String
   type SecurityGroup         = String
   type StateMessage          = String
   type Strings               = js.Array[String]
@@ -94,7 +95,7 @@ package cloudhsmv2 {
   }
 
   /**
-    * Contains information about a backup of an AWS CloudHSM cluster.
+    * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.
     */
   @js.native
   trait Backup extends js.Object {
@@ -107,6 +108,7 @@ package cloudhsmv2 {
     var SourceBackup: js.UndefOr[BackupId]
     var SourceCluster: js.UndefOr[ClusterId]
     var SourceRegion: js.UndefOr[Region]
+    var TagList: js.UndefOr[TagList]
   }
 
   object Backup {
@@ -120,7 +122,8 @@ package cloudhsmv2 {
         DeleteTimestamp: js.UndefOr[Timestamp] = js.undefined,
         SourceBackup: js.UndefOr[BackupId] = js.undefined,
         SourceCluster: js.UndefOr[ClusterId] = js.undefined,
-        SourceRegion: js.UndefOr[Region] = js.undefined
+        SourceRegion: js.UndefOr[Region] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined
     ): Backup = {
       val __obj = js.Dynamic.literal(
         "BackupId" -> BackupId.asInstanceOf[js.Any]
@@ -134,6 +137,7 @@ package cloudhsmv2 {
       SourceBackup.foreach(__v => __obj.updateDynamic("SourceBackup")(__v.asInstanceOf[js.Any]))
       SourceCluster.foreach(__v => __obj.updateDynamic("SourceCluster")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Backup]
     }
   }
@@ -203,6 +207,7 @@ package cloudhsmv2 {
     var State: js.UndefOr[ClusterState]
     var StateMessage: js.UndefOr[StateMessage]
     var SubnetMapping: js.UndefOr[ExternalSubnetMapping]
+    var TagList: js.UndefOr[TagList]
     var VpcId: js.UndefOr[VpcId]
   }
 
@@ -221,6 +226,7 @@ package cloudhsmv2 {
         State: js.UndefOr[ClusterState] = js.undefined,
         StateMessage: js.UndefOr[StateMessage] = js.undefined,
         SubnetMapping: js.UndefOr[ExternalSubnetMapping] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): Cluster = {
       val __obj = js.Dynamic.literal()
@@ -236,6 +242,7 @@ package cloudhsmv2 {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateMessage.foreach(__v => __obj.updateDynamic("StateMessage")(__v.asInstanceOf[js.Any]))
       SubnetMapping.foreach(__v => __obj.updateDynamic("SubnetMapping")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
     }
@@ -271,19 +278,22 @@ package cloudhsmv2 {
   trait CopyBackupToRegionRequest extends js.Object {
     var BackupId: BackupId
     var DestinationRegion: Region
+    var TagList: js.UndefOr[TagList]
   }
 
   object CopyBackupToRegionRequest {
     @inline
     def apply(
         BackupId: BackupId,
-        DestinationRegion: Region
+        DestinationRegion: Region,
+        TagList: js.UndefOr[TagList] = js.undefined
     ): CopyBackupToRegionRequest = {
       val __obj = js.Dynamic.literal(
         "BackupId"          -> BackupId.asInstanceOf[js.Any],
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
       )
 
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyBackupToRegionRequest]
     }
   }
@@ -309,6 +319,7 @@ package cloudhsmv2 {
     var HsmType: HsmType
     var SubnetIds: SubnetIds
     var SourceBackupId: js.UndefOr[BackupId]
+    var TagList: js.UndefOr[TagList]
   }
 
   object CreateClusterRequest {
@@ -316,7 +327,8 @@ package cloudhsmv2 {
     def apply(
         HsmType: HsmType,
         SubnetIds: SubnetIds,
-        SourceBackupId: js.UndefOr[BackupId] = js.undefined
+        SourceBackupId: js.UndefOr[BackupId] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
         "HsmType"   -> HsmType.asInstanceOf[js.Any],
@@ -324,6 +336,7 @@ package cloudhsmv2 {
       )
 
       SourceBackupId.foreach(__v => __obj.updateDynamic("SourceBackupId")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
   }
@@ -580,6 +593,9 @@ package cloudhsmv2 {
     }
   }
 
+  /**
+    * Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.
+    */
   @js.native
   trait DestinationBackup extends js.Object {
     var CreateTimestamp: js.UndefOr[Timestamp]
@@ -702,7 +718,7 @@ package cloudhsmv2 {
 
   @js.native
   trait ListTagsRequest extends js.Object {
-    var ResourceId: ClusterId
+    var ResourceId: ResourceId
     var MaxResults: js.UndefOr[MaxSize]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -710,7 +726,7 @@ package cloudhsmv2 {
   object ListTagsRequest {
     @inline
     def apply(
-        ResourceId: ClusterId,
+        ResourceId: ResourceId,
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsRequest = {
@@ -805,14 +821,14 @@ package cloudhsmv2 {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceId: ClusterId
+    var ResourceId: ResourceId
     var TagList: TagList
   }
 
   object TagResourceRequest {
     @inline
     def apply(
-        ResourceId: ClusterId,
+        ResourceId: ResourceId,
         TagList: TagList
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -839,14 +855,14 @@ package cloudhsmv2 {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceId: ClusterId
+    var ResourceId: ResourceId
     var TagKeyList: TagKeyList
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
-        ResourceId: ClusterId,
+        ResourceId: ResourceId,
         TagKeyList: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(

@@ -426,6 +426,7 @@ package object ssm {
   type PatchSourceName                                      = String
   type PatchSourceProduct                                   = String
   type PatchSourceProductList                               = js.Array[PatchSourceProduct]
+  type PatchStringDate                                      = String
   type PatchTitle                                           = String
   type PatchUnreportedNotApplicableCount                    = Int
   type PatchVendor                                          = String
@@ -9698,8 +9699,9 @@ package ssm {
     */
   @js.native
   trait PatchRule extends js.Object {
-    var ApproveAfterDays: ApproveAfterDays
     var PatchFilterGroup: PatchFilterGroup
+    var ApproveAfterDays: js.UndefOr[ApproveAfterDays]
+    var ApproveUntilDate: js.UndefOr[PatchStringDate]
     var ComplianceLevel: js.UndefOr[PatchComplianceLevel]
     var EnableNonSecurity: js.UndefOr[Boolean]
   }
@@ -9707,16 +9709,18 @@ package ssm {
   object PatchRule {
     @inline
     def apply(
-        ApproveAfterDays: ApproveAfterDays,
         PatchFilterGroup: PatchFilterGroup,
+        ApproveAfterDays: js.UndefOr[ApproveAfterDays] = js.undefined,
+        ApproveUntilDate: js.UndefOr[PatchStringDate] = js.undefined,
         ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
         EnableNonSecurity: js.UndefOr[Boolean] = js.undefined
     ): PatchRule = {
       val __obj = js.Dynamic.literal(
-        "ApproveAfterDays" -> ApproveAfterDays.asInstanceOf[js.Any],
         "PatchFilterGroup" -> PatchFilterGroup.asInstanceOf[js.Any]
       )
 
+      ApproveAfterDays.foreach(__v => __obj.updateDynamic("ApproveAfterDays")(__v.asInstanceOf[js.Any]))
+      ApproveUntilDate.foreach(__v => __obj.updateDynamic("ApproveUntilDate")(__v.asInstanceOf[js.Any]))
       ComplianceLevel.foreach(__v => __obj.updateDynamic("ComplianceLevel")(__v.asInstanceOf[js.Any]))
       EnableNonSecurity.foreach(__v => __obj.updateDynamic("EnableNonSecurity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchRule]

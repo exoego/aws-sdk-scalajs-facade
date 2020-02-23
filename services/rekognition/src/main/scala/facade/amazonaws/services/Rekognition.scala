@@ -10,6 +10,8 @@ package object rekognition {
   type Assets                                         = js.Array[Asset]
   type Attribute                                      = String
   type Attributes                                     = js.Array[Attribute]
+  type BoundingBoxHeight                              = Float
+  type BoundingBoxWidth                               = Float
   type CelebrityList                                  = js.Array[Celebrity]
   type CelebrityRecognitionSortBy                     = String
   type CelebrityRecognitions                          = js.Array[CelebrityRecognition]
@@ -86,6 +88,7 @@ package object rekognition {
   type QualityFilter                                  = String
   type Reason                                         = String
   type Reasons                                        = js.Array[Reason]
+  type RegionsOfInterest                              = js.Array[RegionOfInterest]
   type RekognitionUniqueId                            = String
   type RoleArn                                        = String
   type S3Bucket                                       = String
@@ -99,6 +102,7 @@ package object rekognition {
   type StreamProcessorName                            = String
   type StreamProcessorStatus                          = String
   type TextDetectionList                              = js.Array[TextDetection]
+  type TextDetectionResults                           = js.Array[TextDetectionResult]
   type TextTypes                                      = String
   type Timestamp                                      = Double
   type UInteger                                       = Int
@@ -166,6 +170,8 @@ package object rekognition {
       service.getLabelDetection(params).promise.toFuture
     @inline def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] =
       service.getPersonTracking(params).promise.toFuture
+    @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] =
+      service.getTextDetection(params).promise.toFuture
     @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] =
       service.indexFaces(params).promise.toFuture
     @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] =
@@ -198,6 +204,8 @@ package object rekognition {
       service.startProjectVersion(params).promise.toFuture
     @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
       service.startStreamProcessor(params).promise.toFuture
+    @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] =
+      service.startTextDetection(params).promise.toFuture
     @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] =
       service.stopProjectVersion(params).promise.toFuture
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] =
@@ -239,6 +247,7 @@ package rekognition {
     def getFaceSearch(params: GetFaceSearchRequest): Request[GetFaceSearchResponse]                      = js.native
     def getLabelDetection(params: GetLabelDetectionRequest): Request[GetLabelDetectionResponse]          = js.native
     def getPersonTracking(params: GetPersonTrackingRequest): Request[GetPersonTrackingResponse]          = js.native
+    def getTextDetection(params: GetTextDetectionRequest): Request[GetTextDetectionResponse]             = js.native
     def indexFaces(params: IndexFacesRequest): Request[IndexFacesResponse]                               = js.native
     def listCollections(params: ListCollectionsRequest): Request[ListCollectionsResponse]                = js.native
     def listFaces(params: ListFacesRequest): Request[ListFacesResponse]                                  = js.native
@@ -257,6 +266,7 @@ package rekognition {
     def startPersonTracking(params: StartPersonTrackingRequest): Request[StartPersonTrackingResponse]    = js.native
     def startProjectVersion(params: StartProjectVersionRequest): Request[StartProjectVersionResponse]    = js.native
     def startStreamProcessor(params: StartStreamProcessorRequest): Request[StartStreamProcessorResponse] = js.native
+    def startTextDetection(params: StartTextDetectionRequest): Request[StartTextDetectionResponse]       = js.native
     def stopProjectVersion(params: StopProjectVersionRequest): Request[StopProjectVersionResponse]       = js.native
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse]    = js.native
   }
@@ -1288,20 +1298,45 @@ package rekognition {
     }
   }
 
+  /**
+    * A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.
+    */
+  @js.native
+  trait DetectTextFilters extends js.Object {
+    var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
+    var WordFilter: js.UndefOr[DetectionFilter]
+  }
+
+  object DetectTextFilters {
+    @inline
+    def apply(
+        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
+        WordFilter: js.UndefOr[DetectionFilter] = js.undefined
+    ): DetectTextFilters = {
+      val __obj = js.Dynamic.literal()
+      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
+      WordFilter.foreach(__v => __obj.updateDynamic("WordFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectTextFilters]
+    }
+  }
+
   @js.native
   trait DetectTextRequest extends js.Object {
     var Image: Image
+    var Filters: js.UndefOr[DetectTextFilters]
   }
 
   object DetectTextRequest {
     @inline
     def apply(
-        Image: Image
+        Image: Image,
+        Filters: js.UndefOr[DetectTextFilters] = js.undefined
     ): DetectTextRequest = {
       val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectTextRequest]
     }
   }
@@ -1309,16 +1344,44 @@ package rekognition {
   @js.native
   trait DetectTextResponse extends js.Object {
     var TextDetections: js.UndefOr[TextDetectionList]
+    var TextModelVersion: js.UndefOr[String]
   }
 
   object DetectTextResponse {
     @inline
     def apply(
-        TextDetections: js.UndefOr[TextDetectionList] = js.undefined
+        TextDetections: js.UndefOr[TextDetectionList] = js.undefined,
+        TextModelVersion: js.UndefOr[String] = js.undefined
     ): DetectTextResponse = {
       val __obj = js.Dynamic.literal()
       TextDetections.foreach(__v => __obj.updateDynamic("TextDetections")(__v.asInstanceOf[js.Any]))
+      TextModelVersion.foreach(__v => __obj.updateDynamic("TextModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectTextResponse]
+    }
+  }
+
+  /**
+    * A set of parameters that allow you to filter out certain results from your returned results.
+    */
+  @js.native
+  trait DetectionFilter extends js.Object {
+    var MinBoundingBoxHeight: js.UndefOr[BoundingBoxHeight]
+    var MinBoundingBoxWidth: js.UndefOr[BoundingBoxWidth]
+    var MinConfidence: js.UndefOr[Percent]
+  }
+
+  object DetectionFilter {
+    @inline
+    def apply(
+        MinBoundingBoxHeight: js.UndefOr[BoundingBoxHeight] = js.undefined,
+        MinBoundingBoxWidth: js.UndefOr[BoundingBoxWidth] = js.undefined,
+        MinConfidence: js.UndefOr[Percent] = js.undefined
+    ): DetectionFilter = {
+      val __obj = js.Dynamic.literal()
+      MinBoundingBoxHeight.foreach(__v => __obj.updateDynamic("MinBoundingBoxHeight")(__v.asInstanceOf[js.Any]))
+      MinBoundingBoxWidth.foreach(__v => __obj.updateDynamic("MinBoundingBoxWidth")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectionFilter]
     }
   }
 
@@ -2045,6 +2108,61 @@ package rekognition {
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonTrackingResponse]
+    }
+  }
+
+  @js.native
+  trait GetTextDetectionRequest extends js.Object {
+    var JobId: JobId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object GetTextDetectionRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetTextDetectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTextDetectionRequest]
+    }
+  }
+
+  @js.native
+  trait GetTextDetectionResponse extends js.Object {
+    var JobStatus: js.UndefOr[VideoJobStatus]
+    var NextToken: js.UndefOr[PaginationToken]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var TextDetections: js.UndefOr[TextDetectionResults]
+    var TextModelVersion: js.UndefOr[String]
+    var VideoMetadata: js.UndefOr[VideoMetadata]
+  }
+
+  object GetTextDetectionResponse {
+    @inline
+    def apply(
+        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        TextDetections: js.UndefOr[TextDetectionResults] = js.undefined,
+        TextModelVersion: js.UndefOr[String] = js.undefined,
+        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
+    ): GetTextDetectionResponse = {
+      val __obj = js.Dynamic.literal()
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      TextDetections.foreach(__v => __obj.updateDynamic("TextDetections")(__v.asInstanceOf[js.Any]))
+      TextModelVersion.foreach(__v => __obj.updateDynamic("TextModelVersion")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTextDetectionResponse]
     }
   }
 
@@ -3041,6 +3159,26 @@ package rekognition {
   }
 
   /**
+    * Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.
+    *  A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
+    */
+  @js.native
+  trait RegionOfInterest extends js.Object {
+    var BoundingBox: js.UndefOr[BoundingBox]
+  }
+
+  object RegionOfInterest {
+    @inline
+    def apply(
+        BoundingBox: js.UndefOr[BoundingBox] = js.undefined
+    ): RegionOfInterest = {
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegionOfInterest]
+    }
+  }
+
+  /**
     * Provides the S3 bucket name and object name.
     *  The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
     *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
@@ -3534,6 +3672,74 @@ package rekognition {
     }
   }
 
+  /**
+    * Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.
+    */
+  @js.native
+  trait StartTextDetectionFilters extends js.Object {
+    var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
+    var WordFilter: js.UndefOr[DetectionFilter]
+  }
+
+  object StartTextDetectionFilters {
+    @inline
+    def apply(
+        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
+        WordFilter: js.UndefOr[DetectionFilter] = js.undefined
+    ): StartTextDetectionFilters = {
+      val __obj = js.Dynamic.literal()
+      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
+      WordFilter.foreach(__v => __obj.updateDynamic("WordFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTextDetectionFilters]
+    }
+  }
+
+  @js.native
+  trait StartTextDetectionRequest extends js.Object {
+    var Video: Video
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Filters: js.UndefOr[StartTextDetectionFilters]
+    var JobTag: js.UndefOr[JobTag]
+    var NotificationChannel: js.UndefOr[NotificationChannel]
+  }
+
+  object StartTextDetectionRequest {
+    @inline
+    def apply(
+        Video: Video,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Filters: js.UndefOr[StartTextDetectionFilters] = js.undefined,
+        JobTag: js.UndefOr[JobTag] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
+    ): StartTextDetectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTextDetectionRequest]
+    }
+  }
+
+  @js.native
+  trait StartTextDetectionResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartTextDetectionResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartTextDetectionResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTextDetectionResponse]
+    }
+  }
+
   @js.native
   trait StopProjectVersionRequest extends js.Object {
     var ProjectVersionArn: ProjectVersionArn
@@ -3808,6 +4014,28 @@ package rekognition {
       ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TextDetection]
+    }
+  }
+
+  /**
+    * Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.
+    */
+  @js.native
+  trait TextDetectionResult extends js.Object {
+    var TextDetection: js.UndefOr[TextDetection]
+    var Timestamp: js.UndefOr[Timestamp]
+  }
+
+  object TextDetectionResult {
+    @inline
+    def apply(
+        TextDetection: js.UndefOr[TextDetection] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): TextDetectionResult = {
+      val __obj = js.Dynamic.literal()
+      TextDetection.foreach(__v => __obj.updateDynamic("TextDetection")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextDetectionResult]
     }
   }
 

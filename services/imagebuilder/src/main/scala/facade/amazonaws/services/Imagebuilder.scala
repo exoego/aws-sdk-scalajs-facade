@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object imagebuilder {
   type AccountList                            = js.Array[NonEmptyString]
   type AmiList                                = js.Array[Ami]
+  type AmiNameString                          = String
   type Arn                                    = String
   type ArnList                                = js.Array[Arn]
   type ClientToken                            = String
@@ -19,6 +20,7 @@ package object imagebuilder {
   type ComponentSummaryList                   = js.Array[ComponentSummary]
   type ComponentType                          = String
   type ComponentVersionArn                    = String
+  type ComponentVersionArnOrBuildVersionArn   = String
   type ComponentVersionList                   = js.Array[ComponentVersion]
   type DateTime                               = String
   type DistributionConfigurationArn           = String
@@ -28,6 +30,7 @@ package object imagebuilder {
   type EbsIopsInteger                         = Int
   type EbsVolumeSizeInteger                   = Int
   type EbsVolumeType                          = String
+  type EmptyString                            = String
   type FilterList                             = js.Array[Filter]
   type FilterName                             = String
   type FilterValue                            = String
@@ -56,8 +59,10 @@ package object imagebuilder {
   type PipelineStatus                         = String
   type Platform                               = String
   type ResourceName                           = String
+  type ResourcePolicyDocument                 = String
   type RestrictedInteger                      = Int
   type SecurityGroupIds                       = js.Array[NonEmptyString]
+  type SnsTopicArn                            = String
   type StringList                             = js.Array[NonEmptyString]
   type TagKey                                 = String
   type TagKeyList                             = js.Array[TagKey]
@@ -284,14 +289,14 @@ package imagebuilder {
   }
 
   /**
-    * Define and configure the outputs AMIs of the pipeline.
+    * Define and configure the output AMIs of the pipeline.
     */
   @js.native
   trait AmiDistributionConfiguration extends js.Object {
     var amiTags: js.UndefOr[TagMap]
     var description: js.UndefOr[NonEmptyString]
     var launchPermission: js.UndefOr[LaunchPermissionConfiguration]
-    var name: js.UndefOr[NonEmptyString]
+    var name: js.UndefOr[AmiNameString]
   }
 
   object AmiDistributionConfiguration {
@@ -300,7 +305,7 @@ package imagebuilder {
         amiTags: js.UndefOr[TagMap] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         launchPermission: js.UndefOr[LaunchPermissionConfiguration] = js.undefined,
-        name: js.UndefOr[NonEmptyString] = js.undefined
+        name: js.UndefOr[AmiNameString] = js.undefined
     ): AmiDistributionConfiguration = {
       val __obj = js.Dynamic.literal()
       amiTags.foreach(__v => __obj.updateDynamic("amiTags")(__v.asInstanceOf[js.Any]))
@@ -414,13 +419,13 @@ package imagebuilder {
     */
   @js.native
   trait ComponentConfiguration extends js.Object {
-    var componentArn: ComponentBuildVersionArn
+    var componentArn: ComponentVersionArnOrBuildVersionArn
   }
 
   object ComponentConfiguration {
     @inline
     def apply(
-        componentArn: ComponentBuildVersionArn
+        componentArn: ComponentVersionArnOrBuildVersionArn
     ): ComponentConfiguration = {
       val __obj = js.Dynamic.literal(
         "componentArn" -> componentArn.asInstanceOf[js.Any]
@@ -437,7 +442,7 @@ package imagebuilder {
   }
 
   /**
-    * A high level summary of a component.
+    * A high-level summary of a component.
     */
   @js.native
   trait ComponentSummary extends js.Object {
@@ -490,7 +495,7 @@ package imagebuilder {
   }
 
   /**
-    * A high level overview of a component semantic version.
+    * A high-level overview of a component semantic version.
     */
   @js.native
   trait ComponentVersion extends js.Object {
@@ -847,7 +852,7 @@ package imagebuilder {
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
     var securityGroupIds: js.UndefOr[SecurityGroupIds]
-    var snsTopicArn: js.UndefOr[NonEmptyString]
+    var snsTopicArn: js.UndefOr[SnsTopicArn]
     var subnetId: js.UndefOr[NonEmptyString]
     var tags: js.UndefOr[TagMap]
     var terminateInstanceOnFailure: js.UndefOr[NullableBoolean]
@@ -864,7 +869,7 @@ package imagebuilder {
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        snsTopicArn: js.UndefOr[NonEmptyString] = js.undefined,
+        snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
@@ -1141,7 +1146,7 @@ package imagebuilder {
   }
 
   /**
-    *
+    * Defines the settings for a specific Region.
     */
   @js.native
   trait Distribution extends js.Object {
@@ -1212,7 +1217,7 @@ package imagebuilder {
   }
 
   /**
-    * A high level overview a distribution configuration.
+    * A high-level overview of a distribution configuration.
     */
   @js.native
   trait DistributionConfigurationSummary extends js.Object {
@@ -1246,7 +1251,7 @@ package imagebuilder {
   }
 
   /**
-    * EBS specific block device mapping specifications.
+    * Amazon EBS-specific block device mapping specifications.
     */
   @js.native
   trait EbsInstanceBlockDeviceSpecification extends js.Object {
@@ -1293,7 +1298,7 @@ package imagebuilder {
   }
 
   /**
-    *
+    * A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1334,14 +1339,14 @@ package imagebuilder {
 
   @js.native
   trait GetComponentPolicyResponse extends js.Object {
-    var policy: js.UndefOr[NonEmptyString]
+    var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
   object GetComponentPolicyResponse {
     @inline
     def apply(
-        policy: js.UndefOr[NonEmptyString] = js.undefined,
+        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): GetComponentPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1484,14 +1489,14 @@ package imagebuilder {
 
   @js.native
   trait GetImagePolicyResponse extends js.Object {
-    var policy: js.UndefOr[NonEmptyString]
+    var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
   object GetImagePolicyResponse {
     @inline
     def apply(
-        policy: js.UndefOr[NonEmptyString] = js.undefined,
+        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): GetImagePolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1521,14 +1526,14 @@ package imagebuilder {
 
   @js.native
   trait GetImageRecipePolicyResponse extends js.Object {
-    var policy: js.UndefOr[NonEmptyString]
+    var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
   object GetImageRecipePolicyResponse {
     @inline
     def apply(
-        policy: js.UndefOr[NonEmptyString] = js.undefined,
+        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): GetImageRecipePolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1871,7 +1876,7 @@ package imagebuilder {
   }
 
   /**
-    * Image state shows the images status and the reason for that status.
+    * Image state shows the image status and the reason for that status.
     */
   @js.native
   trait ImageState extends js.Object {
@@ -2195,7 +2200,7 @@ package imagebuilder {
   trait InstanceBlockDeviceMapping extends js.Object {
     var deviceName: js.UndefOr[NonEmptyString]
     var ebs: js.UndefOr[EbsInstanceBlockDeviceSpecification]
-    var noDevice: js.UndefOr[NonEmptyString]
+    var noDevice: js.UndefOr[EmptyString]
     var virtualName: js.UndefOr[NonEmptyString]
   }
 
@@ -2204,7 +2209,7 @@ package imagebuilder {
     def apply(
         deviceName: js.UndefOr[NonEmptyString] = js.undefined,
         ebs: js.UndefOr[EbsInstanceBlockDeviceSpecification] = js.undefined,
-        noDevice: js.UndefOr[NonEmptyString] = js.undefined,
+        noDevice: js.UndefOr[EmptyString] = js.undefined,
         virtualName: js.UndefOr[NonEmptyString] = js.undefined
     ): InstanceBlockDeviceMapping = {
       val __obj = js.Dynamic.literal()
@@ -2217,7 +2222,7 @@ package imagebuilder {
   }
 
   /**
-    *
+    * Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI.
     */
   @js.native
   trait LaunchPermissionConfiguration extends js.Object {
@@ -2428,8 +2433,8 @@ package imagebuilder {
 
   @js.native
   trait ListImagePipelineImagesRequest extends js.Object {
+    var imagePipelineArn: ImagePipelineArn
     var filters: js.UndefOr[FilterList]
-    var imagePipelineArn: js.UndefOr[ImagePipelineArn]
     var maxResults: js.UndefOr[RestrictedInteger]
     var nextToken: js.UndefOr[NonEmptyString]
   }
@@ -2437,14 +2442,16 @@ package imagebuilder {
   object ListImagePipelineImagesRequest {
     @inline
     def apply(
+        imagePipelineArn: ImagePipelineArn,
         filters: js.UndefOr[FilterList] = js.undefined,
-        imagePipelineArn: js.UndefOr[ImagePipelineArn] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
         nextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImagePipelineImagesRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
+      )
+
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      imagePipelineArn.foreach(__v => __obj.updateDynamic("imagePipelineArn")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImagePipelineImagesRequest]
@@ -2692,7 +2699,7 @@ package imagebuilder {
   }
 
   /**
-    * Logging configuration defines where Image Builder uploads your logs to.
+    * Logging configuration defines where Image Builder uploads your logs.
     */
   @js.native
   trait Logging extends js.Object {
@@ -2761,14 +2768,14 @@ package imagebuilder {
   @js.native
   trait PutComponentPolicyRequest extends js.Object {
     var componentArn: ComponentBuildVersionArn
-    var policy: NonEmptyString
+    var policy: ResourcePolicyDocument
   }
 
   object PutComponentPolicyRequest {
     @inline
     def apply(
         componentArn: ComponentBuildVersionArn,
-        policy: NonEmptyString
+        policy: ResourcePolicyDocument
     ): PutComponentPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "componentArn" -> componentArn.asInstanceOf[js.Any],
@@ -2801,14 +2808,14 @@ package imagebuilder {
   @js.native
   trait PutImagePolicyRequest extends js.Object {
     var imageArn: ImageBuildVersionArn
-    var policy: NonEmptyString
+    var policy: ResourcePolicyDocument
   }
 
   object PutImagePolicyRequest {
     @inline
     def apply(
         imageArn: ImageBuildVersionArn,
-        policy: NonEmptyString
+        policy: ResourcePolicyDocument
     ): PutImagePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "imageArn" -> imageArn.asInstanceOf[js.Any],
@@ -2841,14 +2848,14 @@ package imagebuilder {
   @js.native
   trait PutImageRecipePolicyRequest extends js.Object {
     var imageRecipeArn: ImageRecipeArn
-    var policy: NonEmptyString
+    var policy: ResourcePolicyDocument
   }
 
   object PutImageRecipePolicyRequest {
     @inline
     def apply(
         imageRecipeArn: ImageRecipeArn,
-        policy: NonEmptyString
+        policy: ResourcePolicyDocument
     ): PutImageRecipePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
@@ -2879,7 +2886,7 @@ package imagebuilder {
   }
 
   /**
-    * S3 Logging configuration.
+    * Amazon S3 logging configuration.
     */
   @js.native
   trait S3Logs extends js.Object {
@@ -3039,8 +3046,8 @@ package imagebuilder {
   trait UpdateDistributionConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var distributionConfigurationArn: DistributionConfigurationArn
+    var distributions: DistributionList
     var description: js.UndefOr[NonEmptyString]
-    var distributions: js.UndefOr[DistributionList]
   }
 
   object UpdateDistributionConfigurationRequest {
@@ -3048,16 +3055,16 @@ package imagebuilder {
     def apply(
         clientToken: ClientToken,
         distributionConfigurationArn: DistributionConfigurationArn,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        distributions: js.UndefOr[DistributionList] = js.undefined
+        distributions: DistributionList,
+        description: js.UndefOr[NonEmptyString] = js.undefined
     ): UpdateDistributionConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "clientToken"                  -> clientToken.asInstanceOf[js.Any],
-        "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any]
+        "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any],
+        "distributions"                -> distributions.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributions.foreach(__v => __obj.updateDynamic("distributions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDistributionConfigurationRequest]
     }
   }
@@ -3090,11 +3097,11 @@ package imagebuilder {
   trait UpdateImagePipelineRequest extends js.Object {
     var clientToken: ClientToken
     var imagePipelineArn: ImagePipelineArn
+    var imageRecipeArn: ImageRecipeArn
+    var infrastructureConfigurationArn: InfrastructureConfigurationArn
     var description: js.UndefOr[NonEmptyString]
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
-    var imageRecipeArn: js.UndefOr[ImageRecipeArn]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
-    var infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn]
     var schedule: js.UndefOr[Schedule]
     var status: js.UndefOr[PipelineStatus]
   }
@@ -3104,28 +3111,26 @@ package imagebuilder {
     def apply(
         clientToken: ClientToken,
         imagePipelineArn: ImagePipelineArn,
+        imageRecipeArn: ImageRecipeArn,
+        infrastructureConfigurationArn: InfrastructureConfigurationArn,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        imageRecipeArn: js.UndefOr[ImageRecipeArn] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined,
         status: js.UndefOr[PipelineStatus] = js.undefined
     ): UpdateImagePipelineRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"      -> clientToken.asInstanceOf[js.Any],
-        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
+        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
+        "imagePipelineArn"               -> imagePipelineArn.asInstanceOf[js.Any],
+        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
+        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       distributionConfigurationArn.foreach(__v =>
         __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
       )
-      imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateImagePipelineRequest]
@@ -3158,13 +3163,13 @@ package imagebuilder {
   trait UpdateInfrastructureConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
+    var instanceProfileName: NonEmptyString
     var description: js.UndefOr[NonEmptyString]
-    var instanceProfileName: js.UndefOr[NonEmptyString]
     var instanceTypes: js.UndefOr[InstanceTypeList]
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
     var securityGroupIds: js.UndefOr[SecurityGroupIds]
-    var snsTopicArn: js.UndefOr[NonEmptyString]
+    var snsTopicArn: js.UndefOr[SnsTopicArn]
     var subnetId: js.UndefOr[NonEmptyString]
     var terminateInstanceOnFailure: js.UndefOr[NullableBoolean]
   }
@@ -3174,23 +3179,23 @@ package imagebuilder {
     def apply(
         clientToken: ClientToken,
         infrastructureConfigurationArn: InfrastructureConfigurationArn,
+        instanceProfileName: NonEmptyString,
         description: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceProfileName: js.UndefOr[NonEmptyString] = js.undefined,
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        snsTopicArn: js.UndefOr[NonEmptyString] = js.undefined,
+        snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined,
         terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
     ): UpdateInfrastructureConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
+        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any],
+        "instanceProfileName"            -> instanceProfileName.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      instanceProfileName.foreach(__v => __obj.updateDynamic("instanceProfileName")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))

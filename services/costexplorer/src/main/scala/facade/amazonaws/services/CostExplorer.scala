@@ -227,7 +227,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
     *  </important> The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
     */
   @js.native
@@ -264,7 +264,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
     *  </important> A reference to a Cost Category containing only enough information to identify the Cost Category.
     *  You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.
     */
@@ -294,7 +294,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
     *  </important> Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
     */
   @js.native
@@ -328,7 +328,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
+    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
     *  </important> The values that are available for Cost Categories.
     */
   @js.native

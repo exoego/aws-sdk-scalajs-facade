@@ -770,8 +770,9 @@ package savingsplans {
   object SavingsPlanProductTypeEnum {
     val EC2     = "EC2"
     val Fargate = "Fargate"
+    val Lambda  = "Lambda"
 
-    val values = js.Object.freeze(js.Array(EC2, Fargate))
+    val values = js.Object.freeze(js.Array(EC2, Fargate, Lambda))
   }
 
   /**
@@ -898,14 +899,17 @@ package savingsplans {
   object SavingsPlanRateServiceCodeEnum {
     val AmazonEC2 = "AmazonEC2"
     val AmazonECS = "AmazonECS"
+    val AWSLambda = "AWSLambda"
 
-    val values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS))
+    val values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS, AWSLambda))
   }
 
   object SavingsPlanRateUnitEnum {
-    val Hrs = "Hrs"
+    val Hrs                = "Hrs"
+    val `Lambda-GB-Second` = "Lambda-GB-Second"
+    val Request            = "Request"
 
-    val values = js.Object.freeze(js.Array(Hrs))
+    val values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
   }
 
   object SavingsPlanStateEnum {

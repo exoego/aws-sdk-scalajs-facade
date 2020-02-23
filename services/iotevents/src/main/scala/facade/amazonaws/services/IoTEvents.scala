@@ -695,7 +695,7 @@ package iotevents {
   }
 
   /**
-    * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
+    * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait FirehoseAction extends js.Object {
@@ -841,7 +841,7 @@ package iotevents {
   }
 
   /**
-    * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the action.
+    * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.
     */
   @js.native
   trait IotEventsAction extends js.Object {
@@ -883,7 +883,7 @@ package iotevents {
   }
 
   /**
-    * Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.
+    * Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.
     */
   @js.native
   trait LambdaAction extends js.Object {
@@ -1265,7 +1265,7 @@ package iotevents {
   }
 
   /**
-    * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
+    * Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.
     */
   @js.native
   trait SqsAction extends js.Object {

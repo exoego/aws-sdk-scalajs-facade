@@ -10,9 +10,11 @@ package object robomaker {
   type Architecture                       = String
   type Arn                                = String
   type Arns                               = js.Array[Arn]
+  type BatchTimeoutInSeconds              = Double
   type BoxedBoolean                       = Boolean
   type ClientRequestToken                 = String
   type Command                            = String
+  type CreateSimulationJobRequests        = js.Array[SimulationJobRequest]
   type CreatedAt                          = js.Date
   type DataSourceConfigs                  = js.Array[DataSourceConfig]
   type DataSourceNames                    = js.Array[Name]
@@ -26,6 +28,8 @@ package object robomaker {
   type EnvironmentVariableKey             = String
   type EnvironmentVariableMap             = js.Dictionary[EnvironmentVariableValue]
   type EnvironmentVariableValue           = String
+  type FailedAt                           = js.Date
+  type FailedCreateSimulationJobRequests  = js.Array[FailedCreateSimulationJobRequest]
   type FailureBehavior                    = String
   type FilterValues                       = js.Array[Name]
   type Filters                            = js.Array[Filter]
@@ -37,6 +41,7 @@ package object robomaker {
   type JobDuration                        = Double
   type LastStartedAt                      = js.Date
   type LastUpdatedAt                      = js.Date
+  type MaxConcurrency                     = Int
   type MaxResults                         = Int
   type Name                               = String
   type NonEmptyString                     = String
@@ -68,6 +73,9 @@ package object robomaker {
   type SimulationApplicationConfigs       = js.Array[SimulationApplicationConfig]
   type SimulationApplicationNames         = js.Array[Name]
   type SimulationApplicationSummaries     = js.Array[SimulationApplicationSummary]
+  type SimulationJobBatchErrorCode        = String
+  type SimulationJobBatchStatus           = String
+  type SimulationJobBatchSummaries        = js.Array[SimulationJobBatchSummary]
   type SimulationJobErrorCode             = String
   type SimulationJobStatus                = String
   type SimulationJobSummaries             = js.Array[SimulationJobSummary]
@@ -92,6 +100,9 @@ package object robomaker {
     ): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise.toFuture
     @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] =
       service.cancelDeploymentJob(params).promise.toFuture
+    @inline def cancelSimulationJobBatchFuture(
+        params: CancelSimulationJobBatchRequest
+    ): Future[CancelSimulationJobBatchResponse] = service.cancelSimulationJobBatch(params).promise.toFuture
     @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] =
       service.cancelSimulationJob(params).promise.toFuture
     @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] =
@@ -140,6 +151,9 @@ package object robomaker {
     @inline def describeSimulationApplicationFuture(
         params: DescribeSimulationApplicationRequest
     ): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise.toFuture
+    @inline def describeSimulationJobBatchFuture(
+        params: DescribeSimulationJobBatchRequest
+    ): Future[DescribeSimulationJobBatchResponse] = service.describeSimulationJobBatch(params).promise.toFuture
     @inline def describeSimulationJobFuture(
         params: DescribeSimulationJobRequest
     ): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise.toFuture
@@ -155,6 +169,9 @@ package object robomaker {
     @inline def listSimulationApplicationsFuture(
         params: ListSimulationApplicationsRequest
     ): Future[ListSimulationApplicationsResponse] = service.listSimulationApplications(params).promise.toFuture
+    @inline def listSimulationJobBatchesFuture(
+        params: ListSimulationJobBatchesRequest
+    ): Future[ListSimulationJobBatchesResponse] = service.listSimulationJobBatches(params).promise.toFuture
     @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] =
       service.listSimulationJobs(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
@@ -163,6 +180,9 @@ package object robomaker {
       service.registerRobot(params).promise.toFuture
     @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] =
       service.restartSimulationJob(params).promise.toFuture
+    @inline def startSimulationJobBatchFuture(
+        params: StartSimulationJobBatchRequest
+    ): Future[StartSimulationJobBatchResponse] = service.startSimulationJobBatch(params).promise.toFuture
     @inline def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] =
       service.syncDeploymentJob(params).promise.toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
@@ -189,6 +209,8 @@ package robomaker {
     ): Request[BatchDescribeSimulationJobResponse]                                                    = js.native
     def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
+    def cancelSimulationJobBatch(params: CancelSimulationJobBatchRequest): Request[CancelSimulationJobBatchResponse] =
+      js.native
     def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse]                         = js.native
     def createRobot(params: CreateRobotRequest): Request[CreateRobotResponse]                         = js.native
@@ -221,20 +243,27 @@ package robomaker {
         params: DescribeSimulationApplicationRequest
     ): Request[DescribeSimulationApplicationResponse]                                                       = js.native
     def describeSimulationJob(params: DescribeSimulationJobRequest): Request[DescribeSimulationJobResponse] = js.native
+    def describeSimulationJobBatch(
+        params: DescribeSimulationJobBatchRequest
+    ): Request[DescribeSimulationJobBatchResponse]                                                          = js.native
     def listDeploymentJobs(params: ListDeploymentJobsRequest): Request[ListDeploymentJobsResponse]          = js.native
     def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse]                                  = js.native
     def listRobotApplications(params: ListRobotApplicationsRequest): Request[ListRobotApplicationsResponse] = js.native
     def listRobots(params: ListRobotsRequest): Request[ListRobotsResponse]                                  = js.native
     def listSimulationApplications(
         params: ListSimulationApplicationsRequest
-    ): Request[ListSimulationApplicationsResponse]                                                       = js.native
+    ): Request[ListSimulationApplicationsResponse] = js.native
+    def listSimulationJobBatches(params: ListSimulationJobBatchesRequest): Request[ListSimulationJobBatchesResponse] =
+      js.native
     def listSimulationJobs(params: ListSimulationJobsRequest): Request[ListSimulationJobsResponse]       = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
     def registerRobot(params: RegisterRobotRequest): Request[RegisterRobotResponse]                      = js.native
     def restartSimulationJob(params: RestartSimulationJobRequest): Request[RestartSimulationJobResponse] = js.native
-    def syncDeploymentJob(params: SyncDeploymentJobRequest): Request[SyncDeploymentJobResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
+    def startSimulationJobBatch(params: StartSimulationJobBatchRequest): Request[StartSimulationJobBatchResponse] =
+      js.native
+    def syncDeploymentJob(params: SyncDeploymentJobRequest): Request[SyncDeploymentJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                   = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]             = js.native
     def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] =
       js.native
     def updateSimulationApplication(
@@ -287,6 +316,28 @@ package robomaker {
     }
   }
 
+  /**
+    * Information about the batch policy.
+    */
+  @js.native
+  trait BatchPolicy extends js.Object {
+    var maxConcurrency: js.UndefOr[MaxConcurrency]
+    var timeoutInSeconds: js.UndefOr[BatchTimeoutInSeconds]
+  }
+
+  object BatchPolicy {
+    @inline
+    def apply(
+        maxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        timeoutInSeconds: js.UndefOr[BatchTimeoutInSeconds] = js.undefined
+    ): BatchPolicy = {
+      val __obj = js.Dynamic.literal()
+      maxConcurrency.foreach(__v => __obj.updateDynamic("maxConcurrency")(__v.asInstanceOf[js.Any]))
+      timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchPolicy]
+    }
+  }
+
   @js.native
   trait CancelDeploymentJobRequest extends js.Object {
     var job: Arn
@@ -315,6 +366,37 @@ package robomaker {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelDeploymentJobResponse]
+    }
+  }
+
+  @js.native
+  trait CancelSimulationJobBatchRequest extends js.Object {
+    var batch: Arn
+  }
+
+  object CancelSimulationJobBatchRequest {
+    @inline
+    def apply(
+        batch: Arn
+    ): CancelSimulationJobBatchRequest = {
+      val __obj = js.Dynamic.literal(
+        "batch" -> batch.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelSimulationJobBatchRequest]
+    }
+  }
+
+  @js.native
+  trait CancelSimulationJobBatchResponse extends js.Object {}
+
+  object CancelSimulationJobBatchResponse {
+    @inline
+    def apply(
+        ): CancelSimulationJobBatchResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CancelSimulationJobBatchResponse]
     }
   }
 
@@ -1608,6 +1690,73 @@ package robomaker {
   }
 
   @js.native
+  trait DescribeSimulationJobBatchRequest extends js.Object {
+    var batch: Arn
+  }
+
+  object DescribeSimulationJobBatchRequest {
+    @inline
+    def apply(
+        batch: Arn
+    ): DescribeSimulationJobBatchRequest = {
+      val __obj = js.Dynamic.literal(
+        "batch" -> batch.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeSimulationJobBatchRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeSimulationJobBatchResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var batchPolicy: js.UndefOr[BatchPolicy]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var createdRequests: js.UndefOr[SimulationJobSummaries]
+    var failedRequests: js.UndefOr[FailedCreateSimulationJobRequests]
+    var failureCode: js.UndefOr[SimulationJobBatchErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var pendingRequests: js.UndefOr[CreateSimulationJobRequests]
+    var status: js.UndefOr[SimulationJobBatchStatus]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object DescribeSimulationJobBatchResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        batchPolicy: js.UndefOr[BatchPolicy] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        createdRequests: js.UndefOr[SimulationJobSummaries] = js.undefined,
+        failedRequests: js.UndefOr[FailedCreateSimulationJobRequests] = js.undefined,
+        failureCode: js.UndefOr[SimulationJobBatchErrorCode] = js.undefined,
+        failureReason: js.UndefOr[GenericString] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        pendingRequests: js.UndefOr[CreateSimulationJobRequests] = js.undefined,
+        status: js.UndefOr[SimulationJobBatchStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): DescribeSimulationJobBatchResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      batchPolicy.foreach(__v => __obj.updateDynamic("batchPolicy")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      createdRequests.foreach(__v => __obj.updateDynamic("createdRequests")(__v.asInstanceOf[js.Any]))
+      failedRequests.foreach(__v => __obj.updateDynamic("failedRequests")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      pendingRequests.foreach(__v => __obj.updateDynamic("pendingRequests")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSimulationJobBatchResponse]
+    }
+  }
+
+  @js.native
   trait DescribeSimulationJobRequest extends js.Object {
     var job: Arn
   }
@@ -1695,6 +1844,34 @@ package robomaker {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSimulationJobResponse]
+    }
+  }
+
+  /**
+    * Information about a failed create simulation job request.
+    */
+  @js.native
+  trait FailedCreateSimulationJobRequest extends js.Object {
+    var failedAt: js.UndefOr[FailedAt]
+    var failureCode: js.UndefOr[SimulationJobErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var request: js.UndefOr[SimulationJobRequest]
+  }
+
+  object FailedCreateSimulationJobRequest {
+    @inline
+    def apply(
+        failedAt: js.UndefOr[FailedAt] = js.undefined,
+        failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
+        failureReason: js.UndefOr[GenericString] = js.undefined,
+        request: js.UndefOr[SimulationJobRequest] = js.undefined
+    ): FailedCreateSimulationJobRequest = {
+      val __obj = js.Dynamic.literal()
+      failedAt.foreach(__v => __obj.updateDynamic("failedAt")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      request.foreach(__v => __obj.updateDynamic("request")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedCreateSimulationJobRequest]
     }
   }
 
@@ -2003,6 +2180,49 @@ package robomaker {
         __obj.updateDynamic("simulationApplicationSummaries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListSimulationApplicationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSimulationJobBatchesRequest extends js.Object {
+    var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListSimulationJobBatchesRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[Filters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListSimulationJobBatchesRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSimulationJobBatchesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSimulationJobBatchesResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var simulationJobBatchSummaries: js.UndefOr[SimulationJobBatchSummaries]
+  }
+
+  object ListSimulationJobBatchesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        simulationJobBatchSummaries: js.UndefOr[SimulationJobBatchSummaries] = js.undefined
+    ): ListSimulationJobBatchesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      simulationJobBatchSummaries.foreach(__v =>
+        __obj.updateDynamic("simulationJobBatchSummaries")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListSimulationJobBatchesResponse]
     }
   }
 
@@ -2487,7 +2707,7 @@ package robomaker {
   }
 
   /**
-    * Information about a robot software suite.
+    * Information about a robot software suite (ROS distribution).
     */
   @js.native
   trait RobotSoftwareSuite extends js.Object {
@@ -2722,6 +2942,65 @@ package robomaker {
     }
   }
 
+  object SimulationJobBatchErrorCodeEnum {
+    val InternalServiceError = "InternalServiceError"
+
+    val values = js.Object.freeze(js.Array(InternalServiceError))
+  }
+
+  object SimulationJobBatchStatusEnum {
+    val Pending    = "Pending"
+    val InProgress = "InProgress"
+    val Failed     = "Failed"
+    val Completed  = "Completed"
+    val Canceled   = "Canceled"
+    val Canceling  = "Canceling"
+    val Completing = "Completing"
+    val TimingOut  = "TimingOut"
+    val TimedOut   = "TimedOut"
+
+    val values = js.Object.freeze(
+      js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
+    )
+  }
+
+  /**
+    * Information about a simulation job batch.
+    */
+  @js.native
+  trait SimulationJobBatchSummary extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var createdRequestCount: js.UndefOr[Int]
+    var failedRequestCount: js.UndefOr[Int]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var pendingRequestCount: js.UndefOr[Int]
+    var status: js.UndefOr[SimulationJobBatchStatus]
+  }
+
+  object SimulationJobBatchSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        createdRequestCount: js.UndefOr[Int] = js.undefined,
+        failedRequestCount: js.UndefOr[Int] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        pendingRequestCount: js.UndefOr[Int] = js.undefined,
+        status: js.UndefOr[SimulationJobBatchStatus] = js.undefined
+    ): SimulationJobBatchSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      createdRequestCount.foreach(__v => __obj.updateDynamic("createdRequestCount")(__v.asInstanceOf[js.Any]))
+      failedRequestCount.foreach(__v => __obj.updateDynamic("failedRequestCount")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      pendingRequestCount.foreach(__v => __obj.updateDynamic("pendingRequestCount")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimulationJobBatchSummary]
+    }
+  }
+
   object SimulationJobErrorCodeEnum {
     val InternalServiceError                       = "InternalServiceError"
     val RobotApplicationCrash                      = "RobotApplicationCrash"
@@ -2737,10 +3016,14 @@ package robomaker {
     val InvalidBundleRobotApplication              = "InvalidBundleRobotApplication"
     val InvalidBundleSimulationApplication         = "InvalidBundleSimulationApplication"
     val InvalidS3Resource                          = "InvalidS3Resource"
+    val LimitExceeded                              = "LimitExceeded"
     val MismatchedEtag                             = "MismatchedEtag"
     val RobotApplicationVersionMismatchedEtag      = "RobotApplicationVersionMismatchedEtag"
     val SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag"
     val ResourceNotFound                           = "ResourceNotFound"
+    val RequestThrottled                           = "RequestThrottled"
+    val BatchTimedOut                              = "BatchTimedOut"
+    val BatchCanceled                              = "BatchCanceled"
     val InvalidInput                               = "InvalidInput"
     val WrongRegionS3Bucket                        = "WrongRegionS3Bucket"
     val WrongRegionS3Output                        = "WrongRegionS3Output"
@@ -2763,10 +3046,14 @@ package robomaker {
         InvalidBundleRobotApplication,
         InvalidBundleSimulationApplication,
         InvalidS3Resource,
+        LimitExceeded,
         MismatchedEtag,
         RobotApplicationVersionMismatchedEtag,
         SimulationApplicationVersionMismatchedEtag,
         ResourceNotFound,
+        RequestThrottled,
+        BatchTimedOut,
+        BatchCanceled,
         InvalidInput,
         WrongRegionS3Bucket,
         WrongRegionS3Output,
@@ -2774,6 +3061,57 @@ package robomaker {
         WrongRegionSimulationApplication
       )
     )
+  }
+
+  /**
+    * Information about a simulation job request.
+    */
+  @js.native
+  trait SimulationJobRequest extends js.Object {
+    var maxJobDurationInSeconds: JobDuration
+    var dataSources: js.UndefOr[DataSourceConfigs]
+    var failureBehavior: js.UndefOr[FailureBehavior]
+    var iamRole: js.UndefOr[IamRole]
+    var loggingConfig: js.UndefOr[LoggingConfig]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
+    var tags: js.UndefOr[TagMap]
+    var useDefaultApplications: js.UndefOr[BoxedBoolean]
+    var vpcConfig: js.UndefOr[VPCConfig]
+  }
+
+  object SimulationJobRequest {
+    @inline
+    def apply(
+        maxJobDurationInSeconds: JobDuration,
+        dataSources: js.UndefOr[DataSourceConfigs] = js.undefined,
+        failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
+        iamRole: js.UndefOr[IamRole] = js.undefined,
+        loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
+        outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+        robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+        simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        useDefaultApplications: js.UndefOr[BoxedBoolean] = js.undefined,
+        vpcConfig: js.UndefOr[VPCConfig] = js.undefined
+    ): SimulationJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.asInstanceOf[js.Any]
+      )
+
+      dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
+      failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
+      simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      useDefaultApplications.foreach(__v => __obj.updateDynamic("useDefaultApplications")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimulationJobRequest]
+    }
   }
 
   object SimulationJobStatusEnum {
@@ -2922,6 +3260,79 @@ package robomaker {
       s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
       s3Key.foreach(__v => __obj.updateDynamic("s3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceConfig]
+    }
+  }
+
+  @js.native
+  trait StartSimulationJobBatchRequest extends js.Object {
+    var createSimulationJobRequests: CreateSimulationJobRequests
+    var batchPolicy: js.UndefOr[BatchPolicy]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object StartSimulationJobBatchRequest {
+    @inline
+    def apply(
+        createSimulationJobRequests: CreateSimulationJobRequests,
+        batchPolicy: js.UndefOr[BatchPolicy] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): StartSimulationJobBatchRequest = {
+      val __obj = js.Dynamic.literal(
+        "createSimulationJobRequests" -> createSimulationJobRequests.asInstanceOf[js.Any]
+      )
+
+      batchPolicy.foreach(__v => __obj.updateDynamic("batchPolicy")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSimulationJobBatchRequest]
+    }
+  }
+
+  @js.native
+  trait StartSimulationJobBatchResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var batchPolicy: js.UndefOr[BatchPolicy]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var createdRequests: js.UndefOr[SimulationJobSummaries]
+    var failedRequests: js.UndefOr[FailedCreateSimulationJobRequests]
+    var failureCode: js.UndefOr[SimulationJobBatchErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var pendingRequests: js.UndefOr[CreateSimulationJobRequests]
+    var status: js.UndefOr[SimulationJobBatchStatus]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object StartSimulationJobBatchResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        batchPolicy: js.UndefOr[BatchPolicy] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        createdRequests: js.UndefOr[SimulationJobSummaries] = js.undefined,
+        failedRequests: js.UndefOr[FailedCreateSimulationJobRequests] = js.undefined,
+        failureCode: js.UndefOr[SimulationJobBatchErrorCode] = js.undefined,
+        failureReason: js.UndefOr[GenericString] = js.undefined,
+        pendingRequests: js.UndefOr[CreateSimulationJobRequests] = js.undefined,
+        status: js.UndefOr[SimulationJobBatchStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): StartSimulationJobBatchResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      batchPolicy.foreach(__v => __obj.updateDynamic("batchPolicy")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      createdRequests.foreach(__v => __obj.updateDynamic("createdRequests")(__v.asInstanceOf[js.Any]))
+      failedRequests.foreach(__v => __obj.updateDynamic("failedRequests")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      pendingRequests.foreach(__v => __obj.updateDynamic("pendingRequests")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSimulationJobBatchResponse]
     }
   }
 

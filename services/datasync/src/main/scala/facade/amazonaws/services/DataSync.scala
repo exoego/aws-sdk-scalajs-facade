@@ -20,23 +20,27 @@ package object datasync {
   type Ec2SecurityGroupArnList         = js.Array[Ec2SecurityGroupArn]
   type Ec2SubnetArn                    = String
   type EfsFilesystemArn                = String
+  type EfsSubdirectory                 = String
   type Endpoint                        = String
   type EndpointType                    = String
   type FilterList                      = js.Array[FilterRule]
   type FilterType                      = String
   type FilterValue                     = String
+  type FsxFilesystemArn                = String
+  type FsxWindowsSubdirectory          = String
   type Gid                             = String
   type IamRoleArn                      = String
   type LocationArn                     = String
   type LocationList                    = js.Array[LocationListEntry]
   type LocationUri                     = String
   type LogGroupArn                     = String
+  type LogLevel                        = String
   type MaxResults                      = Int
   type Mtime                           = String
   type NetworkInterfaceArn             = String
   type NextToken                       = String
+  type NfsSubdirectory                 = String
   type NfsVersion                      = String
-  type NonEmptySubdirectory            = String
   type OverwriteMode                   = String
   type PLSecurityGroupArnList          = js.Array[Ec2SecurityGroupArn]
   type PLSubnetArnList                 = js.Array[Ec2SubnetArn]
@@ -46,14 +50,15 @@ package object datasync {
   type PreserveDevices                 = String
   type S3BucketArn                     = String
   type S3StorageClass                  = String
+  type S3Subdirectory                  = String
   type ScheduleExpressionCron          = String
   type ServerHostname                  = String
   type SmbDomain                       = String
   type SmbPassword                     = String
+  type SmbSubdirectory                 = String
   type SmbUser                         = String
   type SmbVersion                      = String
   type SourceNetworkInterfaceArns      = js.Array[NetworkInterfaceArn]
-  type Subdirectory                    = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagList                         = js.Array[TagListEntry]
@@ -79,6 +84,9 @@ package object datasync {
       service.createAgent(params).promise.toFuture
     @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
       service.createLocationEfs(params).promise.toFuture
+    @inline def createLocationFsxWindowsFuture(
+        params: CreateLocationFsxWindowsRequest
+    ): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise.toFuture
     @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
       service.createLocationNfs(params).promise.toFuture
     @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
@@ -97,6 +105,9 @@ package object datasync {
       service.describeAgent(params).promise.toFuture
     @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
       service.describeLocationEfs(params).promise.toFuture
+    @inline def describeLocationFsxWindowsFuture(
+        params: DescribeLocationFsxWindowsRequest
+    ): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise.toFuture
     @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
       service.describeLocationNfs(params).promise.toFuture
     @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
@@ -137,18 +148,23 @@ package datasync {
   class DataSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse]       = js.native
-    def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse]                               = js.native
-    def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse]             = js.native
-    def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse]             = js.native
-    def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response]                = js.native
-    def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse]             = js.native
-    def createTask(params: CreateTaskRequest): Request[CreateTaskResponse]                                  = js.native
-    def deleteAgent(params: DeleteAgentRequest): Request[DeleteAgentResponse]                               = js.native
-    def deleteLocation(params: DeleteLocationRequest): Request[DeleteLocationResponse]                      = js.native
-    def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse]                                  = js.native
-    def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse]                         = js.native
-    def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse]       = js.native
+    def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
+    def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse]                         = js.native
+    def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse]       = js.native
+    def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] =
+      js.native
+    def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse]       = js.native
+    def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response]          = js.native
+    def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse]       = js.native
+    def createTask(params: CreateTaskRequest): Request[CreateTaskResponse]                            = js.native
+    def deleteAgent(params: DeleteAgentRequest): Request[DeleteAgentResponse]                         = js.native
+    def deleteLocation(params: DeleteLocationRequest): Request[DeleteLocationResponse]                = js.native
+    def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse]                            = js.native
+    def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse]                   = js.native
+    def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse] = js.native
+    def describeLocationFsxWindows(
+        params: DescribeLocationFsxWindowsRequest
+    ): Request[DescribeLocationFsxWindowsResponse]                                                          = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse]       = js.native
     def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response]          = js.native
     def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse]       = js.native
@@ -289,7 +305,7 @@ package datasync {
   trait CreateLocationEfsRequest extends js.Object {
     var Ec2Config: Ec2Config
     var EfsFilesystemArn: EfsFilesystemArn
-    var Subdirectory: js.UndefOr[Subdirectory]
+    var Subdirectory: js.UndefOr[EfsSubdirectory]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -298,7 +314,7 @@ package datasync {
     def apply(
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
-        Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
+        Subdirectory: js.UndefOr[EfsSubdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationEfsRequest = {
       val __obj = js.Dynamic.literal(
@@ -332,10 +348,62 @@ package datasync {
   }
 
   @js.native
+  trait CreateLocationFsxWindowsRequest extends js.Object {
+    var FsxFilesystemArn: FsxFilesystemArn
+    var Password: SmbPassword
+    var SecurityGroupArns: Ec2SecurityGroupArnList
+    var User: SmbUser
+    var Domain: js.UndefOr[SmbDomain]
+    var Subdirectory: js.UndefOr[FsxWindowsSubdirectory]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateLocationFsxWindowsRequest {
+    @inline
+    def apply(
+        FsxFilesystemArn: FsxFilesystemArn,
+        Password: SmbPassword,
+        SecurityGroupArns: Ec2SecurityGroupArnList,
+        User: SmbUser,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        Subdirectory: js.UndefOr[FsxWindowsSubdirectory] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateLocationFsxWindowsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FsxFilesystemArn"  -> FsxFilesystemArn.asInstanceOf[js.Any],
+        "Password"          -> Password.asInstanceOf[js.Any],
+        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
+        "User"              -> User.asInstanceOf[js.Any]
+      )
+
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxWindowsRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxWindowsResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationFsxWindowsResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationFsxWindowsResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxWindowsResponse]
+    }
+  }
+
+  @js.native
   trait CreateLocationNfsRequest extends js.Object {
     var OnPremConfig: OnPremConfig
     var ServerHostname: ServerHostname
-    var Subdirectory: NonEmptySubdirectory
+    var Subdirectory: NfsSubdirectory
     var MountOptions: js.UndefOr[NfsMountOptions]
     var Tags: js.UndefOr[TagList]
   }
@@ -345,7 +413,7 @@ package datasync {
     def apply(
         OnPremConfig: OnPremConfig,
         ServerHostname: ServerHostname,
-        Subdirectory: NonEmptySubdirectory,
+        Subdirectory: NfsSubdirectory,
         MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationNfsRequest = {
@@ -382,7 +450,7 @@ package datasync {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
     var S3StorageClass: js.UndefOr[S3StorageClass]
-    var Subdirectory: js.UndefOr[Subdirectory]
+    var Subdirectory: js.UndefOr[S3Subdirectory]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -392,7 +460,7 @@ package datasync {
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
         S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
-        Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
+        Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationS3Request = {
       val __obj = js.Dynamic.literal(
@@ -428,7 +496,7 @@ package datasync {
     var AgentArns: AgentArnList
     var Password: SmbPassword
     var ServerHostname: ServerHostname
-    var Subdirectory: NonEmptySubdirectory
+    var Subdirectory: SmbSubdirectory
     var User: SmbUser
     var Domain: js.UndefOr[SmbDomain]
     var MountOptions: js.UndefOr[SmbMountOptions]
@@ -441,7 +509,7 @@ package datasync {
         AgentArns: AgentArnList,
         Password: SmbPassword,
         ServerHostname: ServerHostname,
-        Subdirectory: NonEmptySubdirectory,
+        Subdirectory: SmbSubdirectory,
         User: SmbUser,
         Domain: js.UndefOr[SmbDomain] = js.undefined,
         MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
@@ -727,6 +795,55 @@ package datasync {
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationEfsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxWindowsRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationFsxWindowsRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationFsxWindowsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeLocationFsxWindowsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxWindowsResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
+    var Domain: js.UndefOr[SmbDomain]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList]
+    var User: js.UndefOr[SmbUser]
+  }
+
+  object DescribeLocationFsxWindowsResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined,
+        User: js.UndefOr[SmbUser] = js.undefined
+    ): DescribeLocationFsxWindowsResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationFsxWindowsResponse]
     }
   }
 
@@ -1313,6 +1430,14 @@ package datasync {
     }
   }
 
+  object LogLevelEnum {
+    val OFF      = "OFF"
+    val BASIC    = "BASIC"
+    val TRANSFER = "TRANSFER"
+
+    val values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
+  }
+
   object MtimeEnum {
     val NONE     = "NONE"
     val PRESERVE = "PRESERVE"
@@ -1378,6 +1503,7 @@ package datasync {
     var Atime: js.UndefOr[Atime]
     var BytesPerSecond: js.UndefOr[BytesPerSecond]
     var Gid: js.UndefOr[Gid]
+    var LogLevel: js.UndefOr[LogLevel]
     var Mtime: js.UndefOr[Mtime]
     var OverwriteMode: js.UndefOr[OverwriteMode]
     var PosixPermissions: js.UndefOr[PosixPermissions]
@@ -1394,6 +1520,7 @@ package datasync {
         Atime: js.UndefOr[Atime] = js.undefined,
         BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
         Gid: js.UndefOr[Gid] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Mtime: js.UndefOr[Mtime] = js.undefined,
         OverwriteMode: js.UndefOr[OverwriteMode] = js.undefined,
         PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
@@ -1407,6 +1534,7 @@ package datasync {
       Atime.foreach(__v => __obj.updateDynamic("Atime")(__v.asInstanceOf[js.Any]))
       BytesPerSecond.foreach(__v => __obj.updateDynamic("BytesPerSecond")(__v.asInstanceOf[js.Any]))
       Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
       Mtime.foreach(__v => __obj.updateDynamic("Mtime")(__v.asInstanceOf[js.Any]))
       OverwriteMode.foreach(__v => __obj.updateDynamic("OverwriteMode")(__v.asInstanceOf[js.Any]))
       PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))

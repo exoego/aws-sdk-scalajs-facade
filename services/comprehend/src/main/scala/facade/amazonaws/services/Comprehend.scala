@@ -18,6 +18,7 @@ package object comprehend {
   type DocumentClassificationJobPropertiesList    = js.Array[DocumentClassificationJobProperties]
   type DocumentClassifierArn                      = String
   type DocumentClassifierEndpointArn              = String
+  type DocumentClassifierMode                     = String
   type DocumentClassifierPropertiesList           = js.Array[DocumentClassifierProperties]
   type DominantLanguageDetectionJobPropertiesList = js.Array[DominantLanguageDetectionJobProperties]
   type EndpointPropertiesList                     = js.Array[EndpointProperties]
@@ -37,6 +38,7 @@ package object comprehend {
   type JobStatus                                  = String
   type KeyPhrasesDetectionJobPropertiesList       = js.Array[KeyPhrasesDetectionJobProperties]
   type KmsKeyId                                   = String
+  type LabelDelimiter                             = String
   type LanguageCode                               = String
   type ListOfClasses                              = js.Array[DocumentClass]
   type ListOfDetectDominantLanguageResult         = js.Array[BatchDetectDominantLanguageItemResult]
@@ -47,6 +49,7 @@ package object comprehend {
   type ListOfDominantLanguages                    = js.Array[DominantLanguage]
   type ListOfEntities                             = js.Array[Entity]
   type ListOfKeyPhrases                           = js.Array[KeyPhrase]
+  type ListOfLabels                               = js.Array[DocumentLabel]
   type ListOfSyntaxTokens                         = js.Array[SyntaxToken]
   type MaxResultsInteger                          = Int
   type ModelStatus                                = String
@@ -682,6 +685,10 @@ package comprehend {
   trait ClassifierEvaluationMetrics extends js.Object {
     var Accuracy: js.UndefOr[Double]
     var F1Score: js.UndefOr[Double]
+    var HammingLoss: js.UndefOr[Double]
+    var MicroF1Score: js.UndefOr[Double]
+    var MicroPrecision: js.UndefOr[Double]
+    var MicroRecall: js.UndefOr[Double]
     var Precision: js.UndefOr[Double]
     var Recall: js.UndefOr[Double]
   }
@@ -691,12 +698,20 @@ package comprehend {
     def apply(
         Accuracy: js.UndefOr[Double] = js.undefined,
         F1Score: js.UndefOr[Double] = js.undefined,
+        HammingLoss: js.UndefOr[Double] = js.undefined,
+        MicroF1Score: js.UndefOr[Double] = js.undefined,
+        MicroPrecision: js.UndefOr[Double] = js.undefined,
+        MicroRecall: js.UndefOr[Double] = js.undefined,
         Precision: js.UndefOr[Double] = js.undefined,
         Recall: js.UndefOr[Double] = js.undefined
     ): ClassifierEvaluationMetrics = {
       val __obj = js.Dynamic.literal()
       Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
       F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
+      HammingLoss.foreach(__v => __obj.updateDynamic("HammingLoss")(__v.asInstanceOf[js.Any]))
+      MicroF1Score.foreach(__v => __obj.updateDynamic("MicroF1Score")(__v.asInstanceOf[js.Any]))
+      MicroPrecision.foreach(__v => __obj.updateDynamic("MicroPrecision")(__v.asInstanceOf[js.Any]))
+      MicroRecall.foreach(__v => __obj.updateDynamic("MicroRecall")(__v.asInstanceOf[js.Any]))
       Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
       Recall.foreach(__v => __obj.updateDynamic("Recall")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassifierEvaluationMetrics]
@@ -755,15 +770,18 @@ package comprehend {
   @js.native
   trait ClassifyDocumentResponse extends js.Object {
     var Classes: js.UndefOr[ListOfClasses]
+    var Labels: js.UndefOr[ListOfLabels]
   }
 
   object ClassifyDocumentResponse {
     @inline
     def apply(
-        Classes: js.UndefOr[ListOfClasses] = js.undefined
+        Classes: js.UndefOr[ListOfClasses] = js.undefined,
+        Labels: js.UndefOr[ListOfLabels] = js.undefined
     ): ClassifyDocumentResponse = {
       val __obj = js.Dynamic.literal()
       Classes.foreach(__v => __obj.updateDynamic("Classes")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassifyDocumentResponse]
     }
   }
@@ -775,6 +793,7 @@ package comprehend {
     var InputDataConfig: DocumentClassifierInputDataConfig
     var LanguageCode: LanguageCode
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var Mode: js.UndefOr[DocumentClassifierMode]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Tags: js.UndefOr[TagList]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
@@ -789,6 +808,7 @@ package comprehend {
         InputDataConfig: DocumentClassifierInputDataConfig,
         LanguageCode: LanguageCode,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
@@ -802,6 +822,7 @@ package comprehend {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -1661,19 +1682,29 @@ package comprehend {
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
     var S3Uri: S3Uri
+    var LabelDelimiter: js.UndefOr[LabelDelimiter]
   }
 
   object DocumentClassifierInputDataConfig {
     @inline
     def apply(
-        S3Uri: S3Uri
+        S3Uri: S3Uri,
+        LabelDelimiter: js.UndefOr[LabelDelimiter] = js.undefined
     ): DocumentClassifierInputDataConfig = {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
+      LabelDelimiter.foreach(__v => __obj.updateDynamic("LabelDelimiter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClassifierInputDataConfig]
     }
+  }
+
+  object DocumentClassifierModeEnum {
+    val MULTI_CLASS = "MULTI_CLASS"
+    val MULTI_LABEL = "MULTI_LABEL"
+
+    val values = js.Object.freeze(js.Array(MULTI_CLASS, MULTI_LABEL))
   }
 
   /**
@@ -1710,6 +1741,7 @@ package comprehend {
     var InputDataConfig: js.UndefOr[DocumentClassifierInputDataConfig]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Message: js.UndefOr[AnyLengthString]
+    var Mode: js.UndefOr[DocumentClassifierMode]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Status: js.UndefOr[ModelStatus]
     var SubmitTime: js.UndefOr[Timestamp]
@@ -1729,6 +1761,7 @@ package comprehend {
         InputDataConfig: js.UndefOr[DocumentClassifierInputDataConfig] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Message: js.UndefOr[AnyLengthString] = js.undefined,
+        Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1745,6 +1778,7 @@ package comprehend {
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
@@ -1753,6 +1787,28 @@ package comprehend {
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClassifierProperties]
+    }
+  }
+
+  /**
+    * Specifies one of the label or labels that categorize the document being analyzed.
+    */
+  @js.native
+  trait DocumentLabel extends js.Object {
+    var Name: js.UndefOr[String]
+    var Score: js.UndefOr[Float]
+  }
+
+  object DocumentLabel {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): DocumentLabel = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentLabel]
     }
   }
 

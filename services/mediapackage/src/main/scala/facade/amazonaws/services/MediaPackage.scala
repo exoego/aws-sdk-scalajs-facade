@@ -136,6 +136,30 @@ package mediapackage {
   }
 
   /**
+    * CDN Authorization credentials
+    */
+  @js.native
+  trait Authorization extends js.Object {
+    var CdnIdentifierSecret: __string
+    var SecretsRoleArn: __string
+  }
+
+  object Authorization {
+    @inline
+    def apply(
+        CdnIdentifierSecret: __string,
+        SecretsRoleArn: __string
+    ): Authorization = {
+      val __obj = js.Dynamic.literal(
+        "CdnIdentifierSecret" -> CdnIdentifierSecret.asInstanceOf[js.Any],
+        "SecretsRoleArn"      -> SecretsRoleArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Authorization]
+    }
+  }
+
+  /**
     * A Channel resource configuration.
     */
   @js.native
@@ -389,6 +413,7 @@ package mediapackage {
   trait CreateOriginEndpointRequest extends js.Object {
     var ChannelId: __string
     var Id: __string
+    var Authorization: js.UndefOr[Authorization]
     var CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters]
     var DashPackage: js.UndefOr[DashPackage]
     var Description: js.UndefOr[__string]
@@ -407,6 +432,7 @@ package mediapackage {
     def apply(
         ChannelId: __string,
         Id: __string,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -424,6 +450,7 @@ package mediapackage {
         "Id"        -> Id.asInstanceOf[js.Any]
       )
 
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -442,6 +469,7 @@ package mediapackage {
   @js.native
   trait CreateOriginEndpointResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var Authorization: js.UndefOr[Authorization]
     var ChannelId: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
@@ -462,6 +490,7 @@ package mediapackage {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
@@ -479,6 +508,7 @@ package mediapackage {
     ): CreateOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
@@ -769,6 +799,7 @@ package mediapackage {
   @js.native
   trait DescribeOriginEndpointResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var Authorization: js.UndefOr[Authorization]
     var ChannelId: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
@@ -789,6 +820,7 @@ package mediapackage {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
@@ -806,6 +838,7 @@ package mediapackage {
     ): DescribeOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
@@ -1323,6 +1356,7 @@ package mediapackage {
   @js.native
   trait OriginEndpoint extends js.Object {
     var Arn: js.UndefOr[__string]
+    var Authorization: js.UndefOr[Authorization]
     var ChannelId: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
@@ -1343,6 +1377,7 @@ package mediapackage {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
@@ -1360,6 +1395,7 @@ package mediapackage {
     ): OriginEndpoint = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
@@ -1706,6 +1742,7 @@ package mediapackage {
   @js.native
   trait UpdateOriginEndpointRequest extends js.Object {
     var Id: __string
+    var Authorization: js.UndefOr[Authorization]
     var CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters]
     var DashPackage: js.UndefOr[DashPackage]
     var Description: js.UndefOr[__string]
@@ -1722,6 +1759,7 @@ package mediapackage {
     @inline
     def apply(
         Id: __string,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -1737,6 +1775,7 @@ package mediapackage {
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1754,6 +1793,7 @@ package mediapackage {
   @js.native
   trait UpdateOriginEndpointResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var Authorization: js.UndefOr[Authorization]
     var ChannelId: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
@@ -1774,6 +1814,7 @@ package mediapackage {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
         ChannelId: js.UndefOr[__string] = js.undefined,
         CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
         DashPackage: js.UndefOr[DashPackage] = js.undefined,
@@ -1791,6 +1832,7 @@ package mediapackage {
     ): UpdateOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
       CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
       DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))

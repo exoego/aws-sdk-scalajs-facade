@@ -2847,6 +2847,9 @@ package servicecatalog {
     }
   }
 
+  /**
+    * Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product.
+    */
   @js.native
   trait ExecutionParameter extends js.Object {
     var DefaultValues: js.UndefOr[ExecutionParameterValueList]
@@ -3195,19 +3198,28 @@ package servicecatalog {
   trait ListPortfolioAccessInput extends js.Object {
     var PortfolioId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var OrganizationParentId: js.UndefOr[Id]
+    var PageSize: js.UndefOr[PageSize]
+    var PageToken: js.UndefOr[PageToken]
   }
 
   object ListPortfolioAccessInput {
     @inline
     def apply(
         PortfolioId: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        OrganizationParentId: js.UndefOr[Id] = js.undefined,
+        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfolioAccessInput = {
       val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      OrganizationParentId.foreach(__v => __obj.updateDynamic("OrganizationParentId")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfolioAccessInput]
     }
   }

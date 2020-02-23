@@ -18,6 +18,7 @@ package object cloudwatch {
   type AmazonResourceName                = String
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
   type AnomalyDetectorMetricTimezone     = String
+  type AnomalyDetectorStateValue         = String
   type AnomalyDetectors                  = js.Array[AnomalyDetector]
   type BatchFailures                     = js.Array[PartialFailure]
   type ComparisonOperator                = String
@@ -263,6 +264,7 @@ package cloudwatch {
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
     var Stat: js.UndefOr[Stat]
+    var StateValue: js.UndefOr[AnomalyDetectorStateValue]
   }
 
   object AnomalyDetector {
@@ -272,7 +274,8 @@ package cloudwatch {
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
-        Stat: js.UndefOr[Stat] = js.undefined
+        Stat: js.UndefOr[Stat] = js.undefined,
+        StateValue: js.UndefOr[AnomalyDetectorStateValue] = js.undefined
     ): AnomalyDetector = {
       val __obj = js.Dynamic.literal()
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
@@ -280,6 +283,7 @@ package cloudwatch {
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
+      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetector]
     }
   }
@@ -304,6 +308,14 @@ package cloudwatch {
       MetricTimezone.foreach(__v => __obj.updateDynamic("MetricTimezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetectorConfiguration]
     }
+  }
+
+  object AnomalyDetectorStateValueEnum {
+    val PENDING_TRAINING          = "PENDING_TRAINING"
+    val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA"
+    val TRAINED                   = "TRAINED"
+
+    val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
 
   object ComparisonOperatorEnum {

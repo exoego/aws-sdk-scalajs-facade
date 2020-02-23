@@ -2349,6 +2349,7 @@ package glue {
     var LogUri: js.UndefOr[UriString]
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[MaxRetries]
+    var NonOverridableArguments: js.UndefOr[GenericMap]
     var NotificationProperty: js.UndefOr[NotificationProperty]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var SecurityConfiguration: js.UndefOr[NameString]
@@ -2372,6 +2373,7 @@ package glue {
         LogUri: js.UndefOr[UriString] = js.undefined,
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+        NonOverridableArguments: js.UndefOr[GenericMap] = js.undefined,
         NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
@@ -2394,6 +2396,7 @@ package glue {
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      NonOverridableArguments.foreach(__v => __obj.updateDynamic("NonOverridableArguments")(__v.asInstanceOf[js.Any]))
       NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
@@ -5889,6 +5892,7 @@ package glue {
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[MaxRetries]
     var Name: js.UndefOr[NameString]
+    var NonOverridableArguments: js.UndefOr[GenericMap]
     var NotificationProperty: js.UndefOr[NotificationProperty]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var Role: js.UndefOr[RoleString]
@@ -5913,6 +5917,7 @@ package glue {
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
+        NonOverridableArguments: js.UndefOr[GenericMap] = js.undefined,
         NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         Role: js.UndefOr[RoleString] = js.undefined,
@@ -5934,6 +5939,7 @@ package glue {
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NonOverridableArguments.foreach(__v => __obj.updateDynamic("NonOverridableArguments")(__v.asInstanceOf[js.Any]))
       NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
@@ -6165,6 +6171,7 @@ package glue {
     var LogUri: js.UndefOr[UriString]
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[MaxRetries]
+    var NonOverridableArguments: js.UndefOr[GenericMap]
     var NotificationProperty: js.UndefOr[NotificationProperty]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var Role: js.UndefOr[RoleString]
@@ -6186,6 +6193,7 @@ package glue {
         LogUri: js.UndefOr[UriString] = js.undefined,
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+        NonOverridableArguments: js.UndefOr[GenericMap] = js.undefined,
         NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         Role: js.UndefOr[RoleString] = js.undefined,
@@ -6204,6 +6212,7 @@ package glue {
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      NonOverridableArguments.foreach(__v => __obj.updateDynamic("NonOverridableArguments")(__v.asInstanceOf[js.Any]))
       NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))

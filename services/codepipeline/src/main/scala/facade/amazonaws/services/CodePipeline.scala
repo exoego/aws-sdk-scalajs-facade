@@ -106,6 +106,7 @@ package object codepipeline {
   type StageRetryMode                         = String
   type StageStateList                         = js.Array[StageState]
   type StageTransitionType                    = String
+  type StopPipelineExecutionReason            = String
   type TagKey                                 = String
   type TagKeyList                             = js.Array[TagKey]
   type TagList                                = js.Array[Tag]
@@ -206,6 +207,8 @@ package object codepipeline {
     @inline def startPipelineExecutionFuture(
         params: StartPipelineExecutionInput
     ): Future[StartPipelineExecutionOutput] = service.startPipelineExecution(params).promise.toFuture
+    @inline def stopPipelineExecutionFuture(params: StopPipelineExecutionInput): Future[StopPipelineExecutionOutput] =
+      service.stopPipelineExecution(params).promise.toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
@@ -260,13 +263,14 @@ package codepipeline {
     ): Request[RegisterWebhookWithThirdPartyOutput]                                                        = js.native
     def retryStageExecution(params: RetryStageExecutionInput): Request[RetryStageExecutionOutput]          = js.native
     def startPipelineExecution(params: StartPipelineExecutionInput): Request[StartPipelineExecutionOutput] = js.native
+    def stopPipelineExecution(params: StopPipelineExecutionInput): Request[StopPipelineExecutionOutput]    = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
     def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput]                         = js.native
   }
 
   /**
-    * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline in AWS CodePipeline.
+    * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.
     */
   @js.native
   trait AWSSessionCredentials extends js.Object {
@@ -722,10 +726,11 @@ package codepipeline {
 
   object ActionExecutionStatusEnum {
     val InProgress = "InProgress"
+    val Abandoned  = "Abandoned"
     val Succeeded  = "Succeeded"
     val Failed     = "Failed"
 
-    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
+    val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
   }
 
   object ActionOwnerEnum {
@@ -1054,7 +1059,7 @@ package codepipeline {
   }
 
   /**
-    * The Amazon S3 bucket where artifacts for the pipeline are stored.
+    * The S3 bucket where artifacts for the pipeline are stored.
     *
     * '''Note:'''You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
     */
@@ -2348,11 +2353,13 @@ package codepipeline {
 
   object PipelineExecutionStatusEnum {
     val InProgress = "InProgress"
+    val Stopped    = "Stopped"
+    val Stopping   = "Stopping"
     val Succeeded  = "Succeeded"
     val Superseded = "Superseded"
     val Failed     = "Failed"
 
-    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Superseded, Failed))
+    val values = js.Object.freeze(js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed))
   }
 
   /**
@@ -2365,6 +2372,7 @@ package codepipeline {
     var sourceRevisions: js.UndefOr[SourceRevisionList]
     var startTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[PipelineExecutionStatus]
+    var stopTrigger: js.UndefOr[StopExecutionTrigger]
     var trigger: js.UndefOr[ExecutionTrigger]
   }
 
@@ -2376,6 +2384,7 @@ package codepipeline {
         sourceRevisions: js.UndefOr[SourceRevisionList] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[PipelineExecutionStatus] = js.undefined,
+        stopTrigger: js.UndefOr[StopExecutionTrigger] = js.undefined,
         trigger: js.UndefOr[ExecutionTrigger] = js.undefined
     ): PipelineExecutionSummary = {
       val __obj = js.Dynamic.literal()
@@ -2384,6 +2393,7 @@ package codepipeline {
       sourceRevisions.foreach(__v => __obj.updateDynamic("sourceRevisions")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      stopTrigger.foreach(__v => __obj.updateDynamic("stopTrigger")(__v.asInstanceOf[js.Any]))
       trigger.foreach(__v => __obj.updateDynamic("trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecutionSummary]
     }
@@ -2868,7 +2878,7 @@ package codepipeline {
   }
 
   /**
-    * The location of the Amazon S3 bucket that contains a revision.
+    * The location of the S3 bucket that contains a revision.
     */
   @js.native
   trait S3ArtifactLocation extends js.Object {
@@ -3016,9 +3026,11 @@ package codepipeline {
   object StageExecutionStatusEnum {
     val InProgress = "InProgress"
     val Failed     = "Failed"
+    val Stopped    = "Stopped"
+    val Stopping   = "Stopping"
     val Succeeded  = "Succeeded"
 
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
+    val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
   }
 
   object StageRetryModeEnum {
@@ -3102,6 +3114,68 @@ package codepipeline {
       val __obj = js.Dynamic.literal()
       pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineExecutionOutput]
+    }
+  }
+
+  /**
+    * The interaction that stopped a pipeline execution.
+    */
+  @js.native
+  trait StopExecutionTrigger extends js.Object {
+    var reason: js.UndefOr[StopPipelineExecutionReason]
+  }
+
+  object StopExecutionTrigger {
+    @inline
+    def apply(
+        reason: js.UndefOr[StopPipelineExecutionReason] = js.undefined
+    ): StopExecutionTrigger = {
+      val __obj = js.Dynamic.literal()
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopExecutionTrigger]
+    }
+  }
+
+  @js.native
+  trait StopPipelineExecutionInput extends js.Object {
+    var pipelineExecutionId: PipelineExecutionId
+    var pipelineName: PipelineName
+    var abandon: js.UndefOr[Boolean]
+    var reason: js.UndefOr[StopPipelineExecutionReason]
+  }
+
+  object StopPipelineExecutionInput {
+    @inline
+    def apply(
+        pipelineExecutionId: PipelineExecutionId,
+        pipelineName: PipelineName,
+        abandon: js.UndefOr[Boolean] = js.undefined,
+        reason: js.UndefOr[StopPipelineExecutionReason] = js.undefined
+    ): StopPipelineExecutionInput = {
+      val __obj = js.Dynamic.literal(
+        "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
+        "pipelineName"        -> pipelineName.asInstanceOf[js.Any]
+      )
+
+      abandon.foreach(__v => __obj.updateDynamic("abandon")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopPipelineExecutionInput]
+    }
+  }
+
+  @js.native
+  trait StopPipelineExecutionOutput extends js.Object {
+    var pipelineExecutionId: js.UndefOr[PipelineExecutionId]
+  }
+
+  object StopPipelineExecutionOutput {
+    @inline
+    def apply(
+        pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
+    ): StopPipelineExecutionOutput = {
+      val __obj = js.Dynamic.literal()
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopPipelineExecutionOutput]
     }
   }
 

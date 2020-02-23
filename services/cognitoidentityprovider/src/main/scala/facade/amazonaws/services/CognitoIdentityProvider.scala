@@ -24,7 +24,8 @@ package object cognitoidentityprovider {
   type AttributeValueType                           = String
   type AuthEventsType                               = js.Array[AuthEventType]
   type AuthFlowType                                 = String
-  type AuthParametersType                           = js.Dictionary[StringType]
+  type AuthParametersType                           = js.Dictionary[AuthParametersValueType]
+  type AuthParametersValueType                      = String
   type BlockedIPRangeListType                       = js.Array[StringType]
   type BooleanType                                  = Boolean
   type CSSType                                      = String
@@ -165,6 +166,7 @@ package object cognitoidentityprovider {
   type VerifiedAttributeType                        = String
   type VerifiedAttributesListType                   = js.Array[VerifiedAttributeType]
   type VerifySoftwareTokenResponseType              = String
+  type WrappedBooleanType                           = Boolean
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
@@ -2809,6 +2811,7 @@ package cognitoidentityprovider {
     var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
     var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
+    var UsernameConfiguration: js.UndefOr[UsernameConfigurationType]
     var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
   }
 
@@ -2834,6 +2837,7 @@ package cognitoidentityprovider {
         UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
         UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
         UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
+        UsernameConfiguration: js.UndefOr[UsernameConfigurationType] = js.undefined,
         VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined
     ): CreateUserPoolRequest = {
       val __obj = js.Dynamic.literal(
@@ -2858,6 +2862,7 @@ package cognitoidentityprovider {
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
+      UsernameConfiguration.foreach(__v => __obj.updateDynamic("UsernameConfiguration")(__v.asInstanceOf[js.Any]))
       VerificationMessageTemplate.foreach(__v =>
         __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
       )
@@ -6917,6 +6922,7 @@ package cognitoidentityprovider {
     var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
     var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
+    var UsernameConfiguration: js.UndefOr[UsernameConfigurationType]
     var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
   }
 
@@ -6952,6 +6958,7 @@ package cognitoidentityprovider {
         UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
         UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
         UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
+        UsernameConfiguration: js.UndefOr[UsernameConfigurationType] = js.undefined,
         VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined
     ): UserPoolType = {
       val __obj = js.Dynamic.literal()
@@ -6986,6 +6993,7 @@ package cognitoidentityprovider {
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
+      UsernameConfiguration.foreach(__v => __obj.updateDynamic("UsernameConfiguration")(__v.asInstanceOf[js.Any]))
       VerificationMessageTemplate.foreach(__v =>
         __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
       )
@@ -7049,6 +7057,27 @@ package cognitoidentityprovider {
     val email        = "email"
 
     val values = js.Object.freeze(js.Array(phone_number, email))
+  }
+
+  /**
+    * The username configuration type.
+    */
+  @js.native
+  trait UsernameConfigurationType extends js.Object {
+    var CaseSensitive: WrappedBooleanType
+  }
+
+  object UsernameConfigurationType {
+    @inline
+    def apply(
+        CaseSensitive: WrappedBooleanType
+    ): UsernameConfigurationType = {
+      val __obj = js.Dynamic.literal(
+        "CaseSensitive" -> CaseSensitive.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UsernameConfigurationType]
+    }
   }
 
   /**

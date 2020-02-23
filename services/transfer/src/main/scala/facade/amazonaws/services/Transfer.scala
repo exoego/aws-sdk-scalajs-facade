@@ -7,6 +7,8 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object transfer {
+  type AddressAllocationId   = String
+  type AddressAllocationIds  = js.Array[AddressAllocationId]
   type Arn                   = String
   type DateImported          = js.Date
   type EndpointType          = String
@@ -34,6 +36,8 @@ package object transfer {
   type SshPublicKeys         = js.Array[SshPublicKey]
   type State                 = String
   type StatusCode            = Int
+  type SubnetId              = String
+  type SubnetIds             = js.Array[SubnetId]
   type TagKey                = String
   type TagKeys               = js.Array[TagKey]
   type TagValue              = String
@@ -43,6 +47,7 @@ package object transfer {
   type UserName              = String
   type UserPassword          = String
   type VpcEndpointId         = String
+  type VpcId                 = String
 
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
@@ -464,29 +469,39 @@ package transfer {
   }
 
   /**
-    * The configuration settings for the virtual private cloud (VPC) endpoint for your SFTP server.
+    * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint, you can restrict access to your SFTP server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
     */
   @js.native
   trait EndpointDetails extends js.Object {
+    var AddressAllocationIds: js.UndefOr[AddressAllocationIds]
+    var SubnetIds: js.UndefOr[SubnetIds]
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
+    var VpcId: js.UndefOr[VpcId]
   }
 
   object EndpointDetails {
     @inline
     def apply(
-        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
+        AddressAllocationIds: js.UndefOr[AddressAllocationIds] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
     ): EndpointDetails = {
       val __obj = js.Dynamic.literal()
+      AddressAllocationIds.foreach(__v => __obj.updateDynamic("AddressAllocationIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDetails]
     }
   }
 
   object EndpointTypeEnum {
     val PUBLIC       = "PUBLIC"
+    val VPC          = "VPC"
     val VPC_ENDPOINT = "VPC_ENDPOINT"
 
-    val values = js.Object.freeze(js.Array(PUBLIC, VPC_ENDPOINT))
+    val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
   }
 
   /**

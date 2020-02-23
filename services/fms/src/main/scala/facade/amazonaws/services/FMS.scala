@@ -32,11 +32,15 @@ package object fms {
   type ResourceCount              = Double
   type ResourceId                 = String
   type ResourceName               = String
+  type ResourceTagKey             = String
+  type ResourceTagValue           = String
   type ResourceTags               = js.Array[ResourceTag]
   type ResourceType               = String
   type ResourceTypeList           = js.Array[ResourceType]
   type SecurityServiceType        = String
   type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagList                    = js.Array[Tag]
   type TagValue                   = String
   type TimeStamp                  = js.Date
   type ViolationReason            = String
@@ -68,10 +72,16 @@ package object fms {
       service.listMemberAccounts(params).promise.toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
       service.listPolicies(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
       service.putNotificationChannel(params).promise.toFuture
     @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
       service.putPolicy(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
   }
 }
 
@@ -94,8 +104,11 @@ package fms {
     def listComplianceStatus(params: ListComplianceStatusRequest): Request[ListComplianceStatusResponse] = js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse]       = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                         = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
     def putNotificationChannel(params: PutNotificationChannelRequest): Request[js.Object]                = js.native
     def putPolicy(params: PutPolicyRequest): Request[PutPolicyResponse]                                  = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
   }
 
   object AccountRoleStatusEnum {
@@ -555,6 +568,40 @@ package fms {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var TagList: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * An AWS Firewall Manager policy.
     */
@@ -745,17 +792,20 @@ package fms {
   @js.native
   trait PutPolicyRequest extends js.Object {
     var Policy: Policy
+    var TagList: js.UndefOr[TagList]
   }
 
   object PutPolicyRequest {
     @inline
     def apply(
-        Policy: Policy
+        Policy: Policy,
+        TagList: js.UndefOr[TagList] = js.undefined
     ): PutPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPolicyRequest]
     }
   }
@@ -784,15 +834,15 @@ package fms {
     */
   @js.native
   trait ResourceTag extends js.Object {
-    var Key: TagKey
-    var Value: js.UndefOr[TagValue]
+    var Key: ResourceTagKey
+    var Value: js.UndefOr[ResourceTagValue]
   }
 
   object ResourceTag {
     @inline
     def apply(
-        Key: TagKey,
-        Value: js.UndefOr[TagValue] = js.undefined
+        Key: ResourceTagKey,
+        Value: js.UndefOr[ResourceTagValue] = js.undefined
     ): ResourceTag = {
       val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
@@ -837,6 +887,98 @@ package fms {
     val values = js.Object.freeze(
       js.Array(WAF, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
     )
+  }
+
+  /**
+    * A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagList: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        TagList: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagList"     -> TagList.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   object ViolationReasonEnum {

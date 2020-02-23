@@ -576,8 +576,9 @@ package redshift {
   object ActionTypeEnum {
     val `restore-cluster`       = "restore-cluster"
     val `recommend-node-config` = "recommend-node-config"
+    val `resize-cluster`        = "resize-cluster"
 
-    val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`))
+    val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
   }
 
   /**
@@ -5199,29 +5200,29 @@ package redshift {
   @js.native
   trait ResizeClusterMessage extends js.Object {
     var ClusterIdentifier: String
-    var NumberOfNodes: Int
     var Classic: js.UndefOr[BooleanOptional]
     var ClusterType: js.UndefOr[String]
     var NodeType: js.UndefOr[String]
+    var NumberOfNodes: js.UndefOr[Int]
   }
 
   object ResizeClusterMessage {
     @inline
     def apply(
         ClusterIdentifier: String,
-        NumberOfNodes: Int,
         Classic: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterType: js.UndefOr[String] = js.undefined,
-        NodeType: js.UndefOr[String] = js.undefined
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[Int] = js.undefined
     ): ResizeClusterMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "NumberOfNodes"     -> NumberOfNodes.asInstanceOf[js.Any]
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
 
       Classic.foreach(__v => __obj.updateDynamic("Classic")(__v.asInstanceOf[js.Any]))
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResizeClusterMessage]
     }
   }

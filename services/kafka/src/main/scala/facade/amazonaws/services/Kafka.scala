@@ -11,6 +11,7 @@ package object kafka {
   type ClientBroker                  = String
   type ClusterState                  = String
   type EnhancedMonitoring            = String
+  type KafkaVersionStatus            = String
   type MaxResults                    = Int
   type NodeType                      = String
   type __blob                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -24,6 +25,7 @@ package object kafka {
   type __listOfClusterOperationInfo  = js.Array[ClusterOperationInfo]
   type __listOfConfiguration         = js.Array[Configuration]
   type __listOfConfigurationRevision = js.Array[ConfigurationRevision]
+  type __listOfKafkaVersion          = js.Array[KafkaVersion]
   type __listOfNodeInfo              = js.Array[NodeInfo]
   type __listOf__string              = js.Array[__string]
   type __long                        = Double
@@ -65,6 +67,8 @@ package object kafka {
     ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise.toFuture
     @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
       service.listConfigurations(params).promise.toFuture
+    @inline def listKafkaVersionsFuture(params: ListKafkaVersionsRequest): Future[ListKafkaVersionsResponse] =
+      service.listKafkaVersions(params).promise.toFuture
     @inline def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] =
       service.listNodes(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
@@ -108,6 +112,7 @@ package kafka {
         params: ListConfigurationRevisionsRequest
     ): Request[ListConfigurationRevisionsResponse]                                                    = js.native
     def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse]    = js.native
+    def listKafkaVersions(params: ListKafkaVersionsRequest): Request[ListKafkaVersionsResponse]       = js.native
     def listNodes(params: ListNodesRequest): Request[ListNodesResponse]                               = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
@@ -304,6 +309,7 @@ package kafka {
     var NumberOfBrokerNodes: js.UndefOr[__integer]
     var OpenMonitoring: js.UndefOr[OpenMonitoring]
     var State: js.UndefOr[ClusterState]
+    var StateInfo: js.UndefOr[StateInfo]
     var Tags: js.UndefOr[__mapOf__string]
     var ZookeeperConnectString: js.UndefOr[__string]
   }
@@ -324,6 +330,7 @@ package kafka {
         NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
         OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined,
+        StateInfo: js.UndefOr[StateInfo] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         ZookeeperConnectString: js.UndefOr[__string] = js.undefined
     ): ClusterInfo = {
@@ -343,6 +350,7 @@ package kafka {
       NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateInfo.foreach(__v => __obj.updateDynamic("StateInfo")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterInfo]
@@ -1030,6 +1038,32 @@ package kafka {
   }
 
   @js.native
+  trait KafkaVersion extends js.Object {
+    var Status: js.UndefOr[KafkaVersionStatus]
+    var Version: js.UndefOr[__string]
+  }
+
+  object KafkaVersion {
+    @inline
+    def apply(
+        Status: js.UndefOr[KafkaVersionStatus] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
+    ): KafkaVersion = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KafkaVersion]
+    }
+  }
+
+  object KafkaVersionStatusEnum {
+    val ACTIVE     = "ACTIVE"
+    val DEPRECATED = "DEPRECATED"
+
+    val values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
+  }
+
+  @js.native
   trait ListClusterOperationsRequest extends js.Object {
     var ClusterArn: __string
     var MaxResults: js.UndefOr[MaxResults]
@@ -1191,6 +1225,44 @@ package kafka {
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListKafkaVersionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListKafkaVersionsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListKafkaVersionsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKafkaVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListKafkaVersionsResponse extends js.Object {
+    var KafkaVersions: js.UndefOr[__listOfKafkaVersion]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListKafkaVersionsResponse {
+    @inline
+    def apply(
+        KafkaVersions: js.UndefOr[__listOfKafkaVersion] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListKafkaVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      KafkaVersions.foreach(__v => __obj.updateDynamic("KafkaVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKafkaVersionsResponse]
     }
   }
 
@@ -1479,6 +1551,25 @@ package kafka {
       JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
       NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrometheusInfo]
+    }
+  }
+
+  @js.native
+  trait StateInfo extends js.Object {
+    var Code: js.UndefOr[__string]
+    var Message: js.UndefOr[__string]
+  }
+
+  object StateInfo {
+    @inline
+    def apply(
+        Code: js.UndefOr[__string] = js.undefined,
+        Message: js.UndefOr[__string] = js.undefined
+    ): StateInfo = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StateInfo]
     }
   }
 

@@ -7,192 +7,197 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudformation {
-  type Account                          = String
-  type AccountGateStatus                = String
-  type AccountGateStatusReason          = String
-  type AccountLimitList                 = js.Array[AccountLimit]
-  type AccountList                      = js.Array[Account]
-  type AllowedValue                     = String
-  type AllowedValues                    = js.Array[AllowedValue]
-  type Arn                              = String
-  type BoxedInteger                     = Int
-  type BoxedMaxResults                  = Int
-  type Capabilities                     = js.Array[Capability]
-  type CapabilitiesReason               = String
-  type Capability                       = String
-  type CausingEntity                    = String
-  type ChangeAction                     = String
-  type ChangeSetId                      = String
-  type ChangeSetName                    = String
-  type ChangeSetNameOrId                = String
-  type ChangeSetStatus                  = String
-  type ChangeSetStatusReason            = String
-  type ChangeSetSummaries               = js.Array[ChangeSetSummary]
-  type ChangeSetType                    = String
-  type ChangeSource                     = String
-  type ChangeType                       = String
-  type Changes                          = js.Array[Change]
-  type ClientRequestToken               = String
-  type ClientToken                      = String
-  type CreationTime                     = js.Date
-  type DeletionTime                     = js.Date
-  type DeprecatedStatus                 = String
-  type Description                      = String
-  type DifferenceType                   = String
-  type DisableRollback                  = Boolean
-  type DriftedStackInstancesCount       = Int
-  type EnableTerminationProtection      = Boolean
-  type EvaluationType                   = String
-  type EventId                          = String
-  type ExecutionRoleName                = String
-  type ExecutionStatus                  = String
-  type ExportName                       = String
-  type ExportValue                      = String
-  type Exports                          = js.Array[Export]
-  type FailedStackInstancesCount        = Int
-  type FailureToleranceCount            = Int
-  type FailureTolerancePercentage       = Int
-  type HandlerErrorCode                 = String
-  type Imports                          = js.Array[StackName]
-  type InProgressStackInstancesCount    = Int
-  type InSyncStackInstancesCount        = Int
-  type Key                              = String
-  type LastUpdatedTime                  = js.Date
-  type LimitName                        = String
-  type LimitValue                       = Int
-  type LogGroupName                     = String
-  type LogicalResourceId                = String
-  type LogicalResourceIds               = js.Array[LogicalResourceId]
-  type MaxConcurrentCount               = Int
-  type MaxConcurrentPercentage          = Int
-  type MaxResults                       = Int
-  type Metadata                         = String
-  type MonitoringTimeInMinutes          = Int
-  type NextToken                        = String
-  type NoEcho                           = Boolean
-  type NotificationARN                  = String
-  type NotificationARNs                 = js.Array[NotificationARN]
-  type OnFailure                        = String
-  type OperationStatus                  = String
-  type OptionalSecureUrl                = String
-  type OutputKey                        = String
-  type OutputValue                      = String
-  type Outputs                          = js.Array[Output]
-  type ParameterDeclarations            = js.Array[ParameterDeclaration]
-  type ParameterKey                     = String
-  type ParameterType                    = String
-  type ParameterValue                   = String
-  type Parameters                       = js.Array[Parameter]
-  type PhysicalResourceId               = String
-  type PhysicalResourceIdContext        = js.Array[PhysicalResourceIdContextKeyValuePair]
-  type PrivateTypeArn                   = String
-  type Properties                       = String
-  type PropertyDifferences              = js.Array[PropertyDifference]
-  type PropertyName                     = String
-  type PropertyPath                     = String
-  type PropertyValue                    = String
-  type ProvisioningType                 = String
-  type Reason                           = String
-  type Region                           = String
-  type RegionList                       = js.Array[Region]
-  type RegistrationStatus               = String
-  type RegistrationToken                = String
-  type RegistrationTokenList            = js.Array[RegistrationToken]
-  type RegistryType                     = String
-  type Replacement                      = String
-  type RequestToken                     = String
-  type RequiresRecreation               = String
-  type ResourceAttribute                = String
-  type ResourceChangeDetails            = js.Array[ResourceChangeDetail]
-  type ResourceIdentifierProperties     = js.Dictionary[ResourceIdentifierPropertyValue]
-  type ResourceIdentifierPropertyKey    = String
-  type ResourceIdentifierPropertyValue  = String
-  type ResourceIdentifierSummaries      = js.Array[ResourceIdentifierSummary]
-  type ResourceIdentifiers              = js.Array[ResourceIdentifierPropertyKey]
-  type ResourceModel                    = String
-  type ResourceProperties               = String
-  type ResourceSignalStatus             = String
-  type ResourceSignalUniqueId           = String
-  type ResourceStatus                   = String
-  type ResourceStatusReason             = String
-  type ResourceToSkip                   = String
-  type ResourceType                     = String
-  type ResourceTypes                    = js.Array[ResourceType]
-  type ResourcesToImport                = js.Array[ResourceToImport]
-  type ResourcesToSkip                  = js.Array[ResourceToSkip]
-  type RetainResources                  = js.Array[LogicalResourceId]
-  type RetainStacks                     = Boolean
-  type RetainStacksNullable             = Boolean
-  type RoleARN                          = String
-  type RoleArn                          = String
-  type RollbackTriggers                 = js.Array[RollbackTrigger]
-  type S3Url                            = String
-  type Scope                            = js.Array[ResourceAttribute]
-  type StackDriftDetectionId            = String
-  type StackDriftDetectionStatus        = String
-  type StackDriftDetectionStatusReason  = String
-  type StackDriftStatus                 = String
-  type StackEvents                      = js.Array[StackEvent]
-  type StackId                          = String
-  type StackInstanceStatus              = String
-  type StackInstanceSummaries           = js.Array[StackInstanceSummary]
-  type StackName                        = String
-  type StackNameOrId                    = String
-  type StackPolicyBody                  = String
-  type StackPolicyDuringUpdateBody      = String
-  type StackPolicyDuringUpdateURL       = String
-  type StackPolicyURL                   = String
-  type StackResourceDriftStatus         = String
-  type StackResourceDriftStatusFilters  = js.Array[StackResourceDriftStatus]
-  type StackResourceDrifts              = js.Array[StackResourceDrift]
-  type StackResourceSummaries           = js.Array[StackResourceSummary]
-  type StackResources                   = js.Array[StackResource]
-  type StackSetARN                      = String
-  type StackSetDriftDetectionStatus     = String
-  type StackSetDriftStatus              = String
-  type StackSetId                       = String
-  type StackSetName                     = String
-  type StackSetNameOrId                 = String
-  type StackSetOperationAction          = String
-  type StackSetOperationResultStatus    = String
-  type StackSetOperationResultSummaries = js.Array[StackSetOperationResultSummary]
-  type StackSetOperationStatus          = String
-  type StackSetOperationSummaries       = js.Array[StackSetOperationSummary]
-  type StackSetStatus                   = String
-  type StackSetSummaries                = js.Array[StackSetSummary]
-  type StackStatus                      = String
-  type StackStatusFilter                = js.Array[StackStatus]
-  type StackStatusReason                = String
-  type StackSummaries                   = js.Array[StackSummary]
-  type Stacks                           = js.Array[Stack]
-  type StageList                        = js.Array[TemplateStage]
-  type StatusMessage                    = String
-  type TagKey                           = String
-  type TagValue                         = String
-  type Tags                             = js.Array[Tag]
-  type TemplateBody                     = String
-  type TemplateDescription              = String
-  type TemplateParameters               = js.Array[TemplateParameter]
-  type TemplateStage                    = String
-  type TemplateURL                      = String
-  type TimeoutMinutes                   = Int
-  type Timestamp                        = js.Date
-  type TotalStackInstancesCount         = Int
-  type TransformName                    = String
-  type TransformsList                   = js.Array[TransformName]
-  type Type                             = String
-  type TypeArn                          = String
-  type TypeName                         = String
-  type TypeSchema                       = String
-  type TypeSummaries                    = js.Array[TypeSummary]
-  type TypeVersionId                    = String
-  type TypeVersionSummaries             = js.Array[TypeVersionSummary]
-  type Url                              = String
-  type UsePreviousTemplate              = Boolean
-  type UsePreviousValue                 = Boolean
-  type Value                            = String
-  type Version                          = String
-  type Visibility                       = String
+  type Account                              = String
+  type AccountGateStatus                    = String
+  type AccountGateStatusReason              = String
+  type AccountLimitList                     = js.Array[AccountLimit]
+  type AccountList                          = js.Array[Account]
+  type AllowedValue                         = String
+  type AllowedValues                        = js.Array[AllowedValue]
+  type Arn                                  = String
+  type AutoDeploymentNullable               = Boolean
+  type BoxedInteger                         = Int
+  type BoxedMaxResults                      = Int
+  type Capabilities                         = js.Array[Capability]
+  type CapabilitiesReason                   = String
+  type Capability                           = String
+  type CausingEntity                        = String
+  type ChangeAction                         = String
+  type ChangeSetId                          = String
+  type ChangeSetName                        = String
+  type ChangeSetNameOrId                    = String
+  type ChangeSetStatus                      = String
+  type ChangeSetStatusReason                = String
+  type ChangeSetSummaries                   = js.Array[ChangeSetSummary]
+  type ChangeSetType                        = String
+  type ChangeSource                         = String
+  type ChangeType                           = String
+  type Changes                              = js.Array[Change]
+  type ClientRequestToken                   = String
+  type ClientToken                          = String
+  type CreationTime                         = js.Date
+  type DeletionTime                         = js.Date
+  type DeprecatedStatus                     = String
+  type Description                          = String
+  type DifferenceType                       = String
+  type DisableRollback                      = Boolean
+  type DriftedStackInstancesCount           = Int
+  type EnableTerminationProtection          = Boolean
+  type EvaluationType                       = String
+  type EventId                              = String
+  type ExecutionRoleName                    = String
+  type ExecutionStatus                      = String
+  type ExportName                           = String
+  type ExportValue                          = String
+  type Exports                              = js.Array[Export]
+  type FailedStackInstancesCount            = Int
+  type FailureToleranceCount                = Int
+  type FailureTolerancePercentage           = Int
+  type HandlerErrorCode                     = String
+  type Imports                              = js.Array[StackName]
+  type InProgressStackInstancesCount        = Int
+  type InSyncStackInstancesCount            = Int
+  type Key                                  = String
+  type LastUpdatedTime                      = js.Date
+  type LimitName                            = String
+  type LimitValue                           = Int
+  type LogGroupName                         = String
+  type LogicalResourceId                    = String
+  type LogicalResourceIds                   = js.Array[LogicalResourceId]
+  type MaxConcurrentCount                   = Int
+  type MaxConcurrentPercentage              = Int
+  type MaxResults                           = Int
+  type Metadata                             = String
+  type MonitoringTimeInMinutes              = Int
+  type NextToken                            = String
+  type NoEcho                               = Boolean
+  type NotificationARN                      = String
+  type NotificationARNs                     = js.Array[NotificationARN]
+  type OnFailure                            = String
+  type OperationStatus                      = String
+  type OptionalSecureUrl                    = String
+  type OrganizationalUnitId                 = String
+  type OrganizationalUnitIdList             = js.Array[OrganizationalUnitId]
+  type OutputKey                            = String
+  type OutputValue                          = String
+  type Outputs                              = js.Array[Output]
+  type ParameterDeclarations                = js.Array[ParameterDeclaration]
+  type ParameterKey                         = String
+  type ParameterType                        = String
+  type ParameterValue                       = String
+  type Parameters                           = js.Array[Parameter]
+  type PermissionModels                     = String
+  type PhysicalResourceId                   = String
+  type PhysicalResourceIdContext            = js.Array[PhysicalResourceIdContextKeyValuePair]
+  type PrivateTypeArn                       = String
+  type Properties                           = String
+  type PropertyDifferences                  = js.Array[PropertyDifference]
+  type PropertyName                         = String
+  type PropertyPath                         = String
+  type PropertyValue                        = String
+  type ProvisioningType                     = String
+  type Reason                               = String
+  type Region                               = String
+  type RegionList                           = js.Array[Region]
+  type RegistrationStatus                   = String
+  type RegistrationToken                    = String
+  type RegistrationTokenList                = js.Array[RegistrationToken]
+  type RegistryType                         = String
+  type Replacement                          = String
+  type RequestToken                         = String
+  type RequiresRecreation                   = String
+  type ResourceAttribute                    = String
+  type ResourceChangeDetails                = js.Array[ResourceChangeDetail]
+  type ResourceIdentifierProperties         = js.Dictionary[ResourceIdentifierPropertyValue]
+  type ResourceIdentifierPropertyKey        = String
+  type ResourceIdentifierPropertyValue      = String
+  type ResourceIdentifierSummaries          = js.Array[ResourceIdentifierSummary]
+  type ResourceIdentifiers                  = js.Array[ResourceIdentifierPropertyKey]
+  type ResourceModel                        = String
+  type ResourceProperties                   = String
+  type ResourceSignalStatus                 = String
+  type ResourceSignalUniqueId               = String
+  type ResourceStatus                       = String
+  type ResourceStatusReason                 = String
+  type ResourceToSkip                       = String
+  type ResourceType                         = String
+  type ResourceTypes                        = js.Array[ResourceType]
+  type ResourcesToImport                    = js.Array[ResourceToImport]
+  type ResourcesToSkip                      = js.Array[ResourceToSkip]
+  type RetainResources                      = js.Array[LogicalResourceId]
+  type RetainStacks                         = Boolean
+  type RetainStacksNullable                 = Boolean
+  type RetainStacksOnAccountRemovalNullable = Boolean
+  type RoleARN                              = String
+  type RoleArn                              = String
+  type RollbackTriggers                     = js.Array[RollbackTrigger]
+  type S3Url                                = String
+  type Scope                                = js.Array[ResourceAttribute]
+  type StackDriftDetectionId                = String
+  type StackDriftDetectionStatus            = String
+  type StackDriftDetectionStatusReason      = String
+  type StackDriftStatus                     = String
+  type StackEvents                          = js.Array[StackEvent]
+  type StackId                              = String
+  type StackInstanceStatus                  = String
+  type StackInstanceSummaries               = js.Array[StackInstanceSummary]
+  type StackName                            = String
+  type StackNameOrId                        = String
+  type StackPolicyBody                      = String
+  type StackPolicyDuringUpdateBody          = String
+  type StackPolicyDuringUpdateURL           = String
+  type StackPolicyURL                       = String
+  type StackResourceDriftStatus             = String
+  type StackResourceDriftStatusFilters      = js.Array[StackResourceDriftStatus]
+  type StackResourceDrifts                  = js.Array[StackResourceDrift]
+  type StackResourceSummaries               = js.Array[StackResourceSummary]
+  type StackResources                       = js.Array[StackResource]
+  type StackSetARN                          = String
+  type StackSetDriftDetectionStatus         = String
+  type StackSetDriftStatus                  = String
+  type StackSetId                           = String
+  type StackSetName                         = String
+  type StackSetNameOrId                     = String
+  type StackSetOperationAction              = String
+  type StackSetOperationResultStatus        = String
+  type StackSetOperationResultSummaries     = js.Array[StackSetOperationResultSummary]
+  type StackSetOperationStatus              = String
+  type StackSetOperationSummaries           = js.Array[StackSetOperationSummary]
+  type StackSetStatus                       = String
+  type StackSetSummaries                    = js.Array[StackSetSummary]
+  type StackStatus                          = String
+  type StackStatusFilter                    = js.Array[StackStatus]
+  type StackStatusReason                    = String
+  type StackSummaries                       = js.Array[StackSummary]
+  type Stacks                               = js.Array[Stack]
+  type StageList                            = js.Array[TemplateStage]
+  type StatusMessage                        = String
+  type TagKey                               = String
+  type TagValue                             = String
+  type Tags                                 = js.Array[Tag]
+  type TemplateBody                         = String
+  type TemplateDescription                  = String
+  type TemplateParameters                   = js.Array[TemplateParameter]
+  type TemplateStage                        = String
+  type TemplateURL                          = String
+  type TimeoutMinutes                       = Int
+  type Timestamp                            = js.Date
+  type TotalStackInstancesCount             = Int
+  type TransformName                        = String
+  type TransformsList                       = js.Array[TransformName]
+  type Type                                 = String
+  type TypeArn                              = String
+  type TypeName                             = String
+  type TypeSchema                           = String
+  type TypeSummaries                        = js.Array[TypeSummary]
+  type TypeVersionId                        = String
+  type TypeVersionSummaries                 = js.Array[TypeVersionSummary]
+  type Url                                  = String
+  type UsePreviousTemplate                  = Boolean
+  type UsePreviousValue                     = Boolean
+  type Value                                = String
+  type Version                              = String
+  type Visibility                           = String
 
   implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
 
@@ -450,6 +455,30 @@ package cloudformation {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountLimit]
+    }
+  }
+
+  /**
+    * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
+    */
+  @js.native
+  trait AutoDeployment extends js.Object {
+    var Enabled: js.UndefOr[AutoDeploymentNullable]
+    var RetainStacksOnAccountRemoval: js.UndefOr[RetainStacksOnAccountRemovalNullable]
+  }
+
+  object AutoDeployment {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[AutoDeploymentNullable] = js.undefined,
+        RetainStacksOnAccountRemoval: js.UndefOr[RetainStacksOnAccountRemovalNullable] = js.undefined
+    ): AutoDeployment = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      RetainStacksOnAccountRemoval.foreach(__v =>
+        __obj.updateDynamic("RetainStacksOnAccountRemoval")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AutoDeployment]
     }
   }
 
@@ -803,9 +832,10 @@ package cloudformation {
 
   @js.native
   trait CreateStackInstancesInput extends js.Object {
-    var Accounts: AccountList
     var Regions: RegionList
     var StackSetName: StackSetName
+    var Accounts: js.UndefOr[AccountList]
+    var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
     var ParameterOverrides: js.UndefOr[Parameters]
@@ -814,19 +844,21 @@ package cloudformation {
   object CreateStackInstancesInput {
     @inline
     def apply(
-        Accounts: AccountList,
         Regions: RegionList,
         StackSetName: StackSetName,
+        Accounts: js.UndefOr[AccountList] = js.undefined,
+        DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined
     ): CreateStackInstancesInput = {
       val __obj = js.Dynamic.literal(
-        "Accounts"     -> Accounts.asInstanceOf[js.Any],
         "Regions"      -> Regions.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       ParameterOverrides.foreach(__v => __obj.updateDynamic("ParameterOverrides")(__v.asInstanceOf[js.Any]))
@@ -873,11 +905,13 @@ package cloudformation {
   trait CreateStackSetInput extends js.Object {
     var StackSetName: StackSetName
     var AdministrationRoleARN: js.UndefOr[RoleARN]
+    var AutoDeployment: js.UndefOr[AutoDeployment]
     var Capabilities: js.UndefOr[Capabilities]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
     var Parameters: js.UndefOr[Parameters]
+    var PermissionModel: js.UndefOr[PermissionModels]
     var Tags: js.UndefOr[Tags]
     var TemplateBody: js.UndefOr[TemplateBody]
     var TemplateURL: js.UndefOr[TemplateURL]
@@ -888,11 +922,13 @@ package cloudformation {
     def apply(
         StackSetName: StackSetName,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateURL: js.UndefOr[TemplateURL] = js.undefined
@@ -902,11 +938,13 @@ package cloudformation {
       )
 
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
+      AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       TemplateURL.foreach(__v => __obj.updateDynamic("TemplateURL")(__v.asInstanceOf[js.Any]))
@@ -1002,10 +1040,11 @@ package cloudformation {
 
   @js.native
   trait DeleteStackInstancesInput extends js.Object {
-    var Accounts: AccountList
     var Regions: RegionList
     var RetainStacks: RetainStacks
     var StackSetName: StackSetName
+    var Accounts: js.UndefOr[AccountList]
+    var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
   }
@@ -1013,20 +1052,22 @@ package cloudformation {
   object DeleteStackInstancesInput {
     @inline
     def apply(
-        Accounts: AccountList,
         Regions: RegionList,
         RetainStacks: RetainStacks,
         StackSetName: StackSetName,
+        Accounts: js.UndefOr[AccountList] = js.undefined,
+        DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined
     ): DeleteStackInstancesInput = {
       val __obj = js.Dynamic.literal(
-        "Accounts"     -> Accounts.asInstanceOf[js.Any],
         "Regions"      -> Regions.asInstanceOf[js.Any],
         "RetainStacks" -> RetainStacks.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteStackInstancesInput]
@@ -1077,6 +1118,29 @@ package cloudformation {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStackSetOutput]
+    }
+  }
+
+  /**
+    * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys.
+    *  For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
+    */
+  @js.native
+  trait DeploymentTargets extends js.Object {
+    var Accounts: js.UndefOr[AccountList]
+    var OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList]
+  }
+
+  object DeploymentTargets {
+    @inline
+    def apply(
+        Accounts: js.UndefOr[AccountList] = js.undefined,
+        OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList] = js.undefined
+    ): DeploymentTargets = {
+      val __obj = js.Dynamic.literal()
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeploymentTargets]
     }
   }
 
@@ -2916,6 +2980,13 @@ package cloudformation {
     }
   }
 
+  object PermissionModelsEnum {
+    val SERVICE_MANAGED = "SERVICE_MANAGED"
+    val SELF_MANAGED    = "SELF_MANAGED"
+
+    val values = js.Object.freeze(js.Array(SERVICE_MANAGED, SELF_MANAGED))
+  }
+
   /**
     * Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
     */
@@ -3658,6 +3729,7 @@ package cloudformation {
     var Account: js.UndefOr[Account]
     var DriftStatus: js.UndefOr[StackDriftStatus]
     var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
+    var OrganizationalUnitId: js.UndefOr[OrganizationalUnitId]
     var ParameterOverrides: js.UndefOr[Parameters]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
@@ -3672,6 +3744,7 @@ package cloudformation {
         Account: js.UndefOr[Account] = js.undefined,
         DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
         LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        OrganizationalUnitId: js.UndefOr[OrganizationalUnitId] = js.undefined,
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
@@ -3683,6 +3756,7 @@ package cloudformation {
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
       LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitId.foreach(__v => __obj.updateDynamic("OrganizationalUnitId")(__v.asInstanceOf[js.Any]))
       ParameterOverrides.foreach(__v => __obj.updateDynamic("ParameterOverrides")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
@@ -3709,6 +3783,7 @@ package cloudformation {
     var Account: js.UndefOr[Account]
     var DriftStatus: js.UndefOr[StackDriftStatus]
     var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
+    var OrganizationalUnitId: js.UndefOr[OrganizationalUnitId]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
     var StackSetId: js.UndefOr[StackSetId]
@@ -3722,6 +3797,7 @@ package cloudformation {
         Account: js.UndefOr[Account] = js.undefined,
         DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
         LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        OrganizationalUnitId: js.UndefOr[OrganizationalUnitId] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
@@ -3732,6 +3808,7 @@ package cloudformation {
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
       LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitId.foreach(__v => __obj.updateDynamic("OrganizationalUnitId")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
@@ -3994,10 +4071,13 @@ package cloudformation {
   @js.native
   trait StackSet extends js.Object {
     var AdministrationRoleARN: js.UndefOr[RoleARN]
+    var AutoDeployment: js.UndefOr[AutoDeployment]
     var Capabilities: js.UndefOr[Capabilities]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
+    var OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList]
     var Parameters: js.UndefOr[Parameters]
+    var PermissionModel: js.UndefOr[PermissionModels]
     var StackSetARN: js.UndefOr[StackSetARN]
     var StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails]
     var StackSetId: js.UndefOr[StackSetId]
@@ -4011,10 +4091,13 @@ package cloudformation {
     @inline
     def apply(
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
         StackSetARN: js.UndefOr[StackSetARN] = js.undefined,
         StackSetDriftDetectionDetails: js.UndefOr[StackSetDriftDetectionDetails] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
@@ -4025,10 +4108,13 @@ package cloudformation {
     ): StackSet = {
       val __obj = js.Dynamic.literal()
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
+      AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       StackSetARN.foreach(__v => __obj.updateDynamic("StackSetARN")(__v.asInstanceOf[js.Any]))
       StackSetDriftDetectionDetails.foreach(__v =>
         __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any])
@@ -4119,6 +4205,7 @@ package cloudformation {
     var Action: js.UndefOr[StackSetOperationAction]
     var AdministrationRoleARN: js.UndefOr[RoleARN]
     var CreationTimestamp: js.UndefOr[Timestamp]
+    var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var EndTimestamp: js.UndefOr[Timestamp]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
     var OperationId: js.UndefOr[ClientRequestToken]
@@ -4135,6 +4222,7 @@ package cloudformation {
         Action: js.UndefOr[StackSetOperationAction] = js.undefined,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
         CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -4148,6 +4236,7 @@ package cloudformation {
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       EndTimestamp.foreach(__v => __obj.updateDynamic("EndTimestamp")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
@@ -4222,6 +4311,7 @@ package cloudformation {
   trait StackSetOperationResultSummary extends js.Object {
     var Account: js.UndefOr[Account]
     var AccountGateResult: js.UndefOr[AccountGateResult]
+    var OrganizationalUnitId: js.UndefOr[OrganizationalUnitId]
     var Region: js.UndefOr[Region]
     var Status: js.UndefOr[StackSetOperationResultStatus]
     var StatusReason: js.UndefOr[Reason]
@@ -4232,6 +4322,7 @@ package cloudformation {
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
         AccountGateResult: js.UndefOr[AccountGateResult] = js.undefined,
+        OrganizationalUnitId: js.UndefOr[OrganizationalUnitId] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         Status: js.UndefOr[StackSetOperationResultStatus] = js.undefined,
         StatusReason: js.UndefOr[Reason] = js.undefined
@@ -4239,6 +4330,7 @@ package cloudformation {
       val __obj = js.Dynamic.literal()
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       AccountGateResult.foreach(__v => __obj.updateDynamic("AccountGateResult")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitId.foreach(__v => __obj.updateDynamic("OrganizationalUnitId")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
@@ -4252,8 +4344,9 @@ package cloudformation {
     val FAILED    = "FAILED"
     val STOPPING  = "STOPPING"
     val STOPPED   = "STOPPED"
+    val QUEUED    = "QUEUED"
 
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED))
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED))
   }
 
   /**
@@ -4299,9 +4392,11 @@ package cloudformation {
     */
   @js.native
   trait StackSetSummary extends js.Object {
+    var AutoDeployment: js.UndefOr[AutoDeployment]
     var Description: js.UndefOr[Description]
     var DriftStatus: js.UndefOr[StackDriftStatus]
     var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
+    var PermissionModel: js.UndefOr[PermissionModels]
     var StackSetId: js.UndefOr[StackSetId]
     var StackSetName: js.UndefOr[StackSetName]
     var Status: js.UndefOr[StackSetStatus]
@@ -4310,17 +4405,21 @@ package cloudformation {
   object StackSetSummary {
     @inline
     def apply(
+        AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
         LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         StackSetName: js.UndefOr[StackSetName] = js.undefined,
         Status: js.UndefOr[StackSetStatus] = js.undefined
     ): StackSetSummary = {
       val __obj = js.Dynamic.literal()
+      AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
       LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4664,9 +4763,10 @@ package cloudformation {
 
   @js.native
   trait UpdateStackInstancesInput extends js.Object {
-    var Accounts: AccountList
     var Regions: RegionList
     var StackSetName: StackSetNameOrId
+    var Accounts: js.UndefOr[AccountList]
+    var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
     var ParameterOverrides: js.UndefOr[Parameters]
@@ -4675,19 +4775,21 @@ package cloudformation {
   object UpdateStackInstancesInput {
     @inline
     def apply(
-        Accounts: AccountList,
         Regions: RegionList,
         StackSetName: StackSetNameOrId,
+        Accounts: js.UndefOr[AccountList] = js.undefined,
+        DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined
     ): UpdateStackInstancesInput = {
       val __obj = js.Dynamic.literal(
-        "Accounts"     -> Accounts.asInstanceOf[js.Any],
         "Regions"      -> Regions.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       ParameterOverrides.foreach(__v => __obj.updateDynamic("ParameterOverrides")(__v.asInstanceOf[js.Any]))
@@ -4735,12 +4837,15 @@ package cloudformation {
     var StackSetName: StackSetName
     var Accounts: js.UndefOr[AccountList]
     var AdministrationRoleARN: js.UndefOr[RoleARN]
+    var AutoDeployment: js.UndefOr[AutoDeployment]
     var Capabilities: js.UndefOr[Capabilities]
+    var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
     var Parameters: js.UndefOr[Parameters]
+    var PermissionModel: js.UndefOr[PermissionModels]
     var Regions: js.UndefOr[RegionList]
     var Tags: js.UndefOr[Tags]
     var TemplateBody: js.UndefOr[TemplateBody]
@@ -4754,12 +4859,15 @@ package cloudformation {
         StackSetName: StackSetName,
         Accounts: js.UndefOr[AccountList] = js.undefined,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
         Regions: js.UndefOr[RegionList] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
@@ -4772,12 +4880,15 @@ package cloudformation {
 
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
+      AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
+      DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))

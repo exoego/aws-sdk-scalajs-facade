@@ -61,6 +61,7 @@ package object lexmodelbuildingservice {
   type Priority                    = Int
   type ProcessBehavior             = String
   type PromptMaxAttempts           = Int
+  type RegexPattern                = String
   type ResourceArn                 = String
   type ResourcePrefix              = String
   type ResourceType                = String
@@ -69,6 +70,7 @@ package object lexmodelbuildingservice {
   type SlotConstraint              = String
   type SlotList                    = js.Array[Slot]
   type SlotName                    = String
+  type SlotTypeConfigurations      = js.Array[SlotTypeConfiguration]
   type SlotTypeMetadataList        = js.Array[SlotTypeMetadata]
   type SlotTypeName                = String
   type SlotUtteranceList           = js.Array[Utterance]
@@ -674,6 +676,8 @@ package lexmodelbuildingservice {
     var enumerationValues: js.UndefOr[EnumerationValues]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[SlotTypeName]
+    var parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName]
+    var slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations]
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
     var version: js.UndefOr[Version]
   }
@@ -687,6 +691,8 @@ package lexmodelbuildingservice {
         enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[SlotTypeName] = js.undefined,
+        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
+        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateSlotTypeVersionResponse = {
@@ -697,6 +703,8 @@ package lexmodelbuildingservice {
       enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
+      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
       valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSlotTypeVersionResponse]
@@ -1810,6 +1818,8 @@ package lexmodelbuildingservice {
     var enumerationValues: js.UndefOr[EnumerationValues]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[SlotTypeName]
+    var parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName]
+    var slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations]
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
     var version: js.UndefOr[Version]
   }
@@ -1823,6 +1833,8 @@ package lexmodelbuildingservice {
         enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[SlotTypeName] = js.undefined,
+        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
+        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): GetSlotTypeResponse = {
@@ -1833,6 +1845,8 @@ package lexmodelbuildingservice {
       enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
+      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
       valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSlotTypeResponse]
@@ -2038,7 +2052,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-    * Settings used to configure conversation logs.
+    * Settings used to configure delivery mode and destination for conversation logs.
     */
   @js.native
   trait LogSettingsRequest extends js.Object {
@@ -2490,6 +2504,8 @@ package lexmodelbuildingservice {
     var createVersion: js.UndefOr[Boolean]
     var description: js.UndefOr[Description]
     var enumerationValues: js.UndefOr[EnumerationValues]
+    var parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName]
+    var slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations]
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
   }
 
@@ -2501,6 +2517,8 @@ package lexmodelbuildingservice {
         createVersion: js.UndefOr[Boolean] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
+        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
+        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined
     ): PutSlotTypeRequest = {
       val __obj = js.Dynamic.literal(
@@ -2511,6 +2529,8 @@ package lexmodelbuildingservice {
       createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
+      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
+      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
       valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSlotTypeRequest]
     }
@@ -2525,6 +2545,8 @@ package lexmodelbuildingservice {
     var enumerationValues: js.UndefOr[EnumerationValues]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[SlotTypeName]
+    var parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName]
+    var slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations]
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
     var version: js.UndefOr[Version]
   }
@@ -2539,6 +2561,8 @@ package lexmodelbuildingservice {
         enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[SlotTypeName] = js.undefined,
+        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
+        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): PutSlotTypeResponse = {
@@ -2550,6 +2574,8 @@ package lexmodelbuildingservice {
       enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
+      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
       valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSlotTypeResponse]
@@ -2620,6 +2646,25 @@ package lexmodelbuildingservice {
   }
 
   /**
+    * Provides configuration information for a slot type.
+    */
+  @js.native
+  trait SlotTypeConfiguration extends js.Object {
+    var regexConfiguration: js.UndefOr[SlotTypeRegexConfiguration]
+  }
+
+  object SlotTypeConfiguration {
+    @inline
+    def apply(
+        regexConfiguration: js.UndefOr[SlotTypeRegexConfiguration] = js.undefined
+    ): SlotTypeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      regexConfiguration.foreach(__v => __obj.updateDynamic("regexConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotTypeConfiguration]
+    }
+  }
+
+  /**
     * Provides information about a slot type..
     */
   @js.native
@@ -2647,6 +2692,27 @@ package lexmodelbuildingservice {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SlotTypeMetadata]
+    }
+  }
+
+  /**
+    * Provides a regular expression used to validate the value of a slot.
+    */
+  @js.native
+  trait SlotTypeRegexConfiguration extends js.Object {
+    var pattern: RegexPattern
+  }
+
+  object SlotTypeRegexConfiguration {
+    @inline
+    def apply(
+        pattern: RegexPattern
+    ): SlotTypeRegexConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "pattern" -> pattern.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SlotTypeRegexConfiguration]
     }
   }
 

@@ -41,6 +41,7 @@ package object alexaforbusiness {
   type ConferenceProviderType          = String
   type ConferenceProvidersList         = js.Array[ConferenceProvider]
   type ConnectionStatus                = String
+  type ConnectionStatusUpdatedTime     = js.Date
   type ContactDataList                 = js.Array[ContactData]
   type ContactName                     = String
   type CountryCode                     = String
@@ -48,6 +49,7 @@ package object alexaforbusiness {
   type CustomerS3BucketName            = String
   type Date                            = String
   type DeveloperName                   = String
+  type DeviceDataCreatedTime           = js.Date
   type DeviceDataList                  = js.Array[DeviceData]
   type DeviceEventList                 = js.Array[DeviceEvent]
   type DeviceEventTime                 = js.Date
@@ -2360,6 +2362,7 @@ package alexaforbusiness {
     */
   @js.native
   trait DeviceData extends js.Object {
+    var CreatedTime: js.UndefOr[DeviceDataCreatedTime]
     var DeviceArn: js.UndefOr[Arn]
     var DeviceName: js.UndefOr[DeviceName]
     var DeviceSerialNumber: js.UndefOr[DeviceSerialNumber]
@@ -2377,6 +2380,7 @@ package alexaforbusiness {
   object DeviceData {
     @inline
     def apply(
+        CreatedTime: js.UndefOr[DeviceDataCreatedTime] = js.undefined,
         DeviceArn: js.UndefOr[Arn] = js.undefined,
         DeviceName: js.UndefOr[DeviceName] = js.undefined,
         DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
@@ -2391,6 +2395,7 @@ package alexaforbusiness {
         SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
     ): DeviceData = {
       val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
       DeviceSerialNumber.foreach(__v => __obj.updateDynamic("DeviceSerialNumber")(__v.asInstanceOf[js.Any]))
@@ -2542,6 +2547,7 @@ package alexaforbusiness {
   @js.native
   trait DeviceStatusInfo extends js.Object {
     var ConnectionStatus: js.UndefOr[ConnectionStatus]
+    var ConnectionStatusUpdatedTime: js.UndefOr[ConnectionStatusUpdatedTime]
     var DeviceStatusDetails: js.UndefOr[DeviceStatusDetails]
   }
 
@@ -2549,10 +2555,14 @@ package alexaforbusiness {
     @inline
     def apply(
         ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
+        ConnectionStatusUpdatedTime: js.UndefOr[ConnectionStatusUpdatedTime] = js.undefined,
         DeviceStatusDetails: js.UndefOr[DeviceStatusDetails] = js.undefined
     ): DeviceStatusInfo = {
       val __obj = js.Dynamic.literal()
       ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
+      ConnectionStatusUpdatedTime.foreach(__v =>
+        __obj.updateDynamic("ConnectionStatusUpdatedTime")(__v.asInstanceOf[js.Any])
+      )
       DeviceStatusDetails.foreach(__v => __obj.updateDynamic("DeviceStatusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceStatusInfo]
     }

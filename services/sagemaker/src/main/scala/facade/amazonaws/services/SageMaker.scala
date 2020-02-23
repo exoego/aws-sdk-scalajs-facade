@@ -66,6 +66,8 @@ package object sagemaker {
   type CertifyForMarketplace                           = Boolean
   type ChannelName                                     = String
   type ChannelSpecifications                           = js.Array[ChannelSpecification]
+  type Cidr                                            = String
+  type Cidrs                                           = js.Array[Cidr]
   type CodeRepositoryArn                               = String
   type CodeRepositoryContains                          = String
   type CodeRepositoryNameContains                      = String
@@ -451,6 +453,8 @@ package object sagemaker {
   type VolumeSizeInGB                                  = Int
   type VpcId                                           = String
   type VpcSecurityGroupIds                             = js.Array[SecurityGroupId]
+  type WorkforceArn                                    = String
+  type WorkforceName                                   = String
   type WorkteamArn                                     = String
   type WorkteamName                                    = String
   type Workteams                                       = js.Array[Workteam]
@@ -623,6 +627,8 @@ package object sagemaker {
       service.describeTrial(params).promise.toFuture
     @inline def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResponse] =
       service.describeUserProfile(params).promise.toFuture
+    @inline def describeWorkforceFuture(params: DescribeWorkforceRequest): Future[DescribeWorkforceResponse] =
+      service.describeWorkforce(params).promise.toFuture
     @inline def describeWorkteamFuture(params: DescribeWorkteamRequest): Future[DescribeWorkteamResponse] =
       service.describeWorkteam(params).promise.toFuture
     @inline def disassociateTrialComponentFuture(
@@ -755,6 +761,8 @@ package object sagemaker {
       service.updateTrial(params).promise.toFuture
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResponse] =
       service.updateUserProfile(params).promise.toFuture
+    @inline def updateWorkforceFuture(params: UpdateWorkforceRequest): Future[UpdateWorkforceResponse] =
+      service.updateWorkforce(params).promise.toFuture
     @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] =
       service.updateWorkteam(params).promise.toFuture
   }
@@ -860,6 +868,7 @@ package sagemaker {
     def describeTrialComponent(params: DescribeTrialComponentRequest): Request[DescribeTrialComponentResponse] =
       js.native
     def describeUserProfile(params: DescribeUserProfileRequest): Request[DescribeUserProfileResponse] = js.native
+    def describeWorkforce(params: DescribeWorkforceRequest): Request[DescribeWorkforceResponse]       = js.native
     def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse]          = js.native
     def disassociateTrialComponent(
         params: DisassociateTrialComponentRequest
@@ -938,6 +947,7 @@ package sagemaker {
     def updateTrial(params: UpdateTrialRequest): Request[UpdateTrialResponse]                            = js.native
     def updateTrialComponent(params: UpdateTrialComponentRequest): Request[UpdateTrialComponentResponse] = js.native
     def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResponse]          = js.native
+    def updateWorkforce(params: UpdateWorkforceRequest): Request[UpdateWorkforceResponse]                = js.native
     def updateWorkteam(params: UpdateWorkteamRequest): Request[UpdateWorkteamResponse]                   = js.native
   }
 
@@ -6228,6 +6238,42 @@ package sagemaker {
   }
 
   @js.native
+  trait DescribeWorkforceRequest extends js.Object {
+    var WorkforceName: WorkforceName
+  }
+
+  object DescribeWorkforceRequest {
+    @inline
+    def apply(
+        WorkforceName: WorkforceName
+    ): DescribeWorkforceRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorkforceRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorkforceResponse extends js.Object {
+    var Workforce: Workforce
+  }
+
+  object DescribeWorkforceResponse {
+    @inline
+    def apply(
+        Workforce: Workforce
+    ): DescribeWorkforceResponse = {
+      val __obj = js.Dynamic.literal(
+        "Workforce" -> Workforce.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorkforceResponse]
+    }
+  }
+
+  @js.native
   trait DescribeWorkteamRequest extends js.Object {
     var WorkteamName: WorkteamName
   }
@@ -6876,12 +6922,13 @@ package sagemaker {
 
   object FrameworkEnum {
     val TENSORFLOW = "TENSORFLOW"
+    val KERAS      = "KERAS"
     val MXNET      = "MXNET"
     val ONNX       = "ONNX"
     val PYTORCH    = "PYTORCH"
     val XGBOOST    = "XGBOOST"
 
-    val values = js.Object.freeze(js.Array(TENSORFLOW, MXNET, ONNX, PYTORCH, XGBOOST))
+    val values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST))
   }
 
   @js.native
@@ -6968,7 +7015,7 @@ package sagemaker {
   }
 
   /**
-    * Defines under what conditions SageMaker creates a human loop.
+    * Defines under what conditions SageMaker creates a human loop. Used within .
     */
   @js.native
   trait HumanLoopActivationConditionsConfig extends js.Object {
@@ -9748,11 +9795,13 @@ package sagemaker {
   trait ListTrialComponentsRequest extends js.Object {
     var CreatedAfter: js.UndefOr[Timestamp]
     var CreatedBefore: js.UndefOr[Timestamp]
+    var ExperimentName: js.UndefOr[ExperimentEntityName]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var SortBy: js.UndefOr[SortTrialComponentsBy]
     var SortOrder: js.UndefOr[SortOrder]
     var SourceArn: js.UndefOr[String256]
+    var TrialName: js.UndefOr[ExperimentEntityName]
   }
 
   object ListTrialComponentsRequest {
@@ -9760,20 +9809,24 @@ package sagemaker {
     def apply(
         CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
         CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
+        ExperimentName: js.UndefOr[ExperimentEntityName] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortBy: js.UndefOr[SortTrialComponentsBy] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined,
-        SourceArn: js.UndefOr[String256] = js.undefined
+        SourceArn: js.UndefOr[String256] = js.undefined,
+        TrialName: js.UndefOr[ExperimentEntityName] = js.undefined
     ): ListTrialComponentsRequest = {
       val __obj = js.Dynamic.literal()
       CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
       CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      ExperimentName.foreach(__v => __obj.updateDynamic("ExperimentName")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      TrialName.foreach(__v => __obj.updateDynamic("TrialName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrialComponentsRequest]
     }
   }
@@ -11764,7 +11817,7 @@ package sagemaker {
   }
 
   /**
-    * A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property names that match the specified hint.
+    * Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text.
     */
   @js.native
   trait PropertyNameQuery extends js.Object {
@@ -12460,7 +12513,7 @@ package sagemaker {
 
   /**
     * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
-    *  For Pipe input mode, shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
+    *  For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
     */
   @js.native
   trait ShuffleConfig extends js.Object {
@@ -12558,6 +12611,27 @@ package sagemaker {
       )
 
       __obj.asInstanceOf[SourceAlgorithmSpecification]
+    }
+  }
+
+  /**
+    * A list of IP address ranges ([[https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html|CIDRs]]). Used to create an allow list of IP addresses for a private workforce. For more information, see .
+    */
+  @js.native
+  trait SourceIpConfig extends js.Object {
+    var Cidrs: Cidrs
+  }
+
+  object SourceIpConfig {
+    @inline
+    def apply(
+        Cidrs: Cidrs
+    ): SourceIpConfig = {
+      val __obj = js.Dynamic.literal(
+        "Cidrs" -> Cidrs.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SourceIpConfig]
     }
   }
 
@@ -12828,7 +12902,7 @@ package sagemaker {
   }
 
   /**
-    * Limits the property names that are included in the response.
+    * Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response.
     */
   @js.native
   trait SuggestionQuery extends js.Object {
@@ -12972,6 +13046,12 @@ package sagemaker {
     val `ml.m4.4xlarge`    = "ml.m4.4xlarge"
     val `ml.m4.10xlarge`   = "ml.m4.10xlarge"
     val `ml.m4.16xlarge`   = "ml.m4.16xlarge"
+    val `ml.g4dn.xlarge`   = "ml.g4dn.xlarge"
+    val `ml.g4dn.2xlarge`  = "ml.g4dn.2xlarge"
+    val `ml.g4dn.4xlarge`  = "ml.g4dn.4xlarge"
+    val `ml.g4dn.8xlarge`  = "ml.g4dn.8xlarge"
+    val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge"
+    val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge"
     val `ml.m5.large`      = "ml.m5.large"
     val `ml.m5.xlarge`     = "ml.m5.xlarge"
     val `ml.m5.2xlarge`    = "ml.m5.2xlarge"
@@ -13002,6 +13082,12 @@ package sagemaker {
         `ml.m4.4xlarge`,
         `ml.m4.10xlarge`,
         `ml.m4.16xlarge`,
+        `ml.g4dn.xlarge`,
+        `ml.g4dn.2xlarge`,
+        `ml.g4dn.4xlarge`,
+        `ml.g4dn.8xlarge`,
+        `ml.g4dn.12xlarge`,
+        `ml.g4dn.16xlarge`,
         `ml.m5.large`,
         `ml.m5.xlarge`,
         `ml.m5.2xlarge`,
@@ -14635,6 +14721,45 @@ package sagemaker {
   }
 
   @js.native
+  trait UpdateWorkforceRequest extends js.Object {
+    var WorkforceName: WorkforceName
+    var SourceIpConfig: js.UndefOr[SourceIpConfig]
+  }
+
+  object UpdateWorkforceRequest {
+    @inline
+    def apply(
+        WorkforceName: WorkforceName,
+        SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined
+    ): UpdateWorkforceRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
+      )
+
+      SourceIpConfig.foreach(__v => __obj.updateDynamic("SourceIpConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWorkforceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkforceResponse extends js.Object {
+    var Workforce: Workforce
+  }
+
+  object UpdateWorkforceResponse {
+    @inline
+    def apply(
+        Workforce: Workforce
+    ): UpdateWorkforceResponse = {
+      val __obj = js.Dynamic.literal(
+        "Workforce" -> Workforce.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateWorkforceResponse]
+    }
+  }
+
+  @js.native
   trait UpdateWorkteamRequest extends js.Object {
     var WorkteamName: WorkteamName
     var Description: js.UndefOr[String200]
@@ -14808,6 +14933,36 @@ package sagemaker {
       )
 
       __obj.asInstanceOf[VpcConfig]
+    }
+  }
+
+  /**
+    * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
+    */
+  @js.native
+  trait Workforce extends js.Object {
+    var WorkforceArn: WorkforceArn
+    var WorkforceName: WorkforceName
+    var LastUpdatedDate: js.UndefOr[Timestamp]
+    var SourceIpConfig: js.UndefOr[SourceIpConfig]
+  }
+
+  object Workforce {
+    @inline
+    def apply(
+        WorkforceArn: WorkforceArn,
+        WorkforceName: WorkforceName,
+        LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+        SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined
+    ): Workforce = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceArn"  -> WorkforceArn.asInstanceOf[js.Any],
+        "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
+      )
+
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      SourceIpConfig.foreach(__v => __obj.updateDynamic("SourceIpConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Workforce]
     }
   }
 

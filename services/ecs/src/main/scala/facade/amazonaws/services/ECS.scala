@@ -114,6 +114,8 @@ package object ecs {
   type TaskDefinitionStatus                  = String
   type TaskField                             = String
   type TaskFieldList                         = js.Array[TaskField]
+  type TaskSetField                          = String
+  type TaskSetFieldList                      = js.Array[TaskSetField]
   type TaskSets                              = js.Array[TaskSet]
   type TaskStopCode                          = String
   type Tasks                                 = js.Array[Task]
@@ -872,7 +874,7 @@ package ecs {
     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.
     *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
-    * '''Note:'''If you are using tasks that use the Fargate launch type, container dependency parameters are not supported.
+    * '''Note:'''For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
     */
   @js.native
   trait ContainerDependency extends js.Object {
@@ -1248,6 +1250,7 @@ package ecs {
     var platformVersion: js.UndefOr[String]
     var scale: js.UndefOr[Scale]
     var serviceRegistries: js.UndefOr[ServiceRegistries]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateTaskSetRequest {
@@ -1264,7 +1267,8 @@ package ecs {
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         scale: js.UndefOr[Scale] = js.undefined,
-        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined
+        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateTaskSetRequest = {
       val __obj = js.Dynamic.literal(
         "cluster"        -> cluster.asInstanceOf[js.Any],
@@ -1281,6 +1285,7 @@ package ecs {
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
       serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTaskSetRequest]
     }
   }
@@ -1884,6 +1889,7 @@ package ecs {
   trait DescribeTaskSetsRequest extends js.Object {
     var cluster: String
     var service: String
+    var include: js.UndefOr[TaskSetFieldList]
     var taskSets: js.UndefOr[StringList]
   }
 
@@ -1892,6 +1898,7 @@ package ecs {
     def apply(
         cluster: String,
         service: String,
+        include: js.UndefOr[TaskSetFieldList] = js.undefined,
         taskSets: js.UndefOr[StringList] = js.undefined
     ): DescribeTaskSetsRequest = {
       val __obj = js.Dynamic.literal(
@@ -1899,6 +1906,7 @@ package ecs {
         "service" -> service.asInstanceOf[js.Any]
       )
 
+      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
       taskSets.foreach(__v => __obj.updateDynamic("taskSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTaskSetsRequest]
     }
@@ -2075,6 +2083,32 @@ package ecs {
       labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
       scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DockerVolumeConfiguration]
+    }
+  }
+
+  /**
+    * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon EFS file systems are only supported when you are using the EC2 launch type.
+    *  <important> <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms located at [[https://aws.amazon.com/service-terms|https://aws.amazon.com/service-terms]] ("Beta Terms"). These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+    *  </important>
+    */
+  @js.native
+  trait EFSVolumeConfiguration extends js.Object {
+    var fileSystemId: String
+    var rootDirectory: js.UndefOr[String]
+  }
+
+  object EFSVolumeConfiguration {
+    @inline
+    def apply(
+        fileSystemId: String,
+        rootDirectory: js.UndefOr[String] = js.undefined
+    ): EFSVolumeConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "fileSystemId" -> fileSystemId.asInstanceOf[js.Any]
+      )
+
+      rootDirectory.foreach(__v => __obj.updateDynamic("rootDirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EFSVolumeConfiguration]
     }
   }
 
@@ -4575,6 +4609,7 @@ package ecs {
     var stabilityStatusAt: js.UndefOr[Timestamp]
     var startedBy: js.UndefOr[String]
     var status: js.UndefOr[String]
+    var tags: js.UndefOr[Tags]
     var taskDefinition: js.UndefOr[String]
     var taskSetArn: js.UndefOr[String]
     var updatedAt: js.UndefOr[Timestamp]
@@ -4602,6 +4637,7 @@ package ecs {
         stabilityStatusAt: js.UndefOr[Timestamp] = js.undefined,
         startedBy: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined,
         taskSetArn: js.UndefOr[String] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
@@ -4626,11 +4662,18 @@ package ecs {
       stabilityStatusAt.foreach(__v => __obj.updateDynamic("stabilityStatusAt")(__v.asInstanceOf[js.Any]))
       startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
       taskSetArn.foreach(__v => __obj.updateDynamic("taskSetArn")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskSet]
     }
+  }
+
+  object TaskSetFieldEnum {
+    val TAGS = "TAGS"
+
+    val values = js.Object.freeze(js.Array(TAGS))
   }
 
   object TaskStopCodeEnum {
@@ -5068,6 +5111,7 @@ package ecs {
   @js.native
   trait Volume extends js.Object {
     var dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration]
+    var efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration]
     var host: js.UndefOr[HostVolumeProperties]
     var name: js.UndefOr[String]
   }
@@ -5076,6 +5120,7 @@ package ecs {
     @inline
     def apply(
         dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration] = js.undefined,
+        efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration] = js.undefined,
         host: js.UndefOr[HostVolumeProperties] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
@@ -5083,6 +5128,7 @@ package ecs {
       dockerVolumeConfiguration.foreach(__v =>
         __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any])
       )
+      efsVolumeConfiguration.foreach(__v => __obj.updateDynamic("efsVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Volume]

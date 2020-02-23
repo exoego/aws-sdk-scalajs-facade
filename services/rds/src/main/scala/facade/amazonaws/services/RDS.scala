@@ -54,6 +54,7 @@ package object rds {
   type EventCategoriesMapList                  = js.Array[EventCategoriesMap]
   type EventList                               = js.Array[Event]
   type EventSubscriptionsList                  = js.Array[EventSubscription]
+  type ExportTasksList                         = js.Array[ExportTask]
   type FeatureNameList                         = js.Array[String]
   type FilterList                              = js.Array[Filter]
   type FilterValueList                         = js.Array[String]
@@ -134,6 +135,8 @@ package object rds {
     ): Future[AuthorizeDBSecurityGroupIngressResult] = service.authorizeDBSecurityGroupIngress(params).promise.toFuture
     @inline def backtrackDBClusterFuture(params: BacktrackDBClusterMessage): Future[DBClusterBacktrack] =
       service.backtrackDBCluster(params).promise.toFuture
+    @inline def cancelExportTaskFuture(params: CancelExportTaskMessage): Future[ExportTask] =
+      service.cancelExportTask(params).promise.toFuture
     @inline def copyDBClusterParameterGroupFuture(
         params: CopyDBClusterParameterGroupMessage
     ): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise.toFuture
@@ -296,6 +299,8 @@ package object rds {
     ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise.toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
+    @inline def describeExportTasksFuture(params: DescribeExportTasksMessage): Future[ExportTasksMessage] =
+      service.describeExportTasks(params).promise.toFuture
     @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] =
       service.describeGlobalClusters(params).promise.toFuture
     @inline def describeInstallationMediaFuture(
@@ -334,6 +339,8 @@ package object rds {
       service.importInstallationMedia(params).promise.toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
       service.listTagsForResource(params).promise.toFuture
+    @inline def modifyCertificatesFuture(params: ModifyCertificatesMessage): Future[ModifyCertificatesResult] =
+      service.modifyCertificates(params).promise.toFuture
     @inline def modifyCurrentDBClusterCapacityFuture(
         params: ModifyCurrentDBClusterCapacityMessage
     ): Future[DBClusterCapacityInfo] = service.modifyCurrentDBClusterCapacity(params).promise.toFuture
@@ -431,6 +438,8 @@ package object rds {
       service.startDBCluster(params).promise.toFuture
     @inline def startDBInstanceFuture(params: StartDBInstanceMessage): Future[StartDBInstanceResult] =
       service.startDBInstance(params).promise.toFuture
+    @inline def startExportTaskFuture(params: StartExportTaskMessage): Future[ExportTask] =
+      service.startExportTask(params).promise.toFuture
     @inline def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] =
       service.stopActivityStream(params).promise.toFuture
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] =
@@ -459,6 +468,7 @@ package rds {
         params: AuthorizeDBSecurityGroupIngressMessage
     ): Request[AuthorizeDBSecurityGroupIngressResult]                                      = js.native
     def backtrackDBCluster(params: BacktrackDBClusterMessage): Request[DBClusterBacktrack] = js.native
+    def cancelExportTask(params: CancelExportTaskMessage): Request[ExportTask]             = js.native
     def copyDBClusterParameterGroup(
         params: CopyDBClusterParameterGroupMessage
     ): Request[CopyDBClusterParameterGroupResult]                                                         = js.native
@@ -566,6 +576,7 @@ package rds {
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
       js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage]                         = js.native
+    def describeExportTasks(params: DescribeExportTasksMessage): Request[ExportTasksMessage]          = js.native
     def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
     def describeInstallationMedia(params: DescribeInstallationMediaMessage): Request[InstallationMediaMessage] =
       js.native
@@ -592,6 +603,7 @@ package rds {
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult]       = js.native
     def importInstallationMedia(params: ImportInstallationMediaMessage): Request[InstallationMedia] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage]            = js.native
+    def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult]    = js.native
     def modifyCurrentDBClusterCapacity(params: ModifyCurrentDBClusterCapacityMessage): Request[DBClusterCapacityInfo] =
       js.native
     def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult]             = js.native
@@ -658,6 +670,7 @@ package rds {
     def startActivityStream(params: StartActivityStreamRequest): Request[StartActivityStreamResponse] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult]                  = js.native
     def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult]               = js.native
+    def startExportTask(params: StartExportTaskMessage): Request[ExportTask]                          = js.native
     def stopActivityStream(params: StopActivityStreamRequest): Request[StopActivityStreamResponse]    = js.native
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]                     = js.native
     def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult]                  = js.native
@@ -693,6 +706,7 @@ package rds {
     *  * <code>DBClusters</code> - The number of DB clusters per account. The used value is the count of DB clusters in the account.
     *  * <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance. The used value is the highest number of associated IAM roles for a DB instance in the account. Other DB instances in the account might have a lower number of associated IAM roles.
     *  * <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in the account.
+    *  Amazon RDS DB instances, Amazon Aurora DB instances, Amazon Neptune instances, and Amazon DocumentDB instances apply to this quota.
     *  * <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB parameter groups in the account.
     *  * <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.
     *  * <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.
@@ -702,7 +716,7 @@ package rds {
     *  * <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB instance. The used value is the highest number of Read Replicas for a DB instance in the account. Other DB instances in the account might have a lower number of Read Replicas.
     *  * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.
     *  * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.
-    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html|Limits]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html|Limits]] in the <i>Amazon Aurora User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html|Quotas for Amazon RDS]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html|Quotas for Amazon Aurora]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait AccountQuota extends js.Object {
@@ -1039,6 +1053,24 @@ package rds {
     }
   }
 
+  @js.native
+  trait CancelExportTaskMessage extends js.Object {
+    var ExportTaskIdentifier: String
+  }
+
+  object CancelExportTaskMessage {
+    @inline
+    def apply(
+        ExportTaskIdentifier: String
+    ): CancelExportTaskMessage = {
+      val __obj = js.Dynamic.literal(
+        "ExportTaskIdentifier" -> ExportTaskIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelExportTaskMessage]
+    }
+  }
+
   /**
     * A CA certificate for an AWS account.
     */
@@ -1047,6 +1079,8 @@ package rds {
     var CertificateArn: js.UndefOr[String]
     var CertificateIdentifier: js.UndefOr[String]
     var CertificateType: js.UndefOr[String]
+    var CustomerOverride: js.UndefOr[BooleanOptional]
+    var CustomerOverrideValidTill: js.UndefOr[TStamp]
     var Thumbprint: js.UndefOr[String]
     var ValidFrom: js.UndefOr[TStamp]
     var ValidTill: js.UndefOr[TStamp]
@@ -1058,6 +1092,8 @@ package rds {
         CertificateArn: js.UndefOr[String] = js.undefined,
         CertificateIdentifier: js.UndefOr[String] = js.undefined,
         CertificateType: js.UndefOr[String] = js.undefined,
+        CustomerOverride: js.UndefOr[BooleanOptional] = js.undefined,
+        CustomerOverrideValidTill: js.UndefOr[TStamp] = js.undefined,
         Thumbprint: js.UndefOr[String] = js.undefined,
         ValidFrom: js.UndefOr[TStamp] = js.undefined,
         ValidTill: js.UndefOr[TStamp] = js.undefined
@@ -1066,6 +1102,10 @@ package rds {
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
       CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
       CertificateType.foreach(__v => __obj.updateDynamic("CertificateType")(__v.asInstanceOf[js.Any]))
+      CustomerOverride.foreach(__v => __obj.updateDynamic("CustomerOverride")(__v.asInstanceOf[js.Any]))
+      CustomerOverrideValidTill.foreach(__v =>
+        __obj.updateDynamic("CustomerOverrideValidTill")(__v.asInstanceOf[js.Any])
+      )
       Thumbprint.foreach(__v => __obj.updateDynamic("Thumbprint")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
       ValidTill.foreach(__v => __obj.updateDynamic("ValidTill")(__v.asInstanceOf[js.Any]))
@@ -1551,6 +1591,8 @@ package rds {
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -1587,6 +1629,8 @@ package rds {
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1624,6 +1668,8 @@ package rds {
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -2560,6 +2606,7 @@ package rds {
     var DatabaseName: js.UndefOr[String]
     var DbClusterResourceId: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var DomainMemberships: js.UndefOr[DomainMembershipList]
     var EarliestBacktrackTime: js.UndefOr[TStamp]
     var EarliestRestorableTime: js.UndefOr[TStamp]
     var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
@@ -2616,6 +2663,7 @@ package rds {
         DatabaseName: js.UndefOr[String] = js.undefined,
         DbClusterResourceId: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
         EarliestBacktrackTime: js.UndefOr[TStamp] = js.undefined,
         EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
         EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
@@ -2675,6 +2723,7 @@ package rds {
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DbClusterResourceId.foreach(__v => __obj.updateDynamic("DbClusterResourceId")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
       EarliestBacktrackTime.foreach(__v => __obj.updateDynamic("EarliestBacktrackTime")(__v.asInstanceOf[js.Any]))
       EarliestRestorableTime.foreach(__v => __obj.updateDynamic("EarliestRestorableTime")(__v.asInstanceOf[js.Any]))
       EnabledCloudwatchLogsExports.foreach(__v =>
@@ -5847,6 +5896,34 @@ package rds {
   }
 
   @js.native
+  trait DescribeExportTasksMessage extends js.Object {
+    var ExportTaskIdentifier: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[String]
+    var SourceArn: js.UndefOr[String]
+  }
+
+  object DescribeExportTasksMessage {
+    @inline
+    def apply(
+        ExportTaskIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[String] = js.undefined,
+        SourceArn: js.UndefOr[String] = js.undefined
+    ): DescribeExportTasksMessage = {
+      val __obj = js.Dynamic.literal()
+      ExportTaskIdentifier.foreach(__v => __obj.updateDynamic("ExportTaskIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportTasksMessage]
+    }
+  }
+
+  @js.native
   trait DescribeGlobalClustersMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var GlobalClusterIdentifier: js.UndefOr[String]
@@ -6197,7 +6274,7 @@ package rds {
   }
 
   /**
-    * An Active Directory Domain membership record associated with the DB instance.
+    * An Active Directory Domain membership record associated with the DB instance or cluster.
     */
   @js.native
   trait DomainMembership extends js.Object {
@@ -6558,6 +6635,87 @@ package rds {
   }
 
   /**
+    * Contains the details of a snapshot export to Amazon S3.
+    *  This data type is used as a response element in the <code>DescribeExportTasks</code> action.
+    */
+  @js.native
+  trait ExportTask extends js.Object {
+    var ExportOnly: js.UndefOr[StringList]
+    var ExportTaskIdentifier: js.UndefOr[String]
+    var FailureCause: js.UndefOr[String]
+    var IamRoleArn: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var PercentProgress: js.UndefOr[Int]
+    var S3Bucket: js.UndefOr[String]
+    var S3Prefix: js.UndefOr[String]
+    var SnapshotTime: js.UndefOr[TStamp]
+    var SourceArn: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var TaskEndTime: js.UndefOr[TStamp]
+    var TaskStartTime: js.UndefOr[TStamp]
+    var TotalExtractedDataInGB: js.UndefOr[Int]
+    var WarningMessage: js.UndefOr[String]
+  }
+
+  object ExportTask {
+    @inline
+    def apply(
+        ExportOnly: js.UndefOr[StringList] = js.undefined,
+        ExportTaskIdentifier: js.UndefOr[String] = js.undefined,
+        FailureCause: js.UndefOr[String] = js.undefined,
+        IamRoleArn: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        PercentProgress: js.UndefOr[Int] = js.undefined,
+        S3Bucket: js.UndefOr[String] = js.undefined,
+        S3Prefix: js.UndefOr[String] = js.undefined,
+        SnapshotTime: js.UndefOr[TStamp] = js.undefined,
+        SourceArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        TaskEndTime: js.UndefOr[TStamp] = js.undefined,
+        TaskStartTime: js.UndefOr[TStamp] = js.undefined,
+        TotalExtractedDataInGB: js.UndefOr[Int] = js.undefined,
+        WarningMessage: js.UndefOr[String] = js.undefined
+    ): ExportTask = {
+      val __obj = js.Dynamic.literal()
+      ExportOnly.foreach(__v => __obj.updateDynamic("ExportOnly")(__v.asInstanceOf[js.Any]))
+      ExportTaskIdentifier.foreach(__v => __obj.updateDynamic("ExportTaskIdentifier")(__v.asInstanceOf[js.Any]))
+      FailureCause.foreach(__v => __obj.updateDynamic("FailureCause")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      SnapshotTime.foreach(__v => __obj.updateDynamic("SnapshotTime")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskEndTime.foreach(__v => __obj.updateDynamic("TaskEndTime")(__v.asInstanceOf[js.Any]))
+      TaskStartTime.foreach(__v => __obj.updateDynamic("TaskStartTime")(__v.asInstanceOf[js.Any]))
+      TotalExtractedDataInGB.foreach(__v => __obj.updateDynamic("TotalExtractedDataInGB")(__v.asInstanceOf[js.Any]))
+      WarningMessage.foreach(__v => __obj.updateDynamic("WarningMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportTask]
+    }
+  }
+
+  @js.native
+  trait ExportTasksMessage extends js.Object {
+    var ExportTasks: js.UndefOr[ExportTasksList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object ExportTasksMessage {
+    @inline
+    def apply(
+        ExportTasks: js.UndefOr[ExportTasksList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ExportTasksMessage = {
+      val __obj = js.Dynamic.literal()
+      ExportTasks.foreach(__v => __obj.updateDynamic("ExportTasks")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportTasksMessage]
+    }
+  }
+
+  /**
     * <p/>
     */
   @js.native
@@ -6907,6 +7065,41 @@ package rds {
   }
 
   @js.native
+  trait ModifyCertificatesMessage extends js.Object {
+    var CertificateIdentifier: js.UndefOr[String]
+    var RemoveCustomerOverride: js.UndefOr[BooleanOptional]
+  }
+
+  object ModifyCertificatesMessage {
+    @inline
+    def apply(
+        CertificateIdentifier: js.UndefOr[String] = js.undefined,
+        RemoveCustomerOverride: js.UndefOr[BooleanOptional] = js.undefined
+    ): ModifyCertificatesMessage = {
+      val __obj = js.Dynamic.literal()
+      CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      RemoveCustomerOverride.foreach(__v => __obj.updateDynamic("RemoveCustomerOverride")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCertificatesMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyCertificatesResult extends js.Object {
+    var Certificate: js.UndefOr[Certificate]
+  }
+
+  object ModifyCertificatesResult {
+    @inline
+    def apply(
+        Certificate: js.UndefOr[Certificate] = js.undefined
+    ): ModifyCertificatesResult = {
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCertificatesResult]
+    }
+  }
+
+  @js.native
   trait ModifyCurrentDBClusterCapacityMessage extends js.Object {
     var DBClusterIdentifier: String
     var Capacity: js.UndefOr[IntegerOptional]
@@ -6975,6 +7168,8 @@ package rds {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBInstanceParameterGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -7001,6 +7196,8 @@ package rds {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBInstanceParameterGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -7032,6 +7229,8 @@ package rds {
         __obj.updateDynamic("DBInstanceParameterGroupName")(__v.asInstanceOf[js.Any])
       )
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableHttpEndpoint.foreach(__v => __obj.updateDynamic("EnableHttpEndpoint")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v =>
         __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
@@ -9094,6 +9293,8 @@ package rds {
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -9128,6 +9329,8 @@ package rds {
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -9163,6 +9366,8 @@ package rds {
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -9216,6 +9421,8 @@ package rds {
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineMode: js.UndefOr[String]
@@ -9241,6 +9448,8 @@ package rds {
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineMode: js.UndefOr[String] = js.undefined,
@@ -9267,6 +9476,8 @@ package rds {
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -9313,6 +9524,8 @@ package rds {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var KmsKeyId: js.UndefOr[String]
@@ -9335,6 +9548,8 @@ package rds {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -9358,6 +9573,8 @@ package rds {
       )
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
@@ -10147,6 +10364,42 @@ package rds {
       val __obj = js.Dynamic.literal()
       DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDBInstanceResult]
+    }
+  }
+
+  @js.native
+  trait StartExportTaskMessage extends js.Object {
+    var ExportTaskIdentifier: String
+    var IamRoleArn: String
+    var KmsKeyId: String
+    var S3BucketName: String
+    var SourceArn: String
+    var ExportOnly: js.UndefOr[StringList]
+    var S3Prefix: js.UndefOr[String]
+  }
+
+  object StartExportTaskMessage {
+    @inline
+    def apply(
+        ExportTaskIdentifier: String,
+        IamRoleArn: String,
+        KmsKeyId: String,
+        S3BucketName: String,
+        SourceArn: String,
+        ExportOnly: js.UndefOr[StringList] = js.undefined,
+        S3Prefix: js.UndefOr[String] = js.undefined
+    ): StartExportTaskMessage = {
+      val __obj = js.Dynamic.literal(
+        "ExportTaskIdentifier" -> ExportTaskIdentifier.asInstanceOf[js.Any],
+        "IamRoleArn"           -> IamRoleArn.asInstanceOf[js.Any],
+        "KmsKeyId"             -> KmsKeyId.asInstanceOf[js.Any],
+        "S3BucketName"         -> S3BucketName.asInstanceOf[js.Any],
+        "SourceArn"            -> SourceArn.asInstanceOf[js.Any]
+      )
+
+      ExportOnly.foreach(__v => __obj.updateDynamic("ExportOnly")(__v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartExportTaskMessage]
     }
   }
 

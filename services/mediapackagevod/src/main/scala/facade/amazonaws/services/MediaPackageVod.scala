@@ -7,22 +7,26 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediapackagevod {
-  type AdMarkers                      = String
-  type EncryptionMethod               = String
-  type MaxResults                     = Int
-  type Profile                        = String
-  type StreamOrder                    = String
-  type __boolean                      = Boolean
-  type __integer                      = Int
-  type __listOfAssetShallow           = js.Array[AssetShallow]
-  type __listOfDashManifest           = js.Array[DashManifest]
-  type __listOfEgressEndpoint         = js.Array[EgressEndpoint]
-  type __listOfHlsManifest            = js.Array[HlsManifest]
-  type __listOfMssManifest            = js.Array[MssManifest]
-  type __listOfPackagingConfiguration = js.Array[PackagingConfiguration]
-  type __listOfPackagingGroup         = js.Array[PackagingGroup]
-  type __listOf__string               = js.Array[__string]
-  type __string                       = String
+  type AdMarkers                       = String
+  type EncryptionMethod                = String
+  type ManifestLayout                  = String
+  type MaxResults                      = Int
+  type Profile                         = String
+  type SegmentTemplateFormat           = String
+  type StreamOrder                     = String
+  type __PeriodTriggersElement         = String
+  type __boolean                       = Boolean
+  type __integer                       = Int
+  type __listOfAssetShallow            = js.Array[AssetShallow]
+  type __listOfDashManifest            = js.Array[DashManifest]
+  type __listOfEgressEndpoint          = js.Array[EgressEndpoint]
+  type __listOfHlsManifest             = js.Array[HlsManifest]
+  type __listOfMssManifest             = js.Array[MssManifest]
+  type __listOfPackagingConfiguration  = js.Array[PackagingConfiguration]
+  type __listOfPackagingGroup          = js.Array[PackagingGroup]
+  type __listOf__PeriodTriggersElement = js.Array[__PeriodTriggersElement]
+  type __listOf__string                = js.Array[__string]
+  type __string                        = String
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
@@ -389,6 +393,7 @@ package mediapackagevod {
     */
   @js.native
   trait DashManifest extends js.Object {
+    var ManifestLayout: js.UndefOr[ManifestLayout]
     var ManifestName: js.UndefOr[__string]
     var MinBufferTimeSeconds: js.UndefOr[__integer]
     var Profile: js.UndefOr[Profile]
@@ -398,12 +403,14 @@ package mediapackagevod {
   object DashManifest {
     @inline
     def apply(
+        ManifestLayout: js.UndefOr[ManifestLayout] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
         Profile: js.UndefOr[Profile] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
     ): DashManifest = {
       val __obj = js.Dynamic.literal()
+      ManifestLayout.foreach(__v => __obj.updateDynamic("ManifestLayout")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MinBufferTimeSeconds.foreach(__v => __obj.updateDynamic("MinBufferTimeSeconds")(__v.asInstanceOf[js.Any]))
       Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
@@ -419,7 +426,9 @@ package mediapackagevod {
   trait DashPackage extends js.Object {
     var DashManifests: __listOfDashManifest
     var Encryption: js.UndefOr[DashEncryption]
+    var PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement]
     var SegmentDurationSeconds: js.UndefOr[__integer]
+    var SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat]
   }
 
   object DashPackage {
@@ -427,14 +436,18 @@ package mediapackagevod {
     def apply(
         DashManifests: __listOfDashManifest,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
-        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
+        PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement] = js.undefined,
+        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
+        SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat] = js.undefined
     ): DashPackage = {
       val __obj = js.Dynamic.literal(
         "DashManifests" -> DashManifests.asInstanceOf[js.Any]
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      PeriodTriggers.foreach(__v => __obj.updateDynamic("PeriodTriggers")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
+      SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashPackage]
     }
   }
@@ -923,6 +936,13 @@ package mediapackagevod {
     }
   }
 
+  object ManifestLayoutEnum {
+    val FULL    = "FULL"
+    val COMPACT = "COMPACT"
+
+    val values = js.Object.freeze(js.Array(FULL, COMPACT))
+  }
+
   /**
     * A Microsoft Smooth Streaming (MSS) encryption configuration.
     */
@@ -1062,6 +1082,14 @@ package mediapackagevod {
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
 
+  object SegmentTemplateFormatEnum {
+    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE"
+    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
+    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION"
+
+    val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
+  }
+
   /**
     * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     */
@@ -1120,5 +1148,11 @@ package mediapackagevod {
       StreamOrder.foreach(__v => __obj.updateDynamic("StreamOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSelection]
     }
+  }
+
+  object __PeriodTriggersElementEnum {
+    val ADS = "ADS"
+
+    val values = js.Object.freeze(js.Array(ADS))
   }
 }
