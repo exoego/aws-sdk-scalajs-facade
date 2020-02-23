@@ -8,40 +8,24 @@ import facade.amazonaws._
 
 package object ec2 {
   type AccountAttributeList                             = js.Array[AccountAttribute]
-  type AccountAttributeName                             = String
   type AccountAttributeNameStringList                   = js.Array[AccountAttributeName]
   type AccountAttributeValueList                        = js.Array[AccountAttributeValue]
   type ActiveInstanceSet                                = js.Array[ActiveInstance]
-  type ActivityStatus                                   = String
   type AddressList                                      = js.Array[Address]
-  type Affinity                                         = String
   type AllocationId                                     = String
   type AllocationIdList                                 = js.Array[String]
-  type AllocationState                                  = String
-  type AllocationStrategy                               = String
   type AllowedPrincipalSet                              = js.Array[AllowedPrincipal]
-  type AllowsMultipleInstanceTypes                      = String
-  type ArchitectureType                                 = String
   type ArchitectureTypeList                             = js.Array[ArchitectureType]
-  type ArchitectureValues                               = String
   type AssignedPrivateIpAddressList                     = js.Array[AssignedPrivateIpAddress]
-  type AssociatedNetworkType                            = String
   type AssociatedTargetNetworkSet                       = js.Array[AssociatedTargetNetwork]
   type AssociationIdList                                = js.Array[IamInstanceProfileAssociationId]
-  type AssociationStatusCode                            = String
-  type AttachmentStatus                                 = String
   type AuthorizationRuleSet                             = js.Array[AuthorizationRule]
-  type AutoAcceptSharedAttachmentsValue                 = String
-  type AutoPlacement                                    = String
   type AutoRecoveryFlag                                 = Boolean
   type AvailabilityZoneList                             = js.Array[AvailabilityZone]
   type AvailabilityZoneMessageList                      = js.Array[AvailabilityZoneMessage]
-  type AvailabilityZoneOptInStatus                      = String
-  type AvailabilityZoneState                            = String
   type AvailabilityZoneStringList                       = js.Array[String]
   type AvailableInstanceCapacityList                    = js.Array[InstanceCapacity]
   type BareMetalFlag                                    = Boolean
-  type BatchState                                       = String
   type BillingProductList                               = js.Array[String]
   type Blob                                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BlockDeviceMappingList                           = js.Array[BlockDeviceMapping]
@@ -49,38 +33,24 @@ package object ec2 {
   type BundleId                                         = String
   type BundleIdStringList                               = js.Array[BundleId]
   type BundleTaskList                                   = js.Array[BundleTask]
-  type BundleTaskState                                  = String
   type BurstablePerformanceFlag                         = Boolean
   type ByoipCidrSet                                     = js.Array[ByoipCidr]
-  type ByoipCidrState                                   = String
-  type CancelBatchErrorCode                             = String
   type CancelSpotFleetRequestsErrorSet                  = js.Array[CancelSpotFleetRequestsErrorItem]
   type CancelSpotFleetRequestsSuccessSet                = js.Array[CancelSpotFleetRequestsSuccessItem]
-  type CancelSpotInstanceRequestState                   = String
   type CancelledSpotInstanceRequestList                 = js.Array[CancelledSpotInstanceRequest]
   type CapacityReservationId                            = String
   type CapacityReservationIdSet                         = js.Array[String]
-  type CapacityReservationInstancePlatform              = String
-  type CapacityReservationPreference                    = String
   type CapacityReservationSet                           = js.Array[CapacityReservation]
-  type CapacityReservationState                         = String
-  type CapacityReservationTenancy                       = String
   type CidrBlockSet                                     = js.Array[CidrBlock]
   type ClassicLinkDnsSupportList                        = js.Array[ClassicLinkDnsSupport]
   type ClassicLinkInstanceList                          = js.Array[ClassicLinkInstance]
   type ClassicLoadBalancers                             = js.Array[ClassicLoadBalancer]
-  type ClientCertificateRevocationListStatusCode        = String
   type ClientVpnAuthenticationList                      = js.Array[ClientVpnAuthentication]
   type ClientVpnAuthenticationRequestList               = js.Array[ClientVpnAuthenticationRequest]
-  type ClientVpnAuthenticationType                      = String
-  type ClientVpnAuthorizationRuleStatusCode             = String
   type ClientVpnConnectionSet                           = js.Array[ClientVpnConnection]
-  type ClientVpnConnectionStatusCode                    = String
   type ClientVpnEndpointId                              = String
   type ClientVpnEndpointIdList                          = js.Array[ClientVpnEndpointId]
-  type ClientVpnEndpointStatusCode                      = String
   type ClientVpnRouteSet                                = js.Array[ClientVpnRoute]
-  type ClientVpnRouteStatusCode                         = String
   type ClientVpnSecurityGroupIdSet                      = js.Array[String]
   type CoipAddressUsageSet                              = js.Array[CoipAddressUsage]
   type CoipPoolId                                       = String
@@ -89,39 +59,27 @@ package object ec2 {
   type CoipPoolSet                                      = js.Array[CoipPool]
   type ConnectionNotificationId                         = String
   type ConnectionNotificationSet                        = js.Array[ConnectionNotification]
-  type ConnectionNotificationState                      = String
-  type ConnectionNotificationType                       = String
-  type ContainerFormat                                  = String
   type ConversionIdStringList                           = js.Array[ConversionTaskId]
   type ConversionTaskId                                 = String
-  type ConversionTaskState                              = String
-  type CopyTagsFromSource                               = String
   type CoreCount                                        = Int
   type CoreCountList                                    = js.Array[CoreCount]
   type CreateFleetErrorsSet                             = js.Array[CreateFleetError]
   type CreateFleetInstancesSet                          = js.Array[CreateFleetInstance]
   type CreateVolumePermissionList                       = js.Array[CreateVolumePermission]
-  type CurrencyCodeValues                               = String
   type CurrentGenerationFlag                            = Boolean
   type CustomerGatewayId                                = String
   type CustomerGatewayIdStringList                      = js.Array[CustomerGatewayId]
   type CustomerGatewayList                              = js.Array[CustomerGateway]
   type DITMaxResults                                    = Int
   type DITOMaxResults                                   = Int
-  type DatafeedSubscriptionState                        = String
   type DateTime                                         = js.Date
   type DedicatedHostFlag                                = Boolean
   type DedicatedHostId                                  = String
-  type DefaultRouteTableAssociationValue                = String
-  type DefaultRouteTablePropagationValue                = String
-  type DefaultTargetCapacityType                        = String
   type DefaultingDhcpOptionsId                          = String
-  type DeleteFleetErrorCode                             = String
   type DeleteFleetErrorSet                              = js.Array[DeleteFleetErrorItem]
   type DeleteFleetSuccessSet                            = js.Array[DeleteFleetSuccessItem]
   type DeleteLaunchTemplateVersionsResponseErrorSet     = js.Array[DeleteLaunchTemplateVersionsResponseErrorItem]
   type DeleteLaunchTemplateVersionsResponseSuccessSet   = js.Array[DeleteLaunchTemplateVersionsResponseSuccessItem]
-  type DeleteQueuedReservedInstancesErrorCode           = String
   type DeleteQueuedReservedInstancesIdList              = js.Array[ReservationId]
   type DescribeByoipCidrsMaxResults                     = Int
   type DescribeCapacityReservationsMaxResults           = Int
@@ -164,7 +122,6 @@ package object ec2 {
   type DescribeVpcClassicLinkDnsSupportNextToken        = String
   type DescribeVpcPeeringConnectionsMaxResults          = Int
   type DescribeVpcsMaxResults                           = Int
-  type DeviceType                                       = String
   type DhcpConfigurationList                            = js.Array[DhcpConfiguration]
   type DhcpConfigurationValueList                       = js.Array[AttributeValue]
   type DhcpOptionsId                                    = String
@@ -174,17 +131,10 @@ package object ec2 {
   type DisableFastSnapshotRestoreStateErrorSet          = js.Array[DisableFastSnapshotRestoreStateErrorItem]
   type DisableFastSnapshotRestoreSuccessSet             = js.Array[DisableFastSnapshotRestoreSuccessItem]
   type DiskCount                                        = Int
-  type DiskImageFormat                                  = String
   type DiskImageList                                    = js.Array[DiskImage]
   type DiskInfoList                                     = js.Array[DiskInfo]
   type DiskSize                                         = Double
-  type DiskType                                         = String
   type DnsEntrySet                                      = js.Array[DnsEntry]
-  type DnsNameState                                     = String
-  type DnsSupportValue                                  = String
-  type DomainType                                       = String
-  type EbsEncryptionSupport                             = String
-  type EbsOptimizedSupport                              = String
   type EgressOnlyInternetGatewayId                      = String
   type EgressOnlyInternetGatewayIdList                  = js.Array[EgressOnlyInternetGatewayId]
   type EgressOnlyInternetGatewayList                    = js.Array[EgressOnlyInternetGateway]
@@ -195,64 +145,43 @@ package object ec2 {
   type ElasticGpuSpecificationList                      = js.Array[ElasticGpuSpecification]
   type ElasticGpuSpecificationResponseList              = js.Array[ElasticGpuSpecificationResponse]
   type ElasticGpuSpecifications                         = js.Array[ElasticGpuSpecification]
-  type ElasticGpuState                                  = String
-  type ElasticGpuStatus                                 = String
   type ElasticInferenceAcceleratorAssociationList       = js.Array[ElasticInferenceAcceleratorAssociation]
   type ElasticInferenceAcceleratorCount                 = Int
   type ElasticInferenceAccelerators                     = js.Array[ElasticInferenceAccelerator]
   type ElasticIpAssociationId                           = String
-  type EnaSupport                                       = String
   type EnableFastSnapshotRestoreErrorSet                = js.Array[EnableFastSnapshotRestoreErrorItem]
   type EnableFastSnapshotRestoreStateErrorSet           = js.Array[EnableFastSnapshotRestoreStateErrorItem]
   type EnableFastSnapshotRestoreSuccessSet              = js.Array[EnableFastSnapshotRestoreSuccessItem]
-  type EndDateType                                      = String
   type EndpointSet                                      = js.Array[ClientVpnEndpoint]
-  type EventCode                                        = String
-  type EventType                                        = String
-  type ExcessCapacityTerminationPolicy                  = String
   type ExecutableByStringList                           = js.Array[String]
-  type ExportEnvironment                                = String
   type ExportImageTaskId                                = String
   type ExportImageTaskIdList                            = js.Array[ExportImageTaskId]
   type ExportImageTaskList                              = js.Array[ExportImageTask]
   type ExportTaskId                                     = String
   type ExportTaskIdStringList                           = js.Array[String]
   type ExportTaskList                                   = js.Array[ExportTask]
-  type ExportTaskState                                  = String
   type FailedQueuedPurchaseDeletionSet                  = js.Array[FailedQueuedPurchaseDeletion]
-  type FastSnapshotRestoreStateCode                     = String
   type FilterList                                       = js.Array[Filter]
-  type FleetActivityStatus                              = String
-  type FleetCapacityReservationUsageStrategy            = String
-  type FleetEventType                                   = String
-  type FleetExcessCapacityTerminationPolicy             = String
   type FleetIdSet                                       = js.Array[FleetIdentifier]
   type FleetIdentifier                                  = String
   type FleetLaunchTemplateConfigList                    = js.Array[FleetLaunchTemplateConfig]
   type FleetLaunchTemplateConfigListRequest             = js.Array[FleetLaunchTemplateConfigRequest]
   type FleetLaunchTemplateOverridesList                 = js.Array[FleetLaunchTemplateOverrides]
   type FleetLaunchTemplateOverridesListRequest          = js.Array[FleetLaunchTemplateOverridesRequest]
-  type FleetOnDemandAllocationStrategy                  = String
   type FleetSet                                         = js.Array[FleetData]
-  type FleetStateCode                                   = String
-  type FleetType                                        = String
   type FlowLogIdList                                    = js.Array[VpcFlowLogId]
   type FlowLogResourceId                                = String
   type FlowLogResourceIds                               = js.Array[FlowLogResourceId]
   type FlowLogSet                                       = js.Array[FlowLog]
-  type FlowLogsResourceType                             = String
   type FpgaDeviceCount                                  = Int
   type FpgaDeviceInfoList                               = js.Array[FpgaDeviceInfo]
   type FpgaDeviceManufacturerName                       = String
   type FpgaDeviceMemorySize                             = Int
   type FpgaDeviceName                                   = String
-  type FpgaImageAttributeName                           = String
   type FpgaImageId                                      = String
   type FpgaImageIdList                                  = js.Array[FpgaImageId]
   type FpgaImageList                                    = js.Array[FpgaImage]
-  type FpgaImageStateCode                               = String
   type FreeTierEligibleFlag                             = Boolean
-  type GatewayType                                      = String
   type GetCapacityReservationUsageRequestMaxResults     = Int
   type GpuDeviceCount                                   = Int
   type GpuDeviceInfoList                                = js.Array[GpuDeviceInfo]
@@ -270,26 +199,18 @@ package object ec2 {
   type HostInstanceList                                 = js.Array[HostInstance]
   type HostList                                         = js.Array[Host]
   type HostOfferingSet                                  = js.Array[HostOffering]
-  type HostRecovery                                     = String
   type HostReservationId                                = String
   type HostReservationIdSet                             = js.Array[HostReservationId]
   type HostReservationSet                               = js.Array[HostReservation]
-  type HostTenancy                                      = String
-  type HttpTokensState                                  = String
-  type HypervisorType                                   = String
   type IKEVersionsList                                  = js.Array[IKEVersionsListValue]
   type IKEVersionsRequestList                           = js.Array[IKEVersionsRequestListValue]
   type IamInstanceProfileAssociationId                  = String
   type IamInstanceProfileAssociationSet                 = js.Array[IamInstanceProfileAssociation]
-  type IamInstanceProfileAssociationState               = String
   type IdFormatList                                     = js.Array[IdFormat]
-  type ImageAttributeName                               = String
   type ImageDiskContainerList                           = js.Array[ImageDiskContainer]
   type ImageId                                          = String
   type ImageIdStringList                                = js.Array[ImageId]
   type ImageList                                        = js.Array[Image]
-  type ImageState                                       = String
-  type ImageTypeValues                                  = String
   type ImportImageLicenseSpecificationListRequest       = js.Array[ImportImageLicenseConfigurationRequest]
   type ImportImageLicenseSpecificationListResponse      = js.Array[ImportImageLicenseConfigurationResponse]
   type ImportImageTaskId                                = String
@@ -304,44 +225,32 @@ package object ec2 {
   type InferenceDeviceInfoList                          = js.Array[InferenceDeviceInfo]
   type InferenceDeviceManufacturerName                  = String
   type InferenceDeviceName                              = String
-  type InstanceAttributeName                            = String
   type InstanceBlockDeviceMappingList                   = js.Array[InstanceBlockDeviceMapping]
   type InstanceBlockDeviceMappingSpecificationList      = js.Array[InstanceBlockDeviceMappingSpecification]
   type InstanceCountList                                = js.Array[InstanceCount]
   type InstanceCreditSpecificationList                  = js.Array[InstanceCreditSpecification]
   type InstanceCreditSpecificationListRequest           = js.Array[InstanceCreditSpecificationRequest]
   type InstanceEventId                                  = String
-  type InstanceHealthStatus                             = String
   type InstanceId                                       = String
   type InstanceIdSet                                    = js.Array[String]
   type InstanceIdStringList                             = js.Array[InstanceId]
   type InstanceIdsSet                                   = js.Array[InstanceId]
-  type InstanceInterruptionBehavior                     = String
   type InstanceIpv6AddressList                          = js.Array[InstanceIpv6Address]
   type InstanceIpv6AddressListRequest                   = js.Array[InstanceIpv6AddressRequest]
-  type InstanceLifecycle                                = String
-  type InstanceLifecycleType                            = String
   type InstanceList                                     = js.Array[Instance]
-  type InstanceMatchCriteria                            = String
-  type InstanceMetadataEndpointState                    = String
-  type InstanceMetadataOptionsState                     = String
   type InstanceMonitoringList                           = js.Array[InstanceMonitoring]
   type InstanceNetworkInterfaceList                     = js.Array[InstanceNetworkInterface]
   type InstanceNetworkInterfaceSpecificationList        = js.Array[InstanceNetworkInterfaceSpecification]
   type InstancePrivateIpAddressList                     = js.Array[InstancePrivateIpAddress]
   type InstanceStateChangeList                          = js.Array[InstanceStateChange]
-  type InstanceStateName                                = String
   type InstanceStatusDetailsList                        = js.Array[InstanceStatusDetails]
   type InstanceStatusEventList                          = js.Array[InstanceStatusEvent]
   type InstanceStatusList                               = js.Array[InstanceStatus]
   type InstanceStorageFlag                              = Boolean
-  type InstanceType                                     = String
-  type InstanceTypeHypervisor                           = String
   type InstanceTypeInfoList                             = js.Array[InstanceTypeInfo]
   type InstanceTypeList                                 = js.Array[InstanceType]
   type InstanceTypeOfferingsList                        = js.Array[InstanceTypeOffering]
   type InstanceUsageSet                                 = js.Array[InstanceUsage]
-  type InterfacePermissionType                          = String
   type InternetGatewayAttachmentList                    = js.Array[InternetGatewayAttachment]
   type InternetGatewayId                                = String
   type InternetGatewayIdList                            = js.Array[InternetGatewayId]
@@ -360,7 +269,6 @@ package object ec2 {
   type Ipv6PoolMaxResults                               = Int
   type Ipv6PoolSet                                      = js.Array[Ipv6Pool]
   type Ipv6RangeList                                    = js.Array[Ipv6Range]
-  type Ipv6SupportValue                                 = String
   type KernelId                                         = String
   type KeyNameStringList                                = js.Array[KeyPairName]
   type KeyPairId                                        = String
@@ -377,12 +285,8 @@ package object ec2 {
   type LaunchTemplateElasticInferenceAcceleratorList    = js.Array[LaunchTemplateElasticInferenceAccelerator]
   type LaunchTemplateElasticInferenceAcceleratorResponseList =
     js.Array[LaunchTemplateElasticInferenceAcceleratorResponse]
-  type LaunchTemplateErrorCode                     = String
-  type LaunchTemplateHttpTokensState               = String
-  type LaunchTemplateId                            = String
-  type LaunchTemplateIdStringList                  = js.Array[LaunchTemplateId]
-  type LaunchTemplateInstanceMetadataEndpointState = String
-  type LaunchTemplateInstanceMetadataOptionsState  = String
+  type LaunchTemplateId           = String
+  type LaunchTemplateIdStringList = js.Array[LaunchTemplateId]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationList =
     js.Array[LaunchTemplateInstanceNetworkInterfaceSpecification]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList =
@@ -398,15 +302,12 @@ package object ec2 {
   type LaunchTemplateVersionSet                                 = js.Array[LaunchTemplateVersion]
   type LicenseList                                              = js.Array[LicenseConfiguration]
   type LicenseSpecificationListRequest                          = js.Array[LicenseConfigurationRequest]
-  type ListingState                                             = String
-  type ListingStatus                                            = String
   type LoadPermissionList                                       = js.Array[LoadPermission]
   type LoadPermissionListRequest                                = js.Array[LoadPermissionRequest]
   type LocalGatewayId                                           = String
   type LocalGatewayIdSet                                        = js.Array[LocalGatewayId]
   type LocalGatewayMaxResults                                   = Int
   type LocalGatewayRouteList                                    = js.Array[LocalGatewayRoute]
-  type LocalGatewayRouteState                                   = String
   type LocalGatewayRouteTableIdSet                              = js.Array[LocalGatewayRoutetableId]
   type LocalGatewayRouteTableSet                                = js.Array[LocalGatewayRouteTable]
   type LocalGatewayRouteTableVirtualInterfaceGroupAssociationId = String
@@ -417,7 +318,6 @@ package object ec2 {
   type LocalGatewayRouteTableVpcAssociationId            = String
   type LocalGatewayRouteTableVpcAssociationIdSet         = js.Array[LocalGatewayRouteTableVpcAssociationId]
   type LocalGatewayRouteTableVpcAssociationSet           = js.Array[LocalGatewayRouteTableVpcAssociation]
-  type LocalGatewayRouteType                             = String
   type LocalGatewayRoutetableId                          = String
   type LocalGatewaySet                                   = js.Array[LocalGateway]
   type LocalGatewayVirtualInterfaceGroupId               = String
@@ -427,25 +327,17 @@ package object ec2 {
   type LocalGatewayVirtualInterfaceIdSet                 = js.Array[LocalGatewayVirtualInterfaceId]
   type LocalGatewayVirtualInterfaceSet                   = js.Array[LocalGatewayVirtualInterface]
   type Location                                          = String
-  type LocationType                                      = String
-  type LogDestinationType                                = String
-  type MarketType                                        = String
   type MaxIpv4AddrPerInterface                           = Int
   type MaxIpv6AddrPerInterface                           = Int
   type MaxNetworkInterfaces                              = Int
   type MaxResults                                        = Int
-  type MembershipType                                    = String
   type MemorySize                                        = Double
   type MillisecondDateTime                               = js.Date
-  type MonitoringState                                   = String
-  type MoveStatus                                        = String
   type MovingAddressStatusSet                            = js.Array[MovingAddressStatus]
-  type MulticastSupportValue                             = String
   type NatGatewayAddressList                             = js.Array[NatGatewayAddress]
   type NatGatewayId                                      = String
   type NatGatewayIdStringList                            = js.Array[NatGatewayId]
   type NatGatewayList                                    = js.Array[NatGateway]
-  type NatGatewayState                                   = String
   type NetworkAclAssociationId                           = String
   type NetworkAclAssociationList                         = js.Array[NetworkAclAssociation]
   type NetworkAclEntryList                               = js.Array[NetworkAclEntry]
@@ -453,8 +345,6 @@ package object ec2 {
   type NetworkAclIdStringList                            = js.Array[NetworkAclId]
   type NetworkAclList                                    = js.Array[NetworkAcl]
   type NetworkInterfaceAttachmentId                      = String
-  type NetworkInterfaceAttribute                         = String
-  type NetworkInterfaceCreationType                      = String
   type NetworkInterfaceId                                = String
   type NetworkInterfaceIdList                            = js.Array[NetworkInterfaceId]
   type NetworkInterfaceIpv6AddressesList                 = js.Array[NetworkInterfaceIpv6Address]
@@ -462,23 +352,14 @@ package object ec2 {
   type NetworkInterfacePermissionId                      = String
   type NetworkInterfacePermissionIdList                  = js.Array[NetworkInterfacePermissionId]
   type NetworkInterfacePermissionList                    = js.Array[NetworkInterfacePermission]
-  type NetworkInterfacePermissionStateCode               = String
   type NetworkInterfacePrivateIpAddressList              = js.Array[NetworkInterfacePrivateIpAddress]
-  type NetworkInterfaceStatus                            = String
-  type NetworkInterfaceType                              = String
   type NetworkPerformance                                = String
   type NewDhcpConfigurationList                          = js.Array[NewDhcpConfiguration]
   type NextToken                                         = String
   type OccurrenceDayRequestSet                           = js.Array[Int]
   type OccurrenceDaySet                                  = js.Array[Int]
-  type OfferingClassType                                 = String
   type OfferingId                                        = String
-  type OfferingTypeValues                                = String
-  type OnDemandAllocationStrategy                        = String
-  type OperationType                                     = String
   type OwnerStringList                                   = js.Array[String]
-  type PaymentOption                                     = String
-  type PermissionGroup                                   = String
   type Phase1DHGroupNumbersList                          = js.Array[Phase1DHGroupNumbersListValue]
   type Phase1DHGroupNumbersRequestList                   = js.Array[Phase1DHGroupNumbersRequestListValue]
   type Phase1EncryptionAlgorithmsList                    = js.Array[Phase1EncryptionAlgorithmsListValue]
@@ -495,12 +376,8 @@ package object ec2 {
   type PlacementGroupIdStringList                        = js.Array[PlacementGroupId]
   type PlacementGroupList                                = js.Array[PlacementGroup]
   type PlacementGroupName                                = String
-  type PlacementGroupState                               = String
-  type PlacementGroupStrategy                            = String
   type PlacementGroupStrategyList                        = js.Array[PlacementGroupStrategy]
   type PlacementGroupStringList                          = js.Array[PlacementGroupName]
-  type PlacementStrategy                                 = String
-  type PlatformValues                                    = String
   type PoolCidrBlocksSet                                 = js.Array[PoolCidrBlock]
   type PoolMaxResults                                    = Int
   type PrefixListIdList                                  = js.Array[PrefixListId]
@@ -512,14 +389,12 @@ package object ec2 {
   type PriceScheduleSpecificationList                    = js.Array[PriceScheduleSpecification]
   type PricingDetailsList                                = js.Array[PricingDetail]
   type PrincipalIdFormatList                             = js.Array[PrincipalIdFormat]
-  type PrincipalType                                     = String
   type PrivateIpAddressConfigSet                         = js.Array[ScheduledInstancesPrivateIpAddressConfig]
   type PrivateIpAddressSpecificationList                 = js.Array[PrivateIpAddressSpecification]
   type PrivateIpAddressStringList                        = js.Array[String]
   type ProcessorSustainedClockSpeed                      = Double
   type ProductCodeList                                   = js.Array[ProductCode]
   type ProductCodeStringList                             = js.Array[String]
-  type ProductCodeValues                                 = String
   type ProductDescriptionList                            = js.Array[String]
   type PropagatingVgwList                                = js.Array[PropagatingVgw]
   type PublicIpStringList                                = js.Array[String]
@@ -529,15 +404,11 @@ package object ec2 {
   type PurchaseRequestSet                                = js.Array[PurchaseRequest]
   type PurchaseSet                                       = js.Array[Purchase]
   type PurchasedScheduledInstanceSet                     = js.Array[ScheduledInstance]
-  type RIProductDescription                              = String
   type RamdiskId                                         = String
   type ReasonCodesList                                   = js.Array[ReportInstanceReasonCodes]
-  type RecurringChargeFrequency                          = String
   type RecurringChargesList                              = js.Array[RecurringCharge]
   type RegionList                                        = js.Array[Region]
   type RegionNameStringList                              = js.Array[String]
-  type ReportInstanceReasonCodes                         = String
-  type ReportStatusType                                  = String
   type RequestHostIdList                                 = js.Array[DedicatedHostId]
   type RequestHostIdSet                                  = js.Array[DedicatedHostId]
   type RequestInstanceTypeList                           = js.Array[InstanceType]
@@ -545,10 +416,8 @@ package object ec2 {
   type RequestSpotLaunchSpecificationSecurityGroupList   = js.Array[SecurityGroupName]
   type ReservationId                                     = String
   type ReservationList                                   = js.Array[Reservation]
-  type ReservationState                                  = String
   type ReservedInstanceIdSet                             = js.Array[ReservationId]
   type ReservedInstanceReservationValueSet               = js.Array[ReservedInstanceReservationValue]
-  type ReservedInstanceState                             = String
   type ReservedInstancesConfigurationList                = js.Array[ReservedInstancesConfiguration]
   type ReservedInstancesIdStringList                     = js.Array[ReservationId]
   type ReservedInstancesList                             = js.Array[ReservedInstances]
@@ -562,27 +431,19 @@ package object ec2 {
   type ReservedInstancesOfferingIdStringList             = js.Array[ReservedInstancesOfferingId]
   type ReservedInstancesOfferingList                     = js.Array[ReservedInstancesOffering]
   type ReservedIntancesIds                               = js.Array[ReservedInstancesId]
-  type ResetFpgaImageAttributeName                       = String
-  type ResetImageAttributeName                           = String
   type ResourceIdList                                    = js.Array[TaggableResourceId]
   type ResourceList                                      = js.Array[String]
-  type ResourceType                                      = String
   type ResponseHostIdList                                = js.Array[String]
   type ResponseHostIdSet                                 = js.Array[String]
   type RestorableByStringList                            = js.Array[String]
-  type RootDeviceType                                    = String
   type RootDeviceTypeList                                = js.Array[RootDeviceType]
   type RouteGatewayId                                    = String
   type RouteList                                         = js.Array[Route]
-  type RouteOrigin                                       = String
-  type RouteState                                        = String
   type RouteTableAssociationId                           = String
   type RouteTableAssociationList                         = js.Array[RouteTableAssociation]
-  type RouteTableAssociationStateCode                    = String
   type RouteTableId                                      = String
   type RouteTableIdStringList                            = js.Array[RouteTableId]
   type RouteTableList                                    = js.Array[RouteTable]
-  type RuleAction                                        = String
   type ScheduledInstanceAvailabilitySet                  = js.Array[ScheduledInstanceAvailability]
   type ScheduledInstanceId                               = String
   type ScheduledInstanceIdRequestSet                     = js.Array[ScheduledInstanceId]
@@ -600,46 +461,30 @@ package object ec2 {
   type SensitiveUserData                                 = String
   type ServiceConfigurationSet                           = js.Array[ServiceConfiguration]
   type ServiceDetailSet                                  = js.Array[ServiceDetail]
-  type ServiceState                                      = String
-  type ServiceType                                       = String
   type ServiceTypeDetailSet                              = js.Array[ServiceTypeDetail]
-  type ShutdownBehavior                                  = String
-  type SnapshotAttributeName                             = String
   type SnapshotDetailList                                = js.Array[SnapshotDetail]
   type SnapshotId                                        = String
   type SnapshotIdStringList                              = js.Array[SnapshotId]
   type SnapshotList                                      = js.Array[Snapshot]
   type SnapshotSet                                       = js.Array[SnapshotInfo]
-  type SnapshotState                                     = String
-  type SpotAllocationStrategy                            = String
   type SpotFleetRequestConfigSet                         = js.Array[SpotFleetRequestConfig]
   type SpotFleetRequestId                                = String
   type SpotFleetRequestIdList                            = js.Array[SpotFleetRequestId]
   type SpotFleetTagSpecificationList                     = js.Array[SpotFleetTagSpecification]
-  type SpotInstanceInterruptionBehavior                  = String
   type SpotInstanceRequestId                             = String
   type SpotInstanceRequestIdList                         = js.Array[SpotInstanceRequestId]
   type SpotInstanceRequestList                           = js.Array[SpotInstanceRequest]
-  type SpotInstanceState                                 = String
-  type SpotInstanceType                                  = String
   type SpotPriceHistoryList                              = js.Array[SpotPrice]
   type StaleIpPermissionSet                              = js.Array[StaleIpPermission]
   type StaleSecurityGroupSet                             = js.Array[StaleSecurityGroup]
-  type State                                             = String
-  type Status                                            = String
-  type StatusName                                        = String
-  type StatusType                                        = String
   type SubnetAssociationList                             = js.Array[SubnetAssociation]
   type SubnetCidrAssociationId                           = String
-  type SubnetCidrBlockStateCode                          = String
   type SubnetId                                          = String
   type SubnetIdStringList                                = js.Array[SubnetId]
   type SubnetIpv6CidrBlockAssociationSet                 = js.Array[SubnetIpv6CidrBlockAssociation]
   type SubnetList                                        = js.Array[Subnet]
-  type SubnetState                                       = String
   type SuccessfulInstanceCreditSpecificationSet          = js.Array[SuccessfulInstanceCreditSpecificationItem]
   type SuccessfulQueuedPurchaseDeletionSet               = js.Array[SuccessfulQueuedPurchaseDeletion]
-  type SummaryStatus                                     = String
   type TagDescriptionList                                = js.Array[TagDescription]
   type TagList                                           = js.Array[Tag]
   type TagSpecificationList                              = js.Array[TagSpecification]
@@ -648,23 +493,16 @@ package object ec2 {
   type TargetGroups                                      = js.Array[TargetGroup]
   type TargetNetworkSet                                  = js.Array[TargetNetwork]
   type TargetReservationValueSet                         = js.Array[TargetReservationValue]
-  type TelemetryStatus                                   = String
-  type Tenancy                                           = String
   type TerminateConnectionStatusSet                      = js.Array[TerminateConnectionStatus]
   type ThreadsPerCore                                    = Int
   type ThreadsPerCoreList                                = js.Array[ThreadsPerCore]
-  type TrafficDirection                                  = String
   type TrafficMirrorFilterId                             = String
   type TrafficMirrorFilterIdList                         = js.Array[TrafficMirrorFilterId]
-  type TrafficMirrorFilterRuleField                      = String
   type TrafficMirrorFilterRuleFieldList                  = js.Array[TrafficMirrorFilterRuleField]
   type TrafficMirrorFilterRuleId                         = String
   type TrafficMirrorFilterRuleList                       = js.Array[TrafficMirrorFilterRule]
   type TrafficMirrorFilterSet                            = js.Array[TrafficMirrorFilter]
-  type TrafficMirrorNetworkService                       = String
   type TrafficMirrorNetworkServiceList                   = js.Array[TrafficMirrorNetworkService]
-  type TrafficMirrorRuleAction                           = String
-  type TrafficMirrorSessionField                         = String
   type TrafficMirrorSessionFieldList                     = js.Array[TrafficMirrorSessionField]
   type TrafficMirrorSessionId                            = String
   type TrafficMirrorSessionIdList                        = js.Array[TrafficMirrorSessionId]
@@ -672,51 +510,35 @@ package object ec2 {
   type TrafficMirrorTargetId                             = String
   type TrafficMirrorTargetIdList                         = js.Array[TrafficMirrorTargetId]
   type TrafficMirrorTargetSet                            = js.Array[TrafficMirrorTarget]
-  type TrafficMirrorTargetType                           = String
   type TrafficMirroringMaxResults                        = Int
-  type TrafficType                                       = String
-  type TransitGatewayAssociationState                    = String
   type TransitGatewayAttachmentId                        = String
   type TransitGatewayAttachmentIdStringList              = js.Array[TransitGatewayAttachmentId]
   type TransitGatewayAttachmentList                      = js.Array[TransitGatewayAttachment]
   type TransitGatewayAttachmentPropagationList           = js.Array[TransitGatewayAttachmentPropagation]
-  type TransitGatewayAttachmentResourceType              = String
-  type TransitGatewayAttachmentState                     = String
   type TransitGatewayId                                  = String
   type TransitGatewayIdStringList                        = js.Array[TransitGatewayId]
   type TransitGatewayList                                = js.Array[TransitGateway]
   type TransitGatewayMaxResults                          = Int
-  type TransitGatewayMulitcastDomainAssociationState     = String
   type TransitGatewayMulticastDomainAssociationList      = js.Array[TransitGatewayMulticastDomainAssociation]
   type TransitGatewayMulticastDomainId                   = String
   type TransitGatewayMulticastDomainIdStringList         = js.Array[String]
   type TransitGatewayMulticastDomainList                 = js.Array[TransitGatewayMulticastDomain]
-  type TransitGatewayMulticastDomainState                = String
   type TransitGatewayMulticastGroupList                  = js.Array[TransitGatewayMulticastGroup]
   type TransitGatewayNetworkInterfaceIdList              = js.Array[NetworkInterfaceId]
   type TransitGatewayPeeringAttachmentList               = js.Array[TransitGatewayPeeringAttachment]
-  type TransitGatewayPropagationState                    = String
   type TransitGatewayRouteAttachmentList                 = js.Array[TransitGatewayRouteAttachment]
   type TransitGatewayRouteList                           = js.Array[TransitGatewayRoute]
-  type TransitGatewayRouteState                          = String
   type TransitGatewayRouteTableAssociationList           = js.Array[TransitGatewayRouteTableAssociation]
   type TransitGatewayRouteTableId                        = String
   type TransitGatewayRouteTableIdStringList              = js.Array[String]
   type TransitGatewayRouteTableList                      = js.Array[TransitGatewayRouteTable]
   type TransitGatewayRouteTablePropagationList           = js.Array[TransitGatewayRouteTablePropagation]
-  type TransitGatewayRouteTableState                     = String
-  type TransitGatewayRouteType                           = String
-  type TransitGatewayState                               = String
   type TransitGatewaySubnetIdList                        = js.Array[SubnetId]
   type TransitGatewayVpcAttachmentList                   = js.Array[TransitGatewayVpcAttachment]
-  type TransportProtocol                                 = String
   type TunnelOptionsList                                 = js.Array[TunnelOption]
-  type UnlimitedSupportedInstanceFamily                  = String
-  type UnsuccessfulInstanceCreditSpecificationErrorCode  = String
   type UnsuccessfulInstanceCreditSpecificationSet        = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
   type UnsuccessfulItemList                              = js.Array[UnsuccessfulItem]
   type UnsuccessfulItemSet                               = js.Array[UnsuccessfulItem]
-  type UsageClassType                                    = String
   type UsageClassTypeList                                = js.Array[UsageClassType]
   type UserGroupStringList                               = js.Array[String]
   type UserIdGroupPairList                               = js.Array[UserIdGroupPair]
@@ -727,29 +549,19 @@ package object ec2 {
   type VersionDescription                                = String
   type VersionStringList                                 = js.Array[String]
   type VgwTelemetryList                                  = js.Array[VgwTelemetry]
-  type VirtualizationType                                = String
   type VolumeAttachmentList                              = js.Array[VolumeAttachment]
-  type VolumeAttachmentState                             = String
-  type VolumeAttributeName                               = String
   type VolumeId                                          = String
   type VolumeIdStringList                                = js.Array[VolumeId]
   type VolumeList                                        = js.Array[Volume]
   type VolumeModificationList                            = js.Array[VolumeModification]
-  type VolumeModificationState                           = String
-  type VolumeState                                       = String
   type VolumeStatusActionsList                           = js.Array[VolumeStatusAction]
   type VolumeStatusAttachmentStatusList                  = js.Array[VolumeStatusAttachmentStatus]
   type VolumeStatusDetailsList                           = js.Array[VolumeStatusDetails]
   type VolumeStatusEventsList                            = js.Array[VolumeStatusEvent]
-  type VolumeStatusInfoStatus                            = String
   type VolumeStatusList                                  = js.Array[VolumeStatusItem]
-  type VolumeStatusName                                  = String
-  type VolumeType                                        = String
   type VpcAttachmentList                                 = js.Array[VpcAttachment]
-  type VpcAttributeName                                  = String
   type VpcCidrAssociationId                              = String
   type VpcCidrBlockAssociationSet                        = js.Array[VpcCidrBlockAssociation]
-  type VpcCidrBlockStateCode                             = String
   type VpcClassicLinkIdList                              = js.Array[VpcId]
   type VpcClassicLinkList                                = js.Array[VpcClassicLink]
   type VpcEndpointConnectionSet                          = js.Array[VpcEndpointConnection]
@@ -761,7 +573,6 @@ package object ec2 {
   type VpcEndpointServiceIdList                          = js.Array[VpcEndpointServiceId]
   type VpcEndpointSet                                    = js.Array[VpcEndpoint]
   type VpcEndpointSubnetIdList                           = js.Array[SubnetId]
-  type VpcEndpointType                                   = String
   type VpcFlowLogId                                      = String
   type VpcId                                             = String
   type VpcIdStringList                                   = js.Array[VpcId]
@@ -770,24 +581,16 @@ package object ec2 {
   type VpcPeeringConnectionId                            = String
   type VpcPeeringConnectionIdList                        = js.Array[VpcPeeringConnectionId]
   type VpcPeeringConnectionList                          = js.Array[VpcPeeringConnection]
-  type VpcPeeringConnectionStateReasonCode               = String
-  type VpcState                                          = String
-  type VpcTenancy                                        = String
   type VpnConnectionId                                   = String
   type VpnConnectionIdStringList                         = js.Array[VpnConnectionId]
   type VpnConnectionList                                 = js.Array[VpnConnection]
-  type VpnEcmpSupportValue                               = String
   type VpnGatewayId                                      = String
   type VpnGatewayIdStringList                            = js.Array[VpnGatewayId]
   type VpnGatewayList                                    = js.Array[VpnGateway]
-  type VpnProtocol                                       = String
-  type VpnState                                          = String
   type VpnStaticRouteList                                = js.Array[VpnStaticRoute]
-  type VpnStaticRouteSource                              = String
   type VpnTunnelOptionsSpecificationsList                = js.Array[VpnTunnelOptionsSpecification]
   type ZoneIdStringList                                  = js.Array[String]
   type ZoneNameStringList                                = js.Array[String]
-  type scope                                             = String
   type totalFpgaMemory                                   = Int
   type totalGpuMemory                                    = Int
 
@@ -2872,10 +2675,11 @@ package ec2 {
       __obj.asInstanceOf[AccountAttribute]
     }
   }
-
-  object AccountAttributeNameEnum {
-    val `supported-platforms` = "supported-platforms"
-    val `default-vpc`         = "default-vpc"
+  @js.native
+  sealed trait AccountAttributeName extends js.Any
+  object AccountAttributeName extends js.Object {
+    val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
+    val `default-vpc`         = "default-vpc".asInstanceOf[AccountAttributeName]
 
     val values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
   }
@@ -2926,12 +2730,13 @@ package ec2 {
       __obj.asInstanceOf[ActiveInstance]
     }
   }
-
-  object ActivityStatusEnum {
-    val error               = "error"
-    val pending_fulfillment = "pending_fulfillment"
-    val pending_termination = "pending_termination"
-    val fulfilled           = "fulfilled"
+  @js.native
+  sealed trait ActivityStatus extends js.Any
+  object ActivityStatus extends js.Object {
+    val error               = "error".asInstanceOf[ActivityStatus]
+    val pending_fulfillment = "pending_fulfillment".asInstanceOf[ActivityStatus]
+    val pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
+    val fulfilled           = "fulfilled".asInstanceOf[ActivityStatus]
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
@@ -3027,10 +2832,11 @@ package ec2 {
       __obj.asInstanceOf[AdvertiseByoipCidrResult]
     }
   }
-
-  object AffinityEnum {
-    val default = "default"
-    val host    = "host"
+  @js.native
+  sealed trait Affinity extends js.Any
+  object Affinity extends js.Object {
+    val default = "default".asInstanceOf[Affinity]
+    val host    = "host".asInstanceOf[Affinity]
 
     val values = js.Object.freeze(js.Array(default, host))
   }
@@ -3157,24 +2963,26 @@ package ec2 {
       __obj.asInstanceOf[AllocateHostsResult]
     }
   }
-
-  object AllocationStateEnum {
-    val available                    = "available"
-    val `under-assessment`           = "under-assessment"
-    val `permanent-failure`          = "permanent-failure"
-    val released                     = "released"
-    val `released-permanent-failure` = "released-permanent-failure"
-    val pending                      = "pending"
+  @js.native
+  sealed trait AllocationState extends js.Any
+  object AllocationState extends js.Object {
+    val available                    = "available".asInstanceOf[AllocationState]
+    val `under-assessment`           = "under-assessment".asInstanceOf[AllocationState]
+    val `permanent-failure`          = "permanent-failure".asInstanceOf[AllocationState]
+    val released                     = "released".asInstanceOf[AllocationState]
+    val `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
+    val pending                      = "pending".asInstanceOf[AllocationState]
 
     val values = js.Object.freeze(
       js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
     )
   }
-
-  object AllocationStrategyEnum {
-    val lowestPrice       = "lowestPrice"
-    val diversified       = "diversified"
-    val capacityOptimized = "capacityOptimized"
+  @js.native
+  sealed trait AllocationStrategy extends js.Any
+  object AllocationStrategy extends js.Object {
+    val lowestPrice       = "lowestPrice".asInstanceOf[AllocationStrategy]
+    val diversified       = "diversified".asInstanceOf[AllocationStrategy]
+    val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
 
     val values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
   }
@@ -3200,10 +3008,11 @@ package ec2 {
       __obj.asInstanceOf[AllowedPrincipal]
     }
   }
-
-  object AllowsMultipleInstanceTypesEnum {
-    val on  = "on"
-    val off = "off"
+  @js.native
+  sealed trait AllowsMultipleInstanceTypes extends js.Any
+  object AllowsMultipleInstanceTypes extends js.Object {
+    val on  = "on".asInstanceOf[AllowsMultipleInstanceTypes]
+    val off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
 
     val values = js.Object.freeze(js.Array(on, off))
   }
@@ -3250,19 +3059,21 @@ package ec2 {
       __obj.asInstanceOf[ApplySecurityGroupsToClientVpnTargetNetworkResult]
     }
   }
-
-  object ArchitectureTypeEnum {
-    val i386   = "i386"
-    val x86_64 = "x86_64"
-    val arm64  = "arm64"
+  @js.native
+  sealed trait ArchitectureType extends js.Any
+  object ArchitectureType extends js.Object {
+    val i386   = "i386".asInstanceOf[ArchitectureType]
+    val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
+    val arm64  = "arm64".asInstanceOf[ArchitectureType]
 
     val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
-
-  object ArchitectureValuesEnum {
-    val i386   = "i386"
-    val x86_64 = "x86_64"
-    val arm64  = "arm64"
+  @js.native
+  sealed trait ArchitectureValues extends js.Any
+  object ArchitectureValues extends js.Object {
+    val i386   = "i386".asInstanceOf[ArchitectureValues]
+    val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
+    val arm64  = "arm64".asInstanceOf[ArchitectureValues]
 
     val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
@@ -3770,9 +3581,10 @@ package ec2 {
       __obj.asInstanceOf[AssociateVpcCidrBlockResult]
     }
   }
-
-  object AssociatedNetworkTypeEnum {
-    val vpc = "vpc"
+  @js.native
+  sealed trait AssociatedNetworkType extends js.Any
+  object AssociatedNetworkType extends js.Object {
+    val vpc = "vpc".asInstanceOf[AssociatedNetworkType]
 
     val values = js.Object.freeze(js.Array(vpc))
   }
@@ -3820,13 +3632,14 @@ package ec2 {
       __obj.asInstanceOf[AssociationStatus]
     }
   }
-
-  object AssociationStatusCodeEnum {
-    val associating          = "associating"
-    val associated           = "associated"
-    val `association-failed` = "association-failed"
-    val disassociating       = "disassociating"
-    val disassociated        = "disassociated"
+  @js.native
+  sealed trait AssociationStatusCode extends js.Any
+  object AssociationStatusCode extends js.Object {
+    val associating          = "associating".asInstanceOf[AssociationStatusCode]
+    val associated           = "associated".asInstanceOf[AssociationStatusCode]
+    val `association-failed` = "association-failed".asInstanceOf[AssociationStatusCode]
+    val disassociating       = "disassociating".asInstanceOf[AssociationStatusCode]
+    val disassociated        = "disassociated".asInstanceOf[AssociationStatusCode]
 
     val values =
       js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
@@ -4020,12 +3833,13 @@ package ec2 {
       __obj.asInstanceOf[AttachVpnGatewayResult]
     }
   }
-
-  object AttachmentStatusEnum {
-    val attaching = "attaching"
-    val attached  = "attached"
-    val detaching = "detaching"
-    val detached  = "detached"
+  @js.native
+  sealed trait AttachmentStatus extends js.Any
+  object AttachmentStatus extends js.Object {
+    val attaching = "attaching".asInstanceOf[AttachmentStatus]
+    val attached  = "attached".asInstanceOf[AttachmentStatus]
+    val detaching = "detaching".asInstanceOf[AttachmentStatus]
+    val detached  = "detached".asInstanceOf[AttachmentStatus]
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
@@ -4242,17 +4056,19 @@ package ec2 {
       __obj.asInstanceOf[AuthorizeSecurityGroupIngressRequest]
     }
   }
-
-  object AutoAcceptSharedAttachmentsValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait AutoAcceptSharedAttachmentsValue extends js.Any
+  object AutoAcceptSharedAttachmentsValue extends js.Object {
+    val enable  = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
+    val disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
-
-  object AutoPlacementEnum {
-    val on  = "on"
-    val off = "off"
+  @js.native
+  sealed trait AutoPlacement extends js.Any
+  object AutoPlacement extends js.Object {
+    val on  = "on".asInstanceOf[AutoPlacement]
+    val off = "off".asInstanceOf[AutoPlacement]
 
     val values = js.Object.freeze(js.Array(on, off))
   }
@@ -4315,20 +4131,22 @@ package ec2 {
       __obj.asInstanceOf[AvailabilityZoneMessage]
     }
   }
-
-  object AvailabilityZoneOptInStatusEnum {
-    val `opt-in-not-required` = "opt-in-not-required"
-    val `opted-in`            = "opted-in"
-    val `not-opted-in`        = "not-opted-in"
+  @js.native
+  sealed trait AvailabilityZoneOptInStatus extends js.Any
+  object AvailabilityZoneOptInStatus extends js.Object {
+    val `opt-in-not-required` = "opt-in-not-required".asInstanceOf[AvailabilityZoneOptInStatus]
+    val `opted-in`            = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
+    val `not-opted-in`        = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
 
     val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
   }
-
-  object AvailabilityZoneStateEnum {
-    val available   = "available"
-    val information = "information"
-    val impaired    = "impaired"
-    val unavailable = "unavailable"
+  @js.native
+  sealed trait AvailabilityZoneState extends js.Any
+  object AvailabilityZoneState extends js.Object {
+    val available   = "available".asInstanceOf[AvailabilityZoneState]
+    val information = "information".asInstanceOf[AvailabilityZoneState]
+    val impaired    = "impaired".asInstanceOf[AvailabilityZoneState]
+    val unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
 
     val values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
   }
@@ -4356,15 +4174,16 @@ package ec2 {
       __obj.asInstanceOf[AvailableCapacity]
     }
   }
-
-  object BatchStateEnum {
-    val submitted             = "submitted"
-    val active                = "active"
-    val cancelled             = "cancelled"
-    val failed                = "failed"
-    val cancelled_running     = "cancelled_running"
-    val cancelled_terminating = "cancelled_terminating"
-    val modifying             = "modifying"
+  @js.native
+  sealed trait BatchState extends js.Any
+  object BatchState extends js.Object {
+    val submitted             = "submitted".asInstanceOf[BatchState]
+    val active                = "active".asInstanceOf[BatchState]
+    val cancelled             = "cancelled".asInstanceOf[BatchState]
+    val failed                = "failed".asInstanceOf[BatchState]
+    val cancelled_running     = "cancelled_running".asInstanceOf[BatchState]
+    val cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
+    val modifying             = "modifying".asInstanceOf[BatchState]
 
     val values = js.Object.freeze(
       js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
@@ -4522,15 +4341,16 @@ package ec2 {
       __obj.asInstanceOf[BundleTaskError]
     }
   }
-
-  object BundleTaskStateEnum {
-    val pending                = "pending"
-    val `waiting-for-shutdown` = "waiting-for-shutdown"
-    val bundling               = "bundling"
-    val storing                = "storing"
-    val cancelling             = "cancelling"
-    val complete               = "complete"
-    val failed                 = "failed"
+  @js.native
+  sealed trait BundleTaskState extends js.Any
+  object BundleTaskState extends js.Object {
+    val pending                = "pending".asInstanceOf[BundleTaskState]
+    val `waiting-for-shutdown` = "waiting-for-shutdown".asInstanceOf[BundleTaskState]
+    val bundling               = "bundling".asInstanceOf[BundleTaskState]
+    val storing                = "storing".asInstanceOf[BundleTaskState]
+    val cancelling             = "cancelling".asInstanceOf[BundleTaskState]
+    val complete               = "complete".asInstanceOf[BundleTaskState]
+    val failed                 = "failed".asInstanceOf[BundleTaskState]
 
     val values =
       js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
@@ -4563,16 +4383,17 @@ package ec2 {
       __obj.asInstanceOf[ByoipCidr]
     }
   }
-
-  object ByoipCidrStateEnum {
-    val advertised                              = "advertised"
-    val deprovisioned                           = "deprovisioned"
-    val `failed-deprovision`                    = "failed-deprovision"
-    val `failed-provision`                      = "failed-provision"
-    val `pending-deprovision`                   = "pending-deprovision"
-    val `pending-provision`                     = "pending-provision"
-    val provisioned                             = "provisioned"
-    val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable"
+  @js.native
+  sealed trait ByoipCidrState extends js.Any
+  object ByoipCidrState extends js.Object {
+    val advertised                              = "advertised".asInstanceOf[ByoipCidrState]
+    val deprovisioned                           = "deprovisioned".asInstanceOf[ByoipCidrState]
+    val `failed-deprovision`                    = "failed-deprovision".asInstanceOf[ByoipCidrState]
+    val `failed-provision`                      = "failed-provision".asInstanceOf[ByoipCidrState]
+    val `pending-deprovision`                   = "pending-deprovision".asInstanceOf[ByoipCidrState]
+    val `pending-provision`                     = "pending-provision".asInstanceOf[ByoipCidrState]
+    val provisioned                             = "provisioned".asInstanceOf[ByoipCidrState]
+    val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4587,12 +4408,13 @@ package ec2 {
       )
     )
   }
-
-  object CancelBatchErrorCodeEnum {
-    val fleetRequestIdDoesNotExist        = "fleetRequestIdDoesNotExist"
-    val fleetRequestIdMalformed           = "fleetRequestIdMalformed"
-    val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState"
-    val unexpectedError                   = "unexpectedError"
+  @js.native
+  sealed trait CancelBatchErrorCode extends js.Any
+  object CancelBatchErrorCode extends js.Object {
+    val fleetRequestIdDoesNotExist        = "fleetRequestIdDoesNotExist".asInstanceOf[CancelBatchErrorCode]
+    val fleetRequestIdMalformed           = "fleetRequestIdMalformed".asInstanceOf[CancelBatchErrorCode]
+    val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
+    val unexpectedError                   = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
 
     val values = js.Object.freeze(
       js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
@@ -4930,13 +4752,14 @@ package ec2 {
       __obj.asInstanceOf[CancelSpotFleetRequestsSuccessItem]
     }
   }
-
-  object CancelSpotInstanceRequestStateEnum {
-    val active    = "active"
-    val open      = "open"
-    val closed    = "closed"
-    val cancelled = "cancelled"
-    val completed = "completed"
+  @js.native
+  sealed trait CancelSpotInstanceRequestState extends js.Any
+  object CancelSpotInstanceRequestState extends js.Object {
+    val active    = "active".asInstanceOf[CancelSpotInstanceRequestState]
+    val open      = "open".asInstanceOf[CancelSpotInstanceRequestState]
+    val closed    = "closed".asInstanceOf[CancelSpotInstanceRequestState]
+    val cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
+    val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
     val values = js.Object.freeze(js.Array(active, open, closed, cancelled, completed))
   }
@@ -5077,19 +4900,24 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservation]
     }
   }
-
-  object CapacityReservationInstancePlatformEnum {
-    val `Linux/UNIX`                         = "Linux/UNIX"
-    val `Red Hat Enterprise Linux`           = "Red Hat Enterprise Linux"
-    val `SUSE Linux`                         = "SUSE Linux"
-    val Windows                              = "Windows"
-    val `Windows with SQL Server`            = "Windows with SQL Server"
-    val `Windows with SQL Server Enterprise` = "Windows with SQL Server Enterprise"
-    val `Windows with SQL Server Standard`   = "Windows with SQL Server Standard"
-    val `Windows with SQL Server Web`        = "Windows with SQL Server Web"
-    val `Linux with SQL Server Standard`     = "Linux with SQL Server Standard"
-    val `Linux with SQL Server Web`          = "Linux with SQL Server Web"
-    val `Linux with SQL Server Enterprise`   = "Linux with SQL Server Enterprise"
+  @js.native
+  sealed trait CapacityReservationInstancePlatform extends js.Any
+  object CapacityReservationInstancePlatform extends js.Object {
+    val `Linux/UNIX`               = "Linux/UNIX".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Red Hat Enterprise Linux` = "Red Hat Enterprise Linux".asInstanceOf[CapacityReservationInstancePlatform]
+    val `SUSE Linux`               = "SUSE Linux".asInstanceOf[CapacityReservationInstancePlatform]
+    val Windows                    = "Windows".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows with SQL Server`  = "Windows with SQL Server".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows with SQL Server Enterprise` =
+      "Windows with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows with SQL Server Standard` =
+      "Windows with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows with SQL Server Web` = "Windows with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Linux with SQL Server Standard` =
+      "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Linux with SQL Server Enterprise` =
+      "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5151,10 +4979,11 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationOptionsRequest]
     }
   }
-
-  object CapacityReservationPreferenceEnum {
-    val open = "open"
-    val none = "none"
+  @js.native
+  sealed trait CapacityReservationPreference extends js.Any
+  object CapacityReservationPreference extends js.Object {
+    val open = "open".asInstanceOf[CapacityReservationPreference]
+    val none = "none".asInstanceOf[CapacityReservationPreference]
 
     val values = js.Object.freeze(js.Array(open, none))
   }
@@ -5211,13 +5040,14 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationSpecificationResponse]
     }
   }
-
-  object CapacityReservationStateEnum {
-    val active    = "active"
-    val expired   = "expired"
-    val cancelled = "cancelled"
-    val pending   = "pending"
-    val failed    = "failed"
+  @js.native
+  sealed trait CapacityReservationState extends js.Any
+  object CapacityReservationState extends js.Object {
+    val active    = "active".asInstanceOf[CapacityReservationState]
+    val expired   = "expired".asInstanceOf[CapacityReservationState]
+    val cancelled = "cancelled".asInstanceOf[CapacityReservationState]
+    val pending   = "pending".asInstanceOf[CapacityReservationState]
+    val failed    = "failed".asInstanceOf[CapacityReservationState]
 
     val values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
   }
@@ -5259,10 +5089,11 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationTargetResponse]
     }
   }
-
-  object CapacityReservationTenancyEnum {
-    val default   = "default"
-    val dedicated = "dedicated"
+  @js.native
+  sealed trait CapacityReservationTenancy extends js.Any
+  object CapacityReservationTenancy extends js.Object {
+    val default   = "default".asInstanceOf[CapacityReservationTenancy]
+    val dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
 
     val values = js.Object.freeze(js.Array(default, dedicated))
   }
@@ -5461,10 +5292,11 @@ package ec2 {
       __obj.asInstanceOf[ClientCertificateRevocationListStatus]
     }
   }
-
-  object ClientCertificateRevocationListStatusCodeEnum {
-    val pending = "pending"
-    val active  = "active"
+  @js.native
+  sealed trait ClientCertificateRevocationListStatusCode extends js.Any
+  object ClientCertificateRevocationListStatusCode extends js.Object {
+    val pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
+    val active  = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
 
     val values = js.Object.freeze(js.Array(pending, active))
   }
@@ -5546,10 +5378,12 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnAuthenticationRequest]
     }
   }
-
-  object ClientVpnAuthenticationTypeEnum {
-    val `certificate-authentication`       = "certificate-authentication"
-    val `directory-service-authentication` = "directory-service-authentication"
+  @js.native
+  sealed trait ClientVpnAuthenticationType extends js.Any
+  object ClientVpnAuthenticationType extends js.Object {
+    val `certificate-authentication` = "certificate-authentication".asInstanceOf[ClientVpnAuthenticationType]
+    val `directory-service-authentication` =
+      "directory-service-authentication".asInstanceOf[ClientVpnAuthenticationType]
 
     val values = js.Object.freeze(js.Array(`certificate-authentication`, `directory-service-authentication`))
   }
@@ -5575,12 +5409,13 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnAuthorizationRuleStatus]
     }
   }
-
-  object ClientVpnAuthorizationRuleStatusCodeEnum {
-    val authorizing = "authorizing"
-    val active      = "active"
-    val failed      = "failed"
-    val revoking    = "revoking"
+  @js.native
+  sealed trait ClientVpnAuthorizationRuleStatusCode extends js.Any
+  object ClientVpnAuthorizationRuleStatusCode extends js.Object {
+    val authorizing = "authorizing".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val active      = "active".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val failed      = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val revoking    = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
 
     val values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
   }
@@ -5663,12 +5498,13 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnConnectionStatus]
     }
   }
-
-  object ClientVpnConnectionStatusCodeEnum {
-    val active                = "active"
-    val `failed-to-terminate` = "failed-to-terminate"
-    val terminating           = "terminating"
-    val terminated            = "terminated"
+  @js.native
+  sealed trait ClientVpnConnectionStatusCode extends js.Any
+  object ClientVpnConnectionStatusCode extends js.Object {
+    val active                = "active".asInstanceOf[ClientVpnConnectionStatusCode]
+    val `failed-to-terminate` = "failed-to-terminate".asInstanceOf[ClientVpnConnectionStatusCode]
+    val terminating           = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
+    val terminated            = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
 
     val values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
   }
@@ -5761,12 +5597,13 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnEndpointStatus]
     }
   }
-
-  object ClientVpnEndpointStatusCodeEnum {
-    val `pending-associate` = "pending-associate"
-    val available           = "available"
-    val deleting            = "deleting"
-    val deleted             = "deleted"
+  @js.native
+  sealed trait ClientVpnEndpointStatusCode extends js.Any
+  object ClientVpnEndpointStatusCode extends js.Object {
+    val `pending-associate` = "pending-associate".asInstanceOf[ClientVpnEndpointStatusCode]
+    val available           = "available".asInstanceOf[ClientVpnEndpointStatusCode]
+    val deleting            = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
+    val deleted             = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
 
     val values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
   }
@@ -5829,12 +5666,13 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnRouteStatus]
     }
   }
-
-  object ClientVpnRouteStatusCodeEnum {
-    val creating = "creating"
-    val active   = "active"
-    val failed   = "failed"
-    val deleting = "deleting"
+  @js.native
+  sealed trait ClientVpnRouteStatusCode extends js.Any
+  object ClientVpnRouteStatusCode extends js.Object {
+    val creating = "creating".asInstanceOf[ClientVpnRouteStatusCode]
+    val active   = "active".asInstanceOf[ClientVpnRouteStatusCode]
+    val failed   = "failed".asInstanceOf[ClientVpnRouteStatusCode]
+    val deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
 
     val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
   }
@@ -6030,22 +5868,25 @@ package ec2 {
       __obj.asInstanceOf[ConnectionNotification]
     }
   }
-
-  object ConnectionNotificationStateEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait ConnectionNotificationState extends js.Any
+  object ConnectionNotificationState extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[ConnectionNotificationState]
+    val Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
-
-  object ConnectionNotificationTypeEnum {
-    val Topic = "Topic"
+  @js.native
+  sealed trait ConnectionNotificationType extends js.Any
+  object ConnectionNotificationType extends js.Object {
+    val Topic = "Topic".asInstanceOf[ConnectionNotificationType]
 
     val values = js.Object.freeze(js.Array(Topic))
   }
-
-  object ContainerFormatEnum {
-    val ova = "ova"
+  @js.native
+  sealed trait ContainerFormat extends js.Any
+  object ContainerFormat extends js.Object {
+    val ova = "ova".asInstanceOf[ContainerFormat]
 
     val values = js.Object.freeze(js.Array(ova))
   }
@@ -6086,12 +5927,13 @@ package ec2 {
       __obj.asInstanceOf[ConversionTask]
     }
   }
-
-  object ConversionTaskStateEnum {
-    val active     = "active"
-    val cancelling = "cancelling"
-    val cancelled  = "cancelled"
-    val completed  = "completed"
+  @js.native
+  sealed trait ConversionTaskState extends js.Any
+  object ConversionTaskState extends js.Object {
+    val active     = "active".asInstanceOf[ConversionTaskState]
+    val cancelling = "cancelling".asInstanceOf[ConversionTaskState]
+    val cancelled  = "cancelled".asInstanceOf[ConversionTaskState]
+    val completed  = "completed".asInstanceOf[ConversionTaskState]
 
     val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
@@ -6266,9 +6108,10 @@ package ec2 {
       __obj.asInstanceOf[CopySnapshotResult]
     }
   }
-
-  object CopyTagsFromSourceEnum {
-    val volume = "volume"
+  @js.native
+  sealed trait CopyTagsFromSource extends js.Any
+  object CopyTagsFromSource extends js.Object {
+    val volume = "volume".asInstanceOf[CopyTagsFromSource]
 
     val values = js.Object.freeze(js.Array(volume))
   }
@@ -9044,9 +8887,10 @@ package ec2 {
       __obj.asInstanceOf[CreditSpecificationRequest]
     }
   }
-
-  object CurrencyCodeValuesEnum {
-    val USD = "USD"
+  @js.native
+  sealed trait CurrencyCodeValues extends js.Any
+  object CurrencyCodeValues extends js.Object {
+    val USD = "USD".asInstanceOf[CurrencyCodeValues]
 
     val values = js.Object.freeze(js.Array(USD))
   }
@@ -9090,31 +8934,35 @@ package ec2 {
       __obj.asInstanceOf[CustomerGateway]
     }
   }
-
-  object DatafeedSubscriptionStateEnum {
-    val Active   = "Active"
-    val Inactive = "Inactive"
+  @js.native
+  sealed trait DatafeedSubscriptionState extends js.Any
+  object DatafeedSubscriptionState extends js.Object {
+    val Active   = "Active".asInstanceOf[DatafeedSubscriptionState]
+    val Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
-
-  object DefaultRouteTableAssociationValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
-
-    val values = js.Object.freeze(js.Array(enable, disable))
-  }
-
-  object DefaultRouteTablePropagationValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait DefaultRouteTableAssociationValue extends js.Any
+  object DefaultRouteTableAssociationValue extends js.Object {
+    val enable  = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
+    val disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
+  @js.native
+  sealed trait DefaultRouteTablePropagationValue extends js.Any
+  object DefaultRouteTablePropagationValue extends js.Object {
+    val enable  = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
+    val disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
 
-  object DefaultTargetCapacityTypeEnum {
-    val spot        = "spot"
-    val `on-demand` = "on-demand"
+    val values = js.Object.freeze(js.Array(enable, disable))
+  }
+  @js.native
+  sealed trait DefaultTargetCapacityType extends js.Any
+  object DefaultTargetCapacityType extends js.Object {
+    val spot        = "spot".asInstanceOf[DefaultTargetCapacityType]
+    val `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
@@ -9302,12 +9150,13 @@ package ec2 {
       __obj.asInstanceOf[DeleteFleetError]
     }
   }
-
-  object DeleteFleetErrorCodeEnum {
-    val fleetIdDoesNotExist      = "fleetIdDoesNotExist"
-    val fleetIdMalformed         = "fleetIdMalformed"
-    val fleetNotInDeletableState = "fleetNotInDeletableState"
-    val unexpectedError          = "unexpectedError"
+  @js.native
+  sealed trait DeleteFleetErrorCode extends js.Any
+  object DeleteFleetErrorCode extends js.Object {
+    val fleetIdDoesNotExist      = "fleetIdDoesNotExist".asInstanceOf[DeleteFleetErrorCode]
+    val fleetIdMalformed         = "fleetIdMalformed".asInstanceOf[DeleteFleetErrorCode]
+    val fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
+    val unexpectedError          = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
 
     val values =
       js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
@@ -9937,11 +9786,14 @@ package ec2 {
       __obj.asInstanceOf[DeleteQueuedReservedInstancesError]
     }
   }
-
-  object DeleteQueuedReservedInstancesErrorCodeEnum {
-    val `reserved-instances-id-invalid`          = "reserved-instances-id-invalid"
-    val `reserved-instances-not-in-queued-state` = "reserved-instances-not-in-queued-state"
-    val `unexpected-error`                       = "unexpected-error"
+  @js.native
+  sealed trait DeleteQueuedReservedInstancesErrorCode extends js.Any
+  object DeleteQueuedReservedInstancesErrorCode extends js.Object {
+    val `reserved-instances-id-invalid` =
+      "reserved-instances-id-invalid".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
+    val `reserved-instances-not-in-queued-state` =
+      "reserved-instances-not-in-queued-state".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
+    val `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
 
     val values = js.Object.freeze(
       js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
@@ -16529,10 +16381,11 @@ package ec2 {
       __obj.asInstanceOf[DetachVpnGatewayRequest]
     }
   }
-
-  object DeviceTypeEnum {
-    val ebs              = "ebs"
-    val `instance-store` = "instance-store"
+  @js.native
+  sealed trait DeviceType extends js.Any
+  object DeviceType extends js.Object {
+    val ebs              = "ebs".asInstanceOf[DeviceType]
+    val `instance-store` = "instance-store".asInstanceOf[DeviceType]
 
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
@@ -17316,11 +17169,12 @@ package ec2 {
       __obj.asInstanceOf[DiskImageDetail]
     }
   }
-
-  object DiskImageFormatEnum {
-    val VMDK = "VMDK"
-    val RAW  = "RAW"
-    val VHD  = "VHD"
+  @js.native
+  sealed trait DiskImageFormat extends js.Any
+  object DiskImageFormat extends js.Object {
+    val VMDK = "VMDK".asInstanceOf[DiskImageFormat]
+    val RAW  = "RAW".asInstanceOf[DiskImageFormat]
+    val VHD  = "VHD".asInstanceOf[DiskImageFormat]
 
     val values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
   }
@@ -17371,10 +17225,11 @@ package ec2 {
       __obj.asInstanceOf[DiskInfo]
     }
   }
-
-  object DiskTypeEnum {
-    val hdd = "hdd"
-    val ssd = "ssd"
+  @js.native
+  sealed trait DiskType extends js.Any
+  object DiskType extends js.Object {
+    val hdd = "hdd".asInstanceOf[DiskType]
+    val ssd = "ssd".asInstanceOf[DiskType]
 
     val values = js.Object.freeze(js.Array(hdd, ssd))
   }
@@ -17400,11 +17255,12 @@ package ec2 {
       __obj.asInstanceOf[DnsEntry]
     }
   }
-
-  object DnsNameStateEnum {
-    val pendingVerification = "pendingVerification"
-    val verified            = "verified"
-    val failed              = "failed"
+  @js.native
+  sealed trait DnsNameState extends js.Any
+  object DnsNameState extends js.Object {
+    val pendingVerification = "pendingVerification".asInstanceOf[DnsNameState]
+    val verified            = "verified".asInstanceOf[DnsNameState]
+    val failed              = "failed".asInstanceOf[DnsNameState]
 
     val values = js.Object.freeze(js.Array(pendingVerification, verified, failed))
   }
@@ -17430,17 +17286,19 @@ package ec2 {
       __obj.asInstanceOf[DnsServersOptionsModifyStructure]
     }
   }
-
-  object DnsSupportValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait DnsSupportValue extends js.Any
+  object DnsSupportValue extends js.Object {
+    val enable  = "enable".asInstanceOf[DnsSupportValue]
+    val disable = "disable".asInstanceOf[DnsSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
-
-  object DomainTypeEnum {
-    val vpc      = "vpc"
-    val standard = "standard"
+  @js.native
+  sealed trait DomainType extends js.Any
+  object DomainType extends js.Object {
+    val vpc      = "vpc".asInstanceOf[DomainType]
+    val standard = "standard".asInstanceOf[DomainType]
 
     val values = js.Object.freeze(js.Array(vpc, standard))
   }
@@ -17481,10 +17339,11 @@ package ec2 {
       __obj.asInstanceOf[EbsBlockDevice]
     }
   }
-
-  object EbsEncryptionSupportEnum {
-    val unsupported = "unsupported"
-    val supported   = "supported"
+  @js.native
+  sealed trait EbsEncryptionSupport extends js.Any
+  object EbsEncryptionSupport extends js.Object {
+    val unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
+    val supported   = "supported".asInstanceOf[EbsEncryptionSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported))
   }
@@ -17560,11 +17419,12 @@ package ec2 {
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
     }
   }
-
-  object EbsOptimizedSupportEnum {
-    val unsupported = "unsupported"
-    val supported   = "supported"
-    val default     = "default"
+  @js.native
+  sealed trait EbsOptimizedSupport extends js.Any
+  object EbsOptimizedSupport extends js.Object {
+    val unsupported = "unsupported".asInstanceOf[EbsOptimizedSupport]
+    val supported   = "supported".asInstanceOf[EbsOptimizedSupport]
+    val default     = "default".asInstanceOf[EbsOptimizedSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported, default))
   }
@@ -17686,16 +17546,18 @@ package ec2 {
       __obj.asInstanceOf[ElasticGpuSpecificationResponse]
     }
   }
-
-  object ElasticGpuStateEnum {
-    val ATTACHED = "ATTACHED"
+  @js.native
+  sealed trait ElasticGpuState extends js.Any
+  object ElasticGpuState extends js.Object {
+    val ATTACHED = "ATTACHED".asInstanceOf[ElasticGpuState]
 
     val values = js.Object.freeze(js.Array(ATTACHED))
   }
-
-  object ElasticGpuStatusEnum {
-    val OK       = "OK"
-    val IMPAIRED = "IMPAIRED"
+  @js.native
+  sealed trait ElasticGpuStatus extends js.Any
+  object ElasticGpuStatus extends js.Object {
+    val OK       = "OK".asInstanceOf[ElasticGpuStatus]
+    val IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
 
     val values = js.Object.freeze(js.Array(OK, IMPAIRED))
   }
@@ -17796,11 +17658,12 @@ package ec2 {
       __obj.asInstanceOf[ElasticInferenceAcceleratorAssociation]
     }
   }
-
-  object EnaSupportEnum {
-    val unsupported = "unsupported"
-    val supported   = "supported"
-    val required    = "required"
+  @js.native
+  sealed trait EnaSupport extends js.Any
+  object EnaSupport extends js.Object {
+    val unsupported = "unsupported".asInstanceOf[EnaSupport]
+    val supported   = "supported".asInstanceOf[EnaSupport]
+    val required    = "required".asInstanceOf[EnaSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported, required))
   }
@@ -18153,20 +18016,22 @@ package ec2 {
       __obj.asInstanceOf[EnableVpcClassicLinkResult]
     }
   }
-
-  object EndDateTypeEnum {
-    val unlimited = "unlimited"
-    val limited   = "limited"
+  @js.native
+  sealed trait EndDateType extends js.Any
+  object EndDateType extends js.Object {
+    val unlimited = "unlimited".asInstanceOf[EndDateType]
+    val limited   = "limited".asInstanceOf[EndDateType]
 
     val values = js.Object.freeze(js.Array(unlimited, limited))
   }
-
-  object EventCodeEnum {
-    val `instance-reboot`     = "instance-reboot"
-    val `system-reboot`       = "system-reboot"
-    val `system-maintenance`  = "system-maintenance"
-    val `instance-retirement` = "instance-retirement"
-    val `instance-stop`       = "instance-stop"
+  @js.native
+  sealed trait EventCode extends js.Any
+  object EventCode extends js.Object {
+    val `instance-reboot`     = "instance-reboot".asInstanceOf[EventCode]
+    val `system-reboot`       = "system-reboot".asInstanceOf[EventCode]
+    val `system-maintenance`  = "system-maintenance".asInstanceOf[EventCode]
+    val `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
+    val `instance-stop`       = "instance-stop".asInstanceOf[EventCode]
 
     val values = js.Object.freeze(
       js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
@@ -18197,19 +18062,21 @@ package ec2 {
       __obj.asInstanceOf[EventInformation]
     }
   }
-
-  object EventTypeEnum {
-    val instanceChange     = "instanceChange"
-    val fleetRequestChange = "fleetRequestChange"
-    val error              = "error"
-    val information        = "information"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val instanceChange     = "instanceChange".asInstanceOf[EventType]
+    val fleetRequestChange = "fleetRequestChange".asInstanceOf[EventType]
+    val error              = "error".asInstanceOf[EventType]
+    val information        = "information".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
   }
-
-  object ExcessCapacityTerminationPolicyEnum {
-    val noTermination = "noTermination"
-    val default       = "default"
+  @js.native
+  sealed trait ExcessCapacityTerminationPolicy extends js.Any
+  object ExcessCapacityTerminationPolicy extends js.Object {
+    val noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
+    val default       = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
 
     val values = js.Object.freeze(js.Array(noTermination, default))
   }
@@ -18292,11 +18159,12 @@ package ec2 {
       __obj.asInstanceOf[ExportClientVpnClientConfigurationResult]
     }
   }
-
-  object ExportEnvironmentEnum {
-    val citrix    = "citrix"
-    val vmware    = "vmware"
-    val microsoft = "microsoft"
+  @js.native
+  sealed trait ExportEnvironment extends js.Any
+  object ExportEnvironment extends js.Object {
+    val citrix    = "citrix".asInstanceOf[ExportEnvironment]
+    val vmware    = "vmware".asInstanceOf[ExportEnvironment]
+    val microsoft = "microsoft".asInstanceOf[ExportEnvironment]
 
     val values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
   }
@@ -18496,12 +18364,13 @@ package ec2 {
       __obj.asInstanceOf[ExportTaskS3LocationRequest]
     }
   }
-
-  object ExportTaskStateEnum {
-    val active     = "active"
-    val cancelling = "cancelling"
-    val cancelled  = "cancelled"
-    val completed  = "completed"
+  @js.native
+  sealed trait ExportTaskState extends js.Any
+  object ExportTaskState extends js.Object {
+    val active     = "active".asInstanceOf[ExportTaskState]
+    val cancelling = "cancelling".asInstanceOf[ExportTaskState]
+    val cancelled  = "cancelled".asInstanceOf[ExportTaskState]
+    val completed  = "completed".asInstanceOf[ExportTaskState]
 
     val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
@@ -18626,13 +18495,14 @@ package ec2 {
       __obj.asInstanceOf[FailedQueuedPurchaseDeletion]
     }
   }
-
-  object FastSnapshotRestoreStateCodeEnum {
-    val enabling   = "enabling"
-    val optimizing = "optimizing"
-    val enabled    = "enabled"
-    val disabling  = "disabling"
-    val disabled   = "disabled"
+  @js.native
+  sealed trait FastSnapshotRestoreStateCode extends js.Any
+  object FastSnapshotRestoreStateCode extends js.Object {
+    val enabling   = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    val optimizing = "optimizing".asInstanceOf[FastSnapshotRestoreStateCode]
+    val enabled    = "enabled".asInstanceOf[FastSnapshotRestoreStateCode]
+    val disabling  = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    val disabled   = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
 
     val values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
   }
@@ -18668,18 +18538,21 @@ package ec2 {
       __obj.asInstanceOf[Filter]
     }
   }
-
-  object FleetActivityStatusEnum {
-    val error               = "error"
-    val pending_fulfillment = "pending_fulfillment"
-    val pending_termination = "pending_termination"
-    val fulfilled           = "fulfilled"
+  @js.native
+  sealed trait FleetActivityStatus extends js.Any
+  object FleetActivityStatus extends js.Object {
+    val error               = "error".asInstanceOf[FleetActivityStatus]
+    val pending_fulfillment = "pending_fulfillment".asInstanceOf[FleetActivityStatus]
+    val pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
+    val fulfilled           = "fulfilled".asInstanceOf[FleetActivityStatus]
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
-
-  object FleetCapacityReservationUsageStrategyEnum {
-    val `use-capacity-reservations-first` = "use-capacity-reservations-first"
+  @js.native
+  sealed trait FleetCapacityReservationUsageStrategy extends js.Any
+  object FleetCapacityReservationUsageStrategy extends js.Object {
+    val `use-capacity-reservations-first` =
+      "use-capacity-reservations-first".asInstanceOf[FleetCapacityReservationUsageStrategy]
 
     val values = js.Object.freeze(js.Array(`use-capacity-reservations-first`))
   }
@@ -18769,18 +18642,20 @@ package ec2 {
       __obj.asInstanceOf[FleetData]
     }
   }
-
-  object FleetEventTypeEnum {
-    val `instance-change` = "instance-change"
-    val `fleet-change`    = "fleet-change"
-    val `service-error`   = "service-error"
+  @js.native
+  sealed trait FleetEventType extends js.Any
+  object FleetEventType extends js.Object {
+    val `instance-change` = "instance-change".asInstanceOf[FleetEventType]
+    val `fleet-change`    = "fleet-change".asInstanceOf[FleetEventType]
+    val `service-error`   = "service-error".asInstanceOf[FleetEventType]
 
     val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
   }
-
-  object FleetExcessCapacityTerminationPolicyEnum {
-    val `no-termination` = "no-termination"
-    val termination      = "termination"
+  @js.native
+  sealed trait FleetExcessCapacityTerminationPolicy extends js.Any
+  object FleetExcessCapacityTerminationPolicy extends js.Object {
+    val `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
+    val termination      = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
 
     val values = js.Object.freeze(js.Array(`no-termination`, termination))
   }
@@ -18956,31 +18831,34 @@ package ec2 {
       __obj.asInstanceOf[FleetLaunchTemplateSpecificationRequest]
     }
   }
-
-  object FleetOnDemandAllocationStrategyEnum {
-    val `lowest-price` = "lowest-price"
-    val prioritized    = "prioritized"
+  @js.native
+  sealed trait FleetOnDemandAllocationStrategy extends js.Any
+  object FleetOnDemandAllocationStrategy extends js.Object {
+    val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
+    val prioritized    = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
   }
-
-  object FleetStateCodeEnum {
-    val submitted           = "submitted"
-    val active              = "active"
-    val deleted             = "deleted"
-    val failed              = "failed"
-    val deleted_running     = "deleted_running"
-    val deleted_terminating = "deleted_terminating"
-    val modifying           = "modifying"
+  @js.native
+  sealed trait FleetStateCode extends js.Any
+  object FleetStateCode extends js.Object {
+    val submitted           = "submitted".asInstanceOf[FleetStateCode]
+    val active              = "active".asInstanceOf[FleetStateCode]
+    val deleted             = "deleted".asInstanceOf[FleetStateCode]
+    val failed              = "failed".asInstanceOf[FleetStateCode]
+    val deleted_running     = "deleted_running".asInstanceOf[FleetStateCode]
+    val deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
+    val modifying           = "modifying".asInstanceOf[FleetStateCode]
 
     val values =
       js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
   }
-
-  object FleetTypeEnum {
-    val request  = "request"
-    val maintain = "maintain"
-    val instant  = "instant"
+  @js.native
+  sealed trait FleetType extends js.Any
+  object FleetType extends js.Object {
+    val request  = "request".asInstanceOf[FleetType]
+    val maintain = "maintain".asInstanceOf[FleetType]
+    val instant  = "instant".asInstanceOf[FleetType]
 
     val values = js.Object.freeze(js.Array(request, maintain, instant))
   }
@@ -19039,11 +18917,12 @@ package ec2 {
       __obj.asInstanceOf[FlowLog]
     }
   }
-
-  object FlowLogsResourceTypeEnum {
-    val VPC              = "VPC"
-    val Subnet           = "Subnet"
-    val NetworkInterface = "NetworkInterface"
+  @js.native
+  sealed trait FlowLogsResourceType extends js.Any
+  object FlowLogsResourceType extends js.Object {
+    val VPC              = "VPC".asInstanceOf[FlowLogsResourceType]
+    val Subnet           = "Subnet".asInstanceOf[FlowLogsResourceType]
+    val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
 
     val values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
   }
@@ -19186,12 +19065,13 @@ package ec2 {
       __obj.asInstanceOf[FpgaImageAttribute]
     }
   }
-
-  object FpgaImageAttributeNameEnum {
-    val description    = "description"
-    val name           = "name"
-    val loadPermission = "loadPermission"
-    val productCodes   = "productCodes"
+  @js.native
+  sealed trait FpgaImageAttributeName extends js.Any
+  object FpgaImageAttributeName extends js.Object {
+    val description    = "description".asInstanceOf[FpgaImageAttributeName]
+    val name           = "name".asInstanceOf[FpgaImageAttributeName]
+    val loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
+    val productCodes   = "productCodes".asInstanceOf[FpgaImageAttributeName]
 
     val values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
   }
@@ -19217,12 +19097,13 @@ package ec2 {
       __obj.asInstanceOf[FpgaImageState]
     }
   }
-
-  object FpgaImageStateCodeEnum {
-    val pending     = "pending"
-    val failed      = "failed"
-    val available   = "available"
-    val unavailable = "unavailable"
+  @js.native
+  sealed trait FpgaImageStateCode extends js.Any
+  object FpgaImageStateCode extends js.Object {
+    val pending     = "pending".asInstanceOf[FpgaImageStateCode]
+    val failed      = "failed".asInstanceOf[FpgaImageStateCode]
+    val available   = "available".asInstanceOf[FpgaImageStateCode]
+    val unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
 
     val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
   }
@@ -19248,9 +19129,10 @@ package ec2 {
       __obj.asInstanceOf[FpgaInfo]
     }
   }
-
-  object GatewayTypeEnum {
-    val `ipsec.1` = "ipsec.1"
+  @js.native
+  sealed trait GatewayType extends js.Any
+  object GatewayType extends js.Object {
+    val `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
 
     val values = js.Object.freeze(js.Array(`ipsec.1`))
   }
@@ -20354,10 +20236,11 @@ package ec2 {
       __obj.asInstanceOf[HostProperties]
     }
   }
-
-  object HostRecoveryEnum {
-    val on  = "on"
-    val off = "off"
+  @js.native
+  sealed trait HostRecovery extends js.Any
+  object HostRecovery extends js.Object {
+    val on  = "on".asInstanceOf[HostRecovery]
+    val off = "off".asInstanceOf[HostRecovery]
 
     val values = js.Object.freeze(js.Array(on, off))
   }
@@ -20419,24 +20302,27 @@ package ec2 {
       __obj.asInstanceOf[HostReservation]
     }
   }
-
-  object HostTenancyEnum {
-    val dedicated = "dedicated"
-    val host      = "host"
+  @js.native
+  sealed trait HostTenancy extends js.Any
+  object HostTenancy extends js.Object {
+    val dedicated = "dedicated".asInstanceOf[HostTenancy]
+    val host      = "host".asInstanceOf[HostTenancy]
 
     val values = js.Object.freeze(js.Array(dedicated, host))
   }
-
-  object HttpTokensStateEnum {
-    val optional = "optional"
-    val required = "required"
+  @js.native
+  sealed trait HttpTokensState extends js.Any
+  object HttpTokensState extends js.Object {
+    val optional = "optional".asInstanceOf[HttpTokensState]
+    val required = "required".asInstanceOf[HttpTokensState]
 
     val values = js.Object.freeze(js.Array(optional, required))
   }
-
-  object HypervisorTypeEnum {
-    val ovm = "ovm"
-    val xen = "xen"
+  @js.native
+  sealed trait HypervisorType extends js.Any
+  object HypervisorType extends js.Object {
+    val ovm = "ovm".asInstanceOf[HypervisorType]
+    val xen = "xen".asInstanceOf[HypervisorType]
 
     val values = js.Object.freeze(js.Array(ovm, xen))
   }
@@ -20531,12 +20417,13 @@ package ec2 {
       __obj.asInstanceOf[IamInstanceProfileAssociation]
     }
   }
-
-  object IamInstanceProfileAssociationStateEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
+  @js.native
+  sealed trait IamInstanceProfileAssociationState extends js.Any
+  object IamInstanceProfileAssociationState extends js.Object {
+    val associating    = "associating".asInstanceOf[IamInstanceProfileAssociationState]
+    val associated     = "associated".asInstanceOf[IamInstanceProfileAssociationState]
+    val disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
+    val disassociated  = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -20743,15 +20630,16 @@ package ec2 {
       __obj.asInstanceOf[ImageAttribute]
     }
   }
-
-  object ImageAttributeNameEnum {
-    val description        = "description"
-    val kernel             = "kernel"
-    val ramdisk            = "ramdisk"
-    val launchPermission   = "launchPermission"
-    val productCodes       = "productCodes"
-    val blockDeviceMapping = "blockDeviceMapping"
-    val sriovNetSupport    = "sriovNetSupport"
+  @js.native
+  sealed trait ImageAttributeName extends js.Any
+  object ImageAttributeName extends js.Object {
+    val description        = "description".asInstanceOf[ImageAttributeName]
+    val kernel             = "kernel".asInstanceOf[ImageAttributeName]
+    val ramdisk            = "ramdisk".asInstanceOf[ImageAttributeName]
+    val launchPermission   = "launchPermission".asInstanceOf[ImageAttributeName]
+    val productCodes       = "productCodes".asInstanceOf[ImageAttributeName]
+    val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
+    val sriovNetSupport    = "sriovNetSupport".asInstanceOf[ImageAttributeName]
 
     val values = js.Object.freeze(
       js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
@@ -20791,23 +20679,25 @@ package ec2 {
       __obj.asInstanceOf[ImageDiskContainer]
     }
   }
-
-  object ImageStateEnum {
-    val pending      = "pending"
-    val available    = "available"
-    val invalid      = "invalid"
-    val deregistered = "deregistered"
-    val transient    = "transient"
-    val failed       = "failed"
-    val error        = "error"
+  @js.native
+  sealed trait ImageState extends js.Any
+  object ImageState extends js.Object {
+    val pending      = "pending".asInstanceOf[ImageState]
+    val available    = "available".asInstanceOf[ImageState]
+    val invalid      = "invalid".asInstanceOf[ImageState]
+    val deregistered = "deregistered".asInstanceOf[ImageState]
+    val transient    = "transient".asInstanceOf[ImageState]
+    val failed       = "failed".asInstanceOf[ImageState]
+    val error        = "error".asInstanceOf[ImageState]
 
     val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
   }
-
-  object ImageTypeValuesEnum {
-    val machine = "machine"
-    val kernel  = "kernel"
-    val ramdisk = "ramdisk"
+  @js.native
+  sealed trait ImageTypeValues extends js.Any
+  object ImageTypeValues extends js.Object {
+    val machine = "machine".asInstanceOf[ImageTypeValues]
+    val kernel  = "kernel".asInstanceOf[ImageTypeValues]
+    val ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
 
     val values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
   }
@@ -21694,22 +21584,23 @@ package ec2 {
       __obj.asInstanceOf[InstanceAttribute]
     }
   }
-
-  object InstanceAttributeNameEnum {
-    val instanceType                      = "instanceType"
-    val kernel                            = "kernel"
-    val ramdisk                           = "ramdisk"
-    val userData                          = "userData"
-    val disableApiTermination             = "disableApiTermination"
-    val instanceInitiatedShutdownBehavior = "instanceInitiatedShutdownBehavior"
-    val rootDeviceName                    = "rootDeviceName"
-    val blockDeviceMapping                = "blockDeviceMapping"
-    val productCodes                      = "productCodes"
-    val sourceDestCheck                   = "sourceDestCheck"
-    val groupSet                          = "groupSet"
-    val ebsOptimized                      = "ebsOptimized"
-    val sriovNetSupport                   = "sriovNetSupport"
-    val enaSupport                        = "enaSupport"
+  @js.native
+  sealed trait InstanceAttributeName extends js.Any
+  object InstanceAttributeName extends js.Object {
+    val instanceType                      = "instanceType".asInstanceOf[InstanceAttributeName]
+    val kernel                            = "kernel".asInstanceOf[InstanceAttributeName]
+    val ramdisk                           = "ramdisk".asInstanceOf[InstanceAttributeName]
+    val userData                          = "userData".asInstanceOf[InstanceAttributeName]
+    val disableApiTermination             = "disableApiTermination".asInstanceOf[InstanceAttributeName]
+    val instanceInitiatedShutdownBehavior = "instanceInitiatedShutdownBehavior".asInstanceOf[InstanceAttributeName]
+    val rootDeviceName                    = "rootDeviceName".asInstanceOf[InstanceAttributeName]
+    val blockDeviceMapping                = "blockDeviceMapping".asInstanceOf[InstanceAttributeName]
+    val productCodes                      = "productCodes".asInstanceOf[InstanceAttributeName]
+    val sourceDestCheck                   = "sourceDestCheck".asInstanceOf[InstanceAttributeName]
+    val groupSet                          = "groupSet".asInstanceOf[InstanceAttributeName]
+    val ebsOptimized                      = "ebsOptimized".asInstanceOf[InstanceAttributeName]
+    val sriovNetSupport                   = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
+    val enaSupport                        = "enaSupport".asInstanceOf[InstanceAttributeName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -21915,18 +21806,20 @@ package ec2 {
       __obj.asInstanceOf[InstanceFamilyCreditSpecification]
     }
   }
-
-  object InstanceHealthStatusEnum {
-    val healthy   = "healthy"
-    val unhealthy = "unhealthy"
+  @js.native
+  sealed trait InstanceHealthStatus extends js.Any
+  object InstanceHealthStatus extends js.Object {
+    val healthy   = "healthy".asInstanceOf[InstanceHealthStatus]
+    val unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
 
     val values = js.Object.freeze(js.Array(healthy, unhealthy))
   }
-
-  object InstanceInterruptionBehaviorEnum {
-    val hibernate = "hibernate"
-    val stop      = "stop"
-    val terminate = "terminate"
+  @js.native
+  sealed trait InstanceInterruptionBehavior extends js.Any
+  object InstanceInterruptionBehavior extends js.Object {
+    val hibernate = "hibernate".asInstanceOf[InstanceInterruptionBehavior]
+    val stop      = "stop".asInstanceOf[InstanceInterruptionBehavior]
+    val terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
 
     val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
@@ -21968,17 +21861,19 @@ package ec2 {
       __obj.asInstanceOf[InstanceIpv6AddressRequest]
     }
   }
-
-  object InstanceLifecycleEnum {
-    val spot        = "spot"
-    val `on-demand` = "on-demand"
+  @js.native
+  sealed trait InstanceLifecycle extends js.Any
+  object InstanceLifecycle extends js.Object {
+    val spot        = "spot".asInstanceOf[InstanceLifecycle]
+    val `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
-
-  object InstanceLifecycleTypeEnum {
-    val spot      = "spot"
-    val scheduled = "scheduled"
+  @js.native
+  sealed trait InstanceLifecycleType extends js.Any
+  object InstanceLifecycleType extends js.Object {
+    val spot      = "spot".asInstanceOf[InstanceLifecycleType]
+    val scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
 
     val values = js.Object.freeze(js.Array(spot, scheduled))
   }
@@ -22004,17 +21899,19 @@ package ec2 {
       __obj.asInstanceOf[InstanceMarketOptionsRequest]
     }
   }
-
-  object InstanceMatchCriteriaEnum {
-    val open     = "open"
-    val targeted = "targeted"
+  @js.native
+  sealed trait InstanceMatchCriteria extends js.Any
+  object InstanceMatchCriteria extends js.Object {
+    val open     = "open".asInstanceOf[InstanceMatchCriteria]
+    val targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
 
     val values = js.Object.freeze(js.Array(open, targeted))
   }
-
-  object InstanceMetadataEndpointStateEnum {
-    val disabled = "disabled"
-    val enabled  = "enabled"
+  @js.native
+  sealed trait InstanceMetadataEndpointState extends js.Any
+  object InstanceMetadataEndpointState extends js.Object {
+    val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
+    val enabled  = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
     val values = js.Object.freeze(js.Array(disabled, enabled))
   }
@@ -22071,10 +21968,11 @@ package ec2 {
       __obj.asInstanceOf[InstanceMetadataOptionsResponse]
     }
   }
-
-  object InstanceMetadataOptionsStateEnum {
-    val pending = "pending"
-    val applied = "applied"
+  @js.native
+  sealed trait InstanceMetadataOptionsState extends js.Any
+  object InstanceMetadataOptionsState extends js.Object {
+    val pending = "pending".asInstanceOf[InstanceMetadataOptionsState]
+    val applied = "applied".asInstanceOf[InstanceMetadataOptionsState]
 
     val values = js.Object.freeze(js.Array(pending, applied))
   }
@@ -22374,14 +22272,15 @@ package ec2 {
       __obj.asInstanceOf[InstanceStateChange]
     }
   }
-
-  object InstanceStateNameEnum {
-    val pending         = "pending"
-    val running         = "running"
-    val `shutting-down` = "shutting-down"
-    val terminated      = "terminated"
-    val stopping        = "stopping"
-    val stopped         = "stopped"
+  @js.native
+  sealed trait InstanceStateName extends js.Any
+  object InstanceStateName extends js.Object {
+    val pending         = "pending".asInstanceOf[InstanceStateName]
+    val running         = "running".asInstanceOf[InstanceStateName]
+    val `shutting-down` = "shutting-down".asInstanceOf[InstanceStateName]
+    val terminated      = "terminated".asInstanceOf[InstanceStateName]
+    val stopping        = "stopping".asInstanceOf[InstanceStateName]
+    val stopped         = "stopped".asInstanceOf[InstanceStateName]
 
     val values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
   }
@@ -22525,279 +22424,280 @@ package ec2 {
       __obj.asInstanceOf[InstanceStorageInfo]
     }
   }
-
-  object InstanceTypeEnum {
-    val `t1.micro`      = "t1.micro"
-    val `t2.nano`       = "t2.nano"
-    val `t2.micro`      = "t2.micro"
-    val `t2.small`      = "t2.small"
-    val `t2.medium`     = "t2.medium"
-    val `t2.large`      = "t2.large"
-    val `t2.xlarge`     = "t2.xlarge"
-    val `t2.2xlarge`    = "t2.2xlarge"
-    val `t3.nano`       = "t3.nano"
-    val `t3.micro`      = "t3.micro"
-    val `t3.small`      = "t3.small"
-    val `t3.medium`     = "t3.medium"
-    val `t3.large`      = "t3.large"
-    val `t3.xlarge`     = "t3.xlarge"
-    val `t3.2xlarge`    = "t3.2xlarge"
-    val `t3a.nano`      = "t3a.nano"
-    val `t3a.micro`     = "t3a.micro"
-    val `t3a.small`     = "t3a.small"
-    val `t3a.medium`    = "t3a.medium"
-    val `t3a.large`     = "t3a.large"
-    val `t3a.xlarge`    = "t3a.xlarge"
-    val `t3a.2xlarge`   = "t3a.2xlarge"
-    val `m1.small`      = "m1.small"
-    val `m1.medium`     = "m1.medium"
-    val `m1.large`      = "m1.large"
-    val `m1.xlarge`     = "m1.xlarge"
-    val `m3.medium`     = "m3.medium"
-    val `m3.large`      = "m3.large"
-    val `m3.xlarge`     = "m3.xlarge"
-    val `m3.2xlarge`    = "m3.2xlarge"
-    val `m4.large`      = "m4.large"
-    val `m4.xlarge`     = "m4.xlarge"
-    val `m4.2xlarge`    = "m4.2xlarge"
-    val `m4.4xlarge`    = "m4.4xlarge"
-    val `m4.10xlarge`   = "m4.10xlarge"
-    val `m4.16xlarge`   = "m4.16xlarge"
-    val `m2.xlarge`     = "m2.xlarge"
-    val `m2.2xlarge`    = "m2.2xlarge"
-    val `m2.4xlarge`    = "m2.4xlarge"
-    val `cr1.8xlarge`   = "cr1.8xlarge"
-    val `r3.large`      = "r3.large"
-    val `r3.xlarge`     = "r3.xlarge"
-    val `r3.2xlarge`    = "r3.2xlarge"
-    val `r3.4xlarge`    = "r3.4xlarge"
-    val `r3.8xlarge`    = "r3.8xlarge"
-    val `r4.large`      = "r4.large"
-    val `r4.xlarge`     = "r4.xlarge"
-    val `r4.2xlarge`    = "r4.2xlarge"
-    val `r4.4xlarge`    = "r4.4xlarge"
-    val `r4.8xlarge`    = "r4.8xlarge"
-    val `r4.16xlarge`   = "r4.16xlarge"
-    val `r5.large`      = "r5.large"
-    val `r5.xlarge`     = "r5.xlarge"
-    val `r5.2xlarge`    = "r5.2xlarge"
-    val `r5.4xlarge`    = "r5.4xlarge"
-    val `r5.8xlarge`    = "r5.8xlarge"
-    val `r5.12xlarge`   = "r5.12xlarge"
-    val `r5.16xlarge`   = "r5.16xlarge"
-    val `r5.24xlarge`   = "r5.24xlarge"
-    val `r5.metal`      = "r5.metal"
-    val `r5a.large`     = "r5a.large"
-    val `r5a.xlarge`    = "r5a.xlarge"
-    val `r5a.2xlarge`   = "r5a.2xlarge"
-    val `r5a.4xlarge`   = "r5a.4xlarge"
-    val `r5a.8xlarge`   = "r5a.8xlarge"
-    val `r5a.12xlarge`  = "r5a.12xlarge"
-    val `r5a.16xlarge`  = "r5a.16xlarge"
-    val `r5a.24xlarge`  = "r5a.24xlarge"
-    val `r5d.large`     = "r5d.large"
-    val `r5d.xlarge`    = "r5d.xlarge"
-    val `r5d.2xlarge`   = "r5d.2xlarge"
-    val `r5d.4xlarge`   = "r5d.4xlarge"
-    val `r5d.8xlarge`   = "r5d.8xlarge"
-    val `r5d.12xlarge`  = "r5d.12xlarge"
-    val `r5d.16xlarge`  = "r5d.16xlarge"
-    val `r5d.24xlarge`  = "r5d.24xlarge"
-    val `r5d.metal`     = "r5d.metal"
-    val `r5ad.large`    = "r5ad.large"
-    val `r5ad.xlarge`   = "r5ad.xlarge"
-    val `r5ad.2xlarge`  = "r5ad.2xlarge"
-    val `r5ad.4xlarge`  = "r5ad.4xlarge"
-    val `r5ad.8xlarge`  = "r5ad.8xlarge"
-    val `r5ad.12xlarge` = "r5ad.12xlarge"
-    val `r5ad.16xlarge` = "r5ad.16xlarge"
-    val `r5ad.24xlarge` = "r5ad.24xlarge"
-    val `x1.16xlarge`   = "x1.16xlarge"
-    val `x1.32xlarge`   = "x1.32xlarge"
-    val `x1e.xlarge`    = "x1e.xlarge"
-    val `x1e.2xlarge`   = "x1e.2xlarge"
-    val `x1e.4xlarge`   = "x1e.4xlarge"
-    val `x1e.8xlarge`   = "x1e.8xlarge"
-    val `x1e.16xlarge`  = "x1e.16xlarge"
-    val `x1e.32xlarge`  = "x1e.32xlarge"
-    val `i2.xlarge`     = "i2.xlarge"
-    val `i2.2xlarge`    = "i2.2xlarge"
-    val `i2.4xlarge`    = "i2.4xlarge"
-    val `i2.8xlarge`    = "i2.8xlarge"
-    val `i3.large`      = "i3.large"
-    val `i3.xlarge`     = "i3.xlarge"
-    val `i3.2xlarge`    = "i3.2xlarge"
-    val `i3.4xlarge`    = "i3.4xlarge"
-    val `i3.8xlarge`    = "i3.8xlarge"
-    val `i3.16xlarge`   = "i3.16xlarge"
-    val `i3.metal`      = "i3.metal"
-    val `i3en.large`    = "i3en.large"
-    val `i3en.xlarge`   = "i3en.xlarge"
-    val `i3en.2xlarge`  = "i3en.2xlarge"
-    val `i3en.3xlarge`  = "i3en.3xlarge"
-    val `i3en.6xlarge`  = "i3en.6xlarge"
-    val `i3en.12xlarge` = "i3en.12xlarge"
-    val `i3en.24xlarge` = "i3en.24xlarge"
-    val `i3en.metal`    = "i3en.metal"
-    val `hi1.4xlarge`   = "hi1.4xlarge"
-    val `hs1.8xlarge`   = "hs1.8xlarge"
-    val `c1.medium`     = "c1.medium"
-    val `c1.xlarge`     = "c1.xlarge"
-    val `c3.large`      = "c3.large"
-    val `c3.xlarge`     = "c3.xlarge"
-    val `c3.2xlarge`    = "c3.2xlarge"
-    val `c3.4xlarge`    = "c3.4xlarge"
-    val `c3.8xlarge`    = "c3.8xlarge"
-    val `c4.large`      = "c4.large"
-    val `c4.xlarge`     = "c4.xlarge"
-    val `c4.2xlarge`    = "c4.2xlarge"
-    val `c4.4xlarge`    = "c4.4xlarge"
-    val `c4.8xlarge`    = "c4.8xlarge"
-    val `c5.large`      = "c5.large"
-    val `c5.xlarge`     = "c5.xlarge"
-    val `c5.2xlarge`    = "c5.2xlarge"
-    val `c5.4xlarge`    = "c5.4xlarge"
-    val `c5.9xlarge`    = "c5.9xlarge"
-    val `c5.12xlarge`   = "c5.12xlarge"
-    val `c5.18xlarge`   = "c5.18xlarge"
-    val `c5.24xlarge`   = "c5.24xlarge"
-    val `c5.metal`      = "c5.metal"
-    val `c5d.large`     = "c5d.large"
-    val `c5d.xlarge`    = "c5d.xlarge"
-    val `c5d.2xlarge`   = "c5d.2xlarge"
-    val `c5d.4xlarge`   = "c5d.4xlarge"
-    val `c5d.9xlarge`   = "c5d.9xlarge"
-    val `c5d.12xlarge`  = "c5d.12xlarge"
-    val `c5d.18xlarge`  = "c5d.18xlarge"
-    val `c5d.24xlarge`  = "c5d.24xlarge"
-    val `c5d.metal`     = "c5d.metal"
-    val `c5n.large`     = "c5n.large"
-    val `c5n.xlarge`    = "c5n.xlarge"
-    val `c5n.2xlarge`   = "c5n.2xlarge"
-    val `c5n.4xlarge`   = "c5n.4xlarge"
-    val `c5n.9xlarge`   = "c5n.9xlarge"
-    val `c5n.18xlarge`  = "c5n.18xlarge"
-    val `cc1.4xlarge`   = "cc1.4xlarge"
-    val `cc2.8xlarge`   = "cc2.8xlarge"
-    val `g2.2xlarge`    = "g2.2xlarge"
-    val `g2.8xlarge`    = "g2.8xlarge"
-    val `g3.4xlarge`    = "g3.4xlarge"
-    val `g3.8xlarge`    = "g3.8xlarge"
-    val `g3.16xlarge`   = "g3.16xlarge"
-    val `g3s.xlarge`    = "g3s.xlarge"
-    val `g4dn.xlarge`   = "g4dn.xlarge"
-    val `g4dn.2xlarge`  = "g4dn.2xlarge"
-    val `g4dn.4xlarge`  = "g4dn.4xlarge"
-    val `g4dn.8xlarge`  = "g4dn.8xlarge"
-    val `g4dn.12xlarge` = "g4dn.12xlarge"
-    val `g4dn.16xlarge` = "g4dn.16xlarge"
-    val `cg1.4xlarge`   = "cg1.4xlarge"
-    val `p2.xlarge`     = "p2.xlarge"
-    val `p2.8xlarge`    = "p2.8xlarge"
-    val `p2.16xlarge`   = "p2.16xlarge"
-    val `p3.2xlarge`    = "p3.2xlarge"
-    val `p3.8xlarge`    = "p3.8xlarge"
-    val `p3.16xlarge`   = "p3.16xlarge"
-    val `p3dn.24xlarge` = "p3dn.24xlarge"
-    val `d2.xlarge`     = "d2.xlarge"
-    val `d2.2xlarge`    = "d2.2xlarge"
-    val `d2.4xlarge`    = "d2.4xlarge"
-    val `d2.8xlarge`    = "d2.8xlarge"
-    val `f1.2xlarge`    = "f1.2xlarge"
-    val `f1.4xlarge`    = "f1.4xlarge"
-    val `f1.16xlarge`   = "f1.16xlarge"
-    val `m5.large`      = "m5.large"
-    val `m5.xlarge`     = "m5.xlarge"
-    val `m5.2xlarge`    = "m5.2xlarge"
-    val `m5.4xlarge`    = "m5.4xlarge"
-    val `m5.8xlarge`    = "m5.8xlarge"
-    val `m5.12xlarge`   = "m5.12xlarge"
-    val `m5.16xlarge`   = "m5.16xlarge"
-    val `m5.24xlarge`   = "m5.24xlarge"
-    val `m5.metal`      = "m5.metal"
-    val `m5a.large`     = "m5a.large"
-    val `m5a.xlarge`    = "m5a.xlarge"
-    val `m5a.2xlarge`   = "m5a.2xlarge"
-    val `m5a.4xlarge`   = "m5a.4xlarge"
-    val `m5a.8xlarge`   = "m5a.8xlarge"
-    val `m5a.12xlarge`  = "m5a.12xlarge"
-    val `m5a.16xlarge`  = "m5a.16xlarge"
-    val `m5a.24xlarge`  = "m5a.24xlarge"
-    val `m5d.large`     = "m5d.large"
-    val `m5d.xlarge`    = "m5d.xlarge"
-    val `m5d.2xlarge`   = "m5d.2xlarge"
-    val `m5d.4xlarge`   = "m5d.4xlarge"
-    val `m5d.8xlarge`   = "m5d.8xlarge"
-    val `m5d.12xlarge`  = "m5d.12xlarge"
-    val `m5d.16xlarge`  = "m5d.16xlarge"
-    val `m5d.24xlarge`  = "m5d.24xlarge"
-    val `m5d.metal`     = "m5d.metal"
-    val `m5ad.large`    = "m5ad.large"
-    val `m5ad.xlarge`   = "m5ad.xlarge"
-    val `m5ad.2xlarge`  = "m5ad.2xlarge"
-    val `m5ad.4xlarge`  = "m5ad.4xlarge"
-    val `m5ad.8xlarge`  = "m5ad.8xlarge"
-    val `m5ad.12xlarge` = "m5ad.12xlarge"
-    val `m5ad.16xlarge` = "m5ad.16xlarge"
-    val `m5ad.24xlarge` = "m5ad.24xlarge"
-    val `h1.2xlarge`    = "h1.2xlarge"
-    val `h1.4xlarge`    = "h1.4xlarge"
-    val `h1.8xlarge`    = "h1.8xlarge"
-    val `h1.16xlarge`   = "h1.16xlarge"
-    val `z1d.large`     = "z1d.large"
-    val `z1d.xlarge`    = "z1d.xlarge"
-    val `z1d.2xlarge`   = "z1d.2xlarge"
-    val `z1d.3xlarge`   = "z1d.3xlarge"
-    val `z1d.6xlarge`   = "z1d.6xlarge"
-    val `z1d.12xlarge`  = "z1d.12xlarge"
-    val `z1d.metal`     = "z1d.metal"
-    val `u-6tb1.metal`  = "u-6tb1.metal"
-    val `u-9tb1.metal`  = "u-9tb1.metal"
-    val `u-12tb1.metal` = "u-12tb1.metal"
-    val `u-18tb1.metal` = "u-18tb1.metal"
-    val `u-24tb1.metal` = "u-24tb1.metal"
-    val `a1.medium`     = "a1.medium"
-    val `a1.large`      = "a1.large"
-    val `a1.xlarge`     = "a1.xlarge"
-    val `a1.2xlarge`    = "a1.2xlarge"
-    val `a1.4xlarge`    = "a1.4xlarge"
-    val `a1.metal`      = "a1.metal"
-    val `m5dn.large`    = "m5dn.large"
-    val `m5dn.xlarge`   = "m5dn.xlarge"
-    val `m5dn.2xlarge`  = "m5dn.2xlarge"
-    val `m5dn.4xlarge`  = "m5dn.4xlarge"
-    val `m5dn.8xlarge`  = "m5dn.8xlarge"
-    val `m5dn.12xlarge` = "m5dn.12xlarge"
-    val `m5dn.16xlarge` = "m5dn.16xlarge"
-    val `m5dn.24xlarge` = "m5dn.24xlarge"
-    val `m5n.large`     = "m5n.large"
-    val `m5n.xlarge`    = "m5n.xlarge"
-    val `m5n.2xlarge`   = "m5n.2xlarge"
-    val `m5n.4xlarge`   = "m5n.4xlarge"
-    val `m5n.8xlarge`   = "m5n.8xlarge"
-    val `m5n.12xlarge`  = "m5n.12xlarge"
-    val `m5n.16xlarge`  = "m5n.16xlarge"
-    val `m5n.24xlarge`  = "m5n.24xlarge"
-    val `r5dn.large`    = "r5dn.large"
-    val `r5dn.xlarge`   = "r5dn.xlarge"
-    val `r5dn.2xlarge`  = "r5dn.2xlarge"
-    val `r5dn.4xlarge`  = "r5dn.4xlarge"
-    val `r5dn.8xlarge`  = "r5dn.8xlarge"
-    val `r5dn.12xlarge` = "r5dn.12xlarge"
-    val `r5dn.16xlarge` = "r5dn.16xlarge"
-    val `r5dn.24xlarge` = "r5dn.24xlarge"
-    val `r5n.large`     = "r5n.large"
-    val `r5n.xlarge`    = "r5n.xlarge"
-    val `r5n.2xlarge`   = "r5n.2xlarge"
-    val `r5n.4xlarge`   = "r5n.4xlarge"
-    val `r5n.8xlarge`   = "r5n.8xlarge"
-    val `r5n.12xlarge`  = "r5n.12xlarge"
-    val `r5n.16xlarge`  = "r5n.16xlarge"
-    val `r5n.24xlarge`  = "r5n.24xlarge"
-    val `inf1.xlarge`   = "inf1.xlarge"
-    val `inf1.2xlarge`  = "inf1.2xlarge"
-    val `inf1.6xlarge`  = "inf1.6xlarge"
-    val `inf1.24xlarge` = "inf1.24xlarge"
+  @js.native
+  sealed trait InstanceType extends js.Any
+  object InstanceType extends js.Object {
+    val `t1.micro`      = "t1.micro".asInstanceOf[InstanceType]
+    val `t2.nano`       = "t2.nano".asInstanceOf[InstanceType]
+    val `t2.micro`      = "t2.micro".asInstanceOf[InstanceType]
+    val `t2.small`      = "t2.small".asInstanceOf[InstanceType]
+    val `t2.medium`     = "t2.medium".asInstanceOf[InstanceType]
+    val `t2.large`      = "t2.large".asInstanceOf[InstanceType]
+    val `t2.xlarge`     = "t2.xlarge".asInstanceOf[InstanceType]
+    val `t2.2xlarge`    = "t2.2xlarge".asInstanceOf[InstanceType]
+    val `t3.nano`       = "t3.nano".asInstanceOf[InstanceType]
+    val `t3.micro`      = "t3.micro".asInstanceOf[InstanceType]
+    val `t3.small`      = "t3.small".asInstanceOf[InstanceType]
+    val `t3.medium`     = "t3.medium".asInstanceOf[InstanceType]
+    val `t3.large`      = "t3.large".asInstanceOf[InstanceType]
+    val `t3.xlarge`     = "t3.xlarge".asInstanceOf[InstanceType]
+    val `t3.2xlarge`    = "t3.2xlarge".asInstanceOf[InstanceType]
+    val `t3a.nano`      = "t3a.nano".asInstanceOf[InstanceType]
+    val `t3a.micro`     = "t3a.micro".asInstanceOf[InstanceType]
+    val `t3a.small`     = "t3a.small".asInstanceOf[InstanceType]
+    val `t3a.medium`    = "t3a.medium".asInstanceOf[InstanceType]
+    val `t3a.large`     = "t3a.large".asInstanceOf[InstanceType]
+    val `t3a.xlarge`    = "t3a.xlarge".asInstanceOf[InstanceType]
+    val `t3a.2xlarge`   = "t3a.2xlarge".asInstanceOf[InstanceType]
+    val `m1.small`      = "m1.small".asInstanceOf[InstanceType]
+    val `m1.medium`     = "m1.medium".asInstanceOf[InstanceType]
+    val `m1.large`      = "m1.large".asInstanceOf[InstanceType]
+    val `m1.xlarge`     = "m1.xlarge".asInstanceOf[InstanceType]
+    val `m3.medium`     = "m3.medium".asInstanceOf[InstanceType]
+    val `m3.large`      = "m3.large".asInstanceOf[InstanceType]
+    val `m3.xlarge`     = "m3.xlarge".asInstanceOf[InstanceType]
+    val `m3.2xlarge`    = "m3.2xlarge".asInstanceOf[InstanceType]
+    val `m4.large`      = "m4.large".asInstanceOf[InstanceType]
+    val `m4.xlarge`     = "m4.xlarge".asInstanceOf[InstanceType]
+    val `m4.2xlarge`    = "m4.2xlarge".asInstanceOf[InstanceType]
+    val `m4.4xlarge`    = "m4.4xlarge".asInstanceOf[InstanceType]
+    val `m4.10xlarge`   = "m4.10xlarge".asInstanceOf[InstanceType]
+    val `m4.16xlarge`   = "m4.16xlarge".asInstanceOf[InstanceType]
+    val `m2.xlarge`     = "m2.xlarge".asInstanceOf[InstanceType]
+    val `m2.2xlarge`    = "m2.2xlarge".asInstanceOf[InstanceType]
+    val `m2.4xlarge`    = "m2.4xlarge".asInstanceOf[InstanceType]
+    val `cr1.8xlarge`   = "cr1.8xlarge".asInstanceOf[InstanceType]
+    val `r3.large`      = "r3.large".asInstanceOf[InstanceType]
+    val `r3.xlarge`     = "r3.xlarge".asInstanceOf[InstanceType]
+    val `r3.2xlarge`    = "r3.2xlarge".asInstanceOf[InstanceType]
+    val `r3.4xlarge`    = "r3.4xlarge".asInstanceOf[InstanceType]
+    val `r3.8xlarge`    = "r3.8xlarge".asInstanceOf[InstanceType]
+    val `r4.large`      = "r4.large".asInstanceOf[InstanceType]
+    val `r4.xlarge`     = "r4.xlarge".asInstanceOf[InstanceType]
+    val `r4.2xlarge`    = "r4.2xlarge".asInstanceOf[InstanceType]
+    val `r4.4xlarge`    = "r4.4xlarge".asInstanceOf[InstanceType]
+    val `r4.8xlarge`    = "r4.8xlarge".asInstanceOf[InstanceType]
+    val `r4.16xlarge`   = "r4.16xlarge".asInstanceOf[InstanceType]
+    val `r5.large`      = "r5.large".asInstanceOf[InstanceType]
+    val `r5.xlarge`     = "r5.xlarge".asInstanceOf[InstanceType]
+    val `r5.2xlarge`    = "r5.2xlarge".asInstanceOf[InstanceType]
+    val `r5.4xlarge`    = "r5.4xlarge".asInstanceOf[InstanceType]
+    val `r5.8xlarge`    = "r5.8xlarge".asInstanceOf[InstanceType]
+    val `r5.12xlarge`   = "r5.12xlarge".asInstanceOf[InstanceType]
+    val `r5.16xlarge`   = "r5.16xlarge".asInstanceOf[InstanceType]
+    val `r5.24xlarge`   = "r5.24xlarge".asInstanceOf[InstanceType]
+    val `r5.metal`      = "r5.metal".asInstanceOf[InstanceType]
+    val `r5a.large`     = "r5a.large".asInstanceOf[InstanceType]
+    val `r5a.xlarge`    = "r5a.xlarge".asInstanceOf[InstanceType]
+    val `r5a.2xlarge`   = "r5a.2xlarge".asInstanceOf[InstanceType]
+    val `r5a.4xlarge`   = "r5a.4xlarge".asInstanceOf[InstanceType]
+    val `r5a.8xlarge`   = "r5a.8xlarge".asInstanceOf[InstanceType]
+    val `r5a.12xlarge`  = "r5a.12xlarge".asInstanceOf[InstanceType]
+    val `r5a.16xlarge`  = "r5a.16xlarge".asInstanceOf[InstanceType]
+    val `r5a.24xlarge`  = "r5a.24xlarge".asInstanceOf[InstanceType]
+    val `r5d.large`     = "r5d.large".asInstanceOf[InstanceType]
+    val `r5d.xlarge`    = "r5d.xlarge".asInstanceOf[InstanceType]
+    val `r5d.2xlarge`   = "r5d.2xlarge".asInstanceOf[InstanceType]
+    val `r5d.4xlarge`   = "r5d.4xlarge".asInstanceOf[InstanceType]
+    val `r5d.8xlarge`   = "r5d.8xlarge".asInstanceOf[InstanceType]
+    val `r5d.12xlarge`  = "r5d.12xlarge".asInstanceOf[InstanceType]
+    val `r5d.16xlarge`  = "r5d.16xlarge".asInstanceOf[InstanceType]
+    val `r5d.24xlarge`  = "r5d.24xlarge".asInstanceOf[InstanceType]
+    val `r5d.metal`     = "r5d.metal".asInstanceOf[InstanceType]
+    val `r5ad.large`    = "r5ad.large".asInstanceOf[InstanceType]
+    val `r5ad.xlarge`   = "r5ad.xlarge".asInstanceOf[InstanceType]
+    val `r5ad.2xlarge`  = "r5ad.2xlarge".asInstanceOf[InstanceType]
+    val `r5ad.4xlarge`  = "r5ad.4xlarge".asInstanceOf[InstanceType]
+    val `r5ad.8xlarge`  = "r5ad.8xlarge".asInstanceOf[InstanceType]
+    val `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
+    val `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
+    val `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
+    val `x1.16xlarge`   = "x1.16xlarge".asInstanceOf[InstanceType]
+    val `x1.32xlarge`   = "x1.32xlarge".asInstanceOf[InstanceType]
+    val `x1e.xlarge`    = "x1e.xlarge".asInstanceOf[InstanceType]
+    val `x1e.2xlarge`   = "x1e.2xlarge".asInstanceOf[InstanceType]
+    val `x1e.4xlarge`   = "x1e.4xlarge".asInstanceOf[InstanceType]
+    val `x1e.8xlarge`   = "x1e.8xlarge".asInstanceOf[InstanceType]
+    val `x1e.16xlarge`  = "x1e.16xlarge".asInstanceOf[InstanceType]
+    val `x1e.32xlarge`  = "x1e.32xlarge".asInstanceOf[InstanceType]
+    val `i2.xlarge`     = "i2.xlarge".asInstanceOf[InstanceType]
+    val `i2.2xlarge`    = "i2.2xlarge".asInstanceOf[InstanceType]
+    val `i2.4xlarge`    = "i2.4xlarge".asInstanceOf[InstanceType]
+    val `i2.8xlarge`    = "i2.8xlarge".asInstanceOf[InstanceType]
+    val `i3.large`      = "i3.large".asInstanceOf[InstanceType]
+    val `i3.xlarge`     = "i3.xlarge".asInstanceOf[InstanceType]
+    val `i3.2xlarge`    = "i3.2xlarge".asInstanceOf[InstanceType]
+    val `i3.4xlarge`    = "i3.4xlarge".asInstanceOf[InstanceType]
+    val `i3.8xlarge`    = "i3.8xlarge".asInstanceOf[InstanceType]
+    val `i3.16xlarge`   = "i3.16xlarge".asInstanceOf[InstanceType]
+    val `i3.metal`      = "i3.metal".asInstanceOf[InstanceType]
+    val `i3en.large`    = "i3en.large".asInstanceOf[InstanceType]
+    val `i3en.xlarge`   = "i3en.xlarge".asInstanceOf[InstanceType]
+    val `i3en.2xlarge`  = "i3en.2xlarge".asInstanceOf[InstanceType]
+    val `i3en.3xlarge`  = "i3en.3xlarge".asInstanceOf[InstanceType]
+    val `i3en.6xlarge`  = "i3en.6xlarge".asInstanceOf[InstanceType]
+    val `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
+    val `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
+    val `i3en.metal`    = "i3en.metal".asInstanceOf[InstanceType]
+    val `hi1.4xlarge`   = "hi1.4xlarge".asInstanceOf[InstanceType]
+    val `hs1.8xlarge`   = "hs1.8xlarge".asInstanceOf[InstanceType]
+    val `c1.medium`     = "c1.medium".asInstanceOf[InstanceType]
+    val `c1.xlarge`     = "c1.xlarge".asInstanceOf[InstanceType]
+    val `c3.large`      = "c3.large".asInstanceOf[InstanceType]
+    val `c3.xlarge`     = "c3.xlarge".asInstanceOf[InstanceType]
+    val `c3.2xlarge`    = "c3.2xlarge".asInstanceOf[InstanceType]
+    val `c3.4xlarge`    = "c3.4xlarge".asInstanceOf[InstanceType]
+    val `c3.8xlarge`    = "c3.8xlarge".asInstanceOf[InstanceType]
+    val `c4.large`      = "c4.large".asInstanceOf[InstanceType]
+    val `c4.xlarge`     = "c4.xlarge".asInstanceOf[InstanceType]
+    val `c4.2xlarge`    = "c4.2xlarge".asInstanceOf[InstanceType]
+    val `c4.4xlarge`    = "c4.4xlarge".asInstanceOf[InstanceType]
+    val `c4.8xlarge`    = "c4.8xlarge".asInstanceOf[InstanceType]
+    val `c5.large`      = "c5.large".asInstanceOf[InstanceType]
+    val `c5.xlarge`     = "c5.xlarge".asInstanceOf[InstanceType]
+    val `c5.2xlarge`    = "c5.2xlarge".asInstanceOf[InstanceType]
+    val `c5.4xlarge`    = "c5.4xlarge".asInstanceOf[InstanceType]
+    val `c5.9xlarge`    = "c5.9xlarge".asInstanceOf[InstanceType]
+    val `c5.12xlarge`   = "c5.12xlarge".asInstanceOf[InstanceType]
+    val `c5.18xlarge`   = "c5.18xlarge".asInstanceOf[InstanceType]
+    val `c5.24xlarge`   = "c5.24xlarge".asInstanceOf[InstanceType]
+    val `c5.metal`      = "c5.metal".asInstanceOf[InstanceType]
+    val `c5d.large`     = "c5d.large".asInstanceOf[InstanceType]
+    val `c5d.xlarge`    = "c5d.xlarge".asInstanceOf[InstanceType]
+    val `c5d.2xlarge`   = "c5d.2xlarge".asInstanceOf[InstanceType]
+    val `c5d.4xlarge`   = "c5d.4xlarge".asInstanceOf[InstanceType]
+    val `c5d.9xlarge`   = "c5d.9xlarge".asInstanceOf[InstanceType]
+    val `c5d.12xlarge`  = "c5d.12xlarge".asInstanceOf[InstanceType]
+    val `c5d.18xlarge`  = "c5d.18xlarge".asInstanceOf[InstanceType]
+    val `c5d.24xlarge`  = "c5d.24xlarge".asInstanceOf[InstanceType]
+    val `c5d.metal`     = "c5d.metal".asInstanceOf[InstanceType]
+    val `c5n.large`     = "c5n.large".asInstanceOf[InstanceType]
+    val `c5n.xlarge`    = "c5n.xlarge".asInstanceOf[InstanceType]
+    val `c5n.2xlarge`   = "c5n.2xlarge".asInstanceOf[InstanceType]
+    val `c5n.4xlarge`   = "c5n.4xlarge".asInstanceOf[InstanceType]
+    val `c5n.9xlarge`   = "c5n.9xlarge".asInstanceOf[InstanceType]
+    val `c5n.18xlarge`  = "c5n.18xlarge".asInstanceOf[InstanceType]
+    val `cc1.4xlarge`   = "cc1.4xlarge".asInstanceOf[InstanceType]
+    val `cc2.8xlarge`   = "cc2.8xlarge".asInstanceOf[InstanceType]
+    val `g2.2xlarge`    = "g2.2xlarge".asInstanceOf[InstanceType]
+    val `g2.8xlarge`    = "g2.8xlarge".asInstanceOf[InstanceType]
+    val `g3.4xlarge`    = "g3.4xlarge".asInstanceOf[InstanceType]
+    val `g3.8xlarge`    = "g3.8xlarge".asInstanceOf[InstanceType]
+    val `g3.16xlarge`   = "g3.16xlarge".asInstanceOf[InstanceType]
+    val `g3s.xlarge`    = "g3s.xlarge".asInstanceOf[InstanceType]
+    val `g4dn.xlarge`   = "g4dn.xlarge".asInstanceOf[InstanceType]
+    val `g4dn.2xlarge`  = "g4dn.2xlarge".asInstanceOf[InstanceType]
+    val `g4dn.4xlarge`  = "g4dn.4xlarge".asInstanceOf[InstanceType]
+    val `g4dn.8xlarge`  = "g4dn.8xlarge".asInstanceOf[InstanceType]
+    val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
+    val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
+    val `cg1.4xlarge`   = "cg1.4xlarge".asInstanceOf[InstanceType]
+    val `p2.xlarge`     = "p2.xlarge".asInstanceOf[InstanceType]
+    val `p2.8xlarge`    = "p2.8xlarge".asInstanceOf[InstanceType]
+    val `p2.16xlarge`   = "p2.16xlarge".asInstanceOf[InstanceType]
+    val `p3.2xlarge`    = "p3.2xlarge".asInstanceOf[InstanceType]
+    val `p3.8xlarge`    = "p3.8xlarge".asInstanceOf[InstanceType]
+    val `p3.16xlarge`   = "p3.16xlarge".asInstanceOf[InstanceType]
+    val `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
+    val `d2.xlarge`     = "d2.xlarge".asInstanceOf[InstanceType]
+    val `d2.2xlarge`    = "d2.2xlarge".asInstanceOf[InstanceType]
+    val `d2.4xlarge`    = "d2.4xlarge".asInstanceOf[InstanceType]
+    val `d2.8xlarge`    = "d2.8xlarge".asInstanceOf[InstanceType]
+    val `f1.2xlarge`    = "f1.2xlarge".asInstanceOf[InstanceType]
+    val `f1.4xlarge`    = "f1.4xlarge".asInstanceOf[InstanceType]
+    val `f1.16xlarge`   = "f1.16xlarge".asInstanceOf[InstanceType]
+    val `m5.large`      = "m5.large".asInstanceOf[InstanceType]
+    val `m5.xlarge`     = "m5.xlarge".asInstanceOf[InstanceType]
+    val `m5.2xlarge`    = "m5.2xlarge".asInstanceOf[InstanceType]
+    val `m5.4xlarge`    = "m5.4xlarge".asInstanceOf[InstanceType]
+    val `m5.8xlarge`    = "m5.8xlarge".asInstanceOf[InstanceType]
+    val `m5.12xlarge`   = "m5.12xlarge".asInstanceOf[InstanceType]
+    val `m5.16xlarge`   = "m5.16xlarge".asInstanceOf[InstanceType]
+    val `m5.24xlarge`   = "m5.24xlarge".asInstanceOf[InstanceType]
+    val `m5.metal`      = "m5.metal".asInstanceOf[InstanceType]
+    val `m5a.large`     = "m5a.large".asInstanceOf[InstanceType]
+    val `m5a.xlarge`    = "m5a.xlarge".asInstanceOf[InstanceType]
+    val `m5a.2xlarge`   = "m5a.2xlarge".asInstanceOf[InstanceType]
+    val `m5a.4xlarge`   = "m5a.4xlarge".asInstanceOf[InstanceType]
+    val `m5a.8xlarge`   = "m5a.8xlarge".asInstanceOf[InstanceType]
+    val `m5a.12xlarge`  = "m5a.12xlarge".asInstanceOf[InstanceType]
+    val `m5a.16xlarge`  = "m5a.16xlarge".asInstanceOf[InstanceType]
+    val `m5a.24xlarge`  = "m5a.24xlarge".asInstanceOf[InstanceType]
+    val `m5d.large`     = "m5d.large".asInstanceOf[InstanceType]
+    val `m5d.xlarge`    = "m5d.xlarge".asInstanceOf[InstanceType]
+    val `m5d.2xlarge`   = "m5d.2xlarge".asInstanceOf[InstanceType]
+    val `m5d.4xlarge`   = "m5d.4xlarge".asInstanceOf[InstanceType]
+    val `m5d.8xlarge`   = "m5d.8xlarge".asInstanceOf[InstanceType]
+    val `m5d.12xlarge`  = "m5d.12xlarge".asInstanceOf[InstanceType]
+    val `m5d.16xlarge`  = "m5d.16xlarge".asInstanceOf[InstanceType]
+    val `m5d.24xlarge`  = "m5d.24xlarge".asInstanceOf[InstanceType]
+    val `m5d.metal`     = "m5d.metal".asInstanceOf[InstanceType]
+    val `m5ad.large`    = "m5ad.large".asInstanceOf[InstanceType]
+    val `m5ad.xlarge`   = "m5ad.xlarge".asInstanceOf[InstanceType]
+    val `m5ad.2xlarge`  = "m5ad.2xlarge".asInstanceOf[InstanceType]
+    val `m5ad.4xlarge`  = "m5ad.4xlarge".asInstanceOf[InstanceType]
+    val `m5ad.8xlarge`  = "m5ad.8xlarge".asInstanceOf[InstanceType]
+    val `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
+    val `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
+    val `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
+    val `h1.2xlarge`    = "h1.2xlarge".asInstanceOf[InstanceType]
+    val `h1.4xlarge`    = "h1.4xlarge".asInstanceOf[InstanceType]
+    val `h1.8xlarge`    = "h1.8xlarge".asInstanceOf[InstanceType]
+    val `h1.16xlarge`   = "h1.16xlarge".asInstanceOf[InstanceType]
+    val `z1d.large`     = "z1d.large".asInstanceOf[InstanceType]
+    val `z1d.xlarge`    = "z1d.xlarge".asInstanceOf[InstanceType]
+    val `z1d.2xlarge`   = "z1d.2xlarge".asInstanceOf[InstanceType]
+    val `z1d.3xlarge`   = "z1d.3xlarge".asInstanceOf[InstanceType]
+    val `z1d.6xlarge`   = "z1d.6xlarge".asInstanceOf[InstanceType]
+    val `z1d.12xlarge`  = "z1d.12xlarge".asInstanceOf[InstanceType]
+    val `z1d.metal`     = "z1d.metal".asInstanceOf[InstanceType]
+    val `u-6tb1.metal`  = "u-6tb1.metal".asInstanceOf[InstanceType]
+    val `u-9tb1.metal`  = "u-9tb1.metal".asInstanceOf[InstanceType]
+    val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
+    val `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
+    val `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
+    val `a1.medium`     = "a1.medium".asInstanceOf[InstanceType]
+    val `a1.large`      = "a1.large".asInstanceOf[InstanceType]
+    val `a1.xlarge`     = "a1.xlarge".asInstanceOf[InstanceType]
+    val `a1.2xlarge`    = "a1.2xlarge".asInstanceOf[InstanceType]
+    val `a1.4xlarge`    = "a1.4xlarge".asInstanceOf[InstanceType]
+    val `a1.metal`      = "a1.metal".asInstanceOf[InstanceType]
+    val `m5dn.large`    = "m5dn.large".asInstanceOf[InstanceType]
+    val `m5dn.xlarge`   = "m5dn.xlarge".asInstanceOf[InstanceType]
+    val `m5dn.2xlarge`  = "m5dn.2xlarge".asInstanceOf[InstanceType]
+    val `m5dn.4xlarge`  = "m5dn.4xlarge".asInstanceOf[InstanceType]
+    val `m5dn.8xlarge`  = "m5dn.8xlarge".asInstanceOf[InstanceType]
+    val `m5dn.12xlarge` = "m5dn.12xlarge".asInstanceOf[InstanceType]
+    val `m5dn.16xlarge` = "m5dn.16xlarge".asInstanceOf[InstanceType]
+    val `m5dn.24xlarge` = "m5dn.24xlarge".asInstanceOf[InstanceType]
+    val `m5n.large`     = "m5n.large".asInstanceOf[InstanceType]
+    val `m5n.xlarge`    = "m5n.xlarge".asInstanceOf[InstanceType]
+    val `m5n.2xlarge`   = "m5n.2xlarge".asInstanceOf[InstanceType]
+    val `m5n.4xlarge`   = "m5n.4xlarge".asInstanceOf[InstanceType]
+    val `m5n.8xlarge`   = "m5n.8xlarge".asInstanceOf[InstanceType]
+    val `m5n.12xlarge`  = "m5n.12xlarge".asInstanceOf[InstanceType]
+    val `m5n.16xlarge`  = "m5n.16xlarge".asInstanceOf[InstanceType]
+    val `m5n.24xlarge`  = "m5n.24xlarge".asInstanceOf[InstanceType]
+    val `r5dn.large`    = "r5dn.large".asInstanceOf[InstanceType]
+    val `r5dn.xlarge`   = "r5dn.xlarge".asInstanceOf[InstanceType]
+    val `r5dn.2xlarge`  = "r5dn.2xlarge".asInstanceOf[InstanceType]
+    val `r5dn.4xlarge`  = "r5dn.4xlarge".asInstanceOf[InstanceType]
+    val `r5dn.8xlarge`  = "r5dn.8xlarge".asInstanceOf[InstanceType]
+    val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
+    val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
+    val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
+    val `r5n.large`     = "r5n.large".asInstanceOf[InstanceType]
+    val `r5n.xlarge`    = "r5n.xlarge".asInstanceOf[InstanceType]
+    val `r5n.2xlarge`   = "r5n.2xlarge".asInstanceOf[InstanceType]
+    val `r5n.4xlarge`   = "r5n.4xlarge".asInstanceOf[InstanceType]
+    val `r5n.8xlarge`   = "r5n.8xlarge".asInstanceOf[InstanceType]
+    val `r5n.12xlarge`  = "r5n.12xlarge".asInstanceOf[InstanceType]
+    val `r5n.16xlarge`  = "r5n.16xlarge".asInstanceOf[InstanceType]
+    val `r5n.24xlarge`  = "r5n.24xlarge".asInstanceOf[InstanceType]
+    val `inf1.xlarge`   = "inf1.xlarge".asInstanceOf[InstanceType]
+    val `inf1.2xlarge`  = "inf1.2xlarge".asInstanceOf[InstanceType]
+    val `inf1.6xlarge`  = "inf1.6xlarge".asInstanceOf[InstanceType]
+    val `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -23075,10 +22975,11 @@ package ec2 {
       )
     )
   }
-
-  object InstanceTypeHypervisorEnum {
-    val nitro = "nitro"
-    val xen   = "xen"
+  @js.native
+  sealed trait InstanceTypeHypervisor extends js.Any
+  object InstanceTypeHypervisor extends js.Object {
+    val nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
+    val xen   = "xen".asInstanceOf[InstanceTypeHypervisor]
 
     val values = js.Object.freeze(js.Array(nitro, xen))
   }
@@ -23213,10 +23114,11 @@ package ec2 {
       __obj.asInstanceOf[InstanceUsage]
     }
   }
-
-  object InterfacePermissionTypeEnum {
-    val `INSTANCE-ATTACH` = "INSTANCE-ATTACH"
-    val `EIP-ASSOCIATE`   = "EIP-ASSOCIATE"
+  @js.native
+  sealed trait InterfacePermissionType extends js.Any
+  object InterfacePermissionType extends js.Object {
+    val `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
+    val `EIP-ASSOCIATE`   = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
 
     val values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
   }
@@ -23420,10 +23322,11 @@ package ec2 {
       __obj.asInstanceOf[Ipv6Range]
     }
   }
-
-  object Ipv6SupportValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait Ipv6SupportValue extends js.Any
+  object Ipv6SupportValue extends js.Object {
+    val enable  = "enable".asInstanceOf[Ipv6SupportValue]
+    val disable = "disable".asInstanceOf[Ipv6SupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
@@ -23967,14 +23870,15 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateElasticInferenceAcceleratorResponse]
     }
   }
-
-  object LaunchTemplateErrorCodeEnum {
-    val launchTemplateIdDoesNotExist      = "launchTemplateIdDoesNotExist"
-    val launchTemplateIdMalformed         = "launchTemplateIdMalformed"
-    val launchTemplateNameDoesNotExist    = "launchTemplateNameDoesNotExist"
-    val launchTemplateNameMalformed       = "launchTemplateNameMalformed"
-    val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist"
-    val unexpectedError                   = "unexpectedError"
+  @js.native
+  sealed trait LaunchTemplateErrorCode extends js.Any
+  object LaunchTemplateErrorCode extends js.Object {
+    val launchTemplateIdDoesNotExist      = "launchTemplateIdDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateIdMalformed         = "launchTemplateIdMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateNameDoesNotExist    = "launchTemplateNameDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateNameMalformed       = "launchTemplateNameMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    val unexpectedError                   = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -24025,10 +23929,11 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateHibernationOptionsRequest]
     }
   }
-
-  object LaunchTemplateHttpTokensStateEnum {
-    val optional = "optional"
-    val required = "required"
+  @js.native
+  sealed trait LaunchTemplateHttpTokensState extends js.Any
+  object LaunchTemplateHttpTokensState extends js.Object {
+    val optional = "optional".asInstanceOf[LaunchTemplateHttpTokensState]
+    val required = "required".asInstanceOf[LaunchTemplateHttpTokensState]
 
     val values = js.Object.freeze(js.Array(optional, required))
   }
@@ -24120,10 +24025,11 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateInstanceMarketOptionsRequest]
     }
   }
-
-  object LaunchTemplateInstanceMetadataEndpointStateEnum {
-    val disabled = "disabled"
-    val enabled  = "enabled"
+  @js.native
+  sealed trait LaunchTemplateInstanceMetadataEndpointState extends js.Any
+  object LaunchTemplateInstanceMetadataEndpointState extends js.Object {
+    val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
+    val enabled  = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
 
     val values = js.Object.freeze(js.Array(disabled, enabled))
   }
@@ -24180,10 +24086,11 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateInstanceMetadataOptionsRequest]
     }
   }
-
-  object LaunchTemplateInstanceMetadataOptionsStateEnum {
-    val pending = "pending"
-    val applied = "applied"
+  @js.native
+  sealed trait LaunchTemplateInstanceMetadataOptionsState extends js.Any
+  object LaunchTemplateInstanceMetadataOptionsState extends js.Object {
+    val pending = "pending".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
+    val applied = "applied".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
 
     val values = js.Object.freeze(js.Array(pending, applied))
   }
@@ -24704,21 +24611,23 @@ package ec2 {
       __obj.asInstanceOf[LicenseConfigurationRequest]
     }
   }
-
-  object ListingStateEnum {
-    val available = "available"
-    val sold      = "sold"
-    val cancelled = "cancelled"
-    val pending   = "pending"
+  @js.native
+  sealed trait ListingState extends js.Any
+  object ListingState extends js.Object {
+    val available = "available".asInstanceOf[ListingState]
+    val sold      = "sold".asInstanceOf[ListingState]
+    val cancelled = "cancelled".asInstanceOf[ListingState]
+    val pending   = "pending".asInstanceOf[ListingState]
 
     val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
   }
-
-  object ListingStatusEnum {
-    val active    = "active"
-    val pending   = "pending"
-    val cancelled = "cancelled"
-    val closed    = "closed"
+  @js.native
+  sealed trait ListingStatus extends js.Any
+  object ListingStatus extends js.Object {
+    val active    = "active".asInstanceOf[ListingStatus]
+    val pending   = "pending".asInstanceOf[ListingStatus]
+    val cancelled = "cancelled".asInstanceOf[ListingStatus]
+    val closed    = "closed".asInstanceOf[ListingStatus]
 
     val values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
   }
@@ -24876,13 +24785,14 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayRoute]
     }
   }
-
-  object LocalGatewayRouteStateEnum {
-    val pending   = "pending"
-    val active    = "active"
-    val blackhole = "blackhole"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait LocalGatewayRouteState extends js.Any
+  object LocalGatewayRouteState extends js.Object {
+    val pending   = "pending".asInstanceOf[LocalGatewayRouteState]
+    val active    = "active".asInstanceOf[LocalGatewayRouteState]
+    val blackhole = "blackhole".asInstanceOf[LocalGatewayRouteState]
+    val deleting  = "deleting".asInstanceOf[LocalGatewayRouteState]
+    val deleted   = "deleted".asInstanceOf[LocalGatewayRouteState]
 
     val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
@@ -24995,10 +24905,11 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayRouteTableVpcAssociation]
     }
   }
-
-  object LocalGatewayRouteTypeEnum {
-    val static     = "static"
-    val propagated = "propagated"
+  @js.native
+  sealed trait LocalGatewayRouteType extends js.Any
+  object LocalGatewayRouteType extends js.Object {
+    val static     = "static".asInstanceOf[LocalGatewayRouteType]
+    val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
     val values = js.Object.freeze(js.Array(static, propagated))
   }
@@ -25076,31 +24987,35 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayVirtualInterfaceGroup]
     }
   }
-
-  object LocationTypeEnum {
-    val region                 = "region"
-    val `availability-zone`    = "availability-zone"
-    val `availability-zone-id` = "availability-zone-id"
+  @js.native
+  sealed trait LocationType extends js.Any
+  object LocationType extends js.Object {
+    val region                 = "region".asInstanceOf[LocationType]
+    val `availability-zone`    = "availability-zone".asInstanceOf[LocationType]
+    val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
     val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
   }
-
-  object LogDestinationTypeEnum {
-    val `cloud-watch-logs` = "cloud-watch-logs"
-    val s3                 = "s3"
+  @js.native
+  sealed trait LogDestinationType extends js.Any
+  object LogDestinationType extends js.Object {
+    val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
+    val s3                 = "s3".asInstanceOf[LogDestinationType]
 
     val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
   }
-
-  object MarketTypeEnum {
-    val spot = "spot"
+  @js.native
+  sealed trait MarketType extends js.Any
+  object MarketType extends js.Object {
+    val spot = "spot".asInstanceOf[MarketType]
 
     val values = js.Object.freeze(js.Array(spot))
   }
-
-  object MembershipTypeEnum {
-    val static = "static"
-    val igmp   = "igmp"
+  @js.native
+  sealed trait MembershipType extends js.Any
+  object MembershipType extends js.Object {
+    val static = "static".asInstanceOf[MembershipType]
+    val igmp   = "igmp".asInstanceOf[MembershipType]
 
     val values = js.Object.freeze(js.Array(static, igmp))
   }
@@ -26979,12 +26894,13 @@ package ec2 {
       __obj.asInstanceOf[Monitoring]
     }
   }
-
-  object MonitoringStateEnum {
-    val disabled  = "disabled"
-    val disabling = "disabling"
-    val enabled   = "enabled"
-    val pending   = "pending"
+  @js.native
+  sealed trait MonitoringState extends js.Any
+  object MonitoringState extends js.Object {
+    val disabled  = "disabled".asInstanceOf[MonitoringState]
+    val disabling = "disabling".asInstanceOf[MonitoringState]
+    val enabled   = "enabled".asInstanceOf[MonitoringState]
+    val pending   = "pending".asInstanceOf[MonitoringState]
 
     val values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
   }
@@ -27028,10 +26944,11 @@ package ec2 {
       __obj.asInstanceOf[MoveAddressToVpcResult]
     }
   }
-
-  object MoveStatusEnum {
-    val movingToVpc        = "movingToVpc"
-    val restoringToClassic = "restoringToClassic"
+  @js.native
+  sealed trait MoveStatus extends js.Any
+  object MoveStatus extends js.Object {
+    val movingToVpc        = "movingToVpc".asInstanceOf[MoveStatus]
+    val restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
 
     val values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
   }
@@ -27057,10 +26974,11 @@ package ec2 {
       __obj.asInstanceOf[MovingAddressStatus]
     }
   }
-
-  object MulticastSupportValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait MulticastSupportValue extends js.Any
+  object MulticastSupportValue extends js.Object {
+    val enable  = "enable".asInstanceOf[MulticastSupportValue]
+    val disable = "disable".asInstanceOf[MulticastSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
@@ -27141,13 +27059,14 @@ package ec2 {
       __obj.asInstanceOf[NatGatewayAddress]
     }
   }
-
-  object NatGatewayStateEnum {
-    val pending   = "pending"
-    val failed    = "failed"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait NatGatewayState extends js.Any
+  object NatGatewayState extends js.Object {
+    val pending   = "pending".asInstanceOf[NatGatewayState]
+    val failed    = "failed".asInstanceOf[NatGatewayState]
+    val available = "available".asInstanceOf[NatGatewayState]
+    val deleting  = "deleting".asInstanceOf[NatGatewayState]
+    val deleted   = "deleted".asInstanceOf[NatGatewayState]
 
     val values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
   }
@@ -27460,18 +27379,20 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfaceAttachmentChanges]
     }
   }
-
-  object NetworkInterfaceAttributeEnum {
-    val description     = "description"
-    val groupSet        = "groupSet"
-    val sourceDestCheck = "sourceDestCheck"
-    val attachment      = "attachment"
+  @js.native
+  sealed trait NetworkInterfaceAttribute extends js.Any
+  object NetworkInterfaceAttribute extends js.Object {
+    val description     = "description".asInstanceOf[NetworkInterfaceAttribute]
+    val groupSet        = "groupSet".asInstanceOf[NetworkInterfaceAttribute]
+    val sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
+    val attachment      = "attachment".asInstanceOf[NetworkInterfaceAttribute]
 
     val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
   }
-
-  object NetworkInterfaceCreationTypeEnum {
-    val efa = "efa"
+  @js.native
+  sealed trait NetworkInterfaceCreationType extends js.Any
+  object NetworkInterfaceCreationType extends js.Object {
+    val efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
 
     val values = js.Object.freeze(js.Array(efa))
   }
@@ -27552,12 +27473,13 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfacePermissionState]
     }
   }
-
-  object NetworkInterfacePermissionStateCodeEnum {
-    val pending  = "pending"
-    val granted  = "granted"
-    val revoking = "revoking"
-    val revoked  = "revoked"
+  @js.native
+  sealed trait NetworkInterfacePermissionStateCode extends js.Any
+  object NetworkInterfacePermissionStateCode extends js.Object {
+    val pending  = "pending".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val granted  = "granted".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val revoked  = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
 
     val values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
   }
@@ -27589,21 +27511,23 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfacePrivateIpAddress]
     }
   }
-
-  object NetworkInterfaceStatusEnum {
-    val available  = "available"
-    val associated = "associated"
-    val attaching  = "attaching"
-    val `in-use`   = "in-use"
-    val detaching  = "detaching"
+  @js.native
+  sealed trait NetworkInterfaceStatus extends js.Any
+  object NetworkInterfaceStatus extends js.Object {
+    val available  = "available".asInstanceOf[NetworkInterfaceStatus]
+    val associated = "associated".asInstanceOf[NetworkInterfaceStatus]
+    val attaching  = "attaching".asInstanceOf[NetworkInterfaceStatus]
+    val `in-use`   = "in-use".asInstanceOf[NetworkInterfaceStatus]
+    val detaching  = "detaching".asInstanceOf[NetworkInterfaceStatus]
 
     val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
   }
-
-  object NetworkInterfaceTypeEnum {
-    val interface  = "interface"
-    val natGateway = "natGateway"
-    val efa        = "efa"
+  @js.native
+  sealed trait NetworkInterfaceType extends js.Any
+  object NetworkInterfaceType extends js.Object {
+    val interface  = "interface".asInstanceOf[NetworkInterfaceType]
+    val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
+    val efa        = "efa".asInstanceOf[NetworkInterfaceType]
 
     val values = js.Object.freeze(js.Array(interface, natGateway, efa))
   }
@@ -27626,21 +27550,23 @@ package ec2 {
       __obj.asInstanceOf[NewDhcpConfiguration]
     }
   }
-
-  object OfferingClassTypeEnum {
-    val standard    = "standard"
-    val convertible = "convertible"
+  @js.native
+  sealed trait OfferingClassType extends js.Any
+  object OfferingClassType extends js.Object {
+    val standard    = "standard".asInstanceOf[OfferingClassType]
+    val convertible = "convertible".asInstanceOf[OfferingClassType]
 
     val values = js.Object.freeze(js.Array(standard, convertible))
   }
-
-  object OfferingTypeValuesEnum {
-    val `Heavy Utilization`  = "Heavy Utilization"
-    val `Medium Utilization` = "Medium Utilization"
-    val `Light Utilization`  = "Light Utilization"
-    val `No Upfront`         = "No Upfront"
-    val `Partial Upfront`    = "Partial Upfront"
-    val `All Upfront`        = "All Upfront"
+  @js.native
+  sealed trait OfferingTypeValues extends js.Any
+  object OfferingTypeValues extends js.Object {
+    val `Heavy Utilization`  = "Heavy Utilization".asInstanceOf[OfferingTypeValues]
+    val `Medium Utilization` = "Medium Utilization".asInstanceOf[OfferingTypeValues]
+    val `Light Utilization`  = "Light Utilization".asInstanceOf[OfferingTypeValues]
+    val `No Upfront`         = "No Upfront".asInstanceOf[OfferingTypeValues]
+    val `Partial Upfront`    = "Partial Upfront".asInstanceOf[OfferingTypeValues]
+    val `All Upfront`        = "All Upfront".asInstanceOf[OfferingTypeValues]
 
     val values = js.Object.freeze(
       js.Array(
@@ -27653,10 +27579,11 @@ package ec2 {
       )
     )
   }
-
-  object OnDemandAllocationStrategyEnum {
-    val lowestPrice = "lowestPrice"
-    val prioritized = "prioritized"
+  @js.native
+  sealed trait OnDemandAllocationStrategy extends js.Any
+  object OnDemandAllocationStrategy extends js.Object {
+    val lowestPrice = "lowestPrice".asInstanceOf[OnDemandAllocationStrategy]
+    val prioritized = "prioritized".asInstanceOf[OnDemandAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(lowestPrice, prioritized))
   }
@@ -27732,18 +27659,20 @@ package ec2 {
       __obj.asInstanceOf[OnDemandOptionsRequest]
     }
   }
-
-  object OperationTypeEnum {
-    val add    = "add"
-    val remove = "remove"
+  @js.native
+  sealed trait OperationType extends js.Any
+  object OperationType extends js.Object {
+    val add    = "add".asInstanceOf[OperationType]
+    val remove = "remove".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(js.Array(add, remove))
   }
-
-  object PaymentOptionEnum {
-    val AllUpfront     = "AllUpfront"
-    val PartialUpfront = "PartialUpfront"
-    val NoUpfront      = "NoUpfront"
+  @js.native
+  sealed trait PaymentOption extends js.Any
+  object PaymentOption extends js.Object {
+    val AllUpfront     = "AllUpfront".asInstanceOf[PaymentOption]
+    val PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
+    val NoUpfront      = "NoUpfront".asInstanceOf[PaymentOption]
 
     val values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
   }
@@ -27884,9 +27813,10 @@ package ec2 {
       __obj.asInstanceOf[PeeringTgwInfo]
     }
   }
-
-  object PermissionGroupEnum {
-    val all = "all"
+  @js.native
+  sealed trait PermissionGroup extends js.Any
+  object PermissionGroup extends js.Object {
+    val all = "all".asInstanceOf[PermissionGroup]
 
     val values = js.Object.freeze(js.Array(all))
   }
@@ -28211,20 +28141,22 @@ package ec2 {
       __obj.asInstanceOf[PlacementGroupInfo]
     }
   }
-
-  object PlacementGroupStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait PlacementGroupState extends js.Any
+  object PlacementGroupState extends js.Object {
+    val pending   = "pending".asInstanceOf[PlacementGroupState]
+    val available = "available".asInstanceOf[PlacementGroupState]
+    val deleting  = "deleting".asInstanceOf[PlacementGroupState]
+    val deleted   = "deleted".asInstanceOf[PlacementGroupState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
-
-  object PlacementGroupStrategyEnum {
-    val cluster   = "cluster"
-    val partition = "partition"
-    val spread    = "spread"
+  @js.native
+  sealed trait PlacementGroupStrategy extends js.Any
+  object PlacementGroupStrategy extends js.Object {
+    val cluster   = "cluster".asInstanceOf[PlacementGroupStrategy]
+    val partition = "partition".asInstanceOf[PlacementGroupStrategy]
+    val spread    = "spread".asInstanceOf[PlacementGroupStrategy]
 
     val values = js.Object.freeze(js.Array(cluster, partition, spread))
   }
@@ -28247,17 +28179,19 @@ package ec2 {
       __obj.asInstanceOf[PlacementResponse]
     }
   }
-
-  object PlacementStrategyEnum {
-    val cluster   = "cluster"
-    val spread    = "spread"
-    val partition = "partition"
+  @js.native
+  sealed trait PlacementStrategy extends js.Any
+  object PlacementStrategy extends js.Object {
+    val cluster   = "cluster".asInstanceOf[PlacementStrategy]
+    val spread    = "spread".asInstanceOf[PlacementStrategy]
+    val partition = "partition".asInstanceOf[PlacementStrategy]
 
     val values = js.Object.freeze(js.Array(cluster, spread, partition))
   }
-
-  object PlatformValuesEnum {
-    val Windows = "Windows"
+  @js.native
+  sealed trait PlatformValues extends js.Any
+  object PlatformValues extends js.Object {
+    val Windows = "Windows".asInstanceOf[PlatformValues]
 
     val values = js.Object.freeze(js.Array(Windows))
   }
@@ -28446,14 +28380,15 @@ package ec2 {
       __obj.asInstanceOf[PrincipalIdFormat]
     }
   }
-
-  object PrincipalTypeEnum {
-    val All              = "All"
-    val Service          = "Service"
-    val OrganizationUnit = "OrganizationUnit"
-    val Account          = "Account"
-    val User             = "User"
-    val Role             = "Role"
+  @js.native
+  sealed trait PrincipalType extends js.Any
+  object PrincipalType extends js.Object {
+    val All              = "All".asInstanceOf[PrincipalType]
+    val Service          = "Service".asInstanceOf[PrincipalType]
+    val OrganizationUnit = "OrganizationUnit".asInstanceOf[PrincipalType]
+    val Account          = "Account".asInstanceOf[PrincipalType]
+    val User             = "User".asInstanceOf[PrincipalType]
+    val Role             = "Role".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
   }
@@ -28551,10 +28486,11 @@ package ec2 {
       __obj.asInstanceOf[ProductCode]
     }
   }
-
-  object ProductCodeValuesEnum {
-    val devpay      = "devpay"
-    val marketplace = "marketplace"
+  @js.native
+  sealed trait ProductCodeValues extends js.Any
+  object ProductCodeValues extends js.Object {
+    val devpay      = "devpay".asInstanceOf[ProductCodeValues]
+    val marketplace = "marketplace".asInstanceOf[ProductCodeValues]
 
     val values = js.Object.freeze(js.Array(devpay, marketplace))
   }
@@ -28938,12 +28874,13 @@ package ec2 {
       __obj.asInstanceOf[PurchaseScheduledInstancesResult]
     }
   }
-
-  object RIProductDescriptionEnum {
-    val `Linux/UNIX`              = "Linux/UNIX"
-    val `Linux/UNIX (Amazon VPC)` = "Linux/UNIX (Amazon VPC)"
-    val Windows                   = "Windows"
-    val `Windows (Amazon VPC)`    = "Windows (Amazon VPC)"
+  @js.native
+  sealed trait RIProductDescription extends js.Any
+  object RIProductDescription extends js.Object {
+    val `Linux/UNIX`              = "Linux/UNIX".asInstanceOf[RIProductDescription]
+    val `Linux/UNIX (Amazon VPC)` = "Linux/UNIX (Amazon VPC)".asInstanceOf[RIProductDescription]
+    val Windows                   = "Windows".asInstanceOf[RIProductDescription]
+    val `Windows (Amazon VPC)`    = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
 
     val values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
   }
@@ -28990,9 +28927,10 @@ package ec2 {
       __obj.asInstanceOf[RecurringCharge]
     }
   }
-
-  object RecurringChargeFrequencyEnum {
-    val Hourly = "Hourly"
+  @js.native
+  sealed trait RecurringChargeFrequency extends js.Any
+  object RecurringChargeFrequency extends js.Object {
+    val Hourly = "Hourly".asInstanceOf[RecurringChargeFrequency]
 
     val values = js.Object.freeze(js.Array(Hourly))
   }
@@ -29675,17 +29613,18 @@ package ec2 {
       __obj.asInstanceOf[ReplaceTransitGatewayRouteResult]
     }
   }
-
-  object ReportInstanceReasonCodesEnum {
-    val `instance-stuck-in-state`    = "instance-stuck-in-state"
-    val unresponsive                 = "unresponsive"
-    val `not-accepting-credentials`  = "not-accepting-credentials"
-    val `password-not-available`     = "password-not-available"
-    val `performance-network`        = "performance-network"
-    val `performance-instance-store` = "performance-instance-store"
-    val `performance-ebs-volume`     = "performance-ebs-volume"
-    val `performance-other`          = "performance-other"
-    val other                        = "other"
+  @js.native
+  sealed trait ReportInstanceReasonCodes extends js.Any
+  object ReportInstanceReasonCodes extends js.Object {
+    val `instance-stuck-in-state`    = "instance-stuck-in-state".asInstanceOf[ReportInstanceReasonCodes]
+    val unresponsive                 = "unresponsive".asInstanceOf[ReportInstanceReasonCodes]
+    val `not-accepting-credentials`  = "not-accepting-credentials".asInstanceOf[ReportInstanceReasonCodes]
+    val `password-not-available`     = "password-not-available".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-network`        = "performance-network".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-instance-store` = "performance-instance-store".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-ebs-volume`     = "performance-ebs-volume".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-other`          = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
+    val other                        = "other".asInstanceOf[ReportInstanceReasonCodes]
 
     val values = js.Object.freeze(
       js.Array(
@@ -29737,10 +29676,11 @@ package ec2 {
       __obj.asInstanceOf[ReportInstanceStatusRequest]
     }
   }
-
-  object ReportStatusTypeEnum {
-    val ok       = "ok"
-    val impaired = "impaired"
+  @js.native
+  sealed trait ReportStatusType extends js.Any
+  object ReportStatusType extends js.Object {
+    val ok       = "ok".asInstanceOf[ReportStatusType]
+    val impaired = "impaired".asInstanceOf[ReportStatusType]
 
     val values = js.Object.freeze(js.Array(ok, impaired))
   }
@@ -30056,12 +29996,13 @@ package ec2 {
       __obj.asInstanceOf[Reservation]
     }
   }
-
-  object ReservationStateEnum {
-    val `payment-pending` = "payment-pending"
-    val `payment-failed`  = "payment-failed"
-    val active            = "active"
-    val retired           = "retired"
+  @js.native
+  sealed trait ReservationState extends js.Any
+  object ReservationState extends js.Object {
+    val `payment-pending` = "payment-pending".asInstanceOf[ReservationState]
+    val `payment-failed`  = "payment-failed".asInstanceOf[ReservationState]
+    val active            = "active".asInstanceOf[ReservationState]
+    val retired           = "retired".asInstanceOf[ReservationState]
 
     val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
@@ -30134,14 +30075,15 @@ package ec2 {
       __obj.asInstanceOf[ReservedInstanceReservationValue]
     }
   }
-
-  object ReservedInstanceStateEnum {
-    val `payment-pending` = "payment-pending"
-    val active            = "active"
-    val `payment-failed`  = "payment-failed"
-    val retired           = "retired"
-    val queued            = "queued"
-    val `queued-deleted`  = "queued-deleted"
+  @js.native
+  sealed trait ReservedInstanceState extends js.Any
+  object ReservedInstanceState extends js.Object {
+    val `payment-pending` = "payment-pending".asInstanceOf[ReservedInstanceState]
+    val active            = "active".asInstanceOf[ReservedInstanceState]
+    val `payment-failed`  = "payment-failed".asInstanceOf[ReservedInstanceState]
+    val retired           = "retired".asInstanceOf[ReservedInstanceState]
+    val queued            = "queued".asInstanceOf[ReservedInstanceState]
+    val `queued-deleted`  = "queued-deleted".asInstanceOf[ReservedInstanceState]
 
     val values =
       js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`))
@@ -30476,9 +30418,10 @@ package ec2 {
       __obj.asInstanceOf[ResetEbsDefaultKmsKeyIdResult]
     }
   }
-
-  object ResetFpgaImageAttributeNameEnum {
-    val loadPermission = "loadPermission"
+  @js.native
+  sealed trait ResetFpgaImageAttributeName extends js.Any
+  object ResetFpgaImageAttributeName extends js.Object {
+    val loadPermission = "loadPermission".asInstanceOf[ResetFpgaImageAttributeName]
 
     val values = js.Object.freeze(js.Array(loadPermission))
   }
@@ -30522,9 +30465,10 @@ package ec2 {
       __obj.asInstanceOf[ResetFpgaImageAttributeResult]
     }
   }
-
-  object ResetImageAttributeNameEnum {
-    val launchPermission = "launchPermission"
+  @js.native
+  sealed trait ResetImageAttributeName extends js.Any
+  object ResetImageAttributeName extends js.Object {
+    val launchPermission = "launchPermission".asInstanceOf[ResetImageAttributeName]
 
     val values = js.Object.freeze(js.Array(launchPermission))
   }
@@ -30630,44 +30574,45 @@ package ec2 {
       __obj.asInstanceOf[ResetSnapshotAttributeRequest]
     }
   }
-
-  object ResourceTypeEnum {
-    val `client-vpn-endpoint`              = "client-vpn-endpoint"
-    val `customer-gateway`                 = "customer-gateway"
-    val `dedicated-host`                   = "dedicated-host"
-    val `dhcp-options`                     = "dhcp-options"
-    val `elastic-ip`                       = "elastic-ip"
-    val fleet                              = "fleet"
-    val `fpga-image`                       = "fpga-image"
-    val `host-reservation`                 = "host-reservation"
-    val image                              = "image"
-    val instance                           = "instance"
-    val `internet-gateway`                 = "internet-gateway"
-    val `key-pair`                         = "key-pair"
-    val `launch-template`                  = "launch-template"
-    val natgateway                         = "natgateway"
-    val `network-acl`                      = "network-acl"
-    val `network-interface`                = "network-interface"
-    val `placement-group`                  = "placement-group"
-    val `reserved-instances`               = "reserved-instances"
-    val `route-table`                      = "route-table"
-    val `security-group`                   = "security-group"
-    val snapshot                           = "snapshot"
-    val `spot-fleet-request`               = "spot-fleet-request"
-    val `spot-instances-request`           = "spot-instances-request"
-    val subnet                             = "subnet"
-    val `traffic-mirror-filter`            = "traffic-mirror-filter"
-    val `traffic-mirror-session`           = "traffic-mirror-session"
-    val `traffic-mirror-target`            = "traffic-mirror-target"
-    val `transit-gateway`                  = "transit-gateway"
-    val `transit-gateway-attachment`       = "transit-gateway-attachment"
-    val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain"
-    val `transit-gateway-route-table`      = "transit-gateway-route-table"
-    val volume                             = "volume"
-    val vpc                                = "vpc"
-    val `vpc-peering-connection`           = "vpc-peering-connection"
-    val `vpn-connection`                   = "vpn-connection"
-    val `vpn-gateway`                      = "vpn-gateway"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val `client-vpn-endpoint`              = "client-vpn-endpoint".asInstanceOf[ResourceType]
+    val `customer-gateway`                 = "customer-gateway".asInstanceOf[ResourceType]
+    val `dedicated-host`                   = "dedicated-host".asInstanceOf[ResourceType]
+    val `dhcp-options`                     = "dhcp-options".asInstanceOf[ResourceType]
+    val `elastic-ip`                       = "elastic-ip".asInstanceOf[ResourceType]
+    val fleet                              = "fleet".asInstanceOf[ResourceType]
+    val `fpga-image`                       = "fpga-image".asInstanceOf[ResourceType]
+    val `host-reservation`                 = "host-reservation".asInstanceOf[ResourceType]
+    val image                              = "image".asInstanceOf[ResourceType]
+    val instance                           = "instance".asInstanceOf[ResourceType]
+    val `internet-gateway`                 = "internet-gateway".asInstanceOf[ResourceType]
+    val `key-pair`                         = "key-pair".asInstanceOf[ResourceType]
+    val `launch-template`                  = "launch-template".asInstanceOf[ResourceType]
+    val natgateway                         = "natgateway".asInstanceOf[ResourceType]
+    val `network-acl`                      = "network-acl".asInstanceOf[ResourceType]
+    val `network-interface`                = "network-interface".asInstanceOf[ResourceType]
+    val `placement-group`                  = "placement-group".asInstanceOf[ResourceType]
+    val `reserved-instances`               = "reserved-instances".asInstanceOf[ResourceType]
+    val `route-table`                      = "route-table".asInstanceOf[ResourceType]
+    val `security-group`                   = "security-group".asInstanceOf[ResourceType]
+    val snapshot                           = "snapshot".asInstanceOf[ResourceType]
+    val `spot-fleet-request`               = "spot-fleet-request".asInstanceOf[ResourceType]
+    val `spot-instances-request`           = "spot-instances-request".asInstanceOf[ResourceType]
+    val subnet                             = "subnet".asInstanceOf[ResourceType]
+    val `traffic-mirror-filter`            = "traffic-mirror-filter".asInstanceOf[ResourceType]
+    val `traffic-mirror-session`           = "traffic-mirror-session".asInstanceOf[ResourceType]
+    val `traffic-mirror-target`            = "traffic-mirror-target".asInstanceOf[ResourceType]
+    val `transit-gateway`                  = "transit-gateway".asInstanceOf[ResourceType]
+    val `transit-gateway-attachment`       = "transit-gateway-attachment".asInstanceOf[ResourceType]
+    val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain".asInstanceOf[ResourceType]
+    val `transit-gateway-route-table`      = "transit-gateway-route-table".asInstanceOf[ResourceType]
+    val volume                             = "volume".asInstanceOf[ResourceType]
+    val vpc                                = "vpc".asInstanceOf[ResourceType]
+    val `vpc-peering-connection`           = "vpc-peering-connection".asInstanceOf[ResourceType]
+    val `vpn-connection`                   = "vpn-connection".asInstanceOf[ResourceType]
+    val `vpn-gateway`                      = "vpn-gateway".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -31008,10 +30953,11 @@ package ec2 {
       __obj.asInstanceOf[RevokeSecurityGroupIngressRequest]
     }
   }
-
-  object RootDeviceTypeEnum {
-    val ebs              = "ebs"
-    val `instance-store` = "instance-store"
+  @js.native
+  sealed trait RootDeviceType extends js.Any
+  object RootDeviceType extends js.Object {
+    val ebs              = "ebs".asInstanceOf[RootDeviceType]
+    val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
@@ -31075,18 +31021,20 @@ package ec2 {
       __obj.asInstanceOf[Route]
     }
   }
-
-  object RouteOriginEnum {
-    val CreateRouteTable          = "CreateRouteTable"
-    val CreateRoute               = "CreateRoute"
-    val EnableVgwRoutePropagation = "EnableVgwRoutePropagation"
+  @js.native
+  sealed trait RouteOrigin extends js.Any
+  object RouteOrigin extends js.Object {
+    val CreateRouteTable          = "CreateRouteTable".asInstanceOf[RouteOrigin]
+    val CreateRoute               = "CreateRoute".asInstanceOf[RouteOrigin]
+    val EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
 
     val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
   }
-
-  object RouteStateEnum {
-    val active    = "active"
-    val blackhole = "blackhole"
+  @js.native
+  sealed trait RouteState extends js.Any
+  object RouteState extends js.Object {
+    val active    = "active".asInstanceOf[RouteState]
+    val blackhole = "blackhole".asInstanceOf[RouteState]
 
     val values = js.Object.freeze(js.Array(active, blackhole))
   }
@@ -31183,20 +31131,22 @@ package ec2 {
       __obj.asInstanceOf[RouteTableAssociationState]
     }
   }
-
-  object RouteTableAssociationStateCodeEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
-    val failed         = "failed"
+  @js.native
+  sealed trait RouteTableAssociationStateCode extends js.Any
+  object RouteTableAssociationStateCode extends js.Object {
+    val associating    = "associating".asInstanceOf[RouteTableAssociationStateCode]
+    val associated     = "associated".asInstanceOf[RouteTableAssociationStateCode]
+    val disassociating = "disassociating".asInstanceOf[RouteTableAssociationStateCode]
+    val disassociated  = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
+    val failed         = "failed".asInstanceOf[RouteTableAssociationStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
   }
-
-  object RuleActionEnum {
-    val allow = "allow"
-    val deny  = "deny"
+  @js.native
+  sealed trait RuleAction extends js.Any
+  object RuleAction extends js.Object {
+    val allow = "allow".asInstanceOf[RuleAction]
+    val deny  = "deny".asInstanceOf[RuleAction]
 
     val values = js.Object.freeze(js.Array(allow, deny))
   }
@@ -32260,20 +32210,22 @@ package ec2 {
       __obj.asInstanceOf[ServiceDetail]
     }
   }
-
-  object ServiceStateEnum {
-    val Pending   = "Pending"
-    val Available = "Available"
-    val Deleting  = "Deleting"
-    val Deleted   = "Deleted"
-    val Failed    = "Failed"
+  @js.native
+  sealed trait ServiceState extends js.Any
+  object ServiceState extends js.Object {
+    val Pending   = "Pending".asInstanceOf[ServiceState]
+    val Available = "Available".asInstanceOf[ServiceState]
+    val Deleting  = "Deleting".asInstanceOf[ServiceState]
+    val Deleted   = "Deleted".asInstanceOf[ServiceState]
+    val Failed    = "Failed".asInstanceOf[ServiceState]
 
     val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
   }
-
-  object ServiceTypeEnum {
-    val Interface = "Interface"
-    val Gateway   = "Gateway"
+  @js.native
+  sealed trait ServiceType extends js.Any
+  object ServiceType extends js.Object {
+    val Interface = "Interface".asInstanceOf[ServiceType]
+    val Gateway   = "Gateway".asInstanceOf[ServiceType]
 
     val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
@@ -32296,10 +32248,11 @@ package ec2 {
       __obj.asInstanceOf[ServiceTypeDetail]
     }
   }
-
-  object ShutdownBehaviorEnum {
-    val stop      = "stop"
-    val terminate = "terminate"
+  @js.native
+  sealed trait ShutdownBehavior extends js.Any
+  object ShutdownBehavior extends js.Object {
+    val stop      = "stop".asInstanceOf[ShutdownBehavior]
+    val terminate = "terminate".asInstanceOf[ShutdownBehavior]
 
     val values = js.Object.freeze(js.Array(stop, terminate))
   }
@@ -32407,10 +32360,11 @@ package ec2 {
       __obj.asInstanceOf[Snapshot]
     }
   }
-
-  object SnapshotAttributeNameEnum {
-    val productCodes           = "productCodes"
-    val createVolumePermission = "createVolumePermission"
+  @js.native
+  sealed trait SnapshotAttributeName extends js.Any
+  object SnapshotAttributeName extends js.Object {
+    val productCodes           = "productCodes".asInstanceOf[SnapshotAttributeName]
+    val createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
 
     val values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
   }
@@ -32534,11 +32488,12 @@ package ec2 {
       __obj.asInstanceOf[SnapshotInfo]
     }
   }
-
-  object SnapshotStateEnum {
-    val pending   = "pending"
-    val completed = "completed"
-    val error     = "error"
+  @js.native
+  sealed trait SnapshotState extends js.Any
+  object SnapshotState extends js.Object {
+    val pending   = "pending".asInstanceOf[SnapshotState]
+    val completed = "completed".asInstanceOf[SnapshotState]
+    val error     = "error".asInstanceOf[SnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, completed, error))
   }
@@ -32591,11 +32546,12 @@ package ec2 {
       __obj.asInstanceOf[SnapshotTaskDetail]
     }
   }
-
-  object SpotAllocationStrategyEnum {
-    val `lowest-price`       = "lowest-price"
-    val diversified          = "diversified"
-    val `capacity-optimized` = "capacity-optimized"
+  @js.native
+  sealed trait SpotAllocationStrategy extends js.Any
+  object SpotAllocationStrategy extends js.Object {
+    val `lowest-price`       = "lowest-price".asInstanceOf[SpotAllocationStrategy]
+    val diversified          = "diversified".asInstanceOf[SpotAllocationStrategy]
+    val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
   }
@@ -32874,11 +32830,12 @@ package ec2 {
       __obj.asInstanceOf[SpotFleetTagSpecification]
     }
   }
-
-  object SpotInstanceInterruptionBehaviorEnum {
-    val hibernate = "hibernate"
-    val stop      = "stop"
-    val terminate = "terminate"
+  @js.native
+  sealed trait SpotInstanceInterruptionBehavior extends js.Any
+  object SpotInstanceInterruptionBehavior extends js.Object {
+    val hibernate = "hibernate".asInstanceOf[SpotInstanceInterruptionBehavior]
+    val stop      = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
+    val terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
 
     val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
@@ -32957,13 +32914,14 @@ package ec2 {
       __obj.asInstanceOf[SpotInstanceRequest]
     }
   }
-
-  object SpotInstanceStateEnum {
-    val open      = "open"
-    val active    = "active"
-    val closed    = "closed"
-    val cancelled = "cancelled"
-    val failed    = "failed"
+  @js.native
+  sealed trait SpotInstanceState extends js.Any
+  object SpotInstanceState extends js.Object {
+    val open      = "open".asInstanceOf[SpotInstanceState]
+    val active    = "active".asInstanceOf[SpotInstanceState]
+    val closed    = "closed".asInstanceOf[SpotInstanceState]
+    val cancelled = "cancelled".asInstanceOf[SpotInstanceState]
+    val failed    = "failed".asInstanceOf[SpotInstanceState]
 
     val values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
   }
@@ -33014,10 +32972,11 @@ package ec2 {
       __obj.asInstanceOf[SpotInstanceStatus]
     }
   }
-
-  object SpotInstanceTypeEnum {
-    val `one-time` = "one-time"
-    val persistent = "persistent"
+  @js.native
+  sealed trait SpotInstanceType extends js.Any
+  object SpotInstanceType extends js.Object {
+    val `one-time` = "one-time".asInstanceOf[SpotInstanceType]
+    val persistent = "persistent".asInstanceOf[SpotInstanceType]
 
     val values = js.Object.freeze(js.Array(`one-time`, persistent))
   }
@@ -33333,16 +33292,17 @@ package ec2 {
       __obj.asInstanceOf[StartVpcEndpointServicePrivateDnsVerificationResult]
     }
   }
-
-  object StateEnum {
-    val PendingAcceptance = "PendingAcceptance"
-    val Pending           = "Pending"
-    val Available         = "Available"
-    val Deleting          = "Deleting"
-    val Deleted           = "Deleted"
-    val Rejected          = "Rejected"
-    val Failed            = "Failed"
-    val Expired           = "Expired"
+  @js.native
+  sealed trait State extends js.Any
+  object State extends js.Object {
+    val PendingAcceptance = "PendingAcceptance".asInstanceOf[State]
+    val Pending           = "Pending".asInstanceOf[State]
+    val Available         = "Available".asInstanceOf[State]
+    val Deleting          = "Deleting".asInstanceOf[State]
+    val Deleted           = "Deleted".asInstanceOf[State]
+    val Rejected          = "Rejected".asInstanceOf[State]
+    val Failed            = "Failed".asInstanceOf[State]
+    val Expired           = "Expired".asInstanceOf[State]
 
     val values =
       js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
@@ -33369,26 +33329,29 @@ package ec2 {
       __obj.asInstanceOf[StateReason]
     }
   }
-
-  object StatusEnum {
-    val MoveInProgress = "MoveInProgress"
-    val InVpc          = "InVpc"
-    val InClassic      = "InClassic"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val MoveInProgress = "MoveInProgress".asInstanceOf[Status]
+    val InVpc          = "InVpc".asInstanceOf[Status]
+    val InClassic      = "InClassic".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
   }
-
-  object StatusNameEnum {
-    val reachability = "reachability"
+  @js.native
+  sealed trait StatusName extends js.Any
+  object StatusName extends js.Object {
+    val reachability = "reachability".asInstanceOf[StatusName]
 
     val values = js.Object.freeze(js.Array(reachability))
   }
-
-  object StatusTypeEnum {
-    val passed              = "passed"
-    val failed              = "failed"
-    val `insufficient-data` = "insufficient-data"
-    val initializing        = "initializing"
+  @js.native
+  sealed trait StatusType extends js.Any
+  object StatusType extends js.Object {
+    val passed              = "passed".asInstanceOf[StatusType]
+    val failed              = "failed".asInstanceOf[StatusType]
+    val `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
+    val initializing        = "initializing".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
   }
@@ -33585,14 +33548,15 @@ package ec2 {
       __obj.asInstanceOf[SubnetCidrBlockState]
     }
   }
-
-  object SubnetCidrBlockStateCodeEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
-    val failing        = "failing"
-    val failed         = "failed"
+  @js.native
+  sealed trait SubnetCidrBlockStateCode extends js.Any
+  object SubnetCidrBlockStateCode extends js.Object {
+    val associating    = "associating".asInstanceOf[SubnetCidrBlockStateCode]
+    val associated     = "associated".asInstanceOf[SubnetCidrBlockStateCode]
+    val disassociating = "disassociating".asInstanceOf[SubnetCidrBlockStateCode]
+    val disassociated  = "disassociated".asInstanceOf[SubnetCidrBlockStateCode]
+    val failing        = "failing".asInstanceOf[SubnetCidrBlockStateCode]
+    val failed         = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
@@ -33621,10 +33585,11 @@ package ec2 {
       __obj.asInstanceOf[SubnetIpv6CidrBlockAssociation]
     }
   }
-
-  object SubnetStateEnum {
-    val pending   = "pending"
-    val available = "available"
+  @js.native
+  sealed trait SubnetState extends js.Any
+  object SubnetState extends js.Object {
+    val pending   = "pending".asInstanceOf[SubnetState]
+    val available = "available".asInstanceOf[SubnetState]
 
     val values = js.Object.freeze(js.Array(pending, available))
   }
@@ -33666,13 +33631,14 @@ package ec2 {
       __obj.asInstanceOf[SuccessfulQueuedPurchaseDeletion]
     }
   }
-
-  object SummaryStatusEnum {
-    val ok                  = "ok"
-    val impaired            = "impaired"
-    val `insufficient-data` = "insufficient-data"
-    val `not-applicable`    = "not-applicable"
-    val initializing        = "initializing"
+  @js.native
+  sealed trait SummaryStatus extends js.Any
+  object SummaryStatus extends js.Object {
+    val ok                  = "ok".asInstanceOf[SummaryStatus]
+    val impaired            = "impaired".asInstanceOf[SummaryStatus]
+    val `insufficient-data` = "insufficient-data".asInstanceOf[SummaryStatus]
+    val `not-applicable`    = "not-applicable".asInstanceOf[SummaryStatus]
+    val initializing        = "initializing".asInstanceOf[SummaryStatus]
 
     val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
   }
@@ -33952,18 +33918,20 @@ package ec2 {
       __obj.asInstanceOf[TargetReservationValue]
     }
   }
-
-  object TelemetryStatusEnum {
-    val UP   = "UP"
-    val DOWN = "DOWN"
+  @js.native
+  sealed trait TelemetryStatus extends js.Any
+  object TelemetryStatus extends js.Object {
+    val UP   = "UP".asInstanceOf[TelemetryStatus]
+    val DOWN = "DOWN".asInstanceOf[TelemetryStatus]
 
     val values = js.Object.freeze(js.Array(UP, DOWN))
   }
-
-  object TenancyEnum {
-    val default   = "default"
-    val dedicated = "dedicated"
-    val host      = "host"
+  @js.native
+  sealed trait Tenancy extends js.Any
+  object Tenancy extends js.Object {
+    val default   = "default".asInstanceOf[Tenancy]
+    val dedicated = "dedicated".asInstanceOf[Tenancy]
+    val host      = "host".asInstanceOf[Tenancy]
 
     val values = js.Object.freeze(js.Array(default, dedicated, host))
   }
@@ -34078,10 +34046,11 @@ package ec2 {
       __obj.asInstanceOf[TerminateInstancesResult]
     }
   }
-
-  object TrafficDirectionEnum {
-    val ingress = "ingress"
-    val egress  = "egress"
+  @js.native
+  sealed trait TrafficDirection extends js.Any
+  object TrafficDirection extends js.Object {
+    val ingress = "ingress".asInstanceOf[TrafficDirection]
+    val egress  = "egress".asInstanceOf[TrafficDirection]
 
     val values = js.Object.freeze(js.Array(ingress, egress))
   }
@@ -34170,18 +34139,20 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorFilterRule]
     }
   }
-
-  object TrafficMirrorFilterRuleFieldEnum {
-    val `destination-port-range` = "destination-port-range"
-    val `source-port-range`      = "source-port-range"
-    val protocol                 = "protocol"
-    val description              = "description"
+  @js.native
+  sealed trait TrafficMirrorFilterRuleField extends js.Any
+  object TrafficMirrorFilterRuleField extends js.Object {
+    val `destination-port-range` = "destination-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
+    val `source-port-range`      = "source-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
+    val protocol                 = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
+    val description              = "description".asInstanceOf[TrafficMirrorFilterRuleField]
 
     val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
   }
-
-  object TrafficMirrorNetworkServiceEnum {
-    val `amazon-dns` = "amazon-dns"
+  @js.native
+  sealed trait TrafficMirrorNetworkService extends js.Any
+  object TrafficMirrorNetworkService extends js.Object {
+    val `amazon-dns` = "amazon-dns".asInstanceOf[TrafficMirrorNetworkService]
 
     val values = js.Object.freeze(js.Array(`amazon-dns`))
   }
@@ -34229,10 +34200,11 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorPortRangeRequest]
     }
   }
-
-  object TrafficMirrorRuleActionEnum {
-    val accept = "accept"
-    val reject = "reject"
+  @js.native
+  sealed trait TrafficMirrorRuleAction extends js.Any
+  object TrafficMirrorRuleAction extends js.Object {
+    val accept = "accept".asInstanceOf[TrafficMirrorRuleAction]
+    val reject = "reject".asInstanceOf[TrafficMirrorRuleAction]
 
     val values = js.Object.freeze(js.Array(accept, reject))
   }
@@ -34282,11 +34254,12 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorSession]
     }
   }
-
-  object TrafficMirrorSessionFieldEnum {
-    val `packet-length`      = "packet-length"
-    val description          = "description"
-    val `virtual-network-id` = "virtual-network-id"
+  @js.native
+  sealed trait TrafficMirrorSessionField extends js.Any
+  object TrafficMirrorSessionField extends js.Object {
+    val `packet-length`      = "packet-length".asInstanceOf[TrafficMirrorSessionField]
+    val description          = "description".asInstanceOf[TrafficMirrorSessionField]
+    val `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
 
     val values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
   }
@@ -34327,18 +34300,20 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorTarget]
     }
   }
-
-  object TrafficMirrorTargetTypeEnum {
-    val `network-interface`     = "network-interface"
-    val `network-load-balancer` = "network-load-balancer"
+  @js.native
+  sealed trait TrafficMirrorTargetType extends js.Any
+  object TrafficMirrorTargetType extends js.Object {
+    val `network-interface`     = "network-interface".asInstanceOf[TrafficMirrorTargetType]
+    val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
 
     val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
   }
-
-  object TrafficTypeEnum {
-    val ACCEPT = "ACCEPT"
-    val REJECT = "REJECT"
-    val ALL    = "ALL"
+  @js.native
+  sealed trait TrafficType extends js.Any
+  object TrafficType extends js.Object {
+    val ACCEPT = "ACCEPT".asInstanceOf[TrafficType]
+    val REJECT = "REJECT".asInstanceOf[TrafficType]
+    val ALL    = "ALL".asInstanceOf[TrafficType]
 
     val values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
   }
@@ -34417,12 +34392,13 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayAssociation]
     }
   }
-
-  object TransitGatewayAssociationStateEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
+  @js.native
+  sealed trait TransitGatewayAssociationState extends js.Any
+  object TransitGatewayAssociationState extends js.Object {
+    val associating    = "associating".asInstanceOf[TransitGatewayAssociationState]
+    val associated     = "associated".asInstanceOf[TransitGatewayAssociationState]
+    val disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
+    val disassociated  = "disassociated".asInstanceOf[TransitGatewayAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -34522,29 +34498,31 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayAttachmentPropagation]
     }
   }
-
-  object TransitGatewayAttachmentResourceTypeEnum {
-    val vpc                      = "vpc"
-    val vpn                      = "vpn"
-    val `direct-connect-gateway` = "direct-connect-gateway"
-    val `tgw-peering`            = "tgw-peering"
+  @js.native
+  sealed trait TransitGatewayAttachmentResourceType extends js.Any
+  object TransitGatewayAttachmentResourceType extends js.Object {
+    val vpc                      = "vpc".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val vpn                      = "vpn".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val `direct-connect-gateway` = "direct-connect-gateway".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val `tgw-peering`            = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
 
     val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
   }
-
-  object TransitGatewayAttachmentStateEnum {
-    val initiating        = "initiating"
-    val pendingAcceptance = "pendingAcceptance"
-    val rollingBack       = "rollingBack"
-    val pending           = "pending"
-    val available         = "available"
-    val modifying         = "modifying"
-    val deleting          = "deleting"
-    val deleted           = "deleted"
-    val failed            = "failed"
-    val rejected          = "rejected"
-    val rejecting         = "rejecting"
-    val failing           = "failing"
+  @js.native
+  sealed trait TransitGatewayAttachmentState extends js.Any
+  object TransitGatewayAttachmentState extends js.Object {
+    val initiating        = "initiating".asInstanceOf[TransitGatewayAttachmentState]
+    val pendingAcceptance = "pendingAcceptance".asInstanceOf[TransitGatewayAttachmentState]
+    val rollingBack       = "rollingBack".asInstanceOf[TransitGatewayAttachmentState]
+    val pending           = "pending".asInstanceOf[TransitGatewayAttachmentState]
+    val available         = "available".asInstanceOf[TransitGatewayAttachmentState]
+    val modifying         = "modifying".asInstanceOf[TransitGatewayAttachmentState]
+    val deleting          = "deleting".asInstanceOf[TransitGatewayAttachmentState]
+    val deleted           = "deleted".asInstanceOf[TransitGatewayAttachmentState]
+    val failed            = "failed".asInstanceOf[TransitGatewayAttachmentState]
+    val rejected          = "rejected".asInstanceOf[TransitGatewayAttachmentState]
+    val rejecting         = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
+    val failing           = "failing".asInstanceOf[TransitGatewayAttachmentState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -34563,12 +34541,13 @@ package ec2 {
       )
     )
   }
-
-  object TransitGatewayMulitcastDomainAssociationStateEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
+  @js.native
+  sealed trait TransitGatewayMulitcastDomainAssociationState extends js.Any
+  object TransitGatewayMulitcastDomainAssociationState extends js.Object {
+    val associating    = "associating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val associated     = "associated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val disassociating = "disassociating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val disassociated  = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -34728,12 +34707,13 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayMulticastDomainAssociations]
     }
   }
-
-  object TransitGatewayMulticastDomainStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait TransitGatewayMulticastDomainState extends js.Any
+  object TransitGatewayMulticastDomainState extends js.Object {
+    val pending   = "pending".asInstanceOf[TransitGatewayMulticastDomainState]
+    val available = "available".asInstanceOf[TransitGatewayMulticastDomainState]
+    val deleting  = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
+    val deleted   = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -34970,12 +34950,13 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayPropagation]
     }
   }
-
-  object TransitGatewayPropagationStateEnum {
-    val enabling  = "enabling"
-    val enabled   = "enabled"
-    val disabling = "disabling"
-    val disabled  = "disabled"
+  @js.native
+  sealed trait TransitGatewayPropagationState extends js.Any
+  object TransitGatewayPropagationState extends js.Object {
+    val enabling  = "enabling".asInstanceOf[TransitGatewayPropagationState]
+    val enabled   = "enabled".asInstanceOf[TransitGatewayPropagationState]
+    val disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
+    val disabled  = "disabled".asInstanceOf[TransitGatewayPropagationState]
 
     val values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
   }
@@ -35079,13 +35060,14 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayRouteAttachment]
     }
   }
-
-  object TransitGatewayRouteStateEnum {
-    val pending   = "pending"
-    val active    = "active"
-    val blackhole = "blackhole"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait TransitGatewayRouteState extends js.Any
+  object TransitGatewayRouteState extends js.Object {
+    val pending   = "pending".asInstanceOf[TransitGatewayRouteState]
+    val active    = "active".asInstanceOf[TransitGatewayRouteState]
+    val blackhole = "blackhole".asInstanceOf[TransitGatewayRouteState]
+    val deleting  = "deleting".asInstanceOf[TransitGatewayRouteState]
+    val deleted   = "deleted".asInstanceOf[TransitGatewayRouteState]
 
     val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
@@ -35192,29 +35174,32 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayRouteTablePropagation]
     }
   }
-
-  object TransitGatewayRouteTableStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait TransitGatewayRouteTableState extends js.Any
+  object TransitGatewayRouteTableState extends js.Object {
+    val pending   = "pending".asInstanceOf[TransitGatewayRouteTableState]
+    val available = "available".asInstanceOf[TransitGatewayRouteTableState]
+    val deleting  = "deleting".asInstanceOf[TransitGatewayRouteTableState]
+    val deleted   = "deleted".asInstanceOf[TransitGatewayRouteTableState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
-
-  object TransitGatewayRouteTypeEnum {
-    val static     = "static"
-    val propagated = "propagated"
+  @js.native
+  sealed trait TransitGatewayRouteType extends js.Any
+  object TransitGatewayRouteType extends js.Object {
+    val static     = "static".asInstanceOf[TransitGatewayRouteType]
+    val propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
 
     val values = js.Object.freeze(js.Array(static, propagated))
   }
-
-  object TransitGatewayStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val modifying = "modifying"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait TransitGatewayState extends js.Any
+  object TransitGatewayState extends js.Object {
+    val pending   = "pending".asInstanceOf[TransitGatewayState]
+    val available = "available".asInstanceOf[TransitGatewayState]
+    val modifying = "modifying".asInstanceOf[TransitGatewayState]
+    val deleting  = "deleting".asInstanceOf[TransitGatewayState]
+    val deleted   = "deleted".asInstanceOf[TransitGatewayState]
 
     val values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
   }
@@ -35285,10 +35270,11 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayVpcAttachmentOptions]
     }
   }
-
-  object TransportProtocolEnum {
-    val tcp = "tcp"
-    val udp = "udp"
+  @js.native
+  sealed trait TransportProtocol extends js.Any
+  object TransportProtocol extends js.Object {
+    val tcp = "tcp".asInstanceOf[TransportProtocol]
+    val udp = "udp".asInstanceOf[TransportProtocol]
 
     val values = js.Object.freeze(js.Array(tcp, udp))
   }
@@ -35428,11 +35414,12 @@ package ec2 {
       __obj.asInstanceOf[UnassignPrivateIpAddressesRequest]
     }
   }
-
-  object UnlimitedSupportedInstanceFamilyEnum {
-    val t2  = "t2"
-    val t3  = "t3"
-    val t3a = "t3a"
+  @js.native
+  sealed trait UnlimitedSupportedInstanceFamily extends js.Any
+  object UnlimitedSupportedInstanceFamily extends js.Object {
+    val t2  = "t2".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    val t3  = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    val t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
 
     val values = js.Object.freeze(js.Array(t2, t3, t3a))
   }
@@ -35473,12 +35460,16 @@ package ec2 {
       __obj.asInstanceOf[UnmonitorInstancesResult]
     }
   }
-
-  object UnsuccessfulInstanceCreditSpecificationErrorCodeEnum {
-    val `InvalidInstanceID.Malformed`              = "InvalidInstanceID.Malformed"
-    val `InvalidInstanceID.NotFound`               = "InvalidInstanceID.NotFound"
-    val IncorrectInstanceState                     = "IncorrectInstanceState"
-    val `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported"
+  @js.native
+  sealed trait UnsuccessfulInstanceCreditSpecificationErrorCode extends js.Any
+  object UnsuccessfulInstanceCreditSpecificationErrorCode extends js.Object {
+    val `InvalidInstanceID.Malformed` =
+      "InvalidInstanceID.Malformed".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    val `InvalidInstanceID.NotFound` =
+      "InvalidInstanceID.NotFound".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    val IncorrectInstanceState = "IncorrectInstanceState".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    val `InstanceCreditSpecification.NotSupported` =
+      "InstanceCreditSpecification.NotSupported".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -35663,10 +35654,11 @@ package ec2 {
       __obj.asInstanceOf[UpdateSecurityGroupRuleDescriptionsIngressResult]
     }
   }
-
-  object UsageClassTypeEnum {
-    val spot        = "spot"
-    val `on-demand` = "on-demand"
+  @js.native
+  sealed trait UsageClassType extends js.Any
+  object UsageClassType extends js.Object {
+    val spot        = "spot".asInstanceOf[UsageClassType]
+    val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
@@ -35835,10 +35827,11 @@ package ec2 {
       __obj.asInstanceOf[VgwTelemetry]
     }
   }
-
-  object VirtualizationTypeEnum {
-    val hvm         = "hvm"
-    val paravirtual = "paravirtual"
+  @js.native
+  sealed trait VirtualizationType extends js.Any
+  object VirtualizationType extends js.Object {
+    val hvm         = "hvm".asInstanceOf[VirtualizationType]
+    val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
 
     val values = js.Object.freeze(js.Array(hvm, paravirtual))
   }
@@ -35937,20 +35930,22 @@ package ec2 {
       __obj.asInstanceOf[VolumeAttachment]
     }
   }
-
-  object VolumeAttachmentStateEnum {
-    val attaching = "attaching"
-    val attached  = "attached"
-    val detaching = "detaching"
-    val detached  = "detached"
-    val busy      = "busy"
+  @js.native
+  sealed trait VolumeAttachmentState extends js.Any
+  object VolumeAttachmentState extends js.Object {
+    val attaching = "attaching".asInstanceOf[VolumeAttachmentState]
+    val attached  = "attached".asInstanceOf[VolumeAttachmentState]
+    val detaching = "detaching".asInstanceOf[VolumeAttachmentState]
+    val detached  = "detached".asInstanceOf[VolumeAttachmentState]
+    val busy      = "busy".asInstanceOf[VolumeAttachmentState]
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
   }
-
-  object VolumeAttributeNameEnum {
-    val autoEnableIO = "autoEnableIO"
-    val productCodes = "productCodes"
+  @js.native
+  sealed trait VolumeAttributeName extends js.Any
+  object VolumeAttributeName extends js.Object {
+    val autoEnableIO = "autoEnableIO".asInstanceOf[VolumeAttributeName]
+    val productCodes = "productCodes".asInstanceOf[VolumeAttributeName]
 
     val values = js.Object.freeze(js.Array(autoEnableIO, productCodes))
   }
@@ -36028,23 +36023,25 @@ package ec2 {
       __obj.asInstanceOf[VolumeModification]
     }
   }
-
-  object VolumeModificationStateEnum {
-    val modifying  = "modifying"
-    val optimizing = "optimizing"
-    val completed  = "completed"
-    val failed     = "failed"
+  @js.native
+  sealed trait VolumeModificationState extends js.Any
+  object VolumeModificationState extends js.Object {
+    val modifying  = "modifying".asInstanceOf[VolumeModificationState]
+    val optimizing = "optimizing".asInstanceOf[VolumeModificationState]
+    val completed  = "completed".asInstanceOf[VolumeModificationState]
+    val failed     = "failed".asInstanceOf[VolumeModificationState]
 
     val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
   }
-
-  object VolumeStateEnum {
-    val creating  = "creating"
-    val available = "available"
-    val `in-use`  = "in-use"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
-    val error     = "error"
+  @js.native
+  sealed trait VolumeState extends js.Any
+  object VolumeState extends js.Object {
+    val creating  = "creating".asInstanceOf[VolumeState]
+    val available = "available".asInstanceOf[VolumeState]
+    val `in-use`  = "in-use".asInstanceOf[VolumeState]
+    val deleting  = "deleting".asInstanceOf[VolumeState]
+    val deleted   = "deleted".asInstanceOf[VolumeState]
+    val error     = "error".asInstanceOf[VolumeState]
 
     val values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
   }
@@ -36176,11 +36173,12 @@ package ec2 {
       __obj.asInstanceOf[VolumeStatusInfo]
     }
   }
-
-  object VolumeStatusInfoStatusEnum {
-    val ok                  = "ok"
-    val impaired            = "impaired"
-    val `insufficient-data` = "insufficient-data"
+  @js.native
+  sealed trait VolumeStatusInfoStatus extends js.Any
+  object VolumeStatusInfoStatus extends js.Object {
+    val ok                  = "ok".asInstanceOf[VolumeStatusInfoStatus]
+    val impaired            = "impaired".asInstanceOf[VolumeStatusInfoStatus]
+    val `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
 
     val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
   }
@@ -36221,20 +36219,22 @@ package ec2 {
       __obj.asInstanceOf[VolumeStatusItem]
     }
   }
-
-  object VolumeStatusNameEnum {
-    val `io-enabled`     = "io-enabled"
-    val `io-performance` = "io-performance"
+  @js.native
+  sealed trait VolumeStatusName extends js.Any
+  object VolumeStatusName extends js.Object {
+    val `io-enabled`     = "io-enabled".asInstanceOf[VolumeStatusName]
+    val `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
 
     val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
   }
-
-  object VolumeTypeEnum {
-    val standard = "standard"
-    val io1      = "io1"
-    val gp2      = "gp2"
-    val sc1      = "sc1"
-    val st1      = "st1"
+  @js.native
+  sealed trait VolumeType extends js.Any
+  object VolumeType extends js.Object {
+    val standard = "standard".asInstanceOf[VolumeType]
+    val io1      = "io1".asInstanceOf[VolumeType]
+    val gp2      = "gp2".asInstanceOf[VolumeType]
+    val sc1      = "sc1".asInstanceOf[VolumeType]
+    val st1      = "st1".asInstanceOf[VolumeType]
 
     val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
@@ -36308,10 +36308,11 @@ package ec2 {
       __obj.asInstanceOf[VpcAttachment]
     }
   }
-
-  object VpcAttributeNameEnum {
-    val enableDnsSupport   = "enableDnsSupport"
-    val enableDnsHostnames = "enableDnsHostnames"
+  @js.native
+  sealed trait VpcAttributeName extends js.Any
+  object VpcAttributeName extends js.Object {
+    val enableDnsSupport   = "enableDnsSupport".asInstanceOf[VpcAttributeName]
+    val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
 
     val values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
   }
@@ -36362,14 +36363,15 @@ package ec2 {
       __obj.asInstanceOf[VpcCidrBlockState]
     }
   }
-
-  object VpcCidrBlockStateCodeEnum {
-    val associating    = "associating"
-    val associated     = "associated"
-    val disassociating = "disassociating"
-    val disassociated  = "disassociated"
-    val failing        = "failing"
-    val failed         = "failed"
+  @js.native
+  sealed trait VpcCidrBlockStateCode extends js.Any
+  object VpcCidrBlockStateCode extends js.Object {
+    val associating    = "associating".asInstanceOf[VpcCidrBlockStateCode]
+    val associated     = "associated".asInstanceOf[VpcCidrBlockStateCode]
+    val disassociating = "disassociating".asInstanceOf[VpcCidrBlockStateCode]
+    val disassociated  = "disassociated".asInstanceOf[VpcCidrBlockStateCode]
+    val failing        = "failing".asInstanceOf[VpcCidrBlockStateCode]
+    val failed         = "failed".asInstanceOf[VpcCidrBlockStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
@@ -36502,10 +36504,11 @@ package ec2 {
       __obj.asInstanceOf[VpcEndpointConnection]
     }
   }
-
-  object VpcEndpointTypeEnum {
-    val Interface = "Interface"
-    val Gateway   = "Gateway"
+  @js.native
+  sealed trait VpcEndpointType extends js.Any
+  object VpcEndpointType extends js.Object {
+    val Interface = "Interface".asInstanceOf[VpcEndpointType]
+    val Gateway   = "Gateway".asInstanceOf[VpcEndpointType]
 
     val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
@@ -36627,17 +36630,18 @@ package ec2 {
       __obj.asInstanceOf[VpcPeeringConnectionStateReason]
     }
   }
-
-  object VpcPeeringConnectionStateReasonCodeEnum {
-    val `initiating-request` = "initiating-request"
-    val `pending-acceptance` = "pending-acceptance"
-    val active               = "active"
-    val deleted              = "deleted"
-    val rejected             = "rejected"
-    val failed               = "failed"
-    val expired              = "expired"
-    val provisioning         = "provisioning"
-    val deleting             = "deleting"
+  @js.native
+  sealed trait VpcPeeringConnectionStateReasonCode extends js.Any
+  object VpcPeeringConnectionStateReasonCode extends js.Object {
+    val `initiating-request` = "initiating-request".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val `pending-acceptance` = "pending-acceptance".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val active               = "active".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val deleted              = "deleted".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val rejected             = "rejected".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val failed               = "failed".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val expired              = "expired".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val provisioning         = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val deleting             = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -36690,16 +36694,18 @@ package ec2 {
       __obj.asInstanceOf[VpcPeeringConnectionVpcInfo]
     }
   }
-
-  object VpcStateEnum {
-    val pending   = "pending"
-    val available = "available"
+  @js.native
+  sealed trait VpcState extends js.Any
+  object VpcState extends js.Object {
+    val pending   = "pending".asInstanceOf[VpcState]
+    val available = "available".asInstanceOf[VpcState]
 
     val values = js.Object.freeze(js.Array(pending, available))
   }
-
-  object VpcTenancyEnum {
-    val default = "default"
+  @js.native
+  sealed trait VpcTenancy extends js.Any
+  object VpcTenancy extends js.Object {
+    val default = "default".asInstanceOf[VpcTenancy]
 
     val values = js.Object.freeze(js.Array(default))
   }
@@ -36807,10 +36813,11 @@ package ec2 {
       __obj.asInstanceOf[VpnConnectionOptionsSpecification]
     }
   }
-
-  object VpnEcmpSupportValueEnum {
-    val enable  = "enable"
-    val disable = "disable"
+  @js.native
+  sealed trait VpnEcmpSupportValue extends js.Any
+  object VpnEcmpSupportValue extends js.Object {
+    val enable  = "enable".asInstanceOf[VpnEcmpSupportValue]
+    val disable = "disable".asInstanceOf[VpnEcmpSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
@@ -36851,18 +36858,20 @@ package ec2 {
       __obj.asInstanceOf[VpnGateway]
     }
   }
-
-  object VpnProtocolEnum {
-    val openvpn = "openvpn"
+  @js.native
+  sealed trait VpnProtocol extends js.Any
+  object VpnProtocol extends js.Object {
+    val openvpn = "openvpn".asInstanceOf[VpnProtocol]
 
     val values = js.Object.freeze(js.Array(openvpn))
   }
-
-  object VpnStateEnum {
-    val pending   = "pending"
-    val available = "available"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait VpnState extends js.Any
+  object VpnState extends js.Object {
+    val pending   = "pending".asInstanceOf[VpnState]
+    val available = "available".asInstanceOf[VpnState]
+    val deleting  = "deleting".asInstanceOf[VpnState]
+    val deleted   = "deleted".asInstanceOf[VpnState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -36891,9 +36900,10 @@ package ec2 {
       __obj.asInstanceOf[VpnStaticRoute]
     }
   }
-
-  object VpnStaticRouteSourceEnum {
-    val Static = "Static"
+  @js.native
+  sealed trait VpnStaticRouteSource extends js.Any
+  object VpnStaticRouteSource extends js.Object {
+    val Static = "Static".asInstanceOf[VpnStaticRouteSource]
 
     val values = js.Object.freeze(js.Array(Static))
   }
@@ -37003,10 +37013,11 @@ package ec2 {
       __obj.asInstanceOf[WithdrawByoipCidrResult]
     }
   }
-
-  object scopeEnum {
-    val `Availability Zone` = "Availability Zone"
-    val Region              = "Region"
+  @js.native
+  sealed trait scope extends js.Any
+  object scope extends js.Object {
+    val `Availability Zone` = "Availability Zone".asInstanceOf[scope]
+    val Region              = "Region".asInstanceOf[scope]
 
     val values = js.Object.freeze(js.Array(`Availability Zone`, Region))
   }

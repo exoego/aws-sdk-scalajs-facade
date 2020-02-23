@@ -8,7 +8,6 @@ import facade.amazonaws._
 
 package object redshift {
   type AccountsWithRestoreAccessList      = js.Array[AccountWithRestoreAccess]
-  type ActionType                         = String
   type AssociatedClusterList              = js.Array[ClusterAssociatedToSchedule]
   type AttributeList                      = js.Array[AccountAttribute]
   type AttributeNameList                  = js.Array[String]
@@ -48,48 +47,35 @@ package object redshift {
   type ImportTablesNotStarted             = js.Array[String]
   type IntegerOptional                    = Int
   type LongOptional                       = Double
-  type Mode                               = String
   type NodeConfigurationOptionList        = js.Array[NodeConfigurationOption]
   type NodeConfigurationOptionsFilterList = js.Array[NodeConfigurationOptionsFilter]
-  type NodeConfigurationOptionsFilterName = String
-  type OperatorType                       = String
   type OrderableClusterOptionsList        = js.Array[OrderableClusterOption]
-  type ParameterApplyType                 = String
   type ParameterGroupList                 = js.Array[ClusterParameterGroup]
   type ParametersList                     = js.Array[Parameter]
   type PendingActionsList                 = js.Array[String]
   type RecurringChargeList                = js.Array[RecurringCharge]
   type ReservedNodeList                   = js.Array[ReservedNode]
   type ReservedNodeOfferingList           = js.Array[ReservedNodeOffering]
-  type ReservedNodeOfferingType           = String
   type RestorableNodeTypeList             = js.Array[String]
   type RevisionTargetsList                = js.Array[RevisionTarget]
   type ScheduleDefinitionList             = js.Array[String]
-  type ScheduleState                      = String
   type ScheduledActionFilterList          = js.Array[ScheduledActionFilter]
-  type ScheduledActionFilterName          = String
   type ScheduledActionList                = js.Array[ScheduledAction]
-  type ScheduledActionState               = String
   type ScheduledActionTimeList            = js.Array[TStamp]
-  type ScheduledActionTypeValues          = String
   type ScheduledSnapshotTimeList          = js.Array[TStamp]
   type SensitiveString                    = String
-  type SnapshotAttributeToSortBy          = String
   type SnapshotCopyGrantList              = js.Array[SnapshotCopyGrant]
   type SnapshotIdentifierList             = js.Array[String]
   type SnapshotList                       = js.Array[Snapshot]
   type SnapshotScheduleList               = js.Array[SnapshotSchedule]
   type SnapshotSortingEntityList          = js.Array[SnapshotSortingEntity]
-  type SortByOrder                        = String
   type SourceIdsList                      = js.Array[String]
-  type SourceType                         = String
   type SubnetIdentifierList               = js.Array[String]
   type SubnetList                         = js.Array[Subnet]
   type SupportedOperationList             = js.Array[SupportedOperation]
   type SupportedPlatformsList             = js.Array[SupportedPlatform]
   type TStamp                             = js.Date
   type TableRestoreStatusList             = js.Array[TableRestoreStatus]
-  type TableRestoreStatusType             = String
   type TagKeyList                         = js.Array[String]
   type TagList                            = js.Array[Tag]
   type TagValueList                       = js.Array[String]
@@ -572,11 +558,12 @@ package redshift {
       __obj.asInstanceOf[AccountWithRestoreAccess]
     }
   }
-
-  object ActionTypeEnum {
-    val `restore-cluster`       = "restore-cluster"
-    val `recommend-node-config` = "recommend-node-config"
-    val `resize-cluster`        = "resize-cluster"
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType extends js.Object {
+    val `restore-cluster`       = "restore-cluster".asInstanceOf[ActionType]
+    val `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
+    val `resize-cluster`        = "resize-cluster".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
   }
@@ -4128,10 +4115,11 @@ package redshift {
       __obj.asInstanceOf[MaintenanceTrack]
     }
   }
-
-  object ModeEnum {
-    val standard           = "standard"
-    val `high-performance` = "high-performance"
+  @js.native
+  sealed trait Mode extends js.Any
+  object Mode extends js.Object {
+    val standard           = "standard".asInstanceOf[Mode]
+    val `high-performance` = "high-performance".asInstanceOf[Mode]
 
     val values = js.Object.freeze(js.Array(standard, `high-performance`))
   }
@@ -4728,12 +4716,14 @@ package redshift {
       __obj.asInstanceOf[NodeConfigurationOptionsFilter]
     }
   }
-
-  object NodeConfigurationOptionsFilterNameEnum {
-    val NodeType                        = "NodeType"
-    val NumberOfNodes                   = "NumberOfNodes"
-    val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent"
-    val Mode                            = "Mode"
+  @js.native
+  sealed trait NodeConfigurationOptionsFilterName extends js.Any
+  object NodeConfigurationOptionsFilterName extends js.Object {
+    val NodeType      = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
+    val NumberOfNodes = "NumberOfNodes".asInstanceOf[NodeConfigurationOptionsFilterName]
+    val EstimatedDiskUtilizationPercent =
+      "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
+    val Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
 
     val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
   }
@@ -4758,15 +4748,16 @@ package redshift {
       __obj.asInstanceOf[NodeConfigurationOptionsMessage]
     }
   }
-
-  object OperatorTypeEnum {
-    val eq      = "eq"
-    val lt      = "lt"
-    val gt      = "gt"
-    val le      = "le"
-    val ge      = "ge"
-    val in      = "in"
-    val between = "between"
+  @js.native
+  sealed trait OperatorType extends js.Any
+  object OperatorType extends js.Object {
+    val eq      = "eq".asInstanceOf[OperatorType]
+    val lt      = "lt".asInstanceOf[OperatorType]
+    val gt      = "gt".asInstanceOf[OperatorType]
+    val le      = "le".asInstanceOf[OperatorType]
+    val ge      = "ge".asInstanceOf[OperatorType]
+    val in      = "in".asInstanceOf[OperatorType]
+    val between = "between".asInstanceOf[OperatorType]
 
     val values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
   }
@@ -4863,10 +4854,11 @@ package redshift {
       __obj.asInstanceOf[Parameter]
     }
   }
-
-  object ParameterApplyTypeEnum {
-    val static  = "static"
-    val dynamic = "dynamic"
+  @js.native
+  sealed trait ParameterApplyType extends js.Any
+  object ParameterApplyType extends js.Object {
+    val static  = "static".asInstanceOf[ParameterApplyType]
+    val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
     val values = js.Object.freeze(js.Array(static, dynamic))
   }
@@ -5118,10 +5110,11 @@ package redshift {
       __obj.asInstanceOf[ReservedNodeOffering]
     }
   }
-
-  object ReservedNodeOfferingTypeEnum {
-    val Regular    = "Regular"
-    val Upgradable = "Upgradable"
+  @js.native
+  sealed trait ReservedNodeOfferingType extends js.Any
+  object ReservedNodeOfferingType extends js.Object {
+    val Regular    = "Regular".asInstanceOf[ReservedNodeOfferingType]
+    val Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
 
     val values = js.Object.freeze(js.Array(Regular, Upgradable))
   }
@@ -5715,11 +5708,12 @@ package redshift {
       __obj.asInstanceOf[RotateEncryptionKeyResult]
     }
   }
-
-  object ScheduleStateEnum {
-    val MODIFYING = "MODIFYING"
-    val ACTIVE    = "ACTIVE"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait ScheduleState extends js.Any
+  object ScheduleState extends js.Object {
+    val MODIFYING = "MODIFYING".asInstanceOf[ScheduleState]
+    val ACTIVE    = "ACTIVE".asInstanceOf[ScheduleState]
+    val FAILED    = "FAILED".asInstanceOf[ScheduleState]
 
     val values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
   }
@@ -5792,17 +5786,19 @@ package redshift {
       __obj.asInstanceOf[ScheduledActionFilter]
     }
   }
-
-  object ScheduledActionFilterNameEnum {
-    val `cluster-identifier` = "cluster-identifier"
-    val `iam-role`           = "iam-role"
+  @js.native
+  sealed trait ScheduledActionFilterName extends js.Any
+  object ScheduledActionFilterName extends js.Object {
+    val `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
+    val `iam-role`           = "iam-role".asInstanceOf[ScheduledActionFilterName]
 
     val values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
   }
-
-  object ScheduledActionStateEnum {
-    val ACTIVE   = "ACTIVE"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait ScheduledActionState extends js.Any
+  object ScheduledActionState extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[ScheduledActionState]
+    val DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
   }
@@ -5825,9 +5821,10 @@ package redshift {
       __obj.asInstanceOf[ScheduledActionType]
     }
   }
-
-  object ScheduledActionTypeValuesEnum {
-    val ResizeCluster = "ResizeCluster"
+  @js.native
+  sealed trait ScheduledActionTypeValues extends js.Any
+  object ScheduledActionTypeValues extends js.Object {
+    val ResizeCluster = "ResizeCluster".asInstanceOf[ScheduledActionTypeValues]
 
     val values = js.Object.freeze(js.Array(ResizeCluster))
   }
@@ -5983,11 +5980,12 @@ package redshift {
       __obj.asInstanceOf[Snapshot]
     }
   }
-
-  object SnapshotAttributeToSortByEnum {
-    val SOURCE_TYPE = "SOURCE_TYPE"
-    val TOTAL_SIZE  = "TOTAL_SIZE"
-    val CREATE_TIME = "CREATE_TIME"
+  @js.native
+  sealed trait SnapshotAttributeToSortBy extends js.Any
+  object SnapshotAttributeToSortBy extends js.Object {
+    val SOURCE_TYPE = "SOURCE_TYPE".asInstanceOf[SnapshotAttributeToSortBy]
+    val TOTAL_SIZE  = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
+    val CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
 
     val values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
   }
@@ -6152,20 +6150,22 @@ package redshift {
       __obj.asInstanceOf[SnapshotSortingEntity]
     }
   }
-
-  object SortByOrderEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait SortByOrder extends js.Any
+  object SortByOrder extends js.Object {
+    val ASC  = "ASC".asInstanceOf[SortByOrder]
+    val DESC = "DESC".asInstanceOf[SortByOrder]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
-
-  object SourceTypeEnum {
-    val cluster                   = "cluster"
-    val `cluster-parameter-group` = "cluster-parameter-group"
-    val `cluster-security-group`  = "cluster-security-group"
-    val `cluster-snapshot`        = "cluster-snapshot"
-    val `scheduled-action`        = "scheduled-action"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val cluster                   = "cluster".asInstanceOf[SourceType]
+    val `cluster-parameter-group` = "cluster-parameter-group".asInstanceOf[SourceType]
+    val `cluster-security-group`  = "cluster-security-group".asInstanceOf[SourceType]
+    val `cluster-snapshot`        = "cluster-snapshot".asInstanceOf[SourceType]
+    val `scheduled-action`        = "scheduled-action".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
@@ -6316,13 +6316,14 @@ package redshift {
       __obj.asInstanceOf[TableRestoreStatusMessage]
     }
   }
-
-  object TableRestoreStatusTypeEnum {
-    val PENDING     = "PENDING"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
-    val CANCELED    = "CANCELED"
+  @js.native
+  sealed trait TableRestoreStatusType extends js.Any
+  object TableRestoreStatusType extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[TableRestoreStatusType]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TableRestoreStatusType]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[TableRestoreStatusType]
+    val FAILED      = "FAILED".asInstanceOf[TableRestoreStatusType]
+    val CANCELED    = "CANCELED".asInstanceOf[TableRestoreStatusType]
 
     val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
   }

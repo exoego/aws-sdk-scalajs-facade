@@ -17,7 +17,6 @@ package object cloudwatchlogs {
   type DestinationArn              = String
   type DestinationName             = String
   type Destinations                = js.Array[Destination]
-  type Distribution                = String
   type EventId                     = String
   type EventMessage                = String
   type EventNumber                 = Double
@@ -26,7 +25,6 @@ package object cloudwatchlogs {
   type ExportDestinationPrefix     = String
   type ExportTaskId                = String
   type ExportTaskName              = String
-  type ExportTaskStatusCode        = String
   type ExportTaskStatusMessage     = String
   type ExportTasks                 = js.Array[ExportTask]
   type ExtractedValues             = js.Dictionary[Value]
@@ -56,7 +54,6 @@ package object cloudwatchlogs {
   type MetricTransformations       = js.Array[MetricTransformation]
   type MetricValue                 = String
   type NextToken                   = String
-  type OrderBy                     = String
   type OutputLogEvents             = js.Array[OutputLogEvent]
   type Percentage                  = Int
   type PolicyDocument              = String
@@ -64,7 +61,6 @@ package object cloudwatchlogs {
   type QueryId                     = String
   type QueryInfoList               = js.Array[QueryInfo]
   type QueryResults                = js.Array[ResultRows]
-  type QueryStatus                 = String
   type QueryString                 = String
   type ResourcePolicies            = js.Array[ResourcePolicy]
   type ResultRows                  = js.Array[ResultField]
@@ -902,9 +898,11 @@ package cloudwatchlogs {
   /**
     * The method used to distribute log data to the destination, which can be either random or grouped by log stream.
     */
-  object DistributionEnum {
-    val Random      = "Random"
-    val ByLogStream = "ByLogStream"
+  @js.native
+  sealed trait Distribution extends js.Any
+  object Distribution extends js.Object {
+    val Random      = "Random".asInstanceOf[Distribution]
+    val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
 
     val values = js.Object.freeze(js.Array(Random, ByLogStream))
   }
@@ -995,14 +993,15 @@ package cloudwatchlogs {
       __obj.asInstanceOf[ExportTaskStatus]
     }
   }
-
-  object ExportTaskStatusCodeEnum {
-    val CANCELLED      = "CANCELLED"
-    val COMPLETED      = "COMPLETED"
-    val FAILED         = "FAILED"
-    val PENDING        = "PENDING"
-    val PENDING_CANCEL = "PENDING_CANCEL"
-    val RUNNING        = "RUNNING"
+  @js.native
+  sealed trait ExportTaskStatusCode extends js.Any
+  object ExportTaskStatusCode extends js.Object {
+    val CANCELLED      = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
+    val COMPLETED      = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
+    val FAILED         = "FAILED".asInstanceOf[ExportTaskStatusCode]
+    val PENDING        = "PENDING".asInstanceOf[ExportTaskStatusCode]
+    val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
+    val RUNNING        = "RUNNING".asInstanceOf[ExportTaskStatusCode]
 
     val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING))
   }
@@ -1513,10 +1512,11 @@ package cloudwatchlogs {
       __obj.asInstanceOf[MetricTransformation]
     }
   }
-
-  object OrderByEnum {
-    val LogStreamName = "LogStreamName"
-    val LastEventTime = "LastEventTime"
+  @js.native
+  sealed trait OrderBy extends js.Any
+  object OrderBy extends js.Object {
+    val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
+    val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(LogStreamName, LastEventTime))
   }
@@ -1824,13 +1824,14 @@ package cloudwatchlogs {
       __obj.asInstanceOf[QueryStatistics]
     }
   }
-
-  object QueryStatusEnum {
-    val Scheduled = "Scheduled"
-    val Running   = "Running"
-    val Complete  = "Complete"
-    val Failed    = "Failed"
-    val Cancelled = "Cancelled"
+  @js.native
+  sealed trait QueryStatus extends js.Any
+  object QueryStatus extends js.Object {
+    val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
+    val Running   = "Running".asInstanceOf[QueryStatus]
+    val Complete  = "Complete".asInstanceOf[QueryStatus]
+    val Failed    = "Failed".asInstanceOf[QueryStatus]
+    val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
 
     val values = js.Object.freeze(js.Array(Scheduled, Running, Complete, Failed, Cancelled))
   }

@@ -10,7 +10,6 @@ package object cognitosync {
   type ApplicationArn        = String
   type ApplicationArnList    = js.Array[ApplicationArn]
   type AssumeRoleArn         = String
-  type BulkPublishStatus     = String
   type ClientContext         = String
   type CognitoEventType      = String
   type DatasetList           = js.Array[Dataset]
@@ -25,15 +24,12 @@ package object cognitosync {
   type IntegerString         = Int
   type LambdaFunctionArn     = String
   type MergedDatasetNameList = js.Array[String]
-  type Operation             = String
-  type Platform              = String
   type PushToken             = String
   type RecordKey             = String
   type RecordList            = js.Array[Record]
   type RecordPatchList       = js.Array[RecordPatch]
   type RecordValue           = String
   type StreamName            = String
-  type StreamingStatus       = String
   type SyncSessionToken      = String
 
   implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
@@ -161,12 +157,13 @@ package cognitosync {
       __obj.asInstanceOf[BulkPublishResponse]
     }
   }
-
-  object BulkPublishStatusEnum {
-    val NOT_STARTED = "NOT_STARTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val FAILED      = "FAILED"
-    val SUCCEEDED   = "SUCCEEDED"
+  @js.native
+  sealed trait BulkPublishStatus extends js.Any
+  object BulkPublishStatus extends js.Object {
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
+    val FAILED      = "FAILED".asInstanceOf[BulkPublishStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
   }
@@ -862,19 +859,21 @@ package cognitosync {
   trait NotAuthorizedExceptionException extends js.Object {
     val message: ExceptionMessage
   }
-
-  object OperationEnum {
-    val replace = "replace"
-    val remove  = "remove"
+  @js.native
+  sealed trait Operation extends js.Any
+  object Operation extends js.Object {
+    val replace = "replace".asInstanceOf[Operation]
+    val remove  = "remove".asInstanceOf[Operation]
 
     val values = js.Object.freeze(js.Array(replace, remove))
   }
-
-  object PlatformEnum {
-    val APNS         = "APNS"
-    val APNS_SANDBOX = "APNS_SANDBOX"
-    val GCM          = "GCM"
-    val ADM          = "ADM"
+  @js.native
+  sealed trait Platform extends js.Any
+  object Platform extends js.Object {
+    val APNS         = "APNS".asInstanceOf[Platform]
+    val APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
+    val GCM          = "GCM".asInstanceOf[Platform]
+    val ADM          = "ADM".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
   }
@@ -1109,10 +1108,11 @@ package cognitosync {
       __obj.asInstanceOf[SetIdentityPoolConfigurationResponse]
     }
   }
-
-  object StreamingStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait StreamingStatus extends js.Any
+  object StreamingStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[StreamingStatus]
+    val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }

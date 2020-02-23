@@ -7,70 +7,57 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotthingsgraph {
-  type Arn                               = String
-  type DefinitionLanguage                = String
-  type DefinitionText                    = String
-  type DependencyRevisions               = js.Array[DependencyRevision]
-  type DeploymentTarget                  = String
-  type DeprecateExistingEntities         = Boolean
-  type Enabled                           = Boolean
-  type EntityDescriptions                = js.Array[EntityDescription]
-  type EntityFilterName                  = String
-  type EntityFilterValue                 = String
-  type EntityFilterValues                = js.Array[EntityFilterValue]
-  type EntityFilters                     = js.Array[EntityFilter]
-  type EntityType                        = String
-  type EntityTypes                       = js.Array[EntityType]
-  type FlowExecutionEventType            = String
-  type FlowExecutionId                   = String
-  type FlowExecutionMessageId            = String
-  type FlowExecutionMessagePayload       = String
-  type FlowExecutionMessages             = js.Array[FlowExecutionMessage]
-  type FlowExecutionStatus               = String
-  type FlowExecutionSummaries            = js.Array[FlowExecutionSummary]
-  type FlowTemplateFilterName            = String
-  type FlowTemplateFilterValue           = String
-  type FlowTemplateFilterValues          = js.Array[FlowTemplateFilterValue]
-  type FlowTemplateFilters               = js.Array[FlowTemplateFilter]
-  type FlowTemplateSummaries             = js.Array[FlowTemplateSummary]
-  type GreengrassDeploymentId            = String
-  type GreengrassGroupId                 = String
-  type GreengrassGroupVersionId          = String
-  type GroupName                         = String
-  type MaxResults                        = Int
-  type NamespaceDeletionStatus           = String
-  type NamespaceDeletionStatusErrorCodes = String
-  type NamespaceName                     = String
-  type NextToken                         = String
-  type ResourceArn                       = String
-  type RoleArn                           = String
-  type S3BucketName                      = String
-  type StringList                        = js.Array[String]
-  type SyncWithPublicNamespace           = Boolean
-  type SystemInstanceDeploymentStatus    = String
-  type SystemInstanceFilterName          = String
-  type SystemInstanceFilterValue         = String
-  type SystemInstanceFilterValues        = js.Array[SystemInstanceFilterValue]
-  type SystemInstanceFilters             = js.Array[SystemInstanceFilter]
-  type SystemInstanceSummaries           = js.Array[SystemInstanceSummary]
-  type SystemTemplateFilterName          = String
-  type SystemTemplateFilterValue         = String
-  type SystemTemplateFilterValues        = js.Array[SystemTemplateFilterValue]
-  type SystemTemplateFilters             = js.Array[SystemTemplateFilter]
-  type SystemTemplateSummaries           = js.Array[SystemTemplateSummary]
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagList                           = js.Array[Tag]
-  type TagValue                          = String
-  type ThingArn                          = String
-  type ThingName                         = String
-  type Things                            = js.Array[Thing]
-  type Timestamp                         = js.Date
-  type UploadId                          = String
-  type UploadStatus                      = String
-  type Urn                               = String
-  type Urns                              = js.Array[Urn]
-  type Version                           = Double
+  type Arn                         = String
+  type DefinitionText              = String
+  type DependencyRevisions         = js.Array[DependencyRevision]
+  type DeprecateExistingEntities   = Boolean
+  type Enabled                     = Boolean
+  type EntityDescriptions          = js.Array[EntityDescription]
+  type EntityFilterValue           = String
+  type EntityFilterValues          = js.Array[EntityFilterValue]
+  type EntityFilters               = js.Array[EntityFilter]
+  type EntityTypes                 = js.Array[EntityType]
+  type FlowExecutionId             = String
+  type FlowExecutionMessageId      = String
+  type FlowExecutionMessagePayload = String
+  type FlowExecutionMessages       = js.Array[FlowExecutionMessage]
+  type FlowExecutionSummaries      = js.Array[FlowExecutionSummary]
+  type FlowTemplateFilterValue     = String
+  type FlowTemplateFilterValues    = js.Array[FlowTemplateFilterValue]
+  type FlowTemplateFilters         = js.Array[FlowTemplateFilter]
+  type FlowTemplateSummaries       = js.Array[FlowTemplateSummary]
+  type GreengrassDeploymentId      = String
+  type GreengrassGroupId           = String
+  type GreengrassGroupVersionId    = String
+  type GroupName                   = String
+  type MaxResults                  = Int
+  type NamespaceName               = String
+  type NextToken                   = String
+  type ResourceArn                 = String
+  type RoleArn                     = String
+  type S3BucketName                = String
+  type StringList                  = js.Array[String]
+  type SyncWithPublicNamespace     = Boolean
+  type SystemInstanceFilterValue   = String
+  type SystemInstanceFilterValues  = js.Array[SystemInstanceFilterValue]
+  type SystemInstanceFilters       = js.Array[SystemInstanceFilter]
+  type SystemInstanceSummaries     = js.Array[SystemInstanceSummary]
+  type SystemTemplateFilterValue   = String
+  type SystemTemplateFilterValues  = js.Array[SystemTemplateFilterValue]
+  type SystemTemplateFilters       = js.Array[SystemTemplateFilter]
+  type SystemTemplateSummaries     = js.Array[SystemTemplateSummary]
+  type TagKey                      = String
+  type TagKeyList                  = js.Array[TagKey]
+  type TagList                     = js.Array[Tag]
+  type TagValue                    = String
+  type ThingArn                    = String
+  type ThingName                   = String
+  type Things                      = js.Array[Thing]
+  type Timestamp                   = js.Date
+  type UploadId                    = String
+  type Urn                         = String
+  type Urns                        = js.Array[Urn]
+  type Version                     = Double
 
   implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
@@ -405,9 +392,10 @@ package iotthingsgraph {
       __obj.asInstanceOf[DefinitionDocument]
     }
   }
-
-  object DefinitionLanguageEnum {
-    val GRAPHQL = "GRAPHQL"
+  @js.native
+  sealed trait DefinitionLanguage extends js.Any
+  object DefinitionLanguage extends js.Object {
+    val GRAPHQL = "GRAPHQL".asInstanceOf[DefinitionLanguage]
 
     val values = js.Object.freeze(js.Array(GRAPHQL))
   }
@@ -593,10 +581,11 @@ package iotthingsgraph {
       __obj.asInstanceOf[DeploySystemInstanceResponse]
     }
   }
-
-  object DeploymentTargetEnum {
-    val GREENGRASS = "GREENGRASS"
-    val CLOUD      = "CLOUD"
+  @js.native
+  sealed trait DeploymentTarget extends js.Any
+  object DeploymentTarget extends js.Object {
+    val GREENGRASS = "GREENGRASS".asInstanceOf[DeploymentTarget]
+    val CLOUD      = "CLOUD".asInstanceOf[DeploymentTarget]
 
     val values = js.Object.freeze(js.Array(GREENGRASS, CLOUD))
   }
@@ -793,51 +782,54 @@ package iotthingsgraph {
       __obj.asInstanceOf[EntityFilter]
     }
   }
-
-  object EntityFilterNameEnum {
-    val NAME                 = "NAME"
-    val NAMESPACE            = "NAMESPACE"
-    val SEMANTIC_TYPE_PATH   = "SEMANTIC_TYPE_PATH"
-    val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID"
+  @js.native
+  sealed trait EntityFilterName extends js.Any
+  object EntityFilterName extends js.Object {
+    val NAME                 = "NAME".asInstanceOf[EntityFilterName]
+    val NAMESPACE            = "NAMESPACE".asInstanceOf[EntityFilterName]
+    val SEMANTIC_TYPE_PATH   = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
+    val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID".asInstanceOf[EntityFilterName]
 
     val values = js.Object.freeze(js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID))
   }
-
-  object EntityTypeEnum {
-    val DEVICE       = "DEVICE"
-    val SERVICE      = "SERVICE"
-    val DEVICE_MODEL = "DEVICE_MODEL"
-    val CAPABILITY   = "CAPABILITY"
-    val STATE        = "STATE"
-    val ACTION       = "ACTION"
-    val EVENT        = "EVENT"
-    val PROPERTY     = "PROPERTY"
-    val MAPPING      = "MAPPING"
-    val ENUM         = "ENUM"
+  @js.native
+  sealed trait EntityType extends js.Any
+  object EntityType extends js.Object {
+    val DEVICE       = "DEVICE".asInstanceOf[EntityType]
+    val SERVICE      = "SERVICE".asInstanceOf[EntityType]
+    val DEVICE_MODEL = "DEVICE_MODEL".asInstanceOf[EntityType]
+    val CAPABILITY   = "CAPABILITY".asInstanceOf[EntityType]
+    val STATE        = "STATE".asInstanceOf[EntityType]
+    val ACTION       = "ACTION".asInstanceOf[EntityType]
+    val EVENT        = "EVENT".asInstanceOf[EntityType]
+    val PROPERTY     = "PROPERTY".asInstanceOf[EntityType]
+    val MAPPING      = "MAPPING".asInstanceOf[EntityType]
+    val ENUM         = "ENUM".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(
       js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
     )
   }
-
-  object FlowExecutionEventTypeEnum {
-    val EXECUTION_STARTED              = "EXECUTION_STARTED"
-    val EXECUTION_FAILED               = "EXECUTION_FAILED"
-    val EXECUTION_ABORTED              = "EXECUTION_ABORTED"
-    val EXECUTION_SUCCEEDED            = "EXECUTION_SUCCEEDED"
-    val STEP_STARTED                   = "STEP_STARTED"
-    val STEP_FAILED                    = "STEP_FAILED"
-    val STEP_SUCCEEDED                 = "STEP_SUCCEEDED"
-    val ACTIVITY_SCHEDULED             = "ACTIVITY_SCHEDULED"
-    val ACTIVITY_STARTED               = "ACTIVITY_STARTED"
-    val ACTIVITY_FAILED                = "ACTIVITY_FAILED"
-    val ACTIVITY_SUCCEEDED             = "ACTIVITY_SUCCEEDED"
-    val START_FLOW_EXECUTION_TASK      = "START_FLOW_EXECUTION_TASK"
-    val SCHEDULE_NEXT_READY_STEPS_TASK = "SCHEDULE_NEXT_READY_STEPS_TASK"
-    val THING_ACTION_TASK              = "THING_ACTION_TASK"
-    val THING_ACTION_TASK_FAILED       = "THING_ACTION_TASK_FAILED"
-    val THING_ACTION_TASK_SUCCEEDED    = "THING_ACTION_TASK_SUCCEEDED"
-    val ACKNOWLEDGE_TASK_MESSAGE       = "ACKNOWLEDGE_TASK_MESSAGE"
+  @js.native
+  sealed trait FlowExecutionEventType extends js.Any
+  object FlowExecutionEventType extends js.Object {
+    val EXECUTION_STARTED              = "EXECUTION_STARTED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_FAILED               = "EXECUTION_FAILED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_ABORTED              = "EXECUTION_ABORTED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_SUCCEEDED            = "EXECUTION_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val STEP_STARTED                   = "STEP_STARTED".asInstanceOf[FlowExecutionEventType]
+    val STEP_FAILED                    = "STEP_FAILED".asInstanceOf[FlowExecutionEventType]
+    val STEP_SUCCEEDED                 = "STEP_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_SCHEDULED             = "ACTIVITY_SCHEDULED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_STARTED               = "ACTIVITY_STARTED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_FAILED                = "ACTIVITY_FAILED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_SUCCEEDED             = "ACTIVITY_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val START_FLOW_EXECUTION_TASK      = "START_FLOW_EXECUTION_TASK".asInstanceOf[FlowExecutionEventType]
+    val SCHEDULE_NEXT_READY_STEPS_TASK = "SCHEDULE_NEXT_READY_STEPS_TASK".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK              = "THING_ACTION_TASK".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK_FAILED       = "THING_ACTION_TASK_FAILED".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK_SUCCEEDED    = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val ACKNOWLEDGE_TASK_MESSAGE       = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -889,12 +881,13 @@ package iotthingsgraph {
       __obj.asInstanceOf[FlowExecutionMessage]
     }
   }
-
-  object FlowExecutionStatusEnum {
-    val RUNNING   = "RUNNING"
-    val ABORTED   = "ABORTED"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait FlowExecutionStatus extends js.Any
+  object FlowExecutionStatus extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[FlowExecutionStatus]
+    val ABORTED   = "ABORTED".asInstanceOf[FlowExecutionStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[FlowExecutionStatus]
+    val FAILED    = "FAILED".asInstanceOf[FlowExecutionStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED))
   }
@@ -983,9 +976,10 @@ package iotthingsgraph {
       __obj.asInstanceOf[FlowTemplateFilter]
     }
   }
-
-  object FlowTemplateFilterNameEnum {
-    val DEVICE_MODEL_ID = "DEVICE_MODEL_ID"
+  @js.native
+  sealed trait FlowTemplateFilterName extends js.Any
+  object FlowTemplateFilterName extends js.Object {
+    val DEVICE_MODEL_ID = "DEVICE_MODEL_ID".asInstanceOf[FlowTemplateFilterName]
 
     val values = js.Object.freeze(js.Array(DEVICE_MODEL_ID))
   }
@@ -1451,17 +1445,19 @@ package iotthingsgraph {
       __obj.asInstanceOf[MetricsConfiguration]
     }
   }
-
-  object NamespaceDeletionStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait NamespaceDeletionStatus extends js.Any
+  object NamespaceDeletionStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NamespaceDeletionStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
+    val FAILED      = "FAILED".asInstanceOf[NamespaceDeletionStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
-
-  object NamespaceDeletionStatusErrorCodesEnum {
-    val VALIDATION_FAILED = "VALIDATION_FAILED"
+  @js.native
+  sealed trait NamespaceDeletionStatusErrorCodes extends js.Any
+  object NamespaceDeletionStatusErrorCodes extends js.Object {
+    val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[NamespaceDeletionStatusErrorCodes]
 
     val values = js.Object.freeze(js.Array(VALIDATION_FAILED))
   }
@@ -1735,16 +1731,17 @@ package iotthingsgraph {
       __obj.asInstanceOf[SearchThingsResponse]
     }
   }
-
-  object SystemInstanceDeploymentStatusEnum {
-    val NOT_DEPLOYED         = "NOT_DEPLOYED"
-    val BOOTSTRAP            = "BOOTSTRAP"
-    val DEPLOY_IN_PROGRESS   = "DEPLOY_IN_PROGRESS"
-    val DEPLOYED_IN_TARGET   = "DEPLOYED_IN_TARGET"
-    val UNDEPLOY_IN_PROGRESS = "UNDEPLOY_IN_PROGRESS"
-    val FAILED               = "FAILED"
-    val PENDING_DELETE       = "PENDING_DELETE"
-    val DELETED_IN_TARGET    = "DELETED_IN_TARGET"
+  @js.native
+  sealed trait SystemInstanceDeploymentStatus extends js.Any
+  object SystemInstanceDeploymentStatus extends js.Object {
+    val NOT_DEPLOYED         = "NOT_DEPLOYED".asInstanceOf[SystemInstanceDeploymentStatus]
+    val BOOTSTRAP            = "BOOTSTRAP".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DEPLOY_IN_PROGRESS   = "DEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DEPLOYED_IN_TARGET   = "DEPLOYED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
+    val UNDEPLOY_IN_PROGRESS = "UNDEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
+    val FAILED               = "FAILED".asInstanceOf[SystemInstanceDeploymentStatus]
+    val PENDING_DELETE       = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DELETED_IN_TARGET    = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1822,11 +1819,12 @@ package iotthingsgraph {
       __obj.asInstanceOf[SystemInstanceFilter]
     }
   }
-
-  object SystemInstanceFilterNameEnum {
-    val SYSTEM_TEMPLATE_ID    = "SYSTEM_TEMPLATE_ID"
-    val STATUS                = "STATUS"
-    val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME"
+  @js.native
+  sealed trait SystemInstanceFilterName extends js.Any
+  object SystemInstanceFilterName extends js.Object {
+    val SYSTEM_TEMPLATE_ID    = "SYSTEM_TEMPLATE_ID".asInstanceOf[SystemInstanceFilterName]
+    val STATUS                = "STATUS".asInstanceOf[SystemInstanceFilterName]
+    val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME".asInstanceOf[SystemInstanceFilterName]
 
     val values = js.Object.freeze(js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME))
   }
@@ -1924,9 +1922,10 @@ package iotthingsgraph {
       __obj.asInstanceOf[SystemTemplateFilter]
     }
   }
-
-  object SystemTemplateFilterNameEnum {
-    val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID"
+  @js.native
+  sealed trait SystemTemplateFilterName extends js.Any
+  object SystemTemplateFilterName extends js.Object {
+    val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID".asInstanceOf[SystemTemplateFilterName]
 
     val values = js.Object.freeze(js.Array(FLOW_TEMPLATE_ID))
   }
@@ -2230,11 +2229,12 @@ package iotthingsgraph {
       __obj.asInstanceOf[UploadEntityDefinitionsResponse]
     }
   }
-
-  object UploadStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait UploadStatus extends js.Any
+  object UploadStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UploadStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[UploadStatus]
+    val FAILED      = "FAILED".asInstanceOf[UploadStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }

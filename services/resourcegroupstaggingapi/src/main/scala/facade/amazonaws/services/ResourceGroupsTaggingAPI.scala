@@ -9,12 +9,10 @@ import facade.amazonaws._
 package object resourcegroupstaggingapi {
   type AmazonResourceType             = String
   type ComplianceStatus               = Boolean
-  type ErrorCode                      = String
   type ErrorMessage                   = String
   type ExcludeCompliantResources      = Boolean
   type FailedResourcesMap             = js.Dictionary[FailureInfo]
   type GroupBy                        = js.Array[GroupByAttribute]
-  type GroupByAttribute               = String
   type IncludeComplianceDetails       = Boolean
   type LastUpdated                    = String
   type MaxResultsGetComplianceSummary = Int
@@ -45,7 +43,6 @@ package object resourcegroupstaggingapi {
   type TagsPerPage                    = Int
   type TargetId                       = String
   type TargetIdFilterList             = js.Array[TargetId]
-  type TargetIdType                   = String
 
   implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
@@ -146,10 +143,11 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[DescribeReportCreationOutput]
     }
   }
-
-  object ErrorCodeEnum {
-    val InternalServiceException  = "InternalServiceException"
-    val InvalidParameterException = "InvalidParameterException"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val InternalServiceException  = "InternalServiceException".asInstanceOf[ErrorCode]
+    val InvalidParameterException = "InvalidParameterException".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(InternalServiceException, InvalidParameterException))
   }
@@ -365,11 +363,12 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[GetTagValuesOutput]
     }
   }
-
-  object GroupByAttributeEnum {
-    val TARGET_ID     = "TARGET_ID"
-    val REGION        = "REGION"
-    val RESOURCE_TYPE = "RESOURCE_TYPE"
+  @js.native
+  sealed trait GroupByAttribute extends js.Any
+  object GroupByAttribute extends js.Object {
+    val TARGET_ID     = "TARGET_ID".asInstanceOf[GroupByAttribute]
+    val REGION        = "REGION".asInstanceOf[GroupByAttribute]
+    val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[GroupByAttribute]
 
     val values = js.Object.freeze(js.Array(TARGET_ID, REGION, RESOURCE_TYPE))
   }
@@ -546,11 +545,12 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[TagResourcesOutput]
     }
   }
-
-  object TargetIdTypeEnum {
-    val ACCOUNT = "ACCOUNT"
-    val OU      = "OU"
-    val ROOT    = "ROOT"
+  @js.native
+  sealed trait TargetIdType extends js.Any
+  object TargetIdType extends js.Object {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetIdType]
+    val OU      = "OU".asInstanceOf[TargetIdType]
+    val ROOT    = "ROOT".asInstanceOf[TargetIdType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, OU, ROOT))
   }

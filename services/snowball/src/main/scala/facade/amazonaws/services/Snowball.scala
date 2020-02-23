@@ -12,25 +12,19 @@ package object snowball {
   type AmiId                      = String
   type ClusterId                  = String
   type ClusterListEntryList       = js.Array[ClusterListEntry]
-  type ClusterState               = String
   type CompatibleImageList        = js.Array[CompatibleImage]
   type Ec2AmiResourceList         = js.Array[Ec2AmiResource]
   type EventTriggerDefinitionList = js.Array[EventTriggerDefinition]
   type JobId                      = String
   type JobListEntryList           = js.Array[JobListEntry]
   type JobMetadataList            = js.Array[JobMetadata]
-  type JobState                   = String
   type JobStateList               = js.Array[JobState]
-  type JobType                    = String
   type KmsKeyARN                  = String
   type LambdaResourceList         = js.Array[LambdaResource]
   type ListLimit                  = Int
   type ResourceARN                = String
   type RoleARN                    = String
   type S3ResourceList             = js.Array[S3Resource]
-  type ShippingOption             = String
-  type SnowballCapacity           = String
-  type SnowballType               = String
   type SnsTopicARN                = String
   type Timestamp                  = js.Date
 
@@ -306,13 +300,14 @@ package snowball {
       __obj.asInstanceOf[ClusterMetadata]
     }
   }
-
-  object ClusterStateEnum {
-    val AwaitingQuorum = "AwaitingQuorum"
-    val Pending        = "Pending"
-    val InUse          = "InUse"
-    val Complete       = "Complete"
-    val Cancelled      = "Cancelled"
+  @js.native
+  sealed trait ClusterState extends js.Any
+  object ClusterState extends js.Object {
+    val AwaitingQuorum = "AwaitingQuorum".asInstanceOf[ClusterState]
+    val Pending        = "Pending".asInstanceOf[ClusterState]
+    val InUse          = "InUse".asInstanceOf[ClusterState]
+    val Complete       = "Complete".asInstanceOf[ClusterState]
+    val Cancelled      = "Cancelled".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
   }
@@ -1007,21 +1002,22 @@ package snowball {
       __obj.asInstanceOf[JobResource]
     }
   }
-
-  object JobStateEnum {
-    val New                    = "New"
-    val PreparingAppliance     = "PreparingAppliance"
-    val PreparingShipment      = "PreparingShipment"
-    val InTransitToCustomer    = "InTransitToCustomer"
-    val WithCustomer           = "WithCustomer"
-    val InTransitToAWS         = "InTransitToAWS"
-    val WithAWSSortingFacility = "WithAWSSortingFacility"
-    val WithAWS                = "WithAWS"
-    val InProgress             = "InProgress"
-    val Complete               = "Complete"
-    val Cancelled              = "Cancelled"
-    val Listing                = "Listing"
-    val Pending                = "Pending"
+  @js.native
+  sealed trait JobState extends js.Any
+  object JobState extends js.Object {
+    val New                    = "New".asInstanceOf[JobState]
+    val PreparingAppliance     = "PreparingAppliance".asInstanceOf[JobState]
+    val PreparingShipment      = "PreparingShipment".asInstanceOf[JobState]
+    val InTransitToCustomer    = "InTransitToCustomer".asInstanceOf[JobState]
+    val WithCustomer           = "WithCustomer".asInstanceOf[JobState]
+    val InTransitToAWS         = "InTransitToAWS".asInstanceOf[JobState]
+    val WithAWSSortingFacility = "WithAWSSortingFacility".asInstanceOf[JobState]
+    val WithAWS                = "WithAWS".asInstanceOf[JobState]
+    val InProgress             = "InProgress".asInstanceOf[JobState]
+    val Complete               = "Complete".asInstanceOf[JobState]
+    val Cancelled              = "Cancelled".asInstanceOf[JobState]
+    val Listing                = "Listing".asInstanceOf[JobState]
+    val Pending                = "Pending".asInstanceOf[JobState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1041,11 +1037,12 @@ package snowball {
       )
     )
   }
-
-  object JobTypeEnum {
-    val IMPORT    = "IMPORT"
-    val EXPORT    = "EXPORT"
-    val LOCAL_USE = "LOCAL_USE"
+  @js.native
+  sealed trait JobType extends js.Any
+  object JobType extends js.Object {
+    val IMPORT    = "IMPORT".asInstanceOf[JobType]
+    val EXPORT    = "EXPORT".asInstanceOf[JobType]
+    val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
     val values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
   }
@@ -1345,31 +1342,34 @@ package snowball {
       __obj.asInstanceOf[ShippingDetails]
     }
   }
-
-  object ShippingOptionEnum {
-    val SECOND_DAY = "SECOND_DAY"
-    val NEXT_DAY   = "NEXT_DAY"
-    val EXPRESS    = "EXPRESS"
-    val STANDARD   = "STANDARD"
+  @js.native
+  sealed trait ShippingOption extends js.Any
+  object ShippingOption extends js.Object {
+    val SECOND_DAY = "SECOND_DAY".asInstanceOf[ShippingOption]
+    val NEXT_DAY   = "NEXT_DAY".asInstanceOf[ShippingOption]
+    val EXPRESS    = "EXPRESS".asInstanceOf[ShippingOption]
+    val STANDARD   = "STANDARD".asInstanceOf[ShippingOption]
 
     val values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
   }
-
-  object SnowballCapacityEnum {
-    val T50          = "T50"
-    val T80          = "T80"
-    val T100         = "T100"
-    val T42          = "T42"
-    val NoPreference = "NoPreference"
+  @js.native
+  sealed trait SnowballCapacity extends js.Any
+  object SnowballCapacity extends js.Object {
+    val T50          = "T50".asInstanceOf[SnowballCapacity]
+    val T80          = "T80".asInstanceOf[SnowballCapacity]
+    val T100         = "T100".asInstanceOf[SnowballCapacity]
+    val T42          = "T42".asInstanceOf[SnowballCapacity]
+    val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
     val values = js.Object.freeze(js.Array(T50, T80, T100, T42, NoPreference))
   }
-
-  object SnowballTypeEnum {
-    val STANDARD = "STANDARD"
-    val EDGE     = "EDGE"
-    val EDGE_C   = "EDGE_C"
-    val EDGE_CG  = "EDGE_CG"
+  @js.native
+  sealed trait SnowballType extends js.Any
+  object SnowballType extends js.Object {
+    val STANDARD = "STANDARD".asInstanceOf[SnowballType]
+    val EDGE     = "EDGE".asInstanceOf[SnowballType]
+    val EDGE_C   = "EDGE_C".asInstanceOf[SnowballType]
+    val EDGE_CG  = "EDGE_CG".asInstanceOf[SnowballType]
 
     val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG))
   }

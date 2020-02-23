@@ -7,75 +7,59 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object organizations {
-  type AccountArn                 = String
-  type AccountId                  = String
-  type AccountJoinedMethod        = String
-  type AccountName                = String
-  type AccountStatus              = String
-  type Accounts                   = js.Array[Account]
-  type ActionType                 = String
-  type AwsManagedPolicy           = Boolean
-  type ChildId                    = String
-  type ChildType                  = String
-  type Children                   = js.Array[Child]
-  type CreateAccountFailureReason = String
-  type CreateAccountRequestId     = String
-  type CreateAccountState         = String
-  type CreateAccountStates        = js.Array[CreateAccountState]
-  type CreateAccountStatuses      = js.Array[CreateAccountStatus]
-  type EffectivePolicyType        = String
-  type Email                      = String
-  type EnabledServicePrincipals   = js.Array[EnabledServicePrincipal]
-  type GenericArn                 = String
-  type HandshakeArn               = String
-  type HandshakeId                = String
-  type HandshakeNotes             = String
-  type HandshakeParties           = js.Array[HandshakeParty]
-  type HandshakePartyId           = String
-  type HandshakePartyType         = String
-  type HandshakeResourceType      = String
-  type HandshakeResourceValue     = String
-  type HandshakeResources         = js.Array[HandshakeResource]
-  type HandshakeState             = String
-  type Handshakes                 = js.Array[Handshake]
-  type IAMUserAccessToBilling     = String
-  type MaxResults                 = Int
-  type NextToken                  = String
-  type OrganizationArn            = String
-  type OrganizationFeatureSet     = String
-  type OrganizationId             = String
-  type OrganizationalUnitArn      = String
-  type OrganizationalUnitId       = String
-  type OrganizationalUnitName     = String
-  type OrganizationalUnits        = js.Array[OrganizationalUnit]
-  type ParentId                   = String
-  type ParentType                 = String
-  type Parents                    = js.Array[Parent]
-  type Policies                   = js.Array[PolicySummary]
-  type PolicyArn                  = String
-  type PolicyContent              = String
-  type PolicyDescription          = String
-  type PolicyId                   = String
-  type PolicyName                 = String
-  type PolicyTargetId             = String
-  type PolicyTargets              = js.Array[PolicyTargetSummary]
-  type PolicyType                 = String
-  type PolicyTypeStatus           = String
-  type PolicyTypes                = js.Array[PolicyTypeSummary]
-  type RoleName                   = String
-  type RootArn                    = String
-  type RootId                     = String
-  type RootName                   = String
-  type Roots                      = js.Array[Root]
-  type ServicePrincipal           = String
-  type TagKey                     = String
-  type TagKeys                    = js.Array[TagKey]
-  type TagValue                   = String
-  type TaggableResourceId         = String
-  type Tags                       = js.Array[Tag]
-  type TargetName                 = String
-  type TargetType                 = String
-  type Timestamp                  = js.Date
+  type AccountArn               = String
+  type AccountId                = String
+  type AccountName              = String
+  type Accounts                 = js.Array[Account]
+  type AwsManagedPolicy         = Boolean
+  type ChildId                  = String
+  type Children                 = js.Array[Child]
+  type CreateAccountRequestId   = String
+  type CreateAccountStates      = js.Array[CreateAccountState]
+  type CreateAccountStatuses    = js.Array[CreateAccountStatus]
+  type Email                    = String
+  type EnabledServicePrincipals = js.Array[EnabledServicePrincipal]
+  type GenericArn               = String
+  type HandshakeArn             = String
+  type HandshakeId              = String
+  type HandshakeNotes           = String
+  type HandshakeParties         = js.Array[HandshakeParty]
+  type HandshakePartyId         = String
+  type HandshakeResourceValue   = String
+  type HandshakeResources       = js.Array[HandshakeResource]
+  type Handshakes               = js.Array[Handshake]
+  type MaxResults               = Int
+  type NextToken                = String
+  type OrganizationArn          = String
+  type OrganizationId           = String
+  type OrganizationalUnitArn    = String
+  type OrganizationalUnitId     = String
+  type OrganizationalUnitName   = String
+  type OrganizationalUnits      = js.Array[OrganizationalUnit]
+  type ParentId                 = String
+  type Parents                  = js.Array[Parent]
+  type Policies                 = js.Array[PolicySummary]
+  type PolicyArn                = String
+  type PolicyContent            = String
+  type PolicyDescription        = String
+  type PolicyId                 = String
+  type PolicyName               = String
+  type PolicyTargetId           = String
+  type PolicyTargets            = js.Array[PolicyTargetSummary]
+  type PolicyTypes              = js.Array[PolicyTypeSummary]
+  type RoleName                 = String
+  type RootArn                  = String
+  type RootId                   = String
+  type RootName                 = String
+  type Roots                    = js.Array[Root]
+  type ServicePrincipal         = String
+  type TagKey                   = String
+  type TagKeys                  = js.Array[TagKey]
+  type TagValue                 = String
+  type TaggableResourceId       = String
+  type Tags                     = js.Array[Tag]
+  type TargetName               = String
+  type Timestamp                = js.Date
 
   implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
 
@@ -332,26 +316,29 @@ package organizations {
       __obj.asInstanceOf[Account]
     }
   }
-
-  object AccountJoinedMethodEnum {
-    val INVITED = "INVITED"
-    val CREATED = "CREATED"
+  @js.native
+  sealed trait AccountJoinedMethod extends js.Any
+  object AccountJoinedMethod extends js.Object {
+    val INVITED = "INVITED".asInstanceOf[AccountJoinedMethod]
+    val CREATED = "CREATED".asInstanceOf[AccountJoinedMethod]
 
     val values = js.Object.freeze(js.Array(INVITED, CREATED))
   }
-
-  object AccountStatusEnum {
-    val ACTIVE    = "ACTIVE"
-    val SUSPENDED = "SUSPENDED"
+  @js.native
+  sealed trait AccountStatus extends js.Any
+  object AccountStatus extends js.Object {
+    val ACTIVE    = "ACTIVE".asInstanceOf[AccountStatus]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, SUSPENDED))
   }
-
-  object ActionTypeEnum {
-    val INVITE                                = "INVITE"
-    val ENABLE_ALL_FEATURES                   = "ENABLE_ALL_FEATURES"
-    val APPROVE_ALL_FEATURES                  = "APPROVE_ALL_FEATURES"
-    val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType extends js.Object {
+    val INVITE                                = "INVITE".asInstanceOf[ActionType]
+    val ENABLE_ALL_FEATURES                   = "ENABLE_ALL_FEATURES".asInstanceOf[ActionType]
+    val APPROVE_ALL_FEATURES                  = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
+    val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(
       js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
@@ -434,22 +421,24 @@ package organizations {
       __obj.asInstanceOf[Child]
     }
   }
-
-  object ChildTypeEnum {
-    val ACCOUNT             = "ACCOUNT"
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
+  @js.native
+  sealed trait ChildType extends js.Any
+  object ChildType extends js.Object {
+    val ACCOUNT             = "ACCOUNT".asInstanceOf[ChildType]
+    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ChildType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT))
   }
-
-  object CreateAccountFailureReasonEnum {
-    val ACCOUNT_LIMIT_EXCEEDED          = "ACCOUNT_LIMIT_EXCEEDED"
-    val EMAIL_ALREADY_EXISTS            = "EMAIL_ALREADY_EXISTS"
-    val INVALID_ADDRESS                 = "INVALID_ADDRESS"
-    val INVALID_EMAIL                   = "INVALID_EMAIL"
-    val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION"
-    val INTERNAL_FAILURE                = "INTERNAL_FAILURE"
-    val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
+  @js.native
+  sealed trait CreateAccountFailureReason extends js.Any
+  object CreateAccountFailureReason extends js.Object {
+    val ACCOUNT_LIMIT_EXCEEDED          = "ACCOUNT_LIMIT_EXCEEDED".asInstanceOf[CreateAccountFailureReason]
+    val EMAIL_ALREADY_EXISTS            = "EMAIL_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
+    val INVALID_ADDRESS                 = "INVALID_ADDRESS".asInstanceOf[CreateAccountFailureReason]
+    val INVALID_EMAIL                   = "INVALID_EMAIL".asInstanceOf[CreateAccountFailureReason]
+    val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION".asInstanceOf[CreateAccountFailureReason]
+    val INTERNAL_FAILURE                = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
+    val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -506,11 +495,12 @@ package organizations {
       __obj.asInstanceOf[CreateAccountResponse]
     }
   }
-
-  object CreateAccountStateEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait CreateAccountState extends js.Any
+  object CreateAccountState extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CreateAccountState]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[CreateAccountState]
+    val FAILED      = "FAILED".asInstanceOf[CreateAccountState]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
@@ -1106,9 +1096,10 @@ package organizations {
       __obj.asInstanceOf[EffectivePolicy]
     }
   }
-
-  object EffectivePolicyTypeEnum {
-    val TAG_POLICY = "TAG_POLICY"
+  @js.native
+  sealed trait EffectivePolicyType extends js.Any
+  object EffectivePolicyType extends js.Object {
+    val TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
 
     val values = js.Object.freeze(js.Array(TAG_POLICY))
   }
@@ -1305,11 +1296,12 @@ package organizations {
       __obj.asInstanceOf[HandshakeParty]
     }
   }
-
-  object HandshakePartyTypeEnum {
-    val ACCOUNT      = "ACCOUNT"
-    val ORGANIZATION = "ORGANIZATION"
-    val EMAIL        = "EMAIL"
+  @js.native
+  sealed trait HandshakePartyType extends js.Any
+  object HandshakePartyType extends js.Object {
+    val ACCOUNT      = "ACCOUNT".asInstanceOf[HandshakePartyType]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakePartyType]
+    val EMAIL        = "EMAIL".asInstanceOf[HandshakePartyType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, EMAIL))
   }
@@ -1338,16 +1330,17 @@ package organizations {
       __obj.asInstanceOf[HandshakeResource]
     }
   }
-
-  object HandshakeResourceTypeEnum {
-    val ACCOUNT                  = "ACCOUNT"
-    val ORGANIZATION             = "ORGANIZATION"
-    val ORGANIZATION_FEATURE_SET = "ORGANIZATION_FEATURE_SET"
-    val EMAIL                    = "EMAIL"
-    val MASTER_EMAIL             = "MASTER_EMAIL"
-    val MASTER_NAME              = "MASTER_NAME"
-    val NOTES                    = "NOTES"
-    val PARENT_HANDSHAKE         = "PARENT_HANDSHAKE"
+  @js.native
+  sealed trait HandshakeResourceType extends js.Any
+  object HandshakeResourceType extends js.Object {
+    val ACCOUNT                  = "ACCOUNT".asInstanceOf[HandshakeResourceType]
+    val ORGANIZATION             = "ORGANIZATION".asInstanceOf[HandshakeResourceType]
+    val ORGANIZATION_FEATURE_SET = "ORGANIZATION_FEATURE_SET".asInstanceOf[HandshakeResourceType]
+    val EMAIL                    = "EMAIL".asInstanceOf[HandshakeResourceType]
+    val MASTER_EMAIL             = "MASTER_EMAIL".asInstanceOf[HandshakeResourceType]
+    val MASTER_NAME              = "MASTER_NAME".asInstanceOf[HandshakeResourceType]
+    val NOTES                    = "NOTES".asInstanceOf[HandshakeResourceType]
+    val PARENT_HANDSHAKE         = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1362,21 +1355,23 @@ package organizations {
       )
     )
   }
-
-  object HandshakeStateEnum {
-    val REQUESTED = "REQUESTED"
-    val OPEN      = "OPEN"
-    val CANCELED  = "CANCELED"
-    val ACCEPTED  = "ACCEPTED"
-    val DECLINED  = "DECLINED"
-    val EXPIRED   = "EXPIRED"
+  @js.native
+  sealed trait HandshakeState extends js.Any
+  object HandshakeState extends js.Object {
+    val REQUESTED = "REQUESTED".asInstanceOf[HandshakeState]
+    val OPEN      = "OPEN".asInstanceOf[HandshakeState]
+    val CANCELED  = "CANCELED".asInstanceOf[HandshakeState]
+    val ACCEPTED  = "ACCEPTED".asInstanceOf[HandshakeState]
+    val DECLINED  = "DECLINED".asInstanceOf[HandshakeState]
+    val EXPIRED   = "EXPIRED".asInstanceOf[HandshakeState]
 
     val values = js.Object.freeze(js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED))
   }
-
-  object IAMUserAccessToBillingEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait IAMUserAccessToBilling extends js.Any
+  object IAMUserAccessToBilling extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[IAMUserAccessToBilling]
+    val DENY  = "DENY".asInstanceOf[IAMUserAccessToBilling]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -2062,10 +2057,11 @@ package organizations {
       __obj.asInstanceOf[Organization]
     }
   }
-
-  object OrganizationFeatureSetEnum {
-    val ALL                  = "ALL"
-    val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING"
+  @js.native
+  sealed trait OrganizationFeatureSet extends js.Any
+  object OrganizationFeatureSet extends js.Object {
+    val ALL                  = "ALL".asInstanceOf[OrganizationFeatureSet]
+    val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING".asInstanceOf[OrganizationFeatureSet]
 
     val values = js.Object.freeze(js.Array(ALL, CONSOLIDATED_BILLING))
   }
@@ -2116,10 +2112,11 @@ package organizations {
       __obj.asInstanceOf[Parent]
     }
   }
-
-  object ParentTypeEnum {
-    val ROOT                = "ROOT"
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
+  @js.native
+  sealed trait ParentType extends js.Any
+  object ParentType extends js.Object {
+    val ROOT                = "ROOT".asInstanceOf[ParentType]
+    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ParentType]
 
     val values = js.Object.freeze(js.Array(ROOT, ORGANIZATIONAL_UNIT))
   }
@@ -2207,18 +2204,20 @@ package organizations {
       __obj.asInstanceOf[PolicyTargetSummary]
     }
   }
-
-  object PolicyTypeEnum {
-    val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY"
-    val TAG_POLICY             = "TAG_POLICY"
+  @js.native
+  sealed trait PolicyType extends js.Any
+  object PolicyType extends js.Object {
+    val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
+    val TAG_POLICY             = "TAG_POLICY".asInstanceOf[PolicyType]
 
     val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY))
   }
-
-  object PolicyTypeStatusEnum {
-    val ENABLED         = "ENABLED"
-    val PENDING_ENABLE  = "PENDING_ENABLE"
-    val PENDING_DISABLE = "PENDING_DISABLE"
+  @js.native
+  sealed trait PolicyTypeStatus extends js.Any
+  object PolicyTypeStatus extends js.Object {
+    val ENABLED         = "ENABLED".asInstanceOf[PolicyTypeStatus]
+    val PENDING_ENABLE  = "PENDING_ENABLE".asInstanceOf[PolicyTypeStatus]
+    val PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[PolicyTypeStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE))
   }
@@ -2335,11 +2334,12 @@ package organizations {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
-
-  object TargetTypeEnum {
-    val ACCOUNT             = "ACCOUNT"
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
-    val ROOT                = "ROOT"
+  @js.native
+  sealed trait TargetType extends js.Any
+  object TargetType extends js.Object {
+    val ACCOUNT             = "ACCOUNT".asInstanceOf[TargetType]
+    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[TargetType]
+    val ROOT                = "ROOT".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT))
   }

@@ -17,7 +17,6 @@ package object iotjobsdataplane {
   type IncludeExecutionState            = Boolean
   type IncludeJobDocument               = Boolean
   type JobDocument                      = String
-  type JobExecutionStatus               = String
   type JobExecutionSummaryList          = js.Array[JobExecutionSummary]
   type JobId                            = String
   type LastUpdatedAt                    = Double
@@ -212,16 +211,17 @@ package iotjobsdataplane {
       __obj.asInstanceOf[JobExecutionState]
     }
   }
-
-  object JobExecutionStatusEnum {
-    val QUEUED      = "QUEUED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
-    val TIMED_OUT   = "TIMED_OUT"
-    val REJECTED    = "REJECTED"
-    val REMOVED     = "REMOVED"
-    val CANCELED    = "CANCELED"
+  @js.native
+  sealed trait JobExecutionStatus extends js.Any
+  object JobExecutionStatus extends js.Object {
+    val QUEUED      = "QUEUED".asInstanceOf[JobExecutionStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
+    val FAILED      = "FAILED".asInstanceOf[JobExecutionStatus]
+    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
+    val REJECTED    = "REJECTED".asInstanceOf[JobExecutionStatus]
+    val REMOVED     = "REMOVED".asInstanceOf[JobExecutionStatus]
+    val CANCELED    = "CANCELED".asInstanceOf[JobExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))

@@ -16,7 +16,6 @@ package object detective {
   type GraphList              = js.Array[Graph]
   type MemberDetailList       = js.Array[MemberDetail]
   type MemberResultsLimit     = Int
-  type MemberStatus           = String
   type PaginationToken        = String
   type Timestamp              = js.Date
   type UnprocessedAccountList = js.Array[UnprocessedAccount]
@@ -464,12 +463,13 @@ package detective {
       __obj.asInstanceOf[MemberDetail]
     }
   }
-
-  object MemberStatusEnum {
-    val INVITED                  = "INVITED"
-    val VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS"
-    val VERIFICATION_FAILED      = "VERIFICATION_FAILED"
-    val ENABLED                  = "ENABLED"
+  @js.native
+  sealed trait MemberStatus extends js.Any
+  object MemberStatus extends js.Object {
+    val INVITED                  = "INVITED".asInstanceOf[MemberStatus]
+    val VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS".asInstanceOf[MemberStatus]
+    val VERIFICATION_FAILED      = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
+    val ENABLED                  = "ENABLED".asInstanceOf[MemberStatus]
 
     val values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED))
   }

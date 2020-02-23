@@ -11,11 +11,9 @@ package object athena {
   type BoxedBoolean                    = Boolean
   type BytesScannedCutoffValue         = Double
   type ColumnInfoList                  = js.Array[ColumnInfo]
-  type ColumnNullable                  = String
   type DatabaseString                  = String
   type Date                            = js.Date
   type DescriptionString               = String
-  type EncryptionOption                = String
   type ErrorCode                       = String
   type ErrorMessage                    = String
   type IdempotencyToken                = String
@@ -31,10 +29,8 @@ package object athena {
   type QueryExecutionId                = String
   type QueryExecutionIdList            = js.Array[QueryExecutionId]
   type QueryExecutionList              = js.Array[QueryExecution]
-  type QueryExecutionState             = String
   type QueryString                     = String
   type RowList                         = js.Array[Row]
-  type StatementType                   = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagList                         = js.Array[Tag]
@@ -44,7 +40,6 @@ package object athena {
   type UnprocessedQueryExecutionIdList = js.Array[UnprocessedQueryExecutionId]
   type WorkGroupDescriptionString      = String
   type WorkGroupName                   = String
-  type WorkGroupState                  = String
   type WorkGroupsList                  = js.Array[WorkGroupSummary]
   type datumList                       = js.Array[Datum]
   type datumString                     = String
@@ -243,11 +238,12 @@ package athena {
       __obj.asInstanceOf[ColumnInfo]
     }
   }
-
-  object ColumnNullableEnum {
-    val NOT_NULL = "NOT_NULL"
-    val NULLABLE = "NULLABLE"
-    val UNKNOWN  = "UNKNOWN"
+  @js.native
+  sealed trait ColumnNullable extends js.Any
+  object ColumnNullable extends js.Object {
+    val NOT_NULL = "NOT_NULL".asInstanceOf[ColumnNullable]
+    val NULLABLE = "NULLABLE".asInstanceOf[ColumnNullable]
+    val UNKNOWN  = "UNKNOWN".asInstanceOf[ColumnNullable]
 
     val values = js.Object.freeze(js.Array(NOT_NULL, NULLABLE, UNKNOWN))
   }
@@ -448,11 +444,12 @@ package athena {
       __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
-
-  object EncryptionOptionEnum {
-    val SSE_S3  = "SSE_S3"
-    val SSE_KMS = "SSE_KMS"
-    val CSE_KMS = "CSE_KMS"
+  @js.native
+  sealed trait EncryptionOption extends js.Any
+  object EncryptionOption extends js.Object {
+    val SSE_S3  = "SSE_S3".asInstanceOf[EncryptionOption]
+    val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionOption]
+    val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
     val values = js.Object.freeze(js.Array(SSE_S3, SSE_KMS, CSE_KMS))
   }
@@ -862,13 +859,14 @@ package athena {
       __obj.asInstanceOf[QueryExecutionContext]
     }
   }
-
-  object QueryExecutionStateEnum {
-    val QUEUED    = "QUEUED"
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val CANCELLED = "CANCELLED"
+  @js.native
+  sealed trait QueryExecutionState extends js.Any
+  object QueryExecutionState extends js.Object {
+    val QUEUED    = "QUEUED".asInstanceOf[QueryExecutionState]
+    val RUNNING   = "RUNNING".asInstanceOf[QueryExecutionState]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[QueryExecutionState]
+    val FAILED    = "FAILED".asInstanceOf[QueryExecutionState]
+    val CANCELLED = "CANCELLED".asInstanceOf[QueryExecutionState]
 
     val values = js.Object.freeze(js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
@@ -1103,11 +1101,12 @@ package athena {
       __obj.asInstanceOf[StartQueryExecutionOutput]
     }
   }
-
-  object StatementTypeEnum {
-    val DDL     = "DDL"
-    val DML     = "DML"
-    val UTILITY = "UTILITY"
+  @js.native
+  sealed trait StatementType extends js.Any
+  object StatementType extends js.Object {
+    val DDL     = "DDL".asInstanceOf[StatementType]
+    val DML     = "DML".asInstanceOf[StatementType]
+    val UTILITY = "UTILITY".asInstanceOf[StatementType]
 
     val values = js.Object.freeze(js.Array(DDL, DML, UTILITY))
   }
@@ -1436,10 +1435,11 @@ package athena {
       __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }
   }
-
-  object WorkGroupStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait WorkGroupState extends js.Any
+  object WorkGroupState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[WorkGroupState]
+    val DISABLED = "DISABLED".asInstanceOf[WorkGroupState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }

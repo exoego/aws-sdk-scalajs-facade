@@ -12,43 +12,29 @@ package object servicediscovery {
   type AttrValue               = String
   type Attributes              = js.Dictionary[AttrValue]
   type Code                    = String
-  type CustomHealthStatus      = String
   type DnsRecordList           = js.Array[DnsRecord]
   type FailureThreshold        = Int
-  type FilterCondition         = String
   type FilterValue             = String
   type FilterValues            = js.Array[FilterValue]
-  type HealthCheckType         = String
-  type HealthStatus            = String
-  type HealthStatusFilter      = String
   type HttpInstanceSummaryList = js.Array[HttpInstanceSummary]
   type InstanceHealthStatusMap = js.Dictionary[HealthStatus]
   type InstanceIdList          = js.Array[ResourceId]
   type InstanceSummaryList     = js.Array[InstanceSummary]
   type MaxResults              = Int
   type Message                 = String
-  type NamespaceFilterName     = String
   type NamespaceFilters        = js.Array[NamespaceFilter]
   type NamespaceName           = String
   type NamespaceSummariesList  = js.Array[NamespaceSummary]
-  type NamespaceType           = String
   type NextToken               = String
-  type OperationFilterName     = String
   type OperationFilters        = js.Array[OperationFilter]
   type OperationId             = String
-  type OperationStatus         = String
   type OperationSummaryList    = js.Array[OperationSummary]
-  type OperationTargetType     = String
   type OperationTargetsMap     = js.Dictionary[ResourceId]
-  type OperationType           = String
   type RecordTTL               = Double
-  type RecordType              = String
   type ResourceCount           = Int
   type ResourceDescription     = String
   type ResourceId              = String
   type ResourcePath            = String
-  type RoutingPolicy           = String
-  type ServiceFilterName       = String
   type ServiceFilters          = js.Array[ServiceFilter]
   type ServiceName             = String
   type ServiceSummariesList    = js.Array[ServiceSummary]
@@ -310,10 +296,11 @@ package servicediscovery {
       __obj.asInstanceOf[CreateServiceResponse]
     }
   }
-
-  object CustomHealthStatusEnum {
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
+  @js.native
+  sealed trait CustomHealthStatus extends js.Any
+  object CustomHealthStatus extends js.Object {
+    val HEALTHY   = "HEALTHY".asInstanceOf[CustomHealthStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[CustomHealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
@@ -556,11 +543,12 @@ package servicediscovery {
       __obj.asInstanceOf[DnsRecord]
     }
   }
-
-  object FilterConditionEnum {
-    val EQ      = "EQ"
-    val IN      = "IN"
-    val BETWEEN = "BETWEEN"
+  @js.native
+  sealed trait FilterCondition extends js.Any
+  object FilterCondition extends js.Object {
+    val EQ      = "EQ".asInstanceOf[FilterCondition]
+    val IN      = "IN".asInstanceOf[FilterCondition]
+    val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
 
     val values = js.Object.freeze(js.Array(EQ, IN, BETWEEN))
   }
@@ -828,27 +816,30 @@ package servicediscovery {
       __obj.asInstanceOf[HealthCheckCustomConfig]
     }
   }
-
-  object HealthCheckTypeEnum {
-    val HTTP  = "HTTP"
-    val HTTPS = "HTTPS"
-    val TCP   = "TCP"
+  @js.native
+  sealed trait HealthCheckType extends js.Any
+  object HealthCheckType extends js.Object {
+    val HTTP  = "HTTP".asInstanceOf[HealthCheckType]
+    val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
+    val TCP   = "TCP".asInstanceOf[HealthCheckType]
 
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
   }
-
-  object HealthStatusEnum {
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
-    val UNKNOWN   = "UNKNOWN"
+  @js.native
+  sealed trait HealthStatus extends js.Any
+  object HealthStatus extends js.Object {
+    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
+    val UNKNOWN   = "UNKNOWN".asInstanceOf[HealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
-
-  object HealthStatusFilterEnum {
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
-    val ALL       = "ALL"
+  @js.native
+  sealed trait HealthStatusFilter extends js.Any
+  object HealthStatusFilter extends js.Object {
+    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatusFilter]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
+    val ALL       = "ALL".asInstanceOf[HealthStatusFilter]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, ALL))
   }
@@ -1187,9 +1178,10 @@ package servicediscovery {
       __obj.asInstanceOf[NamespaceFilter]
     }
   }
-
-  object NamespaceFilterNameEnum {
-    val TYPE = "TYPE"
+  @js.native
+  sealed trait NamespaceFilterName extends js.Any
+  object NamespaceFilterName extends js.Object {
+    val TYPE = "TYPE".asInstanceOf[NamespaceFilterName]
 
     val values = js.Object.freeze(js.Array(TYPE))
   }
@@ -1255,11 +1247,12 @@ package servicediscovery {
       __obj.asInstanceOf[NamespaceSummary]
     }
   }
-
-  object NamespaceTypeEnum {
-    val DNS_PUBLIC  = "DNS_PUBLIC"
-    val DNS_PRIVATE = "DNS_PRIVATE"
-    val HTTP        = "HTTP"
+  @js.native
+  sealed trait NamespaceType extends js.Any
+  object NamespaceType extends js.Object {
+    val DNS_PUBLIC  = "DNS_PUBLIC".asInstanceOf[NamespaceType]
+    val DNS_PRIVATE = "DNS_PRIVATE".asInstanceOf[NamespaceType]
+    val HTTP        = "HTTP".asInstanceOf[NamespaceType]
 
     val values = js.Object.freeze(js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP))
   }
@@ -1330,22 +1323,24 @@ package servicediscovery {
       __obj.asInstanceOf[OperationFilter]
     }
   }
-
-  object OperationFilterNameEnum {
-    val NAMESPACE_ID = "NAMESPACE_ID"
-    val SERVICE_ID   = "SERVICE_ID"
-    val STATUS       = "STATUS"
-    val TYPE         = "TYPE"
-    val UPDATE_DATE  = "UPDATE_DATE"
+  @js.native
+  sealed trait OperationFilterName extends js.Any
+  object OperationFilterName extends js.Object {
+    val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[OperationFilterName]
+    val SERVICE_ID   = "SERVICE_ID".asInstanceOf[OperationFilterName]
+    val STATUS       = "STATUS".asInstanceOf[OperationFilterName]
+    val TYPE         = "TYPE".asInstanceOf[OperationFilterName]
+    val UPDATE_DATE  = "UPDATE_DATE".asInstanceOf[OperationFilterName]
 
     val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
   }
-
-  object OperationStatusEnum {
-    val SUBMITTED = "SUBMITTED"
-    val PENDING   = "PENDING"
-    val SUCCESS   = "SUCCESS"
-    val FAIL      = "FAIL"
+  @js.native
+  sealed trait OperationStatus extends js.Any
+  object OperationStatus extends js.Object {
+    val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
+    val PENDING   = "PENDING".asInstanceOf[OperationStatus]
+    val SUCCESS   = "SUCCESS".asInstanceOf[OperationStatus]
+    val FAIL      = "FAIL".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, SUCCESS, FAIL))
   }
@@ -1371,32 +1366,35 @@ package servicediscovery {
       __obj.asInstanceOf[OperationSummary]
     }
   }
-
-  object OperationTargetTypeEnum {
-    val NAMESPACE = "NAMESPACE"
-    val SERVICE   = "SERVICE"
-    val INSTANCE  = "INSTANCE"
+  @js.native
+  sealed trait OperationTargetType extends js.Any
+  object OperationTargetType extends js.Object {
+    val NAMESPACE = "NAMESPACE".asInstanceOf[OperationTargetType]
+    val SERVICE   = "SERVICE".asInstanceOf[OperationTargetType]
+    val INSTANCE  = "INSTANCE".asInstanceOf[OperationTargetType]
 
     val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
   }
-
-  object OperationTypeEnum {
-    val CREATE_NAMESPACE    = "CREATE_NAMESPACE"
-    val DELETE_NAMESPACE    = "DELETE_NAMESPACE"
-    val UPDATE_SERVICE      = "UPDATE_SERVICE"
-    val REGISTER_INSTANCE   = "REGISTER_INSTANCE"
-    val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE"
+  @js.native
+  sealed trait OperationType extends js.Any
+  object OperationType extends js.Object {
+    val CREATE_NAMESPACE    = "CREATE_NAMESPACE".asInstanceOf[OperationType]
+    val DELETE_NAMESPACE    = "DELETE_NAMESPACE".asInstanceOf[OperationType]
+    val UPDATE_SERVICE      = "UPDATE_SERVICE".asInstanceOf[OperationType]
+    val REGISTER_INSTANCE   = "REGISTER_INSTANCE".asInstanceOf[OperationType]
+    val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
     )
   }
-
-  object RecordTypeEnum {
-    val SRV   = "SRV"
-    val A     = "A"
-    val AAAA  = "AAAA"
-    val CNAME = "CNAME"
+  @js.native
+  sealed trait RecordType extends js.Any
+  object RecordType extends js.Object {
+    val SRV   = "SRV".asInstanceOf[RecordType]
+    val A     = "A".asInstanceOf[RecordType]
+    val AAAA  = "AAAA".asInstanceOf[RecordType]
+    val CNAME = "CNAME".asInstanceOf[RecordType]
 
     val values = js.Object.freeze(js.Array(SRV, A, AAAA, CNAME))
   }
@@ -1443,10 +1441,11 @@ package servicediscovery {
       __obj.asInstanceOf[RegisterInstanceResponse]
     }
   }
-
-  object RoutingPolicyEnum {
-    val MULTIVALUE = "MULTIVALUE"
-    val WEIGHTED   = "WEIGHTED"
+  @js.native
+  sealed trait RoutingPolicy extends js.Any
+  object RoutingPolicy extends js.Object {
+    val MULTIVALUE = "MULTIVALUE".asInstanceOf[RoutingPolicy]
+    val WEIGHTED   = "WEIGHTED".asInstanceOf[RoutingPolicy]
 
     val values = js.Object.freeze(js.Array(MULTIVALUE, WEIGHTED))
   }
@@ -1553,9 +1552,10 @@ package servicediscovery {
       __obj.asInstanceOf[ServiceFilter]
     }
   }
-
-  object ServiceFilterNameEnum {
-    val NAMESPACE_ID = "NAMESPACE_ID"
+  @js.native
+  sealed trait ServiceFilterName extends js.Any
+  object ServiceFilterName extends js.Object {
+    val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[ServiceFilterName]
 
     val values = js.Object.freeze(js.Array(NAMESPACE_ID))
   }

@@ -10,7 +10,6 @@ package object migrationhub {
   type ApplicationId                   = String
   type ApplicationIds                  = js.Array[ApplicationId]
   type ApplicationStateList            = js.Array[ApplicationState]
-  type ApplicationStatus               = String
   type ConfigurationId                 = String
   type CreatedArtifactDescription      = String
   type CreatedArtifactList             = js.Array[CreatedArtifact]
@@ -29,10 +28,8 @@ package object migrationhub {
   type ProgressUpdateStream            = String
   type ProgressUpdateStreamSummaryList = js.Array[ProgressUpdateStreamSummary]
   type ResourceAttributeList           = js.Array[ResourceAttribute]
-  type ResourceAttributeType           = String
   type ResourceAttributeValue          = String
   type ResourceName                    = String
-  type Status                          = String
   type StatusDetail                    = String
   type Token                           = String
   type UpdateDateTime                  = js.Date
@@ -151,11 +148,12 @@ package migrationhub {
       __obj.asInstanceOf[ApplicationState]
     }
   }
-
-  object ApplicationStatusEnum {
-    val NOT_STARTED = "NOT_STARTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
+  @js.native
+  sealed trait ApplicationStatus extends js.Any
+  object ApplicationStatus extends js.Object {
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[ApplicationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ApplicationStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[ApplicationStatus]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED))
   }
@@ -1002,18 +1000,19 @@ package migrationhub {
       __obj.asInstanceOf[ResourceAttribute]
     }
   }
-
-  object ResourceAttributeTypeEnum {
-    val IPV4_ADDRESS                = "IPV4_ADDRESS"
-    val IPV6_ADDRESS                = "IPV6_ADDRESS"
-    val MAC_ADDRESS                 = "MAC_ADDRESS"
-    val FQDN                        = "FQDN"
-    val VM_MANAGER_ID               = "VM_MANAGER_ID"
-    val VM_MANAGED_OBJECT_REFERENCE = "VM_MANAGED_OBJECT_REFERENCE"
-    val VM_NAME                     = "VM_NAME"
-    val VM_PATH                     = "VM_PATH"
-    val BIOS_ID                     = "BIOS_ID"
-    val MOTHERBOARD_SERIAL_NUMBER   = "MOTHERBOARD_SERIAL_NUMBER"
+  @js.native
+  sealed trait ResourceAttributeType extends js.Any
+  object ResourceAttributeType extends js.Object {
+    val IPV4_ADDRESS                = "IPV4_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val IPV6_ADDRESS                = "IPV6_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val MAC_ADDRESS                 = "MAC_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val FQDN                        = "FQDN".asInstanceOf[ResourceAttributeType]
+    val VM_MANAGER_ID               = "VM_MANAGER_ID".asInstanceOf[ResourceAttributeType]
+    val VM_MANAGED_OBJECT_REFERENCE = "VM_MANAGED_OBJECT_REFERENCE".asInstanceOf[ResourceAttributeType]
+    val VM_NAME                     = "VM_NAME".asInstanceOf[ResourceAttributeType]
+    val VM_PATH                     = "VM_PATH".asInstanceOf[ResourceAttributeType]
+    val BIOS_ID                     = "BIOS_ID".asInstanceOf[ResourceAttributeType]
+    val MOTHERBOARD_SERIAL_NUMBER   = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1030,12 +1029,13 @@ package migrationhub {
       )
     )
   }
-
-  object StatusEnum {
-    val NOT_STARTED = "NOT_STARTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val FAILED      = "FAILED"
-    val COMPLETED   = "COMPLETED"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[Status]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+    val FAILED      = "FAILED".asInstanceOf[Status]
+    val COMPLETED   = "COMPLETED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED))
   }

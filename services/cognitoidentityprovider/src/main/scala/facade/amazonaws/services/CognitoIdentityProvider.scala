@@ -9,13 +9,9 @@ import facade.amazonaws._
 package object cognitoidentityprovider {
   type AWSAccountIdType                             = String
   type AccountTakeoverActionNotifyType              = Boolean
-  type AccountTakeoverEventActionType               = String
   type AdminCreateUserUnusedAccountValidityDaysType = Int
-  type AdvancedSecurityModeType                     = String
-  type AliasAttributeType                           = String
   type AliasAttributesListType                      = js.Array[AliasAttributeType]
   type ArnType                                      = String
-  type AttributeDataType                            = String
   type AttributeListType                            = js.Array[AttributeType]
   type AttributeMappingKeyType                      = String
   type AttributeMappingType                         = js.Dictionary[StringType]
@@ -23,7 +19,6 @@ package object cognitoidentityprovider {
   type AttributeNameType                            = String
   type AttributeValueType                           = String
   type AuthEventsType                               = js.Array[AuthEventType]
-  type AuthFlowType                                 = String
   type AuthParametersType                           = js.Dictionary[AuthParametersValueType]
   type AuthParametersValueType                      = String
   type BlockedIPRangeListType                       = js.Array[StringType]
@@ -31,10 +26,7 @@ package object cognitoidentityprovider {
   type CSSType                                      = String
   type CSSVersionType                               = String
   type CallbackURLsListType                         = js.Array[RedirectUrlType]
-  type ChallengeName                                = String
-  type ChallengeNameType                            = String
   type ChallengeParametersType                      = js.Dictionary[StringType]
-  type ChallengeResponse                            = String
   type ChallengeResponseListType                    = js.Array[ChallengeResponseType]
   type ChallengeResponsesType                       = js.Dictionary[StringType]
   type ClientIdType                                 = String
@@ -45,45 +37,33 @@ package object cognitoidentityprovider {
   type ClientSecretType                             = String
   type CodeDeliveryDetailsListType                  = js.Array[CodeDeliveryDetailsType]
   type CompletionMessageType                        = String
-  type CompromisedCredentialsEventActionType        = String
   type ConfirmationCodeType                         = String
   type CustomAttributeNameType                      = String
   type CustomAttributesListType                     = js.Array[SchemaAttributeType]
   type DateType                                     = js.Date
-  type DefaultEmailOptionType                       = String
   type DeliveryMediumListType                       = js.Array[DeliveryMediumType]
-  type DeliveryMediumType                           = String
   type DescriptionType                              = String
   type DeviceKeyType                                = String
   type DeviceListType                               = js.Array[DeviceType]
   type DeviceNameType                               = String
-  type DeviceRememberedStatusType                   = String
-  type DomainStatusType                             = String
   type DomainType                                   = String
   type DomainVersionType                            = String
   type EmailAddressType                             = String
   type EmailNotificationBodyType                    = String
   type EmailNotificationSubjectType                 = String
-  type EmailSendingAccountType                      = String
   type EmailVerificationMessageByLinkType           = String
   type EmailVerificationMessageType                 = String
   type EmailVerificationSubjectByLinkType           = String
   type EmailVerificationSubjectType                 = String
-  type EventFilterType                              = String
   type EventFiltersType                             = js.Array[EventFilterType]
   type EventIdType                                  = String
-  type EventResponseType                            = String
-  type EventType                                    = String
   type ExplicitAuthFlowsListType                    = js.Array[ExplicitAuthFlowsType]
-  type ExplicitAuthFlowsType                        = String
-  type FeedbackValueType                            = String
   type ForceAliasCreation                           = Boolean
   type GenerateSecret                               = Boolean
   type GroupListType                                = js.Array[GroupType]
   type GroupNameType                                = String
   type HexStringType                                = String
   type HttpHeaderList                               = js.Array[HttpHeader]
-  type IdentityProviderTypeType                     = String
   type IdpIdentifierType                            = String
   type IdpIdentifiersListType                       = js.Array[IdpIdentifierType]
   type ImageFileType                                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -95,8 +75,6 @@ package object cognitoidentityprovider {
   type LogoutURLsListType                           = js.Array[RedirectUrlType]
   type LongType                                     = Double
   type MFAOptionListType                            = js.Array[MFAOptionType]
-  type MessageActionType                            = String
-  type OAuthFlowType                                = String
   type OAuthFlowsType                               = js.Array[OAuthFlowType]
   type PaginationKey                                = String
   type PaginationKeyType                            = String
@@ -105,7 +83,6 @@ package object cognitoidentityprovider {
   type PoolQueryLimitType                           = Int
   type PreSignedUrlType                             = String
   type PrecedenceType                               = Int
-  type PreventUserExistenceErrorTypes               = String
   type PriorityType                                 = Int
   type ProviderDetailsType                          = js.Dictionary[StringType]
   type ProviderNameType                             = String
@@ -114,7 +91,6 @@ package object cognitoidentityprovider {
   type QueryLimit                                   = Int
   type QueryLimitType                               = Int
   type RecoveryMechanismsType                       = js.Array[RecoveryOptionType]
-  type RecoveryOptionNameType                       = String
   type RedirectUrlType                              = String
   type RefreshTokenValidityType                     = Int
   type ResourceServerIdentifierType                 = String
@@ -123,8 +99,6 @@ package object cognitoidentityprovider {
   type ResourceServerScopeListType                  = js.Array[ResourceServerScopeType]
   type ResourceServerScopeNameType                  = String
   type ResourceServersListType                      = js.Array[ResourceServerType]
-  type RiskDecisionType                             = String
-  type RiskLevelType                                = String
   type S3BucketType                                 = String
   type SESConfigurationSet                          = String
   type SchemaAttributesListType                     = js.Array[SchemaAttributeType]
@@ -138,7 +112,6 @@ package object cognitoidentityprovider {
   type SkippedIPRangeListType                       = js.Array[StringType]
   type SmsVerificationMessageType                   = String
   type SoftwareTokenMFAUserCodeType                 = String
-  type StatusType                                   = String
   type StringType                                   = String
   type SupportedIdentityProvidersListType           = js.Array[ProviderNameType]
   type TagKeysType                                  = String
@@ -148,24 +121,18 @@ package object cognitoidentityprovider {
   type UserFilterType                               = String
   type UserImportJobIdType                          = String
   type UserImportJobNameType                        = String
-  type UserImportJobStatusType                      = String
   type UserImportJobsListType                       = js.Array[UserImportJobType]
   type UserMFASettingListType                       = js.Array[StringType]
   type UserPoolClientListType                       = js.Array[UserPoolClientDescription]
   type UserPoolIdType                               = String
   type UserPoolListType                             = js.Array[UserPoolDescriptionType]
-  type UserPoolMfaType                              = String
   type UserPoolNameType                             = String
   type UserPoolTagsListType                         = js.Array[TagKeysType]
   type UserPoolTagsType                             = js.Dictionary[TagValueType]
-  type UserStatusType                               = String
-  type UsernameAttributeType                        = String
   type UsernameAttributesListType                   = js.Array[UsernameAttributeType]
   type UsernameType                                 = String
   type UsersListType                                = js.Array[UserType]
-  type VerifiedAttributeType                        = String
   type VerifiedAttributesListType                   = js.Array[VerifiedAttributeType]
-  type VerifySoftwareTokenResponseType              = String
   type WrappedBooleanType                           = Boolean
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
@@ -612,12 +579,13 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AccountTakeoverActionsType]
     }
   }
-
-  object AccountTakeoverEventActionTypeEnum {
-    val BLOCK             = "BLOCK"
-    val MFA_IF_CONFIGURED = "MFA_IF_CONFIGURED"
-    val MFA_REQUIRED      = "MFA_REQUIRED"
-    val NO_ACTION         = "NO_ACTION"
+  @js.native
+  sealed trait AccountTakeoverEventActionType extends js.Any
+  object AccountTakeoverEventActionType extends js.Object {
+    val BLOCK             = "BLOCK".asInstanceOf[AccountTakeoverEventActionType]
+    val MFA_IF_CONFIGURED = "MFA_IF_CONFIGURED".asInstanceOf[AccountTakeoverEventActionType]
+    val MFA_REQUIRED      = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
+    val NO_ACTION         = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
 
     val values = js.Object.freeze(js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION))
   }
@@ -1848,19 +1816,21 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AdminUserGlobalSignOutResponse]
     }
   }
-
-  object AdvancedSecurityModeTypeEnum {
-    val OFF      = "OFF"
-    val AUDIT    = "AUDIT"
-    val ENFORCED = "ENFORCED"
+  @js.native
+  sealed trait AdvancedSecurityModeType extends js.Any
+  object AdvancedSecurityModeType extends js.Object {
+    val OFF      = "OFF".asInstanceOf[AdvancedSecurityModeType]
+    val AUDIT    = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
+    val ENFORCED = "ENFORCED".asInstanceOf[AdvancedSecurityModeType]
 
     val values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
   }
-
-  object AliasAttributeTypeEnum {
-    val phone_number       = "phone_number"
-    val email              = "email"
-    val preferred_username = "preferred_username"
+  @js.native
+  sealed trait AliasAttributeType extends js.Any
+  object AliasAttributeType extends js.Object {
+    val phone_number       = "phone_number".asInstanceOf[AliasAttributeType]
+    val email              = "email".asInstanceOf[AliasAttributeType]
+    val preferred_username = "preferred_username".asInstanceOf[AliasAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email, preferred_username))
   }
@@ -1952,12 +1922,13 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AssociateSoftwareTokenResponse]
     }
   }
-
-  object AttributeDataTypeEnum {
-    val String   = "String"
-    val Number   = "Number"
-    val DateTime = "DateTime"
-    val Boolean  = "Boolean"
+  @js.native
+  sealed trait AttributeDataType extends js.Any
+  object AttributeDataType extends js.Object {
+    val String   = "String".asInstanceOf[AttributeDataType]
+    val Number   = "Number".asInstanceOf[AttributeDataType]
+    val DateTime = "DateTime".asInstanceOf[AttributeDataType]
+    val Boolean  = "Boolean".asInstanceOf[AttributeDataType]
 
     val values = js.Object.freeze(js.Array(String, Number, DateTime, Boolean))
   }
@@ -2025,15 +1996,16 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AuthEventType]
     }
   }
-
-  object AuthFlowTypeEnum {
-    val USER_SRP_AUTH            = "USER_SRP_AUTH"
-    val REFRESH_TOKEN_AUTH       = "REFRESH_TOKEN_AUTH"
-    val REFRESH_TOKEN            = "REFRESH_TOKEN"
-    val CUSTOM_AUTH              = "CUSTOM_AUTH"
-    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH"
-    val USER_PASSWORD_AUTH       = "USER_PASSWORD_AUTH"
-    val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH"
+  @js.native
+  sealed trait AuthFlowType extends js.Any
+  object AuthFlowType extends js.Object {
+    val USER_SRP_AUTH            = "USER_SRP_AUTH".asInstanceOf[AuthFlowType]
+    val REFRESH_TOKEN_AUTH       = "REFRESH_TOKEN_AUTH".asInstanceOf[AuthFlowType]
+    val REFRESH_TOKEN            = "REFRESH_TOKEN".asInstanceOf[AuthFlowType]
+    val CUSTOM_AUTH              = "CUSTOM_AUTH".asInstanceOf[AuthFlowType]
+    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH".asInstanceOf[AuthFlowType]
+    val USER_PASSWORD_AUTH       = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
+    val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2081,25 +2053,27 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AuthenticationResultType]
     }
   }
-
-  object ChallengeNameEnum {
-    val Password = "Password"
-    val Mfa      = "Mfa"
+  @js.native
+  sealed trait ChallengeName extends js.Any
+  object ChallengeName extends js.Object {
+    val Password = "Password".asInstanceOf[ChallengeName]
+    val Mfa      = "Mfa".asInstanceOf[ChallengeName]
 
     val values = js.Object.freeze(js.Array(Password, Mfa))
   }
-
-  object ChallengeNameTypeEnum {
-    val SMS_MFA                  = "SMS_MFA"
-    val SOFTWARE_TOKEN_MFA       = "SOFTWARE_TOKEN_MFA"
-    val SELECT_MFA_TYPE          = "SELECT_MFA_TYPE"
-    val MFA_SETUP                = "MFA_SETUP"
-    val PASSWORD_VERIFIER        = "PASSWORD_VERIFIER"
-    val CUSTOM_CHALLENGE         = "CUSTOM_CHALLENGE"
-    val DEVICE_SRP_AUTH          = "DEVICE_SRP_AUTH"
-    val DEVICE_PASSWORD_VERIFIER = "DEVICE_PASSWORD_VERIFIER"
-    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH"
-    val NEW_PASSWORD_REQUIRED    = "NEW_PASSWORD_REQUIRED"
+  @js.native
+  sealed trait ChallengeNameType extends js.Any
+  object ChallengeNameType extends js.Object {
+    val SMS_MFA                  = "SMS_MFA".asInstanceOf[ChallengeNameType]
+    val SOFTWARE_TOKEN_MFA       = "SOFTWARE_TOKEN_MFA".asInstanceOf[ChallengeNameType]
+    val SELECT_MFA_TYPE          = "SELECT_MFA_TYPE".asInstanceOf[ChallengeNameType]
+    val MFA_SETUP                = "MFA_SETUP".asInstanceOf[ChallengeNameType]
+    val PASSWORD_VERIFIER        = "PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
+    val CUSTOM_CHALLENGE         = "CUSTOM_CHALLENGE".asInstanceOf[ChallengeNameType]
+    val DEVICE_SRP_AUTH          = "DEVICE_SRP_AUTH".asInstanceOf[ChallengeNameType]
+    val DEVICE_PASSWORD_VERIFIER = "DEVICE_PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
+    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
+    val NEW_PASSWORD_REQUIRED    = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2116,10 +2090,11 @@ package cognitoidentityprovider {
       )
     )
   }
-
-  object ChallengeResponseEnum {
-    val Success = "Success"
-    val Failure = "Failure"
+  @js.native
+  sealed trait ChallengeResponse extends js.Any
+  object ChallengeResponse extends js.Object {
+    val Success = "Success".asInstanceOf[ChallengeResponse]
+    val Failure = "Failure".asInstanceOf[ChallengeResponse]
 
     val values = js.Object.freeze(js.Array(Success, Failure))
   }
@@ -2234,10 +2209,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[CompromisedCredentialsActionsType]
     }
   }
-
-  object CompromisedCredentialsEventActionTypeEnum {
-    val BLOCK     = "BLOCK"
-    val NO_ACTION = "NO_ACTION"
+  @js.native
+  sealed trait CompromisedCredentialsEventActionType extends js.Any
+  object CompromisedCredentialsEventActionType extends js.Object {
+    val BLOCK     = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
+    val NO_ACTION = "NO_ACTION".asInstanceOf[CompromisedCredentialsEventActionType]
 
     val values = js.Object.freeze(js.Array(BLOCK, NO_ACTION))
   }
@@ -2909,10 +2885,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[CustomDomainConfigType]
     }
   }
-
-  object DefaultEmailOptionTypeEnum {
-    val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK"
-    val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE"
+  @js.native
+  sealed trait DefaultEmailOptionType extends js.Any
+  object DefaultEmailOptionType extends js.Object {
+    val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK".asInstanceOf[DefaultEmailOptionType]
+    val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE".asInstanceOf[DefaultEmailOptionType]
 
     val values = js.Object.freeze(js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE))
   }
@@ -3119,10 +3096,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
-
-  object DeliveryMediumTypeEnum {
-    val SMS   = "SMS"
-    val EMAIL = "EMAIL"
+  @js.native
+  sealed trait DeliveryMediumType extends js.Any
+  object DeliveryMediumType extends js.Object {
+    val SMS   = "SMS".asInstanceOf[DeliveryMediumType]
+    val EMAIL = "EMAIL".asInstanceOf[DeliveryMediumType]
 
     val values = js.Object.freeze(js.Array(SMS, EMAIL))
   }
@@ -3429,10 +3407,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DeviceConfigurationType]
     }
   }
-
-  object DeviceRememberedStatusTypeEnum {
-    val remembered     = "remembered"
-    val not_remembered = "not_remembered"
+  @js.native
+  sealed trait DeviceRememberedStatusType extends js.Any
+  object DeviceRememberedStatusType extends js.Object {
+    val remembered     = "remembered".asInstanceOf[DeviceRememberedStatusType]
+    val not_remembered = "not_remembered".asInstanceOf[DeviceRememberedStatusType]
 
     val values = js.Object.freeze(js.Array(remembered, not_remembered))
   }
@@ -3531,13 +3510,14 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DomainDescriptionType]
     }
   }
-
-  object DomainStatusTypeEnum {
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
-    val UPDATING = "UPDATING"
-    val ACTIVE   = "ACTIVE"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait DomainStatusType extends js.Any
+  object DomainStatusType extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[DomainStatusType]
+    val DELETING = "DELETING".asInstanceOf[DomainStatusType]
+    val UPDATING = "UPDATING".asInstanceOf[DomainStatusType]
+    val ACTIVE   = "ACTIVE".asInstanceOf[DomainStatusType]
+    val FAILED   = "FAILED".asInstanceOf[DomainStatusType]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED))
   }
@@ -3572,10 +3552,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EmailConfigurationType]
     }
   }
-
-  object EmailSendingAccountTypeEnum {
-    val COGNITO_DEFAULT = "COGNITO_DEFAULT"
-    val DEVELOPER       = "DEVELOPER"
+  @js.native
+  sealed trait EmailSendingAccountType extends js.Any
+  object EmailSendingAccountType extends js.Object {
+    val COGNITO_DEFAULT = "COGNITO_DEFAULT".asInstanceOf[EmailSendingAccountType]
+    val DEVELOPER       = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
 
     val values = js.Object.freeze(js.Array(COGNITO_DEFAULT, DEVELOPER))
   }
@@ -3637,18 +3618,20 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EventFeedbackType]
     }
   }
-
-  object EventFilterTypeEnum {
-    val SIGN_IN         = "SIGN_IN"
-    val PASSWORD_CHANGE = "PASSWORD_CHANGE"
-    val SIGN_UP         = "SIGN_UP"
+  @js.native
+  sealed trait EventFilterType extends js.Any
+  object EventFilterType extends js.Object {
+    val SIGN_IN         = "SIGN_IN".asInstanceOf[EventFilterType]
+    val PASSWORD_CHANGE = "PASSWORD_CHANGE".asInstanceOf[EventFilterType]
+    val SIGN_UP         = "SIGN_UP".asInstanceOf[EventFilterType]
 
     val values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
   }
-
-  object EventResponseTypeEnum {
-    val Success = "Success"
-    val Failure = "Failure"
+  @js.native
+  sealed trait EventResponseType extends js.Any
+  object EventResponseType extends js.Object {
+    val Success = "Success".asInstanceOf[EventResponseType]
+    val Failure = "Failure".asInstanceOf[EventResponseType]
 
     val values = js.Object.freeze(js.Array(Success, Failure))
   }
@@ -3674,24 +3657,26 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EventRiskType]
     }
   }
-
-  object EventTypeEnum {
-    val SignIn         = "SignIn"
-    val SignUp         = "SignUp"
-    val ForgotPassword = "ForgotPassword"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val SignIn         = "SignIn".asInstanceOf[EventType]
+    val SignUp         = "SignUp".asInstanceOf[EventType]
+    val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
   }
-
-  object ExplicitAuthFlowsTypeEnum {
-    val ADMIN_NO_SRP_AUTH              = "ADMIN_NO_SRP_AUTH"
-    val CUSTOM_AUTH_FLOW_ONLY          = "CUSTOM_AUTH_FLOW_ONLY"
-    val USER_PASSWORD_AUTH             = "USER_PASSWORD_AUTH"
-    val ALLOW_ADMIN_USER_PASSWORD_AUTH = "ALLOW_ADMIN_USER_PASSWORD_AUTH"
-    val ALLOW_CUSTOM_AUTH              = "ALLOW_CUSTOM_AUTH"
-    val ALLOW_USER_PASSWORD_AUTH       = "ALLOW_USER_PASSWORD_AUTH"
-    val ALLOW_USER_SRP_AUTH            = "ALLOW_USER_SRP_AUTH"
-    val ALLOW_REFRESH_TOKEN_AUTH       = "ALLOW_REFRESH_TOKEN_AUTH"
+  @js.native
+  sealed trait ExplicitAuthFlowsType extends js.Any
+  object ExplicitAuthFlowsType extends js.Object {
+    val ADMIN_NO_SRP_AUTH              = "ADMIN_NO_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val CUSTOM_AUTH_FLOW_ONLY          = "CUSTOM_AUTH_FLOW_ONLY".asInstanceOf[ExplicitAuthFlowsType]
+    val USER_PASSWORD_AUTH             = "USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_ADMIN_USER_PASSWORD_AUTH = "ALLOW_ADMIN_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_CUSTOM_AUTH              = "ALLOW_CUSTOM_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_USER_PASSWORD_AUTH       = "ALLOW_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_USER_SRP_AUTH            = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_REFRESH_TOKEN_AUTH       = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3706,10 +3691,11 @@ package cognitoidentityprovider {
       )
     )
   }
-
-  object FeedbackValueTypeEnum {
-    val Valid   = "Valid"
-    val Invalid = "Invalid"
+  @js.native
+  sealed trait FeedbackValueType extends js.Any
+  object FeedbackValueType extends js.Object {
+    val Valid   = "Valid".asInstanceOf[FeedbackValueType]
+    val Invalid = "Invalid".asInstanceOf[FeedbackValueType]
 
     val values = js.Object.freeze(js.Array(Valid, Invalid))
   }
@@ -4313,14 +4299,15 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[IdentityProviderType]
     }
   }
-
-  object IdentityProviderTypeTypeEnum {
-    val SAML            = "SAML"
-    val Facebook        = "Facebook"
-    val Google          = "Google"
-    val LoginWithAmazon = "LoginWithAmazon"
-    val SignInWithApple = "SignInWithApple"
-    val OIDC            = "OIDC"
+  @js.native
+  sealed trait IdentityProviderTypeType extends js.Any
+  object IdentityProviderTypeType extends js.Object {
+    val SAML            = "SAML".asInstanceOf[IdentityProviderTypeType]
+    val Facebook        = "Facebook".asInstanceOf[IdentityProviderTypeType]
+    val Google          = "Google".asInstanceOf[IdentityProviderTypeType]
+    val LoginWithAmazon = "LoginWithAmazon".asInstanceOf[IdentityProviderTypeType]
+    val SignInWithApple = "SignInWithApple".asInstanceOf[IdentityProviderTypeType]
+    val OIDC            = "OIDC".asInstanceOf[IdentityProviderTypeType]
 
     val values = js.Object.freeze(js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC))
   }
@@ -4921,10 +4908,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[MFAOptionType]
     }
   }
-
-  object MessageActionTypeEnum {
-    val RESEND   = "RESEND"
-    val SUPPRESS = "SUPPRESS"
+  @js.native
+  sealed trait MessageActionType extends js.Any
+  object MessageActionType extends js.Object {
+    val RESEND   = "RESEND".asInstanceOf[MessageActionType]
+    val SUPPRESS = "SUPPRESS".asInstanceOf[MessageActionType]
 
     val values = js.Object.freeze(js.Array(RESEND, SUPPRESS))
   }
@@ -5060,11 +5048,12 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[NumberAttributeConstraintsType]
     }
   }
-
-  object OAuthFlowTypeEnum {
-    val code               = "code"
-    val `implicit`         = "implicit"
-    val client_credentials = "client_credentials"
+  @js.native
+  sealed trait OAuthFlowType extends js.Any
+  object OAuthFlowType extends js.Object {
+    val code               = "code".asInstanceOf[OAuthFlowType]
+    val `implicit`         = "implicit".asInstanceOf[OAuthFlowType]
+    val client_credentials = "client_credentials".asInstanceOf[OAuthFlowType]
 
     val values = js.Object.freeze(js.Array(code, `implicit`, client_credentials))
   }
@@ -5104,10 +5093,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[PasswordPolicyType]
     }
   }
-
-  object PreventUserExistenceErrorTypesEnum {
-    val LEGACY  = "LEGACY"
-    val ENABLED = "ENABLED"
+  @js.native
+  sealed trait PreventUserExistenceErrorTypes extends js.Any
+  object PreventUserExistenceErrorTypes extends js.Object {
+    val LEGACY  = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
+    val ENABLED = "ENABLED".asInstanceOf[PreventUserExistenceErrorTypes]
 
     val values = js.Object.freeze(js.Array(LEGACY, ENABLED))
   }
@@ -5164,11 +5154,12 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[ProviderUserIdentifierType]
     }
   }
-
-  object RecoveryOptionNameTypeEnum {
-    val verified_email        = "verified_email"
-    val verified_phone_number = "verified_phone_number"
-    val admin_only            = "admin_only"
+  @js.native
+  sealed trait RecoveryOptionNameType extends js.Any
+  object RecoveryOptionNameType extends js.Object {
+    val verified_email        = "verified_email".asInstanceOf[RecoveryOptionNameType]
+    val verified_phone_number = "verified_phone_number".asInstanceOf[RecoveryOptionNameType]
+    val admin_only            = "admin_only".asInstanceOf[RecoveryOptionNameType]
 
     val values = js.Object.freeze(js.Array(verified_email, verified_phone_number, admin_only))
   }
@@ -5410,11 +5401,12 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[RiskConfigurationType]
     }
   }
-
-  object RiskDecisionTypeEnum {
-    val NoRisk          = "NoRisk"
-    val AccountTakeover = "AccountTakeover"
-    val Block           = "Block"
+  @js.native
+  sealed trait RiskDecisionType extends js.Any
+  object RiskDecisionType extends js.Object {
+    val NoRisk          = "NoRisk".asInstanceOf[RiskDecisionType]
+    val AccountTakeover = "AccountTakeover".asInstanceOf[RiskDecisionType]
+    val Block           = "Block".asInstanceOf[RiskDecisionType]
 
     val values = js.Object.freeze(js.Array(NoRisk, AccountTakeover, Block))
   }
@@ -5440,11 +5432,12 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[RiskExceptionConfigurationType]
     }
   }
-
-  object RiskLevelTypeEnum {
-    val Low    = "Low"
-    val Medium = "Medium"
-    val High   = "High"
+  @js.native
+  sealed trait RiskLevelType extends js.Any
+  object RiskLevelType extends js.Object {
+    val Low    = "Low".asInstanceOf[RiskLevelType]
+    val Medium = "Medium".asInstanceOf[RiskLevelType]
+    val High   = "High".asInstanceOf[RiskLevelType]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
@@ -5942,10 +5935,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[StartUserImportJobResponse]
     }
   }
-
-  object StatusTypeEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait StatusType extends js.Any
+  object StatusType extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[StatusType]
+    val Disabled = "Disabled".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -6633,16 +6627,17 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserContextDataType]
     }
   }
-
-  object UserImportJobStatusTypeEnum {
-    val Created    = "Created"
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Stopping   = "Stopping"
-    val Expired    = "Expired"
-    val Stopped    = "Stopped"
-    val Failed     = "Failed"
-    val Succeeded  = "Succeeded"
+  @js.native
+  sealed trait UserImportJobStatusType extends js.Any
+  object UserImportJobStatusType extends js.Object {
+    val Created    = "Created".asInstanceOf[UserImportJobStatusType]
+    val Pending    = "Pending".asInstanceOf[UserImportJobStatusType]
+    val InProgress = "InProgress".asInstanceOf[UserImportJobStatusType]
+    val Stopping   = "Stopping".asInstanceOf[UserImportJobStatusType]
+    val Expired    = "Expired".asInstanceOf[UserImportJobStatusType]
+    val Stopped    = "Stopped".asInstanceOf[UserImportJobStatusType]
+    val Failed     = "Failed".asInstanceOf[UserImportJobStatusType]
+    val Succeeded  = "Succeeded".asInstanceOf[UserImportJobStatusType]
 
     val values = js.Object.freeze(js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded))
   }
@@ -6860,11 +6855,12 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserPoolDescriptionType]
     }
   }
-
-  object UserPoolMfaTypeEnum {
-    val OFF      = "OFF"
-    val ON       = "ON"
-    val OPTIONAL = "OPTIONAL"
+  @js.native
+  sealed trait UserPoolMfaType extends js.Any
+  object UserPoolMfaType extends js.Object {
+    val OFF      = "OFF".asInstanceOf[UserPoolMfaType]
+    val ON       = "ON".asInstanceOf[UserPoolMfaType]
+    val OPTIONAL = "OPTIONAL".asInstanceOf[UserPoolMfaType]
 
     val values = js.Object.freeze(js.Array(OFF, ON, OPTIONAL))
   }
@@ -7000,15 +6996,16 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserPoolType]
     }
   }
-
-  object UserStatusTypeEnum {
-    val UNCONFIRMED           = "UNCONFIRMED"
-    val CONFIRMED             = "CONFIRMED"
-    val ARCHIVED              = "ARCHIVED"
-    val COMPROMISED           = "COMPROMISED"
-    val UNKNOWN               = "UNKNOWN"
-    val RESET_REQUIRED        = "RESET_REQUIRED"
-    val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD"
+  @js.native
+  sealed trait UserStatusType extends js.Any
+  object UserStatusType extends js.Object {
+    val UNCONFIRMED           = "UNCONFIRMED".asInstanceOf[UserStatusType]
+    val CONFIRMED             = "CONFIRMED".asInstanceOf[UserStatusType]
+    val ARCHIVED              = "ARCHIVED".asInstanceOf[UserStatusType]
+    val COMPROMISED           = "COMPROMISED".asInstanceOf[UserStatusType]
+    val UNKNOWN               = "UNKNOWN".asInstanceOf[UserStatusType]
+    val RESET_REQUIRED        = "RESET_REQUIRED".asInstanceOf[UserStatusType]
+    val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
 
     val values = js.Object.freeze(
       js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
@@ -7051,10 +7048,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserType]
     }
   }
-
-  object UsernameAttributeTypeEnum {
-    val phone_number = "phone_number"
-    val email        = "email"
+  @js.native
+  sealed trait UsernameAttributeType extends js.Any
+  object UsernameAttributeType extends js.Object {
+    val phone_number = "phone_number".asInstanceOf[UsernameAttributeType]
+    val email        = "email".asInstanceOf[UsernameAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
@@ -7113,10 +7111,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[VerificationMessageTemplateType]
     }
   }
-
-  object VerifiedAttributeTypeEnum {
-    val phone_number = "phone_number"
-    val email        = "email"
+  @js.native
+  sealed trait VerifiedAttributeType extends js.Any
+  object VerifiedAttributeType extends js.Object {
+    val phone_number = "phone_number".asInstanceOf[VerifiedAttributeType]
+    val email        = "email".asInstanceOf[VerifiedAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
@@ -7166,10 +7165,11 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[VerifySoftwareTokenResponse]
     }
   }
-
-  object VerifySoftwareTokenResponseTypeEnum {
-    val SUCCESS = "SUCCESS"
-    val ERROR   = "ERROR"
+  @js.native
+  sealed trait VerifySoftwareTokenResponseType extends js.Any
+  object VerifySoftwareTokenResponseType extends js.Object {
+    val SUCCESS = "SUCCESS".asInstanceOf[VerifySoftwareTokenResponseType]
+    val ERROR   = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
 
     val values = js.Object.freeze(js.Array(SUCCESS, ERROR))
   }

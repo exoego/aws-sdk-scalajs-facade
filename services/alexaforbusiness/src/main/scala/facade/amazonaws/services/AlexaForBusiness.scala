@@ -23,24 +23,17 @@ package object alexaforbusiness {
   type BulletPoints                    = js.Array[BulletPoint]
   type BusinessReportDeliveryTime      = js.Date
   type BusinessReportDownloadUrl       = String
-  type BusinessReportFailureCode       = String
-  type BusinessReportFormat            = String
-  type BusinessReportInterval          = String
   type BusinessReportS3Path            = String
   type BusinessReportScheduleList      = js.Array[BusinessReportSchedule]
   type BusinessReportScheduleName      = String
-  type BusinessReportStatus            = String
   type CategoryId                      = Double
   type CategoryList                    = js.Array[Category]
   type CategoryName                    = String
   type CertificateTime                 = js.Date
   type ClientId                        = String
   type ClientRequestToken              = String
-  type CommsProtocol                   = String
   type ConferenceProviderName          = String
-  type ConferenceProviderType          = String
   type ConferenceProvidersList         = js.Array[ConferenceProvider]
-  type ConnectionStatus                = String
   type ConnectionStatusUpdatedTime     = js.Date
   type ContactDataList                 = js.Array[ContactData]
   type ContactName                     = String
@@ -53,28 +46,18 @@ package object alexaforbusiness {
   type DeviceDataList                  = js.Array[DeviceData]
   type DeviceEventList                 = js.Array[DeviceEvent]
   type DeviceEventTime                 = js.Date
-  type DeviceEventType                 = String
   type DeviceEventValue                = String
   type DeviceLocale                    = String
   type DeviceName                      = String
   type DeviceSerialNumber              = String
   type DeviceSerialNumberForAVS        = String
-  type DeviceStatus                    = String
-  type DeviceStatusDetailCode          = String
   type DeviceStatusDetails             = js.Array[DeviceStatusDetail]
   type DeviceType                      = String
-  type DeviceUsageType                 = String
-  type DistanceUnit                    = String
   type Email                           = String
-  type EnablementType                  = String
-  type EnablementTypeFilter            = String
   type EndOfMeetingReminderMinutesList = js.Array[Minutes]
-  type EndOfMeetingReminderType        = String
   type EndUserLicenseAgreement         = String
   type Endpoint                        = String
   type EnrollmentId                    = String
-  type EnrollmentStatus                = String
-  type Feature                         = String
   type Features                        = js.Array[Feature]
   type FilterKey                       = String
   type FilterList                      = js.Array[Filter]
@@ -92,16 +75,13 @@ package object alexaforbusiness {
   type IconUrl                         = String
   type InvocationPhrase                = String
   type Key                             = String
-  type Locale                          = String
   type MacAddress                      = String
   type MaxResults                      = Int
   type MaxVolumeLimit                  = Int
   type Minutes                         = Int
-  type NetworkEapMethod                = String
   type NetworkProfileDataList          = js.Array[NetworkProfileData]
   type NetworkProfileDescription       = String
   type NetworkProfileName              = String
-  type NetworkSecurityType             = String
   type NetworkSsid                     = String
   type NewInThisVersionBulletPoints    = js.Array[BulletPoint]
   type NextToken                       = String
@@ -111,7 +91,6 @@ package object alexaforbusiness {
   type OrganizationName                = String
   type OutboundPhoneNumber             = String
   type PhoneNumberList                 = js.Array[PhoneNumber]
-  type PhoneNumberType                 = String
   type PrivacyPolicy                   = String
   type ProductDescription              = String
   type ProductId                       = String
@@ -120,7 +99,6 @@ package object alexaforbusiness {
   type ProviderCalendarId              = String
   type RawPhoneNumber                  = String
   type ReleaseDate                     = String
-  type RequirePin                      = String
   type ReviewKey                       = String
   type ReviewValue                     = String
   type Reviews                         = js.Dictionary[ReviewValue]
@@ -135,7 +113,6 @@ package object alexaforbusiness {
   type ShortDescription                = String
   type ShortSkillIdList                = js.Array[SkillId]
   type SipAddressList                  = js.Array[SipAddress]
-  type SipType                         = String
   type SipUri                          = String
   type SkillGroupDataList              = js.Array[SkillGroupData]
   type SkillGroupDescription           = String
@@ -145,22 +122,18 @@ package object alexaforbusiness {
   type SkillName                       = String
   type SkillStoreType                  = String
   type SkillSummaryList                = js.Array[SkillSummary]
-  type SkillType                       = String
-  type SkillTypeFilter                 = String
   type SkillTypes                      = js.Array[SkillStoreType]
   type SkillsStoreSkillList            = js.Array[SkillsStoreSkill]
   type SmartHomeApplianceList          = js.Array[SmartHomeAppliance]
   type SoftwareVersion                 = String
   type SortKey                         = String
   type SortList                        = js.Array[Sort]
-  type SortValue                       = String
   type SsmlList                        = js.Array[Ssml]
   type SsmlValue                       = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagList                         = js.Array[Tag]
   type TagValue                        = String
-  type TemperatureUnit                 = String
   type TextList                        = js.Array[Text]
   type TextValue                       = String
   type TimeToLiveInSeconds             = Int
@@ -174,7 +147,6 @@ package object alexaforbusiness {
   type UserId                          = String
   type Utterance                       = String
   type Value                           = String
-  type WakeWord                        = String
   type user_FirstName                  = String
   type user_LastName                   = String
   type user_UserId                     = String
@@ -915,26 +887,29 @@ package alexaforbusiness {
       __obj.asInstanceOf[BusinessReportContentRange]
     }
   }
-
-  object BusinessReportFailureCodeEnum {
-    val ACCESS_DENIED    = "ACCESS_DENIED"
-    val NO_SUCH_BUCKET   = "NO_SUCH_BUCKET"
-    val INTERNAL_FAILURE = "INTERNAL_FAILURE"
+  @js.native
+  sealed trait BusinessReportFailureCode extends js.Any
+  object BusinessReportFailureCode extends js.Object {
+    val ACCESS_DENIED    = "ACCESS_DENIED".asInstanceOf[BusinessReportFailureCode]
+    val NO_SUCH_BUCKET   = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
 
     val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
   }
-
-  object BusinessReportFormatEnum {
-    val CSV     = "CSV"
-    val CSV_ZIP = "CSV_ZIP"
+  @js.native
+  sealed trait BusinessReportFormat extends js.Any
+  object BusinessReportFormat extends js.Object {
+    val CSV     = "CSV".asInstanceOf[BusinessReportFormat]
+    val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
 
     val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
   }
-
-  object BusinessReportIntervalEnum {
-    val ONE_DAY     = "ONE_DAY"
-    val ONE_WEEK    = "ONE_WEEK"
-    val THIRTY_DAYS = "THIRTY_DAYS"
+  @js.native
+  sealed trait BusinessReportInterval extends js.Any
+  object BusinessReportInterval extends js.Object {
+    val ONE_DAY     = "ONE_DAY".asInstanceOf[BusinessReportInterval]
+    val ONE_WEEK    = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
+    val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
 
     val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
   }
@@ -1019,11 +994,12 @@ package alexaforbusiness {
       __obj.asInstanceOf[BusinessReportSchedule]
     }
   }
-
-  object BusinessReportStatusEnum {
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait BusinessReportStatus extends js.Any
+  object BusinessReportStatus extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[BusinessReportStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
+    val FAILED    = "FAILED".asInstanceOf[BusinessReportStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
   }
@@ -1049,11 +1025,12 @@ package alexaforbusiness {
       __obj.asInstanceOf[Category]
     }
   }
-
-  object CommsProtocolEnum {
-    val SIP  = "SIP"
-    val SIPS = "SIPS"
-    val H323 = "H323"
+  @js.native
+  sealed trait CommsProtocol extends js.Any
+  object CommsProtocol extends js.Object {
+    val SIP  = "SIP".asInstanceOf[CommsProtocol]
+    val SIPS = "SIPS".asInstanceOf[CommsProtocol]
+    val H323 = "H323".asInstanceOf[CommsProtocol]
 
     val values = js.Object.freeze(js.Array(SIP, SIPS, H323))
   }
@@ -1112,27 +1089,29 @@ package alexaforbusiness {
       __obj.asInstanceOf[ConferenceProvider]
     }
   }
-
-  object ConferenceProviderTypeEnum {
-    val CHIME              = "CHIME"
-    val BLUEJEANS          = "BLUEJEANS"
-    val FUZE               = "FUZE"
-    val GOOGLE_HANGOUTS    = "GOOGLE_HANGOUTS"
-    val POLYCOM            = "POLYCOM"
-    val RINGCENTRAL        = "RINGCENTRAL"
-    val SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS"
-    val WEBEX              = "WEBEX"
-    val ZOOM               = "ZOOM"
-    val CUSTOM             = "CUSTOM"
+  @js.native
+  sealed trait ConferenceProviderType extends js.Any
+  object ConferenceProviderType extends js.Object {
+    val CHIME              = "CHIME".asInstanceOf[ConferenceProviderType]
+    val BLUEJEANS          = "BLUEJEANS".asInstanceOf[ConferenceProviderType]
+    val FUZE               = "FUZE".asInstanceOf[ConferenceProviderType]
+    val GOOGLE_HANGOUTS    = "GOOGLE_HANGOUTS".asInstanceOf[ConferenceProviderType]
+    val POLYCOM            = "POLYCOM".asInstanceOf[ConferenceProviderType]
+    val RINGCENTRAL        = "RINGCENTRAL".asInstanceOf[ConferenceProviderType]
+    val SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS".asInstanceOf[ConferenceProviderType]
+    val WEBEX              = "WEBEX".asInstanceOf[ConferenceProviderType]
+    val ZOOM               = "ZOOM".asInstanceOf[ConferenceProviderType]
+    val CUSTOM             = "CUSTOM".asInstanceOf[ConferenceProviderType]
 
     val values = js.Object.freeze(
       js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
     )
   }
-
-  object ConnectionStatusEnum {
-    val ONLINE  = "ONLINE"
-    val OFFLINE = "OFFLINE"
+  @js.native
+  sealed trait ConnectionStatus extends js.Any
+  object ConnectionStatus extends js.Object {
+    val ONLINE  = "ONLINE".asInstanceOf[ConnectionStatus]
+    val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
@@ -2436,10 +2415,11 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceEvent]
     }
   }
-
-  object DeviceEventTypeEnum {
-    val CONNECTION_STATUS = "CONNECTION_STATUS"
-    val DEVICE_STATUS     = "DEVICE_STATUS"
+  @js.native
+  sealed trait DeviceEventType extends js.Any
+  object DeviceEventType extends js.Object {
+    val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
+    val DEVICE_STATUS     = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
 
     val values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
   }
@@ -2470,13 +2450,14 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceNetworkProfileInfo]
     }
   }
-
-  object DeviceStatusEnum {
-    val READY        = "READY"
-    val PENDING      = "PENDING"
-    val WAS_OFFLINE  = "WAS_OFFLINE"
-    val DEREGISTERED = "DEREGISTERED"
-    val FAILED       = "FAILED"
+  @js.native
+  sealed trait DeviceStatus extends js.Any
+  object DeviceStatus extends js.Object {
+    val READY        = "READY".asInstanceOf[DeviceStatus]
+    val PENDING      = "PENDING".asInstanceOf[DeviceStatus]
+    val WAS_OFFLINE  = "WAS_OFFLINE".asInstanceOf[DeviceStatus]
+    val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
+    val FAILED       = "FAILED".asInstanceOf[DeviceStatus]
 
     val values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
   }
@@ -2502,23 +2483,24 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceStatusDetail]
     }
   }
-
-  object DeviceStatusDetailCodeEnum {
-    val DEVICE_SOFTWARE_UPDATE_NEEDED      = "DEVICE_SOFTWARE_UPDATE_NEEDED"
-    val DEVICE_WAS_OFFLINE                 = "DEVICE_WAS_OFFLINE"
-    val CREDENTIALS_ACCESS_FAILURE         = "CREDENTIALS_ACCESS_FAILURE"
-    val TLS_VERSION_MISMATCH               = "TLS_VERSION_MISMATCH"
-    val ASSOCIATION_REJECTION              = "ASSOCIATION_REJECTION"
-    val AUTHENTICATION_FAILURE             = "AUTHENTICATION_FAILURE"
-    val DHCP_FAILURE                       = "DHCP_FAILURE"
-    val INTERNET_UNAVAILABLE               = "INTERNET_UNAVAILABLE"
-    val DNS_FAILURE                        = "DNS_FAILURE"
-    val UNKNOWN_FAILURE                    = "UNKNOWN_FAILURE"
-    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
-    val INVALID_CERTIFICATE_AUTHORITY      = "INVALID_CERTIFICATE_AUTHORITY"
-    val NETWORK_PROFILE_NOT_FOUND          = "NETWORK_PROFILE_NOT_FOUND"
-    val INVALID_PASSWORD_STATE             = "INVALID_PASSWORD_STATE"
-    val PASSWORD_NOT_FOUND                 = "PASSWORD_NOT_FOUND"
+  @js.native
+  sealed trait DeviceStatusDetailCode extends js.Any
+  object DeviceStatusDetailCode extends js.Object {
+    val DEVICE_SOFTWARE_UPDATE_NEEDED      = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
+    val DEVICE_WAS_OFFLINE                 = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
+    val CREDENTIALS_ACCESS_FAILURE         = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val TLS_VERSION_MISMATCH               = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
+    val ASSOCIATION_REJECTION              = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
+    val AUTHENTICATION_FAILURE             = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val DHCP_FAILURE                       = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val INTERNET_UNAVAILABLE               = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
+    val DNS_FAILURE                        = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val UNKNOWN_FAILURE                    = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
+    val INVALID_CERTIFICATE_AUTHORITY      = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
+    val NETWORK_PROFILE_NOT_FOUND          = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    val INVALID_PASSWORD_STATE             = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
+    val PASSWORD_NOT_FOUND                 = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2567,9 +2549,10 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceStatusInfo]
     }
   }
-
-  object DeviceUsageTypeEnum {
-    val VOICE = "VOICE"
+  @js.native
+  sealed trait DeviceUsageType extends js.Any
+  object DeviceUsageType extends js.Object {
+    val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
 
     val values = js.Object.freeze(js.Array(VOICE))
   }
@@ -2733,24 +2716,27 @@ package alexaforbusiness {
       __obj.asInstanceOf[DisassociateSkillGroupFromRoomResponse]
     }
   }
-
-  object DistanceUnitEnum {
-    val METRIC   = "METRIC"
-    val IMPERIAL = "IMPERIAL"
+  @js.native
+  sealed trait DistanceUnit extends js.Any
+  object DistanceUnit extends js.Object {
+    val METRIC   = "METRIC".asInstanceOf[DistanceUnit]
+    val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
 
     val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
   }
-
-  object EnablementTypeEnum {
-    val ENABLED = "ENABLED"
-    val PENDING = "PENDING"
+  @js.native
+  sealed trait EnablementType extends js.Any
+  object EnablementType extends js.Object {
+    val ENABLED = "ENABLED".asInstanceOf[EnablementType]
+    val PENDING = "PENDING".asInstanceOf[EnablementType]
 
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
-
-  object EnablementTypeFilterEnum {
-    val ENABLED = "ENABLED"
-    val PENDING = "PENDING"
+  @js.native
+  sealed trait EnablementTypeFilter extends js.Any
+  object EnablementTypeFilter extends js.Object {
+    val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
+    val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
@@ -2779,35 +2765,38 @@ package alexaforbusiness {
       __obj.asInstanceOf[EndOfMeetingReminder]
     }
   }
-
-  object EndOfMeetingReminderTypeEnum {
-    val ANNOUNCEMENT_TIME_CHECK         = "ANNOUNCEMENT_TIME_CHECK"
-    val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT"
-    val CHIME                           = "CHIME"
-    val KNOCK                           = "KNOCK"
+  @js.native
+  sealed trait EndOfMeetingReminderType extends js.Any
+  object EndOfMeetingReminderType extends js.Object {
+    val ANNOUNCEMENT_TIME_CHECK         = "ANNOUNCEMENT_TIME_CHECK".asInstanceOf[EndOfMeetingReminderType]
+    val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT".asInstanceOf[EndOfMeetingReminderType]
+    val CHIME                           = "CHIME".asInstanceOf[EndOfMeetingReminderType]
+    val KNOCK                           = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
 
     val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
   }
-
-  object EnrollmentStatusEnum {
-    val INITIALIZED    = "INITIALIZED"
-    val PENDING        = "PENDING"
-    val REGISTERED     = "REGISTERED"
-    val DISASSOCIATING = "DISASSOCIATING"
-    val DEREGISTERING  = "DEREGISTERING"
+  @js.native
+  sealed trait EnrollmentStatus extends js.Any
+  object EnrollmentStatus extends js.Object {
+    val INITIALIZED    = "INITIALIZED".asInstanceOf[EnrollmentStatus]
+    val PENDING        = "PENDING".asInstanceOf[EnrollmentStatus]
+    val REGISTERED     = "REGISTERED".asInstanceOf[EnrollmentStatus]
+    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
+    val DEREGISTERING  = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
 
     val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
   }
-
-  object FeatureEnum {
-    val BLUETOOTH       = "BLUETOOTH"
-    val VOLUME          = "VOLUME"
-    val NOTIFICATIONS   = "NOTIFICATIONS"
-    val LISTS           = "LISTS"
-    val SKILLS          = "SKILLS"
-    val NETWORK_PROFILE = "NETWORK_PROFILE"
-    val SETTINGS        = "SETTINGS"
-    val ALL             = "ALL"
+  @js.native
+  sealed trait Feature extends js.Any
+  object Feature extends js.Object {
+    val BLUETOOTH       = "BLUETOOTH".asInstanceOf[Feature]
+    val VOLUME          = "VOLUME".asInstanceOf[Feature]
+    val NOTIFICATIONS   = "NOTIFICATIONS".asInstanceOf[Feature]
+    val LISTS           = "LISTS".asInstanceOf[Feature]
+    val SKILLS          = "SKILLS".asInstanceOf[Feature]
+    val NETWORK_PROFILE = "NETWORK_PROFILE".asInstanceOf[Feature]
+    val SETTINGS        = "SETTINGS".asInstanceOf[Feature]
+    val ALL             = "ALL".asInstanceOf[Feature]
 
     val values =
       js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
@@ -3876,9 +3865,10 @@ package alexaforbusiness {
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
-
-  object LocaleEnum {
-    val `en-US` = "en-US"
+  @js.native
+  sealed trait Locale extends js.Any
+  object Locale extends js.Object {
+    val `en-US` = "en-US".asInstanceOf[Locale]
 
     val values = js.Object.freeze(js.Array(`en-US`))
   }
@@ -3936,9 +3926,10 @@ package alexaforbusiness {
       __obj.asInstanceOf[MeetingSetting]
     }
   }
-
-  object NetworkEapMethodEnum {
-    val EAP_TLS = "EAP_TLS"
+  @js.native
+  sealed trait NetworkEapMethod extends js.Any
+  object NetworkEapMethod extends js.Object {
+    val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
 
     val values = js.Object.freeze(js.Array(EAP_TLS))
   }
@@ -4025,13 +4016,14 @@ package alexaforbusiness {
       __obj.asInstanceOf[NetworkProfileData]
     }
   }
-
-  object NetworkSecurityTypeEnum {
-    val OPEN            = "OPEN"
-    val WEP             = "WEP"
-    val WPA_PSK         = "WPA_PSK"
-    val WPA2_PSK        = "WPA2_PSK"
-    val WPA2_ENTERPRISE = "WPA2_ENTERPRISE"
+  @js.native
+  sealed trait NetworkSecurityType extends js.Any
+  object NetworkSecurityType extends js.Object {
+    val OPEN            = "OPEN".asInstanceOf[NetworkSecurityType]
+    val WEP             = "WEP".asInstanceOf[NetworkSecurityType]
+    val WPA_PSK         = "WPA_PSK".asInstanceOf[NetworkSecurityType]
+    val WPA2_PSK        = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
+    val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
 
     val values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
   }
@@ -4089,11 +4081,12 @@ package alexaforbusiness {
       __obj.asInstanceOf[PhoneNumber]
     }
   }
-
-  object PhoneNumberTypeEnum {
-    val MOBILE = "MOBILE"
-    val WORK   = "WORK"
-    val HOME   = "HOME"
+  @js.native
+  sealed trait PhoneNumberType extends js.Any
+  object PhoneNumberType extends js.Object {
+    val MOBILE = "MOBILE".asInstanceOf[PhoneNumberType]
+    val WORK   = "WORK".asInstanceOf[PhoneNumberType]
+    val HOME   = "HOME".asInstanceOf[PhoneNumberType]
 
     val values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
   }
@@ -4439,11 +4432,12 @@ package alexaforbusiness {
       __obj.asInstanceOf[RequireCheckIn]
     }
   }
-
-  object RequirePinEnum {
-    val YES      = "YES"
-    val NO       = "NO"
-    val OPTIONAL = "OPTIONAL"
+  @js.native
+  sealed trait RequirePin extends js.Any
+  object RequirePin extends js.Object {
+    val YES      = "YES".asInstanceOf[RequirePin]
+    val NO       = "NO".asInstanceOf[RequirePin]
+    val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
 
     val values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
   }
@@ -5083,9 +5077,10 @@ package alexaforbusiness {
       __obj.asInstanceOf[SipAddress]
     }
   }
-
-  object SipTypeEnum {
-    val WORK = "WORK"
+  @js.native
+  sealed trait SipType extends js.Any
+  object SipType extends js.Object {
+    val WORK = "WORK".asInstanceOf[SipType]
 
     val values = js.Object.freeze(js.Array(WORK))
   }
@@ -5218,18 +5213,20 @@ package alexaforbusiness {
       __obj.asInstanceOf[SkillSummary]
     }
   }
-
-  object SkillTypeEnum {
-    val PUBLIC  = "PUBLIC"
-    val PRIVATE = "PRIVATE"
+  @js.native
+  sealed trait SkillType extends js.Any
+  object SkillType extends js.Object {
+    val PUBLIC  = "PUBLIC".asInstanceOf[SkillType]
+    val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
-
-  object SkillTypeFilterEnum {
-    val PUBLIC  = "PUBLIC"
-    val PRIVATE = "PRIVATE"
-    val ALL     = "ALL"
+  @js.native
+  sealed trait SkillTypeFilter extends js.Any
+  object SkillTypeFilter extends js.Object {
+    val PUBLIC  = "PUBLIC".asInstanceOf[SkillTypeFilter]
+    val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
+    val ALL     = "ALL".asInstanceOf[SkillTypeFilter]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
   }
@@ -5319,10 +5316,11 @@ package alexaforbusiness {
       __obj.asInstanceOf[Sort]
     }
   }
-
-  object SortValueEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait SortValue extends js.Any
+  object SortValue extends js.Object {
+    val ASC  = "ASC".asInstanceOf[SortValue]
+    val DESC = "DESC".asInstanceOf[SortValue]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -5476,10 +5474,11 @@ package alexaforbusiness {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TemperatureUnitEnum {
-    val FAHRENHEIT = "FAHRENHEIT"
-    val CELSIUS    = "CELSIUS"
+  @js.native
+  sealed trait TemperatureUnit extends js.Any
+  object TemperatureUnit extends js.Object {
+    val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
+    val CELSIUS    = "CELSIUS".asInstanceOf[TemperatureUnit]
 
     val values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
   }
@@ -6148,12 +6147,13 @@ package alexaforbusiness {
       __obj.asInstanceOf[UserData]
     }
   }
-
-  object WakeWordEnum {
-    val ALEXA    = "ALEXA"
-    val AMAZON   = "AMAZON"
-    val ECHO     = "ECHO"
-    val COMPUTER = "COMPUTER"
+  @js.native
+  sealed trait WakeWord extends js.Any
+  object WakeWord extends js.Object {
+    val ALEXA    = "ALEXA".asInstanceOf[WakeWord]
+    val AMAZON   = "AMAZON".asInstanceOf[WakeWord]
+    val ECHO     = "ECHO".asInstanceOf[WakeWord]
+    val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
 
     val values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
   }

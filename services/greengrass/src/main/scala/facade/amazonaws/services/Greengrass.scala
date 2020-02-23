@@ -8,24 +8,12 @@ import facade.amazonaws._
 
 package object greengrass {
   type BulkDeploymentResults                       = js.Array[BulkDeploymentResult]
-  type BulkDeploymentStatus                        = String
   type BulkDeployments                             = js.Array[BulkDeployment]
-  type DeploymentType                              = String
   type Deployments                                 = js.Array[Deployment]
-  type EncodingType                                = String
   type ErrorDetails                                = js.Array[ErrorDetail]
-  type FunctionIsolationMode                       = String
-  type LoggerComponent                             = String
-  type LoggerLevel                                 = String
-  type LoggerType                                  = String
-  type Permission                                  = String
   type S3UrlSignerRole                             = String
-  type SoftwareToUpdate                            = String
   type Tags                                        = js.Dictionary[__string]
-  type UpdateAgentLogLevel                         = String
   type UpdateTargets                               = js.Array[__string]
-  type UpdateTargetsArchitecture                   = String
-  type UpdateTargetsOperatingSystem                = String
   type __boolean                                   = Boolean
   type __integer                                   = Int
   type __listOfConnectivityInfo                    = js.Array[ConnectivityInfo]
@@ -662,13 +650,15 @@ package greengrass {
   /**
     * The current status of the bulk deployment.
     */
-  object BulkDeploymentStatusEnum {
-    val Initializing = "Initializing"
-    val Running      = "Running"
-    val Completed    = "Completed"
-    val Stopping     = "Stopping"
-    val Stopped      = "Stopped"
-    val Failed       = "Failed"
+  @js.native
+  sealed trait BulkDeploymentStatus extends js.Any
+  object BulkDeploymentStatus extends js.Object {
+    val Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
+    val Running      = "Running".asInstanceOf[BulkDeploymentStatus]
+    val Completed    = "Completed".asInstanceOf[BulkDeploymentStatus]
+    val Stopping     = "Stopping".asInstanceOf[BulkDeploymentStatus]
+    val Stopped      = "Stopped".asInstanceOf[BulkDeploymentStatus]
+    val Failed       = "Failed".asInstanceOf[BulkDeploymentStatus]
 
     val values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
   }
@@ -2167,11 +2157,13 @@ package greengrass {
   /**
     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     */
-  object DeploymentTypeEnum {
-    val NewDeployment        = "NewDeployment"
-    val Redeployment         = "Redeployment"
-    val ResetDeployment      = "ResetDeployment"
-    val ForceResetDeployment = "ForceResetDeployment"
+  @js.native
+  sealed trait DeploymentType extends js.Any
+  object DeploymentType extends js.Object {
+    val NewDeployment        = "NewDeployment".asInstanceOf[DeploymentType]
+    val Redeployment         = "Redeployment".asInstanceOf[DeploymentType]
+    val ResetDeployment      = "ResetDeployment".asInstanceOf[DeploymentType]
+    val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
 
     val values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
   }
@@ -2287,10 +2279,11 @@ package greengrass {
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountResponse]
     }
   }
-
-  object EncodingTypeEnum {
-    val binary = "binary"
-    val json   = "json"
+  @js.native
+  sealed trait EncodingType extends js.Any
+  object EncodingType extends js.Object {
+    val binary = "binary".asInstanceOf[EncodingType]
+    val json   = "json".asInstanceOf[EncodingType]
 
     val values = js.Object.freeze(js.Array(binary, json))
   }
@@ -2497,9 +2490,11 @@ package greengrass {
   /**
     * Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     */
-  object FunctionIsolationModeEnum {
-    val GreengrassContainer = "GreengrassContainer"
-    val NoContainer         = "NoContainer"
+  @js.native
+  sealed trait FunctionIsolationMode extends js.Any
+  object FunctionIsolationMode extends js.Object {
+    val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
+    val NoContainer         = "NoContainer".asInstanceOf[FunctionIsolationMode]
 
     val values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
   }
@@ -4738,10 +4733,11 @@ package greengrass {
       __obj.asInstanceOf[Logger]
     }
   }
-
-  object LoggerComponentEnum {
-    val GreengrassSystem = "GreengrassSystem"
-    val Lambda           = "Lambda"
+  @js.native
+  sealed trait LoggerComponent extends js.Any
+  object LoggerComponent extends js.Object {
+    val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
+    val Lambda           = "Lambda".asInstanceOf[LoggerComponent]
 
     val values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
   }
@@ -4764,20 +4760,22 @@ package greengrass {
       __obj.asInstanceOf[LoggerDefinitionVersion]
     }
   }
-
-  object LoggerLevelEnum {
-    val DEBUG = "DEBUG"
-    val INFO  = "INFO"
-    val WARN  = "WARN"
-    val ERROR = "ERROR"
-    val FATAL = "FATAL"
+  @js.native
+  sealed trait LoggerLevel extends js.Any
+  object LoggerLevel extends js.Object {
+    val DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
+    val INFO  = "INFO".asInstanceOf[LoggerLevel]
+    val WARN  = "WARN".asInstanceOf[LoggerLevel]
+    val ERROR = "ERROR".asInstanceOf[LoggerLevel]
+    val FATAL = "FATAL".asInstanceOf[LoggerLevel]
 
     val values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
   }
-
-  object LoggerTypeEnum {
-    val FileSystem    = "FileSystem"
-    val AWSCloudWatch = "AWSCloudWatch"
+  @js.native
+  sealed trait LoggerType extends js.Any
+  object LoggerType extends js.Object {
+    val FileSystem    = "FileSystem".asInstanceOf[LoggerType]
+    val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
 
     val values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
   }
@@ -4785,9 +4783,11 @@ package greengrass {
   /**
     * The type of permission a function has to access a resource.
     */
-  object PermissionEnum {
-    val ro = "ro"
-    val rw = "rw"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val ro = "ro".asInstanceOf[Permission]
+    val rw = "rw".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(ro, rw))
   }
@@ -5046,9 +5046,11 @@ package greengrass {
   /**
     * The piece of software on the Greengrass core that will be updated.
     */
-  object SoftwareToUpdateEnum {
-    val core      = "core"
-    val ota_agent = "ota_agent"
+  @js.native
+  sealed trait SoftwareToUpdate extends js.Any
+  object SoftwareToUpdate extends js.Object {
+    val core      = "core".asInstanceOf[SoftwareToUpdate]
+    val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
 
     val values = js.Object.freeze(js.Array(core, ota_agent))
   }
@@ -5227,15 +5229,17 @@ package greengrass {
   /**
     * The minimum level of log statements that should be logged by the OTA Agent during an update.
     */
-  object UpdateAgentLogLevelEnum {
-    val NONE    = "NONE"
-    val TRACE   = "TRACE"
-    val DEBUG   = "DEBUG"
-    val VERBOSE = "VERBOSE"
-    val INFO    = "INFO"
-    val WARN    = "WARN"
-    val ERROR   = "ERROR"
-    val FATAL   = "FATAL"
+  @js.native
+  sealed trait UpdateAgentLogLevel extends js.Any
+  object UpdateAgentLogLevel extends js.Object {
+    val NONE    = "NONE".asInstanceOf[UpdateAgentLogLevel]
+    val TRACE   = "TRACE".asInstanceOf[UpdateAgentLogLevel]
+    val DEBUG   = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
+    val VERBOSE = "VERBOSE".asInstanceOf[UpdateAgentLogLevel]
+    val INFO    = "INFO".asInstanceOf[UpdateAgentLogLevel]
+    val WARN    = "WARN".asInstanceOf[UpdateAgentLogLevel]
+    val ERROR   = "ERROR".asInstanceOf[UpdateAgentLogLevel]
+    val FATAL   = "FATAL".asInstanceOf[UpdateAgentLogLevel]
 
     val values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
   }
@@ -5607,11 +5611,13 @@ package greengrass {
   /**
     * The architecture of the cores which are the targets of an update.
     */
-  object UpdateTargetsArchitectureEnum {
-    val armv6l  = "armv6l"
-    val armv7l  = "armv7l"
-    val x86_64  = "x86_64"
-    val aarch64 = "aarch64"
+  @js.native
+  sealed trait UpdateTargetsArchitecture extends js.Any
+  object UpdateTargetsArchitecture extends js.Object {
+    val armv6l  = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
+    val armv7l  = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
+    val x86_64  = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
+    val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
 
     val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
   }
@@ -5619,11 +5625,13 @@ package greengrass {
   /**
     * The operating system of the cores which are the targets of an update.
     */
-  object UpdateTargetsOperatingSystemEnum {
-    val ubuntu       = "ubuntu"
-    val raspbian     = "raspbian"
-    val amazon_linux = "amazon_linux"
-    val openwrt      = "openwrt"
+  @js.native
+  sealed trait UpdateTargetsOperatingSystem extends js.Any
+  object UpdateTargetsOperatingSystem extends js.Object {
+    val ubuntu       = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
+    val raspbian     = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
+    val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
+    val openwrt      = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
     val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
   }

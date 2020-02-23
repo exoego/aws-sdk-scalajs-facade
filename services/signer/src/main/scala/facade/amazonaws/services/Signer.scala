@@ -8,17 +8,13 @@ import facade.amazonaws._
 
 package object signer {
   type BucketName            = String
-  type Category              = String
   type CertificateArn        = String
   type ClientRequestToken    = String
   type CompletedAt           = js.Date
   type CreatedAt             = js.Date
   type DisplayName           = String
-  type EncryptionAlgorithm   = String
   type EncryptionAlgorithms  = js.Array[EncryptionAlgorithm]
-  type HashAlgorithm         = String
   type HashAlgorithms        = js.Array[HashAlgorithm]
-  type ImageFormat           = String
   type ImageFormats          = js.Array[ImageFormat]
   type JobId                 = String
   type Key                   = String
@@ -34,9 +30,7 @@ package object signer {
   type SigningParameterValue = String
   type SigningParameters     = js.Dictionary[SigningParameterValue]
   type SigningPlatforms      = js.Array[SigningPlatform]
-  type SigningProfileStatus  = String
   type SigningProfiles       = js.Array[SigningProfile]
-  type SigningStatus         = String
   type StatusReason          = String
   type TagKey                = String
   type TagKeyList            = js.Array[TagKey]
@@ -111,9 +105,10 @@ package signer {
       __obj.asInstanceOf[CancelSigningProfileRequest]
     }
   }
-
-  object CategoryEnum {
-    val AWSIoT = "AWSIoT"
+  @js.native
+  sealed trait Category extends js.Any
+  object Category extends js.Object {
+    val AWSIoT = "AWSIoT".asInstanceOf[Category]
 
     val values = js.Object.freeze(js.Array(AWSIoT))
   }
@@ -206,10 +201,11 @@ package signer {
       __obj.asInstanceOf[Destination]
     }
   }
-
-  object EncryptionAlgorithmEnum {
-    val RSA   = "RSA"
-    val ECDSA = "ECDSA"
+  @js.native
+  sealed trait EncryptionAlgorithm extends js.Any
+  object EncryptionAlgorithm extends js.Object {
+    val RSA   = "RSA".asInstanceOf[EncryptionAlgorithm]
+    val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
     val values = js.Object.freeze(js.Array(RSA, ECDSA))
   }
@@ -347,10 +343,11 @@ package signer {
       __obj.asInstanceOf[GetSigningProfileResponse]
     }
   }
-
-  object HashAlgorithmEnum {
-    val SHA1   = "SHA1"
-    val SHA256 = "SHA256"
+  @js.native
+  sealed trait HashAlgorithm extends js.Any
+  object HashAlgorithm extends js.Object {
+    val SHA1   = "SHA1".asInstanceOf[HashAlgorithm]
+    val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
     val values = js.Object.freeze(js.Array(SHA1, SHA256))
   }
@@ -378,9 +375,10 @@ package signer {
       __obj.asInstanceOf[HashAlgorithmOptions]
     }
   }
-
-  object ImageFormatEnum {
-    val JSON = "JSON"
+  @js.native
+  sealed trait ImageFormat extends js.Any
+  object ImageFormat extends js.Object {
+    val JSON = "JSON".asInstanceOf[ImageFormat]
 
     val values = js.Object.freeze(js.Array(JSON))
   }
@@ -913,18 +911,20 @@ package signer {
       __obj.asInstanceOf[SigningProfile]
     }
   }
-
-  object SigningProfileStatusEnum {
-    val Active   = "Active"
-    val Canceled = "Canceled"
+  @js.native
+  sealed trait SigningProfileStatus extends js.Any
+  object SigningProfileStatus extends js.Object {
+    val Active   = "Active".asInstanceOf[SigningProfileStatus]
+    val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
     val values = js.Object.freeze(js.Array(Active, Canceled))
   }
-
-  object SigningStatusEnum {
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Succeeded  = "Succeeded"
+  @js.native
+  sealed trait SigningStatus extends js.Any
+  object SigningStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[SigningStatus]
+    val Failed     = "Failed".asInstanceOf[SigningStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[SigningStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }

@@ -7,11 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elasticache {
-  type AZMode                              = String
   type AllowedNodeGroupId                  = String
-  type AuthTokenUpdateStatus               = String
-  type AuthTokenUpdateStrategyType         = String
-  type AutomaticFailoverStatus             = String
   type AvailabilityZonesList               = js.Array[String]
   type BooleanOptional                     = Boolean
   type CacheClusterIdList                  = js.Array[String]
@@ -27,7 +23,6 @@ package object elasticache {
   type CacheSecurityGroupNameList          = js.Array[String]
   type CacheSecurityGroups                 = js.Array[CacheSecurityGroup]
   type CacheSubnetGroups                   = js.Array[CacheSubnetGroup]
-  type ChangeType                          = String
   type ClusterIdList                       = js.Array[String]
   type CustomerNodeEndpointList            = js.Array[CustomerNodeEndpoint]
   type EC2SecurityGroupList                = js.Array[EC2SecurityGroup]
@@ -43,11 +38,8 @@ package object elasticache {
   type NodeGroupsToRetainList              = js.Array[AllowedNodeGroupId]
   type NodeSnapshotList                    = js.Array[NodeSnapshot]
   type NodeTypeList                        = js.Array[String]
-  type NodeUpdateInitiatedBy               = String
-  type NodeUpdateStatus                    = String
   type ParameterNameValueList              = js.Array[ParameterNameValue]
   type ParametersList                      = js.Array[Parameter]
-  type PendingAutomaticFailoverStatus      = String
   type PreferredAvailabilityZoneList       = js.Array[String]
   type ProcessedUpdateActionList           = js.Array[ProcessedUpdateAction]
   type RecurringChargeList                 = js.Array[RecurringCharge]
@@ -61,21 +53,15 @@ package object elasticache {
   type SecurityGroupIdsList                = js.Array[String]
   type SecurityGroupMembershipList         = js.Array[SecurityGroupMembership]
   type ServiceUpdateList                   = js.Array[ServiceUpdate]
-  type ServiceUpdateSeverity               = String
-  type ServiceUpdateStatus                 = String
   type ServiceUpdateStatusList             = js.Array[ServiceUpdateStatus]
-  type ServiceUpdateType                   = String
-  type SlaMet                              = String
   type SnapshotArnsList                    = js.Array[String]
   type SnapshotList                        = js.Array[Snapshot]
-  type SourceType                          = String
   type SubnetIdentifierList                = js.Array[String]
   type SubnetList                          = js.Array[Subnet]
   type TStamp                              = js.Date
   type TagList                             = js.Array[Tag]
   type UnprocessedUpdateActionList         = js.Array[UnprocessedUpdateAction]
   type UpdateActionList                    = js.Array[UpdateAction]
-  type UpdateActionStatus                  = String
   type UpdateActionStatusList              = js.Array[UpdateActionStatus]
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
@@ -286,10 +272,11 @@ package elasticache {
     def startMigration(params: StartMigrationMessage): Request[StartMigrationResponse] = js.native
     def testFailover(params: TestFailoverMessage): Request[TestFailoverResult]         = js.native
   }
-
-  object AZModeEnum {
-    val `single-az` = "single-az"
-    val `cross-az`  = "cross-az"
+  @js.native
+  sealed trait AZMode extends js.Any
+  object AZMode extends js.Object {
+    val `single-az` = "single-az".asInstanceOf[AZMode]
+    val `cross-az`  = "cross-az".asInstanceOf[AZMode]
 
     val values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
   }
@@ -339,17 +326,19 @@ package elasticache {
       __obj.asInstanceOf[AllowedNodeTypeModificationsMessage]
     }
   }
-
-  object AuthTokenUpdateStatusEnum {
-    val SETTING  = "SETTING"
-    val ROTATING = "ROTATING"
+  @js.native
+  sealed trait AuthTokenUpdateStatus extends js.Any
+  object AuthTokenUpdateStatus extends js.Object {
+    val SETTING  = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
+    val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
 
     val values = js.Object.freeze(js.Array(SETTING, ROTATING))
   }
-
-  object AuthTokenUpdateStrategyTypeEnum {
-    val SET    = "SET"
-    val ROTATE = "ROTATE"
+  @js.native
+  sealed trait AuthTokenUpdateStrategyType extends js.Any
+  object AuthTokenUpdateStrategyType extends js.Object {
+    val SET    = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
+    val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
 
     val values = js.Object.freeze(js.Array(SET, ROTATE))
   }
@@ -396,12 +385,13 @@ package elasticache {
       __obj.asInstanceOf[AuthorizeCacheSecurityGroupIngressResult]
     }
   }
-
-  object AutomaticFailoverStatusEnum {
-    val enabled   = "enabled"
-    val disabled  = "disabled"
-    val enabling  = "enabling"
-    val disabling = "disabling"
+  @js.native
+  sealed trait AutomaticFailoverStatus extends js.Any
+  object AutomaticFailoverStatus extends js.Object {
+    val enabled   = "enabled".asInstanceOf[AutomaticFailoverStatus]
+    val disabled  = "disabled".asInstanceOf[AutomaticFailoverStatus]
+    val enabling  = "enabling".asInstanceOf[AutomaticFailoverStatus]
+    val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
   }
@@ -1077,10 +1067,11 @@ package elasticache {
       __obj.asInstanceOf[CacheSubnetGroupMessage]
     }
   }
-
-  object ChangeTypeEnum {
-    val immediate         = "immediate"
-    val `requires-reboot` = "requires-reboot"
+  @js.native
+  sealed trait ChangeType extends js.Any
+  object ChangeType extends js.Object {
+    val immediate         = "immediate".asInstanceOf[ChangeType]
+    val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
   }
@@ -3071,21 +3062,23 @@ package elasticache {
       __obj.asInstanceOf[NodeSnapshot]
     }
   }
-
-  object NodeUpdateInitiatedByEnum {
-    val system   = "system"
-    val customer = "customer"
+  @js.native
+  sealed trait NodeUpdateInitiatedBy extends js.Any
+  object NodeUpdateInitiatedBy extends js.Object {
+    val system   = "system".asInstanceOf[NodeUpdateInitiatedBy]
+    val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
 
     val values = js.Object.freeze(js.Array(system, customer))
   }
-
-  object NodeUpdateStatusEnum {
-    val `not-applied`      = "not-applied"
-    val `waiting-to-start` = "waiting-to-start"
-    val `in-progress`      = "in-progress"
-    val stopping           = "stopping"
-    val stopped            = "stopped"
-    val complete           = "complete"
+  @js.native
+  sealed trait NodeUpdateStatus extends js.Any
+  object NodeUpdateStatus extends js.Object {
+    val `not-applied`      = "not-applied".asInstanceOf[NodeUpdateStatus]
+    val `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
+    val `in-progress`      = "in-progress".asInstanceOf[NodeUpdateStatus]
+    val stopping           = "stopping".asInstanceOf[NodeUpdateStatus]
+    val stopped            = "stopped".asInstanceOf[NodeUpdateStatus]
+    val complete           = "complete".asInstanceOf[NodeUpdateStatus]
 
     val values =
       js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
@@ -3177,10 +3170,11 @@ package elasticache {
       __obj.asInstanceOf[ParameterNameValue]
     }
   }
-
-  object PendingAutomaticFailoverStatusEnum {
-    val enabled  = "enabled"
-    val disabled = "disabled"
+  @js.native
+  sealed trait PendingAutomaticFailoverStatus extends js.Any
+  object PendingAutomaticFailoverStatus extends js.Object {
+    val enabled  = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled))
   }
@@ -3830,26 +3824,29 @@ package elasticache {
       __obj.asInstanceOf[ServiceUpdate]
     }
   }
-
-  object ServiceUpdateSeverityEnum {
-    val critical  = "critical"
-    val important = "important"
-    val medium    = "medium"
-    val low       = "low"
+  @js.native
+  sealed trait ServiceUpdateSeverity extends js.Any
+  object ServiceUpdateSeverity extends js.Object {
+    val critical  = "critical".asInstanceOf[ServiceUpdateSeverity]
+    val important = "important".asInstanceOf[ServiceUpdateSeverity]
+    val medium    = "medium".asInstanceOf[ServiceUpdateSeverity]
+    val low       = "low".asInstanceOf[ServiceUpdateSeverity]
 
     val values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
-
-  object ServiceUpdateStatusEnum {
-    val available = "available"
-    val cancelled = "cancelled"
-    val expired   = "expired"
+  @js.native
+  sealed trait ServiceUpdateStatus extends js.Any
+  object ServiceUpdateStatus extends js.Object {
+    val available = "available".asInstanceOf[ServiceUpdateStatus]
+    val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
+    val expired   = "expired".asInstanceOf[ServiceUpdateStatus]
 
     val values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
-
-  object ServiceUpdateTypeEnum {
-    val `security-update` = "security-update"
+  @js.native
+  sealed trait ServiceUpdateType extends js.Any
+  object ServiceUpdateType extends js.Object {
+    val `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
 
     val values = js.Object.freeze(js.Array(`security-update`))
   }
@@ -3872,11 +3869,12 @@ package elasticache {
       __obj.asInstanceOf[ServiceUpdatesMessage]
     }
   }
-
-  object SlaMetEnum {
-    val yes   = "yes"
-    val no    = "no"
-    val `n/a` = "n/a"
+  @js.native
+  sealed trait SlaMet extends js.Any
+  object SlaMet extends js.Object {
+    val yes   = "yes".asInstanceOf[SlaMet]
+    val no    = "no".asInstanceOf[SlaMet]
+    val `n/a` = "n/a".asInstanceOf[SlaMet]
 
     val values = js.Object.freeze(js.Array(yes, no, `n/a`))
   }
@@ -3996,13 +3994,14 @@ package elasticache {
       __obj.asInstanceOf[Snapshot]
     }
   }
-
-  object SourceTypeEnum {
-    val `cache-cluster`         = "cache-cluster"
-    val `cache-parameter-group` = "cache-parameter-group"
-    val `cache-security-group`  = "cache-security-group"
-    val `cache-subnet-group`    = "cache-subnet-group"
-    val `replication-group`     = "replication-group"
+  @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType extends js.Object {
+    val `cache-cluster`         = "cache-cluster".asInstanceOf[SourceType]
+    val `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
+    val `cache-security-group`  = "cache-security-group".asInstanceOf[SourceType]
+    val `cache-subnet-group`    = "cache-subnet-group".asInstanceOf[SourceType]
+    val `replication-group`     = "replication-group".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4296,14 +4295,15 @@ package elasticache {
       __obj.asInstanceOf[UpdateActionResultsMessage]
     }
   }
-
-  object UpdateActionStatusEnum {
-    val `not-applied`      = "not-applied"
-    val `waiting-to-start` = "waiting-to-start"
-    val `in-progress`      = "in-progress"
-    val stopping           = "stopping"
-    val stopped            = "stopped"
-    val complete           = "complete"
+  @js.native
+  sealed trait UpdateActionStatus extends js.Any
+  object UpdateActionStatus extends js.Object {
+    val `not-applied`      = "not-applied".asInstanceOf[UpdateActionStatus]
+    val `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
+    val `in-progress`      = "in-progress".asInstanceOf[UpdateActionStatus]
+    val stopping           = "stopping".asInstanceOf[UpdateActionStatus]
+    val stopped            = "stopped".asInstanceOf[UpdateActionStatus]
+    val complete           = "complete".asInstanceOf[UpdateActionStatus]
 
     val values =
       js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))

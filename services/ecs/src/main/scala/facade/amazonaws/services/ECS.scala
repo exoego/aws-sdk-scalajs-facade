@@ -7,125 +7,79 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ecs {
-  type AgentUpdateStatus                     = String
-  type AssignPublicIp                        = String
-  type AttachmentDetails                     = js.Array[KeyValuePair]
-  type AttachmentStateChanges                = js.Array[AttachmentStateChange]
-  type Attachments                           = js.Array[Attachment]
-  type Attributes                            = js.Array[Attribute]
-  type BoxedBoolean                          = Boolean
-  type BoxedInteger                          = Int
-  type CapacityProviderField                 = String
-  type CapacityProviderFieldList             = js.Array[CapacityProviderField]
-  type CapacityProviderStatus                = String
-  type CapacityProviderStrategy              = js.Array[CapacityProviderStrategyItem]
-  type CapacityProviderStrategyItemBase      = Int
-  type CapacityProviderStrategyItemWeight    = Int
-  type CapacityProviders                     = js.Array[CapacityProvider]
-  type ClusterField                          = String
-  type ClusterFieldList                      = js.Array[ClusterField]
-  type ClusterSettingName                    = String
-  type ClusterSettings                       = js.Array[ClusterSetting]
-  type Clusters                              = js.Array[Cluster]
-  type Compatibility                         = String
-  type CompatibilityList                     = js.Array[Compatibility]
-  type Connectivity                          = String
-  type ContainerCondition                    = String
-  type ContainerDefinitions                  = js.Array[ContainerDefinition]
-  type ContainerDependencies                 = js.Array[ContainerDependency]
-  type ContainerInstanceField                = String
-  type ContainerInstanceFieldList            = js.Array[ContainerInstanceField]
-  type ContainerInstanceStatus               = String
-  type ContainerInstances                    = js.Array[ContainerInstance]
-  type ContainerOverrides                    = js.Array[ContainerOverride]
-  type ContainerStateChanges                 = js.Array[ContainerStateChange]
-  type Containers                            = js.Array[Container]
-  type DeploymentControllerType              = String
-  type Deployments                           = js.Array[Deployment]
-  type DesiredStatus                         = String
-  type DeviceCgroupPermission                = String
-  type DeviceCgroupPermissions               = js.Array[DeviceCgroupPermission]
-  type DevicesList                           = js.Array[Device]
-  type DockerLabelsMap                       = js.Dictionary[String]
-  type EnvironmentVariables                  = js.Array[KeyValuePair]
-  type Failures                              = js.Array[Failure]
-  type FirelensConfigurationOptionsMap       = js.Dictionary[String]
-  type FirelensConfigurationType             = String
-  type GpuIds                                = js.Array[String]
-  type HealthStatus                          = String
-  type HostEntryList                         = js.Array[HostEntry]
-  type InferenceAcceleratorOverrides         = js.Array[InferenceAcceleratorOverride]
-  type InferenceAccelerators                 = js.Array[InferenceAccelerator]
-  type IpcMode                               = String
-  type LaunchType                            = String
-  type LoadBalancers                         = js.Array[LoadBalancer]
-  type LogConfigurationOptionsMap            = js.Dictionary[String]
-  type LogDriver                             = String
-  type ManagedScalingStatus                  = String
-  type ManagedScalingStepSize                = Int
-  type ManagedScalingTargetCapacity          = Int
-  type ManagedTerminationProtection          = String
-  type MountPointList                        = js.Array[MountPoint]
-  type NetworkBindings                       = js.Array[NetworkBinding]
-  type NetworkInterfaces                     = js.Array[NetworkInterface]
-  type NetworkMode                           = String
-  type PidMode                               = String
-  type PlacementConstraintType               = String
-  type PlacementConstraints                  = js.Array[PlacementConstraint]
-  type PlacementStrategies                   = js.Array[PlacementStrategy]
-  type PlacementStrategyType                 = String
-  type PlatformDeviceType                    = String
-  type PlatformDevices                       = js.Array[PlatformDevice]
-  type PortMappingList                       = js.Array[PortMapping]
-  type PropagateTags                         = String
-  type ProxyConfigurationProperties          = js.Array[KeyValuePair]
-  type ProxyConfigurationType                = String
-  type RequiresAttributes                    = js.Array[Attribute]
-  type ResourceRequirements                  = js.Array[ResourceRequirement]
-  type ResourceType                          = String
-  type Resources                             = js.Array[Resource]
-  type ScaleUnit                             = String
-  type SchedulingStrategy                    = String
-  type Scope                                 = String
-  type SecretList                            = js.Array[Secret]
-  type ServiceEvents                         = js.Array[ServiceEvent]
-  type ServiceField                          = String
-  type ServiceFieldList                      = js.Array[ServiceField]
-  type ServiceRegistries                     = js.Array[ServiceRegistry]
-  type Services                              = js.Array[Service]
-  type SettingName                           = String
-  type Settings                              = js.Array[Setting]
-  type SortOrder                             = String
-  type StabilityStatus                       = String
-  type Statistics                            = js.Array[KeyValuePair]
-  type StringList                            = js.Array[String]
-  type StringMap                             = js.Dictionary[String]
-  type SystemControls                        = js.Array[SystemControl]
-  type TagKey                                = String
-  type TagKeys                               = js.Array[TagKey]
-  type TagValue                              = String
-  type Tags                                  = js.Array[Tag]
-  type TargetType                            = String
-  type TaskDefinitionFamilyStatus            = String
-  type TaskDefinitionField                   = String
-  type TaskDefinitionFieldList               = js.Array[TaskDefinitionField]
-  type TaskDefinitionPlacementConstraintType = String
-  type TaskDefinitionPlacementConstraints    = js.Array[TaskDefinitionPlacementConstraint]
-  type TaskDefinitionStatus                  = String
-  type TaskField                             = String
-  type TaskFieldList                         = js.Array[TaskField]
-  type TaskSetField                          = String
-  type TaskSetFieldList                      = js.Array[TaskSetField]
-  type TaskSets                              = js.Array[TaskSet]
-  type TaskStopCode                          = String
-  type Tasks                                 = js.Array[Task]
-  type Timestamp                             = js.Date
-  type TmpfsList                             = js.Array[Tmpfs]
-  type TransportProtocol                     = String
-  type UlimitList                            = js.Array[Ulimit]
-  type UlimitName                            = String
-  type VolumeFromList                        = js.Array[VolumeFrom]
-  type VolumeList                            = js.Array[Volume]
+  type AttachmentDetails                  = js.Array[KeyValuePair]
+  type AttachmentStateChanges             = js.Array[AttachmentStateChange]
+  type Attachments                        = js.Array[Attachment]
+  type Attributes                         = js.Array[Attribute]
+  type BoxedBoolean                       = Boolean
+  type BoxedInteger                       = Int
+  type CapacityProviderFieldList          = js.Array[CapacityProviderField]
+  type CapacityProviderStrategy           = js.Array[CapacityProviderStrategyItem]
+  type CapacityProviderStrategyItemBase   = Int
+  type CapacityProviderStrategyItemWeight = Int
+  type CapacityProviders                  = js.Array[CapacityProvider]
+  type ClusterFieldList                   = js.Array[ClusterField]
+  type ClusterSettings                    = js.Array[ClusterSetting]
+  type Clusters                           = js.Array[Cluster]
+  type CompatibilityList                  = js.Array[Compatibility]
+  type ContainerDefinitions               = js.Array[ContainerDefinition]
+  type ContainerDependencies              = js.Array[ContainerDependency]
+  type ContainerInstanceFieldList         = js.Array[ContainerInstanceField]
+  type ContainerInstances                 = js.Array[ContainerInstance]
+  type ContainerOverrides                 = js.Array[ContainerOverride]
+  type ContainerStateChanges              = js.Array[ContainerStateChange]
+  type Containers                         = js.Array[Container]
+  type Deployments                        = js.Array[Deployment]
+  type DeviceCgroupPermissions            = js.Array[DeviceCgroupPermission]
+  type DevicesList                        = js.Array[Device]
+  type DockerLabelsMap                    = js.Dictionary[String]
+  type EnvironmentVariables               = js.Array[KeyValuePair]
+  type Failures                           = js.Array[Failure]
+  type FirelensConfigurationOptionsMap    = js.Dictionary[String]
+  type GpuIds                             = js.Array[String]
+  type HostEntryList                      = js.Array[HostEntry]
+  type InferenceAcceleratorOverrides      = js.Array[InferenceAcceleratorOverride]
+  type InferenceAccelerators              = js.Array[InferenceAccelerator]
+  type LoadBalancers                      = js.Array[LoadBalancer]
+  type LogConfigurationOptionsMap         = js.Dictionary[String]
+  type ManagedScalingStepSize             = Int
+  type ManagedScalingTargetCapacity       = Int
+  type MountPointList                     = js.Array[MountPoint]
+  type NetworkBindings                    = js.Array[NetworkBinding]
+  type NetworkInterfaces                  = js.Array[NetworkInterface]
+  type PlacementConstraints               = js.Array[PlacementConstraint]
+  type PlacementStrategies                = js.Array[PlacementStrategy]
+  type PlatformDevices                    = js.Array[PlatformDevice]
+  type PortMappingList                    = js.Array[PortMapping]
+  type ProxyConfigurationProperties       = js.Array[KeyValuePair]
+  type RequiresAttributes                 = js.Array[Attribute]
+  type ResourceRequirements               = js.Array[ResourceRequirement]
+  type Resources                          = js.Array[Resource]
+  type SecretList                         = js.Array[Secret]
+  type ServiceEvents                      = js.Array[ServiceEvent]
+  type ServiceFieldList                   = js.Array[ServiceField]
+  type ServiceRegistries                  = js.Array[ServiceRegistry]
+  type Services                           = js.Array[Service]
+  type Settings                           = js.Array[Setting]
+  type Statistics                         = js.Array[KeyValuePair]
+  type StringList                         = js.Array[String]
+  type StringMap                          = js.Dictionary[String]
+  type SystemControls                     = js.Array[SystemControl]
+  type TagKey                             = String
+  type TagKeys                            = js.Array[TagKey]
+  type TagValue                           = String
+  type Tags                               = js.Array[Tag]
+  type TaskDefinitionFieldList            = js.Array[TaskDefinitionField]
+  type TaskDefinitionPlacementConstraints = js.Array[TaskDefinitionPlacementConstraint]
+  type TaskFieldList                      = js.Array[TaskField]
+  type TaskSetFieldList                   = js.Array[TaskSetField]
+  type TaskSets                           = js.Array[TaskSet]
+  type Tasks                              = js.Array[Task]
+  type Timestamp                          = js.Date
+  type TmpfsList                          = js.Array[Tmpfs]
+  type UlimitList                         = js.Array[Ulimit]
+  type VolumeFromList                     = js.Array[VolumeFrom]
+  type VolumeList                         = js.Array[Volume]
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
 
@@ -327,21 +281,23 @@ package ecs {
     ): Request[UpdateServicePrimaryTaskSetResponse]                                 = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
   }
-
-  object AgentUpdateStatusEnum {
-    val PENDING  = "PENDING"
-    val STAGING  = "STAGING"
-    val STAGED   = "STAGED"
-    val UPDATING = "UPDATING"
-    val UPDATED  = "UPDATED"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait AgentUpdateStatus extends js.Any
+  object AgentUpdateStatus extends js.Object {
+    val PENDING  = "PENDING".asInstanceOf[AgentUpdateStatus]
+    val STAGING  = "STAGING".asInstanceOf[AgentUpdateStatus]
+    val STAGED   = "STAGED".asInstanceOf[AgentUpdateStatus]
+    val UPDATING = "UPDATING".asInstanceOf[AgentUpdateStatus]
+    val UPDATED  = "UPDATED".asInstanceOf[AgentUpdateStatus]
+    val FAILED   = "FAILED".asInstanceOf[AgentUpdateStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
   }
-
-  object AssignPublicIpEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait AssignPublicIp extends js.Any
+  object AssignPublicIp extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[AssignPublicIp]
+    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -514,15 +470,17 @@ package ecs {
       __obj.asInstanceOf[CapacityProvider]
     }
   }
-
-  object CapacityProviderFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait CapacityProviderField extends js.Any
+  object CapacityProviderField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
-
-  object CapacityProviderStatusEnum {
-    val ACTIVE = "ACTIVE"
+  @js.native
+  sealed trait CapacityProviderStatus extends js.Any
+  object CapacityProviderStatus extends js.Object {
+    val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE))
   }
@@ -615,12 +573,13 @@ package ecs {
       __obj.asInstanceOf[Cluster]
     }
   }
-
-  object ClusterFieldEnum {
-    val ATTACHMENTS = "ATTACHMENTS"
-    val SETTINGS    = "SETTINGS"
-    val STATISTICS  = "STATISTICS"
-    val TAGS        = "TAGS"
+  @js.native
+  sealed trait ClusterField extends js.Any
+  object ClusterField extends js.Object {
+    val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
+    val SETTINGS    = "SETTINGS".asInstanceOf[ClusterField]
+    val STATISTICS  = "STATISTICS".asInstanceOf[ClusterField]
+    val TAGS        = "TAGS".asInstanceOf[ClusterField]
 
     val values = js.Object.freeze(js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS))
   }
@@ -646,23 +605,26 @@ package ecs {
       __obj.asInstanceOf[ClusterSetting]
     }
   }
-
-  object ClusterSettingNameEnum {
-    val containerInsights = "containerInsights"
+  @js.native
+  sealed trait ClusterSettingName extends js.Any
+  object ClusterSettingName extends js.Object {
+    val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
 
     val values = js.Object.freeze(js.Array(containerInsights))
   }
-
-  object CompatibilityEnum {
-    val EC2     = "EC2"
-    val FARGATE = "FARGATE"
+  @js.native
+  sealed trait Compatibility extends js.Any
+  object Compatibility extends js.Object {
+    val EC2     = "EC2".asInstanceOf[Compatibility]
+    val FARGATE = "FARGATE".asInstanceOf[Compatibility]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
-
-  object ConnectivityEnum {
-    val CONNECTED    = "CONNECTED"
-    val DISCONNECTED = "DISCONNECTED"
+  @js.native
+  sealed trait Connectivity extends js.Any
+  object Connectivity extends js.Object {
+    val CONNECTED    = "CONNECTED".asInstanceOf[Connectivity]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
   }
@@ -730,12 +692,13 @@ package ecs {
       __obj.asInstanceOf[Container]
     }
   }
-
-  object ContainerConditionEnum {
-    val START    = "START"
-    val COMPLETE = "COMPLETE"
-    val SUCCESS  = "SUCCESS"
-    val HEALTHY  = "HEALTHY"
+  @js.native
+  sealed trait ContainerCondition extends js.Any
+  object ContainerCondition extends js.Object {
+    val START    = "START".asInstanceOf[ContainerCondition]
+    val COMPLETE = "COMPLETE".asInstanceOf[ContainerCondition]
+    val SUCCESS  = "SUCCESS".asInstanceOf[ContainerCondition]
+    val HEALTHY  = "HEALTHY".asInstanceOf[ContainerCondition]
 
     val values = js.Object.freeze(js.Array(START, COMPLETE, SUCCESS, HEALTHY))
   }
@@ -963,19 +926,21 @@ package ecs {
       __obj.asInstanceOf[ContainerInstance]
     }
   }
-
-  object ContainerInstanceFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait ContainerInstanceField extends js.Any
+  object ContainerInstanceField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
-
-  object ContainerInstanceStatusEnum {
-    val ACTIVE              = "ACTIVE"
-    val DRAINING            = "DRAINING"
-    val REGISTERING         = "REGISTERING"
-    val DEREGISTERING       = "DEREGISTERING"
-    val REGISTRATION_FAILED = "REGISTRATION_FAILED"
+  @js.native
+  sealed trait ContainerInstanceStatus extends js.Any
+  object ContainerInstanceStatus extends js.Object {
+    val ACTIVE              = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
+    val DRAINING            = "DRAINING".asInstanceOf[ContainerInstanceStatus]
+    val REGISTERING         = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
+    val DEREGISTERING       = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
+    val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED))
   }
@@ -1591,11 +1556,12 @@ package ecs {
       __obj.asInstanceOf[DeploymentController]
     }
   }
-
-  object DeploymentControllerTypeEnum {
-    val ECS         = "ECS"
-    val CODE_DEPLOY = "CODE_DEPLOY"
-    val EXTERNAL    = "EXTERNAL"
+  @js.native
+  sealed trait DeploymentControllerType extends js.Any
+  object DeploymentControllerType extends js.Object {
+    val ECS         = "ECS".asInstanceOf[DeploymentControllerType]
+    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
+    val EXTERNAL    = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
     val values = js.Object.freeze(js.Array(ECS, CODE_DEPLOY, EXTERNAL))
   }
@@ -1973,11 +1939,12 @@ package ecs {
       __obj.asInstanceOf[DescribeTasksResponse]
     }
   }
-
-  object DesiredStatusEnum {
-    val RUNNING = "RUNNING"
-    val PENDING = "PENDING"
-    val STOPPED = "STOPPED"
+  @js.native
+  sealed trait DesiredStatus extends js.Any
+  object DesiredStatus extends js.Object {
+    val RUNNING = "RUNNING".asInstanceOf[DesiredStatus]
+    val PENDING = "PENDING".asInstanceOf[DesiredStatus]
+    val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, PENDING, STOPPED))
   }
@@ -2008,11 +1975,12 @@ package ecs {
       __obj.asInstanceOf[Device]
     }
   }
-
-  object DeviceCgroupPermissionEnum {
-    val read  = "read"
-    val write = "write"
-    val mknod = "mknod"
+  @js.native
+  sealed trait DeviceCgroupPermission extends js.Any
+  object DeviceCgroupPermission extends js.Object {
+    val read  = "read".asInstanceOf[DeviceCgroupPermission]
+    val write = "write".asInstanceOf[DeviceCgroupPermission]
+    val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
 
     val values = js.Object.freeze(js.Array(read, write, mknod))
   }
@@ -2160,10 +2128,11 @@ package ecs {
       __obj.asInstanceOf[FirelensConfiguration]
     }
   }
-
-  object FirelensConfigurationTypeEnum {
-    val fluentd   = "fluentd"
-    val fluentbit = "fluentbit"
+  @js.native
+  sealed trait FirelensConfigurationType extends js.Any
+  object FirelensConfigurationType extends js.Object {
+    val fluentd   = "fluentd".asInstanceOf[FirelensConfigurationType]
+    val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
 
     val values = js.Object.freeze(js.Array(fluentd, fluentbit))
   }
@@ -2204,11 +2173,12 @@ package ecs {
       __obj.asInstanceOf[HealthCheck]
     }
   }
-
-  object HealthStatusEnum {
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
-    val UNKNOWN   = "UNKNOWN"
+  @js.native
+  sealed trait HealthStatus extends js.Any
+  object HealthStatus extends js.Object {
+    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
+    val UNKNOWN   = "UNKNOWN".asInstanceOf[HealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
@@ -2301,11 +2271,12 @@ package ecs {
       __obj.asInstanceOf[InferenceAcceleratorOverride]
     }
   }
-
-  object IpcModeEnum {
-    val host = "host"
-    val task = "task"
-    val none = "none"
+  @js.native
+  sealed trait IpcMode extends js.Any
+  object IpcMode extends js.Object {
+    val host = "host".asInstanceOf[IpcMode]
+    val task = "task".asInstanceOf[IpcMode]
+    val none = "none".asInstanceOf[IpcMode]
 
     val values = js.Object.freeze(js.Array(host, task, none))
   }
@@ -2353,10 +2324,11 @@ package ecs {
       __obj.asInstanceOf[KeyValuePair]
     }
   }
-
-  object LaunchTypeEnum {
-    val EC2     = "EC2"
-    val FARGATE = "FARGATE"
+  @js.native
+  sealed trait LaunchType extends js.Any
+  object LaunchType extends js.Object {
+    val EC2     = "EC2".asInstanceOf[LaunchType]
+    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
@@ -2876,16 +2848,17 @@ package ecs {
       __obj.asInstanceOf[LogConfiguration]
     }
   }
-
-  object LogDriverEnum {
-    val `json-file` = "json-file"
-    val syslog      = "syslog"
-    val journald    = "journald"
-    val gelf        = "gelf"
-    val fluentd     = "fluentd"
-    val awslogs     = "awslogs"
-    val splunk      = "splunk"
-    val awsfirelens = "awsfirelens"
+  @js.native
+  sealed trait LogDriver extends js.Any
+  object LogDriver extends js.Object {
+    val `json-file` = "json-file".asInstanceOf[LogDriver]
+    val syslog      = "syslog".asInstanceOf[LogDriver]
+    val journald    = "journald".asInstanceOf[LogDriver]
+    val gelf        = "gelf".asInstanceOf[LogDriver]
+    val fluentd     = "fluentd".asInstanceOf[LogDriver]
+    val awslogs     = "awslogs".asInstanceOf[LogDriver]
+    val splunk      = "splunk".asInstanceOf[LogDriver]
+    val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
 
     val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
   }
@@ -2919,17 +2892,19 @@ package ecs {
       __obj.asInstanceOf[ManagedScaling]
     }
   }
-
-  object ManagedScalingStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait ManagedScalingStatus extends js.Any
+  object ManagedScalingStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ManagedScalingStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
-
-  object ManagedTerminationProtectionEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait ManagedTerminationProtection extends js.Any
+  object ManagedTerminationProtection extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ManagedTerminationProtection]
+    val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -3030,19 +3005,21 @@ package ecs {
       __obj.asInstanceOf[NetworkInterface]
     }
   }
-
-  object NetworkModeEnum {
-    val bridge = "bridge"
-    val host   = "host"
-    val awsvpc = "awsvpc"
-    val none   = "none"
+  @js.native
+  sealed trait NetworkMode extends js.Any
+  object NetworkMode extends js.Object {
+    val bridge = "bridge".asInstanceOf[NetworkMode]
+    val host   = "host".asInstanceOf[NetworkMode]
+    val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
+    val none   = "none".asInstanceOf[NetworkMode]
 
     val values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
   }
-
-  object PidModeEnum {
-    val host = "host"
-    val task = "task"
+  @js.native
+  sealed trait PidMode extends js.Any
+  object PidMode extends js.Object {
+    val host = "host".asInstanceOf[PidMode]
+    val task = "task".asInstanceOf[PidMode]
 
     val values = js.Object.freeze(js.Array(host, task))
   }
@@ -3070,10 +3047,11 @@ package ecs {
       __obj.asInstanceOf[PlacementConstraint]
     }
   }
-
-  object PlacementConstraintTypeEnum {
-    val distinctInstance = "distinctInstance"
-    val memberOf         = "memberOf"
+  @js.native
+  sealed trait PlacementConstraintType extends js.Any
+  object PlacementConstraintType extends js.Object {
+    val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
+    val memberOf         = "memberOf".asInstanceOf[PlacementConstraintType]
 
     val values = js.Object.freeze(js.Array(distinctInstance, memberOf))
   }
@@ -3099,11 +3077,12 @@ package ecs {
       __obj.asInstanceOf[PlacementStrategy]
     }
   }
-
-  object PlacementStrategyTypeEnum {
-    val random  = "random"
-    val spread  = "spread"
-    val binpack = "binpack"
+  @js.native
+  sealed trait PlacementStrategyType extends js.Any
+  object PlacementStrategyType extends js.Object {
+    val random  = "random".asInstanceOf[PlacementStrategyType]
+    val spread  = "spread".asInstanceOf[PlacementStrategyType]
+    val binpack = "binpack".asInstanceOf[PlacementStrategyType]
 
     val values = js.Object.freeze(js.Array(random, spread, binpack))
   }
@@ -3131,9 +3110,10 @@ package ecs {
       __obj.asInstanceOf[PlatformDevice]
     }
   }
-
-  object PlatformDeviceTypeEnum {
-    val GPU = "GPU"
+  @js.native
+  sealed trait PlatformDeviceType extends js.Any
+  object PlatformDeviceType extends js.Object {
+    val GPU = "GPU".asInstanceOf[PlatformDeviceType]
 
     val values = js.Object.freeze(js.Array(GPU))
   }
@@ -3164,10 +3144,11 @@ package ecs {
       __obj.asInstanceOf[PortMapping]
     }
   }
-
-  object PropagateTagsEnum {
-    val TASK_DEFINITION = "TASK_DEFINITION"
-    val SERVICE         = "SERVICE"
+  @js.native
+  sealed trait PropagateTags extends js.Any
+  object PropagateTags extends js.Object {
+    val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
+    val SERVICE         = "SERVICE".asInstanceOf[PropagateTags]
 
     val values = js.Object.freeze(js.Array(TASK_DEFINITION, SERVICE))
   }
@@ -3200,9 +3181,10 @@ package ecs {
       __obj.asInstanceOf[ProxyConfiguration]
     }
   }
-
-  object ProxyConfigurationTypeEnum {
-    val APPMESH = "APPMESH"
+  @js.native
+  sealed trait ProxyConfigurationType extends js.Any
+  object ProxyConfigurationType extends js.Object {
+    val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
 
     val values = js.Object.freeze(js.Array(APPMESH))
   }
@@ -3576,10 +3558,11 @@ package ecs {
       __obj.asInstanceOf[ResourceRequirement]
     }
   }
-
-  object ResourceTypeEnum {
-    val GPU                  = "GPU"
-    val InferenceAccelerator = "InferenceAccelerator"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val GPU                  = "GPU".asInstanceOf[ResourceType]
+    val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(GPU, InferenceAccelerator))
   }
@@ -3687,23 +3670,26 @@ package ecs {
       __obj.asInstanceOf[Scale]
     }
   }
-
-  object ScaleUnitEnum {
-    val PERCENT = "PERCENT"
+  @js.native
+  sealed trait ScaleUnit extends js.Any
+  object ScaleUnit extends js.Object {
+    val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
 
     val values = js.Object.freeze(js.Array(PERCENT))
   }
-
-  object SchedulingStrategyEnum {
-    val REPLICA = "REPLICA"
-    val DAEMON  = "DAEMON"
+  @js.native
+  sealed trait SchedulingStrategy extends js.Any
+  object SchedulingStrategy extends js.Object {
+    val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
+    val DAEMON  = "DAEMON".asInstanceOf[SchedulingStrategy]
 
     val values = js.Object.freeze(js.Array(REPLICA, DAEMON))
   }
-
-  object ScopeEnum {
-    val task   = "task"
-    val shared = "shared"
+  @js.native
+  sealed trait Scope extends js.Any
+  object Scope extends js.Object {
+    val task   = "task".asInstanceOf[Scope]
+    val shared = "shared".asInstanceOf[Scope]
 
     val values = js.Object.freeze(js.Array(task, shared))
   }
@@ -3864,9 +3850,10 @@ package ecs {
       __obj.asInstanceOf[ServiceEvent]
     }
   }
-
-  object ServiceFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait ServiceField extends js.Any
+  object ServiceField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[ServiceField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
@@ -3923,13 +3910,14 @@ package ecs {
       __obj.asInstanceOf[Setting]
     }
   }
-
-  object SettingNameEnum {
-    val serviceLongArnFormat           = "serviceLongArnFormat"
-    val taskLongArnFormat              = "taskLongArnFormat"
-    val containerInstanceLongArnFormat = "containerInstanceLongArnFormat"
-    val awsvpcTrunking                 = "awsvpcTrunking"
-    val containerInsights              = "containerInsights"
+  @js.native
+  sealed trait SettingName extends js.Any
+  object SettingName extends js.Object {
+    val serviceLongArnFormat           = "serviceLongArnFormat".asInstanceOf[SettingName]
+    val taskLongArnFormat              = "taskLongArnFormat".asInstanceOf[SettingName]
+    val containerInstanceLongArnFormat = "containerInstanceLongArnFormat".asInstanceOf[SettingName]
+    val awsvpcTrunking                 = "awsvpcTrunking".asInstanceOf[SettingName]
+    val containerInsights              = "containerInsights".asInstanceOf[SettingName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3941,17 +3929,19 @@ package ecs {
       )
     )
   }
-
-  object SortOrderEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val ASC  = "ASC".asInstanceOf[SortOrder]
+    val DESC = "DESC".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
-
-  object StabilityStatusEnum {
-    val STEADY_STATE = "STEADY_STATE"
-    val STABILIZING  = "STABILIZING"
+  @js.native
+  sealed trait StabilityStatus extends js.Any
+  object StabilityStatus extends js.Object {
+    val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
+    val STABILIZING  = "STABILIZING".asInstanceOf[StabilityStatus]
 
     val values = js.Object.freeze(js.Array(STEADY_STATE, STABILIZING))
   }
@@ -4297,9 +4287,10 @@ package ecs {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TargetTypeEnum {
-    val `container-instance` = "container-instance"
+  @js.native
+  sealed trait TargetType extends js.Any
+  object TargetType extends js.Object {
+    val `container-instance` = "container-instance".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(`container-instance`))
   }
@@ -4491,17 +4482,19 @@ package ecs {
       __obj.asInstanceOf[TaskDefinition]
     }
   }
-
-  object TaskDefinitionFamilyStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
-    val ALL      = "ALL"
+  @js.native
+  sealed trait TaskDefinitionFamilyStatus extends js.Any
+  object TaskDefinitionFamilyStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
+    val ALL      = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
   }
-
-  object TaskDefinitionFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait TaskDefinitionField extends js.Any
+  object TaskDefinitionField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
@@ -4529,22 +4522,25 @@ package ecs {
       __obj.asInstanceOf[TaskDefinitionPlacementConstraint]
     }
   }
-
-  object TaskDefinitionPlacementConstraintTypeEnum {
-    val memberOf = "memberOf"
+  @js.native
+  sealed trait TaskDefinitionPlacementConstraintType extends js.Any
+  object TaskDefinitionPlacementConstraintType extends js.Object {
+    val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
 
     val values = js.Object.freeze(js.Array(memberOf))
   }
-
-  object TaskDefinitionStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait TaskDefinitionStatus extends js.Any
+  object TaskDefinitionStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
-
-  object TaskFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait TaskField extends js.Any
+  object TaskField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[TaskField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
@@ -4669,17 +4665,19 @@ package ecs {
       __obj.asInstanceOf[TaskSet]
     }
   }
-
-  object TaskSetFieldEnum {
-    val TAGS = "TAGS"
+  @js.native
+  sealed trait TaskSetField extends js.Any
+  object TaskSetField extends js.Object {
+    val TAGS = "TAGS".asInstanceOf[TaskSetField]
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
-
-  object TaskStopCodeEnum {
-    val TaskFailedToStart        = "TaskFailedToStart"
-    val EssentialContainerExited = "EssentialContainerExited"
-    val UserInitiated            = "UserInitiated"
+  @js.native
+  sealed trait TaskStopCode extends js.Any
+  object TaskStopCode extends js.Object {
+    val TaskFailedToStart        = "TaskFailedToStart".asInstanceOf[TaskStopCode]
+    val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
+    val UserInitiated            = "UserInitiated".asInstanceOf[TaskStopCode]
 
     val values = js.Object.freeze(js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated))
   }
@@ -4710,10 +4708,11 @@ package ecs {
       __obj.asInstanceOf[Tmpfs]
     }
   }
-
-  object TransportProtocolEnum {
-    val tcp = "tcp"
-    val udp = "udp"
+  @js.native
+  sealed trait TransportProtocol extends js.Any
+  object TransportProtocol extends js.Object {
+    val tcp = "tcp".asInstanceOf[TransportProtocol]
+    val udp = "udp".asInstanceOf[TransportProtocol]
 
     val values = js.Object.freeze(js.Array(tcp, udp))
   }
@@ -4744,23 +4743,24 @@ package ecs {
       __obj.asInstanceOf[Ulimit]
     }
   }
-
-  object UlimitNameEnum {
-    val core       = "core"
-    val cpu        = "cpu"
-    val data       = "data"
-    val fsize      = "fsize"
-    val locks      = "locks"
-    val memlock    = "memlock"
-    val msgqueue   = "msgqueue"
-    val nice       = "nice"
-    val nofile     = "nofile"
-    val nproc      = "nproc"
-    val rss        = "rss"
-    val rtprio     = "rtprio"
-    val rttime     = "rttime"
-    val sigpending = "sigpending"
-    val stack      = "stack"
+  @js.native
+  sealed trait UlimitName extends js.Any
+  object UlimitName extends js.Object {
+    val core       = "core".asInstanceOf[UlimitName]
+    val cpu        = "cpu".asInstanceOf[UlimitName]
+    val data       = "data".asInstanceOf[UlimitName]
+    val fsize      = "fsize".asInstanceOf[UlimitName]
+    val locks      = "locks".asInstanceOf[UlimitName]
+    val memlock    = "memlock".asInstanceOf[UlimitName]
+    val msgqueue   = "msgqueue".asInstanceOf[UlimitName]
+    val nice       = "nice".asInstanceOf[UlimitName]
+    val nofile     = "nofile".asInstanceOf[UlimitName]
+    val nproc      = "nproc".asInstanceOf[UlimitName]
+    val rss        = "rss".asInstanceOf[UlimitName]
+    val rtprio     = "rtprio".asInstanceOf[UlimitName]
+    val rttime     = "rttime".asInstanceOf[UlimitName]
+    val sigpending = "sigpending".asInstanceOf[UlimitName]
+    val stack      = "stack".asInstanceOf[UlimitName]
 
     val values = js.Object.freeze(
       js.Array(

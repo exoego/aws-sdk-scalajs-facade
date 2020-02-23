@@ -24,7 +24,6 @@ package object efs {
   type Gid                            = Double
   type IpAddress                      = String
   type KmsKeyId                       = String
-  type LifeCycleState                 = String
   type LifecyclePolicies              = js.Array[LifecyclePolicy]
   type Marker                         = String
   type MaxItems                       = Int
@@ -37,7 +36,6 @@ package object efs {
   type OwnerGid                       = Double
   type OwnerUid                       = Double
   type Path                           = String
-  type PerformanceMode                = String
   type Permissions                    = String
   type Policy                         = String
   type ProvisionedThroughputInMibps   = Double
@@ -50,10 +48,8 @@ package object efs {
   type TagKeys                        = js.Array[TagKey]
   type TagValue                       = String
   type Tags                           = js.Array[Tag]
-  type ThroughputMode                 = String
   type Timestamp                      = js.Date
   type Token                          = String
-  type TransitionToIARules            = String
   type Uid                            = Double
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
@@ -836,13 +832,14 @@ package efs {
       __obj.asInstanceOf[FileSystemSize]
     }
   }
-
-  object LifeCycleStateEnum {
-    val creating  = "creating"
-    val available = "available"
-    val updating  = "updating"
-    val deleting  = "deleting"
-    val deleted   = "deleted"
+  @js.native
+  sealed trait LifeCycleState extends js.Any
+  object LifeCycleState extends js.Object {
+    val creating  = "creating".asInstanceOf[LifeCycleState]
+    val available = "available".asInstanceOf[LifeCycleState]
+    val updating  = "updating".asInstanceOf[LifeCycleState]
+    val deleting  = "deleting".asInstanceOf[LifeCycleState]
+    val deleted   = "deleted".asInstanceOf[LifeCycleState]
 
     val values = js.Object.freeze(js.Array(creating, available, updating, deleting, deleted))
   }
@@ -993,10 +990,11 @@ package efs {
       __obj.asInstanceOf[MountTargetDescription]
     }
   }
-
-  object PerformanceModeEnum {
-    val generalPurpose = "generalPurpose"
-    val maxIO          = "maxIO"
+  @js.native
+  sealed trait PerformanceMode extends js.Any
+  object PerformanceMode extends js.Object {
+    val generalPurpose = "generalPurpose".asInstanceOf[PerformanceMode]
+    val maxIO          = "maxIO".asInstanceOf[PerformanceMode]
 
     val values = js.Object.freeze(js.Array(generalPurpose, maxIO))
   }
@@ -1141,20 +1139,22 @@ package efs {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
-
-  object ThroughputModeEnum {
-    val bursting    = "bursting"
-    val provisioned = "provisioned"
+  @js.native
+  sealed trait ThroughputMode extends js.Any
+  object ThroughputMode extends js.Object {
+    val bursting    = "bursting".asInstanceOf[ThroughputMode]
+    val provisioned = "provisioned".asInstanceOf[ThroughputMode]
 
     val values = js.Object.freeze(js.Array(bursting, provisioned))
   }
-
-  object TransitionToIARulesEnum {
-    val AFTER_7_DAYS  = "AFTER_7_DAYS"
-    val AFTER_14_DAYS = "AFTER_14_DAYS"
-    val AFTER_30_DAYS = "AFTER_30_DAYS"
-    val AFTER_60_DAYS = "AFTER_60_DAYS"
-    val AFTER_90_DAYS = "AFTER_90_DAYS"
+  @js.native
+  sealed trait TransitionToIARules extends js.Any
+  object TransitionToIARules extends js.Object {
+    val AFTER_7_DAYS  = "AFTER_7_DAYS".asInstanceOf[TransitionToIARules]
+    val AFTER_14_DAYS = "AFTER_14_DAYS".asInstanceOf[TransitionToIARules]
+    val AFTER_30_DAYS = "AFTER_30_DAYS".asInstanceOf[TransitionToIARules]
+    val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
+    val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
 
     val values = js.Object.freeze(js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
   }

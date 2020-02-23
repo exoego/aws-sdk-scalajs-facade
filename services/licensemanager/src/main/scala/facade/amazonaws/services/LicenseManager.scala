@@ -16,13 +16,10 @@ package object licensemanager {
   type FilterValue                      = String
   type FilterValues                     = js.Array[FilterValue]
   type Filters                          = js.Array[Filter]
-  type InventoryFilterCondition         = String
   type InventoryFilterList              = js.Array[InventoryFilter]
   type LicenseConfigurationAssociations = js.Array[LicenseConfigurationAssociation]
-  type LicenseConfigurationStatus       = String
   type LicenseConfigurationUsageList    = js.Array[LicenseConfigurationUsage]
   type LicenseConfigurations            = js.Array[LicenseConfiguration]
-  type LicenseCountingType              = String
   type LicenseOperationFailureList      = js.Array[LicenseOperationFailure]
   type LicenseSpecifications            = js.Array[LicenseSpecification]
   type ManagedResourceSummaryList       = js.Array[ManagedResourceSummary]
@@ -30,7 +27,6 @@ package object licensemanager {
   type ProductInformationFilterList     = js.Array[ProductInformationFilter]
   type ProductInformationList           = js.Array[ProductInformation]
   type ResourceInventoryList            = js.Array[ResourceInventory]
-  type ResourceType                     = String
   type StringList                       = js.Array[String]
   type TagKeyList                       = js.Array[String]
   type TagList                          = js.Array[Tag]
@@ -439,12 +435,13 @@ package licensemanager {
       __obj.asInstanceOf[InventoryFilter]
     }
   }
-
-  object InventoryFilterConditionEnum {
-    val EQUALS      = "EQUALS"
-    val NOT_EQUALS  = "NOT_EQUALS"
-    val BEGINS_WITH = "BEGINS_WITH"
-    val CONTAINS    = "CONTAINS"
+  @js.native
+  sealed trait InventoryFilterCondition extends js.Any
+  object InventoryFilterCondition extends js.Object {
+    val EQUALS      = "EQUALS".asInstanceOf[InventoryFilterCondition]
+    val NOT_EQUALS  = "NOT_EQUALS".asInstanceOf[InventoryFilterCondition]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
+    val CONTAINS    = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
     val values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
   }
@@ -543,10 +540,11 @@ package licensemanager {
       __obj.asInstanceOf[LicenseConfigurationAssociation]
     }
   }
-
-  object LicenseConfigurationStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val DISABLED  = "DISABLED"
+  @js.native
+  sealed trait LicenseConfigurationStatus extends js.Any
+  object LicenseConfigurationStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
+    val DISABLED  = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
   }
@@ -584,12 +582,13 @@ package licensemanager {
       __obj.asInstanceOf[LicenseConfigurationUsage]
     }
   }
-
-  object LicenseCountingTypeEnum {
-    val vCPU     = "vCPU"
-    val Instance = "Instance"
-    val Core     = "Core"
-    val Socket   = "Socket"
+  @js.native
+  sealed trait LicenseCountingType extends js.Any
+  object LicenseCountingType extends js.Object {
+    val vCPU     = "vCPU".asInstanceOf[LicenseCountingType]
+    val Instance = "Instance".asInstanceOf[LicenseCountingType]
+    val Core     = "Core".asInstanceOf[LicenseCountingType]
+    val Socket   = "Socket".asInstanceOf[LicenseCountingType]
 
     val values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
   }
@@ -1104,13 +1103,14 @@ package licensemanager {
       __obj.asInstanceOf[ResourceInventory]
     }
   }
-
-  object ResourceTypeEnum {
-    val EC2_INSTANCE                     = "EC2_INSTANCE"
-    val EC2_HOST                         = "EC2_HOST"
-    val EC2_AMI                          = "EC2_AMI"
-    val RDS                              = "RDS"
-    val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val EC2_INSTANCE                     = "EC2_INSTANCE".asInstanceOf[ResourceType]
+    val EC2_HOST                         = "EC2_HOST".asInstanceOf[ResourceType]
+    val EC2_AMI                          = "EC2_AMI".asInstanceOf[ResourceType]
+    val RDS                              = "RDS".asInstanceOf[ResourceType]
+    val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
   }

@@ -7,70 +7,51 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object apigateway {
-  type ApiKeySourceType                       = String
-  type ApiKeysFormat                          = String
-  type AuthorizerType                         = String
-  type Blob                                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CacheClusterSize                       = String
-  type CacheClusterStatus                     = String
-  type ConnectionType                         = String
-  type ContentHandlingStrategy                = String
-  type DocumentationPartLocationStatusCode    = String
-  type DocumentationPartType                  = String
-  type DomainNameStatus                       = String
-  type EndpointType                           = String
-  type GatewayResponseType                    = String
-  type IntegrationType                        = String
-  type ListOfARNs                             = js.Array[ProviderARN]
-  type ListOfApiKey                           = js.Array[ApiKey]
-  type ListOfApiStage                         = js.Array[ApiStage]
-  type ListOfAuthorizer                       = js.Array[Authorizer]
-  type ListOfBasePathMapping                  = js.Array[BasePathMapping]
-  type ListOfClientCertificate                = js.Array[ClientCertificate]
-  type ListOfDeployment                       = js.Array[Deployment]
-  type ListOfDocumentationPart                = js.Array[DocumentationPart]
-  type ListOfDocumentationVersion             = js.Array[DocumentationVersion]
-  type ListOfDomainName                       = js.Array[DomainName]
-  type ListOfEndpointType                     = js.Array[EndpointType]
-  type ListOfGatewayResponse                  = js.Array[GatewayResponse]
-  type ListOfLong                             = js.Array[Double]
-  type ListOfModel                            = js.Array[Model]
-  type ListOfPatchOperation                   = js.Array[PatchOperation]
-  type ListOfRequestValidator                 = js.Array[RequestValidator]
-  type ListOfResource                         = js.Array[Resource]
-  type ListOfRestApi                          = js.Array[RestApi]
-  type ListOfSdkConfigurationProperty         = js.Array[SdkConfigurationProperty]
-  type ListOfSdkType                          = js.Array[SdkType]
-  type ListOfStage                            = js.Array[Stage]
-  type ListOfStageKeys                        = js.Array[StageKey]
-  type ListOfString                           = js.Array[String]
-  type ListOfUsage                            = js.Array[ListOfLong]
-  type ListOfUsagePlan                        = js.Array[UsagePlan]
-  type ListOfUsagePlanKey                     = js.Array[UsagePlanKey]
-  type ListOfVpcLink                          = js.Array[VpcLink]
-  type LocationStatusType                     = String
-  type MapOfApiStageThrottleSettings          = js.Dictionary[ThrottleSettings]
-  type MapOfIntegrationResponse               = js.Dictionary[IntegrationResponse]
-  type MapOfKeyUsages                         = js.Dictionary[ListOfUsage]
-  type MapOfMethod                            = js.Dictionary[Method]
-  type MapOfMethodResponse                    = js.Dictionary[MethodResponse]
-  type MapOfMethodSettings                    = js.Dictionary[MethodSetting]
-  type MapOfMethodSnapshot                    = js.Dictionary[MethodSnapshot]
-  type MapOfStringToBoolean                   = js.Dictionary[NullableBoolean]
-  type MapOfStringToList                      = js.Dictionary[ListOfString]
-  type MapOfStringToString                    = js.Dictionary[String]
-  type NullableBoolean                        = Boolean
-  type NullableInteger                        = Int
-  type Op                                     = String
-  type PathToMapOfMethodSnapshot              = js.Dictionary[MapOfMethodSnapshot]
-  type ProviderARN                            = String
-  type PutMode                                = String
-  type QuotaPeriodType                        = String
-  type SecurityPolicy                         = String
-  type StatusCode                             = String
-  type Timestamp                              = js.Date
-  type UnauthorizedCacheControlHeaderStrategy = String
-  type VpcLinkStatus                          = String
+  type Blob                                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DocumentationPartLocationStatusCode = String
+  type ListOfARNs                          = js.Array[ProviderARN]
+  type ListOfApiKey                        = js.Array[ApiKey]
+  type ListOfApiStage                      = js.Array[ApiStage]
+  type ListOfAuthorizer                    = js.Array[Authorizer]
+  type ListOfBasePathMapping               = js.Array[BasePathMapping]
+  type ListOfClientCertificate             = js.Array[ClientCertificate]
+  type ListOfDeployment                    = js.Array[Deployment]
+  type ListOfDocumentationPart             = js.Array[DocumentationPart]
+  type ListOfDocumentationVersion          = js.Array[DocumentationVersion]
+  type ListOfDomainName                    = js.Array[DomainName]
+  type ListOfEndpointType                  = js.Array[EndpointType]
+  type ListOfGatewayResponse               = js.Array[GatewayResponse]
+  type ListOfLong                          = js.Array[Double]
+  type ListOfModel                         = js.Array[Model]
+  type ListOfPatchOperation                = js.Array[PatchOperation]
+  type ListOfRequestValidator              = js.Array[RequestValidator]
+  type ListOfResource                      = js.Array[Resource]
+  type ListOfRestApi                       = js.Array[RestApi]
+  type ListOfSdkConfigurationProperty      = js.Array[SdkConfigurationProperty]
+  type ListOfSdkType                       = js.Array[SdkType]
+  type ListOfStage                         = js.Array[Stage]
+  type ListOfStageKeys                     = js.Array[StageKey]
+  type ListOfString                        = js.Array[String]
+  type ListOfUsage                         = js.Array[ListOfLong]
+  type ListOfUsagePlan                     = js.Array[UsagePlan]
+  type ListOfUsagePlanKey                  = js.Array[UsagePlanKey]
+  type ListOfVpcLink                       = js.Array[VpcLink]
+  type MapOfApiStageThrottleSettings       = js.Dictionary[ThrottleSettings]
+  type MapOfIntegrationResponse            = js.Dictionary[IntegrationResponse]
+  type MapOfKeyUsages                      = js.Dictionary[ListOfUsage]
+  type MapOfMethod                         = js.Dictionary[Method]
+  type MapOfMethodResponse                 = js.Dictionary[MethodResponse]
+  type MapOfMethodSettings                 = js.Dictionary[MethodSetting]
+  type MapOfMethodSnapshot                 = js.Dictionary[MethodSnapshot]
+  type MapOfStringToBoolean                = js.Dictionary[NullableBoolean]
+  type MapOfStringToList                   = js.Dictionary[ListOfString]
+  type MapOfStringToString                 = js.Dictionary[String]
+  type NullableBoolean                     = Boolean
+  type NullableInteger                     = Int
+  type PathToMapOfMethodSnapshot           = js.Dictionary[MapOfMethodSnapshot]
+  type ProviderARN                         = String
+  type StatusCode                          = String
+  type Timestamp                           = js.Date
 
   implicit final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
 
@@ -574,10 +555,11 @@ package apigateway {
       __obj.asInstanceOf[ApiKeyIds]
     }
   }
-
-  object ApiKeySourceTypeEnum {
-    val HEADER     = "HEADER"
-    val AUTHORIZER = "AUTHORIZER"
+  @js.native
+  sealed trait ApiKeySourceType extends js.Any
+  object ApiKeySourceType extends js.Object {
+    val HEADER     = "HEADER".asInstanceOf[ApiKeySourceType]
+    val AUTHORIZER = "AUTHORIZER".asInstanceOf[ApiKeySourceType]
 
     val values = js.Object.freeze(js.Array(HEADER, AUTHORIZER))
   }
@@ -608,9 +590,10 @@ package apigateway {
       __obj.asInstanceOf[ApiKeys]
     }
   }
-
-  object ApiKeysFormatEnum {
-    val csv = "csv"
+  @js.native
+  sealed trait ApiKeysFormat extends js.Any
+  object ApiKeysFormat extends js.Object {
+    val csv = "csv".asInstanceOf[ApiKeysFormat]
 
     val values = js.Object.freeze(js.Array(csv))
   }
@@ -695,10 +678,12 @@ package apigateway {
   /**
     * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
     */
-  object AuthorizerTypeEnum {
-    val TOKEN              = "TOKEN"
-    val REQUEST            = "REQUEST"
-    val COGNITO_USER_POOLS = "COGNITO_USER_POOLS"
+  @js.native
+  sealed trait AuthorizerType extends js.Any
+  object AuthorizerType extends js.Object {
+    val TOKEN              = "TOKEN".asInstanceOf[AuthorizerType]
+    val REQUEST            = "REQUEST".asInstanceOf[AuthorizerType]
+    val COGNITO_USER_POOLS = "COGNITO_USER_POOLS".asInstanceOf[AuthorizerType]
 
     val values = js.Object.freeze(js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS))
   }
@@ -781,15 +766,17 @@ package apigateway {
   /**
     * Returns the size of the ```CacheCluster```.
     */
-  object CacheClusterSizeEnum {
-    val `0.5`  = "0.5"
-    val `1.6`  = "1.6"
-    val `6.1`  = "6.1"
-    val `13.5` = "13.5"
-    val `28.4` = "28.4"
-    val `58.2` = "58.2"
-    val `118`  = "118"
-    val `237`  = "237"
+  @js.native
+  sealed trait CacheClusterSize extends js.Any
+  object CacheClusterSize extends js.Object {
+    val `0.5`  = "0.5".asInstanceOf[CacheClusterSize]
+    val `1.6`  = "1.6".asInstanceOf[CacheClusterSize]
+    val `6.1`  = "6.1".asInstanceOf[CacheClusterSize]
+    val `13.5` = "13.5".asInstanceOf[CacheClusterSize]
+    val `28.4` = "28.4".asInstanceOf[CacheClusterSize]
+    val `58.2` = "58.2".asInstanceOf[CacheClusterSize]
+    val `118`  = "118".asInstanceOf[CacheClusterSize]
+    val `237`  = "237".asInstanceOf[CacheClusterSize]
 
     val values = js.Object.freeze(js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`))
   }
@@ -797,12 +784,14 @@ package apigateway {
   /**
     * Returns the status of the ```CacheCluster```.
     */
-  object CacheClusterStatusEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val AVAILABLE          = "AVAILABLE"
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
-    val NOT_AVAILABLE      = "NOT_AVAILABLE"
-    val FLUSH_IN_PROGRESS  = "FLUSH_IN_PROGRESS"
+  @js.native
+  sealed trait CacheClusterStatus extends js.Any
+  object CacheClusterStatus extends js.Object {
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
+    val AVAILABLE          = "AVAILABLE".asInstanceOf[CacheClusterStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
+    val NOT_AVAILABLE      = "NOT_AVAILABLE".asInstanceOf[CacheClusterStatus]
+    val FLUSH_IN_PROGRESS  = "FLUSH_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
 
     val values =
       js.Object.freeze(js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS))
@@ -895,17 +884,19 @@ package apigateway {
       __obj.asInstanceOf[ClientCertificates]
     }
   }
-
-  object ConnectionTypeEnum {
-    val INTERNET = "INTERNET"
-    val VPC_LINK = "VPC_LINK"
+  @js.native
+  sealed trait ConnectionType extends js.Any
+  object ConnectionType extends js.Object {
+    val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
+    val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
     val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
-
-  object ContentHandlingStrategyEnum {
-    val CONVERT_TO_BINARY = "CONVERT_TO_BINARY"
-    val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT"
+  @js.native
+  sealed trait ContentHandlingStrategy extends js.Any
+  object ContentHandlingStrategy extends js.Object {
+    val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
+    val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
     val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
@@ -2137,20 +2128,21 @@ package apigateway {
       __obj.asInstanceOf[DocumentationPartLocation]
     }
   }
-
-  object DocumentationPartTypeEnum {
-    val API             = "API"
-    val AUTHORIZER      = "AUTHORIZER"
-    val MODEL           = "MODEL"
-    val RESOURCE        = "RESOURCE"
-    val METHOD          = "METHOD"
-    val PATH_PARAMETER  = "PATH_PARAMETER"
-    val QUERY_PARAMETER = "QUERY_PARAMETER"
-    val REQUEST_HEADER  = "REQUEST_HEADER"
-    val REQUEST_BODY    = "REQUEST_BODY"
-    val RESPONSE        = "RESPONSE"
-    val RESPONSE_HEADER = "RESPONSE_HEADER"
-    val RESPONSE_BODY   = "RESPONSE_BODY"
+  @js.native
+  sealed trait DocumentationPartType extends js.Any
+  object DocumentationPartType extends js.Object {
+    val API             = "API".asInstanceOf[DocumentationPartType]
+    val AUTHORIZER      = "AUTHORIZER".asInstanceOf[DocumentationPartType]
+    val MODEL           = "MODEL".asInstanceOf[DocumentationPartType]
+    val RESOURCE        = "RESOURCE".asInstanceOf[DocumentationPartType]
+    val METHOD          = "METHOD".asInstanceOf[DocumentationPartType]
+    val PATH_PARAMETER  = "PATH_PARAMETER".asInstanceOf[DocumentationPartType]
+    val QUERY_PARAMETER = "QUERY_PARAMETER".asInstanceOf[DocumentationPartType]
+    val REQUEST_HEADER  = "REQUEST_HEADER".asInstanceOf[DocumentationPartType]
+    val REQUEST_BODY    = "REQUEST_BODY".asInstanceOf[DocumentationPartType]
+    val RESPONSE        = "RESPONSE".asInstanceOf[DocumentationPartType]
+    val RESPONSE_HEADER = "RESPONSE_HEADER".asInstanceOf[DocumentationPartType]
+    val RESPONSE_BODY   = "RESPONSE_BODY".asInstanceOf[DocumentationPartType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2310,11 +2302,12 @@ package apigateway {
       __obj.asInstanceOf[DomainName]
     }
   }
-
-  object DomainNameStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val UPDATING  = "UPDATING"
-    val PENDING   = "PENDING"
+  @js.native
+  sealed trait DomainNameStatus extends js.Any
+  object DomainNameStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
+    val UPDATING  = "UPDATING".asInstanceOf[DomainNameStatus]
+    val PENDING   = "PENDING".asInstanceOf[DomainNameStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING, PENDING))
   }
@@ -2368,10 +2361,12 @@ package apigateway {
   /**
     * The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.
     */
-  object EndpointTypeEnum {
-    val REGIONAL = "REGIONAL"
-    val EDGE     = "EDGE"
-    val PRIVATE  = "PRIVATE"
+  @js.native
+  sealed trait EndpointType extends js.Any
+  object EndpointType extends js.Object {
+    val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
+    val EDGE     = "EDGE".asInstanceOf[EndpointType]
+    val PRIVATE  = "PRIVATE".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE, PRIVATE))
   }
@@ -2491,28 +2486,29 @@ package apigateway {
       __obj.asInstanceOf[GatewayResponse]
     }
   }
-
-  object GatewayResponseTypeEnum {
-    val DEFAULT_4XX                    = "DEFAULT_4XX"
-    val DEFAULT_5XX                    = "DEFAULT_5XX"
-    val RESOURCE_NOT_FOUND             = "RESOURCE_NOT_FOUND"
-    val UNAUTHORIZED                   = "UNAUTHORIZED"
-    val INVALID_API_KEY                = "INVALID_API_KEY"
-    val ACCESS_DENIED                  = "ACCESS_DENIED"
-    val AUTHORIZER_FAILURE             = "AUTHORIZER_FAILURE"
-    val AUTHORIZER_CONFIGURATION_ERROR = "AUTHORIZER_CONFIGURATION_ERROR"
-    val INVALID_SIGNATURE              = "INVALID_SIGNATURE"
-    val EXPIRED_TOKEN                  = "EXPIRED_TOKEN"
-    val MISSING_AUTHENTICATION_TOKEN   = "MISSING_AUTHENTICATION_TOKEN"
-    val INTEGRATION_FAILURE            = "INTEGRATION_FAILURE"
-    val INTEGRATION_TIMEOUT            = "INTEGRATION_TIMEOUT"
-    val API_CONFIGURATION_ERROR        = "API_CONFIGURATION_ERROR"
-    val UNSUPPORTED_MEDIA_TYPE         = "UNSUPPORTED_MEDIA_TYPE"
-    val BAD_REQUEST_PARAMETERS         = "BAD_REQUEST_PARAMETERS"
-    val BAD_REQUEST_BODY               = "BAD_REQUEST_BODY"
-    val REQUEST_TOO_LARGE              = "REQUEST_TOO_LARGE"
-    val THROTTLED                      = "THROTTLED"
-    val QUOTA_EXCEEDED                 = "QUOTA_EXCEEDED"
+  @js.native
+  sealed trait GatewayResponseType extends js.Any
+  object GatewayResponseType extends js.Object {
+    val DEFAULT_4XX                    = "DEFAULT_4XX".asInstanceOf[GatewayResponseType]
+    val DEFAULT_5XX                    = "DEFAULT_5XX".asInstanceOf[GatewayResponseType]
+    val RESOURCE_NOT_FOUND             = "RESOURCE_NOT_FOUND".asInstanceOf[GatewayResponseType]
+    val UNAUTHORIZED                   = "UNAUTHORIZED".asInstanceOf[GatewayResponseType]
+    val INVALID_API_KEY                = "INVALID_API_KEY".asInstanceOf[GatewayResponseType]
+    val ACCESS_DENIED                  = "ACCESS_DENIED".asInstanceOf[GatewayResponseType]
+    val AUTHORIZER_FAILURE             = "AUTHORIZER_FAILURE".asInstanceOf[GatewayResponseType]
+    val AUTHORIZER_CONFIGURATION_ERROR = "AUTHORIZER_CONFIGURATION_ERROR".asInstanceOf[GatewayResponseType]
+    val INVALID_SIGNATURE              = "INVALID_SIGNATURE".asInstanceOf[GatewayResponseType]
+    val EXPIRED_TOKEN                  = "EXPIRED_TOKEN".asInstanceOf[GatewayResponseType]
+    val MISSING_AUTHENTICATION_TOKEN   = "MISSING_AUTHENTICATION_TOKEN".asInstanceOf[GatewayResponseType]
+    val INTEGRATION_FAILURE            = "INTEGRATION_FAILURE".asInstanceOf[GatewayResponseType]
+    val INTEGRATION_TIMEOUT            = "INTEGRATION_TIMEOUT".asInstanceOf[GatewayResponseType]
+    val API_CONFIGURATION_ERROR        = "API_CONFIGURATION_ERROR".asInstanceOf[GatewayResponseType]
+    val UNSUPPORTED_MEDIA_TYPE         = "UNSUPPORTED_MEDIA_TYPE".asInstanceOf[GatewayResponseType]
+    val BAD_REQUEST_PARAMETERS         = "BAD_REQUEST_PARAMETERS".asInstanceOf[GatewayResponseType]
+    val BAD_REQUEST_BODY               = "BAD_REQUEST_BODY".asInstanceOf[GatewayResponseType]
+    val REQUEST_TOO_LARGE              = "REQUEST_TOO_LARGE".asInstanceOf[GatewayResponseType]
+    val THROTTLED                      = "THROTTLED".asInstanceOf[GatewayResponseType]
+    val QUOTA_EXCEEDED                 = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3957,19 +3953,22 @@ package apigateway {
   /**
     * The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration.
     */
-  object IntegrationTypeEnum {
-    val HTTP       = "HTTP"
-    val AWS        = "AWS"
-    val MOCK       = "MOCK"
-    val HTTP_PROXY = "HTTP_PROXY"
-    val AWS_PROXY  = "AWS_PROXY"
+  @js.native
+  sealed trait IntegrationType extends js.Any
+  object IntegrationType extends js.Object {
+    val HTTP       = "HTTP".asInstanceOf[IntegrationType]
+    val AWS        = "AWS".asInstanceOf[IntegrationType]
+    val MOCK       = "MOCK".asInstanceOf[IntegrationType]
+    val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
+    val AWS_PROXY  = "AWS_PROXY".asInstanceOf[IntegrationType]
 
     val values = js.Object.freeze(js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY))
   }
-
-  object LocationStatusTypeEnum {
-    val DOCUMENTED   = "DOCUMENTED"
-    val UNDOCUMENTED = "UNDOCUMENTED"
+  @js.native
+  sealed trait LocationStatusType extends js.Any
+  object LocationStatusType extends js.Object {
+    val DOCUMENTED   = "DOCUMENTED".asInstanceOf[LocationStatusType]
+    val UNDOCUMENTED = "UNDOCUMENTED".asInstanceOf[LocationStatusType]
 
     val values = js.Object.freeze(js.Array(DOCUMENTED, UNDOCUMENTED))
   }
@@ -4199,14 +4198,15 @@ package apigateway {
       __obj.asInstanceOf[Models]
     }
   }
-
-  object OpEnum {
-    val add     = "add"
-    val remove  = "remove"
-    val replace = "replace"
-    val move    = "move"
-    val copy    = "copy"
-    val test    = "test"
+  @js.native
+  sealed trait Op extends js.Any
+  object Op extends js.Object {
+    val add     = "add".asInstanceOf[Op]
+    val remove  = "remove".asInstanceOf[Op]
+    val replace = "replace".asInstanceOf[Op]
+    val move    = "move".asInstanceOf[Op]
+    val copy    = "copy".asInstanceOf[Op]
+    val test    = "test".asInstanceOf[Op]
 
     val values = js.Object.freeze(js.Array(add, remove, replace, move, copy, test))
   }
@@ -4466,10 +4466,11 @@ package apigateway {
       __obj.asInstanceOf[PutMethodResponseRequest]
     }
   }
-
-  object PutModeEnum {
-    val merge     = "merge"
-    val overwrite = "overwrite"
+  @js.native
+  sealed trait PutMode extends js.Any
+  object PutMode extends js.Object {
+    val merge     = "merge".asInstanceOf[PutMode]
+    val overwrite = "overwrite".asInstanceOf[PutMode]
 
     val values = js.Object.freeze(js.Array(merge, overwrite))
   }
@@ -4506,11 +4507,12 @@ package apigateway {
       __obj.asInstanceOf[PutRestApiRequest]
     }
   }
-
-  object QuotaPeriodTypeEnum {
-    val DAY   = "DAY"
-    val WEEK  = "WEEK"
-    val MONTH = "MONTH"
+  @js.native
+  sealed trait QuotaPeriodType extends js.Any
+  object QuotaPeriodType extends js.Object {
+    val DAY   = "DAY".asInstanceOf[QuotaPeriodType]
+    val WEEK  = "WEEK".asInstanceOf[QuotaPeriodType]
+    val MONTH = "MONTH".asInstanceOf[QuotaPeriodType]
 
     val values = js.Object.freeze(js.Array(DAY, WEEK, MONTH))
   }
@@ -4838,10 +4840,11 @@ package apigateway {
       __obj.asInstanceOf[SdkTypes]
     }
   }
-
-  object SecurityPolicyEnum {
-    val TLS_1_0 = "TLS_1_0"
-    val TLS_1_2 = "TLS_1_2"
+  @js.native
+  sealed trait SecurityPolicy extends js.Any
+  object SecurityPolicy extends js.Object {
+    val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
+    val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
     val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }
@@ -5203,11 +5206,14 @@ package apigateway {
       __obj.asInstanceOf[ThrottleSettings]
     }
   }
-
-  object UnauthorizedCacheControlHeaderStrategyEnum {
-    val FAIL_WITH_403                   = "FAIL_WITH_403"
-    val SUCCEED_WITH_RESPONSE_HEADER    = "SUCCEED_WITH_RESPONSE_HEADER"
-    val SUCCEED_WITHOUT_RESPONSE_HEADER = "SUCCEED_WITHOUT_RESPONSE_HEADER"
+  @js.native
+  sealed trait UnauthorizedCacheControlHeaderStrategy extends js.Any
+  object UnauthorizedCacheControlHeaderStrategy extends js.Object {
+    val FAIL_WITH_403 = "FAIL_WITH_403".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
+    val SUCCEED_WITH_RESPONSE_HEADER =
+      "SUCCEED_WITH_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
+    val SUCCEED_WITHOUT_RESPONSE_HEADER =
+      "SUCCEED_WITHOUT_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
 
     val values =
       js.Object.freeze(js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER))
@@ -6016,12 +6022,13 @@ package apigateway {
       __obj.asInstanceOf[VpcLink]
     }
   }
-
-  object VpcLinkStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val PENDING   = "PENDING"
-    val DELETING  = "DELETING"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait VpcLinkStatus extends js.Any
+  object VpcLinkStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
+    val PENDING   = "PENDING".asInstanceOf[VpcLinkStatus]
+    val DELETING  = "DELETING".asInstanceOf[VpcLinkStatus]
+    val FAILED    = "FAILED".asInstanceOf[VpcLinkStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, DELETING, FAILED))
   }

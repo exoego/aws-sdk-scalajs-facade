@@ -19,7 +19,6 @@ package object glue {
   type BooleanNullable                         = Boolean
   type BooleanValue                            = Boolean
   type BoundedPartitionValueList               = js.Array[ValueString]
-  type CatalogEncryptionMode                   = String
   type CatalogEntries                          = js.Array[CatalogEntry]
   type CatalogIdString                         = String
   type CatalogTablesList                       = js.Array[NameString]
@@ -27,7 +26,6 @@ package object glue {
   type Classification                          = String
   type ClassifierList                          = js.Array[Classifier]
   type ClassifierNameList                      = js.Array[NameString]
-  type CloudWatchEncryptionMode                = String
   type CodeGenArgName                          = String
   type CodeGenArgValue                         = String
   type CodeGenIdentifier                       = String
@@ -39,25 +37,19 @@ package object glue {
   type ColumnValueStringList                   = js.Array[ColumnValuesString]
   type ColumnValuesString                      = String
   type CommentString                           = String
-  type Comparator                              = String
   type ConditionList                           = js.Array[Condition]
   type ConnectionList                          = js.Array[Connection]
   type ConnectionName                          = String
   type ConnectionProperties                    = js.Dictionary[ValueString]
-  type ConnectionPropertyKey                   = String
-  type ConnectionType                          = String
   type CrawlList                               = js.Array[Crawl]
-  type CrawlState                              = String
   type CrawlerConfiguration                    = String
   type CrawlerList                             = js.Array[Crawler]
   type CrawlerMetricsList                      = js.Array[CrawlerMetrics]
   type CrawlerNameList                         = js.Array[NameString]
   type CrawlerSecurityConfiguration            = String
-  type CrawlerState                            = String
   type CronExpression                          = String
   type CsvColumnDelimiter                      = String
   type CsvHeader                               = js.Array[NameString]
-  type CsvHeaderOption                         = String
   type CsvQuoteSymbol                          = String
   type CustomPatterns                          = String
   type DagEdges                                = js.Array[CodeGenEdge]
@@ -65,7 +57,6 @@ package object glue {
   type DataLakePrincipalString                 = String
   type DatabaseList                            = js.Array[Database]
   type DatabaseName                            = String
-  type DeleteBehavior                          = String
   type DeleteConnectionNameList                = js.Array[NameString]
   type DescriptionString                       = String
   type DescriptionStringRemovable              = String
@@ -77,7 +68,6 @@ package object glue {
   type ErrorByName                             = js.Dictionary[ErrorDetail]
   type ErrorString                             = String
   type ExecutionTime                           = Int
-  type ExistCondition                          = String
   type FieldType                               = String
   type FilterString                            = String
   type FormatString                            = String
@@ -94,25 +84,19 @@ package object glue {
   type IntegerFlag                             = Int
   type IntegerValue                            = Int
   type JdbcTargetList                          = js.Array[JdbcTarget]
-  type JobBookmarksEncryptionMode              = String
   type JobList                                 = js.Array[Job]
   type JobName                                 = String
   type JobNameList                             = js.Array[NameString]
   type JobRunList                              = js.Array[JobRun]
-  type JobRunState                             = String
   type JsonPath                                = String
   type JsonValue                               = String
   type KeyString                               = String
   type KmsKeyArn                               = String
   type LabelCount                              = Int
-  type Language                                = String
-  type LastCrawlStatus                         = String
   type LocationMap                             = js.Dictionary[ColumnValuesString]
   type LocationString                          = String
   type LogGroup                                = String
   type LogStream                               = String
-  type Logical                                 = String
-  type LogicalOperator                         = String
   type MapValue                                = js.Dictionary[GenericString]
   type MappingList                             = js.Array[MappingEntry]
   type MatchCriteria                           = js.Array[NameString]
@@ -123,7 +107,6 @@ package object glue {
   type NameString                              = String
   type NameStringList                          = js.Array[NameString]
   type NodeList                                = js.Array[Node]
-  type NodeType                                = String
   type NonNegativeDouble                       = Double
   type NonNegativeInteger                      = Int
   type NotifyDelayAfter                        = Int
@@ -141,19 +124,16 @@ package object glue {
   type PartitionList                           = js.Array[Partition]
   type Path                                    = String
   type PathList                                = js.Array[Path]
-  type Permission                              = String
   type PermissionList                          = js.Array[Permission]
   type PolicyJsonString                        = String
   type PredecessorList                         = js.Array[Predecessor]
   type PredicateString                         = String
   type PrincipalPermissionsList                = js.Array[PrincipalPermissions]
-  type PrincipalType                           = String
   type PublicKeysList                          = js.Array[GenericString]
   type PythonScript                            = String
   type PythonVersionString                     = String
   type RecordsCount                            = Double
   type ReplaceBoolean                          = Boolean
-  type ResourceType                            = String
   type ResourceUriList                         = js.Array[ResourceUri]
   type Role                                    = String
   type RoleArn                                 = String
@@ -161,18 +141,14 @@ package object glue {
   type RowTag                                  = String
   type RunId                                   = String
   type S3EncryptionList                        = js.Array[S3Encryption]
-  type S3EncryptionMode                        = String
   type S3TargetList                            = js.Array[S3Target]
   type ScalaCode                               = String
-  type ScheduleState                           = String
   type SchemaPathString                        = String
   type ScriptLocationString                    = String
   type SearchPropertyPredicates                = js.Array[PropertyPredicate]
   type SecurityConfigurationList               = js.Array[SecurityConfiguration]
   type SecurityGroupIdList                     = js.Array[NameString]
-  type Sort                                    = String
   type SortCriteria                            = js.Array[SortCriterion]
-  type SortDirectionType                       = String
   type StringList                              = js.Array[GenericString]
   type TableErrors                             = js.Array[TableError]
   type TableList                               = js.Array[Table]
@@ -185,9 +161,6 @@ package object glue {
   type TagValue                                = String
   type TagsMap                                 = js.Dictionary[TagValue]
   type TaskRunList                             = js.Array[TaskRun]
-  type TaskRunSortColumnType                   = String
-  type TaskStatusType                          = String
-  type TaskType                                = String
   type Timeout                                 = Int
   type Timestamp                               = js.Date
   type TimestampValue                          = js.Date
@@ -195,15 +168,9 @@ package object glue {
   type TotalSegmentsInteger                    = Int
   type TransformList                           = js.Array[MLTransform]
   type TransformSchema                         = js.Array[SchemaColumn]
-  type TransformSortColumnType                 = String
-  type TransformStatusType                     = String
-  type TransformType                           = String
   type TriggerList                             = js.Array[Trigger]
   type TriggerNameList                         = js.Array[NameString]
-  type TriggerState                            = String
-  type TriggerType                             = String
   type URI                                     = String
-  type UpdateBehavior                          = String
   type UriString                               = String
   type UserDefinedFunctionList                 = js.Array[UserDefinedFunction]
   type ValueString                             = String
@@ -211,10 +178,8 @@ package object glue {
   type VersionId                               = Double
   type VersionString                           = String
   type ViewTextString                          = String
-  type WorkerType                              = String
   type WorkflowNames                           = js.Array[NameString]
   type WorkflowRunProperties                   = js.Dictionary[GenericString]
-  type WorkflowRunStatus                       = String
   type WorkflowRuns                            = js.Array[WorkflowRun]
   type Workflows                               = js.Array[Workflow]
 
@@ -1257,10 +1222,11 @@ package glue {
       __obj.asInstanceOf[CancelMLTaskRunResponse]
     }
   }
-
-  object CatalogEncryptionModeEnum {
-    val DISABLED  = "DISABLED"
-    val `SSE-KMS` = "SSE-KMS"
+  @js.native
+  sealed trait CatalogEncryptionMode extends js.Any
+  object CatalogEncryptionMode extends js.Object {
+    val DISABLED  = "DISABLED".asInstanceOf[CatalogEncryptionMode]
+    val `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
@@ -1388,10 +1354,11 @@ package glue {
       __obj.asInstanceOf[CloudWatchEncryption]
     }
   }
-
-  object CloudWatchEncryptionModeEnum {
-    val DISABLED  = "DISABLED"
-    val `SSE-KMS` = "SSE-KMS"
+  @js.native
+  sealed trait CloudWatchEncryptionMode extends js.Any
+  object CloudWatchEncryptionMode extends js.Object {
+    val DISABLED  = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
+    val `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
@@ -1509,13 +1476,14 @@ package glue {
       __obj.asInstanceOf[Column]
     }
   }
-
-  object ComparatorEnum {
-    val EQUALS              = "EQUALS"
-    val GREATER_THAN        = "GREATER_THAN"
-    val LESS_THAN           = "LESS_THAN"
-    val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS"
-    val LESS_THAN_EQUALS    = "LESS_THAN_EQUALS"
+  @js.native
+  sealed trait Comparator extends js.Any
+  object Comparator extends js.Object {
+    val EQUALS              = "EQUALS".asInstanceOf[Comparator]
+    val GREATER_THAN        = "GREATER_THAN".asInstanceOf[Comparator]
+    val LESS_THAN           = "LESS_THAN".asInstanceOf[Comparator]
+    val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
+    val LESS_THAN_EQUALS    = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
     val values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
   }
@@ -1688,24 +1656,25 @@ package glue {
       __obj.asInstanceOf[ConnectionPasswordEncryption]
     }
   }
-
-  object ConnectionPropertyKeyEnum {
-    val HOST                             = "HOST"
-    val PORT                             = "PORT"
-    val USERNAME                         = "USERNAME"
-    val PASSWORD                         = "PASSWORD"
-    val ENCRYPTED_PASSWORD               = "ENCRYPTED_PASSWORD"
-    val JDBC_DRIVER_JAR_URI              = "JDBC_DRIVER_JAR_URI"
-    val JDBC_DRIVER_CLASS_NAME           = "JDBC_DRIVER_CLASS_NAME"
-    val JDBC_ENGINE                      = "JDBC_ENGINE"
-    val JDBC_ENGINE_VERSION              = "JDBC_ENGINE_VERSION"
-    val CONFIG_FILES                     = "CONFIG_FILES"
-    val INSTANCE_ID                      = "INSTANCE_ID"
-    val JDBC_CONNECTION_URL              = "JDBC_CONNECTION_URL"
-    val JDBC_ENFORCE_SSL                 = "JDBC_ENFORCE_SSL"
-    val CUSTOM_JDBC_CERT                 = "CUSTOM_JDBC_CERT"
-    val SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION"
-    val CUSTOM_JDBC_CERT_STRING          = "CUSTOM_JDBC_CERT_STRING"
+  @js.native
+  sealed trait ConnectionPropertyKey extends js.Any
+  object ConnectionPropertyKey extends js.Object {
+    val HOST                             = "HOST".asInstanceOf[ConnectionPropertyKey]
+    val PORT                             = "PORT".asInstanceOf[ConnectionPropertyKey]
+    val USERNAME                         = "USERNAME".asInstanceOf[ConnectionPropertyKey]
+    val PASSWORD                         = "PASSWORD".asInstanceOf[ConnectionPropertyKey]
+    val ENCRYPTED_PASSWORD               = "ENCRYPTED_PASSWORD".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_DRIVER_JAR_URI              = "JDBC_DRIVER_JAR_URI".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_DRIVER_CLASS_NAME           = "JDBC_DRIVER_CLASS_NAME".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_ENGINE                      = "JDBC_ENGINE".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_ENGINE_VERSION              = "JDBC_ENGINE_VERSION".asInstanceOf[ConnectionPropertyKey]
+    val CONFIG_FILES                     = "CONFIG_FILES".asInstanceOf[ConnectionPropertyKey]
+    val INSTANCE_ID                      = "INSTANCE_ID".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_CONNECTION_URL              = "JDBC_CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
+    val JDBC_ENFORCE_SSL                 = "JDBC_ENFORCE_SSL".asInstanceOf[ConnectionPropertyKey]
+    val CUSTOM_JDBC_CERT                 = "CUSTOM_JDBC_CERT".asInstanceOf[ConnectionPropertyKey]
+    val SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
+    val CUSTOM_JDBC_CERT_STRING          = "CUSTOM_JDBC_CERT_STRING".asInstanceOf[ConnectionPropertyKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1728,10 +1697,11 @@ package glue {
       )
     )
   }
-
-  object ConnectionTypeEnum {
-    val JDBC = "JDBC"
-    val SFTP = "SFTP"
+  @js.native
+  sealed trait ConnectionType extends js.Any
+  object ConnectionType extends js.Object {
+    val JDBC = "JDBC".asInstanceOf[ConnectionType]
+    val SFTP = "SFTP".asInstanceOf[ConnectionType]
 
     val values = js.Object.freeze(js.Array(JDBC, SFTP))
   }
@@ -1788,12 +1758,13 @@ package glue {
       __obj.asInstanceOf[Crawl]
     }
   }
-
-  object CrawlStateEnum {
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val CANCELLED = "CANCELLED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait CrawlState extends js.Any
+  object CrawlState extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[CrawlState]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
+    val CANCELLED = "CANCELLED".asInstanceOf[CrawlState]
+    val FAILED    = "FAILED".asInstanceOf[CrawlState]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }
@@ -1925,11 +1896,12 @@ package glue {
       __obj.asInstanceOf[CrawlerNodeDetails]
     }
   }
-
-  object CrawlerStateEnum {
-    val READY    = "READY"
-    val RUNNING  = "RUNNING"
-    val STOPPING = "STOPPING"
+  @js.native
+  sealed trait CrawlerState extends js.Any
+  object CrawlerState extends js.Object {
+    val READY    = "READY".asInstanceOf[CrawlerState]
+    val RUNNING  = "RUNNING".asInstanceOf[CrawlerState]
+    val STOPPING = "STOPPING".asInstanceOf[CrawlerState]
 
     val values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
   }
@@ -2881,11 +2853,12 @@ package glue {
       __obj.asInstanceOf[CsvClassifier]
     }
   }
-
-  object CsvHeaderOptionEnum {
-    val UNKNOWN = "UNKNOWN"
-    val PRESENT = "PRESENT"
-    val ABSENT  = "ABSENT"
+  @js.native
+  sealed trait CsvHeaderOption extends js.Any
+  object CsvHeaderOption extends js.Object {
+    val UNKNOWN = "UNKNOWN".asInstanceOf[CsvHeaderOption]
+    val PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
+    val ABSENT  = "ABSENT".asInstanceOf[CsvHeaderOption]
 
     val values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
   }
@@ -3007,11 +2980,12 @@ package glue {
       __obj.asInstanceOf[DatabaseInput]
     }
   }
-
-  object DeleteBehaviorEnum {
-    val LOG                   = "LOG"
-    val DELETE_FROM_DATABASE  = "DELETE_FROM_DATABASE"
-    val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE"
+  @js.native
+  sealed trait DeleteBehavior extends js.Any
+  object DeleteBehavior extends js.Object {
+    val LOG                   = "LOG".asInstanceOf[DeleteBehavior]
+    val DELETE_FROM_DATABASE  = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
+    val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
 
     val values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
   }
@@ -3796,11 +3770,12 @@ package glue {
       __obj.asInstanceOf[ExecutionProperty]
     }
   }
-
-  object ExistConditionEnum {
-    val MUST_EXIST = "MUST_EXIST"
-    val NOT_EXIST  = "NOT_EXIST"
-    val NONE       = "NONE"
+  @js.native
+  sealed trait ExistCondition extends js.Any
+  object ExistCondition extends js.Object {
+    val MUST_EXIST = "MUST_EXIST".asInstanceOf[ExistCondition]
+    val NOT_EXIST  = "NOT_EXIST".asInstanceOf[ExistCondition]
+    val NONE       = "NONE".asInstanceOf[ExistCondition]
 
     val values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
   }
@@ -6010,10 +5985,11 @@ package glue {
       __obj.asInstanceOf[JobBookmarksEncryption]
     }
   }
-
-  object JobBookmarksEncryptionModeEnum {
-    val DISABLED  = "DISABLED"
-    val `CSE-KMS` = "CSE-KMS"
+  @js.native
+  sealed trait JobBookmarksEncryptionMode extends js.Any
+  object JobBookmarksEncryptionMode extends js.Object {
+    val DISABLED  = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
+    val `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
   }
@@ -6143,15 +6119,16 @@ package glue {
       __obj.asInstanceOf[JobRun]
     }
   }
-
-  object JobRunStateEnum {
-    val STARTING  = "STARTING"
-    val RUNNING   = "RUNNING"
-    val STOPPING  = "STOPPING"
-    val STOPPED   = "STOPPED"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val TIMEOUT   = "TIMEOUT"
+  @js.native
+  sealed trait JobRunState extends js.Any
+  object JobRunState extends js.Object {
+    val STARTING  = "STARTING".asInstanceOf[JobRunState]
+    val RUNNING   = "RUNNING".asInstanceOf[JobRunState]
+    val STOPPING  = "STOPPING".asInstanceOf[JobRunState]
+    val STOPPED   = "STOPPED".asInstanceOf[JobRunState]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobRunState]
+    val FAILED    = "FAILED".asInstanceOf[JobRunState]
+    val TIMEOUT   = "TIMEOUT".asInstanceOf[JobRunState]
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
@@ -6274,10 +6251,11 @@ package glue {
       __obj.asInstanceOf[LabelingSetGenerationTaskRunProperties]
     }
   }
-
-  object LanguageEnum {
-    val PYTHON = "PYTHON"
-    val SCALA  = "SCALA"
+  @js.native
+  sealed trait Language extends js.Any
+  object Language extends js.Object {
+    val PYTHON = "PYTHON".asInstanceOf[Language]
+    val SCALA  = "SCALA".asInstanceOf[Language]
 
     val values = js.Object.freeze(js.Array(PYTHON, SCALA))
   }
@@ -6315,11 +6293,12 @@ package glue {
       __obj.asInstanceOf[LastCrawlInfo]
     }
   }
-
-  object LastCrawlStatusEnum {
-    val SUCCEEDED = "SUCCEEDED"
-    val CANCELLED = "CANCELLED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait LastCrawlStatus extends js.Any
+  object LastCrawlStatus extends js.Object {
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[LastCrawlStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
+    val FAILED    = "FAILED".asInstanceOf[LastCrawlStatus]
 
     val values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
   }
@@ -6553,16 +6532,18 @@ package glue {
       __obj.asInstanceOf[Location]
     }
   }
-
-  object LogicalEnum {
-    val AND = "AND"
-    val ANY = "ANY"
+  @js.native
+  sealed trait Logical extends js.Any
+  object Logical extends js.Object {
+    val AND = "AND".asInstanceOf[Logical]
+    val ANY = "ANY".asInstanceOf[Logical]
 
     val values = js.Object.freeze(js.Array(AND, ANY))
   }
-
-  object LogicalOperatorEnum {
-    val EQUALS = "EQUALS"
+  @js.native
+  sealed trait LogicalOperator extends js.Any
+  object LogicalOperator extends js.Object {
+    val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
     val values = js.Object.freeze(js.Array(EQUALS))
   }
@@ -6704,11 +6685,12 @@ package glue {
       __obj.asInstanceOf[Node]
     }
   }
-
-  object NodeTypeEnum {
-    val CRAWLER = "CRAWLER"
-    val JOB     = "JOB"
-    val TRIGGER = "TRIGGER"
+  @js.native
+  sealed trait NodeType extends js.Any
+  object NodeType extends js.Object {
+    val CRAWLER = "CRAWLER".asInstanceOf[NodeType]
+    val JOB     = "JOB".asInstanceOf[NodeType]
+    val TRIGGER = "TRIGGER".asInstanceOf[NodeType]
 
     val values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
   }
@@ -6869,17 +6851,18 @@ package glue {
       __obj.asInstanceOf[PartitionValueList]
     }
   }
-
-  object PermissionEnum {
-    val ALL                  = "ALL"
-    val SELECT               = "SELECT"
-    val ALTER                = "ALTER"
-    val DROP                 = "DROP"
-    val DELETE               = "DELETE"
-    val INSERT               = "INSERT"
-    val CREATE_DATABASE      = "CREATE_DATABASE"
-    val CREATE_TABLE         = "CREATE_TABLE"
-    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val ALL                  = "ALL".asInstanceOf[Permission]
+    val SELECT               = "SELECT".asInstanceOf[Permission]
+    val ALTER                = "ALTER".asInstanceOf[Permission]
+    val DROP                 = "DROP".asInstanceOf[Permission]
+    val DELETE               = "DELETE".asInstanceOf[Permission]
+    val INSERT               = "INSERT".asInstanceOf[Permission]
+    val CREATE_DATABASE      = "CREATE_DATABASE".asInstanceOf[Permission]
+    val CREATE_TABLE         = "CREATE_TABLE".asInstanceOf[Permission]
+    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
     val values = js.Object.freeze(
       js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
@@ -6976,11 +6959,12 @@ package glue {
       __obj.asInstanceOf[PrincipalPermissions]
     }
   }
-
-  object PrincipalTypeEnum {
-    val USER  = "USER"
-    val ROLE  = "ROLE"
-    val GROUP = "GROUP"
+  @js.native
+  sealed trait PrincipalType extends js.Any
+  object PrincipalType extends js.Object {
+    val USER  = "USER".asInstanceOf[PrincipalType]
+    val ROLE  = "ROLE".asInstanceOf[PrincipalType]
+    val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
@@ -7157,11 +7141,12 @@ package glue {
       __obj.asInstanceOf[ResetJobBookmarkResponse]
     }
   }
-
-  object ResourceTypeEnum {
-    val JAR     = "JAR"
-    val FILE    = "FILE"
-    val ARCHIVE = "ARCHIVE"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val JAR     = "JAR".asInstanceOf[ResourceType]
+    val FILE    = "FILE".asInstanceOf[ResourceType]
+    val ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
   }
@@ -7209,11 +7194,12 @@ package glue {
       __obj.asInstanceOf[S3Encryption]
     }
   }
-
-  object S3EncryptionModeEnum {
-    val DISABLED  = "DISABLED"
-    val `SSE-KMS` = "SSE-KMS"
-    val `SSE-S3`  = "SSE-S3"
+  @js.native
+  sealed trait S3EncryptionMode extends js.Any
+  object S3EncryptionMode extends js.Object {
+    val DISABLED  = "DISABLED".asInstanceOf[S3EncryptionMode]
+    val `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
+    val `SSE-S3`  = "SSE-S3".asInstanceOf[S3EncryptionMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
   }
@@ -7261,11 +7247,12 @@ package glue {
       __obj.asInstanceOf[Schedule]
     }
   }
-
-  object ScheduleStateEnum {
-    val SCHEDULED     = "SCHEDULED"
-    val NOT_SCHEDULED = "NOT_SCHEDULED"
-    val TRANSITIONING = "TRANSITIONING"
+  @js.native
+  sealed trait ScheduleState extends js.Any
+  object ScheduleState extends js.Object {
+    val SCHEDULED     = "SCHEDULED".asInstanceOf[ScheduleState]
+    val NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
+    val TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
 
     val values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
   }
@@ -7464,10 +7451,11 @@ package glue {
       __obj.asInstanceOf[SkewedInfo]
     }
   }
-
-  object SortEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait Sort extends js.Any
+  object Sort extends js.Object {
+    val ASC  = "ASC".asInstanceOf[Sort]
+    val DESC = "DESC".asInstanceOf[Sort]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -7493,10 +7481,11 @@ package glue {
       __obj.asInstanceOf[SortCriterion]
     }
   }
-
-  object SortDirectionTypeEnum {
-    val DESCENDING = "DESCENDING"
-    val ASCENDING  = "ASCENDING"
+  @js.native
+  sealed trait SortDirectionType extends js.Any
+  object SortDirectionType extends js.Object {
+    val DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
+    val ASCENDING  = "ASCENDING".asInstanceOf[SortDirectionType]
 
     val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }
@@ -8328,11 +8317,12 @@ package glue {
       __obj.asInstanceOf[TaskRunProperties]
     }
   }
-
-  object TaskRunSortColumnTypeEnum {
-    val TASK_RUN_TYPE = "TASK_RUN_TYPE"
-    val STATUS        = "STATUS"
-    val STARTED       = "STARTED"
+  @js.native
+  sealed trait TaskRunSortColumnType extends js.Any
+  object TaskRunSortColumnType extends js.Object {
+    val TASK_RUN_TYPE = "TASK_RUN_TYPE".asInstanceOf[TaskRunSortColumnType]
+    val STATUS        = "STATUS".asInstanceOf[TaskRunSortColumnType]
+    val STARTED       = "STARTED".asInstanceOf[TaskRunSortColumnType]
 
     val values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
   }
@@ -8360,25 +8350,27 @@ package glue {
       __obj.asInstanceOf[TaskRunSortCriteria]
     }
   }
-
-  object TaskStatusTypeEnum {
-    val STARTING  = "STARTING"
-    val RUNNING   = "RUNNING"
-    val STOPPING  = "STOPPING"
-    val STOPPED   = "STOPPED"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
-    val TIMEOUT   = "TIMEOUT"
+  @js.native
+  sealed trait TaskStatusType extends js.Any
+  object TaskStatusType extends js.Object {
+    val STARTING  = "STARTING".asInstanceOf[TaskStatusType]
+    val RUNNING   = "RUNNING".asInstanceOf[TaskStatusType]
+    val STOPPING  = "STOPPING".asInstanceOf[TaskStatusType]
+    val STOPPED   = "STOPPED".asInstanceOf[TaskStatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[TaskStatusType]
+    val FAILED    = "FAILED".asInstanceOf[TaskStatusType]
+    val TIMEOUT   = "TIMEOUT".asInstanceOf[TaskStatusType]
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
-
-  object TaskTypeEnum {
-    val EVALUATION              = "EVALUATION"
-    val LABELING_SET_GENERATION = "LABELING_SET_GENERATION"
-    val IMPORT_LABELS           = "IMPORT_LABELS"
-    val EXPORT_LABELS           = "EXPORT_LABELS"
-    val FIND_MATCHES            = "FIND_MATCHES"
+  @js.native
+  sealed trait TaskType extends js.Any
+  object TaskType extends js.Object {
+    val EVALUATION              = "EVALUATION".asInstanceOf[TaskType]
+    val LABELING_SET_GENERATION = "LABELING_SET_GENERATION".asInstanceOf[TaskType]
+    val IMPORT_LABELS           = "IMPORT_LABELS".asInstanceOf[TaskType]
+    val EXPORT_LABELS           = "EXPORT_LABELS".asInstanceOf[TaskType]
+    val FIND_MATCHES            = "FIND_MATCHES".asInstanceOf[TaskType]
 
     val values =
       js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
@@ -8450,13 +8442,14 @@ package glue {
       __obj.asInstanceOf[TransformParameters]
     }
   }
-
-  object TransformSortColumnTypeEnum {
-    val NAME           = "NAME"
-    val TRANSFORM_TYPE = "TRANSFORM_TYPE"
-    val STATUS         = "STATUS"
-    val CREATED        = "CREATED"
-    val LAST_MODIFIED  = "LAST_MODIFIED"
+  @js.native
+  sealed trait TransformSortColumnType extends js.Any
+  object TransformSortColumnType extends js.Object {
+    val NAME           = "NAME".asInstanceOf[TransformSortColumnType]
+    val TRANSFORM_TYPE = "TRANSFORM_TYPE".asInstanceOf[TransformSortColumnType]
+    val STATUS         = "STATUS".asInstanceOf[TransformSortColumnType]
+    val CREATED        = "CREATED".asInstanceOf[TransformSortColumnType]
+    val LAST_MODIFIED  = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
 
     val values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
   }
@@ -8484,17 +8477,19 @@ package glue {
       __obj.asInstanceOf[TransformSortCriteria]
     }
   }
-
-  object TransformStatusTypeEnum {
-    val NOT_READY = "NOT_READY"
-    val READY     = "READY"
-    val DELETING  = "DELETING"
+  @js.native
+  sealed trait TransformStatusType extends js.Any
+  object TransformStatusType extends js.Object {
+    val NOT_READY = "NOT_READY".asInstanceOf[TransformStatusType]
+    val READY     = "READY".asInstanceOf[TransformStatusType]
+    val DELETING  = "DELETING".asInstanceOf[TransformStatusType]
 
     val values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
   }
-
-  object TransformTypeEnum {
-    val FIND_MATCHES = "FIND_MATCHES"
+  @js.native
+  sealed trait TransformType extends js.Any
+  object TransformType extends js.Object {
+    val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
 
     val values = js.Object.freeze(js.Array(FIND_MATCHES))
   }
@@ -8560,26 +8555,28 @@ package glue {
       __obj.asInstanceOf[TriggerNodeDetails]
     }
   }
-
-  object TriggerStateEnum {
-    val CREATING     = "CREATING"
-    val CREATED      = "CREATED"
-    val ACTIVATING   = "ACTIVATING"
-    val ACTIVATED    = "ACTIVATED"
-    val DEACTIVATING = "DEACTIVATING"
-    val DEACTIVATED  = "DEACTIVATED"
-    val DELETING     = "DELETING"
-    val UPDATING     = "UPDATING"
+  @js.native
+  sealed trait TriggerState extends js.Any
+  object TriggerState extends js.Object {
+    val CREATING     = "CREATING".asInstanceOf[TriggerState]
+    val CREATED      = "CREATED".asInstanceOf[TriggerState]
+    val ACTIVATING   = "ACTIVATING".asInstanceOf[TriggerState]
+    val ACTIVATED    = "ACTIVATED".asInstanceOf[TriggerState]
+    val DEACTIVATING = "DEACTIVATING".asInstanceOf[TriggerState]
+    val DEACTIVATED  = "DEACTIVATED".asInstanceOf[TriggerState]
+    val DELETING     = "DELETING".asInstanceOf[TriggerState]
+    val UPDATING     = "UPDATING".asInstanceOf[TriggerState]
 
     val values = js.Object.freeze(
       js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
     )
   }
-
-  object TriggerTypeEnum {
-    val SCHEDULED   = "SCHEDULED"
-    val CONDITIONAL = "CONDITIONAL"
-    val ON_DEMAND   = "ON_DEMAND"
+  @js.native
+  sealed trait TriggerType extends js.Any
+  object TriggerType extends js.Object {
+    val SCHEDULED   = "SCHEDULED".asInstanceOf[TriggerType]
+    val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
+    val ON_DEMAND   = "ON_DEMAND".asInstanceOf[TriggerType]
 
     val values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
   }
@@ -8648,10 +8645,11 @@ package glue {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
-
-  object UpdateBehaviorEnum {
-    val LOG                = "LOG"
-    val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE"
+  @js.native
+  sealed trait UpdateBehavior extends js.Any
+  object UpdateBehavior extends js.Object {
+    val LOG                = "LOG".asInstanceOf[UpdateBehavior]
+    val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
 
     val values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
   }
@@ -9402,11 +9400,12 @@ package glue {
       __obj.asInstanceOf[UserDefinedFunctionInput]
     }
   }
-
-  object WorkerTypeEnum {
-    val Standard = "Standard"
-    val `G.1X`   = "G.1X"
-    val `G.2X`   = "G.2X"
+  @js.native
+  sealed trait WorkerType extends js.Any
+  object WorkerType extends js.Object {
+    val Standard = "Standard".asInstanceOf[WorkerType]
+    val `G.1X`   = "G.1X".asInstanceOf[WorkerType]
+    val `G.2X`   = "G.2X".asInstanceOf[WorkerType]
 
     val values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
   }
@@ -9543,10 +9542,11 @@ package glue {
       __obj.asInstanceOf[WorkflowRunStatistics]
     }
   }
-
-  object WorkflowRunStatusEnum {
-    val RUNNING   = "RUNNING"
-    val COMPLETED = "COMPLETED"
+  @js.native
+  sealed trait WorkflowRunStatus extends js.Any
+  object WorkflowRunStatus extends js.Object {
+    val RUNNING   = "RUNNING".asInstanceOf[WorkflowRunStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[WorkflowRunStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, COMPLETED))
   }

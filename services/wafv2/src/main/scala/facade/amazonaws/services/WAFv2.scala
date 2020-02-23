@@ -7,68 +7,60 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object wafv2 {
-  type Action                             = String
-  type CapacityUnit                       = Double
-  type ComparisonOperator                 = String
-  type ConsumedCapacity                   = Double
-  type Country                            = String
-  type CountryCode                        = String
-  type CountryCodes                       = js.Array[CountryCode]
-  type EntityDescription                  = String
-  type EntityId                           = String
-  type EntityName                         = String
-  type ExcludedRules                      = js.Array[ExcludedRule]
-  type FieldToMatchData                   = String
-  type HTTPHeaders                        = js.Array[HTTPHeader]
-  type HTTPMethod                         = String
-  type HTTPVersion                        = String
-  type HeaderName                         = String
-  type HeaderValue                        = String
-  type IPAddress                          = String
-  type IPAddressVersion                   = String
-  type IPAddresses                        = js.Array[IPAddress]
-  type IPSetSummaries                     = js.Array[IPSetSummary]
-  type IPString                           = String
-  type ListMaxItems                       = Double
-  type LockToken                          = String
-  type LogDestinationConfigs              = js.Array[ResourceArn]
-  type LoggingConfigurations              = js.Array[LoggingConfiguration]
-  type ManagedRuleGroupSummaries          = js.Array[ManagedRuleGroupSummary]
-  type MetricName                         = String
-  type NextMarker                         = String
-  type PaginationLimit                    = Int
-  type PopulationSize                     = Double
-  type PositionalConstraint               = String
-  type RateBasedStatementAggregateKeyType = String
-  type RateLimit                          = Double
-  type RedactedFields                     = js.Array[FieldToMatch]
-  type RegexPatternSetSummaries           = js.Array[RegexPatternSetSummary]
-  type RegexPatternString                 = String
-  type RegularExpressionList              = js.Array[Regex]
-  type ResourceArn                        = String
-  type ResourceArns                       = js.Array[ResourceArn]
-  type ResourceType                       = String
-  type RuleGroupSummaries                 = js.Array[RuleGroupSummary]
-  type RulePriority                       = Int
-  type RuleSummaries                      = js.Array[RuleSummary]
-  type Rules                              = js.Array[Rule]
-  type SampleWeight                       = Double
-  type SampledHTTPRequests                = js.Array[SampledHTTPRequest]
-  type Scope                              = String
-  type SearchString                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Size                               = Double
-  type Statements                         = js.Array[Statement]
-  type TagKey                             = String
-  type TagKeyList                         = js.Array[TagKey]
-  type TagList                            = js.Array[Tag]
-  type TagValue                           = String
-  type TextTransformationPriority         = Int
-  type TextTransformationType             = String
-  type TextTransformations                = js.Array[TextTransformation]
-  type Timestamp                          = js.Date
-  type URIString                          = String
-  type VendorName                         = String
-  type WebACLSummaries                    = js.Array[WebACLSummary]
+  type Action                     = String
+  type CapacityUnit               = Double
+  type ConsumedCapacity           = Double
+  type Country                    = String
+  type CountryCodes               = js.Array[CountryCode]
+  type EntityDescription          = String
+  type EntityId                   = String
+  type EntityName                 = String
+  type ExcludedRules              = js.Array[ExcludedRule]
+  type FieldToMatchData           = String
+  type HTTPHeaders                = js.Array[HTTPHeader]
+  type HTTPMethod                 = String
+  type HTTPVersion                = String
+  type HeaderName                 = String
+  type HeaderValue                = String
+  type IPAddress                  = String
+  type IPAddresses                = js.Array[IPAddress]
+  type IPSetSummaries             = js.Array[IPSetSummary]
+  type IPString                   = String
+  type ListMaxItems               = Double
+  type LockToken                  = String
+  type LogDestinationConfigs      = js.Array[ResourceArn]
+  type LoggingConfigurations      = js.Array[LoggingConfiguration]
+  type ManagedRuleGroupSummaries  = js.Array[ManagedRuleGroupSummary]
+  type MetricName                 = String
+  type NextMarker                 = String
+  type PaginationLimit            = Int
+  type PopulationSize             = Double
+  type RateLimit                  = Double
+  type RedactedFields             = js.Array[FieldToMatch]
+  type RegexPatternSetSummaries   = js.Array[RegexPatternSetSummary]
+  type RegexPatternString         = String
+  type RegularExpressionList      = js.Array[Regex]
+  type ResourceArn                = String
+  type ResourceArns               = js.Array[ResourceArn]
+  type RuleGroupSummaries         = js.Array[RuleGroupSummary]
+  type RulePriority               = Int
+  type RuleSummaries              = js.Array[RuleSummary]
+  type Rules                      = js.Array[Rule]
+  type SampleWeight               = Double
+  type SampledHTTPRequests        = js.Array[SampledHTTPRequest]
+  type SearchString               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Size                       = Double
+  type Statements                 = js.Array[Statement]
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagList                    = js.Array[Tag]
+  type TagValue                   = String
+  type TextTransformationPriority = Int
+  type TextTransformations        = js.Array[TextTransformation]
+  type Timestamp                  = js.Date
+  type URIString                  = String
+  type VendorName                 = String
+  type WebACLSummaries            = js.Array[WebACLSummary]
 
   implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 
@@ -410,14 +402,15 @@ package wafv2 {
       __obj.asInstanceOf[CheckCapacityResponse]
     }
   }
-
-  object ComparisonOperatorEnum {
-    val EQ = "EQ"
-    val NE = "NE"
-    val LE = "LE"
-    val LT = "LT"
-    val GE = "GE"
-    val GT = "GT"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
   }
@@ -439,257 +432,258 @@ package wafv2 {
       __obj.asInstanceOf[CountAction]
     }
   }
-
-  object CountryCodeEnum {
-    val AF = "AF"
-    val AX = "AX"
-    val AL = "AL"
-    val DZ = "DZ"
-    val AS = "AS"
-    val AD = "AD"
-    val AO = "AO"
-    val AI = "AI"
-    val AQ = "AQ"
-    val AG = "AG"
-    val AR = "AR"
-    val AM = "AM"
-    val AW = "AW"
-    val AU = "AU"
-    val AT = "AT"
-    val AZ = "AZ"
-    val BS = "BS"
-    val BH = "BH"
-    val BD = "BD"
-    val BB = "BB"
-    val BY = "BY"
-    val BE = "BE"
-    val BZ = "BZ"
-    val BJ = "BJ"
-    val BM = "BM"
-    val BT = "BT"
-    val BO = "BO"
-    val BQ = "BQ"
-    val BA = "BA"
-    val BW = "BW"
-    val BV = "BV"
-    val BR = "BR"
-    val IO = "IO"
-    val BN = "BN"
-    val BG = "BG"
-    val BF = "BF"
-    val BI = "BI"
-    val KH = "KH"
-    val CM = "CM"
-    val CA = "CA"
-    val CV = "CV"
-    val KY = "KY"
-    val CF = "CF"
-    val TD = "TD"
-    val CL = "CL"
-    val CN = "CN"
-    val CX = "CX"
-    val CC = "CC"
-    val CO = "CO"
-    val KM = "KM"
-    val CG = "CG"
-    val CD = "CD"
-    val CK = "CK"
-    val CR = "CR"
-    val CI = "CI"
-    val HR = "HR"
-    val CU = "CU"
-    val CW = "CW"
-    val CY = "CY"
-    val CZ = "CZ"
-    val DK = "DK"
-    val DJ = "DJ"
-    val DM = "DM"
-    val DO = "DO"
-    val EC = "EC"
-    val EG = "EG"
-    val SV = "SV"
-    val GQ = "GQ"
-    val ER = "ER"
-    val EE = "EE"
-    val ET = "ET"
-    val FK = "FK"
-    val FO = "FO"
-    val FJ = "FJ"
-    val FI = "FI"
-    val FR = "FR"
-    val GF = "GF"
-    val PF = "PF"
-    val TF = "TF"
-    val GA = "GA"
-    val GM = "GM"
-    val GE = "GE"
-    val DE = "DE"
-    val GH = "GH"
-    val GI = "GI"
-    val GR = "GR"
-    val GL = "GL"
-    val GD = "GD"
-    val GP = "GP"
-    val GU = "GU"
-    val GT = "GT"
-    val GG = "GG"
-    val GN = "GN"
-    val GW = "GW"
-    val GY = "GY"
-    val HT = "HT"
-    val HM = "HM"
-    val VA = "VA"
-    val HN = "HN"
-    val HK = "HK"
-    val HU = "HU"
-    val IS = "IS"
-    val IN = "IN"
-    val ID = "ID"
-    val IR = "IR"
-    val IQ = "IQ"
-    val IE = "IE"
-    val IM = "IM"
-    val IL = "IL"
-    val IT = "IT"
-    val JM = "JM"
-    val JP = "JP"
-    val JE = "JE"
-    val JO = "JO"
-    val KZ = "KZ"
-    val KE = "KE"
-    val KI = "KI"
-    val KP = "KP"
-    val KR = "KR"
-    val KW = "KW"
-    val KG = "KG"
-    val LA = "LA"
-    val LV = "LV"
-    val LB = "LB"
-    val LS = "LS"
-    val LR = "LR"
-    val LY = "LY"
-    val LI = "LI"
-    val LT = "LT"
-    val LU = "LU"
-    val MO = "MO"
-    val MK = "MK"
-    val MG = "MG"
-    val MW = "MW"
-    val MY = "MY"
-    val MV = "MV"
-    val ML = "ML"
-    val MT = "MT"
-    val MH = "MH"
-    val MQ = "MQ"
-    val MR = "MR"
-    val MU = "MU"
-    val YT = "YT"
-    val MX = "MX"
-    val FM = "FM"
-    val MD = "MD"
-    val MC = "MC"
-    val MN = "MN"
-    val ME = "ME"
-    val MS = "MS"
-    val MA = "MA"
-    val MZ = "MZ"
-    val MM = "MM"
-    val NA = "NA"
-    val NR = "NR"
-    val NP = "NP"
-    val NL = "NL"
-    val NC = "NC"
-    val NZ = "NZ"
-    val NI = "NI"
-    val NE = "NE"
-    val NG = "NG"
-    val NU = "NU"
-    val NF = "NF"
-    val MP = "MP"
-    val NO = "NO"
-    val OM = "OM"
-    val PK = "PK"
-    val PW = "PW"
-    val PS = "PS"
-    val PA = "PA"
-    val PG = "PG"
-    val PY = "PY"
-    val PE = "PE"
-    val PH = "PH"
-    val PN = "PN"
-    val PL = "PL"
-    val PT = "PT"
-    val PR = "PR"
-    val QA = "QA"
-    val RE = "RE"
-    val RO = "RO"
-    val RU = "RU"
-    val RW = "RW"
-    val BL = "BL"
-    val SH = "SH"
-    val KN = "KN"
-    val LC = "LC"
-    val MF = "MF"
-    val PM = "PM"
-    val VC = "VC"
-    val WS = "WS"
-    val SM = "SM"
-    val ST = "ST"
-    val SA = "SA"
-    val SN = "SN"
-    val RS = "RS"
-    val SC = "SC"
-    val SL = "SL"
-    val SG = "SG"
-    val SX = "SX"
-    val SK = "SK"
-    val SI = "SI"
-    val SB = "SB"
-    val SO = "SO"
-    val ZA = "ZA"
-    val GS = "GS"
-    val SS = "SS"
-    val ES = "ES"
-    val LK = "LK"
-    val SD = "SD"
-    val SR = "SR"
-    val SJ = "SJ"
-    val SZ = "SZ"
-    val SE = "SE"
-    val CH = "CH"
-    val SY = "SY"
-    val TW = "TW"
-    val TJ = "TJ"
-    val TZ = "TZ"
-    val TH = "TH"
-    val TL = "TL"
-    val TG = "TG"
-    val TK = "TK"
-    val TO = "TO"
-    val TT = "TT"
-    val TN = "TN"
-    val TR = "TR"
-    val TM = "TM"
-    val TC = "TC"
-    val TV = "TV"
-    val UG = "UG"
-    val UA = "UA"
-    val AE = "AE"
-    val GB = "GB"
-    val US = "US"
-    val UM = "UM"
-    val UY = "UY"
-    val UZ = "UZ"
-    val VU = "VU"
-    val VE = "VE"
-    val VN = "VN"
-    val VG = "VG"
-    val VI = "VI"
-    val WF = "WF"
-    val EH = "EH"
-    val YE = "YE"
-    val ZM = "ZM"
-    val ZW = "ZW"
+  @js.native
+  sealed trait CountryCode extends js.Any
+  object CountryCode extends js.Object {
+    val AF = "AF".asInstanceOf[CountryCode]
+    val AX = "AX".asInstanceOf[CountryCode]
+    val AL = "AL".asInstanceOf[CountryCode]
+    val DZ = "DZ".asInstanceOf[CountryCode]
+    val AS = "AS".asInstanceOf[CountryCode]
+    val AD = "AD".asInstanceOf[CountryCode]
+    val AO = "AO".asInstanceOf[CountryCode]
+    val AI = "AI".asInstanceOf[CountryCode]
+    val AQ = "AQ".asInstanceOf[CountryCode]
+    val AG = "AG".asInstanceOf[CountryCode]
+    val AR = "AR".asInstanceOf[CountryCode]
+    val AM = "AM".asInstanceOf[CountryCode]
+    val AW = "AW".asInstanceOf[CountryCode]
+    val AU = "AU".asInstanceOf[CountryCode]
+    val AT = "AT".asInstanceOf[CountryCode]
+    val AZ = "AZ".asInstanceOf[CountryCode]
+    val BS = "BS".asInstanceOf[CountryCode]
+    val BH = "BH".asInstanceOf[CountryCode]
+    val BD = "BD".asInstanceOf[CountryCode]
+    val BB = "BB".asInstanceOf[CountryCode]
+    val BY = "BY".asInstanceOf[CountryCode]
+    val BE = "BE".asInstanceOf[CountryCode]
+    val BZ = "BZ".asInstanceOf[CountryCode]
+    val BJ = "BJ".asInstanceOf[CountryCode]
+    val BM = "BM".asInstanceOf[CountryCode]
+    val BT = "BT".asInstanceOf[CountryCode]
+    val BO = "BO".asInstanceOf[CountryCode]
+    val BQ = "BQ".asInstanceOf[CountryCode]
+    val BA = "BA".asInstanceOf[CountryCode]
+    val BW = "BW".asInstanceOf[CountryCode]
+    val BV = "BV".asInstanceOf[CountryCode]
+    val BR = "BR".asInstanceOf[CountryCode]
+    val IO = "IO".asInstanceOf[CountryCode]
+    val BN = "BN".asInstanceOf[CountryCode]
+    val BG = "BG".asInstanceOf[CountryCode]
+    val BF = "BF".asInstanceOf[CountryCode]
+    val BI = "BI".asInstanceOf[CountryCode]
+    val KH = "KH".asInstanceOf[CountryCode]
+    val CM = "CM".asInstanceOf[CountryCode]
+    val CA = "CA".asInstanceOf[CountryCode]
+    val CV = "CV".asInstanceOf[CountryCode]
+    val KY = "KY".asInstanceOf[CountryCode]
+    val CF = "CF".asInstanceOf[CountryCode]
+    val TD = "TD".asInstanceOf[CountryCode]
+    val CL = "CL".asInstanceOf[CountryCode]
+    val CN = "CN".asInstanceOf[CountryCode]
+    val CX = "CX".asInstanceOf[CountryCode]
+    val CC = "CC".asInstanceOf[CountryCode]
+    val CO = "CO".asInstanceOf[CountryCode]
+    val KM = "KM".asInstanceOf[CountryCode]
+    val CG = "CG".asInstanceOf[CountryCode]
+    val CD = "CD".asInstanceOf[CountryCode]
+    val CK = "CK".asInstanceOf[CountryCode]
+    val CR = "CR".asInstanceOf[CountryCode]
+    val CI = "CI".asInstanceOf[CountryCode]
+    val HR = "HR".asInstanceOf[CountryCode]
+    val CU = "CU".asInstanceOf[CountryCode]
+    val CW = "CW".asInstanceOf[CountryCode]
+    val CY = "CY".asInstanceOf[CountryCode]
+    val CZ = "CZ".asInstanceOf[CountryCode]
+    val DK = "DK".asInstanceOf[CountryCode]
+    val DJ = "DJ".asInstanceOf[CountryCode]
+    val DM = "DM".asInstanceOf[CountryCode]
+    val DO = "DO".asInstanceOf[CountryCode]
+    val EC = "EC".asInstanceOf[CountryCode]
+    val EG = "EG".asInstanceOf[CountryCode]
+    val SV = "SV".asInstanceOf[CountryCode]
+    val GQ = "GQ".asInstanceOf[CountryCode]
+    val ER = "ER".asInstanceOf[CountryCode]
+    val EE = "EE".asInstanceOf[CountryCode]
+    val ET = "ET".asInstanceOf[CountryCode]
+    val FK = "FK".asInstanceOf[CountryCode]
+    val FO = "FO".asInstanceOf[CountryCode]
+    val FJ = "FJ".asInstanceOf[CountryCode]
+    val FI = "FI".asInstanceOf[CountryCode]
+    val FR = "FR".asInstanceOf[CountryCode]
+    val GF = "GF".asInstanceOf[CountryCode]
+    val PF = "PF".asInstanceOf[CountryCode]
+    val TF = "TF".asInstanceOf[CountryCode]
+    val GA = "GA".asInstanceOf[CountryCode]
+    val GM = "GM".asInstanceOf[CountryCode]
+    val GE = "GE".asInstanceOf[CountryCode]
+    val DE = "DE".asInstanceOf[CountryCode]
+    val GH = "GH".asInstanceOf[CountryCode]
+    val GI = "GI".asInstanceOf[CountryCode]
+    val GR = "GR".asInstanceOf[CountryCode]
+    val GL = "GL".asInstanceOf[CountryCode]
+    val GD = "GD".asInstanceOf[CountryCode]
+    val GP = "GP".asInstanceOf[CountryCode]
+    val GU = "GU".asInstanceOf[CountryCode]
+    val GT = "GT".asInstanceOf[CountryCode]
+    val GG = "GG".asInstanceOf[CountryCode]
+    val GN = "GN".asInstanceOf[CountryCode]
+    val GW = "GW".asInstanceOf[CountryCode]
+    val GY = "GY".asInstanceOf[CountryCode]
+    val HT = "HT".asInstanceOf[CountryCode]
+    val HM = "HM".asInstanceOf[CountryCode]
+    val VA = "VA".asInstanceOf[CountryCode]
+    val HN = "HN".asInstanceOf[CountryCode]
+    val HK = "HK".asInstanceOf[CountryCode]
+    val HU = "HU".asInstanceOf[CountryCode]
+    val IS = "IS".asInstanceOf[CountryCode]
+    val IN = "IN".asInstanceOf[CountryCode]
+    val ID = "ID".asInstanceOf[CountryCode]
+    val IR = "IR".asInstanceOf[CountryCode]
+    val IQ = "IQ".asInstanceOf[CountryCode]
+    val IE = "IE".asInstanceOf[CountryCode]
+    val IM = "IM".asInstanceOf[CountryCode]
+    val IL = "IL".asInstanceOf[CountryCode]
+    val IT = "IT".asInstanceOf[CountryCode]
+    val JM = "JM".asInstanceOf[CountryCode]
+    val JP = "JP".asInstanceOf[CountryCode]
+    val JE = "JE".asInstanceOf[CountryCode]
+    val JO = "JO".asInstanceOf[CountryCode]
+    val KZ = "KZ".asInstanceOf[CountryCode]
+    val KE = "KE".asInstanceOf[CountryCode]
+    val KI = "KI".asInstanceOf[CountryCode]
+    val KP = "KP".asInstanceOf[CountryCode]
+    val KR = "KR".asInstanceOf[CountryCode]
+    val KW = "KW".asInstanceOf[CountryCode]
+    val KG = "KG".asInstanceOf[CountryCode]
+    val LA = "LA".asInstanceOf[CountryCode]
+    val LV = "LV".asInstanceOf[CountryCode]
+    val LB = "LB".asInstanceOf[CountryCode]
+    val LS = "LS".asInstanceOf[CountryCode]
+    val LR = "LR".asInstanceOf[CountryCode]
+    val LY = "LY".asInstanceOf[CountryCode]
+    val LI = "LI".asInstanceOf[CountryCode]
+    val LT = "LT".asInstanceOf[CountryCode]
+    val LU = "LU".asInstanceOf[CountryCode]
+    val MO = "MO".asInstanceOf[CountryCode]
+    val MK = "MK".asInstanceOf[CountryCode]
+    val MG = "MG".asInstanceOf[CountryCode]
+    val MW = "MW".asInstanceOf[CountryCode]
+    val MY = "MY".asInstanceOf[CountryCode]
+    val MV = "MV".asInstanceOf[CountryCode]
+    val ML = "ML".asInstanceOf[CountryCode]
+    val MT = "MT".asInstanceOf[CountryCode]
+    val MH = "MH".asInstanceOf[CountryCode]
+    val MQ = "MQ".asInstanceOf[CountryCode]
+    val MR = "MR".asInstanceOf[CountryCode]
+    val MU = "MU".asInstanceOf[CountryCode]
+    val YT = "YT".asInstanceOf[CountryCode]
+    val MX = "MX".asInstanceOf[CountryCode]
+    val FM = "FM".asInstanceOf[CountryCode]
+    val MD = "MD".asInstanceOf[CountryCode]
+    val MC = "MC".asInstanceOf[CountryCode]
+    val MN = "MN".asInstanceOf[CountryCode]
+    val ME = "ME".asInstanceOf[CountryCode]
+    val MS = "MS".asInstanceOf[CountryCode]
+    val MA = "MA".asInstanceOf[CountryCode]
+    val MZ = "MZ".asInstanceOf[CountryCode]
+    val MM = "MM".asInstanceOf[CountryCode]
+    val NA = "NA".asInstanceOf[CountryCode]
+    val NR = "NR".asInstanceOf[CountryCode]
+    val NP = "NP".asInstanceOf[CountryCode]
+    val NL = "NL".asInstanceOf[CountryCode]
+    val NC = "NC".asInstanceOf[CountryCode]
+    val NZ = "NZ".asInstanceOf[CountryCode]
+    val NI = "NI".asInstanceOf[CountryCode]
+    val NE = "NE".asInstanceOf[CountryCode]
+    val NG = "NG".asInstanceOf[CountryCode]
+    val NU = "NU".asInstanceOf[CountryCode]
+    val NF = "NF".asInstanceOf[CountryCode]
+    val MP = "MP".asInstanceOf[CountryCode]
+    val NO = "NO".asInstanceOf[CountryCode]
+    val OM = "OM".asInstanceOf[CountryCode]
+    val PK = "PK".asInstanceOf[CountryCode]
+    val PW = "PW".asInstanceOf[CountryCode]
+    val PS = "PS".asInstanceOf[CountryCode]
+    val PA = "PA".asInstanceOf[CountryCode]
+    val PG = "PG".asInstanceOf[CountryCode]
+    val PY = "PY".asInstanceOf[CountryCode]
+    val PE = "PE".asInstanceOf[CountryCode]
+    val PH = "PH".asInstanceOf[CountryCode]
+    val PN = "PN".asInstanceOf[CountryCode]
+    val PL = "PL".asInstanceOf[CountryCode]
+    val PT = "PT".asInstanceOf[CountryCode]
+    val PR = "PR".asInstanceOf[CountryCode]
+    val QA = "QA".asInstanceOf[CountryCode]
+    val RE = "RE".asInstanceOf[CountryCode]
+    val RO = "RO".asInstanceOf[CountryCode]
+    val RU = "RU".asInstanceOf[CountryCode]
+    val RW = "RW".asInstanceOf[CountryCode]
+    val BL = "BL".asInstanceOf[CountryCode]
+    val SH = "SH".asInstanceOf[CountryCode]
+    val KN = "KN".asInstanceOf[CountryCode]
+    val LC = "LC".asInstanceOf[CountryCode]
+    val MF = "MF".asInstanceOf[CountryCode]
+    val PM = "PM".asInstanceOf[CountryCode]
+    val VC = "VC".asInstanceOf[CountryCode]
+    val WS = "WS".asInstanceOf[CountryCode]
+    val SM = "SM".asInstanceOf[CountryCode]
+    val ST = "ST".asInstanceOf[CountryCode]
+    val SA = "SA".asInstanceOf[CountryCode]
+    val SN = "SN".asInstanceOf[CountryCode]
+    val RS = "RS".asInstanceOf[CountryCode]
+    val SC = "SC".asInstanceOf[CountryCode]
+    val SL = "SL".asInstanceOf[CountryCode]
+    val SG = "SG".asInstanceOf[CountryCode]
+    val SX = "SX".asInstanceOf[CountryCode]
+    val SK = "SK".asInstanceOf[CountryCode]
+    val SI = "SI".asInstanceOf[CountryCode]
+    val SB = "SB".asInstanceOf[CountryCode]
+    val SO = "SO".asInstanceOf[CountryCode]
+    val ZA = "ZA".asInstanceOf[CountryCode]
+    val GS = "GS".asInstanceOf[CountryCode]
+    val SS = "SS".asInstanceOf[CountryCode]
+    val ES = "ES".asInstanceOf[CountryCode]
+    val LK = "LK".asInstanceOf[CountryCode]
+    val SD = "SD".asInstanceOf[CountryCode]
+    val SR = "SR".asInstanceOf[CountryCode]
+    val SJ = "SJ".asInstanceOf[CountryCode]
+    val SZ = "SZ".asInstanceOf[CountryCode]
+    val SE = "SE".asInstanceOf[CountryCode]
+    val CH = "CH".asInstanceOf[CountryCode]
+    val SY = "SY".asInstanceOf[CountryCode]
+    val TW = "TW".asInstanceOf[CountryCode]
+    val TJ = "TJ".asInstanceOf[CountryCode]
+    val TZ = "TZ".asInstanceOf[CountryCode]
+    val TH = "TH".asInstanceOf[CountryCode]
+    val TL = "TL".asInstanceOf[CountryCode]
+    val TG = "TG".asInstanceOf[CountryCode]
+    val TK = "TK".asInstanceOf[CountryCode]
+    val TO = "TO".asInstanceOf[CountryCode]
+    val TT = "TT".asInstanceOf[CountryCode]
+    val TN = "TN".asInstanceOf[CountryCode]
+    val TR = "TR".asInstanceOf[CountryCode]
+    val TM = "TM".asInstanceOf[CountryCode]
+    val TC = "TC".asInstanceOf[CountryCode]
+    val TV = "TV".asInstanceOf[CountryCode]
+    val UG = "UG".asInstanceOf[CountryCode]
+    val UA = "UA".asInstanceOf[CountryCode]
+    val AE = "AE".asInstanceOf[CountryCode]
+    val GB = "GB".asInstanceOf[CountryCode]
+    val US = "US".asInstanceOf[CountryCode]
+    val UM = "UM".asInstanceOf[CountryCode]
+    val UY = "UY".asInstanceOf[CountryCode]
+    val UZ = "UZ".asInstanceOf[CountryCode]
+    val VU = "VU".asInstanceOf[CountryCode]
+    val VE = "VE".asInstanceOf[CountryCode]
+    val VN = "VN".asInstanceOf[CountryCode]
+    val VG = "VG".asInstanceOf[CountryCode]
+    val VI = "VI".asInstanceOf[CountryCode]
+    val WF = "WF".asInstanceOf[CountryCode]
+    val EH = "EH".asInstanceOf[CountryCode]
+    val YE = "YE".asInstanceOf[CountryCode]
+    val ZM = "ZM".asInstanceOf[CountryCode]
+    val ZW = "ZW".asInstanceOf[CountryCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1908,10 +1902,11 @@ package wafv2 {
       __obj.asInstanceOf[HTTPRequest]
     }
   }
-
-  object IPAddressVersionEnum {
-    val IPV4 = "IPV4"
-    val IPV6 = "IPV6"
+  @js.native
+  sealed trait IPAddressVersion extends js.Any
+  object IPAddressVersion extends js.Object {
+    val IPV4 = "IPV4".asInstanceOf[IPAddressVersion]
+    val IPV6 = "IPV6".asInstanceOf[IPAddressVersion]
 
     val values = js.Object.freeze(js.Array(IPV4, IPV6))
   }
@@ -2530,13 +2525,14 @@ package wafv2 {
       __obj.asInstanceOf[OverrideAction]
     }
   }
-
-  object PositionalConstraintEnum {
-    val EXACTLY       = "EXACTLY"
-    val STARTS_WITH   = "STARTS_WITH"
-    val ENDS_WITH     = "ENDS_WITH"
-    val CONTAINS      = "CONTAINS"
-    val CONTAINS_WORD = "CONTAINS_WORD"
+  @js.native
+  sealed trait PositionalConstraint extends js.Any
+  object PositionalConstraint extends js.Object {
+    val EXACTLY       = "EXACTLY".asInstanceOf[PositionalConstraint]
+    val STARTS_WITH   = "STARTS_WITH".asInstanceOf[PositionalConstraint]
+    val ENDS_WITH     = "ENDS_WITH".asInstanceOf[PositionalConstraint]
+    val CONTAINS      = "CONTAINS".asInstanceOf[PositionalConstraint]
+    val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
@@ -2626,9 +2622,10 @@ package wafv2 {
       __obj.asInstanceOf[RateBasedStatement]
     }
   }
-
-  object RateBasedStatementAggregateKeyTypeEnum {
-    val IP = "IP"
+  @js.native
+  sealed trait RateBasedStatementAggregateKeyType extends js.Any
+  object RateBasedStatementAggregateKeyType extends js.Object {
+    val IP = "IP".asInstanceOf[RateBasedStatementAggregateKeyType]
 
     val values = js.Object.freeze(js.Array(IP))
   }
@@ -2769,10 +2766,11 @@ package wafv2 {
       __obj.asInstanceOf[RegexPatternSetSummary]
     }
   }
-
-  object ResourceTypeEnum {
-    val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER"
-    val API_GATEWAY               = "API_GATEWAY"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
+    val API_GATEWAY               = "API_GATEWAY".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
@@ -2994,10 +2992,11 @@ package wafv2 {
       __obj.asInstanceOf[SampledHTTPRequest]
     }
   }
-
-  object ScopeEnum {
-    val CLOUDFRONT = "CLOUDFRONT"
-    val REGIONAL   = "REGIONAL"
+  @js.native
+  sealed trait Scope extends js.Any
+  object Scope extends js.Object {
+    val CLOUDFRONT = "CLOUDFRONT".asInstanceOf[Scope]
+    val REGIONAL   = "REGIONAL".asInstanceOf[Scope]
 
     val values = js.Object.freeze(js.Array(CLOUDFRONT, REGIONAL))
   }
@@ -3273,14 +3272,15 @@ package wafv2 {
       __obj.asInstanceOf[TextTransformation]
     }
   }
-
-  object TextTransformationTypeEnum {
-    val NONE                 = "NONE"
-    val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE"
-    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE"
-    val LOWERCASE            = "LOWERCASE"
-    val CMD_LINE             = "CMD_LINE"
-    val URL_DECODE           = "URL_DECODE"
+  @js.native
+  sealed trait TextTransformationType extends js.Any
+  object TextTransformationType extends js.Object {
+    val NONE                 = "NONE".asInstanceOf[TextTransformationType]
+    val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformationType]
+    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformationType]
+    val LOWERCASE            = "LOWERCASE".asInstanceOf[TextTransformationType]
+    val CMD_LINE             = "CMD_LINE".asInstanceOf[TextTransformationType]
+    val URL_DECODE           = "URL_DECODE".asInstanceOf[TextTransformationType]
 
     val values =
       js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))

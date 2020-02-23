@@ -11,13 +11,10 @@ package object transfer {
   type AddressAllocationIds  = js.Array[AddressAllocationId]
   type Arn                   = String
   type DateImported          = js.Date
-  type EndpointType          = String
   type HomeDirectory         = String
   type HomeDirectoryMappings = js.Array[HomeDirectoryMapEntry]
-  type HomeDirectoryType     = String
   type HostKey               = String
   type HostKeyFingerprint    = String
-  type IdentityProviderType  = String
   type ListedServers         = js.Array[ListedServer]
   type ListedUsers           = js.Array[ListedUser]
   type MapEntry              = String
@@ -34,7 +31,6 @@ package object transfer {
   type SshPublicKeyCount     = Int
   type SshPublicKeyId        = String
   type SshPublicKeys         = js.Array[SshPublicKey]
-  type State                 = String
   type StatusCode            = Int
   type SubnetId              = String
   type SubnetIds             = js.Array[SubnetId]
@@ -495,11 +491,12 @@ package transfer {
       __obj.asInstanceOf[EndpointDetails]
     }
   }
-
-  object EndpointTypeEnum {
-    val PUBLIC       = "PUBLIC"
-    val VPC          = "VPC"
-    val VPC_ENDPOINT = "VPC_ENDPOINT"
+  @js.native
+  sealed trait EndpointType extends js.Any
+  object EndpointType extends js.Object {
+    val PUBLIC       = "PUBLIC".asInstanceOf[EndpointType]
+    val VPC          = "VPC".asInstanceOf[EndpointType]
+    val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
   }
@@ -527,10 +524,11 @@ package transfer {
       __obj.asInstanceOf[HomeDirectoryMapEntry]
     }
   }
-
-  object HomeDirectoryTypeEnum {
-    val PATH    = "PATH"
-    val LOGICAL = "LOGICAL"
+  @js.native
+  sealed trait HomeDirectoryType extends js.Any
+  object HomeDirectoryType extends js.Object {
+    val PATH    = "PATH".asInstanceOf[HomeDirectoryType]
+    val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
     val values = js.Object.freeze(js.Array(PATH, LOGICAL))
   }
@@ -560,9 +558,11 @@ package transfer {
   /**
     * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can have only one method of authentication.
     */
-  object IdentityProviderTypeEnum {
-    val SERVICE_MANAGED = "SERVICE_MANAGED"
-    val API_GATEWAY     = "API_GATEWAY"
+  @js.native
+  sealed trait IdentityProviderType extends js.Any
+  object IdentityProviderType extends js.Object {
+    val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
+    val API_GATEWAY     = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
@@ -876,13 +876,15 @@ package transfer {
     * Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
     *  <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
     */
-  object StateEnum {
-    val OFFLINE      = "OFFLINE"
-    val ONLINE       = "ONLINE"
-    val STARTING     = "STARTING"
-    val STOPPING     = "STOPPING"
-    val START_FAILED = "START_FAILED"
-    val STOP_FAILED  = "STOP_FAILED"
+  @js.native
+  sealed trait State extends js.Any
+  object State extends js.Object {
+    val OFFLINE      = "OFFLINE".asInstanceOf[State]
+    val ONLINE       = "ONLINE".asInstanceOf[State]
+    val STARTING     = "STARTING".asInstanceOf[State]
+    val STOPPING     = "STOPPING".asInstanceOf[State]
+    val START_FAILED = "START_FAILED".asInstanceOf[State]
+    val STOP_FAILED  = "STOP_FAILED".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }

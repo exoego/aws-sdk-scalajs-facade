@@ -11,11 +11,8 @@ package object polly {
   type AudioStream                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ContentType                    = String
   type DateTime                       = js.Date
-  type Engine                         = String
   type EngineList                     = js.Array[Engine]
-  type Gender                         = String
   type IncludeAdditionalLanguageCodes = Boolean
-  type LanguageCode                   = String
   type LanguageCodeList               = js.Array[LanguageCode]
   type LanguageName                   = String
   type LastModified                   = js.Date
@@ -27,7 +24,6 @@ package object polly {
   type LexiconNameList                = js.Array[LexiconName]
   type MaxResults                     = Int
   type NextToken                      = String
-  type OutputFormat                   = String
   type OutputS3BucketName             = String
   type OutputS3KeyPrefix              = String
   type OutputUri                      = String
@@ -35,15 +31,11 @@ package object polly {
   type SampleRate                     = String
   type Size                           = Int
   type SnsTopicArn                    = String
-  type SpeechMarkType                 = String
   type SpeechMarkTypeList             = js.Array[SpeechMarkType]
   type SynthesisTasks                 = js.Array[SynthesisTask]
   type TaskId                         = String
-  type TaskStatus                     = String
   type TaskStatusReason               = String
   type Text                           = String
-  type TextType                       = String
-  type VoiceId                        = String
   type VoiceList                      = js.Array[Voice]
   type VoiceName                      = String
 
@@ -168,17 +160,19 @@ package polly {
       __obj.asInstanceOf[DescribeVoicesOutput]
     }
   }
-
-  object EngineEnum {
-    val standard = "standard"
-    val neural   = "neural"
+  @js.native
+  sealed trait Engine extends js.Any
+  object Engine extends js.Object {
+    val standard = "standard".asInstanceOf[Engine]
+    val neural   = "neural".asInstanceOf[Engine]
 
     val values = js.Object.freeze(js.Array(standard, neural))
   }
-
-  object GenderEnum {
-    val Female = "Female"
-    val Male   = "Male"
+  @js.native
+  sealed trait Gender extends js.Any
+  object Gender extends js.Object {
+    val Female = "Female".asInstanceOf[Gender]
+    val Male   = "Male".asInstanceOf[Gender]
 
     val values = js.Object.freeze(js.Array(Female, Male))
   }
@@ -253,37 +247,38 @@ package polly {
       __obj.asInstanceOf[GetSpeechSynthesisTaskOutput]
     }
   }
-
-  object LanguageCodeEnum {
-    val arb         = "arb"
-    val `cmn-CN`    = "cmn-CN"
-    val `cy-GB`     = "cy-GB"
-    val `da-DK`     = "da-DK"
-    val `de-DE`     = "de-DE"
-    val `en-AU`     = "en-AU"
-    val `en-GB`     = "en-GB"
-    val `en-GB-WLS` = "en-GB-WLS"
-    val `en-IN`     = "en-IN"
-    val `en-US`     = "en-US"
-    val `es-ES`     = "es-ES"
-    val `es-MX`     = "es-MX"
-    val `es-US`     = "es-US"
-    val `fr-CA`     = "fr-CA"
-    val `fr-FR`     = "fr-FR"
-    val `is-IS`     = "is-IS"
-    val `it-IT`     = "it-IT"
-    val `ja-JP`     = "ja-JP"
-    val `hi-IN`     = "hi-IN"
-    val `ko-KR`     = "ko-KR"
-    val `nb-NO`     = "nb-NO"
-    val `nl-NL`     = "nl-NL"
-    val `pl-PL`     = "pl-PL"
-    val `pt-BR`     = "pt-BR"
-    val `pt-PT`     = "pt-PT"
-    val `ro-RO`     = "ro-RO"
-    val `ru-RU`     = "ru-RU"
-    val `sv-SE`     = "sv-SE"
-    val `tr-TR`     = "tr-TR"
+  @js.native
+  sealed trait LanguageCode extends js.Any
+  object LanguageCode extends js.Object {
+    val arb         = "arb".asInstanceOf[LanguageCode]
+    val `cmn-CN`    = "cmn-CN".asInstanceOf[LanguageCode]
+    val `cy-GB`     = "cy-GB".asInstanceOf[LanguageCode]
+    val `da-DK`     = "da-DK".asInstanceOf[LanguageCode]
+    val `de-DE`     = "de-DE".asInstanceOf[LanguageCode]
+    val `en-AU`     = "en-AU".asInstanceOf[LanguageCode]
+    val `en-GB`     = "en-GB".asInstanceOf[LanguageCode]
+    val `en-GB-WLS` = "en-GB-WLS".asInstanceOf[LanguageCode]
+    val `en-IN`     = "en-IN".asInstanceOf[LanguageCode]
+    val `en-US`     = "en-US".asInstanceOf[LanguageCode]
+    val `es-ES`     = "es-ES".asInstanceOf[LanguageCode]
+    val `es-MX`     = "es-MX".asInstanceOf[LanguageCode]
+    val `es-US`     = "es-US".asInstanceOf[LanguageCode]
+    val `fr-CA`     = "fr-CA".asInstanceOf[LanguageCode]
+    val `fr-FR`     = "fr-FR".asInstanceOf[LanguageCode]
+    val `is-IS`     = "is-IS".asInstanceOf[LanguageCode]
+    val `it-IT`     = "it-IT".asInstanceOf[LanguageCode]
+    val `ja-JP`     = "ja-JP".asInstanceOf[LanguageCode]
+    val `hi-IN`     = "hi-IN".asInstanceOf[LanguageCode]
+    val `ko-KR`     = "ko-KR".asInstanceOf[LanguageCode]
+    val `nb-NO`     = "nb-NO".asInstanceOf[LanguageCode]
+    val `nl-NL`     = "nl-NL".asInstanceOf[LanguageCode]
+    val `pl-PL`     = "pl-PL".asInstanceOf[LanguageCode]
+    val `pt-BR`     = "pt-BR".asInstanceOf[LanguageCode]
+    val `pt-PT`     = "pt-PT".asInstanceOf[LanguageCode]
+    val `ro-RO`     = "ro-RO".asInstanceOf[LanguageCode]
+    val `ru-RU`     = "ru-RU".asInstanceOf[LanguageCode]
+    val `sv-SE`     = "sv-SE".asInstanceOf[LanguageCode]
+    val `tr-TR`     = "tr-TR".asInstanceOf[LanguageCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -473,12 +468,13 @@ package polly {
       __obj.asInstanceOf[ListSpeechSynthesisTasksOutput]
     }
   }
-
-  object OutputFormatEnum {
-    val json       = "json"
-    val mp3        = "mp3"
-    val ogg_vorbis = "ogg_vorbis"
-    val pcm        = "pcm"
+  @js.native
+  sealed trait OutputFormat extends js.Any
+  object OutputFormat extends js.Object {
+    val json       = "json".asInstanceOf[OutputFormat]
+    val mp3        = "mp3".asInstanceOf[OutputFormat]
+    val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
+    val pcm        = "pcm".asInstanceOf[OutputFormat]
 
     val values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
   }
@@ -516,12 +512,13 @@ package polly {
       __obj.asInstanceOf[PutLexiconOutput]
     }
   }
-
-  object SpeechMarkTypeEnum {
-    val sentence = "sentence"
-    val ssml     = "ssml"
-    val viseme   = "viseme"
-    val word     = "word"
+  @js.native
+  sealed trait SpeechMarkType extends js.Any
+  object SpeechMarkType extends js.Object {
+    val sentence = "sentence".asInstanceOf[SpeechMarkType]
+    val ssml     = "ssml".asInstanceOf[SpeechMarkType]
+    val viseme   = "viseme".asInstanceOf[SpeechMarkType]
+    val word     = "word".asInstanceOf[SpeechMarkType]
 
     val values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
   }
@@ -717,19 +714,21 @@ package polly {
       __obj.asInstanceOf[SynthesizeSpeechOutput]
     }
   }
-
-  object TaskStatusEnum {
-    val scheduled  = "scheduled"
-    val inProgress = "inProgress"
-    val completed  = "completed"
-    val failed     = "failed"
+  @js.native
+  sealed trait TaskStatus extends js.Any
+  object TaskStatus extends js.Object {
+    val scheduled  = "scheduled".asInstanceOf[TaskStatus]
+    val inProgress = "inProgress".asInstanceOf[TaskStatus]
+    val completed  = "completed".asInstanceOf[TaskStatus]
+    val failed     = "failed".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
-
-  object TextTypeEnum {
-    val ssml = "ssml"
-    val text = "text"
+  @js.native
+  sealed trait TextType extends js.Any
+  object TextType extends js.Object {
+    val ssml = "ssml".asInstanceOf[TextType]
+    val text = "text".asInstanceOf[TextType]
 
     val values = js.Object.freeze(js.Array(ssml, text))
   }
@@ -770,68 +769,69 @@ package polly {
       __obj.asInstanceOf[Voice]
     }
   }
-
-  object VoiceIdEnum {
-    val Aditi     = "Aditi"
-    val Amy       = "Amy"
-    val Astrid    = "Astrid"
-    val Bianca    = "Bianca"
-    val Brian     = "Brian"
-    val Camila    = "Camila"
-    val Carla     = "Carla"
-    val Carmen    = "Carmen"
-    val Celine    = "Celine"
-    val Chantal   = "Chantal"
-    val Conchita  = "Conchita"
-    val Cristiano = "Cristiano"
-    val Dora      = "Dora"
-    val Emma      = "Emma"
-    val Enrique   = "Enrique"
-    val Ewa       = "Ewa"
-    val Filiz     = "Filiz"
-    val Geraint   = "Geraint"
-    val Giorgio   = "Giorgio"
-    val Gwyneth   = "Gwyneth"
-    val Hans      = "Hans"
-    val Ines      = "Ines"
-    val Ivy       = "Ivy"
-    val Jacek     = "Jacek"
-    val Jan       = "Jan"
-    val Joanna    = "Joanna"
-    val Joey      = "Joey"
-    val Justin    = "Justin"
-    val Karl      = "Karl"
-    val Kendra    = "Kendra"
-    val Kimberly  = "Kimberly"
-    val Lea       = "Lea"
-    val Liv       = "Liv"
-    val Lotte     = "Lotte"
-    val Lucia     = "Lucia"
-    val Lupe      = "Lupe"
-    val Mads      = "Mads"
-    val Maja      = "Maja"
-    val Marlene   = "Marlene"
-    val Mathieu   = "Mathieu"
-    val Matthew   = "Matthew"
-    val Maxim     = "Maxim"
-    val Mia       = "Mia"
-    val Miguel    = "Miguel"
-    val Mizuki    = "Mizuki"
-    val Naja      = "Naja"
-    val Nicole    = "Nicole"
-    val Penelope  = "Penelope"
-    val Raveena   = "Raveena"
-    val Ricardo   = "Ricardo"
-    val Ruben     = "Ruben"
-    val Russell   = "Russell"
-    val Salli     = "Salli"
-    val Seoyeon   = "Seoyeon"
-    val Takumi    = "Takumi"
-    val Tatyana   = "Tatyana"
-    val Vicki     = "Vicki"
-    val Vitoria   = "Vitoria"
-    val Zeina     = "Zeina"
-    val Zhiyu     = "Zhiyu"
+  @js.native
+  sealed trait VoiceId extends js.Any
+  object VoiceId extends js.Object {
+    val Aditi     = "Aditi".asInstanceOf[VoiceId]
+    val Amy       = "Amy".asInstanceOf[VoiceId]
+    val Astrid    = "Astrid".asInstanceOf[VoiceId]
+    val Bianca    = "Bianca".asInstanceOf[VoiceId]
+    val Brian     = "Brian".asInstanceOf[VoiceId]
+    val Camila    = "Camila".asInstanceOf[VoiceId]
+    val Carla     = "Carla".asInstanceOf[VoiceId]
+    val Carmen    = "Carmen".asInstanceOf[VoiceId]
+    val Celine    = "Celine".asInstanceOf[VoiceId]
+    val Chantal   = "Chantal".asInstanceOf[VoiceId]
+    val Conchita  = "Conchita".asInstanceOf[VoiceId]
+    val Cristiano = "Cristiano".asInstanceOf[VoiceId]
+    val Dora      = "Dora".asInstanceOf[VoiceId]
+    val Emma      = "Emma".asInstanceOf[VoiceId]
+    val Enrique   = "Enrique".asInstanceOf[VoiceId]
+    val Ewa       = "Ewa".asInstanceOf[VoiceId]
+    val Filiz     = "Filiz".asInstanceOf[VoiceId]
+    val Geraint   = "Geraint".asInstanceOf[VoiceId]
+    val Giorgio   = "Giorgio".asInstanceOf[VoiceId]
+    val Gwyneth   = "Gwyneth".asInstanceOf[VoiceId]
+    val Hans      = "Hans".asInstanceOf[VoiceId]
+    val Ines      = "Ines".asInstanceOf[VoiceId]
+    val Ivy       = "Ivy".asInstanceOf[VoiceId]
+    val Jacek     = "Jacek".asInstanceOf[VoiceId]
+    val Jan       = "Jan".asInstanceOf[VoiceId]
+    val Joanna    = "Joanna".asInstanceOf[VoiceId]
+    val Joey      = "Joey".asInstanceOf[VoiceId]
+    val Justin    = "Justin".asInstanceOf[VoiceId]
+    val Karl      = "Karl".asInstanceOf[VoiceId]
+    val Kendra    = "Kendra".asInstanceOf[VoiceId]
+    val Kimberly  = "Kimberly".asInstanceOf[VoiceId]
+    val Lea       = "Lea".asInstanceOf[VoiceId]
+    val Liv       = "Liv".asInstanceOf[VoiceId]
+    val Lotte     = "Lotte".asInstanceOf[VoiceId]
+    val Lucia     = "Lucia".asInstanceOf[VoiceId]
+    val Lupe      = "Lupe".asInstanceOf[VoiceId]
+    val Mads      = "Mads".asInstanceOf[VoiceId]
+    val Maja      = "Maja".asInstanceOf[VoiceId]
+    val Marlene   = "Marlene".asInstanceOf[VoiceId]
+    val Mathieu   = "Mathieu".asInstanceOf[VoiceId]
+    val Matthew   = "Matthew".asInstanceOf[VoiceId]
+    val Maxim     = "Maxim".asInstanceOf[VoiceId]
+    val Mia       = "Mia".asInstanceOf[VoiceId]
+    val Miguel    = "Miguel".asInstanceOf[VoiceId]
+    val Mizuki    = "Mizuki".asInstanceOf[VoiceId]
+    val Naja      = "Naja".asInstanceOf[VoiceId]
+    val Nicole    = "Nicole".asInstanceOf[VoiceId]
+    val Penelope  = "Penelope".asInstanceOf[VoiceId]
+    val Raveena   = "Raveena".asInstanceOf[VoiceId]
+    val Ricardo   = "Ricardo".asInstanceOf[VoiceId]
+    val Ruben     = "Ruben".asInstanceOf[VoiceId]
+    val Russell   = "Russell".asInstanceOf[VoiceId]
+    val Salli     = "Salli".asInstanceOf[VoiceId]
+    val Seoyeon   = "Seoyeon".asInstanceOf[VoiceId]
+    val Takumi    = "Takumi".asInstanceOf[VoiceId]
+    val Tatyana   = "Tatyana".asInstanceOf[VoiceId]
+    val Vicki     = "Vicki".asInstanceOf[VoiceId]
+    val Vitoria   = "Vitoria".asInstanceOf[VoiceId]
+    val Zeina     = "Zeina".asInstanceOf[VoiceId]
+    val Zhiyu     = "Zhiyu".asInstanceOf[VoiceId]
 
     val values = js.Object.freeze(
       js.Array(

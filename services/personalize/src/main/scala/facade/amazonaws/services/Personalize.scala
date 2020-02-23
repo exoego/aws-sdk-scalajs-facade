@@ -54,7 +54,6 @@ package object personalize {
   type ParameterValue                         = String
   type PerformAutoML                          = Boolean
   type PerformHPO                             = Boolean
-  type RecipeProvider                         = String
   type RecipeType                             = String
   type Recipes                                = js.Array[RecipeSummary]
   type ResourceConfig                         = js.Dictionary[ParameterValue]
@@ -67,7 +66,6 @@ package object personalize {
   type TrackingId                             = String
   type TrainingHours                          = Double
   type TrainingInputMode                      = String
-  type TrainingMode                           = String
   type TransactionsPerSecond                  = Int
   type Tunable                                = Boolean
 
@@ -2648,9 +2646,10 @@ package personalize {
       __obj.asInstanceOf[Recipe]
     }
   }
-
-  object RecipeProviderEnum {
-    val SERVICE = "SERVICE"
+  @js.native
+  sealed trait RecipeProvider extends js.Any
+  object RecipeProvider extends js.Object {
+    val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
 
     val values = js.Object.freeze(js.Array(SERVICE))
   }
@@ -2917,10 +2916,11 @@ package personalize {
       __obj.asInstanceOf[SolutionVersionSummary]
     }
   }
-
-  object TrainingModeEnum {
-    val FULL   = "FULL"
-    val UPDATE = "UPDATE"
+  @js.native
+  sealed trait TrainingMode extends js.Any
+  object TrainingMode extends js.Object {
+    val FULL   = "FULL".asInstanceOf[TrainingMode]
+    val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
     val values = js.Object.freeze(js.Array(FULL, UPDATE))
   }

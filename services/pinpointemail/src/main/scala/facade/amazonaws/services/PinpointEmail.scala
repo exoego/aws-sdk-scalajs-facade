@@ -7,88 +7,78 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pinpointemail {
-  type AmazonResourceName                   = String
-  type BehaviorOnMxFailure                  = String
-  type BlacklistEntries                     = js.Array[BlacklistEntry]
-  type BlacklistItemName                    = String
-  type BlacklistItemNames                   = js.Array[BlacklistItemName]
-  type BlacklistReport                      = js.Dictionary[BlacklistEntries]
-  type BlacklistingDescription              = String
-  type CampaignId                           = String
-  type Charset                              = String
-  type CloudWatchDimensionConfigurations    = js.Array[CloudWatchDimensionConfiguration]
-  type ConfigurationSetName                 = String
-  type ConfigurationSetNameList             = js.Array[ConfigurationSetName]
-  type CustomRedirectDomain                 = String
-  type DailyVolumes                         = js.Array[DailyVolume]
-  type DedicatedIpList                      = js.Array[DedicatedIp]
-  type DefaultDimensionValue                = String
-  type DeliverabilityDashboardAccountStatus = String
-  type DeliverabilityTestReports            = js.Array[DeliverabilityTestReport]
-  type DeliverabilityTestStatus             = String
-  type DeliverabilityTestSubject            = String
-  type DimensionName                        = String
-  type DimensionValueSource                 = String
-  type DkimStatus                           = String
-  type DnsToken                             = String
-  type DnsTokenList                         = js.Array[DnsToken]
-  type Domain                               = String
-  type DomainDeliverabilityCampaignList     = js.Array[DomainDeliverabilityCampaign]
-  type DomainDeliverabilityTrackingOptions  = js.Array[DomainDeliverabilityTrackingOption]
-  type DomainIspPlacements                  = js.Array[DomainIspPlacement]
-  type EmailAddress                         = String
-  type EmailAddressList                     = js.Array[EmailAddress]
-  type Enabled                              = Boolean
-  type Esp                                  = String
-  type Esps                                 = js.Array[Esp]
-  type EventDestinationName                 = String
-  type EventDestinations                    = js.Array[EventDestination]
-  type EventType                            = String
-  type EventTypes                           = js.Array[EventType]
-  type GeneralEnforcementStatus             = String
-  type Identity                             = String
-  type IdentityInfoList                     = js.Array[IdentityInfo]
-  type IdentityType                         = String
-  type ImageUrl                             = String
-  type Ip                                   = String
-  type IpList                               = js.Array[Ip]
-  type IspName                              = String
-  type IspNameList                          = js.Array[IspName]
-  type IspPlacements                        = js.Array[IspPlacement]
-  type LastFreshStart                       = js.Date
-  type ListOfDedicatedIpPools               = js.Array[PoolName]
-  type MailFromDomainName                   = String
-  type MailFromDomainStatus                 = String
-  type Max24HourSend                        = Double
-  type MaxItems                             = Int
-  type MaxSendRate                          = Double
-  type MessageContent                       = String
-  type MessageData                          = String
-  type MessageTagList                       = js.Array[MessageTag]
-  type MessageTagName                       = String
-  type MessageTagValue                      = String
-  type NextToken                            = String
-  type OutboundMessageId                    = String
-  type Percentage                           = Double
-  type Percentage100Wrapper                 = Int
-  type PoolName                             = String
-  type RawMessageData                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RblName                              = String
-  type ReportId                             = String
-  type ReportName                           = String
-  type SendingPoolName                      = String
-  type SentLast24Hours                      = Double
-  type Subject                              = String
-  type TagKey                               = String
-  type TagKeyList                           = js.Array[TagKey]
-  type TagList                              = js.Array[Tag]
-  type TagValue                             = String
-  type TemplateArn                          = String
-  type TemplateData                         = String
-  type Timestamp                            = js.Date
-  type TlsPolicy                            = String
-  type Volume                               = Double
-  type WarmupStatus                         = String
+  type AmazonResourceName                  = String
+  type BlacklistEntries                    = js.Array[BlacklistEntry]
+  type BlacklistItemName                   = String
+  type BlacklistItemNames                  = js.Array[BlacklistItemName]
+  type BlacklistReport                     = js.Dictionary[BlacklistEntries]
+  type BlacklistingDescription             = String
+  type CampaignId                          = String
+  type Charset                             = String
+  type CloudWatchDimensionConfigurations   = js.Array[CloudWatchDimensionConfiguration]
+  type ConfigurationSetName                = String
+  type ConfigurationSetNameList            = js.Array[ConfigurationSetName]
+  type CustomRedirectDomain                = String
+  type DailyVolumes                        = js.Array[DailyVolume]
+  type DedicatedIpList                     = js.Array[DedicatedIp]
+  type DefaultDimensionValue               = String
+  type DeliverabilityTestReports           = js.Array[DeliverabilityTestReport]
+  type DeliverabilityTestSubject           = String
+  type DimensionName                       = String
+  type DnsToken                            = String
+  type DnsTokenList                        = js.Array[DnsToken]
+  type Domain                              = String
+  type DomainDeliverabilityCampaignList    = js.Array[DomainDeliverabilityCampaign]
+  type DomainDeliverabilityTrackingOptions = js.Array[DomainDeliverabilityTrackingOption]
+  type DomainIspPlacements                 = js.Array[DomainIspPlacement]
+  type EmailAddress                        = String
+  type EmailAddressList                    = js.Array[EmailAddress]
+  type Enabled                             = Boolean
+  type Esp                                 = String
+  type Esps                                = js.Array[Esp]
+  type EventDestinationName                = String
+  type EventDestinations                   = js.Array[EventDestination]
+  type EventTypes                          = js.Array[EventType]
+  type GeneralEnforcementStatus            = String
+  type Identity                            = String
+  type IdentityInfoList                    = js.Array[IdentityInfo]
+  type ImageUrl                            = String
+  type Ip                                  = String
+  type IpList                              = js.Array[Ip]
+  type IspName                             = String
+  type IspNameList                         = js.Array[IspName]
+  type IspPlacements                       = js.Array[IspPlacement]
+  type LastFreshStart                      = js.Date
+  type ListOfDedicatedIpPools              = js.Array[PoolName]
+  type MailFromDomainName                  = String
+  type Max24HourSend                       = Double
+  type MaxItems                            = Int
+  type MaxSendRate                         = Double
+  type MessageContent                      = String
+  type MessageData                         = String
+  type MessageTagList                      = js.Array[MessageTag]
+  type MessageTagName                      = String
+  type MessageTagValue                     = String
+  type NextToken                           = String
+  type OutboundMessageId                   = String
+  type Percentage                          = Double
+  type Percentage100Wrapper                = Int
+  type PoolName                            = String
+  type RawMessageData                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RblName                             = String
+  type ReportId                            = String
+  type ReportName                          = String
+  type SendingPoolName                     = String
+  type SentLast24Hours                     = Double
+  type Subject                             = String
+  type TagKey                              = String
+  type TagKeyList                          = js.Array[TagKey]
+  type TagList                             = js.Array[Tag]
+  type TagValue                            = String
+  type TemplateArn                         = String
+  type TemplateData                        = String
+  type Timestamp                           = js.Date
+  type Volume                              = Double
 
   implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
@@ -321,9 +311,11 @@ package pinpointemail {
     * The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
     *  These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
     */
-  object BehaviorOnMxFailureEnum {
-    val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE"
-    val REJECT_MESSAGE    = "REJECT_MESSAGE"
+  @js.native
+  sealed trait BehaviorOnMxFailure extends js.Any
+  object BehaviorOnMxFailure extends js.Object {
+    val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
+    val REJECT_MESSAGE    = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
 
     val values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
   }
@@ -896,10 +888,12 @@ package pinpointemail {
   /**
     * The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
     */
-  object DeliverabilityDashboardAccountStatusEnum {
-    val ACTIVE             = "ACTIVE"
-    val PENDING_EXPIRATION = "PENDING_EXPIRATION"
-    val DISABLED           = "DISABLED"
+  @js.native
+  sealed trait DeliverabilityDashboardAccountStatus extends js.Any
+  object DeliverabilityDashboardAccountStatus extends js.Object {
+    val ACTIVE             = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val DISABLED           = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
   }
@@ -941,9 +935,11 @@ package pinpointemail {
   /**
     * The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
     */
-  object DeliverabilityTestStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED   = "COMPLETED"
+  @js.native
+  sealed trait DeliverabilityTestStatus extends js.Any
+  object DeliverabilityTestStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
   }
@@ -998,10 +994,12 @@ package pinpointemail {
   /**
     * The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.
     */
-  object DimensionValueSourceEnum {
-    val MESSAGE_TAG  = "MESSAGE_TAG"
-    val EMAIL_HEADER = "EMAIL_HEADER"
-    val LINK_TAG     = "LINK_TAG"
+  @js.native
+  sealed trait DimensionValueSource extends js.Any
+  object DimensionValueSource extends js.Object {
+    val MESSAGE_TAG  = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
+    val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
+    val LINK_TAG     = "LINK_TAG".asInstanceOf[DimensionValueSource]
 
     val values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
   }
@@ -1039,12 +1037,14 @@ package pinpointemail {
     *  * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
     *  * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
     */
-  object DkimStatusEnum {
-    val PENDING           = "PENDING"
-    val SUCCESS           = "SUCCESS"
-    val FAILED            = "FAILED"
-    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
-    val NOT_STARTED       = "NOT_STARTED"
+  @js.native
+  sealed trait DkimStatus extends js.Any
+  object DkimStatus extends js.Object {
+    val PENDING           = "PENDING".asInstanceOf[DkimStatus]
+    val SUCCESS           = "SUCCESS".asInstanceOf[DkimStatus]
+    val FAILED            = "FAILED".asInstanceOf[DkimStatus]
+    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
+    val NOT_STARTED       = "NOT_STARTED".asInstanceOf[DkimStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
   }
@@ -1270,15 +1270,17 @@ package pinpointemail {
   /**
     * An email sending event type. For example, email sends, opens, and bounces are all email events.
     */
-  object EventTypeEnum {
-    val SEND              = "SEND"
-    val REJECT            = "REJECT"
-    val BOUNCE            = "BOUNCE"
-    val COMPLAINT         = "COMPLAINT"
-    val DELIVERY          = "DELIVERY"
-    val OPEN              = "OPEN"
-    val CLICK             = "CLICK"
-    val RENDERING_FAILURE = "RENDERING_FAILURE"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val SEND              = "SEND".asInstanceOf[EventType]
+    val REJECT            = "REJECT".asInstanceOf[EventType]
+    val BOUNCE            = "BOUNCE".asInstanceOf[EventType]
+    val COMPLAINT         = "COMPLAINT".asInstanceOf[EventType]
+    val DELIVERY          = "DELIVERY".asInstanceOf[EventType]
+    val OPEN              = "OPEN".asInstanceOf[EventType]
+    val CLICK             = "CLICK".asInstanceOf[EventType]
+    val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE))
   }
@@ -1840,10 +1842,12 @@ package pinpointemail {
     * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
     *  * <code>DOMAIN</code> – The identity is a domain.
     */
-  object IdentityTypeEnum {
-    val EMAIL_ADDRESS  = "EMAIL_ADDRESS"
-    val DOMAIN         = "DOMAIN"
-    val MANAGED_DOMAIN = "MANAGED_DOMAIN"
+  @js.native
+  sealed trait IdentityType extends js.Any
+  object IdentityType extends js.Object {
+    val EMAIL_ADDRESS  = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
+    val DOMAIN         = "DOMAIN".asInstanceOf[IdentityType]
+    val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
   }
@@ -2221,11 +2225,13 @@ package pinpointemail {
     *  * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.
     *  * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
     */
-  object MailFromDomainStatusEnum {
-    val PENDING           = "PENDING"
-    val SUCCESS           = "SUCCESS"
-    val FAILED            = "FAILED"
-    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
+  @js.native
+  sealed trait MailFromDomainStatus extends js.Any
+  object MailFromDomainStatus extends js.Object {
+    val PENDING           = "PENDING".asInstanceOf[MailFromDomainStatus]
+    val SUCCESS           = "SUCCESS".asInstanceOf[MailFromDomainStatus]
+    val FAILED            = "FAILED".asInstanceOf[MailFromDomainStatus]
+    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
   }
@@ -3083,9 +3089,11 @@ package pinpointemail {
   /**
     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
     */
-  object TlsPolicyEnum {
-    val REQUIRE  = "REQUIRE"
-    val OPTIONAL = "OPTIONAL"
+  @js.native
+  sealed trait TlsPolicy extends js.Any
+  object TlsPolicy extends js.Object {
+    val REQUIRE  = "REQUIRE".asInstanceOf[TlsPolicy]
+    val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
     val values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
   }
@@ -3220,9 +3228,11 @@ package pinpointemail {
   /**
     * The warmup status of a dedicated IP.
     */
-  object WarmupStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val DONE        = "DONE"
+  @js.native
+  sealed trait WarmupStatus extends js.Any
+  object WarmupStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
+    val DONE        = "DONE".asInstanceOf[WarmupStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
   }

@@ -7,72 +7,62 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object es {
-  type ARN                                        = String
-  type AdditionalLimitList                        = js.Array[AdditionalLimit]
-  type AdvancedOptions                            = js.Dictionary[String]
-  type CloudWatchLogsLogGroupArn                  = String
-  type CompatibleElasticsearchVersionsList        = js.Array[CompatibleVersionsMap]
-  type DeploymentCloseDateTimeStamp               = js.Date
-  type DeploymentStatus                           = String
-  type DomainId                                   = String
-  type DomainInfoList                             = js.Array[DomainInfo]
-  type DomainName                                 = String
-  type DomainNameList                             = js.Array[DomainName]
-  type ESPartitionInstanceType                    = String
-  type ESWarmPartitionInstanceType                = String
-  type ElasticsearchDomainStatusList              = js.Array[ElasticsearchDomainStatus]
-  type ElasticsearchInstanceTypeList              = js.Array[ESPartitionInstanceType]
-  type ElasticsearchVersionList                   = js.Array[ElasticsearchVersionString]
-  type ElasticsearchVersionString                 = String
-  type EndpointsMap                               = js.Dictionary[ServiceUrl]
-  type GUID                                       = String
-  type IdentityPoolId                             = String
-  type InstanceCount                              = Int
-  type InstanceRole                               = String
-  type IntegerClass                               = Int
-  type Issue                                      = String
-  type Issues                                     = js.Array[Issue]
-  type KmsKeyId                                   = String
-  type LimitName                                  = String
-  type LimitValue                                 = String
-  type LimitValueList                             = js.Array[LimitValue]
-  type LimitsByRole                               = js.Dictionary[Limits]
-  type LogPublishingOptions                       = js.Dictionary[LogPublishingOption]
-  type LogType                                    = String
-  type MaxResults                                 = Int
-  type MaximumInstanceCount                       = Int
-  type MinimumInstanceCount                       = Int
-  type NextToken                                  = String
-  type OptionState                                = String
-  type Password                                   = String
-  type PolicyDocument                             = String
-  type RecurringChargeList                        = js.Array[RecurringCharge]
-  type ReservationToken                           = String
-  type ReservedElasticsearchInstanceList          = js.Array[ReservedElasticsearchInstance]
-  type ReservedElasticsearchInstanceOfferingList  = js.Array[ReservedElasticsearchInstanceOffering]
-  type ReservedElasticsearchInstancePaymentOption = String
-  type RoleArn                                    = String
-  type ServiceUrl                                 = String
-  type StartTimestamp                             = js.Date
-  type StorageSubTypeName                         = String
-  type StorageTypeLimitList                       = js.Array[StorageTypeLimit]
-  type StorageTypeList                            = js.Array[StorageType]
-  type StorageTypeName                            = String
-  type StringList                                 = js.Array[String]
-  type TLSSecurityPolicy                          = String
-  type TagKey                                     = String
-  type TagList                                    = js.Array[Tag]
-  type TagValue                                   = String
-  type UIntValue                                  = Int
-  type UpdateTimestamp                            = js.Date
-  type UpgradeHistoryList                         = js.Array[UpgradeHistory]
-  type UpgradeName                                = String
-  type UpgradeStatus                              = String
-  type UpgradeStep                                = String
-  type UpgradeStepsList                           = js.Array[UpgradeStepItem]
-  type UserPoolId                                 = String
-  type Username                                   = String
-  type VolumeType                                 = String
+  type ARN                                       = String
+  type AdditionalLimitList                       = js.Array[AdditionalLimit]
+  type AdvancedOptions                           = js.Dictionary[String]
+  type CloudWatchLogsLogGroupArn                 = String
+  type CompatibleElasticsearchVersionsList       = js.Array[CompatibleVersionsMap]
+  type DeploymentCloseDateTimeStamp              = js.Date
+  type DomainId                                  = String
+  type DomainInfoList                            = js.Array[DomainInfo]
+  type DomainName                                = String
+  type DomainNameList                            = js.Array[DomainName]
+  type ElasticsearchDomainStatusList             = js.Array[ElasticsearchDomainStatus]
+  type ElasticsearchInstanceTypeList             = js.Array[ESPartitionInstanceType]
+  type ElasticsearchVersionList                  = js.Array[ElasticsearchVersionString]
+  type ElasticsearchVersionString                = String
+  type EndpointsMap                              = js.Dictionary[ServiceUrl]
+  type GUID                                      = String
+  type IdentityPoolId                            = String
+  type InstanceCount                             = Int
+  type InstanceRole                              = String
+  type IntegerClass                              = Int
+  type Issue                                     = String
+  type Issues                                    = js.Array[Issue]
+  type KmsKeyId                                  = String
+  type LimitName                                 = String
+  type LimitValue                                = String
+  type LimitValueList                            = js.Array[LimitValue]
+  type LimitsByRole                              = js.Dictionary[Limits]
+  type LogPublishingOptions                      = js.Dictionary[LogPublishingOption]
+  type MaxResults                                = Int
+  type MaximumInstanceCount                      = Int
+  type MinimumInstanceCount                      = Int
+  type NextToken                                 = String
+  type Password                                  = String
+  type PolicyDocument                            = String
+  type RecurringChargeList                       = js.Array[RecurringCharge]
+  type ReservationToken                          = String
+  type ReservedElasticsearchInstanceList         = js.Array[ReservedElasticsearchInstance]
+  type ReservedElasticsearchInstanceOfferingList = js.Array[ReservedElasticsearchInstanceOffering]
+  type RoleArn                                   = String
+  type ServiceUrl                                = String
+  type StartTimestamp                            = js.Date
+  type StorageSubTypeName                        = String
+  type StorageTypeLimitList                      = js.Array[StorageTypeLimit]
+  type StorageTypeList                           = js.Array[StorageType]
+  type StorageTypeName                           = String
+  type StringList                                = js.Array[String]
+  type TagKey                                    = String
+  type TagList                                   = js.Array[Tag]
+  type TagValue                                  = String
+  type UIntValue                                 = Int
+  type UpdateTimestamp                           = js.Date
+  type UpgradeHistoryList                        = js.Array[UpgradeHistory]
+  type UpgradeName                               = String
+  type UpgradeStepsList                          = js.Array[UpgradeStepItem]
+  type UserPoolId                                = String
+  type Username                                  = String
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
 
@@ -616,13 +606,14 @@ package es {
       __obj.asInstanceOf[DeleteElasticsearchDomainResponse]
     }
   }
-
-  object DeploymentStatusEnum {
-    val PENDING_UPDATE = "PENDING_UPDATE"
-    val IN_PROGRESS    = "IN_PROGRESS"
-    val COMPLETED      = "COMPLETED"
-    val NOT_ELIGIBLE   = "NOT_ELIGIBLE"
-    val ELIGIBLE       = "ELIGIBLE"
+  @js.native
+  sealed trait DeploymentStatus extends js.Any
+  object DeploymentStatus extends js.Object {
+    val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[DeploymentStatus]
+    val IN_PROGRESS    = "IN_PROGRESS".asInstanceOf[DeploymentStatus]
+    val COMPLETED      = "COMPLETED".asInstanceOf[DeploymentStatus]
+    val NOT_ELIGIBLE   = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
+    val ELIGIBLE       = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
   }
@@ -1014,66 +1005,67 @@ package es {
       __obj.asInstanceOf[EBSOptionsStatus]
     }
   }
-
-  object ESPartitionInstanceTypeEnum {
-    val `m3.medium.elasticsearch`         = "m3.medium.elasticsearch"
-    val `m3.large.elasticsearch`          = "m3.large.elasticsearch"
-    val `m3.xlarge.elasticsearch`         = "m3.xlarge.elasticsearch"
-    val `m3.2xlarge.elasticsearch`        = "m3.2xlarge.elasticsearch"
-    val `m4.large.elasticsearch`          = "m4.large.elasticsearch"
-    val `m4.xlarge.elasticsearch`         = "m4.xlarge.elasticsearch"
-    val `m4.2xlarge.elasticsearch`        = "m4.2xlarge.elasticsearch"
-    val `m4.4xlarge.elasticsearch`        = "m4.4xlarge.elasticsearch"
-    val `m4.10xlarge.elasticsearch`       = "m4.10xlarge.elasticsearch"
-    val `m5.large.elasticsearch`          = "m5.large.elasticsearch"
-    val `m5.xlarge.elasticsearch`         = "m5.xlarge.elasticsearch"
-    val `m5.2xlarge.elasticsearch`        = "m5.2xlarge.elasticsearch"
-    val `m5.4xlarge.elasticsearch`        = "m5.4xlarge.elasticsearch"
-    val `m5.12xlarge.elasticsearch`       = "m5.12xlarge.elasticsearch"
-    val `r5.large.elasticsearch`          = "r5.large.elasticsearch"
-    val `r5.xlarge.elasticsearch`         = "r5.xlarge.elasticsearch"
-    val `r5.2xlarge.elasticsearch`        = "r5.2xlarge.elasticsearch"
-    val `r5.4xlarge.elasticsearch`        = "r5.4xlarge.elasticsearch"
-    val `r5.12xlarge.elasticsearch`       = "r5.12xlarge.elasticsearch"
-    val `c5.large.elasticsearch`          = "c5.large.elasticsearch"
-    val `c5.xlarge.elasticsearch`         = "c5.xlarge.elasticsearch"
-    val `c5.2xlarge.elasticsearch`        = "c5.2xlarge.elasticsearch"
-    val `c5.4xlarge.elasticsearch`        = "c5.4xlarge.elasticsearch"
-    val `c5.9xlarge.elasticsearch`        = "c5.9xlarge.elasticsearch"
-    val `c5.18xlarge.elasticsearch`       = "c5.18xlarge.elasticsearch"
-    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch"
-    val `ultrawarm1.large.elasticsearch`  = "ultrawarm1.large.elasticsearch"
-    val `t2.micro.elasticsearch`          = "t2.micro.elasticsearch"
-    val `t2.small.elasticsearch`          = "t2.small.elasticsearch"
-    val `t2.medium.elasticsearch`         = "t2.medium.elasticsearch"
-    val `r3.large.elasticsearch`          = "r3.large.elasticsearch"
-    val `r3.xlarge.elasticsearch`         = "r3.xlarge.elasticsearch"
-    val `r3.2xlarge.elasticsearch`        = "r3.2xlarge.elasticsearch"
-    val `r3.4xlarge.elasticsearch`        = "r3.4xlarge.elasticsearch"
-    val `r3.8xlarge.elasticsearch`        = "r3.8xlarge.elasticsearch"
-    val `i2.xlarge.elasticsearch`         = "i2.xlarge.elasticsearch"
-    val `i2.2xlarge.elasticsearch`        = "i2.2xlarge.elasticsearch"
-    val `d2.xlarge.elasticsearch`         = "d2.xlarge.elasticsearch"
-    val `d2.2xlarge.elasticsearch`        = "d2.2xlarge.elasticsearch"
-    val `d2.4xlarge.elasticsearch`        = "d2.4xlarge.elasticsearch"
-    val `d2.8xlarge.elasticsearch`        = "d2.8xlarge.elasticsearch"
-    val `c4.large.elasticsearch`          = "c4.large.elasticsearch"
-    val `c4.xlarge.elasticsearch`         = "c4.xlarge.elasticsearch"
-    val `c4.2xlarge.elasticsearch`        = "c4.2xlarge.elasticsearch"
-    val `c4.4xlarge.elasticsearch`        = "c4.4xlarge.elasticsearch"
-    val `c4.8xlarge.elasticsearch`        = "c4.8xlarge.elasticsearch"
-    val `r4.large.elasticsearch`          = "r4.large.elasticsearch"
-    val `r4.xlarge.elasticsearch`         = "r4.xlarge.elasticsearch"
-    val `r4.2xlarge.elasticsearch`        = "r4.2xlarge.elasticsearch"
-    val `r4.4xlarge.elasticsearch`        = "r4.4xlarge.elasticsearch"
-    val `r4.8xlarge.elasticsearch`        = "r4.8xlarge.elasticsearch"
-    val `r4.16xlarge.elasticsearch`       = "r4.16xlarge.elasticsearch"
-    val `i3.large.elasticsearch`          = "i3.large.elasticsearch"
-    val `i3.xlarge.elasticsearch`         = "i3.xlarge.elasticsearch"
-    val `i3.2xlarge.elasticsearch`        = "i3.2xlarge.elasticsearch"
-    val `i3.4xlarge.elasticsearch`        = "i3.4xlarge.elasticsearch"
-    val `i3.8xlarge.elasticsearch`        = "i3.8xlarge.elasticsearch"
-    val `i3.16xlarge.elasticsearch`       = "i3.16xlarge.elasticsearch"
+  @js.native
+  sealed trait ESPartitionInstanceType extends js.Any
+  object ESPartitionInstanceType extends js.Object {
+    val `m3.medium.elasticsearch`         = "m3.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.large.elasticsearch`          = "m3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.xlarge.elasticsearch`         = "m3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.2xlarge.elasticsearch`        = "m3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.large.elasticsearch`          = "m4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.xlarge.elasticsearch`         = "m4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.2xlarge.elasticsearch`        = "m4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.4xlarge.elasticsearch`        = "m4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.10xlarge.elasticsearch`       = "m4.10xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.large.elasticsearch`          = "m5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.xlarge.elasticsearch`         = "m5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.2xlarge.elasticsearch`        = "m5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.4xlarge.elasticsearch`        = "m5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.12xlarge.elasticsearch`       = "m5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.large.elasticsearch`          = "r5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.xlarge.elasticsearch`         = "r5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.2xlarge.elasticsearch`        = "r5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.4xlarge.elasticsearch`        = "r5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.12xlarge.elasticsearch`       = "r5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.large.elasticsearch`          = "c5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.xlarge.elasticsearch`         = "c5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.2xlarge.elasticsearch`        = "c5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.4xlarge.elasticsearch`        = "c5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.9xlarge.elasticsearch`        = "c5.9xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.18xlarge.elasticsearch`       = "c5.18xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `ultrawarm1.large.elasticsearch`  = "ultrawarm1.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.micro.elasticsearch`          = "t2.micro.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.small.elasticsearch`          = "t2.small.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.medium.elasticsearch`         = "t2.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.large.elasticsearch`          = "r3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.xlarge.elasticsearch`         = "r3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.2xlarge.elasticsearch`        = "r3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.4xlarge.elasticsearch`        = "r3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.8xlarge.elasticsearch`        = "r3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i2.xlarge.elasticsearch`         = "i2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i2.2xlarge.elasticsearch`        = "i2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.xlarge.elasticsearch`         = "d2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.2xlarge.elasticsearch`        = "d2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.4xlarge.elasticsearch`        = "d2.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.8xlarge.elasticsearch`        = "d2.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.large.elasticsearch`          = "c4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.xlarge.elasticsearch`         = "c4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.2xlarge.elasticsearch`        = "c4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.4xlarge.elasticsearch`        = "c4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.8xlarge.elasticsearch`        = "c4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.large.elasticsearch`          = "r4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.xlarge.elasticsearch`         = "r4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.2xlarge.elasticsearch`        = "r4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.4xlarge.elasticsearch`        = "r4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.8xlarge.elasticsearch`        = "r4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.16xlarge.elasticsearch`       = "r4.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.large.elasticsearch`          = "i3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.xlarge.elasticsearch`         = "i3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.2xlarge.elasticsearch`        = "i3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.4xlarge.elasticsearch`        = "i3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.8xlarge.elasticsearch`        = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.16xlarge.elasticsearch`       = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1138,10 +1130,11 @@ package es {
       )
     )
   }
-
-  object ESWarmPartitionInstanceTypeEnum {
-    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch"
-    val `ultrawarm1.large.elasticsearch`  = "ultrawarm1.large.elasticsearch"
+  @js.native
+  sealed trait ESWarmPartitionInstanceType extends js.Any
+  object ESWarmPartitionInstanceType extends js.Object {
+    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
+    val `ultrawarm1.large.elasticsearch`  = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
     val values = js.Object.freeze(js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`))
   }
@@ -1848,10 +1841,12 @@ package es {
     *  * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.
     * </p>
     */
-  object LogTypeEnum {
-    val INDEX_SLOW_LOGS     = "INDEX_SLOW_LOGS"
-    val SEARCH_SLOW_LOGS    = "SEARCH_SLOW_LOGS"
-    val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS"
+  @js.native
+  sealed trait LogType extends js.Any
+  object LogType extends js.Object {
+    val INDEX_SLOW_LOGS     = "INDEX_SLOW_LOGS".asInstanceOf[LogType]
+    val SEARCH_SLOW_LOGS    = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
+    val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
 
     val values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
   }
@@ -1929,10 +1924,12 @@ package es {
     * * Processing: The request change is still in-process.
     *  * Active: The request change is processed and deployed to the Elasticsearch domain.
     */
-  object OptionStateEnum {
-    val RequiresIndexDocuments = "RequiresIndexDocuments"
-    val Processing             = "Processing"
-    val Active                 = "Active"
+  @js.native
+  sealed trait OptionState extends js.Any
+  object OptionState extends js.Object {
+    val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
+    val Processing             = "Processing".asInstanceOf[OptionState]
+    val Active                 = "Active".asInstanceOf[OptionState]
 
     val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
   }
@@ -2173,11 +2170,12 @@ package es {
       __obj.asInstanceOf[ReservedElasticsearchInstanceOffering]
     }
   }
-
-  object ReservedElasticsearchInstancePaymentOptionEnum {
-    val ALL_UPFRONT     = "ALL_UPFRONT"
-    val PARTIAL_UPFRONT = "PARTIAL_UPFRONT"
-    val NO_UPFRONT      = "NO_UPFRONT"
+  @js.native
+  sealed trait ReservedElasticsearchInstancePaymentOption extends js.Any
+  object ReservedElasticsearchInstancePaymentOption extends js.Object {
+    val ALL_UPFRONT     = "ALL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
+    val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
+    val NO_UPFRONT      = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
     val values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
   }
@@ -2350,10 +2348,11 @@ package es {
       __obj.asInstanceOf[StorageTypeLimit]
     }
   }
-
-  object TLSSecurityPolicyEnum {
-    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07"
-    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07"
+  @js.native
+  sealed trait TLSSecurityPolicy extends js.Any
+  object TLSSecurityPolicy extends js.Object {
+    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
+    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
     val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }
@@ -2535,20 +2534,22 @@ package es {
       __obj.asInstanceOf[UpgradeHistory]
     }
   }
-
-  object UpgradeStatusEnum {
-    val IN_PROGRESS           = "IN_PROGRESS"
-    val SUCCEEDED             = "SUCCEEDED"
-    val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES"
-    val FAILED                = "FAILED"
+  @js.native
+  sealed trait UpgradeStatus extends js.Any
+  object UpgradeStatus extends js.Object {
+    val IN_PROGRESS           = "IN_PROGRESS".asInstanceOf[UpgradeStatus]
+    val SUCCEEDED             = "SUCCEEDED".asInstanceOf[UpgradeStatus]
+    val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
+    val FAILED                = "FAILED".asInstanceOf[UpgradeStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
   }
-
-  object UpgradeStepEnum {
-    val PRE_UPGRADE_CHECK = "PRE_UPGRADE_CHECK"
-    val SNAPSHOT          = "SNAPSHOT"
-    val UPGRADE           = "UPGRADE"
+  @js.native
+  sealed trait UpgradeStep extends js.Any
+  object UpgradeStep extends js.Object {
+    val PRE_UPGRADE_CHECK = "PRE_UPGRADE_CHECK".asInstanceOf[UpgradeStep]
+    val SNAPSHOT          = "SNAPSHOT".asInstanceOf[UpgradeStep]
+    val UPGRADE           = "UPGRADE".asInstanceOf[UpgradeStep]
 
     val values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
   }
@@ -2658,10 +2659,12 @@ package es {
   /**
     * The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
     */
-  object VolumeTypeEnum {
-    val standard = "standard"
-    val gp2      = "gp2"
-    val io1      = "io1"
+  @js.native
+  sealed trait VolumeType extends js.Any
+  object VolumeType extends js.Object {
+    val standard = "standard".asInstanceOf[VolumeType]
+    val gp2      = "gp2".asInstanceOf[VolumeType]
+    val io1      = "io1".asInstanceOf[VolumeType]
 
     val values = js.Object.freeze(js.Array(standard, gp2, io1))
   }

@@ -10,11 +10,8 @@ package object frauddetector {
   type BatchCreateVariableErrorList     = js.Array[BatchCreateVariableError]
   type BatchGetVariableErrorList        = js.Array[BatchGetVariableError]
   type CsvIndexToVariableMap            = js.Dictionary[String]
-  type DataSource                       = String
-  type DataType                         = String
   type DetectorList                     = js.Array[Detector]
   type DetectorVersionMaxResults        = Int
-  type DetectorVersionStatus            = String
   type DetectorVersionSummaryList       = js.Array[DetectorVersionSummary]
   type DetectorsMaxResults              = Int
   type EventAttributeMap                = js.Dictionary[attributeValue]
@@ -24,23 +21,16 @@ package object frauddetector {
   type IsOpaque                         = Boolean
   type JsonKeyToVariableMap             = js.Dictionary[String]
   type LabelMapper                      = js.Dictionary[ListOfStrings]
-  type Language                         = String
   type ListOfModelScores                = js.Array[ModelScores]
   type ListOfModelVersions              = js.Array[ModelVersion]
   type ListOfStrings                    = js.Array[String]
   type MaxResults                       = Int
   type MetricsMap                       = js.Dictionary[String]
-  type ModelEndpointStatus              = String
-  type ModelInputDataFormat             = String
   type ModelList                        = js.Array[Model]
-  type ModelOutputDataFormat            = String
   type ModelPredictionMap               = js.Dictionary[Float]
-  type ModelSource                      = String
-  type ModelTypeEnum                    = String
   type ModelVariableIndex               = Int
   type ModelVariablesList               = js.Array[ModelVariable]
   type ModelVersionDetailList           = js.Array[ModelVersionDetail]
-  type ModelVersionStatus               = String
   type NameList                         = js.Array[String]
   type NonEmptyListOfStrings            = js.Array[String]
   type OutcomeList                      = js.Array[Outcome]
@@ -488,20 +478,22 @@ package frauddetector {
       __obj.asInstanceOf[CreateVariableResult]
     }
   }
-
-  object DataSourceEnum {
-    val EVENT                = "EVENT"
-    val MODEL_SCORE          = "MODEL_SCORE"
-    val EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE"
+  @js.native
+  sealed trait DataSource extends js.Any
+  object DataSource extends js.Object {
+    val EVENT                = "EVENT".asInstanceOf[DataSource]
+    val MODEL_SCORE          = "MODEL_SCORE".asInstanceOf[DataSource]
+    val EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE".asInstanceOf[DataSource]
 
     val values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
   }
-
-  object DataTypeEnum {
-    val STRING  = "STRING"
-    val INTEGER = "INTEGER"
-    val FLOAT   = "FLOAT"
-    val BOOLEAN = "BOOLEAN"
+  @js.native
+  sealed trait DataType extends js.Any
+  object DataType extends js.Object {
+    val STRING  = "STRING".asInstanceOf[DataType]
+    val INTEGER = "INTEGER".asInstanceOf[DataType]
+    val FLOAT   = "FLOAT".asInstanceOf[DataType]
+    val BOOLEAN = "BOOLEAN".asInstanceOf[DataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
   }
@@ -691,11 +683,12 @@ package frauddetector {
       __obj.asInstanceOf[Detector]
     }
   }
-
-  object DetectorVersionStatusEnum {
-    val DRAFT    = "DRAFT"
-    val ACTIVE   = "ACTIVE"
-    val INACTIVE = "INACTIVE"
+  @js.native
+  sealed trait DetectorVersionStatus extends js.Any
+  object DetectorVersionStatus extends js.Object {
+    val DRAFT    = "DRAFT".asInstanceOf[DetectorVersionStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[DetectorVersionStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[DetectorVersionStatus]
 
     val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, INACTIVE))
   }
@@ -1212,9 +1205,10 @@ package frauddetector {
       __obj.asInstanceOf[LabelSchema]
     }
   }
-
-  object LanguageEnum {
-    val DETECTORPL = "DETECTORPL"
+  @js.native
+  sealed trait Language extends js.Any
+  object Language extends js.Object {
+    val DETECTORPL = "DETECTORPL".asInstanceOf[Language]
 
     val values = js.Object.freeze(js.Array(DETECTORPL))
   }
@@ -1280,10 +1274,11 @@ package frauddetector {
       __obj.asInstanceOf[ModelEndpointDataBlob]
     }
   }
-
-  object ModelEndpointStatusEnum {
-    val ASSOCIATED  = "ASSOCIATED"
-    val DISSOCIATED = "DISSOCIATED"
+  @js.native
+  sealed trait ModelEndpointStatus extends js.Any
+  object ModelEndpointStatus extends js.Object {
+    val ASSOCIATED  = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
+    val DISSOCIATED = "DISSOCIATED".asInstanceOf[ModelEndpointStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATED, DISSOCIATED))
   }
@@ -1317,10 +1312,11 @@ package frauddetector {
       __obj.asInstanceOf[ModelInputConfiguration]
     }
   }
-
-  object ModelInputDataFormatEnum {
-    val TEXT_CSV         = "TEXT_CSV"
-    val APPLICATION_JSON = "APPLICATION_JSON"
+  @js.native
+  sealed trait ModelInputDataFormat extends js.Any
+  object ModelInputDataFormat extends js.Object {
+    val TEXT_CSV         = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
+    val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ModelInputDataFormat]
 
     val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSON))
   }
@@ -1351,10 +1347,11 @@ package frauddetector {
       __obj.asInstanceOf[ModelOutputConfiguration]
     }
   }
-
-  object ModelOutputDataFormatEnum {
-    val TEXT_CSV              = "TEXT_CSV"
-    val APPLICATION_JSONLINES = "APPLICATION_JSONLINES"
+  @js.native
+  sealed trait ModelOutputDataFormat extends js.Any
+  object ModelOutputDataFormat extends js.Object {
+    val TEXT_CSV              = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
+    val APPLICATION_JSONLINES = "APPLICATION_JSONLINES".asInstanceOf[ModelOutputDataFormat]
 
     val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSONLINES))
   }
@@ -1380,15 +1377,17 @@ package frauddetector {
       __obj.asInstanceOf[ModelScores]
     }
   }
-
-  object ModelSourceEnum {
-    val SAGEMAKER = "SAGEMAKER"
+  @js.native
+  sealed trait ModelSource extends js.Any
+  object ModelSource extends js.Object {
+    val SAGEMAKER = "SAGEMAKER".asInstanceOf[ModelSource]
 
     val values = js.Object.freeze(js.Array(SAGEMAKER))
   }
-
-  object ModelTypeEnumEnum {
-    val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS"
+  @js.native
+  sealed trait ModelTypeEnum extends js.Any
+  object ModelTypeEnum extends js.Object {
+    val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
 
     val values = js.Object.freeze(js.Array(ONLINE_FRAUD_INSIGHTS))
   }
@@ -1495,16 +1494,17 @@ package frauddetector {
       __obj.asInstanceOf[ModelVersionDetail]
     }
   }
-
-  object ModelVersionStatusEnum {
-    val TRAINING_IN_PROGRESS   = "TRAINING_IN_PROGRESS"
-    val TRAINING_COMPLETE      = "TRAINING_COMPLETE"
-    val ACTIVATE_REQUESTED     = "ACTIVATE_REQUESTED"
-    val ACTIVATE_IN_PROGRESS   = "ACTIVATE_IN_PROGRESS"
-    val ACTIVE                 = "ACTIVE"
-    val INACTIVATE_IN_PROGRESS = "INACTIVATE_IN_PROGRESS"
-    val INACTIVE               = "INACTIVE"
-    val ERROR                  = "ERROR"
+  @js.native
+  sealed trait ModelVersionStatus extends js.Any
+  object ModelVersionStatus extends js.Object {
+    val TRAINING_IN_PROGRESS   = "TRAINING_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
+    val TRAINING_COMPLETE      = "TRAINING_COMPLETE".asInstanceOf[ModelVersionStatus]
+    val ACTIVATE_REQUESTED     = "ACTIVATE_REQUESTED".asInstanceOf[ModelVersionStatus]
+    val ACTIVATE_IN_PROGRESS   = "ACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
+    val ACTIVE                 = "ACTIVE".asInstanceOf[ModelVersionStatus]
+    val INACTIVATE_IN_PROGRESS = "INACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
+    val INACTIVE               = "INACTIVE".asInstanceOf[ModelVersionStatus]
+    val ERROR                  = "ERROR".asInstanceOf[ModelVersionStatus]
 
     val values = js.Object.freeze(
       js.Array(

@@ -7,38 +7,31 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisvideo {
-  type APIName                      = String
-  type ChannelInfoList              = js.Array[ChannelInfo]
-  type ChannelName                  = String
-  type ChannelProtocol              = String
-  type ChannelRole                  = String
-  type ChannelType                  = String
-  type ComparisonOperator           = String
-  type DataEndpoint                 = String
-  type DataRetentionChangeInHours   = Int
-  type DataRetentionInHours         = Int
-  type DeviceName                   = String
-  type KmsKeyId                     = String
-  type ListOfProtocols              = js.Array[ChannelProtocol]
-  type ListStreamsInputLimit        = Int
-  type MediaType                    = String
-  type MessageTtlSeconds            = Int
-  type NextToken                    = String
-  type ResourceARN                  = String
-  type ResourceEndpoint             = String
-  type ResourceEndpointList         = js.Array[ResourceEndpointListItem]
-  type ResourceTags                 = js.Dictionary[TagValue]
-  type Status                       = String
-  type StreamInfoList               = js.Array[StreamInfo]
-  type StreamName                   = String
-  type TagKey                       = String
-  type TagKeyList                   = js.Array[TagKey]
-  type TagList                      = js.Array[Tag]
-  type TagOnCreateList              = js.Array[Tag]
-  type TagValue                     = String
-  type Timestamp                    = js.Date
-  type UpdateDataRetentionOperation = String
-  type Version                      = String
+  type ChannelInfoList            = js.Array[ChannelInfo]
+  type ChannelName                = String
+  type DataEndpoint               = String
+  type DataRetentionChangeInHours = Int
+  type DataRetentionInHours       = Int
+  type DeviceName                 = String
+  type KmsKeyId                   = String
+  type ListOfProtocols            = js.Array[ChannelProtocol]
+  type ListStreamsInputLimit      = Int
+  type MediaType                  = String
+  type MessageTtlSeconds          = Int
+  type NextToken                  = String
+  type ResourceARN                = String
+  type ResourceEndpoint           = String
+  type ResourceEndpointList       = js.Array[ResourceEndpointListItem]
+  type ResourceTags               = js.Dictionary[TagValue]
+  type StreamInfoList             = js.Array[StreamInfo]
+  type StreamName                 = String
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagList                    = js.Array[Tag]
+  type TagOnCreateList            = js.Array[Tag]
+  type TagValue                   = String
+  type Timestamp                  = js.Date
+  type Version                    = String
 
   implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
@@ -117,14 +110,15 @@ package kinesisvideo {
     def updateSignalingChannel(params: UpdateSignalingChannelInput): Request[UpdateSignalingChannelOutput] = js.native
     def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput]                               = js.native
   }
-
-  object APINameEnum {
-    val PUT_MEDIA                      = "PUT_MEDIA"
-    val GET_MEDIA                      = "GET_MEDIA"
-    val LIST_FRAGMENTS                 = "LIST_FRAGMENTS"
-    val GET_MEDIA_FOR_FRAGMENT_LIST    = "GET_MEDIA_FOR_FRAGMENT_LIST"
-    val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL"
-    val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL"
+  @js.native
+  sealed trait APIName extends js.Any
+  object APIName extends js.Object {
+    val PUT_MEDIA                      = "PUT_MEDIA".asInstanceOf[APIName]
+    val GET_MEDIA                      = "GET_MEDIA".asInstanceOf[APIName]
+    val LIST_FRAGMENTS                 = "LIST_FRAGMENTS".asInstanceOf[APIName]
+    val GET_MEDIA_FOR_FRAGMENT_LIST    = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
+    val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -198,29 +192,33 @@ package kinesisvideo {
       __obj.asInstanceOf[ChannelNameCondition]
     }
   }
-
-  object ChannelProtocolEnum {
-    val WSS   = "WSS"
-    val HTTPS = "HTTPS"
+  @js.native
+  sealed trait ChannelProtocol extends js.Any
+  object ChannelProtocol extends js.Object {
+    val WSS   = "WSS".asInstanceOf[ChannelProtocol]
+    val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
     val values = js.Object.freeze(js.Array(WSS, HTTPS))
   }
-
-  object ChannelRoleEnum {
-    val MASTER = "MASTER"
-    val VIEWER = "VIEWER"
+  @js.native
+  sealed trait ChannelRole extends js.Any
+  object ChannelRole extends js.Object {
+    val MASTER = "MASTER".asInstanceOf[ChannelRole]
+    val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
 
     val values = js.Object.freeze(js.Array(MASTER, VIEWER))
   }
-
-  object ChannelTypeEnum {
-    val SINGLE_MASTER = "SINGLE_MASTER"
+  @js.native
+  sealed trait ChannelType extends js.Any
+  object ChannelType extends js.Object {
+    val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
 
     val values = js.Object.freeze(js.Array(SINGLE_MASTER))
   }
-
-  object ComparisonOperatorEnum {
-    val BEGINS_WITH = "BEGINS_WITH"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(BEGINS_WITH))
   }
@@ -761,12 +759,13 @@ package kinesisvideo {
       __obj.asInstanceOf[SingleMasterConfiguration]
     }
   }
-
-  object StatusEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[Status]
+    val ACTIVE   = "ACTIVE".asInstanceOf[Status]
+    val UPDATING = "UPDATING".asInstanceOf[Status]
+    val DELETING = "DELETING".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING))
   }
@@ -1031,10 +1030,11 @@ package kinesisvideo {
       __obj.asInstanceOf[UpdateDataRetentionInput]
     }
   }
-
-  object UpdateDataRetentionOperationEnum {
-    val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION"
-    val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION"
+  @js.native
+  sealed trait UpdateDataRetentionOperation extends js.Any
+  object UpdateDataRetentionOperation extends js.Object {
+    val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
+    val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
 
     val values = js.Object.freeze(js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION))
   }

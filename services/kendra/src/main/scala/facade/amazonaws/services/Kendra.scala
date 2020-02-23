@@ -8,7 +8,6 @@ import facade.amazonaws._
 
 package object kendra {
   type AdditionalResultAttributeList                     = js.Array[AdditionalResultAttribute]
-  type AdditionalResultAttributeValueType                = String
   type AttributeFilterList                               = js.Array[AttributeFilter]
   type BatchDeleteDocumentResponseFailedDocuments        = js.Array[BatchDeleteDocumentResponseFailedDocument]
   type BatchPutDocumentResponseFailedDocuments           = js.Array[BatchPutDocumentResponseFailedDocument]
@@ -16,20 +15,15 @@ package object kendra {
   type ChangeDetectingColumns                            = js.Array[ColumnName]
   type ClickFeedbackList                                 = js.Array[ClickFeedback]
   type ColumnName                                        = String
-  type ContentType                                       = String
   type DataSourceDateFieldFormat                         = String
   type DataSourceFieldName                               = String
   type DataSourceId                                      = String
   type DataSourceInclusionsExclusionsStrings             = js.Array[DataSourceInclusionsExclusionsStringsMember]
   type DataSourceInclusionsExclusionsStringsMember       = String
   type DataSourceName                                    = String
-  type DataSourceStatus                                  = String
   type DataSourceSummaryList                             = js.Array[DataSourceSummary]
   type DataSourceSyncJobHistoryList                      = js.Array[DataSourceSyncJob]
-  type DataSourceSyncJobStatus                           = String
   type DataSourceToIndexFieldMappingList                 = js.Array[DataSourceToIndexFieldMapping]
-  type DataSourceType                                    = String
-  type DatabaseEngineType                                = String
   type DatabaseHost                                      = String
   type DatabaseName                                      = String
   type DatabasePort                                      = Int
@@ -40,7 +34,6 @@ package object kendra {
   type DocumentAttributeStringListValue                  = js.Array[String]
   type DocumentAttributeStringValue                      = String
   type DocumentAttributeValueCountPairList               = js.Array[DocumentAttributeValueCountPair]
-  type DocumentAttributeValueType                        = String
   type DocumentId                                        = String
   type DocumentIdList                                    = js.Array[DocumentId]
   type DocumentList                                      = js.Array[Document]
@@ -48,13 +41,11 @@ package object kendra {
   type DocumentMetadataConfigurationList                 = js.Array[DocumentMetadataConfiguration]
   type DocumentMetadataConfigurationName                 = String
   type Duration                                          = String
-  type ErrorCode                                         = String
   type ErrorMessage                                      = String
   type FacetList                                         = js.Array[Facet]
   type FacetResultList                                   = js.Array[FacetResult]
   type FaqId                                             = String
   type FaqName                                           = String
-  type FaqStatus                                         = String
   type FaqSummaryItems                                   = js.Array[FaqSummary]
   type HighlightList                                     = js.Array[Highlight]
   type Importance                                        = Int
@@ -62,7 +53,6 @@ package object kendra {
   type IndexFieldName                                    = String
   type IndexId                                           = String
   type IndexName                                         = String
-  type IndexStatus                                       = String
   type IndexedQuestionAnswersCount                       = Int
   type IndexedTextDocumentsCount                         = Int
   type KmsKeyId                                          = String
@@ -71,17 +61,12 @@ package object kendra {
   type MaxResultsIntegerForListFaqsRequest               = Int
   type MaxResultsIntegerForListIndicesRequest            = Int
   type NextToken                                         = String
-  type Order                                             = String
   type PrincipalList                                     = js.Array[Principal]
   type PrincipalName                                     = String
-  type PrincipalType                                     = String
   type QueryId                                           = String
   type QueryResultItemList                               = js.Array[QueryResultItem]
-  type QueryResultType                                   = String
   type QueryText                                         = String
-  type ReadAccessType                                    = String
   type RelevanceFeedbackList                             = js.Array[RelevanceFeedback]
-  type RelevanceType                                     = String
   type ResultId                                          = String
   type RoleArn                                           = String
   type S3BucketName                                      = String
@@ -90,7 +75,6 @@ package object kendra {
   type SecretArn                                         = String
   type SecurityGroupIdList                               = js.Array[VpcSecurityGroupId]
   type SharePointUrlList                                 = js.Array[Url]
-  type SharePointVersion                                 = String
   type SubnetId                                          = String
   type SubnetIdList                                      = js.Array[SubnetId]
   type TableName                                         = String
@@ -262,9 +246,10 @@ package kendra {
       __obj.asInstanceOf[AdditionalResultAttributeValue]
     }
   }
-
-  object AdditionalResultAttributeValueTypeEnum {
-    val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE"
+  @js.native
+  sealed trait AdditionalResultAttributeValueType extends js.Any
+  object AdditionalResultAttributeValueType extends js.Object {
+    val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
 
     val values = js.Object.freeze(js.Array(TEXT_WITH_HIGHLIGHTS_VALUE))
   }
@@ -531,13 +516,14 @@ package kendra {
       __obj.asInstanceOf[ConnectionConfiguration]
     }
   }
-
-  object ContentTypeEnum {
-    val PDF        = "PDF"
-    val HTML       = "HTML"
-    val MS_WORD    = "MS_WORD"
-    val PLAIN_TEXT = "PLAIN_TEXT"
-    val PPT        = "PPT"
+  @js.native
+  sealed trait ContentType extends js.Any
+  object ContentType extends js.Object {
+    val PDF        = "PDF".asInstanceOf[ContentType]
+    val HTML       = "HTML".asInstanceOf[ContentType]
+    val MS_WORD    = "MS_WORD".asInstanceOf[ContentType]
+    val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
+    val PPT        = "PPT".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT))
   }
@@ -711,13 +697,14 @@ package kendra {
       __obj.asInstanceOf[DataSourceConfiguration]
     }
   }
-
-  object DataSourceStatusEnum {
-    val CREATING = "CREATING"
-    val DELETING = "DELETING"
-    val FAILED   = "FAILED"
-    val UPDATING = "UPDATING"
-    val ACTIVE   = "ACTIVE"
+  @js.native
+  sealed trait DataSourceStatus extends js.Any
+  object DataSourceStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[DataSourceStatus]
+    val DELETING = "DELETING".asInstanceOf[DataSourceStatus]
+    val FAILED   = "FAILED".asInstanceOf[DataSourceStatus]
+    val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[DataSourceStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE))
   }
@@ -792,14 +779,15 @@ package kendra {
       __obj.asInstanceOf[DataSourceSyncJob]
     }
   }
-
-  object DataSourceSyncJobStatusEnum {
-    val FAILED     = "FAILED"
-    val SUCCEEDED  = "SUCCEEDED"
-    val SYNCING    = "SYNCING"
-    val INCOMPLETE = "INCOMPLETE"
-    val STOPPING   = "STOPPING"
-    val ABORTED    = "ABORTED"
+  @js.native
+  sealed trait DataSourceSyncJobStatus extends js.Any
+  object DataSourceSyncJobStatus extends js.Object {
+    val FAILED     = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
+    val SUCCEEDED  = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
+    val SYNCING    = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
+    val INCOMPLETE = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
+    val STOPPING   = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
+    val ABORTED    = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
 
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED))
   }
@@ -830,11 +818,12 @@ package kendra {
       __obj.asInstanceOf[DataSourceToIndexFieldMapping]
     }
   }
-
-  object DataSourceTypeEnum {
-    val S3         = "S3"
-    val SHAREPOINT = "SHAREPOINT"
-    val DATABASE   = "DATABASE"
+  @js.native
+  sealed trait DataSourceType extends js.Any
+  object DataSourceType extends js.Object {
+    val S3         = "S3".asInstanceOf[DataSourceType]
+    val SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
+    val DATABASE   = "DATABASE".asInstanceOf[DataSourceType]
 
     val values = js.Object.freeze(js.Array(S3, SHAREPOINT, DATABASE))
   }
@@ -895,12 +884,13 @@ package kendra {
       __obj.asInstanceOf[DatabaseConfiguration]
     }
   }
-
-  object DatabaseEngineTypeEnum {
-    val RDS_AURORA_MYSQL      = "RDS_AURORA_MYSQL"
-    val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL"
-    val RDS_MYSQL             = "RDS_MYSQL"
-    val RDS_POSTGRESQL        = "RDS_POSTGRESQL"
+  @js.native
+  sealed trait DatabaseEngineType extends js.Any
+  object DatabaseEngineType extends js.Object {
+    val RDS_AURORA_MYSQL      = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
+    val RDS_MYSQL             = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_POSTGRESQL        = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
     val values = js.Object.freeze(js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL))
   }
@@ -1258,12 +1248,13 @@ package kendra {
       __obj.asInstanceOf[DocumentAttributeValueCountPair]
     }
   }
-
-  object DocumentAttributeValueTypeEnum {
-    val STRING_VALUE      = "STRING_VALUE"
-    val STRING_LIST_VALUE = "STRING_LIST_VALUE"
-    val LONG_VALUE        = "LONG_VALUE"
-    val DATE_VALUE        = "DATE_VALUE"
+  @js.native
+  sealed trait DocumentAttributeValueType extends js.Any
+  object DocumentAttributeValueType extends js.Object {
+    val STRING_VALUE      = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val LONG_VALUE        = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val DATE_VALUE        = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
     val values = js.Object.freeze(js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE))
   }
@@ -1316,10 +1307,11 @@ package kendra {
       __obj.asInstanceOf[DocumentsMetadataConfiguration]
     }
   }
-
-  object ErrorCodeEnum {
-    val InternalError  = "InternalError"
-    val InvalidRequest = "InvalidRequest"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val InternalError  = "InternalError".asInstanceOf[ErrorCode]
+    val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(InternalError, InvalidRequest))
   }
@@ -1387,13 +1379,14 @@ package kendra {
       __obj.asInstanceOf[FaqStatistics]
     }
   }
-
-  object FaqStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait FaqStatus extends js.Any
+  object FaqStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[FaqStatus]
+    val UPDATING = "UPDATING".asInstanceOf[FaqStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[FaqStatus]
+    val DELETING = "DELETING".asInstanceOf[FaqStatus]
+    val FAILED   = "FAILED".asInstanceOf[FaqStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED))
   }
@@ -1512,13 +1505,14 @@ package kendra {
       __obj.asInstanceOf[IndexStatistics]
     }
   }
-
-  object IndexStatusEnum {
-    val CREATING        = "CREATING"
-    val ACTIVE          = "ACTIVE"
-    val DELETING        = "DELETING"
-    val FAILED          = "FAILED"
-    val SYSTEM_UPDATING = "SYSTEM_UPDATING"
+  @js.native
+  sealed trait IndexStatus extends js.Any
+  object IndexStatus extends js.Object {
+    val CREATING        = "CREATING".asInstanceOf[IndexStatus]
+    val ACTIVE          = "ACTIVE".asInstanceOf[IndexStatus]
+    val DELETING        = "DELETING".asInstanceOf[IndexStatus]
+    val FAILED          = "FAILED".asInstanceOf[IndexStatus]
+    val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, SYSTEM_UPDATING))
   }
@@ -1700,10 +1694,11 @@ package kendra {
       __obj.asInstanceOf[ListIndicesResponse]
     }
   }
-
-  object OrderEnum {
-    val ASCENDING  = "ASCENDING"
-    val DESCENDING = "DESCENDING"
+  @js.native
+  sealed trait Order extends js.Any
+  object Order extends js.Object {
+    val ASCENDING  = "ASCENDING".asInstanceOf[Order]
+    val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
@@ -1734,10 +1729,11 @@ package kendra {
       __obj.asInstanceOf[Principal]
     }
   }
-
-  object PrincipalTypeEnum {
-    val USER  = "USER"
-    val GROUP = "GROUP"
+  @js.native
+  sealed trait PrincipalType extends js.Any
+  object PrincipalType extends js.Object {
+    val USER  = "USER".asInstanceOf[PrincipalType]
+    val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(USER, GROUP))
   }
@@ -1848,18 +1844,20 @@ package kendra {
       __obj.asInstanceOf[QueryResultItem]
     }
   }
-
-  object QueryResultTypeEnum {
-    val DOCUMENT        = "DOCUMENT"
-    val QUESTION_ANSWER = "QUESTION_ANSWER"
-    val ANSWER          = "ANSWER"
+  @js.native
+  sealed trait QueryResultType extends js.Any
+  object QueryResultType extends js.Object {
+    val DOCUMENT        = "DOCUMENT".asInstanceOf[QueryResultType]
+    val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
+    val ANSWER          = "ANSWER".asInstanceOf[QueryResultType]
 
     val values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
   }
-
-  object ReadAccessTypeEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait ReadAccessType extends js.Any
+  object ReadAccessType extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
+    val DENY  = "DENY".asInstanceOf[ReadAccessType]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1918,10 +1916,11 @@ package kendra {
       __obj.asInstanceOf[RelevanceFeedback]
     }
   }
-
-  object RelevanceTypeEnum {
-    val RELEVANT     = "RELEVANT"
-    val NOT_RELEVANT = "NOT_RELEVANT"
+  @js.native
+  sealed trait RelevanceType extends js.Any
+  object RelevanceType extends js.Object {
+    val RELEVANT     = "RELEVANT".asInstanceOf[RelevanceType]
+    val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
     val values = js.Object.freeze(js.Array(RELEVANT, NOT_RELEVANT))
   }
@@ -2069,9 +2068,10 @@ package kendra {
       __obj.asInstanceOf[SharePointConfiguration]
     }
   }
-
-  object SharePointVersionEnum {
-    val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE"
+  @js.native
+  sealed trait SharePointVersion extends js.Any
+  object SharePointVersion extends js.Object {
+    val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
     val values = js.Object.freeze(js.Array(SHAREPOINT_ONLINE))
   }

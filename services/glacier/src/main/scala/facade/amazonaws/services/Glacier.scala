@@ -8,29 +8,19 @@ import facade.amazonaws._
 
 package object glacier {
   type AccessControlPolicyList = js.Array[Grant]
-  type ActionCode              = String
-  type CannedACL               = String
   type DataRetrievalRulesList  = js.Array[DataRetrievalRule]
   type DateTime                = String
-  type EncryptionType          = String
-  type ExpressionType          = String
-  type FileHeaderInfo          = String
   type JobList                 = js.Array[GlacierJobDescription]
   type NotificationEventList   = js.Array[String]
   type NullableLong            = Double
   type PartList                = js.Array[PartListElement]
-  type Permission              = String
   type ProvisionedCapacityList = js.Array[ProvisionedCapacityDescription]
-  type QuoteFields             = String
   type Size                    = Double
-  type StatusCode              = String
-  type StorageClass            = String
   type Stream                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TagKey                  = String
   type TagKeyList              = js.Array[String]
   type TagMap                  = js.Dictionary[TagValue]
   type TagValue                = String
-  type Type                    = String
   type UploadsList             = js.Array[UploadListElement]
   type VaultList               = js.Array[DescribeVaultOutput]
   type hashmap                 = js.Dictionary[String]
@@ -207,11 +197,12 @@ package glacier {
       __obj.asInstanceOf[AbortVaultLockInput]
     }
   }
-
-  object ActionCodeEnum {
-    val ArchiveRetrieval   = "ArchiveRetrieval"
-    val InventoryRetrieval = "InventoryRetrieval"
-    val Select             = "Select"
+  @js.native
+  sealed trait ActionCode extends js.Any
+  object ActionCode extends js.Object {
+    val ArchiveRetrieval   = "ArchiveRetrieval".asInstanceOf[ActionCode]
+    val InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
+    val Select             = "Select".asInstanceOf[ActionCode]
 
     val values = js.Object.freeze(js.Array(ArchiveRetrieval, InventoryRetrieval, Select))
   }
@@ -333,15 +324,16 @@ package glacier {
       __obj.asInstanceOf[CSVOutput]
     }
   }
-
-  object CannedACLEnum {
-    val `private`                   = "private"
-    val `public-read`               = "public-read"
-    val `public-read-write`         = "public-read-write"
-    val `aws-exec-read`             = "aws-exec-read"
-    val `authenticated-read`        = "authenticated-read"
-    val `bucket-owner-read`         = "bucket-owner-read"
-    val `bucket-owner-full-control` = "bucket-owner-full-control"
+  @js.native
+  sealed trait CannedACL extends js.Any
+  object CannedACL extends js.Object {
+    val `private`                   = "private".asInstanceOf[CannedACL]
+    val `public-read`               = "public-read".asInstanceOf[CannedACL]
+    val `public-read-write`         = "public-read-write".asInstanceOf[CannedACL]
+    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[CannedACL]
+    val `authenticated-read`        = "authenticated-read".asInstanceOf[CannedACL]
+    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[CannedACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
 
     val values = js.Object.freeze(
       js.Array(
@@ -708,24 +700,27 @@ package glacier {
       __obj.asInstanceOf[Encryption]
     }
   }
-
-  object EncryptionTypeEnum {
-    val `aws:kms` = "aws:kms"
-    val AES256    = "AES256"
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType extends js.Object {
+    val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
+    val AES256    = "AES256".asInstanceOf[EncryptionType]
 
     val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
-
-  object ExpressionTypeEnum {
-    val SQL = "SQL"
+  @js.native
+  sealed trait ExpressionType extends js.Any
+  object ExpressionType extends js.Object {
+    val SQL = "SQL".asInstanceOf[ExpressionType]
 
     val values = js.Object.freeze(js.Array(SQL))
   }
-
-  object FileHeaderInfoEnum {
-    val USE    = "USE"
-    val IGNORE = "IGNORE"
-    val NONE   = "NONE"
+  @js.native
+  sealed trait FileHeaderInfo extends js.Any
+  object FileHeaderInfo extends js.Object {
+    val USE    = "USE".asInstanceOf[FileHeaderInfo]
+    val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
+    val NONE   = "NONE".asInstanceOf[FileHeaderInfo]
 
     val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
@@ -1752,13 +1747,14 @@ package glacier {
       __obj.asInstanceOf[PartListElement]
     }
   }
-
-  object PermissionEnum {
-    val FULL_CONTROL = "FULL_CONTROL"
-    val WRITE        = "WRITE"
-    val WRITE_ACP    = "WRITE_ACP"
-    val READ         = "READ"
-    val READ_ACP     = "READ_ACP"
+  @js.native
+  sealed trait Permission extends js.Any
+  object Permission extends js.Object {
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
+    val WRITE        = "WRITE".asInstanceOf[Permission]
+    val WRITE_ACP    = "WRITE_ACP".asInstanceOf[Permission]
+    val READ         = "READ".asInstanceOf[Permission]
+    val READ_ACP     = "READ_ACP".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
@@ -1821,10 +1817,11 @@ package glacier {
       __obj.asInstanceOf[PurchaseProvisionedCapacityOutput]
     }
   }
-
-  object QuoteFieldsEnum {
-    val ALWAYS   = "ALWAYS"
-    val ASNEEDED = "ASNEEDED"
+  @js.native
+  sealed trait QuoteFields extends js.Any
+  object QuoteFields extends js.Object {
+    val ALWAYS   = "ALWAYS".asInstanceOf[QuoteFields]
+    val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
     val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
@@ -2001,27 +1998,30 @@ package glacier {
       __obj.asInstanceOf[SetVaultNotificationsInput]
     }
   }
-
-  object StatusCodeEnum {
-    val InProgress = "InProgress"
-    val Succeeded  = "Succeeded"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait StatusCode extends js.Any
+  object StatusCode extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[StatusCode]
+    val Succeeded  = "Succeeded".asInstanceOf[StatusCode]
+    val Failed     = "Failed".asInstanceOf[StatusCode]
 
     val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
   }
-
-  object StorageClassEnum {
-    val STANDARD           = "STANDARD"
-    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY"
-    val STANDARD_IA        = "STANDARD_IA"
+  @js.native
+  sealed trait StorageClass extends js.Any
+  object StorageClass extends js.Object {
+    val STANDARD           = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA        = "STANDARD_IA".asInstanceOf[StorageClass]
 
     val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA))
   }
-
-  object TypeEnum {
-    val AmazonCustomerByEmail = "AmazonCustomerByEmail"
-    val CanonicalUser         = "CanonicalUser"
-    val Group                 = "Group"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
+    val CanonicalUser         = "CanonicalUser".asInstanceOf[Type]
+    val Group                 = "Group".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(AmazonCustomerByEmail, CanonicalUser, Group))
   }

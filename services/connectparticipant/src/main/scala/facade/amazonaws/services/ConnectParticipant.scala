@@ -10,9 +10,7 @@ package object connectparticipant {
   type ChatContent            = String
   type ChatContentType        = String
   type ChatItemId             = String
-  type ChatItemType           = String
   type ClientToken            = String
-  type ConnectionType         = String
   type ConnectionTypeList     = js.Array[ConnectionType]
   type ContactId              = String
   type DisplayName            = String
@@ -22,11 +20,8 @@ package object connectparticipant {
   type MostRecent             = Int
   type NextToken              = String
   type ParticipantId          = String
-  type ParticipantRole        = String
   type ParticipantToken       = String
   type PreSignedConnectionUrl = String
-  type ScanDirection          = String
-  type SortKey                = String
   type Transcript             = js.Array[Item]
 
   implicit final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
@@ -60,11 +55,12 @@ package connectparticipant {
     def sendEvent(params: SendEventRequest): Request[SendEventResponse]                                     = js.native
     def sendMessage(params: SendMessageRequest): Request[SendMessageResponse]                               = js.native
   }
-
-  object ChatItemTypeEnum {
-    val MESSAGE        = "MESSAGE"
-    val EVENT          = "EVENT"
-    val CONNECTION_ACK = "CONNECTION_ACK"
+  @js.native
+  sealed trait ChatItemType extends js.Any
+  object ChatItemType extends js.Object {
+    val MESSAGE        = "MESSAGE".asInstanceOf[ChatItemType]
+    val EVENT          = "EVENT".asInstanceOf[ChatItemType]
+    val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
     val values = js.Object.freeze(js.Array(MESSAGE, EVENT, CONNECTION_ACK))
   }
@@ -90,10 +86,11 @@ package connectparticipant {
       __obj.asInstanceOf[ConnectionCredentials]
     }
   }
-
-  object ConnectionTypeEnum {
-    val WEBSOCKET              = "WEBSOCKET"
-    val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS"
+  @js.native
+  sealed trait ConnectionType extends js.Any
+  object ConnectionType extends js.Object {
+    val WEBSOCKET              = "WEBSOCKET".asInstanceOf[ConnectionType]
+    val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
 
     val values = js.Object.freeze(js.Array(WEBSOCKET, CONNECTION_CREDENTIALS))
   }
@@ -269,18 +266,20 @@ package connectparticipant {
       __obj.asInstanceOf[Item]
     }
   }
-
-  object ParticipantRoleEnum {
-    val AGENT    = "AGENT"
-    val CUSTOMER = "CUSTOMER"
-    val SYSTEM   = "SYSTEM"
+  @js.native
+  sealed trait ParticipantRole extends js.Any
+  object ParticipantRole extends js.Object {
+    val AGENT    = "AGENT".asInstanceOf[ParticipantRole]
+    val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
+    val SYSTEM   = "SYSTEM".asInstanceOf[ParticipantRole]
 
     val values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
   }
-
-  object ScanDirectionEnum {
-    val FORWARD  = "FORWARD"
-    val BACKWARD = "BACKWARD"
+  @js.native
+  sealed trait ScanDirection extends js.Any
+  object ScanDirection extends js.Object {
+    val FORWARD  = "FORWARD".asInstanceOf[ScanDirection]
+    val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
 
     val values = js.Object.freeze(js.Array(FORWARD, BACKWARD))
   }
@@ -376,10 +375,11 @@ package connectparticipant {
       __obj.asInstanceOf[SendMessageResponse]
     }
   }
-
-  object SortKeyEnum {
-    val DESCENDING = "DESCENDING"
-    val ASCENDING  = "ASCENDING"
+  @js.native
+  sealed trait SortKey extends js.Any
+  object SortKey extends js.Object {
+    val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
+    val ASCENDING  = "ASCENDING".asInstanceOf[SortKey]
 
     val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }

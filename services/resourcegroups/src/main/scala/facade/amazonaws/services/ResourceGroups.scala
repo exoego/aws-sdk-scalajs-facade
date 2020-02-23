@@ -10,7 +10,6 @@ package object resourcegroups {
   type GroupArn               = String
   type GroupDescription       = String
   type GroupFilterList        = js.Array[GroupFilter]
-  type GroupFilterName        = String
   type GroupFilterValue       = String
   type GroupFilterValues      = js.Array[GroupFilterValue]
   type GroupIdentifierList    = js.Array[GroupIdentifier]
@@ -19,13 +18,10 @@ package object resourcegroups {
   type MaxResults             = Int
   type NextToken              = String
   type Query                  = String
-  type QueryErrorCode         = String
   type QueryErrorList         = js.Array[QueryError]
   type QueryErrorMessage      = String
-  type QueryType              = String
   type ResourceArn            = String
   type ResourceFilterList     = js.Array[ResourceFilter]
-  type ResourceFilterName     = String
   type ResourceFilterValue    = String
   type ResourceFilterValues   = js.Array[ResourceFilterValue]
   type ResourceIdentifierList = js.Array[ResourceIdentifier]
@@ -319,9 +315,10 @@ package resourcegroups {
       __obj.asInstanceOf[GroupFilter]
     }
   }
-
-  object GroupFilterNameEnum {
-    val `resource-type` = "resource-type"
+  @js.native
+  sealed trait GroupFilterName extends js.Any
+  object GroupFilterName extends js.Object {
+    val `resource-type` = "resource-type".asInstanceOf[GroupFilterName]
 
     val values = js.Object.freeze(js.Array(`resource-type`))
   }
@@ -486,17 +483,19 @@ package resourcegroups {
       __obj.asInstanceOf[QueryError]
     }
   }
-
-  object QueryErrorCodeEnum {
-    val CLOUDFORMATION_STACK_INACTIVE     = "CLOUDFORMATION_STACK_INACTIVE"
-    val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING"
+  @js.native
+  sealed trait QueryErrorCode extends js.Any
+  object QueryErrorCode extends js.Object {
+    val CLOUDFORMATION_STACK_INACTIVE     = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
+    val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING".asInstanceOf[QueryErrorCode]
 
     val values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
   }
-
-  object QueryTypeEnum {
-    val TAG_FILTERS_1_0          = "TAG_FILTERS_1_0"
-    val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0"
+  @js.native
+  sealed trait QueryType extends js.Any
+  object QueryType extends js.Object {
+    val TAG_FILTERS_1_0          = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
+    val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0".asInstanceOf[QueryType]
 
     val values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
   }
@@ -524,9 +523,10 @@ package resourcegroups {
       __obj.asInstanceOf[ResourceFilter]
     }
   }
-
-  object ResourceFilterNameEnum {
-    val `resource-type` = "resource-type"
+  @js.native
+  sealed trait ResourceFilterName extends js.Any
+  object ResourceFilterName extends js.Object {
+    val `resource-type` = "resource-type".asInstanceOf[ResourceFilterName]
 
     val values = js.Object.freeze(js.Array(`resource-type`))
   }

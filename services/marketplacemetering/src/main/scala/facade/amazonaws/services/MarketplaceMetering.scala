@@ -7,17 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object marketplacemetering {
-  type CustomerIdentifier      = String
-  type NonEmptyString          = String
-  type Nonce                   = String
-  type ProductCode             = String
-  type Timestamp               = js.Date
-  type UsageDimension          = String
-  type UsageQuantity           = Int
-  type UsageRecordList         = js.Array[UsageRecord]
-  type UsageRecordResultList   = js.Array[UsageRecordResult]
-  type UsageRecordResultStatus = String
-  type VersionInteger          = Int
+  type CustomerIdentifier    = String
+  type NonEmptyString        = String
+  type Nonce                 = String
+  type ProductCode           = String
+  type Timestamp             = js.Date
+  type UsageDimension        = String
+  type UsageQuantity         = Int
+  type UsageRecordList       = js.Array[UsageRecord]
+  type UsageRecordResultList = js.Array[UsageRecordResult]
+  type VersionInteger        = Int
 
   implicit final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
 
@@ -279,11 +278,12 @@ package marketplacemetering {
       __obj.asInstanceOf[UsageRecordResult]
     }
   }
-
-  object UsageRecordResultStatusEnum {
-    val Success               = "Success"
-    val CustomerNotSubscribed = "CustomerNotSubscribed"
-    val DuplicateRecord       = "DuplicateRecord"
+  @js.native
+  sealed trait UsageRecordResultStatus extends js.Any
+  object UsageRecordResultStatus extends js.Object {
+    val Success               = "Success".asInstanceOf[UsageRecordResultStatus]
+    val CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
+    val DuplicateRecord       = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
 
     val values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
   }

@@ -8,12 +8,10 @@ import facade.amazonaws._
 
 package object rekognition {
   type Assets                                         = js.Array[Asset]
-  type Attribute                                      = String
   type Attributes                                     = js.Array[Attribute]
   type BoundingBoxHeight                              = Float
   type BoundingBoxWidth                               = Float
   type CelebrityList                                  = js.Array[Celebrity]
-  type CelebrityRecognitionSortBy                     = String
   type CelebrityRecognitions                          = js.Array[CelebrityRecognition]
   type ClientRequestToken                             = String
   type CollectionId                                   = String
@@ -21,18 +19,14 @@ package object rekognition {
   type CompareFacesMatchList                          = js.Array[CompareFacesMatch]
   type CompareFacesUnmatchList                        = js.Array[ComparedFace]
   type ComparedFaceList                               = js.Array[ComparedFace]
-  type ContentClassifier                              = String
   type ContentClassifiers                             = js.Array[ContentClassifier]
   type ContentModerationDetections                    = js.Array[ContentModerationDetection]
-  type ContentModerationSortBy                        = String
   type CustomLabels                                   = js.Array[CustomLabel]
   type DateTime                                       = js.Date
   type Degree                                         = Float
-  type EmotionName                                    = String
   type Emotions                                       = js.Array[Emotion]
   type ExtendedPaginationToken                        = String
   type ExternalImageId                                = String
-  type FaceAttributes                                 = String
   type FaceDetailList                                 = js.Array[FaceDetail]
   type FaceDetections                                 = js.Array[FaceDetection]
   type FaceId                                         = String
@@ -41,9 +35,7 @@ package object rekognition {
   type FaceMatchList                                  = js.Array[FaceMatch]
   type FaceModelVersionList                           = js.Array[String]
   type FaceRecordList                                 = js.Array[FaceRecord]
-  type FaceSearchSortBy                               = String
   type FlowDefinitionArn                              = String
-  type GenderType                                     = String
   type HumanLoopActivationConditionsEvaluationResults = String
   type HumanLoopActivationReason                      = String
   type HumanLoopActivationReasons                     = js.Array[HumanLoopActivationReason]
@@ -57,16 +49,13 @@ package object rekognition {
   type JobTag                                         = String
   type KinesisDataArn                                 = String
   type KinesisVideoArn                                = String
-  type LabelDetectionSortBy                           = String
   type LabelDetections                                = js.Array[LabelDetection]
   type Labels                                         = js.Array[Label]
-  type LandmarkType                                   = String
   type Landmarks                                      = js.Array[Landmark]
   type MaxFaces                                       = Int
   type MaxFacesToIndex                                = Int
   type MaxResults                                     = Int
   type ModerationLabels                               = js.Array[ModerationLabel]
-  type OrientationCorrection                          = String
   type PageSize                                       = Int
   type PaginationToken                                = String
   type Parents                                        = js.Array[Parent]
@@ -74,19 +63,14 @@ package object rekognition {
   type PersonDetections                               = js.Array[PersonDetection]
   type PersonIndex                                    = Double
   type PersonMatches                                  = js.Array[PersonMatch]
-  type PersonTrackingSortBy                           = String
   type Polygon                                        = js.Array[Point]
   type ProjectArn                                     = String
   type ProjectDescriptions                            = js.Array[ProjectDescription]
   type ProjectName                                    = String
-  type ProjectStatus                                  = String
   type ProjectVersionArn                              = String
   type ProjectVersionDescriptions                     = js.Array[ProjectVersionDescription]
-  type ProjectVersionStatus                           = String
   type ProjectVersionsPageSize                        = Int
   type ProjectsPageSize                               = Int
-  type QualityFilter                                  = String
-  type Reason                                         = String
   type Reasons                                        = js.Array[Reason]
   type RegionsOfInterest                              = js.Array[RegionOfInterest]
   type RekognitionUniqueId                            = String
@@ -100,10 +84,8 @@ package object rekognition {
   type StreamProcessorArn                             = String
   type StreamProcessorList                            = js.Array[StreamProcessor]
   type StreamProcessorName                            = String
-  type StreamProcessorStatus                          = String
   type TextDetectionList                              = js.Array[TextDetection]
   type TextDetectionResults                           = js.Array[TextDetectionResult]
-  type TextTypes                                      = String
   type Timestamp                                      = Double
   type UInteger                                       = Int
   type ULong                                          = Double
@@ -112,7 +94,6 @@ package object rekognition {
   type Urls                                           = js.Array[Url]
   type VersionName                                    = String
   type VersionNames                                   = js.Array[VersionName]
-  type VideoJobStatus                                 = String
 
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
@@ -312,10 +293,11 @@ package rekognition {
       __obj.asInstanceOf[Asset]
     }
   }
-
-  object AttributeEnum {
-    val DEFAULT = "DEFAULT"
-    val ALL     = "ALL"
+  @js.native
+  sealed trait Attribute extends js.Any
+  object Attribute extends js.Object {
+    val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
+    val ALL     = "ALL".asInstanceOf[Attribute]
 
     val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
@@ -460,10 +442,11 @@ package rekognition {
       __obj.asInstanceOf[CelebrityRecognition]
     }
   }
-
-  object CelebrityRecognitionSortByEnum {
-    val ID        = "ID"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait CelebrityRecognitionSortBy extends js.Any
+  object CelebrityRecognitionSortBy extends js.Object {
+    val ID        = "ID".asInstanceOf[CelebrityRecognitionSortBy]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
 
     val values = js.Object.freeze(js.Array(ID, TIMESTAMP))
   }
@@ -601,10 +584,12 @@ package rekognition {
       __obj.asInstanceOf[ComparedSourceImageFace]
     }
   }
-
-  object ContentClassifierEnum {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
-    val FreeOfAdultContent                      = "FreeOfAdultContent"
+  @js.native
+  sealed trait ContentClassifier extends js.Any
+  object ContentClassifier extends js.Object {
+    val FreeOfPersonallyIdentifiableInformation =
+      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
@@ -630,10 +615,11 @@ package rekognition {
       __obj.asInstanceOf[ContentModerationDetection]
     }
   }
-
-  object ContentModerationSortByEnum {
-    val NAME      = "NAME"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait ContentModerationSortBy extends js.Any
+  object ContentModerationSortBy extends js.Object {
+    val NAME      = "NAME".asInstanceOf[ContentModerationSortBy]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
 
     val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
@@ -1406,17 +1392,18 @@ package rekognition {
       __obj.asInstanceOf[Emotion]
     }
   }
-
-  object EmotionNameEnum {
-    val HAPPY     = "HAPPY"
-    val SAD       = "SAD"
-    val ANGRY     = "ANGRY"
-    val CONFUSED  = "CONFUSED"
-    val DISGUSTED = "DISGUSTED"
-    val SURPRISED = "SURPRISED"
-    val CALM      = "CALM"
-    val UNKNOWN   = "UNKNOWN"
-    val FEAR      = "FEAR"
+  @js.native
+  sealed trait EmotionName extends js.Any
+  object EmotionName extends js.Object {
+    val HAPPY     = "HAPPY".asInstanceOf[EmotionName]
+    val SAD       = "SAD".asInstanceOf[EmotionName]
+    val ANGRY     = "ANGRY".asInstanceOf[EmotionName]
+    val CONFUSED  = "CONFUSED".asInstanceOf[EmotionName]
+    val DISGUSTED = "DISGUSTED".asInstanceOf[EmotionName]
+    val SURPRISED = "SURPRISED".asInstanceOf[EmotionName]
+    val CALM      = "CALM".asInstanceOf[EmotionName]
+    val UNKNOWN   = "UNKNOWN".asInstanceOf[EmotionName]
+    val FEAR      = "FEAR".asInstanceOf[EmotionName]
 
     val values = js.Object.freeze(js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR))
   }
@@ -1517,10 +1504,11 @@ package rekognition {
       __obj.asInstanceOf[Face]
     }
   }
-
-  object FaceAttributesEnum {
-    val DEFAULT = "DEFAULT"
-    val ALL     = "ALL"
+  @js.native
+  sealed trait FaceAttributes extends js.Any
+  object FaceAttributes extends js.Object {
+    val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
+    val ALL     = "ALL".asInstanceOf[FaceAttributes]
 
     val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
@@ -1679,10 +1667,11 @@ package rekognition {
       __obj.asInstanceOf[FaceSearchSettings]
     }
   }
-
-  object FaceSearchSortByEnum {
-    val INDEX     = "INDEX"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait FaceSearchSortBy extends js.Any
+  object FaceSearchSortBy extends js.Object {
+    val INDEX     = "INDEX".asInstanceOf[FaceSearchSortBy]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
 
     val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
@@ -1711,10 +1700,11 @@ package rekognition {
       __obj.asInstanceOf[Gender]
     }
   }
-
-  object GenderTypeEnum {
-    val Male   = "Male"
-    val Female = "Female"
+  @js.native
+  sealed trait GenderType extends js.Any
+  object GenderType extends js.Object {
+    val Male   = "Male".asInstanceOf[GenderType]
+    val Female = "Female".asInstanceOf[GenderType]
 
     val values = js.Object.freeze(js.Array(Male, Female))
   }
@@ -2479,10 +2469,11 @@ package rekognition {
       __obj.asInstanceOf[LabelDetection]
     }
   }
-
-  object LabelDetectionSortByEnum {
-    val NAME      = "NAME"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait LabelDetectionSortBy extends js.Any
+  object LabelDetectionSortBy extends js.Object {
+    val NAME      = "NAME".asInstanceOf[LabelDetectionSortBy]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
 
     val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
@@ -2511,38 +2502,39 @@ package rekognition {
       __obj.asInstanceOf[Landmark]
     }
   }
-
-  object LandmarkTypeEnum {
-    val eyeLeft           = "eyeLeft"
-    val eyeRight          = "eyeRight"
-    val nose              = "nose"
-    val mouthLeft         = "mouthLeft"
-    val mouthRight        = "mouthRight"
-    val leftEyeBrowLeft   = "leftEyeBrowLeft"
-    val leftEyeBrowRight  = "leftEyeBrowRight"
-    val leftEyeBrowUp     = "leftEyeBrowUp"
-    val rightEyeBrowLeft  = "rightEyeBrowLeft"
-    val rightEyeBrowRight = "rightEyeBrowRight"
-    val rightEyeBrowUp    = "rightEyeBrowUp"
-    val leftEyeLeft       = "leftEyeLeft"
-    val leftEyeRight      = "leftEyeRight"
-    val leftEyeUp         = "leftEyeUp"
-    val leftEyeDown       = "leftEyeDown"
-    val rightEyeLeft      = "rightEyeLeft"
-    val rightEyeRight     = "rightEyeRight"
-    val rightEyeUp        = "rightEyeUp"
-    val rightEyeDown      = "rightEyeDown"
-    val noseLeft          = "noseLeft"
-    val noseRight         = "noseRight"
-    val mouthUp           = "mouthUp"
-    val mouthDown         = "mouthDown"
-    val leftPupil         = "leftPupil"
-    val rightPupil        = "rightPupil"
-    val upperJawlineLeft  = "upperJawlineLeft"
-    val midJawlineLeft    = "midJawlineLeft"
-    val chinBottom        = "chinBottom"
-    val midJawlineRight   = "midJawlineRight"
-    val upperJawlineRight = "upperJawlineRight"
+  @js.native
+  sealed trait LandmarkType extends js.Any
+  object LandmarkType extends js.Object {
+    val eyeLeft           = "eyeLeft".asInstanceOf[LandmarkType]
+    val eyeRight          = "eyeRight".asInstanceOf[LandmarkType]
+    val nose              = "nose".asInstanceOf[LandmarkType]
+    val mouthLeft         = "mouthLeft".asInstanceOf[LandmarkType]
+    val mouthRight        = "mouthRight".asInstanceOf[LandmarkType]
+    val leftEyeBrowLeft   = "leftEyeBrowLeft".asInstanceOf[LandmarkType]
+    val leftEyeBrowRight  = "leftEyeBrowRight".asInstanceOf[LandmarkType]
+    val leftEyeBrowUp     = "leftEyeBrowUp".asInstanceOf[LandmarkType]
+    val rightEyeBrowLeft  = "rightEyeBrowLeft".asInstanceOf[LandmarkType]
+    val rightEyeBrowRight = "rightEyeBrowRight".asInstanceOf[LandmarkType]
+    val rightEyeBrowUp    = "rightEyeBrowUp".asInstanceOf[LandmarkType]
+    val leftEyeLeft       = "leftEyeLeft".asInstanceOf[LandmarkType]
+    val leftEyeRight      = "leftEyeRight".asInstanceOf[LandmarkType]
+    val leftEyeUp         = "leftEyeUp".asInstanceOf[LandmarkType]
+    val leftEyeDown       = "leftEyeDown".asInstanceOf[LandmarkType]
+    val rightEyeLeft      = "rightEyeLeft".asInstanceOf[LandmarkType]
+    val rightEyeRight     = "rightEyeRight".asInstanceOf[LandmarkType]
+    val rightEyeUp        = "rightEyeUp".asInstanceOf[LandmarkType]
+    val rightEyeDown      = "rightEyeDown".asInstanceOf[LandmarkType]
+    val noseLeft          = "noseLeft".asInstanceOf[LandmarkType]
+    val noseRight         = "noseRight".asInstanceOf[LandmarkType]
+    val mouthUp           = "mouthUp".asInstanceOf[LandmarkType]
+    val mouthDown         = "mouthDown".asInstanceOf[LandmarkType]
+    val leftPupil         = "leftPupil".asInstanceOf[LandmarkType]
+    val rightPupil        = "rightPupil".asInstanceOf[LandmarkType]
+    val upperJawlineLeft  = "upperJawlineLeft".asInstanceOf[LandmarkType]
+    val midJawlineLeft    = "midJawlineLeft".asInstanceOf[LandmarkType]
+    val chinBottom        = "chinBottom".asInstanceOf[LandmarkType]
+    val midJawlineRight   = "midJawlineRight".asInstanceOf[LandmarkType]
+    val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2797,12 +2789,13 @@ package rekognition {
       __obj.asInstanceOf[NotificationChannel]
     }
   }
-
-  object OrientationCorrectionEnum {
-    val ROTATE_0   = "ROTATE_0"
-    val ROTATE_90  = "ROTATE_90"
-    val ROTATE_180 = "ROTATE_180"
-    val ROTATE_270 = "ROTATE_270"
+  @js.native
+  sealed trait OrientationCorrection extends js.Any
+  object OrientationCorrection extends js.Object {
+    val ROTATE_0   = "ROTATE_0".asInstanceOf[OrientationCorrection]
+    val ROTATE_90  = "ROTATE_90".asInstanceOf[OrientationCorrection]
+    val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
+    val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
 
     val values = js.Object.freeze(js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270))
   }
@@ -2920,10 +2913,11 @@ package rekognition {
       __obj.asInstanceOf[PersonMatch]
     }
   }
-
-  object PersonTrackingSortByEnum {
-    val INDEX     = "INDEX"
-    val TIMESTAMP = "TIMESTAMP"
+  @js.native
+  sealed trait PersonTrackingSortBy extends js.Any
+  object PersonTrackingSortBy extends js.Object {
+    val INDEX     = "INDEX".asInstanceOf[PersonTrackingSortBy]
+    val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
 
     val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
@@ -3000,11 +2994,12 @@ package rekognition {
       __obj.asInstanceOf[ProjectDescription]
     }
   }
-
-  object ProjectStatusEnum {
-    val CREATING = "CREATING"
-    val CREATED  = "CREATED"
-    val DELETING = "DELETING"
+  @js.native
+  sealed trait ProjectStatus extends js.Any
+  object ProjectStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[ProjectStatus]
+    val CREATED  = "CREATED".asInstanceOf[ProjectStatus]
+    val DELETING = "DELETING".asInstanceOf[ProjectStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, CREATED, DELETING))
   }
@@ -3059,17 +3054,18 @@ package rekognition {
       __obj.asInstanceOf[ProjectVersionDescription]
     }
   }
-
-  object ProjectVersionStatusEnum {
-    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS"
-    val TRAINING_COMPLETED   = "TRAINING_COMPLETED"
-    val TRAINING_FAILED      = "TRAINING_FAILED"
-    val STARTING             = "STARTING"
-    val RUNNING              = "RUNNING"
-    val FAILED               = "FAILED"
-    val STOPPING             = "STOPPING"
-    val STOPPED              = "STOPPED"
-    val DELETING             = "DELETING"
+  @js.native
+  sealed trait ProjectVersionStatus extends js.Any
+  object ProjectVersionStatus extends js.Object {
+    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ProjectVersionStatus]
+    val TRAINING_COMPLETED   = "TRAINING_COMPLETED".asInstanceOf[ProjectVersionStatus]
+    val TRAINING_FAILED      = "TRAINING_FAILED".asInstanceOf[ProjectVersionStatus]
+    val STARTING             = "STARTING".asInstanceOf[ProjectVersionStatus]
+    val RUNNING              = "RUNNING".asInstanceOf[ProjectVersionStatus]
+    val FAILED               = "FAILED".asInstanceOf[ProjectVersionStatus]
+    val STOPPING             = "STOPPING".asInstanceOf[ProjectVersionStatus]
+    val STOPPED              = "STOPPED".asInstanceOf[ProjectVersionStatus]
+    val DELETING             = "DELETING".asInstanceOf[ProjectVersionStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3085,25 +3081,27 @@ package rekognition {
       )
     )
   }
-
-  object QualityFilterEnum {
-    val NONE   = "NONE"
-    val AUTO   = "AUTO"
-    val LOW    = "LOW"
-    val MEDIUM = "MEDIUM"
-    val HIGH   = "HIGH"
+  @js.native
+  sealed trait QualityFilter extends js.Any
+  object QualityFilter extends js.Object {
+    val NONE   = "NONE".asInstanceOf[QualityFilter]
+    val AUTO   = "AUTO".asInstanceOf[QualityFilter]
+    val LOW    = "LOW".asInstanceOf[QualityFilter]
+    val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
+    val HIGH   = "HIGH".asInstanceOf[QualityFilter]
 
     val values = js.Object.freeze(js.Array(NONE, AUTO, LOW, MEDIUM, HIGH))
   }
-
-  object ReasonEnum {
-    val EXCEEDS_MAX_FACES  = "EXCEEDS_MAX_FACES"
-    val EXTREME_POSE       = "EXTREME_POSE"
-    val LOW_BRIGHTNESS     = "LOW_BRIGHTNESS"
-    val LOW_SHARPNESS      = "LOW_SHARPNESS"
-    val LOW_CONFIDENCE     = "LOW_CONFIDENCE"
-    val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX"
-    val LOW_FACE_QUALITY   = "LOW_FACE_QUALITY"
+  @js.native
+  sealed trait Reason extends js.Any
+  object Reason extends js.Object {
+    val EXCEEDS_MAX_FACES  = "EXCEEDS_MAX_FACES".asInstanceOf[Reason]
+    val EXTREME_POSE       = "EXTREME_POSE".asInstanceOf[Reason]
+    val LOW_BRIGHTNESS     = "LOW_BRIGHTNESS".asInstanceOf[Reason]
+    val LOW_SHARPNESS      = "LOW_SHARPNESS".asInstanceOf[Reason]
+    val LOW_CONFIDENCE     = "LOW_CONFIDENCE".asInstanceOf[Reason]
+    val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
+    val LOW_FACE_QUALITY   = "LOW_FACE_QUALITY".asInstanceOf[Reason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3883,13 +3881,14 @@ package rekognition {
       __obj.asInstanceOf[StreamProcessorSettings]
     }
   }
-
-  object StreamProcessorStatusEnum {
-    val STOPPED  = "STOPPED"
-    val STARTING = "STARTING"
-    val RUNNING  = "RUNNING"
-    val FAILED   = "FAILED"
-    val STOPPING = "STOPPING"
+  @js.native
+  sealed trait StreamProcessorStatus extends js.Any
+  object StreamProcessorStatus extends js.Object {
+    val STOPPED  = "STOPPED".asInstanceOf[StreamProcessorStatus]
+    val STARTING = "STARTING".asInstanceOf[StreamProcessorStatus]
+    val RUNNING  = "RUNNING".asInstanceOf[StreamProcessorStatus]
+    val FAILED   = "FAILED".asInstanceOf[StreamProcessorStatus]
+    val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
 
     val values = js.Object.freeze(js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING))
   }
@@ -4038,10 +4037,11 @@ package rekognition {
       __obj.asInstanceOf[TextDetectionResult]
     }
   }
-
-  object TextTypesEnum {
-    val LINE = "LINE"
-    val WORD = "WORD"
+  @js.native
+  sealed trait TextTypes extends js.Any
+  object TextTypes extends js.Object {
+    val LINE = "LINE".asInstanceOf[TextTypes]
+    val WORD = "WORD".asInstanceOf[TextTypes]
 
     val values = js.Object.freeze(js.Array(LINE, WORD))
   }
@@ -4127,11 +4127,12 @@ package rekognition {
       __obj.asInstanceOf[Video]
     }
   }
-
-  object VideoJobStatusEnum {
-    val IN_PROGRESS = "IN_PROGRESS"
-    val SUCCEEDED   = "SUCCEEDED"
-    val FAILED      = "FAILED"
+  @js.native
+  sealed trait VideoJobStatus extends js.Any
+  object VideoJobStatus extends js.Object {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[VideoJobStatus]
+    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[VideoJobStatus]
+    val FAILED      = "FAILED".asInstanceOf[VideoJobStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }

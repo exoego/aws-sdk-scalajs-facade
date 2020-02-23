@@ -20,7 +20,6 @@ package object securityhub {
   type AwsEc2SecurityGroupIpv6RangeList        = js.Array[AwsEc2SecurityGroupIpv6Range]
   type AwsEc2SecurityGroupPrefixListIdList     = js.Array[AwsEc2SecurityGroupPrefixListId]
   type AwsEc2SecurityGroupUserIdGroupPairList  = js.Array[AwsEc2SecurityGroupUserIdGroupPair]
-  type AwsIamAccessKeyStatus                   = String
   type AwsIamRoleAssumeRolePolicyDocument      = String
   type AwsLambdaFunctionLayerList              = js.Array[AwsLambdaFunctionLayer]
   type AwsLambdaLayerVersionNumber             = Double
@@ -30,10 +29,7 @@ package object securityhub {
   type AwsSnsTopicSubscriptionList             = js.Array[AwsSnsTopicSubscription]
   type AwsWafWebAclRuleList                    = js.Array[AwsWafWebAclRule]
   type CategoryList                            = js.Array[NonEmptyString]
-  type ComplianceStatus                        = String
-  type ControlStatus                           = String
   type DateFilterList                          = js.Array[DateFilter]
-  type DateRangeUnit                           = String
   type FieldMap                                = js.Dictionary[NonEmptyString]
   type ImportFindingsErrorList                 = js.Array[ImportFindingsError]
   type InsightList                             = js.Array[Insight]
@@ -42,52 +38,38 @@ package object securityhub {
   type IpFilterList                            = js.Array[IpFilter]
   type KeywordFilterList                       = js.Array[KeywordFilter]
   type MalwareList                             = js.Array[Malware]
-  type MalwareState                            = String
-  type MalwareType                             = String
-  type MapFilterComparison                     = String
   type MapFilterList                           = js.Array[MapFilter]
   type MaxResults                              = Int
   type MemberList                              = js.Array[Member]
-  type NetworkDirection                        = String
   type NextToken                               = String
   type NonEmptyString                          = String
   type NonEmptyStringList                      = js.Array[NonEmptyString]
   type NumberFilterList                        = js.Array[NumberFilter]
-  type Partition                               = String
   type ProductSubscriptionArnList              = js.Array[NonEmptyString]
   type ProductsList                            = js.Array[Product]
-  type RecordState                             = String
   type RelatedFindingList                      = js.Array[RelatedFinding]
   type RelatedRequirementsList                 = js.Array[NonEmptyString]
   type ResourceArn                             = String
   type ResourceList                            = js.Array[Resource]
   type ResultList                              = js.Array[Result]
   type SecurityGroups                          = js.Array[NonEmptyString]
-  type SeverityRating                          = String
   type SortCriteria                            = js.Array[SortCriterion]
-  type SortOrder                               = String
   type Standards                               = js.Array[Standard]
   type StandardsControls                       = js.Array[StandardsControl]
   type StandardsInputParameterMap              = js.Dictionary[NonEmptyString]
-  type StandardsStatus                         = String
   type StandardsSubscriptionArns               = js.Array[NonEmptyString]
   type StandardsSubscriptionRequests           = js.Array[StandardsSubscriptionRequest]
   type StandardsSubscriptions                  = js.Array[StandardsSubscription]
-  type StringFilterComparison                  = String
   type StringFilterList                        = js.Array[StringFilter]
   type StringList                              = js.Array[NonEmptyString]
   type TagKey                                  = String
   type TagKeyList                              = js.Array[TagKey]
   type TagMap                                  = js.Dictionary[TagValue]
   type TagValue                                = String
-  type ThreatIntelIndicatorCategory            = String
   type ThreatIntelIndicatorList                = js.Array[ThreatIntelIndicator]
-  type ThreatIntelIndicatorType                = String
   type Timestamp                               = js.Date
   type TypeList                                = js.Array[NonEmptyString]
-  type VerificationState                       = String
   type WafExcludedRuleList                     = js.Array[WafExcludedRule]
-  type WorkflowState                           = String
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
@@ -1106,10 +1088,11 @@ package securityhub {
       __obj.asInstanceOf[AwsIamAccessKeyDetails]
     }
   }
-
-  object AwsIamAccessKeyStatusEnum {
-    val Active   = "Active"
-    val Inactive = "Inactive"
+  @js.native
+  sealed trait AwsIamAccessKeyStatus extends js.Any
+  object AwsIamAccessKeyStatus extends js.Object {
+    val Active   = "Active".asInstanceOf[AwsIamAccessKeyStatus]
+    val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
@@ -2302,12 +2285,13 @@ package securityhub {
       __obj.asInstanceOf[Compliance]
     }
   }
-
-  object ComplianceStatusEnum {
-    val PASSED        = "PASSED"
-    val WARNING       = "WARNING"
-    val FAILED        = "FAILED"
-    val NOT_AVAILABLE = "NOT_AVAILABLE"
+  @js.native
+  sealed trait ComplianceStatus extends js.Any
+  object ComplianceStatus extends js.Object {
+    val PASSED        = "PASSED".asInstanceOf[ComplianceStatus]
+    val WARNING       = "WARNING".asInstanceOf[ComplianceStatus]
+    val FAILED        = "FAILED".asInstanceOf[ComplianceStatus]
+    val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
 
     val values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
   }
@@ -2339,10 +2323,11 @@ package securityhub {
       __obj.asInstanceOf[ContainerDetails]
     }
   }
-
-  object ControlStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait ControlStatus extends js.Any
+  object ControlStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ControlStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -2509,9 +2494,10 @@ package securityhub {
       __obj.asInstanceOf[DateRange]
     }
   }
-
-  object DateRangeUnitEnum {
-    val DAYS = "DAYS"
+  @js.native
+  sealed trait DateRangeUnit extends js.Any
+  object DateRangeUnit extends js.Object {
+    val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
 
     val values = js.Object.freeze(js.Array(DAYS))
   }
@@ -3733,31 +3719,33 @@ package securityhub {
       __obj.asInstanceOf[Malware]
     }
   }
-
-  object MalwareStateEnum {
-    val OBSERVED       = "OBSERVED"
-    val REMOVAL_FAILED = "REMOVAL_FAILED"
-    val REMOVED        = "REMOVED"
+  @js.native
+  sealed trait MalwareState extends js.Any
+  object MalwareState extends js.Object {
+    val OBSERVED       = "OBSERVED".asInstanceOf[MalwareState]
+    val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
+    val REMOVED        = "REMOVED".asInstanceOf[MalwareState]
 
     val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
   }
-
-  object MalwareTypeEnum {
-    val ADWARE               = "ADWARE"
-    val BLENDED_THREAT       = "BLENDED_THREAT"
-    val BOTNET_AGENT         = "BOTNET_AGENT"
-    val COIN_MINER           = "COIN_MINER"
-    val EXPLOIT_KIT          = "EXPLOIT_KIT"
-    val KEYLOGGER            = "KEYLOGGER"
-    val MACRO                = "MACRO"
-    val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED"
-    val SPYWARE              = "SPYWARE"
-    val RANSOMWARE           = "RANSOMWARE"
-    val REMOTE_ACCESS        = "REMOTE_ACCESS"
-    val ROOTKIT              = "ROOTKIT"
-    val TROJAN               = "TROJAN"
-    val VIRUS                = "VIRUS"
-    val WORM                 = "WORM"
+  @js.native
+  sealed trait MalwareType extends js.Any
+  object MalwareType extends js.Object {
+    val ADWARE               = "ADWARE".asInstanceOf[MalwareType]
+    val BLENDED_THREAT       = "BLENDED_THREAT".asInstanceOf[MalwareType]
+    val BOTNET_AGENT         = "BOTNET_AGENT".asInstanceOf[MalwareType]
+    val COIN_MINER           = "COIN_MINER".asInstanceOf[MalwareType]
+    val EXPLOIT_KIT          = "EXPLOIT_KIT".asInstanceOf[MalwareType]
+    val KEYLOGGER            = "KEYLOGGER".asInstanceOf[MalwareType]
+    val MACRO                = "MACRO".asInstanceOf[MalwareType]
+    val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
+    val SPYWARE              = "SPYWARE".asInstanceOf[MalwareType]
+    val RANSOMWARE           = "RANSOMWARE".asInstanceOf[MalwareType]
+    val REMOTE_ACCESS        = "REMOTE_ACCESS".asInstanceOf[MalwareType]
+    val ROOTKIT              = "ROOTKIT".asInstanceOf[MalwareType]
+    val TROJAN               = "TROJAN".asInstanceOf[MalwareType]
+    val VIRUS                = "VIRUS".asInstanceOf[MalwareType]
+    val WORM                 = "WORM".asInstanceOf[MalwareType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3804,9 +3792,10 @@ package securityhub {
       __obj.asInstanceOf[MapFilter]
     }
   }
-
-  object MapFilterComparisonEnum {
-    val EQUALS = "EQUALS"
+  @js.native
+  sealed trait MapFilterComparison extends js.Any
+  object MapFilterComparison extends js.Object {
+    val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
 
     val values = js.Object.freeze(js.Array(EQUALS))
   }
@@ -3893,10 +3882,11 @@ package securityhub {
       __obj.asInstanceOf[Network]
     }
   }
-
-  object NetworkDirectionEnum {
-    val IN  = "IN"
-    val OUT = "OUT"
+  @js.native
+  sealed trait NetworkDirection extends js.Any
+  object NetworkDirection extends js.Object {
+    val IN  = "IN".asInstanceOf[NetworkDirection]
+    val OUT = "OUT".asInstanceOf[NetworkDirection]
 
     val values = js.Object.freeze(js.Array(IN, OUT))
   }
@@ -3976,11 +3966,12 @@ package securityhub {
       __obj.asInstanceOf[NumberFilter]
     }
   }
-
-  object PartitionEnum {
-    val aws          = "aws"
-    val `aws-cn`     = "aws-cn"
-    val `aws-us-gov` = "aws-us-gov"
+  @js.native
+  sealed trait Partition extends js.Any
+  object Partition extends js.Object {
+    val aws          = "aws".asInstanceOf[Partition]
+    val `aws-cn`     = "aws-cn".asInstanceOf[Partition]
+    val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
 
     val values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
   }
@@ -4084,10 +4075,11 @@ package securityhub {
       __obj.asInstanceOf[Recommendation]
     }
   }
-
-  object RecordStateEnum {
-    val ACTIVE   = "ACTIVE"
-    val ARCHIVED = "ARCHIVED"
+  @js.native
+  sealed trait RecordState extends js.Any
+  object RecordState extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[RecordState]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
@@ -4294,12 +4286,13 @@ package securityhub {
       __obj.asInstanceOf[Severity]
     }
   }
-
-  object SeverityRatingEnum {
-    val LOW      = "LOW"
-    val MEDIUM   = "MEDIUM"
-    val HIGH     = "HIGH"
-    val CRITICAL = "CRITICAL"
+  @js.native
+  sealed trait SeverityRating extends js.Any
+  object SeverityRating extends js.Object {
+    val LOW      = "LOW".asInstanceOf[SeverityRating]
+    val MEDIUM   = "MEDIUM".asInstanceOf[SeverityRating]
+    val HIGH     = "HIGH".asInstanceOf[SeverityRating]
+    val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
 
     val values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
   }
@@ -4325,10 +4318,11 @@ package securityhub {
       __obj.asInstanceOf[SortCriterion]
     }
   }
-
-  object SortOrderEnum {
-    val asc  = "asc"
-    val desc = "desc"
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val asc  = "asc".asInstanceOf[SortOrder]
+    val desc = "desc".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(asc, desc))
   }
@@ -4403,13 +4397,14 @@ package securityhub {
       __obj.asInstanceOf[StandardsControl]
     }
   }
-
-  object StandardsStatusEnum {
-    val PENDING    = "PENDING"
-    val READY      = "READY"
-    val FAILED     = "FAILED"
-    val DELETING   = "DELETING"
-    val INCOMPLETE = "INCOMPLETE"
+  @js.native
+  sealed trait StandardsStatus extends js.Any
+  object StandardsStatus extends js.Object {
+    val PENDING    = "PENDING".asInstanceOf[StandardsStatus]
+    val READY      = "READY".asInstanceOf[StandardsStatus]
+    val FAILED     = "FAILED".asInstanceOf[StandardsStatus]
+    val DELETING   = "DELETING".asInstanceOf[StandardsStatus]
+    val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
   }
@@ -4489,10 +4484,11 @@ package securityhub {
       __obj.asInstanceOf[StringFilter]
     }
   }
-
-  object StringFilterComparisonEnum {
-    val EQUALS = "EQUALS"
-    val PREFIX = "PREFIX"
+  @js.native
+  sealed trait StringFilterComparison extends js.Any
+  object StringFilterComparison extends js.Object {
+    val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
+    val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
 
     val values = js.Object.freeze(js.Array(EQUALS, PREFIX))
   }
@@ -4564,31 +4560,33 @@ package securityhub {
       __obj.asInstanceOf[ThreatIntelIndicator]
     }
   }
-
-  object ThreatIntelIndicatorCategoryEnum {
-    val BACKDOOR            = "BACKDOOR"
-    val CARD_STEALER        = "CARD_STEALER"
-    val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL"
-    val DROP_SITE           = "DROP_SITE"
-    val EXPLOIT_SITE        = "EXPLOIT_SITE"
-    val KEYLOGGER           = "KEYLOGGER"
+  @js.native
+  sealed trait ThreatIntelIndicatorCategory extends js.Any
+  object ThreatIntelIndicatorCategory extends js.Object {
+    val BACKDOOR            = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
+    val CARD_STEALER        = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
+    val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
+    val DROP_SITE           = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    val EXPLOIT_SITE        = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    val KEYLOGGER           = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
     val values =
       js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
   }
-
-  object ThreatIntelIndicatorTypeEnum {
-    val DOMAIN        = "DOMAIN"
-    val EMAIL_ADDRESS = "EMAIL_ADDRESS"
-    val HASH_MD5      = "HASH_MD5"
-    val HASH_SHA1     = "HASH_SHA1"
-    val HASH_SHA256   = "HASH_SHA256"
-    val HASH_SHA512   = "HASH_SHA512"
-    val IPV4_ADDRESS  = "IPV4_ADDRESS"
-    val IPV6_ADDRESS  = "IPV6_ADDRESS"
-    val MUTEX         = "MUTEX"
-    val PROCESS       = "PROCESS"
-    val URL           = "URL"
+  @js.native
+  sealed trait ThreatIntelIndicatorType extends js.Any
+  object ThreatIntelIndicatorType extends js.Object {
+    val DOMAIN        = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
+    val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_MD5      = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA1     = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA256   = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA512   = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
+    val IPV4_ADDRESS  = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    val IPV6_ADDRESS  = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    val MUTEX         = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
+    val PROCESS       = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
+    val URL           = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4791,12 +4789,13 @@ package securityhub {
       __obj.asInstanceOf[UpdateStandardsControlResponse]
     }
   }
-
-  object VerificationStateEnum {
-    val UNKNOWN         = "UNKNOWN"
-    val TRUE_POSITIVE   = "TRUE_POSITIVE"
-    val FALSE_POSITIVE  = "FALSE_POSITIVE"
-    val BENIGN_POSITIVE = "BENIGN_POSITIVE"
+  @js.native
+  sealed trait VerificationState extends js.Any
+  object VerificationState extends js.Object {
+    val UNKNOWN         = "UNKNOWN".asInstanceOf[VerificationState]
+    val TRUE_POSITIVE   = "TRUE_POSITIVE".asInstanceOf[VerificationState]
+    val FALSE_POSITIVE  = "FALSE_POSITIVE".asInstanceOf[VerificationState]
+    val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
     val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
   }
@@ -4857,13 +4856,14 @@ package securityhub {
       __obj.asInstanceOf[WafOverrideAction]
     }
   }
-
-  object WorkflowStateEnum {
-    val NEW         = "NEW"
-    val ASSIGNED    = "ASSIGNED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val DEFERRED    = "DEFERRED"
-    val RESOLVED    = "RESOLVED"
+  @js.native
+  sealed trait WorkflowState extends js.Any
+  object WorkflowState extends js.Object {
+    val NEW         = "NEW".asInstanceOf[WorkflowState]
+    val ASSIGNED    = "ASSIGNED".asInstanceOf[WorkflowState]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
+    val DEFERRED    = "DEFERRED".asInstanceOf[WorkflowState]
+    val RESOLVED    = "RESOLVED".asInstanceOf[WorkflowState]
 
     val values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
   }

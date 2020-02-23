@@ -7,132 +7,126 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object storagegateway {
-  type ActivationKey                 = String
-  type ActiveDirectoryStatus         = String
-  type Authentication                = String
-  type AvailabilityMonitorTestStatus = String
-  type BandwidthDownloadRateLimit    = Double
-  type BandwidthType                 = String
-  type BandwidthUploadRateLimit      = Double
-  type CachediSCSIVolumes            = js.Array[CachediSCSIVolume]
-  type ChapCredentials               = js.Array[ChapInfo]
-  type ChapSecret                    = String
-  type ClientToken                   = String
-  type CloudWatchLogGroupARN         = String
-  type CreatedDate                   = js.Date
-  type DayOfMonth                    = Int
-  type DayOfWeek                     = Int
-  type Description                   = String
-  type DeviceType                    = String
-  type DiskAllocationType            = String
-  type DiskAttribute                 = String
-  type DiskAttributeList             = js.Array[DiskAttribute]
-  type DiskId                        = String
-  type DiskIds                       = js.Array[DiskId]
-  type Disks                         = js.Array[Disk]
-  type DomainName                    = String
-  type DomainUserName                = String
-  type DomainUserPassword            = String
-  type DoubleObject                  = Double
-  type Ec2InstanceId                 = String
-  type Ec2InstanceRegion             = String
-  type FileShareARN                  = String
-  type FileShareARNList              = js.Array[FileShareARN]
-  type FileShareClientList           = js.Array[IPV4AddressCIDR]
-  type FileShareId                   = String
-  type FileShareInfoList             = js.Array[FileShareInfo]
-  type FileShareStatus               = String
-  type FileShareType                 = String
-  type FileShareUser                 = String
-  type FileShareUserList             = js.Array[FileShareUser]
-  type Folder                        = String
-  type FolderList                    = js.Array[Folder]
-  type GatewayARN                    = String
-  type GatewayId                     = String
-  type GatewayName                   = String
-  type GatewayNetworkInterfaces      = js.Array[NetworkInterface]
-  type GatewayOperationalState       = String
-  type GatewayState                  = String
-  type GatewayTimezone               = String
-  type GatewayType                   = String
-  type Gateways                      = js.Array[GatewayInfo]
-  type Host                          = String
-  type HostEnvironment               = String
-  type Hosts                         = js.Array[Host]
-  type HourOfDay                     = Int
-  type IPV4AddressCIDR               = String
-  type Initiator                     = String
-  type Initiators                    = js.Array[Initiator]
-  type IqnName                       = String
-  type KMSKey                        = String
-  type LastSoftwareUpdate            = String
-  type LocalConsolePassword          = String
-  type LocationARN                   = String
-  type Marker                        = String
-  type MediumChangerType             = String
-  type MinuteOfHour                  = Int
-  type NFSFileShareInfoList          = js.Array[NFSFileShareInfo]
-  type NetworkInterfaceId            = String
-  type NextUpdateAvailabilityDate    = String
-  type NotificationId                = String
-  type NumTapesToCreate              = Int
-  type ObjectACL                     = String
-  type OrganizationalUnit            = String
-  type Path                          = String
-  type PermissionId                  = Double
-  type PermissionMode                = String
-  type PoolId                        = String
-  type PositiveIntObject             = Int
-  type RecurrenceInHours             = Int
-  type RegionId                      = String
-  type ResourceARN                   = String
-  type Role                          = String
-  type SMBFileShareInfoList          = js.Array[SMBFileShareInfo]
-  type SMBGuestPassword              = String
-  type SMBSecurityStrategy           = String
-  type SnapshotDescription           = String
-  type SnapshotId                    = String
-  type Squash                        = String
-  type StorageClass                  = String
-  type StorediSCSIVolumes            = js.Array[StorediSCSIVolume]
-  type TagKey                        = String
-  type TagKeys                       = js.Array[TagKey]
-  type TagValue                      = String
-  type Tags                          = js.Array[Tag]
-  type TapeARN                       = String
-  type TapeARNs                      = js.Array[TapeARN]
-  type TapeArchiveStatus             = String
-  type TapeArchives                  = js.Array[TapeArchive]
-  type TapeBarcode                   = String
-  type TapeBarcodePrefix             = String
-  type TapeDriveType                 = String
-  type TapeInfos                     = js.Array[TapeInfo]
-  type TapeRecoveryPointInfos        = js.Array[TapeRecoveryPointInfo]
-  type TapeRecoveryPointStatus       = String
-  type TapeSize                      = Double
-  type TapeStatus                    = String
-  type TapeUsage                     = Double
-  type Tapes                         = js.Array[Tape]
-  type TargetARN                     = String
-  type TargetName                    = String
-  type Time                          = js.Date
-  type TimeoutInSeconds              = Int
-  type VTLDeviceARN                  = String
-  type VTLDeviceARNs                 = js.Array[VTLDeviceARN]
-  type VTLDeviceProductIdentifier    = String
-  type VTLDeviceType                 = String
-  type VTLDeviceVendor               = String
-  type VTLDevices                    = js.Array[VTLDevice]
-  type VolumeARN                     = String
-  type VolumeARNs                    = js.Array[VolumeARN]
-  type VolumeAttachmentStatus        = String
-  type VolumeId                      = String
-  type VolumeInfos                   = js.Array[VolumeInfo]
-  type VolumeRecoveryPointInfos      = js.Array[VolumeRecoveryPointInfo]
-  type VolumeStatus                  = String
-  type VolumeType                    = String
-  type VolumeUsedInBytes             = Double
-  type double                        = Double
+  type ActivationKey              = String
+  type Authentication             = String
+  type BandwidthDownloadRateLimit = Double
+  type BandwidthType              = String
+  type BandwidthUploadRateLimit   = Double
+  type CachediSCSIVolumes         = js.Array[CachediSCSIVolume]
+  type ChapCredentials            = js.Array[ChapInfo]
+  type ChapSecret                 = String
+  type ClientToken                = String
+  type CloudWatchLogGroupARN      = String
+  type CreatedDate                = js.Date
+  type DayOfMonth                 = Int
+  type DayOfWeek                  = Int
+  type Description                = String
+  type DeviceType                 = String
+  type DiskAllocationType         = String
+  type DiskAttribute              = String
+  type DiskAttributeList          = js.Array[DiskAttribute]
+  type DiskId                     = String
+  type DiskIds                    = js.Array[DiskId]
+  type Disks                      = js.Array[Disk]
+  type DomainName                 = String
+  type DomainUserName             = String
+  type DomainUserPassword         = String
+  type DoubleObject               = Double
+  type Ec2InstanceId              = String
+  type Ec2InstanceRegion          = String
+  type FileShareARN               = String
+  type FileShareARNList           = js.Array[FileShareARN]
+  type FileShareClientList        = js.Array[IPV4AddressCIDR]
+  type FileShareId                = String
+  type FileShareInfoList          = js.Array[FileShareInfo]
+  type FileShareStatus            = String
+  type FileShareUser              = String
+  type FileShareUserList          = js.Array[FileShareUser]
+  type Folder                     = String
+  type FolderList                 = js.Array[Folder]
+  type GatewayARN                 = String
+  type GatewayId                  = String
+  type GatewayName                = String
+  type GatewayNetworkInterfaces   = js.Array[NetworkInterface]
+  type GatewayOperationalState    = String
+  type GatewayState               = String
+  type GatewayTimezone            = String
+  type GatewayType                = String
+  type Gateways                   = js.Array[GatewayInfo]
+  type Host                       = String
+  type Hosts                      = js.Array[Host]
+  type HourOfDay                  = Int
+  type IPV4AddressCIDR            = String
+  type Initiator                  = String
+  type Initiators                 = js.Array[Initiator]
+  type IqnName                    = String
+  type KMSKey                     = String
+  type LastSoftwareUpdate         = String
+  type LocalConsolePassword       = String
+  type LocationARN                = String
+  type Marker                     = String
+  type MediumChangerType          = String
+  type MinuteOfHour               = Int
+  type NFSFileShareInfoList       = js.Array[NFSFileShareInfo]
+  type NetworkInterfaceId         = String
+  type NextUpdateAvailabilityDate = String
+  type NotificationId             = String
+  type NumTapesToCreate           = Int
+  type OrganizationalUnit         = String
+  type Path                       = String
+  type PermissionId               = Double
+  type PermissionMode             = String
+  type PoolId                     = String
+  type PositiveIntObject          = Int
+  type RecurrenceInHours          = Int
+  type RegionId                   = String
+  type ResourceARN                = String
+  type Role                       = String
+  type SMBFileShareInfoList       = js.Array[SMBFileShareInfo]
+  type SMBGuestPassword           = String
+  type SnapshotDescription        = String
+  type SnapshotId                 = String
+  type Squash                     = String
+  type StorageClass               = String
+  type StorediSCSIVolumes         = js.Array[StorediSCSIVolume]
+  type TagKey                     = String
+  type TagKeys                    = js.Array[TagKey]
+  type TagValue                   = String
+  type Tags                       = js.Array[Tag]
+  type TapeARN                    = String
+  type TapeARNs                   = js.Array[TapeARN]
+  type TapeArchiveStatus          = String
+  type TapeArchives               = js.Array[TapeArchive]
+  type TapeBarcode                = String
+  type TapeBarcodePrefix          = String
+  type TapeDriveType              = String
+  type TapeInfos                  = js.Array[TapeInfo]
+  type TapeRecoveryPointInfos     = js.Array[TapeRecoveryPointInfo]
+  type TapeRecoveryPointStatus    = String
+  type TapeSize                   = Double
+  type TapeStatus                 = String
+  type TapeUsage                  = Double
+  type Tapes                      = js.Array[Tape]
+  type TargetARN                  = String
+  type TargetName                 = String
+  type Time                       = js.Date
+  type TimeoutInSeconds           = Int
+  type VTLDeviceARN               = String
+  type VTLDeviceARNs              = js.Array[VTLDeviceARN]
+  type VTLDeviceProductIdentifier = String
+  type VTLDeviceType              = String
+  type VTLDeviceVendor            = String
+  type VTLDevices                 = js.Array[VTLDevice]
+  type VolumeARN                  = String
+  type VolumeARNs                 = js.Array[VolumeARN]
+  type VolumeAttachmentStatus     = String
+  type VolumeId                   = String
+  type VolumeInfos                = js.Array[VolumeInfo]
+  type VolumeRecoveryPointInfos   = js.Array[VolumeRecoveryPointInfo]
+  type VolumeStatus               = String
+  type VolumeType                 = String
+  type VolumeUsedInBytes          = Double
+  type double                     = Double
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
@@ -494,15 +488,16 @@ package storagegateway {
       __obj.asInstanceOf[ActivateGatewayOutput]
     }
   }
-
-  object ActiveDirectoryStatusEnum {
-    val ACCESS_DENIED = "ACCESS_DENIED"
-    val DETACHED      = "DETACHED"
-    val JOINED        = "JOINED"
-    val JOINING       = "JOINING"
-    val NETWORK_ERROR = "NETWORK_ERROR"
-    val TIMEOUT       = "TIMEOUT"
-    val UNKNOWN_ERROR = "UNKNOWN_ERROR"
+  @js.native
+  sealed trait ActiveDirectoryStatus extends js.Any
+  object ActiveDirectoryStatus extends js.Object {
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ActiveDirectoryStatus]
+    val DETACHED      = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINED        = "JOINED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINING       = "JOINING".asInstanceOf[ActiveDirectoryStatus]
+    val NETWORK_ERROR = "NETWORK_ERROR".asInstanceOf[ActiveDirectoryStatus]
+    val TIMEOUT       = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
+    val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
     val values =
       js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
@@ -748,11 +743,12 @@ package storagegateway {
       __obj.asInstanceOf[AttachVolumeOutput]
     }
   }
-
-  object AvailabilityMonitorTestStatusEnum {
-    val COMPLETE = "COMPLETE"
-    val FAILED   = "FAILED"
-    val PENDING  = "PENDING"
+  @js.native
+  sealed trait AvailabilityMonitorTestStatus extends js.Any
+  object AvailabilityMonitorTestStatus extends js.Object {
+    val COMPLETE = "COMPLETE".asInstanceOf[AvailabilityMonitorTestStatus]
+    val FAILED   = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
+    val PENDING  = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
   }
@@ -2767,9 +2763,11 @@ package storagegateway {
   /**
     * The type of the file share.
     */
-  object FileShareTypeEnum {
-    val NFS = "NFS"
-    val SMB = "SMB"
+  @js.native
+  sealed trait FileShareType extends js.Any
+  object FileShareType extends js.Object {
+    val NFS = "NFS".asInstanceOf[FileShareType]
+    val SMB = "SMB".asInstanceOf[FileShareType]
 
     val values = js.Object.freeze(js.Array(NFS, SMB))
   }
@@ -2810,13 +2808,14 @@ package storagegateway {
       __obj.asInstanceOf[GatewayInfo]
     }
   }
-
-  object HostEnvironmentEnum {
-    val VMWARE    = "VMWARE"
-    val `HYPER-V` = "HYPER-V"
-    val EC2       = "EC2"
-    val KVM       = "KVM"
-    val OTHER     = "OTHER"
+  @js.native
+  sealed trait HostEnvironment extends js.Any
+  object HostEnvironment extends js.Object {
+    val VMWARE    = "VMWARE".asInstanceOf[HostEnvironment]
+    val `HYPER-V` = "HYPER-V".asInstanceOf[HostEnvironment]
+    val EC2       = "EC2".asInstanceOf[HostEnvironment]
+    val KVM       = "KVM".asInstanceOf[HostEnvironment]
+    val OTHER     = "OTHER".asInstanceOf[HostEnvironment]
 
     val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
   }
@@ -3395,14 +3394,16 @@ package storagegateway {
   /**
     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private".
     */
-  object ObjectACLEnum {
-    val `private`                   = "private"
-    val `public-read`               = "public-read"
-    val `public-read-write`         = "public-read-write"
-    val `authenticated-read`        = "authenticated-read"
-    val `bucket-owner-read`         = "bucket-owner-read"
-    val `bucket-owner-full-control` = "bucket-owner-full-control"
-    val `aws-exec-read`             = "aws-exec-read"
+  @js.native
+  sealed trait ObjectACL extends js.Any
+  object ObjectACL extends js.Object {
+    val `private`                   = "private".asInstanceOf[ObjectACL]
+    val `public-read`               = "public-read".asInstanceOf[ObjectACL]
+    val `public-read-write`         = "public-read-write".asInstanceOf[ObjectACL]
+    val `authenticated-read`        = "authenticated-read".asInstanceOf[ObjectACL]
+    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[ObjectACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
+    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[ObjectACL]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3680,11 +3681,12 @@ package storagegateway {
       __obj.asInstanceOf[SMBFileShareInfo]
     }
   }
-
-  object SMBSecurityStrategyEnum {
-    val ClientSpecified     = "ClientSpecified"
-    val MandatorySigning    = "MandatorySigning"
-    val MandatoryEncryption = "MandatoryEncryption"
+  @js.native
+  sealed trait SMBSecurityStrategy extends js.Any
+  object SMBSecurityStrategy extends js.Object {
+    val ClientSpecified     = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
+    val MandatorySigning    = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
+    val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
     val values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
   }

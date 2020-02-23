@@ -7,97 +7,68 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object emr {
-  type ActionOnFailure                        = String
-  type AdjustmentType                         = String
-  type ApplicationList                        = js.Array[Application]
-  type ArnType                                = String
-  type AutoScalingPolicyState                 = String
-  type AutoScalingPolicyStateChangeReasonCode = String
-  type BooleanObject                          = Boolean
-  type BootstrapActionConfigList              = js.Array[BootstrapActionConfig]
-  type BootstrapActionDetailList              = js.Array[BootstrapActionDetail]
-  type CancelStepsInfoList                    = js.Array[CancelStepsInfo]
-  type CancelStepsRequestStatus               = String
-  type ClusterId                              = String
-  type ClusterState                           = String
-  type ClusterStateChangeReasonCode           = String
-  type ClusterStateList                       = js.Array[ClusterState]
-  type ClusterSummaryList                     = js.Array[ClusterSummary]
-  type CommandList                            = js.Array[Command]
-  type ComparisonOperator                     = String
-  type ConfigurationList                      = js.Array[Configuration]
-  type Date                                   = js.Date
-  type EC2InstanceIdsList                     = js.Array[InstanceId]
-  type EC2InstanceIdsToTerminateList          = js.Array[InstanceId]
-  type EbsBlockDeviceConfigList               = js.Array[EbsBlockDeviceConfig]
-  type EbsBlockDeviceList                     = js.Array[EbsBlockDevice]
-  type EbsVolumeList                          = js.Array[EbsVolume]
-  type InstanceCollectionType                 = String
-  type InstanceFleetConfigList                = js.Array[InstanceFleetConfig]
-  type InstanceFleetId                        = String
-  type InstanceFleetList                      = js.Array[InstanceFleet]
-  type InstanceFleetState                     = String
-  type InstanceFleetStateChangeReasonCode     = String
-  type InstanceFleetType                      = String
-  type InstanceGroupConfigList                = js.Array[InstanceGroupConfig]
-  type InstanceGroupDetailList                = js.Array[InstanceGroupDetail]
-  type InstanceGroupId                        = String
-  type InstanceGroupIdsList                   = js.Array[XmlStringMaxLen256]
-  type InstanceGroupList                      = js.Array[InstanceGroup]
-  type InstanceGroupModifyConfigList          = js.Array[InstanceGroupModifyConfig]
-  type InstanceGroupState                     = String
-  type InstanceGroupStateChangeReasonCode     = String
-  type InstanceGroupType                      = String
-  type InstanceGroupTypeList                  = js.Array[InstanceGroupType]
-  type InstanceId                             = String
-  type InstanceList                           = js.Array[Instance]
-  type InstanceRoleType                       = String
-  type InstanceState                          = String
-  type InstanceStateChangeReasonCode          = String
-  type InstanceStateList                      = js.Array[InstanceState]
-  type InstanceType                           = String
-  type InstanceTypeConfigList                 = js.Array[InstanceTypeConfig]
-  type InstanceTypeSpecificationList          = js.Array[InstanceTypeSpecification]
-  type JobFlowDetailList                      = js.Array[JobFlowDetail]
-  type JobFlowExecutionState                  = String
-  type JobFlowExecutionStateList              = js.Array[JobFlowExecutionState]
-  type KeyValueList                           = js.Array[KeyValue]
-  type Marker                                 = String
-  type MarketType                             = String
-  type MetricDimensionList                    = js.Array[MetricDimension]
-  type NewSupportedProductsList               = js.Array[SupportedProductConfig]
-  type NonNegativeDouble                      = Double
-  type OptionalArnType                        = String
-  type Port                                   = Int
-  type PortRanges                             = js.Array[PortRange]
-  type RepoUpgradeOnBoot                      = String
-  type ResourceId                             = String
-  type ScaleDownBehavior                      = String
-  type ScalingRuleList                        = js.Array[ScalingRule]
-  type SecurityConfigurationList              = js.Array[SecurityConfigurationSummary]
-  type SecurityGroupsList                     = js.Array[XmlStringMaxLen256]
-  type SpotProvisioningTimeoutAction          = String
-  type Statistic                              = String
-  type StepCancellationOption                 = String
-  type StepConfigList                         = js.Array[StepConfig]
-  type StepDetailList                         = js.Array[StepDetail]
-  type StepExecutionState                     = String
-  type StepId                                 = String
-  type StepIdsList                            = js.Array[XmlStringMaxLen256]
-  type StepState                              = String
-  type StepStateChangeReasonCode              = String
-  type StepStateList                          = js.Array[StepState]
-  type StepSummaryList                        = js.Array[StepSummary]
-  type StringList                             = js.Array[String]
-  type StringMap                              = js.Dictionary[String]
-  type SupportedProductsList                  = js.Array[XmlStringMaxLen256]
-  type TagList                                = js.Array[Tag]
-  type Unit                                   = String
-  type WholeNumber                            = Int
-  type XmlString                              = String
-  type XmlStringList                          = js.Array[XmlString]
-  type XmlStringMaxLen256                     = String
-  type XmlStringMaxLen256List                 = js.Array[XmlStringMaxLen256]
+  type ApplicationList               = js.Array[Application]
+  type ArnType                       = String
+  type BooleanObject                 = Boolean
+  type BootstrapActionConfigList     = js.Array[BootstrapActionConfig]
+  type BootstrapActionDetailList     = js.Array[BootstrapActionDetail]
+  type CancelStepsInfoList           = js.Array[CancelStepsInfo]
+  type ClusterId                     = String
+  type ClusterStateList              = js.Array[ClusterState]
+  type ClusterSummaryList            = js.Array[ClusterSummary]
+  type CommandList                   = js.Array[Command]
+  type ConfigurationList             = js.Array[Configuration]
+  type Date                          = js.Date
+  type EC2InstanceIdsList            = js.Array[InstanceId]
+  type EC2InstanceIdsToTerminateList = js.Array[InstanceId]
+  type EbsBlockDeviceConfigList      = js.Array[EbsBlockDeviceConfig]
+  type EbsBlockDeviceList            = js.Array[EbsBlockDevice]
+  type EbsVolumeList                 = js.Array[EbsVolume]
+  type InstanceFleetConfigList       = js.Array[InstanceFleetConfig]
+  type InstanceFleetId               = String
+  type InstanceFleetList             = js.Array[InstanceFleet]
+  type InstanceGroupConfigList       = js.Array[InstanceGroupConfig]
+  type InstanceGroupDetailList       = js.Array[InstanceGroupDetail]
+  type InstanceGroupId               = String
+  type InstanceGroupIdsList          = js.Array[XmlStringMaxLen256]
+  type InstanceGroupList             = js.Array[InstanceGroup]
+  type InstanceGroupModifyConfigList = js.Array[InstanceGroupModifyConfig]
+  type InstanceGroupTypeList         = js.Array[InstanceGroupType]
+  type InstanceId                    = String
+  type InstanceList                  = js.Array[Instance]
+  type InstanceStateList             = js.Array[InstanceState]
+  type InstanceType                  = String
+  type InstanceTypeConfigList        = js.Array[InstanceTypeConfig]
+  type InstanceTypeSpecificationList = js.Array[InstanceTypeSpecification]
+  type JobFlowDetailList             = js.Array[JobFlowDetail]
+  type JobFlowExecutionStateList     = js.Array[JobFlowExecutionState]
+  type KeyValueList                  = js.Array[KeyValue]
+  type Marker                        = String
+  type MetricDimensionList           = js.Array[MetricDimension]
+  type NewSupportedProductsList      = js.Array[SupportedProductConfig]
+  type NonNegativeDouble             = Double
+  type OptionalArnType               = String
+  type Port                          = Int
+  type PortRanges                    = js.Array[PortRange]
+  type ResourceId                    = String
+  type ScalingRuleList               = js.Array[ScalingRule]
+  type SecurityConfigurationList     = js.Array[SecurityConfigurationSummary]
+  type SecurityGroupsList            = js.Array[XmlStringMaxLen256]
+  type StepConfigList                = js.Array[StepConfig]
+  type StepDetailList                = js.Array[StepDetail]
+  type StepId                        = String
+  type StepIdsList                   = js.Array[XmlStringMaxLen256]
+  type StepStateList                 = js.Array[StepState]
+  type StepSummaryList               = js.Array[StepSummary]
+  type StringList                    = js.Array[String]
+  type StringMap                     = js.Dictionary[String]
+  type SupportedProductsList         = js.Array[XmlStringMaxLen256]
+  type TagList                       = js.Array[Tag]
+  type WholeNumber                   = Int
+  type XmlString                     = String
+  type XmlStringList                 = js.Array[XmlString]
+  type XmlStringMaxLen256            = String
+  type XmlStringMaxLen256List        = js.Array[XmlStringMaxLen256]
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
 
@@ -221,12 +192,13 @@ package emr {
         params: DescribeJobFlowsInput
     ): Request[DescribeJobFlowsOutput] = js.native
   }
-
-  object ActionOnFailureEnum {
-    val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW"
-    val TERMINATE_CLUSTER  = "TERMINATE_CLUSTER"
-    val CANCEL_AND_WAIT    = "CANCEL_AND_WAIT"
-    val CONTINUE           = "CONTINUE"
+  @js.native
+  sealed trait ActionOnFailure extends js.Any
+  object ActionOnFailure extends js.Object {
+    val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
+    val TERMINATE_CLUSTER  = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
+    val CANCEL_AND_WAIT    = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
+    val CONTINUE           = "CONTINUE".asInstanceOf[ActionOnFailure]
 
     val values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
   }
@@ -405,11 +377,12 @@ package emr {
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
-
-  object AdjustmentTypeEnum {
-    val CHANGE_IN_CAPACITY         = "CHANGE_IN_CAPACITY"
-    val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY"
-    val EXACT_CAPACITY             = "EXACT_CAPACITY"
+  @js.native
+  sealed trait AdjustmentType extends js.Any
+  object AdjustmentType extends js.Object {
+    val CHANGE_IN_CAPACITY         = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
+    val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
+    val EXACT_CAPACITY             = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
 
     val values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
   }
@@ -491,14 +464,15 @@ package emr {
       __obj.asInstanceOf[AutoScalingPolicyDescription]
     }
   }
-
-  object AutoScalingPolicyStateEnum {
-    val PENDING   = "PENDING"
-    val ATTACHING = "ATTACHING"
-    val ATTACHED  = "ATTACHED"
-    val DETACHING = "DETACHING"
-    val DETACHED  = "DETACHED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait AutoScalingPolicyState extends js.Any
+  object AutoScalingPolicyState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[AutoScalingPolicyState]
+    val ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
+    val ATTACHED  = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
+    val DETACHING = "DETACHING".asInstanceOf[AutoScalingPolicyState]
+    val DETACHED  = "DETACHED".asInstanceOf[AutoScalingPolicyState]
+    val FAILED    = "FAILED".asInstanceOf[AutoScalingPolicyState]
 
     val values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
   }
@@ -524,11 +498,12 @@ package emr {
       __obj.asInstanceOf[AutoScalingPolicyStateChangeReason]
     }
   }
-
-  object AutoScalingPolicyStateChangeReasonCodeEnum {
-    val USER_REQUEST      = "USER_REQUEST"
-    val PROVISION_FAILURE = "PROVISION_FAILURE"
-    val CLEANUP_FAILURE   = "CLEANUP_FAILURE"
+  @js.native
+  sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
+  object AutoScalingPolicyStateChangeReasonCode extends js.Object {
+    val USER_REQUEST      = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val CLEANUP_FAILURE   = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
   }
@@ -718,10 +693,11 @@ package emr {
       __obj.asInstanceOf[CancelStepsOutput]
     }
   }
-
-  object CancelStepsRequestStatusEnum {
-    val SUBMITTED = "SUBMITTED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait CancelStepsRequestStatus extends js.Any
+  object CancelStepsRequestStatus extends js.Object {
+    val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
+    val FAILED    = "FAILED".asInstanceOf[CancelStepsRequestStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
   }
@@ -870,15 +846,16 @@ package emr {
       __obj.asInstanceOf[Cluster]
     }
   }
-
-  object ClusterStateEnum {
-    val STARTING               = "STARTING"
-    val BOOTSTRAPPING          = "BOOTSTRAPPING"
-    val RUNNING                = "RUNNING"
-    val WAITING                = "WAITING"
-    val TERMINATING            = "TERMINATING"
-    val TERMINATED             = "TERMINATED"
-    val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS"
+  @js.native
+  sealed trait ClusterState extends js.Any
+  object ClusterState extends js.Object {
+    val STARTING               = "STARTING".asInstanceOf[ClusterState]
+    val BOOTSTRAPPING          = "BOOTSTRAPPING".asInstanceOf[ClusterState]
+    val RUNNING                = "RUNNING".asInstanceOf[ClusterState]
+    val WAITING                = "WAITING".asInstanceOf[ClusterState]
+    val TERMINATING            = "TERMINATING".asInstanceOf[ClusterState]
+    val TERMINATED             = "TERMINATED".asInstanceOf[ClusterState]
+    val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(
       js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
@@ -906,16 +883,17 @@ package emr {
       __obj.asInstanceOf[ClusterStateChangeReason]
     }
   }
-
-  object ClusterStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR         = "INTERNAL_ERROR"
-    val VALIDATION_ERROR       = "VALIDATION_ERROR"
-    val INSTANCE_FAILURE       = "INSTANCE_FAILURE"
-    val INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT"
-    val BOOTSTRAP_FAILURE      = "BOOTSTRAP_FAILURE"
-    val USER_REQUEST           = "USER_REQUEST"
-    val STEP_FAILURE           = "STEP_FAILURE"
-    val ALL_STEPS_COMPLETED    = "ALL_STEPS_COMPLETED"
+  @js.native
+  sealed trait ClusterStateChangeReasonCode extends js.Any
+  object ClusterStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR         = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val VALIDATION_ERROR       = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val INSTANCE_FAILURE       = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT".asInstanceOf[ClusterStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE      = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val USER_REQUEST           = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
+    val STEP_FAILURE           = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val ALL_STEPS_COMPLETED    = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1039,12 +1017,13 @@ package emr {
       __obj.asInstanceOf[Command]
     }
   }
-
-  object ComparisonOperatorEnum {
-    val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL"
-    val GREATER_THAN          = "GREATER_THAN"
-    val LESS_THAN             = "LESS_THAN"
-    val LESS_THAN_OR_EQUAL    = "LESS_THAN_OR_EQUAL"
+  @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
+    val GREATER_THAN          = "GREATER_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN             = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN_OR_EQUAL    = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
   }
@@ -1637,10 +1616,11 @@ package emr {
       __obj.asInstanceOf[Instance]
     }
   }
-
-  object InstanceCollectionTypeEnum {
-    val INSTANCE_FLEET = "INSTANCE_FLEET"
-    val INSTANCE_GROUP = "INSTANCE_GROUP"
+  @js.native
+  sealed trait InstanceCollectionType extends js.Any
+  object InstanceCollectionType extends js.Object {
+    val INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
+    val INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
 
     val values = js.Object.freeze(js.Array(INSTANCE_FLEET, INSTANCE_GROUP))
   }
@@ -1786,15 +1766,16 @@ package emr {
       __obj.asInstanceOf[InstanceFleetProvisioningSpecifications]
     }
   }
-
-  object InstanceFleetStateEnum {
-    val PROVISIONING  = "PROVISIONING"
-    val BOOTSTRAPPING = "BOOTSTRAPPING"
-    val RUNNING       = "RUNNING"
-    val RESIZING      = "RESIZING"
-    val SUSPENDED     = "SUSPENDED"
-    val TERMINATING   = "TERMINATING"
-    val TERMINATED    = "TERMINATED"
+  @js.native
+  sealed trait InstanceFleetState extends js.Any
+  object InstanceFleetState extends js.Object {
+    val PROVISIONING  = "PROVISIONING".asInstanceOf[InstanceFleetState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
+    val RUNNING       = "RUNNING".asInstanceOf[InstanceFleetState]
+    val RESIZING      = "RESIZING".asInstanceOf[InstanceFleetState]
+    val SUSPENDED     = "SUSPENDED".asInstanceOf[InstanceFleetState]
+    val TERMINATING   = "TERMINATING".asInstanceOf[InstanceFleetState]
+    val TERMINATED    = "TERMINATED".asInstanceOf[InstanceFleetState]
 
     val values =
       js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
@@ -1823,12 +1804,13 @@ package emr {
       __obj.asInstanceOf[InstanceFleetStateChangeReason]
     }
   }
-
-  object InstanceFleetStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR"
-    val VALIDATION_ERROR   = "VALIDATION_ERROR"
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE"
-    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
+  @js.native
+  sealed trait InstanceFleetStateChangeReasonCode extends js.Any
+  object InstanceFleetStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
@@ -1886,11 +1868,12 @@ package emr {
       __obj.asInstanceOf[InstanceFleetTimeline]
     }
   }
-
-  object InstanceFleetTypeEnum {
-    val MASTER = "MASTER"
-    val CORE   = "CORE"
-    val TASK   = "TASK"
+  @js.native
+  sealed trait InstanceFleetType extends js.Any
+  object InstanceFleetType extends js.Object {
+    val MASTER = "MASTER".asInstanceOf[InstanceFleetType]
+    val CORE   = "CORE".asInstanceOf[InstanceFleetType]
+    val TASK   = "TASK".asInstanceOf[InstanceFleetType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2105,19 +2088,20 @@ package emr {
       __obj.asInstanceOf[InstanceGroupModifyConfig]
     }
   }
-
-  object InstanceGroupStateEnum {
-    val PROVISIONING  = "PROVISIONING"
-    val BOOTSTRAPPING = "BOOTSTRAPPING"
-    val RUNNING       = "RUNNING"
-    val RECONFIGURING = "RECONFIGURING"
-    val RESIZING      = "RESIZING"
-    val SUSPENDED     = "SUSPENDED"
-    val TERMINATING   = "TERMINATING"
-    val TERMINATED    = "TERMINATED"
-    val ARRESTED      = "ARRESTED"
-    val SHUTTING_DOWN = "SHUTTING_DOWN"
-    val ENDED         = "ENDED"
+  @js.native
+  sealed trait InstanceGroupState extends js.Any
+  object InstanceGroupState extends js.Object {
+    val PROVISIONING  = "PROVISIONING".asInstanceOf[InstanceGroupState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
+    val RUNNING       = "RUNNING".asInstanceOf[InstanceGroupState]
+    val RECONFIGURING = "RECONFIGURING".asInstanceOf[InstanceGroupState]
+    val RESIZING      = "RESIZING".asInstanceOf[InstanceGroupState]
+    val SUSPENDED     = "SUSPENDED".asInstanceOf[InstanceGroupState]
+    val TERMINATING   = "TERMINATING".asInstanceOf[InstanceGroupState]
+    val TERMINATED    = "TERMINATED".asInstanceOf[InstanceGroupState]
+    val ARRESTED      = "ARRESTED".asInstanceOf[InstanceGroupState]
+    val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
+    val ENDED         = "ENDED".asInstanceOf[InstanceGroupState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2157,12 +2141,13 @@ package emr {
       __obj.asInstanceOf[InstanceGroupStateChangeReason]
     }
   }
-
-  object InstanceGroupStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR"
-    val VALIDATION_ERROR   = "VALIDATION_ERROR"
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE"
-    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
+  @js.native
+  sealed trait InstanceGroupStateChangeReasonCode extends js.Any
+  object InstanceGroupStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
@@ -2216,11 +2201,12 @@ package emr {
       __obj.asInstanceOf[InstanceGroupTimeline]
     }
   }
-
-  object InstanceGroupTypeEnum {
-    val MASTER = "MASTER"
-    val CORE   = "CORE"
-    val TASK   = "TASK"
+  @js.native
+  sealed trait InstanceGroupType extends js.Any
+  object InstanceGroupType extends js.Object {
+    val MASTER = "MASTER".asInstanceOf[InstanceGroupType]
+    val CORE   = "CORE".asInstanceOf[InstanceGroupType]
+    val TASK   = "TASK".asInstanceOf[InstanceGroupType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2251,21 +2237,23 @@ package emr {
       __obj.asInstanceOf[InstanceResizePolicy]
     }
   }
-
-  object InstanceRoleTypeEnum {
-    val MASTER = "MASTER"
-    val CORE   = "CORE"
-    val TASK   = "TASK"
+  @js.native
+  sealed trait InstanceRoleType extends js.Any
+  object InstanceRoleType extends js.Object {
+    val MASTER = "MASTER".asInstanceOf[InstanceRoleType]
+    val CORE   = "CORE".asInstanceOf[InstanceRoleType]
+    val TASK   = "TASK".asInstanceOf[InstanceRoleType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
-
-  object InstanceStateEnum {
-    val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT"
-    val PROVISIONING         = "PROVISIONING"
-    val BOOTSTRAPPING        = "BOOTSTRAPPING"
-    val RUNNING              = "RUNNING"
-    val TERMINATED           = "TERMINATED"
+  @js.native
+  sealed trait InstanceState extends js.Any
+  object InstanceState extends js.Object {
+    val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
+    val PROVISIONING         = "PROVISIONING".asInstanceOf[InstanceState]
+    val BOOTSTRAPPING        = "BOOTSTRAPPING".asInstanceOf[InstanceState]
+    val RUNNING              = "RUNNING".asInstanceOf[InstanceState]
+    val TERMINATED           = "TERMINATED".asInstanceOf[InstanceState]
 
     val values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
   }
@@ -2291,13 +2279,14 @@ package emr {
       __obj.asInstanceOf[InstanceStateChangeReason]
     }
   }
-
-  object InstanceStateChangeReasonCodeEnum {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR"
-    val VALIDATION_ERROR   = "VALIDATION_ERROR"
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE"
-    val BOOTSTRAP_FAILURE  = "BOOTSTRAP_FAILURE"
-    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
+  @js.native
+  sealed trait InstanceStateChangeReasonCode extends js.Any
+  object InstanceStateChangeReasonCode extends js.Object {
+    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE  = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
     val values = js.Object.freeze(
       js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
@@ -2498,15 +2487,17 @@ package emr {
   /**
     * The type of instance.
     */
-  object JobFlowExecutionStateEnum {
-    val STARTING      = "STARTING"
-    val BOOTSTRAPPING = "BOOTSTRAPPING"
-    val RUNNING       = "RUNNING"
-    val WAITING       = "WAITING"
-    val SHUTTING_DOWN = "SHUTTING_DOWN"
-    val TERMINATED    = "TERMINATED"
-    val COMPLETED     = "COMPLETED"
-    val FAILED        = "FAILED"
+  @js.native
+  sealed trait JobFlowExecutionState extends js.Any
+  object JobFlowExecutionState extends js.Object {
+    val STARTING      = "STARTING".asInstanceOf[JobFlowExecutionState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
+    val RUNNING       = "RUNNING".asInstanceOf[JobFlowExecutionState]
+    val WAITING       = "WAITING".asInstanceOf[JobFlowExecutionState]
+    val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[JobFlowExecutionState]
+    val TERMINATED    = "TERMINATED".asInstanceOf[JobFlowExecutionState]
+    val COMPLETED     = "COMPLETED".asInstanceOf[JobFlowExecutionState]
+    val FAILED        = "FAILED".asInstanceOf[JobFlowExecutionState]
 
     val values = js.Object.freeze(
       js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
@@ -3073,10 +3064,11 @@ package emr {
       __obj.asInstanceOf[ListStepsOutput]
     }
   }
-
-  object MarketTypeEnum {
-    val ON_DEMAND = "ON_DEMAND"
-    val SPOT      = "SPOT"
+  @js.native
+  sealed trait MarketType extends js.Any
+  object MarketType extends js.Object {
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
+    val SPOT      = "SPOT".asInstanceOf[MarketType]
 
     val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
@@ -3382,10 +3374,11 @@ package emr {
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
-
-  object RepoUpgradeOnBootEnum {
-    val SECURITY = "SECURITY"
-    val NONE     = "NONE"
+  @js.native
+  sealed trait RepoUpgradeOnBoot extends js.Any
+  object RepoUpgradeOnBoot extends js.Object {
+    val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
+    val NONE     = "NONE".asInstanceOf[RepoUpgradeOnBoot]
 
     val values = js.Object.freeze(js.Array(SECURITY, NONE))
   }
@@ -3501,10 +3494,11 @@ package emr {
       __obj.asInstanceOf[RunJobFlowOutput]
     }
   }
-
-  object ScaleDownBehaviorEnum {
-    val TERMINATE_AT_INSTANCE_HOUR   = "TERMINATE_AT_INSTANCE_HOUR"
-    val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION"
+  @js.native
+  sealed trait ScaleDownBehavior extends js.Any
+  object ScaleDownBehavior extends js.Object {
+    val TERMINATE_AT_INSTANCE_HOUR   = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
+    val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
 
     val values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
   }
@@ -3779,20 +3773,22 @@ package emr {
       __obj.asInstanceOf[SpotProvisioningSpecification]
     }
   }
-
-  object SpotProvisioningTimeoutActionEnum {
-    val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND"
-    val TERMINATE_CLUSTER   = "TERMINATE_CLUSTER"
+  @js.native
+  sealed trait SpotProvisioningTimeoutAction extends js.Any
+  object SpotProvisioningTimeoutAction extends js.Object {
+    val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
+    val TERMINATE_CLUSTER   = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
 
     val values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
-
-  object StatisticEnum {
-    val SAMPLE_COUNT = "SAMPLE_COUNT"
-    val AVERAGE      = "AVERAGE"
-    val SUM          = "SUM"
-    val MINIMUM      = "MINIMUM"
-    val MAXIMUM      = "MAXIMUM"
+  @js.native
+  sealed trait Statistic extends js.Any
+  object Statistic extends js.Object {
+    val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
+    val AVERAGE      = "AVERAGE".asInstanceOf[Statistic]
+    val SUM          = "SUM".asInstanceOf[Statistic]
+    val MINIMUM      = "MINIMUM".asInstanceOf[Statistic]
+    val MAXIMUM      = "MAXIMUM".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
   }
@@ -3827,10 +3823,11 @@ package emr {
       __obj.asInstanceOf[Step]
     }
   }
-
-  object StepCancellationOptionEnum {
-    val SEND_INTERRUPT    = "SEND_INTERRUPT"
-    val TERMINATE_PROCESS = "TERMINATE_PROCESS"
+  @js.native
+  sealed trait StepCancellationOption extends js.Any
+  object StepCancellationOption extends js.Object {
+    val SEND_INTERRUPT    = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
+    val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
 
     val values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
   }
@@ -3885,15 +3882,16 @@ package emr {
       __obj.asInstanceOf[StepDetail]
     }
   }
-
-  object StepExecutionStateEnum {
-    val PENDING     = "PENDING"
-    val RUNNING     = "RUNNING"
-    val CONTINUE    = "CONTINUE"
-    val COMPLETED   = "COMPLETED"
-    val CANCELLED   = "CANCELLED"
-    val FAILED      = "FAILED"
-    val INTERRUPTED = "INTERRUPTED"
+  @js.native
+  sealed trait StepExecutionState extends js.Any
+  object StepExecutionState extends js.Object {
+    val PENDING     = "PENDING".asInstanceOf[StepExecutionState]
+    val RUNNING     = "RUNNING".asInstanceOf[StepExecutionState]
+    val CONTINUE    = "CONTINUE".asInstanceOf[StepExecutionState]
+    val COMPLETED   = "COMPLETED".asInstanceOf[StepExecutionState]
+    val CANCELLED   = "CANCELLED".asInstanceOf[StepExecutionState]
+    val FAILED      = "FAILED".asInstanceOf[StepExecutionState]
+    val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
@@ -3930,15 +3928,16 @@ package emr {
       __obj.asInstanceOf[StepExecutionStatusDetail]
     }
   }
-
-  object StepStateEnum {
-    val PENDING        = "PENDING"
-    val CANCEL_PENDING = "CANCEL_PENDING"
-    val RUNNING        = "RUNNING"
-    val COMPLETED      = "COMPLETED"
-    val CANCELLED      = "CANCELLED"
-    val FAILED         = "FAILED"
-    val INTERRUPTED    = "INTERRUPTED"
+  @js.native
+  sealed trait StepState extends js.Any
+  object StepState extends js.Object {
+    val PENDING        = "PENDING".asInstanceOf[StepState]
+    val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
+    val RUNNING        = "RUNNING".asInstanceOf[StepState]
+    val COMPLETED      = "COMPLETED".asInstanceOf[StepState]
+    val CANCELLED      = "CANCELLED".asInstanceOf[StepState]
+    val FAILED         = "FAILED".asInstanceOf[StepState]
+    val INTERRUPTED    = "INTERRUPTED".asInstanceOf[StepState]
 
     val values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
@@ -3964,9 +3963,10 @@ package emr {
       __obj.asInstanceOf[StepStateChangeReason]
     }
   }
-
-  object StepStateChangeReasonCodeEnum {
-    val NONE = "NONE"
+  @js.native
+  sealed trait StepStateChangeReasonCode extends js.Any
+  object StepStateChangeReasonCode extends js.Object {
+    val NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(NONE))
   }
@@ -4119,35 +4119,36 @@ package emr {
       __obj.asInstanceOf[TerminateJobFlowsInput]
     }
   }
-
-  object UnitEnum {
-    val NONE                  = "NONE"
-    val SECONDS               = "SECONDS"
-    val MICRO_SECONDS         = "MICRO_SECONDS"
-    val MILLI_SECONDS         = "MILLI_SECONDS"
-    val BYTES                 = "BYTES"
-    val KILO_BYTES            = "KILO_BYTES"
-    val MEGA_BYTES            = "MEGA_BYTES"
-    val GIGA_BYTES            = "GIGA_BYTES"
-    val TERA_BYTES            = "TERA_BYTES"
-    val BITS                  = "BITS"
-    val KILO_BITS             = "KILO_BITS"
-    val MEGA_BITS             = "MEGA_BITS"
-    val GIGA_BITS             = "GIGA_BITS"
-    val TERA_BITS             = "TERA_BITS"
-    val PERCENT               = "PERCENT"
-    val COUNT                 = "COUNT"
-    val BYTES_PER_SECOND      = "BYTES_PER_SECOND"
-    val KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND"
-    val MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND"
-    val GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND"
-    val TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND"
-    val BITS_PER_SECOND       = "BITS_PER_SECOND"
-    val KILO_BITS_PER_SECOND  = "KILO_BITS_PER_SECOND"
-    val MEGA_BITS_PER_SECOND  = "MEGA_BITS_PER_SECOND"
-    val GIGA_BITS_PER_SECOND  = "GIGA_BITS_PER_SECOND"
-    val TERA_BITS_PER_SECOND  = "TERA_BITS_PER_SECOND"
-    val COUNT_PER_SECOND      = "COUNT_PER_SECOND"
+  @js.native
+  sealed trait Unit extends js.Any
+  object Unit extends js.Object {
+    val NONE                  = "NONE".asInstanceOf[Unit]
+    val SECONDS               = "SECONDS".asInstanceOf[Unit]
+    val MICRO_SECONDS         = "MICRO_SECONDS".asInstanceOf[Unit]
+    val MILLI_SECONDS         = "MILLI_SECONDS".asInstanceOf[Unit]
+    val BYTES                 = "BYTES".asInstanceOf[Unit]
+    val KILO_BYTES            = "KILO_BYTES".asInstanceOf[Unit]
+    val MEGA_BYTES            = "MEGA_BYTES".asInstanceOf[Unit]
+    val GIGA_BYTES            = "GIGA_BYTES".asInstanceOf[Unit]
+    val TERA_BYTES            = "TERA_BYTES".asInstanceOf[Unit]
+    val BITS                  = "BITS".asInstanceOf[Unit]
+    val KILO_BITS             = "KILO_BITS".asInstanceOf[Unit]
+    val MEGA_BITS             = "MEGA_BITS".asInstanceOf[Unit]
+    val GIGA_BITS             = "GIGA_BITS".asInstanceOf[Unit]
+    val TERA_BITS             = "TERA_BITS".asInstanceOf[Unit]
+    val PERCENT               = "PERCENT".asInstanceOf[Unit]
+    val COUNT                 = "COUNT".asInstanceOf[Unit]
+    val BYTES_PER_SECOND      = "BYTES_PER_SECOND".asInstanceOf[Unit]
+    val KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val BITS_PER_SECOND       = "BITS_PER_SECOND".asInstanceOf[Unit]
+    val KILO_BITS_PER_SECOND  = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
+    val MEGA_BITS_PER_SECOND  = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val GIGA_BITS_PER_SECOND  = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val TERA_BITS_PER_SECOND  = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val COUNT_PER_SECOND      = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
     val values = js.Object.freeze(
       js.Array(

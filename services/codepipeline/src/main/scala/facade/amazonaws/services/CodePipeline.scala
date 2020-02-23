@@ -10,37 +10,29 @@ package object codepipeline {
   type AWSRegionName                          = String
   type AccessKeyId                            = String
   type AccountId                              = String
-  type ActionCategory                         = String
   type ActionConfigurationKey                 = String
   type ActionConfigurationMap                 = js.Dictionary[ActionConfigurationValue]
   type ActionConfigurationPropertyList        = js.Array[ActionConfigurationProperty]
-  type ActionConfigurationPropertyType        = String
   type ActionConfigurationQueryableValue      = String
   type ActionConfigurationValue               = String
   type ActionExecutionDetailList              = js.Array[ActionExecutionDetail]
   type ActionExecutionId                      = String
-  type ActionExecutionStatus                  = String
   type ActionExecutionToken                   = String
   type ActionName                             = String
   type ActionNamespace                        = String
-  type ActionOwner                            = String
   type ActionProvider                         = String
   type ActionRunOrder                         = Int
   type ActionStateList                        = js.Array[ActionState]
   type ActionTypeList                         = js.Array[ActionType]
-  type ApprovalStatus                         = String
   type ApprovalSummary                        = String
   type ApprovalToken                          = String
   type ArtifactDetailList                     = js.Array[ArtifactDetail]
   type ArtifactList                           = js.Array[Artifact]
-  type ArtifactLocationType                   = String
   type ArtifactName                           = String
   type ArtifactRevisionList                   = js.Array[ArtifactRevision]
   type ArtifactStoreLocation                  = String
   type ArtifactStoreMap                       = js.Dictionary[ArtifactStore]
-  type ArtifactStoreType                      = String
   type BlockerName                            = String
-  type BlockerType                            = String
   type ClientId                               = String
   type ClientRequestToken                     = String
   type ClientToken                            = String
@@ -50,16 +42,13 @@ package object codepipeline {
   type DisabledReason                         = String
   type Enabled                                = Boolean
   type EncryptionKeyId                        = String
-  type EncryptionKeyType                      = String
   type ExecutionId                            = String
   type ExecutionSummary                       = String
   type ExternalExecutionId                    = String
   type ExternalExecutionSummary               = String
-  type FailureType                            = String
   type InputArtifactList                      = js.Array[InputArtifact]
   type JobId                                  = String
   type JobList                                = js.Array[Job]
-  type JobStatus                              = String
   type JsonPath                               = String
   type LastChangedAt                          = js.Date
   type LastChangedBy                          = String
@@ -79,7 +68,6 @@ package object codepipeline {
   type Percentage                             = Int
   type PipelineArn                            = String
   type PipelineExecutionId                    = String
-  type PipelineExecutionStatus                = String
   type PipelineExecutionSummaryList           = js.Array[PipelineExecutionSummary]
   type PipelineList                           = js.Array[PipelineSummary]
   type PipelineName                           = String
@@ -101,11 +89,8 @@ package object codepipeline {
   type SourceRevisionList                     = js.Array[SourceRevision]
   type StageActionDeclarationList             = js.Array[ActionDeclaration]
   type StageBlockerDeclarationList            = js.Array[BlockerDeclaration]
-  type StageExecutionStatus                   = String
   type StageName                              = String
-  type StageRetryMode                         = String
   type StageStateList                         = js.Array[StageState]
-  type StageTransitionType                    = String
   type StopPipelineExecutionReason            = String
   type TagKey                                 = String
   type TagKeyList                             = js.Array[TagKey]
@@ -116,14 +101,12 @@ package object codepipeline {
   type Time                                   = js.Date
   type Timestamp                              = js.Date
   type TriggerDetail                          = String
-  type TriggerType                            = String
   type Url                                    = String
   type UrlTemplate                            = String
   type Version                                = String
   type WebhookArn                             = String
   type WebhookAuthConfigurationAllowedIPRange = String
   type WebhookAuthConfigurationSecretToken    = String
-  type WebhookAuthenticationType              = String
   type WebhookErrorCode                       = String
   type WebhookErrorMessage                    = String
   type WebhookFilters                         = js.Array[WebhookFilterRule]
@@ -384,14 +367,15 @@ package codepipeline {
       __obj.asInstanceOf[AcknowledgeThirdPartyJobOutput]
     }
   }
-
-  object ActionCategoryEnum {
-    val Source   = "Source"
-    val Build    = "Build"
-    val Deploy   = "Deploy"
-    val Test     = "Test"
-    val Invoke   = "Invoke"
-    val Approval = "Approval"
+  @js.native
+  sealed trait ActionCategory extends js.Any
+  object ActionCategory extends js.Object {
+    val Source   = "Source".asInstanceOf[ActionCategory]
+    val Build    = "Build".asInstanceOf[ActionCategory]
+    val Deploy   = "Deploy".asInstanceOf[ActionCategory]
+    val Test     = "Test".asInstanceOf[ActionCategory]
+    val Invoke   = "Invoke".asInstanceOf[ActionCategory]
+    val Approval = "Approval".asInstanceOf[ActionCategory]
 
     val values = js.Object.freeze(js.Array(Source, Build, Deploy, Test, Invoke, Approval))
   }
@@ -453,11 +437,12 @@ package codepipeline {
       __obj.asInstanceOf[ActionConfigurationProperty]
     }
   }
-
-  object ActionConfigurationPropertyTypeEnum {
-    val String  = "String"
-    val Number  = "Number"
-    val Boolean = "Boolean"
+  @js.native
+  sealed trait ActionConfigurationPropertyType extends js.Any
+  object ActionConfigurationPropertyType extends js.Object {
+    val String  = "String".asInstanceOf[ActionConfigurationPropertyType]
+    val Number  = "Number".asInstanceOf[ActionConfigurationPropertyType]
+    val Boolean = "Boolean".asInstanceOf[ActionConfigurationPropertyType]
 
     val values = js.Object.freeze(js.Array(String, Number, Boolean))
   }
@@ -723,20 +708,22 @@ package codepipeline {
       __obj.asInstanceOf[ActionExecutionResult]
     }
   }
-
-  object ActionExecutionStatusEnum {
-    val InProgress = "InProgress"
-    val Abandoned  = "Abandoned"
-    val Succeeded  = "Succeeded"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait ActionExecutionStatus extends js.Any
+  object ActionExecutionStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[ActionExecutionStatus]
+    val Abandoned  = "Abandoned".asInstanceOf[ActionExecutionStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[ActionExecutionStatus]
+    val Failed     = "Failed".asInstanceOf[ActionExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
   }
-
-  object ActionOwnerEnum {
-    val AWS        = "AWS"
-    val ThirdParty = "ThirdParty"
-    val Custom     = "Custom"
+  @js.native
+  sealed trait ActionOwner extends js.Any
+  object ActionOwner extends js.Object {
+    val AWS        = "AWS".asInstanceOf[ActionOwner]
+    val ThirdParty = "ThirdParty".asInstanceOf[ActionOwner]
+    val Custom     = "Custom".asInstanceOf[ActionOwner]
 
     val values = js.Object.freeze(js.Array(AWS, ThirdParty, Custom))
   }
@@ -917,10 +904,11 @@ package codepipeline {
       __obj.asInstanceOf[ApprovalResult]
     }
   }
-
-  object ApprovalStatusEnum {
-    val Approved = "Approved"
-    val Rejected = "Rejected"
+  @js.native
+  sealed trait ApprovalStatus extends js.Any
+  object ApprovalStatus extends js.Object {
+    val Approved = "Approved".asInstanceOf[ApprovalStatus]
+    val Rejected = "Rejected".asInstanceOf[ApprovalStatus]
 
     val values = js.Object.freeze(js.Array(Approved, Rejected))
   }
@@ -1017,9 +1005,10 @@ package codepipeline {
       __obj.asInstanceOf[ArtifactLocation]
     }
   }
-
-  object ArtifactLocationTypeEnum {
-    val S3 = "S3"
+  @js.native
+  sealed trait ArtifactLocationType extends js.Any
+  object ArtifactLocationType extends js.Object {
+    val S3 = "S3".asInstanceOf[ArtifactLocationType]
 
     val values = js.Object.freeze(js.Array(S3))
   }
@@ -1086,9 +1075,10 @@ package codepipeline {
       __obj.asInstanceOf[ArtifactStore]
     }
   }
-
-  object ArtifactStoreTypeEnum {
-    val S3 = "S3"
+  @js.native
+  sealed trait ArtifactStoreType extends js.Any
+  object ArtifactStoreType extends js.Object {
+    val S3 = "S3".asInstanceOf[ArtifactStoreType]
 
     val values = js.Object.freeze(js.Array(S3))
   }
@@ -1116,9 +1106,10 @@ package codepipeline {
       __obj.asInstanceOf[BlockerDeclaration]
     }
   }
-
-  object BlockerTypeEnum {
-    val Schedule = "Schedule"
+  @js.native
+  sealed trait BlockerType extends js.Any
+  object BlockerType extends js.Object {
+    val Schedule = "Schedule".asInstanceOf[BlockerType]
 
     val values = js.Object.freeze(js.Array(Schedule))
   }
@@ -1453,9 +1444,10 @@ package codepipeline {
       __obj.asInstanceOf[EncryptionKey]
     }
   }
-
-  object EncryptionKeyTypeEnum {
-    val KMS = "KMS"
+  @js.native
+  sealed trait EncryptionKeyType extends js.Any
+  object EncryptionKeyType extends js.Object {
+    val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
     val values = js.Object.freeze(js.Array(KMS))
   }
@@ -1555,14 +1547,15 @@ package codepipeline {
       __obj.asInstanceOf[FailureDetails]
     }
   }
-
-  object FailureTypeEnum {
-    val JobFailed           = "JobFailed"
-    val ConfigurationError  = "ConfigurationError"
-    val PermissionError     = "PermissionError"
-    val RevisionOutOfSync   = "RevisionOutOfSync"
-    val RevisionUnavailable = "RevisionUnavailable"
-    val SystemUnavailable   = "SystemUnavailable"
+  @js.native
+  sealed trait FailureType extends js.Any
+  object FailureType extends js.Object {
+    val JobFailed           = "JobFailed".asInstanceOf[FailureType]
+    val ConfigurationError  = "ConfigurationError".asInstanceOf[FailureType]
+    val PermissionError     = "PermissionError".asInstanceOf[FailureType]
+    val RevisionOutOfSync   = "RevisionOutOfSync".asInstanceOf[FailureType]
+    val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
+    val SystemUnavailable   = "SystemUnavailable".asInstanceOf[FailureType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1913,15 +1906,16 @@ package codepipeline {
       __obj.asInstanceOf[JobDetails]
     }
   }
-
-  object JobStatusEnum {
-    val Created    = "Created"
-    val Queued     = "Queued"
-    val Dispatched = "Dispatched"
-    val InProgress = "InProgress"
-    val TimedOut   = "TimedOut"
-    val Succeeded  = "Succeeded"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val Created    = "Created".asInstanceOf[JobStatus]
+    val Queued     = "Queued".asInstanceOf[JobStatus]
+    val Dispatched = "Dispatched".asInstanceOf[JobStatus]
+    val InProgress = "InProgress".asInstanceOf[JobStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[JobStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[JobStatus]
+    val Failed     = "Failed".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed))
   }
@@ -2350,14 +2344,15 @@ package codepipeline {
       __obj.asInstanceOf[PipelineExecution]
     }
   }
-
-  object PipelineExecutionStatusEnum {
-    val InProgress = "InProgress"
-    val Stopped    = "Stopped"
-    val Stopping   = "Stopping"
-    val Succeeded  = "Succeeded"
-    val Superseded = "Superseded"
-    val Failed     = "Failed"
+  @js.native
+  sealed trait PipelineExecutionStatus extends js.Any
+  object PipelineExecutionStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[PipelineExecutionStatus]
+    val Stopped    = "Stopped".asInstanceOf[PipelineExecutionStatus]
+    val Stopping   = "Stopping".asInstanceOf[PipelineExecutionStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[PipelineExecutionStatus]
+    val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
+    val Failed     = "Failed".asInstanceOf[PipelineExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed))
   }
@@ -3022,19 +3017,21 @@ package codepipeline {
       __obj.asInstanceOf[StageExecution]
     }
   }
-
-  object StageExecutionStatusEnum {
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Stopped    = "Stopped"
-    val Stopping   = "Stopping"
-    val Succeeded  = "Succeeded"
+  @js.native
+  sealed trait StageExecutionStatus extends js.Any
+  object StageExecutionStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[StageExecutionStatus]
+    val Failed     = "Failed".asInstanceOf[StageExecutionStatus]
+    val Stopped    = "Stopped".asInstanceOf[StageExecutionStatus]
+    val Stopping   = "Stopping".asInstanceOf[StageExecutionStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[StageExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
   }
-
-  object StageRetryModeEnum {
-    val FAILED_ACTIONS = "FAILED_ACTIONS"
+  @js.native
+  sealed trait StageRetryMode extends js.Any
+  object StageRetryMode extends js.Object {
+    val FAILED_ACTIONS = "FAILED_ACTIONS".asInstanceOf[StageRetryMode]
 
     val values = js.Object.freeze(js.Array(FAILED_ACTIONS))
   }
@@ -3066,10 +3063,11 @@ package codepipeline {
       __obj.asInstanceOf[StageState]
     }
   }
-
-  object StageTransitionTypeEnum {
-    val Inbound  = "Inbound"
-    val Outbound = "Outbound"
+  @js.native
+  sealed trait StageTransitionType extends js.Any
+  object StageTransitionType extends js.Object {
+    val Inbound  = "Inbound".asInstanceOf[StageTransitionType]
+    val Outbound = "Outbound".asInstanceOf[StageTransitionType]
 
     val values = js.Object.freeze(js.Array(Inbound, Outbound))
   }
@@ -3351,14 +3349,15 @@ package codepipeline {
       __obj.asInstanceOf[TransitionState]
     }
   }
-
-  object TriggerTypeEnum {
-    val CreatePipeline         = "CreatePipeline"
-    val StartPipelineExecution = "StartPipelineExecution"
-    val PollForSourceChanges   = "PollForSourceChanges"
-    val Webhook                = "Webhook"
-    val CloudWatchEvent        = "CloudWatchEvent"
-    val PutActionRevision      = "PutActionRevision"
+  @js.native
+  sealed trait TriggerType extends js.Any
+  object TriggerType extends js.Object {
+    val CreatePipeline         = "CreatePipeline".asInstanceOf[TriggerType]
+    val StartPipelineExecution = "StartPipelineExecution".asInstanceOf[TriggerType]
+    val PollForSourceChanges   = "PollForSourceChanges".asInstanceOf[TriggerType]
+    val Webhook                = "Webhook".asInstanceOf[TriggerType]
+    val CloudWatchEvent        = "CloudWatchEvent".asInstanceOf[TriggerType]
+    val PutActionRevision      = "PutActionRevision".asInstanceOf[TriggerType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3467,11 +3466,12 @@ package codepipeline {
       __obj.asInstanceOf[WebhookAuthConfiguration]
     }
   }
-
-  object WebhookAuthenticationTypeEnum {
-    val GITHUB_HMAC     = "GITHUB_HMAC"
-    val IP              = "IP"
-    val UNAUTHENTICATED = "UNAUTHENTICATED"
+  @js.native
+  sealed trait WebhookAuthenticationType extends js.Any
+  object WebhookAuthenticationType extends js.Object {
+    val GITHUB_HMAC     = "GITHUB_HMAC".asInstanceOf[WebhookAuthenticationType]
+    val IP              = "IP".asInstanceOf[WebhookAuthenticationType]
+    val UNAUTHENTICATED = "UNAUTHENTICATED".asInstanceOf[WebhookAuthenticationType]
 
     val values = js.Object.freeze(js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED))
   }

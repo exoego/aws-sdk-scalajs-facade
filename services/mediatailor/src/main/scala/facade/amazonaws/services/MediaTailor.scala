@@ -7,7 +7,6 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediatailor {
-  type OriginManifestType             = String
   type __integer                      = Int
   type __integerMin1                  = Int
   type __integerMin1Max100            = Int
@@ -349,10 +348,11 @@ package mediatailor {
       __obj.asInstanceOf[LivePreRollConfiguration]
     }
   }
-
-  object OriginManifestTypeEnum {
-    val SINGLE_PERIOD = "SINGLE_PERIOD"
-    val MULTI_PERIOD  = "MULTI_PERIOD"
+  @js.native
+  sealed trait OriginManifestType extends js.Any
+  object OriginManifestType extends js.Object {
+    val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
+    val MULTI_PERIOD  = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
 
     val values = js.Object.freeze(js.Array(SINGLE_PERIOD, MULTI_PERIOD))
   }

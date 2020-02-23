@@ -17,17 +17,12 @@ package object applicationinsights {
   type ConfigurationEventList                 = js.Array[ConfigurationEvent]
   type ConfigurationEventMonitoredResourceARN = String
   type ConfigurationEventResourceName         = String
-  type ConfigurationEventResourceType         = String
-  type ConfigurationEventStatus               = String
   type ConfigurationEventTime                 = js.Date
   type EndTime                                = js.Date
   type Feedback                               = js.Dictionary[FeedbackValue]
-  type FeedbackKey                            = String
-  type FeedbackValue                          = String
   type Insights                               = String
   type LifeCycle                              = String
   type LineTime                               = js.Date
-  type LogFilter                              = String
   type LogGroup                               = String
   type LogPatternList                         = js.Array[LogPattern]
   type LogPatternName                         = String
@@ -54,16 +49,13 @@ package object applicationinsights {
   type ResourceGroupName                      = String
   type ResourceList                           = js.Array[ResourceARN]
   type ResourceType                           = String
-  type SeverityLevel                          = String
   type SourceARN                              = String
   type SourceType                             = String
   type StartTime                              = js.Date
-  type Status                                 = String
   type TagKey                                 = String
   type TagKeyList                             = js.Array[TagKey]
   type TagList                                = js.Array[Tag]
   type TagValue                               = String
-  type Tier                                   = String
   type Title                                  = String
   type Unit                                   = String
   type Value                                  = Double
@@ -269,19 +261,21 @@ package applicationinsights {
       __obj.asInstanceOf[ConfigurationEvent]
     }
   }
-
-  object ConfigurationEventResourceTypeEnum {
-    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM"
-    val CLOUDFORMATION   = "CLOUDFORMATION"
-    val SSM_ASSOCIATION  = "SSM_ASSOCIATION"
+  @js.native
+  sealed trait ConfigurationEventResourceType extends js.Any
+  object ConfigurationEventResourceType extends js.Object {
+    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
+    val CLOUDFORMATION   = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
+    val SSM_ASSOCIATION  = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
   }
-
-  object ConfigurationEventStatusEnum {
-    val INFO  = "INFO"
-    val WARN  = "WARN"
-    val ERROR = "ERROR"
+  @js.native
+  sealed trait ConfigurationEventStatus extends js.Any
+  object ConfigurationEventStatus extends js.Object {
+    val INFO  = "INFO".asInstanceOf[ConfigurationEventStatus]
+    val WARN  = "WARN".asInstanceOf[ConfigurationEventStatus]
+    val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
 
     val values = js.Object.freeze(js.Array(INFO, WARN, ERROR))
   }
@@ -818,17 +812,19 @@ package applicationinsights {
       __obj.asInstanceOf[DescribeProblemResponse]
     }
   }
-
-  object FeedbackKeyEnum {
-    val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK"
+  @js.native
+  sealed trait FeedbackKey extends js.Any
+  object FeedbackKey extends js.Object {
+    val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
 
     val values = js.Object.freeze(js.Array(INSIGHTS_FEEDBACK))
   }
-
-  object FeedbackValueEnum {
-    val NOT_SPECIFIED = "NOT_SPECIFIED"
-    val USEFUL        = "USEFUL"
-    val NOT_USEFUL    = "NOT_USEFUL"
+  @js.native
+  sealed trait FeedbackValue extends js.Any
+  object FeedbackValue extends js.Object {
+    val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
+    val USEFUL        = "USEFUL".asInstanceOf[FeedbackValue]
+    val NOT_USEFUL    = "NOT_USEFUL".asInstanceOf[FeedbackValue]
 
     val values = js.Object.freeze(js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL))
   }
@@ -1139,11 +1135,12 @@ package applicationinsights {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object LogFilterEnum {
-    val ERROR = "ERROR"
-    val WARN  = "WARN"
-    val INFO  = "INFO"
+  @js.native
+  sealed trait LogFilter extends js.Any
+  object LogFilter extends js.Object {
+    val ERROR = "ERROR".asInstanceOf[LogFilter]
+    val WARN  = "WARN".asInstanceOf[LogFilter]
+    val INFO  = "INFO".asInstanceOf[LogFilter]
 
     val values = js.Object.freeze(js.Array(ERROR, WARN, INFO))
   }
@@ -1295,19 +1292,21 @@ package applicationinsights {
       __obj.asInstanceOf[RelatedObservations]
     }
   }
-
-  object SeverityLevelEnum {
-    val Low    = "Low"
-    val Medium = "Medium"
-    val High   = "High"
+  @js.native
+  sealed trait SeverityLevel extends js.Any
+  object SeverityLevel extends js.Object {
+    val Low    = "Low".asInstanceOf[SeverityLevel]
+    val Medium = "Medium".asInstanceOf[SeverityLevel]
+    val High   = "High".asInstanceOf[SeverityLevel]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
-
-  object StatusEnum {
-    val IGNORE   = "IGNORE"
-    val RESOLVED = "RESOLVED"
-    val PENDING  = "PENDING"
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val IGNORE   = "IGNORE".asInstanceOf[Status]
+    val RESOLVED = "RESOLVED".asInstanceOf[Status]
+    val PENDING  = "PENDING".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(IGNORE, RESOLVED, PENDING))
   }
@@ -1373,13 +1372,14 @@ package applicationinsights {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TierEnum {
-    val DEFAULT        = "DEFAULT"
-    val DOT_NET_CORE   = "DOT_NET_CORE"
-    val DOT_NET_WORKER = "DOT_NET_WORKER"
-    val DOT_NET_WEB    = "DOT_NET_WEB"
-    val SQL_SERVER     = "SQL_SERVER"
+  @js.native
+  sealed trait Tier extends js.Any
+  object Tier extends js.Object {
+    val DEFAULT        = "DEFAULT".asInstanceOf[Tier]
+    val DOT_NET_CORE   = "DOT_NET_CORE".asInstanceOf[Tier]
+    val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
+    val DOT_NET_WEB    = "DOT_NET_WEB".asInstanceOf[Tier]
+    val SQL_SERVER     = "SQL_SERVER".asInstanceOf[Tier]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER))
   }

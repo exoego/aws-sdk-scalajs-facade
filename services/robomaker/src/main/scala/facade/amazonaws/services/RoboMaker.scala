@@ -7,7 +7,6 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object robomaker {
-  type Architecture                       = String
   type Arn                                = String
   type Arns                               = js.Array[Arn]
   type BatchTimeoutInSeconds              = Double
@@ -20,9 +19,7 @@ package object robomaker {
   type DataSourceNames                    = js.Array[Name]
   type DataSources                        = js.Array[DataSource]
   type DeploymentApplicationConfigs       = js.Array[DeploymentApplicationConfig]
-  type DeploymentJobErrorCode             = String
   type DeploymentJobs                     = js.Array[DeploymentJob]
-  type DeploymentStatus                   = String
   type DeploymentTimeout                  = Double
   type DeploymentVersion                  = String
   type EnvironmentVariableKey             = String
@@ -30,7 +27,6 @@ package object robomaker {
   type EnvironmentVariableValue           = String
   type FailedAt                           = js.Date
   type FailedCreateSimulationJobRequests  = js.Array[FailedCreateSimulationJobRequest]
-  type FailureBehavior                    = String
   type FilterValues                       = js.Array[Name]
   type Filters                            = js.Array[Filter]
   type Fleets                             = js.Array[Fleet]
@@ -52,17 +48,12 @@ package object robomaker {
   type Percentage                         = Int
   type Port                               = Int
   type PortMappingList                    = js.Array[PortMapping]
-  type RenderingEngineType                = String
   type RenderingEngineVersionType         = String
   type RevisionId                         = String
   type RobotApplicationConfigs            = js.Array[RobotApplicationConfig]
   type RobotApplicationNames              = js.Array[Name]
   type RobotApplicationSummaries          = js.Array[RobotApplicationSummary]
-  type RobotDeploymentStep                = String
   type RobotDeploymentSummary             = js.Array[RobotDeployment]
-  type RobotSoftwareSuiteType             = String
-  type RobotSoftwareSuiteVersionType      = String
-  type RobotStatus                        = String
   type Robots                             = js.Array[Robot]
   type S3Bucket                           = String
   type S3Etag                             = String
@@ -73,14 +64,9 @@ package object robomaker {
   type SimulationApplicationConfigs       = js.Array[SimulationApplicationConfig]
   type SimulationApplicationNames         = js.Array[Name]
   type SimulationApplicationSummaries     = js.Array[SimulationApplicationSummary]
-  type SimulationJobBatchErrorCode        = String
-  type SimulationJobBatchStatus           = String
   type SimulationJobBatchSummaries        = js.Array[SimulationJobBatchSummary]
-  type SimulationJobErrorCode             = String
-  type SimulationJobStatus                = String
   type SimulationJobSummaries             = js.Array[SimulationJobSummary]
   type SimulationJobs                     = js.Array[SimulationJob]
-  type SimulationSoftwareSuiteType        = String
   type SimulationSoftwareSuiteVersionType = String
   type SimulationTimeMillis               = Double
   type SourceConfigs                      = js.Array[SourceConfig]
@@ -270,11 +256,12 @@ package robomaker {
         params: UpdateSimulationApplicationRequest
     ): Request[UpdateSimulationApplicationResponse] = js.native
   }
-
-  object ArchitectureEnum {
-    val X86_64 = "X86_64"
-    val ARM64  = "ARM64"
-    val ARMHF  = "ARMHF"
+  @js.native
+  sealed trait Architecture extends js.Any
+  object Architecture extends js.Object {
+    val X86_64 = "X86_64".asInstanceOf[Architecture]
+    val ARM64  = "ARM64".asInstanceOf[Architecture]
+    val ARMHF  = "ARMHF".asInstanceOf[Architecture]
 
     val values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
   }
@@ -1259,26 +1246,27 @@ package robomaker {
       __obj.asInstanceOf[DeploymentJob]
     }
   }
-
-  object DeploymentJobErrorCodeEnum {
-    val ResourceNotFound                    = "ResourceNotFound"
-    val EnvironmentSetupError               = "EnvironmentSetupError"
-    val EtagMismatch                        = "EtagMismatch"
-    val FailureThresholdBreached            = "FailureThresholdBreached"
-    val RobotDeploymentAborted              = "RobotDeploymentAborted"
-    val RobotDeploymentNoResponse           = "RobotDeploymentNoResponse"
-    val RobotAgentConnectionTimeout         = "RobotAgentConnectionTimeout"
-    val GreengrassDeploymentFailed          = "GreengrassDeploymentFailed"
-    val MissingRobotArchitecture            = "MissingRobotArchitecture"
-    val MissingRobotApplicationArchitecture = "MissingRobotApplicationArchitecture"
-    val MissingRobotDeploymentResource      = "MissingRobotDeploymentResource"
-    val GreengrassGroupVersionDoesNotExist  = "GreengrassGroupVersionDoesNotExist"
-    val ExtractingBundleFailure             = "ExtractingBundleFailure"
-    val PreLaunchFileFailure                = "PreLaunchFileFailure"
-    val PostLaunchFileFailure               = "PostLaunchFileFailure"
-    val BadPermissionError                  = "BadPermissionError"
-    val DownloadConditionFailed             = "DownloadConditionFailed"
-    val InternalServerError                 = "InternalServerError"
+  @js.native
+  sealed trait DeploymentJobErrorCode extends js.Any
+  object DeploymentJobErrorCode extends js.Object {
+    val ResourceNotFound                    = "ResourceNotFound".asInstanceOf[DeploymentJobErrorCode]
+    val EnvironmentSetupError               = "EnvironmentSetupError".asInstanceOf[DeploymentJobErrorCode]
+    val EtagMismatch                        = "EtagMismatch".asInstanceOf[DeploymentJobErrorCode]
+    val FailureThresholdBreached            = "FailureThresholdBreached".asInstanceOf[DeploymentJobErrorCode]
+    val RobotDeploymentAborted              = "RobotDeploymentAborted".asInstanceOf[DeploymentJobErrorCode]
+    val RobotDeploymentNoResponse           = "RobotDeploymentNoResponse".asInstanceOf[DeploymentJobErrorCode]
+    val RobotAgentConnectionTimeout         = "RobotAgentConnectionTimeout".asInstanceOf[DeploymentJobErrorCode]
+    val GreengrassDeploymentFailed          = "GreengrassDeploymentFailed".asInstanceOf[DeploymentJobErrorCode]
+    val MissingRobotArchitecture            = "MissingRobotArchitecture".asInstanceOf[DeploymentJobErrorCode]
+    val MissingRobotApplicationArchitecture = "MissingRobotApplicationArchitecture".asInstanceOf[DeploymentJobErrorCode]
+    val MissingRobotDeploymentResource      = "MissingRobotDeploymentResource".asInstanceOf[DeploymentJobErrorCode]
+    val GreengrassGroupVersionDoesNotExist  = "GreengrassGroupVersionDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
+    val ExtractingBundleFailure             = "ExtractingBundleFailure".asInstanceOf[DeploymentJobErrorCode]
+    val PreLaunchFileFailure                = "PreLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
+    val PostLaunchFileFailure               = "PostLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
+    val BadPermissionError                  = "BadPermissionError".asInstanceOf[DeploymentJobErrorCode]
+    val DownloadConditionFailed             = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
+    val InternalServerError                 = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1336,14 +1324,15 @@ package robomaker {
       __obj.asInstanceOf[DeploymentLaunchConfig]
     }
   }
-
-  object DeploymentStatusEnum {
-    val Pending    = "Pending"
-    val Preparing  = "Preparing"
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Succeeded  = "Succeeded"
-    val Canceled   = "Canceled"
+  @js.native
+  sealed trait DeploymentStatus extends js.Any
+  object DeploymentStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[DeploymentStatus]
+    val Preparing  = "Preparing".asInstanceOf[DeploymentStatus]
+    val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
+    val Failed     = "Failed".asInstanceOf[DeploymentStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[DeploymentStatus]
+    val Canceled   = "Canceled".asInstanceOf[DeploymentStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
   }
@@ -1874,10 +1863,11 @@ package robomaker {
       __obj.asInstanceOf[FailedCreateSimulationJobRequest]
     }
   }
-
-  object FailureBehaviorEnum {
-    val Fail     = "Fail"
-    val Continue = "Continue"
+  @js.native
+  sealed trait FailureBehavior extends js.Any
+  object FailureBehavior extends js.Object {
+    val Fail     = "Fail".asInstanceOf[FailureBehavior]
+    val Continue = "Continue".asInstanceOf[FailureBehavior]
 
     val values = js.Object.freeze(js.Array(Fail, Continue))
   }
@@ -2508,9 +2498,10 @@ package robomaker {
       __obj.asInstanceOf[RenderingEngine]
     }
   }
-
-  object RenderingEngineTypeEnum {
-    val OGRE = "OGRE"
+  @js.native
+  sealed trait RenderingEngineType extends js.Any
+  object RenderingEngineType extends js.Object {
+    val OGRE = "OGRE".asInstanceOf[RenderingEngineType]
 
     val values = js.Object.freeze(js.Array(OGRE))
   }
@@ -2683,15 +2674,16 @@ package robomaker {
       __obj.asInstanceOf[RobotDeployment]
     }
   }
-
-  object RobotDeploymentStepEnum {
-    val Validating                 = "Validating"
-    val DownloadingExtracting      = "DownloadingExtracting"
-    val ExecutingDownloadCondition = "ExecutingDownloadCondition"
-    val ExecutingPreLaunch         = "ExecutingPreLaunch"
-    val Launching                  = "Launching"
-    val ExecutingPostLaunch        = "ExecutingPostLaunch"
-    val Finished                   = "Finished"
+  @js.native
+  sealed trait RobotDeploymentStep extends js.Any
+  object RobotDeploymentStep extends js.Object {
+    val Validating                 = "Validating".asInstanceOf[RobotDeploymentStep]
+    val DownloadingExtracting      = "DownloadingExtracting".asInstanceOf[RobotDeploymentStep]
+    val ExecutingDownloadCondition = "ExecutingDownloadCondition".asInstanceOf[RobotDeploymentStep]
+    val ExecutingPreLaunch         = "ExecutingPreLaunch".asInstanceOf[RobotDeploymentStep]
+    val Launching                  = "Launching".asInstanceOf[RobotDeploymentStep]
+    val ExecutingPostLaunch        = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
+    val Finished                   = "Finished".asInstanceOf[RobotDeploymentStep]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2727,30 +2719,33 @@ package robomaker {
       __obj.asInstanceOf[RobotSoftwareSuite]
     }
   }
-
-  object RobotSoftwareSuiteTypeEnum {
-    val ROS  = "ROS"
-    val ROS2 = "ROS2"
+  @js.native
+  sealed trait RobotSoftwareSuiteType extends js.Any
+  object RobotSoftwareSuiteType extends js.Object {
+    val ROS  = "ROS".asInstanceOf[RobotSoftwareSuiteType]
+    val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
 
     val values = js.Object.freeze(js.Array(ROS, ROS2))
   }
-
-  object RobotSoftwareSuiteVersionTypeEnum {
-    val Kinetic = "Kinetic"
-    val Melodic = "Melodic"
-    val Dashing = "Dashing"
+  @js.native
+  sealed trait RobotSoftwareSuiteVersionType extends js.Any
+  object RobotSoftwareSuiteVersionType extends js.Object {
+    val Kinetic = "Kinetic".asInstanceOf[RobotSoftwareSuiteVersionType]
+    val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
+    val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
 
     val values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
   }
-
-  object RobotStatusEnum {
-    val Available            = "Available"
-    val Registered           = "Registered"
-    val PendingNewDeployment = "PendingNewDeployment"
-    val Deploying            = "Deploying"
-    val Failed               = "Failed"
-    val InSync               = "InSync"
-    val NoResponse           = "NoResponse"
+  @js.native
+  sealed trait RobotStatus extends js.Any
+  object RobotStatus extends js.Object {
+    val Available            = "Available".asInstanceOf[RobotStatus]
+    val Registered           = "Registered".asInstanceOf[RobotStatus]
+    val PendingNewDeployment = "PendingNewDeployment".asInstanceOf[RobotStatus]
+    val Deploying            = "Deploying".asInstanceOf[RobotStatus]
+    val Failed               = "Failed".asInstanceOf[RobotStatus]
+    val InSync               = "InSync".asInstanceOf[RobotStatus]
+    val NoResponse           = "NoResponse".asInstanceOf[RobotStatus]
 
     val values =
       js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
@@ -2941,23 +2936,25 @@ package robomaker {
       __obj.asInstanceOf[SimulationJob]
     }
   }
-
-  object SimulationJobBatchErrorCodeEnum {
-    val InternalServiceError = "InternalServiceError"
+  @js.native
+  sealed trait SimulationJobBatchErrorCode extends js.Any
+  object SimulationJobBatchErrorCode extends js.Object {
+    val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
 
     val values = js.Object.freeze(js.Array(InternalServiceError))
   }
-
-  object SimulationJobBatchStatusEnum {
-    val Pending    = "Pending"
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Completed  = "Completed"
-    val Canceled   = "Canceled"
-    val Canceling  = "Canceling"
-    val Completing = "Completing"
-    val TimingOut  = "TimingOut"
-    val TimedOut   = "TimedOut"
+  @js.native
+  sealed trait SimulationJobBatchStatus extends js.Any
+  object SimulationJobBatchStatus extends js.Object {
+    val Pending    = "Pending".asInstanceOf[SimulationJobBatchStatus]
+    val InProgress = "InProgress".asInstanceOf[SimulationJobBatchStatus]
+    val Failed     = "Failed".asInstanceOf[SimulationJobBatchStatus]
+    val Completed  = "Completed".asInstanceOf[SimulationJobBatchStatus]
+    val Canceled   = "Canceled".asInstanceOf[SimulationJobBatchStatus]
+    val Canceling  = "Canceling".asInstanceOf[SimulationJobBatchStatus]
+    val Completing = "Completing".asInstanceOf[SimulationJobBatchStatus]
+    val TimingOut  = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
+    val TimedOut   = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
     val values = js.Object.freeze(
       js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
@@ -3000,35 +2997,38 @@ package robomaker {
       __obj.asInstanceOf[SimulationJobBatchSummary]
     }
   }
-
-  object SimulationJobErrorCodeEnum {
-    val InternalServiceError                       = "InternalServiceError"
-    val RobotApplicationCrash                      = "RobotApplicationCrash"
-    val SimulationApplicationCrash                 = "SimulationApplicationCrash"
-    val BadPermissionsRobotApplication             = "BadPermissionsRobotApplication"
-    val BadPermissionsSimulationApplication        = "BadPermissionsSimulationApplication"
-    val BadPermissionsS3Object                     = "BadPermissionsS3Object"
-    val BadPermissionsS3Output                     = "BadPermissionsS3Output"
-    val BadPermissionsCloudwatchLogs               = "BadPermissionsCloudwatchLogs"
-    val SubnetIpLimitExceeded                      = "SubnetIpLimitExceeded"
-    val ENILimitExceeded                           = "ENILimitExceeded"
-    val BadPermissionsUserCredentials              = "BadPermissionsUserCredentials"
-    val InvalidBundleRobotApplication              = "InvalidBundleRobotApplication"
-    val InvalidBundleSimulationApplication         = "InvalidBundleSimulationApplication"
-    val InvalidS3Resource                          = "InvalidS3Resource"
-    val LimitExceeded                              = "LimitExceeded"
-    val MismatchedEtag                             = "MismatchedEtag"
-    val RobotApplicationVersionMismatchedEtag      = "RobotApplicationVersionMismatchedEtag"
-    val SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag"
-    val ResourceNotFound                           = "ResourceNotFound"
-    val RequestThrottled                           = "RequestThrottled"
-    val BatchTimedOut                              = "BatchTimedOut"
-    val BatchCanceled                              = "BatchCanceled"
-    val InvalidInput                               = "InvalidInput"
-    val WrongRegionS3Bucket                        = "WrongRegionS3Bucket"
-    val WrongRegionS3Output                        = "WrongRegionS3Output"
-    val WrongRegionRobotApplication                = "WrongRegionRobotApplication"
-    val WrongRegionSimulationApplication           = "WrongRegionSimulationApplication"
+  @js.native
+  sealed trait SimulationJobErrorCode extends js.Any
+  object SimulationJobErrorCode extends js.Object {
+    val InternalServiceError                = "InternalServiceError".asInstanceOf[SimulationJobErrorCode]
+    val RobotApplicationCrash               = "RobotApplicationCrash".asInstanceOf[SimulationJobErrorCode]
+    val SimulationApplicationCrash          = "SimulationApplicationCrash".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsRobotApplication      = "BadPermissionsRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsSimulationApplication = "BadPermissionsSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsS3Object              = "BadPermissionsS3Object".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsS3Output              = "BadPermissionsS3Output".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsCloudwatchLogs        = "BadPermissionsCloudwatchLogs".asInstanceOf[SimulationJobErrorCode]
+    val SubnetIpLimitExceeded               = "SubnetIpLimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    val ENILimitExceeded                    = "ENILimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    val BadPermissionsUserCredentials       = "BadPermissionsUserCredentials".asInstanceOf[SimulationJobErrorCode]
+    val InvalidBundleRobotApplication       = "InvalidBundleRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    val InvalidBundleSimulationApplication  = "InvalidBundleSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    val InvalidS3Resource                   = "InvalidS3Resource".asInstanceOf[SimulationJobErrorCode]
+    val LimitExceeded                       = "LimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    val MismatchedEtag                      = "MismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    val RobotApplicationVersionMismatchedEtag =
+      "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    val SimulationApplicationVersionMismatchedEtag =
+      "SimulationApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    val ResourceNotFound                 = "ResourceNotFound".asInstanceOf[SimulationJobErrorCode]
+    val RequestThrottled                 = "RequestThrottled".asInstanceOf[SimulationJobErrorCode]
+    val BatchTimedOut                    = "BatchTimedOut".asInstanceOf[SimulationJobErrorCode]
+    val BatchCanceled                    = "BatchCanceled".asInstanceOf[SimulationJobErrorCode]
+    val InvalidInput                     = "InvalidInput".asInstanceOf[SimulationJobErrorCode]
+    val WrongRegionS3Bucket              = "WrongRegionS3Bucket".asInstanceOf[SimulationJobErrorCode]
+    val WrongRegionS3Output              = "WrongRegionS3Output".asInstanceOf[SimulationJobErrorCode]
+    val WrongRegionRobotApplication      = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3113,18 +3113,19 @@ package robomaker {
       __obj.asInstanceOf[SimulationJobRequest]
     }
   }
-
-  object SimulationJobStatusEnum {
-    val Pending       = "Pending"
-    val Preparing     = "Preparing"
-    val Running       = "Running"
-    val Restarting    = "Restarting"
-    val Completed     = "Completed"
-    val Failed        = "Failed"
-    val RunningFailed = "RunningFailed"
-    val Terminating   = "Terminating"
-    val Terminated    = "Terminated"
-    val Canceled      = "Canceled"
+  @js.native
+  sealed trait SimulationJobStatus extends js.Any
+  object SimulationJobStatus extends js.Object {
+    val Pending       = "Pending".asInstanceOf[SimulationJobStatus]
+    val Preparing     = "Preparing".asInstanceOf[SimulationJobStatus]
+    val Running       = "Running".asInstanceOf[SimulationJobStatus]
+    val Restarting    = "Restarting".asInstanceOf[SimulationJobStatus]
+    val Completed     = "Completed".asInstanceOf[SimulationJobStatus]
+    val Failed        = "Failed".asInstanceOf[SimulationJobStatus]
+    val RunningFailed = "RunningFailed".asInstanceOf[SimulationJobStatus]
+    val Terminating   = "Terminating".asInstanceOf[SimulationJobStatus]
+    val Terminated    = "Terminated".asInstanceOf[SimulationJobStatus]
+    val Canceled      = "Canceled".asInstanceOf[SimulationJobStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3202,10 +3203,11 @@ package robomaker {
       __obj.asInstanceOf[SimulationSoftwareSuite]
     }
   }
-
-  object SimulationSoftwareSuiteTypeEnum {
-    val Gazebo     = "Gazebo"
-    val RosbagPlay = "RosbagPlay"
+  @js.native
+  sealed trait SimulationSoftwareSuiteType extends js.Any
+  object SimulationSoftwareSuiteType extends js.Object {
+    val Gazebo     = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
+    val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
 
     val values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
   }

@@ -20,7 +20,6 @@ package object directoryservice {
   type CertificateExpiryDateTime                  = js.Date
   type CertificateId                              = String
   type CertificateRegisteredDateTime              = js.Date
-  type CertificateState                           = String
   type CertificateStateReason                     = String
   type CertificatesInfo                           = js.Array[CertificateInfo]
   type CidrIp                                     = String
@@ -39,32 +38,24 @@ package object directoryservice {
   type Description                                = String
   type DesiredNumberOfDomainControllers           = Int
   type DirectoryDescriptions                      = js.Array[DirectoryDescription]
-  type DirectoryEdition                           = String
   type DirectoryId                                = String
   type DirectoryIds                               = js.Array[DirectoryId]
   type DirectoryName                              = String
   type DirectoryShortName                         = String
-  type DirectorySize                              = String
-  type DirectoryStage                             = String
-  type DirectoryType                              = String
   type DnsIpAddrs                                 = js.Array[IpAddr]
   type DomainControllerId                         = String
   type DomainControllerIds                        = js.Array[DomainControllerId]
-  type DomainControllerStatus                     = String
   type DomainControllerStatusReason               = String
   type DomainControllers                          = js.Array[DomainController]
   type EndDateTime                                = js.Date
   type EventTopics                                = js.Array[EventTopic]
   type IpAddr                                     = String
   type IpAddrs                                    = js.Array[IpAddr]
-  type IpRouteStatusMsg                           = String
   type IpRouteStatusReason                        = String
   type IpRoutes                                   = js.Array[IpRoute]
   type IpRoutesInfo                               = js.Array[IpRouteInfo]
   type LDAPSSettingsInfo                          = js.Array[LDAPSSettingInfo]
-  type LDAPSStatus                                = String
   type LDAPSStatusReason                          = String
-  type LDAPSType                                  = String
   type LastUpdatedDateTime                        = js.Date
   type LaunchTime                                 = js.Date
   type LdifContent                                = String
@@ -78,34 +69,25 @@ package object directoryservice {
   type PageLimit                                  = Int
   type Password                                   = String
   type PortNumber                                 = Int
-  type RadiusAuthenticationProtocol               = String
   type RadiusDisplayLabel                         = String
   type RadiusRetries                              = Int
   type RadiusSharedSecret                         = String
-  type RadiusStatus                               = String
   type RadiusTimeout                              = Int
   type RemoteDomainName                           = String
   type RemoteDomainNames                          = js.Array[RemoteDomainName]
-  type ReplicationScope                           = String
   type RequestId                                  = String
   type ResourceId                                 = String
   type SID                                        = String
   type SchemaExtensionId                          = String
-  type SchemaExtensionStatus                      = String
   type SchemaExtensionStatusReason                = String
   type SchemaExtensionsInfo                       = js.Array[SchemaExtensionInfo]
   type SecurityGroupId                            = String
-  type SelectiveAuth                              = String
   type Server                                     = String
   type Servers                                    = js.Array[Server]
-  type ShareMethod                                = String
-  type ShareStatus                                = String
   type SharedDirectories                          = js.Array[SharedDirectory]
   type SnapshotId                                 = String
   type SnapshotIds                                = js.Array[SnapshotId]
   type SnapshotName                               = String
-  type SnapshotStatus                             = String
-  type SnapshotType                               = String
   type Snapshots                                  = js.Array[Snapshot]
   type SsoEnabled                                 = Boolean
   type StageReason                                = String
@@ -120,18 +102,13 @@ package object directoryservice {
   type TagValue                                   = String
   type Tags                                       = js.Array[Tag]
   type TargetId                                   = String
-  type TargetType                                 = String
   type TopicArn                                   = String
   type TopicName                                  = String
   type TopicNames                                 = js.Array[TopicName]
-  type TopicStatus                                = String
-  type TrustDirection                             = String
   type TrustId                                    = String
   type TrustIds                                   = js.Array[TrustId]
   type TrustPassword                              = String
-  type TrustState                                 = String
   type TrustStateReason                           = String
-  type TrustType                                  = String
   type Trusts                                     = js.Array[Trust]
   type UpdateSecurityGroupForDirectoryControllers = Boolean
   type UseSameUsername                            = Boolean
@@ -568,14 +545,15 @@ package directoryservice {
       __obj.asInstanceOf[CertificateInfo]
     }
   }
-
-  object CertificateStateEnum {
-    val Registering      = "Registering"
-    val Registered       = "Registered"
-    val RegisterFailed   = "RegisterFailed"
-    val Deregistering    = "Deregistering"
-    val Deregistered     = "Deregistered"
-    val DeregisterFailed = "DeregisterFailed"
+  @js.native
+  sealed trait CertificateState extends js.Any
+  object CertificateState extends js.Object {
+    val Registering      = "Registering".asInstanceOf[CertificateState]
+    val Registered       = "Registered".asInstanceOf[CertificateState]
+    val RegisterFailed   = "RegisterFailed".asInstanceOf[CertificateState]
+    val Deregistering    = "Deregistering".asInstanceOf[CertificateState]
+    val Deregistered     = "Deregistered".asInstanceOf[CertificateState]
+    val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
     val values =
       js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
@@ -1917,10 +1895,11 @@ package directoryservice {
       __obj.asInstanceOf[DirectoryDescription]
     }
   }
-
-  object DirectoryEditionEnum {
-    val Enterprise = "Enterprise"
-    val Standard   = "Standard"
+  @js.native
+  sealed trait DirectoryEdition extends js.Any
+  object DirectoryEdition extends js.Object {
+    val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
+    val Standard   = "Standard".asInstanceOf[DirectoryEdition]
 
     val values = js.Object.freeze(js.Array(Enterprise, Standard))
   }
@@ -1985,26 +1964,28 @@ package directoryservice {
       __obj.asInstanceOf[DirectoryLimits]
     }
   }
-
-  object DirectorySizeEnum {
-    val Small = "Small"
-    val Large = "Large"
+  @js.native
+  sealed trait DirectorySize extends js.Any
+  object DirectorySize extends js.Object {
+    val Small = "Small".asInstanceOf[DirectorySize]
+    val Large = "Large".asInstanceOf[DirectorySize]
 
     val values = js.Object.freeze(js.Array(Small, Large))
   }
-
-  object DirectoryStageEnum {
-    val Requested     = "Requested"
-    val Creating      = "Creating"
-    val Created       = "Created"
-    val Active        = "Active"
-    val Inoperable    = "Inoperable"
-    val Impaired      = "Impaired"
-    val Restoring     = "Restoring"
-    val RestoreFailed = "RestoreFailed"
-    val Deleting      = "Deleting"
-    val Deleted       = "Deleted"
-    val Failed        = "Failed"
+  @js.native
+  sealed trait DirectoryStage extends js.Any
+  object DirectoryStage extends js.Object {
+    val Requested     = "Requested".asInstanceOf[DirectoryStage]
+    val Creating      = "Creating".asInstanceOf[DirectoryStage]
+    val Created       = "Created".asInstanceOf[DirectoryStage]
+    val Active        = "Active".asInstanceOf[DirectoryStage]
+    val Inoperable    = "Inoperable".asInstanceOf[DirectoryStage]
+    val Impaired      = "Impaired".asInstanceOf[DirectoryStage]
+    val Restoring     = "Restoring".asInstanceOf[DirectoryStage]
+    val RestoreFailed = "RestoreFailed".asInstanceOf[DirectoryStage]
+    val Deleting      = "Deleting".asInstanceOf[DirectoryStage]
+    val Deleted       = "Deleted".asInstanceOf[DirectoryStage]
+    val Failed        = "Failed".asInstanceOf[DirectoryStage]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2022,12 +2003,13 @@ package directoryservice {
       )
     )
   }
-
-  object DirectoryTypeEnum {
-    val SimpleAD          = "SimpleAD"
-    val ADConnector       = "ADConnector"
-    val MicrosoftAD       = "MicrosoftAD"
-    val SharedMicrosoftAD = "SharedMicrosoftAD"
+  @js.native
+  sealed trait DirectoryType extends js.Any
+  object DirectoryType extends js.Object {
+    val SimpleAD          = "SimpleAD".asInstanceOf[DirectoryType]
+    val ADConnector       = "ADConnector".asInstanceOf[DirectoryType]
+    val MicrosoftAD       = "MicrosoftAD".asInstanceOf[DirectoryType]
+    val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
     val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
   }
@@ -2245,15 +2227,16 @@ package directoryservice {
       __obj.asInstanceOf[DomainController]
     }
   }
-
-  object DomainControllerStatusEnum {
-    val Creating  = "Creating"
-    val Active    = "Active"
-    val Impaired  = "Impaired"
-    val Restoring = "Restoring"
-    val Deleting  = "Deleting"
-    val Deleted   = "Deleted"
-    val Failed    = "Failed"
+  @js.native
+  sealed trait DomainControllerStatus extends js.Any
+  object DomainControllerStatus extends js.Object {
+    val Creating  = "Creating".asInstanceOf[DomainControllerStatus]
+    val Active    = "Active".asInstanceOf[DomainControllerStatus]
+    val Impaired  = "Impaired".asInstanceOf[DomainControllerStatus]
+    val Restoring = "Restoring".asInstanceOf[DomainControllerStatus]
+    val Deleting  = "Deleting".asInstanceOf[DomainControllerStatus]
+    val Deleted   = "Deleted".asInstanceOf[DomainControllerStatus]
+    val Failed    = "Failed".asInstanceOf[DomainControllerStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
   }
@@ -2536,14 +2519,15 @@ package directoryservice {
       __obj.asInstanceOf[IpRouteInfo]
     }
   }
-
-  object IpRouteStatusMsgEnum {
-    val Adding       = "Adding"
-    val Added        = "Added"
-    val Removing     = "Removing"
-    val Removed      = "Removed"
-    val AddFailed    = "AddFailed"
-    val RemoveFailed = "RemoveFailed"
+  @js.native
+  sealed trait IpRouteStatusMsg extends js.Any
+  object IpRouteStatusMsg extends js.Object {
+    val Adding       = "Adding".asInstanceOf[IpRouteStatusMsg]
+    val Added        = "Added".asInstanceOf[IpRouteStatusMsg]
+    val Removing     = "Removing".asInstanceOf[IpRouteStatusMsg]
+    val Removed      = "Removed".asInstanceOf[IpRouteStatusMsg]
+    val AddFailed    = "AddFailed".asInstanceOf[IpRouteStatusMsg]
+    val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
     val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
   }
@@ -2572,18 +2556,20 @@ package directoryservice {
       __obj.asInstanceOf[LDAPSSettingInfo]
     }
   }
-
-  object LDAPSStatusEnum {
-    val Enabling     = "Enabling"
-    val Enabled      = "Enabled"
-    val EnableFailed = "EnableFailed"
-    val Disabled     = "Disabled"
+  @js.native
+  sealed trait LDAPSStatus extends js.Any
+  object LDAPSStatus extends js.Object {
+    val Enabling     = "Enabling".asInstanceOf[LDAPSStatus]
+    val Enabled      = "Enabled".asInstanceOf[LDAPSStatus]
+    val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
+    val Disabled     = "Disabled".asInstanceOf[LDAPSStatus]
 
     val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
   }
-
-  object LDAPSTypeEnum {
-    val Client = "Client"
+  @js.native
+  sealed trait LDAPSType extends js.Any
+  object LDAPSType extends js.Object {
+    val Client = "Client".asInstanceOf[LDAPSType]
 
     val values = js.Object.freeze(js.Array(Client))
   }
@@ -2861,12 +2847,13 @@ package directoryservice {
       __obj.asInstanceOf[OwnerDirectoryDescription]
     }
   }
-
-  object RadiusAuthenticationProtocolEnum {
-    val PAP         = "PAP"
-    val CHAP        = "CHAP"
-    val `MS-CHAPv1` = "MS-CHAPv1"
-    val `MS-CHAPv2` = "MS-CHAPv2"
+  @js.native
+  sealed trait RadiusAuthenticationProtocol extends js.Any
+  object RadiusAuthenticationProtocol extends js.Object {
+    val PAP         = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
+    val CHAP        = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
+    val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
+    val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
     val values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
   }
@@ -2910,11 +2897,12 @@ package directoryservice {
       __obj.asInstanceOf[RadiusSettings]
     }
   }
-
-  object RadiusStatusEnum {
-    val Creating  = "Creating"
-    val Completed = "Completed"
-    val Failed    = "Failed"
+  @js.native
+  sealed trait RadiusStatus extends js.Any
+  object RadiusStatus extends js.Object {
+    val Creating  = "Creating".asInstanceOf[RadiusStatus]
+    val Completed = "Completed".asInstanceOf[RadiusStatus]
+    val Failed    = "Failed".asInstanceOf[RadiusStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
@@ -3097,9 +3085,10 @@ package directoryservice {
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
   }
-
-  object ReplicationScopeEnum {
-    val Domain = "Domain"
+  @js.native
+  sealed trait ReplicationScope extends js.Any
+  object ReplicationScope extends js.Object {
+    val Domain = "Domain".asInstanceOf[ReplicationScope]
 
     val values = js.Object.freeze(js.Array(Domain))
   }
@@ -3216,17 +3205,18 @@ package directoryservice {
       __obj.asInstanceOf[SchemaExtensionInfo]
     }
   }
-
-  object SchemaExtensionStatusEnum {
-    val Initializing       = "Initializing"
-    val CreatingSnapshot   = "CreatingSnapshot"
-    val UpdatingSchema     = "UpdatingSchema"
-    val Replicating        = "Replicating"
-    val CancelInProgress   = "CancelInProgress"
-    val RollbackInProgress = "RollbackInProgress"
-    val Cancelled          = "Cancelled"
-    val Failed             = "Failed"
-    val Completed          = "Completed"
+  @js.native
+  sealed trait SchemaExtensionStatus extends js.Any
+  object SchemaExtensionStatus extends js.Object {
+    val Initializing       = "Initializing".asInstanceOf[SchemaExtensionStatus]
+    val CreatingSnapshot   = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
+    val UpdatingSchema     = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
+    val Replicating        = "Replicating".asInstanceOf[SchemaExtensionStatus]
+    val CancelInProgress   = "CancelInProgress".asInstanceOf[SchemaExtensionStatus]
+    val RollbackInProgress = "RollbackInProgress".asInstanceOf[SchemaExtensionStatus]
+    val Cancelled          = "Cancelled".asInstanceOf[SchemaExtensionStatus]
+    val Failed             = "Failed".asInstanceOf[SchemaExtensionStatus]
+    val Completed          = "Completed".asInstanceOf[SchemaExtensionStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3242,10 +3232,11 @@ package directoryservice {
       )
     )
   }
-
-  object SelectiveAuthEnum {
-    val Enabled  = "Enabled"
-    val Disabled = "Disabled"
+  @js.native
+  sealed trait SelectiveAuth extends js.Any
+  object SelectiveAuth extends js.Object {
+    val Enabled  = "Enabled".asInstanceOf[SelectiveAuth]
+    val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -3292,24 +3283,26 @@ package directoryservice {
       __obj.asInstanceOf[ShareDirectoryResult]
     }
   }
-
-  object ShareMethodEnum {
-    val ORGANIZATIONS = "ORGANIZATIONS"
-    val HANDSHAKE     = "HANDSHAKE"
+  @js.native
+  sealed trait ShareMethod extends js.Any
+  object ShareMethod extends js.Object {
+    val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
+    val HANDSHAKE     = "HANDSHAKE".asInstanceOf[ShareMethod]
 
     val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
-
-  object ShareStatusEnum {
-    val Shared            = "Shared"
-    val PendingAcceptance = "PendingAcceptance"
-    val Rejected          = "Rejected"
-    val Rejecting         = "Rejecting"
-    val RejectFailed      = "RejectFailed"
-    val Sharing           = "Sharing"
-    val ShareFailed       = "ShareFailed"
-    val Deleted           = "Deleted"
-    val Deleting          = "Deleting"
+  @js.native
+  sealed trait ShareStatus extends js.Any
+  object ShareStatus extends js.Object {
+    val Shared            = "Shared".asInstanceOf[ShareStatus]
+    val PendingAcceptance = "PendingAcceptance".asInstanceOf[ShareStatus]
+    val Rejected          = "Rejected".asInstanceOf[ShareStatus]
+    val Rejecting         = "Rejecting".asInstanceOf[ShareStatus]
+    val RejectFailed      = "RejectFailed".asInstanceOf[ShareStatus]
+    val Sharing           = "Sharing".asInstanceOf[ShareStatus]
+    val ShareFailed       = "ShareFailed".asInstanceOf[ShareStatus]
+    val Deleted           = "Deleted".asInstanceOf[ShareStatus]
+    val Deleting          = "Deleting".asInstanceOf[ShareStatus]
 
     val values = js.Object.freeze(
       js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
@@ -3445,18 +3438,20 @@ package directoryservice {
       __obj.asInstanceOf[SnapshotLimits]
     }
   }
-
-  object SnapshotStatusEnum {
-    val Creating  = "Creating"
-    val Completed = "Completed"
-    val Failed    = "Failed"
+  @js.native
+  sealed trait SnapshotStatus extends js.Any
+  object SnapshotStatus extends js.Object {
+    val Creating  = "Creating".asInstanceOf[SnapshotStatus]
+    val Completed = "Completed".asInstanceOf[SnapshotStatus]
+    val Failed    = "Failed".asInstanceOf[SnapshotStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
-
-  object SnapshotTypeEnum {
-    val Auto   = "Auto"
-    val Manual = "Manual"
+  @js.native
+  sealed trait SnapshotType extends js.Any
+  object SnapshotType extends js.Object {
+    val Auto   = "Auto".asInstanceOf[SnapshotType]
+    val Manual = "Manual".asInstanceOf[SnapshotType]
 
     val values = js.Object.freeze(js.Array(Auto, Manual))
   }
@@ -3527,18 +3522,20 @@ package directoryservice {
       __obj.asInstanceOf[Tag]
     }
   }
-
-  object TargetTypeEnum {
-    val ACCOUNT = "ACCOUNT"
+  @js.native
+  sealed trait TargetType extends js.Any
+  object TargetType extends js.Object {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
-
-  object TopicStatusEnum {
-    val Registered        = "Registered"
-    val `Topic not found` = "Topic not found"
-    val Failed            = "Failed"
-    val Deleted           = "Deleted"
+  @js.native
+  sealed trait TopicStatus extends js.Any
+  object TopicStatus extends js.Object {
+    val Registered        = "Registered".asInstanceOf[TopicStatus]
+    val `Topic not found` = "Topic not found".asInstanceOf[TopicStatus]
+    val Failed            = "Failed".asInstanceOf[TopicStatus]
+    val Deleted           = "Deleted".asInstanceOf[TopicStatus]
 
     val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
   }
@@ -3591,27 +3588,29 @@ package directoryservice {
       __obj.asInstanceOf[Trust]
     }
   }
-
-  object TrustDirectionEnum {
-    val `One-Way: Outgoing` = "One-Way: Outgoing"
-    val `One-Way: Incoming` = "One-Way: Incoming"
-    val `Two-Way`           = "Two-Way"
+  @js.native
+  sealed trait TrustDirection extends js.Any
+  object TrustDirection extends js.Object {
+    val `One-Way: Outgoing` = "One-Way: Outgoing".asInstanceOf[TrustDirection]
+    val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
+    val `Two-Way`           = "Two-Way".asInstanceOf[TrustDirection]
 
     val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
-
-  object TrustStateEnum {
-    val Creating     = "Creating"
-    val Created      = "Created"
-    val Verifying    = "Verifying"
-    val VerifyFailed = "VerifyFailed"
-    val Verified     = "Verified"
-    val Updating     = "Updating"
-    val UpdateFailed = "UpdateFailed"
-    val Updated      = "Updated"
-    val Deleting     = "Deleting"
-    val Deleted      = "Deleted"
-    val Failed       = "Failed"
+  @js.native
+  sealed trait TrustState extends js.Any
+  object TrustState extends js.Object {
+    val Creating     = "Creating".asInstanceOf[TrustState]
+    val Created      = "Created".asInstanceOf[TrustState]
+    val Verifying    = "Verifying".asInstanceOf[TrustState]
+    val VerifyFailed = "VerifyFailed".asInstanceOf[TrustState]
+    val Verified     = "Verified".asInstanceOf[TrustState]
+    val Updating     = "Updating".asInstanceOf[TrustState]
+    val UpdateFailed = "UpdateFailed".asInstanceOf[TrustState]
+    val Updated      = "Updated".asInstanceOf[TrustState]
+    val Deleting     = "Deleting".asInstanceOf[TrustState]
+    val Deleted      = "Deleted".asInstanceOf[TrustState]
+    val Failed       = "Failed".asInstanceOf[TrustState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3629,10 +3628,11 @@ package directoryservice {
       )
     )
   }
-
-  object TrustTypeEnum {
-    val Forest   = "Forest"
-    val External = "External"
+  @js.native
+  sealed trait TrustType extends js.Any
+  object TrustType extends js.Object {
+    val Forest   = "Forest".asInstanceOf[TrustType]
+    val External = "External".asInstanceOf[TrustType]
 
     val values = js.Object.freeze(js.Array(Forest, External))
   }

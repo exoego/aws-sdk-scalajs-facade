@@ -8,47 +8,33 @@ import facade.amazonaws._
 
 package object kms {
   type AWSAccountIdType            = String
-  type AlgorithmSpec               = String
   type AliasList                   = js.Array[AliasListEntry]
   type AliasNameType               = String
   type ArnType                     = String
   type BooleanType                 = Boolean
   type CiphertextType              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CloudHsmClusterIdType       = String
-  type ConnectionErrorCodeType     = String
-  type ConnectionStateType         = String
   type CustomKeyStoreIdType        = String
   type CustomKeyStoreNameType      = String
   type CustomKeyStoresList         = js.Array[CustomKeyStoresListEntry]
-  type CustomerMasterKeySpec       = String
-  type DataKeyPairSpec             = String
-  type DataKeySpec                 = String
   type DateType                    = js.Date
   type DescriptionType             = String
-  type EncryptionAlgorithmSpec     = String
   type EncryptionAlgorithmSpecList = js.Array[EncryptionAlgorithmSpec]
   type EncryptionContextKey        = String
   type EncryptionContextType       = js.Dictionary[EncryptionContextValue]
   type EncryptionContextValue      = String
-  type ExpirationModelType         = String
   type GrantIdType                 = String
   type GrantList                   = js.Array[GrantListEntry]
   type GrantNameType               = String
-  type GrantOperation              = String
   type GrantOperationList          = js.Array[GrantOperation]
   type GrantTokenList              = js.Array[GrantTokenType]
   type GrantTokenType              = String
   type KeyIdType                   = String
   type KeyList                     = js.Array[KeyListEntry]
-  type KeyManagerType              = String
-  type KeyState                    = String
   type KeyStorePasswordType        = String
-  type KeyUsageType                = String
   type LimitType                   = Int
   type MarkerType                  = String
-  type MessageType                 = String
   type NumberOfBytesType           = Int
-  type OriginType                  = String
   type PendingWindowInDaysType     = Int
   type PlaintextType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type PolicyNameList              = js.Array[PolicyNameType]
@@ -56,14 +42,12 @@ package object kms {
   type PolicyType                  = String
   type PrincipalIdType             = String
   type PublicKeyType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SigningAlgorithmSpec        = String
   type SigningAlgorithmSpecList    = js.Array[SigningAlgorithmSpec]
   type TagKeyList                  = js.Array[TagKeyType]
   type TagKeyType                  = String
   type TagList                     = js.Array[Tag]
   type TagValueType                = String
   type TrustAnchorCertificateType  = String
-  type WrappingKeySpec             = String
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
 
@@ -228,11 +212,12 @@ package kms {
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object]                    = js.native
     def verify(params: VerifyRequest): Request[VerifyResponse]                                           = js.native
   }
-
-  object AlgorithmSpecEnum {
-    val RSAES_PKCS1_V1_5   = "RSAES_PKCS1_V1_5"
-    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1"
-    val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256"
+  @js.native
+  sealed trait AlgorithmSpec extends js.Any
+  object AlgorithmSpec extends js.Object {
+    val RSAES_PKCS1_V1_5   = "RSAES_PKCS1_V1_5".asInstanceOf[AlgorithmSpec]
+    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
+    val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[AlgorithmSpec]
 
     val values = js.Object.freeze(js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
@@ -326,17 +311,18 @@ package kms {
       __obj.asInstanceOf[ConnectCustomKeyStoreResponse]
     }
   }
-
-  object ConnectionErrorCodeTypeEnum {
-    val INVALID_CREDENTIALS        = "INVALID_CREDENTIALS"
-    val CLUSTER_NOT_FOUND          = "CLUSTER_NOT_FOUND"
-    val NETWORK_ERRORS             = "NETWORK_ERRORS"
-    val INTERNAL_ERROR             = "INTERNAL_ERROR"
-    val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS"
-    val USER_LOCKED_OUT            = "USER_LOCKED_OUT"
-    val USER_NOT_FOUND             = "USER_NOT_FOUND"
-    val USER_LOGGED_IN             = "USER_LOGGED_IN"
-    val SUBNET_NOT_FOUND           = "SUBNET_NOT_FOUND"
+  @js.native
+  sealed trait ConnectionErrorCodeType extends js.Any
+  object ConnectionErrorCodeType extends js.Object {
+    val INVALID_CREDENTIALS        = "INVALID_CREDENTIALS".asInstanceOf[ConnectionErrorCodeType]
+    val CLUSTER_NOT_FOUND          = "CLUSTER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
+    val NETWORK_ERRORS             = "NETWORK_ERRORS".asInstanceOf[ConnectionErrorCodeType]
+    val INTERNAL_ERROR             = "INTERNAL_ERROR".asInstanceOf[ConnectionErrorCodeType]
+    val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS".asInstanceOf[ConnectionErrorCodeType]
+    val USER_LOCKED_OUT            = "USER_LOCKED_OUT".asInstanceOf[ConnectionErrorCodeType]
+    val USER_NOT_FOUND             = "USER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
+    val USER_LOGGED_IN             = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
+    val SUBNET_NOT_FOUND           = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -352,13 +338,14 @@ package kms {
       )
     )
   }
-
-  object ConnectionStateTypeEnum {
-    val CONNECTED     = "CONNECTED"
-    val CONNECTING    = "CONNECTING"
-    val FAILED        = "FAILED"
-    val DISCONNECTED  = "DISCONNECTED"
-    val DISCONNECTING = "DISCONNECTING"
+  @js.native
+  sealed trait ConnectionStateType extends js.Any
+  object ConnectionStateType extends js.Object {
+    val CONNECTED     = "CONNECTED".asInstanceOf[ConnectionStateType]
+    val CONNECTING    = "CONNECTING".asInstanceOf[ConnectionStateType]
+    val FAILED        = "FAILED".asInstanceOf[ConnectionStateType]
+    val DISCONNECTED  = "DISCONNECTED".asInstanceOf[ConnectionStateType]
+    val DISCONNECTING = "DISCONNECTING".asInstanceOf[ConnectionStateType]
 
     val values = js.Object.freeze(js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING))
   }
@@ -573,16 +560,17 @@ package kms {
       __obj.asInstanceOf[CustomKeyStoresListEntry]
     }
   }
-
-  object CustomerMasterKeySpecEnum {
-    val RSA_2048          = "RSA_2048"
-    val RSA_3072          = "RSA_3072"
-    val RSA_4096          = "RSA_4096"
-    val ECC_NIST_P256     = "ECC_NIST_P256"
-    val ECC_NIST_P384     = "ECC_NIST_P384"
-    val ECC_NIST_P521     = "ECC_NIST_P521"
-    val ECC_SECG_P256K1   = "ECC_SECG_P256K1"
-    val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT"
+  @js.native
+  sealed trait CustomerMasterKeySpec extends js.Any
+  object CustomerMasterKeySpec extends js.Object {
+    val RSA_2048          = "RSA_2048".asInstanceOf[CustomerMasterKeySpec]
+    val RSA_3072          = "RSA_3072".asInstanceOf[CustomerMasterKeySpec]
+    val RSA_4096          = "RSA_4096".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P256     = "ECC_NIST_P256".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P384     = "ECC_NIST_P384".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P521     = "ECC_NIST_P521".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_SECG_P256K1   = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
+    val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
     val values = js.Object.freeze(
       js.Array(
@@ -597,24 +585,26 @@ package kms {
       )
     )
   }
-
-  object DataKeyPairSpecEnum {
-    val RSA_2048        = "RSA_2048"
-    val RSA_3072        = "RSA_3072"
-    val RSA_4096        = "RSA_4096"
-    val ECC_NIST_P256   = "ECC_NIST_P256"
-    val ECC_NIST_P384   = "ECC_NIST_P384"
-    val ECC_NIST_P521   = "ECC_NIST_P521"
-    val ECC_SECG_P256K1 = "ECC_SECG_P256K1"
+  @js.native
+  sealed trait DataKeyPairSpec extends js.Any
+  object DataKeyPairSpec extends js.Object {
+    val RSA_2048        = "RSA_2048".asInstanceOf[DataKeyPairSpec]
+    val RSA_3072        = "RSA_3072".asInstanceOf[DataKeyPairSpec]
+    val RSA_4096        = "RSA_4096".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P256   = "ECC_NIST_P256".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P384   = "ECC_NIST_P384".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P521   = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
+    val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
     val values = js.Object.freeze(
       js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
     )
   }
-
-  object DataKeySpecEnum {
-    val AES_256 = "AES_256"
-    val AES_128 = "AES_128"
+  @js.native
+  sealed trait DataKeySpec extends js.Any
+  object DataKeySpec extends js.Object {
+    val AES_256 = "AES_256".asInstanceOf[DataKeySpec]
+    val AES_128 = "AES_128".asInstanceOf[DataKeySpec]
 
     val values = js.Object.freeze(js.Array(AES_256, AES_128))
   }
@@ -976,18 +966,20 @@ package kms {
       __obj.asInstanceOf[EncryptResponse]
     }
   }
-
-  object EncryptionAlgorithmSpecEnum {
-    val SYMMETRIC_DEFAULT  = "SYMMETRIC_DEFAULT"
-    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1"
-    val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256"
+  @js.native
+  sealed trait EncryptionAlgorithmSpec extends js.Any
+  object EncryptionAlgorithmSpec extends js.Object {
+    val SYMMETRIC_DEFAULT  = "SYMMETRIC_DEFAULT".asInstanceOf[EncryptionAlgorithmSpec]
+    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
+    val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[EncryptionAlgorithmSpec]
 
     val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
-
-  object ExpirationModelTypeEnum {
-    val KEY_MATERIAL_EXPIRES         = "KEY_MATERIAL_EXPIRES"
-    val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE"
+  @js.native
+  sealed trait ExpirationModelType extends js.Any
+  object ExpirationModelType extends js.Object {
+    val KEY_MATERIAL_EXPIRES         = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
+    val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE".asInstanceOf[ExpirationModelType]
 
     val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
   }
@@ -1482,22 +1474,23 @@ package kms {
       __obj.asInstanceOf[GrantListEntry]
     }
   }
-
-  object GrantOperationEnum {
-    val Decrypt                             = "Decrypt"
-    val Encrypt                             = "Encrypt"
-    val GenerateDataKey                     = "GenerateDataKey"
-    val GenerateDataKeyWithoutPlaintext     = "GenerateDataKeyWithoutPlaintext"
-    val ReEncryptFrom                       = "ReEncryptFrom"
-    val ReEncryptTo                         = "ReEncryptTo"
-    val Sign                                = "Sign"
-    val Verify                              = "Verify"
-    val GetPublicKey                        = "GetPublicKey"
-    val CreateGrant                         = "CreateGrant"
-    val RetireGrant                         = "RetireGrant"
-    val DescribeKey                         = "DescribeKey"
-    val GenerateDataKeyPair                 = "GenerateDataKeyPair"
-    val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext"
+  @js.native
+  sealed trait GrantOperation extends js.Any
+  object GrantOperation extends js.Object {
+    val Decrypt                             = "Decrypt".asInstanceOf[GrantOperation]
+    val Encrypt                             = "Encrypt".asInstanceOf[GrantOperation]
+    val GenerateDataKey                     = "GenerateDataKey".asInstanceOf[GrantOperation]
+    val GenerateDataKeyWithoutPlaintext     = "GenerateDataKeyWithoutPlaintext".asInstanceOf[GrantOperation]
+    val ReEncryptFrom                       = "ReEncryptFrom".asInstanceOf[GrantOperation]
+    val ReEncryptTo                         = "ReEncryptTo".asInstanceOf[GrantOperation]
+    val Sign                                = "Sign".asInstanceOf[GrantOperation]
+    val Verify                              = "Verify".asInstanceOf[GrantOperation]
+    val GetPublicKey                        = "GetPublicKey".asInstanceOf[GrantOperation]
+    val CreateGrant                         = "CreateGrant".asInstanceOf[GrantOperation]
+    val RetireGrant                         = "RetireGrant".asInstanceOf[GrantOperation]
+    val DescribeKey                         = "DescribeKey".asInstanceOf[GrantOperation]
+    val GenerateDataKeyPair                 = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
+    val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1583,10 +1576,11 @@ package kms {
       __obj.asInstanceOf[KeyListEntry]
     }
   }
-
-  object KeyManagerTypeEnum {
-    val AWS      = "AWS"
-    val CUSTOMER = "CUSTOMER"
+  @js.native
+  sealed trait KeyManagerType extends js.Any
+  object KeyManagerType extends js.Object {
+    val AWS      = "AWS".asInstanceOf[KeyManagerType]
+    val CUSTOMER = "CUSTOMER".asInstanceOf[KeyManagerType]
 
     val values = js.Object.freeze(js.Array(AWS, CUSTOMER))
   }
@@ -1663,20 +1657,22 @@ package kms {
       __obj.asInstanceOf[KeyMetadata]
     }
   }
-
-  object KeyStateEnum {
-    val Enabled         = "Enabled"
-    val Disabled        = "Disabled"
-    val PendingDeletion = "PendingDeletion"
-    val PendingImport   = "PendingImport"
-    val Unavailable     = "Unavailable"
+  @js.native
+  sealed trait KeyState extends js.Any
+  object KeyState extends js.Object {
+    val Enabled         = "Enabled".asInstanceOf[KeyState]
+    val Disabled        = "Disabled".asInstanceOf[KeyState]
+    val PendingDeletion = "PendingDeletion".asInstanceOf[KeyState]
+    val PendingImport   = "PendingImport".asInstanceOf[KeyState]
+    val Unavailable     = "Unavailable".asInstanceOf[KeyState]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
   }
-
-  object KeyUsageTypeEnum {
-    val SIGN_VERIFY     = "SIGN_VERIFY"
-    val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT"
+  @js.native
+  sealed trait KeyUsageType extends js.Any
+  object KeyUsageType extends js.Object {
+    val SIGN_VERIFY     = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
+    val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT".asInstanceOf[KeyUsageType]
 
     val values = js.Object.freeze(js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT))
   }
@@ -1927,18 +1923,20 @@ package kms {
       __obj.asInstanceOf[ListRetirableGrantsRequest]
     }
   }
-
-  object MessageTypeEnum {
-    val RAW    = "RAW"
-    val DIGEST = "DIGEST"
+  @js.native
+  sealed trait MessageType extends js.Any
+  object MessageType extends js.Object {
+    val RAW    = "RAW".asInstanceOf[MessageType]
+    val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
     val values = js.Object.freeze(js.Array(RAW, DIGEST))
   }
-
-  object OriginTypeEnum {
-    val AWS_KMS      = "AWS_KMS"
-    val EXTERNAL     = "EXTERNAL"
-    val AWS_CLOUDHSM = "AWS_CLOUDHSM"
+  @js.native
+  sealed trait OriginType extends js.Any
+  object OriginType extends js.Object {
+    val AWS_KMS      = "AWS_KMS".asInstanceOf[OriginType]
+    val EXTERNAL     = "EXTERNAL".asInstanceOf[OriginType]
+    val AWS_CLOUDHSM = "AWS_CLOUDHSM".asInstanceOf[OriginType]
 
     val values = js.Object.freeze(js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM))
   }
@@ -2183,17 +2181,18 @@ package kms {
       __obj.asInstanceOf[SignResponse]
     }
   }
-
-  object SigningAlgorithmSpecEnum {
-    val RSASSA_PSS_SHA_256        = "RSASSA_PSS_SHA_256"
-    val RSASSA_PSS_SHA_384        = "RSASSA_PSS_SHA_384"
-    val RSASSA_PSS_SHA_512        = "RSASSA_PSS_SHA_512"
-    val RSASSA_PKCS1_V1_5_SHA_256 = "RSASSA_PKCS1_V1_5_SHA_256"
-    val RSASSA_PKCS1_V1_5_SHA_384 = "RSASSA_PKCS1_V1_5_SHA_384"
-    val RSASSA_PKCS1_V1_5_SHA_512 = "RSASSA_PKCS1_V1_5_SHA_512"
-    val ECDSA_SHA_256             = "ECDSA_SHA_256"
-    val ECDSA_SHA_384             = "ECDSA_SHA_384"
-    val ECDSA_SHA_512             = "ECDSA_SHA_512"
+  @js.native
+  sealed trait SigningAlgorithmSpec extends js.Any
+  object SigningAlgorithmSpec extends js.Object {
+    val RSASSA_PSS_SHA_256        = "RSASSA_PSS_SHA_256".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PSS_SHA_384        = "RSASSA_PSS_SHA_384".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PSS_SHA_512        = "RSASSA_PSS_SHA_512".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PKCS1_V1_5_SHA_256 = "RSASSA_PKCS1_V1_5_SHA_256".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PKCS1_V1_5_SHA_384 = "RSASSA_PKCS1_V1_5_SHA_384".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PKCS1_V1_5_SHA_512 = "RSASSA_PKCS1_V1_5_SHA_512".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_256             = "ECDSA_SHA_256".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_384             = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_512             = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2413,9 +2412,10 @@ package kms {
       __obj.asInstanceOf[VerifyResponse]
     }
   }
-
-  object WrappingKeySpecEnum {
-    val RSA_2048 = "RSA_2048"
+  @js.native
+  sealed trait WrappingKeySpec extends js.Any
+  object WrappingKeySpec extends js.Object {
+    val RSA_2048 = "RSA_2048".asInstanceOf[WrappingKeySpec]
 
     val values = js.Object.freeze(js.Array(RSA_2048))
   }

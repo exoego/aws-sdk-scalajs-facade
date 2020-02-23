@@ -9,7 +9,6 @@ import facade.amazonaws._
 package object workmail {
   type AccessControlRuleAction      = String
   type AccessControlRuleDescription = String
-  type AccessControlRuleEffect      = String
   type AccessControlRuleName        = String
   type AccessControlRuleNameList    = js.Array[AccessControlRuleName]
   type AccessControlRulesList       = js.Array[AccessControlRule]
@@ -17,7 +16,6 @@ package object workmail {
   type Aliases                      = js.Array[EmailAddress]
   type AmazonResourceName           = String
   type EmailAddress                 = String
-  type EntityState                  = String
   type GroupName                    = String
   type Groups                       = js.Array[Group]
   type IpAddress                    = String
@@ -26,20 +24,17 @@ package object workmail {
   type MailboxQuota                 = Int
   type MailboxSize                  = Double
   type MaxResults                   = Int
-  type MemberType                   = String
   type Members                      = js.Array[Member]
   type NextToken                    = String
   type OrganizationId               = String
   type OrganizationName             = String
   type OrganizationSummaries        = js.Array[OrganizationSummary]
   type Password                     = String
-  type PermissionType               = String
   type PermissionValues             = js.Array[PermissionType]
   type Permissions                  = js.Array[Permission]
   type ResourceDelegates            = js.Array[Delegate]
   type ResourceId                   = String
   type ResourceName                 = String
-  type ResourceType                 = String
   type Resources                    = js.Array[Resource]
   type TagKey                       = String
   type TagKeyList                   = js.Array[TagKey]
@@ -48,7 +43,6 @@ package object workmail {
   type Timestamp                    = js.Date
   type UserIdList                   = js.Array[WorkMailIdentifier]
   type UserName                     = String
-  type UserRole                     = String
   type Users                        = js.Array[User]
   type WorkMailIdentifier           = String
 
@@ -262,10 +256,11 @@ package workmail {
       __obj.asInstanceOf[AccessControlRule]
     }
   }
-
-  object AccessControlRuleEffectEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait AccessControlRuleEffect extends js.Any
+  object AccessControlRuleEffect extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
+    val DENY  = "DENY".asInstanceOf[AccessControlRuleEffect]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1097,11 +1092,12 @@ package workmail {
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
     }
   }
-
-  object EntityStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
-    val DELETED  = "DELETED"
+  @js.native
+  sealed trait EntityState extends js.Any
+  object EntityState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[EntityState]
+    val DISABLED = "DISABLED".asInstanceOf[EntityState]
+    val DELETED  = "DELETED".asInstanceOf[EntityState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -1678,10 +1674,11 @@ package workmail {
       __obj.asInstanceOf[Member]
     }
   }
-
-  object MemberTypeEnum {
-    val GROUP = "GROUP"
-    val USER  = "USER"
+  @js.native
+  sealed trait MemberType extends js.Any
+  object MemberType extends js.Object {
+    val GROUP = "GROUP".asInstanceOf[MemberType]
+    val USER  = "USER".asInstanceOf[MemberType]
 
     val values = js.Object.freeze(js.Array(GROUP, USER))
   }
@@ -1740,11 +1737,12 @@ package workmail {
       __obj.asInstanceOf[Permission]
     }
   }
-
-  object PermissionTypeEnum {
-    val FULL_ACCESS    = "FULL_ACCESS"
-    val SEND_AS        = "SEND_AS"
-    val SEND_ON_BEHALF = "SEND_ON_BEHALF"
+  @js.native
+  sealed trait PermissionType extends js.Any
+  object PermissionType extends js.Object {
+    val FULL_ACCESS    = "FULL_ACCESS".asInstanceOf[PermissionType]
+    val SEND_AS        = "SEND_AS".asInstanceOf[PermissionType]
+    val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
 
     val values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
   }
@@ -1957,10 +1955,11 @@ package workmail {
       __obj.asInstanceOf[Resource]
     }
   }
-
-  object ResourceTypeEnum {
-    val ROOM      = "ROOM"
-    val EQUIPMENT = "EQUIPMENT"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val ROOM      = "ROOM".asInstanceOf[ResourceType]
+    val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
   }
@@ -2210,11 +2209,12 @@ package workmail {
       __obj.asInstanceOf[User]
     }
   }
-
-  object UserRoleEnum {
-    val USER        = "USER"
-    val RESOURCE    = "RESOURCE"
-    val SYSTEM_USER = "SYSTEM_USER"
+  @js.native
+  sealed trait UserRole extends js.Any
+  object UserRole extends js.Object {
+    val USER        = "USER".asInstanceOf[UserRole]
+    val RESOURCE    = "RESOURCE".asInstanceOf[UserRole]
+    val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
 
     val values = js.Object.freeze(js.Array(USER, RESOURCE, SYSTEM_USER))
   }

@@ -18,7 +18,6 @@ package object pi {
   type MetricQueryList             = js.Array[MetricQuery]
   type MetricValuesList            = js.Array[Double]
   type ResponsePartitionKeyList    = js.Array[ResponsePartitionKey]
-  type ServiceType                 = String
   type StringList                  = js.Array[String]
 
   implicit final class PIOps(private val service: PI) extends AnyVal {
@@ -377,9 +376,10 @@ package pi {
       __obj.asInstanceOf[ResponseResourceMetricKey]
     }
   }
-
-  object ServiceTypeEnum {
-    val RDS = "RDS"
+  @js.native
+  sealed trait ServiceType extends js.Any
+  object ServiceType extends js.Object {
+    val RDS = "RDS".asInstanceOf[ServiceType]
 
     val values = js.Object.freeze(js.Array(RDS))
   }

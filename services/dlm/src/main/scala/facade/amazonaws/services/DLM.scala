@@ -7,46 +7,40 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dlm {
-  type AvailabilityZone            = String
-  type AvailabilityZoneList        = js.Array[AvailabilityZone]
-  type CmkArn                      = String
-  type CopyTags                    = Boolean
-  type CopyTagsNullable            = Boolean
-  type Count                       = Int
-  type CrossRegionCopyRules        = js.Array[CrossRegionCopyRule]
-  type Encrypted                   = Boolean
-  type ExcludeBootVolume           = Boolean
-  type ExecutionRoleArn            = String
-  type GettablePolicyStateValues   = String
-  type Interval                    = Int
-  type IntervalUnitValues          = String
-  type LifecyclePolicySummaryList  = js.Array[LifecyclePolicySummary]
-  type PolicyArn                   = String
-  type PolicyDescription           = String
-  type PolicyId                    = String
-  type PolicyIdList                = js.Array[PolicyId]
-  type PolicyTypeValues            = String
-  type ResourceTypeValues          = String
-  type ResourceTypeValuesList      = js.Array[ResourceTypeValues]
-  type RetentionIntervalUnitValues = String
-  type ScheduleList                = js.Array[Schedule]
-  type ScheduleName                = String
-  type SettablePolicyStateValues   = String
-  type StatusMessage               = String
-  type TagFilter                   = String
-  type TagKey                      = String
-  type TagKeyList                  = js.Array[TagKey]
-  type TagMap                      = js.Dictionary[TagValue]
-  type TagValue                    = String
-  type TagsToAddFilterList         = js.Array[TagFilter]
-  type TagsToAddList               = js.Array[Tag]
-  type TargetRegion                = String
-  type TargetTagList               = js.Array[Tag]
-  type TargetTagsFilterList        = js.Array[TagFilter]
-  type Time                        = String
-  type TimesList                   = js.Array[Time]
-  type Timestamp                   = js.Date
-  type VariableTagsList            = js.Array[Tag]
+  type AvailabilityZone           = String
+  type AvailabilityZoneList       = js.Array[AvailabilityZone]
+  type CmkArn                     = String
+  type CopyTags                   = Boolean
+  type CopyTagsNullable           = Boolean
+  type Count                      = Int
+  type CrossRegionCopyRules       = js.Array[CrossRegionCopyRule]
+  type Encrypted                  = Boolean
+  type ExcludeBootVolume          = Boolean
+  type ExecutionRoleArn           = String
+  type Interval                   = Int
+  type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
+  type PolicyArn                  = String
+  type PolicyDescription          = String
+  type PolicyId                   = String
+  type PolicyIdList               = js.Array[PolicyId]
+  type ResourceTypeValuesList     = js.Array[ResourceTypeValues]
+  type ScheduleList               = js.Array[Schedule]
+  type ScheduleName               = String
+  type StatusMessage              = String
+  type TagFilter                  = String
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagMap                     = js.Dictionary[TagValue]
+  type TagValue                   = String
+  type TagsToAddFilterList        = js.Array[TagFilter]
+  type TagsToAddList              = js.Array[Tag]
+  type TargetRegion               = String
+  type TargetTagList              = js.Array[Tag]
+  type TargetTagsFilterList       = js.Array[TagFilter]
+  type Time                       = String
+  type TimesList                  = js.Array[Time]
+  type Timestamp                  = js.Date
+  type VariableTagsList           = js.Array[Tag]
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
 
@@ -354,17 +348,19 @@ package dlm {
       __obj.asInstanceOf[GetLifecyclePolicyResponse]
     }
   }
-
-  object GettablePolicyStateValuesEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
-    val ERROR    = "ERROR"
+  @js.native
+  sealed trait GettablePolicyStateValues extends js.Any
+  object GettablePolicyStateValues extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[GettablePolicyStateValues]
+    val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
+    val ERROR    = "ERROR".asInstanceOf[GettablePolicyStateValues]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
-
-  object IntervalUnitValuesEnum {
-    val HOURS = "HOURS"
+  @js.native
+  sealed trait IntervalUnitValues extends js.Any
+  object IntervalUnitValues extends js.Object {
+    val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
 
     val values = js.Object.freeze(js.Array(HOURS))
   }
@@ -526,16 +522,18 @@ package dlm {
       __obj.asInstanceOf[PolicyDetails]
     }
   }
-
-  object PolicyTypeValuesEnum {
-    val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT"
+  @js.native
+  sealed trait PolicyTypeValues extends js.Any
+  object PolicyTypeValues extends js.Object {
+    val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
 
     val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
   }
-
-  object ResourceTypeValuesEnum {
-    val VOLUME   = "VOLUME"
-    val INSTANCE = "INSTANCE"
+  @js.native
+  sealed trait ResourceTypeValues extends js.Any
+  object ResourceTypeValues extends js.Object {
+    val VOLUME   = "VOLUME".asInstanceOf[ResourceTypeValues]
+    val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
 
     val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
   }
@@ -564,12 +562,13 @@ package dlm {
       __obj.asInstanceOf[RetainRule]
     }
   }
-
-  object RetentionIntervalUnitValuesEnum {
-    val DAYS   = "DAYS"
-    val WEEKS  = "WEEKS"
-    val MONTHS = "MONTHS"
-    val YEARS  = "YEARS"
+  @js.native
+  sealed trait RetentionIntervalUnitValues extends js.Any
+  object RetentionIntervalUnitValues extends js.Object {
+    val DAYS   = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
+    val WEEKS  = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
+    val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
+    val YEARS  = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
 
     val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
   }
@@ -613,10 +612,11 @@ package dlm {
       __obj.asInstanceOf[Schedule]
     }
   }
-
-  object SettablePolicyStateValuesEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait SettablePolicyStateValues extends js.Any
+  object SettablePolicyStateValues extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[SettablePolicyStateValues]
+    val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }

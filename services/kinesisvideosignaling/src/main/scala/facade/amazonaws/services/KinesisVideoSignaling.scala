@@ -13,7 +13,6 @@ package object kinesisvideosignaling {
   type MessagePayload = String
   type Password       = String
   type ResourceARN    = String
-  type Service        = String
   type Ttl            = Int
   type Uri            = String
   type Uris           = js.Array[Uri]
@@ -150,9 +149,10 @@ package kinesisvideosignaling {
       __obj.asInstanceOf[SendAlexaOfferToMasterResponse]
     }
   }
-
-  object ServiceEnum {
-    val TURN = "TURN"
+  @js.native
+  sealed trait Service extends js.Any
+  object Service extends js.Object {
+    val TURN = "TURN".asInstanceOf[Service]
 
     val values = js.Object.freeze(js.Array(TURN))
   }

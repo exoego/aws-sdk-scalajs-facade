@@ -16,21 +16,16 @@ package object accessanalyzer {
   type FilterCriteriaMap      = js.Dictionary[Criterion]
   type FindingId              = String
   type FindingIdList          = js.Array[FindingId]
-  type FindingStatus          = String
-  type FindingStatusUpdate    = String
   type FindingsList           = js.Array[FindingSummary]
   type InlineArchiveRulesList = js.Array[InlineArchiveRule]
   type Name                   = String
-  type OrderBy                = String
   type PrincipalMap           = js.Dictionary[String]
   type ResourceArn            = String
-  type ResourceType           = String
   type SharedViaList          = js.Array[String]
   type TagKeys                = js.Array[String]
   type TagsMap                = js.Dictionary[String]
   type Timestamp              = js.Date
   type Token                  = String
-  type Type                   = String
   type ValueList              = js.Array[String]
 
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
@@ -456,18 +451,20 @@ package accessanalyzer {
       __obj.asInstanceOf[Finding]
     }
   }
-
-  object FindingStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val ARCHIVED = "ARCHIVED"
-    val RESOLVED = "RESOLVED"
+  @js.native
+  sealed trait FindingStatus extends js.Any
+  object FindingStatus extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[FindingStatus]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
+    val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED, RESOLVED))
   }
-
-  object FindingStatusUpdateEnum {
-    val ACTIVE   = "ACTIVE"
-    val ARCHIVED = "ARCHIVED"
+  @js.native
+  sealed trait FindingStatusUpdate extends js.Any
+  object FindingStatusUpdate extends js.Object {
+    val ACTIVE   = "ACTIVE".asInstanceOf[FindingStatusUpdate]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
@@ -973,21 +970,23 @@ package accessanalyzer {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
-
-  object OrderByEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait OrderBy extends js.Any
+  object OrderBy extends js.Object {
+    val ASC  = "ASC".asInstanceOf[OrderBy]
+    val DESC = "DESC".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
-
-  object ResourceTypeEnum {
-    val `AWS::IAM::Role`            = "AWS::IAM::Role"
-    val `AWS::KMS::Key`             = "AWS::KMS::Key"
-    val `AWS::Lambda::Function`     = "AWS::Lambda::Function"
-    val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion"
-    val `AWS::S3::Bucket`           = "AWS::S3::Bucket"
-    val `AWS::SQS::Queue`           = "AWS::SQS::Queue"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val `AWS::IAM::Role`            = "AWS::IAM::Role".asInstanceOf[ResourceType]
+    val `AWS::KMS::Key`             = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::Lambda::Function`     = "AWS::Lambda::Function".asInstanceOf[ResourceType]
+    val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
+    val `AWS::S3::Bucket`           = "AWS::S3::Bucket".asInstanceOf[ResourceType]
+    val `AWS::SQS::Queue`           = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1086,9 +1085,10 @@ package accessanalyzer {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object TypeEnum {
-    val ACCOUNT = "ACCOUNT"
+  @js.native
+  sealed trait Type extends js.Any
+  object Type extends js.Object {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }

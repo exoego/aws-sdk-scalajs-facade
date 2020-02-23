@@ -9,12 +9,10 @@ import facade.amazonaws._
 package object codeguruprofiler {
   type AgentProfile               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type AggregatedProfile          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type AggregationPeriod          = String
   type ClientToken                = String
   type FleetInstanceId            = String
   type MaxDepth                   = Int
   type MaxResults                 = Int
-  type OrderBy                    = String
   type PaginationToken            = String
   type Period                     = String
   type ProfileTimes               = js.Array[ProfileTime]
@@ -136,10 +134,12 @@ package codeguruprofiler {
   /**
     * Periods of time used for aggregation of profiles, represented using ISO 8601 format.
     */
-  object AggregationPeriodEnum {
-    val P1D  = "P1D"
-    val PT1H = "PT1H"
-    val PT5M = "PT5M"
+  @js.native
+  sealed trait AggregationPeriod extends js.Any
+  object AggregationPeriod extends js.Object {
+    val P1D  = "P1D".asInstanceOf[AggregationPeriod]
+    val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
+    val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
 
     val values = js.Object.freeze(js.Array(P1D, PT1H, PT5M))
   }
@@ -493,10 +493,11 @@ package codeguruprofiler {
       __obj.asInstanceOf[ListProfilingGroupsResponse]
     }
   }
-
-  object OrderByEnum {
-    val TimestampAscending  = "TimestampAscending"
-    val TimestampDescending = "TimestampDescending"
+  @js.native
+  sealed trait OrderBy extends js.Any
+  object OrderBy extends js.Object {
+    val TimestampAscending  = "TimestampAscending".asInstanceOf[OrderBy]
+    val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(TimestampAscending, TimestampDescending))
   }

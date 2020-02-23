@@ -7,7 +7,6 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object datapipeline {
-  type OperatorType            = String
   type ParameterAttributeList  = js.Array[ParameterAttribute]
   type ParameterObjectList     = js.Array[ParameterObject]
   type ParameterValueList      = js.Array[ParameterValue]
@@ -15,7 +14,6 @@ package object datapipeline {
   type PipelineObjectList      = js.Array[PipelineObject]
   type PipelineObjectMap       = js.Dictionary[PipelineObject]
   type SelectorList            = js.Array[Selector]
-  type TaskStatus              = String
   type ValidationErrors        = js.Array[ValidationError]
   type ValidationWarnings      = js.Array[ValidationWarning]
   type attributeNameString     = String
@@ -634,13 +632,14 @@ package datapipeline {
       __obj.asInstanceOf[Operator]
     }
   }
-
-  object OperatorTypeEnum {
-    val EQ      = "EQ"
-    val REF_EQ  = "REF_EQ"
-    val LE      = "LE"
-    val GE      = "GE"
-    val BETWEEN = "BETWEEN"
+  @js.native
+  sealed trait OperatorType extends js.Any
+  object OperatorType extends js.Object {
+    val EQ      = "EQ".asInstanceOf[OperatorType]
+    val REF_EQ  = "REF_EQ".asInstanceOf[OperatorType]
+    val LE      = "LE".asInstanceOf[OperatorType]
+    val GE      = "GE".asInstanceOf[OperatorType]
+    val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
     val values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
   }
@@ -1285,11 +1284,12 @@ package datapipeline {
       __obj.asInstanceOf[TaskObject]
     }
   }
-
-  object TaskStatusEnum {
-    val FINISHED = "FINISHED"
-    val FAILED   = "FAILED"
-    val FALSE    = "FALSE"
+  @js.native
+  sealed trait TaskStatus extends js.Any
+  object TaskStatus extends js.Object {
+    val FINISHED = "FINISHED".asInstanceOf[TaskStatus]
+    val FAILED   = "FAILED".asInstanceOf[TaskStatus]
+    val FALSE    = "FALSE".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
   }

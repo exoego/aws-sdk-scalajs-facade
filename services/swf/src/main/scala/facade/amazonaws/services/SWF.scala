@@ -7,80 +7,54 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object swf {
-  type ActivityId                                        = String
-  type ActivityTaskTimeoutType                           = String
-  type ActivityTypeInfoList                              = js.Array[ActivityTypeInfo]
-  type Arn                                               = String
-  type CancelTimerFailedCause                            = String
-  type CancelWorkflowExecutionFailedCause                = String
-  type Canceled                                          = Boolean
-  type CauseMessage                                      = String
-  type ChildPolicy                                       = String
-  type CloseStatus                                       = String
-  type CompleteWorkflowExecutionFailedCause              = String
-  type ContinueAsNewWorkflowExecutionFailedCause         = String
-  type Count                                             = Int
-  type Data                                              = String
-  type DecisionList                                      = js.Array[Decision]
-  type DecisionTaskTimeoutType                           = String
-  type DecisionType                                      = String
-  type Description                                       = String
-  type DomainInfoList                                    = js.Array[DomainInfo]
-  type DomainName                                        = String
-  type DurationInDays                                    = String
-  type DurationInSeconds                                 = String
-  type DurationInSecondsOptional                         = String
-  type EventId                                           = Double
-  type EventType                                         = String
-  type ExecutionStatus                                   = String
-  type FailWorkflowExecutionFailedCause                  = String
-  type FailureReason                                     = String
-  type FunctionId                                        = String
-  type FunctionInput                                     = String
-  type FunctionName                                      = String
-  type HistoryEventList                                  = js.Array[HistoryEvent]
-  type Identity                                          = String
-  type LambdaFunctionTimeoutType                         = String
-  type LimitedData                                       = String
-  type MarkerName                                        = String
-  type Name                                              = String
-  type OpenDecisionTasksCount                            = Int
-  type PageSize                                          = Int
-  type PageToken                                         = String
-  type RecordMarkerFailedCause                           = String
-  type RegistrationStatus                                = String
-  type RequestCancelActivityTaskFailedCause              = String
-  type RequestCancelExternalWorkflowExecutionFailedCause = String
-  type ResourceTagKey                                    = String
-  type ResourceTagKeyList                                = js.Array[ResourceTagKey]
-  type ResourceTagList                                   = js.Array[ResourceTag]
-  type ResourceTagValue                                  = String
-  type ReverseOrder                                      = Boolean
-  type ScheduleActivityTaskFailedCause                   = String
-  type ScheduleLambdaFunctionFailedCause                 = String
-  type SignalExternalWorkflowExecutionFailedCause        = String
-  type SignalName                                        = String
-  type StartChildWorkflowExecutionFailedCause            = String
-  type StartLambdaFunctionFailedCause                    = String
-  type StartTimerFailedCause                             = String
-  type Tag                                               = String
-  type TagList                                           = js.Array[Tag]
-  type TaskPriority                                      = String
-  type TaskToken                                         = String
-  type TerminateReason                                   = String
-  type TimerId                                           = String
-  type Timestamp                                         = js.Date
-  type Truncated                                         = Boolean
-  type Version                                           = String
-  type VersionOptional                                   = String
-  type WorkflowExecutionCancelRequestedCause             = String
-  type WorkflowExecutionInfoList                         = js.Array[WorkflowExecutionInfo]
-  type WorkflowExecutionTerminatedCause                  = String
-  type WorkflowExecutionTimeoutType                      = String
-  type WorkflowId                                        = String
-  type WorkflowRunId                                     = String
-  type WorkflowRunIdOptional                             = String
-  type WorkflowTypeInfoList                              = js.Array[WorkflowTypeInfo]
+  type ActivityId                = String
+  type ActivityTypeInfoList      = js.Array[ActivityTypeInfo]
+  type Arn                       = String
+  type Canceled                  = Boolean
+  type CauseMessage              = String
+  type Count                     = Int
+  type Data                      = String
+  type DecisionList              = js.Array[Decision]
+  type Description               = String
+  type DomainInfoList            = js.Array[DomainInfo]
+  type DomainName                = String
+  type DurationInDays            = String
+  type DurationInSeconds         = String
+  type DurationInSecondsOptional = String
+  type EventId                   = Double
+  type FailureReason             = String
+  type FunctionId                = String
+  type FunctionInput             = String
+  type FunctionName              = String
+  type HistoryEventList          = js.Array[HistoryEvent]
+  type Identity                  = String
+  type LimitedData               = String
+  type MarkerName                = String
+  type Name                      = String
+  type OpenDecisionTasksCount    = Int
+  type PageSize                  = Int
+  type PageToken                 = String
+  type ResourceTagKey            = String
+  type ResourceTagKeyList        = js.Array[ResourceTagKey]
+  type ResourceTagList           = js.Array[ResourceTag]
+  type ResourceTagValue          = String
+  type ReverseOrder              = Boolean
+  type SignalName                = String
+  type Tag                       = String
+  type TagList                   = js.Array[Tag]
+  type TaskPriority              = String
+  type TaskToken                 = String
+  type TerminateReason           = String
+  type TimerId                   = String
+  type Timestamp                 = js.Date
+  type Truncated                 = Boolean
+  type Version                   = String
+  type VersionOptional           = String
+  type WorkflowExecutionInfoList = js.Array[WorkflowExecutionInfo]
+  type WorkflowId                = String
+  type WorkflowRunId             = String
+  type WorkflowRunIdOptional     = String
+  type WorkflowTypeInfoList      = js.Array[WorkflowTypeInfo]
 
   implicit final class SWFOps(private val service: SWF) extends AnyVal {
 
@@ -489,12 +463,13 @@ package swf {
       __obj.asInstanceOf[ActivityTaskTimedOutEventAttributes]
     }
   }
-
-  object ActivityTaskTimeoutTypeEnum {
-    val START_TO_CLOSE    = "START_TO_CLOSE"
-    val SCHEDULE_TO_START = "SCHEDULE_TO_START"
-    val SCHEDULE_TO_CLOSE = "SCHEDULE_TO_CLOSE"
-    val HEARTBEAT         = "HEARTBEAT"
+  @js.native
+  sealed trait ActivityTaskTimeoutType extends js.Any
+  object ActivityTaskTimeoutType extends js.Object {
+    val START_TO_CLOSE    = "START_TO_CLOSE".asInstanceOf[ActivityTaskTimeoutType]
+    val SCHEDULE_TO_START = "SCHEDULE_TO_START".asInstanceOf[ActivityTaskTimeoutType]
+    val SCHEDULE_TO_CLOSE = "SCHEDULE_TO_CLOSE".asInstanceOf[ActivityTaskTimeoutType]
+    val HEARTBEAT         = "HEARTBEAT".asInstanceOf[ActivityTaskTimeoutType]
 
     val values = js.Object.freeze(js.Array(START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT))
   }
@@ -672,10 +647,11 @@ package swf {
       __obj.asInstanceOf[CancelTimerDecisionAttributes]
     }
   }
-
-  object CancelTimerFailedCauseEnum {
-    val TIMER_ID_UNKNOWN        = "TIMER_ID_UNKNOWN"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait CancelTimerFailedCause extends js.Any
+  object CancelTimerFailedCause extends js.Object {
+    val TIMER_ID_UNKNOWN        = "TIMER_ID_UNKNOWN".asInstanceOf[CancelTimerFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelTimerFailedCause]
 
     val values = js.Object.freeze(js.Array(TIMER_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
   }
@@ -731,10 +707,11 @@ package swf {
       __obj.asInstanceOf[CancelWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object CancelWorkflowExecutionFailedCauseEnum {
-    val UNHANDLED_DECISION      = "UNHANDLED_DECISION"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait CancelWorkflowExecutionFailedCause extends js.Any
+  object CancelWorkflowExecutionFailedCause extends js.Object {
+    val UNHANDLED_DECISION      = "UNHANDLED_DECISION".asInstanceOf[CancelWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
   }
@@ -762,11 +739,12 @@ package swf {
       __obj.asInstanceOf[CancelWorkflowExecutionFailedEventAttributes]
     }
   }
-
-  object ChildPolicyEnum {
-    val TERMINATE      = "TERMINATE"
-    val REQUEST_CANCEL = "REQUEST_CANCEL"
-    val ABANDON        = "ABANDON"
+  @js.native
+  sealed trait ChildPolicy extends js.Any
+  object ChildPolicy extends js.Object {
+    val TERMINATE      = "TERMINATE".asInstanceOf[ChildPolicy]
+    val REQUEST_CANCEL = "REQUEST_CANCEL".asInstanceOf[ChildPolicy]
+    val ABANDON        = "ABANDON".asInstanceOf[ChildPolicy]
 
     val values = js.Object.freeze(js.Array(TERMINATE, REQUEST_CANCEL, ABANDON))
   }
@@ -962,14 +940,15 @@ package swf {
       __obj.asInstanceOf[ChildWorkflowExecutionTimedOutEventAttributes]
     }
   }
-
-  object CloseStatusEnum {
-    val COMPLETED        = "COMPLETED"
-    val FAILED           = "FAILED"
-    val CANCELED         = "CANCELED"
-    val TERMINATED       = "TERMINATED"
-    val CONTINUED_AS_NEW = "CONTINUED_AS_NEW"
-    val TIMED_OUT        = "TIMED_OUT"
+  @js.native
+  sealed trait CloseStatus extends js.Any
+  object CloseStatus extends js.Object {
+    val COMPLETED        = "COMPLETED".asInstanceOf[CloseStatus]
+    val FAILED           = "FAILED".asInstanceOf[CloseStatus]
+    val CANCELED         = "CANCELED".asInstanceOf[CloseStatus]
+    val TERMINATED       = "TERMINATED".asInstanceOf[CloseStatus]
+    val CONTINUED_AS_NEW = "CONTINUED_AS_NEW".asInstanceOf[CloseStatus]
+    val TIMED_OUT        = "TIMED_OUT".asInstanceOf[CloseStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT))
   }
@@ -1019,10 +998,11 @@ package swf {
       __obj.asInstanceOf[CompleteWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object CompleteWorkflowExecutionFailedCauseEnum {
-    val UNHANDLED_DECISION      = "UNHANDLED_DECISION"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait CompleteWorkflowExecutionFailedCause extends js.Any
+  object CompleteWorkflowExecutionFailedCause extends js.Object {
+    val UNHANDLED_DECISION      = "UNHANDLED_DECISION".asInstanceOf[CompleteWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CompleteWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
   }
@@ -1104,17 +1084,24 @@ package swf {
       __obj.asInstanceOf[ContinueAsNewWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object ContinueAsNewWorkflowExecutionFailedCauseEnum {
-    val UNHANDLED_DECISION                                 = "UNHANDLED_DECISION"
-    val WORKFLOW_TYPE_DEPRECATED                           = "WORKFLOW_TYPE_DEPRECATED"
-    val WORKFLOW_TYPE_DOES_NOT_EXIST                       = "WORKFLOW_TYPE_DOES_NOT_EXIST"
-    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED      = "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_TASK_LIST_UNDEFINED                        = "DEFAULT_TASK_LIST_UNDEFINED"
-    val DEFAULT_CHILD_POLICY_UNDEFINED                     = "DEFAULT_CHILD_POLICY_UNDEFINED"
-    val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED   = "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-    val OPERATION_NOT_PERMITTED                            = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait ContinueAsNewWorkflowExecutionFailedCause extends js.Any
+  object ContinueAsNewWorkflowExecutionFailedCause extends js.Object {
+    val UNHANDLED_DECISION       = "UNHANDLED_DECISION".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val WORKFLOW_TYPE_DEPRECATED = "WORKFLOW_TYPE_DEPRECATED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val WORKFLOW_TYPE_DOES_NOT_EXIST =
+      "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_LIST_UNDEFINED =
+      "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_CHILD_POLICY_UNDEFINED =
+      "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED =
+      "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1550,27 +1537,29 @@ package swf {
       __obj.asInstanceOf[DecisionTaskTimedOutEventAttributes]
     }
   }
-
-  object DecisionTaskTimeoutTypeEnum {
-    val START_TO_CLOSE = "START_TO_CLOSE"
+  @js.native
+  sealed trait DecisionTaskTimeoutType extends js.Any
+  object DecisionTaskTimeoutType extends js.Object {
+    val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[DecisionTaskTimeoutType]
 
     val values = js.Object.freeze(js.Array(START_TO_CLOSE))
   }
-
-  object DecisionTypeEnum {
-    val ScheduleActivityTask                   = "ScheduleActivityTask"
-    val RequestCancelActivityTask              = "RequestCancelActivityTask"
-    val CompleteWorkflowExecution              = "CompleteWorkflowExecution"
-    val FailWorkflowExecution                  = "FailWorkflowExecution"
-    val CancelWorkflowExecution                = "CancelWorkflowExecution"
-    val ContinueAsNewWorkflowExecution         = "ContinueAsNewWorkflowExecution"
-    val RecordMarker                           = "RecordMarker"
-    val StartTimer                             = "StartTimer"
-    val CancelTimer                            = "CancelTimer"
-    val SignalExternalWorkflowExecution        = "SignalExternalWorkflowExecution"
-    val RequestCancelExternalWorkflowExecution = "RequestCancelExternalWorkflowExecution"
-    val StartChildWorkflowExecution            = "StartChildWorkflowExecution"
-    val ScheduleLambdaFunction                 = "ScheduleLambdaFunction"
+  @js.native
+  sealed trait DecisionType extends js.Any
+  object DecisionType extends js.Object {
+    val ScheduleActivityTask                   = "ScheduleActivityTask".asInstanceOf[DecisionType]
+    val RequestCancelActivityTask              = "RequestCancelActivityTask".asInstanceOf[DecisionType]
+    val CompleteWorkflowExecution              = "CompleteWorkflowExecution".asInstanceOf[DecisionType]
+    val FailWorkflowExecution                  = "FailWorkflowExecution".asInstanceOf[DecisionType]
+    val CancelWorkflowExecution                = "CancelWorkflowExecution".asInstanceOf[DecisionType]
+    val ContinueAsNewWorkflowExecution         = "ContinueAsNewWorkflowExecution".asInstanceOf[DecisionType]
+    val RecordMarker                           = "RecordMarker".asInstanceOf[DecisionType]
+    val StartTimer                             = "StartTimer".asInstanceOf[DecisionType]
+    val CancelTimer                            = "CancelTimer".asInstanceOf[DecisionType]
+    val SignalExternalWorkflowExecution        = "SignalExternalWorkflowExecution".asInstanceOf[DecisionType]
+    val RequestCancelExternalWorkflowExecution = "RequestCancelExternalWorkflowExecution".asInstanceOf[DecisionType]
+    val StartChildWorkflowExecution            = "StartChildWorkflowExecution".asInstanceOf[DecisionType]
+    val ScheduleLambdaFunction                 = "ScheduleLambdaFunction".asInstanceOf[DecisionType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1830,62 +1819,65 @@ package swf {
       __obj.asInstanceOf[DomainInfos]
     }
   }
-
-  object EventTypeEnum {
-    val WorkflowExecutionStarted                        = "WorkflowExecutionStarted"
-    val WorkflowExecutionCancelRequested                = "WorkflowExecutionCancelRequested"
-    val WorkflowExecutionCompleted                      = "WorkflowExecutionCompleted"
-    val CompleteWorkflowExecutionFailed                 = "CompleteWorkflowExecutionFailed"
-    val WorkflowExecutionFailed                         = "WorkflowExecutionFailed"
-    val FailWorkflowExecutionFailed                     = "FailWorkflowExecutionFailed"
-    val WorkflowExecutionTimedOut                       = "WorkflowExecutionTimedOut"
-    val WorkflowExecutionCanceled                       = "WorkflowExecutionCanceled"
-    val CancelWorkflowExecutionFailed                   = "CancelWorkflowExecutionFailed"
-    val WorkflowExecutionContinuedAsNew                 = "WorkflowExecutionContinuedAsNew"
-    val ContinueAsNewWorkflowExecutionFailed            = "ContinueAsNewWorkflowExecutionFailed"
-    val WorkflowExecutionTerminated                     = "WorkflowExecutionTerminated"
-    val DecisionTaskScheduled                           = "DecisionTaskScheduled"
-    val DecisionTaskStarted                             = "DecisionTaskStarted"
-    val DecisionTaskCompleted                           = "DecisionTaskCompleted"
-    val DecisionTaskTimedOut                            = "DecisionTaskTimedOut"
-    val ActivityTaskScheduled                           = "ActivityTaskScheduled"
-    val ScheduleActivityTaskFailed                      = "ScheduleActivityTaskFailed"
-    val ActivityTaskStarted                             = "ActivityTaskStarted"
-    val ActivityTaskCompleted                           = "ActivityTaskCompleted"
-    val ActivityTaskFailed                              = "ActivityTaskFailed"
-    val ActivityTaskTimedOut                            = "ActivityTaskTimedOut"
-    val ActivityTaskCanceled                            = "ActivityTaskCanceled"
-    val ActivityTaskCancelRequested                     = "ActivityTaskCancelRequested"
-    val RequestCancelActivityTaskFailed                 = "RequestCancelActivityTaskFailed"
-    val WorkflowExecutionSignaled                       = "WorkflowExecutionSignaled"
-    val MarkerRecorded                                  = "MarkerRecorded"
-    val RecordMarkerFailed                              = "RecordMarkerFailed"
-    val TimerStarted                                    = "TimerStarted"
-    val StartTimerFailed                                = "StartTimerFailed"
-    val TimerFired                                      = "TimerFired"
-    val TimerCanceled                                   = "TimerCanceled"
-    val CancelTimerFailed                               = "CancelTimerFailed"
-    val StartChildWorkflowExecutionInitiated            = "StartChildWorkflowExecutionInitiated"
-    val StartChildWorkflowExecutionFailed               = "StartChildWorkflowExecutionFailed"
-    val ChildWorkflowExecutionStarted                   = "ChildWorkflowExecutionStarted"
-    val ChildWorkflowExecutionCompleted                 = "ChildWorkflowExecutionCompleted"
-    val ChildWorkflowExecutionFailed                    = "ChildWorkflowExecutionFailed"
-    val ChildWorkflowExecutionTimedOut                  = "ChildWorkflowExecutionTimedOut"
-    val ChildWorkflowExecutionCanceled                  = "ChildWorkflowExecutionCanceled"
-    val ChildWorkflowExecutionTerminated                = "ChildWorkflowExecutionTerminated"
-    val SignalExternalWorkflowExecutionInitiated        = "SignalExternalWorkflowExecutionInitiated"
-    val SignalExternalWorkflowExecutionFailed           = "SignalExternalWorkflowExecutionFailed"
-    val ExternalWorkflowExecutionSignaled               = "ExternalWorkflowExecutionSignaled"
-    val RequestCancelExternalWorkflowExecutionInitiated = "RequestCancelExternalWorkflowExecutionInitiated"
-    val RequestCancelExternalWorkflowExecutionFailed    = "RequestCancelExternalWorkflowExecutionFailed"
-    val ExternalWorkflowExecutionCancelRequested        = "ExternalWorkflowExecutionCancelRequested"
-    val LambdaFunctionScheduled                         = "LambdaFunctionScheduled"
-    val LambdaFunctionStarted                           = "LambdaFunctionStarted"
-    val LambdaFunctionCompleted                         = "LambdaFunctionCompleted"
-    val LambdaFunctionFailed                            = "LambdaFunctionFailed"
-    val LambdaFunctionTimedOut                          = "LambdaFunctionTimedOut"
-    val ScheduleLambdaFunctionFailed                    = "ScheduleLambdaFunctionFailed"
-    val StartLambdaFunctionFailed                       = "StartLambdaFunctionFailed"
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType extends js.Object {
+    val WorkflowExecutionStarted                 = "WorkflowExecutionStarted".asInstanceOf[EventType]
+    val WorkflowExecutionCancelRequested         = "WorkflowExecutionCancelRequested".asInstanceOf[EventType]
+    val WorkflowExecutionCompleted               = "WorkflowExecutionCompleted".asInstanceOf[EventType]
+    val CompleteWorkflowExecutionFailed          = "CompleteWorkflowExecutionFailed".asInstanceOf[EventType]
+    val WorkflowExecutionFailed                  = "WorkflowExecutionFailed".asInstanceOf[EventType]
+    val FailWorkflowExecutionFailed              = "FailWorkflowExecutionFailed".asInstanceOf[EventType]
+    val WorkflowExecutionTimedOut                = "WorkflowExecutionTimedOut".asInstanceOf[EventType]
+    val WorkflowExecutionCanceled                = "WorkflowExecutionCanceled".asInstanceOf[EventType]
+    val CancelWorkflowExecutionFailed            = "CancelWorkflowExecutionFailed".asInstanceOf[EventType]
+    val WorkflowExecutionContinuedAsNew          = "WorkflowExecutionContinuedAsNew".asInstanceOf[EventType]
+    val ContinueAsNewWorkflowExecutionFailed     = "ContinueAsNewWorkflowExecutionFailed".asInstanceOf[EventType]
+    val WorkflowExecutionTerminated              = "WorkflowExecutionTerminated".asInstanceOf[EventType]
+    val DecisionTaskScheduled                    = "DecisionTaskScheduled".asInstanceOf[EventType]
+    val DecisionTaskStarted                      = "DecisionTaskStarted".asInstanceOf[EventType]
+    val DecisionTaskCompleted                    = "DecisionTaskCompleted".asInstanceOf[EventType]
+    val DecisionTaskTimedOut                     = "DecisionTaskTimedOut".asInstanceOf[EventType]
+    val ActivityTaskScheduled                    = "ActivityTaskScheduled".asInstanceOf[EventType]
+    val ScheduleActivityTaskFailed               = "ScheduleActivityTaskFailed".asInstanceOf[EventType]
+    val ActivityTaskStarted                      = "ActivityTaskStarted".asInstanceOf[EventType]
+    val ActivityTaskCompleted                    = "ActivityTaskCompleted".asInstanceOf[EventType]
+    val ActivityTaskFailed                       = "ActivityTaskFailed".asInstanceOf[EventType]
+    val ActivityTaskTimedOut                     = "ActivityTaskTimedOut".asInstanceOf[EventType]
+    val ActivityTaskCanceled                     = "ActivityTaskCanceled".asInstanceOf[EventType]
+    val ActivityTaskCancelRequested              = "ActivityTaskCancelRequested".asInstanceOf[EventType]
+    val RequestCancelActivityTaskFailed          = "RequestCancelActivityTaskFailed".asInstanceOf[EventType]
+    val WorkflowExecutionSignaled                = "WorkflowExecutionSignaled".asInstanceOf[EventType]
+    val MarkerRecorded                           = "MarkerRecorded".asInstanceOf[EventType]
+    val RecordMarkerFailed                       = "RecordMarkerFailed".asInstanceOf[EventType]
+    val TimerStarted                             = "TimerStarted".asInstanceOf[EventType]
+    val StartTimerFailed                         = "StartTimerFailed".asInstanceOf[EventType]
+    val TimerFired                               = "TimerFired".asInstanceOf[EventType]
+    val TimerCanceled                            = "TimerCanceled".asInstanceOf[EventType]
+    val CancelTimerFailed                        = "CancelTimerFailed".asInstanceOf[EventType]
+    val StartChildWorkflowExecutionInitiated     = "StartChildWorkflowExecutionInitiated".asInstanceOf[EventType]
+    val StartChildWorkflowExecutionFailed        = "StartChildWorkflowExecutionFailed".asInstanceOf[EventType]
+    val ChildWorkflowExecutionStarted            = "ChildWorkflowExecutionStarted".asInstanceOf[EventType]
+    val ChildWorkflowExecutionCompleted          = "ChildWorkflowExecutionCompleted".asInstanceOf[EventType]
+    val ChildWorkflowExecutionFailed             = "ChildWorkflowExecutionFailed".asInstanceOf[EventType]
+    val ChildWorkflowExecutionTimedOut           = "ChildWorkflowExecutionTimedOut".asInstanceOf[EventType]
+    val ChildWorkflowExecutionCanceled           = "ChildWorkflowExecutionCanceled".asInstanceOf[EventType]
+    val ChildWorkflowExecutionTerminated         = "ChildWorkflowExecutionTerminated".asInstanceOf[EventType]
+    val SignalExternalWorkflowExecutionInitiated = "SignalExternalWorkflowExecutionInitiated".asInstanceOf[EventType]
+    val SignalExternalWorkflowExecutionFailed    = "SignalExternalWorkflowExecutionFailed".asInstanceOf[EventType]
+    val ExternalWorkflowExecutionSignaled        = "ExternalWorkflowExecutionSignaled".asInstanceOf[EventType]
+    val RequestCancelExternalWorkflowExecutionInitiated =
+      "RequestCancelExternalWorkflowExecutionInitiated".asInstanceOf[EventType]
+    val RequestCancelExternalWorkflowExecutionFailed =
+      "RequestCancelExternalWorkflowExecutionFailed".asInstanceOf[EventType]
+    val ExternalWorkflowExecutionCancelRequested = "ExternalWorkflowExecutionCancelRequested".asInstanceOf[EventType]
+    val LambdaFunctionScheduled                  = "LambdaFunctionScheduled".asInstanceOf[EventType]
+    val LambdaFunctionStarted                    = "LambdaFunctionStarted".asInstanceOf[EventType]
+    val LambdaFunctionCompleted                  = "LambdaFunctionCompleted".asInstanceOf[EventType]
+    val LambdaFunctionFailed                     = "LambdaFunctionFailed".asInstanceOf[EventType]
+    val LambdaFunctionTimedOut                   = "LambdaFunctionTimedOut".asInstanceOf[EventType]
+    val ScheduleLambdaFunctionFailed             = "ScheduleLambdaFunctionFailed".asInstanceOf[EventType]
+    val StartLambdaFunctionFailed                = "StartLambdaFunctionFailed".asInstanceOf[EventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1946,10 +1938,11 @@ package swf {
       )
     )
   }
-
-  object ExecutionStatusEnum {
-    val OPEN   = "OPEN"
-    val CLOSED = "CLOSED"
+  @js.native
+  sealed trait ExecutionStatus extends js.Any
+  object ExecutionStatus extends js.Object {
+    val OPEN   = "OPEN".asInstanceOf[ExecutionStatus]
+    val CLOSED = "CLOSED".asInstanceOf[ExecutionStatus]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
@@ -2053,10 +2046,11 @@ package swf {
       __obj.asInstanceOf[FailWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object FailWorkflowExecutionFailedCauseEnum {
-    val UNHANDLED_DECISION      = "UNHANDLED_DECISION"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait FailWorkflowExecutionFailedCause extends js.Any
+  object FailWorkflowExecutionFailedCause extends js.Object {
+    val UNHANDLED_DECISION      = "UNHANDLED_DECISION".asInstanceOf[FailWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[FailWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
   }
@@ -2669,9 +2663,10 @@ package swf {
       __obj.asInstanceOf[LambdaFunctionTimedOutEventAttributes]
     }
   }
-
-  object LambdaFunctionTimeoutTypeEnum {
-    val START_TO_CLOSE = "START_TO_CLOSE"
+  @js.native
+  sealed trait LambdaFunctionTimeoutType extends js.Any
+  object LambdaFunctionTimeoutType extends js.Object {
+    val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[LambdaFunctionTimeoutType]
 
     val values = js.Object.freeze(js.Array(START_TO_CLOSE))
   }
@@ -3045,9 +3040,10 @@ package swf {
       __obj.asInstanceOf[RecordMarkerDecisionAttributes]
     }
   }
-
-  object RecordMarkerFailedCauseEnum {
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait RecordMarkerFailedCause extends js.Any
+  object RecordMarkerFailedCause extends js.Object {
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RecordMarkerFailedCause]
 
     val values = js.Object.freeze(js.Array(OPERATION_NOT_PERMITTED))
   }
@@ -3207,10 +3203,11 @@ package swf {
       __obj.asInstanceOf[RegisterWorkflowTypeInput]
     }
   }
-
-  object RegistrationStatusEnum {
-    val REGISTERED = "REGISTERED"
-    val DEPRECATED = "DEPRECATED"
+  @js.native
+  sealed trait RegistrationStatus extends js.Any
+  object RegistrationStatus extends js.Object {
+    val REGISTERED = "REGISTERED".asInstanceOf[RegistrationStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[RegistrationStatus]
 
     val values = js.Object.freeze(js.Array(REGISTERED, DEPRECATED))
   }
@@ -3241,10 +3238,11 @@ package swf {
       __obj.asInstanceOf[RequestCancelActivityTaskDecisionAttributes]
     }
   }
-
-  object RequestCancelActivityTaskFailedCauseEnum {
-    val ACTIVITY_ID_UNKNOWN     = "ACTIVITY_ID_UNKNOWN"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait RequestCancelActivityTaskFailedCause extends js.Any
+  object RequestCancelActivityTaskFailedCause extends js.Object {
+    val ACTIVITY_ID_UNKNOWN     = "ACTIVITY_ID_UNKNOWN".asInstanceOf[RequestCancelActivityTaskFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelActivityTaskFailedCause]
 
     val values = js.Object.freeze(js.Array(ACTIVITY_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
   }
@@ -3308,12 +3306,16 @@ package swf {
       __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object RequestCancelExternalWorkflowExecutionFailedCauseEnum {
-    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"
+  @js.native
+  sealed trait RequestCancelExternalWorkflowExecutionFailedCause extends js.Any
+  object RequestCancelExternalWorkflowExecutionFailedCause extends js.Object {
+    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION =
+      "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
     val REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED =
       "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED"
+        .asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED =
+      "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3607,19 +3609,25 @@ package swf {
       __obj.asInstanceOf[ScheduleActivityTaskDecisionAttributes]
     }
   }
-
-  object ScheduleActivityTaskFailedCauseEnum {
-    val ACTIVITY_TYPE_DEPRECATED                    = "ACTIVITY_TYPE_DEPRECATED"
-    val ACTIVITY_TYPE_DOES_NOT_EXIST                = "ACTIVITY_TYPE_DOES_NOT_EXIST"
-    val ACTIVITY_ID_ALREADY_IN_USE                  = "ACTIVITY_ID_ALREADY_IN_USE"
-    val OPEN_ACTIVITIES_LIMIT_EXCEEDED              = "OPEN_ACTIVITIES_LIMIT_EXCEEDED"
-    val ACTIVITY_CREATION_RATE_EXCEEDED             = "ACTIVITY_CREATION_RATE_EXCEEDED"
-    val DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_TASK_LIST_UNDEFINED                 = "DEFAULT_TASK_LIST_UNDEFINED"
-    val DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED = "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"
-    val DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED    = "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED         = "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"
-    val OPERATION_NOT_PERMITTED                     = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait ScheduleActivityTaskFailedCause extends js.Any
+  object ScheduleActivityTaskFailedCause extends js.Object {
+    val ACTIVITY_TYPE_DEPRECATED       = "ACTIVITY_TYPE_DEPRECATED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val ACTIVITY_TYPE_DOES_NOT_EXIST   = "ACTIVITY_TYPE_DOES_NOT_EXIST".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val ACTIVITY_ID_ALREADY_IN_USE     = "ACTIVITY_ID_ALREADY_IN_USE".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val OPEN_ACTIVITIES_LIMIT_EXCEEDED = "OPEN_ACTIVITIES_LIMIT_EXCEEDED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val ACTIVITY_CREATION_RATE_EXCEEDED =
+      "ACTIVITY_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_TASK_LIST_UNDEFINED = "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED =
+      "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED =
+      "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ScheduleActivityTaskFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3700,12 +3708,16 @@ package swf {
       __obj.asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
     }
   }
-
-  object ScheduleLambdaFunctionFailedCauseEnum {
-    val ID_ALREADY_IN_USE                      = "ID_ALREADY_IN_USE"
-    val OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED   = "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"
-    val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED"
-    val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION"
+  @js.native
+  sealed trait ScheduleLambdaFunctionFailedCause extends js.Any
+  object ScheduleLambdaFunctionFailedCause extends js.Object {
+    val ID_ALREADY_IN_USE = "ID_ALREADY_IN_USE".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED =
+      "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED =
+      "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION =
+      "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".asInstanceOf[ScheduleLambdaFunctionFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3785,11 +3797,14 @@ package swf {
       __obj.asInstanceOf[SignalExternalWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object SignalExternalWorkflowExecutionFailedCauseEnum {
-    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION              = "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"
-    val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-    val OPERATION_NOT_PERMITTED                          = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait SignalExternalWorkflowExecutionFailedCause extends js.Any
+  object SignalExternalWorkflowExecutionFailedCause extends js.Object {
+    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION =
+      "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
+    val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED =
+      "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3964,19 +3979,27 @@ package swf {
       __obj.asInstanceOf[StartChildWorkflowExecutionDecisionAttributes]
     }
   }
-
-  object StartChildWorkflowExecutionFailedCauseEnum {
-    val WORKFLOW_TYPE_DOES_NOT_EXIST                       = "WORKFLOW_TYPE_DOES_NOT_EXIST"
-    val WORKFLOW_TYPE_DEPRECATED                           = "WORKFLOW_TYPE_DEPRECATED"
-    val OPEN_CHILDREN_LIMIT_EXCEEDED                       = "OPEN_CHILDREN_LIMIT_EXCEEDED"
-    val OPEN_WORKFLOWS_LIMIT_EXCEEDED                      = "OPEN_WORKFLOWS_LIMIT_EXCEEDED"
-    val CHILD_CREATION_RATE_EXCEEDED                       = "CHILD_CREATION_RATE_EXCEEDED"
-    val WORKFLOW_ALREADY_RUNNING                           = "WORKFLOW_ALREADY_RUNNING"
-    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_TASK_LIST_UNDEFINED                        = "DEFAULT_TASK_LIST_UNDEFINED"
-    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED      = "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-    val DEFAULT_CHILD_POLICY_UNDEFINED                     = "DEFAULT_CHILD_POLICY_UNDEFINED"
-    val OPERATION_NOT_PERMITTED                            = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait StartChildWorkflowExecutionFailedCause extends js.Any
+  object StartChildWorkflowExecutionFailedCause extends js.Object {
+    val WORKFLOW_TYPE_DOES_NOT_EXIST =
+      "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val WORKFLOW_TYPE_DEPRECATED = "WORKFLOW_TYPE_DEPRECATED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val OPEN_CHILDREN_LIMIT_EXCEEDED =
+      "OPEN_CHILDREN_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val OPEN_WORKFLOWS_LIMIT_EXCEEDED =
+      "OPEN_WORKFLOWS_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val CHILD_CREATION_RATE_EXCEEDED =
+      "CHILD_CREATION_RATE_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val WORKFLOW_ALREADY_RUNNING = "WORKFLOW_ALREADY_RUNNING".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_LIST_UNDEFINED = "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED =
+      "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_CHILD_POLICY_UNDEFINED =
+      "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4086,9 +4109,10 @@ package swf {
       __obj.asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
     }
   }
-
-  object StartLambdaFunctionFailedCauseEnum {
-    val ASSUME_ROLE_FAILED = "ASSUME_ROLE_FAILED"
+  @js.native
+  sealed trait StartLambdaFunctionFailedCause extends js.Any
+  object StartLambdaFunctionFailedCause extends js.Object {
+    val ASSUME_ROLE_FAILED = "ASSUME_ROLE_FAILED".asInstanceOf[StartLambdaFunctionFailedCause]
 
     val values = js.Object.freeze(js.Array(ASSUME_ROLE_FAILED))
   }
@@ -4150,12 +4174,13 @@ package swf {
       __obj.asInstanceOf[StartTimerDecisionAttributes]
     }
   }
-
-  object StartTimerFailedCauseEnum {
-    val TIMER_ID_ALREADY_IN_USE      = "TIMER_ID_ALREADY_IN_USE"
-    val OPEN_TIMERS_LIMIT_EXCEEDED   = "OPEN_TIMERS_LIMIT_EXCEEDED"
-    val TIMER_CREATION_RATE_EXCEEDED = "TIMER_CREATION_RATE_EXCEEDED"
-    val OPERATION_NOT_PERMITTED      = "OPERATION_NOT_PERMITTED"
+  @js.native
+  sealed trait StartTimerFailedCause extends js.Any
+  object StartTimerFailedCause extends js.Object {
+    val TIMER_ID_ALREADY_IN_USE      = "TIMER_ID_ALREADY_IN_USE".asInstanceOf[StartTimerFailedCause]
+    val OPEN_TIMERS_LIMIT_EXCEEDED   = "OPEN_TIMERS_LIMIT_EXCEEDED".asInstanceOf[StartTimerFailedCause]
+    val TIMER_CREATION_RATE_EXCEEDED = "TIMER_CREATION_RATE_EXCEEDED".asInstanceOf[StartTimerFailedCause]
+    val OPERATION_NOT_PERMITTED      = "OPERATION_NOT_PERMITTED".asInstanceOf[StartTimerFailedCause]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4525,9 +4550,10 @@ package swf {
       __obj.asInstanceOf[WorkflowExecution]
     }
   }
-
-  object WorkflowExecutionCancelRequestedCauseEnum {
-    val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED"
+  @js.native
+  sealed trait WorkflowExecutionCancelRequestedCause extends js.Any
+  object WorkflowExecutionCancelRequestedCause extends js.Object {
+    val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED".asInstanceOf[WorkflowExecutionCancelRequestedCause]
 
     val values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED))
   }
@@ -4992,11 +5018,12 @@ package swf {
       __obj.asInstanceOf[WorkflowExecutionStartedEventAttributes]
     }
   }
-
-  object WorkflowExecutionTerminatedCauseEnum {
-    val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED"
-    val EVENT_LIMIT_EXCEEDED = "EVENT_LIMIT_EXCEEDED"
-    val OPERATOR_INITIATED   = "OPERATOR_INITIATED"
+  @js.native
+  sealed trait WorkflowExecutionTerminatedCause extends js.Any
+  object WorkflowExecutionTerminatedCause extends js.Object {
+    val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED".asInstanceOf[WorkflowExecutionTerminatedCause]
+    val EVENT_LIMIT_EXCEEDED = "EVENT_LIMIT_EXCEEDED".asInstanceOf[WorkflowExecutionTerminatedCause]
+    val OPERATOR_INITIATED   = "OPERATOR_INITIATED".asInstanceOf[WorkflowExecutionTerminatedCause]
 
     val values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED, EVENT_LIMIT_EXCEEDED, OPERATOR_INITIATED))
   }
@@ -5054,9 +5081,10 @@ package swf {
       __obj.asInstanceOf[WorkflowExecutionTimedOutEventAttributes]
     }
   }
-
-  object WorkflowExecutionTimeoutTypeEnum {
-    val START_TO_CLOSE = "START_TO_CLOSE"
+  @js.native
+  sealed trait WorkflowExecutionTimeoutType extends js.Any
+  object WorkflowExecutionTimeoutType extends js.Object {
+    val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[WorkflowExecutionTimeoutType]
 
     val values = js.Object.freeze(js.Array(START_TO_CLOSE))
   }

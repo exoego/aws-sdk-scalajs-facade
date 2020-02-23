@@ -7,64 +7,52 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object guardduty {
-  type AccountDetails             = js.Array[AccountDetail]
-  type AccountId                  = String
-  type AccountIds                 = js.Array[AccountId]
-  type ClientToken                = String
-  type CountBySeverity            = js.Dictionary[Int]
-  type Criterion                  = js.Dictionary[Condition]
-  type DestinationType            = String
-  type Destinations               = js.Array[Destination]
-  type DetectorId                 = String
-  type DetectorIds                = js.Array[DetectorId]
-  type DetectorStatus             = String
-  type Email                      = String
-  type Eq                         = js.Array[String]
-  type Equals                     = js.Array[String]
-  type Feedback                   = String
-  type FilterAction               = String
-  type FilterDescription          = String
-  type FilterName                 = String
-  type FilterNames                = js.Array[FilterName]
-  type FilterRank                 = Int
-  type FindingId                  = String
-  type FindingIds                 = js.Array[FindingId]
-  type FindingPublishingFrequency = String
-  type FindingStatisticType       = String
-  type FindingStatisticTypes      = js.Array[FindingStatisticType]
-  type FindingType                = String
-  type FindingTypes               = js.Array[FindingType]
-  type Findings                   = js.Array[Finding]
-  type GuardDutyArn               = String
-  type Invitations                = js.Array[Invitation]
-  type IpSetFormat                = String
-  type IpSetIds                   = js.Array[String]
-  type IpSetStatus                = String
-  type Ipv6Addresses              = js.Array[String]
-  type Location                   = String
-  type MaxResults                 = Int
-  type Members                    = js.Array[Member]
-  type Name                       = String
-  type Neq                        = js.Array[String]
-  type NetworkInterfaces          = js.Array[NetworkInterface]
-  type NotEquals                  = js.Array[String]
-  type OrderBy                    = String
-  type PortProbeDetails           = js.Array[PortProbeDetail]
-  type PrivateIpAddresses         = js.Array[PrivateIpAddressDetails]
-  type ProductCodes               = js.Array[ProductCode]
-  type PublishingStatus           = String
-  type SecurityGroups             = js.Array[SecurityGroup]
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagMap                     = js.Dictionary[TagValue]
-  type TagValue                   = String
-  type Tags                       = js.Array[Tag]
-  type ThreatIntelSetFormat       = String
-  type ThreatIntelSetIds          = js.Array[String]
-  type ThreatIntelSetStatus       = String
-  type ThreatIntelligenceDetails  = js.Array[ThreatIntelligenceDetail]
-  type ThreatNames                = js.Array[String]
-  type UnprocessedAccounts        = js.Array[UnprocessedAccount]
+  type AccountDetails            = js.Array[AccountDetail]
+  type AccountId                 = String
+  type AccountIds                = js.Array[AccountId]
+  type ClientToken               = String
+  type CountBySeverity           = js.Dictionary[Int]
+  type Criterion                 = js.Dictionary[Condition]
+  type Destinations              = js.Array[Destination]
+  type DetectorId                = String
+  type DetectorIds               = js.Array[DetectorId]
+  type Email                     = String
+  type Eq                        = js.Array[String]
+  type Equals                    = js.Array[String]
+  type FilterDescription         = String
+  type FilterName                = String
+  type FilterNames               = js.Array[FilterName]
+  type FilterRank                = Int
+  type FindingId                 = String
+  type FindingIds                = js.Array[FindingId]
+  type FindingStatisticTypes     = js.Array[FindingStatisticType]
+  type FindingType               = String
+  type FindingTypes              = js.Array[FindingType]
+  type Findings                  = js.Array[Finding]
+  type GuardDutyArn              = String
+  type Invitations               = js.Array[Invitation]
+  type IpSetIds                  = js.Array[String]
+  type Ipv6Addresses             = js.Array[String]
+  type Location                  = String
+  type MaxResults                = Int
+  type Members                   = js.Array[Member]
+  type Name                      = String
+  type Neq                       = js.Array[String]
+  type NetworkInterfaces         = js.Array[NetworkInterface]
+  type NotEquals                 = js.Array[String]
+  type PortProbeDetails          = js.Array[PortProbeDetail]
+  type PrivateIpAddresses        = js.Array[PrivateIpAddressDetails]
+  type ProductCodes              = js.Array[ProductCode]
+  type SecurityGroups            = js.Array[SecurityGroup]
+  type TagKey                    = String
+  type TagKeyList                = js.Array[TagKey]
+  type TagMap                    = js.Dictionary[TagValue]
+  type TagValue                  = String
+  type Tags                      = js.Array[Tag]
+  type ThreatIntelSetIds         = js.Array[String]
+  type ThreatIntelligenceDetails = js.Array[ThreatIntelligenceDetail]
+  type ThreatNames               = js.Array[String]
+  type UnprocessedAccounts       = js.Array[UnprocessedAccount]
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
@@ -1236,16 +1224,18 @@ package guardduty {
       __obj.asInstanceOf[DestinationProperties]
     }
   }
-
-  object DestinationTypeEnum {
-    val S3 = "S3"
+  @js.native
+  sealed trait DestinationType extends js.Any
+  object DestinationType extends js.Object {
+    val S3 = "S3".asInstanceOf[DestinationType]
 
     val values = js.Object.freeze(js.Array(S3))
   }
-
-  object DetectorStatusEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait DetectorStatus extends js.Any
+  object DetectorStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[DetectorStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1378,17 +1368,19 @@ package guardduty {
       __obj.asInstanceOf[Evidence]
     }
   }
-
-  object FeedbackEnum {
-    val USEFUL     = "USEFUL"
-    val NOT_USEFUL = "NOT_USEFUL"
+  @js.native
+  sealed trait Feedback extends js.Any
+  object Feedback extends js.Object {
+    val USEFUL     = "USEFUL".asInstanceOf[Feedback]
+    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
 
     val values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
   }
-
-  object FilterActionEnum {
-    val NOOP    = "NOOP"
-    val ARCHIVE = "ARCHIVE"
+  @js.native
+  sealed trait FilterAction extends js.Any
+  object FilterAction extends js.Object {
+    val NOOP    = "NOOP".asInstanceOf[FilterAction]
+    val ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
 
     val values = js.Object.freeze(js.Array(NOOP, ARCHIVE))
   }
@@ -1474,17 +1466,19 @@ package guardduty {
       __obj.asInstanceOf[FindingCriteria]
     }
   }
-
-  object FindingPublishingFrequencyEnum {
-    val FIFTEEN_MINUTES = "FIFTEEN_MINUTES"
-    val ONE_HOUR        = "ONE_HOUR"
-    val SIX_HOURS       = "SIX_HOURS"
+  @js.native
+  sealed trait FindingPublishingFrequency extends js.Any
+  object FindingPublishingFrequency extends js.Object {
+    val FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
+    val ONE_HOUR        = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
+    val SIX_HOURS       = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
     val values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
-
-  object FindingStatisticTypeEnum {
-    val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY"
+  @js.native
+  sealed trait FindingStatisticType extends js.Any
+  object FindingStatisticType extends js.Object {
+    val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY".asInstanceOf[FindingStatisticType]
 
     val values = js.Object.freeze(js.Array(COUNT_BY_SEVERITY))
   }
@@ -2076,26 +2070,28 @@ package guardduty {
       __obj.asInstanceOf[InviteMembersResponse]
     }
   }
-
-  object IpSetFormatEnum {
-    val TXT         = "TXT"
-    val STIX        = "STIX"
-    val OTX_CSV     = "OTX_CSV"
-    val ALIEN_VAULT = "ALIEN_VAULT"
-    val PROOF_POINT = "PROOF_POINT"
-    val FIRE_EYE    = "FIRE_EYE"
+  @js.native
+  sealed trait IpSetFormat extends js.Any
+  object IpSetFormat extends js.Object {
+    val TXT         = "TXT".asInstanceOf[IpSetFormat]
+    val STIX        = "STIX".asInstanceOf[IpSetFormat]
+    val OTX_CSV     = "OTX_CSV".asInstanceOf[IpSetFormat]
+    val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[IpSetFormat]
+    val PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
+    val FIRE_EYE    = "FIRE_EYE".asInstanceOf[IpSetFormat]
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
-
-  object IpSetStatusEnum {
-    val INACTIVE       = "INACTIVE"
-    val ACTIVATING     = "ACTIVATING"
-    val ACTIVE         = "ACTIVE"
-    val DEACTIVATING   = "DEACTIVATING"
-    val ERROR          = "ERROR"
-    val DELETE_PENDING = "DELETE_PENDING"
-    val DELETED        = "DELETED"
+  @js.native
+  sealed trait IpSetStatus extends js.Any
+  object IpSetStatus extends js.Object {
+    val INACTIVE       = "INACTIVE".asInstanceOf[IpSetStatus]
+    val ACTIVATING     = "ACTIVATING".asInstanceOf[IpSetStatus]
+    val ACTIVE         = "ACTIVE".asInstanceOf[IpSetStatus]
+    val DEACTIVATING   = "DEACTIVATING".asInstanceOf[IpSetStatus]
+    val ERROR          = "ERROR".asInstanceOf[IpSetStatus]
+    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
+    val DELETED        = "DELETED".asInstanceOf[IpSetStatus]
 
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
@@ -2657,10 +2653,11 @@ package guardduty {
       __obj.asInstanceOf[NetworkInterface]
     }
   }
-
-  object OrderByEnum {
-    val ASC  = "ASC"
-    val DESC = "DESC"
+  @js.native
+  sealed trait OrderBy extends js.Any
+  object OrderBy extends js.Object {
+    val ASC  = "ASC".asInstanceOf[OrderBy]
+    val DESC = "DESC".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -2780,12 +2777,14 @@ package guardduty {
       __obj.asInstanceOf[ProductCode]
     }
   }
-
-  object PublishingStatusEnum {
-    val PENDING_VERIFICATION                       = "PENDING_VERIFICATION"
-    val PUBLISHING                                 = "PUBLISHING"
-    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY"
-    val STOPPED                                    = "STOPPED"
+  @js.native
+  sealed trait PublishingStatus extends js.Any
+  object PublishingStatus extends js.Object {
+    val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
+    val PUBLISHING           = "PUBLISHING".asInstanceOf[PublishingStatus]
+    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY =
+      "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
+    val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
     val values =
       js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
@@ -3092,26 +3091,28 @@ package guardduty {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
-
-  object ThreatIntelSetFormatEnum {
-    val TXT         = "TXT"
-    val STIX        = "STIX"
-    val OTX_CSV     = "OTX_CSV"
-    val ALIEN_VAULT = "ALIEN_VAULT"
-    val PROOF_POINT = "PROOF_POINT"
-    val FIRE_EYE    = "FIRE_EYE"
+  @js.native
+  sealed trait ThreatIntelSetFormat extends js.Any
+  object ThreatIntelSetFormat extends js.Object {
+    val TXT         = "TXT".asInstanceOf[ThreatIntelSetFormat]
+    val STIX        = "STIX".asInstanceOf[ThreatIntelSetFormat]
+    val OTX_CSV     = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
+    val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[ThreatIntelSetFormat]
+    val PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
+    val FIRE_EYE    = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
-
-  object ThreatIntelSetStatusEnum {
-    val INACTIVE       = "INACTIVE"
-    val ACTIVATING     = "ACTIVATING"
-    val ACTIVE         = "ACTIVE"
-    val DEACTIVATING   = "DEACTIVATING"
-    val ERROR          = "ERROR"
-    val DELETE_PENDING = "DELETE_PENDING"
-    val DELETED        = "DELETED"
+  @js.native
+  sealed trait ThreatIntelSetStatus extends js.Any
+  object ThreatIntelSetStatus extends js.Object {
+    val INACTIVE       = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVATING     = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVE         = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val DEACTIVATING   = "DEACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ERROR          = "ERROR".asInstanceOf[ThreatIntelSetStatus]
+    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
+    val DELETED        = "DELETED".asInstanceOf[ThreatIntelSetStatus]
 
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }

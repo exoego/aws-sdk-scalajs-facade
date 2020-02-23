@@ -12,7 +12,6 @@ package object kinesisvideomedia {
   type FragmentNumberString = String
   type Payload              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ResourceARN          = String
-  type StartSelectorType    = String
   type StreamName           = String
   type Timestamp            = js.Date
 
@@ -107,14 +106,15 @@ package kinesisvideomedia {
       __obj.asInstanceOf[StartSelector]
     }
   }
-
-  object StartSelectorTypeEnum {
-    val FRAGMENT_NUMBER    = "FRAGMENT_NUMBER"
-    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
-    val NOW                = "NOW"
-    val EARLIEST           = "EARLIEST"
-    val CONTINUATION_TOKEN = "CONTINUATION_TOKEN"
+  @js.native
+  sealed trait StartSelectorType extends js.Any
+  object StartSelectorType extends js.Object {
+    val FRAGMENT_NUMBER    = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
+    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[StartSelectorType]
+    val NOW                = "NOW".asInstanceOf[StartSelectorType]
+    val EARLIEST           = "EARLIEST".asInstanceOf[StartSelectorType]
+    val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
     val values = js.Object.freeze(
       js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)

@@ -7,9 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object globalaccelerator {
-  type AcceleratorStatus          = String
   type Accelerators               = js.Array[Accelerator]
-  type ClientAffinity             = String
   type EndpointConfigurations     = js.Array[EndpointConfiguration]
   type EndpointDescriptions       = js.Array[EndpointDescription]
   type EndpointGroups             = js.Array[EndpointGroup]
@@ -18,18 +16,14 @@ package object globalaccelerator {
   type GenericString              = String
   type HealthCheckIntervalSeconds = Int
   type HealthCheckPort            = Int
-  type HealthCheckProtocol        = String
-  type HealthState                = String
   type IdempotencyToken           = String
   type IpAddress                  = String
-  type IpAddressType              = String
   type IpAddresses                = js.Array[IpAddress]
   type IpSets                     = js.Array[IpSet]
   type Listeners                  = js.Array[Listener]
   type MaxResults                 = Int
   type PortNumber                 = Int
   type PortRanges                 = js.Array[PortRange]
-  type Protocol                   = String
   type ThresholdCount             = Int
   type Timestamp                  = js.Date
   type TrafficDialPercentage      = Float
@@ -172,17 +166,19 @@ package globalaccelerator {
       __obj.asInstanceOf[AcceleratorAttributes]
     }
   }
-
-  object AcceleratorStatusEnum {
-    val DEPLOYED    = "DEPLOYED"
-    val IN_PROGRESS = "IN_PROGRESS"
+  @js.native
+  sealed trait AcceleratorStatus extends js.Any
+  object AcceleratorStatus extends js.Object {
+    val DEPLOYED    = "DEPLOYED".asInstanceOf[AcceleratorStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
     val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
   }
-
-  object ClientAffinityEnum {
-    val NONE      = "NONE"
-    val SOURCE_IP = "SOURCE_IP"
+  @js.native
+  sealed trait ClientAffinity extends js.Any
+  object ClientAffinity extends js.Object {
+    val NONE      = "NONE".asInstanceOf[ClientAffinity]
+    val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
     val values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
   }
@@ -633,25 +629,28 @@ package globalaccelerator {
       __obj.asInstanceOf[EndpointGroup]
     }
   }
-
-  object HealthCheckProtocolEnum {
-    val TCP   = "TCP"
-    val HTTP  = "HTTP"
-    val HTTPS = "HTTPS"
+  @js.native
+  sealed trait HealthCheckProtocol extends js.Any
+  object HealthCheckProtocol extends js.Object {
+    val TCP   = "TCP".asInstanceOf[HealthCheckProtocol]
+    val HTTP  = "HTTP".asInstanceOf[HealthCheckProtocol]
+    val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
     val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
   }
-
-  object HealthStateEnum {
-    val INITIAL   = "INITIAL"
-    val HEALTHY   = "HEALTHY"
-    val UNHEALTHY = "UNHEALTHY"
+  @js.native
+  sealed trait HealthState extends js.Any
+  object HealthState extends js.Object {
+    val INITIAL   = "INITIAL".asInstanceOf[HealthState]
+    val HEALTHY   = "HEALTHY".asInstanceOf[HealthState]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
     val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
   }
-
-  object IpAddressTypeEnum {
-    val IPV4 = "IPV4"
+  @js.native
+  sealed trait IpAddressType extends js.Any
+  object IpAddressType extends js.Object {
+    val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
     val values = js.Object.freeze(js.Array(IPV4))
   }
@@ -851,10 +850,11 @@ package globalaccelerator {
       __obj.asInstanceOf[PortRange]
     }
   }
-
-  object ProtocolEnum {
-    val TCP = "TCP"
-    val UDP = "UDP"
+  @js.native
+  sealed trait Protocol extends js.Any
+  object Protocol extends js.Object {
+    val TCP = "TCP".asInstanceOf[Protocol]
+    val UDP = "UDP".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(TCP, UDP))
   }

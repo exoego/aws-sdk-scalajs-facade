@@ -9,7 +9,6 @@ import facade.amazonaws._
 package object iotsecuretunneling {
   type AmazonResourceName = String
   type ClientAccessToken  = String
-  type ConnectionStatus   = String
   type DateType           = js.Date
   type DeleteFlag         = Boolean
   type Description        = String
@@ -25,7 +24,6 @@ package object iotsecuretunneling {
   type TimeoutInMin       = Int
   type TunnelArn          = String
   type TunnelId           = String
-  type TunnelStatus       = String
   type TunnelSummaryList  = js.Array[TunnelSummary]
 
   implicit final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
@@ -117,10 +115,11 @@ package iotsecuretunneling {
       __obj.asInstanceOf[ConnectionState]
     }
   }
-
-  object ConnectionStatusEnum {
-    val CONNECTED    = "CONNECTED"
-    val DISCONNECTED = "DISCONNECTED"
+  @js.native
+  sealed trait ConnectionStatus extends js.Any
+  object ConnectionStatus extends js.Object {
+    val CONNECTED    = "CONNECTED".asInstanceOf[ConnectionStatus]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
   }
@@ -437,10 +436,11 @@ package iotsecuretunneling {
       __obj.asInstanceOf[Tunnel]
     }
   }
-
-  object TunnelStatusEnum {
-    val OPEN   = "OPEN"
-    val CLOSED = "CLOSED"
+  @js.native
+  sealed trait TunnelStatus extends js.Any
+  object TunnelStatus extends js.Object {
+    val OPEN   = "OPEN".asInstanceOf[TunnelStatus]
+    val CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }

@@ -11,27 +11,21 @@ package object transcribeservice {
   type DateTime                  = js.Date
   type FailureReason             = String
   type KMSKeyId                  = String
-  type LanguageCode              = String
   type MaxAlternatives           = Int
   type MaxResults                = Int
   type MaxSpeakers               = Int
-  type MediaFormat               = String
   type MediaSampleRateHertz      = Int
   type NextToken                 = String
   type OutputBucketName          = String
-  type OutputLocationType        = String
   type Phrase                    = String
   type Phrases                   = js.Array[Phrase]
   type TranscriptionJobName      = String
-  type TranscriptionJobStatus    = String
   type TranscriptionJobSummaries = js.Array[TranscriptionJobSummary]
   type Uri                       = String
   type Vocabularies              = js.Array[VocabularyInfo]
-  type VocabularyFilterMethod    = String
   type VocabularyFilterName      = String
   type VocabularyFilters         = js.Array[VocabularyFilterInfo]
   type VocabularyName            = String
-  type VocabularyState           = String
   type Word                      = String
   type Words                     = js.Array[Word]
 
@@ -402,39 +396,40 @@ package transcribeservice {
       __obj.asInstanceOf[JobExecutionSettings]
     }
   }
-
-  object LanguageCodeEnum {
-    val `en-US` = "en-US"
-    val `es-US` = "es-US"
-    val `en-AU` = "en-AU"
-    val `fr-CA` = "fr-CA"
-    val `en-GB` = "en-GB"
-    val `de-DE` = "de-DE"
-    val `pt-BR` = "pt-BR"
-    val `fr-FR` = "fr-FR"
-    val `it-IT` = "it-IT"
-    val `ko-KR` = "ko-KR"
-    val `es-ES` = "es-ES"
-    val `en-IN` = "en-IN"
-    val `hi-IN` = "hi-IN"
-    val `ar-SA` = "ar-SA"
-    val `ru-RU` = "ru-RU"
-    val `zh-CN` = "zh-CN"
-    val `nl-NL` = "nl-NL"
-    val `id-ID` = "id-ID"
-    val `ta-IN` = "ta-IN"
-    val `fa-IR` = "fa-IR"
-    val `en-IE` = "en-IE"
-    val `en-AB` = "en-AB"
-    val `en-WL` = "en-WL"
-    val `pt-PT` = "pt-PT"
-    val `te-IN` = "te-IN"
-    val `tr-TR` = "tr-TR"
-    val `de-CH` = "de-CH"
-    val `he-IL` = "he-IL"
-    val `ms-MY` = "ms-MY"
-    val `ja-JP` = "ja-JP"
-    val `ar-AE` = "ar-AE"
+  @js.native
+  sealed trait LanguageCode extends js.Any
+  object LanguageCode extends js.Object {
+    val `en-US` = "en-US".asInstanceOf[LanguageCode]
+    val `es-US` = "es-US".asInstanceOf[LanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
+    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
+    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
+    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
+    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
+    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
+    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
+    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
+    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `ar-SA` = "ar-SA".asInstanceOf[LanguageCode]
+    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
+    val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
+    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
+    val `id-ID` = "id-ID".asInstanceOf[LanguageCode]
+    val `ta-IN` = "ta-IN".asInstanceOf[LanguageCode]
+    val `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
+    val `en-IE` = "en-IE".asInstanceOf[LanguageCode]
+    val `en-AB` = "en-AB".asInstanceOf[LanguageCode]
+    val `en-WL` = "en-WL".asInstanceOf[LanguageCode]
+    val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
+    val `te-IN` = "te-IN".asInstanceOf[LanguageCode]
+    val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
+    val `de-CH` = "de-CH".asInstanceOf[LanguageCode]
+    val `he-IL` = "he-IL".asInstanceOf[LanguageCode]
+    val `ms-MY` = "ms-MY".asInstanceOf[LanguageCode]
+    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
+    val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -628,19 +623,21 @@ package transcribeservice {
       __obj.asInstanceOf[Media]
     }
   }
-
-  object MediaFormatEnum {
-    val mp3  = "mp3"
-    val mp4  = "mp4"
-    val wav  = "wav"
-    val flac = "flac"
+  @js.native
+  sealed trait MediaFormat extends js.Any
+  object MediaFormat extends js.Object {
+    val mp3  = "mp3".asInstanceOf[MediaFormat]
+    val mp4  = "mp4".asInstanceOf[MediaFormat]
+    val wav  = "wav".asInstanceOf[MediaFormat]
+    val flac = "flac".asInstanceOf[MediaFormat]
 
     val values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
   }
-
-  object OutputLocationTypeEnum {
-    val CUSTOMER_BUCKET = "CUSTOMER_BUCKET"
-    val SERVICE_BUCKET  = "SERVICE_BUCKET"
+  @js.native
+  sealed trait OutputLocationType extends js.Any
+  object OutputLocationType extends js.Object {
+    val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
+    val SERVICE_BUCKET  = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
     val values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
   }
@@ -816,12 +813,13 @@ package transcribeservice {
       __obj.asInstanceOf[TranscriptionJob]
     }
   }
-
-  object TranscriptionJobStatusEnum {
-    val QUEUED      = "QUEUED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val FAILED      = "FAILED"
-    val COMPLETED   = "COMPLETED"
+  @js.native
+  sealed trait TranscriptionJobStatus extends js.Any
+  object TranscriptionJobStatus extends js.Object {
+    val QUEUED      = "QUEUED".asInstanceOf[TranscriptionJobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TranscriptionJobStatus]
+    val FAILED      = "FAILED".asInstanceOf[TranscriptionJobStatus]
+    val COMPLETED   = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
   }
@@ -988,10 +986,11 @@ package transcribeservice {
       __obj.asInstanceOf[VocabularyFilterInfo]
     }
   }
-
-  object VocabularyFilterMethodEnum {
-    val remove = "remove"
-    val mask   = "mask"
+  @js.native
+  sealed trait VocabularyFilterMethod extends js.Any
+  object VocabularyFilterMethod extends js.Object {
+    val remove = "remove".asInstanceOf[VocabularyFilterMethod]
+    val mask   = "mask".asInstanceOf[VocabularyFilterMethod]
 
     val values = js.Object.freeze(js.Array(remove, mask))
   }
@@ -1023,11 +1022,12 @@ package transcribeservice {
       __obj.asInstanceOf[VocabularyInfo]
     }
   }
-
-  object VocabularyStateEnum {
-    val PENDING = "PENDING"
-    val READY   = "READY"
-    val FAILED  = "FAILED"
+  @js.native
+  sealed trait VocabularyState extends js.Any
+  object VocabularyState extends js.Object {
+    val PENDING = "PENDING".asInstanceOf[VocabularyState]
+    val READY   = "READY".asInstanceOf[VocabularyState]
+    val FAILED  = "FAILED".asInstanceOf[VocabularyState]
 
     val values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
   }

@@ -7,102 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object workspaces {
-  type ARN                                   = String
-  type AccessPropertyValue                   = String
-  type AccountModificationList               = js.Array[AccountModification]
-  type Alias                                 = String
-  type BooleanObject                         = Boolean
-  type BundleId                              = String
-  type BundleIdList                          = js.Array[BundleId]
-  type BundleList                            = js.Array[WorkspaceBundle]
-  type BundleOwner                           = String
-  type ClientPropertiesList                  = js.Array[ClientPropertiesResult]
-  type Compute                               = String
-  type ComputerName                          = String
-  type ConnectionState                       = String
-  type DedicatedTenancyCidrRangeList         = js.Array[DedicatedTenancyManagementCidrRange]
-  type DedicatedTenancyManagementCidrRange   = String
-  type DedicatedTenancyModificationStateEnum = String
-  type DedicatedTenancySupportEnum           = String
-  type DedicatedTenancySupportResultEnum     = String
-  type DefaultOu                             = String
-  type Description                           = String
-  type DirectoryId                           = String
-  type DirectoryIdList                       = js.Array[DirectoryId]
-  type DirectoryList                         = js.Array[WorkspaceDirectory]
-  type DirectoryName                         = String
-  type DnsIpAddresses                        = js.Array[IpAddress]
-  type Ec2ImageId                            = String
-  type ErrorType                             = String
-  type FailedCreateWorkspaceRequests         = js.Array[FailedCreateWorkspaceRequest]
-  type FailedRebootWorkspaceRequests         = js.Array[FailedWorkspaceChangeRequest]
-  type FailedRebuildWorkspaceRequests        = js.Array[FailedWorkspaceChangeRequest]
-  type FailedStartWorkspaceRequests          = js.Array[FailedWorkspaceChangeRequest]
-  type FailedStopWorkspaceRequests           = js.Array[FailedWorkspaceChangeRequest]
-  type FailedTerminateWorkspaceRequests      = js.Array[FailedWorkspaceChangeRequest]
-  type IpAddress                             = String
-  type IpGroupDesc                           = String
-  type IpGroupId                             = String
-  type IpGroupIdList                         = js.Array[IpGroupId]
-  type IpGroupName                           = String
-  type IpRevokedRuleList                     = js.Array[IpRule]
-  type IpRule                                = String
-  type IpRuleDesc                            = String
-  type IpRuleList                            = js.Array[IpRuleItem]
-  type Limit                                 = Int
-  type ManagementCidrRangeConstraint         = String
-  type ManagementCidrRangeMaxResults         = Int
-  type ModificationResourceEnum              = String
-  type ModificationStateEnum                 = String
-  type ModificationStateList                 = js.Array[ModificationState]
-  type NonEmptyString                        = String
-  type OperatingSystemType                   = String
-  type PaginationToken                       = String
-  type RebootWorkspaceRequests               = js.Array[RebootRequest]
-  type RebuildWorkspaceRequests              = js.Array[RebuildRequest]
-  type ReconnectEnum                         = String
-  type Region                                = String
-  type RegistrationCode                      = String
-  type ResourceIdList                        = js.Array[NonEmptyString]
-  type RootVolumeSizeGib                     = Int
-  type RunningMode                           = String
-  type RunningModeAutoStopTimeoutInMinutes   = Int
-  type SecurityGroupId                       = String
-  type SnapshotList                          = js.Array[Snapshot]
-  type StartWorkspaceRequests                = js.Array[StartRequest]
-  type StopWorkspaceRequests                 = js.Array[StopRequest]
-  type SubnetId                              = String
-  type SubnetIds                             = js.Array[SubnetId]
-  type TagKey                                = String
-  type TagKeyList                            = js.Array[NonEmptyString]
-  type TagList                               = js.Array[Tag]
-  type TagValue                              = String
-  type TargetWorkspaceState                  = String
-  type Tenancy                               = String
-  type TerminateWorkspaceRequests            = js.Array[TerminateRequest]
-  type Timestamp                             = js.Date
-  type UserName                              = String
-  type UserVolumeSizeGib                     = Int
-  type VolumeEncryptionKey                   = String
-  type WorkspaceConnectionStatusList         = js.Array[WorkspaceConnectionStatus]
-  type WorkspaceDirectoryState               = String
-  type WorkspaceDirectoryType                = String
-  type WorkspaceErrorCode                    = String
-  type WorkspaceId                           = String
-  type WorkspaceIdList                       = js.Array[WorkspaceId]
-  type WorkspaceImageDescription             = String
-  type WorkspaceImageErrorCode               = String
-  type WorkspaceImageId                      = String
-  type WorkspaceImageIdList                  = js.Array[WorkspaceImageId]
-  type WorkspaceImageIngestionProcess        = String
-  type WorkspaceImageList                    = js.Array[WorkspaceImage]
-  type WorkspaceImageName                    = String
-  type WorkspaceImageRequiredTenancy         = String
-  type WorkspaceImageState                   = String
-  type WorkspaceList                         = js.Array[Workspace]
-  type WorkspaceRequestList                  = js.Array[WorkspaceRequest]
-  type WorkspaceState                        = String
-  type WorkspacesIpGroupsList                = js.Array[WorkspacesIpGroup]
+  type ARN                                 = String
+  type AccountModificationList             = js.Array[AccountModification]
+  type Alias                               = String
+  type BooleanObject                       = Boolean
+  type BundleId                            = String
+  type BundleIdList                        = js.Array[BundleId]
+  type BundleList                          = js.Array[WorkspaceBundle]
+  type BundleOwner                         = String
+  type ClientPropertiesList                = js.Array[ClientPropertiesResult]
+  type ComputerName                        = String
+  type DedicatedTenancyCidrRangeList       = js.Array[DedicatedTenancyManagementCidrRange]
+  type DedicatedTenancyManagementCidrRange = String
+  type DefaultOu                           = String
+  type Description                         = String
+  type DirectoryId                         = String
+  type DirectoryIdList                     = js.Array[DirectoryId]
+  type DirectoryList                       = js.Array[WorkspaceDirectory]
+  type DirectoryName                       = String
+  type DnsIpAddresses                      = js.Array[IpAddress]
+  type Ec2ImageId                          = String
+  type ErrorType                           = String
+  type FailedCreateWorkspaceRequests       = js.Array[FailedCreateWorkspaceRequest]
+  type FailedRebootWorkspaceRequests       = js.Array[FailedWorkspaceChangeRequest]
+  type FailedRebuildWorkspaceRequests      = js.Array[FailedWorkspaceChangeRequest]
+  type FailedStartWorkspaceRequests        = js.Array[FailedWorkspaceChangeRequest]
+  type FailedStopWorkspaceRequests         = js.Array[FailedWorkspaceChangeRequest]
+  type FailedTerminateWorkspaceRequests    = js.Array[FailedWorkspaceChangeRequest]
+  type IpAddress                           = String
+  type IpGroupDesc                         = String
+  type IpGroupId                           = String
+  type IpGroupIdList                       = js.Array[IpGroupId]
+  type IpGroupName                         = String
+  type IpRevokedRuleList                   = js.Array[IpRule]
+  type IpRule                              = String
+  type IpRuleDesc                          = String
+  type IpRuleList                          = js.Array[IpRuleItem]
+  type Limit                               = Int
+  type ManagementCidrRangeConstraint       = String
+  type ManagementCidrRangeMaxResults       = Int
+  type ModificationStateList               = js.Array[ModificationState]
+  type NonEmptyString                      = String
+  type PaginationToken                     = String
+  type RebootWorkspaceRequests             = js.Array[RebootRequest]
+  type RebuildWorkspaceRequests            = js.Array[RebuildRequest]
+  type Region                              = String
+  type RegistrationCode                    = String
+  type ResourceIdList                      = js.Array[NonEmptyString]
+  type RootVolumeSizeGib                   = Int
+  type RunningModeAutoStopTimeoutInMinutes = Int
+  type SecurityGroupId                     = String
+  type SnapshotList                        = js.Array[Snapshot]
+  type StartWorkspaceRequests              = js.Array[StartRequest]
+  type StopWorkspaceRequests               = js.Array[StopRequest]
+  type SubnetId                            = String
+  type SubnetIds                           = js.Array[SubnetId]
+  type TagKey                              = String
+  type TagKeyList                          = js.Array[NonEmptyString]
+  type TagList                             = js.Array[Tag]
+  type TagValue                            = String
+  type TerminateWorkspaceRequests          = js.Array[TerminateRequest]
+  type Timestamp                           = js.Date
+  type UserName                            = String
+  type UserVolumeSizeGib                   = Int
+  type VolumeEncryptionKey                 = String
+  type WorkspaceConnectionStatusList       = js.Array[WorkspaceConnectionStatus]
+  type WorkspaceErrorCode                  = String
+  type WorkspaceId                         = String
+  type WorkspaceIdList                     = js.Array[WorkspaceId]
+  type WorkspaceImageDescription           = String
+  type WorkspaceImageErrorCode             = String
+  type WorkspaceImageId                    = String
+  type WorkspaceImageIdList                = js.Array[WorkspaceImageId]
+  type WorkspaceImageList                  = js.Array[WorkspaceImage]
+  type WorkspaceImageName                  = String
+  type WorkspaceList                       = js.Array[Workspace]
+  type WorkspaceRequestList                = js.Array[WorkspaceRequest]
+  type WorkspacesIpGroupsList              = js.Array[WorkspacesIpGroup]
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
 
@@ -281,10 +262,11 @@ package workspaces {
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult]    = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
   }
-
-  object AccessPropertyValueEnum {
-    val ALLOW = "ALLOW"
-    val DENY  = "DENY"
+  @js.native
+  sealed trait AccessPropertyValue extends js.Any
+  object AccessPropertyValue extends js.Object {
+    val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
+    val DENY  = "DENY".asInstanceOf[AccessPropertyValue]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -433,15 +415,16 @@ package workspaces {
       __obj.asInstanceOf[ClientPropertiesResult]
     }
   }
-
-  object ComputeEnum {
-    val VALUE       = "VALUE"
-    val STANDARD    = "STANDARD"
-    val PERFORMANCE = "PERFORMANCE"
-    val POWER       = "POWER"
-    val GRAPHICS    = "GRAPHICS"
-    val POWERPRO    = "POWERPRO"
-    val GRAPHICSPRO = "GRAPHICSPRO"
+  @js.native
+  sealed trait Compute extends js.Any
+  object Compute extends js.Object {
+    val VALUE       = "VALUE".asInstanceOf[Compute]
+    val STANDARD    = "STANDARD".asInstanceOf[Compute]
+    val PERFORMANCE = "PERFORMANCE".asInstanceOf[Compute]
+    val POWER       = "POWER".asInstanceOf[Compute]
+    val GRAPHICS    = "GRAPHICS".asInstanceOf[Compute]
+    val POWERPRO    = "POWERPRO".asInstanceOf[Compute]
+    val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
     val values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
   }
@@ -464,11 +447,12 @@ package workspaces {
       __obj.asInstanceOf[ComputeType]
     }
   }
-
-  object ConnectionStateEnum {
-    val CONNECTED    = "CONNECTED"
-    val DISCONNECTED = "DISCONNECTED"
-    val UNKNOWN      = "UNKNOWN"
+  @js.native
+  sealed trait ConnectionState extends js.Any
+  object ConnectionState extends js.Object {
+    val CONNECTED    = "CONNECTED".asInstanceOf[ConnectionState]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
+    val UNKNOWN      = "UNKNOWN".asInstanceOf[ConnectionState]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
   }
@@ -632,24 +616,27 @@ package workspaces {
       __obj.asInstanceOf[CreateWorkspacesResult]
     }
   }
-
-  object DedicatedTenancyModificationStateEnumEnum {
-    val PENDING   = "PENDING"
-    val COMPLETED = "COMPLETED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait DedicatedTenancyModificationStateEnum extends js.Any
+  object DedicatedTenancyModificationStateEnum extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val FAILED    = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
     val values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
-
-  object DedicatedTenancySupportEnumEnum {
-    val ENABLED = "ENABLED"
+  @js.native
+  sealed trait DedicatedTenancySupportEnum extends js.Any
+  object DedicatedTenancySupportEnum extends js.Object {
+    val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
 
     val values = js.Object.freeze(js.Array(ENABLED))
   }
-
-  object DedicatedTenancySupportResultEnumEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait DedicatedTenancySupportResultEnum extends js.Any
+  object DedicatedTenancySupportResultEnum extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
+    val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1479,11 +1466,12 @@ package workspaces {
       __obj.asInstanceOf[MigrateWorkspaceResult]
     }
   }
-
-  object ModificationResourceEnumEnum {
-    val ROOT_VOLUME  = "ROOT_VOLUME"
-    val USER_VOLUME  = "USER_VOLUME"
-    val COMPUTE_TYPE = "COMPUTE_TYPE"
+  @js.native
+  sealed trait ModificationResourceEnum extends js.Any
+  object ModificationResourceEnum extends js.Object {
+    val ROOT_VOLUME  = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val USER_VOLUME  = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
     val values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
   }
@@ -1509,10 +1497,11 @@ package workspaces {
       __obj.asInstanceOf[ModificationState]
     }
   }
-
-  object ModificationStateEnumEnum {
-    val UPDATE_INITIATED   = "UPDATE_INITIATED"
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+  @js.native
+  sealed trait ModificationStateEnum extends js.Any
+  object ModificationStateEnum extends js.Object {
+    val UPDATE_INITIATED   = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
     val values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
   }
@@ -1773,10 +1762,11 @@ package workspaces {
       __obj.asInstanceOf[OperatingSystem]
     }
   }
-
-  object OperatingSystemTypeEnum {
-    val WINDOWS = "WINDOWS"
-    val LINUX   = "LINUX"
+  @js.native
+  sealed trait OperatingSystemType extends js.Any
+  object OperatingSystemType extends js.Object {
+    val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
+    val LINUX   = "LINUX".asInstanceOf[OperatingSystemType]
 
     val values = js.Object.freeze(js.Array(WINDOWS, LINUX))
   }
@@ -1890,10 +1880,11 @@ package workspaces {
       __obj.asInstanceOf[RebuildWorkspacesResult]
     }
   }
-
-  object ReconnectEnumEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait ReconnectEnum extends js.Any
+  object ReconnectEnum extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ReconnectEnum]
+    val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -2027,10 +2018,11 @@ package workspaces {
       __obj.asInstanceOf[RootStorage]
     }
   }
-
-  object RunningModeEnum {
-    val AUTO_STOP = "AUTO_STOP"
-    val ALWAYS_ON = "ALWAYS_ON"
+  @js.native
+  sealed trait RunningMode extends js.Any
+  object RunningMode extends js.Object {
+    val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
+    val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
 
     val values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
   }
@@ -2214,17 +2206,19 @@ package workspaces {
       __obj.asInstanceOf[Tag]
     }
   }
-
-  object TargetWorkspaceStateEnum {
-    val AVAILABLE         = "AVAILABLE"
-    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE"
+  @js.native
+  sealed trait TargetWorkspaceState extends js.Any
+  object TargetWorkspaceState extends js.Object {
+    val AVAILABLE         = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
+    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
   }
-
-  object TenancyEnum {
-    val DEDICATED = "DEDICATED"
-    val SHARED    = "SHARED"
+  @js.native
+  sealed trait Tenancy extends js.Any
+  object Tenancy extends js.Object {
+    val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
+    val SHARED    = "SHARED".asInstanceOf[Tenancy]
 
     val values = js.Object.freeze(js.Array(DEDICATED, SHARED))
   }
@@ -2614,20 +2608,22 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceDirectory]
     }
   }
-
-  object WorkspaceDirectoryStateEnum {
-    val REGISTERING   = "REGISTERING"
-    val REGISTERED    = "REGISTERED"
-    val DEREGISTERING = "DEREGISTERING"
-    val DEREGISTERED  = "DEREGISTERED"
-    val ERROR         = "ERROR"
+  @js.native
+  sealed trait WorkspaceDirectoryState extends js.Any
+  object WorkspaceDirectoryState extends js.Object {
+    val REGISTERING   = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
+    val REGISTERED    = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val DEREGISTERING = "DEREGISTERING".asInstanceOf[WorkspaceDirectoryState]
+    val DEREGISTERED  = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val ERROR         = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
     val values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
-
-  object WorkspaceDirectoryTypeEnum {
-    val SIMPLE_AD    = "SIMPLE_AD"
-    val AD_CONNECTOR = "AD_CONNECTOR"
+  @js.native
+  sealed trait WorkspaceDirectoryType extends js.Any
+  object WorkspaceDirectoryType extends js.Object {
+    val SIMPLE_AD    = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
+    val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
     val values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
   }
@@ -2671,26 +2667,29 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceImage]
     }
   }
-
-  object WorkspaceImageIngestionProcessEnum {
-    val BYOL_REGULAR     = "BYOL_REGULAR"
-    val BYOL_GRAPHICS    = "BYOL_GRAPHICS"
-    val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO"
+  @js.native
+  sealed trait WorkspaceImageIngestionProcess extends js.Any
+  object WorkspaceImageIngestionProcess extends js.Object {
+    val BYOL_REGULAR     = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_GRAPHICS    = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
 
     val values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
   }
-
-  object WorkspaceImageRequiredTenancyEnum {
-    val DEFAULT   = "DEFAULT"
-    val DEDICATED = "DEDICATED"
+  @js.native
+  sealed trait WorkspaceImageRequiredTenancy extends js.Any
+  object WorkspaceImageRequiredTenancy extends js.Object {
+    val DEFAULT   = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
+    val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
   }
-
-  object WorkspaceImageStateEnum {
-    val AVAILABLE = "AVAILABLE"
-    val PENDING   = "PENDING"
-    val ERROR     = "ERROR"
+  @js.native
+  sealed trait WorkspaceImageState extends js.Any
+  object WorkspaceImageState extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceImageState]
+    val PENDING   = "PENDING".asInstanceOf[WorkspaceImageState]
+    val ERROR     = "ERROR".asInstanceOf[WorkspaceImageState]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
   }
@@ -2773,25 +2772,26 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceRequest]
     }
   }
-
-  object WorkspaceStateEnum {
-    val PENDING           = "PENDING"
-    val AVAILABLE         = "AVAILABLE"
-    val IMPAIRED          = "IMPAIRED"
-    val UNHEALTHY         = "UNHEALTHY"
-    val REBOOTING         = "REBOOTING"
-    val STARTING          = "STARTING"
-    val REBUILDING        = "REBUILDING"
-    val RESTORING         = "RESTORING"
-    val MAINTENANCE       = "MAINTENANCE"
-    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE"
-    val TERMINATING       = "TERMINATING"
-    val TERMINATED        = "TERMINATED"
-    val SUSPENDED         = "SUSPENDED"
-    val UPDATING          = "UPDATING"
-    val STOPPING          = "STOPPING"
-    val STOPPED           = "STOPPED"
-    val ERROR             = "ERROR"
+  @js.native
+  sealed trait WorkspaceState extends js.Any
+  object WorkspaceState extends js.Object {
+    val PENDING           = "PENDING".asInstanceOf[WorkspaceState]
+    val AVAILABLE         = "AVAILABLE".asInstanceOf[WorkspaceState]
+    val IMPAIRED          = "IMPAIRED".asInstanceOf[WorkspaceState]
+    val UNHEALTHY         = "UNHEALTHY".asInstanceOf[WorkspaceState]
+    val REBOOTING         = "REBOOTING".asInstanceOf[WorkspaceState]
+    val STARTING          = "STARTING".asInstanceOf[WorkspaceState]
+    val REBUILDING        = "REBUILDING".asInstanceOf[WorkspaceState]
+    val RESTORING         = "RESTORING".asInstanceOf[WorkspaceState]
+    val MAINTENANCE       = "MAINTENANCE".asInstanceOf[WorkspaceState]
+    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[WorkspaceState]
+    val TERMINATING       = "TERMINATING".asInstanceOf[WorkspaceState]
+    val TERMINATED        = "TERMINATED".asInstanceOf[WorkspaceState]
+    val SUSPENDED         = "SUSPENDED".asInstanceOf[WorkspaceState]
+    val UPDATING          = "UPDATING".asInstanceOf[WorkspaceState]
+    val STOPPING          = "STOPPING".asInstanceOf[WorkspaceState]
+    val STOPPED           = "STOPPED".asInstanceOf[WorkspaceState]
+    val ERROR             = "ERROR".asInstanceOf[WorkspaceState]
 
     val values = js.Object.freeze(
       js.Array(

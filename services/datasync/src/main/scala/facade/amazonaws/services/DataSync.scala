@@ -11,8 +11,6 @@ package object datasync {
   type AgentArn                        = String
   type AgentArnList                    = js.Array[AgentArn]
   type AgentList                       = js.Array[AgentListEntry]
-  type AgentStatus                     = String
-  type Atime                           = String
   type BytesPerSecond                  = Double
   type DestinationNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
   type Duration                        = Double
@@ -22,34 +20,22 @@ package object datasync {
   type EfsFilesystemArn                = String
   type EfsSubdirectory                 = String
   type Endpoint                        = String
-  type EndpointType                    = String
   type FilterList                      = js.Array[FilterRule]
-  type FilterType                      = String
   type FilterValue                     = String
   type FsxFilesystemArn                = String
   type FsxWindowsSubdirectory          = String
-  type Gid                             = String
   type IamRoleArn                      = String
   type LocationArn                     = String
   type LocationList                    = js.Array[LocationListEntry]
   type LocationUri                     = String
   type LogGroupArn                     = String
-  type LogLevel                        = String
   type MaxResults                      = Int
-  type Mtime                           = String
   type NetworkInterfaceArn             = String
   type NextToken                       = String
   type NfsSubdirectory                 = String
-  type NfsVersion                      = String
-  type OverwriteMode                   = String
   type PLSecurityGroupArnList          = js.Array[Ec2SecurityGroupArn]
   type PLSubnetArnList                 = js.Array[Ec2SubnetArn]
-  type PhaseStatus                     = String
-  type PosixPermissions                = String
-  type PreserveDeletedFiles            = String
-  type PreserveDevices                 = String
   type S3BucketArn                     = String
-  type S3StorageClass                  = String
   type S3Subdirectory                  = String
   type ScheduleExpressionCron          = String
   type ServerHostname                  = String
@@ -57,7 +43,6 @@ package object datasync {
   type SmbPassword                     = String
   type SmbSubdirectory                 = String
   type SmbUser                         = String
-  type SmbVersion                      = String
   type SourceNetworkInterfaceArns      = js.Array[NetworkInterfaceArn]
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
@@ -67,13 +52,8 @@ package object datasync {
   type TaskArn                         = String
   type TaskExecutionArn                = String
   type TaskExecutionList               = js.Array[TaskExecutionListEntry]
-  type TaskExecutionStatus             = String
   type TaskList                        = js.Array[TaskListEntry]
-  type TaskQueueing                    = String
-  type TaskStatus                      = String
   type Time                            = js.Date
-  type Uid                             = String
-  type VerifyMode                      = String
   type VpcEndpointId                   = String
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
@@ -206,17 +186,19 @@ package datasync {
       __obj.asInstanceOf[AgentListEntry]
     }
   }
-
-  object AgentStatusEnum {
-    val ONLINE  = "ONLINE"
-    val OFFLINE = "OFFLINE"
+  @js.native
+  sealed trait AgentStatus extends js.Any
+  object AgentStatus extends js.Object {
+    val ONLINE  = "ONLINE".asInstanceOf[AgentStatus]
+    val OFFLINE = "OFFLINE".asInstanceOf[AgentStatus]
 
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
-
-  object AtimeEnum {
-    val NONE        = "NONE"
-    val BEST_EFFORT = "BEST_EFFORT"
+  @js.native
+  sealed trait Atime extends js.Any
+  object Atime extends js.Object {
+    val NONE        = "NONE".asInstanceOf[Atime]
+    val BEST_EFFORT = "BEST_EFFORT".asInstanceOf[Atime]
 
     val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT))
   }
@@ -1161,11 +1143,12 @@ package datasync {
       __obj.asInstanceOf[Ec2Config]
     }
   }
-
-  object EndpointTypeEnum {
-    val PUBLIC       = "PUBLIC"
-    val PRIVATE_LINK = "PRIVATE_LINK"
-    val FIPS         = "FIPS"
+  @js.native
+  sealed trait EndpointType extends js.Any
+  object EndpointType extends js.Object {
+    val PUBLIC       = "PUBLIC".asInstanceOf[EndpointType]
+    val PRIVATE_LINK = "PRIVATE_LINK".asInstanceOf[EndpointType]
+    val FIPS         = "FIPS".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK, FIPS))
   }
@@ -1191,18 +1174,20 @@ package datasync {
       __obj.asInstanceOf[FilterRule]
     }
   }
-
-  object FilterTypeEnum {
-    val SIMPLE_PATTERN = "SIMPLE_PATTERN"
+  @js.native
+  sealed trait FilterType extends js.Any
+  object FilterType extends js.Object {
+    val SIMPLE_PATTERN = "SIMPLE_PATTERN".asInstanceOf[FilterType]
 
     val values = js.Object.freeze(js.Array(SIMPLE_PATTERN))
   }
-
-  object GidEnum {
-    val NONE      = "NONE"
-    val INT_VALUE = "INT_VALUE"
-    val NAME      = "NAME"
-    val BOTH      = "BOTH"
+  @js.native
+  sealed trait Gid extends js.Any
+  object Gid extends js.Object {
+    val NONE      = "NONE".asInstanceOf[Gid]
+    val INT_VALUE = "INT_VALUE".asInstanceOf[Gid]
+    val NAME      = "NAME".asInstanceOf[Gid]
+    val BOTH      = "BOTH".asInstanceOf[Gid]
 
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
@@ -1429,18 +1414,20 @@ package datasync {
       __obj.asInstanceOf[LocationListEntry]
     }
   }
-
-  object LogLevelEnum {
-    val OFF      = "OFF"
-    val BASIC    = "BASIC"
-    val TRANSFER = "TRANSFER"
+  @js.native
+  sealed trait LogLevel extends js.Any
+  object LogLevel extends js.Object {
+    val OFF      = "OFF".asInstanceOf[LogLevel]
+    val BASIC    = "BASIC".asInstanceOf[LogLevel]
+    val TRANSFER = "TRANSFER".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
   }
-
-  object MtimeEnum {
-    val NONE     = "NONE"
-    val PRESERVE = "PRESERVE"
+  @js.native
+  sealed trait Mtime extends js.Any
+  object Mtime extends js.Object {
+    val NONE     = "NONE".asInstanceOf[Mtime]
+    val PRESERVE = "PRESERVE".asInstanceOf[Mtime]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
@@ -1463,12 +1450,13 @@ package datasync {
       __obj.asInstanceOf[NfsMountOptions]
     }
   }
-
-  object NfsVersionEnum {
-    val AUTOMATIC = "AUTOMATIC"
-    val NFS3      = "NFS3"
-    val NFS4_0    = "NFS4_0"
-    val NFS4_1    = "NFS4_1"
+  @js.native
+  sealed trait NfsVersion extends js.Any
+  object NfsVersion extends js.Object {
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[NfsVersion]
+    val NFS3      = "NFS3".asInstanceOf[NfsVersion]
+    val NFS4_0    = "NFS4_0".asInstanceOf[NfsVersion]
+    val NFS4_1    = "NFS4_1".asInstanceOf[NfsVersion]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
   }
@@ -1546,39 +1534,44 @@ package datasync {
       __obj.asInstanceOf[Options]
     }
   }
-
-  object OverwriteModeEnum {
-    val ALWAYS = "ALWAYS"
-    val NEVER  = "NEVER"
+  @js.native
+  sealed trait OverwriteMode extends js.Any
+  object OverwriteMode extends js.Object {
+    val ALWAYS = "ALWAYS".asInstanceOf[OverwriteMode]
+    val NEVER  = "NEVER".asInstanceOf[OverwriteMode]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
-
-  object PhaseStatusEnum {
-    val PENDING = "PENDING"
-    val SUCCESS = "SUCCESS"
-    val ERROR   = "ERROR"
+  @js.native
+  sealed trait PhaseStatus extends js.Any
+  object PhaseStatus extends js.Object {
+    val PENDING = "PENDING".asInstanceOf[PhaseStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[PhaseStatus]
+    val ERROR   = "ERROR".asInstanceOf[PhaseStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
   }
-
-  object PosixPermissionsEnum {
-    val NONE     = "NONE"
-    val PRESERVE = "PRESERVE"
+  @js.native
+  sealed trait PosixPermissions extends js.Any
+  object PosixPermissions extends js.Object {
+    val NONE     = "NONE".asInstanceOf[PosixPermissions]
+    val PRESERVE = "PRESERVE".asInstanceOf[PosixPermissions]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
-
-  object PreserveDeletedFilesEnum {
-    val PRESERVE = "PRESERVE"
-    val REMOVE   = "REMOVE"
+  @js.native
+  sealed trait PreserveDeletedFiles extends js.Any
+  object PreserveDeletedFiles extends js.Object {
+    val PRESERVE = "PRESERVE".asInstanceOf[PreserveDeletedFiles]
+    val REMOVE   = "REMOVE".asInstanceOf[PreserveDeletedFiles]
 
     val values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
   }
-
-  object PreserveDevicesEnum {
-    val NONE     = "NONE"
-    val PRESERVE = "PRESERVE"
+  @js.native
+  sealed trait PreserveDevices extends js.Any
+  object PreserveDevices extends js.Object {
+    val NONE     = "NONE".asInstanceOf[PreserveDevices]
+    val PRESERVE = "PRESERVE".asInstanceOf[PreserveDevices]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
@@ -1632,14 +1625,15 @@ package datasync {
       __obj.asInstanceOf[S3Config]
     }
   }
-
-  object S3StorageClassEnum {
-    val STANDARD            = "STANDARD"
-    val STANDARD_IA         = "STANDARD_IA"
-    val ONEZONE_IA          = "ONEZONE_IA"
-    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
-    val GLACIER             = "GLACIER"
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
+  @js.native
+  sealed trait S3StorageClass extends js.Any
+  object S3StorageClass extends js.Object {
+    val STANDARD            = "STANDARD".asInstanceOf[S3StorageClass]
+    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[S3StorageClass]
+    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[S3StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
+    val GLACIER             = "GLACIER".asInstanceOf[S3StorageClass]
+    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
     val values =
       js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
@@ -1663,11 +1657,12 @@ package datasync {
       __obj.asInstanceOf[SmbMountOptions]
     }
   }
-
-  object SmbVersionEnum {
-    val AUTOMATIC = "AUTOMATIC"
-    val SMB2      = "SMB2"
-    val SMB3      = "SMB3"
+  @js.native
+  sealed trait SmbVersion extends js.Any
+  object SmbVersion extends js.Object {
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[SmbVersion]
+    val SMB2      = "SMB2".asInstanceOf[SmbVersion]
+    val SMB3      = "SMB3".asInstanceOf[SmbVersion]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, SMB2, SMB3))
   }
@@ -1834,15 +1829,16 @@ package datasync {
       __obj.asInstanceOf[TaskExecutionResultDetail]
     }
   }
-
-  object TaskExecutionStatusEnum {
-    val QUEUED       = "QUEUED"
-    val LAUNCHING    = "LAUNCHING"
-    val PREPARING    = "PREPARING"
-    val TRANSFERRING = "TRANSFERRING"
-    val VERIFYING    = "VERIFYING"
-    val SUCCESS      = "SUCCESS"
-    val ERROR        = "ERROR"
+  @js.native
+  sealed trait TaskExecutionStatus extends js.Any
+  object TaskExecutionStatus extends js.Object {
+    val QUEUED       = "QUEUED".asInstanceOf[TaskExecutionStatus]
+    val LAUNCHING    = "LAUNCHING".asInstanceOf[TaskExecutionStatus]
+    val PREPARING    = "PREPARING".asInstanceOf[TaskExecutionStatus]
+    val TRANSFERRING = "TRANSFERRING".asInstanceOf[TaskExecutionStatus]
+    val VERIFYING    = "VERIFYING".asInstanceOf[TaskExecutionStatus]
+    val SUCCESS      = "SUCCESS".asInstanceOf[TaskExecutionStatus]
+    val ERROR        = "ERROR".asInstanceOf[TaskExecutionStatus]
 
     val values = js.Object.freeze(js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
   }
@@ -1871,10 +1867,11 @@ package datasync {
       __obj.asInstanceOf[TaskListEntry]
     }
   }
-
-  object TaskQueueingEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait TaskQueueing extends js.Any
+  object TaskQueueing extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[TaskQueueing]
+    val DISABLED = "DISABLED".asInstanceOf[TaskQueueing]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1899,22 +1896,24 @@ package datasync {
       __obj.asInstanceOf[TaskSchedule]
     }
   }
-
-  object TaskStatusEnum {
-    val AVAILABLE   = "AVAILABLE"
-    val CREATING    = "CREATING"
-    val QUEUED      = "QUEUED"
-    val RUNNING     = "RUNNING"
-    val UNAVAILABLE = "UNAVAILABLE"
+  @js.native
+  sealed trait TaskStatus extends js.Any
+  object TaskStatus extends js.Object {
+    val AVAILABLE   = "AVAILABLE".asInstanceOf[TaskStatus]
+    val CREATING    = "CREATING".asInstanceOf[TaskStatus]
+    val QUEUED      = "QUEUED".asInstanceOf[TaskStatus]
+    val RUNNING     = "RUNNING".asInstanceOf[TaskStatus]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
   }
-
-  object UidEnum {
-    val NONE      = "NONE"
-    val INT_VALUE = "INT_VALUE"
-    val NAME      = "NAME"
-    val BOTH      = "BOTH"
+  @js.native
+  sealed trait Uid extends js.Any
+  object Uid extends js.Object {
+    val NONE      = "NONE".asInstanceOf[Uid]
+    val INT_VALUE = "INT_VALUE".asInstanceOf[Uid]
+    val NAME      = "NAME".asInstanceOf[Uid]
+    val BOTH      = "BOTH".asInstanceOf[Uid]
 
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
@@ -2035,11 +2034,12 @@ package datasync {
       __obj.asInstanceOf[UpdateTaskResponse]
     }
   }
-
-  object VerifyModeEnum {
-    val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT"
-    val ONLY_FILES_TRANSFERRED   = "ONLY_FILES_TRANSFERRED"
-    val NONE                     = "NONE"
+  @js.native
+  sealed trait VerifyMode extends js.Any
+  object VerifyMode extends js.Object {
+    val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT".asInstanceOf[VerifyMode]
+    val ONLY_FILES_TRANSFERRED   = "ONLY_FILES_TRANSFERRED".asInstanceOf[VerifyMode]
+    val NONE                     = "NONE".asInstanceOf[VerifyMode]
 
     val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE))
   }

@@ -7,28 +7,17 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object batch {
-  type ArrayJobDependency           = String
   type ArrayJobStatusSummary        = js.Dictionary[Int]
   type AttemptDetails               = js.Array[AttemptDetail]
-  type CEState                      = String
-  type CEStatus                     = String
-  type CEType                       = String
-  type CRAllocationStrategy         = String
-  type CRType                       = String
   type ComputeEnvironmentDetailList = js.Array[ComputeEnvironmentDetail]
   type ComputeEnvironmentOrders     = js.Array[ComputeEnvironmentOrder]
-  type DeviceCgroupPermission       = String
   type DeviceCgroupPermissions      = js.Array[DeviceCgroupPermission]
   type DevicesList                  = js.Array[Device]
   type EnvironmentVariables         = js.Array[KeyValuePair]
-  type JQState                      = String
-  type JQStatus                     = String
   type JobDefinitionList            = js.Array[JobDefinition]
-  type JobDefinitionType            = String
   type JobDependencyList            = js.Array[JobDependency]
   type JobDetailList                = js.Array[JobDetail]
   type JobQueueDetailList           = js.Array[JobQueueDetail]
-  type JobStatus                    = String
   type JobSummaryList               = js.Array[JobSummary]
   type MountPoints                  = js.Array[MountPoint]
   type NetworkInterfaceList         = js.Array[NetworkInterface]
@@ -36,7 +25,6 @@ package object batch {
   type NodeRangeProperties          = js.Array[NodeRangeProperty]
   type ParametersMap                = js.Dictionary[String]
   type ResourceRequirements         = js.Array[ResourceRequirement]
-  type ResourceType                 = String
   type StringList                   = js.Array[String]
   type TagsMap                      = js.Dictionary[String]
   type Ulimits                      = js.Array[Ulimit]
@@ -116,10 +104,11 @@ package batch {
       js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
   }
-
-  object ArrayJobDependencyEnum {
-    val N_TO_N     = "N_TO_N"
-    val SEQUENTIAL = "SEQUENTIAL"
+  @js.native
+  sealed trait ArrayJobDependency extends js.Any
+  object ArrayJobDependency extends js.Object {
+    val N_TO_N     = "N_TO_N".asInstanceOf[ArrayJobDependency]
+    val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
 
     val values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
   }
@@ -251,43 +240,48 @@ package batch {
       __obj.asInstanceOf[AttemptDetail]
     }
   }
-
-  object CEStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait CEState extends js.Any
+  object CEState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[CEState]
+    val DISABLED = "DISABLED".asInstanceOf[CEState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
-
-  object CEStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val DELETED  = "DELETED"
-    val VALID    = "VALID"
-    val INVALID  = "INVALID"
+  @js.native
+  sealed trait CEStatus extends js.Any
+  object CEStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[CEStatus]
+    val UPDATING = "UPDATING".asInstanceOf[CEStatus]
+    val DELETING = "DELETING".asInstanceOf[CEStatus]
+    val DELETED  = "DELETED".asInstanceOf[CEStatus]
+    val VALID    = "VALID".asInstanceOf[CEStatus]
+    val INVALID  = "INVALID".asInstanceOf[CEStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
-
-  object CETypeEnum {
-    val MANAGED   = "MANAGED"
-    val UNMANAGED = "UNMANAGED"
+  @js.native
+  sealed trait CEType extends js.Any
+  object CEType extends js.Object {
+    val MANAGED   = "MANAGED".asInstanceOf[CEType]
+    val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
 
     val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
-
-  object CRAllocationStrategyEnum {
-    val BEST_FIT                = "BEST_FIT"
-    val BEST_FIT_PROGRESSIVE    = "BEST_FIT_PROGRESSIVE"
-    val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED"
+  @js.native
+  sealed trait CRAllocationStrategy extends js.Any
+  object CRAllocationStrategy extends js.Object {
+    val BEST_FIT                = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
+    val BEST_FIT_PROGRESSIVE    = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
+    val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
   }
-
-  object CRTypeEnum {
-    val EC2  = "EC2"
-    val SPOT = "SPOT"
+  @js.native
+  sealed trait CRType extends js.Any
+  object CRType extends js.Object {
+    val EC2  = "EC2".asInstanceOf[CRType]
+    val SPOT = "SPOT".asInstanceOf[CRType]
 
     val values = js.Object.freeze(js.Array(EC2, SPOT))
   }
@@ -1061,11 +1055,12 @@ package batch {
       __obj.asInstanceOf[Device]
     }
   }
-
-  object DeviceCgroupPermissionEnum {
-    val READ  = "READ"
-    val WRITE = "WRITE"
-    val MKNOD = "MKNOD"
+  @js.native
+  sealed trait DeviceCgroupPermission extends js.Any
+  object DeviceCgroupPermission extends js.Object {
+    val READ  = "READ".asInstanceOf[DeviceCgroupPermission]
+    val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
+    val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
 
     val values = js.Object.freeze(js.Array(READ, WRITE, MKNOD))
   }
@@ -1088,21 +1083,23 @@ package batch {
       __obj.asInstanceOf[Host]
     }
   }
-
-  object JQStateEnum {
-    val ENABLED  = "ENABLED"
-    val DISABLED = "DISABLED"
+  @js.native
+  sealed trait JQState extends js.Any
+  object JQState extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[JQState]
+    val DISABLED = "DISABLED".asInstanceOf[JQState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
-
-  object JQStatusEnum {
-    val CREATING = "CREATING"
-    val UPDATING = "UPDATING"
-    val DELETING = "DELETING"
-    val DELETED  = "DELETED"
-    val VALID    = "VALID"
-    val INVALID  = "INVALID"
+  @js.native
+  sealed trait JQStatus extends js.Any
+  object JQStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[JQStatus]
+    val UPDATING = "UPDATING".asInstanceOf[JQStatus]
+    val DELETING = "DELETING".asInstanceOf[JQStatus]
+    val DELETED  = "DELETED".asInstanceOf[JQStatus]
+    val VALID    = "VALID".asInstanceOf[JQStatus]
+    val INVALID  = "INVALID".asInstanceOf[JQStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
@@ -1154,10 +1151,11 @@ package batch {
       __obj.asInstanceOf[JobDefinition]
     }
   }
-
-  object JobDefinitionTypeEnum {
-    val container = "container"
-    val multinode = "multinode"
+  @js.native
+  sealed trait JobDefinitionType extends js.Any
+  object JobDefinitionType extends js.Object {
+    val container = "container".asInstanceOf[JobDefinitionType]
+    val multinode = "multinode".asInstanceOf[JobDefinitionType]
 
     val values = js.Object.freeze(js.Array(container, multinode))
   }
@@ -1294,15 +1292,16 @@ package batch {
       __obj.asInstanceOf[JobQueueDetail]
     }
   }
-
-  object JobStatusEnum {
-    val SUBMITTED = "SUBMITTED"
-    val PENDING   = "PENDING"
-    val RUNNABLE  = "RUNNABLE"
-    val STARTING  = "STARTING"
-    val RUNNING   = "RUNNING"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    val PENDING   = "PENDING".asInstanceOf[JobStatus]
+    val RUNNABLE  = "RUNNABLE".asInstanceOf[JobStatus]
+    val STARTING  = "STARTING".asInstanceOf[JobStatus]
+    val RUNNING   = "RUNNING".asInstanceOf[JobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
+    val FAILED    = "FAILED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
   }
@@ -1769,9 +1768,10 @@ package batch {
       __obj.asInstanceOf[ResourceRequirement]
     }
   }
-
-  object ResourceTypeEnum {
-    val GPU = "GPU"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val GPU = "GPU".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(GPU))
   }

@@ -10,41 +10,32 @@ package object managedblockchain {
   type AvailabilityZoneString   = String
   type ClientRequestTokenString = String
   type DescriptionString        = String
-  type Edition                  = String
-  type Framework                = String
   type FrameworkVersionString   = String
   type InstanceTypeString       = String
   type InvitationList           = js.Array[Invitation]
-  type InvitationStatus         = String
   type InviteActionList         = js.Array[InviteAction]
   type IsOwned                  = Boolean
   type MemberListMaxResults     = Int
-  type MemberStatus             = String
   type MemberSummaryList        = js.Array[MemberSummary]
   type NameString               = String
   type NetworkListMaxResults    = Int
   type NetworkMemberNameString  = String
-  type NetworkStatus            = String
   type NetworkSummaryList       = js.Array[NetworkSummary]
   type NodeListMaxResults       = Int
-  type NodeStatus               = String
   type NodeSummaryList          = js.Array[NodeSummary]
   type PaginationToken          = String
   type PasswordString           = String
   type PrincipalString          = String
   type ProposalDurationInt      = Int
   type ProposalListMaxResults   = Int
-  type ProposalStatus           = String
   type ProposalSummaryList      = js.Array[ProposalSummary]
   type ProposalVoteList         = js.Array[VoteSummary]
   type RemoveActionList         = js.Array[RemoveAction]
   type ResourceIdString         = String
-  type ThresholdComparator      = String
   type ThresholdPercentageInt   = Int
   type Timestamp                = js.Date
   type UsernameString           = String
   type VoteCount                = Int
-  type VoteValue                = String
 
   implicit final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
@@ -397,16 +388,18 @@ package managedblockchain {
       __obj.asInstanceOf[DeleteNodeOutput]
     }
   }
-
-  object EditionEnum {
-    val STARTER  = "STARTER"
-    val STANDARD = "STANDARD"
+  @js.native
+  sealed trait Edition extends js.Any
+  object Edition extends js.Object {
+    val STARTER  = "STARTER".asInstanceOf[Edition]
+    val STANDARD = "STANDARD".asInstanceOf[Edition]
 
     val values = js.Object.freeze(js.Array(STARTER, STANDARD))
   }
-
-  object FrameworkEnum {
-    val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC"
+  @js.native
+  sealed trait Framework extends js.Any
+  object Framework extends js.Object {
+    val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
 
     val values = js.Object.freeze(js.Array(HYPERLEDGER_FABRIC))
   }
@@ -589,13 +582,14 @@ package managedblockchain {
       __obj.asInstanceOf[Invitation]
     }
   }
-
-  object InvitationStatusEnum {
-    val PENDING   = "PENDING"
-    val ACCEPTED  = "ACCEPTED"
-    val ACCEPTING = "ACCEPTING"
-    val REJECTED  = "REJECTED"
-    val EXPIRED   = "EXPIRED"
+  @js.native
+  sealed trait InvitationStatus extends js.Any
+  object InvitationStatus extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[InvitationStatus]
+    val ACCEPTED  = "ACCEPTED".asInstanceOf[InvitationStatus]
+    val ACCEPTING = "ACCEPTING".asInstanceOf[InvitationStatus]
+    val REJECTED  = "REJECTED".asInstanceOf[InvitationStatus]
+    val EXPIRED   = "EXPIRED".asInstanceOf[InvitationStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED))
   }
@@ -1043,13 +1037,14 @@ package managedblockchain {
       __obj.asInstanceOf[MemberFrameworkConfiguration]
     }
   }
-
-  object MemberStatusEnum {
-    val CREATING      = "CREATING"
-    val AVAILABLE     = "AVAILABLE"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETING      = "DELETING"
-    val DELETED       = "DELETED"
+  @js.native
+  sealed trait MemberStatus extends js.Any
+  object MemberStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[MemberStatus]
+    val AVAILABLE     = "AVAILABLE".asInstanceOf[MemberStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MemberStatus]
+    val DELETING      = "DELETING".asInstanceOf[MemberStatus]
+    val DELETED       = "DELETED".asInstanceOf[MemberStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
   }
@@ -1214,13 +1209,14 @@ package managedblockchain {
       __obj.asInstanceOf[NetworkFrameworkConfiguration]
     }
   }
-
-  object NetworkStatusEnum {
-    val CREATING      = "CREATING"
-    val AVAILABLE     = "AVAILABLE"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETING      = "DELETING"
-    val DELETED       = "DELETED"
+  @js.native
+  sealed trait NetworkStatus extends js.Any
+  object NetworkStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[NetworkStatus]
+    val AVAILABLE     = "AVAILABLE".asInstanceOf[NetworkStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NetworkStatus]
+    val DELETING      = "DELETING".asInstanceOf[NetworkStatus]
+    val DELETED       = "DELETED".asInstanceOf[NetworkStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
   }
@@ -1366,14 +1362,15 @@ package managedblockchain {
       __obj.asInstanceOf[NodeFrameworkAttributes]
     }
   }
-
-  object NodeStatusEnum {
-    val CREATING      = "CREATING"
-    val AVAILABLE     = "AVAILABLE"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETING      = "DELETING"
-    val DELETED       = "DELETED"
-    val FAILED        = "FAILED"
+  @js.native
+  sealed trait NodeStatus extends js.Any
+  object NodeStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[NodeStatus]
+    val AVAILABLE     = "AVAILABLE".asInstanceOf[NodeStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodeStatus]
+    val DELETING      = "DELETING".asInstanceOf[NodeStatus]
+    val DELETED       = "DELETED".asInstanceOf[NodeStatus]
+    val FAILED        = "FAILED".asInstanceOf[NodeStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED, FAILED))
   }
@@ -1482,13 +1479,14 @@ package managedblockchain {
       __obj.asInstanceOf[ProposalActions]
     }
   }
-
-  object ProposalStatusEnum {
-    val IN_PROGRESS   = "IN_PROGRESS"
-    val APPROVED      = "APPROVED"
-    val REJECTED      = "REJECTED"
-    val EXPIRED       = "EXPIRED"
-    val ACTION_FAILED = "ACTION_FAILED"
+  @js.native
+  sealed trait ProposalStatus extends js.Any
+  object ProposalStatus extends js.Object {
+    val IN_PROGRESS   = "IN_PROGRESS".asInstanceOf[ProposalStatus]
+    val APPROVED      = "APPROVED".asInstanceOf[ProposalStatus]
+    val REJECTED      = "REJECTED".asInstanceOf[ProposalStatus]
+    val EXPIRED       = "EXPIRED".asInstanceOf[ProposalStatus]
+    val ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED))
   }
@@ -1581,10 +1579,11 @@ package managedblockchain {
       __obj.asInstanceOf[RemoveAction]
     }
   }
-
-  object ThresholdComparatorEnum {
-    val GREATER_THAN             = "GREATER_THAN"
-    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO"
+  @js.native
+  sealed trait ThresholdComparator extends js.Any
+  object ThresholdComparator extends js.Object {
+    val GREATER_THAN             = "GREATER_THAN".asInstanceOf[ThresholdComparator]
+    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO))
   }
@@ -1653,10 +1652,11 @@ package managedblockchain {
       __obj.asInstanceOf[VoteSummary]
     }
   }
-
-  object VoteValueEnum {
-    val YES = "YES"
-    val NO  = "NO"
+  @js.native
+  sealed trait VoteValue extends js.Any
+  object VoteValue extends js.Object {
+    val YES = "YES".asInstanceOf[VoteValue]
+    val NO  = "NO".asInstanceOf[VoteValue]
 
     val values = js.Object.freeze(js.Array(YES, NO))
   }

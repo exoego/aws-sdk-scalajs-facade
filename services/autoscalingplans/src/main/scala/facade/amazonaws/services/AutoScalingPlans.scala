@@ -7,51 +7,39 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object autoscalingplans {
-  type ApplicationSources                   = js.Array[ApplicationSource]
-  type Cooldown                             = Int
-  type Datapoints                           = js.Array[Datapoint]
-  type DisableDynamicScaling                = Boolean
-  type DisableScaleIn                       = Boolean
-  type ForecastDataType                     = String
-  type LoadMetricType                       = String
-  type MaxResults                           = Int
-  type MetricDimensionName                  = String
-  type MetricDimensionValue                 = String
-  type MetricDimensions                     = js.Array[MetricDimension]
-  type MetricName                           = String
-  type MetricNamespace                      = String
-  type MetricScale                          = Double
-  type MetricStatistic                      = String
-  type MetricUnit                           = String
-  type NextToken                            = String
-  type PolicyName                           = String
-  type PolicyType                           = String
-  type PredictiveScalingMaxCapacityBehavior = String
-  type PredictiveScalingMode                = String
-  type ResourceCapacity                     = Int
-  type ResourceIdMaxLen1600                 = String
-  type ResourceLabel                        = String
-  type ScalableDimension                    = String
-  type ScalingInstructions                  = js.Array[ScalingInstruction]
-  type ScalingMetricType                    = String
-  type ScalingPlanName                      = String
-  type ScalingPlanNames                     = js.Array[ScalingPlanName]
-  type ScalingPlanResources                 = js.Array[ScalingPlanResource]
-  type ScalingPlanStatusCode                = String
-  type ScalingPlanVersion                   = Double
-  type ScalingPlans                         = js.Array[ScalingPlan]
-  type ScalingPolicies                      = js.Array[ScalingPolicy]
-  type ScalingPolicyUpdateBehavior          = String
-  type ScalingStatusCode                    = String
-  type ScheduledActionBufferTime            = Int
-  type ServiceNamespace                     = String
-  type TagFilters                           = js.Array[TagFilter]
-  type TagValues                            = js.Array[XmlStringMaxLen256]
-  type TargetTrackingConfigurations         = js.Array[TargetTrackingConfiguration]
-  type TimestampType                        = js.Date
-  type XmlString                            = String
-  type XmlStringMaxLen128                   = String
-  type XmlStringMaxLen256                   = String
+  type ApplicationSources           = js.Array[ApplicationSource]
+  type Cooldown                     = Int
+  type Datapoints                   = js.Array[Datapoint]
+  type DisableDynamicScaling        = Boolean
+  type DisableScaleIn               = Boolean
+  type MaxResults                   = Int
+  type MetricDimensionName          = String
+  type MetricDimensionValue         = String
+  type MetricDimensions             = js.Array[MetricDimension]
+  type MetricName                   = String
+  type MetricNamespace              = String
+  type MetricScale                  = Double
+  type MetricUnit                   = String
+  type NextToken                    = String
+  type PolicyName                   = String
+  type ResourceCapacity             = Int
+  type ResourceIdMaxLen1600         = String
+  type ResourceLabel                = String
+  type ScalingInstructions          = js.Array[ScalingInstruction]
+  type ScalingPlanName              = String
+  type ScalingPlanNames             = js.Array[ScalingPlanName]
+  type ScalingPlanResources         = js.Array[ScalingPlanResource]
+  type ScalingPlanVersion           = Double
+  type ScalingPlans                 = js.Array[ScalingPlan]
+  type ScalingPolicies              = js.Array[ScalingPolicy]
+  type ScheduledActionBufferTime    = Int
+  type TagFilters                   = js.Array[TagFilter]
+  type TagValues                    = js.Array[XmlStringMaxLen256]
+  type TargetTrackingConfigurations = js.Array[TargetTrackingConfiguration]
+  type TimestampType                = js.Date
+  type XmlString                    = String
+  type XmlStringMaxLen128           = String
+  type XmlStringMaxLen256           = String
 
   implicit final class AutoScalingPlansOps(private val service: AutoScalingPlans) extends AnyVal {
 
@@ -376,12 +364,13 @@ package autoscalingplans {
       __obj.asInstanceOf[DescribeScalingPlansResponse]
     }
   }
-
-  object ForecastDataTypeEnum {
-    val CapacityForecast           = "CapacityForecast"
-    val LoadForecast               = "LoadForecast"
-    val ScheduledActionMinCapacity = "ScheduledActionMinCapacity"
-    val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity"
+  @js.native
+  sealed trait ForecastDataType extends js.Any
+  object ForecastDataType extends js.Object {
+    val CapacityForecast           = "CapacityForecast".asInstanceOf[ForecastDataType]
+    val LoadForecast               = "LoadForecast".asInstanceOf[ForecastDataType]
+    val ScheduledActionMinCapacity = "ScheduledActionMinCapacity".asInstanceOf[ForecastDataType]
+    val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity".asInstanceOf[ForecastDataType]
 
     val values =
       js.Object.freeze(js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity))
@@ -443,12 +432,13 @@ package autoscalingplans {
       __obj.asInstanceOf[GetScalingPlanResourceForecastDataResponse]
     }
   }
-
-  object LoadMetricTypeEnum {
-    val ASGTotalCPUUtilization     = "ASGTotalCPUUtilization"
-    val ASGTotalNetworkIn          = "ASGTotalNetworkIn"
-    val ASGTotalNetworkOut         = "ASGTotalNetworkOut"
-    val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount"
+  @js.native
+  sealed trait LoadMetricType extends js.Any
+  object LoadMetricType extends js.Object {
+    val ASGTotalCPUUtilization     = "ASGTotalCPUUtilization".asInstanceOf[LoadMetricType]
+    val ASGTotalNetworkIn          = "ASGTotalNetworkIn".asInstanceOf[LoadMetricType]
+    val ASGTotalNetworkOut         = "ASGTotalNetworkOut".asInstanceOf[LoadMetricType]
+    val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[LoadMetricType]
 
     val values = js.Object.freeze(
       js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
@@ -478,19 +468,21 @@ package autoscalingplans {
       __obj.asInstanceOf[MetricDimension]
     }
   }
-
-  object MetricStatisticEnum {
-    val Average     = "Average"
-    val Minimum     = "Minimum"
-    val Maximum     = "Maximum"
-    val SampleCount = "SampleCount"
-    val Sum         = "Sum"
+  @js.native
+  sealed trait MetricStatistic extends js.Any
+  object MetricStatistic extends js.Object {
+    val Average     = "Average".asInstanceOf[MetricStatistic]
+    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
+    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    val Sum         = "Sum".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
-
-  object PolicyTypeEnum {
-    val TargetTrackingScaling = "TargetTrackingScaling"
+  @js.native
+  sealed trait PolicyType extends js.Any
+  object PolicyType extends js.Object {
+    val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
     val values = js.Object.freeze(js.Array(TargetTrackingScaling))
   }
@@ -542,33 +534,41 @@ package autoscalingplans {
       __obj.asInstanceOf[PredefinedScalingMetricSpecification]
     }
   }
-
-  object PredictiveScalingMaxCapacityBehaviorEnum {
-    val SetForecastCapacityToMaxCapacity    = "SetForecastCapacityToMaxCapacity"
-    val SetMaxCapacityToForecastCapacity    = "SetMaxCapacityToForecastCapacity"
-    val SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity"
+  @js.native
+  sealed trait PredictiveScalingMaxCapacityBehavior extends js.Any
+  object PredictiveScalingMaxCapacityBehavior extends js.Object {
+    val SetForecastCapacityToMaxCapacity =
+      "SetForecastCapacityToMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+    val SetMaxCapacityToForecastCapacity =
+      "SetMaxCapacityToForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+    val SetMaxCapacityAboveForecastCapacity =
+      "SetMaxCapacityAboveForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
 
     val values = js.Object.freeze(
       js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
     )
   }
-
-  object PredictiveScalingModeEnum {
-    val ForecastAndScale = "ForecastAndScale"
-    val ForecastOnly     = "ForecastOnly"
+  @js.native
+  sealed trait PredictiveScalingMode extends js.Any
+  object PredictiveScalingMode extends js.Object {
+    val ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
+    val ForecastOnly     = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
 
     val values = js.Object.freeze(js.Array(ForecastAndScale, ForecastOnly))
   }
-
-  object ScalableDimensionEnum {
-    val `autoscaling:autoScalingGroup:DesiredCapacity` = "autoscaling:autoScalingGroup:DesiredCapacity"
-    val `ecs:service:DesiredCount`                     = "ecs:service:DesiredCount"
-    val `ec2:spot-fleet-request:TargetCapacity`        = "ec2:spot-fleet-request:TargetCapacity"
-    val `rds:cluster:ReadReplicaCount`                 = "rds:cluster:ReadReplicaCount"
-    val `dynamodb:table:ReadCapacityUnits`             = "dynamodb:table:ReadCapacityUnits"
-    val `dynamodb:table:WriteCapacityUnits`            = "dynamodb:table:WriteCapacityUnits"
-    val `dynamodb:index:ReadCapacityUnits`             = "dynamodb:index:ReadCapacityUnits"
-    val `dynamodb:index:WriteCapacityUnits`            = "dynamodb:index:WriteCapacityUnits"
+  @js.native
+  sealed trait ScalableDimension extends js.Any
+  object ScalableDimension extends js.Object {
+    val `autoscaling:autoScalingGroup:DesiredCapacity` =
+      "autoscaling:autoScalingGroup:DesiredCapacity".asInstanceOf[ScalableDimension]
+    val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
+    val `ec2:spot-fleet-request:TargetCapacity` =
+      "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
+    val `rds:cluster:ReadReplicaCount`      = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
+    val `dynamodb:table:ReadCapacityUnits`  = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:index:ReadCapacityUnits`  = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
     val values = js.Object.freeze(
       js.Array(
@@ -660,21 +660,23 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingInstruction]
     }
   }
-
-  object ScalingMetricTypeEnum {
-    val ASGAverageCPUUtilization                 = "ASGAverageCPUUtilization"
-    val ASGAverageNetworkIn                      = "ASGAverageNetworkIn"
-    val ASGAverageNetworkOut                     = "ASGAverageNetworkOut"
-    val DynamoDBReadCapacityUtilization          = "DynamoDBReadCapacityUtilization"
-    val DynamoDBWriteCapacityUtilization         = "DynamoDBWriteCapacityUtilization"
-    val ECSServiceAverageCPUUtilization          = "ECSServiceAverageCPUUtilization"
-    val ECSServiceAverageMemoryUtilization       = "ECSServiceAverageMemoryUtilization"
-    val ALBRequestCountPerTarget                 = "ALBRequestCountPerTarget"
-    val RDSReaderAverageCPUUtilization           = "RDSReaderAverageCPUUtilization"
-    val RDSReaderAverageDatabaseConnections      = "RDSReaderAverageDatabaseConnections"
-    val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization"
-    val EC2SpotFleetRequestAverageNetworkIn      = "EC2SpotFleetRequestAverageNetworkIn"
-    val EC2SpotFleetRequestAverageNetworkOut     = "EC2SpotFleetRequestAverageNetworkOut"
+  @js.native
+  sealed trait ScalingMetricType extends js.Any
+  object ScalingMetricType extends js.Object {
+    val ASGAverageCPUUtilization            = "ASGAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    val ASGAverageNetworkIn                 = "ASGAverageNetworkIn".asInstanceOf[ScalingMetricType]
+    val ASGAverageNetworkOut                = "ASGAverageNetworkOut".asInstanceOf[ScalingMetricType]
+    val DynamoDBReadCapacityUtilization     = "DynamoDBReadCapacityUtilization".asInstanceOf[ScalingMetricType]
+    val DynamoDBWriteCapacityUtilization    = "DynamoDBWriteCapacityUtilization".asInstanceOf[ScalingMetricType]
+    val ECSServiceAverageCPUUtilization     = "ECSServiceAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    val ECSServiceAverageMemoryUtilization  = "ECSServiceAverageMemoryUtilization".asInstanceOf[ScalingMetricType]
+    val ALBRequestCountPerTarget            = "ALBRequestCountPerTarget".asInstanceOf[ScalingMetricType]
+    val RDSReaderAverageCPUUtilization      = "RDSReaderAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[ScalingMetricType]
+    val EC2SpotFleetRequestAverageCPUUtilization =
+      "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    val EC2SpotFleetRequestAverageNetworkIn  = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
+    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -778,16 +780,17 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingPlanResource]
     }
   }
-
-  object ScalingPlanStatusCodeEnum {
-    val Active             = "Active"
-    val ActiveWithProblems = "ActiveWithProblems"
-    val CreationInProgress = "CreationInProgress"
-    val CreationFailed     = "CreationFailed"
-    val DeletionInProgress = "DeletionInProgress"
-    val DeletionFailed     = "DeletionFailed"
-    val UpdateInProgress   = "UpdateInProgress"
-    val UpdateFailed       = "UpdateFailed"
+  @js.native
+  sealed trait ScalingPlanStatusCode extends js.Any
+  object ScalingPlanStatusCode extends js.Object {
+    val Active             = "Active".asInstanceOf[ScalingPlanStatusCode]
+    val ActiveWithProblems = "ActiveWithProblems".asInstanceOf[ScalingPlanStatusCode]
+    val CreationInProgress = "CreationInProgress".asInstanceOf[ScalingPlanStatusCode]
+    val CreationFailed     = "CreationFailed".asInstanceOf[ScalingPlanStatusCode]
+    val DeletionInProgress = "DeletionInProgress".asInstanceOf[ScalingPlanStatusCode]
+    val DeletionFailed     = "DeletionFailed".asInstanceOf[ScalingPlanStatusCode]
+    val UpdateInProgress   = "UpdateInProgress".asInstanceOf[ScalingPlanStatusCode]
+    val UpdateFailed       = "UpdateFailed".asInstanceOf[ScalingPlanStatusCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -831,28 +834,31 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
-
-  object ScalingPolicyUpdateBehaviorEnum {
-    val KeepExternalPolicies    = "KeepExternalPolicies"
-    val ReplaceExternalPolicies = "ReplaceExternalPolicies"
+  @js.native
+  sealed trait ScalingPolicyUpdateBehavior extends js.Any
+  object ScalingPolicyUpdateBehavior extends js.Object {
+    val KeepExternalPolicies    = "KeepExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
+    val ReplaceExternalPolicies = "ReplaceExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
 
     val values = js.Object.freeze(js.Array(KeepExternalPolicies, ReplaceExternalPolicies))
   }
-
-  object ScalingStatusCodeEnum {
-    val Inactive        = "Inactive"
-    val PartiallyActive = "PartiallyActive"
-    val Active          = "Active"
+  @js.native
+  sealed trait ScalingStatusCode extends js.Any
+  object ScalingStatusCode extends js.Object {
+    val Inactive        = "Inactive".asInstanceOf[ScalingStatusCode]
+    val PartiallyActive = "PartiallyActive".asInstanceOf[ScalingStatusCode]
+    val Active          = "Active".asInstanceOf[ScalingStatusCode]
 
     val values = js.Object.freeze(js.Array(Inactive, PartiallyActive, Active))
   }
-
-  object ServiceNamespaceEnum {
-    val autoscaling = "autoscaling"
-    val ecs         = "ecs"
-    val ec2         = "ec2"
-    val rds         = "rds"
-    val dynamodb    = "dynamodb"
+  @js.native
+  sealed trait ServiceNamespace extends js.Any
+  object ServiceNamespace extends js.Object {
+    val autoscaling = "autoscaling".asInstanceOf[ServiceNamespace]
+    val ecs         = "ecs".asInstanceOf[ServiceNamespace]
+    val ec2         = "ec2".asInstanceOf[ServiceNamespace]
+    val rds         = "rds".asInstanceOf[ServiceNamespace]
+    val dynamodb    = "dynamodb".asInstanceOf[ServiceNamespace]
 
     val values = js.Object.freeze(js.Array(autoscaling, ecs, ec2, rds, dynamodb))
   }

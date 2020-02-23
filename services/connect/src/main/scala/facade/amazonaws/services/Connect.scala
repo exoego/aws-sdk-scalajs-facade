@@ -16,26 +16,21 @@ package object connect {
   type AttributeValue                  = String
   type Attributes                      = js.Dictionary[AttributeValue]
   type AutoAccept                      = Boolean
-  type Channel                         = String
   type Channels                        = js.Array[Channel]
   type ChatContent                     = String
   type ChatContentType                 = String
   type ClientToken                     = String
-  type Comparison                      = String
   type ContactFlowId                   = String
   type ContactFlowName                 = String
   type ContactFlowSummaryList          = js.Array[ContactFlowSummary]
-  type ContactFlowType                 = String
   type ContactFlowTypes                = js.Array[ContactFlowType]
   type ContactId                       = String
   type CurrentMetricDataCollections    = js.Array[CurrentMetricData]
-  type CurrentMetricName               = String
   type CurrentMetricResults            = js.Array[CurrentMetricResult]
   type CurrentMetrics                  = js.Array[CurrentMetric]
   type DirectoryUserId                 = String
   type DisplayName                     = String
   type Email                           = String
-  type Grouping                        = String
   type Groupings                       = js.Array[Grouping]
   type HierarchyGroupId                = String
   type HierarchyGroupName              = String
@@ -43,7 +38,6 @@ package object connect {
   type HierarchyLevelId                = String
   type HierarchyLevelName              = String
   type HistoricalMetricDataCollections = js.Array[HistoricalMetricData]
-  type HistoricalMetricName            = String
   type HistoricalMetricResults         = js.Array[HistoricalMetricResult]
   type HistoricalMetrics               = js.Array[HistoricalMetric]
   type HoursOfOperationId              = String
@@ -57,17 +51,13 @@ package object connect {
   type ParticipantToken                = String
   type Password                        = String
   type PhoneNumber                     = String
-  type PhoneNumberCountryCode          = String
   type PhoneNumberCountryCodes         = js.Array[PhoneNumberCountryCode]
   type PhoneNumberId                   = String
   type PhoneNumberSummaryList          = js.Array[PhoneNumberSummary]
-  type PhoneNumberType                 = String
   type PhoneNumberTypes                = js.Array[PhoneNumberType]
-  type PhoneType                       = String
   type QueueId                         = String
   type QueueName                       = String
   type QueueSummaryList                = js.Array[QueueSummary]
-  type QueueType                       = String
   type QueueTypes                      = js.Array[QueueType]
   type Queues                          = js.Array[QueueId]
   type RoutingProfileId                = String
@@ -78,13 +68,11 @@ package object connect {
   type SecurityProfileName             = String
   type SecurityProfileSummaryList      = js.Array[SecurityProfileSummary]
   type SecurityToken                   = String
-  type Statistic                       = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagMap                          = js.Dictionary[TagValue]
   type TagValue                        = String
   type ThresholdValue                  = Double
-  type Unit                            = String
   type UserId                          = String
   type UserSummaryList                 = js.Array[UserSummary]
   type Value                           = Double
@@ -203,10 +191,11 @@ package connect {
     def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object]     = js.native
     def updateUserSecurityProfiles(params: UpdateUserSecurityProfilesRequest): Request[js.Object] = js.native
   }
-
-  object ChannelEnum {
-    val VOICE = "VOICE"
-    val CHAT  = "CHAT"
+  @js.native
+  sealed trait Channel extends js.Any
+  object Channel extends js.Object {
+    val VOICE = "VOICE".asInstanceOf[Channel]
+    val CHAT  = "CHAT".asInstanceOf[Channel]
 
     val values = js.Object.freeze(js.Array(VOICE, CHAT))
   }
@@ -234,9 +223,10 @@ package connect {
       __obj.asInstanceOf[ChatMessage]
     }
   }
-
-  object ComparisonEnum {
-    val LT = "LT"
+  @js.native
+  sealed trait Comparison extends js.Any
+  object Comparison extends js.Object {
+    val LT = "LT".asInstanceOf[Comparison]
 
     val values = js.Object.freeze(js.Array(LT))
   }
@@ -268,17 +258,18 @@ package connect {
       __obj.asInstanceOf[ContactFlowSummary]
     }
   }
-
-  object ContactFlowTypeEnum {
-    val CONTACT_FLOW     = "CONTACT_FLOW"
-    val CUSTOMER_QUEUE   = "CUSTOMER_QUEUE"
-    val CUSTOMER_HOLD    = "CUSTOMER_HOLD"
-    val CUSTOMER_WHISPER = "CUSTOMER_WHISPER"
-    val AGENT_HOLD       = "AGENT_HOLD"
-    val AGENT_WHISPER    = "AGENT_WHISPER"
-    val OUTBOUND_WHISPER = "OUTBOUND_WHISPER"
-    val AGENT_TRANSFER   = "AGENT_TRANSFER"
-    val QUEUE_TRANSFER   = "QUEUE_TRANSFER"
+  @js.native
+  sealed trait ContactFlowType extends js.Any
+  object ContactFlowType extends js.Object {
+    val CONTACT_FLOW     = "CONTACT_FLOW".asInstanceOf[ContactFlowType]
+    val CUSTOMER_QUEUE   = "CUSTOMER_QUEUE".asInstanceOf[ContactFlowType]
+    val CUSTOMER_HOLD    = "CUSTOMER_HOLD".asInstanceOf[ContactFlowType]
+    val CUSTOMER_WHISPER = "CUSTOMER_WHISPER".asInstanceOf[ContactFlowType]
+    val AGENT_HOLD       = "AGENT_HOLD".asInstanceOf[ContactFlowType]
+    val AGENT_WHISPER    = "AGENT_WHISPER".asInstanceOf[ContactFlowType]
+    val OUTBOUND_WHISPER = "OUTBOUND_WHISPER".asInstanceOf[ContactFlowType]
+    val AGENT_TRANSFER   = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
+    val QUEUE_TRANSFER   = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -434,20 +425,22 @@ package connect {
   /**
     * The current metric names.
     */
-  object CurrentMetricNameEnum {
-    val AGENTS_ONLINE             = "AGENTS_ONLINE"
-    val AGENTS_AVAILABLE          = "AGENTS_AVAILABLE"
-    val AGENTS_ON_CALL            = "AGENTS_ON_CALL"
-    val AGENTS_NON_PRODUCTIVE     = "AGENTS_NON_PRODUCTIVE"
-    val AGENTS_AFTER_CONTACT_WORK = "AGENTS_AFTER_CONTACT_WORK"
-    val AGENTS_ERROR              = "AGENTS_ERROR"
-    val AGENTS_STAFFED            = "AGENTS_STAFFED"
-    val CONTACTS_IN_QUEUE         = "CONTACTS_IN_QUEUE"
-    val OLDEST_CONTACT_AGE        = "OLDEST_CONTACT_AGE"
-    val CONTACTS_SCHEDULED        = "CONTACTS_SCHEDULED"
-    val AGENTS_ON_CONTACT         = "AGENTS_ON_CONTACT"
-    val SLOTS_ACTIVE              = "SLOTS_ACTIVE"
-    val SLOTS_AVAILABLE           = "SLOTS_AVAILABLE"
+  @js.native
+  sealed trait CurrentMetricName extends js.Any
+  object CurrentMetricName extends js.Object {
+    val AGENTS_ONLINE             = "AGENTS_ONLINE".asInstanceOf[CurrentMetricName]
+    val AGENTS_AVAILABLE          = "AGENTS_AVAILABLE".asInstanceOf[CurrentMetricName]
+    val AGENTS_ON_CALL            = "AGENTS_ON_CALL".asInstanceOf[CurrentMetricName]
+    val AGENTS_NON_PRODUCTIVE     = "AGENTS_NON_PRODUCTIVE".asInstanceOf[CurrentMetricName]
+    val AGENTS_AFTER_CONTACT_WORK = "AGENTS_AFTER_CONTACT_WORK".asInstanceOf[CurrentMetricName]
+    val AGENTS_ERROR              = "AGENTS_ERROR".asInstanceOf[CurrentMetricName]
+    val AGENTS_STAFFED            = "AGENTS_STAFFED".asInstanceOf[CurrentMetricName]
+    val CONTACTS_IN_QUEUE         = "CONTACTS_IN_QUEUE".asInstanceOf[CurrentMetricName]
+    val OLDEST_CONTACT_AGE        = "OLDEST_CONTACT_AGE".asInstanceOf[CurrentMetricName]
+    val CONTACTS_SCHEDULED        = "CONTACTS_SCHEDULED".asInstanceOf[CurrentMetricName]
+    val AGENTS_ON_CONTACT         = "AGENTS_ON_CONTACT".asInstanceOf[CurrentMetricName]
+    val SLOTS_ACTIVE              = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
+    val SLOTS_AVAILABLE           = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -846,10 +839,11 @@ package connect {
       __obj.asInstanceOf[GetMetricDataResponse]
     }
   }
-
-  object GroupingEnum {
-    val QUEUE   = "QUEUE"
-    val CHANNEL = "CHANNEL"
+  @js.native
+  sealed trait Grouping extends js.Any
+  object Grouping extends js.Object {
+    val QUEUE   = "QUEUE".asInstanceOf[Grouping]
+    val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
     val values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
   }
@@ -1050,32 +1044,34 @@ package connect {
   /**
     * The historical metric names.
     */
-  object HistoricalMetricNameEnum {
-    val CONTACTS_QUEUED                     = "CONTACTS_QUEUED"
-    val CONTACTS_HANDLED                    = "CONTACTS_HANDLED"
-    val CONTACTS_ABANDONED                  = "CONTACTS_ABANDONED"
-    val CONTACTS_CONSULTED                  = "CONTACTS_CONSULTED"
-    val CONTACTS_AGENT_HUNG_UP_FIRST        = "CONTACTS_AGENT_HUNG_UP_FIRST"
-    val CONTACTS_HANDLED_INCOMING           = "CONTACTS_HANDLED_INCOMING"
-    val CONTACTS_HANDLED_OUTBOUND           = "CONTACTS_HANDLED_OUTBOUND"
-    val CONTACTS_HOLD_ABANDONS              = "CONTACTS_HOLD_ABANDONS"
-    val CONTACTS_TRANSFERRED_IN             = "CONTACTS_TRANSFERRED_IN"
-    val CONTACTS_TRANSFERRED_OUT            = "CONTACTS_TRANSFERRED_OUT"
-    val CONTACTS_TRANSFERRED_IN_FROM_QUEUE  = "CONTACTS_TRANSFERRED_IN_FROM_QUEUE"
-    val CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE"
-    val CONTACTS_MISSED                     = "CONTACTS_MISSED"
-    val CALLBACK_CONTACTS_HANDLED           = "CALLBACK_CONTACTS_HANDLED"
-    val API_CONTACTS_HANDLED                = "API_CONTACTS_HANDLED"
-    val OCCUPANCY                           = "OCCUPANCY"
-    val HANDLE_TIME                         = "HANDLE_TIME"
-    val AFTER_CONTACT_WORK_TIME             = "AFTER_CONTACT_WORK_TIME"
-    val QUEUED_TIME                         = "QUEUED_TIME"
-    val ABANDON_TIME                        = "ABANDON_TIME"
-    val QUEUE_ANSWER_TIME                   = "QUEUE_ANSWER_TIME"
-    val HOLD_TIME                           = "HOLD_TIME"
-    val INTERACTION_TIME                    = "INTERACTION_TIME"
-    val INTERACTION_AND_HOLD_TIME           = "INTERACTION_AND_HOLD_TIME"
-    val SERVICE_LEVEL                       = "SERVICE_LEVEL"
+  @js.native
+  sealed trait HistoricalMetricName extends js.Any
+  object HistoricalMetricName extends js.Object {
+    val CONTACTS_QUEUED                     = "CONTACTS_QUEUED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED                    = "CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_ABANDONED                  = "CONTACTS_ABANDONED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_CONSULTED                  = "CONTACTS_CONSULTED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_AGENT_HUNG_UP_FIRST        = "CONTACTS_AGENT_HUNG_UP_FIRST".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED_INCOMING           = "CONTACTS_HANDLED_INCOMING".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED_OUTBOUND           = "CONTACTS_HANDLED_OUTBOUND".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HOLD_ABANDONS              = "CONTACTS_HOLD_ABANDONS".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_IN             = "CONTACTS_TRANSFERRED_IN".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_OUT            = "CONTACTS_TRANSFERRED_OUT".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_IN_FROM_QUEUE  = "CONTACTS_TRANSFERRED_IN_FROM_QUEUE".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_MISSED                     = "CONTACTS_MISSED".asInstanceOf[HistoricalMetricName]
+    val CALLBACK_CONTACTS_HANDLED           = "CALLBACK_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val API_CONTACTS_HANDLED                = "API_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val OCCUPANCY                           = "OCCUPANCY".asInstanceOf[HistoricalMetricName]
+    val HANDLE_TIME                         = "HANDLE_TIME".asInstanceOf[HistoricalMetricName]
+    val AFTER_CONTACT_WORK_TIME             = "AFTER_CONTACT_WORK_TIME".asInstanceOf[HistoricalMetricName]
+    val QUEUED_TIME                         = "QUEUED_TIME".asInstanceOf[HistoricalMetricName]
+    val ABANDON_TIME                        = "ABANDON_TIME".asInstanceOf[HistoricalMetricName]
+    val QUEUE_ANSWER_TIME                   = "QUEUE_ANSWER_TIME".asInstanceOf[HistoricalMetricName]
+    val HOLD_TIME                           = "HOLD_TIME".asInstanceOf[HistoricalMetricName]
+    val INTERACTION_TIME                    = "INTERACTION_TIME".asInstanceOf[HistoricalMetricName]
+    val INTERACTION_AND_HOLD_TIME           = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
+    val SERVICE_LEVEL                       = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1573,245 +1569,246 @@ package connect {
       __obj.asInstanceOf[ParticipantDetails]
     }
   }
-
-  object PhoneNumberCountryCodeEnum {
-    val AF = "AF"
-    val AL = "AL"
-    val DZ = "DZ"
-    val AS = "AS"
-    val AD = "AD"
-    val AO = "AO"
-    val AI = "AI"
-    val AQ = "AQ"
-    val AG = "AG"
-    val AR = "AR"
-    val AM = "AM"
-    val AW = "AW"
-    val AU = "AU"
-    val AT = "AT"
-    val AZ = "AZ"
-    val BS = "BS"
-    val BH = "BH"
-    val BD = "BD"
-    val BB = "BB"
-    val BY = "BY"
-    val BE = "BE"
-    val BZ = "BZ"
-    val BJ = "BJ"
-    val BM = "BM"
-    val BT = "BT"
-    val BO = "BO"
-    val BA = "BA"
-    val BW = "BW"
-    val BR = "BR"
-    val IO = "IO"
-    val VG = "VG"
-    val BN = "BN"
-    val BG = "BG"
-    val BF = "BF"
-    val BI = "BI"
-    val KH = "KH"
-    val CM = "CM"
-    val CA = "CA"
-    val CV = "CV"
-    val KY = "KY"
-    val CF = "CF"
-    val TD = "TD"
-    val CL = "CL"
-    val CN = "CN"
-    val CX = "CX"
-    val CC = "CC"
-    val CO = "CO"
-    val KM = "KM"
-    val CK = "CK"
-    val CR = "CR"
-    val HR = "HR"
-    val CU = "CU"
-    val CW = "CW"
-    val CY = "CY"
-    val CZ = "CZ"
-    val CD = "CD"
-    val DK = "DK"
-    val DJ = "DJ"
-    val DM = "DM"
-    val DO = "DO"
-    val TL = "TL"
-    val EC = "EC"
-    val EG = "EG"
-    val SV = "SV"
-    val GQ = "GQ"
-    val ER = "ER"
-    val EE = "EE"
-    val ET = "ET"
-    val FK = "FK"
-    val FO = "FO"
-    val FJ = "FJ"
-    val FI = "FI"
-    val FR = "FR"
-    val PF = "PF"
-    val GA = "GA"
-    val GM = "GM"
-    val GE = "GE"
-    val DE = "DE"
-    val GH = "GH"
-    val GI = "GI"
-    val GR = "GR"
-    val GL = "GL"
-    val GD = "GD"
-    val GU = "GU"
-    val GT = "GT"
-    val GG = "GG"
-    val GN = "GN"
-    val GW = "GW"
-    val GY = "GY"
-    val HT = "HT"
-    val HN = "HN"
-    val HK = "HK"
-    val HU = "HU"
-    val IS = "IS"
-    val IN = "IN"
-    val ID = "ID"
-    val IR = "IR"
-    val IQ = "IQ"
-    val IE = "IE"
-    val IM = "IM"
-    val IL = "IL"
-    val IT = "IT"
-    val CI = "CI"
-    val JM = "JM"
-    val JP = "JP"
-    val JE = "JE"
-    val JO = "JO"
-    val KZ = "KZ"
-    val KE = "KE"
-    val KI = "KI"
-    val KW = "KW"
-    val KG = "KG"
-    val LA = "LA"
-    val LV = "LV"
-    val LB = "LB"
-    val LS = "LS"
-    val LR = "LR"
-    val LY = "LY"
-    val LI = "LI"
-    val LT = "LT"
-    val LU = "LU"
-    val MO = "MO"
-    val MK = "MK"
-    val MG = "MG"
-    val MW = "MW"
-    val MY = "MY"
-    val MV = "MV"
-    val ML = "ML"
-    val MT = "MT"
-    val MH = "MH"
-    val MR = "MR"
-    val MU = "MU"
-    val YT = "YT"
-    val MX = "MX"
-    val FM = "FM"
-    val MD = "MD"
-    val MC = "MC"
-    val MN = "MN"
-    val ME = "ME"
-    val MS = "MS"
-    val MA = "MA"
-    val MZ = "MZ"
-    val MM = "MM"
-    val NA = "NA"
-    val NR = "NR"
-    val NP = "NP"
-    val NL = "NL"
-    val AN = "AN"
-    val NC = "NC"
-    val NZ = "NZ"
-    val NI = "NI"
-    val NE = "NE"
-    val NG = "NG"
-    val NU = "NU"
-    val KP = "KP"
-    val MP = "MP"
-    val NO = "NO"
-    val OM = "OM"
-    val PK = "PK"
-    val PW = "PW"
-    val PA = "PA"
-    val PG = "PG"
-    val PY = "PY"
-    val PE = "PE"
-    val PH = "PH"
-    val PN = "PN"
-    val PL = "PL"
-    val PT = "PT"
-    val PR = "PR"
-    val QA = "QA"
-    val CG = "CG"
-    val RE = "RE"
-    val RO = "RO"
-    val RU = "RU"
-    val RW = "RW"
-    val BL = "BL"
-    val SH = "SH"
-    val KN = "KN"
-    val LC = "LC"
-    val MF = "MF"
-    val PM = "PM"
-    val VC = "VC"
-    val WS = "WS"
-    val SM = "SM"
-    val ST = "ST"
-    val SA = "SA"
-    val SN = "SN"
-    val RS = "RS"
-    val SC = "SC"
-    val SL = "SL"
-    val SG = "SG"
-    val SX = "SX"
-    val SK = "SK"
-    val SI = "SI"
-    val SB = "SB"
-    val SO = "SO"
-    val ZA = "ZA"
-    val KR = "KR"
-    val ES = "ES"
-    val LK = "LK"
-    val SD = "SD"
-    val SR = "SR"
-    val SJ = "SJ"
-    val SZ = "SZ"
-    val SE = "SE"
-    val CH = "CH"
-    val SY = "SY"
-    val TW = "TW"
-    val TJ = "TJ"
-    val TZ = "TZ"
-    val TH = "TH"
-    val TG = "TG"
-    val TK = "TK"
-    val TO = "TO"
-    val TT = "TT"
-    val TN = "TN"
-    val TR = "TR"
-    val TM = "TM"
-    val TC = "TC"
-    val TV = "TV"
-    val VI = "VI"
-    val UG = "UG"
-    val UA = "UA"
-    val AE = "AE"
-    val GB = "GB"
-    val US = "US"
-    val UY = "UY"
-    val UZ = "UZ"
-    val VU = "VU"
-    val VA = "VA"
-    val VE = "VE"
-    val VN = "VN"
-    val WF = "WF"
-    val EH = "EH"
-    val YE = "YE"
-    val ZM = "ZM"
-    val ZW = "ZW"
+  @js.native
+  sealed trait PhoneNumberCountryCode extends js.Any
+  object PhoneNumberCountryCode extends js.Object {
+    val AF = "AF".asInstanceOf[PhoneNumberCountryCode]
+    val AL = "AL".asInstanceOf[PhoneNumberCountryCode]
+    val DZ = "DZ".asInstanceOf[PhoneNumberCountryCode]
+    val AS = "AS".asInstanceOf[PhoneNumberCountryCode]
+    val AD = "AD".asInstanceOf[PhoneNumberCountryCode]
+    val AO = "AO".asInstanceOf[PhoneNumberCountryCode]
+    val AI = "AI".asInstanceOf[PhoneNumberCountryCode]
+    val AQ = "AQ".asInstanceOf[PhoneNumberCountryCode]
+    val AG = "AG".asInstanceOf[PhoneNumberCountryCode]
+    val AR = "AR".asInstanceOf[PhoneNumberCountryCode]
+    val AM = "AM".asInstanceOf[PhoneNumberCountryCode]
+    val AW = "AW".asInstanceOf[PhoneNumberCountryCode]
+    val AU = "AU".asInstanceOf[PhoneNumberCountryCode]
+    val AT = "AT".asInstanceOf[PhoneNumberCountryCode]
+    val AZ = "AZ".asInstanceOf[PhoneNumberCountryCode]
+    val BS = "BS".asInstanceOf[PhoneNumberCountryCode]
+    val BH = "BH".asInstanceOf[PhoneNumberCountryCode]
+    val BD = "BD".asInstanceOf[PhoneNumberCountryCode]
+    val BB = "BB".asInstanceOf[PhoneNumberCountryCode]
+    val BY = "BY".asInstanceOf[PhoneNumberCountryCode]
+    val BE = "BE".asInstanceOf[PhoneNumberCountryCode]
+    val BZ = "BZ".asInstanceOf[PhoneNumberCountryCode]
+    val BJ = "BJ".asInstanceOf[PhoneNumberCountryCode]
+    val BM = "BM".asInstanceOf[PhoneNumberCountryCode]
+    val BT = "BT".asInstanceOf[PhoneNumberCountryCode]
+    val BO = "BO".asInstanceOf[PhoneNumberCountryCode]
+    val BA = "BA".asInstanceOf[PhoneNumberCountryCode]
+    val BW = "BW".asInstanceOf[PhoneNumberCountryCode]
+    val BR = "BR".asInstanceOf[PhoneNumberCountryCode]
+    val IO = "IO".asInstanceOf[PhoneNumberCountryCode]
+    val VG = "VG".asInstanceOf[PhoneNumberCountryCode]
+    val BN = "BN".asInstanceOf[PhoneNumberCountryCode]
+    val BG = "BG".asInstanceOf[PhoneNumberCountryCode]
+    val BF = "BF".asInstanceOf[PhoneNumberCountryCode]
+    val BI = "BI".asInstanceOf[PhoneNumberCountryCode]
+    val KH = "KH".asInstanceOf[PhoneNumberCountryCode]
+    val CM = "CM".asInstanceOf[PhoneNumberCountryCode]
+    val CA = "CA".asInstanceOf[PhoneNumberCountryCode]
+    val CV = "CV".asInstanceOf[PhoneNumberCountryCode]
+    val KY = "KY".asInstanceOf[PhoneNumberCountryCode]
+    val CF = "CF".asInstanceOf[PhoneNumberCountryCode]
+    val TD = "TD".asInstanceOf[PhoneNumberCountryCode]
+    val CL = "CL".asInstanceOf[PhoneNumberCountryCode]
+    val CN = "CN".asInstanceOf[PhoneNumberCountryCode]
+    val CX = "CX".asInstanceOf[PhoneNumberCountryCode]
+    val CC = "CC".asInstanceOf[PhoneNumberCountryCode]
+    val CO = "CO".asInstanceOf[PhoneNumberCountryCode]
+    val KM = "KM".asInstanceOf[PhoneNumberCountryCode]
+    val CK = "CK".asInstanceOf[PhoneNumberCountryCode]
+    val CR = "CR".asInstanceOf[PhoneNumberCountryCode]
+    val HR = "HR".asInstanceOf[PhoneNumberCountryCode]
+    val CU = "CU".asInstanceOf[PhoneNumberCountryCode]
+    val CW = "CW".asInstanceOf[PhoneNumberCountryCode]
+    val CY = "CY".asInstanceOf[PhoneNumberCountryCode]
+    val CZ = "CZ".asInstanceOf[PhoneNumberCountryCode]
+    val CD = "CD".asInstanceOf[PhoneNumberCountryCode]
+    val DK = "DK".asInstanceOf[PhoneNumberCountryCode]
+    val DJ = "DJ".asInstanceOf[PhoneNumberCountryCode]
+    val DM = "DM".asInstanceOf[PhoneNumberCountryCode]
+    val DO = "DO".asInstanceOf[PhoneNumberCountryCode]
+    val TL = "TL".asInstanceOf[PhoneNumberCountryCode]
+    val EC = "EC".asInstanceOf[PhoneNumberCountryCode]
+    val EG = "EG".asInstanceOf[PhoneNumberCountryCode]
+    val SV = "SV".asInstanceOf[PhoneNumberCountryCode]
+    val GQ = "GQ".asInstanceOf[PhoneNumberCountryCode]
+    val ER = "ER".asInstanceOf[PhoneNumberCountryCode]
+    val EE = "EE".asInstanceOf[PhoneNumberCountryCode]
+    val ET = "ET".asInstanceOf[PhoneNumberCountryCode]
+    val FK = "FK".asInstanceOf[PhoneNumberCountryCode]
+    val FO = "FO".asInstanceOf[PhoneNumberCountryCode]
+    val FJ = "FJ".asInstanceOf[PhoneNumberCountryCode]
+    val FI = "FI".asInstanceOf[PhoneNumberCountryCode]
+    val FR = "FR".asInstanceOf[PhoneNumberCountryCode]
+    val PF = "PF".asInstanceOf[PhoneNumberCountryCode]
+    val GA = "GA".asInstanceOf[PhoneNumberCountryCode]
+    val GM = "GM".asInstanceOf[PhoneNumberCountryCode]
+    val GE = "GE".asInstanceOf[PhoneNumberCountryCode]
+    val DE = "DE".asInstanceOf[PhoneNumberCountryCode]
+    val GH = "GH".asInstanceOf[PhoneNumberCountryCode]
+    val GI = "GI".asInstanceOf[PhoneNumberCountryCode]
+    val GR = "GR".asInstanceOf[PhoneNumberCountryCode]
+    val GL = "GL".asInstanceOf[PhoneNumberCountryCode]
+    val GD = "GD".asInstanceOf[PhoneNumberCountryCode]
+    val GU = "GU".asInstanceOf[PhoneNumberCountryCode]
+    val GT = "GT".asInstanceOf[PhoneNumberCountryCode]
+    val GG = "GG".asInstanceOf[PhoneNumberCountryCode]
+    val GN = "GN".asInstanceOf[PhoneNumberCountryCode]
+    val GW = "GW".asInstanceOf[PhoneNumberCountryCode]
+    val GY = "GY".asInstanceOf[PhoneNumberCountryCode]
+    val HT = "HT".asInstanceOf[PhoneNumberCountryCode]
+    val HN = "HN".asInstanceOf[PhoneNumberCountryCode]
+    val HK = "HK".asInstanceOf[PhoneNumberCountryCode]
+    val HU = "HU".asInstanceOf[PhoneNumberCountryCode]
+    val IS = "IS".asInstanceOf[PhoneNumberCountryCode]
+    val IN = "IN".asInstanceOf[PhoneNumberCountryCode]
+    val ID = "ID".asInstanceOf[PhoneNumberCountryCode]
+    val IR = "IR".asInstanceOf[PhoneNumberCountryCode]
+    val IQ = "IQ".asInstanceOf[PhoneNumberCountryCode]
+    val IE = "IE".asInstanceOf[PhoneNumberCountryCode]
+    val IM = "IM".asInstanceOf[PhoneNumberCountryCode]
+    val IL = "IL".asInstanceOf[PhoneNumberCountryCode]
+    val IT = "IT".asInstanceOf[PhoneNumberCountryCode]
+    val CI = "CI".asInstanceOf[PhoneNumberCountryCode]
+    val JM = "JM".asInstanceOf[PhoneNumberCountryCode]
+    val JP = "JP".asInstanceOf[PhoneNumberCountryCode]
+    val JE = "JE".asInstanceOf[PhoneNumberCountryCode]
+    val JO = "JO".asInstanceOf[PhoneNumberCountryCode]
+    val KZ = "KZ".asInstanceOf[PhoneNumberCountryCode]
+    val KE = "KE".asInstanceOf[PhoneNumberCountryCode]
+    val KI = "KI".asInstanceOf[PhoneNumberCountryCode]
+    val KW = "KW".asInstanceOf[PhoneNumberCountryCode]
+    val KG = "KG".asInstanceOf[PhoneNumberCountryCode]
+    val LA = "LA".asInstanceOf[PhoneNumberCountryCode]
+    val LV = "LV".asInstanceOf[PhoneNumberCountryCode]
+    val LB = "LB".asInstanceOf[PhoneNumberCountryCode]
+    val LS = "LS".asInstanceOf[PhoneNumberCountryCode]
+    val LR = "LR".asInstanceOf[PhoneNumberCountryCode]
+    val LY = "LY".asInstanceOf[PhoneNumberCountryCode]
+    val LI = "LI".asInstanceOf[PhoneNumberCountryCode]
+    val LT = "LT".asInstanceOf[PhoneNumberCountryCode]
+    val LU = "LU".asInstanceOf[PhoneNumberCountryCode]
+    val MO = "MO".asInstanceOf[PhoneNumberCountryCode]
+    val MK = "MK".asInstanceOf[PhoneNumberCountryCode]
+    val MG = "MG".asInstanceOf[PhoneNumberCountryCode]
+    val MW = "MW".asInstanceOf[PhoneNumberCountryCode]
+    val MY = "MY".asInstanceOf[PhoneNumberCountryCode]
+    val MV = "MV".asInstanceOf[PhoneNumberCountryCode]
+    val ML = "ML".asInstanceOf[PhoneNumberCountryCode]
+    val MT = "MT".asInstanceOf[PhoneNumberCountryCode]
+    val MH = "MH".asInstanceOf[PhoneNumberCountryCode]
+    val MR = "MR".asInstanceOf[PhoneNumberCountryCode]
+    val MU = "MU".asInstanceOf[PhoneNumberCountryCode]
+    val YT = "YT".asInstanceOf[PhoneNumberCountryCode]
+    val MX = "MX".asInstanceOf[PhoneNumberCountryCode]
+    val FM = "FM".asInstanceOf[PhoneNumberCountryCode]
+    val MD = "MD".asInstanceOf[PhoneNumberCountryCode]
+    val MC = "MC".asInstanceOf[PhoneNumberCountryCode]
+    val MN = "MN".asInstanceOf[PhoneNumberCountryCode]
+    val ME = "ME".asInstanceOf[PhoneNumberCountryCode]
+    val MS = "MS".asInstanceOf[PhoneNumberCountryCode]
+    val MA = "MA".asInstanceOf[PhoneNumberCountryCode]
+    val MZ = "MZ".asInstanceOf[PhoneNumberCountryCode]
+    val MM = "MM".asInstanceOf[PhoneNumberCountryCode]
+    val NA = "NA".asInstanceOf[PhoneNumberCountryCode]
+    val NR = "NR".asInstanceOf[PhoneNumberCountryCode]
+    val NP = "NP".asInstanceOf[PhoneNumberCountryCode]
+    val NL = "NL".asInstanceOf[PhoneNumberCountryCode]
+    val AN = "AN".asInstanceOf[PhoneNumberCountryCode]
+    val NC = "NC".asInstanceOf[PhoneNumberCountryCode]
+    val NZ = "NZ".asInstanceOf[PhoneNumberCountryCode]
+    val NI = "NI".asInstanceOf[PhoneNumberCountryCode]
+    val NE = "NE".asInstanceOf[PhoneNumberCountryCode]
+    val NG = "NG".asInstanceOf[PhoneNumberCountryCode]
+    val NU = "NU".asInstanceOf[PhoneNumberCountryCode]
+    val KP = "KP".asInstanceOf[PhoneNumberCountryCode]
+    val MP = "MP".asInstanceOf[PhoneNumberCountryCode]
+    val NO = "NO".asInstanceOf[PhoneNumberCountryCode]
+    val OM = "OM".asInstanceOf[PhoneNumberCountryCode]
+    val PK = "PK".asInstanceOf[PhoneNumberCountryCode]
+    val PW = "PW".asInstanceOf[PhoneNumberCountryCode]
+    val PA = "PA".asInstanceOf[PhoneNumberCountryCode]
+    val PG = "PG".asInstanceOf[PhoneNumberCountryCode]
+    val PY = "PY".asInstanceOf[PhoneNumberCountryCode]
+    val PE = "PE".asInstanceOf[PhoneNumberCountryCode]
+    val PH = "PH".asInstanceOf[PhoneNumberCountryCode]
+    val PN = "PN".asInstanceOf[PhoneNumberCountryCode]
+    val PL = "PL".asInstanceOf[PhoneNumberCountryCode]
+    val PT = "PT".asInstanceOf[PhoneNumberCountryCode]
+    val PR = "PR".asInstanceOf[PhoneNumberCountryCode]
+    val QA = "QA".asInstanceOf[PhoneNumberCountryCode]
+    val CG = "CG".asInstanceOf[PhoneNumberCountryCode]
+    val RE = "RE".asInstanceOf[PhoneNumberCountryCode]
+    val RO = "RO".asInstanceOf[PhoneNumberCountryCode]
+    val RU = "RU".asInstanceOf[PhoneNumberCountryCode]
+    val RW = "RW".asInstanceOf[PhoneNumberCountryCode]
+    val BL = "BL".asInstanceOf[PhoneNumberCountryCode]
+    val SH = "SH".asInstanceOf[PhoneNumberCountryCode]
+    val KN = "KN".asInstanceOf[PhoneNumberCountryCode]
+    val LC = "LC".asInstanceOf[PhoneNumberCountryCode]
+    val MF = "MF".asInstanceOf[PhoneNumberCountryCode]
+    val PM = "PM".asInstanceOf[PhoneNumberCountryCode]
+    val VC = "VC".asInstanceOf[PhoneNumberCountryCode]
+    val WS = "WS".asInstanceOf[PhoneNumberCountryCode]
+    val SM = "SM".asInstanceOf[PhoneNumberCountryCode]
+    val ST = "ST".asInstanceOf[PhoneNumberCountryCode]
+    val SA = "SA".asInstanceOf[PhoneNumberCountryCode]
+    val SN = "SN".asInstanceOf[PhoneNumberCountryCode]
+    val RS = "RS".asInstanceOf[PhoneNumberCountryCode]
+    val SC = "SC".asInstanceOf[PhoneNumberCountryCode]
+    val SL = "SL".asInstanceOf[PhoneNumberCountryCode]
+    val SG = "SG".asInstanceOf[PhoneNumberCountryCode]
+    val SX = "SX".asInstanceOf[PhoneNumberCountryCode]
+    val SK = "SK".asInstanceOf[PhoneNumberCountryCode]
+    val SI = "SI".asInstanceOf[PhoneNumberCountryCode]
+    val SB = "SB".asInstanceOf[PhoneNumberCountryCode]
+    val SO = "SO".asInstanceOf[PhoneNumberCountryCode]
+    val ZA = "ZA".asInstanceOf[PhoneNumberCountryCode]
+    val KR = "KR".asInstanceOf[PhoneNumberCountryCode]
+    val ES = "ES".asInstanceOf[PhoneNumberCountryCode]
+    val LK = "LK".asInstanceOf[PhoneNumberCountryCode]
+    val SD = "SD".asInstanceOf[PhoneNumberCountryCode]
+    val SR = "SR".asInstanceOf[PhoneNumberCountryCode]
+    val SJ = "SJ".asInstanceOf[PhoneNumberCountryCode]
+    val SZ = "SZ".asInstanceOf[PhoneNumberCountryCode]
+    val SE = "SE".asInstanceOf[PhoneNumberCountryCode]
+    val CH = "CH".asInstanceOf[PhoneNumberCountryCode]
+    val SY = "SY".asInstanceOf[PhoneNumberCountryCode]
+    val TW = "TW".asInstanceOf[PhoneNumberCountryCode]
+    val TJ = "TJ".asInstanceOf[PhoneNumberCountryCode]
+    val TZ = "TZ".asInstanceOf[PhoneNumberCountryCode]
+    val TH = "TH".asInstanceOf[PhoneNumberCountryCode]
+    val TG = "TG".asInstanceOf[PhoneNumberCountryCode]
+    val TK = "TK".asInstanceOf[PhoneNumberCountryCode]
+    val TO = "TO".asInstanceOf[PhoneNumberCountryCode]
+    val TT = "TT".asInstanceOf[PhoneNumberCountryCode]
+    val TN = "TN".asInstanceOf[PhoneNumberCountryCode]
+    val TR = "TR".asInstanceOf[PhoneNumberCountryCode]
+    val TM = "TM".asInstanceOf[PhoneNumberCountryCode]
+    val TC = "TC".asInstanceOf[PhoneNumberCountryCode]
+    val TV = "TV".asInstanceOf[PhoneNumberCountryCode]
+    val VI = "VI".asInstanceOf[PhoneNumberCountryCode]
+    val UG = "UG".asInstanceOf[PhoneNumberCountryCode]
+    val UA = "UA".asInstanceOf[PhoneNumberCountryCode]
+    val AE = "AE".asInstanceOf[PhoneNumberCountryCode]
+    val GB = "GB".asInstanceOf[PhoneNumberCountryCode]
+    val US = "US".asInstanceOf[PhoneNumberCountryCode]
+    val UY = "UY".asInstanceOf[PhoneNumberCountryCode]
+    val UZ = "UZ".asInstanceOf[PhoneNumberCountryCode]
+    val VU = "VU".asInstanceOf[PhoneNumberCountryCode]
+    val VA = "VA".asInstanceOf[PhoneNumberCountryCode]
+    val VE = "VE".asInstanceOf[PhoneNumberCountryCode]
+    val VN = "VN".asInstanceOf[PhoneNumberCountryCode]
+    val WF = "WF".asInstanceOf[PhoneNumberCountryCode]
+    val EH = "EH".asInstanceOf[PhoneNumberCountryCode]
+    val YE = "YE".asInstanceOf[PhoneNumberCountryCode]
+    val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
+    val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2086,17 +2083,19 @@ package connect {
       __obj.asInstanceOf[PhoneNumberSummary]
     }
   }
-
-  object PhoneNumberTypeEnum {
-    val TOLL_FREE = "TOLL_FREE"
-    val DID       = "DID"
+  @js.native
+  sealed trait PhoneNumberType extends js.Any
+  object PhoneNumberType extends js.Object {
+    val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
+    val DID       = "DID".asInstanceOf[PhoneNumberType]
 
     val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
   }
-
-  object PhoneTypeEnum {
-    val SOFT_PHONE = "SOFT_PHONE"
-    val DESK_PHONE = "DESK_PHONE"
+  @js.native
+  sealed trait PhoneType extends js.Any
+  object PhoneType extends js.Object {
+    val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
+    val DESK_PHONE = "DESK_PHONE".asInstanceOf[PhoneType]
 
     val values = js.Object.freeze(js.Array(SOFT_PHONE, DESK_PHONE))
   }
@@ -2150,10 +2149,11 @@ package connect {
       __obj.asInstanceOf[QueueSummary]
     }
   }
-
-  object QueueTypeEnum {
-    val STANDARD = "STANDARD"
-    val AGENT    = "AGENT"
+  @js.native
+  sealed trait QueueType extends js.Any
+  object QueueType extends js.Object {
+    val STANDARD = "STANDARD".asInstanceOf[QueueType]
+    val AGENT    = "AGENT".asInstanceOf[QueueType]
 
     val values = js.Object.freeze(js.Array(STANDARD, AGENT))
   }
@@ -2314,11 +2314,12 @@ package connect {
       __obj.asInstanceOf[StartOutboundVoiceContactResponse]
     }
   }
-
-  object StatisticEnum {
-    val SUM = "SUM"
-    val MAX = "MAX"
-    val AVG = "AVG"
+  @js.native
+  sealed trait Statistic extends js.Any
+  object Statistic extends js.Object {
+    val SUM = "SUM".asInstanceOf[Statistic]
+    val MAX = "MAX".asInstanceOf[Statistic]
+    val AVG = "AVG".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(SUM, MAX, AVG))
   }
@@ -2399,11 +2400,12 @@ package connect {
       __obj.asInstanceOf[Threshold]
     }
   }
-
-  object UnitEnum {
-    val SECONDS = "SECONDS"
-    val COUNT   = "COUNT"
-    val PERCENT = "PERCENT"
+  @js.native
+  sealed trait Unit extends js.Any
+  object Unit extends js.Object {
+    val SECONDS = "SECONDS".asInstanceOf[Unit]
+    val COUNT   = "COUNT".asInstanceOf[Unit]
+    val PERCENT = "PERCENT".asInstanceOf[Unit]
 
     val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
   }

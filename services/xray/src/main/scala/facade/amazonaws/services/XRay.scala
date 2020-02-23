@@ -19,8 +19,6 @@ package object xray {
   type EC2InstanceId                   = String
   type EdgeList                        = js.Array[Edge]
   type EncryptionKeyId                 = String
-  type EncryptionStatus                = String
-  type EncryptionType                  = String
   type EntitySelectorExpression        = String
   type ErrorRootCauseEntityPath        = js.Array[ErrorRootCauseEntity]
   type ErrorRootCauseServices          = js.Array[ErrorRootCauseService]
@@ -55,7 +53,6 @@ package object xray {
   type SamplingRuleRecordList          = js.Array[SamplingRuleRecord]
   type SamplingStatisticSummaryList    = js.Array[SamplingStatisticSummary]
   type SamplingStatisticsDocumentList  = js.Array[SamplingStatisticsDocument]
-  type SamplingStrategyName            = String
   type SamplingTargetDocumentList      = js.Array[SamplingTargetDocument]
   type SegmentDocument                 = String
   type SegmentId                       = String
@@ -66,7 +63,6 @@ package object xray {
   type ServiceNames                    = js.Array[String]
   type ServiceType                     = String
   type TelemetryRecordList             = js.Array[TelemetryRecord]
-  type TimeRangeType                   = String
   type TimeSeriesServiceStatisticsList = js.Array[TimeSeriesServiceStatistics]
   type Timestamp                       = js.Date
   type TraceAvailabilityZones          = js.Array[AvailabilityZoneDetail]
@@ -538,17 +534,19 @@ package xray {
       __obj.asInstanceOf[EncryptionConfig]
     }
   }
-
-  object EncryptionStatusEnum {
-    val UPDATING = "UPDATING"
-    val ACTIVE   = "ACTIVE"
+  @js.native
+  sealed trait EncryptionStatus extends js.Any
+  object EncryptionStatus extends js.Object {
+    val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[EncryptionStatus]
 
     val values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
   }
-
-  object EncryptionTypeEnum {
-    val NONE = "NONE"
-    val KMS  = "KMS"
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType extends js.Object {
+    val NONE = "NONE".asInstanceOf[EncryptionType]
+    val KMS  = "KMS".asInstanceOf[EncryptionType]
 
     val values = js.Object.freeze(js.Array(NONE, KMS))
   }
@@ -1760,10 +1758,11 @@ package xray {
       __obj.asInstanceOf[SamplingStrategy]
     }
   }
-
-  object SamplingStrategyNameEnum {
-    val PartialScan = "PartialScan"
-    val FixedRate   = "FixedRate"
+  @js.native
+  sealed trait SamplingStrategyName extends js.Any
+  object SamplingStrategyName extends js.Object {
+    val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
+    val FixedRate   = "FixedRate".asInstanceOf[SamplingStrategyName]
 
     val values = js.Object.freeze(js.Array(PartialScan, FixedRate))
   }
@@ -1971,10 +1970,11 @@ package xray {
       __obj.asInstanceOf[TelemetryRecord]
     }
   }
-
-  object TimeRangeTypeEnum {
-    val TraceId = "TraceId"
-    val Event   = "Event"
+  @js.native
+  sealed trait TimeRangeType extends js.Any
+  object TimeRangeType extends js.Object {
+    val TraceId = "TraceId".asInstanceOf[TimeRangeType]
+    val Event   = "Event".asInstanceOf[TimeRangeType]
 
     val values = js.Object.freeze(js.Array(TraceId, Event))
   }

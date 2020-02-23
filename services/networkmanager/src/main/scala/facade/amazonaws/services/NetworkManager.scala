@@ -7,28 +7,21 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object networkmanager {
-  type CustomerGatewayAssociationList  = js.Array[CustomerGatewayAssociation]
-  type CustomerGatewayAssociationState = String
-  type DateTime                        = js.Date
-  type DeviceList                      = js.Array[Device]
-  type DeviceState                     = String
-  type GlobalNetworkList               = js.Array[GlobalNetwork]
-  type GlobalNetworkState              = String
-  type LinkAssociationList             = js.Array[LinkAssociation]
-  type LinkAssociationState            = String
-  type LinkList                        = js.Array[Link]
-  type LinkState                       = String
-  type MaxResults                      = Int
-  type ResourceARN                     = String
-  type SiteList                        = js.Array[Site]
-  type SiteState                       = String
-  type StringList                      = js.Array[String]
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagList                         = js.Array[Tag]
-  type TagValue                        = String
-  type TransitGatewayRegistrationList  = js.Array[TransitGatewayRegistration]
-  type TransitGatewayRegistrationState = String
+  type CustomerGatewayAssociationList = js.Array[CustomerGatewayAssociation]
+  type DateTime                       = js.Date
+  type DeviceList                     = js.Array[Device]
+  type GlobalNetworkList              = js.Array[GlobalNetwork]
+  type LinkAssociationList            = js.Array[LinkAssociation]
+  type LinkList                       = js.Array[Link]
+  type MaxResults                     = Int
+  type ResourceARN                    = String
+  type SiteList                       = js.Array[Site]
+  type StringList                     = js.Array[String]
+  type TagKey                         = String
+  type TagKeyList                     = js.Array[TagKey]
+  type TagList                        = js.Array[Tag]
+  type TagValue                       = String
+  type TransitGatewayRegistrationList = js.Array[TransitGatewayRegistration]
 
   implicit final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
 
@@ -469,12 +462,13 @@ package networkmanager {
       __obj.asInstanceOf[CustomerGatewayAssociation]
     }
   }
-
-  object CustomerGatewayAssociationStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val DELETED   = "DELETED"
+  @js.native
+  sealed trait CustomerGatewayAssociationState extends js.Any
+  object CustomerGatewayAssociationState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[CustomerGatewayAssociationState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[CustomerGatewayAssociationState]
+    val DELETING  = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
+    val DELETED   = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
@@ -758,12 +752,13 @@ package networkmanager {
       __obj.asInstanceOf[Device]
     }
   }
-
-  object DeviceStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val UPDATING  = "UPDATING"
+  @js.native
+  sealed trait DeviceState extends js.Any
+  object DeviceState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[DeviceState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceState]
+    val DELETING  = "DELETING".asInstanceOf[DeviceState]
+    val UPDATING  = "UPDATING".asInstanceOf[DeviceState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1175,12 +1170,13 @@ package networkmanager {
       __obj.asInstanceOf[GlobalNetwork]
     }
   }
-
-  object GlobalNetworkStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val UPDATING  = "UPDATING"
+  @js.native
+  sealed trait GlobalNetworkState extends js.Any
+  object GlobalNetworkState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[GlobalNetworkState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[GlobalNetworkState]
+    val DELETING  = "DELETING".asInstanceOf[GlobalNetworkState]
+    val UPDATING  = "UPDATING".asInstanceOf[GlobalNetworkState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1261,21 +1257,23 @@ package networkmanager {
       __obj.asInstanceOf[LinkAssociation]
     }
   }
-
-  object LinkAssociationStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val DELETED   = "DELETED"
+  @js.native
+  sealed trait LinkAssociationState extends js.Any
+  object LinkAssociationState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[LinkAssociationState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[LinkAssociationState]
+    val DELETING  = "DELETING".asInstanceOf[LinkAssociationState]
+    val DELETED   = "DELETED".asInstanceOf[LinkAssociationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
-
-  object LinkStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val UPDATING  = "UPDATING"
+  @js.native
+  sealed trait LinkState extends js.Any
+  object LinkState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[LinkState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[LinkState]
+    val DELETING  = "DELETING".asInstanceOf[LinkState]
+    val UPDATING  = "UPDATING".asInstanceOf[LinkState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1417,12 +1415,13 @@ package networkmanager {
       __obj.asInstanceOf[Site]
     }
   }
-
-  object SiteStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val UPDATING  = "UPDATING"
+  @js.native
+  sealed trait SiteState extends js.Any
+  object SiteState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[SiteState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[SiteState]
+    val DELETING  = "DELETING".asInstanceOf[SiteState]
+    val UPDATING  = "UPDATING".asInstanceOf[SiteState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1507,13 +1506,14 @@ package networkmanager {
       __obj.asInstanceOf[TransitGatewayRegistration]
     }
   }
-
-  object TransitGatewayRegistrationStateEnum {
-    val PENDING   = "PENDING"
-    val AVAILABLE = "AVAILABLE"
-    val DELETING  = "DELETING"
-    val DELETED   = "DELETED"
-    val FAILED    = "FAILED"
+  @js.native
+  sealed trait TransitGatewayRegistrationState extends js.Any
+  object TransitGatewayRegistrationState extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[TransitGatewayRegistrationState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayRegistrationState]
+    val DELETING  = "DELETING".asInstanceOf[TransitGatewayRegistrationState]
+    val DELETED   = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
+    val FAILED    = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED))
   }

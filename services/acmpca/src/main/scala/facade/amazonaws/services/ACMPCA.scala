@@ -9,14 +9,9 @@ import facade.amazonaws._
 package object acmpca {
   type AccountId                        = String
   type ActionList                       = js.Array[ActionType]
-  type ActionType                       = String
   type Arn                              = String
   type AuditReportId                    = String
-  type AuditReportResponseFormat        = String
-  type AuditReportStatus                = String
   type CertificateAuthorities           = js.Array[CertificateAuthority]
-  type CertificateAuthorityStatus       = String
-  type CertificateAuthorityType         = String
   type CertificateBody                  = String
   type CertificateBodyBlob              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CertificateChain                 = String
@@ -25,18 +20,14 @@ package object acmpca {
   type CsrBlob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CsrBody                          = String
   type DistinguishedNameQualifierString = String
-  type FailureReason                    = String
   type IdempotencyToken                 = String
   type Integer1To5000                   = Int
-  type KeyAlgorithm                     = String
   type MaxResults                       = Int
   type NextToken                        = String
   type PermanentDeletionTimeInDays      = Int
   type PermissionList                   = js.Array[Permission]
   type PositiveLong                     = Double
   type Principal                        = String
-  type RevocationReason                 = String
-  type SigningAlgorithm                 = String
   type String128                        = String
   type String16                         = String
   type String253                        = String
@@ -49,7 +40,6 @@ package object acmpca {
   type TagKey                           = String
   type TagList                          = js.Array[Tag]
   type TagValue                         = String
-  type ValidityPeriodType               = String
 
   implicit final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
 
@@ -210,26 +200,29 @@ package acmpca {
       __obj.asInstanceOf[ASN1Subject]
     }
   }
-
-  object ActionTypeEnum {
-    val IssueCertificate = "IssueCertificate"
-    val GetCertificate   = "GetCertificate"
-    val ListPermissions  = "ListPermissions"
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType extends js.Object {
+    val IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
+    val GetCertificate   = "GetCertificate".asInstanceOf[ActionType]
+    val ListPermissions  = "ListPermissions".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
   }
-
-  object AuditReportResponseFormatEnum {
-    val JSON = "JSON"
-    val CSV  = "CSV"
+  @js.native
+  sealed trait AuditReportResponseFormat extends js.Any
+  object AuditReportResponseFormat extends js.Object {
+    val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
+    val CSV  = "CSV".asInstanceOf[AuditReportResponseFormat]
 
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }
-
-  object AuditReportStatusEnum {
-    val CREATING = "CREATING"
-    val SUCCESS  = "SUCCESS"
-    val FAILED   = "FAILED"
+  @js.native
+  sealed trait AuditReportStatus extends js.Any
+  object AuditReportStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[AuditReportStatus]
+    val SUCCESS  = "SUCCESS".asInstanceOf[AuditReportStatus]
+    val FAILED   = "FAILED".asInstanceOf[AuditReportStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
   }
@@ -314,22 +307,24 @@ package acmpca {
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
     }
   }
-
-  object CertificateAuthorityStatusEnum {
-    val CREATING            = "CREATING"
-    val PENDING_CERTIFICATE = "PENDING_CERTIFICATE"
-    val ACTIVE              = "ACTIVE"
-    val DELETED             = "DELETED"
-    val DISABLED            = "DISABLED"
-    val EXPIRED             = "EXPIRED"
-    val FAILED              = "FAILED"
+  @js.native
+  sealed trait CertificateAuthorityStatus extends js.Any
+  object CertificateAuthorityStatus extends js.Object {
+    val CREATING            = "CREATING".asInstanceOf[CertificateAuthorityStatus]
+    val PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
+    val ACTIVE              = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
+    val DELETED             = "DELETED".asInstanceOf[CertificateAuthorityStatus]
+    val DISABLED            = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
+    val EXPIRED             = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
+    val FAILED              = "FAILED".asInstanceOf[CertificateAuthorityStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
   }
-
-  object CertificateAuthorityTypeEnum {
-    val ROOT        = "ROOT"
-    val SUBORDINATE = "SUBORDINATE"
+  @js.native
+  sealed trait CertificateAuthorityType extends js.Any
+  object CertificateAuthorityType extends js.Object {
+    val ROOT        = "ROOT".asInstanceOf[CertificateAuthorityType]
+    val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
 
     val values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
   }
@@ -625,11 +620,12 @@ package acmpca {
       __obj.asInstanceOf[DescribeCertificateAuthorityResponse]
     }
   }
-
-  object FailureReasonEnum {
-    val REQUEST_TIMED_OUT     = "REQUEST_TIMED_OUT"
-    val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM"
-    val OTHER                 = "OTHER"
+  @js.native
+  sealed trait FailureReason extends js.Any
+  object FailureReason extends js.Object {
+    val REQUEST_TIMED_OUT     = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
+    val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
+    val OTHER                 = "OTHER".asInstanceOf[FailureReason]
 
     val values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
   }
@@ -817,12 +813,13 @@ package acmpca {
       __obj.asInstanceOf[IssueCertificateResponse]
     }
   }
-
-  object KeyAlgorithmEnum {
-    val RSA_2048      = "RSA_2048"
-    val RSA_4096      = "RSA_4096"
-    val EC_prime256v1 = "EC_prime256v1"
-    val EC_secp384r1  = "EC_secp384r1"
+  @js.native
+  sealed trait KeyAlgorithm extends js.Any
+  object KeyAlgorithm extends js.Object {
+    val RSA_2048      = "RSA_2048".asInstanceOf[KeyAlgorithm]
+    val RSA_4096      = "RSA_4096".asInstanceOf[KeyAlgorithm]
+    val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
+    val EC_secp384r1  = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
 
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
   }
@@ -1021,16 +1018,17 @@ package acmpca {
       __obj.asInstanceOf[RevocationConfiguration]
     }
   }
-
-  object RevocationReasonEnum {
-    val UNSPECIFIED                      = "UNSPECIFIED"
-    val KEY_COMPROMISE                   = "KEY_COMPROMISE"
-    val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE"
-    val AFFILIATION_CHANGED              = "AFFILIATION_CHANGED"
-    val SUPERSEDED                       = "SUPERSEDED"
-    val CESSATION_OF_OPERATION           = "CESSATION_OF_OPERATION"
-    val PRIVILEGE_WITHDRAWN              = "PRIVILEGE_WITHDRAWN"
-    val A_A_COMPROMISE                   = "A_A_COMPROMISE"
+  @js.native
+  sealed trait RevocationReason extends js.Any
+  object RevocationReason extends js.Object {
+    val UNSPECIFIED                      = "UNSPECIFIED".asInstanceOf[RevocationReason]
+    val KEY_COMPROMISE                   = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
+    val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
+    val AFFILIATION_CHANGED              = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
+    val SUPERSEDED                       = "SUPERSEDED".asInstanceOf[RevocationReason]
+    val CESSATION_OF_OPERATION           = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
+    val PRIVILEGE_WITHDRAWN              = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
+    val A_A_COMPROMISE                   = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1069,14 +1067,15 @@ package acmpca {
       __obj.asInstanceOf[RevokeCertificateRequest]
     }
   }
-
-  object SigningAlgorithmEnum {
-    val SHA256WITHECDSA = "SHA256WITHECDSA"
-    val SHA384WITHECDSA = "SHA384WITHECDSA"
-    val SHA512WITHECDSA = "SHA512WITHECDSA"
-    val SHA256WITHRSA   = "SHA256WITHRSA"
-    val SHA384WITHRSA   = "SHA384WITHRSA"
-    val SHA512WITHRSA   = "SHA512WITHRSA"
+  @js.native
+  sealed trait SigningAlgorithm extends js.Any
+  object SigningAlgorithm extends js.Object {
+    val SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
+    val SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
+    val SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
+    val SHA256WITHRSA   = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
+    val SHA384WITHRSA   = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
+    val SHA512WITHRSA   = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
     val values = js.Object.freeze(
       js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
@@ -1196,13 +1195,14 @@ package acmpca {
       __obj.asInstanceOf[Validity]
     }
   }
-
-  object ValidityPeriodTypeEnum {
-    val END_DATE = "END_DATE"
-    val ABSOLUTE = "ABSOLUTE"
-    val DAYS     = "DAYS"
-    val MONTHS   = "MONTHS"
-    val YEARS    = "YEARS"
+  @js.native
+  sealed trait ValidityPeriodType extends js.Any
+  object ValidityPeriodType extends js.Object {
+    val END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
+    val ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
+    val DAYS     = "DAYS".asInstanceOf[ValidityPeriodType]
+    val MONTHS   = "MONTHS".asInstanceOf[ValidityPeriodType]
+    val YEARS    = "YEARS".asInstanceOf[ValidityPeriodType]
 
     val values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
   }

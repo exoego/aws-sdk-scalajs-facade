@@ -12,14 +12,11 @@ package object appconfig {
   type Blob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ConfigurationProfileSummaryList  = js.Array[ConfigurationProfileSummary]
   type DeploymentList                   = js.Array[DeploymentSummary]
-  type DeploymentState                  = String
   type DeploymentStrategyId             = String
   type DeploymentStrategyList           = js.Array[DeploymentStrategy]
   type Description                      = String
   type EnvironmentList                  = js.Array[Environment]
-  type EnvironmentState                 = String
   type GrowthFactor                     = Float
-  type GrowthType                       = String
   type Id                               = String
   type Iso8601DateTime                  = js.Date
   type MaxResults                       = Int
@@ -28,7 +25,6 @@ package object appconfig {
   type Name                             = String
   type NextToken                        = String
   type Percentage                       = Float
-  type ReplicateTo                      = String
   type StringWithLengthBetween0And32768 = String
   type StringWithLengthBetween1And64    = String
   type TagKey                           = String
@@ -37,7 +33,6 @@ package object appconfig {
   type TagValue                         = String
   type Uri                              = String
   type ValidatorList                    = js.Array[Validator]
-  type ValidatorType                    = String
   type ValidatorTypeList                = js.Array[ValidatorType]
   type Version                          = String
 
@@ -563,14 +558,15 @@ package appconfig {
       __obj.asInstanceOf[Deployment]
     }
   }
-
-  object DeploymentStateEnum {
-    val BAKING       = "BAKING"
-    val VALIDATING   = "VALIDATING"
-    val DEPLOYING    = "DEPLOYING"
-    val COMPLETE     = "COMPLETE"
-    val ROLLING_BACK = "ROLLING_BACK"
-    val ROLLED_BACK  = "ROLLED_BACK"
+  @js.native
+  sealed trait DeploymentState extends js.Any
+  object DeploymentState extends js.Object {
+    val BAKING       = "BAKING".asInstanceOf[DeploymentState]
+    val VALIDATING   = "VALIDATING".asInstanceOf[DeploymentState]
+    val DEPLOYING    = "DEPLOYING".asInstanceOf[DeploymentState]
+    val COMPLETE     = "COMPLETE".asInstanceOf[DeploymentState]
+    val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
+    val ROLLED_BACK  = "ROLLED_BACK".asInstanceOf[DeploymentState]
 
     val values = js.Object.freeze(js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK))
   }
@@ -733,12 +729,13 @@ package appconfig {
       __obj.asInstanceOf[Environment]
     }
   }
-
-  object EnvironmentStateEnum {
-    val READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT"
-    val DEPLOYING            = "DEPLOYING"
-    val ROLLING_BACK         = "ROLLING_BACK"
-    val ROLLED_BACK          = "ROLLED_BACK"
+  @js.native
+  sealed trait EnvironmentState extends js.Any
+  object EnvironmentState extends js.Object {
+    val READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT".asInstanceOf[EnvironmentState]
+    val DEPLOYING            = "DEPLOYING".asInstanceOf[EnvironmentState]
+    val ROLLING_BACK         = "ROLLING_BACK".asInstanceOf[EnvironmentState]
+    val ROLLED_BACK          = "ROLLED_BACK".asInstanceOf[EnvironmentState]
 
     val values = js.Object.freeze(js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK))
   }
@@ -895,10 +892,11 @@ package appconfig {
       __obj.asInstanceOf[GetEnvironmentRequest]
     }
   }
-
-  object GrowthTypeEnum {
-    val LINEAR      = "LINEAR"
-    val EXPONENTIAL = "EXPONENTIAL"
+  @js.native
+  sealed trait GrowthType extends js.Any
+  object GrowthType extends js.Object {
+    val LINEAR      = "LINEAR".asInstanceOf[GrowthType]
+    val EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
 
     val values = js.Object.freeze(js.Array(LINEAR, EXPONENTIAL))
   }
@@ -1055,10 +1053,11 @@ package appconfig {
       __obj.asInstanceOf[Monitor]
     }
   }
-
-  object ReplicateToEnum {
-    val NONE         = "NONE"
-    val SSM_DOCUMENT = "SSM_DOCUMENT"
+  @js.native
+  sealed trait ReplicateTo extends js.Any
+  object ReplicateTo extends js.Object {
+    val NONE         = "NONE".asInstanceOf[ReplicateTo]
+    val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
 
     val values = js.Object.freeze(js.Array(NONE, SSM_DOCUMENT))
   }
@@ -1350,10 +1349,11 @@ package appconfig {
       __obj.asInstanceOf[Validator]
     }
   }
-
-  object ValidatorTypeEnum {
-    val JSON_SCHEMA = "JSON_SCHEMA"
-    val LAMBDA      = "LAMBDA"
+  @js.native
+  sealed trait ValidatorType extends js.Any
+  object ValidatorType extends js.Object {
+    val JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
+    val LAMBDA      = "LAMBDA".asInstanceOf[ValidatorType]
 
     val values = js.Object.freeze(js.Array(JSON_SCHEMA, LAMBDA))
   }

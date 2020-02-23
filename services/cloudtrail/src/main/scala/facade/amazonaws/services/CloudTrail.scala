@@ -11,18 +11,14 @@ package object cloudtrail {
   type DataResourceValues            = js.Array[String]
   type DataResources                 = js.Array[DataResource]
   type Date                          = js.Date
-  type EventCategory                 = String
   type EventSelectors                = js.Array[EventSelector]
   type EventsList                    = js.Array[Event]
   type ExcludeManagementEventSources = js.Array[String]
   type InsightSelectors              = js.Array[InsightSelector]
-  type InsightType                   = String
-  type LookupAttributeKey            = String
   type LookupAttributesList          = js.Array[LookupAttribute]
   type MaxResults                    = Int
   type NextToken                     = String
   type PublicKeyList                 = js.Array[PublicKey]
-  type ReadWriteType                 = String
   type ResourceIdList                = js.Array[String]
   type ResourceList                  = js.Array[Resource]
   type ResourceTagList               = js.Array[ResourceTag]
@@ -409,9 +405,10 @@ package cloudtrail {
       __obj.asInstanceOf[Event]
     }
   }
-
-  object EventCategoryEnum {
-    val insight = "insight"
+  @js.native
+  sealed trait EventCategory extends js.Any
+  object EventCategory extends js.Object {
+    val insight = "insight".asInstanceOf[EventCategory]
 
     val values = js.Object.freeze(js.Array(insight))
   }
@@ -675,9 +672,10 @@ package cloudtrail {
       __obj.asInstanceOf[InsightSelector]
     }
   }
-
-  object InsightTypeEnum {
-    val ApiCallRateInsight = "ApiCallRateInsight"
+  @js.native
+  sealed trait InsightType extends js.Any
+  object InsightType extends js.Object {
+    val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
     val values = js.Object.freeze(js.Array(ApiCallRateInsight))
   }
@@ -833,16 +831,17 @@ package cloudtrail {
       __obj.asInstanceOf[LookupAttribute]
     }
   }
-
-  object LookupAttributeKeyEnum {
-    val EventId      = "EventId"
-    val EventName    = "EventName"
-    val ReadOnly     = "ReadOnly"
-    val Username     = "Username"
-    val ResourceType = "ResourceType"
-    val ResourceName = "ResourceName"
-    val EventSource  = "EventSource"
-    val AccessKeyId  = "AccessKeyId"
+  @js.native
+  sealed trait LookupAttributeKey extends js.Any
+  object LookupAttributeKey extends js.Object {
+    val EventId      = "EventId".asInstanceOf[LookupAttributeKey]
+    val EventName    = "EventName".asInstanceOf[LookupAttributeKey]
+    val ReadOnly     = "ReadOnly".asInstanceOf[LookupAttributeKey]
+    val Username     = "Username".asInstanceOf[LookupAttributeKey]
+    val ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
+    val ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
+    val EventSource  = "EventSource".asInstanceOf[LookupAttributeKey]
+    val AccessKeyId  = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
     val values = js.Object.freeze(
       js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
@@ -1012,11 +1011,12 @@ package cloudtrail {
       __obj.asInstanceOf[PutInsightSelectorsResponse]
     }
   }
-
-  object ReadWriteTypeEnum {
-    val ReadOnly  = "ReadOnly"
-    val WriteOnly = "WriteOnly"
-    val All       = "All"
+  @js.native
+  sealed trait ReadWriteType extends js.Any
+  object ReadWriteType extends js.Object {
+    val ReadOnly  = "ReadOnly".asInstanceOf[ReadWriteType]
+    val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
+    val All       = "All".asInstanceOf[ReadWriteType]
 
     val values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
   }

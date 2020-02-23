@@ -7,15 +7,14 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object marketplaceentitlementservice {
-  type EntitlementList          = js.Array[Entitlement]
-  type ErrorMessage             = String
-  type FilterValue              = String
-  type FilterValueList          = js.Array[FilterValue]
-  type GetEntitlementFilterName = String
-  type GetEntitlementFilters    = js.Dictionary[FilterValueList]
-  type NonEmptyString           = String
-  type ProductCode              = String
-  type Timestamp                = js.Date
+  type EntitlementList       = js.Array[Entitlement]
+  type ErrorMessage          = String
+  type FilterValue           = String
+  type FilterValueList       = js.Array[FilterValue]
+  type GetEntitlementFilters = js.Dictionary[FilterValueList]
+  type NonEmptyString        = String
+  type ProductCode           = String
+  type Timestamp             = js.Date
 
   implicit final class MarketplaceEntitlementServiceOps(private val service: MarketplaceEntitlementService)
       extends AnyVal {
@@ -92,10 +91,11 @@ package marketplaceentitlementservice {
       __obj.asInstanceOf[EntitlementValue]
     }
   }
-
-  object GetEntitlementFilterNameEnum {
-    val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER"
-    val DIMENSION           = "DIMENSION"
+  @js.native
+  sealed trait GetEntitlementFilterName extends js.Any
+  object GetEntitlementFilterName extends js.Object {
+    val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
+    val DIMENSION           = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
 
     val values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
   }

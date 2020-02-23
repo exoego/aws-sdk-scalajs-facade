@@ -7,18 +7,15 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object augmentedairuntime {
-  type ContentClassifier  = String
   type ContentClassifiers = js.Array[ContentClassifier]
   type FailureReason      = String
   type FlowDefinitionArn  = String
   type HumanLoopArn       = String
   type HumanLoopName      = String
-  type HumanLoopStatus    = String
   type HumanLoopSummaries = js.Array[HumanLoopSummary]
   type InputContent       = String
   type MaxResults         = Int
   type NextToken          = String
-  type SortOrder          = String
   type Timestamp          = js.Date
 
   implicit final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
@@ -48,10 +45,12 @@ package augmentedairuntime {
     def startHumanLoop(params: StartHumanLoopRequest): Request[StartHumanLoopResponse]          = js.native
     def stopHumanLoop(params: StopHumanLoopRequest): Request[StopHumanLoopResponse]             = js.native
   }
-
-  object ContentClassifierEnum {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
-    val FreeOfAdultContent                      = "FreeOfAdultContent"
+  @js.native
+  sealed trait ContentClassifier extends js.Any
+  object ContentClassifier extends js.Object {
+    val FreeOfPersonallyIdentifiableInformation =
+      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
@@ -233,13 +232,14 @@ package augmentedairuntime {
       __obj.asInstanceOf[HumanLoopOutputContent]
     }
   }
-
-  object HumanLoopStatusEnum {
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Completed  = "Completed"
-    val Stopped    = "Stopped"
-    val Stopping   = "Stopping"
+  @js.native
+  sealed trait HumanLoopStatus extends js.Any
+  object HumanLoopStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
+    val Failed     = "Failed".asInstanceOf[HumanLoopStatus]
+    val Completed  = "Completed".asInstanceOf[HumanLoopStatus]
+    val Stopped    = "Stopped".asInstanceOf[HumanLoopStatus]
+    val Stopping   = "Stopping".asInstanceOf[HumanLoopStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
   }
@@ -344,10 +344,11 @@ package augmentedairuntime {
       __obj.asInstanceOf[ListHumanLoopsResponse]
     }
   }
-
-  object SortOrderEnum {
-    val Ascending  = "Ascending"
-    val Descending = "Descending"
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val Ascending  = "Ascending".asInstanceOf[SortOrder]
+    val Descending = "Descending".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }

@@ -7,29 +7,22 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lightsail {
-  type AccessDirection                                      = String
   type AddOnList                                            = js.Array[AddOn]
   type AddOnRequestList                                     = js.Array[AddOnRequest]
-  type AddOnType                                            = String
   type AttachedDiskList                                     = js.Array[AttachedDisk]
   type AttachedDiskMap                                      = js.Dictionary[DiskMapList]
   type AutoSnapshotDate                                     = String
   type AutoSnapshotDetailsList                              = js.Array[AutoSnapshotDetails]
-  type AutoSnapshotStatus                                   = String
   type AvailabilityZoneList                                 = js.Array[AvailabilityZone]
   type Base64                                               = String
   type BlueprintList                                        = js.Array[Blueprint]
-  type BlueprintType                                        = String
   type BundleList                                           = js.Array[Bundle]
   type CloudFormationStackRecordList                        = js.Array[CloudFormationStackRecord]
   type CloudFormationStackRecordSourceInfoList              = js.Array[CloudFormationStackRecordSourceInfo]
-  type CloudFormationStackRecordSourceType                  = String
   type DiskInfoList                                         = js.Array[DiskInfo]
   type DiskList                                             = js.Array[Disk]
   type DiskMapList                                          = js.Array[DiskMap]
   type DiskSnapshotList                                     = js.Array[DiskSnapshot]
-  type DiskSnapshotState                                    = String
-  type DiskState                                            = String
   type DomainEntryList                                      = js.Array[DomainEntry]
   type DomainEntryOptions                                   = js.Dictionary[String]
   type DomainEntryOptionsKeys                               = String
@@ -38,74 +31,44 @@ package object lightsail {
   type DomainName                                           = String
   type DomainNameList                                       = js.Array[DomainName]
   type ExportSnapshotRecordList                             = js.Array[ExportSnapshotRecord]
-  type ExportSnapshotRecordSourceType                       = String
   type HostKeysList                                         = js.Array[HostKeyAttributes]
-  type InstanceAccessProtocol                               = String
   type InstanceEntryList                                    = js.Array[InstanceEntry]
-  type InstanceHealthReason                                 = String
-  type InstanceHealthState                                  = String
   type InstanceHealthSummaryList                            = js.Array[InstanceHealthSummary]
   type InstanceList                                         = js.Array[Instance]
-  type InstanceMetricName                                   = String
-  type InstancePlatform                                     = String
   type InstancePlatformList                                 = js.Array[InstancePlatform]
   type InstancePortInfoList                                 = js.Array[InstancePortInfo]
   type InstancePortStateList                                = js.Array[InstancePortState]
   type InstanceSnapshotList                                 = js.Array[InstanceSnapshot]
-  type InstanceSnapshotState                                = String
   type IpAddress                                            = String
   type IpV6Address                                          = String
   type IsoDate                                              = js.Date
   type KeyPairList                                          = js.Array[KeyPair]
-  type LoadBalancerAttributeName                            = String
   type LoadBalancerConfigurationOptions                     = js.Dictionary[String]
   type LoadBalancerList                                     = js.Array[LoadBalancer]
-  type LoadBalancerMetricName                               = String
-  type LoadBalancerProtocol                                 = String
-  type LoadBalancerState                                    = String
-  type LoadBalancerTlsCertificateDomainStatus               = String
   type LoadBalancerTlsCertificateDomainValidationOptionList = js.Array[LoadBalancerTlsCertificateDomainValidationOption]
   type LoadBalancerTlsCertificateDomainValidationRecordList = js.Array[LoadBalancerTlsCertificateDomainValidationRecord]
-  type LoadBalancerTlsCertificateFailureReason              = String
   type LoadBalancerTlsCertificateList                       = js.Array[LoadBalancerTlsCertificate]
-  type LoadBalancerTlsCertificateRenewalStatus              = String
-  type LoadBalancerTlsCertificateRevocationReason           = String
-  type LoadBalancerTlsCertificateStatus                     = String
   type LoadBalancerTlsCertificateSummaryList                = js.Array[LoadBalancerTlsCertificateSummary]
   type LogEventList                                         = js.Array[LogEvent]
   type MetricDatapointList                                  = js.Array[MetricDatapoint]
   type MetricPeriod                                         = Int
-  type MetricStatistic                                      = String
   type MetricStatisticList                                  = js.Array[MetricStatistic]
-  type MetricUnit                                           = String
-  type NetworkProtocol                                      = String
   type NonEmptyString                                       = String
   type OperationList                                        = js.Array[Operation]
-  type OperationStatus                                      = String
-  type OperationType                                        = String
   type PendingMaintenanceActionList                         = js.Array[PendingMaintenanceAction]
   type Port                                                 = Int
-  type PortAccessType                                       = String
   type PortInfoList                                         = js.Array[PortInfo]
-  type PortInfoSourceType                                   = String
   type PortList                                             = js.Array[Port]
-  type PortState                                            = String
-  type RecordState                                          = String
   type RegionList                                           = js.Array[Region]
-  type RegionName                                           = String
   type RelationalDatabaseBlueprintList                      = js.Array[RelationalDatabaseBlueprint]
   type RelationalDatabaseBundleList                         = js.Array[RelationalDatabaseBundle]
-  type RelationalDatabaseEngine                             = String
   type RelationalDatabaseEventList                          = js.Array[RelationalDatabaseEvent]
   type RelationalDatabaseList                               = js.Array[RelationalDatabase]
-  type RelationalDatabaseMetricName                         = String
   type RelationalDatabaseParameterList                      = js.Array[RelationalDatabaseParameter]
-  type RelationalDatabasePasswordVersion                    = String
   type RelationalDatabaseSnapshotList                       = js.Array[RelationalDatabaseSnapshot]
   type ResourceArn                                          = String
   type ResourceName                                         = String
   type ResourceNameList                                     = js.Array[ResourceName]
-  type ResourceType                                         = String
   type SensitiveString                                      = String
   type StaticIpList                                         = js.Array[StaticIp]
   type StringList                                           = js.Array[String]
@@ -551,10 +514,11 @@ package lightsail {
         params: UpdateRelationalDatabaseParametersRequest
     ): Request[UpdateRelationalDatabaseParametersResult] = js.native
   }
-
-  object AccessDirectionEnum {
-    val inbound  = "inbound"
-    val outbound = "outbound"
+  @js.native
+  sealed trait AccessDirection extends js.Any
+  object AccessDirection extends js.Object {
+    val inbound  = "inbound".asInstanceOf[AccessDirection]
+    val outbound = "outbound".asInstanceOf[AccessDirection]
 
     val values = js.Object.freeze(js.Array(inbound, outbound))
   }
@@ -612,9 +576,10 @@ package lightsail {
       __obj.asInstanceOf[AddOnRequest]
     }
   }
-
-  object AddOnTypeEnum {
-    val AutoSnapshot = "AutoSnapshot"
+  @js.native
+  sealed trait AddOnType extends js.Any
+  object AddOnType extends js.Object {
+    val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
 
     val values = js.Object.freeze(js.Array(AutoSnapshot))
   }
@@ -877,12 +842,13 @@ package lightsail {
       __obj.asInstanceOf[AutoSnapshotDetails]
     }
   }
-
-  object AutoSnapshotStatusEnum {
-    val Success    = "Success"
-    val Failed     = "Failed"
-    val InProgress = "InProgress"
-    val NotFound   = "NotFound"
+  @js.native
+  sealed trait AutoSnapshotStatus extends js.Any
+  object AutoSnapshotStatus extends js.Object {
+    val Success    = "Success".asInstanceOf[AutoSnapshotStatus]
+    val Failed     = "Failed".asInstanceOf[AutoSnapshotStatus]
+    val InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
+    val NotFound   = "NotFound".asInstanceOf[AutoSnapshotStatus]
 
     val values = js.Object.freeze(js.Array(Success, Failed, InProgress, NotFound))
   }
@@ -960,10 +926,11 @@ package lightsail {
       __obj.asInstanceOf[Blueprint]
     }
   }
-
-  object BlueprintTypeEnum {
-    val os  = "os"
-    val app = "app"
+  @js.native
+  sealed trait BlueprintType extends js.Any
+  object BlueprintType extends js.Object {
+    val os  = "os".asInstanceOf[BlueprintType]
+    val app = "app".asInstanceOf[BlueprintType]
 
     val values = js.Object.freeze(js.Array(os, app))
   }
@@ -1119,9 +1086,10 @@ package lightsail {
       __obj.asInstanceOf[CloudFormationStackRecordSourceInfo]
     }
   }
-
-  object CloudFormationStackRecordSourceTypeEnum {
-    val ExportSnapshotRecord = "ExportSnapshotRecord"
+  @js.native
+  sealed trait CloudFormationStackRecordSourceType extends js.Any
+  object CloudFormationStackRecordSourceType extends js.Object {
+    val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[CloudFormationStackRecordSourceType]
 
     val values = js.Object.freeze(js.Array(ExportSnapshotRecord))
   }
@@ -2747,22 +2715,24 @@ package lightsail {
       __obj.asInstanceOf[DiskSnapshotInfo]
     }
   }
-
-  object DiskSnapshotStateEnum {
-    val pending   = "pending"
-    val completed = "completed"
-    val error     = "error"
-    val unknown   = "unknown"
+  @js.native
+  sealed trait DiskSnapshotState extends js.Any
+  object DiskSnapshotState extends js.Object {
+    val pending   = "pending".asInstanceOf[DiskSnapshotState]
+    val completed = "completed".asInstanceOf[DiskSnapshotState]
+    val error     = "error".asInstanceOf[DiskSnapshotState]
+    val unknown   = "unknown".asInstanceOf[DiskSnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, completed, error, unknown))
   }
-
-  object DiskStateEnum {
-    val pending   = "pending"
-    val error     = "error"
-    val available = "available"
-    val `in-use`  = "in-use"
-    val unknown   = "unknown"
+  @js.native
+  sealed trait DiskState extends js.Any
+  object DiskState extends js.Object {
+    val pending   = "pending".asInstanceOf[DiskState]
+    val error     = "error".asInstanceOf[DiskState]
+    val available = "available".asInstanceOf[DiskState]
+    val `in-use`  = "in-use".asInstanceOf[DiskState]
+    val unknown   = "unknown".asInstanceOf[DiskState]
 
     val values = js.Object.freeze(js.Array(pending, error, available, `in-use`, unknown))
   }
@@ -2989,10 +2959,11 @@ package lightsail {
       __obj.asInstanceOf[ExportSnapshotRecordSourceInfo]
     }
   }
-
-  object ExportSnapshotRecordSourceTypeEnum {
-    val InstanceSnapshot = "InstanceSnapshot"
-    val DiskSnapshot     = "DiskSnapshot"
+  @js.native
+  sealed trait ExportSnapshotRecordSourceType extends js.Any
+  object ExportSnapshotRecordSourceType extends js.Object {
+    val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
+    val DiskSnapshot     = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
 
     val values = js.Object.freeze(js.Array(InstanceSnapshot, DiskSnapshot))
   }
@@ -4878,10 +4849,11 @@ package lightsail {
       __obj.asInstanceOf[InstanceAccessDetails]
     }
   }
-
-  object InstanceAccessProtocolEnum {
-    val ssh = "ssh"
-    val rdp = "rdp"
+  @js.native
+  sealed trait InstanceAccessProtocol extends js.Any
+  object InstanceAccessProtocol extends js.Object {
+    val ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
+    val rdp = "rdp".asInstanceOf[InstanceAccessProtocol]
 
     val values = js.Object.freeze(js.Array(ssh, rdp))
   }
@@ -4943,19 +4915,20 @@ package lightsail {
       __obj.asInstanceOf[InstanceHardware]
     }
   }
-
-  object InstanceHealthReasonEnum {
-    val `Lb.RegistrationInProgress`         = "Lb.RegistrationInProgress"
-    val `Lb.InitialHealthChecking`          = "Lb.InitialHealthChecking"
-    val `Lb.InternalError`                  = "Lb.InternalError"
-    val `Instance.ResponseCodeMismatch`     = "Instance.ResponseCodeMismatch"
-    val `Instance.Timeout`                  = "Instance.Timeout"
-    val `Instance.FailedHealthChecks`       = "Instance.FailedHealthChecks"
-    val `Instance.NotRegistered`            = "Instance.NotRegistered"
-    val `Instance.NotInUse`                 = "Instance.NotInUse"
-    val `Instance.DeregistrationInProgress` = "Instance.DeregistrationInProgress"
-    val `Instance.InvalidState`             = "Instance.InvalidState"
-    val `Instance.IpUnusable`               = "Instance.IpUnusable"
+  @js.native
+  sealed trait InstanceHealthReason extends js.Any
+  object InstanceHealthReason extends js.Object {
+    val `Lb.RegistrationInProgress`         = "Lb.RegistrationInProgress".asInstanceOf[InstanceHealthReason]
+    val `Lb.InitialHealthChecking`          = "Lb.InitialHealthChecking".asInstanceOf[InstanceHealthReason]
+    val `Lb.InternalError`                  = "Lb.InternalError".asInstanceOf[InstanceHealthReason]
+    val `Instance.ResponseCodeMismatch`     = "Instance.ResponseCodeMismatch".asInstanceOf[InstanceHealthReason]
+    val `Instance.Timeout`                  = "Instance.Timeout".asInstanceOf[InstanceHealthReason]
+    val `Instance.FailedHealthChecks`       = "Instance.FailedHealthChecks".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotRegistered`            = "Instance.NotRegistered".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotInUse`                 = "Instance.NotInUse".asInstanceOf[InstanceHealthReason]
+    val `Instance.DeregistrationInProgress` = "Instance.DeregistrationInProgress".asInstanceOf[InstanceHealthReason]
+    val `Instance.InvalidState`             = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
+    val `Instance.IpUnusable`               = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4973,14 +4946,15 @@ package lightsail {
       )
     )
   }
-
-  object InstanceHealthStateEnum {
-    val initial     = "initial"
-    val healthy     = "healthy"
-    val unhealthy   = "unhealthy"
-    val unused      = "unused"
-    val draining    = "draining"
-    val unavailable = "unavailable"
+  @js.native
+  sealed trait InstanceHealthState extends js.Any
+  object InstanceHealthState extends js.Object {
+    val initial     = "initial".asInstanceOf[InstanceHealthState]
+    val healthy     = "healthy".asInstanceOf[InstanceHealthState]
+    val unhealthy   = "unhealthy".asInstanceOf[InstanceHealthState]
+    val unused      = "unused".asInstanceOf[InstanceHealthState]
+    val draining    = "draining".asInstanceOf[InstanceHealthState]
+    val unavailable = "unavailable".asInstanceOf[InstanceHealthState]
 
     val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
@@ -5009,14 +4983,15 @@ package lightsail {
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
-
-  object InstanceMetricNameEnum {
-    val CPUUtilization             = "CPUUtilization"
-    val NetworkIn                  = "NetworkIn"
-    val NetworkOut                 = "NetworkOut"
-    val StatusCheckFailed          = "StatusCheckFailed"
-    val StatusCheckFailed_Instance = "StatusCheckFailed_Instance"
-    val StatusCheckFailed_System   = "StatusCheckFailed_System"
+  @js.native
+  sealed trait InstanceMetricName extends js.Any
+  object InstanceMetricName extends js.Object {
+    val CPUUtilization             = "CPUUtilization".asInstanceOf[InstanceMetricName]
+    val NetworkIn                  = "NetworkIn".asInstanceOf[InstanceMetricName]
+    val NetworkOut                 = "NetworkOut".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed          = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed_System   = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5051,10 +5026,11 @@ package lightsail {
       __obj.asInstanceOf[InstanceNetworking]
     }
   }
-
-  object InstancePlatformEnum {
-    val LINUX_UNIX = "LINUX_UNIX"
-    val WINDOWS    = "WINDOWS"
+  @js.native
+  sealed trait InstancePlatform extends js.Any
+  object InstancePlatform extends js.Object {
+    val LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
+    val WINDOWS    = "WINDOWS".asInstanceOf[InstancePlatform]
 
     val values = js.Object.freeze(js.Array(LINUX_UNIX, WINDOWS))
   }
@@ -5212,11 +5188,12 @@ package lightsail {
       __obj.asInstanceOf[InstanceSnapshotInfo]
     }
   }
-
-  object InstanceSnapshotStateEnum {
-    val pending   = "pending"
-    val error     = "error"
-    val available = "available"
+  @js.native
+  sealed trait InstanceSnapshotState extends js.Any
+  object InstanceSnapshotState extends js.Object {
+    val pending   = "pending".asInstanceOf[InstanceSnapshotState]
+    val error     = "error".asInstanceOf[InstanceSnapshotState]
+    val available = "available".asInstanceOf[InstanceSnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, error, available))
   }
@@ -5375,29 +5352,32 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancer]
     }
   }
-
-  object LoadBalancerAttributeNameEnum {
-    val HealthCheckPath                            = "HealthCheckPath"
-    val SessionStickinessEnabled                   = "SessionStickinessEnabled"
-    val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds"
+  @js.native
+  sealed trait LoadBalancerAttributeName extends js.Any
+  object LoadBalancerAttributeName extends js.Object {
+    val HealthCheckPath          = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
+    val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
+    val SessionStickiness_LB_CookieDurationSeconds =
+      "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
 
     val values =
       js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
   }
-
-  object LoadBalancerMetricNameEnum {
-    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount"
-    val HealthyHostCount               = "HealthyHostCount"
-    val UnhealthyHostCount             = "UnhealthyHostCount"
-    val HTTPCode_LB_4XX_Count          = "HTTPCode_LB_4XX_Count"
-    val HTTPCode_LB_5XX_Count          = "HTTPCode_LB_5XX_Count"
-    val HTTPCode_Instance_2XX_Count    = "HTTPCode_Instance_2XX_Count"
-    val HTTPCode_Instance_3XX_Count    = "HTTPCode_Instance_3XX_Count"
-    val HTTPCode_Instance_4XX_Count    = "HTTPCode_Instance_4XX_Count"
-    val HTTPCode_Instance_5XX_Count    = "HTTPCode_Instance_5XX_Count"
-    val InstanceResponseTime           = "InstanceResponseTime"
-    val RejectedConnectionCount        = "RejectedConnectionCount"
-    val RequestCount                   = "RequestCount"
+  @js.native
+  sealed trait LoadBalancerMetricName extends js.Any
+  object LoadBalancerMetricName extends js.Object {
+    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[LoadBalancerMetricName]
+    val HealthyHostCount               = "HealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val UnhealthyHostCount             = "UnhealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_4XX_Count          = "HTTPCode_LB_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_5XX_Count          = "HTTPCode_LB_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_2XX_Count    = "HTTPCode_Instance_2XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_3XX_Count    = "HTTPCode_Instance_3XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_4XX_Count    = "HTTPCode_Instance_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_5XX_Count    = "HTTPCode_Instance_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val InstanceResponseTime           = "InstanceResponseTime".asInstanceOf[LoadBalancerMetricName]
+    val RejectedConnectionCount        = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
+    val RequestCount                   = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5416,20 +5396,22 @@ package lightsail {
       )
     )
   }
-
-  object LoadBalancerProtocolEnum {
-    val HTTP_HTTPS = "HTTP_HTTPS"
-    val HTTP       = "HTTP"
+  @js.native
+  sealed trait LoadBalancerProtocol extends js.Any
+  object LoadBalancerProtocol extends js.Object {
+    val HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
+    val HTTP       = "HTTP".asInstanceOf[LoadBalancerProtocol]
 
     val values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
   }
-
-  object LoadBalancerStateEnum {
-    val active          = "active"
-    val provisioning    = "provisioning"
-    val active_impaired = "active_impaired"
-    val failed          = "failed"
-    val unknown         = "unknown"
+  @js.native
+  sealed trait LoadBalancerState extends js.Any
+  object LoadBalancerState extends js.Object {
+    val active          = "active".asInstanceOf[LoadBalancerState]
+    val provisioning    = "provisioning".asInstanceOf[LoadBalancerState]
+    val active_impaired = "active_impaired".asInstanceOf[LoadBalancerState]
+    val failed          = "failed".asInstanceOf[LoadBalancerState]
+    val unknown         = "unknown".asInstanceOf[LoadBalancerState]
 
     val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed, unknown))
   }
@@ -5525,11 +5507,12 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificate]
     }
   }
-
-  object LoadBalancerTlsCertificateDomainStatusEnum {
-    val PENDING_VALIDATION = "PENDING_VALIDATION"
-    val FAILED             = "FAILED"
-    val SUCCESS            = "SUCCESS"
+  @js.native
+  sealed trait LoadBalancerTlsCertificateDomainStatus extends js.Any
+  object LoadBalancerTlsCertificateDomainStatus extends js.Object {
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val FAILED             = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val SUCCESS            = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_VALIDATION, FAILED, SUCCESS))
   }
@@ -5586,13 +5569,15 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationRecord]
     }
   }
-
-  object LoadBalancerTlsCertificateFailureReasonEnum {
-    val NO_AVAILABLE_CONTACTS            = "NO_AVAILABLE_CONTACTS"
-    val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED"
-    val DOMAIN_NOT_ALLOWED               = "DOMAIN_NOT_ALLOWED"
-    val INVALID_PUBLIC_DOMAIN            = "INVALID_PUBLIC_DOMAIN"
-    val OTHER                            = "OTHER"
+  @js.native
+  sealed trait LoadBalancerTlsCertificateFailureReason extends js.Any
+  object LoadBalancerTlsCertificateFailureReason extends js.Object {
+    val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val ADDITIONAL_VERIFICATION_REQUIRED =
+      "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val DOMAIN_NOT_ALLOWED    = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val OTHER                 = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5604,12 +5589,13 @@ package lightsail {
       )
     )
   }
-
-  object LoadBalancerTlsCertificateRenewalStatusEnum {
-    val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL"
-    val PENDING_VALIDATION   = "PENDING_VALIDATION"
-    val SUCCESS              = "SUCCESS"
-    val FAILED               = "FAILED"
+  @js.native
+  sealed trait LoadBalancerTlsCertificateRenewalStatus extends js.Any
+  object LoadBalancerTlsCertificateRenewalStatus extends js.Object {
+    val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val SUCCESS              = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val FAILED               = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
@@ -5635,18 +5621,19 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificateRenewalSummary]
     }
   }
-
-  object LoadBalancerTlsCertificateRevocationReasonEnum {
-    val UNSPECIFIED            = "UNSPECIFIED"
-    val KEY_COMPROMISE         = "KEY_COMPROMISE"
-    val CA_COMPROMISE          = "CA_COMPROMISE"
-    val AFFILIATION_CHANGED    = "AFFILIATION_CHANGED"
-    val SUPERCEDED             = "SUPERCEDED"
-    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION"
-    val CERTIFICATE_HOLD       = "CERTIFICATE_HOLD"
-    val REMOVE_FROM_CRL        = "REMOVE_FROM_CRL"
-    val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN"
-    val A_A_COMPROMISE         = "A_A_COMPROMISE"
+  @js.native
+  sealed trait LoadBalancerTlsCertificateRevocationReason extends js.Any
+  object LoadBalancerTlsCertificateRevocationReason extends js.Object {
+    val UNSPECIFIED            = "UNSPECIFIED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val KEY_COMPROMISE         = "KEY_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CA_COMPROMISE          = "CA_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val AFFILIATION_CHANGED    = "AFFILIATION_CHANGED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val SUPERCEDED             = "SUPERCEDED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CERTIFICATE_HOLD       = "CERTIFICATE_HOLD".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val REMOVE_FROM_CRL        = "REMOVE_FROM_CRL".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val A_A_COMPROMISE         = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5663,16 +5650,17 @@ package lightsail {
       )
     )
   }
-
-  object LoadBalancerTlsCertificateStatusEnum {
-    val PENDING_VALIDATION   = "PENDING_VALIDATION"
-    val ISSUED               = "ISSUED"
-    val INACTIVE             = "INACTIVE"
-    val EXPIRED              = "EXPIRED"
-    val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT"
-    val REVOKED              = "REVOKED"
-    val FAILED               = "FAILED"
-    val UNKNOWN              = "UNKNOWN"
+  @js.native
+  sealed trait LoadBalancerTlsCertificateStatus extends js.Any
+  object LoadBalancerTlsCertificateStatus extends js.Object {
+    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val ISSUED               = "ISSUED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val INACTIVE             = "INACTIVE".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val EXPIRED              = "EXPIRED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val REVOKED              = "REVOKED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val FAILED               = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val UNKNOWN              = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
     val values = js.Object.freeze(
       js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
@@ -5759,45 +5747,47 @@ package lightsail {
       __obj.asInstanceOf[MetricDatapoint]
     }
   }
-
-  object MetricStatisticEnum {
-    val Minimum     = "Minimum"
-    val Maximum     = "Maximum"
-    val Sum         = "Sum"
-    val Average     = "Average"
-    val SampleCount = "SampleCount"
+  @js.native
+  sealed trait MetricStatistic extends js.Any
+  object MetricStatistic extends js.Object {
+    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
+    val Sum         = "Sum".asInstanceOf[MetricStatistic]
+    val Average     = "Average".asInstanceOf[MetricStatistic]
+    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
   }
-
-  object MetricUnitEnum {
-    val Seconds            = "Seconds"
-    val Microseconds       = "Microseconds"
-    val Milliseconds       = "Milliseconds"
-    val Bytes              = "Bytes"
-    val Kilobytes          = "Kilobytes"
-    val Megabytes          = "Megabytes"
-    val Gigabytes          = "Gigabytes"
-    val Terabytes          = "Terabytes"
-    val Bits               = "Bits"
-    val Kilobits           = "Kilobits"
-    val Megabits           = "Megabits"
-    val Gigabits           = "Gigabits"
-    val Terabits           = "Terabits"
-    val Percent            = "Percent"
-    val Count              = "Count"
-    val `Bytes/Second`     = "Bytes/Second"
-    val `Kilobytes/Second` = "Kilobytes/Second"
-    val `Megabytes/Second` = "Megabytes/Second"
-    val `Gigabytes/Second` = "Gigabytes/Second"
-    val `Terabytes/Second` = "Terabytes/Second"
-    val `Bits/Second`      = "Bits/Second"
-    val `Kilobits/Second`  = "Kilobits/Second"
-    val `Megabits/Second`  = "Megabits/Second"
-    val `Gigabits/Second`  = "Gigabits/Second"
-    val `Terabits/Second`  = "Terabits/Second"
-    val `Count/Second`     = "Count/Second"
-    val None               = "None"
+  @js.native
+  sealed trait MetricUnit extends js.Any
+  object MetricUnit extends js.Object {
+    val Seconds            = "Seconds".asInstanceOf[MetricUnit]
+    val Microseconds       = "Microseconds".asInstanceOf[MetricUnit]
+    val Milliseconds       = "Milliseconds".asInstanceOf[MetricUnit]
+    val Bytes              = "Bytes".asInstanceOf[MetricUnit]
+    val Kilobytes          = "Kilobytes".asInstanceOf[MetricUnit]
+    val Megabytes          = "Megabytes".asInstanceOf[MetricUnit]
+    val Gigabytes          = "Gigabytes".asInstanceOf[MetricUnit]
+    val Terabytes          = "Terabytes".asInstanceOf[MetricUnit]
+    val Bits               = "Bits".asInstanceOf[MetricUnit]
+    val Kilobits           = "Kilobits".asInstanceOf[MetricUnit]
+    val Megabits           = "Megabits".asInstanceOf[MetricUnit]
+    val Gigabits           = "Gigabits".asInstanceOf[MetricUnit]
+    val Terabits           = "Terabits".asInstanceOf[MetricUnit]
+    val Percent            = "Percent".asInstanceOf[MetricUnit]
+    val Count              = "Count".asInstanceOf[MetricUnit]
+    val `Bytes/Second`     = "Bytes/Second".asInstanceOf[MetricUnit]
+    val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[MetricUnit]
+    val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[MetricUnit]
+    val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[MetricUnit]
+    val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[MetricUnit]
+    val `Bits/Second`      = "Bits/Second".asInstanceOf[MetricUnit]
+    val `Kilobits/Second`  = "Kilobits/Second".asInstanceOf[MetricUnit]
+    val `Megabits/Second`  = "Megabits/Second".asInstanceOf[MetricUnit]
+    val `Gigabits/Second`  = "Gigabits/Second".asInstanceOf[MetricUnit]
+    val `Terabits/Second`  = "Terabits/Second".asInstanceOf[MetricUnit]
+    val `Count/Second`     = "Count/Second".asInstanceOf[MetricUnit]
+    val None               = "None".asInstanceOf[MetricUnit]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5850,11 +5840,12 @@ package lightsail {
       __obj.asInstanceOf[MonthlyTransfer]
     }
   }
-
-  object NetworkProtocolEnum {
-    val tcp = "tcp"
-    val all = "all"
-    val udp = "udp"
+  @js.native
+  sealed trait NetworkProtocol extends js.Any
+  object NetworkProtocol extends js.Object {
+    val tcp = "tcp".asInstanceOf[NetworkProtocol]
+    val all = "all".asInstanceOf[NetworkProtocol]
+    val udp = "udp".asInstanceOf[NetworkProtocol]
 
     val values = js.Object.freeze(js.Array(tcp, all, udp))
   }
@@ -5947,65 +5938,67 @@ package lightsail {
       __obj.asInstanceOf[Operation]
     }
   }
-
-  object OperationStatusEnum {
-    val NotStarted = "NotStarted"
-    val Started    = "Started"
-    val Failed     = "Failed"
-    val Completed  = "Completed"
-    val Succeeded  = "Succeeded"
+  @js.native
+  sealed trait OperationStatus extends js.Any
+  object OperationStatus extends js.Object {
+    val NotStarted = "NotStarted".asInstanceOf[OperationStatus]
+    val Started    = "Started".asInstanceOf[OperationStatus]
+    val Failed     = "Failed".asInstanceOf[OperationStatus]
+    val Completed  = "Completed".asInstanceOf[OperationStatus]
+    val Succeeded  = "Succeeded".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
   }
-
-  object OperationTypeEnum {
-    val DeleteKnownHostKeys                  = "DeleteKnownHostKeys"
-    val DeleteInstance                       = "DeleteInstance"
-    val CreateInstance                       = "CreateInstance"
-    val StopInstance                         = "StopInstance"
-    val StartInstance                        = "StartInstance"
-    val RebootInstance                       = "RebootInstance"
-    val OpenInstancePublicPorts              = "OpenInstancePublicPorts"
-    val PutInstancePublicPorts               = "PutInstancePublicPorts"
-    val CloseInstancePublicPorts             = "CloseInstancePublicPorts"
-    val AllocateStaticIp                     = "AllocateStaticIp"
-    val ReleaseStaticIp                      = "ReleaseStaticIp"
-    val AttachStaticIp                       = "AttachStaticIp"
-    val DetachStaticIp                       = "DetachStaticIp"
-    val UpdateDomainEntry                    = "UpdateDomainEntry"
-    val DeleteDomainEntry                    = "DeleteDomainEntry"
-    val CreateDomain                         = "CreateDomain"
-    val DeleteDomain                         = "DeleteDomain"
-    val CreateInstanceSnapshot               = "CreateInstanceSnapshot"
-    val DeleteInstanceSnapshot               = "DeleteInstanceSnapshot"
-    val CreateInstancesFromSnapshot          = "CreateInstancesFromSnapshot"
-    val CreateLoadBalancer                   = "CreateLoadBalancer"
-    val DeleteLoadBalancer                   = "DeleteLoadBalancer"
-    val AttachInstancesToLoadBalancer        = "AttachInstancesToLoadBalancer"
-    val DetachInstancesFromLoadBalancer      = "DetachInstancesFromLoadBalancer"
-    val UpdateLoadBalancerAttribute          = "UpdateLoadBalancerAttribute"
-    val CreateLoadBalancerTlsCertificate     = "CreateLoadBalancerTlsCertificate"
-    val DeleteLoadBalancerTlsCertificate     = "DeleteLoadBalancerTlsCertificate"
-    val AttachLoadBalancerTlsCertificate     = "AttachLoadBalancerTlsCertificate"
-    val CreateDisk                           = "CreateDisk"
-    val DeleteDisk                           = "DeleteDisk"
-    val AttachDisk                           = "AttachDisk"
-    val DetachDisk                           = "DetachDisk"
-    val CreateDiskSnapshot                   = "CreateDiskSnapshot"
-    val DeleteDiskSnapshot                   = "DeleteDiskSnapshot"
-    val CreateDiskFromSnapshot               = "CreateDiskFromSnapshot"
-    val CreateRelationalDatabase             = "CreateRelationalDatabase"
-    val UpdateRelationalDatabase             = "UpdateRelationalDatabase"
-    val DeleteRelationalDatabase             = "DeleteRelationalDatabase"
-    val CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot"
-    val CreateRelationalDatabaseSnapshot     = "CreateRelationalDatabaseSnapshot"
-    val DeleteRelationalDatabaseSnapshot     = "DeleteRelationalDatabaseSnapshot"
-    val UpdateRelationalDatabaseParameters   = "UpdateRelationalDatabaseParameters"
-    val StartRelationalDatabase              = "StartRelationalDatabase"
-    val RebootRelationalDatabase             = "RebootRelationalDatabase"
-    val StopRelationalDatabase               = "StopRelationalDatabase"
-    val EnableAddOn                          = "EnableAddOn"
-    val DisableAddOn                         = "DisableAddOn"
+  @js.native
+  sealed trait OperationType extends js.Any
+  object OperationType extends js.Object {
+    val DeleteKnownHostKeys                  = "DeleteKnownHostKeys".asInstanceOf[OperationType]
+    val DeleteInstance                       = "DeleteInstance".asInstanceOf[OperationType]
+    val CreateInstance                       = "CreateInstance".asInstanceOf[OperationType]
+    val StopInstance                         = "StopInstance".asInstanceOf[OperationType]
+    val StartInstance                        = "StartInstance".asInstanceOf[OperationType]
+    val RebootInstance                       = "RebootInstance".asInstanceOf[OperationType]
+    val OpenInstancePublicPorts              = "OpenInstancePublicPorts".asInstanceOf[OperationType]
+    val PutInstancePublicPorts               = "PutInstancePublicPorts".asInstanceOf[OperationType]
+    val CloseInstancePublicPorts             = "CloseInstancePublicPorts".asInstanceOf[OperationType]
+    val AllocateStaticIp                     = "AllocateStaticIp".asInstanceOf[OperationType]
+    val ReleaseStaticIp                      = "ReleaseStaticIp".asInstanceOf[OperationType]
+    val AttachStaticIp                       = "AttachStaticIp".asInstanceOf[OperationType]
+    val DetachStaticIp                       = "DetachStaticIp".asInstanceOf[OperationType]
+    val UpdateDomainEntry                    = "UpdateDomainEntry".asInstanceOf[OperationType]
+    val DeleteDomainEntry                    = "DeleteDomainEntry".asInstanceOf[OperationType]
+    val CreateDomain                         = "CreateDomain".asInstanceOf[OperationType]
+    val DeleteDomain                         = "DeleteDomain".asInstanceOf[OperationType]
+    val CreateInstanceSnapshot               = "CreateInstanceSnapshot".asInstanceOf[OperationType]
+    val DeleteInstanceSnapshot               = "DeleteInstanceSnapshot".asInstanceOf[OperationType]
+    val CreateInstancesFromSnapshot          = "CreateInstancesFromSnapshot".asInstanceOf[OperationType]
+    val CreateLoadBalancer                   = "CreateLoadBalancer".asInstanceOf[OperationType]
+    val DeleteLoadBalancer                   = "DeleteLoadBalancer".asInstanceOf[OperationType]
+    val AttachInstancesToLoadBalancer        = "AttachInstancesToLoadBalancer".asInstanceOf[OperationType]
+    val DetachInstancesFromLoadBalancer      = "DetachInstancesFromLoadBalancer".asInstanceOf[OperationType]
+    val UpdateLoadBalancerAttribute          = "UpdateLoadBalancerAttribute".asInstanceOf[OperationType]
+    val CreateLoadBalancerTlsCertificate     = "CreateLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val DeleteLoadBalancerTlsCertificate     = "DeleteLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val AttachLoadBalancerTlsCertificate     = "AttachLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val CreateDisk                           = "CreateDisk".asInstanceOf[OperationType]
+    val DeleteDisk                           = "DeleteDisk".asInstanceOf[OperationType]
+    val AttachDisk                           = "AttachDisk".asInstanceOf[OperationType]
+    val DetachDisk                           = "DetachDisk".asInstanceOf[OperationType]
+    val CreateDiskSnapshot                   = "CreateDiskSnapshot".asInstanceOf[OperationType]
+    val DeleteDiskSnapshot                   = "DeleteDiskSnapshot".asInstanceOf[OperationType]
+    val CreateDiskFromSnapshot               = "CreateDiskFromSnapshot".asInstanceOf[OperationType]
+    val CreateRelationalDatabase             = "CreateRelationalDatabase".asInstanceOf[OperationType]
+    val UpdateRelationalDatabase             = "UpdateRelationalDatabase".asInstanceOf[OperationType]
+    val DeleteRelationalDatabase             = "DeleteRelationalDatabase".asInstanceOf[OperationType]
+    val CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot".asInstanceOf[OperationType]
+    val CreateRelationalDatabaseSnapshot     = "CreateRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val DeleteRelationalDatabaseSnapshot     = "DeleteRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val UpdateRelationalDatabaseParameters   = "UpdateRelationalDatabaseParameters".asInstanceOf[OperationType]
+    val StartRelationalDatabase              = "StartRelationalDatabase".asInstanceOf[OperationType]
+    val RebootRelationalDatabase             = "RebootRelationalDatabase".asInstanceOf[OperationType]
+    val StopRelationalDatabase               = "StopRelationalDatabase".asInstanceOf[OperationType]
+    val EnableAddOn                          = "EnableAddOn".asInstanceOf[OperationType]
+    val DisableAddOn                         = "DisableAddOn".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6160,10 +6153,11 @@ package lightsail {
       __obj.asInstanceOf[PendingModifiedRelationalDatabaseValues]
     }
   }
-
-  object PortAccessTypeEnum {
-    val Public  = "Public"
-    val Private = "Private"
+  @js.native
+  sealed trait PortAccessType extends js.Any
+  object PortAccessType extends js.Object {
+    val Public  = "Public".asInstanceOf[PortAccessType]
+    val Private = "Private".asInstanceOf[PortAccessType]
 
     val values = js.Object.freeze(js.Array(Public, Private))
   }
@@ -6192,19 +6186,21 @@ package lightsail {
       __obj.asInstanceOf[PortInfo]
     }
   }
-
-  object PortInfoSourceTypeEnum {
-    val DEFAULT  = "DEFAULT"
-    val INSTANCE = "INSTANCE"
-    val NONE     = "NONE"
-    val CLOSED   = "CLOSED"
+  @js.native
+  sealed trait PortInfoSourceType extends js.Any
+  object PortInfoSourceType extends js.Object {
+    val DEFAULT  = "DEFAULT".asInstanceOf[PortInfoSourceType]
+    val INSTANCE = "INSTANCE".asInstanceOf[PortInfoSourceType]
+    val NONE     = "NONE".asInstanceOf[PortInfoSourceType]
+    val CLOSED   = "CLOSED".asInstanceOf[PortInfoSourceType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
   }
-
-  object PortStateEnum {
-    val open   = "open"
-    val closed = "closed"
+  @js.native
+  sealed trait PortState extends js.Any
+  object PortState extends js.Object {
+    val open   = "open".asInstanceOf[PortState]
+    val closed = "closed".asInstanceOf[PortState]
 
     val values = js.Object.freeze(js.Array(open, closed))
   }
@@ -6313,11 +6309,12 @@ package lightsail {
       __obj.asInstanceOf[RebootRelationalDatabaseResult]
     }
   }
-
-  object RecordStateEnum {
-    val Started   = "Started"
-    val Succeeded = "Succeeded"
-    val Failed    = "Failed"
+  @js.native
+  sealed trait RecordState extends js.Any
+  object RecordState extends js.Object {
+    val Started   = "Started".asInstanceOf[RecordState]
+    val Succeeded = "Succeeded".asInstanceOf[RecordState]
+    val Failed    = "Failed".asInstanceOf[RecordState]
 
     val values = js.Object.freeze(js.Array(Started, Succeeded, Failed))
   }
@@ -6357,22 +6354,23 @@ package lightsail {
       __obj.asInstanceOf[Region]
     }
   }
-
-  object RegionNameEnum {
-    val `us-east-1`      = "us-east-1"
-    val `us-east-2`      = "us-east-2"
-    val `us-west-1`      = "us-west-1"
-    val `us-west-2`      = "us-west-2"
-    val `eu-west-1`      = "eu-west-1"
-    val `eu-west-2`      = "eu-west-2"
-    val `eu-west-3`      = "eu-west-3"
-    val `eu-central-1`   = "eu-central-1"
-    val `ca-central-1`   = "ca-central-1"
-    val `ap-south-1`     = "ap-south-1"
-    val `ap-southeast-1` = "ap-southeast-1"
-    val `ap-southeast-2` = "ap-southeast-2"
-    val `ap-northeast-1` = "ap-northeast-1"
-    val `ap-northeast-2` = "ap-northeast-2"
+  @js.native
+  sealed trait RegionName extends js.Any
+  object RegionName extends js.Object {
+    val `us-east-1`      = "us-east-1".asInstanceOf[RegionName]
+    val `us-east-2`      = "us-east-2".asInstanceOf[RegionName]
+    val `us-west-1`      = "us-west-1".asInstanceOf[RegionName]
+    val `us-west-2`      = "us-west-2".asInstanceOf[RegionName]
+    val `eu-west-1`      = "eu-west-1".asInstanceOf[RegionName]
+    val `eu-west-2`      = "eu-west-2".asInstanceOf[RegionName]
+    val `eu-west-3`      = "eu-west-3".asInstanceOf[RegionName]
+    val `eu-central-1`   = "eu-central-1".asInstanceOf[RegionName]
+    val `ca-central-1`   = "ca-central-1".asInstanceOf[RegionName]
+    val `ap-south-1`     = "ap-south-1".asInstanceOf[RegionName]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[RegionName]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[RegionName]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6596,9 +6594,10 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseEndpoint]
     }
   }
-
-  object RelationalDatabaseEngineEnum {
-    val mysql = "mysql"
+  @js.native
+  sealed trait RelationalDatabaseEngine extends js.Any
+  object RelationalDatabaseEngine extends js.Object {
+    val mysql = "mysql".asInstanceOf[RelationalDatabaseEngine]
 
     val values = js.Object.freeze(js.Array(mysql))
   }
@@ -6655,14 +6654,15 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseHardware]
     }
   }
-
-  object RelationalDatabaseMetricNameEnum {
-    val CPUUtilization            = "CPUUtilization"
-    val DatabaseConnections       = "DatabaseConnections"
-    val DiskQueueDepth            = "DiskQueueDepth"
-    val FreeStorageSpace          = "FreeStorageSpace"
-    val NetworkReceiveThroughput  = "NetworkReceiveThroughput"
-    val NetworkTransmitThroughput = "NetworkTransmitThroughput"
+  @js.native
+  sealed trait RelationalDatabaseMetricName extends js.Any
+  object RelationalDatabaseMetricName extends js.Object {
+    val CPUUtilization            = "CPUUtilization".asInstanceOf[RelationalDatabaseMetricName]
+    val DatabaseConnections       = "DatabaseConnections".asInstanceOf[RelationalDatabaseMetricName]
+    val DiskQueueDepth            = "DiskQueueDepth".asInstanceOf[RelationalDatabaseMetricName]
+    val FreeStorageSpace          = "FreeStorageSpace".asInstanceOf[RelationalDatabaseMetricName]
+    val NetworkReceiveThroughput  = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
+    val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6715,11 +6715,12 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseParameter]
     }
   }
-
-  object RelationalDatabasePasswordVersionEnum {
-    val CURRENT  = "CURRENT"
-    val PREVIOUS = "PREVIOUS"
-    val PENDING  = "PENDING"
+  @js.native
+  sealed trait RelationalDatabasePasswordVersion extends js.Any
+  object RelationalDatabasePasswordVersion extends js.Object {
+    val CURRENT  = "CURRENT".asInstanceOf[RelationalDatabasePasswordVersion]
+    val PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
+    val PENDING  = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
 
     val values = js.Object.freeze(js.Array(CURRENT, PREVIOUS, PENDING))
   }
@@ -6848,22 +6849,23 @@ package lightsail {
       __obj.asInstanceOf[ResourceLocation]
     }
   }
-
-  object ResourceTypeEnum {
-    val Instance                   = "Instance"
-    val StaticIp                   = "StaticIp"
-    val KeyPair                    = "KeyPair"
-    val InstanceSnapshot           = "InstanceSnapshot"
-    val Domain                     = "Domain"
-    val PeeredVpc                  = "PeeredVpc"
-    val LoadBalancer               = "LoadBalancer"
-    val LoadBalancerTlsCertificate = "LoadBalancerTlsCertificate"
-    val Disk                       = "Disk"
-    val DiskSnapshot               = "DiskSnapshot"
-    val RelationalDatabase         = "RelationalDatabase"
-    val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot"
-    val ExportSnapshotRecord       = "ExportSnapshotRecord"
-    val CloudFormationStackRecord  = "CloudFormationStackRecord"
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val Instance                   = "Instance".asInstanceOf[ResourceType]
+    val StaticIp                   = "StaticIp".asInstanceOf[ResourceType]
+    val KeyPair                    = "KeyPair".asInstanceOf[ResourceType]
+    val InstanceSnapshot           = "InstanceSnapshot".asInstanceOf[ResourceType]
+    val Domain                     = "Domain".asInstanceOf[ResourceType]
+    val PeeredVpc                  = "PeeredVpc".asInstanceOf[ResourceType]
+    val LoadBalancer               = "LoadBalancer".asInstanceOf[ResourceType]
+    val LoadBalancerTlsCertificate = "LoadBalancerTlsCertificate".asInstanceOf[ResourceType]
+    val Disk                       = "Disk".asInstanceOf[ResourceType]
+    val DiskSnapshot               = "DiskSnapshot".asInstanceOf[ResourceType]
+    val RelationalDatabase         = "RelationalDatabase".asInstanceOf[ResourceType]
+    val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot".asInstanceOf[ResourceType]
+    val ExportSnapshotRecord       = "ExportSnapshotRecord".asInstanceOf[ResourceType]
+    val CloudFormationStackRecord  = "CloudFormationStackRecord".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(

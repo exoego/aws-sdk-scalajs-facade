@@ -7,38 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object eks {
-  type AMITypes                         = String
   type AutoScalingGroupList             = js.Array[AutoScalingGroup]
   type BoxedBoolean                     = Boolean
   type BoxedInteger                     = Int
   type Capacity                         = Int
   type ClusterName                      = String
-  type ClusterStatus                    = String
-  type ErrorCode                        = String
   type ErrorDetails                     = js.Array[ErrorDetail]
   type FargateProfileLabel              = js.Dictionary[String]
   type FargateProfileSelectors          = js.Array[FargateProfileSelector]
-  type FargateProfileStatus             = String
   type FargateProfilesRequestMaxResults = Int
   type IssueList                        = js.Array[Issue]
   type ListClustersRequestMaxResults    = Int
   type ListNodegroupsRequestMaxResults  = Int
   type ListUpdatesRequestMaxResults     = Int
   type LogSetups                        = js.Array[LogSetup]
-  type LogType                          = String
   type LogTypes                         = js.Array[LogType]
-  type NodegroupIssueCode               = String
-  type NodegroupStatus                  = String
   type StringList                       = js.Array[String]
   type TagKey                           = String
   type TagKeyList                       = js.Array[TagKey]
   type TagMap                           = js.Dictionary[TagValue]
   type TagValue                         = String
   type Timestamp                        = js.Date
-  type UpdateParamType                  = String
   type UpdateParams                     = js.Array[UpdateParam]
-  type UpdateStatus                     = String
-  type UpdateType                       = String
   type labelKey                         = String
   type labelValue                       = String
   type labelsKeyList                    = js.Array[String]
@@ -124,10 +114,11 @@ package eks {
     def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] =
       js.native
   }
-
-  object AMITypesEnum {
-    val AL2_x86_64     = "AL2_x86_64"
-    val AL2_x86_64_GPU = "AL2_x86_64_GPU"
+  @js.native
+  sealed trait AMITypes extends js.Any
+  object AMITypes extends js.Object {
+    val AL2_x86_64     = "AL2_x86_64".asInstanceOf[AMITypes]
+    val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
     val values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
   }
@@ -227,13 +218,14 @@ package eks {
       __obj.asInstanceOf[Cluster]
     }
   }
-
-  object ClusterStatusEnum {
-    val CREATING = "CREATING"
-    val ACTIVE   = "ACTIVE"
-    val DELETING = "DELETING"
-    val FAILED   = "FAILED"
-    val UPDATING = "UPDATING"
+  @js.native
+  sealed trait ClusterStatus extends js.Any
+  object ClusterStatus extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[ClusterStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[ClusterStatus]
+    val DELETING = "DELETING".asInstanceOf[ClusterStatus]
+    val FAILED   = "FAILED".asInstanceOf[ClusterStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
   }
@@ -670,19 +662,20 @@ package eks {
       __obj.asInstanceOf[DescribeUpdateResponse]
     }
   }
-
-  object ErrorCodeEnum {
-    val SubnetNotFound            = "SubnetNotFound"
-    val SecurityGroupNotFound     = "SecurityGroupNotFound"
-    val EniLimitReached           = "EniLimitReached"
-    val IpNotAvailable            = "IpNotAvailable"
-    val AccessDenied              = "AccessDenied"
-    val OperationNotPermitted     = "OperationNotPermitted"
-    val VpcIdNotFound             = "VpcIdNotFound"
-    val Unknown                   = "Unknown"
-    val NodeCreationFailure       = "NodeCreationFailure"
-    val PodEvictionFailure        = "PodEvictionFailure"
-    val InsufficientFreeAddresses = "InsufficientFreeAddresses"
+  @js.native
+  sealed trait ErrorCode extends js.Any
+  object ErrorCode extends js.Object {
+    val SubnetNotFound            = "SubnetNotFound".asInstanceOf[ErrorCode]
+    val SecurityGroupNotFound     = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
+    val EniLimitReached           = "EniLimitReached".asInstanceOf[ErrorCode]
+    val IpNotAvailable            = "IpNotAvailable".asInstanceOf[ErrorCode]
+    val AccessDenied              = "AccessDenied".asInstanceOf[ErrorCode]
+    val OperationNotPermitted     = "OperationNotPermitted".asInstanceOf[ErrorCode]
+    val VpcIdNotFound             = "VpcIdNotFound".asInstanceOf[ErrorCode]
+    val Unknown                   = "Unknown".asInstanceOf[ErrorCode]
+    val NodeCreationFailure       = "NodeCreationFailure".asInstanceOf[ErrorCode]
+    val PodEvictionFailure        = "PodEvictionFailure".asInstanceOf[ErrorCode]
+    val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -790,13 +783,14 @@ package eks {
       __obj.asInstanceOf[FargateProfileSelector]
     }
   }
-
-  object FargateProfileStatusEnum {
-    val CREATING      = "CREATING"
-    val ACTIVE        = "ACTIVE"
-    val DELETING      = "DELETING"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETE_FAILED = "DELETE_FAILED"
+  @js.native
+  sealed trait FargateProfileStatus extends js.Any
+  object FargateProfileStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[FargateProfileStatus]
+    val ACTIVE        = "ACTIVE".asInstanceOf[FargateProfileStatus]
+    val DELETING      = "DELETING".asInstanceOf[FargateProfileStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
   }
@@ -1070,13 +1064,14 @@ package eks {
       __obj.asInstanceOf[LogSetup]
     }
   }
-
-  object LogTypeEnum {
-    val api               = "api"
-    val audit             = "audit"
-    val authenticator     = "authenticator"
-    val controllerManager = "controllerManager"
-    val scheduler         = "scheduler"
+  @js.native
+  sealed trait LogType extends js.Any
+  object LogType extends js.Object {
+    val api               = "api".asInstanceOf[LogType]
+    val audit             = "audit".asInstanceOf[LogType]
+    val authenticator     = "authenticator".asInstanceOf[LogType]
+    val controllerManager = "controllerManager".asInstanceOf[LogType]
+    val scheduler         = "scheduler".asInstanceOf[LogType]
 
     val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
   }
@@ -1191,22 +1186,23 @@ package eks {
       __obj.asInstanceOf[NodegroupHealth]
     }
   }
-
-  object NodegroupIssueCodeEnum {
-    val AutoScalingGroupNotFound             = "AutoScalingGroupNotFound"
-    val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration"
-    val Ec2SecurityGroupNotFound             = "Ec2SecurityGroupNotFound"
-    val Ec2SecurityGroupDeletionFailure      = "Ec2SecurityGroupDeletionFailure"
-    val Ec2LaunchTemplateNotFound            = "Ec2LaunchTemplateNotFound"
-    val Ec2LaunchTemplateVersionMismatch     = "Ec2LaunchTemplateVersionMismatch"
-    val Ec2SubnetNotFound                    = "Ec2SubnetNotFound"
-    val IamInstanceProfileNotFound           = "IamInstanceProfileNotFound"
-    val IamNodeRoleNotFound                  = "IamNodeRoleNotFound"
-    val AsgInstanceLaunchFailures            = "AsgInstanceLaunchFailures"
-    val InstanceLimitExceeded                = "InstanceLimitExceeded"
-    val InsufficientFreeAddresses            = "InsufficientFreeAddresses"
-    val AccessDenied                         = "AccessDenied"
-    val InternalFailure                      = "InternalFailure"
+  @js.native
+  sealed trait NodegroupIssueCode extends js.Any
+  object NodegroupIssueCode extends js.Object {
+    val AutoScalingGroupNotFound             = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
+    val Ec2SecurityGroupNotFound             = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2SecurityGroupDeletionFailure      = "Ec2SecurityGroupDeletionFailure".asInstanceOf[NodegroupIssueCode]
+    val Ec2LaunchTemplateNotFound            = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2LaunchTemplateVersionMismatch     = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
+    val Ec2SubnetNotFound                    = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
+    val IamInstanceProfileNotFound           = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
+    val IamNodeRoleNotFound                  = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
+    val AsgInstanceLaunchFailures            = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
+    val InstanceLimitExceeded                = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
+    val InsufficientFreeAddresses            = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
+    val AccessDenied                         = "AccessDenied".asInstanceOf[NodegroupIssueCode]
+    val InternalFailure                      = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1276,15 +1272,16 @@ package eks {
       __obj.asInstanceOf[NodegroupScalingConfig]
     }
   }
-
-  object NodegroupStatusEnum {
-    val CREATING      = "CREATING"
-    val ACTIVE        = "ACTIVE"
-    val UPDATING      = "UPDATING"
-    val DELETING      = "DELETING"
-    val CREATE_FAILED = "CREATE_FAILED"
-    val DELETE_FAILED = "DELETE_FAILED"
-    val DEGRADED      = "DEGRADED"
+  @js.native
+  sealed trait NodegroupStatus extends js.Any
+  object NodegroupStatus extends js.Object {
+    val CREATING      = "CREATING".asInstanceOf[NodegroupStatus]
+    val ACTIVE        = "ACTIVE".asInstanceOf[NodegroupStatus]
+    val UPDATING      = "UPDATING".asInstanceOf[NodegroupStatus]
+    val DELETING      = "DELETING".asInstanceOf[NodegroupStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodegroupStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
+    val DEGRADED      = "DEGRADED".asInstanceOf[NodegroupStatus]
 
     val values =
       js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
@@ -1654,20 +1651,21 @@ package eks {
       __obj.asInstanceOf[UpdateParam]
     }
   }
-
-  object UpdateParamTypeEnum {
-    val Version               = "Version"
-    val PlatformVersion       = "PlatformVersion"
-    val EndpointPrivateAccess = "EndpointPrivateAccess"
-    val EndpointPublicAccess  = "EndpointPublicAccess"
-    val ClusterLogging        = "ClusterLogging"
-    val DesiredSize           = "DesiredSize"
-    val LabelsToAdd           = "LabelsToAdd"
-    val LabelsToRemove        = "LabelsToRemove"
-    val MaxSize               = "MaxSize"
-    val MinSize               = "MinSize"
-    val ReleaseVersion        = "ReleaseVersion"
-    val PublicAccessCidrs     = "PublicAccessCidrs"
+  @js.native
+  sealed trait UpdateParamType extends js.Any
+  object UpdateParamType extends js.Object {
+    val Version               = "Version".asInstanceOf[UpdateParamType]
+    val PlatformVersion       = "PlatformVersion".asInstanceOf[UpdateParamType]
+    val EndpointPrivateAccess = "EndpointPrivateAccess".asInstanceOf[UpdateParamType]
+    val EndpointPublicAccess  = "EndpointPublicAccess".asInstanceOf[UpdateParamType]
+    val ClusterLogging        = "ClusterLogging".asInstanceOf[UpdateParamType]
+    val DesiredSize           = "DesiredSize".asInstanceOf[UpdateParamType]
+    val LabelsToAdd           = "LabelsToAdd".asInstanceOf[UpdateParamType]
+    val LabelsToRemove        = "LabelsToRemove".asInstanceOf[UpdateParamType]
+    val MaxSize               = "MaxSize".asInstanceOf[UpdateParamType]
+    val MinSize               = "MinSize".asInstanceOf[UpdateParamType]
+    val ReleaseVersion        = "ReleaseVersion".asInstanceOf[UpdateParamType]
+    val PublicAccessCidrs     = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1686,21 +1684,23 @@ package eks {
       )
     )
   }
-
-  object UpdateStatusEnum {
-    val InProgress = "InProgress"
-    val Failed     = "Failed"
-    val Cancelled  = "Cancelled"
-    val Successful = "Successful"
+  @js.native
+  sealed trait UpdateStatus extends js.Any
+  object UpdateStatus extends js.Object {
+    val InProgress = "InProgress".asInstanceOf[UpdateStatus]
+    val Failed     = "Failed".asInstanceOf[UpdateStatus]
+    val Cancelled  = "Cancelled".asInstanceOf[UpdateStatus]
+    val Successful = "Successful".asInstanceOf[UpdateStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
   }
-
-  object UpdateTypeEnum {
-    val VersionUpdate        = "VersionUpdate"
-    val EndpointAccessUpdate = "EndpointAccessUpdate"
-    val LoggingUpdate        = "LoggingUpdate"
-    val ConfigUpdate         = "ConfigUpdate"
+  @js.native
+  sealed trait UpdateType extends js.Any
+  object UpdateType extends js.Object {
+    val VersionUpdate        = "VersionUpdate".asInstanceOf[UpdateType]
+    val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
+    val LoggingUpdate        = "LoggingUpdate".asInstanceOf[UpdateType]
+    val ConfigUpdate         = "ConfigUpdate".asInstanceOf[UpdateType]
 
     val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
   }
