@@ -5,10 +5,6 @@ import scala.scalajs.js
 
 object S3Extension {
   implicit class S3Ops(s3: S3) {
-    @deprecated("Use getSignedUrlFuture instead", "0.25.0")
-    def getSignedUrl(operation: String, params: scalajs.js.Object, expires: Int = 900): Future[String] =
-      S3Extension.getSignedUrlFuture(s3, operation, params, expires)
-
     def getSignedUrlFuture(operation: String, params: scalajs.js.Object, expires: Int = 900): Future[String] =
       S3Extension.getSignedUrlFuture(s3, operation, params, expires)
   }
@@ -36,8 +32,4 @@ object S3Extension {
       .asInstanceOf[js.Promise[String]]
       .toFuture
   }
-
-  @deprecated("Use getSignedUrlFuture instead", "0.25.0")
-  def getSignedUrl(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] =
-    getSignedUrlFuture(s3, operation, params, expires)
 }
