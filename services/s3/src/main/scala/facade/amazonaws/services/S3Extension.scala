@@ -3,10 +3,13 @@ package facade.amazonaws.services.s3
 import scala.concurrent.Future
 import scala.scalajs.js
 
+@deprecated("Use facade.amazonaws.services.s3.S3OpsExtension", "0.30.0")
 object S3Extension {
-  implicit class S3Ops(s3: S3) {
+  @deprecated("Use facade.amazonaws.services.s3.S3OpsExtension", "0.30.0")
+  implicit final class S3Ops(s3: S3) {
+    @deprecated("Use facade.amazonaws.services.s3.S3OpsExtension.getSignedUrlFuture", "0.30.0")
     def getSignedUrlFuture(operation: String, params: scalajs.js.Object, expires: Int = 900): Future[String] =
-      S3Extension.getSignedUrlFuture(s3, operation, params, expires)
+      facade.amazonaws.services.s3.S3Ops(s3).getSignedUrlFuture(operation.asInstanceOf[Operation], params, expires)
   }
 
   /**
@@ -18,18 +21,8 @@ object S3Extension {
     * @param expires The number of seconds to expire the pre-signed URL operation in. Defaults to 900 seconds (15 minutes).
     * @return Future of the signed URL
     */
+  @deprecated("Use facade.amazonaws.services.s3.S3OpsExtension.getSignedUrlFuture", "0.30.0")
   def getSignedUrlFuture(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] = {
-    val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
-      params
-    } else {
-      val deepCloned = js.JSON.parse(js.JSON.stringify(params))
-      deepCloned.Expires = expires
-      deepCloned.asInstanceOf[js.Object]
-    }
-
-    s3.asInstanceOf[js.Dynamic]
-      .getSignedUrlPromise(operation, paramsWithExpires)
-      .asInstanceOf[js.Promise[String]]
-      .toFuture
+    facade.amazonaws.services.s3.S3Ops(s3).getSignedUrlFuture(operation.asInstanceOf[Operation], params, expires)
   }
 }
