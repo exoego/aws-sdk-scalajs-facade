@@ -12,8 +12,3 @@ addSbtPlugin("com.github.gseitz" % "sbt-release"            % "1.0.13")
 addSbtPlugin("com.jsuereth"      % "sbt-pgp"                % "2.0.1")
 addSbtPlugin("ch.epfl.scala"     % scalaJSBundlerArtifactId % "0.17.0")
 addSbtPlugin("com.dwijnand"      % "sbt-travisci"           % "1.2.0")
-
-// Workaround for https://github.com/scalacenter/scalajs-bundler/issues/329
-// Remove when updating sbt-scalajs-bundler
-libraryDependencies ++= Seq("org.scala-js" %% "scalajs-linker" % "1.0.0")
-  .filter(_ => scalaJSVersion.startsWith("1.0"))
