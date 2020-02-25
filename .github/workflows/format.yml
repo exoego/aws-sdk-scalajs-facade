@@ -10,3 +10,18 @@ jobs:
       - uses: olafurpg/setup-scala@v5
       - name: Check Scalafmt
         run: sbt -jvm-opts .travis/jvmopts ++2.13.1 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+      - name: Cache SBT ivy cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.ivy2/cache
+          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
+      - name: Cache SBT
+        uses: actions/cache@v1
+        with:
+          path: ~/.sbt
+          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
+      - name: Cache coursier cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/coursier
+          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
