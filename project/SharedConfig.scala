@@ -4,7 +4,7 @@ import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import com.jsuereth.sbtpgp.SbtPgp.autoImport._
 import sbtrelease.ReleasePlugin.autoImport._
 import sbtrelease.ReleaseStateTransformations._
-import xerial.sbt.Sonatype.SonatypeKeys
+import xerial.sbt.Sonatype.SonatypeKeys._
 
 object SharedConfig {
   val libraryName = "aws-sdk-scalajs-facade"
@@ -39,7 +39,7 @@ object SharedConfig {
   )
 
   val publishSetting = Seq(
-    publishTo in ThisBuild := SonatypeKeys.sonatypePublishToBundle.value,
+    publishTo in ThisBuild := sonatypePublishToBundle.value,
     publishMavenStyle := true,
     publishArtifact in Test := false,
     publishArtifact in (Compile, packageDoc) := true,
@@ -47,6 +47,7 @@ object SharedConfig {
     pomIncludeRepository := { _ =>
       false
     },
+    sonatypeTimeoutMillis := 3 * 60 * 60 * 1000,
     publishConfiguration := publishConfiguration.value.withOverwrite(true),
     publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
     publishArtifact in packageDoc := false,
