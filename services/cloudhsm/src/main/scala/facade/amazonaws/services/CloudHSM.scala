@@ -735,7 +735,7 @@ package cloudhsm {
   object ListAvailableZonesRequest {
     @inline
     def apply(
-        ): ListAvailableZonesRequest = {
+    ): ListAvailableZonesRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListAvailableZonesRequest]

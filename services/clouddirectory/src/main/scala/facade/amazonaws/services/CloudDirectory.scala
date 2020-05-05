@@ -344,7 +344,7 @@ package clouddirectory {
   object AddFacetToObjectResponse {
     @inline
     def apply(
-        ): AddFacetToObjectResponse = {
+    ): AddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddFacetToObjectResponse]
@@ -464,7 +464,7 @@ package clouddirectory {
   object AttachPolicyResponse {
     @inline
     def apply(
-        ): AttachPolicyResponse = {
+    ): AttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachPolicyResponse]
@@ -668,7 +668,7 @@ package clouddirectory {
   object BatchAddFacetToObjectResponse {
     @inline
     def apply(
-        ): BatchAddFacetToObjectResponse = {
+    ): BatchAddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchAddFacetToObjectResponse]
@@ -754,7 +754,7 @@ package clouddirectory {
   object BatchAttachPolicyResponse {
     @inline
     def apply(
-        ): BatchAttachPolicyResponse = {
+    ): BatchAttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchAttachPolicyResponse]
@@ -987,7 +987,7 @@ package clouddirectory {
   object BatchDeleteObjectResponse {
     @inline
     def apply(
-        ): BatchDeleteObjectResponse = {
+    ): BatchDeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDeleteObjectResponse]
@@ -1116,7 +1116,7 @@ package clouddirectory {
   object BatchDetachPolicyResponse {
     @inline
     def apply(
-        ): BatchDetachPolicyResponse = {
+    ): BatchDetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDetachPolicyResponse]
@@ -1153,7 +1153,7 @@ package clouddirectory {
   object BatchDetachTypedLinkResponse {
     @inline
     def apply(
-        ): BatchDetachTypedLinkResponse = {
+    ): BatchDetachTypedLinkResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDetachTypedLinkResponse]
@@ -2113,7 +2113,7 @@ package clouddirectory {
   object BatchRemoveFacetFromObjectResponse {
     @inline
     def apply(
-        ): BatchRemoveFacetFromObjectResponse = {
+    ): BatchRemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchRemoveFacetFromObjectResponse]
@@ -2153,7 +2153,7 @@ package clouddirectory {
   object BatchUpdateLinkAttributesResponse {
     @inline
     def apply(
-        ): BatchUpdateLinkAttributesResponse = {
+    ): BatchUpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchUpdateLinkAttributesResponse]
@@ -2454,7 +2454,7 @@ package clouddirectory {
   object CreateFacetResponse {
     @inline
     def apply(
-        ): CreateFacetResponse = {
+    ): CreateFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateFacetResponse]
@@ -2614,7 +2614,7 @@ package clouddirectory {
   object CreateTypedLinkFacetResponse {
     @inline
     def apply(
-        ): CreateTypedLinkFacetResponse = {
+    ): CreateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTypedLinkFacetResponse]
@@ -2684,7 +2684,7 @@ package clouddirectory {
   object DeleteFacetResponse {
     @inline
     def apply(
-        ): DeleteFacetResponse = {
+    ): DeleteFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFacetResponse]
@@ -2718,7 +2718,7 @@ package clouddirectory {
   object DeleteObjectResponse {
     @inline
     def apply(
-        ): DeleteObjectResponse = {
+    ): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteObjectResponse]
@@ -2786,7 +2786,7 @@ package clouddirectory {
   object DeleteTypedLinkFacetResponse {
     @inline
     def apply(
-        ): DeleteTypedLinkFacetResponse = {
+    ): DeleteTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTypedLinkFacetResponse]
@@ -2903,7 +2903,7 @@ package clouddirectory {
   object DetachPolicyResponse {
     @inline
     def apply(
-        ): DetachPolicyResponse = {
+    ): DetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachPolicyResponse]
@@ -4872,7 +4872,7 @@ package clouddirectory {
   object RemoveFacetFromObjectResponse {
     @inline
     def apply(
-        ): RemoveFacetFromObjectResponse = {
+    ): RemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveFacetFromObjectResponse]
@@ -4990,7 +4990,7 @@ package clouddirectory {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -5250,7 +5250,7 @@ package clouddirectory {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -5298,7 +5298,7 @@ package clouddirectory {
   object UpdateFacetResponse {
     @inline
     def apply(
-        ): UpdateFacetResponse = {
+    ): UpdateFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFacetResponse]
@@ -5335,7 +5335,7 @@ package clouddirectory {
   object UpdateLinkAttributesResponse {
     @inline
     def apply(
-        ): UpdateLinkAttributesResponse = {
+    ): UpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLinkAttributesResponse]
@@ -5452,7 +5452,7 @@ package clouddirectory {
   object UpdateTypedLinkFacetResponse {
     @inline
     def apply(
-        ): UpdateTypedLinkFacetResponse = {
+    ): UpdateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTypedLinkFacetResponse]

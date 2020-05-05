@@ -295,7 +295,7 @@ package workmail {
   object AssociateDelegateToResourceResponse {
     @inline
     def apply(
-        ): AssociateDelegateToResourceResponse = {
+    ): AssociateDelegateToResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDelegateToResourceResponse]
@@ -332,7 +332,7 @@ package workmail {
   object AssociateMemberToGroupResponse {
     @inline
     def apply(
-        ): AssociateMemberToGroupResponse = {
+    ): AssociateMemberToGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateMemberToGroupResponse]
@@ -398,7 +398,7 @@ package workmail {
   object CreateAliasResponse {
     @inline
     def apply(
-        ): CreateAliasResponse = {
+    ): CreateAliasResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAliasResponse]
@@ -576,7 +576,7 @@ package workmail {
   object DeleteAccessControlRuleResponse {
     @inline
     def apply(
-        ): DeleteAccessControlRuleResponse = {
+    ): DeleteAccessControlRuleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccessControlRuleResponse]
@@ -613,7 +613,7 @@ package workmail {
   object DeleteAliasResponse {
     @inline
     def apply(
-        ): DeleteAliasResponse = {
+    ): DeleteAliasResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAliasResponse]
@@ -647,7 +647,7 @@ package workmail {
   object DeleteGroupResponse {
     @inline
     def apply(
-        ): DeleteGroupResponse = {
+    ): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResponse]
@@ -684,7 +684,7 @@ package workmail {
   object DeleteMailboxPermissionsResponse {
     @inline
     def apply(
-        ): DeleteMailboxPermissionsResponse = {
+    ): DeleteMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
@@ -718,7 +718,7 @@ package workmail {
   object DeleteResourceResponse {
     @inline
     def apply(
-        ): DeleteResourceResponse = {
+    ): DeleteResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceResponse]
@@ -752,7 +752,7 @@ package workmail {
   object DeleteUserResponse {
     @inline
     def apply(
-        ): DeleteUserResponse = {
+    ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResponse]
@@ -786,7 +786,7 @@ package workmail {
   object DeregisterFromWorkMailResponse {
     @inline
     def apply(
-        ): DeregisterFromWorkMailResponse = {
+    ): DeregisterFromWorkMailResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterFromWorkMailResponse]
@@ -1049,7 +1049,7 @@ package workmail {
   object DisassociateDelegateFromResourceResponse {
     @inline
     def apply(
-        ): DisassociateDelegateFromResourceResponse = {
+    ): DisassociateDelegateFromResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDelegateFromResourceResponse]
@@ -1086,7 +1086,7 @@ package workmail {
   object DisassociateMemberFromGroupResponse {
     @inline
     def apply(
-        ): DisassociateMemberFromGroupResponse = {
+    ): DisassociateMemberFromGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
@@ -1798,7 +1798,7 @@ package workmail {
   object PutAccessControlRuleResponse {
     @inline
     def apply(
-        ): PutAccessControlRuleResponse = {
+    ): PutAccessControlRuleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccessControlRuleResponse]
@@ -1838,7 +1838,7 @@ package workmail {
   object PutMailboxPermissionsResponse {
     @inline
     def apply(
-        ): PutMailboxPermissionsResponse = {
+    ): PutMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutMailboxPermissionsResponse]
@@ -1875,7 +1875,7 @@ package workmail {
   object RegisterToWorkMailResponse {
     @inline
     def apply(
-        ): RegisterToWorkMailResponse = {
+    ): RegisterToWorkMailResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterToWorkMailResponse]
@@ -1912,7 +1912,7 @@ package workmail {
   object ResetPasswordResponse {
     @inline
     def apply(
-        ): ResetPasswordResponse = {
+    ): ResetPasswordResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ResetPasswordResponse]
@@ -2015,7 +2015,7 @@ package workmail {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -2049,7 +2049,7 @@ package workmail {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -2086,7 +2086,7 @@ package workmail {
   object UpdateMailboxQuotaResponse {
     @inline
     def apply(
-        ): UpdateMailboxQuotaResponse = {
+    ): UpdateMailboxQuotaResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateMailboxQuotaResponse]
@@ -2123,7 +2123,7 @@ package workmail {
   object UpdatePrimaryEmailAddressResponse {
     @inline
     def apply(
-        ): UpdatePrimaryEmailAddressResponse = {
+    ): UpdatePrimaryEmailAddressResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePrimaryEmailAddressResponse]
@@ -2163,7 +2163,7 @@ package workmail {
   object UpdateResourceResponse {
     @inline
     def apply(
-        ): UpdateResourceResponse = {
+    ): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceResponse]

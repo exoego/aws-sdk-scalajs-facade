@@ -475,7 +475,7 @@ package pinpointemail {
   object CreateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetEventDestinationResponse = {
+    ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
@@ -527,7 +527,7 @@ package pinpointemail {
   object CreateConfigurationSetResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetResponse = {
+    ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
@@ -567,7 +567,7 @@ package pinpointemail {
   object CreateDedicatedIpPoolResponse {
     @inline
     def apply(
-        ): CreateDedicatedIpPoolResponse = {
+    ): CreateDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
@@ -767,7 +767,7 @@ package pinpointemail {
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetEventDestinationResponse = {
+    ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
@@ -804,7 +804,7 @@ package pinpointemail {
   object DeleteConfigurationSetResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetResponse = {
+    ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
@@ -841,7 +841,7 @@ package pinpointemail {
   object DeleteDedicatedIpPoolResponse {
     @inline
     def apply(
-        ): DeleteDedicatedIpPoolResponse = {
+    ): DeleteDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
@@ -878,7 +878,7 @@ package pinpointemail {
   object DeleteEmailIdentityResponse {
     @inline
     def apply(
-        ): DeleteEmailIdentityResponse = {
+    ): DeleteEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
@@ -1294,7 +1294,7 @@ package pinpointemail {
   object GetAccountRequest {
     @inline
     def apply(
-        ): GetAccountRequest = {
+    ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountRequest]
@@ -1568,7 +1568,7 @@ package pinpointemail {
   object GetDeliverabilityDashboardOptionsRequest {
     @inline
     def apply(
-        ): GetDeliverabilityDashboardOptionsRequest = {
+    ): GetDeliverabilityDashboardOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
@@ -2387,7 +2387,7 @@ package pinpointemail {
   object PutAccountDedicatedIpWarmupAttributesResponse {
     @inline
     def apply(
-        ): PutAccountDedicatedIpWarmupAttributesResponse = {
+    ): PutAccountDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
@@ -2422,7 +2422,7 @@ package pinpointemail {
   object PutAccountSendingAttributesResponse {
     @inline
     def apply(
-        ): PutAccountSendingAttributesResponse = {
+    ): PutAccountSendingAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountSendingAttributesResponse]
@@ -2465,7 +2465,7 @@ package pinpointemail {
   object PutConfigurationSetDeliveryOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetDeliveryOptionsResponse = {
+    ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
@@ -2505,7 +2505,7 @@ package pinpointemail {
   object PutConfigurationSetReputationOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetReputationOptionsResponse = {
+    ): PutConfigurationSetReputationOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
@@ -2545,7 +2545,7 @@ package pinpointemail {
   object PutConfigurationSetSendingOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetSendingOptionsResponse = {
+    ): PutConfigurationSetSendingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
@@ -2585,7 +2585,7 @@ package pinpointemail {
   object PutConfigurationSetTrackingOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetTrackingOptionsResponse = {
+    ): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
@@ -2625,7 +2625,7 @@ package pinpointemail {
   object PutDedicatedIpInPoolResponse {
     @inline
     def apply(
-        ): PutDedicatedIpInPoolResponse = {
+    ): PutDedicatedIpInPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
@@ -2665,7 +2665,7 @@ package pinpointemail {
   object PutDedicatedIpWarmupAttributesResponse {
     @inline
     def apply(
-        ): PutDedicatedIpWarmupAttributesResponse = {
+    ): PutDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
@@ -2706,7 +2706,7 @@ package pinpointemail {
   object PutDeliverabilityDashboardOptionResponse {
     @inline
     def apply(
-        ): PutDeliverabilityDashboardOptionResponse = {
+    ): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
@@ -2746,7 +2746,7 @@ package pinpointemail {
   object PutEmailIdentityDkimAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityDkimAttributesResponse = {
+    ): PutEmailIdentityDkimAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
@@ -2786,7 +2786,7 @@ package pinpointemail {
   object PutEmailIdentityFeedbackAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityFeedbackAttributesResponse = {
+    ): PutEmailIdentityFeedbackAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
@@ -2829,7 +2829,7 @@ package pinpointemail {
   object PutEmailIdentityMailFromAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityMailFromAttributesResponse = {
+    ): PutEmailIdentityMailFromAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
@@ -3060,7 +3060,7 @@ package pinpointemail {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3147,7 +3147,7 @@ package pinpointemail {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -3190,7 +3190,7 @@ package pinpointemail {
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): UpdateConfigurationSetEventDestinationResponse = {
+    ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]

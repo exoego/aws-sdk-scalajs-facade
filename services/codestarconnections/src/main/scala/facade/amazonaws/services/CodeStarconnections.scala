@@ -142,7 +142,7 @@ package codestarconnections {
   object DeleteConnectionOutput {
     @inline
     def apply(
-        ): DeleteConnectionOutput = {
+    ): DeleteConnectionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConnectionOutput]

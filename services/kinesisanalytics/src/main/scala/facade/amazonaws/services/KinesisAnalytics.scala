@@ -187,7 +187,7 @@ package kinesisanalytics {
   object AddApplicationCloudWatchLoggingOptionResponse {
     @inline
     def apply(
-        ): AddApplicationCloudWatchLoggingOptionResponse = {
+    ): AddApplicationCloudWatchLoggingOptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddApplicationCloudWatchLoggingOptionResponse]
@@ -227,7 +227,7 @@ package kinesisanalytics {
   object AddApplicationInputProcessingConfigurationResponse {
     @inline
     def apply(
-        ): AddApplicationInputProcessingConfigurationResponse = {
+    ): AddApplicationInputProcessingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddApplicationInputProcessingConfigurationResponse]
@@ -270,7 +270,7 @@ package kinesisanalytics {
   object AddApplicationInputResponse {
     @inline
     def apply(
-        ): AddApplicationInputResponse = {
+    ): AddApplicationInputResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddApplicationInputResponse]
@@ -313,7 +313,7 @@ package kinesisanalytics {
   object AddApplicationOutputResponse {
     @inline
     def apply(
-        ): AddApplicationOutputResponse = {
+    ): AddApplicationOutputResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddApplicationOutputResponse]
@@ -356,7 +356,7 @@ package kinesisanalytics {
   object AddApplicationReferenceDataSourceResponse {
     @inline
     def apply(
-        ): AddApplicationReferenceDataSourceResponse = {
+    ): AddApplicationReferenceDataSourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddApplicationReferenceDataSourceResponse]
@@ -693,7 +693,7 @@ package kinesisanalytics {
   object DeleteApplicationCloudWatchLoggingOptionResponse {
     @inline
     def apply(
-        ): DeleteApplicationCloudWatchLoggingOptionResponse = {
+    ): DeleteApplicationCloudWatchLoggingOptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationCloudWatchLoggingOptionResponse]
@@ -730,7 +730,7 @@ package kinesisanalytics {
   object DeleteApplicationInputProcessingConfigurationResponse {
     @inline
     def apply(
-        ): DeleteApplicationInputProcessingConfigurationResponse = {
+    ): DeleteApplicationInputProcessingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationInputProcessingConfigurationResponse]
@@ -773,7 +773,7 @@ package kinesisanalytics {
   object DeleteApplicationOutputResponse {
     @inline
     def apply(
-        ): DeleteApplicationOutputResponse = {
+    ): DeleteApplicationOutputResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationOutputResponse]
@@ -810,7 +810,7 @@ package kinesisanalytics {
   object DeleteApplicationReferenceDataSourceResponse {
     @inline
     def apply(
-        ): DeleteApplicationReferenceDataSourceResponse = {
+    ): DeleteApplicationReferenceDataSourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationReferenceDataSourceResponse]
@@ -850,7 +850,7 @@ package kinesisanalytics {
   object DeleteApplicationResponse {
     @inline
     def apply(
-        ): DeleteApplicationResponse = {
+    ): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationResponse]
@@ -2253,7 +2253,7 @@ package kinesisanalytics {
   object StartApplicationResponse {
     @inline
     def apply(
-        ): StartApplicationResponse = {
+    ): StartApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartApplicationResponse]
@@ -2290,7 +2290,7 @@ package kinesisanalytics {
   object StopApplicationResponse {
     @inline
     def apply(
-        ): StopApplicationResponse = {
+    ): StopApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopApplicationResponse]
@@ -2348,7 +2348,7 @@ package kinesisanalytics {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -2382,7 +2382,7 @@ package kinesisanalytics {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -2419,7 +2419,7 @@ package kinesisanalytics {
   object UpdateApplicationResponse {
     @inline
     def apply(
-        ): UpdateApplicationResponse = {
+    ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateApplicationResponse]

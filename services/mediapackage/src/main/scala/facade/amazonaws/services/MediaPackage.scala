@@ -91,7 +91,10 @@ package mediapackage {
     def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                      = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
-    @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(
+    @deprecated(
+      "This API is deprecated. Please use RotateIngestEndpointCredentials instead",
+      "forever"
+    ) def rotateChannelCredentials(
         params: RotateChannelCredentialsRequest
     ): Request[RotateChannelCredentialsResponse] = js.native
   }
@@ -627,7 +630,7 @@ package mediapackage {
   object DeleteChannelResponse {
     @inline
     def apply(
-        ): DeleteChannelResponse = {
+    ): DeleteChannelResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteChannelResponse]
@@ -658,7 +661,7 @@ package mediapackage {
   object DeleteOriginEndpointResponse {
     @inline
     def apply(
-        ): DeleteOriginEndpointResponse = {
+    ): DeleteOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteOriginEndpointResponse]

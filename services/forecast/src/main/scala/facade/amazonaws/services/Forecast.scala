@@ -2110,7 +2110,7 @@ package forecast {
   object UpdateDatasetGroupResponse {
     @inline
     def apply(
-        ): UpdateDatasetGroupResponse = {
+    ): UpdateDatasetGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDatasetGroupResponse]

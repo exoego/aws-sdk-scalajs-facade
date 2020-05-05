@@ -1481,7 +1481,7 @@ package fsx {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1521,7 +1521,7 @@ package fsx {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

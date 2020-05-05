@@ -910,7 +910,7 @@ package rekognition {
   object DeleteStreamProcessorResponse {
     @inline
     def apply(
-        ): DeleteStreamProcessorResponse = {
+    ): DeleteStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStreamProcessorResponse]
@@ -3663,7 +3663,7 @@ package rekognition {
   object StartStreamProcessorResponse {
     @inline
     def apply(
-        ): StartStreamProcessorResponse = {
+    ): StartStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartStreamProcessorResponse]
@@ -3796,7 +3796,7 @@ package rekognition {
   object StopStreamProcessorResponse {
     @inline
     def apply(
-        ): StopStreamProcessorResponse = {
+    ): StopStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopStreamProcessorResponse]

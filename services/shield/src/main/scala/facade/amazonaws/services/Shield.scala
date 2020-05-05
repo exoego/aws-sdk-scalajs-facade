@@ -145,7 +145,7 @@ package shield {
   object AssociateDRTLogBucketResponse {
     @inline
     def apply(
-        ): AssociateDRTLogBucketResponse = {
+    ): AssociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDRTLogBucketResponse]
@@ -176,7 +176,7 @@ package shield {
   object AssociateDRTRoleResponse {
     @inline
     def apply(
-        ): AssociateDRTRoleResponse = {
+    ): AssociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDRTRoleResponse]
@@ -210,7 +210,7 @@ package shield {
   object AssociateHealthCheckResponse {
     @inline
     def apply(
-        ): AssociateHealthCheckResponse = {
+    ): AssociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateHealthCheckResponse]
@@ -446,7 +446,7 @@ package shield {
   object CreateSubscriptionRequest {
     @inline
     def apply(
-        ): CreateSubscriptionRequest = {
+    ): CreateSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriptionRequest]
@@ -459,7 +459,7 @@ package shield {
   object CreateSubscriptionResponse {
     @inline
     def apply(
-        ): CreateSubscriptionResponse = {
+    ): CreateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriptionResponse]
@@ -490,7 +490,7 @@ package shield {
   object DeleteProtectionResponse {
     @inline
     def apply(
-        ): DeleteProtectionResponse = {
+    ): DeleteProtectionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProtectionResponse]
@@ -504,7 +504,7 @@ package shield {
   object DeleteSubscriptionRequest {
     @inline
     def apply(
-        ): DeleteSubscriptionRequest = {
+    ): DeleteSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionRequest]
@@ -518,7 +518,7 @@ package shield {
   object DeleteSubscriptionResponse {
     @inline
     def apply(
-        ): DeleteSubscriptionResponse = {
+    ): DeleteSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionResponse]
@@ -565,7 +565,7 @@ package shield {
   object DescribeDRTAccessRequest {
     @inline
     def apply(
-        ): DescribeDRTAccessRequest = {
+    ): DescribeDRTAccessRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeDRTAccessRequest]
@@ -597,7 +597,7 @@ package shield {
   object DescribeEmergencyContactSettingsRequest {
     @inline
     def apply(
-        ): DescribeEmergencyContactSettingsRequest = {
+    ): DescribeEmergencyContactSettingsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeEmergencyContactSettingsRequest]
@@ -661,7 +661,7 @@ package shield {
   object DescribeSubscriptionRequest {
     @inline
     def apply(
-        ): DescribeSubscriptionRequest = {
+    ): DescribeSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeSubscriptionRequest]
@@ -708,7 +708,7 @@ package shield {
   object DisassociateDRTLogBucketResponse {
     @inline
     def apply(
-        ): DisassociateDRTLogBucketResponse = {
+    ): DisassociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTLogBucketResponse]
@@ -721,7 +721,7 @@ package shield {
   object DisassociateDRTRoleRequest {
     @inline
     def apply(
-        ): DisassociateDRTRoleRequest = {
+    ): DisassociateDRTRoleRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTRoleRequest]
@@ -734,7 +734,7 @@ package shield {
   object DisassociateDRTRoleResponse {
     @inline
     def apply(
-        ): DisassociateDRTRoleResponse = {
+    ): DisassociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTRoleResponse]
@@ -768,7 +768,7 @@ package shield {
   object DisassociateHealthCheckResponse {
     @inline
     def apply(
-        ): DisassociateHealthCheckResponse = {
+    ): DisassociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateHealthCheckResponse]
@@ -802,7 +802,7 @@ package shield {
   object GetSubscriptionStateRequest {
     @inline
     def apply(
-        ): GetSubscriptionStateRequest = {
+    ): GetSubscriptionStateRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetSubscriptionStateRequest]
@@ -1168,7 +1168,7 @@ package shield {
   object UpdateEmergencyContactSettingsResponse {
     @inline
     def apply(
-        ): UpdateEmergencyContactSettingsResponse = {
+    ): UpdateEmergencyContactSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
@@ -1197,7 +1197,7 @@ package shield {
   object UpdateSubscriptionResponse {
     @inline
     def apply(
-        ): UpdateSubscriptionResponse = {
+    ): UpdateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriptionResponse]

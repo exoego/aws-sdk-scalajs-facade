@@ -43,7 +43,7 @@ package qldbsession {
   object AbortTransactionRequest {
     @inline
     def apply(
-        ): AbortTransactionRequest = {
+    ): AbortTransactionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AbortTransactionRequest]
@@ -59,7 +59,7 @@ package qldbsession {
   object AbortTransactionResult {
     @inline
     def apply(
-        ): AbortTransactionResult = {
+    ): AbortTransactionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AbortTransactionResult]
@@ -121,7 +121,7 @@ package qldbsession {
   object EndSessionRequest {
     @inline
     def apply(
-        ): EndSessionRequest = {
+    ): EndSessionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EndSessionRequest]
@@ -137,7 +137,7 @@ package qldbsession {
   object EndSessionResult {
     @inline
     def apply(
-        ): EndSessionResult = {
+    ): EndSessionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EndSessionResult]
@@ -375,7 +375,7 @@ package qldbsession {
   object StartTransactionRequest {
     @inline
     def apply(
-        ): StartTransactionRequest = {
+    ): StartTransactionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartTransactionRequest]

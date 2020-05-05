@@ -1323,7 +1323,7 @@ package schemas {
   object UnlockServiceLinkedRoleResponse {
     @inline
     def apply(
-        ): UnlockServiceLinkedRoleResponse = {
+    ): UnlockServiceLinkedRoleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnlockServiceLinkedRoleResponse]

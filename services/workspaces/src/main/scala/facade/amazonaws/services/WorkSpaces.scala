@@ -334,7 +334,7 @@ package workspaces {
   object AssociateIpGroupsResult {
     @inline
     def apply(
-        ): AssociateIpGroupsResult = {
+    ): AssociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateIpGroupsResult]
@@ -368,7 +368,7 @@ package workspaces {
   object AuthorizeIpRulesResult {
     @inline
     def apply(
-        ): AuthorizeIpRulesResult = {
+    ): AuthorizeIpRulesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AuthorizeIpRulesResult]
@@ -573,7 +573,7 @@ package workspaces {
   object CreateTagsResult {
     @inline
     def apply(
-        ): CreateTagsResult = {
+    ): CreateTagsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTagsResult]
@@ -701,7 +701,7 @@ package workspaces {
   object DeleteIpGroupResult {
     @inline
     def apply(
-        ): DeleteIpGroupResult = {
+    ): DeleteIpGroupResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIpGroupResult]
@@ -735,7 +735,7 @@ package workspaces {
   object DeleteTagsResult {
     @inline
     def apply(
-        ): DeleteTagsResult = {
+    ): DeleteTagsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsResult]
@@ -766,7 +766,7 @@ package workspaces {
   object DeleteWorkspaceImageResult {
     @inline
     def apply(
-        ): DeleteWorkspaceImageResult = {
+    ): DeleteWorkspaceImageResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkspaceImageResult]
@@ -797,7 +797,7 @@ package workspaces {
   object DeregisterWorkspaceDirectoryResult {
     @inline
     def apply(
-        ): DeregisterWorkspaceDirectoryResult = {
+    ): DeregisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterWorkspaceDirectoryResult]
@@ -845,7 +845,7 @@ package workspaces {
   object DescribeAccountRequest {
     @inline
     def apply(
-        ): DescribeAccountRequest = {
+    ): DescribeAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountRequest]
@@ -1259,7 +1259,7 @@ package workspaces {
   object DisassociateIpGroupsResult {
     @inline
     def apply(
-        ): DisassociateIpGroupsResult = {
+    ): DisassociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateIpGroupsResult]
@@ -1533,7 +1533,7 @@ package workspaces {
   object ModifyAccountResult {
     @inline
     def apply(
-        ): ModifyAccountResult = {
+    ): ModifyAccountResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyAccountResult]
@@ -1567,7 +1567,7 @@ package workspaces {
   object ModifyClientPropertiesResult {
     @inline
     def apply(
-        ): ModifyClientPropertiesResult = {
+    ): ModifyClientPropertiesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyClientPropertiesResult]
@@ -1601,7 +1601,7 @@ package workspaces {
   object ModifySelfservicePermissionsResult {
     @inline
     def apply(
-        ): ModifySelfservicePermissionsResult = {
+    ): ModifySelfservicePermissionsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifySelfservicePermissionsResult]
@@ -1635,7 +1635,7 @@ package workspaces {
   object ModifyWorkspaceAccessPropertiesResult {
     @inline
     def apply(
-        ): ModifyWorkspaceAccessPropertiesResult = {
+    ): ModifyWorkspaceAccessPropertiesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesResult]
@@ -1669,7 +1669,7 @@ package workspaces {
   object ModifyWorkspaceCreationPropertiesResult {
     @inline
     def apply(
-        ): ModifyWorkspaceCreationPropertiesResult = {
+    ): ModifyWorkspaceCreationPropertiesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesResult]
@@ -1703,7 +1703,7 @@ package workspaces {
   object ModifyWorkspacePropertiesResult {
     @inline
     def apply(
-        ): ModifyWorkspacePropertiesResult = {
+    ): ModifyWorkspacePropertiesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspacePropertiesResult]
@@ -1737,7 +1737,7 @@ package workspaces {
   object ModifyWorkspaceStateResult {
     @inline
     def apply(
-        ): ModifyWorkspaceStateResult = {
+    ): ModifyWorkspaceStateResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspaceStateResult]
@@ -1928,7 +1928,7 @@ package workspaces {
   object RegisterWorkspaceDirectoryResult {
     @inline
     def apply(
-        ): RegisterWorkspaceDirectoryResult = {
+    ): RegisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterWorkspaceDirectoryResult]
@@ -1959,7 +1959,7 @@ package workspaces {
   object RestoreWorkspaceResult {
     @inline
     def apply(
-        ): RestoreWorkspaceResult = {
+    ): RestoreWorkspaceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreWorkspaceResult]
@@ -1993,7 +1993,7 @@ package workspaces {
   object RevokeIpRulesResult {
     @inline
     def apply(
-        ): RevokeIpRulesResult = {
+    ): RevokeIpRulesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokeIpRulesResult]
@@ -2305,7 +2305,7 @@ package workspaces {
   object UpdateRulesOfIpGroupResult {
     @inline
     def apply(
-        ): UpdateRulesOfIpGroupResult = {
+    ): UpdateRulesOfIpGroupResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRulesOfIpGroupResult]

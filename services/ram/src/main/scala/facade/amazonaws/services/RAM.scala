@@ -476,7 +476,7 @@ package ram {
   object EnableSharingWithAwsOrganizationRequest {
     @inline
     def apply(
-        ): EnableSharingWithAwsOrganizationRequest = {
+    ): EnableSharingWithAwsOrganizationRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableSharingWithAwsOrganizationRequest]
@@ -1475,7 +1475,7 @@ package ram {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1509,7 +1509,7 @@ package ram {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

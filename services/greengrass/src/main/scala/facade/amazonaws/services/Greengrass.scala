@@ -1899,7 +1899,7 @@ package greengrass {
   object DeleteConnectorDefinitionResponse {
     @inline
     def apply(
-        ): DeleteConnectorDefinitionResponse = {
+    ): DeleteConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConnectorDefinitionResponse]
@@ -1930,7 +1930,7 @@ package greengrass {
   object DeleteCoreDefinitionResponse {
     @inline
     def apply(
-        ): DeleteCoreDefinitionResponse = {
+    ): DeleteCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCoreDefinitionResponse]
@@ -1961,7 +1961,7 @@ package greengrass {
   object DeleteDeviceDefinitionResponse {
     @inline
     def apply(
-        ): DeleteDeviceDefinitionResponse = {
+    ): DeleteDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDeviceDefinitionResponse]
@@ -1992,7 +1992,7 @@ package greengrass {
   object DeleteFunctionDefinitionResponse {
     @inline
     def apply(
-        ): DeleteFunctionDefinitionResponse = {
+    ): DeleteFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFunctionDefinitionResponse]
@@ -2023,7 +2023,7 @@ package greengrass {
   object DeleteGroupResponse {
     @inline
     def apply(
-        ): DeleteGroupResponse = {
+    ): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResponse]
@@ -2054,7 +2054,7 @@ package greengrass {
   object DeleteLoggerDefinitionResponse {
     @inline
     def apply(
-        ): DeleteLoggerDefinitionResponse = {
+    ): DeleteLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggerDefinitionResponse]
@@ -2085,7 +2085,7 @@ package greengrass {
   object DeleteResourceDefinitionResponse {
     @inline
     def apply(
-        ): DeleteResourceDefinitionResponse = {
+    ): DeleteResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceDefinitionResponse]
@@ -2116,7 +2116,7 @@ package greengrass {
   object DeleteSubscriptionDefinitionResponse {
     @inline
     def apply(
-        ): DeleteSubscriptionDefinitionResponse = {
+    ): DeleteSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionDefinitionResponse]
@@ -2257,7 +2257,7 @@ package greengrass {
   object DisassociateServiceRoleFromAccountRequest {
     @inline
     def apply(
-        ): DisassociateServiceRoleFromAccountRequest = {
+    ): DisassociateServiceRoleFromAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountRequest]
@@ -3542,7 +3542,7 @@ package greengrass {
   object GetServiceRoleForAccountRequest {
     @inline
     def apply(
-        ): GetServiceRoleForAccountRequest = {
+    ): GetServiceRoleForAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetServiceRoleForAccountRequest]
@@ -5125,7 +5125,7 @@ package greengrass {
   object StopBulkDeploymentResponse {
     @inline
     def apply(
-        ): StopBulkDeploymentResponse = {
+    ): StopBulkDeploymentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopBulkDeploymentResponse]
@@ -5314,7 +5314,7 @@ package greengrass {
   object UpdateConnectorDefinitionResponse {
     @inline
     def apply(
-        ): UpdateConnectorDefinitionResponse = {
+    ): UpdateConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConnectorDefinitionResponse]
@@ -5348,7 +5348,7 @@ package greengrass {
   object UpdateCoreDefinitionResponse {
     @inline
     def apply(
-        ): UpdateCoreDefinitionResponse = {
+    ): UpdateCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCoreDefinitionResponse]
@@ -5382,7 +5382,7 @@ package greengrass {
   object UpdateDeviceDefinitionResponse {
     @inline
     def apply(
-        ): UpdateDeviceDefinitionResponse = {
+    ): UpdateDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDeviceDefinitionResponse]
@@ -5416,7 +5416,7 @@ package greengrass {
   object UpdateFunctionDefinitionResponse {
     @inline
     def apply(
-        ): UpdateFunctionDefinitionResponse = {
+    ): UpdateFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFunctionDefinitionResponse]
@@ -5499,7 +5499,7 @@ package greengrass {
   object UpdateGroupResponse {
     @inline
     def apply(
-        ): UpdateGroupResponse = {
+    ): UpdateGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateGroupResponse]
@@ -5533,7 +5533,7 @@ package greengrass {
   object UpdateLoggerDefinitionResponse {
     @inline
     def apply(
-        ): UpdateLoggerDefinitionResponse = {
+    ): UpdateLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLoggerDefinitionResponse]
@@ -5567,7 +5567,7 @@ package greengrass {
   object UpdateResourceDefinitionResponse {
     @inline
     def apply(
-        ): UpdateResourceDefinitionResponse = {
+    ): UpdateResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceDefinitionResponse]
@@ -5601,7 +5601,7 @@ package greengrass {
   object UpdateSubscriptionDefinitionResponse {
     @inline
     def apply(
-        ): UpdateSubscriptionDefinitionResponse = {
+    ): UpdateSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriptionDefinitionResponse]

@@ -400,7 +400,7 @@ package computeoptimizer {
   object GetEnrollmentStatusRequest {
     @inline
     def apply(
-        ): GetEnrollmentStatusRequest = {
+    ): GetEnrollmentStatusRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetEnrollmentStatusRequest]

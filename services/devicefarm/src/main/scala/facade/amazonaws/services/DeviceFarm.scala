@@ -1112,7 +1112,7 @@ package devicefarm {
   object DeleteDevicePoolResult {
     @inline
     def apply(
-        ): DeleteDevicePoolResult = {
+    ): DeleteDevicePoolResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDevicePoolResult]
@@ -1143,7 +1143,7 @@ package devicefarm {
   object DeleteInstanceProfileResult {
     @inline
     def apply(
-        ): DeleteInstanceProfileResult = {
+    ): DeleteInstanceProfileResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteInstanceProfileResult]
@@ -1174,7 +1174,7 @@ package devicefarm {
   object DeleteNetworkProfileResult {
     @inline
     def apply(
-        ): DeleteNetworkProfileResult = {
+    ): DeleteNetworkProfileResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNetworkProfileResult]
@@ -1211,7 +1211,7 @@ package devicefarm {
   object DeleteProjectResult {
     @inline
     def apply(
-        ): DeleteProjectResult = {
+    ): DeleteProjectResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProjectResult]
@@ -1248,7 +1248,7 @@ package devicefarm {
   object DeleteRemoteAccessSessionResult {
     @inline
     def apply(
-        ): DeleteRemoteAccessSessionResult = {
+    ): DeleteRemoteAccessSessionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRemoteAccessSessionResult]
@@ -1285,7 +1285,7 @@ package devicefarm {
   object DeleteRunResult {
     @inline
     def apply(
-        ): DeleteRunResult = {
+    ): DeleteRunResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRunResult]
@@ -1316,7 +1316,7 @@ package devicefarm {
   object DeleteTestGridProjectResult {
     @inline
     def apply(
-        ): DeleteTestGridProjectResult = {
+    ): DeleteTestGridProjectResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTestGridProjectResult]
@@ -1353,7 +1353,7 @@ package devicefarm {
   object DeleteUploadResult {
     @inline
     def apply(
-        ): DeleteUploadResult = {
+    ): DeleteUploadResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUploadResult]
@@ -1384,7 +1384,7 @@ package devicefarm {
   object DeleteVPCEConfigurationResult {
     @inline
     def apply(
-        ): DeleteVPCEConfigurationResult = {
+    ): DeleteVPCEConfigurationResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVPCEConfigurationResult]
@@ -1853,7 +1853,7 @@ package devicefarm {
   object GetAccountSettingsRequest {
     @inline
     def apply(
-        ): GetAccountSettingsRequest = {
+    ): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountSettingsRequest]
@@ -4916,7 +4916,7 @@ package devicefarm {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -5240,7 +5240,7 @@ package devicefarm {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

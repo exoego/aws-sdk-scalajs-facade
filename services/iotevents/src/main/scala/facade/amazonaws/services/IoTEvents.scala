@@ -323,7 +323,7 @@ package iotevents {
   object DeleteDetectorModelResponse {
     @inline
     def apply(
-        ): DeleteDetectorModelResponse = {
+    ): DeleteDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDetectorModelResponse]
@@ -354,7 +354,7 @@ package iotevents {
   object DeleteInputResponse {
     @inline
     def apply(
-        ): DeleteInputResponse = {
+    ): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteInputResponse]
@@ -438,7 +438,7 @@ package iotevents {
   object DescribeLoggingOptionsRequest {
     @inline
     def apply(
-        ): DescribeLoggingOptionsRequest = {
+    ): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
@@ -1369,7 +1369,7 @@ package iotevents {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1433,7 +1433,7 @@ package iotevents {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

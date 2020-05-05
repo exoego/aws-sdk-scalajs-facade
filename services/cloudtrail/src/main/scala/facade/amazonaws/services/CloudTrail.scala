@@ -127,7 +127,7 @@ package cloudtrail {
   object AddTagsResponse {
     @inline
     def apply(
-        ): AddTagsResponse = {
+    ): AddTagsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsResponse]
@@ -315,7 +315,7 @@ package cloudtrail {
   object DeleteTrailResponse {
     @inline
     def apply(
-        ): DeleteTrailResponse = {
+    ): DeleteTrailResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTrailResponse]
@@ -1054,7 +1054,7 @@ package cloudtrail {
   object RemoveTagsResponse {
     @inline
     def apply(
-        ): RemoveTagsResponse = {
+    ): RemoveTagsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsResponse]
@@ -1135,7 +1135,7 @@ package cloudtrail {
   object StartLoggingResponse {
     @inline
     def apply(
-        ): StartLoggingResponse = {
+    ): StartLoggingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartLoggingResponse]
@@ -1172,7 +1172,7 @@ package cloudtrail {
   object StopLoggingResponse {
     @inline
     def apply(
-        ): StopLoggingResponse = {
+    ): StopLoggingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopLoggingResponse]

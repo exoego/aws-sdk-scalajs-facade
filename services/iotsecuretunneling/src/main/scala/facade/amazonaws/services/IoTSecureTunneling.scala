@@ -87,7 +87,7 @@ package iotsecuretunneling {
   object CloseTunnelResponse {
     @inline
     def apply(
-        ): CloseTunnelResponse = {
+    ): CloseTunnelResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CloseTunnelResponse]
@@ -358,7 +358,7 @@ package iotsecuretunneling {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -506,7 +506,7 @@ package iotsecuretunneling {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

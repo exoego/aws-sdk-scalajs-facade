@@ -304,7 +304,7 @@ package applicationdiscovery {
   object AssociateConfigurationItemsToApplicationResponse {
     @inline
     def apply(
-        ): AssociateConfigurationItemsToApplicationResponse = {
+    ): AssociateConfigurationItemsToApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
@@ -539,7 +539,7 @@ package applicationdiscovery {
   object CreateTagsResponse {
     @inline
     def apply(
-        ): CreateTagsResponse = {
+    ): CreateTagsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTagsResponse]
@@ -655,7 +655,7 @@ package applicationdiscovery {
   object DeleteApplicationsResponse {
     @inline
     def apply(
-        ): DeleteApplicationsResponse = {
+    ): DeleteApplicationsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationsResponse]
@@ -689,7 +689,7 @@ package applicationdiscovery {
   object DeleteTagsResponse {
     @inline
     def apply(
-        ): DeleteTagsResponse = {
+    ): DeleteTagsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsResponse]
@@ -1009,7 +1009,7 @@ package applicationdiscovery {
   object DisassociateConfigurationItemsFromApplicationResponse {
     @inline
     def apply(
-        ): DisassociateConfigurationItemsFromApplicationResponse = {
+    ): DisassociateConfigurationItemsFromApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
@@ -1154,7 +1154,7 @@ package applicationdiscovery {
   object GetDiscoverySummaryRequest {
     @inline
     def apply(
-        ): GetDiscoverySummaryRequest = {
+    ): GetDiscoverySummaryRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDiscoverySummaryRequest]
@@ -1481,7 +1481,7 @@ package applicationdiscovery {
   object StartContinuousExportRequest {
     @inline
     def apply(
-        ): StartContinuousExportRequest = {
+    ): StartContinuousExportRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartContinuousExportRequest]
@@ -1784,7 +1784,7 @@ package applicationdiscovery {
   object UpdateApplicationResponse {
     @inline
     def apply(
-        ): UpdateApplicationResponse = {
+    ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateApplicationResponse]

@@ -2817,7 +2817,7 @@ package lightsail {
   object DownloadDefaultKeyPairRequest {
     @inline
     def apply(
-        ): DownloadDefaultKeyPairRequest = {
+    ): DownloadDefaultKeyPairRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DownloadDefaultKeyPairRequest]
@@ -5226,7 +5226,7 @@ package lightsail {
   object IsVpcPeeredRequest {
     @inline
     def apply(
-        ): IsVpcPeeredRequest = {
+    ): IsVpcPeeredRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[IsVpcPeeredRequest]
@@ -6081,7 +6081,7 @@ package lightsail {
   object PeerVpcRequest {
     @inline
     def apply(
-        ): PeerVpcRequest = {
+    ): PeerVpcRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PeerVpcRequest]
@@ -7143,7 +7143,7 @@ package lightsail {
   object UnpeerVpcRequest {
     @inline
     def apply(
-        ): UnpeerVpcRequest = {
+    ): UnpeerVpcRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnpeerVpcRequest]

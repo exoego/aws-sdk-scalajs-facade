@@ -348,7 +348,7 @@ package firehose {
   object DeleteDeliveryStreamOutput {
     @inline
     def apply(
-        ): DeleteDeliveryStreamOutput = {
+    ): DeleteDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDeliveryStreamOutput]
@@ -2241,7 +2241,7 @@ package firehose {
   object StartDeliveryStreamEncryptionOutput {
     @inline
     def apply(
-        ): StartDeliveryStreamEncryptionOutput = {
+    ): StartDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartDeliveryStreamEncryptionOutput]
@@ -2272,7 +2272,7 @@ package firehose {
   object StopDeliveryStreamEncryptionOutput {
     @inline
     def apply(
-        ): StopDeliveryStreamEncryptionOutput = {
+    ): StopDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopDeliveryStreamEncryptionOutput]
@@ -2330,7 +2330,7 @@ package firehose {
   object TagDeliveryStreamOutput {
     @inline
     def apply(
-        ): TagDeliveryStreamOutput = {
+    ): TagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagDeliveryStreamOutput]
@@ -2364,7 +2364,7 @@ package firehose {
   object UntagDeliveryStreamOutput {
     @inline
     def apply(
-        ): UntagDeliveryStreamOutput = {
+    ): UntagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagDeliveryStreamOutput]
@@ -2422,7 +2422,7 @@ package firehose {
   object UpdateDestinationOutput {
     @inline
     def apply(
-        ): UpdateDestinationOutput = {
+    ): UpdateDestinationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDestinationOutput]

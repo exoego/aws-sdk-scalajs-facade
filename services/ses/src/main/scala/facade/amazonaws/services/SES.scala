@@ -683,7 +683,7 @@ package ses {
   object CloneReceiptRuleSetResponse {
     @inline
     def apply(
-        ): CloneReceiptRuleSetResponse = {
+    ): CloneReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CloneReceiptRuleSetResponse]
@@ -830,7 +830,7 @@ package ses {
   object CreateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetEventDestinationResponse = {
+    ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
@@ -867,7 +867,7 @@ package ses {
   object CreateConfigurationSetResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetResponse = {
+    ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
@@ -907,7 +907,7 @@ package ses {
   object CreateConfigurationSetTrackingOptionsResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetTrackingOptionsResponse = {
+    ): CreateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetTrackingOptionsResponse]
@@ -980,7 +980,7 @@ package ses {
   object CreateReceiptFilterResponse {
     @inline
     def apply(
-        ): CreateReceiptFilterResponse = {
+    ): CreateReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptFilterResponse]
@@ -1023,7 +1023,7 @@ package ses {
   object CreateReceiptRuleResponse {
     @inline
     def apply(
-        ): CreateReceiptRuleResponse = {
+    ): CreateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptRuleResponse]
@@ -1060,7 +1060,7 @@ package ses {
   object CreateReceiptRuleSetResponse {
     @inline
     def apply(
-        ): CreateReceiptRuleSetResponse = {
+    ): CreateReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptRuleSetResponse]
@@ -1094,7 +1094,7 @@ package ses {
   object CreateTemplateResponse {
     @inline
     def apply(
-        ): CreateTemplateResponse = {
+    ): CreateTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTemplateResponse]
@@ -1175,7 +1175,7 @@ package ses {
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetEventDestinationResponse = {
+    ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
@@ -1212,7 +1212,7 @@ package ses {
   object DeleteConfigurationSetResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetResponse = {
+    ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
@@ -1249,7 +1249,7 @@ package ses {
   object DeleteConfigurationSetTrackingOptionsResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetTrackingOptionsResponse = {
+    ): DeleteConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetTrackingOptionsResponse]
@@ -1310,7 +1310,7 @@ package ses {
   object DeleteIdentityPolicyResponse {
     @inline
     def apply(
-        ): DeleteIdentityPolicyResponse = {
+    ): DeleteIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIdentityPolicyResponse]
@@ -1347,7 +1347,7 @@ package ses {
   object DeleteIdentityResponse {
     @inline
     def apply(
-        ): DeleteIdentityResponse = {
+    ): DeleteIdentityResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIdentityResponse]
@@ -1384,7 +1384,7 @@ package ses {
   object DeleteReceiptFilterResponse {
     @inline
     def apply(
-        ): DeleteReceiptFilterResponse = {
+    ): DeleteReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptFilterResponse]
@@ -1424,7 +1424,7 @@ package ses {
   object DeleteReceiptRuleResponse {
     @inline
     def apply(
-        ): DeleteReceiptRuleResponse = {
+    ): DeleteReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptRuleResponse]
@@ -1461,7 +1461,7 @@ package ses {
   object DeleteReceiptRuleSetResponse {
     @inline
     def apply(
-        ): DeleteReceiptRuleSetResponse = {
+    ): DeleteReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptRuleSetResponse]
@@ -1495,7 +1495,7 @@ package ses {
   object DeleteTemplateResponse {
     @inline
     def apply(
-        ): DeleteTemplateResponse = {
+    ): DeleteTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTemplateResponse]
@@ -1551,7 +1551,7 @@ package ses {
   object DescribeActiveReceiptRuleSetRequest {
     @inline
     def apply(
-        ): DescribeActiveReceiptRuleSetRequest = {
+    ): DescribeActiveReceiptRuleSetRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeActiveReceiptRuleSetRequest]
@@ -2599,7 +2599,7 @@ package ses {
   object ListReceiptFiltersRequest {
     @inline
     def apply(
-        ): ListReceiptFiltersRequest = {
+    ): ListReceiptFiltersRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListReceiptFiltersRequest]
@@ -2842,7 +2842,7 @@ package ses {
   object PutConfigurationSetDeliveryOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetDeliveryOptionsResponse = {
+    ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
@@ -2885,7 +2885,7 @@ package ses {
   object PutIdentityPolicyResponse {
     @inline
     def apply(
-        ): PutIdentityPolicyResponse = {
+    ): PutIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutIdentityPolicyResponse]
@@ -3144,7 +3144,7 @@ package ses {
   object ReorderReceiptRuleSetResponse {
     @inline
     def apply(
-        ): ReorderReceiptRuleSetResponse = {
+    ): ReorderReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ReorderReceiptRuleSetResponse]
@@ -3694,7 +3694,7 @@ package ses {
   object SetActiveReceiptRuleSetResponse {
     @inline
     def apply(
-        ): SetActiveReceiptRuleSetResponse = {
+    ): SetActiveReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetActiveReceiptRuleSetResponse]
@@ -3734,7 +3734,7 @@ package ses {
   object SetIdentityDkimEnabledResponse {
     @inline
     def apply(
-        ): SetIdentityDkimEnabledResponse = {
+    ): SetIdentityDkimEnabledResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityDkimEnabledResponse]
@@ -3774,7 +3774,7 @@ package ses {
   object SetIdentityFeedbackForwardingEnabledResponse {
     @inline
     def apply(
-        ): SetIdentityFeedbackForwardingEnabledResponse = {
+    ): SetIdentityFeedbackForwardingEnabledResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityFeedbackForwardingEnabledResponse]
@@ -3817,7 +3817,7 @@ package ses {
   object SetIdentityHeadersInNotificationsEnabledResponse {
     @inline
     def apply(
-        ): SetIdentityHeadersInNotificationsEnabledResponse = {
+    ): SetIdentityHeadersInNotificationsEnabledResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityHeadersInNotificationsEnabledResponse]
@@ -3860,7 +3860,7 @@ package ses {
   object SetIdentityMailFromDomainResponse {
     @inline
     def apply(
-        ): SetIdentityMailFromDomainResponse = {
+    ): SetIdentityMailFromDomainResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityMailFromDomainResponse]
@@ -3903,7 +3903,7 @@ package ses {
   object SetIdentityNotificationTopicResponse {
     @inline
     def apply(
-        ): SetIdentityNotificationTopicResponse = {
+    ): SetIdentityNotificationTopicResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityNotificationTopicResponse]
@@ -3946,7 +3946,7 @@ package ses {
   object SetReceiptRulePositionResponse {
     @inline
     def apply(
-        ): SetReceiptRulePositionResponse = {
+    ): SetReceiptRulePositionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetReceiptRulePositionResponse]
@@ -4154,7 +4154,7 @@ package ses {
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): UpdateConfigurationSetEventDestinationResponse = {
+    ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
@@ -4242,7 +4242,7 @@ package ses {
   object UpdateConfigurationSetTrackingOptionsResponse {
     @inline
     def apply(
-        ): UpdateConfigurationSetTrackingOptionsResponse = {
+    ): UpdateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetTrackingOptionsResponse]
@@ -4318,7 +4318,7 @@ package ses {
   object UpdateReceiptRuleResponse {
     @inline
     def apply(
-        ): UpdateReceiptRuleResponse = {
+    ): UpdateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateReceiptRuleResponse]
@@ -4349,7 +4349,7 @@ package ses {
   object UpdateTemplateResponse {
     @inline
     def apply(
-        ): UpdateTemplateResponse = {
+    ): UpdateTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTemplateResponse]
@@ -4502,7 +4502,7 @@ package ses {
   object VerifyEmailIdentityResponse {
     @inline
     def apply(
-        ): VerifyEmailIdentityResponse = {
+    ): VerifyEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[VerifyEmailIdentityResponse]

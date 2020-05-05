@@ -108,7 +108,7 @@ package polly {
   object DeleteLexiconOutput {
     @inline
     def apply(
-        ): DeleteLexiconOutput = {
+    ): DeleteLexiconOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLexiconOutput]
@@ -506,7 +506,7 @@ package polly {
   object PutLexiconOutput {
     @inline
     def apply(
-        ): PutLexiconOutput = {
+    ): PutLexiconOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLexiconOutput]

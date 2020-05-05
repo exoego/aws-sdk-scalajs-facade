@@ -152,7 +152,7 @@ package mediatailor {
   object DeletePlaybackConfigurationResponse {
     @inline
     def apply(
-        ): DeletePlaybackConfigurationResponse = {
+    ): DeletePlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePlaybackConfigurationResponse]

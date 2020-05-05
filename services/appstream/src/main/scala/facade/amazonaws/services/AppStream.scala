@@ -412,7 +412,7 @@ package appstream {
   object AssociateFleetResult {
     @inline
     def apply(
-        ): AssociateFleetResult = {
+    ): AssociateFleetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateFleetResult]
@@ -951,7 +951,7 @@ package appstream {
   object CreateUsageReportSubscriptionRequest {
     @inline
     def apply(
-        ): CreateUsageReportSubscriptionRequest = {
+    ): CreateUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUsageReportSubscriptionRequest]
@@ -1013,7 +1013,7 @@ package appstream {
   object CreateUserResult {
     @inline
     def apply(
-        ): CreateUserResult = {
+    ): CreateUserResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUserResult]
@@ -1044,7 +1044,7 @@ package appstream {
   object DeleteDirectoryConfigResult {
     @inline
     def apply(
-        ): DeleteDirectoryConfigResult = {
+    ): DeleteDirectoryConfigResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDirectoryConfigResult]
@@ -1075,7 +1075,7 @@ package appstream {
   object DeleteFleetResult {
     @inline
     def apply(
-        ): DeleteFleetResult = {
+    ): DeleteFleetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFleetResult]
@@ -1143,7 +1143,7 @@ package appstream {
   object DeleteImagePermissionsResult {
     @inline
     def apply(
-        ): DeleteImagePermissionsResult = {
+    ): DeleteImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteImagePermissionsResult]
@@ -1208,7 +1208,7 @@ package appstream {
   object DeleteStackResult {
     @inline
     def apply(
-        ): DeleteStackResult = {
+    ): DeleteStackResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStackResult]
@@ -1221,7 +1221,7 @@ package appstream {
   object DeleteUsageReportSubscriptionRequest {
     @inline
     def apply(
-        ): DeleteUsageReportSubscriptionRequest = {
+    ): DeleteUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUsageReportSubscriptionRequest]
@@ -1234,7 +1234,7 @@ package appstream {
   object DeleteUsageReportSubscriptionResult {
     @inline
     def apply(
-        ): DeleteUsageReportSubscriptionResult = {
+    ): DeleteUsageReportSubscriptionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUsageReportSubscriptionResult]
@@ -1268,7 +1268,7 @@ package appstream {
   object DeleteUserResult {
     @inline
     def apply(
-        ): DeleteUserResult = {
+    ): DeleteUserResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResult]
@@ -1772,7 +1772,7 @@ package appstream {
   object DisableUserResult {
     @inline
     def apply(
-        ): DisableUserResult = {
+    ): DisableUserResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableUserResult]
@@ -1806,7 +1806,7 @@ package appstream {
   object DisassociateFleetResult {
     @inline
     def apply(
-        ): DisassociateFleetResult = {
+    ): DisassociateFleetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFleetResult]
@@ -1864,7 +1864,7 @@ package appstream {
   object EnableUserResult {
     @inline
     def apply(
-        ): EnableUserResult = {
+    ): EnableUserResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableUserResult]
@@ -1895,7 +1895,7 @@ package appstream {
   object ExpireSessionResult {
     @inline
     def apply(
-        ): ExpireSessionResult = {
+    ): ExpireSessionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ExpireSessionResult]
@@ -2835,7 +2835,7 @@ package appstream {
   object StartFleetResult {
     @inline
     def apply(
-        ): StartFleetResult = {
+    ): StartFleetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartFleetResult]
@@ -2903,7 +2903,7 @@ package appstream {
   object StopFleetResult {
     @inline
     def apply(
-        ): StopFleetResult = {
+    ): StopFleetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopFleetResult]
@@ -3011,7 +3011,7 @@ package appstream {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3045,7 +3045,7 @@ package appstream {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -3209,7 +3209,7 @@ package appstream {
   object UpdateImagePermissionsResult {
     @inline
     def apply(
-        ): UpdateImagePermissionsResult = {
+    ): UpdateImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateImagePermissionsResult]

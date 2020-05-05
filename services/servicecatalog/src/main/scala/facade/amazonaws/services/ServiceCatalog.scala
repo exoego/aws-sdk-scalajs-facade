@@ -614,7 +614,7 @@ package servicecatalog {
   object AcceptPortfolioShareOutput {
     @inline
     def apply(
-        ): AcceptPortfolioShareOutput = {
+    ): AcceptPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptPortfolioShareOutput]
@@ -688,7 +688,7 @@ package servicecatalog {
   object AssociateBudgetWithResourceOutput {
     @inline
     def apply(
-        ): AssociateBudgetWithResourceOutput = {
+    ): AssociateBudgetWithResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateBudgetWithResourceOutput]
@@ -728,7 +728,7 @@ package servicecatalog {
   object AssociatePrincipalWithPortfolioOutput {
     @inline
     def apply(
-        ): AssociatePrincipalWithPortfolioOutput = {
+    ): AssociatePrincipalWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociatePrincipalWithPortfolioOutput]
@@ -768,7 +768,7 @@ package servicecatalog {
   object AssociateProductWithPortfolioOutput {
     @inline
     def apply(
-        ): AssociateProductWithPortfolioOutput = {
+    ): AssociateProductWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateProductWithPortfolioOutput]
@@ -808,7 +808,7 @@ package servicecatalog {
   object AssociateServiceActionWithProvisioningArtifactOutput {
     @inline
     def apply(
-        ): AssociateServiceActionWithProvisioningArtifactOutput = {
+    ): AssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
@@ -842,7 +842,7 @@ package servicecatalog {
   object AssociateTagOptionWithResourceOutput {
     @inline
     def apply(
-        ): AssociateTagOptionWithResourceOutput = {
+    ): AssociateTagOptionWithResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateTagOptionWithResourceOutput]
@@ -1562,7 +1562,7 @@ package servicecatalog {
   object DeleteConstraintOutput {
     @inline
     def apply(
-        ): DeleteConstraintOutput = {
+    ): DeleteConstraintOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConstraintOutput]
@@ -1596,7 +1596,7 @@ package servicecatalog {
   object DeletePortfolioOutput {
     @inline
     def apply(
-        ): DeletePortfolioOutput = {
+    ): DeletePortfolioOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePortfolioOutput]
@@ -1673,7 +1673,7 @@ package servicecatalog {
   object DeleteProductOutput {
     @inline
     def apply(
-        ): DeleteProductOutput = {
+    ): DeleteProductOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProductOutput]
@@ -1710,7 +1710,7 @@ package servicecatalog {
   object DeleteProvisionedProductPlanOutput {
     @inline
     def apply(
-        ): DeleteProvisionedProductPlanOutput = {
+    ): DeleteProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisionedProductPlanOutput]
@@ -1747,7 +1747,7 @@ package servicecatalog {
   object DeleteProvisioningArtifactOutput {
     @inline
     def apply(
-        ): DeleteProvisioningArtifactOutput = {
+    ): DeleteProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisioningArtifactOutput]
@@ -1781,7 +1781,7 @@ package servicecatalog {
   object DeleteServiceActionOutput {
     @inline
     def apply(
-        ): DeleteServiceActionOutput = {
+    ): DeleteServiceActionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceActionOutput]
@@ -1812,7 +1812,7 @@ package servicecatalog {
   object DeleteTagOptionOutput {
     @inline
     def apply(
-        ): DeleteTagOptionOutput = {
+    ): DeleteTagOptionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagOptionOutput]
@@ -2498,7 +2498,7 @@ package servicecatalog {
   object DisableAWSOrganizationsAccessInput {
     @inline
     def apply(
-        ): DisableAWSOrganizationsAccessInput = {
+    ): DisableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableAWSOrganizationsAccessInput]
@@ -2511,7 +2511,7 @@ package servicecatalog {
   object DisableAWSOrganizationsAccessOutput {
     @inline
     def apply(
-        ): DisableAWSOrganizationsAccessOutput = {
+    ): DisableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableAWSOrganizationsAccessOutput]
@@ -2545,7 +2545,7 @@ package servicecatalog {
   object DisassociateBudgetFromResourceOutput {
     @inline
     def apply(
-        ): DisassociateBudgetFromResourceOutput = {
+    ): DisassociateBudgetFromResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateBudgetFromResourceOutput]
@@ -2582,7 +2582,7 @@ package servicecatalog {
   object DisassociatePrincipalFromPortfolioOutput {
     @inline
     def apply(
-        ): DisassociatePrincipalFromPortfolioOutput = {
+    ): DisassociatePrincipalFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioOutput]
@@ -2619,7 +2619,7 @@ package servicecatalog {
   object DisassociateProductFromPortfolioOutput {
     @inline
     def apply(
-        ): DisassociateProductFromPortfolioOutput = {
+    ): DisassociateProductFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateProductFromPortfolioOutput]
@@ -2659,7 +2659,7 @@ package servicecatalog {
   object DisassociateServiceActionFromProvisioningArtifactOutput {
     @inline
     def apply(
-        ): DisassociateServiceActionFromProvisioningArtifactOutput = {
+    ): DisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
@@ -2693,7 +2693,7 @@ package servicecatalog {
   object DisassociateTagOptionFromResourceOutput {
     @inline
     def apply(
-        ): DisassociateTagOptionFromResourceOutput = {
+    ): DisassociateTagOptionFromResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateTagOptionFromResourceOutput]
@@ -2706,7 +2706,7 @@ package servicecatalog {
   object EnableAWSOrganizationsAccessInput {
     @inline
     def apply(
-        ): EnableAWSOrganizationsAccessInput = {
+    ): EnableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableAWSOrganizationsAccessInput]
@@ -2719,7 +2719,7 @@ package servicecatalog {
   object EnableAWSOrganizationsAccessOutput {
     @inline
     def apply(
-        ): EnableAWSOrganizationsAccessOutput = {
+    ): EnableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
@@ -2882,7 +2882,7 @@ package servicecatalog {
   object GetAWSOrganizationsAccessStatusInput {
     @inline
     def apply(
-        ): GetAWSOrganizationsAccessStatusInput = {
+    ): GetAWSOrganizationsAccessStatusInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusInput]
@@ -4838,7 +4838,7 @@ package servicecatalog {
   object RejectPortfolioShareOutput {
     @inline
     def apply(
-        ): RejectPortfolioShareOutput = {
+    ): RejectPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectPortfolioShareOutput]

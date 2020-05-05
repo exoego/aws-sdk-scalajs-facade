@@ -115,7 +115,7 @@ package resourcegroupstaggingapi {
   object DescribeReportCreationInput {
     @inline
     def apply(
-        ): DescribeReportCreationInput = {
+    ): DescribeReportCreationInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeReportCreationInput]
@@ -422,7 +422,7 @@ package resourcegroupstaggingapi {
   object StartReportCreationOutput {
     @inline
     def apply(
-        ): StartReportCreationOutput = {
+    ): StartReportCreationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartReportCreationOutput]

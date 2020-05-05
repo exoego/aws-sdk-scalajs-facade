@@ -353,7 +353,7 @@ package applicationinsights {
   object CreateComponentResponse {
     @inline
     def apply(
-        ): CreateComponentResponse = {
+    ): CreateComponentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateComponentResponse]
@@ -433,7 +433,7 @@ package applicationinsights {
   object DeleteApplicationResponse {
     @inline
     def apply(
-        ): DeleteApplicationResponse = {
+    ): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationResponse]
@@ -467,7 +467,7 @@ package applicationinsights {
   object DeleteComponentResponse {
     @inline
     def apply(
-        ): DeleteComponentResponse = {
+    ): DeleteComponentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteComponentResponse]
@@ -504,7 +504,7 @@ package applicationinsights {
   object DeleteLogPatternResponse {
     @inline
     def apply(
-        ): DeleteLogPatternResponse = {
+    ): DeleteLogPatternResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLogPatternResponse]
@@ -1366,7 +1366,7 @@ package applicationinsights {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1411,7 +1411,7 @@ package applicationinsights {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -1497,7 +1497,7 @@ package applicationinsights {
   object UpdateComponentConfigurationResponse {
     @inline
     def apply(
-        ): UpdateComponentConfigurationResponse = {
+    ): UpdateComponentConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateComponentConfigurationResponse]
@@ -1537,7 +1537,7 @@ package applicationinsights {
   object UpdateComponentResponse {
     @inline
     def apply(
-        ): UpdateComponentResponse = {
+    ): UpdateComponentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateComponentResponse]

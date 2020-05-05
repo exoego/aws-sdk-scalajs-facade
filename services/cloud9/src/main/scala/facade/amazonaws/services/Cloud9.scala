@@ -216,7 +216,7 @@ package cloud9 {
   object DeleteEnvironmentMembershipResult {
     @inline
     def apply(
-        ): DeleteEnvironmentMembershipResult = {
+    ): DeleteEnvironmentMembershipResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEnvironmentMembershipResult]
@@ -247,7 +247,7 @@ package cloud9 {
   object DeleteEnvironmentResult {
     @inline
     def apply(
-        ): DeleteEnvironmentResult = {
+    ): DeleteEnvironmentResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEnvironmentResult]
@@ -637,7 +637,7 @@ package cloud9 {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -671,7 +671,7 @@ package cloud9 {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -748,7 +748,7 @@ package cloud9 {
   object UpdateEnvironmentResult {
     @inline
     def apply(
-        ): UpdateEnvironmentResult = {
+    ): UpdateEnvironmentResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEnvironmentResult]

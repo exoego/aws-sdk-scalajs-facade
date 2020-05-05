@@ -245,7 +245,7 @@ package mturk {
   object AcceptQualificationRequestResponse {
     @inline
     def apply(
-        ): AcceptQualificationRequestResponse = {
+    ): AcceptQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptQualificationRequestResponse]
@@ -282,7 +282,7 @@ package mturk {
   object ApproveAssignmentResponse {
     @inline
     def apply(
-        ): ApproveAssignmentResponse = {
+    ): ApproveAssignmentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ApproveAssignmentResponse]
@@ -383,7 +383,7 @@ package mturk {
   object AssociateQualificationWithWorkerResponse {
     @inline
     def apply(
-        ): AssociateQualificationWithWorkerResponse = {
+    ): AssociateQualificationWithWorkerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateQualificationWithWorkerResponse]
@@ -480,7 +480,7 @@ package mturk {
   object CreateAdditionalAssignmentsForHITResponse {
     @inline
     def apply(
-        ): CreateAdditionalAssignmentsForHITResponse = {
+    ): CreateAdditionalAssignmentsForHITResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
@@ -775,7 +775,7 @@ package mturk {
   object CreateWorkerBlockResponse {
     @inline
     def apply(
-        ): CreateWorkerBlockResponse = {
+    ): CreateWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateWorkerBlockResponse]
@@ -806,7 +806,7 @@ package mturk {
   object DeleteHITResponse {
     @inline
     def apply(
-        ): DeleteHITResponse = {
+    ): DeleteHITResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteHITResponse]
@@ -837,7 +837,7 @@ package mturk {
   object DeleteQualificationTypeResponse {
     @inline
     def apply(
-        ): DeleteQualificationTypeResponse = {
+    ): DeleteQualificationTypeResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQualificationTypeResponse]
@@ -871,7 +871,7 @@ package mturk {
   object DeleteWorkerBlockResponse {
     @inline
     def apply(
-        ): DeleteWorkerBlockResponse = {
+    ): DeleteWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkerBlockResponse]
@@ -908,7 +908,7 @@ package mturk {
   object DisassociateQualificationFromWorkerResponse {
     @inline
     def apply(
-        ): DisassociateQualificationFromWorkerResponse = {
+    ): DisassociateQualificationFromWorkerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
@@ -954,7 +954,7 @@ package mturk {
   object GetAccountBalanceRequest {
     @inline
     def apply(
-        ): GetAccountBalanceRequest = {
+    ): GetAccountBalanceRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountBalanceRequest]
@@ -2173,7 +2173,7 @@ package mturk {
   object RejectAssignmentResponse {
     @inline
     def apply(
-        ): RejectAssignmentResponse = {
+    ): RejectAssignmentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectAssignmentResponse]
@@ -2207,7 +2207,7 @@ package mturk {
   object RejectQualificationRequestResponse {
     @inline
     def apply(
-        ): RejectQualificationRequestResponse = {
+    ): RejectQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectQualificationRequestResponse]
@@ -2405,7 +2405,7 @@ package mturk {
   object SendBonusResponse {
     @inline
     def apply(
-        ): SendBonusResponse = {
+    ): SendBonusResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendBonusResponse]
@@ -2439,7 +2439,7 @@ package mturk {
   object SendTestEventNotificationResponse {
     @inline
     def apply(
-        ): SendTestEventNotificationResponse = {
+    ): SendTestEventNotificationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendTestEventNotificationResponse]
@@ -2482,7 +2482,7 @@ package mturk {
   object UpdateExpirationForHITResponse {
     @inline
     def apply(
-        ): UpdateExpirationForHITResponse = {
+    ): UpdateExpirationForHITResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateExpirationForHITResponse]
@@ -2516,7 +2516,7 @@ package mturk {
   object UpdateHITReviewStatusResponse {
     @inline
     def apply(
-        ): UpdateHITReviewStatusResponse = {
+    ): UpdateHITReviewStatusResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateHITReviewStatusResponse]
@@ -2550,7 +2550,7 @@ package mturk {
   object UpdateHITTypeOfHITResponse {
     @inline
     def apply(
-        ): UpdateHITTypeOfHITResponse = {
+    ): UpdateHITTypeOfHITResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateHITTypeOfHITResponse]
@@ -2587,7 +2587,7 @@ package mturk {
   object UpdateNotificationSettingsResponse {
     @inline
     def apply(
-        ): UpdateNotificationSettingsResponse = {
+    ): UpdateNotificationSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotificationSettingsResponse]

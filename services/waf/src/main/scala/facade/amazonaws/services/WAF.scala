@@ -1199,7 +1199,7 @@ package waf {
   object DeleteLoggingConfigurationResponse {
     @inline
     def apply(
-        ): DeleteLoggingConfigurationResponse = {
+    ): DeleteLoggingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
@@ -1230,7 +1230,7 @@ package waf {
   object DeletePermissionPolicyResponse {
     @inline
     def apply(
-        ): DeletePermissionPolicyResponse = {
+    ): DeletePermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePermissionPolicyResponse]
@@ -2280,7 +2280,7 @@ package waf {
   object GetChangeTokenRequest {
     @inline
     def apply(
-        ): GetChangeTokenRequest = {
+    ): GetChangeTokenRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetChangeTokenRequest]
@@ -3825,7 +3825,7 @@ package waf {
   object PutPermissionPolicyResponse {
     @inline
     def apply(
-        ): PutPermissionPolicyResponse = {
+    ): PutPermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutPermissionPolicyResponse]
@@ -4547,7 +4547,7 @@ package waf {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -4619,7 +4619,7 @@ package waf {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

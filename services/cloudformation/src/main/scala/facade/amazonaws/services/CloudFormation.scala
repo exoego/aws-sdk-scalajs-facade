@@ -635,7 +635,7 @@ package cloudformation {
   object ContinueUpdateRollbackOutput {
     @inline
     def apply(
-        ): ContinueUpdateRollbackOutput = {
+    ): ContinueUpdateRollbackOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ContinueUpdateRollbackOutput]
@@ -972,7 +972,7 @@ package cloudformation {
   object DeleteChangeSetOutput {
     @inline
     def apply(
-        ): DeleteChangeSetOutput = {
+    ): DeleteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteChangeSetOutput]
@@ -1085,7 +1085,7 @@ package cloudformation {
   object DeleteStackSetOutput {
     @inline
     def apply(
-        ): DeleteStackSetOutput = {
+    ): DeleteStackSetOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStackSetOutput]
@@ -1154,7 +1154,7 @@ package cloudformation {
   object DeregisterTypeOutput {
     @inline
     def apply(
-        ): DeregisterTypeOutput = {
+    ): DeregisterTypeOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterTypeOutput]
@@ -2026,7 +2026,7 @@ package cloudformation {
   object ExecuteChangeSetOutput {
     @inline
     def apply(
-        ): ExecuteChangeSetOutput = {
+    ): ExecuteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ExecuteChangeSetOutput]
@@ -3071,7 +3071,7 @@ package cloudformation {
   object RecordHandlerProgressOutput {
     @inline
     def apply(
-        ): RecordHandlerProgressOutput = {
+    ): RecordHandlerProgressOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RecordHandlerProgressOutput]
@@ -3469,7 +3469,7 @@ package cloudformation {
   object SetTypeDefaultVersionOutput {
     @inline
     def apply(
-        ): SetTypeDefaultVersionOutput = {
+    ): SetTypeDefaultVersionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetTypeDefaultVersionOutput]
@@ -4556,7 +4556,7 @@ package cloudformation {
   object StopStackSetOperationOutput {
     @inline
     def apply(
-        ): StopStackSetOperationOutput = {
+    ): StopStackSetOperationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopStackSetOperationOutput]

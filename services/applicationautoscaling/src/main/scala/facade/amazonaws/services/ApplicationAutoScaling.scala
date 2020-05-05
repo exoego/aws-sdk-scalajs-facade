@@ -196,7 +196,7 @@ package applicationautoscaling {
   object DeleteScalingPolicyResponse {
     @inline
     def apply(
-        ): DeleteScalingPolicyResponse = {
+    ): DeleteScalingPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScalingPolicyResponse]
@@ -236,7 +236,7 @@ package applicationautoscaling {
   object DeleteScheduledActionResponse {
     @inline
     def apply(
-        ): DeleteScheduledActionResponse = {
+    ): DeleteScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScheduledActionResponse]
@@ -273,7 +273,7 @@ package applicationautoscaling {
   object DeregisterScalableTargetResponse {
     @inline
     def apply(
-        ): DeregisterScalableTargetResponse = {
+    ): DeregisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterScalableTargetResponse]
@@ -701,7 +701,7 @@ package applicationautoscaling {
   object PutScheduledActionResponse {
     @inline
     def apply(
-        ): PutScheduledActionResponse = {
+    ): PutScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutScheduledActionResponse]
@@ -750,7 +750,7 @@ package applicationautoscaling {
   object RegisterScalableTargetResponse {
     @inline
     def apply(
-        ): RegisterScalableTargetResponse = {
+    ): RegisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterScalableTargetResponse]

@@ -162,7 +162,7 @@ package connectparticipant {
   object DisconnectParticipantResponse {
     @inline
     def apply(
-        ): DisconnectParticipantResponse = {
+    ): DisconnectParticipantResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisconnectParticipantResponse]

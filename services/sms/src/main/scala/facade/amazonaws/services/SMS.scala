@@ -548,7 +548,7 @@ package sms {
   object DeleteAppLaunchConfigurationResponse {
     @inline
     def apply(
-        ): DeleteAppLaunchConfigurationResponse = {
+    ): DeleteAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppLaunchConfigurationResponse]
@@ -577,7 +577,7 @@ package sms {
   object DeleteAppReplicationConfigurationResponse {
     @inline
     def apply(
-        ): DeleteAppReplicationConfigurationResponse = {
+    ): DeleteAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppReplicationConfigurationResponse]
@@ -612,7 +612,7 @@ package sms {
   object DeleteAppResponse {
     @inline
     def apply(
-        ): DeleteAppResponse = {
+    ): DeleteAppResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppResponse]
@@ -643,7 +643,7 @@ package sms {
   object DeleteReplicationJobResponse {
     @inline
     def apply(
-        ): DeleteReplicationJobResponse = {
+    ): DeleteReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReplicationJobResponse]
@@ -656,7 +656,7 @@ package sms {
   object DeleteServerCatalogRequest {
     @inline
     def apply(
-        ): DeleteServerCatalogRequest = {
+    ): DeleteServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerCatalogRequest]
@@ -669,7 +669,7 @@ package sms {
   object DeleteServerCatalogResponse {
     @inline
     def apply(
-        ): DeleteServerCatalogResponse = {
+    ): DeleteServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerCatalogResponse]
@@ -700,7 +700,7 @@ package sms {
   object DisassociateConnectorResponse {
     @inline
     def apply(
-        ): DisassociateConnectorResponse = {
+    ): DisassociateConnectorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateConnectorResponse]
@@ -1067,7 +1067,7 @@ package sms {
   object ImportServerCatalogRequest {
     @inline
     def apply(
-        ): ImportServerCatalogRequest = {
+    ): ImportServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportServerCatalogRequest]
@@ -1080,7 +1080,7 @@ package sms {
   object ImportServerCatalogResponse {
     @inline
     def apply(
-        ): ImportServerCatalogResponse = {
+    ): ImportServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportServerCatalogResponse]
@@ -1109,7 +1109,7 @@ package sms {
   object LaunchAppResponse {
     @inline
     def apply(
-        ): LaunchAppResponse = {
+    ): LaunchAppResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[LaunchAppResponse]
@@ -1228,7 +1228,7 @@ package sms {
   object PutAppLaunchConfigurationResponse {
     @inline
     def apply(
-        ): PutAppLaunchConfigurationResponse = {
+    ): PutAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAppLaunchConfigurationResponse]
@@ -1262,7 +1262,7 @@ package sms {
   object PutAppReplicationConfigurationResponse {
     @inline
     def apply(
-        ): PutAppReplicationConfigurationResponse = {
+    ): PutAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAppReplicationConfigurationResponse]
@@ -1721,7 +1721,7 @@ package sms {
   object StartAppReplicationResponse {
     @inline
     def apply(
-        ): StartAppReplicationResponse = {
+    ): StartAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAppReplicationResponse]
@@ -1787,7 +1787,7 @@ package sms {
   object StopAppReplicationResponse {
     @inline
     def apply(
-        ): StopAppReplicationResponse = {
+    ): StopAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAppReplicationResponse]
@@ -1838,7 +1838,7 @@ package sms {
   object TerminateAppResponse {
     @inline
     def apply(
-        ): TerminateAppResponse = {
+    ): TerminateAppResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TerminateAppResponse]
@@ -1948,7 +1948,7 @@ package sms {
   object UpdateReplicationJobResponse {
     @inline
     def apply(
-        ): UpdateReplicationJobResponse = {
+    ): UpdateReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateReplicationJobResponse]

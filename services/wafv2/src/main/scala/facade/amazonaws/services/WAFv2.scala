@@ -218,7 +218,7 @@ package wafv2 {
   object AllQueryArguments {
     @inline
     def apply(
-        ): AllQueryArguments = {
+    ): AllQueryArguments = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AllQueryArguments]
@@ -236,7 +236,7 @@ package wafv2 {
   object AllowAction {
     @inline
     def apply(
-        ): AllowAction = {
+    ): AllowAction = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AllowAction]
@@ -292,7 +292,7 @@ package wafv2 {
   object AssociateWebACLResponse {
     @inline
     def apply(
-        ): AssociateWebACLResponse = {
+    ): AssociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateWebACLResponse]
@@ -310,7 +310,7 @@ package wafv2 {
   object BlockAction {
     @inline
     def apply(
-        ): BlockAction = {
+    ): BlockAction = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BlockAction]
@@ -328,7 +328,7 @@ package wafv2 {
   object Body {
     @inline
     def apply(
-        ): Body = {
+    ): Body = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Body]
@@ -426,7 +426,7 @@ package wafv2 {
   object CountAction {
     @inline
     def apply(
-        ): CountAction = {
+    ): CountAction = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CountAction]
@@ -1195,7 +1195,7 @@ package wafv2 {
   object DeleteIPSetResponse {
     @inline
     def apply(
-        ): DeleteIPSetResponse = {
+    ): DeleteIPSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIPSetResponse]
@@ -1226,7 +1226,7 @@ package wafv2 {
   object DeleteLoggingConfigurationResponse {
     @inline
     def apply(
-        ): DeleteLoggingConfigurationResponse = {
+    ): DeleteLoggingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
@@ -1266,7 +1266,7 @@ package wafv2 {
   object DeleteRegexPatternSetResponse {
     @inline
     def apply(
-        ): DeleteRegexPatternSetResponse = {
+    ): DeleteRegexPatternSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRegexPatternSetResponse]
@@ -1306,7 +1306,7 @@ package wafv2 {
   object DeleteRuleGroupResponse {
     @inline
     def apply(
-        ): DeleteRuleGroupResponse = {
+    ): DeleteRuleGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRuleGroupResponse]
@@ -1346,7 +1346,7 @@ package wafv2 {
   object DeleteWebACLResponse {
     @inline
     def apply(
-        ): DeleteWebACLResponse = {
+    ): DeleteWebACLResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebACLResponse]
@@ -1420,7 +1420,7 @@ package wafv2 {
   object DisassociateWebACLResponse {
     @inline
     def apply(
-        ): DisassociateWebACLResponse = {
+    ): DisassociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebACLResponse]
@@ -2434,7 +2434,7 @@ package wafv2 {
   object Method {
     @inline
     def apply(
-        ): Method = {
+    ): Method = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Method]
@@ -2452,7 +2452,7 @@ package wafv2 {
   object NoneAction {
     @inline
     def apply(
-        ): NoneAction = {
+    ): NoneAction = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[NoneAction]
@@ -2582,7 +2582,7 @@ package wafv2 {
   object QueryString {
     @inline
     def apply(
-        ): QueryString = {
+    ): QueryString = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[QueryString]
@@ -3241,7 +3241,7 @@ package wafv2 {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3339,7 +3339,7 @@ package wafv2 {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -3562,7 +3562,7 @@ package wafv2 {
   object UriPath {
     @inline
     def apply(
-        ): UriPath = {
+    ): UriPath = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UriPath]

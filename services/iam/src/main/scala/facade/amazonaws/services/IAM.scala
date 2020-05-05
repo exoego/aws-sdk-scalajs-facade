@@ -4237,7 +4237,7 @@ package iam {
   object ListOpenIDConnectProvidersRequest {
     @inline
     def apply(
-        ): ListOpenIDConnectProvidersRequest = {
+    ): ListOpenIDConnectProvidersRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListOpenIDConnectProvidersRequest]
@@ -4595,7 +4595,7 @@ package iam {
   object ListSAMLProvidersRequest {
     @inline
     def apply(
-        ): ListSAMLProvidersRequest = {
+    ): ListSAMLProvidersRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListSAMLProvidersRequest]
@@ -6783,7 +6783,7 @@ package iam {
   object UpdateRoleResponse {
     @inline
     def apply(
-        ): UpdateRoleResponse = {
+    ): UpdateRoleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRoleResponse]

@@ -4864,7 +4864,7 @@ package rds {
   object DeregisterDBProxyTargetsResponse {
     @inline
     def apply(
-        ): DeregisterDBProxyTargetsResponse = {
+    ): DeregisterDBProxyTargetsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterDBProxyTargetsResponse]
@@ -4880,7 +4880,7 @@ package rds {
   object DescribeAccountAttributesMessage {
     @inline
     def apply(
-        ): DescribeAccountAttributesMessage = {
+    ): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAttributesMessage]

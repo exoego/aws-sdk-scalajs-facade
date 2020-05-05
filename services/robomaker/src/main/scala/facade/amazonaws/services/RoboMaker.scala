@@ -349,7 +349,7 @@ package robomaker {
   object CancelDeploymentJobResponse {
     @inline
     def apply(
-        ): CancelDeploymentJobResponse = {
+    ): CancelDeploymentJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelDeploymentJobResponse]
@@ -380,7 +380,7 @@ package robomaker {
   object CancelSimulationJobBatchResponse {
     @inline
     def apply(
-        ): CancelSimulationJobBatchResponse = {
+    ): CancelSimulationJobBatchResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSimulationJobBatchResponse]
@@ -411,7 +411,7 @@ package robomaker {
   object CancelSimulationJobResponse {
     @inline
     def apply(
-        ): CancelSimulationJobResponse = {
+    ): CancelSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSimulationJobResponse]
@@ -1038,7 +1038,7 @@ package robomaker {
   object DeleteFleetResponse {
     @inline
     def apply(
-        ): DeleteFleetResponse = {
+    ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFleetResponse]
@@ -1072,7 +1072,7 @@ package robomaker {
   object DeleteRobotApplicationResponse {
     @inline
     def apply(
-        ): DeleteRobotApplicationResponse = {
+    ): DeleteRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRobotApplicationResponse]
@@ -1103,7 +1103,7 @@ package robomaker {
   object DeleteRobotResponse {
     @inline
     def apply(
-        ): DeleteRobotResponse = {
+    ): DeleteRobotResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRobotResponse]
@@ -1137,7 +1137,7 @@ package robomaker {
   object DeleteSimulationApplicationResponse {
     @inline
     def apply(
-        ): DeleteSimulationApplicationResponse = {
+    ): DeleteSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSimulationApplicationResponse]
@@ -2530,7 +2530,7 @@ package robomaker {
   object RestartSimulationJobResponse {
     @inline
     def apply(
-        ): RestartSimulationJobResponse = {
+    ): RestartSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestartSimulationJobResponse]
@@ -3425,7 +3425,7 @@ package robomaker {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3459,7 +3459,7 @@ package robomaker {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

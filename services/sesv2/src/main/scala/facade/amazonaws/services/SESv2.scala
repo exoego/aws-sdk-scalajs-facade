@@ -523,7 +523,7 @@ package sesv2 {
   object CreateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetEventDestinationResponse = {
+    ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
@@ -578,7 +578,7 @@ package sesv2 {
   object CreateConfigurationSetResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetResponse = {
+    ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
@@ -618,7 +618,7 @@ package sesv2 {
   object CreateDedicatedIpPoolResponse {
     @inline
     def apply(
-        ): CreateDedicatedIpPoolResponse = {
+    ): CreateDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
@@ -821,7 +821,7 @@ package sesv2 {
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetEventDestinationResponse = {
+    ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
@@ -858,7 +858,7 @@ package sesv2 {
   object DeleteConfigurationSetResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetResponse = {
+    ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
@@ -895,7 +895,7 @@ package sesv2 {
   object DeleteDedicatedIpPoolResponse {
     @inline
     def apply(
-        ): DeleteDedicatedIpPoolResponse = {
+    ): DeleteDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
@@ -932,7 +932,7 @@ package sesv2 {
   object DeleteEmailIdentityResponse {
     @inline
     def apply(
-        ): DeleteEmailIdentityResponse = {
+    ): DeleteEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
@@ -969,7 +969,7 @@ package sesv2 {
   object DeleteSuppressedDestinationResponse {
     @inline
     def apply(
-        ): DeleteSuppressedDestinationResponse = {
+    ): DeleteSuppressedDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSuppressedDestinationResponse]
@@ -1421,7 +1421,7 @@ package sesv2 {
   object GetAccountRequest {
     @inline
     def apply(
-        ): GetAccountRequest = {
+    ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountRequest]
@@ -1701,7 +1701,7 @@ package sesv2 {
   object GetDeliverabilityDashboardOptionsRequest {
     @inline
     def apply(
-        ): GetDeliverabilityDashboardOptionsRequest = {
+    ): GetDeliverabilityDashboardOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
@@ -2617,7 +2617,7 @@ package sesv2 {
   object PutAccountDedicatedIpWarmupAttributesResponse {
     @inline
     def apply(
-        ): PutAccountDedicatedIpWarmupAttributesResponse = {
+    ): PutAccountDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
@@ -2652,7 +2652,7 @@ package sesv2 {
   object PutAccountSendingAttributesResponse {
     @inline
     def apply(
-        ): PutAccountSendingAttributesResponse = {
+    ): PutAccountSendingAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountSendingAttributesResponse]
@@ -2687,7 +2687,7 @@ package sesv2 {
   object PutAccountSuppressionAttributesResponse {
     @inline
     def apply(
-        ): PutAccountSuppressionAttributesResponse = {
+    ): PutAccountSuppressionAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountSuppressionAttributesResponse]
@@ -2730,7 +2730,7 @@ package sesv2 {
   object PutConfigurationSetDeliveryOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetDeliveryOptionsResponse = {
+    ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
@@ -2770,7 +2770,7 @@ package sesv2 {
   object PutConfigurationSetReputationOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetReputationOptionsResponse = {
+    ): PutConfigurationSetReputationOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
@@ -2810,7 +2810,7 @@ package sesv2 {
   object PutConfigurationSetSendingOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetSendingOptionsResponse = {
+    ): PutConfigurationSetSendingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
@@ -2850,7 +2850,7 @@ package sesv2 {
   object PutConfigurationSetSuppressionOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetSuppressionOptionsResponse = {
+    ): PutConfigurationSetSuppressionOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetSuppressionOptionsResponse]
@@ -2890,7 +2890,7 @@ package sesv2 {
   object PutConfigurationSetTrackingOptionsResponse {
     @inline
     def apply(
-        ): PutConfigurationSetTrackingOptionsResponse = {
+    ): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
@@ -2930,7 +2930,7 @@ package sesv2 {
   object PutDedicatedIpInPoolResponse {
     @inline
     def apply(
-        ): PutDedicatedIpInPoolResponse = {
+    ): PutDedicatedIpInPoolResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
@@ -2970,7 +2970,7 @@ package sesv2 {
   object PutDedicatedIpWarmupAttributesResponse {
     @inline
     def apply(
-        ): PutDedicatedIpWarmupAttributesResponse = {
+    ): PutDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
@@ -3011,7 +3011,7 @@ package sesv2 {
   object PutDeliverabilityDashboardOptionResponse {
     @inline
     def apply(
-        ): PutDeliverabilityDashboardOptionResponse = {
+    ): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
@@ -3051,7 +3051,7 @@ package sesv2 {
   object PutEmailIdentityDkimAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityDkimAttributesResponse = {
+    ): PutEmailIdentityDkimAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
@@ -3141,7 +3141,7 @@ package sesv2 {
   object PutEmailIdentityFeedbackAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityFeedbackAttributesResponse = {
+    ): PutEmailIdentityFeedbackAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
@@ -3184,7 +3184,7 @@ package sesv2 {
   object PutEmailIdentityMailFromAttributesResponse {
     @inline
     def apply(
-        ): PutEmailIdentityMailFromAttributesResponse = {
+    ): PutEmailIdentityMailFromAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
@@ -3224,7 +3224,7 @@ package sesv2 {
   object PutSuppressedDestinationResponse {
     @inline
     def apply(
-        ): PutSuppressedDestinationResponse = {
+    ): PutSuppressedDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutSuppressedDestinationResponse]
@@ -3586,7 +3586,7 @@ package sesv2 {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3676,7 +3676,7 @@ package sesv2 {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -3719,7 +3719,7 @@ package sesv2 {
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): UpdateConfigurationSetEventDestinationResponse = {
+    ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]

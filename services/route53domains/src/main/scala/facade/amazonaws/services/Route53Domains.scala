@@ -848,7 +848,7 @@ package route53domains {
   object DeleteTagsForDomainResponse {
     @inline
     def apply(
-        ): DeleteTagsForDomainResponse = {
+    ): DeleteTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsForDomainResponse]
@@ -879,7 +879,7 @@ package route53domains {
   object DisableDomainAutoRenewResponse {
     @inline
     def apply(
-        ): DisableDomainAutoRenewResponse = {
+    ): DisableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableDomainAutoRenewResponse]
@@ -1064,7 +1064,7 @@ package route53domains {
   object EnableDomainAutoRenewResponse {
     @inline
     def apply(
-        ): EnableDomainAutoRenewResponse = {
+    ): EnableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableDomainAutoRenewResponse]
@@ -2218,7 +2218,7 @@ package route53domains {
   object UpdateTagsForDomainResponse {
     @inline
     def apply(
-        ): UpdateTagsForDomainResponse = {
+    ): UpdateTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTagsForDomainResponse]
