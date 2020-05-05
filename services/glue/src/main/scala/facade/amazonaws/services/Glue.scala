@@ -1965,7 +1965,7 @@ package glue {
   object CreateClassifierResponse {
     @inline
     def apply(
-        ): CreateClassifierResponse = {
+    ): CreateClassifierResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateClassifierResponse]
@@ -1999,7 +1999,7 @@ package glue {
   object CreateConnectionResponse {
     @inline
     def apply(
-        ): CreateConnectionResponse = {
+    ): CreateConnectionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConnectionResponse]
@@ -2065,7 +2065,7 @@ package glue {
   object CreateCrawlerResponse {
     @inline
     def apply(
-        ): CreateCrawlerResponse = {
+    ): CreateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateCrawlerResponse]
@@ -2138,7 +2138,7 @@ package glue {
   object CreateDatabaseResponse {
     @inline
     def apply(
-        ): CreateDatabaseResponse = {
+    ): CreateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateDatabaseResponse]
@@ -2516,7 +2516,7 @@ package glue {
   object CreatePartitionResponse {
     @inline
     def apply(
-        ): CreatePartitionResponse = {
+    ): CreatePartitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreatePartitionResponse]
@@ -2634,7 +2634,7 @@ package glue {
   object CreateTableResponse {
     @inline
     def apply(
-        ): CreateTableResponse = {
+    ): CreateTableResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTableResponse]
@@ -2729,7 +2729,7 @@ package glue {
   object CreateUserDefinedFunctionResponse {
     @inline
     def apply(
-        ): CreateUserDefinedFunctionResponse = {
+    ): CreateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUserDefinedFunctionResponse]
@@ -3014,7 +3014,7 @@ package glue {
   object DeleteClassifierResponse {
     @inline
     def apply(
-        ): DeleteClassifierResponse = {
+    ): DeleteClassifierResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteClassifierResponse]
@@ -3048,7 +3048,7 @@ package glue {
   object DeleteConnectionResponse {
     @inline
     def apply(
-        ): DeleteConnectionResponse = {
+    ): DeleteConnectionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConnectionResponse]
@@ -3079,7 +3079,7 @@ package glue {
   object DeleteCrawlerResponse {
     @inline
     def apply(
-        ): DeleteCrawlerResponse = {
+    ): DeleteCrawlerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCrawlerResponse]
@@ -3113,7 +3113,7 @@ package glue {
   object DeleteDatabaseResponse {
     @inline
     def apply(
-        ): DeleteDatabaseResponse = {
+    ): DeleteDatabaseResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDatabaseResponse]
@@ -3144,7 +3144,7 @@ package glue {
   object DeleteDevEndpointResponse {
     @inline
     def apply(
-        ): DeleteDevEndpointResponse = {
+    ): DeleteDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDevEndpointResponse]
@@ -3252,7 +3252,7 @@ package glue {
   object DeletePartitionResponse {
     @inline
     def apply(
-        ): DeletePartitionResponse = {
+    ): DeletePartitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePartitionResponse]
@@ -3281,7 +3281,7 @@ package glue {
   object DeleteResourcePolicyResponse {
     @inline
     def apply(
-        ): DeleteResourcePolicyResponse = {
+    ): DeleteResourcePolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourcePolicyResponse]
@@ -3312,7 +3312,7 @@ package glue {
   object DeleteSecurityConfigurationResponse {
     @inline
     def apply(
-        ): DeleteSecurityConfigurationResponse = {
+    ): DeleteSecurityConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityConfigurationResponse]
@@ -3349,7 +3349,7 @@ package glue {
   object DeleteTableResponse {
     @inline
     def apply(
-        ): DeleteTableResponse = {
+    ): DeleteTableResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTableResponse]
@@ -3389,7 +3389,7 @@ package glue {
   object DeleteTableVersionResponse {
     @inline
     def apply(
-        ): DeleteTableVersionResponse = {
+    ): DeleteTableVersionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTableVersionResponse]
@@ -3460,7 +3460,7 @@ package glue {
   object DeleteUserDefinedFunctionResponse {
     @inline
     def apply(
-        ): DeleteUserDefinedFunctionResponse = {
+    ): DeleteUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserDefinedFunctionResponse]
@@ -5061,7 +5061,7 @@ package glue {
   object GetResourcePolicyRequest {
     @inline
     def apply(
-        ): GetResourcePolicyRequest = {
+    ): GetResourcePolicyRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetResourcePolicyRequest]
@@ -5795,7 +5795,7 @@ package glue {
   object ImportCatalogToGlueResponse {
     @inline
     def apply(
-        ): ImportCatalogToGlueResponse = {
+    ): ImportCatalogToGlueResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportCatalogToGlueResponse]
@@ -7021,7 +7021,7 @@ package glue {
   object PutDataCatalogEncryptionSettingsResponse {
     @inline
     def apply(
-        ): PutDataCatalogEncryptionSettingsResponse = {
+    ): PutDataCatalogEncryptionSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
@@ -7098,7 +7098,7 @@ package glue {
   object PutWorkflowRunPropertiesResponse {
     @inline
     def apply(
-        ): PutWorkflowRunPropertiesResponse = {
+    ): PutWorkflowRunPropertiesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutWorkflowRunPropertiesResponse]
@@ -7514,7 +7514,7 @@ package glue {
   object StartCrawlerResponse {
     @inline
     def apply(
-        ): StartCrawlerResponse = {
+    ): StartCrawlerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartCrawlerResponse]
@@ -7545,7 +7545,7 @@ package glue {
   object StartCrawlerScheduleResponse {
     @inline
     def apply(
-        ): StartCrawlerScheduleResponse = {
+    ): StartCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartCrawlerScheduleResponse]
@@ -7853,7 +7853,7 @@ package glue {
   object StopCrawlerResponse {
     @inline
     def apply(
-        ): StopCrawlerResponse = {
+    ): StopCrawlerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopCrawlerResponse]
@@ -7884,7 +7884,7 @@ package glue {
   object StopCrawlerScheduleResponse {
     @inline
     def apply(
-        ): StopCrawlerScheduleResponse = {
+    ): StopCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopCrawlerScheduleResponse]
@@ -8198,7 +8198,7 @@ package glue {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -8639,7 +8639,7 @@ package glue {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -8685,7 +8685,7 @@ package glue {
   object UpdateClassifierResponse {
     @inline
     def apply(
-        ): UpdateClassifierResponse = {
+    ): UpdateClassifierResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateClassifierResponse]
@@ -8722,7 +8722,7 @@ package glue {
   object UpdateConnectionResponse {
     @inline
     def apply(
-        ): UpdateConnectionResponse = {
+    ): UpdateConnectionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConnectionResponse]
@@ -8785,7 +8785,7 @@ package glue {
   object UpdateCrawlerResponse {
     @inline
     def apply(
-        ): UpdateCrawlerResponse = {
+    ): UpdateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCrawlerResponse]
@@ -8819,7 +8819,7 @@ package glue {
   object UpdateCrawlerScheduleResponse {
     @inline
     def apply(
-        ): UpdateCrawlerScheduleResponse = {
+    ): UpdateCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCrawlerScheduleResponse]
@@ -8895,7 +8895,7 @@ package glue {
   object UpdateDatabaseResponse {
     @inline
     def apply(
-        ): UpdateDatabaseResponse = {
+    ): UpdateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDatabaseResponse]
@@ -8947,7 +8947,7 @@ package glue {
   object UpdateDevEndpointResponse {
     @inline
     def apply(
-        ): UpdateDevEndpointResponse = {
+    ): UpdateDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDevEndpointResponse]
@@ -9145,7 +9145,7 @@ package glue {
   object UpdatePartitionResponse {
     @inline
     def apply(
-        ): UpdatePartitionResponse = {
+    ): UpdatePartitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePartitionResponse]
@@ -9185,7 +9185,7 @@ package glue {
   object UpdateTableResponse {
     @inline
     def apply(
-        ): UpdateTableResponse = {
+    ): UpdateTableResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTableResponse]
@@ -9262,7 +9262,7 @@ package glue {
   object UpdateUserDefinedFunctionResponse {
     @inline
     def apply(
-        ): UpdateUserDefinedFunctionResponse = {
+    ): UpdateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateUserDefinedFunctionResponse]

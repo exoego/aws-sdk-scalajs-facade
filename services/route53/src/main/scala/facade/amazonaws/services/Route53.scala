@@ -699,7 +699,7 @@ package route53 {
   object ChangeTagsForResourceResponse {
     @inline
     def apply(
-        ): ChangeTagsForResourceResponse = {
+    ): ChangeTagsForResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ChangeTagsForResourceResponse]
@@ -1273,7 +1273,7 @@ package route53 {
   object DeleteHealthCheckResponse {
     @inline
     def apply(
-        ): DeleteHealthCheckResponse = {
+    ): DeleteHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteHealthCheckResponse]
@@ -1346,7 +1346,7 @@ package route53 {
   object DeleteQueryLoggingConfigResponse {
     @inline
     def apply(
-        ): DeleteQueryLoggingConfigResponse = {
+    ): DeleteQueryLoggingConfigResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQueryLoggingConfigResponse]
@@ -1383,7 +1383,7 @@ package route53 {
   object DeleteReusableDelegationSetResponse {
     @inline
     def apply(
-        ): DeleteReusableDelegationSetResponse = {
+    ): DeleteReusableDelegationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReusableDelegationSetResponse]
@@ -1420,7 +1420,7 @@ package route53 {
   object DeleteTrafficPolicyInstanceResponse {
     @inline
     def apply(
-        ): DeleteTrafficPolicyInstanceResponse = {
+    ): DeleteTrafficPolicyInstanceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTrafficPolicyInstanceResponse]
@@ -1460,7 +1460,7 @@ package route53 {
   object DeleteTrafficPolicyResponse {
     @inline
     def apply(
-        ): DeleteTrafficPolicyResponse = {
+    ): DeleteTrafficPolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTrafficPolicyResponse]
@@ -1500,7 +1500,7 @@ package route53 {
   object DeleteVPCAssociationAuthorizationResponse {
     @inline
     def apply(
-        ): DeleteVPCAssociationAuthorizationResponse = {
+    ): DeleteVPCAssociationAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationResponse]
@@ -1734,7 +1734,7 @@ package route53 {
   object GetCheckerIpRangesRequest {
     @inline
     def apply(
-        ): GetCheckerIpRangesRequest = {
+    ): GetCheckerIpRangesRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetCheckerIpRangesRequest]
@@ -1817,7 +1817,7 @@ package route53 {
   object GetHealthCheckCountRequest {
     @inline
     def apply(
-        ): GetHealthCheckCountRequest = {
+    ): GetHealthCheckCountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetHealthCheckCountRequest]
@@ -1980,7 +1980,7 @@ package route53 {
   object GetHostedZoneCountRequest {
     @inline
     def apply(
-        ): GetHostedZoneCountRequest = {
+    ): GetHostedZoneCountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetHostedZoneCountRequest]
@@ -2239,7 +2239,7 @@ package route53 {
   object GetTrafficPolicyInstanceCountRequest {
     @inline
     def apply(
-        ): GetTrafficPolicyInstanceCountRequest = {
+    ): GetTrafficPolicyInstanceCountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetTrafficPolicyInstanceCountRequest]

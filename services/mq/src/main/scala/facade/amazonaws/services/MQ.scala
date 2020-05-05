@@ -622,7 +622,7 @@ package mq {
   object CreateUserResponse {
     @inline
     def apply(
-        ): CreateUserResponse = {
+    ): CreateUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUserResponse]
@@ -724,7 +724,7 @@ package mq {
   object DeleteUserResponse {
     @inline
     def apply(
-        ): DeleteUserResponse = {
+    ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResponse]
@@ -1459,7 +1459,7 @@ package mq {
   object RebootBrokerResponse {
     @inline
     def apply(
-        ): RebootBrokerResponse = {
+    ): RebootBrokerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RebootBrokerResponse]
@@ -1676,7 +1676,7 @@ package mq {
   object UpdateUserResponse {
     @inline
     def apply(
-        ): UpdateUserResponse = {
+    ): UpdateUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateUserResponse]

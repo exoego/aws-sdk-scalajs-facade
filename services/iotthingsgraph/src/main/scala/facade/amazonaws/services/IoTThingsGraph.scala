@@ -232,7 +232,7 @@ package iotthingsgraph {
   object AssociateEntityToThingResponse {
     @inline
     def apply(
-        ): AssociateEntityToThingResponse = {
+    ): AssociateEntityToThingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateEntityToThingResponse]
@@ -424,7 +424,7 @@ package iotthingsgraph {
   object DeleteFlowTemplateResponse {
     @inline
     def apply(
-        ): DeleteFlowTemplateResponse = {
+    ): DeleteFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFlowTemplateResponse]
@@ -437,7 +437,7 @@ package iotthingsgraph {
   object DeleteNamespaceRequest {
     @inline
     def apply(
-        ): DeleteNamespaceRequest = {
+    ): DeleteNamespaceRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNamespaceRequest]
@@ -485,7 +485,7 @@ package iotthingsgraph {
   object DeleteSystemInstanceResponse {
     @inline
     def apply(
-        ): DeleteSystemInstanceResponse = {
+    ): DeleteSystemInstanceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSystemInstanceResponse]
@@ -516,7 +516,7 @@ package iotthingsgraph {
   object DeleteSystemTemplateResponse {
     @inline
     def apply(
-        ): DeleteSystemTemplateResponse = {
+    ): DeleteSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSystemTemplateResponse]
@@ -614,7 +614,7 @@ package iotthingsgraph {
   object DeprecateFlowTemplateResponse {
     @inline
     def apply(
-        ): DeprecateFlowTemplateResponse = {
+    ): DeprecateFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateFlowTemplateResponse]
@@ -645,7 +645,7 @@ package iotthingsgraph {
   object DeprecateSystemTemplateResponse {
     @inline
     def apply(
-        ): DeprecateSystemTemplateResponse = {
+    ): DeprecateSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateSystemTemplateResponse]
@@ -723,7 +723,7 @@ package iotthingsgraph {
   object DissociateEntityFromThingResponse {
     @inline
     def apply(
-        ): DissociateEntityFromThingResponse = {
+    ): DissociateEntityFromThingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DissociateEntityFromThingResponse]
@@ -1135,7 +1135,7 @@ package iotthingsgraph {
   object GetNamespaceDeletionStatusRequest {
     @inline
     def apply(
-        ): GetNamespaceDeletionStatusRequest = {
+    ): GetNamespaceDeletionStatusRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetNamespaceDeletionStatusRequest]
@@ -2009,7 +2009,7 @@ package iotthingsgraph {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -2097,7 +2097,7 @@ package iotthingsgraph {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

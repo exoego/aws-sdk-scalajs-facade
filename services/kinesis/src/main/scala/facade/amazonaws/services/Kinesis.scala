@@ -342,7 +342,7 @@ package kinesis {
   object DescribeLimitsInput {
     @inline
     def apply(
-        ): DescribeLimitsInput = {
+    ): DescribeLimitsInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeLimitsInput]

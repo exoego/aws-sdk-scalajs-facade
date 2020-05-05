@@ -608,7 +608,7 @@ package alexaforbusiness {
   object ApproveSkillResponse {
     @inline
     def apply(
-        ): ApproveSkillResponse = {
+    ): ApproveSkillResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ApproveSkillResponse]
@@ -642,7 +642,7 @@ package alexaforbusiness {
   object AssociateContactWithAddressBookResponse {
     @inline
     def apply(
-        ): AssociateContactWithAddressBookResponse = {
+    ): AssociateContactWithAddressBookResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateContactWithAddressBookResponse]
@@ -676,7 +676,7 @@ package alexaforbusiness {
   object AssociateDeviceWithNetworkProfileResponse {
     @inline
     def apply(
-        ): AssociateDeviceWithNetworkProfileResponse = {
+    ): AssociateDeviceWithNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDeviceWithNetworkProfileResponse]
@@ -708,7 +708,7 @@ package alexaforbusiness {
   object AssociateDeviceWithRoomResponse {
     @inline
     def apply(
-        ): AssociateDeviceWithRoomResponse = {
+    ): AssociateDeviceWithRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDeviceWithRoomResponse]
@@ -740,7 +740,7 @@ package alexaforbusiness {
   object AssociateSkillGroupWithRoomResponse {
     @inline
     def apply(
-        ): AssociateSkillGroupWithRoomResponse = {
+    ): AssociateSkillGroupWithRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateSkillGroupWithRoomResponse]
@@ -774,7 +774,7 @@ package alexaforbusiness {
   object AssociateSkillWithSkillGroupResponse {
     @inline
     def apply(
-        ): AssociateSkillWithSkillGroupResponse = {
+    ): AssociateSkillWithSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateSkillWithSkillGroupResponse]
@@ -805,7 +805,7 @@ package alexaforbusiness {
   object AssociateSkillWithUsersResponse {
     @inline
     def apply(
-        ): AssociateSkillWithUsersResponse = {
+    ): AssociateSkillWithUsersResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateSkillWithUsersResponse]
@@ -1843,7 +1843,7 @@ package alexaforbusiness {
   object DeleteAddressBookResponse {
     @inline
     def apply(
-        ): DeleteAddressBookResponse = {
+    ): DeleteAddressBookResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAddressBookResponse]
@@ -1874,7 +1874,7 @@ package alexaforbusiness {
   object DeleteBusinessReportScheduleResponse {
     @inline
     def apply(
-        ): DeleteBusinessReportScheduleResponse = {
+    ): DeleteBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBusinessReportScheduleResponse]
@@ -1905,7 +1905,7 @@ package alexaforbusiness {
   object DeleteConferenceProviderResponse {
     @inline
     def apply(
-        ): DeleteConferenceProviderResponse = {
+    ): DeleteConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConferenceProviderResponse]
@@ -1936,7 +1936,7 @@ package alexaforbusiness {
   object DeleteContactResponse {
     @inline
     def apply(
-        ): DeleteContactResponse = {
+    ): DeleteContactResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteContactResponse]
@@ -1967,7 +1967,7 @@ package alexaforbusiness {
   object DeleteDeviceResponse {
     @inline
     def apply(
-        ): DeleteDeviceResponse = {
+    ): DeleteDeviceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDeviceResponse]
@@ -2001,7 +2001,7 @@ package alexaforbusiness {
   object DeleteDeviceUsageDataResponse {
     @inline
     def apply(
-        ): DeleteDeviceUsageDataResponse = {
+    ): DeleteDeviceUsageDataResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDeviceUsageDataResponse]
@@ -2032,7 +2032,7 @@ package alexaforbusiness {
   object DeleteGatewayGroupResponse {
     @inline
     def apply(
-        ): DeleteGatewayGroupResponse = {
+    ): DeleteGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGatewayGroupResponse]
@@ -2063,7 +2063,7 @@ package alexaforbusiness {
   object DeleteNetworkProfileResponse {
     @inline
     def apply(
-        ): DeleteNetworkProfileResponse = {
+    ): DeleteNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNetworkProfileResponse]
@@ -2092,7 +2092,7 @@ package alexaforbusiness {
   object DeleteProfileResponse {
     @inline
     def apply(
-        ): DeleteProfileResponse = {
+    ): DeleteProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProfileResponse]
@@ -2121,7 +2121,7 @@ package alexaforbusiness {
   object DeleteRoomResponse {
     @inline
     def apply(
-        ): DeleteRoomResponse = {
+    ): DeleteRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRoomResponse]
@@ -2158,7 +2158,7 @@ package alexaforbusiness {
   object DeleteRoomSkillParameterResponse {
     @inline
     def apply(
-        ): DeleteRoomSkillParameterResponse = {
+    ): DeleteRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRoomSkillParameterResponse]
@@ -2192,7 +2192,7 @@ package alexaforbusiness {
   object DeleteSkillAuthorizationResponse {
     @inline
     def apply(
-        ): DeleteSkillAuthorizationResponse = {
+    ): DeleteSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSkillAuthorizationResponse]
@@ -2221,7 +2221,7 @@ package alexaforbusiness {
   object DeleteSkillGroupResponse {
     @inline
     def apply(
-        ): DeleteSkillGroupResponse = {
+    ): DeleteSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSkillGroupResponse]
@@ -2255,7 +2255,7 @@ package alexaforbusiness {
   object DeleteUserResponse {
     @inline
     def apply(
-        ): DeleteUserResponse = {
+    ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResponse]
@@ -2584,7 +2584,7 @@ package alexaforbusiness {
   object DisassociateContactFromAddressBookResponse {
     @inline
     def apply(
-        ): DisassociateContactFromAddressBookResponse = {
+    ): DisassociateContactFromAddressBookResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateContactFromAddressBookResponse]
@@ -2613,7 +2613,7 @@ package alexaforbusiness {
   object DisassociateDeviceFromRoomResponse {
     @inline
     def apply(
-        ): DisassociateDeviceFromRoomResponse = {
+    ): DisassociateDeviceFromRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDeviceFromRoomResponse]
@@ -2647,7 +2647,7 @@ package alexaforbusiness {
   object DisassociateSkillFromSkillGroupResponse {
     @inline
     def apply(
-        ): DisassociateSkillFromSkillGroupResponse = {
+    ): DisassociateSkillFromSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateSkillFromSkillGroupResponse]
@@ -2678,7 +2678,7 @@ package alexaforbusiness {
   object DisassociateSkillFromUsersResponse {
     @inline
     def apply(
-        ): DisassociateSkillFromUsersResponse = {
+    ): DisassociateSkillFromUsersResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateSkillFromUsersResponse]
@@ -2710,7 +2710,7 @@ package alexaforbusiness {
   object DisassociateSkillGroupFromRoomResponse {
     @inline
     def apply(
-        ): DisassociateSkillGroupFromRoomResponse = {
+    ): DisassociateSkillGroupFromRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateSkillGroupFromRoomResponse]
@@ -2850,7 +2850,7 @@ package alexaforbusiness {
   object ForgetSmartHomeAppliancesResponse {
     @inline
     def apply(
-        ): ForgetSmartHomeAppliancesResponse = {
+    ): ForgetSmartHomeAppliancesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ForgetSmartHomeAppliancesResponse]
@@ -3009,7 +3009,7 @@ package alexaforbusiness {
   object GetConferencePreferenceRequest {
     @inline
     def apply(
-        ): GetConferencePreferenceRequest = {
+    ): GetConferencePreferenceRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetConferencePreferenceRequest]
@@ -3206,7 +3206,7 @@ package alexaforbusiness {
   object GetInvitationConfigurationRequest {
     @inline
     def apply(
-        ): GetInvitationConfigurationRequest = {
+    ): GetInvitationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetInvitationConfigurationRequest]
@@ -4216,7 +4216,7 @@ package alexaforbusiness {
   object PutConferencePreferenceResponse {
     @inline
     def apply(
-        ): PutConferencePreferenceResponse = {
+    ): PutConferencePreferenceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConferencePreferenceResponse]
@@ -4253,7 +4253,7 @@ package alexaforbusiness {
   object PutInvitationConfigurationResponse {
     @inline
     def apply(
-        ): PutInvitationConfigurationResponse = {
+    ): PutInvitationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutInvitationConfigurationResponse]
@@ -4290,7 +4290,7 @@ package alexaforbusiness {
   object PutRoomSkillParameterResponse {
     @inline
     def apply(
-        ): PutRoomSkillParameterResponse = {
+    ): PutRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutRoomSkillParameterResponse]
@@ -4327,7 +4327,7 @@ package alexaforbusiness {
   object PutSkillAuthorizationResponse {
     @inline
     def apply(
-        ): PutSkillAuthorizationResponse = {
+    ): PutSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutSkillAuthorizationResponse]
@@ -4404,7 +4404,7 @@ package alexaforbusiness {
   object RejectSkillResponse {
     @inline
     def apply(
-        ): RejectSkillResponse = {
+    ): RejectSkillResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectSkillResponse]
@@ -4510,7 +4510,7 @@ package alexaforbusiness {
   object RevokeInvitationResponse {
     @inline
     def apply(
-        ): RevokeInvitationResponse = {
+    ): RevokeInvitationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokeInvitationResponse]
@@ -5047,7 +5047,7 @@ package alexaforbusiness {
   object SendInvitationResponse {
     @inline
     def apply(
-        ): SendInvitationResponse = {
+    ): SendInvitationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendInvitationResponse]
@@ -5379,7 +5379,7 @@ package alexaforbusiness {
   object StartDeviceSyncResponse {
     @inline
     def apply(
-        ): StartDeviceSyncResponse = {
+    ): StartDeviceSyncResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartDeviceSyncResponse]
@@ -5410,7 +5410,7 @@ package alexaforbusiness {
   object StartSmartHomeApplianceDiscoveryResponse {
     @inline
     def apply(
-        ): StartSmartHomeApplianceDiscoveryResponse = {
+    ): StartSmartHomeApplianceDiscoveryResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartSmartHomeApplianceDiscoveryResponse]
@@ -5468,7 +5468,7 @@ package alexaforbusiness {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -5534,7 +5534,7 @@ package alexaforbusiness {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -5571,7 +5571,7 @@ package alexaforbusiness {
   object UpdateAddressBookResponse {
     @inline
     def apply(
-        ): UpdateAddressBookResponse = {
+    ): UpdateAddressBookResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAddressBookResponse]
@@ -5617,7 +5617,7 @@ package alexaforbusiness {
   object UpdateBusinessReportScheduleResponse {
     @inline
     def apply(
-        ): UpdateBusinessReportScheduleResponse = {
+    ): UpdateBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateBusinessReportScheduleResponse]
@@ -5660,7 +5660,7 @@ package alexaforbusiness {
   object UpdateConferenceProviderResponse {
     @inline
     def apply(
-        ): UpdateConferenceProviderResponse = {
+    ): UpdateConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConferenceProviderResponse]
@@ -5709,7 +5709,7 @@ package alexaforbusiness {
   object UpdateContactResponse {
     @inline
     def apply(
-        ): UpdateContactResponse = {
+    ): UpdateContactResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateContactResponse]
@@ -5741,7 +5741,7 @@ package alexaforbusiness {
   object UpdateDeviceResponse {
     @inline
     def apply(
-        ): UpdateDeviceResponse = {
+    ): UpdateDeviceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDeviceResponse]
@@ -5803,7 +5803,7 @@ package alexaforbusiness {
   object UpdateGatewayGroupResponse {
     @inline
     def apply(
-        ): UpdateGatewayGroupResponse = {
+    ): UpdateGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateGatewayGroupResponse]
@@ -5843,7 +5843,7 @@ package alexaforbusiness {
   object UpdateGatewayResponse {
     @inline
     def apply(
-        ): UpdateGatewayResponse = {
+    ): UpdateGatewayResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateGatewayResponse]
@@ -5944,7 +5944,7 @@ package alexaforbusiness {
   object UpdateNetworkProfileResponse {
     @inline
     def apply(
-        ): UpdateNetworkProfileResponse = {
+    ): UpdateNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNetworkProfileResponse]
@@ -6009,7 +6009,7 @@ package alexaforbusiness {
   object UpdateProfileResponse {
     @inline
     def apply(
-        ): UpdateProfileResponse = {
+    ): UpdateProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateProfileResponse]
@@ -6072,7 +6072,7 @@ package alexaforbusiness {
   object UpdateRoomResponse {
     @inline
     def apply(
-        ): UpdateRoomResponse = {
+    ): UpdateRoomResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRoomResponse]
@@ -6107,7 +6107,7 @@ package alexaforbusiness {
   object UpdateSkillGroupResponse {
     @inline
     def apply(
-        ): UpdateSkillGroupResponse = {
+    ): UpdateSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSkillGroupResponse]

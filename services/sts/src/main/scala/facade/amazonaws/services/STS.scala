@@ -455,7 +455,7 @@ package sts {
   object GetCallerIdentityRequest {
     @inline
     def apply(
-        ): GetCallerIdentityRequest = {
+    ): GetCallerIdentityRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetCallerIdentityRequest]

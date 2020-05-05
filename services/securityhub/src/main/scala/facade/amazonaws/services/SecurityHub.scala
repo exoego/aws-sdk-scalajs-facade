@@ -254,7 +254,7 @@ package securityhub {
   object AcceptInvitationResponse {
     @inline
     def apply(
-        ): AcceptInvitationResponse = {
+    ): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptInvitationResponse]
@@ -2897,7 +2897,7 @@ package securityhub {
   object DisableImportFindingsForProductResponse {
     @inline
     def apply(
-        ): DisableImportFindingsForProductResponse = {
+    ): DisableImportFindingsForProductResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableImportFindingsForProductResponse]
@@ -2910,7 +2910,7 @@ package securityhub {
   object DisableSecurityHubRequest {
     @inline
     def apply(
-        ): DisableSecurityHubRequest = {
+    ): DisableSecurityHubRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableSecurityHubRequest]
@@ -2923,7 +2923,7 @@ package securityhub {
   object DisableSecurityHubResponse {
     @inline
     def apply(
-        ): DisableSecurityHubResponse = {
+    ): DisableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableSecurityHubResponse]
@@ -2936,7 +2936,7 @@ package securityhub {
   object DisassociateFromMasterAccountRequest {
     @inline
     def apply(
-        ): DisassociateFromMasterAccountRequest = {
+    ): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
@@ -2949,7 +2949,7 @@ package securityhub {
   object DisassociateFromMasterAccountResponse {
     @inline
     def apply(
-        ): DisassociateFromMasterAccountResponse = {
+    ): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
@@ -2978,7 +2978,7 @@ package securityhub {
   object DisassociateMembersResponse {
     @inline
     def apply(
-        ): DisassociateMembersResponse = {
+    ): DisassociateMembersResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateMembersResponse]
@@ -3041,7 +3041,7 @@ package securityhub {
   object EnableSecurityHubResponse {
     @inline
     def apply(
-        ): EnableSecurityHubResponse = {
+    ): EnableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableSecurityHubResponse]
@@ -3222,7 +3222,7 @@ package securityhub {
   object GetInvitationsCountRequest {
     @inline
     def apply(
-        ): GetInvitationsCountRequest = {
+    ): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetInvitationsCountRequest]
@@ -3251,7 +3251,7 @@ package securityhub {
   object GetMasterAccountRequest {
     @inline
     def apply(
-        ): GetMasterAccountRequest = {
+    ): GetMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetMasterAccountRequest]
@@ -4520,7 +4520,7 @@ package securityhub {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -4632,7 +4632,7 @@ package securityhub {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -4669,7 +4669,7 @@ package securityhub {
   object UpdateActionTargetResponse {
     @inline
     def apply(
-        ): UpdateActionTargetResponse = {
+    ): UpdateActionTargetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateActionTargetResponse]
@@ -4706,7 +4706,7 @@ package securityhub {
   object UpdateFindingsResponse {
     @inline
     def apply(
-        ): UpdateFindingsResponse = {
+    ): UpdateFindingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFindingsResponse]
@@ -4746,7 +4746,7 @@ package securityhub {
   object UpdateInsightResponse {
     @inline
     def apply(
-        ): UpdateInsightResponse = {
+    ): UpdateInsightResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateInsightResponse]
@@ -4783,7 +4783,7 @@ package securityhub {
   object UpdateStandardsControlResponse {
     @inline
     def apply(
-        ): UpdateStandardsControlResponse = {
+    ): UpdateStandardsControlResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateStandardsControlResponse]

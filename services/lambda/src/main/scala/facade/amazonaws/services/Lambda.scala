@@ -1193,7 +1193,7 @@ package lambda {
   object GetAccountSettingsRequest {
     @inline
     def apply(
-        ): GetAccountSettingsRequest = {
+    ): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountSettingsRequest]

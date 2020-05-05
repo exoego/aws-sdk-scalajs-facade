@@ -236,7 +236,7 @@ package mediastore {
   object DeleteContainerOutput {
     @inline
     def apply(
-        ): DeleteContainerOutput = {
+    ): DeleteContainerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteContainerOutput]
@@ -267,7 +267,7 @@ package mediastore {
   object DeleteContainerPolicyOutput {
     @inline
     def apply(
-        ): DeleteContainerPolicyOutput = {
+    ): DeleteContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteContainerPolicyOutput]
@@ -298,7 +298,7 @@ package mediastore {
   object DeleteCorsPolicyOutput {
     @inline
     def apply(
-        ): DeleteCorsPolicyOutput = {
+    ): DeleteCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCorsPolicyOutput]
@@ -329,7 +329,7 @@ package mediastore {
   object DeleteLifecyclePolicyOutput {
     @inline
     def apply(
-        ): DeleteLifecyclePolicyOutput = {
+    ): DeleteLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
@@ -587,7 +587,7 @@ package mediastore {
   object PutContainerPolicyOutput {
     @inline
     def apply(
-        ): PutContainerPolicyOutput = {
+    ): PutContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutContainerPolicyOutput]
@@ -621,7 +621,7 @@ package mediastore {
   object PutCorsPolicyOutput {
     @inline
     def apply(
-        ): PutCorsPolicyOutput = {
+    ): PutCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutCorsPolicyOutput]
@@ -655,7 +655,7 @@ package mediastore {
   object PutLifecyclePolicyOutput {
     @inline
     def apply(
-        ): PutLifecyclePolicyOutput = {
+    ): PutLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLifecyclePolicyOutput]
@@ -686,7 +686,7 @@ package mediastore {
   object StartAccessLoggingOutput {
     @inline
     def apply(
-        ): StartAccessLoggingOutput = {
+    ): StartAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAccessLoggingOutput]
@@ -717,7 +717,7 @@ package mediastore {
   object StopAccessLoggingOutput {
     @inline
     def apply(
-        ): StopAccessLoggingOutput = {
+    ): StopAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAccessLoggingOutput]
@@ -775,7 +775,7 @@ package mediastore {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -809,7 +809,7 @@ package mediastore {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

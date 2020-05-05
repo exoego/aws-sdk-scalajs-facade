@@ -2601,7 +2601,7 @@ package apigateway {
   object GetAccountRequest {
     @inline
     def apply(
-        ): GetAccountRequest = {
+    ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountRequest]

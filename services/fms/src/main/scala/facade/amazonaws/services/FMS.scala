@@ -172,7 +172,7 @@ package fms {
   object DeleteNotificationChannelRequest {
     @inline
     def apply(
-        ): DeleteNotificationChannelRequest = {
+    ): DeleteNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNotificationChannelRequest]
@@ -216,7 +216,7 @@ package fms {
   object DisassociateAdminAccountRequest {
     @inline
     def apply(
-        ): DisassociateAdminAccountRequest = {
+    ): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
@@ -254,7 +254,7 @@ package fms {
   object GetAdminAccountRequest {
     @inline
     def apply(
-        ): GetAdminAccountRequest = {
+    ): GetAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAdminAccountRequest]
@@ -323,7 +323,7 @@ package fms {
   object GetNotificationChannelRequest {
     @inline
     def apply(
-        ): GetNotificationChannelRequest = {
+    ): GetNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetNotificationChannelRequest]
@@ -939,7 +939,7 @@ package fms {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -973,7 +973,7 @@ package fms {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

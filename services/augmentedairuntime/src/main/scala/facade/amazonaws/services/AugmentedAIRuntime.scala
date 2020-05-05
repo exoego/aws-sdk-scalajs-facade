@@ -79,7 +79,7 @@ package augmentedairuntime {
   object DeleteHumanLoopResponse {
     @inline
     def apply(
-        ): DeleteHumanLoopResponse = {
+    ): DeleteHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteHumanLoopResponse]
@@ -425,7 +425,7 @@ package augmentedairuntime {
   object StopHumanLoopResponse {
     @inline
     def apply(
-        ): StopHumanLoopResponse = {
+    ): StopHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopHumanLoopResponse]

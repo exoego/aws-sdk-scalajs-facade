@@ -962,7 +962,7 @@ package comprehend {
   object DeleteDocumentClassifierResponse {
     @inline
     def apply(
-        ): DeleteDocumentClassifierResponse = {
+    ): DeleteDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDocumentClassifierResponse]
@@ -993,7 +993,7 @@ package comprehend {
   object DeleteEndpointResponse {
     @inline
     def apply(
-        ): DeleteEndpointResponse = {
+    ): DeleteEndpointResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEndpointResponse]
@@ -1024,7 +1024,7 @@ package comprehend {
   object DeleteEntityRecognizerResponse {
     @inline
     def apply(
-        ): DeleteEntityRecognizerResponse = {
+    ): DeleteEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEntityRecognizerResponse]
@@ -3726,7 +3726,7 @@ package comprehend {
   object StopTrainingDocumentClassifierResponse {
     @inline
     def apply(
-        ): StopTrainingDocumentClassifierResponse = {
+    ): StopTrainingDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopTrainingDocumentClassifierResponse]
@@ -3757,7 +3757,7 @@ package comprehend {
   object StopTrainingEntityRecognizerResponse {
     @inline
     def apply(
-        ): StopTrainingEntityRecognizerResponse = {
+    ): StopTrainingEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
@@ -3858,7 +3858,7 @@ package comprehend {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3972,7 +3972,7 @@ package comprehend {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -4006,7 +4006,7 @@ package comprehend {
   object UpdateEndpointResponse {
     @inline
     def apply(
-        ): UpdateEndpointResponse = {
+    ): UpdateEndpointResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEndpointResponse]

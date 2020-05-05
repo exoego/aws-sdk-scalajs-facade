@@ -1117,7 +1117,7 @@ package ssm {
   object AddTagsToResourceResult {
     @inline
     def apply(
-        ): AddTagsToResourceResult = {
+    ): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsToResourceResult]
@@ -1979,7 +1979,7 @@ package ssm {
   object CancelCommandResult {
     @inline
     def apply(
-        ): CancelCommandResult = {
+    ): CancelCommandResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelCommandResult]
@@ -3036,7 +3036,7 @@ package ssm {
   object CreateResourceDataSyncResult {
     @inline
     def apply(
-        ): CreateResourceDataSyncResult = {
+    ): CreateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateResourceDataSyncResult]
@@ -3067,7 +3067,7 @@ package ssm {
   object DeleteActivationResult {
     @inline
     def apply(
-        ): DeleteActivationResult = {
+    ): DeleteActivationResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteActivationResult]
@@ -3102,7 +3102,7 @@ package ssm {
   object DeleteAssociationResult {
     @inline
     def apply(
-        ): DeleteAssociationResult = {
+    ): DeleteAssociationResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAssociationResult]
@@ -3142,7 +3142,7 @@ package ssm {
   object DeleteDocumentResult {
     @inline
     def apply(
-        ): DeleteDocumentResult = {
+    ): DeleteDocumentResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDocumentResult]
@@ -3256,7 +3256,7 @@ package ssm {
   object DeleteParameterResult {
     @inline
     def apply(
-        ): DeleteParameterResult = {
+    ): DeleteParameterResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteParameterResult]
@@ -3361,7 +3361,7 @@ package ssm {
   object DeleteResourceDataSyncResult {
     @inline
     def apply(
-        ): DeleteResourceDataSyncResult = {
+    ): DeleteResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceDataSyncResult]
@@ -3392,7 +3392,7 @@ package ssm {
   object DeregisterManagedInstanceResult {
     @inline
     def apply(
-        ): DeregisterManagedInstanceResult = {
+    ): DeregisterManagedInstanceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterManagedInstanceResult]
@@ -8635,7 +8635,7 @@ package ssm {
   object ModifyDocumentPermissionResponse {
     @inline
     def apply(
-        ): ModifyDocumentPermissionResponse = {
+    ): ModifyDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyDocumentPermissionResponse]
@@ -9883,7 +9883,7 @@ package ssm {
   object PutComplianceItemsResult {
     @inline
     def apply(
-        ): PutComplianceItemsResult = {
+    ): PutComplianceItemsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutComplianceItemsResult]
@@ -10249,7 +10249,7 @@ package ssm {
   object RemoveTagsFromResourceResult {
     @inline
     def apply(
-        ): RemoveTagsFromResourceResult = {
+    ): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
@@ -10734,7 +10734,7 @@ package ssm {
   object SendAutomationSignalResult {
     @inline
     def apply(
-        ): SendAutomationSignalResult = {
+    ): SendAutomationSignalResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendAutomationSignalResult]
@@ -11048,7 +11048,7 @@ package ssm {
   object StartAssociationsOnceResult {
     @inline
     def apply(
-        ): StartAssociationsOnceResult = {
+    ): StartAssociationsOnceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAssociationsOnceResult]
@@ -11315,7 +11315,7 @@ package ssm {
   object StopAutomationExecutionResult {
     @inline
     def apply(
-        ): StopAutomationExecutionResult = {
+    ): StopAutomationExecutionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAutomationExecutionResult]
@@ -11961,7 +11961,7 @@ package ssm {
   object UpdateManagedInstanceRoleResult {
     @inline
     def apply(
-        ): UpdateManagedInstanceRoleResult = {
+    ): UpdateManagedInstanceRoleResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateManagedInstanceRoleResult]
@@ -12022,7 +12022,7 @@ package ssm {
   object UpdateOpsItemResponse {
     @inline
     def apply(
-        ): UpdateOpsItemResponse = {
+    ): UpdateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateOpsItemResponse]
@@ -12173,7 +12173,7 @@ package ssm {
   object UpdateResourceDataSyncResult {
     @inline
     def apply(
-        ): UpdateResourceDataSyncResult = {
+    ): UpdateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceDataSyncResult]
@@ -12213,7 +12213,7 @@ package ssm {
   object UpdateServiceSettingResult {
     @inline
     def apply(
-        ): UpdateServiceSettingResult = {
+    ): UpdateServiceSettingResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateServiceSettingResult]

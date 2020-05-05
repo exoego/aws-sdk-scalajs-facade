@@ -371,7 +371,7 @@ package emr {
   object AddTagsOutput {
     @inline
     def apply(
-        ): AddTagsOutput = {
+    ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
@@ -1120,7 +1120,7 @@ package emr {
   object DeleteSecurityConfigurationOutput {
     @inline
     def apply(
-        ): DeleteSecurityConfigurationOutput = {
+    ): DeleteSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
@@ -1479,7 +1479,7 @@ package emr {
   object GetBlockPublicAccessConfigurationInput {
     @inline
     def apply(
-        ): GetBlockPublicAccessConfigurationInput = {
+    ): GetBlockPublicAccessConfigurationInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
@@ -3294,7 +3294,7 @@ package emr {
   object PutBlockPublicAccessConfigurationOutput {
     @inline
     def apply(
-        ): PutBlockPublicAccessConfigurationOutput = {
+    ): PutBlockPublicAccessConfigurationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
@@ -3328,7 +3328,7 @@ package emr {
   object RemoveAutoScalingPolicyOutput {
     @inline
     def apply(
-        ): RemoveAutoScalingPolicyOutput = {
+    ): RemoveAutoScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
@@ -3368,7 +3368,7 @@ package emr {
   object RemoveTagsOutput {
     @inline
     def apply(
-        ): RemoveTagsOutput = {
+    ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]

@@ -150,7 +150,7 @@ package servicequotas {
   object AssociateServiceQuotaTemplateRequest {
     @inline
     def apply(
-        ): AssociateServiceQuotaTemplateRequest = {
+    ): AssociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceQuotaTemplateRequest]
@@ -163,7 +163,7 @@ package servicequotas {
   object AssociateServiceQuotaTemplateResponse {
     @inline
     def apply(
-        ): AssociateServiceQuotaTemplateResponse = {
+    ): AssociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceQuotaTemplateResponse]
@@ -200,7 +200,7 @@ package servicequotas {
   object DeleteServiceQuotaIncreaseRequestFromTemplateResponse {
     @inline
     def apply(
-        ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
+    ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceQuotaIncreaseRequestFromTemplateResponse]
@@ -213,7 +213,7 @@ package servicequotas {
   object DisassociateServiceQuotaTemplateRequest {
     @inline
     def apply(
-        ): DisassociateServiceQuotaTemplateRequest = {
+    ): DisassociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateRequest]
@@ -226,7 +226,7 @@ package servicequotas {
   object DisassociateServiceQuotaTemplateResponse {
     @inline
     def apply(
-        ): DisassociateServiceQuotaTemplateResponse = {
+    ): DisassociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
@@ -315,7 +315,7 @@ package servicequotas {
   object GetAssociationForServiceQuotaTemplateRequest {
     @inline
     def apply(
-        ): GetAssociationForServiceQuotaTemplateRequest = {
+    ): GetAssociationForServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateRequest]

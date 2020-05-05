@@ -449,7 +449,7 @@ package gamelift {
   object AcceptMatchOutput {
     @inline
     def apply(
-        ): AcceptMatchOutput = {
+    ): AcceptMatchOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptMatchOutput]
@@ -1322,7 +1322,7 @@ package gamelift {
   object CreateVpcPeeringConnectionOutput {
     @inline
     def apply(
-        ): CreateVpcPeeringConnectionOutput = {
+    ): CreateVpcPeeringConnectionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateVpcPeeringConnectionOutput]
@@ -1419,7 +1419,7 @@ package gamelift {
   object DeleteGameSessionQueueOutput {
     @inline
     def apply(
-        ): DeleteGameSessionQueueOutput = {
+    ): DeleteGameSessionQueueOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGameSessionQueueOutput]
@@ -1453,7 +1453,7 @@ package gamelift {
   object DeleteMatchmakingConfigurationOutput {
     @inline
     def apply(
-        ): DeleteMatchmakingConfigurationOutput = {
+    ): DeleteMatchmakingConfigurationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMatchmakingConfigurationOutput]
@@ -1490,7 +1490,7 @@ package gamelift {
   object DeleteMatchmakingRuleSetOutput {
     @inline
     def apply(
-        ): DeleteMatchmakingRuleSetOutput = {
+    ): DeleteMatchmakingRuleSetOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMatchmakingRuleSetOutput]
@@ -1569,7 +1569,7 @@ package gamelift {
   object DeleteVpcPeeringAuthorizationOutput {
     @inline
     def apply(
-        ): DeleteVpcPeeringAuthorizationOutput = {
+    ): DeleteVpcPeeringAuthorizationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVpcPeeringAuthorizationOutput]
@@ -1606,7 +1606,7 @@ package gamelift {
   object DeleteVpcPeeringConnectionOutput {
     @inline
     def apply(
-        ): DeleteVpcPeeringConnectionOutput = {
+    ): DeleteVpcPeeringConnectionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVpcPeeringConnectionOutput]
@@ -2547,7 +2547,7 @@ package gamelift {
   object DescribeVpcPeeringAuthorizationsInput {
     @inline
     def apply(
-        ): DescribeVpcPeeringAuthorizationsInput = {
+    ): DescribeVpcPeeringAuthorizationsInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeVpcPeeringAuthorizationsInput]
@@ -4875,7 +4875,7 @@ package gamelift {
   object StartFleetActionsOutput {
     @inline
     def apply(
-        ): StartFleetActionsOutput = {
+    ): StartFleetActionsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartFleetActionsOutput]
@@ -5065,7 +5065,7 @@ package gamelift {
   object StopFleetActionsOutput {
     @inline
     def apply(
-        ): StopFleetActionsOutput = {
+    ): StopFleetActionsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopFleetActionsOutput]
@@ -5139,7 +5139,7 @@ package gamelift {
   object StopMatchmakingOutput {
     @inline
     def apply(
-        ): StopMatchmakingOutput = {
+    ): StopMatchmakingOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopMatchmakingOutput]
@@ -5204,7 +5204,7 @@ package gamelift {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -5270,7 +5270,7 @@ package gamelift {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

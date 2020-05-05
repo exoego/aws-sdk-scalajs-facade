@@ -328,7 +328,7 @@ package iotanalytics {
   object CancelPipelineReprocessingResponse {
     @inline
     def apply(
-        ): CancelPipelineReprocessingResponse = {
+    ): CancelPipelineReprocessingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelPipelineReprocessingResponse]
@@ -1599,7 +1599,7 @@ package iotanalytics {
   object DescribeLoggingOptionsRequest {
     @inline
     def apply(
-        ): DescribeLoggingOptionsRequest = {
+    ): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
@@ -2657,7 +2657,7 @@ package iotanalytics {
   object ServiceManagedChannelS3Storage {
     @inline
     def apply(
-        ): ServiceManagedChannelS3Storage = {
+    ): ServiceManagedChannelS3Storage = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedChannelS3Storage]
@@ -2673,7 +2673,7 @@ package iotanalytics {
   object ServiceManagedChannelS3StorageSummary {
     @inline
     def apply(
-        ): ServiceManagedChannelS3StorageSummary = {
+    ): ServiceManagedChannelS3StorageSummary = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedChannelS3StorageSummary]
@@ -2689,7 +2689,7 @@ package iotanalytics {
   object ServiceManagedDatastoreS3Storage {
     @inline
     def apply(
-        ): ServiceManagedDatastoreS3Storage = {
+    ): ServiceManagedDatastoreS3Storage = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedDatastoreS3Storage]
@@ -2705,7 +2705,7 @@ package iotanalytics {
   object ServiceManagedDatastoreS3StorageSummary {
     @inline
     def apply(
-        ): ServiceManagedDatastoreS3StorageSummary = {
+    ): ServiceManagedDatastoreS3StorageSummary = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedDatastoreS3StorageSummary]
@@ -2827,7 +2827,7 @@ package iotanalytics {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -2882,7 +2882,7 @@ package iotanalytics {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

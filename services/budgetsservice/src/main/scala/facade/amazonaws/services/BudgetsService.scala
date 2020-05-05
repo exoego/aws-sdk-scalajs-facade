@@ -349,7 +349,7 @@ package budgetsservice {
   object CreateBudgetResponse {
     @inline
     def apply(
-        ): CreateBudgetResponse = {
+    ): CreateBudgetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateBudgetResponse]
@@ -395,7 +395,7 @@ package budgetsservice {
   object CreateNotificationResponse {
     @inline
     def apply(
-        ): CreateNotificationResponse = {
+    ): CreateNotificationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateNotificationResponse]
@@ -441,7 +441,7 @@ package budgetsservice {
   object CreateSubscriberResponse {
     @inline
     def apply(
-        ): CreateSubscriberResponse = {
+    ): CreateSubscriberResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriberResponse]
@@ -481,7 +481,7 @@ package budgetsservice {
   object DeleteBudgetResponse {
     @inline
     def apply(
-        ): DeleteBudgetResponse = {
+    ): DeleteBudgetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBudgetResponse]
@@ -524,7 +524,7 @@ package budgetsservice {
   object DeleteNotificationResponse {
     @inline
     def apply(
-        ): DeleteNotificationResponse = {
+    ): DeleteNotificationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNotificationResponse]
@@ -570,7 +570,7 @@ package budgetsservice {
   object DeleteSubscriberResponse {
     @inline
     def apply(
-        ): DeleteSubscriberResponse = {
+    ): DeleteSubscriberResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriberResponse]
@@ -1055,7 +1055,7 @@ package budgetsservice {
   object UpdateBudgetResponse {
     @inline
     def apply(
-        ): UpdateBudgetResponse = {
+    ): UpdateBudgetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateBudgetResponse]
@@ -1101,7 +1101,7 @@ package budgetsservice {
   object UpdateNotificationResponse {
     @inline
     def apply(
-        ): UpdateNotificationResponse = {
+    ): UpdateNotificationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotificationResponse]
@@ -1150,7 +1150,7 @@ package budgetsservice {
   object UpdateSubscriberResponse {
     @inline
     def apply(
-        ): UpdateSubscriberResponse = {
+    ): UpdateSubscriberResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriberResponse]

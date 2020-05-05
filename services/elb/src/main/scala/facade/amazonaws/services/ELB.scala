@@ -346,7 +346,7 @@ package elb {
   object AddTagsOutput {
     @inline
     def apply(
-        ): AddTagsOutput = {
+    ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
@@ -687,7 +687,7 @@ package elb {
   object CreateAppCookieStickinessPolicyOutput {
     @inline
     def apply(
-        ): CreateAppCookieStickinessPolicyOutput = {
+    ): CreateAppCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAppCookieStickinessPolicyOutput]
@@ -730,7 +730,7 @@ package elb {
   object CreateLBCookieStickinessPolicyOutput {
     @inline
     def apply(
-        ): CreateLBCookieStickinessPolicyOutput = {
+    ): CreateLBCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLBCookieStickinessPolicyOutput]
@@ -770,7 +770,7 @@ package elb {
   object CreateLoadBalancerListenerOutput {
     @inline
     def apply(
-        ): CreateLoadBalancerListenerOutput = {
+    ): CreateLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLoadBalancerListenerOutput]
@@ -816,7 +816,7 @@ package elb {
   object CreateLoadBalancerPolicyOutput {
     @inline
     def apply(
-        ): CreateLoadBalancerPolicyOutput = {
+    ): CreateLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLoadBalancerPolicyOutput]
@@ -874,7 +874,7 @@ package elb {
   object DeleteAccessPointOutput {
     @inline
     def apply(
-        ): DeleteAccessPointOutput = {
+    ): DeleteAccessPointOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccessPointOutput]
@@ -914,7 +914,7 @@ package elb {
   object DeleteLoadBalancerListenerOutput {
     @inline
     def apply(
-        ): DeleteLoadBalancerListenerOutput = {
+    ): DeleteLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoadBalancerListenerOutput]
@@ -954,7 +954,7 @@ package elb {
   object DeleteLoadBalancerPolicyOutput {
     @inline
     def apply(
-        ): DeleteLoadBalancerPolicyOutput = {
+    ): DeleteLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoadBalancerPolicyOutput]
@@ -1936,7 +1936,7 @@ package elb {
   object RemoveTagsOutput {
     @inline
     def apply(
-        ): RemoveTagsOutput = {
+    ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]
@@ -1979,7 +1979,7 @@ package elb {
   object SetLoadBalancerListenerSSLCertificateOutput {
     @inline
     def apply(
-        ): SetLoadBalancerListenerSSLCertificateOutput = {
+    ): SetLoadBalancerListenerSSLCertificateOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateOutput]
@@ -2022,7 +2022,7 @@ package elb {
   object SetLoadBalancerPoliciesForBackendServerOutput {
     @inline
     def apply(
-        ): SetLoadBalancerPoliciesForBackendServerOutput = {
+    ): SetLoadBalancerPoliciesForBackendServerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerOutput]
@@ -2065,7 +2065,7 @@ package elb {
   object SetLoadBalancerPoliciesOfListenerOutput {
     @inline
     def apply(
-        ): SetLoadBalancerPoliciesOfListenerOutput = {
+    ): SetLoadBalancerPoliciesOfListenerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerOutput]

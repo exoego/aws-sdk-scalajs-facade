@@ -234,7 +234,7 @@ package dlm {
   object DeleteLifecyclePolicyResponse {
     @inline
     def apply(
-        ): DeleteLifecyclePolicyResponse = {
+    ): DeleteLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
@@ -672,7 +672,7 @@ package dlm {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -706,7 +706,7 @@ package dlm {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -749,7 +749,7 @@ package dlm {
   object UpdateLifecyclePolicyResponse {
     @inline
     def apply(
-        ): UpdateLifecyclePolicyResponse = {
+    ): UpdateLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLifecyclePolicyResponse]

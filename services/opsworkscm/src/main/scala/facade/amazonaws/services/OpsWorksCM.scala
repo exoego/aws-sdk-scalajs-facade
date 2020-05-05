@@ -455,7 +455,7 @@ package opsworkscm {
   object DeleteBackupResponse {
     @inline
     def apply(
-        ): DeleteBackupResponse = {
+    ): DeleteBackupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBackupResponse]
@@ -486,7 +486,7 @@ package opsworkscm {
   object DeleteServerResponse {
     @inline
     def apply(
-        ): DeleteServerResponse = {
+    ): DeleteServerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerResponse]
@@ -499,7 +499,7 @@ package opsworkscm {
   object DescribeAccountAttributesRequest {
     @inline
     def apply(
-        ): DescribeAccountAttributesRequest = {
+    ): DescribeAccountAttributesRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAttributesRequest]
@@ -897,7 +897,7 @@ package opsworkscm {
   object RestoreServerResponse {
     @inline
     def apply(
-        ): RestoreServerResponse = {
+    ): RestoreServerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreServerResponse]
@@ -1145,7 +1145,7 @@ package opsworkscm {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1179,7 +1179,7 @@ package opsworkscm {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

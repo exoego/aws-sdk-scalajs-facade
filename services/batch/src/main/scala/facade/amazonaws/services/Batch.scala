@@ -313,7 +313,7 @@ package batch {
   object CancelJobResponse {
     @inline
     def apply(
-        ): CancelJobResponse = {
+    ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResponse]
@@ -797,7 +797,7 @@ package batch {
   object DeleteComputeEnvironmentResponse {
     @inline
     def apply(
-        ): DeleteComputeEnvironmentResponse = {
+    ): DeleteComputeEnvironmentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteComputeEnvironmentResponse]
@@ -828,7 +828,7 @@ package batch {
   object DeleteJobQueueResponse {
     @inline
     def apply(
-        ): DeleteJobQueueResponse = {
+    ): DeleteJobQueueResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteJobQueueResponse]
@@ -859,7 +859,7 @@ package batch {
   object DeregisterJobDefinitionResponse {
     @inline
     def apply(
-        ): DeregisterJobDefinitionResponse = {
+    ): DeregisterJobDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterJobDefinitionResponse]
@@ -1888,7 +1888,7 @@ package batch {
   object TerminateJobResponse {
     @inline
     def apply(
-        ): TerminateJobResponse = {
+    ): TerminateJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TerminateJobResponse]

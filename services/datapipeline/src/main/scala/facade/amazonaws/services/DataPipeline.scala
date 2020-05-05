@@ -144,7 +144,7 @@ package datapipeline {
   object ActivatePipelineOutput {
     @inline
     def apply(
-        ): ActivatePipelineOutput = {
+    ): ActivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ActivatePipelineOutput]
@@ -184,7 +184,7 @@ package datapipeline {
   object AddTagsOutput {
     @inline
     def apply(
-        ): AddTagsOutput = {
+    ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
@@ -275,7 +275,7 @@ package datapipeline {
   object DeactivatePipelineOutput {
     @inline
     def apply(
-        ): DeactivatePipelineOutput = {
+    ): DeactivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeactivatePipelineOutput]
@@ -1027,7 +1027,7 @@ package datapipeline {
   object RemoveTagsOutput {
     @inline
     def apply(
-        ): RemoveTagsOutput = {
+    ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]
@@ -1218,7 +1218,7 @@ package datapipeline {
   object SetTaskStatusOutput {
     @inline
     def apply(
-        ): SetTaskStatusOutput = {
+    ): SetTaskStatusOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetTaskStatusOutput]

@@ -1285,7 +1285,7 @@ package kinesisanalyticsv2 {
   object CreateApplicationSnapshotResponse {
     @inline
     def apply(
-        ): CreateApplicationSnapshotResponse = {
+    ): CreateApplicationSnapshotResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateApplicationSnapshotResponse]
@@ -1496,7 +1496,7 @@ package kinesisanalyticsv2 {
   object DeleteApplicationResponse {
     @inline
     def apply(
-        ): DeleteApplicationResponse = {
+    ): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationResponse]
@@ -1533,7 +1533,7 @@ package kinesisanalyticsv2 {
   object DeleteApplicationSnapshotResponse {
     @inline
     def apply(
-        ): DeleteApplicationSnapshotResponse = {
+    ): DeleteApplicationSnapshotResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationSnapshotResponse]
@@ -3685,7 +3685,7 @@ package kinesisanalyticsv2 {
   object StartApplicationResponse {
     @inline
     def apply(
-        ): StartApplicationResponse = {
+    ): StartApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartApplicationResponse]
@@ -3716,7 +3716,7 @@ package kinesisanalyticsv2 {
   object StopApplicationResponse {
     @inline
     def apply(
-        ): StopApplicationResponse = {
+    ): StopApplicationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopApplicationResponse]
@@ -3774,7 +3774,7 @@ package kinesisanalyticsv2 {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3808,7 +3808,7 @@ package kinesisanalyticsv2 {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

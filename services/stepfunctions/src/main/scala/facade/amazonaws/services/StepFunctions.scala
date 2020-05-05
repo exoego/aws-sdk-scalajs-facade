@@ -419,7 +419,7 @@ package stepfunctions {
   object DeleteActivityOutput {
     @inline
     def apply(
-        ): DeleteActivityOutput = {
+    ): DeleteActivityOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteActivityOutput]
@@ -450,7 +450,7 @@ package stepfunctions {
   object DeleteStateMachineOutput {
     @inline
     def apply(
-        ): DeleteStateMachineOutput = {
+    ): DeleteStateMachineOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStateMachineOutput]
@@ -1623,7 +1623,7 @@ package stepfunctions {
   object SendTaskFailureOutput {
     @inline
     def apply(
-        ): SendTaskFailureOutput = {
+    ): SendTaskFailureOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendTaskFailureOutput]
@@ -1654,7 +1654,7 @@ package stepfunctions {
   object SendTaskHeartbeatOutput {
     @inline
     def apply(
-        ): SendTaskHeartbeatOutput = {
+    ): SendTaskHeartbeatOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendTaskHeartbeatOutput]
@@ -1688,7 +1688,7 @@ package stepfunctions {
   object SendTaskSuccessOutput {
     @inline
     def apply(
-        ): SendTaskSuccessOutput = {
+    ): SendTaskSuccessOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendTaskSuccessOutput]
@@ -1927,7 +1927,7 @@ package stepfunctions {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -2192,7 +2192,7 @@ package stepfunctions {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

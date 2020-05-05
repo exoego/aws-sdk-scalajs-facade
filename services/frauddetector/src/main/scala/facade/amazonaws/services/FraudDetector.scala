@@ -472,7 +472,7 @@ package frauddetector {
   object CreateVariableResult {
     @inline
     def apply(
-        ): CreateVariableResult = {
+    ): CreateVariableResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateVariableResult]
@@ -525,7 +525,7 @@ package frauddetector {
   object DeleteDetectorVersionResult {
     @inline
     def apply(
-        ): DeleteDetectorVersionResult = {
+    ): DeleteDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDetectorVersionResult]
@@ -556,7 +556,7 @@ package frauddetector {
   object DeleteEventResult {
     @inline
     def apply(
-        ): DeleteEventResult = {
+    ): DeleteEventResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEventResult]
@@ -1575,7 +1575,7 @@ package frauddetector {
   object PutDetectorResult {
     @inline
     def apply(
-        ): PutDetectorResult = {
+    ): PutDetectorResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDetectorResult]
@@ -1621,7 +1621,7 @@ package frauddetector {
   object PutExternalModelResult {
     @inline
     def apply(
-        ): PutExternalModelResult = {
+    ): PutExternalModelResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutExternalModelResult]
@@ -1667,7 +1667,7 @@ package frauddetector {
   object PutModelResult {
     @inline
     def apply(
-        ): PutModelResult = {
+    ): PutModelResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutModelResult]
@@ -1701,7 +1701,7 @@ package frauddetector {
   object PutOutcomeResult {
     @inline
     def apply(
-        ): PutOutcomeResult = {
+    ): PutOutcomeResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutOutcomeResult]
@@ -1856,7 +1856,7 @@ package frauddetector {
   object UpdateDetectorVersionMetadataResult {
     @inline
     def apply(
-        ): UpdateDetectorVersionMetadataResult = {
+    ): UpdateDetectorVersionMetadataResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDetectorVersionMetadataResult]
@@ -1902,7 +1902,7 @@ package frauddetector {
   object UpdateDetectorVersionResult {
     @inline
     def apply(
-        ): UpdateDetectorVersionResult = {
+    ): UpdateDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDetectorVersionResult]
@@ -1939,7 +1939,7 @@ package frauddetector {
   object UpdateDetectorVersionStatusResult {
     @inline
     def apply(
-        ): UpdateDetectorVersionStatusResult = {
+    ): UpdateDetectorVersionStatusResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDetectorVersionStatusResult]
@@ -1982,7 +1982,7 @@ package frauddetector {
   object UpdateModelVersionResult {
     @inline
     def apply(
-        ): UpdateModelVersionResult = {
+    ): UpdateModelVersionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateModelVersionResult]
@@ -2016,7 +2016,7 @@ package frauddetector {
   object UpdateRuleMetadataResult {
     @inline
     def apply(
-        ): UpdateRuleMetadataResult = {
+    ): UpdateRuleMetadataResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRuleMetadataResult]
@@ -2102,7 +2102,7 @@ package frauddetector {
   object UpdateVariableResult {
     @inline
     def apply(
-        ): UpdateVariableResult = {
+    ): UpdateVariableResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateVariableResult]

@@ -81,7 +81,7 @@ package iot1clickdevicesservice {
   object Attributes {
     @inline
     def apply(
-        ): Attributes = {
+    ): Attributes = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Attributes]
@@ -625,7 +625,7 @@ package iot1clickdevicesservice {
   object UpdateDeviceStateResponse {
     @inline
     def apply(
-        ): UpdateDeviceStateResponse = {
+    ): UpdateDeviceStateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDeviceStateResponse]

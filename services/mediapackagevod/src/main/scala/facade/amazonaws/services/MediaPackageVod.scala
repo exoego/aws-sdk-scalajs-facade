@@ -470,7 +470,7 @@ package mediapackagevod {
   object DeleteAssetResponse {
     @inline
     def apply(
-        ): DeleteAssetResponse = {
+    ): DeleteAssetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAssetResponse]
@@ -501,7 +501,7 @@ package mediapackagevod {
   object DeletePackagingConfigurationResponse {
     @inline
     def apply(
-        ): DeletePackagingConfigurationResponse = {
+    ): DeletePackagingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePackagingConfigurationResponse]
@@ -532,7 +532,7 @@ package mediapackagevod {
   object DeletePackagingGroupResponse {
     @inline
     def apply(
-        ): DeletePackagingGroupResponse = {
+    ): DeletePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePackagingGroupResponse]

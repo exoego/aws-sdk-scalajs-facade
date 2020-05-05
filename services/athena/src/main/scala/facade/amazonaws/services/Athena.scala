@@ -330,7 +330,7 @@ package athena {
   object CreateWorkGroupOutput {
     @inline
     def apply(
-        ): CreateWorkGroupOutput = {
+    ): CreateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateWorkGroupOutput]
@@ -380,7 +380,7 @@ package athena {
   object DeleteNamedQueryOutput {
     @inline
     def apply(
-        ): DeleteNamedQueryOutput = {
+    ): DeleteNamedQueryOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNamedQueryOutput]
@@ -414,7 +414,7 @@ package athena {
   object DeleteWorkGroupOutput {
     @inline
     def apply(
-        ): DeleteWorkGroupOutput = {
+    ): DeleteWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkGroupOutput]
@@ -1135,7 +1135,7 @@ package athena {
   object StopQueryExecutionOutput {
     @inline
     def apply(
-        ): StopQueryExecutionOutput = {
+    ): StopQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopQueryExecutionOutput]
@@ -1191,7 +1191,7 @@ package athena {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -1275,7 +1275,7 @@ package athena {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
@@ -1315,7 +1315,7 @@ package athena {
   object UpdateWorkGroupOutput {
     @inline
     def apply(
-        ): UpdateWorkGroupOutput = {
+    ): UpdateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateWorkGroupOutput]

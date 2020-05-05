@@ -136,7 +136,7 @@ package iot1clickprojects {
   object AssociateDeviceWithPlacementResponse {
     @inline
     def apply(
-        ): AssociateDeviceWithPlacementResponse = {
+    ): AssociateDeviceWithPlacementResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDeviceWithPlacementResponse]
@@ -173,7 +173,7 @@ package iot1clickprojects {
   object CreatePlacementResponse {
     @inline
     def apply(
-        ): CreatePlacementResponse = {
+    ): CreatePlacementResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreatePlacementResponse]
@@ -213,7 +213,7 @@ package iot1clickprojects {
   object CreateProjectResponse {
     @inline
     def apply(
-        ): CreateProjectResponse = {
+    ): CreateProjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateProjectResponse]
@@ -247,7 +247,7 @@ package iot1clickprojects {
   object DeletePlacementResponse {
     @inline
     def apply(
-        ): DeletePlacementResponse = {
+    ): DeletePlacementResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePlacementResponse]
@@ -278,7 +278,7 @@ package iot1clickprojects {
   object DeleteProjectResponse {
     @inline
     def apply(
-        ): DeleteProjectResponse = {
+    ): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProjectResponse]
@@ -412,7 +412,7 @@ package iot1clickprojects {
   object DisassociateDeviceFromPlacementResponse {
     @inline
     def apply(
-        ): DisassociateDeviceFromPlacementResponse = {
+    ): DisassociateDeviceFromPlacementResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDeviceFromPlacementResponse]
@@ -761,7 +761,7 @@ package iot1clickprojects {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -795,7 +795,7 @@ package iot1clickprojects {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -832,7 +832,7 @@ package iot1clickprojects {
   object UpdatePlacementResponse {
     @inline
     def apply(
-        ): UpdatePlacementResponse = {
+    ): UpdatePlacementResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePlacementResponse]
@@ -869,7 +869,7 @@ package iot1clickprojects {
   object UpdateProjectResponse {
     @inline
     def apply(
-        ): UpdateProjectResponse = {
+    ): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateProjectResponse]

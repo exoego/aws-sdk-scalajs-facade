@@ -334,7 +334,7 @@ package dms {
   object AddTagsToResourceResponse {
     @inline
     def apply(
-        ): AddTagsToResourceResponse = {
+    ): AddTagsToResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsToResourceResponse]
@@ -1115,7 +1115,7 @@ package dms {
   object DeleteReplicationSubnetGroupResponse {
     @inline
     def apply(
-        ): DeleteReplicationSubnetGroupResponse = {
+    ): DeleteReplicationSubnetGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReplicationSubnetGroupResponse]
@@ -1171,7 +1171,7 @@ package dms {
   object DescribeAccountAttributesMessage {
     @inline
     def apply(
-        ): DescribeAccountAttributesMessage = {
+    ): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAttributesMessage]
@@ -3245,7 +3245,7 @@ package dms {
   object RemoveTagsFromResourceResponse {
     @inline
     def apply(
-        ): RemoveTagsFromResourceResponse = {
+    ): RemoveTagsFromResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]

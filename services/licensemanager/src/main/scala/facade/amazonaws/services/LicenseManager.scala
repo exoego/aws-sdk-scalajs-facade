@@ -248,7 +248,7 @@ package licensemanager {
   object DeleteLicenseConfigurationResponse {
     @inline
     def apply(
-        ): DeleteLicenseConfigurationResponse = {
+    ): DeleteLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLicenseConfigurationResponse]
@@ -368,7 +368,7 @@ package licensemanager {
   object GetServiceSettingsRequest {
     @inline
     def apply(
-        ): GetServiceSettingsRequest = {
+    ): GetServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetServiceSettingsRequest]
@@ -1164,7 +1164,7 @@ package licensemanager {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1198,7 +1198,7 @@ package licensemanager {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -1252,7 +1252,7 @@ package licensemanager {
   object UpdateLicenseConfigurationResponse {
     @inline
     def apply(
-        ): UpdateLicenseConfigurationResponse = {
+    ): UpdateLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLicenseConfigurationResponse]
@@ -1291,7 +1291,7 @@ package licensemanager {
   object UpdateLicenseSpecificationsForResourceResponse {
     @inline
     def apply(
-        ): UpdateLicenseSpecificationsForResourceResponse = {
+    ): UpdateLicenseSpecificationsForResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLicenseSpecificationsForResourceResponse]
@@ -1333,7 +1333,7 @@ package licensemanager {
   object UpdateServiceSettingsResponse {
     @inline
     def apply(
-        ): UpdateServiceSettingsResponse = {
+    ): UpdateServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateServiceSettingsResponse]

@@ -2351,7 +2351,7 @@ package connect {
   object StopContactResponse {
     @inline
     def apply(
-        ): StopContactResponse = {
+    ): StopContactResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopContactResponse]
@@ -2461,7 +2461,7 @@ package connect {
   object UpdateContactAttributesResponse {
     @inline
     def apply(
-        ): UpdateContactAttributesResponse = {
+    ): UpdateContactAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateContactAttributesResponse]

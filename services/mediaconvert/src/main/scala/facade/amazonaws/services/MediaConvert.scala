@@ -703,7 +703,7 @@ package mediaconvert {
   object AssociateCertificateResponse {
     @inline
     def apply(
-        ): AssociateCertificateResponse = {
+    ): AssociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateCertificateResponse]
@@ -1230,7 +1230,7 @@ package mediaconvert {
   object CancelJobResponse {
     @inline
     def apply(
-        ): CancelJobResponse = {
+    ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResponse]
@@ -2463,7 +2463,7 @@ package mediaconvert {
   object DeleteJobTemplateResponse {
     @inline
     def apply(
-        ): DeleteJobTemplateResponse = {
+    ): DeleteJobTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteJobTemplateResponse]
@@ -2494,7 +2494,7 @@ package mediaconvert {
   object DeletePresetResponse {
     @inline
     def apply(
-        ): DeletePresetResponse = {
+    ): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePresetResponse]
@@ -2525,7 +2525,7 @@ package mediaconvert {
   object DeleteQueueResponse {
     @inline
     def apply(
-        ): DeleteQueueResponse = {
+    ): DeleteQueueResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQueueResponse]
@@ -2631,7 +2631,7 @@ package mediaconvert {
   object DisassociateCertificateResponse {
     @inline
     def apply(
-        ): DisassociateCertificateResponse = {
+    ): DisassociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateCertificateResponse]
@@ -9072,7 +9072,7 @@ package mediaconvert {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -9381,7 +9381,7 @@ package mediaconvert {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

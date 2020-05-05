@@ -476,7 +476,7 @@ package cloudwatch {
   object DeleteAnomalyDetectorOutput {
     @inline
     def apply(
-        ): DeleteAnomalyDetectorOutput = {
+    ): DeleteAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAnomalyDetectorOutput]
@@ -507,7 +507,7 @@ package cloudwatch {
   object DeleteDashboardsOutput {
     @inline
     def apply(
-        ): DeleteDashboardsOutput = {
+    ): DeleteDashboardsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDashboardsOutput]
@@ -1810,7 +1810,7 @@ package cloudwatch {
   object PutAnomalyDetectorOutput {
     @inline
     def apply(
-        ): PutAnomalyDetectorOutput = {
+    ): PutAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAnomalyDetectorOutput]
@@ -1886,7 +1886,7 @@ package cloudwatch {
   object PutInsightRuleOutput {
     @inline
     def apply(
-        ): PutInsightRuleOutput = {
+    ): PutInsightRuleOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutInsightRuleOutput]
@@ -2229,7 +2229,7 @@ package cloudwatch {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -2263,7 +2263,7 @@ package cloudwatch {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

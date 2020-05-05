@@ -96,7 +96,7 @@ package elasticinference {
   object TagResourceResult {
     @inline
     def apply(
-        ): TagResourceResult = {
+    ): TagResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResult]
@@ -130,7 +130,7 @@ package elasticinference {
   object UntagResourceResult {
     @inline
     def apply(
-        ): UntagResourceResult = {
+    ): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResult]

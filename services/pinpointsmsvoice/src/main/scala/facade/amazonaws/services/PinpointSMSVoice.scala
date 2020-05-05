@@ -150,7 +150,7 @@ package pinpointsmsvoice {
   object CreateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetEventDestinationResponse = {
+    ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
@@ -185,7 +185,7 @@ package pinpointsmsvoice {
   object CreateConfigurationSetResponse {
     @inline
     def apply(
-        ): CreateConfigurationSetResponse = {
+    ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
@@ -222,7 +222,7 @@ package pinpointsmsvoice {
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetEventDestinationResponse = {
+    ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
@@ -256,7 +256,7 @@ package pinpointsmsvoice {
   object DeleteConfigurationSetResponse {
     @inline
     def apply(
-        ): DeleteConfigurationSetResponse = {
+    ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
@@ -608,7 +608,7 @@ package pinpointsmsvoice {
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
     def apply(
-        ): UpdateConfigurationSetEventDestinationResponse = {
+    ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]

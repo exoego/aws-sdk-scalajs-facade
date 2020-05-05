@@ -363,7 +363,7 @@ package servicediscovery {
   object DeleteServiceResponse {
     @inline
     def apply(
-        ): DeleteServiceResponse = {
+    ): DeleteServiceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceResponse]

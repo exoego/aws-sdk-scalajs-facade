@@ -2219,7 +2219,7 @@ package appmesh {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -2308,7 +2308,7 @@ package appmesh {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

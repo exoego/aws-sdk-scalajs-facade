@@ -265,7 +265,7 @@ package autoscalingplans {
   object DeleteScalingPlanResponse {
     @inline
     def apply(
-        ): DeleteScalingPlanResponse = {
+    ): DeleteScalingPlanResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScalingPlanResponse]
@@ -961,7 +961,7 @@ package autoscalingplans {
   object UpdateScalingPlanResponse {
     @inline
     def apply(
-        ): UpdateScalingPlanResponse = {
+    ): UpdateScalingPlanResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateScalingPlanResponse]

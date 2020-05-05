@@ -1354,7 +1354,7 @@ package s3 {
   object ContinuationEvent {
     @inline
     def apply(
-        ): ContinuationEvent = {
+    ): ContinuationEvent = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ContinuationEvent]
@@ -2431,7 +2431,7 @@ package s3 {
   object EndEvent {
     @inline
     def apply(
-        ): EndEvent = {
+    ): EndEvent = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EndEvent]
@@ -5756,7 +5756,7 @@ package s3 {
   object ParquetInput {
     @inline
     def apply(
-        ): ParquetInput = {
+    ): ParquetInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ParquetInput]
@@ -7444,7 +7444,7 @@ package s3 {
   object SSES3 {
     @inline
     def apply(
-        ): SSES3 = {
+    ): SSES3 = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SSES3]

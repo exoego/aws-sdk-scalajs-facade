@@ -1156,7 +1156,7 @@ package cognitosync {
   object SubscribeToDatasetResponse {
     @inline
     def apply(
-        ): SubscribeToDatasetResponse = {
+    ): SubscribeToDatasetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SubscribeToDatasetResponse]
@@ -1210,7 +1210,7 @@ package cognitosync {
   object UnsubscribeFromDatasetResponse {
     @inline
     def apply(
-        ): UnsubscribeFromDatasetResponse = {
+    ): UnsubscribeFromDatasetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnsubscribeFromDatasetResponse]

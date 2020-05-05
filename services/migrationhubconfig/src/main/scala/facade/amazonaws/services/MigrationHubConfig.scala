@@ -136,7 +136,7 @@ package migrationhubconfig {
   object GetHomeRegionRequest {
     @inline
     def apply(
-        ): GetHomeRegionRequest = {
+    ): GetHomeRegionRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetHomeRegionRequest]

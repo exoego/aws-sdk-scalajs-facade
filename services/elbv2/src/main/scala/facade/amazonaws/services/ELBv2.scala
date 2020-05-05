@@ -381,7 +381,7 @@ package elbv2 {
   object AddTagsOutput {
     @inline
     def apply(
-        ): AddTagsOutput = {
+    ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
@@ -825,7 +825,7 @@ package elbv2 {
   object DeleteListenerOutput {
     @inline
     def apply(
-        ): DeleteListenerOutput = {
+    ): DeleteListenerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteListenerOutput]
@@ -856,7 +856,7 @@ package elbv2 {
   object DeleteLoadBalancerOutput {
     @inline
     def apply(
-        ): DeleteLoadBalancerOutput = {
+    ): DeleteLoadBalancerOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoadBalancerOutput]
@@ -887,7 +887,7 @@ package elbv2 {
   object DeleteRuleOutput {
     @inline
     def apply(
-        ): DeleteRuleOutput = {
+    ): DeleteRuleOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRuleOutput]
@@ -918,7 +918,7 @@ package elbv2 {
   object DeleteTargetGroupOutput {
     @inline
     def apply(
-        ): DeleteTargetGroupOutput = {
+    ): DeleteTargetGroupOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTargetGroupOutput]
@@ -952,7 +952,7 @@ package elbv2 {
   object DeregisterTargetsOutput {
     @inline
     def apply(
-        ): DeregisterTargetsOutput = {
+    ): DeregisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterTargetsOutput]
@@ -2127,7 +2127,7 @@ package elbv2 {
   object RegisterTargetsOutput {
     @inline
     def apply(
-        ): RegisterTargetsOutput = {
+    ): RegisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterTargetsOutput]
@@ -2161,7 +2161,7 @@ package elbv2 {
   object RemoveListenerCertificatesOutput {
     @inline
     def apply(
-        ): RemoveListenerCertificatesOutput = {
+    ): RemoveListenerCertificatesOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveListenerCertificatesOutput]
@@ -2195,7 +2195,7 @@ package elbv2 {
   object RemoveTagsOutput {
     @inline
     def apply(
-        ): RemoveTagsOutput = {
+    ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]

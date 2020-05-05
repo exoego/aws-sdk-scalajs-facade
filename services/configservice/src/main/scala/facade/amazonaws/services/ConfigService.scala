@@ -2000,7 +2000,7 @@ package configservice {
   object DeleteEvaluationResultsResponse {
     @inline
     def apply(
-        ): DeleteEvaluationResultsResponse = {
+    ): DeleteEvaluationResultsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEvaluationResultsResponse]
@@ -2091,7 +2091,7 @@ package configservice {
   object DeleteRemediationConfigurationResponse {
     @inline
     def apply(
-        ): DeleteRemediationConfigurationResponse = {
+    ): DeleteRemediationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRemediationConfigurationResponse]
@@ -6319,7 +6319,7 @@ package configservice {
   object StartConfigRulesEvaluationResponse {
     @inline
     def apply(
-        ): StartConfigRulesEvaluationResponse = {
+    ): StartConfigRulesEvaluationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartConfigRulesEvaluationResponse]

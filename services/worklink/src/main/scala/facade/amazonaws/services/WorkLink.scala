@@ -234,7 +234,7 @@ package worklink {
   object AssociateDomainResponse {
     @inline
     def apply(
-        ): AssociateDomainResponse = {
+    ): AssociateDomainResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDomainResponse]
@@ -394,7 +394,7 @@ package worklink {
   object DeleteFleetResponse {
     @inline
     def apply(
-        ): DeleteFleetResponse = {
+    ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFleetResponse]
@@ -817,7 +817,7 @@ package worklink {
   object DisassociateDomainResponse {
     @inline
     def apply(
-        ): DisassociateDomainResponse = {
+    ): DisassociateDomainResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDomainResponse]
@@ -851,7 +851,7 @@ package worklink {
   object DisassociateWebsiteAuthorizationProviderResponse {
     @inline
     def apply(
-        ): DisassociateWebsiteAuthorizationProviderResponse = {
+    ): DisassociateWebsiteAuthorizationProviderResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderResponse]
@@ -885,7 +885,7 @@ package worklink {
   object DisassociateWebsiteCertificateAuthorityResponse {
     @inline
     def apply(
-        ): DisassociateWebsiteCertificateAuthorityResponse = {
+    ): DisassociateWebsiteCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
@@ -1244,7 +1244,7 @@ package worklink {
   object RestoreDomainAccessResponse {
     @inline
     def apply(
-        ): RestoreDomainAccessResponse = {
+    ): RestoreDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreDomainAccessResponse]
@@ -1278,7 +1278,7 @@ package worklink {
   object RevokeDomainAccessResponse {
     @inline
     def apply(
-        ): RevokeDomainAccessResponse = {
+    ): RevokeDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokeDomainAccessResponse]
@@ -1312,7 +1312,7 @@ package worklink {
   object SignOutUserResponse {
     @inline
     def apply(
-        ): SignOutUserResponse = {
+    ): SignOutUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SignOutUserResponse]
@@ -1346,7 +1346,7 @@ package worklink {
   object UpdateAuditStreamConfigurationResponse {
     @inline
     def apply(
-        ): UpdateAuditStreamConfigurationResponse = {
+    ): UpdateAuditStreamConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAuditStreamConfigurationResponse]
@@ -1386,7 +1386,7 @@ package worklink {
   object UpdateCompanyNetworkConfigurationResponse {
     @inline
     def apply(
-        ): UpdateCompanyNetworkConfigurationResponse = {
+    ): UpdateCompanyNetworkConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationResponse]
@@ -1420,7 +1420,7 @@ package worklink {
   object UpdateDevicePolicyConfigurationResponse {
     @inline
     def apply(
-        ): UpdateDevicePolicyConfigurationResponse = {
+    ): UpdateDevicePolicyConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDevicePolicyConfigurationResponse]
@@ -1457,7 +1457,7 @@ package worklink {
   object UpdateDomainMetadataResponse {
     @inline
     def apply(
-        ): UpdateDomainMetadataResponse = {
+    ): UpdateDomainMetadataResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDomainMetadataResponse]
@@ -1496,7 +1496,7 @@ package worklink {
   object UpdateFleetMetadataResponse {
     @inline
     def apply(
-        ): UpdateFleetMetadataResponse = {
+    ): UpdateFleetMetadataResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFleetMetadataResponse]
@@ -1535,7 +1535,7 @@ package worklink {
   object UpdateIdentityProviderConfigurationResponse {
     @inline
     def apply(
-        ): UpdateIdentityProviderConfigurationResponse = {
+    ): UpdateIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationResponse]

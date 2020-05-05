@@ -271,7 +271,7 @@ package guardduty {
   object AcceptInvitationResponse {
     @inline
     def apply(
-        ): AcceptInvitationResponse = {
+    ): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptInvitationResponse]
@@ -388,7 +388,7 @@ package guardduty {
   object ArchiveFindingsResponse {
     @inline
     def apply(
-        ): ArchiveFindingsResponse = {
+    ): ArchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ArchiveFindingsResponse]
@@ -786,7 +786,7 @@ package guardduty {
   object CreateSampleFindingsResponse {
     @inline
     def apply(
-        ): CreateSampleFindingsResponse = {
+    ): CreateSampleFindingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSampleFindingsResponse]
@@ -907,7 +907,7 @@ package guardduty {
   object DeleteDetectorResponse {
     @inline
     def apply(
-        ): DeleteDetectorResponse = {
+    ): DeleteDetectorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDetectorResponse]
@@ -941,7 +941,7 @@ package guardduty {
   object DeleteFilterResponse {
     @inline
     def apply(
-        ): DeleteFilterResponse = {
+    ): DeleteFilterResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFilterResponse]
@@ -975,7 +975,7 @@ package guardduty {
   object DeleteIPSetResponse {
     @inline
     def apply(
-        ): DeleteIPSetResponse = {
+    ): DeleteIPSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIPSetResponse]
@@ -1084,7 +1084,7 @@ package guardduty {
   object DeletePublishingDestinationResponse {
     @inline
     def apply(
-        ): DeletePublishingDestinationResponse = {
+    ): DeletePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePublishingDestinationResponse]
@@ -1118,7 +1118,7 @@ package guardduty {
   object DeleteThreatIntelSetResponse {
     @inline
     def apply(
-        ): DeleteThreatIntelSetResponse = {
+    ): DeleteThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThreatIntelSetResponse]
@@ -1264,7 +1264,7 @@ package guardduty {
   object DisassociateFromMasterAccountResponse {
     @inline
     def apply(
-        ): DisassociateFromMasterAccountResponse = {
+    ): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
@@ -1772,7 +1772,7 @@ package guardduty {
   object GetInvitationsCountRequest {
     @inline
     def apply(
-        ): GetInvitationsCountRequest = {
+    ): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetInvitationsCountRequest]
@@ -3085,7 +3085,7 @@ package guardduty {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -3166,7 +3166,7 @@ package guardduty {
   object UnarchiveFindingsResponse {
     @inline
     def apply(
-        ): UnarchiveFindingsResponse = {
+    ): UnarchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnarchiveFindingsResponse]
@@ -3224,7 +3224,7 @@ package guardduty {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -3263,7 +3263,7 @@ package guardduty {
   object UpdateDetectorResponse {
     @inline
     def apply(
-        ): UpdateDetectorResponse = {
+    ): UpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDetectorResponse]
@@ -3354,7 +3354,7 @@ package guardduty {
   object UpdateFindingsFeedbackResponse {
     @inline
     def apply(
-        ): UpdateFindingsFeedbackResponse = {
+    ): UpdateFindingsFeedbackResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFindingsFeedbackResponse]
@@ -3397,7 +3397,7 @@ package guardduty {
   object UpdateIPSetResponse {
     @inline
     def apply(
-        ): UpdateIPSetResponse = {
+    ): UpdateIPSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIPSetResponse]
@@ -3434,7 +3434,7 @@ package guardduty {
   object UpdatePublishingDestinationResponse {
     @inline
     def apply(
-        ): UpdatePublishingDestinationResponse = {
+    ): UpdatePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePublishingDestinationResponse]
@@ -3477,7 +3477,7 @@ package guardduty {
   object UpdateThreatIntelSetResponse {
     @inline
     def apply(
-        ): UpdateThreatIntelSetResponse = {
+    ): UpdateThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThreatIntelSetResponse]

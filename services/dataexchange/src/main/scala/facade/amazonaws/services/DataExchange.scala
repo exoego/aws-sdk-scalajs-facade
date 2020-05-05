@@ -1599,7 +1599,7 @@ package dataexchange {
   object StartJobResponse {
     @inline
     def apply(
-        ): StartJobResponse = {
+    ): StartJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartJobResponse]

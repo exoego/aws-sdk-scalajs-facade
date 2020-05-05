@@ -344,7 +344,7 @@ package kinesisvideo {
   object DeleteSignalingChannelOutput {
     @inline
     def apply(
-        ): DeleteSignalingChannelOutput = {
+    ): DeleteSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSignalingChannelOutput]
@@ -378,7 +378,7 @@ package kinesisvideo {
   object DeleteStreamOutput {
     @inline
     def apply(
-        ): DeleteStreamOutput = {
+    ): DeleteStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStreamOutput]
@@ -886,7 +886,7 @@ package kinesisvideo {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -923,7 +923,7 @@ package kinesisvideo {
   object TagStreamOutput {
     @inline
     def apply(
-        ): TagStreamOutput = {
+    ): TagStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagStreamOutput]
@@ -957,7 +957,7 @@ package kinesisvideo {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
@@ -994,7 +994,7 @@ package kinesisvideo {
   object UntagStreamOutput {
     @inline
     def apply(
-        ): UntagStreamOutput = {
+    ): UntagStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagStreamOutput]
@@ -1045,7 +1045,7 @@ package kinesisvideo {
   object UpdateDataRetentionOutput {
     @inline
     def apply(
-        ): UpdateDataRetentionOutput = {
+    ): UpdateDataRetentionOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDataRetentionOutput]
@@ -1084,7 +1084,7 @@ package kinesisvideo {
   object UpdateSignalingChannelOutput {
     @inline
     def apply(
-        ): UpdateSignalingChannelOutput = {
+    ): UpdateSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSignalingChannelOutput]
@@ -1127,7 +1127,7 @@ package kinesisvideo {
   object UpdateStreamOutput {
     @inline
     def apply(
-        ): UpdateStreamOutput = {
+    ): UpdateStreamOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateStreamOutput]

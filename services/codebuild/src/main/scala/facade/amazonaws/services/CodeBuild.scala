@@ -885,7 +885,7 @@ package codebuild {
   object DeleteProjectOutput {
     @inline
     def apply(
-        ): DeleteProjectOutput = {
+    ): DeleteProjectOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProjectOutput]
@@ -916,7 +916,7 @@ package codebuild {
   object DeleteReportGroupOutput {
     @inline
     def apply(
-        ): DeleteReportGroupOutput = {
+    ): DeleteReportGroupOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReportGroupOutput]
@@ -947,7 +947,7 @@ package codebuild {
   object DeleteReportOutput {
     @inline
     def apply(
-        ): DeleteReportOutput = {
+    ): DeleteReportOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReportOutput]
@@ -978,7 +978,7 @@ package codebuild {
   object DeleteResourcePolicyOutput {
     @inline
     def apply(
-        ): DeleteResourcePolicyOutput = {
+    ): DeleteResourcePolicyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourcePolicyOutput]
@@ -1043,7 +1043,7 @@ package codebuild {
   object DeleteWebhookOutput {
     @inline
     def apply(
-        ): DeleteWebhookOutput = {
+    ): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
@@ -1373,7 +1373,7 @@ package codebuild {
   object InvalidateProjectCacheOutput {
     @inline
     def apply(
-        ): InvalidateProjectCacheOutput = {
+    ): InvalidateProjectCacheOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[InvalidateProjectCacheOutput]
@@ -1483,7 +1483,7 @@ package codebuild {
   object ListCuratedEnvironmentImagesInput {
     @inline
     def apply(
-        ): ListCuratedEnvironmentImagesInput = {
+    ): ListCuratedEnvironmentImagesInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListCuratedEnvironmentImagesInput]
@@ -1778,7 +1778,7 @@ package codebuild {
   object ListSourceCredentialsInput {
     @inline
     def apply(
-        ): ListSourceCredentialsInput = {
+    ): ListSourceCredentialsInput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListSourceCredentialsInput]

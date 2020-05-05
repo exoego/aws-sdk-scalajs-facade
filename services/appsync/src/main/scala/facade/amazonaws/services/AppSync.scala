@@ -894,7 +894,7 @@ package appsync {
   object DeleteApiCacheResponse {
     @inline
     def apply(
-        ): DeleteApiCacheResponse = {
+    ): DeleteApiCacheResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApiCacheResponse]
@@ -928,7 +928,7 @@ package appsync {
   object DeleteApiKeyResponse {
     @inline
     def apply(
-        ): DeleteApiKeyResponse = {
+    ): DeleteApiKeyResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApiKeyResponse]
@@ -962,7 +962,7 @@ package appsync {
   object DeleteDataSourceResponse {
     @inline
     def apply(
-        ): DeleteDataSourceResponse = {
+    ): DeleteDataSourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDataSourceResponse]
@@ -996,7 +996,7 @@ package appsync {
   object DeleteFunctionResponse {
     @inline
     def apply(
-        ): DeleteFunctionResponse = {
+    ): DeleteFunctionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFunctionResponse]
@@ -1027,7 +1027,7 @@ package appsync {
   object DeleteGraphqlApiResponse {
     @inline
     def apply(
-        ): DeleteGraphqlApiResponse = {
+    ): DeleteGraphqlApiResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGraphqlApiResponse]
@@ -1064,7 +1064,7 @@ package appsync {
   object DeleteResolverResponse {
     @inline
     def apply(
-        ): DeleteResolverResponse = {
+    ): DeleteResolverResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResolverResponse]
@@ -1098,7 +1098,7 @@ package appsync {
   object DeleteTypeResponse {
     @inline
     def apply(
-        ): DeleteTypeResponse = {
+    ): DeleteTypeResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTypeResponse]
@@ -1226,7 +1226,7 @@ package appsync {
   object FlushApiCacheResponse {
     @inline
     def apply(
-        ): FlushApiCacheResponse = {
+    ): FlushApiCacheResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[FlushApiCacheResponse]
@@ -2334,7 +2334,7 @@ package appsync {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -2407,7 +2407,7 @@ package appsync {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

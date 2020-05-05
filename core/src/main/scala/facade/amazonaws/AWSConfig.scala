@@ -70,7 +70,8 @@ object AWSConfig {
             endpoint: js.UndefOr[String] = js.undefined,
             apiVersion: js.UndefOr[String] = js.undefined,
             apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
-            clientSideMonitoring: js.UndefOr[Boolean] = js.undefined): AWSConfig = {
+            clientSideMonitoring: js.UndefOr[Boolean] = js.undefined
+  ): AWSConfig = {
     val __obj = js.Dynamic.literal()
     computeChecksums.foreach(__v => __obj.updateDynamic("computeChecksums")(__v))
     convertResponseTypes.foreach(__v => __obj.updateDynamic("convertResponseTypes")(__v))
@@ -124,7 +125,8 @@ object HttpOptions {
             connectTimeout: js.UndefOr[Int] = js.undefined,
             timeout: js.UndefOr[Int] = js.undefined,
             xhrAsync: js.UndefOr[Boolean] = js.undefined,
-            xhrWithCredentials: js.UndefOr[Boolean] = js.undefined): HttpOptions = {
+            xhrWithCredentials: js.UndefOr[Boolean] = js.undefined
+  ): HttpOptions = {
     val __obj = js.Dynamic.literal()
     proxy.foreach(__v => __obj.updateDynamic("proxy")(__v))
     agent.foreach(__v => __obj.updateDynamic("agent")(__v))
@@ -154,7 +156,8 @@ object ParamValidation {
   def apply(min: js.UndefOr[Boolean] = js.undefined,
             max: js.UndefOr[Boolean] = js.undefined,
             pattern: js.UndefOr[Boolean] = js.undefined,
-            enum: js.UndefOr[Boolean] = js.undefined): ParamValidation = {
+            enum: js.UndefOr[Boolean] = js.undefined
+  ): ParamValidation = {
     val __obj = js.Dynamic.literal()
     min.foreach(__v => __obj.updateDynamic("min")(__v))
     max.foreach(__v => __obj.updateDynamic("max")(__v))
@@ -171,7 +174,8 @@ trait RetryDelayOptions extends js.Object {
 object RetryDelayOptions {
   @inline
   def apply(base: js.UndefOr[Double] = js.undefined,
-            customBackoff: js.UndefOr[Double => Double] = js.undefined): RetryDelayOptions = {
+            customBackoff: js.UndefOr[Double => Double] = js.undefined
+  ): RetryDelayOptions = {
     val __obj = js.Dynamic.literal()
     base.foreach(__v => __obj.updateDynamic("base")(__v))
     customBackoff.foreach(__v => __obj.updateDynamic("customBackoff")(__v))

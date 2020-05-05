@@ -483,7 +483,7 @@ package autoscaling {
   object AttachLoadBalancerTargetGroupsResultType {
     @inline
     def apply(
-        ): AttachLoadBalancerTargetGroupsResultType = {
+    ): AttachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachLoadBalancerTargetGroupsResultType]
@@ -517,7 +517,7 @@ package autoscaling {
   object AttachLoadBalancersResultType {
     @inline
     def apply(
-        ): AttachLoadBalancersResultType = {
+    ): AttachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachLoadBalancersResultType]
@@ -865,7 +865,7 @@ package autoscaling {
   object CompleteLifecycleActionAnswer {
     @inline
     def apply(
-        ): CompleteLifecycleActionAnswer = {
+    ): CompleteLifecycleActionAnswer = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CompleteLifecycleActionAnswer]
@@ -1140,7 +1140,7 @@ package autoscaling {
   object DeleteLifecycleHookAnswer {
     @inline
     def apply(
-        ): DeleteLifecycleHookAnswer = {
+    ): DeleteLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLifecycleHookAnswer]
@@ -1707,7 +1707,7 @@ package autoscaling {
   object DetachLoadBalancerTargetGroupsResultType {
     @inline
     def apply(
-        ): DetachLoadBalancerTargetGroupsResultType = {
+    ): DetachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachLoadBalancerTargetGroupsResultType]
@@ -1741,7 +1741,7 @@ package autoscaling {
   object DetachLoadBalancersResultType {
     @inline
     def apply(
-        ): DetachLoadBalancersResultType = {
+    ): DetachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachLoadBalancersResultType]
@@ -2759,7 +2759,7 @@ package autoscaling {
   object PutLifecycleHookAnswer {
     @inline
     def apply(
-        ): PutLifecycleHookAnswer = {
+    ): PutLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLifecycleHookAnswer]
@@ -2933,7 +2933,7 @@ package autoscaling {
   object RecordLifecycleActionHeartbeatAnswer {
     @inline
     def apply(
-        ): RecordLifecycleActionHeartbeatAnswer = {
+    ): RecordLifecycleActionHeartbeatAnswer = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RecordLifecycleActionHeartbeatAnswer]
@@ -3245,7 +3245,7 @@ package autoscaling {
   object SetInstanceProtectionAnswer {
     @inline
     def apply(
-        ): SetInstanceProtectionAnswer = {
+    ): SetInstanceProtectionAnswer = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetInstanceProtectionAnswer]

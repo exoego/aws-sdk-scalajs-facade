@@ -277,16 +277,25 @@ package codedeploy {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                         = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object]                           = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
-    @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(
+    @deprecated(
+      "This operation is deprecated, use BatchGetDeploymentTargets instead.",
+      "forever"
+    ) def batchGetDeploymentInstances(
         params: BatchGetDeploymentInstancesInput
     ): Request[BatchGetDeploymentInstancesOutput] = js.native
-    @deprecated("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.", "forever") def skipWaitTimeForInstanceTermination(
+    @deprecated(
+      "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.",
+      "forever"
+    ) def skipWaitTimeForInstanceTermination(
         params: SkipWaitTimeForInstanceTerminationInput
     ): Request[js.Object] = js.native
     @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(
         params: GetDeploymentInstanceInput
     ): Request[GetDeploymentInstanceOutput] = js.native
-    @deprecated("This operation is deprecated, use ListDeploymentTargets instead.", "forever") def listDeploymentInstances(
+    @deprecated(
+      "This operation is deprecated, use ListDeploymentTargets instead.",
+      "forever"
+    ) def listDeploymentInstances(
         params: ListDeploymentInstancesInput
     ): Request[ListDeploymentInstancesOutput] = js.native
   }
@@ -3659,7 +3668,7 @@ package codedeploy {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -3964,7 +3973,7 @@ package codedeploy {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

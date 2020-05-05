@@ -267,7 +267,7 @@ package codeguruprofiler {
   object DeleteProfilingGroupResponse {
     @inline
     def apply(
-        ): DeleteProfilingGroupResponse = {
+    ): DeleteProfilingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProfilingGroupResponse]
@@ -541,7 +541,7 @@ package codeguruprofiler {
   object PostAgentProfileResponse {
     @inline
     def apply(
-        ): PostAgentProfileResponse = {
+    ): PostAgentProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PostAgentProfileResponse]

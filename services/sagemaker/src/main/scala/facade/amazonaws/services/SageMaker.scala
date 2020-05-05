@@ -4106,7 +4106,7 @@ package sagemaker {
   object DeleteFlowDefinitionResponse {
     @inline
     def apply(
-        ): DeleteFlowDefinitionResponse = {
+    ): DeleteFlowDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFlowDefinitionResponse]
@@ -4230,7 +4230,7 @@ package sagemaker {
   object DeleteTagsOutput {
     @inline
     def apply(
-        ): DeleteTagsOutput = {
+    ): DeleteTagsOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsOutput]
@@ -14561,7 +14561,7 @@ package sagemaker {
   object UpdateNotebookInstanceLifecycleConfigOutput {
     @inline
     def apply(
-        ): UpdateNotebookInstanceLifecycleConfigOutput = {
+    ): UpdateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotebookInstanceLifecycleConfigOutput]
@@ -14574,7 +14574,7 @@ package sagemaker {
   object UpdateNotebookInstanceOutput {
     @inline
     def apply(
-        ): UpdateNotebookInstanceOutput = {
+    ): UpdateNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotebookInstanceOutput]

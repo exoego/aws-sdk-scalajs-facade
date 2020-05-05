@@ -220,7 +220,7 @@ package cur {
   object ModifyReportDefinitionResponse {
     @inline
     def apply(
-        ): ModifyReportDefinitionResponse = {
+    ): ModifyReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyReportDefinitionResponse]
@@ -257,7 +257,7 @@ package cur {
   object PutReportDefinitionResponse {
     @inline
     def apply(
-        ): PutReportDefinitionResponse = {
+    ): PutReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutReportDefinitionResponse]

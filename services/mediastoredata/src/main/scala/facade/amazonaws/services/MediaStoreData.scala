@@ -76,7 +76,7 @@ package mediastoredata {
   object DeleteObjectResponse {
     @inline
     def apply(
-        ): DeleteObjectResponse = {
+    ): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteObjectResponse]

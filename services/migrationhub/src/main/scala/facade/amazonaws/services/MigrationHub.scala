@@ -191,7 +191,7 @@ package migrationhub {
   object AssociateCreatedArtifactResult {
     @inline
     def apply(
-        ): AssociateCreatedArtifactResult = {
+    ): AssociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateCreatedArtifactResult]
@@ -231,7 +231,7 @@ package migrationhub {
   object AssociateDiscoveredResourceResult {
     @inline
     def apply(
-        ): AssociateDiscoveredResourceResult = {
+    ): AssociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDiscoveredResourceResult]
@@ -265,7 +265,7 @@ package migrationhub {
   object CreateProgressUpdateStreamResult {
     @inline
     def apply(
-        ): CreateProgressUpdateStreamResult = {
+    ): CreateProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateProgressUpdateStreamResult]
@@ -323,7 +323,7 @@ package migrationhub {
   object DeleteProgressUpdateStreamResult {
     @inline
     def apply(
-        ): DeleteProgressUpdateStreamResult = {
+    ): DeleteProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProgressUpdateStreamResult]
@@ -437,7 +437,7 @@ package migrationhub {
   object DisassociateCreatedArtifactResult {
     @inline
     def apply(
-        ): DisassociateCreatedArtifactResult = {
+    ): DisassociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateCreatedArtifactResult]
@@ -477,7 +477,7 @@ package migrationhub {
   object DisassociateDiscoveredResourceResult {
     @inline
     def apply(
-        ): DisassociateDiscoveredResourceResult = {
+    ): DisassociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDiscoveredResourceResult]
@@ -538,7 +538,7 @@ package migrationhub {
   object ImportMigrationTaskResult {
     @inline
     def apply(
-        ): ImportMigrationTaskResult = {
+    ): ImportMigrationTaskResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportMigrationTaskResult]
@@ -857,7 +857,7 @@ package migrationhub {
   object NotifyApplicationStateResult {
     @inline
     def apply(
-        ): NotifyApplicationStateResult = {
+    ): NotifyApplicationStateResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[NotifyApplicationStateResult]
@@ -903,7 +903,7 @@ package migrationhub {
   object NotifyMigrationTaskStateResult {
     @inline
     def apply(
-        ): NotifyMigrationTaskStateResult = {
+    ): NotifyMigrationTaskStateResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[NotifyMigrationTaskStateResult]
@@ -962,7 +962,7 @@ package migrationhub {
   object PutResourceAttributesResult {
     @inline
     def apply(
-        ): PutResourceAttributesResult = {
+    ): PutResourceAttributesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutResourceAttributesResult]

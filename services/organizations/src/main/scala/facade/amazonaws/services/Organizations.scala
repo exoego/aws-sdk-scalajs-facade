@@ -1128,7 +1128,7 @@ package organizations {
   object EnableAllFeaturesRequest {
     @inline
     def apply(
-        ): EnableAllFeaturesRequest = {
+    ): EnableAllFeaturesRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableAllFeaturesRequest]

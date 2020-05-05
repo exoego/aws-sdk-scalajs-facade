@@ -618,7 +618,7 @@ package medialive {
   object AribDestinationSettings {
     @inline
     def apply(
-        ): AribDestinationSettings = {
+    ): AribDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AribDestinationSettings]
@@ -634,7 +634,7 @@ package medialive {
   object AribSourceSettings {
     @inline
     def apply(
-        ): AribSourceSettings = {
+    ): AribSourceSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AribSourceSettings]
@@ -1805,7 +1805,7 @@ package medialive {
   object ColorSpacePassthroughSettings {
     @inline
     def apply(
-        ): ColorSpacePassthroughSettings = {
+    ): ColorSpacePassthroughSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ColorSpacePassthroughSettings]
@@ -2223,7 +2223,7 @@ package medialive {
   object DeleteInputResponse {
     @inline
     def apply(
-        ): DeleteInputResponse = {
+    ): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteInputResponse]
@@ -2260,7 +2260,7 @@ package medialive {
   object DeleteInputSecurityGroupResponse {
     @inline
     def apply(
-        ): DeleteInputSecurityGroupResponse = {
+    ): DeleteInputSecurityGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteInputSecurityGroupResponse]
@@ -2507,7 +2507,7 @@ package medialive {
   object DeleteScheduleResponse {
     @inline
     def apply(
-        ): DeleteScheduleResponse = {
+    ): DeleteScheduleResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScheduleResponse]
@@ -3621,7 +3621,7 @@ package medialive {
   object EmbeddedDestinationSettings {
     @inline
     def apply(
-        ): EmbeddedDestinationSettings = {
+    ): EmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EmbeddedDestinationSettings]
@@ -3637,7 +3637,7 @@ package medialive {
   object EmbeddedPlusScte20DestinationSettings {
     @inline
     def apply(
-        ): EmbeddedPlusScte20DestinationSettings = {
+    ): EmbeddedPlusScte20DestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EmbeddedPlusScte20DestinationSettings]
@@ -5536,7 +5536,7 @@ package medialive {
   object ImmediateModeScheduleActionStartSettings {
     @inline
     def apply(
-        ): ImmediateModeScheduleActionStartSettings = {
+    ): ImmediateModeScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImmediateModeScheduleActionStartSettings]
@@ -7325,7 +7325,7 @@ package medialive {
   object MediaPackageOutputSettings {
     @inline
     def apply(
-        ): MediaPackageOutputSettings = {
+    ): MediaPackageOutputSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[MediaPackageOutputSettings]
@@ -7533,7 +7533,7 @@ package medialive {
   object MultiplexGroupSettings {
     @inline
     def apply(
-        ): MultiplexGroupSettings = {
+    ): MultiplexGroupSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[MultiplexGroupSettings]
@@ -8310,7 +8310,7 @@ package medialive {
   object PassThroughSettings {
     @inline
     def apply(
-        ): PassThroughSettings = {
+    ): PassThroughSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PassThroughSettings]
@@ -8462,7 +8462,7 @@ package medialive {
   object Rec601Settings {
     @inline
     def apply(
-        ): Rec601Settings = {
+    ): Rec601Settings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Rec601Settings]
@@ -8478,7 +8478,7 @@ package medialive {
   object Rec709Settings {
     @inline
     def apply(
-        ): Rec709Settings = {
+    ): Rec709Settings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Rec709Settings]
@@ -8762,7 +8762,7 @@ package medialive {
   object RtmpCaptionInfoDestinationSettings {
     @inline
     def apply(
-        ): RtmpCaptionInfoDestinationSettings = {
+    ): RtmpCaptionInfoDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RtmpCaptionInfoDestinationSettings]
@@ -8977,7 +8977,7 @@ package medialive {
   object Scte20PlusEmbeddedDestinationSettings {
     @inline
     def apply(
-        ): Scte20PlusEmbeddedDestinationSettings = {
+    ): Scte20PlusEmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
@@ -9015,7 +9015,7 @@ package medialive {
   object Scte27DestinationSettings {
     @inline
     def apply(
-        ): Scte27DestinationSettings = {
+    ): Scte27DestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Scte27DestinationSettings]
@@ -9498,7 +9498,7 @@ package medialive {
   object SmpteTtDestinationSettings {
     @inline
     def apply(
-        ): SmpteTtDestinationSettings = {
+    ): SmpteTtDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SmpteTtDestinationSettings]
@@ -9973,7 +9973,7 @@ package medialive {
   object TeletextDestinationSettings {
     @inline
     def apply(
-        ): TeletextDestinationSettings = {
+    ): TeletextDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TeletextDestinationSettings]
@@ -10708,7 +10708,7 @@ package medialive {
   object WebvttDestinationSettings {
     @inline
     def apply(
-        ): WebvttDestinationSettings = {
+    ): WebvttDestinationSettings = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[WebvttDestinationSettings]

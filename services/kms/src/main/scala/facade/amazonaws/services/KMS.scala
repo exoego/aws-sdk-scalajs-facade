@@ -305,7 +305,7 @@ package kms {
   object ConnectCustomKeyStoreResponse {
     @inline
     def apply(
-        ): ConnectCustomKeyStoreResponse = {
+    ): ConnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ConnectCustomKeyStoreResponse]
@@ -703,7 +703,7 @@ package kms {
   object DeleteCustomKeyStoreResponse {
     @inline
     def apply(
-        ): DeleteCustomKeyStoreResponse = {
+    ): DeleteCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCustomKeyStoreResponse]
@@ -872,7 +872,7 @@ package kms {
   object DisconnectCustomKeyStoreResponse {
     @inline
     def apply(
-        ): DisconnectCustomKeyStoreResponse = {
+    ): DisconnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisconnectCustomKeyStoreResponse]
@@ -1548,7 +1548,7 @@ package kms {
   object ImportKeyMaterialResponse {
     @inline
     def apply(
-        ): ImportKeyMaterialResponse = {
+    ): ImportKeyMaterialResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportKeyMaterialResponse]
@@ -2330,7 +2330,7 @@ package kms {
   object UpdateCustomKeyStoreResponse {
     @inline
     def apply(
-        ): UpdateCustomKeyStoreResponse = {
+    ): UpdateCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCustomKeyStoreResponse]

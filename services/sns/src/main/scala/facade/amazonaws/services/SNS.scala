@@ -1059,7 +1059,7 @@ package sns {
   object OptInPhoneNumberResponse {
     @inline
     def apply(
-        ): OptInPhoneNumberResponse = {
+    ): OptInPhoneNumberResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[OptInPhoneNumberResponse]
@@ -1248,7 +1248,7 @@ package sns {
   object SetSMSAttributesResponse {
     @inline
     def apply(
-        ): SetSMSAttributesResponse = {
+    ): SetSMSAttributesResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetSMSAttributesResponse]
@@ -1443,7 +1443,7 @@ package sns {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1517,7 +1517,7 @@ package sns {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]

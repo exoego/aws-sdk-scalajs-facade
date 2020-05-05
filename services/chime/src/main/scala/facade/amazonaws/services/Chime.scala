@@ -599,7 +599,7 @@ package chime {
   object AssociatePhoneNumberWithUserResponse {
     @inline
     def apply(
-        ): AssociatePhoneNumberWithUserResponse = {
+    ): AssociatePhoneNumberWithUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociatePhoneNumberWithUserResponse]
@@ -713,7 +713,7 @@ package chime {
   object AssociateSigninDelegateGroupsWithAccountResponse {
     @inline
     def apply(
-        ): AssociateSigninDelegateGroupsWithAccountResponse = {
+    ): AssociateSigninDelegateGroupsWithAccountResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountResponse]
@@ -1572,7 +1572,7 @@ package chime {
   object DeleteAccountResponse {
     @inline
     def apply(
-        ): DeleteAccountResponse = {
+    ): DeleteAccountResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccountResponse]
@@ -1840,7 +1840,7 @@ package chime {
   object DisassociatePhoneNumberFromUserResponse {
     @inline
     def apply(
-        ): DisassociatePhoneNumberFromUserResponse = {
+    ): DisassociatePhoneNumberFromUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociatePhoneNumberFromUserResponse]
@@ -1948,7 +1948,7 @@ package chime {
   object DisassociateSigninDelegateGroupsFromAccountResponse {
     @inline
     def apply(
-        ): DisassociateSigninDelegateGroupsFromAccountResponse = {
+    ): DisassociateSigninDelegateGroupsFromAccountResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
@@ -3338,7 +3338,7 @@ package chime {
   object LogoutUserResponse {
     @inline
     def apply(
-        ): LogoutUserResponse = {
+    ): LogoutUserResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[LogoutUserResponse]
@@ -4480,7 +4480,7 @@ package chime {
   object UpdateAccountSettingsResponse {
     @inline
     def apply(
-        ): UpdateAccountSettingsResponse = {
+    ): UpdateAccountSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAccountSettingsResponse]

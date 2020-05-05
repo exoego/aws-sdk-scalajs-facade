@@ -227,7 +227,7 @@ package datasync {
   object CancelTaskExecutionResponse {
     @inline
     def apply(
-        ): CancelTaskExecutionResponse = {
+    ): CancelTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelTaskExecutionResponse]
@@ -607,7 +607,7 @@ package datasync {
   object DeleteAgentResponse {
     @inline
     def apply(
-        ): DeleteAgentResponse = {
+    ): DeleteAgentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAgentResponse]
@@ -641,7 +641,7 @@ package datasync {
   object DeleteLocationResponse {
     @inline
     def apply(
-        ): DeleteLocationResponse = {
+    ): DeleteLocationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLocationResponse]
@@ -675,7 +675,7 @@ package datasync {
   object DeleteTaskResponse {
     @inline
     def apply(
-        ): DeleteTaskResponse = {
+    ): DeleteTaskResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTaskResponse]
@@ -1758,7 +1758,7 @@ package datasync {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -1945,7 +1945,7 @@ package datasync {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -1979,7 +1979,7 @@ package datasync {
   object UpdateAgentResponse {
     @inline
     def apply(
-        ): UpdateAgentResponse = {
+    ): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAgentResponse]
@@ -2028,7 +2028,7 @@ package datasync {
   object UpdateTaskResponse {
     @inline
     def apply(
-        ): UpdateTaskResponse = {
+    ): UpdateTaskResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTaskResponse]

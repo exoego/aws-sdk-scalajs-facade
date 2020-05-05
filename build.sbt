@@ -12,7 +12,7 @@ lazy val core = (project in file("core"))
   .settings(
     name := s"${SharedConfig.libraryName}-core",
     libraryDependencies ++= Seq(
-      )
+    )
   )
   .enablePlugins(ScalaJSPlugin)
 

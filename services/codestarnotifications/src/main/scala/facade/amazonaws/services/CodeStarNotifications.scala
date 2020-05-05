@@ -213,7 +213,7 @@ package codestarnotifications {
   object DeleteTargetResult {
     @inline
     def apply(
-        ): DeleteTargetResult = {
+    ): DeleteTargetResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTargetResult]
@@ -809,7 +809,7 @@ package codestarnotifications {
   object UntagResourceResult {
     @inline
     def apply(
-        ): UntagResourceResult = {
+    ): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResult]
@@ -855,7 +855,7 @@ package codestarnotifications {
   object UpdateNotificationRuleResult {
     @inline
     def apply(
-        ): UpdateNotificationRuleResult = {
+    ): UpdateNotificationRuleResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotificationRuleResult]

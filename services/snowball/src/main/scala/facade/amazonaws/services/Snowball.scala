@@ -180,7 +180,7 @@ package snowball {
   object CancelClusterResult {
     @inline
     def apply(
-        ): CancelClusterResult = {
+    ): CancelClusterResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelClusterResult]
@@ -211,7 +211,7 @@ package snowball {
   object CancelJobResult {
     @inline
     def apply(
-        ): CancelJobResult = {
+    ): CancelJobResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResult]
@@ -784,7 +784,7 @@ package snowball {
   object GetSnowballUsageRequest {
     @inline
     def apply(
-        ): GetSnowballUsageRequest = {
+    ): GetSnowballUsageRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetSnowballUsageRequest]
@@ -1419,7 +1419,7 @@ package snowball {
   object UpdateClusterResult {
     @inline
     def apply(
-        ): UpdateClusterResult = {
+    ): UpdateClusterResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateClusterResult]
@@ -1476,7 +1476,7 @@ package snowball {
   object UpdateJobResult {
     @inline
     def apply(
-        ): UpdateJobResult = {
+    ): UpdateJobResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateJobResult]

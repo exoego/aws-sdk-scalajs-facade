@@ -345,7 +345,7 @@ package managedblockchain {
   object DeleteMemberOutput {
     @inline
     def apply(
-        ): DeleteMemberOutput = {
+    ): DeleteMemberOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMemberOutput]
@@ -382,7 +382,7 @@ package managedblockchain {
   object DeleteNodeOutput {
     @inline
     def apply(
-        ): DeleteNodeOutput = {
+    ): DeleteNodeOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNodeOutput]
@@ -1552,7 +1552,7 @@ package managedblockchain {
   object RejectInvitationOutput {
     @inline
     def apply(
-        ): RejectInvitationOutput = {
+    ): RejectInvitationOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectInvitationOutput]
@@ -1621,7 +1621,7 @@ package managedblockchain {
   object VoteOnProposalOutput {
     @inline
     def apply(
-        ): VoteOnProposalOutput = {
+    ): VoteOnProposalOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[VoteOnProposalOutput]

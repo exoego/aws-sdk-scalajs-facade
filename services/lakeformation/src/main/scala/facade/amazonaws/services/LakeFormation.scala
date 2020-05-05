@@ -228,7 +228,7 @@ package lakeformation {
   object CatalogResource {
     @inline
     def apply(
-        ): CatalogResource = {
+    ): CatalogResource = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CatalogResource]
@@ -397,7 +397,7 @@ package lakeformation {
   object DeregisterResourceResponse {
     @inline
     def apply(
-        ): DeregisterResourceResponse = {
+    ): DeregisterResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterResourceResponse]
@@ -610,7 +610,7 @@ package lakeformation {
   object GrantPermissionsResponse {
     @inline
     def apply(
-        ): GrantPermissionsResponse = {
+    ): GrantPermissionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GrantPermissionsResponse]
@@ -806,7 +806,7 @@ package lakeformation {
   object PutDataLakeSettingsResponse {
     @inline
     def apply(
-        ): PutDataLakeSettingsResponse = {
+    ): PutDataLakeSettingsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDataLakeSettingsResponse]
@@ -843,7 +843,7 @@ package lakeformation {
   object RegisterResourceResponse {
     @inline
     def apply(
-        ): RegisterResourceResponse = {
+    ): RegisterResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterResourceResponse]
@@ -944,7 +944,7 @@ package lakeformation {
   object RevokePermissionsResponse {
     @inline
     def apply(
-        ): RevokePermissionsResponse = {
+    ): RevokePermissionsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokePermissionsResponse]
@@ -1031,7 +1031,7 @@ package lakeformation {
   object UpdateResourceResponse {
     @inline
     def apply(
-        ): UpdateResourceResponse = {
+    ): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceResponse]

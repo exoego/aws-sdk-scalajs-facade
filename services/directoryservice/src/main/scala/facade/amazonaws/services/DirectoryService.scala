@@ -387,7 +387,7 @@ package directoryservice {
   object AddIpRoutesResult {
     @inline
     def apply(
-        ): AddIpRoutesResult = {
+    ): AddIpRoutesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddIpRoutesResult]
@@ -421,7 +421,7 @@ package directoryservice {
   object AddTagsToResourceResult {
     @inline
     def apply(
-        ): AddTagsToResourceResult = {
+    ): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsToResourceResult]
@@ -477,7 +477,7 @@ package directoryservice {
   object CancelSchemaExtensionResult {
     @inline
     def apply(
-        ): CancelSchemaExtensionResult = {
+    ): CancelSchemaExtensionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSchemaExtensionResult]
@@ -803,7 +803,7 @@ package directoryservice {
   object CreateConditionalForwarderResult {
     @inline
     def apply(
-        ): CreateConditionalForwarderResult = {
+    ): CreateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConditionalForwarderResult]
@@ -895,7 +895,7 @@ package directoryservice {
   object CreateLogSubscriptionResult {
     @inline
     def apply(
-        ): CreateLogSubscriptionResult = {
+    ): CreateLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLogSubscriptionResult]
@@ -1097,7 +1097,7 @@ package directoryservice {
   object DeleteConditionalForwarderResult {
     @inline
     def apply(
-        ): DeleteConditionalForwarderResult = {
+    ): DeleteConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConditionalForwarderResult]
@@ -1168,7 +1168,7 @@ package directoryservice {
   object DeleteLogSubscriptionResult {
     @inline
     def apply(
-        ): DeleteLogSubscriptionResult = {
+    ): DeleteLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLogSubscriptionResult]
@@ -1287,7 +1287,7 @@ package directoryservice {
   object DeregisterCertificateResult {
     @inline
     def apply(
-        ): DeregisterCertificateResult = {
+    ): DeregisterCertificateResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterCertificateResult]
@@ -1327,7 +1327,7 @@ package directoryservice {
   object DeregisterEventTopicResult {
     @inline
     def apply(
-        ): DeregisterEventTopicResult = {
+    ): DeregisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterEventTopicResult]
@@ -2093,7 +2093,7 @@ package directoryservice {
   object DisableLDAPSResult {
     @inline
     def apply(
-        ): DisableLDAPSResult = {
+    ): DisableLDAPSResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableLDAPSResult]
@@ -2130,7 +2130,7 @@ package directoryservice {
   object DisableRadiusResult {
     @inline
     def apply(
-        ): DisableRadiusResult = {
+    ): DisableRadiusResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableRadiusResult]
@@ -2173,7 +2173,7 @@ package directoryservice {
   object DisableSsoResult {
     @inline
     def apply(
-        ): DisableSsoResult = {
+    ): DisableSsoResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableSsoResult]
@@ -2268,7 +2268,7 @@ package directoryservice {
   object EnableLDAPSResult {
     @inline
     def apply(
-        ): EnableLDAPSResult = {
+    ): EnableLDAPSResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableLDAPSResult]
@@ -2308,7 +2308,7 @@ package directoryservice {
   object EnableRadiusResult {
     @inline
     def apply(
-        ): EnableRadiusResult = {
+    ): EnableRadiusResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableRadiusResult]
@@ -2351,7 +2351,7 @@ package directoryservice {
   object EnableSsoResult {
     @inline
     def apply(
-        ): EnableSsoResult = {
+    ): EnableSsoResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableSsoResult]
@@ -2398,7 +2398,7 @@ package directoryservice {
   object GetDirectoryLimitsRequest {
     @inline
     def apply(
-        ): GetDirectoryLimitsRequest = {
+    ): GetDirectoryLimitsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDirectoryLimitsRequest]
@@ -2977,7 +2977,7 @@ package directoryservice {
   object RegisterEventTopicResult {
     @inline
     def apply(
-        ): RegisterEventTopicResult = {
+    ): RegisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterEventTopicResult]
@@ -3045,7 +3045,7 @@ package directoryservice {
   object RemoveIpRoutesResult {
     @inline
     def apply(
-        ): RemoveIpRoutesResult = {
+    ): RemoveIpRoutesResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveIpRoutesResult]
@@ -3079,7 +3079,7 @@ package directoryservice {
   object RemoveTagsFromResourceResult {
     @inline
     def apply(
-        ): RemoveTagsFromResourceResult = {
+    ): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
@@ -3123,7 +3123,7 @@ package directoryservice {
   object ResetUserPasswordResult {
     @inline
     def apply(
-        ): ResetUserPasswordResult = {
+    ): ResetUserPasswordResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ResetUserPasswordResult]
@@ -3160,7 +3160,7 @@ package directoryservice {
   object RestoreFromSnapshotResult {
     @inline
     def apply(
-        ): RestoreFromSnapshotResult = {
+    ): RestoreFromSnapshotResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreFromSnapshotResult]
@@ -3734,7 +3734,7 @@ package directoryservice {
   object UpdateConditionalForwarderResult {
     @inline
     def apply(
-        ): UpdateConditionalForwarderResult = {
+    ): UpdateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConditionalForwarderResult]
@@ -3768,7 +3768,7 @@ package directoryservice {
   object UpdateNumberOfDomainControllersResult {
     @inline
     def apply(
-        ): UpdateNumberOfDomainControllersResult = {
+    ): UpdateNumberOfDomainControllersResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNumberOfDomainControllersResult]
@@ -3808,7 +3808,7 @@ package directoryservice {
   object UpdateRadiusResult {
     @inline
     def apply(
-        ): UpdateRadiusResult = {
+    ): UpdateRadiusResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRadiusResult]

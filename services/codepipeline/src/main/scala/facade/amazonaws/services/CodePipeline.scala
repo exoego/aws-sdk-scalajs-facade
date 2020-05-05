@@ -1328,7 +1328,7 @@ package codepipeline {
   object DeleteWebhookOutput {
     @inline
     def apply(
-        ): DeleteWebhookOutput = {
+    ): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
@@ -1357,7 +1357,7 @@ package codepipeline {
   object DeregisterWebhookWithThirdPartyOutput {
     @inline
     def apply(
-        ): DeregisterWebhookWithThirdPartyOutput = {
+    ): DeregisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterWebhookWithThirdPartyOutput]
@@ -2816,7 +2816,7 @@ package codepipeline {
   object RegisterWebhookWithThirdPartyOutput {
     @inline
     def apply(
-        ): RegisterWebhookWithThirdPartyOutput = {
+    ): RegisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterWebhookWithThirdPartyOutput]
@@ -3228,7 +3228,7 @@ package codepipeline {
   object TagResourceOutput {
     @inline
     def apply(
-        ): TagResourceOutput = {
+    ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
@@ -3398,7 +3398,7 @@ package codepipeline {
   object UntagResourceOutput {
     @inline
     def apply(
-        ): UntagResourceOutput = {
+    ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]

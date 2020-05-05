@@ -630,7 +630,7 @@ package workdocs {
   object CreateCustomMetadataResponse {
     @inline
     def apply(
-        ): CreateCustomMetadataResponse = {
+    ): CreateCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateCustomMetadataResponse]
@@ -707,7 +707,7 @@ package workdocs {
   object CreateLabelsResponse {
     @inline
     def apply(
-        ): CreateLabelsResponse = {
+    ): CreateLabelsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLabelsResponse]
@@ -899,7 +899,7 @@ package workdocs {
   object DeleteCustomMetadataResponse {
     @inline
     def apply(
-        ): DeleteCustomMetadataResponse = {
+    ): DeleteCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCustomMetadataResponse]
@@ -1002,7 +1002,7 @@ package workdocs {
   object DeleteLabelsResponse {
     @inline
     def apply(
-        ): DeleteLabelsResponse = {
+    ): DeleteLabelsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLabelsResponse]

@@ -591,7 +591,7 @@ package codestar {
   object DisassociateTeamMemberResult {
     @inline
     def apply(
-        ): DisassociateTeamMemberResult = {
+    ): DisassociateTeamMemberResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateTeamMemberResult]
@@ -1076,7 +1076,7 @@ package codestar {
   object UntagProjectResult {
     @inline
     def apply(
-        ): UntagProjectResult = {
+    ): UntagProjectResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagProjectResult]
@@ -1113,7 +1113,7 @@ package codestar {
   object UpdateProjectResult {
     @inline
     def apply(
-        ): UpdateProjectResult = {
+    ): UpdateProjectResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateProjectResult]

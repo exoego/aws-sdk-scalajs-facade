@@ -403,7 +403,7 @@ package xray {
   object DeleteGroupResult {
     @inline
     def apply(
-        ): DeleteGroupResult = {
+    ): DeleteGroupResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResult]
@@ -760,7 +760,7 @@ package xray {
   object GetEncryptionConfigRequest {
     @inline
     def apply(
-        ): GetEncryptionConfigRequest = {
+    ): GetEncryptionConfigRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetEncryptionConfigRequest]
@@ -1376,7 +1376,7 @@ package xray {
   object PutTelemetryRecordsResult {
     @inline
     def apply(
-        ): PutTelemetryRecordsResult = {
+    ): PutTelemetryRecordsResult = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutTelemetryRecordsResult]

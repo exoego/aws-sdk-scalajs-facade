@@ -1466,7 +1466,7 @@ package iot {
   object AddThingToBillingGroupResponse {
     @inline
     def apply(
-        ): AddThingToBillingGroupResponse = {
+    ): AddThingToBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddThingToBillingGroupResponse]
@@ -1507,7 +1507,7 @@ package iot {
   object AddThingToThingGroupResponse {
     @inline
     def apply(
-        ): AddThingToThingGroupResponse = {
+    ): AddThingToThingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddThingToThingGroupResponse]
@@ -1789,7 +1789,7 @@ package iot {
   object AttachSecurityProfileResponse {
     @inline
     def apply(
-        ): AttachSecurityProfileResponse = {
+    ): AttachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachSecurityProfileResponse]
@@ -1829,7 +1829,7 @@ package iot {
   object AttachThingPrincipalResponse {
     @inline
     def apply(
-        ): AttachThingPrincipalResponse = {
+    ): AttachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachThingPrincipalResponse]
@@ -2609,7 +2609,7 @@ package iot {
   object CancelAuditMitigationActionsTaskResponse {
     @inline
     def apply(
-        ): CancelAuditMitigationActionsTaskResponse = {
+    ): CancelAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelAuditMitigationActionsTaskResponse]
@@ -2640,7 +2640,7 @@ package iot {
   object CancelAuditTaskResponse {
     @inline
     def apply(
-        ): CancelAuditTaskResponse = {
+    ): CancelAuditTaskResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelAuditTaskResponse]
@@ -2896,7 +2896,7 @@ package iot {
   object ClearDefaultAuthorizerRequest {
     @inline
     def apply(
-        ): ClearDefaultAuthorizerRequest = {
+    ): ClearDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ClearDefaultAuthorizerRequest]
@@ -2909,7 +2909,7 @@ package iot {
   object ClearDefaultAuthorizerResponse {
     @inline
     def apply(
-        ): ClearDefaultAuthorizerResponse = {
+    ): ClearDefaultAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ClearDefaultAuthorizerResponse]
@@ -3116,7 +3116,7 @@ package iot {
   object ConfirmTopicRuleDestinationResponse {
     @inline
     def apply(
-        ): ConfirmTopicRuleDestinationResponse = {
+    ): ConfirmTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ConfirmTopicRuleDestinationResponse]
@@ -4368,7 +4368,7 @@ package iot {
   object DeleteAccountAuditConfigurationResponse {
     @inline
     def apply(
-        ): DeleteAccountAuditConfigurationResponse = {
+    ): DeleteAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccountAuditConfigurationResponse]
@@ -4399,7 +4399,7 @@ package iot {
   object DeleteAuthorizerResponse {
     @inline
     def apply(
-        ): DeleteAuthorizerResponse = {
+    ): DeleteAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAuthorizerResponse]
@@ -4433,7 +4433,7 @@ package iot {
   object DeleteBillingGroupResponse {
     @inline
     def apply(
-        ): DeleteBillingGroupResponse = {
+    ): DeleteBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBillingGroupResponse]
@@ -4470,7 +4470,7 @@ package iot {
   object DeleteCACertificateResponse {
     @inline
     def apply(
-        ): DeleteCACertificateResponse = {
+    ): DeleteCACertificateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCACertificateResponse]
@@ -4525,7 +4525,7 @@ package iot {
   object DeleteDomainConfigurationResponse {
     @inline
     def apply(
-        ): DeleteDomainConfigurationResponse = {
+    ): DeleteDomainConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDomainConfigurationResponse]
@@ -4559,7 +4559,7 @@ package iot {
   object DeleteDynamicThingGroupResponse {
     @inline
     def apply(
-        ): DeleteDynamicThingGroupResponse = {
+    ): DeleteDynamicThingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDynamicThingGroupResponse]
@@ -4638,7 +4638,7 @@ package iot {
   object DeleteMitigationActionResponse {
     @inline
     def apply(
-        ): DeleteMitigationActionResponse = {
+    ): DeleteMitigationActionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMitigationActionResponse]
@@ -4675,7 +4675,7 @@ package iot {
   object DeleteOTAUpdateResponse {
     @inline
     def apply(
-        ): DeleteOTAUpdateResponse = {
+    ): DeleteOTAUpdateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteOTAUpdateResponse]
@@ -4751,7 +4751,7 @@ package iot {
   object DeleteProvisioningTemplateResponse {
     @inline
     def apply(
-        ): DeleteProvisioningTemplateResponse = {
+    ): DeleteProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisioningTemplateResponse]
@@ -4785,7 +4785,7 @@ package iot {
   object DeleteProvisioningTemplateVersionResponse {
     @inline
     def apply(
-        ): DeleteProvisioningTemplateVersionResponse = {
+    ): DeleteProvisioningTemplateVersionResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisioningTemplateVersionResponse]
@@ -4801,7 +4801,7 @@ package iot {
   object DeleteRegistrationCodeRequest {
     @inline
     def apply(
-        ): DeleteRegistrationCodeRequest = {
+    ): DeleteRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRegistrationCodeRequest]
@@ -4817,7 +4817,7 @@ package iot {
   object DeleteRegistrationCodeResponse {
     @inline
     def apply(
-        ): DeleteRegistrationCodeResponse = {
+    ): DeleteRegistrationCodeResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRegistrationCodeResponse]
@@ -4848,7 +4848,7 @@ package iot {
   object DeleteRoleAliasResponse {
     @inline
     def apply(
-        ): DeleteRoleAliasResponse = {
+    ): DeleteRoleAliasResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRoleAliasResponse]
@@ -4879,7 +4879,7 @@ package iot {
   object DeleteScheduledAuditResponse {
     @inline
     def apply(
-        ): DeleteScheduledAuditResponse = {
+    ): DeleteScheduledAuditResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScheduledAuditResponse]
@@ -4913,7 +4913,7 @@ package iot {
   object DeleteSecurityProfileResponse {
     @inline
     def apply(
-        ): DeleteSecurityProfileResponse = {
+    ): DeleteSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityProfileResponse]
@@ -4944,7 +4944,7 @@ package iot {
   object DeleteStreamResponse {
     @inline
     def apply(
-        ): DeleteStreamResponse = {
+    ): DeleteStreamResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStreamResponse]
@@ -4978,7 +4978,7 @@ package iot {
   object DeleteThingGroupResponse {
     @inline
     def apply(
-        ): DeleteThingGroupResponse = {
+    ): DeleteThingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingGroupResponse]
@@ -5018,7 +5018,7 @@ package iot {
   object DeleteThingResponse {
     @inline
     def apply(
-        ): DeleteThingResponse = {
+    ): DeleteThingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingResponse]
@@ -5055,7 +5055,7 @@ package iot {
   object DeleteThingTypeResponse {
     @inline
     def apply(
-        ): DeleteThingTypeResponse = {
+    ): DeleteThingTypeResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingTypeResponse]
@@ -5086,7 +5086,7 @@ package iot {
   object DeleteTopicRuleDestinationResponse {
     @inline
     def apply(
-        ): DeleteTopicRuleDestinationResponse = {
+    ): DeleteTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTopicRuleDestinationResponse]
@@ -5190,7 +5190,7 @@ package iot {
   object DeprecateThingTypeResponse {
     @inline
     def apply(
-        ): DeprecateThingTypeResponse = {
+    ): DeprecateThingTypeResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateThingTypeResponse]
@@ -5203,7 +5203,7 @@ package iot {
   object DescribeAccountAuditConfigurationRequest {
     @inline
     def apply(
-        ): DescribeAccountAuditConfigurationRequest = {
+    ): DescribeAccountAuditConfigurationRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAuditConfigurationRequest]
@@ -5543,7 +5543,7 @@ package iot {
   object DescribeDefaultAuthorizerRequest {
     @inline
     def apply(
-        ): DescribeDefaultAuthorizerRequest = {
+    ): DescribeDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeDefaultAuthorizerRequest]
@@ -5667,7 +5667,7 @@ package iot {
   object DescribeEventConfigurationsRequest {
     @inline
     def apply(
-        ): DescribeEventConfigurationsRequest = {
+    ): DescribeEventConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeEventConfigurationsRequest]
@@ -6483,7 +6483,7 @@ package iot {
   object DetachSecurityProfileResponse {
     @inline
     def apply(
-        ): DetachSecurityProfileResponse = {
+    ): DetachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachSecurityProfileResponse]
@@ -6523,7 +6523,7 @@ package iot {
   object DetachThingPrincipalResponse {
     @inline
     def apply(
-        ): DetachThingPrincipalResponse = {
+    ): DetachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachThingPrincipalResponse]
@@ -7069,7 +7069,7 @@ package iot {
   object GetIndexingConfigurationRequest {
     @inline
     def apply(
-        ): GetIndexingConfigurationRequest = {
+    ): GetIndexingConfigurationRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetIndexingConfigurationRequest]
@@ -7142,7 +7142,7 @@ package iot {
   object GetLoggingOptionsRequest {
     @inline
     def apply(
-        ): GetLoggingOptionsRequest = {
+    ): GetLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetLoggingOptionsRequest]
@@ -7382,7 +7382,7 @@ package iot {
   object GetRegistrationCodeRequest {
     @inline
     def apply(
-        ): GetRegistrationCodeRequest = {
+    ): GetRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetRegistrationCodeRequest]
@@ -7534,7 +7534,7 @@ package iot {
   object GetV2LoggingOptionsRequest {
     @inline
     def apply(
-        ): GetV2LoggingOptionsRequest = {
+    ): GetV2LoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetV2LoggingOptionsRequest]
@@ -11381,7 +11381,7 @@ package iot {
   object RemoveThingFromBillingGroupResponse {
     @inline
     def apply(
-        ): RemoveThingFromBillingGroupResponse = {
+    ): RemoveThingFromBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveThingFromBillingGroupResponse]
@@ -11419,7 +11419,7 @@ package iot {
   object RemoveThingFromThingGroupResponse {
     @inline
     def apply(
-        ): RemoveThingFromThingGroupResponse = {
+    ): RemoveThingFromThingGroupResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveThingFromThingGroupResponse]
@@ -12404,7 +12404,7 @@ package iot {
   object StopThingRegistrationTaskResponse {
     @inline
     def apply(
-        ): StopThingRegistrationTaskResponse = {
+    ): StopThingRegistrationTaskResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopThingRegistrationTaskResponse]
@@ -12572,7 +12572,7 @@ package iot {
   object TagResourceResponse {
     @inline
     def apply(
-        ): TagResourceResponse = {
+    ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
@@ -13432,7 +13432,7 @@ package iot {
   object UntagResourceResponse {
     @inline
     def apply(
-        ): UntagResourceResponse = {
+    ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
@@ -13469,7 +13469,7 @@ package iot {
   object UpdateAccountAuditConfigurationResponse {
     @inline
     def apply(
-        ): UpdateAccountAuditConfigurationResponse = {
+    ): UpdateAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAccountAuditConfigurationResponse]
@@ -13785,7 +13785,7 @@ package iot {
   object UpdateEventConfigurationsResponse {
     @inline
     def apply(
-        ): UpdateEventConfigurationsResponse = {
+    ): UpdateEventConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEventConfigurationsResponse]
@@ -13821,7 +13821,7 @@ package iot {
   object UpdateIndexingConfigurationResponse {
     @inline
     def apply(
-        ): UpdateIndexingConfigurationResponse = {
+    ): UpdateIndexingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIndexingConfigurationResponse]
@@ -13942,7 +13942,7 @@ package iot {
   object UpdateProvisioningTemplateResponse {
     @inline
     def apply(
-        ): UpdateProvisioningTemplateResponse = {
+    ): UpdateProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateProvisioningTemplateResponse]
@@ -14255,7 +14255,7 @@ package iot {
   object UpdateThingGroupsForThingResponse {
     @inline
     def apply(
-        ): UpdateThingGroupsForThingResponse = {
+    ): UpdateThingGroupsForThingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThingGroupsForThingResponse]
@@ -14304,7 +14304,7 @@ package iot {
   object UpdateThingResponse {
     @inline
     def apply(
-        ): UpdateThingResponse = {
+    ): UpdateThingResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThingResponse]
@@ -14338,7 +14338,7 @@ package iot {
   object UpdateTopicRuleDestinationResponse {
     @inline
     def apply(
-        ): UpdateTopicRuleDestinationResponse = {
+    ): UpdateTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTopicRuleDestinationResponse]

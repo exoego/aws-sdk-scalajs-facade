@@ -304,7 +304,7 @@ package elastictranscoder {
   object CancelJobResponse {
     @inline
     def apply(
-        ): CancelJobResponse = {
+    ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResponse]
@@ -705,7 +705,7 @@ package elastictranscoder {
   object DeletePipelineResponse {
     @inline
     def apply(
-        ): DeletePipelineResponse = {
+    ): DeletePipelineResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePipelineResponse]
@@ -742,7 +742,7 @@ package elastictranscoder {
   object DeletePresetResponse {
     @inline
     def apply(
-        ): DeletePresetResponse = {
+    ): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePresetResponse]
