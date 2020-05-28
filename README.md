@@ -14,7 +14,15 @@ You may find the below peer facades useful when developing app with AWS.
 
 ```sbt
 libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.29.0-v2.624.0"
+scalaJSLinkerConfig ~= (_.withModuleKind(ModuleKind.CommonJSModule))
+
+// Below are optional. Required when bundling aws-sdk for testing in sbt or
+// for running the app (the generated JS) on environment without aws-sdk provided.
+enablePlugins(ScalaJSBundlerPlugin)
+npmDependencies += "aws-sdk" -> "2.624.0"
 ```
+
+Check [scalajs-bundler](https://scalacenter.github.io/scalajs-bundler/) regarding how to use `ScalajsBundlerPlugin`.
 
 Note) The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. If you depend only minimum facades, you will gain build performance boost (short `fastOptJS`/`fullOptJS` time). See [the list of separate artifacts](ARTIFACTS.md).
 
