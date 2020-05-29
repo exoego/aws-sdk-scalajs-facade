@@ -9,7 +9,7 @@ jdk:
   - openjdk11
 
 script:
-  - sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test;
+  - sbt -jvm-opts .travis/.jvmopts ++$TRAVIS_SCALA_VERSION all/test;
 
 before_cache:
   - rm -fv $HOME/.ivy2/.sbt.ivy.lock
