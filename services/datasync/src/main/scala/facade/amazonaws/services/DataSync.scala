@@ -186,6 +186,7 @@ package datasync {
       __obj.asInstanceOf[AgentListEntry]
     }
   }
+
   @js.native
   sealed trait AgentStatus extends js.Any
   object AgentStatus extends js.Object {
@@ -194,6 +195,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
+
   @js.native
   sealed trait Atime extends js.Any
   object Atime extends js.Object {
@@ -1143,6 +1145,7 @@ package datasync {
       __obj.asInstanceOf[Ec2Config]
     }
   }
+
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
@@ -1174,6 +1177,7 @@ package datasync {
       __obj.asInstanceOf[FilterRule]
     }
   }
+
   @js.native
   sealed trait FilterType extends js.Any
   object FilterType extends js.Object {
@@ -1181,6 +1185,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(SIMPLE_PATTERN))
   }
+
   @js.native
   sealed trait Gid extends js.Any
   object Gid extends js.Object {
@@ -1414,6 +1419,7 @@ package datasync {
       __obj.asInstanceOf[LocationListEntry]
     }
   }
+
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
@@ -1423,6 +1429,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
   }
+
   @js.native
   sealed trait Mtime extends js.Any
   object Mtime extends js.Object {
@@ -1450,6 +1457,7 @@ package datasync {
       __obj.asInstanceOf[NfsMountOptions]
     }
   }
+
   @js.native
   sealed trait NfsVersion extends js.Any
   object NfsVersion extends js.Object {
@@ -1534,6 +1542,7 @@ package datasync {
       __obj.asInstanceOf[Options]
     }
   }
+
   @js.native
   sealed trait OverwriteMode extends js.Any
   object OverwriteMode extends js.Object {
@@ -1542,6 +1551,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
+
   @js.native
   sealed trait PhaseStatus extends js.Any
   object PhaseStatus extends js.Object {
@@ -1551,6 +1561,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
   }
+
   @js.native
   sealed trait PosixPermissions extends js.Any
   object PosixPermissions extends js.Object {
@@ -1559,6 +1570,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
+
   @js.native
   sealed trait PreserveDeletedFiles extends js.Any
   object PreserveDeletedFiles extends js.Object {
@@ -1567,6 +1579,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
   }
+
   @js.native
   sealed trait PreserveDevices extends js.Any
   object PreserveDevices extends js.Object {
@@ -1625,6 +1638,7 @@ package datasync {
       __obj.asInstanceOf[S3Config]
     }
   }
+
   @js.native
   sealed trait S3StorageClass extends js.Any
   object S3StorageClass extends js.Object {
@@ -1657,6 +1671,7 @@ package datasync {
       __obj.asInstanceOf[SmbMountOptions]
     }
   }
+
   @js.native
   sealed trait SmbVersion extends js.Any
   object SmbVersion extends js.Object {
@@ -1829,6 +1844,7 @@ package datasync {
       __obj.asInstanceOf[TaskExecutionResultDetail]
     }
   }
+
   @js.native
   sealed trait TaskExecutionStatus extends js.Any
   object TaskExecutionStatus extends js.Object {
@@ -1867,6 +1883,7 @@ package datasync {
       __obj.asInstanceOf[TaskListEntry]
     }
   }
+
   @js.native
   sealed trait TaskQueueing extends js.Any
   object TaskQueueing extends js.Object {
@@ -1896,6 +1913,7 @@ package datasync {
       __obj.asInstanceOf[TaskSchedule]
     }
   }
+
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {
@@ -1907,6 +1925,7 @@ package datasync {
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
   }
+
   @js.native
   sealed trait Uid extends js.Any
   object Uid extends js.Object {
@@ -2034,6 +2053,7 @@ package datasync {
       __obj.asInstanceOf[UpdateTaskResponse]
     }
   }
+
   @js.native
   sealed trait VerifyMode extends js.Any
   object VerifyMode extends js.Object {

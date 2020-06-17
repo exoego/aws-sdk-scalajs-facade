@@ -1169,6 +1169,7 @@ package ssm {
       __obj.asInstanceOf[Association]
     }
   }
+
   @js.native
   sealed trait AssociationComplianceSeverity extends js.Any
   object AssociationComplianceSeverity extends js.Object {
@@ -1329,6 +1330,7 @@ package ssm {
       __obj.asInstanceOf[AssociationExecutionFilter]
     }
   }
+
   @js.native
   sealed trait AssociationExecutionFilterKey extends js.Any
   object AssociationExecutionFilterKey extends js.Object {
@@ -1405,6 +1407,7 @@ package ssm {
       __obj.asInstanceOf[AssociationExecutionTargetsFilter]
     }
   }
+
   @js.native
   sealed trait AssociationExecutionTargetsFilterKey extends js.Any
   object AssociationExecutionTargetsFilterKey extends js.Object {
@@ -1438,6 +1441,7 @@ package ssm {
       __obj.asInstanceOf[AssociationFilter]
     }
   }
+
   @js.native
   sealed trait AssociationFilterKey extends js.Any
   object AssociationFilterKey extends js.Object {
@@ -1461,6 +1465,7 @@ package ssm {
       )
     )
   }
+
   @js.native
   sealed trait AssociationFilterOperatorType extends js.Any
   object AssociationFilterOperatorType extends js.Object {
@@ -1527,6 +1532,7 @@ package ssm {
       __obj.asInstanceOf[AssociationStatus]
     }
   }
+
   @js.native
   sealed trait AssociationStatusName extends js.Any
   object AssociationStatusName extends js.Object {
@@ -1622,6 +1628,7 @@ package ssm {
       __obj.asInstanceOf[AttachmentContent]
     }
   }
+
   @js.native
   sealed trait AttachmentHashType extends js.Any
   object AttachmentHashType extends js.Object {
@@ -1673,6 +1680,7 @@ package ssm {
       __obj.asInstanceOf[AttachmentsSource]
     }
   }
+
   @js.native
   sealed trait AttachmentsSourceKey extends js.Any
   object AttachmentsSourceKey extends js.Object {
@@ -1801,6 +1809,7 @@ package ssm {
       __obj.asInstanceOf[AutomationExecutionFilter]
     }
   }
+
   @js.native
   sealed trait AutomationExecutionFilterKey extends js.Any
   object AutomationExecutionFilterKey extends js.Object {
@@ -1914,6 +1923,7 @@ package ssm {
       __obj.asInstanceOf[AutomationExecutionMetadata]
     }
   }
+
   @js.native
   sealed trait AutomationExecutionStatus extends js.Any
   object AutomationExecutionStatus extends js.Object {
@@ -1929,6 +1939,7 @@ package ssm {
     val values =
       js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
+
   @js.native
   sealed trait AutomationType extends js.Any
   object AutomationType extends js.Object {
@@ -1937,6 +1948,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
+
   @js.native
   sealed trait CalendarState extends js.Any
   object CalendarState extends js.Object {
@@ -2150,6 +2162,7 @@ package ssm {
       __obj.asInstanceOf[CommandFilter]
     }
   }
+
   @js.native
   sealed trait CommandFilterKey extends js.Any
   object CommandFilterKey extends js.Object {
@@ -2225,6 +2238,7 @@ package ssm {
       __obj.asInstanceOf[CommandInvocation]
     }
   }
+
   @js.native
   sealed trait CommandInvocationStatus extends js.Any
   object CommandInvocationStatus extends js.Object {
@@ -2292,6 +2306,7 @@ package ssm {
       __obj.asInstanceOf[CommandPlugin]
     }
   }
+
   @js.native
   sealed trait CommandPluginStatus extends js.Any
   object CommandPluginStatus extends js.Object {
@@ -2304,6 +2319,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
+
   @js.native
   sealed trait CommandStatus extends js.Any
   object CommandStatus extends js.Object {
@@ -2420,6 +2436,7 @@ package ssm {
       __obj.asInstanceOf[ComplianceItemEntry]
     }
   }
+
   @js.native
   sealed trait ComplianceQueryOperatorType extends js.Any
   object ComplianceQueryOperatorType extends js.Object {
@@ -2431,6 +2448,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
   }
+
   @js.native
   sealed trait ComplianceSeverity extends js.Any
   object ComplianceSeverity extends js.Object {
@@ -2443,6 +2461,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
+
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus extends js.Object {
@@ -2523,6 +2542,7 @@ package ssm {
       __obj.asInstanceOf[CompliantSummary]
     }
   }
+
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
@@ -3543,6 +3563,7 @@ package ssm {
       __obj.asInstanceOf[DescribeActivationsFilter]
     }
   }
+
   @js.native
   sealed trait DescribeActivationsFilterKeys extends js.Any
   object DescribeActivationsFilterKeys extends js.Object {
@@ -5141,6 +5162,7 @@ package ssm {
       __obj.asInstanceOf[DocumentFilter]
     }
   }
+
   @js.native
   sealed trait DocumentFilterKey extends js.Any
   object DocumentFilterKey extends js.Object {
@@ -5151,6 +5173,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
+
   @js.native
   sealed trait DocumentFormat extends js.Any
   object DocumentFormat extends js.Object {
@@ -5160,6 +5183,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
   }
+
   @js.native
   sealed trait DocumentHashType extends js.Any
   object DocumentHashType extends js.Object {
@@ -5276,6 +5300,7 @@ package ssm {
       __obj.asInstanceOf[DocumentParameter]
     }
   }
+
   @js.native
   sealed trait DocumentParameterType extends js.Any
   object DocumentParameterType extends js.Object {
@@ -5284,6 +5309,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(String, StringList))
   }
+
   @js.native
   sealed trait DocumentPermissionType extends js.Any
   object DocumentPermissionType extends js.Object {
@@ -5330,6 +5356,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
+
   @js.native
   sealed trait DocumentType extends js.Any
   object DocumentType extends js.Object {
@@ -5419,6 +5446,7 @@ package ssm {
       __obj.asInstanceOf[EffectivePatch]
     }
   }
+
   @js.native
   sealed trait ExecutionMode extends js.Any
   object ExecutionMode extends js.Object {
@@ -5477,6 +5505,7 @@ package ssm {
       __obj.asInstanceOf[FailureDetails]
     }
   }
+
   @js.native
   sealed trait Fault extends js.Any
   object Fault extends js.Object {
@@ -6943,6 +6972,7 @@ package ssm {
       __obj.asInstanceOf[InstanceInformationFilter]
     }
   }
+
   @js.native
   sealed trait InstanceInformationFilterKey extends js.Any
   object InstanceInformationFilterKey extends js.Object {
@@ -7100,6 +7130,7 @@ package ssm {
       __obj.asInstanceOf[InstancePatchStateFilter]
     }
   }
+
   @js.native
   sealed trait InstancePatchStateOperatorType extends js.Any
   object InstancePatchStateOperatorType extends js.Object {
@@ -7135,6 +7166,7 @@ package ssm {
       __obj.asInstanceOf[InventoryAggregator]
     }
   }
+
   @js.native
   sealed trait InventoryAttributeDataType extends js.Any
   object InventoryAttributeDataType extends js.Object {
@@ -7143,6 +7175,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(string, number))
   }
+
   @js.native
   sealed trait InventoryDeletionStatus extends js.Any
   object InventoryDeletionStatus extends js.Object {
@@ -7379,6 +7412,7 @@ package ssm {
       __obj.asInstanceOf[InventoryItemSchema]
     }
   }
+
   @js.native
   sealed trait InventoryQueryOperatorType extends js.Any
   object InventoryQueryOperatorType extends js.Object {
@@ -7446,6 +7480,7 @@ package ssm {
       __obj.asInstanceOf[InventoryResultItem]
     }
   }
+
   @js.native
   sealed trait InventorySchemaDeleteOption extends js.Any
   object InventorySchemaDeleteOption extends js.Object {
@@ -7497,6 +7532,7 @@ package ssm {
       __obj.asInstanceOf[LabelParameterVersionResult]
     }
   }
+
   @js.native
   sealed trait LastResourceDataSyncStatus extends js.Any
   object LastResourceDataSyncStatus extends js.Object {
@@ -8129,6 +8165,7 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowExecution]
     }
   }
+
   @js.native
   sealed trait MaintenanceWindowExecutionStatus extends js.Any
   object MaintenanceWindowExecutionStatus extends js.Object {
@@ -8360,6 +8397,7 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowLambdaParameters]
     }
   }
+
   @js.native
   sealed trait MaintenanceWindowResourceType extends js.Any
   object MaintenanceWindowResourceType extends js.Object {
@@ -8588,6 +8626,7 @@ package ssm {
       __obj.asInstanceOf[MaintenanceWindowTaskParameterValueExpression]
     }
   }
+
   @js.native
   sealed trait MaintenanceWindowTaskType extends js.Any
   object MaintenanceWindowTaskType extends js.Object {
@@ -8688,6 +8727,7 @@ package ssm {
       __obj.asInstanceOf[NotificationConfig]
     }
   }
+
   @js.native
   sealed trait NotificationEvent extends js.Any
   object NotificationEvent extends js.Object {
@@ -8700,6 +8740,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
+
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType extends js.Object {
@@ -8708,6 +8749,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Command, Invocation))
   }
+
   @js.native
   sealed trait OperatingSystem extends js.Any
   object OperatingSystem extends js.Object {
@@ -8827,6 +8869,7 @@ package ssm {
       __obj.asInstanceOf[OpsFilter]
     }
   }
+
   @js.native
   sealed trait OpsFilterOperatorType extends js.Any
   object OpsFilterOperatorType extends js.Object {
@@ -8903,6 +8946,7 @@ package ssm {
       __obj.asInstanceOf[OpsItem]
     }
   }
+
   @js.native
   sealed trait OpsItemDataType extends js.Any
   object OpsItemDataType extends js.Object {
@@ -8960,6 +9004,7 @@ package ssm {
       __obj.asInstanceOf[OpsItemFilter]
     }
   }
+
   @js.native
   sealed trait OpsItemFilterKey extends js.Any
   object OpsItemFilterKey extends js.Object {
@@ -8999,6 +9044,7 @@ package ssm {
       )
     )
   }
+
   @js.native
   sealed trait OpsItemFilterOperator extends js.Any
   object OpsItemFilterOperator extends js.Object {
@@ -9028,6 +9074,7 @@ package ssm {
       __obj.asInstanceOf[OpsItemNotification]
     }
   }
+
   @js.native
   sealed trait OpsItemStatus extends js.Any
   object OpsItemStatus extends js.Object {
@@ -9327,6 +9374,7 @@ package ssm {
       __obj.asInstanceOf[ParameterStringFilter]
     }
   }
+
   @js.native
   sealed trait ParameterTier extends js.Any
   object ParameterTier extends js.Object {
@@ -9336,6 +9384,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
   }
+
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
@@ -9369,6 +9418,7 @@ package ssm {
       __obj.asInstanceOf[ParametersFilter]
     }
   }
+
   @js.native
   sealed trait ParametersFilterKey extends js.Any
   object ParametersFilterKey extends js.Object {
@@ -9433,6 +9483,7 @@ package ssm {
       __obj.asInstanceOf[Patch]
     }
   }
+
   @js.native
   sealed trait PatchAction extends js.Any
   object PatchAction extends js.Object {
@@ -9508,6 +9559,7 @@ package ssm {
       __obj.asInstanceOf[PatchComplianceData]
     }
   }
+
   @js.native
   sealed trait PatchComplianceDataState extends js.Any
   object PatchComplianceDataState extends js.Object {
@@ -9531,6 +9583,7 @@ package ssm {
       )
     )
   }
+
   @js.native
   sealed trait PatchComplianceLevel extends js.Any
   object PatchComplianceLevel extends js.Object {
@@ -9543,6 +9596,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
+
   @js.native
   sealed trait PatchDeploymentStatus extends js.Any
   object PatchDeploymentStatus extends js.Object {
@@ -9600,6 +9654,7 @@ package ssm {
       __obj.asInstanceOf[PatchFilterGroup]
     }
   }
+
   @js.native
   sealed trait PatchFilterKey extends js.Any
   object PatchFilterKey extends js.Object {
@@ -9639,6 +9694,7 @@ package ssm {
       __obj.asInstanceOf[PatchGroupPatchBaselineMapping]
     }
   }
+
   @js.native
   sealed trait PatchOperationType extends js.Any
   object PatchOperationType extends js.Object {
@@ -9669,6 +9725,7 @@ package ssm {
       __obj.asInstanceOf[PatchOrchestratorFilter]
     }
   }
+
   @js.native
   sealed trait PatchProperty extends js.Any
   object PatchProperty extends js.Object {
@@ -9735,6 +9792,7 @@ package ssm {
       __obj.asInstanceOf[PatchRuleGroup]
     }
   }
+
   @js.native
   sealed trait PatchSet extends js.Any
   object PatchSet extends js.Object {
@@ -9795,6 +9853,7 @@ package ssm {
       __obj.asInstanceOf[PatchStatus]
     }
   }
+
   @js.native
   sealed trait PingStatus extends js.Any
   object PingStatus extends js.Object {
@@ -9804,6 +9863,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
+
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
@@ -9990,6 +10050,7 @@ package ssm {
       __obj.asInstanceOf[PutParameterResult]
     }
   }
+
   @js.native
   sealed trait RebootOption extends js.Any
   object RebootOption extends js.Object {
@@ -10479,6 +10540,7 @@ package ssm {
       __obj.asInstanceOf[ResourceDataSyncS3Destination]
     }
   }
+
   @js.native
   sealed trait ResourceDataSyncS3Format extends js.Any
   object ResourceDataSyncS3Format extends js.Object {
@@ -10551,6 +10613,7 @@ package ssm {
       __obj.asInstanceOf[ResourceDataSyncSourceWithState]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -10560,6 +10623,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
+
   @js.native
   sealed trait ResourceTypeForTagging extends js.Any
   object ResourceTypeForTagging extends js.Object {
@@ -10925,6 +10989,7 @@ package ssm {
       __obj.asInstanceOf[SessionFilter]
     }
   }
+
   @js.native
   sealed trait SessionFilterKey extends js.Any
   object SessionFilterKey extends js.Object {
@@ -10958,6 +11023,7 @@ package ssm {
       __obj.asInstanceOf[SessionManagerOutputUrl]
     }
   }
+
   @js.native
   sealed trait SessionState extends js.Any
   object SessionState extends js.Object {
@@ -10966,6 +11032,7 @@ package ssm {
 
     val values = js.Object.freeze(js.Array(Active, History))
   }
+
   @js.native
   sealed trait SessionStatus extends js.Any
   object SessionStatus extends js.Object {
@@ -11012,6 +11079,7 @@ package ssm {
       __obj.asInstanceOf[SeveritySummary]
     }
   }
+
   @js.native
   sealed trait SignalType extends js.Any
   object SignalType extends js.Object {
@@ -11273,6 +11341,7 @@ package ssm {
       __obj.asInstanceOf[StepExecutionFilter]
     }
   }
+
   @js.native
   sealed trait StepExecutionFilterKey extends js.Any
   object StepExecutionFilterKey extends js.Object {
@@ -11321,6 +11390,7 @@ package ssm {
       __obj.asInstanceOf[StopAutomationExecutionResult]
     }
   }
+
   @js.native
   sealed trait StopType extends js.Any
   object StopType extends js.Object {

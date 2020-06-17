@@ -380,6 +380,7 @@ package opsworks {
       __obj.asInstanceOf[App]
     }
   }
+
   @js.native
   sealed trait AppAttributesKeys extends js.Any
   object AppAttributesKeys extends js.Object {
@@ -390,6 +391,7 @@ package opsworks {
 
     val values = js.Object.freeze(js.Array(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings))
   }
+
   @js.native
   sealed trait AppType extends js.Any
   object AppType extends js.Object {
@@ -403,6 +405,7 @@ package opsworks {
 
     val values = js.Object.freeze(js.Array(`aws-flow-ruby`, java, rails, php, nodejs, static, other))
   }
+
   @js.native
   sealed trait Architecture extends js.Any
   object Architecture extends js.Object {
@@ -532,6 +535,7 @@ package opsworks {
       __obj.asInstanceOf[AutoScalingThresholds]
     }
   }
+
   @js.native
   sealed trait AutoScalingType extends js.Any
   object AutoScalingType extends js.Object {
@@ -1673,6 +1677,7 @@ package opsworks {
       __obj.asInstanceOf[DeploymentCommand]
     }
   }
+
   @js.native
   sealed trait DeploymentCommandName extends js.Any
   object DeploymentCommandName extends js.Object {
@@ -3233,6 +3238,7 @@ package opsworks {
       __obj.asInstanceOf[Layer]
     }
   }
+
   @js.native
   sealed trait LayerAttributesKeys extends js.Any
   object LayerAttributesKeys extends js.Object {
@@ -3292,6 +3298,7 @@ package opsworks {
       )
     )
   }
+
   @js.native
   sealed trait LayerType extends js.Any
   object LayerType extends js.Object {
@@ -3883,6 +3890,7 @@ package opsworks {
       __obj.asInstanceOf[ReportedOs]
     }
   }
+
   @js.native
   sealed trait RootDeviceType extends js.Any
   object RootDeviceType extends js.Object {
@@ -4089,6 +4097,7 @@ package opsworks {
       __obj.asInstanceOf[Source]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -4212,6 +4221,7 @@ package opsworks {
       __obj.asInstanceOf[Stack]
     }
   }
+
   @js.native
   sealed trait StackAttributesKeys extends js.Any
   object StackAttributesKeys extends js.Object {
@@ -4863,6 +4873,7 @@ package opsworks {
       __obj.asInstanceOf[UserProfile]
     }
   }
+
   @js.native
   sealed trait VirtualizationType extends js.Any
   object VirtualizationType extends js.Object {
@@ -4968,6 +4979,7 @@ package opsworks {
       __obj.asInstanceOf[VolumeConfiguration]
     }
   }
+
   @js.native
   sealed trait VolumeType extends js.Any
   object VolumeType extends js.Object {

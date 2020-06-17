@@ -348,6 +348,7 @@ package dlm {
       __obj.asInstanceOf[GetLifecyclePolicyResponse]
     }
   }
+
   @js.native
   sealed trait GettablePolicyStateValues extends js.Any
   object GettablePolicyStateValues extends js.Object {
@@ -357,6 +358,7 @@ package dlm {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
+
   @js.native
   sealed trait IntervalUnitValues extends js.Any
   object IntervalUnitValues extends js.Object {
@@ -522,6 +524,7 @@ package dlm {
       __obj.asInstanceOf[PolicyDetails]
     }
   }
+
   @js.native
   sealed trait PolicyTypeValues extends js.Any
   object PolicyTypeValues extends js.Object {
@@ -529,6 +532,7 @@ package dlm {
 
     val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
   }
+
   @js.native
   sealed trait ResourceTypeValues extends js.Any
   object ResourceTypeValues extends js.Object {
@@ -562,6 +566,7 @@ package dlm {
       __obj.asInstanceOf[RetainRule]
     }
   }
+
   @js.native
   sealed trait RetentionIntervalUnitValues extends js.Any
   object RetentionIntervalUnitValues extends js.Object {
@@ -612,6 +617,7 @@ package dlm {
       __obj.asInstanceOf[Schedule]
     }
   }
+
   @js.native
   sealed trait SettablePolicyStateValues extends js.Any
   object SettablePolicyStateValues extends js.Object {

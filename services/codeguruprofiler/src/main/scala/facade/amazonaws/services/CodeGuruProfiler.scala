@@ -493,6 +493,7 @@ package codeguruprofiler {
       __obj.asInstanceOf[ListProfilingGroupsResponse]
     }
   }
+
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {

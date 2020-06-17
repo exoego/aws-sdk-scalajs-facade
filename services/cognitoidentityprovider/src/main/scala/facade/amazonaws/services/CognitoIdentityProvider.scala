@@ -579,6 +579,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AccountTakeoverActionsType]
     }
   }
+
   @js.native
   sealed trait AccountTakeoverEventActionType extends js.Any
   object AccountTakeoverEventActionType extends js.Object {
@@ -1816,6 +1817,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AdminUserGlobalSignOutResponse]
     }
   }
+
   @js.native
   sealed trait AdvancedSecurityModeType extends js.Any
   object AdvancedSecurityModeType extends js.Object {
@@ -1825,6 +1827,7 @@ package cognitoidentityprovider {
 
     val values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
   }
+
   @js.native
   sealed trait AliasAttributeType extends js.Any
   object AliasAttributeType extends js.Object {
@@ -1922,6 +1925,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AssociateSoftwareTokenResponse]
     }
   }
+
   @js.native
   sealed trait AttributeDataType extends js.Any
   object AttributeDataType extends js.Object {
@@ -1996,6 +2000,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AuthEventType]
     }
   }
+
   @js.native
   sealed trait AuthFlowType extends js.Any
   object AuthFlowType extends js.Object {
@@ -2053,6 +2058,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[AuthenticationResultType]
     }
   }
+
   @js.native
   sealed trait ChallengeName extends js.Any
   object ChallengeName extends js.Object {
@@ -2061,6 +2067,7 @@ package cognitoidentityprovider {
 
     val values = js.Object.freeze(js.Array(Password, Mfa))
   }
+
   @js.native
   sealed trait ChallengeNameType extends js.Any
   object ChallengeNameType extends js.Object {
@@ -2090,6 +2097,7 @@ package cognitoidentityprovider {
       )
     )
   }
+
   @js.native
   sealed trait ChallengeResponse extends js.Any
   object ChallengeResponse extends js.Object {
@@ -2209,6 +2217,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[CompromisedCredentialsActionsType]
     }
   }
+
   @js.native
   sealed trait CompromisedCredentialsEventActionType extends js.Any
   object CompromisedCredentialsEventActionType extends js.Object {
@@ -2885,6 +2894,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[CustomDomainConfigType]
     }
   }
+
   @js.native
   sealed trait DefaultEmailOptionType extends js.Any
   object DefaultEmailOptionType extends js.Object {
@@ -3096,6 +3106,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
+
   @js.native
   sealed trait DeliveryMediumType extends js.Any
   object DeliveryMediumType extends js.Object {
@@ -3407,6 +3418,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DeviceConfigurationType]
     }
   }
+
   @js.native
   sealed trait DeviceRememberedStatusType extends js.Any
   object DeviceRememberedStatusType extends js.Object {
@@ -3510,6 +3522,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[DomainDescriptionType]
     }
   }
+
   @js.native
   sealed trait DomainStatusType extends js.Any
   object DomainStatusType extends js.Object {
@@ -3552,6 +3565,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EmailConfigurationType]
     }
   }
+
   @js.native
   sealed trait EmailSendingAccountType extends js.Any
   object EmailSendingAccountType extends js.Object {
@@ -3618,6 +3632,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EventFeedbackType]
     }
   }
+
   @js.native
   sealed trait EventFilterType extends js.Any
   object EventFilterType extends js.Object {
@@ -3627,6 +3642,7 @@ package cognitoidentityprovider {
 
     val values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
   }
+
   @js.native
   sealed trait EventResponseType extends js.Any
   object EventResponseType extends js.Object {
@@ -3657,6 +3673,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[EventRiskType]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -3666,6 +3683,7 @@ package cognitoidentityprovider {
 
     val values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
   }
+
   @js.native
   sealed trait ExplicitAuthFlowsType extends js.Any
   object ExplicitAuthFlowsType extends js.Object {
@@ -3691,6 +3709,7 @@ package cognitoidentityprovider {
       )
     )
   }
+
   @js.native
   sealed trait FeedbackValueType extends js.Any
   object FeedbackValueType extends js.Object {
@@ -4299,6 +4318,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[IdentityProviderType]
     }
   }
+
   @js.native
   sealed trait IdentityProviderTypeType extends js.Any
   object IdentityProviderTypeType extends js.Object {
@@ -4908,6 +4928,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[MFAOptionType]
     }
   }
+
   @js.native
   sealed trait MessageActionType extends js.Any
   object MessageActionType extends js.Object {
@@ -5048,6 +5069,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[NumberAttributeConstraintsType]
     }
   }
+
   @js.native
   sealed trait OAuthFlowType extends js.Any
   object OAuthFlowType extends js.Object {
@@ -5093,6 +5115,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[PasswordPolicyType]
     }
   }
+
   @js.native
   sealed trait PreventUserExistenceErrorTypes extends js.Any
   object PreventUserExistenceErrorTypes extends js.Object {
@@ -5154,6 +5177,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[ProviderUserIdentifierType]
     }
   }
+
   @js.native
   sealed trait RecoveryOptionNameType extends js.Any
   object RecoveryOptionNameType extends js.Object {
@@ -5401,6 +5425,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[RiskConfigurationType]
     }
   }
+
   @js.native
   sealed trait RiskDecisionType extends js.Any
   object RiskDecisionType extends js.Object {
@@ -5432,6 +5457,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[RiskExceptionConfigurationType]
     }
   }
+
   @js.native
   sealed trait RiskLevelType extends js.Any
   object RiskLevelType extends js.Object {
@@ -5935,6 +5961,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[StartUserImportJobResponse]
     }
   }
+
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
@@ -6627,6 +6654,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserContextDataType]
     }
   }
+
   @js.native
   sealed trait UserImportJobStatusType extends js.Any
   object UserImportJobStatusType extends js.Object {
@@ -6855,6 +6883,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserPoolDescriptionType]
     }
   }
+
   @js.native
   sealed trait UserPoolMfaType extends js.Any
   object UserPoolMfaType extends js.Object {
@@ -6996,6 +7025,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserPoolType]
     }
   }
+
   @js.native
   sealed trait UserStatusType extends js.Any
   object UserStatusType extends js.Object {
@@ -7048,6 +7078,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[UserType]
     }
   }
+
   @js.native
   sealed trait UsernameAttributeType extends js.Any
   object UsernameAttributeType extends js.Object {
@@ -7111,6 +7142,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[VerificationMessageTemplateType]
     }
   }
+
   @js.native
   sealed trait VerifiedAttributeType extends js.Any
   object VerifiedAttributeType extends js.Object {
@@ -7165,6 +7197,7 @@ package cognitoidentityprovider {
       __obj.asInstanceOf[VerifySoftwareTokenResponse]
     }
   }
+
   @js.native
   sealed trait VerifySoftwareTokenResponseType extends js.Any
   object VerifySoftwareTokenResponseType extends js.Object {

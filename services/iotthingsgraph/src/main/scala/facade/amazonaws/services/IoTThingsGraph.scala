@@ -392,6 +392,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[DefinitionDocument]
     }
   }
+
   @js.native
   sealed trait DefinitionLanguage extends js.Any
   object DefinitionLanguage extends js.Object {
@@ -581,6 +582,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[DeploySystemInstanceResponse]
     }
   }
+
   @js.native
   sealed trait DeploymentTarget extends js.Any
   object DeploymentTarget extends js.Object {
@@ -782,6 +784,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[EntityFilter]
     }
   }
+
   @js.native
   sealed trait EntityFilterName extends js.Any
   object EntityFilterName extends js.Object {
@@ -792,6 +795,7 @@ package iotthingsgraph {
 
     val values = js.Object.freeze(js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID))
   }
+
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
@@ -810,6 +814,7 @@ package iotthingsgraph {
       js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
     )
   }
+
   @js.native
   sealed trait FlowExecutionEventType extends js.Any
   object FlowExecutionEventType extends js.Object {
@@ -881,6 +886,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[FlowExecutionMessage]
     }
   }
+
   @js.native
   sealed trait FlowExecutionStatus extends js.Any
   object FlowExecutionStatus extends js.Object {
@@ -976,6 +982,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[FlowTemplateFilter]
     }
   }
+
   @js.native
   sealed trait FlowTemplateFilterName extends js.Any
   object FlowTemplateFilterName extends js.Object {
@@ -1445,6 +1452,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[MetricsConfiguration]
     }
   }
+
   @js.native
   sealed trait NamespaceDeletionStatus extends js.Any
   object NamespaceDeletionStatus extends js.Object {
@@ -1454,6 +1462,7 @@ package iotthingsgraph {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
+
   @js.native
   sealed trait NamespaceDeletionStatusErrorCodes extends js.Any
   object NamespaceDeletionStatusErrorCodes extends js.Object {
@@ -1731,6 +1740,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[SearchThingsResponse]
     }
   }
+
   @js.native
   sealed trait SystemInstanceDeploymentStatus extends js.Any
   object SystemInstanceDeploymentStatus extends js.Object {
@@ -1819,6 +1829,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[SystemInstanceFilter]
     }
   }
+
   @js.native
   sealed trait SystemInstanceFilterName extends js.Any
   object SystemInstanceFilterName extends js.Object {
@@ -1922,6 +1933,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[SystemTemplateFilter]
     }
   }
+
   @js.native
   sealed trait SystemTemplateFilterName extends js.Any
   object SystemTemplateFilterName extends js.Object {
@@ -2229,6 +2241,7 @@ package iotthingsgraph {
       __obj.asInstanceOf[UploadEntityDefinitionsResponse]
     }
   }
+
   @js.native
   sealed trait UploadStatus extends js.Any
   object UploadStatus extends js.Object {

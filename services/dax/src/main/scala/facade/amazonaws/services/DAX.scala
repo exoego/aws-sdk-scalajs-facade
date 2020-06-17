@@ -116,6 +116,7 @@ package dax {
     def updateParameterGroup(params: UpdateParameterGroupRequest): Request[UpdateParameterGroupResponse] = js.native
     def updateSubnetGroup(params: UpdateSubnetGroupRequest): Request[UpdateSubnetGroupResponse]          = js.native
   }
+
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType extends js.Object {
@@ -839,6 +840,7 @@ package dax {
       __obj.asInstanceOf[IncreaseReplicationFactorResponse]
     }
   }
+
   @js.native
   sealed trait IsModifiable extends js.Any
   object IsModifiable extends js.Object {
@@ -1081,6 +1083,7 @@ package dax {
       __obj.asInstanceOf[ParameterNameValue]
     }
   }
+
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
@@ -1166,6 +1169,7 @@ package dax {
       __obj.asInstanceOf[SSESpecification]
     }
   }
+
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus extends js.Object {
@@ -1198,6 +1202,7 @@ package dax {
       __obj.asInstanceOf[SecurityGroupMembership]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {

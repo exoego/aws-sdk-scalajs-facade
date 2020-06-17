@@ -130,6 +130,7 @@ package mediastore {
       __obj.asInstanceOf[Container]
     }
   }
+
   @js.native
   sealed trait ContainerStatus extends js.Any
   object ContainerStatus extends js.Object {
@@ -549,6 +550,7 @@ package mediastore {
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
+
   @js.native
   sealed trait MethodName extends js.Any
   object MethodName extends js.Object {

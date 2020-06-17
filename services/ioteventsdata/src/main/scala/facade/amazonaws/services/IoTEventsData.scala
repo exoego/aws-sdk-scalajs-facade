@@ -356,6 +356,7 @@ package ioteventsdata {
       __obj.asInstanceOf[DetectorSummary]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {

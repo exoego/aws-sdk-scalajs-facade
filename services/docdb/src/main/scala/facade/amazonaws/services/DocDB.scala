@@ -256,6 +256,7 @@ package docdb {
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
+
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod extends js.Object {
@@ -3114,6 +3115,7 @@ package docdb {
       __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {

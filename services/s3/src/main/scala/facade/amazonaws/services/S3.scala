@@ -403,8 +403,7 @@ package object s3 {
       * @param operation the name of the operation to call. E.g. `getObject`
       * @param params    Parameters to pass to the operation. See the given operation for the expected operation parameters. In addition, you can also pass the "Expires" parameter to inform S3 how long the URL should work for.
       * @param expires   The number of seconds to expire the pre-signed URL operation in. Defaults to 900 seconds (15 minutes).
-      * @return Future of the signed URL
-      */
+      * @return Future of the signed URL */
     def getSignedUrlFuture(operation: Operation, params: js.Object, expires: Int = 900): Future[String] = {
       val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
         params
@@ -891,6 +890,7 @@ package s3 {
       __obj.asInstanceOf[AnalyticsS3BucketDestination]
     }
   }
+
   @js.native
   sealed trait AnalyticsS3ExportFileFormat extends js.Any
   object AnalyticsS3ExportFileFormat extends js.Object {
@@ -920,6 +920,7 @@ package s3 {
       __obj.asInstanceOf[Bucket]
     }
   }
+
   @js.native
   sealed trait BucketAccelerateStatus extends js.Any
   object BucketAccelerateStatus extends js.Object {
@@ -928,6 +929,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
+
   @js.native
   sealed trait BucketCannedACL extends js.Any
   object BucketCannedACL extends js.Object {
@@ -959,6 +961,7 @@ package s3 {
       __obj.asInstanceOf[BucketLifecycleConfiguration]
     }
   }
+
   @js.native
   sealed trait BucketLocationConstraint extends js.Any
   object BucketLocationConstraint extends js.Object {
@@ -1009,6 +1012,7 @@ package s3 {
       __obj.asInstanceOf[BucketLoggingStatus]
     }
   }
+
   @js.native
   sealed trait BucketLogsPermission extends js.Any
   object BucketLogsPermission extends js.Object {
@@ -1018,6 +1022,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
+
   @js.native
   sealed trait BucketVersioningStatus extends js.Any
   object BucketVersioningStatus extends js.Object {
@@ -1311,6 +1316,7 @@ package s3 {
       __obj.asInstanceOf[CompletedPart]
     }
   }
+
   @js.native
   sealed trait CompressionType extends js.Any
   object CompressionType extends js.Object {
@@ -2120,6 +2126,7 @@ package s3 {
       __obj.asInstanceOf[DeleteMarkerReplication]
     }
   }
+
   @js.native
   sealed trait DeleteMarkerReplicationStatus extends js.Any
   object DeleteMarkerReplicationStatus extends js.Object {
@@ -2555,6 +2562,7 @@ package s3 {
       __obj.asInstanceOf[ExistingObjectReplication]
     }
   }
+
   @js.native
   sealed trait ExistingObjectReplicationStatus extends js.Any
   object ExistingObjectReplicationStatus extends js.Object {
@@ -2563,6 +2571,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait ExpirationStatus extends js.Any
   object ExpirationStatus extends js.Object {
@@ -2571,6 +2580,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait ExpressionType extends js.Any
   object ExpressionType extends js.Object {
@@ -2578,6 +2588,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(SQL))
   }
+
   @js.native
   sealed trait FileHeaderInfo extends js.Any
   object FileHeaderInfo extends js.Object {
@@ -2609,6 +2620,7 @@ package s3 {
       __obj.asInstanceOf[FilterRule]
     }
   }
+
   @js.native
   sealed trait FilterRuleName extends js.Any
   object FilterRuleName extends js.Object {
@@ -4175,6 +4187,7 @@ package s3 {
       __obj.asInstanceOf[InventoryFilter]
     }
   }
+
   @js.native
   sealed trait InventoryFormat extends js.Any
   object InventoryFormat extends js.Object {
@@ -4184,6 +4197,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
   }
+
   @js.native
   sealed trait InventoryFrequency extends js.Any
   object InventoryFrequency extends js.Object {
@@ -4192,6 +4206,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Daily, Weekly))
   }
+
   @js.native
   sealed trait InventoryIncludedObjectVersions extends js.Any
   object InventoryIncludedObjectVersions extends js.Object {
@@ -4200,6 +4215,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(All, Current))
   }
+
   @js.native
   sealed trait InventoryOptionalField extends js.Any
   object InventoryOptionalField extends js.Object {
@@ -4323,6 +4339,7 @@ package s3 {
       __obj.asInstanceOf[JSONOutput]
     }
   }
+
   @js.native
   sealed trait JSONType extends js.Any
   object JSONType extends js.Object {
@@ -5126,6 +5143,7 @@ package s3 {
       __obj.asInstanceOf[LoggingEnabled]
     }
   }
+
   @js.native
   sealed trait MFADelete extends js.Any
   object MFADelete extends js.Object {
@@ -5134,6 +5152,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait MFADeleteStatus extends js.Any
   object MFADeleteStatus extends js.Object {
@@ -5142,6 +5161,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait MetadataDirective extends js.Any
   object MetadataDirective extends js.Object {
@@ -5267,6 +5287,7 @@ package s3 {
       __obj.asInstanceOf[MetricsFilter]
     }
   }
+
   @js.native
   sealed trait MetricsStatus extends js.Any
   object MetricsStatus extends js.Object {
@@ -5454,6 +5475,7 @@ package s3 {
       __obj.asInstanceOf[Object]
     }
   }
+
   @js.native
   sealed trait ObjectCannedACL extends js.Any
   object ObjectCannedACL extends js.Object {
@@ -5523,6 +5545,7 @@ package s3 {
       __obj.asInstanceOf[ObjectLockConfiguration]
     }
   }
+
   @js.native
   sealed trait ObjectLockEnabled extends js.Any
   object ObjectLockEnabled extends js.Object {
@@ -5549,6 +5572,7 @@ package s3 {
       __obj.asInstanceOf[ObjectLockLegalHold]
     }
   }
+
   @js.native
   sealed trait ObjectLockLegalHoldStatus extends js.Any
   object ObjectLockLegalHoldStatus extends js.Object {
@@ -5557,6 +5581,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(ON, OFF))
   }
+
   @js.native
   sealed trait ObjectLockMode extends js.Any
   object ObjectLockMode extends js.Object {
@@ -5587,6 +5612,7 @@ package s3 {
       __obj.asInstanceOf[ObjectLockRetention]
     }
   }
+
   @js.native
   sealed trait ObjectLockRetentionMode extends js.Any
   object ObjectLockRetentionMode extends js.Object {
@@ -5614,6 +5640,7 @@ package s3 {
       __obj.asInstanceOf[ObjectLockRule]
     }
   }
+
   @js.native
   sealed trait ObjectStorageClass extends js.Any
   object ObjectStorageClass extends js.Object {
@@ -5669,6 +5696,7 @@ package s3 {
       __obj.asInstanceOf[ObjectVersion]
     }
   }
+
   @js.native
   sealed trait ObjectVersionStorageClass extends js.Any
   object ObjectVersionStorageClass extends js.Object {
@@ -5739,6 +5767,7 @@ package s3 {
       __obj.asInstanceOf[Owner]
     }
   }
+
   @js.native
   sealed trait OwnerOverride extends js.Any
   object OwnerOverride extends js.Object {
@@ -5790,6 +5819,7 @@ package s3 {
       __obj.asInstanceOf[Part]
     }
   }
+
   @js.native
   sealed trait Payer extends js.Any
   object Payer extends js.Object {
@@ -5798,6 +5828,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Requester, BucketOwner))
   }
+
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
@@ -5872,6 +5903,7 @@ package s3 {
       __obj.asInstanceOf[ProgressEvent]
     }
   }
+
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
@@ -6853,6 +6885,7 @@ package s3 {
       __obj.asInstanceOf[QueueConfigurationDeprecated]
     }
   }
+
   @js.native
   sealed trait QuoteFields extends js.Any
   object QuoteFields extends js.Object {
@@ -7056,6 +7089,7 @@ package s3 {
       __obj.asInstanceOf[ReplicationRuleFilter]
     }
   }
+
   @js.native
   sealed trait ReplicationRuleStatus extends js.Any
   object ReplicationRuleStatus extends js.Object {
@@ -7064,6 +7098,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait ReplicationStatus extends js.Any
   object ReplicationStatus extends js.Object {
@@ -7098,6 +7133,7 @@ package s3 {
       __obj.asInstanceOf[ReplicationTime]
     }
   }
+
   @js.native
   sealed trait ReplicationTimeStatus extends js.Any
   object ReplicationTimeStatus extends js.Object {
@@ -7273,6 +7309,7 @@ package s3 {
       __obj.asInstanceOf[RestoreRequest]
     }
   }
+
   @js.native
   sealed trait RestoreRequestType extends js.Any
   object RestoreRequestType extends js.Object {
@@ -7600,6 +7637,7 @@ package s3 {
       __obj.asInstanceOf[SelectParameters]
     }
   }
+
   @js.native
   sealed trait ServerSideEncryption extends js.Any
   object ServerSideEncryption extends js.Object {
@@ -7714,6 +7752,7 @@ package s3 {
       __obj.asInstanceOf[SseKmsEncryptedObjects]
     }
   }
+
   @js.native
   sealed trait SseKmsEncryptedObjectsStatus extends js.Any
   object SseKmsEncryptedObjectsStatus extends js.Object {
@@ -7766,6 +7805,7 @@ package s3 {
       __obj.asInstanceOf[StatsEvent]
     }
   }
+
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass extends js.Object {
@@ -7824,6 +7864,7 @@ package s3 {
       __obj.asInstanceOf[StorageClassAnalysisDataExport]
     }
   }
+
   @js.native
   sealed trait StorageClassAnalysisSchemaVersion extends js.Any
   object StorageClassAnalysisSchemaVersion extends js.Object {
@@ -7876,6 +7917,7 @@ package s3 {
       __obj.asInstanceOf[Tagging]
     }
   }
+
   @js.native
   sealed trait TaggingDirective extends js.Any
   object TaggingDirective extends js.Object {
@@ -7906,6 +7948,7 @@ package s3 {
       __obj.asInstanceOf[TargetGrant]
     }
   }
+
   @js.native
   sealed trait Tier extends js.Any
   object Tier extends js.Object {
@@ -7998,6 +8041,7 @@ package s3 {
       __obj.asInstanceOf[Transition]
     }
   }
+
   @js.native
   sealed trait TransitionStorageClass extends js.Any
   object TransitionStorageClass extends js.Object {
@@ -8009,6 +8053,7 @@ package s3 {
 
     val values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

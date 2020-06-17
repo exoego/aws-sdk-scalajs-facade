@@ -545,6 +545,7 @@ package directoryservice {
       __obj.asInstanceOf[CertificateInfo]
     }
   }
+
   @js.native
   sealed trait CertificateState extends js.Any
   object CertificateState extends js.Object {
@@ -1895,6 +1896,7 @@ package directoryservice {
       __obj.asInstanceOf[DirectoryDescription]
     }
   }
+
   @js.native
   sealed trait DirectoryEdition extends js.Any
   object DirectoryEdition extends js.Object {
@@ -1964,6 +1966,7 @@ package directoryservice {
       __obj.asInstanceOf[DirectoryLimits]
     }
   }
+
   @js.native
   sealed trait DirectorySize extends js.Any
   object DirectorySize extends js.Object {
@@ -1972,6 +1975,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(Small, Large))
   }
+
   @js.native
   sealed trait DirectoryStage extends js.Any
   object DirectoryStage extends js.Object {
@@ -2003,6 +2007,7 @@ package directoryservice {
       )
     )
   }
+
   @js.native
   sealed trait DirectoryType extends js.Any
   object DirectoryType extends js.Object {
@@ -2227,6 +2232,7 @@ package directoryservice {
       __obj.asInstanceOf[DomainController]
     }
   }
+
   @js.native
   sealed trait DomainControllerStatus extends js.Any
   object DomainControllerStatus extends js.Object {
@@ -2519,6 +2525,7 @@ package directoryservice {
       __obj.asInstanceOf[IpRouteInfo]
     }
   }
+
   @js.native
   sealed trait IpRouteStatusMsg extends js.Any
   object IpRouteStatusMsg extends js.Object {
@@ -2556,6 +2563,7 @@ package directoryservice {
       __obj.asInstanceOf[LDAPSSettingInfo]
     }
   }
+
   @js.native
   sealed trait LDAPSStatus extends js.Any
   object LDAPSStatus extends js.Object {
@@ -2566,6 +2574,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
   }
+
   @js.native
   sealed trait LDAPSType extends js.Any
   object LDAPSType extends js.Object {
@@ -2847,6 +2856,7 @@ package directoryservice {
       __obj.asInstanceOf[OwnerDirectoryDescription]
     }
   }
+
   @js.native
   sealed trait RadiusAuthenticationProtocol extends js.Any
   object RadiusAuthenticationProtocol extends js.Object {
@@ -2897,6 +2907,7 @@ package directoryservice {
       __obj.asInstanceOf[RadiusSettings]
     }
   }
+
   @js.native
   sealed trait RadiusStatus extends js.Any
   object RadiusStatus extends js.Object {
@@ -3085,6 +3096,7 @@ package directoryservice {
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
   }
+
   @js.native
   sealed trait ReplicationScope extends js.Any
   object ReplicationScope extends js.Object {
@@ -3205,6 +3217,7 @@ package directoryservice {
       __obj.asInstanceOf[SchemaExtensionInfo]
     }
   }
+
   @js.native
   sealed trait SchemaExtensionStatus extends js.Any
   object SchemaExtensionStatus extends js.Object {
@@ -3232,6 +3245,7 @@ package directoryservice {
       )
     )
   }
+
   @js.native
   sealed trait SelectiveAuth extends js.Any
   object SelectiveAuth extends js.Object {
@@ -3283,6 +3297,7 @@ package directoryservice {
       __obj.asInstanceOf[ShareDirectoryResult]
     }
   }
+
   @js.native
   sealed trait ShareMethod extends js.Any
   object ShareMethod extends js.Object {
@@ -3291,6 +3306,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
+
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {
@@ -3438,6 +3454,7 @@ package directoryservice {
       __obj.asInstanceOf[SnapshotLimits]
     }
   }
+
   @js.native
   sealed trait SnapshotStatus extends js.Any
   object SnapshotStatus extends js.Object {
@@ -3447,6 +3464,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
+
   @js.native
   sealed trait SnapshotType extends js.Any
   object SnapshotType extends js.Object {
@@ -3522,6 +3540,7 @@ package directoryservice {
       __obj.asInstanceOf[Tag]
     }
   }
+
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {
@@ -3529,6 +3548,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
+
   @js.native
   sealed trait TopicStatus extends js.Any
   object TopicStatus extends js.Object {
@@ -3588,6 +3608,7 @@ package directoryservice {
       __obj.asInstanceOf[Trust]
     }
   }
+
   @js.native
   sealed trait TrustDirection extends js.Any
   object TrustDirection extends js.Object {
@@ -3597,6 +3618,7 @@ package directoryservice {
 
     val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
+
   @js.native
   sealed trait TrustState extends js.Any
   object TrustState extends js.Object {
@@ -3628,6 +3650,7 @@ package directoryservice {
       )
     )
   }
+
   @js.native
   sealed trait TrustType extends js.Any
   object TrustType extends js.Object {

@@ -435,6 +435,7 @@ package licensemanager {
       __obj.asInstanceOf[InventoryFilter]
     }
   }
+
   @js.native
   sealed trait InventoryFilterCondition extends js.Any
   object InventoryFilterCondition extends js.Object {
@@ -540,6 +541,7 @@ package licensemanager {
       __obj.asInstanceOf[LicenseConfigurationAssociation]
     }
   }
+
   @js.native
   sealed trait LicenseConfigurationStatus extends js.Any
   object LicenseConfigurationStatus extends js.Object {
@@ -582,6 +584,7 @@ package licensemanager {
       __obj.asInstanceOf[LicenseConfigurationUsage]
     }
   }
+
   @js.native
   sealed trait LicenseCountingType extends js.Any
   object LicenseCountingType extends js.Object {
@@ -1103,6 +1106,7 @@ package licensemanager {
       __obj.asInstanceOf[ResourceInventory]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {

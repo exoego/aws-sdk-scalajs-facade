@@ -455,6 +455,7 @@ package gamelift {
       __obj.asInstanceOf[AcceptMatchOutput]
     }
   }
+
   @js.native
   sealed trait AcceptanceType extends js.Any
   object AcceptanceType extends js.Object {
@@ -559,6 +560,7 @@ package gamelift {
       __obj.asInstanceOf[AwsCredentials]
     }
   }
+
   @js.native
   sealed trait BackfillMode extends js.Any
   object BackfillMode extends js.Object {
@@ -613,6 +615,7 @@ package gamelift {
       __obj.asInstanceOf[Build]
     }
   }
+
   @js.native
   sealed trait BuildStatus extends js.Any
   object BuildStatus extends js.Object {
@@ -643,6 +646,7 @@ package gamelift {
       __obj.asInstanceOf[CertificateConfiguration]
     }
   }
+
   @js.native
   sealed trait CertificateType extends js.Any
   object CertificateType extends js.Object {
@@ -651,6 +655,7 @@ package gamelift {
 
     val values = js.Object.freeze(js.Array(DISABLED, GENERATED))
   }
+
   @js.native
   sealed trait ComparisonOperatorType extends js.Any
   object ComparisonOperatorType extends js.Object {
@@ -2700,6 +2705,7 @@ package gamelift {
       __obj.asInstanceOf[EC2InstanceLimit]
     }
   }
+
   @js.native
   sealed trait EC2InstanceType extends js.Any
   object EC2InstanceType extends js.Object {
@@ -2859,6 +2865,7 @@ package gamelift {
       __obj.asInstanceOf[Event]
     }
   }
+
   @js.native
   sealed trait EventCode extends js.Any
   object EventCode extends js.Object {
@@ -2936,6 +2943,7 @@ package gamelift {
       )
     )
   }
+
   @js.native
   sealed trait FleetAction extends js.Any
   object FleetAction extends js.Object {
@@ -3075,6 +3083,7 @@ package gamelift {
       __obj.asInstanceOf[FleetCapacity]
     }
   }
+
   @js.native
   sealed trait FleetStatus extends js.Any
   object FleetStatus extends js.Object {
@@ -3092,6 +3101,7 @@ package gamelift {
       js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
     )
   }
+
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType extends js.Object {
@@ -3386,6 +3396,7 @@ package gamelift {
       __obj.asInstanceOf[GameSessionPlacement]
     }
   }
+
   @js.native
   sealed trait GameSessionPlacementState extends js.Any
   object GameSessionPlacementState extends js.Object {
@@ -3458,6 +3469,7 @@ package gamelift {
       __obj.asInstanceOf[GameSessionQueueDestination]
     }
   }
+
   @js.native
   sealed trait GameSessionStatus extends js.Any
   object GameSessionStatus extends js.Object {
@@ -3469,6 +3481,7 @@ package gamelift {
 
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR))
   }
+
   @js.native
   sealed trait GameSessionStatusReason extends js.Any
   object GameSessionStatusReason extends js.Object {
@@ -3652,6 +3665,7 @@ package gamelift {
       __obj.asInstanceOf[InstanceCredentials]
     }
   }
+
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus extends js.Object {
@@ -3691,6 +3705,7 @@ package gamelift {
       __obj.asInstanceOf[IpPermission]
     }
   }
+
   @js.native
   sealed trait IpProtocol extends js.Any
   object IpProtocol extends js.Object {
@@ -4005,6 +4020,7 @@ package gamelift {
       __obj.asInstanceOf[MatchmakingConfiguration]
     }
   }
+
   @js.native
   sealed trait MatchmakingConfigurationStatus extends js.Any
   object MatchmakingConfigurationStatus extends js.Object {
@@ -4107,6 +4123,7 @@ package gamelift {
       __obj.asInstanceOf[MatchmakingTicket]
     }
   }
+
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName extends js.Object {
@@ -4138,6 +4155,7 @@ package gamelift {
       )
     )
   }
+
   @js.native
   sealed trait OperatingSystem extends js.Any
   object OperatingSystem extends js.Object {
@@ -4319,6 +4337,7 @@ package gamelift {
       __obj.asInstanceOf[PlayerSession]
     }
   }
+
   @js.native
   sealed trait PlayerSessionCreationPolicy extends js.Any
   object PlayerSessionCreationPolicy extends js.Object {
@@ -4327,6 +4346,7 @@ package gamelift {
 
     val values = js.Object.freeze(js.Array(ACCEPT_ALL, DENY_ALL))
   }
+
   @js.native
   sealed trait PlayerSessionStatus extends js.Any
   object PlayerSessionStatus extends js.Object {
@@ -4337,6 +4357,7 @@ package gamelift {
 
     val values = js.Object.freeze(js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT))
   }
+
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType extends js.Object {
@@ -4345,6 +4366,7 @@ package gamelift {
 
     val values = js.Object.freeze(js.Array(RuleBased, TargetBased))
   }
+
   @js.native
   sealed trait ProtectionPolicy extends js.Any
   object ProtectionPolicy extends js.Object {
@@ -4562,6 +4584,7 @@ package gamelift {
       __obj.asInstanceOf[RoutingStrategy]
     }
   }
+
   @js.native
   sealed trait RoutingStrategyType extends js.Any
   object RoutingStrategyType extends js.Object {
@@ -4638,6 +4661,7 @@ package gamelift {
       __obj.asInstanceOf[S3Location]
     }
   }
+
   @js.native
   sealed trait ScalingAdjustmentType extends js.Any
   object ScalingAdjustmentType extends js.Object {
@@ -4707,6 +4731,7 @@ package gamelift {
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
+
   @js.native
   sealed trait ScalingStatusType extends js.Any
   object ScalingStatusType extends js.Object {

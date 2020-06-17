@@ -272,6 +272,7 @@ package appstream {
       __obj.asInstanceOf[AccessEndpoint]
     }
   }
+
   @js.native
   sealed trait AccessEndpointType extends js.Any
   object AccessEndpointType extends js.Object {
@@ -279,6 +280,7 @@ package appstream {
 
     val values = js.Object.freeze(js.Array(STREAMING))
   }
+
   @js.native
   sealed trait Action extends js.Any
   object Action extends js.Object {
@@ -418,6 +420,7 @@ package appstream {
       __obj.asInstanceOf[AssociateFleetResult]
     }
   }
+
   @js.native
   sealed trait AuthenticationType extends js.Any
   object AuthenticationType extends js.Object {
@@ -2020,6 +2023,7 @@ package appstream {
       __obj.asInstanceOf[FleetError]
     }
   }
+
   @js.native
   sealed trait FleetErrorCode extends js.Any
   object FleetErrorCode extends js.Object {
@@ -2092,6 +2096,7 @@ package appstream {
       )
     )
   }
+
   @js.native
   sealed trait FleetState extends js.Any
   object FleetState extends js.Object {
@@ -2102,6 +2107,7 @@ package appstream {
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
+
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType extends js.Object {
@@ -2254,6 +2260,7 @@ package appstream {
       __obj.asInstanceOf[ImageBuilder]
     }
   }
+
   @js.native
   sealed trait ImageBuilderState extends js.Any
   object ImageBuilderState extends js.Object {
@@ -2293,6 +2300,7 @@ package appstream {
       __obj.asInstanceOf[ImageBuilderStateChangeReason]
     }
   }
+
   @js.native
   sealed trait ImageBuilderStateChangeReasonCode extends js.Any
   object ImageBuilderStateChangeReasonCode extends js.Object {
@@ -2323,6 +2331,7 @@ package appstream {
       __obj.asInstanceOf[ImagePermissions]
     }
   }
+
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState extends js.Object {
@@ -2356,6 +2365,7 @@ package appstream {
       __obj.asInstanceOf[ImageStateChangeReason]
     }
   }
+
   @js.native
   sealed trait ImageStateChangeReasonCode extends js.Any
   object ImageStateChangeReasonCode extends js.Object {
@@ -2501,6 +2511,7 @@ package appstream {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait MessageAction extends js.Any
   object MessageAction extends js.Object {
@@ -2531,6 +2542,7 @@ package appstream {
       __obj.asInstanceOf[NetworkAccessConfiguration]
     }
   }
+
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
@@ -2539,6 +2551,7 @@ package appstream {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
@@ -2647,6 +2660,7 @@ package appstream {
       __obj.asInstanceOf[Session]
     }
   }
+
   @js.native
   sealed trait SessionConnectionState extends js.Any
   object SessionConnectionState extends js.Object {
@@ -2749,6 +2763,7 @@ package appstream {
       __obj.asInstanceOf[Stack]
     }
   }
+
   @js.native
   sealed trait StackAttribute extends js.Any
   object StackAttribute extends js.Object {
@@ -2802,6 +2817,7 @@ package appstream {
       __obj.asInstanceOf[StackError]
     }
   }
+
   @js.native
   sealed trait StackErrorCode extends js.Any
   object StackErrorCode extends js.Object {
@@ -3282,6 +3298,7 @@ package appstream {
       __obj.asInstanceOf[UpdateStackResult]
     }
   }
+
   @js.native
   sealed trait UsageReportExecutionErrorCode extends js.Any
   object UsageReportExecutionErrorCode extends js.Object {
@@ -3291,6 +3308,7 @@ package appstream {
 
     val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
   }
+
   @js.native
   sealed trait UsageReportSchedule extends js.Any
   object UsageReportSchedule extends js.Object {
@@ -3447,6 +3465,7 @@ package appstream {
       __obj.asInstanceOf[UserStackAssociationError]
     }
   }
+
   @js.native
   sealed trait UserStackAssociationErrorCode extends js.Any
   object UserStackAssociationErrorCode extends js.Object {
@@ -3456,6 +3475,7 @@ package appstream {
 
     val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
+
   @js.native
   sealed trait VisibilityType extends js.Any
   object VisibilityType extends js.Object {

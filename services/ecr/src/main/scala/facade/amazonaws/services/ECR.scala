@@ -777,6 +777,7 @@ package ecr {
       __obj.asInstanceOf[DescribeRepositoriesResponse]
     }
   }
+
   @js.native
   sealed trait FindingSeverity extends js.Any
   object FindingSeverity extends js.Object {
@@ -1048,6 +1049,7 @@ package ecr {
       __obj.asInstanceOf[Image]
     }
   }
+
   @js.native
   sealed trait ImageActionType extends js.Any
   object ImageActionType extends js.Object {
@@ -1120,6 +1122,7 @@ package ecr {
       __obj.asInstanceOf[ImageFailure]
     }
   }
+
   @js.native
   sealed trait ImageFailureCode extends js.Any
   object ImageFailureCode extends js.Object {
@@ -1284,6 +1287,7 @@ package ecr {
       __obj.asInstanceOf[ImageScanningConfiguration]
     }
   }
+
   @js.native
   sealed trait ImageTagMutability extends js.Any
   object ImageTagMutability extends js.Object {
@@ -1360,6 +1364,7 @@ package ecr {
       __obj.asInstanceOf[Layer]
     }
   }
+
   @js.native
   sealed trait LayerAvailability extends js.Any
   object LayerAvailability extends js.Object {
@@ -1393,6 +1398,7 @@ package ecr {
       __obj.asInstanceOf[LayerFailure]
     }
   }
+
   @js.native
   sealed trait LayerFailureCode extends js.Any
   object LayerFailureCode extends js.Object {
@@ -1451,6 +1457,7 @@ package ecr {
       __obj.asInstanceOf[LifecyclePolicyPreviewResult]
     }
   }
+
   @js.native
   sealed trait LifecyclePolicyPreviewStatus extends js.Any
   object LifecyclePolicyPreviewStatus extends js.Object {
@@ -1823,6 +1830,7 @@ package ecr {
       __obj.asInstanceOf[Repository]
     }
   }
+
   @js.native
   sealed trait ScanStatus extends js.Any
   object ScanStatus extends js.Object {
@@ -2035,6 +2043,7 @@ package ecr {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait TagStatus extends js.Any
   object TagStatus extends js.Object {

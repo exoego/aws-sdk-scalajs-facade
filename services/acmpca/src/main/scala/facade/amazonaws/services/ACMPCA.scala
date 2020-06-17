@@ -200,6 +200,7 @@ package acmpca {
       __obj.asInstanceOf[ASN1Subject]
     }
   }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
@@ -209,6 +210,7 @@ package acmpca {
 
     val values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
   }
+
   @js.native
   sealed trait AuditReportResponseFormat extends js.Any
   object AuditReportResponseFormat extends js.Object {
@@ -217,6 +219,7 @@ package acmpca {
 
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }
+
   @js.native
   sealed trait AuditReportStatus extends js.Any
   object AuditReportStatus extends js.Object {
@@ -307,6 +310,7 @@ package acmpca {
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
     }
   }
+
   @js.native
   sealed trait CertificateAuthorityStatus extends js.Any
   object CertificateAuthorityStatus extends js.Object {
@@ -320,6 +324,7 @@ package acmpca {
 
     val values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
   }
+
   @js.native
   sealed trait CertificateAuthorityType extends js.Any
   object CertificateAuthorityType extends js.Object {
@@ -620,6 +625,7 @@ package acmpca {
       __obj.asInstanceOf[DescribeCertificateAuthorityResponse]
     }
   }
+
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason extends js.Object {
@@ -813,6 +819,7 @@ package acmpca {
       __obj.asInstanceOf[IssueCertificateResponse]
     }
   }
+
   @js.native
   sealed trait KeyAlgorithm extends js.Any
   object KeyAlgorithm extends js.Object {
@@ -1018,6 +1025,7 @@ package acmpca {
       __obj.asInstanceOf[RevocationConfiguration]
     }
   }
+
   @js.native
   sealed trait RevocationReason extends js.Any
   object RevocationReason extends js.Object {
@@ -1067,6 +1075,7 @@ package acmpca {
       __obj.asInstanceOf[RevokeCertificateRequest]
     }
   }
+
   @js.native
   sealed trait SigningAlgorithm extends js.Any
   object SigningAlgorithm extends js.Object {
@@ -1195,6 +1204,7 @@ package acmpca {
       __obj.asInstanceOf[Validity]
     }
   }
+
   @js.native
   sealed trait ValidityPeriodType extends js.Any
   object ValidityPeriodType extends js.Object {

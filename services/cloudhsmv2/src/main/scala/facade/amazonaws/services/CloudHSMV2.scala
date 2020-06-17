@@ -137,6 +137,7 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Backup]
     }
   }
+
   @js.native
   sealed trait BackupPolicy extends js.Any
   object BackupPolicy extends js.Object {
@@ -144,6 +145,7 @@ package cloudhsmv2 {
 
     val values = js.Object.freeze(js.Array(DEFAULT))
   }
+
   @js.native
   sealed trait BackupState extends js.Any
   object BackupState extends js.Object {
@@ -245,6 +247,7 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Cluster]
     }
   }
+
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
@@ -661,6 +664,7 @@ package cloudhsmv2 {
       __obj.asInstanceOf[Hsm]
     }
   }
+
   @js.native
   sealed trait HsmState extends js.Any
   object HsmState extends js.Object {

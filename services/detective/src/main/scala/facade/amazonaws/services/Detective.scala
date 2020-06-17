@@ -463,6 +463,7 @@ package detective {
       __obj.asInstanceOf[MemberDetail]
     }
   }
+
   @js.native
   sealed trait MemberStatus extends js.Any
   object MemberStatus extends js.Object {

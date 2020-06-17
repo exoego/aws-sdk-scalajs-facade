@@ -272,6 +272,7 @@ package elasticache {
     def startMigration(params: StartMigrationMessage): Request[StartMigrationResponse] = js.native
     def testFailover(params: TestFailoverMessage): Request[TestFailoverResult]         = js.native
   }
+
   @js.native
   sealed trait AZMode extends js.Any
   object AZMode extends js.Object {
@@ -326,6 +327,7 @@ package elasticache {
       __obj.asInstanceOf[AllowedNodeTypeModificationsMessage]
     }
   }
+
   @js.native
   sealed trait AuthTokenUpdateStatus extends js.Any
   object AuthTokenUpdateStatus extends js.Object {
@@ -334,6 +336,7 @@ package elasticache {
 
     val values = js.Object.freeze(js.Array(SETTING, ROTATING))
   }
+
   @js.native
   sealed trait AuthTokenUpdateStrategyType extends js.Any
   object AuthTokenUpdateStrategyType extends js.Object {
@@ -385,6 +388,7 @@ package elasticache {
       __obj.asInstanceOf[AuthorizeCacheSecurityGroupIngressResult]
     }
   }
+
   @js.native
   sealed trait AutomaticFailoverStatus extends js.Any
   object AutomaticFailoverStatus extends js.Object {
@@ -1067,6 +1071,7 @@ package elasticache {
       __obj.asInstanceOf[CacheSubnetGroupMessage]
     }
   }
+
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType extends js.Object {
@@ -3062,6 +3067,7 @@ package elasticache {
       __obj.asInstanceOf[NodeSnapshot]
     }
   }
+
   @js.native
   sealed trait NodeUpdateInitiatedBy extends js.Any
   object NodeUpdateInitiatedBy extends js.Object {
@@ -3070,6 +3076,7 @@ package elasticache {
 
     val values = js.Object.freeze(js.Array(system, customer))
   }
+
   @js.native
   sealed trait NodeUpdateStatus extends js.Any
   object NodeUpdateStatus extends js.Object {
@@ -3170,6 +3177,7 @@ package elasticache {
       __obj.asInstanceOf[ParameterNameValue]
     }
   }
+
   @js.native
   sealed trait PendingAutomaticFailoverStatus extends js.Any
   object PendingAutomaticFailoverStatus extends js.Object {
@@ -3824,6 +3832,7 @@ package elasticache {
       __obj.asInstanceOf[ServiceUpdate]
     }
   }
+
   @js.native
   sealed trait ServiceUpdateSeverity extends js.Any
   object ServiceUpdateSeverity extends js.Object {
@@ -3834,6 +3843,7 @@ package elasticache {
 
     val values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
+
   @js.native
   sealed trait ServiceUpdateStatus extends js.Any
   object ServiceUpdateStatus extends js.Object {
@@ -3843,6 +3853,7 @@ package elasticache {
 
     val values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
+
   @js.native
   sealed trait ServiceUpdateType extends js.Any
   object ServiceUpdateType extends js.Object {
@@ -3869,6 +3880,7 @@ package elasticache {
       __obj.asInstanceOf[ServiceUpdatesMessage]
     }
   }
+
   @js.native
   sealed trait SlaMet extends js.Any
   object SlaMet extends js.Object {
@@ -3994,6 +4006,7 @@ package elasticache {
       __obj.asInstanceOf[Snapshot]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -4295,6 +4308,7 @@ package elasticache {
       __obj.asInstanceOf[UpdateActionResultsMessage]
     }
   }
+
   @js.native
   sealed trait UpdateActionStatus extends js.Any
   object UpdateActionStatus extends js.Object {

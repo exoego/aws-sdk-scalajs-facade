@@ -320,6 +320,7 @@ package worklink {
       __obj.asInstanceOf[AssociateWebsiteCertificateAuthorityResponse]
     }
   }
+
   @js.native
   sealed trait AuthorizationProviderType extends js.Any
   object AuthorizationProviderType extends js.Object {
@@ -759,6 +760,7 @@ package worklink {
       __obj.asInstanceOf[DescribeWebsiteCertificateAuthorityResponse]
     }
   }
+
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus extends js.Object {
@@ -891,6 +893,7 @@ package worklink {
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
     }
   }
+
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
@@ -946,6 +949,7 @@ package worklink {
       __obj.asInstanceOf[DomainSummary]
     }
   }
+
   @js.native
   sealed trait FleetStatus extends js.Any
   object FleetStatus extends js.Object {
@@ -995,6 +999,7 @@ package worklink {
       __obj.asInstanceOf[FleetSummary]
     }
   }
+
   @js.native
   sealed trait IdentityProviderType extends js.Any
   object IdentityProviderType extends js.Object {

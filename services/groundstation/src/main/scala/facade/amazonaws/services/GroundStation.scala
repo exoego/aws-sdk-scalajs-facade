@@ -132,6 +132,7 @@ package groundstation {
     def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse]                          = js.native
     def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse]  = js.native
   }
+
   @js.native
   sealed trait AngleUnits extends js.Any
   object AngleUnits extends js.Object {
@@ -212,6 +213,7 @@ package groundstation {
       __obj.asInstanceOf[AntennaUplinkConfig]
     }
   }
+
   @js.native
   sealed trait BandwidthUnits extends js.Any
   object BandwidthUnits extends js.Object {
@@ -242,6 +244,7 @@ package groundstation {
       __obj.asInstanceOf[CancelContactRequest]
     }
   }
+
   @js.native
   sealed trait ConfigCapabilityType extends js.Any
   object ConfigCapabilityType extends js.Object {
@@ -427,6 +430,7 @@ package groundstation {
       __obj.asInstanceOf[ContactIdResponse]
     }
   }
+
   @js.native
   sealed trait ContactStatus extends js.Any
   object ContactStatus extends js.Object {
@@ -554,6 +558,7 @@ package groundstation {
       __obj.asInstanceOf[CreateMissionProfileRequest]
     }
   }
+
   @js.native
   sealed trait Criticality extends js.Any
   object Criticality extends js.Object {
@@ -861,6 +866,7 @@ package groundstation {
       __obj.asInstanceOf[Eirp]
     }
   }
+
   @js.native
   sealed trait EirpUnits extends js.Any
   object EirpUnits extends js.Object {
@@ -914,6 +920,7 @@ package groundstation {
       __obj.asInstanceOf[EndpointDetails]
     }
   }
+
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus extends js.Object {
@@ -973,6 +980,7 @@ package groundstation {
       __obj.asInstanceOf[FrequencyBandwidth]
     }
   }
+
   @js.native
   sealed trait FrequencyUnits extends js.Any
   object FrequencyUnits extends js.Object {
@@ -1675,6 +1683,7 @@ package groundstation {
       __obj.asInstanceOf[MissionProfileListItem]
     }
   }
+
   @js.native
   sealed trait Polarization extends js.Any
   object Polarization extends js.Object {

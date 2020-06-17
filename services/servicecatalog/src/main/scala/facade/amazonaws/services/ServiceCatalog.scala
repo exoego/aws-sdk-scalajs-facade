@@ -642,6 +642,7 @@ package servicecatalog {
       __obj.asInstanceOf[AccessLevelFilter]
     }
   }
+
   @js.native
   sealed trait AccessLevelFilterKey extends js.Any
   object AccessLevelFilterKey extends js.Object {
@@ -651,6 +652,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(Account, Role, User))
   }
+
   @js.native
   sealed trait AccessStatus extends js.Any
   object AccessStatus extends js.Object {
@@ -945,6 +947,7 @@ package servicecatalog {
       __obj.asInstanceOf[BudgetDetail]
     }
   }
+
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction extends js.Object {
@@ -1023,6 +1026,7 @@ package servicecatalog {
       __obj.asInstanceOf[ConstraintSummary]
     }
   }
+
   @js.native
   sealed trait CopyOption extends js.Any
   object CopyOption extends js.Object {
@@ -1084,6 +1088,7 @@ package servicecatalog {
       __obj.asInstanceOf[CopyProductOutput]
     }
   }
+
   @js.native
   sealed trait CopyProductStatus extends js.Any
   object CopyProductStatus extends js.Object {
@@ -2725,6 +2730,7 @@ package servicecatalog {
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
     }
   }
+
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType extends js.Object {
@@ -3824,6 +3830,7 @@ package servicecatalog {
       __obj.asInstanceOf[OrganizationNode]
     }
   }
+
   @js.native
   sealed trait OrganizationNodeType extends js.Any
   object OrganizationNodeType extends js.Object {
@@ -3886,6 +3893,7 @@ package servicecatalog {
       __obj.asInstanceOf[PortfolioDetail]
     }
   }
+
   @js.native
   sealed trait PortfolioShareType extends js.Any
   object PortfolioShareType extends js.Object {
@@ -3917,6 +3925,7 @@ package servicecatalog {
       __obj.asInstanceOf[Principal]
     }
   }
+
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
@@ -3924,6 +3933,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(IAM))
   }
+
   @js.native
   sealed trait ProductSource extends js.Any
   object ProductSource extends js.Object {
@@ -3931,6 +3941,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
+
   @js.native
   sealed trait ProductType extends js.Any
   object ProductType extends js.Object {
@@ -3989,6 +4000,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProductViewDetail]
     }
   }
+
   @js.native
   sealed trait ProductViewFilterBy extends js.Any
   object ProductViewFilterBy extends js.Object {
@@ -3999,6 +4011,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
   }
+
   @js.native
   sealed trait ProductViewSortBy extends js.Any
   object ProductViewSortBy extends js.Object {
@@ -4057,6 +4070,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProductViewSummary]
     }
   }
+
   @js.native
   sealed trait PropertyKey extends js.Any
   object PropertyKey extends js.Object {
@@ -4296,6 +4310,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProvisionedProductPlanDetails]
     }
   }
+
   @js.native
   sealed trait ProvisionedProductPlanStatus extends js.Any
   object ProvisionedProductPlanStatus extends js.Object {
@@ -4344,6 +4359,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProvisionedProductPlanSummary]
     }
   }
+
   @js.native
   sealed trait ProvisionedProductPlanType extends js.Any
   object ProvisionedProductPlanType extends js.Object {
@@ -4351,6 +4367,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(CLOUDFORMATION))
   }
+
   @js.native
   sealed trait ProvisionedProductStatus extends js.Any
   object ProvisionedProductStatus extends js.Object {
@@ -4362,6 +4379,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
   }
+
   @js.native
   sealed trait ProvisionedProductViewFilterBy extends js.Any
   object ProvisionedProductViewFilterBy extends js.Object {
@@ -4437,6 +4455,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProvisioningArtifactDetail]
     }
   }
+
   @js.native
   sealed trait ProvisioningArtifactGuidance extends js.Any
   object ProvisioningArtifactGuidance extends js.Object {
@@ -4537,6 +4556,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProvisioningArtifactProperties]
     }
   }
+
   @js.native
   sealed trait ProvisioningArtifactPropertyName extends js.Any
   object ProvisioningArtifactPropertyName extends js.Object {
@@ -4577,6 +4597,7 @@ package servicecatalog {
       __obj.asInstanceOf[ProvisioningArtifactSummary]
     }
   }
+
   @js.native
   sealed trait ProvisioningArtifactType extends js.Any
   object ProvisioningArtifactType extends js.Object {
@@ -4774,6 +4795,7 @@ package servicecatalog {
       __obj.asInstanceOf[RecordOutput]
     }
   }
+
   @js.native
   sealed trait RecordStatus extends js.Any
   object RecordStatus extends js.Object {
@@ -4844,6 +4866,7 @@ package servicecatalog {
       __obj.asInstanceOf[RejectPortfolioShareOutput]
     }
   }
+
   @js.native
   sealed trait Replacement extends js.Any
   object Replacement extends js.Object {
@@ -4853,6 +4876,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
+
   @js.native
   sealed trait RequiresRecreation extends js.Any
   object RequiresRecreation extends js.Object {
@@ -4862,6 +4886,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
   }
+
   @js.native
   sealed trait ResourceAttribute extends js.Any
   object ResourceAttribute extends js.Object {
@@ -5228,6 +5253,7 @@ package servicecatalog {
       __obj.asInstanceOf[ServiceActionAssociation]
     }
   }
+
   @js.native
   sealed trait ServiceActionAssociationErrorCode extends js.Any
   object ServiceActionAssociationErrorCode extends js.Object {
@@ -5240,6 +5266,7 @@ package servicecatalog {
     val values =
       js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
   }
+
   @js.native
   sealed trait ServiceActionDefinitionKey extends js.Any
   object ServiceActionDefinitionKey extends js.Object {
@@ -5250,6 +5277,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(Name, Version, AssumeRole, Parameters))
   }
+
   @js.native
   sealed trait ServiceActionDefinitionType extends js.Any
   object ServiceActionDefinitionType extends js.Object {
@@ -5354,6 +5382,7 @@ package servicecatalog {
       __obj.asInstanceOf[ShareError]
     }
   }
+
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {
@@ -5365,6 +5394,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
@@ -5398,6 +5428,7 @@ package servicecatalog {
       __obj.asInstanceOf[StackInstance]
     }
   }
+
   @js.native
   sealed trait StackInstanceStatus extends js.Any
   object StackInstanceStatus extends js.Object {
@@ -5407,6 +5438,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
+
   @js.native
   sealed trait StackSetOperationType extends js.Any
   object StackSetOperationType extends js.Object {
@@ -5416,6 +5448,7 @@ package servicecatalog {
 
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {

@@ -832,6 +832,7 @@ package efs {
       __obj.asInstanceOf[FileSystemSize]
     }
   }
+
   @js.native
   sealed trait LifeCycleState extends js.Any
   object LifeCycleState extends js.Object {
@@ -990,6 +991,7 @@ package efs {
       __obj.asInstanceOf[MountTargetDescription]
     }
   }
+
   @js.native
   sealed trait PerformanceMode extends js.Any
   object PerformanceMode extends js.Object {
@@ -1139,6 +1141,7 @@ package efs {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
+
   @js.native
   sealed trait ThroughputMode extends js.Any
   object ThroughputMode extends js.Object {
@@ -1147,6 +1150,7 @@ package efs {
 
     val values = js.Object.freeze(js.Array(bursting, provisioned))
   }
+
   @js.native
   sealed trait TransitionToIARules extends js.Any
   object TransitionToIARules extends js.Object {

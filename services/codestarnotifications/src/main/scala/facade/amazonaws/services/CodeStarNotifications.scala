@@ -285,6 +285,7 @@ package codestarnotifications {
       __obj.asInstanceOf[DescribeNotificationRuleResult]
     }
   }
+
   @js.native
   sealed trait DetailType extends js.Any
   object DetailType extends js.Object {
@@ -345,6 +346,7 @@ package codestarnotifications {
       __obj.asInstanceOf[ListEventTypesFilter]
     }
   }
+
   @js.native
   sealed trait ListEventTypesFilterName extends js.Any
   object ListEventTypesFilterName extends js.Object {
@@ -418,6 +420,7 @@ package codestarnotifications {
       __obj.asInstanceOf[ListNotificationRulesFilter]
     }
   }
+
   @js.native
   sealed trait ListNotificationRulesFilterName extends js.Any
   object ListNotificationRulesFilterName extends js.Object {
@@ -527,6 +530,7 @@ package codestarnotifications {
       __obj.asInstanceOf[ListTargetsFilter]
     }
   }
+
   @js.native
   sealed trait ListTargetsFilterName extends js.Any
   object ListTargetsFilterName extends js.Object {
@@ -577,6 +581,7 @@ package codestarnotifications {
       __obj.asInstanceOf[ListTargetsResult]
     }
   }
+
   @js.native
   sealed trait NotificationRuleStatus extends js.Any
   object NotificationRuleStatus extends js.Object {
@@ -706,6 +711,7 @@ package codestarnotifications {
       __obj.asInstanceOf[Target]
     }
   }
+
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus extends js.Object {

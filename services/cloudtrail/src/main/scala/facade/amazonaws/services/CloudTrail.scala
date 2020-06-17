@@ -405,6 +405,7 @@ package cloudtrail {
       __obj.asInstanceOf[Event]
     }
   }
+
   @js.native
   sealed trait EventCategory extends js.Any
   object EventCategory extends js.Object {
@@ -672,6 +673,7 @@ package cloudtrail {
       __obj.asInstanceOf[InsightSelector]
     }
   }
+
   @js.native
   sealed trait InsightType extends js.Any
   object InsightType extends js.Object {
@@ -831,6 +833,7 @@ package cloudtrail {
       __obj.asInstanceOf[LookupAttribute]
     }
   }
+
   @js.native
   sealed trait LookupAttributeKey extends js.Any
   object LookupAttributeKey extends js.Object {
@@ -1011,6 +1014,7 @@ package cloudtrail {
       __obj.asInstanceOf[PutInsightSelectorsResponse]
     }
   }
+
   @js.native
   sealed trait ReadWriteType extends js.Any
   object ReadWriteType extends js.Object {

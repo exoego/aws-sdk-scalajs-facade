@@ -3082,7 +3082,6 @@ package apigatewayv2 {
   }
 
   /**
-    *
     */
   @js.native
   trait ImportApiRequest extends js.Object {
@@ -3402,7 +3401,6 @@ package apigatewayv2 {
   }
 
   /**
-    *
     */
   @js.native
   trait ReimportApiRequest extends js.Object {

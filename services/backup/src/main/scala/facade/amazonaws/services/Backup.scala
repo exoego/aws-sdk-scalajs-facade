@@ -292,6 +292,7 @@ package backup {
       __obj.asInstanceOf[BackupJob]
     }
   }
+
   @js.native
   sealed trait BackupJobState extends js.Any
   object BackupJobState extends js.Object {
@@ -567,6 +568,7 @@ package backup {
       __obj.asInstanceOf[BackupSelectionsListMember]
     }
   }
+
   @js.native
   sealed trait BackupVaultEvent extends js.Any
   object BackupVaultEvent extends js.Object {
@@ -691,6 +693,7 @@ package backup {
       __obj.asInstanceOf[Condition]
     }
   }
+
   @js.native
   sealed trait ConditionType extends js.Any
   object ConditionType extends js.Object {
@@ -784,6 +787,7 @@ package backup {
       __obj.asInstanceOf[CopyJob]
     }
   }
+
   @js.native
   sealed trait CopyJobState extends js.Any
   object CopyJobState extends js.Object {
@@ -2540,6 +2544,7 @@ package backup {
       __obj.asInstanceOf[RecoveryPointCreator]
     }
   }
+
   @js.native
   sealed trait RecoveryPointStatus extends js.Any
   object RecoveryPointStatus extends js.Object {
@@ -2550,6 +2555,7 @@ package backup {
 
     val values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
   }
+
   @js.native
   sealed trait RestoreJobStatus extends js.Any
   object RestoreJobStatus extends js.Object {
@@ -2789,6 +2795,7 @@ package backup {
       __obj.asInstanceOf[StopBackupJobInput]
     }
   }
+
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass extends js.Object {

@@ -246,6 +246,7 @@ package kendra {
       __obj.asInstanceOf[AdditionalResultAttributeValue]
     }
   }
+
   @js.native
   sealed trait AdditionalResultAttributeValueType extends js.Any
   object AdditionalResultAttributeValueType extends js.Object {
@@ -516,6 +517,7 @@ package kendra {
       __obj.asInstanceOf[ConnectionConfiguration]
     }
   }
+
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
@@ -697,6 +699,7 @@ package kendra {
       __obj.asInstanceOf[DataSourceConfiguration]
     }
   }
+
   @js.native
   sealed trait DataSourceStatus extends js.Any
   object DataSourceStatus extends js.Object {
@@ -779,6 +782,7 @@ package kendra {
       __obj.asInstanceOf[DataSourceSyncJob]
     }
   }
+
   @js.native
   sealed trait DataSourceSyncJobStatus extends js.Any
   object DataSourceSyncJobStatus extends js.Object {
@@ -818,6 +822,7 @@ package kendra {
       __obj.asInstanceOf[DataSourceToIndexFieldMapping]
     }
   }
+
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
@@ -884,6 +889,7 @@ package kendra {
       __obj.asInstanceOf[DatabaseConfiguration]
     }
   }
+
   @js.native
   sealed trait DatabaseEngineType extends js.Any
   object DatabaseEngineType extends js.Object {
@@ -1248,6 +1254,7 @@ package kendra {
       __obj.asInstanceOf[DocumentAttributeValueCountPair]
     }
   }
+
   @js.native
   sealed trait DocumentAttributeValueType extends js.Any
   object DocumentAttributeValueType extends js.Object {
@@ -1307,6 +1314,7 @@ package kendra {
       __obj.asInstanceOf[DocumentsMetadataConfiguration]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -1379,6 +1387,7 @@ package kendra {
       __obj.asInstanceOf[FaqStatistics]
     }
   }
+
   @js.native
   sealed trait FaqStatus extends js.Any
   object FaqStatus extends js.Object {
@@ -1505,6 +1514,7 @@ package kendra {
       __obj.asInstanceOf[IndexStatistics]
     }
   }
+
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus extends js.Object {
@@ -1694,6 +1704,7 @@ package kendra {
       __obj.asInstanceOf[ListIndicesResponse]
     }
   }
+
   @js.native
   sealed trait Order extends js.Any
   object Order extends js.Object {
@@ -1729,6 +1740,7 @@ package kendra {
       __obj.asInstanceOf[Principal]
     }
   }
+
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
@@ -1844,6 +1856,7 @@ package kendra {
       __obj.asInstanceOf[QueryResultItem]
     }
   }
+
   @js.native
   sealed trait QueryResultType extends js.Any
   object QueryResultType extends js.Object {
@@ -1853,6 +1866,7 @@ package kendra {
 
     val values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
   }
+
   @js.native
   sealed trait ReadAccessType extends js.Any
   object ReadAccessType extends js.Object {
@@ -1916,6 +1930,7 @@ package kendra {
       __obj.asInstanceOf[RelevanceFeedback]
     }
   }
+
   @js.native
   sealed trait RelevanceType extends js.Any
   object RelevanceType extends js.Object {
@@ -2068,6 +2083,7 @@ package kendra {
       __obj.asInstanceOf[SharePointConfiguration]
     }
   }
+
   @js.native
   sealed trait SharePointVersion extends js.Any
   object SharePointVersion extends js.Object {

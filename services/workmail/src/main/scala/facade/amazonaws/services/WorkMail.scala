@@ -256,6 +256,7 @@ package workmail {
       __obj.asInstanceOf[AccessControlRule]
     }
   }
+
   @js.native
   sealed trait AccessControlRuleEffect extends js.Any
   object AccessControlRuleEffect extends js.Object {
@@ -1092,6 +1093,7 @@ package workmail {
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
     }
   }
+
   @js.native
   sealed trait EntityState extends js.Any
   object EntityState extends js.Object {
@@ -1674,6 +1676,7 @@ package workmail {
       __obj.asInstanceOf[Member]
     }
   }
+
   @js.native
   sealed trait MemberType extends js.Any
   object MemberType extends js.Object {
@@ -1737,6 +1740,7 @@ package workmail {
       __obj.asInstanceOf[Permission]
     }
   }
+
   @js.native
   sealed trait PermissionType extends js.Any
   object PermissionType extends js.Object {
@@ -1955,6 +1959,7 @@ package workmail {
       __obj.asInstanceOf[Resource]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -2209,6 +2214,7 @@ package workmail {
       __obj.asInstanceOf[User]
     }
   }
+
   @js.native
   sealed trait UserRole extends js.Any
   object UserRole extends js.Object {

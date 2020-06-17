@@ -38,6 +38,7 @@ package marketplacecommerceanalytics {
     def generateDataSet(params: GenerateDataSetRequest): Request[GenerateDataSetResult]                      = js.native
     def startSupportDataExport(params: StartSupportDataExportRequest): Request[StartSupportDataExportResult] = js.native
   }
+
   @js.native
   sealed trait DataSetType extends js.Any
   object DataSetType extends js.Object {
@@ -222,6 +223,7 @@ package marketplacecommerceanalytics {
       __obj.asInstanceOf[StartSupportDataExportResult]
     }
   }
+
   @js.native
   sealed trait SupportDataSetType extends js.Any
   object SupportDataSetType extends js.Object {

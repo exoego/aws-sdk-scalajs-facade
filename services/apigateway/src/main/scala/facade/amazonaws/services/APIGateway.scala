@@ -555,6 +555,7 @@ package apigateway {
       __obj.asInstanceOf[ApiKeyIds]
     }
   }
+
   @js.native
   sealed trait ApiKeySourceType extends js.Any
   object ApiKeySourceType extends js.Object {
@@ -590,6 +591,7 @@ package apigateway {
       __obj.asInstanceOf[ApiKeys]
     }
   }
+
   @js.native
   sealed trait ApiKeysFormat extends js.Any
   object ApiKeysFormat extends js.Object {
@@ -884,6 +886,7 @@ package apigateway {
       __obj.asInstanceOf[ClientCertificates]
     }
   }
+
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType extends js.Object {
@@ -892,6 +895,7 @@ package apigateway {
 
     val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
+
   @js.native
   sealed trait ContentHandlingStrategy extends js.Any
   object ContentHandlingStrategy extends js.Object {
@@ -2128,6 +2132,7 @@ package apigateway {
       __obj.asInstanceOf[DocumentationPartLocation]
     }
   }
+
   @js.native
   sealed trait DocumentationPartType extends js.Any
   object DocumentationPartType extends js.Object {
@@ -2302,6 +2307,7 @@ package apigateway {
       __obj.asInstanceOf[DomainName]
     }
   }
+
   @js.native
   sealed trait DomainNameStatus extends js.Any
   object DomainNameStatus extends js.Object {
@@ -2486,6 +2492,7 @@ package apigateway {
       __obj.asInstanceOf[GatewayResponse]
     }
   }
+
   @js.native
   sealed trait GatewayResponseType extends js.Any
   object GatewayResponseType extends js.Object {
@@ -3964,6 +3971,7 @@ package apigateway {
 
     val values = js.Object.freeze(js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY))
   }
+
   @js.native
   sealed trait LocationStatusType extends js.Any
   object LocationStatusType extends js.Object {
@@ -4198,6 +4206,7 @@ package apigateway {
       __obj.asInstanceOf[Models]
     }
   }
+
   @js.native
   sealed trait Op extends js.Any
   object Op extends js.Object {
@@ -4466,6 +4475,7 @@ package apigateway {
       __obj.asInstanceOf[PutMethodResponseRequest]
     }
   }
+
   @js.native
   sealed trait PutMode extends js.Any
   object PutMode extends js.Object {
@@ -4507,6 +4517,7 @@ package apigateway {
       __obj.asInstanceOf[PutRestApiRequest]
     }
   }
+
   @js.native
   sealed trait QuotaPeriodType extends js.Any
   object QuotaPeriodType extends js.Object {
@@ -4840,6 +4851,7 @@ package apigateway {
       __obj.asInstanceOf[SdkTypes]
     }
   }
+
   @js.native
   sealed trait SecurityPolicy extends js.Any
   object SecurityPolicy extends js.Object {
@@ -5206,6 +5218,7 @@ package apigateway {
       __obj.asInstanceOf[ThrottleSettings]
     }
   }
+
   @js.native
   sealed trait UnauthorizedCacheControlHeaderStrategy extends js.Any
   object UnauthorizedCacheControlHeaderStrategy extends js.Object {
@@ -6022,6 +6035,7 @@ package apigateway {
       __obj.asInstanceOf[VpcLink]
     }
   }
+
   @js.native
   sealed trait VpcLinkStatus extends js.Any
   object VpcLinkStatus extends js.Object {

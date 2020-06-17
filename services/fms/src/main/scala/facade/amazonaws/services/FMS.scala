@@ -104,6 +104,7 @@ package fms {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
   }
+
   @js.native
   sealed trait AccountRoleStatus extends js.Any
   object AccountRoleStatus extends js.Object {
@@ -158,6 +159,7 @@ package fms {
       __obj.asInstanceOf[ComplianceViolator]
     }
   }
+
   @js.native
   sealed trait CustomerPolicyScopeIdType extends js.Any
   object CustomerPolicyScopeIdType extends js.Object {
@@ -199,6 +201,7 @@ package fms {
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
+
   @js.native
   sealed trait DependentServiceName extends js.Any
   object DependentServiceName extends js.Object {
@@ -723,6 +726,7 @@ package fms {
       __obj.asInstanceOf[PolicyComplianceStatus]
     }
   }
+
   @js.native
   sealed trait PolicyComplianceStatusType extends js.Any
   object PolicyComplianceStatusType extends js.Object {
@@ -874,6 +878,7 @@ package fms {
       __obj.asInstanceOf[SecurityServicePolicyData]
     }
   }
+
   @js.native
   sealed trait SecurityServiceType extends js.Any
   object SecurityServiceType extends js.Object {
@@ -979,6 +984,7 @@ package fms {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
+
   @js.native
   sealed trait ViolationReason extends js.Any
   object ViolationReason extends js.Object {

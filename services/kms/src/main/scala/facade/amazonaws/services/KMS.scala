@@ -212,6 +212,7 @@ package kms {
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object]                    = js.native
     def verify(params: VerifyRequest): Request[VerifyResponse]                                           = js.native
   }
+
   @js.native
   sealed trait AlgorithmSpec extends js.Any
   object AlgorithmSpec extends js.Object {
@@ -311,6 +312,7 @@ package kms {
       __obj.asInstanceOf[ConnectCustomKeyStoreResponse]
     }
   }
+
   @js.native
   sealed trait ConnectionErrorCodeType extends js.Any
   object ConnectionErrorCodeType extends js.Object {
@@ -338,6 +340,7 @@ package kms {
       )
     )
   }
+
   @js.native
   sealed trait ConnectionStateType extends js.Any
   object ConnectionStateType extends js.Object {
@@ -560,6 +563,7 @@ package kms {
       __obj.asInstanceOf[CustomKeyStoresListEntry]
     }
   }
+
   @js.native
   sealed trait CustomerMasterKeySpec extends js.Any
   object CustomerMasterKeySpec extends js.Object {
@@ -585,6 +589,7 @@ package kms {
       )
     )
   }
+
   @js.native
   sealed trait DataKeyPairSpec extends js.Any
   object DataKeyPairSpec extends js.Object {
@@ -600,6 +605,7 @@ package kms {
       js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
     )
   }
+
   @js.native
   sealed trait DataKeySpec extends js.Any
   object DataKeySpec extends js.Object {
@@ -966,6 +972,7 @@ package kms {
       __obj.asInstanceOf[EncryptResponse]
     }
   }
+
   @js.native
   sealed trait EncryptionAlgorithmSpec extends js.Any
   object EncryptionAlgorithmSpec extends js.Object {
@@ -975,6 +982,7 @@ package kms {
 
     val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
+
   @js.native
   sealed trait ExpirationModelType extends js.Any
   object ExpirationModelType extends js.Object {
@@ -1474,6 +1482,7 @@ package kms {
       __obj.asInstanceOf[GrantListEntry]
     }
   }
+
   @js.native
   sealed trait GrantOperation extends js.Any
   object GrantOperation extends js.Object {
@@ -1576,6 +1585,7 @@ package kms {
       __obj.asInstanceOf[KeyListEntry]
     }
   }
+
   @js.native
   sealed trait KeyManagerType extends js.Any
   object KeyManagerType extends js.Object {
@@ -1657,6 +1667,7 @@ package kms {
       __obj.asInstanceOf[KeyMetadata]
     }
   }
+
   @js.native
   sealed trait KeyState extends js.Any
   object KeyState extends js.Object {
@@ -1668,6 +1679,7 @@ package kms {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
   }
+
   @js.native
   sealed trait KeyUsageType extends js.Any
   object KeyUsageType extends js.Object {
@@ -1923,6 +1935,7 @@ package kms {
       __obj.asInstanceOf[ListRetirableGrantsRequest]
     }
   }
+
   @js.native
   sealed trait MessageType extends js.Any
   object MessageType extends js.Object {
@@ -1931,6 +1944,7 @@ package kms {
 
     val values = js.Object.freeze(js.Array(RAW, DIGEST))
   }
+
   @js.native
   sealed trait OriginType extends js.Any
   object OriginType extends js.Object {
@@ -2181,6 +2195,7 @@ package kms {
       __obj.asInstanceOf[SignResponse]
     }
   }
+
   @js.native
   sealed trait SigningAlgorithmSpec extends js.Any
   object SigningAlgorithmSpec extends js.Object {
@@ -2412,6 +2427,7 @@ package kms {
       __obj.asInstanceOf[VerifyResponse]
     }
   }
+
   @js.native
   sealed trait WrappingKeySpec extends js.Any
   object WrappingKeySpec extends js.Object {

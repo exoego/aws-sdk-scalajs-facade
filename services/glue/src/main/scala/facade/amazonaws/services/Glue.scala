@@ -1222,6 +1222,7 @@ package glue {
       __obj.asInstanceOf[CancelMLTaskRunResponse]
     }
   }
+
   @js.native
   sealed trait CatalogEncryptionMode extends js.Any
   object CatalogEncryptionMode extends js.Object {
@@ -1354,6 +1355,7 @@ package glue {
       __obj.asInstanceOf[CloudWatchEncryption]
     }
   }
+
   @js.native
   sealed trait CloudWatchEncryptionMode extends js.Any
   object CloudWatchEncryptionMode extends js.Object {
@@ -1476,6 +1478,7 @@ package glue {
       __obj.asInstanceOf[Column]
     }
   }
+
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator extends js.Object {
@@ -1656,6 +1659,7 @@ package glue {
       __obj.asInstanceOf[ConnectionPasswordEncryption]
     }
   }
+
   @js.native
   sealed trait ConnectionPropertyKey extends js.Any
   object ConnectionPropertyKey extends js.Object {
@@ -1697,6 +1701,7 @@ package glue {
       )
     )
   }
+
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType extends js.Object {
@@ -1758,6 +1763,7 @@ package glue {
       __obj.asInstanceOf[Crawl]
     }
   }
+
   @js.native
   sealed trait CrawlState extends js.Any
   object CrawlState extends js.Object {
@@ -1896,6 +1902,7 @@ package glue {
       __obj.asInstanceOf[CrawlerNodeDetails]
     }
   }
+
   @js.native
   sealed trait CrawlerState extends js.Any
   object CrawlerState extends js.Object {
@@ -2853,6 +2860,7 @@ package glue {
       __obj.asInstanceOf[CsvClassifier]
     }
   }
+
   @js.native
   sealed trait CsvHeaderOption extends js.Any
   object CsvHeaderOption extends js.Object {
@@ -2980,6 +2988,7 @@ package glue {
       __obj.asInstanceOf[DatabaseInput]
     }
   }
+
   @js.native
   sealed trait DeleteBehavior extends js.Any
   object DeleteBehavior extends js.Object {
@@ -3770,6 +3779,7 @@ package glue {
       __obj.asInstanceOf[ExecutionProperty]
     }
   }
+
   @js.native
   sealed trait ExistCondition extends js.Any
   object ExistCondition extends js.Object {
@@ -5985,6 +5995,7 @@ package glue {
       __obj.asInstanceOf[JobBookmarksEncryption]
     }
   }
+
   @js.native
   sealed trait JobBookmarksEncryptionMode extends js.Any
   object JobBookmarksEncryptionMode extends js.Object {
@@ -6119,6 +6130,7 @@ package glue {
       __obj.asInstanceOf[JobRun]
     }
   }
+
   @js.native
   sealed trait JobRunState extends js.Any
   object JobRunState extends js.Object {
@@ -6251,6 +6263,7 @@ package glue {
       __obj.asInstanceOf[LabelingSetGenerationTaskRunProperties]
     }
   }
+
   @js.native
   sealed trait Language extends js.Any
   object Language extends js.Object {
@@ -6293,6 +6306,7 @@ package glue {
       __obj.asInstanceOf[LastCrawlInfo]
     }
   }
+
   @js.native
   sealed trait LastCrawlStatus extends js.Any
   object LastCrawlStatus extends js.Object {
@@ -6532,6 +6546,7 @@ package glue {
       __obj.asInstanceOf[Location]
     }
   }
+
   @js.native
   sealed trait Logical extends js.Any
   object Logical extends js.Object {
@@ -6540,6 +6555,7 @@ package glue {
 
     val values = js.Object.freeze(js.Array(AND, ANY))
   }
+
   @js.native
   sealed trait LogicalOperator extends js.Any
   object LogicalOperator extends js.Object {
@@ -6685,6 +6701,7 @@ package glue {
       __obj.asInstanceOf[Node]
     }
   }
+
   @js.native
   sealed trait NodeType extends js.Any
   object NodeType extends js.Object {
@@ -6851,6 +6868,7 @@ package glue {
       __obj.asInstanceOf[PartitionValueList]
     }
   }
+
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
@@ -6959,6 +6977,7 @@ package glue {
       __obj.asInstanceOf[PrincipalPermissions]
     }
   }
+
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
@@ -7141,6 +7160,7 @@ package glue {
       __obj.asInstanceOf[ResetJobBookmarkResponse]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -7194,6 +7214,7 @@ package glue {
       __obj.asInstanceOf[S3Encryption]
     }
   }
+
   @js.native
   sealed trait S3EncryptionMode extends js.Any
   object S3EncryptionMode extends js.Object {
@@ -7247,6 +7268,7 @@ package glue {
       __obj.asInstanceOf[Schedule]
     }
   }
+
   @js.native
   sealed trait ScheduleState extends js.Any
   object ScheduleState extends js.Object {
@@ -7451,6 +7473,7 @@ package glue {
       __obj.asInstanceOf[SkewedInfo]
     }
   }
+
   @js.native
   sealed trait Sort extends js.Any
   object Sort extends js.Object {
@@ -7481,6 +7504,7 @@ package glue {
       __obj.asInstanceOf[SortCriterion]
     }
   }
+
   @js.native
   sealed trait SortDirectionType extends js.Any
   object SortDirectionType extends js.Object {
@@ -8317,6 +8341,7 @@ package glue {
       __obj.asInstanceOf[TaskRunProperties]
     }
   }
+
   @js.native
   sealed trait TaskRunSortColumnType extends js.Any
   object TaskRunSortColumnType extends js.Object {
@@ -8350,6 +8375,7 @@ package glue {
       __obj.asInstanceOf[TaskRunSortCriteria]
     }
   }
+
   @js.native
   sealed trait TaskStatusType extends js.Any
   object TaskStatusType extends js.Object {
@@ -8363,6 +8389,7 @@ package glue {
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
+
   @js.native
   sealed trait TaskType extends js.Any
   object TaskType extends js.Object {
@@ -8442,6 +8469,7 @@ package glue {
       __obj.asInstanceOf[TransformParameters]
     }
   }
+
   @js.native
   sealed trait TransformSortColumnType extends js.Any
   object TransformSortColumnType extends js.Object {
@@ -8477,6 +8505,7 @@ package glue {
       __obj.asInstanceOf[TransformSortCriteria]
     }
   }
+
   @js.native
   sealed trait TransformStatusType extends js.Any
   object TransformStatusType extends js.Object {
@@ -8486,6 +8515,7 @@ package glue {
 
     val values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
   }
+
   @js.native
   sealed trait TransformType extends js.Any
   object TransformType extends js.Object {
@@ -8555,6 +8585,7 @@ package glue {
       __obj.asInstanceOf[TriggerNodeDetails]
     }
   }
+
   @js.native
   sealed trait TriggerState extends js.Any
   object TriggerState extends js.Object {
@@ -8571,6 +8602,7 @@ package glue {
       js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
     )
   }
+
   @js.native
   sealed trait TriggerType extends js.Any
   object TriggerType extends js.Object {
@@ -8645,6 +8677,7 @@ package glue {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
+
   @js.native
   sealed trait UpdateBehavior extends js.Any
   object UpdateBehavior extends js.Object {
@@ -9400,6 +9433,7 @@ package glue {
       __obj.asInstanceOf[UserDefinedFunctionInput]
     }
   }
+
   @js.native
   sealed trait WorkerType extends js.Any
   object WorkerType extends js.Object {
@@ -9542,6 +9576,7 @@ package glue {
       __obj.asInstanceOf[WorkflowRunStatistics]
     }
   }
+
   @js.native
   sealed trait WorkflowRunStatus extends js.Any
   object WorkflowRunStatus extends js.Object {

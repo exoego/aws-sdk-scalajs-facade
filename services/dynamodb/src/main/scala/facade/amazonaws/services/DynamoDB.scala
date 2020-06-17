@@ -321,6 +321,7 @@ package dynamodb {
       __obj.asInstanceOf[ArchivalSummary]
     }
   }
+
   @js.native
   sealed trait AttributeAction extends js.Any
   object AttributeAction extends js.Object {
@@ -710,6 +711,7 @@ package dynamodb {
       __obj.asInstanceOf[BackupDetails]
     }
   }
+
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus extends js.Object {
@@ -765,6 +767,7 @@ package dynamodb {
       __obj.asInstanceOf[BackupSummary]
     }
   }
+
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType extends js.Object {
@@ -774,6 +777,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
   }
+
   @js.native
   sealed trait BackupTypeFilter extends js.Any
   object BackupTypeFilter extends js.Object {
@@ -887,6 +891,7 @@ package dynamodb {
       __obj.asInstanceOf[BatchWriteItemOutput]
     }
   }
+
   @js.native
   sealed trait BillingMode extends js.Any
   object BillingMode extends js.Object {
@@ -944,6 +949,7 @@ package dynamodb {
       __obj.asInstanceOf[Capacity]
     }
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -1033,6 +1039,7 @@ package dynamodb {
       __obj.asInstanceOf[ConditionCheck]
     }
   }
+
   @js.native
   sealed trait ConditionalOperator extends js.Any
   object ConditionalOperator extends js.Object {
@@ -1104,6 +1111,7 @@ package dynamodb {
       __obj.asInstanceOf[ContinuousBackupsDescription]
     }
   }
+
   @js.native
   sealed trait ContinuousBackupsStatus extends js.Any
   object ContinuousBackupsStatus extends js.Object {
@@ -1112,6 +1120,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait ContributorInsightsAction extends js.Any
   object ContributorInsightsAction extends js.Object {
@@ -1120,6 +1129,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
+
   @js.native
   sealed trait ContributorInsightsStatus extends js.Any
   object ContributorInsightsStatus extends js.Object {
@@ -2452,6 +2462,7 @@ package dynamodb {
       __obj.asInstanceOf[GlobalTableGlobalSecondaryIndexSettingsUpdate]
     }
   }
+
   @js.native
   sealed trait GlobalTableStatus extends js.Any
   object GlobalTableStatus extends js.Object {
@@ -2462,6 +2473,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, UPDATING))
   }
+
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus extends js.Object {
@@ -2539,6 +2551,7 @@ package dynamodb {
       __obj.asInstanceOf[KeySchemaElement]
     }
   }
+
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
@@ -2939,6 +2952,7 @@ package dynamodb {
       __obj.asInstanceOf[PointInTimeRecoverySpecification]
     }
   }
+
   @js.native
   sealed trait PointInTimeRecoveryStatus extends js.Any
   object PointInTimeRecoveryStatus extends js.Object {
@@ -2969,6 +2983,7 @@ package dynamodb {
       __obj.asInstanceOf[Projection]
     }
   }
+
   @js.native
   sealed trait ProjectionType extends js.Any
   object ProjectionType extends js.Object {
@@ -3692,6 +3707,7 @@ package dynamodb {
       __obj.asInstanceOf[ReplicaSettingsUpdate]
     }
   }
+
   @js.native
   sealed trait ReplicaStatus extends js.Any
   object ReplicaStatus extends js.Object {
@@ -3928,6 +3944,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
   }
+
   @js.native
   sealed trait ReturnItemCollectionMetrics extends js.Any
   object ReturnItemCollectionMetrics extends js.Object {
@@ -3936,6 +3953,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(SIZE, NONE))
   }
+
   @js.native
   sealed trait ReturnValue extends js.Any
   object ReturnValue extends js.Object {
@@ -3947,6 +3965,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
   }
+
   @js.native
   sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
   object ReturnValuesOnConditionCheckFailure extends js.Object {
@@ -4010,6 +4029,7 @@ package dynamodb {
       __obj.asInstanceOf[SSESpecification]
     }
   }
+
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus extends js.Object {
@@ -4021,6 +4041,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
   }
+
   @js.native
   sealed trait SSEType extends js.Any
   object SSEType extends js.Object {
@@ -4029,6 +4050,7 @@ package dynamodb {
 
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
+
   @js.native
   sealed trait ScalarAttributeType extends js.Any
   object ScalarAttributeType extends js.Object {
@@ -4137,6 +4159,7 @@ package dynamodb {
       __obj.asInstanceOf[ScanOutput]
     }
   }
+
   @js.native
   sealed trait Select extends js.Any
   object Select extends js.Object {
@@ -4247,6 +4270,7 @@ package dynamodb {
       __obj.asInstanceOf[StreamSpecification]
     }
   }
+
   @js.native
   sealed trait StreamViewType extends js.Any
   object StreamViewType extends js.Object {
@@ -4361,6 +4385,7 @@ package dynamodb {
       __obj.asInstanceOf[TableDescription]
     }
   }
+
   @js.native
   sealed trait TableStatus extends js.Any
   object TableStatus extends js.Object {
@@ -4469,6 +4494,7 @@ package dynamodb {
       __obj.asInstanceOf[TimeToLiveSpecification]
     }
   }
+
   @js.native
   sealed trait TimeToLiveStatus extends js.Any
   object TimeToLiveStatus extends js.Object {

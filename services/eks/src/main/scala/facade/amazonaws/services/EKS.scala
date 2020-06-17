@@ -114,6 +114,7 @@ package eks {
     def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] =
       js.native
   }
+
   @js.native
   sealed trait AMITypes extends js.Any
   object AMITypes extends js.Object {
@@ -218,6 +219,7 @@ package eks {
       __obj.asInstanceOf[Cluster]
     }
   }
+
   @js.native
   sealed trait ClusterStatus extends js.Any
   object ClusterStatus extends js.Object {
@@ -662,6 +664,7 @@ package eks {
       __obj.asInstanceOf[DescribeUpdateResponse]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -783,6 +786,7 @@ package eks {
       __obj.asInstanceOf[FargateProfileSelector]
     }
   }
+
   @js.native
   sealed trait FargateProfileStatus extends js.Any
   object FargateProfileStatus extends js.Object {
@@ -1064,6 +1068,7 @@ package eks {
       __obj.asInstanceOf[LogSetup]
     }
   }
+
   @js.native
   sealed trait LogType extends js.Any
   object LogType extends js.Object {
@@ -1186,6 +1191,7 @@ package eks {
       __obj.asInstanceOf[NodegroupHealth]
     }
   }
+
   @js.native
   sealed trait NodegroupIssueCode extends js.Any
   object NodegroupIssueCode extends js.Object {
@@ -1272,6 +1278,7 @@ package eks {
       __obj.asInstanceOf[NodegroupScalingConfig]
     }
   }
+
   @js.native
   sealed trait NodegroupStatus extends js.Any
   object NodegroupStatus extends js.Object {
@@ -1651,6 +1658,7 @@ package eks {
       __obj.asInstanceOf[UpdateParam]
     }
   }
+
   @js.native
   sealed trait UpdateParamType extends js.Any
   object UpdateParamType extends js.Object {
@@ -1684,6 +1692,7 @@ package eks {
       )
     )
   }
+
   @js.native
   sealed trait UpdateStatus extends js.Any
   object UpdateStatus extends js.Object {
@@ -1694,6 +1703,7 @@ package eks {
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
   }
+
   @js.native
   sealed trait UpdateType extends js.Any
   object UpdateType extends js.Object {

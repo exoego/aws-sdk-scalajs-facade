@@ -83,6 +83,7 @@ package mediapackagevod {
     ): Request[ListPackagingConfigurationsResponse]                                                   = js.native
     def listPackagingGroups(params: ListPackagingGroupsRequest): Request[ListPackagingGroupsResponse] = js.native
   }
+
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers extends js.Object {
@@ -707,6 +708,7 @@ package mediapackagevod {
       __obj.asInstanceOf[EgressEndpoint]
     }
   }
+
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod extends js.Object {
@@ -930,6 +932,7 @@ package mediapackagevod {
       __obj.asInstanceOf[ListPackagingGroupsResponse]
     }
   }
+
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout extends js.Object {
@@ -1070,6 +1073,7 @@ package mediapackagevod {
       __obj.asInstanceOf[PackagingGroup]
     }
   }
+
   @js.native
   sealed trait Profile extends js.Any
   object Profile extends js.Object {
@@ -1078,6 +1082,7 @@ package mediapackagevod {
 
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
+
   @js.native
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat extends js.Object {
@@ -1114,6 +1119,7 @@ package mediapackagevod {
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
+
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder extends js.Object {
@@ -1148,6 +1154,7 @@ package mediapackagevod {
       __obj.asInstanceOf[StreamSelection]
     }
   }
+
   @js.native
   sealed trait __PeriodTriggersElement extends js.Any
   object __PeriodTriggersElement extends js.Object {

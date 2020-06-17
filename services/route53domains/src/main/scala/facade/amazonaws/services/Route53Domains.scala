@@ -339,6 +339,7 @@ package route53domains {
       __obj.asInstanceOf[ContactDetail]
     }
   }
+
   @js.native
   sealed trait ContactType extends js.Any
   object ContactType extends js.Object {
@@ -350,6 +351,7 @@ package route53domains {
 
     val values = js.Object.freeze(js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER))
   }
+
   @js.native
   sealed trait CountryCode extends js.Any
   object CountryCode extends js.Object {
@@ -927,6 +929,7 @@ package route53domains {
       __obj.asInstanceOf[DisableDomainTransferLockResponse]
     }
   }
+
   @js.native
   sealed trait DomainAvailability extends js.Any
   object DomainAvailability extends js.Object {
@@ -1136,6 +1139,7 @@ package route53domains {
       __obj.asInstanceOf[ExtraParam]
     }
   }
+
   @js.native
   sealed trait ExtraParamName extends js.Any
   object ExtraParamName extends js.Object {
@@ -1606,6 +1610,7 @@ package route53domains {
   trait OperationLimitExceededException extends js.Object {
     val message: ErrorMessage
   }
+
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
@@ -1647,6 +1652,7 @@ package route53domains {
       __obj.asInstanceOf[OperationSummary]
     }
   }
+
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
@@ -1688,6 +1694,7 @@ package route53domains {
       )
     )
   }
+
   @js.native
   sealed trait ReachabilityStatus extends js.Any
   object ReachabilityStatus extends js.Object {

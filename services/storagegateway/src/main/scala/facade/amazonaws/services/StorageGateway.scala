@@ -488,6 +488,7 @@ package storagegateway {
       __obj.asInstanceOf[ActivateGatewayOutput]
     }
   }
+
   @js.native
   sealed trait ActiveDirectoryStatus extends js.Any
   object ActiveDirectoryStatus extends js.Object {
@@ -743,6 +744,7 @@ package storagegateway {
       __obj.asInstanceOf[AttachVolumeOutput]
     }
   }
+
   @js.native
   sealed trait AvailabilityMonitorTestStatus extends js.Any
   object AvailabilityMonitorTestStatus extends js.Object {
@@ -2808,6 +2810,7 @@ package storagegateway {
       __obj.asInstanceOf[GatewayInfo]
     }
   }
+
   @js.native
   sealed trait HostEnvironment extends js.Any
   object HostEnvironment extends js.Object {
@@ -3681,6 +3684,7 @@ package storagegateway {
       __obj.asInstanceOf[SMBFileShareInfo]
     }
   }
+
   @js.native
   sealed trait SMBSecurityStrategy extends js.Any
   object SMBSecurityStrategy extends js.Object {

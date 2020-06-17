@@ -388,6 +388,7 @@ package dms {
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResponse]
     }
   }
+
   @js.native
   sealed trait AuthMechanismValue extends js.Any
   object AuthMechanismValue extends js.Object {
@@ -397,6 +398,7 @@ package dms {
 
     val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
   }
+
   @js.native
   sealed trait AuthTypeValue extends js.Any
   object AuthTypeValue extends js.Object {
@@ -470,6 +472,7 @@ package dms {
       __obj.asInstanceOf[Certificate]
     }
   }
+
   @js.native
   sealed trait CompressionTypeValue extends js.Any
   object CompressionTypeValue extends js.Object {
@@ -879,6 +882,7 @@ package dms {
       __obj.asInstanceOf[CreateReplicationTaskResponse]
     }
   }
+
   @js.native
   sealed trait DataFormatValue extends js.Any
   object DataFormatValue extends js.Object {
@@ -2023,6 +2027,7 @@ package dms {
       __obj.asInstanceOf[DescribeTableStatisticsResponse]
     }
   }
+
   @js.native
   sealed trait DmsSslModeValue extends js.Any
   object DmsSslModeValue extends js.Object {
@@ -2106,6 +2111,7 @@ package dms {
       __obj.asInstanceOf[ElasticsearchSettings]
     }
   }
+
   @js.native
   sealed trait EncodingTypeValue extends js.Any
   object EncodingTypeValue extends js.Object {
@@ -2115,6 +2121,7 @@ package dms {
 
     val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
   }
+
   @js.native
   sealed trait EncryptionModeValue extends js.Any
   object EncryptionModeValue extends js.Object {
@@ -2441,6 +2448,7 @@ package dms {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait MessageFormatValue extends js.Any
   object MessageFormatValue extends js.Object {
@@ -2448,6 +2456,7 @@ package dms {
 
     val values = js.Object.freeze(js.Array(json))
   }
+
   @js.native
   sealed trait MigrationTypeValue extends js.Any
   object MigrationTypeValue extends js.Object {
@@ -2848,6 +2857,7 @@ package dms {
       __obj.asInstanceOf[MongoDbSettings]
     }
   }
+
   @js.native
   sealed trait NestingLevelValue extends js.Any
   object NestingLevelValue extends js.Object {
@@ -2899,6 +2909,7 @@ package dms {
       __obj.asInstanceOf[OrderableReplicationInstance]
     }
   }
+
   @js.native
   sealed trait ParquetVersionValue extends js.Any
   object ParquetVersionValue extends js.Object {
@@ -3147,6 +3158,7 @@ package dms {
       __obj.asInstanceOf[RefreshSchemasStatus]
     }
   }
+
   @js.native
   sealed trait RefreshSchemasStatusTypeValue extends js.Any
   object RefreshSchemasStatusTypeValue extends js.Object {
@@ -3156,6 +3168,7 @@ package dms {
 
     val values = js.Object.freeze(js.Array(successful, failed, refreshing))
   }
+
   @js.native
   sealed trait ReleaseStatusValues extends js.Any
   object ReleaseStatusValues extends js.Object {
@@ -3163,6 +3176,7 @@ package dms {
 
     val values = js.Object.freeze(js.Array(beta))
   }
+
   @js.native
   sealed trait ReloadOptionValue extends js.Any
   object ReloadOptionValue extends js.Object {
@@ -3251,6 +3265,7 @@ package dms {
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
   }
+
   @js.native
   sealed trait ReplicationEndpointTypeValue extends js.Any
   object ReplicationEndpointTypeValue extends js.Object {
@@ -3715,6 +3730,7 @@ package dms {
       __obj.asInstanceOf[S3Settings]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -3814,6 +3830,7 @@ package dms {
       __obj.asInstanceOf[StartReplicationTaskResponse]
     }
   }
+
   @js.native
   sealed trait StartReplicationTaskTypeValue extends js.Any
   object StartReplicationTaskTypeValue extends js.Object {

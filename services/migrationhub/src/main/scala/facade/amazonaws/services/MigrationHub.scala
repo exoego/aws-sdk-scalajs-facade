@@ -148,6 +148,7 @@ package migrationhub {
       __obj.asInstanceOf[ApplicationState]
     }
   }
+
   @js.native
   sealed trait ApplicationStatus extends js.Any
   object ApplicationStatus extends js.Object {
@@ -1000,6 +1001,7 @@ package migrationhub {
       __obj.asInstanceOf[ResourceAttribute]
     }
   }
+
   @js.native
   sealed trait ResourceAttributeType extends js.Any
   object ResourceAttributeType extends js.Object {
@@ -1029,6 +1031,7 @@ package migrationhub {
       )
     )
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {

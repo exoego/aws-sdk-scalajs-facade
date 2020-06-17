@@ -993,6 +993,7 @@ package cloudwatchlogs {
       __obj.asInstanceOf[ExportTaskStatus]
     }
   }
+
   @js.native
   sealed trait ExportTaskStatusCode extends js.Any
   object ExportTaskStatusCode extends js.Object {
@@ -1512,6 +1513,7 @@ package cloudwatchlogs {
       __obj.asInstanceOf[MetricTransformation]
     }
   }
+
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
@@ -1824,6 +1826,7 @@ package cloudwatchlogs {
       __obj.asInstanceOf[QueryStatistics]
     }
   }
+
   @js.native
   sealed trait QueryStatus extends js.Any
   object QueryStatus extends js.Object {

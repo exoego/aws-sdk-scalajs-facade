@@ -376,6 +376,7 @@ package pi {
       __obj.asInstanceOf[ResponseResourceMetricKey]
     }
   }
+
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType extends js.Object {

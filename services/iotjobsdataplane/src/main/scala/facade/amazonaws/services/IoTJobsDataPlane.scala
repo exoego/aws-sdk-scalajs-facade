@@ -211,6 +211,7 @@ package iotjobsdataplane {
       __obj.asInstanceOf[JobExecutionState]
     }
   }
+
   @js.native
   sealed trait JobExecutionStatus extends js.Any
   object JobExecutionStatus extends js.Object {

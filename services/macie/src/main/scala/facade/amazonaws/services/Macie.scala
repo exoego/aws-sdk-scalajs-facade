@@ -374,6 +374,7 @@ package macie {
       __obj.asInstanceOf[MemberAccount]
     }
   }
+
   @js.native
   sealed trait S3ContinuousClassificationType extends js.Any
   object S3ContinuousClassificationType extends js.Object {
@@ -381,6 +382,7 @@ package macie {
 
     val values = js.Object.freeze(js.Array(FULL))
   }
+
   @js.native
   sealed trait S3OneTimeClassificationType extends js.Any
   object S3OneTimeClassificationType extends js.Object {

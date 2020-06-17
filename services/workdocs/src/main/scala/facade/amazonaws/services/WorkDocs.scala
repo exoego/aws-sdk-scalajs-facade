@@ -321,6 +321,7 @@ package workdocs {
       __obj.asInstanceOf[Activity]
     }
   }
+
   @js.native
   sealed trait ActivityType extends js.Any
   object ActivityType extends js.Object {
@@ -440,6 +441,7 @@ package workdocs {
       __obj.asInstanceOf[AddResourcePermissionsResponse]
     }
   }
+
   @js.native
   sealed trait BooleanEnumType extends js.Any
   object BooleanEnumType extends js.Object {
@@ -524,6 +526,7 @@ package workdocs {
       __obj.asInstanceOf[CommentMetadata]
     }
   }
+
   @js.native
   sealed trait CommentStatusType extends js.Any
   object CommentStatusType extends js.Object {
@@ -533,6 +536,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, DELETED))
   }
+
   @js.native
   sealed trait CommentVisibilityType extends js.Any
   object CommentVisibilityType extends js.Object {
@@ -1565,6 +1569,7 @@ package workdocs {
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
+
   @js.native
   sealed trait DocumentSourceType extends js.Any
   object DocumentSourceType extends js.Object {
@@ -1573,6 +1578,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(ORIGINAL, WITH_COMMENTS))
   }
+
   @js.native
   sealed trait DocumentStatusType extends js.Any
   object DocumentStatusType extends js.Object {
@@ -1581,6 +1587,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(INITIALIZED, ACTIVE))
   }
+
   @js.native
   sealed trait DocumentThumbnailType extends js.Any
   object DocumentThumbnailType extends js.Object {
@@ -1645,6 +1652,7 @@ package workdocs {
       __obj.asInstanceOf[DocumentVersionMetadata]
     }
   }
+
   @js.native
   sealed trait DocumentVersionStatus extends js.Any
   object DocumentVersionStatus extends js.Object {
@@ -1652,6 +1660,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(ACTIVE))
   }
+
   @js.native
   sealed trait FolderContentType extends js.Any
   object FolderContentType extends js.Object {
@@ -2101,6 +2110,7 @@ package workdocs {
       __obj.asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
   }
+
   @js.native
   sealed trait LocaleType extends js.Any
   object LocaleType extends js.Object {
@@ -2140,6 +2150,7 @@ package workdocs {
       __obj.asInstanceOf[NotificationOptions]
     }
   }
+
   @js.native
   sealed trait OrderType extends js.Any
   object OrderType extends js.Object {
@@ -2217,6 +2228,7 @@ package workdocs {
       __obj.asInstanceOf[Principal]
     }
   }
+
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
@@ -2276,6 +2288,7 @@ package workdocs {
       __obj.asInstanceOf[RemoveResourcePermissionRequest]
     }
   }
+
   @js.native
   sealed trait ResourceCollectionType extends js.Any
   object ResourceCollectionType extends js.Object {
@@ -2361,6 +2374,7 @@ package workdocs {
       __obj.asInstanceOf[ResourcePathComponent]
     }
   }
+
   @js.native
   sealed trait ResourceSortType extends js.Any
   object ResourceSortType extends js.Object {
@@ -2369,6 +2383,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(DATE, NAME))
   }
+
   @js.native
   sealed trait ResourceStateType extends js.Any
   object ResourceStateType extends js.Object {
@@ -2379,6 +2394,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED))
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -2387,6 +2403,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(FOLDER, DOCUMENT))
   }
+
   @js.native
   sealed trait RolePermissionType extends js.Any
   object RolePermissionType extends js.Object {
@@ -2395,6 +2412,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(DIRECT, INHERITED))
   }
+
   @js.native
   sealed trait RoleType extends js.Any
   object RoleType extends js.Object {
@@ -2466,6 +2484,7 @@ package workdocs {
       __obj.asInstanceOf[ShareResult]
     }
   }
+
   @js.native
   sealed trait ShareStatusType extends js.Any
   object ShareStatusType extends js.Object {
@@ -2496,6 +2515,7 @@ package workdocs {
       __obj.asInstanceOf[StorageRuleType]
     }
   }
+
   @js.native
   sealed trait StorageType extends js.Any
   object StorageType extends js.Object {
@@ -2529,6 +2549,7 @@ package workdocs {
       __obj.asInstanceOf[Subscription]
     }
   }
+
   @js.native
   sealed trait SubscriptionProtocolType extends js.Any
   object SubscriptionProtocolType extends js.Object {
@@ -2536,6 +2557,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(HTTPS))
   }
+
   @js.native
   sealed trait SubscriptionType extends js.Any
   object SubscriptionType extends js.Object {
@@ -2771,6 +2793,7 @@ package workdocs {
       __obj.asInstanceOf[User]
     }
   }
+
   @js.native
   sealed trait UserFilterType extends js.Any
   object UserFilterType extends js.Object {
@@ -2810,6 +2833,7 @@ package workdocs {
       __obj.asInstanceOf[UserMetadata]
     }
   }
+
   @js.native
   sealed trait UserSortType extends js.Any
   object UserSortType extends js.Object {
@@ -2821,6 +2845,7 @@ package workdocs {
 
     val values = js.Object.freeze(js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED))
   }
+
   @js.native
   sealed trait UserStatusType extends js.Any
   object UserStatusType extends js.Object {
@@ -2852,6 +2877,7 @@ package workdocs {
       __obj.asInstanceOf[UserStorageMetadata]
     }
   }
+
   @js.native
   sealed trait UserType extends js.Any
   object UserType extends js.Object {

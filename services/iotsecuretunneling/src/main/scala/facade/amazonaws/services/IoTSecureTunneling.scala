@@ -115,6 +115,7 @@ package iotsecuretunneling {
       __obj.asInstanceOf[ConnectionState]
     }
   }
+
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
@@ -436,6 +437,7 @@ package iotsecuretunneling {
       __obj.asInstanceOf[Tunnel]
     }
   }
+
   @js.native
   sealed trait TunnelStatus extends js.Any
   object TunnelStatus extends js.Object {

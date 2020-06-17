@@ -1121,6 +1121,7 @@ package ram {
       __obj.asInstanceOf[Resource]
     }
   }
+
   @js.native
   sealed trait ResourceOwner extends js.Any
   object ResourceOwner extends js.Object {
@@ -1218,6 +1219,7 @@ package ram {
       __obj.asInstanceOf[ResourceShareAssociation]
     }
   }
+
   @js.native
   sealed trait ResourceShareAssociationStatus extends js.Any
   object ResourceShareAssociationStatus extends js.Object {
@@ -1229,6 +1231,7 @@ package ram {
 
     val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
   }
+
   @js.native
   sealed trait ResourceShareAssociationType extends js.Any
   object ResourceShareAssociationType extends js.Object {
@@ -1237,6 +1240,7 @@ package ram {
 
     val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
+
   @js.native
   sealed trait ResourceShareFeatureSet extends js.Any
   object ResourceShareFeatureSet extends js.Object {
@@ -1290,6 +1294,7 @@ package ram {
       __obj.asInstanceOf[ResourceShareInvitation]
     }
   }
+
   @js.native
   sealed trait ResourceShareInvitationStatus extends js.Any
   object ResourceShareInvitationStatus extends js.Object {
@@ -1380,6 +1385,7 @@ package ram {
       __obj.asInstanceOf[ResourceSharePermissionSummary]
     }
   }
+
   @js.native
   sealed trait ResourceShareStatus extends js.Any
   object ResourceShareStatus extends js.Object {
@@ -1391,6 +1397,7 @@ package ram {
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
   }
+
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus extends js.Object {

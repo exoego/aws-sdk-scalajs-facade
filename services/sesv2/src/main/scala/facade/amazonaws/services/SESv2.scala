@@ -1147,6 +1147,7 @@ package sesv2 {
       __obj.asInstanceOf[DkimSigningAttributes]
     }
   }
+
   @js.native
   sealed trait DkimSigningAttributesOrigin extends js.Any
   object DkimSigningAttributesOrigin extends js.Object {

@@ -778,6 +778,7 @@ package configservice {
       __obj.asInstanceOf[AggregatedSourceStatus]
     }
   }
+
   @js.native
   sealed trait AggregatedSourceStatusType extends js.Any
   object AggregatedSourceStatusType extends js.Object {
@@ -787,6 +788,7 @@ package configservice {
 
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, OUTDATED))
   }
+
   @js.native
   sealed trait AggregatedSourceType extends js.Any
   object AggregatedSourceType extends js.Object {
@@ -966,6 +968,7 @@ package configservice {
       __obj.asInstanceOf[BatchGetResourceConfigResponse]
     }
   }
+
   @js.native
   sealed trait ChronologicalOrder extends js.Any
   object ChronologicalOrder extends js.Object {
@@ -1118,6 +1121,7 @@ package configservice {
       __obj.asInstanceOf[ComplianceSummaryByResourceType]
     }
   }
+
   @js.native
   sealed trait ComplianceType extends js.Any
   object ComplianceType extends js.Object {
@@ -1265,6 +1269,7 @@ package configservice {
       __obj.asInstanceOf[ConfigRuleComplianceSummaryFilters]
     }
   }
+
   @js.native
   sealed trait ConfigRuleComplianceSummaryGroupKey extends js.Any
   object ConfigRuleComplianceSummaryGroupKey extends js.Object {
@@ -1327,6 +1332,7 @@ package configservice {
       __obj.asInstanceOf[ConfigRuleEvaluationStatus]
     }
   }
+
   @js.native
   sealed trait ConfigRuleState extends js.Any
   object ConfigRuleState extends js.Object {
@@ -1510,6 +1516,7 @@ package configservice {
       __obj.asInstanceOf[ConfigurationItem]
     }
   }
+
   @js.native
   sealed trait ConfigurationItemStatus extends js.Any
   object ConfigurationItemStatus extends js.Object {
@@ -1634,6 +1641,7 @@ package configservice {
       __obj.asInstanceOf[ConformancePackComplianceSummary]
     }
   }
+
   @js.native
   sealed trait ConformancePackComplianceType extends js.Any
   object ConformancePackComplianceType extends js.Object {
@@ -1793,6 +1801,7 @@ package configservice {
       __obj.asInstanceOf[ConformancePackRuleCompliance]
     }
   }
+
   @js.native
   sealed trait ConformancePackState extends js.Any
   object ConformancePackState extends js.Object {
@@ -2279,6 +2288,7 @@ package configservice {
       __obj.asInstanceOf[DeliveryChannelStatus]
     }
   }
+
   @js.native
   sealed trait DeliveryStatus extends js.Any
   object DeliveryStatus extends js.Object {
@@ -3459,6 +3469,7 @@ package configservice {
       __obj.asInstanceOf[EvaluationResultQualifier]
     }
   }
+
   @js.native
   sealed trait EventSource extends js.Any
   object EventSource extends js.Object {
@@ -4412,6 +4423,7 @@ package configservice {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait MaximumExecutionFrequency extends js.Any
   object MaximumExecutionFrequency extends js.Object {
@@ -4423,6 +4435,7 @@ package configservice {
 
     val values = js.Object.freeze(js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours))
   }
+
   @js.native
   sealed trait MemberAccountRuleStatus extends js.Any
   object MemberAccountRuleStatus extends js.Object {
@@ -4486,6 +4499,7 @@ package configservice {
       __obj.asInstanceOf[MemberAccountStatus]
     }
   }
+
   @js.native
   sealed trait MessageType extends js.Any
   object MessageType extends js.Object {
@@ -4604,6 +4618,7 @@ package configservice {
       __obj.asInstanceOf[OrganizationConfigRuleStatus]
     }
   }
+
   @js.native
   sealed trait OrganizationConfigRuleTriggerType extends js.Any
   object OrganizationConfigRuleTriggerType extends js.Object {
@@ -4818,6 +4833,7 @@ package configservice {
       __obj.asInstanceOf[OrganizationManagedRuleMetadata]
     }
   }
+
   @js.native
   sealed trait OrganizationResourceDetailedStatus extends js.Any
   object OrganizationResourceDetailedStatus extends js.Object {
@@ -4867,6 +4883,7 @@ package configservice {
       __obj.asInstanceOf[OrganizationResourceDetailedStatusFilters]
     }
   }
+
   @js.native
   sealed trait OrganizationResourceStatus extends js.Any
   object OrganizationResourceStatus extends js.Object {
@@ -4894,6 +4911,7 @@ package configservice {
       )
     )
   }
+
   @js.native
   sealed trait OrganizationRuleStatus extends js.Any
   object OrganizationRuleStatus extends js.Object {
@@ -4921,6 +4939,7 @@ package configservice {
       )
     )
   }
+
   @js.native
   sealed trait Owner extends js.Any
   object Owner extends js.Object {
@@ -5466,6 +5485,7 @@ package configservice {
       __obj.asInstanceOf[QueryInfo]
     }
   }
+
   @js.native
   sealed trait RecorderStatus extends js.Any
   object RecorderStatus extends js.Object {
@@ -5646,6 +5666,7 @@ package configservice {
       __obj.asInstanceOf[RemediationExceptionResourceKey]
     }
   }
+
   @js.native
   sealed trait RemediationExecutionState extends js.Any
   object RemediationExecutionState extends js.Object {
@@ -5718,6 +5739,7 @@ package configservice {
       __obj.asInstanceOf[RemediationExecutionStep]
     }
   }
+
   @js.native
   sealed trait RemediationExecutionStepState extends js.Any
   object RemediationExecutionStepState extends js.Object {
@@ -5749,6 +5771,7 @@ package configservice {
       __obj.asInstanceOf[RemediationParameterValue]
     }
   }
+
   @js.native
   sealed trait RemediationTargetType extends js.Any
   object RemediationTargetType extends js.Object {
@@ -5803,6 +5826,7 @@ package configservice {
       __obj.asInstanceOf[ResourceCountFilters]
     }
   }
+
   @js.native
   sealed trait ResourceCountGroupKey extends js.Any
   object ResourceCountGroupKey extends js.Object {
@@ -5892,6 +5916,7 @@ package configservice {
       __obj.asInstanceOf[ResourceKey]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -6107,6 +6132,7 @@ package configservice {
       __obj.asInstanceOf[ResourceValue]
     }
   }
+
   @js.native
   sealed trait ResourceValueType extends js.Any
   object ResourceValueType extends js.Object {

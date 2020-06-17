@@ -140,6 +140,7 @@ package comprehendmedical {
       __obj.asInstanceOf[Attribute]
     }
   }
+
   @js.native
   sealed trait AttributeName extends js.Any
   object AttributeName extends js.Object {
@@ -483,6 +484,7 @@ package comprehendmedical {
       __obj.asInstanceOf[Entity]
     }
   }
+
   @js.native
   sealed trait EntitySubType extends js.Any
   object EntitySubType extends js.Object {
@@ -548,6 +550,7 @@ package comprehendmedical {
       )
     )
   }
+
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
@@ -601,6 +604,7 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMAttribute]
     }
   }
+
   @js.native
   sealed trait ICD10CMAttributeType extends js.Any
   object ICD10CMAttributeType extends js.Object {
@@ -683,6 +687,7 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMEntity]
     }
   }
+
   @js.native
   sealed trait ICD10CMEntityCategory extends js.Any
   object ICD10CMEntityCategory extends js.Object {
@@ -690,6 +695,7 @@ package comprehendmedical {
 
     val values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
   }
+
   @js.native
   sealed trait ICD10CMEntityType extends js.Any
   object ICD10CMEntityType extends js.Object {
@@ -719,6 +725,7 @@ package comprehendmedical {
       __obj.asInstanceOf[ICD10CMTrait]
     }
   }
+
   @js.native
   sealed trait ICD10CMTraitName extends js.Any
   object ICD10CMTraitName extends js.Object {
@@ -837,6 +844,7 @@ package comprehendmedical {
       __obj.asInstanceOf[InputDataConfig]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -851,6 +859,7 @@ package comprehendmedical {
     val values =
       js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
   }
+
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode extends js.Object {
@@ -1008,6 +1017,7 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormAttribute]
     }
   }
+
   @js.native
   sealed trait RxNormAttributeType extends js.Any
   object RxNormAttributeType extends js.Object {
@@ -1092,6 +1102,7 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormEntity]
     }
   }
+
   @js.native
   sealed trait RxNormEntityCategory extends js.Any
   object RxNormEntityCategory extends js.Object {
@@ -1099,6 +1110,7 @@ package comprehendmedical {
 
     val values = js.Object.freeze(js.Array(MEDICATION))
   }
+
   @js.native
   sealed trait RxNormEntityType extends js.Any
   object RxNormEntityType extends js.Object {
@@ -1129,6 +1141,7 @@ package comprehendmedical {
       __obj.asInstanceOf[RxNormTrait]
     }
   }
+
   @js.native
   sealed trait RxNormTraitName extends js.Any
   object RxNormTraitName extends js.Object {

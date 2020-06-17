@@ -232,6 +232,7 @@ package kinesis {
       __obj.asInstanceOf[ConsumerDescription]
     }
   }
+
   @js.native
   sealed trait ConsumerStatus extends js.Any
   object ConsumerStatus extends js.Object {
@@ -541,6 +542,7 @@ package kinesis {
       __obj.asInstanceOf[EnableEnhancedMonitoringInput]
     }
   }
+
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType extends js.Object {
@@ -1046,6 +1048,7 @@ package kinesis {
       __obj.asInstanceOf[MergeShardsInput]
     }
   }
+
   @js.native
   sealed trait MetricsName extends js.Any
   object MetricsName extends js.Object {
@@ -1361,6 +1364,7 @@ package kinesis {
   trait ResourceNotFoundExceptionException extends js.Object {
     val message: ErrorMessage
   }
+
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType extends js.Object {
@@ -1425,6 +1429,7 @@ package kinesis {
       __obj.asInstanceOf[Shard]
     }
   }
+
   @js.native
   sealed trait ShardIteratorType extends js.Any
   object ShardIteratorType extends js.Object {
@@ -1632,6 +1637,7 @@ package kinesis {
       __obj.asInstanceOf[StreamDescriptionSummary]
     }
   }
+
   @js.native
   sealed trait StreamStatus extends js.Any
   object StreamStatus extends js.Object {

@@ -386,6 +386,7 @@ package cloudformation {
       __obj.asInstanceOf[AccountGateResult]
     }
   }
+
   @js.native
   sealed trait AccountGateStatus extends js.Any
   object AccountGateStatus extends js.Object {
@@ -470,6 +471,7 @@ package cloudformation {
       __obj.asInstanceOf[CancelUpdateStackInput]
     }
   }
+
   @js.native
   sealed trait Capability extends js.Any
   object Capability extends js.Object {
@@ -501,6 +503,7 @@ package cloudformation {
       __obj.asInstanceOf[Change]
     }
   }
+
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction extends js.Object {
@@ -511,6 +514,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
   }
+
   @js.native
   sealed trait ChangeSetStatus extends js.Any
   object ChangeSetStatus extends js.Object {
@@ -566,6 +570,7 @@ package cloudformation {
       __obj.asInstanceOf[ChangeSetSummary]
     }
   }
+
   @js.native
   sealed trait ChangeSetType extends js.Any
   object ChangeSetType extends js.Object {
@@ -575,6 +580,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
   }
+
   @js.native
   sealed trait ChangeSource extends js.Any
   object ChangeSource extends js.Object {
@@ -588,6 +594,7 @@ package cloudformation {
       js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
     )
   }
+
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType extends js.Object {
@@ -1114,6 +1121,7 @@ package cloudformation {
       __obj.asInstanceOf[DeploymentTargets]
     }
   }
+
   @js.native
   sealed trait DeprecatedStatus extends js.Any
   object DeprecatedStatus extends js.Object {
@@ -1928,6 +1936,7 @@ package cloudformation {
       __obj.asInstanceOf[DetectStackSetDriftOutput]
     }
   }
+
   @js.native
   sealed trait DifferenceType extends js.Any
   object DifferenceType extends js.Object {
@@ -1981,6 +1990,7 @@ package cloudformation {
       __obj.asInstanceOf[EstimateTemplateCostOutput]
     }
   }
+
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType extends js.Object {
@@ -2032,6 +2042,7 @@ package cloudformation {
       __obj.asInstanceOf[ExecuteChangeSetOutput]
     }
   }
+
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
@@ -2231,6 +2242,7 @@ package cloudformation {
       __obj.asInstanceOf[GetTemplateSummaryOutput]
     }
   }
+
   @js.native
   sealed trait HandlerErrorCode extends js.Any
   object HandlerErrorCode extends js.Object {
@@ -2829,6 +2841,7 @@ package cloudformation {
       __obj.asInstanceOf[LoggingConfig]
     }
   }
+
   @js.native
   sealed trait OnFailure extends js.Any
   object OnFailure extends js.Object {
@@ -2838,6 +2851,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
   }
+
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
@@ -2957,6 +2971,7 @@ package cloudformation {
       __obj.asInstanceOf[ParameterDeclaration]
     }
   }
+
   @js.native
   sealed trait PermissionModels extends js.Any
   object PermissionModels extends js.Object {
@@ -3019,6 +3034,7 @@ package cloudformation {
       __obj.asInstanceOf[PropertyDifference]
     }
   }
+
   @js.native
   sealed trait ProvisioningType extends js.Any
   object ProvisioningType extends js.Object {
@@ -3126,6 +3142,7 @@ package cloudformation {
       __obj.asInstanceOf[RegisterTypeOutput]
     }
   }
+
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus extends js.Object {
@@ -3135,6 +3152,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
   }
+
   @js.native
   sealed trait RegistryType extends js.Any
   object RegistryType extends js.Object {
@@ -3142,6 +3160,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(RESOURCE))
   }
+
   @js.native
   sealed trait Replacement extends js.Any
   object Replacement extends js.Object {
@@ -3151,6 +3170,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(True, False, Conditional))
   }
+
   @js.native
   sealed trait RequiresRecreation extends js.Any
   object RequiresRecreation extends js.Object {
@@ -3160,6 +3180,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(Never, Conditionally, Always))
   }
+
   @js.native
   sealed trait ResourceAttribute extends js.Any
   object ResourceAttribute extends js.Object {
@@ -3262,6 +3283,7 @@ package cloudformation {
       __obj.asInstanceOf[ResourceIdentifierSummary]
     }
   }
+
   @js.native
   sealed trait ResourceSignalStatus extends js.Any
   object ResourceSignalStatus extends js.Object {
@@ -3270,6 +3292,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
+
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus extends js.Object {
@@ -3591,6 +3614,7 @@ package cloudformation {
       __obj.asInstanceOf[Stack]
     }
   }
+
   @js.native
   sealed trait StackDriftDetectionStatus extends js.Any
   object StackDriftDetectionStatus extends js.Object {
@@ -3648,6 +3672,7 @@ package cloudformation {
       __obj.asInstanceOf[StackDriftInformationSummary]
     }
   }
+
   @js.native
   sealed trait StackDriftStatus extends js.Any
   object StackDriftStatus extends js.Object {
@@ -3755,6 +3780,7 @@ package cloudformation {
       __obj.asInstanceOf[StackInstance]
     }
   }
+
   @js.native
   sealed trait StackInstanceStatus extends js.Any
   object StackInstanceStatus extends js.Object {
@@ -4006,6 +4032,7 @@ package cloudformation {
       __obj.asInstanceOf[StackResourceDriftInformationSummary]
     }
   }
+
   @js.native
   sealed trait StackResourceDriftStatus extends js.Any
   object StackResourceDriftStatus extends js.Object {
@@ -4169,6 +4196,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetDriftDetectionDetails]
     }
   }
+
   @js.native
   sealed trait StackSetDriftDetectionStatus extends js.Any
   object StackSetDriftDetectionStatus extends js.Object {
@@ -4180,6 +4208,7 @@ package cloudformation {
 
     val values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
   }
+
   @js.native
   sealed trait StackSetDriftStatus extends js.Any
   object StackSetDriftStatus extends js.Object {
@@ -4243,6 +4272,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperation]
     }
   }
+
   @js.native
   sealed trait StackSetOperationAction extends js.Any
   object StackSetOperationAction extends js.Object {
@@ -4287,6 +4317,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationPreferences]
     }
   }
+
   @js.native
   sealed trait StackSetOperationResultStatus extends js.Any
   object StackSetOperationResultStatus extends js.Object {
@@ -4332,6 +4363,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationResultSummary]
     }
   }
+
   @js.native
   sealed trait StackSetOperationStatus extends js.Any
   object StackSetOperationStatus extends js.Object {
@@ -4375,6 +4407,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetOperationSummary]
     }
   }
+
   @js.native
   sealed trait StackSetStatus extends js.Any
   object StackSetStatus extends js.Object {
@@ -4423,6 +4456,7 @@ package cloudformation {
       __obj.asInstanceOf[StackSetSummary]
     }
   }
+
   @js.native
   sealed trait StackStatus extends js.Any
   object StackStatus extends js.Object {
@@ -4614,6 +4648,7 @@ package cloudformation {
       __obj.asInstanceOf[TemplateParameter]
     }
   }
+
   @js.native
   sealed trait TemplateStage extends js.Any
   object TemplateStage extends js.Object {
@@ -5003,6 +5038,7 @@ package cloudformation {
       __obj.asInstanceOf[ValidateTemplateOutput]
     }
   }
+
   @js.native
   sealed trait Visibility extends js.Any
   object Visibility extends js.Object {

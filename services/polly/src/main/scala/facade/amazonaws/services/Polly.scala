@@ -160,6 +160,7 @@ package polly {
       __obj.asInstanceOf[DescribeVoicesOutput]
     }
   }
+
   @js.native
   sealed trait Engine extends js.Any
   object Engine extends js.Object {
@@ -168,6 +169,7 @@ package polly {
 
     val values = js.Object.freeze(js.Array(standard, neural))
   }
+
   @js.native
   sealed trait Gender extends js.Any
   object Gender extends js.Object {
@@ -247,6 +249,7 @@ package polly {
       __obj.asInstanceOf[GetSpeechSynthesisTaskOutput]
     }
   }
+
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode extends js.Object {
@@ -468,6 +471,7 @@ package polly {
       __obj.asInstanceOf[ListSpeechSynthesisTasksOutput]
     }
   }
+
   @js.native
   sealed trait OutputFormat extends js.Any
   object OutputFormat extends js.Object {
@@ -512,6 +516,7 @@ package polly {
       __obj.asInstanceOf[PutLexiconOutput]
     }
   }
+
   @js.native
   sealed trait SpeechMarkType extends js.Any
   object SpeechMarkType extends js.Object {
@@ -714,6 +719,7 @@ package polly {
       __obj.asInstanceOf[SynthesizeSpeechOutput]
     }
   }
+
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {
@@ -724,6 +730,7 @@ package polly {
 
     val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
+
   @js.native
   sealed trait TextType extends js.Any
   object TextType extends js.Object {
@@ -769,6 +776,7 @@ package polly {
       __obj.asInstanceOf[Voice]
     }
   }
+
   @js.native
   sealed trait VoiceId extends js.Any
   object VoiceId extends js.Object {

@@ -201,6 +201,7 @@ package eventbridge {
       __obj.asInstanceOf[ActivateEventSourceRequest]
     }
   }
+
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp extends js.Object {
@@ -809,6 +810,7 @@ package eventbridge {
       __obj.asInstanceOf[EventSource]
     }
   }
+
   @js.native
   sealed trait EventSourceState extends js.Any
   object EventSourceState extends js.Object {
@@ -863,6 +865,7 @@ package eventbridge {
       __obj.asInstanceOf[KinesisParameters]
     }
   }
+
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType extends js.Object {
@@ -1757,6 +1760,7 @@ package eventbridge {
       __obj.asInstanceOf[Rule]
     }
   }
+
   @js.native
   sealed trait RuleState extends js.Any
   object RuleState extends js.Object {

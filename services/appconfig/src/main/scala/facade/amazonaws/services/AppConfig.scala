@@ -558,6 +558,7 @@ package appconfig {
       __obj.asInstanceOf[Deployment]
     }
   }
+
   @js.native
   sealed trait DeploymentState extends js.Any
   object DeploymentState extends js.Object {
@@ -729,6 +730,7 @@ package appconfig {
       __obj.asInstanceOf[Environment]
     }
   }
+
   @js.native
   sealed trait EnvironmentState extends js.Any
   object EnvironmentState extends js.Object {
@@ -892,6 +894,7 @@ package appconfig {
       __obj.asInstanceOf[GetEnvironmentRequest]
     }
   }
+
   @js.native
   sealed trait GrowthType extends js.Any
   object GrowthType extends js.Object {
@@ -1053,6 +1056,7 @@ package appconfig {
       __obj.asInstanceOf[Monitor]
     }
   }
+
   @js.native
   sealed trait ReplicateTo extends js.Any
   object ReplicateTo extends js.Object {
@@ -1349,6 +1353,7 @@ package appconfig {
       __obj.asInstanceOf[Validator]
     }
   }
+
   @js.native
   sealed trait ValidatorType extends js.Any
   object ValidatorType extends js.Object {

@@ -307,6 +307,7 @@ package inspector {
       __obj.asInstanceOf[AgentFilter]
     }
   }
+
   @js.native
   sealed trait AgentHealth extends js.Any
   object AgentHealth extends js.Object {
@@ -316,6 +317,7 @@ package inspector {
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
+
   @js.native
   sealed trait AgentHealthCode extends js.Any
   object AgentHealthCode extends js.Object {
@@ -546,6 +548,7 @@ package inspector {
       __obj.asInstanceOf[AssessmentRunNotification]
     }
   }
+
   @js.native
   sealed trait AssessmentRunNotificationSnsStatusCode extends js.Any
   object AssessmentRunNotificationSnsStatusCode extends js.Object {
@@ -556,6 +559,7 @@ package inspector {
 
     val values = js.Object.freeze(js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR))
   }
+
   @js.native
   sealed trait AssessmentRunState extends js.Any
   object AssessmentRunState extends js.Object {
@@ -781,6 +785,7 @@ package inspector {
       __obj.asInstanceOf[AssetAttributes]
     }
   }
+
   @js.native
   sealed trait AssetType extends js.Any
   object AssetType extends js.Object {
@@ -1472,6 +1477,7 @@ package inspector {
       __obj.asInstanceOf[FailedItemDetails]
     }
   }
+
   @js.native
   sealed trait FailedItemErrorCode extends js.Any
   object FailedItemErrorCode extends js.Object {
@@ -1733,6 +1739,7 @@ package inspector {
       __obj.asInstanceOf[GetTelemetryMetadataResponse]
     }
   }
+
   @js.native
   sealed trait InspectorEvent extends js.Any
   object InspectorEvent extends js.Object {
@@ -2166,6 +2173,7 @@ package inspector {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait Locale extends js.Any
   object Locale extends js.Object {
@@ -2264,6 +2272,7 @@ package inspector {
       __obj.asInstanceOf[PreviewAgentsResponse]
     }
   }
+
   @js.native
   sealed trait PreviewStatus extends js.Any
   object PreviewStatus extends js.Object {
@@ -2351,6 +2360,7 @@ package inspector {
       __obj.asInstanceOf[RemoveAttributesFromFindingsResponse]
     }
   }
+
   @js.native
   sealed trait ReportFileFormat extends js.Any
   object ReportFileFormat extends js.Object {
@@ -2359,6 +2369,7 @@ package inspector {
 
     val values = js.Object.freeze(js.Array(HTML, PDF))
   }
+
   @js.native
   sealed trait ReportStatus extends js.Any
   object ReportStatus extends js.Object {
@@ -2368,6 +2379,7 @@ package inspector {
 
     val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED))
   }
+
   @js.native
   sealed trait ReportType extends js.Any
   object ReportType extends js.Object {
@@ -2482,6 +2494,7 @@ package inspector {
       __obj.asInstanceOf[Scope]
     }
   }
+
   @js.native
   sealed trait ScopeType extends js.Any
   object ScopeType extends js.Object {
@@ -2533,6 +2546,7 @@ package inspector {
       __obj.asInstanceOf[SetTagsForResourceRequest]
     }
   }
+
   @js.native
   sealed trait Severity extends js.Any
   object Severity extends js.Object {
@@ -2583,6 +2597,7 @@ package inspector {
       __obj.asInstanceOf[StartAssessmentRunResponse]
     }
   }
+
   @js.native
   sealed trait StopAction extends js.Any
   object StopAction extends js.Object {

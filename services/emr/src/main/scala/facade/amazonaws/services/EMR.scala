@@ -192,6 +192,7 @@ package emr {
         params: DescribeJobFlowsInput
     ): Request[DescribeJobFlowsOutput] = js.native
   }
+
   @js.native
   sealed trait ActionOnFailure extends js.Any
   object ActionOnFailure extends js.Object {
@@ -377,6 +378,7 @@ package emr {
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
+
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType extends js.Object {
@@ -464,6 +466,7 @@ package emr {
       __obj.asInstanceOf[AutoScalingPolicyDescription]
     }
   }
+
   @js.native
   sealed trait AutoScalingPolicyState extends js.Any
   object AutoScalingPolicyState extends js.Object {
@@ -498,6 +501,7 @@ package emr {
       __obj.asInstanceOf[AutoScalingPolicyStateChangeReason]
     }
   }
+
   @js.native
   sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
   object AutoScalingPolicyStateChangeReasonCode extends js.Object {
@@ -693,6 +697,7 @@ package emr {
       __obj.asInstanceOf[CancelStepsOutput]
     }
   }
+
   @js.native
   sealed trait CancelStepsRequestStatus extends js.Any
   object CancelStepsRequestStatus extends js.Object {
@@ -846,6 +851,7 @@ package emr {
       __obj.asInstanceOf[Cluster]
     }
   }
+
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
@@ -883,6 +889,7 @@ package emr {
       __obj.asInstanceOf[ClusterStateChangeReason]
     }
   }
+
   @js.native
   sealed trait ClusterStateChangeReasonCode extends js.Any
   object ClusterStateChangeReasonCode extends js.Object {
@@ -1017,6 +1024,7 @@ package emr {
       __obj.asInstanceOf[Command]
     }
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -1616,6 +1624,7 @@ package emr {
       __obj.asInstanceOf[Instance]
     }
   }
+
   @js.native
   sealed trait InstanceCollectionType extends js.Any
   object InstanceCollectionType extends js.Object {
@@ -1766,6 +1775,7 @@ package emr {
       __obj.asInstanceOf[InstanceFleetProvisioningSpecifications]
     }
   }
+
   @js.native
   sealed trait InstanceFleetState extends js.Any
   object InstanceFleetState extends js.Object {
@@ -1804,6 +1814,7 @@ package emr {
       __obj.asInstanceOf[InstanceFleetStateChangeReason]
     }
   }
+
   @js.native
   sealed trait InstanceFleetStateChangeReasonCode extends js.Any
   object InstanceFleetStateChangeReasonCode extends js.Object {
@@ -1868,6 +1879,7 @@ package emr {
       __obj.asInstanceOf[InstanceFleetTimeline]
     }
   }
+
   @js.native
   sealed trait InstanceFleetType extends js.Any
   object InstanceFleetType extends js.Object {
@@ -2088,6 +2100,7 @@ package emr {
       __obj.asInstanceOf[InstanceGroupModifyConfig]
     }
   }
+
   @js.native
   sealed trait InstanceGroupState extends js.Any
   object InstanceGroupState extends js.Object {
@@ -2141,6 +2154,7 @@ package emr {
       __obj.asInstanceOf[InstanceGroupStateChangeReason]
     }
   }
+
   @js.native
   sealed trait InstanceGroupStateChangeReasonCode extends js.Any
   object InstanceGroupStateChangeReasonCode extends js.Object {
@@ -2201,6 +2215,7 @@ package emr {
       __obj.asInstanceOf[InstanceGroupTimeline]
     }
   }
+
   @js.native
   sealed trait InstanceGroupType extends js.Any
   object InstanceGroupType extends js.Object {
@@ -2237,6 +2252,7 @@ package emr {
       __obj.asInstanceOf[InstanceResizePolicy]
     }
   }
+
   @js.native
   sealed trait InstanceRoleType extends js.Any
   object InstanceRoleType extends js.Object {
@@ -2246,6 +2262,7 @@ package emr {
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
+
   @js.native
   sealed trait InstanceState extends js.Any
   object InstanceState extends js.Object {
@@ -2279,6 +2296,7 @@ package emr {
       __obj.asInstanceOf[InstanceStateChangeReason]
     }
   }
+
   @js.native
   sealed trait InstanceStateChangeReasonCode extends js.Any
   object InstanceStateChangeReasonCode extends js.Object {
@@ -3064,6 +3082,7 @@ package emr {
       __obj.asInstanceOf[ListStepsOutput]
     }
   }
+
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType extends js.Object {
@@ -3374,6 +3393,7 @@ package emr {
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
+
   @js.native
   sealed trait RepoUpgradeOnBoot extends js.Any
   object RepoUpgradeOnBoot extends js.Object {
@@ -3494,6 +3514,7 @@ package emr {
       __obj.asInstanceOf[RunJobFlowOutput]
     }
   }
+
   @js.native
   sealed trait ScaleDownBehavior extends js.Any
   object ScaleDownBehavior extends js.Object {
@@ -3773,6 +3794,7 @@ package emr {
       __obj.asInstanceOf[SpotProvisioningSpecification]
     }
   }
+
   @js.native
   sealed trait SpotProvisioningTimeoutAction extends js.Any
   object SpotProvisioningTimeoutAction extends js.Object {
@@ -3781,6 +3803,7 @@ package emr {
 
     val values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
+
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
@@ -3823,6 +3846,7 @@ package emr {
       __obj.asInstanceOf[Step]
     }
   }
+
   @js.native
   sealed trait StepCancellationOption extends js.Any
   object StepCancellationOption extends js.Object {
@@ -3882,6 +3906,7 @@ package emr {
       __obj.asInstanceOf[StepDetail]
     }
   }
+
   @js.native
   sealed trait StepExecutionState extends js.Any
   object StepExecutionState extends js.Object {
@@ -3928,6 +3953,7 @@ package emr {
       __obj.asInstanceOf[StepExecutionStatusDetail]
     }
   }
+
   @js.native
   sealed trait StepState extends js.Any
   object StepState extends js.Object {
@@ -3963,6 +3989,7 @@ package emr {
       __obj.asInstanceOf[StepStateChangeReason]
     }
   }
+
   @js.native
   sealed trait StepStateChangeReasonCode extends js.Any
   object StepStateChangeReasonCode extends js.Object {
@@ -4119,6 +4146,7 @@ package emr {
       __obj.asInstanceOf[TerminateJobFlowsInput]
     }
   }
+
   @js.native
   sealed trait Unit extends js.Any
   object Unit extends js.Object {

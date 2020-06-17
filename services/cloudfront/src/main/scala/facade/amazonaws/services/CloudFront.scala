@@ -502,6 +502,7 @@ package cloudfront {
       __obj.asInstanceOf[CachedMethods]
     }
   }
+
   @js.native
   sealed trait CertificateSource extends js.Any
   object CertificateSource extends js.Object {
@@ -1774,6 +1775,7 @@ package cloudfront {
       __obj.asInstanceOf[EncryptionEntity]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -2048,6 +2050,7 @@ package cloudfront {
       __obj.asInstanceOf[FieldPatterns]
     }
   }
+
   @js.native
   sealed trait Format extends js.Any
   object Format extends js.Object {
@@ -2112,6 +2115,7 @@ package cloudfront {
       __obj.asInstanceOf[GeoRestriction]
     }
   }
+
   @js.native
   sealed trait GeoRestrictionType extends js.Any
   object GeoRestrictionType extends js.Object {
@@ -2681,6 +2685,7 @@ package cloudfront {
       __obj.asInstanceOf[Headers]
     }
   }
+
   @js.native
   sealed trait HttpVersion extends js.Any
   object HttpVersion extends js.Object {
@@ -2689,6 +2694,7 @@ package cloudfront {
 
     val values = js.Object.freeze(js.Array(`http1.1`, http2))
   }
+
   @js.native
   sealed trait ICPRecordalStatus extends js.Any
   object ICPRecordalStatus extends js.Object {
@@ -2815,6 +2821,7 @@ package cloudfront {
       __obj.asInstanceOf[InvalidationSummary]
     }
   }
+
   @js.native
   sealed trait ItemSelection extends js.Any
   object ItemSelection extends js.Object {
@@ -3300,6 +3307,7 @@ package cloudfront {
       __obj.asInstanceOf[LoggingConfig]
     }
   }
+
   @js.native
   sealed trait Method extends js.Any
   object Method extends js.Object {
@@ -3313,6 +3321,7 @@ package cloudfront {
 
     val values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
   }
+
   @js.native
   sealed trait MinimumProtocolVersion extends js.Any
   object MinimumProtocolVersion extends js.Object {
@@ -3502,6 +3511,7 @@ package cloudfront {
       __obj.asInstanceOf[OriginGroups]
     }
   }
+
   @js.native
   sealed trait OriginProtocolPolicy extends js.Any
   object OriginProtocolPolicy extends js.Object {
@@ -3583,6 +3593,7 @@ package cloudfront {
       __obj.asInstanceOf[Paths]
     }
   }
+
   @js.native
   sealed trait PriceClass extends js.Any
   object PriceClass extends js.Object {
@@ -3874,6 +3885,7 @@ package cloudfront {
       __obj.asInstanceOf[S3OriginConfig]
     }
   }
+
   @js.native
   sealed trait SSLSupportMethod extends js.Any
   object SSLSupportMethod extends js.Object {
@@ -3904,6 +3916,7 @@ package cloudfront {
       __obj.asInstanceOf[Signer]
     }
   }
+
   @js.native
   sealed trait SslProtocol extends js.Any
   object SslProtocol extends js.Object {
@@ -4628,6 +4641,7 @@ package cloudfront {
       __obj.asInstanceOf[ViewerCertificate]
     }
   }
+
   @js.native
   sealed trait ViewerProtocolPolicy extends js.Any
   object ViewerProtocolPolicy extends js.Object {

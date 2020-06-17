@@ -55,6 +55,7 @@ package connectparticipant {
     def sendEvent(params: SendEventRequest): Request[SendEventResponse]                                     = js.native
     def sendMessage(params: SendMessageRequest): Request[SendMessageResponse]                               = js.native
   }
+
   @js.native
   sealed trait ChatItemType extends js.Any
   object ChatItemType extends js.Object {
@@ -86,6 +87,7 @@ package connectparticipant {
       __obj.asInstanceOf[ConnectionCredentials]
     }
   }
+
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType extends js.Object {
@@ -266,6 +268,7 @@ package connectparticipant {
       __obj.asInstanceOf[Item]
     }
   }
+
   @js.native
   sealed trait ParticipantRole extends js.Any
   object ParticipantRole extends js.Object {
@@ -275,6 +278,7 @@ package connectparticipant {
 
     val values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
   }
+
   @js.native
   sealed trait ScanDirection extends js.Any
   object ScanDirection extends js.Object {
@@ -375,6 +379,7 @@ package connectparticipant {
       __obj.asInstanceOf[SendMessageResponse]
     }
   }
+
   @js.native
   sealed trait SortKey extends js.Any
   object SortKey extends js.Object {

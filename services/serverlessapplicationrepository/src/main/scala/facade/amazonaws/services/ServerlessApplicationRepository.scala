@@ -991,6 +991,7 @@ package serverlessapplicationrepository {
       __obj.asInstanceOf[RollbackTrigger]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {

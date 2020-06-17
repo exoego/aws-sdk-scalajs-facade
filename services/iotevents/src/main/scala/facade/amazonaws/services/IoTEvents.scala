@@ -603,6 +603,7 @@ package iotevents {
       __obj.asInstanceOf[DetectorModelSummary]
     }
   }
+
   @js.native
   sealed trait DetectorModelVersionStatus extends js.Any
   object DetectorModelVersionStatus extends js.Object {
@@ -656,6 +657,7 @@ package iotevents {
       __obj.asInstanceOf[DetectorModelVersionSummary]
     }
   }
+
   @js.native
   sealed trait EvaluationMethod extends js.Any
   object EvaluationMethod extends js.Object {
@@ -794,6 +796,7 @@ package iotevents {
       __obj.asInstanceOf[InputDefinition]
     }
   }
+
   @js.native
   sealed trait InputStatus extends js.Any
   object InputStatus extends js.Object {
@@ -1056,6 +1059,7 @@ package iotevents {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {

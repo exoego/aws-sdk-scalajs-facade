@@ -762,6 +762,7 @@ package stepfunctions {
       __obj.asInstanceOf[ExecutionStartedEventDetails]
     }
   }
+
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
@@ -1082,6 +1083,7 @@ package stepfunctions {
       __obj.asInstanceOf[HistoryEvent]
     }
   }
+
   @js.native
   sealed trait HistoryEventType extends js.Any
   object HistoryEventType extends js.Object {
@@ -1516,6 +1518,7 @@ package stepfunctions {
       __obj.asInstanceOf[LogDestination]
     }
   }
+
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
@@ -1817,6 +1820,7 @@ package stepfunctions {
       __obj.asInstanceOf[StateMachineListItem]
     }
   }
+
   @js.native
   sealed trait StateMachineStatus extends js.Any
   object StateMachineStatus extends js.Object {
@@ -1825,6 +1829,7 @@ package stepfunctions {
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
   }
+
   @js.native
   sealed trait StateMachineType extends js.Any
   object StateMachineType extends js.Object {

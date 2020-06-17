@@ -558,6 +558,7 @@ package wafregional {
       __obj.asInstanceOf[ByteMatchTuple]
     }
   }
+
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction extends js.Object {
@@ -566,6 +567,7 @@ package wafregional {
 
     val values = js.Object.freeze(js.Array(INSERT, DELETE))
   }
+
   @js.native
   sealed trait ChangeTokenStatus extends js.Any
   object ChangeTokenStatus extends js.Object {
@@ -575,6 +577,7 @@ package wafregional {
 
     val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -1730,6 +1733,7 @@ package wafregional {
       __obj.asInstanceOf[GeoMatchConstraint]
     }
   }
+
   @js.native
   sealed trait GeoMatchConstraintType extends js.Any
   object GeoMatchConstraintType extends js.Object {
@@ -1737,6 +1741,7 @@ package wafregional {
 
     val values = js.Object.freeze(js.Array(Country))
   }
+
   @js.native
   sealed trait GeoMatchConstraintValue extends js.Any
   object GeoMatchConstraintValue extends js.Object {
@@ -3101,6 +3106,7 @@ package wafregional {
       __obj.asInstanceOf[IPSetDescriptor]
     }
   }
+
   @js.native
   sealed trait IPSetDescriptorType extends js.Any
   object IPSetDescriptorType extends js.Object {
@@ -3849,6 +3855,7 @@ package wafregional {
       __obj.asInstanceOf[LoggingConfiguration]
     }
   }
+
   @js.native
   sealed trait MatchFieldType extends js.Any
   object MatchFieldType extends js.Object {
@@ -3862,6 +3869,7 @@ package wafregional {
 
     val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
   }
+
   @js.native
   sealed trait PositionalConstraint extends js.Any
   object PositionalConstraint extends js.Object {
@@ -3900,6 +3908,7 @@ package wafregional {
       __obj.asInstanceOf[Predicate]
     }
   }
+
   @js.native
   sealed trait PredicateType extends js.Any
   object PredicateType extends js.Object {
@@ -4022,6 +4031,7 @@ package wafregional {
       __obj.asInstanceOf[RateBasedRule]
     }
   }
+
   @js.native
   sealed trait RateKey extends js.Any
   object RateKey extends js.Object {
@@ -4208,6 +4218,7 @@ package wafregional {
       __obj.asInstanceOf[RegexPatternSetUpdate]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -4712,6 +4723,7 @@ package wafregional {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait TextTransformation extends js.Any
   object TextTransformation extends js.Object {
@@ -5303,6 +5315,7 @@ package wafregional {
       __obj.asInstanceOf[WafAction]
     }
   }
+
   @js.native
   sealed trait WafActionType extends js.Any
   object WafActionType extends js.Object {
@@ -5333,6 +5346,7 @@ package wafregional {
       __obj.asInstanceOf[WafOverrideAction]
     }
   }
+
   @js.native
   sealed trait WafOverrideActionType extends js.Any
   object WafOverrideActionType extends js.Object {
@@ -5341,6 +5355,7 @@ package wafregional {
 
     val values = js.Object.freeze(js.Array(NONE, COUNT))
   }
+
   @js.native
   sealed trait WafRuleType extends js.Any
   object WafRuleType extends js.Object {

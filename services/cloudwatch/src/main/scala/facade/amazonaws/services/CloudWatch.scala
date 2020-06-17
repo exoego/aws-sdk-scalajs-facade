@@ -301,6 +301,7 @@ package cloudwatch {
       __obj.asInstanceOf[AnomalyDetectorConfiguration]
     }
   }
+
   @js.native
   sealed trait AnomalyDetectorStateValue extends js.Any
   object AnomalyDetectorStateValue extends js.Object {
@@ -310,6 +311,7 @@ package cloudwatch {
 
     val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -1196,6 +1198,7 @@ package cloudwatch {
       __obj.asInstanceOf[GetMetricWidgetImageOutput]
     }
   }
+
   @js.native
   sealed trait HistoryItemType extends js.Any
   object HistoryItemType extends js.Object {
@@ -2020,6 +2023,7 @@ package cloudwatch {
       __obj.asInstanceOf[Range]
     }
   }
+
   @js.native
   sealed trait ScanBy extends js.Any
   object ScanBy extends js.Object {
@@ -2055,6 +2059,7 @@ package cloudwatch {
       __obj.asInstanceOf[SetAlarmStateInput]
     }
   }
+
   @js.native
   sealed trait StandardUnit extends js.Any
   object StandardUnit extends js.Object {
@@ -2118,6 +2123,7 @@ package cloudwatch {
       )
     )
   }
+
   @js.native
   sealed trait StateValue extends js.Any
   object StateValue extends js.Object {
@@ -2127,6 +2133,7 @@ package cloudwatch {
 
     val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
+
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
@@ -2168,6 +2175,7 @@ package cloudwatch {
       __obj.asInstanceOf[StatisticSet]
     }
   }
+
   @js.native
   sealed trait StatusCode extends js.Any
   object StatusCode extends js.Object {

@@ -451,6 +451,7 @@ package accessanalyzer {
       __obj.asInstanceOf[Finding]
     }
   }
+
   @js.native
   sealed trait FindingStatus extends js.Any
   object FindingStatus extends js.Object {
@@ -460,6 +461,7 @@ package accessanalyzer {
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED, RESOLVED))
   }
+
   @js.native
   sealed trait FindingStatusUpdate extends js.Any
   object FindingStatusUpdate extends js.Object {
@@ -970,6 +972,7 @@ package accessanalyzer {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
@@ -978,6 +981,7 @@ package accessanalyzer {
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -1085,6 +1089,7 @@ package accessanalyzer {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

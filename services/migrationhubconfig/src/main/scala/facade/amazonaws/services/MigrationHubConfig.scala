@@ -210,6 +210,7 @@ package migrationhubconfig {
       __obj.asInstanceOf[Target]
     }
   }
+
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {

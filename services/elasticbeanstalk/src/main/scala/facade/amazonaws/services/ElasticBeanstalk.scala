@@ -365,6 +365,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[AbortEnvironmentUpdateMessage]
     }
   }
+
   @js.native
   sealed trait ActionHistoryStatus extends js.Any
   object ActionHistoryStatus extends js.Object {
@@ -374,6 +375,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(Completed, Failed, Unknown))
   }
+
   @js.native
   sealed trait ActionStatus extends js.Any
   object ActionStatus extends js.Object {
@@ -384,6 +386,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(Scheduled, Pending, Running, Unknown))
   }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
@@ -650,6 +653,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ApplicationVersionLifecycleConfig]
     }
   }
+
   @js.native
   sealed trait ApplicationVersionStatus extends js.Any
   object ApplicationVersionStatus extends js.Object {
@@ -895,6 +899,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ComposeEnvironmentsMessage]
     }
   }
+
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType extends js.Object {
@@ -904,6 +909,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE))
   }
+
   @js.native
   sealed trait ConfigurationDeploymentStatus extends js.Any
   object ConfigurationDeploymentStatus extends js.Object {
@@ -990,6 +996,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ConfigurationOptionSetting]
     }
   }
+
   @js.native
   sealed trait ConfigurationOptionValueType extends js.Any
   object ConfigurationOptionValueType extends js.Object {
@@ -2123,6 +2130,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentDescriptionsMessage]
     }
   }
+
   @js.native
   sealed trait EnvironmentHealth extends js.Any
   object EnvironmentHealth extends js.Object {
@@ -2133,6 +2141,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(Green, Yellow, Red, Grey))
   }
+
   @js.native
   sealed trait EnvironmentHealthAttribute extends js.Any
   object EnvironmentHealthAttribute extends js.Object {
@@ -2149,6 +2158,7 @@ package elasticbeanstalk {
       js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
     )
   }
+
   @js.native
   sealed trait EnvironmentHealthStatus extends js.Any
   object EnvironmentHealthStatus extends js.Object {
@@ -2192,6 +2202,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentInfoDescription]
     }
   }
+
   @js.native
   sealed trait EnvironmentInfoType extends js.Any
   object EnvironmentInfoType extends js.Object {
@@ -2300,6 +2311,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EnvironmentResourcesDescription]
     }
   }
+
   @js.native
   sealed trait EnvironmentStatus extends js.Any
   object EnvironmentStatus extends js.Object {
@@ -2401,6 +2413,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[EventDescriptionsMessage]
     }
   }
+
   @js.native
   sealed trait EventSeverity extends js.Any
   object EventSeverity extends js.Object {
@@ -2413,6 +2426,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL))
   }
+
   @js.native
   sealed trait FailureType extends js.Any
   object FailureType extends js.Object {
@@ -2495,6 +2509,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
+
   @js.native
   sealed trait InstancesHealthAttribute extends js.Any
   object InstancesHealthAttribute extends js.Object {
@@ -3064,6 +3079,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[PlatformProgrammingLanguage]
     }
   }
+
   @js.native
   sealed trait PlatformStatus extends js.Any
   object PlatformStatus extends js.Object {
@@ -3464,6 +3480,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[SourceConfiguration]
     }
   }
+
   @js.native
   sealed trait SourceRepository extends js.Any
   object SourceRepository extends js.Object {
@@ -3472,6 +3489,7 @@ package elasticbeanstalk {
 
     val values = js.Object.freeze(js.Array(CodeCommit, S3))
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -3868,6 +3886,7 @@ package elasticbeanstalk {
       __obj.asInstanceOf[ValidationMessage]
     }
   }
+
   @js.native
   sealed trait ValidationSeverity extends js.Any
   object ValidationSeverity extends js.Object {

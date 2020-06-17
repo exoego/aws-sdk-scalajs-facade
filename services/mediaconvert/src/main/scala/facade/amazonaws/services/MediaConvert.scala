@@ -4924,6 +4924,7 @@ package mediaconvert {
       __obj.asInstanceOf[Hdr10Metadata]
     }
   }
+
   @js.native
   sealed trait HlsAdMarkers extends js.Any
   object HlsAdMarkers extends js.Object {
@@ -9345,6 +9346,7 @@ package mediaconvert {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

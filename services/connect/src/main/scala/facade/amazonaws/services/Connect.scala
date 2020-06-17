@@ -191,6 +191,7 @@ package connect {
     def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object]     = js.native
     def updateUserSecurityProfiles(params: UpdateUserSecurityProfilesRequest): Request[js.Object] = js.native
   }
+
   @js.native
   sealed trait Channel extends js.Any
   object Channel extends js.Object {
@@ -223,6 +224,7 @@ package connect {
       __obj.asInstanceOf[ChatMessage]
     }
   }
+
   @js.native
   sealed trait Comparison extends js.Any
   object Comparison extends js.Object {
@@ -258,6 +260,7 @@ package connect {
       __obj.asInstanceOf[ContactFlowSummary]
     }
   }
+
   @js.native
   sealed trait ContactFlowType extends js.Any
   object ContactFlowType extends js.Object {
@@ -839,6 +842,7 @@ package connect {
       __obj.asInstanceOf[GetMetricDataResponse]
     }
   }
+
   @js.native
   sealed trait Grouping extends js.Any
   object Grouping extends js.Object {
@@ -1569,6 +1573,7 @@ package connect {
       __obj.asInstanceOf[ParticipantDetails]
     }
   }
+
   @js.native
   sealed trait PhoneNumberCountryCode extends js.Any
   object PhoneNumberCountryCode extends js.Object {
@@ -2083,6 +2088,7 @@ package connect {
       __obj.asInstanceOf[PhoneNumberSummary]
     }
   }
+
   @js.native
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType extends js.Object {
@@ -2091,6 +2097,7 @@ package connect {
 
     val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
   }
+
   @js.native
   sealed trait PhoneType extends js.Any
   object PhoneType extends js.Object {
@@ -2149,6 +2156,7 @@ package connect {
       __obj.asInstanceOf[QueueSummary]
     }
   }
+
   @js.native
   sealed trait QueueType extends js.Any
   object QueueType extends js.Object {
@@ -2314,6 +2322,7 @@ package connect {
       __obj.asInstanceOf[StartOutboundVoiceContactResponse]
     }
   }
+
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
@@ -2400,6 +2409,7 @@ package connect {
       __obj.asInstanceOf[Threshold]
     }
   }
+
   @js.native
   sealed trait Unit extends js.Any
   object Unit extends js.Object {

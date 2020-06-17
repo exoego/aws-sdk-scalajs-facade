@@ -197,6 +197,7 @@ package glacier {
       __obj.asInstanceOf[AbortVaultLockInput]
     }
   }
+
   @js.native
   sealed trait ActionCode extends js.Any
   object ActionCode extends js.Object {
@@ -324,6 +325,7 @@ package glacier {
       __obj.asInstanceOf[CSVOutput]
     }
   }
+
   @js.native
   sealed trait CannedACL extends js.Any
   object CannedACL extends js.Object {
@@ -700,6 +702,7 @@ package glacier {
       __obj.asInstanceOf[Encryption]
     }
   }
+
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType extends js.Object {
@@ -708,6 +711,7 @@ package glacier {
 
     val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
+
   @js.native
   sealed trait ExpressionType extends js.Any
   object ExpressionType extends js.Object {
@@ -715,6 +719,7 @@ package glacier {
 
     val values = js.Object.freeze(js.Array(SQL))
   }
+
   @js.native
   sealed trait FileHeaderInfo extends js.Any
   object FileHeaderInfo extends js.Object {
@@ -1747,6 +1752,7 @@ package glacier {
       __obj.asInstanceOf[PartListElement]
     }
   }
+
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
@@ -1817,6 +1823,7 @@ package glacier {
       __obj.asInstanceOf[PurchaseProvisionedCapacityOutput]
     }
   }
+
   @js.native
   sealed trait QuoteFields extends js.Any
   object QuoteFields extends js.Object {
@@ -1998,6 +2005,7 @@ package glacier {
       __obj.asInstanceOf[SetVaultNotificationsInput]
     }
   }
+
   @js.native
   sealed trait StatusCode extends js.Any
   object StatusCode extends js.Object {
@@ -2007,6 +2015,7 @@ package glacier {
 
     val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
   }
+
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass extends js.Object {
@@ -2016,6 +2025,7 @@ package glacier {
 
     val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA))
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

@@ -315,6 +315,7 @@ package resourcegroups {
       __obj.asInstanceOf[GroupFilter]
     }
   }
+
   @js.native
   sealed trait GroupFilterName extends js.Any
   object GroupFilterName extends js.Object {
@@ -483,6 +484,7 @@ package resourcegroups {
       __obj.asInstanceOf[QueryError]
     }
   }
+
   @js.native
   sealed trait QueryErrorCode extends js.Any
   object QueryErrorCode extends js.Object {
@@ -491,6 +493,7 @@ package resourcegroups {
 
     val values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
   }
+
   @js.native
   sealed trait QueryType extends js.Any
   object QueryType extends js.Object {
@@ -523,6 +526,7 @@ package resourcegroups {
       __obj.asInstanceOf[ResourceFilter]
     }
   }
+
   @js.native
   sealed trait ResourceFilterName extends js.Any
   object ResourceFilterName extends js.Object {

@@ -1689,6 +1689,7 @@ package comprehend {
       __obj.asInstanceOf[DocumentClassifierInputDataConfig]
     }
   }
+
   @js.native
   sealed trait DocumentClassifierMode extends js.Any
   object DocumentClassifierMode extends js.Object {
@@ -1969,6 +1970,7 @@ package comprehend {
       __obj.asInstanceOf[EndpointProperties]
     }
   }
+
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus extends js.Object {
@@ -2066,7 +2068,6 @@ package comprehend {
 
   /**
     * Provides information about an entity.
-    *
     */
   @js.native
   trait Entity extends js.Object {
@@ -2346,6 +2347,7 @@ package comprehend {
       __obj.asInstanceOf[EntityRecognizerProperties]
     }
   }
+
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
@@ -2432,6 +2434,7 @@ package comprehend {
       __obj.asInstanceOf[InputDataConfig]
     }
   }
+
   @js.native
   sealed trait InputFormat extends js.Any
   object InputFormat extends js.Object {
@@ -2440,6 +2443,7 @@ package comprehend {
 
     val values = js.Object.freeze(js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE))
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -2560,6 +2564,7 @@ package comprehend {
       __obj.asInstanceOf[KeyPhrasesDetectionJobProperties]
     }
   }
+
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode extends js.Object {
@@ -3001,6 +3006,7 @@ package comprehend {
       __obj.asInstanceOf[ListTopicsDetectionJobsResponse]
     }
   }
+
   @js.native
   sealed trait ModelStatus extends js.Any
   object ModelStatus extends js.Object {
@@ -3061,6 +3067,7 @@ package comprehend {
       __obj.asInstanceOf[PartOfSpeechTag]
     }
   }
+
   @js.native
   sealed trait PartOfSpeechTagType extends js.Any
   object PartOfSpeechTagType extends js.Object {
@@ -3195,6 +3202,7 @@ package comprehend {
       __obj.asInstanceOf[SentimentScore]
     }
   }
+
   @js.native
   sealed trait SentimentType extends js.Any
   object SentimentType extends js.Object {
@@ -3763,6 +3771,7 @@ package comprehend {
       __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
     }
   }
+
   @js.native
   sealed trait SyntaxLanguageCode extends js.Any
   object SyntaxLanguageCode extends js.Object {

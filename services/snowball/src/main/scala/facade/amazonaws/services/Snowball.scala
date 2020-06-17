@@ -300,6 +300,7 @@ package snowball {
       __obj.asInstanceOf[ClusterMetadata]
     }
   }
+
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
@@ -1002,6 +1003,7 @@ package snowball {
       __obj.asInstanceOf[JobResource]
     }
   }
+
   @js.native
   sealed trait JobState extends js.Any
   object JobState extends js.Object {
@@ -1037,6 +1039,7 @@ package snowball {
       )
     )
   }
+
   @js.native
   sealed trait JobType extends js.Any
   object JobType extends js.Object {
@@ -1342,6 +1345,7 @@ package snowball {
       __obj.asInstanceOf[ShippingDetails]
     }
   }
+
   @js.native
   sealed trait ShippingOption extends js.Any
   object ShippingOption extends js.Object {
@@ -1352,6 +1356,7 @@ package snowball {
 
     val values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
   }
+
   @js.native
   sealed trait SnowballCapacity extends js.Any
   object SnowballCapacity extends js.Object {
@@ -1363,6 +1368,7 @@ package snowball {
 
     val values = js.Object.freeze(js.Array(T50, T80, T100, T42, NoPreference))
   }
+
   @js.native
   sealed trait SnowballType extends js.Any
   object SnowballType extends js.Object {

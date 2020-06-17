@@ -179,6 +179,7 @@ package mediaconnect {
       __obj.asInstanceOf[AddOutputRequest]
     }
   }
+
   @js.native
   sealed trait Algorithm extends js.Any
   object Algorithm extends js.Object {
@@ -519,6 +520,7 @@ package mediaconnect {
       __obj.asInstanceOf[GrantFlowEntitlementsResponse]
     }
   }
+
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
@@ -773,6 +775,7 @@ package mediaconnect {
       __obj.asInstanceOf[Output]
     }
   }
+
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
@@ -960,6 +963,7 @@ package mediaconnect {
       __obj.asInstanceOf[Source]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -1005,6 +1009,7 @@ package mediaconnect {
       __obj.asInstanceOf[StartFlowResponse]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {

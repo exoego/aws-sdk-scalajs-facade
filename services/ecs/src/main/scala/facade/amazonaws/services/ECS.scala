@@ -281,6 +281,7 @@ package ecs {
     ): Request[UpdateServicePrimaryTaskSetResponse]                                 = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
   }
+
   @js.native
   sealed trait AgentUpdateStatus extends js.Any
   object AgentUpdateStatus extends js.Object {
@@ -293,6 +294,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
   }
+
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp extends js.Object {
@@ -470,6 +472,7 @@ package ecs {
       __obj.asInstanceOf[CapacityProvider]
     }
   }
+
   @js.native
   sealed trait CapacityProviderField extends js.Any
   object CapacityProviderField extends js.Object {
@@ -477,6 +480,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
+
   @js.native
   sealed trait CapacityProviderStatus extends js.Any
   object CapacityProviderStatus extends js.Object {
@@ -573,6 +577,7 @@ package ecs {
       __obj.asInstanceOf[Cluster]
     }
   }
+
   @js.native
   sealed trait ClusterField extends js.Any
   object ClusterField extends js.Object {
@@ -605,6 +610,7 @@ package ecs {
       __obj.asInstanceOf[ClusterSetting]
     }
   }
+
   @js.native
   sealed trait ClusterSettingName extends js.Any
   object ClusterSettingName extends js.Object {
@@ -612,6 +618,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(containerInsights))
   }
+
   @js.native
   sealed trait Compatibility extends js.Any
   object Compatibility extends js.Object {
@@ -620,6 +627,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
+
   @js.native
   sealed trait Connectivity extends js.Any
   object Connectivity extends js.Object {
@@ -692,6 +700,7 @@ package ecs {
       __obj.asInstanceOf[Container]
     }
   }
+
   @js.native
   sealed trait ContainerCondition extends js.Any
   object ContainerCondition extends js.Object {
@@ -926,6 +935,7 @@ package ecs {
       __obj.asInstanceOf[ContainerInstance]
     }
   }
+
   @js.native
   sealed trait ContainerInstanceField extends js.Any
   object ContainerInstanceField extends js.Object {
@@ -933,6 +943,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
+
   @js.native
   sealed trait ContainerInstanceStatus extends js.Any
   object ContainerInstanceStatus extends js.Object {
@@ -1556,6 +1567,7 @@ package ecs {
       __obj.asInstanceOf[DeploymentController]
     }
   }
+
   @js.native
   sealed trait DeploymentControllerType extends js.Any
   object DeploymentControllerType extends js.Object {
@@ -1939,6 +1951,7 @@ package ecs {
       __obj.asInstanceOf[DescribeTasksResponse]
     }
   }
+
   @js.native
   sealed trait DesiredStatus extends js.Any
   object DesiredStatus extends js.Object {
@@ -1975,6 +1988,7 @@ package ecs {
       __obj.asInstanceOf[Device]
     }
   }
+
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
   object DeviceCgroupPermission extends js.Object {
@@ -2128,6 +2142,7 @@ package ecs {
       __obj.asInstanceOf[FirelensConfiguration]
     }
   }
+
   @js.native
   sealed trait FirelensConfigurationType extends js.Any
   object FirelensConfigurationType extends js.Object {
@@ -2173,6 +2188,7 @@ package ecs {
       __obj.asInstanceOf[HealthCheck]
     }
   }
+
   @js.native
   sealed trait HealthStatus extends js.Any
   object HealthStatus extends js.Object {
@@ -2271,6 +2287,7 @@ package ecs {
       __obj.asInstanceOf[InferenceAcceleratorOverride]
     }
   }
+
   @js.native
   sealed trait IpcMode extends js.Any
   object IpcMode extends js.Object {
@@ -2324,6 +2341,7 @@ package ecs {
       __obj.asInstanceOf[KeyValuePair]
     }
   }
+
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType extends js.Object {
@@ -2848,6 +2866,7 @@ package ecs {
       __obj.asInstanceOf[LogConfiguration]
     }
   }
+
   @js.native
   sealed trait LogDriver extends js.Any
   object LogDriver extends js.Object {
@@ -2892,6 +2911,7 @@ package ecs {
       __obj.asInstanceOf[ManagedScaling]
     }
   }
+
   @js.native
   sealed trait ManagedScalingStatus extends js.Any
   object ManagedScalingStatus extends js.Object {
@@ -2900,6 +2920,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait ManagedTerminationProtection extends js.Any
   object ManagedTerminationProtection extends js.Object {
@@ -3005,6 +3026,7 @@ package ecs {
       __obj.asInstanceOf[NetworkInterface]
     }
   }
+
   @js.native
   sealed trait NetworkMode extends js.Any
   object NetworkMode extends js.Object {
@@ -3015,6 +3037,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
   }
+
   @js.native
   sealed trait PidMode extends js.Any
   object PidMode extends js.Object {
@@ -3047,6 +3070,7 @@ package ecs {
       __obj.asInstanceOf[PlacementConstraint]
     }
   }
+
   @js.native
   sealed trait PlacementConstraintType extends js.Any
   object PlacementConstraintType extends js.Object {
@@ -3077,6 +3101,7 @@ package ecs {
       __obj.asInstanceOf[PlacementStrategy]
     }
   }
+
   @js.native
   sealed trait PlacementStrategyType extends js.Any
   object PlacementStrategyType extends js.Object {
@@ -3110,6 +3135,7 @@ package ecs {
       __obj.asInstanceOf[PlatformDevice]
     }
   }
+
   @js.native
   sealed trait PlatformDeviceType extends js.Any
   object PlatformDeviceType extends js.Object {
@@ -3144,6 +3170,7 @@ package ecs {
       __obj.asInstanceOf[PortMapping]
     }
   }
+
   @js.native
   sealed trait PropagateTags extends js.Any
   object PropagateTags extends js.Object {
@@ -3181,6 +3208,7 @@ package ecs {
       __obj.asInstanceOf[ProxyConfiguration]
     }
   }
+
   @js.native
   sealed trait ProxyConfigurationType extends js.Any
   object ProxyConfigurationType extends js.Object {
@@ -3558,6 +3586,7 @@ package ecs {
       __obj.asInstanceOf[ResourceRequirement]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -3670,6 +3699,7 @@ package ecs {
       __obj.asInstanceOf[Scale]
     }
   }
+
   @js.native
   sealed trait ScaleUnit extends js.Any
   object ScaleUnit extends js.Object {
@@ -3677,6 +3707,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(PERCENT))
   }
+
   @js.native
   sealed trait SchedulingStrategy extends js.Any
   object SchedulingStrategy extends js.Object {
@@ -3685,6 +3716,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(REPLICA, DAEMON))
   }
+
   @js.native
   sealed trait Scope extends js.Any
   object Scope extends js.Object {
@@ -3850,6 +3882,7 @@ package ecs {
       __obj.asInstanceOf[ServiceEvent]
     }
   }
+
   @js.native
   sealed trait ServiceField extends js.Any
   object ServiceField extends js.Object {
@@ -3910,6 +3943,7 @@ package ecs {
       __obj.asInstanceOf[Setting]
     }
   }
+
   @js.native
   sealed trait SettingName extends js.Any
   object SettingName extends js.Object {
@@ -3929,6 +3963,7 @@ package ecs {
       )
     )
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
@@ -3937,6 +3972,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
+
   @js.native
   sealed trait StabilityStatus extends js.Any
   object StabilityStatus extends js.Object {
@@ -4287,6 +4323,7 @@ package ecs {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {
@@ -4482,6 +4519,7 @@ package ecs {
       __obj.asInstanceOf[TaskDefinition]
     }
   }
+
   @js.native
   sealed trait TaskDefinitionFamilyStatus extends js.Any
   object TaskDefinitionFamilyStatus extends js.Object {
@@ -4491,6 +4529,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
   }
+
   @js.native
   sealed trait TaskDefinitionField extends js.Any
   object TaskDefinitionField extends js.Object {
@@ -4522,6 +4561,7 @@ package ecs {
       __obj.asInstanceOf[TaskDefinitionPlacementConstraint]
     }
   }
+
   @js.native
   sealed trait TaskDefinitionPlacementConstraintType extends js.Any
   object TaskDefinitionPlacementConstraintType extends js.Object {
@@ -4529,6 +4569,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(memberOf))
   }
+
   @js.native
   sealed trait TaskDefinitionStatus extends js.Any
   object TaskDefinitionStatus extends js.Object {
@@ -4537,6 +4578,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
+
   @js.native
   sealed trait TaskField extends js.Any
   object TaskField extends js.Object {
@@ -4665,6 +4707,7 @@ package ecs {
       __obj.asInstanceOf[TaskSet]
     }
   }
+
   @js.native
   sealed trait TaskSetField extends js.Any
   object TaskSetField extends js.Object {
@@ -4672,6 +4715,7 @@ package ecs {
 
     val values = js.Object.freeze(js.Array(TAGS))
   }
+
   @js.native
   sealed trait TaskStopCode extends js.Any
   object TaskStopCode extends js.Object {
@@ -4708,6 +4752,7 @@ package ecs {
       __obj.asInstanceOf[Tmpfs]
     }
   }
+
   @js.native
   sealed trait TransportProtocol extends js.Any
   object TransportProtocol extends js.Object {
@@ -4743,6 +4788,7 @@ package ecs {
       __obj.asInstanceOf[Ulimit]
     }
   }
+
   @js.native
   sealed trait UlimitName extends js.Any
   object UlimitName extends js.Object {

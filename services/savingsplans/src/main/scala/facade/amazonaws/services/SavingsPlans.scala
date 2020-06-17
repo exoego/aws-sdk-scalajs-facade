@@ -153,6 +153,7 @@ package savingsplans {
       __obj.asInstanceOf[CreateSavingsPlanResponse]
     }
   }
+
   @js.native
   sealed trait CurrencyCode extends js.Any
   object CurrencyCode extends js.Object {
@@ -604,6 +605,7 @@ package savingsplans {
       __obj.asInstanceOf[SavingsPlanOffering]
     }
   }
+
   @js.native
   sealed trait SavingsPlanOfferingFilterAttribute extends js.Any
   object SavingsPlanOfferingFilterAttribute extends js.Object {
@@ -656,6 +658,7 @@ package savingsplans {
       __obj.asInstanceOf[SavingsPlanOfferingProperty]
     }
   }
+
   @js.native
   sealed trait SavingsPlanOfferingPropertyKey extends js.Any
   object SavingsPlanOfferingPropertyKey extends js.Object {
@@ -748,6 +751,7 @@ package savingsplans {
       __obj.asInstanceOf[SavingsPlanOfferingRateProperty]
     }
   }
+
   @js.native
   sealed trait SavingsPlanPaymentOption extends js.Any
   object SavingsPlanPaymentOption extends js.Object {
@@ -757,6 +761,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`))
   }
+
   @js.native
   sealed trait SavingsPlanProductType extends js.Any
   object SavingsPlanProductType extends js.Object {
@@ -828,6 +833,7 @@ package savingsplans {
       __obj.asInstanceOf[SavingsPlanRateFilter]
     }
   }
+
   @js.native
   sealed trait SavingsPlanRateFilterAttribute extends js.Any
   object SavingsPlanRateFilterAttribute extends js.Object {
@@ -841,6 +847,7 @@ package savingsplans {
     val values =
       js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
   }
+
   @js.native
   sealed trait SavingsPlanRateFilterName extends js.Any
   object SavingsPlanRateFilterName extends js.Object {
@@ -879,6 +886,7 @@ package savingsplans {
       __obj.asInstanceOf[SavingsPlanRateProperty]
     }
   }
+
   @js.native
   sealed trait SavingsPlanRatePropertyKey extends js.Any
   object SavingsPlanRatePropertyKey extends js.Object {
@@ -890,6 +898,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(region, instanceType, instanceFamily, productDescription, tenancy))
   }
+
   @js.native
   sealed trait SavingsPlanRateServiceCode extends js.Any
   object SavingsPlanRateServiceCode extends js.Object {
@@ -899,6 +908,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS, AWSLambda))
   }
+
   @js.native
   sealed trait SavingsPlanRateUnit extends js.Any
   object SavingsPlanRateUnit extends js.Object {
@@ -908,6 +918,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
   }
+
   @js.native
   sealed trait SavingsPlanState extends js.Any
   object SavingsPlanState extends js.Object {
@@ -918,6 +929,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
+
   @js.native
   sealed trait SavingsPlanType extends js.Any
   object SavingsPlanType extends js.Object {
@@ -926,6 +938,7 @@ package savingsplans {
 
     val values = js.Object.freeze(js.Array(Compute, EC2Instance))
   }
+
   @js.native
   sealed trait SavingsPlansFilterName extends js.Any
   object SavingsPlansFilterName extends js.Object {

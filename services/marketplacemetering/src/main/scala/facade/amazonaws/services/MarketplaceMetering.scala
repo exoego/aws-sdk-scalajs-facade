@@ -278,6 +278,7 @@ package marketplacemetering {
       __obj.asInstanceOf[UsageRecordResult]
     }
   }
+
   @js.native
   sealed trait UsageRecordResultStatus extends js.Any
   object UsageRecordResultStatus extends js.Object {

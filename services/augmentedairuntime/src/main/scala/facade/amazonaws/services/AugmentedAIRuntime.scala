@@ -45,6 +45,7 @@ package augmentedairuntime {
     def startHumanLoop(params: StartHumanLoopRequest): Request[StartHumanLoopResponse]          = js.native
     def stopHumanLoop(params: StopHumanLoopRequest): Request[StopHumanLoopResponse]             = js.native
   }
+
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
@@ -232,6 +233,7 @@ package augmentedairuntime {
       __obj.asInstanceOf[HumanLoopOutputContent]
     }
   }
+
   @js.native
   sealed trait HumanLoopStatus extends js.Any
   object HumanLoopStatus extends js.Object {
@@ -344,6 +346,7 @@ package augmentedairuntime {
       __obj.asInstanceOf[ListHumanLoopsResponse]
     }
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {

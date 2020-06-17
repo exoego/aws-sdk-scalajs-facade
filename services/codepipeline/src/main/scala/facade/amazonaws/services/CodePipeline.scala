@@ -367,6 +367,7 @@ package codepipeline {
       __obj.asInstanceOf[AcknowledgeThirdPartyJobOutput]
     }
   }
+
   @js.native
   sealed trait ActionCategory extends js.Any
   object ActionCategory extends js.Object {
@@ -437,6 +438,7 @@ package codepipeline {
       __obj.asInstanceOf[ActionConfigurationProperty]
     }
   }
+
   @js.native
   sealed trait ActionConfigurationPropertyType extends js.Any
   object ActionConfigurationPropertyType extends js.Object {
@@ -708,6 +710,7 @@ package codepipeline {
       __obj.asInstanceOf[ActionExecutionResult]
     }
   }
+
   @js.native
   sealed trait ActionExecutionStatus extends js.Any
   object ActionExecutionStatus extends js.Object {
@@ -718,6 +721,7 @@ package codepipeline {
 
     val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
   }
+
   @js.native
   sealed trait ActionOwner extends js.Any
   object ActionOwner extends js.Object {
@@ -904,6 +908,7 @@ package codepipeline {
       __obj.asInstanceOf[ApprovalResult]
     }
   }
+
   @js.native
   sealed trait ApprovalStatus extends js.Any
   object ApprovalStatus extends js.Object {
@@ -1005,6 +1010,7 @@ package codepipeline {
       __obj.asInstanceOf[ArtifactLocation]
     }
   }
+
   @js.native
   sealed trait ArtifactLocationType extends js.Any
   object ArtifactLocationType extends js.Object {
@@ -1075,6 +1081,7 @@ package codepipeline {
       __obj.asInstanceOf[ArtifactStore]
     }
   }
+
   @js.native
   sealed trait ArtifactStoreType extends js.Any
   object ArtifactStoreType extends js.Object {
@@ -1106,6 +1113,7 @@ package codepipeline {
       __obj.asInstanceOf[BlockerDeclaration]
     }
   }
+
   @js.native
   sealed trait BlockerType extends js.Any
   object BlockerType extends js.Object {
@@ -1444,6 +1452,7 @@ package codepipeline {
       __obj.asInstanceOf[EncryptionKey]
     }
   }
+
   @js.native
   sealed trait EncryptionKeyType extends js.Any
   object EncryptionKeyType extends js.Object {
@@ -1547,6 +1556,7 @@ package codepipeline {
       __obj.asInstanceOf[FailureDetails]
     }
   }
+
   @js.native
   sealed trait FailureType extends js.Any
   object FailureType extends js.Object {
@@ -1906,6 +1916,7 @@ package codepipeline {
       __obj.asInstanceOf[JobDetails]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -2344,6 +2355,7 @@ package codepipeline {
       __obj.asInstanceOf[PipelineExecution]
     }
   }
+
   @js.native
   sealed trait PipelineExecutionStatus extends js.Any
   object PipelineExecutionStatus extends js.Object {
@@ -3017,6 +3029,7 @@ package codepipeline {
       __obj.asInstanceOf[StageExecution]
     }
   }
+
   @js.native
   sealed trait StageExecutionStatus extends js.Any
   object StageExecutionStatus extends js.Object {
@@ -3028,6 +3041,7 @@ package codepipeline {
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
   }
+
   @js.native
   sealed trait StageRetryMode extends js.Any
   object StageRetryMode extends js.Object {
@@ -3063,6 +3077,7 @@ package codepipeline {
       __obj.asInstanceOf[StageState]
     }
   }
+
   @js.native
   sealed trait StageTransitionType extends js.Any
   object StageTransitionType extends js.Object {
@@ -3349,6 +3364,7 @@ package codepipeline {
       __obj.asInstanceOf[TransitionState]
     }
   }
+
   @js.native
   sealed trait TriggerType extends js.Any
   object TriggerType extends js.Object {
@@ -3466,6 +3482,7 @@ package codepipeline {
       __obj.asInstanceOf[WebhookAuthConfiguration]
     }
   }
+
   @js.native
   sealed trait WebhookAuthenticationType extends js.Any
   object WebhookAuthenticationType extends js.Object {

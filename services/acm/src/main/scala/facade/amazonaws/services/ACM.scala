@@ -225,6 +225,7 @@ package acm {
       __obj.asInstanceOf[CertificateOptions]
     }
   }
+
   @js.native
   sealed trait CertificateStatus extends js.Any
   object CertificateStatus extends js.Object {
@@ -261,6 +262,7 @@ package acm {
       __obj.asInstanceOf[CertificateSummary]
     }
   }
+
   @js.native
   sealed trait CertificateTransparencyLoggingPreference extends js.Any
   object CertificateTransparencyLoggingPreference extends js.Object {
@@ -269,6 +271,7 @@ package acm {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait CertificateType extends js.Any
   object CertificateType extends js.Object {
@@ -330,6 +333,7 @@ package acm {
       __obj.asInstanceOf[DescribeCertificateResponse]
     }
   }
+
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
@@ -464,6 +468,7 @@ package acm {
       __obj.asInstanceOf[ExtendedKeyUsage]
     }
   }
+
   @js.native
   sealed trait ExtendedKeyUsageName extends js.Any
   object ExtendedKeyUsageName extends js.Object {
@@ -497,6 +502,7 @@ package acm {
       )
     )
   }
+
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason extends js.Object {
@@ -646,6 +652,7 @@ package acm {
       __obj.asInstanceOf[ImportCertificateResponse]
     }
   }
+
   @js.native
   sealed trait KeyAlgorithm extends js.Any
   object KeyAlgorithm extends js.Object {
@@ -677,6 +684,7 @@ package acm {
       __obj.asInstanceOf[KeyUsage]
     }
   }
+
   @js.native
   sealed trait KeyUsageName extends js.Any
   object KeyUsageName extends js.Object {
@@ -786,6 +794,7 @@ package acm {
       __obj.asInstanceOf[ListTagsForCertificateResponse]
     }
   }
+
   @js.native
   sealed trait RecordType extends js.Any
   object RecordType extends js.Object {
@@ -832,6 +841,7 @@ package acm {
       __obj.asInstanceOf[RenewCertificateRequest]
     }
   }
+
   @js.native
   sealed trait RenewalEligibility extends js.Any
   object RenewalEligibility extends js.Object {
@@ -840,6 +850,7 @@ package acm {
 
     val values = js.Object.freeze(js.Array(ELIGIBLE, INELIGIBLE))
   }
+
   @js.native
   sealed trait RenewalStatus extends js.Any
   object RenewalStatus extends js.Object {
@@ -986,6 +997,7 @@ package acm {
       __obj.asInstanceOf[ResourceRecord]
     }
   }
+
   @js.native
   sealed trait RevocationReason extends js.Any
   object RevocationReason extends js.Object {
@@ -1060,6 +1072,7 @@ package acm {
       __obj.asInstanceOf[UpdateCertificateOptionsRequest]
     }
   }
+
   @js.native
   sealed trait ValidationMethod extends js.Any
   object ValidationMethod extends js.Object {

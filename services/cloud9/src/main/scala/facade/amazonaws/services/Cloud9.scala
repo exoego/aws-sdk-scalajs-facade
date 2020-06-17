@@ -433,6 +433,7 @@ package cloud9 {
       __obj.asInstanceOf[EnvironmentLifecycle]
     }
   }
+
   @js.native
   sealed trait EnvironmentLifecycleStatus extends js.Any
   object EnvironmentLifecycleStatus extends js.Object {
@@ -475,6 +476,7 @@ package cloud9 {
       __obj.asInstanceOf[EnvironmentMember]
     }
   }
+
   @js.native
   sealed trait EnvironmentStatus extends js.Any
   object EnvironmentStatus extends js.Object {
@@ -488,6 +490,7 @@ package cloud9 {
 
     val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
+
   @js.native
   sealed trait EnvironmentType extends js.Any
   object EnvironmentType extends js.Object {
@@ -568,6 +571,7 @@ package cloud9 {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait MemberPermissions extends js.Any
   object MemberPermissions extends js.Object {
@@ -576,6 +580,7 @@ package cloud9 {
 
     val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
+
   @js.native
   sealed trait Permissions extends js.Any
   object Permissions extends js.Object {

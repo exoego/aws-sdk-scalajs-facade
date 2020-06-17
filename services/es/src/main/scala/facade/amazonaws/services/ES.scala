@@ -606,6 +606,7 @@ package es {
       __obj.asInstanceOf[DeleteElasticsearchDomainResponse]
     }
   }
+
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus extends js.Object {
@@ -1005,6 +1006,7 @@ package es {
       __obj.asInstanceOf[EBSOptionsStatus]
     }
   }
+
   @js.native
   sealed trait ESPartitionInstanceType extends js.Any
   object ESPartitionInstanceType extends js.Object {
@@ -1130,6 +1132,7 @@ package es {
       )
     )
   }
+
   @js.native
   sealed trait ESWarmPartitionInstanceType extends js.Any
   object ESWarmPartitionInstanceType extends js.Object {
@@ -2170,6 +2173,7 @@ package es {
       __obj.asInstanceOf[ReservedElasticsearchInstanceOffering]
     }
   }
+
   @js.native
   sealed trait ReservedElasticsearchInstancePaymentOption extends js.Any
   object ReservedElasticsearchInstancePaymentOption extends js.Object {
@@ -2348,6 +2352,7 @@ package es {
       __obj.asInstanceOf[StorageTypeLimit]
     }
   }
+
   @js.native
   sealed trait TLSSecurityPolicy extends js.Any
   object TLSSecurityPolicy extends js.Object {
@@ -2534,6 +2539,7 @@ package es {
       __obj.asInstanceOf[UpgradeHistory]
     }
   }
+
   @js.native
   sealed trait UpgradeStatus extends js.Any
   object UpgradeStatus extends js.Object {
@@ -2544,6 +2550,7 @@ package es {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
   }
+
   @js.native
   sealed trait UpgradeStep extends js.Any
   object UpgradeStep extends js.Object {

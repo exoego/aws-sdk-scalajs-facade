@@ -534,6 +534,7 @@ package xray {
       __obj.asInstanceOf[EncryptionConfig]
     }
   }
+
   @js.native
   sealed trait EncryptionStatus extends js.Any
   object EncryptionStatus extends js.Object {
@@ -542,6 +543,7 @@ package xray {
 
     val values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
   }
+
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType extends js.Object {
@@ -1758,6 +1760,7 @@ package xray {
       __obj.asInstanceOf[SamplingStrategy]
     }
   }
+
   @js.native
   sealed trait SamplingStrategyName extends js.Any
   object SamplingStrategyName extends js.Object {
@@ -1970,6 +1973,7 @@ package xray {
       __obj.asInstanceOf[TelemetryRecord]
     }
   }
+
   @js.native
   sealed trait TimeRangeType extends js.Any
   object TimeRangeType extends js.Object {

@@ -293,6 +293,7 @@ package qldb {
       __obj.asInstanceOf[ExportJournalToS3Response]
     }
   }
+
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
@@ -476,6 +477,7 @@ package qldb {
       __obj.asInstanceOf[JournalS3ExportDescription]
     }
   }
+
   @js.native
   sealed trait LedgerState extends js.Any
   object LedgerState extends js.Object {
@@ -664,6 +666,7 @@ package qldb {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait PermissionsMode extends js.Any
   object PermissionsMode extends js.Object {
@@ -722,6 +725,7 @@ package qldb {
       __obj.asInstanceOf[S3ExportConfiguration]
     }
   }
+
   @js.native
   sealed trait S3ObjectEncryptionType extends js.Any
   object S3ObjectEncryptionType extends js.Object {

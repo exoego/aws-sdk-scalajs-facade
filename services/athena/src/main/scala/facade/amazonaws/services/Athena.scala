@@ -238,6 +238,7 @@ package athena {
       __obj.asInstanceOf[ColumnInfo]
     }
   }
+
   @js.native
   sealed trait ColumnNullable extends js.Any
   object ColumnNullable extends js.Object {
@@ -444,6 +445,7 @@ package athena {
       __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
+
   @js.native
   sealed trait EncryptionOption extends js.Any
   object EncryptionOption extends js.Object {
@@ -859,6 +861,7 @@ package athena {
       __obj.asInstanceOf[QueryExecutionContext]
     }
   }
+
   @js.native
   sealed trait QueryExecutionState extends js.Any
   object QueryExecutionState extends js.Object {
@@ -1101,6 +1104,7 @@ package athena {
       __obj.asInstanceOf[StartQueryExecutionOutput]
     }
   }
+
   @js.native
   sealed trait StatementType extends js.Any
   object StatementType extends js.Object {
@@ -1435,6 +1439,7 @@ package athena {
       __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }
   }
+
   @js.native
   sealed trait WorkGroupState extends js.Any
   object WorkGroupState extends js.Object {

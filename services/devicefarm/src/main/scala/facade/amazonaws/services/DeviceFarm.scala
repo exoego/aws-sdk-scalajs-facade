@@ -427,6 +427,7 @@ package devicefarm {
       __obj.asInstanceOf[Artifact]
     }
   }
+
   @js.native
   sealed trait ArtifactCategory extends js.Any
   object ArtifactCategory extends js.Object {
@@ -436,6 +437,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(SCREENSHOT, FILE, LOG))
   }
+
   @js.native
   sealed trait ArtifactType extends js.Any
   object ArtifactType extends js.Object {
@@ -501,6 +503,7 @@ package devicefarm {
       )
     )
   }
+
   @js.native
   sealed trait BillingMethod extends js.Any
   object BillingMethod extends js.Object {
@@ -1047,6 +1050,7 @@ package devicefarm {
       __obj.asInstanceOf[CreateVPCEConfigurationResult]
     }
   }
+
   @js.native
   sealed trait CurrencyCode extends js.Any
   object CurrencyCode extends js.Object {
@@ -1469,6 +1473,7 @@ package devicefarm {
       __obj.asInstanceOf[Device]
     }
   }
+
   @js.native
   sealed trait DeviceAttribute extends js.Any
   object DeviceAttribute extends js.Object {
@@ -1504,6 +1509,7 @@ package devicefarm {
       )
     )
   }
+
   @js.native
   sealed trait DeviceAvailability extends js.Any
   object DeviceAvailability extends js.Object {
@@ -1540,6 +1546,7 @@ package devicefarm {
       __obj.asInstanceOf[DeviceFilter]
     }
   }
+
   @js.native
   sealed trait DeviceFilterAttribute extends js.Any
   object DeviceFilterAttribute extends js.Object {
@@ -1573,6 +1580,7 @@ package devicefarm {
       )
     )
   }
+
   @js.native
   sealed trait DeviceFormFactor extends js.Any
   object DeviceFormFactor extends js.Object {
@@ -1640,6 +1648,7 @@ package devicefarm {
       __obj.asInstanceOf[DeviceMinutes]
     }
   }
+
   @js.native
   sealed trait DevicePlatform extends js.Any
   object DevicePlatform extends js.Object {
@@ -1707,6 +1716,7 @@ package devicefarm {
       __obj.asInstanceOf[DevicePoolCompatibilityResult]
     }
   }
+
   @js.native
   sealed trait DevicePoolType extends js.Any
   object DevicePoolType extends js.Object {
@@ -1795,6 +1805,7 @@ package devicefarm {
       __obj.asInstanceOf[ExecutionConfiguration]
     }
   }
+
   @js.native
   sealed trait ExecutionResult extends js.Any
   object ExecutionResult extends js.Object {
@@ -1808,6 +1819,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED))
   }
+
   @js.native
   sealed trait ExecutionResultCode extends js.Any
   object ExecutionResultCode extends js.Object {
@@ -1816,6 +1828,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED))
   }
+
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
@@ -2646,6 +2659,7 @@ package devicefarm {
       __obj.asInstanceOf[InstanceProfile]
     }
   }
+
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus extends js.Object {
@@ -2656,6 +2670,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE))
   }
+
   @js.native
   sealed trait InteractionMode extends js.Any
   object InteractionMode extends js.Object {
@@ -3878,6 +3893,7 @@ package devicefarm {
       __obj.asInstanceOf[NetworkProfile]
     }
   }
+
   @js.native
   sealed trait NetworkProfileType extends js.Any
   object NetworkProfileType extends js.Object {
@@ -3998,6 +4014,7 @@ package devicefarm {
       __obj.asInstanceOf[OfferingTransaction]
     }
   }
+
   @js.native
   sealed trait OfferingTransactionType extends js.Any
   object OfferingTransactionType extends js.Object {
@@ -4007,6 +4024,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(PURCHASE, RENEW, SYSTEM))
   }
+
   @js.native
   sealed trait OfferingType extends js.Any
   object OfferingType extends js.Object {
@@ -4195,6 +4213,7 @@ package devicefarm {
       __obj.asInstanceOf[RecurringCharge]
     }
   }
+
   @js.native
   sealed trait RecurringChargeFrequency extends js.Any
   object RecurringChargeFrequency extends js.Object {
@@ -4369,6 +4388,7 @@ package devicefarm {
       __obj.asInstanceOf[Rule]
     }
   }
+
   @js.native
   sealed trait RuleOperator extends js.Any
   object RuleOperator extends js.Object {
@@ -4519,6 +4539,7 @@ package devicefarm {
       __obj.asInstanceOf[Sample]
     }
   }
+
   @js.native
   sealed trait SampleType extends js.Any
   object SampleType extends js.Object {
@@ -5091,6 +5112,7 @@ package devicefarm {
       __obj.asInstanceOf[TestGridSessionArtifact]
     }
   }
+
   @js.native
   sealed trait TestGridSessionArtifactCategory extends js.Any
   object TestGridSessionArtifactCategory extends js.Object {
@@ -5099,6 +5121,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(VIDEO, LOG))
   }
+
   @js.native
   sealed trait TestGridSessionArtifactType extends js.Any
   object TestGridSessionArtifactType extends js.Object {
@@ -5108,6 +5131,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(UNKNOWN, VIDEO, SELENIUM_LOG))
   }
+
   @js.native
   sealed trait TestGridSessionStatus extends js.Any
   object TestGridSessionStatus extends js.Object {
@@ -5117,6 +5141,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(ACTIVE, CLOSED, ERRORED))
   }
+
   @js.native
   sealed trait TestType extends js.Any
   object TestType extends js.Object {
@@ -5682,6 +5707,7 @@ package devicefarm {
       __obj.asInstanceOf[Upload]
     }
   }
+
   @js.native
   sealed trait UploadCategory extends js.Any
   object UploadCategory extends js.Object {
@@ -5690,6 +5716,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
+
   @js.native
   sealed trait UploadStatus extends js.Any
   object UploadStatus extends js.Object {
@@ -5700,6 +5727,7 @@ package devicefarm {
 
     val values = js.Object.freeze(js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED))
   }
+
   @js.native
   sealed trait UploadType extends js.Any
   object UploadType extends js.Object {

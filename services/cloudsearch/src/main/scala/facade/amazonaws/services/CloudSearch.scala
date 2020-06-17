@@ -177,6 +177,7 @@ package cloudsearch {
       __obj.asInstanceOf[AccessPoliciesStatus]
     }
   }
+
   @js.native
   sealed trait AlgorithmicStemming extends js.Any
   object AlgorithmicStemming extends js.Object {
@@ -2103,6 +2104,7 @@ package cloudsearch {
       __obj.asInstanceOf[Suggester]
     }
   }
+
   @js.native
   sealed trait SuggesterFuzzyMatching extends js.Any
   object SuggesterFuzzyMatching extends js.Object {

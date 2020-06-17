@@ -137,6 +137,7 @@ package cognitoidentity {
     def untagResource(params: UntagResourceInput): Request[UntagResourceResponse]         = js.native
     def updateIdentityPool(params: IdentityPool): Request[IdentityPool]                   = js.native
   }
+
   @js.native
   sealed trait AmbiguousRoleResolutionType extends js.Any
   object AmbiguousRoleResolutionType extends js.Object {
@@ -348,6 +349,7 @@ package cognitoidentity {
       __obj.asInstanceOf[DescribeIdentityPoolInput]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -920,6 +922,7 @@ package cognitoidentity {
       __obj.asInstanceOf[MappingRule]
     }
   }
+
   @js.native
   sealed trait MappingRuleMatchType extends js.Any
   object MappingRuleMatchType extends js.Object {
@@ -1006,6 +1009,7 @@ package cognitoidentity {
       __obj.asInstanceOf[RoleMapping]
     }
   }
+
   @js.native
   sealed trait RoleMappingType extends js.Any
   object RoleMappingType extends js.Object {

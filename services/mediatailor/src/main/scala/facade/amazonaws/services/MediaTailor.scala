@@ -348,6 +348,7 @@ package mediatailor {
       __obj.asInstanceOf[LivePreRollConfiguration]
     }
   }
+
   @js.native
   sealed trait OriginManifestType extends js.Any
   object OriginManifestType extends js.Object {

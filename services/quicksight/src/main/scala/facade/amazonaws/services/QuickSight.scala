@@ -435,6 +435,7 @@ package quicksight {
       __obj.asInstanceOf[AmazonElasticsearchParameters]
     }
   }
+
   @js.native
   sealed trait AssignmentStatus extends js.Any
   object AssignmentStatus extends js.Object {
@@ -641,6 +642,7 @@ package quicksight {
       __obj.asInstanceOf[CastColumnTypeOperation]
     }
   }
+
   @js.native
   sealed trait ColumnDataType extends js.Any
   object ColumnDataType extends js.Object {
@@ -1432,6 +1434,7 @@ package quicksight {
       __obj.asInstanceOf[Dashboard]
     }
   }
+
   @js.native
   sealed trait DashboardBehavior extends js.Any
   object DashboardBehavior extends js.Object {
@@ -1462,6 +1465,7 @@ package quicksight {
       __obj.asInstanceOf[DashboardError]
     }
   }
+
   @js.native
   sealed trait DashboardErrorType extends js.Any
   object DashboardErrorType extends js.Object {
@@ -1592,6 +1596,7 @@ package quicksight {
       __obj.asInstanceOf[DashboardSummary]
     }
   }
+
   @js.native
   sealed trait DashboardUIState extends js.Any
   object DashboardUIState extends js.Object {
@@ -1752,6 +1757,7 @@ package quicksight {
       __obj.asInstanceOf[DataSetConfiguration]
     }
   }
+
   @js.native
   sealed trait DataSetImportMode extends js.Any
   object DataSetImportMode extends js.Object {
@@ -1932,6 +1938,7 @@ package quicksight {
       __obj.asInstanceOf[DataSourceErrorInfo]
     }
   }
+
   @js.native
   sealed trait DataSourceErrorInfoType extends js.Any
   object DataSourceErrorInfoType extends js.Object {
@@ -2025,6 +2032,7 @@ package quicksight {
       __obj.asInstanceOf[DataSourceParameters]
     }
   }
+
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
@@ -3238,6 +3246,7 @@ package quicksight {
       __obj.asInstanceOf[ExportToCSVOption]
     }
   }
+
   @js.native
   sealed trait FileFormat extends js.Any
   object FileFormat extends js.Object {
@@ -3298,6 +3307,7 @@ package quicksight {
       __obj.asInstanceOf[GeoSpatialColumnGroup]
     }
   }
+
   @js.native
   sealed trait GeoSpatialCountryCode extends js.Any
   object GeoSpatialCountryCode extends js.Object {
@@ -3305,6 +3315,7 @@ package quicksight {
 
     val values = js.Object.freeze(js.Array(US))
   }
+
   @js.native
   sealed trait GeoSpatialDataRole extends js.Any
   object GeoSpatialDataRole extends js.Object {
@@ -3482,6 +3493,7 @@ package quicksight {
       __obj.asInstanceOf[IAMPolicyAssignmentSummary]
     }
   }
+
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType extends js.Object {
@@ -3541,6 +3553,7 @@ package quicksight {
       __obj.asInstanceOf[Ingestion]
     }
   }
+
   @js.native
   sealed trait IngestionErrorType extends js.Any
   object IngestionErrorType extends js.Object {
@@ -3630,6 +3643,7 @@ package quicksight {
       )
     )
   }
+
   @js.native
   sealed trait IngestionRequestSource extends js.Any
   object IngestionRequestSource extends js.Object {
@@ -3638,6 +3652,7 @@ package quicksight {
 
     val values = js.Object.freeze(js.Array(MANUAL, SCHEDULED))
   }
+
   @js.native
   sealed trait IngestionRequestType extends js.Any
   object IngestionRequestType extends js.Object {
@@ -3648,6 +3663,7 @@ package quicksight {
 
     val values = js.Object.freeze(js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH))
   }
+
   @js.native
   sealed trait IngestionStatus extends js.Any
   object IngestionStatus extends js.Object {
@@ -3684,6 +3700,7 @@ package quicksight {
       __obj.asInstanceOf[InputColumn]
     }
   }
+
   @js.native
   sealed trait InputColumnDataType extends js.Any
   object InputColumnDataType extends js.Object {
@@ -3772,6 +3789,7 @@ package quicksight {
       __obj.asInstanceOf[JoinInstruction]
     }
   }
+
   @js.native
   sealed trait JoinType extends js.Any
   object JoinType extends js.Object {
@@ -5051,6 +5069,7 @@ package quicksight {
       __obj.asInstanceOf[ResourcePermission]
     }
   }
+
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus extends js.Object {
@@ -5118,6 +5137,7 @@ package quicksight {
       __obj.asInstanceOf[RowLevelPermissionDataSet]
     }
   }
+
   @js.native
   sealed trait RowLevelPermissionPolicy extends js.Any
   object RowLevelPermissionPolicy extends js.Object {
@@ -5505,6 +5525,7 @@ package quicksight {
       __obj.asInstanceOf[TemplateError]
     }
   }
+
   @js.native
   sealed trait TemplateErrorType extends js.Any
   object TemplateErrorType extends js.Object {
@@ -5709,6 +5730,7 @@ package quicksight {
       __obj.asInstanceOf[TeradataParameters]
     }
   }
+
   @js.native
   sealed trait TextQualifier extends js.Any
   object TextQualifier extends js.Object {
@@ -6627,6 +6649,7 @@ package quicksight {
       __obj.asInstanceOf[User]
     }
   }
+
   @js.native
   sealed trait UserRole extends js.Any
   object UserRole extends js.Object {

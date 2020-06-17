@@ -79,6 +79,7 @@ package lexruntime {
       __obj.asInstanceOf[Button]
     }
   }
+
   @js.native
   sealed trait ConfirmationStatus extends js.Any
   object ConfirmationStatus extends js.Object {
@@ -88,6 +89,7 @@ package lexruntime {
 
     val values = js.Object.freeze(js.Array(None, Confirmed, Denied))
   }
+
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
@@ -183,6 +185,7 @@ package lexruntime {
       __obj.asInstanceOf[DialogAction]
     }
   }
+
   @js.native
   sealed trait DialogActionType extends js.Any
   object DialogActionType extends js.Object {
@@ -194,6 +197,7 @@ package lexruntime {
 
     val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
   }
+
   @js.native
   sealed trait DialogState extends js.Any
   object DialogState extends js.Object {
@@ -207,6 +211,7 @@ package lexruntime {
     val values =
       js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
   }
+
   @js.native
   sealed trait FulfillmentState extends js.Any
   object FulfillmentState extends js.Object {
@@ -338,6 +343,7 @@ package lexruntime {
       __obj.asInstanceOf[IntentSummary]
     }
   }
+
   @js.native
   sealed trait MessageFormatType extends js.Any
   object MessageFormatType extends js.Object {

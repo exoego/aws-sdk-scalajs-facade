@@ -388,6 +388,7 @@ package managedblockchain {
       __obj.asInstanceOf[DeleteNodeOutput]
     }
   }
+
   @js.native
   sealed trait Edition extends js.Any
   object Edition extends js.Object {
@@ -396,6 +397,7 @@ package managedblockchain {
 
     val values = js.Object.freeze(js.Array(STARTER, STANDARD))
   }
+
   @js.native
   sealed trait Framework extends js.Any
   object Framework extends js.Object {
@@ -582,6 +584,7 @@ package managedblockchain {
       __obj.asInstanceOf[Invitation]
     }
   }
+
   @js.native
   sealed trait InvitationStatus extends js.Any
   object InvitationStatus extends js.Object {
@@ -1037,6 +1040,7 @@ package managedblockchain {
       __obj.asInstanceOf[MemberFrameworkConfiguration]
     }
   }
+
   @js.native
   sealed trait MemberStatus extends js.Any
   object MemberStatus extends js.Object {
@@ -1209,6 +1213,7 @@ package managedblockchain {
       __obj.asInstanceOf[NetworkFrameworkConfiguration]
     }
   }
+
   @js.native
   sealed trait NetworkStatus extends js.Any
   object NetworkStatus extends js.Object {
@@ -1362,6 +1367,7 @@ package managedblockchain {
       __obj.asInstanceOf[NodeFrameworkAttributes]
     }
   }
+
   @js.native
   sealed trait NodeStatus extends js.Any
   object NodeStatus extends js.Object {
@@ -1479,6 +1485,7 @@ package managedblockchain {
       __obj.asInstanceOf[ProposalActions]
     }
   }
+
   @js.native
   sealed trait ProposalStatus extends js.Any
   object ProposalStatus extends js.Object {
@@ -1579,6 +1586,7 @@ package managedblockchain {
       __obj.asInstanceOf[RemoveAction]
     }
   }
+
   @js.native
   sealed trait ThresholdComparator extends js.Any
   object ThresholdComparator extends js.Object {
@@ -1652,6 +1660,7 @@ package managedblockchain {
       __obj.asInstanceOf[VoteSummary]
     }
   }
+
   @js.native
   sealed trait VoteValue extends js.Any
   object VoteValue extends js.Object {
